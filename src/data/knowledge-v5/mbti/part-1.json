@@ -1,0 +1,555 @@
+{
+  "profiles": [
+    {
+      "type": "INTJ",
+      "easyName": "몇 수 앞을 보는 설계자",
+      "oneLine": "정해진 길을 그대로 걷기보다 왜 그 길이 맞는지부터 묻고 더 나은 구조를 짜는 사람입니다.",
+      "dimensionTags": {
+        "directness": 0.6,
+        "emotionalExpression": -0.8,
+        "controlNeed": 0.5,
+        "persistence": 0.6,
+        "socialEnergy": -0.8,
+        "ruleAdherence": -0.7,
+        "perfectionism": 0.6,
+        "independence": 0.8,
+        "empathyResponse": -0.7,
+        "planning": 0.9,
+        "trustThreshold": 0.6,
+        "verbalOutput": -0.5,
+        "detailFocus": -0.6,
+        "attentionSeeking": -0.6,
+        "spendingControl": 0.5,
+        "statusDrive": -0.5,
+        "reactivity": -0.5,
+        "inquiry": 0.9,
+        "learningDrive": 0.8,
+        "intimacyPace": -0.8,
+        "boundarySetting": 0.7
+      },
+      "cognitiveFunctions": [
+        { "code": "Ni", "role": "주기능", "easy": "Ni(흩어진 단서를 모아 큰 그림과 앞날을 먼저 그리는 눈)", "sourceRefs": ["mbti:INTJ:functionStack"] },
+        { "code": "Te", "role": "부기능", "easy": "Te(일을 순서와 결과로 정리해 밀어붙이는 머리)", "sourceRefs": ["mbti:INTJ:functionStack"] },
+        { "code": "Fi", "role": "3차기능", "easy": "Fi(겉으로 잘 드러내지 않는 자기만의 기준과 마음)", "sourceRefs": ["mbti:INTJ:functionStack"] },
+        { "code": "Se", "role": "열등기능", "easy": "Se(지금 눈앞의 감각과 현장을 느끼는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:INTJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "일과 관계없는 수다가 길어지면 먼저 자리로 돌아가 하던 일을 다시 잡는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INTJ:private_chatter_drain"] },
+          { "text": "윗사람 지시라도 앞뒤가 안 맞으면 그 자리에서 어디가 틀렸는지 짚습니다.", "domains": ["work"], "sourceRefs": ["mbti:INTJ:boss_challenge_risk", "mbti:INTJ:meritocracy_expectation"] },
+          { "text": "한 번 손댄 업무는 반복 작업을 줄이는 자동화 쪽으로 다시 짜곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:INTJ:elegant_solution_drive", "mbti:INTJ:strategy_to_asset_work"] }
+        ],
+        "money": [
+          { "text": "평소 충동구매는 막아도 목표에 필요한 장비나 강의에는 크게 지갑을 여는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INTJ:selective_big_goal_spending"] },
+          { "text": "생활비와 저축과 투자금을 계좌별로 나눠 자동이체로 돌려 두는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INTJ:cashflow_system_design"] },
+          { "text": "소문으로 오른 종목은 피하고 그 회사 구조와 위험을 자료로 확인한 뒤에야 사는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INTJ:anti_hype_investment", "mbti:INTJ:long_horizon_strategy"] }
+        ],
+        "love": [
+          { "text": "설렘보다 이 사람과 같은 방향으로 갈 수 있는지를 오래 재 본 뒤에 마음을 주는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INTJ:slow_high_standard_love", "mbti:INTJ:same_direction_attraction"] },
+          { "text": "연인이 고민을 꺼내면 공감하는 말 대신 해결 순서를 적어 건네는 쪽입니다.", "domains": ["love"], "sourceRefs": ["mbti:INTJ:hidden_warmth", "mbti:INTJ:devotion_without_display"] },
+          { "text": "데이트 중에도 아는 주제가 나오면 설명이 길어져 토론처럼 흘러가곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:INTJ:knowledge_display_risk"] }
+        ],
+        "relationships": [
+          { "text": "넓은 모임보다 생각을 깊게 나눌 수 있는 두세 명과 오래 만나는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INTJ:selective_friendship", "mbti:INTJ:deep_idea_bond"] },
+          { "text": "친구 진로 고민에는 다정한 말보다 관련 정보와 선택지를 찾아 보내 주는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INTJ:insight_as_care"] },
+          { "text": "한 번 선을 넘은 사람에게는 겉으로 싸우지 않아도 마음의 거리를 되돌리지 않습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INTJ:line_crossing_memory"] }
+        ],
+        "study": [
+          { "text": "쉬운 암기 과목보다 수학이나 법처럼 원리를 따지는 과목에 더 오래 붙어 있는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INTJ:hard_discipline_affinity"] },
+          { "text": "수학에서 틀린 문제는 다시 푸는 대신 어떤 전제를 놓쳤는지 노트에 적어 두는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INTJ:math_reflection_strategy"] },
+          { "text": "공부 계획 전체가 납득될 때까지 첫 장을 펴지 못하고 계획표만 고칠 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:INTJ:perfectionism_start_gate"] }
+        ]
+      },
+      "shadows": [
+        { "text": "대화에서 작은 오류까지 바로잡다 보면 상대가 평가받는 기분이 들어 입을 닫기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:INTJ:definition_precision", "mbti:INTJ:hidden_inconsistency_detector"] },
+        { "text": "해결해 줬으니 됐다며 고맙다는 말과 기념일을 건너뛰어 배우자가 혼자 사는 기분을 느끼기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:INTJ:emotional_expression_routine", "mbti:INTJ:devotion_without_display"] }
+      ],
+      "sourceRefs": ["mbti:INTJ:summary.identity", "mbti:INTJ:summary.strength", "mbti:INTJ:summary.risk", "mbti:INTJ:functionStack"]
+    },
+    {
+      "type": "INTP",
+      "easyName": "원리를 파고드는 탐구자",
+      "oneLine": "말수는 적지만 궁금한 문제가 나오면 왜 그런지 끝까지 파고드는 사람입니다.",
+      "dimensionTags": {
+        "directness": 0.5,
+        "decisionSpeed": -0.7,
+        "emotionalExpression": -0.7,
+        "controlNeed": -0.5,
+        "persistence": -0.6,
+        "socialEnergy": -0.9,
+        "ruleAdherence": -0.8,
+        "independence": 0.9,
+        "empathyResponse": -0.8,
+        "noveltySeeking": 0.6,
+        "planning": -0.7,
+        "trustThreshold": 0.6,
+        "verbalOutput": -0.6,
+        "detailFocus": -0.7,
+        "attentionSeeking": -0.6,
+        "caretaking": -0.6,
+        "statusDrive": -0.8,
+        "reactivity": -0.5,
+        "introspection": 0.6,
+        "inquiry": 0.9,
+        "dutifulness": -0.4,
+        "conflictApproach": -0.6,
+        "learningDrive": 0.8,
+        "intimacyPace": -0.7,
+        "boundarySetting": 0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Ti", "role": "주기능", "easy": "Ti(누가 말했든 내 안의 논리로 맞는지 따져 보는 머리)", "sourceRefs": ["mbti:INTP:functionStack"] },
+        { "code": "Ne", "role": "부기능", "easy": "Ne(하나를 보면 여러 가능성이 동시에 떠오르는 눈)", "sourceRefs": ["mbti:INTP:functionStack"] },
+        { "code": "Si", "role": "3차기능", "easy": "Si(읽고 본 자료와 익숙한 경험을 쌓아 두는 기억)", "sourceRefs": ["mbti:INTP:functionStack"] },
+        { "code": "Fe", "role": "열등기능", "easy": "Fe(주변 분위기와 남의 기분에 맞추는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:INTP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "회의에서 즉답을 요구받으면 말을 아끼다가 혼자 정리한 뒤 문서로 의견을 보내는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INTP:needs_thinking_time"] },
+          { "text": "일을 미뤄 두다가 마감 전날 밤에야 집중이 켜져 한 번에 끝내곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:INTP:last_minute_execution"] },
+          { "text": "요구사항과 완료 기준이 흐린 일은 생각만 깊어지고 손은 늦게 움직이는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INTP:scope_clarity_contract"] }
+        ],
+        "money": [
+          { "text": "카드값과 구독료와 세금은 기억에 맡기지 않고 자동이체로 묶어 두는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INTP:automated_money_routine"] },
+          { "text": "책과 장비와 강의에 연구비처럼 돈을 쓰지만 결과물 없이 쌓일 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:INTP:interest_spending_drift"] },
+          { "text": "모두가 산다는 종목을 보면 사기 전에 왜 다들 사는지부터 분석합니다.", "domains": ["money"], "sourceRefs": ["mbti:INTP:anti_trend_investing", "mbti:INTP:research_based_investing"] }
+        ],
+        "love": [
+          { "text": "호감이 생겨도 바로 다가가지 않고 몇 달을 지켜본 뒤에야 연락을 늘리는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INTP:careful_narrow_love"] },
+          { "text": "예쁜 말보다 같이 이야기하면 생각이 넓어지는 상대에게 마음이 더 가는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INTP:witty_intellectual_attraction"] },
+          { "text": "연인이 며칠째 연락이 없어도 눈치채지 못하고 혼자 하던 일에 빠져 있을 때가 많습니다.", "domains": ["love"], "sourceRefs": ["mbti:INTP:low_attention_partner_shock", "mbti:INTP:freedom_based_attachment"] }
+        ],
+        "relationships": [
+          { "text": "화가 나도 길게 다투지 않고 답장을 줄이다가 조용히 멀어지는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INTP:quiet_cutoff_pattern"] },
+          { "text": "문제가 생기면 남에게 부탁하기보다 밤을 새워서라도 혼자 해결하려 하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INTP:no_debt_independence"] },
+          { "text": "모르는 걸 솔직히 묻는 사람은 좋아하지만 아는 척하는 사람 앞에서는 말투가 날카로워지는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INTP:respect_for_listening_mind"] }
+        ],
+        "study": [
+          { "text": "공식을 그냥 외우라고 하면 손이 안 가고 유도 과정이 이해돼야 문제를 풀기 시작합니다.", "domains": ["study"], "sourceRefs": ["mbti:INTP:math_science_affinity", "mbti:INTP:why_question_loop"] },
+          { "text": "직접 해 본 적은 없어도 책과 영상으로 본 지식이 줄줄 나오는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INTP:indirect_experience_learning"] },
+          { "text": "개념을 이해하면 다 안다고 느껴 시험 전날 기출 반복을 건너뛸 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:INTP:exam_routine_bridge", "mbti:INTP:high_iq_low_grade_gap"] }
+        ]
+      },
+      "shadows": [
+        { "text": "흥미 없는 일은 시작할 이유를 못 찾아 미루다가 머리는 좋은데 성과가 없는 사람으로 보이기 쉽습니다.", "domains": ["work", "study"], "sourceRefs": ["mbti:INTP:chronic_laziness", "mbti:INTP:lazy_genius_gap"] },
+        { "text": "슬픈 이야기를 들으면 왜 슬펐는지부터 물어서 공감 없는 사람으로 들리기 쉽습니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:INTP:emotion_after_thought"] }
+      ],
+      "sourceRefs": ["mbti:INTP:summary.identity", "mbti:INTP:summary.strength", "mbti:INTP:summary.risk", "mbti:INTP:functionStack"]
+    },
+    {
+      "type": "ENTJ",
+      "easyName": "사람과 판을 움직이는 지휘관",
+      "oneLine": "비효율이 보이면 불평 대신 개편안을 떠올리고 사람과 자원을 움직여 결과로 증명하는 사람입니다.",
+      "dimensionTags": {
+        "directness": 0.9,
+        "decisionSpeed": 0.8,
+        "riskTaking": 0.6,
+        "emotionalExpression": -0.5,
+        "controlNeed": 0.9,
+        "persistence": 0.8,
+        "socialEnergy": 0.4,
+        "ruleAdherence": -0.4,
+        "empathyResponse": -0.8,
+        "noveltySeeking": 0.4,
+        "planning": 0.8,
+        "competitiveness": 0.9,
+        "trustThreshold": 0.4,
+        "verbalOutput": 0.7,
+        "detailFocus": -0.4,
+        "attentionSeeking": 0.6,
+        "caretaking": -0.5,
+        "spendingControl": -0.5,
+        "statusDrive": 0.9,
+        "reactivity": 0.6,
+        "introspection": -0.6,
+        "dutifulness": 0.8,
+        "conflictApproach": 0.9,
+        "learningDrive": 0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Te", "role": "주기능", "easy": "Te(목표를 정하면 사람과 일을 순서대로 배치해 결과를 내는 머리)", "sourceRefs": ["mbti:ENTJ:functionStack"] },
+        { "code": "Ni", "role": "부기능", "easy": "Ni(지금의 비효율이 앞날에 어떤 문제가 될지 미리 보는 눈)", "sourceRefs": ["mbti:ENTJ:functionStack"] },
+        { "code": "Se", "role": "3차기능", "easy": "Se(눈앞의 상황에 바로 몸으로 뛰어드는 힘)", "sourceRefs": ["mbti:ENTJ:functionStack"] },
+        { "code": "Fi", "role": "열등기능", "easy": "Fi(자기 마음을 들여다보고 말로 꺼내는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:ENTJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "회의에서 의견은 다 듣지만 결론이 난 뒤에 판을 흔드는 말은 오래 받아 주지 않습니다.", "domains": ["work"], "sourceRefs": ["mbti:ENTJ:democratic_until_decision"] },
+          { "text": "동료의 게으름이나 실수를 보면 그 자리에서 놀랄 만큼 직설적으로 지적하는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENTJ:direct_feedback_leader"] },
+          { "text": "문제가 터지면 부담보다 할 일이 생겼다며 오히려 힘이 나서 먼저 뛰어드는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENTJ:crisis_momentum", "mbti:ENTJ:problem_solver_energy"] }
+        ],
+        "money": [
+          { "text": "돈을 아끼느라 일이 늦어지는 선택보다 사람과 장비에 돈을 써서 속도를 사는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ENTJ:spending_for_speed", "mbti:ENTJ:capitalist_resource_logic"] },
+          { "text": "종목을 고를 때 누가 좋다더라보다 재무 지표와 경쟁력을 먼저 따지는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ENTJ:objective_metric_investing"] },
+          { "text": "좋은 기회가 보이면 작게 시험하기보다 대출과 채용까지 한꺼번에 밀어붙이는 쪽입니다.", "domains": ["money"], "sourceRefs": ["mbti:ENTJ:expansion_reserve_limit", "mbti:ENTJ:scale_limit_before_push"] }
+        ],
+        "love": [
+          { "text": "연애 초반부터 데이트 코스를 직접 짜고 새로운 경험을 끼워 넣어 주도하는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTJ:planned_intense_romance"] },
+          { "text": "관계의 앞날이 안 보인다고 판단하면 정리하는 티를 내며 관심을 확 끊는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTJ:long_term_filter"] },
+          { "text": "연인에게도 내 부족한 점을 말해 달라고 하고 그걸 고칠 과제로 삼는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTJ:feedback_expectation_love"] }
+        ],
+        "relationships": [
+          { "text": "친구와 만나면 근황 수다보다 서로 생각을 겨루는 토론으로 흘러갈 때가 많습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENTJ:debate_as_bonding"] },
+          { "text": "이 친구가 내 인생 계획에 도움이 될지까지 따져 보며 만날 사람을 고르는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENTJ:strategic_friend_filter"] },
+          { "text": "힘든 일이 있어도 누군가의 위로를 바라지 않고 왜 남들은 그걸 원하는지 갸웃할 때가 많습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENTJ:low_emotional_support_need"] }
+        ],
+        "study": [
+          { "text": "목표 점수와 등수가 정해져 있을수록 집중이 올라가고 더 세게 밀어붙이는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENTJ:high_achievement_study"] },
+          { "text": "시험 공부를 시험일과 주차별 범위와 모의고사 일정으로 쪼갠 관리표부터 만드는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENTJ:score_project_management"] },
+          { "text": "어려운 문제만 찾다가 쉬운 문제에서 조건을 빼먹어 점수를 잃을 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:ENTJ:speed_blindspot_review"] }
+        ]
+      },
+      "shadows": [
+        { "text": "무능하다고 판단한 동료를 사람들 앞에서 지적하고 비꼬아 실력은 인정받아도 사람이 떠나기 쉽습니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ENTJ:public_contempt_risk", "mbti:ENTJ:summary.risk"] },
+        { "text": "집안의 큰 결정을 설명 없이 결론부터 통보해 배우자가 지시받는 기분을 느끼기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTJ:decision_authority_agreement", "mbti:ENTJ:dominance_marriage_risk"] }
+      ],
+      "sourceRefs": ["mbti:ENTJ:summary.identity", "mbti:ENTJ:summary.strength", "mbti:ENTJ:summary.risk", "mbti:ENTJ:functionStack"]
+    },
+    {
+      "type": "ENTP",
+      "easyName": "규칙 밖에서 길을 여는 발명가",
+      "oneLine": "막힌 판에 왜냐고 묻고 빠른 발상과 말로 새 길을 여는 사람입니다.",
+      "dimensionTags": {
+        "directness": 0.8,
+        "riskTaking": 0.8,
+        "persistence": -0.8,
+        "socialEnergy": 0.5,
+        "ruleAdherence": -0.9,
+        "perfectionism": -0.6,
+        "independence": 0.5,
+        "empathyResponse": -0.5,
+        "noveltySeeking": 0.9,
+        "planning": -0.7,
+        "competitiveness": 0.5,
+        "verbalOutput": 0.9,
+        "detailFocus": -0.8,
+        "attentionSeeking": 0.7,
+        "spendingControl": -0.7,
+        "reactivity": 0.8,
+        "inquiry": 0.9,
+        "dutifulness": -0.6,
+        "conflictApproach": 0.7,
+        "learningDrive": 0.7,
+        "intimacyPace": 0.6,
+        "boundarySetting": 0.6,
+        "mobility": 0.6
+      },
+      "cognitiveFunctions": [
+        { "code": "Ne", "role": "주기능", "easy": "Ne(문제 하나를 보면 열 가지 가능성으로 번지는 눈)", "sourceRefs": ["mbti:ENTP:functionStack"] },
+        { "code": "Ti", "role": "부기능", "easy": "Ti(말의 분위기보다 논리의 뼈대가 맞는지 따지는 머리)", "sourceRefs": ["mbti:ENTP:functionStack"] },
+        { "code": "Fe", "role": "3차기능", "easy": "Fe(사람들의 반응을 읽고 분위기를 바꾸는 힘)", "sourceRefs": ["mbti:ENTP:functionStack"] },
+        { "code": "Si", "role": "열등기능", "easy": "Si(익숙한 반복과 세부 루틴을 지키는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:ENTP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "회의가 막히면 전혀 다른 방향의 아이디어를 던져 분위기를 뒤집는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENTP:brainstorming_leader"] },
+          { "text": "여러 일을 동시에 벌여 초반에는 빠르지만 완성 단계에서 손이 느려질 때가 많습니다.", "domains": ["work"], "sourceRefs": ["mbti:ENTP:multi_task_starter"] },
+          { "text": "팀에서 아무도 말 안 하는 문제를 회의 자리에서 먼저 꺼내 짚는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENTP:constructive_critic", "mbti:ENTP:anti_authoritarian_spirit"] }
+        ],
+        "money": [
+          { "text": "물건보다 여행과 새 모임 같은 경험에 지갑이 먼저 열리는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ENTP:spending_on_experience"] },
+          { "text": "새 도구와 새 강의와 새 사업 아이템에 조금씩 쓰다 보니 어디서 돈이 샜는지 흐려질 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:ENTP:project_cost_sprawl"] },
+          { "text": "관심 종목이 자주 바뀌어 사 놓은 것을 다시 점검하지 않고 새 테마로 옮겨 가곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ENTP:theme_hopping_risk", "mbti:ENTP:idea_driven_investing"] }
+        ],
+        "love": [
+          { "text": "마음에 드는 사람이 생기면 오래 재지 않고 대화와 데이트로 바로 확인하는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTP:fast_start_romance"] },
+          { "text": "누구에게나 능숙하게 장난치다가도 진짜 좋아하는 사람 앞에서는 말이 꼬이곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTP:awkward_true_crush"] },
+          { "text": "연인이 일정을 다 맞추라고 하거나 통제하려 들면 애정이 있어도 바로 방어적으로 변하는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENTP:freedom_in_love"] }
+        ],
+        "relationships": [
+          { "text": "처음 보는 사람과도 농담이나 논쟁거리를 찾아 금방 말을 트는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENTP:quick_connection"] },
+          { "text": "내 사람이라고 느끼면 아낌없이 챙기지만 무례한 사람에게는 미련 없이 선을 긋는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENTP:inner_circle_selectivity", "mbti:ENTP:selective_loyalty"] },
+          { "text": "관계를 이어 갈 이유가 사라졌다고 판단하면 겉으론 웃어도 속으로는 이미 돌아서 있을 때가 많습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENTP:cutoff_without_regret"] }
+        ],
+        "study": [
+          { "text": "궁금증이 붙은 과목은 혼자 깊게 파지만 흥미 없는 과목은 성적 차이가 크게 벌어지는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENTP:interest_based_learning"] },
+          { "text": "긴 계획표보다 30분 타이머나 주간 발표처럼 짧은 마감이 걸려 있어야 공부가 움직이는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENTP:short_deadline_sprint"] },
+          { "text": "머리로 이해했다 싶으면 오답 정리를 건너뛰어 시험에서 같은 실수를 반복할 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:ENTP:cramming_and_notes"] }
+        ]
+      },
+      "shadows": [
+        { "text": "새 아이디어가 들어오면 하던 일을 그대로 두고 다음 자극으로 옮겨 가서 미완성이 쌓이기 쉽습니다.", "domains": ["work", "study"], "sourceRefs": ["mbti:ENTP:unfinished_projects", "mbti:ENTP:summary.risk"] },
+        { "text": "논쟁에서 상대가 털어놓은 약점까지 무기로 꺼내 들어 이기고도 관계를 잃기 쉽습니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:ENTP:sharp_tongue_damage"] }
+      ],
+      "sourceRefs": ["mbti:ENTP:summary.identity", "mbti:ENTP:summary.strength", "mbti:ENTP:summary.risk", "mbti:ENTP:functionStack"]
+    },
+    {
+      "type": "INFJ",
+      "easyName": "흐름을 읽는 조용한 안내자",
+      "oneLine": "지금 보이는 장면보다 그 장면이 어디로 갈지를 먼저 읽고 조용히 사람을 돕는 사람입니다.",
+      "dimensionTags": {
+        "directness": -0.8,
+        "decisionSpeed": -0.6,
+        "riskTaking": -0.5,
+        "emotionalExpression": -0.6,
+        "persistence": 0.7,
+        "socialEnergy": -0.9,
+        "perfectionism": 0.6,
+        "empathyResponse": 0.9,
+        "planning": 0.4,
+        "competitiveness": -0.6,
+        "verbalOutput": -0.8,
+        "detailFocus": -0.8,
+        "attentionSeeking": -0.7,
+        "caretaking": 0.8,
+        "statusDrive": -0.7,
+        "reactivity": -0.8,
+        "introspection": 0.9,
+        "inquiry": 0.5,
+        "dutifulness": 0.6,
+        "conflictApproach": -0.8,
+        "learningDrive": 0.7,
+        "intimacyPace": -0.8,
+        "boundarySetting": -0.4,
+        "mobility": -0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Ni", "role": "주기능", "easy": "Ni(오래 모은 단서가 한 방향으로 모일 때 앞날의 흐름을 읽는 눈)", "sourceRefs": ["mbti:INFJ:functionStack"] },
+        { "code": "Fe", "role": "부기능", "easy": "Fe(상대의 표정과 분위기를 읽고 맞춰 주는 힘)", "sourceRefs": ["mbti:INFJ:functionStack"] },
+        { "code": "Ti", "role": "3차기능", "easy": "Ti(느낀 것을 혼자 조용히 따져 정리하는 머리)", "sourceRefs": ["mbti:INFJ:functionStack"] },
+        { "code": "Se", "role": "열등기능", "easy": "Se(눈앞의 소음과 자극을 몸으로 받아내는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:INFJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "회의가 많고 소음이 큰 사무실에서는 말수가 줄고 하루 끝에 기운이 바닥나는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INFJ:calm_deep_work"] },
+          { "text": "방향이 정해지면 티 내지 않지만 집요하게 끝까지 끌고 가는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INFJ:project_completion_will"] },
+          { "text": "동료의 민원이나 갈등까지 떠안다가 정작 본업은 뒤로 밀릴 때가 많습니다.", "domains": ["work"], "sourceRefs": ["mbti:INFJ:emotional_boundary_at_work"] }
+        ],
+        "money": [
+          { "text": "가까운 사람 사정이 보이면 선물과 후원과 대신 내는 비용이 생활비를 밀어낼 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:INFJ:helping_boundary_spending"] },
+          { "text": "작품이나 서비스를 더 완성한 뒤에 팔려고 공개와 가격 제안을 계속 미루는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INFJ:perfection_delay_income"] },
+          { "text": "마음속으로 충분히 납득될 때까지 기다리다 살 타이밍을 지나 보낼 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:INFJ:conviction_delay_risk"] }
+        ],
+        "love": [
+          { "text": "상처받을까 봐 시작은 오래 망설이지만 한번 마음을 열면 애정을 몇 년이고 쏟는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INFJ:careful_start_deep_love"] },
+          { "text": "시끄러운 술집보다 조용한 책방이나 전시장에서 긴 대화를 나누는 데이트에 마음이 열리는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INFJ:noise_sensitive_date"] },
+          { "text": "서운한 일이 있어도 바로 말하지 않고 돌려 말하다가 상대가 못 알아채면 속으로 쌓아 두는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INFJ:indirect_conflict_expression"] }
+        ],
+        "relationships": [
+          { "text": "세 명 이상 모인 자리에서는 누구에게 맞춰야 할지 몰라 말수가 급격히 줄어드는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INFJ:low_smalltalk_energy"] },
+          { "text": "모임 약속을 상상만 하다 지쳐서 당일에 못 나가겠다고 할 때가 많습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INFJ:isolation_from_world"] },
+          { "text": "오래 참고 이해하다가 선을 넘었다고 느끼는 순간 설명 없이 연락을 끊는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INFJ:door_slam_boundary", "mbti:INFJ:firm_refusal_when_decided"] }
+        ],
+        "study": [
+          { "text": "즉석에서 말로 발표하기보다 글로 써서 정리할 때 생각이 훨씬 또렷해지는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INFJ:writing_over_speaking"] },
+          { "text": "수학에서 흐름은 잡히는데 풀이 근거를 적지 않고 넘어가 계산에서 빈틈이 생길 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:INFJ:logical_math_gap"] },
+          { "text": "시험 범위를 외우는 공부보다 한 주제를 내 언어로 끝까지 이해하는 공부에 힘이 나는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INFJ:graduate_depth_study"] }
+        ]
+      },
+      "shadows": [
+        { "text": "남의 슬픔과 화를 스펀지처럼 빨아들여 누구 마음인지도 모른 채 이유 없이 지치기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:INFJ:empathy_burnout", "mbti:INFJ:summary.risk"] },
+        { "text": "싫은 티를 못 내고 참다가 쌓인 감정이 한계를 넘으면 갑자기 차갑게 돌아서기 쉽습니다.", "domains": ["love", "relationships"], "sourceRefs": ["mbti:INFJ:conflict_avoidance"] }
+      ],
+      "sourceRefs": ["mbti:INFJ:summary.identity", "mbti:INFJ:summary.strength", "mbti:INFJ:summary.risk", "mbti:INFJ:functionStack"]
+    },
+    {
+      "type": "INFP",
+      "easyName": "마음의 결을 지키는 몽상가",
+      "oneLine": "남이 정한 정답보다 자기 안에서 진짜라고 느끼는 길을 고르고 상처는 조용히 삭이는 사람입니다.",
+      "dimensionTags": {
+        "directness": -0.9,
+        "decisionSpeed": -0.6,
+        "riskTaking": -0.4,
+        "emotionalExpression": -0.5,
+        "controlNeed": -0.8,
+        "socialEnergy": -0.8,
+        "ruleAdherence": -0.7,
+        "empathyResponse": 0.9,
+        "noveltySeeking": 0.4,
+        "planning": -0.7,
+        "competitiveness": -0.9,
+        "trustThreshold": -0.4,
+        "verbalOutput": -0.5,
+        "detailFocus": -0.6,
+        "attentionSeeking": -0.7,
+        "caretaking": 0.4,
+        "spendingControl": -0.4,
+        "statusDrive": -0.9,
+        "reactivity": -0.8,
+        "introspection": 0.9,
+        "conflictApproach": -0.9,
+        "learningDrive": 0.4,
+        "intimacyPace": -0.6,
+        "boundarySetting": -0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Fi", "role": "주기능", "easy": "Fi(무엇이 진짜고 무엇이 옳은지 내 안의 기준으로 정리하는 마음)", "sourceRefs": ["mbti:INFP:functionStack"] },
+        { "code": "Ne", "role": "부기능", "easy": "Ne(작은 장면 하나가 이야기와 세계관으로 뻗어 가는 상상)", "sourceRefs": ["mbti:INFP:functionStack"] },
+        { "code": "Si", "role": "3차기능", "easy": "Si(이야기와 마음이 붙은 장면을 오래 기억하는 창고)", "sourceRefs": ["mbti:INFP:functionStack"] },
+        { "code": "Te", "role": "열등기능", "easy": "Te(기한과 순서로 일을 밀어붙이는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:INFP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "재량 없이 위에서 정한 절차만 따르는 자리에서는 겉으로 순응해도 속으로는 빠르게 멀어지는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INFP:autonomy_required", "mbti:INFP:bureaucracy_low_fit"] },
+          { "text": "마음이 동의한 일은 다른 걸 쳐다보지 않을 만큼 파고들지만 의미가 안 보이는 일은 손이 안 가는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:INFP:meaning_driven_diligence"] },
+          { "text": "마음에 안 드는 동료에게 싫은 소리를 하기보다 조용히 거리를 두는 쪽입니다.", "domains": ["work"], "sourceRefs": ["mbti:INFP:soft_conflict_style"] }
+        ],
+        "money": [
+          { "text": "상처받은 날에는 책이나 굿즈나 취향 소품을 사서 마음을 달래는 지출이 반복되는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INFP:emotional_spending_shelter"] },
+          { "text": "좋아서 하는 일에 정성이 들어갈수록 가격을 낮추거나 그냥 해 주려는 마음이 먼저 드는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INFP:value_pricing_gap"] },
+          { "text": "투자에서 손실이 난 화면은 열어 보기 싫어 확인을 며칠씩 미루는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:INFP:loss_check_avoidance"] }
+        ],
+        "love": [
+          { "text": "영화 한 편을 같이 보고 나서 감상을 나누는 시간이 데이트의 핵심인 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INFP:artistic_dates"] },
+          { "text": "장난으로 던진 한마디에도 마음속 깊이 상처받고 그날 밤 혼자 곱씹는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:INFP:criticism_sensitive_love"] },
+          { "text": "마음이 있어도 먼저 연락하거나 고백하는 걸 자기답지 않게 느껴 상대가 알아채지 못할 때가 많습니다.", "domains": ["love"], "sourceRefs": ["mbti:INFP:passive_initiation_love", "mbti:INFP:slow_to_show_affection"] }
+        ],
+        "relationships": [
+          { "text": "자주 만나는 사람보다 내 마음의 언어를 알아듣는 한두 명과 오래 이어지는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INFP:deep_value_based_bonds"] },
+          { "text": "친구 사생활에 잔소리나 간섭을 하지 않고 각자 방식대로 살게 두는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INFP:low_interference_individualism"] },
+          { "text": "화가 나면 소리 내기보다 며칠 연락을 끊고 혼자 산책하며 삭이는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:INFP:anger_private_processing", "mbti:INFP:sensitive_withdrawal"] }
+        ],
+        "study": [
+          { "text": "연도와 숫자를 외우는 건 힘들어도 이야기가 붙은 역사 장면은 오래 기억하는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INFP:storytelling_learning", "mbti:INFP:si_story_memory"] },
+          { "text": "외국어는 단어장보다 노래 가사와 드라마 대사로 외울 때 훨씬 빨리 느는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:INFP:foreign_language_strength"] },
+          { "text": "좋아하는 단원만 오래 붙잡다가 시험 범위 나머지와 제출물을 뒤로 밀 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:INFP:deadline_reality_anchor"] }
+        ]
+      },
+      "shadows": [
+        { "text": "한 번 믿은 사람에게 시간과 돈까지 다 걸다가 실망하면 충격이 오래 가기 쉽습니다.", "domains": ["relationships", "money"], "sourceRefs": ["mbti:INFP:overgiving_to_trusted_person", "mbti:INFP:generosity_boundary_money"] },
+        { "text": "불만을 말하지 않고 참다가 어느 날 말없이 사라져 상대는 이유도 모른 채 관계가 끊기기 쉽습니다.", "domains": ["love", "relationships"], "sourceRefs": ["mbti:INFP:sensitive_withdrawal", "mbti:INFP:conflict_avoidance_marriage"] }
+      ],
+      "sourceRefs": ["mbti:INFP:summary.identity", "mbti:INFP:summary.strength", "mbti:INFP:summary.risk", "mbti:INFP:functionStack"]
+    },
+    {
+      "type": "ENFJ",
+      "easyName": "마음을 읽고 이끄는 선도자",
+      "oneLine": "사람들 사이 공기 변화를 먼저 알아채고 모두가 함께 갈 방향을 말로 세우는 사람입니다.",
+      "dimensionTags": {
+        "directness": -0.6,
+        "emotionalExpression": 0.8,
+        "controlNeed": 0.5,
+        "persistence": 0.6,
+        "socialEnergy": 0.9,
+        "ruleAdherence": 0.4,
+        "independence": -0.7,
+        "empathyResponse": 0.9,
+        "planning": 0.5,
+        "competitiveness": -0.5,
+        "trustThreshold": -0.6,
+        "verbalOutput": 0.9,
+        "detailFocus": -0.5,
+        "attentionSeeking": 0.6,
+        "caretaking": 0.9,
+        "spendingControl": -0.6,
+        "statusDrive": 0.4,
+        "reactivity": 0.4,
+        "introspection": 0.5,
+        "dutifulness": 0.8,
+        "conflictApproach": -0.6,
+        "learningDrive": 0.6,
+        "intimacyPace": 0.7,
+        "boundarySetting": -0.8
+      },
+      "cognitiveFunctions": [
+        { "code": "Fe", "role": "주기능", "easy": "Fe(사람들 사이의 분위기와 필요를 먼저 읽고 맞춰 움직이는 힘)", "sourceRefs": ["mbti:ENFJ:functionStack"] },
+        { "code": "Ni", "role": "부기능", "easy": "Ni(오늘의 선택이 내일 어떤 의미로 이어질지 보는 눈)", "sourceRefs": ["mbti:ENFJ:functionStack"] },
+        { "code": "Se", "role": "3차기능", "easy": "Se(눈앞의 사람과 현장에 바로 반응하는 감각)", "sourceRefs": ["mbti:ENFJ:functionStack"] },
+        { "code": "Ti", "role": "열등기능", "easy": "Ti(감정을 빼고 사실과 논리만 따지는 머리, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:ENFJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "동료가 힘들어 보이면 내 마감이 밀려도 먼저 가서 이야기를 들어 주는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENFJ:care_overload_at_work", "mbti:ENFJ:compassionate_facilitator"] },
+          { "text": "발표 자료를 설명하기보다 듣는 사람들이 같은 방향을 보게 만드는 말로 채우는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENFJ:persuasive_presenter"] },
+          { "text": "팀원에게 싫은 소리를 해야 할 때 돌려 말하다 문제가 커지고 나서야 꺼낼 때가 많습니다.", "domains": ["work"], "sourceRefs": ["mbti:ENFJ:criticism_avoidance", "mbti:ENFJ:gentle_feedback"] }
+        ],
+        "money": [
+          { "text": "호감 가는 사람에게는 밥값이든 선물이든 마음이 먼저 열리고 계산은 나중에 하는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ENFJ:generous_spending"] },
+          { "text": "경조사와 모임과 가족 지원처럼 좋은 사람으로 보이는 지출이 고정비처럼 쌓이는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ENFJ:status_and_care_spending", "mbti:ENFJ:reputation_linked_money"] },
+          { "text": "아끼는 후배 제안이면 자료를 따로 확인하지 않고 사람을 믿고 돈을 넣을 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:ENFJ:relationship_info_boundary", "mbti:ENFJ:emotion_separation_in_investment"] }
+        ],
+        "love": [
+          { "text": "연애를 시작하면 몇 달 안 돼 함께할 미래 그림부터 그리며 마음을 크게 쏟는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENFJ:full_hearted_love"] },
+          { "text": "지금 우리 어떤 관계냐고 자주 묻고 말로 확인해야 마음이 놓이는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENFJ:emotional_confirmation_need"] },
+          { "text": "헤어진 뒤에도 함께 그렸던 미래와 내 부족함을 오래 되짚으며 유난히 힘들어하는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENFJ:hard_to_end_relationship"] }
+        ],
+        "relationships": [
+          { "text": "동창회든 동호회든 모임이 생기면 연락 돌리고 자리를 잡는 총무 역할을 맡는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENFJ:wide_social_bonding"] },
+          { "text": "친구의 지금 모습보다 될 수 있는 모습을 먼저 보고 응원하다가 안 변하면 크게 실망하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENFJ:idealizing_people"] },
+          { "text": "싫어하는 사람에게는 겉으로 다정해도 마음의 문은 닫고 내 편과 아닌 사람을 나누는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENFJ:warm_but_selective_cutoff"] }
+        ],
+        "study": [
+          { "text": "배운 걸 혼자 외우기보다 친구에게 설명해 주면서 내 것으로 만드는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENFJ:fast_social_learning", "mbti:ENFJ:answer_leader_child"] },
+          { "text": "친구들 일정과 고민을 챙기다 보면 정작 내 공부 시간은 늘 마지막으로 밀리는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENFJ:protected_solo_study_time"] },
+          { "text": "설명은 잘해 놓고 혼자 푸는 객관식 시험에서는 빈틈이 드러날 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:ENFJ:objective_logic_drill"] }
+        ]
+      },
+      "shadows": [
+        { "text": "남의 고통을 다 떠안고 버티다가 어느 날 한꺼번에 무너져 아무것도 못 하게 되기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:ENFJ:empathy_burnout", "mbti:ENFJ:summary.risk"] },
+        { "text": "내 가치관과 다른 사람을 은근히 밀어내고 편을 갈라 주변이 둘로 나뉘기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:ENFJ:moral_dividing", "mbti:ENFJ:value_driven_conviction"] }
+      ],
+      "sourceRefs": ["mbti:ENFJ:summary.identity", "mbti:ENFJ:summary.strength", "mbti:ENFJ:summary.risk", "mbti:ENFJ:functionStack"]
+    },
+    {
+      "type": "ENFP",
+      "easyName": "가능성에 불붙는 활동가",
+      "oneLine": "새 사람과 아이디어를 만나면 머릿속 연결이 번져 일단 해 보자며 먼저 움직이는 사람입니다.",
+      "dimensionTags": {
+        "decisionSpeed": 0.7,
+        "riskTaking": 0.6,
+        "emotionalExpression": 0.9,
+        "controlNeed": -0.6,
+        "persistence": -0.8,
+        "socialEnergy": 0.7,
+        "ruleAdherence": -0.7,
+        "perfectionism": -0.7,
+        "empathyResponse": 0.8,
+        "noveltySeeking": 0.9,
+        "planning": -0.8,
+        "trustThreshold": -0.6,
+        "verbalOutput": 0.9,
+        "detailFocus": -0.8,
+        "attentionSeeking": 0.6,
+        "caretaking": 0.5,
+        "spendingControl": -0.8,
+        "reactivity": 0.7,
+        "introspection": 0.4,
+        "inquiry": 0.5,
+        "dutifulness": -0.6,
+        "conflictApproach": -0.5,
+        "learningDrive": 0.6,
+        "intimacyPace": 0.9,
+        "boundarySetting": -0.8,
+        "mobility": 0.7
+      },
+      "cognitiveFunctions": [
+        { "code": "Ne", "role": "주기능", "easy": "Ne(관련 없어 보이는 것들 사이에서 새 연결과 가능성을 찾는 눈)", "sourceRefs": ["mbti:ENFP:functionStack"] },
+        { "code": "Fi", "role": "부기능", "easy": "Fi(남의 입장을 상상해도 마지막엔 내 진심을 기준으로 삼는 마음)", "sourceRefs": ["mbti:ENFP:functionStack"] },
+        { "code": "Te", "role": "3차기능", "easy": "Te(일을 순서와 마감으로 묶어 밀어붙이는 힘)", "sourceRefs": ["mbti:ENFP:functionStack"] },
+        { "code": "Si", "role": "열등기능", "easy": "Si(반복과 세부 정리를 꾸준히 지키는 힘, 가장 늦게 깨는 쪽)", "sourceRefs": ["mbti:ENFP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "회의 분위기가 가라앉으면 엉뚱한 말 한마디로 웃음을 만들고 다음 주제로 넘어가는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENFP:social_mood_maker", "mbti:ENFP:random_but_charming_speech"] },
+          { "text": "아무도 안 나설 때 일단 해 보자며 모임이나 프로젝트를 먼저 시작하는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENFP:community_event_starter", "mbti:ENFP:friendly_leadership"] },
+          { "text": "작은 반복 일정은 자주 놓치다가 큰 문제가 터지면 오히려 빠르게 해결책을 꺼내는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ENFP:deadline_sprint_style", "mbti:ENFP:crisis_big_picture"] }
+        ],
+        "money": [
+          { "text": "기분이 올라오거나 분위기가 좋으면 그 자리에서 바로 결제하고 다음 달 생활비를 걱정하곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ENFP:emotion_purchase_pause", "mbti:ENFP:experience_spending"] },
+          { "text": "프로젝트가 끝나면 다음 수입이 없어 매번 새로 영업부터 시작할 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:ENFP:project_based_income", "mbti:ENFP:recurring_income_anchor"] },
+          { "text": "창업자의 비전 이야기에 끌려 숫자를 보기 전에 투자를 결정할 때가 많습니다.", "domains": ["money"], "sourceRefs": ["mbti:ENFP:story_driven_investment", "mbti:ENFP:cooling_period_guard"] }
+        ],
+        "love": [
+          { "text": "좋아하는 마음이 생기면 티를 못 숨기고 하루에도 몇 번씩 연락하며 다가가는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENFP:passionate_romance"] },
+          { "text": "연인이 아무에게도 못 한 고민을 나한테는 털어놓게 되는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENFP:warm_confidant_partner"] },
+          { "text": "끝내야 할 관계에도 상처 줄까 봐 거절을 못 하고 애매한 여지를 남겨 두는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ENFP:rejection_difficulty"] }
+        ],
+        "relationships": [
+          { "text": "친구가 많고 넓어서 새로 만난 사람의 일화를 다음 모임에서 이야기로 풀어내는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENFP:wide_light_network", "mbti:ENFP:imaginative_storytelling"] },
+          { "text": "좋아하는 사람과 싫어하는 사람의 온도 차가 표정에 그대로 드러나는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENFP:likes_and_dislikes_visible", "mbti:ENFP:expressive_authenticity"] },
+          { "text": "밖에서 분위기를 띄우고 집에 오면 연락을 끊고 조용히 혼자 충전하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ENFP:outer_bright_inner_quiet"] }
+        ],
+        "study": [
+          { "text": "외국어는 문법이 틀려도 먼저 말을 걸어서 실력보다 더 잘하는 것처럼 보이는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENFP:language_conversation_strength"] },
+          { "text": "자료는 넓게 모아 놓고 정작 외워야 할 부분과 풀어야 할 문제는 뒤로 미루는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENFP:completion_checkpoint"] },
+          { "text": "같은 문제를 여러 번 돌리는 반복 훈련은 금방 지루해져 기출 회독을 끝까지 못 채우는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ENFP:repeat_training_anchor", "mbti:ENFP:interest_switch_learning"] }
+        ]
+      },
+      "shadows": [
+        { "text": "한 가지를 끝내기 전에 또 다른 일을 벌여 시작은 많은데 남는 결과물이 없기 쉽습니다.", "domains": ["work", "study"], "sourceRefs": ["mbti:ENFP:unfinished_many_starts", "mbti:ENFP:summary.risk"] },
+        { "text": "비판 한마디를 들으면 방어부터 하고 밤새 곱씹느라 다음 날 할 일이 멈추기 쉽습니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ENFP:criticism_sensitivity", "mbti:ENFP:emotion_amplified_processing"] }
+      ],
+      "sourceRefs": ["mbti:ENFP:summary.identity", "mbti:ENFP:summary.strength", "mbti:ENFP:summary.risk", "mbti:ENFP:functionStack"]
+    }
+  ]
+}

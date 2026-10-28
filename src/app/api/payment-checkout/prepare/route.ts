@@ -1,6 +1,7 @@
 import { createCheckoutConsentEvidence } from "../../../../lib/payment/checkoutConsent";
 import { createAnnualCommerceAcceptance } from "../../../../lib/payment/annualPurchasePolicy";
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
+import { birthTimeUncertaintyNotice } from "../../../../lib/saju/birthTimeUncertaintyNotice";
 import { randomUUID } from "node:crypto";
 
 import { NextRequest, NextResponse } from "next/server";
@@ -378,7 +379,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     const normalized = normalizeReportInputPayload(inputSnapshot.reportInputPayload, { now: () => acceptedAt });
     if (!normalized.ok || normalized.value.productKey !== (json.productType ?? defaultProductType)) {
       const message = !normalized.ok && normalized.birthTimeContext
-        ? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
+        ? birthTimeUncertaintyNotice(normalized.birthTimeContext)?.message ?? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
         : "출생시간을 포함한 리포트 입력 정보를 확인해 주세요.";
       return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", message, 400);
     }

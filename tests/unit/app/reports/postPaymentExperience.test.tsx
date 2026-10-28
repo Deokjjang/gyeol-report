@@ -197,17 +197,40 @@ describe("status refresh lifecycle", () => {
     expect(mocks.confirm).not.toHaveBeenCalled();
   });
 
-  it("stops scheduling at attention, expiry, completion/unmount and in-flight refresh", () => {
+  it("stops scheduling at attention, expiry and completion/unmount", () => {
     vi.useFakeTimers();
     renderToStaticMarkup(<ReportGenerationStatus attention />);
     mocks.effects[0]();
     expect(vi.getTimerCount()).toBe(0);
-    mocks.effects = []; mocks.refreshing = true;
-    renderToStaticMarkup(<ReportGenerationStatus />); mocks.effects[0]();
-    expect(vi.getTimerCount()).toBe(0);
     mocks.effects = [];
     renderToStaticMarkup(<ReportStatusView state="expired" />);
     expect(mocks.effects).toHaveLength(0);
+  });
+
+  // 고정 화면 버그(Q2): 끝나지 않는 refresh가 타이머를 영영 없애던 동작을 고쳤다. 진행 중에도 타이머는 하나 유지되고,
+  // 30초 안에는 중복 요청하지 않으며, 그 뒤에는 멈춘 것으로 보고 다시 요청한다.
+  it("keeps one poller during an in-flight refresh and re-requests only after it is stuck", () => {
+    vi.useFakeTimers();
+    vi.stubGlobal("document", { visibilityState: "visible" });
+    mocks.effects = []; mocks.refreshing = true;
+    renderToStaticMarkup(<ReportGenerationStatus />);
+    const cleanup = mocks.effects[0]();
+    expect(vi.getTimerCount()).toBe(1);
+    vi.advanceTimersByTime(10000); expect(mocks.refresh).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(20000); expect(mocks.refresh).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(10000); expect(mocks.refresh).toHaveBeenCalledTimes(2);
+    cleanup?.(); expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it("shows the five publication stages without percentages, and a storage outage keeps retrying", () => {
+    const html = renderToStaticMarkup(<ReportStatusView state="preparing" stage={2} />);
+    for (const label of ["원국 분석", "성향 연결", "책 집필", "검수", "제본"]) expect(html).toContain(label);
+    expect(html).toContain('aria-current="step"');
+    expect(html).not.toMatch(/\d+%/u);
+    mocks.effects = [];
+    const retry = renderToStaticMarkup(<ReportGenerationStatus retry />);
+    expect(retry).toContain("자동으로 다시 확인");
+    expect(retry).toContain('href="tel:050-6664-8562"');
   });
 
   it("uses reduced motion, visible focus and existing paper press without fake progress", () => {

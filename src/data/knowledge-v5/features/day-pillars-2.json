@@ -1,0 +1,3381 @@
+{
+  "features": [
+    {
+      "id": "day_pillar_gyeongjin",
+      "family": "dayPillar",
+      "traditionalName": "경진(庚辰)",
+      "easyName": "땅속에 묻힌 쇠",
+      "definition": "경진(庚辰) 일주(태어난 날의 천간·지지 짝)입니다. 큰 땅속에 묻힌 쇳덩이가 때를 기다리는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "다들 여러 번 말한 안건을 조용히 듣다가 마지막에 결정할 항목을 짚습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:scene",
+            "taxonomy:day_pillar_gyeongjin"
+          ]
+        },
+        {
+          "text": "얽힌 자원과 역할을 한 번에 정리하는 자리에서 존재감을 드러내는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:work",
+            "taxonomy:day_pillar_gyeongjin"
+          ]
+        },
+        {
+          "text": "가치가 남는다고 판단한 물건이나 일에는 긴 시간을 들이는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:money",
+            "taxonomy:day_pillar_gyeongjin"
+          ]
+        },
+        {
+          "text": "말만 듣고 믿기보다 상대가 실제로 어떻게 버티는지 지켜보는 쪽입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:love",
+            "taxonomy:day_pillar_gyeongjin"
+          ]
+        },
+        {
+          "text": "오래 모아 둔 준비를 중요한 순간의 결단 하나로 바꾸는 편입니다.",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:strength",
+            "taxonomy:day_pillar_gyeongjin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "내 차례가 왔다고 느끼면 다른 사람 의견을 잘 듣지 않습니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:shadow",
+            "v4:material:day_pillar_gyeongjin"
+          ]
+        },
+        {
+          "text": "말없이 준비해 놓고 왜 몰라주냐며 혼자 서운해하곤 합니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongjin:punch",
+            "v4:material:day_pillar_gyeongjin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "decisionSpeed": -0.4,
+        "persistence": 0.6,
+        "verbalOutput": -0.5,
+        "trustThreshold": 0.5,
+        "controlNeed": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 쇠를 받쳐 주면 묻어 둔 결단이 더 크고 분명하게 밖으로 나옵니다.",
+        "weak": "달의 받침이 없으면 때를 기다리는 시간이 길어지고 결정을 안으로 미루기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 묻힌 쇠가 흔들려 큰 결정을 급하게 꺼내기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:庚辰#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:庚辰",
+        "foundation:heavenly_stem:庚",
+        "foundation:earthly_branch:辰",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_gyeongjin:*",
+        "v4:material:day_pillar_gyeongjin",
+        "taxonomy:day_pillar_gyeongjin"
+      ]
+    },
+    {
+      "id": "day_pillar_gyeongo",
+      "family": "dayPillar",
+      "traditionalName": "경오(庚午)",
+      "easyName": "불에 달궈진 쇠",
+      "definition": "경오(庚午) 일주(태어난 날의 천간·지지 짝)입니다. 뜨거운 불 속에서 달궈진 큰 쇠가 모양을 잡는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "게임을 가볍게 시작해 놓고 규칙은 자리에서 제일 진지하게 읽는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:scene",
+            "taxonomy:day_pillar_gyeongo"
+          ]
+        },
+        {
+          "text": "책임질 사람이 필요한 순간에 먼저 앞에 나서서 결정을 꺼내는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:work",
+            "taxonomy:day_pillar_gyeongo"
+          ]
+        },
+        {
+          "text": "돈을 쓰더라도 값어치가 눈에 보이는 물건에 쓰고 싶어 하는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:money",
+            "taxonomy:day_pillar_gyeongo"
+          ]
+        },
+        {
+          "text": "마음이 정해지면 관심을 숨기지 않고 행동으로 빠르게 보이는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:love",
+            "taxonomy:day_pillar_gyeongo"
+          ]
+        },
+        {
+          "text": "나를 증명해야 하는 자리에서는 평소보다 더 뜨겁게 달려드는 편입니다.",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:inside",
+            "taxonomy:day_pillar_gyeongo"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "승부가 붙으면 양보하지 못해 사소한 내기도 진지해지기 쉽습니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:shadow",
+            "v4:material:day_pillar_gyeongo"
+          ]
+        },
+        {
+          "text": "재미로 한다더니 지고 나면 표정부터 달라지곤 합니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongo:punch",
+            "v4:material:day_pillar_gyeongo"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "competitiveness": 0.8,
+        "decisionSpeed": 0.5,
+        "attentionSeeking": 0.5,
+        "directness": 0.5,
+        "emotionalExpression": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 쇠를 받쳐 주면 불 앞에서 모양을 잡는 결단이 더 선명해집니다.",
+        "weak": "달의 받침이 없으면 불의 열기에 쇠가 먼저 지쳐 승부를 오래 끌기 어렵습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 불길이 흔들려 승부의 열기가 들쭉날쭉해지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:庚午#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:庚午",
+        "foundation:heavenly_stem:庚",
+        "foundation:earthly_branch:午",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_gyeongo:*",
+        "v4:material:day_pillar_gyeongo",
+        "taxonomy:day_pillar_gyeongo"
+      ]
+    },
+    {
+      "id": "day_pillar_gyeongsin",
+      "family": "dayPillar",
+      "traditionalName": "경신(庚申)",
+      "easyName": "바위 위의 큰 칼",
+      "definition": "경신(庚申) 일주(태어난 날의 천간·지지 짝)입니다. 큰 칼이 차가운 바위 위에서 더욱 날을 세우는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "길어진 회의에서 결정할 게 무엇인지 한 문장으로 다시 묻습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsin:scene",
+            "taxonomy:day_pillar_gyeongsin"
+          ]
+        },
+        {
+          "text": "복잡한 문제를 짧게 정리하고 당장 할 일부터 정해 버리는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsin:work",
+            "taxonomy:day_pillar_gyeongsin"
+          ]
+        },
+        {
+          "text": "기능이 분명하고 오래 버틸 물건에만 지갑을 여는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsin:money",
+            "taxonomy:day_pillar_gyeongsin"
+          ]
+        },
+        {
+          "text": "밀고 당기는 눈치싸움 대신 마음과 약속을 분명히 해 두는 쪽입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsin:love",
+            "taxonomy:day_pillar_gyeongsin"
+          ]
+        },
+        {
+          "text": "검수나 기준 정하기처럼 맞고 틀림을 가르는 일에서 실력을 보이는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "kb:day_pillar_gyeongsin",
+            "taxonomy:day_pillar_gyeongsin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "너무 빨리 잘라 말해서 사람 마음까지 베어 버리기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsin:shadow",
+            "v4:material:day_pillar_gyeongsin"
+          ]
+        },
+        {
+          "text": "효율적으로 끝냈다고 생각했는데 상대는 아직 할 말이 남아 있곤 합니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsin:punch",
+            "v4:material:day_pillar_gyeongsin"
+          ]
+        },
+        {
+          "text": "짧게 끊어 말하는 습관 때문에 말이 차갑게 들리기 쉽습니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "kb:day_pillar_gyeongsin",
+            "v4:material:day_pillar_gyeongsin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "directness": 0.8,
+        "decisionSpeed": 0.7,
+        "empathyResponse": -0.5,
+        "verbalOutput": -0.3,
+        "perfectionism": 0.3
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 쇠를 받쳐 주면 칼날이 더 서서 판단을 끊는 속도가 빨라집니다.",
+        "weak": "달의 받침이 없으면 날이 무뎌져 결정을 내리고도 자주 되돌아보는 편입니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 바위가 흔들려 급하게 자른 결정을 다시 고치기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:庚申#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:庚申",
+        "foundation:heavenly_stem:庚",
+        "foundation:earthly_branch:申",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_gyeongsin:*",
+        "v4:material:day_pillar_gyeongsin",
+        "taxonomy:day_pillar_gyeongsin",
+        "kb:day_pillar_gyeongsin"
+      ]
+    },
+    {
+      "id": "day_pillar_gyeongsul",
+      "family": "dayPillar",
+      "traditionalName": "경술(庚戌)",
+      "easyName": "성벽 안의 쇠문",
+      "definition": "경술(庚戌) 일주(태어난 날의 천간·지지 짝)입니다. 마른 성벽 안에 큰 쇠문이 세워진 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "친구가 곤란한 부탁을 받으면 대신 나서서 안 되는 이유를 분명히 말합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:scene",
+            "taxonomy:day_pillar_gyeongsul"
+          ]
+        },
+        {
+          "text": "규칙과 책임을 먼저 분명히 해 두고 흔들리지 않는 마무리를 맡는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:work",
+            "taxonomy:day_pillar_gyeongsul"
+          ]
+        },
+        {
+          "text": "크게 얻을 기회보다 쉽게 잃지 않을 선택을 먼저 고르는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:money",
+            "taxonomy:day_pillar_gyeongsul"
+          ]
+        },
+        {
+          "text": "가까워진 뒤에도 약속이 깨지는 일은 쉽게 넘기지 않습니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:love",
+            "taxonomy:day_pillar_gyeongsul"
+          ]
+        },
+        {
+          "text": "불편한 압박이 와도 지키기로 한 기준을 쉽게 내주지 않습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:strength",
+            "taxonomy:day_pillar_gyeongsul"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "한번 경계한 사람은 다시 좋게 보기 어려워 관계가 오래 닫히기 쉽습니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:shadow",
+            "v4:material:day_pillar_gyeongsul"
+          ]
+        },
+        {
+          "text": "친구 편을 들어주다가 정작 친구보다 더 화를 내곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeongsul:punch",
+            "v4:material:day_pillar_gyeongsul"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "ruleAdherence": 0.7,
+        "boundarySetting": 0.8,
+        "trustThreshold": 0.6,
+        "possessiveness": 0.5,
+        "dutifulness": 0.6
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 쇠를 받쳐 주면 성벽의 쇠문이 두꺼워져 기준을 지키는 힘이 커집니다.",
+        "weak": "달의 받침이 없으면 문은 굳게 닫아도 밖의 압박에 혼자 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 마른 성벽이 흔들려 지키던 선을 급히 바꾸기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:庚戌#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:庚戌",
+        "foundation:heavenly_stem:庚",
+        "foundation:earthly_branch:戌",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_gyeongsul:*",
+        "v4:material:day_pillar_gyeongsul",
+        "taxonomy:day_pillar_gyeongsul"
+      ]
+    },
+    {
+      "id": "day_pillar_gyesa",
+      "family": "dayPillar",
+      "traditionalName": "계사(癸巳)",
+      "easyName": "뜨거운 돌 위 물방울",
+      "definition": "계사(癸巳) 일주(태어난 날의 천간·지지 짝)입니다. 작은 물방울이 뜨거운 돌 위에서 김이 되어 오르는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "평소보다 짧은 답장을 보면 바쁜가 싶다가도 대화창을 다시 열어 보는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:scene",
+            "taxonomy:day_pillar_gyesa"
+          ]
+        },
+        {
+          "text": "요구가 갑자기 바뀌는 자리에서 먼저 낌새를 읽고 준비해 두는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:work",
+            "taxonomy:day_pillar_gyesa"
+          ]
+        },
+        {
+          "text": "눈에 띈 기회를 놓칠까 서두르다가도 다시 꼼꼼히 따지기를 되풀이합니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:money",
+            "taxonomy:day_pillar_gyesa"
+          ]
+        },
+        {
+          "text": "표정과 말투의 작은 반응에 호기심이 커지고 마음도 쉽게 바빠지는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:love",
+            "taxonomy:day_pillar_gyesa"
+          ]
+        },
+        {
+          "text": "짧은 순간의 변화를 알아채고 남보다 먼저 대응하는 편입니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:strength",
+            "taxonomy:day_pillar_gyesa"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "작은 신호 하나로 급하게 결론을 내려 버리기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:shadow",
+            "v4:material:day_pillar_gyesa"
+          ]
+        },
+        {
+          "text": "상대는 배터리가 없었을 뿐인데 혼자 관계의 다음 장까지 읽어 버리곤 합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyesa:punch",
+            "v4:material:day_pillar_gyesa"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "reactivity": 0.8,
+        "empathyResponse": 0.5,
+        "decisionSpeed": 0.4,
+        "introspection": 0.4,
+        "trustThreshold": 0.3
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 뜨거운 돌 위에서도 물방울이 마르지 않아 판단에 여유가 생깁니다.",
+        "weak": "달의 받침이 없으면 물방울이 금방 증발하듯 작은 신호에 더 쉽게 휘둘리는 편입니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 돌의 열기가 출렁여 감각이 지나치게 예민해지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:癸巳#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:癸巳",
+        "foundation:heavenly_stem:癸",
+        "foundation:earthly_branch:巳",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_gyesa:*",
+        "v4:material:day_pillar_gyesa",
+        "taxonomy:day_pillar_gyesa"
+      ]
+    },
+    {
+      "id": "day_pillar_gyeyu",
+      "family": "dayPillar",
+      "traditionalName": "계유(癸酉)",
+      "easyName": "쇠 위의 맑은 이슬",
+      "definition": "계유(癸酉) 일주(태어난 날의 천간·지지 짝)입니다. 가을 쇠붙이 위에 맺힌 맑은 이슬 같은 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "보낼 메시지를 다 쓰고도 마지막 조사 하나를 바꾸며 또 읽어 보는 편입니다.",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:scene",
+            "taxonomy:day_pillar_gyeyu"
+          ]
+        },
+        {
+          "text": "기록을 읽고 차이를 찾거나 글의 어색한 부분을 손보는 일에 잘 맞습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:work",
+            "taxonomy:day_pillar_gyeyu"
+          ]
+        },
+        {
+          "text": "싼 가격보다 마음에 오래 남는 품질을 따져 사는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:money",
+            "taxonomy:day_pillar_gyeyu"
+          ]
+        },
+        {
+          "text": "크게 들이대는 사람보다 말투와 배려가 정갈한 사람에게 눈이 가는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:love",
+            "taxonomy:day_pillar_gyeyu"
+          ]
+        },
+        {
+          "text": "비슷해 보이는 개념의 차이를 정확히 적어 보며 이해를 깊게 하는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:study",
+            "taxonomy:day_pillar_gyeyu"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "작은 실수를 오래 곱씹어 다음 일을 시작하는 손이 늦어지기 쉽습니다.",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:shadow",
+            "v4:material:day_pillar_gyeyu"
+          ]
+        },
+        {
+          "text": "신중하게 답장을 쓰다가 답장 자체가 늦어지곤 합니다.",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_gyeyu:punch",
+            "v4:material:day_pillar_gyeyu"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "perfectionism": 0.7,
+        "detailFocus": 0.7,
+        "verbalOutput": -0.5,
+        "introspection": 0.5,
+        "emotionalExpression": -0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 이슬이 마르지 않아 섬세한 감각을 오래 유지합니다.",
+        "weak": "달의 받침이 없으면 이슬이 쉽게 마르듯 작은 지적에 기운이 금방 빠지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 쇠가 흔들려 다듬어 둔 말과 기준이 급히 바뀌기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:癸酉#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:癸酉",
+        "foundation:heavenly_stem:癸",
+        "foundation:earthly_branch:酉",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_gyeyu:*",
+        "v4:material:day_pillar_gyeyu",
+        "taxonomy:day_pillar_gyeyu"
+      ]
+    },
+    {
+      "id": "day_pillar_imin",
+      "family": "dayPillar",
+      "traditionalName": "임인(壬寅)",
+      "easyName": "숲을 깨우는 물길",
+      "definition": "임인(壬寅) 일주(태어난 날의 천간·지지 짝)입니다. 큰 물길이 새 숲을 깨우며 흐르는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "산책하러 나갔다가 새 가게와 수업 정보를 잔뜩 들고 돌아오곤 합니다.",
+          "domains": [
+            "study",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:scene",
+            "taxonomy:day_pillar_imin"
+          ]
+        },
+        {
+          "text": "바깥에서 발견한 것을 가져와 새로운 일의 첫 삽을 뜨는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:work",
+            "taxonomy:day_pillar_imin"
+          ]
+        },
+        {
+          "text": "만날 사람과 배울 경험에 돈을 써서 가능성을 넓히는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:money",
+            "taxonomy:day_pillar_imin"
+          ]
+        },
+        {
+          "text": "같이 낯선 곳에 가고 새 생각을 나눌 수 있을 때 마음이 살아나는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:love",
+            "taxonomy:day_pillar_imin"
+          ]
+        },
+        {
+          "text": "한곳에 머물러 있어도 머릿속에는 다음에 갈 길이 열려 있습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:inside",
+            "taxonomy:day_pillar_imin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "관심이 다른 곳으로 옮겨 가면 하던 일의 끝맺음이 느슨해지기 쉽습니다.",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:shadow",
+            "v4:material:day_pillar_imin"
+          ]
+        },
+        {
+          "text": "잠깐 구경하려다 다음 달 계획까지 바꿔 버리곤 합니다.",
+          "domains": [
+            "money",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imin:punch",
+            "v4:material:day_pillar_imin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "noveltySeeking": 0.8,
+        "mobility": 0.7,
+        "persistence": -0.5,
+        "riskTaking": 0.4,
+        "learningDrive": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 물길이 넓어져 새 숲을 깨우는 시도가 더 과감해집니다.",
+        "weak": "달의 받침이 없으면 물길이 가늘어져 벌여 놓은 시도를 끝까지 적시기 어렵습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 숲이 흔들려 자리를 옮기고 싶은 마음이 급해지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:壬寅#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:壬寅",
+        "foundation:heavenly_stem:壬",
+        "foundation:earthly_branch:寅",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_imin:*",
+        "v4:material:day_pillar_imin",
+        "taxonomy:day_pillar_imin"
+      ]
+    },
+    {
+      "id": "day_pillar_imja",
+      "family": "dayPillar",
+      "traditionalName": "임자(壬子)",
+      "easyName": "밤바다로 가는 강",
+      "definition": "임자(壬子) 일주(태어난 날의 천간·지지 짝)입니다. 큰 강이 밤의 바다로 이어지는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "잠들기 전 가벼운 질문 하나로 인생 계획을 다시 생각하곤 합니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:scene",
+            "taxonomy:day_pillar_imja"
+          ]
+        },
+        {
+          "text": "눈앞의 문제를 전체 흐름과 이어서 큰 방향부터 짚는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:work",
+            "taxonomy:day_pillar_imja"
+          ]
+        },
+        {
+          "text": "지금 보이는 돈보다 정보와 선택권이 커지는 쪽에 관심이 많습니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:money",
+            "taxonomy:day_pillar_imja"
+          ]
+        },
+        {
+          "text": "생각의 깊이를 나누되 혼자만의 공간도 남는 관계를 편하게 느끼는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:love",
+            "taxonomy:day_pillar_imja"
+          ]
+        },
+        {
+          "text": "한 가지 답을 여러 분야의 생각과 비교하며 이해의 폭을 넓히는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:study",
+            "taxonomy:day_pillar_imja"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "생각이 너무 멀리 흘러가서 오늘 해야 할 일을 놓치기 쉽습니다.",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:shadow",
+            "v4:material:day_pillar_imja"
+          ]
+        },
+        {
+          "text": "별생각 없다고 말해 놓고 혼자 세상을 한 바퀴 돌고 오곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imja:punch",
+            "v4:material:day_pillar_imja"
+          ]
+        },
+        {
+          "text": "넓게 흐르고 싶은 마음 때문에 한 방향을 오래 고정하기 어려운 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "kb:day_pillar_imja",
+            "v4:material:day_pillar_imja"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "introspection": 0.8,
+        "detailFocus": -0.6,
+        "independence": 0.5,
+        "mobility": 0.4,
+        "emotionalExpression": -0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 강이 바다처럼 넓어져 긴 흐름을 읽는 깊이가 커집니다.",
+        "weak": "달의 받침이 없으면 물이 얕아져 깊은 생각이 겉돌고 외로움이 먼저 커지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 밤바다가 출렁여 담아 둔 감정이 한꺼번에 넘치기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:壬子#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:壬子",
+        "foundation:heavenly_stem:壬",
+        "foundation:earthly_branch:子",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_imja:*",
+        "v4:material:day_pillar_imja",
+        "taxonomy:day_pillar_imja",
+        "kb:day_pillar_imja"
+      ]
+    },
+    {
+      "id": "day_pillar_imjin",
+      "family": "dayPillar",
+      "traditionalName": "임진(壬辰)",
+      "easyName": "습지를 품은 강",
+      "definition": "임진(壬辰) 일주(태어난 날의 천간·지지 짝)입니다. 큰 강이 넓은 습지를 품고 흐르는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "작은 모임 하나를 만들면서도 나중에 할 수 있는 일을 수첩 가득 적곤 합니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:scene",
+            "taxonomy:day_pillar_imjin"
+          ]
+        },
+        {
+          "text": "흩어진 일들의 연결 고리를 보고 함께 커질 길을 찾는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:work",
+            "taxonomy:day_pillar_imjin"
+          ]
+        },
+        {
+          "text": "당장의 수입만큼 오래 쌓일 가치와 쓰임을 함께 보는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:money",
+            "taxonomy:day_pillar_imjin"
+          ]
+        },
+        {
+          "text": "함께 이야기할 미래가 넓게 펼쳐지는 사람에게 마음이 가는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:love",
+            "taxonomy:day_pillar_imjin"
+          ]
+        },
+        {
+          "text": "따로 배운 내용이 어디서 이어지는지 큰 그림으로 묶을 때 재미가 붙는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:study",
+            "taxonomy:day_pillar_imjin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "계획의 크기에 비해 첫 실행이 늦어 시작 전에 숨이 차기 쉽습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:shadow",
+            "v4:material:day_pillar_imjin"
+          ]
+        },
+        {
+          "text": "아직 첫 모임도 안 했는데 두 번째 장소부터 걱정하곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imjin:punch",
+            "v4:material:day_pillar_imjin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "planning": 0.7,
+        "detailFocus": -0.6,
+        "decisionSpeed": -0.5,
+        "persistence": 0.4,
+        "learningDrive": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 강이 습지를 넉넉히 적셔 큰 계획을 실제로 밀고 가는 힘이 생깁니다.",
+        "weak": "달의 받침이 없으면 습지에 물이 고이듯 계획만 넓어지고 첫걸음이 더 늦어지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 습지의 둑이 흔들려 모아 둔 계획을 급히 뒤집기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:壬辰#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:壬辰",
+        "foundation:heavenly_stem:壬",
+        "foundation:earthly_branch:辰",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_imjin:*",
+        "v4:material:day_pillar_imjin",
+        "taxonomy:day_pillar_imjin"
+      ]
+    },
+    {
+      "id": "day_pillar_imo",
+      "family": "dayPillar",
+      "traditionalName": "임오(壬午)",
+      "easyName": "햇빛 쏟아진 바다",
+      "definition": "임오(壬午) 일주(태어난 날의 천간·지지 짝)입니다. 넓은 바다 위에 한낮의 햇빛이 강하게 쏟아지는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "휴가 계획을 이야기하다 보면 주변 사람들까지 같이 가고 싶게 만드는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:scene",
+            "taxonomy:day_pillar_imo"
+          ]
+        },
+        {
+          "text": "여러 가능성을 사람들 앞에 펼쳐 보여 주고 함께 움직일 이유를 만드는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:work",
+            "taxonomy:day_pillar_imo"
+          ]
+        },
+        {
+          "text": "새 기회가 보이면 돈을 묶어 두기보다 써서 넓혀 보고 싶어 합니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:money",
+            "taxonomy:day_pillar_imo"
+          ]
+        },
+        {
+          "text": "좋아하는 사람과 새로운 장소와 경험을 즐길 때 활기가 솟는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:love",
+            "taxonomy:day_pillar_imo"
+          ]
+        },
+        {
+          "text": "마음이 달아올라도 한쪽에서는 흐름을 재빨리 계산하는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:inside",
+            "taxonomy:day_pillar_imo"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "기분에 따라 말의 온도 차가 커서 어제와 오늘의 말이 다르게 들리기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:shadow",
+            "v4:material:day_pillar_imo"
+          ]
+        },
+        {
+          "text": "크게 약속한 날의 나와 일정표를 보는 날의 내가 다르곤 합니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imo:punch",
+            "v4:material:day_pillar_imo"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "socialEnergy": 0.7,
+        "emotionalExpression": 0.7,
+        "riskTaking": 0.5,
+        "spendingControl": -0.5,
+        "verbalOutput": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 바다가 햇빛을 넉넉히 받아 들뜬 말에도 무게가 실립니다.",
+        "weak": "달의 받침이 없으면 햇빛에 물이 마르듯 뜨겁게 시작한 일이 금방 식기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 햇빛이 흔들려 말의 온도 차가 더 크게 벌어지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:壬午#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:壬午",
+        "foundation:heavenly_stem:壬",
+        "foundation:earthly_branch:午",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_imo:*",
+        "v4:material:day_pillar_imo",
+        "taxonomy:day_pillar_imo"
+      ]
+    },
+    {
+      "id": "day_pillar_imsin",
+      "family": "dayPillar",
+      "traditionalName": "임신(壬申)",
+      "easyName": "바위틈의 물길",
+      "definition": "임신(壬申) 일주(태어난 날의 천간·지지 짝)입니다. 차가운 바위틈에서 큰 물길이 시작되는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "예약이 취소되면 근처 다른 장소와 이동 방법을 동시에 찾는 편입니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:scene",
+            "taxonomy:day_pillar_imsin"
+          ]
+        },
+        {
+          "text": "갑자기 조건이 달라져도 다른 길을 찾아 일을 이어 가는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:work",
+            "taxonomy:day_pillar_imsin"
+          ]
+        },
+        {
+          "text": "정보를 남보다 먼저 알거나 흐름을 빨리 읽는 데서 기회를 보는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:money",
+            "taxonomy:day_pillar_imsin"
+          ]
+        },
+        {
+          "text": "대화가 빠르게 오가며 서로의 생각을 넓혀 주는 만남을 즐기는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:love",
+            "taxonomy:day_pillar_imsin"
+          ]
+        },
+        {
+          "text": "문제를 풀며 다른 방법을 비교하다가 새 요령을 빨리 알아채는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:study",
+            "taxonomy:day_pillar_imsin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "쉬운 답이 보이면 설명을 건너뛰어 옆 사람이 과정을 놓치기 쉽습니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:shadow",
+            "v4:material:day_pillar_imsin"
+          ]
+        },
+        {
+          "text": "혼자 세 단계 앞서가 놓고 왜 못 따라오냐며 답답해하곤 합니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsin:punch",
+            "v4:material:day_pillar_imsin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "decisionSpeed": 0.6,
+        "noveltySeeking": 0.5,
+        "inquiry": 0.5,
+        "detailFocus": -0.4,
+        "independence": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 바위틈 물길이 굵어져 대안을 찾는 순발력이 더 커집니다.",
+        "weak": "달의 받침이 없으면 물길이 가늘어져 대안은 많아도 하나를 밀고 가기 어렵습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 바위가 갈라져 흐름이 급해지고 설명을 더 건너뛰기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:壬申#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:壬申",
+        "foundation:heavenly_stem:壬",
+        "foundation:earthly_branch:申",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_imsin:*",
+        "v4:material:day_pillar_imsin",
+        "taxonomy:day_pillar_imsin"
+      ]
+    },
+    {
+      "id": "day_pillar_imsul",
+      "family": "dayPillar",
+      "traditionalName": "임술(壬戌)",
+      "easyName": "성벽 앞의 물길",
+      "definition": "임술(壬戌) 일주(태어난 날의 천간·지지 짝)입니다. 큰 물길이 마른 성벽 앞에서 방향을 바꾸는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "큰 변화를 꿈꾸다가도 남겨 둔 약속부터 하나씩 정리하는 편입니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:scene",
+            "taxonomy:day_pillar_imsul"
+          ]
+        },
+        {
+          "text": "새 흐름을 읽되 지켜야 할 약속과 책임을 같이 따져 보는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:work",
+            "taxonomy:day_pillar_imsul"
+          ]
+        },
+        {
+          "text": "매력적인 기회라도 오래 감당할 수 있을지 먼저 생각하는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:money",
+            "taxonomy:day_pillar_imsul"
+          ]
+        },
+        {
+          "text": "깊은 대화와 분명한 신뢰가 함께 있어야 마음이 놓이는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:love",
+            "taxonomy:day_pillar_imsul"
+          ]
+        },
+        {
+          "text": "여러 가능성을 보다가도 내가 믿는 기준에 닿으면 방향을 다시 정하곤 합니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:inside",
+            "taxonomy:day_pillar_imsul"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "다른 길이 보이는데도 익숙한 원칙 때문에 망설이다 때를 놓치기 쉽습니다.",
+          "domains": [
+            "work",
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:shadow",
+            "v4:material:day_pillar_imsul"
+          ]
+        },
+        {
+          "text": "자유롭게 살고 싶다면서 지킬 규칙은 누구보다 많습니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_imsul:punch",
+            "v4:material:day_pillar_imsul"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "ruleAdherence": 0.6,
+        "trustThreshold": 0.5,
+        "riskTaking": -0.5,
+        "introspection": 0.4,
+        "dutifulness": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 물을 받쳐 주면 물길이 성벽을 돌아 새 길을 내는 힘이 더 커집니다.",
+        "weak": "달의 받침이 없으면 성벽 앞에서 물이 고이듯 원칙에 막혀 움직임이 느려지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 마른 성벽이 흔들려 지키던 규칙을 한꺼번에 놓기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:壬戌#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:壬戌",
+        "foundation:heavenly_stem:壬",
+        "foundation:earthly_branch:戌",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_imsul:*",
+        "v4:material:day_pillar_imsul",
+        "taxonomy:day_pillar_imsul"
+      ]
+    },
+    {
+      "id": "day_pillar_jeongchuk",
+      "family": "dayPillar",
+      "traditionalName": "정축(丁丑)",
+      "easyName": "찬 방의 작은 불씨",
+      "definition": "정축(丁丑) 일주(태어난 날의 천간·지지 짝)입니다. 차가운 방 안에서 꺼지지 않게 지키는 작은 불씨 같은 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "말로 보고 싶다고 하지는 않아도 바쁜 일정 한 칸을 비워 두는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:scene",
+            "taxonomy:day_pillar_jeongchuk"
+          ]
+        },
+        {
+          "text": "티 안 나는 준비와 반복을 쌓아 어느 순간 믿고 맡길 사람이 되는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:work",
+            "taxonomy:day_pillar_jeongchuk"
+          ]
+        },
+        {
+          "text": "잘 쓰지 않는 큰돈보다 자주 남겨 두는 작은 몫에서 든든함을 느끼는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:money",
+            "taxonomy:day_pillar_jeongchuk"
+          ]
+        },
+        {
+          "text": "좋아하면 시간을 내고 약속을 지키며 자주 곁에 있는 것으로 마음을 전합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:love",
+            "taxonomy:day_pillar_jeongchuk"
+          ]
+        },
+        {
+          "text": "한번 붙든 내용은 조용히 되풀이하며 손에 익히는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:study",
+            "taxonomy:day_pillar_jeongchuk"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "표현을 아끼다 보니 무심한 사람으로 보이기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:shadow",
+            "v4:material:day_pillar_jeongchuk"
+          ]
+        },
+        {
+          "text": "본인은 충분히 표현했다고 생각하는데 상대는 아직 기다리고 있곤 합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongchuk:punch",
+            "v4:material:day_pillar_jeongchuk"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "persistence": 0.8,
+        "emotionalExpression": -0.7,
+        "verbalOutput": -0.5,
+        "spendingControl": 0.5,
+        "dutifulness": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 불을 받쳐 주면 찬 방의 불씨가 커져 묵묵한 꾸준함이 밖으로도 보입니다.",
+        "weak": "달의 받침이 없으면 불씨를 지키는 데 힘을 다 써서 표현할 여유가 더 줄기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 찬 방에 바람이 들어 지켜 온 불씨가 흔들리기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:丁丑#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:丁丑",
+        "foundation:heavenly_stem:丁",
+        "foundation:earthly_branch:丑",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_jeongchuk:*",
+        "v4:material:day_pillar_jeongchuk",
+        "taxonomy:day_pillar_jeongchuk"
+      ]
+    },
+    {
+      "id": "day_pillar_jeonghae",
+      "family": "dayPillar",
+      "traditionalName": "정해(丁亥)",
+      "easyName": "밤바다 위 등불",
+      "definition": "정해(丁亥) 일주(태어난 날의 천간·지지 짝)입니다. 깊은 밤바다 위에 작은 등불이 흔들리지 않게 켜진 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "영화를 보고 나면 줄거리보다 한 사람의 표정이 며칠씩 남는 편입니다.",
+          "domains": [
+            "study",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:scene",
+            "taxonomy:day_pillar_jeonghae"
+          ]
+        },
+        {
+          "text": "겉으로 드러나지 않은 필요를 읽어 글이나 세심한 결과물로 옮기는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:work",
+            "taxonomy:day_pillar_jeonghae"
+          ]
+        },
+        {
+          "text": "마음이 쉬는 공간이나 오래 몰입할 취미에는 돈을 아끼지 않습니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:money",
+            "taxonomy:day_pillar_jeonghae"
+          ]
+        },
+        {
+          "text": "깊은 이야기를 나눌 수 있어야 정이 붙고 조용한 동행만으로도 충분히 좋아합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:love",
+            "taxonomy:day_pillar_jeonghae"
+          ]
+        },
+        {
+          "text": "이야기와 느낌이 담긴 내용은 오래 품고 자기 말로 바꿔 이해하는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:study",
+            "taxonomy:day_pillar_jeonghae"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "마음에 남은 장면을 혼자 너무 오래 돌려 보다 잠을 놓치기 쉽습니다.",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:shadow",
+            "v4:material:day_pillar_jeonghae"
+          ]
+        },
+        {
+          "text": "답장을 쓰다 마음까지 다 담으려 해서 밤이 늦어지곤 합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeonghae:punch",
+            "v4:material:day_pillar_jeonghae"
+          ]
+        },
+        {
+          "text": "속으로 오래 품은 말이 입 밖으로 나오기까지 한참 걸리는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "kb:day_pillar_jeonghae",
+            "v4:material:day_pillar_jeonghae"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "introspection": 0.8,
+        "empathyResponse": 0.7,
+        "verbalOutput": -0.5,
+        "socialEnergy": -0.5,
+        "intimacyPace": -0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 불을 받쳐 주면 밤바다의 등불이 밝아져 깊은 감정을 말로 꺼낼 힘이 생깁니다.",
+        "weak": "달의 받침이 없으면 등불이 바다에 가려 혼자 품는 시간이 길어지고 외로움이 커지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 밤바다가 출렁여 등불이 꺼질까 마음이 더 불안해지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:丁亥#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:丁亥",
+        "foundation:heavenly_stem:丁",
+        "foundation:earthly_branch:亥",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_jeonghae:*",
+        "v4:material:day_pillar_jeonghae",
+        "taxonomy:day_pillar_jeonghae",
+        "kb:day_pillar_jeonghae"
+      ]
+    },
+    {
+      "id": "day_pillar_jeongmi",
+      "family": "dayPillar",
+      "traditionalName": "정미(丁未)",
+      "easyName": "따뜻한 방의 등불",
+      "definition": "정미(丁未) 일주(태어난 날의 천간·지지 짝)입니다. 따뜻한 방 안에서 작은 등불이 오래 켜진 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "오랜만에 오는 친구를 위해 예전에 좋아했던 반찬을 다시 준비하곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:scene",
+            "taxonomy:day_pillar_jeongmi"
+          ]
+        },
+        {
+          "text": "사람을 꾸준히 챙기고 작은 요청도 성의 있게 마무리하는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:work",
+            "taxonomy:day_pillar_jeongmi"
+          ]
+        },
+        {
+          "text": "집과 생활의 온도를 높이는 물건에 돈을 쓸 때 만족이 큽니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:money",
+            "taxonomy:day_pillar_jeongmi"
+          ]
+        },
+        {
+          "text": "함께 먹고 쉬는 시간이 쌓일수록 마음을 더 깊이 주는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:love",
+            "taxonomy:day_pillar_jeongmi"
+          ]
+        },
+        {
+          "text": "한번 들어온 정과 서운함이 모두 오래 머무는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:inside",
+            "taxonomy:day_pillar_jeongmi"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "챙겨 준 만큼 알아주길 속으로 기다리다 혼자 지치기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:shadow",
+            "v4:material:day_pillar_jeongmi"
+          ]
+        },
+        {
+          "text": "별것 아니라고 차려 놓고도 반응이 없으면 오래 서운해하곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmi:punch",
+            "v4:material:day_pillar_jeongmi"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "caretaking": 0.8,
+        "intimacyPace": -0.4,
+        "noveltySeeking": -0.5,
+        "emotionalExpression": -0.3,
+        "persistence": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 불을 받쳐 주면 방의 등불이 밝아져 챙기는 손길이 더 많은 사람에게 닿습니다.",
+        "weak": "달의 받침이 없으면 등불이 작아져 가까운 몇 사람만 챙기다 먼저 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 방문이 열려 오래 품은 서운함이 한 번에 나오기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:丁未#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:丁未",
+        "foundation:heavenly_stem:丁",
+        "foundation:earthly_branch:未",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_jeongmi:*",
+        "v4:material:day_pillar_jeongmi",
+        "taxonomy:day_pillar_jeongmi"
+      ]
+    },
+    {
+      "id": "day_pillar_jeongmyo",
+      "family": "dayPillar",
+      "traditionalName": "정묘(丁卯)",
+      "easyName": "봄 가지의 등불",
+      "definition": "정묘(丁卯) 일주(태어난 날의 천간·지지 짝)입니다. 봄 가지 사이에 켜진 작은 등불처럼 은근한 온기가 퍼지는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "생일 선물을 고를 때 가격보다 친구가 지나가며 예쁘다고 한 것을 떠올리는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:scene",
+            "taxonomy:day_pillar_jeongmyo"
+          ]
+        },
+        {
+          "text": "받는 사람의 취향과 느낌까지 미리 챙겨 넣는 일을 잘 맡는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:work",
+            "taxonomy:day_pillar_jeongmyo"
+          ]
+        },
+        {
+          "text": "작은 소품 하나도 내 공간과 어울리는지 따져 본 뒤에 고르는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:money",
+            "taxonomy:day_pillar_jeongmyo"
+          ]
+        },
+        {
+          "text": "다정한 말과 사소한 취향을 기억해 주는 태도에 마음이 움직이는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:love",
+            "taxonomy:day_pillar_jeongmyo"
+          ]
+        },
+        {
+          "text": "거친 이야기도 듣는 사람이 받아들일 온도로 바꿔 전하는 편입니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:strength",
+            "taxonomy:day_pillar_jeongmyo"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "분위기를 깨기 싫어 거절을 미루다 더 큰 부탁까지 떠안기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:shadow",
+            "v4:material:day_pillar_jeongmyo"
+          ]
+        },
+        {
+          "text": "선택하라고 해 놓고 상대가 내 취향을 못 알아주면 살짝 서운해하곤 합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongmyo:punch",
+            "v4:material:day_pillar_jeongmyo"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "empathyResponse": 0.7,
+        "directness": -0.6,
+        "boundarySetting": -0.5,
+        "caretaking": 0.5,
+        "conflictApproach": -0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 불을 받쳐 주면 봄 가지의 등불이 환해져 세심함이 더 많은 사람에게 전해집니다.",
+        "weak": "달의 받침이 없으면 등불이 가늘어져 남을 살피느라 내 바람을 말할 힘이 줄기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 봄 가지가 흔들려 미뤄 둔 거절이 한꺼번에 터지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:丁卯#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:丁卯",
+        "foundation:heavenly_stem:丁",
+        "foundation:earthly_branch:卯",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_jeongmyo:*",
+        "v4:material:day_pillar_jeongmyo",
+        "taxonomy:day_pillar_jeongmyo"
+      ]
+    },
+    {
+      "id": "day_pillar_jeongsa",
+      "family": "dayPillar",
+      "traditionalName": "정사(丁巳)",
+      "easyName": "불길 속 불씨",
+      "definition": "정사(丁巳) 일주(태어난 날의 천간·지지 짝)입니다. 작은 불씨가 빠른 불길 속에서 선명하게 살아나는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "새로 시작한 공예에 시간 가는 줄 모르고 같은 부분을 여러 번 고치는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:scene",
+            "taxonomy:day_pillar_jeongsa"
+          ]
+        },
+        {
+          "text": "흥미가 붙은 일을 맡으면 빠르게 파고들어 눈에 보이는 결과를 내는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:work",
+            "taxonomy:day_pillar_jeongsa"
+          ]
+        },
+        {
+          "text": "바로 해 보고 싶은 취미와 도구 앞에서는 결정이 유난히 빨라지는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:money",
+            "taxonomy:day_pillar_jeongsa"
+          ]
+        },
+        {
+          "text": "좋아할수록 눈치와 반응이 빨라지고 만남에 쏟는 정성도 커지는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:love",
+            "taxonomy:day_pillar_jeongsa"
+          ]
+        },
+        {
+          "text": "관심이 붙으면 겉으로 보이는 것보다 훨씬 뜨겁게 몰입하는 편입니다.",
+          "domains": [
+            "study",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:inside",
+            "taxonomy:day_pillar_jeongsa"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "지금 느끼는 마음이 전부인 것처럼 말해 다음 날 말을 바꾸기 쉽습니다.",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:shadow",
+            "v4:material:day_pillar_jeongsa"
+          ]
+        },
+        {
+          "text": "잠깐만 한다더니 밥 먹을 시간까지 넘겨 버리곤 합니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongsa:punch",
+            "v4:material:day_pillar_jeongsa"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "reactivity": 0.6,
+        "emotionalExpression": 0.6,
+        "decisionSpeed": 0.5,
+        "persistence": -0.4,
+        "noveltySeeking": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 불을 받쳐 주면 불씨가 불길과 합쳐져 몰입이 더 오래 선명하게 이어집니다.",
+        "weak": "달의 받침이 없으면 불씨가 불길에 먼저 타 버려 몰입이 금방 식고 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 빠른 불길이 흩어져 관심이 이리저리 옮겨 다니기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:丁巳#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:丁巳",
+        "foundation:heavenly_stem:丁",
+        "foundation:earthly_branch:巳",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_jeongsa:*",
+        "v4:material:day_pillar_jeongsa",
+        "taxonomy:day_pillar_jeongsa"
+      ]
+    },
+    {
+      "id": "day_pillar_jeongyu",
+      "family": "dayPillar",
+      "traditionalName": "정유(丁酉)",
+      "easyName": "보석 비추는 불빛",
+      "definition": "정유(丁酉) 일주(태어난 날의 천간·지지 짝)입니다. 작은 불빛이 보석의 표면을 섬세하게 비추는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "짧은 축하 카드도 종이와 첫 문장을 바꿔 가며 고르는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:scene",
+            "taxonomy:day_pillar_jeongyu"
+          ]
+        },
+        {
+          "text": "고객에게 닿는 문장과 마지막 마감을 섬세하게 다듬는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:work",
+            "taxonomy:day_pillar_jeongyu"
+          ]
+        },
+        {
+          "text": "많이 사기보다 오래 아낄 한 가지를 잘 고르는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:money",
+            "taxonomy:day_pillar_jeongyu"
+          ]
+        },
+        {
+          "text": "상대 취향에 맞춘 선물과 세밀한 말에서 애정을 드러내는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:love",
+            "taxonomy:day_pillar_jeongyu"
+          ]
+        },
+        {
+          "text": "소중한 것일수록 아주 사소한 차이까지 정성껏 들여다보는 편입니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:inside",
+            "taxonomy:day_pillar_jeongyu"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "마음을 전할 때조차 완벽하려다 정작 말할 때를 놓치기 쉽습니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:shadow",
+            "v4:material:day_pillar_jeongyu"
+          ]
+        },
+        {
+          "text": "마음을 전하려다 포장을 고르는 데 마음을 다 써 버리곤 합니다.",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_jeongyu:punch",
+            "v4:material:day_pillar_jeongyu"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "perfectionism": 0.7,
+        "detailFocus": 0.6,
+        "caretaking": 0.5,
+        "emotionalExpression": 0.3,
+        "spendingControl": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 불을 받쳐 주면 보석을 비추는 빛이 커져 정성이 더 많은 사람 눈에 보입니다.",
+        "weak": "달의 받침이 없으면 불빛이 가늘어져 작은 차이에 매달리다 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 보석이 흔들려 다듬던 마감을 급히 내놓기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:丁酉#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:丁酉",
+        "foundation:heavenly_stem:丁",
+        "foundation:earthly_branch:酉",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_jeongyu:*",
+        "v4:material:day_pillar_jeongyu",
+        "taxonomy:day_pillar_jeongyu"
+      ]
+    },
+    {
+      "id": "day_pillar_muin",
+      "family": "dayPillar",
+      "traditionalName": "무인(戊寅)",
+      "easyName": "숲길 열리는 산",
+      "definition": "무인(戊寅) 일주(태어난 날의 천간·지지 짝)입니다. 큰 산에 새 숲길이 열리는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "취미 모임에 들어갔다가 장소와 다음 모임까지 맡아 알아보곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:scene",
+            "taxonomy:day_pillar_muin"
+          ]
+        },
+        {
+          "text": "새 사업이나 팀의 시작에서 방향뿐 아니라 버틸 바탕까지 챙기는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:work",
+            "taxonomy:day_pillar_muin"
+          ]
+        },
+        {
+          "text": "당장 쓸 돈과 앞으로 키울 돈을 나눠서 생각하는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:money",
+            "taxonomy:day_pillar_muin"
+          ]
+        },
+        {
+          "text": "함께 해 보고 싶은 일이 생기면 관계에도 미래의 자리를 내주는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:love",
+            "taxonomy:day_pillar_muin"
+          ]
+        },
+        {
+          "text": "지금 가진 기반을 지키기만 하는 것은 조금 아쉬워하는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:inside",
+            "taxonomy:day_pillar_muin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "내가 맡으면 된다고 일을 크게 벌여 주변까지 바빠지기 쉽습니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:shadow",
+            "v4:material:day_pillar_muin"
+          ]
+        },
+        {
+          "text": "작게 시작하자더니 내가 해야 할 일이 제일 커져 있곤 합니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muin:punch",
+            "v4:material:day_pillar_muin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "controlNeed": 0.6,
+        "riskTaking": 0.5,
+        "dutifulness": 0.6,
+        "planning": 0.4,
+        "socialEnergy": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 산의 흙을 받쳐 주면 새 숲길을 내면서도 바탕이 흔들리지 않습니다.",
+        "weak": "달의 받침이 없으면 산이 얇아져 벌인 일을 혼자 떠받치다 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 숲길이 끊겨 벌여 놓은 일을 급히 접거나 옮기기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:戊寅#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:戊寅",
+        "foundation:heavenly_stem:戊",
+        "foundation:earthly_branch:寅",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_muin:*",
+        "v4:material:day_pillar_muin",
+        "taxonomy:day_pillar_muin"
+      ]
+    },
+    {
+      "id": "day_pillar_muja",
+      "family": "dayPillar",
+      "traditionalName": "무자(戊子)",
+      "easyName": "물길 막은 큰 둑",
+      "definition": "무자(戊子) 일주(태어난 날의 천간·지지 짝)입니다. 큰 둑이 깊은 물길을 붙잡고 있는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "여행 예산은 꼼꼼히 정해 놓고 정작 가장 가고 싶은 곳은 말하지 않는 편입니다.",
+          "domains": [
+            "money",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:scene",
+            "taxonomy:day_pillar_muja"
+          ]
+        },
+        {
+          "text": "움직이는 사람과 돈을 살피며 일이 새지 않게 붙들어 주는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:work",
+            "taxonomy:day_pillar_muja"
+          ]
+        },
+        {
+          "text": "얼마가 들어오느냐만큼 언제 나가느냐를 중요하게 보는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:money",
+            "taxonomy:day_pillar_muja"
+          ]
+        },
+        {
+          "text": "가까워질수록 상대의 생활은 알고 싶지만 내 마음은 쉽게 열지 않습니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:love",
+            "taxonomy:day_pillar_muja"
+          ]
+        },
+        {
+          "text": "겉이 조용할수록 안에서는 여러 경우의 수를 계산하는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:inside",
+            "taxonomy:day_pillar_muja"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "불안해지면 모든 것을 직접 관리하려 들어 주변이 답답해지기 쉽습니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:shadow",
+            "v4:material:day_pillar_muja"
+          ]
+        },
+        {
+          "text": "상대를 믿는다면서 모든 세부 사항은 직접 확인하고 싶어 합니다.",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muja:punch",
+            "v4:material:day_pillar_muja"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "controlNeed": 0.7,
+        "emotionalExpression": -0.7,
+        "trustThreshold": 0.6,
+        "spendingControl": 0.5,
+        "planning": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 흙을 받쳐 주면 둑이 두꺼워져 깊은 물길을 느긋하게 관리합니다.",
+        "weak": "달의 받침이 없으면 둑이 얇아져 물이 샐까 모든 것을 혼자 붙들기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 둑 아래 물이 출렁여 숨겨 둔 불안이 겉으로 드러나기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:戊子#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:戊子",
+        "foundation:heavenly_stem:戊",
+        "foundation:earthly_branch:子",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_muja:*",
+        "v4:material:day_pillar_muja",
+        "taxonomy:day_pillar_muja"
+      ]
+    },
+    {
+      "id": "day_pillar_mujin",
+      "family": "dayPillar",
+      "traditionalName": "무진(戊辰)",
+      "easyName": "산 아래 저수지",
+      "definition": "무진(戊辰) 일주(태어난 날의 천간·지지 짝)입니다. 큰 산 아래 넓은 저수지가 숨어 있는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "이사를 생각할 때 인테리어보다 앞으로 몇 년 살기 편할지를 먼저 보는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:scene",
+            "taxonomy:day_pillar_mujin"
+          ]
+        },
+        {
+          "text": "사람과 일이 늘어날 때 오래 굴러갈 바탕부터 마련하는 쪽입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:work",
+            "taxonomy:day_pillar_mujin"
+          ]
+        },
+        {
+          "text": "금방 사라지는 즐거움보다 남겨 둘 자산과 경험에 관심이 가는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:money",
+            "taxonomy:day_pillar_mujin"
+          ]
+        },
+        {
+          "text": "감정만큼 같이 살아갈 현실을 중요하게 보고 안정감을 애정으로 느끼는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:love",
+            "taxonomy:day_pillar_mujin"
+          ]
+        },
+        {
+          "text": "당장 쓸모가 안 보여도 언젠가 쓸 것 같아 물건을 모아 두는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:question",
+            "taxonomy:day_pillar_mujin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "맡은 것을 내려놓는 데 인색해 혼자 짐을 늘리기 쉽습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:shadow",
+            "v4:material:day_pillar_mujin"
+          ]
+        },
+        {
+          "text": "다 맡아 주고 나서 왜 나만 짐이 많냐고 속으로 세어 보곤 합니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_mujin:punch",
+            "v4:material:day_pillar_mujin"
+          ]
+        },
+        {
+          "text": "한번 맡은 책임을 다른 사람에게 넘기는 속도가 늦은 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "kb:day_pillar_mujin",
+            "v4:material:day_pillar_mujin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "persistence": 0.7,
+        "dutifulness": 0.7,
+        "planning": 0.5,
+        "noveltySeeking": -0.5,
+        "possessiveness": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 흙을 받쳐 주면 산 아래 저수지가 가득 차 모아 둔 자원을 넉넉히 씁니다.",
+        "weak": "달의 받침이 없으면 저수지만 넓고 산이 얇아 짊어진 책임에 먼저 눌리기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 저수지의 물이 터져 모아 둔 것을 급히 내놓게 되기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:戊辰#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:戊辰",
+        "foundation:heavenly_stem:戊",
+        "foundation:earthly_branch:辰",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_mujin:*",
+        "v4:material:day_pillar_mujin",
+        "taxonomy:day_pillar_mujin",
+        "kb:day_pillar_mujin"
+      ]
+    },
+    {
+      "id": "day_pillar_muo",
+      "family": "dayPillar",
+      "traditionalName": "무오(戊午)",
+      "easyName": "태양 아래 큰 산",
+      "definition": "무오(戊午) 일주(태어난 날의 천간·지지 짝)입니다. 뜨거운 태양 아래 큰 산이 선명하게 드러나는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "모임을 이끌고 정산까지 마친 뒤에야 오늘 한 번도 못 쉬었다는 걸 알아차리곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:scene",
+            "taxonomy:day_pillar_muo"
+          ]
+        },
+        {
+          "text": "사람들의 시선이 모이는 역할에서 중심을 잡고 결과까지 챙기는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:work",
+            "taxonomy:day_pillar_muo"
+          ]
+        },
+        {
+          "text": "내 역할에 걸맞은 품질과 오래 쓸 물건을 중요하게 여기는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:money",
+            "taxonomy:day_pillar_muo"
+          ]
+        },
+        {
+          "text": "좋아하면 든든한 사람이 되고 싶어 상대의 일까지 대신 챙기는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:love",
+            "taxonomy:day_pillar_muo"
+          ]
+        },
+        {
+          "text": "사람들이 기대하는 만큼 해내야 한다는 마음이 뜨겁게 타는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:inside",
+            "taxonomy:day_pillar_muo"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "지쳐도 괜찮은 척 버티다 쉬어야 할 때를 놓치기 쉽습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:shadow",
+            "v4:material:day_pillar_muo"
+          ]
+        },
+        {
+          "text": "든든한 척하다 보니 쉬겠다는 말이 제일 어려워지곤 합니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_muo:punch",
+            "v4:material:day_pillar_muo"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "attentionSeeking": 0.6,
+        "dutifulness": 0.8,
+        "caretaking": 0.5,
+        "emotionalExpression": -0.4,
+        "statusDrive": 0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 흙을 받쳐 주면 태양 아래 산이 더 넓어져 앞에 서는 부담을 여유 있게 버팁니다.",
+        "weak": "달의 받침이 없으면 햇빛에 산이 마르듯 겉은 당당해도 속이 먼저 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 태양이 가려져 버티던 자리에서 갑자기 내려오고 싶어지기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:戊午#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:戊午",
+        "foundation:heavenly_stem:戊",
+        "foundation:earthly_branch:午",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_muo:*",
+        "v4:material:day_pillar_muo",
+        "taxonomy:day_pillar_muo"
+      ]
+    },
+    {
+      "id": "day_pillar_musin",
+      "family": "dayPillar",
+      "traditionalName": "무신(戊申)",
+      "easyName": "산속의 금맥",
+      "definition": "무신(戊申) 일주(태어난 날의 천간·지지 짝)입니다. 큰 산속에 차가운 금맥이 박혀 있는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "예상보다 사람이 많이 와도 남는 자리와 물건을 찾아 상황을 정리하는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:scene",
+            "taxonomy:day_pillar_musin"
+          ]
+        },
+        {
+          "text": "급한 문제를 당장 해결하면서 다시 생기지 않을 방법까지 살피는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:work",
+            "taxonomy:day_pillar_musin"
+          ]
+        },
+        {
+          "text": "가지고 있는 기술과 물건을 어디에 다시 쓸지 잘 찾아내는 쪽입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:money",
+            "taxonomy:day_pillar_musin"
+          ]
+        },
+        {
+          "text": "힘들 때 말보다 실제로 도와주는 태도에서 믿음을 느끼는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:love",
+            "taxonomy:day_pillar_musin"
+          ]
+        },
+        {
+          "text": "겉으로는 버티면서 속으로는 다른 방법을 계속 찾는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:inside",
+            "taxonomy:day_pillar_musin"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "내가 수습해야 한다는 생각을 놓지 못해 남의 몫까지 떠안기 쉽습니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:shadow",
+            "v4:material:day_pillar_musin"
+          ]
+        },
+        {
+          "text": "혼자 해결해 놓고 다들 일이 쉬웠던 줄 아는 게 억울해지곤 합니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musin:punch",
+            "v4:material:day_pillar_musin"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "independence": 0.7,
+        "dutifulness": 0.6,
+        "planning": 0.5,
+        "riskTaking": -0.3,
+        "controlNeed": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 흙을 받쳐 주면 산이 두꺼워져 금맥을 캐듯 대안을 꺼낼 여유가 커집니다.",
+        "weak": "달의 받침이 없으면 산이 얇아져 금맥만 믿고 혼자 수습하다 지치기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 금맥이 드러나 숨겨 둔 대안을 급히 꺼내 쓰기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:戊申#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:戊申",
+        "foundation:heavenly_stem:戊",
+        "foundation:earthly_branch:申",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_musin:*",
+        "v4:material:day_pillar_musin",
+        "taxonomy:day_pillar_musin"
+      ]
+    },
+    {
+      "id": "day_pillar_musul",
+      "family": "dayPillar",
+      "traditionalName": "무술(戊戌)",
+      "easyName": "성벽 같은 산맥",
+      "definition": "무술(戊戌) 일주(태어난 날의 천간·지지 짝)입니다. 큰 산맥이 마른 성벽처럼 이어진 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "모두 집에 간 뒤에도 정리할 것이 남아 있으면 결국 다시 손을 대는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:scene",
+            "taxonomy:day_pillar_musul"
+          ]
+        },
+        {
+          "text": "남들이 지칠 때도 맡은 일을 놓지 않아 마지막 책임자로 남곤 합니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:work",
+            "taxonomy:day_pillar_musul"
+          ]
+        },
+        {
+          "text": "쉽게 움직이는 돈보다 안정적으로 지킬 몫에 더 신경을 쓰는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:money",
+            "taxonomy:day_pillar_musul"
+          ]
+        },
+        {
+          "text": "사랑도 오래 지키는 약속으로 여겨 가벼운 태도에는 실망하는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:love",
+            "taxonomy:day_pillar_musul"
+          ]
+        },
+        {
+          "text": "내가 지켜야 하는 사람과 약속의 무게를 오래 품고 가는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:inside",
+            "taxonomy:day_pillar_musul"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "버티는 것과 고집을 구분하지 못해 바꿔야 할 때도 그대로 가기 쉽습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:shadow",
+            "v4:material:day_pillar_musul"
+          ]
+        },
+        {
+          "text": "안 맡겠다고 해 놓고 남이 하는 게 답답해서 다시 맡곤 합니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_musul:punch",
+            "v4:material:day_pillar_musul"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "persistence": 0.8,
+        "dutifulness": 0.8,
+        "ruleAdherence": 0.5,
+        "noveltySeeking": -0.5,
+        "controlNeed": 0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 흙을 받쳐 주면 산맥이 더 길어져 끝까지 버티는 힘이 주변의 신뢰로 쌓입니다.",
+        "weak": "달의 받침이 없으면 마른 성벽이 갈라지듯 책임을 혼자 지다 금이 가기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 성벽이 흔들려 오래 맡아 온 자리를 갑자기 놓기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:戊戌#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:戊戌",
+        "foundation:heavenly_stem:戊",
+        "foundation:earthly_branch:戌",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_musul:*",
+        "v4:material:day_pillar_musul",
+        "taxonomy:day_pillar_musul"
+      ]
+    },
+    {
+      "id": "day_pillar_sinchuk",
+      "family": "dayPillar",
+      "traditionalName": "신축(辛丑)",
+      "easyName": "찬 창고의 보석",
+      "definition": "신축(辛丑) 일주(태어난 날의 천간·지지 짝)입니다. 차가운 창고 안에 보석이 조용히 보관된 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "몇 년 전에 만든 자료도 날짜별로 정리해 두어 필요한 순간 바로 찾습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:scene",
+            "taxonomy:day_pillar_sinchuk"
+          ]
+        },
+        {
+          "text": "기록과 결과물의 완성도를 꾸준히 지키는 일에서 신뢰를 얻는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:work",
+            "taxonomy:day_pillar_sinchuk"
+          ]
+        },
+        {
+          "text": "오래 보관해도 가치가 남을 물건인지 꼼꼼하게 따지는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:money",
+            "taxonomy:day_pillar_sinchuk"
+          ]
+        },
+        {
+          "text": "정이 붙기까지 시간이 걸리지만 쌓인 기억은 쉽게 버리지 않습니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:love",
+            "taxonomy:day_pillar_sinchuk"
+          ]
+        },
+        {
+          "text": "틀렸던 부분만 따로 모아 다시 보는 습관으로 실력을 다지는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:study",
+            "taxonomy:day_pillar_sinchuk"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "준비가 끝났다는 기준이 너무 높아 내놓을 때를 자꾸 미루기 쉽습니다.",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:shadow",
+            "v4:material:day_pillar_sinchuk"
+          ]
+        },
+        {
+          "text": "남들은 충분하다는데 본인만 아직 미완성이라고 여기곤 합니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinchuk:punch",
+            "v4:material:day_pillar_sinchuk"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "perfectionism": 0.8,
+        "intimacyPace": -0.6,
+        "persistence": 0.6,
+        "detailFocus": 0.6,
+        "attentionSeeking": -0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 보석을 받쳐 주면 창고 문이 열리듯 오래 다듬은 실력을 제때 꺼냅니다.",
+        "weak": "달의 받침이 없으면 찬 창고에 보석이 묻히듯 준비만 길어지고 꺼낼 용기가 줄기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 창고 문이 흔들려 보관해 둔 것을 급히 내보이게 되기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:辛丑#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:辛丑",
+        "foundation:heavenly_stem:辛",
+        "foundation:earthly_branch:丑",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_sinchuk:*",
+        "v4:material:day_pillar_sinchuk",
+        "taxonomy:day_pillar_sinchuk"
+      ]
+    },
+    {
+      "id": "day_pillar_sinhae",
+      "family": "dayPillar",
+      "traditionalName": "신해(辛亥)",
+      "easyName": "물속의 보석",
+      "definition": "신해(辛亥) 일주(태어난 날의 천간·지지 짝)입니다. 깊은 물속에서 보석이 조용히 빛나는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "작품 하나가 마음에 걸리면 작가의 예전 작업까지 찾아보는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:scene",
+            "taxonomy:day_pillar_sinhae"
+          ]
+        },
+        {
+          "text": "자료를 깊이 읽고 남들이 놓친 미묘한 의미를 찾아내는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:work",
+            "taxonomy:day_pillar_sinhae"
+          ]
+        },
+        {
+          "text": "남들이 잘 모르는 취향이나 오래 파고들 거리에는 기꺼이 값을 치르는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:money",
+            "taxonomy:day_pillar_sinhae"
+          ]
+        },
+        {
+          "text": "겉이 화려한 사람보다 대화할수록 깊어지는 사람에게 끌리는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:love",
+            "taxonomy:day_pillar_sinhae"
+          ]
+        },
+        {
+          "text": "한 문장의 숨은 뜻이 궁금해 관련 자료까지 깊이 찾아보는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:study",
+            "taxonomy:day_pillar_sinhae"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "작은 의문이 꼬리를 물면 생각 밖으로 나오지 못하고 혼자 잠기기 쉽습니다.",
+          "domains": [
+            "study",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:shadow",
+            "v4:material:day_pillar_sinhae"
+          ]
+        },
+        {
+          "text": "간단히 감상을 말해 달라는데 머릿속에서는 이미 긴 글이 되어 있곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinhae:punch",
+            "v4:material:day_pillar_sinhae"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "introspection": 0.8,
+        "inquiry": 0.7,
+        "learningDrive": 0.6,
+        "verbalOutput": -0.5,
+        "socialEnergy": -0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 보석을 받쳐 주면 물속에서도 빛이 또렷해져 깊이 본 것을 말로 꺼냅니다.",
+        "weak": "달의 받침이 없으면 보석이 깊은 물에 가라앉듯 생각만 깊어지고 밖으로 안 나오기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 물이 흐려져 오래 다듬던 판단을 급히 바꾸기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:辛亥#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:辛亥",
+        "foundation:heavenly_stem:辛",
+        "foundation:earthly_branch:亥",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_sinhae:*",
+        "v4:material:day_pillar_sinhae",
+        "taxonomy:day_pillar_sinhae"
+      ]
+    },
+    {
+      "id": "day_pillar_sinmi",
+      "family": "dayPillar",
+      "traditionalName": "신미(辛未)",
+      "easyName": "흙 속의 보석",
+      "definition": "신미(辛未) 일주(태어난 날의 천간·지지 짝)입니다. 흙 속의 보석이 천천히 빛을 얻는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "컵 하나를 사러 갔다가 손잡이의 감촉까지 확인하고서야 돌아오는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:scene",
+            "taxonomy:day_pillar_sinmi"
+          ]
+        },
+        {
+          "text": "사람이 오래 쓸 결과물의 마감과 편의를 다듬는 일을 잘 맡는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:work",
+            "taxonomy:day_pillar_sinmi"
+          ]
+        },
+        {
+          "text": "오래 쓰는 생활용품은 까다롭게 비교한 뒤 기꺼이 값을 내는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:money",
+            "taxonomy:day_pillar_sinmi"
+          ]
+        },
+        {
+          "text": "생활 취향이 맞고 작은 약속을 성의 있게 지키는 사람에게 정이 가는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:love",
+            "taxonomy:day_pillar_sinmi"
+          ]
+        },
+        {
+          "text": "예쁜 것과 실제로 손에 편한 것을 같이 따져 고르는 편입니다.",
+          "domains": [
+            "money",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:strength",
+            "taxonomy:day_pillar_sinmi"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "마음에 안 드는 작은 부분을 오래 붙들어 전체를 못 보기 쉽습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:shadow",
+            "v4:material:day_pillar_sinmi"
+          ]
+        },
+        {
+          "text": "아무거나 산다더니 조건을 하나씩 빼다 보면 남는 게 없는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmi:punch",
+            "v4:material:day_pillar_sinmi"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "detailFocus": 0.7,
+        "perfectionism": 0.6,
+        "spendingControl": 0.4,
+        "noveltySeeking": -0.4,
+        "decisionSpeed": -0.5
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 보석을 받쳐 주면 흙 속 보석이 빨리 빛을 얻어 취향이 결과물로 이어집니다.",
+        "weak": "달의 받침이 없으면 흙이 두꺼워져 다듬은 취향이 오래 묻혀 있기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 흙이 파헤쳐져 아직 덜 다듬은 것을 급히 내놓기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:辛未#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:辛未",
+        "foundation:heavenly_stem:辛",
+        "foundation:earthly_branch:未",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_sinmi:*",
+        "v4:material:day_pillar_sinmi",
+        "taxonomy:day_pillar_sinmi"
+      ]
+    },
+    {
+      "id": "day_pillar_sinmyo",
+      "family": "dayPillar",
+      "traditionalName": "신묘(辛卯)",
+      "easyName": "가지 사이 보석",
+      "definition": "신묘(辛卯) 일주(태어난 날의 천간·지지 짝)입니다. 부드러운 가지 사이에서 작은 보석이 빛나는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "친구 옷을 골라 줄 때 색보다 얼굴이 편해 보이는지를 먼저 보는 편입니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:scene",
+            "taxonomy:day_pillar_sinmyo"
+          ]
+        },
+        {
+          "text": "보이는 모습과 받는 사람의 느낌을 맞추는 일에서 실력이 드러나는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:work",
+            "taxonomy:day_pillar_sinmyo"
+          ]
+        },
+        {
+          "text": "가볍게 들른 가게에서도 내 취향에 맞는 작은 물건을 잘 찾아내는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:money",
+            "taxonomy:day_pillar_sinmyo"
+          ]
+        },
+        {
+          "text": "나만 알아보는 매력이 있는 사람에게 시선이 오래 머무는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:love",
+            "taxonomy:day_pillar_sinmyo"
+          ]
+        },
+        {
+          "text": "사람을 좋아하면서도 가까워진 뒤의 작은 차이에 민감해지는 편입니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:inside",
+            "taxonomy:day_pillar_sinmyo"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "마음에 걸린 것을 솔직히 말하기까지 오래 걸려 속으로만 쌓기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:shadow",
+            "v4:material:day_pillar_sinmyo"
+          ]
+        },
+        {
+          "text": "상대가 눈치채길 기다리면서도 표정은 끝까지 친절하곤 합니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinmyo:punch",
+            "v4:material:day_pillar_sinmyo"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "empathyResponse": 0.6,
+        "directness": -0.6,
+        "detailFocus": 0.6,
+        "conflictApproach": -0.5,
+        "emotionalExpression": -0.4
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 보석을 받쳐 주면 가지 사이 보석이 더 빛나 취향이 사람을 끄는 힘이 됩니다.",
+        "weak": "달의 받침이 없으면 가지에 보석이 가려지듯 섬세함이 속에만 머물고 말이 더 늦어지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 가지가 흔들려 참아 온 서운함이 갑자기 드러나기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:辛卯#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:辛卯",
+        "foundation:heavenly_stem:辛",
+        "foundation:earthly_branch:卯",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_sinmyo:*",
+        "v4:material:day_pillar_sinmyo",
+        "taxonomy:day_pillar_sinmyo"
+      ]
+    },
+    {
+      "id": "day_pillar_sinsa",
+      "family": "dayPillar",
+      "traditionalName": "신사(辛巳)",
+      "easyName": "불빛 아래 보석",
+      "definition": "신사(辛巳) 일주(태어난 날의 천간·지지 짝)입니다. 불빛 아래에서 보석의 결이 더 선명해지는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "잘 끝난 발표 뒤에도 마지막 화면의 간격 하나가 자꾸 생각나는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:scene",
+            "taxonomy:day_pillar_sinsa"
+          ]
+        },
+        {
+          "text": "발표나 시연을 앞두고 놓친 부분을 찾아내는 눈이 날카로운 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:work",
+            "taxonomy:day_pillar_sinsa"
+          ]
+        },
+        {
+          "text": "내 실력과 취향을 잘 보여 주는 물건에 값어치를 두는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:money",
+            "taxonomy:day_pillar_sinsa"
+          ]
+        },
+        {
+          "text": "대화 감각과 깔끔한 태도에 끌리다가도 가까워지면 작은 차이까지 신경 쓰는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:love",
+            "taxonomy:day_pillar_sinsa"
+          ]
+        },
+        {
+          "text": "잘하고 싶은 마음이 클수록 작은 흠이 더 크게 보이는 편입니다.",
+          "domains": [
+            "study",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:inside",
+            "taxonomy:day_pillar_sinsa"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "평가받는 순간 말이 뾰족해져 가까운 사람이 먼저 다치기 쉽습니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:shadow",
+            "v4:material:day_pillar_sinsa"
+          ]
+        },
+        {
+          "text": "칭찬 열 개보다 아쉬운 한마디가 더 크게 들리곤 합니다.",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinsa:punch",
+            "v4:material:day_pillar_sinsa"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "perfectionism": 0.8,
+        "reactivity": 0.5,
+        "statusDrive": 0.4,
+        "attentionSeeking": 0.3,
+        "emotionalExpression": 0.3
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 보석을 받쳐 주면 불빛 아래 결이 더 고와져 평가 앞에서도 여유가 생깁니다.",
+        "weak": "달의 받침이 없으면 불빛에 보석이 달아오르듯 평가 앞에서 더 예민해지기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 불빛이 흔들려 작은 흠에 평소보다 크게 반응하기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:辛巳#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:辛巳",
+        "foundation:heavenly_stem:辛",
+        "foundation:earthly_branch:巳",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_sinsa:*",
+        "v4:material:day_pillar_sinsa",
+        "taxonomy:day_pillar_sinsa"
+      ]
+    },
+    {
+      "id": "day_pillar_sinyu",
+      "family": "dayPillar",
+      "traditionalName": "신유(辛酉)",
+      "easyName": "거울 같은 보석",
+      "definition": "신유(辛酉) 일주(태어난 날의 천간·지지 짝)입니다. 잘 다듬어진 보석이 거울처럼 빛나는 모습입니다.",
+      "behaviorSignals": [
+        {
+          "text": "옷차림을 마친 뒤 작은 장식 하나를 빼야 비로소 마음에 드는 편입니다.",
+          "domains": [
+            "money",
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:scene",
+            "taxonomy:day_pillar_sinyu"
+          ]
+        },
+        {
+          "text": "결과물의 마지막 차이를 가려내고 수준을 지키는 일에서 힘을 내는 편입니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:work",
+            "taxonomy:day_pillar_sinyu"
+          ]
+        },
+        {
+          "text": "수량보다 한 가지의 품질과 만족감을 더 높게 치는 편입니다.",
+          "domains": [
+            "money"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:money",
+            "taxonomy:day_pillar_sinyu"
+          ]
+        },
+        {
+          "text": "서로의 취향과 예의를 존중하는 관계여야 마음이 편해지는 편입니다.",
+          "domains": [
+            "love"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:love",
+            "taxonomy:day_pillar_sinyu"
+          ]
+        },
+        {
+          "text": "대충 아는 것과 정확히 설명할 수 있는 것을 나눠 완성도를 높이는 편입니다.",
+          "domains": [
+            "study"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:study",
+            "taxonomy:day_pillar_sinyu"
+          ]
+        }
+      ],
+      "shadowSignals": [
+        {
+          "text": "내 기준에 못 미치면 좋은 것도 쉽게 깎아내려 주변이 눈치를 보기 쉽습니다.",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:shadow",
+            "v4:material:day_pillar_sinyu"
+          ]
+        },
+        {
+          "text": "거의 다 좋다면서 마지막 작은 흠 때문에 별로라고 말하곤 합니다.",
+          "domains": [
+            "relationships"
+          ],
+          "sourceRefs": [
+            "v4:depth:day_pillar_sinyu:punch",
+            "v4:material:day_pillar_sinyu"
+          ]
+        },
+        {
+          "text": "작은 결함 하나가 전체보다 크게 보여 평가가 박해지기 쉽습니다.",
+          "domains": [
+            "work"
+          ],
+          "sourceRefs": [
+            "kb:day_pillar_sinyu",
+            "v4:material:day_pillar_sinyu"
+          ]
+        }
+      ],
+      "dimensionTags": {
+        "perfectionism": 0.9,
+        "detailFocus": 0.6,
+        "directness": 0.4,
+        "trustThreshold": 0.4,
+        "noveltySeeking": -0.3
+      },
+      "strengthRule": {
+        "strong": "태어난 달이 보석을 받쳐 주면 거울 같은 빛이 더 또렷해져 기준이 남에게도 설득력을 얻습니다.",
+        "weak": "달의 받침이 없으면 거울에 흠집이 잘 나듯 작은 결함에 기분이 먼저 상하기 쉽습니다.",
+        "clash": "일지(날의 아래 글자)가 충(맞부딪힘)을 받으면 거울이 흔들려 지키던 기준을 급히 낮추거나 높이기 쉽습니다.",
+        "sourceRefs": [
+          "calc:day-pillar-root",
+          "foundation:day_pillar:辛酉#distinctions",
+          "foundation:position:day#condition",
+          "foundation:relation:chung"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:day_pillar:辛酉",
+        "foundation:heavenly_stem:辛",
+        "foundation:earthly_branch:酉",
+        "foundation:position:day",
+        "foundation:relation:chung",
+        "v4:depth:day_pillar_sinyu:*",
+        "v4:material:day_pillar_sinyu",
+        "taxonomy:day_pillar_sinyu",
+        "kb:day_pillar_sinyu"
+      ]
+    }
+  ],
+  "aliases": []
+}

@@ -8,7 +8,28 @@ type ReportStatusViewProps = {
   readonly title?: string;
   readonly message?: string;
   readonly support?: boolean;
+  /** 진행 단계(0~4). 생성 대기 화면에서만 넘긴다. */
+  readonly stage?: number;
 };
+
+/** 책이 만들어지는 순서(실제 생성 순서와 같다: 계산 → 근거 연결 → 집필 → 검수 → 저장). */
+export const PUBLICATION_STAGES = ["원국 분석", "성향 연결", "책 집필", "검수", "제본"] as const;
+const WRITING_STAGE = 2;
+
+function PublicationStages({ stage }: { readonly stage: number }) {
+  return (
+    <ol className={styles.stages} aria-label="책이 만들어지는 순서">
+      {PUBLICATION_STAGES.map((label, i) => (
+        <li key={label} aria-current={i === stage ? "step" : undefined} data-done={i < stage ? "true" : undefined}>{label}</li>
+      ))}
+    </ol>
+  );
+}
+
+/** 책 집필 단계의 장식: 종이에 줄이 한 줄씩 써지는 모습. 동작 줄이기 설정이면 멈춘 종이로 보인다. */
+function WritingPage() {
+  return <div className={styles.visual} aria-hidden="true"><div className={styles.writing}>{[0, 1, 2, 3, 4, 5, 6].map(i => <i key={i} />)}</div></div>;
+}
 
 const copy = {
   unavailable: { title: "책을 확인하지 못했습니다.", message: "잠시 후 다시 열어 주세요." },
@@ -35,7 +56,7 @@ const copy = {
   },
 } as const;
 
-export function ReportStatusView({ state, title, message, support = false }: ReportStatusViewProps) {
+export function ReportStatusView({ state, title, message, support = false, stage }: ReportStatusViewProps) {
   const waiting = state === "preparing" || state === "delayed";
   const showSupport = support || state === "attention";
 
@@ -44,12 +65,13 @@ export function ReportStatusView({ state, title, message, support = false }: Rep
       <div className={styles.container}>
         <p className={styles.brand}><Link href="/" aria-label="결리포트 홈">GYEOL REPORT</Link></p>
         <section className={styles.content} aria-labelledby="report-status-title">
-          {waiting || state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={waiting} /> : null}
+          {waiting && stage === WRITING_STAGE ? <WritingPage /> : waiting || state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={waiting} /> : null}
           <div className={styles.body}>
             <div role="status" aria-live="polite" aria-atomic="true">
               <h1 id="report-status-title" className={styles.title}>{title ?? copy[state].title}</h1>
               <p className={styles.message}>{message ?? copy[state].message}</p>
             </div>
+            {waiting && stage !== undefined ? <PublicationStages stage={stage} /> : null}
             {waiting ? (
               <div className={styles.note}>
                 <p>완성되면 이 화면에서 자동으로 보여드립니다.</p>

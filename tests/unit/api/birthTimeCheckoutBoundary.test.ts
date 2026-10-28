@@ -6,8 +6,8 @@ const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ 
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
 const person = { name: "검증", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
 function request(input: object) {
-  return new Request("https://example.test/api/payment-checkout/prepare", {
-    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+  return new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+    method: "POST", headers: { "Content-Type": "application/json", Origin: "https://gyeolreport.com" }, body: JSON.stringify({
       consent: adultCheckoutConsent(), provider: "toss", productType: "saju_mbti_full", inputSnapshot: {
         displayName: person.name, birthDate: person.birthDate,
         reportInputPayload: { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: input, userContext: { focusAreas: [] }, productOptions: {} },
@@ -40,7 +40,9 @@ describe("production input rejection before durable checkout writes", () => {
     expect(storage.create).not.toHaveBeenCalled();
     const body = await response.json();
     expect(body).not.toHaveProperty("checkoutSession");
-    if ("birthDate" in patch || ("approximateBirthTimeSlot" in patch && patch.approximateBirthTimeSlot === "JASI")) expect(body.error.message).toContain("원국이 달라집니다");
+    if ("approximateBirthTimeSlot" in patch && patch.approximateBirthTimeSlot === "JASI") expect(body.error.message).toContain("원국이 달라집니다");
+    // 절입일(2024-02-04 입춘)은 두 후보와 절기가 바뀐 시각을 밝히는 안내 문구로 거절한다.
+    if ("birthDate" in patch && "birthTimeUnknown" in patch) expect(body.error.message).toMatch(/월주[\s\S]*또는[\s\S]*오(전|후) \d+시 \d+분/);
     expect(body.error.message).not.toMatch(/RPC|SQL|stack|Supabase|BIRTH_TIME_UNCERTAIN/);
   });
   it.each([

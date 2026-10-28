@@ -1,0 +1,7874 @@
+{
+ "version": "cross-candidates-v5-1",
+ "method": "cross-score.ts rankPairs+selectTop(perFeature 4, perType ceil(limit/16)+4, perFamily ceil(limit*0.3))",
+ "limit": 200,
+ "totalPairs": 3279,
+ "candidates": [
+  {
+   "featureId": "element:FIRE:high",
+   "mbti": "ESFP",
+   "resonance": 2.77,
+   "tension": 0,
+   "strength": 2.77,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongo",
+   "mbti": "ESFP",
+   "resonance": 2.69,
+   "tension": 0,
+   "strength": 2.69,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_byeonghwa",
+   "mbti": "ESFP",
+   "resonance": 2.67,
+   "tension": 0,
+   "strength": 2.67,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeonghae",
+   "mbti": "INFJ",
+   "resonance": 2.52,
+   "tension": 0,
+   "strength": 2.52,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:high",
+   "mbti": "ENFP",
+   "resonance": 2.46,
+   "tension": 0,
+   "strength": 2.46,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongo",
+   "mbti": "ENFP",
+   "resonance": 2.42,
+   "tension": 0,
+   "strength": 2.42,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongchuk",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.42,
+   "strength": 2.42,
+   "kind": "tension",
+   "dimension": "persistence",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.7,
+     "mbti": 0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_musul",
+   "mbti": "ESTJ",
+   "resonance": 2.42,
+   "tension": 0,
+   "strength": 2.42,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": 0.8,
+     "product": 0.64
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:high",
+   "mbti": "INFJ",
+   "resonance": 0,
+   "tension": 2.41,
+   "strength": 2.41,
+   "kind": "tension",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": -0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": -0.6,
+     "product": -0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_byeonghwa",
+   "mbti": "ENFP",
+   "resonance": 2.38,
+   "tension": 0,
+   "strength": 2.38,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongo",
+   "mbti": "ENFJ",
+   "resonance": 2.38,
+   "tension": 0,
+   "strength": 2.38,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": 0.8,
+     "product": 0.64
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:high",
+   "mbti": "ENFJ",
+   "resonance": 2.37,
+   "tension": 0,
+   "strength": 2.37,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": 0.8,
+     "product": 0.64
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_imo",
+   "mbti": "ESFP",
+   "resonance": 2.36,
+   "tension": 0,
+   "strength": 2.36,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_sinchuk",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.36,
+   "strength": 2.36,
+   "kind": "tension",
+   "dimension": "perfectionism",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "perfectionism",
+     "feature": 0.8,
+     "mbti": -0.7,
+     "product": -0.56
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.6,
+     "mbti": 0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.5,
+     "mbti": 0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_eulchuk",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.3,
+   "strength": 2.3,
+   "kind": "tension",
+   "dimension": "persistence",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.6,
+     "mbti": 0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": 0.7,
+     "product": -0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_eulsa",
+   "mbti": "ENFP",
+   "resonance": 2.3,
+   "tension": 0,
+   "strength": 2.3,
+   "kind": "resonance",
+   "dimension": "intimacyPace",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "intimacyPace",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyehae",
+   "mbti": "INFJ",
+   "resonance": 2.3,
+   "tension": 0,
+   "strength": 2.3,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongchuk",
+   "mbti": "ESFP",
+   "resonance": 0,
+   "tension": 2.29,
+   "strength": 2.29,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.7,
+     "mbti": 0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": -0.7,
+     "product": -0.56
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyechuk",
+   "mbti": "ESFP",
+   "resonance": 0,
+   "tension": 2.28,
+   "strength": 2.28,
+   "kind": "tension",
+   "dimension": "planning",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "planning",
+     "feature": 0.7,
+     "mbti": -0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.6,
+     "mbti": 0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_imo",
+   "mbti": "ENFP",
+   "resonance": 2.27,
+   "tension": 0,
+   "strength": 2.27,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_byeonghwa",
+   "mbti": "ENFJ",
+   "resonance": 2.25,
+   "tension": 0,
+   "strength": 2.25,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.6,
+     "product": 0.18
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_sinhae",
+   "mbti": "INFJ",
+   "resonance": 2.25,
+   "tension": 0,
+   "strength": 2.25,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.7,
+     "mbti": 0.5,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_sinhae",
+   "mbti": "INTP",
+   "resonance": 2.25,
+   "tension": 0,
+   "strength": 2.25,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.6,
+     "product": 0.48
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeonghae",
+   "mbti": "INFP",
+   "resonance": 2.24,
+   "tension": 0,
+   "strength": 2.24,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": -0.5,
+     "product": 0.25
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongo",
+   "mbti": "ISTP",
+   "resonance": 0,
+   "tension": 2.21,
+   "strength": 2.21,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": -0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.7,
+     "mbti": -0.7,
+     "product": -0.49
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": 0.3,
+     "product": -0.12
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_imin",
+   "mbti": "ENTP",
+   "resonance": 2.21,
+   "tension": 0,
+   "strength": 2.21,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_muja",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.21,
+   "strength": 2.21,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.7,
+     "mbti": 0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.7,
+     "mbti": -0.6,
+     "product": -0.42
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_qi_sha",
+   "mbti": "ENTJ",
+   "resonance": 2.2,
+   "tension": 0,
+   "strength": 2.2,
+   "kind": "resonance",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_musul",
+   "mbti": "ISTJ",
+   "resonance": 2.19,
+   "tension": 0,
+   "strength": 2.19,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": 0.7,
+     "product": 0.56
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_eulchuk",
+   "mbti": "ESFP",
+   "resonance": 0,
+   "tension": 2.18,
+   "strength": 2.18,
+   "kind": "tension",
+   "dimension": "persistence",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": -0.7,
+     "product": -0.56
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.6,
+     "mbti": 0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": 0.7,
+     "product": -0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_musul",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.16,
+   "strength": 2.16,
+   "kind": "tension",
+   "dimension": "persistence",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.8,
+     "mbti": -0.6,
+     "product": -0.48
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyechuk",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.15,
+   "strength": 2.15,
+   "kind": "tension",
+   "dimension": "planning",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "planning",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.6,
+     "mbti": 0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_imin",
+   "mbti": "ENFP",
+   "resonance": 2.15,
+   "tension": 0,
+   "strength": 2.15,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_sinchuk",
+   "mbti": "ENTP",
+   "resonance": 0,
+   "tension": 2.15,
+   "strength": 2.15,
+   "kind": "tension",
+   "dimension": "detailFocus",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "detailFocus",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.8,
+     "mbti": -0.6,
+     "product": -0.48
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.6,
+     "mbti": 0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.5,
+     "mbti": 0.7,
+     "product": -0.35
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_byeonghwa",
+   "mbti": "ESFJ",
+   "resonance": 2.14,
+   "tension": 0,
+   "strength": 2.14,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.3,
+     "product": 0.09
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongmyo",
+   "mbti": "ENFJ",
+   "resonance": 2.14,
+   "tension": 0,
+   "strength": 2.14,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.6,
+     "mbti": -0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gihae",
+   "mbti": "INFJ",
+   "resonance": 2.12,
+   "tension": 0,
+   "strength": 2.12,
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "caretaking",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.4,
+     "mbti": -0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongmyo",
+   "mbti": "INFJ",
+   "resonance": 2.11,
+   "tension": 0,
+   "strength": 2.11,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongin",
+   "mbti": "ENFP",
+   "resonance": 2.1,
+   "tension": 0,
+   "strength": 2.1,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongchuk",
+   "mbti": "ISTJ",
+   "resonance": 2.1,
+   "tension": 0,
+   "strength": 2.1,
+   "kind": "resonance",
+   "dimension": "persistence",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": 0.7,
+     "product": 0.56
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.7,
+     "mbti": -0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": -0.5,
+     "product": 0.25
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongin",
+   "mbti": "ESFP",
+   "resonance": 2.09,
+   "tension": 0,
+   "strength": 2.09,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeonghae",
+   "mbti": "ISFP",
+   "resonance": 2.09,
+   "tension": 0,
+   "strength": 2.09,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.8,
+     "product": 0.64
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongmyo",
+   "mbti": "ISFP",
+   "resonance": 2.09,
+   "tension": 0,
+   "strength": 2.09,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.5,
+     "product": 0.25
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_sinchuk",
+   "mbti": "ISFJ",
+   "resonance": 2.09,
+   "tension": 0,
+   "strength": 2.09,
+   "kind": "resonance",
+   "dimension": "detailFocus",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "detailFocus",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.8,
+     "mbti": 0.6,
+     "product": 0.48
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.6,
+     "mbti": -0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyemyo",
+   "mbti": "ENFJ",
+   "resonance": 2.08,
+   "tension": 0,
+   "strength": 2.08,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.6,
+     "mbti": -0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongsa",
+   "mbti": "ENFP",
+   "resonance": 2.08,
+   "tension": 0,
+   "strength": 2.08,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gichuk",
+   "mbti": "ESTP",
+   "resonance": 0,
+   "tension": 2.07,
+   "strength": 2.07,
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "spendingControl",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.7,
+     "mbti": -0.7,
+     "product": -0.49
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "possessiveness",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyemi",
+   "mbti": "ENFJ",
+   "resonance": 2.07,
+   "tension": 0.24,
+   "strength": 2.07,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": 0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongmyo",
+   "mbti": "INFP",
+   "resonance": 2.07,
+   "tension": 0,
+   "strength": 2.07,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.6,
+     "mbti": -0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.5,
+     "product": 0.25
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyemi",
+   "mbti": "ISFJ",
+   "resonance": 2.06,
+   "tension": 0,
+   "strength": 2.06,
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "caretaking",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.8,
+     "mbti": 0.6,
+     "product": 0.48
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.5,
+     "product": 0.15
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gapsin",
+   "mbti": "ESTJ",
+   "resonance": 2.05,
+   "tension": 0,
+   "strength": 2.05,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.6,
+     "mbti": 0.5,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyeongo",
+   "mbti": "ESTP",
+   "resonance": 2.05,
+   "tension": 0,
+   "strength": 2.05,
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "competitiveness",
+     "feature": 0.8,
+     "mbti": 0.7,
+     "product": 0.56
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeongsa",
+   "mbti": "ESFP",
+   "resonance": 2.05,
+   "tension": 0,
+   "strength": 2.05,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_muja",
+   "mbti": "ESTJ",
+   "resonance": 2.05,
+   "tension": 0,
+   "strength": 2.05,
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "controlNeed",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.7,
+     "mbti": -0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.6,
+     "mbti": 0.5,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_qi_sha",
+   "mbti": "ESTJ",
+   "resonance": 2.05,
+   "tension": 0,
+   "strength": 2.05,
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_eulsa",
+   "mbti": "ESFP",
+   "resonance": 2.05,
+   "tension": 0,
+   "strength": 2.05,
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyeonggeum",
+   "mbti": "ESTJ",
+   "resonance": 2.04,
+   "tension": 0,
+   "strength": 2.04,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyechuk",
+   "mbti": "ESTP",
+   "resonance": 0,
+   "tension": 2.04,
+   "strength": 2.04,
+   "kind": "tension",
+   "dimension": "planning",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "planning",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.6,
+     "mbti": 0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.6,
+     "mbti": -0.5,
+     "product": -0.3
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": 0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyehae",
+   "mbti": "INTP",
+   "resonance": 2.04,
+   "tension": 0,
+   "strength": 2.04,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.6,
+     "product": 0.48
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.6,
+     "mbti": -0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gabo",
+   "mbti": "INFJ",
+   "resonance": 0,
+   "tension": 2.03,
+   "strength": 2.03,
+   "kind": "tension",
+   "dimension": "verbalOutput",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": -0.6,
+     "product": -0.42
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.4,
+     "mbti": -0.7,
+     "product": -0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_imo",
+   "mbti": "ESTP",
+   "resonance": 2.03,
+   "tension": 0,
+   "strength": 2.03,
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyemi",
+   "mbti": "INFJ",
+   "resonance": 2.02,
+   "tension": 0,
+   "strength": 2.02,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.6,
+     "mbti": -0.4,
+     "product": 0.24
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyeongo",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 2.02,
+   "strength": 2.02,
+   "kind": "tension",
+   "dimension": "competitiveness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "competitiveness",
+     "feature": 0.8,
+     "mbti": -0.9,
+     "product": -0.72
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.4,
+     "mbti": -0.5,
+     "product": -0.2
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_cai",
+   "mbti": "ESTP",
+   "resonance": 2.02,
+   "tension": 0,
+   "strength": 2.02,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_gyeongin",
+   "mbti": "ESTP",
+   "resonance": 2.02,
+   "tension": 0,
+   "strength": 2.02,
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_musul",
+   "mbti": "ENTP",
+   "resonance": 0,
+   "tension": 2.02,
+   "strength": 2.02,
+   "kind": "tension",
+   "dimension": "persistence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.8,
+     "mbti": -0.6,
+     "product": -0.48
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_sinmi",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2.01,
+   "strength": 2.01,
+   "kind": "tension",
+   "dimension": "detailFocus",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "detailFocus",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": 0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_giyu",
+   "mbti": "ENFP",
+   "resonance": 0,
+   "tension": 2,
+   "strength": 2,
+   "kind": "tension",
+   "dimension": "detailFocus",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "detailFocus",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.7,
+     "mbti": -0.7,
+     "product": -0.49
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.4,
+     "mbti": -0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.3,
+     "mbti": 0.9,
+     "product": -0.27
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_shang_guan",
+   "mbti": "ENTP",
+   "resonance": 2,
+   "tension": 0,
+   "strength": 2,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongin",
+   "mbti": "ESTP",
+   "resonance": 1.99,
+   "tension": 0,
+   "strength": 1.99,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "element_fire",
+   "mbti": "ESFP",
+   "resonance": 1.99,
+   "tension": 0,
+   "strength": 1.99,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:high",
+   "mbti": "INFJ",
+   "resonance": 1.99,
+   "tension": 0,
+   "strength": 1.99,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_jeonghae",
+   "mbti": "ESTP",
+   "resonance": 0,
+   "tension": 1.98,
+   "strength": 1.98,
+   "kind": "tension",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.7,
+     "mbti": -0.6,
+     "product": -0.42
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.5,
+     "mbti": 0.4,
+     "product": -0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_imin",
+   "mbti": "ESTP",
+   "resonance": 1.98,
+   "tension": 0,
+   "strength": 1.98,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.8,
+     "mbti": 0.8,
+     "product": 0.64
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "day_pillar_byeongsul",
+   "mbti": "ESTJ",
+   "resonance": 1.97,
+   "tension": 0.24,
+   "strength": 1.97,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyeonggeum",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 1.94,
+   "strength": 1.94,
+   "kind": "tension",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": -0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.7,
+     "mbti": -0.6,
+     "product": -0.42
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.3,
+     "mbti": -0.7,
+     "product": -0.21
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_yin",
+   "mbti": "INTP",
+   "resonance": 1.94,
+   "tension": 0,
+   "strength": 1.94,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyeonggeum",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.91,
+   "strength": 1.91,
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.3,
+     "mbti": -0.5,
+     "product": -0.15
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyeonggeum",
+   "mbti": "ENTJ",
+   "resonance": 1.87,
+   "tension": 0.12,
+   "strength": 1.87,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.3,
+     "mbti": -0.4,
+     "product": -0.12
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:hurtingOfficerMeetsOfficer",
+   "mbti": "ENTP",
+   "resonance": 1.83,
+   "tension": 0,
+   "strength": 1.83,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_jeonghwa",
+   "mbti": "INFJ",
+   "resonance": 1.82,
+   "tension": 0.32,
+   "strength": 1.82,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_imsu",
+   "mbti": "INTP",
+   "resonance": 1.82,
+   "tension": 0,
+   "strength": 1.82,
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:high",
+   "mbti": "ESTJ",
+   "resonance": 1.82,
+   "tension": 0,
+   "strength": 1.82,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.7,
+     "mbti": 0.5,
+     "product": 0.35
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": 0.5,
+     "product": 0.25
+    }
+   ]
+  },
+  {
+   "featureId": "element_fire",
+   "mbti": "ENFP",
+   "resonance": 1.81,
+   "tension": 0,
+   "strength": 1.81,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_cai",
+   "mbti": "ESFP",
+   "resonance": 1.81,
+   "tension": 0,
+   "strength": 1.81,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_yin",
+   "mbti": "INFJ",
+   "resonance": 1.79,
+   "tension": 0,
+   "strength": 1.79,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.5,
+     "product": 0.3
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:high",
+   "mbti": "INTJ",
+   "resonance": 1.78,
+   "tension": 0,
+   "strength": 1.78,
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:high",
+   "mbti": "INFP",
+   "resonance": 1.78,
+   "tension": 0,
+   "strength": 1.78,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.9,
+     "product": 0.72
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.3,
+     "mbti": -0.5,
+     "product": 0.15
+    }
+   ]
+  },
+  {
+   "featureId": "element_fire",
+   "mbti": "ENFJ",
+   "resonance": 1.77,
+   "tension": 0,
+   "strength": 1.77,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_goegang",
+   "mbti": "ENTJ",
+   "resonance": 1.74,
+   "tension": 0,
+   "strength": 1.74,
+   "kind": "resonance",
+   "dimension": "persistence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_qi_sha",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.74,
+   "strength": 1.74,
+   "kind": "tension",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.6,
+     "mbti": -0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_cai",
+   "mbti": "ENTP",
+   "resonance": 1.72,
+   "tension": 0,
+   "strength": 1.72,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": 0.5,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "element:WOOD:high",
+   "mbti": "ESTP",
+   "resonance": 1.72,
+   "tension": 0,
+   "strength": 1.72,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_qi_sha",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 1.7,
+   "strength": 1.7,
+   "kind": "tension",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.6,
+     "mbti": -0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_goegang",
+   "mbti": "ESTJ",
+   "resonance": 1.69,
+   "tension": 0,
+   "strength": 1.69,
+   "kind": "resonance",
+   "dimension": "persistence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_eulmok",
+   "mbti": "INFJ",
+   "resonance": 1.68,
+   "tension": 0,
+   "strength": 1.68,
+   "kind": "resonance",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyesu",
+   "mbti": "INFJ",
+   "resonance": 1.68,
+   "tension": 0,
+   "strength": 1.68,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "element:EARTH:high",
+   "mbti": "ESTJ",
+   "resonance": 1.68,
+   "tension": 0,
+   "strength": 1.68,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_yangin",
+   "mbti": "ESTJ",
+   "resonance": 1.66,
+   "tension": 0,
+   "strength": 1.66,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "independence",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_jeonghwa",
+   "mbti": "ISFP",
+   "resonance": 1.65,
+   "tension": 0,
+   "strength": 1.65,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.5,
+     "product": 0.25
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "element_fire",
+   "mbti": "ISTP",
+   "resonance": 0,
+   "tension": 1.65,
+   "strength": 1.65,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": -0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": 0.3,
+     "product": -0.09
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_imsu",
+   "mbti": "ENTP",
+   "resonance": 1.65,
+   "tension": 0,
+   "strength": 1.65,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:high",
+   "mbti": "ISFP",
+   "resonance": 1.65,
+   "tension": 0,
+   "strength": 1.65,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": 0.8,
+     "product": 0.64
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:outputHeavy",
+   "mbti": "ESFP",
+   "resonance": 1.64,
+   "tension": 0,
+   "strength": 1.64,
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.3,
+     "mbti": -0.9,
+     "product": 0.27
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_jeonghwa",
+   "mbti": "ISFJ",
+   "resonance": 1.61,
+   "tension": 0,
+   "strength": 1.61,
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "element_metal",
+   "mbti": "ESTJ",
+   "resonance": 1.6,
+   "tension": 0,
+   "strength": 1.6,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.5,
+     "mbti": 0.5,
+     "product": 0.25
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:low",
+   "mbti": "ESFP",
+   "resonance": 0,
+   "tension": 1.6,
+   "strength": 1.6,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.6,
+     "mbti": 0.9,
+     "product": -0.54
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.3,
+     "mbti": 0.9,
+     "product": -0.27
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.3,
+     "mbti": -0.5,
+     "product": -0.15
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_jeonghwa",
+   "mbti": "INFP",
+   "resonance": 1.58,
+   "tension": 0.24,
+   "strength": 1.58,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 6,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:low",
+   "mbti": "INFJ",
+   "resonance": 0,
+   "tension": 1.58,
+   "strength": 1.58,
+   "kind": "tension",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "introspection",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:low",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 1.58,
+   "strength": 1.58,
+   "kind": "tension",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "introspection",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_guan",
+   "mbti": "ESTJ",
+   "resonance": 1.57,
+   "tension": 0,
+   "strength": 1.57,
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "statusDrive",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.3,
+     "mbti": -0.5,
+     "product": 0.15
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyesu",
+   "mbti": "INFP",
+   "resonance": 1.56,
+   "tension": 0.12,
+   "strength": 1.56,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.3,
+     "mbti": -0.4,
+     "product": -0.12
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_cai",
+   "mbti": "ENTP",
+   "resonance": 0,
+   "tension": 1.56,
+   "strength": 1.56,
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "spendingControl",
+     "feature": 0.7,
+     "mbti": -0.7,
+     "product": -0.49
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:low",
+   "mbti": "INFJ",
+   "resonance": 1.54,
+   "tension": 0,
+   "strength": 1.54,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.6,
+     "mbti": -0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.3,
+     "mbti": -0.9,
+     "product": 0.27
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_cai",
+   "mbti": "ISTJ",
+   "resonance": 0,
+   "tension": 1.54,
+   "strength": 1.54,
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": 0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.5,
+     "mbti": -0.5,
+     "product": -0.25
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_muto",
+   "mbti": "ENTP",
+   "resonance": 0,
+   "tension": 1.54,
+   "strength": 1.54,
+   "kind": "tension",
+   "dimension": "persistence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "element:EARTH:high",
+   "mbti": "ISTJ",
+   "resonance": 1.53,
+   "tension": 0,
+   "strength": 1.53,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:wealthCreatesOfficer",
+   "mbti": "ESTJ",
+   "resonance": 1.53,
+   "tension": 0,
+   "strength": 1.53,
+   "kind": "resonance",
+   "dimension": "statusDrive",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "statusDrive",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gito",
+   "mbti": "ISFJ",
+   "resonance": 1.52,
+   "tension": 0,
+   "strength": 1.52,
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "caretaking",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.3,
+     "mbti": 0.6,
+     "product": 0.18
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.5,
+     "product": 0.15
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_muto",
+   "mbti": "ISTJ",
+   "resonance": 1.52,
+   "tension": 0,
+   "strength": 1.52,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.5,
+     "mbti": -0.5,
+     "product": 0.25
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": 0.4,
+     "product": 0.12
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:high",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.52,
+   "strength": 1.52,
+   "kind": "tension",
+   "dimension": "directness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:low",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.52,
+   "strength": 1.52,
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "introspection",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_cai",
+   "mbti": "ISTJ",
+   "resonance": 1.52,
+   "tension": 0,
+   "strength": 1.52,
+   "kind": "resonance",
+   "dimension": "spendingControl",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "spendingControl",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:high",
+   "mbti": "ESTP",
+   "resonance": 0,
+   "tension": 1.51,
+   "strength": 1.51,
+   "kind": "tension",
+   "dimension": "introspection",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.8,
+     "mbti": -0.8,
+     "product": -0.64
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.3,
+     "mbti": 0.4,
+     "product": -0.12
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:high",
+   "mbti": "ENFJ",
+   "resonance": 0,
+   "tension": 1.5,
+   "strength": 1.5,
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_cai",
+   "mbti": "ESFP",
+   "resonance": 0,
+   "tension": 1.5,
+   "strength": 1.5,
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "spendingControl",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.5,
+     "mbti": -0.5,
+     "product": -0.25
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.4,
+     "mbti": 0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "element:WOOD:high",
+   "mbti": "ESFP",
+   "resonance": 1.49,
+   "tension": 0,
+   "strength": 1.49,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_yangin",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.49,
+   "strength": 1.49,
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.7,
+     "mbti": -0.7,
+     "product": -0.49
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.4,
+     "mbti": -0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": -0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyesu",
+   "mbti": "ISFP",
+   "resonance": 1.48,
+   "tension": 0.18,
+   "strength": 1.48,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.3,
+     "mbti": -0.6,
+     "product": -0.18
+    }
+   ]
+  },
+  {
+   "featureId": "element:WATER:low",
+   "mbti": "ESTP",
+   "resonance": 1.48,
+   "tension": 0,
+   "strength": 1.48,
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "introspection",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_jie_cai",
+   "mbti": "ESTP",
+   "resonance": 1.48,
+   "tension": 0,
+   "strength": 1.48,
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "competitiveness",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    }
+   ]
+  },
+  {
+   "featureId": "twelve_sinsal_hwagae",
+   "mbti": "INFJ",
+   "resonance": 1.48,
+   "tension": 0,
+   "strength": 1.48,
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.6,
+     "mbti": -0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.4,
+     "mbti": 0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.3,
+     "mbti": 0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_eulmok",
+   "mbti": "ENFJ",
+   "resonance": 1.47,
+   "tension": 0,
+   "strength": 1.47,
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gyesu",
+   "mbti": "ESTP",
+   "resonance": 0,
+   "tension": 1.47,
+   "strength": 1.47,
+   "kind": "tension",
+   "dimension": "introspection",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": 0.4,
+     "product": -0.16
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.3,
+     "mbti": -0.5,
+     "product": -0.15
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:low",
+   "mbti": "ESTJ",
+   "resonance": 0,
+   "tension": 1.47,
+   "strength": 1.47,
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.6,
+     "mbti": 0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.4,
+     "mbti": 0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.4,
+     "mbti": 0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": 0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": -0.3,
+     "mbti": 0.5,
+     "product": -0.15
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_cheonmunseong",
+   "mbti": "INTP",
+   "resonance": 1.47,
+   "tension": 0,
+   "strength": 1.47,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.3,
+     "mbti": 0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_goegang",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.47,
+   "strength": 1.47,
+   "kind": "tension",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": -0.5,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:resourceHeavy",
+   "mbti": "INFJ",
+   "resonance": 1.46,
+   "tension": 0,
+   "strength": 1.46,
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "learningDrive",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.4,
+     "mbti": 0.5,
+     "product": 0.2
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "branch:午",
+   "mbti": "ESFP",
+   "resonance": 1.46,
+   "tension": 0,
+   "strength": 1.46,
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "stem:己",
+   "mbti": "ISFJ",
+   "resonance": 1.46,
+   "tension": 0,
+   "strength": 1.46,
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "caretaking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_yangin",
+   "mbti": "ENFJ",
+   "resonance": 0.15,
+   "tension": 1.45,
+   "strength": 1.45,
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.7,
+     "mbti": -0.8,
+     "product": -0.56
+    },
+    {
+     "dimension": "independence",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": 0.5,
+     "product": 0.15
+    }
+   ]
+  },
+  {
+   "featureId": "element:EARTH:high",
+   "mbti": "ESTP",
+   "resonance": 0,
+   "tension": 1.45,
+   "strength": 1.45,
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.5,
+     "mbti": 0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.7,
+     "mbti": -0.5,
+     "product": -0.35
+    },
+    {
+     "dimension": "possessiveness",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_muto",
+   "mbti": "ESTJ",
+   "resonance": 1.44,
+   "tension": 0.2,
+   "strength": 1.44,
+   "kind": "resonance",
+   "dimension": "persistence",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.5,
+     "mbti": 0.4,
+     "product": -0.2
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gabmok",
+   "mbti": "ENTJ",
+   "resonance": 1.44,
+   "tension": 0,
+   "strength": 1.44,
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:killingResourceFlow",
+   "mbti": "INTJ",
+   "resonance": 1.44,
+   "tension": 0,
+   "strength": 1.44,
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "learningDrive",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:officerHeavy",
+   "mbti": "ISFJ",
+   "resonance": 1.43,
+   "tension": 0,
+   "strength": 1.43,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.3,
+     "mbti": 0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "element:WOOD:high",
+   "mbti": "ENTP",
+   "resonance": 1.43,
+   "tension": 0,
+   "strength": 1.43,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 3,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:low",
+   "mbti": "ISFP",
+   "resonance": 1.42,
+   "tension": 0,
+   "strength": 1.42,
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.6,
+     "mbti": -0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_muto",
+   "mbti": "ISFJ",
+   "resonance": 1.41,
+   "tension": 0,
+   "strength": 1.41,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GOSINSAL",
+   "mbti": "INTP",
+   "resonance": 1.41,
+   "tension": 0,
+   "strength": 1.41,
+   "kind": "resonance",
+   "dimension": "independence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "independence",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_yangin",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 1.4,
+   "strength": 1.4,
+   "kind": "tension",
+   "dimension": "directness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.4,
+     "mbti": -0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": 0.7,
+     "mbti": -0.5,
+     "product": -0.35
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": -0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "twelve_sinsal_yeokma",
+   "mbti": "ESTP",
+   "resonance": 1.4,
+   "tension": 0,
+   "strength": 1.4,
+   "kind": "resonance",
+   "dimension": "mobility",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "mobility",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.2,
+     "mbti": -0.8,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:low",
+   "mbti": "ESFJ",
+   "resonance": 0,
+   "tension": 1.39,
+   "strength": 1.39,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.6,
+     "mbti": 0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": 0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.3,
+     "mbti": 0.9,
+     "product": -0.27
+    },
+    {
+     "dimension": "reactivity",
+     "feature": -0.4,
+     "mbti": 0.6,
+     "product": -0.24
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.3,
+     "mbti": -0.4,
+     "product": -0.12
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_baekho",
+   "mbti": "ENTJ",
+   "resonance": 1.39,
+   "tension": 0,
+   "strength": 1.39,
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": 0.6,
+     "product": 0.36
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_eulmok",
+   "mbti": "INFP",
+   "resonance": 1.38,
+   "tension": 0,
+   "strength": 1.38,
+   "kind": "resonance",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.3,
+     "mbti": 0.4,
+     "product": 0.12
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_baekho",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 1.38,
+   "strength": 1.38,
+   "kind": "tension",
+   "dimension": "reactivity",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": -0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": -0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_eulmok",
+   "mbti": "ENTJ",
+   "resonance": 0.32,
+   "tension": 1.37,
+   "strength": 1.37,
+   "kind": "tension",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "caretaking",
+     "feature": 0.3,
+     "mbti": -0.5,
+     "product": -0.15
+    }
+   ]
+  },
+  {
+   "featureId": "element:EARTH:low",
+   "mbti": "ESTP",
+   "resonance": 1.37,
+   "tension": 0,
+   "strength": 1.37,
+   "kind": "resonance",
+   "dimension": "mobility",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "mobility",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_cai",
+   "mbti": "ESTJ",
+   "resonance": 1.37,
+   "tension": 0,
+   "strength": 1.37,
+   "kind": "resonance",
+   "dimension": "spendingControl",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "spendingControl",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "twelve_sinsal_jangseong",
+   "mbti": "ENTJ",
+   "resonance": 1.37,
+   "tension": 0,
+   "strength": 1.37,
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "statusDrive",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:resourceHeavy",
+   "mbti": "INTJ",
+   "resonance": 1.37,
+   "tension": 0.21,
+   "strength": 1.37,
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "learningDrive",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.3,
+     "mbti": -0.7,
+     "product": -0.21
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GOSINSAL",
+   "mbti": "INTJ",
+   "resonance": 1.36,
+   "tension": 0,
+   "strength": 1.36,
+   "kind": "resonance",
+   "dimension": "independence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "independence",
+     "feature": 0.6,
+     "mbti": 0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_hyeonchim",
+   "mbti": "ESTJ",
+   "resonance": 1.36,
+   "tension": 0,
+   "strength": 1.36,
+   "kind": "resonance",
+   "dimension": "directness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "directness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.5,
+     "mbti": 0.5,
+     "product": 0.25
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "pattern_suda_mokbu",
+   "mbti": "ISFP",
+   "resonance": 1.35,
+   "tension": 0,
+   "strength": 1.35,
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.3,
+     "mbti": -0.5,
+     "product": 0.15
+    }
+   ]
+  },
+  {
+   "featureId": "branch:戌",
+   "mbti": "ISTJ",
+   "resonance": 1.34,
+   "tension": 0,
+   "strength": 1.34,
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "pattern_suda_mokbu",
+   "mbti": "ENTJ",
+   "resonance": 0,
+   "tension": 1.34,
+   "strength": 1.34,
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.6,
+     "mbti": 0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.3,
+     "mbti": 0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GWASUKSAL",
+   "mbti": "INTJ",
+   "resonance": 1.34,
+   "tension": 0,
+   "strength": 1.34,
+   "kind": "resonance",
+   "dimension": "intimacyPace",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.6,
+     "mbti": -0.8,
+     "product": 0.48
+    },
+    {
+     "dimension": "independence",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "element:FIRE:low",
+   "mbti": "INFP",
+   "resonance": 1.33,
+   "tension": 0,
+   "strength": 1.33,
+   "kind": "resonance",
+   "dimension": "reactivity",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "reactivity",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.6,
+     "mbti": -0.5,
+     "product": 0.3
+    },
+    {
+     "dimension": "introspection",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_guan",
+   "mbti": "ESFJ",
+   "resonance": 1.33,
+   "tension": 0,
+   "strength": 1.33,
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.7,
+     "mbti": 0.7,
+     "product": 0.49
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.6,
+     "mbti": 0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "statusDrive",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.3,
+     "mbti": -0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GOSINSAL",
+   "mbti": "ENFJ",
+   "resonance": 0,
+   "tension": 1.32,
+   "strength": 1.32,
+   "kind": "tension",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": 0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "independence",
+     "feature": 0.6,
+     "mbti": -0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": 0.8,
+     "product": -0.24
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.3,
+     "mbti": 0.7,
+     "product": -0.21
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_baekho",
+   "mbti": "ISFP",
+   "resonance": 0,
+   "tension": 1.32,
+   "strength": 1.32,
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "decisionSpeed",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.6,
+     "mbti": -0.6,
+     "product": -0.36
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": -0.8,
+     "product": -0.32
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.3,
+     "mbti": -0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GOSINSAL",
+   "mbti": "ISTP",
+   "resonance": 1.31,
+   "tension": 0,
+   "strength": 1.31,
+   "kind": "resonance",
+   "dimension": "independence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "independence",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.3,
+     "mbti": -0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_shang_guan",
+   "mbti": "INTJ",
+   "resonance": 1.31,
+   "tension": 0.25,
+   "strength": 1.31,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": -0.5,
+     "product": -0.25
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:outputHeavy",
+   "mbti": "ISTP",
+   "resonance": 0.21,
+   "tension": 1.31,
+   "strength": 1.31,
+   "kind": "tension",
+   "dimension": "verbalOutput",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.7,
+     "mbti": -0.9,
+     "product": -0.63
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.4,
+     "mbti": -0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_zheng_guan",
+   "mbti": "ISTJ",
+   "resonance": 1.31,
+   "tension": 0,
+   "strength": 1.31,
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "sharedDimensions": 3,
+   "contributions": [
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:hurtingOfficerMeetsOfficer",
+   "mbti": "INTJ",
+   "resonance": 1.31,
+   "tension": 0,
+   "strength": 1.31,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 3,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "branch:午",
+   "mbti": "ESFJ",
+   "resonance": 1.3,
+   "tension": 0,
+   "strength": 1.3,
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.3,
+     "mbti": 0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_yin",
+   "mbti": "INFP",
+   "resonance": 1.3,
+   "tension": 0,
+   "strength": 1.3,
+   "kind": "resonance",
+   "dimension": "introspection",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "introspection",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.4,
+     "product": 0.2
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:wealthCreatesOfficer",
+   "mbti": "ENTJ",
+   "resonance": 1.3,
+   "tension": 0.12,
+   "strength": 1.3,
+   "kind": "resonance",
+   "dimension": "statusDrive",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "statusDrive",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "controlNeed",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.3,
+     "mbti": -0.4,
+     "product": -0.12
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GWASUKSAL",
+   "mbti": "INTP",
+   "resonance": 1.29,
+   "tension": 0,
+   "strength": 1.29,
+   "kind": "resonance",
+   "dimension": "intimacyPace",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.6,
+     "mbti": -0.7,
+     "product": 0.42
+    },
+    {
+     "dimension": "independence",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": 0.6,
+     "product": 0.3
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "stem:乙",
+   "mbti": "INFP",
+   "resonance": 1.29,
+   "tension": 0,
+   "strength": 1.29,
+   "kind": "resonance",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.5,
+     "mbti": -0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_shang_guan",
+   "mbti": "INTP",
+   "resonance": 1.29,
+   "tension": 0.3,
+   "strength": 1.29,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.5,
+     "product": 0.35
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    }
+   ]
+  },
+  {
+   "featureId": "twelve_stage:제왕",
+   "mbti": "ENTJ",
+   "resonance": 1.29,
+   "tension": 0,
+   "strength": 1.29,
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "statusDrive",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "persistence",
+     "feature": 0.3,
+     "mbti": 0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:hurtingOfficerMeetsOfficer",
+   "mbti": "INTP",
+   "resonance": 1.29,
+   "tension": 0.24,
+   "strength": 1.29,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.7,
+     "mbti": 0.5,
+     "product": 0.35
+    },
+    {
+     "dimension": "conflictApproach",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:officerHeavy",
+   "mbti": "ENTP",
+   "resonance": 0,
+   "tension": 1.29,
+   "strength": 1.29,
+   "kind": "tension",
+   "dimension": "ruleAdherence",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "ruleAdherence",
+     "feature": 0.5,
+     "mbti": -0.9,
+     "product": -0.45
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.7,
+     "mbti": -0.6,
+     "product": -0.42
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.4,
+     "mbti": 0.6,
+     "product": -0.24
+    },
+    {
+     "dimension": "perfectionism",
+     "feature": 0.3,
+     "mbti": -0.6,
+     "product": -0.18
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_cheonmunseong",
+   "mbti": "ENTP",
+   "resonance": 1.29,
+   "tension": 0,
+   "strength": 1.29,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 3,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.7,
+     "product": 0.35
+    }
+   ]
+  },
+  {
+   "featureId": "branch:午",
+   "mbti": "ENFJ",
+   "resonance": 1.28,
+   "tension": 0,
+   "strength": 1.28,
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "socialEnergy",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "reactivity",
+     "feature": 0.4,
+     "mbti": 0.4,
+     "product": 0.16
+    }
+   ]
+  },
+  {
+   "featureId": "element:EARTH:low",
+   "mbti": "ENTP",
+   "resonance": 1.27,
+   "tension": 0,
+   "strength": 1.27,
+   "kind": "resonance",
+   "dimension": "planning",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "planning",
+     "feature": -0.4,
+     "mbti": -0.7,
+     "product": 0.28
+    },
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "ruleAdherence",
+     "feature": -0.3,
+     "mbti": -0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": -0.3,
+     "mbti": -0.7,
+     "product": 0.21
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:resourceHeavy",
+   "mbti": "INTP",
+   "resonance": 1.27,
+   "tension": 0.59,
+   "strength": 1.27,
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "sharedDimensions": 5,
+   "contributions": [
+    {
+     "dimension": "learningDrive",
+     "feature": 0.7,
+     "mbti": 0.8,
+     "product": 0.56
+    },
+    {
+     "dimension": "inquiry",
+     "feature": 0.4,
+     "mbti": 0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.5,
+     "mbti": -0.7,
+     "product": 0.35
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.5,
+     "mbti": -0.7,
+     "product": -0.35
+    },
+    {
+     "dimension": "empathyResponse",
+     "feature": 0.3,
+     "mbti": -0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:outputHeavy",
+   "mbti": "ENFJ",
+   "resonance": 1.27,
+   "tension": 0.15,
+   "strength": 1.27,
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.7,
+     "mbti": 0.9,
+     "product": 0.63
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.4,
+     "mbti": 0.6,
+     "product": 0.24
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.3,
+     "mbti": 0.5,
+     "product": -0.15
+    }
+   ]
+  },
+  {
+   "featureId": "element:METAL:low",
+   "mbti": "INFP",
+   "resonance": 1.26,
+   "tension": 0,
+   "strength": 1.26,
+   "kind": "resonance",
+   "dimension": "conflictApproach",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "conflictApproach",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "directness",
+     "feature": -0.4,
+     "mbti": -0.9,
+     "product": 0.36
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.6,
+     "mbti": -0.5,
+     "product": 0.3
+    },
+    {
+     "dimension": "decisionSpeed",
+     "feature": -0.4,
+     "mbti": -0.6,
+     "product": 0.24
+    }
+   ]
+  },
+  {
+   "featureId": "stem:己",
+   "mbti": "ENFJ",
+   "resonance": 1.26,
+   "tension": 0.24,
+   "strength": 1.26,
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "caretaking",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "boundarySetting",
+     "feature": -0.5,
+     "mbti": -0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "spendingControl",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "v4_structure:outputHeavy",
+   "mbti": "INTJ",
+   "resonance": 0,
+   "tension": 1.26,
+   "strength": 1.26,
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "emotionalExpression",
+     "feature": 0.5,
+     "mbti": -0.8,
+     "product": -0.4
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": 0.7,
+     "mbti": -0.5,
+     "product": -0.35
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.3,
+     "mbti": 0.9,
+     "product": -0.27
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.4,
+     "mbti": -0.6,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "ten_god_pian_yin",
+   "mbti": "INTJ",
+   "resonance": 1.26,
+   "tension": 0,
+   "strength": 1.26,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 3,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "socialEnergy",
+     "feature": -0.4,
+     "mbti": -0.8,
+     "product": 0.32
+    }
+   ]
+  },
+  {
+   "featureId": "day_master_gabmok",
+   "mbti": "INFP",
+   "resonance": 0,
+   "tension": 1.25,
+   "strength": 1.25,
+   "kind": "tension",
+   "dimension": "controlNeed",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "controlNeed",
+     "feature": 0.6,
+     "mbti": -0.8,
+     "product": -0.48
+    },
+    {
+     "dimension": "directness",
+     "feature": 0.4,
+     "mbti": -0.9,
+     "product": -0.36
+    },
+    {
+     "dimension": "planning",
+     "feature": 0.3,
+     "mbti": -0.7,
+     "product": -0.21
+    },
+    {
+     "dimension": "riskTaking",
+     "feature": 0.5,
+     "mbti": -0.4,
+     "product": -0.2
+    }
+   ]
+  },
+  {
+   "featureId": "twelve_sinsal_banan",
+   "mbti": "ENTJ",
+   "resonance": 1.25,
+   "tension": 0,
+   "strength": 1.25,
+   "kind": "resonance",
+   "dimension": "statusDrive",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "statusDrive",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "dutifulness",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "competitiveness",
+     "feature": 0.3,
+     "mbti": 0.9,
+     "product": 0.27
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": 0.2,
+     "mbti": 0.6,
+     "product": 0.12
+    }
+   ]
+  },
+  {
+   "featureId": "twelve_sinsal_yeokma",
+   "mbti": "ENTP",
+   "resonance": 1.25,
+   "tension": 0,
+   "strength": 1.25,
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "noveltySeeking",
+     "feature": 0.5,
+     "mbti": 0.9,
+     "product": 0.45
+    },
+    {
+     "dimension": "mobility",
+     "feature": 0.7,
+     "mbti": 0.6,
+     "product": 0.42
+    },
+    {
+     "dimension": "persistence",
+     "feature": -0.3,
+     "mbti": -0.8,
+     "product": 0.24
+    },
+    {
+     "dimension": "planning",
+     "feature": -0.2,
+     "mbti": -0.7,
+     "product": 0.14
+    }
+   ]
+  },
+  {
+   "featureId": "pattern_mokda_hwasik",
+   "mbti": "INTJ",
+   "resonance": 1.24,
+   "tension": 0,
+   "strength": 1.24,
+   "kind": "resonance",
+   "dimension": "planning",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "planning",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.4,
+     "mbti": 0.8,
+     "product": 0.32
+    },
+    {
+     "dimension": "verbalOutput",
+     "feature": -0.4,
+     "mbti": -0.5,
+     "product": 0.2
+    },
+    {
+     "dimension": "attentionSeeking",
+     "feature": -0.3,
+     "mbti": -0.6,
+     "product": 0.18
+    }
+   ]
+  },
+  {
+   "featureId": "shinsal:GWASUKSAL",
+   "mbti": "ENFJ",
+   "resonance": 0,
+   "tension": 1.24,
+   "strength": 1.24,
+   "kind": "tension",
+   "dimension": "intimacyPace",
+   "sharedDimensions": 4,
+   "contributions": [
+    {
+     "dimension": "intimacyPace",
+     "feature": -0.6,
+     "mbti": 0.7,
+     "product": -0.42
+    },
+    {
+     "dimension": "trustThreshold",
+     "feature": 0.5,
+     "mbti": -0.6,
+     "product": -0.3
+    },
+    {
+     "dimension": "independence",
+     "feature": 0.4,
+     "mbti": -0.7,
+     "product": -0.28
+    },
+    {
+     "dimension": "emotionalExpression",
+     "feature": -0.3,
+     "mbti": 0.8,
+     "product": -0.24
+    }
+   ]
+  },
+  {
+   "featureId": "sinsal_cheonmunseong",
+   "mbti": "INTJ",
+   "resonance": 1.24,
+   "tension": 0,
+   "strength": 1.24,
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "sharedDimensions": 3,
+   "contributions": [
+    {
+     "dimension": "inquiry",
+     "feature": 0.6,
+     "mbti": 0.9,
+     "product": 0.54
+    },
+    {
+     "dimension": "learningDrive",
+     "feature": 0.5,
+     "mbti": 0.8,
+     "product": 0.4
+    },
+    {
+     "dimension": "detailFocus",
+     "feature": -0.5,
+     "mbti": -0.6,
+     "product": 0.3
+    }
+   ]
+  }
+ ]
+}

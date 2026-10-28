@@ -110,6 +110,7 @@ type PageState =
     }
   | {
       readonly kind: "unavailable";
+      readonly retry?: boolean;
     }
   | {
       readonly kind: "expired";
@@ -145,7 +146,8 @@ async function loadPageState(reportId: string): Promise<PageState> {
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
       return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING" };
     }
-    if (process.env.NODE_ENV === "production") return { kind: "unavailable" };
+    // 저장소 일시 장애는 자동으로 다시 확인한다(정적 화면에 멈추지 않게).
+    if (process.env.NODE_ENV === "production") return { kind: "unavailable", retry: true };
   }
   const previewResult = await loadProductPreviewPageState(reportId);
 
@@ -1550,7 +1552,7 @@ export default async function ReportResultPage({
       const { StoredBookReport } = await import("../../../lib/book/storedReport");
       return <StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} />;
     }
-    if (ticket.kind === "storageError") return <ReportStatusView state="unavailable" title="책의 열람 정보를 확인하지 못했습니다." message="잠시 후 다시 열어 주세요." support />;
+    if (ticket.kind === "storageError") return <ReportGenerationStatus retry />;
     if (ticket.kind === "expired") return renderExpiredState();
     if (ticket.kind === "invalidSnapshot") return renderInvalidSnapshotState();
   }
@@ -1563,7 +1565,7 @@ export default async function ReportResultPage({
   }
 
   if (state.kind === "unavailable") {
-    return renderUnavailableState();
+    return state.retry ? <ReportGenerationStatus retry /> : renderUnavailableState();
   }
 
   if (state.kind === "expired") {

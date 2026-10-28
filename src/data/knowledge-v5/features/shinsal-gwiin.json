@@ -1,0 +1,4518 @@
+{
+ "features": [
+  {
+   "id": "sinsal_hyeonchim",
+   "family": "shinsal",
+   "traditionalName": "懸針殺(현침살)",
+   "easyName": "바늘 같은 눈",
+   "definition": "현침살(매달린 바늘처럼 정확히 짚는 표식). 글자 모양이 바늘처럼 곧은 간지가 겹칠 때 붙입니다. 분석과 교정에 강한 쪽으로 읽습니다.",
+   "behaviorSignals": [
+    {
+     "text": "완성됐다는 자료를 받아도 숫자와 설명이 안 맞는 곳을 찾아내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hyeonchim:work",
+      "taxonomy:sinsal_hyeonchim"
+     ]
+    },
+    {
+     "text": "틀린 답에서 어느 지점부터 생각이 어긋났는지 짚어 내는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hyeonchim:study",
+      "kb:sinsal_hyeonchim"
+     ]
+    },
+    {
+     "text": "상대가 평소와 다른 단어를 쓰면 기분이 달라졌는지 빠르게 알아채는 편입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hyeonchim:love"
+     ]
+    },
+    {
+     "text": "다들 고개를 끄덕일 때 혼자 앞 페이지와 말이 다르다는 점을 짚고 넘어가는 쪽입니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hyeonchim:scene",
+      "taxonomy:sinsal_hyeonchim"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "틀린 건 고쳤는데 상대 표정까지 굳어 버릴 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hyeonchim:punch",
+      "v4:depth:sinsal_hyeonchim:shadow"
+     ]
+    },
+    {
+     "text": "톡 답장이 짧고 정확해서 차갑게 보이기 쉽습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_hyeonchim",
+      "kb:sinsal_hyeonchim"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "detailFocus": 0.6,
+    "directness": 0.5,
+    "perfectionism": 0.5,
+    "empathyResponse": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 짚어 내는 말이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 짚어 내는 말이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "바늘 글자가 두 기둥 이상에 겹치면 정확히 짚는 성향이 또렷해진다고 봅니다. 겹친 수를 근거 수로 더하지는 않습니다.",
+    "clash": "그 글자가 충을 받으면 짚는 힘이 흩어져 말이 거칠어지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:HYEONCHIMSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:hyeonchim#appliesWhen",
+     "foundation:shinsal_gwiin:hyeonchim#doNotApply",
+     "foundation:shinsal_gwiin:hyeonchim#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:HYEONCHIMSAL",
+     "kb:sinsal_hyeonchim"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:hyeonchim",
+    "foundation:shinsal_gwiin:hyeonchim#definition",
+    "foundation:shinsal_gwiin:hyeonchim#appliesWhen",
+    "foundation:shinsal_gwiin:hyeonchim#doNotApply",
+    "foundation:shinsal_gwiin:hyeonchim#distinctions",
+    "v4:material:sinsal_hyeonchim",
+    "taxonomy:sinsal_hyeonchim",
+    "kb:sinsal_hyeonchim",
+    "v4:depth:sinsal_hyeonchim:*",
+    "classic:repo_stars:SHINSAL_RULES:HYEONCHIMSAL",
+    "classic:repo_knowledge:sinsal_hyeonchim"
+   ],
+   "aliases": [
+    "현침살",
+    "현침",
+    "懸針殺"
+   ]
+  },
+  {
+   "id": "sinsal_hongyeom",
+   "family": "shinsal",
+   "traditionalName": "紅艶殺(홍염살)",
+   "easyName": "가까이서 느끼는 매력",
+   "definition": "홍염살(가까이 올수록 선명해지는 붉은 매력의 표식). 일간과 특정 지지의 짝으로 정합니다. 친밀한 자리에서 호감이 커지는 쪽으로 읽습니다.",
+   "behaviorSignals": [
+    {
+     "text": "여럿이 있을 때보다 둘이 이야기할 때 상대가 느끼는 호감이 더 커지는 편입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hongyeom:love",
+      "taxonomy:sinsal_hongyeom"
+     ]
+    },
+    {
+     "text": "모임에서는 조용하다가 돌아가는 길에 둘의 대화가 유독 길어지곤 합니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hongyeom:scene"
+     ]
+    },
+    {
+     "text": "편해진 상대에게만 나오는 말투와 표정을 따로 가지고 있습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hongyeom:inside",
+      "v4:depth:sinsal_hongyeom:relationships"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "친절하게 말했을 뿐인데 상대는 특별한 뜻이 있는지 생각하기 쉽습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_hongyeom:punch",
+      "v4:depth:sinsal_hongyeom:shadow"
+     ]
+    },
+    {
+     "text": "몇 번 만난 사이인데 상대의 기대가 먼저 앞서가 거리를 두게 되기 쉽습니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_hongyeom",
+      "kb:sinsal_hongyeom"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "intimacyPace": 0.5,
+    "emotionalExpression": 0.3,
+    "socialEnergy": 0.2,
+    "attentionSeeking": -0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 친밀한 매력이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 친밀한 매력이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "짝이 되는 글자가 둘 이상이면 가까운 자리의 매력이 더 자주 드러난다고 봅니다. 수로 길흉을 더하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 매력이 관계를 흔드는 쪽으로 기울기 쉽다고 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:HONGYEOMSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:hongyeom#appliesWhen",
+     "foundation:shinsal_gwiin:hongyeom#doNotApply",
+     "foundation:shinsal_gwiin:hongyeom#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:HONGYEOMSAL",
+     "kb:sinsal_hongyeom"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:hongyeom",
+    "foundation:shinsal_gwiin:hongyeom#definition",
+    "foundation:shinsal_gwiin:hongyeom#appliesWhen",
+    "foundation:shinsal_gwiin:hongyeom#doNotApply",
+    "foundation:shinsal_gwiin:hongyeom#distinctions",
+    "v4:material:sinsal_hongyeom",
+    "taxonomy:sinsal_hongyeom",
+    "kb:sinsal_hongyeom",
+    "v4:depth:sinsal_hongyeom:*",
+    "classic:repo_stars:SHINSAL_RULES:HONGYEOMSAL",
+    "classic:repo_knowledge:sinsal_hongyeom"
+   ],
+   "aliases": [
+    "홍염살",
+    "홍염",
+    "紅艶殺"
+   ]
+  },
+  {
+   "id": "sinsal_dohwa",
+   "family": "shinsal",
+   "traditionalName": "桃花殺(도화살)·咸池",
+   "easyName": "눈길 끄는 매력",
+   "definition": "도화살(꽃이 핀 자리처럼 시선이 모이는 표식). 삼합의 목욕 자리를 씁니다. 첫인상과 주목을 보는 자리이며 고전의 도덕 평가는 쓰지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "처음 간 자리에서 누군가 옷이나 분위기를 이야기하며 말을 붙이곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_dohwa:scene",
+      "foundation:shinsal_gwiin:dohwa#editorial.positive"
+     ]
+    },
+    {
+     "text": "처음 만나는 사람에게 내 일과 취향을 알릴 때 먼저 주목을 받는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_dohwa:work",
+      "taxonomy:sinsal_dohwa"
+     ]
+    },
+    {
+     "text": "첫 만남에서 표정과 인상으로 다음 약속의 문을 여는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_dohwa:love",
+      "v4:material:sinsal_dohwa"
+     ]
+    },
+    {
+     "text": "말을 많이 하지 않았는데도 주변이 한 번 더 돌아볼 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_dohwa",
+      "kb:sinsal_dohwa"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "관심은 싫지 않은데 그 관심에 전부 답하려다 지치기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_dohwa:punch",
+      "v4:material:sinsal_dohwa"
+     ]
+    },
+    {
+     "text": "모두에게 괜찮은 사람으로 보이려고 거절할 말을 삼키곤 합니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_dohwa:shadow"
+     ]
+    },
+    {
+     "text": "눈에 띄는 만큼 가벼운 농담도 다른 뜻으로 읽히기 쉽습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_dohwa",
+      "foundation:shinsal_gwiin:dohwa#editorial.applications.relationships"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "attentionSeeking": 0.5,
+    "socialEnergy": 0.4,
+    "emotionalExpression": 0.4,
+    "intimacyPace": 0.3
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리와 바깥 사회에 빗댑니다. 여기 있으면 집안과 고향 쪽 모임에서 먼저 눈에 띄는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:dohwa#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:DOHWASAL"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 일터와 학교에서 주목받는 일이 잦은 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:dohwa#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:DOHWASAL"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 연애와 가까운 사이에서 매력이 드러나는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:dohwa#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:DOHWASAL",
+      "foundation:shinsal_gwiin:dohwa#editorial.caution"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 나이가 들어도 이어지는 매력으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:dohwa#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:DOHWASAL"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 주목받는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 주목받는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "목욕 자리 글자가 둘 이상이면 시선이 붙는 일이 더 잦다고 봅니다. 수만으로 길흉을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 주목이 흩어지고 관계가 들쭉날쭉해지는 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:DOHWASAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:dohwa#appliesWhen",
+     "foundation:shinsal_gwiin:dohwa#doNotApply",
+     "foundation:shinsal_gwiin:dohwa#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:DOHWASAL",
+     "classic:sm2:將星華蓋·咸池",
+     "kb:sinsal_dohwa",
+     "foundation:shinsal_gwiin:dohwa#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:dohwa",
+    "foundation:shinsal_gwiin:dohwa#definition",
+    "foundation:shinsal_gwiin:dohwa#appliesWhen",
+    "foundation:shinsal_gwiin:dohwa#doNotApply",
+    "foundation:shinsal_gwiin:dohwa#distinctions",
+    "v4:material:sinsal_dohwa",
+    "foundation:shinsal_gwiin:dohwa#editorial",
+    "taxonomy:sinsal_dohwa",
+    "kb:sinsal_dohwa",
+    "v4:depth:sinsal_dohwa:*",
+    "classic:repo_stars:SHINSAL_RULES:DOHWASAL",
+    "classic:sm2:將星華蓋·咸池",
+    "classic:aks:사주"
+   ],
+   "aliases": [
+    "도화살",
+    "도화",
+    "桃花",
+    "咸池",
+    "함지"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_nyeonsal",
+   "family": "shinsal",
+   "traditionalName": "年煞(연살)",
+   "easyName": "시선 머무는 자리",
+   "definition": "연살(열두 신살 가운데 시선이 잠시 머무는 자리). 도화와 같은 글자를 쓰지만 계산 축을 따로 두며 둘을 두 번 세지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "분위기 때문에 처음 본 사람이 한 번 더 쳐다볼 때가 많습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_nyeonsal",
+      "v4:material:twelve_sinsal_nyeonsal"
+     ]
+    },
+    {
+     "text": "발표 내용보다 말투와 옷차림이 먼저 기억에 남았다는 말을 듣는 편입니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_nyeonsal",
+      "v4:material:twelve_sinsal_nyeonsal"
+     ]
+    },
+    {
+     "text": "말투와 스타일을 조금만 정리해도 상대 반응이 눈에 띄게 달라지는 쪽입니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_nyeonsal"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "첫인상이 강해서 진짜 의도는 늦게 전해져 오해를 사기 쉽습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_nyeonsal",
+      "v4:material:twelve_sinsal_nyeonsal"
+     ]
+    },
+    {
+     "text": "겉모습만 보고 다가온 사람에게 속뜻을 설명하느라 힘이 빠지기 쉽습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_nyeonsal"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "attentionSeeking": 0.4,
+    "emotionalExpression": 0.3,
+    "socialEnergy": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 눈에 띄는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 눈에 띄는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "도화와 같은 글자를 두 번 세지 않습니다. 같은 글자가 둘 이상이면 시선이 머무는 자리가 넓어진다고만 봅니다.",
+    "clash": "그 글자가 충을 받으면 인상이 오락가락해 오해가 늘기 쉽다고 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_NYEONSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:nyeonsal#appliesWhen",
+     "foundation:shinsal_gwiin:nyeonsal#doNotApply",
+     "foundation:shinsal_gwiin:nyeonsal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_NYEONSAL",
+     "foundation:shinsal_gwiin:dohwa#definition"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:nyeonsal",
+    "foundation:shinsal_gwiin:nyeonsal#definition",
+    "foundation:shinsal_gwiin:nyeonsal#appliesWhen",
+    "foundation:shinsal_gwiin:nyeonsal#doNotApply",
+    "foundation:shinsal_gwiin:nyeonsal#distinctions",
+    "v4:material:twelve_sinsal_nyeonsal",
+    "taxonomy:twelve_sinsal_nyeonsal",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_NYEONSAL",
+    "foundation:shinsal_gwiin:dohwa",
+    "classic:repo_taxonomy:twelve_sinsal_nyeonsal"
+   ],
+   "aliases": [
+    "년살",
+    "연살",
+    "年煞"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_yeokma",
+   "family": "shinsal",
+   "traditionalName": "驛馬殺(역마살)",
+   "easyName": "길 위에서 힘 나는 말",
+   "definition": "역마살(길 위에서 힘이 붙는 말에 빗댄 이동의 표식). 삼합 계열로 정합니다. 이동과 바깥 접점을 보는 자리이며 이주나 이직을 확정하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "현장과 고객을 직접 만나러 다닐 때 새 일거리를 먼저 찾아내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yeokma:work",
+      "foundation:shinsal_gwiin:yeokma#editorial.applications.career"
+     ]
+    },
+    {
+     "text": "직접 보러 가거나 다른 분야를 접할 때 공부에 속도가 붙는 쪽입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yeokma:study"
+     ]
+    },
+    {
+     "text": "답답하면 잠깐 나갔다가 새 장소와 해 볼 일을 찾아서 돌아오곤 합니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yeokma:scene",
+      "foundation:shinsal_gwiin:yeokma#editorial.positive"
+     ]
+    },
+    {
+     "text": "같은 자리에서 반복되는 업무만 이어지면 금세 답답해하는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_yeokma",
+      "kb:sinsal_yeokma"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "쉬러 떠났는데 돌아와서 할 일이 더 많아져 있을 때가 많습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yeokma:punch"
+     ]
+    },
+    {
+     "text": "자리를 자주 옮기다 보니 벌여 놓은 일의 마무리가 흐려지기 쉽습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_yeokma",
+      "v4:depth:twelve_sinsal_yeokma:shadow"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "mobility": 0.7,
+    "noveltySeeking": 0.5,
+    "persistence": -0.3,
+    "planning": -0.2
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 자란 곳을 떠나 넓게 움직이는 흐름으로 읽되 이주를 사실로 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:yeokma#definition",
+      "foundation:shinsal_gwiin:yeokma#editorial.caution",
+      "calc:SHINSAL_RULES:TWELVE_YEOKMASAL"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 출장과 외근이 잦은 환경이 잘 맞는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:yeokma#definition",
+      "calc:SHINSAL_RULES:TWELVE_YEOKMASAL"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인에 빗댑니다. 여기 있으면 본인이 직접 움직여야 일이 풀리는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:yeokma#definition",
+      "calc:SHINSAL_RULES:TWELVE_YEOKMASAL"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 나이가 들어도 활동 범위를 넓히는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:yeokma#definition",
+      "calc:SHINSAL_RULES:TWELVE_YEOKMASAL"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 움직이려는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 움직이려는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "말 글자가 둘 이상이면 이동이 잦은 성향이 또렷해진다고 봅니다. 수만으로 이주나 이직을 정하지 않습니다.",
+    "clash": "말 글자가 충을 받으면 움직임이 급해지거나 중간에 끊기는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_YEOKMASAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:yeokma#appliesWhen",
+     "foundation:shinsal_gwiin:yeokma#doNotApply",
+     "foundation:shinsal_gwiin:yeokma#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_YEOKMASAL",
+     "classic:repo_stars:SHINSAL_RULES:YEOKMASAL",
+     "kb:sinsal_yeokma",
+     "foundation:shinsal_gwiin:yeokma#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:yeokma",
+    "foundation:shinsal_gwiin:yeokma#definition",
+    "foundation:shinsal_gwiin:yeokma#appliesWhen",
+    "foundation:shinsal_gwiin:yeokma#doNotApply",
+    "foundation:shinsal_gwiin:yeokma#distinctions",
+    "v4:material:twelve_sinsal_yeokma",
+    "foundation:shinsal_gwiin:yeokma#editorial",
+    "taxonomy:twelve_sinsal_yeokma",
+    "kb:sinsal_yeokma",
+    "v4:depth:twelve_sinsal_yeokma:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_YEOKMASAL",
+    "classic:aks:사주"
+   ],
+   "aliases": [
+    "역마살",
+    "역마",
+    "驛馬"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_hwagae",
+   "family": "shinsal",
+   "traditionalName": "華蓋殺(화개살)",
+   "easyName": "혼자 깊이 파는 방",
+   "definition": "화개살(화려한 덮개 아래서 혼자 익히는 표식). 삼합의 저장 자리를 씁니다. 혼자 몰입하는 시간을 보는 자리이며 고독이나 종교인을 확정하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "쉬는 날 약속을 비워 두고 좋아하는 음악과 작업에 몇 시간을 쓰곤 합니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_hwagae:scene",
+      "foundation:shinsal_gwiin:hwagae#editorial.positive"
+     ]
+    },
+    {
+     "text": "소란에서 벗어나 한 주제에 오래 머물 때 이해가 단단해지는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_hwagae:study",
+      "foundation:shinsal_gwiin:hwagae#editorial.applications.study"
+     ]
+    },
+    {
+     "text": "함께 있어도 혼자 생각할 틈을 주는 사람을 편하게 느끼는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_hwagae:love"
+     ]
+    },
+    {
+     "text": "자기만의 관점과 완성도가 필요한 일에서 남들과 다른 색을 내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_hwagae:work",
+      "taxonomy:twelve_sinsal_hwagae"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "생각 정리하고 연락한다더니 상대는 잠수인 줄 알 때가 많습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_hwagae:punch"
+     ]
+    },
+    {
+     "text": "혼자가 편해서 답장을 너무 미루다 가까운 사람에게 거리감을 주기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_hwagae:shadow",
+      "taxonomy:twelve_sinsal_hwagae"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "socialEnergy": -0.6,
+    "introspection": 0.5,
+    "persistence": 0.4,
+    "learningDrive": 0.3
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 집안의 종교나 예술 분위기에 빗대 읽되 가족 사실을 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:hwagae#definition",
+      "foundation:shinsal_gwiin:hwagae#editorial.caution",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:TWELVE_HWAGAE"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 혼자 파고드는 일과 공부 환경이 잘 맞는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:hwagae#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:TWELVE_HWAGAE"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 가까운 사이에서도 혼자 있는 시간을 챙기는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:hwagae#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:TWELVE_HWAGAE"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 늦게까지 이어지는 취미와 연구로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:hwagae#definition",
+      "classic:sm2:將星華蓋·咸池",
+      "calc:SHINSAL_RULES:TWELVE_HWAGAE"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 혼자 몰입하는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 혼자 몰입하는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "저장 자리 글자가 둘 이상이면 혼자 있는 시간이 더 길어진다고 봅니다. 수만으로 고독을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 몰입이 자주 끊기고 밖으로 끌려 나오는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_HWAGAE",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:hwagae#appliesWhen",
+     "foundation:shinsal_gwiin:hwagae#doNotApply",
+     "foundation:shinsal_gwiin:hwagae#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_HWAGAE",
+     "classic:repo_stars:SHINSAL_RULES:HWAGAE",
+     "classic:sm2:將星華蓋·咸池",
+     "kb:sinsal_hwagae",
+     "foundation:shinsal_gwiin:hwagae#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:hwagae",
+    "foundation:shinsal_gwiin:hwagae#definition",
+    "foundation:shinsal_gwiin:hwagae#appliesWhen",
+    "foundation:shinsal_gwiin:hwagae#doNotApply",
+    "foundation:shinsal_gwiin:hwagae#distinctions",
+    "v4:material:twelve_sinsal_hwagae",
+    "foundation:shinsal_gwiin:hwagae#editorial",
+    "taxonomy:twelve_sinsal_hwagae",
+    "kb:sinsal_hwagae",
+    "v4:depth:twelve_sinsal_hwagae:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_HWAGAE",
+    "classic:sm2:將星華蓋·咸池"
+   ],
+   "aliases": [
+    "화개살",
+    "화개",
+    "華蓋"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_jangseong",
+   "family": "shinsal",
+   "traditionalName": "將星殺(장성살)",
+   "easyName": "깃발 앞의 장수",
+   "definition": "장성살(깃발 앞에 선 장수처럼 중심을 잡는 표식). 삼합의 가운데 자리를 씁니다. 공동 일의 중심 역할을 보는 자리이며 직책을 보장하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "결정이 미뤄지는 회의에서 맡을 일을 나누고 시작을 이끌어 내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jangseong:work",
+      "foundation:shinsal_gwiin:jangseong#editorial.applications.career"
+     ]
+    },
+    {
+     "text": "친구 여행에서 일정이 안 정해지면 누가 무엇을 알아볼지 먼저 나누곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jangseong:scene"
+     ]
+    },
+    {
+     "text": "팀이 우왕좌왕할 때 기준표를 직접 만들어 돌리는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_jangseong",
+      "kb:sinsal_jangseong"
+     ]
+    },
+    {
+     "text": "사람들이 우물쭈물하면 결국 앞에 나서서 상황을 정리하는 편입니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jangseong:character",
+      "foundation:shinsal_gwiin:jangseong#definition"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "잠깐 정리했을 뿐인데 다음 모임 회장까지 되어 있을 때가 많습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jangseong:punch"
+     ]
+    },
+    {
+     "text": "답답하면 남의 선택까지 대신 정해서 주변이 지시받는 느낌을 받기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jangseong:shadow",
+      "taxonomy:twelve_sinsal_jangseong"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "controlNeed": 0.6,
+    "decisionSpeed": 0.4,
+    "statusDrive": 0.3,
+    "dutifulness": 0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 앞에 서려는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 앞에 서려는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "가운데 자리 글자가 둘 이상이면 중심을 잡으려는 성향이 또렷해진다고 봅니다. 수만으로 직책을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 중심이 흔들려 나섰다 물러나기를 반복하는 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_JANGSEONGSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:jangseong#appliesWhen",
+     "foundation:shinsal_gwiin:jangseong#doNotApply",
+     "foundation:shinsal_gwiin:jangseong#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_JANGSEONGSAL",
+     "classic:sm2:將星華蓋·咸池",
+     "kb:sinsal_jangseong",
+     "foundation:shinsal_gwiin:jangseong#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:jangseong",
+    "foundation:shinsal_gwiin:jangseong#definition",
+    "foundation:shinsal_gwiin:jangseong#appliesWhen",
+    "foundation:shinsal_gwiin:jangseong#doNotApply",
+    "foundation:shinsal_gwiin:jangseong#distinctions",
+    "v4:material:twelve_sinsal_jangseong",
+    "foundation:shinsal_gwiin:jangseong#editorial",
+    "taxonomy:twelve_sinsal_jangseong",
+    "kb:sinsal_jangseong",
+    "v4:depth:twelve_sinsal_jangseong:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_JANGSEONGSAL",
+    "classic:sm2:將星華蓋·咸池"
+   ],
+   "aliases": [
+    "장성살",
+    "장성",
+    "將星"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_banan",
+   "family": "shinsal",
+   "traditionalName": "攀鞍殺(반안살)",
+   "easyName": "안장에 오른 자리",
+   "definition": "반안살(말 안장에 올라 자기 자리를 잡은 표식). 열두 신살 가운데 하나로 장성 다음 자리입니다. 역할과 인정을 보는 자리로 읽습니다.",
+   "behaviorSignals": [
+    {
+     "text": "작은 성과를 차곡차곡 쌓으며 더 넓은 역할을 맡을 준비를 하는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_banan:work",
+      "taxonomy:twelve_sinsal_banan"
+     ]
+    },
+    {
+     "text": "맡은 몫이 커지면 급여나 보상 이야기를 먼저 꺼내는 쪽입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_banan:money"
+     ]
+    },
+    {
+     "text": "일은 잘 끝났는데 다음에는 누구에게 맡기는지를 유심히 지켜보는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_banan:scene",
+      "v4:depth:twelve_sinsal_banan:inside"
+     ]
+    },
+    {
+     "text": "이름이 걸린 프로젝트에서는 평소보다 더 꼼꼼하게 챙기는 편입니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_banan",
+      "kb:sinsal_banan"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "칭찬은 고마운데 역할이 그대로면 허전해져 의욕이 떨어지기 쉽습니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_banan:punch",
+      "taxonomy:twelve_sinsal_banan"
+     ]
+    },
+    {
+     "text": "알아주지 않으면 말없이 자존심이 상해 거리를 두곤 합니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_banan:shadow",
+      "v4:material:twelve_sinsal_banan"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "statusDrive": 0.6,
+    "dutifulness": 0.4,
+    "competitiveness": 0.3,
+    "attentionSeeking": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 자리를 바라는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 자리를 바라는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 인정과 자리를 더 크게 의식한다고 봅니다. 수만으로 지위를 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 자리가 불안정해 보여 인정에 더 예민해지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_BANANSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:banan#appliesWhen",
+     "foundation:shinsal_gwiin:banan#doNotApply",
+     "foundation:shinsal_gwiin:banan#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_BANANSAL",
+     "kb:sinsal_banan"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:banan",
+    "foundation:shinsal_gwiin:banan#definition",
+    "foundation:shinsal_gwiin:banan#appliesWhen",
+    "foundation:shinsal_gwiin:banan#doNotApply",
+    "foundation:shinsal_gwiin:banan#distinctions",
+    "v4:material:twelve_sinsal_banan",
+    "taxonomy:twelve_sinsal_banan",
+    "kb:sinsal_banan",
+    "v4:material:sinsal_banan",
+    "v4:depth:twelve_sinsal_banan:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_BANANSAL",
+    "classic:repo_knowledge:sinsal_banan"
+   ],
+   "aliases": [
+    "반안살",
+    "반안",
+    "攀鞍"
+   ]
+  },
+  {
+   "id": "sinsal_gwimun",
+   "family": "shinsal",
+   "traditionalName": "鬼門關殺(귀문관살)",
+   "easyName": "닫힌 문 뒤의 귀",
+   "definition": "귀문관살(닫힌 문 뒤의 소리를 듣는 예민한 표식). 특정 지지 짝으로 정합니다. 세밀한 관찰과 깊은 생각을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "정답을 외우기보다 왜 여기만 다른지 파고들며 깊이를 만드는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gwimun:study",
+      "taxonomy:sinsal_gwimun"
+     ]
+    },
+    {
+     "text": "다들 실수겠지 하고 넘긴 숫자가 왜 달랐는지 집에 와서도 찾아보곤 합니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gwimun:scene"
+     ]
+    },
+    {
+     "text": "말과 표정이 어긋나는 순간을 남들보다 빨리 알아채는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gwimun:relationships",
+      "kb:sinsal_gwimun"
+     ]
+    },
+    {
+     "text": "자꾸 반복되는 문제의 작은 단서를 놓치지 않고 살피는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gwimun:work"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "별뜻 없는 말에도 숨은 뜻 찾기부터 시작해 혼자 밤이 늦어지기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gwimun:punch",
+      "taxonomy:sinsal_gwimun"
+     ]
+    },
+    {
+     "text": "확인한 것보다 의심이 더 커져 상대의 뜻을 혼자 확정하곤 합니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gwimun:shadow",
+      "v4:depth:sinsal_gwimun:relationships"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "inquiry": 0.6,
+    "introspection": 0.5,
+    "trustThreshold": 0.4,
+    "detailFocus": 0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 파고드는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 파고드는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "짝이 되는 글자가 두 쌍 이상이면 예민한 관찰이 더 짙어진다고 봅니다. 수만으로 길흉을 더하지 않습니다.",
+    "clash": "짝의 한쪽이 충을 받으면 짝이 느슨해져 예민함이 줄거나 들쭉날쭉해지는 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:gwimun",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:gwimun#appliesWhen",
+     "foundation:shinsal_gwiin:gwimun#doNotApply",
+     "foundation:shinsal_gwiin:gwimun#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:GWIMUNGWANSAL",
+     "kb:sinsal_gwimun"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:gwimun",
+    "foundation:shinsal_gwiin:gwimun#definition",
+    "foundation:shinsal_gwiin:gwimun#appliesWhen",
+    "foundation:shinsal_gwiin:gwimun#doNotApply",
+    "foundation:shinsal_gwiin:gwimun#distinctions",
+    "v4:material:sinsal_gwimun",
+    "taxonomy:sinsal_gwimun",
+    "kb:sinsal_gwimun",
+    "v4:depth:sinsal_gwimun:*",
+    "classic:repo_extractor:gwimun",
+    "classic:repo_knowledge:sinsal_gwimun"
+   ],
+   "aliases": [
+    "귀문관살",
+    "귀문",
+    "귀문관",
+    "鬼門關"
+   ]
+  },
+  {
+   "id": "sinsal_yangin",
+   "family": "shinsal",
+   "traditionalName": "羊刃(양인살)",
+   "easyName": "선을 긋는 칼날",
+   "definition": "양인살(극에 달한 기운을 칼날에 빗댄 표식). 일간의 제왕 자리로 정하며 음간 인정 여부는 논법이 갈립니다. 힘을 쓰는 범위를 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "부당하게 떠넘겨진 일이나 흐려진 책임에 분명한 선을 긋는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_yangin:work",
+      "foundation:shinsal_gwiin:yangin#editorial.applications.relationships"
+     ]
+    },
+    {
+     "text": "좋아해도 내 생활과 결정권까지 모두 내주지는 않습니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_yangin:love"
+     ]
+    },
+    {
+     "text": "다들 난감해하는 부탁에 할 수 있는 것과 없는 것을 나누어 답하는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_yangin:scene",
+      "foundation:shinsal_gwiin:yangin#editorial.applications.relationships"
+     ]
+    },
+    {
+     "text": "불합리한 지시를 보면 그 자리에서 바로 아니라고 말하는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_yangin",
+      "kb:sinsal_yangin"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "선을 지키다가 대화할 문까지 닫아 버릴 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_yangin:punch",
+      "v4:depth:sinsal_yangin:shadow"
+     ]
+    },
+    {
+     "text": "상대가 느리면 말이 짧고 세게 나가 공격적으로 들리기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_yangin",
+      "foundation:shinsal_gwiin:yangin#editorial.caution"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "boundarySetting": 0.7,
+    "directness": 0.5,
+    "independence": 0.5,
+    "conflictApproach": 0.4,
+    "controlNeed": 0.3
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 집안이나 윗사람과의 선 긋기가 일찍 나오는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:yangin#definition",
+      "calc:sajuComputedFeatureExtractor:yangin"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 일터에서 거절과 담판이 잦은 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:yangin#definition",
+      "calc:sajuComputedFeatureExtractor:yangin"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 가까운 사이에서도 선이 분명한 쪽으로 읽되 배우자 사실을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:yangin#definition",
+      "foundation:shinsal_gwiin:yangin#editorial.caution",
+      "calc:sajuComputedFeatureExtractor:yangin"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 아랫사람과의 선 긋기로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:yangin#definition",
+      "calc:sajuComputedFeatureExtractor:yangin"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 칼날이 지나쳐 밀어붙임이 세다고 봅니다. 이때는 힘을 덜어 주는 글자가 있는지 함께 봅니다.",
+    "weak": "신약(힘이 약한 사주)이면 칼날이 본인을 받쳐 주는 쪽으로 읽습니다. 그래도 사건을 정하지 않습니다.",
+    "duplicate": "칼날 글자가 둘 이상이면 선을 긋는 힘이 과해져 다툼이 잦아지기 쉽다고 봅니다. 수로 길흉을 더하지는 않습니다.",
+    "clash": "칼날 글자가 충을 받으면 힘이 급하게 튀거나 흩어지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:yangin",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:yangin#definition",
+     "foundation:shinsal_gwiin:yangin#editorial.excessOrDeficit",
+     "foundation:shinsal_gwiin:yangin#doNotApply",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_extractor:yangin"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:yangin",
+    "foundation:shinsal_gwiin:yangin#definition",
+    "foundation:shinsal_gwiin:yangin#appliesWhen",
+    "foundation:shinsal_gwiin:yangin#doNotApply",
+    "foundation:shinsal_gwiin:yangin#distinctions",
+    "v4:material:sinsal_yangin",
+    "foundation:shinsal_gwiin:yangin#editorial",
+    "taxonomy:sinsal_yangin",
+    "kb:sinsal_yangin",
+    "v4:depth:sinsal_yangin:*",
+    "classic:repo_extractor:yangin",
+    "classic:aks:사주"
+   ],
+   "aliases": [
+    "양인살",
+    "양인",
+    "羊刃",
+    "陽刃"
+   ]
+  },
+  {
+   "id": "sinsal_goegang",
+   "family": "shinsal",
+   "traditionalName": "魁罡殺(괴강살)",
+   "easyName": "무거운 문 미는 힘",
+   "definition": "괴강살(무거운 문도 어깨로 미는 센 기둥의 표식). 경진·경술·임진·임술 같은 특정 간지 기둥으로 정합니다. 버티는 힘을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "다들 포기하려는 일을 붙들고 마지막까지 해내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_goegang:work",
+      "taxonomy:sinsal_goegang"
+     ]
+    },
+    {
+     "text": "거절을 여러 번 들어도 가능한 다른 방법을 찾아 다시 제안하곤 합니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_goegang:scene"
+     ]
+    },
+    {
+     "text": "만만하게 본다는 느낌이 들면 오히려 더 단단하게 버티는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_goegang:inside",
+      "kb:sinsal_goegang"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "해결이 목적이었는데 어느새 물러나지 않는 게 목적이 되기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_goegang:punch"
+     ]
+    },
+    {
+     "text": "타협하자는 말까지 밀어내서 가까운 사람에게도 너무 세게 나가곤 합니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_goegang:shadow",
+      "v4:depth:sinsal_goegang:relationships",
+      "taxonomy:sinsal_goegang"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "persistence": 0.6,
+    "controlNeed": 0.5,
+    "conflictApproach": 0.5,
+    "directness": 0.4
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 집안 분위기가 세다고 빗대 읽되 가족 사실을 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:goegang#definition",
+      "calc:sajuComputedFeatureExtractor:goegang"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 압박이 큰 일터에서 오히려 힘을 내는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:goegang#definition",
+      "calc:sajuComputedFeatureExtractor:goegang"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인에 빗댑니다. 고전은 이 자리를 가장 무겁게 보며 본인 기준이 세고 쉽게 꺾이지 않는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:goegang#definition",
+      "calc:sajuComputedFeatureExtractor:goegang",
+      "kb:sinsal_goegang"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 늦게까지 밀어붙이는 힘으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:goegang#definition",
+      "calc:sajuComputedFeatureExtractor:goegang"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 밀어붙이는 힘이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 밀어붙이는 힘이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "해당 기둥이 둘 이상이면 버티는 힘이 더 세고 고집도 짙어진다고 봅니다. 수로 길흉을 더하지 않습니다.",
+    "clash": "그 기둥의 글자가 충을 받으면 힘이 급하게 튀어 충돌로 번지기 쉽다고 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:goegang",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:goegang#appliesWhen",
+     "foundation:shinsal_gwiin:goegang#doNotApply",
+     "foundation:shinsal_gwiin:goegang#distinctions",
+     "classic:repo_structure:강약 판정",
+     "kb:sinsal_goegang",
+     "classic:repo_extractor:goegang"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:goegang",
+    "foundation:shinsal_gwiin:goegang#definition",
+    "foundation:shinsal_gwiin:goegang#appliesWhen",
+    "foundation:shinsal_gwiin:goegang#doNotApply",
+    "foundation:shinsal_gwiin:goegang#distinctions",
+    "v4:material:sinsal_goegang",
+    "taxonomy:sinsal_goegang",
+    "kb:sinsal_goegang",
+    "v4:depth:sinsal_goegang:*",
+    "classic:repo_extractor:goegang",
+    "classic:repo_knowledge:sinsal_goegang"
+   ],
+   "aliases": [
+    "괴강살",
+    "괴강",
+    "魁罡"
+   ]
+  },
+  {
+   "id": "sinsal_baekho",
+   "family": "shinsal",
+   "traditionalName": "白虎大殺(백호대살)",
+   "easyName": "급할 때 모이는 힘",
+   "definition": "백호대살(흰 호랑이처럼 힘이 한곳에 몰리는 표식). 갑진·을미 같은 특정 간지 기둥으로 정합니다. 위기 집중을 보는 자리이며 사고를 정하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "마감이 닥치거나 일이 꼬였을 때 필요한 행동에 힘을 모으는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_baekho:work",
+      "taxonomy:sinsal_baekho"
+     ]
+    },
+    {
+     "text": "내 사람이 어려움을 겪으면 평소보다 적극적으로 뛰어드는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_baekho:relationships"
+     ]
+    },
+    {
+     "text": "준비가 어긋난 행사에서 당장 할 수 있는 일부터 붙잡고 움직이곤 합니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_baekho:scene",
+      "kb:sinsal_baekho"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "일은 끝났는데 몸과 말투는 아직 급해서 주변이 긴장하기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_baekho:punch",
+      "kb:sinsal_baekho"
+     ]
+    },
+    {
+     "text": "상대보다 결론이 빨라 말이 세게 나가 가까운 사람이 위협감을 느끼기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_baekho",
+      "v4:depth:sinsal_baekho:shadow"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "reactivity": 0.6,
+    "decisionSpeed": 0.5,
+    "directness": 0.4,
+    "controlNeed": 0.3
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 집안 일에 급히 힘을 쓰는 모습으로 빗대 읽되 사건을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:baekho#definition",
+      "calc:SHINSAL_RULES:BAEKHODAESAL"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 급한 일이 많은 일터에서 집중이 살아나는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:baekho#definition",
+      "calc:SHINSAL_RULES:BAEKHODAESAL"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 본인이 위기 때 앞장서는 쪽으로 읽되 배우자 사실을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:baekho#definition",
+      "calc:SHINSAL_RULES:BAEKHODAESAL",
+      "kb:sinsal_baekho"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 늦게까지 급한 집중이 남는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:baekho#definition",
+      "calc:SHINSAL_RULES:BAEKHODAESAL"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 몰아치는 힘이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 몰아치는 힘이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "해당 기둥이 둘 이상이면 긴장이 쉽게 풀리지 않는 성향이 짙어진다고 봅니다. 수로 사고를 정하지 않습니다.",
+    "clash": "그 기둥의 글자가 충을 받으면 몰린 힘이 터지듯 급해지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:BAEKHODAESAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:baekho#appliesWhen",
+     "foundation:shinsal_gwiin:baekho#doNotApply",
+     "foundation:shinsal_gwiin:baekho#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:BAEKHODAESAL",
+     "kb:sinsal_baekho"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:baekho",
+    "foundation:shinsal_gwiin:baekho#definition",
+    "foundation:shinsal_gwiin:baekho#appliesWhen",
+    "foundation:shinsal_gwiin:baekho#doNotApply",
+    "foundation:shinsal_gwiin:baekho#distinctions",
+    "v4:material:sinsal_baekho",
+    "taxonomy:sinsal_baekho",
+    "kb:sinsal_baekho",
+    "v4:depth:sinsal_baekho:*",
+    "classic:repo_stars:SHINSAL_RULES:BAEKHODAESAL",
+    "classic:repo_knowledge:sinsal_baekho"
+   ],
+   "aliases": [
+    "백호대살",
+    "백호살",
+    "백호",
+    "白虎大殺"
+   ]
+  },
+  {
+   "id": "sinsal_gongmang",
+   "family": "shinsal",
+   "traditionalName": "空亡(공망)",
+   "easyName": "비워 둔 의자",
+   "definition": "공망(열 천간을 한 순에 배치할 때 짝이 없는 두 지지). 빈 부분을 확인하는 자리이며 공망이 곧 흉은 아니라는 논의를 따릅니다.",
+   "behaviorSignals": [
+    {
+     "text": "정해진 자리만 바라보지 않고 다른 역할과 방식을 먼저 떠올리는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gongmang:work",
+      "foundation:shinsal_gwiin:gongmang#editorial.positive"
+     ]
+    },
+    {
+     "text": "원하던 모임에 들어갔는데 안 맞으면 내가 좋아하는 만남을 다시 생각해 보는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gongmang:scene"
+     ]
+    },
+    {
+     "text": "계획에 불확실한 부분이 있으면 아직 확인 안 된 조건을 따로 적어 두는 편입니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "foundation:shinsal_gwiin:gongmang#editorial.applications.career",
+      "foundation:shinsal_gwiin:gongmang#definition"
+     ]
+    },
+    {
+     "text": "남들이 좋다고 한 결과가 내 마음도 채우는지 따로 물어보는 편입니다.",
+     "domains": [
+      "work",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gongmang:inside",
+      "taxonomy:sinsal_gongmang"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "갖고 싶던 걸 얻었는데 기쁨은 장바구니에 있을 때가 더 컸다고 느끼기 쉽습니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gongmang:punch"
+     ]
+    },
+    {
+     "text": "하나의 기대가 빗나가면 전체가 허전해져 손을 놓아 버리곤 합니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_gongmang:shadow",
+      "taxonomy:sinsal_gongmang",
+      "foundation:shinsal_gwiin:gongmang#editorial.caution"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "introspection": 0.4,
+    "noveltySeeking": 0.3,
+    "possessiveness": -0.3,
+    "persistence": -0.2
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기가 비면 집안 배경에 기대기보다 스스로 길을 찾는 쪽으로 읽되 가족 사실을 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:gongmang#definition",
+      "foundation:shinsal_gwiin:gongmang#editorial.caution",
+      "calc:sajuComputedFeatureExtractor:gongmang"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기가 비면 정해진 직장 틀보다 다른 방식을 찾는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:gongmang#definition",
+      "calc:sajuComputedFeatureExtractor:gongmang"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기가 비면 가까운 사이에 기대를 전부 걸지 않는 쪽으로 읽되 배우자 사실을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:gongmang#definition",
+      "foundation:shinsal_gwiin:gongmang#editorial.caution",
+      "calc:sajuComputedFeatureExtractor:gongmang"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 늦게 남길 일에 빈 자리를 두고 다시 고르는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:gongmang#definition",
+      "calc:sajuComputedFeatureExtractor:gongmang"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 빈 자리를 본인이 채워 넣는 쪽으로 읽습니다. 비었다고 흉으로 보지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 빈 자리를 허전함으로 더 크게 느끼는 쪽으로 읽습니다. 삶이 비었다는 진단으로 쓰지 않습니다.",
+    "duplicate": "빈 자리가 두 기둥이면 틀을 비우고 다시 고르는 성향이 또렷해진다고 봅니다. 수로 길흉을 더하지 않습니다.",
+    "clash": "빈 자리가 충이나 합을 받으면 공망이 풀린다는 논법을 따릅니다. 이때는 빈 자리로 읽지 않고 관계 항목을 먼저 봅니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:gongmang",
+     "calc:dayMaster.strength",
+     "calc:analyzeRelations",
+     "calc:shinsal.duplicateCount",
+     "foundation:shinsal_gwiin:gongmang#definition",
+     "foundation:shinsal_gwiin:gongmang#editorial.caution",
+     "foundation:shinsal_gwiin:gongmang#editorial.excessOrDeficit",
+     "foundation:shinsal_gwiin:gongmang#doNotApply",
+     "classic:repo_extractor:gongmang",
+     "classic:repo_structure:강약 판정"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:gongmang",
+    "foundation:shinsal_gwiin:gongmang#definition",
+    "foundation:shinsal_gwiin:gongmang#appliesWhen",
+    "foundation:shinsal_gwiin:gongmang#doNotApply",
+    "foundation:shinsal_gwiin:gongmang#distinctions",
+    "v4:material:sinsal_gongmang",
+    "foundation:shinsal_gwiin:gongmang#editorial",
+    "taxonomy:sinsal_gongmang",
+    "v4:depth:sinsal_gongmang:*",
+    "classic:repo_extractor:gongmang"
+   ],
+   "aliases": [
+    "공망",
+    "空亡"
+   ]
+  },
+  {
+   "id": "sinsal_wonjin",
+   "family": "shinsal",
+   "traditionalName": "怨嗔殺(원진살)",
+   "easyName": "어긋나는 메모",
+   "definition": "원진살(가까이 앉았는데 의자 각도가 조금씩 안 맞는 표식). 서로 미워하기 쉬운 지지 짝으로 정하며 가까운 사이의 어긋남을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "챙겨 준다고 한 말이 간섭처럼 들려 대화가 잠깐 꼬이곤 합니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_wonjin:scene",
+      "kb:sinsal_wonjin"
+     ]
+    },
+    {
+     "text": "상대가 당연히 알 줄 알았던 바람을 찾아내 말로 꺼내는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_wonjin:relationships",
+      "taxonomy:sinsal_wonjin"
+     ]
+    },
+    {
+     "text": "마음은 가까운데 표현이 다르면 사소한 반응에도 생각이 많아지는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_wonjin:love"
+     ]
+    },
+    {
+     "text": "가까운 사람의 짧은 말이 안 친한 사람의 긴 말보다 오래 남는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_wonjin:question",
+      "v4:depth:sinsal_wonjin:inside"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "서로 신경 쓰는데 둘 다 신경 안 써 준다고 느낄 때가 많습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_wonjin:punch"
+     ]
+    },
+    {
+     "text": "작은 불편을 오래 삼키다가 한 번에 차갑게 말이 터지기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "taxonomy:sinsal_wonjin",
+      "v4:depth:sinsal_wonjin:shadow"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "empathyResponse": 0.4,
+    "emotionalExpression": -0.3,
+    "trustThreshold": 0.3,
+    "conflictApproach": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 어긋남에 예민한 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 어긋남에 예민한 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "짝이 두 쌍 이상이면 가까운 사이의 서운함이 더 자주 올라온다고 봅니다. 수로 관계의 결말을 정하지 않습니다.",
+    "clash": "짝의 한쪽이 충을 받으면 짝이 풀려 어긋남이 줄거나 다른 긴장으로 바뀌는 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:wonjin",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:wonjin#appliesWhen",
+     "foundation:shinsal_gwiin:wonjin#doNotApply",
+     "foundation:shinsal_gwiin:wonjin#distinctions",
+     "classic:repo_structure:강약 판정",
+     "kb:sinsal_wonjin",
+     "classic:repo_extractor:wonjin"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:wonjin",
+    "foundation:shinsal_gwiin:wonjin#definition",
+    "foundation:shinsal_gwiin:wonjin#appliesWhen",
+    "foundation:shinsal_gwiin:wonjin#doNotApply",
+    "foundation:shinsal_gwiin:wonjin#distinctions",
+    "v4:material:sinsal_wonjin",
+    "taxonomy:sinsal_wonjin",
+    "kb:sinsal_wonjin",
+    "v4:depth:sinsal_wonjin:*",
+    "classic:repo_extractor:wonjin",
+    "classic:repo_knowledge:sinsal_wonjin"
+   ],
+   "aliases": [
+    "원진살",
+    "원진",
+    "怨嗔"
+   ]
+  },
+  {
+   "id": "sinsal_cheonmunseong",
+   "family": "shinsal",
+   "traditionalName": "天門星(천문성)",
+   "easyName": "하늘 창의 관찰자",
+   "definition": "천문성(하늘의 문이 살짝 열려 큰 구조를 엿보는 표식). 특정 지지가 자리할 때 붙입니다. 사건 너머의 뜻을 읽으려는 감각을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "한 과목을 배우다가 다른 분야의 원리와 이어 붙이며 재미를 느끼는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_cheonmunseong:study",
+      "kb:sinsal_cheonmun"
+     ]
+    },
+    {
+     "text": "작은 현상에서 반복되는 흐름을 찾아 남들에게 설명하는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_cheonmunseong:work",
+      "taxonomy:sinsal_cheonmunseong"
+     ]
+    },
+    {
+     "text": "영화 한 장면을 보고 이야기의 배경과 시대까지 찾아보곤 합니다.",
+     "domains": [
+      "study",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_cheonmunseong:scene"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "간단한 질문에 답하려다 세상의 원리까지 설명하고 있을 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_cheonmunseong:punch"
+     ]
+    },
+    {
+     "text": "큰 질문에 빠져 오늘 당장 할 일을 잊기 쉽습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:sinsal_cheonmunseong:shadow",
+      "taxonomy:sinsal_cheonmunseong"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "inquiry": 0.6,
+    "detailFocus": -0.5,
+    "learningDrive": 0.5,
+    "introspection": 0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 큰 뜻을 찾는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 큰 뜻을 찾는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 큰 구조를 읽으려는 성향이 짙어진다고 봅니다. 수로 통찰력을 보장하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 생각이 흩어져 현실 실행으로 내려오기 더 어려운 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:CHEONMUNSEONG",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:cheonmun#appliesWhen",
+     "foundation:shinsal_gwiin:cheonmun#doNotApply",
+     "foundation:shinsal_gwiin:cheonmun#distinctions",
+     "classic:repo_structure:강약 판정",
+     "kb:sinsal_cheonmun",
+     "v4:material:sinsal_cheonmun"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:cheonmun",
+    "foundation:shinsal_gwiin:cheonmun#definition",
+    "foundation:shinsal_gwiin:cheonmun#appliesWhen",
+    "foundation:shinsal_gwiin:cheonmun#doNotApply",
+    "foundation:shinsal_gwiin:cheonmun#distinctions",
+    "v4:material:sinsal_cheonmunseong",
+    "taxonomy:sinsal_cheonmunseong",
+    "kb:sinsal_cheonmun",
+    "v4:material:sinsal_cheonmun",
+    "v4:depth:sinsal_cheonmunseong:*",
+    "classic:repo_knowledge:sinsal_cheonmun",
+    "classic:repo_taxonomy:sinsal_cheonmunseong"
+   ],
+   "aliases": [
+    "천문성",
+    "천문",
+    "天門"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_wolsal",
+   "family": "shinsal",
+   "traditionalName": "月煞(월살)",
+   "easyName": "달빛 아래 기다림",
+   "definition": "월살(달빛이 비추는 그늘처럼 잠시 멈춰 보는 표식). 열두 신살 가운데 하나입니다. 속도를 낮추고 다시 보는 흐름으로 읽습니다.",
+   "behaviorSignals": [
+    {
+     "text": "일이 멈춘 틈에 놓친 조건과 다른 방법을 다시 살피는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_wolsal:work",
+      "kb:sinsal_wolsal"
+     ]
+    },
+    {
+     "text": "안 풀린 문제를 덮어 두었다가 다음 날 다시 볼 때 새 연결을 찾는 쪽입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_wolsal:study"
+     ]
+    },
+    {
+     "text": "계속 고치던 그림을 다음 날 다시 보고 불편했던 한곳을 찾아내곤 합니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_wolsal:scene"
+     ]
+    },
+    {
+     "text": "밝은 말 뒤의 미묘한 표정을 읽고 괜찮은지 따로 물어보는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_wolsal",
+      "v4:material:twelve_sinsal_wolsal"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "오늘 안 풀렸다는 이유로 어제 잘한 것까지 지워 버리기 쉽습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_wolsal:punch",
+      "v4:depth:twelve_sinsal_wolsal:shadow"
+     ]
+    },
+    {
+     "text": "상대 표정 하나를 오래 곱씹다가 혼자 지쳐 버릴 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_wolsal"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "introspection": 0.5,
+    "reactivity": -0.4,
+    "empathyResponse": 0.3,
+    "decisionSpeed": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 멈춰서 다시 보는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 멈춰서 다시 보는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 멈춤이 길어지고 정체감을 더 크게 느낀다고 봅니다. 수로 길흉을 더하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 멈춤이 깨져 서두르게 되는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_WOLSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:wolsal#appliesWhen",
+     "foundation:shinsal_gwiin:wolsal#doNotApply",
+     "foundation:shinsal_gwiin:wolsal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_WOLSAL",
+     "kb:sinsal_wolsal"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:wolsal",
+    "foundation:shinsal_gwiin:wolsal#definition",
+    "foundation:shinsal_gwiin:wolsal#appliesWhen",
+    "foundation:shinsal_gwiin:wolsal#doNotApply",
+    "foundation:shinsal_gwiin:wolsal#distinctions",
+    "v4:material:twelve_sinsal_wolsal",
+    "taxonomy:twelve_sinsal_wolsal",
+    "kb:sinsal_wolsal",
+    "v4:material:sinsal_wolsal",
+    "v4:depth:twelve_sinsal_wolsal:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_WOLSAL",
+    "classic:repo_knowledge:sinsal_wolsal"
+   ],
+   "aliases": [
+    "월살",
+    "달살",
+    "月煞"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_geopsal",
+   "family": "shinsal",
+   "traditionalName": "劫煞(겁살)",
+   "easyName": "바람에 짐 고쳐 잡기",
+   "definition": "겁살(밖에서 빼앗김에 빗댄 표식). 오행의 절처를 씁니다. 자원의 경계를 점검하는 자리이며 손실이나 도난을 예언하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "계획이 바뀌는 순간 버릴 것과 남길 것을 현실적으로 나누는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_geopsal:work",
+      "foundation:shinsal_gwiin:geopsal#editorial.positive"
+     ]
+    },
+    {
+     "text": "좋은 제안에서도 내가 감당할 손실의 범위를 먼저 따져 보는 쪽입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_geopsal:money",
+      "foundation:shinsal_gwiin:geopsal#editorial.applications.career"
+     ]
+    },
+    {
+     "text": "여행 일정이 갑자기 틀어지면 꼭 해야 할 두 가지만 다시 고르곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_geopsal:scene"
+     ]
+    },
+    {
+     "text": "큰 지출 전에는 예비비와 완충 시간을 먼저 잡아 두는 편입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_geopsal"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "아직 뺏긴 건 없는데 지키느라 먼저 날이 서곤 합니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_geopsal:punch",
+      "v4:depth:twelve_sinsal_geopsal:shadow"
+     ]
+    },
+    {
+     "text": "좋아 보여서 빠르게 결정했다가 뒤처리가 커질 때가 많습니다.",
+     "domains": [
+      "money",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_geopsal",
+      "foundation:shinsal_gwiin:geopsal#editorial.caution"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "trustThreshold": 0.5,
+    "riskTaking": -0.4,
+    "possessiveness": 0.4,
+    "decisionSpeed": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 지키려는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 지키려는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "절처 글자가 둘 이상이면 뺏길까 하는 경계심이 더 짙어진다고 봅니다. 수로 손실을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 경계가 급하게 무너지거나 반대로 과하게 세지는 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_GEOPSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:geopsal#appliesWhen",
+     "foundation:shinsal_gwiin:geopsal#doNotApply",
+     "foundation:shinsal_gwiin:geopsal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_GEOPSAL",
+     "classic:sm2:論地支",
+     "foundation:shinsal_gwiin:geopsal#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:geopsal",
+    "foundation:shinsal_gwiin:geopsal#definition",
+    "foundation:shinsal_gwiin:geopsal#appliesWhen",
+    "foundation:shinsal_gwiin:geopsal#doNotApply",
+    "foundation:shinsal_gwiin:geopsal#distinctions",
+    "v4:material:twelve_sinsal_geopsal",
+    "foundation:shinsal_gwiin:geopsal#editorial",
+    "taxonomy:twelve_sinsal_geopsal",
+    "v4:depth:twelve_sinsal_geopsal:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_GEOPSAL"
+   ],
+   "aliases": [
+    "겁살",
+    "劫煞"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_jaesal",
+   "family": "shinsal",
+   "traditionalName": "災煞(재살)",
+   "easyName": "좁은 통로의 순서",
+   "definition": "재살(바닥의 작은 금이 커지기 전에 살피는 표식). 열두 신살의 겁살 다음 자리로, 제약 속에서 길을 찾는 흐름으로 읽습니다.",
+   "behaviorSignals": [
+    {
+     "text": "제한된 시간과 조건 속에서 가능한 방법을 추려 내는 데 힘을 쓰는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jaesal:work",
+      "taxonomy:twelve_sinsal_jaesal"
+     ]
+    },
+    {
+     "text": "원하는 날짜가 모두 막혀도 가능한 시간대를 다시 맞춰 보곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jaesal:scene"
+     ]
+    },
+    {
+     "text": "서로의 사정과 한계를 먼저 분명히 말해 힘겨루기를 줄이는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jaesal:relationships"
+     ]
+    },
+    {
+     "text": "작은 일정 지연을 발견하면 전체가 흔들리기 전에 먼저 손보는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_jaesal",
+      "v4:material:twelve_sinsal_jaesal"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "안 되는 조건만 듣다 보니 해 볼 방법도 먼저 의심하기 쉽습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jaesal:punch"
+     ]
+    },
+    {
+     "text": "막힌 기분을 사람에게 날카롭게 풀어 버릴 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jaesal:shadow",
+      "taxonomy:twelve_sinsal_jaesal"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "persistence": 0.4,
+    "controlNeed": 0.3,
+    "independence": 0.3,
+    "conflictApproach": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 막힘에 예민한 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 막힘에 예민한 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 제약을 더 크게 느끼고 답답함이 잦다고 봅니다. 수로 재난을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 막힌 느낌이 터지듯 급해지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_JAESAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:jaesal#appliesWhen",
+     "foundation:shinsal_gwiin:jaesal#doNotApply",
+     "foundation:shinsal_gwiin:jaesal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_JAESAL"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:jaesal",
+    "foundation:shinsal_gwiin:jaesal#definition",
+    "foundation:shinsal_gwiin:jaesal#appliesWhen",
+    "foundation:shinsal_gwiin:jaesal#doNotApply",
+    "foundation:shinsal_gwiin:jaesal#distinctions",
+    "v4:material:twelve_sinsal_jaesal",
+    "taxonomy:twelve_sinsal_jaesal",
+    "v4:depth:twelve_sinsal_jaesal:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_JAESAL",
+    "classic:repo_taxonomy:twelve_sinsal_jaesal"
+   ],
+   "aliases": [
+    "재살",
+    "災煞"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_jisal",
+   "family": "shinsal",
+   "traditionalName": "地煞(지살)",
+   "easyName": "다른 골목 발걸음",
+   "definition": "지살(발밑의 길이 바뀌는 표식). 열두 신살에서 삼합의 첫 글자에 놓이며, 작은 이동과 새 활동에서 넓어지는 생활을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "현장을 직접 보고 낯선 환경에 들어가면서 일할 감을 잡는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jisal:work",
+      "taxonomy:twelve_sinsal_jisal"
+     ]
+    },
+    {
+     "text": "책으로만 읽은 것을 실제로 보거나 체험하면 기억이 또렷해지는 쪽입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jisal:study"
+     ]
+    },
+    {
+     "text": "늘 가던 길을 바꿨다가 관심 가는 수업과 가게를 발견하곤 합니다.",
+     "domains": [
+      "relationships",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jisal:scene"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "처음 해 보는 건 많은데 두 번째 가는 곳은 적어 정착할 시간을 놓치기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_jisal:punch",
+      "v4:depth:twelve_sinsal_jisal:shadow"
+     ]
+    },
+    {
+     "text": "자리를 자주 옮기다 보면 생활 리듬이 흐트러져 힘이 흩어질 때가 많습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_jisal"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "mobility": 0.5,
+    "noveltySeeking": 0.5,
+    "persistence": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 자리를 옮기려는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 자리를 옮기려는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 이동이 잦고 정착이 늦는 성향이 짙어진다고 봅니다. 수로 이주를 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 이동이 갑작스럽고 계획 없이 생기는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_JISAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:jisal#appliesWhen",
+     "foundation:shinsal_gwiin:jisal#doNotApply",
+     "foundation:shinsal_gwiin:jisal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_JISAL"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:jisal",
+    "foundation:shinsal_gwiin:jisal#definition",
+    "foundation:shinsal_gwiin:jisal#appliesWhen",
+    "foundation:shinsal_gwiin:jisal#doNotApply",
+    "foundation:shinsal_gwiin:jisal#distinctions",
+    "v4:material:twelve_sinsal_jisal",
+    "taxonomy:twelve_sinsal_jisal",
+    "v4:depth:twelve_sinsal_jisal:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_JISAL",
+    "classic:repo_taxonomy:twelve_sinsal_jisal"
+   ],
+   "aliases": [
+    "지살",
+    "地煞"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_cheonsal",
+   "family": "shinsal",
+   "traditionalName": "天煞(천살)",
+   "easyName": "날씨 보고 길 고르기",
+   "definition": "천살(갑자기 바뀐 날씨에 우산과 경로를 다시 챙기는 표식). 열두 신살의 하나로, 혼자 바꿀 수 없는 조건에 대응하는 흐름으로 읽습니다.",
+   "behaviorSignals": [
+    {
+     "text": "정책과 시장처럼 혼자 정할 수 없는 조건을 읽고 준비를 바꾸는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_cheonsal:work",
+      "taxonomy:twelve_sinsal_cheonsal"
+     ]
+    },
+    {
+     "text": "비가 와서 야외 약속이 어긋나면 갈 수 있는 실내 장소를 다시 찾곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_cheonsal:scene"
+     ]
+    },
+    {
+     "text": "사람의 행동을 그 사람의 사정과 함께 보려고 사정을 먼저 묻는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_cheonsal:relationships"
+     ]
+    },
+    {
+     "text": "바꿀 수 없는 일과 바꿀 수 있는 일을 종이에 나눠 적는 편입니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_cheonsal",
+      "v4:material:twelve_sinsal_cheonsal"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "내가 못 바꾸는 것만 보다가 바꿀 수 있는 것도 놓치기 쉽습니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_cheonsal:punch"
+     ]
+    },
+    {
+     "text": "바깥 탓을 하며 내 선택까지 멈춰 버릴 때가 많습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_cheonsal:shadow",
+      "taxonomy:twelve_sinsal_cheonsal"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "planning": 0.4,
+    "controlNeed": -0.3,
+    "empathyResponse": 0.2,
+    "riskTaking": -0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 바깥 조건을 살피는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 바깥 조건을 살피는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 바깥 변수를 더 크게 의식한다고 봅니다. 수로 위기를 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 바깥 변화에 더 흔들리는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_CHEONSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:cheonsal#appliesWhen",
+     "foundation:shinsal_gwiin:cheonsal#doNotApply",
+     "foundation:shinsal_gwiin:cheonsal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_CHEONSAL"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:cheonsal",
+    "foundation:shinsal_gwiin:cheonsal#definition",
+    "foundation:shinsal_gwiin:cheonsal#appliesWhen",
+    "foundation:shinsal_gwiin:cheonsal#doNotApply",
+    "foundation:shinsal_gwiin:cheonsal#distinctions",
+    "v4:material:twelve_sinsal_cheonsal",
+    "taxonomy:twelve_sinsal_cheonsal",
+    "v4:depth:twelve_sinsal_cheonsal:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_CHEONSAL",
+    "classic:repo_taxonomy:twelve_sinsal_cheonsal"
+   ],
+   "aliases": [
+    "천살",
+    "天煞"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_yukhae",
+   "family": "shinsal",
+   "traditionalName": "六害煞(육해살)",
+   "easyName": "신발 속 모래알",
+   "definition": "육해살(신발 안의 작은 모래알처럼 계속 신경 쓰이는 표식). 열두 신살 중 생활권의 작은 소모를 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "누가 무엇을 맡았는지 흐려진 일에서 빠진 경계를 찾아내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yukhae:work",
+      "taxonomy:twelve_sinsal_yukhae"
+     ]
+    },
+    {
+     "text": "모임 준비를 돕다가 예약과 연락과 정산이 전부 내게 온 것을 알아채곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yukhae:scene"
+     ]
+    },
+    {
+     "text": "같이 지내며 불편한 습관은 쌓이기 전에 작을 때 말하는 쪽입니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yukhae:relationships",
+      "taxonomy:twelve_sinsal_yukhae"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "하나만 부탁받았는데 끝나고 보니 전부 내 일이 되어 있을 때가 많습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yukhae:punch"
+     ]
+    },
+    {
+     "text": "불편함을 쌓아 두다가 한꺼번에 지쳐 버리기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:twelve_sinsal_yukhae:shadow",
+      "taxonomy:twelve_sinsal_yukhae"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "boundarySetting": 0.4,
+    "caretaking": 0.4,
+    "detailFocus": 0.3,
+    "emotionalExpression": -0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 작은 소모를 느끼는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 작은 소모를 느끼는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 자잘한 피로가 더 자주 쌓인다고 봅니다. 수로 관계의 결말을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 참던 불편이 한꺼번에 터지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_YUKHAESAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:yukhae#appliesWhen",
+     "foundation:shinsal_gwiin:yukhae#doNotApply",
+     "foundation:shinsal_gwiin:yukhae#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_YUKHAESAL"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:yukhae",
+    "foundation:shinsal_gwiin:yukhae#definition",
+    "foundation:shinsal_gwiin:yukhae#appliesWhen",
+    "foundation:shinsal_gwiin:yukhae#doNotApply",
+    "foundation:shinsal_gwiin:yukhae#distinctions",
+    "v4:material:twelve_sinsal_yukhae",
+    "taxonomy:twelve_sinsal_yukhae",
+    "v4:depth:twelve_sinsal_yukhae:*",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_YUKHAESAL",
+    "classic:repo_taxonomy:twelve_sinsal_yukhae"
+   ],
+   "aliases": [
+    "육해살",
+    "육해",
+    "六害"
+   ]
+  },
+  {
+   "id": "twelve_sinsal_mangsin",
+   "family": "shinsal",
+   "traditionalName": "亡身煞(망신살)",
+   "easyName": "조명 켜진 무대",
+   "definition": "망신살(조명이 갑자기 켜진 무대처럼 작은 행동도 눈에 띄는 표식). 열두 신살의 드러남 자리이며 고전의 망신(亡神)과 자동으로 같다고 보지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "발표나 행사에서 앞에 서는 일을 맡으면 사람들이 이름을 먼저 기억하는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_mangsin",
+      "kb:sinsal_mangsin"
+     ]
+    },
+    {
+     "text": "콘텐츠를 올리거나 바깥 활동을 할 때 반응이 빨리 모이는 쪽입니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_mangsin",
+      "v4:material:twelve_sinsal_mangsin"
+     ]
+    },
+    {
+     "text": "공개된 자리에서는 말 한마디의 표현 선을 한 번 더 고르는 편입니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_mangsin",
+      "kb:sinsal_mangsin"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "별생각 없이 한 말이 주변에 크게 퍼져 당황할 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "love"
+     ],
+     "sourceRefs": [
+      "taxonomy:twelve_sinsal_mangsin"
+     ]
+    },
+    {
+     "text": "작은 행동도 눈에 잘 띄어 평판 이야기에 오르내리기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "kb:sinsal_mangsin",
+      "v4:material:twelve_sinsal_mangsin"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "attentionSeeking": 0.5,
+    "socialEnergy": 0.3,
+    "emotionalExpression": 0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 드러나는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 드러나는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "같은 글자가 둘 이상이면 노출과 평가가 더 자주 따라온다고 봅니다. 수로 평판의 결과를 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 드러남이 갑작스럽고 통제하기 어려운 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TWELVE_MANGSINSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:mangsin#appliesWhen",
+     "foundation:shinsal_gwiin:mangsin#doNotApply",
+     "foundation:shinsal_gwiin:mangsin#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TWELVE_MANGSINSAL",
+     "kb:sinsal_mangsin",
+     "foundation:shinsal_gwiin:wangshen#definition"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:mangsin",
+    "foundation:shinsal_gwiin:mangsin#definition",
+    "foundation:shinsal_gwiin:mangsin#appliesWhen",
+    "foundation:shinsal_gwiin:mangsin#doNotApply",
+    "foundation:shinsal_gwiin:mangsin#distinctions",
+    "v4:material:twelve_sinsal_mangsin",
+    "taxonomy:twelve_sinsal_mangsin",
+    "kb:sinsal_mangsin",
+    "classic:repo_stars:SHINSAL_RULES:TWELVE_MANGSINSAL",
+    "foundation:shinsal_gwiin:wangshen",
+    "foundation:shinsal_gwiin:wangshen#definition",
+    "classic:repo_knowledge:sinsal_mangsin"
+   ],
+   "aliases": [
+    "망신살",
+    "망신",
+    "亡身煞"
+   ]
+  },
+  {
+   "id": "shinsal:GOSINSAL",
+   "family": "shinsal",
+   "traditionalName": "孤辰殺(고신살)",
+   "easyName": "혼자 정리할 의자",
+   "definition": "고신살(곁에 사람이 있어도 혼자 정리할 의자를 남기는 표식). 연지 기준으로 정합니다. 혼자 회복하는 시간을 보는 자리이며 외로움을 확정하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "계속 말을 주고받기보다 혼자 책임지고 끝낼 몫이 있을 때 집중하는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GOSINSAL:work"
+     ]
+    },
+    {
+     "text": "즐겁게 데이트한 다음 날은 집에서 조용히 보내고 싶어 하는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GOSINSAL:scene"
+     ]
+    },
+    {
+     "text": "각자의 시간을 보낸 뒤 다시 만나 이야기할 여유를 챙기는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GOSINSAL:relationships",
+      "v4:depth:shinsal:GOSINSAL:love"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "잠깐 혼자 있겠다는 말을 안 해서 상대가 이유를 추측하게 만들기 쉽습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GOSINSAL:punch"
+     ]
+    },
+    {
+     "text": "혼자 정리하느라 상대를 너무 오래 기다리게 할 때가 많습니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GOSINSAL:shadow",
+      "v4:material:shinsal:GOSINSAL"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "independence": 0.6,
+    "socialEnergy": -0.5,
+    "intimacyPace": -0.3,
+    "emotionalExpression": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 혼자 있으려는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 혼자 있으려는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 혼자 회복하는 시간이 더 길어진다고 봅니다. 수로 외로움이나 가족 사실을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 혼자 있고 싶은 때와 사람을 찾는 때가 들쭉날쭉해지는 쪽으로 읽습니다. 충 항목과 함께 봅니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:GOSINSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:gosinsal#appliesWhen",
+     "foundation:shinsal_gwiin:gosinsal#doNotApply",
+     "foundation:shinsal_gwiin:gosinsal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:GOSINSAL"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:gosinsal",
+    "foundation:shinsal_gwiin:gosinsal#definition",
+    "foundation:shinsal_gwiin:gosinsal#appliesWhen",
+    "foundation:shinsal_gwiin:gosinsal#doNotApply",
+    "foundation:shinsal_gwiin:gosinsal#distinctions",
+    "v4:material:shinsal:GOSINSAL",
+    "v4:depth:shinsal:GOSINSAL:*",
+    "classic:repo_stars:SHINSAL_RULES:GOSINSAL"
+   ],
+   "aliases": [
+    "고신살",
+    "고신",
+    "孤辰"
+   ]
+  },
+  {
+   "id": "shinsal:GWASUKSAL",
+   "family": "shinsal",
+   "traditionalName": "寡宿殺(과숙살)",
+   "easyName": "천천히 여는 문",
+   "definition": "과숙살(문을 천천히 열어 안쪽 온기를 지키는 표식). 연지에서 고신과 반대쪽으로 세며, 관계를 서두르지 않는 속도를 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "좋은 느낌이 들어도 다음 약속을 잡기 전에 혼자 생각할 시간을 두는 편입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GWASUKSAL:scene"
+     ]
+    },
+    {
+     "text": "적극적인 말보다 오래 변하지 않는 태도를 보고 마음을 여는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GWASUKSAL:love"
+     ]
+    },
+    {
+     "text": "혼자만의 생활을 존중해 주는 사람에게 오히려 깊게 정을 주는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GWASUKSAL:relationships",
+      "v4:material:shinsal:GWASUKSAL"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "관심은 있는데 반응을 아껴서 상대가 관심 없는 줄 알기 쉽습니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GWASUKSAL:punch"
+     ]
+    },
+    {
+     "text": "괜찮은 사람도 너무 오래 시험하듯 보다가 때를 놓치곤 합니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:shinsal:GWASUKSAL:shadow",
+      "v4:material:shinsal:GWASUKSAL"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "intimacyPace": -0.6,
+    "trustThreshold": 0.5,
+    "independence": 0.4,
+    "emotionalExpression": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 천천히 여는 성향이 겉으로 세게 드러나는 쪽으로 읽습니다. 그래도 길흉은 정하지 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 천천히 여는 성향이 속에 담긴 성향으로 읽습니다. 표식 하나로 결론을 내지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 마음을 여는 속도가 더 느려진다고 봅니다. 수로 결혼이나 가족 사실을 정하지 않습니다.",
+    "clash": "그 글자가 충을 받으면 닫았던 문이 갑자기 열리거나 더 굳게 닫히는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:GWASUKSAL",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:gwasuksal#appliesWhen",
+     "foundation:shinsal_gwiin:gwasuksal#doNotApply",
+     "foundation:shinsal_gwiin:gwasuksal#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:GWASUKSAL"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:gwasuksal",
+    "foundation:shinsal_gwiin:gwasuksal#definition",
+    "foundation:shinsal_gwiin:gwasuksal#appliesWhen",
+    "foundation:shinsal_gwiin:gwasuksal#doNotApply",
+    "foundation:shinsal_gwiin:gwasuksal#distinctions",
+    "v4:material:shinsal:GWASUKSAL",
+    "v4:depth:shinsal:GWASUKSAL:*",
+    "classic:repo_stars:SHINSAL_RULES:GWASUKSAL"
+   ],
+   "aliases": [
+    "과숙살",
+    "과숙",
+    "寡宿"
+   ]
+  },
+  {
+   "id": "gwiin_cheoneul",
+   "family": "gwiin",
+   "traditionalName": "天乙貴人(천을귀인)",
+   "easyName": "등불 들어주는 사람",
+   "definition": "천을귀인(어두운 길에서 등불을 들어주는 사람에 빗댄 길한 별). 일간마다 정해진 지지로 봅니다. 도움받을 통로를 살피는 자리이며 인물의 도움을 보장하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "혼자 찾아도 안 보이던 방법을 지인에게 말하자 알맞은 사람을 소개받곤 합니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheoneul:scene",
+      "foundation:shinsal_gwiin:cheoneul#editorial.positive"
+     ]
+    },
+    {
+     "text": "막힌 일이 생기면 실제로 물어볼 사람과 질문을 먼저 적어 두는 편입니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "foundation:shinsal_gwiin:cheoneul#editorial.applications.relationships",
+      "v4:depth:gwiin_cheoneul:relationships"
+     ]
+    },
+    {
+     "text": "서로 잘되기를 바라는 만남에서 관계의 따뜻함을 크게 느끼는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheoneul:love"
+     ]
+    },
+    {
+     "text": "혼자 버티다가 도움을 요청하면 일이 눈에 띄게 빨라지는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneul",
+      "v4:depth:gwiin_cheoneul:work"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "고마운 사람의 부탁을 거절하지 못해 내 일정을 뒤로 미루기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheoneul:shadow"
+     ]
+    },
+    {
+     "text": "도움 한 번 받았다고 모든 부탁에 평생 갚으려다 지칠 때가 많습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheoneul:punch"
+     ]
+    },
+    {
+     "text": "도와줄 사람이 곁에 있어도 먼저 묻지 않아 일이 늦어지곤 합니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneul",
+      "foundation:shinsal_gwiin:cheoneul#editorial.caution"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "trustThreshold": -0.4,
+    "socialEnergy": 0.3,
+    "independence": -0.3,
+    "caretaking": 0.3
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 윗세대와 고향 쪽 인연에서 길이 열리는 모습으로 읽되 가족 사실을 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:cheoneul#definition",
+      "foundation:shinsal_gwiin:cheoneul#editorial.caution",
+      "calc:SHINSAL_RULES:CHEON_EUL_GWIIN"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 일터와 학교의 윗사람이나 선배에게서 도움을 얻는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:cheoneul#definition",
+      "calc:SHINSAL_RULES:CHEON_EUL_GWIIN"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 가까운 사람과 서로 돕는 관계로 읽되 배우자 사실을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:cheoneul#definition",
+      "foundation:shinsal_gwiin:cheoneul#editorial.caution",
+      "calc:SHINSAL_RULES:CHEON_EUL_GWIIN"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 후배와 아랫사람에게서 도움이 오는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:cheoneul#definition",
+      "calc:SHINSAL_RULES:CHEON_EUL_GWIIN"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 도움을 받는 통로를 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 도움을 받는 통로를 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 도움을 주고받는 통로가 넓다고 봅니다. 수로 도움을 보장하지는 않습니다.",
+    "clash": "고전은 충파나 공망을 맞으면 이 별의 힘이 약해진다고 봅니다. 이때는 관계 항목을 먼저 보고 도움을 말하지 않습니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:CHEON_EUL_GWIIN",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:cheoneul#appliesWhen",
+     "foundation:shinsal_gwiin:cheoneul#doNotApply",
+     "foundation:shinsal_gwiin:cheoneul#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:CHEON_EUL_GWIIN",
+     "foundation:shinsal_gwiin:cheoneul#definition",
+     "classic:aks:사주",
+     "foundation:shinsal_gwiin:cheoneul#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:cheoneul",
+    "foundation:shinsal_gwiin:cheoneul#definition",
+    "foundation:shinsal_gwiin:cheoneul#appliesWhen",
+    "foundation:shinsal_gwiin:cheoneul#doNotApply",
+    "foundation:shinsal_gwiin:cheoneul#distinctions",
+    "v4:material:gwiin_cheoneul",
+    "foundation:shinsal_gwiin:cheoneul#editorial",
+    "taxonomy:gwiin_cheoneul",
+    "v4:depth:gwiin_cheoneul:*",
+    "classic:repo_stars:SHINSAL_RULES:CHEON_EUL_GWIIN",
+    "classic:aks:사주"
+   ],
+   "aliases": [
+    "천을귀인",
+    "천을",
+    "天乙貴人"
+   ]
+  },
+  {
+   "id": "gwiin_cheondeok",
+   "family": "gwiin",
+   "traditionalName": "天德貴人(천덕귀인)",
+   "easyName": "충격 덜어 주는 난간",
+   "definition": "천덕귀인(거친 길목에서 충격을 덜어 주는 난간에 빗댄 별). 월령에 따라 정합니다. 해를 줄이고 협력하는 관점이며 보호 장치로 보지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "누군가 실수했을 때 탓할 말보다 지금 수습할 방법을 먼저 묻는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheondeok:scene",
+      "foundation:shinsal_gwiin:cheondeok#editorial.positive"
+     ]
+    },
+    {
+     "text": "잘못을 덮기보다 수습할 길을 함께 찾을 사람을 먼저 부르는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheondeok:work"
+     ]
+    },
+    {
+     "text": "갈등을 정리할 때 서로가 줄일 수 있는 부담부터 하나씩 확인하는 편입니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "foundation:shinsal_gwiin:cheondeok#editorial.applications.relationships",
+      "v4:depth:gwiin_cheondeok:relationships"
+     ]
+    },
+    {
+     "text": "날 선 상황에서도 관계를 아주 끊어 버리지 않고 돌아올 길을 남기는 쪽입니다.",
+     "domains": [
+      "love",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheondeok:character",
+      "v4:depth:gwiin_cheondeok:inside"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "좋게 끝내려다 내 불편까지 숨겨서 혼자 손해 본 느낌이 남기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_cheondeok:shadow",
+      "v4:depth:gwiin_cheondeok:punch"
+     ]
+    },
+    {
+     "text": "중재해 줄 사람만 믿고 말투를 낮추지 않다가 갈등이 그대로 남을 때가 많습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheondeok",
+      "foundation:shinsal_gwiin:cheondeok#editorial.caution"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "conflictApproach": 0.4,
+    "empathyResponse": 0.4,
+    "caretaking": 0.3,
+    "emotionalExpression": -0.2
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 집안 분위기가 다툼을 눅이는 쪽이라고 빗대 읽되 가족 사실을 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:cheondeok#definition",
+      "foundation:shinsal_gwiin:cheondeok#editorial.caution",
+      "calc:SHINSAL_RULES:CHEON_DEOK_GWIIN"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 일터에서 중재 역할을 자주 맡는 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:cheondeok#definition",
+      "calc:SHINSAL_RULES:CHEON_DEOK_GWIIN"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 본인이 거친 말을 낮추는 쪽으로 읽되 배우자 사실을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:cheondeok#definition",
+      "foundation:shinsal_gwiin:cheondeok#editorial.caution",
+      "calc:SHINSAL_RULES:CHEON_DEOK_GWIIN"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 늦게까지 주변을 눅이는 역할로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:cheondeok#definition",
+      "calc:SHINSAL_RULES:CHEON_DEOK_GWIIN"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 해를 줄이는 역할을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 해를 줄이는 역할을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "월덕과 같이 있으면 눅이는 힘이 또렷해진다고 봅니다. 두 별을 따로 세되 수로 보호를 보장하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 눅이는 힘이 끊기는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:CHEON_DEOK_GWIIN",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:cheondeok#appliesWhen",
+     "foundation:shinsal_gwiin:cheondeok#doNotApply",
+     "foundation:shinsal_gwiin:cheondeok#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:CHEON_DEOK_GWIIN",
+     "foundation:shinsal_gwiin:woldeok#definition",
+     "foundation:shinsal_gwiin:cheondeok#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:cheondeok",
+    "foundation:shinsal_gwiin:cheondeok#definition",
+    "foundation:shinsal_gwiin:cheondeok#appliesWhen",
+    "foundation:shinsal_gwiin:cheondeok#doNotApply",
+    "foundation:shinsal_gwiin:cheondeok#distinctions",
+    "v4:material:gwiin_cheondeok",
+    "foundation:shinsal_gwiin:cheondeok#editorial",
+    "taxonomy:gwiin_cheondeok",
+    "v4:depth:gwiin_cheondeok:*",
+    "classic:repo_stars:SHINSAL_RULES:CHEON_DEOK_GWIIN"
+   ],
+   "aliases": [
+    "천덕귀인",
+    "천덕",
+    "天德"
+   ]
+  },
+  {
+   "id": "gwiin_woldeok",
+   "family": "gwiin",
+   "traditionalName": "月德貴人(월덕귀인)",
+   "easyName": "번지는 부드러운 신뢰",
+   "definition": "월덕귀인(달빛처럼 모서리를 부드럽게 비추는 별). 월령의 삼합 계열로 정하며 천덕과 산출 축이 다릅니다. 관계에서 조정할 여지를 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "일을 혼자 끌어안기보다 동료와 나누며 막힌 부분을 푸는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_woldeok:work",
+      "foundation:shinsal_gwiin:woldeok#editorial.positive"
+     ]
+    },
+    {
+     "text": "평소 인사를 나누던 사람이 급한 일을 보고 먼저 손을 보태 주곤 합니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_woldeok:scene"
+     ]
+    },
+    {
+     "text": "공동 일이 막히면 역할 조정이 가능한지 당사자에게 직접 물어보는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "foundation:shinsal_gwiin:woldeok#editorial.applications.relationships"
+     ]
+    },
+    {
+     "text": "일상의 작은 호의를 잊지 않고 다음에 작은 감사로 되돌려 주는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_woldeok:inside",
+      "taxonomy:gwiin_woldeok"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "서로 좋게 얘기했는데 정작 누가 할지는 안 정하고 헤어질 때가 많습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_woldeok:punch"
+     ]
+    },
+    {
+     "text": "분위기가 좋으면 불편한 확인을 미루다가 뒤늦게 꼬이기 쉽습니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_woldeok:shadow",
+      "taxonomy:gwiin_woldeok"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "caretaking": 0.4,
+    "conflictApproach": -0.3,
+    "socialEnergy": 0.3,
+    "trustThreshold": -0.3
+   },
+   "positionNuance": [
+    {
+     "position": "year",
+     "text": "연의 자리는 뿌리에 빗댑니다. 여기 있으면 자란 환경의 사람들과 부드럽게 지내는 모습으로 읽되 가족 사실을 만들지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:year#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:year#editorial.caution",
+      "foundation:shinsal_gwiin:woldeok#definition",
+      "foundation:shinsal_gwiin:woldeok#editorial.caution",
+      "calc:SHINSAL_RULES:WOL_DEOK_GWIIN"
+     ]
+    },
+    {
+     "position": "month",
+     "text": "월의 자리는 생활 환경에 빗댑니다. 여기 있으면 같이 일하는 사람에게서 협조를 얻기 쉬운 쪽으로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:month#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:month#editorial.caution",
+      "foundation:shinsal_gwiin:woldeok#definition",
+      "calc:SHINSAL_RULES:WOL_DEOK_GWIIN"
+     ]
+    },
+    {
+     "position": "day",
+     "text": "일의 자리는 본인과 가까운 관계에 빗댑니다. 여기 있으면 가까운 사람과 서로 양보하는 쪽으로 읽되 배우자 사실을 정하지 않습니다.",
+     "sourceRefs": [
+      "foundation:position:day#symbol",
+      "classic:sm2:論遁月時",
+      "foundation:position:day#editorial.caution",
+      "foundation:shinsal_gwiin:woldeok#definition",
+      "foundation:shinsal_gwiin:woldeok#editorial.caution",
+      "calc:SHINSAL_RULES:WOL_DEOK_GWIIN"
+     ]
+    },
+    {
+     "position": "hour",
+     "text": "출생 시각을 알 때만 봅니다. 시의 자리는 뒤의 결실에 빗대므로 함께 지낸 사람에게서 나중에 돌아오는 호의로 읽습니다.",
+     "sourceRefs": [
+      "foundation:position:hour#symbol",
+      "foundation:position:hour#appliesWhen",
+      "classic:sm2:論遁月時",
+      "calc:pillar.hour.requiresBirthTime",
+      "foundation:position:hour#editorial.caution",
+      "foundation:shinsal_gwiin:woldeok#definition",
+      "calc:SHINSAL_RULES:WOL_DEOK_GWIIN"
+     ]
+    }
+   ],
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 조정할 여지를 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 조정할 여지를 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "천덕과 같이 있으면 협조를 얻는 성향이 또렷해진다고 봅니다. 두 별은 축이 다르므로 따로 세고 수로 더하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 협조가 끊기거나 늦어지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:WOL_DEOK_GWIIN",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:woldeok#appliesWhen",
+     "foundation:shinsal_gwiin:woldeok#doNotApply",
+     "foundation:shinsal_gwiin:woldeok#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:WOL_DEOK_GWIIN",
+     "foundation:shinsal_gwiin:cheondeok#definition",
+     "foundation:shinsal_gwiin:woldeok#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:woldeok",
+    "foundation:shinsal_gwiin:woldeok#definition",
+    "foundation:shinsal_gwiin:woldeok#appliesWhen",
+    "foundation:shinsal_gwiin:woldeok#doNotApply",
+    "foundation:shinsal_gwiin:woldeok#distinctions",
+    "v4:material:gwiin_woldeok",
+    "foundation:shinsal_gwiin:woldeok#editorial",
+    "foundation:shinsal_gwiin:woldeok#difference",
+    "taxonomy:gwiin_woldeok",
+    "v4:depth:gwiin_woldeok:*",
+    "classic:repo_stars:SHINSAL_RULES:WOL_DEOK_GWIIN"
+   ],
+   "aliases": [
+    "월덕귀인",
+    "월덕",
+    "月德"
+   ]
+  },
+  {
+   "id": "gwiin_taegeuk",
+   "family": "gwiin",
+   "traditionalName": "太極貴人(태극귀인)",
+   "easyName": "중심 보여주는 나침반",
+   "definition": "태극귀인(기운이 시작되고 돌아가는 자리를 짝지은 별). 일간별 지지 짝으로 보며, 시작과 마무리를 함께 살피는 자리이고 신비한 능력을 뜻하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "따로 배운 내용을 큰 원리로 이어 붙일 때 공부가 깊어지는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_taegeuk:study",
+      "foundation:shinsal_gwiin:taegeuk#editorial.positive"
+     ]
+    },
+    {
+     "text": "서로 다른 입장을 끝까지 듣고 한쪽 말로만 판단하지 않으려 하는 쪽입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_taegeuk:relationships"
+     ]
+    },
+    {
+     "text": "실망스러운 일을 겪은 뒤에도 그 경험에서 중요했던 것을 차분히 적어 보곤 합니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_taegeuk:scene"
+     ]
+    },
+    {
+     "text": "몰입할 주제를 고르면 왜 시작하고 어디서 끝낼지 먼저 정리하는 편입니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "foundation:shinsal_gwiin:taegeuk#editorial.applications.career",
+      "taxonomy:gwiin_taegeuk"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "오늘 할 작은 일을 앞두고 인생의 의미부터 묻다가 손이 느려지기 쉽습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_taegeuk:punch",
+      "v4:depth:gwiin_taegeuk:shadow"
+     ]
+    },
+    {
+     "text": "큰 그림은 있는데 첫 실행을 미루어 성과가 흐려질 때가 많습니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_taegeuk"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "introspection": 0.6,
+    "detailFocus": -0.4,
+    "inquiry": 0.4,
+    "decisionSpeed": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 중심을 찾는 힘을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 중심을 찾는 힘을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 큰 뜻을 찾는 성향이 짙어진다고 봅니다. 수로 능력을 보장하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 중심이 흔들려 의미 찾기가 길어지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:TAEGEUK_GWIIN",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:taegeuk#appliesWhen",
+     "foundation:shinsal_gwiin:taegeuk#doNotApply",
+     "foundation:shinsal_gwiin:taegeuk#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:TAEGEUK_GWIIN",
+     "classic:sm3:論太極貴",
+     "foundation:shinsal_gwiin:taegeuk#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:taegeuk",
+    "foundation:shinsal_gwiin:taegeuk#definition",
+    "foundation:shinsal_gwiin:taegeuk#appliesWhen",
+    "foundation:shinsal_gwiin:taegeuk#doNotApply",
+    "foundation:shinsal_gwiin:taegeuk#distinctions",
+    "v4:material:gwiin_taegeuk",
+    "foundation:shinsal_gwiin:taegeuk#editorial",
+    "taxonomy:gwiin_taegeuk",
+    "v4:depth:gwiin_taegeuk:*",
+    "classic:repo_stars:SHINSAL_RULES:TAEGEUK_GWIIN",
+    "classic:sm3:論太極貴"
+   ],
+   "aliases": [
+    "태극귀인",
+    "태극",
+    "太極貴"
+   ]
+  },
+  {
+   "id": "gwiin_munchang",
+   "family": "gwiin",
+   "traditionalName": "文昌貴人(문창귀인)",
+   "easyName": "읽히는 문장의 붓",
+   "definition": "문창귀인(책상 위에 등불이 켜진 모습에 빗댄 배움의 별). 일간에 따라 정해진 지지로 보며, 흩어진 생각을 글과 체계로 묶는 힘을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "복잡한 내용을 읽는 사람이 이해할 문서와 설명으로 바꾸는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_munchang:work",
+      "taxonomy:gwiin_munchang"
+     ]
+    },
+    {
+     "text": "그냥 외우기보다 요약하고 설명하며 자기 것으로 만드는 쪽입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_munchang:study"
+     ]
+    },
+    {
+     "text": "여러 장의 자료를 읽고 친구가 이해할 한 페이지로 정리하곤 합니다.",
+     "domains": [
+      "study",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_munchang:scene"
+     ]
+    },
+    {
+     "text": "전문서를 읽으면 목차부터 구조로 다시 그려 보는 편입니다.",
+     "domains": [
+      "study",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_munchang",
+      "v4:material:gwiin_munchang"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "제출하면 되는데 제목을 세 번째 고치고 있을 때가 많습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_munchang:punch",
+      "v4:depth:gwiin_munchang:shadow"
+     ]
+    },
+    {
+     "text": "머릿속 이해에만 머물다 결과물로 꺼내는 시기를 놓치기 쉽습니다.",
+     "domains": [
+      "study",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_munchang"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "learningDrive": 0.5,
+    "verbalOutput": 0.4,
+    "perfectionism": 0.4,
+    "detailFocus": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 글로 묶는 힘을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 글로 묶는 힘을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 정리하고 표현하는 성향이 짙어진다고 봅니다. 수로 시험 결과를 정하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 정리가 자주 끊겨 결과물이 늦어지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:MUN_CHANG_GWIIN",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:munchang#appliesWhen",
+     "foundation:shinsal_gwiin:munchang#doNotApply",
+     "foundation:shinsal_gwiin:munchang#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:MUN_CHANG_GWIIN",
+     "classic:sm3:論太極貴 중 文昌貴 구절",
+     "foundation:shinsal_gwiin:woldeok#difference"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:munchang",
+    "foundation:shinsal_gwiin:munchang#definition",
+    "foundation:shinsal_gwiin:munchang#appliesWhen",
+    "foundation:shinsal_gwiin:munchang#doNotApply",
+    "foundation:shinsal_gwiin:munchang#distinctions",
+    "v4:material:gwiin_munchang",
+    "taxonomy:gwiin_munchang",
+    "v4:depth:gwiin_munchang:*",
+    "classic:repo_stars:SHINSAL_RULES:MUN_CHANG_GWIIN",
+    "classic:sm3:論太極貴 중 文昌貴 구절",
+    "foundation:shinsal_gwiin:woldeok#difference",
+    "classic:repo_knowledge:gwiin_munchang"
+   ],
+   "aliases": [
+    "문창귀인",
+    "문창",
+    "文昌"
+   ]
+  },
+  {
+   "id": "gwiin_mungok",
+   "family": "gwiin",
+   "traditionalName": "文曲貴人(문곡귀인)",
+   "easyName": "굽이치는 문장 감각",
+   "definition": "문곡귀인(굽이치는 물길처럼 생각을 부드러운 문장으로 푸는 별). 문창과 짝을 이루는 배움의 별입니다. 표현의 결을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "생각이 뒤엉키면 일단 글로 써 보고 나서야 선명해지는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_mungok",
+      "v4:material:gwiin_mungok"
+     ]
+    },
+    {
+     "text": "발표 전에 설명의 흐름과 리듬을 소리 내어 다듬어 보는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_mungok"
+     ]
+    },
+    {
+     "text": "배운 내용을 정리할 때 표보다 문장으로 풀어 쓰는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_mungok",
+      "v4:material:gwiin_mungok"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "표현을 다듬는 데 머물다가 마감이 늦어질 때가 많습니다.",
+     "domains": [
+      "work",
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_mungok"
+     ]
+    },
+    {
+     "text": "문장이 마음에 들 때까지 고치느라 실전 성과가 약해지기 쉽습니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_mungok",
+      "v4:material:gwiin_mungok"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "verbalOutput": 0.5,
+    "perfectionism": 0.3,
+    "learningDrive": 0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 표현의 결을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 표현의 결을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "문창과 같이 있으면 배움과 표현이 함께 짙어진다고 봅니다. 두 별을 따로 세되 수로 더하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 표현이 거칠어지거나 끊기는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuFeatureTaxonomy:gwiin_mungok",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:mungok#appliesWhen",
+     "foundation:shinsal_gwiin:mungok#doNotApply",
+     "foundation:shinsal_gwiin:mungok#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_taxonomy:gwiin_mungok",
+     "foundation:shinsal_gwiin:munchang#definition"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:mungok",
+    "foundation:shinsal_gwiin:mungok#definition",
+    "foundation:shinsal_gwiin:mungok#appliesWhen",
+    "foundation:shinsal_gwiin:mungok#doNotApply",
+    "foundation:shinsal_gwiin:mungok#distinctions",
+    "v4:material:gwiin_mungok",
+    "taxonomy:gwiin_mungok",
+    "classic:repo_taxonomy:gwiin_mungok",
+    "foundation:shinsal_gwiin:munchang"
+   ],
+   "aliases": [
+    "문곡귀인",
+    "문곡",
+    "文曲"
+   ]
+  },
+  {
+   "id": "gwiin_hakdang",
+   "family": "gwiin",
+   "traditionalName": "學堂貴人(학당귀인)",
+   "easyName": "매일 돌아오는 배움",
+   "definition": "학당귀인(좋은 교실과 스승을 만난 학생에 빗댄 별). 납음과 장생 등 논법이 갈립니다. 배움을 쌓는 자리이며 합격이나 학벌을 보장하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "하루에 다 끝내기보다 다시 돌아와 이해를 쌓는 데 힘을 쓰는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_hakdang:study",
+      "foundation:shinsal_gwiin:hakdang#editorial.applications.study"
+     ]
+    },
+    {
+     "text": "배운 기술을 반복해 익히며 믿고 맡길 전문성을 만드는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_hakdang:work"
+     ]
+    },
+    {
+     "text": "첫날 어려웠던 수업도 지난 기록을 펼쳐 다시 따라 해 보곤 합니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_hakdang:scene"
+     ]
+    },
+    {
+     "text": "강의나 멘토가 있을 때 혼자 할 때보다 공부 속도가 붙는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_hakdang"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "책장은 꽉 찼는데 직접 풀어 본 문제는 적을 때가 많습니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_hakdang:punch",
+      "v4:depth:gwiin_hakdang:shadow"
+     ]
+    },
+    {
+     "text": "커리큘럼이 없으면 자료만 모으다가 지쳐 버리기 쉽습니다.",
+     "domains": [
+      "study",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_hakdang"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "learningDrive": 0.6,
+    "persistence": 0.4,
+    "ruleAdherence": 0.3,
+    "planning": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 배움을 쌓는 힘을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 배움을 쌓는 힘을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 꾸준히 익히는 성향이 짙어진다고 봅니다. 수로 시험 결과를 정하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 배움이 중간에 끊기거나 자리를 옮기는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:SHINSAL_RULES:HAK_DANG_GWIIN",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:hakdang#appliesWhen",
+     "foundation:shinsal_gwiin:hakdang#doNotApply",
+     "foundation:shinsal_gwiin:hakdang#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_stars:SHINSAL_RULES:HAK_DANG_GWIIN",
+     "foundation:shinsal_gwiin:ciguan#definition",
+     "foundation:shinsal_gwiin:hakdang#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:hakdang",
+    "foundation:shinsal_gwiin:hakdang#definition",
+    "foundation:shinsal_gwiin:hakdang#appliesWhen",
+    "foundation:shinsal_gwiin:hakdang#doNotApply",
+    "foundation:shinsal_gwiin:hakdang#distinctions",
+    "v4:material:gwiin_hakdang",
+    "foundation:shinsal_gwiin:hakdang#editorial",
+    "taxonomy:gwiin_hakdang",
+    "v4:depth:gwiin_hakdang:*",
+    "classic:repo_stars:SHINSAL_RULES:HAK_DANG_GWIIN",
+    "foundation:shinsal_gwiin:ciguan"
+   ],
+   "aliases": [
+    "학당귀인",
+    "학당",
+    "學堂"
+   ]
+  },
+  {
+   "id": "gwiin_jaego",
+   "family": "gwiin",
+   "traditionalName": "財庫貴人(재고귀인)",
+   "easyName": "차곡차곡 쌓는 창고",
+   "definition": "재고귀인(돈의 물길 끝에 놓인 단단한 창고에 빗댄 별). 일간이 다스리는 재물의 창고 지지로 보며, 쌓아 두는 힘을 보는 자리이고 수입을 보장하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "끝난 일의 자료를 정리해 두었다가 비슷한 의뢰가 왔을 때 꺼내는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_jaego:scene"
+     ]
+    },
+    {
+     "text": "들어온 돈을 바로 쓰기보다 남겨서 쌓아 두는 쪽입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_jaego:money",
+      "kb:gwiin_jaego"
+     ]
+    },
+    {
+     "text": "한 번 해낸 일을 기록과 솜씨로 남겨 다음 일의 밑천으로 쓰곤 합니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_jaego:work"
+     ]
+    },
+    {
+     "text": "수입이 생기면 쓰는 통장과 모으는 통장을 먼저 나누는 편입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_jaego"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "자산이라고 모았는데 손도 못 대는 짐이 되어 있을 때가 많습니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_jaego:punch"
+     ]
+    },
+    {
+     "text": "이미 들인 것이 아까워 놓지 못하고 끌어안기 쉽습니다.",
+     "domains": [
+      "money",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_jaego:shadow",
+      "taxonomy:gwiin_jaego"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "spendingControl": 0.6,
+    "possessiveness": 0.5,
+    "planning": 0.3,
+    "noveltySeeking": -0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 쌓아 두는 힘을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 쌓아 두는 힘을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 모으는 성향이 짙어지고 놓지 못하는 쪽도 세진다고 봅니다. 수로 재산을 정하지 않습니다.",
+    "clash": "창고 글자가 충을 받으면 창고가 열린다는 논법이 있어 쌓은 것이 움직이는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:jaego",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:jaego#appliesWhen",
+     "foundation:shinsal_gwiin:jaego#doNotApply",
+     "foundation:shinsal_gwiin:jaego#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_extractor:jaego",
+     "kb:gwiin_jaego"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:jaego",
+    "foundation:shinsal_gwiin:jaego#definition",
+    "foundation:shinsal_gwiin:jaego#appliesWhen",
+    "foundation:shinsal_gwiin:jaego#doNotApply",
+    "foundation:shinsal_gwiin:jaego#distinctions",
+    "v4:material:gwiin_jaego",
+    "taxonomy:gwiin_jaego",
+    "kb:gwiin_jaego",
+    "v4:depth:gwiin_jaego:*",
+    "classic:repo_extractor:jaego",
+    "classic:repo_knowledge:gwiin_jaego"
+   ],
+   "aliases": [
+    "재고귀인",
+    "재고",
+    "財庫"
+   ]
+  },
+  {
+   "id": "gwiin_geumyeorok",
+   "family": "gwiin",
+   "traditionalName": "金輿祿(금여록)",
+   "easyName": "품위 있는 수레",
+   "definition": "금여록(귀한 사람이 타는 수레에 빗댄 별). 일간의 녹 자리에서 두 칸 앞 지지로 보며, 생활을 지탱하는 자원을 보는 자리이고 차량이나 부유한 배우자를 예언하지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "오래 쓰는 좋은 물건과 편한 환경의 가치를 알아보고 값을 치르는 편입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_geumyeorok:money",
+      "foundation:shinsal_gwiin:geumyeo#editorial.positive"
+     ]
+    },
+    {
+     "text": "서로 예의를 갖추고 일상을 품위 있게 나누는 관계에 마음이 가는 쪽입니다.",
+     "domains": [
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_geumyeorok:love"
+     ]
+    },
+    {
+     "text": "특별한 날 식당을 고를 때 음식만큼 편안한 좌석과 응대를 보곤 합니다.",
+     "domains": [
+      "money",
+      "love"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_geumyeorok:scene"
+     ]
+    },
+    {
+     "text": "도움을 받는 상황이면 지원 조건과 내가 맡을 일을 먼저 확인하는 편입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "foundation:shinsal_gwiin:geumyeo#editorial.applications.career"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "편하려고 고른 옵션이 하나씩 붙더니 가격이 훌쩍 오를 때가 많습니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_geumyeorok:punch",
+      "v4:depth:gwiin_geumyeorok:shadow"
+     ]
+    },
+    {
+     "text": "겉의 안정감만 좇다가 실제 실력과 생활 규칙이 비어 보이기 쉽습니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_geumyeorok"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "spendingControl": -0.4,
+    "statusDrive": 0.4,
+    "detailFocus": 0.3,
+    "ruleAdherence": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 생활을 지탱하는 자원을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 생활을 지탱하는 자원을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 좋은 환경을 바라는 성향이 짙어진다고 봅니다. 수로 재산이나 배우자를 정하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 편안함이 자주 흔들리는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:geumyeo",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:geumyeo#appliesWhen",
+     "foundation:shinsal_gwiin:geumyeo#doNotApply",
+     "foundation:shinsal_gwiin:geumyeo#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_extractor:geumyeo",
+     "foundation:shinsal_gwiin:geumyeo#editorial.excessOrDeficit"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:geumyeo",
+    "foundation:shinsal_gwiin:geumyeo#definition",
+    "foundation:shinsal_gwiin:geumyeo#appliesWhen",
+    "foundation:shinsal_gwiin:geumyeo#doNotApply",
+    "foundation:shinsal_gwiin:geumyeo#distinctions",
+    "v4:material:gwiin_geumyeorok",
+    "foundation:shinsal_gwiin:geumyeo#editorial",
+    "taxonomy:gwiin_geumyeorok",
+    "v4:depth:gwiin_geumyeorok:*",
+    "classic:repo_extractor:geumyeo"
+   ],
+   "aliases": [
+    "금여록",
+    "금여",
+    "金輿"
+   ]
+  },
+  {
+   "id": "gwiin_amrok",
+   "family": "gwiin",
+   "traditionalName": "暗祿(암록)",
+   "easyName": "서랍 속 숨은 도움",
+   "definition": "암록(눈에 띄지 않는 서랍에 남아 있는 도움에 빗댄 별). 일간의 녹과 합하는 지지로 봅니다. 드러나지 않은 지원을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "막힌 줄 알았던 일에 예전 인연이 필요한 자료를 조용히 보내 주곤 합니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_amrok:scene"
+     ]
+    },
+    {
+     "text": "화려한 인맥보다 평소 조용히 연락하는 몇 사람을 더 든든하게 여기는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_amrok:relationships"
+     ]
+    },
+    {
+     "text": "뒤에서 챙겨 주는 정보와 준비를 알아보고 일을 이어 가는 쪽입니다.",
+     "domains": [
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_amrok:work",
+      "taxonomy:gwiin_amrok"
+     ]
+    },
+    {
+     "text": "눈에 띄지 않게 비상용 자원을 따로 준비해 두는 편입니다.",
+     "domains": [
+      "money"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_amrok",
+      "v4:material:gwiin_amrok"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "혼자 다 한 줄 알았는데 누군가 계속 뒤를 챙기고 있었음을 뒤늦게 알 때가 많습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "v4:depth:gwiin_amrok:punch",
+      "v4:depth:gwiin_amrok:shadow"
+     ]
+    },
+    {
+     "text": "숨은 자원에만 기대다가 드러난 성과와 관리 기록이 약해지기 쉽습니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_amrok"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "attentionSeeking": -0.4,
+    "planning": 0.3,
+    "caretaking": 0.2,
+    "trustThreshold": -0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 숨은 지원을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 숨은 지원을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 조용한 지원을 알아보는 성향이 짙어진다고 봅니다. 수로 도움을 보장하지 않습니다.",
+    "clash": "합으로 생기는 별이므로 그 글자가 충을 받으면 합이 풀려 힘이 약해진다고 읽습니다. 관계 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuComputedFeatureExtractor:amrok",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:amrok#appliesWhen",
+     "foundation:shinsal_gwiin:amrok#doNotApply",
+     "foundation:shinsal_gwiin:amrok#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_extractor:amrok"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:amrok",
+    "foundation:shinsal_gwiin:amrok#definition",
+    "foundation:shinsal_gwiin:amrok#appliesWhen",
+    "foundation:shinsal_gwiin:amrok#doNotApply",
+    "foundation:shinsal_gwiin:amrok#distinctions",
+    "v4:material:gwiin_amrok",
+    "taxonomy:gwiin_amrok",
+    "v4:depth:gwiin_amrok:*",
+    "classic:repo_extractor:amrok",
+    "classic:repo_taxonomy:gwiin_amrok"
+   ],
+   "aliases": [
+    "암록",
+    "暗祿"
+   ]
+  },
+  {
+   "id": "gwiin_bokseong",
+   "family": "gwiin",
+   "traditionalName": "福星貴人(복성귀인)",
+   "easyName": "길가의 그늘",
+   "definition": "복성귀인(길가의 그늘처럼 과열된 순간을 잠시 쉬게 하는 별). 일간과 짝지은 지지로 보며 작은 호의가 쌓이는 흐름을 보는 자리입니다.",
+   "behaviorSignals": [
+    {
+     "text": "뜻밖의 작은 도움으로 일이 넘어가면 그날 안에 고맙다고 말하는 편입니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_bokseong",
+      "v4:material:gwiin_bokseong"
+     ]
+    },
+    {
+     "text": "과열된 순간에 잠깐 멈춰 숨 돌릴 자리를 먼저 찾는 쪽입니다.",
+     "domains": [
+      "work",
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_bokseong"
+     ]
+    },
+    {
+     "text": "작은 호의를 받으면 기억해 두었다가 다음에 차 한 잔으로 돌려주곤 합니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_bokseong",
+      "v4:material:gwiin_bokseong"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "작은 복을 당연하게 여겨 고마움을 말하지 않다가 관계가 식기 쉽습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_bokseong"
+     ]
+    },
+    {
+     "text": "도움에 기대어 챙길 일을 미루다 관리가 느슨해질 때가 많습니다.",
+     "domains": [
+      "work",
+      "money"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_bokseong",
+      "v4:material:gwiin_bokseong"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "caretaking": 0.3,
+    "trustThreshold": -0.3,
+    "socialEnergy": 0.2
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 작은 호의를 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 작은 호의를 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 작은 도움이 자주 오간다고 봅니다. 수로 복을 보장하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 호의가 끊기거나 늦어지는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuFeatureTaxonomy:gwiin_bokseong",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:bokseong#appliesWhen",
+     "foundation:shinsal_gwiin:bokseong#doNotApply",
+     "foundation:shinsal_gwiin:bokseong#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_taxonomy:gwiin_bokseong"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:bokseong",
+    "foundation:shinsal_gwiin:bokseong#definition",
+    "foundation:shinsal_gwiin:bokseong#appliesWhen",
+    "foundation:shinsal_gwiin:bokseong#doNotApply",
+    "foundation:shinsal_gwiin:bokseong#distinctions",
+    "v4:material:gwiin_bokseong",
+    "taxonomy:gwiin_bokseong",
+    "classic:repo_taxonomy:gwiin_bokseong"
+   ],
+   "aliases": [
+    "복성귀인",
+    "복성",
+    "福星"
+   ]
+  },
+  {
+   "id": "gwiin_cheoneuiseong",
+   "family": "gwiin",
+   "traditionalName": "天醫星(천의성)",
+   "easyName": "숨 돌리게 하는 손길",
+   "definition": "천의성(흐트러진 자리를 정돈해 숨을 돌리게 하는 손길에 빗댄 별). 돌봄과 회복 감각을 보는 자리이며 병이나 치료를 다루지 않습니다.",
+   "behaviorSignals": [
+    {
+     "text": "주변 사람의 안색이 안 좋으면 먼저 알아채고 따뜻한 물부터 건네는 편입니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneuiseong",
+      "v4:material:gwiin_cheoneuiseong"
+     ]
+    },
+    {
+     "text": "흐트러진 자리를 차분히 정돈해 사람들이 숨을 돌리게 하는 쪽입니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneuiseong"
+     ]
+    },
+    {
+     "text": "공부 계획을 짤 때 쉬는 시간과 컨디션 관리를 먼저 넣는 편입니다.",
+     "domains": [
+      "study"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneuiseong",
+      "v4:material:gwiin_cheoneuiseong"
+     ]
+    }
+   ],
+   "shadowSignals": [
+    {
+     "text": "남을 챙기다 자신의 쉬는 시간을 놓쳐 피로가 쌓이기 쉽습니다.",
+     "domains": [
+      "relationships",
+      "work"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneuiseong"
+     ]
+    },
+    {
+     "text": "돌봄 범위를 정하지 않아 모든 사람의 상태까지 떠안을 때가 많습니다.",
+     "domains": [
+      "relationships"
+     ],
+     "sourceRefs": [
+      "taxonomy:gwiin_cheoneuiseong",
+      "v4:material:gwiin_cheoneuiseong"
+     ]
+    }
+   ],
+   "dimensionTags": {
+    "caretaking": 0.6,
+    "empathyResponse": 0.5,
+    "boundarySetting": -0.3
+   },
+   "strengthRule": {
+    "strong": "신강(힘이 센 사주)이면 돌보는 감각을 본인이 직접 쓰는 쪽으로 읽습니다. 도움을 사실로 만들지는 않습니다.",
+    "weak": "신약(힘이 약한 사주)이면 돌보는 감각을 기대는 쪽으로 읽습니다. 그래도 실제 인물의 도움을 보장하지 않습니다.",
+    "duplicate": "해당 글자가 둘 이상이면 남을 살피는 성향이 짙어지고 자기 회복이 더 밀린다고 봅니다. 수로 건강을 정하지 않습니다.",
+    "clash": "해당 글자가 충을 받으면 돌봄이 끊기거나 본인이 먼저 지치는 쪽으로 읽습니다. 충 항목과 함께 보고 단정을 미룹니다.",
+    "sourceRefs": [
+     "calc:sajuFeatureTaxonomy:gwiin_cheoneuiseong",
+     "calc:dayMaster.strength",
+     "calc:structureAnalysis.strength",
+     "calc:shinsal.duplicateCount",
+     "calc:analyzeRelations",
+     "foundation:shinsal_gwiin:cheoneuiseong#appliesWhen",
+     "foundation:shinsal_gwiin:cheoneuiseong#doNotApply",
+     "foundation:shinsal_gwiin:cheoneuiseong#distinctions",
+     "classic:repo_structure:강약 판정",
+     "classic:repo_taxonomy:gwiin_cheoneuiseong"
+    ]
+   },
+   "sourceRefs": [
+    "foundation:shinsal_gwiin:cheoneuiseong",
+    "foundation:shinsal_gwiin:cheoneuiseong#definition",
+    "foundation:shinsal_gwiin:cheoneuiseong#appliesWhen",
+    "foundation:shinsal_gwiin:cheoneuiseong#doNotApply",
+    "foundation:shinsal_gwiin:cheoneuiseong#distinctions",
+    "v4:material:gwiin_cheoneuiseong",
+    "taxonomy:gwiin_cheoneuiseong",
+    "classic:repo_taxonomy:gwiin_cheoneuiseong"
+   ],
+   "aliases": [
+    "천의성",
+    "천의",
+    "天醫"
+   ]
+  }
+ ],
+ "aliases": [
+  {
+   "id": "sinsal_banan",
+   "aliasOf": "twelve_sinsal_banan",
+   "note": "같은 반안살. 작가 시드가 있는 십이신살 id를 정본으로 둔다."
+  },
+  {
+   "id": "sinsal_wolsal",
+   "aliasOf": "twelve_sinsal_wolsal",
+   "note": "같은 월살. 작가 시드가 있는 십이신살 id를 정본으로 둔다."
+  },
+  {
+   "id": "sinsal_cheonmun",
+   "aliasOf": "sinsal_cheonmunseong",
+   "note": "같은 천문성. 작가 시드가 있는 id를 정본으로 둔다."
+  }
+ ]
+}

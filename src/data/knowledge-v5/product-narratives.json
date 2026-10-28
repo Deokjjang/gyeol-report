@@ -1,0 +1,113 @@
+{
+  "version": "product-narratives-v5-1",
+  "note": "6상품의 재미 유형·챕터 질문·장 역할(HOOK 질문으로 열기 / WHY 근거 설명 / SCENE 생활 장면 / TWIST 근거 있는 반전·팩폭 / PAYOFF 발견의 보상)·금지·중복 금지 규칙. 역할 배치는 상품마다 다르다. 근거는 docs/design/knowledge-v5-style.md, 프로젝트 PDF 5장(여섯 상품의 재미는 서로 달라야 한다).",
+  "products": [
+    {
+      "productKey": "saju_mbti_full", "title": "나라는 사람", "funType": "자기 발견형",
+      "narrativeMode": "핵심 성향을 먼저 제시하고, 근거로 뒷받침되는 강점·모순처럼 보이는 양면성·관계·돈·일의 모습을 하나의 연결된 자기 이야기로 잇는다. 후반부는 앞에서 찾은 특징이 새 영역에서 어떻게 작용하는지 보여 준다.",
+      "chapters": [
+        { "id": "core", "title": "나를 한 줄로", "question": "나를 한 줄로 말하면 어떤 사람일까?", "role": "HOOK", "domains": ["relationships", "work"], "evidenceFamilies": ["dayMaster", "dayPillar", "tenGod"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "portrait", "title": "남들이 보는 나, 내가 아는 나", "question": "겉으로 보이는 나와 속의 나는 어디서 같고 어디서 다를까?", "role": "SCENE", "domains": ["relationships"], "dimensionFocus": ["emotionalExpression", "socialEnergy", "verbalOutput"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "why", "title": "그렇게 움직이는 이유", "question": "왜 나는 그렇게 움직일까?", "role": "WHY", "domains": ["work", "relationships"], "evidenceFamilies": ["dayMaster", "element", "tenGod"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "tension", "title": "내 안의 두 방향", "question": "내 안에서 서로 다른 쪽으로 당기는 두 성향은 무엇일까?", "role": "TWIST", "domains": ["work", "love"], "requires": ["mbtiKnown"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "strengths", "title": "강점이 결과가 되는 방식", "question": "내 강점은 어떤 상황에서 눈에 보이는 결과로 바뀔까?", "role": "PAYOFF", "domains": ["work", "study"], "dimensionFocus": ["persistence", "decisionSpeed", "perfectionism"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "work-money", "title": "일과 돈 앞에서", "question": "일을 맡고 돈을 다룰 때 나는 어떤 선택을 할까?", "role": "SCENE", "domains": ["work", "money"], "dimensionFocus": ["spendingControl", "riskTaking", "planning"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "relationships", "title": "사람 사이에서", "question": "친구와 가족 사이에서 내가 맡는 자리는 무엇일까?", "role": "SCENE", "domains": ["relationships"], "dimensionFocus": ["caretaking", "boundarySetting", "conflictApproach"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "love", "title": "사랑할 때", "question": "좋아하는 사람이 생기면 나는 어떻게 달라질까?", "role": "SCENE", "domains": ["love"], "dimensionFocus": ["intimacyPace", "possessiveness", "emotionalExpression"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "fact-bomb", "title": "내가 반복하는 실수", "question": "나도 알면서 또 하는 실수는 무엇일까?", "role": "TWIST", "domains": ["work", "relationships"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "study", "title": "배우는 방식", "question": "새로운 것을 익힐 때 나는 어떤 순서로 배울까?", "role": "WHY", "domains": ["study"], "dimensionFocus": ["learningDrive", "inquiry", "detailFocus"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "fortune", "title": "흐름이 좋아지는 조건", "question": "어떤 조건이 갖춰질 때 내 흐름이 좋아질까?", "role": "PAYOFF", "domains": ["work", "money", "relationships"], "evidenceFamilies": ["gwiin", "shinsal", "structure"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "recovery", "title": "회복하는 방법", "question": "지쳤을 때 나는 어떻게 다시 힘을 채울까?", "role": "SCENE", "domains": ["relationships", "study"], "dimensionFocus": ["socialEnergy", "introspection", "mobility"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "direction", "title": "앞으로 쓰는 나", "question": "앞에서 찾은 나를 어디에 먼저 써 볼까?", "role": "PAYOFF", "domains": ["work", "relationships"], "paragraphs": { "min": 4, "max": 4 } }
+      ],
+      "forbidden": ["결혼·이별·사고·질병·합격·승진 같은 사건을 일어난다고 말하기", "근거 없는 '겉과 속이 다른 사람' 해석", "같은 비유를 두 장에서 다시 쓰기", "남다른 잠재력·숨겨진 매력 같은 정보량 0 표현", "MBTI가 없을 때 유형 코드나 MBTI 성향을 언급하기", "시간 미상일 때 시주(태어난 시각 기둥)를 근거로 말하기"],
+      "noRepeatRules": ["한 feature는 한 장에서만 주 근거(PRIMARY)로 쓰고 다른 장에서는 다른 쓰임(SUPPORT/RECALL)으로만 다시 부른다.", "장마다 앞 장에 없던 새 근거 1개 이상이 들어가야 한다. 마지막 장(direction)만 예외로 앞 장의 핵심을 다시 부른다.", "TWIST 장은 2개(tension, fact-bomb)뿐이며 둘은 서로 다른 feature를 쓴다.", "조언 문장(~해 보세요)은 PAYOFF 장에만 둔다.", "같은 차원(dimension)을 세 장 이상에서 중심으로 쓰지 않는다."]
+    },
+    {
+      "productKey": "career_money_study", "title": "내가 잘되는 방식", "funType": "현실 선택 시뮬레이션",
+      "narrativeMode": "직업·재물·학업에서 판단이 갈리는 상황을 보여 주고, 같은 장점이 환경에 따라 성과가 되기도 부담이 되기도 하는 구조를 생활 장면으로 해석한다. 추상적 성공 조언이 아니라 '내가 이런 상황에서 왜 이렇게 고르는지'를 발견하게 한다.",
+      "chapters": [
+        { "id": "work-core", "title": "일할 때의 나 한 줄", "question": "일을 맡으면 나는 어떤 사람이 될까?", "role": "HOOK", "domains": ["work"], "evidenceFamilies": ["tenGod", "dayMaster", "structure"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "choice-scene", "title": "같은 상황, 다른 선택", "question": "같은 일을 받아도 왜 사람마다 다르게 움직일까?", "role": "SCENE", "domains": ["work"], "dimensionFocus": ["decisionSpeed", "riskTaking", "controlNeed"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "choice-why", "title": "그렇게 고르는 이유", "question": "내 선택의 뿌리는 어디에 있을까?", "role": "WHY", "domains": ["work", "money"], "evidenceFamilies": ["tenGod", "element"], "requires": ["mbtiKnown"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "fit", "title": "잘 맞는 판과 직업군", "question": "어떤 판에서 내 방식이 성과로 바뀔까?", "role": "PAYOFF", "domains": ["work"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "burden", "title": "장점이 부담이 되는 환경", "question": "같은 장점이 어디서는 왜 짐이 될까?", "role": "TWIST", "domains": ["work"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "money", "title": "돈을 다루는 방식", "question": "돈이 들어오고 나갈 때 나는 어떻게 움직일까?", "role": "SCENE", "domains": ["money"], "dimensionFocus": ["spendingControl", "possessiveness", "trustThreshold"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "study", "title": "공부와 자격의 전략", "question": "자격이나 시험을 준비하면 나는 어떤 방식이 잘 맞을까?", "role": "WHY", "domains": ["study"], "dimensionFocus": ["planning", "learningDrive", "persistence"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "timing-risk", "title": "힘이 붙는 시기와 조심할 지점", "question": "지금 흐름에서 밀어붙일 곳과 조심할 곳은 어디일까?", "role": "TWIST", "domains": ["work", "money"], "evidenceFamilies": ["twelveStage", "relation", "shinsal"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "plan", "title": "실행 플랜", "question": "이번 달에 당장 바꿔 볼 한 가지는 무엇일까?", "role": "PAYOFF", "domains": ["work", "money", "study"], "paragraphs": { "min": 4, "max": 4 } }
+      ],
+      "forbidden": ["특정 종목·상품의 매수·매도 지시", "합격·승진·수익을 일어난다고 말하기", "현재 직업에 갇힌 해석(타고난 적성 중심으로 읽는다)", "연도·시기를 못 박은 예언", "MBTI가 없을 때 MBTI 근거 언급", "시간 미상일 때 시주 근거 언급"],
+      "noRepeatRules": ["choice-scene와 burden은 같은 장점을 다루되 서로 다른 환경을 쓴다.", "직업군 추천(fit)은 구체 직업명을 포함하고 plan에서 같은 직업명을 다시 나열하지 않는다.", "돈 장(money)의 차원은 일 장(work-core, choice-scene)의 중심 차원과 겹치지 않게 고른다.", "조언은 plan 장에만 둔다."]
+    },
+    {
+      "productKey": "love_marriage_child", "title": "내 사랑 이야기", "funType": "감정과 관계의 서사",
+      "narrativeMode": "호감, 표현, 갈등, 회복, 관계의 깊이를 서로 다른 장면으로 보여 준다. 겉으로 드러나는 모습과 속의 기대가 다를 수 있는 조건을 살핀다. 실제로 존재하지 않는 연인·배우자·자녀를 사실처럼 쓰지 않는다.",
+      "chapters": [
+        { "id": "love-core", "title": "사랑할 때의 나", "question": "좋아하는 마음이 생기면 나는 어떤 사람이 될까?", "role": "HOOK", "domains": ["love"], "evidenceFamilies": ["dayPillar", "tenGod", "shinsal"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "spark", "title": "호감이 생기는 순간", "question": "어떤 순간에 마음이 먼저 움직일까?", "role": "SCENE", "domains": ["love"], "dimensionFocus": ["intimacyPace", "attentionSeeking"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "attracted-to", "title": "끌리는 사람과 그 이유", "question": "나는 왜 그런 사람에게 끌릴까?", "role": "WHY", "domains": ["love"], "requires": ["mbtiKnown"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "expression", "title": "표현하는 방식", "question": "마음을 말할 때 나는 어떤 방법을 고를까?", "role": "SCENE", "domains": ["love"], "dimensionFocus": ["emotionalExpression", "directness", "caretaking"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "inner-gap", "title": "겉모습과 속마음이 다른 지점", "question": "내가 보여 주는 것과 바라는 것은 어디서 어긋날까?", "role": "TWIST", "domains": ["love"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "conflict-recovery", "title": "다툼과 회복", "question": "싸우고 나면 나는 어떻게 다시 가까워질까?", "role": "SCENE", "domains": ["love", "relationships"], "dimensionFocus": ["conflictApproach", "reactivity", "boundarySetting"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "marriage", "title": "함께 살게 된다면", "question": "같이 살게 되면 내게서 어떤 모습이 나올까?", "role": "WHY", "domains": ["love", "money"], "dimensionFocus": ["possessiveness", "spendingControl", "dutifulness"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "parenting", "title": "부모가 된다면", "question": "아이를 키우게 되면 나는 무엇을 강하게 주고 무엇을 힘들게 할까?", "role": "TWIST", "domains": ["relationships"], "dimensionFocus": ["controlNeed", "caretaking", "ruleAdherence"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "strategy", "title": "좋은 관계를 만드는 방법", "question": "내 방식 그대로 더 좋은 관계를 만들려면 무엇을 먼저 할까?", "role": "PAYOFF", "domains": ["love", "relationships"], "paragraphs": { "min": 4, "max": 4 } }
+      ],
+      "forbidden": ["실제 연인·배우자·자녀가 있다고 가정하기(입력 관계 상태가 없으면 '만약'으로만 쓴다)", "결혼·이별·이혼 시기나 여부를 말하기", "자녀의 성별·수·성격을 단정하기", "상대 유형을 비난하기", "MBTI가 없을 때 '잘 맞는 MBTI' 장면 만들기", "시간 미상일 때 시주 근거 언급"],
+      "noRepeatRules": ["spark·expression·conflict-recovery는 각각 다른 차원을 중심으로 쓴다.", "inner-gap의 반전은 근거(서로 다른 feature 또는 MBTI와의 긴장)가 있을 때만 쓰고, 없으면 확인 가능한 특징만 쓴다.", "marriage와 parenting은 '만약'의 조건문으로만 쓰고 같은 장면을 반복하지 않는다.", "조언은 strategy 장에만 둔다."]
+    },
+    {
+      "productKey": "saju_mbti_compatibility", "title": "우리라는 사이", "funType": "두 관점의 교차 이야기",
+      "narrativeMode": "A→B와 B→A를 구분하고, 하나의 가상 장면을 두 사람이 다르게 겪을 가능성을 대조한다. 관계 유형(7)마다 장면의 영역과 말투가 다르다. 점수보다 관계를 새롭게 이해하는 재미가 목표다.",
+      "chapters": [
+        { "id": "pair-core", "title": "두 사람을 한 줄로", "question": "두 사람이 함께 있으면 어떤 그림이 될까?", "role": "HOOK", "domains": ["relationships"], "requires": ["pair"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "same-scene", "title": "같은 장면, 두 시선", "question": "같은 일을 두 사람은 왜 다르게 기억할까?", "role": "SCENE", "domains": ["relationships"], "requires": ["pair"], "dimensionFocus": ["decisionSpeed", "directness", "emotionalExpression"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "direction-ab", "title": "A가 보는 B", "question": "A의 눈에 B는 어떤 사람으로 보일까?", "role": "WHY", "domains": ["relationships"], "requires": ["pair"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "direction-ba", "title": "B가 보는 A", "question": "B의 눈에 A는 어떤 사람으로 보일까?", "role": "WHY", "domains": ["relationships"], "requires": ["pair"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "attraction", "title": "끌리는 점과 잘 맞는 판", "question": "두 사람이 서로에게 끌리고 편해지는 지점은 어디일까?", "role": "PAYOFF", "domains": ["relationships"], "requires": ["pair"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "friction", "title": "부딪히는 지점", "question": "두 사람이 자주 부딪히는 자리는 어디일까?", "role": "TWIST", "domains": ["relationships"], "requires": ["pair"], "dimensionFocus": ["controlNeed", "ruleAdherence", "boundarySetting"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "domain-scene", "title": "관계의 현장에서", "question": "이 관계의 실제 현장에서 두 사람은 어떻게 움직일까?", "role": "SCENE", "domains": ["relationships", "work", "money", "love"], "requires": ["pair"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "felt-differently", "title": "서로 다르게 느끼는 순간", "question": "한 사람은 괜찮은데 다른 사람은 서운한 순간은 언제일까?", "role": "TWIST", "domains": ["relationships"], "requires": ["pair"], "dimensionFocus": ["empathyResponse", "reactivity", "caretaking"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "one-thing", "title": "둘이 먼저 맞출 한 가지", "question": "의견보다 먼저 맞춰야 할 한 가지는 무엇일까?", "role": "PAYOFF", "domains": ["relationships"], "requires": ["pair"], "paragraphs": { "min": 4, "max": 4 } }
+      ],
+      "forbidden": ["연애·결혼이 아닌 관계에 애정 표현(설렘·스킨십·사랑) 쓰기", "관계가 깨진다·이어진다를 단정하기", "한쪽을 가해자나 피해자로 만들기", "두 사람 중 한쪽만의 입장으로 장면을 쓰기(항상 두 시선)", "MBTI가 없는 사람에게 MBTI 근거 쓰기", "시간 미상인 사람에게 시주 근거 쓰기"],
+      "noRepeatRules": ["direction-ab와 direction-ba는 서로 다른 feature를 주 근거로 쓴다.", "same-scene·domain-scene·felt-differently의 장면은 서로 다른 영역·상황이어야 한다.", "friction의 반전은 두 사람의 차원 값이 실제로 반대일 때만 쓴다.", "조언은 one-thing 장에만 둔다."],
+      "compatibility": {
+        "love": { "sceneDomains": ["love", "relationships"], "roleLabels": ["A", "B"], "forbidden": ["결혼 시기·여부 단정", "이별 단정", "상대 집안·조건 언급"], "tone": "설레는 장면과 서운한 장면을 함께, 둘 다 조건부" },
+        "marriage": { "sceneDomains": ["love", "money", "relationships"], "roleLabels": ["A", "B"], "forbidden": ["이혼 단정", "자녀 유무·수 가정", "경제력 비교 단정"], "tone": "생활·돈·가족을 나누는 장면 중심, 애정 표현은 절제" },
+        "parentChild": { "sceneDomains": ["relationships", "study"], "roleLabels": ["부모", "자녀"], "forbidden": ["연인형 애정 표현", "자녀의 성적·진로 단정", "부모 자격을 평가하는 말", "체벌·훈육 방법 지시"], "tone": "집·학교·식탁 장면, 자녀 시선을 부모 시선과 같은 무게로" },
+        "coworker": { "sceneDomains": ["work", "relationships"], "roleLabels": ["A", "B"], "forbidden": ["연인형 애정 표현", "상하 관계 가정", "평가·승진 단정"], "tone": "회의·마감·협업 장면, 역할은 대등" },
+        "managerReport": { "sceneDomains": ["work"], "roleLabels": ["상사", "부하·팀원"], "forbidden": ["연인형 애정 표현", "승진·평가 결과 단정", "한쪽을 무능하게 묘사"], "tone": "지시·보고·피드백 장면, 권한 차이를 전제로 두 시선" },
+        "businessPartner": { "sceneDomains": ["work", "money"], "roleLabels": ["A", "B"], "forbidden": ["연인형 애정 표현", "수익·투자 성과 단정", "동업 결렬 단정"], "tone": "돈 결정·역할 분담·위험 감수 장면" },
+        "friendship": { "sceneDomains": ["relationships"], "roleLabels": ["A", "B"], "forbidden": ["연인형 애정 표현", "우정이 깨진다·오래간다 단정"], "tone": "약속·여행·단톡방 장면, 가벼운 톤" }
+      }
+    },
+    {
+      "productKey": "major_fortune", "title": "앞으로의 나", "funType": "장기 변화의 연속 서사",
+      "narrativeMode": "14개 연도를 독립된 운세로 쓰지 않고, 계산된 시간 근거를 따라 이전 흐름과 다음 흐름의 차이를 연결한다. 근거가 허용하는 범위에서 삶의 흐름을 하나의 이야기처럼 읽게 하되, 구체적 미래 사건은 확정하지 않는다.",
+      "chapters": [
+        { "id": "overview", "title": "앞으로 14년을 한 줄로", "question": "앞으로의 흐름은 어떤 모양으로 이어질까?", "role": "HOOK", "domains": ["work", "relationships"], "requires": ["genderKnown"], "evidenceFamilies": ["twelveStage", "tenGod", "relation"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "current-cycle", "title": "지금 대운이 주는 조건", "question": "지금 흐름은 나에게 무엇을 쉽게 하고 무엇을 어렵게 할까?", "role": "WHY", "domains": ["work", "money", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "year", "title": "연도별 흐름", "question": "이 해는 지난해와 무엇이 달라질까?", "role": "SCENE", "domains": ["work", "money", "love", "relationships", "study"], "requires": ["genderKnown"], "evidenceFamilies": ["tenGod", "relation", "twelveStage", "shinsal"], "paragraphs": { "min": 2, "max": 3 }, "repeat": 14 },
+        { "id": "transition", "title": "흐름이 바뀌는 해", "question": "흐름이 바뀌는 해에 나는 무엇을 다르게 느낄까?", "role": "TWIST", "domains": ["work", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "closing", "title": "흐름을 타는 방법", "question": "이 흐름에서 내 방식으로 잘 지내려면 무엇을 먼저 할까?", "role": "PAYOFF", "domains": ["work", "relationships"], "paragraphs": { "min": 3, "max": 4 } }
+      ],
+      "forbidden": ["특정 연도에 사건(결혼·이직·사고·질병·합격)이 일어난다고 말하기", "대운 경계가 불확실한 입력(시간 미상·경계 근처)에서 경계 연도를 단정하기", "연도마다 같은 조언 순서 반복", "MBTI가 없을 때 MBTI 근거 언급"],
+      "noRepeatRules": ["연도 장은 앞 연도와 다른 차원 또는 다른 feature 상호작용을 중심으로 쓴다(같은 십성 2년 연속이면 적용 영역을 바꾼다).", "transition은 연도 장에 이미 쓴 문장을 다시 쓰지 않는다.", "조언은 closing과 transition에만 둔다.", "현재 연도(세운)는 current-cycle에서 한 번만 자세히 다룬다."]
+    },
+    {
+      "productKey": "annual_fortune", "title": "나의 한 해", "funType": "매월 펼쳐 보는 연재형",
+      "narrativeMode": "월별 특징과 중요도를 구별하고 앞달과 뒷달의 흐름을 연결한다. 매달 같은 순서로 조언을 반복하지 않고, 달마다 새로 이해할 핵심 관점을 하나씩 만든다. 1월부터 12월까지 서로 다른 읽을거리가 있어야 한다.",
+      "chapters": [
+        { "id": "overview", "title": "올해를 한 줄로", "question": "올해는 어떤 결의 한 해가 될까?", "role": "HOOK", "domains": ["work", "relationships"], "requires": ["genderKnown"], "evidenceFamilies": ["tenGod", "relation", "twelveStage"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "current-dayun", "title": "지금 대운 위에 올해", "question": "올해 흐름은 지금 대운의 어떤 바탕 위에 놓일까?", "role": "WHY", "domains": ["work", "money", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "month", "title": "월별 흐름", "question": "이번 달은 지난달과 무엇이 다를까?", "role": "SCENE", "domains": ["work", "money", "love", "relationships", "study"], "requires": ["genderKnown"], "evidenceFamilies": ["tenGod", "relation", "shinsal"], "paragraphs": { "min": 2, "max": 3 }, "repeat": 12 },
+        { "id": "key-months", "title": "눈여겨볼 달", "question": "올해 중 흐름이 크게 움직이는 달은 언제이고 왜일까?", "role": "TWIST", "domains": ["work", "money", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 3, "max": 4 } },
+        { "id": "closing", "title": "올해를 내 방식으로", "question": "올해를 내 방식으로 잘 보내려면 어디에 힘을 둘까?", "role": "PAYOFF", "domains": ["work", "relationships"], "paragraphs": { "min": 3, "max": 4 } }
+      ],
+      "forbidden": ["특정 달에 사건(결혼·이별·사고·질병·합격·승진)이 일어난다고 말하기", "매달 같은 조언 문장 반복", "중요도가 낮은 달을 억지로 부풀리기", "MBTI가 없을 때 MBTI 근거 언급", "절입(달이 바뀌는 날) 경계를 넘어 한 달의 특징을 다른 달에 쓰기"],
+      "noRepeatRules": ["월 장은 앞달과 다른 핵심 관점(차원 또는 feature 상호작용) 하나를 세운다.", "key-months는 월 장의 문장을 다시 쓰지 않고 왜 중요한지만 쓴다.", "조언은 closing에만 두고 월 장에는 관찰과 장면만 둔다.", "같은 십성이 두 달 연속이면 적용 영역을 바꾼다."]
+    }
+  ]
+}

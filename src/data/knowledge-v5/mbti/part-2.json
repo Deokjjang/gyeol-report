@@ -1,0 +1,553 @@
+{
+  "profiles": [
+    {
+      "type": "ISTJ",
+      "easyName": "검증된 절차의 수호자",
+      "oneLine": "검증된 순서와 기록을 붙잡고 맡은 일을 끝까지 닫는 사람입니다.",
+      "dimensionTags": {
+        "ruleAdherence": 0.8,
+        "planning": 0.8,
+        "dutifulness": 0.9,
+        "persistence": 0.7,
+        "detailFocus": 0.7,
+        "noveltySeeking": -0.7,
+        "riskTaking": -0.7,
+        "emotionalExpression": -0.7,
+        "socialEnergy": -0.6,
+        "intimacyPace": -0.7,
+        "spendingControl": 0.7,
+        "empathyResponse": -0.5,
+        "controlNeed": 0.4,
+        "trustThreshold": 0.6,
+        "verbalOutput": -0.5,
+        "reactivity": -0.5,
+        "independence": 0.5,
+        "attentionSeeking": -0.6,
+        "mobility": -0.5,
+        "boundarySetting": 0.4
+      },
+      "cognitiveFunctions": [
+        { "code": "Si", "role": "주기능", "easy": "Si(이미 해 본 방식과 기록을 기준 삼아 지금을 판단하는 눈)", "sourceRefs": ["mbti:ISTJ:functionStack"] },
+        { "code": "Te", "role": "부기능", "easy": "Te(틀어진 절차와 숫자 오류를 바로 잡아 정리하는 손)", "sourceRefs": ["mbti:ISTJ:functionStack"] },
+        { "code": "Fi", "role": "3차기능", "easy": "Fi(겉으로 안 보여도 속에서 조용히 내 기준을 지키는 마음)", "sourceRefs": ["mbti:ISTJ:functionStack"] },
+        { "code": "Ne", "role": "열등기능", "easy": "Ne(검증 안 된 새 가능성 앞에서 먼저 위험부터 보는 자리)", "sourceRefs": ["mbti:ISTJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "갑자기 일정이 바뀌면 집중보다 먼저 신경이 날카로워지는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTJ:routine_sensitive"] },
+          { "text": "틀어진 절차나 숫자 오류가 보이면 그냥 넘기지 못하고 바로 짚습니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTJ:efficient_error_detection", "mbti:ISTJ:instant_error_correction"] },
+          { "text": "회의를 거듭하기보다 책임 범위가 정해지면 혼자 조용히 끝내는 쪽입니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTJ:stable_independent_worker"] }
+        ],
+        "money": [
+          { "text": "친한 사이의 돈거래일수록 금액과 갚을 날짜를 먼저 적어 두는 편입니다.", "domains": ["money", "relationships"], "sourceRefs": ["mbti:ISTJ:informal_money_deal_risk"] },
+          { "text": "월 예산표와 비상금 통장을 따로 두고 정해진 날짜에 다시 확인합니다.", "domains": ["money"], "sourceRefs": ["mbti:ISTJ:budget_and_reserve_plan", "mbti:ISTJ:scheduled_review_rule"] },
+          { "text": "주거비와 교육비를 먼저 챙기느라 내 휴식비는 맨 뒤로 미루기 쉽습니다.", "domains": ["money", "relationships"], "sourceRefs": ["mbti:ISTJ:family_responsibility_spending"] }
+        ],
+        "love": [
+          { "text": "설렘보다 약속을 지키는지 오래 지켜본 뒤에야 마음의 문을 여는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISTJ:slow_start_relationship", "mbti:ISTJ:trust_first_love"] },
+          { "text": "밖에서는 무심해 보여도 사귀는 사람 앞에서는 의외로 귀여운 면을 꺼내는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISTJ:reserved_affection"] },
+          { "text": "미안해도 말로 풀기보다 다음 날 행동으로 책임을 보이려 할 때가 많습니다.", "domains": ["love", "relationships"], "sourceRefs": ["mbti:ISTJ:apology_difficulty"] }
+        ],
+        "relationships": [
+          { "text": "기본 예의를 어긴 사람은 오래 기억하고 다시 쉽게 들이지 않습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISTJ:hard_boundary_after_disrespect"] },
+          { "text": "불만이 있어도 참고 쌓아 두다가 한계가 넘는 날 한 번에 크게 터뜨리곤 합니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:ISTJ:silent_frustration_explosion"] },
+          { "text": "좋은 사람이 되어 줄 자신이 없으면 말없이 먼저 관계에서 물러나곤 합니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:ISTJ:self_withdrawal_when_unready"] }
+        ],
+        "study": [
+          { "text": "시험 범위와 평가 기준이 정해진 공부에서 점수를 꾸준히 쌓는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ISTJ:traditional_exam_strength"] },
+          { "text": "기출만 반복하다 보면 낯선 응용 문제 앞에서 손이 굳기 쉽습니다.", "domains": ["study"], "sourceRefs": ["mbti:ISTJ:new_type_adaptation_drill"] },
+          { "text": "계획표의 빈칸 하루를 실패로 느끼고 밀린 분량을 한 번에 만회하려 합니다.", "domains": ["study"], "sourceRefs": ["mbti:ISTJ:perfectionism_recovery_limit"] }
+        ]
+      },
+      "shadows": [
+        { "text": "권한이 생기면 자기 기준을 가족에게까지 적용해 잔소리로 들리기 쉽습니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:ISTJ:controlled_authority_risk", "mbti:ISTJ:spouse_control_risk", "mbti:ISTJ:summary.risk"] },
+        { "text": "검증되지 않았다는 이유로 모든 변화를 미루다 판이 늦게 열리곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTJ:rigidity_under_change", "mbti:ISTJ:change_buffer_marriage"] }
+      ],
+      "sourceRefs": ["mbti:ISTJ:summary.identity", "mbti:ISTJ:summary.strength", "mbti:ISTJ:summary.risk", "mbti:ISTJ:functionStack"]
+    },
+    {
+      "type": "ISFJ",
+      "easyName": "조용히 기억하는 보호자",
+      "oneLine": "사람의 필요와 날짜를 조용히 기억했다가 실제 도움으로 바꾸는 사람입니다.",
+      "dimensionTags": {
+        "caretaking": 0.9,
+        "empathyResponse": 0.6,
+        "boundarySetting": -0.8,
+        "conflictApproach": -0.8,
+        "dutifulness": 0.9,
+        "ruleAdherence": 0.6,
+        "noveltySeeking": -0.6,
+        "riskTaking": -0.7,
+        "detailFocus": 0.8,
+        "planning": 0.6,
+        "attentionSeeking": -0.7,
+        "emotionalExpression": -0.5,
+        "verbalOutput": -0.4,
+        "intimacyPace": -0.6,
+        "socialEnergy": -0.4,
+        "spendingControl": 0.4,
+        "trustThreshold": -0.4,
+        "perfectionism": 0.6,
+        "persistence": 0.7,
+        "independence": 0.4,
+        "reactivity": -0.6,
+        "statusDrive": -0.3
+      },
+      "cognitiveFunctions": [
+        { "code": "Si", "role": "주기능", "easy": "Si(직접 보고 겪은 장면을 세밀하게 저장해 다음 선택의 기준으로 쓰는 눈)", "sourceRefs": ["mbti:ISFJ:functionStack"] },
+        { "code": "Fe", "role": "부기능", "easy": "Fe(표정과 말투의 변화를 읽어 필요한 배려를 먼저 내놓는 손)", "sourceRefs": ["mbti:ISFJ:functionStack"] },
+        { "code": "Ti", "role": "3차기능", "easy": "Ti(관계와 역할을 먼저 처리한 뒤 혼자서 조용히 따져 보는 머리)", "sourceRefs": ["mbti:ISFJ:functionStack"] },
+        { "code": "Ne", "role": "열등기능", "easy": "Ne(세상이 너무 빨리 바뀌면 자유보다 불안이 먼저 오는 자리)", "sourceRefs": ["mbti:ISFJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "알아서 해 보라는 지시보다 기준과 순서가 적힌 체크리스트가 훨씬 편합니다.", "domains": ["work"], "sourceRefs": ["mbti:ISFJ:guideline_micro_manager"] },
+          { "text": "앞에서 주목받기보다 뒤에서 빠진 일을 챙겨 무대가 흔들리지 않게 붙잡습니다.", "domains": ["work"], "sourceRefs": ["mbti:ISFJ:behind_the_scenes_worker"] },
+          { "text": "쉬는 시간에도 과제를 붙잡고 있다가 혼자 지쳐 버릴 때가 많습니다.", "domains": ["work", "study"], "sourceRefs": ["mbti:ISFJ:work_ethic_overload", "mbti:ISFJ:perfectionism_distraction"] }
+        ],
+        "money": [
+          { "text": "생일과 경조사를 빠짐없이 챙기느라 내 사람을 위한 지출에서 돈이 새기 쉽습니다.", "domains": ["money", "relationships"], "sourceRefs": ["mbti:ISFJ:overgiving_money_leak"] },
+          { "text": "매달 정해진 금액을 작게라도 꾸준히 넣어 생활비 통장을 지키는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ISFJ:small_saving_persistence"] },
+          { "text": "믿는 사람의 말을 쉽게 흘려듣지 못해 불리한 조건을 늦게 알아차리기 쉽습니다.", "domains": ["money"], "sourceRefs": ["mbti:ISFJ:independent_check_needed"] }
+        ],
+        "love": [
+          { "text": "해 주는 건 잘하면서 해 달라는 말은 늦게 꺼내 서운함이 쌓이는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISFJ:low_request_high_duty"] },
+          { "text": "상대가 다칠까 봐 단어를 고르다 정작 필요한 말을 너무 늦게 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ISFJ:gentle_speech_love", "mbti:ISFJ:careful_word_choice"] },
+          { "text": "상대가 관심 없어 보이면 확인하기보다 조용히 마음을 접어 버리곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ISFJ:slow_trust_love"] }
+        ],
+        "relationships": [
+          { "text": "친구가 지나가듯 말한 취향과 기념일을 기억해 두었다가 챙기는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISFJ:memory_based_affection"] },
+          { "text": "남의 비밀을 들으면 가볍게 옮기지 않고 혼자 짊어지다 마음이 무거워지기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISFJ:secret_keeper"] },
+          { "text": "싸움을 피하려고 맞춰 주다가 나중에 혼자 지치는 패턴이 생기기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:ISFJ:conflict_avoidance_at_work", "mbti:ISFJ:relationship_stress_absorber"] }
+        ],
+        "study": [
+          { "text": "벼락치기보다 숙제와 시험 범위를 정해진 순서대로 끝까지 밟는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ISFJ:dutiful_study_rhythm"] },
+          { "text": "빠뜨린 게 있을까 봐 회독 수를 계속 늘리다 시험 직전에 체력이 떨어지곤 합니다.", "domains": ["study"], "sourceRefs": ["mbti:ISFJ:exam_anxiety_scope_lock"] },
+          { "text": "시험장에서 내가 맞게 아는지 의심하느라 푸는 속도가 늦어질 때가 많습니다.", "domains": ["study"], "sourceRefs": ["mbti:ISFJ:confidence_recall_training"] }
+        ]
+      },
+      "shadows": [
+        { "text": "고맙다는 말 없이 부탁만 쌓이면 거절하지 못한 채 조용히 마음이 먼저 닫히기 쉽습니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ISFJ:recognition_and_boundary", "mbti:ISFJ:gratitude_needed_marriage", "mbti:ISFJ:summary.risk"] },
+        { "text": "아이의 친구와 진로까지 깊이 관여하다 보호가 간섭으로 남기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISFJ:protective_overinvolvement"] }
+      ],
+      "sourceRefs": ["mbti:ISFJ:summary.identity", "mbti:ISFJ:summary.strength", "mbti:ISFJ:summary.risk", "mbti:ISFJ:functionStack"]
+    },
+    {
+      "type": "ESTJ",
+      "easyName": "판을 굴리는 관리자",
+      "oneLine": "역할과 기준을 분명히 세워 사람과 일을 실제 결과로 끌고 가는 사람입니다.",
+      "dimensionTags": {
+        "controlNeed": 0.9,
+        "directness": 0.9,
+        "decisionSpeed": 0.7,
+        "ruleAdherence": 0.8,
+        "planning": 0.8,
+        "dutifulness": 0.9,
+        "empathyResponse": -0.8,
+        "emotionalExpression": -0.6,
+        "conflictApproach": 0.8,
+        "competitiveness": 0.6,
+        "statusDrive": 0.8,
+        "noveltySeeking": -0.6,
+        "riskTaking": -0.5,
+        "detailFocus": 0.7,
+        "socialEnergy": 0.3,
+        "spendingControl": 0.6,
+        "persistence": 0.8,
+        "perfectionism": 0.5,
+        "independence": 0.4,
+        "boundarySetting": 0.6,
+        "inquiry": 0.4,
+        "verbalOutput": 0.4,
+        "reactivity": 0.4,
+        "trustThreshold": 0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Te", "role": "주기능", "easy": "Te(무엇이 맞고 누가 책임지고 어떻게 처리할지 빠르게 나누는 머리)", "sourceRefs": ["mbti:ESTJ:functionStack"] },
+        { "code": "Si", "role": "부기능", "easy": "Si(이전에 효과가 있었던 방식과 쌓인 경험을 믿고 따르는 눈)", "sourceRefs": ["mbti:ESTJ:functionStack"] },
+        { "code": "Ne", "role": "3차기능", "easy": "Ne(성과로 이어진다는 근거가 확인될 때만 새 가능성을 받아들이는 자리)", "sourceRefs": ["mbti:ESTJ:functionStack"] },
+        { "code": "Fi", "role": "열등기능", "easy": "Fi(내 감정과 상대의 섬세한 감정선을 뒤늦게 알아차리는 마음)", "sourceRefs": ["mbti:ESTJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "팀원에게 무엇을 언제까지 어떤 기준으로 할지 먼저 정해 주는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTJ:clear_expectations"] },
+          { "text": "못 믿을 사람에게 맡기느니 내가 직접 해 버리는 쪽을 고를 때가 많습니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTJ:delegation_difficulty"] },
+          { "text": "일이 터지기 전에 이상한 낌새를 먼저 잡아내 일정을 고치곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTJ:early_problem_detection"] }
+        ],
+        "money": [
+          { "text": "예산과 고정비와 상환 날짜를 표로 만들어 흐트러진 지출을 빠르게 정리합니다.", "domains": ["money"], "sourceRefs": ["mbti:ESTJ:asset_control_strength"] },
+          { "text": "낭비는 싫어해도 정장과 접대처럼 체면을 지키는 지출에는 명분을 쉽게 주는 편입니다.", "domains": ["money", "work"], "sourceRefs": ["mbti:ESTJ:performance_status_spending"] },
+          { "text": "확신이 서면 한쪽에 크게 싣고 싶어져 비중 한도를 넘기기 쉽습니다.", "domains": ["money"], "sourceRefs": ["mbti:ESTJ:concentration_control"] }
+        ],
+        "love": [
+          { "text": "달콤한 말 대신 일정을 짜고 문제를 해결하는 방식으로 애정을 보이는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ESTJ:love_through_action"] },
+          { "text": "사귀면서도 무엇이 문제이고 무엇을 원하는지 돌리지 않고 바로 말합니다.", "domains": ["love"], "sourceRefs": ["mbti:ESTJ:direct_expectations_in_love"] },
+          { "text": "싸우면 상대 마음을 듣기 전에 원인과 해결책부터 꺼내 명령처럼 들리곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ESTJ:emotional_leadership_practice"] }
+        ],
+        "relationships": [
+          { "text": "고민을 들으면 같이 울어 주기보다 지금 무엇을 고칠지부터 찾아 주는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESTJ:solution_first_relation"] },
+          { "text": "약속을 어기거나 게으르다고 느낀 사람은 오래 설득하기보다 선을 긋는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESTJ:boundary_by_standard"] },
+          { "text": "쉬는 날에는 혼자 할 일을 하고 유행에는 의외로 무심한 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESTJ:less_social_extrovert"] }
+        ],
+        "study": [
+          { "text": "정답이 열린 토론 수업보다 기준이 분명한 시험장에서 실력을 보이기 쉽습니다.", "domains": ["study"], "sourceRefs": ["mbti:ESTJ:exam_structure_advantage"] },
+          { "text": "맞힌 문제를 다 이해한 걸로 넘기다 변형 문제에서 빈틈이 드러나곤 합니다.", "domains": ["study"], "sourceRefs": ["mbti:ESTJ:flexible_concept_review"] },
+          { "text": "성적 압박이 커지면 쉬는 시간까지 낭비로 보고 공부량만 늘리는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ESTJ:pace_and_rest_control"] }
+        ]
+      },
+      "shadows": [
+        { "text": "글씨체와 양식까지 하나하나 고치려 들어 주변이 숨 막힌다고 느끼기 쉽습니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTJ:micro_management_precision", "mbti:ESTJ:controlling_tendency", "mbti:ESTJ:summary.risk"] },
+        { "text": "스트레스를 받을수록 쉬지 않고 더 일하다 사소한 일에 갑자기 터지곤 합니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ESTJ:workaholic_burnout", "mbti:ESTJ:work_over_emotion"] }
+      ],
+      "sourceRefs": ["mbti:ESTJ:summary.identity", "mbti:ESTJ:summary.strength", "mbti:ESTJ:summary.risk", "mbti:ESTJ:functionStack"]
+    },
+    {
+      "type": "ESFJ",
+      "easyName": "분위기를 살리는 조율자",
+      "oneLine": "방 안의 표정 변화를 먼저 알아채고 사람 사이의 온도를 맞추는 사람입니다.",
+      "dimensionTags": {
+        "socialEnergy": 0.9,
+        "caretaking": 0.9,
+        "empathyResponse": 0.7,
+        "emotionalExpression": 0.8,
+        "verbalOutput": 0.7,
+        "attentionSeeking": 0.6,
+        "statusDrive": 0.6,
+        "trustThreshold": -0.7,
+        "boundarySetting": -0.7,
+        "conflictApproach": -0.4,
+        "ruleAdherence": 0.7,
+        "noveltySeeking": -0.6,
+        "riskTaking": -0.6,
+        "planning": 0.6,
+        "decisionSpeed": 0.5,
+        "spendingControl": -0.3,
+        "inquiry": -0.5,
+        "intimacyPace": 0.4,
+        "dutifulness": 0.7,
+        "detailFocus": 0.6,
+        "reactivity": 0.6,
+        "controlNeed": 0.4,
+        "independence": -0.6,
+        "possessiveness": 0.4,
+        "introspection": -0.4
+      },
+      "cognitiveFunctions": [
+        { "code": "Fe", "role": "주기능", "easy": "Fe(누가 소외됐고 어떤 말이 지금 필요한지 방 안의 온도를 읽는 눈)", "sourceRefs": ["mbti:ESFJ:functionStack"] },
+        { "code": "Si", "role": "부기능", "easy": "Si(누가 어떤 선물을 좋아했는지 사람의 세부를 파일함처럼 저장하는 기억)", "sourceRefs": ["mbti:ESFJ:functionStack"] },
+        { "code": "Ne", "role": "3차기능", "easy": "Ne(익숙한 절차 안에 작은 새 방식을 한 칸씩 끼워 넣어 보는 자리)", "sourceRefs": ["mbti:ESFJ:functionStack"] },
+        { "code": "Ti", "role": "열등기능", "easy": "Ti(사람과 상황이 빠진 순수한 이론 앞에서 속도가 떨어지는 머리)", "sourceRefs": ["mbti:ESFJ:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "분위기가 처지면 먼저 말을 걸고 작은 칭찬으로 팀의 사기를 끌어올리는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ESFJ:team_morale_builder"] },
+          { "text": "새 과제를 받으면 목표만으로는 부족해 과정과 이전 성공 사례까지 물어보는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ESFJ:goal_process_instruction", "mbti:ESFJ:policy_alignment_need"] },
+          { "text": "약속 시간에 여유가 있어도 늦을까 봐 조급해지고 늦는 사람은 성의가 없다고 받아들이는 편입니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ESFJ:punctual_pressure"] }
+        ],
+        "money": [
+          { "text": "모임비와 선물값은 필요보다 축하와 소속감을 기준으로 쓰는 편입니다.", "domains": ["money", "relationships"], "sourceRefs": ["mbti:ESFJ:relationship_spending"] },
+          { "text": "상품 조건보다 추천한 사람을 먼저 믿어 충분히 이해하지 못한 상품에 들어가기 쉽습니다.", "domains": ["money"], "sourceRefs": ["mbti:ESFJ:social_proof_risk", "mbti:ESFJ:stability_first_investment"] },
+          { "text": "인정받고 싶은 마음이 커질수록 식사비와 체면 소비에 지갑이 함께 열리곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ESFJ:approval_spending_risk"] }
+        ],
+        "love": [
+          { "text": "내가 연락하는 만큼 상대도 안부와 반응을 보내 줘야 관계가 안전하다고 느끼는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFJ:reciprocal_expression_need"] },
+          { "text": "연인의 식사와 건강과 주변 관계까지 챙기다 관리받는다는 말을 듣기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFJ:care_based_romance"] },
+          { "text": "싸움보다 상대의 긴 침묵이 더 힘들어 생각할 시간까지 거절로 받아들이곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFJ:avoidant_partner_trigger"] }
+        ],
+        "relationships": [
+          { "text": "자주 안부를 묻는 가벼운 톡으로 관계가 아직 살아 있는지 확인하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESFJ:small_talk_bonding"] },
+          { "text": "모임에서 혼자 남은 사람이 보이면 그냥 두지 못하고 소개해 섞어 놓습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESFJ:inclusion_drive"] },
+          { "text": "내 사람이 상처받으면 사실을 확인하기 전에 먼저 편을 들곤 합니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESFJ:loyalty_boundary", "mbti:ESFJ:fact_check_before_support"] }
+        ],
+        "study": [
+          { "text": "정해진 범위를 성실히 외우는 객관식 시험에서 점수를 안정적으로 쌓습니다.", "domains": ["study"], "sourceRefs": ["mbti:ESFJ:rote_exam_strength"] },
+          { "text": "스터디와 설명하기에서 힘을 얻지만 연락을 끊고 혼자 푸는 시간은 자꾸 뒤로 밀리기 쉽습니다.", "domains": ["study"], "sourceRefs": ["mbti:ESFJ:solo_focus_boundary"] },
+          { "text": "평가자의 표정이 차가우면 공부 리듬이 그날 기분에 끌려가곤 합니다.", "domains": ["study"], "sourceRefs": ["mbti:ESFJ:evaluation_anxiety_routine"] }
+        ]
+      },
+      "shadows": [
+        { "text": "배우자의 쉴 공간까지 챙기려 들어 사랑이 잔소리로 받아들여지기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFJ:care_without_overreach", "mbti:ESFJ:separate_care_from_control", "mbti:ESFJ:summary.risk"] },
+        { "text": "모두가 같은 방향을 볼 때 안심해 다수가 틀렸을 때도 반대 의견을 밀어내곤 합니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:ESFJ:social_conformity_bias"] }
+      ],
+      "sourceRefs": ["mbti:ESFJ:summary.identity", "mbti:ESFJ:summary.strength", "mbti:ESFJ:summary.risk", "mbti:ESFJ:functionStack"]
+    },
+    {
+      "type": "ISTP",
+      "easyName": "손으로 푸는 해결사",
+      "oneLine": "말보다 손과 판단이 먼저 움직여 실제로 작동하는 해법을 내놓는 사람입니다.",
+      "dimensionTags": {
+        "independence": 0.9,
+        "controlNeed": -0.7,
+        "verbalOutput": -0.9,
+        "emotionalExpression": -0.8,
+        "empathyResponse": -0.7,
+        "socialEnergy": -0.7,
+        "inquiry": 0.8,
+        "riskTaking": 0.6,
+        "ruleAdherence": -0.6,
+        "planning": -0.7,
+        "persistence": -0.5,
+        "reactivity": -0.4,
+        "conflictApproach": -0.6,
+        "mobility": 0.6,
+        "noveltySeeking": 0.5,
+        "detailFocus": 0.5,
+        "spendingControl": 0.3,
+        "attentionSeeking": -0.7,
+        "boundarySetting": 0.7,
+        "decisionSpeed": 0.6,
+        "intimacyPace": -0.6,
+        "caretaking": -0.5,
+        "possessiveness": -0.5,
+        "statusDrive": -0.5,
+        "introspection": -0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Ti", "role": "주기능", "easy": "Ti(남이 납득하든 말든 내 안에서 구조가 맞아떨어져야 움직이는 머리)", "sourceRefs": ["mbti:ISTP:functionStack"] },
+        { "code": "Se", "role": "부기능", "easy": "Se(장비와 현장을 직접 만지고 변수가 터진 순간 몸이 먼저 반응하는 감각)", "sourceRefs": ["mbti:ISTP:functionStack"] },
+        { "code": "Ni", "role": "3차기능", "easy": "Ni(관심 없는 척하면서도 판이 어떻게 돌아가는지 조용히 읽는 눈)", "sourceRefs": ["mbti:ISTP:functionStack"] },
+        { "code": "Fe", "role": "열등기능", "easy": "Fe(감정이 커질수록 말하기보다 빠져나갈 구멍을 찾게 되는 자리)", "sourceRefs": ["mbti:ISTP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "회의실에서 말이 길어질수록 멀어지고 현장에서 직접 만져 볼수록 집중합니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTP:action_over_meeting"] },
+          { "text": "상사가 사사건건 간섭하면 더 열심히 하기보다 조용히 손을 떼는 쪽입니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTP:anti_micromanagement", "mbti:ISTP:autonomy_required_work"] },
+          { "text": "덜 쓰고 정확히 끝내는 방법을 찾다 보니 대충 하는 사람처럼 보이기 쉽습니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTP:minimal_effort_efficiency"] }
+        ],
+        "money": [
+          { "text": "쓸데없는 소비는 싫어하면서도 관심 있는 공구와 장비 앞에서는 지갑이 훨씬 빨리 열리는 편입니다.", "domains": ["money"], "sourceRefs": ["mbti:ISTP:tool_hobby_budget_limit", "mbti:ISTP:practical_spending"] },
+          { "text": "가계부를 매일 쓰는 방식에 금방 질려 저축과 카드값을 자동이체로 돌려 두는 쪽입니다.", "domains": ["money"], "sourceRefs": ["mbti:ISTP:automated_finance_minimum"] },
+          { "text": "고장을 고쳐 놓고도 견적과 추가 비용을 흐리게 둬 실력보다 적게 받곤 합니다.", "domains": ["money", "work"], "sourceRefs": ["mbti:ISTP:technical_problem_income"] }
+        ],
+        "love": [
+          { "text": "사랑해도 상대가 일정과 연락을 통제하려 들면 설득 대신 거리를 두는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISTP:freedom_love_boundary"] },
+          { "text": "사랑한다는 말 대신 고장 난 물건을 고쳐 주는 방식으로 마음을 남기는 쪽입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISTP:quiet_warm_affection", "mbti:ISTP:practical_responsibility_signal"] },
+          { "text": "새로운 사람을 만들기보다 이미 편해진 사람을 조용히 챙기는 편입니다.", "domains": ["love", "relationships"], "sourceRefs": ["mbti:ISTP:old_bond_keeper"] }
+        ],
+        "relationships": [
+          { "text": "친구가 뭘 하든 내 영역만 침범하지 않으면 굳이 고치려 들지 않습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISTP:low_intrusion_relation"] },
+          { "text": "감정이 커지면 같이 있어도 휴대폰을 보며 그 압박에서 빠져나오려 합니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:ISTP:emotion_distance_when_overwhelmed"] },
+          { "text": "위로가 필요한 자리에서도 듣기 좋은 말 대신 맞는 말을 먼저 하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISTP:no_fake_comfort", "mbti:ISTP:few_words_direct"] }
+        ],
+        "study": [
+          { "text": "설명을 오래 듣는 수업보다 직접 만져 보는 실습에서 훨씬 빨리 배우는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ISTP:hands_on_learning"] },
+          { "text": "매일 반복하는 계획표는 방치하기 쉬워 하루 최소 문제 수만 정해 두는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ISTP:repeat_check_system", "mbti:ISTP:short_long_goal_split"] },
+          { "text": "공식을 외우기보다 어느 문제에서 쓰이는지 연결해야 머리에 남습니다.", "domains": ["study"], "sourceRefs": ["mbti:ISTP:theory_to_tool_bridge"] }
+        ]
+      },
+      "shadows": [
+        { "text": "속도가 붙으면 안전 확인을 건너뛰어 다치거나 돈 문제로 번지기 쉽습니다.", "domains": ["work", "money"], "sourceRefs": ["mbti:ISTP:crisis_calm_action", "mbti:ISTP:risk_seeking_impulse", "mbti:ISTP:summary.risk"] },
+        { "text": "중간 보고를 너무 줄여 팀은 진행 상황을 모른 채 불안해하곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:ISTP:minimal_report_protocol"] }
+      ],
+      "sourceRefs": ["mbti:ISTP:summary.identity", "mbti:ISTP:summary.strength", "mbti:ISTP:summary.risk", "mbti:ISTP:functionStack"]
+    },
+    {
+      "type": "ISFP",
+      "easyName": "감각으로 말하는 예술가",
+      "oneLine": "표정과 분위기에서 진짜 마음을 먼저 읽고 자기 취향을 조용히 지키는 사람입니다.",
+      "dimensionTags": {
+        "emotionalExpression": -0.5,
+        "conflictApproach": -0.9,
+        "directness": -0.8,
+        "decisionSpeed": -0.8,
+        "empathyResponse": 0.8,
+        "controlNeed": -0.8,
+        "competitiveness": -0.8,
+        "statusDrive": -0.8,
+        "planning": -0.7,
+        "trustThreshold": -0.6,
+        "boundarySetting": -0.7,
+        "socialEnergy": -0.6,
+        "verbalOutput": -0.7,
+        "noveltySeeking": 0.4,
+        "spendingControl": -0.6,
+        "persistence": -0.5,
+        "introspection": 0.8,
+        "attentionSeeking": -0.6,
+        "intimacyPace": -0.6,
+        "ruleAdherence": -0.5,
+        "detailFocus": 0.4,
+        "riskTaking": -0.3,
+        "reactivity": -0.6,
+        "caretaking": 0.5
+      },
+      "cognitiveFunctions": [
+        { "code": "Fi", "role": "주기능", "easy": "Fi(기분이 아니라 내 안에서 맞는지 아닌지를 조용히 검증하는 마음)", "sourceRefs": ["mbti:ISFP:functionStack"] },
+        { "code": "Se", "role": "부기능", "easy": "Se(색과 질감과 상대의 미세한 떨림까지 몸으로 먼저 알아차리는 감각)", "sourceRefs": ["mbti:ISFP:functionStack"] },
+        { "code": "Ni", "role": "3차기능", "easy": "Ni(말없이 가만히 있어도 분위기가 어디로 흐르는지 이미 보고 있는 눈)", "sourceRefs": ["mbti:ISFP:functionStack"] },
+        { "code": "Te", "role": "열등기능", "easy": "Te(가격과 마감과 계약 같은 바깥 구조를 붙이는 일이 가장 늦게 오는 자리)", "sourceRefs": ["mbti:ISFP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "갈등이 깊어지면 끝까지 토론하기보다 마음속에서 조용히 관계를 정리해 버리는 쪽입니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ISFP:conflict_silent_exit"] },
+          { "text": "공개 지적이 반복되는 자리에서는 빨라지기보다 입을 닫고 협업에서 빠져나가곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:ISFP:gentle_feedback_space"] },
+          { "text": "매일 똑같이 가기보다 꽂히는 순간에 며칠을 몰아서 결과물을 만드는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ISFP:burst_focus_work"] }
+        ],
+        "money": [
+          { "text": "지친 날마다 예쁜 물건과 맛있는 음식에 작은 결제를 반복해 큰돈이 되기 쉽습니다.", "domains": ["money"], "sourceRefs": ["mbti:ISFP:comfort_spending_limit", "mbti:ISFP:experience_spending"] },
+          { "text": "작업 범위와 단가를 세게 말하지 못해 추가 요청을 무료로 넘기곤 합니다.", "domains": ["money", "work"], "sourceRefs": ["mbti:ISFP:steady_income_boundary", "mbti:ISFP:low_income_risk_due_to_softness"] },
+          { "text": "마음에 드는 브랜드일수록 가격과 위험을 느슨하게 보고 오래 좋게 보려 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ISFP:aesthetic_attachment_risk"] }
+        ],
+        "love": [
+          { "text": "좋아하는 마음이 커도 먼저 다가가지 못해 혼자 오래 품다 기회를 놓치기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:ISFP:unspoken_crush_pattern"] },
+          { "text": "연인이 바라는 걸 들어주느라 싫다는 말을 미루다 내 경계까지 뒤로 밀리는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISFP:devoted_to_partner_wishes"] },
+          { "text": "헤어지고 조용히 정리한 뒤에도 마음은 한참 뒤에야 빠져나오는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ISFP:breakup_aftershock"] }
+        ],
+        "relationships": [
+          { "text": "낯선 사람에게는 부드럽지만 가족과 친구에게는 의외로 냉정한 말을 꺼내는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISFP:direct_with_close_people"] },
+          { "text": "화가 나면 반박하는 대신 조용해지고 그 사이에 마음이 굳어 버리곤 합니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:ISFP:silent_when_angry"] },
+          { "text": "먼저 들이대진 않지만 누가 다가오면 의외로 편하게 받아 주는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ISFP:quiet_social_acceptance"] }
+        ],
+        "study": [
+          { "text": "책상 앞 이론보다 역할극과 실습처럼 몸으로 해 볼 때 훨씬 빨리 익히는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ISFP:hands_on_learning"] },
+          { "text": "잘했다는 말보다 무엇이 좋았는지 콕 집어 들을 때 다음 작업이 더 살아나는 편입니다.", "domains": ["study", "work"], "sourceRefs": ["mbti:ISFP:concrete_praise_learning"] },
+          { "text": "불편한 과목을 계속 미루다 시험 직전 압박이 커지면 다시 피하게 되기 쉽습니다.", "domains": ["study"], "sourceRefs": ["mbti:ISFP:comfortable_exam_routine"] }
+        ]
+      },
+      "shadows": [
+        { "text": "선택지를 너무 오래 열어 두다 결정권을 남에게 넘기고 타이밍을 놓치곤 합니다.", "domains": ["work", "love", "money"], "sourceRefs": ["mbti:ISFP:decision_delay", "mbti:ISFP:open_but_undecided", "mbti:ISFP:summary.risk"] },
+        { "text": "비판을 다 내 잘못으로 가져오다 자신감이 떨어져 좋은 기회 앞에서도 스스로 뒤로 빠지기 쉽습니다.", "domains": ["work", "relationships"], "sourceRefs": ["mbti:ISFP:low_self_esteem_from_acceptance", "mbti:ISFP:low_ego_honesty"] }
+      ],
+      "sourceRefs": ["mbti:ISFP:summary.identity", "mbti:ISFP:summary.strength", "mbti:ISFP:summary.risk", "mbti:ISFP:functionStack"]
+    },
+    {
+      "type": "ESTP",
+      "easyName": "현장에서 판을 여는 승부사",
+      "oneLine": "지금 눈앞의 현장을 빠르게 읽고 말보다 행동으로 기회를 잡는 사람입니다.",
+      "dimensionTags": {
+        "riskTaking": 0.9,
+        "decisionSpeed": 0.9,
+        "planning": -0.8,
+        "persistence": -0.7,
+        "socialEnergy": 0.8,
+        "directness": 0.8,
+        "attentionSeeking": 0.8,
+        "mobility": 0.9,
+        "noveltySeeking": 0.8,
+        "empathyResponse": -0.6,
+        "ruleAdherence": -0.7,
+        "competitiveness": 0.7,
+        "spendingControl": -0.8,
+        "emotionalExpression": 0.6,
+        "reactivity": 0.6,
+        "conflictApproach": 0.5,
+        "intimacyPace": 0.8,
+        "detailFocus": 0.5,
+        "trustThreshold": -0.5,
+        "verbalOutput": 0.4,
+        "possessiveness": -0.6,
+        "boundarySetting": 0.4,
+        "introspection": -0.8,
+        "dutifulness": -0.5,
+        "inquiry": 0.3
+      },
+      "cognitiveFunctions": [
+        { "code": "Se", "role": "주기능", "easy": "Se(눈앞의 표정과 움직임과 소리를 몸으로 먼저 받아들이는 감각)", "sourceRefs": ["mbti:ESTP:functionStack"] },
+        { "code": "Ti", "role": "부기능", "easy": "Ti(책상 위 이론이 아니라 현장에서 작동하는 원리를 따져 보는 머리)", "sourceRefs": ["mbti:ESTP:functionStack"] },
+        { "code": "Fe", "role": "3차기능", "easy": "Fe(필요하면 분위기에 맞춰 말과 행동의 강도를 낮출 줄 아는 조절 손)", "sourceRefs": ["mbti:ESTP:functionStack"] },
+        { "code": "Ni", "role": "열등기능", "easy": "Ni(멀리 있는 위험보다 지금의 기회가 더 선명하게 보이는 자리)", "sourceRefs": ["mbti:ESTP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "계획이 무너진 순간에도 현장을 보고 바로 다음 수를 찾는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTP:crisis_solver"] },
+          { "text": "승인만 기다리는 자리에서는 지치고 바로 판단해도 되는 자리에서 성과를 내는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTP:fast_approval_lane"] },
+          { "text": "긴 설명과 장문의 보고서 앞에서는 집중이 금방 꺼지고 움직이는 현장에서만 살아나는 편입니다.", "domains": ["work"], "sourceRefs": ["mbti:ESTP:low_tolerance_for_boredom"] }
+        ],
+        "money": [
+          { "text": "이번 달 수입이 좋으면 그 감각으로 지출을 키워 다음 공백기에 바로 압박을 받곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ESTP:quick_cashflow_volatility"] },
+          { "text": "거래가 빨리 성사될수록 계약 조건과 세금 같은 뒷정리를 가볍게 넘기기 쉽습니다.", "domains": ["money", "work"], "sourceRefs": ["mbti:ESTP:deal_and_sales_income", "mbti:ESTP:deal_to_repeat_business"] },
+          { "text": "손실이 나면 오래 주저앉기보다 바로 만회하려 들다 정한 한도를 넘기곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ESTP:loss_revenge_control"] }
+        ],
+        "love": [
+          { "text": "깊은 대화보다 같이 운동하고 맛집을 다니는 시간에서 마음이 뜨거워지는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ESTP:fun_active_love"] },
+          { "text": "조용한 고백보다 장난과 스킨십으로 먼저 다가가 상대 속도를 놓치기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:ESTP:active_affection"] },
+          { "text": "이성 친구와 넓게 어울리다 연인에게 불안의 신호로 읽혀 다투곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ESTP:social_boundary_issue"] }
+        ],
+        "relationships": [
+          { "text": "한두 번은 넘겨도 말이 안 통한다고 판단한 순간 관계를 차갑게 정리하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESTP:slow_to_cut_off"] },
+          { "text": "상대의 옷차림과 표정 변화에서 말하지 않은 의도를 눈치채곤 합니다.", "domains": ["relationships", "work"], "sourceRefs": ["mbti:ESTP:intent_reader", "mbti:ESTP:sharp_observation"] },
+          { "text": "다툰 뒤 오래 곱씹기보다 다시 만나 웃고 움직이며 분위기를 되살리는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESTP:low_grudge_high_motion"] }
+        ],
+        "study": [
+          { "text": "틀린 이유를 길게 쓰기보다 원인 한 줄과 다음 행동만 짧게 남기는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ESTP:error_record_short_loop"] },
+          { "text": "몇 달짜리 필기 시험은 주간 모의고사와 작은 보상으로 쪼개야 버티는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ESTP:long_exam_pacing", "mbti:ESTP:short_goal_strategy"] },
+          { "text": "조용한 강의실 성적보다 실습과 발표 같은 현장 평가에서 실력이 더 정확히 드러나는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ESTP:low_gpa_but_practical_skill"] }
+        ]
+      },
+      "shadows": [
+        { "text": "웃기려고 정면으로 던진 농담이 상대의 선을 넘어 무례하게 남기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESTP:straight_humor", "mbti:ESTP:emotional_bluntness", "mbti:ESTP:summary.risk"] },
+        { "text": "분위기가 붙으면 더 가 보자는 마음이 커져 회복하기 어려운 손실을 남기곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ESTP:loss_limit_rule", "mbti:ESTP:impulsive_risk"] }
+      ],
+      "sourceRefs": ["mbti:ESTP:summary.identity", "mbti:ESTP:summary.strength", "mbti:ESTP:summary.risk", "mbti:ESTP:functionStack"]
+    },
+    {
+      "type": "ESFP",
+      "easyName": "장면을 밝히는 분위기 메이커",
+      "oneLine": "사람과 반응이 있는 자리에서 살아나 지금 이 순간을 즐거운 장면으로 바꾸는 사람입니다.",
+      "dimensionTags": {
+        "socialEnergy": 0.9,
+        "attentionSeeking": 0.9,
+        "emotionalExpression": 0.9,
+        "verbalOutput": 0.8,
+        "intimacyPace": 0.9,
+        "planning": -0.9,
+        "persistence": -0.7,
+        "spendingControl": -0.8,
+        "noveltySeeking": 0.8,
+        "detailFocus": -0.5,
+        "empathyResponse": 0.4,
+        "directness": -0.4,
+        "riskTaking": 0.6,
+        "decisionSpeed": 0.7,
+        "ruleAdherence": -0.7,
+        "dutifulness": -0.6,
+        "introspection": -0.5,
+        "independence": -0.7,
+        "caretaking": 0.6,
+        "reactivity": 0.8,
+        "trustThreshold": -0.7,
+        "mobility": 0.7,
+        "conflictApproach": -0.3,
+        "learningDrive": -0.4
+      },
+      "cognitiveFunctions": [
+        { "code": "Se", "role": "주기능", "easy": "Se(사람들의 표정과 소리와 움직임을 그 자리에서 받아 바로 반응하는 감각)", "sourceRefs": ["mbti:ESFP:functionStack"] },
+        { "code": "Fi", "role": "부기능", "easy": "Fi(활발해 보여도 조용한 사람의 개별 감정과 취향을 존중하는 마음)", "sourceRefs": ["mbti:ESFP:functionStack"] },
+        { "code": "Te", "role": "3차기능", "easy": "Te(마감이 눈앞에 와야 비로소 정리와 실행이 돌아가기 시작하는 손)", "sourceRefs": ["mbti:ESFP:functionStack"] },
+        { "code": "Ni", "role": "열등기능", "easy": "Ni(먼 노후보다 다음 달 눈에 보이는 목표가 먼저 잡히는 자리)", "sourceRefs": ["mbti:ESFP:functionStack"] }
+      ],
+      "signals": {
+        "work": [
+          { "text": "시간이 넉넉할 때는 손을 못 대다 마감이 코앞에 와야 몸이 먼저 움직이는 편입니다.", "domains": ["work", "study"], "sourceRefs": ["mbti:ESFP:late_start_pressure"] },
+          { "text": "사람 모으기와 초반 분위기는 살리는데 끝의 정리와 인수인계에서 신뢰가 갈리기 쉽습니다.", "domains": ["work"], "sourceRefs": ["mbti:ESFP:finish_line_weakness"] },
+          { "text": "빠르게 움직이고 말하는 사이 작은 준비물과 세부 조건을 놓치곤 합니다.", "domains": ["work"], "sourceRefs": ["mbti:ESFP:messy_detail_risk"] }
+        ],
+        "money": [
+          { "text": "꾸미기와 모임과 맛집에 쓰는 돈이 반복되면 꽤 큰 고정비가 되기 쉽습니다.", "domains": ["money"], "sourceRefs": ["mbti:ESFP:beauty_social_spending", "mbti:ESFP:experience_spending"] },
+          { "text": "재미있는 일정이 먼저 잡히면 저축은 매번 다음 달로 밀리곤 합니다.", "domains": ["money"], "sourceRefs": ["mbti:ESFP:auto_saving_before_fun", "mbti:ESFP:short_term_reward_bias"] },
+          { "text": "주변이 뜨겁다는 이유만으로 유행하는 자산에 들어갔다가 후회가 커지기 쉽습니다.", "domains": ["money"], "sourceRefs": ["mbti:ESFP:impulse_investment_risk", "mbti:ESFP:social_reaction_filter"] }
+        ],
+        "love": [
+          { "text": "좋아하면 상대가 웃는 장면을 직접 만들려고 깜짝 이벤트를 준비하곤 합니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFP:romantic_surprise", "mbti:ESFP:surprise_generosity"] },
+          { "text": "마음이 끝났다고 느끼면 같은 자리에서 오래 후회하지 않고 빨리 털어내는 편입니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFP:quick_change_love", "mbti:ESFP:post_break_low_attachment"] },
+          { "text": "연인이 혼자만의 시간을 원하면 사랑이 식었다고 오해하기 쉽습니다.", "domains": ["love"], "sourceRefs": ["mbti:ESFP:together_time_need", "mbti:ESFP:shared_attention_security"] }
+        ],
+        "relationships": [
+          { "text": "처음 만난 사람에게도 자기 이야기를 먼저 털어놓아 금세 분위기를 풀어 놓습니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESFP:honest_self_disclosure", "mbti:ESFP:social_easy_openness"] },
+          { "text": "웃음도 눈물도 많아 사소한 일에도 기분 변화가 얼굴에 그대로 드러나는 편입니다.", "domains": ["relationships"], "sourceRefs": ["mbti:ESFP:emotion_visible_relation"] },
+          { "text": "말은 많이 하면서도 정작 하고 싶은 말은 웃음 뒤에 숨길 때가 많습니다.", "domains": ["relationships", "love"], "sourceRefs": ["mbti:ESFP:not_saying_real_point", "mbti:ESFP:many_words_low_structure"] }
+        ],
+        "study": [
+          { "text": "혼자 오래 앉아 있는 공부는 싫어도 친구에게 설명하면서 외우면 머리에 남습니다.", "domains": ["study"], "sourceRefs": ["mbti:ESFP:social_explain_learning", "mbti:ESFP:study_sitting_dislike"] },
+          { "text": "국어와 사회처럼 짧게 입력해 바로 쓰는 과목에서 의외의 점수를 만드는 편입니다.", "domains": ["study"], "sourceRefs": ["mbti:ESFP:short_memory_subject_strength"] },
+          { "text": "재미있는 과목만 돌리다 수학처럼 쌓아야 하는 과목에서 점수 차이가 벌어지곤 합니다.", "domains": ["study"], "sourceRefs": ["mbti:ESFP:boring_repeat_reward", "mbti:ESFP:goal_split_strategy"] }
+        ]
+      },
+      "shadows": [
+        { "text": "부담이 큰 일은 처음부터 피하거나 시작한 뒤에도 마무리를 미뤄 신뢰를 잃기 쉽습니다.", "domains": ["work"], "sourceRefs": ["mbti:ESFP:irresponsible_fun_loop", "mbti:ESFP:responsibility_avoidance_risk", "mbti:ESFP:summary.risk"] },
+        { "text": "마음이 움직인 그 순간 바로 말하고 결정해 뒤처리가 어려워지곤 합니다.", "domains": ["love", "money"], "sourceRefs": ["mbti:ESFP:impulsive_emotion", "mbti:ESFP:slow_down_emotion_decision"] }
+      ],
+      "sourceRefs": ["mbti:ESFP:summary.identity", "mbti:ESFP:summary.strength", "mbti:ESFP:summary.risk", "mbti:ESFP:functionStack"]
+    }
+  ]
+}

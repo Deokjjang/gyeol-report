@@ -1,0 +1,571 @@
+{
+  "features": [
+    {
+      "id": "element_wood",
+      "family": "element",
+      "traditionalName": "木(목)",
+      "easyName": "자라는 나무",
+      "definition": "목(木, 위로 자라고 펴 나가는 나무의 움직임)은 전개와 생장을 상징합니다. 화를 생하고 토를 극하며 봄과 동쪽에 대응합니다.",
+      "behaviorSignals": [
+        { "text": "누가 시키기 전에 새 프로젝트 제안서를 먼저 써서 들고 가는 편입니다.", "domains": ["work"], "sourceRefs": ["foundation:element:wood#applications.personality", "foundation:element:wood#applications.career", "kb:element_wood"] },
+        { "text": "배우던 과목의 기초를 끝내면 바로 다음 단계 교재를 정해 두는 편입니다.", "domains": ["study"], "sourceRefs": ["foundation:element:wood#applications.study"] },
+        { "text": "돈이 모이면 묶어 두기보다 더 키울 곳을 먼저 찾아보는 편입니다.", "domains": ["money"], "sourceRefs": ["foundation:element:wood#applications.money", "kb:element_wood"] },
+        { "text": "마음이 가면 다음 단계로 가자고 먼저 말을 꺼내는 쪽입니다.", "domains": ["love"], "sourceRefs": ["foundation:element:wood#applications.love"] },
+        { "text": "모임에서 다음에 뭘 할지 새 제안을 먼저 꺼내 놓는 편입니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:wood#applications.relationships", "foundation:element:wood#symbol"] }
+      ],
+      "shadowSignals": [
+        { "text": "넓힐 일을 자꾸 더하다가 시간과 돈의 한도를 넘겨 버리기 쉽습니다.", "domains": ["work", "money"], "sourceRefs": ["foundation:element:wood#caution", "kb:element_wood"] },
+        { "text": "새 제안을 밀어붙이느라 같이 할 사람의 여력을 묻지 않아 지치게 하기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:wood#applications.relationships"] },
+        { "text": "관계를 빨리 키우고 싶어 상대가 편한 속도를 앞질러 가기 쉽습니다.", "domains": ["love"], "sourceRefs": ["foundation:element:wood#applications.love"] }
+      ],
+      "dimensionTags": { "noveltySeeking": 0.5, "riskTaking": 0.4, "planning": 0.3, "controlNeed": 0.3 },
+      "strengthRule": {
+        "strong": "봄에 태어나 월지가 목이거나 지지에 같은 뿌리가 있으면 자라는 힘이 또렷합니다. 수가 곁에서 생해 주면 더 힘이 붙습니다.",
+        "weak": "지지에 뿌리가 없고 금이 많아 누르면 시작하려는 힘이 눌려 약하게 읽습니다. 개수만으로 과다나 부족을 단정하지 않습니다.",
+        "duplicate": "가중치 합이 3 이상이면 과다 상태로 넘겨 읽습니다.",
+        "clash": "금이 많아 목을 치는 구조면 뻗기보다 버티기로 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:wood#excessOrDeficit", "foundation:structure:geumda_mokjeol", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["foundation:element:wood", "classic:sm1:論五行生尅", "classic:sm1:論五行生成", "kb:element_wood", "v4:material:element_wood"],
+      "aliases": ["목", "나무", "wood"]
+    },
+    {
+      "id": "element:WOOD:high",
+      "family": "element",
+      "traditionalName": "木 과다",
+      "easyName": "나무 기운 넘침",
+      "definition": "목 과다(木 太過, 자라려는 나무 기운이 셋 이상 겹친 상태)는 시작과 확장이 앞서는 흐름입니다. 한번 정한 길을 밀고 가는 힘이 커집니다.",
+      "behaviorSignals": [
+        { "text": "수강 중인 강좌가 끝나기도 전에 다음 강좌를 장바구니에 담아 두곤 합니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WOOD:high:scene"] },
+        { "text": "이미 맡은 일이 있어도 다음에 벌일 일의 가능성이 자꾸 눈에 들어오는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WOOD:high:inside"] },
+        { "text": "배운 것을 바로 기획안으로 옮겨 다음 주에 시작하자고 하는 편입니다.", "domains": ["work", "study"], "sourceRefs": ["v4:depth:element:WOOD:high:strength", "v4:depth:element:WOOD:high:work"] },
+        { "text": "한번 방향을 정하면 팀이 아직 고민 중일 때도 먼저 밀고 나가는 편입니다.", "domains": ["work", "relationships"], "sourceRefs": ["taxonomy:element_wood_excess"] }
+      ],
+      "shadowSignals": [
+        { "text": "벌여 놓은 일은 많은데 끝맺은 것은 손에 꼽히기 쉽습니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WOOD:high:shadow"] },
+        { "text": "시작한 노트는 많은데 마지막 장까지 쓴 것은 적은 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WOOD:high:punch"] },
+        { "text": "같이 가는 사람의 속도를 기다리다 답답해져 혼자 앞서가 버리곤 합니다.", "domains": ["relationships", "work"], "sourceRefs": ["taxonomy:element_wood_excess"] }
+      ],
+      "dimensionTags": { "noveltySeeking": 0.7, "persistence": -0.5, "riskTaking": 0.5, "decisionSpeed": 0.4 },
+      "strengthRule": {
+        "strong": "월지가 봄이고 수까지 생해 주면 과다가 가장 뚜렷합니다. 시작은 많고 마무리는 적은 쪽으로 읽습니다.",
+        "weak": "개수는 3 이상이어도 지지에 뿌리가 없거나 금이 세게 누르면 실제 힘이 줄어 과다를 약하게 읽습니다.",
+        "duplicate": "목이 많고 화가 없으면 뻗기만 하고 태우지 못하는 목다화식 구조로 따로 봅니다.",
+        "clash": "금이 나란히 강하면 뻗는 힘과 자르는 힘이 맞서 확장이 멈칫하는 쪽으로 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:wood#excessOrDeficit", "foundation:structure:mokda_hwasik", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:WOOD:high:*", "v4:material:element:WOOD:high", "taxonomy:element_wood_excess", "v4:material:element_wood_excess", "foundation:element:wood", "classic:sm1:論五行生尅"],
+      "aliases": ["목 과다", "목 강함"]
+    },
+    {
+      "id": "element:WOOD:low",
+      "family": "element",
+      "traditionalName": "木 부족",
+      "easyName": "나무 기운 비움",
+      "definition": "목 부족(木 不及, 자라려는 나무 기운이 드러나지 않는 상태)은 시작의 첫 줄기를 잡는 데 시간이 걸리는 흐름입니다. 바깥의 목표와 사람이 출발의 자극이 됩니다.",
+      "behaviorSignals": [
+        { "text": "목표를 누가 정해 주면 그때부터는 흔들리지 않고 꾸준히 해내는 편입니다.", "domains": ["work", "study"], "sourceRefs": ["taxonomy:element_wood_missing"] },
+        { "text": "새 계획을 짜기보다 이미 쓰던 방식과 틀을 오래 붙잡는 편입니다.", "domains": ["work"], "sourceRefs": ["kb:element_wood_missing"] },
+        { "text": "뭘 해 보자고 먼저 제안하는 친구가 있어야 새 출발의 시동이 걸리는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:WOOD:low:character", "v4:depth:element:WOOD:low:relationships"] },
+        { "text": "큰 계획 없이도 작은 호기심 하나로 수업 하나를 듣기 시작하곤 합니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WOOD:low:inside", "v4:depth:element:WOOD:low:study"] },
+        { "text": "화분 하나 들이기처럼 작은 시작이면 부담 없이 손을 대는 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WOOD:low:scene", "v4:depth:element:WOOD:low:strength"] }
+      ],
+      "shadowSignals": [
+        { "text": "시작부터 크게 잡으면 오히려 손을 못 대고 미루기 쉽습니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WOOD:low:shadow"] },
+        { "text": "완벽한 시작일을 고르다가 달력만 넘어가곤 합니다.", "domains": ["study", "work"], "sourceRefs": ["v4:depth:element:WOOD:low:punch"] },
+        { "text": "목표가 흐릿하면 일할 힘은 있어도 어디로 가야 할지 몰라 지치기 쉽습니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_wood_missing"] }
+      ],
+      "dimensionTags": { "noveltySeeking": -0.5, "ruleAdherence": 0.4, "decisionSpeed": -0.3, "persistence": 0.3 },
+      "strengthRule": {
+        "strong": "가중치 합이 0이고 시주까지 알아도 목이 없으며 가을 월지라 금이 누르면 부족이 가장 뚜렷합니다.",
+        "weak": "출생 시각을 몰라 시주가 빠졌거나 지장간에 숨은 목이 있으면 부족을 보수적으로 읽습니다.",
+        "duplicate": "금이 많고 목이 없으면 금다목절 구조로 따로 봅니다.",
+        "clash": "수가 넉넉하면 목이 없어도 생해 줄 바탕이 있어 부족의 무게를 낮춰 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:wood#excessOrDeficit", "foundation:structure:geumda_mokjeol", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:WOOD:low:*", "v4:material:element:WOOD:low", "taxonomy:element_wood_missing", "kb:element_wood_missing", "v4:material:element_wood_missing", "foundation:element:wood", "classic:sm1:論五行生尅"],
+      "aliases": ["목 부족", "목 약함"]
+    },
+    {
+      "id": "element:WOOD:balanced",
+      "family": "element",
+      "traditionalName": "木 균형",
+      "easyName": "나무 기운 알맞음",
+      "definition": "목 균형(木 中和, 자라려는 나무 기운이 넘치지도 비지도 않은 상태)은 새로 시작하는 리듬을 바꿀 필요가 없는 흐름입니다. 키울 것과 둘 것을 함께 봅니다.",
+      "behaviorSignals": [
+        { "text": "익숙한 일을 끝낸 뒤에 관심 있던 주제를 조금씩 읽어 나가는 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WOOD:balanced:scene"] },
+        { "text": "키울 일과 그대로 둘 일을 나눠 본 뒤 새 일은 그 틈에 하나씩 넣는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WOOD:balanced:inside", "v4:depth:element:WOOD:balanced:strength"] },
+        { "text": "이어가던 배움이 있으면 새것을 찾기보다 그 흐름을 이어 가는 쪽입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WOOD:balanced:study"] }
+      ],
+      "shadowSignals": [
+        { "text": "좋은 리듬인데도 새 계획을 자꾸 얹다가 일정이 빽빽해지기 쉽습니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WOOD:balanced:punch"] },
+        { "text": "균형을 지키겠다며 작은 변화까지 막다가 답답한 사람이 되기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["v4:depth:element:WOOD:balanced:shadow"] }
+      ],
+      "dimensionTags": { "noveltySeeking": 0.2, "persistence": 0.3, "planning": 0.2 },
+      "strengthRule": {
+        "strong": "가중치 합이 1.5 이상 3 미만이고 월지까지 봄이면 균형 안에서도 살아 있는 쪽으로 읽습니다.",
+        "weak": "합이 1.5에 가깝거나 시주가 빠져 개수가 적게 잡히면 균형보다 약함에 가깝게 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:wood#excessOrDeficit"]
+      },
+      "sourceRefs": ["v4:depth:element:WOOD:balanced:*", "v4:material:element:WOOD:balanced", "foundation:element:wood"],
+      "aliases": ["목 균형"]
+    },
+    {
+      "id": "element_fire",
+      "family": "element",
+      "traditionalName": "火(화)",
+      "easyName": "밝히는 불",
+      "definition": "화(火, 밖으로 밝게 드러나고 위로 향하는 불의 움직임)는 발산과 밝음을 상징합니다. 토를 생하고 금을 극하며 여름과 남쪽에 대응합니다.",
+      "behaviorSignals": [
+        { "text": "발표를 맡으면 첫 문장부터 사람들 눈길을 끄는 말로 시작하는 편입니다.", "domains": ["work"], "sourceRefs": ["foundation:element:fire#applications.career"] },
+        { "text": "호감이 생기면 숨기지 않고 표정과 말로 바로 드러내는 쪽입니다.", "domains": ["love"], "sourceRefs": ["foundation:element:fire#applications.love", "kb:element_fire"] },
+        { "text": "기분이 가라앉은 날에는 뭔가를 사면서 분위기를 바꾸곤 합니다.", "domains": ["money"], "sourceRefs": ["foundation:element:fire#applications.money"] },
+        { "text": "복습할 때 조용히 읽기보다 남에게 설명하듯 소리 내어 말하면 더 잘 외우는 편입니다.", "domains": ["study"], "sourceRefs": ["foundation:element:fire#applications.study"] },
+        { "text": "가족 모임이나 단체 자리에서 분위기를 띄우는 역할을 자주 맡습니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:fire#applications.family", "foundation:element:fire#applications.relationships"] }
+      ],
+      "shadowSignals": [
+        { "text": "빠른 반응을 얻고 싶어서 설명을 건너뛰고 결론만 던지기 쉽습니다.", "domains": ["work", "relationships"], "sourceRefs": ["foundation:element:fire#caution"] },
+        { "text": "자리를 띄우느라 말이 적은 사람의 의견을 못 듣고 지나가곤 합니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:fire#applications.relationships", "kb:element_fire"] },
+        { "text": "호감을 쏟아 내느라 상대가 답할 시간을 주지 않아 부담을 주기 쉽습니다.", "domains": ["love"], "sourceRefs": ["foundation:element:fire#applications.love"] }
+      ],
+      "dimensionTags": { "emotionalExpression": 0.6, "verbalOutput": 0.5, "attentionSeeking": 0.5, "socialEnergy": 0.4, "spendingControl": -0.3 },
+      "strengthRule": {
+        "strong": "여름에 태어나 월지가 화이거나 지지에 뿌리가 있으면 드러내는 힘이 또렷합니다. 목이 곁에서 생해 주면 더 오래 탑니다.",
+        "weak": "지지에 뿌리가 없고 수가 많아 끄면 밝히는 힘이 눌려 약하게 읽습니다. 화가 있다고 열정 수준을 확정하지 않습니다.",
+        "duplicate": "화가 셋 이상 겹치면 과다 상태로 넘겨 읽습니다.",
+        "clash": "수가 맞서 화를 끄는 구조면 드러내기보다 안으로 삭이는 쪽으로 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:fire#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["foundation:element:fire", "classic:sm1:論五行生尅", "classic:sm1:論五行生成", "kb:element_fire", "v4:material:element_fire"],
+      "aliases": ["화", "불", "fire"]
+    },
+    {
+      "id": "element:FIRE:high",
+      "family": "element",
+      "traditionalName": "火 과다",
+      "easyName": "불 기운 넘침",
+      "definition": "화 과다(火 太過, 밝히는 불 기운이 셋 이상 겹친 상태)는 표현과 속도가 앞서 분위기를 빠르게 끌어올리는 흐름입니다. 연료도 그만큼 빨리 씁니다.",
+      "behaviorSignals": [
+        { "text": "재미있는 자리에서는 귀가 시간을 몇 번이나 미루곤 합니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:FIRE:high:scene"] },
+        { "text": "웃어 주는 반응이 오면 말이 더 많아지고 자리를 더 오래 끄는 편입니다.", "domains": ["relationships", "work"], "sourceRefs": ["v4:depth:element:FIRE:high:inside"] },
+        { "text": "반가운 마음을 표정과 큰 몸짓으로 숨김없이 나누는 편입니다.", "domains": ["love"], "sourceRefs": ["v4:depth:element:FIRE:high:love", "v4:depth:element:FIRE:high:character"] },
+        { "text": "조용한 모임에 들어가면 먼저 말을 걸어 활기가 돌게 만드는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:FIRE:high:strength"] },
+        { "text": "단체 대화방이 조용하면 먼저 글을 올려 분위기를 끌어올리는 편입니다.", "domains": ["work", "relationships"], "sourceRefs": ["taxonomy:element_fire_excess"] }
+      ],
+      "shadowSignals": [
+        { "text": "들뜨면 속도를 낮추지 못해 상대가 따라오기 전에 혼자 과열되기 쉽습니다.", "domains": ["love", "relationships"], "sourceRefs": ["v4:depth:element:FIRE:high:shadow", "taxonomy:element_fire_excess"] },
+        { "text": "놀 때는 모르다가 다음 날이 되면 배터리가 바닥나 있곤 합니다.", "domains": ["relationships", "work"], "sourceRefs": ["v4:depth:element:FIRE:high:punch"] },
+        { "text": "중요한 말을 한 박자 늦추지 못하고 감정이 오른 채로 바로 내뱉기 쉽습니다.", "domains": ["love", "work"], "sourceRefs": ["taxonomy:element_fire_excess"] }
+      ],
+      "dimensionTags": { "emotionalExpression": 0.8, "socialEnergy": 0.7, "attentionSeeking": 0.6, "verbalOutput": 0.6, "reactivity": 0.5 },
+      "strengthRule": {
+        "strong": "월지가 여름이고 목까지 생해 주면 과다가 가장 뚜렷합니다. 드러냄은 크고 쉬는 시간은 짧은 쪽으로 읽습니다.",
+        "weak": "개수는 3 이상이어도 수가 세게 끄거나 지지에 뿌리가 없으면 실제 열기가 줄어 과다를 약하게 읽습니다.",
+        "duplicate": "화가 많고 금이 눌리면 긴장이 생기는 화금 구조로 따로 봅니다.",
+        "clash": "수가 나란히 강하면 끓고 식기를 반복하는 쪽으로 읽어 과열 신호를 더 조심해 씁니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:fire#excessOrDeficit", "foundation:structure:fire_metal", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:FIRE:high:*", "v4:material:element:FIRE:high", "taxonomy:element_fire_excess", "v4:material:element_fire_excess", "foundation:element:fire", "classic:sm1:論五行生尅"],
+      "aliases": ["화 과다", "화 강함"]
+    },
+    {
+      "id": "element:FIRE:low",
+      "family": "element",
+      "traditionalName": "火 부족",
+      "easyName": "불 기운 비움",
+      "definition": "화 부족(火 不及, 밝히는 불 기운이 드러나지 않는 상태)은 기쁨과 호감의 표현이 늦게 밖으로 나오는 흐름입니다. 대신 차분함과 실속이 살아납니다.",
+      "behaviorSignals": [
+        { "text": "좋아도 표정이 크게 바뀌지 않아 기쁜 마음이 상대에게 늦게 전해지는 편입니다.", "domains": ["love", "relationships"], "sourceRefs": ["taxonomy:element_fire_missing", "kb:element_fire_missing"] },
+        { "text": "다 같이 들뜬 자리에서도 차분하게 남아 실제로 되는 일부터 챙기는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_fire_missing"] },
+        { "text": "마음에 들어도 말로 꺼내기 전에 속으로 먼저 따져 보는 시간이 긴 편입니다.", "domains": ["love"], "sourceRefs": ["kb:element_fire_missing"] },
+        { "text": "큰 모임보다 반응이 따뜻한 친구 두셋과 보는 자리를 고르는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:FIRE:low:relationships"] },
+        { "text": "좋았던 순간을 길게 말하기보다 한두 마디로 짧게 전하는 쪽입니다.", "domains": ["love"], "sourceRefs": ["v4:depth:element:FIRE:low:love"] }
+      ],
+      "shadowSignals": [
+        { "text": "마음은 있어도 티를 내지 않아 상대에게 차갑거나 무심하게 보이기 쉽습니다.", "domains": ["love", "relationships"], "sourceRefs": ["taxonomy:element_fire_missing"] },
+        { "text": "즐거웠다고 속으로만 생각하고 말하지 않아 상대는 모른 채 지나가곤 합니다.", "domains": ["love"], "sourceRefs": ["v4:depth:element:FIRE:low:punch"] },
+        { "text": "밝게 보여야 한다는 부담이 커지면 오히려 말문이 막혀 버리곤 합니다.", "domains": ["relationships", "work"], "sourceRefs": ["v4:depth:element:FIRE:low:shadow"] }
+      ],
+      "dimensionTags": { "emotionalExpression": -0.6, "verbalOutput": -0.4, "reactivity": -0.4, "socialEnergy": -0.3, "introspection": 0.3 },
+      "strengthRule": {
+        "strong": "가중치 합이 0이고 겨울 월지라 수까지 세면 부족이 가장 뚜렷합니다. 표현이 늦고 안으로 삭이는 쪽으로 읽습니다.",
+        "weak": "시주가 빠졌거나 지장간에 숨은 화가 있으면 부족을 보수적으로 읽습니다. 화가 없다고 온기가 없다고 단정하지 않습니다.",
+        "clash": "목이 넉넉하면 불씨를 살릴 땔감이 있어 부족의 무게를 낮춰 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:fire#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:FIRE:low:*", "v4:material:element:FIRE:low", "taxonomy:element_fire_missing", "kb:element_fire_missing", "v4:material:element_fire_missing", "foundation:element:fire", "classic:sm1:論五行生尅"],
+      "aliases": ["화 부족", "화 약함"]
+    },
+    {
+      "id": "element:FIRE:balanced",
+      "family": "element",
+      "traditionalName": "火 균형",
+      "easyName": "불 기운 알맞음",
+      "definition": "화 균형(火 中和, 밝히는 불 기운이 넘치지도 비지도 않은 상태)은 활동과 표현을 억지로 늘리거나 줄일 필요가 없는 흐름입니다. 즐긴 뒤 조용해지는 시간까지 한 리듬입니다.",
+      "behaviorSignals": [
+        { "text": "사람들과 즐겁게 만난 다음 날은 일부러 약속을 비워 여유 있게 보내는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:FIRE:balanced:scene"] },
+        { "text": "만남은 억지로 늘리지도 줄이지도 않고 편한 빈도로 꾸준히 이어 가는 편입니다.", "domains": ["relationships", "love"], "sourceRefs": ["v4:depth:element:FIRE:balanced:relationships", "v4:depth:element:FIRE:balanced:character"] },
+        { "text": "필요한 자리에서는 분위기를 띄우고 끝나면 조용히 빠져 쉬는 쪽입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:FIRE:balanced:strength", "v4:depth:element:FIRE:balanced:inside"] }
+      ],
+      "shadowSignals": [
+        { "text": "남의 활기에 맞추느라 내 시간을 전부 채우면 금세 지쳐 버리기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:FIRE:balanced:shadow"] },
+        { "text": "잘 쉬고 있다가도 괜히 약속 하나를 더 잡아 쉬는 날을 날리곤 합니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:FIRE:balanced:punch"] }
+      ],
+      "dimensionTags": { "socialEnergy": 0.2, "boundarySetting": 0.3, "emotionalExpression": 0.2 },
+      "strengthRule": {
+        "strong": "가중치 합이 1.5 이상 3 미만이고 월지까지 여름이면 균형 안에서도 밝은 쪽으로 읽습니다.",
+        "weak": "합이 1.5에 가깝거나 수가 많이 끄면 균형보다 약함에 가깝게 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:fire#excessOrDeficit"]
+      },
+      "sourceRefs": ["v4:depth:element:FIRE:balanced:*", "v4:material:element:FIRE:balanced", "foundation:element:fire"],
+      "aliases": ["화 균형"]
+    },
+    {
+      "id": "element_earth",
+      "family": "element",
+      "traditionalName": "土(토)",
+      "easyName": "담는 땅",
+      "definition": "토(土, 받아들이고 담아서 기르는 땅의 움직임)는 유지와 매개를 상징합니다. 금을 생하고 수를 극하며 중앙에 대응합니다.",
+      "behaviorSignals": [
+        { "text": "매일 반복되는 운영과 관리 업무를 맡으면 묵묵히 굴러가게 만드는 편입니다.", "domains": ["work"], "sourceRefs": ["foundation:element:earth#applications.career"] },
+        { "text": "한번 산 물건이나 자산은 쉽게 팔지 않고 오래 쥐고 있는 편입니다.", "domains": ["money"], "sourceRefs": ["foundation:element:earth#applications.money", "kb:element_earth"] },
+        { "text": "새 교재를 사기보다 풀던 문제집을 여러 번 되풀이해 푸는 쪽입니다.", "domains": ["study"], "sourceRefs": ["foundation:element:earth#applications.study"] },
+        { "text": "가족이나 친구 사이에 다툼이 나면 가운데서 양쪽 말을 받아 주는 역할을 맡습니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:earth#symbol", "foundation:element:earth#applications.family"] },
+        { "text": "오래된 약속과 모임은 상황이 바뀌어도 웬만하면 그대로 지키는 편입니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:earth#applications.relationships"] }
+      ],
+      "shadowSignals": [
+        { "text": "익숙한 방식을 지키느라 바꿔야 할 절차까지 그대로 두어 변화가 늦어지기 쉽습니다.", "domains": ["work"], "sourceRefs": ["foundation:element:earth#caution"] },
+        { "text": "모두의 부담을 혼자 떠안다가 정작 자기 몫의 쉴 틈이 없어지기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:earth#applications.family", "kb:element_earth"] },
+        { "text": "편안해진 관계에서 고맙다는 말을 생략하다가 서운함이 쌓이기 쉽습니다.", "domains": ["love"], "sourceRefs": ["foundation:element:earth#applications.love"] }
+      ],
+      "dimensionTags": { "noveltySeeking": -0.5, "persistence": 0.5, "caretaking": 0.4, "possessiveness": 0.3, "mobility": -0.3 },
+      "strengthRule": {
+        "strong": "환절기 월지(진·술·축·미)에 태어나거나 지지에 토가 겹치면 담는 힘이 또렷합니다. 화가 생해 주면 더 두터워집니다.",
+        "weak": "지지에 토가 없고 목이 많아 파고들면 받쳐 주는 힘이 약하게 읽습니다. 토가 많다는 이유만으로 안정을 보장하지 않습니다.",
+        "duplicate": "토가 셋 이상 겹치면 과다 상태로 넘겨 읽고 건조한지 습한지를 함께 봅니다.",
+        "clash": "목이 맞서 토를 파는 구조면 지키기보다 흔들리며 버티는 쪽으로 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:earth#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["foundation:element:earth", "classic:sm1:論五行生尅", "classic:sm1:論五行生成", "kb:element_earth", "v4:material:element_earth"],
+      "aliases": ["토", "흙", "earth"]
+    },
+    {
+      "id": "element:EARTH:high",
+      "family": "element",
+      "traditionalName": "土 과다",
+      "easyName": "땅 기운 넘침",
+      "definition": "토 과다(土 太過, 담는 땅 기운이 셋 이상 겹친 상태)는 책임과 현실 감각이 앞서지만 그만큼 짐도 쌓이는 흐름입니다. 흙이 두꺼워 길과 짐을 함께 만듭니다.",
+      "behaviorSignals": [
+        { "text": "모두 정리하고 가자고 할 때 남은 물건까지 한 번 더 챙기고 나오는 편입니다.", "domains": ["relationships", "work"], "sourceRefs": ["v4:depth:element:EARTH:high:scene"] },
+        { "text": "내 손에 두어야 안심이 되는 일이 하나둘 늘어 맡은 목록이 길어지는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:EARTH:high:inside"] },
+        { "text": "돈이 생기면 쓰기보다 적금처럼 오래 묶어 두는 쪽입니다.", "domains": ["money"], "sourceRefs": ["kb:element_earth_excess", "v4:depth:element:EARTH:high:money"] },
+        { "text": "힘든 일이 닥쳐도 자리를 뜨지 않고 끝까지 버텨 결과를 남기는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:EARTH:high:character", "kb:element_earth_excess"] },
+        { "text": "흩어진 일을 표와 폴더로 묶어 한눈에 보이게 정리해 두는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_earth_excess"] }
+      ],
+      "shadowSignals": [
+        { "text": "믿고 맡기라는 말을 자주 하다가 결국 다 떠안고 무거워지곤 합니다.", "domains": ["work", "relationships"], "sourceRefs": ["v4:depth:element:EARTH:high:punch"] },
+        { "text": "맡은 일이 쌓여도 내려놓지 못해 움직임이 둔해지고 마음까지 무거워지기 쉽습니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_earth_excess"] },
+        { "text": "바꾸자는 말이 나오면 귀찮아하며 하던 대로 버티는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:EARTH:high:shadow"] }
+      ],
+      "dimensionTags": { "dutifulness": 0.7, "controlNeed": 0.5, "possessiveness": 0.5, "noveltySeeking": -0.5, "spendingControl": 0.5 },
+      "strengthRule": {
+        "strong": "월지가 환절기이고 화까지 생해 주면 과다가 가장 뚜렷합니다. 책임과 소유가 빨리 몸에 얹히는 쪽으로 읽습니다.",
+        "weak": "개수는 3 이상이어도 목이 세게 파고들거나 지지에 뿌리가 없으면 실제 무게가 줄어 과다를 약하게 읽습니다.",
+        "duplicate": "토가 많고 금이 묻히면 토다매금 구조로 따로 봅니다.",
+        "clash": "수가 많으면 흙이 질어 담되 굳지 못하는 쪽으로 읽어 안정 신호를 낮춥니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:earth#excessOrDeficit", "foundation:structure:toda_maegeum", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:EARTH:high:*", "v4:material:element:EARTH:high", "taxonomy:element_earth_excess", "kb:element_earth_excess", "v4:material:element_earth_excess", "foundation:element:earth", "classic:sm1:論五行生尅"],
+      "aliases": ["토 과다", "토 강함"]
+    },
+    {
+      "id": "element:EARTH:low",
+      "family": "element",
+      "traditionalName": "土 부족",
+      "easyName": "땅 기운 비움",
+      "definition": "토 부족(土 不及, 담는 땅 기운이 드러나지 않는 상태)은 생활의 바닥을 고정하는 힘이 약한 흐름입니다. 대신 새 환경에 빨리 적응합니다.",
+      "behaviorSignals": [
+        { "text": "이사나 부서 이동처럼 환경이 바뀌어도 금방 새 자리에 적응하는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_earth_missing"] },
+        { "text": "매달 나가는 돈을 한눈에 보는 기록이 없어 통장을 열어 봐야 아는 편입니다.", "domains": ["money"], "sourceRefs": ["taxonomy:element_earth_missing", "v4:depth:element:EARTH:low:money"] },
+        { "text": "순서가 분명하고 맡을 범위가 적힌 일을 받으면 훨씬 안정되게 움직이는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:EARTH:low:work"] },
+        { "text": "거창한 계획보다 돌아와서 쉴 자리 하나를 먼저 챙기는 쪽입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:EARTH:low:inside", "v4:depth:element:EARTH:low:character"] },
+        { "text": "같은 시간에 밥을 먹거나 화분에 물을 주는 작은 반복으로 하루의 바닥을 만드는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:EARTH:low:scene", "v4:depth:element:EARTH:low:strength"] }
+      ],
+      "shadowSignals": [
+        { "text": "생활 규칙과 일정이 흐려지면 시간과 돈이 어디로 샜는지 모르게 새어 나가기 쉽습니다.", "domains": ["money", "work"], "sourceRefs": ["taxonomy:element_earth_missing"] },
+        { "text": "생활을 한꺼번에 뜯어고치려다 금방 부담스러워져 손을 놓기 쉽습니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:EARTH:low:shadow"] },
+        { "text": "생활을 정리하겠다고 산 수납함 때문에 방이 더 복잡해지곤 합니다.", "domains": ["money"], "sourceRefs": ["v4:depth:element:EARTH:low:punch"] }
+      ],
+      "dimensionTags": { "mobility": 0.4, "planning": -0.4, "spendingControl": -0.3, "ruleAdherence": -0.3, "noveltySeeking": 0.3 },
+      "strengthRule": {
+        "strong": "가중치 합이 0이고 목이 많아 파고들면 부족이 가장 뚜렷합니다. 바닥을 고정하는 힘이 약한 쪽으로 읽습니다.",
+        "weak": "시주가 빠졌거나 지장간에 숨은 토가 있으면 부족을 보수적으로 읽습니다. 토가 없다고 생활이 불안하다고 단정하지 않습니다.",
+        "clash": "화가 넉넉하면 흙을 만들 바탕이 있어 부족의 무게를 낮춰 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:earth#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:EARTH:low:*", "v4:material:element:EARTH:low", "taxonomy:element_earth_missing", "v4:material:element_earth_missing", "foundation:element:earth", "classic:sm1:論五行生尅"],
+      "aliases": ["토 부족", "토 약함"]
+    },
+    {
+      "id": "element:EARTH:balanced",
+      "family": "element",
+      "traditionalName": "土 균형",
+      "easyName": "땅 기운 알맞음",
+      "definition": "토 균형(土 中和, 담는 땅 기운이 넘치지도 비지도 않은 상태)은 따로 채우거나 줄이기보다 지금 리듬을 유지하는 흐름입니다. 책임과 쉼이 나란히 놓입니다.",
+      "behaviorSignals": [
+        { "text": "평소 쓰던 간단한 가계 기록만 확인하고 남은 시간은 편히 쉬는 편입니다.", "domains": ["money"], "sourceRefs": ["v4:depth:element:EARTH:balanced:scene"] },
+        { "text": "돈 관리 방법을 새 앱으로 바꾸지 않고 익숙한 방식을 그대로 이어 가는 쪽입니다.", "domains": ["money"], "sourceRefs": ["v4:depth:element:EARTH:balanced:money"] },
+        { "text": "맡은 책임과 쉬는 시간을 한 주 안에 나란히 놓아 두는 편입니다.", "domains": ["work", "relationships"], "sourceRefs": ["v4:depth:element:EARTH:balanced:inside", "v4:depth:element:EARTH:balanced:strength"] }
+      ],
+      "shadowSignals": [
+        { "text": "생활이 안정됐다는 이유로 남의 책임까지 하나씩 더 받아 주다가 무거워지기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:EARTH:balanced:shadow"] },
+        { "text": "잘 돌아가는 생활인데도 관리 항목을 늘려 스스로 숙제를 만들곤 합니다.", "domains": ["money", "work"], "sourceRefs": ["v4:depth:element:EARTH:balanced:punch"] }
+      ],
+      "dimensionTags": { "planning": 0.2, "spendingControl": 0.2, "boundarySetting": 0.3 },
+      "strengthRule": {
+        "strong": "가중치 합이 1.5 이상 3 미만이고 월지까지 환절기면 균형 안에서도 든든한 쪽으로 읽습니다.",
+        "weak": "합이 1.5에 가깝거나 목이 많이 파고들면 균형보다 약함에 가깝게 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:earth#excessOrDeficit"]
+      },
+      "sourceRefs": ["v4:depth:element:EARTH:balanced:*", "v4:material:element:EARTH:balanced", "foundation:element:earth"],
+      "aliases": ["토 균형"]
+    },
+    {
+      "id": "element_metal",
+      "family": "element",
+      "traditionalName": "金(금)",
+      "easyName": "자르는 쇠",
+      "definition": "금(金, 거두어들이고 경계를 세우는 쇠의 움직임)은 수렴과 구분을 상징합니다. 수를 생하고 목을 극하며 가을과 서쪽에 대응합니다.",
+      "behaviorSignals": [
+        { "text": "검수나 검토를 맡으면 꼭 지킬 기준부터 적어 놓고 하나씩 대조하는 편입니다.", "domains": ["work"], "sourceRefs": ["foundation:element:metal#applications.career"] },
+        { "text": "채점이 끝나면 틀린 문제를 실수와 몰라서 틀린 것으로 나눠 표시해 두는 편입니다.", "domains": ["study"], "sourceRefs": ["foundation:element:metal#applications.study"] },
+        { "text": "지출을 줄이기로 하면 쓰지 않는 구독부터 하나씩 끊어 나가는 편입니다.", "domains": ["money"], "sourceRefs": ["foundation:element:metal#applications.money"] },
+        { "text": "싫은 부탁에는 이유를 붙여 분명하게 거절하는 쪽입니다.", "domains": ["love", "relationships"], "sourceRefs": ["foundation:element:metal#applications.love", "kb:element_metal"] },
+        { "text": "다툼이 생기면 사람 자체가 아니라 그 행동 하나를 콕 집어 말하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:metal#applications.relationships"] }
+      ],
+      "shadowSignals": [
+        { "text": "구분을 너무 앞세워 예외나 사정을 들어 보기 전에 선부터 긋기 쉽습니다.", "domains": ["relationships", "work"], "sourceRefs": ["foundation:element:metal#caution"] },
+        { "text": "비용을 줄이다가 꼭 필요한 지출까지 같이 끊어 버리기 쉽습니다.", "domains": ["money"], "sourceRefs": ["foundation:element:metal#applications.money"] },
+        { "text": "가족의 선택을 들을 때 사정을 묻기 전에 맞다 틀리다부터 매기기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:metal#applications.family"] }
+      ],
+      "dimensionTags": { "perfectionism": 0.5, "directness": 0.5, "boundarySetting": 0.5, "detailFocus": 0.4, "ruleAdherence": 0.4 },
+      "strengthRule": {
+        "strong": "가을에 태어나 월지가 금이거나 지지에 뿌리가 있으면 가르는 힘이 또렷합니다. 토가 생해 주면 더 단단해집니다.",
+        "weak": "지지에 뿌리가 없고 화가 많아 녹이면 기준을 세우는 힘이 약하게 읽습니다. 금의 개수가 많다고 엄격한 성격을 확정하지 않습니다.",
+        "duplicate": "금이 셋 이상 겹치면 과다 상태로 넘겨 읽습니다.",
+        "clash": "화가 맞서 금을 녹이는 구조면 자르기보다 벼리는 중으로 읽어 날카로움을 낮춥니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:metal#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["foundation:element:metal", "classic:sm1:論五行生尅", "classic:sm1:論五行生成", "kb:element_metal", "v4:material:element_metal"],
+      "aliases": ["금", "쇠", "metal"]
+    },
+    {
+      "id": "element:METAL:high",
+      "family": "element",
+      "traditionalName": "金 과다",
+      "easyName": "쇠 기운 넘침",
+      "definition": "금 과다(金 太過, 자르는 쇠 기운이 셋 이상 겹친 상태)는 기준과 판단이 선명하게 앞서는 흐름입니다. 잘 벼린 칼이 늘 가까이 놓인 모습입니다.",
+      "behaviorSignals": [
+        { "text": "할 일 목록을 보면 해야 할 것보다 지워도 되는 것이 먼저 눈에 들어오는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:high:scene"] },
+        { "text": "보고서 마무리 단계에서 어색한 문장과 맞지 않는 숫자를 찾아내는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:high:work"] },
+        { "text": "애매하게 남은 일이 있으면 계속 신경이 쓰여 그날 안에 결론을 내는 편입니다.", "domains": ["work", "study"], "sourceRefs": ["v4:depth:element:METAL:high:inside"] },
+        { "text": "관계가 흐릿하면 그냥 두지 못하고 친구인지 아닌지 선을 분명히 긋는 편입니다.", "domains": ["relationships"], "sourceRefs": ["kb:element_metal_strong"] },
+        { "text": "품질 기준에 못 미치면 친한 사이여도 다시 해 오라고 돌려보내는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_metal_excess"] }
+      ],
+      "shadowSignals": [
+        { "text": "사람에게도 너무 빨리 점수를 매겨 몇 마디 만에 평가를 끝내 버리기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:METAL:high:shadow", "taxonomy:element_metal_excess"] },
+        { "text": "정리는 깔끔하게 끝났는데 같이 한 사람은 지쳐 있곤 합니다.", "domains": ["work", "relationships"], "sourceRefs": ["v4:depth:element:METAL:high:punch"] },
+        { "text": "상대의 뜻을 묻기 전에 말부터 날카롭게 나가 분위기가 식기 쉽습니다.", "domains": ["relationships", "love"], "sourceRefs": ["taxonomy:element_metal_excess", "kb:element_metal_strong"] }
+      ],
+      "dimensionTags": { "perfectionism": 0.7, "directness": 0.6, "boundarySetting": 0.6, "trustThreshold": 0.5, "empathyResponse": -0.4 },
+      "strengthRule": {
+        "strong": "월지가 가을이고 토까지 생해 주면 과다가 가장 뚜렷합니다. 판단이 빠르고 말이 날카로운 쪽으로 읽습니다.",
+        "weak": "개수는 3 이상이어도 화가 세게 녹이거나 지지에 뿌리가 없으면 실제 날이 무뎌져 과다를 약하게 읽습니다.",
+        "duplicate": "금이 많고 목이 꺾이면 금다목절 구조로 따로 봅니다.",
+        "clash": "화가 나란히 강하면 벼리고 녹이기를 반복하는 화금 긴장으로 읽어 기준의 일관성을 낮춥니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:metal#excessOrDeficit", "foundation:structure:geumda_mokjeol", "foundation:structure:fire_metal", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:METAL:high:*", "v4:material:element:METAL:high", "taxonomy:element_metal_excess", "kb:element_metal_strong", "v4:material:element_metal_excess", "v4:material:element_metal_strong", "foundation:element:metal", "classic:sm1:論五行生尅"],
+      "aliases": ["금 과다", "금 강함"]
+    },
+    {
+      "id": "element:METAL:low",
+      "family": "element",
+      "traditionalName": "金 부족",
+      "easyName": "쇠 기운 비움",
+      "definition": "금 부족(金 不及, 자르는 쇠 기운이 드러나지 않는 상태)은 마무리와 거절, 경계선이 늦게 세워지는 흐름입니다. 대신 부드럽게 돌아가는 길을 잘 찾습니다.",
+      "behaviorSignals": [
+        { "text": "부탁을 받으면 일단 받아 주고 거절은 나중으로 미루는 편입니다.", "domains": ["relationships", "work"], "sourceRefs": ["taxonomy:element_metal_missing", "v4:depth:element:METAL:low:inside"] },
+        { "text": "의견이 갈리면 밀어붙이기보다 부드럽게 돌아가는 길을 찾는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_metal_missing"] },
+        { "text": "완료 범위가 적힌 과제나 간단한 점검표가 있을 때 일이 끝까지 가는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:low:work"] },
+        { "text": "싫고 좋은 것을 바로 말하기보다 상대 뜻을 따라 주는 쪽입니다.", "domains": ["love", "relationships"], "sourceRefs": ["taxonomy:element_metal_missing", "v4:depth:element:METAL:low:relationships"] }
+      ],
+      "shadowSignals": [
+        { "text": "마감과 기준을 미리 정하지 않아 일이 여러 갈래로 흩어지기 쉽습니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_metal_missing"] },
+        { "text": "완벽한 기준을 찾느라 정작 결정은 자꾸 늦어지곤 합니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:low:shadow"] },
+        { "text": "정리법을 고르는 데 저녁을 다 쓰고 정리는 내일로 미루곤 합니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:low:punch"] }
+      ],
+      "dimensionTags": { "boundarySetting": -0.6, "directness": -0.4, "decisionSpeed": -0.4, "conflictApproach": -0.4, "perfectionism": -0.3 },
+      "strengthRule": {
+        "strong": "가중치 합이 0이고 화가 많아 녹이면 부족이 가장 뚜렷합니다. 선을 긋는 힘이 약한 쪽으로 읽습니다.",
+        "weak": "시주가 빠졌거나 지장간에 숨은 금이 있으면 부족을 보수적으로 읽습니다. 금이 없다고 기준이 없다고 단정하지 않습니다.",
+        "clash": "토가 넉넉하면 쇠를 낼 바탕이 있어 부족의 무게를 낮춰 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:metal#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:METAL:low:*", "v4:material:element:METAL:low", "taxonomy:element_metal_missing", "v4:material:element_metal_missing", "foundation:element:metal", "classic:sm1:論五行生尅"],
+      "aliases": ["금 부족", "금 약함"]
+    },
+    {
+      "id": "element:METAL:balanced",
+      "family": "element",
+      "traditionalName": "金 균형",
+      "easyName": "쇠 기운 알맞음",
+      "definition": "금 균형(金 中和, 자르는 쇠 기운이 넘치지도 비지도 않은 상태)은 기준을 더 세게 하거나 일부러 느슨하게 할 필요가 없는 흐름입니다. 필요한 곳만 잘 다듬은 도구와 같습니다.",
+      "behaviorSignals": [
+        { "text": "중요한 오류만 고친 뒤 작은 취향 차이는 남겨 두고 마무리하는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:balanced:scene"] },
+        { "text": "잘 쓰고 있는 확인 방식이 있으면 새 도구로 바꾸지 않고 간단히 이어 가는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:balanced:work"] },
+        { "text": "구분해서 정리할 것과 그냥 둬도 되는 것을 먼저 나눠 놓고 손을 대는 편입니다.", "domains": ["work", "study"], "sourceRefs": ["v4:depth:element:METAL:balanced:inside", "v4:depth:element:METAL:balanced:strength"] }
+      ],
+      "shadowSignals": [
+        { "text": "다 맞추고 싶어서 사소한 차이까지 문제 삼다가 끝이 늦어지기 쉽습니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:balanced:shadow"] },
+        { "text": "완료 표시를 해 놓고도 다시 열어 손대다가 끝이 멀어지곤 합니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:METAL:balanced:punch"] }
+      ],
+      "dimensionTags": { "perfectionism": 0.2, "detailFocus": 0.2, "ruleAdherence": 0.2 },
+      "strengthRule": {
+        "strong": "가중치 합이 1.5 이상 3 미만이고 월지까지 가을이면 균형 안에서도 또렷한 쪽으로 읽습니다.",
+        "weak": "합이 1.5에 가깝거나 화가 많이 녹이면 균형보다 약함에 가깝게 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:metal#excessOrDeficit"]
+      },
+      "sourceRefs": ["v4:depth:element:METAL:balanced:*", "v4:material:element:METAL:balanced", "foundation:element:metal"],
+      "aliases": ["금 균형"]
+    },
+    {
+      "id": "element_water",
+      "family": "element",
+      "traditionalName": "水(수)",
+      "easyName": "흐르는 물",
+      "definition": "수(水, 아래로 흐르고 안에 저장하는 물의 움직임)는 흐름과 저장을 상징합니다. 목을 생하고 화를 극하며 겨울과 북쪽에 대응합니다.",
+      "behaviorSignals": [
+        { "text": "조사나 기획을 맡으면 자료부터 폭넓게 모아 놓고 나서 방향을 정하는 편입니다.", "domains": ["work"], "sourceRefs": ["foundation:element:water#applications.career", "kb:element_water"] },
+        { "text": "돈을 어디에 넣을지 정할 때 여러 글을 비교해 읽고 출처부터 확인하는 편입니다.", "domains": ["money"], "sourceRefs": ["foundation:element:water#applications.money"] },
+        { "text": "책을 읽을 때 빨리 넘기지 않고 한 문단을 오래 곱씹으며 깊이 읽는 편입니다.", "domains": ["study"], "sourceRefs": ["foundation:element:water#applications.study"] },
+        { "text": "첫 만남에서는 내 말을 하기보다 상대의 반응을 먼저 살피는 쪽입니다.", "domains": ["love"], "sourceRefs": ["foundation:element:water#applications.love"] },
+        { "text": "가족이나 친구들이 고민을 털어놓을 때 듣는 역할을 맡는 편입니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:water#applications.family", "foundation:element:water#applications.relationships"] }
+      ],
+      "shadowSignals": [
+        { "text": "선택지를 계속 늘리다가 결정을 다음 주로 미루기 쉽습니다.", "domains": ["work", "money"], "sourceRefs": ["foundation:element:water#caution"] },
+        { "text": "가족 사정을 듣다 보면 모든 문제의 해결까지 혼자 떠맡기 쉽습니다.", "domains": ["relationships"], "sourceRefs": ["foundation:element:water#applications.family"] },
+        { "text": "상대 반응을 살피느라 정작 내 의사는 숨긴 채 넘어가곤 합니다.", "domains": ["love"], "sourceRefs": ["foundation:element:water#applications.love"] }
+      ],
+      "dimensionTags": { "introspection": 0.5, "inquiry": 0.4, "decisionSpeed": -0.4, "empathyResponse": 0.4, "trustThreshold": 0.3 },
+      "strengthRule": {
+        "strong": "겨울에 태어나 월지가 수이거나 지지에 뿌리가 있으면 흐르는 힘이 또렷합니다. 금이 생해 주면 더 깊어집니다.",
+        "weak": "지지에 뿌리가 없고 토가 많아 막으면 흐르는 힘이 약하게 읽습니다. 수가 없다는 이유로 사고력이나 공감을 부정하지 않습니다.",
+        "duplicate": "수가 셋 이상 겹치면 과다 상태로 넘겨 읽습니다.",
+        "clash": "토가 맞서 물길을 막는 구조면 흐르기보다 고이는 쪽으로 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:water#excessOrDeficit", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["foundation:element:water", "classic:sm1:論五行生尅", "classic:sm1:論五行生成", "kb:element_water", "v4:material:element_water"],
+      "aliases": ["수", "물", "water"]
+    },
+    {
+      "id": "element:WATER:high",
+      "family": "element",
+      "traditionalName": "水 과다",
+      "easyName": "물 기운 넘침",
+      "definition": "수 과다(水 太過, 흐르는 물 기운이 셋 이상 겹친 상태)는 생각과 감정, 정보가 깊어지는 흐름입니다. 여러 물길이 깊은 곳으로 모여듭니다.",
+      "behaviorSignals": [
+        { "text": "짧은 대화를 마친 뒤에도 상대가 말하지 않은 배경을 한참 생각하는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:WATER:high:scene"] },
+        { "text": "한 가지 이야기를 들어도 그 뒤에 있을 여러 사정과 가능성을 같이 떠올리는 편입니다.", "domains": ["relationships", "work"], "sourceRefs": ["v4:depth:element:WATER:high:inside"] },
+        { "text": "책을 다 읽고 나서도 앞장으로 돌아가 숨은 연결을 찾아내는 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WATER:high:study"] },
+        { "text": "회의에서 들은 내용을 큰 맥락에 이어 붙여 남들이 놓친 뜻을 짚는 편입니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WATER:high:strength"] },
+        { "text": "친구가 울먹이면 이유를 묻기 전에 그 감정을 먼저 알아채는 편입니다.", "domains": ["relationships", "love"], "sourceRefs": ["taxonomy:element_water_excess"] }
+      ],
+      "shadowSignals": [
+        { "text": "생각은 먼 곳까지 갔는데 오늘 할 일은 책상 위에 그대로 남아 있곤 합니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WATER:high:punch"] },
+        { "text": "혼자 생각이 너무 길어져 실행할 때를 놓치기 쉽습니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WATER:high:shadow", "taxonomy:element_water_excess"] },
+        { "text": "지나간 감정을 오래 붙들고 있어 마음이 축축하게 남기 쉽습니다.", "domains": ["love", "relationships"], "sourceRefs": ["taxonomy:element_water_excess"] }
+      ],
+      "dimensionTags": { "introspection": 0.8, "decisionSpeed": -0.5, "empathyResponse": 0.5, "learningDrive": 0.4, "verbalOutput": -0.3 },
+      "strengthRule": {
+        "strong": "월지가 겨울이고 금까지 생해 주면 과다가 가장 뚜렷합니다. 생각은 깊고 실행은 늦는 쪽으로 읽습니다.",
+        "weak": "개수는 3 이상이어도 토가 세게 막거나 지지에 뿌리가 없으면 실제 흐름이 줄어 과다를 약하게 읽습니다.",
+        "duplicate": "수가 많고 목이 떠내려가면 수다목부 구조로 따로 봅니다.",
+        "clash": "화가 나란히 강하면 식히고 끓이기를 반복하는 쪽으로 읽어 기복 신호를 더 봅니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "foundation:element:water#excessOrDeficit", "foundation:structure:suda_mokbu", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:WATER:high:*", "v4:material:element:WATER:high", "taxonomy:element_water_excess", "v4:material:element_water_excess", "foundation:element:water", "classic:sm1:論五行生尅"],
+      "aliases": ["수 과다", "수 강함"]
+    },
+    {
+      "id": "element:WATER:low",
+      "family": "element",
+      "traditionalName": "水 부족",
+      "easyName": "물 기운 비움",
+      "definition": "수 부족(水 不及, 흐르는 물 기운이 드러나지 않는 상태)은 식히기와 회복, 감정 완충이 늦어지는 흐름입니다. 대신 판단과 실행이 빠릅니다.",
+      "behaviorSignals": [
+        { "text": "결정할 일이 생기면 오래 재지 않고 그 자리에서 답을 내는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_water_missing", "kb:element_water_missing"] },
+        { "text": "속상한 일이 있어도 오래 젖어 있지 않고 금방 털고 일어나는 편입니다.", "domains": ["love", "relationships"], "sourceRefs": ["taxonomy:element_water_missing"] },
+        { "text": "회의에서 문제가 나오면 원인을 오래 파기보다 당장 할 조치부터 말하는 편입니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_water_missing"] },
+        { "text": "시끄러운 카페보다 조용한 독서실에서 혼자 읽을 때 집중이 잘되는 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WATER:low:study"] },
+        { "text": "서두르지 않고 잘 들어주는 사람과 있을 때 말이 더 잘 나오는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:WATER:low:relationships"] }
+      ],
+      "shadowSignals": [
+        { "text": "쉬어도 머리가 멈추지 않아 침대에 누워서도 내일 일을 돌리기 쉽습니다.", "domains": ["work"], "sourceRefs": ["taxonomy:element_water_missing", "kb:element_water_missing"] },
+        { "text": "잠깐 쉬자고 앉아 놓고 또 다음 할 일을 검색하고 있곤 합니다.", "domains": ["work"], "sourceRefs": ["v4:depth:element:WATER:low:punch"] },
+        { "text": "감정을 식히기도 전에 해결부터 하려 들어 상대가 서운해하기 쉽습니다.", "domains": ["love"], "sourceRefs": ["taxonomy:element_water_missing"] }
+      ],
+      "dimensionTags": { "decisionSpeed": 0.6, "introspection": -0.5, "empathyResponse": -0.5, "reactivity": 0.4 },
+      "strengthRule": {
+        "strong": "가중치 합이 0이고 여름 월지라 화까지 세면 부족이 가장 뚜렷합니다. 식히는 힘이 약한 쪽으로 읽습니다.",
+        "weak": "시주가 빠졌거나 지장간에 숨은 수가 있으면 부족을 보수적으로 읽습니다. 수가 없다고 공감이 없다고 단정하지 않습니다.",
+        "clash": "금이 넉넉하면 물을 낼 바탕이 있어 부족의 무게를 낮춰 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:water#excessOrDeficit", "foundation:structure:water_weak", "classic:sm1:論五行生尅"]
+      },
+      "sourceRefs": ["v4:depth:element:WATER:low:*", "v4:material:element:WATER:low", "taxonomy:element_water_missing", "kb:element_water_missing", "v4:material:element_water_missing", "foundation:element:water", "classic:sm1:論五行生尅"],
+      "aliases": ["수 부족", "수 약함"]
+    },
+    {
+      "id": "element:WATER:balanced",
+      "family": "element",
+      "traditionalName": "水 균형",
+      "easyName": "물 기운 알맞음",
+      "definition": "수 균형(水 中和, 흐르는 물 기운이 넘치지도 비지도 않은 상태)은 생각과 회복 시간을 따로 늘리거나 줄일 필요가 없는 흐름입니다. 넘치지도 마르지도 않게 이어집니다.",
+      "behaviorSignals": [
+        { "text": "궁금했던 것을 찾아 정리하고 나면 책을 덮고 다른 일로 자연스럽게 옮기는 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WATER:balanced:scene"] },
+        { "text": "읽고 생각한 뒤에는 잠시 쉬는 간격을 두고 다시 책상에 앉는 편입니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WATER:balanced:study"] },
+        { "text": "들은 이야기를 받아들였다가 흘려보내는 리듬이 있어 오래 끌어안지 않는 편입니다.", "domains": ["relationships"], "sourceRefs": ["v4:depth:element:WATER:balanced:inside", "v4:depth:element:WATER:balanced:strength"] }
+      ],
+      "shadowSignals": [
+        { "text": "생각이 끝났는데도 새 질문을 하나 더 붙이다가 밤이 길어지곤 합니다.", "domains": ["study"], "sourceRefs": ["v4:depth:element:WATER:balanced:punch"] },
+        { "text": "모든 걸 충분히 이해해야만 쉴 수 있다고 여겨 쉬는 시간을 미루기 쉽습니다.", "domains": ["study", "work"], "sourceRefs": ["v4:depth:element:WATER:balanced:shadow"] }
+      ],
+      "dimensionTags": { "introspection": 0.2, "learningDrive": 0.3, "boundarySetting": 0.2 },
+      "strengthRule": {
+        "strong": "가중치 합이 1.5 이상 3 미만이고 월지까지 겨울이면 균형 안에서도 깊은 쪽으로 읽습니다.",
+        "weak": "합이 1.5에 가깝거나 토가 많이 막으면 균형보다 약함에 가깝게 읽습니다.",
+        "sourceRefs": ["calc:element-weight", "calc:element-label-threshold", "calc:hour-pillar-optional", "foundation:element:water#excessOrDeficit"]
+      },
+      "sourceRefs": ["v4:depth:element:WATER:balanced:*", "v4:material:element:WATER:balanced", "foundation:element:water"],
+      "aliases": ["수 균형"]
+    }
+  ],
+  "aliases": [
+    { "id": "element_wood_excess", "aliasOf": "element:WOOD:high", "note": "taxonomy '목 과다'. 계산상 목 가중치 합 3 이상 = high 상태와 같은 개념." },
+    { "id": "element_wood_missing", "aliasOf": "element:WOOD:low", "note": "taxonomy·kb '목 부족'. 계산상 목 가중치 합 0 = low 상태와 같은 개념." },
+    { "id": "element_fire_excess", "aliasOf": "element:FIRE:high", "note": "taxonomy '화 과다'. 계산상 화 가중치 합 3 이상 = high 상태와 같은 개념." },
+    { "id": "element_fire_missing", "aliasOf": "element:FIRE:low", "note": "taxonomy·kb '화 부족'. 계산상 화 가중치 합 0 = low 상태와 같은 개념." },
+    { "id": "element_earth_excess", "aliasOf": "element:EARTH:high", "note": "taxonomy·kb '토 과다'. 계산상 토 가중치 합 3 이상 = high 상태와 같은 개념." },
+    { "id": "element_earth_missing", "aliasOf": "element:EARTH:low", "note": "taxonomy '토 부족'. 계산상 토 가중치 합 0 = low 상태와 같은 개념." },
+    { "id": "element_metal_excess", "aliasOf": "element:METAL:high", "note": "taxonomy '금 과다'. 계산상 금 가중치 합 3 이상 = high 상태와 같은 개념." },
+    { "id": "element_metal_strong", "aliasOf": "element:METAL:high", "note": "kb '금 강함'. 별도 임계값 없이 과다와 같은 강세 상태를 가리키므로 high로 묶는다. kb의 '판단 기준 선명' 문장은 high 항목에 반영." },
+    { "id": "element_metal_missing", "aliasOf": "element:METAL:low", "note": "taxonomy '금 부족'. 계산상 금 가중치 합 0 = low 상태와 같은 개념." },
+    { "id": "element_water_excess", "aliasOf": "element:WATER:high", "note": "taxonomy '수 과다'. 계산상 수 가중치 합 3 이상 = high 상태와 같은 개념." },
+    { "id": "element_water_missing", "aliasOf": "element:WATER:low", "note": "taxonomy·kb '수 부족'. 계산상 수 가중치 합 0 = low 상태와 같은 개념." },
+    { "id": "element:wood", "aliasOf": "element_wood", "note": "foundation 연구 DB id(foundation:element:wood). 위치·강약과 무관한 목 자체의 뜻이므로 kb id를 정본으로 둔다." },
+    { "id": "element:fire", "aliasOf": "element_fire", "note": "foundation 연구 DB id(foundation:element:fire). 화 자체의 뜻이므로 kb id를 정본으로 둔다." },
+    { "id": "element:earth", "aliasOf": "element_earth", "note": "foundation 연구 DB id(foundation:element:earth). 토 자체의 뜻이므로 kb id를 정본으로 둔다." },
+    { "id": "element:metal", "aliasOf": "element_metal", "note": "foundation 연구 DB id(foundation:element:metal). 금 자체의 뜻이므로 kb id를 정본으로 둔다." },
+    { "id": "element:water", "aliasOf": "element_water", "note": "foundation 연구 DB id(foundation:element:water). 수 자체의 뜻이므로 kb id를 정본으로 둔다." }
+  ]
+}
