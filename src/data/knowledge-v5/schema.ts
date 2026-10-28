@@ -84,7 +84,7 @@ export const VariantSchema = z.object({
 export const RemedySchema = z.object({
   actions: z.array(Scene).min(3).max(6),
   partner: z.array(Scene).min(2).max(4),
-  places: z.array(Line).min(3).max(6),
+  places: z.array(z.string().min(2).max(40)).min(3).max(6),
 });
 
 export const MyeongriFeatureSchema = z.object({
