@@ -1,38 +1,36 @@
 import { describe, expect, it } from "vitest";
-import { classify, classifyBookData, visibleText, MIN_VISIBLE_TEXT } from "../../../scripts/verify-books-readonly";
+import { classify, DEFAULT_TARGETS, parseArgs, visibleText } from "../../../scripts/verify-books-readonly";
 
 const page = (body: string) => `<!DOCTYPE html><html><head><title>결리포트</title><script>self.__next_f.push([1,"x"])</script></head><body>${body}</body></html>`;
-const longText = "당신은 사람을 편하게 만드는 힘이 있습니다. ".repeat(12);
+const longText = "사주와 MBTI로 보는 나의 이야기. ".repeat(6);
+const home = DEFAULT_TARGETS[0];
+const robots = DEFAULT_TARGETS.find((t) => t.path === "/robots.txt")!;
 
-describe("verify-books-readonly classify (no network)", () => {
-  it("passes a report page with enough visible text and ignores head/script text", () => {
-    expect(visibleText(page("<p>가&amp;나</p>"))).toBe("가&나");
-    const verdict = classify(page(`<main><h1>종합 리포트</h1><p>${longText}</p></main>`), 200);
-    expect(verdict).toMatchObject({ ok: true, kind: "report" });
+describe("verify-books-readonly public page check (no network)", () => {
+  it("uses public pages only, no share token", () => {
+    expect(DEFAULT_TARGETS.map((t) => t.path)).toEqual(["/", "/products", "/products/saju-mbti-full", "/campaign/gyeol-opening-2026", "/sitemap.xml", "/robots.txt"]);
+    expect(DEFAULT_TARGETS.some((t) => t.path.startsWith("/r/"))).toBe(false);
+    expect(parseArgs(["--base", "https://example.test", "--path", "/legal"]).targets.at(-1)).toMatchObject({ path: "/legal" });
+    expect(() => parseArgs(["https://gyeolreport.com/r/gr_x"])).toThrow();
   });
 
-  it("fails non-200, empty, short and Next.js error pages", () => {
-    expect(classify(page(`<p>${longText}</p>`), 500)).toMatchObject({ ok: false, reason: "HTTP 500" });
-    expect(classify("", 200)).toMatchObject({ ok: false, reason: "빈 응답" });
-    expect(classify(page("<p>짧다</p>"), 200).reason).toContain(`${MIN_VISIBLE_TEXT}자`);
-    expect(classify(page(`<h2>Application error: a server-side exception has occurred</h2><p>${longText}</p>`), 200).ok).toBe(false);
-    expect(classify(`<html id="__next_error__"><body>${longText}</body></html>`, 200).ok).toBe(false);
-    expect(classify(page(`<p>${longText}</p><script>self.__next_f.push([1,"{\\"digest\\":\\"123\\"}"])</script>`), 200).ok).toBe(false);
+  it("passes a 200 page with text and ignores head/script text", () => {
+    expect(visibleText(page("<p>가 나</p>"))).toBe("가 나");
+    expect(classify(home, page(`<main><h1>결리포트</h1><p>${longText}</p></main>`), 200).result).toBe("PASS");
   });
 
-  it("fails the product's unavailable, attention and expired screens", () => {
-    for (const title of ["리포트를 열 수 없습니다", "리포트 준비에 확인이 필요합니다", "리포트 열람 기간이 종료되었습니다", "리포트를 불러오지 못했습니다."]) {
-      expect(classify(page(`<main><h1>${title}</h1><p>${longText}</p></main>`), 200)).toMatchObject({ ok: false, kind: "error" });
-    }
+  it("fails 5xx, non-200, empty and Next.js error pages", () => {
+    expect(classify(home, page(`<p>${longText}</p>`), 500).result).toBe("FAIL");
+    expect(classify(home, page(`<p>${longText}</p>`), 404).result).toBe("FAIL");
+    expect(classify(home, "", 200).result).toBe("FAIL");
+    expect(classify(home, page(`<h2>Application error: a server-side exception has occurred</h2><p>${longText}</p>`), 200).result).toBe("FAIL");
+    expect(classify(home, `<html id="__next_error__"><body>${longText}</body></html>`, 200).result).toBe("FAIL");
+    expect(classify(home, page(`<p>${longText}</p><script>self.__next_f.push([1,"{\\"digest\\":\\"123\\"}"])</script>`), 200).result).toBe("FAIL");
   });
 
-  it("marks the shared Book cover as book-entry and checks book-data separately", () => {
-    const entry = page(`<main><h1>민지의 종합 리포트</h1><button aria-label="민지의 종합 리포트 펼치기"></button><p>책 펼치기 ↗</p></main>`);
-    expect(classify(entry, 200)).toMatchObject({ ok: true, kind: "book-entry" });
-    const pages = [{ kind: "narrative", title: "1장", paragraphs: [{ text: longText }], notes: [] }];
-    expect(classifyBookData(JSON.stringify({ data: { pages }, share: {} }), 200)).toMatchObject({ ok: true });
-    expect(classifyBookData("{}", 404)).toMatchObject({ ok: false, reason: "book-data HTTP 404" });
-    expect(classifyBookData(JSON.stringify({ data: { pages: [] } }), 200).ok).toBe(false);
-    expect(classifyBookData("<html>", 200).ok).toBe(false);
+  it("treats a missing sitemap/robots as WARN but a server error as FAIL", () => {
+    expect(classify(robots, "", 404).result).toBe("WARN");
+    expect(classify(robots, "User-agent: *\nAllow: /\n", 200).result).toBe("PASS");
+    expect(classify(robots, "", 502).result).toBe("FAIL");
   });
 });

@@ -37,6 +37,12 @@
 - [x] tsc 0 / lint 0 / build 성공 / 테스트 신규 실패 0(부하 11 단독 PASS)
 - [x] 보고서 docs/v5/p01-report.md
 
+## 4b. 추가 지시 (2026-10-28)
+- [x] 운영 버전 조합 9종 회귀 테스트(Phase 0 36/36, Release 2 36/36, 84826020 대조 27/36)
+- [x] verify-books-readonly.ts → 공개 페이지 점검(공유 URL 없음)
+- [x] 런북: 공유 URL 3개 항목 제거, 음력 미개방·백로그 B1
+- 임시 worktree `~/Developer/gyeol-worktrees/p01-phase0-check`(detached 84826020, 생성기·테스트 사본 미커밋)는 정리 대상
+
 ## 5. 승인 대기
 - [ ] "PHASE0 배포 승인" 대기
 - [ ] "만세력 배포 승인" 대기

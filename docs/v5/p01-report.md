@@ -14,7 +14,8 @@
 | 엔진 vs 오라클(양력) | 골든 32건 × 2규칙, 무작위 3,000건 × 2 = 6,000비교 **전부 일치** | PASS |
 | 절입 시각 | 1930~2025 2,304개, 최대 55.8초·평균 11초 차(허용 120초) | PASS |
 | 절입 ±10분 경계 | 130건 전부 일치 | PASS |
-| 엔진 버그 | 양력 경로 0건. 음력 변환(고객 경로 없음)은 중국 음력이라 43/1,152개월 다름 | 보고(수정 보류) |
+| 엔진 버그 | 양력 경로 0건. 음력 변환은 중국 음력이라 43/1,152개월 다름. 운영 입력 75건 전부 양력 → 영향 없음 | 음력 입력 미개방, 백로그 B1 |
+| 운영 버전 조합 9종 | Phase 0·Release 2 코드 모두 열람 PASS, 모르는 버전에도 snapshot_json 보존(§4.1) | PASS |
 | 고객 사례 2000-05-11 17:05 여 | 庚辰 辛巳 己巳 壬申 (엔진·오라클 같음. 현 운영 84826020은 癸酉) | PASS |
 | 1999-07-31 07:30 | 己卯 辛未 甲申 戊辰 — 기존 외부 픽스처 戊辰과 같음(−32분이면 丁卯) | PASS |
 | 문서 | 골든 CSV 2열, 정책 §1.4, CS FAQ | 완료 |
@@ -50,7 +51,7 @@
 | (다) 의도된 정책 차이 | 0 (오라클이 같은 정책을 구현) | 0 |
 
 - 음력 (가)는 외부 사실로 확인된다: 1997 한국 설날 02-08(엔진 02-07), 2012 한국 윤3월(중국 윤4월), 2017 한국 윤5월(중국 윤6월).
-- **수정하지 않았다.** 유료 생성 핸들러 5종이 모두 `calendarType: "SOLAR"`를 고정하고, 입력 화면도 양력만 받는다. LUNAR를 받는 곳은 미리보기(`preview_memory`) API뿐이다. 고치려면 한국 음력 기준(KASI 표 또는 천문 계산)을 엔진에 넣는 별도 작업이 필요하고, 릴리스 2 직전에 고객 경로에 없는 계산을 바꾸는 것은 위험만 늘린다. 결정 필요: (1) 음력 입력을 열 때 한국 음력으로 구현, (2) 지금 엔진에서 LUNAR를 거부.
+- **수정하지 않았다.** 유료 생성 핸들러 5종이 모두 `calendarType: "SOLAR"`를 고정하고, 입력 화면도 양력만 받는다. LUNAR를 받는 곳은 미리보기(`preview_memory`) API뿐이다. 고치려면 한국 음력 기준(KASI 표 또는 천문 계산)을 엔진에 넣는 별도 작업이 필요하고, 릴리스 2 직전에 고객 경로에 없는 계산을 바꾸는 것은 위험만 늘린다. **결정(2026-10-28)**: 운영 입력 75건이 전부 양력이라 영향 없음. 음력 입력은 열지 않고, 한국 음력 구현은 `docs/v5/backlog.md` B1에 기록.
 - (다) "의도된 정책 차이"는 다른 앱 설정과의 비교에서 나온다(§3).
 
 ## 3. 다른 앱 설정과의 차이 (정책 차이 구간)
@@ -73,7 +74,7 @@
 |---|---|---|
 | Release 1 | master ← `463c4f8e`, fast-forward 가능(+1) | 준비됨 |
 | Release 2 | master ← `v5/manseryeok-merge` HEAD(Phase 0 + 10 + P01 커밋), Release 1 뒤 fast-forward 가능. **origin에 아직 push 안 함**(Preview용 기능 브랜치 push 필요) | 준비됨 |
-| `scripts/verify-books-readonly.ts` | `/r/gr_…` GET + `/book-data` JSON 확인, Next.js 오류·제품 오류 화면 문구 감지, 다른 호스트 리다이렉트(SSO) FAIL. 쓰기·로그인 없음. 단위 4건, 로컬 서버 스모크 | PASS(로컬) / UNVERIFIED(운영 URL) |
+| `scripts/verify-books-readonly.ts` | 공개 페이지만(홈·상품 2·이벤트·sitemap·robots). 200·본문·Next.js 서버 오류 표식 확인, sitemap·robots 404는 WARN(저장소에 없음). 공유 URL·토큰·쓰기 없음. 단위 4건, 로컬 `next start` 스모크 | PASS(로컬) / UNVERIFIED(운영) |
 | `docs/v5/release-phase0-manseryeok.md` | 순서·명령·배포 전후 점검·롤백(Phase 0 배포로 Vercel Instant Rollback, 대안은 revert fast-forward push, force 금지). 84826020 롤백 금지(Release 1 단독 실패이고 v5 리포트가 0건일 때만 예외) | 완료 |
 | `docs/publish-failure-query.sql` | migration 스키마와 모두 일치(수정 없음). 헤더 보강, [6] 7·30일 상태 집계 추가. SELECT만. 로컬 PGlite(전체 migration)에서 6개 쿼리 실행·손계산 일치 | PASS(로컬) / UNVERIFIED(운영) |
 | tsc / lint / build | 최종 트리 오류 0 / 0 / 성공 | PASS |
@@ -83,14 +84,24 @@
 - Vercel Production Branch가 `master`인지는 저장소로 확인할 수 없다(UNVERIFIED). 배포 전 Settings → Git에서 확인.
 - 릴리스 2 diff에 `supabase/` 변경 없음. `package.json`은 devDependency `astronomy-engine` 한 줄(테스트 전용, 번들에 안 들어감).
 
+### 4.1 운영 버전 조합 9종 회귀 (`tests/unit/payment/productionVersionCombos.test.ts`)
+
+- 픽스처: `tests/fixtures/production-version-combos/*.json.gz`(9개, 776KB). 개발용 가상 인물 입력으로 Phase 0 코드(463c4f8e, kst-v2 엔진)가 생성. 생성기 원문 `docs/v5/p01-fixture-generator.ts.txt`. 레거시 v1·1.0·v2는 버전 없는 입력(`contentVersion`·`compatibilityRoleVersion` 제거)으로 만들었다.
+- 형태가 운영과 같다: 전부 `gate_version = paid-report-v1`, v1·1.0·v2는 `calendarVersion`·`calendarCalculationVersion = saju-calendar-kst-v2`, v4는 상위 calendar 필드 없음.
+- 검사 4종 × 9 = 36건: 형태, 읽기 게이트(quarantine 호출 없음, V4는 Book 렌더), 실제 SQL(PGlite 전체 migration)에서 열람·행 그대로, 모르는 calendar 버전 주입 시 `UNKNOWN_CALCULATION_VERSION` + `snapshot_json` 보존.
+
+| 코드 | 결과 |
+|---|---|
+| Release 2 (`v5/manseryeok-merge`) | 36/36 PASS |
+| Release 1 (Phase 0 463c4f8e, 임시 worktree) | 36/36 PASS (+ 기존 readVersionTolerance 11/11) |
+| 현재 운영 84826020 (대조) | 27/36 — 모르는 버전 9건 모두 snapshot_json 삭제 → 테스트가 위험을 잡는다 |
+
 ## 5. 사용자가 할 일
 
 1. 운영 Supabase SQL 편집기에서 `docs/publish-failure-query.sql` [1]·[6] 실행·기록(읽기 전용).
-2. 기존 Book 공유 URL 3개 준비(저장소 밖 파일).
-3. Vercel Production Branch = master 확인.
-4. Release 1: 채팅에 정확히 **PHASE0 배포 승인** 입력 → 제가 fast-forward push·READY/SHA 확인·URL 3개 검증.
-5. Release 2 전: Preview에서 원고 사람 확인(판매 품질), 그다음 **만세력 배포 승인**.
-6. 음력 엔진 처리 결정: (1) 음력 입력 열 때 한국 음력 구현 (2) 지금 LUNAR 거부.
+2. Vercel Production Branch = master 확인.
+3. Release 1: 채팅에 정확히 **PHASE0 배포 승인** 입력 → 제가 fast-forward push, READY·SHA 확인, 공개 페이지 점검, 런타임 오류 확인.
+4. Release 2 전: Preview에서 원고 사람 확인(판매 품질), 그다음 **만세력 배포 승인**.
 
 ## 6. 커밋
 

@@ -1,7 +1,7 @@
 # v5 출시 런북 — Release 1 (Phase 0) → Release 2 (만세력 v5)
 
 - 쓰는 사람: 배포 승인자(운영자). 화면별 확인 항목은 `docs/manseryeok-release-checklist.md`(이하 "체크리스트")에 있고, 여기서는 순서·명령·판정·롤백만 적는다.
-- 근거: `docs/manseryeok-report-3.md`(Phase 0·병합 후보 검증), `docs/publish-failure-query.sql`(발행 실패율), `scripts/verify-books-readonly.ts`(공유 Book 열람 확인).
+- 근거: `docs/manseryeok-report-3.md`(Phase 0·병합 후보 검증), `docs/publish-failure-query.sql`(발행 실패율), `scripts/verify-books-readonly.ts`(공개 페이지 점검), `tests/unit/payment/productionVersionCombos.test.ts`(운영 버전 조합 9종 열람 회귀).
 - 표기: PASS / PARTIAL / FAIL / UNVERIFIED. ☐ 미확인 ☑ 확인 ✕ 문제(메모 필수).
 
 ---
@@ -72,19 +72,19 @@ pnpm test > /tmp/test.txt 2>&1    # 수 분 걸린다
 2. ☐ 결과를 캡처해 둔다: [1]의 `최근 7일`·`최근 30일` 행(`publish_failed_pct`, `quarantined_after_publish`, `no_report_row`), [6] 전체.
 3. ☐ 체크리스트 §4의 [R1](quarantine 패치 상태)을 한 번 실행해 결과(true/false)를 적는다.
 
-### 1.4 기존 Book 공유 URL 모으기
+### 1.4 공개 페이지 기준 잡기 (공유 URL·토큰 없음)
 
-- ☐ 운영 공유 링크 `https://gyeolreport.com/r/gr_…` **3건 이상**. 가능하면 서로 다른 상품, V4 Book 1건 이상, 근사 시간·시간 모름 고객 포함.
-- 공유 토큰은 열람 권한이다. 저장소 밖 파일(예: `~/gyeol-release/book-urls.txt`, 한 줄에 1개)에 두고 커밋하지 않는다.
-- ☐ 배포 **전에** 한 번 돌려 기준을 잡는다. 여기서 FAIL인 URL은 배포와 무관한 기존 문제다(따로 적고 비교에서 뺀다).
+- ☐ 배포 **전에** 한 번 돌려 기준을 잡는다. 여기서 FAIL인 경로(예: 이벤트 종료로 404)는 배포와 무관한 기존 상태다. 적어 두고 배포 후 같은지 비교한다.
 
 ```sh
-node --no-warnings scripts/verify-books-readonly.ts --file ~/gyeol-release/book-urls.txt
+node --no-warnings scripts/verify-books-readonly.ts            # 기본 https://gyeolreport.com
 ```
 
-판정: URL마다 `PASS/FAIL 상태 URL 이유`. 하나라도 FAIL이면 종료 코드 1.
-- `/r/gr_…`는 첫 화면이 표지뿐이라 같은 주소의 `/book-data`(JSON)까지 받아 본문 페이지·글자 수(>200자)를 본다.
-- FAIL 사유 예: HTTP 상태, 빈 응답, Next.js 오류 화면(`__next_error__`, digest, "Application error", "This page couldn’t load"), 제품 화면 "리포트를 열 수 없습니다"·"리포트 준비에 확인이 필요합니다"(FAILED_REQUIRES_ATTENTION·모르는 계산 버전)·"리포트 열람 기간이 종료되었습니다"·"리포트를 불러오지 못했습니다" 등.
+- 확인 경로: `/`, `/products`, `/products/saju-mbti-full`, `/campaign/gyeol-opening-2026`, `/sitemap.xml`, `/robots.txt`.
+- 판정: 경로마다 `PASS/WARN/FAIL 상태 이름 URL 이유`. 페이지는 200·본문 있음·Next.js 서버 오류 표식 없음. sitemap·robots는 저장소에 파일이 없어 404가 정상(WARN), 5xx면 FAIL. FAIL이 있으면 종료 코드 1.
+- 기존 Book 열람(보안 토큰 필요)은 여기서 하지 않는다. 대신
+  - 운영 버전 조합 9종 회귀 테스트 `tests/unit/payment/productionVersionCombos.test.ts`(Phase 0·Release 2 코드 모두 PASS, 84826020 코드는 모르는 버전 9건 FAIL = 위험을 잡는다는 증거),
+  - 배포 후 런타임 오류 감시(§2.3-5, §3.3-4)로 확인한다.
 - Preview 주소는 Vercel 로그인 보호 때문에 FAIL(다른 호스트로 리다이렉트/401)이 정상이다. 운영 도메인에만 쓴다.
 
 ---
@@ -109,7 +109,7 @@ git fetch origin && git rev-parse origin/master   # 463c4f8e… 이어야 한다
 ### 2.3 배포 후
 1. ☐ Vercel Deployments: Production, 커밋 `463c4f8e`, 상태 **READY**, 운영 도메인이 이 배포를 가리킨다.
 2. ☐ **이 배포의 ID/URL을 "Phase 0 배포"로 §7에 적는다.** 롤백 대상이다.
-3. ☐ `verify-books-readonly` 3건 이상 모두 PASS(§1.4에서 이미 FAIL이던 것 제외).
+3. ☐ `verify-books-readonly` 결과가 §1.4 배포 전 기준과 같다(새 FAIL 없음).
 4. ☐ 체크리스트 §1.2(기존 Book 5건 이상 직접 열기, 24시간 [S1], `REPORT_READ_UNKNOWN_CALCULATION_VERSION` 0건).
 5. ☐ Vercel 런타임 로그(Production, 배포 후 1시간·24시간): `/r/`·`/reports/` 5xx, `READ_GATE_REJECTED`, `PUBLISHED_SNAPSHOT_VALIDATION_FAILED`가 배포 전보다 늘지 않는다.
 6. ☐ 신규 리포트: Phase 0는 새 리포트 생성을 바꾸지 않는다. 별도 스모크는 필수 아님(실제 결제가 필요한 확인은 결제 승인을 따로 받는다). 24시간 뒤 SQL [1]·[6]으로 발행 실패율이 배포 전과 같은 수준인지 본다.
@@ -142,7 +142,7 @@ git fetch origin && git rev-parse origin/master   # = $R2
 
 ### 3.3 배포 후
 1. ☐ Vercel: Production, 커밋 `$R2`, **READY**, 운영 도메인 연결. **배포 시각**을 §7과 체크리스트 §3.2-1에 적는다.
-2. ☐ `verify-books-readonly`: 기존 3건 + 배포 후 새로 만든 v5 리포트 공유 URL 1건 모두 PASS.
+2. ☐ `verify-books-readonly` 결과가 §1.4 배포 전 기준과 같다(새 FAIL 없음).
 3. ☐ 신규 리포트 스모크: 1건 이상 발행·열람(체크리스트 §3.2-2). 결제가 필요하면 결제 승인을 따로 받는다.
 4. ☐ 런타임 로그 0건이어야 하는 것: `SAJU_CALENDAR_CURRENT_REQUIRED`, `NATAL_TABLE_EVIDENCE_MISMATCH`, `REPORT_READ_UNKNOWN_CALCULATION_VERSION`. `/r/`·`/reports/`·`/api/internal/report-jobs` 5xx가 늘지 않는다.
 5. ☐ 24시간 뒤 SQL [1]·[3]·[6]을 배포 전 기록과 비교, 체크리스트 [R2] 기록. 발행 실패율이 눈에 띄게 늘면 [3]의 사유를 보고하고 §4 판단.
@@ -186,7 +186,7 @@ git push origin HEAD:refs/heads/master            # fast-forward. --force 없음
 
 ### 4.4 롤백 후
 1. ☐ 체크리스트 §4.3(6~9): [R2] COMPLETED 수 그대로·`(내용 없음)` 늘지 않음, [R3] 늘지 않음, v5 리포트 2~3건 열림, `REPORT_READ_UNKNOWN_CALCULATION_VERSION` 0건.
-2. ☐ `verify-books-readonly`: 기존 3건 + v5 리포트 URL 모두 PASS.
+2. ☐ `verify-books-readonly` 결과가 §1.4 배포 전 기준과 같다(새 FAIL 없음).
 3. ☐ v5 리포트에 `admin_retry` 하지 않는다(kst-v2로 다시 만들어져 원국이 바뀔 수 있다).
 4. 롤백 중 화면 차이(정상): v5 리포트의 근사 시간대 라벨이 예전 표기, 만세력 표 아래 보정 문구 없음. 데이터는 그대로.
 
@@ -206,6 +206,7 @@ git push origin HEAD:refs/heads/master            # fast-forward. --force 없음
 ---
 
 ## 6. 하지 않는 것
+- 음력 입력 열기(엔진 음력이 중국 기준. 백로그 `docs/v5/backlog.md` B1).
 - master force push, 메인 저장소에서 master 체크아웃, reset/clean/stash.
 - 운영 DB 쓰기·migration·RPC 변경, `admin_retry`, 결제·환불.
 - 84826020(또는 그 이전) 배포로의 롤백(§2.4의 Release 1 단독 실패 예외만 허용).
@@ -219,7 +220,7 @@ git push origin HEAD:refs/heads/master            # fast-forward. --force 없음
 | 배포 전 `origin/master` | 84826020 |
 | 배포 전 SQL [1] 7일/30일 `publish_failed_pct` | |
 | [R1] quarantine_keeps_snapshot | |
-| Book URL 수 / 배포 전 verify 결과 | |
+| 배포 전 공개 페이지 verify 결과(PASS/WARN/FAIL) | |
 | Release 1 승인 시각("PHASE0 배포 승인") | |
 | **Phase 0 배포 ID / URL** (롤백 대상) | |
 | Release 1 verify 결과 | |
@@ -239,4 +240,5 @@ git push origin HEAD:refs/heads/master            # fast-forward. --force 없음
 | `pnpm test` | 630파일 중 154 실패(31,141건 중 833) = 기준선 140 + KNOWN 3 + 11. 11개는 단독 재실행 11/11 PASS(전체 실행 중 5초·30초 시간 초과, 부하) | PASS(신규 실패 0) |
 | `tests/oracle/` + 골든 테스트 | 따로 실행: 3파일 13건 PASS(약 9초). 전체 테스트 glob에 포함된다 | PASS |
 | `docs/publish-failure-query.sql` | 로컬 PGlite(전체 migration + 패치)에 합성 데이터 9건을 넣고 [1]~[6] 실행, 분류·비율이 손계산과 같음. [5]는 빈 표로 실행만 확인 | PASS(로컬) / UNVERIFIED(운영) |
-| `scripts/verify-books-readonly.ts` | 단위 테스트 4/4, 로컬 루프백 서버 스모크(PASS·404·확인 필요·리다이렉트·시간 초과·book-data 없음), 빌드된 정적 페이지 8개 PASS·오류 페이지 2개 FAIL | PASS(로컬) / UNVERIFIED(운영 URL) |
+| `scripts/verify-books-readonly.ts` (공개 페이지) | 단위 4/4. 로컬 `next start`(env 없음): 홈·상품 2개 PASS, sitemap·robots WARN(404), 이벤트 500(Supabase env 없음 → 운영에선 해당 없음) | PASS(로컬) / UNVERIFIED(운영) |
+| `productionVersionCombos.test.ts` | 9종 × (형태·읽기 게이트·실제 SQL 열람·모르는 버전 보존) 36건. Release 2 코드 36/36, Phase 0(463c4f8e) 36/36, 84826020 27/36(모르는 버전 9건 snapshot 삭제) | PASS |
