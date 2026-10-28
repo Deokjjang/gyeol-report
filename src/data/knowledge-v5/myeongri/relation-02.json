@@ -76,11 +76,31 @@
         "persistence": 0.3
       },
       "mbtiLinks": [
-        { "target": "Fe", "kind": "resonance", "why": "상대 분위기에 박자를 맞추는 Fe가 손을 잡는 합과 같은 쪽입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "한번 맺은 짝을 오래 지키는 Si-Fe와 겹칩니다" },
-        { "target": "INTJ", "kind": "tension", "why": "혼자 정한 그림을 지키는 Ni-Te는 상대에게 묶이는 합을 답답해합니다" },
-        { "target": "ISTP", "kind": "tension", "why": "혼자 손을 움직이는 Ti-Se가 둘이 붙어 움직이는 방식과 어긋납니다" },
-        { "target": "F", "kind": "conditional", "why": "F는 합을 따뜻한 연결로 느끼고, T는 판단이 흐려지는 묶임으로 느낍니다" }
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "상대 분위기에 박자를 맞추는 Fe가 손을 잡는 합과 같은 쪽입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "한번 맺은 짝을 오래 지키는 Si-Fe와 겹칩니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "tension",
+          "why": "혼자 정한 그림을 지키는 Ni-Te는 상대에게 묶이는 합을 답답해합니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "tension",
+          "why": "혼자 손을 움직이는 Ti-Se가 둘이 붙어 움직이는 방식과 어긋납니다"
+        },
+        {
+          "target": "F",
+          "kind": "conditional",
+          "why": "F는 합을 따뜻한 연결로 느끼고, T는 판단이 흐려지는 묶임으로 느낍니다"
+        }
       ],
       "variants": [
         {
@@ -136,9 +156,17 @@
       ],
       "engineSupport": true,
       "engineKey": "STEM_COMBINATION",
-      "sources": ["classic:sm2:論十干合", "classic:sm2:論化氣", "foundation:relation:stem_hap", "통용"],
+      "sources": [
+        "classic:sm2:論十干合",
+        "classic:sm2:論化氣",
+        "foundation:relation:stem_hap",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["간합", "천간 합"]
+      "aliases": [
+        "간합",
+        "천간 합"
+      ]
     },
     {
       "id": "relation:YUKHAP",
@@ -213,11 +241,31 @@
         "boundarySetting": -0.3
       },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "일상을 나눠 맡아 굴리는 Si-Fe가 맞물리는 짝과 같은 결입니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "받은 만큼 챙겨 돌려주는 Fe의 주고받기와 겹칩니다" },
-        { "target": "ENTP", "kind": "tension", "why": "새 사람과 새 판을 계속 찾는 Ne가 짝 하나에 붙는 합을 답답해합니다" },
-        { "target": "INTP", "kind": "tension", "why": "혼자 생각을 굴리는 Ti가 생활을 둘로 묶는 구조를 무겁게 느낍니다" },
-        { "target": "J", "kind": "conditional", "why": "J는 짝과 정한 규칙에서 안정을 얻고, P는 같은 규칙을 묶임으로 느낍니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "일상을 나눠 맡아 굴리는 Si-Fe가 맞물리는 짝과 같은 결입니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "받은 만큼 챙겨 돌려주는 Fe의 주고받기와 겹칩니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "새 사람과 새 판을 계속 찾는 Ne가 짝 하나에 붙는 합을 답답해합니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "tension",
+          "why": "혼자 생각을 굴리는 Ti가 생활을 둘로 묶는 구조를 무겁게 느낍니다"
+        },
+        {
+          "target": "J",
+          "kind": "conditional",
+          "why": "J는 짝과 정한 규칙에서 안정을 얻고, P는 같은 규칙을 묶임으로 느낍니다"
+        }
       ],
       "variants": [
         {
@@ -283,9 +331,16 @@
       ],
       "engineSupport": true,
       "engineKey": "BRANCH_COMBINATION",
-      "sources": ["classic:sm2:論支元六合", "foundation:relation:yukhap", "통용"],
+      "sources": [
+        "classic:sm2:論支元六合",
+        "foundation:relation:yukhap",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["지지합", "지지 육합"]
+      "aliases": [
+        "지지합",
+        "지지 육합"
+      ]
     },
     {
       "id": "relation:SAMHAP",
@@ -316,8 +371,8 @@
           "같은 꿈을 말하는 사람에게 확 끌립니다. 데이트에서도 '우리 나중에 뭐 할까'를 그리는 시간이 제일 깁니다."
         ],
         "marriage": [
-          "둘의 목표 하나를 정해 놓고 양가 일정과 아이 계획까지 그 방향에 줄을 세웁니다.",
-          "배우자와 나, 아이가 한 팀처럼 움직일 때 집이 가장 편합니다. 각자 따로 놀면 금세 허전해합니다."
+          "둘의 목표 하나를 정해 놓고 양가 일정과 휴가, 이사 계획까지 그 방향에 줄을 세웁니다.",
+          "배우자와 둘이 한 팀처럼 움직일 때 집이 가장 편합니다. 각자 따로 놀면 금세 허전해합니다."
         ],
         "relationships": [
           "단짝 둘보다 셋이 모인 무리가 편합니다. 셋이 같은 걸 좋아하면 그 모임은 몇 년을 갑니다.",
@@ -360,11 +415,31 @@
         "noveltySeeking": -0.3
       },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "사람과 자원을 한 목표에 줄 세우는 Te가 세 글자의 모임과 같은 힘입니다" },
-        { "target": "ENFJ", "kind": "resonance", "why": "사람을 모아 한 방향을 보게 하는 Fe-Ni와 겹칩니다" },
-        { "target": "Ni", "kind": "resonance", "why": "흩어진 단서를 한 그림으로 모으는 Ni가 한 줄로 서는 힘과 닮았습니다" },
-        { "target": "INFP", "kind": "tension", "why": "여러 가치를 따로 품는 Fi-Ne는 한 방향으로 몰리는 판을 답답해합니다" },
-        { "target": "ESTP", "kind": "tension", "why": "그때그때 판을 바꾸는 Se가 한 방향 몰입과 어긋납니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "사람과 자원을 한 목표에 줄 세우는 Te가 세 글자의 모임과 같은 힘입니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "사람을 모아 한 방향을 보게 하는 Fe-Ni와 겹칩니다"
+        },
+        {
+          "target": "Ni",
+          "kind": "resonance",
+          "why": "흩어진 단서를 한 그림으로 모으는 Ni가 한 줄로 서는 힘과 닮았습니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "여러 가치를 따로 품는 Fi-Ne는 한 방향으로 몰리는 판을 답답해합니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "그때그때 판을 바꾸는 Se가 한 방향 몰입과 어긋납니다"
+        }
       ],
       "variants": [
         {
@@ -409,9 +484,17 @@
         }
       ],
       "engineSupport": false,
-      "sources": ["classic:sm2:論支元三合", "foundation:relation:samhap", "foundation:relation:banhap", "통용"],
+      "sources": [
+        "classic:sm2:論支元三合",
+        "foundation:relation:samhap",
+        "foundation:relation:banhap",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["삼합국", "반합"]
+      "aliases": [
+        "삼합국",
+        "반합"
+      ]
     },
     {
       "id": "relation:BANGHAP",
@@ -486,11 +569,31 @@
         "mobility": -0.5
       },
       "mbtiLinks": [
-        { "target": "Si", "kind": "resonance", "why": "익숙한 뿌리와 반복에서 힘을 얻는 Si가 같은 계절 모임과 같은 결입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "가족과 오래된 무리를 먼저 챙기는 Si-Fe와 겹칩니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "우리 무리의 결속을 지키는 Fe가 편을 나누는 방합의 결과 닮았습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "새 사람과 새 판을 찾는 Ne가 한 계절에 머무는 힘을 답답해합니다" },
-        { "target": "ENTP", "kind": "tension", "why": "익숙한 방식을 뒤집어 보는 Ne-Ti와 한 색을 지키는 방합이 부딪칩니다" }
+        {
+          "target": "Si",
+          "kind": "resonance",
+          "why": "익숙한 뿌리와 반복에서 힘을 얻는 Si가 같은 계절 모임과 같은 결입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "가족과 오래된 무리를 먼저 챙기는 Si-Fe와 겹칩니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "우리 무리의 결속을 지키는 Fe가 편을 나누는 방합의 결과 닮았습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "새 사람과 새 판을 찾는 Ne가 한 계절에 머무는 힘을 답답해합니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "익숙한 방식을 뒤집어 보는 Ne-Ti와 한 색을 지키는 방합이 부딪칩니다"
+        }
       ],
       "variants": [
         {
@@ -535,9 +638,14 @@
         }
       ],
       "engineSupport": false,
-      "sources": ["통용"],
+      "sources": [
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["방국", "계절합"]
+      "aliases": [
+        "방국",
+        "계절합"
+      ]
     },
     {
       "id": "relation:HYEONG",
@@ -613,11 +721,31 @@
         "empathyResponse": -0.3
       },
       "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "어긋난 규칙을 바로잡는 Te-Si가 형의 교정과 같은 손입니다" },
-        { "target": "Ti", "kind": "resonance", "why": "앞뒤 안 맞는 것을 분해해 고치는 Ti와 깎고 다듬는 형이 겹칩니다" },
-        { "target": "ESFP", "kind": "tension", "why": "지금을 즐기는 Se-Fi는 고치고 다듬는 마찰을 피곤해합니다" },
-        { "target": "ENFP", "kind": "tension", "why": "가능성을 넓히는 Ne와 흠을 찾는 형의 눈이 방향이 반대입니다" },
-        { "target": "Fi", "kind": "conditional", "why": "Fi가 강하면 형이 남보다 자기에게 향해 자책이 깊어집니다" }
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "어긋난 규칙을 바로잡는 Te-Si가 형의 교정과 같은 손입니다"
+        },
+        {
+          "target": "Ti",
+          "kind": "resonance",
+          "why": "앞뒤 안 맞는 것을 분해해 고치는 Ti와 깎고 다듬는 형이 겹칩니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "지금을 즐기는 Se-Fi는 고치고 다듬는 마찰을 피곤해합니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "가능성을 넓히는 Ne와 흠을 찾는 형의 눈이 방향이 반대입니다"
+        },
+        {
+          "target": "Fi",
+          "kind": "conditional",
+          "why": "Fi가 강하면 형이 남보다 자기에게 향해 자책이 깊어집니다"
+        }
       ],
       "variants": [
         {
@@ -692,9 +820,16 @@
         }
       ],
       "engineSupport": false,
-      "sources": ["classic:sm2:論三刑", "foundation:relation:hyeong", "통용"],
+      "sources": [
+        "classic:sm2:論三刑",
+        "foundation:relation:hyeong",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["삼형", "자형"]
+      "aliases": [
+        "삼형",
+        "자형"
+      ]
     },
     {
       "id": "relation:PA",
@@ -769,10 +904,26 @@
         "persistence": -0.3
       },
       "mbtiLinks": [
-        { "target": "ENTP", "kind": "resonance", "why": "짜 둔 판을 뜯어 다시 짜는 Ne-Ti가 파의 고쳐 맞추기와 같습니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "어긋난 것을 분해해 다시 맞추는 Ti-Se와 겹칩니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "한 번 정한 순서를 지키려는 Si가 막판에 틀어지는 판을 가장 힘들어합니다" },
-        { "target": "J", "kind": "conditional", "why": "J는 어긋남을 스트레스로 느끼고, P는 같은 어긋남을 고칠 기회로 느낍니다" }
+        {
+          "target": "ENTP",
+          "kind": "resonance",
+          "why": "짜 둔 판을 뜯어 다시 짜는 Ne-Ti가 파의 고쳐 맞추기와 같습니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "어긋난 것을 분해해 다시 맞추는 Ti-Se와 겹칩니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "한 번 정한 순서를 지키려는 Si가 막판에 틀어지는 판을 가장 힘들어합니다"
+        },
+        {
+          "target": "J",
+          "kind": "conditional",
+          "why": "J는 어긋남을 스트레스로 느끼고, P는 같은 어긋남을 고칠 기회로 느낍니다"
+        }
       ],
       "variants": [
         {
@@ -837,9 +988,14 @@
         }
       ],
       "engineSupport": false,
-      "sources": ["foundation:relation:pa", "통용"],
+      "sources": [
+        "foundation:relation:pa",
+        "통용"
+      ],
       "confidence": "학파차이",
-      "aliases": ["육파"]
+      "aliases": [
+        "육파"
+      ]
     },
     {
       "id": "relation:HAE",
@@ -914,11 +1070,31 @@
         "detailFocus": 0.3
       },
       "mbtiLinks": [
-        { "target": "Fi", "kind": "resonance", "why": "서운함을 겉으로 내지 않고 속에서 오래 품는 Fi와 같은 결입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "남의 몫을 말없이 떠안고 나중에 지치는 Si-Fe와 겹칩니다" },
-        { "target": "ESTP", "kind": "tension", "why": "바로 말하고 털어 버리는 Se-Ti는 쌓아 두는 서운함을 이해하기 어려워합니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "문제를 그 자리에서 꺼내 정리하는 Te가 말 없는 틈과 부딪칩니다" },
-        { "target": "F", "kind": "conditional", "why": "F는 해의 틈을 마음의 상처로 느끼고, T는 같은 틈을 고칠 절차로 봅니다" }
+        {
+          "target": "Fi",
+          "kind": "resonance",
+          "why": "서운함을 겉으로 내지 않고 속에서 오래 품는 Fi와 같은 결입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "남의 몫을 말없이 떠안고 나중에 지치는 Si-Fe와 겹칩니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "바로 말하고 털어 버리는 Se-Ti는 쌓아 두는 서운함을 이해하기 어려워합니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "문제를 그 자리에서 꺼내 정리하는 Te가 말 없는 틈과 부딪칩니다"
+        },
+        {
+          "target": "F",
+          "kind": "conditional",
+          "why": "F는 해의 틈을 마음의 상처로 느끼고, T는 같은 틈을 고칠 절차로 봅니다"
+        }
       ],
       "variants": [
         {
@@ -983,9 +1159,15 @@
         }
       ],
       "engineSupport": false,
-      "sources": ["classic:sm2:論六害", "foundation:relation:hae", "통용"],
+      "sources": [
+        "classic:sm2:論六害",
+        "foundation:relation:hae",
+        "통용"
+      ],
       "confidence": "학파차이",
-      "aliases": ["육해"]
+      "aliases": [
+        "육해"
+      ]
     }
   ]
 }

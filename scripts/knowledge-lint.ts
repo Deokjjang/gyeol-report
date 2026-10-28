@@ -66,6 +66,7 @@ function checkProse(file: string, where: string, text: string, opts: ProseOpts =
     if (tokens.some(t => /^[가-힣]{9,}$/.test(t))) fail(file, where, "한자어 연속(9음절 이상 붙은 낱말)", s);
     let run = 0; for (const t of tokens) { run = /(적|성|화|력|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
     if (opts.scene) {
+      if (/(^|\s)(아이|자녀|아들|딸|애들)(가|를|의|이|와|도|랑|한테|에게|\s(준비물|일정|생일|교육|학교|숙제|계획|생일상|방))/.test(s)) fail(file, where, "입력에 없는 사실 단정(자녀)", s);
       if (MBTI_CODE.test(s)) fail(file, where, "용어 누출(장면에 MBTI 코드)", s);
       const j = s.match(JARGON); if (j) fail(file, where, "용어 누출(장면에 명리 용어)", `${j[0]} ← ${s}`);
     }

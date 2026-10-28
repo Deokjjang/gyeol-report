@@ -65,17 +65,48 @@
         "clash": "태극 글자가 충을 맞으면 기준이 흔들리는 시기로 읽습니다. 처음 정한 원칙을 다시 적어 보는 것이 보완입니다.",
         "rule": "일간 기준 甲乙→子午, 丙丁→卯酉, 戊己→辰戌丑未, 庚辛→寅亥, 壬癸→巳申. 네 기둥 지지 검사(엔진 TAEGEUK_GWIIN). 三命通會 論太極貴. 현대 의미(근본·회복)는 편집 해석"
       },
-      "dimensionTags": { "introspection": 0.6, "inquiry": 0.5, "persistence": 0.4, "planning": 0.3, "noveltySeeking": -0.3 },
+      "dimensionTags": {
+        "introspection": 0.6,
+        "inquiry": 0.5,
+        "persistence": 0.4,
+        "planning": 0.3,
+        "noveltySeeking": -0.3
+      },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "본질과 이유부터 찾는 Ni가 처음 자리로 돌아가는 태극과 같은 방향입니다" },
-        { "target": "ISTJ", "kind": "resonance", "why": "검증된 기본을 붙드는 Si가 뿌리에서 오는 힘과 겹칩니다" },
-        { "target": "INTP", "kind": "resonance", "why": "원리를 처음부터 따지는 Ti가 근본을 묻는 습관과 맞물립니다" },
-        { "target": "ESTP", "kind": "tension", "why": "눈앞의 판에서 바로 움직이는 Se가 의미부터 묻는 태극을 답답해합니다" },
-        { "target": "ENFP", "kind": "tension", "why": "새 가능성으로 계속 뻗는 Ne와 처음 자리로 돌아가려는 힘이 엇갈립니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "본질과 이유부터 찾는 Ni가 처음 자리로 돌아가는 태극과 같은 방향입니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "검증된 기본을 붙드는 Si가 뿌리에서 오는 힘과 겹칩니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "원리를 처음부터 따지는 Ti가 근본을 묻는 습관과 맞물립니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "눈앞의 판에서 바로 움직이는 Se가 의미부터 묻는 태극을 답답해합니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "새 가능성으로 계속 뻗는 Ne와 처음 자리로 돌아가려는 힘이 엇갈립니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TAEGEUK_GWIIN",
-      "sources": ["classic:sm3:論太極貴", "deep:marker:taegeuk", "foundation:shinsal_gwiin:taegeuk", "v4:depth:gwiin_taegeuk"],
+      "sources": [
+        "classic:sm3:論太極貴",
+        "deep:marker:taegeuk",
+        "foundation:shinsal_gwiin:taegeuk",
+        "v4:depth:gwiin_taegeuk"
+      ],
       "confidence": "학파차이"
     },
     {
@@ -141,17 +172,48 @@
         "clash": "문창 글자가 충을 맞으면 쓰던 글이 끊기거나 방향이 바뀝니다. 초안을 자주 저장해 두는 사람이 덜 흔들립니다.",
         "rule": "일간 기준 甲巳 乙午 丙申 丁酉 戊申 己酉 庚亥 辛子 壬寅 癸卯, 네 기둥 지지 검사(엔진 MUN_CHANG_GWIIN). 三命通會 論太極貴 중 文昌貴 구절은 다른 배치라 교감 필요"
       },
-      "dimensionTags": { "learningDrive": 0.6, "verbalOutput": 0.5, "detailFocus": 0.4, "perfectionism": 0.4, "introspection": 0.3 },
+      "dimensionTags": {
+        "learningDrive": 0.6,
+        "verbalOutput": 0.5,
+        "detailFocus": 0.4,
+        "perfectionism": 0.4,
+        "introspection": 0.3
+      },
       "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "속마음을 글로 꺼내 정리하는 Fi의 습관이 문창의 펜과 겹칩니다" },
-        { "target": "ENFJ", "kind": "resonance", "why": "남이 알아듣게 풀어 말하는 Fe-Ni의 설명력과 같은 결입니다" },
-        { "target": "Te", "kind": "resonance", "why": "복잡한 것을 순서 있는 문서로 정리하는 Te와 맞물립니다" },
-        { "target": "ESTP", "kind": "tension", "why": "몸으로 먼저 부딪히는 Se에게 글로 정리하는 단계는 느리게 느껴집니다" },
-        { "target": "ISFP", "kind": "tension", "why": "손과 감각으로 표현하는 Fi-Se가 글 중심 방식에 답답함을 느낍니다" }
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "속마음을 글로 꺼내 정리하는 Fi의 습관이 문창의 펜과 겹칩니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "남이 알아듣게 풀어 말하는 Fe-Ni의 설명력과 같은 결입니다"
+        },
+        {
+          "target": "Te",
+          "kind": "resonance",
+          "why": "복잡한 것을 순서 있는 문서로 정리하는 Te와 맞물립니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "몸으로 먼저 부딪히는 Se에게 글로 정리하는 단계는 느리게 느껴집니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "tension",
+          "why": "손과 감각으로 표현하는 Fi-Se가 글 중심 방식에 답답함을 느낍니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "MUN_CHANG_GWIIN",
-      "sources": ["classic:sm3:論太極貴", "deep:marker:munchang", "foundation:shinsal_gwiin:munchang", "v4:depth:gwiin_munchang"],
+      "sources": [
+        "classic:sm3:論太極貴",
+        "deep:marker:munchang",
+        "foundation:shinsal_gwiin:munchang",
+        "v4:depth:gwiin_munchang"
+      ],
       "confidence": "학파차이"
     },
     {
@@ -183,7 +245,7 @@
           "연인과 요가나 외국어 수업을 같이 등록해 일주일에 한 번 나란히 배우는 시간을 만듭니다."
         ],
         "marriage": [
-          "배우자와 아이 교육 이야기를 할 때 가장 오래 대화하고, 새집에서는 책장 자리부터 정해 둡니다.",
+          "배우자와 '우리 뭐 배워 볼까' 이야기를 할 때 가장 오래 대화하고, 새집에서는 책장 자리부터 정해 둡니다.",
           "살림도 배워서 합니다. 처음 김장하는 해에는 어머니 옆에서 양념 비율을 받아 적습니다."
         ],
         "relationships": [
@@ -217,17 +279,48 @@
         "clash": "학당 글자가 충을 맞으면 스승이나 학습 환경이 바뀌는 때입니다. 새 자리에서 기초를 다시 다지면 오히려 단단해집니다.",
         "rule": "일간 기준 장생지 甲亥 乙午 丙寅 丁酉 戊寅 己酉 庚巳 辛子 壬申 癸卯, 네 기둥 지지 검사(엔진 HAK_DANG_GWIIN). 論學堂詞館은 納音·官貴長生 설도 병기"
       },
-      "dimensionTags": { "learningDrive": 0.8, "persistence": 0.4, "ruleAdherence": 0.3, "planning": 0.3, "independence": -0.3 },
+      "dimensionTags": {
+        "learningDrive": 0.8,
+        "persistence": 0.4,
+        "ruleAdherence": 0.3,
+        "planning": 0.3,
+        "independence": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "배운 순서를 차근차근 쌓는 Si와 학당의 꾸준한 배움이 같은 결입니다" },
-        { "target": "Ne", "kind": "resonance", "why": "새 분야를 계속 배우고 싶어 하는 Ne의 호기심과 학당이 손을 잡습니다" },
-        { "target": "ENFJ", "kind": "resonance", "why": "배운 것을 사람들에게 가르치는 Fe가 학당의 넘겨주는 힘과 겹칩니다" },
-        { "target": "ESTP", "kind": "tension", "why": "해 보면서 익히는 Se에게 스승부터 찾는 학당의 순서는 돌아가는 길입니다" },
-        { "target": "ISTP", "kind": "tension", "why": "혼자 뜯어보며 익히는 Ti가 누군가에게 배우는 방식을 어색해합니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "배운 순서를 차근차근 쌓는 Si와 학당의 꾸준한 배움이 같은 결입니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "resonance",
+          "why": "새 분야를 계속 배우고 싶어 하는 Ne의 호기심과 학당이 손을 잡습니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "배운 것을 사람들에게 가르치는 Fe가 학당의 넘겨주는 힘과 겹칩니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "해 보면서 익히는 Se에게 스승부터 찾는 학당의 순서는 돌아가는 길입니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "tension",
+          "why": "혼자 뜯어보며 익히는 Ti가 누군가에게 배우는 방식을 어색해합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "HAK_DANG_GWIIN",
-      "sources": ["classic:sm3:論學堂詞館", "deep:marker:hakdang", "foundation:shinsal_gwiin:hakdang", "v4:depth:gwiin_hakdang"],
+      "sources": [
+        "classic:sm3:論學堂詞館",
+        "deep:marker:hakdang",
+        "foundation:shinsal_gwiin:hakdang",
+        "v4:depth:gwiin_hakdang"
+      ],
       "confidence": "학파차이"
     },
     {
@@ -293,17 +386,49 @@
         "clash": "덕의 천간이 극을 받거나 월지가 충을 맞으면 매트가 얇아진 격입니다. 조심할 일은 미리 사람과 상의해 둡니다.",
         "rule": "월지 기준 寅午戌→丙, 申子辰→壬, 亥卯未→甲, 巳酉丑→庚. 해당 천간이 네 기둥 천간에 있으면 성립(엔진 WOL_DEOK_GWIIN). 三命通會 論天月德, 별도 지지 순행설 있음"
       },
-      "dimensionTags": { "empathyResponse": 0.5, "caretaking": 0.5, "directness": -0.4, "boundarySetting": -0.3, "conflictApproach": -0.3 },
+      "dimensionTags": {
+        "empathyResponse": 0.5,
+        "caretaking": 0.5,
+        "directness": -0.4,
+        "boundarySetting": -0.3,
+        "conflictApproach": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ESFJ", "kind": "resonance", "why": "모두의 기분을 살펴 다툼을 낮추는 Fe가 월덕의 완충과 같은 결입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "조용히 챙겨 두는 Si-Fe가 평소의 덕을 쌓는 방식과 겹칩니다" },
-        { "target": "INFP", "kind": "resonance", "why": "상처 주지 않으려 말을 고르는 Fi가 매트처럼 충격을 줄입니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "결론을 위해 정면으로 부딪히는 Te가 온도를 낮추려는 덕과 속도가 다릅니다" },
-        { "target": "INTP", "kind": "tension", "why": "옳고 그름을 끝까지 따지는 Ti가 좋게 넘기는 방식을 불편해합니다" }
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "모두의 기분을 살펴 다툼을 낮추는 Fe가 월덕의 완충과 같은 결입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "조용히 챙겨 두는 Si-Fe가 평소의 덕을 쌓는 방식과 겹칩니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "상처 주지 않으려 말을 고르는 Fi가 매트처럼 충격을 줄입니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "결론을 위해 정면으로 부딪히는 Te가 온도를 낮추려는 덕과 속도가 다릅니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "tension",
+          "why": "옳고 그름을 끝까지 따지는 Ti가 좋게 넘기는 방식을 불편해합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "WOL_DEOK_GWIIN",
-      "sources": ["classic:sm3:論天月德", "deep:marker:woldeok", "foundation:shinsal_gwiin:woldeok", "v4:depth:gwiin_woldeok", "통용"],
+      "sources": [
+        "classic:sm3:論天月德",
+        "deep:marker:woldeok",
+        "foundation:shinsal_gwiin:woldeok",
+        "v4:depth:gwiin_woldeok",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -369,17 +494,47 @@
         "clash": "덕이 지지로 성립하는 달에 그 지지가 충을 맞으면 보호막이 얇아집니다. 서류와 계약을 두 번 확인해 보완합니다.",
         "rule": "월지 기준 寅丁 卯申 辰壬 巳辛 午亥 未甲 申癸 酉寅 戌丙 亥乙 子巳 丑庚. 천간 또는 지지가 네 기둥에 있으면 성립(엔진 CHEON_DEOK_GWIIN). 論天月德, 전사·卦位 차이 있음"
       },
-      "dimensionTags": { "riskTaking": -0.6, "planning": 0.5, "trustThreshold": 0.4, "ruleAdherence": 0.4 },
+      "dimensionTags": {
+        "riskTaking": -0.6,
+        "planning": 0.5,
+        "trustThreshold": 0.4,
+        "ruleAdherence": 0.4
+      },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "확인하고 대비하는 Si-Te가 천덕의 안전장치와 같은 방식입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "가족의 비상 상황까지 챙겨 두는 Si가 덕의 보호와 겹칩니다" },
-        { "target": "J", "kind": "resonance", "why": "미리 정하고 대비하는 판단 선호가 덕을 실제로 쓸 수 있게 만듭니다" },
-        { "target": "ESTP", "kind": "tension", "why": "위험을 즐기는 Se가 덕이 깔아 둔 지붕 밖으로 자꾸 나갑니다" },
-        { "target": "ENFP", "kind": "tension", "why": "일단 해 보자는 Ne가 확인 절차를 건너뛰어 덕을 덜 씁니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "확인하고 대비하는 Si-Te가 천덕의 안전장치와 같은 방식입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "가족의 비상 상황까지 챙겨 두는 Si가 덕의 보호와 겹칩니다"
+        },
+        {
+          "target": "J",
+          "kind": "resonance",
+          "why": "미리 정하고 대비하는 판단 선호가 덕을 실제로 쓸 수 있게 만듭니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "위험을 즐기는 Se가 덕이 깔아 둔 지붕 밖으로 자꾸 나갑니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "일단 해 보자는 Ne가 확인 절차를 건너뛰어 덕을 덜 씁니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "CHEON_DEOK_GWIIN",
-      "sources": ["classic:sm3:論天月德", "deep:marker:cheondeok", "foundation:shinsal_gwiin:cheondeok", "v4:depth:gwiin_cheondeok"],
+      "sources": [
+        "classic:sm3:論天月德",
+        "deep:marker:cheondeok",
+        "foundation:shinsal_gwiin:cheondeok",
+        "v4:depth:gwiin_cheondeok"
+      ],
       "confidence": "학파차이"
     },
     {
@@ -445,16 +600,46 @@
         "clash": "합으로 생기는 별이라 그 지지가 충을 맞으면 합이 풀려 숨은 여유가 드러나거나 빠져나갑니다. 비상금 관리를 다시 봅니다.",
         "rule": "일간 기준 甲亥 乙戌 丙申 丁未 戊申 己未 庚巳 辛辰 壬寅 癸丑 = 건록과 육합하는 지지(추출기 amrokBranchesByStem). 엔진 미지원. 명리 고전 직접 전거 미확보(강의 인쇄본만)"
       },
-      "dimensionTags": { "attentionSeeking": -0.5, "caretaking": 0.4, "spendingControl": 0.4, "planning": 0.3 },
+      "dimensionTags": {
+        "attentionSeeking": -0.5,
+        "caretaking": 0.4,
+        "spendingControl": 0.4,
+        "planning": 0.3
+      },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "티 내지 않고 뒤에서 챙기는 Si-Fe가 숨은 도움의 별과 같은 결입니다" },
-        { "target": "INFJ", "kind": "resonance", "why": "드러나지 않게 돕는 Fe와 속으로 대비하는 Ni가 암록의 조용한 여유와 겹칩니다" },
-        { "target": "I", "kind": "resonance", "why": "드러내지 않고 혼자 준비해 두는 내향 선호와 잘 맞습니다" },
-        { "target": "ESFP", "kind": "tension", "why": "지금 보여 주고 함께 쓰는 Se가 숨겨 두는 여유를 답답하게 느낍니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "성과를 드러내 평가받는 Te가 공을 숨기는 암록과 부딪칩니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "티 내지 않고 뒤에서 챙기는 Si-Fe가 숨은 도움의 별과 같은 결입니다"
+        },
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "드러나지 않게 돕는 Fe와 속으로 대비하는 Ni가 암록의 조용한 여유와 겹칩니다"
+        },
+        {
+          "target": "I",
+          "kind": "resonance",
+          "why": "드러내지 않고 혼자 준비해 두는 내향 선호와 잘 맞습니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "지금 보여 주고 함께 쓰는 Se가 숨겨 두는 여유를 답답하게 느낍니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "성과를 드러내 평가받는 Te가 공을 숨기는 암록과 부딪칩니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["deep:marker:amrok", "foundation:shinsal_gwiin:amrok", "v4:depth:gwiin_amrok", "추정"],
+      "sources": [
+        "deep:marker:amrok",
+        "foundation:shinsal_gwiin:amrok",
+        "v4:depth:gwiin_amrok",
+        "추정"
+      ],
       "confidence": "추정"
     },
     {
@@ -520,16 +705,47 @@
         "clash": "해당 지지가 충을 맞으면 생활 리듬이 크게 흔들리는 때로 읽습니다. 잠과 끼니부터 다시 붙잡는 것이 보완입니다.",
         "rule": "현대 표 예: 일간 기준 甲寅 乙丑 丙子 丁酉(亥 이설) 戊申 己未 庚午 辛巳 壬辰 癸卯, 표마다 다르고 저장소 미보유. 원문(三命通會 卷五)은 年旬에서 食神을 얻는 법. 엔진 미지원"
       },
-      "dimensionTags": { "reactivity": -0.4, "riskTaking": -0.4, "caretaking": 0.4, "persistence": 0.3, "noveltySeeking": -0.3 },
+      "dimensionTags": {
+        "reactivity": -0.4,
+        "riskTaking": -0.4,
+        "caretaking": 0.4,
+        "persistence": 0.3,
+        "noveltySeeking": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "매일의 생활 리듬을 지키는 Si가 복성의 무게추와 같은 결입니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "사람들에게 밥과 편안함을 챙기는 Fe가 복성의 여유와 겹칩니다" },
-        { "target": "S", "kind": "resonance", "why": "몸의 감각과 현실 생활을 먼저 챙기는 감각 선호가 이 안정을 지킵니다" },
-        { "target": "ENTP", "kind": "tension", "why": "새 판을 계속 벌이는 Ne가 제자리를 지키는 안정에 지루함을 느낍니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "목표를 위해 생활 리듬까지 갈아 넣는 Te가 복성의 편안함과 부딪칩니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "매일의 생활 리듬을 지키는 Si가 복성의 무게추와 같은 결입니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "사람들에게 밥과 편안함을 챙기는 Fe가 복성의 여유와 겹칩니다"
+        },
+        {
+          "target": "S",
+          "kind": "resonance",
+          "why": "몸의 감각과 현실 생활을 먼저 챙기는 감각 선호가 이 안정을 지킵니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "새 판을 계속 벌이는 Ne가 제자리를 지키는 안정에 지루함을 느낍니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "목표를 위해 생활 리듬까지 갈아 넣는 Te가 복성의 편안함과 부딪칩니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["classic:sm5:論傷官", "deep:marker:bokseong", "foundation:shinsal_gwiin:bokseong", "추정"],
+      "sources": [
+        "classic:sm5:論傷官",
+        "deep:marker:bokseong",
+        "foundation:shinsal_gwiin:bokseong",
+        "추정"
+      ],
       "confidence": "학파차이"
     },
     {
@@ -595,16 +811,45 @@
         "clash": "천의 지지가 충을 맞으면 돌보던 사람이 지치거나 돌봄의 대상이 바뀝니다. 자기 쉼부터 챙기는 것이 보완입니다.",
         "rule": "현대 통용표: 월지 바로 앞 지지(寅월→丑, 卯→寅, 辰→卯 … 子→亥, 丑→子)가 네 기둥에 있으면 성립. 택일서 成天醫와 별개. 엔진 미지원, 명리 전거 미확보"
       },
-      "dimensionTags": { "caretaking": 0.9, "empathyResponse": 0.7, "detailFocus": 0.3, "boundarySetting": -0.4 },
+      "dimensionTags": {
+        "caretaking": 0.9,
+        "empathyResponse": 0.7,
+        "detailFocus": 0.3,
+        "boundarySetting": -0.4
+      },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "아픈 사람에게 필요한 것을 구체적으로 챙기는 Si-Fe와 같은 손길입니다" },
-        { "target": "INFP", "kind": "resonance", "why": "남의 상처에 깊이 공명하는 Fi가 천의성의 돌봄 감각과 겹칩니다" },
-        { "target": "Fe", "kind": "resonance", "why": "주변의 기색을 먼저 읽는 Fe가 지친 사람을 빨리 찾아냅니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "결과를 먼저 보는 Te가 돌봄에 쓰는 시간을 아깝게 여깁니다" },
-        { "target": "ISTP", "kind": "tension", "why": "감정보다 원인을 고치려는 Ti가 곁을 지키는 방식의 돌봄을 어색해합니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "아픈 사람에게 필요한 것을 구체적으로 챙기는 Si-Fe와 같은 손길입니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "남의 상처에 깊이 공명하는 Fi가 천의성의 돌봄 감각과 겹칩니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "주변의 기색을 먼저 읽는 Fe가 지친 사람을 빨리 찾아냅니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "결과를 먼저 보는 Te가 돌봄에 쓰는 시간을 아깝게 여깁니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "tension",
+          "why": "감정보다 원인을 고치려는 Ti가 곁을 지키는 방식의 돌봄을 어색해합니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["deep:marker:cheoneuiseong", "foundation:shinsal_gwiin:cheoneuiseong", "추정"],
+      "sources": [
+        "deep:marker:cheoneuiseong",
+        "foundation:shinsal_gwiin:cheoneuiseong",
+        "추정"
+      ],
       "confidence": "추정"
     },
     {
@@ -670,16 +915,46 @@
         "clash": "금여 지지가 충을 맞으면 생활 환경이 바뀌거나 지출이 흔들립니다. 이사와 큰 물건 결정은 한 박자 늦춰 봅니다.",
         "rule": "일간 기준 甲辰 乙巳 丙未 丁申 戊未 己申 庚戌 辛亥 壬丑 癸寅 = 건록 앞 두 칸 祿前二辰(추출기 geumyeorokBranchesByStem). 三命通會 論金輿는 馬前二辰 설 병기. 엔진 미지원"
       },
-      "dimensionTags": { "statusDrive": 0.4, "spendingControl": -0.3, "caretaking": 0.3, "trustThreshold": 0.3 },
+      "dimensionTags": {
+        "statusDrive": 0.4,
+        "spendingControl": -0.3,
+        "caretaking": 0.3,
+        "trustThreshold": 0.3
+      },
       "mbtiLinks": [
-        { "target": "ISFP", "kind": "resonance", "why": "좋은 질감과 분위기를 알아보는 Se-Fi가 금여의 품위 있는 생활과 같은 결입니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "손님을 정성껏 대접하는 Fe-Si가 금여의 예의와 겹칩니다" },
-        { "target": "Se", "kind": "resonance", "why": "지금 몸에 닿는 편안함을 중시하는 Se가 수레의 넉넉함을 잘 누립니다" },
-        { "target": "INTP", "kind": "tension", "why": "생활 환경에 무심한 Ti가 수레의 품위를 사치로 봅니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "아끼고 따지는 Si-Te가 품질에 돈을 쓰는 금여와 지갑 앞에서 다툽니다" }
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "좋은 질감과 분위기를 알아보는 Se-Fi가 금여의 품위 있는 생활과 같은 결입니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "손님을 정성껏 대접하는 Fe-Si가 금여의 예의와 겹칩니다"
+        },
+        {
+          "target": "Se",
+          "kind": "resonance",
+          "why": "지금 몸에 닿는 편안함을 중시하는 Se가 수레의 넉넉함을 잘 누립니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "tension",
+          "why": "생활 환경에 무심한 Ti가 수레의 품위를 사치로 봅니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "아끼고 따지는 Si-Te가 품질에 돈을 쓰는 금여와 지갑 앞에서 다툽니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["classic:sm3:論金輿", "deep:marker:geumyeo", "foundation:shinsal_gwiin:geumyeo", "v4:depth:gwiin_geumyeorok"],
+      "sources": [
+        "classic:sm3:論金輿",
+        "deep:marker:geumyeo",
+        "foundation:shinsal_gwiin:geumyeo",
+        "v4:depth:gwiin_geumyeorok"
+      ],
       "confidence": "학파차이"
     },
     {
@@ -745,16 +1020,46 @@
         "clash": "문곡 자리는 문창과 충하는 지지라 둘이 함께 있으면 생각과 감정이 서로 당깁니다. 한쪽 글을 끝낸 뒤 다른 쪽으로 넘어갑니다.",
         "rule": "현대 통용표 일간 기준 甲亥 乙子 丙寅 丁卯 戊寅 己卯 庚巳 辛午 壬申 癸酉(문창 지지와 충하는 자리). 저장소 표 없음, 고전 성립 전거 미확인. 엔진 미지원"
       },
-      "dimensionTags": { "emotionalExpression": 0.6, "introspection": 0.4, "noveltySeeking": 0.4, "verbalOutput": 0.4, "ruleAdherence": -0.4 },
+      "dimensionTags": {
+        "emotionalExpression": 0.6,
+        "introspection": 0.4,
+        "noveltySeeking": 0.4,
+        "verbalOutput": 0.4,
+        "ruleAdherence": -0.4
+      },
       "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "감정을 이야기와 은유로 옮기는 Fi-Ne가 문곡의 굽이치는 표현과 같은 결입니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "하나를 여러 이야기로 뻗는 Ne가 문곡의 다채로운 결과 겹칩니다" },
-        { "target": "ISFP", "kind": "resonance", "why": "소리와 색으로 마음을 드러내는 Fi-Se가 문곡의 예술 감각과 맞습니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "정해진 형식과 기한을 지키는 Te-Si가 결을 다듬는 문곡의 시간을 답답해합니다" },
-        { "target": "T", "kind": "tension", "why": "사실과 논리를 먼저 세우는 사고 선호에게 감정이 실린 표현은 과하게 들립니다" }
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "감정을 이야기와 은유로 옮기는 Fi-Ne가 문곡의 굽이치는 표현과 같은 결입니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "하나를 여러 이야기로 뻗는 Ne가 문곡의 다채로운 결과 겹칩니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "소리와 색으로 마음을 드러내는 Fi-Se가 문곡의 예술 감각과 맞습니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "정해진 형식과 기한을 지키는 Te-Si가 결을 다듬는 문곡의 시간을 답답해합니다"
+        },
+        {
+          "target": "T",
+          "kind": "tension",
+          "why": "사실과 논리를 먼저 세우는 사고 선호에게 감정이 실린 표현은 과하게 들립니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["deep:marker:mungok", "foundation:shinsal_gwiin:mungok", "추정"],
+      "sources": [
+        "deep:marker:mungok",
+        "foundation:shinsal_gwiin:mungok",
+        "추정"
+      ],
       "confidence": "추정"
     },
     {
@@ -820,16 +1125,47 @@
         "clash": "묘고 지지는 충을 받으면 창고가 열린다고 봅니다. 쌓인 것이 움직이는 때라 큰 지출과 투자는 계획을 먼저 세웁니다.",
         "rule": "일간 기준 甲乙戊己→辰, 丙丁→丑, 庚辛→未, 壬癸→戌 = 재성 오행의 묘고(추출기 jaegoGwiinBranchesByStem). 현대 명칭, 독립 고전 전거 없음. 엔진 미지원"
       },
-      "dimensionTags": { "spendingControl": 0.7, "possessiveness": 0.6, "planning": 0.5, "persistence": 0.4, "riskTaking": -0.3 },
+      "dimensionTags": {
+        "spendingControl": 0.7,
+        "possessiveness": 0.6,
+        "planning": 0.5,
+        "persistence": 0.4,
+        "riskTaking": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "기록하고 모아 두는 Si가 재고의 곳간과 같은 방식입니다" },
-        { "target": "ESTJ", "kind": "resonance", "why": "자산을 체계적으로 나누고 관리하는 Te가 창고의 칸막이와 겹칩니다" },
-        { "target": "Si", "kind": "resonance", "why": "지난 경험을 저장했다 꺼내 쓰는 Si의 기억이 창고를 채웁니다" },
-        { "target": "ESFP", "kind": "tension", "why": "지금 쓰고 나누는 Se가 묵혀 두는 창고를 답답해합니다" },
-        { "target": "ENFP", "kind": "tension", "why": "새로운 경험에 돈을 쓰는 Ne가 곳간 자물쇠와 부딪칩니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "기록하고 모아 두는 Si가 재고의 곳간과 같은 방식입니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "자산을 체계적으로 나누고 관리하는 Te가 창고의 칸막이와 겹칩니다"
+        },
+        {
+          "target": "Si",
+          "kind": "resonance",
+          "why": "지난 경험을 저장했다 꺼내 쓰는 Si의 기억이 창고를 채웁니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "지금 쓰고 나누는 Se가 묵혀 두는 창고를 답답해합니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "새로운 경험에 돈을 쓰는 Ne가 곳간 자물쇠와 부딪칩니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["deep:marker:jaego", "foundation:shinsal_gwiin:jaego", "v4:depth:gwiin_jaego", "추정"],
+      "sources": [
+        "deep:marker:jaego",
+        "foundation:shinsal_gwiin:jaego",
+        "v4:depth:gwiin_jaego",
+        "추정"
+      ],
       "confidence": "추정"
     }
   ]
