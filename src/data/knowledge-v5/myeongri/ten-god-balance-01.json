@@ -71,15 +71,43 @@
         "empathyResponse": -0.3
       },
       "mbtiLinks": [
-        { "target": "ESTP", "kind": "resonance", "why": "부딪쳐서 내 몫을 찾아내는 Se의 추진과 같은 결입니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "도움 없이 혼자 해결하려는 Ti-Se와 겹칩니다" },
-        { "target": "ENTJ", "kind": "resonance", "why": "주도권을 쥐어야 편한 Te와 맞물립니다" },
-        { "target": "Fe", "kind": "tension", "why": "모두의 기분을 맞추려는 Fe에게 내 몫부터 챙기는 모습은 거칠어 보입니다" },
-        { "target": "ISFJ", "kind": "tension", "why": "양보로 관계를 지키는 Si-Fe와 이기려는 비겁이 부딪칩니다" }
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "부딪쳐서 내 몫을 찾아내는 Se의 추진과 같은 결입니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "도움 없이 혼자 해결하려는 Ti-Se와 겹칩니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "주도권을 쥐어야 편한 Te와 맞물립니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "tension",
+          "why": "모두의 기분을 맞추려는 Fe에게 내 몫부터 챙기는 모습은 거칠어 보입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "tension",
+          "why": "양보로 관계를 지키는 Si-Fe와 이기려는 비겁이 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_PEER_STRONG",
-      "sources": ["classic:sm5:論正財", "classic:sm5:論偏財", "deep:ten_god:bijian", "deep:ten_god:jie_cai", "foundation:structure:bigeop_many", "v4:depth:v4_structure:peerHeavy", "통용"],
+      "sources": [
+        "classic:sm5:論正財",
+        "classic:sm5:論偏財",
+        "deep:ten_god:bijian",
+        "deep:ten_god:jie_cai",
+        "foundation:structure:bigeop_many",
+        "v4:depth:v4_structure:peerHeavy",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -149,15 +177,39 @@
         "decisionSpeed": -0.3
       },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "남에게 맞추며 관계를 지키는 Si-Fe와 같은 결입니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "모두의 편을 챙기는 Fe와 겹칩니다" },
-        { "target": "F", "kind": "resonance", "why": "사실보다 사람 마음을 먼저 보는 판단 습관과 맞물립니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "자기 기준으로 판을 끄는 Te에게 '아무거나 괜찮아'는 답이 아닙니다" },
-        { "target": "ISTP", "kind": "tension", "why": "혼자 해결하는 Ti와 함께여야 힘이 나는 쪽이 방향에서 어긋납니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "남에게 맞추며 관계를 지키는 Si-Fe와 같은 결입니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "모두의 편을 챙기는 Fe와 겹칩니다"
+        },
+        {
+          "target": "F",
+          "kind": "resonance",
+          "why": "사실보다 사람 마음을 먼저 보는 판단 습관과 맞물립니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "자기 기준으로 판을 끄는 Te에게 '아무거나 괜찮아'는 답이 아닙니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "tension",
+          "why": "혼자 해결하는 Ti와 함께여야 힘이 나는 쪽이 방향에서 어긋납니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_PEER_WEAK",
-      "sources": ["classic:sm5:論正財", "deep:ten_god:bijian", "통용"],
+      "sources": [
+        "classic:sm5:論正財",
+        "deep:ten_god:bijian",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -229,15 +281,44 @@
         "persistence": -0.4
       },
       "mbtiLinks": [
-        { "target": "ENFP", "kind": "resonance", "why": "생각이 꼬리를 물고 쏟아지는 Ne와 같은 속도입니다" },
-        { "target": "ENTP", "kind": "resonance", "why": "앞뒤 안 맞는 규칙에 질문을 던지는 Ne-Ti와 겹칩니다" },
-        { "target": "ESFP", "kind": "resonance", "why": "보여 주고 반응을 보는 Se-Fi와 맞물립니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "정해진 방식을 지키는 Si에게 계절마다 바뀌는 방식은 피로합니다" },
-        { "target": "INTJ", "kind": "tension", "why": "속에서 다듬은 뒤 내놓는 Ni에게 먼저 꺼내는 방식은 성급해 보입니다" }
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "생각이 꼬리를 물고 쏟아지는 Ne와 같은 속도입니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "resonance",
+          "why": "앞뒤 안 맞는 규칙에 질문을 던지는 Ne-Ti와 겹칩니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "resonance",
+          "why": "보여 주고 반응을 보는 Se-Fi와 맞물립니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "정해진 방식을 지키는 Si에게 계절마다 바뀌는 방식은 피로합니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "tension",
+          "why": "속에서 다듬은 뒤 내놓는 Ni에게 먼저 꺼내는 방식은 성급해 보입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_OUTPUT_STRONG",
-      "sources": ["classic:sm5:論食神", "classic:sm5:論傷官", "deep:ten_god:shi_shen", "deep:ten_god:shang_guan", "foundation:structure:output_heavy", "foundation:structure:sanggwan_gyeongwan", "v4:depth:v4_structure:outputHeavy", "통용"],
+      "sources": [
+        "classic:sm5:論食神",
+        "classic:sm5:論傷官",
+        "deep:ten_god:shi_shen",
+        "deep:ten_god:shang_guan",
+        "foundation:structure:output_heavy",
+        "foundation:structure:sanggwan_gyeongwan",
+        "v4:depth:v4_structure:outputHeavy",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -277,7 +358,7 @@
           "친구가 힘들다고 하면 위로의 말 대신 편의점에서 따뜻한 음료를 사 와 말없이 건넵니다."
         ],
         "alone": [
-          "혼자 있을 때는 생각이 아주 많습니다. 다만 그 생각이 일기장 밖으로 나오는 일은 드뭅니다.",
+          "혼자 있는 밤 일기장에 다섯 줄을 쓰고, 다음 날 그 다섯 줄 중 한 줄도 누군가에게 말하지 않습니다.",
           "하고 싶은 말을 샤워하면서 혼자 연습해 보고, 다음 날 결국 그 말은 하지 않습니다."
         ]
       },
@@ -306,15 +387,40 @@
         "ruleAdherence": 0.3
       },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "말보다 기록과 행동으로 보여 주는 Si-Te와 같은 결입니다" },
-        { "target": "INTJ", "kind": "resonance", "why": "속에서 완성한 뒤에만 꺼내는 Ni와 겹칩니다" },
-        { "target": "I", "kind": "resonance", "why": "밖으로 말하기보다 안에서 정리하는 방향이 같습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "떠오르는 대로 꺼내는 Ne에게 세 번 다듬는 침묵은 답답합니다" },
-        { "target": "ESFP", "kind": "tension", "why": "그 자리에서 표현하는 Se-Fi와 속으로 삼키는 쪽이 부딪칩니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "말보다 기록과 행동으로 보여 주는 Si-Te와 같은 결입니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "resonance",
+          "why": "속에서 완성한 뒤에만 꺼내는 Ni와 겹칩니다"
+        },
+        {
+          "target": "I",
+          "kind": "resonance",
+          "why": "밖으로 말하기보다 안에서 정리하는 방향이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "떠오르는 대로 꺼내는 Ne에게 세 번 다듬는 침묵은 답답합니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "그 자리에서 표현하는 Se-Fi와 속으로 삼키는 쪽이 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_OUTPUT_WEAK",
-      "sources": ["foundation:structure:no_output", "v4:depth:v4_structure:noOutput", "deep:ten_god:shi_shen", "통용"],
+      "sources": [
+        "foundation:structure:no_output",
+        "v4:depth:v4_structure:noOutput",
+        "deep:ten_god:shi_shen",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -386,15 +492,44 @@
         "learningDrive": -0.3
       },
       "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "결과와 숫자로 판단하는 Te와 같은 쪽입니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "눈앞의 기회를 바로 잡는 Se와 겹칩니다" },
-        { "target": "ENTJ", "kind": "resonance", "why": "판을 키우고 성과를 세는 Te-Ni와 맞물립니다" },
-        { "target": "INFP", "kind": "tension", "why": "돈보다 의미를 먼저 보는 Fi에게 모든 걸 계산하는 모습은 차갑게 느껴집니다" },
-        { "target": "INTP", "kind": "tension", "why": "이론의 재미를 좇는 Ti가 '남는 게 뭐냐'는 질문을 답답해합니다" }
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "결과와 숫자로 판단하는 Te와 같은 쪽입니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "눈앞의 기회를 바로 잡는 Se와 겹칩니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "판을 키우고 성과를 세는 Te-Ni와 맞물립니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "돈보다 의미를 먼저 보는 Fi에게 모든 걸 계산하는 모습은 차갑게 느껴집니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "tension",
+          "why": "이론의 재미를 좇는 Ti가 '남는 게 뭐냐'는 질문을 답답해합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_WEALTH_STRONG",
-      "sources": ["classic:sm5:論正財", "classic:sm5:論偏財", "deep:ten_god:zheng_cai", "deep:ten_god:pian_cai", "foundation:structure:wealth_heavy", "foundation:structure:jaeda_sinyak", "v4:depth:v4_structure:wealthHeavy", "통용"],
+      "sources": [
+        "classic:sm5:論正財",
+        "classic:sm5:論偏財",
+        "deep:ten_god:zheng_cai",
+        "deep:ten_god:pian_cai",
+        "foundation:structure:wealth_heavy",
+        "foundation:structure:jaeda_sinyak",
+        "v4:depth:v4_structure:wealthHeavy",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -430,7 +565,7 @@
           "집을 볼 때 평수나 동네 시세보다 거실에 책장 하나 들어갈 벽이 있는지를 먼저 봅니다."
         ],
         "relationships": [
-          "사람을 쓸모로 보지 않아서, 이해관계 없는 오래된 친구들이 십 년째 곁에 남아 있습니다.",
+          "동창 모임에서 누가 어디 다니는지는 몰라도, 그 친구가 작년에 강아지를 잃은 건 기억하고 먼저 묻습니다.",
           "더치페이 계산이 귀찮아 대충 '내가 낼게' 하고, 지갑이 얇은 달에도 그 말이 먼저 나옵니다."
         ],
         "alone": [
@@ -463,15 +598,39 @@
         "statusDrive": -0.4
       },
       "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "의미가 먼저고 값은 나중인 Fi와 같은 결입니다" },
-        { "target": "INTP", "kind": "resonance", "why": "이론의 재미를 좇아 정산을 잊는 Ti-Ne와 겹칩니다" },
-        { "target": "ISFP", "kind": "resonance", "why": "지금 좋아하는 것에 몰두하는 Fi-Se와 맞물립니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "숫자와 결과로 판단하는 Te에게 정산이 늦는 모습은 불안합니다" },
-        { "target": "Te", "kind": "tension", "why": "효율을 재는 Te의 잣대가 값을 안 매기는 습관을 낭비로 봅니다" }
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "의미가 먼저고 값은 나중인 Fi와 같은 결입니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "이론의 재미를 좇아 정산을 잊는 Ti-Ne와 겹칩니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "지금 좋아하는 것에 몰두하는 Fi-Se와 맞물립니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "숫자와 결과로 판단하는 Te에게 정산이 늦는 모습은 불안합니다"
+        },
+        {
+          "target": "Te",
+          "kind": "tension",
+          "why": "효율을 재는 Te의 잣대가 값을 안 매기는 습관을 낭비로 봅니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_WEALTH_WEAK",
-      "sources": ["classic:sm5:論正財", "deep:ten_god:zheng_cai", "통용"],
+      "sources": [
+        "classic:sm5:論正財",
+        "deep:ten_god:zheng_cai",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -543,15 +702,44 @@
         "independence": -0.3
       },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "약속과 규칙을 몸으로 지키는 Si-Te와 같은 결입니다" },
-        { "target": "ESTJ", "kind": "resonance", "why": "역할과 기준을 먼저 세우는 Te와 겹칩니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "남의 기대를 미리 챙기는 Si-Fe와 맞물립니다" },
-        { "target": "ENTP", "kind": "tension", "why": "규칙마다 '왜요?'를 던지는 Ne에게 완장 세 개는 답답합니다" },
-        { "target": "ESFP", "kind": "tension", "why": "그 순간을 즐기는 Se가 할 일 목록부터 끝내는 방식과 부딪칩니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "약속과 규칙을 몸으로 지키는 Si-Te와 같은 결입니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "역할과 기준을 먼저 세우는 Te와 겹칩니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "남의 기대를 미리 챙기는 Si-Fe와 맞물립니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "규칙마다 '왜요?'를 던지는 Ne에게 완장 세 개는 답답합니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "그 순간을 즐기는 Se가 할 일 목록부터 끝내는 방식과 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_OFFICER_STRONG",
-      "sources": ["classic:sm5:論正官", "classic:sm5:論偏官", "deep:ten_god:zheng_guan", "deep:ten_god:qi_sha", "foundation:structure:officer_heavy", "foundation:structure:gwansal_honjob", "v4:depth:v4_structure:officerHeavy", "통용"],
+      "sources": [
+        "classic:sm5:論正官",
+        "classic:sm5:論偏官",
+        "deep:ten_god:zheng_guan",
+        "deep:ten_god:qi_sha",
+        "foundation:structure:officer_heavy",
+        "foundation:structure:gwansal_honjob",
+        "v4:depth:v4_structure:officerHeavy",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -620,15 +808,39 @@
         "dutifulness": -0.4
       },
       "mbtiLinks": [
-        { "target": "ENTP", "kind": "resonance", "why": "정해진 방식을 뒤집어 보는 Ne-Ti와 같은 결입니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "남의 규칙보다 내 기준으로 움직이는 Ti와 겹칩니다" },
-        { "target": "P", "kind": "resonance", "why": "그때그때 정하는 생활 방식과 맞물립니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "규칙과 마감으로 굴러가는 Te-Si에게 '그때그때'는 불안합니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "약속을 정확히 지키는 Si에게 10분 지각은 작은 일이 아닙니다" }
+        {
+          "target": "ENTP",
+          "kind": "resonance",
+          "why": "정해진 방식을 뒤집어 보는 Ne-Ti와 같은 결입니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "남의 규칙보다 내 기준으로 움직이는 Ti와 겹칩니다"
+        },
+        {
+          "target": "P",
+          "kind": "resonance",
+          "why": "그때그때 정하는 생활 방식과 맞물립니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "규칙과 마감으로 굴러가는 Te-Si에게 '그때그때'는 불안합니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "약속을 정확히 지키는 Si에게 10분 지각은 작은 일이 아닙니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_OFFICER_WEAK",
-      "sources": ["classic:sm5:論正官", "deep:ten_god:zheng_guan", "통용"],
+      "sources": [
+        "classic:sm5:論正官",
+        "deep:ten_god:zheng_guan",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -700,15 +912,43 @@
         "independence": -0.3
       },
       "mbtiLinks": [
-        { "target": "INTP", "kind": "resonance", "why": "이해가 끝나야 움직이는 Ti와 같은 결입니다" },
-        { "target": "INFJ", "kind": "resonance", "why": "속에서 오래 익혀 내놓는 Ni와 겹칩니다" },
-        { "target": "Si", "kind": "resonance", "why": "한번 익힌 방식을 오래 쓰는 Si와 맞물립니다" },
-        { "target": "ESTP", "kind": "tension", "why": "일단 해 보는 Se에게 폴더 세 개 분량의 준비는 출발이 늦습니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "결론부터 정하는 Te가 '확인해 보고요'를 기다리기 힘들어합니다" }
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "이해가 끝나야 움직이는 Ti와 같은 결입니다"
+        },
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "속에서 오래 익혀 내놓는 Ni와 겹칩니다"
+        },
+        {
+          "target": "Si",
+          "kind": "resonance",
+          "why": "한번 익힌 방식을 오래 쓰는 Si와 맞물립니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "일단 해 보는 Se에게 폴더 세 개 분량의 준비는 출발이 늦습니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "결론부터 정하는 Te가 '확인해 보고요'를 기다리기 힘들어합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_RESOURCE_STRONG",
-      "sources": ["classic:sm5:論印綬", "classic:sm5:論倒食", "deep:ten_god:zheng_yin", "deep:ten_god:pian_yin", "foundation:structure:resource_many", "v4:depth:v4_structure:resourceHeavy", "통용"],
+      "sources": [
+        "classic:sm5:論印綬",
+        "classic:sm5:論倒食",
+        "deep:ten_god:zheng_yin",
+        "deep:ten_god:pian_yin",
+        "foundation:structure:resource_many",
+        "v4:depth:v4_structure:resourceHeavy",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -778,14 +1018,35 @@
         "trustThreshold": 0.4
       },
       "mbtiLinks": [
-        { "target": "ESTP", "kind": "resonance", "why": "몸으로 부딪쳐 익히는 Se와 같은 결입니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "설명서보다 손으로 분해해 보는 Ti-Se와 겹칩니다" },
-        { "target": "INTP", "kind": "tension", "why": "이해가 끝나야 움직이는 Ti에게 일단 눌러 보는 방식은 위태롭습니다" },
-        { "target": "INFJ", "kind": "tension", "why": "속에서 오래 익히는 Ni가 멈추지 않는 행동을 불안하게 봅니다" }
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "몸으로 부딪쳐 익히는 Se와 같은 결입니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "설명서보다 손으로 분해해 보는 Ti-Se와 겹칩니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "tension",
+          "why": "이해가 끝나야 움직이는 Ti에게 일단 눌러 보는 방식은 위태롭습니다"
+        },
+        {
+          "target": "INFJ",
+          "kind": "tension",
+          "why": "속에서 오래 익히는 Ni가 멈추지 않는 행동을 불안하게 봅니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "TEN_GOD_RESOURCE_WEAK",
-      "sources": ["foundation:structure:no_resource", "v4:depth:v4_structure:noResource", "deep:ten_god:zheng_yin", "통용"],
+      "sources": [
+        "foundation:structure:no_resource",
+        "v4:depth:v4_structure:noResource",
+        "deep:ten_god:zheng_yin",
+        "통용"
+      ],
       "confidence": "통용"
     }
   ]

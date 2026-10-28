@@ -76,17 +76,46 @@
         "empathyResponse": -0.3
       },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "목표부터 세우고 사람을 그쪽으로 모으는 Te-Ni가 곧게 솟는 죽순과 같은 결입니다" },
-        { "target": "ESTJ", "kind": "resonance", "why": "역할과 순서를 먼저 정하는 Te의 기둥 세우기와 겹칩니다" },
-        { "target": "J", "kind": "resonance", "why": "방향을 정해 두어야 마음이 놓이는 습관이 같습니다" },
-        { "target": "INFP", "kind": "tension", "why": "자기 속도로 피어나려는 Fi에게 곧은 방향 제시는 압박으로 느껴집니다" },
-        { "target": "ESFP", "kind": "tension", "why": "그때그때의 즐거움을 따르는 Se와 먼 목표를 박는 갑이 리듬에서 어긋납니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "목표부터 세우고 사람을 그쪽으로 모으는 Te-Ni가 곧게 솟는 죽순과 같은 결입니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "역할과 순서를 먼저 정하는 Te의 기둥 세우기와 겹칩니다"
+        },
+        {
+          "target": "J",
+          "kind": "resonance",
+          "why": "방향을 정해 두어야 마음이 놓이는 습관이 같습니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "자기 속도로 피어나려는 Fi에게 곧은 방향 제시는 압박으로 느껴집니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "그때그때의 즐거움을 따르는 Se와 먼 목표를 박는 갑이 리듬에서 어긋납니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "甲",
-      "sources": ["foundation:heavenly_stem:甲", "classic:sm1:論十干名字之義", "classic:dt:天干論 갑목", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:甲",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 갑목",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["갑", "갑목", "甲"]
+      "aliases": [
+        "갑",
+        "갑목",
+        "甲"
+      ]
     },
     {
       "id": "stem:乙",
@@ -162,17 +191,46 @@
         "ruleAdherence": -0.3
       },
       "mbtiLinks": [
-        { "target": "ENFJ", "kind": "resonance", "why": "사람 사이 분위기를 읽고 엮어 내는 Fe가 버들가지의 감각과 같습니다" },
-        { "target": "ISFP", "kind": "resonance", "why": "부딪히지 않고 자기 방식으로 피어나는 Fi-Se와 겹칩니다" },
-        { "target": "Fe", "kind": "resonance", "why": "상대 기분에 맞춰 모양을 바꾸는 습관이 같은 결입니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "정면으로 밀어붙이는 Te와 돌아서 가는 을의 길이 속도에서 부딪칩니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "정해진 절차를 지키는 Si에게 틈을 찾는 방식은 편법처럼 보입니다" }
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "사람 사이 분위기를 읽고 엮어 내는 Fe가 버들가지의 감각과 같습니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "부딪히지 않고 자기 방식으로 피어나는 Fi-Se와 겹칩니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "상대 기분에 맞춰 모양을 바꾸는 습관이 같은 결입니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "정면으로 밀어붙이는 Te와 돌아서 가는 을의 길이 속도에서 부딪칩니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "정해진 절차를 지키는 Si에게 틈을 찾는 방식은 편법처럼 보입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "乙",
-      "sources": ["foundation:heavenly_stem:乙", "classic:sm1:論十干名字之義", "classic:dt:天干論 을목", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:乙",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 을목",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["을", "을목", "乙"]
+      "aliases": [
+        "을",
+        "을목",
+        "乙"
+      ]
     },
     {
       "id": "stem:丙",
@@ -249,17 +307,46 @@
         "spendingControl": -0.4
       },
       "mbtiLinks": [
-        { "target": "ESFP", "kind": "resonance", "why": "그 자리의 분위기를 단번에 바꾸는 Se-Fi의 존재감과 같습니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "사람과 아이디어를 넓게 퍼뜨리는 Ne의 확산과 겹칩니다" },
-        { "target": "E", "kind": "resonance", "why": "사람 속에서 켜지고 혼자일 때 꺼지는 충전 방식이 같습니다" },
-        { "target": "INTJ", "kind": "tension", "why": "말을 아끼고 속으로 정리하는 Ni에게 병의 밝음은 소란스럽게 느껴집니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "정해진 순서를 지키는 Si와 먼저 터뜨리는 병이 속도에서 부딪칩니다" }
+        {
+          "target": "ESFP",
+          "kind": "resonance",
+          "why": "그 자리의 분위기를 단번에 바꾸는 Se-Fi의 존재감과 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "사람과 아이디어를 넓게 퍼뜨리는 Ne의 확산과 겹칩니다"
+        },
+        {
+          "target": "E",
+          "kind": "resonance",
+          "why": "사람 속에서 켜지고 혼자일 때 꺼지는 충전 방식이 같습니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "tension",
+          "why": "말을 아끼고 속으로 정리하는 Ni에게 병의 밝음은 소란스럽게 느껴집니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "정해진 순서를 지키는 Si와 먼저 터뜨리는 병이 속도에서 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "丙",
-      "sources": ["foundation:heavenly_stem:丙", "classic:sm1:論十干名字之義", "classic:dt:天干論 병화", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:丙",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 병화",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["병", "병화", "丙"]
+      "aliases": [
+        "병",
+        "병화",
+        "丙"
+      ]
     },
     {
       "id": "stem:丁",
@@ -336,17 +423,46 @@
         "verbalOutput": -0.3
       },
       "mbtiLinks": [
-        { "target": "INTP", "kind": "resonance", "why": "한 주제를 원리까지 파고드는 Ti의 집중이 작은 불꽃과 같습니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "손으로 다듬어 쓸모를 만드는 Ti-Se와 겹칩니다" },
-        { "target": "Ni", "kind": "resonance", "why": "생각을 한 점으로 모아 깊이 보는 방식이 같습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "여러 곳에 불을 옮겨 붙이는 Ne와 한 점에 머무는 정이 부딪칩니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "넓게 관리하고 빨리 정리하는 Te에게 정의 오래 다듬기는 느려 보입니다" }
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "한 주제를 원리까지 파고드는 Ti의 집중이 작은 불꽃과 같습니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "손으로 다듬어 쓸모를 만드는 Ti-Se와 겹칩니다"
+        },
+        {
+          "target": "Ni",
+          "kind": "resonance",
+          "why": "생각을 한 점으로 모아 깊이 보는 방식이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "여러 곳에 불을 옮겨 붙이는 Ne와 한 점에 머무는 정이 부딪칩니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "넓게 관리하고 빨리 정리하는 Te에게 정의 오래 다듬기는 느려 보입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "丁",
-      "sources": ["foundation:heavenly_stem:丁", "classic:sm1:論十干名字之義", "classic:dt:天干論 정화", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:丁",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 정화",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["정", "정화", "丁"]
+      "aliases": [
+        "정",
+        "정화",
+        "丁"
+      ]
     },
     {
       "id": "stem:戊",
@@ -385,7 +501,7 @@
           "모임에서 말은 적어도 자리를 끝까지 지키고, 마지막에 남은 사람들을 차로 집까지 데려다줍니다."
         ],
         "alone": [
-          "혼자 있으면 소파에 깊게 앉아 몇 시간이고 움직이지 않습니다. 그 멈춤이 당신의 충전입니다.",
+          "약속 없는 일요일, 소파에 같은 자세로 세 시간 앉아 다큐 두 편을 보고 나서야 숨이 고릅니다. 일어나면 베란다 화분에 물부터 줍니다.",
           "속상한 일이 있어도 얼굴에 잘 안 드러나서, 혼자 있는 밤에야 '나도 힘들었네' 하고 알아챕니다."
         ]
       },
@@ -423,17 +539,46 @@
         "emotionalExpression": -0.5
       },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "한번 정한 자리를 오래 지키는 Si의 꾸준함과 같은 땅입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "말없이 곁을 지키며 사람을 품는 Si-Fe와 겹칩니다" },
-        { "target": "Si", "kind": "resonance", "why": "익숙한 방식과 자리를 믿는 습관이 같은 결입니다" },
-        { "target": "ENTP", "kind": "tension", "why": "새 판을 계속 벌이는 Ne와 움직이지 않는 돌담이 속도에서 부딪칩니다" },
-        { "target": "ESTP", "kind": "tension", "why": "그 자리에서 바로 뛰어드는 Se에게 무의 석 달 지켜보기는 답답합니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "한번 정한 자리를 오래 지키는 Si의 꾸준함과 같은 땅입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "말없이 곁을 지키며 사람을 품는 Si-Fe와 겹칩니다"
+        },
+        {
+          "target": "Si",
+          "kind": "resonance",
+          "why": "익숙한 방식과 자리를 믿는 습관이 같은 결입니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "새 판을 계속 벌이는 Ne와 움직이지 않는 돌담이 속도에서 부딪칩니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "그 자리에서 바로 뛰어드는 Se에게 무의 석 달 지켜보기는 답답합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "戊",
-      "sources": ["foundation:heavenly_stem:戊", "classic:sm1:論十干名字之義", "classic:dt:天干論 무토", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:戊",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 무토",
+        "통용"
+      ],
       "confidence": "학파차이",
-      "aliases": ["무", "무토", "戊"]
+      "aliases": [
+        "무",
+        "무토",
+        "戊"
+      ]
     },
     {
       "id": "stem:己",
@@ -510,17 +655,46 @@
         "attentionSeeking": -0.5
       },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "필요한 것을 미리 채워 두는 Si-Fe의 살림 감각과 같은 질그릇입니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "모임의 빈자리를 먼저 채우는 Fe의 챙김과 겹칩니다" },
-        { "target": "Fe", "kind": "resonance", "why": "상대가 말하기 전에 필요를 알아채는 점이 같습니다" },
-        { "target": "ENTP", "kind": "tension", "why": "모아 두기보다 늘 새로 벌이는 Ne에게 기의 저장은 답답해 보입니다" },
-        { "target": "ISTP", "kind": "tension", "why": "각자 알아서 하자는 Ti에게 기의 챙김은 간섭으로 느껴집니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "필요한 것을 미리 채워 두는 Si-Fe의 살림 감각과 같은 질그릇입니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "모임의 빈자리를 먼저 채우는 Fe의 챙김과 겹칩니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "상대가 말하기 전에 필요를 알아채는 점이 같습니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "모아 두기보다 늘 새로 벌이는 Ne에게 기의 저장은 답답해 보입니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "tension",
+          "why": "각자 알아서 하자는 Ti에게 기의 챙김은 간섭으로 느껴집니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "己",
-      "sources": ["foundation:heavenly_stem:己", "classic:sm1:論十干名字之義", "classic:dt:天干論 기토", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:己",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 기토",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["기", "기토", "己"]
+      "aliases": [
+        "기",
+        "기토",
+        "己"
+      ]
     },
     {
       "id": "stem:庚",
@@ -597,17 +771,46 @@
         "introspection": -0.3
       },
       "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "잘라 말하고 바로 실행하는 Te의 결단이 무쇠와 같습니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "현장에서 몸으로 먼저 부딪히는 Se와 겹칩니다" },
-        { "target": "T", "kind": "resonance", "why": "감정보다 사실과 결과로 판단하는 습관이 같습니다" },
-        { "target": "INFP", "kind": "tension", "why": "말의 온도를 살피는 Fi에게 경의 솔직함은 거칠게 닿습니다" },
-        { "target": "ENFJ", "kind": "tension", "why": "모두의 기분을 맞추려는 Fe와 잘라 말하는 쇠가 부딪칩니다" }
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "잘라 말하고 바로 실행하는 Te의 결단이 무쇠와 같습니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "현장에서 몸으로 먼저 부딪히는 Se와 겹칩니다"
+        },
+        {
+          "target": "T",
+          "kind": "resonance",
+          "why": "감정보다 사실과 결과로 판단하는 습관이 같습니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "말의 온도를 살피는 Fi에게 경의 솔직함은 거칠게 닿습니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "tension",
+          "why": "모두의 기분을 맞추려는 Fe와 잘라 말하는 쇠가 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "庚",
-      "sources": ["foundation:heavenly_stem:庚", "classic:sm1:論十干名字之義", "classic:dt:天干論 경금", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:庚",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 경금",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["경", "경금", "庚"]
+      "aliases": [
+        "경",
+        "경금",
+        "庚"
+      ]
     },
     {
       "id": "stem:辛",
@@ -684,17 +887,46 @@
         "socialEnergy": -0.3
       },
       "mbtiLinks": [
-        { "target": "ISFP", "kind": "resonance", "why": "아름다움과 마감에 예민한 Fi-Se의 안목과 같은 결입니다" },
-        { "target": "ISTJ", "kind": "resonance", "why": "작은 흠까지 대조하는 Si의 꼼꼼함과 겹칩니다" },
-        { "target": "Fi", "kind": "resonance", "why": "자기 기준에 맞지 않으면 받아들이지 않는 점이 같습니다" },
-        { "target": "ESTP", "kind": "tension", "why": "대충 만들고 바로 써 보는 Se에게 신의 마감은 느리게 보입니다" },
-        { "target": "ENTP", "kind": "tension", "why": "거칠게 던지고 나중에 고치는 Ne와 처음부터 깔끔해야 하는 신이 부딪칩니다" }
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "아름다움과 마감에 예민한 Fi-Se의 안목과 같은 결입니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "작은 흠까지 대조하는 Si의 꼼꼼함과 겹칩니다"
+        },
+        {
+          "target": "Fi",
+          "kind": "resonance",
+          "why": "자기 기준에 맞지 않으면 받아들이지 않는 점이 같습니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "대충 만들고 바로 써 보는 Se에게 신의 마감은 느리게 보입니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "거칠게 던지고 나중에 고치는 Ne와 처음부터 깔끔해야 하는 신이 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "辛",
-      "sources": ["foundation:heavenly_stem:辛", "classic:sm1:論十干名字之義", "classic:dt:天干論 신금", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:辛",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 신금",
+        "통용"
+      ],
       "confidence": "학파차이",
-      "aliases": ["신", "신금", "辛"]
+      "aliases": [
+        "신",
+        "신금",
+        "辛"
+      ]
     },
     {
       "id": "stem:壬",
@@ -771,17 +1003,46 @@
         "ruleAdherence": -0.5
       },
       "mbtiLinks": [
-        { "target": "ENTP", "kind": "resonance", "why": "여러 갈래를 동시에 잇는 Ne의 확장이 하구 물길과 같습니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "새 사람과 새 장소로 흘러가는 Ne-Fi와 겹칩니다" },
-        { "target": "P", "kind": "resonance", "why": "막히면 돌아가는 유연한 진행 방식이 같은 결입니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "한 자리를 지키는 Si에게 임의 흐름은 불안정하게 보입니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "정해진 기한과 절차를 요구하는 Te-Si와 물길이 자주 어긋납니다" }
+        {
+          "target": "ENTP",
+          "kind": "resonance",
+          "why": "여러 갈래를 동시에 잇는 Ne의 확장이 하구 물길과 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "새 사람과 새 장소로 흘러가는 Ne-Fi와 겹칩니다"
+        },
+        {
+          "target": "P",
+          "kind": "resonance",
+          "why": "막히면 돌아가는 유연한 진행 방식이 같은 결입니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "한 자리를 지키는 Si에게 임의 흐름은 불안정하게 보입니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "정해진 기한과 절차를 요구하는 Te-Si와 물길이 자주 어긋납니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "壬",
-      "sources": ["foundation:heavenly_stem:壬", "classic:sm1:論十干名字之義", "classic:dt:天干論 임수", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:壬",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 임수",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["임", "임수", "壬"]
+      "aliases": [
+        "임",
+        "임수",
+        "壬"
+      ]
     },
     {
       "id": "stem:癸",
@@ -813,7 +1074,7 @@
         ],
         "marriage": [
           "가족 중 누가 기운이 없으면 아무 말 없이 그 사람이 좋아하는 과일을 깎아 방문 앞에 두고 갑니다.",
-          "배우자와 다툰 날 소리 내 싸우지 않는 대신, 며칠 동안 집 안의 온도가 조금씩 내려갑니다."
+          "배우자와 다툰 날 큰소리 대신 저녁상에 반찬 한 가지를 빼고, 배우자가 그걸 알아채기까지 사흘이 걸립니다."
         ],
         "relationships": [
           "친구들의 비밀 상담 창구입니다. 새벽 2시에 오는 '자?'라는 문자에 가장 자주 답하는 사람입니다.",
@@ -858,17 +1119,46 @@
         "directness": -0.3
       },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "말없이 상대의 속을 읽고 스며드는 Ni-Fe와 같은 물방울입니다" },
-        { "target": "INFP", "kind": "resonance", "why": "섬세한 감정을 속에 담아 두는 Fi의 결과 겹칩니다" },
-        { "target": "I", "kind": "resonance", "why": "혼자 조용한 시간에 생각이 맑아지는 충전 방식이 같습니다" },
-        { "target": "ESTP", "kind": "tension", "why": "바로 행동하고 크게 말하는 Se에게 계의 조용한 신호는 잘 닿지 않습니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "결론을 빨리 내리는 Te와 오래 스며드는 계가 속도에서 부딪칩니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "말없이 상대의 속을 읽고 스며드는 Ni-Fe와 같은 물방울입니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "섬세한 감정을 속에 담아 두는 Fi의 결과 겹칩니다"
+        },
+        {
+          "target": "I",
+          "kind": "resonance",
+          "why": "혼자 조용한 시간에 생각이 맑아지는 충전 방식이 같습니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "바로 행동하고 크게 말하는 Se에게 계의 조용한 신호는 잘 닿지 않습니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "결론을 빨리 내리는 Te와 오래 스며드는 계가 속도에서 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "癸",
-      "sources": ["foundation:heavenly_stem:癸", "classic:sm1:論十干名字之義", "classic:dt:天干論 계수", "통용"],
+      "sources": [
+        "foundation:heavenly_stem:癸",
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 계수",
+        "통용"
+      ],
       "confidence": "통용",
-      "aliases": ["계", "계수", "癸"]
+      "aliases": [
+        "계",
+        "계수",
+        "癸"
+      ]
     }
   ]
 }

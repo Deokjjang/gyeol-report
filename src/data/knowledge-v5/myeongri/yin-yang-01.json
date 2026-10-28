@@ -54,23 +54,59 @@
         "연애와 결혼에서 '내가 끌고 간다'가 습관이 되면 상대가 설 자리가 없어집니다. 상대가 느린 게 아니라 당신이 빠른 것일 때가 많습니다."
       ],
       "strengthRules": {
-        "strong": "양 글자가 일곱 이상이거나 일간이 양이고 월지도 양이면 햇볕이 한낮입니다. 앞에 서는 힘이 극에 달하고 쉬는 법이 없습니다.",
-        "weak": "양 글자가 다섯이거나 음의 글자가 일지에 있으면 볕이 오후로 기웁니다. 앞에 서되 물러설 줄도 압니다.",
-        "clash": "음의 글자가 하나뿐일 때 그 글자가 충을 받으면 그늘이 사라집니다. 쉬어야 할 때 못 쉬는 구조이니 쉬는 시간을 일정에 먼저 넣습니다.",
-        "rule": "엔진 YinYangLabel YANG_HEAVY + gender FEMALE. yang ≥ 6/8 (시주 있을 때) 또는 ≥ 5/6 (시간 미상)"
+        "strong": "네 기둥이 모두 양(8:0)이거나 일주와 월주가 둘 다 양이면 햇볕이 한낮입니다. 앞에 서는 힘이 극에 달하고 쉬는 법이 없습니다.",
+        "weak": "양 기둥이 셋(6:2)이고 일주가 음이면 볕이 오후로 기웁니다. 앞에 서되 물러설 줄도 압니다.",
+        "clash": "음 기둥이 하나뿐일 때 그 지지가 충을 받으면 그늘이 사라집니다. 쉬어야 할 때 못 쉬는 구조이니 쉬는 시간을 일정에 먼저 넣습니다.",
+        "rule": "엔진 YinYangLabel YANG_HEAVY (yang - yin ≥ 2) + gender FEMALE. 천간·지지는 음양이 같아 기둥 단위로 2씩 움직인다: 8자 6:2 이상, 시간 미상 6자 4:2 이상. BALANCED는 8자 4:4일 때만"
       },
-      "dimensionTags": { "directness": 0.8, "decisionSpeed": 0.7, "independence": 0.7, "socialEnergy": 0.6, "controlNeed": 0.6, "reactivity": 0.5, "emotionalExpression": 0.4 },
+      "dimensionTags": {
+        "directness": 0.8,
+        "decisionSpeed": 0.7,
+        "independence": 0.7,
+        "socialEnergy": 0.6,
+        "controlNeed": 0.6,
+        "reactivity": 0.5,
+        "emotionalExpression": 0.4
+      },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "먼저 손 들고 방향을 정하는 Te와 햇볕이 같은 쪽입니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "몸이 먼저 움직이는 Se와 겹칩니다" },
-        { "target": "ENFJ", "kind": "resonance", "why": "앞에 서서 사람을 이끄는 Fe와 맞물립니다" },
-        { "target": "ISFJ", "kind": "tension", "why": "조용히 받쳐 주는 Si-Fe의 역할 기대와 가장 많이 부딪칩니다" },
-        { "target": "INFP", "kind": "tension", "why": "속으로 오래 익히는 Fi가 햇볕의 속도를 버거워합니다" },
-        { "target": "I", "kind": "conditional", "why": "내향이면 겉은 조용한데 속은 앞서 나가, 밖에서 보기와 속이 다른 사람이 됩니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "먼저 손 들고 방향을 정하는 Te와 햇볕이 같은 쪽입니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "몸이 먼저 움직이는 Se와 겹칩니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "앞에 서서 사람을 이끄는 Fe와 맞물립니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "tension",
+          "why": "조용히 받쳐 주는 Si-Fe의 역할 기대와 가장 많이 부딪칩니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "속으로 오래 익히는 Fi가 햇볕의 속도를 버거워합니다"
+        },
+        {
+          "target": "I",
+          "kind": "conditional",
+          "why": "내향이면 겉은 조용한데 속은 앞서 나가, 밖에서 보기와 속이 다른 사람이 됩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "YANG_HEAVY",
-      "sources": ["classic:sm1:原造化之始", "foundation:yin_yang:yang", "통용(성별 결합 해석은 현대 한국 명리 통념)"],
+      "sources": [
+        "classic:sm1:原造化之始",
+        "foundation:yin_yang:yang",
+        "통용(성별 결합 해석은 현대 한국 명리 통념)"
+      ],
       "confidence": "통용"
     }
   ]

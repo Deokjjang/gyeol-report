@@ -60,17 +60,53 @@
         "clash": "경금이 바로 옆에 있으면 도끼날이 줄기에 닿은 격입니다. 계획이 꺾였다 다시 서는 일이 잦지만, 불 글자가 있으면 그 쇠를 다듬어 쓸모로 바꿉니다.",
         "rule": "월지 계절(봄 +2, 겨울 +1, 여름 -1, 가을 -2) + 목 글자 수 + 수 글자 수 - 금 글자 수×1.5. structureAnalysis 강약 점수와 같은 부호면 확정, 다르면 중간으로 둔다"
       },
-      "dimensionTags": { "controlNeed": 0.6, "planning": 0.5, "riskTaking": 0.5, "persistence": 0.5, "independence": 0.5, "directness": 0.4, "statusDrive": 0.3 },
+      "dimensionTags": {
+        "controlNeed": 0.6,
+        "planning": 0.5,
+        "riskTaking": 0.5,
+        "persistence": 0.5,
+        "independence": 0.5,
+        "directness": 0.4,
+        "statusDrive": 0.3
+      },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "먼 목표를 먼저 꽂고 사람을 배치하는 Te-Ni가 이정표의 방식과 같습니다" },
-        { "target": "Ni", "kind": "resonance", "why": "몇 년 뒤 도착지를 먼저 그려 두고 지금을 맞추는 습관이 겹칩니다" },
-        { "target": "J", "kind": "resonance", "why": "정해진 방향이 있어야 마음이 놓이는 마무리 선호가 같은 쪽입니다" },
-        { "target": "ISFP", "kind": "tension", "why": "지금 마음 가는 대로 움직이는 Fi-Se에게 미리 꽂힌 이정표는 답답합니다" },
-        { "target": "ESFP", "kind": "tension", "why": "그날의 재미를 따르는 Se와 먼 목표를 미는 줄기가 속도에서 어긋납니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "먼 목표를 먼저 꽂고 사람을 배치하는 Te-Ni가 이정표의 방식과 같습니다"
+        },
+        {
+          "target": "Ni",
+          "kind": "resonance",
+          "why": "몇 년 뒤 도착지를 먼저 그려 두고 지금을 맞추는 습관이 겹칩니다"
+        },
+        {
+          "target": "J",
+          "kind": "resonance",
+          "why": "정해진 방향이 있어야 마음이 놓이는 마무리 선호가 같은 쪽입니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "tension",
+          "why": "지금 마음 가는 대로 움직이는 Fi-Se에게 미리 꽂힌 이정표는 답답합니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "그날의 재미를 따르는 Se와 먼 목표를 미는 줄기가 속도에서 어긋납니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_GAP_WOOD",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 갑목", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:甲", "foundation:heavenly_stem:甲", "v4:depth:day_master_gabmok", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 갑목",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:甲",
+        "foundation:heavenly_stem:甲",
+        "v4:depth:day_master_gabmok",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -131,17 +167,53 @@
         "clash": "신금이 바로 옆에 있으면 가지치기 가위가 닿은 격입니다. 작은 말에도 마음이 베이니, 물 글자가 사이를 이어 주는지 봅니다.",
         "rule": "월지 계절(봄 +2, 겨울 +1, 여름 -1, 가을 -2) + 목·수 글자 수 - 금 글자 수×1.5. 갑·인 의지처 있으면 +1, 겨울 습랭이면 화 1개로 상쇄하지 않는다"
       },
-      "dimensionTags": { "persistence": 0.6, "empathyResponse": 0.5, "directness": -0.5, "conflictApproach": -0.5, "socialEnergy": 0.4, "independence": -0.4, "caretaking": 0.3 },
+      "dimensionTags": {
+        "persistence": 0.6,
+        "empathyResponse": 0.5,
+        "directness": -0.5,
+        "conflictApproach": -0.5,
+        "socialEnergy": 0.4,
+        "independence": -0.4,
+        "caretaking": 0.3
+      },
       "mbtiLinks": [
-        { "target": "Fe", "kind": "resonance", "why": "상대 기분에 맞춰 몸을 휘는 방식이 Fe의 분위기 읽기와 같습니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "막히면 다른 틈을 찾는 Ne의 우회와 덩굴의 길 찾기가 겹칩니다" },
-        { "target": "ISFP", "kind": "resonance", "why": "부드러워 보여도 원하는 건 놓지 않는 Fi의 조용한 고집과 닮았습니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "정면으로 밀어붙이는 Te-Si 앞에서 돌아가는 덩굴은 답답해 보입니다" },
-        { "target": "Te", "kind": "tension", "why": "결론부터 요구하는 Te의 속도가 틈을 재는 덩굴을 재촉합니다" }
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "상대 기분에 맞춰 몸을 휘는 방식이 Fe의 분위기 읽기와 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "막히면 다른 틈을 찾는 Ne의 우회와 덩굴의 길 찾기가 겹칩니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "부드러워 보여도 원하는 건 놓지 않는 Fi의 조용한 고집과 닮았습니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "정면으로 밀어붙이는 Te-Si 앞에서 돌아가는 덩굴은 답답해 보입니다"
+        },
+        {
+          "target": "Te",
+          "kind": "tension",
+          "why": "결론부터 요구하는 Te의 속도가 틈을 재는 덩굴을 재촉합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_EUL_WOOD",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 을목", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:乙", "foundation:heavenly_stem:乙", "v4:depth:day_master_eulmok", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 을목",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:乙",
+        "foundation:heavenly_stem:乙",
+        "v4:depth:day_master_eulmok",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -202,17 +274,54 @@
         "clash": "임수가 바로 옆에 있으면 밤바다 위 조명처럼 불과 물이 맞섭니다. 기분이 크게 오르내리지만, 나무 글자가 사이에 있으면 둘이 오히려 서로를 비춥니다.",
         "rule": "월지 계절(여름 +2, 봄 +1, 가을 -1, 겨울 -2) + 목·화 글자 수 - 수 글자 수×1.5. 목과 화가 합쳐 5개 이상이면 과열 표시(강해도 overuse 1번 우선)"
       },
-      "dimensionTags": { "emotionalExpression": 0.8, "socialEnergy": 0.7, "attentionSeeking": 0.6, "verbalOutput": 0.6, "reactivity": 0.5, "intimacyPace": 0.5, "spendingControl": -0.4, "detailFocus": -0.4 },
+      "dimensionTags": {
+        "emotionalExpression": 0.8,
+        "socialEnergy": 0.7,
+        "attentionSeeking": 0.6,
+        "verbalOutput": 0.6,
+        "reactivity": 0.5,
+        "intimacyPace": 0.5,
+        "spendingControl": -0.4,
+        "detailFocus": -0.4
+      },
       "mbtiLinks": [
-        { "target": "ESFP", "kind": "resonance", "why": "그 자리 분위기를 바로 띄우는 Se-Fi와 켜지면 다 비추는 조명이 같습니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "떠오른 생각을 곧장 사람들과 나누는 Ne-Fi가 넓게 비추는 불과 겹칩니다" },
-        { "target": "E", "kind": "resonance", "why": "사람 속에서 힘이 차오르는 외향의 충전 방식과 같은 쪽입니다" },
-        { "target": "INTJ", "kind": "tension", "why": "혼자 오래 검토한 뒤 꺼내는 Ni-Te와 먼저 말하는 불이 순서에서 부딪칩니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "확인을 먼저 하는 Si에게 들뜬 즉흥 약속은 불안하게 보입니다" }
+        {
+          "target": "ESFP",
+          "kind": "resonance",
+          "why": "그 자리 분위기를 바로 띄우는 Se-Fi와 켜지면 다 비추는 조명이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "떠오른 생각을 곧장 사람들과 나누는 Ne-Fi가 넓게 비추는 불과 겹칩니다"
+        },
+        {
+          "target": "E",
+          "kind": "resonance",
+          "why": "사람 속에서 힘이 차오르는 외향의 충전 방식과 같은 쪽입니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "tension",
+          "why": "혼자 오래 검토한 뒤 꺼내는 Ni-Te와 먼저 말하는 불이 순서에서 부딪칩니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "확인을 먼저 하는 Si에게 들뜬 즉흥 약속은 불안하게 보입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_BYEONG_FIRE",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 병화", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:丙", "foundation:heavenly_stem:丙", "v4:depth:day_master_byeonghwa", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 병화",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:丙",
+        "foundation:heavenly_stem:丙",
+        "v4:depth:day_master_byeonghwa",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -273,17 +382,53 @@
         "clash": "갑목이 바로 옆에 있으면 둑에 말뚝을 박는 격입니다. 압박이 세게 오지만, 불 글자가 사이에 있으면 그 압박이 역할과 자리로 바뀝니다.",
         "rule": "월지 계절(여름 +2, 진술축미 +1, 가을·겨울 -1, 봄 -2) + 화·토 글자 수 - 목 글자 수×1.5. 수 0개이고 여름이면 건조 표시(overuse 2번)"
       },
-      "dimensionTags": { "persistence": 0.7, "reactivity": -0.6, "dutifulness": 0.6, "noveltySeeking": -0.5, "caretaking": 0.4, "trustThreshold": 0.4, "verbalOutput": -0.3 },
+      "dimensionTags": {
+        "persistence": 0.7,
+        "reactivity": -0.6,
+        "dutifulness": 0.6,
+        "noveltySeeking": -0.5,
+        "caretaking": 0.4,
+        "trustThreshold": 0.4,
+        "verbalOutput": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "한번 정한 자리를 묵묵히 지키는 Si-Te가 둑의 버팀과 같습니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "말없이 곁을 지키며 뒤를 막아 주는 Si-Fe의 보호와 겹칩니다" },
-        { "target": "Si", "kind": "resonance", "why": "익숙한 자리와 순서에서 안정을 얻는 방식이 같습니다" },
-        { "target": "ENTP", "kind": "tension", "why": "매번 판을 새로 짜는 Ne-Ti에게 꿈쩍 않는 둑은 벽처럼 느껴집니다" },
-        { "target": "ESTP", "kind": "tension", "why": "즉흥으로 방향을 트는 Se와 천천히 움직이는 흙이 속도에서 엇갈립니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "한번 정한 자리를 묵묵히 지키는 Si-Te가 둑의 버팀과 같습니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "말없이 곁을 지키며 뒤를 막아 주는 Si-Fe의 보호와 겹칩니다"
+        },
+        {
+          "target": "Si",
+          "kind": "resonance",
+          "why": "익숙한 자리와 순서에서 안정을 얻는 방식이 같습니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "매번 판을 새로 짜는 Ne-Ti에게 꿈쩍 않는 둑은 벽처럼 느껴집니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "즉흥으로 방향을 트는 Se와 천천히 움직이는 흙이 속도에서 엇갈립니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_MU_EARTH",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 무토", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:戊", "foundation:heavenly_stem:戊", "v4:depth:day_master_muto", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 무토",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:戊",
+        "foundation:heavenly_stem:戊",
+        "v4:depth:day_master_muto",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -307,7 +452,7 @@
           "장 보러 가기 전 냉장고에 남은 재료부터 사진 찍어 두고, 그걸로 만들 메뉴를 정한 뒤 나갑니다."
         ],
         "study": [
-          "노트 필기를 색깔별로 정리해 두면 시험 전 친구들이 그 노트를 빌리려고 줄을 섭니다.",
+          "시험 범위를 받으면 하루치씩 나눠 달력에 적고, 못 한 날은 다음 날 두 배로 하지 않고 하루를 통째로 뒤로 밉니다.",
           "어제 배운 걸 오늘 다시 보고 일주일 뒤 또 봅니다. 물 주듯 반복해야 머리에 뿌리가 내립니다."
         ],
         "love": [
@@ -344,17 +489,53 @@
         "clash": "을목이 바로 옆에 있으면 흙을 파고드는 잡초가 생긴 격입니다. 사소한 간섭에 신경이 쓰이니, 불 글자가 사이에서 기운을 이어 주는지 봅니다.",
         "rule": "월지 계절(여름 +2, 진술축미 +1, 가을·겨울 -1, 봄 -2) + 화·토 글자 수 - 목 글자 수×1.5. 뿌리 없는 화만 있으면 화 가점은 절반"
       },
-      "dimensionTags": { "caretaking": 0.8, "detailFocus": 0.6, "spendingControl": 0.5, "planning": 0.5, "dutifulness": 0.5, "emotionalExpression": -0.4, "boundarySetting": -0.4 },
+      "dimensionTags": {
+        "caretaking": 0.8,
+        "detailFocus": 0.6,
+        "spendingControl": 0.5,
+        "planning": 0.5,
+        "dutifulness": 0.5,
+        "emotionalExpression": -0.4,
+        "boundarySetting": -0.4
+      },
       "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "빠진 준비물을 먼저 챙기는 Si-Fe의 살림 감각이 텃밭 돌봄과 같습니다" },
-        { "target": "ESFJ", "kind": "resonance", "why": "모두가 편하도록 필요를 채워 주는 Fe-Si의 배려와 겹칩니다" },
-        { "target": "Fe", "kind": "resonance", "why": "남의 끼니와 불편을 먼저 묻는 마음 쓰기가 같은 결입니다" },
-        { "target": "INTP", "kind": "tension", "why": "원리에 빠져 생활을 잊는 Ti-Ne를 보면 텃밭 주인은 챙길 게 늘어납니다" },
-        { "target": "Ne", "kind": "tension", "why": "새 일을 계속 벌이는 Ne의 속도가 매일 같은 손질을 하는 흙과 맞지 않습니다" }
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "빠진 준비물을 먼저 챙기는 Si-Fe의 살림 감각이 텃밭 돌봄과 같습니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "모두가 편하도록 필요를 채워 주는 Fe-Si의 배려와 겹칩니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "남의 끼니와 불편을 먼저 묻는 마음 쓰기가 같은 결입니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "tension",
+          "why": "원리에 빠져 생활을 잊는 Ti-Ne를 보면 텃밭 주인은 챙길 게 늘어납니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "tension",
+          "why": "새 일을 계속 벌이는 Ne의 속도가 매일 같은 손질을 하는 흙과 맞지 않습니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_GI_EARTH",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 기토", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:己", "foundation:heavenly_stem:己", "v4:depth:day_master_gito", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 기토",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:己",
+        "foundation:heavenly_stem:己",
+        "v4:depth:day_master_gito",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -415,17 +596,53 @@
         "clash": "병화가 바로 옆에 있으면 쇠가 불에 바로 닿은 격입니다. 압박이 뜨겁게 오지만, 흙 글자가 사이에 있으면 그 열이 단련으로 바뀝니다.",
         "rule": "월지 계절(가을 +2, 진·축월 +1, 미·술월 +0.5, 봄·겨울 -1, 여름 -2) + 토·금 글자 수 - 화 글자 수×1.5. 마른 흙은 도움 점수 절반"
       },
-      "dimensionTags": { "directness": 0.8, "decisionSpeed": 0.8, "conflictApproach": 0.6, "controlNeed": 0.5, "independence": 0.5, "competitiveness": 0.4, "empathyResponse": -0.5 },
+      "dimensionTags": {
+        "directness": 0.8,
+        "decisionSpeed": 0.8,
+        "conflictApproach": 0.6,
+        "controlNeed": 0.5,
+        "independence": 0.5,
+        "competitiveness": 0.4,
+        "empathyResponse": -0.5
+      },
       "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "할 일을 자르고 결론을 내는 Te의 정리가 지렛대의 결단과 같습니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "말보다 손으로 막힌 걸 여는 Ti-Se의 해결 방식과 겹칩니다" },
-        { "target": "T", "kind": "resonance", "why": "감정보다 맞다 아니다를 먼저 가르는 판단 습관이 같습니다" },
-        { "target": "ENFJ", "kind": "tension", "why": "모두의 마음을 먼저 모으려는 Fe-Ni에게 바로 자르는 쇠는 거칠게 느껴집니다" },
-        { "target": "Fi", "kind": "tension", "why": "속마음을 천천히 꺼내는 Fi에게 '그래서 결론은?'은 상처가 됩니다" }
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "할 일을 자르고 결론을 내는 Te의 정리가 지렛대의 결단과 같습니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "말보다 손으로 막힌 걸 여는 Ti-Se의 해결 방식과 겹칩니다"
+        },
+        {
+          "target": "T",
+          "kind": "resonance",
+          "why": "감정보다 맞다 아니다를 먼저 가르는 판단 습관이 같습니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "tension",
+          "why": "모두의 마음을 먼저 모으려는 Fe-Ni에게 바로 자르는 쇠는 거칠게 느껴집니다"
+        },
+        {
+          "target": "Fi",
+          "kind": "tension",
+          "why": "속마음을 천천히 꺼내는 Fi에게 '그래서 결론은?'은 상처가 됩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_GYEONG_METAL",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 경금", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:庚", "foundation:heavenly_stem:庚", "v4:depth:day_master_gyeonggeum", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 경금",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:庚",
+        "foundation:heavenly_stem:庚",
+        "v4:depth:day_master_gyeonggeum",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -486,17 +703,53 @@
         "clash": "정화가 바로 옆에 있으면 작은 쇠에 불꽃이 닿은 격입니다. 지적과 압박에 쉽게 데니, 흙이나 물 글자가 사이에서 열을 막아 주는지 봅니다.",
         "rule": "월지 계절(가을 +2, 진·축월 +1, 봄·겨울 -1, 여름 -2) + 토·금 글자 수 - 화 글자 수×1.5. 토 4개 이상이면 묻힘 표시(점수가 높아도 overuse 2번)"
       },
-      "dimensionTags": { "perfectionism": 0.8, "detailFocus": 0.7, "boundarySetting": 0.5, "statusDrive": 0.4, "reactivity": 0.4, "intimacyPace": -0.4, "emotionalExpression": -0.3 },
+      "dimensionTags": {
+        "perfectionism": 0.8,
+        "detailFocus": 0.7,
+        "boundarySetting": 0.5,
+        "statusDrive": 0.4,
+        "reactivity": 0.4,
+        "intimacyPace": -0.4,
+        "emotionalExpression": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ISFP", "kind": "resonance", "why": "작은 색감과 질감까지 가려내는 Fi-Se의 취향 눈이 톱니의 정밀함과 같습니다" },
-        { "target": "INTJ", "kind": "resonance", "why": "스스로 정한 높은 기준으로 결과를 다듬는 Ni-Te와 겹칩니다" },
-        { "target": "Ti", "kind": "resonance", "why": "개념을 정확한 말로 쪼개 나누는 내향 사고의 분해와 같은 결입니다" },
-        { "target": "ESTP", "kind": "tension", "why": "빨리 해 보고 넘어가는 Se에게 1밀리를 맞추는 손은 느려 보입니다" },
-        { "target": "Ne", "kind": "tension", "why": "대략 큰 그림으로 넘어가는 Ne와 흠 하나에 멈추는 눈이 부딪칩니다" }
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "작은 색감과 질감까지 가려내는 Fi-Se의 취향 눈이 톱니의 정밀함과 같습니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "resonance",
+          "why": "스스로 정한 높은 기준으로 결과를 다듬는 Ni-Te와 겹칩니다"
+        },
+        {
+          "target": "Ti",
+          "kind": "resonance",
+          "why": "개념을 정확한 말로 쪼개 나누는 내향 사고의 분해와 같은 결입니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "빨리 해 보고 넘어가는 Se에게 1밀리를 맞추는 손은 느려 보입니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "tension",
+          "why": "대략 큰 그림으로 넘어가는 Ne와 흠 하나에 멈추는 눈이 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_SIN_METAL",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 신금", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:辛", "foundation:heavenly_stem:辛", "v4:depth:day_master_singeum", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 신금",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:辛",
+        "foundation:heavenly_stem:辛",
+        "v4:depth:day_master_singeum",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -513,7 +766,7 @@
         "work": [
           "자기 팀 일만 보지 않고 '이거 영업팀이랑 물류팀에도 영향 가죠?' 하고 연결 고리를 먼저 짚습니다.",
           "회의 중 떠오른 아이디어가 세 갈래로 퍼져, 끝날 때쯤엔 원래 안건보다 더 큰 그림을 그려 놓습니다.",
-          "출장이나 외근이 잦은 자리를 답답해하지 않습니다. 사무실에만 있는 주가 길어지면 오히려 몸이 처집니다."
+          "같은 자리에서 같은 일을 석 달 넘게 하면 책상 배치를 바꾸거나 다른 팀 회의에 끼어들어 새 물길을 만듭니다."
         ],
         "money": [
           "돈뿐 아니라 사람과 정보도 자산으로 셉니다. 밥값을 내고 얻은 업계 소식 한 줄을 남는 장사로 여깁니다.",
@@ -557,17 +810,54 @@
         "clash": "무토가 바로 옆에 있으면 둑이 물길을 막아선 격입니다. 답답함은 크지만, 그 둑 덕분에 흩어지던 힘이 한곳에 모입니다.",
         "rule": "월지 계절(겨울 +2, 가을 +1, 봄 -1, 여름 -2) + 금·수 글자 수 - 토 글자 수×1.5. 수 4개 이상이고 토 0개면 범람 표시(overuse 2번)"
       },
-      "dimensionTags": { "noveltySeeking": 0.7, "learningDrive": 0.6, "mobility": 0.6, "inquiry": 0.4, "socialEnergy": 0.4, "decisionSpeed": -0.4, "planning": -0.4, "detailFocus": -0.5 },
+      "dimensionTags": {
+        "noveltySeeking": 0.7,
+        "learningDrive": 0.6,
+        "mobility": 0.6,
+        "inquiry": 0.4,
+        "socialEnergy": 0.4,
+        "decisionSpeed": -0.4,
+        "planning": -0.4,
+        "detailFocus": -0.5
+      },
       "mbtiLinks": [
-        { "target": "ENTP", "kind": "resonance", "why": "흩어진 정보를 이어 큰 판을 그리는 Ne-Ti가 밀물의 연결과 같습니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "낯선 사람과 세계를 반갑게 끌어들이는 Ne-Fi와 겹칩니다" },
-        { "target": "Ne", "kind": "resonance", "why": "하나를 보면 열 갈래로 퍼지는 생각의 흐름이 같습니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "정한 순서대로 끝내는 Si-Te에게 계속 넓어지는 물길은 산만해 보입니다" },
-        { "target": "J", "kind": "tension", "why": "빨리 확정하고 싶은 마무리 선호가 결론을 미루는 밀물을 재촉합니다" }
+        {
+          "target": "ENTP",
+          "kind": "resonance",
+          "why": "흩어진 정보를 이어 큰 판을 그리는 Ne-Ti가 밀물의 연결과 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "낯선 사람과 세계를 반갑게 끌어들이는 Ne-Fi와 겹칩니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "resonance",
+          "why": "하나를 보면 열 갈래로 퍼지는 생각의 흐름이 같습니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "정한 순서대로 끝내는 Si-Te에게 계속 넓어지는 물길은 산만해 보입니다"
+        },
+        {
+          "target": "J",
+          "kind": "tension",
+          "why": "빨리 확정하고 싶은 마무리 선호가 결론을 미루는 밀물을 재촉합니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_IM_WATER",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 임수", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:壬", "foundation:heavenly_stem:壬", "v4:depth:day_master_imsu", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 임수",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:壬",
+        "foundation:heavenly_stem:壬",
+        "v4:depth:day_master_imsu",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -628,17 +918,53 @@
         "clash": "정화가 바로 옆에 있으면 물안개가 촛불을 흔드는 격입니다. 마음이 켜졌다 꺼졌다 하니, 나무 글자가 사이에서 둘을 이어 주는지 봅니다.",
         "rule": "월지 계절(겨울 +2, 가을 +1, 봄 -1, 여름 -2) + 금·수 글자 수 - 토 글자 수×1.5. 무계합은 화의 뿌리가 있을 때만 합화로 보고 아니면 점수 그대로"
       },
-      "dimensionTags": { "empathyResponse": 0.7, "introspection": 0.7, "verbalOutput": -0.5, "attentionSeeking": -0.5, "trustThreshold": 0.4, "detailFocus": 0.4, "intimacyPace": -0.4 },
+      "dimensionTags": {
+        "empathyResponse": 0.7,
+        "introspection": 0.7,
+        "verbalOutput": -0.5,
+        "attentionSeeking": -0.5,
+        "trustThreshold": 0.4,
+        "detailFocus": 0.4,
+        "intimacyPace": -0.4
+      },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "말하지 않은 마음을 먼저 읽는 Ni-Fe가 물안개의 스며듦과 같습니다" },
-        { "target": "INFP", "kind": "resonance", "why": "감정을 혼자 오래 곱씹고 이름 붙이는 Fi의 안쪽 세계와 겹칩니다" },
-        { "target": "I", "kind": "resonance", "why": "혼자 정리하는 시간이 있어야 생각이 맑아지는 충전 방식이 같습니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "바로 말하고 바로 정하는 Te에게 혼자 짐작하는 시간은 답답해 보입니다" },
-        { "target": "ESTP", "kind": "tension", "why": "부딪쳐 보고 아는 Se와 미리 공기를 읽는 물안개가 방식에서 어긋납니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "말하지 않은 마음을 먼저 읽는 Ni-Fe가 물안개의 스며듦과 같습니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "감정을 혼자 오래 곱씹고 이름 붙이는 Fi의 안쪽 세계와 겹칩니다"
+        },
+        {
+          "target": "I",
+          "kind": "resonance",
+          "why": "혼자 정리하는 시간이 있어야 생각이 맑아지는 충전 방식이 같습니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "바로 말하고 바로 정하는 Te에게 혼자 짐작하는 시간은 답답해 보입니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "부딪쳐 보고 아는 Se와 미리 공기를 읽는 물안개가 방식에서 어긋납니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "DAY_MASTER_GYE_WATER",
-      "sources": ["classic:sm1:論十干名字之義", "classic:dt:天干論 계수", "classic:sm5:卷首 印食官財 명의", "foundation:day_master:癸", "foundation:heavenly_stem:癸", "v4:depth:day_master_gyesu", "통용"],
+      "sources": [
+        "classic:sm1:論十干名字之義",
+        "classic:dt:天干論 계수",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:day_master:癸",
+        "foundation:heavenly_stem:癸",
+        "v4:depth:day_master_gyesu",
+        "통용"
+      ],
       "confidence": "통용"
     }
   ]

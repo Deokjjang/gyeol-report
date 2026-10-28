@@ -24,7 +24,7 @@
         ],
         "study": [
           "남들이 다 아는 기초 한 칸이 비어 있다는 걸 알면, 시험 범위가 아니어도 그 단원부터 다시 폅니다.",
-          "전공 수업보다 우연히 들은 교양 수업에서 흥미를 찾아 노트 한 권을 따로 채우는 사람입니다."
+          "시간표에 빈 칸이 생기면 전공과 상관없는 강의실 뒷자리에 앉아 보고, 그 과목 노트가 한 학기 뒤 가장 두꺼워져 있습니다."
         ],
         "love": [
           "연인이 다 채워 주길 바라기보다, 서로 못 채우는 한 칸은 각자 취미로 채우는 연애가 편합니다.",
@@ -74,11 +74,31 @@
         "persistence": -0.3
       },
       "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "있어야 할 의미를 스스로 찾아 채우는 Fi와 빈칸의 질문이 같은 결입니다" },
-        { "target": "INTP", "kind": "resonance", "why": "빠진 전제를 먼저 찾아내는 Ti의 눈과 공망의 감각이 겹칩니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "정해진 자리 대신 새 역할을 만들어 내는 Ne와 맞물립니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "정해진 틀을 꽉 채우는 Te-Si에게 비워 둔 칸은 미완성으로 보입니다" },
-        { "target": "Si", "kind": "tension", "why": "익숙한 것으로 자리를 채워 두려는 Si는 빈칸을 불안으로 느낍니다" }
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "있어야 할 의미를 스스로 찾아 채우는 Fi와 빈칸의 질문이 같은 결입니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "빠진 전제를 먼저 찾아내는 Ti의 눈과 공망의 감각이 겹칩니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "정해진 자리 대신 새 역할을 만들어 내는 Ne와 맞물립니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "정해진 틀을 꽉 채우는 Te-Si에게 비워 둔 칸은 미완성으로 보입니다"
+        },
+        {
+          "target": "Si",
+          "kind": "tension",
+          "why": "익숙한 것으로 자리를 채워 두려는 Si는 빈칸을 불안으로 느낍니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -89,7 +109,11 @@
         "추정(빈자리 생활 해석은 편집 판단)"
       ],
       "confidence": "학파차이",
-      "aliases": ["공망", "순공", "천중살"]
+      "aliases": [
+        "공망",
+        "순공",
+        "천중살"
+      ]
     },
     {
       "id": "shinsal:GOEGANG",
@@ -164,11 +188,31 @@
         "decisionSpeed": 0.5
       },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "목표까지 끝까지 몰아붙이는 Te의 추진과 괴강의 세기가 같은 방향입니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "위기에서 바로 뛰어드는 Se와 압박 속에서 살아나는 점이 겹칩니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "꽂힌 일에 한 번에 몰입하고 아니면 손을 놓는 Ti-Se의 폭과 맞물립니다" },
-        { "target": "ISFJ", "kind": "tension", "why": "중간을 찾아 모두를 맞추려는 Si-Fe와 양 끝만 있는 눈금이 부딪칩니다" },
-        { "target": "INFP", "kind": "tension", "why": "조용히 품고 돌려 말하는 Fi에게 괴강의 직진은 너무 큰 소리입니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "목표까지 끝까지 몰아붙이는 Te의 추진과 괴강의 세기가 같은 방향입니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "위기에서 바로 뛰어드는 Se와 압박 속에서 살아나는 점이 겹칩니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "꽂힌 일에 한 번에 몰입하고 아니면 손을 놓는 Ti-Se의 폭과 맞물립니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "tension",
+          "why": "중간을 찾아 모두를 맞추려는 Si-Fe와 양 끝만 있는 눈금이 부딪칩니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "조용히 품고 돌려 말하는 Fi에게 괴강의 직진은 너무 큰 소리입니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -180,7 +224,10 @@
         "v1:sinsal_goegang"
       ],
       "confidence": "학파차이",
-      "aliases": ["괴강", "괴강살"]
+      "aliases": [
+        "괴강",
+        "괴강살"
+      ]
     },
     {
       "id": "shinsal:YANGIN",
@@ -255,11 +302,31 @@
         "controlNeed": 0.4
       },
       "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "역할과 책임에 선을 긋는 Te와 칼날의 결이 같습니다" },
-        { "target": "ENTJ", "kind": "resonance", "why": "경쟁 앞에서 먼저 나서는 Te의 승부욕과 겹칩니다" },
-        { "target": "Se", "kind": "resonance", "why": "위협 앞에서 몸이 먼저 반응하는 Se와 맞물립니다" },
-        { "target": "INFJ", "kind": "tension", "why": "부딪치기 전에 돌아갈 길을 찾는 Ni-Fe에게 칼을 먼저 꺼내는 방식은 부담입니다" },
-        { "target": "ESFJ", "kind": "tension", "why": "모두의 기분을 맞추려는 Fe와 단칼의 거절이 어긋납니다" }
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "역할과 책임에 선을 긋는 Te와 칼날의 결이 같습니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "경쟁 앞에서 먼저 나서는 Te의 승부욕과 겹칩니다"
+        },
+        {
+          "target": "Se",
+          "kind": "resonance",
+          "why": "위협 앞에서 몸이 먼저 반응하는 Se와 맞물립니다"
+        },
+        {
+          "target": "INFJ",
+          "kind": "tension",
+          "why": "부딪치기 전에 돌아갈 길을 찾는 Ni-Fe에게 칼을 먼저 꺼내는 방식은 부담입니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "tension",
+          "why": "모두의 기분을 맞추려는 Fe와 단칼의 거절이 어긋납니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -270,7 +337,11 @@
         "통용"
       ],
       "confidence": "통용",
-      "aliases": ["양인", "양인살", "陽刃"]
+      "aliases": [
+        "양인",
+        "양인살",
+        "陽刃"
+      ]
     },
     {
       "id": "shinsal:WONJIN",
@@ -345,11 +416,31 @@
         "boundarySetting": 0.3
       },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "말과 표정의 미세한 어긋남을 읽는 Ni-Fe와 같은 예민함입니다" },
-        { "target": "ISTJ", "kind": "resonance", "why": "익숙한 방식과 다른 작은 습관을 바로 알아채는 Si와 겹칩니다" },
-        { "target": "Fi", "kind": "resonance", "why": "서운함을 속으로 오래 담아 두는 Fi와 모래알을 삼키는 방식이 같습니다" },
-        { "target": "ENTP", "kind": "tension", "why": "사소한 건 웃고 넘기는 Ne의 가벼움은 오래 남는 거슬림을 이해하기 어렵습니다" },
-        { "target": "ESTP", "kind": "tension", "why": "그 자리에서 털고 넘기는 Se와 걸음마다 신경 쓰이는 모래알이 어긋납니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "말과 표정의 미세한 어긋남을 읽는 Ni-Fe와 같은 예민함입니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "익숙한 방식과 다른 작은 습관을 바로 알아채는 Si와 겹칩니다"
+        },
+        {
+          "target": "Fi",
+          "kind": "resonance",
+          "why": "서운함을 속으로 오래 담아 두는 Fi와 모래알을 삼키는 방식이 같습니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "사소한 건 웃고 넘기는 Ne의 가벼움은 오래 남는 거슬림을 이해하기 어렵습니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "그 자리에서 털고 넘기는 Se와 걸음마다 신경 쓰이는 모래알이 어긋납니다"
+        }
       ],
       "variants": [
         {
@@ -422,7 +513,11 @@
         "추정(고전 전거 미확인)"
       ],
       "confidence": "추정",
-      "aliases": ["원진", "원진살", "怨嗔"]
+      "aliases": [
+        "원진",
+        "원진살",
+        "怨嗔"
+      ]
     },
     {
       "id": "shinsal:GWIMUN",
@@ -497,11 +592,31 @@
         "socialEnergy": -0.4
       },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "말 이전의 분위기를 읽는 Ni-Fe와 먼저 우는 풍경이 같은 결입니다" },
-        { "target": "INFP", "kind": "resonance", "why": "작은 감정 변화를 깊게 느끼는 Fi와 겹칩니다" },
-        { "target": "Ni", "kind": "resonance", "why": "설명보다 먼저 오는 예감이 Ni의 방식과 맞물립니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "확인된 사실만 믿는 Te-Si에게 근거 전의 예감은 설득력이 약합니다" },
-        { "target": "ESTP", "kind": "tension", "why": "지금 보이는 것에 반응하는 Se와 안 보이는 기류를 읽는 감각이 엇갈립니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "말 이전의 분위기를 읽는 Ni-Fe와 먼저 우는 풍경이 같은 결입니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "작은 감정 변화를 깊게 느끼는 Fi와 겹칩니다"
+        },
+        {
+          "target": "Ni",
+          "kind": "resonance",
+          "why": "설명보다 먼저 오는 예감이 Ni의 방식과 맞물립니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "확인된 사실만 믿는 Te-Si에게 근거 전의 예감은 설득력이 약합니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "지금 보이는 것에 반응하는 Se와 안 보이는 기류를 읽는 감각이 엇갈립니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -511,7 +626,11 @@
         "추정(고전 전거 미확인, 현대 적용법 기준)"
       ],
       "confidence": "추정",
-      "aliases": ["귀문", "귀문관", "鬼門關"]
+      "aliases": [
+        "귀문",
+        "귀문관",
+        "鬼門關"
+      ]
     },
     {
       "id": "shinsal:CHEONMUN",
@@ -531,7 +650,7 @@
         ],
         "money": [
           "몸과 마음을 낫게 하는 쪽에 먼저 지갑을 엽니다. 마사지, 상담, 좋은 베개에는 아끼지 않습니다.",
-          "주식 차트보다 그 회사 사람들이 무엇을 고민하는지 기사로 읽은 뒤에야 돈을 넣습니다."
+          "돈을 빌려 달라는 친구에게 금액보다 '요즘 무슨 일 있어?'를 먼저 묻고, 그 대화 끝에 돈 대신 병원 예약을 잡아 줍니다."
         ],
         "study": [
           "심리학 책이나 몸에 관한 책을 펴면 시간 가는 줄 모르고, 밑줄 친 문장을 친구에게 사진으로 보냅니다.",
@@ -586,11 +705,31 @@
         "detailFocus": -0.3
       },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "겉말 밑의 뜻을 읽는 Ni와 돌보는 Fe가 약방 서랍과 같은 결입니다" },
-        { "target": "ENFJ", "kind": "resonance", "why": "사람의 아픈 곳을 알아보고 일으켜 세우는 Fe와 겹칩니다" },
-        { "target": "INTP", "kind": "resonance", "why": "'왜'를 끝까지 묻는 Ti의 탐구가 큰 이유를 찾는 감각과 맞물립니다" },
-        { "target": "ESTP", "kind": "tension", "why": "지금 할 일에 바로 뛰어드는 Se와 이유부터 찾는 감각이 속도에서 어긋납니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "감정보다 일정을 먼저 보는 Te에게 속뜻 읽기는 돌아가는 길로 보입니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "겉말 밑의 뜻을 읽는 Ni와 돌보는 Fe가 약방 서랍과 같은 결입니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "사람의 아픈 곳을 알아보고 일으켜 세우는 Fe와 겹칩니다"
+        },
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "'왜'를 끝까지 묻는 Ti의 탐구가 큰 이유를 찾는 감각과 맞물립니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "지금 할 일에 바로 뛰어드는 Se와 이유부터 찾는 감각이 속도에서 어긋납니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "감정보다 일정을 먼저 보는 Te에게 속뜻 읽기는 돌아가는 길로 보입니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -601,7 +740,11 @@
         "추정(고전 전거 미확인)"
       ],
       "confidence": "추정",
-      "aliases": ["천문성", "천문", "天門"]
+      "aliases": [
+        "천문성",
+        "천문",
+        "天門"
+      ]
     },
     {
       "id": "shinsal:EUMCHAK_YANGCHA",
@@ -676,11 +819,31 @@
         "detailFocus": 0.3
       },
       "mbtiLinks": [
-        { "target": "INFJ", "kind": "resonance", "why": "겉말과 속뜻 사이의 틈을 의식하는 Ni-Fe와 같은 결입니다" },
-        { "target": "ISTJ", "kind": "resonance", "why": "날짜와 역할을 다시 확인하는 Si의 습관과 겹칩니다" },
-        { "target": "J", "kind": "resonance", "why": "어긋남을 계획과 확인으로 줄이려는 점이 같습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "즉흥으로 움직이는 Ne와 한 번 더 확인하는 습관이 속도에서 부딪칩니다" },
-        { "target": "ESTP", "kind": "tension", "why": "그때그때 맞추는 Se에게 미리 맞춰 두려는 마음은 답답해 보입니다" }
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "겉말과 속뜻 사이의 틈을 의식하는 Ni-Fe와 같은 결입니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "날짜와 역할을 다시 확인하는 Si의 습관과 겹칩니다"
+        },
+        {
+          "target": "J",
+          "kind": "resonance",
+          "why": "어긋남을 계획과 확인으로 줄이려는 점이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "즉흥으로 움직이는 Ne와 한 번 더 확인하는 습관이 속도에서 부딪칩니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "그때그때 맞추는 Se에게 미리 맞춰 두려는 마음은 답답해 보입니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -688,7 +851,11 @@
         "추정(관계의 어긋남 해석은 편집 판단, 고전 전거 저장소 미확보)"
       ],
       "confidence": "추정",
-      "aliases": ["음착살", "양차살", "음양차착"]
+      "aliases": [
+        "음착살",
+        "양차살",
+        "음양차착"
+      ]
     },
     {
       "id": "shinsal:CHEONRA_JIMANG",
@@ -762,10 +929,26 @@
         "riskTaking": -0.5
       },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "한 단계씩 절차를 밟는 Si-Te와 매듭 푸는 손이 같은 속도입니다" },
-        { "target": "INTJ", "kind": "resonance", "why": "막힌 판을 길게 보고 우회로를 짜는 Ni와 겹칩니다" },
-        { "target": "ENTP", "kind": "tension", "why": "막히면 다른 판으로 옮기는 Ne에게 한 매듭씩 푸는 방식은 너무 느립니다" },
-        { "target": "ESTP", "kind": "tension", "why": "즉시 돌파하려는 Se와 천천히 푸는 그물이 속도에서 부딪칩니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "한 단계씩 절차를 밟는 Si-Te와 매듭 푸는 손이 같은 속도입니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "resonance",
+          "why": "막힌 판을 길게 보고 우회로를 짜는 Ni와 겹칩니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "막히면 다른 판으로 옮기는 Ne에게 한 매듭씩 푸는 방식은 너무 느립니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "즉시 돌파하려는 Se와 천천히 푸는 그물이 속도에서 부딪칩니다"
+        }
       ],
       "engineSupport": false,
       "sources": [
@@ -773,7 +956,11 @@
         "추정(느린 일의 가치 해석은 편집 판단, 고전 전거 저장소 미확보)"
       ],
       "confidence": "추정",
-      "aliases": ["천라", "지망", "천라지망살"]
+      "aliases": [
+        "천라",
+        "지망",
+        "천라지망살"
+      ]
     }
   ]
 }

@@ -75,15 +75,43 @@
         "socialEnergy": -0.3
       },
       "mbtiLinks": [
-        { "target": "INTJ", "kind": "resonance", "why": "밤에 혼자 판을 읽고 결론을 내는 Ni의 방식이 자정의 물과 같습니다" },
-        { "target": "Ni", "kind": "resonance", "why": "드러나지 않는 흐름을 먼저 짐작하는 감각이 겹칩니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "말없이 정보를 모아 두었다가 필요할 때 정확히 쓰는 Ti-Se와 닮았습니다" },
-        { "target": "ESFJ", "kind": "tension", "why": "분위기를 바로 맞추는 Fe와 속을 늦게 여는 물이 속도에서 엇갈립니다" },
-        { "target": "E", "kind": "tension", "why": "사람 속에서 충전하는 쪽과 혼자 밤에 맑아지는 물은 에너지 방향이 반대입니다" }
+        {
+          "target": "INTJ",
+          "kind": "resonance",
+          "why": "밤에 혼자 판을 읽고 결론을 내는 Ni의 방식이 자정의 물과 같습니다"
+        },
+        {
+          "target": "Ni",
+          "kind": "resonance",
+          "why": "드러나지 않는 흐름을 먼저 짐작하는 감각이 겹칩니다"
+        },
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "말없이 정보를 모아 두었다가 필요할 때 정확히 쓰는 Ti-Se와 닮았습니다"
+        },
+        {
+          "target": "ESFJ",
+          "kind": "tension",
+          "why": "분위기를 바로 맞추는 Fe와 속을 늦게 여는 물이 속도에서 엇갈립니다"
+        },
+        {
+          "target": "E",
+          "kind": "tension",
+          "why": "사람 속에서 충전하는 쪽과 혼자 밤에 맑아지는 물은 에너지 방향이 반대입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "子",
-      "sources": ["classic:sm2:論地支 子", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:子", "deep:hidden:子", "통용"],
+      "sources": [
+        "classic:sm2:論地支 子",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:子",
+        "deep:hidden:子",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -160,15 +188,43 @@
         "emotionalExpression": -0.5
       },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "한번 정한 방식을 오래 지키는 Si의 저장 습관과 같은 결입니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "말없이 기억해 두고 챙기는 Si-Fe가 저장고와 겹칩니다" },
-        { "target": "Si", "kind": "resonance", "why": "지난 경험을 차곡차곡 쌓아 기준으로 삼는 점이 같습니다" },
-        { "target": "ENTP", "kind": "tension", "why": "새 가능성으로 계속 갈아타는 Ne와 봄까지 버티는 땅이 속도에서 부딪칩니다" },
-        { "target": "P", "kind": "tension", "why": "그때그때 바꾸는 쪽에게 축토의 '조금만 더 보자'는 답답하게 느껴집니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "한번 정한 방식을 오래 지키는 Si의 저장 습관과 같은 결입니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "말없이 기억해 두고 챙기는 Si-Fe가 저장고와 겹칩니다"
+        },
+        {
+          "target": "Si",
+          "kind": "resonance",
+          "why": "지난 경험을 차곡차곡 쌓아 기준으로 삼는 점이 같습니다"
+        },
+        {
+          "target": "ENTP",
+          "kind": "tension",
+          "why": "새 가능성으로 계속 갈아타는 Ne와 봄까지 버티는 땅이 속도에서 부딪칩니다"
+        },
+        {
+          "target": "P",
+          "kind": "tension",
+          "why": "그때그때 바꾸는 쪽에게 축토의 '조금만 더 보자'는 답답하게 느껴집니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "丑",
-      "sources": ["classic:sm2:論地支 丑", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:丑", "deep:hidden:丑", "통용"],
+      "sources": [
+        "classic:sm2:論地支 丑",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:丑",
+        "deep:hidden:丑",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -245,15 +301,43 @@
         "persistence": -0.3
       },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "판을 먼저 짜고 밀고 나가는 Te의 추진이 첫걸음의 나무와 같습니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "일단 부딪혀 보는 Se의 행동력이 새벽에 먼저 나서는 결과 겹칩니다" },
-        { "target": "Ne", "kind": "resonance", "why": "새로운 가능성을 보면 바로 시작하고 싶어지는 점이 같습니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "검증된 절차를 먼저 확인하는 Si-Te와 일단 길부터 내는 나무가 순서에서 부딪칩니다" },
-        { "target": "INFP", "kind": "tension", "why": "속도를 천천히 고르는 Fi와 먼저 뛰어나가는 인목이 결정 속도에서 어긋납니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "판을 먼저 짜고 밀고 나가는 Te의 추진이 첫걸음의 나무와 같습니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "일단 부딪혀 보는 Se의 행동력이 새벽에 먼저 나서는 결과 겹칩니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "resonance",
+          "why": "새로운 가능성을 보면 바로 시작하고 싶어지는 점이 같습니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "검증된 절차를 먼저 확인하는 Si-Te와 일단 길부터 내는 나무가 순서에서 부딪칩니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "속도를 천천히 고르는 Fi와 먼저 뛰어나가는 인목이 결정 속도에서 어긋납니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "寅",
-      "sources": ["classic:sm2:論地支 寅", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:寅", "deep:hidden:寅", "통용"],
+      "sources": [
+        "classic:sm2:論地支 寅",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:寅",
+        "deep:hidden:寅",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -329,15 +413,43 @@
         "conflictApproach": -0.6
       },
       "mbtiLinks": [
-        { "target": "ISFP", "kind": "resonance", "why": "손끝 감각과 조용한 취향을 따르는 Fi-Se가 덩굴손과 같은 결입니다" },
-        { "target": "ENFJ", "kind": "resonance", "why": "분위기를 읽고 사람을 부드럽게 이끄는 Fe가 묘목의 휘어짐과 겹칩니다" },
-        { "target": "Fe", "kind": "resonance", "why": "말보다 공기의 온도를 먼저 읽는 점이 같습니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "정면으로 지시하는 Te와 돌아서 길을 내는 덩굴이 방식에서 부딪칩니다" },
-        { "target": "T", "kind": "tension", "why": "사실부터 꺼내는 쪽의 말투가 묘목에게는 실제보다 차갑게 닿습니다" }
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "손끝 감각과 조용한 취향을 따르는 Fi-Se가 덩굴손과 같은 결입니다"
+        },
+        {
+          "target": "ENFJ",
+          "kind": "resonance",
+          "why": "분위기를 읽고 사람을 부드럽게 이끄는 Fe가 묘목의 휘어짐과 겹칩니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "말보다 공기의 온도를 먼저 읽는 점이 같습니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "정면으로 지시하는 Te와 돌아서 길을 내는 덩굴이 방식에서 부딪칩니다"
+        },
+        {
+          "target": "T",
+          "kind": "tension",
+          "why": "사실부터 꺼내는 쪽의 말투가 묘목에게는 실제보다 차갑게 닿습니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "卯",
-      "sources": ["classic:sm2:論地支 卯", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:卯", "deep:hidden:卯", "통용"],
+      "sources": [
+        "classic:sm2:論地支 卯",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:卯",
+        "deep:hidden:卯",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -362,7 +474,7 @@
         ],
         "study": [
           "과목 다섯 개를 한꺼번에 펼쳐 놓고 번갈아 보는 게 편하고, 한 과목만 오래 붙들면 오히려 졸립니다.",
-          "수업 시간엔 조용하지만, 시험 전날 친구들이 당신 노트를 찾는 건 요점이 겹겹이 정리돼 있어서입니다."
+          "문제 하나를 풀 때 풀이를 세 가지로 적어 두고, 시험장에서는 그중 가장 짧은 길을 고릅니다."
         ],
         "love": [
           "좋아하는 마음을 몇 달씩 티 내지 않다가, 상대가 다른 사람과 가까워 보이는 순간 갑자기 움직입니다.",
@@ -378,7 +490,7 @@
         ],
         "alone": [
           "혼자 있는 저녁, 휴대폰 메모장에 할 일·갖고 싶은 것·언젠가 할 일 목록을 따로 만들어 정리합니다.",
-          "겉으론 태평해 보이는 날에도 머릿속에서는 다음 달 계획이 세 갈래로 동시에 돌아갑니다."
+          "약속 없는 저녁, 휴대폰 메모에 '이사·이직·공부' 세 폴더를 열어 두고 각각 다음 달 할 일을 한 줄씩 옮겨 적습니다."
         ]
       },
       "strengths": [
@@ -414,15 +526,43 @@
         "intimacyPace": -0.4
       },
       "mbtiLinks": [
-        { "target": "INTJ", "kind": "resonance", "why": "여러 시나리오를 속에 쌓아 두고 때를 보는 Ni-Te가 젖은 땅의 품과 같습니다" },
-        { "target": "INFJ", "kind": "resonance", "why": "겉은 조용하고 속에 여러 층의 뜻을 품는 Ni의 결과 겹칩니다" },
-        { "target": "Te", "kind": "resonance", "why": "흩어진 자료를 한 장짜리 정리표로 묶는 Te의 정리 습관과 맞물립니다" },
-        { "target": "ESFP", "kind": "tension", "why": "지금 느낀 걸 바로 꺼내는 Se와 몇 주 묵혀 내놓는 진토가 속도에서 어긋납니다" },
-        { "target": "Fe", "kind": "tension", "why": "그 자리에서 감정을 나누길 원하는 쪽에게 진토의 침묵은 거리로 느껴집니다" }
+        {
+          "target": "INTJ",
+          "kind": "resonance",
+          "why": "여러 시나리오를 속에 쌓아 두고 때를 보는 Ni-Te가 젖은 땅의 품과 같습니다"
+        },
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "겉은 조용하고 속에 여러 층의 뜻을 품는 Ni의 결과 겹칩니다"
+        },
+        {
+          "target": "Te",
+          "kind": "resonance",
+          "why": "흩어진 자료를 한 장짜리 정리표로 묶는 Te의 정리 습관과 맞물립니다"
+        },
+        {
+          "target": "ESFP",
+          "kind": "tension",
+          "why": "지금 느낀 걸 바로 꺼내는 Se와 몇 주 묵혀 내놓는 진토가 속도에서 어긋납니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "tension",
+          "why": "그 자리에서 감정을 나누길 원하는 쪽에게 진토의 침묵은 거리로 느껴집니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "辰",
-      "sources": ["classic:sm2:論地支 辰", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:辰", "deep:hidden:辰", "통용"],
+      "sources": [
+        "classic:sm2:論地支 辰",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:辰",
+        "deep:hidden:辰",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -499,15 +639,43 @@
         "verbalOutput": -0.3
       },
       "mbtiLinks": [
-        { "target": "INTP", "kind": "resonance", "why": "겉으로 조용히 구조를 분해하는 Ti가 속불로 쇠를 익히는 사화와 같습니다" },
-        { "target": "ENTJ", "kind": "resonance", "why": "목표를 정하면 정확한 순간에 몰아치는 Te-Ni와 겹칩니다" },
-        { "target": "Ni", "kind": "resonance", "why": "드러나기 전의 의도를 먼저 짐작하는 감각이 같습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "사람을 쉽게 믿고 넓게 여는 Ne-Fi와 먼저 확인하는 사화가 거리감에서 부딪칩니다" },
-        { "target": "F", "kind": "tension", "why": "마음을 먼저 봐 주길 원하는 쪽에게 사화의 계산은 차갑게 보입니다" }
+        {
+          "target": "INTP",
+          "kind": "resonance",
+          "why": "겉으로 조용히 구조를 분해하는 Ti가 속불로 쇠를 익히는 사화와 같습니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "목표를 정하면 정확한 순간에 몰아치는 Te-Ni와 겹칩니다"
+        },
+        {
+          "target": "Ni",
+          "kind": "resonance",
+          "why": "드러나기 전의 의도를 먼저 짐작하는 감각이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "사람을 쉽게 믿고 넓게 여는 Ne-Fi와 먼저 확인하는 사화가 거리감에서 부딪칩니다"
+        },
+        {
+          "target": "F",
+          "kind": "tension",
+          "why": "마음을 먼저 봐 주길 원하는 쪽에게 사화의 계산은 차갑게 보입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "巳",
-      "sources": ["classic:sm2:論地支 巳", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:巳", "deep:hidden:巳", "통용"],
+      "sources": [
+        "classic:sm2:論地支 巳",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:巳",
+        "deep:hidden:巳",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -584,15 +752,43 @@
         "planning": -0.4
       },
       "mbtiLinks": [
-        { "target": "ESFP", "kind": "resonance", "why": "지금 이 순간을 크게 즐기고 나누는 Se-Fi가 한낮의 조명과 같습니다" },
-        { "target": "ENFP", "kind": "resonance", "why": "떠오르는 대로 바로 꺼내 분위기를 여는 Ne의 속도와 겹칩니다" },
-        { "target": "E", "kind": "resonance", "why": "사람 속에서 불이 더 세지는 충전 방식이 같습니다" },
-        { "target": "ISTJ", "kind": "tension", "why": "같은 속도로 오래 가는 Si와 확 타오르는 오화가 리듬에서 부딪칩니다" },
-        { "target": "INTJ", "kind": "tension", "why": "말하기 전에 오래 다듬는 Ni와 먼저 말하고 고치는 오화가 순서에서 엇갈립니다" }
+        {
+          "target": "ESFP",
+          "kind": "resonance",
+          "why": "지금 이 순간을 크게 즐기고 나누는 Se-Fi가 한낮의 조명과 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "resonance",
+          "why": "떠오르는 대로 바로 꺼내 분위기를 여는 Ne의 속도와 겹칩니다"
+        },
+        {
+          "target": "E",
+          "kind": "resonance",
+          "why": "사람 속에서 불이 더 세지는 충전 방식이 같습니다"
+        },
+        {
+          "target": "ISTJ",
+          "kind": "tension",
+          "why": "같은 속도로 오래 가는 Si와 확 타오르는 오화가 리듬에서 부딪칩니다"
+        },
+        {
+          "target": "INTJ",
+          "kind": "tension",
+          "why": "말하기 전에 오래 다듬는 Ni와 먼저 말하고 고치는 오화가 순서에서 엇갈립니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "午",
-      "sources": ["classic:sm2:論地支 午", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:午", "deep:hidden:午", "통용"],
+      "sources": [
+        "classic:sm2:論地支 午",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:午",
+        "deep:hidden:午",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -669,15 +865,43 @@
         "emotionalExpression": -0.3
       },
       "mbtiLinks": [
-        { "target": "ESFJ", "kind": "resonance", "why": "사람을 먹이고 챙기며 자리를 데우는 Fe-Si가 볕 먹은 흙의 온기와 같습니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "지난 정을 오래 기억하고 행동으로 챙기는 Si-Fe와 겹칩니다" },
-        { "target": "Fe", "kind": "resonance", "why": "갈등에서 양쪽 체면을 함께 지키려는 점이 같습니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "끝난 일을 빨리 넘기는 Te와 마무리를 오래 쥐는 미토가 속도에서 부딪칩니다" },
-        { "target": "ESTP", "kind": "tension", "why": "그 자리에서 털고 가는 Se와 잔열을 오래 품는 땅이 엇갈립니다" }
+        {
+          "target": "ESFJ",
+          "kind": "resonance",
+          "why": "사람을 먹이고 챙기며 자리를 데우는 Fe-Si가 볕 먹은 흙의 온기와 같습니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "지난 정을 오래 기억하고 행동으로 챙기는 Si-Fe와 겹칩니다"
+        },
+        {
+          "target": "Fe",
+          "kind": "resonance",
+          "why": "갈등에서 양쪽 체면을 함께 지키려는 점이 같습니다"
+        },
+        {
+          "target": "ENTJ",
+          "kind": "tension",
+          "why": "끝난 일을 빨리 넘기는 Te와 마무리를 오래 쥐는 미토가 속도에서 부딪칩니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "tension",
+          "why": "그 자리에서 털고 가는 Se와 잔열을 오래 품는 땅이 엇갈립니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "未",
-      "sources": ["classic:sm2:論地支 未", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:未", "deep:hidden:未", "통용"],
+      "sources": [
+        "classic:sm2:論地支 未",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:未",
+        "deep:hidden:未",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -754,15 +978,43 @@
         "empathyResponse": -0.5
       },
       "mbtiLinks": [
-        { "target": "ISTP", "kind": "resonance", "why": "도구를 쥐고 바로 고쳐 내는 Ti-Se가 렌치 세트와 같은 손입니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "현장에서 즉시 판단하고 움직이는 Se-Ti와 겹칩니다" },
-        { "target": "Ti", "kind": "resonance", "why": "핵심만 남기고 군더더기를 잘라 내는 판단 방식이 같습니다" },
-        { "target": "INFP", "kind": "tension", "why": "마음을 먼저 들어 주길 바라는 Fi와 해결책부터 내미는 신금이 대화에서 엇갈립니다" },
-        { "target": "ISFJ", "kind": "tension", "why": "익숙한 자리를 지키는 Si와 자꾸 옮기는 신금이 생활 리듬에서 부딪칩니다" }
+        {
+          "target": "ISTP",
+          "kind": "resonance",
+          "why": "도구를 쥐고 바로 고쳐 내는 Ti-Se가 렌치 세트와 같은 손입니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "현장에서 즉시 판단하고 움직이는 Se-Ti와 겹칩니다"
+        },
+        {
+          "target": "Ti",
+          "kind": "resonance",
+          "why": "핵심만 남기고 군더더기를 잘라 내는 판단 방식이 같습니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "마음을 먼저 들어 주길 바라는 Fi와 해결책부터 내미는 신금이 대화에서 엇갈립니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "tension",
+          "why": "익숙한 자리를 지키는 Si와 자꾸 옮기는 신금이 생활 리듬에서 부딪칩니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "申",
-      "sources": ["classic:sm2:論地支 申", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:申", "deep:hidden:申", "통용"],
+      "sources": [
+        "classic:sm2:論地支 申",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:申",
+        "deep:hidden:申",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -839,15 +1091,43 @@
         "empathyResponse": -0.4
       },
       "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "기준을 세우고 결과물을 끝까지 점검하는 Te-Si가 알곡 고르는 체와 같습니다" },
-        { "target": "ISFP", "kind": "resonance", "why": "손끝으로 다듬어 아름답게 만드는 Fi-Se의 미감과 겹칩니다" },
-        { "target": "Ti", "kind": "resonance", "why": "군더더기 없는 기준으로 맞고 틀림을 가르는 점이 같습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "대략의 느낌으로 넘어가는 Ne와 알맹이만 남기려는 유금이 부딪칩니다" },
-        { "target": "P", "kind": "tension", "why": "흐름대로 두는 쪽에게 유금의 제자리 규칙은 숨이 막히게 느껴집니다" }
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "기준을 세우고 결과물을 끝까지 점검하는 Te-Si가 알곡 고르는 체와 같습니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "resonance",
+          "why": "손끝으로 다듬어 아름답게 만드는 Fi-Se의 미감과 겹칩니다"
+        },
+        {
+          "target": "Ti",
+          "kind": "resonance",
+          "why": "군더더기 없는 기준으로 맞고 틀림을 가르는 점이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "대략의 느낌으로 넘어가는 Ne와 알맹이만 남기려는 유금이 부딪칩니다"
+        },
+        {
+          "target": "P",
+          "kind": "tension",
+          "why": "흐름대로 두는 쪽에게 유금의 제자리 규칙은 숨이 막히게 느껴집니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "酉",
-      "sources": ["classic:sm2:論地支 酉", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:酉", "deep:hidden:酉", "통용"],
+      "sources": [
+        "classic:sm2:論地支 酉",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:酉",
+        "deep:hidden:酉",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -924,15 +1204,43 @@
         "noveltySeeking": -0.4
       },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "맡은 것을 규칙대로 끝까지 지키는 Si-Te가 밤길 지키는 초소와 같습니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "자기 사람을 말없이 지키는 Si-Fe의 충직함과 겹칩니다" },
-        { "target": "J", "kind": "resonance", "why": "선을 분명히 정해 두고 지키는 습관이 같습니다" },
-        { "target": "ENFP", "kind": "tension", "why": "누구에게나 쉽게 문을 여는 Ne-Fi와 오래 시험하는 술토가 거리감에서 부딪칩니다" },
-        { "target": "Ne", "kind": "tension", "why": "새 가능성으로 계속 옮겨 가는 쪽에게 술토의 울타리는 좁게 느껴집니다" }
+        {
+          "target": "ISTJ",
+          "kind": "resonance",
+          "why": "맡은 것을 규칙대로 끝까지 지키는 Si-Te가 밤길 지키는 초소와 같습니다"
+        },
+        {
+          "target": "ISFJ",
+          "kind": "resonance",
+          "why": "자기 사람을 말없이 지키는 Si-Fe의 충직함과 겹칩니다"
+        },
+        {
+          "target": "J",
+          "kind": "resonance",
+          "why": "선을 분명히 정해 두고 지키는 습관이 같습니다"
+        },
+        {
+          "target": "ENFP",
+          "kind": "tension",
+          "why": "누구에게나 쉽게 문을 여는 Ne-Fi와 오래 시험하는 술토가 거리감에서 부딪칩니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "tension",
+          "why": "새 가능성으로 계속 옮겨 가는 쪽에게 술토의 울타리는 좁게 느껴집니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "戌",
-      "sources": ["classic:sm2:論地支 戌", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:戌", "deep:hidden:戌", "통용"],
+      "sources": [
+        "classic:sm2:論地支 戌",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:戌",
+        "deep:hidden:戌",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -957,7 +1265,7 @@
         ],
         "study": [
           "관심 있는 주제를 찾으면 영상 하나로 시작해 새벽 2시까지 관련 다큐와 논문을 줄줄이 찾아봅니다.",
-          "외워야 하는 시험보다 생각을 길게 풀어 쓰는 과제에서 점수가 잘 나옵니다."
+          "객관식보다 '네 생각을 쓰시오' 한 문제에 답안지 뒷면까지 채워 내고, 채점자가 그 답안을 수업 시간에 읽어 줍니다."
         ],
         "love": [
           "연인의 사소한 하루 이야기를 한 시간씩 들어 주고, 그 사람이 말하다 멈춘 부분을 먼저 물어봅니다.",
@@ -1009,15 +1317,43 @@
         "boundarySetting": -0.5
       },
       "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "남의 감정에 깊이 잠기고 먼 그림을 품는 Fi-Ne가 밤바다의 품과 같습니다" },
-        { "target": "INFJ", "kind": "resonance", "why": "드러나지 않는 마음을 읽고 몇 년 뒤를 그리는 Ni-Fe와 겹칩니다" },
-        { "target": "Ne", "kind": "resonance", "why": "하나의 관심이 끝없이 다른 관심으로 이어지는 점이 같습니다" },
-        { "target": "ESTJ", "kind": "tension", "why": "범위와 마감을 먼저 정하는 Te-Si와 넓게 흘러가는 해수가 일하는 방식에서 부딪칩니다" },
-        { "target": "S", "kind": "tension", "why": "눈앞의 사실부터 확인하는 쪽에게 해수의 먼 이야기는 붕 떠 보입니다" }
+        {
+          "target": "INFP",
+          "kind": "resonance",
+          "why": "남의 감정에 깊이 잠기고 먼 그림을 품는 Fi-Ne가 밤바다의 품과 같습니다"
+        },
+        {
+          "target": "INFJ",
+          "kind": "resonance",
+          "why": "드러나지 않는 마음을 읽고 몇 년 뒤를 그리는 Ni-Fe와 겹칩니다"
+        },
+        {
+          "target": "Ne",
+          "kind": "resonance",
+          "why": "하나의 관심이 끝없이 다른 관심으로 이어지는 점이 같습니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "tension",
+          "why": "범위와 마감을 먼저 정하는 Te-Si와 넓게 흘러가는 해수가 일하는 방식에서 부딪칩니다"
+        },
+        {
+          "target": "S",
+          "kind": "tension",
+          "why": "눈앞의 사실부터 확인하는 쪽에게 해수의 먼 이야기는 붕 떠 보입니다"
+        }
       ],
       "engineSupport": true,
       "engineKey": "亥",
-      "sources": ["classic:sm2:論地支 亥", "classic:sm2:論地支屬相", "classic:dt:地支論 陽支/陰支", "classic:sm2:論人元司事", "foundation:earthly_branch:亥", "deep:hidden:亥", "통용"],
+      "sources": [
+        "classic:sm2:論地支 亥",
+        "classic:sm2:論地支屬相",
+        "classic:dt:地支論 陽支/陰支",
+        "classic:sm2:論人元司事",
+        "foundation:earthly_branch:亥",
+        "deep:hidden:亥",
+        "통용"
+      ],
       "confidence": "통용"
     }
   ]

@@ -23,7 +23,12 @@
         ],
         "action": "이달은 남의 페이스를 보지 말고 지난달의 나와만 기록을 비교하세요"
       },
-      "sources": ["classic:sm5:論正財", "foundation:ten_god:bijian", "deep:ten_god:bijian", "통용"],
+      "sources": [
+        "classic:sm5:論正財",
+        "foundation:ten_god:bijian",
+        "deep:ten_god:bijian",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -48,7 +53,13 @@
         ],
         "action": "이달 사람 만나는 데 쓸 돈의 상한을 정해 두고, 넘으면 다음 약속은 다음 달로 미루세요"
       },
-      "sources": ["classic:sm5:論偏財", "classic:sm5:論正財", "foundation:ten_god:jie_cai", "deep:ten_god:jie_cai", "통용"],
+      "sources": [
+        "classic:sm5:論偏財",
+        "classic:sm5:論正財",
+        "foundation:ten_god:jie_cai",
+        "deep:ten_god:jie_cai",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -73,7 +84,13 @@
         ],
         "action": "이달 안에 끝낼 작은 결과물 하나를 정하고, 완성한 날 한 사람에게 보여 주세요"
       },
-      "sources": ["classic:sm5:論古人立印食官財名義", "classic:sm5:論倒食", "foundation:ten_god:shi_shen", "deep:ten_god:shi_shen", "통용"],
+      "sources": [
+        "classic:sm5:論古人立印食官財名義",
+        "classic:sm5:論倒食",
+        "foundation:ten_god:shi_shen",
+        "deep:ten_god:shi_shen",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -98,7 +115,13 @@
         ],
         "action": "이달 떠오른 아이디어는 바로 말하지 말고 하루 모았다가 가장 좋은 하나만 꺼내세요"
       },
-      "sources": ["classic:sm5:論傷官", "classic:sm5:論古人立印食官財名義", "foundation:ten_god:shang_guan", "deep:ten_god:shang_guan", "통용"],
+      "sources": [
+        "classic:sm5:論傷官",
+        "classic:sm5:論古人立印食官財名義",
+        "foundation:ten_god:shang_guan",
+        "deep:ten_god:shang_guan",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -123,7 +146,12 @@
         ],
         "action": "이달 새로 들어온 제안은 바로 답하지 말고, 사흘 뒤에도 하고 싶은 것만 받으세요"
       },
-      "sources": ["classic:sm5:論偏財", "foundation:ten_god:pian_cai", "deep:ten_god:pian_cai", "통용"],
+      "sources": [
+        "classic:sm5:論偏財",
+        "foundation:ten_god:pian_cai",
+        "deep:ten_god:pian_cai",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -137,7 +165,7 @@
           "연인과 데이트 비용을 어떻게 나눌지, 같이 모을 돈은 얼마인지 처음으로 진지하게 얘기합니다."
         ],
         "action": "올해 수입 하나를 정해, 받는 날 그 돈의 일정 비율을 바로 다른 통장으로 옮기는 규칙을 만드세요",
-        "caution": "정재는 일간이 튼튼할 때 내 손에 남는 돈입니다. 고전은 재가 많고 몸이 약하면 오히려 재에 끌려다닌다고 봤어요. 일간이 약하면 돈 걱정이 커지고, 아끼느라 기회를 놓치는 구조입니다."
+        "caution": "정재는 일간이 튼튼할 때 내 손에 남는 돈입니다. 고전은 재가 많고 일간이 약하면 오히려 재에 끌려다닌다고 봤어요. 일간이 약하면 돈 걱정이 커지고, 아끼느라 기회를 놓치는 구조입니다."
       },
       "month": {
         "meaning": "이달은 작고 확실한 돈에 눈이 가는 달입니다. 월급 밖의 소소한 수입이 생기거나, 새는 고정비를 정리하기 좋아요.",
@@ -148,7 +176,13 @@
         ],
         "action": "이달은 통장 앱을 열어 석 달간 자동으로 빠져나간 돈을 한 줄씩 확인하세요"
       },
-      "sources": ["classic:sm5:論正財", "classic:sm5:卷首 印食官財 명의", "foundation:ten_god:zheng_cai", "deep:ten_god:zheng_cai", "통용"],
+      "sources": [
+        "classic:sm5:論正財",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:ten_god:zheng_cai",
+        "deep:ten_god:zheng_cai",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -173,7 +207,13 @@
         ],
         "action": "이달은 할 일을 기한 순으로 다시 세우고, 가장 무서운 일을 월요일 오전에 먼저 치우세요"
       },
-      "sources": ["classic:sm5:論偏官", "classic:sm5:卷首 印食官財 명의", "foundation:ten_god:qi_sha", "deep:ten_god:qi_sha", "통용"],
+      "sources": [
+        "classic:sm5:論偏官",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:ten_god:qi_sha",
+        "deep:ten_god:qi_sha",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -198,7 +238,13 @@
         ],
         "action": "이달 처리할 공식 서류와 신청 마감일을 달력에 모두 옮기고, 끝낸 것부터 지우세요"
       },
-      "sources": ["classic:sm5:論正官", "classic:sm5:卷首 印食官財 명의", "foundation:ten_god:zheng_guan", "deep:ten_god:zheng_guan", "통용"],
+      "sources": [
+        "classic:sm5:論正官",
+        "classic:sm5:卷首 印食官財 명의",
+        "foundation:ten_god:zheng_guan",
+        "deep:ten_god:zheng_guan",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -223,7 +269,13 @@
         ],
         "action": "이달 알아본 것은 금요일마다 한 장 메모로 줄이고, 결정할 일은 그 메모를 보고 바로 정하세요"
       },
-      "sources": ["classic:sm5:論倒食", "classic:sm5:論古人立印食官財名義", "foundation:ten_god:pian_yin", "deep:ten_god:pian_yin", "통용"],
+      "sources": [
+        "classic:sm5:論倒食",
+        "classic:sm5:論古人立印食官財名義",
+        "foundation:ten_god:pian_yin",
+        "deep:ten_god:pian_yin",
+        "통용"
+      ],
       "confidence": "통용"
     },
     {
@@ -248,7 +300,13 @@
         ],
         "action": "이달은 조언을 구할 사람 한 명에게 구체적인 질문 세 개를 들고 찾아가세요"
       },
-      "sources": ["classic:sm5:論印綬", "classic:sm5:論古人立印食官財名義", "foundation:ten_god:zheng_yin", "deep:ten_god:zheng_yin", "통용"],
+      "sources": [
+        "classic:sm5:論印綬",
+        "classic:sm5:論古人立印食官財名義",
+        "foundation:ten_god:zheng_yin",
+        "deep:ten_god:zheng_yin",
+        "통용"
+      ],
       "confidence": "통용"
     }
   ]
