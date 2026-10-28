@@ -66,16 +66,49 @@
         "clash": "충을 받으면 정상이 흔들립니다. 자리를 두고 다툼이 생기는 구조로 읽되 결과는 정하지 않습니다.",
         "rule": "양간 순행: 甲→卯 丙戊→午 庚→酉 壬→子. 음간은 역행(乙→寅 丁己→巳 辛→申 癸→亥)과 양간 동일 두 학파. 엔진 미구현(P2)"
       },
-      "dimensionTags": { "controlNeed": 0.8, "competitiveness": 0.8, "statusDrive": 0.7, "independence": 0.7, "directness": 0.6, "riskTaking": 0.4, "empathyResponse": -0.3 },
+      "dimensionTags": {
+        "controlNeed": 0.8,
+        "competitiveness": 0.8,
+        "statusDrive": 0.7,
+        "independence": 0.7,
+        "directness": 0.6,
+        "riskTaking": 0.4,
+        "empathyResponse": -0.3
+      },
       "mbtiLinks": [
-        { "target": "ENTJ", "kind": "resonance", "why": "책임지고 밀어붙이는 Te의 기세가 한낮의 해와 같습니다" },
-        { "target": "ESTJ", "kind": "resonance", "why": "조직의 꼭대기를 향하는 Te-Si와 겹칩니다" },
-        { "target": "ESTP", "kind": "resonance", "why": "위기에 몸으로 나서는 Se와 맞물립니다" },
-        { "target": "INFP", "kind": "tension", "why": "앞에 서기보다 뒤에서 느끼는 Fi가 왕의 자리에서 버거워합니다" },
-        { "target": "ISFP", "kind": "tension", "why": "경쟁보다 자기 속도를 지키는 Fi-Se가 정상의 기세와 어긋납니다" }
+        {
+          "target": "ENTJ",
+          "kind": "resonance",
+          "why": "책임지고 밀어붙이는 Te의 기세가 한낮의 해와 같습니다"
+        },
+        {
+          "target": "ESTJ",
+          "kind": "resonance",
+          "why": "조직의 꼭대기를 향하는 Te-Si와 겹칩니다"
+        },
+        {
+          "target": "ESTP",
+          "kind": "resonance",
+          "why": "위기에 몸으로 나서는 Se와 맞물립니다"
+        },
+        {
+          "target": "INFP",
+          "kind": "tension",
+          "why": "앞에 서기보다 뒤에서 느끼는 Fi가 왕의 자리에서 버거워합니다"
+        },
+        {
+          "target": "ISFP",
+          "kind": "tension",
+          "why": "경쟁보다 자기 속도를 지키는 Fi-Se가 정상의 기세와 어긋납니다"
+        }
       ],
       "engineSupport": false,
-      "sources": ["classic:sm2:論五行旺相休囚死並寄生十二宮 帝旺", "classic:dt:地支論 陽順陰逆", "foundation:twelve_stage:yang", "통용"],
+      "sources": [
+        "classic:sm2:論五行旺相休囚死並寄生十二宮 帝旺",
+        "classic:dt:地支論 陽順陰逆",
+        "foundation:twelve_stage:diwang",
+        "통용"
+      ],
       "confidence": "학파차이"
     }
   ]
