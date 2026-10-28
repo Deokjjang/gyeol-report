@@ -1,0 +1,39 @@
+import { mkdirSync, writeFileSync } from "node:fs";
+import { gzipSync } from "node:zlib";
+import { it, expect } from "vitest";
+import { generateReportSnapshot } from "@/lib/payment/paidReportReliability";
+import { generateProductReport } from "@/lib/report-generation/generateProductReport";
+import { validateNewProductPublication } from "@/lib/report-generation/productPublishGate";
+import { generateV4ShadowReport } from "@/lib/interpretation-v4/runtimeShadow";
+import { validateV4Publication } from "@/lib/interpretation-v4/runtimeProjection";
+import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "../../tests/unit/interpretation-v4/runtimeFixtures";
+
+const OUT = process.env.P01_OUT!;
+const runtime = { enabled: false as const, reason: "flag_disabled" as const };
+const payloadOf = (product: string) => RUNTIME_FIXTURES.map((f) => f.payload as Record<string, unknown>).find((p) => p.productKey === product)!;
+const COMBOS = [
+  ["annual_fortune", "v4"], ["career_money_study", "legacy"], ["career_money_study", "v4"], ["love_marriage_child", "v4"],
+  ["major_fortune", "v4"], ["saju_mbti_compatibility", "legacy"], ["saju_mbti_compatibility", "v4"], ["saju_mbti_full", "legacy"], ["saju_mbti_full", "v4"],
+] as const;
+
+it("generate phase0 (kst-v2) snapshots for production version combos", { timeout: 0 }, async () => {
+  mkdirSync(OUT, { recursive: true });
+  const summary: string[] = [];
+  for (const [product, kind] of COMBOS) {
+    // Legacy (pre-v3) contract: unversioned input, no content/role version.
+    const { productOptions: _options, compatibilityRoleVersion: _role, ...legacyPayload } = payloadOf(product);
+    void _options; void _role;
+    const payload = kind === "v4" ? payloadOf(product) : legacyPayload;
+    const job = { payload, product_type: product, report_id: `p01-${product}-${kind}`, created_at: "2026-10-01T00:00:00.000Z" };
+    const out = kind === "v4"
+      ? await generateReportSnapshot(job, runtime, "deterministic_fallback", () => generateV4ShadowReport(payload, SHADOW_CLOCK), validateV4Publication)
+      : await generateReportSnapshot(job, runtime, "deterministic_fallback", generateProductReport, validateNewProductPublication);
+    expect(out.success, `${product} ${kind} ${JSON.stringify("code" in out ? [out.code, "errors" in out ? out.errors : ""] : "")}`).toBe(true);
+    if (!out.success) continue;
+    const s = out.snapshot as Record<string, unknown>;
+    const ev = s.evidencePacket as Record<string, unknown>;
+    summary.push(`${product} productVersion=${s.productVersion} calendarVersion=${s.calendarVersion} calendarCalculationVersion=${s.calendarCalculationVersion} ev.calendarVersion=${ev?.calendarVersion} ev.calendarCalculationVersion=${ev?.calendarCalculationVersion}`);
+    writeFileSync(`${OUT}/${product}-${s.productVersion}.json.gz`, gzipSync(JSON.stringify(s)));
+  }
+  writeFileSync(`${OUT}/summary.txt`, summary.join("\n") + "\n");
+});
