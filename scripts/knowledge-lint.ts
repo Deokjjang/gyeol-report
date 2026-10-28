@@ -7,7 +7,8 @@
  *
  * 검사: zod 스키마 → id 무결성(중복·fusion myeongriId·차원 id·id-map) → 영역별 scene ≥ 2(스키마) → 이미지 필수(스키마)
  *      → 중복 문장 0(가족 간 포함) → 이미지 중복 0(전체) → 금지 표현(정보량 0·확정 예언·비하·흐린 말투) → 한자 금지(이름·출처 제외)
- *      → 문장 길이(≤90) · 한자어 연속 상한 → 용어 누출(장면 문장에 MBTI 코드·명리 일반 용어 금지) → mbtiLinks ≥ 2(스키마) → 위치 가족 positionNuance 필수.
+ *      → 문장 길이(≤90) · 한자어 연속 상한 → 용어 누출(장면 문장에 MBTI 코드·명리 일반 용어 금지) → mbtiLinks ≥ 2(스키마) → 위치 가족 positionNuance 필수
+ *      → Fusion 같은 유형 안 반복 구절(12자 창)·MBTI 원문 복사(14자 창)·고정 공식 유형당 1회.
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -168,7 +169,7 @@ function lintMbtiFile(path: string) {
 }
 function lintProfile(file: string, p: MbtiProfile) {
   const w = p.type;
-  if (mbtiTypesSeen.has(p.type)) fail(file, w, "MBTI 유형 중복"); mbtiTypesSeen.add(p.type);
+  if (mbtiTypesSeen.has(p.type)) fail(file, w, "MBTI 유형 중복"); mbtiTypesSeen.add(p.type); profilesByType.set(p.type, p);
   checkProse(file, `${w}.oneLiner`, p.oneLiner);
   checkImage(file, `${w}.image`, p.image);
   p.cognitiveFunctions.forEach((c, i) => checkProse(file, `${w}.fn[${i}]`, c.easy));
@@ -198,7 +199,42 @@ function lintFusionFile(path: string) {
     if (x.dimension && dimensionIds.size && !dimensionIds.has(x.dimension)) fail(file, x.id, "차원 id 미해결", x.dimension);
     checkProse(file, `${x.id}.why`, x.why);
     if (x.scene) checkProse(file, `${x.id}.scene`, x.scene, { scene: true });
-    fusionRules.push(x);
+    fusionRules.push(x); fusionFileOf.set(x.id, file);
+  }
+}
+
+/**
+ * 한 고객 리포트에는 같은 MBTI 대상의 Fusion 여러 개가 함께 나온다 → 같은 유형 안에서 구절 반복·MBTI 원문 복사·고정 공식을 막는다.
+ * 창 비교(공백 정규화, MBTI 코드·인지기능 코드가 걸친 창은 문장 틀이라 제외, 한글 3자 이상 포함 창만). gold.json 이 먼저 기준이 된다.
+ */
+const fusionFileOf = new Map<string, string>();
+const profilesByType = new Map<string, MbtiProfile>();
+const REPEAT_WINDOW = 12, PROFILE_WINDOW = 14;
+const FORMULA = /둘이 (겹치면|만나면)/;
+function windows(s: string, w: number) {
+  const n = s.replace(/\s+/g, " ").replace(/\b[EI][NS][TF][JP]\b/g, "#").replace(/\b[NSTF][ei]\b/g, "@");
+  const out = new Set<string>(); for (let i = 0; i + w <= n.length; i++) { const x = n.slice(i, i + w); if (/[가-힣]{3}/.test(x) && !/[#@]/.test(x)) out.add(x); } return out;
+}
+function lintFusionRepetition() {
+  const isGold = (r: FusionRule) => Number(fusionFileOf.get(r.id) === "fusion/gold.json");
+  const byType = new Map<string, FusionRule[]>();
+  for (const r of [...fusionRules].sort((a, b) => isGold(b) - isGold(a))) byType.set(r.mbtiTarget, [...(byType.get(r.mbtiTarget) ?? []), r]);
+  for (const [type, rules] of byType) {
+    const seen = new Map<string, string>(); let formula = 0;
+    const p = profilesByType.get(type);
+    const profileWins = new Set(p ? [p.oneLiner, ...p.cognitiveFunctions.map(c => c.easy), ...DOMAINS.flatMap(d => p.signals[d]), ...p.shadows].flatMap(s => [...windows(s, PROFILE_WINDOW)]) : []);
+    for (const r of rules) {
+      const file = fusionFileOf.get(r.id) ?? "fusion";
+      for (const [k, text] of [["why", r.why], ["scene", r.scene ?? ""]] as const) {
+        const ws = windows(text, REPEAT_WINDOW);
+        const hit = [...ws].find(w => seen.has(w) && seen.get(w) !== r.id);
+        if (hit) fail(file, `${r.id}.${k}`, "유형 내 반복 구절", `「${hit}」 ← ${seen.get(hit)}`);
+        for (const w of ws) if (!seen.has(w)) seen.set(w, r.id);
+        const copied = [...windows(text, PROFILE_WINDOW)].find(w => profileWins.has(w));
+        if (copied) fail(file, `${r.id}.${k}`, "MBTI 원문 복사", `「${copied}」`);
+      }
+      if (FORMULA.test(r.why) && ++formula > 1) fail(file, `${r.id}.why`, "고정 공식 반복(유형당 1회)", r.why.match(FORMULA)?.[0]);
+    }
   }
 }
 
@@ -301,7 +337,7 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintCompatSymmetry(); lintTimeline(); lintNarratives(); lintIdMap();
+  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;

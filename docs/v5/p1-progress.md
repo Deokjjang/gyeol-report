@@ -10,7 +10,7 @@
 | 1 현황 조사 → p1-knowledge-plan.md | 완료 | 1a061fff. V4 DB·knowledge-v5 v1·연구용 DB(foundation-deep 236k자) |
 | 2 스키마 v2 + lint v2 + v1 legacy/ 이동 | 완료 | 1a061fff. `schema.ts`, `scripts/knowledge-lint.ts`(--only/--strict/--coverage), `scripts/knowledge-render.ts` |
 | 3 기준 항목 20개 → p1-gold-samples.md | 완료 | 18 명리 + ENTJ·INFP + Fusion 3. lint 0. pbcopy 완료 |
-| 4 대량 작성 (가족별 배치) | 진행 중 (명리 26/28 배치, MBTI 16/16, Timeline 완료, Fusion 6 배치 진행) | 배치 브리프 `docs/v5/p1-batch-brief.md`. 아래 배치 표 |
+| 4 대량 작성 (가족별 배치) | 완료 (명리 254, MBTI 16, Fusion 376, Timeline 전부) | 배치 브리프 `docs/v5/p1-batch-brief.md`. 아래 배치 표 |
 | 5 품질 게이트 (검수 로그·커버리지·테스트) | 대기 | |
 | 6 완료·병합·보고 | 대기 | |
 
@@ -32,14 +32,14 @@
 | F1 | myeongri/element-02.json | element 목·화 (STRONG/WEAK/MISSING/BALANCED) 8 | 완료 |
 | F2 | myeongri/element-03.json | element 토·금 8 + 수 MISSING·BALANCED 2 | 완료 |
 | F3 | myeongri/yin-yang-02.json | yinYang 6 | 완료 |
-| G1~G4 | myeongri/climate-01..04.json | climate 40, 10개씩 | G1·G2·G3 완료, G4 진행 중 |
-| H1 | myeongri/structure-01.json | structure 14 | 진행 중 |
+| G1~G4 | myeongri/climate-01..04.json | climate 40, 10개씩 | 완료 |
+| H1 | myeongri/structure-01.json | structure 14 | 완료 |
 | M1~M4 | mbti/<TYPE>.json | MBTI 14 (ENTJ·INFP 제외), 3~4개씩 | 완료 (16/16) |
-| X1~X6 | fusion/batch-0N.json | Fusion 300+ (상위 60 장면) | 진행 중 (후보 373, 장면 필수 60) |
+| X1~X6 | fusion/<TYPE>.json (배치 후 유형별 재편) | Fusion 300+ (상위 60 장면) | 완료 (373 + gold 3, 전부 장면). R1~R4 유형 내 반복 재작성 |
 | T1~T3 | timeline/ganji.json | 60간지 연·월 | 완료 (60) |
 | T4 | timeline/ten-god-period.json | 십성 10 × 연/월 | 완료 |
 | T5 | timeline/badges.json, flow-rule.json, action-templates.json + 테스트 | 메인 | 완료 |
-| Z | id-map.json | V4·v1 → v2 id 매핑 | 생성(id 301), structure 착륙 후 검증 |
+| Z | id-map.json | V4·v1 → v2 id 매핑 | 완료 (301, newId 미해결 0) |
 
 ## 엔진 사실 (2026-10-28 확인)
 - `src/lib/saju/`가 내는 id: 신살 27 코드(`ShinsalCode`), 십성 10(한자), 오행 라벨 15(`ElementLabel`), 음양 3, 일간 10, 구조 패턴 14.
@@ -53,3 +53,6 @@
 - (P1-D5) 조후 40개는 전체 스키마. 사용자 확인.
 - (P1-D6) 연구용 DB 추출은 별도 패스 대신 각 가족 배치가 자기 대상의 foundation·deep 항목을 grep해 출처로 쓴다. 출처 없으면 confidence=추정. 근거: 단순함.
 - (P1-D7) 서브에이전트는 커밋하지 않는다. 메인이 검수 후 배치 단위로 커밋.
+- (P1-D8) Fusion 파일은 MBTI 유형별(`fusion/<TYPE>.json`). 근거: 한 리포트는 한 유형의 Fusion만 쓰므로 반복 검수·수정 단위가 유형이다. 배치 출처는 `p1-fusion-candidates.json`.
+- (P1-D9) Fusion 배치 규칙의 sources 끝 표기는 `추정`으로 통일(쌍 결합은 편집 판단, 전승 근거 아님). gold 3개만 `통용`/V4 출처 유지.
+- (P1-D10) lint에 Fusion 유형 내 반복 규칙 추가: 같은 유형 안 12자 창 반복 금지, MBTI 원문 14자 창 복사 금지, '둘이 겹치면/만나면' 유형당 1회. 근거: 제품 규칙 '같은 성향 반복 금지'를 기계로 강제. 무대(단톡방 등) 상한은 lint 밖, 리뷰 로그에 수치로 기록.
