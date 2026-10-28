@@ -29,3 +29,10 @@
 | G3 climate-03 (10) | 庚:winter (+보고) | PASS | 겨울 경금 '손에 쩍 붙는 철봉' + 조후 근거(정화·병화 없으면 의욕 바닥) 명확 |
 | M4 ESTP·ESFP | ESTP 21 장면 | PASS, 수정 2 | ESTP '덮개를 열고 손을 넣어 보고 있습니다' 우수. 수정: ESTP alone '비행기표 검색'(상투) → 세차장; ESFP money 자동이체(조언형) → 고깃집·적금 장면 |
 | T1 ganji (60) | (보고 기준, 5 연 mood) | PASS | 시간의 날씨로 씀, 인물 성향 없음. 추정 8(현대 물상 이미지) 허용 |
+| G1 climate-01 (10) | 甲:winter (+보고) | PASS | '언 땅의 겨울나무', 보일러 켜고 속 이야기 — 계절 근거 선명 |
+| G2 climate-02 (10) | 丁:winter (+보고) | PASS | '겨울밤 연탄불' 포장마차, 조후 근거(갑목 없고 물 많으면) 명확 |
+| F2 element-03 (10) | METAL:MISSING (+보고) | PASS | '자물쇠 없는 대문' + 보완(하루 하나 '안 해요') 우수. BALANCED 3 추정 타당 |
+| M1 INTJ·INTP·ENTP·INFJ | (보고 기준) | PASS, 수정 2 | INTJ marriage 리모컨(누구나) → 줄자·도면 장면; INFJ marriage 라벨 → 식탁 의자 당겨 앉는 장면 |
+| M2 ENFJ·ENFP·ISTJ·ISFJ | ENFP·ISTJ 14 장면 | PASS, 수정 1 | ISTJ '엔진오일 교체 날짜' 최상. ENFP study 알록달록 계획표(상투) → 영상 세 개·문제 0장 |
+| M3 ESTJ·ESFJ·ISTP·ISFP | (보고 기준) | PASS | ISTP '흔들리는 의자 다리를 조여 놓습니다' 우수. 궁합표 대칭은 lint로 강제 |
+| 궁합표 대칭 결정 | 전체 | 규칙 | 불일치 시 MBTI_TYPES 순서가 앞선 유형의 판정을 채택(INTJ↔ESTP/ESFP → 노력), why는 유지 |
