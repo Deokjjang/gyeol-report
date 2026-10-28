@@ -17,6 +17,11 @@ const mbtiFilter = opt("--mbti")?.split(",");
 const fusionFilter = opt("--fusion")?.split(",");
 const out = opt("--out");
 const title = opt("--title") ?? "knowledge-v5 항목";
+/** --sample 0.2 [--seed 7]: 선택된 집합에서 결정론 무작위 20%를 뽑는다(검수 패킷). */
+const sampleFrac = opt("--sample") ? Number(opt("--sample")) : null;
+const seed = Number(opt("--seed") ?? 20261028);
+function mulberry32(a: number) { return () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function sample<T>(arr: T[]): T[] { if (sampleFrac === null) return arr; const rnd = mulberry32(seed); const n = Math.max(1, Math.round(arr.length * sampleFrac)); return [...arr].map(v => [rnd(), v] as const).sort((a, b) => a[0] - b[0]).slice(0, n).map(([, v]) => v); }
 const readJson = (p: string) => JSON.parse(readFileSync(p, "utf8"));
 const listJson = (dir: string) => (existsSync(dir) ? readdirSync(dir).filter(f => f.endsWith(".json")).sort().map(f => join(dir, f)) : []);
 
@@ -57,11 +62,11 @@ const features: MyeongriFeature[] = listJson(join(DATA, "myeongri")).flatMap(p =
 const profiles: MbtiProfile[] = listJson(join(DATA, "mbti")).flatMap(p => readJson(p).profiles as MbtiProfile[]);
 const fusion: FusionRule[] = listJson(join(DATA, "fusion")).flatMap(p => readJson(p).rules as FusionRule[]);
 const pickF = features.filter(f => (idFilter ? idFilter.includes(f.id) : true) && (familyFilter ? f.family === familyFilter : true));
-const ordered = idFilter ? idFilter.map(id => pickF.find(f => f.id === id)).filter((f): f is MyeongriFeature => !!f) : pickF;
+const ordered = sample(idFilter ? idFilter.map(id => pickF.find(f => f.id === id)).filter((f): f is MyeongriFeature => !!f) : pickF);
 if (ordered.length) lines.push("# 명리 요소", "", ...ordered.flatMap(renderFeature));
-const pickP = profiles.filter(p => (mbtiFilter ? mbtiFilter.includes(p.type) : !idFilter && !familyFilter));
+const pickP = sample(profiles.filter(p => (mbtiFilter ? mbtiFilter.includes(p.type) : !idFilter && !familyFilter)));
 if (pickP.length) lines.push("# MBTI", "", ...pickP.flatMap(renderProfile));
-const pickX = fusion.filter(r => (fusionFilter ? fusionFilter.includes(r.id) : !idFilter && !familyFilter && !mbtiFilter));
+const pickX = sample(fusion.filter(r => (fusionFilter ? fusionFilter.includes(r.id) : !idFilter && !familyFilter && !mbtiFilter)));
 if (pickX.length) lines.push("# Fusion", "", ...pickX.flatMap(renderFusion));
 const text = lines.join("\n") + "\n";
 if (out) { writeFileSync(join(ROOT, out), text); console.log(`wrote ${out} (${text.length} chars, features ${ordered.length}, mbti ${pickP.length}, fusion ${pickX.length})`); } else process.stdout.write(text);
