@@ -1,0 +1,1385 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X6), 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:dayPillar:甲戌:ISTJ",
+      "myeongriId": "dayPillar:甲戌",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "ruleAdherence",
+      "score": 3,
+      "why": "갑술은 가을 언덕 갈림길에 박힌 이정표라, 바람이 불어도 처음 정한 화살표를 꺾지 않습니다. ISTJ는 Si로 지난 기록을 기준 삼고 Te로 체크리스트를 닫습니다. 그래서 '정한 대로'를 한 번 더 지키는, 팀의 기준표 같은 사람이 됩니다.",
+      "scene": "급하게 바뀐 지시가 내려온 금요일 오후, 지난달 합의한 회의록을 출력해 와서 '여기 이렇게 정했었죠' 하고 형광펜 친 줄을 짚습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲戌",
+        "mbti:ISTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁卯:ISFP",
+      "myeongriId": "dayPillar:丁卯",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 2.68,
+      "why": "정묘는 창가의 가는 향처럼 방 안 공기를 조용히 바꾸는 불인데, 거절할 문장을 고르다 '응'이 먼저 나갑니다. ISFP 역시 Fi의 기준은 또렷한데 Se로 상대 목소리의 떨림까지 받아 버립니다. 남의 기분을 먼저 데우느라 내 싫음은 연기처럼 흘려보내는 사람입니다.",
+      "scene": "친구가 고른 식당이 사실 별로인데 '여기 좋다' 하고 따라 들어갑니다. 대신 디저트 가게만큼은 몰래 찾아 둔 곳으로 조용히 데려갑니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁卯",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:stem:壬:ESTP",
+      "myeongriId": "stem:壬",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "mobility",
+      "score": 2.57,
+      "why": "임수는 막히면 옆으로 돌아서라도 멀리 흘러가는 큰물입니다. ESTP의 Se는 현장 공기를 몸으로 먼저 읽고, Ti는 직접 해서 되는 길만 남깁니다. 길이 끊긴 자리에서 지도를 펴기 전에 이미 우회로를 달리고 있는 사람입니다.",
+      "scene": "출장 가는 고속도로가 공사로 막히자 안내를 기다리지 않고 바로 국도로 빠집니다. 도착해서는 '덕분에 맛집 하나 찾았어요' 하고 사진을 내밉니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:壬",
+        "mbti:ESTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:己亥:ISFP",
+      "myeongriId": "dayPillar:己亥",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 2.53,
+      "why": "기해는 강 한가운데 모래톱처럼 떠내려온 것을 쉬게 하면서도 물길은 막지 않는 흙입니다. ISFP의 Fi와 Se는 말보다 손으로 마음을 건네는 쪽을 택합니다. 위로를 문장 대신 물건과 온도로 전하고, 그사이 자기 피로는 뒤로 미룹니다.",
+      "scene": "아픈 친구 집 문고리에 죽 한 그릇과 손글씨 쪽지를 걸어 두고 초인종도 누르지 않은 채 돌아섭니다. 집에 와서야 자기 저녁을 거른 걸 압니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己亥",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:己亥:ISFJ",
+      "myeongriId": "dayPillar:己亥",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 2.51,
+      "why": "앉은자리에 재물 글자가 깔린 기해는 남의 필요부터 계산하고 자기 몫을 맨 뒤에 둡니다. ISFJ의 Si는 누가 시럽을 빼는지까지 기억하고, Fe는 말하기 전에 담요를 건넵니다. 챙김이 생활 기술이 된 사람이라, 고맙다는 말이 사라질 때 가장 먼저 지칩니다.",
+      "scene": "이사한 동료 집들이에 가기 전 욕실 크기를 슬쩍 물어 딱 맞는 수건걸이를 사 갑니다. 정작 자기 집 현관 전구는 석 달째 나가 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "결혼 생활 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己亥",
+        "mbti:ISFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ENFP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 2.48,
+      "why": "병화는 밤 운동장 조명탑처럼 켜지는 순간 판 전체를 밝히고 사람을 불러 모읍니다. ENFP는 Ne로 간판 하나에서 계획 다섯 개를 떠올리고 Fi의 진심을 얼굴에 그대로 싣습니다. 떠오른 것을 숨길 이유가 없는 두 힘이 만나, 아이디어가 문서보다 사람 입에 먼저 퍼집니다.",
+      "scene": "퇴근길 지하철에서 떠오른 여행 계획을 단톡방에 올리고, 내릴 역에 닿기 전에 숙소 후보 세 곳과 날짜 투표까지 띄워 놓습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ENFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁丑:ISTJ",
+      "myeongriId": "dayPillar:丁丑",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "persistence",
+      "score": 2.44,
+      "why": "정축은 얼어붙은 땅 위에서 밤새 꺼지지 않는 등불이라, 하루 조금씩 쌓는 일에서 오래 갑니다. ISTJ의 Si는 매일 같은 양을 채우고 Te는 숫자 하나도 그냥 넘기지 않습니다. 꾸준함과 아끼는 손이 겹쳐, 작은 수입을 몇 해씩 쌓아 살림의 바닥을 다지는 사람입니다.",
+      "scene": "눈 오는 아침에도 정해 둔 시간에 일어나, 손으로 쓰는 장부에 어제 마신 커피값 4,500원을 적고 나서야 현관문을 엽니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁丑",
+        "mbti:ISTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙寅:ESFP",
+      "myeongriId": "dayPillar:丙寅",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 2.38,
+      "why": "병인은 동트기 전 산길 맨 앞에서 소나무 횃불을 든 사람처럼 무리를 출발선에 세웁니다. ESFP의 Se는 음악이 바뀌면 몸이 먼저 반응하고, 겉도는 사람을 가운데로 끌어옵니다. 판을 여는 불과 판을 즐기는 감각이 만나 모임의 시작 버튼이 늘 이 사람 손에 있습니다.",
+      "scene": "회사 체육대회 날 아침 다들 쭈뼛거릴 때 확성기를 먼저 집어 들고 '우리 팀 이쪽으로 모여요!'를 외칩니다. 응원 구호도 그 자리에서 지어 냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙寅",
+        "mbti:ESFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:branch:申:ESTP",
+      "myeongriId": "branch:申",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "decisionSpeed",
+      "score": 2.33,
+      "why": "신금은 오후 네 시 공구함의 렌치처럼, 막힌 곳을 빠르게 찾아 고치고 옮기는 쇠입니다. ESTP는 Se로 현장을 먼저 읽고 Ti로 되는 방법만 손에 남깁니다. 판단과 몸이 같은 박자로 움직여, 남들이 고민하는 사이에 이미 고쳐 놓은 사람이 됩니다.",
+      "scene": "행사장 음향이 끊기자 담당자를 찾기 전에 무대 뒤로 들어가 케이블을 하나씩 뽑아 봅니다. 2분 뒤 마이크가 살아나고, 아무 일 없던 듯 자리로 돌아옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:申",
+        "mbti:ESTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ESTJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.31,
+      "why": "정관은 규칙과 약속, 자기 자리를 지키는 것으로 신뢰를 쌓는 힘입니다. ESTJ의 Te는 누가 맡고 언제 끝내는지를 정해야 마음이 놓이고, Si는 지난 매뉴얼을 기본값으로 꺼냅니다. 이 사람의 '하겠습니다'는 이미 일정표에 적힌 문장이라 믿음을 사지만, 예외가 필요한 날엔 원칙이 먼저 나와 차가워 보입니다.",
+      "scene": "부서 회식비 정산이 하루 늦어지자 담당자에게 '규정상 오늘 6시까지예요'라고 보내고, 영수증 사본을 날짜순으로 묶어 직접 제출합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ESTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊辰:ISTJ",
+      "myeongriId": "dayPillar:戊辰",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2.28,
+      "why": "무진은 봄비를 잔뜩 받아 두고도 둑이 흔들리지 않는 흙댐이라, 일과 자원이 몰릴수록 중심을 잡습니다. ISTJ는 Si로 기록을 날짜별로 쌓고 Te로 할 일을 잘게 쪼갭니다. 다 받아 두는 둑과 기록하는 손이 만나, 넘치기 직전까지 말없이 버티는 사람입니다.",
+      "scene": "부서 통합으로 서류가 두 배가 된 주에도 퇴근 전 30분을 남겨 그날 받은 업무를 엑셀에 한 줄씩 적어 둡니다. 동료들은 그 파일부터 찾아 엽니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊辰",
+        "mbti:ISTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:stem:甲:ESTJ",
+      "myeongriId": "stem:甲",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 2.25,
+      "why": "갑목은 돌 틈을 밀어내고 곧게 솟는 죽순처럼 빈자리에 첫 기둥을 박습니다. ESTJ는 Te로 담당과 마감을 정하고 Si로 해 봐서 된 순서를 지킵니다. 방향을 먼저 세우는 나무에 일정표가 붙으니, 남에게도 그 방향을 그대로 따르라고 밀어붙이는 날이 생깁니다.",
+      "scene": "동네 축구 모임에서 아무도 총무를 안 맡자 그날 밤 회비 계좌와 경기 일정표를 만들어 공지합니다. 다음 달엔 지각 벌금 규칙까지 생겨 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:甲",
+        "mbti:ESTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:庚:autumn:ENTJ",
+      "myeongriId": "climate:庚:autumn",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "competitiveness",
+      "score": 2.22,
+      "why": "가을의 경금은 거두고 자르는 철에 난 낫이라 결실을 매듭짓는 데 강하고, 비교될수록 실력이 오릅니다. ENTJ의 Te는 안 되는 이유를 가장 싫어하고 Ni는 3년 뒤 그림을 먼저 봅니다. 승부욕과 결론 욕심이 같은 쪽을 향해, 다듬어 줄 불이 없으면 이길 필요 없는 싸움까지 끝까지 갑니다.",
+      "scene": "분기 실적에서 2등을 한 다음 날 아침, 1등 팀 자료를 출력해 빨간 펜으로 차이를 표시하고 다음 분기 목표 숫자를 손으로 다시 적습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:庚:autumn",
+        "mbti:ENTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙未:ISFJ",
+      "myeongriId": "dayPillar:乙未",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 2.18,
+      "why": "을미는 마른 여름 마당에서 담장을 타고 올라 잎 그늘 아래 호박을 키워 내는 넝쿨입니다. ISFJ는 Si로 사람에 대한 작은 기억을 오래 저장하고 Fe로 필요를 먼저 채웁니다. 먹이고 챙기는 손이 겹쳐 정은 넉넉한데, 거절을 못 해 내 시간이 남지 않는 달이 옵니다.",
+      "scene": "회사 냉장고에 이름 붙은 반찬통이 세 개 있는데 전부 남 주려고 싸 온 겁니다. 정작 본인 점심은 편의점 삼각김밥 하나로 때웁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙未",
+        "mbti:ISFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:癸卯:ISFJ",
+      "myeongriId": "dayPillar:癸卯",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 2.15,
+      "why": "계묘는 봄 개울가 미나리꽝처럼 얕은 물을 쉬지 않고 대 주며 관계를 키웁니다. ISFJ의 Fe는 상대 표정의 작은 변화를 먼저 보고, Si는 지난달 이사한 사람을 잊지 않습니다. 조금씩 자주 챙기는 습관이 같아 곁의 사람이 편해지지만, '싫어'는 둘 다 늦게 나옵니다.",
+      "scene": "동료 생일을 달력에 적어 두었다가 당일 아침 책상에 작은 화분과 메모를 올려 둡니다. 그날 떠넘겨진 야근 부탁에는 결국 '괜찮아요'라고 답합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸卯",
+        "mbti:ISFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁亥:INFP",
+      "myeongriId": "dayPillar:丁亥",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 2.11,
+      "why": "정해는 깊은 밤 출렁이는 배 안에서 항로 한 줄을 비추는 작은 램프입니다. INFP의 Fi는 '나답냐'로 결정하고 Si는 상처의 세부까지 저장합니다. 흔들리는 물 위의 불과 오래 품는 마음이 만나, 하루치 말을 밤새 다시 비춰 보는 사람이 됩니다.",
+      "scene": "퇴근 후 침대에 누워 팀장이 한 말을 떠올리다 결국 일어나 노트에 그 문장을 옮겨 적습니다. 그 아래에 하고 싶었던 대답을 세 줄 씁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁亥",
+        "mbti:INFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:乙亥:INFP",
+      "myeongriId": "dayPillar:乙亥",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 2.09,
+      "why": "을해는 물컵에 꽂아 둔 덩굴처럼 흙 없이도 뿌리를 내리고 사람의 감정을 흡수합니다. INFP는 Fi로 받은 감정을 깊이 머금고 Ne로 그 의미를 열 갈래로 늘립니다. 듣는 품은 넓은데 결정은 '다 들어 보고'로 미뤄져, 마지막 한 표를 남에게 맡기기 쉽습니다.",
+      "scene": "친구 둘이 각자 서로의 서운함을 털어놓은 주말, 양쪽 이야기를 다 들어 주고는 누구 편도 못 든 채 새벽까지 두 대화창을 번갈아 엽니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:乙亥",
+        "mbti:INFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:YANGIN:ISFP",
+      "myeongriId": "shinsal:YANGIN",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 2.08,
+      "why": "양인은 왕좌 옆에서 칼자루에 손을 얹은 호위무사라, 내 것이 흔들리면 '아니'가 빨리 나옵니다. ISFP는 Fi의 기준이 또렷하면서도 싫다는 말을 미루다 한 번에 정리합니다. 속의 칼은 날카롭고 겉의 표현은 순해서, 선을 넘은 순간 단칼에 끊어 주변이 놀랍니다.",
+      "scene": "조별 과제에서 누가 자기 디자인을 말없이 바꾼 걸 발견한 밤, 원본 파일로 되돌려 놓고 단톡방에 '이 부분은 제가 맡을게요' 한 줄만 남깁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "다툼 사건 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:YANGIN",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁亥:ISFP",
+      "myeongriId": "dayPillar:丁亥",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 2.06,
+      "why": "물 위에서 바람을 많이 타는 정해의 불은 상대 기준에 쉽게 물들고, 실망은 말없이 거리로 표현합니다. ISFP 역시 Fi의 판단을 겉으로 꺼내지 않고 Se로 분위기의 온도만 먼저 느낍니다. 섬세하게 맞춰 주다 혼자 식는 사람이라, 이유 한 줄을 남기는 연습이 관계를 지킵니다.",
+      "scene": "카페에서 친구가 고른 자리가 에어컨 바로 밑인데 말없이 겉옷을 걸칩니다. 그날 밤 일기장에는 '다음엔 창가 자리 말하기'라고 적습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁亥",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:MISSING:ESFP",
+      "myeongriId": "element:FIRE:MISSING",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 2.05,
+      "why": "화 없음은 불을 넣은 적 없는 온돌방처럼 속의 기쁨을 겉으로 꺼내는 연습이 적은 상태입니다. ESFP는 Se로 이 자리의 색을 받아들이고, 분위기를 지키려 속마음을 웃음 뒤에 숨기곤 합니다. 판은 잘 띄우는데 내 진짜 기분을 데울 불은 약해서, 괜찮은 척하는 시간이 길어집니다.",
+      "scene": "생일 파티 사회까지 보며 모두를 웃겨 놓고, 집에 와서 '오늘 즐거웠어?'라는 엄마 질문엔 '응, 그냥' 하고 방문을 닫습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:MISSING",
+        "mbti:ESFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:己卯:ISFJ",
+      "myeongriId": "dayPillar:己卯",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 2.03,
+      "why": "기묘는 칸칸이 흙을 채운 모종판이라 싹마다 물 양을 다르게 맞춰 줍니다. ISFJ의 Si는 사람별 취향을 날짜처럼 기억하고 Fe는 말 꺼내기 전에 먼저 움직입니다. 사람마다 다른 필요를 맞추는 정밀함이 같아서, 정작 '나는 이거'를 고를 때 가장 오래 망설입니다.",
+      "scene": "팀 간식을 주문할 때 단 걸 못 먹는 사람, 우유를 못 먹는 사람 몫까지 따로 표시해 장바구니를 채웁니다. 자기 것은 맨 마지막에 남는 걸로 집습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己卯",
+        "mbti:ISFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲寅:ESTP",
+      "myeongriId": "dayPillar:甲寅",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 2.01,
+      "why": "갑인은 아무도 안 오른 바위벽에 첫 볼트를 박는 선두 등반가로, 남이 낸 길보다 내가 낼 길에서 힘이 납니다. ESTP의 Se는 덮개를 열고 손부터 넣고, Ti는 해서 안 되면 바로 버립니다. 규칙보다 직진이 먼저라 말도 정면으로 나가니, 정산과 뒷수습을 봐 줄 사람이 곁에 있으면 좋습니다.",
+      "scene": "새로 들어간 동호회 첫날, 기존 코스가 지루하다며 '다음 주엔 저 뒷산 능선으로 가 보죠' 하고 지도 앱 경로를 단톡방에 바로 올립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲寅",
+        "mbti:ESTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OFFICER:STRONG:ESTJ",
+      "myeongriId": "tenGodBalance:OFFICER:STRONG",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 2,
+      "why": "관성 과다는 완장을 세 개 찬 반장처럼 책임과 규칙이 사방에서 눌러 긴장이 잘 안 풀리는 상태입니다. ESTJ는 Te로 기준을 먼저 세우고, Fi가 가장 늦게 깨어 서운함을 꾹 누릅니다. 맡은 일은 흔들림 없이 끝내지만, 쉬는 법을 일정에 넣지 않으면 사소한 실수에 크게 터집니다.",
+      "scene": "가족 여행 첫날 숙소에 들어서자마자 다음 날 동선표를 냉장고에 붙이고, 회사 메일함 안 읽은 숫자를 0으로 만든 뒤에야 짐을 풉니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OFFICER:STRONG",
+        "mbti:ESTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ISFP",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.98,
+      "why": "경금은 녹슨 문도 한 번에 비틀어 여는 지렛대라, 아니면 아니라고 끊고 결정을 끝냅니다. ISFP는 Fi의 기준을 조용히 품고, 바깥 틀을 세우는 Te가 가장 늦게 옵니다. 속에는 끊는 쇠가 있는데 겉은 부드럽게 미루니, 참다 한 번 자를 때 날이 예상보다 셉니다.",
+      "scene": "약속을 자꾸 미루는 친구에게 몇 달 동안 '괜찮아'만 보내다가, 어느 날 '이제 내가 먼저 연락하진 않을게' 한 줄을 남기고 대화방을 나옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:STRONG:ESFP",
+      "myeongriId": "element:FIRE:STRONG",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1.95,
+      "why": "화 과다는 장작더미에 불이 한꺼번에 옮겨붙듯 표현과 열정이 먼저 타오릅니다. ESFP는 Se로 음악이 바뀌면 몸이 먼저 움직이고 Fi의 좋음을 얼굴에 그대로 띄웁니다. 같은 온도의 두 불이 만나 자리를 데우는 속도는 최고인데, 연료가 닳는 속도도 함께 빨라집니다.",
+      "scene": "금요일 밤 회식을 노래방 3차까지 끝까지 끌고 간 다음, 토요일엔 휴대폰을 무음으로 둔 채 오후 세 시까지 이불 밖으로 나오지 못합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:STRONG",
+        "mbti:ESFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:element:METAL:STRONG:ESTJ",
+      "myeongriId": "element:METAL:STRONG",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.93,
+      "why": "금 과다는 칼꽂이에 빈틈없이 꽂힌 식칼처럼 자르고 끝맺는 힘이 셉니다. ESTJ의 Te는 사실·기준·결과로 일을 가르고 Si는 지난 규칙을 기본값으로 둡니다. 맞는 말과 빠른 결정이 한꺼번에 나와 일은 깔끔하게 끝나지만, 사람들이 이 사람 앞에서 말을 고르기 시작합니다.",
+      "scene": "주간 회의 안건이 다섯 개를 넘자 '오늘은 위 세 개만 정하고 나머지는 메일로 받겠습니다'라고 자르고, 정확히 40분에 회의를 닫습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "element:METAL:STRONG",
+        "mbti:ESTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ISTJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "detailFocus",
+      "score": 1.92,
+      "why": "기토는 베란다 텃밭 상자처럼 작은 자리에 씨를 품고 매일 물을 줘 먹을 것을 길러 냅니다. ISTJ는 Si로 작년 이맘때 기록을 꺼내고 Te로 틀린 숫자 하나를 잡아냅니다. 지겨운 반복을 견디는 손이 둘이라 결과가 해마다 두꺼워지지만, '이 정도면 됐다'는 선은 늦게 그어집니다.",
+      "scene": "출근 전 10분, 베란다 상추 화분에 물을 주고 벽에 붙인 표에 날짜와 물 양을 적습니다. 석 달째 한 칸도 비어 있지 않습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ISTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:丁:autumn:ISTJ",
+      "myeongriId": "climate:丁:autumn",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "spendingControl",
+      "score": 1.89,
+      "why": "가을의 정화는 작은 버너 불꽃으로 무쇠 팬을 달궈 실속을 남기는 불이고, 재성이 강해 '그럼 비용은?'이 먼저 나옵니다. ISTJ는 Si로 오래 검증된 것만 믿고 Te로 지출 칸을 채웁니다. 들어온 것을 쪼개 관리하는 습관이 겹쳐, 약한 소리는 아끼고 계산은 정확한 사람이 됩니다.",
+      "scene": "친구들과 캠핑 장을 보고 오는 길에 영수증을 찍어 품목별 정산표를 보냅니다. 남은 숯 한 봉지 값까지 따로 빼서 적어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "climate:丁:autumn",
+        "mbti:ISTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:stem:壬:ENTP",
+      "myeongriId": "stem:壬",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.87,
+      "why": "임수는 여러 지류를 다 받아 안고 바다로 나가는 강 하구라 서로 다른 생각과 분야를 섞어 냅니다. ENTP의 Ne는 이야기 하나에서 다섯 방향을 열고 Ti는 거기에 일부러 반박을 붙입니다. 넓은 그릇과 갈래 치는 머리가 만나 새 연결은 끝없이 나오는데, 둑이 없으면 마무리가 미끄러집니다.",
+      "scene": "점심 수다에서 나온 반려동물 얘기와 회사 물류 얘기를 엮어 '이거 합치면 서비스 되겠는데?' 하며 냅킨에 구조도를 그립니다. 다음 주엔 또 다른 냅킨입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:壬",
+        "mbti:ENTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊子:ENFP",
+      "myeongriId": "dayPillar:戊子",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.85,
+      "why": "무자는 한겨울에도 마르지 않는 돌우물이라 뚜껑을 덮어 두고 쓸 만큼만 퍼 올립니다. ENFP의 Ne는 떠오르는 대로 판을 벌이고, Fi의 진심은 얼굴에 바로 드러납니다. 속으로 최악까지 셈하는 땅과 먼저 뛰어드는 불씨가 한 사람 안에서 줄다리기를 해, 지갑을 열다가도 멈칫합니다.",
+      "scene": "여행 사이트에서 마음에 드는 숙소를 장바구니에 넣어 놓고 사흘째 결제를 못 합니다. 그사이 엑셀로 이번 달 남은 돈을 두 번 계산해 봅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊子",
+        "mbti:ENFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:MALE:ESTJ",
+      "myeongriId": "yinYang:YANG_HEAVY:MALE",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 1.84,
+      "why": "양이 많은 남성은 밀고 나가는 힘에 '남자답다'는 칭찬까지 붙어 아무도 브레이크를 걸어 주지 않습니다. ESTJ의 Te는 책임을 맡고 일정을 당기며, Fi는 가장 늦게 깨어 지침을 숨깁니다. 앞장서는 것이 당연해진 사람이라 집에서도 상의보다 결정이 먼저 나옵니다.",
+      "scene": "명절 귀성 날짜를 가족 단톡방에 묻기도 전에 기차표 네 장을 예매해 캡처를 올리고, 출발 시간에 맞춰 누구를 먼저 깨울지까지 적어 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "결혼 생활 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY:MALE",
+        "mbti:ESTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:INFJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.82,
+      "why": "계수는 화초 잎에 뿌린 물안개처럼 보이지 않게 스며들어, 말하지 않은 마음을 먼저 알아챕니다. INFJ의 Ni는 근거보다 '이렇게 될 것 같아'가 먼저 오고, Fe는 남의 감정을 내 일처럼 받습니다. 작은 신호를 읽는 힘은 정확한데, 확인하지 않은 뜻까지 혼자 추측해 밤이 길어집니다.",
+      "scene": "점심 자리에서 후배가 수저를 평소보다 늦게 드는 걸 보고, 오후 세 시쯤 사내 메신저로 '아까 괜찮았어요? 커피 한 잔 할래요' 하고 조용히 묻습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:INFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_NYEONSAL:ENFP",
+      "myeongriId": "shinsal:TWELVE_NYEONSAL",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.8,
+      "why": "년살은 막 씻고 단장한 얼굴처럼 꾸밈과 호기심으로 눈길을 붙드는 별이라, 새것을 먼저 써 보고 퍼뜨립니다. ENFP의 Ne는 새 취향을 계속 실험하고 Fi는 '이건 내 거'를 단번에 고릅니다. 유행을 한 철 먼저 입는 사람이지만, 설렘이 식으면 다음 것으로 옮겨 가는 속도도 빠릅니다.",
+      "scene": "새로 생긴 팝업 매장에 첫날 줄을 서서 들어가고, 산 소품을 그날 저녁 방 한쪽에 진열해 사진을 돌립니다. 지난달 산 소품은 서랍 안에 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_NYEONSAL",
+        "mbti:ENFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:己:winter:ENFP",
+      "myeongriId": "climate:己:winter",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "spendingControl",
+      "score": 1.78,
+      "why": "겨울의 기토는 물은 넘치는데 얼어 있어 볕이 들 때까지 움직이지 않고, 가진 것을 쉽게 새지 않게 지킵니다. ENFP는 Ne로 일단 판을 벌이고, Te는 흥미가 식으면 일정표를 서랍에 넣습니다. 지키려는 흙과 벌이려는 불씨가 부딪쳐, 시작 버튼 앞에서 걱정과 설렘이 번갈아 켜집니다.",
+      "scene": "1월 첫 주에 '올해는 이거 배운다'며 학원 상담을 세 곳 받아 놓고, 등록비 앞에서는 날 풀리면 하겠다며 달력의 3월에 동그라미를 칩니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "climate:己:winter",
+        "mbti:ENFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_JANGSEONGSAL:ISFP",
+      "myeongriId": "shinsal:TWELVE_JANGSEONGSAL",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 1.75,
+      "why": "장성살은 진영 한복판에 깃발을 꽂는 장수의 기운이라, 이끄는 자리에서 편해지고 지는 걸 못 견딥니다. ISFP는 옆에서 누가 지시하면 손이 굳고, 혼자 맡겨질 때 결과물을 끝까지 다듬습니다. 앞에 서라는 기운과 뒤에서 조용히 만들고 싶은 마음이 당겨, 자기 영역에서만 깃발을 듭니다.",
+      "scene": "회의에선 거의 말이 없다가 자기가 맡은 포스터 시안 얘기가 나오자 '이 색은 바꾸지 말아 주세요'라고 또렷하게 말해 다들 고개를 듭니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_JANGSEONGSAL",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OUTPUT:STRONG:ISTJ",
+      "myeongriId": "tenGodBalance:OUTPUT:STRONG",
+      "mbtiTarget": "ISTJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.73,
+      "why": "식상 과다는 압력밥솥 추처럼 말과 아이디어가 쉬지 않고 흘러나와, 낡은 규칙에 첫 질문을 던집니다. ISTJ의 Si는 지난번에 통한 방법을 기준으로 삼고 Ne는 가장 늦게 옵니다. 바꾸고 싶은 입과 지키고 싶은 손이 한 몸에 있어, 제안서를 써 놓고도 기존 양식에 맞춰 다시 고칩니다.",
+      "scene": "업무 개선 아이디어를 메모장에 열 개 적어 두고도, 회의에서는 '기존 방식에서 하나만 바꾸면 어떨까요' 하며 딱 한 개만 조심스럽게 꺼냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OUTPUT:STRONG",
+        "mbti:ISTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:丙:spring:ENFP",
+      "myeongriId": "climate:丙:spring",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.7,
+      "why": "봄의 병화는 봄 나무를 땔감 삼아 점점 커지는 불이라 처음 보는 사이도 금세 데웁니다. ENFP는 Ne로 새 사람과 새 계획에 불이 켜지고, Fi의 반가움을 숨기지 않습니다. 둘 다 시작에 강해서 약속이 감당할 크기를 넘기 쉬우니, 벌이기 전에 하루 식히면 불이 오래 갑니다.",
+      "scene": "사월 주말 강변 공원에서 옆 돗자리 사람들과 김밥을 나눠 먹다가, 해 질 무렵엔 다음 달 캠핑 단톡방을 같이 만들고 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:丙:spring",
+        "mbti:ENFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OFFICER:WEAK:INTP",
+      "myeongriId": "tenGodBalance:OFFICER:WEAK",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.67,
+      "why": "관성 부족은 줄 없는 공책처럼 나를 묶는 틀이 약해 자유롭지만 마감 앞에서 흔들립니다. INTP는 Ti로 누가 말했는지보다 논리가 맞는지를 보고, '왜 이렇게 하죠?'가 납득돼야 움직입니다. 서열에 눌리지 않는 머리에 바깥 규칙까지 비어 있어, 이유가 분명하면 누구보다 빠르고 아니면 끝없이 미룹니다.",
+      "scene": "출퇴근 시간이 자유로운 연구실에서 밤 11시에 가장 집중이 잘 돼, 동료들이 아침에 출근하면 새벽 3시에 보낸 메일이 이미 와 있습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OFFICER:WEAK",
+        "mbti:INTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YIN_HEAVY:ENFP",
+      "myeongriId": "yinYang:YIN_HEAVY",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 1.65,
+      "why": "음 과다는 암실 인화지처럼 천천히 떠오르는 구성이라, 움직이기 전에 보고 모으고 기다립니다. ENFP는 Ne로 떠오르면 바로 꺼내고 Fi의 진심을 얼굴에 싣는 사람입니다. 겉은 밝게 말을 쏟는데 진짜 결정과 속마음은 혼자 돌아와 늦게 내려, 친한 사람도 한 박자 늦게 압니다.",
+      "scene": "모임에서는 누구보다 신나게 계획을 떠들다가, 집에 와서 이불 속에서 메모장에 '진짜 하고 싶은 것' 목록을 따로 적습니다. 그 목록은 아무에게도 안 보여 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YIN_HEAVY",
+        "mbti:ENFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YIN_HEAVY:MALE:INFJ",
+      "myeongriId": "yinYang:YIN_HEAVY:MALE",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.65,
+      "why": "음이 많은 남성은 해 진 뒤 꽃잎을 여는 달맞이꽃처럼 모으고 기다리는 힘이 커, '앞장서라'는 기대와 자주 엇갈립니다. INFJ의 Ni는 판이 어디로 갈지 먼저 보고 Fe는 남의 감정을 내 일처럼 받습니다. 다 읽고 늦게 말하는 방식이 겹쳐, 마음은 확실한데 표현이 계절 하나쯤 늦습니다.",
+      "scene": "동창 모임에서 친구가 웃으며 넘긴 이직 얘기를 기억해 두었다가, 일주일 뒤 혼자 산책하던 밤에 '그거 진짜 괜찮아?'라고 긴 메시지를 씁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YIN_HEAVY:MALE",
+        "mbti:INFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:element:METAL:STRONG:ENTJ",
+      "myeongriId": "element:METAL:STRONG",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.63,
+      "why": "칼집 밖에 나와 있는 칼처럼, 금 과다는 맞는 말을 먼저 내보냅니다. ENTJ의 Te는 결론과 효율을 묻고 Fi는 상대 마음을 가장 늦게 봅니다. 날카로움에 속도까지 붙으면 일은 하루 만에 정리되는데, 곁의 후배는 '그래서 결론은?' 한마디에 시험받는 기분이 듭니다.",
+      "scene": "후배가 공들인 기획서 첫 장을 넘기자마자 '목표 숫자가 없네요' 하며 펜으로 동그라미를 칩니다. 퇴근길에야 칭찬을 하나도 안 했다는 게 떠오릅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "element:METAL:STRONG",
+        "mbti:ENTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:CHEONMUN:INFJ",
+      "myeongriId": "shinsal:CHEONMUN",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.61,
+      "why": "천문성은 증상을 듣고 약초 서랍 하나를 정확히 여는 약방 주인처럼 겉말 밑의 속뜻을 알아봅니다. INFJ는 Ni로 사람이 어디로 흘러갈지 보고, Fe로 그 감정을 대신 앓습니다. 아픈 곳을 짚는 눈이 두 겹이라 상담 창구가 되기 쉬우니, 답을 아는 날일수록 질문으로 돌려주는 편이 덜 지칩니다.",
+      "scene": "새벽 한 시까지 친구 고민을 들어 주다 '네가 화난 건 사실 그 말투 때문이잖아'라고 짚어 주고, 전화를 끊은 뒤에야 내일 마감 파일을 엽니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:CHEONMUN",
+        "mbti:INFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:element:WATER:STRONG:INTJ",
+      "myeongriId": "element:WATER:STRONG",
+      "mbtiTarget": "INTJ",
+      "kind": "conditional",
+      "dimension": "inquiry",
+      "score": 1.58,
+      "why": "수 과다는 장마철 불어난 강처럼 생각이 바닥까지 내려가 사람과 상황을 깊이 읽습니다. INTJ의 Ni도 흩어진 단서를 한 그림으로 모으지만, Te가 그것을 계획표로 옮겨 물길을 내 줍니다. 깊이는 같이 가고 결정은 Te가 끊어 주니, 계획표를 쓰는 날은 맑고 생각만 굴리는 날은 잠깁니다.",
+      "scene": "새벽 두 시 책상에서 진로를 놓고 시나리오를 여섯 개 써 내려가다, 노트 맨 아래에 '금요일까지 결정'이라고 적고 나서야 불을 끕니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:WATER:STRONG",
+        "mbti:INTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:relation:STEM_HAP:ENFJ",
+      "myeongriId": "relation:STEM_HAP",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.57,
+      "why": "천간합은 드러난 두 글자가 손을 맞잡아 발걸음이 같아지는 관계라, 짝이 빨리 생기고 한쪽 마음이 다른 쪽에 묶입니다. ENFJ의 Fe는 방 안 기분을 온도계처럼 읽고, Ni는 그 사람의 내일을 먼저 믿습니다. 맞추는 힘이 겹쳐 둘이 하는 일에선 빛나지만, 상대 뜻을 따라가다 내 일을 미루기 쉽습니다.",
+      "scene": "동기가 자격증 공부를 시작하자 같은 날 같은 교재를 사서 매일 밤 아홉 시 화상 스터디를 엽니다. 정작 자기가 하려던 영어 공부는 다음 달로 밀립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "relation:STEM_HAP",
+        "mbti:ENFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:spring:ENFJ",
+      "myeongriId": "climate:壬:spring",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 1.56,
+      "why": "봄의 임수는 꽃 피는 산마다 물을 대 주느라 자기 바닥이 드러나는 계곡입니다. ENFJ의 Fe는 겉도는 사람을 대화 안으로 데려오고 Ni는 2년 뒤 그 사람의 모습을 그립니다. 사람을 키우는 데 물을 다 쓰는 방향이 같아, 대가를 말하는 연습이 없으면 퍼 준 만큼 갑자기 지칩니다.",
+      "scene": "후배 셋의 이력서를 주말 내내 한 줄씩 고쳐 주고 면접 질문까지 뽑아 보낸 뒤, 일요일 밤 혼자 소파에 앉아 '나는 뭐 하고 있지' 하고 멍해집니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:spring",
+        "mbti:ENFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:MALE:ISTP",
+      "myeongriId": "yinYang:YANG_HEAVY:MALE",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 1.54,
+      "why": "양이 많은 남성은 가속 페달만 닳은 승합차처럼 출발이 빠르고, 몸으로 부딪쳐 배우는 힘이 큽니다. ISTP의 Se는 변수가 터진 순간 몸이 먼저 움직이고, Ti는 남의 지시보다 내 계산을 따릅니다. 속도와 독립은 겹치지만, 앞장서서 사람을 이끌라는 '남자다움'의 기대는 통제를 싫어하는 이 유형에게 버겁습니다.",
+      "scene": "캠핑장에서 텐트 폴이 부러지자 말없이 트렁크의 공구를 꺼내 고쳐 놓습니다. 그런데 '오늘 일정은 네가 정해'라는 말에는 어깨만 으쓱하고 불을 피웁니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY:MALE",
+        "mbti:ISTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:乙:autumn:INFJ",
+      "myeongriId": "climate:乙:autumn",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.52,
+      "why": "가을의 을목은 찬 서리 직전 바위틈에 늦게 핀 들국화처럼, 쇠바람 같은 비판에 쉽게 베이면서도 오래 버팁니다. INFJ의 Fe는 날 선 분위기를 먼저 느끼고 Ti는 들은 말을 혼자 꼼꼼히 다시 검토합니다. 쓴소리를 속에서 천천히 소화해 실력으로 돌려놓지만, 따뜻한 사람이 곁에 없으면 기운이 일찍 꺼집니다.",
+      "scene": "평가 면담에서 들은 한 문장을 메모장에 그대로 적어 두고, 사흘 동안 출퇴근 버스에서 그 문장을 다시 읽으며 고칠 점을 세 개로 줄입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "climate:乙:autumn",
+        "mbti:INFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_BANANSAL:ESTJ",
+      "myeongriId": "shinsal:TWELVE_BANANSAL",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "ruleAdherence",
+      "score": 1.51,
+      "why": "반안살은 달리는 말 위에 단단히 조인 안장이라 자리와 격식, 체면을 챙깁니다. ESTJ의 Te는 직급과 역할이 정해져야 일을 굴리고, Si는 해 왔던 형식을 기본값으로 둡니다. 정해진 자리에서 속도가 붙는 두 힘이 겹쳐 조직에선 믿음직한데, '힘들다'는 말은 체면 뒤로 밀립니다.",
+      "scene": "주말 동네 봉사 모임에서도 명찰과 역할표부터 만들어 나눠 주고 자기는 '총괄' 칸에 이름을 적습니다. 끝나면 사진과 참석 인원을 정리해 공지합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_BANANSAL",
+        "mbti:ESTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GWASUKSAL:ESFP",
+      "myeongriId": "shinsal:GWASUKSAL",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "intimacyPace",
+      "score": 1.5,
+      "why": "과숙살은 손님이 떠난 뒤 의자를 올리는 찻집 주인처럼 한 걸음 물러나 자기 자리를 지키는 별입니다. ESFP의 Se는 들어오는 사람에게 바로 웃어 주고, 좋아하면 목소리 톤부터 올라갑니다. 다가가는 속도와 물러서는 거리가 한 사람 안에서 엇갈려, 분위기는 가장 먼저 띄우고 마음은 가장 늦게 엽니다.",
+      "scene": "파티에서 처음 본 사람들과 30분 만에 사진을 찍고 춤까지 추지만, 끝날 때 연락처를 묻는 사람에겐 웃으며 '다음에 또 봐요'라고만 하고 먼저 일어납니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "이별 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GWASUKSAL",
+        "mbti:ESFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:INFP",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.48,
+      "why": "편인은 도서관 구석에서 교과서 대신 절판된 책을 펼치는 머리라, 기존 답을 의심하고 혼자 배웁니다. INFP의 Fi는 '이게 나다운가'로 고르고 Ne는 의미를 열 갈래로 뻗습니다. 옆길의 깊이와 안쪽의 가치가 만나 남이 안 가는 주제를 오래 파고들지만, 침묵이 길어지면 가까운 사람은 거절로 읽습니다.",
+      "scene": "시험 기간에 교재 대신 그 이론을 만든 학자의 일기를 찾아 읽다 새벽을 맞고, 친구의 '같이 공부할래?' 메시지에는 다음 날 오후에야 답합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "학업 결과 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:INFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_JAESAL:INTJ",
+      "myeongriId": "shinsal:TWELVE_JAESAL",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 1.47,
+      "why": "재살은 철문 앞에서 열쇠 꾸러미를 하나씩 맞춰 보는 사람처럼 좁은 틀 안에서 빠져나갈 길을 계산합니다. INTJ의 Ni는 막힌 판의 끝을 먼저 그리고 Te는 그 출구를 순서와 기한으로 옮깁니다. 제약이 클수록 머리가 맑아지는 사람이라, 모든 규칙을 감옥으로 보지 않는 여유만 챙기면 됩니다.",
+      "scene": "계약서 초안을 받으면 첫 장부터 읽지 않고 해지 조항부터 찾아 형광펜을 칩니다. 빠져나갈 문이 어디 있는지 알아야 나머지를 차분히 읽습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "사고 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_JAESAL",
+        "mbti:INTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:winter:ISTP",
+      "myeongriId": "climate:壬:winter",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 1.44,
+      "why": "겨울의 임수는 물이 가장 왕성한 철의 큰물이라 비겁이 강해 스스로 결정하고 책임집니다. ISTP의 Ti는 남이 맞다 해도 내 계산이 안 맞으면 고개를 젓고, Fe가 늦어 감정 표현은 짧습니다. 혼자 서는 힘과 차가운 겉은 닮았지만, 판을 크게 벌이는 겨울 물과 필요할 때만 움직이는 손은 규모에서 갈립니다.",
+      "scene": "한겨울 주말 아침 혼자 저수지에 나가 얼음낚시 구멍을 뚫고, 해가 머리 위에 올 때까지 휴대폰을 보지 않습니다. 같이 가자던 연락엔 저녁에야 '다음에'라고 답합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:winter",
+        "mbti:ISTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GWIMUN:INFP",
+      "myeongriId": "shinsal:GWIMUN",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.44,
+      "why": "귀문관살은 바람 한 줄기에도 먼저 우는 처마 끝 풍경처럼, 말이 나오기 전의 분위기를 일찍 느낍니다. INFP의 Fi는 작은 감정의 결까지 저울에 올리고 Si는 그 기억을 세부까지 저장합니다. 예민한 안테나와 오래 품는 마음이 겹쳐, 확인하지 않은 짐작이 새벽까지 이야기로 자라기도 합니다.",
+      "scene": "친구의 프로필 사진이 바뀐 걸 보고 무슨 일 있나 싶어 메시지를 썼다 지웠다 하다가, 결국 새벽 두 시에 노래 한 곡 링크만 보냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "정신 건강 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GWIMUN",
+        "mbti:INFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:branch:辰:ESFP",
+      "myeongriId": "branch:辰",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.42,
+      "why": "진토는 봄비 머금은 못자리처럼 겉은 차분하고 속은 물과 싹으로 바쁜 땅이라, 속내를 몇 주씩 묵혀 둡니다. ESFP의 Se는 느낀 걸 그 자리에서 꺼내고, Ni가 늦어 먼 계획은 일부러 밀어 둡니다. 묵히는 땅과 바로 터뜨리는 감각이 부딪쳐, 겉으로는 신나게 웃으면서 속으론 계획 여러 개를 따로 굴립니다.",
+      "scene": "친구들 앞에선 '난 계획 같은 거 없어' 하고 웃지만, 휴대폰 메모장엔 여행·적금·이사 목록이 따로 세 개 있습니다. 누가 진지하게 물으면 그제야 슬쩍 보여 줍니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "branch:辰",
+        "mbti:ESFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:PEER:STRONG:ISFP",
+      "myeongriId": "tenGodBalance:PEER:STRONG",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "score": 1.4,
+      "why": "비겁 과다는 국수 한 그릇에 젓가락 다섯 벌이 들어오는 식탁처럼 자존심과 내 몫이 분명한 상태입니다. ISFP의 Fi는 남이 좋다 해도 내 마음에 안 맞으면 조용히 고개를 돌리고, 겨루기보다 혼자 다듬기를 택합니다. 겉으론 다투지 않아도 속의 고집은 단단해서, 경쟁 대신 '내 방식'을 지키는 데 힘을 씁니다.",
+      "scene": "공방 수업에서 강사가 다른 배색을 권하자 웃으며 고개만 끄덕이고, 집에 와서 처음 골랐던 색으로 밤새 다시 칠해 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "동업 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:PEER:STRONG",
+        "mbti:ISFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GWASUKSAL:INFJ",
+      "myeongriId": "shinsal:GWASUKSAL",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "intimacyPace",
+      "score": 1.39,
+      "why": "과숙살은 단체 사진 가장자리에 반 걸음 떨어져 선 사람처럼 천천히 믿고, 한번 믿으면 오래 지킵니다. INFJ도 몇 달을 지켜보다 '이 사람이다' 싶을 때 깊이 들어갑니다. 문을 여는 속도가 같아 관계는 적고 깊은데, 지쳐도 도와 달라는 말을 아끼다 말없이 사라지기 쉽습니다.",
+      "scene": "새 동호회에 나간 지 석 달째, 매주 빠지지 않고 와도 뒤풀이엔 아직 안 갑니다. 그러다 한 사람에게만 처음으로 '다음 주에 차 한잔할래요?'를 보냅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "이별 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GWASUKSAL",
+        "mbti:INFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:spring:ENTP",
+      "myeongriId": "climate:壬:spring",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.37,
+      "why": "봄의 임수는 식상이 왕성해 말과 기획이 막힘없이 흐르고, 물길이 사방으로 흩어지기 쉽습니다. ENTP는 Ne로 가능성을 열고 Ti로 말이 되는 것을 깎지만, Si가 늦어 꾸준함이 뒤로 밀립니다. 아이디어를 흘려보내는 속도가 같아서, 마감을 정해 줄 사람이 곁에 있을 때 봄물이 밭을 적십니다.",
+      "scene": "새 학기 동아리 첫 모임에서 행사 아이디어를 열두 개 쏟아 내 칠판을 채우고, 실행 담당을 정할 때는 '저는 기획만요' 하며 손을 내립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:spring",
+        "mbti:ENTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:element:EARTH:STRONG:ISFJ",
+      "myeongriId": "element:EARTH:STRONG",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.35,
+      "why": "토 과다는 쌀가마를 천장까지 쌓아 곳간 문이 반만 열리는 모양이라, 맡고 쌓고 지키는 힘이 큽니다. ISFJ의 Si는 익숙한 것을 지키고 Fe는 남의 몫까지 말없이 떠안습니다. 믿음을 사는 손이 두 겹이지만, 들어오는 일은 많고 나가는 문이 좁아 연말이면 남의 짐까지 책상에 쌓입니다.",
+      "scene": "명절마다 가족 반찬을 혼자 준비해 통마다 이름표를 붙여 나눠 주고, 돌려받은 빈 통은 다음 명절까지 베란다 선반에 차곡차곡 쌓아 둡니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "결혼 생활 단정"
+        ]
+      },
+      "sources": [
+        "element:EARTH:STRONG",
+        "mbti:ISFJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:ENTJ",
+      "myeongriId": "yinYang:YANG_HEAVY",
+      "mbtiTarget": "ENTJ",
+      "kind": "conditional",
+      "dimension": "decisionSpeed",
+      "score": 1.33,
+      "why": "양 과다는 뚜껑을 따자마자 넘치는 탄산수처럼 고민보다 출발이 먼저 나오는 구성입니다. ENTJ의 Te도 결정이 빠르지만, Ni는 3년 뒤 그림이 그려져야 움직입니다. 속도는 같은 편이라 판을 빨리 여는데, 점검을 건너뛰는 양의 습관을 Ni의 큰 그림이 붙잡아 줄 때 같은 실수가 줄어듭니다.",
+      "scene": "새 아이디어를 듣자마자 그 자리에서 담당자 셋에게 전화를 돌리고, 그날 밤에야 노트를 펴 1년 치 일정을 거꾸로 짜 봅니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY",
+        "mbti:ENTJ:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ESFP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "score": 1.3,
+      "why": "정화는 손으로 감싸면 꺼지지 않는 촛불이라 가까운 몇 사람만 또렷하게 비춥니다. ESFP는 Se로 방 전체에 온기를 붙이고, 구석에 선 사람을 가운데로 끌어옵니다. 챙기는 마음은 같고 비추는 범위가 달라서, 넓게 놀다가도 끝나면 한 사람 곁에 오래 남는 쪽을 택합니다.",
+      "scene": "북적이는 송년회에서 내내 사회를 보다가, 끝날 무렵엔 취한 친구 하나를 택시 앞까지 데려다주고 도착했다는 문자가 올 때까지 기다립니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ESFP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚子:INTP",
+      "myeongriId": "dayPillar:庚子",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.8,
+      "why": "경자는 한겨울 쇠 수도꼭지에서 맑은 물이 곧게 쏟아지듯 생각이 말로 정리돼 나오고, 앉은자리 상관이 그 말을 날카롭게 만듭니다. INTP의 Ti는 머릿속 논리 모형에 맞는지를 보고 Fe는 가장 늦게 깨어납니다. 분석은 정확한데 위로가 필요한 자리에서도 정리표부터 꺼내, 상대는 채점받았다고 느낍니다.",
+      "scene": "친구가 연애 고민을 꺼내자 고개를 끄덕이며 듣다가 '그러니까 문제는 연락 빈도랑 기대치 차이네' 하고 냅킨에 두 줄로 정리해 건넵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚子",
+        "mbti:INTP:functionStack"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬申:ISTP",
+      "myeongriId": "dayPillar:壬申",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.77,
+      "why": "임신은 쇠 뱃머리로 물을 가르다 막히면 곧장 항로를 트는 쾌속선이라, 내 길을 남에게 잘 맞추지 않습니다. ISTP는 Ti로 내 계산이 맞을 때만 움직이고 Se로 변수가 터진 순간 손이 먼저 나갑니다. 혼자 판단하고 혼자 방향을 바꾸는 속도가 같아, 바꾸기 전에 한 번 알려 주는 것만 챙기면 됩니다.",
+      "scene": "여럿이 간 낚시 여행에서 자리가 별로다 싶으면 말없이 장비를 챙겨 혼자 건너편 방파제로 옮깁니다. 한 시간 뒤 단톡방에 큰 고기 사진 한 장만 올라옵니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬申",
+        "mbti:ISTP:functionStack"
+      ]
+    }
+  ]
+}
