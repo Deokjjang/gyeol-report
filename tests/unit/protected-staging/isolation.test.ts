@@ -12,7 +12,7 @@ beforeAll(() => {
   const toolGraph=buildModuleGraph(files,f=>f.startsWith('tools/')?readFileSync(f,'utf8'):'');
   graph={...toolGraph,...src};
 });
-it('customer runtime remains the exact 46-root/700-module Base graph',()=>{expect(customerRuntimeGraph(src)).toEqual(contract.customer);});
+it('customer runtime remains the exact 49-root/692-module Base graph',()=>{expect(customerRuntimeGraph(src)).toEqual(contract.customer);});
 it('independent Reader has no generation, DB, worker, analytics, share or research execution edge',()=>{
   const seen=new Set<string>();
   const visit=(file:string)=>{if(seen.has(file))return;seen.add(file);graph[file].dependencies.forEach(visit);};

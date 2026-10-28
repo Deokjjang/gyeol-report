@@ -28,7 +28,7 @@ function majorFortuneFacts(packet: unknown, calculation: SajuCalcResult, mbti: s
 export async function createMajorFortuneV3(payload: unknown, options: { now?: () => Date; edition?: "legacy-depth" | "legacy-horizon" | "legacy-outlook" | "legacy-final" } = {}) {
   const normalized = normalizeReportInputPayload(payload);
   if (!normalized.ok || normalized.value.kind !== "majorFortune") return null;
-  const generated = await generateMajorFortuneProductDraft(normalized.value, { now: options.now, writer: { enabled: false } });
+  const generated = await generateMajorFortuneProductDraft(normalized.value, { now: options.now });
   if (!generated.ok) return null;
   const calculation = calculateMajorFortuneSaju(normalized.value.person);
   const basePacket = generated.evidencePacket as MajorFortuneEvidencePacket;

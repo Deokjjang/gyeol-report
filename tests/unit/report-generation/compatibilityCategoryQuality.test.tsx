@@ -1,10 +1,8 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { generateCompatibilityProductDraft } from "../../../src/lib/report-generation/compatibilityGenerationHandler";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { generateCompatibilityReportDraft } from "../../../src/lib/report-generation/openaiCompatibilityReportWriter";
-import { buildOpenAICompatibilityReportWriterMessages, buildOpenAICompatibilityReportRepairMessages } from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
 import { CompatibilityReportView } from "../../../src/app/reports/[reportId]/CompatibilityReportView";
 import { compatibilityRelationshipTypes, type CompatibilityCanonicalRelationshipType } from "../../../src/lib/report-knowledge/compatibilityTypes";
 import { MBTI_TYPES } from "../../../src/lib/report-generation/reportInputTypes";
@@ -119,31 +117,12 @@ describe("seven compatibility buying questions", () => {
   }
 
   for (const category of compatibilityRelationshipTypes) {
-    it(`${category}: writer and repair retain the same questions and directional sources`, async () => {
+    it(`${category}: validation rejects swapped direction; the draft renders every category scene`, async () => {
       const result = await generate(input(category));
       const bad = structuredClone(result.draft);
       Object.assign(bad.relationshipAnalysis, { aToBFatigue: bad.relationshipAnalysis.bToAFatigue });
-      const requests: string[] = [];
-      const fetchImpl = vi.fn<typeof fetch>(async (_url, init) => {
-        requests.push(String(init?.body));
-        return new Response(JSON.stringify({ output_text: JSON.stringify(requests.length === 1 ? bad : result.draft) }), { status: 200 });
-      });
-      const written = await generateCompatibilityReportDraft({ evidencePacket: result.evidencePacket,
-        config: { enabled: true, apiKey: "test-key", model: "mock", fetchImpl } });
-      expect(written.repaired).toBe(true);
-      expect(fetchImpl).toHaveBeenCalledTimes(2);
-      expect(validateProductPublication("saju_mbti_compatibility", written.draft, result.evidencePacket).ok).toBe(true);
-      for (const request of requests) {
-        for (const scene of result.evidencePacket.categoryReading!.scenes) {
-          expect(request).toContain(scene.title);
-          for (const source of scene.sources) expect(request).toContain(source.id);
-        }
-      }
-      for (const scene of result.evidencePacket.categoryReading!.scenes) expect(rendered(written.draft)).toContain(scene.title);
-      const normal = buildOpenAICompatibilityReportWriterMessages({ evidencePacket: result.evidencePacket });
-      const repair = buildOpenAICompatibilityReportRepairMessages({ evidencePacket: result.evidencePacket, previousDraftText: "{}", validationErrors: ["INVALID"] });
-      expect(repair.user).toContain(normal.user);
-      expect(repair.developer).toContain("다른 category의 장면이나 임의 성격 역할로 대체하지 마라");
+      expect(validateProductPublication("saju_mbti_compatibility", bad, result.evidencePacket).ok).toBe(false);
+      for (const scene of result.evidencePacket.categoryReading!.scenes) expect(rendered(result.draft)).toContain(scene.title);
     });
   }
 

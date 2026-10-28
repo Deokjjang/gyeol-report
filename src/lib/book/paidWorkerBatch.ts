@@ -1,12 +1,12 @@
 import "server-only";
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
-import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
+import type { NoWriterRuntime } from "../report-generation/writerDisabled";
 import { runPublicPaidReportJob } from "./paidRuntime";
 
 export const PAID_WORKER_LIMITS = {
   maxJobs: 8,
   // Admission window, NOT an unsafe timeout racing an in-flight publication.
-  // Leaves 255s of the 300s route for the last job (legacy writer: 120s).
+  // Leaves 255s of the 300s route for the last job.
   claimWindowMs: 45_000,
   maxRssBytes: 1.25 * 1024 ** 3,
 } as const;
@@ -23,11 +23,11 @@ type BatchDependencies = {
 };
 
 // Only scheduling changes here. Claims, leases, version selection, validation,
-// writer call limits and publication remain owned by the existing single worker.
+// and publication remain owned by the existing single worker.
 // No snapshots/identities are retained across iterations or written to logs.
 export async function runPaidReportBatch(
   store: ReliabilityStore,
-  runtime: ReportWriterRuntime,
+  runtime: NoWriterRuntime,
   dependencies: BatchDependencies = {},
 ): Promise<BatchResult> {
   const now = dependencies.now ?? (() => performance.now());

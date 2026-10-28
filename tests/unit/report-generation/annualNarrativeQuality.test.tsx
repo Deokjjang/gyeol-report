@@ -6,6 +6,7 @@ import { generateAnnualFortuneProductDraft } from "../../../src/lib/report-gener
 import { buildAnnualFortuneReading } from "../../../src/lib/report-knowledge/annualFortuneReading";
 import { buildAnnualMonthlyPublication } from "../../../src/lib/report-generation/annualMonthlyPublication";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
+import { validateAnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
 import { productBridgeScenes } from "../../../src/lib/report-knowledge/bridge/interactionScenes";
 import type { SinglePersonGenerationInput } from "../../../src/lib/report-generation/reportInputAdapter";
 
@@ -20,7 +21,7 @@ function inputFor(c = customers[0] as (typeof customers)[number]): SinglePersonG
   return {kind:"annualFortune",productKey:"annual_fortune",productSlug:"annual-fortune",person:{name:c.name,birthDate:c.birthDate,birthTime:c.birthTime,gender:c.gender,mbtiType:c.mbtiType,birthTimeUnknown:false,approximateBirthTimeSlot:c.name==="고객E"?"JINSI":"",calendarType:"solar",timezone:"Asia/Seoul"},userContext:{relationshipStatus:"single",jobStatus:"employee",detailJob:"서비스 기획자",focusAreas:["직업","돈"]},productOptions:{selectedYear:String(c.year)}};
 }
 async function generate(input = inputFor()) {
-  const r=await generateAnnualFortuneProductDraft(input,{now:()=>new Date(`${input.productOptions.selectedYear}-09-23T00:00:00+09:00`),writer:{enabled:false}});
+  const r=await generateAnnualFortuneProductDraft(input,{now:()=>new Date(`${input.productOptions.selectedYear}-09-23T00:00:00+09:00`)});
   expect(r.ok,JSON.stringify(r.ok?null:r)).toBe(true);
   if(!r.ok) throw new Error("deterministic annual generation failed");
   return r;
@@ -139,18 +140,10 @@ describe("annual narrative V2 evidence and density",()=>{
     const frozen=JSON.stringify(p);expect(validateProductPublication("annual_fortune",r.draft,p).ok).toBe(false);expect(JSON.stringify(p)).toBe(frozen);
   });
 
-  it("keeps the same narrative in fallback/writer and rejects writer changes",async()=>{
-    const fallback=await generate();let prompt="";
-    const run=(draft:unknown)=>generateAnnualFortuneProductDraft(inputFor(),{
-      now:()=>new Date("2026-09-23T00:00:00+09:00"),
-      writer:{enabled:true,config:{enabled:true,apiKey:"mock-only",model:"mock",fetchImpl:async(_url,init)=>{
-        prompt=String(init?.body);return Response.json({output_text:JSON.stringify(draft)});
-      }}},
-    });
-    const writer=await run(fallback.draft);expect(writer.ok,JSON.stringify(writer)).toBe(true);
-    if(writer.ok){expect(writer.evidencePacket.annualReading).toEqual(fallback.evidencePacket.annualReading);expect(validateProductPublication("annual_fortune",writer.draft,writer.evidencePacket).ok).toBe(true);}
-    expect(prompt).toContain("annual-reading-v2");expect(prompt).toContain("annualReadingPublication");
-    const wrong={...fallback.draft,headline:"승진과 수익이 확정된 해"};expect((await run(wrong)).ok).toBe(false);
+  it("validates the deterministic narrative and rejects a guaranteed-outcome headline",async()=>{
+    const fallback=await generate();
+    expect(validateProductPublication("annual_fortune",fallback.draft,fallback.evidencePacket).ok).toBe(true);
+    const wrong={...fallback.draft,headline:"승진과 수익이 확정된 해"};expect(validateAnnualFortuneReportDraft(wrong,fallback.evidencePacket).ok).toBe(false);
     expect(vi.mocked(fetch)).not.toHaveBeenCalled();
   });
 

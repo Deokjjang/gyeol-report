@@ -11,7 +11,6 @@ import { buildCareerReportScreenQaFallbackDraft } from "../../../src/lib/report-
 import { validateCareerReportDraft } from "../../../src/lib/report-generation/careerReportDraftValidator";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
-import { buildOpenAICareerReportWriterMessages } from "../../../src/lib/report-generation/openaiCareerReportWriterPrompt";
 import { CareerReportView } from "../../../src/app/reports/[reportId]/CareerReportView";
 import type { SinglePersonGenerationInput } from "../../../src/lib/report-generation/reportInputAdapter";
 
@@ -171,28 +170,18 @@ describe("career claim-level correctness", () => {
     expect(new Set(hints.map((h) => h.title)).size).toBeGreaterThan(2);
     expect(hints.every((h) => h.title.includes("외부 프로젝트·수익화"))).toBe(false);
   });
-  it("malformed/contradictory writer is rejected; deterministic fallback still passes the same gate", async () => {
+  it("contradictory prose is rejected; deterministic generation passes the same gate", async () => {
     const local = await generate();
-    for (const output of ["{broken", JSON.stringify({ ...local.draft, openingSummary: "토 과다와 재성은 관리에 유리합니다." })]) {
-      const mockFetch = vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({ output_text: output }), { status: 200 }));
-      const r = await generateCareerMoneyStudyProductDraft(input(), { now: () => now, writer: { enabled: true, config: { enabled: true, apiKey: "sk-test", model: "mock-model", fetchImpl: mockFetch } } });
-      expect(r.ok).toBe(false);
-      expect(mockFetch).toHaveBeenCalledTimes(1);
-    }
+    expect(validateCareerReportDraft({ ...local.draft, openingSummary: "토 과다와 재성은 관리에 유리합니다." }, local.evidencePacket).ok).toBe(false);
     const { kind: _kind, ...payload } = input(); void _kind;
     const r = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
     expect(r.ok, JSON.stringify(r)).toBe(true);
     expect(r.externalCalls).toEqual([]);
   });
-  it("correct writer prose keeps meaning and selected source payload omits raw trait duplicates", async () => {
+  it("correct prose keeps its meaning through validation", async () => {
     const local = await generate();
     const draft = { ...local.draft, openingSummary: "거래의 범위와 보상 기준을 따로 살펴보세요." };
-    const mockFetch = vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({ output_text: JSON.stringify(draft) }), { status: 200 }));
-    const r = await generateCareerMoneyStudyProductDraft(input(), { now: () => now, writer: { enabled: true, config: { enabled: true, apiKey: "sk-test", model: "mock-model", fetchImpl: mockFetch } } });
-    expect(r.ok && r.draft.openingSummary).toBe(draft.openingSummary);
-    const prompt = buildOpenAICareerReportWriterMessages({ evidencePacket: local.evidencePacket });
-    expect(prompt.user).not.toContain('"source":');
-    expect(prompt.user).toContain('"evidenceId":');
-    expect(prompt.user).toContain('"mbtiSourceSelection":');
+    const r = validateCareerReportDraft(draft, local.evidencePacket);
+    expect(r.ok && r.value?.openingSummary).toBe(draft.openingSummary);
   });
 });

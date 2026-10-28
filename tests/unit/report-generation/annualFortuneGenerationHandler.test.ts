@@ -289,7 +289,7 @@ describe("annual fortune generation handler", () => {
     });
   });
 
-  it("does not connect API, persistence, payment, or unconditional writer execution", () => {
+  it("does not connect API, persistence, payment, or a writer", () => {
     const forbiddenMarkers = [
       "api/reports",
       "persistence",
@@ -303,7 +303,8 @@ describe("annual fortune generation handler", () => {
       expect(dispatcherSource).not.toContain(marker);
     }
 
-    expect(source).toContain("options.writer?.enabled === true");
+    expect(source).not.toContain("openai");
+    expect(source).not.toContain("options.writer");
     expect(source).not.toContain("2026-06-18");
     expect(dispatcherSource).toContain("annualFortune: handleAnnualFortuneGeneration");
   });

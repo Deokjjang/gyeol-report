@@ -3,8 +3,6 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { buildOpenAILoveMarriageChildReportWriterMessages } from "../../../src/lib/report-generation/openaiLoveMarriageChildReportWriterPrompt";
-import { generateLoveMarriageChildReportDraft } from "../../../src/lib/report-generation/openaiLoveMarriageChildReportWriter";
 import { validateLoveMarriageChildReportDraft } from "../../../src/lib/report-generation/loveMarriageChildReportDraftValidator";
 import type { LoveMarriageChildReportDraft } from "../../../src/lib/report-generation/loveMarriageChildReportDraftTypes";
 import type { LoveMarriageChildReportEvidencePacket } from "../../../src/lib/report-knowledge/loveMarriageChildReportTypes";
@@ -98,23 +96,15 @@ describe("love relationship quality v2",()=>{
     const types=rs.flatMap(r=>r.evidence.relationshipReading!.scenes.map(s=>s.interactionType));
     expect(types).toContain("agreement");expect(types).toContain("tension");
   });
-  it("writer receives the same selected evidence, preserves a valid narrative and rejects invented type examples",async()=>{
+  it("keeps selected evidence untagged where unsupported and rejects invented type examples",async()=>{
     const {draft,evidence}=await sample();
-    const messages=buildOpenAILoveMarriageChildReportWriterMessages({evidencePacket:evidence});
-    const prompt=JSON.parse(messages.user.split("Evidence packet:\n\n")[1]);
-    expect(prompt.relationshipReading).toEqual(evidence.relationshipReading);
-    expect(prompt.mbtiBasis.growth).toEqual(evidence.relationshipReading!.recoveryTraits);
-    expect(prompt.mbtiBasis.growth).toEqual([]); // INTP growth assets are not tagged for this relationship context.
-    const fetchImpl=vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({output_text:JSON.stringify(draft)})));
-    const result=await generateLoveMarriageChildReportDraft({evidencePacket:evidence,config:{enabled:true,apiKey:"test-only",model:"test-model",fetchImpl}});
-    expect(result.draft).toEqual(draft);expect(fetchImpl).toHaveBeenCalledTimes(1);
+    expect(evidence.relationshipReading!.recoveryTraits).toEqual([]); // INTP growth assets are not tagged for this relationship context.
+    expect(validateLoveMarriageChildReportDraft(draft,evidence).ok).toBe(true);
     const allowed=new Set([evidence.personContext.mbtiType,...evidence.relationshipReading!.partnerExamples.map(p=>p.exampleType)]);
     const unselected=["ENTJ","ENFP","INFJ","ISTJ","ESTP"].find(t=>!allowed.has(t))!;
     const bad={...draft,attractionPattern:{...draft.attractionPattern,body:`${unselected}만 당신의 상대입니다.`}};
     expect(validateLoveMarriageChildReportDraft(bad,evidence).errors).toContain("LOVE_MARRIAGE_CHILD_UNSUPPORTED_PARTNER_TYPE");
     expect(validateProductPublication("love_marriage_child",bad,evidence,payload()).ok).toBe(false);
-    const malformed=vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({output_text:"{}"})));
-    await expect(generateLoveMarriageChildReportDraft({evidencePacket:evidence,config:{enabled:true,apiKey:"test-only",model:"test-model",fetchImpl:malformed}})).rejects.toMatchObject({code:"OPENAI_LOVE_MARRIAGE_CHILD_REPORT_WRITER_VALIDATION_FAILED"});
     expect((await sample()).draft).toEqual(draft);
   });
 });

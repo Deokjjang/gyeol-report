@@ -6,10 +6,10 @@ import { createPreviewReportPersistenceAdapter } from "../persistence/reportPers
 import { buildReportPersistencePayload } from "../report/reportPersistencePayload";
 import { isRecord } from "../report-generation/productPublishGate";
 import type { ProductPreviewSnapshot } from "../report-generation/productPreviewSnapshot";
-import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
+import type { NoWriterRuntime } from "../report-generation/writerDisabled";
 
 // No Toss/client/RPC factory. Only claim and persistence differ from the worker.
-export async function runLocalPaidReportQa(payload: unknown, runtime: ReportWriterRuntime, env = process.env) {
+export async function runLocalPaidReportQa(payload: unknown, runtime: NoWriterRuntime, env = process.env) {
   if (!(["development", "test"].includes(env.NODE_ENV ?? "")) || env.REPORT_PERSISTENCE_MODE !== "preview_memory" || env.PAID_REPORT_RELIABILITY_ENABLED === "1") return { ok: false, code: "UNAVAILABLE" };
   if (!isRecord(payload)) return { ok: false, code: "INVALID_REPORT_INPUT" };
   const person = isRecord(payload.person) ? payload.person : isRecord(payload.personA) ? payload.personA : null;

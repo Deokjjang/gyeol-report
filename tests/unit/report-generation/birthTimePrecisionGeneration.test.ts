@@ -1,9 +1,3 @@
-import { buildOpenAIComprehensiveReportWriterMessages } from "../../../src/lib/report-generation/openaiReportWriterPrompt";
-import { buildOpenAICareerReportWriterMessages } from "../../../src/lib/report-generation/openaiCareerReportWriterPrompt";
-import { buildOpenAILoveMarriageChildReportWriterMessages } from "../../../src/lib/report-generation/openaiLoveMarriageChildReportWriterPrompt";
-import { buildOpenAICompatibilityReportWriterMessages } from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
-import { buildOpenAIMajorFortuneReportWriterMessages } from "../../../src/lib/report-generation/openaiMajorFortuneReportWriterPrompt";
-import { buildOpenAIAnnualFortuneReportWriterMessages } from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriterPrompt";
 import type { BirthTimeContexts } from "../../../src/lib/saju/birthTimePrecisionTypes";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { prepareProductGenerationFromPayload } from "../../../src/lib/report-generation/productGenerationDispatcher";
@@ -20,20 +14,8 @@ const products = [
   ["love_marriage_child", "love-marriage-child"], ["saju_mbti_compatibility", "compatibility"],
   ["major_fortune", "major-fortune"], ["annual_fortune", "annual-fortune"],
 ] as const;
-function prompt<E>(builder: (arg: { evidencePacket: E; mbtiType: string }) => { user: string }, packet: unknown) {
-  return builder({ evidencePacket: packet as E, mbtiType: "ENTJ" }).user;
-}
-const prompts: Record<typeof products[number][0], (packet: unknown) => string> = {
-  saju_mbti_full: (p) => prompt(buildOpenAIComprehensiveReportWriterMessages, p),
-  career_money_study: (p) => prompt(buildOpenAICareerReportWriterMessages, p),
-  love_marriage_child: (p) => prompt(buildOpenAILoveMarriageChildReportWriterMessages, p),
-  saju_mbti_compatibility: (p) => prompt(buildOpenAICompatibilityReportWriterMessages, p),
-  major_fortune: (p) => prompt(buildOpenAIMajorFortuneReportWriterMessages, p),
-  annual_fortune: (p) => prompt(buildOpenAIAnnualFortuneReportWriterMessages, p),
-};
 const person = { name: "정밀도 검증", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
-const writer = { enabled: false } as const;
-const options = { comprehensiveV2: { writer }, careerMoneyStudy: { writer }, loveMarriageChild: { writer }, compatibility: { writer }, majorFortune: { writer }, annualFortune: { writer, now: () => new Date("2026-09-21T00:00:00Z") } };
+const options = { annualFortune: { now: () => new Date("2026-09-21T00:00:00Z") } };
 function payload(product: typeof products[number], input: object) {
   const [productKey, productSlug] = product;
   return productKey === "saju_mbti_compatibility"
@@ -59,8 +41,6 @@ describe("precision through all six product boundaries", () => {
       };
       const context = evidence.birthTimeContexts[productKey === "saju_mbti_compatibility" ? "personA" : "person"]!;
       expect(context.birthTimePrecision).toBe(precision);
-      expect(prompts[productKey](evidence)).toContain("birthTimeCalculation");
-      expect(prompts[productKey](evidence)).toContain("미확정 시주와 시주 의존 특징을 추정하지 않습니다");
       expect(context.stable.hour).toBe(precision !== "unknown");
       expect(context.confirmed.hour).toEqual(precision === "unknown" ? undefined : { stem: "丁", branch: "未" });
       const snapshot = createProductPreviewSnapshot({ reportId: "precision", createdAtIso: "2026-09-21T00:00:00Z", productKey, productSlug, draft: result.draft as ProductPreviewSnapshotDraft, evidencePacket: evidence });
@@ -85,7 +65,7 @@ describe("precision through all six product boundaries", () => {
       expect(network).not.toHaveBeenCalled();
     });
   }
-  it.each(products)("%s rejects unstable input before writer and retains candidates", async (productKey, productSlug) => {
+  it.each(products)("%s rejects unstable input before drafting and retains candidates", async (productKey, productSlug) => {
     const network = vi.fn(() => { throw Error("NETWORK_FORBIDDEN"); });
     vi.stubGlobal("fetch", network);
     for (const input of [

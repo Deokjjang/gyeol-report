@@ -73,7 +73,7 @@ describe("Annual V3 generation, publication and reading", () => {
   it("keeps existing calculations byte-identical to the legacy handler", async () => {
     const input = annualFixturePayload(), normalized = normalizeReportInputPayload(input);
     expect(normalized.ok).toBe(true); if (!normalized.ok || normalized.value.kind === "compatibility") return;
-    const legacy = await generateAnnualFortuneProductDraft(normalized.value, { now: () => now, writer: { enabled: false } });
+    const legacy = await generateAnnualFortuneProductDraft(normalized.value, { now: () => now });
     const result = await generate(input); expect(legacy.ok).toBe(true); if (!legacy.ok || !result) return;
     for (const key of ["calendarMonths", "customerDayun", "dayunSelection", "annualFortune", "baseSaju", "annualReading"] as const) {
       expect(result.evidencePacket[key]).toEqual((legacy.evidencePacket as typeof result.evidencePacket)[key]);

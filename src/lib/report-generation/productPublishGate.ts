@@ -12,13 +12,12 @@ import { validateDayunPublication } from "./dayunPublication";
 import { validateProductEvidence } from "./productEvidenceValidation";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import { COMPREHENSIVE_REPORT_SECTION_IDS } from "../report-knowledge/reportSectionSchema";
-import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms } from "./openaiCompatibilityReportWriterPrompt";
 import type { CompatibilityEvidencePacket } from "../report-knowledge/compatibilityEvidenceBuilder";
 import { validateComprehensiveReportDraft } from "./comprehensiveReportDraftValidator";
 import { COMPREHENSIVE_REPORT_V2_LONGFORM_READING_IDS } from "./comprehensiveReportDraftTypes";
 import { validateCareerReportDraft } from "./careerReportDraftValidator";
 import { validateLoveMarriageChildReportDraft } from "./loveMarriageChildReportDraftValidator";
-import { validateCompatibilityReportDraft } from "./compatibilityReportDraftValidator";
+import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms, validateCompatibilityReportDraft } from "./compatibilityReportDraftValidator";
 import { validateMajorFortuneReportDraft } from "./majorFortuneReportDraftValidator";
 import { validateAnnualFortuneReportDraft } from "./annualFortuneReportDraftValidator";
 

@@ -32,11 +32,6 @@ import {
 import {
   validateAnnualFortuneReportDraft,
 } from "./annualFortuneReportDraftValidator";
-import {
-  generateAnnualFortuneReportDraft,
-  type AnnualFortuneReportWriterConfig,
-  type AnnualFortuneReportWriterResult,
-} from "./openaiAnnualFortuneReportWriter";
 import type { SinglePersonGenerationInput } from "./reportInputAdapter";
 import type { JobStatus } from "./reportInputTypes";
 
@@ -63,10 +58,6 @@ export type AnnualFortuneGenerationResult =
 
 export type AnnualFortuneGenerationHandlerOptions = {
   readonly now?: () => Date;
-  readonly writer?: {
-    readonly enabled: boolean;
-    readonly config?: AnnualFortuneReportWriterConfig;
-  };
 };
 
 const tenGodKoByHanja = {
@@ -131,18 +122,9 @@ export async function generateAnnualFortuneProductDraft(
     });
   }
 
-  let draftResult: AnnualFortuneReportWriterResult;
+  let draft: AnnualFortuneReportDraft;
   try {
-    draftResult =
-      options.writer?.enabled === true && options.writer.config !== undefined
-        ? await generateAnnualFortuneReportDraft({
-            evidencePacket,
-            config: options.writer.config,
-          })
-        : {
-            draft: buildAnnualFortuneFallbackDraft(evidencePacket),
-            model: "local-annual-fortune-fallback",
-          };
+    draft = buildAnnualFortuneFallbackDraft(evidencePacket);
   } catch (error) {
     return annualFortuneFailure({
       code: "ANNUAL_FORTUNE_GENERATION_FAILED",
@@ -150,7 +132,7 @@ export async function generateAnnualFortuneProductDraft(
     });
   }
 
-  const validation = validateAnnualFortuneReportDraft(draftResult.draft, evidencePacket);
+  const validation = validateAnnualFortuneReportDraft(draft, evidencePacket);
 
   if (!validation.ok || validation.value === undefined) {
     return annualFortuneFailure({

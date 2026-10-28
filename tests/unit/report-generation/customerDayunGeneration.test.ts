@@ -6,8 +6,6 @@ import { generateMajorFortuneProductDraft } from "../../../src/lib/report-genera
 import { generateAnnualFortuneProductDraft } from "../../../src/lib/report-generation/annualFortuneGenerationHandler";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { buildOpenAIMajorFortuneReportWriterMessages } from "../../../src/lib/report-generation/openaiMajorFortuneReportWriterPrompt";
-import { buildOpenAIAnnualFortuneReportWriterMessages } from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriterPrompt";
 import { POST as validateInput } from "../../../src/app/api/reports/validate-input/route";
 import { POST as prepareCheckout } from "../../../src/app/api/payment-checkout/prepare/route";
 
@@ -81,25 +79,6 @@ describe("customer Dayun production boundaries", () => {
     expect(storage.create).toHaveBeenCalledTimes(1);
     expect(storage.bind).toHaveBeenCalledTimes(1);
   });
-  it.each(["major_fortune", "annual_fortune"])("uses the same customer basis with the %s writer enabled", async product => {
-    const handler = product === "major_fortune" ? generateMajorFortuneProductDraft : generateAnnualFortuneProductDraft;
-    const normalized = input(product);
-    const fallback = await handler(normalized, { now: clock });
-    expect(fallback.ok).toBe(true); if (!fallback.ok) return;
-    const responseDraft = structuredClone(fallback.draft) as unknown as Record<string, unknown>;
-    delete responseDraft.dayunContext;
-    let requestText = "";
-    const mockTransport: typeof fetch = async (_url, init) => {
-      requestText = String(init?.body);
-      return Response.json({ output_text: JSON.stringify(responseDraft) });
-    };
-    const written = await handler(normalized, { now: clock, writer: { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock", fetchImpl: mockTransport } } });
-    expect(written.ok, JSON.stringify(written.ok ? null : written)).toBe(true); if (!written.ok) return;
-    expect(written.evidencePacket.customerDayun).toEqual(fallback.evidencePacket.customerDayun);
-    expect(requestText).toContain("dayun-utc-sect2-v2");
-    expect(requestText).toContain("2026-12-30T15:30:00+09:00");
-    expect(validateProductPublication(product, written.draft, written.evidencePacket, payload(product))).toEqual({ ok: true, errors: [] });
-  });
   it.each([
     { birthDate: "1980-03-09", gender: "FEMALE", ganji: "甲戌", startYear: 2021, startAge: 42 },
     { birthDate: "2001-06-22", gender: "MALE", ganji: "辛卯", startYear: 2026, startAge: 26 },
@@ -126,7 +105,6 @@ describe("customer Dayun production boundaries", () => {
       expect(validateProductPublication("annual_fortune", r.draft, r.evidencePacket, p)).toEqual({ ok: true, errors: [] });
       if (year === 2026) {
         expect(r.draft.majorAnnualCrossReading).toContain("전환 전후");
-        expect(buildOpenAIAnnualFortuneReportWriterMessages({ evidencePacket: r.evidencePacket }).user).toContain("2026-12-30T15:30:00+09:00");
         expect(validateProductPublication("annual_fortune", { ...r.draft, dayunContext: { ...r.draft.dayunContext, transition: null } }, r.evidencePacket).ok).toBe(false);
       }
       expect(validateProductPublication("annual_fortune", { ...r.draft, targetYear: year+1 }, r.evidencePacket).ok).toBe(false);
@@ -145,13 +123,12 @@ describe("customer Dayun production boundaries", () => {
       }
     }
   });
-  it("uses Seoul runtime year, preserves transition and sends full customer basis to writer", async () => {
+  it("uses Seoul runtime year and preserves transition", async () => {
     const r = await generateMajorFortuneProductDraft(input("major_fortune", { birthDate: "1999-07-31", birthTime: "07:30" }), { now: () => new Date("2026-12-31T15:00:00Z") });
     expect(r.ok).toBe(true); if (!r.ok) return;
     expect(r.evidencePacket.currentYear).toBe(2027);
     expect(r.evidencePacket.dayunSelection).toMatchObject({ selectedCycle: { ganji: "戊辰", startYear: 2027 }, activeCycleAtEvaluation: 2, transition: { beforeCycle: { ganji: "己巳" } } });
     expect(r.draft.openingSummary).toContain("전환 전후");
-    expect(buildOpenAIMajorFortuneReportWriterMessages({ evidencePacket: r.evidencePacket }).user).toContain("dayun-utc-sect2-v2");
     expect(validateProductPublication("major_fortune", r.draft, r.evidencePacket).ok).toBe(true);
   });
   it("rejects cross-customer data, timeline edits, lost transition and calculation version changes", async () => {

@@ -2,14 +2,14 @@ import "server-only";
 import { bookExperiencePublicEnabled } from "./publicGate";
 import { runPaidReportJob, type ProductGenerator } from "../payment/paidReportReliability";
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
-import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
+import type { NoWriterRuntime } from "../report-generation/writerDisabled";
 import { generateProductReport } from "../report-generation/generateProductReport";
 import { isRecord, validateNewProductPublication } from "../report-generation/productPublishGate";
 import { getAnnualPurchasePolicyDate } from "../payment/annualPurchasePolicy";
 
 // Public worker wiring only. Existing claims, leases, payment validation,
 // publication and recovery stay in runPaidReportJob. Old purchases stay V3.
-export async function runPublicPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime) {
+export async function runPublicPaidReportJob(store: ReliabilityStore, runtime: NoWriterRuntime) {
   if (!bookExperiencePublicEnabled()) return runPaidReportJob(store, runtime);
   let evaluatedAt: string | null = null;
   const boundStore: ReliabilityStore = { async call(action, data) {

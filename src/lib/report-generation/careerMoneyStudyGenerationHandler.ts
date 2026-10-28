@@ -26,11 +26,6 @@ import {
 import {
   validateCareerReportDraft,
 } from "./careerReportDraftValidator";
-import {
-  generateCareerReportDraft,
-  type CareerReportWriterConfig,
-  type CareerReportWriterResult,
-} from "./openaiCareerReportWriter";
 import type { SinglePersonGenerationInput } from "./reportInputAdapter";
 import type { JobStatus } from "./reportInputTypes";
 
@@ -57,10 +52,6 @@ export type CareerMoneyStudyGenerationResult =
 
 export type CareerMoneyStudyGenerationHandlerOptions = {
   readonly now?: () => Date;
-  readonly writer?: {
-    readonly enabled: boolean;
-    readonly config?: CareerReportWriterConfig;
-  };
 };
 
 const tenGodKoByHanja = {
@@ -115,18 +106,9 @@ export async function generateCareerMoneyStudyProductDraft(
     });
   }
 
-  let draftResult: CareerReportWriterResult;
+  let draft: CareerReportDraft;
   try {
-    draftResult =
-      options.writer?.enabled === true && options.writer.config !== undefined
-        ? await generateCareerReportDraft({
-            evidencePacket,
-            config: options.writer.config,
-          })
-        : {
-            draft: buildCareerReportScreenQaFallbackDraft(evidencePacket),
-            model: "local-career-money-study-fallback",
-          };
+    draft = buildCareerReportScreenQaFallbackDraft(evidencePacket);
   } catch (error) {
     return careerMoneyStudyFailure({
       code: "CAREER_MONEY_STUDY_GENERATION_FAILED",
@@ -134,7 +116,7 @@ export async function generateCareerMoneyStudyProductDraft(
     });
   }
 
-  const validation = validateCareerReportDraft(draftResult.draft, evidencePacket);
+  const validation = validateCareerReportDraft(draft, evidencePacket);
 
   if (!validation.ok || validation.value === undefined) {
     return careerMoneyStudyFailure({

@@ -134,20 +134,12 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     expect(await inputSnapshot()).toEqual(original);
   });
 
-  it("writer outage in 2027 immediately delivers fallback using the accepted 2026 policy", async () => {
+  it("in 2027 the first attempt delivers using the accepted 2026 policy", async () => {
     const { reportId } = await purchase();
-    const fixture = await generateProductReport(payloadFor("2021"), runtime, "deterministic_fallback");
-    expect(fixture.ok).toBe(true);
-    if (!fixture.ok) return;
     vi.setSystemTime(afterRollover);
-    const transport = vi.fn<typeof fetch>()
-      .mockRejectedValueOnce(new Error("mock outage"))
-      .mockResolvedValueOnce(Response.json({ output_text: JSON.stringify(fixture.draft) }));
-    const writer = { enabled: true as const, config: { enabled: true as const, apiKey: "mock", model: "mock", fetchImpl: transport } };
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "COMPLETED" });
+    expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "COMPLETED" });
     await due();
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ ok: true, job: null });
-    expect(transport).toHaveBeenCalledTimes(1);
+    expect(await runPaidReportJob(store, runtime)).toMatchObject({ ok: true, job: null });
     await expectCompleted(reportId);
   });
 

@@ -3,8 +3,8 @@ import { generateProductReport, type GenerationStrategy } from "../report-genera
 import { isRecord, PUBLISH_GATE_VERSION, validateProductPublication, validateNewProductPublication } from "../report-generation/productPublishGate";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft, type ProductPreviewProductType, type ReportProductSlug } from "../report-generation/productPreviewSnapshot";
 import type { ProductGenerationResult } from "../report-generation/productGenerationDispatcher";
-import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
-import { deliveryIssueCodes } from "../report-generation/paidWriterRescue";
+import type { NoWriterRuntime } from "../report-generation/writerDisabled";
+import { deliveryIssueCodes } from "../report-generation/deliveryAudit";
 import { unknownCalculationVersions } from "../saju/calendarVersion";
 import type { ReliabilityStore } from "./paidReportReliabilityStore";
 import type { TossConfirmClientResult, TossConfirmRequest } from "./tossConfirmTypes";
@@ -30,10 +30,10 @@ export async function confirmPaidReport(input: TossConfirmRequest, store: Reliab
   return store.call("confirm_finish", { ...input, token: claim.token, paidAt });
 }
 
-export type ProductGenerator = (payload: unknown, runtime: ReportWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Promise<ProductGenerationResult>;
+export type ProductGenerator = (payload: unknown, runtime: NoWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Promise<ProductGenerationResult>;
 // Shared fulfillment body. The caller verifies the origin (paid order or ticket)
 // before entry; neither a client nor an entitlement chooses a weaker validator.
-export async function generateReportSnapshot(job: { payload: unknown; product_type: string; report_id: string; created_at: string }, runtime: ReportWriterRuntime,
+export async function generateReportSnapshot(job: { payload: unknown; product_type: string; report_id: string; created_at: string }, runtime: NoWriterRuntime,
   strategy: GenerationStrategy, generate: ProductGenerator, validatePublication = validateNewProductPublication, annualAcceptance?: AnnualCommerceAcceptance) {
   const result = annualAcceptance === undefined ? await generate(job.payload, runtime, strategy) : await generate(job.payload, runtime, strategy, annualAcceptance);
   if (!result.ok) {
@@ -57,13 +57,12 @@ export async function generateReportSnapshot(job: { payload: unknown; product_ty
   }
 }
 // Internal dependency only; HTTP handlers never accept or forward a validator.
-export async function runPaidReportJob(store: ReliabilityStore, runtime: ReportWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication) {
-  const claimed = await store.call("claim_job", { model: runtime.enabled ? runtime.config.model : "deterministic" });
+export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication) {
+  const claimed = await store.call("claim_job", { model: "deterministic" });
   if (!claimed.ok || !isRecord(claimed.job)) return claimed;
   const job = claimed.job;
   const attempt = Number(job.attempt_count);
-  // The durable claim consumes the only writer opportunity for this run. Even a
-  // crash with unknown usage must never cause another automatic billable call.
+  // Strategy only labels the attempt audit (no writer exists any more).
   const strategy: GenerationStrategy = attempt === 1 ? "normal_writer" : "deterministic_fallback";
   const started = Date.now();
   let externalCalls: ProductGenerationResult["externalCalls"] = [];

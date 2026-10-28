@@ -22,6 +22,36 @@ export type CompatibilityReportDraftValidationOptions = {
   readonly allowedMbtiTerms?: readonly string[];
 };
 
+export function deriveAllowedCompatibilitySajuTerms(
+  packet: CompatibilityEvidencePacket,
+): readonly string[] {
+  return [
+    ...new Set([
+      ...packet.personAChartSummary.featureLabels,
+      ...packet.personBChartSummary.featureLabels,
+      packet.personAChartSummary.dayPillar,
+      packet.personBChartSummary.dayPillar,
+      `${packet.personAChartSummary.dayMaster}일간`,
+      `${packet.personBChartSummary.dayMaster}일간`,
+    ]),
+  ].filter((term) => term.trim().length > 0);
+}
+
+export function deriveAllowedCompatibilityMbtiTerms(
+  packet: CompatibilityEvidencePacket,
+): readonly string[] {
+  const terms: string[] = [];
+
+  if (packet.personAChartSummary.mbti !== undefined) {
+    terms.push(packet.personAChartSummary.mbti);
+  }
+  if (packet.personBChartSummary.mbti !== undefined) {
+    terms.push(packet.personBChartSummary.mbti);
+  }
+
+  return terms;
+}
+
 const unsafeCompatibilityPhrases = [
   "천생연분 확정",
   "운명입니다",

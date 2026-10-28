@@ -68,18 +68,6 @@ describe("paid report reliability — actual SQL, mock providers", () => {
       expect(permission.rows[0].allowed).toBe(role === "service_role");
     }
   });
-  it("100 repeated worker executions cannot exceed one paid writer HTTP call", async () => {
-    await paid();
-    const transport = vi.fn<typeof fetch>(async () => Response.json({ output_text: "{malformed", usage: { input_tokens: 22, output_tokens: 1, total_tokens: 23 } }));
-    const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
-    for (let i=0; i<100; i++) { await due(); await runPaidReportJob(store, writerRuntime); }
-    expect(transport).toHaveBeenCalledTimes(1);
-    const attempts = await rows("report_generation_attempts");
-    expect(attempts).toHaveLength(1);
-    expect(attempts[0]).toMatchObject({ external_calls: [{ inputTokens: 22, outputTokens: 1, totalTokens: 23, outcome: "malformed" }] });
-    expect((await rows("payment_orders"))[0].status).toBe("paid");
-  });
-
   it("a failed payment recovery and an existing generation job make independent durable progress", async () => {
     const id = await paid();
     await store.call("create_order", { paymentOrderId: "recover-other", providerOrderId: "recover-order", productType: payload.productKey, provider: "toss", amount: 1290, inputSnapshot: { reportInputPayload: payload } });
@@ -94,15 +82,10 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
     expect((await rows("payment_orders")).find(o => o.payment_order_id==='recover-other')).toMatchObject({ status: "ready", recovery_attempt_count: 1 });
   });
-  it.each(["timeout", "malformed", "empty", "invalid"])("writer %s → same-attempt canonical fallback publication", async failure => {
+  it("first attempt publishes the canonical deterministic draft with no external call", async () => {
     const id = await paid();
-    const transport = vi.fn<typeof fetch>(async () => {
-      if (failure === "timeout") throw new DOMException("mock timeout", "AbortError");
-      return Response.json({ output_text: failure === "malformed" ? "{broken" : failure === "empty" ? "" : "{}" });
-    });
-    const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
-    expect(await runPaidReportJob(store, writerRuntime)).toMatchObject({ status: "COMPLETED" });
-    expect(transport).toHaveBeenCalledTimes(1);
+    expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "COMPLETED" });
+    expect((await rows("report_generation_attempts"))[0]).toMatchObject({ attempt: 1, external_calls: [] });
     const result = await readPublishedReport(store, id);
     expect(result.snapshot).toMatchObject({ evidencePacket: valid.evidencePacket });
     expect((await rows("payment_orders"))[0].status).toBe("paid");
@@ -294,34 +277,6 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
   });
 
-  it("mock OpenAI transport exercises the shared normal writer and required longform schema", async () => {
-    const narrative = JSON.parse(JSON.stringify(valid.draft)
-      .replaceAll("토 과다", "현실 감각").replaceAll("수 부족", "회복 통로").replaceAll("화 부족", "표현 통로").replaceAll("현침살", "날카로운 판단")) as Record<string, unknown>;
-    for (const key of ["profileTable", "productVersion", "sajuFeatureSpotlight", "sajuSignatureScenes", "reportDifferentiationModules", "sajuSymbolicNickname", "sajuFeatureChapter"]) delete narrative[key];
-    const fetchMock = vi.fn(async () => Response.json({ output_text: JSON.stringify(narrative) }));
-    vi.stubGlobal("fetch", fetchMock);
-    const writer = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock-writer" } };
-    const result = await generateProductReport(payload, writer, "normal_writer");
-    expect(result, JSON.stringify(result.ok ? {} : result)).toMatchObject({ ok: true });
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-    const call = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
-    const request = JSON.parse(String(call[1].body));
-    expect(request.text.format.schema.required).toContain("longformReadings");
-    await paid();
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "COMPLETED" });
-  });
-  it("a schema-era writer result lacking longform is discarded and a complete fallback is delivered", async () => {
-    const narrative = JSON.parse(JSON.stringify(valid.draft)
-      .replaceAll("토 과다", "현실 감각").replaceAll("수 부족", "회복 통로").replaceAll("화 부족", "표현 통로").replaceAll("현침살", "날카로운 판단")) as Record<string, unknown>;
-    for (const key of ["profileTable", "productVersion", "longformReadings", "sajuFeatureSpotlight", "sajuSignatureScenes", "reportDifferentiationModules", "sajuSymbolicNickname", "sajuFeatureChapter"]) delete narrative[key];
-    const fetchMock = vi.fn(async () => Response.json({ output_text: JSON.stringify(narrative) }));
-    vi.stubGlobal("fetch", fetchMock);
-    const result = await generateProductReport(payload, { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock-writer" } }, "normal_writer");
-    expect(result.ok).toBe(true);
-    expect(result.delivery).toMatchObject({ fallbackUsed: true, publish: "pass" });
-    if (result.ok) expect(result.draft).toEqual(valid.draft);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-  });
 
 });
 

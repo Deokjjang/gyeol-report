@@ -57,11 +57,6 @@ import {
 import {
   validateComprehensiveReportDraft,
 } from "./comprehensiveReportDraftValidator";
-import {
-  buildDeterministicSajuFeatureChapter,
-  normalizeSajuFeatureChapter,
-  generateComprehensiveReportDraft,
-} from "./openaiComprehensiveReportWriter";
 import type { ComprehensiveV2ProductPreviewDraft } from "./productPreviewSnapshot";
 import type { SinglePersonGenerationInput } from "./reportInputAdapter";
 
@@ -85,13 +80,6 @@ export type ComprehensiveV2GenerationResult =
         readonly message: string;
       };
     };
-
-export type ComprehensiveV2GenerationHandlerOptions = {
-  readonly writer?: {
-    readonly enabled: boolean;
-    readonly config?: Parameters<typeof generateComprehensiveReportDraft>[0]["config"];
-  };
-};
 
 
 
@@ -185,7 +173,6 @@ const chapterTitleById = {
 
 export async function generateComprehensiveV2ProductDraft(
   input: SinglePersonGenerationInput,
-  options: ComprehensiveV2GenerationHandlerOptions = {},
 ): Promise<ComprehensiveV2GenerationResult> {
   if (input.kind !== "comprehensiveV2") {
     return comprehensiveV2Failure({
@@ -219,19 +206,11 @@ export async function generateComprehensiveV2ProductDraft(
   let draft: ComprehensiveReportV2Draft;
 
   try {
-    draft =
-      options.writer?.enabled === true && options.writer.config !== undefined
-        ? await generateWriterDraft({
-            input,
-            evidencePacket: evidence.packet,
-            profileTable,
-            config: options.writer.config,
-          })
-        : buildLocalComprehensiveV2Draft({
-            input,
-            evidencePacket: evidence.packet,
-            profileTable,
-          });
+    draft = buildLocalComprehensiveV2Draft({
+      input,
+      evidencePacket: evidence.packet,
+      profileTable,
+    });
   } catch (error) {
     return comprehensiveV2Failure({
       code: "COMPREHENSIVE_V2_GENERATION_FAILED",
@@ -281,27 +260,6 @@ export function buildComprehensiveV2EvidenceFromGenerationInput(
   });
 
   return { packet: withBirthTimeEvidence(packet, { person: saju.birthTimeContext }), facts, calculation: saju };
-}
-
-async function generateWriterDraft(input: {
-  readonly input: SinglePersonGenerationInput;
-  readonly evidencePacket: ComprehensiveReportEvidencePacket;
-  readonly profileTable: ComprehensiveReportV2ProfileTable;
-  readonly config: Parameters<typeof generateComprehensiveReportDraft>[0]["config"];
-}): Promise<ComprehensiveReportV2Draft> {
-  const result = await generateComprehensiveReportDraft({
-    userDisplayName: input.input.person.name,
-    mbtiType: input.evidencePacket.mbtiType,
-    evidencePacket: input.evidencePacket,
-    profileTable: input.profileTable,
-    config: input.config,
-  });
-
-  if (!isComprehensiveReportV2Draft(result.draft)) {
-    throw new Error("Comprehensive writer returned a non-V2 draft.");
-  }
-
-  return result.draft;
 }
 
 function calculateComprehensiveSaju(
@@ -465,6 +423,94 @@ function toSpecialPatterns(
   }
 
   return uniqueValues(patterns);
+}
+
+// Deterministic saju feature chapter (moved unchanged from the removed comprehensive writer module).
+export function normalizeSajuFeatureChapter(
+  chapter: ComprehensiveReportV2SajuFeatureChapter,
+): ComprehensiveReportV2SajuFeatureChapter {
+  return {
+    ...chapter,
+    items: chapter.items.map((item) => {
+      const clarifier = getRawLabelClarifier(item.rawLabel);
+
+      if (clarifier.length === 0) {
+        return item;
+      }
+
+      return {
+        ...item,
+        plainMeaning: appendSentence(item.plainMeaning, clarifier),
+        howItShowsInYou: appendSentence(item.howItShowsInYou, clarifier),
+      };
+    }),
+  };
+}
+
+function getRawLabelClarifier(rawLabel: string): string {
+  if (rawLabel.includes("양인")) {
+    return "양인살은 강한 추진력, 정면 돌파, 고집, 승부 감각이 함께 올라오는 표식입니다.";
+  }
+  if (rawLabel.includes("현침")) {
+    return "현침살은 말, 판단, 분석이 날카롭게 들어가 정밀하게 핵심을 보는 표식입니다.";
+  }
+  if (rawLabel.includes("천을")) {
+    return "천을귀인은 도움의 통로와 위기 완충, 필요한 기회를 요청하는 감각으로 읽습니다.";
+  }
+  if (rawLabel.includes("화개")) {
+    return "화개는 혼자 깊게 정리하고 사색하며 표현의 깊이를 만드는 표식입니다.";
+  }
+  if (rawLabel.includes("망신")) {
+    return "망신살은 말과 행동이 밖으로 드러나는 장면에서 표현의 선을 신경 쓰게 하는 표식입니다.";
+  }
+  if (rawLabel.includes("백호")) {
+    return "백호대살은 긴장 속 대응력과 강한 돌파력이 같이 살아나는 표식입니다.";
+  }
+
+  return "";
+}
+
+function appendSentence(text: string, sentence: string): string {
+  return text.includes(sentence) ? text : `${text} ${sentence}`;
+}
+
+export function buildDeterministicSajuFeatureChapter(
+  evidencePacket: ComprehensiveReportEvidencePacket,
+): ComprehensiveReportV2SajuFeatureChapter | undefined {
+  const entries = evidencePacket.sajuFeatureDictionary
+    ?.filter((entry) =>
+      [
+        entry.rawLabel,
+        entry.userTitle,
+        entry.plainMeaning,
+        entry.howItShowsInYou,
+        entry.strength,
+        entry.fatiguePoint,
+        entry.practicalUse,
+      ].every((value) => value.trim().length > 0),
+    )
+    .slice(0, 6);
+
+  if (entries === undefined || entries.length < 3) {
+    return undefined;
+  }
+
+  return normalizeSajuFeatureChapter({
+    titleKo: "명리 특징 해석",
+    subtitleKo:
+      "공통 만세력표는 근거표로 유지하고, 이 챕터는 신살·귀인·합충·지장간을 현실 언어로 풀어보는 해석입니다.",
+    intro:
+      "공통 만세력표에 표시되는 신살, 귀인, 합충, 지장간은 이름만 보면 어렵게 느껴질 수 있습니다. 이 챕터에서는 제공된 원국 특징을 사건 예언이 아니라 말투, 판단 속도, 도움을 요청하는 방식, 관계 반응, 일 처리 패턴, 회복 루틴으로 번역합니다.",
+    items: entries.map((entry) => ({
+      rawLabel: entry.rawLabel,
+      userTitle: entry.userTitle,
+      plainMeaning: entry.plainMeaning,
+      howItShowsInYou: entry.howItShowsInYou,
+      strength: entry.strength,
+      fatiguePoint: entry.fatiguePoint,
+      practicalUse: entry.practicalUse,
+    })),
+  });
 }
 
 function buildLocalComprehensiveV2Draft(input: {

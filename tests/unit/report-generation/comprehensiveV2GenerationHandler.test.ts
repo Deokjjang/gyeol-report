@@ -87,9 +87,9 @@ describe("comprehensive V2 generation handler", () => {
     });
   });
 
-  it("keeps writer usage behind explicit options and avoids runtime side effects", () => {
-    expect(source).toContain("options.writer?.enabled === true");
-    expect(source).toContain("options.writer.config !== undefined");
+  it("has no writer path and avoids runtime side effects", () => {
+    expect(source).not.toContain("openai");
+    expect(source).not.toContain("options.writer");
     expect(source).toContain("buildLocalComprehensiveV2Draft");
 
     const forbiddenMarkers = [

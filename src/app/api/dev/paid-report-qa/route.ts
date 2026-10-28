@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { runLocalPaidReportQa } from "../../../../lib/payment/localPaidReportQa";
-import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
+import { WRITER_DISABLED_RUNTIME } from "../../../../lib/report-generation/writerDisabled";
 
 export async function POST(request: Request) {
   if (!(process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test") || process.env.REPORT_PERSISTENCE_MODE !== "preview_memory" || process.env.PAID_REPORT_RELIABILITY_ENABLED === "1") {
@@ -9,6 +9,6 @@ export async function POST(request: Request) {
   let payload: unknown;
   try { payload = await request.json(); }
   catch { return NextResponse.json({ ok: false, code: "INVALID_REPORT_INPUT" }, { status: 400 }); }
-  const result = await runLocalPaidReportQa(payload, resolveReportWriterRuntime());
+  const result = await runLocalPaidReportQa(payload, WRITER_DISABLED_RUNTIME);
   return NextResponse.json(result, { status: result.ok ? 200 : 400 });
 }

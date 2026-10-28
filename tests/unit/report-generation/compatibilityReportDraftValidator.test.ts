@@ -14,7 +14,7 @@ import {
 import {
   deriveAllowedCompatibilityMbtiTerms,
   deriveAllowedCompatibilitySajuTerms,
-} from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
+} from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
 
 function createValidCompatibilityDraft(): CompatibilityReportDraft {
   const packet = buildCompatibilityEvidencePacketFromFixtureId("deokmin-sodam-love");

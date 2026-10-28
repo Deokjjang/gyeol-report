@@ -7,7 +7,7 @@ import { validateCompatibilityReportDraft } from "../../../src/lib/report-genera
 import {
   deriveAllowedCompatibilityMbtiTerms,
   deriveAllowedCompatibilitySajuTerms,
-} from "../../../src/lib/report-generation/openaiCompatibilityReportWriterPrompt";
+} from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
 import type {
   CompatibilityGenerationInput,
 } from "../../../src/lib/report-generation/reportInputAdapter";
@@ -182,7 +182,7 @@ describe("compatibility generation handler", () => {
     }
   });
 
-  it("does not connect API, persistence, payment, or unconditional writer execution", () => {
+  it("does not connect API, persistence, payment, or a writer", () => {
     const forbiddenMarkers = [
       "api/reports",
       "persistence",
@@ -196,7 +196,8 @@ describe("compatibility generation handler", () => {
       expect(dispatcherSource).not.toContain(marker);
     }
 
-    expect(source).toContain("options.writer?.enabled === true");
+    expect(source).not.toContain("openai");
+    expect(source).not.toContain("options.writer");
     expect(dispatcherSource).toContain("compatibility: handleCompatibilityGeneration");
   });
 });

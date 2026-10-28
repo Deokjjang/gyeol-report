@@ -6,12 +6,12 @@ import { buildModuleGraph, customerRuntimeGraph, readModuleGraph, runtimeImports
 
 it("pins reviewed Base edges and the complete customer runtime graph", () => {
   expect(createHash("sha256").update(readFileSync("tests/fixtures/technical-stabilization-01/module-contract.json")).digest("hex"))
-    .toBe("d92efb9806521bcca82d1e146dd7af3c1b99cf481cf85418c63b78b855147970");
-  expect(contract.sourceSha).toBe("7ef25fcc0ae6f7765473433a826cb7cf96068a7b");
+    .toBe("bd1962478d6c6f7fbd5b1c75e0f79175c89bf5fd12eb3137065de798e4733bb8");
+  expect(contract.sourceSha).toBe("580705ae174de976a1be02109cf93f78c69f7142");
   const current = customerRuntimeGraph(readModuleGraph());
   expect(current).toEqual(contract.customer);
-  expect(current.roots).toHaveLength(46);
-  expect(current.files).toHaveLength(700);
+  expect(current.roots).toHaveLength(49);
+  expect(current.files).toHaveLength(692);
   expect(current.blocked).toEqual([]);
   expect(current.unresolved).toEqual([]);
 });

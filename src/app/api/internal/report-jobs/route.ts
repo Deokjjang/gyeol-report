@@ -3,7 +3,7 @@ import { timingSafeEqual } from "node:crypto";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
 import { runPaidReportBatch } from "../../../../lib/book/paidWorkerBatch";
 import { recoverPendingPayment } from "../../../../lib/payment/paymentConfirmRecovery";
-import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
+import { WRITER_DISABLED_RUNTIME } from "../../../../lib/report-generation/writerDisabled";
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
 
 export const runtime = "nodejs";
@@ -23,6 +23,6 @@ export async function GET(request: Request) {
     ? recoverPendingPayment(store, (payment, signal) => confirmTossPayment({ ...payment, signal, secretKey: process.env.TOSS_PAYMENTS_SECRET_KEY ?? "" }))
       .catch(() => ({ ok: false }))
     : Promise.resolve();
-  const [result] = await Promise.all([runPaidReportBatch(store, resolveReportWriterRuntime(), { startedAt }), recovery]);
+  const [result] = await Promise.all([runPaidReportBatch(store, WRITER_DISABLED_RUNTIME, { startedAt }), recovery]);
   return NextResponse.json({ ok: result.ok }, { status: result.ok ? 200 : 503 });
 }

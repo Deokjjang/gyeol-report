@@ -16,7 +16,7 @@ import {
 
 import { buildReportPersistencePayload } from "../../../../lib/report/reportPersistencePayload";
 import type { ReportOutput } from "../../../../lib/report/types";
-import { resolveReportWriterRuntime } from "../../../../lib/report-generation/reportWriterRuntime";
+import { WRITER_DISABLED_RUNTIME } from "../../../../lib/report-generation/writerDisabled";
 
 const REPORT_CREATE_ERROR_MESSAGE =
   "리포트를 생성하지 못했습니다. 입력값을 확인한 뒤 다시 시도해 주세요.";
@@ -374,8 +374,8 @@ async function createProductPreviewResponse(
   json: Record<string, unknown>,
 ): Promise<NextResponse> {
   const startedAt = Date.now();
-  const writer = resolveReportWriterRuntime();
-  const fallbackUsed = !writer.enabled;
+  const writer = WRITER_DISABLED_RUNTIME;
+  const fallbackUsed = true;
   const generationResult = json.productKey === "saju_mbti_full" && getRecordField(json, "productOptions")?.contentVersion === "v3"
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { comprehensiveVersion: "v3" })
     : json.productKey === "career_money_study" && getRecordField(json, "productOptions")?.contentVersion === "v3"
@@ -386,7 +386,7 @@ async function createProductPreviewResponse(
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { majorFortuneVersion: "v3" })
     : json.productKey === "annual_fortune" && getRecordField(json, "productOptions")?.contentVersion === "v3"
     ? await generateProductReport(json, writer, "deterministic_fallback", undefined, { annualVersion: "v3" })
-    : await generateProductReport(json, writer, writer.enabled ? "normal_writer" : "deterministic_fallback");
+    : await generateProductReport(json, writer, "deterministic_fallback");
   const generationDiagnostic = () => createSafeLocalReportDiagnostic({
     result: generationResult,
     durationMs: Math.max(0, Date.now() - startedAt),

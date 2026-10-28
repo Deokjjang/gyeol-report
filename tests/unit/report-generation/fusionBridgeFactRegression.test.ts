@@ -1,7 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { generateComprehensiveV2ProductDraft } from "../../../src/lib/report-generation/comprehensiveV2GenerationHandler";
-import * as writer from "../../../src/lib/report-generation/openaiComprehensiveReportWriter";
-import { buildOpenAIComprehensiveReportWriterMessages } from "../../../src/lib/report-generation/openaiReportWriterPrompt";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { MBTI_SOURCE_TYPES, getMbtiSourceProfile } from "../../../src/lib/report-knowledge/mbti/sourceRuntimeAdapter";
@@ -101,23 +99,5 @@ describe("Fusion Bridge product boundaries", () => {
     const r = await generateProductReport(payload, { enabled: false, reason: "flag_disabled" }, "deterministic_fallback");
     expect(r.ok, JSON.stringify(r).slice(0,400)).toBe(true);
     expect(r.externalCalls).toEqual([]);
-  });
-  it("mock writer and fallback receive the same matched facts; prompt uses no unrelated hint", async () => {
-    const person = input(customers[0], "ENTJ");
-    const local = await generateComprehensiveV2ProductDraft(person);
-    expect(local.ok).toBe(true); if (!local.ok) return;
-    let sent: Parameters<typeof writer.generateComprehensiveReportDraft>[0] | undefined;
-    vi.spyOn(writer, "generateComprehensiveReportDraft").mockImplementation(async (request) => {
-      sent = request;
-      const { productVersion, ...draft } = local.draft;
-      expect(productVersion).toBe("v2");
-      return { draft, rawText: "", warnings: [] };
-    });
-    const written = await generateComprehensiveV2ProductDraft(person, { writer: { enabled: true, config: { enabled: true, apiKey: "mock-key", model: "mock-model" } } });
-    expect(written.ok, JSON.stringify(written).slice(0,600)).toBe(true);
-    expect(sent?.evidencePacket.sections).toEqual(local.evidencePacket.sections);
-    expect(sent?.evidencePacket.sajuMbtiBridgeEvidence).toEqual(local.evidencePacket.sajuMbtiBridgeEvidence);
-    const message = JSON.stringify(buildOpenAIComprehensiveReportWriterMessages({ mbtiType: "ENTJ", evidencePacket: local.evidencePacket }));
-    expect(message).not.toContain("갑신일주의 압박 대응력");
   });
 });
