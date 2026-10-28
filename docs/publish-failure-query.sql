@@ -18,6 +18,12 @@
 --   IN_PROGRESS               대기·생성·재시도 중
 -- "원고 검증 실패" = 마지막 시도의 failure_stage = 'validation' (작성기 원고 또는 발행 검사 불합격).
 -- 주의: 만료(90일) 후에는 attempts.validation_errors가 비워진다. error_code·failure_stage는 남는다.
+-- 상태 값(migration CHECK 제약): paid_report_snapshots.status = QUEUED/GENERATING/RETRYING/COMPLETED/FAILED_REQUIRES_ATTENTION/EXPIRED,
+--   report_generation_jobs.status = QUEUED/RUNNING/RETRYING/COMPLETED/FAILED_REQUIRES_ATTENTION/EXPIRED (리포트는 GENERATING, 작업은 RUNNING),
+--   report_ticket_redemptions.state = RUNNING/COMPLETED/REVERSED.
+-- 이용권 리포트는 order_id가 없고 ticket_redemption_id만 있다 → [1]~[4], [6]에는 안 들어가고 [5]에서만 센다.
+--
+-- 배포 전 기록할 것: [1]의 '최근 7일'·'최근 30일' 행, [6] 전체. 배포 24시간 뒤 같은 블록을 다시 돌려 비교한다.
 
 
 -- [1] 기간별 건수와 비율 ------------------------------------------------------------
@@ -170,3 +176,21 @@ from periods p
 left join public.report_ticket_redemptions r on r.created_at >= p.since
 group by p.sort_key, p.period
 order by p.sort_key;
+
+
+-- [6] 최근 7일·30일 결제 주문의 상태별 건수 (리포트 상태 × 작업 상태 × 마지막 오류 코드) ---------
+--     실패가 어느 상태·코드에 몰려 있는지 본다. 이용권 리포트는 [5]에서 본다.
+with periods(sort_key, period, since) as (
+  values (1, '최근 7일', now() - interval '7 days'), (2, '최근 30일', now() - interval '30 days')
+)
+select p.period,
+       coalesce(s.status, '(리포트 행 없음)') as report_status,
+       coalesce(j.status, '(작업 없음)') as job_status,
+       coalesce(j.last_error_code, '-') as last_error_code,
+       count(*) as paid_orders
+from periods p
+join public.payment_orders po on po.paid_at >= p.since
+left join public.paid_report_snapshots s on s.order_id = po.payment_order_id
+left join public.report_generation_jobs j on j.order_id = po.payment_order_id
+group by p.sort_key, p.period, 2, 3, 4
+order by p.sort_key, paid_orders desc, report_status, job_status;

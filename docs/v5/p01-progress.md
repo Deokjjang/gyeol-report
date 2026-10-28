@@ -31,10 +31,11 @@
 - [x] cs-manseryeok-faq.md
 
 ## 4. 릴리스 준비
-- [ ] verify-books-readonly.ts
-- [ ] release-phase0-manseryeok.md
-- [ ] publish-failure-query.sql 최종 확인
-- [ ] tsc/lint/build/test 기준선
+- [x] verify-books-readonly.ts (+ tests/unit/scripts/verifyBooksReadonly.test.ts)
+- [x] release-phase0-manseryeok.md
+- [x] publish-failure-query.sql 최종 확인(스키마 일치, [6] 추가, PGlite 로컬 실행)
+- [x] tsc 0 / lint 0 / build 성공 / 테스트 신규 실패 0(부하 11 단독 PASS)
+- [x] 보고서 docs/v5/p01-report.md
 
 ## 5. 승인 대기
 - [ ] "PHASE0 배포 승인" 대기
