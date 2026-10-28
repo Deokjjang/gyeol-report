@@ -1,0 +1,352 @@
+{
+  "version": "badges-v5-2",
+  "badges": [
+    {
+      "kind": "STEM_HAP",
+      "label": "천간합",
+      "line": "하늘 글자끼리 손을 잡아 마음이 한쪽으로 쏠리는 해",
+      "tone": "mixed"
+    },
+    {
+      "kind": "STEM_HAP",
+      "pair": "甲己",
+      "label": "갑기합",
+      "line": "나무와 땅이 손잡아 자리를 잡고 싶어지는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "STEM_HAP",
+      "pair": "乙庚",
+      "label": "을경합",
+      "line": "풀과 쇠가 손잡아 부드러움에 단단함이 붙는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "STEM_HAP",
+      "pair": "丙辛",
+      "label": "병신합",
+      "line": "햇빛과 보석이 손잡아 겉이 빛나고 속은 눌리는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "STEM_HAP",
+      "pair": "丁壬",
+      "label": "정임합",
+      "line": "촛불과 큰물이 손잡아 마음이 먼저 움직이는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "STEM_HAP",
+      "pair": "戊癸",
+      "label": "무계합",
+      "line": "산과 이슬비가 손잡아 메마른 곳이 조금 적셔지는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "YUKHAP",
+      "label": "육합",
+      "line": "땅 글자끼리 짝이 맞아 일과 사람이 붙는 해",
+      "tone": "plus"
+    },
+    {
+      "kind": "YUKHAP",
+      "pair": "子丑",
+      "label": "자축합",
+      "line": "물과 얼어붙은 땅이 만나 조용히 한곳에 머무는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "YUKHAP",
+      "pair": "寅亥",
+      "label": "인해합",
+      "line": "큰 나무와 바닷물이 만나 새 일이 자라는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "YUKHAP",
+      "pair": "卯戌",
+      "label": "묘술합",
+      "line": "꽃과 마른 땅이 만나 뜻밖의 인연이 붙는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "YUKHAP",
+      "pair": "辰酉",
+      "label": "진유합",
+      "line": "젖은 땅과 쇠가 만나 틀이 잡히는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "YUKHAP",
+      "pair": "巳申",
+      "label": "사신합",
+      "line": "불과 쇠가 만나 붙었다 다퉜다 하는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "YUKHAP",
+      "pair": "午未",
+      "label": "오미합",
+      "line": "한낮의 불과 더운 땅이 만나 열기가 오래 가는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "SAMHAP",
+      "label": "삼합",
+      "line": "세 글자가 한 팀이 되어 한 가지 힘이 크게 뭉치는 해",
+      "tone": "plus"
+    },
+    {
+      "kind": "SAMHAP",
+      "pair": "申子辰",
+      "label": "수국",
+      "line": "물의 팀이 완성되어 생각과 정보가 크게 모이는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "SAMHAP",
+      "pair": "寅午戌",
+      "label": "화국",
+      "line": "불의 팀이 완성되어 표현과 열정이 크게 모이는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "SAMHAP",
+      "pair": "巳酉丑",
+      "label": "금국",
+      "line": "쇠의 팀이 완성되어 정리와 결단이 크게 모이는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "SAMHAP",
+      "pair": "亥卯未",
+      "label": "목국",
+      "line": "나무의 팀이 완성되어 시작과 성장이 크게 모이는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "BANGHAP",
+      "label": "방합",
+      "line": "같은 계절 글자가 모여 한 방향으로 힘이 쏠리는 해",
+      "tone": "mixed"
+    },
+    {
+      "kind": "BANGHAP",
+      "pair": "寅卯辰",
+      "label": "봄 방합",
+      "line": "봄 글자가 모여 새 일을 벌이고 싶어지는 흐름",
+      "tone": "plus"
+    },
+    {
+      "kind": "BANGHAP",
+      "pair": "巳午未",
+      "label": "여름 방합",
+      "line": "여름 글자가 모여 열기와 속도가 올라가는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "BANGHAP",
+      "pair": "申酉戌",
+      "label": "가을 방합",
+      "line": "가을 글자가 모여 거두고 자르는 결정이 많아지는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "BANGHAP",
+      "pair": "亥子丑",
+      "label": "겨울 방합",
+      "line": "겨울 글자가 모여 안으로 들어가 쉬고 싶어지는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "CHUNG",
+      "label": "지지충",
+      "line": "마주 선 글자가 부딪쳐 자리가 흔들리고 움직임이 생기는 해",
+      "tone": "mixed"
+    },
+    {
+      "kind": "CHUNG",
+      "pair": "子午",
+      "label": "자오충",
+      "line": "물과 불이 부딪쳐 마음의 온도가 오르내리는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "CHUNG",
+      "pair": "丑未",
+      "label": "축미충",
+      "line": "두 땅이 부딪쳐 닫혀 있던 창고가 열리는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "CHUNG",
+      "pair": "寅申",
+      "label": "인신충",
+      "line": "나무와 쇠가 부딪쳐 이동과 전환이 커지는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "CHUNG",
+      "pair": "卯酉",
+      "label": "묘유충",
+      "line": "꽃과 칼이 부딪쳐 말과 관계가 날카로워지는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "CHUNG",
+      "pair": "辰戌",
+      "label": "진술충",
+      "line": "두 창고가 맞서 고집과 고집이 부딪치는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "CHUNG",
+      "pair": "巳亥",
+      "label": "사해충",
+      "line": "불과 바닷물이 부딪쳐 먼 이동과 생각의 전환이 오는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "HYEONG",
+      "label": "지지형",
+      "line": "글자끼리 서로를 다듬고 벌주듯 눌러 손봐야 할 일이 드러나는 해",
+      "tone": "minus"
+    },
+    {
+      "kind": "HYEONG",
+      "pair": "寅巳申",
+      "label": "인사신형",
+      "line": "세 글자가 서로 밀어 은혜가 원망으로 바뀌기 쉬운 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HYEONG",
+      "pair": "丑戌未",
+      "label": "축술미형",
+      "line": "세 땅이 서로 눌러 믿던 사람과 틀어지기 쉬운 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HYEONG",
+      "pair": "子卯",
+      "label": "자묘형",
+      "line": "물과 꽃이 서로 예의를 잃어 가까운 사이가 거칠어지는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HYEONG",
+      "pair": "自刑",
+      "label": "자형",
+      "line": "같은 글자가 겹쳐 스스로를 몰아붙이는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "PA",
+      "label": "지지파",
+      "line": "짝이 어긋나 해 둔 일이 깨지고 다시 맞춰야 하는 해",
+      "tone": "minus"
+    },
+    {
+      "kind": "PA",
+      "pair": "子酉",
+      "label": "자유파",
+      "line": "물과 쇠가 어긋나 정리해 둔 것이 흐트러지는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "PA",
+      "pair": "丑辰",
+      "label": "축진파",
+      "line": "두 젖은 땅이 어긋나 묵은 일이 다시 올라오는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "PA",
+      "pair": "寅亥",
+      "label": "인해파",
+      "line": "나무와 물이 합하면서도 어긋나 시작이 늦어지는 흐름",
+      "tone": "mixed"
+    },
+    {
+      "kind": "PA",
+      "pair": "卯午",
+      "label": "묘오파",
+      "line": "꽃과 불이 어긋나 열은 있는데 결실이 비는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "PA",
+      "pair": "巳申",
+      "label": "사신파",
+      "line": "불과 쇠가 어긋나 약속이 틀어지기 쉬운 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "PA",
+      "pair": "戌未",
+      "label": "술미파",
+      "line": "마른 땅끼리 어긋나 가족·집 일이 흔들리는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "label": "지지해",
+      "line": "글자끼리 서로 해를 끼쳐 가까운 사람과 작은 틈이 생기는 해",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "pair": "子未",
+      "label": "자미해",
+      "line": "물과 더운 땅이 서로 방해해 속마음이 안 통하는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "pair": "丑午",
+      "label": "축오해",
+      "line": "언 땅과 불이 서로 방해해 열심히 해도 알아주지 않는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "pair": "寅巳",
+      "label": "인사해",
+      "line": "나무와 불이 서로 방해해 급하게 가다 발이 걸리는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "pair": "卯辰",
+      "label": "묘진해",
+      "line": "꽃과 젖은 땅이 서로 방해해 가까운 사이가 서운해지는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "pair": "申亥",
+      "label": "신해해",
+      "line": "쇠와 바닷물이 서로 방해해 계획이 새는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "HAE",
+      "pair": "酉戌",
+      "label": "유술해",
+      "line": "쇠와 마른 땅이 서로 방해해 말이 상처가 되는 흐름",
+      "tone": "minus"
+    },
+    {
+      "kind": "WONJIN",
+      "label": "원진",
+      "line": "이유 없이 서로 미워지는 짝이 만나 사람 관계가 까끌해지는 해",
+      "tone": "minus"
+    },
+    {
+      "kind": "GONGMANG",
+      "label": "공망",
+      "line": "비어 있는 자리에 든 해, 힘을 줘도 빠져나가니 기대를 낮추는 흐름",
+      "tone": "minus"
+    }
+  ]
+}
