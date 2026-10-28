@@ -11,8 +11,8 @@
 | 2 스키마 v2 + lint v2 + v1 legacy/ 이동 | 완료 | 1a061fff. `schema.ts`, `scripts/knowledge-lint.ts`(--only/--strict/--coverage), `scripts/knowledge-render.ts` |
 | 3 기준 항목 20개 → p1-gold-samples.md | 완료 | 18 명리 + ENTJ·INFP + Fusion 3. lint 0. pbcopy 완료 |
 | 4 대량 작성 (가족별 배치) | 완료 (명리 254, MBTI 16, Fusion 376, Timeline 전부) | 배치 브리프 `docs/v5/p1-batch-brief.md`. 아래 배치 표 |
-| 5 품질 게이트 (검수 로그·커버리지·테스트) | 대기 | |
-| 6 완료·병합·보고 | 대기 | |
+| 5 품질 게이트 (검수 로그·커버리지·테스트) | 완료 | lint --strict 0, knowledge-v5 테스트 7, tsc·eslint 0, 전체 vitest P1 신규 실패 0(근거는 p1-report.md) |
+| 6 완료·병합·보고 | 완료 | `docs/v5/p1-report.md`, v5/main fast-forward 병합·push |
 
 ## 배치 진행 (단위 4)
 
