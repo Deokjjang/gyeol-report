@@ -17,6 +17,7 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 export const DEFAULT_BASE = "https://gyeolreport.com";
+export const SITE_HOSTS: readonly string[] = ["gyeolreport.com", "www.gyeolreport.com"];
 export const TIMEOUT_MS = 20_000;
 export const MIN_VISIBLE_TEXT = 50;
 
@@ -73,13 +74,18 @@ export function classify(target: Target, body: string, status: number): Verdict 
   return { result: "PASS", reason: target.optional ? `${body.length}바이트` : `보이는 글자 ${text.length}자` };
 }
 
+// apex ↔ www 리다이렉트는 같은 사이트로 본다. 그 외 호스트 변경은 로그인·보호 화면 의심.
+export function isSameSite(requestedHost: string, finalHost: string): boolean {
+  return requestedHost === finalHost || (SITE_HOSTS.includes(requestedHost) && SITE_HOSTS.includes(finalHost));
+}
+
 export async function verifyTarget(base: string, target: Target): Promise<{ verdict: Verdict; line: string }> {
   const url = new URL(target.path, base).href;
   try {
     const response = await fetch(url, { method: "GET", redirect: "follow", headers: { "user-agent": "gyeol-verify-public-readonly/1" }, signal: AbortSignal.timeout(TIMEOUT_MS) });
     const body = await response.text();
     const finalUrl = response.url || url;
-    const verdict: Verdict = new URL(finalUrl).host !== new URL(url).host
+    const verdict: Verdict = !isSameSite(new URL(url).host, new URL(finalUrl).host)
       ? { result: "FAIL", reason: `다른 호스트로 리다이렉트(${new URL(finalUrl).host}, 로그인·보호 화면 의심)` }
       : classify(target, body, response.status);
     return { verdict, line: `${verdict.result} ${response.status}  ${target.label}  ${url}${finalUrl !== url ? `  final=${finalUrl}` : ""}  ${verdict.reason}` };
