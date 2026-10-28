@@ -21,3 +21,4 @@
 - [x] 전체 vitest: 608 파일/144 실패 파일. 기준선(140) 대비 신규 4 → 3은 origin/master에서도 동일 17건 실패(기존), 1(ticketOwnerRoute)은 내 변경→q2 테스트 갱신으로 해소
 - [x] build OK, tsc/lint OK, p02-report.md 커밋
 - [ ] **push 보류**: 이력 스캔에서 더미 키 리터럴 1건(커밋 0fe4bcce, HEAD 트리에는 없음). 규칙상 push 금지·보고. 사용자 결정 대기: (a) 더미임을 확인하고 그대로 push, (b) 미push 커밋 0fe4bcce 이력 재작성 후 push
+- [x] 재개: 0fe4bcce 재작성(트리 동일 확인), 스캔 0건, baseline 재생성(142 파일/808 케이스, 이전본 baseline-failures-84826020.txt)

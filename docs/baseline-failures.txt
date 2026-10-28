@@ -1,5 +1,6 @@
-# Baseline at origin/master 8482602 (pristine worktree, no env). Failed test FILES, then failed test CASES.
-# FILES 140
+# Baseline at origin/master 0dde75a8 (pristine worktree, no env). Failed test FILES, then failed test CASES.
+# Regenerated 2026-10-28. Previous baseline (84826020): docs/baseline-failures-84826020.txt
+# FILES 142
 tests/unit/account/campaigns.test.ts
 tests/unit/account/coupons.test.ts
 tests/unit/account/measurement.test.ts
@@ -10,7 +11,6 @@ tests/unit/api/mockPaidCompleteRouteSource.test.ts
 tests/unit/api/paidReportProductionRuntime.test.ts
 tests/unit/api/paymentCheckoutPrepareRoute.test.ts
 tests/unit/app/dev/bookPreview.test.tsx
-tests/unit/app/dev/bookReading13b.test.tsx
 tests/unit/app/dev/manualReview.test.tsx
 tests/unit/app/homePageProductSource.test.ts
 tests/unit/app/launchFlagUiBoundarySource.test.ts
@@ -35,6 +35,7 @@ tests/unit/interpretation-v4/compatibilitySafety.test.ts
 tests/unit/interpretation-v4/comprehensiveFinal.test.ts
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts
+tests/unit/interpretation-v4/comprehensiveStability.test.ts
 tests/unit/interpretation-v4/contentRebuild.test.ts
 tests/unit/interpretation-v4/finalEditorial.test.ts
 tests/unit/interpretation-v4/foundationAdapter.test.ts
@@ -111,6 +112,7 @@ tests/unit/report-knowledge/compatibilityParentChildSpecialistEngine.test.ts
 tests/unit/report-knowledge/comprehensiveProductResearch.test.ts
 tests/unit/report-knowledge/comprehensiveReaderValueProbe.test.ts
 tests/unit/report-knowledge/comprehensiveSpecialistEngine.test.ts
+tests/unit/report-knowledge/conditionalTemporalMeaningReview.test.ts
 tests/unit/report-knowledge/fullProductIntegration.test.ts
 tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts
 tests/unit/report-knowledge/globalSourceDomainResolution.test.ts
@@ -139,8 +141,10 @@ tests/unit/report-knowledge/sajuRelationResearch.test.ts
 tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts
 tests/unit/report-knowledge/semanticAxisResearch.test.ts
 tests/unit/report-knowledge/semanticDomainReviewWorkbench.test.ts
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts
 tests/unit/report/fullReportQaDumpSource.test.ts
-# CASES 724
+
+# CASES 808
 tests/unit/account/campaigns.test.ts :: 12A actual SQL acquisition authority coupon exactly once uses 10B quote; no tickets, valid private ownership and paid publish
 tests/unit/account/campaigns.test.ts :: 12A actual SQL acquisition authority failed/incomplete/unowned publication never converts; complete snapshot recovery only
 tests/unit/account/campaigns.test.ts :: 12A actual SQL acquisition authority server presentation and windows: active/NONE, draft, paused, ended, scheduled; public OFF
@@ -152,6 +156,8 @@ tests/unit/account/referrals.test.ts :: 11B actual SQL + existing ticket ledger 
 tests/unit/account/referrals.test.ts :: 11B actual SQL + existing ticket ledger incomplete persisted draft or missing ownership cannot qualify; exact valid snapshot retry recovers
 tests/unit/account/referrals.test.ts :: 11B actual SQL + existing ticket ledger ordinary paid publication qualifies, not checkout/start; no ticket/coupon mixing
 tests/unit/account/referrals.test.ts :: 11B actual SQL + existing ticket ledger recovery skips an invalid first snapshot and qualifies the next actually complete book
+tests/unit/account/tickets.test.ts :: ticket ledger: actual SQL, no provider compatibility managerReport role remains canonical
+tests/unit/account/tickets.test.ts :: ticket ledger: actual SQL, no provider compatibility parentChild role remains canonical
 tests/unit/api/birthTimeCheckoutBoundary.test.ts :: production input rejection before durable checkout writes allows exact/stable approximate/stable unknown without real providers {"birthTime":"","approximateBirthTimeSlot":"MISI"}
 tests/unit/api/birthTimeCheckoutBoundary.test.ts :: production input rejection before durable checkout writes allows exact/stable approximate/stable unknown without real providers {"birthTime":"","birthTimeUnknown":true}
 tests/unit/api/birthTimeCheckoutBoundary.test.ts :: production input rejection before durable checkout writes allows exact/stable approximate/stable unknown without real providers {}
@@ -192,20 +198,21 @@ tests/unit/app/tossPgReviewCheckoutPathSource.test.ts :: Toss PG review checkout
 tests/unit/app/tossPgReviewCheckoutPathSource.test.ts :: Toss PG review checkout path source keeps the report input and pre-payment review capture-ready
 tests/unit/components/DevTossCheckoutLauncher.test.tsx :: DevTossCheckoutLauncher renders Toss widget launcher copy
 tests/unit/components/ProductTileVisual.test.tsx :: product visual collection maps each of the six actual home cards to its own visual and original destination
-tests/unit/interpretation-v3/careerEditorial.test.tsx :: local create → memory snapshot → full result page reads V3 with no provider
+tests/unit/interpretation-v3/careerEditorial.test.tsx ::  local create → memory snapshot → full result page reads V3 with no provider
+tests/unit/interpretation-v3/careerEditorial.test.tsx ::  preserves all six committed Phase B customer drafts byte for byte
 tests/unit/interpretation-v3/core.test.ts :: V3 isolated common core connects explicit V3 version boundaries and has zero provider/network clients in V3
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: A local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: B local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: C local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: D local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: E local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: F local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: G local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: H local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: I local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: J local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: K local create → memory → full SSR with no provider
-tests/unit/interpretation-v3/loveEditorial.test.tsx :: L local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  A local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  B local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  C local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  D local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  E local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  F local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  G local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  H local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  I local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  J local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  K local create → memory → full SSR with no provider
+tests/unit/interpretation-v3/loveEditorial.test.tsx ::  L local create → memory → full SSR with no provider
 tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual generation and frozen Book '01-minjae': actual customer entry, complete Book and immutable reopen
 tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual generation and frozen Book '02-doyun': actual customer entry, complete Book and immutable reopen
 tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual generation and frozen Book '03-seoyun': actual customer entry, complete Book and immutable reopen
@@ -219,10 +226,11 @@ tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual gene
 tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual generation and frozen Book 'unknown-context': actual customer entry, complete Book and immutable reopen
 tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual generation and frozen Book 'unknown-time': actual customer entry, complete Book and immutable reopen
 tests/unit/interpretation-v4/careerProduct.test.tsx :: 13D-7A Career actual generation and frozen Book legacy Career snapshot keeps original content and Book
-tests/unit/interpretation-v4/careerProductLocks.test.ts :: 'annual' customer/evidence/Book stays frozen
-tests/unit/interpretation-v4/careerProductLocks.test.ts :: 'compatibility' customer/evidence/Book stays frozen
-tests/unit/interpretation-v4/careerProductLocks.test.ts :: 'comprehensive' customer/evidence/Book stays frozen
-tests/unit/interpretation-v4/careerProductLocks.test.ts :: 'major' customer/evidence/Book stays frozen
+tests/unit/interpretation-v4/careerProductLocks.test.ts ::  'annual' customer/evidence/Book stays frozen
+tests/unit/interpretation-v4/careerProductLocks.test.ts ::  'compatibility' customer/evidence/Book stays frozen
+tests/unit/interpretation-v4/careerProductLocks.test.ts ::  'comprehensive' customer/evidence/Book stays frozen
+tests/unit/interpretation-v4/careerProductLocks.test.ts ::  'love' customer/evidence/Book stays frozen
+tests/unit/interpretation-v4/careerProductLocks.test.ts ::  'major' customer/evidence/Book stays frozen
 tests/unit/interpretation-v4/careerRelease.test.ts :: Career editorial reader edition 'annual' previous saved edition remains identical
 tests/unit/interpretation-v4/careerRelease.test.ts :: Career editorial reader edition 'compatibility' previous saved edition remains identical
 tests/unit/interpretation-v4/careerRelease.test.ts :: Career editorial reader edition 'comprehensive' previous saved edition remains identical
@@ -239,10 +247,15 @@ tests/unit/interpretation-v4/careerSafety.test.ts :: Career gates and isolation 
 tests/unit/interpretation-v4/careerSafety.test.ts :: Career gates and isolation '09-harin': reviewed Comprehensive narrative remains byte-for-byte stable
 tests/unit/interpretation-v4/careerSafety.test.ts :: Career gates and isolation '10-minjae': reviewed Comprehensive narrative remains byte-for-byte stable
 tests/unit/interpretation-v4/careerSafety.test.ts :: Career gates and isolation '11-doyun': reviewed Comprehensive narrative remains byte-for-byte stable
+tests/unit/interpretation-v4/careerSafety.test.ts :: Career gates and isolation '12-junseo': reviewed Comprehensive narrative remains byte-for-byte stable
 tests/unit/interpretation-v4/careerSafety.test.ts :: Career gates and isolation composers stay out of public UI/runtime; only explicit dev consumers may cross
-tests/unit/interpretation-v4/commonEditorial.test.ts :: 'career'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
-tests/unit/interpretation-v4/commonEditorial.test.ts :: 'compatibility'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
-tests/unit/interpretation-v4/commonEditorial.test.ts :: 'love'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/commonEditorial.test.ts ::  'annual'/'H' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/commonEditorial.test.ts ::  'career'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/commonEditorial.test.ts ::  'compatibility'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/commonEditorial.test.ts ::  'comprehensive'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/commonEditorial.test.ts ::  'love'/'A' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/commonEditorial.test.ts ::  'major'/'S' actual paid generator removes reviewed repetition and retains each paragraph's proof
+tests/unit/interpretation-v4/compatibilitySafety.test.ts :: Compatibility isolation, evidence and directionality '01-jia': Love full narrative hash unchanged
 tests/unit/interpretation-v4/compatibilitySafety.test.ts :: Compatibility isolation, evidence and directionality '02-seojin': Love full narrative hash unchanged
 tests/unit/interpretation-v4/compatibilitySafety.test.ts :: Compatibility isolation, evidence and directionality '03-seoyun': Love full narrative hash unchanged
 tests/unit/interpretation-v4/compatibilitySafety.test.ts :: Compatibility isolation, evidence and directionality '04-doyun': Love full narrative hash unchanged
@@ -256,6 +269,7 @@ tests/unit/interpretation-v4/comprehensiveFinal.test.ts :: Comprehensive final p
 tests/unit/interpretation-v4/comprehensiveFinal.test.ts :: Comprehensive final pass — actual calculated goldens '07-nayeong' actual packet/book: whole prose, compact glossary, distinct stable indexes
 tests/unit/interpretation-v4/comprehensiveFinal.test.ts :: Comprehensive final pass — actual calculated goldens '12-junseo' actual packet/book: whole prose, compact glossary, distinct stable indexes
 tests/unit/interpretation-v4/comprehensiveFinal.test.ts :: Comprehensive final pass — actual calculated goldens 'dakyeong' actual packet/book: whole prose, compact glossary, distinct stable indexes
+tests/unit/interpretation-v4/comprehensiveFinal.test.ts :: Comprehensive final pass — actual calculated goldens Dakyeong: a person, two precise lenses, money relation and one substantial people-luck chapter
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book '01-seojin' canonical input, selected text, tables, immutable reopen
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book '02-seoyun' canonical input, selected text, tables, immutable reopen
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book '03-jia' canonical input, selected text, tables, immutable reopen
@@ -268,6 +282,7 @@ tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual cust
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book '10-minjae' canonical input, selected text, tables, immutable reopen
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book '11-doyun' canonical input, selected text, tables, immutable reopen
 tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book '12-junseo' canonical input, selected text, tables, immutable reopen
+tests/unit/interpretation-v4/comprehensiveProduct.test.tsx :: 13D-6B actual customer generation to persisted Book publishing editor context and approximate time survive the actual boundary
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation '02-career' keeps its baseline full result and Book
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation '03-love' keeps its baseline full result and Book
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation '04-compatibility' keeps its baseline full result and Book
@@ -279,9 +294,12 @@ tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reade
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation 'D' retains 13/52, real proof and deterministic publication
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation 'E' retains 13/52, real proof and deterministic publication
 tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation 'F' retains 13/52, real proof and deterministic publication
+tests/unit/interpretation-v4/comprehensiveQuality.test.ts :: comprehensive reader questions and proof preservation different customers retain distinct talent, risk, money and closing combinations
+tests/unit/interpretation-v4/comprehensiveStability.test.ts ::  'S046' 'exact' publishes with actual roles, evidence and stored Book
+tests/unit/interpretation-v4/comprehensiveStability.test.ts ::  'S047' 'approximate' publishes with actual roles, evidence and stored Book
+tests/unit/interpretation-v4/comprehensiveStability.test.ts ::  'S051' 'unknown' publishes with actual roles, evidence and stored Book
 tests/unit/interpretation-v4/contentRebuild.test.ts :: Phase13A real-calculation content review exports '01-seojin': six actual packets publish with unchanged calculation and complete Book data
 tests/unit/interpretation-v4/contentRebuild.test.ts :: Phase13A real-calculation content review exports '04-daeun': six actual packets publish with unchanged calculation and complete Book data
-tests/unit/interpretation-v4/contentRebuild.test.ts :: Phase13A real-calculation content review exports '08-yujin': six actual packets publish with unchanged calculation and complete Book data
 tests/unit/interpretation-v4/contentRebuild.test.ts :: Phase13A real-calculation content review exports renders canonical cell order and visible element bands, without guessing an unknown hour
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) annual-01-business: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) annual-02-employee: reviewed prose, selection and proofs remain deterministic
@@ -294,8 +312,17 @@ tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive /
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) career-03-seoyun: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) career-04-yujin: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) career-05-harin: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) career-06-chaewon: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) career-07-nayeong: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) career-08-seojin: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-01-love: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-02-marriage: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-03-parent: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-04-coworker: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-05-manager: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-06-business: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-07-friend: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) compatibility-08-love: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-01-seojin: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-02-seoyun: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-03-jia: reviewed prose, selection and proofs remain deterministic
@@ -307,21 +334,26 @@ tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive /
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-09-harin: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-10-minjae: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-11-doyun: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) comprehensive-12-junseo: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENFP-annual: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENFP-career: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENFP-compatibility: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENFP-comprehensive: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENFP-love: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENFP-major: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENTJ-annual: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENTJ-career: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENTJ-compatibility: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENTJ-comprehensive: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENTJ-love: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-ENTJ-major: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-INTP-annual: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-INTP-career: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-INTP-compatibility: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-INTP-comprehensive: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-INTP-love: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) golden-INTP-major: reviewed prose, selection and proofs remain deterministic
+tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) love-01-jia: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) love-02-seojin: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) love-03-seoyun: reviewed prose, selection and proofs remain deterministic
 tests/unit/interpretation-v4/finalEditorial.test.ts :: Phase13C1 Comprehensive / Phase13B other five products (historical baselines retained separately) love-04-doyun: reviewed prose, selection and proofs remain deterministic
@@ -348,6 +380,7 @@ tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression 
 tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries '03-seoyun': reviewed Career narrative hash unchanged
 tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries '04-yujin': reviewed Career narrative hash unchanged
 tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries '05-harin': reviewed Career narrative hash unchanged
+tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries '06-chaewon': reviewed Career narrative hash unchanged
 tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries '07-nayeong': reviewed Career narrative hash unchanged
 tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries '08-seojin': reviewed Career narrative hash unchanged
 tests/unit/interpretation-v4/loveSafety.test.ts :: Love evidence and regression boundaries no V4 import in any existing runtime/UI/product/paid delivery file
@@ -355,6 +388,8 @@ tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and 
 tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and cycle evidence separation '02-employee': base calculations, all 14 year stories, transitions and selection remain identical
 tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and cycle evidence separation '03-freelance': base calculations, all 14 year stories, transitions and selection remain identical
 tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and cycle evidence separation '04-time-unknown': base calculations, all 14 year stories, transitions and selection remain identical
+tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and cycle evidence separation '05-mbti-unknown': base calculations, all 14 year stories, transitions and selection remain identical
+tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and cycle evidence separation '06-both-unknown': base calculations, all 14 year stories, transitions and selection remain identical
 tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts :: Major natal and cycle evidence separation 03-freelance: B/C actual transit is distinct from natal ten-god and MBTI
 tests/unit/interpretation-v4/majorInteraction.test.ts :: Major verified annual interaction explanations '01-business': immutable calculations, reviewed copy, IDs, MBTI/Fusion and selection
 tests/unit/interpretation-v4/majorInteraction.test.ts :: Major verified annual interaction explanations '02-employee': immutable calculations, reviewed copy, IDs, MBTI/Fusion and selection
@@ -366,7 +401,7 @@ tests/unit/interpretation-v4/majorInteraction.test.ts :: Major verified annual i
 tests/unit/interpretation-v4/manuscriptQuality.test.ts :: actual calculated manuscript: reason and operating-rule proof an actual charm Claim can be used only with introduced expression support
 tests/unit/interpretation-v4/manuscriptSafety.test.ts :: manuscript boundary and section contracts new draft layer has no existing customer, Book, provider, or calculation consumer
 tests/unit/interpretation-v4/mbtiSemanticProfile.test.ts :: adversarial annotation validation new semantic modules are isolated from customer runtime and actual Myeongli/Fusion modules
-tests/unit/interpretation-v4/moduleContracts.test.ts :: pins reviewed Base edges and the complete customer runtime graph
+tests/unit/interpretation-v4/moduleContracts.test.ts ::  pins reviewed Base edges and the complete customer runtime graph
 tests/unit/interpretation-v4/narrativeComposer.test.ts :: evidence, counterfactuals and unchanged boundaries remains offline and outside every product route, generation and delivery runtime
 tests/unit/interpretation-v4/productPlanner.test.ts :: Daeun-first and annual time-map density without calendar edits Oct 1 can share September's Jie pillar; the next exact boundary remains visible
 tests/unit/interpretation-v4/productPlanner.test.ts :: Source-bound entertainment index; legacy scoreless snapshots remain valid '01-love': deterministic, bounded, additive and symmetric on A/B swap
@@ -380,100 +415,101 @@ tests/unit/interpretation-v4/productPlanner.test.ts :: Source-bound entertainmen
 tests/unit/interpretation-v4/productPlanner.test.ts :: Source-bound entertainment index; legacy scoreless snapshots remain valid publication verifies present index but accepts a previous scoreless packet
 tests/unit/interpretation-v4/publicationSafety.test.ts :: offline publication safety — real Writer/Publisher/Reader validates actual corrected edition and stored JSON: love
 tests/unit/interpretation-v4/publicationSafety.test.ts :: offline publication safety — real Writer/Publisher/Reader validates actual corrected edition and stored JSON: parent-child
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Love '01-jia' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Love '03-seoyun' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Love '06-nayeong' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '01-love' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '02-marriage' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '03-parent' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '04-coworker' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '05-manager' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '06-business' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '07-friend' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: Pair '08-love' actual product entry
-tests/unit/interpretation-v4/relationshipProduct.test.ts :: unknown pair MBTI and absent pair reference preserve canonical generation
-tests/unit/interpretation-v4/relationshipProductLocks.test.ts :: Career text/evidence/Book remains frozen at cde1ffa Love release boundary
-tests/unit/interpretation-v4/relationshipProductLocks.test.ts :: new relationship boundary contains no scheduler, IO, score or peer-type inference
-tests/unit/interpretation-v4/releaseSparse.test.ts :: sparse '1993-02-06' must publish (never count an expected manuscript failure as success)
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'A' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'B' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'C' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'C2028' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'D' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'E' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'F' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'H' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'H-business_owner' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'H-employee' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'H-freelancer' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'H2025' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'H2027' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'annual'/'cross-13' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'A' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'B' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'C' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'D' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'E' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'F' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'cross-6' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'cross-7' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'career'/'legacy-clock' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'A' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'B' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'C' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'D' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'E' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'F' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'businessPartner' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'coworker' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'cross-12' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'cross-13' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'friendship' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'managerReport' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'marriage' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'compatibility'/'parentChild' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'A' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'B' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'C' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'D' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'E' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'F' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'cross-6' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'comprehensive'/'legacy-clock' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'A' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'B' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'C' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'D' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'E' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'F' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'cross-6' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'love'/'legacy-clock' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'A' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'B' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'C' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'D' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'E' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'F' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'S' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'S-mbti' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sixProductIntegration.test.ts :: 'major'/'cross-10' preserves source evidence, structure and saved reader
-tests/unit/interpretation-v4/sourceRevisionContracts.test.ts :: accepts only the exact old-to-new Publication and tracing revisions
-tests/unit/interpretation-v4/sourceRevisionContracts.test.ts :: connects ker:term:2 to its exact historical renderer edition for integrity only
-tests/unit/interpretation-v4/sourceRevisionContracts.test.ts :: connects ker:term:6 to its exact historical renderer edition for integrity only
-tests/unit/interpretation-v4/sourceRevisionContracts.test.ts :: connects ker:term:7 to its exact historical renderer edition for integrity only
-tests/unit/interpretation-v4/sourceRevisionContracts.test.ts :: pins exact revisions without replacing historical hash receipts
-tests/unit/interpretation-v4/timeProduct.test.tsx :: Annual fixture 0 actual entry, selected year/Jie parity, 12/12, reopen/share
-tests/unit/interpretation-v4/timeProduct.test.tsx :: Annual fixture 2 actual entry, selected year/Jie parity, 12/12, reopen/share
-tests/unit/interpretation-v4/timeProduct.test.tsx :: Annual fixture 4 actual entry, selected year/Jie parity, 12/12, reopen/share
-tests/unit/interpretation-v4/timeProduct.test.tsx :: Major fixture 0 actual entry, canonical parity, 14/14, reopen/share
-tests/unit/interpretation-v4/timeProduct.test.tsx :: Major fixture 1 actual entry, canonical parity, 14/14, reopen/share
-tests/unit/interpretation-v4/timeProduct.test.tsx :: Major fixture 4 actual entry, canonical parity, 14/14, reopen/share
-tests/unit/interpretation-v4/timeProduct.test.tsx :: time precision approximate stays canonical without invented hour
-tests/unit/interpretation-v4/timeProduct.test.tsx :: time precision unknown stays canonical without invented hour
-tests/unit/interpretation-v4/timeProductLocks.test.ts :: frozen product 0 text/evidence/Book unchanged
-tests/unit/interpretation-v4/timeProductLocks.test.ts :: frozen product 1 text/evidence/Book unchanged
-tests/unit/interpretation-v4/timeProductLocks.test.ts :: frozen product 2 text/evidence/Book unchanged
-tests/unit/interpretation-v4/timeProductLocks.test.ts :: frozen product 3 text/evidence/Book unchanged
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Love '01-jia' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Love '03-seoyun' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Love '06-nayeong' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '01-love' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '02-marriage' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '03-parent' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '04-coworker' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '05-manager' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '06-business' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '07-friend' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  Pair '08-love' actual product entry
+tests/unit/interpretation-v4/relationshipProduct.test.ts ::  unknown pair MBTI and absent pair reference preserve canonical generation
+tests/unit/interpretation-v4/relationshipProductLocks.test.ts ::  Career text/evidence/Book remains frozen at cde1ffa Love release boundary
+tests/unit/interpretation-v4/relationshipProductLocks.test.ts ::  new relationship boundary contains no scheduler, IO, score or peer-type inference
+tests/unit/interpretation-v4/releaseSparse.test.ts ::  sparse '1993-02-06' must publish (never count an expected manuscript failure as success)
+tests/unit/interpretation-v4/runtimeShadow.test.tsx :: roles, precision and customer/default boundaries no public route or default runtime imports shadow generation, projection or renderer
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'A' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'B' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'C' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'C2028' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'D' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'E' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'F' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'H' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'H-business_owner' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'H-employee' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'H-freelancer' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'H2025' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'H2027' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'annual'/'cross-13' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'A' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'B' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'C' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'D' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'E' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'F' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'cross-6' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'cross-7' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'career'/'legacy-clock' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'A' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'B' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'C' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'D' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'E' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'F' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'businessPartner' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'coworker' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'cross-12' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'cross-13' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'friendship' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'managerReport' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'marriage' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'compatibility'/'parentChild' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'A' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'B' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'C' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'D' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'E' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'F' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'cross-6' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'comprehensive'/'legacy-clock' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'A' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'B' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'C' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'D' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'E' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'F' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'cross-6' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'love'/'legacy-clock' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'A' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'B' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'C' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'D' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'E' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'F' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'S' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'S-mbti' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sixProductIntegration.test.ts ::  'major'/'cross-10' preserves source evidence, structure and saved reader
+tests/unit/interpretation-v4/sourceRevisionContracts.test.ts ::  accepts only the exact old-to-new Publication and tracing revisions
+tests/unit/interpretation-v4/sourceRevisionContracts.test.ts ::  connects ker:term:2 to its exact historical renderer edition for integrity only
+tests/unit/interpretation-v4/sourceRevisionContracts.test.ts ::  connects ker:term:6 to its exact historical renderer edition for integrity only
+tests/unit/interpretation-v4/sourceRevisionContracts.test.ts ::  connects ker:term:7 to its exact historical renderer edition for integrity only
+tests/unit/interpretation-v4/sourceRevisionContracts.test.ts ::  pins exact revisions without replacing historical hash receipts
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  Annual fixture 0 actual entry, selected year/Jie parity, 12/12, reopen/share
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  Annual fixture 2 actual entry, selected year/Jie parity, 12/12, reopen/share
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  Annual fixture 4 actual entry, selected year/Jie parity, 12/12, reopen/share
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  Major fixture 0 actual entry, canonical parity, 14/14, reopen/share
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  Major fixture 1 actual entry, canonical parity, 14/14, reopen/share
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  Major fixture 4 actual entry, canonical parity, 14/14, reopen/share
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  time precision approximate stays canonical without invented hour
+tests/unit/interpretation-v4/timeProduct.test.tsx ::  time precision unknown stays canonical without invented hour
+tests/unit/interpretation-v4/timeProductLocks.test.ts ::  frozen product 0 text/evidence/Book unchanged
+tests/unit/interpretation-v4/timeProductLocks.test.ts ::  frozen product 1 text/evidence/Book unchanged
+tests/unit/interpretation-v4/timeProductLocks.test.ts ::  frozen product 2 text/evidence/Book unchanged
+tests/unit/interpretation-v4/timeProductLocks.test.ts ::  frozen product 3 text/evidence/Book unchanged
 tests/unit/payment/checkoutConsentEvidence.test.ts :: public prepare consent boundary with real durable SQL and mock providers Seoul birthday boundary is enforced at the public route
 tests/unit/payment/checkoutConsentEvidence.test.ts :: public prepare consent boundary with real durable SQL and mock providers a duplicate order insert and policy upgrade cannot rewrite the first evidence
 tests/unit/payment/checkoutConsentEvidence.test.ts :: public prepare consent boundary with real durable SQL and mock providers a server policy revision rejects the old browser version but preserves old orders
@@ -512,346 +548,386 @@ tests/unit/payment/localPaidReportQa.test.tsx :: local QA uses the actual paid w
 tests/unit/payment/localPaidReportQa.test.tsx :: local QA uses the actual paid worker and customer result page missing local report does not fall through to legacy production reads
 tests/unit/payment/localPaidReportQa.test.tsx :: local QA uses the actual paid worker and customer result page saju_mbti_compatibility malformed writer still publishes and renders without DB/Toss
 tests/unit/payment/localPaidReportQa.test.tsx :: local QA uses the actual paid worker and customer result page saju_mbti_full malformed writer still publishes and renders without DB/Toss
-tests/unit/protected-staging/isolation.test.ts :: customer runtime remains the exact 46-root/700-module Base graph
-tests/unit/protected-staging/isolation.test.ts :: independent Reader has no generation, DB, worker, analytics, share or research execution edge
-tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts :: real offline Foundation consumes the Units and retains thirty Source failures
-tests/unit/report-knowledge/annualProductKnowledge.test.ts :: 'book' preserves source status, file hash and explicit limits
-tests/unit/report-knowledge/annualProductKnowledge.test.ts :: 'composer' preserves source status, file hash and explicit limits
-tests/unit/report-knowledge/annualProductKnowledge.test.ts :: 'month-copy' preserves source status, file hash and explicit limits
-tests/unit/report-knowledge/annualProductKnowledge.test.ts :: 'planner' preserves source status, file hash and explicit limits
-tests/unit/report-knowledge/annualProductKnowledge.test.ts :: retains all inherited records and every audited existing source file
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'A': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'B': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'C': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'D': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'E': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'EXACT_DAYUN': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'F': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'FUTURE_OFFLINE': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'H_STUDENT': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'PAST': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/annualProductResearchPreservation.test.ts :: 'RANGE_DAYUN': actual offline publication and all segments retain exact digests
-tests/unit/report-knowledge/careerProductResearch.test.ts :: keeps research IDs separate from producer IDs and preserves 2275 existing source files
-tests/unit/report-knowledge/careerProductResearch.test.ts :: keeps research off runtime imports, lookup code, barrels, scoring and binding
-tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts :: actual offline 'AO': '기존 fallback 관찰' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts :: audits actual businessPartner profile, projection, eligible candidates and reader-selected MBTI nodes separately
-tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts :: matches every pre-research calculation, full evidence, narrative, integration, personal and Book digest
-tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts :: preserves all 3073 pre-existing source/test/knowledge/report files byte for byte
-tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts :: preserves4932 original source identities with three exact offline publication revisions
-tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts :: actual offline 'AG': '기존 fallback 관찰' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts :: audits actual coworker profile, projection, eligible candidates and reader-selected MBTI nodes separately
-tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts :: matches every pre-research calculation, full evidence, narrative, integration, personal and Book digest
-tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts :: preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte
-tests/unit/report-knowledge/compatibilityCoworkerSpecialistArtifacts.test.ts :: freezes18 own source inputs and4773 original tracked files
-tests/unit/report-knowledge/compatibilityCoworkerSpecialistArtifacts.test.ts :: keeps the specialist absent from all customer source modules
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'A0' '양쪽 MBTI': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'B0' 'A만 MBTI': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'C0' 'B만 MBTI': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'D0' '양쪽 미상': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'E0' 'A 시각 미상': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'F0' 'B 시각 미상': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'G0' '양쪽 시각 확정': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'H0' '동일 유형': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'I0' '다른 유형': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'J0' '실제 합': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'K0' '실제 충': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'L0' '교차 지지 미검출': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'M0' '미지원 정의 참고': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'N0' '다른 방향 십성': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'O0' '같은 방향 십성': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'P0' '전체 A/B 순서 교환': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'P1' '전체 A/B 순서 교환': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'Q0' '이름만 교환': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'Q1' '이름만 교환': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts :: 'R0' '정확한 역할 버전': actual offline friendship publication retains ownership and exact digests
-tests/unit/report-knowledge/compatibilityFriendshipResearch.test.ts :: preserves all base files including the Vercel trace fix and every inherited research DB
-tests/unit/report-knowledge/compatibilityFriendshipSpecialistArtifacts.test.ts :: preserves exact freshly measured5013 base files
-tests/unit/report-knowledge/compatibilityLoveResearch.test.ts :: preserves all 2435 existing tracked source, research, Book and fixture hashes
-tests/unit/report-knowledge/compatibilityLoveSpecialistArtifacts.test.ts :: checks all 4578 original tracked files by raw bytes
-tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts :: actual offline 'AL': '기존 fallback 관찰' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts :: audits actual managerReport profile, projection, eligible candidates and reader-selected MBTI nodes separately
-tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts :: matches every pre-research calculation, full evidence, narrative, integration, personal and Book digest
-tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts :: preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte
-tests/unit/report-knowledge/compatibilityManagerReportSpecialistArtifacts.test.ts :: freezes4847 original files and all18 own execution inputs
-tests/unit/report-knowledge/compatibilityManagerReportSpecialistArtifacts.test.ts :: keeps ManagerReport offline code out of all customer source modules
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: MBTI-only change keeps natal calculations; category-only change keeps both individual profiles and canonical relations
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'A': '양쪽 유형 기지' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'AA': '실제 개인 원천과 합이 풍부한 경우; 공동생활 강점은 조건부' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'AB': '기존 동일 원국 reader fallback 검수' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'B': 'A만 유형 기지' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'C': 'B만 유형 기지' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'D': '양쪽 MBTI 미상' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'E': 'A 시간 미상' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'F': 'B 시간 미상' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'H': '같은 유형' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'I': '다른 유형' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'J': '실제 합' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'K': '실제 충' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'L': '합·충 공존' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'M': '교차 지지 관계 부재; 일간 방향은 남음' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'N': '미지원 원진 연구만 참조한 가상 조건; 검출·참여자 추정 금지' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'O': '수신자 기준 십성 다른 경우' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'P': '양방향 비견의 수렴' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'Q': '전체 A/B 순서 교환' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'R': '이름만 교환' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'S': '원국 유지·A MBTI만 변경' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'T': '동일 인물 love→marriage' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'U': 'marriage 선택; 실제 혼인·동거 입력 없음' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'V': '공동 지출을 검토한다는 가상 상황' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'W': '가사 단계를 나눈다는 가상 상황' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'X': '친족 행사 참석을 논의한다는 가상 상황' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'Y': '근무·소득이 달라진다는 가상 상황' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: actual offline 'Z': '생활 갈등이 반복된다면이라는 가상 상황' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts :: compares whole-role swap versus name-only swap using actual canonical evidence and independent profiles
-tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts :: preserves 2531 original tracked source, research, UI, Book, contract and fixture files
-tests/unit/report-knowledge/compatibilityMarriageSpecialistArtifacts.test.ts :: has no customer runtime imports of the marriage specialist
-tests/unit/report-knowledge/compatibilityMarriageSpecialistArtifacts.test.ts :: preserves all 4634 base files and15 sealed generator inputs
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'A': '부모·자녀 MBTI 기지' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'AA': '부모 감정 조절이 필요하다면' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'AB': '갈등 뒤 부모가 수정한다면' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'AC': '자녀 질문으로 새 정보를 얻는다면' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'AD': '비연애 도메인 격리' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'AE': '다른6카테고리 격리' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'AF': '동일 입력 재현' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'B': '부모만 MBTI' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'C': '자녀만 MBTI' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'D': '양쪽 MBTI 미상' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'E': '부모 시간 미상' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'F': '자녀 시간 미상' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'H': '같은 유형' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'I': '다른 유형' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'J': '실제 합 기준 fixture' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'K': '실제 충 기준 fixture' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'L': '실제 교차 지지 관계 미검출' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'M': '미지원 원진 정의만 참조; 검출 없음' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'N': '양방향 십성 다른 실제 fixture' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'O': '양방향 같은 십성 fixture' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'P': '고정 역할 버전' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'S': '전체 인물 교환은 부모 역할 선언도 바꿈; 동일 가족으로 승인 금지' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'T': '이름만 변경' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'U': '미성년 자녀 가상 활동' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'V': '성인 자녀 가상 독립 맥락' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'W': '발달 상태 불확실' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'X': '부모 기대와 관심이 다르다면' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'Y': '보호와 선택이 충돌한다면' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: actual offline 'Z': '도움을 요청한다면' preserves source ownership and generation
-tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts :: records whole-slot swap as a changed parent declaration, never an approved equivalent family; distinguishes name-only swap
-tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts :: preserves 2639 original tracked source/research/Book/UI/test hashes
-tests/unit/report-knowledge/compatibilityParentChildSpecialistArtifacts.test.ts :: freezes all18 runtime inputs and4701 original tracked files
-tests/unit/report-knowledge/comprehensiveProductResearch.test.ts :: keeps static research off runtime imports, lookups, barrels and execution
-tests/unit/report-knowledge/comprehensiveProductResearch.test.ts :: preserves all 2201 pre-existing source, research, fixture and report files
+tests/unit/protected-staging/isolation.test.ts ::  customer runtime remains the exact 46-root/700-module Base graph
+tests/unit/protected-staging/isolation.test.ts ::  independent Reader has no generation, DB, worker, analytics, share or research execution edge
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  builds a real day-master Unit independent of meaning approvals annual/A
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  builds a real day-master Unit independent of meaning approvals annual/C2028
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  builds a real day-master Unit independent of meaning approvals annual/F
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  builds a real day-master Unit independent of meaning approvals major/A
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  builds a real day-master Unit independent of meaning approvals major/C
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  builds a real day-master Unit independent of meaning approvals major/F
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  creates a verified calculation-only Unit for ANNUAL_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  creates a verified calculation-only Unit for DAYUN_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  creates a verified calculation-only Unit for FLOW_GOD
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  creates a verified calculation-only Unit for MONTH_BRANCH_MAIN
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  creates a verified calculation-only Unit for MONTH_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  creates a verified calculation-only Unit for NATAL_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  different real inputs preserve their different calculation identities
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  fact Units survive a withheld conditional review source without gaining approval
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  keeps the original Jie split and separates month stem from branch main
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  preserves cycle-stem FLOW_GOD Units across the exact transition
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  preserves effective annual Units on both sides of Lichun
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  preserves shared original roots without counting a new fact for each Unit
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  real offline Foundation consumes the Units and retains thirty Source failures
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit approval
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit extra-claim
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit meaning
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit owner
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit producerVersion
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit root
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit scope
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit sourceHash
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit sourceVersion
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates and rejects tampered Unit synthetic
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates serialized actual Units without Synthetic definitions: ANNUAL_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates serialized actual Units without Synthetic definitions: DAYUN_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates serialized actual Units without Synthetic definitions: FLOW_GOD
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates serialized actual Units without Synthetic definitions: MONTH_BRANCH_MAIN
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates serialized actual Units without Synthetic definitions: MONTH_STEM
+tests/unit/report-knowledge/actualCalculationSemanticBridge.test.ts ::  revalidates serialized actual Units without Synthetic definitions: NATAL_STEM
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'book' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'calendar' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'composer' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'extended' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'jie' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'month-copy' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  'planner' preserves source status, file hash and explicit limits
+tests/unit/report-knowledge/annualProductKnowledge.test.ts ::  retains all inherited records and every audited existing source file
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'A': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'B': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'C': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'D': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'E': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'EXACT_DAYUN': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'F': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'FUTURE_OFFLINE': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'H_STUDENT': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'PAST': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/annualProductResearchPreservation.test.ts ::  'RANGE_DAYUN': actual offline publication and all segments retain exact digests
+tests/unit/report-knowledge/careerProductResearch.test.ts ::  keeps research IDs separate from producer IDs and preserves 2275 existing source files
+tests/unit/report-knowledge/careerProductResearch.test.ts ::  keeps research off runtime imports, lookup code, barrels, scoring and binding
+tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts ::  actual offline 'AO': '기존 fallback 관찰' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts ::  audits actual businessPartner profile, projection, eligible candidates and reader-selected MBTI nodes separately
+tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts ::  matches every pre-research calculation, full evidence, narrative, integration, personal and Book digest
+tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts ::  preserves all 3073 pre-existing source/test/knowledge/report files byte for byte
+tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts ::  preserves4932 original source identities with three exact offline publication revisions
+tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts ::  actual offline 'AG': '기존 fallback 관찰' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts ::  audits actual coworker profile, projection, eligible candidates and reader-selected MBTI nodes separately
+tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts ::  matches every pre-research calculation, full evidence, narrative, integration, personal and Book digest
+tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts ::  preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte
+tests/unit/report-knowledge/compatibilityCoworkerSpecialistArtifacts.test.ts ::  freezes18 own source inputs and4773 original tracked files
+tests/unit/report-knowledge/compatibilityCoworkerSpecialistArtifacts.test.ts ::  keeps the specialist absent from all customer source modules
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'A0' '양쪽 MBTI': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'B0' 'A만 MBTI': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'C0' 'B만 MBTI': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'D0' '양쪽 미상': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'E0' 'A 시각 미상': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'F0' 'B 시각 미상': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'G0' '양쪽 시각 확정': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'H0' '동일 유형': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'I0' '다른 유형': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'J0' '실제 합': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'K0' '실제 충': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'L0' '교차 지지 미검출': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'M0' '미지원 정의 참고': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'N0' '다른 방향 십성': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'O0' '같은 방향 십성': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'P0' '전체 A/B 순서 교환': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'P1' '전체 A/B 순서 교환': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'Q0' '이름만 교환': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'Q1' '이름만 교환': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipGenerationPreservation.test.ts ::  'R0' '정확한 역할 버전': actual offline friendship publication retains ownership and exact digests
+tests/unit/report-knowledge/compatibilityFriendshipResearch.test.ts ::  preserves all base files including the Vercel trace fix and every inherited research DB
+tests/unit/report-knowledge/compatibilityFriendshipSpecialistArtifacts.test.ts ::  preserves exact freshly measured5013 base files
+tests/unit/report-knowledge/compatibilityLoveResearch.test.ts ::  preserves all 2435 existing tracked source, research, Book and fixture hashes
+tests/unit/report-knowledge/compatibilityLoveSpecialistArtifacts.test.ts ::  checks all 4578 original tracked files by raw bytes
+tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts ::  actual offline 'AL': '기존 fallback 관찰' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts ::  audits actual managerReport profile, projection, eligible candidates and reader-selected MBTI nodes separately
+tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts ::  matches every pre-research calculation, full evidence, narrative, integration, personal and Book digest
+tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts ::  preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte
+tests/unit/report-knowledge/compatibilityManagerReportSpecialistArtifacts.test.ts ::  freezes4847 original files and all18 own execution inputs
+tests/unit/report-knowledge/compatibilityManagerReportSpecialistArtifacts.test.ts ::  keeps ManagerReport offline code out of all customer source modules
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  MBTI-only change keeps natal calculations; category-only change keeps both individual profiles and canonical relations
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'A': '양쪽 유형 기지' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'AA': '실제 개인 원천과 합이 풍부한 경우; 공동생활 강점은 조건부' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'AB': '기존 동일 원국 reader fallback 검수' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'B': 'A만 유형 기지' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'C': 'B만 유형 기지' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'D': '양쪽 MBTI 미상' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'E': 'A 시간 미상' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'F': 'B 시간 미상' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'H': '같은 유형' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'I': '다른 유형' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'J': '실제 합' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'K': '실제 충' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'L': '합·충 공존' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'M': '교차 지지 관계 부재; 일간 방향은 남음' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'N': '미지원 원진 연구만 참조한 가상 조건; 검출·참여자 추정 금지' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'O': '수신자 기준 십성 다른 경우' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'P': '양방향 비견의 수렴' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'Q': '전체 A/B 순서 교환' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'R': '이름만 교환' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'S': '원국 유지·A MBTI만 변경' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'T': '동일 인물 love→marriage' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'U': 'marriage 선택; 실제 혼인·동거 입력 없음' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'V': '공동 지출을 검토한다는 가상 상황' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'W': '가사 단계를 나눈다는 가상 상황' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'X': '친족 행사 참석을 논의한다는 가상 상황' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'Y': '근무·소득이 달라진다는 가상 상황' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  actual offline 'Z': '생활 갈등이 반복된다면이라는 가상 상황' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts ::  compares whole-role swap versus name-only swap using actual canonical evidence and independent profiles
+tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts ::  preserves 2531 original tracked source, research, UI, Book, contract and fixture files
+tests/unit/report-knowledge/compatibilityMarriageSpecialistArtifacts.test.ts ::  has no customer runtime imports of the marriage specialist
+tests/unit/report-knowledge/compatibilityMarriageSpecialistArtifacts.test.ts ::  preserves all 4634 base files and15 sealed generator inputs
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'A': '부모·자녀 MBTI 기지' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'AA': '부모 감정 조절이 필요하다면' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'AB': '갈등 뒤 부모가 수정한다면' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'AC': '자녀 질문으로 새 정보를 얻는다면' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'AD': '비연애 도메인 격리' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'AE': '다른6카테고리 격리' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'AF': '동일 입력 재현' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'B': '부모만 MBTI' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'C': '자녀만 MBTI' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'D': '양쪽 MBTI 미상' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'E': '부모 시간 미상' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'F': '자녀 시간 미상' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'G': '양쪽 시간 확정' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'H': '같은 유형' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'I': '다른 유형' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'J': '실제 합 기준 fixture' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'K': '실제 충 기준 fixture' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'L': '실제 교차 지지 관계 미검출' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'M': '미지원 원진 정의만 참조; 검출 없음' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'N': '양방향 십성 다른 실제 fixture' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'O': '양방향 같은 십성 fixture' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'P': '고정 역할 버전' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'S': '전체 인물 교환은 부모 역할 선언도 바꿈; 동일 가족으로 승인 금지' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'T': '이름만 변경' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'U': '미성년 자녀 가상 활동' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'V': '성인 자녀 가상 독립 맥락' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'W': '발달 상태 불확실' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'X': '부모 기대와 관심이 다르다면' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'Y': '보호와 선택이 충돌한다면' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  actual offline 'Z': '도움을 요청한다면' preserves source ownership and generation
+tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts ::  records whole-slot swap as a changed parent declaration, never an approved equivalent family; distinguishes name-only swap
+tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts ::  preserves 2639 original tracked source/research/Book/UI/test hashes
+tests/unit/report-knowledge/compatibilityParentChildSpecialistArtifacts.test.ts ::  freezes all18 runtime inputs and4701 original tracked files
+tests/unit/report-knowledge/comprehensiveProductResearch.test.ts ::  keeps static research off runtime imports, lookups, barrels and execution
+tests/unit/report-knowledge/comprehensiveProductResearch.test.ts ::  preserves all 2201 pre-existing source, research, fixture and report files
+tests/unit/report-knowledge/conditionalTemporalMeaningReview.test.ts ::  links real monthly evidence but holds personal meaning: annual/A
+tests/unit/report-knowledge/conditionalTemporalMeaningReview.test.ts ::  links real monthly evidence but holds personal meaning: annual/C2028
+tests/unit/report-knowledge/conditionalTemporalMeaningReview.test.ts ::  links real monthly evidence but holds personal meaning: annual/F
 tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts :: offline Fusion knowledge, reference and isolation contracts keeps static modules type-only with no external import, lookup, generator or barrel
 tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts :: offline Fusion knowledge, reference and isolation contracts preserves every pre-existing source, research, fixture and report byte
 tests/unit/report-knowledge/globalSpecialistIntegrationArtifacts.test.ts :: global integration published offline artifacts keeps runtime entry points unchanged
 tests/unit/report-knowledge/globalSpecialistIntegrationArtifacts.test.ts :: global integration published offline artifacts preserves all 5086 base tracked file bytes
-tests/unit/report-knowledge/knowledgeBinder.test.ts :: 45 stored Book production source files remain frozen
-tests/unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts :: 33 preserves all original catalog and research bytes/keys
-tests/unit/report-knowledge/knowledgeSourceVerification.test.ts :: 21 preserves every frozen base source/file hash including all research and original catalogs
-tests/unit/report-knowledge/knowledgeUnifiedCatalog.test.ts :: preserves every acquired source byte and excludes runtime imports of the offline compiler
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH01.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH02.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH03.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH04.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH05.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH06.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH07.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH08.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P1.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P1.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P1.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P1.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P2.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P2.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P2.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P2.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P3.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P3.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P3.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P3.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P4.S1' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P4.S2' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P4.S3' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'CH09.P4.S4' preserves the exact existing role in all seven research contracts
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: 'Fusion' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '대운' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '세운' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '신강' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '신약' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '십성' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '오행' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '원국' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '월운' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '일간' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '충' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: '합' retains the source contract and licenses no new Saju fact
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: keeps every new source declaration static and absent from all runtime imports and exports
-tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts :: preserves every inherited research record and all indexed existing source bytes
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'annual'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'annual'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'career'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'career'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'businessPartner' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'coworker' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'friendship' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'managerReport' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'marriage' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'compatibility'/'parentChild' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'comprehensive'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'comprehensive'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'love'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'love'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'major'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanEditorialPreservation.test.ts :: 'major'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
-tests/unit/report-knowledge/koreanTermSourceRevision.test.ts :: checks actual historical Git bytes while leaving the raw mismatch visible
-tests/unit/report-knowledge/koreanTermSourceRevision.test.ts :: preserves direct verification of every unaffected term
-tests/unit/report-knowledge/koreanTermSourceRevision.test.ts :: recognizes Source but withholds three explanations on authentic synthetic context
-tests/unit/report-knowledge/koreanTermSourceRevision.test.ts :: recognizes exact committed current Source for ker:term:2 without approval
-tests/unit/report-knowledge/koreanTermSourceRevision.test.ts :: recognizes exact committed current Source for ker:term:6 without approval
-tests/unit/report-knowledge/koreanTermSourceRevision.test.ts :: recognizes exact committed current Source for ker:term:7 without approval
-tests/unit/report-knowledge/loveProductResearch.test.ts :: keeps research outside runtime imports, selectors, barrels and executable producers
-tests/unit/report-knowledge/loveProductResearch.test.ts :: preserves all 2354 tracked source, original research and fixture hashes
-tests/unit/report-knowledge/loveProductResearch.test.ts :: status '''' changes questions and scenes without scoring
-tests/unit/report-knowledge/loveProductResearch.test.ts :: status ''dating'' changes questions and scenes without scoring
-tests/unit/report-knowledge/loveProductResearch.test.ts :: status ''marriage_preparing'' changes questions and scenes without scoring
-tests/unit/report-knowledge/loveProductResearch.test.ts :: status ''married'' changes questions and scenes without scoring
-tests/unit/report-knowledge/loveProductResearch.test.ts :: status ''single'' changes questions and scenes without scoring
-tests/unit/report-knowledge/loveProductResearch.test.ts :: status ''some'' changes questions and scenes without scoring
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: 'adapter' keeps source verification status separate from customer approval
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: 'book' keeps source verification status separate from customer approval
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: 'composer' keeps source verification status separate from customer approval
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: 'interaction' keeps source verification status separate from customer approval
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: 'planner' keeps source verification status separate from customer approval
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: keeps the registry declarative and unimported by runtime code
-tests/unit/report-knowledge/majorFortuneProductResearch.test.ts :: retains every inherited research record and source contract, including Vercel trace repair
-tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts :: '01-business' preserves actual 14-year generation, calculation, evidence, narrative and Book
-tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts :: '02-employee' preserves actual 14-year generation, calculation, evidence, narrative and Book
-tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts :: '03-freelance' preserves actual 14-year generation, calculation, evidence, narrative and Book
-tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts :: '04-time-unknown' preserves actual 14-year generation, calculation, evidence, narrative and Book
-tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts :: '05-mbti-unknown' preserves actual 14-year generation, calculation, evidence, narrative and Book
-tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts :: '06-both-unknown' preserves actual 14-year generation, calculation, evidence, narrative and Book
+tests/unit/report-knowledge/knowledgeBinder.test.ts ::  45 stored Book production source files remain frozen
+tests/unit/report-knowledge/knowledgeSourceVerification.test.ts ::  12 verifies native declarations while preserving the distinction from actual calculated facts
+tests/unit/report-knowledge/knowledgeSourceVerification.test.ts ::  21 preserves every frozen base source/file hash including all research and original catalogs
+tests/unit/report-knowledge/knowledgeUnifiedCatalog.test.ts ::  preserves every acquired source byte and excludes runtime imports of the offline compiler
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH01.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH02.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH03.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH04.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH05.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH06.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH07.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH08.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P1.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P1.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P1.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P1.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P2.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P2.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P2.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P2.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P3.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P3.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P3.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P3.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P4.S1' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P4.S2' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P4.S3' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'CH09.P4.S4' preserves the exact existing role in all seven research contracts
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  'Fusion' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '대운' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '세운' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '신강' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '신약' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '십성' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '오행' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '원국' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '월운' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '일간' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '충' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  '합' retains the source contract and licenses no new Saju fact
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  keeps every new source declaration static and absent from all runtime imports and exports
+tests/unit/report-knowledge/koreanEditorialKnowledge.test.ts ::  preserves every inherited research record and all indexed existing source bytes
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'annual'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'annual'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'career'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'career'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'businessPartner' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'coworker' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'friendship' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'managerReport' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'marriage' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'compatibility'/'parentChild' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'comprehensive'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'comprehensive'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'love'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'love'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'major'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanEditorialPreservation.test.ts ::  'major'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot
+tests/unit/report-knowledge/koreanTermSourceRevision.test.ts ::  checks actual historical Git bytes while leaving the raw mismatch visible
+tests/unit/report-knowledge/koreanTermSourceRevision.test.ts ::  preserves direct verification of every unaffected term
+tests/unit/report-knowledge/koreanTermSourceRevision.test.ts ::  recognizes Source but withholds three explanations on authentic synthetic context
+tests/unit/report-knowledge/koreanTermSourceRevision.test.ts ::  recognizes exact committed current Source for ker:term:2 without approval
+tests/unit/report-knowledge/koreanTermSourceRevision.test.ts ::  recognizes exact committed current Source for ker:term:6 without approval
+tests/unit/report-knowledge/koreanTermSourceRevision.test.ts ::  recognizes exact committed current Source for ker:term:7 without approval
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  keeps research outside runtime imports, selectors, barrels and executable producers
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  preserves all 2354 tracked source, original research and fixture hashes
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  status '''' changes questions and scenes without scoring
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  status ''dating'' changes questions and scenes without scoring
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  status ''marriage_preparing'' changes questions and scenes without scoring
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  status ''married'' changes questions and scenes without scoring
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  status ''single'' changes questions and scenes without scoring
+tests/unit/report-knowledge/loveProductResearch.test.ts ::  status ''some'' changes questions and scenes without scoring
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  'adapter' keeps source verification status separate from customer approval
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  'book' keeps source verification status separate from customer approval
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  'composer' keeps source verification status separate from customer approval
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  'interaction' keeps source verification status separate from customer approval
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  'planner' keeps source verification status separate from customer approval
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  keeps the registry declarative and unimported by runtime code
+tests/unit/report-knowledge/majorFortuneProductResearch.test.ts ::  retains every inherited research record and source contract, including Vercel trace repair
+tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts ::  '01-business' preserves actual 14-year generation, calculation, evidence, narrative and Book
+tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts ::  '02-employee' preserves actual 14-year generation, calculation, evidence, narrative and Book
+tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts ::  '03-freelance' preserves actual 14-year generation, calculation, evidence, narrative and Book
+tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts ::  '04-time-unknown' preserves actual 14-year generation, calculation, evidence, narrative and Book
+tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts ::  '05-mbti-unknown' preserves actual 14-year generation, calculation, evidence, narrative and Book
+tests/unit/report-knowledge/majorFortuneResearchPreservation.test.ts ::  '06-both-unknown' preserves actual 14-year generation, calculation, evidence, narrative and Book
 tests/unit/report-knowledge/mbtiFoundationResearch.test.ts :: MBTI offline foundation research: provenance and unchanged runtime keeps new data static, disconnected and absent from every old runtime entry
 tests/unit/report-knowledge/mbtiFoundationResearch.test.ts :: MBTI offline foundation research: provenance and unchanged runtime preserves every pre-existing source byte and all sixteen original JSON files
 tests/unit/report-knowledge/mbtiPairResearch.test.ts :: offline MBTI directed pair research and preservation keeps every new registry file static, type-only and absent from runtime consumers
@@ -859,25 +935,21 @@ tests/unit/report-knowledge/mbtiPairResearch.test.ts :: offline MBTI directed pa
 tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts :: unconnected composite structure research preserves every baseline source byte, including calculations, writers, evidence and Books
 tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts :: offline foundation deep knowledge research preserves every pre-existing source byte including all 1,117 records and product engines
 tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts :: unconnected Saju foundation knowledge has no runtime import, export, dynamic load or lookup connection to the new DB
+tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts :: unconnected Saju foundation knowledge inventories legacy IDs, aliases, fields, rules and exact content digests
 tests/unit/report-knowledge/sajuRelationResearch.test.ts :: offline relation knowledge research has no runtime consumer, barrel, lookup, environment access, or executable generation
 tests/unit/report-knowledge/sajuRelationResearch.test.ts :: offline relation knowledge research preserves all 929 prior source files byte for byte
 tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts :: independent temporal research data and source preservation preserves every pre-existing source byte and has no runtime import or executable registry
 tests/unit/report-knowledge/semanticAxisResearch.test.ts :: isolated semantic knowledge research keeps all new modules static, with type-only dependencies, and no external runtime consumer
 tests/unit/report-knowledge/semanticAxisResearch.test.ts :: isolated semantic knowledge research keeps every pre-existing source, research, fixture, snapshot and report byte
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  does not promote partial major annual endpoints into a whole-year interval
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  does not widen a segment: conditional
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  does not widen a segment: end-exclusive
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  does not widen a segment: unknown
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  does not widen a segment: widen
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  does not widen a segment: wrong-scope
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  keeps the two exact 2028 transition-side contexts separate
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  preserves flowGod's cycle-stem reference and existing shared roots
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  uses effective annual pillars on both sides of Lichun
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  verifies native natal encoding without treating it as temporal evidence
+tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts ::  verifies the existing monthly stem value and keeps its exact interval and roots
 tests/unit/report/fullReportQaDumpSource.test.ts :: full report QA dump source keeps public report UI paid-first without report fulfillment
-# KNOWN NEW FAILURES 3 — v5/manseryeok-merge only. Not fixed on purpose; listed separately from the master baseline above.
-# Compare a run file by file: (failed files) - (FILES above) - (these 3) should be empty.
-# The first two also fail on v5/phase0-version-tolerant: any edit to a hash-frozen calculation source trips them.
-# FILE tests/unit/report-knowledge/conditionalTemporalMeaningReview.test.ts
-#   사유: docs/validation/v4-global-source-domain-resolution-01/original-file-hashes.json이 계산 소스 파일(src/lib/saju/*,
-#   src/lib/report-generation/*, natalTableEvidence.ts 등) 바이트 해시를 동결한다. 소스가 바뀌면 설계대로 의미 연결이
-#   WITHHELD(≠ SCOPED_CALCULATION_LINK_VERIFIED)가 된다. 오프라인 연구 도구(knowledge-integration-foundation)만 해당하고
-#   판매 런타임은 이 모듈을 import하지 않는다. 재동결 여부는 체크리스트 D5.
-# FILE tests/unit/report-knowledge/temporalTenGodSourceContract.test.ts
-#   사유: 같은 동결 매니페스트. CALCULATION_SOURCE_HASH_MISMATCH 11건.
-# FILE tests/unit/interpretation-v4/comprehensiveStability.test.ts
-#   사유: V4 종합 원고 검사 실패(COMPREHENSIVE_MANUSCRIPT_UNSAFE). S046 exact·S047 approximate = RENDERABILITY_NOT_CLOSED,
-#   S051 unknown = TITLE_TYPE_REPEAT(신살 수정 후 생김). S046은 원국이 같고(甲申 丁卯 壬子 己酉) V4 문장 시드가
-#   birthTimeContext를 해시해 다른 문장 변형이 골라졌다. 기존 V4 결함이 다른 고객으로 옮겨 간 것으로 본다
-#   (무작위 300건 표본: v5 10건 3.3%, 이전 엔진 8건 2.7%; docs/manseryeok-report-2.md §2.3·§4.4).
-#   결제 후 발행 실패로 이어지는 경로라 운영 비율은 docs/publish-failure-query.sql로 본다.
