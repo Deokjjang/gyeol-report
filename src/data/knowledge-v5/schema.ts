@@ -1,100 +1,229 @@
 import { z } from "zod";
 
-// knowledge-v5 데이터 파일의 zod 스키마. 런타임 코드는 아직 이 파일을 import하지 않는다(scripts/knowledge-lint.ts 전용).
-export const DOMAINS = ["work", "money", "love", "relationships", "study"] as const;
+/**
+ * knowledge-v5 스키마 v2 (P1). 작가가 쓰는 유일한 해석 재료.
+ * 데이터 파일: myeongri/<family>.json, mbti/<TYPE>.json, fusion/*.json, timeline/*.json, behavior-ontology.json, id-map.json
+ * 검사: scripts/knowledge-lint.ts. 런타임 로더는 P2(브리프)에서 붙인다. v1 데이터는 legacy/ (P3 이후 제거).
+ *
+ * 문장 원칙(SPEC §1): 직설·이미지·장면. 장면은 "사람·상황·행동이 보이는" 1~2문장(20~140자).
+ * v1의 문장 60자·평균 40자 상한이 문장을 납작하게 만들어 v2는 문장 90자, 장면 140자, 설명문 220자로 올린다.
+ */
+
+// ---------- 공통 ----------
+export const DOMAINS = ["work", "money", "study", "love", "marriage", "relationships", "alone"] as const;
 export const DomainSchema = z.enum(DOMAINS);
 export type Domain = z.infer<typeof DomainSchema>;
 
 export const MBTI_TYPES = ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"] as const;
 export const MbtiTypeSchema = z.enum(MBTI_TYPES);
 export type MbtiType = z.infer<typeof MbtiTypeSchema>;
+export const COGNITIVE_FUNCTIONS = ["Ni", "Ne", "Si", "Se", "Ti", "Te", "Fi", "Fe"] as const;
+export const CognitiveFunctionSchema = z.enum(COGNITIVE_FUNCTIONS);
+/** mbtiLinks.target: 유형 코드, 인지기능, 또는 선호 축 한 글자(E/I/S/N/T/F/J/P). */
+export const MbtiTargetSchema = z.union([MbtiTypeSchema, CognitiveFunctionSchema, z.enum(["E", "I", "S", "N", "T", "F", "J", "P"])]);
+export type MbtiTarget = z.infer<typeof MbtiTargetSchema>;
 
 export const PRODUCT_KEYS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 export const COMPATIBILITY_CATEGORIES = ["love", "marriage", "parentChild", "coworker", "managerReport", "businessPartner", "friendship"] as const;
 
-const DimensionId = z.string().regex(/^[a-z][a-zA-Z]+$/);
-const Sentence = z.string().min(8).max(90);
-const SourceRefs = z.array(z.string().min(3)).min(1);
-
-/** 행동 신호·그림자 신호. 문장 + 영역 태그 + 출처. */
-export const SignalSchema = z.object({ text: Sentence, domains: z.array(DomainSchema).min(1), sourceRefs: SourceRefs });
-export type Signal = z.infer<typeof SignalSchema>;
+export const DimensionId = z.string().regex(/^[a-z][a-zA-Z]+$/);
+/** 짧은 문장(한 줄 뜻, 비유, 형상, 이유). */
+export const Line = z.string().min(6).max(90);
+/** 장면: 사람·상황·행동이 보이는 1~2문장. */
+export const Scene = z.string().min(20).max(140);
+/** 설명문(강약 규칙·위치 뉘앙스·근거 포함 팩폭). */
+export const Para = z.string().min(10).max(220);
+export const Sources = z.array(z.string().min(2)).min(1);
+export const ConfidenceSchema = z.enum(["통용", "학파차이", "추정"]);
+export type Confidence = z.infer<typeof ConfidenceSchema>;
+export const LinkKindSchema = z.enum(["resonance", "tension", "conditional"]);
 
 /** dimensionTags: 차원 id → -1~1 (0 금지). */
 export const DimensionTagsSchema = z.record(DimensionId, z.number().min(-1).max(1).refine(v => v !== 0, "0은 태그를 빼라"));
 
-// 1) behavior-ontology.json
+const domainRecord = <T extends z.ZodTypeAny>(inner: T) => z.object(Object.fromEntries(DOMAINS.map(d => [d, inner])) as Record<Domain, T>);
+export const ScenesSchema = domainRecord(z.array(Scene).min(2).max(5));
+export type Scenes = z.infer<typeof ScenesSchema>;
+
+export const ImageSchema = z.object({ metaphor: Line, visual: Line });
+export const MbtiLinkSchema = z.object({ target: MbtiTargetSchema, kind: LinkKindSchema, why: Line });
+export type MbtiLink = z.infer<typeof MbtiLinkSchema>;
+
+// ---------- 1) behavior-ontology.json ----------
 export const BehaviorDimensionSchema = z.object({
-  id: DimensionId, name: z.string().min(2).max(10), definition: Sentence,
-  poles: z.object({ plus: z.object({ label: z.string().min(2).max(12), description: Sentence }), minus: z.object({ label: z.string().min(2).max(12), description: Sentence }) }),
+  id: DimensionId, name: z.string().min(2).max(10), definition: Line,
+  poles: z.object({ plus: z.object({ label: z.string().min(2).max(12), description: Line }), minus: z.object({ label: z.string().min(2).max(12), description: Line }) }),
   domains: z.array(DomainSchema).min(1),
-  sceneTemplates: z.array(z.object({ pole: z.enum(["+", "-"]), domain: DomainSchema, text: z.string().min(8).max(120) })).length(2),
+  sceneTemplates: z.array(z.object({ pole: z.enum(["+", "-"]), domain: DomainSchema, text: z.string().min(8).max(140) })).min(2),
 });
-export const BehaviorOntologySchema = z.object({ version: z.string(), note: z.string().optional(), domains: z.array(DomainSchema), dimensions: z.array(BehaviorDimensionSchema).min(25).max(35) });
+export const BehaviorOntologySchema = z.object({ version: z.string(), note: z.string().optional(), domains: z.array(DomainSchema), dimensions: z.array(BehaviorDimensionSchema).min(25).max(40) });
 export type BehaviorOntology = z.infer<typeof BehaviorOntologySchema>;
 
-// 2) myeongri-features.json
-export const FEATURE_FAMILIES = ["tenGod", "tenGodFamily", "shinsal", "gwiin", "twelveStage", "relation", "element", "dayPillar", "dayMaster", "structure", "stem", "branch", "other"] as const;
+// ---------- 2) myeongri/<family>.json ----------
+export const FEATURE_FAMILIES = ["stem", "branch", "dayPillar", "dayMaster", "tenGod", "tenGodBalance", "shinsal", "gwiin", "twelveStage", "relation", "element", "yinYang", "climate", "structure"] as const;
 export const FeatureFamilySchema = z.enum(FEATURE_FAMILIES);
-const Position = z.string().regex(/^(year|month|day|hour)(-(year|month|day|hour))?$/);
+export type FeatureFamily = z.infer<typeof FeatureFamilySchema>;
+/** 년·월·일·시 어디에 있느냐로 뜻이 달라지는 가족. 이 가족은 positionNuance 필수. */
+export const POSITIONAL_FAMILIES: readonly FeatureFamily[] = ["stem", "branch", "tenGod", "shinsal", "gwiin", "twelveStage"];
+
+export const PositionNuanceSchema = z.object({ year: Para, month: Para, day: Para, hour: Para });
+export const StrengthRulesSchema = z.object({
+  strong: Para, weak: Para,
+  duplicate: Para.optional(),
+  clash: Para.optional(),
+  /** 계산식 메모(브리프가 강약을 어떻게 판정하는지). 고객 본문 노출 금지. */
+  rule: z.string().min(6).max(200).optional(),
+});
+/** 합충형해의 짝(子午충 등)처럼 한 요소 안의 변형. 전체 스키마를 반복하지 않고 이미지·한 줄·뉘앙스만 둔다. */
+export const VariantSchema = z.object({
+  key: z.string().min(1).max(24), name: z.string().min(1).max(30), oneLiner: Line,
+  image: ImageSchema,
+  nuance: Para.optional(),
+});
+/** 오행 부족·미흡 전용: 보완 행동, 보완 상대 묘사, 만남 장소. */
+export const RemedySchema = z.object({
+  actions: z.array(Scene).min(3).max(6),
+  partner: z.array(Scene).min(2).max(4),
+  places: z.array(Line).min(3).max(6),
+});
+
 export const MyeongriFeatureSchema = z.object({
-  id: z.string().min(2),
+  id: z.string().min(3).max(60),
   family: FeatureFamilySchema,
-  traditionalName: z.string().min(1).max(20),
-  easyName: z.string().min(2).max(12),
-  definition: z.string().min(8).max(140),
-  behaviorSignals: z.array(SignalSchema).min(3).max(5),
-  shadowSignals: z.array(SignalSchema).min(2).max(3),
+  /** 한글(한자) 예: "현침살(懸針殺)", "정화(丁火)" */
+  name: z.string().min(1).max(30),
+  easyName: z.string().min(2).max(16),
+  oneLiner: Line,
+  image: ImageSchema,
+  scenes: ScenesSchema,
+  /** 좋은 면. 단정형 가능. */
+  strengths: z.array(Para).min(2).max(6),
+  /** 과사용·팩폭 재료. 문장 안에 근거(어떤 조건에서 그런지)를 적는다. */
+  overuse: z.array(Para).min(1).max(5),
+  positionNuance: PositionNuanceSchema.optional(),
+  strengthRules: StrengthRulesSchema,
   dimensionTags: DimensionTagsSchema.refine(t => Object.keys(t).length >= 2, "dimensionTags 2개 이상"),
-  positionNuance: z.array(z.object({ position: Position, text: z.string().min(8).max(140), sourceRefs: SourceRefs })).optional(),
-  strengthRule: z.object({ strong: z.string().min(8).max(140), weak: z.string().min(8).max(140), duplicate: z.string().min(8).max(140).optional(), clash: z.string().min(8).max(140).optional(), sourceRefs: SourceRefs }),
-  sourceRefs: SourceRefs,
+  mbtiLinks: z.array(MbtiLinkSchema).min(2).max(8),
+  variants: z.array(VariantSchema).optional(),
+  remedy: RemedySchema.optional(),
+  /** 엔진(src/lib/saju)이 이 요소를 계산해 내는가. false면 브리프가 쓰지 않고 P2 엔진 확장 대상. */
+  engineSupport: z.boolean(),
+  /** 엔진이 내는 코드·라벨(ShinsalCode, ElementLabel, TenGod 등). */
+  engineKey: z.string().optional(),
+  /** 내부 전용. 고객 본문 노출 금지. 예: "classic:sm2:論將星華蓋", "deep:marker:dohwa", "v4:depth:day_master_jeonghwa", "통용" */
+  sources: Sources,
+  confidence: ConfidenceSchema,
   aliases: z.array(z.string()).optional(),
 });
 export type MyeongriFeature = z.infer<typeof MyeongriFeatureSchema>;
-/** 같은 개념의 다른 id(오행 4종 id 체계, 특수격 2종 등). 정본 항목으로 해석한다. */
-export const FeatureAliasSchema = z.object({ id: z.string().min(2), aliasOf: z.string().min(2), note: z.string().optional() });
-export const MyeongriFeaturesSchema = z.object({ version: z.string(), features: z.array(MyeongriFeatureSchema), aliases: z.array(FeatureAliasSchema) });
-export type MyeongriFeatures = z.infer<typeof MyeongriFeaturesSchema>;
+export const MyeongriFileSchema = z.object({ version: z.string(), family: FeatureFamilySchema, features: z.array(MyeongriFeatureSchema).min(1) });
+export type MyeongriFile = z.infer<typeof MyeongriFileSchema>;
 
-// 3) mbti-profiles.json
+// ---------- 3) mbti/<TYPE>.json ----------
+export const MbtiSignalsSchema = domainRecord(z.array(Scene).length(3));
+export const MbtiCompatSchema = z.object({ type: MbtiTypeSchema, fit: z.enum(["좋음", "보통", "노력"]), why: Line });
 export const MbtiProfileSchema = z.object({
   type: MbtiTypeSchema,
   easyName: z.string().min(2).max(16),
-  oneLine: Sentence,
+  oneLiner: Line,
+  image: ImageSchema,
+  cognitiveFunctions: z.array(z.object({ code: CognitiveFunctionSchema, role: z.enum(["주기능", "부기능", "3차기능", "열등기능"]), easy: Para })).length(4),
+  /** 7영역 × 3 행동 신호(장면). */
+  signals: MbtiSignalsSchema,
+  shadows: z.array(Para).length(2),
+  jobs: z.array(z.string().min(2).max(20)).min(5).max(12),
+  /** 통념 궁합표. 15개 상대 유형마다 왜 한 줄. 본문에는 "통념"임을 밝힌다. */
+  conventionalCompat: z.array(MbtiCompatSchema).length(15),
   dimensionTags: DimensionTagsSchema.refine(t => Object.keys(t).length >= 8, "dimensionTags 8개 이상"),
-  cognitiveFunctions: z.array(z.object({ code: z.enum(["Ni", "Ne", "Si", "Se", "Ti", "Te", "Fi", "Fe"]), role: z.enum(["주기능", "부기능", "3차기능", "열등기능"]), easy: z.string().min(8).max(120), sourceRefs: SourceRefs })).length(4),
-  signals: z.object({ work: z.array(SignalSchema).length(3), money: z.array(SignalSchema).length(3), love: z.array(SignalSchema).length(3), relationships: z.array(SignalSchema).length(3), study: z.array(SignalSchema).length(3) }),
-  shadows: z.array(SignalSchema).length(2),
-  sourceRefs: SourceRefs,
+  sources: Sources,
 });
 export type MbtiProfile = z.infer<typeof MbtiProfileSchema>;
-export const MbtiProfilesSchema = z.object({ version: z.string(), profiles: z.array(MbtiProfileSchema).length(16) });
+export const MbtiFileSchema = z.object({ version: z.string(), profiles: z.array(MbtiProfileSchema).min(1) });
 
-// 4) cross-findings.json
-export const CrossFindingSchema = z.object({
+// ---------- 4) fusion/*.json ----------
+export const FactRequirementSchema = z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown"]);
+export const FusionRuleSchema = z.object({
   id: z.string().min(4),
-  featureId: z.string().min(2),
-  mbti: MbtiTypeSchema,
-  dimension: DimensionId,
-  kind: z.enum(["resonance", "tension", "conditional"]),
-  score: z.number(),
-  insight: z.string().min(20).max(200),
-  scene: z.string().min(10).max(120),
-  factBoundary: z.object({ requires: z.array(z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown"])), forbids: z.array(z.string()) }),
-  sourceRefs: SourceRefs,
+  myeongriId: z.string().min(3),
+  mbtiTarget: MbtiTargetSchema,
+  kind: LinkKindSchema,
+  dimension: DimensionId.optional(),
+  score: z.number().optional(),
+  /** 왜 겹치는지(공명) 또는 왜 당기는지(긴장). 명리 근거와 MBTI 근거를 한 문장씩. */
+  why: Para,
+  /** 상위 쌍은 장면 필수. 나머지는 생략 가능. */
+  scene: Scene.optional(),
+  factBoundary: z.object({ requires: z.array(FactRequirementSchema), forbids: z.array(z.string()) }),
+  sources: Sources,
 });
-export type CrossFinding = z.infer<typeof CrossFindingSchema>;
-export const CrossFindingsSchema = z.object({ version: z.string(), method: z.string(), findings: z.array(CrossFindingSchema).min(200), runtimeTemplateRule: z.string() });
+export type FusionRule = z.infer<typeof FusionRuleSchema>;
+export const FusionFileSchema = z.object({ version: z.string(), method: z.string().optional(), rules: z.array(FusionRuleSchema).min(1) });
 
-// 5) product-narratives.json
+// ---------- 5) timeline/*.json ----------
+export const STEMS = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"] as const;
+export const BRANCHES = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"] as const;
+export const TEN_GODS = ["比肩", "劫財", "食神", "傷官", "偏財", "正財", "偏官", "正官", "偏印", "正印"] as const;
+export const TenGodSchema = z.enum(TEN_GODS);
+export const ELEMENTS = ["WOOD", "FIRE", "EARTH", "METAL", "WATER"] as const;
+
+/** 60간지의 연 기운·월 기운 해석. */
+export const GanjiEnergySchema = z.object({
+  ganji: z.string().regex(/^[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]$/),
+  name: z.string().min(2).max(10),
+  image: ImageSchema,
+  year: z.object({ mood: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), action: Line }),
+  month: z.object({ mood: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), action: Line }),
+  sources: Sources, confidence: ConfidenceSchema,
+});
+export const GanjiEnergyFileSchema = z.object({ version: z.string(), entries: z.array(GanjiEnergySchema).length(60) });
+
+/** 일간 대비 십성이 연·월로 들어올 때의 뜻. */
+export const TenGodPeriodSchema = z.object({
+  tenGod: TenGodSchema,
+  year: z.object({ meaning: Para, scenes: z.array(Scene).min(2).max(4), action: Line, caution: Para }),
+  month: z.object({ meaning: Para, scenes: z.array(Scene).min(2).max(4), action: Line }),
+  sources: Sources, confidence: ConfidenceSchema,
+});
+export const TenGodPeriodFileSchema = z.object({ version: z.string(), entries: z.array(TenGodPeriodSchema).length(10) });
+
+/** 합충형해 배지: 원국과 유입 간지 사이 관계의 쉬운 한 줄. */
+export const BADGE_KINDS = ["STEM_HAP", "YUKHAP", "SAMHAP", "BANGHAP", "CHUNG", "HYEONG", "PA", "HAE", "WONJIN", "GONGMANG"] as const;
+export const BadgeSchema = z.object({
+  kind: z.enum(BADGE_KINDS),
+  /** 짝(예 "子午"). 없으면 종류 공통 배지. */
+  pair: z.string().min(2).max(6).optional(),
+  label: z.string().min(2).max(12),
+  line: Line,
+  tone: z.enum(["plus", "minus", "mixed"]),
+});
+export const BadgeFileSchema = z.object({ version: z.string(), badges: z.array(BadgeSchema).min(8) });
+
+/** 흐름 세기(1~5) 규칙: 설명 가능한 가중치 합. UI에 "참고" 표기. */
+export const FlowRuleSchema = z.object({
+  version: z.string(),
+  note: z.string(),
+  base: z.number().int().min(1).max(5),
+  weights: z.array(z.object({ key: z.string().min(2), when: z.string().min(4).max(160), delta: z.number().min(-3).max(3) })).min(5),
+  clamp: z.tuple([z.number().int(), z.number().int()]),
+  labels: z.record(z.string().regex(/^[1-5]$/), z.string().min(2).max(12)),
+});
+export type FlowRule = z.infer<typeof FlowRuleSchema>;
+
+/** 추천 행동 템플릿: 십성·오행·세기 조합 → 한 줄 행동. {name} 치환 허용. */
+export const ActionTemplateSchema = z.object({
+  id: z.string().min(3),
+  when: z.object({ tenGod: TenGodSchema.optional(), element: z.enum(ELEMENTS).optional(), flow: z.array(z.number().int().min(1).max(5)).optional(), badge: z.enum(BADGE_KINDS).optional() }),
+  text: z.array(Line).min(2).max(4),
+});
+export const ActionTemplateFileSchema = z.object({ version: z.string(), templates: z.array(ActionTemplateSchema).min(20) });
+
+// ---------- 6) product-narratives.json (v1 유지) ----------
 export const ChapterRoleSchema = z.enum(["HOOK", "WHY", "SCENE", "TWIST", "PAYOFF"]);
 export const ChapterPlanSchema = z.object({
   id: z.string().min(2), title: z.string().min(2).max(30), question: z.string().min(8).max(80), role: ChapterRoleSchema,
   domains: z.array(DomainSchema).min(1), dimensionFocus: z.array(DimensionId).optional(),
-  evidenceFamilies: z.array(FeatureFamilySchema).optional(), requires: z.array(z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown", "pair"])).optional(),
+  evidenceFamilies: z.array(z.string()).optional(), requires: z.array(z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown", "pair"])).optional(),
   paragraphs: z.object({ min: z.number().int().min(1), max: z.number().int().min(1) }),
-  /** 같은 장 계획을 반복 적용하는 수(대운 14년, 세운 12개월). 없으면 1. */
   repeat: z.number().int().min(2).optional(),
 });
 export const ProductNarrativeSchema = z.object({
@@ -104,5 +233,9 @@ export const ProductNarrativeSchema = z.object({
   noRepeatRules: z.array(z.string().min(8)).min(1),
   compatibility: z.record(z.enum(COMPATIBILITY_CATEGORIES), z.object({ sceneDomains: z.array(DomainSchema).min(1), roleLabels: z.tuple([z.string(), z.string()]), forbidden: z.array(z.string()).min(1), tone: z.string().min(4).max(80) })).optional(),
 });
-export const ProductNarrativesSchema = z.object({ version: z.string(), products: z.array(ProductNarrativeSchema).length(6) });
+export const ProductNarrativesSchema = z.object({ version: z.string(), note: z.string().optional(), products: z.array(ProductNarrativeSchema).length(6) });
 export type ProductNarratives = z.infer<typeof ProductNarrativesSchema>;
+
+// ---------- 7) id-map.json (V4·v1 id → v2 id) ----------
+export const IdMapSchema = z.object({ version: z.string(), entries: z.array(z.object({ oldId: z.string(), newId: z.string(), source: z.enum(["v4", "knowledge-v5-v1", "engine"]), note: z.string().optional() })).min(1) });
+export type IdMap = z.infer<typeof IdMapSchema>;

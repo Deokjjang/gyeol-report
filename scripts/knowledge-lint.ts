@@ -1,296 +1,308 @@
 /**
- * knowledge-v5 데이터 품질 게이트(결정론). 실행: pnpm exec tsx scripts/knowledge-lint.ts [--only <file.json>] [--sample]
+ * knowledge-v5 v2 데이터 품질 게이트(결정론).
+ * 실행: pnpm exec tsx scripts/knowledge-lint.ts [--only <file.json>] [--strict] [--coverage]
+ *   --only     파일 하나만(스키마·문장·파일 내 중복). 서브에이전트 배치 검사용.
+ *   --strict   커버리지 미달(기대 id 누락, MBTI 16 미만, Fusion 300 미만)도 실패로 친다. 완료 게이트.
+ *   --coverage 가족별 커버리지 표를 docs/v5/p1-coverage.md 에 쓴다.
  *
- * 검사: zod 스키마 → id 참조 무결성(차원·feature·MBTI·출처) → 중복 문장 0 → 금지 표현 0 → 용어 누출 0(신호 문장)
- *      → dimensionTags ≥ 2(스키마) → 영역 태그(스키마) → 가독성(문장 길이·한자·한자어 연속) → 어미 규칙.
- * --sample: docs/q1-review-sample.md 에 feature 30·교차 발견 20·유형 3을 seed 고정 무작위 추출.
- * 규칙 문서: docs/design/knowledge-v5-style.md
+ * 검사: zod 스키마 → id 무결성(중복·fusion myeongriId·차원 id·id-map) → 영역별 scene ≥ 2(스키마) → 이미지 필수(스키마)
+ *      → 중복 문장 0(가족 간 포함) → 이미지 중복 0(전체) → 금지 표현(정보량 0·확정 예언·비하·흐린 말투) → 한자 금지(이름·출처 제외)
+ *      → 문장 길이(≤90) · 한자어 연속 상한 → 용어 누출(장면 문장에 MBTI 코드·명리 일반 용어 금지) → mbtiLinks ≥ 2(스키마) → 위치 가족 positionNuance 필수.
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join, resolve } from "node:path";
-import {
-  BehaviorOntologySchema, CrossFindingSchema, CrossFindingsSchema, MbtiProfilesSchema, MbtiProfileSchema, MyeongriFeaturesSchema, ProductNarrativesSchema, MyeongriFeatureSchema, FeatureAliasSchema,
-  type MyeongriFeature, type Signal,
-} from "../src/data/knowledge-v5/schema";
+import { join, resolve, basename } from "node:path";
 import { z } from "zod";
+import {
+  ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema, GanjiEnergySchema, IdMapSchema,
+  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema,
+  DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
+  type FusionRule, type MbtiProfile, type MyeongriFeature,
+} from "../src/data/knowledge-v5/schema";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const DATA = join(ROOT, "src", "data", "knowledge-v5");
 const args = process.argv.slice(2);
 const only = args.includes("--only") ? resolve(args[args.indexOf("--only") + 1]) : null;
-const wantSample = args.includes("--sample");
+const strict = args.includes("--strict");
+const wantCoverage = args.includes("--coverage");
 
 type Issue = { file: string; where: string; rule: string; text?: string };
 const issues: Issue[] = [];
 const fail = (file: string, where: string, rule: string, text?: string) => issues.push({ file, where, rule, text });
 const readJson = (p: string) => JSON.parse(readFileSync(p, "utf8").replace(/^﻿/, ""));
-const exists = (name: string) => existsSync(join(DATA, name));
+const listJson = (dir: string) => existsSync(dir) ? readdirSync(dir).filter(f => f.endsWith(".json")).sort().map(f => join(dir, f)) : [];
+const zodMsg = (e: z.ZodError) => e.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ");
 
 // ---------- 규칙 상수 ----------
 const FORBIDDEN: readonly [string, RegExp][] = [
-  ["흐린 말투", /일 수 있습니다|수도 있습니다|가능성이 있습니다|일지도 모릅니다|신호가 있어요|참고하세요|미입력이라서|입력되지 않았으므로/],
-  ["확정·과장", /반드시|틀림없이|무조건|절대(?!로 아니)|운명|팔자|타고난 복|대박|남다른 잠재력|귀인이 나타|틀림없|확실히 .*(됩니다|합니다)/],
-  ["사건 단정", /(결혼|이별|이혼|사고|질병|죽음|사망|파산|합격|승진|수익)(을|이|가)? ?(하게 됩니다|합니다\.|납니다|됩니다\.|생깁니다|있습니다\.)|(올해|내년|\d+년 (안|내|뒤)|\d+살)에? (결혼|이별|이혼|승진|합격)/],
-  ["라벨 서술어", /(리더십|추진력|카리스마|잠재력|재능|복)이 (있|강|많)습니다|성향입니다\.$|기운입니다\.$|편이 강합니다\.$/],
-  ["비난", /문제가 있습니다|불행|저주|한심|쓸모없/],
+  ["정보량 0", /남다른 잠재력|무한한 가능성|특별한 존재|소중한 사람|빛나는 (존재|사람)|자신만의 길|큰 복|많은 복|복이 많|좋은 일이 (생깁니다|있을)|성공할 (것|수 있)|행복해질|긍정적인 (에너지|마음)|타고난 복|귀인이 나타|대박|운명적|잠재력이 (있|큽|많)/],
+  ["확정 예언", /(결혼|이별|이혼|사고|질병|죽음|사망|파산|합격|승진|임신|출산)(을|이|가)? ?(하게 됩니다|합니다\.|납니다|됩니다\.|생깁니다|있습니다\.|옵니다)|(올해|내년|\d+년 (안|내|뒤)|\d+살)에? (결혼|이별|이혼|승진|합격|임신)|반드시|틀림없이|무조건|\b100%/],
+  ["흐린 말투", /일 수도 있습니다|가능성이 있습니다|일지도 모릅니다|참고하세요|미입력|입력되지 않았/],
+  ["비하", /문제가 있습니다|불행|저주|한심|쓸모없|멍청|게으른 사람|못난|열등/],
+  ["라벨 서술어", /(리더십|추진력|카리스마|잠재력|재능|복)이 (있|강|많)습니다\.$|성향입니다\.$|기운입니다\.$/],
 ];
-const ENDING_OK = /(합니다|습니다|않습니다|편입니다|쪽입니다|큽니다|쉽습니다|많습니다)\.$/;
 const HAN = /[一-鿿]/;
-const COMMON_LABELS = new Set(["사", "묘", "양", "절", "병", "쇠", "태", "관", "재", "인", "합", "충", "형", "파", "해", "목", "화", "토", "금", "수", "자", "축", "오", "미", "신", "유", "술", "해", "장생", "목욕", "건록", "제왕", "역마", "도화"]);
-const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI|사주|명리|일간|일주|월지|지지|천간|오행|십성|신살|귀인|대운|세운|원국/;
-
-// ---------- 소스 인덱스(출처 무결성) ----------
-const sourceIndex = exists("source-index.json") ? readJson(join(DATA, "source-index.json")) : null;
-const sourceIds = { foundation: new Set<string>(), classic: new Set<string>(), material: new Set<string>(), depth: new Map<string, Set<string>>(), taxonomy: new Set<string>(), kb: new Set<string>(), mbti: new Map<string, Set<string>>() };
-const jargon = new Set<string>();
-if (sourceIndex) {
-  // 일주 이름(정해·경오…)과 천간·지지 한 글자는 일상어와 겹치므로 용어 누출 검사에서 제외
-  for (const e of sourceIndex.foundation) { sourceIds.foundation.add(e.id); if (["day_pillar", "heavenly_stem", "earthly_branch"].includes(e.category)) continue; for (const l of [e.labelKo, ...(e.aliases ?? [])]) if (l.length >= 2 && !HAN.test(l) && !COMMON_LABELS.has(l)) jargon.add(l); }
-  for (const s of sourceIndex.classicSources) sourceIds.classic.add(s.id);
-  for (const m of sourceIndex.materials) sourceIds.material.add(m.feature);
-  for (const d of sourceIndex.depth) sourceIds.depth.set(d.feature, new Set(d.roles));
-  for (const t of sourceIndex.taxonomy) { sourceIds.taxonomy.add(t.id); if (t.labelKo?.length >= 2 && !COMMON_LABELS.has(t.labelKo) && !t.id.startsWith("day_pillar_")) jargon.add(t.labelKo); }
-  for (const k of sourceIndex.knowledgeBase) { sourceIds.kb.add(k.id); if (k.labelKo?.length >= 2 && !COMMON_LABELS.has(k.labelKo) && !k.id.startsWith("day_pillar_")) jargon.add(k.labelKo); }
-  for (const [type, v] of Object.entries<any>(sourceIndex.mbti)) sourceIds.mbti.set(type, new Set(v.traitIds));
-}
-// 용어 누출 검사에서 흔한 일반어는 제외
-for (const w of ["여름", "겨울", "봄", "가을", "바다", "나무", "불", "흙", "쇠", "물", "꽃", "산", "강", "호수", "바위", "태양", "달", "별", "비", "안개", "창고", "지갑", "문", "길", "말", "소", "개", "닭", "양", "원숭이", "뱀", "용", "토끼", "호랑이", "쥐", "돼지", "친구", "부모", "자녀", "형제", "자매", "배우자", "연인", "동료", "상사", "직장", "성격", "성향", "강점", "약점", "결정", "표현", "감정", "관계", "현실", "책임", "자유", "독립", "안정", "변화", "학습", "돈", "일", "사랑", "결혼", "건강", "가족", "공부"]) jargon.delete(w);
-
-function checkRef(file: string, where: string, ref: string) {
-  const [prefix, ...rest] = ref.split(":"); const body = rest.join(":");
-  const ok = (() => {
-    if (!sourceIndex) return true;
-    switch (prefix) {
-      case "foundation": return sourceIds.foundation.has(`foundation:${body.split("#")[0]}`);
-      case "classic": return sourceIds.classic.has(body.split(":")[0]);
-      case "v4": { const [kind, ...r] = body.split(":"); if (kind === "material") return sourceIds.material.has(r.join(":")); if (kind === "depth") { const role = r.at(-1)!; const feature = r.slice(0, -1).join(":"); const roles = sourceIds.depth.get(feature); return !!roles && (roles.has(role) || role === "*"); } return false; }
-      case "taxonomy": return sourceIds.taxonomy.has(body);
-      case "kb": return sourceIds.kb.has(body);
-      case "mbti": { const [type, ...r] = body.split(":"); const ids = sourceIds.mbti.get(type); if (!ids) return false; const id = r.join(":"); return ids.has(id) || ["summary", "functionStack", "preferenceAxes", "relationshipHints", "myeongliBridgeHints", "closeKeywords", "farKeywords", "recommendedJobs", "avoidJobsOrEnvironments", "oneLine", "archetype"].some(f => id === f || id.startsWith(`${f}.`)); }
-      case "calc": return body.length > 0;
-      default: return false;
-    }
-  })();
-  if (!ok) fail(file, where, "sourceRef 미해결", ref);
-}
+const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI/;
+const JARGON = /사주|명리|일간|일주|월지|일지|시지|년지|천간|지지|오행|십성|신살|귀인|대운|세운|원국|용신|격국|지장간|십이운성|합충|삼합|육합|방합|형살|인지기능|주기능|열등기능/;
 
 // ---------- 문장 규칙 ----------
-const sentenceStore = new Map<string, string>(); // key → where
+const sentenceStore = new Map<string, string>();
+const imageStore = new Map<string, string>();
 const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 let sentenceCount = 0, sentenceChars = 0;
-function checkProse(file: string, where: string, text: string, opts: { signal?: boolean; allowHan?: boolean; dedupe?: boolean; maxLen?: number }) {
-  const maxLen = opts.maxLen ?? 60;
+type ProseOpts = { scene?: boolean; allowHan?: boolean; dedupe?: boolean; maxSentence?: number };
+function checkProse(file: string, where: string, text: string, opts: ProseOpts = {}) {
+  const maxSentence = opts.maxSentence ?? 90;
   for (const [name, re] of FORBIDDEN) if (re.test(text)) fail(file, where, `금지 표현(${name})`, text);
   if (!opts.allowHan && HAN.test(text)) fail(file, where, "한자", text);
+  if (/\{[a-z]+\}/i.test(text) && !/\{name\}/.test(text)) fail(file, where, "알 수 없는 치환자", text);
   const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [];
   for (const s of sentences) {
     sentenceCount++; sentenceChars += s.length;
-    if (s.length > maxLen) fail(file, where, `문장 길이 > ${maxLen}`, s);
+    if (s.length > maxSentence) fail(file, where, `문장 길이 > ${maxSentence}`, s);
     const tokens = s.split(/\s+/);
-    if (tokens.some(t => /^[가-힣]{8,}$/.test(t))) fail(file, where, "한자어 연속(8음절 이상 붙은 낱말)", s);
-    let run = 0; for (const t of tokens) { run = /(적|성|화|력|도|률)$/.test(t) ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
-    if (opts.signal) {
-      if (!ENDING_OK.test(s)) fail(file, where, "어미 규칙(합니다체 조건부)", s);
-      if (MBTI_CODE.test(s)) fail(file, where, "용어 누출(MBTI/명리 일반 용어)", s);
-      for (const j of jargon) if (s.includes(j) && !(j === "상관" && /상관 ?없/.test(s)) && !(j === "정관" && /정관리/.test(s))) { fail(file, where, "용어 누출(명리 용어)", `${j} ← ${s}`); break; }
+    if (tokens.some(t => /^[가-힣]{9,}$/.test(t))) fail(file, where, "한자어 연속(9음절 이상 붙은 낱말)", s);
+    let run = 0; for (const t of tokens) { run = /(적|성|화|력|도|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
+    if (opts.scene) {
+      if (MBTI_CODE.test(s)) fail(file, where, "용어 누출(장면에 MBTI 코드)", s);
+      const j = s.match(JARGON); if (j) fail(file, where, "용어 누출(장면에 명리 용어)", `${j[0]} ← ${s}`);
     }
     if (opts.dedupe !== false) {
-      const key = norm(s); if (key.length < 10) continue;
+      const key = norm(s); if (key.length < 12) continue;
       const prev = sentenceStore.get(key);
       if (prev && prev !== where) fail(file, where, "중복 문장", `${s} (먼저: ${prev})`); else sentenceStore.set(key, where);
     }
   }
 }
-function checkSignals(file: string, where: string, signals: readonly Signal[]) {
-  signals.forEach((sg, i) => { checkProse(file, `${where}[${i}]`, sg.text, { signal: true }); sg.sourceRefs.forEach(r => checkRef(file, `${where}[${i}]`, r)); });
+function checkImage(file: string, where: string, image: { metaphor: string; visual: string }) {
+  checkProse(file, `${where}.metaphor`, image.metaphor); checkProse(file, `${where}.visual`, image.visual);
+  for (const k of ["metaphor", "visual"] as const) {
+    const key = norm(image[k]); const prev = imageStore.get(key);
+    if (prev && prev !== where) fail(file, `${where}.${k}`, "이미지 중복", `${image[k]} (먼저: ${prev})`); else imageStore.set(key, where);
+  }
 }
 
+// ---------- 기대 id(엔진 정합 커버리지) ----------
+const SHINSAL_ENGINE = ["HYEONCHIMSAL", "HONGYEOMSAL", "BAEKHODAESAL", "MANGSINSAL", "YEOKMASAL", "DOHWASAL", "HWAGAE", "GOSINSAL", "GWASUKSAL", "TWELVE_GEOPSAL", "TWELVE_JAESAL", "TWELVE_CHEONSAL", "TWELVE_JISAL", "TWELVE_NYEONSAL", "TWELVE_WOLSAL", "TWELVE_MANGSINSAL", "TWELVE_JANGSEONGSAL", "TWELVE_BANANSAL", "TWELVE_YEOKMASAL", "TWELVE_YUKHAESAL", "TWELVE_HWAGAE"];
+const GWIIN_ENGINE = ["CHEON_EUL_GWIIN", "TAEGEUK_GWIIN", "MUN_CHANG_GWIIN", "HAK_DANG_GWIIN", "WOL_DEOK_GWIIN", "CHEON_DEOK_GWIIN"];
+const TWELVE_STAGES = ["長生", "沐浴", "冠帶", "建祿", "帝旺", "衰", "病", "死", "墓", "絶", "胎", "養"];
+const RELATIONS = ["STEM_HAP", "YUKHAP", "SAMHAP", "BANGHAP", "CHUNG", "HYEONG", "PA", "HAE"];
+const STRUCTURES = ["WEAK_DAYMASTER_WITH_STRONG_WEALTH", "WEAK_DAYMASTER_WITH_STRONG_OUTPUT", "WEAK_DAYMASTER_WITH_STRONG_OFFICER", "RESOURCE_HEAVY", "PEER_HEAVY", "OUTPUT_HEAVY", "WEALTH_HEAVY", "OFFICER_HEAVY", "MIXED_OFFICER_KILLING", "RESOURCE_SUPPORTS_DAYMASTER", "OUTPUT_GENERATES_WEALTH", "WEALTH_GENERATES_OFFICER", "FIRE_METAL_TENSION", "WATER_WEAK_RECOVERY_NEEDED"];
+const SEASONS = ["spring", "summer", "autumn", "winter"];
+const sexagenary = () => Array.from({ length: 60 }, (_, i) => `${STEMS[i % 10]}${BRANCHES[i % 12]}`);
+export const EXPECTED_IDS: Record<string, string[]> = {
+  stem: STEMS.map(s => `stem:${s}`),
+  branch: BRANCHES.map(b => `branch:${b}`),
+  dayPillar: sexagenary().map(g => `dayPillar:${g}`),
+  dayMaster: STEMS.map(s => `dayMaster:${s}`),
+  tenGod: TEN_GODS.map(t => `tenGod:${t}`),
+  tenGodBalance: ["PEER", "OUTPUT", "WEALTH", "OFFICER", "RESOURCE"].flatMap(f => [`tenGodBalance:${f}:STRONG`, `tenGodBalance:${f}:WEAK`]),
+  shinsal: SHINSAL_ENGINE.map(c => `shinsal:${c}`),
+  gwiin: GWIIN_ENGINE.map(c => `gwiin:${c}`),
+  twelveStage: TWELVE_STAGES.map(s => `twelveStage:${s}`),
+  relation: RELATIONS.map(r => `relation:${r}`),
+  element: ELEMENTS.flatMap(e => ["STRONG", "WEAK", "MISSING", "BALANCED"].map(s => `element:${e}:${s}`)),
+  yinYang: ["YANG_HEAVY", "YANG_HEAVY:MALE", "YANG_HEAVY:FEMALE", "YIN_HEAVY", "YIN_HEAVY:MALE", "YIN_HEAVY:FEMALE", "BALANCED"].map(k => `yinYang:${k}`),
+  climate: STEMS.flatMap(s => SEASONS.map(se => `climate:${s}:${se}`)),
+  structure: STRUCTURES.map(s => `structure:${s}`),
+};
+
 // ---------- 파일별 ----------
-const stats: Record<string, unknown> = {};
+const stats: Record<string, any> = {};
 const dimensionIds = new Set<string>();
-function lintOntology(path: string) {
-  const file = "behavior-ontology.json";
-  const parsed = BehaviorOntologySchema.safeParse(readJson(path));
-  if (!parsed.success) { fail(file, "schema", "zod", parsed.error.issues.slice(0, 5).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return; }
-  for (const d of parsed.data.dimensions) {
-    if (dimensionIds.has(d.id)) fail(file, d.id, "id 중복"); dimensionIds.add(d.id);
-    checkProse(file, `${d.id}.definition`, d.definition, {});
-    checkProse(file, `${d.id}.plus`, d.poles.plus.description, { signal: true });
-    checkProse(file, `${d.id}.minus`, d.poles.minus.description, { signal: true });
-    d.sceneTemplates.forEach((t, i) => checkProse(file, `${d.id}.scene[${i}]`, t.text.replace(/\{name\}은?/g, "").trim(), { signal: true, maxLen: 70 }));
-  }
-  stats.dimensions = parsed.data.dimensions.length;
-}
-function loadFeatures(): { features: MyeongriFeature[]; aliases: { id: string; aliasOf: string }[]; files: string[] } | null {
-  const merged = join(DATA, "myeongri-features.json"), partsDir = join(DATA, "features");
-  if (only) {
-    const p = readJson(only);
-    if (p && typeof p === "object" && "profiles" in p) { lintMbtiPart(only, p); return null; }
-    if (p && typeof p === "object" && "findings" in p) { lintCrossPart(only, p); return null; }
-    const r = z.object({ features: z.array(MyeongriFeatureSchema), aliases: z.array(FeatureAliasSchema).default([]) }).safeParse(p);
-    if (!r.success) { fail(only, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return null; }
-    return { ...r.data, files: [only] };
-  }
-  if (existsSync(merged)) {
-    const r = MyeongriFeaturesSchema.safeParse(readJson(merged));
-    if (!r.success) { fail("myeongri-features.json", "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return null; }
-    return { features: [...r.data.features], aliases: [...r.data.aliases], files: [merged] };
-  }
-  if (!existsSync(partsDir)) return null;
-  const out = { features: [] as MyeongriFeature[], aliases: [] as { id: string; aliasOf: string }[], files: [] as string[] };
-  for (const f of readdirSync(partsDir).filter(f => f.endsWith(".json")).sort()) {
-    const r = z.object({ features: z.array(MyeongriFeatureSchema), aliases: z.array(FeatureAliasSchema).default([]) }).safeParse(readJson(join(partsDir, f)));
-    if (!r.success) { fail(`features/${f}`, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); continue; }
-    out.features.push(...r.data.features); out.aliases.push(...r.data.aliases); out.files.push(f);
-  }
-  return out;
-}
 const featureIds = new Set<string>();
-function lintFeatures() {
-  const loaded = loadFeatures(); if (!loaded) return;
-  const file = only ? only.split("/").at(-1)! : "myeongri-features";
-  for (const f of loaded.features) {
-    if (featureIds.has(f.id)) fail(file, f.id, "feature id 중복"); featureIds.add(f.id);
-    checkProse(file, `${f.id}.definition`, f.definition, { allowHan: true, maxLen: 140 });
-    checkSignals(file, `${f.id}.behaviorSignals`, f.behaviorSignals);
-    checkSignals(file, `${f.id}.shadowSignals`, f.shadowSignals);
-    for (const d of Object.keys(f.dimensionTags)) if (dimensionIds.size && !dimensionIds.has(d)) fail(file, `${f.id}.dimensionTags`, "차원 id 미해결", d);
-    f.positionNuance?.forEach((p, i) => { checkProse(file, `${f.id}.positionNuance[${i}]`, p.text, { maxLen: 140, dedupe: false }); p.sourceRefs.forEach(r => checkRef(file, `${f.id}.positionNuance[${i}]`, r)); });
-    for (const k of ["strong", "weak", "duplicate", "clash"] as const) { const t = f.strengthRule[k]; if (t) checkProse(file, `${f.id}.strengthRule.${k}`, t, { maxLen: 140, dedupe: false }); }
-    f.strengthRule.sourceRefs.forEach(r => checkRef(file, `${f.id}.strengthRule`, r));
-    f.sourceRefs.forEach(r => checkRef(file, `${f.id}.sourceRefs`, r));
+const featuresByFamily: Record<string, MyeongriFeature[]> = {};
+const mbtiTypesSeen = new Set<string>();
+const fusionRules: FusionRule[] = [];
+
+function lintOntology(path: string) {
+  const file = basename(path);
+  const r = BehaviorOntologySchema.safeParse(readJson(path));
+  if (!r.success) { fail(file, "schema", "zod", zodMsg(r.error)); return; }
+  for (const d of r.data.dimensions) {
+    if (dimensionIds.has(d.id)) fail(file, d.id, "id 중복"); dimensionIds.add(d.id);
+    checkProse(file, `${d.id}.definition`, d.definition);
+    checkProse(file, `${d.id}.plus`, d.poles.plus.description, { scene: true });
+    checkProse(file, `${d.id}.minus`, d.poles.minus.description, { scene: true });
+    d.sceneTemplates.forEach((t, i) => checkProse(file, `${d.id}.scene[${i}]`, t.text, { scene: true }));
   }
-  for (const a of loaded.aliases) { if (featureIds.has(a.id)) fail(file, a.id, "alias id가 feature id와 겹침"); if (!featureIds.has(a.aliasOf)) fail(file, a.id, "aliasOf 미해결", a.aliasOf); }
-  // Q0 241개 전수 커버
-  if (sourceIndex && !only) {
-    const all = new Set([...featureIds, ...loaded.aliases.map(a => a.id)]);
-    const missing = sourceIndex.q0Features.filter((q: any) => !all.has(q.id)).map((q: any) => q.id);
-    if (missing.length) fail(file, "coverage", `Q0 feature 누락 ${missing.length}개`, missing.slice(0, 20).join(", "));
-    stats.q0Coverage = `${sourceIndex.q0Features.length - missing.length}/${sourceIndex.q0Features.length}`;
+  stats.dimensions = r.data.dimensions.length;
+}
+
+function lintFeatureFile(path: string) {
+  const file = `myeongri/${basename(path)}`;
+  const r = MyeongriFileSchema.safeParse(readJson(path));
+  if (!r.success) { fail(file, "schema", "zod", zodMsg(r.error)); return; }
+  for (const f of r.data.features) {
+    const w = f.id;
+    if (f.family !== r.data.family) fail(file, w, "파일 family와 다름", f.family);
+    if (featureIds.has(f.id)) fail(file, w, "feature id 중복"); featureIds.add(f.id);
+    (featuresByFamily[f.family] ??= []).push(f);
+    checkProse(file, `${w}.name`, f.name, { allowHan: true, dedupe: false });
+    checkProse(file, `${w}.oneLiner`, f.oneLiner);
+    checkImage(file, `${w}.image`, f.image);
+    for (const d of DOMAINS) f.scenes[d].forEach((s, i) => checkProse(file, `${w}.scenes.${d}[${i}]`, s, { scene: true }));
+    f.strengths.forEach((s, i) => checkProse(file, `${w}.strengths[${i}]`, s));
+    f.overuse.forEach((s, i) => checkProse(file, `${w}.overuse[${i}]`, s));
+    if (POSITIONAL_FAMILIES.includes(f.family) && !f.positionNuance) fail(file, w, "위치 가족인데 positionNuance 없음");
+    if (f.positionNuance) for (const [k, v] of Object.entries(f.positionNuance)) checkProse(file, `${w}.positionNuance.${k}`, v);
+    for (const k of ["strong", "weak", "duplicate", "clash"] as const) { const t = f.strengthRules[k]; if (t) checkProse(file, `${w}.strengthRules.${k}`, t); }
+    for (const d of Object.keys(f.dimensionTags)) if (dimensionIds.size && !dimensionIds.has(d)) fail(file, `${w}.dimensionTags`, "차원 id 미해결", d);
+    f.mbtiLinks.forEach((l, i) => checkProse(file, `${w}.mbtiLinks[${i}].why`, l.why));
+    f.variants?.forEach((v, i) => { checkProse(file, `${w}.variants[${i}].oneLiner`, v.oneLiner); checkImage(file, `${w}.variants[${i}].image`, v.image); if (v.nuance) checkProse(file, `${w}.variants[${i}].nuance`, v.nuance); });
+    if (f.remedy) { f.remedy.actions.forEach((s, i) => checkProse(file, `${w}.remedy.actions[${i}]`, s, { scene: true })); f.remedy.partner.forEach((s, i) => checkProse(file, `${w}.remedy.partner[${i}]`, s, { scene: true })); f.remedy.places.forEach((s, i) => checkProse(file, `${w}.remedy.places[${i}]`, s, { dedupe: false })); }
+    if (f.family === "element" && /:(WEAK|MISSING)$/.test(f.id) && !f.remedy) fail(file, w, "오행 부족·미흡인데 remedy 없음");
+    if (f.family === "relation" && !(f.variants?.length)) fail(file, w, "합충형해인데 variants(짝) 없음");
+    if (f.engineSupport && !f.engineKey) fail(file, w, "engineSupport인데 engineKey 없음");
   }
-  stats.features = loaded.features.length; stats.aliases = loaded.aliases.length; stats.featureFiles = loaded.files.length;
-  stats.behaviorSignals = loaded.features.reduce((n, f) => n + f.behaviorSignals.length, 0);
-  stats.featuresWithPosition = loaded.features.filter(f => f.positionNuance?.length).length;
 }
-function lintMbtiPart(path: string, raw: unknown) {
-  const file = path.split("/").at(-1)!;
-  const r = z.object({ profiles: z.array(MbtiProfileSchema).min(1) }).safeParse(raw);
-  if (!r.success) { fail(file, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return; }
-  lintProfiles(file, r.data.profiles);
+
+function lintMbtiFile(path: string) {
+  const file = `mbti/${basename(path)}`;
+  const r = MbtiFileSchema.safeParse(readJson(path));
+  if (!r.success) { fail(file, "schema", "zod", zodMsg(r.error)); return; }
+  for (const p of r.data.profiles) lintProfile(file, p);
 }
-function lintMbti() {
-  const file = "mbti-profiles.json";
-  if (!exists(file)) {
-    const partsDir = join(DATA, "mbti"); if (!existsSync(partsDir)) return;
-    for (const f of readdirSync(partsDir).filter(f => f.endsWith(".json")).sort()) lintMbtiPart(join(partsDir, f), readJson(join(partsDir, f)));
-    return;
-  }
-  const r = MbtiProfilesSchema.safeParse(readJson(join(DATA, file)));
-  if (!r.success) { fail(file, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return; }
-  lintProfiles(file, r.data.profiles);
+function lintProfile(file: string, p: MbtiProfile) {
+  const w = p.type;
+  if (mbtiTypesSeen.has(p.type)) fail(file, w, "MBTI 유형 중복"); mbtiTypesSeen.add(p.type);
+  checkProse(file, `${w}.oneLiner`, p.oneLiner);
+  checkImage(file, `${w}.image`, p.image);
+  p.cognitiveFunctions.forEach((c, i) => checkProse(file, `${w}.fn[${i}]`, c.easy));
+  for (const d of DOMAINS) p.signals[d].forEach((s, i) => checkProse(file, `${w}.signals.${d}[${i}]`, s, { scene: true }));
+  p.shadows.forEach((s, i) => checkProse(file, `${w}.shadows[${i}]`, s));
+  const compatTypes = new Set(p.conventionalCompat.map(c => c.type));
+  if (compatTypes.has(p.type)) fail(file, `${w}.conventionalCompat`, "자기 유형이 궁합표에 있음");
+  for (const t of MBTI_TYPES) if (t !== p.type && !compatTypes.has(t)) fail(file, `${w}.conventionalCompat`, "상대 유형 누락", t);
+  p.conventionalCompat.forEach((c, i) => checkProse(file, `${w}.conventionalCompat[${i}].why`, c.why));
+  for (const d of Object.keys(p.dimensionTags)) if (dimensionIds.size && !dimensionIds.has(d)) fail(file, `${w}.dimensionTags`, "차원 id 미해결", d);
 }
-function lintProfiles(file: string, profiles: z.infer<typeof MbtiProfileSchema>[]) {
-  for (const p of profiles) {
-    checkProse(file, `${p.type}.oneLine`, p.oneLine, {});
-    p.cognitiveFunctions.forEach((c, i) => { checkProse(file, `${p.type}.fn[${i}]`, c.easy, { maxLen: 90 }); c.sourceRefs.forEach(ref => checkRef(file, `${p.type}.fn[${i}]`, ref)); });
-    for (const [domain, list] of Object.entries(p.signals)) checkSignals(file, `${p.type}.signals.${domain}`, list);
-    checkSignals(file, `${p.type}.shadows`, p.shadows);
-    for (const d of Object.keys(p.dimensionTags)) if (dimensionIds.size && !dimensionIds.has(d)) fail(file, `${p.type}.dimensionTags`, "차원 id 미해결", d);
-    p.sourceRefs.forEach(ref => checkRef(file, `${p.type}.sourceRefs`, ref));
-  }
-  stats.mbtiProfiles = Number(stats.mbtiProfiles ?? 0) + profiles.length;
-}
-function lintCrossPart(path: string, raw: unknown) {
-  const file = path.split("/").at(-1)!;
-  const r = z.object({ findings: z.array(CrossFindingSchema).min(1) }).safeParse(raw);
-  if (!r.success) { fail(file, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return; }
-  // 부분 파일 검사 때는 feature id 참조를 cross-candidates.json 으로 확인한다
-  if (!featureIds.size && exists("cross-candidates.json")) for (const c of readJson(join(DATA, "cross-candidates.json")).candidates) featureIds.add(c.featureId);
-  lintFindings(file, r.data.findings);
-}
-function lintCross() {
-  const file = "cross-findings.json";
-  if (!exists(file)) {
-    const partsDir = join(DATA, "cross"); if (!existsSync(partsDir)) return;
-    for (const f of readdirSync(partsDir).filter(f => f.endsWith(".json")).sort()) lintCrossPart(join(partsDir, f), readJson(join(partsDir, f)));
-    return;
-  }
-  const r = CrossFindingsSchema.safeParse(readJson(join(DATA, file)));
-  if (!r.success) { fail(file, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return; }
-  lintFindings(file, r.data.findings);
-}
-function lintFindings(file: string, findings: z.infer<typeof CrossFindingSchema>[]) {
+
+function lintFusionFile(path: string) {
+  const file = `fusion/${basename(path)}`;
+  const r = FusionFileSchema.safeParse(readJson(path));
+  if (!r.success) { fail(file, "schema", "zod", zodMsg(r.error)); return; }
   const ids = new Set<string>();
-  for (const c of findings) {
-    if (ids.has(c.id)) fail(file, c.id, "id 중복"); ids.add(c.id);
-    if (featureIds.size && !featureIds.has(c.featureId)) fail(file, c.id, "featureId 미해결", c.featureId);
-    if (dimensionIds.size && !dimensionIds.has(c.dimension)) fail(file, c.id, "차원 id 미해결", c.dimension);
-    checkProse(file, `${c.id}.insight`, c.insight, { signal: false, maxLen: 70 });
-    if ((c.insight.match(/[.!?]/g) ?? []).length !== 2) fail(file, `${c.id}.insight`, "insight는 정확히 2문장", c.insight);
-    if (MBTI_CODE.test(c.insight.replace(/\b[EI][NS][TF][JP]\b/g, ""))) fail(file, `${c.id}.insight`, "용어 누출(명리 일반 용어)", c.insight);
-    checkProse(file, `${c.id}.scene`, c.scene, { signal: true, maxLen: 70 });
-    c.sourceRefs.forEach(ref => checkRef(file, c.id, ref));
+  for (const x of r.data.rules) {
+    if (ids.has(x.id)) fail(file, x.id, "fusion id 중복"); ids.add(x.id);
+    if (featureIds.size && !featureIds.has(x.myeongriId)) fail(file, x.id, "myeongriId 미해결", x.myeongriId);
+    if (x.dimension && dimensionIds.size && !dimensionIds.has(x.dimension)) fail(file, x.id, "차원 id 미해결", x.dimension);
+    checkProse(file, `${x.id}.why`, x.why);
+    if (x.scene) checkProse(file, `${x.id}.scene`, x.scene, { scene: true });
+    fusionRules.push(x);
   }
-  const kinds: Record<string, number> = {}; for (const c of findings) kinds[c.kind] = (kinds[c.kind] ?? 0) + 1;
-  stats.crossFindings = Number(stats.crossFindings ?? 0) + findings.length; stats.crossKinds = kinds;
 }
-function lintNarratives() {
-  const file = "product-narratives.json"; if (!exists(file)) return;
-  const r = ProductNarrativesSchema.safeParse(readJson(join(DATA, file)));
-  if (!r.success) { fail(file, "schema", "zod", r.error.issues.slice(0, 8).map(i => `${i.path.join(".")}: ${i.message}`).join(" | ")); return; }
-  for (const p of r.data.products) {
-    const chapterIds = new Set<string>();
-    for (const c of p.chapters) {
-      if (chapterIds.has(c.id)) fail(file, `${p.productKey}.${c.id}`, "chapter id 중복"); chapterIds.add(c.id);
-      checkProse(file, `${p.productKey}.${c.id}.question`, c.question, { maxLen: 80, dedupe: true });
-      c.dimensionFocus?.forEach(d => { if (dimensionIds.size && !dimensionIds.has(d)) fail(file, `${p.productKey}.${c.id}`, "차원 id 미해결", d); });
+
+function lintGanjiEntries(file: string, entries: z.infer<typeof GanjiEnergySchema>[]) {
+  const seen = new Set<string>();
+  for (const e of entries) {
+    if (seen.has(e.ganji)) fail(file, e.ganji, "간지 중복"); seen.add(e.ganji);
+    checkImage(file, `${e.ganji}.image`, e.image);
+    for (const k of ["year", "month"] as const) { checkProse(file, `${e.ganji}.${k}.mood`, e[k].mood); checkProse(file, `${e.ganji}.${k}.action`, e[k].action); }
+  }
+}
+function lintTimeline() {
+  const dir = join(DATA, "timeline");
+  const one = (name: string, schema: z.ZodTypeAny, cb: (d: any) => void) => {
+    const p = join(dir, name); if (!existsSync(p)) return;
+    const r = schema.safeParse(readJson(p)); if (!r.success) { fail(`timeline/${name}`, "schema", "zod", zodMsg(r.error)); return; }
+    cb(r.data);
+  };
+  one("ganji.json", GanjiEnergyFileSchema, d => { lintGanjiEntries("timeline/ganji.json", d.entries); stats.ganji = d.entries.length; });
+  one("ten-god-period.json", TenGodPeriodFileSchema, d => {
+    for (const e of d.entries) for (const k of ["year", "month"] as const) {
+      checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.meaning`, e[k].meaning);
+      e[k].scenes.forEach((s: string, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.scenes[${i}]`, s, { scene: true }));
+      checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.action`, e[k].action);
+      if (k === "year") checkProse("timeline/ten-god-period.json", `${e.tenGod}.year.caution`, e.year.caution);
     }
-    const roles = new Set(p.chapters.map(c => c.role));
-    for (const need of ["HOOK", "PAYOFF"]) if (!roles.has(need as never)) fail(file, p.productKey, `장 역할 ${need} 없음`);
+    stats.tenGodPeriod = d.entries.length;
+  });
+  one("badges.json", BadgeFileSchema, d => { d.badges.forEach((b: any, i: number) => checkProse("timeline/badges.json", `badge[${i}]`, b.line)); stats.badges = d.badges.length; });
+  one("flow-rule.json", FlowRuleSchema, d => { stats.flowWeights = d.weights.length; });
+  one("action-templates.json", ActionTemplateFileSchema, d => { d.templates.forEach((t: any) => t.text.forEach((s: string, i: number) => checkProse("timeline/action-templates.json", `${t.id}[${i}]`, s))); stats.actionTemplates = d.templates.length; });
+}
+
+function lintNarratives() {
+  const p = join(DATA, "product-narratives.json"); if (!existsSync(p)) return;
+  const r = ProductNarrativesSchema.safeParse(readJson(p));
+  if (!r.success) { fail("product-narratives.json", "schema", "zod", zodMsg(r.error)); return; }
+  for (const prod of r.data.products) {
+    const ids = new Set<string>();
+    for (const c of prod.chapters) { if (ids.has(c.id)) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "chapter id 중복"); ids.add(c.id); c.dimensionFocus?.forEach(d => { if (dimensionIds.size && !dimensionIds.has(d)) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "차원 id 미해결", d); }); }
+    const roles = new Set(prod.chapters.map(c => c.role));
+    for (const need of ["HOOK", "PAYOFF"]) if (!roles.has(need as never)) fail("product-narratives.json", prod.productKey, `장 역할 ${need} 없음`);
   }
   stats.products = r.data.products.length;
 }
 
-// ---------- 검토 패킷 ----------
-function mulberry32(a: number) { return () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
-function writeSample() {
-  const rnd = mulberry32(20261027), pick = <T,>(arr: T[], n: number) => [...arr].sort(() => rnd() - 0.5).slice(0, n);
-  const loaded = loadFeatures(); const out: string[] = ["# Q1 검토 패킷 (seed 20261027)", "", "판정: 각 항목에 PASS / 수정 / 삭제 를 적는다. 기준: docs/design/knowledge-v5-style.md", ""];
-  if (loaded) {
-    out.push(`## feature 30개 (전체 ${loaded.features.length})`, "");
-    for (const f of pick(loaded.features, 30)) {
-      out.push(`### ${f.id} — ${f.traditionalName} / ${f.easyName}`, `- 정의: ${f.definition}`, `- 차원: ${Object.entries(f.dimensionTags).map(([k, v]) => `${k} ${v}`).join(", ")}`,
-        ...f.behaviorSignals.map(s => `- [행동 ${s.domains.join("/")}] ${s.text}  ⟵ ${s.sourceRefs.join(", ")}`), ...f.shadowSignals.map(s => `- [그림자 ${s.domains.join("/")}] ${s.text}  ⟵ ${s.sourceRefs.join(", ")}`),
-        `- 강약: 강 ${f.strengthRule.strong} / 약 ${f.strengthRule.weak}`, ...(f.positionNuance ?? []).map(p => `- 위치 ${p.position}: ${p.text}`), "- 판정: ", "");
-    }
+function lintIdMap() {
+  const p = join(DATA, "id-map.json"); if (!existsSync(p)) return;
+  const r = IdMapSchema.safeParse(readJson(p));
+  if (!r.success) { fail("id-map.json", "schema", "zod", zodMsg(r.error)); return; }
+  let unresolved = 0;
+  for (const e of r.data.entries) if (featureIds.size && !featureIds.has(e.newId) && !MBTI_TYPES.includes(e.newId as never)) { unresolved++; if (unresolved <= 20) fail("id-map.json", e.oldId, "newId 미해결", e.newId); }
+  stats.idMap = r.data.entries.length;
+}
+
+function coverage() {
+  const rows: string[] = ["# P1 커버리지", "", `생성: ${new Date().toISOString().slice(0, 10)} · \`pnpm exec tsx scripts/knowledge-lint.ts --coverage\``, "", "| 가족 | 기대 | 작성 | 장면 수 | 미작성 |", "|---|---|---|---|---|"];
+  const missingAll: Record<string, string[]> = {};
+  for (const fam of FEATURE_FAMILIES) {
+    const have = featuresByFamily[fam] ?? [];
+    const expected = EXPECTED_IDS[fam] ?? [];
+    const missing = expected.filter(id => !featureIds.has(id)); missingAll[fam] = missing;
+    const scenes = have.reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
+    rows.push(`| ${fam} | ${expected.length} | ${have.length} | ${scenes} | ${missing.length ? missing.slice(0, 12).join(", ") + (missing.length > 12 ? ` 외 ${missing.length - 12}` : "") : "-"} |`);
   }
-  if (exists("cross-findings.json")) {
-    const c = CrossFindingsSchema.parse(readJson(join(DATA, "cross-findings.json")));
-    out.push(`## 교차 발견 20개 (전체 ${c.findings.length})`, "");
-    for (const x of pick(c.findings, 20)) out.push(`### ${x.id} — ${x.featureId} × ${x.mbti} · ${x.dimension} · ${x.kind} (${x.score})`, `- ${x.insight}`, `- 장면: ${x.scene}`, `- 전제: ${x.factBoundary.requires.join(",") || "-"} / 금지: ${x.factBoundary.forbids.join(",") || "-"}`, `- 출처: ${x.sourceRefs.join(", ")}`, "- 판정: ", "");
+  const missingMbti = MBTI_TYPES.filter(t => !mbtiTypesSeen.has(t));
+  rows.push(`| MBTI | 16 | ${mbtiTypesSeen.size} | ${mbtiTypesSeen.size * 21} | ${missingMbti.join(", ") || "-"} |`);
+  const withScene = fusionRules.filter(r => r.scene).length;
+  rows.push(`| Fusion | ≥300 (장면 ≥60) | ${fusionRules.length} | ${withScene} | ${fusionRules.length >= 300 && withScene >= 60 ? "-" : "미달"} |`);
+  rows.push(`| Timeline 간지 | 60 | ${stats.ganji ?? 0} | - | ${(stats.ganji ?? 0) === 60 ? "-" : "미달"} |`);
+  rows.push(`| Timeline 십성 | 10 | ${stats.tenGodPeriod ?? 0} | - | ${(stats.tenGodPeriod ?? 0) === 10 ? "-" : "미달"} |`);
+  rows.push(`| 배지 / 흐름 규칙 / 행동 템플릿 | ≥8 / 1 / ≥20 | ${stats.badges ?? 0} / ${stats.flowWeights ? 1 : 0} / ${stats.actionTemplates ?? 0} | - | - |`);
+  const famOf = new Map<string, string>(); for (const [fam, fs] of Object.entries(featuresByFamily)) for (const f of fs) famOf.set(f.id, fam);
+  const fusionByFamily: Record<string, number> = {}; for (const r of fusionRules) { const fam = famOf.get(r.myeongriId) ?? "?"; fusionByFamily[fam] = (fusionByFamily[fam] ?? 0) + 1; }
+  rows.push("", "## Fusion 가족별", "", "| 가족 | 규칙 수 |", "|---|---|", ...Object.entries(fusionByFamily).sort((a, b) => b[1] - a[1]).map(([k, v]) => `| ${k} | ${v} |`));
+  const fusionByType: Record<string, number> = {}; for (const r of fusionRules) fusionByType[r.mbtiTarget] = (fusionByType[r.mbtiTarget] ?? 0) + 1;
+  rows.push("", "## Fusion 대상별", "", "| 대상 | 규칙 수 |", "|---|---|", ...Object.entries(fusionByType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `| ${k} | ${v} |`));
+  if (strict) {
+    for (const [fam, missing] of Object.entries(missingAll)) if (missing.length) fail("coverage", fam, `기대 id 누락 ${missing.length}개`, missing.slice(0, 10).join(", "));
+    if (missingMbti.length) fail("coverage", "mbti", "MBTI 유형 누락", missingMbti.join(", "));
+    if (fusionRules.length < 300) fail("coverage", "fusion", "Fusion 300 미만", String(fusionRules.length));
+    if (withScene < 60) fail("coverage", "fusion", "장면 있는 Fusion 60 미만", String(withScene));
+    if ((stats.ganji ?? 0) !== 60) fail("coverage", "timeline", "간지 60 미만", String(stats.ganji ?? 0));
+    if ((stats.tenGodPeriod ?? 0) !== 10) fail("coverage", "timeline", "십성 연월 10 미만", String(stats.tenGodPeriod ?? 0));
   }
-  if (exists("mbti-profiles.json")) {
-    const m = MbtiProfilesSchema.parse(readJson(join(DATA, "mbti-profiles.json")));
-    out.push("## MBTI 유형 3개", "");
-    for (const p of pick(m.profiles, 3)) {
-      out.push(`### ${p.type} — ${p.easyName}: ${p.oneLine}`, ...p.cognitiveFunctions.map(f => `- ${f.role} ${f.code}: ${f.easy}`));
-      for (const [d, list] of Object.entries(p.signals)) out.push(...list.map(s => `- [${d}] ${s.text}  ⟵ ${s.sourceRefs.join(", ")}`));
-      out.push(...p.shadows.map(s => `- [그림자] ${s.text}`), "- 판정: ", "");
-    }
-  }
-  writeFileSync(join(ROOT, "docs", "q1-review-sample.md"), out.join("\n"));
+  if (wantCoverage) writeFileSync(join(ROOT, "docs", "v5", "p1-coverage.md"), rows.join("\n") + "\n");
+  stats.coverageMissing = Object.values(missingAll).reduce((n, m) => n + m.length, 0);
 }
 
 // ---------- 실행 ----------
-if (exists("behavior-ontology.json")) lintOntology(join(DATA, "behavior-ontology.json"));
-lintFeatures();
-if (!only) { lintMbti(); lintCross(); lintNarratives(); }
-if (wantSample && !only) writeSample();
+if (existsSync(join(DATA, "behavior-ontology.json"))) lintOntology(join(DATA, "behavior-ontology.json"));
+if (only) {
+  const raw = readJson(only);
+  if (raw && typeof raw === "object" && "features" in raw) lintFeatureFile(only);
+  else if (raw && "profiles" in raw) lintMbtiFile(only);
+  else if (raw && "rules" in raw) { for (const p of listJson(join(DATA, "myeongri"))) { const r = MyeongriFileSchema.safeParse(readJson(p)); if (r.success) for (const f of r.data.features) featureIds.add(f.id); } lintFusionFile(only); }
+  else if (raw && Array.isArray(raw.entries) && raw.entries[0]?.ganji) { const r = z.array(GanjiEnergySchema).safeParse(raw.entries); if (!r.success) fail(basename(only), "schema", "zod", zodMsg(r.error)); else lintGanjiEntries(basename(only), r.data); }
+  else fail(basename(only), "file", "알 수 없는 파일 형식(features/profiles/rules/entries 없음)");
+} else {
+  for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
+  for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
+  for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
+  lintTimeline(); lintNarratives(); lintIdMap();
+  stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
+  stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
+  stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;
+  coverage();
+}
 stats.sentences = sentenceCount; stats.avgSentenceChars = sentenceCount ? Math.round((sentenceChars / sentenceCount) * 10) / 10 : 0;
-if (sentenceCount && sentenceChars / sentenceCount > 40) fail("*", "readability", "평균 문장 길이 > 40자", String(stats.avgSentenceChars));
 const byRule: Record<string, number> = {}; for (const i of issues) byRule[i.rule] = (byRule[i.rule] ?? 0) + 1;
 console.log(JSON.stringify({ stats, issueCount: issues.length, byRule }, null, 1));
-for (const i of issues.slice(0, Number(process.env.LINT_MAX ?? 80))) console.log(`${i.file} :: ${i.where} :: ${i.rule}${i.text ? ` :: ${i.text}` : ""}`);
-if (issues.length > Number(process.env.LINT_MAX ?? 80)) console.log(`... ${issues.length - Number(process.env.LINT_MAX ?? 80)} more`);
+const max = Number(process.env.LINT_MAX ?? 80);
+for (const i of issues.slice(0, max)) console.log(`${i.file} :: ${i.where} :: ${i.rule}${i.text ? ` :: ${i.text}` : ""}`);
+if (issues.length > max) console.log(`... ${issues.length - max} more`);
 process.exit(issues.length ? 1 : 0);
