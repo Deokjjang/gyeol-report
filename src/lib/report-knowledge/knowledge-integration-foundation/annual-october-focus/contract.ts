@@ -23,7 +23,7 @@ export const OCTOBER_FOCUS_CONTRACT = freeze({
   version: "annual-october-reading-focus-v1", originalId: "afpr:month-slot:10", index: 9,
   recordSha256: "6bafa2af71967a35934e08b7705fed9b7f4ddcfb881788f4b85a084488fd3c94",
   requires: ["selectedYear + actual civil month bounds", "every canonical segment", "actual reading instant + focus interval + all unselected segments"],
-  focusProducer: { file: "src/lib/interpretation-v4/annualEvidence.ts", symbol: "annualNarrativeEvidence", fileSha256: "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533" },
+  focusProducer: { file: "src/lib/interpretation-v4/annualEvidence.ts", symbol: "annualNarrativeEvidence", fileSha256: "11a74bd10e28546653725c59af931f7a18c1e67a218d1b0824b97f292c9513f1" },
 } as const);
 export type OctoberSegmentState = "ACTUAL_ACTIVE_AT_READING" | "REPRESENTATIVE_FOCUS_NOT_ACTIVE" | "PAST_SEGMENT" | "FUTURE_SEGMENT" | "WITHHELD_UNVERIFIED_TIME";
 type Services = { resolver: TemporalTenGodSourceResolver; foundation: ProductSpecialistFoundation };

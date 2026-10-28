@@ -28,7 +28,7 @@ export const NOVEMBER_SOURCE_FILES = freeze({
   "src/lib/report-generation/reportInputTypes.ts": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
   "src/lib/report-knowledge/userContextTypes.ts": "5fd8d7abb0c1ae02e9dc41dd149abd18620b2851c32482f7a9b75c93c785b6c9",
   "src/lib/report-generation/reportInputAdapter.ts": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
-  "src/lib/interpretation-v4/annualEvidence.ts": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+  "src/lib/interpretation-v4/annualEvidence.ts": "11a74bd10e28546653725c59af931f7a18c1e67a218d1b0824b97f292c9513f1",
   "src/lib/interpretation-v4/runtimeShadow.ts": "6c0fe9e34c523442d4964bcb2328eb4964f2eb9426c3ca0ae0d472f7b79adef2",
   "src/lib/interpretation-v4/runtimeProjection.ts": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
   "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/engine.ts": "df22dcc02f8e07bbe522f06a6ffee7e83a022d06e78b8cdd36f6bc8d4f10171d",
