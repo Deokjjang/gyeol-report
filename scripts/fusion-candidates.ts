@@ -26,6 +26,11 @@ const familyOf = new Map(features.map(f => [f.id, f.family]));
 const ranked = rankPairs(features, profiles).filter(s => !existing.has(`${s.featureId}|${s.mbti}`));
 // 가족 상한: 일주 60개가 독식하지 않도록 25%, 유형당 limit/16 + 6, feature당 3
 const picked = selectTop(ranked, limit, { perFeature: 3, perType: Math.ceil(limit / 16) + 6, perFamily: Math.ceil(limit * 0.25) }, id => familyOf.get(id) ?? "?");
+// 유형 하한: 태그가 적은 유형(INTP 등)이 8개에 머물지 않도록 유형당 최소 floor 개를 그 유형의 상위 쌍으로 채운다(feature당 3 상한 유지)
+const floor = Number(opt("--floor", "16"));
+const countType = (t: string) => picked.filter(p => p.mbti === t).length;
+const countFeature = (f: string) => picked.filter(p => p.featureId === f).length;
+for (const p of profiles) for (const s of ranked) { if (countType(p.type) >= floor) break; if (s.mbti !== p.type || picked.includes(s) || countFeature(s.featureId) >= 3) continue; picked.push(s); }
 // 장면 필수 상위 sceneN 은 strength 순 그대로. 배치는 라운드로빈으로 섞어 각 배치가 강·약 쌍을 고루 갖게 한다.
 const candidates = picked.map((s, i) => ({
   batch: `X${(i % batches) + 1}`, sceneRequired: i < sceneN,

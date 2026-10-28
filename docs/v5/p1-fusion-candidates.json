@@ -1,0 +1,5668 @@
+{
+ "version": "fusion-candidates-v5-2",
+ "method": "cross-score rankPairs → selectTop(perFeature 3, perType limit/16+6, perFamily 25%) → 라운드로빈 배치",
+ "stats": {
+  "features": 240,
+  "profiles": 16,
+  "pairsScored": 3782,
+  "selected": 373,
+  "sceneRequired": 60,
+  "byFamily": {
+   "dayPillar": 102,
+   "tenGod": 21,
+   "twelveStage": 17,
+   "dayMaster": 23,
+   "stem": 21,
+   "branch": 29,
+   "tenGodBalance": 16,
+   "yinYang": 18,
+   "element": 30,
+   "climate": 53,
+   "shinsal": 36,
+   "gwiin": 4,
+   "relation": 3
+  },
+  "byType": {
+   "ISTJ": 29,
+   "ESTP": 29,
+   "ISFJ": 27,
+   "ENTP": 21,
+   "ENTJ": 24,
+   "ESTJ": 29,
+   "ENFP": 29,
+   "ISFP": 24,
+   "ENFJ": 28,
+   "ESFP": 29,
+   "INTP": 16,
+   "INTJ": 16,
+   "ESFJ": 19,
+   "INFP": 17,
+   "INFJ": 20,
+   "ISTP": 16
+  },
+  "byKind": {
+   "resonance": 303,
+   "tension": 70
+  },
+  "distribution": {
+   "pairs": 3782,
+   "kinds": {
+    "resonance": 1905,
+    "tension": 1449,
+    "conditional": 428
+   },
+   "bins": {
+    "0": 905,
+    "1": 818,
+    "2": 118,
+    "3": 5,
+    "3.5": 1,
+    "2.5": 27,
+    "1.5": 344,
+    "0.5": 1564
+   },
+   "p50": 0.78,
+   "p10": 1.6,
+   "p90": 0.32,
+   "max": 3.79,
+   "min": 0.09
+  }
+ },
+ "candidates": [
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸丑",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 3.79,
+   "contributions": [
+    "planning(0.8×0.8=0.64)",
+    "dutifulness(0.7×0.9=0.63)",
+    "persistence(0.8×0.7=0.56)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "tenGod:偏財",
+   "family": "tenGod",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "riskTaking",
+   "strength": 3.33,
+   "contributions": [
+    "riskTaking(0.8×0.9=0.72)",
+    "socialEnergy(0.8×0.7=0.56)",
+    "decisionSpeed(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:戊戌",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 3.19,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "persistence(0.9×0.7=0.63)",
+    "ruleAdherence(0.7×0.9=0.63)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸未",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 3.06,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "dutifulness(0.7×0.9=0.63)",
+    "empathyResponse(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "tenGod:傷官",
+   "family": "tenGod",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "strength": 3.02,
+   "contributions": [
+    "ruleAdherence(-0.8×-0.8=0.64)",
+    "inquiry(0.7×0.8=0.56)",
+    "verbalOutput(0.7×0.8=0.56)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayPillar:甲戌",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "strength": 3,
+   "contributions": [
+    "ruleAdherence(0.8×0.9=0.72)",
+    "persistence(0.8×0.7=0.56)",
+    "planning(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "twelveStage:帝旺",
+   "family": "twelveStage",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 2.86,
+   "contributions": [
+    "controlNeed(0.8×0.8=0.64)",
+    "competitiveness(0.8×0.7=0.56)",
+    "directness(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "tenGod:正財",
+   "family": "tenGod",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "spendingControl",
+   "strength": 2.81,
+   "contributions": [
+    "spendingControl(0.9×0.7=0.63)",
+    "planning(0.7×0.8=0.56)",
+    "riskTaking(-0.7×-0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:庚辰",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 2.75,
+   "contributions": [
+    "controlNeed(0.8×0.8=0.64)",
+    "directness(0.8×0.8=0.64)",
+    "dutifulness(0.7×0.9=0.63)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己丑",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 2.74,
+   "contributions": [
+    "persistence(0.8×0.7=0.56)",
+    "spendingControl(0.8×0.7=0.56)",
+    "dutifulness(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸丑",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 2.73,
+   "contributions": [
+    "emotionalExpression(-0.7×0.8=-0.56)",
+    "planning(0.8×-0.7=-0.56)",
+    "persistence(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丁卯",
+   "family": "dayPillar",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.68,
+   "contributions": [
+    "empathyResponse(0.8×0.7=0.56)",
+    "boundarySetting(-0.7×-0.6=0.42)",
+    "directness(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "dayPillar:甲申",
+   "family": "dayPillar",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.67,
+   "contributions": [
+    "decisionSpeed(0.7×0.8=0.56)",
+    "planning(0.7×0.8=0.56)",
+    "directness(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "dayMaster:己",
+   "family": "dayMaster",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.66,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "dutifulness(0.5×0.9=0.45)",
+    "detailFocus(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:乙丑",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 2.65,
+   "contributions": [
+    "persistence(0.9×0.7=0.63)",
+    "spendingControl(0.7×0.7=0.49)",
+    "dutifulness(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:庚辰",
+   "family": "dayPillar",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2.63,
+   "contributions": [
+    "directness(0.8×0.9=0.72)",
+    "controlNeed(0.8×0.8=0.64)",
+    "decisionSpeed(0.7×0.8=0.56)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸未",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.6,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.9=0.63)",
+    "dutifulness(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "stem:壬",
+   "family": "stem",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "mobility",
+   "strength": 2.57,
+   "contributions": [
+    "mobility(0.7×0.9=0.63)",
+    "noveltySeeking(0.7×0.8=0.56)",
+    "riskTaking(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己丑",
+   "family": "dayPillar",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "strength": 2.56,
+   "contributions": [
+    "spendingControl(0.8×-0.7=-0.56)",
+    "intimacyPace(-0.6×0.8=-0.48)",
+    "emotionalExpression(-0.5×0.9=-0.45)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "dayPillar:戊戌",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.56,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "persistence(0.9×0.7=0.63)",
+    "ruleAdherence(0.7×0.8=0.56)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸卯",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.55,
+   "contributions": [
+    "empathyResponse(0.8×0.9=0.72)",
+    "caretaking(0.7×0.9=0.63)",
+    "boundarySetting(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:庚寅",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.55,
+   "contributions": [
+    "decisionSpeed(0.8×0.9=0.72)",
+    "riskTaking(0.8×0.9=0.72)",
+    "mobility(0.7×0.9=0.63)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "dayMaster:庚",
+   "family": "dayMaster",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2.54,
+   "contributions": [
+    "directness(0.8×0.9=0.72)",
+    "decisionSpeed(0.8×0.8=0.64)",
+    "controlNeed(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己亥",
+   "family": "dayPillar",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.53,
+   "contributions": [
+    "empathyResponse(0.7×0.7=0.49)",
+    "introspection(0.7×0.7=0.49)",
+    "caretaking(0.9×0.5=0.45)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "tenGod:正財",
+   "family": "tenGod",
+   "mbti": "ESTP",
+   "kind": "tension",
+   "dimension": "riskTaking",
+   "strength": 2.53,
+   "contributions": [
+    "riskTaking(-0.7×0.9=-0.63)",
+    "spendingControl(0.9×-0.6=-0.54)",
+    "planning(0.7×-0.7=-0.49)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己巳",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.52,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "dutifulness(0.6×0.9=0.54)",
+    "planning(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "tenGod:正官",
+   "family": "tenGod",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.52,
+   "contributions": [
+    "dutifulness(0.9×0.9=0.81)",
+    "ruleAdherence(0.9×0.9=0.81)",
+    "planning(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "branch:午",
+   "family": "branch",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 2.51,
+   "contributions": [
+    "emotionalExpression(0.8×0.9=0.72)",
+    "attentionSeeking(0.8×0.8=0.64)",
+    "socialEnergy(0.7×0.9=0.63)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "dayMaster:丙",
+   "family": "dayMaster",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 2.51,
+   "contributions": [
+    "emotionalExpression(0.8×0.9=0.72)",
+    "socialEnergy(0.7×0.9=0.63)",
+    "attentionSeeking(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己亥",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.51,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "boundarySetting(-0.7×-0.8=0.56)",
+    "empathyResponse(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "tenGod:偏印",
+   "family": "tenGod",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 2.51,
+   "contributions": [
+    "inquiry(0.9×0.9=0.81)",
+    "learningDrive(0.7×0.9=0.63)",
+    "independence(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "tenGodBalance:OUTPUT:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "strength": 2.51,
+   "contributions": [
+    "verbalOutput(0.9×0.8=0.72)",
+    "noveltySeeking(0.7×0.9=0.63)",
+    "emotionalExpression(0.7×0.8=0.56)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丙午",
+   "family": "dayPillar",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "attentionSeeking",
+   "strength": 2.51,
+   "contributions": [
+    "attentionSeeking(0.9×0.8=0.72)",
+    "emotionalExpression(0.8×0.9=0.72)",
+    "socialEnergy(0.8×0.9=0.72)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:戊辰",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.49,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "persistence(0.7×0.7=0.49)",
+    "controlNeed(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "tenGod:偏印",
+   "family": "tenGod",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 2.49,
+   "contributions": [
+    "inquiry(0.9×0.8=0.72)",
+    "independence(0.6×0.9=0.54)",
+    "introspection(0.8×0.5=0.4)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayMaster:丙",
+   "family": "dayMaster",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 2.48,
+   "contributions": [
+    "emotionalExpression(0.8×0.8=0.64)",
+    "socialEnergy(0.7×0.7=0.49)",
+    "verbalOutput(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "yinYang:YANG_HEAVY:FEMALE",
+   "family": "yinYang",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2.48,
+   "contributions": [
+    "directness(0.8×0.9=0.72)",
+    "decisionSpeed(0.7×0.8=0.56)",
+    "controlNeed(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸丑",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 2.48,
+   "contributions": [
+    "planning(0.8×0.8=0.64)",
+    "dutifulness(0.7×0.9=0.63)",
+    "persistence(0.8×0.7=0.56)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "tenGod:正財",
+   "family": "tenGod",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "strength": 2.46,
+   "contributions": [
+    "spendingControl(0.9×-0.6=-0.54)",
+    "planning(0.7×-0.7=-0.49)",
+    "riskTaking(-0.7×0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "stem:庚",
+   "family": "stem",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2.45,
+   "contributions": [
+    "directness(0.8×0.8=0.64)",
+    "decisionSpeed(0.7×0.9=0.63)",
+    "competitiveness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "branch:丑",
+   "family": "branch",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 2.45,
+   "contributions": [
+    "persistence(0.9×0.7=0.63)",
+    "spendingControl(0.8×0.7=0.56)",
+    "dutifulness(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丁丑",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 2.44,
+   "contributions": [
+    "persistence(0.9×0.7=0.63)",
+    "spendingControl(0.8×0.7=0.56)",
+    "ruleAdherence(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "dayPillar:甲戌",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "persistence",
+   "strength": 2.42,
+   "contributions": [
+    "persistence(0.8×-0.6=-0.48)",
+    "ruleAdherence(0.8×-0.6=-0.48)",
+    "planning(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "dayPillar:癸未",
+   "family": "dayPillar",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.41,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "dutifulness(0.7×0.7=0.49)",
+    "empathyResponse(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:壬午",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.4,
+   "contributions": [
+    "socialEnergy(0.8×0.7=0.56)",
+    "emotionalExpression(0.6×0.8=0.48)",
+    "verbalOutput(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "tenGodBalance:OUTPUT:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "strength": 2.39,
+   "contributions": [
+    "verbalOutput(0.9×0.8=0.72)",
+    "noveltySeeking(0.7×0.9=0.63)",
+    "ruleAdherence(-0.6×-0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "dayPillar:甲戌",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "strength": 2.38,
+   "contributions": [
+    "ruleAdherence(0.8×0.8=0.64)",
+    "persistence(0.8×0.7=0.56)",
+    "planning(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丙寅",
+   "family": "dayPillar",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.38,
+   "contributions": [
+    "socialEnergy(0.7×0.9=0.63)",
+    "noveltySeeking(0.8×0.7=0.56)",
+    "emotionalExpression(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "stem:丙",
+   "family": "stem",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 2.36,
+   "contributions": [
+    "emotionalExpression(0.8×0.9=0.72)",
+    "socialEnergy(0.8×0.9=0.72)",
+    "attentionSeeking(0.8×0.8=0.64)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "yinYang:YANG_HEAVY:MALE",
+   "family": "yinYang",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 2.35,
+   "contributions": [
+    "controlNeed(0.7×0.8=0.56)",
+    "decisionSpeed(0.7×0.8=0.56)",
+    "competitiveness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丁卯",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 2.34,
+   "contributions": [
+    "boundarySetting(-0.7×-0.8=0.56)",
+    "empathyResponse(0.8×0.7=0.56)",
+    "caretaking(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己亥",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.34,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.9=0.63)",
+    "boundarySetting(-0.7×-0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "element:EARTH:STRONG",
+   "family": "element",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.34,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "persistence(0.8×0.7=0.56)",
+    "noveltySeeking(-0.7×-0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "branch:申",
+   "family": "branch",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.33,
+   "contributions": [
+    "decisionSpeed(0.7×0.9=0.63)",
+    "directness(0.7×0.8=0.56)",
+    "mobility(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": true,
+   "featureId": "climate:己:winter",
+   "family": "climate",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "spendingControl",
+   "strength": 2.32,
+   "contributions": [
+    "spendingControl(0.8×0.7=0.56)",
+    "riskTaking(-0.6×-0.7=0.42)",
+    "planning(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丁卯",
+   "family": "dayPillar",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.32,
+   "contributions": [
+    "empathyResponse(0.8×0.8=0.64)",
+    "introspection(0.6×0.9=0.54)",
+    "boundarySetting(-0.7×-0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": true,
+   "featureId": "dayPillar:己丑",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 2.32,
+   "contributions": [
+    "noveltySeeking(-0.6×0.9=-0.54)",
+    "persistence(0.8×-0.6=-0.48)",
+    "spendingControl(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": true,
+   "featureId": "dayPillar:丁丑",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "persistence",
+   "strength": 2.31,
+   "contributions": [
+    "persistence(0.9×-0.6=-0.54)",
+    "emotionalExpression(-0.6×0.8=-0.48)",
+    "spendingControl(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": true,
+   "featureId": "shinsal:DOHWASAL",
+   "family": "shinsal",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "attentionSeeking",
+   "strength": 2.31,
+   "contributions": [
+    "attentionSeeking(0.8×0.8=0.64)",
+    "socialEnergy(0.6×0.9=0.54)",
+    "emotionalExpression(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": true,
+   "featureId": "tenGod:正官",
+   "family": "tenGod",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.31,
+   "contributions": [
+    "dutifulness(0.9×0.9=0.81)",
+    "ruleAdherence(0.9×0.8=0.72)",
+    "planning(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬寅",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "mobility",
+   "strength": 2.31,
+   "contributions": [
+    "mobility(0.8×0.9=0.72)",
+    "noveltySeeking(0.9×0.8=0.72)",
+    "riskTaking(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_NYEONSAL",
+   "family": "shinsal",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.3,
+   "contributions": [
+    "noveltySeeking(0.7×0.7=0.49)",
+    "attentionSeeking(0.6×0.8=0.48)",
+    "emotionalExpression(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "stem:己",
+   "family": "stem",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.3,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "attentionSeeking(-0.5×-0.7=0.35)",
+    "empathyResponse(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙卯",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.29,
+   "contributions": [
+    "socialEnergy(0.7×0.8=0.56)",
+    "empathyResponse(0.6×0.9=0.54)",
+    "boundarySetting(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "branch:戌",
+   "family": "branch",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.29,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "ruleAdherence(0.5×0.9=0.45)",
+    "persistence(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:戊辰",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.28,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "persistence(0.7×0.7=0.49)",
+    "spendingControl(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲申",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 2.27,
+   "contributions": [
+    "planning(0.7×0.8=0.56)",
+    "dutifulness(0.6×0.9=0.54)",
+    "decisionSpeed(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_JISAL",
+   "family": "shinsal",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.27,
+   "contributions": [
+    "noveltySeeking(0.8×0.8=0.64)",
+    "mobility(0.6×0.9=0.54)",
+    "decisionSpeed(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY",
+   "family": "yinYang",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.27,
+   "contributions": [
+    "decisionSpeed(0.8×0.9=0.72)",
+    "riskTaking(0.6×0.9=0.54)",
+    "mobility(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "branch:寅",
+   "family": "branch",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.27,
+   "contributions": [
+    "decisionSpeed(0.7×0.9=0.63)",
+    "riskTaking(0.7×0.9=0.63)",
+    "noveltySeeking(0.7×0.8=0.56)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚子",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 2.26,
+   "contributions": [
+    "inquiry(0.8×0.8=0.64)",
+    "independence(0.6×0.9=0.54)",
+    "directness(0.8×0.6=0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "stem:甲",
+   "family": "stem",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 2.25,
+   "contributions": [
+    "controlNeed(0.7×0.8=0.56)",
+    "planning(0.6×0.8=0.48)",
+    "persistence(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "tenGod:偏官",
+   "family": "tenGod",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.25,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "controlNeed(0.7×0.8=0.56)",
+    "persistence(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲午",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.24,
+   "contributions": [
+    "noveltySeeking(0.7×0.8=0.56)",
+    "decisionSpeed(0.6×0.9=0.54)",
+    "directness(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "twelveStage:衰",
+   "family": "twelveStage",
+   "mbti": "ESTP",
+   "kind": "tension",
+   "dimension": "riskTaking",
+   "strength": 2.23,
+   "contributions": [
+    "riskTaking(-0.6×0.9=-0.54)",
+    "planning(0.6×-0.7=-0.42)",
+    "noveltySeeking(-0.5×0.8=-0.4)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丙寅",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.23,
+   "contributions": [
+    "noveltySeeking(0.8×0.9=0.72)",
+    "socialEnergy(0.7×0.7=0.49)",
+    "emotionalExpression(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬申",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.23,
+   "contributions": [
+    "decisionSpeed(0.7×0.9=0.63)",
+    "mobility(0.7×0.9=0.63)",
+    "noveltySeeking(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:庚:autumn",
+   "family": "climate",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 2.22,
+   "contributions": [
+    "competitiveness(0.8×0.7=0.56)",
+    "decisionSpeed(0.7×0.8=0.56)",
+    "directness(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_JANGSEONGSAL",
+   "family": "shinsal",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 2.2,
+   "contributions": [
+    "competitiveness(0.8×0.7=0.56)",
+    "controlNeed(0.7×0.8=0.56)",
+    "statusDrive(0.8×0.6=0.48)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "tenGod:劫財",
+   "family": "tenGod",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 2.2,
+   "contributions": [
+    "competitiveness(0.9×0.7=0.63)",
+    "riskTaking(0.6×0.9=0.54)",
+    "socialEnergy(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬辰",
+   "family": "dayPillar",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 2.19,
+   "contributions": [
+    "controlNeed(0.7×0.8=0.56)",
+    "planning(0.7×0.8=0.56)",
+    "statusDrive(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚午",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.19,
+   "contributions": [
+    "dutifulness(0.6×0.9=0.54)",
+    "directness(0.6×0.8=0.48)",
+    "statusDrive(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲午",
+   "family": "dayPillar",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "strength": 2.19,
+   "contributions": [
+    "verbalOutput(0.8×0.8=0.64)",
+    "noveltySeeking(0.7×0.9=0.63)",
+    "directness(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙未",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.18,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "dutifulness(0.6×0.9=0.54)",
+    "boundarySetting(-0.6×-0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬寅",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.18,
+   "contributions": [
+    "noveltySeeking(0.9×0.9=0.81)",
+    "socialEnergy(0.6×0.7=0.42)",
+    "detailFocus(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:戊午",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.18,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "persistence(0.7×0.7=0.49)",
+    "controlNeed(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:庚:winter",
+   "family": "climate",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 2.17,
+   "contributions": [
+    "inquiry(0.7×0.8=0.56)",
+    "emotionalExpression(-0.6×-0.6=0.36)",
+    "socialEnergy(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "stem:癸",
+   "family": "stem",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.17,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.6×0.8=0.48)",
+    "caretaking(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲午",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "strength": 2.17,
+   "contributions": [
+    "verbalOutput(0.8×0.8=0.64)",
+    "noveltySeeking(0.7×0.9=0.63)",
+    "socialEnergy(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:癸卯",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.15,
+   "contributions": [
+    "caretaking(0.7×0.9=0.63)",
+    "empathyResponse(0.8×0.7=0.56)",
+    "boundarySetting(-0.6×-0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬午",
+   "family": "dayPillar",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.14,
+   "contributions": [
+    "socialEnergy(0.8×0.6=0.48)",
+    "verbalOutput(0.6×0.8=0.48)",
+    "riskTaking(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayMaster:庚",
+   "family": "dayMaster",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.14,
+   "contributions": [
+    "decisionSpeed(0.8×0.9=0.72)",
+    "directness(0.8×0.8=0.64)",
+    "conflictApproach(0.6×0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丙午",
+   "family": "dayPillar",
+   "mbti": "ISTP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 2.14,
+   "contributions": [
+    "emotionalExpression(0.8×-0.7=-0.56)",
+    "verbalOutput(0.7×-0.8=-0.56)",
+    "attentionSeeking(0.9×-0.6=-0.54)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY",
+   "family": "yinYang",
+   "mbti": "ESTP",
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "strength": 2.13,
+   "contributions": [
+    "decisionSpeed(-0.6×0.9=-0.54)",
+    "introspection(0.7×-0.7=-0.49)",
+    "riskTaking(-0.5×0.9=-0.45)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "branch:丑",
+   "family": "branch",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 2.12,
+   "contributions": [
+    "persistence(0.9×0.7=0.63)",
+    "dutifulness(0.6×0.9=0.54)",
+    "decisionSpeed(-0.6×0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丁亥",
+   "family": "dayPillar",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.11,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "boundarySetting(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丁丑",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "strength": 2.11,
+   "contributions": [
+    "spendingControl(0.8×-0.6=-0.48)",
+    "decisionSpeed(-0.5×0.9=-0.45)",
+    "introspection(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:癸卯",
+   "family": "dayPillar",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.1,
+   "contributions": [
+    "empathyResponse(0.8×0.7=0.56)",
+    "conflictApproach(-0.6×-0.8=0.48)",
+    "boundarySetting(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬子",
+   "family": "dayPillar",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 2.1,
+   "contributions": [
+    "independence(0.8×0.8=0.64)",
+    "learningDrive(0.6×0.9=0.54)",
+    "emotionalExpression(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:癸亥",
+   "family": "dayPillar",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.1,
+   "contributions": [
+    "introspection(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "socialEnergy(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "stem:庚",
+   "family": "stem",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2.1,
+   "contributions": [
+    "directness(0.8×0.9=0.72)",
+    "decisionSpeed(0.7×0.8=0.56)",
+    "competitiveness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙亥",
+   "family": "dayPillar",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.09,
+   "contributions": [
+    "empathyResponse(0.8×0.8=0.64)",
+    "introspection(0.6×0.9=0.54)",
+    "decisionSpeed(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "stem:甲",
+   "family": "stem",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 2.09,
+   "contributions": [
+    "controlNeed(0.7×0.8=0.56)",
+    "planning(0.6×0.8=0.48)",
+    "directness(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲申",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 2.09,
+   "contributions": [
+    "planning(0.7×0.9=0.63)",
+    "independence(0.6×0.9=0.54)",
+    "directness(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "twelveStage:帝旺",
+   "family": "twelveStage",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "controlNeed",
+   "strength": 2.09,
+   "contributions": [
+    "controlNeed(0.8×-0.7=-0.56)",
+    "competitiveness(0.8×-0.6=-0.48)",
+    "directness(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "twelveStage:絶",
+   "family": "twelveStage",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.09,
+   "contributions": [
+    "noveltySeeking(0.7×0.8=0.56)",
+    "decisionSpeed(0.6×0.9=0.54)",
+    "mobility(0.6×0.9=0.54)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:戊寅",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.08,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "caretaking(0.6×0.9=0.54)",
+    "planning(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:YANGIN",
+   "family": "shinsal",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "strength": 2.08,
+   "contributions": [
+    "boundarySetting(0.8×-0.6=-0.48)",
+    "conflictApproach(0.6×-0.8=-0.48)",
+    "competitiveness(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "stem:丙",
+   "family": "stem",
+   "mbti": "ISTP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 2.08,
+   "contributions": [
+    "emotionalExpression(0.8×-0.7=-0.56)",
+    "verbalOutput(0.7×-0.8=-0.56)",
+    "attentionSeeking(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY:FEMALE",
+   "family": "yinYang",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.07,
+   "contributions": [
+    "introspection(0.7×0.7=0.49)",
+    "conflictApproach(-0.6×-0.8=0.48)",
+    "boundarySetting(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬寅",
+   "family": "dayPillar",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.07,
+   "contributions": [
+    "noveltySeeking(0.9×0.9=0.81)",
+    "socialEnergy(0.6×0.6=0.36)",
+    "riskTaking(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:戊戌",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 2.07,
+   "contributions": [
+    "noveltySeeking(-0.7×0.9=-0.63)",
+    "persistence(0.9×-0.6=-0.54)",
+    "emotionalExpression(-0.6×0.8=-0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OFFICER:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2.07,
+   "contributions": [
+    "dutifulness(0.9×0.9=0.81)",
+    "ruleAdherence(0.8×0.9=0.72)",
+    "emotionalExpression(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丁亥",
+   "family": "dayPillar",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.06,
+   "contributions": [
+    "introspection(0.8×0.7=0.56)",
+    "empathyResponse(0.7×0.7=0.49)",
+    "boundarySetting(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "element:METAL:STRONG",
+   "family": "element",
+   "mbti": "INFP",
+   "kind": "tension",
+   "dimension": "directness",
+   "strength": 2.06,
+   "contributions": [
+    "directness(0.8×-0.7=-0.56)",
+    "boundarySetting(0.8×-0.6=-0.48)",
+    "decisionSpeed(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "tenGod:偏財",
+   "family": "tenGod",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.06,
+   "contributions": [
+    "socialEnergy(0.8×0.7=0.56)",
+    "riskTaking(0.8×0.6=0.48)",
+    "noveltySeeking(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丙午",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 2.06,
+   "contributions": [
+    "emotionalExpression(0.8×0.8=0.64)",
+    "socialEnergy(0.8×0.7=0.56)",
+    "verbalOutput(0.7×0.8=0.56)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:戊:winter",
+   "family": "climate",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "spendingControl",
+   "strength": 2.05,
+   "contributions": [
+    "spendingControl(0.7×0.7=0.49)",
+    "noveltySeeking(-0.6×-0.7=0.42)",
+    "persistence(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙丑",
+   "family": "dayPillar",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 2.05,
+   "contributions": [
+    "emotionalExpression(-0.7×0.9=-0.63)",
+    "spendingControl(0.7×-0.7=-0.49)",
+    "intimacyPace(-0.6×0.8=-0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "element:FIRE:MISSING",
+   "family": "element",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 2.05,
+   "contributions": [
+    "emotionalExpression(-0.8×0.9=-0.72)",
+    "attentionSeeking(-0.7×0.8=-0.56)",
+    "socialEnergy(-0.5×0.9=-0.45)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "shinsal:GOSINSAL",
+   "family": "shinsal",
+   "mbti": "ENFJ",
+   "kind": "tension",
+   "dimension": "independence",
+   "strength": 2.04,
+   "contributions": [
+    "independence(0.9×-0.6=-0.54)",
+    "socialEnergy(-0.6×0.8=-0.48)",
+    "boundarySetting(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "stem:庚",
+   "family": "stem",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "conflictApproach",
+   "strength": 2.04,
+   "contributions": [
+    "conflictApproach(0.7×-0.8=-0.56)",
+    "directness(0.8×-0.7=-0.56)",
+    "competitiveness(0.6×-0.6=-0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙卯",
+   "family": "dayPillar",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.03,
+   "contributions": [
+    "socialEnergy(0.7×0.9=0.63)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "empathyResponse(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:辛丑",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 2.03,
+   "contributions": [
+    "persistence(0.7×0.7=0.49)",
+    "trustThreshold(0.8×0.6=0.48)",
+    "planning(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丙寅",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 2.03,
+   "contributions": [
+    "noveltySeeking(0.8×0.8=0.64)",
+    "decisionSpeed(0.6×0.9=0.54)",
+    "socialEnergy(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:己卯",
+   "family": "dayPillar",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.03,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "detailFocus(0.7×0.7=0.49)",
+    "empathyResponse(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:癸亥",
+   "family": "dayPillar",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.03,
+   "contributions": [
+    "introspection(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "decisionSpeed(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "branch:亥",
+   "family": "branch",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 2.02,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "boundarySetting(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙亥",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.02,
+   "contributions": [
+    "empathyResponse(0.8×0.9=0.72)",
+    "caretaking(0.5×0.9=0.45)",
+    "boundarySetting(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:PEER:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 2.02,
+   "contributions": [
+    "empathyResponse(0.6×0.9=0.54)",
+    "caretaking(0.5×0.9=0.45)",
+    "boundarySetting(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙未",
+   "family": "dayPillar",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 2.01,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "dutifulness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲寅",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2.01,
+   "contributions": [
+    "directness(0.7×0.8=0.56)",
+    "noveltySeeking(0.7×0.8=0.56)",
+    "ruleAdherence(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "stem:丙",
+   "family": "stem",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 2.01,
+   "contributions": [
+    "socialEnergy(0.8×0.7=0.56)",
+    "directness(0.6×0.8=0.48)",
+    "decisionSpeed(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚申",
+   "family": "dayPillar",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.01,
+   "contributions": [
+    "decisionSpeed(0.9×0.8=0.72)",
+    "directness(0.7×0.9=0.63)",
+    "independence(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:WATER:MISSING",
+   "family": "element",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 2.01,
+   "contributions": [
+    "decisionSpeed(0.8×0.9=0.72)",
+    "introspection(-0.9×-0.7=0.63)",
+    "mobility(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:RESOURCE:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ESTP",
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "strength": 2.01,
+   "contributions": [
+    "decisionSpeed(-0.7×0.9=-0.63)",
+    "riskTaking(-0.6×0.9=-0.54)",
+    "introspection(0.7×-0.7=-0.49)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲寅",
+   "family": "dayPillar",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 2,
+   "contributions": [
+    "directness(0.7×0.9=0.63)",
+    "independence(0.9×0.6=0.54)",
+    "controlNeed(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OFFICER:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 2,
+   "contributions": [
+    "dutifulness(0.9×0.9=0.81)",
+    "ruleAdherence(0.8×0.8=0.64)",
+    "statusDrive(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:癸:spring",
+   "family": "climate",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.99,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "boundarySetting(-0.6×-0.8=0.48)",
+    "attentionSeeking(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚戌",
+   "family": "dayPillar",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.99,
+   "contributions": [
+    "directness(0.7×0.8=0.56)",
+    "ruleAdherence(0.7×0.8=0.56)",
+    "persistence(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚戌",
+   "family": "dayPillar",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "strength": 1.99,
+   "contributions": [
+    "boundarySetting(0.9×-0.6=-0.54)",
+    "directness(0.7×-0.7=-0.49)",
+    "conflictApproach(0.6×-0.8=-0.48)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "element:WATER:STRONG",
+   "family": "element",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.99,
+   "contributions": [
+    "inquiry(0.6×0.9=0.54)",
+    "learningDrive(0.5×0.9=0.45)",
+    "decisionSpeed(-0.7×-0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚午",
+   "family": "dayPillar",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 1.99,
+   "contributions": [
+    "competitiveness(0.9×0.7=0.63)",
+    "directness(0.6×0.9=0.54)",
+    "statusDrive(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayMaster:庚",
+   "family": "dayMaster",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "directness",
+   "strength": 1.98,
+   "contributions": [
+    "directness(0.8×-0.7=-0.56)",
+    "conflictApproach(0.6×-0.8=-0.48)",
+    "controlNeed(0.5×-0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙未",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.97,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "dutifulness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "tenGod:偏財",
+   "family": "tenGod",
+   "mbti": "ISTJ",
+   "kind": "tension",
+   "dimension": "riskTaking",
+   "strength": 1.97,
+   "contributions": [
+    "riskTaking(0.8×-0.7=-0.56)",
+    "spendingControl(-0.6×0.7=-0.42)",
+    "socialEnergy(0.8×-0.5=-0.4)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:庚:autumn",
+   "family": "climate",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.97,
+   "contributions": [
+    "decisionSpeed(0.7×0.9=0.63)",
+    "competitiveness(0.8×0.7=0.56)",
+    "directness(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "branch:丑",
+   "family": "branch",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.96,
+   "contributions": [
+    "noveltySeeking(-0.6×0.9=-0.54)",
+    "persistence(0.9×-0.6=-0.54)",
+    "spendingControl(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OFFICER:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "ESTJ",
+   "kind": "tension",
+   "dimension": "ruleAdherence",
+   "strength": 1.95,
+   "contributions": [
+    "ruleAdherence(-0.8×0.8=-0.64)",
+    "planning(-0.5×0.8=-0.4)",
+    "dutifulness(-0.4×0.9=-0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "element:FIRE:STRONG",
+   "family": "element",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 1.95,
+   "contributions": [
+    "emotionalExpression(0.8×0.9=0.72)",
+    "socialEnergy(0.7×0.9=0.63)",
+    "attentionSeeking(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "element:WOOD:STRONG",
+   "family": "element",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.94,
+   "contributions": [
+    "noveltySeeking(0.8×0.8=0.64)",
+    "decisionSpeed(0.5×0.9=0.45)",
+    "riskTaking(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "twelveStage:沐浴",
+   "family": "twelveStage",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.94,
+   "contributions": [
+    "noveltySeeking(0.7×0.7=0.49)",
+    "attentionSeeking(0.6×0.8=0.48)",
+    "emotionalExpression(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙丑",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.94,
+   "contributions": [
+    "emotionalExpression(-0.7×0.8=-0.56)",
+    "persistence(0.9×-0.6=-0.54)",
+    "intimacyPace(-0.6×0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "shinsal:GOSINSAL",
+   "family": "shinsal",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.94,
+   "contributions": [
+    "independence(0.9×0.9=0.81)",
+    "boundarySetting(0.6×0.7=0.42)",
+    "socialEnergy(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬子",
+   "family": "dayPillar",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.93,
+   "contributions": [
+    "independence(0.8×0.9=0.72)",
+    "emotionalExpression(-0.6×-0.7=0.42)",
+    "ruleAdherence(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "element:METAL:STRONG",
+   "family": "element",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.93,
+   "contributions": [
+    "directness(0.8×0.8=0.64)",
+    "decisionSpeed(0.7×0.7=0.49)",
+    "ruleAdherence(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:己巳",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.93,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "dutifulness(0.6×0.7=0.42)",
+    "boundarySetting(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:己巳",
+   "family": "dayPillar",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.93,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "dutifulness(0.6×0.7=0.42)",
+    "boundarySetting(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "twelveStage:病",
+   "family": "twelveStage",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.93,
+   "contributions": [
+    "empathyResponse(0.8×0.8=0.64)",
+    "introspection(0.7×0.9=0.63)",
+    "caretaking(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayMaster:甲",
+   "family": "dayMaster",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 1.92,
+   "contributions": [
+    "controlNeed(0.6×0.8=0.48)",
+    "planning(0.5×0.8=0.4)",
+    "directness(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY",
+   "family": "yinYang",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "reactivity",
+   "strength": 1.92,
+   "contributions": [
+    "reactivity(0.8×0.6=0.48)",
+    "riskTaking(0.6×0.7=0.42)",
+    "verbalOutput(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayMaster:己",
+   "family": "dayMaster",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "detailFocus",
+   "strength": 1.92,
+   "contributions": [
+    "detailFocus(0.6×0.8=0.48)",
+    "dutifulness(0.5×0.9=0.45)",
+    "planning(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丙申",
+   "family": "dayPillar",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.92,
+   "contributions": [
+    "decisionSpeed(0.8×0.9=0.72)",
+    "riskTaking(0.5×0.9=0.45)",
+    "socialEnergy(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "tenGod:劫財",
+   "family": "tenGod",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 1.92,
+   "contributions": [
+    "competitiveness(0.9×0.6=0.54)",
+    "riskTaking(0.6×0.7=0.42)",
+    "socialEnergy(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙巳",
+   "family": "dayPillar",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.92,
+   "contributions": [
+    "socialEnergy(0.9×0.8=0.72)",
+    "verbalOutput(0.7×0.7=0.49)",
+    "intimacyPace(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:己:winter",
+   "family": "climate",
+   "mbti": "ESTP",
+   "kind": "tension",
+   "dimension": "decisionSpeed",
+   "strength": 1.91,
+   "contributions": [
+    "decisionSpeed(-0.6×0.9=-0.54)",
+    "riskTaking(-0.6×0.9=-0.54)",
+    "spendingControl(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "stem:癸",
+   "family": "stem",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.9,
+   "contributions": [
+    "introspection(0.8×0.7=0.56)",
+    "empathyResponse(0.6×0.7=0.42)",
+    "verbalOutput(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:丁:autumn",
+   "family": "climate",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "spendingControl",
+   "strength": 1.89,
+   "contributions": [
+    "spendingControl(0.7×0.7=0.49)",
+    "detailFocus(0.5×0.8=0.4)",
+    "planning(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:己:spring",
+   "family": "climate",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.89,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "dutifulness(0.6×0.9=0.54)",
+    "boundarySetting(-0.6×-0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "stem:壬",
+   "family": "stem",
+   "mbti": "ISTJ",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.89,
+   "contributions": [
+    "noveltySeeking(0.7×-0.7=-0.49)",
+    "ruleAdherence(-0.5×0.9=-0.45)",
+    "planning(-0.5×0.8=-0.4)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:丁亥",
+   "family": "dayPillar",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.88,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "caretaking(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚戌",
+   "family": "dayPillar",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "strength": 1.88,
+   "contributions": [
+    "ruleAdherence(0.7×0.9=0.63)",
+    "trustThreshold(0.8×0.6=0.48)",
+    "persistence(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:癸:winter",
+   "family": "climate",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "intimacyPace",
+   "strength": 1.87,
+   "contributions": [
+    "intimacyPace(-0.8×-0.6=0.48)",
+    "trustThreshold(0.7×0.6=0.42)",
+    "persistence(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "stem:壬",
+   "family": "stem",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.87,
+   "contributions": [
+    "noveltySeeking(0.7×0.9=0.63)",
+    "ruleAdherence(-0.5×-0.8=0.4)",
+    "riskTaking(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "element:WOOD:STRONG",
+   "family": "element",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.86,
+   "contributions": [
+    "noveltySeeking(0.8×0.9=0.72)",
+    "riskTaking(0.5×0.7=0.35)",
+    "directness(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙亥",
+   "family": "dayPillar",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.85,
+   "contributions": [
+    "empathyResponse(0.8×0.7=0.56)",
+    "introspection(0.6×0.7=0.42)",
+    "conflictApproach(-0.4×-0.8=0.32)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:METAL:MISSING",
+   "family": "element",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.85,
+   "contributions": [
+    "boundarySetting(-0.9×-0.6=0.54)",
+    "directness(-0.6×-0.7=0.42)",
+    "conflictApproach(-0.5×-0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:PEER:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.85,
+   "contributions": [
+    "caretaking(0.5×0.9=0.45)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "empathyResponse(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:PEER:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 1.85,
+   "contributions": [
+    "competitiveness(-0.7×-0.6=0.42)",
+    "empathyResponse(0.6×0.7=0.42)",
+    "conflictApproach(-0.5×-0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:戊子",
+   "family": "dayPillar",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "planning",
+   "strength": 1.85,
+   "contributions": [
+    "planning(0.7×-0.7=-0.49)",
+    "emotionalExpression(-0.6×0.8=-0.48)",
+    "spendingControl(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "element:FIRE:STRONG",
+   "family": "element",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 1.85,
+   "contributions": [
+    "emotionalExpression(0.8×0.8=0.64)",
+    "socialEnergy(0.7×0.7=0.49)",
+    "verbalOutput(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:GOSINSAL",
+   "family": "shinsal",
+   "mbti": "ESFJ",
+   "kind": "tension",
+   "dimension": "independence",
+   "strength": 1.85,
+   "contributions": [
+    "independence(0.9×-0.6=-0.54)",
+    "socialEnergy(-0.6×0.9=-0.54)",
+    "boundarySetting(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:STRONG",
+   "family": "element",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.84,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "persistence(0.8×0.7=0.56)",
+    "noveltySeeking(-0.7×-0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:丙:spring",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.84,
+   "contributions": [
+    "socialEnergy(0.7×0.9=0.63)",
+    "emotionalExpression(0.6×0.9=0.54)",
+    "noveltySeeking(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙巳",
+   "family": "dayPillar",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.84,
+   "contributions": [
+    "socialEnergy(0.9×0.9=0.81)",
+    "intimacyPace(0.6×0.8=0.48)",
+    "attentionSeeking(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY:MALE",
+   "family": "yinYang",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 1.84,
+   "contributions": [
+    "controlNeed(0.7×0.8=0.56)",
+    "dutifulness(0.6×0.9=0.54)",
+    "decisionSpeed(0.7×0.7=0.49)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:己:spring",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.83,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "dutifulness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲寅",
+   "family": "dayPillar",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.83,
+   "contributions": [
+    "noveltySeeking(0.7×0.9=0.63)",
+    "ruleAdherence(-0.6×-0.8=0.48)",
+    "directness(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:METAL:WEAK",
+   "family": "element",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.83,
+   "contributions": [
+    "boundarySetting(-0.8×-0.8=0.64)",
+    "conflictApproach(-0.6×-0.8=0.48)",
+    "caretaking(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "gwiin:CHEON_EUI",
+   "family": "gwiin",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.83,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.7=0.49)",
+    "boundarySetting(-0.4×-0.8=0.32)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OFFICER:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "ISTJ",
+   "kind": "tension",
+   "dimension": "ruleAdherence",
+   "strength": 1.83,
+   "contributions": [
+    "ruleAdherence(-0.8×0.9=-0.72)",
+    "planning(-0.5×0.8=-0.4)",
+    "dutifulness(-0.4×0.9=-0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayMaster:癸",
+   "family": "dayMaster",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.82,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "intimacyPace(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayMaster:丙",
+   "family": "dayMaster",
+   "mbti": "ISTP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.82,
+   "contributions": [
+    "emotionalExpression(0.8×-0.7=-0.56)",
+    "verbalOutput(0.6×-0.8=-0.48)",
+    "socialEnergy(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:HYEONCHIMSAL",
+   "family": "shinsal",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.81,
+   "contributions": [
+    "inquiry(0.8×0.8=0.64)",
+    "perfectionism(0.7×0.6=0.42)",
+    "detailFocus(0.9×-0.4=-0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "twelveStage:病",
+   "family": "twelveStage",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.81,
+   "contributions": [
+    "empathyResponse(0.8×0.8=0.64)",
+    "introspection(0.7×0.9=0.63)",
+    "caretaking(0.6×0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:己:spring",
+   "family": "climate",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.8,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "dutifulness(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_GEOPSAL",
+   "family": "shinsal",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.8,
+   "contributions": [
+    "decisionSpeed(0.7×0.9=0.63)",
+    "competitiveness(0.8×0.7=0.56)",
+    "riskTaking(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_NYEONSAL",
+   "family": "shinsal",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.8,
+   "contributions": [
+    "noveltySeeking(0.7×0.9=0.63)",
+    "emotionalExpression(0.5×0.8=0.4)",
+    "socialEnergy(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:戊:winter",
+   "family": "climate",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.8,
+   "contributions": [
+    "noveltySeeking(-0.6×0.9=-0.54)",
+    "emotionalExpression(-0.6×0.8=-0.48)",
+    "spendingControl(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:GOEGANG",
+   "family": "shinsal",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "persistence",
+   "strength": 1.8,
+   "contributions": [
+    "persistence(0.7×0.7=0.49)",
+    "controlNeed(0.6×0.8=0.48)",
+    "directness(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "branch:亥",
+   "family": "branch",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.79,
+   "contributions": [
+    "introspection(0.8×0.7=0.56)",
+    "empathyResponse(0.7×0.7=0.49)",
+    "boundarySetting(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:乙:winter",
+   "family": "climate",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.79,
+   "contributions": [
+    "introspection(0.6×0.9=0.54)",
+    "intimacyPace(-0.6×-0.7=0.42)",
+    "socialEnergy(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:癸:winter",
+   "family": "climate",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.79,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "intimacyPace(-0.8×-0.7=0.56)",
+    "trustThreshold(0.7×0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:己:winter",
+   "family": "climate",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "spendingControl",
+   "strength": 1.78,
+   "contributions": [
+    "spendingControl(0.8×-0.6=-0.48)",
+    "riskTaking(-0.6×0.6=-0.36)",
+    "intimacyPace(-0.5×0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_YEOKMASAL",
+   "family": "shinsal",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.77,
+   "contributions": [
+    "noveltySeeking(0.5×0.9=0.45)",
+    "verbalOutput(0.5×0.8=0.4)",
+    "reactivity(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY:FEMALE",
+   "family": "yinYang",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.77,
+   "contributions": [
+    "caretaking(0.6×0.9=0.54)",
+    "conflictApproach(-0.6×-0.8=0.48)",
+    "boundarySetting(-0.5×-0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:FIRE:STRONG",
+   "family": "element",
+   "mbti": "ISTP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.76,
+   "contributions": [
+    "emotionalExpression(0.8×-0.7=-0.56)",
+    "verbalOutput(0.6×-0.8=-0.48)",
+    "socialEnergy(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:MISSING",
+   "family": "element",
+   "mbti": "ISTJ",
+   "kind": "tension",
+   "dimension": "planning",
+   "strength": 1.76,
+   "contributions": [
+    "planning(-0.7×0.8=-0.56)",
+    "noveltySeeking(0.6×-0.7=-0.42)",
+    "persistence(-0.6×0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:戊:winter",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.75,
+   "contributions": [
+    "emotionalExpression(-0.6×0.9=-0.54)",
+    "spendingControl(0.7×-0.7=-0.49)",
+    "noveltySeeking(-0.6×0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_JANGSEONGSAL",
+   "family": "shinsal",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "controlNeed",
+   "strength": 1.75,
+   "contributions": [
+    "controlNeed(0.7×-0.7=-0.49)",
+    "competitiveness(0.8×-0.6=-0.48)",
+    "statusDrive(0.8×-0.6=-0.48)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "branch:戌",
+   "family": "branch",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.74,
+   "contributions": [
+    "dutifulness(0.8×0.9=0.72)",
+    "persistence(0.6×0.7=0.42)",
+    "ruleAdherence(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:壬:autumn",
+   "family": "climate",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "strength": 1.74,
+   "contributions": [
+    "learningDrive(0.9×0.9=0.81)",
+    "inquiry(0.7×0.9=0.63)",
+    "decisionSpeed(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayMaster:乙",
+   "family": "dayMaster",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.73,
+   "contributions": [
+    "empathyResponse(0.5×0.9=0.45)",
+    "socialEnergy(0.4×0.8=0.32)",
+    "caretaking(0.3×0.9=0.27)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayMaster:甲",
+   "family": "dayMaster",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 1.73,
+   "contributions": [
+    "controlNeed(0.6×0.8=0.48)",
+    "planning(0.5×0.8=0.4)",
+    "persistence(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:戊:spring",
+   "family": "climate",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.73,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "caretaking(0.6×0.9=0.54)",
+    "boundarySetting(-0.4×-0.8=0.32)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OUTPUT:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ISTJ",
+   "kind": "tension",
+   "dimension": "ruleAdherence",
+   "strength": 1.73,
+   "contributions": [
+    "ruleAdherence(-0.6×0.9=-0.54)",
+    "noveltySeeking(0.7×-0.7=-0.49)",
+    "emotionalExpression(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayMaster:壬",
+   "family": "dayMaster",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "strength": 1.72,
+   "contributions": [
+    "learningDrive(0.6×0.9=0.54)",
+    "noveltySeeking(0.7×0.6=0.42)",
+    "inquiry(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:丙:summer",
+   "family": "climate",
+   "mbti": "ESTP",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.72,
+   "contributions": [
+    "decisionSpeed(0.7×0.9=0.63)",
+    "directness(0.7×0.8=0.56)",
+    "planning(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:壬:winter",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.72,
+   "contributions": [
+    "emotionalExpression(-0.6×0.9=-0.54)",
+    "intimacyPace(-0.6×0.8=-0.48)",
+    "independence(0.8×-0.5=-0.4)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "gwiin:CHEON_EUI",
+   "family": "gwiin",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.72,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.9=0.63)",
+    "boundarySetting(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "tenGod:正官",
+   "family": "tenGod",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.71,
+   "contributions": [
+    "dutifulness(0.9×0.9=0.81)",
+    "ruleAdherence(0.9×0.6=0.54)",
+    "planning(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:丙:spring",
+   "family": "climate",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.7,
+   "contributions": [
+    "socialEnergy(0.7×0.7=0.49)",
+    "emotionalExpression(0.6×0.8=0.48)",
+    "noveltySeeking(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayMaster:壬",
+   "family": "dayMaster",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.69,
+   "contributions": [
+    "noveltySeeking(0.7×0.9=0.63)",
+    "inquiry(0.4×0.8=0.32)",
+    "detailFocus(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "branch:未",
+   "family": "branch",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.69,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "empathyResponse(0.6×0.7=0.42)",
+    "boundarySetting(-0.5×-0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "branch:申",
+   "family": "branch",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.69,
+   "contributions": [
+    "directness(0.7×0.9=0.63)",
+    "decisionSpeed(0.7×0.8=0.56)",
+    "independence(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "twelveStage:帝旺",
+   "family": "twelveStage",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 1.69,
+   "contributions": [
+    "controlNeed(0.8×0.8=0.64)",
+    "directness(0.6×0.8=0.48)",
+    "statusDrive(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "element:WATER:STRONG",
+   "family": "element",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.68,
+   "contributions": [
+    "introspection(0.9×0.9=0.81)",
+    "decisionSpeed(-0.7×-0.6=0.42)",
+    "socialEnergy(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OFFICER:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.67,
+   "contributions": [
+    "independence(0.6×0.8=0.48)",
+    "ruleAdherence(-0.8×-0.6=0.48)",
+    "noveltySeeking(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY",
+   "family": "yinYang",
+   "mbti": "ENTP",
+   "kind": "tension",
+   "dimension": "reactivity",
+   "strength": 1.67,
+   "contributions": [
+    "reactivity(-0.7×0.6=-0.42)",
+    "verbalOutput(-0.5×0.8=-0.4)",
+    "riskTaking(-0.5×0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "element:METAL:WEAK",
+   "family": "element",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.67,
+   "contributions": [
+    "boundarySetting(-0.8×-0.7=0.56)",
+    "empathyResponse(0.5×0.9=0.45)",
+    "caretaking(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayMaster:己",
+   "family": "dayMaster",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.66,
+   "contributions": [
+    "dutifulness(0.5×0.9=0.45)",
+    "planning(0.5×0.8=0.4)",
+    "detailFocus(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "stem:癸",
+   "family": "stem",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.66,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.6×0.8=0.48)",
+    "caretaking(0.5×0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "stem:甲",
+   "family": "stem",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "controlNeed",
+   "strength": 1.65,
+   "contributions": [
+    "controlNeed(0.7×-0.7=-0.49)",
+    "planning(0.6×-0.6=-0.36)",
+    "directness(0.5×-0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY",
+   "family": "yinYang",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "verbalOutput",
+   "strength": 1.65,
+   "contributions": [
+    "verbalOutput(-0.5×0.8=-0.4)",
+    "planning(0.5×-0.7=-0.35)",
+    "persistence(0.5×-0.6=-0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "branch:午",
+   "family": "branch",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 1.65,
+   "contributions": [
+    "emotionalExpression(0.8×0.8=0.64)",
+    "socialEnergy(0.7×0.7=0.49)",
+    "planning(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:戊:summer",
+   "family": "climate",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.65,
+   "contributions": [
+    "emotionalExpression(-0.6×0.8=-0.48)",
+    "noveltySeeking(-0.5×0.9=-0.45)",
+    "persistence(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:GWASUKSAL",
+   "family": "shinsal",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.65,
+   "contributions": [
+    "dutifulness(0.5×0.9=0.45)",
+    "intimacyPace(-0.7×-0.6=0.42)",
+    "trustThreshold(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "shinsal:YANGIN",
+   "family": "shinsal",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.65,
+   "contributions": [
+    "directness(0.6×0.9=0.54)",
+    "competitiveness(0.7×0.7=0.49)",
+    "controlNeed(0.4×0.8=0.32)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "stem:戊",
+   "family": "stem",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.65,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "noveltySeeking(-0.6×-0.7=0.42)",
+    "emotionalExpression(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY:MALE",
+   "family": "yinYang",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.65,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "intimacyPace(-0.6×-0.7=0.42)",
+    "caretaking(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayMaster:丁",
+   "family": "dayMaster",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.64,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "caretaking(0.8×0.7=0.56)",
+    "socialEnergy(-0.4×-0.6=0.24)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:WEAK",
+   "family": "element",
+   "mbti": "ISTJ",
+   "kind": "tension",
+   "dimension": "planning",
+   "strength": 1.64,
+   "contributions": [
+    "planning(-0.6×0.8=-0.48)",
+    "noveltySeeking(0.5×-0.7=-0.35)",
+    "spendingControl(-0.5×0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:庚:winter",
+   "family": "climate",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.64,
+   "contributions": [
+    "inquiry(0.7×0.9=0.63)",
+    "emotionalExpression(-0.6×-0.6=0.36)",
+    "socialEnergy(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:MISSING",
+   "family": "element",
+   "mbti": "ESTJ",
+   "kind": "tension",
+   "dimension": "planning",
+   "strength": 1.64,
+   "contributions": [
+    "planning(-0.7×0.8=-0.56)",
+    "persistence(-0.6×0.7=-0.42)",
+    "dutifulness(-0.4×0.9=-0.36)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "twelveStage:建祿",
+   "family": "twelveStage",
+   "mbti": "ISTJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.64,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "persistence(0.6×0.7=0.42)",
+    "spendingControl(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "element:METAL:STRONG",
+   "family": "element",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.63,
+   "contributions": [
+    "directness(0.8×0.9=0.72)",
+    "decisionSpeed(0.7×0.8=0.56)",
+    "empathyResponse(-0.5×-0.4=0.2)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "shinsal:GOEGANG",
+   "family": "shinsal",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.62,
+   "contributions": [
+    "directness(0.6×0.9=0.54)",
+    "controlNeed(0.6×0.8=0.48)",
+    "decisionSpeed(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:丁:autumn",
+   "family": "climate",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 1.61,
+   "contributions": [
+    "planning(0.5×0.8=0.4)",
+    "dutifulness(0.4×0.9=0.36)",
+    "spendingControl(0.7×0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "branch:未",
+   "family": "branch",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.61,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "empathyResponse(0.6×0.9=0.54)",
+    "boundarySetting(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:乙:summer",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 1.61,
+   "contributions": [
+    "emotionalExpression(0.7×0.9=0.63)",
+    "attentionSeeking(0.6×0.8=0.48)",
+    "spendingControl(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY:FEMALE",
+   "family": "yinYang",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.61,
+   "contributions": [
+    "directness(0.8×0.8=0.64)",
+    "decisionSpeed(0.7×0.7=0.49)",
+    "controlNeed(0.6×0.8=0.48)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:CHEONMUN",
+   "family": "shinsal",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.61,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "caretaking(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "tenGod:食神",
+   "family": "tenGod",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 1.6,
+   "contributions": [
+    "emotionalExpression(0.5×0.9=0.45)",
+    "caretaking(0.7×0.6=0.42)",
+    "socialEnergy(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "stem:戊",
+   "family": "stem",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.6,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "boundarySetting(0.5×-0.8=-0.4)",
+    "caretaking(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "branch:卯",
+   "family": "branch",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.59,
+   "contributions": [
+    "empathyResponse(0.7×0.7=0.49)",
+    "conflictApproach(-0.6×-0.8=0.48)",
+    "directness(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:戊:summer",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.59,
+   "contributions": [
+    "emotionalExpression(-0.6×0.9=-0.54)",
+    "noveltySeeking(-0.5×0.7=-0.35)",
+    "persistence(0.7×-0.5=-0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:辛:autumn",
+   "family": "climate",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.58,
+   "contributions": [
+    "boundarySetting(0.8×0.7=0.56)",
+    "decisionSpeed(0.7×0.5=0.35)",
+    "emotionalExpression(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "element:WATER:STRONG",
+   "family": "element",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.58,
+   "contributions": [
+    "inquiry(0.6×0.8=0.48)",
+    "introspection(0.9×0.5=0.45)",
+    "socialEnergy(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "stem:己",
+   "family": "stem",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.58,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "empathyResponse(0.5×0.9=0.45)",
+    "planning(0.5×0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "gwiin:CHEON_EUI",
+   "family": "gwiin",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.58,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "empathyResponse(0.7×0.7=0.49)",
+    "boundarySetting(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "tenGod:傷官",
+   "family": "tenGod",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "strength": 1.58,
+   "contributions": [
+    "verbalOutput(0.7×0.8=0.56)",
+    "noveltySeeking(0.6×0.9=0.54)",
+    "ruleAdherence(-0.8×-0.6=0.48)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "branch:未",
+   "family": "branch",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.57,
+   "contributions": [
+    "empathyResponse(0.6×0.8=0.48)",
+    "caretaking(0.8×0.5=0.4)",
+    "boundarySetting(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "element:METAL:MISSING",
+   "family": "element",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.57,
+   "contributions": [
+    "boundarySetting(-0.9×-0.7=0.63)",
+    "caretaking(0.5×0.9=0.45)",
+    "conflictApproach(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "relation:STEM_HAP",
+   "family": "relation",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.57,
+   "contributions": [
+    "empathyResponse(0.4×0.9=0.36)",
+    "independence(-0.6×-0.6=0.36)",
+    "boundarySetting(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:庚:winter",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "tension",
+   "dimension": "socialEnergy",
+   "strength": 1.57,
+   "contributions": [
+    "socialEnergy(-0.5×0.9=-0.45)",
+    "emotionalExpression(-0.6×0.7=-0.42)",
+    "empathyResponse(-0.6×0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "element:METAL:MISSING",
+   "family": "element",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.57,
+   "contributions": [
+    "boundarySetting(-0.9×-0.8=0.72)",
+    "caretaking(0.5×0.9=0.45)",
+    "conflictApproach(-0.5×-0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "branch:寅",
+   "family": "branch",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.56,
+   "contributions": [
+    "independence(0.6×0.9=0.54)",
+    "riskTaking(0.7×0.6=0.42)",
+    "decisionSpeed(0.7×0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:丁:autumn",
+   "family": "climate",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.56,
+   "contributions": [
+    "dutifulness(0.4×0.9=0.36)",
+    "detailFocus(0.5×0.7=0.35)",
+    "spendingControl(0.7×0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "branch:酉",
+   "family": "branch",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "detailFocus",
+   "strength": 1.56,
+   "contributions": [
+    "detailFocus(0.8×0.6=0.48)",
+    "directness(0.6×0.8=0.48)",
+    "ruleAdherence(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:壬:spring",
+   "family": "climate",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.56,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "verbalOutput(0.6×0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:PEER:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "competitiveness",
+   "strength": 1.56,
+   "contributions": [
+    "competitiveness(0.8×0.7=0.56)",
+    "independence(0.8×0.6=0.48)",
+    "controlNeed(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY:FEMALE",
+   "family": "yinYang",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.56,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "caretaking(0.6×0.7=0.42)",
+    "conflictApproach(-0.6×-0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "twelveStage:沐浴",
+   "family": "twelveStage",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.55,
+   "contributions": [
+    "noveltySeeking(0.7×0.9=0.63)",
+    "emotionalExpression(0.5×0.8=0.4)",
+    "intimacyPace(0.4×0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "twelveStage:病",
+   "family": "twelveStage",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.55,
+   "contributions": [
+    "empathyResponse(0.8×0.7=0.56)",
+    "introspection(0.7×0.7=0.49)",
+    "caretaking(0.6×0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "branch:子",
+   "family": "branch",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.54,
+   "contributions": [
+    "inquiry(0.6×0.8=0.48)",
+    "introspection(0.7×0.5=0.35)",
+    "trustThreshold(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY:MALE",
+   "family": "yinYang",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.54,
+   "contributions": [
+    "independence(0.6×0.9=0.54)",
+    "controlNeed(0.7×-0.6=-0.42)",
+    "decisionSpeed(0.7×0.5=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:癸:winter",
+   "family": "climate",
+   "mbti": "ENFP",
+   "kind": "tension",
+   "dimension": "intimacyPace",
+   "strength": 1.54,
+   "contributions": [
+    "intimacyPace(-0.8×0.7=-0.56)",
+    "emotionalExpression(-0.5×0.8=-0.4)",
+    "persistence(0.5×-0.6=-0.3)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayMaster:壬",
+   "family": "dayMaster",
+   "mbti": "ENFP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.54,
+   "contributions": [
+    "noveltySeeking(0.7×0.9=0.63)",
+    "detailFocus(-0.5×-0.7=0.35)",
+    "planning(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OFFICER:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.54,
+   "contributions": [
+    "dutifulness(0.9×0.9=0.81)",
+    "ruleAdherence(0.8×0.6=0.48)",
+    "emotionalExpression(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "branch:亥",
+   "family": "branch",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.52,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "socialEnergy(-0.4×-0.6=0.24)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "branch:寅",
+   "family": "branch",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.52,
+   "contributions": [
+    "decisionSpeed(0.7×0.8=0.56)",
+    "independence(0.6×0.6=0.36)",
+    "controlNeed(0.4×0.8=0.32)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:乙:autumn",
+   "family": "climate",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.52,
+   "contributions": [
+    "introspection(0.6×0.9=0.54)",
+    "empathyResponse(0.6×0.8=0.48)",
+    "conflictApproach(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "twelveStage:死",
+   "family": "twelveStage",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.52,
+   "contributions": [
+    "socialEnergy(-0.6×-0.7=0.42)",
+    "inquiry(0.5×0.8=0.4)",
+    "introspection(0.8×0.5=0.4)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:丁:summer",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "emotionalExpression",
+   "strength": 1.51,
+   "contributions": [
+    "emotionalExpression(0.6×0.9=0.54)",
+    "socialEnergy(0.6×0.9=0.54)",
+    "spendingControl(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:戊:spring",
+   "family": "climate",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.51,
+   "contributions": [
+    "caretaking(0.6×0.9=0.54)",
+    "dutifulness(0.7×0.7=0.49)",
+    "boundarySetting(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:戊:spring",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.51,
+   "contributions": [
+    "caretaking(0.6×0.9=0.54)",
+    "dutifulness(0.7×0.7=0.49)",
+    "boundarySetting(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "element:METAL:WEAK",
+   "family": "element",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.51,
+   "contributions": [
+    "boundarySetting(-0.8×-0.7=0.56)",
+    "caretaking(0.4×0.9=0.36)",
+    "empathyResponse(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_BANANSAL",
+   "family": "shinsal",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "ruleAdherence",
+   "strength": 1.51,
+   "contributions": [
+    "ruleAdherence(0.6×0.8=0.48)",
+    "statusDrive(0.8×0.6=0.48)",
+    "planning(0.5×0.8=0.4)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "twelveStage:死",
+   "family": "twelveStage",
+   "mbti": "ESFJ",
+   "kind": "tension",
+   "dimension": "socialEnergy",
+   "strength": 1.51,
+   "contributions": [
+    "socialEnergy(-0.6×0.9=-0.54)",
+    "boundarySetting(0.6×-0.7=-0.42)",
+    "emotionalExpression(-0.5×0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:丁:winter",
+   "family": "climate",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.51,
+   "contributions": [
+    "caretaking(0.7×0.9=0.63)",
+    "dutifulness(0.7×0.9=0.63)",
+    "emotionalExpression(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:壬:spring",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.5,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "verbalOutput(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "stem:乙",
+   "family": "stem",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.5,
+   "contributions": [
+    "empathyResponse(0.5×0.9=0.45)",
+    "socialEnergy(0.4×0.8=0.32)",
+    "conflictApproach(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "branch:巳",
+   "family": "branch",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.5,
+   "contributions": [
+    "inquiry(0.6×0.8=0.48)",
+    "planning(0.5×0.9=0.45)",
+    "trustThreshold(0.7×0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:GWASUKSAL",
+   "family": "shinsal",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "intimacyPace",
+   "strength": 1.5,
+   "contributions": [
+    "intimacyPace(-0.7×0.8=-0.56)",
+    "emotionalExpression(-0.6×0.9=-0.54)",
+    "attentionSeeking(-0.5×0.8=-0.4)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "relation:HAE",
+   "family": "relation",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.49,
+   "contributions": [
+    "introspection(0.5×0.9=0.45)",
+    "conflictApproach(-0.5×-0.6=0.3)",
+    "emotionalExpression(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:BAEKHODAESAL",
+   "family": "shinsal",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "reactivity",
+   "strength": 1.49,
+   "contributions": [
+    "reactivity(0.7×0.6=0.42)",
+    "persistence(0.8×-0.5=-0.4)",
+    "conflictApproach(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:CHEONMUN",
+   "family": "shinsal",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.49,
+   "contributions": [
+    "introspection(0.7×0.9=0.63)",
+    "empathyResponse(0.7×0.8=0.56)",
+    "caretaking(0.6×0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:丙:winter",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.48,
+   "contributions": [
+    "caretaking(0.6×0.9=0.54)",
+    "socialEnergy(0.4×0.9=0.36)",
+    "ruleAdherence(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:MISSING",
+   "family": "element",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 1.48,
+   "contributions": [
+    "planning(-0.7×-0.8=0.56)",
+    "noveltySeeking(0.6×0.7=0.42)",
+    "persistence(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "tenGod:偏印",
+   "family": "tenGod",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.48,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "independence(0.6×0.5=0.3)",
+    "socialEnergy(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "twelveStage:死",
+   "family": "twelveStage",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "boundarySetting",
+   "strength": 1.48,
+   "contributions": [
+    "boundarySetting(0.6×0.7=0.42)",
+    "socialEnergy(-0.6×-0.6=0.36)",
+    "emotionalExpression(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:辛:autumn",
+   "family": "climate",
+   "mbti": "ESTJ",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.47,
+   "contributions": [
+    "decisionSpeed(0.7×0.7=0.49)",
+    "directness(0.6×0.8=0.48)",
+    "emotionalExpression(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:HWAGAE",
+   "family": "shinsal",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.47,
+   "contributions": [
+    "introspection(0.9×0.9=0.81)",
+    "socialEnergy(-0.6×-0.6=0.36)",
+    "independence(0.6×0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "tenGod:傷官",
+   "family": "tenGod",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.47,
+   "contributions": [
+    "inquiry(0.7×0.9=0.63)",
+    "ruleAdherence(-0.8×-0.6=0.48)",
+    "noveltySeeking(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY:MALE",
+   "family": "yinYang",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.47,
+   "contributions": [
+    "caretaking(0.5×0.9=0.45)",
+    "attentionSeeking(-0.6×-0.7=0.42)",
+    "detailFocus(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_JAESAL",
+   "family": "shinsal",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 1.47,
+   "contributions": [
+    "planning(0.6×0.9=0.54)",
+    "inquiry(0.6×0.8=0.48)",
+    "independence(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "branch:午",
+   "family": "branch",
+   "mbti": "ISTP",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.46,
+   "contributions": [
+    "emotionalExpression(0.8×-0.7=-0.56)",
+    "attentionSeeking(0.8×-0.6=-0.48)",
+    "socialEnergy(0.7×-0.6=-0.42)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY:FEMALE",
+   "family": "yinYang",
+   "mbti": "INFP",
+   "kind": "tension",
+   "dimension": "directness",
+   "strength": 1.46,
+   "contributions": [
+    "directness(0.8×-0.7=-0.56)",
+    "decisionSpeed(0.7×-0.6=-0.42)",
+    "socialEnergy(0.6×-0.6=-0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "climate:壬:winter",
+   "family": "climate",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "controlNeed",
+   "strength": 1.46,
+   "contributions": [
+    "controlNeed(0.6×0.8=0.48)",
+    "independence(0.8×0.6=0.48)",
+    "emotionalExpression(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "tenGod:比肩",
+   "family": "tenGod",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.45,
+   "contributions": [
+    "independence(0.9×0.9=0.81)",
+    "boundarySetting(0.7×0.7=0.49)",
+    "ruleAdherence(-0.3×-0.5=0.15)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:丁:winter",
+   "family": "climate",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.44,
+   "contributions": [
+    "caretaking(0.7×0.7=0.49)",
+    "dutifulness(0.7×0.5=0.35)",
+    "intimacyPace(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:壬:winter",
+   "family": "climate",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.44,
+   "contributions": [
+    "independence(0.8×0.9=0.72)",
+    "emotionalExpression(-0.6×-0.7=0.42)",
+    "controlNeed(0.6×-0.6=-0.36)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayMaster:癸",
+   "family": "dayMaster",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.44,
+   "contributions": [
+    "empathyResponse(0.7×0.7=0.49)",
+    "introspection(0.7×0.7=0.49)",
+    "verbalOutput(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:HWAGAE",
+   "family": "shinsal",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "strength": 1.44,
+   "contributions": [
+    "learningDrive(0.6×0.9=0.54)",
+    "independence(0.6×0.8=0.48)",
+    "socialEnergy(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_JISAL",
+   "family": "shinsal",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.44,
+   "contributions": [
+    "noveltySeeking(0.8×0.9=0.72)",
+    "riskTaking(0.4×0.7=0.28)",
+    "socialEnergy(0.4×0.6=0.24)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "climate:癸:spring",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.44,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "emotionalExpression(0.3×0.7=0.21)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "shinsal:GWIMUN",
+   "family": "shinsal",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.44,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.6×0.8=0.48)",
+    "socialEnergy(-0.4×-0.6=0.24)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:GWIMUN",
+   "family": "shinsal",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.44,
+   "contributions": [
+    "introspection(0.8×0.9=0.72)",
+    "empathyResponse(0.6×0.8=0.48)",
+    "socialEnergy(-0.4×-0.6=0.24)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayMaster:乙",
+   "family": "dayMaster",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.42,
+   "contributions": [
+    "socialEnergy(0.4×0.9=0.36)",
+    "empathyResponse(0.5×0.7=0.35)",
+    "caretaking(0.3×0.9=0.27)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "gwiin:WOL_DEOK_GWIIN",
+   "family": "gwiin",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.42,
+   "contributions": [
+    "caretaking(0.5×0.9=0.45)",
+    "empathyResponse(0.5×0.9=0.45)",
+    "boundarySetting(-0.3×-0.7=0.21)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "branch:辰",
+   "family": "branch",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 1.42,
+   "contributions": [
+    "planning(0.7×0.8=0.56)",
+    "controlNeed(0.4×0.8=0.32)",
+    "emotionalExpression(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayMaster:丁",
+   "family": "dayMaster",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.42,
+   "contributions": [
+    "caretaking(0.8×0.9=0.72)",
+    "attentionSeeking(-0.5×-0.7=0.35)",
+    "detailFocus(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "relation:CHUNG",
+   "family": "relation",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.42,
+   "contributions": [
+    "noveltySeeking(0.5×0.9=0.45)",
+    "conflictApproach(0.6×0.6=0.36)",
+    "reactivity(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "branch:辰",
+   "family": "branch",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "planning",
+   "strength": 1.42,
+   "contributions": [
+    "planning(0.7×-0.8=-0.56)",
+    "emotionalExpression(-0.6×0.9=-0.54)",
+    "intimacyPace(-0.4×0.8=-0.32)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "branch:卯",
+   "family": "branch",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.41,
+   "contributions": [
+    "empathyResponse(0.7×0.9=0.63)",
+    "conflictApproach(-0.6×-0.5=0.3)",
+    "directness(-0.6×-0.4=0.24)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "element:WOOD:MISSING",
+   "family": "element",
+   "mbti": "ENTP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.41,
+   "contributions": [
+    "noveltySeeking(-0.7×0.9=-0.63)",
+    "ruleAdherence(0.6×-0.8=-0.48)",
+    "conflictApproach(-0.5×0.6=-0.3)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:HWAGAE",
+   "family": "shinsal",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.41,
+   "contributions": [
+    "independence(0.6×0.9=0.54)",
+    "introspection(0.9×0.5=0.45)",
+    "socialEnergy(-0.6×-0.7=0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "yinYang:YIN_HEAVY:MALE",
+   "family": "yinYang",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "attentionSeeking",
+   "strength": 1.41,
+   "contributions": [
+    "attentionSeeking(-0.6×0.8=-0.48)",
+    "intimacyPace(-0.6×0.8=-0.48)",
+    "emotionalExpression(-0.5×0.9=-0.45)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:癸:spring",
+   "family": "climate",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.41,
+   "contributions": [
+    "caretaking(0.9×0.9=0.81)",
+    "boundarySetting(-0.6×-0.7=0.42)",
+    "emotionalExpression(0.3×0.6=0.18)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:PEER:STRONG",
+   "family": "tenGodBalance",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "competitiveness",
+   "strength": 1.4,
+   "contributions": [
+    "competitiveness(0.8×-0.6=-0.48)",
+    "boundarySetting(0.6×-0.6=-0.36)",
+    "controlNeed(0.5×-0.7=-0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:癸:autumn",
+   "family": "climate",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "strength": 1.4,
+   "contributions": [
+    "learningDrive(0.7×0.9=0.63)",
+    "inquiry(0.5×0.9=0.45)",
+    "empathyResponse(-0.4×-0.5=0.2)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayMaster:戊",
+   "family": "dayMaster",
+   "mbti": "ENTP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.4,
+   "contributions": [
+    "noveltySeeking(-0.5×0.9=-0.45)",
+    "reactivity(-0.6×0.6=-0.36)",
+    "persistence(0.7×-0.5=-0.35)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:FIRE:MISSING",
+   "family": "element",
+   "mbti": "ENFJ",
+   "kind": "tension",
+   "dimension": "emotionalExpression",
+   "strength": 1.4,
+   "contributions": [
+    "emotionalExpression(-0.8×0.6=-0.48)",
+    "socialEnergy(-0.5×0.8=-0.4)",
+    "empathyResponse(-0.4×0.9=-0.36)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "shinsal:YANGIN",
+   "family": "shinsal",
+   "mbti": "ENFJ",
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "strength": 1.4,
+   "contributions": [
+    "boundarySetting(0.8×-0.7=-0.56)",
+    "conflictApproach(0.6×-0.5=-0.3)",
+    "independence(0.5×-0.6=-0.3)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayMaster:乙",
+   "family": "dayMaster",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.39,
+   "contributions": [
+    "socialEnergy(0.4×0.9=0.36)",
+    "persistence(0.6×-0.5=-0.3)",
+    "conflictApproach(-0.5×-0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "shinsal:GWASUKSAL",
+   "family": "shinsal",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "intimacyPace",
+   "strength": 1.39,
+   "contributions": [
+    "intimacyPace(-0.7×-0.7=0.49)",
+    "trustThreshold(0.7×0.5=0.35)",
+    "emotionalExpression(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "branch:辰",
+   "family": "branch",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.38,
+   "contributions": [
+    "introspection(0.5×0.9=0.45)",
+    "planning(0.7×0.5=0.35)",
+    "emotionalExpression(-0.6×-0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "climate:辛:autumn",
+   "family": "climate",
+   "mbti": "ENFJ",
+   "kind": "tension",
+   "dimension": "boundarySetting",
+   "strength": 1.38,
+   "contributions": [
+    "boundarySetting(0.8×-0.7=-0.56)",
+    "emotionalExpression(-0.5×0.6=-0.3)",
+    "verbalOutput(-0.4×0.7=-0.28)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:WEAK",
+   "family": "element",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 1.38,
+   "contributions": [
+    "planning(-0.6×-0.8=0.48)",
+    "noveltySeeking(0.5×0.7=0.35)",
+    "spendingControl(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "twelveStage:養",
+   "family": "twelveStage",
+   "mbti": "ENFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.38,
+   "contributions": [
+    "caretaking(0.6×0.9=0.54)",
+    "independence(-0.6×-0.6=0.36)",
+    "dutifulness(0.4×0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:庚:autumn",
+   "family": "climate",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "competitiveness",
+   "strength": 1.38,
+   "contributions": [
+    "competitiveness(0.8×-0.6=-0.48)",
+    "conflictApproach(0.6×-0.8=-0.48)",
+    "directness(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "climate:壬:spring",
+   "family": "climate",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "noveltySeeking",
+   "strength": 1.37,
+   "contributions": [
+    "noveltySeeking(0.6×0.9=0.54)",
+    "verbalOutput(0.6×0.8=0.48)",
+    "persistence(-0.4×-0.5=0.2)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "stem:己",
+   "family": "stem",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.37,
+   "contributions": [
+    "caretaking(0.8×0.7=0.56)",
+    "empathyResponse(0.5×0.8=0.4)",
+    "planning(0.5×0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "twelveStage:衰",
+   "family": "twelveStage",
+   "mbti": "ENTP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.37,
+   "contributions": [
+    "noveltySeeking(-0.5×0.9=-0.45)",
+    "riskTaking(-0.6×0.7=-0.42)",
+    "planning(0.6×-0.5=-0.3)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:TWELVE_WOLSAL",
+   "family": "shinsal",
+   "mbti": "INFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.36,
+   "contributions": [
+    "introspection(0.6×0.9=0.54)",
+    "empathyResponse(0.4×0.8=0.32)",
+    "decisionSpeed(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "shinsal:HONGYEOMSAL",
+   "family": "shinsal",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "intimacyPace",
+   "strength": 1.35,
+   "contributions": [
+    "intimacyPace(0.6×0.8=0.48)",
+    "attentionSeeking(0.5×0.8=0.4)",
+    "emotionalExpression(0.3×0.9=0.27)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "tenGodBalance:OUTPUT:WEAK",
+   "family": "tenGodBalance",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "verbalOutput",
+   "strength": 1.35,
+   "contributions": [
+    "verbalOutput(-0.7×-0.8=0.56)",
+    "emotionalExpression(-0.7×-0.7=0.49)",
+    "attentionSeeking(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "element:EARTH:STRONG",
+   "family": "element",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "dutifulness",
+   "strength": 1.35,
+   "contributions": [
+    "dutifulness(0.7×0.9=0.63)",
+    "noveltySeeking(-0.7×-0.6=0.42)",
+    "spendingControl(0.6×0.5=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:丙:summer",
+   "family": "climate",
+   "mbti": "ENTP",
+   "kind": "resonance",
+   "dimension": "directness",
+   "strength": 1.34,
+   "contributions": [
+    "directness(0.7×0.6=0.42)",
+    "reactivity(0.7×0.6=0.42)",
+    "conflictApproach(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "shinsal:GWIMUN",
+   "family": "shinsal",
+   "mbti": "ISFP",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.34,
+   "contributions": [
+    "introspection(0.8×0.7=0.56)",
+    "empathyResponse(0.6×0.7=0.42)",
+    "socialEnergy(-0.4×-0.5=0.2)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "tenGod:食神",
+   "family": "tenGod",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.34,
+   "contributions": [
+    "caretaking(0.7×0.9=0.63)",
+    "socialEnergy(0.4×0.9=0.36)",
+    "emotionalExpression(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "twelveStage:養",
+   "family": "twelveStage",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.34,
+   "contributions": [
+    "caretaking(0.6×0.9=0.54)",
+    "independence(-0.6×-0.6=0.36)",
+    "dutifulness(0.4×0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "shinsal:EUMCHAK_YANGCHA",
+   "family": "shinsal",
+   "mbti": "INFJ",
+   "kind": "resonance",
+   "dimension": "introspection",
+   "strength": 1.33,
+   "contributions": [
+    "introspection(0.4×0.9=0.36)",
+    "intimacyPace(-0.4×-0.7=0.28)",
+    "trustThreshold(0.5×0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "yinYang:YANG_HEAVY",
+   "family": "yinYang",
+   "mbti": "ENTJ",
+   "kind": "resonance",
+   "dimension": "decisionSpeed",
+   "strength": 1.33,
+   "contributions": [
+    "decisionSpeed(0.8×0.8=0.64)",
+    "planning(-0.4×0.8=-0.32)",
+    "verbalOutput(0.5×0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "climate:丙:autumn",
+   "family": "climate",
+   "mbti": "ESFJ",
+   "kind": "resonance",
+   "dimension": "caretaking",
+   "strength": 1.33,
+   "contributions": [
+    "caretaking(0.5×0.9=0.45)",
+    "socialEnergy(0.5×0.9=0.45)",
+    "emotionalExpression(0.4×0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "branch:卯",
+   "family": "branch",
+   "mbti": "ISFJ",
+   "kind": "resonance",
+   "dimension": "empathyResponse",
+   "strength": 1.32,
+   "contributions": [
+    "empathyResponse(0.7×0.7=0.49)",
+    "conflictApproach(-0.6×-0.8=0.48)",
+    "detailFocus(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "shinsal:GOEGANG",
+   "family": "shinsal",
+   "mbti": "ISFP",
+   "kind": "tension",
+   "dimension": "conflictApproach",
+   "strength": 1.32,
+   "contributions": [
+    "conflictApproach(0.6×-0.8=-0.48)",
+    "controlNeed(0.6×-0.7=-0.42)",
+    "directness(0.6×-0.7=-0.42)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "branch:申",
+   "family": "branch",
+   "mbti": "INFP",
+   "kind": "tension",
+   "dimension": "directness",
+   "strength": 1.31,
+   "contributions": [
+    "directness(0.7×-0.7=-0.49)",
+    "decisionSpeed(0.7×-0.6=-0.42)",
+    "empathyResponse(-0.5×0.8=-0.4)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "climate:乙:spring",
+   "family": "climate",
+   "mbti": "ESFP",
+   "kind": "resonance",
+   "dimension": "socialEnergy",
+   "strength": 1.31,
+   "contributions": [
+    "socialEnergy(0.6×0.9=0.54)",
+    "noveltySeeking(0.4×0.7=0.28)",
+    "empathyResponse(0.5×0.5=0.25)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayMaster:丁",
+   "family": "dayMaster",
+   "mbti": "ESFP",
+   "kind": "tension",
+   "dimension": "caretaking",
+   "strength": 1.3,
+   "contributions": [
+    "caretaking(0.8×0.6=0.48)",
+    "attentionSeeking(-0.5×0.8=-0.4)",
+    "emotionalExpression(0.4×0.9=0.36)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:辛丑",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "perfectionism",
+   "strength": 1.71,
+   "contributions": [
+    "perfectionism(0.8×0.6=0.48)",
+    "trustThreshold(0.8×0.6=0.48)",
+    "planning(0.5×0.9=0.45)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬午",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "tension",
+   "dimension": "socialEnergy",
+   "strength": 1.58,
+   "contributions": [
+    "socialEnergy(0.8×-0.7=-0.56)",
+    "emotionalExpression(0.6×-0.6=-0.36)",
+    "planning(-0.4×0.9=-0.36)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:戊子",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "planning",
+   "strength": 1.54,
+   "contributions": [
+    "planning(0.7×0.9=0.63)",
+    "emotionalExpression(-0.6×-0.6=0.36)",
+    "trustThreshold(0.5×0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚辰",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.44,
+   "contributions": [
+    "independence(0.6×0.9=0.54)",
+    "directness(0.8×0.6=0.48)",
+    "emotionalExpression(-0.7×-0.6=0.42)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬子",
+   "family": "dayPillar",
+   "mbti": "INTJ",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.43,
+   "contributions": [
+    "independence(0.8×0.9=0.72)",
+    "emotionalExpression(-0.6×-0.6=0.36)",
+    "planning(-0.4×0.9=-0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:庚子",
+   "family": "dayPillar",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.8,
+   "contributions": [
+    "inquiry(0.8×0.9=0.72)",
+    "independence(0.6×0.8=0.48)",
+    "emotionalExpression(-0.5×-0.6=0.3)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬申",
+   "family": "dayPillar",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.44,
+   "contributions": [
+    "independence(0.6×0.8=0.48)",
+    "inquiry(0.5×0.9=0.45)",
+    "noveltySeeking(0.6×0.6=0.36)"
+   ]
+  },
+  {
+   "batch": "X2",
+   "sceneRequired": false,
+   "featureId": "dayPillar:癸亥",
+   "family": "dayPillar",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "strength": 1.34,
+   "contributions": [
+    "learningDrive(0.6×0.9=0.54)",
+    "empathyResponse(0.7×-0.5=-0.35)",
+    "socialEnergy(-0.5×-0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X3",
+   "sceneRequired": false,
+   "featureId": "dayPillar:甲子",
+   "family": "dayPillar",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "learningDrive",
+   "strength": 1.33,
+   "contributions": [
+    "learningDrive(0.8×0.9=0.72)",
+    "inquiry(0.4×0.9=0.36)",
+    "planning(0.7×-0.5=-0.35)"
+   ]
+  },
+  {
+   "batch": "X4",
+   "sceneRequired": false,
+   "featureId": "dayPillar:辛亥",
+   "family": "dayPillar",
+   "mbti": "INTP",
+   "kind": "resonance",
+   "dimension": "inquiry",
+   "strength": 1.21,
+   "contributions": [
+    "inquiry(0.7×0.9=0.63)",
+    "decisionSpeed(-0.6×-0.5=0.3)",
+    "socialEnergy(-0.4×-0.7=0.28)"
+   ]
+  },
+  {
+   "batch": "X5",
+   "sceneRequired": false,
+   "featureId": "element:WOOD:MISSING",
+   "family": "element",
+   "mbti": "INTP",
+   "kind": "tension",
+   "dimension": "noveltySeeking",
+   "strength": 1.18,
+   "contributions": [
+    "noveltySeeking(-0.7×0.6=-0.42)",
+    "independence(-0.5×0.8=-0.4)",
+    "ruleAdherence(0.6×-0.6=-0.36)"
+   ]
+  },
+  {
+   "batch": "X6",
+   "sceneRequired": false,
+   "featureId": "dayPillar:壬申",
+   "family": "dayPillar",
+   "mbti": "ISTP",
+   "kind": "resonance",
+   "dimension": "independence",
+   "strength": 1.77,
+   "contributions": [
+    "independence(0.6×0.9=0.54)",
+    "decisionSpeed(0.7×0.5=0.35)",
+    "inquiry(0.5×0.7=0.35)"
+   ]
+  },
+  {
+   "batch": "X1",
+   "sceneRequired": false,
+   "featureId": "dayPillar:乙巳",
+   "family": "dayPillar",
+   "mbti": "ISTP",
+   "kind": "tension",
+   "dimension": "verbalOutput",
+   "strength": 1.75,
+   "contributions": [
+    "verbalOutput(0.7×-0.8=-0.56)",
+    "socialEnergy(0.9×-0.6=-0.54)",
+    "boundarySetting(-0.5×0.7=-0.35)"
+   ]
+  }
+ ]
+}
