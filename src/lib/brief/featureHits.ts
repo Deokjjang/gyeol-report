@@ -221,12 +221,7 @@ function relationStrength(r: RelationHit): FeatureStrength {
 function elementStrength(c: Ctx, e: FiveElement, kind: "STRONG" | "WEAK" | "MISSING" | "BALANCED"): FeatureStrength {
   if (kind === "MISSING") return c.det.hourIncluded ? "strong" : "weak";
   if (kind !== "STRONG") return "medium";
-  const w = c.saju.elements.weighted;
-  const total = ELEMENTS.reduce((s, x) => s + w[x], 0);
-  const inSeason = e === "EARTH" ? EARTH_MONTHS.includes(c.monthBranch) : SEASON_ELEMENT[c.season] === e;
-  let n = inSeason || (e === "WATER" && total > 0 && w.WATER / total >= 0.4) ? 1 : 0;
-  if ((e === "FIRE" && w.WATER >= 1.5) || (e === "METAL" && w.FIRE >= 1.5)) n -= 1;
-  return level(n);
+  return c.det.elementBalance.shares[e] >= 0.4 ? "strong" : "medium";
 }
 
 const STRUCTURE_GROUP: Partial<Record<string, keyof Ctx["groups"]>> = {
@@ -383,15 +378,13 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
     push({ id, family, positions: ps, strength: relationStrength(r), variantKey: r.key, basis: `${r.key} ${ps.join("-")}${r.completeness === "full" ? "" : ` ${r.completeness}`}` });
   }
 
-  // 오행
-  const labeled = new Map<FiveElement, "STRONG" | "WEAK" | "MISSING">();
-  for (const label of saju.elements.labels) {
-    const [e, kind] = label.split("_") as [FiveElement, "STRONG" | "WEAK" | "MISSING"];
-    labeled.set(e, kind);
-  }
+  // 오행: 단일 판단(det.elementBalance). 많음은 가장 강한 기운 하나, 부족·없음은 가장 약한 기운 하나만 hit로 낸다.
+  const bal = det.elementBalance;
   for (const e of ELEMENTS) {
-    const kind = labeled.get(e) ?? "BALANCED";
-    push({ id: `element:${e}:${kind}`, family: "element", positions: [], strength: elementStrength(c, e, kind), basis: `${e} weighted=${saju.elements.weighted[e]}` });
+    const st = bal.status[e];
+    const kind = e === bal.strongest.element && st === "많음" ? "STRONG" : e === bal.weakest.element && (st === "부족" || st === "없음") ? (st === "없음" ? "MISSING" : "WEAK") : st === "보통" ? "BALANCED" : null;
+    if (!kind) continue;
+    push({ id: `element:${e}:${kind}`, family: "element", positions: [], strength: elementStrength(c, e, kind), basis: `${e} score=${bal.scores[e]} share=${bal.shares[e]}` });
   }
 
   // 음양

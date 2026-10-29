@@ -1,7 +1,7 @@
 /** 원국 요약(시간 미상이면 시주 제외), 오행·음양·조후 판단, 현재 대운, 올해 기운 한 줄. */
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
 import { calculateCustomerDayun, type CustomerDayunCycle } from "@/lib/saju/customerDayun";
-import { getAnnualPillar } from "@/lib/saju/detections";
+import { getAnnualPillar, judgeElementBalance, natalEntries, type ElementBalance } from "@/lib/saju/detections";
 import type { ChartDetections } from "@/lib/saju/detections/types";
 import { getYearPillarFromSolarDateTime } from "@/lib/saju/pillars";
 import { getTenGod } from "@/lib/saju/tenGods";
@@ -14,12 +14,15 @@ const ELEMENTS: readonly FiveElement[] = ["WOOD", "FIRE", "EARTH", "METAL", "WAT
 const SEASON_KO = { spring: "봄", summer: "여름", autumn: "가을", winter: "겨울" } as const;
 
 export type ElementState = { readonly excess: FiveElement[]; readonly lacking: FiveElement[]; readonly missing: FiveElement[] };
+/** 오행 단일 판단(detections/elementBalance)에서 파생: 많음은 가장 강한 기운 하나만, 부족·없음은 여럿. */
 export function elementState(saju: SajuCalcResult): ElementState {
-  const has = (e: FiveElement, s: string) => saju.elements.labels.includes(`${e}_${s}` as never);
+  return stateOf(judgeElementBalance(natalEntries(saju)));
+}
+export function stateOf(b: ElementBalance): ElementState {
   return {
-    excess: ELEMENTS.filter(e => has(e, "STRONG")),
-    lacking: ELEMENTS.filter(e => has(e, "WEAK") || has(e, "MISSING")),
-    missing: ELEMENTS.filter(e => has(e, "MISSING")),
+    excess: ELEMENTS.filter(e => b.status[e] === "많음"),
+    lacking: ELEMENTS.filter(e => b.status[e] === "부족" || b.status[e] === "없음"),
+    missing: ELEMENTS.filter(e => b.status[e] === "없음"),
   };
 }
 
@@ -48,20 +51,16 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   const { pillars, dayMaster } = saju;
   const feature = (id: string) => k.features.get(id);
   const dm = feature(`dayMaster:${dayMaster}`);
-  const st = elementState(saju);
   const yyId = saju.yinYang.label === "BALANCED" ? "yinYang:BALANCED" : `yinYang:${saju.yinYang.label}${opts.gender ? `:${opts.gender}` : ""}`;
+  const bal = det.elementBalance;
+  const top = bal.strongest, low = bal.weakest;
   const elementReading = [
-    ...st.excess.map(e => feature(`element:${e}:STRONG`)?.oneLiner),
-    ...st.lacking.map(e => feature(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.oneLiner),
+    ...(top.level === "많음" ? [feature(`element:${top.element}:STRONG`)?.oneLiner] : []),
+    ...(low.level === "부족" || low.level === "없음" ? [feature(`element:${low.element}:${low.level === "없음" ? "MISSING" : "WEAK"}`)?.oneLiner] : []),
   ].filter((x): x is string => Boolean(x));
   const climateItem = feature(`climate:${det.climate.featureKey}`);
   const { year, pillar: yearPillar } = sajuYearAt(opts.baseDate);
-  const eff = inflowEffect(yearPillar, st);
-  const ko = (es: FiveElement[]) => es.map(e => ELEMENT_KO[e]).join("·");
-  const effect = `${year}년 ${josa(ganjiLabel(yearPillar), "은는")} ${ko(eff.incoming)} 기운이 들어오는 해입니다. `
-    + (eff.fills.length ? `원래 부족한 ${josa(ko(eff.fills), "을를")} 채워 줍니다. ` : "")
-    + (eff.feeds.length ? `이미 많은 ${josa(ko(eff.feeds), "을를")} 더 보탭니다. ` : "")
-    + (!eff.fills.length && !eff.feeds.length ? "부족하거나 넘치는 기운을 크게 건드리지는 않습니다." : "");
+  const effect = yearEffectLine(year, yearPillar, bal, STEM_ELEMENT[dayMaster]);
   const cur = opts.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
   const curTenGod = cur ? getTenGod(dayMaster, cur.stem) : null;
   const next = cur && cur.endYear - year <= 2 ? opts.dayun.cycles.find(c => c.index === cur.index + 1) : undefined;
@@ -71,8 +70,9 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo },
     yinYang: { yin: saju.yinYang.yin, yang: saju.yinYang.yang, label: saju.yinYang.label, reading: feature(yyId)?.oneLiner ?? "" },
     elements: {
-      status: Object.fromEntries(ELEMENTS.map(e => [e, st.excess.includes(e) ? "많음" : st.missing.includes(e) ? "없음(땅속에도 없음)" : st.lacking.includes(e) ? (saju.elements.visible[e] === 0 ? "부족(겉 글자는 없고 땅속에 조금 있음 — '하나도 없다'고 쓰지 않는다)" : "부족") : "보통"])) as Record<FiveElement, string>,
-      excess: st.excess, lacking: st.lacking, missing: st.missing, reading: elementReading,
+      strongest: { element: top.element, name: ELEMENT_KO[top.element], level: top.level, reason: top.reason },
+      weakest: { element: low.element, name: ELEMENT_KO[low.element], level: low.level === "없음" ? "없음(땅속에도 없음)" : low.level, reason: low.reason },
+      reading: elementReading,
     },
     climate: {
       season: SEASON_KO[det.climate.season],
@@ -84,6 +84,23 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       reading: k.tenGodPeriod.get(curTenGod)?.year.meaning ?? "",
       ...(next ? { next: { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(getTenGod(dayMaster, next.stem)) } } : {}),
     } : null,
-    thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect: effect.trim() },
+    thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
   };
+}
+
+const GENERATES: Record<FiveElement, FiveElement> = { WOOD: "FIRE", FIRE: "EARTH", EARTH: "METAL", METAL: "WATER", WATER: "WOOD" };
+const CONTROLS: Record<FiveElement, FiveElement> = { WOOD: "EARTH", EARTH: "WATER", WATER: "FIRE", FIRE: "METAL", METAL: "WOOD" };
+/** 올해 기운 한 줄: 오행 단일 판단(가장 강한·가장 약한 기운)에서 파생한다. */
+export function yearEffectLine(year: number, pillar: Pillar, bal: ElementBalance, dayElement: FiveElement): string {
+  const incoming = [...new Set([STEM_ELEMENT[pillar.stem], BRANCH_MAIN_ELEMENT[pillar.branch]])];
+  const top = bal.strongest, low = bal.weakest, weak = low.level === "부족" || low.level === "없음";
+  const ko = (es: readonly FiveElement[]) => es.map(e => ELEMENT_KO[e]).join("·");
+  const lines: string[] = [];
+  if (weak && incoming.includes(low.element)) lines.push(`가장 약한 ${josa(ELEMENT_KO[low.element], "을를")} 채워 줍니다.`);
+  else if (weak && incoming.some(e => GENERATES[e] === low.element)) lines.push(`가장 약한 ${josa(ELEMENT_KO[low.element], "을를")} 살려 주는 쪽입니다.`);
+  if (incoming.includes(top.element)) lines.push(top.level === "많음" ? `이미 가장 강한 ${josa(ELEMENT_KO[top.element], "을를")} 더 키웁니다.` : `가장 강한 ${ELEMENT_KO[top.element]} 쪽에 힘이 더 실립니다.`);
+  else if (incoming.some(e => CONTROLS[e] === top.element)) lines.push(`가장 강한 ${josa(ELEMENT_KO[top.element], "을를")} 눌러 균형을 잡아 줍니다.`);
+  if (incoming.includes(dayElement)) lines.push("태어난 날의 기운과 같은 기운이라 내 힘이 보태집니다.");
+  if (!lines.length) lines.push(weak ? `가장 강한 ${josa(ELEMENT_KO[top.element], "과와")} 가장 약한 ${josa(ELEMENT_KO[low.element], "을를")} 직접 건드리지는 않습니다.` : `가장 강한 ${josa(ELEMENT_KO[top.element], "을를")} 직접 건드리지는 않습니다.`);
+  return `${year}년 ${josa(ganjiLabel(pillar), "은는")} ${ko(incoming)} 기운이 들어오는 해입니다. ${lines.join(" ")}`;
 }

@@ -8,6 +8,7 @@ import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";
 import type { ChartDetections, ChartPosition } from "@/lib/saju/detections/types";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
+import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, josa, POSITION_KO, TEN_GOD_KO } from "./labels";
 import type { ChartBrief } from "./schema";
@@ -63,13 +64,13 @@ function palaceEvidence(key: string, label: string, position: ChartPosition, saj
   ] };
 }
 
-export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, chart: ChartBrief, mbti: MbtiProfile | null): Record<string, Evidence> {
+export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, st: ElementState, mbti: MbtiProfile | null): Record<string, Evidence> {
   const spouseStars = gender === "MALE" ? STARS.WEALTH : gender === "FEMALE" ? STARS.OFFICER : null;
   const childStars = gender === "MALE" ? STARS.OFFICER : gender === "FEMALE" ? STARS.OUTPUT : null;
-  const lack = chart.elements.lacking;
-  const partnerLines = lack.flatMap(e => { const f = k.features.get(`element:${e}:${chart.elements.missing.includes(e) ? "MISSING" : "WEAK"}`); return f?.remedy ? [`채워 줄 ${josa(ELEMENT_KO[e], "을를")} 가진 사람: ${f.remedy.partner[0]}`] : []; });
+  const lack = st.lacking;
+  const partnerLines = lack.flatMap(e => { const f = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`); return f?.remedy ? [`채워 줄 ${josa(ELEMENT_KO[e], "을를")} 가진 사람: ${f.remedy.partner[0]}`] : []; });
   const good = mbti?.conventionalCompat.filter(c => c.fit === "좋음").slice(0, 3).map(c => `${c.type}(통념상 좋음: ${c.why})`) ?? [];
-  const places = lack.flatMap(e => k.features.get(`element:${e}:${chart.elements.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places.slice(0, 3) ?? []);
+  const places = lack.flatMap(e => k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places.slice(0, 3) ?? []);
   return {
     spouseStar: starEvidence("spouseStar", "배우자 별", saju, det, k, spouseStars),
     spousePalace: palaceEvidence("spousePalace", "배우자 자리(태어난 날의 땅 글자)", "day", saju, det, k),

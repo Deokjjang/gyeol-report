@@ -9,7 +9,7 @@ import { analyzeChartDetections } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
 import type { SajuCalcResult } from "@/lib/saju/types";
-import { buildChartBrief, dayunOf, elementState } from "./chart";
+import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
 import { planChapters, PRODUCT_CHARS, type TraitSource } from "./chapters";
 import { buildCompatibility, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
@@ -61,7 +61,7 @@ type PersonPack = {
   readonly saju: SajuCalcResult; readonly facts: CustomerFacts; readonly profile: FactProfile; readonly person: PersonBrief;
   readonly chart: ChartBrief; readonly traits: Trait[]; readonly sources: TraitSource[]; readonly hitIds: string[];
   readonly scored: ReturnType<typeof scoreHits>; readonly selected: ReturnType<typeof selectTraits>;
-  readonly det: ReturnType<typeof analyzeChartDetections>; readonly dayun: ReturnType<typeof dayunOf>;
+  readonly det: ReturnType<typeof analyzeChartDetections>; readonly dayun: ReturnType<typeof dayunOf>; readonly st: ElementState;
 };
 
 function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number): PersonPack {
@@ -97,7 +97,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: facts.jobStatus, detail: facts.detailJob } },
     forbiddenFacts: forbiddenFacts(facts, profile),
   };
-  return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun };
+  return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: stateOf(det.elementBalance) };
 }
 
 function mbtiBrief(k: Knowledge, type: MbtiType | null) {
@@ -126,7 +126,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const fortunes = buildFortunes(me.scored, me.traits);
   const shadows = buildShadows(me.selected, me.traits);
   if (other) buildShadows(other.selected, other.traits).forEach((s, i) => shadows.push({ ...s, id: `s${shadows.length + i + 1}` }));
-  const unused = buildUnused(me.saju, me.chart.elements.missing, k);
+  const unused = buildUnused(me.saju, me.st.missing, k);
   const mbti = mbtiBrief(k, me.facts.mbti);
   const profile = me.profile;
 
@@ -134,7 +134,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   let timeline: Brief["timeline"];
   let timelineKeys: string[] = [];
   if (input.product === "major_fortune" || input.product === "annual_fortune") {
-    const tctx: TimelineCtx = { saju: me.saju, k, st: elementState(me.saju), facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set() };
+    const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set() };
     const thisYear = me.chart.thisYear.year;
     const tenGodOf = (s: Parameters<typeof getTenGod>[1]) => getTenGod(me.saju.dayMaster, s);
     const tenGodNotes = tenGodNotesOf(k);
@@ -157,7 +157,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const compatibility = isPair && other ? buildCompatibility(input.relationshipType!, side(me, input.person, k), side(other, input.partner!, k), k, narrative.compatibility?.[input.relationshipType!]) : undefined;
 
   // 상품 근거
-  const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.chart, mbti ? k.mbti.get(mbti.type)! : null)
+  const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null)
     : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus) : {};
 
   const has = (ref: string): boolean => {
@@ -203,7 +203,7 @@ function tenGodNotesOf(k: Knowledge) {
 
 function side(p: PersonPack, input: BriefPersonInput, k: Knowledge): PairSide {
   return {
-    saju: p.saju, chart: p.chart, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName,
+    saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName,
     generationInput: { name: input.name, birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: (input.approximateBirthTimeSlot ?? "") as never, gender: input.gender, mbtiType: input.mbtiType as never, calendarType: "solar", timezone: "Asia/Seoul" },
   };
 }

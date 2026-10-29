@@ -7,6 +7,7 @@ import { detectExtraShinsal } from "./extraShinsal";
 import { getGongmang } from "./gongmang";
 import { detectRelations } from "./relations";
 import { detectStructureFlows } from "./structureFlows";
+import { judgeElementBalance } from "./elementBalance";
 import { getTwelveStage } from "./twelveStages";
 import {
   DETECTIONS_VERSION,
@@ -60,6 +61,7 @@ export function analyzeChartDetections(saju: SajuCalcResult, opts: DetectionOpti
     gongmang,
     extraShinsal: detectExtraShinsal(natal, relations, gongmang),
     structureFlows: detectStructureFlows(saju),
+    elementBalance: judgeElementBalance(natal),
   };
 }
 

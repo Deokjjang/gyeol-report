@@ -9,6 +9,7 @@ import { compatibilityRoleLabels, type CompatibilityRelationshipType } from "@/l
 import { detectRelations } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, SajuCalcResult } from "@/lib/saju/types";
+import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, ganjiLabel, josa, tenGodLabel } from "./labels";
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
@@ -18,7 +19,7 @@ const LENS_FOCUS: Record<CompatibilityRelationshipType, string> = {
 };
 
 export type PairSide = {
-  readonly saju: SajuCalcResult; readonly chart: ChartBrief; readonly traits: readonly Trait[]; readonly hitIds: readonly string[];
+  readonly saju: SajuCalcResult; readonly chart: ChartBrief; readonly st: ElementState; readonly traits: readonly Trait[]; readonly hitIds: readonly string[];
   readonly mbti: MbtiProfile | null; readonly callName: string; readonly generationInput: CompatibilityGenerationInput["personA"];
 };
 
@@ -35,7 +36,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const featureName = (id: string) => k.features.get(id)?.name ?? id;
   const common = [
     ...a.hitIds.filter(id => b.hitIds.includes(id) && !/:BALANCED$|^(stem|branch|tenGod):/.test(id)).slice(0, 4).map(id => `둘 다 ${featureName(id)}`),
-    ...a.chart.elements.lacking.filter(e => b.chart.elements.lacking.includes(e)).map(e => `둘 다 ${josa(ELEMENT_KO[e], "이가")} 부족`),
+    ...a.st.lacking.filter(e => b.st.lacking.includes(e)).map(e => `둘 다 ${josa(ELEMENT_KO[e], "이가")} 부족`),
     ...(a.mbti && b.mbti ? [...a.mbti.type].filter((c, i) => b.mbti!.type[i] === c).length ? [`MBTI 같은 글자: ${[...a.mbti.type].filter((c, i) => b.mbti!.type[i] === c).join("")}`] : [] : []),
   ];
   const va = dimensionVector(a, k), vb = dimensionVector(b, k);
@@ -43,8 +44,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     .filter(z => Math.sign(z.x) !== Math.sign(z.y) && Math.abs(z.x - z.y) > 0.3)
     .sort((p, q) => Math.abs(q.x - q.y) - Math.abs(p.x - p.y) || p.d.id.localeCompare(q.d.id)).slice(0, 3);
   const pole = (d: (typeof dims)[number]["d"], x: number) => (x >= 0 ? d.poles.plus.label : d.poles.minus.label);
-  const fills = (from: PairSide, to: PairSide, fromName: string, toName: string) => to.chart.elements.lacking
-    .filter((e: FiveElement) => from.chart.elements.excess.includes(e) || (from.saju.elements.visible[e] ?? 0) >= 2)
+  const fills = (from: PairSide, to: PairSide, fromName: string, toName: string) => to.st.lacking
+    .filter((e: FiveElement) => from.st.excess.includes(e) || (from.saju.elements.visible[e] ?? 0) >= 2)
     .map(e => `${fromName}의 ${ELEMENT_KO[e]} 기운이 ${toName}에게 부족한 ${josa(ELEMENT_KO[e], "을를")} 채워 줌`);
   const ab = getTenGod(a.saju.dayMaster, b.saju.dayMaster), ba = getTenGod(b.saju.dayMaster, a.saju.dayMaster);
   const rel = detectRelations([{ position: "year", pillar: a.saju.pillars.day }, { position: "month", pillar: b.saju.pillars.day }]);
@@ -57,7 +58,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const person = (s: PairSide, role: string) => ({
     role, callName: s.callName, mbti: s.mbti?.type ?? null, dayPillar: ganjiLabel(s.saju.pillars.day),
     image: s.traits.find(t => t.family === "dayPillar" || t.family === "dayMaster")?.image.metaphor ?? s.chart.dayMaster.metaphor,
-    traitIds: s.traits.map(t => t.id), excess: s.chart.elements.excess, lacking: s.chart.elements.lacking,
+    traitIds: s.traits.map(t => t.id), excess: s.st.excess, lacking: s.st.lacking,
   });
   return {
     relationshipType: category,

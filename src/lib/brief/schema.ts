@@ -40,10 +40,10 @@ export const ChartBriefSchema = z.object({
   dayMaster: z.object({ stem: z.string(), name: z.string(), easyName: z.string(), metaphor: z.string() }),
   strength: z.object({ level: z.string(), label: z.string() }),
   yinYang: z.object({ yin: z.number(), yang: z.number(), label: z.string(), reading: z.string() }),
+  /** 오행 단일 판단의 결론 하나(가장 강한·가장 약한 기운)와 쉬운 이유. 겉 글자 수만 보고 판단하지 않도록 숫자는 주지 않는다. */
   elements: z.object({
-    /** 상태 말(많음·보통·부족·없음). 겉 글자 수만 보고 "하나도 없다"고 쓰지 않도록 숫자 대신 판정을 준다. */
-    status: z.record(Element, z.string()),
-    excess: z.array(Element), lacking: z.array(Element), missing: z.array(Element),
+    strongest: z.object({ element: Element, name: z.string(), level: z.string(), reason: z.string() }),
+    weakest: z.object({ element: Element, name: z.string(), level: z.string(), reason: z.string() }),
     reading: z.array(z.string()),
   }),
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),

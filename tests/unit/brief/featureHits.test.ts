@@ -95,12 +95,13 @@ describe("collectFeatureHits: 가족별 매핑", () => {
     expect(byId(hitsOf("甲子 丙寅 戊午 庚辰"), "relation:SAMHAP", "申子辰")[0].strength).toBe("weak");
   });
 
-  it("오행: 라벨 없는 오행은 BALANCED, 음양은 성별 접미(미지정·BALANCED는 없음)", () => {
+  it("오행: 단일 판단 — 많음은 가장 강한 하나, 부족·없음은 가장 약한 하나만 hit, 보통은 BALANCED. 음양은 성별 접미", () => {
     const saju = chartOf("甲子 丙寅 甲午 丙寅");
-    const labeled = new Set(saju.elements.labels.map((l) => l.split("_")[0]));
+    const bal = analyzeChartDetections(saju).elementBalance;
     const elementHits = hits.filter((h) => h.family === "element");
-    expect(elementHits).toHaveLength(5);
-    for (const h of elementHits) expect(h.id.endsWith(":BALANCED")).toBe(!labeled.has(h.id.split(":")[1]));
+    expect(elementHits.filter((h) => h.id.endsWith(":STRONG")).map((h) => h.id)).toEqual(bal.strongest.level === "많음" ? [`element:${bal.strongest.element}:STRONG`] : []);
+    expect(elementHits.filter((h) => /:(WEAK|MISSING)$/.test(h.id)).length).toBeLessThanOrEqual(1);
+    for (const h of elementHits.filter((x) => x.id.endsWith(":BALANCED"))) expect(bal.status[h.id.split(":")[1] as keyof typeof bal.status]).toBe("보통");
     expect(hits.find((h) => h.family === "yinYang")?.id).toBe("yinYang:YANG_HEAVY:FEMALE");
     expect(hitsOf("甲子 丙寅 甲午 丙寅", { gender: "OTHER_OR_UNSPECIFIED" }).find((h) => h.family === "yinYang")?.id).toBe("yinYang:YANG_HEAVY");
     expect(hitsOf("甲子 丁卯 甲午 丁卯", { gender: "MALE" }).find((h) => h.family === "yinYang")?.id).toBe("yinYang:BALANCED");

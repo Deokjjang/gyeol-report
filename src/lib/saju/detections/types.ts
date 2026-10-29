@@ -3,8 +3,9 @@
  * 규칙표와 학파 기본값: docs/manseryeok-policy.md "v5 감지 규칙". 시간 미상이면 hour가 관여하는 감지는 0건이다.
  */
 import type { EarthlyBranch, FiveElement, HeavenlyStem, Pillar, TenGod } from "../types";
+import type { ElementBalance } from "./elementBalance";
 
-export const DETECTIONS_VERSION = "chart-detections-v1" as const;
+export const DETECTIONS_VERSION = "chart-detections-v2" as const;
 
 export type ChartPosition = "year" | "month" | "day" | "hour";
 /** 유입 자리: 대운·세운·월운. */
@@ -94,6 +95,8 @@ export type ChartDetections = {
   readonly gongmang: readonly GongmangDetection[];
   readonly extraShinsal: readonly ExtraShinsalHit[];
   readonly structureFlows: readonly StructureFlowHit[];
+  /** 오행 강약 단일 판단(P3, elementBalance.ts). 시간 미상이면 시주 제외. */
+  readonly elementBalance: ElementBalance;
 };
 
 export type DetectionOptions = {
