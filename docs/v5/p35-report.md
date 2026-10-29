@@ -21,7 +21,7 @@
 | C 궁합 점수 | 진단(중앙 54, 50~60에 52.6%) → 새 산식 중앙 68 · p10 45 · p90 88 · 35~95, 대칭·결정론·분포·경계·가중치 시험 8건 | PASS |
 | C5 궁합 시험 집필 | 49점 "노력이 필요한" 결론 장이 점수·구성요소와 일치, 보완법 3, 이별 권유 0 | PASS |
 | D 게이트 | 지식 lint 0/0, tsc 0, eslint 0/0(45파일), 전체 1,287파일 신규 실패 0 | PASS |
-| 프리뷰 빌드 | {{PREVIEW}} | {{PREVIEW_VERDICT}} |
+| 프리뷰 빌드 | v5/main 64fc3dfa → Vercel Preview `dpl_4WHdZi1haLjg7M8Mxf55hvL12Qt2` **READY**(빌드 약 2분 15초). maxDuration 800·회수 크론 그대로 통과(플랜 한도 조정 불필요) | PASS |
 
 ## A. 원고 품질
 
