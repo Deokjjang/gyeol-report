@@ -112,6 +112,8 @@ export const MyeongriFeatureSchema = z.object({
   easyName: z.string().min(2).max(16),
   oneLiner: Line,
   image: ImageSchema,
+  /** 이미지 변형(P3.5 A1): 기본 이미지의 핵심 대상은 유지하고 틀·장소·때를 바꾼 그림. 브리프가 고객마다 [기본 + 변형] 중 하나를 고른다. 감지 빈도 상위 30%는 3개 이상(lint). */
+  imageVariants: z.array(ImageSchema).max(6).optional(),
   scenes: ScenesSchema,
   /** 좋은 면. 단정형 가능. */
   strengths: z.array(Para).min(2).max(6),

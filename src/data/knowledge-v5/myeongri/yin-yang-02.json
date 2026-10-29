@@ -381,6 +381,11 @@
         "metaphor": "밝은 한낮엔 조이고 어두운 저녁엔 활짝 여는 카메라 조리개",
         "visual": "낮 회의에선 먼저 발언하고, 저녁 모임에선 끝자리에서 고개만 끄덕이는 같은 사람"
       },
+      "imageVariants": [
+        { "metaphor": "눈부신 한여름 해변에선 작게 조이고 구름 낀 새벽엔 크게 열어 같은 풍경을 담는 사진기 렌즈", "visual": "찜질방에서는 가장 먼저 말을 꺼내 분위기를 띄우다가, 탕에 들어가면 눈을 감고 한마디 없이 쉬는 사람" },
+        { "metaphor": "저녁 부엌에서 센 불로 끓어오르면 약불로 낮추고 다시 중불로 뜸을 들이는 가스레인지 손잡이", "visual": "횡단보도에서 급한 사람에겐 먼저 길을 터 주고, 여유로운 날엔 천천히 걸으며 하늘을 올려다보는 사람" },
+        { "metaphor": "봄 오후 창가에서 한낮엔 블라인드를 반쯤 내리고 해 질 녘엔 끝까지 걷어 빛의 양을 맞추는 손", "visual": "달리기 모임에선 맨 앞에서 속도를 끌다가 산책 모임에선 맨 뒤에서 풍경을 보며 걷는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "마감이 코앞인 날엔 '오늘은 이렇게 갑니다'라고 먼저 정하고, 여유 있는 주엔 팀원 의견을 끝까지 들어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -389,15 +394,18 @@
         ],
         "money": [
           { "text": "평소엔 가계부를 쓰며 아끼다가, 여행처럼 경험에 쓰는 돈 앞에서는 '이건 쓸 때'라며 시원하게 결제합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "투자 앱에 안전한 적금과 모험 종목을 반반 나눠 담아 두고, 한쪽이 흔들려도 크게 동요하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "투자 앱에 안전한 적금과 모험 종목을 반반 나눠 담아 두고, 한쪽이 흔들려도 크게 동요하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "큰 결제는 하루를 묵혀서 정하고, 작은 물건은 보자마자 장바구니에 담아 둡니다. 비싼 물건 앞에서만 '내일 다시 볼게'라는 말이 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "혼자 조용히 개념을 다지는 날과 스터디에서 설명하며 외우는 날을 번갈아 가며 시험을 준비합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "수업 중 모르는 게 생기면 그 자리에서 물을지 쉬는 시간에 따로 물을지, 교실 분위기를 보고 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
+          { "text": "수업 중 모르는 게 생기면 그 자리에서 물을지 쉬는 시간에 따로 물을지, 교실 분위기를 보고 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "시험 사흘 전에는 타이머를 맞춰 놓고 몰아붙이고, 전날 저녁에는 책을 덮고 동네를 한 바퀴 걷습니다. 몸이 보내는 신호를 보고 속도를 바꿉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "먼저 연락하는 날도, 상대 연락을 기다리는 날도 있어서 친구들이 '너 밀당 고수냐'고 놀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "관계가 흔들릴 때 붙잡을지 놓아줄지 몇 주째 못 정하고, 친구에게 같은 고민을 세 번째 털어놓습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "관계가 흔들릴 때 붙잡을지 놓아줄지 몇 주째 못 정하고, 친구에게 같은 고민을 세 번째 털어놓습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람 앞에서 말이 많아지는 날과 조용히 곁에만 앉아 있는 날이 번갈아 옵니다. 상대가 '오늘은 쉬는 날이네' 하고 알아봐 주면 마음이 놓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "배우자가 지쳐 있으면 주말 계획을 먼저 짜서 끌고 나가고, 배우자가 신나 있으면 한 발 물러서 따라갑니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -407,11 +415,13 @@
         ],
         "relationships": [
           { "text": "시끄러운 친구 무리와도, 말수 적은 친구와도 편하게 지내서 서로 모르는 두 무리를 잇는 다리가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구 둘이 싸우면 양쪽 말을 다 들어 주다가, 정작 '넌 누구 편이야?'라는 물음에 답을 못 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "친구 둘이 싸우면 양쪽 말을 다 들어 주다가, 정작 '넌 누구 편이야?'라는 물음에 답을 못 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "낯선 사람 앞에서는 먼저 인사를 건네고, 오래된 친구 앞에서는 말없이 나란히 앉아 있어도 편합니다. 어느 쪽에서도 어색해하지 않는 걸 친구들이 신기해합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "토요일엔 친구들과 밖에서 실컷 놀고, 일요일엔 휴대폰을 무음으로 두고 집에 있어야 한 주가 맞춰집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "저녁 메뉴 두 개를 놓고 배달 앱을 20분째 넘기다, 결국 처음 보는 가게에서 주문합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "저녁 메뉴 두 개를 놓고 배달 앱을 20분째 넘기다, 결국 처음 보는 가게에서 주문합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 책을 펴고 앉았다가 글자가 안 들어오는 날엔 운동복으로 갈아입고 동네 계단을 오르내립니다. 머리가 복잡하면 몸을 쓰는 쪽으로 기어를 바꿉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [

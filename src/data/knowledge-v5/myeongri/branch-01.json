@@ -241,6 +241,11 @@
         "metaphor": "동트기 전 산길 들머리에서 헤드랜턴을 켜는 첫 등산객",
         "visual": "새벽 네 시 반, 운동화 끈을 묶고 현관문을 가장 먼저 여는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "눈 덮인 겨울 능선 위에 첫 발자국을 찍어 뒤따르는 사람의 길을 내는 등산객", "visual": "눈 온 아침 아파트 단지 입구부터 빗자루로 길을 쓸며 앞장서 걸어 나가는 사람" },
+        { "metaphor": "장마 걷힌 여름 계곡 길에서 불어난 개울 돌을 먼저 밟아 보고 건널 곳을 정하는 선두", "visual": "여름 휴가 첫날 숙소 앞 낯선 골목으로 지도 앱도 켜지 않고 먼저 걸어 들어가 보는 사람" },
+        { "metaphor": "안개 낀 가을 새벽 둘레길 입구에서 표지판 없는 갈림길로 가장 먼저 들어서는 산책객", "visual": "가을 저녁 새로 생긴 동네 식당 앞에 문 열기 삼십 분 전부터 줄 맨 앞에 서 있는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "아무도 손대지 않은 신규 프로젝트 공지가 뜨면 점심 전에 '제가 해 볼게요'라고 손을 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -249,15 +254,18 @@
         ],
         "money": [
           { "text": "새로 생긴 서비스나 앱에 남보다 먼저 가입해 첫 달 혜택을 챙기고, 석 달 뒤엔 해지를 잊습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "목돈이 생기면 모아 두기보다 장비나 강의처럼 다음 걸음에 필요한 곳에 바로 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "목돈이 생기면 모아 두기보다 장비나 강의처럼 다음 걸음에 필요한 곳에 바로 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "새로 나온 제품의 후원 모집 알림이 뜨면 후기를 기다리지 않고 먼저 참여 버튼을 누르고, 도착 날짜를 달력에 적어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "새 학기 첫날 문제집을 세 권 사서 첫 단원은 하루 만에 끝내지만, 마지막 단원까지 간 책은 한 권입니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
-          { "text": "남이 짜 준 계획표보다 '이번 주에 이 단원 끝낸다'고 친구들 앞에서 선언할 때 더 잘합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "남이 짜 준 계획표보다 '이번 주에 이 단원 끝낸다'고 친구들 앞에서 선언할 때 더 잘합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "새 외국어를 배우기로 하면 첫날 앱 설치와 단어장 만들기까지 끝내고, 밤에 '1일 차 완료'라고 메모를 남깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "마음에 드는 사람이 생기면 두 번째 만남에 '다음 주 토요일에 등산 갈래요?'라고 먼저 날짜를 잡습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인과 다투면 그 자리에서 할 말을 다 하고, 한 시간 뒤엔 먼저 '밥 먹으러 가자'고 문자를 보냅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "연인과 다투면 그 자리에서 할 말을 다 하고, 한 시간 뒤엔 먼저 '밥 먹으러 가자'고 문자를 보냅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람이 가 보고 싶다던 낯선 동네를 다음 날 혼자 먼저 걸어 보고, '여기 괜찮아요, 같이 가요' 하며 길을 열어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "이사나 진로 변경 같은 큰일도 배우자에게 '해 보자'고 먼저 꺼내는 쪽이라, 집안의 방향은 대개 당신 말에서 시작됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -267,11 +275,13 @@
         ],
         "relationships": [
           { "text": "모임 날짜가 몇 주째 안 잡히면 단톡방에 투표를 올려 그날 밤 안에 장소까지 정해 버립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "후배가 망설이면 '일단 해 봐, 막히면 내가 볼게'라며 등을 밀어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "후배가 망설이면 '일단 해 봐, 막히면 내가 볼게'라며 등을 밀어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 새 취미 이야기를 꺼내면 '그럼 이번 주말에 체험 클래스부터 같이 가 보자' 하고 그 자리에서 예약 링크를 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 날에도 가만히 못 있고, 새벽 산책이나 자전거로 동네 한 바퀴를 돌아야 하루가 시작됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "새로운 계획을 떠올리면 밤에도 노트를 펴고 목록부터 적느라 잠드는 시간이 늦어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "새로운 계획을 떠올리면 밤에도 노트를 펴고 목록부터 적느라 잠드는 시간이 늦어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 있는 휴일 아침엔 처음 타는 버스 번호를 골라 종점까지 가 보고, 내려서 낯선 동네를 한 바퀴 걸어 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -356,6 +366,11 @@
         "metaphor": "담장 철망을 타고 하룻밤 새 한 뼘 올라간 덩굴손",
         "visual": "아침 여섯 시 베란다에서 화분 잎을 한 장씩 닦아 주는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "비 그친 오후 낡은 벽돌담 틈에서 새 순을 내밀어 한 뼘씩 벽을 덮어 가는 담쟁이", "visual": "장마 끝난 오후 버스 정류장에서 젖은 의자를 손수건으로 닦아 옆 사람 앉을 자리부터 만드는 사람" },
+        { "metaphor": "한겨울 창가 화분 받침대를 감아 올라 해 드는 쪽으로 몸을 틀어 가는 덩굴", "visual": "겨울 저녁 지하철 문 앞에서 짐 든 사람이 지나가도록 몸을 비스듬히 틀어 틈을 열어 주는 사람" },
+        { "metaphor": "한여름 새벽 이슬 맺힌 오이 지지대를 한 칸씩 휘감으며 올라가는 덩굴손", "visual": "여름 저녁 마트 계산 줄에서 앞사람이 카드를 못 찾아 당황하면 '천천히 하세요' 하고 한 걸음 물러서 주는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "팀장이 굳은 얼굴로 들어오면 결재 서류를 오후로 미루고, 웃음이 돌아온 타이밍에 슬쩍 내밉니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -364,15 +379,18 @@
         ],
         "money": [
           { "text": "예쁜 컵이나 식물을 보면 지나치지 못해 장바구니에 담지만, 결제 전 하룻밤 두고 절반은 뺍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구들과 모은 회비를 맡으면 엑셀에 색깔까지 구분해 정리하고, 남은 돈은 1원 단위로 돌려줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "친구들과 모은 회비를 맡으면 엑셀에 색깔까지 구분해 정리하고, 남은 돈은 1원 단위로 돌려줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구 생일 선물을 고를 때 가격보다 친구가 스치듯 말한 취향을 떠올려, 작지만 딱 맞는 걸 찾아 포장까지 손수 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "딱딱한 교과서보다 예쁜 필기 노트를 만들며 외울 때 머리에 잘 들어오고, 그 노트를 친구들이 빌려 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "선생님의 말투가 차가우면 그 과목 성적이 같이 내려가고, 칭찬 한마디에 다시 올라옵니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
+          { "text": "선생님의 말투가 차가우면 그 과목 성적이 같이 내려가고, 칭찬 한마디에 다시 올라옵니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "시끄러운 곳에서는 글자가 흩어져 보여서, 아침 햇빛이 비껴드는 창가 자리를 골라 어려운 과목부터 조용히 펼치는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "좋아하는 사람 앞에서 직접 말하기보다 그 사람이 좋아하는 노래를 플레이리스트에 슬쩍 넣어 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인의 답장이 평소보다 짧아지면 바로 알아채고 '나 뭐 잘못했어?'를 속으로 열 번 묻습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "연인의 답장이 평소보다 짧아지면 바로 알아채고 '나 뭐 잘못했어?'를 속으로 열 번 묻습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람이 우산이 없다고 하면 말없이 편의점에서 작은 우산을 사 뒀다가, 헤어질 때 '남는 거야' 하고 건넵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집 안 분위기가 무거우면 꽃 한 다발을 사 와 식탁에 꽂아 두는 것으로 화해를 시작합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -382,11 +400,13 @@
         ],
         "relationships": [
           { "text": "모임에서 누가 겉도는지 가장 먼저 보고, 그 사람 잔이 비면 조용히 채워 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부탁을 거절할 때도 '이번엔 어렵고 다음엔 꼭'이라고 부드럽게 말해, 상대는 거절당한 줄 늦게 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "부탁을 거절할 때도 '이번엔 어렵고 다음엔 꼭'이라고 부드럽게 말해, 상대는 거절당한 줄 늦게 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "단체 사진을 찍을 때 가장자리에 서 있는 사람이 보이면 '여기로 와서 서요' 하고 가운데로 슬쩍 불러 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 아침 창문을 열고 화분에 물을 준 뒤 새잎이 났는지 한참 들여다봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "낮에 누가 던진 날 선 말이 하루 종일 마음에 남아, 밤에 그 대화를 머릿속에서 다시 써 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "낮에 누가 던진 날 선 말이 하루 종일 마음에 남아, 밤에 그 대화를 머릿속에서 다시 써 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 보는 영화에서 주인공의 표정이 흔들리는 장면마다 숨을 죽이고, 끝난 뒤에도 한참 엔딩 크레딧을 보며 앉아 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -470,6 +490,11 @@
         "metaphor": "봄비 머금은 못자리, 겉은 진흙인데 속에 물과 싹이 같이 들어 있는",
         "visual": "아침 출근 지하철에서 노트북·도시락·우산을 한 가방에 다 챙겨 든 사람"
       },
+      "imageVariants": [
+        { "metaphor": "새벽 안개 낀 늦봄 육묘장에서 모판마다 물을 머금고 모종을 한꺼번에 올려 보내는 젖은 흙", "visual": "토요일 아침 냉장고 앞에서 반찬통을 날짜별로 줄 세우며 이번 주 도시락 순서를 짜는 사람" },
+        { "metaphor": "보슬비 오는 오후 텃밭 이랑에 물이 고여 상추와 쑥갓 싹이 한 줄씩 깨어나는 젖은 땅", "visual": "비 오는 오후 현관에서 우산, 장바구니, 택배 상자를 팔에 나눠 걸고도 문을 한 번에 여는 사람" },
+        { "metaphor": "모내기 철 저녁 하늘빛을 담아 놓은 논물 속에서 개구리 소리까지 품은 못자리", "visual": "늦봄 저녁 캠핑장에서 텐트 치기, 불 피우기, 물 길어 오기 순서를 머릿속으로 짜 두고 차례로 해내는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "프로젝트 세 개를 동시에 맡아도 표정은 그대로이고, 각각의 다음 단계를 머릿속에 따로 넣어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -478,15 +503,18 @@
         ],
         "money": [
           { "text": "통장 하나에 넣지 않고 예금·펀드·청약을 나눠 두며, 각 통장의 만기일을 휴대폰 달력에 적어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "큰 지출은 몇 달 동안 장바구니에 담아 둔 채 가격을 지켜보다가, 가장 쌀 때 한 번에 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "큰 지출은 몇 달 동안 장바구니에 담아 둔 채 가격을 지켜보다가, 가장 쌀 때 한 번에 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "가족 모임 장을 보러 가기 전 냉장고 안을 사진으로 찍어 두고, 있는 건 빼고 모자란 것만 담아 영수증이 늘 예상 금액 안에 들어옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "과목 다섯 개를 한꺼번에 펼쳐 놓고 번갈아 보는 게 편하고, 한 과목만 오래 붙들면 오히려 졸립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "문제 하나를 풀 때 풀이를 세 가지로 적어 두고, 시험장에서는 그중 가장 짧은 길을 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "문제 하나를 풀 때 풀이를 세 가지로 적어 두고, 시험장에서는 그중 가장 짧은 길을 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "강의 필기, 기출문제, 인터넷에서 찾은 요약을 한 문서에 모아 목차를 붙이고, 마지막 복습은 그 파일 하나로 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "좋아하는 마음을 몇 달씩 티 내지 않다가, 상대가 다른 사람과 가까워 보이는 순간 갑자기 움직입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "데이트 코스를 짤 때 비 오는 날 버전과 맑은 날 버전을 둘 다 준비해 둡니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "데이트 코스를 짤 때 비 오는 날 버전과 맑은 날 버전을 둘 다 준비해 둡니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "마음에 둔 사람이 고민을 말하면 그 주제에 맞는 글과 링크를 골라 한 번에 정리해 보내고, '시간 날 때 봐'라고 가볍게 덧붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집안 대소사를 혼자 다 기억하고 있어서, 양가 생일과 제사 날짜를 물으면 달력 없이 바로 답합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -496,11 +524,13 @@
         ],
         "relationships": [
           { "text": "서로 다른 무리를 이어 주는 사람이라, 당신 생일엔 처음 보는 사람끼리 한 테이블에 앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "누가 비밀을 털어놓으면 끝까지 지키지만, 당신 자신의 고민은 친한 친구도 반년 뒤에야 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "누가 비밀을 털어놓으면 끝까지 지키지만, 당신 자신의 고민은 친한 친구도 반년 뒤에야 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구 둘이 서먹해지면 각자에게 따로 안부를 묻다가, 자연스럽게 셋이 앉는 자리를 만들어 어색한 공기를 풀어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 저녁, 휴대폰 메모장에 할 일·갖고 싶은 것·언젠가 할 일 목록을 따로 만들어 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "약속 없는 저녁, 휴대폰 메모에 '이사·진로·공부' 세 폴더를 열어 두고 각각 다음 달 할 일을 한 줄씩 옮겨 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "약속 없는 저녁, 휴대폰 메모에 '이사·진로·공부' 세 폴더를 열어 두고 각각 다음 달 할 일을 한 줄씩 옮겨 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 있는 저녁 책상에 책, 화분, 메모지를 한 줄로 늘어놓고, 책을 읽다 화분 흙을 만지고 다시 메모하며 저녁을 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -585,6 +615,11 @@
         "metaphor": "불 붙인 지 한 시간 된 대장간 화로, 겉불은 잔잔해도 안에서 쇠가 붉게 익는",
         "visual": "오전 열 시 카페 창가, 아이스커피 얼음이 녹는 동안 기획서 세 개를 번갈아 여는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "눈 오는 저녁 숯가마 속에서 겉은 검어도 한가운데는 주황빛으로 익어 가는 숯불 화로", "visual": "눈 오는 저녁 버스 맨 뒷자리에서 말없이 이어폰을 낀 채 다음 주 계획을 메모장에 촘촘히 적는 사람" },
+        { "metaphor": "한여름 새벽 장터 대장간에서 소리 없이 쇠막대 끝을 서서히 붉게 달구는 작은 화로", "visual": "여름 낮 공원 장기판 앞에서 말없이 세 수 앞을 읽다가 말을 딱 한 번 옮기는 사람" },
+        { "metaphor": "가을 해 질 녘 한옥 아궁이에서 재 아래로 숯을 오래 붉게 품고 있는 불", "visual": "가을 저녁 낚시터 의자에 앉아 한 시간 동안 찌만 보다가 입질이 오는 순간 정확히 챔질하는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "회의 내내 메모만 하다가 마지막 5분에 '그럼 이 숫자는 어디서 나온 거죠?' 하고 핵심 하나를 찌릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -593,15 +628,18 @@
         ],
         "money": [
           { "text": "투자할 곳이 보이면 한 달 동안 조용히 공부한 뒤, 정한 금액만큼만 정한 날에 들어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "할부 조건과 포인트 적립률을 계산기로 비교해 가장 남는 카드 하나만 지갑에 넣고 다닙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "할부 조건과 포인트 적립률을 계산기로 비교해 가장 남는 카드 하나만 지갑에 넣고 다닙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "물건을 사기 전에 별점이 낮은 후기부터 골라 읽고, 그 단점을 참을 수 있는지 따져 본 뒤에야 결제 버튼을 누릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "시험 범위가 나오면 출제자가 낼 만한 문제를 먼저 추려 그 부분만 깊게 파고듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "온라인 강의를 1.5배속으로 틀어 놓고, 중요한 대목에서만 멈춰 손으로 받아 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "온라인 강의를 1.5배속으로 틀어 놓고, 중요한 대목에서만 멈춰 손으로 받아 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "어려운 단원을 만나면 새벽에 문제 하나를 붙잡고 풀이 구조를 그림으로 그려 보며, 이해가 끝나야 다음 쪽으로 넘어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "관심 있는 사람을 몇 주 동안 지켜보다가, 상대가 혼자 남은 타이밍에 정확히 다가가 말을 겁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인의 휴대폰 알림이 늘면 묻지는 않지만, 그날 대화의 앞뒤를 속으로 맞춰 봅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "연인의 휴대폰 알림이 늘면 묻지는 않지만, 그날 대화의 앞뒤를 속으로 맞춰 봅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "마음이 있어도 티를 내지 않고, 상대가 즐겨 듣는 노래를 조용히 외워 뒀다가 차 안에서 그 노래가 나오는 순간 한마디를 건넵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집 계약이나 대출처럼 큰일은 배우자에게 맡기지 않고, 서류를 직접 읽고 은행 세 곳을 비교합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -611,11 +649,13 @@
         ],
         "relationships": [
           { "text": "새로 만난 사람이 말을 많이 하면 웃으며 듣다가, 집에 와서 그 사람 말 중 앞뒤 안 맞는 부분을 떠올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친한 친구가 수상한 투자 제안을 받았다고 하면 그날 밤 관련 기사를 다섯 개 찾아 보내 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "친한 친구가 수상한 투자 제안을 받았다고 하면 그날 밤 관련 기사를 다섯 개 찾아 보내 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 새 사람을 소개해 주면 웃으며 인사만 나누고, 헤어진 뒤 '그 사람, 말투가 조금 맞춰 주는 느낌이던데'라고 짧게 감상을 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 오후에도 머리는 쉬지 않아, 다음 이사나 여행 계획을 엑셀 표로 만들어 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "주말에 갑자기 짐을 싸서 혼자 근교 도시로 떠났다가, 일요일 밤엔 아무 일 없던 듯 돌아옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "주말에 갑자기 짐을 싸서 혼자 근교 도시로 떠났다가, 일요일 밤엔 아무 일 없던 듯 돌아옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "불을 끄고 누운 밤에도 머릿속으로 내일 일정의 순서와 변수를 하나씩 돌려 보고, 정리가 끝나야 잠이 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -700,6 +740,11 @@
         "metaphor": "한여름 대낮 무대 한가운데로 쏟아지는 핀 조명",
         "visual": "노래방에서 첫 곡 예약 버튼을 누르고 마이크부터 잡는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "겨울밤 야외 공연장에서 첫 곡이 시작되자 객석 끝줄까지 한꺼번에 환해지는 무대 조명", "visual": "초겨울 저녁 거리 버스킹 앞에서 맨 앞줄로 나가 손뼉 박자를 먼저 치기 시작하는 사람" },
+        { "metaphor": "해 지기 직전 시합 중인 운동장 한가운데로 한꺼번에 켜지는 야간 경기장 조명", "visual": "가을 아침 공원 체조 모임에서 음악부터 틀고 맨 앞에 서서 구령을 붙이는 사람" },
+        { "metaphor": "장마철 어두운 오후 극장 로비에서 스위치를 올리자 단번에 환해지는 샹들리에", "visual": "비 오는 토요일 약속 장소에 제일 먼저 도착해 우산을 흔들며 친구 이름을 크게 부르는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "발표 순서를 정할 때 '제가 먼저 할게요'라고 말하고, 준비한 대본보다 즉석 농담으로 분위기를 띄웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -708,15 +753,18 @@
         ],
         "money": [
           { "text": "기분 좋은 날 친구들 밥값을 다 내고, 다음 날 아침 카드 문자를 보고서야 '어제 좀 셌네' 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "갖고 싶은 게 생기면 비교보다 빨리 사는 쪽이고, 택배가 오는 날까지 하루에 세 번 배송 조회를 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "갖고 싶은 게 생기면 비교보다 빨리 사는 쪽이고, 택배가 오는 날까지 하루에 세 번 배송 조회를 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "동네 벼룩시장에서 안 쓰는 물건을 팔 때 값을 깎아 달라는 말에 '그럼 하나 더 드릴게요' 하고 덤을 얹어, 번 돈보다 웃음이 더 남는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "두 시간 몰입한 뒤 30분 쉬어야 하는 타입이라, 하루 종일 앉아 있으면 오히려 머리가 하얘집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구에게 설명해 주면서 외우는 게 가장 잘 되고, 스터디에서 늘 칠판 앞에 서 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "친구에게 설명해 주면서 외우는 게 가장 잘 되고, 스터디에서 늘 칠판 앞에 서 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "새로 배운 내용을 샤워하면서도 혼잣말로 강의하듯 읊고, 거울 속 자신에게 '자, 여기서 중요한 건요' 하고 발표하는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "좋아하면 얼굴에 다 쓰여 있어서, 본인이 고백하기 전에 주변 사람들이 먼저 '너 쟤 좋아하지?'라고 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인과 싸우면 목소리가 커졌다가 10분 만에 식어서 먼저 '배고프지? 떡볶이 먹자'고 합니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "연인과 싸우면 목소리가 커졌다가 10분 만에 식어서 먼저 '배고프지? 떡볶이 먹자'고 합니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람과 놀이공원에 가면 줄 서는 동안 끝말잇기를 시작해 심심할 틈을 안 주고, 상대가 웃을 때까지 장난을 이어 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집들이나 가족 모임을 앞장서 열고, 손님이 오는 날엔 아침부터 음악을 틀어 놓고 요리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -726,11 +774,13 @@
         ],
         "relationships": [
           { "text": "처음 가는 모임에서도 10분이면 옆 사람 이름과 고향을 다 알고 있고, 2차 장소도 당신이 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구가 좋은 소식을 전하면 박수를 치며 크게 기뻐해 주고, 그 자리에서 축하 케이크를 주문합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "친구가 좋은 소식을 전하면 박수를 치며 크게 기뻐해 주고, 그 자리에서 축하 케이크를 주문합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "엘리베이터에서 처음 보는 이웃을 만나도 '오늘 진짜 덥죠?' 하고 먼저 말을 걸어, 몇 달 뒤엔 층마다 인사하는 사이가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 시간이 길어지면 금방 심심해져서, 한 시간 안에 누군가에게 영상 통화를 겁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "기분이 처지는 날에도 땀이 날 만큼 춤을 추거나 뛰고 나면 언제 그랬냐는 듯 다시 밝아집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "기분이 처지는 날에도 땀이 날 만큼 춤을 추거나 뛰고 나면 언제 그랬냐는 듯 다시 밝아집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 밥을 먹는 날에도 식당 TV에서 나오는 노래에 어깨를 흔들고, 나갈 때 '잘 먹었어요!' 하고 크게 인사하는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -815,6 +865,11 @@
         "metaphor": "한낮 볕에 달궈진 밭두렁 흙, 해가 기울어도 맨발로 밟으면 아직 따뜻한",
         "visual": "오후 두 시 탕비실에서 남은 떡을 랩으로 싸 동료 책상마다 하나씩 놓는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "추수 끝난 가을 논두렁에서 해가 져도 짚단 아래 온기를 품고 있는 흙", "visual": "겨울 저녁 버스 정류장에서 주머니 속 핫팩을 꺼내 옆 사람 손에 슬쩍 쥐여 주는 사람" },
+        { "metaphor": "이른 봄 볕이 먼저 닿는 비탈 밭두렁에서 얼었던 흙이 풀려 첫 냉이를 올려 보내는 땅", "visual": "봄 소풍 돗자리에서 도시락 뚜껑을 열어 반찬을 옆자리마다 한 점씩 덜어 주는 사람" },
+        { "metaphor": "장마 걷힌 한여름 오후 햇볕을 가득 받아 돌담과 함께 훈훈하게 달궈진 텃밭 둑", "visual": "여름 한낮 병원 대기실에서 옆자리 어르신께 부채질을 해 드리고 물을 따라 드리는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "신입이 들어오면 첫 주 점심을 꼭 같이 먹고, 메신저 사용법부터 복사기 고치는 법까지 알려 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -823,15 +878,18 @@
         ],
         "money": [
           { "text": "큰돈보다 꾸준히 모으는 쪽이지만, 친구 경조사비만큼은 아끼지 않아 봉투 금액을 고민하다 한 단계 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "손님이 오면 냉장고를 다 털어 대접하고, 손님이 가면 장 본 영수증을 보며 잠깐 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "손님이 오면 냉장고를 다 털어 대접하고, 손님이 가면 장 본 영수증을 보며 잠깐 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 급하다고 하면 이체 버튼 앞에서 한참 망설이다 결국 보내고, 언제 돌려받을지는 묻지 못하는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "새 내용을 빨리 배우기보다 배운 것을 여러 번 되짚는 쪽이라, 시험 전엔 노트를 손으로 다시 옮겨 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "스터디에서 간식과 자료를 챙겨 오는 사람이고, 진도가 늦은 친구를 기다려 주느라 자기 공부가 밀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "스터디에서 간식과 자료를 챙겨 오는 사람이고, 진도가 늦은 친구를 기다려 주느라 자기 공부가 밀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "같은 문제집을 세 번째 돌릴 때 매번 틀리는 문제 옆에 '여기서 또 헷갈림'이라고 작게 적고, 시험 직전에 그 쪽만 넘겨 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "연인이 감기에 걸리면 가는 길에 죽과 귤 한 봉지를 사 들고 문 앞까지 가는 사람입니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
-          { "text": "헤어진 뒤에도 그 사람이 남긴 머그컵을 쉽게 못 버려 찬장 안쪽에 몇 년씩 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "헤어진 뒤에도 그 사람이 남긴 머그컵을 쉽게 못 버려 찬장 안쪽에 몇 년씩 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "시장 분식집 앞에서 좋아하는 사람이 지나가듯 말한 '매운 건 못 먹어'를 떠올리고, 덜 맵게 해 달라고 먼저 부탁합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "명절이면 양가 어른 선물을 미리 챙기고, 어른들 입맛까지 기억해 상차림을 짭니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -841,11 +899,13 @@
         ],
         "relationships": [
           { "text": "친구가 이사하면 박스 테이프와 김밥을 들고 아침 일찍 나타나 마지막 상자까지 옮겨 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부탁을 거절하지 못해 주말 약속이 남의 일로 다 차고, 일요일 밤에야 자기 빨래를 돌립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "부탁을 거절하지 못해 주말 약속이 남의 일로 다 차고, 일요일 밤에야 자기 빨래를 돌립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "모임이 끝나면 마지막까지 남은 친구가 택시를 탈 때까지 길가에서 같이 기다려 주고, '도착했어'라는 연락이 와야 마음을 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 오후, 오래된 사진첩이나 옛 메시지를 다시 보며 그때 사람들을 한 명씩 떠올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "하루를 끝내고 누워서도 '그 말 서운했을까' 하고 낮에 만난 사람 얼굴을 하나씩 되짚습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "하루를 끝내고 누워서도 '그 말 서운했을까' 하고 낮에 만난 사람 얼굴을 하나씩 되짚습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 걷는 저녁 골목에서 길고양이 급식소를 지나다 사료 그릇이 비었으면 가방 속 간식을 한 줌 덜어 놓고 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -930,6 +990,11 @@
         "metaphor": "오후 네 시 공구함을 열면 제자리에 꽂혀 있는 렌치 세트",
         "visual": "퇴근 한 시간 전, 막힌 엑셀 수식을 3분 만에 고쳐 놓고 '끝' 하고 일어나는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "새벽 자전거 수리대 위에서 풀린 너트 하나를 손맛만으로 찾아 정확히 조이는 렌치", "visual": "아침 강변 자전거 길에서 체인이 빠진 사람을 보면 말없이 끼워 주고 '됐어요' 하고 출발하는 사람" },
+        { "metaphor": "한겨울 정비소 라디오 소리 속에서 규격별로 나란히 걸려 있는 소켓 렌치 세트", "visual": "겨울 저녁 거실 바닥에서 설명서 없이 조립식 책장 나사를 순서대로 박아 십 분 만에 세우는 사람" },
+        { "metaphor": "장마철 오후 작업대 벽면에 윤곽선이 그려진 자리로 정확히 돌아와 꽂히는 몽키 렌치", "visual": "여름 휴가지 펜션 싱크대 밑에서 물이 새는 곳을 3분 만에 찾아 패킹을 갈아 끼우는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "새 프로그램이 들어오면 설명서를 읽기 전에 이것저것 눌러 보고, 다음 날 팀원들에게 단축키를 알려 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -938,15 +1003,18 @@
         ],
         "money": [
           { "text": "가격 비교 앱 세 개를 깔아 두고, 같은 물건을 가장 싸게 파는 곳을 30초 안에 찾아냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "중고 거래처럼 빠르게 굴러가는 돈에 밝아서, 안 쓰는 물건을 사진 찍어 그날 바로 팝니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "중고 거래처럼 빠르게 굴러가는 돈에 밝아서, 안 쓰는 물건을 사진 찍어 그날 바로 팝니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "휴대폰 요금제가 맞는지 데이터 사용량을 한 번 보고, 쓰지 않는 구독 서비스는 그 자리에서 해지 버튼까지 누릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "이론보다 실습이 빠른 사람이라, 매뉴얼 첫 장을 읽다 덮고 직접 해 보면서 배웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "시험 공부도 효율이 먼저라, 기출 빈도표를 만들어 많이 나온 단원부터 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "시험 공부도 효율이 먼저라, 기출 빈도표를 만들어 많이 나온 단원부터 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "공부하다 막히면 오래 붙잡지 않고 바로 영상 강의에서 그 부분만 찾아 돌려 보고, 풀리면 곧장 문제로 돌아옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "좋아하는 상대가 애매하게 굴면 사흘 안에 '우리 무슨 사이야?'라고 정리를 요구합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인이 고민을 말하면 위로보다 해결책 세 개를 먼저 내밀어, '그냥 들어 달라고'라는 말을 듣습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "연인이 고민을 말하면 위로보다 해결책 세 개를 먼저 내밀어, '그냥 들어 달라고'라는 말을 듣습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람이 이삿짐을 나른다고 하면 장갑부터 챙겨 가 박스를 척척 옮기고, 끝나면 '다음 주에 영화 볼래요?' 하고 약속까지 잡습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "고장 난 전등, 막힌 하수구, 삐걱대는 문짝은 배우자가 말하기도 전에 공구함을 들고 고쳐 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -956,11 +1024,13 @@
         ],
         "relationships": [
           { "text": "친구들이 고장 난 노트북을 들고 당신을 찾아오고, 고쳐 준 뒤엔 '다음엔 이렇게 해' 하고 한 줄 팁을 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "단톡방 논쟁을 한 문장으로 끝내지만, 그 문장에 서운해하는 친구가 하나쯤 생깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "단톡방 논쟁을 한 문장으로 끝내지만, 그 문장에 서운해하는 친구가 하나쯤 생깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 고민을 길게 늘어놓으면 중간에 '지금 필요한 게 위로야, 방법이야?' 하고 물어, 딱 맞는 쪽으로 도와줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 휴일엔 자전거 체인을 닦거나 가구를 조립하며 손을 움직여야 머리가 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "갑자기 떠오른 여행지로 그날 오후 바로 기차표를 끊고, 가방엔 충전기와 칫솔만 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "갑자기 떠오른 여행지로 그날 오후 바로 기차표를 끊고, 가방엔 충전기와 칫솔만 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 가는 헬스장에서는 기구 순서를 미리 정해 두고 쉬는 시간 없이 한 바퀴를 돌아 사십 분 만에 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
@@ -1045,6 +1115,11 @@
         "metaphor": "추수 끝난 저녁, 키질로 쭉정이를 날리고 알곡만 남긴 체",
         "visual": "저녁 여섯 시 퇴근 전, 책상 위 펜을 길이 순으로 세워 두고 나가는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "새벽 방앗간 선반 위에서 고운 체로 쌀가루를 걸러 덩어리 하나 없이 내려 주는 체", "visual": "일요일 아침 휴대폰 사진첩에서 흐린 사진만 골라 지우고 잘 나온 한 장만 남기는 사람" },
+        { "metaphor": "겨울 마당 멍석 위에서 털어 낸 깨를 고운 체에 흔들어 돌 한 알까지 가려내는 체", "visual": "겨울 저녁 마트 과일 코너에서 사과를 한 알씩 돌려 보며 멍 없는 것만 담는 사람" },
+        { "metaphor": "장마 끝 여름 햇살 아래 곡식 체를 흔들어 쭉정이는 날리고 낱알만 소복이 남기는 체질", "visual": "여름 낮 서점 매대 앞에서 책 열 권의 첫 문장을 훑고 마음에 드는 한 권만 사 가는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "동료가 넘긴 보고서를 받으면 내용보다 먼저 글꼴 크기와 줄 간격이 다른 곳을 찾아 표시합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -1053,15 +1128,18 @@
         ],
         "money": [
           { "text": "물건을 살 때 싼 것 세 개보다 좋은 것 하나를 고르고, 산 물건은 상자까지 보관합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "통장 잔고를 엑셀로 정리하는데, 서식이 틀어지면 숫자보다 표부터 다시 맞춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "통장 잔고를 엑셀로 정리하는데, 서식이 틀어지면 숫자보다 표부터 다시 맞춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "문구점에서 볼펜 한 자루를 사려고 열 개를 모두 써 보고, 글씨가 가장 매끄러운 하나만 골라 몇 년째 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "필기 노트에 색깔 펜 세 가지 규칙이 있어서, 규칙이 하나라도 어긋나면 그 페이지를 새로 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "100점이 아니면 틀린 한 문제를 하루 종일 떠올리고, 같은 유형을 열 개 더 찾아 풉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "100점이 아니면 틀린 한 문제를 하루 종일 떠올리고, 같은 유형을 열 개 더 찾아 풉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "외국어 단어를 외울 땐 비슷한 뜻끼리 짝지어 표로 묶고, 뜻이 미묘하게 다른 단어에는 예문을 하나씩 붙여 구분합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "첫 만남에서 상대의 손톱, 신발 굽, 맞춤법을 3초 안에 보고 마음속 점수를 매깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "좋아하는 사람에게 줄 선물을 포장지 색과 리본 모양까지 고르느라 주말 하루를 다 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "좋아하는 사람에게 줄 선물을 포장지 색과 리본 모양까지 고르느라 주말 하루를 다 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람에게 보낼 답장을 쓰면 말투와 마침표 하나까지 다듬어 세 번 고쳐 쓰고, 그다음에야 전송 버튼을 누릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "배우자가 빨래를 개면 말없이 다시 개는데, 그 장면을 들킨 날 작은 다툼이 납니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -1071,11 +1149,13 @@
         ],
         "relationships": [
           { "text": "친구가 새 머리를 하고 오면 '예쁘다' 뒤에 '근데 앞머리는 조금 길어도 됐겠다'를 꼭 붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "약속 시간에 늘 5분 먼저 도착하고, 10분 넘게 늦는 친구와는 다음 약속을 조용히 줄입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "약속 시간에 늘 5분 먼저 도착하고, 10분 넘게 늦는 친구와는 다음 약속을 조용히 줄입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 쓴 편지 초안을 보여 주면 오탈자를 모두 잡고, 어색한 문장 옆에 '이렇게 바꾸면 읽기 편해' 하고 대안을 적어 돌려줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 저녁엔 옷장을 색깔별로 다시 정리하고 나서야 비로소 마음이 가라앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "잠들기 전 오늘 한 말 중 어색했던 한 문장을 떠올리고 '다음엔 이렇게 말해야지' 하고 고쳐 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "잠들기 전 오늘 한 말 중 어색했던 한 문장을 떠올리고 '다음엔 이렇게 말해야지' 하고 고쳐 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 있는 밤 음악 목록에서 분위기가 안 맞는 곡을 하나씩 빼며 순서를 다시 짜고, 마지막 곡을 정하고서야 불을 끕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [

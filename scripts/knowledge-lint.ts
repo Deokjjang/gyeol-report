@@ -25,6 +25,10 @@ import {
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
 import { OLD_NEGATIVE, isPastAssertion } from "../src/lib/writer/safety/patterns";
+import FEATURE_FREQUENCY from "../src/lib/brief/data/feature-frequency.json";
+
+/** 감지 빈도 상위 30%(P3.5 A1): 이미지 변형 3개·영역 장면 3개 이상. tools/p35/enrich.mjs topFeatureIds와 같은 규칙. */
+const TOP_FEATURES = new Set(Object.entries(FEATURE_FREQUENCY as Record<string, number>).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, Math.ceil(Object.keys(FEATURE_FREQUENCY).length * 0.3)).map(([id]) => id));
 
 const ROOT = resolve(import.meta.dirname, "..");
 const DATA = join(ROOT, "src", "data", "knowledge-v5");
@@ -195,6 +199,11 @@ function lintFeatureFile(path: string) {
     checkProse(file, `${w}.name`, f.name, { allowHan: true, dedupe: false });
     checkProse(file, `${w}.oneLiner`, f.oneLiner);
     checkImage(file, `${w}.image`, f.image);
+    f.imageVariants?.forEach((im, i) => checkImage(file, `${w}.imageVariants[${i}]`, im));
+    if (TOP_FEATURES.has(f.id)) {
+      if ((f.imageVariants?.length ?? 0) < 3) fail(file, w, "감지 빈도 상위 30%인데 이미지 변형 3개 미만(P3.5 A1)", String(f.imageVariants?.length ?? 0));
+      for (const d of DOMAINS) if (f.scenes[d].length < 3) fail(file, `${w}.scenes.${d}`, "감지 빈도 상위 30%인데 영역 장면 3개 미만(P3.5 A1)", String(f.scenes[d].length));
+    }
     for (const d of DOMAINS) f.scenes[d].forEach((s, i) => checkProse(file, `${w}.scenes.${d}[${i}]`, s.text, { scene: true, childTagged: s.requires.children !== "any" }));
     checkSceneFacts(file, `${w}.scenes`, f.scenes);
     f.strengths.forEach((s, i) => checkProse(file, `${w}.strengths[${i}]`, s));

@@ -12,6 +12,11 @@
         "metaphor": "길을 잃은 밤 멀리서 등불을 들고 마중 나온 어른",
         "visual": "면접장 복도에서 우연히 마주친 선배가 '이쪽이야' 하고 문을 열어 주는 장면"
       },
+      "imageVariants": [
+        { "metaphor": "폭우로 길이 끊긴 여름 시골에서 경운기를 몰고 와 막힌 차를 끌어내 주는 이웃 어른", "visual": "낯선 도시 지하철 계단에서 짐에 쩔쩔맬 때 할머니가 '이리 줘' 하고 손잡이 한쪽을 같이 드는 장면" },
+        { "metaphor": "눈 오는 밤 막차를 놓친 역 앞에서 우산을 기울여 택시 승강장까지 같이 걸어 주는 어른", "visual": "수도꼭지가 터져 발을 구르는데 옆집 아저씨가 공구함을 들고 건너오는 현관" },
+        { "metaphor": "가을 산에서 길을 헤매는 사람에게 갈림길까지 되돌아와 방향을 짚어 주는 어르신 등산객", "visual": "병원 접수 창구에서 서류가 모자라 헤매는데 뒤에 선 어르신이 '이쪽이야' 하고 알려 주는 대기실" }
+      ],
       "scenes": {
         "work": [
           { "text": "혼자 풀리지 않던 일이 상사나 선배 한마디로 풀리는 경험이 반복됩니다. 위기 때 윗사람이 당신 편에 섭니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -20,15 +25,18 @@
         ],
         "money": [
           { "text": "큰 손해를 볼 뻔한 순간, 누군가의 조언 한 줄로 피합니다. 돈이 쏟아지기보다 새는 걸 막아 주는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "급전이 필요할 때 손 벌릴 사람이 있습니다. 그리고 당신도 남의 급한 사정에 지갑을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "급전이 필요할 때 손 벌릴 사람이 있습니다. 그리고 당신도 남의 급한 사정에 지갑을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "아는 어른이 '그 요금제 너무 비싸게 쓰고 있네, 이렇게 바꿔 봐' 하고 알려 줍니다. 전화 한 통으로 매달 나가던 돈이 줄어드는 식으로 도움이 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "좋은 선생님을 만납니다. 학원을 옮기거나 반이 바뀔 때 유난히 잘 가르치는 사람을 만나는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
-          { "text": "시험 직전 친구가 건넨 요약 노트에서 그 문제가 나오는 식의 일이 몇 번 있었습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "시험 직전 친구가 건넨 요약 노트에서 그 문제가 나오는 식의 일이 몇 번 있었습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "공부하다 막힌 부분을 독서실 휴게실에서 혼잣말처럼 중얼거리면, 옆에 있던 사람이 '그거 이렇게 푸는 거야' 하며 종이에 적어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "사람을 소개받아 만나는 인연이 많습니다. 아는 사람의 아는 사람이 연인이 됩니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
-          { "text": "상대의 부모나 어른들이 당신을 먼저 좋아합니다. 어른 복이 연애를 받쳐 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "상대의 부모나 어른들이 당신을 먼저 좋아합니다. 어른 복이 연애를 받쳐 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람이 생겨 어떻게 다가갈지 망설이면 눈치 빠른 이모나 형이 '밥 한번 먹자고 해, 쉬워' 하고 등을 밀어 줍니다. 그 한마디 덕에 첫 약속이 편하게 잡힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "부부 사이에 위기가 와도 양가 어른이나 오랜 지인이 중간에서 다리를 놓아 줍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -37,11 +45,13 @@
         ],
         "relationships": [
           { "text": "당신 주변에는 늘 한두 사람 '어른'이 있습니다. 나이와 상관없이 당신을 챙기는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "힘든 날 전화 한 통으로 달려와 주는 친구가 있고, 당신도 그런 친구가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "힘든 날 전화 한 통으로 달려와 주는 친구가 있고, 당신도 그런 친구가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "새 모임에 가서 어색하게 서 있으면 나이 지긋한 분이 '이쪽에 앉아' 하고 옆자리를 두드려 줍니다. 낯선 자리에서도 챙겨 주는 사람이 하나는 생기는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 막힌 밤에 문득 떠오르는 사람이 있고, 그 사람에게 연락하면 길이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "받은 도움을 혼자 적어 둡니다. 언젠가 갚아야 한다는 마음이 혼자 있는 시간에 무겁게도, 따뜻하게도 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "받은 도움을 혼자 적어 둡니다. 언젠가 갚아야 한다는 마음이 혼자 있는 시간에 무겁게도, 따뜻하게도 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "여행길에서 혼자 길을 헤매면 지나가던 아주머니가 골목 끝까지 같이 걸어 줍니다. 낯선 곳에서 받은 그 친절이 여행에서 가장 따뜻한 장면으로 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [

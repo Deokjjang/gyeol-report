@@ -12,6 +12,11 @@
         "metaphor": "정오의 해, 그림자가 발밑에만 있어 더 올라갈 곳이 없는",
         "visual": "시상대 가장 높은 칸에 서서 아래를 내려다보는 선수"
       },
+      "imageVariants": [
+        { "metaphor": "초가을 새벽 정상 바위에 올라 바람을 정면으로 맞으며 깃발을 꽂는 등산가", "visual": "마지막 한 점이 걸린 배구 코트에서 '공 나한테 줘!' 하고 팔을 번쩍 드는 사람" },
+        { "metaphor": "한여름 한낮이 되어 모든 그림자를 제 발밑으로 끌어모으는 하늘 한가운데의 해", "visual": "여행 첫날 숙소와 동선과 식당을 한 장에 정리해 일행에게 척척 나눠 주는 사람" },
+        { "metaphor": "겨울 한낮 눈 덮인 산등성이에서 가장 먼저 햇빛을 받아 하얗게 빛나는 봉우리", "visual": "명절 저녁 큰 상 앞에서 건배 한마디를 맡으면 벌떡 일어나 잔을 높이 드는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "맡은 일에서 '이건 내가 제일 잘 안다'는 확신이 있습니다. 실제로 잘하고, 그래서 남의 조언이 잘 안 들립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -20,15 +25,18 @@
         ],
         "money": [
           { "text": "돈을 크게 벌고 크게 씁니다. 작은 저축보다 큰 판을 봅니다. 통장 잔액보다 사업 규모가 자존심입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "남에게 얻어먹는 것을 싫어합니다. 계산은 자기가, 선물은 크게. 체면이 지갑을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "남에게 얻어먹는 것을 싫어합니다. 계산은 자기가, 선물은 크게. 체면이 지갑을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "모임 총무를 맡으면 회비 장부를 꼼꼼히 적고, 모자라는 달에는 말없이 자기 돈으로 채워 둡니다. 그 얘기는 끝까지 입 밖에 내지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "1등이 아니면 공부가 재미없습니다. 순위가 매겨지는 자리에서 성적이 오릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "선생님 말에 토를 답니다. '그건 다르게 풀 수도 있는데요'가 입에 붙어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "선생님 말에 토를 답니다. '그건 다르게 풀 수도 있는데요'가 입에 붙어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "조별 과제가 정해지면 '자료는 내가 모을게' 하고 먼저 나서고, 발표 순서와 역할도 그 자리에서 정해 버립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "연애에서도 주도합니다. 어디서 만날지, 뭘 먹을지, 언제 사귈지 대부분 당신이 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "상대가 자기보다 강하면 매력을 느끼면서도 결국 힘겨루기를 합니다. 둘 다 왕이면 전쟁입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "상대가 자기보다 강하면 매력을 느끼면서도 결국 힘겨루기를 합니다. 둘 다 왕이면 전쟁입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람이 생기면 돌려 말하지 않고 '나 너 좋아해, 이번 주에 밥 먹자'라고 먼저 말합니다. 거절을 받으면 한참 아프지만 하루 만에 고개를 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집안의 결정권을 쥡니다. 배우자가 받쳐 주면 집이 편안하고, 배우자도 왕이면 매일 전투입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -37,11 +45,13 @@
         ],
         "relationships": [
           { "text": "어느 모임에서든 중심이 됩니다. 의도하지 않아도 사람들이 당신 의견을 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "지는 걸 못 참아 친구와도 다툽니다. 다만 뒤끝이 없고 크게 베푸니 사람들이 다시 모입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "지는 걸 못 참아 친구와도 다툽니다. 다만 뒤끝이 없고 크게 베푸니 사람들이 다시 모입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 길에서 지갑을 잃어버렸다며 당황하면 '일단 앉아, 카드부터 정지하자' 하고 순서를 정해 줍니다. 해결되고 나서야 '내가 너무 나섰나' 하고 머쓱해합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 시간이 짧습니다. 정상에 선 사람은 늘 누군가 찾아오고, 당신도 그걸 즐깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "혼자 있을 때 가장 큰 두려움은 '내려갈 때'입니다. 정상 다음을 미리 생각하며 밤이 길어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "혼자 있을 때 가장 큰 두려움은 '내려갈 때'입니다. 정상 다음을 미리 생각하며 밤이 길어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 있는 밤에도 퍼즐 앱의 최고 기록을 깨려고 같은 판을 계속 다시 시작합니다. 새 기록이 뜨는 순간 혼자 주먹을 불끈 쥡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [

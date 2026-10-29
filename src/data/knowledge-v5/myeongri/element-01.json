@@ -84,22 +84,31 @@
         "metaphor": "비가 오래 안 온 논, 갈라진 땅 틈으로 물을 한 바가지 부으면 금세 스며드는",
         "visual": "물병은 들고 다니는데 하루 끝에 보면 한 모금도 안 줄어 있는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "겨울 가뭄에 말라붙은 개울 바닥에서 부은 물이 자갈 틈으로 순식간에 사라지는 땅", "visual": "겨울 아침 지하철역에서 입술이 트도록 텀블러는 가방 속에 둔 채 환승 계단을 뛰어 오르는 사람" },
+        { "metaphor": "모내기 직전 물이 안 찬 논바닥에서 발자국이 금세 굳어 버리는 마른 흙", "visual": "초여름 푸드코트에서 앞사람이 메뉴를 고르는 사이 '저는 이거요' 하고 먼저 받아 들고 자리부터 잡는 사람" },
+        { "metaphor": "건조한 가을 밤 바삭한 낙엽 길에 물을 뿌려도 순식간에 마르는 흙길", "visual": "가을 저녁 영화관에서 엔딩 크레딧이 올라가자마자 먼저 일어나 출구로 걸어가는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "결정이 빠릅니다. 회의에서 '그냥 이걸로 하죠'를 먼저 말하고, 뒤에 '왜 그렇게 급했지' 싶은 날이 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "쉬는 날에도 일 생각이 멈추지 않습니다. 쉼이 뭔지 모르는 사람처럼 주말에도 노트북을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "쉬는 날에도 일 생각이 멈추지 않습니다. 쉼이 뭔지 모르는 사람처럼 주말에도 노트북을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "긴 이메일이 오면 첫 두 줄만 읽고 바로 답장을 보냅니다. 세 번째 줄에 있던 조건을 놓쳐 다시 메일을 쓰는 날이 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
           { "text": "돈이 들어오면 바로 씁니다. 저장하는 감각이 약해 통장이 늘 비슷한 선에 머뭅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "계산보다 느낌으로 결정합니다. '이거다' 싶으면 그날 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "계산보다 느낌으로 결정합니다. '이거다' 싶으면 그날 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "결제 직전에 쿠폰과 포인트 화면이 뜨면 읽지 않고 '확인'부터 눌러서, 나중에 쿠폰이 만료된 걸 알게 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "깊이 읽기보다 빨리 많이 봅니다. 요약본과 핵심 정리를 좋아하고, 긴 책은 중간에 덮습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "시험 직전 몰아서 하는 게 맞습니다. 다만 한 번 본 건 오래 안 남아 같은 걸 또 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "시험 직전 몰아서 하는 게 맞습니다. 다만 한 번 본 건 오래 안 남아 같은 걸 또 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "외운 내용을 시험 직전 빈칸 채우기로 확인하면 술술 나옵니다. 그런데 같은 빈칸이 일주일 뒤엔 처음 보는 글자처럼 낯섭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "상대의 말을 곱씹지 않습니다. 들은 대로 믿고 넘어가서 '그때 왜 눈치 못 챘어?'라는 말을 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "감정을 오래 끌지 않아 다툰 다음 날 멀쩡합니다. 상대는 아직 안 끝났는데 당신은 끝났습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "감정을 오래 끌지 않아 다툰 다음 날 멀쩡합니다. 상대는 아직 안 끝났는데 당신은 끝났습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람의 메시지는 읽자마자 답하고, 상대 답이 몇 시간 늦으면 '내가 너무 빨랐나' 싶어 휴대폰을 뒤집어 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "배우자가 속 이야기를 꺼내면 바로 해결책을 말합니다. '그냥 들어 줘'라는 말이 집에서 자주 나옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -108,11 +117,13 @@
         ],
         "relationships": [
           { "text": "뒤끝이 없어 편하다는 말을 듣습니다. 대신 상대의 뒤끝은 못 읽어서 '쟤 왜 저래?' 할 때가 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "깊은 대화보다 같이 움직이는 관계가 편합니다. 속마음 대화가 길어지면 자리를 옮기고 싶어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "깊은 대화보다 같이 움직이는 관계가 편합니다. 속마음 대화가 길어지면 자리를 옮기고 싶어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 '어제 네가 이렇게 말했잖아' 하고 꺼내면 '내가 그랬어?' 하고 진짜 기억하지 못해서, 친구가 '넌 늘 이래' 하며 웃어넘깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 시간이 어색합니다. 조용하면 바로 음악이나 영상을 틉니다. 가만히 있는 법을 모릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "생각이 깊어지기 전에 몸이 먼저 움직입니다. 고민이 생기면 앉아서 푸는 대신 달립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "생각이 깊어지기 전에 몸이 먼저 움직입니다. 고민이 생기면 앉아서 푸는 대신 달립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 하는 목욕에서도 오 분이 지나면 물이 식기 전에 나와, 머리도 덜 말린 채 다음 할 일로 넘어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
