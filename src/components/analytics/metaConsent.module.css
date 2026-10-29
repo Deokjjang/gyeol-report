@@ -1,14 +1,12 @@
-.root { position: fixed; bottom: 12px; right: 12px; z-index: 90; max-width: min(420px, calc(100vw - 24px)); color: #251e1b; font: 13px/1.65 sans-serif; }
-.panel { padding: 20px; background: #fffdf9; border: 1px solid #d4c9bd; border-radius: 12px; box-shadow: 0 4px 24px #0002; max-height: 70vh; overflow: auto; }
+/* Sits above the Book page navigation (54px + safe area) on every width. */
+.root { position: fixed; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); right: 12px; z-index: 90; max-width: min(420px, calc(100vw - 24px)); color: #251e1b; font: 13px/1.65 sans-serif; }
+.panel { padding: 20px; background: #fffdf9; border: 1px solid #d4c9bd; border-radius: 12px; box-shadow: 0 4px 24px #0002; max-height: min(70vh, calc(100dvh - 90px)); overflow: auto; }
 .panel p { margin: 10px 0; } .panel a { text-decoration: underline; }
 .panel label { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0; } .panel input { min-width: 18px; min-height: 18px; margin-top: 3px; }
 .actions { display: flex; gap: 10px; margin-top: 12px; }
-.actions button, .settings { border: 1px solid #b5a99b; background: #fffdf9; color: #49382e; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
+.actions button, .card button { border: 1px solid #b5a99b; background: #fffdf9; color: #49382e; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
 .actions button:disabled { opacity: .55; cursor: wait; }
-.settings { font-size: 11px; padding: 5px 10px; }
-
-@media (max-width: 768px) {
-  .root {
-    display: none !important;
-  }
-}
+.card { max-width: 320px; padding: 12px 14px; background: #fffdf9; border: 1px solid #d4c9bd; border-radius: 10px; box-shadow: 0 4px 18px #0002; font-size: 12px; line-height: 1.6; }
+.card p { margin: 4px 0 10px; }
+.card div { display: flex; flex-wrap: wrap; gap: 8px; }
+.card button { min-height: 36px; padding: 6px 12px; font-size: 12px; }

@@ -8,3 +8,7 @@ export const metaTransferNotice = "이전받는 자: Meta Platforms, Inc. / 국�
 
 export const metaLocalReview = (url: URL) => process.env.NODE_ENV === "development" && ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname);
 export const metaCookieName = (local: boolean) => local ? "gyeol-local-meta-consent" : META_CONSENT_COOKIE;
+// Footer "광고 설정" link ↔ consent panel. The card is shown once per consent version.
+export const META_SETTINGS_EVENT = "gyeol:meta-settings";
+export const META_AVAILABLE_EVENT = "gyeol:meta-available";
+export const META_CARD_SEEN_KEY = `gyeol-meta-card-seen:${META_CONSENT_VERSION}`;

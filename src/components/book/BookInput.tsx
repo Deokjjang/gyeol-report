@@ -105,12 +105,12 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     const found: Record<string, string> = {};
     for (const [slot, person] of pair ? [["a", state.person], ["b", state.personB]] as const : [["a", state.person]] as const) for (const [field, text] of Object.entries(personErrors(person, now, requiredGender))) found[`${slot}.${field}`] = text;
     if (Object.keys(found).length) { setStep(0); setErrors(found); setTimeout(() => document.getElementById(Object.keys(found)[0].replace(".", "-"))?.focus(), 0); return; }
-    if (step === total - 1 && (internal || requiredGender)) {
+    if (step === total - 1 && (internal || requiredGender || pair)) {
       setChecking(true); const attempt = ++validationId.current;
       try {
         const localValidation = internal && !requiredGender;
         const response = await fetch(localValidation ? "/dev/book-flow/api" : "/api/reports/validate-input", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(localValidation ? { operation: "validate", payload } : payload) });
-        // Public preflight endpoint intentionally accepts only Dayun products;
+        // Public preflight endpoint accepts Dayun products and compatibility;
         // other public products are checked by the unchanged checkout server.
         const result = await response.json();
         if (attempt !== validationId.current) return;
