@@ -33,7 +33,7 @@ pnpm exec tsx scripts/dev/v5-e2e.ts --no-key   # 호출 0: 7권(6상품 + 궁합
 pnpm exec tsx scripts/dev/v5-e2e.ts            # 실호출(OpenAI), 기본 상한 $1, 비용은 docs/v5/api-cost-log.md
 ```
 
-결과표는 `docs/v5/p3-e2e.md`(실호출), `docs/v5/p3-e2e-nokey.md`(호출 0). 회수 크론은 `GET /api/internal/report-writer-recovery`(Bearer CRON_SECRET).
+결과표는 `docs/v5/p3-e2e.md`(실호출), `docs/v5/p3-e2e-nokey.md`(호출 0). 회수 크론은 `GET /api/internal/report-writer-recovery`(Bearer CRON_SECRET, 로컬에서는 직접 호출 — `vercel.json` 등록은 운영 적용 때 승인 후).
 
 ## 브라우저에서 읽기
 
