@@ -1,7 +1,7 @@
 // P3.5 B: 결제 워커 배선 — WRITER_V5_PRODUCTS가 비어 있으면 v5 훅을 넘기지 않는다(기존 호출과 같음).
 import { afterEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
-const { run } = vi.hoisted(() => ({ run: vi.fn(async (..._args: unknown[]) => ({ ok: true, status: "EMPTY" })) }));
+const { run } = vi.hoisted(() => ({ run: vi.fn<(...args: unknown[]) => Promise<{ ok: boolean; status: string }>>(async () => ({ ok: true, status: "EMPTY" })) }));
 vi.mock("../../../src/lib/payment/paidReportReliability", () => ({ runPaidReportJob: run }));
 vi.mock("../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => true }));
 import { PAID_V5_WRITER_BUDGET_MS, runPublicPaidReportJob } from "../../../src/lib/book/paidRuntime";
