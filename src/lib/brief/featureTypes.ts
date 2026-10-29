@@ -20,4 +20,6 @@ export type FeatureHit = {
   readonly count: number;
   /** 내부 근거 한 줄. 고객 본문 노출 금지. */
   readonly basis: string;
+  /** 합충형해: 실제로 맞물린 자리 묶음(짝마다 하나, P3.6 A4). 합친 positions만으로는 어느 자리끼리인지 알 수 없다. */
+  readonly pairs?: readonly (readonly ChartPosition[])[];
 };

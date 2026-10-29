@@ -165,7 +165,8 @@ describe("brief builder — 성질", () => {
     for (const { input, brief } of samples.slice(0, 8)) expect(buildBrief(input, k)).toEqual(brief);
   });
 
-  it("종합 브리프 토큰 추정 10k 이내", () => {
-    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(10_000);
+  // P3.6: 소품 사전 확대(직업군 13개)와 합충 자리 문장(where)으로 상한을 1% 올렸다(추정은 작가에게 안 가는 style·score도 센다).
+  it("종합 브리프 토큰 추정 10.1k 이내", () => {
+    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(10_100);
   });
 });

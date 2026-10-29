@@ -2,11 +2,12 @@
  * 안전망 문장 검사(P3 D, 결정론·호출 0). 위반 문장은 지우고 기록한다.
  * 삭제: 날짜·시기 + 사건 확정 / 입력에 없는 사실(연인·배우자·자녀·직업 형태) / 시간 미상인데 시주·자녀 자리 / MBTI 없음인데 MBTI /
  *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치 / 책 안에서 이미 나온 같은 문장(20자 이상, 뒤의 것) /
- *       스스로 김빼는 말·이별 권유(P3.5 A6) / 궁합 점수·구간과 어긋나는 말(P4 C3).
- * 경고(지우지 않음): 과거 경험 단정, 용어가 쉬운 말 없이 먼저 나옴.
+ *       스스로 김빼는 말·이별 권유(P3.5 A6) / 궁합 점수·구간과 어긋나는 말(P4 C3) /
+ *       경험 단정 중 경향형·질문형으로 바꿀 수 없는 것(P3.6 A6, 바꿀 수 있으면 바꾸고 replacements에 기록).
+ * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
-import { OLD_NEGATIVE, isPastAssertion, splitSentences } from "./patterns";
+import { OLD_NEGATIVE, isPastAssertion, softenExperience, splitSentences } from "./patterns";
 
 export type SafetyFacts = {
   readonly birthTimeKnown: boolean;
@@ -17,8 +18,10 @@ export type SafetyFacts = {
   /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
   readonly compat?: { readonly score: number; readonly band: string };
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
+/** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
+export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
 
 const CONDITIONAL = /(되면|된다면|생기면|생긴다면|만나면|만난다면|라면|이라면|할 때|하게 될|언젠가|훗날|앞으로|미래의|만약|혹시|키우게|키운다면|함께 살게|함께 산다면|결혼한다면|결혼하면|할수록|마음에 둔|좋아하는 사람)/;
 const DATE = /(\d{4}년|\d{1,2}월|올해|내년|내후년|이번 달|다음 달|\d+살|\d+세|\d+대 ?(초|중|후)반|\d+년 ?(안|내|뒤|후)|(봄|여름|가을|겨울)에)/;
@@ -93,9 +96,15 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
 }
 
 /** 문단에서 위반 문장을 지운다. */
-export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false): string {
+export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false, replacements?: Replacement[]): string {
   const kept: string[] = [];
-  for (const s of splitSentences(p)) {
+  for (const raw of splitSentences(p)) {
+    let s = raw;
+    if (isPastAssertion(s)) {
+      const soft = softenExperience(s);
+      if (!soft) { deletions.push({ chapter, rule: "experience_assert", sentence: s }); continue; }
+      replacements?.push({ chapter, rule: "experience_assert", from: s, to: soft }); s = soft;
+    }
     const key = norm(s);
     const rule = sentenceViolation(s, f, allowed, inConditionalChapter) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
     if (rule) deletions.push({ chapter, rule, sentence: s }); else { kept.push(s); if (key.length >= 20) seen?.add(key); }
@@ -103,7 +112,7 @@ export function filterParagraph(p: string, f: SafetyFacts, chapter: number, dele
   return kept.join(" ");
 }
 
-export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first"; readonly text: string };
+export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse"; readonly text: string };
 /** 경고: 과거 단정 문장, 용어가 괄호 밖에서 먼저 나온 경우(용어 목록은 호출하는 쪽이 준다). */
 export function styleWarnings(chapter: number, paragraphs: readonly string[], terms: readonly string[], introduced: Set<string>): StyleWarning[] {
   const out: StyleWarning[] = [];

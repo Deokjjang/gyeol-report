@@ -12,7 +12,7 @@ import { splitSentences } from "@/lib/writer/safety/patterns";
 import { conditionsHold, type ConditionCtx } from "./conditions";
 import type { FeatureHit } from "./featureTypes";
 import type { Knowledge } from "./knowledge";
-import { josa, POSITION_KO, TEN_GOD_GROUP } from "./labels";
+import { josa, pairWhere, POSITION_KO, TEN_GOD_GROUP } from "./labels";
 import type { Rng } from "./seed";
 import { pickN } from "./seed";
 import type { Trait } from "./schema";
@@ -141,6 +141,7 @@ export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "
     // 같은 요소라도 고객마다 다른 그림(P3.5 A1): [기본 + 변형] 중 시드로 하나.
     image: variant?.image ?? rng.fork("image").pick([feature.image, ...(feature.imageVariants ?? [])]),
     oneLiner: variant?.oneLiner ?? feature.oneLiner,
+    ...(hit.pairs?.length ? { where: pairWhere(hit.pairs) } : {}),
     ...(pos && feature.positionNuance ? { positionNote: `${POSITION_KO[pos]} 자리: ${feature.positionNuance[pos]}` } : variant?.nuance ? { positionNote: variant.nuance } : {}),
     ...(hit.strength === "strong" || hit.strength === "weak" ? onlyHolding(hit.strength === "strong" ? feature.strengthRules.strong : feature.strengthRules.weak, cond) : {}),
     good,
@@ -168,7 +169,8 @@ export function buildShadows(selected: readonly ScoredHit[], traits: Trait[], mi
   const warn = ranked.filter(x => WARNING_IDS.test(x.s.hit.id) || x.s.fusion?.kind === "tension");
   const pick = [...warn.slice(0, max), ...ranked.filter(x => !warn.includes(x))].slice(0, Math.max(min, Math.min(max, warn.length || min)));
   return pick.map((x, i) => {
-    const where = x.t.positions.map(p => POSITION_KO[p]).join("·");
+    // 합충형해는 trait.where가 정확한 자리 문장이다(P3.6 A4). 합친 자리 목록("달·날·시각")은 짝을 잘못 읽게 해서 쓰지 않는다.
+    const where = x.t.where ? "" : x.t.positions.map(p => POSITION_KO[p]).join("·");
     const shadow = {
       id: `s${i + 1}`, traitId: x.t.id, text: x.t.overuse!,
       basis: `${x.t.name}${where ? ` (${where})` : ""} — ${x.t.strengthNote ?? x.t.oneLiner}`,

@@ -65,6 +65,8 @@ export const TraitSchema = z.object({
   image: Image,
   oneLiner: z.string(),
   positionNote: z.string().optional(),
+  /** 합충형해의 자리 문장(P3.6 A4). 작가는 자리를 이 문장과 같은 의미로만 쓴다. */
+  where: z.string().optional(),
   strengthNote: z.string().optional(),
   good: z.array(z.string()).min(1).max(2),
   overuse: z.string().optional(),
@@ -149,6 +151,8 @@ export const BriefSchema = z.object({
   timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), tenGod: z.string(), current: z.boolean() })) }).optional(),
   partner: z.object({ person: PersonBriefSchema, mbti: MbtiBriefSchema.nullable(), chart: ChartBriefSchema }).optional(),
   compatibility: CompatibilityBriefSchema.optional(),
+  /** 책 단위 소품 사용 기록(P3.6 A1): 소품 → 힌트로 준 장 수(최대 2). */
+  usedProps: z.record(z.string(), z.number().int().min(1).max(2)).optional(),
   style: z.object({
     version: z.string(), register: z.string(), readingLevel: z.string(),
     totalChars: z.tuple([z.number().int(), z.number().int()]),

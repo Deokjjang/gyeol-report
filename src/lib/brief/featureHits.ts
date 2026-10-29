@@ -245,20 +245,21 @@ function structureStrength(c: Ctx, code: string, scores?: Readonly<Record<string
 /* ───────── 조립 ───────── */
 
 function aggregate(raws: readonly Raw[]): FeatureHit[] {
-  const map = new Map<string, { hit: Raw; positions: Set<ChartPosition>; instances: number; bases: string[] }>();
+  const map = new Map<string, { hit: Raw; positions: Set<ChartPosition>; instances: number; bases: string[]; pairs: ChartPosition[][] }>();
   for (const r of raws) {
     const key = `${r.id}|${r.variantKey ?? ""}`;
     const cur = map.get(key);
     if (!cur) {
-      map.set(key, { hit: r, positions: new Set(r.positions), instances: r.instances ?? 1, bases: [r.basis] });
+      map.set(key, { hit: r, positions: new Set(r.positions), instances: r.instances ?? 1, bases: [r.basis], pairs: [[...r.positions]] });
       continue;
     }
     r.positions.forEach((p) => cur.positions.add(p));
     cur.instances += r.instances ?? 1;
     if (!cur.bases.includes(r.basis)) cur.bases.push(r.basis);
+    if (!cur.pairs.some(p => p.join() === r.positions.join())) cur.pairs.push([...r.positions]);
     if (RANK[r.strength] > RANK[cur.hit.strength]) cur.hit = { ...cur.hit, strength: r.strength };
   }
-  return [...map.values()].map(({ hit, positions, instances, bases }) => {
+  return [...map.values()].map(({ hit, positions, instances, bases, pairs }) => {
     const sorted = sortPositions(positions);
     const isRelation = hit.family === "relation" || hit.id === "shinsal:WONJIN";
     return {
@@ -269,6 +270,7 @@ function aggregate(raws: readonly Raw[]): FeatureHit[] {
       ...(hit.variantKey ? { variantKey: hit.variantKey } : {}),
       count: isRelation ? instances : Math.max(1, sorted.length),
       basis: bases.join(" / "),
+      ...(isRelation ? { pairs: pairs.map(p => sortPositions(new Set(p))) } : {}),
     };
   });
 }

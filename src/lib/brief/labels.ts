@@ -12,6 +12,13 @@ export const TEN_GOD_GROUP: Record<TenGod, "PEER" | "OUTPUT" | "WEALTH" | "OFFIC
 };
 export const POSITION_KO = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
 
+/** 합충형해의 자리 문장(P3.6 A4): 짝마다 "태어난 날과 시각 사이", 세 자리면 "태어난 해·달·날 세 자리". */
+export function pairWhere(pairs: readonly (readonly (keyof typeof POSITION_KO)[])[]): string {
+  const short = (x: keyof typeof POSITION_KO) => POSITION_KO[x].replace("태어난 ", "");
+  return pairs.map(p => p.length === 2 ? `태어난 ${josa(short(p[0]), "과와")} ${short(p[1])} 사이`
+    : `태어난 ${p.map(short).join("·")} ${p.length === 3 ? "세" : "네"} 자리`).join(", ");
+}
+
 /** 받침에 맞는 조사(은/는, 이/가, 을/를, 과/와). "불(화)"처럼 괄호 앞이 한글이면 그 글자, "丙午(병오)"처럼 한자면 괄호 안 글자 기준. */
 export function josa(word: string, pair: "은는" | "이가" | "을를" | "과와"): string {
   const m = word.match(/^(.*?)\(([^)]*)\)$/);

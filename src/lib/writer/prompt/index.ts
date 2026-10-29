@@ -50,7 +50,7 @@ function omit<T extends object, K extends keyof T>(o: T, ...keys: K[]): Omit<T, 
 export function renderWriterBrief(brief: Brief): Record<string, unknown> {
   const { style, traits, timeline, fortunes } = brief;
   return {
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "timeline", "fortunes"),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "timeline", "fortunes", "usedProps"),
     fortunes: fortunes.map(f => omit(f, "featureId")),
     traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters")),
     ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji")) } } : {}),
