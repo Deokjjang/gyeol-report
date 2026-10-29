@@ -1,0 +1,69 @@
+{
+ "case": "y-love",
+ "product": "love_marriage_child",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1235,
+  1180,
+  1177,
+  1152,
+  1150,
+  1192,
+  1218,
+  1163,
+  1208
+ ],
+ "total": 10675,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [
+  "2 term_first: 묘목"
+ ],
+ "briefCopy": {
+  "sentences": 222,
+  "matched": 7,
+  "ratio": 0.032,
+  "writerSentences": 222,
+  "writerMatched": 7,
+  "writerRatio": 0.032
+ },
+ "connectors": [
+  {
+   "phrase": "그래도",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {
+  "혼밥 메뉴": 0,
+  "시험 기간 밤샘": 1,
+  "친구 단톡방": 1,
+  "필기 노트 빌리기": 0,
+  "주말 약속": 1,
+  "발표 수업 준비": 1,
+  "운동 루틴": 1,
+  "동아리 활동": 0,
+  "혼자 여행 계획": 1,
+  "친구랑 매점 가기": 0,
+  "취미 모임": 1,
+  "성적표 받는 날": 1,
+  "혼자 영화관": 1,
+  "소개팅 약속": 1,
+  "집콕 주말": 1,
+  "청첩장 받은 날": 0,
+  "혼자 먹는 야식": 1,
+  "진로 상담 시간": 1
+ },
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "jobMentions": 0,
+ "sceneHintsUsed": "13/18"
+}
