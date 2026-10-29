@@ -211,6 +211,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     for (const c of chapters) { c.title = sub(c.title); c.question = sub(c.question); }
   }
   const chars = PRODUCT_CHARS[input.product];
+  // 책 단위 소품 사용 기록(P3.6 A1): 안전망이 본문에서 같은 소품이 2회를 넘는지 센다.
+  const usedProps: Record<string, number> = {};
+  for (const c of chapters) for (const x of c.sceneHint ?? []) usedProps[x] = (usedProps[x] ?? 0) + 1;
   const draft = {
     version: BRIEF_VERSION, product: input.product, productTitle: narrative.title, seed: seed.toString(16), baseDate: input.baseDate,
     person: me.person, mbti, chart: me.chart, traits: traitsAll, fortunes, shadows, unused, chapters,
@@ -220,7 +223,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     style: { version: "style-v5-1", register: "존댓말, 가볍게(~입니다/~예요 혼용)", readingLevel: "초·중등", totalChars: chars.total, rules: STYLE_RULES, forbidden: [...narrative.forbidden, ...narrative.noRepeatRules.slice(0, 2)] },
   };
   const budget = sectionBudget(draft);
-  return BriefSchema.parse({ ...draft, budget: { ...budget, method: TOKEN_METHOD } });
+  // usedProps는 안전망용이라 작가 토큰 추정·작가 입력에서 뺀다.
+  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), budget: { ...budget, method: TOKEN_METHOD } });
 }
 
 /** 타임라인 항목이 가리키는 십성 뜻을 한 번만 싣는다(항목마다 반복하면 토큰이 두 배). */

@@ -1,5 +1,5 @@
 // 소품 사전 검사: pnpm exec tsx tools/p35/props-check.ts
-// 스키마 + 직업군 매칭 표본 + 금지(연인·자녀·배우자 전제는 relationship 밖 금지, 한자·MBTI 금지).
+// 스키마 + 직업군 매칭 표본 + 금지(연인·자녀·배우자 전제는 relationship·육아기 밖 금지, 한자·MBTI 금지) + 생활 단계 적합·중복(P3.6).
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { matchJob, PropsSchema } from "../../src/lib/brief/props";
@@ -15,7 +15,15 @@ else {
   const all = (where: string, list: readonly string[], family = true) => list.forEach(x => { if (BAD.test(x)) errors.push(`${where}: 한자·MBTI "${x}"`); if (family && FAMILY.test(x)) errors.push(`${where}: 가족·연인 전제 "${x}"`); });
   p.jobs.forEach(j => all(`jobs.${j.id}`, j.props));
   Object.entries(p.jobStatus).forEach(([k, v]) => all(`jobStatus.${k}`, v));
-  Object.entries(p.age).forEach(([k, v]) => all(`age.${k}`, v));
+  // 생활 단계(P3.6 A2): 육아기만 자녀 소품 허용. 학생 소품은 학생·취준·육아기 밖 금지, 출퇴근 소품은 은퇴기 금지.
+  const STUDENTISH = /학자금|알바|수강|과제|중간고사|기말|교복|동아리|기숙사|학생증|등교|수능|학원/, COMMUTE = /출근|퇴근|사원증|출장|결재|회식/;
+  Object.entries(p.lifeStage).forEach(([k, v]) => {
+    all(`lifeStage.${k}`, v, k !== "parenting");
+    v.forEach(x => { if (!["student", "job_seeker", "parenting"].includes(k) && STUDENTISH.test(x)) errors.push(`lifeStage.${k}: 학생 소품 "${x}"`); if (k === "retired" && COMMUTE.test(x)) errors.push(`lifeStage.retired: 출퇴근 소품 "${x}"`); });
+  });
+  const dupes = (where: string, list: readonly string[]) => { const s = new Set<string>(); list.forEach(x => { if (s.has(x)) errors.push(`${where}: 중복 "${x}"`); s.add(x); }); };
+  p.jobs.forEach(j => dupes(`jobs.${j.id}`, j.props)); Object.entries(p.jobStatus).forEach(([k, v]) => dupes(`jobStatus.${k}`, v));
+  Object.entries(p.relationship).forEach(([k, v]) => dupes(`relationship.${k}`, v)); Object.entries(p.lifeStage).forEach(([k, v]) => dupes(`lifeStage.${k}`, v));
   all("relationship.single", p.relationship.single); all("relationship.unknown", p.relationship.unknown);
   const ids = new Set<string>(); p.jobs.forEach(j => { if (ids.has(j.id)) errors.push(`중복 id ${j.id}`); ids.add(j.id); });
   const samples: [string, string][] = [
