@@ -23,7 +23,7 @@ import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type Tim
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
-import { ganjiLabel } from "./labels";
+import { ganjiLabel, josa } from "./labels";
 import { customerProps } from "./props";
 
 export type BriefPersonInput = {
@@ -203,6 +203,13 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     } : {}),
   });
 
+  // 궁합 장 제목·질문의 "A·B" 기호(예 "A가 보는 B")는 두 사람 호칭으로 바꾼다(고객 본문에 기호가 나오지 않게, P3.5 A9).
+  if (other) {
+    const name: Record<string, string> = { A: me.person.callName, B: other.person.callName };
+    const PAIR = { 가: "이가", 는: "은는", 와: "과와", 를: "을를" } as const;
+    const sub = (s: string) => s.replace(/(?<![A-Za-z])([AB])(가|는|와|를|의)?(?![A-Za-z])/g, (_, x: string, p?: keyof typeof PAIR | "의") => !p ? name[x] : p === "의" ? `${name[x]}의` : josa(name[x], PAIR[p]));
+    for (const c of chapters) { c.title = sub(c.title); c.question = sub(c.question); }
+  }
   const chars = PRODUCT_CHARS[input.product];
   const draft = {
     version: BRIEF_VERSION, product: input.product, productTitle: narrative.title, seed: seed.toString(16), baseDate: input.baseDate,
