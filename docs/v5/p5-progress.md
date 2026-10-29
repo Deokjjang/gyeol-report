@@ -34,8 +34,13 @@
 | ebc3ab7a(리베이스 후) | 디자인 시스템·표지·홈·책 열람·고정 쪽·입력·주문서·생성 대기·서재·푸터·아이콘·공유 이미지, 본문 동일성 시험, 도구 |
 | 47f4348d | origin/v5/main(63e7bab0 event-end) 위로 리베이스 후 이벤트 블록(제목·혜택·카운트다운·링크 하나)·마지막 장(한 줄+자세히) 정돈. 종료 동작(launchActive 아닐 때 null, 캠페인 종료 화면)은 A 그대로 |
 
+| 6555f509 | 관련 시험 110파일 비교 → 의도한 표시 변경 12파일 갱신(남은 1건은 깨끗한 base worktree에서도 같은 기존 실패) |
+| 2cd633ee | Lighthouse 보정(뒤 표지 제목 흐리게·두 칸 뒤 inert·aria-hidden·입력 대기 높이·display optional) |
+| 8d0a8007 | 옛 밑줄 입력 규칙 제거, 어절 단위 줄바꿈 |
+| 51f68a4d | 완료 보고 초안 `docs/v5/p5-report.md` |
+
+주의(시간을 쓴 함정): `pnpm start`를 TaskStop으로 끄면 `next-server` 자식이 남아 이전 빌드를 계속 낸다 → 새 빌드 뒤 CSS 조각이 없어 무스타일 페이지를 측정하게 된다. 포트로 pid를 찾아 끈다(`kill $(lsof -nP -iTCP:3400 -sTCP:LISTEN -t)`). zsh에서 `path` 변수 이름은 PATH를 덮는다.
+
 ## 남은 일(턴이 끊기면 여기서 이어감)
-1. 관련 시험 110파일 실행 결과 비교(기준선 `docs/baseline-failures-v5main.txt` + 정돈 전 실행) → 의도한 문구 변경 시험 갱신.
-2. after 캡처(`tools/p5/capture.ts after`), 홈 자동 회전 탐침(`tools/p5/probe/autoplay.mjs`), 메타 점검(`tools/p5/verify-meta.mts`).
-3. 로컬 프로덕션 빌드 Lighthouse 모바일(성능·접근성·CLS), 키보드·대비 점검.
-4. 탭 수 전후 기록, 16Personalities 유형명 검색 결과 정리, 전체 시험 1회, `docs/v5/p5-report.md`, 리베이스·병합·push.
+1. 전체 시험 1회 결과를 기준선과 비교해 보고서 §10에 기록.
+2. after 전체 재캡처(줄바꿈 변경 반영), origin/v5/main으로 리베이스·fast-forward push.
