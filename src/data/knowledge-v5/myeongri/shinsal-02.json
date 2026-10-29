@@ -46,7 +46,7 @@
         "relationships": [
           { "text": "친구가 억울한 일을 당했다고 하면 '그 사람 연락처 줘 봐'라고 말할 만큼 편을 확실히 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "적당히 친한 사람이 적고, 아주 가깝거나 아예 모르는 사람으로 나뉩니다. 중간 온도가 잘 안 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "가까운 친구가 수술을 받는 날엔 아침부터 병원 복도 의자에 앉아, 끝나고 나올 때까지 자리를 뜨지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "가까운 친구가 큰 발표를 하는 날엔 아침부터 객석 맨 앞줄에 앉아, 끝나고 내려올 때까지 자리를 뜨지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "혼자 있는 주말에 갑자기 방 전체 가구 배치를 바꾸기 시작해 새벽 두 시에 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

@@ -264,7 +264,7 @@
         "love": [
           { "text": "좋아하면 돌려 말하지 않습니다. 세 번 만난 뒤 '우리 사귀자'를 먼저 꺼내는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "상대가 자기를 세워 주면 한없이 잘하지만, 사람들 앞에서 깎아내리면 그날로 식습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
-          { "text": "가까워지고 싶은 사람이 몸이 아프다고 하면 '내가 알아볼게' 하고 병원 위치와 진료 시간을 찾아 문자로 정리해 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "가까워지고 싶은 사람이 이사 준비로 막막해하면 '내가 알아볼게' 하고 업체 견적과 가능한 날짜를 찾아 문자로 정리해 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집안 결정에서 마지막 말을 자기가 하고 싶어 합니다. 배우자와 역할이 겹치면 작은 일로 자주 부딪칩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },

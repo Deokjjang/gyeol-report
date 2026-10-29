@@ -272,7 +272,7 @@
           { "text": "연인이 누군가에게 무례한 말을 들으면 연인보다 먼저 화를 내고 그 사람에게 가서 따집니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "집안의 큰 결정에서는 한 발도 안 물러서다가, 배우자가 아프면 반차를 내고 병원 대기실을 지킵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "집안의 큰 결정에서는 한 발도 안 물러서다가, 배우자가 지쳐 보이면 반차를 내고 그날 저녁 집안일을 통째로 맡습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "양가 어른이 배우자에게 서운한 말을 하면 자기 부모 앞이라도 '그건 아니에요'라고 막아섭니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "양가 인사를 앞두면 예의는 깍듯이 지키되, 어른들 앞에서도 '그건 저희 둘이 정할게요'라고 선을 먼저 긋습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
@@ -685,7 +685,7 @@
         ],
         "money": [
           { "text": "몸과 마음을 낫게 하는 쪽에 먼저 지갑을 엽니다. 마사지, 상담, 좋은 베개에는 아끼지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "돈을 빌려 달라는 친구에게 금액보다 '요즘 무슨 일 있어?'를 먼저 묻고, 그 대화 끝에 돈 대신 병원 예약을 잡아 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "돈을 빌려 달라는 친구에게 금액보다 '요즘 무슨 일 있어?'를 먼저 묻고, 그 대화 끝에 돈 대신 진짜 막힌 일을 같이 풀어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "선물을 고를 땐 비싼 것보다 받을 사람이 요즘 어디가 피곤한지 떠올려, 따뜻한 양말이나 입욕제처럼 몸을 풀어 주는 걸 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [

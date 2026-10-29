@@ -24,7 +24,7 @@ import {
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
-import { OLD_NEGATIVE, isPastAssertion } from "../src/lib/writer/safety/patterns";
+import { OLD_NEGATIVE, SICK_DEATH_IMAGE, isPastAssertion } from "../src/lib/writer/safety/patterns";
 import FEATURE_FREQUENCY from "../src/lib/brief/data/feature-frequency.json";
 
 /** 감지 빈도 상위 30%(P3.5 A1): 이미지 변형 3개·영역 장면 3개 이상. tools/p35/enrich.mjs topFeatureIds와 같은 규칙. */
@@ -55,6 +55,8 @@ const FORBIDDEN: readonly [string, RegExp][] = [
   ["라벨 서술어", /(리더십|추진력|카리스마|잠재력|재능|복)이 (있|강|많)습니다\.$|성향입니다\.$|기운입니다\.$/],
   // (P3 A-3) 옛 해석의 부정 낱말은 부정하는 문장 안에서도 쓰지 않는다.
   ["옛 부정 낱말", OLD_NEGATIVE],
+  // (P3.6 A5) 실제 질병·죽음을 떠올리게 하는 이미지. 무덤덤·상여금은 일상어라 제외, 김장독 같은 비유는 허용.
+  ["질병·죽음 이미지", SICK_DEATH_IMAGE],
 ];
 const HAN = /[一-鿿]/;
 const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI/;
