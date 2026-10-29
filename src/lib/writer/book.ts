@@ -40,7 +40,9 @@ export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
   readonly input: ReportInputPayload; readonly people: readonly BookPerson[]; readonly names: string;
   readonly context: readonly { readonly label: string; readonly value: string }[];
-  readonly pair?: { readonly category: string; readonly characters: readonly { name: string; core: string; strength: string; relationship: string }[]; readonly relations: readonly string[]; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[] };
+  readonly pair?: { readonly category: string; readonly characters: readonly { name: string; core: string; strength: string; relationship: string }[]; readonly relations: readonly string[]; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[];
+    /** v5 궁합 점수(P4). 구성요소는 수준(좋음·보통·조율)만 보여 준다 — 하위 점수 합이 총점과 어긋나 보이지 않게. 없는 v5 Book(P3)은 점수 쪽 없이 연다. */
+    readonly score?: { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] } };
   readonly meta: WriterMeta;
 };
 
@@ -105,6 +107,7 @@ export function assembleV5Book(a: {
     category: c.lens.focus,
     characters: [c.a, c.b].map(p => ({ name: p.callName.replace(/님$/, ""), core: p.image, strength: brief.traits.find(t => t.id === p.traitIds[0])?.easyName ?? "", relationship: p.role })),
     relations: c.dayRelations,
+    score: { total: c.score.value, version: c.score.version, band: c.score.band.label, verdict: c.score.band.verdict, components: c.score.components.map(x => ({ name: x.name, level: x.level, line: x.line })) },
     directions: (["direction-ab", "direction-ba"] as const).map((id, i) => ({ title: a.plan.find(ch => ch.id === id)?.title ?? "", effect: (i ? c.tenGodBA : c.tenGodAB).reading.slice(0, 60), term: noHan((i ? c.tenGodBA : c.tenGodAB).tenGod), chapterN: a.plan.find(ch => ch.id === id)?.n ?? 0 })),
   } : undefined;
   const p = brief.person.facts;
@@ -144,6 +147,7 @@ export function validateV5Publication(product: string, draft: unknown, evidence:
 
 const toParagraphs = (sections: readonly BookSection[]): BookParagraph[] => sections.flatMap(s => s.paragraphs.map((text, i) => ({ text, notes: [], ...(i === 0 && s.heading ? { heading: s.heading } : {}) })));
 const TIME = (y: number, now: number) => (y < now ? "돌아보기" : y === now ? "지금" : "앞으로");
+const LEVEL_POINTS = { 좋음: 3, 보통: 2, 조율: 1 } as const;
 const importance = (score: number) => (score >= 4 ? "HIGH" : score === 3 ? "MEDIUM" : "BACKGROUND") as "HIGH" | "MEDIUM" | "BACKGROUND";
 
 /** 저장된 v5 스냅샷 → 기존 렌더러가 그대로 보여 주는 BookData. */
@@ -155,6 +159,9 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot): BookData | null
   const pages: BookPage[] = [{ kind: "cover", title: d.title, names: e.names, headline: d.headline }];
   if (!e.pair && e.people.length) pages.push({ kind: "input", title: "이 책의 주인공" });
   if (e.pair) pages.push({ kind: "pair", title: "우리라는 사이", category: e.pair.category, characters: [...e.pair.characters], directions: [], relations: [...e.pair.relations] });
+  const sc = e.pair?.score;
+  if (sc) pages.push({ kind: "score", scoreVersion: sc.version, title: "타고난 맞물림", total: sc.total, scores: sc.components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3 })),
+    verdict: `${sc.band} · ${sc.verdict}`, notice: "두 사람의 명리와 MBTI가 맞물리는 정도를 정해진 규칙으로 계산했어요. 항목은 3칸 중 몇 칸이 맞물리는지로 보여 줍니다.", explanations: sc.components.map(x => `${x.name}: ${x.line}`), limitations: [] });
   e.people.forEach((p, i) => pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }));
   const chapterPage = new Map<number, number>(), keyPage = new Map<string, number>();
   for (const ch of d.chapters) {

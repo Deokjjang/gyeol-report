@@ -41,7 +41,7 @@ export function renderMd(b: Brief): string {
     for (const m of ch.materials) L.push(`- ${m.kind === "trait" ? `trait ${m.traitId} [${m.domain}/${m.angle}] ${m.scene}` : m.kind === "mbti" ? `MBTI [${m.domain}] ${m.scene}` : m.kind === "ref" ? `ref ${m.ref}${m.note ? ` (${m.note})` : ""}` : m.kind === "evidence" ? `근거 ${m.key}: ${m.facts.join(" / ")}` : `타임라인 ${m.entryKey}`}`);
   }
   if (b.timeline) { L.push("", "## 타임라인"); for (const e of b.timeline.entries) L.push(`- ${e.label} ${e.tenGod.stem} 흐름 ${e.flow.score}(${e.flow.label}) 배지 ${e.badges.map(x => x.label).join(",") || "-"} · ${e.keywords.join("/")} · 행동 ${e.action.text}`); }
-  if (b.compatibility) { const x = b.compatibility; L.push("", "## 궁합", `- 관점 ${x.lens.focus} · 점수 ${x.score.value ?? "-"} (${x.score.status})`, `- A→B ${x.tenGodAB.tenGod}, B→A ${x.tenGodBA.tenGod}, 일주 관계 ${x.dayRelations.join(" / ") || "-"}`, `- 보완 ${x.complement.join(" / ") || "-"}`, `- 차이 ${x.differences.map(d => `${d.dimension}: ${d.a} vs ${d.b}`).join(" / ")}`); }
+  if (b.compatibility) { const x = b.compatibility; L.push("", "## 궁합", `- 관점 ${x.lens.focus} · 점수 ${x.score.value} (${x.score.band.label}: ${x.score.components.map(c => `${c.name} ${c.level}`).join(", ")})`, `- A→B ${x.tenGodAB.tenGod}, B→A ${x.tenGodBA.tenGod}, 일주 관계 ${x.dayRelations.join(" / ") || "-"}`, `- 보완 ${x.complement.join(" / ") || "-"}`, `- 차이 ${x.differences.map(d => `${d.dimension}: ${d.a} vs ${d.b}`).join(" / ")}`); }
   return L.join("\n") + "\n";
 }
 

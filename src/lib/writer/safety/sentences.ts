@@ -1,7 +1,8 @@
 /**
  * 안전망 문장 검사(P3 D, 결정론·호출 0). 위반 문장은 지우고 기록한다.
  * 삭제: 날짜·시기 + 사건 확정 / 입력에 없는 사실(연인·배우자·자녀·직업 형태) / 시간 미상인데 시주·자녀 자리 / MBTI 없음인데 MBTI /
- *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치 / 책 안에서 이미 나온 같은 문장(20자 이상, 뒤의 것).
+ *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치 / 책 안에서 이미 나온 같은 문장(20자 이상, 뒤의 것) /
+ *       스스로 김빼는 말·이별 권유(P3.5 A6) / 궁합 점수·구간과 어긋나는 말(P4 C3).
  * 경고(지우지 않음): 과거 경험 단정, 용어가 쉬운 말 없이 먼저 나옴.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
@@ -13,8 +14,10 @@ export type SafetyFacts = {
   readonly relationship: "single" | "dating" | "married" | "unknown";
   readonly children: "has" | "none" | "unknown";
   readonly job: "employed" | "business" | "student" | "none";
+  /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
+  readonly compat?: { readonly score: number; readonly band: string };
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 
 const CONDITIONAL = /(되면|된다면|생기면|생긴다면|만나면|만난다면|라면|이라면|할 때|하게 될|언젠가|훗날|앞으로|미래의|만약|혹시|키우게|키운다면|함께 살게|함께 산다면|결혼한다면|결혼하면|할수록|마음에 둔|좋아하는 사람)/;
@@ -32,6 +35,15 @@ const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친�
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
 const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\})/;
+
+/** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
+const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
+/** 이별·단절 권유(P3.5 A6·P4): 낮은 점수에도 쓰지 않는다. */
+const BREAKUP = /헤어지(는 게|는 편이|길|세요|시길|기를 권)|그만 만나(세요|는 게|는 편)|인연이 아니(에요|니|라서|ㅂ니다|다)|맞지 않는 사이(니|라서|예요|입니다)|멀어지는 (게|편이) (낫|좋)|이별을 (권|추천|생각해 보)|관계를 (끊|끝내|정리하)(는 게|는 편이|세요|기를)/;
+const BAND_HIGH = /타고난 짝|천생연분|찰떡궁합|완벽한 궁합|최고의 궁합/;
+const BAND_LOW = /서로 다른 세계/;
+const BAND_NEVER = /최악의 궁합|안 맞는 사이|상극인 사이|궁합이 (나쁜|안 좋은|나쁩|안 좋)/;
+const SCORE_NUM = /(\d{2,3}) ?점/;
 
 export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
@@ -70,6 +82,13 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (INTERNAL.test(s)) return "internal_term";
   if (OLD_NEGATIVE.test(s)) return "old_negative";
   if (copiesExample(s, allowed)) return "example_copy";
+  if (DEFLATING.test(s)) return "self_deflating";
+  if (BREAKUP.test(s)) return "breakup_advice";
+  if (f.compat) {
+    if (BAND_NEVER.test(s) || (BAND_HIGH.test(s) && f.compat.score < 90) || (BAND_LOW.test(s) && f.compat.score >= 45)) return "band_mismatch";
+    const m = s.match(SCORE_NUM);
+    if (m && Number(m[1]) !== f.compat.score && /맞물림|궁합|점수|두 사람/.test(s)) return "score_mismatch";
+  }
   return null;
 }
 

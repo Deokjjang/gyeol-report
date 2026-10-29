@@ -90,7 +90,13 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref === "compatibility.dayRelations" && x.dayRelations.length) return { heading: "두 사람의 날이 만나는 방식", paragraphs: [join(...x.dayRelations.slice(0, 2))] };
   if (ref === "compatibility.lens") return { heading: x.lens.focus, paragraphs: [join(`이 관계에서는 ${x.lens.focus}이 가장 중요합니다`, x.lens.tone)] };
   if (ref === "compatibility.common" && x.common.length) return { heading: "둘이 닮은 곳", paragraphs: [join(`두 사람은 ${x.common.slice(0, 3).join(", ")}이라는 점이 같습니다`)] };
-  if (ref === "compatibility.score" && x.score.value !== null) return { heading: "타고난 맞물림", paragraphs: [join(`타고난 맞물림은 ${x.score.value}점으로 봅니다`, "점수는 노력으로 바뀌지 않는 출발선일 뿐, 맞춰 가는 방법은 따로 있습니다")] };
+  if (ref === "compatibility.score") {
+    const s = x.score, good = s.components.filter(c => c.level === "좋음"), adjust = s.components.filter(c => c.level === "조율");
+    return { heading: `${s.value}점, ${s.band.label} 사이`, paragraphs: [
+      join(`두 사람의 타고난 맞물림은 ${s.value}점입니다`, s.band.verdict, ...good.slice(0, 2).map(c => c.line)),
+      join(...adjust.slice(0, 2).map(c => c.line), adjust.length ? "이런 자리는 다투기 전에 둘만의 약속 하나를 정해 두면 훨씬 편해집니다" : "맞춰 갈 자리가 크지 않으니, 좋은 점을 일상에서 자주 꺼내 쓰면 됩니다"),
+    ].filter(Boolean) };
+  }
   return null;
 }
 

@@ -120,7 +120,14 @@ export const CompatibilityBriefSchema = z.object({
   tenGodAB: z.object({ tenGod: z.string(), reading: z.string() }), tenGodBA: z.object({ tenGod: z.string(), reading: z.string() }),
   dayRelations: z.array(z.string()),
   mbtiConvention: z.object({ fit: z.string(), why: z.string(), note: z.literal("통념") }).nullable(),
-  score: z.object({ value: z.number().nullable(), status: z.literal("재설계 예정(P4)"), basis: z.string() }),
+  /** v5 궁합 점수(P4, src/lib/compat/score.ts). 본문은 band 톤과 맞아야 하고(안전망), 낮은 점수에도 보완법을 쓴다. */
+  score: z.object({
+    value: z.number().int().min(35).max(95), version: z.string(),
+    band: z.object({ label: z.string(), tone: z.string(), verdict: z.string() }),
+    components: z.array(z.object({ name: z.string(), level: z.enum(["좋음", "보통", "조율"]), weight: z.number(), line: z.string() })).min(5).max(6),
+    direction: z.object({ aToB: z.object({ tenGod: z.string(), role: z.string(), gives: z.string().nullable() }), bToA: z.object({ tenGod: z.string(), role: z.string(), gives: z.string().nullable() }) }),
+    rules: z.array(z.string()),
+  }),
 });
 
 export const BriefSchema = z.object({

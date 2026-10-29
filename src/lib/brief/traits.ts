@@ -138,7 +138,8 @@ export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "
     id, featureId: hit.id, family: hit.family,
     name: variant ? `${feature.name} ${variant.name}` : feature.name,
     easyName: feature.easyName, positions: [...hit.positions], strength: hit.strength, score: s.score,
-    image: variant?.image ?? feature.image,
+    // 같은 요소라도 고객마다 다른 그림(P3.5 A1): [기본 + 변형] 중 시드로 하나.
+    image: variant?.image ?? rng.fork("image").pick([feature.image, ...(feature.imageVariants ?? [])]),
     oneLiner: variant?.oneLiner ?? feature.oneLiner,
     ...(pos && feature.positionNuance ? { positionNote: `${POSITION_KO[pos]} 자리: ${feature.positionNuance[pos]}` } : variant?.nuance ? { positionNote: variant.nuance } : {}),
     ...(hit.strength === "strong" || hit.strength === "weak" ? onlyHolding(hit.strength === "strong" ? feature.strengthRules.strong : feature.strengthRules.weak, cond) : {}),
@@ -156,7 +157,7 @@ const WARNING_IDS = /^(shinsal:(BAEKHODAESAL|GOEGANG|YANGIN|WONJIN|GWIMUN|HYEONC
 export function buildFortunes(scored: readonly ScoredHit[], traits: readonly Trait[], limit = 4) {
   return scored.filter(s => GOOD_IDS.test(s.hit.id)).slice(0, limit).map(s => {
     const t = traits.find(x => x.featureId === s.hit.id);
-    return { featureId: s.hit.id, name: s.feature.name, easyName: s.feature.easyName, image: s.feature.image, oneLiner: s.feature.oneLiner, direct: s.feature.strengths[0], ...(t ? { traitId: t.id } : {}) };
+    return { featureId: s.hit.id, name: s.feature.name, easyName: s.feature.easyName, image: t?.image ?? s.feature.image, oneLiner: s.feature.oneLiner, direct: s.feature.strengths[0], ...(t ? { traitId: t.id } : {}) };
   });
 }
 

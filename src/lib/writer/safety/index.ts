@@ -23,7 +23,7 @@ const ANY_WINDOW: ReadonlySet<string> = { has: () => true } as unknown as Readon
 
 export function safetyFacts(brief: Brief): SafetyFacts {
   const f = brief.person.facts;
-  return { birthTimeKnown: f.birthTimeKnown, mbti: f.mbti, relationship: f.relationship, children: f.children, job: f.job.class };
+  return { birthTimeKnown: f.birthTimeKnown, mbti: f.mbti, relationship: f.relationship, children: f.children, job: f.job.class, ...(brief.compatibility ? { compat: { score: brief.compatibility.score.value, band: brief.compatibility.score.band.label } } : {}) };
 }
 
 const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;

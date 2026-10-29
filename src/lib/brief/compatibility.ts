@@ -1,10 +1,9 @@
 /**
- * 궁합 브리프: 두 사람 요약, 공통점·차이(행동 차원), 오행 보완, A→B·B→A 십성, 일주끼리 관계, MBTI 통념 궁합, 관계 유형 관점, 기존 점수(재설계 예정).
+ * 궁합 브리프: 두 사람 요약, 공통점·차이(행동 차원), 오행 보완, A→B·B→A 십성, 일주끼리 관계, MBTI 통념 궁합, 관계 유형 관점, v5 궁합 점수(P4: 구성요소·구간·방향).
  * 일주끼리 관계는 원국 감지와 같은 detectRelations를 쓴다(두 일주를 년·월 자리 라벨로 넣는다 — 라벨은 계산에 쓰이지 않는다).
  */
 import type { MbtiProfile } from "@/data/knowledge-v5/schema";
-import { buildCompatibilityEvidenceFromGenerationInput } from "@/lib/report-generation/compatibilityGenerationHandler";
-import type { CompatibilityGenerationInput } from "@/lib/report-generation/reportInputAdapter";
+import { computeCompatScore, type ConventionalFit } from "@/lib/compat/score";
 import { compatibilityRoleLabels, type CompatibilityRelationshipType } from "@/lib/report-generation/reportInputTypes";
 import { detectRelations } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
@@ -20,7 +19,7 @@ const LENS_FOCUS: Record<CompatibilityRelationshipType, string> = {
 
 export type PairSide = {
   readonly saju: SajuCalcResult; readonly chart: ChartBrief; readonly st: ElementState; readonly traits: readonly Trait[]; readonly hitIds: readonly string[];
-  readonly mbti: MbtiProfile | null; readonly callName: string; readonly generationInput: CompatibilityGenerationInput["personA"];
+  readonly mbti: MbtiProfile | null; readonly callName: string;
 };
 
 function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
@@ -51,10 +50,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const rel = detectRelations([{ position: "year", pillar: a.saju.pillars.day }, { position: "month", pillar: b.saju.pillars.day }]);
   const badge = (kind: string, key: string) => k.badges.find(x => x.kind === kind && (x.pair === key || x.pair === [...key].reverse().join(""))) ?? k.badges.find(x => x.kind === kind && !x.pair);
   const conv = a.mbti && b.mbti ? a.mbti.conventionalCompat.find(c => c.type === b.mbti!.type) : undefined;
-  let score: number | null = null;
-  try {
-    score = buildCompatibilityEvidenceFromGenerationInput({ kind: "compatibility", productKey: "saju_mbti_compatibility", productSlug: "compatibility", relationshipType: category, personA: a.generationInput, personB: b.generationInput, productOptions: {} }, { personA: a.saju, personB: b.saju }).score.totalScore;
-  } catch { score = null; }
+  const conventional: ConventionalFit = (x, y) => k.mbti.get(x)?.conventionalCompat.find(c => c.type === y)?.fit ?? null;
+  const s = computeCompatScore(category, { saju: a.saju, name: a.callName, mbti: a.mbti?.type ?? null }, { saju: b.saju, name: b.callName, mbti: b.mbti?.type ?? null }, { conventional });
   const person = (s: PairSide, role: string) => ({
     role, callName: s.callName, mbti: s.mbti?.type ?? null, dayPillar: ganjiLabel(s.saju.pillars.day),
     image: s.traits.find(t => t.family === "dayPillar" || t.family === "dayMaster")?.image.metaphor ?? s.chart.dayMaster.metaphor,
@@ -71,6 +68,15 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     tenGodBA: { tenGod: tenGodLabel(ba), reading: k.features.get(`tenGod:${ba}`)?.oneLiner ?? "" },
     dayRelations: rel.map(r => `${r.kind}(${r.key}): ${badge(r.kind, r.key)?.line ?? ""}`),
     mbtiConvention: conv ? { fit: conv.fit, why: conv.why, note: "통념" } : null,
-    score: { value: score, status: "재설계 예정(P4)", basis: "v4 scoreCompatibility(오행·십성·MBTI 다리) 값을 그대로 전달. 본문과 맞물리게 P4에서 다시 설계한다" },
+    score: {
+      value: s.total, version: s.version, band: { label: s.band.label, tone: s.band.tone, verdict: s.band.verdict },
+      components: s.components.map(c => ({ name: c.name, level: c.level, weight: c.weight, line: c.line })),
+      direction: s.direction,
+      rules: [
+        `점수 ${s.total}점은 '${s.band.label}' 구간이다. 결론과 분위기를 이 구간에 맞춘다(다른 구간 이름·다른 점수를 쓰지 않는다)`,
+        "구성요소의 line을 근거로 왜 그런 점수인지 쉬운 말로 풀고, '조율' 요소마다 보완법을 하나씩 쓴다",
+        "점수가 낮아도 헤어짐·멀어짐을 권하지 않는다. 점수를 스스로 깎아내리는 말(근거가 없다, 재미로 보는)도 쓰지 않는다",
+      ],
+    },
   };
 }

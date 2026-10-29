@@ -168,7 +168,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   }
 
   // 궁합
-  const compatibility = isPair && other ? buildCompatibility(input.relationshipType!, side(me, input.person, k), side(other, input.partner!, k), k, narrative.compatibility?.[input.relationshipType!]) : undefined;
+  const compatibility = isPair && other ? buildCompatibility(input.relationshipType!, side(me, k), side(other, k), k, narrative.compatibility?.[input.relationshipType!]) : undefined;
 
   // 상품 근거
   const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null)
@@ -222,9 +222,8 @@ function tenGodNotesOf(k: Knowledge) {
   }));
 }
 
-function side(p: PersonPack, input: BriefPersonInput, k: Knowledge): PairSide {
+function side(p: PersonPack, k: Knowledge): PairSide {
   return {
     saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName,
-    generationInput: { name: input.name, birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: (input.approximateBirthTimeSlot ?? "") as never, gender: input.gender, mbtiType: input.mbtiType as never, calendarType: "solar", timezone: "Asia/Seoul" },
   };
 }
