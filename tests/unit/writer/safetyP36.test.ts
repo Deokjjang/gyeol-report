@@ -52,6 +52,13 @@ describe("P3.6 원고 남은 문제", () => {
     if (shadow) expect(shadow.basis).not.toMatch(/태어난 달·태어난 날/);
   });
 
+  it("A4: 흐름 세기 근거도 실제로 부딪친 자리만(시간 미상이면 시각을 쓰지 않는다)", () => {
+    const annual = buildBrief({ product: "annual_fortune", person: PEOPLE.c2, baseDate: base, selectedYear: 2026 }, k);
+    expect(annual.timeline!.entries.flatMap(e => e.flow.basis).join(" ")).not.toContain("시각");
+    const major = buildBrief({ product: "major_fortune", person: PEOPLE.x, baseDate: base }, k);
+    expect(major.timeline!.entries.find(e => e.key === "2030")?.flow.basis).toContain("태어난 해 글자와 부딪힘 +0.5");
+  });
+
   it("A5: 질병·죽음 이미지 금지어, 무덤덤·상여금·김장독은 허용", () => {
     for (const w of ["병상에서", "장례식", "무덤 앞", "시체", "링거"]) expect(SICK_DEATH_IMAGE.test(w), w).toBe(true);
     for (const w of ["무덤덤한 얼굴", "추석 상여금", "땅속 김장독"]) expect(SICK_DEATH_IMAGE.test(w), w).toBe(false);

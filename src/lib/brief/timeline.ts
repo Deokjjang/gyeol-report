@@ -26,6 +26,13 @@ const FLOW_SHORT: Record<string, string> = {
   outputOnStrong: "힘이 센데 내보내는 기운이 들어옴", gongmang: "빈칸(공망)에 듦", monthScope: "월 단위라 한 단계 낮춤",
 };
 
+/** clashOther는 실제로 부딪친 자리만 쓴다(P3.6 B: 시간 미상 고객에게 "해·시각"이 나가 시주를 쓴 것처럼 읽혔다). */
+function flowShort(key: string, clashes: readonly ChartPosition[]): string | undefined {
+  if (key !== "clashOther") return FLOW_SHORT[key];
+  const where = (["year", "hour"] as const).filter(p => clashes.includes(p)).map(p => ({ year: "해", hour: "시각" })[p]).join("·");
+  return `태어난 ${where} 글자와 부딪힘`;
+}
+
 export type TimelineCtx = {
   readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile;
   readonly rng: Rng; readonly usedScenes: Set<string>; readonly usedTemplates: Set<string>;
@@ -81,7 +88,7 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     tenGod: { stem: tenGodLabel(inc.stemTenGod), branch: tenGodLabel(inc.branchTenGod) },
     badges,
     fillsLack: { fills: eff.fills.length > 0, elements: eff.fills, feedsExcess: eff.feeds },
-    flow: { score: flow.score, label: flow.label, basis: flow.applied.map(a => `${FLOW_SHORT[a.key] ?? a.when} ${a.delta > 0 ? "+" : ""}${a.delta}`), note: "참고" },
+    flow: { score: flow.score, label: flow.label, basis: flow.applied.map(a => `${flowShort(a.key, flowInput.clashes) ?? a.when} ${a.delta > 0 ? "+" : ""}${a.delta}`), note: "참고" },
     keywords: (kind === "year" ? g.year.keywords : g.month.keywords).slice(0, 3),
     action: pickAction(ctx, inc.stemTenGod, flow.score, slot),
     material: {

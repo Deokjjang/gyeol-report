@@ -34,7 +34,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const roles = compatibilityRoleLabels(category);
   // 고객 본문에 "A·B" 기호가 나오지 않게(P3.5 A9 1회차): 기호 역할은 이름으로, 부모·상사 같은 역할은 "역할(이름)"으로.
   const label = (role: string, s: PairSide) => (/^[AB]$/.test(role) ? s.callName : `${role}(${s.callName})`);
-  const featureName = (id: string) => k.features.get(id)?.name ?? id;
+  // 공통 기운은 "쉬운 말(이름)" 꼴로 준다(P3.6 B: 이름만 주면 작가가 "백호대살과 겁살" 같은 용어를 그대로 옮겼다).
+  const featureName = (id: string) => { const f = k.features.get(id); return f ? `${f.easyName} 같은 기운(${f.name.replace(/\(.*?\)/g, "").trim()})` : id; };
   const common = [
     ...a.hitIds.filter(id => b.hitIds.includes(id) && !/:BALANCED$|^(stem|branch|tenGod):/.test(id)).slice(0, 4).map(id => `둘 다 ${featureName(id)}`),
     ...a.st.lacking.filter(e => b.st.lacking.includes(e)).map(e => `둘 다 ${josa(ELEMENT_KO[e], "이가")} 부족`),
