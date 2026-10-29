@@ -1,0 +1,52 @@
+{
+ "case": "pair-boss",
+ "product": "saju_mbti_compatibility",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1120,
+  1193,
+  1190,
+  1118,
+  1204,
+  1095,
+  1142,
+  1110,
+  1170
+ ],
+ "total": 10342,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [
+  "9 term_first: 편인"
+ ],
+ "briefCopy": {
+  "sentences": 213,
+  "matched": 13,
+  "ratio": 0.061,
+  "writerSentences": 213,
+  "writerMatched": 13,
+  "writerRatio": 0.061
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {},
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "jobMentions": 0,
+ "sceneHintsUsed": "0/0",
+ "score": 58,
+ "band": "노력이 필요한"
+}

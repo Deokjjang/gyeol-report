@@ -1,0 +1,332 @@
+{
+ "summary": {
+  "books": 10,
+  "crossPairs": 36,
+  "crossMatched": 4,
+  "crossSentences": 15604,
+  "maxCross": {
+   "pair": "c2-annual × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 453,
+   "matched": 2,
+   "ratio": 0.0044
+  }
+ },
+ "rows": [
+  {
+   "pair": "c1-career × y-love",
+   "sameCustomer": false,
+   "sentences": 381,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × x-major",
+   "sameCustomer": false,
+   "sentences": 400,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × c2-annual",
+   "sameCustomer": false,
+   "sentences": 380,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × pair-parent",
+   "sameCustomer": false,
+   "sentences": 387,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × pair-boss",
+   "sameCustomer": true,
+   "sentences": 378,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p35:c1-full",
+   "sameCustomer": true,
+   "sentences": 480,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p35:x-full",
+   "sameCustomer": false,
+   "sentences": 459,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 461,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p35:pair-love",
+   "sameCustomer": true,
+   "sentences": 393,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × x-major",
+   "sameCustomer": false,
+   "sentences": 393,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × c2-annual",
+   "sameCustomer": false,
+   "sentences": 373,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × pair-parent",
+   "sameCustomer": false,
+   "sentences": 380,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × pair-boss",
+   "sameCustomer": false,
+   "sentences": 371,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p35:c1-full",
+   "sameCustomer": false,
+   "sentences": 473,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p35:x-full",
+   "sameCustomer": false,
+   "sentences": 452,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p35:y-full",
+   "sameCustomer": true,
+   "sentences": 454,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p35:pair-love",
+   "sameCustomer": false,
+   "sentences": 386,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × c2-annual",
+   "sameCustomer": false,
+   "sentences": 392,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × pair-parent",
+   "sameCustomer": false,
+   "sentences": 399,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × pair-boss",
+   "sameCustomer": false,
+   "sentences": 390,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p35:c1-full",
+   "sameCustomer": false,
+   "sentences": 492,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p35:x-full",
+   "sameCustomer": true,
+   "sentences": 471,
+   "matched": 2,
+   "ratio": 0.0042
+  },
+  {
+   "pair": "x-major × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 473,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p35:pair-love",
+   "sameCustomer": false,
+   "sentences": 405,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c2-annual × pair-parent",
+   "sameCustomer": false,
+   "sentences": 379,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c2-annual × pair-boss",
+   "sameCustomer": false,
+   "sentences": 370,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c2-annual × p35:c1-full",
+   "sameCustomer": false,
+   "sentences": 472,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c2-annual × p35:x-full",
+   "sameCustomer": false,
+   "sentences": 451,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c2-annual × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 453,
+   "matched": 2,
+   "ratio": 0.0044
+  },
+  {
+   "pair": "c2-annual × p35:pair-love",
+   "sameCustomer": true,
+   "sentences": 385,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × pair-boss",
+   "sameCustomer": false,
+   "sentences": 377,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p35:c1-full",
+   "sameCustomer": false,
+   "sentences": 479,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p35:x-full",
+   "sameCustomer": false,
+   "sentences": 458,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 460,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p35:pair-love",
+   "sameCustomer": false,
+   "sentences": 392,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-boss × p35:c1-full",
+   "sameCustomer": true,
+   "sentences": 470,
+   "matched": 2,
+   "ratio": 0.0043
+  },
+  {
+   "pair": "pair-boss × p35:x-full",
+   "sameCustomer": false,
+   "sentences": 449,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-boss × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 451,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-boss × p35:pair-love",
+   "sameCustomer": true,
+   "sentences": 383,
+   "matched": 4,
+   "ratio": 0.0104
+  },
+  {
+   "pair": "p35:c1-full × p35:x-full",
+   "sameCustomer": false,
+   "sentences": 551,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p35:c1-full × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 553,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p35:c1-full × p35:pair-love",
+   "sameCustomer": true,
+   "sentences": 485,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p35:x-full × p35:y-full",
+   "sameCustomer": false,
+   "sentences": 532,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p35:x-full × p35:pair-love",
+   "sameCustomer": false,
+   "sentences": 464,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p35:y-full × p35:pair-love",
+   "sameCustomer": false,
+   "sentences": 466,
+   "matched": 2,
+   "ratio": 0.0043
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "case": "pair-parent",
+ "product": "saju_mbti_compatibility",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1225,
+  1213,
+  1195,
+  1209,
+  1172,
+  1202,
+  1192,
+  1124,
+  1143
+ ],
+ "total": 10675,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [
+  "5 term_first: 오행"
+ ],
+ "briefCopy": {
+  "sentences": 213,
+  "matched": 0,
+  "ratio": 0,
+  "writerSentences": 213,
+  "writerMatched": 0,
+  "writerRatio": 0
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 4
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {},
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "jobMentions": 0,
+ "sceneHintsUsed": "0/0",
+ "score": 45,
+ "band": "노력이 필요한"
+}
