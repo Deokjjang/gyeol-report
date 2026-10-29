@@ -8,6 +8,7 @@ import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTyp
 import { CONSENT_SHORT_LABELS, MBTI, requiredConsents, toggleAll, type Book, type Person, type PublishingState } from "./model";
 import { BusinessDetails, DetailSheet, LegalAccordion, SUPPORT_COPY } from "./BookLegal";
 import s from "./book.module.css";
+import MetaSettingsLink from "../../../components/analytics/MetaSettingsLink";
 
 export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
   return <div className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
@@ -115,7 +116,7 @@ export function PreviewFooter({ publicPresentation = false }: { publicPresentati
     <a href="http://pf.kakao.com/_sbHaX" target="_blank" rel="noopener noreferrer">채널 보기</a>
     </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
-    <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button></nav><p className={s.micro}>© GYEOL REPORT</p>
+    <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>
     {legal ? <DetailSheet title="이용약관과 정책" onClose={() => setLegal(false)}><LegalAccordion publicPresentation={publicPresentation} /></DetailSheet> : null}
   </footer>;
 }

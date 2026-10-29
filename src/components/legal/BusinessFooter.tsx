@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 import { legalLinks } from "./LegalPageLayout";
+import MetaSettingsLink from "../analytics/MetaSettingsLink";
 import styles from "./legal.module.css";
 
 export default function BusinessFooter() {
@@ -49,6 +50,7 @@ export default function BusinessFooter() {
           {legalLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.labelKo}</a>
           ))}
+          <MetaSettingsLink />
         </nav>
       </div>
     </footer>
