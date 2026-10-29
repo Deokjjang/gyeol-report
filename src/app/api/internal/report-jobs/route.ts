@@ -7,7 +7,8 @@ import { WRITER_DISABLED_RUNTIME } from "../../../../lib/report-generation/write
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
 
 export const runtime = "nodejs";
-export const maxDuration = 300;
+// v5 작가(결제 경로, 예산 480초 < claim lease 10분)를 담는다(P3.5 D). claim 창 45초 뒤에는 새 작업을 잡지 않는다.
+export const maxDuration = 800;
 export async function GET(request: Request) {
   const expected = `Bearer ${process.env.CRON_SECRET ?? ""}`;
   const actual = request.headers.get("authorization") ?? "";
