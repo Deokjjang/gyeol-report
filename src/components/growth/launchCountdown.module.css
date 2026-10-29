@@ -1,6 +1,5 @@
 /* 홈 이벤트 블록(P5): 제목 한 줄 · 혜택 한 줄 · 카운트다운 · 링크 하나. 상품 진열 위, 진행 중일 때만. */
 .event { color: var(--ink); background: var(--paper-raised); margin: 8px auto 0; padding: 16px 20px; width: min(calc(100% - 32px), 720px); border: 1px solid var(--rule); border-radius: var(--radius); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 24px; font-family: var(--sans); }
-.heading > p:first-child { display: none; }
 .heading h2 { font-family: var(--serif); font-size: 18px; font-weight: 600; letter-spacing: -.01em; margin: 0; }
 .heading small, .clock p, .clock small { font-size: 13px; color: var(--ink-2); margin: 0; }
 .benefit { font-size: 14px !important; line-height: 1.6; margin: 2px 0 0 !important; color: var(--ink); }

@@ -28,7 +28,7 @@ describe("event end at fixed times", () => {
   it("10/31 23:59:59 KST: last page keeps the event paragraph and share buttons; event page counts down", () => {
     event.view = launch(LAST_SECOND); event.elapsed = 0;
     const html = lastPage();
-    expect(html).toContain("카카오톡으로 책 공유"); expect(html).toContain("무료 이용권 참여 조건 보기");
+    expect(html).toContain("카카오톡으로 책 공유"); expect(html).toContain("<summary>자세히</summary>");
     const page = renderToStaticMarkup(<CampaignLanding campaign={campaign(LAST_SECOND)} utm={{}} />);
     expect(page).toContain("이벤트 참여하고 가입하기"); expect(page).toContain("00:00:01"); expect(page).not.toContain("이벤트가 종료되었습니다");
   });

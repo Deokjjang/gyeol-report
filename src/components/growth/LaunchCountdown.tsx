@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { isLaunchEventView, launchActive, launchCountdown, launchRemaining, LAUNCH_NOTICE, type LaunchEventView } from "../../lib/growth/launchEvent";
+import { isLaunchEventView, launchActive, launchCountdown, launchRemaining, type LaunchEventView } from "../../lib/growth/launchEvent";
 import s from "./launchCountdown.module.css";
 
 export function useLaunchEvent(local: boolean, enabled = true) {
@@ -37,13 +37,13 @@ export function LaunchCountdown({ local = false }: { local?: boolean }) {
   // The block exists only while the server says ACTIVE and time remains: no loading, scheduled, paused or ended block.
   if (!launchActive(view, remaining)) return null;
   const eligible = view.campaignAvailable && view.budgetApproved && view.campaignSlug;
+  // P5: 제목 한 줄 · 혜택 한 줄 · 카운트다운 · 링크 하나(기간·조건 전문은 이벤트 페이지에).
   return <section className={s.event} aria-label="이벤트 카운트다운" data-launch-state="ACTIVE">
-    <div className={s.heading}><p>EVENT COUNTDOWN</p><h2>이벤트 진행 중</h2>{eligible ? <p className={s.benefit}>이벤트 참여 후 처음 가입하면 리포트 1권 무료</p> : null}<small>11월 1일 0시 종료</small></div>
+    <div className={s.heading}><h2>이벤트 진행 중</h2>{eligible ? <p className={s.benefit}>이벤트 참여 후 처음 가입하면 리포트 1권 무료</p> : <p className={s.benefit}>11월 1일 0시 종료</p>}</div>
     <div className={s.clock}><p role="status">이벤트 종료까지</p>
       <time aria-hidden="true" dateTime={view.endsAt}>{launchCountdown(remaining!)}</time>
       <span className={s.srOnly}>11월 1일 0시 종료</span>
     </div>
-    <details className={s.notice}><summary>기간·혜택 자세히 보기</summary><p>{LAUNCH_NOTICE}</p><p>가입 자격과 계정당 지급 한도를 서버에서 확인한 뒤 지급합니다. 카카오톡 채널 친구 추가는 필수 조건이 아닙니다.</p></details>
-    {eligible ? <a className={s.entry} href={`${local ? "/dev" : ""}/campaign/${view.campaignSlug}`}>이벤트 참여 안내 →</a> : null}
+    {eligible ? <a className={s.entry} href={`${local ? "/dev" : ""}/campaign/${view.campaignSlug}`}>기간·혜택 자세히 보기</a> : null}
   </section>;
 }
