@@ -46,7 +46,7 @@ begin
         perform public.report_tickets('reconcile',r.user_id,'{}');
         continue;
       end if;
-      v5 := jsonb_typeof(p_data->'v5Products')='array' and (p_data->'v5Products') ? r.product_type;
+      v5 := coalesce(jsonb_typeof(p_data->'v5Products')='array' and (p_data->'v5Products') ? r.product_type, false);
       if v5 then
         update public.report_ticket_redemptions set state='RUNNING',lease_token=gen_random_uuid(),writer_version='v5',
           writer_lease_until=clock_timestamp()+interval '15 minutes',lease_until=clock_timestamp()+interval '25 minutes'
@@ -126,7 +126,8 @@ begin
     if r.state<>'RUNNING' or r.lease_token is distinct from (p_data->>'token')::uuid or r.lease_until<=stamp then
       return jsonb_build_object('ok',false,'code','STALE_LEASE');
     end if;
-    if p_action='publish' and not ((p_data->'snapshot'->>'productVersion') = 'v4' or ((p_data->'snapshot'->>'productVersion') = 'v5' and r.writer_version='v5')) then
+    if p_action='publish' and not (coalesce(p_data->'snapshot'->>'productVersion','')='v4'
+      or (coalesce(p_data->'snapshot'->>'productVersion','')='v5' and r.writer_version is not distinct from 'v5')) then
       return jsonb_build_object('ok',false,'code','PUBLISH_REJECTED');
     end if;
     result:=public.report_tickets(p_action,p_user,p_data);
