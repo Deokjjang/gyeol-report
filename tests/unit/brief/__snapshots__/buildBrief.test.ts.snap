@@ -46,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:love:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+BANGHAP act:偏財:relationships:low",
   ],
-  "tokens": 15462,
+  "tokens": 15463,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,current-dayun,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [current-dayun,month:2026-M06,month:2026-M12]",
@@ -92,7 +92,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t7",
   ],
   "timeline": undefined,
-  "tokens": 9088,
+  "tokens": 9092,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,study,recovery]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [portrait,fortune,recovery]",
@@ -160,7 +160,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:study:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:love:high",
   ],
-  "tokens": 16672,
+  "tokens": 16673,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [overview,current-cycle,closing]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [current-cycle,year:2030,closing]",

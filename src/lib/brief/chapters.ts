@@ -10,14 +10,15 @@ import type { Rng } from "./seed";
 import type { ChapterBrief, Material, Trait } from "./schema";
 import type { ProductKey } from "./traits";
 
-/** SPEC §1 분량: 상품 총량과 장 목표(자). 반복 장은 항목당. */
+/** SPEC §1 분량(P3 고정): 장 1,000~1,250자. 반복 항목(대운 연도·세운 월)은 항목당. 총량 = 장 수 × 장 목표 + 항목 수 × 항목 목표. */
+export const CHAPTER_CHARS: [number, number] = [1000, 1250];
 export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; chapter: [number, number]; repeat?: [number, number] }> = {
-  saju_mbti_full: { total: [11000, 14000], chapter: [900, 1100] },
-  career_money_study: { total: [9000, 12000], chapter: [1000, 1350] },
-  love_marriage_child: { total: [9000, 12000], chapter: [1000, 1350] },
-  saju_mbti_compatibility: { total: [9000, 12000], chapter: [1000, 1350] },
-  major_fortune: { total: [10000, 13000], chapter: [900, 1100], repeat: [450, 600] },
-  annual_fortune: { total: [9000, 12000], chapter: [900, 1100], repeat: [450, 650] },
+  saju_mbti_full: { total: [13000, 16250], chapter: CHAPTER_CHARS },
+  career_money_study: { total: [9000, 11250], chapter: CHAPTER_CHARS },
+  love_marriage_child: { total: [9000, 11250], chapter: CHAPTER_CHARS },
+  saju_mbti_compatibility: { total: [9000, 11250], chapter: CHAPTER_CHARS },
+  major_fortune: { total: [10300, 13400], chapter: CHAPTER_CHARS, repeat: [450, 600] },
+  annual_fortune: { total: [9400, 12800], chapter: CHAPTER_CHARS, repeat: [450, 650] },
 };
 const TRAIT_SLOTS: Record<string, number> = { HOOK: 3, WHY: 3, SCENE: 3, TWIST: 2, PAYOFF: 2 };
 
