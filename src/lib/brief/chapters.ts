@@ -95,25 +95,32 @@ export type PlanCtx = {
   readonly prefer?: (chapterId: string, t: Trait) => number;
 };
 
-function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string): string | undefined {
-  const ok = (list ?? []).filter(s => sceneFits(s.requires, ctx.facts) && !ctx.usedScenes.has(s.text));
+const FAMILY_IF = /결혼(하면|한다면|을 (생각|앞둔))|함께 살게|같이 살게|아이를 (키우|낳)|부모가 (되|된)/;
+/** 결혼·자녀 언젠가형 장면(unmarried·children none·조건 문구). */
+export const conditionalFamily = (s: SceneItem) => s.requires.relationship === "unmarried" || s.requires.children === "none" || FAMILY_IF.test(s.text);
+/** 결혼·자녀 조건부 장면은 연애 상품과 종합 '사람 사이에서' 장에만 둔다(P3.5 A5). */
+export const familyChapter = (product: ProductKey, chapterId: string) => product === "love_marriage_child" || (product === "saju_mbti_full" && chapterId === "relationships");
+const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts) && !ctx.usedScenes.has(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s));
+
+function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string): string | undefined {
+  const ok = (list ?? []).filter(s => usable(s, ctx, chapterId));
   if (!ok.length) return undefined;
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }
 
 type Use = { count: number; domains: Set<Domain> };
-const hasFresh = (ctx: PlanCtx, list: readonly SceneItem[] | undefined) => (list ?? []).some(s => sceneFits(s.requires, ctx.facts) && !ctx.usedScenes.has(s.text));
+const hasFresh = (ctx: PlanCtx, list: readonly SceneItem[] | undefined, chapterId: string) => (list ?? []).some(s => usable(s, ctx, chapterId));
 /** 이 장에 이 trait를 놓을 수 있는가(3장 상한·영역 중복·장면 여부). 상태를 바꾸지 않는다. */
-function feasibleDomains(ctx: PlanCtx, src: TraitSource, domains: readonly Domain[], uses: Map<string, Use>): Domain[] {
+function feasibleDomains(ctx: PlanCtx, src: TraitSource, domains: readonly Domain[], uses: Map<string, Use>, chapterId: string): Domain[] {
   const u = uses.get(src.trait.id);
   if ((u?.count ?? 0) >= 3) return [];
-  return domains.filter(d => !u?.domains.has(d) && hasFresh(ctx, src.feature.scenes[d]));
+  return domains.filter(d => !u?.domains.has(d) && hasFresh(ctx, src.feature.scenes[d], chapterId));
 }
 function assign(ctx: PlanCtx, src: TraitSource, domains: readonly Domain[], uses: Map<string, Use>, chapterId: string): Material | null {
-  const ok = feasibleDomains(ctx, src, domains, uses);
+  const ok = feasibleDomains(ctx, src, domains, uses, chapterId);
   if (!ok.length) return null;
   const d = ok[ctx.rng.fork(`${chapterId}:${src.trait.id}:dom`).int(ok.length)];
-  const scene = freshScene(src.feature.scenes[d], ctx, `${chapterId}:${src.trait.id}:${d}`)!;
+  const scene = freshScene(src.feature.scenes[d], ctx, `${chapterId}:${src.trait.id}:${d}`, chapterId)!;
   const u = uses.get(src.trait.id) ?? { count: 0, domains: new Set<Domain>() };
   u.domains.add(d); u.count++; uses.set(src.trait.id, u);
   src.trait.chapters.push(chapterId);
@@ -126,7 +133,7 @@ function auxMaterials(ctx: PlanCtx, chapterId: string, shadowCursor: { i: number
     if (spec.startsWith("ref:")) { const ref = spec.slice(4); if (ctx.has(ref)) out.push({ kind: "ref", ref }); }
     else if (spec.startsWith("mbti:")) {
       if (!ctx.mbti) continue;
-      const d = spec.slice(5) as Domain; const scene = freshScene(ctx.mbti.signals[d], ctx, `${chapterId}:mbti:${d}`);
+      const d = spec.slice(5) as Domain; const scene = freshScene(ctx.mbti.signals[d], ctx, `${chapterId}:mbti:${d}`, chapterId);
       if (scene) out.push({ kind: "mbti", domain: d, scene });
     } else if (spec.startsWith("evidence:")) { const e = ctx.evidence[spec.slice(9)]; if (e) out.push(e); }
     else if (spec === "shadow") { const s = ctx.shadows[shadowCursor.i++]; if (s) out.push({ kind: "ref", ref: `shadows.${s.id}`, note: `팩폭 재료(연결 trait ${s.traitId})` }); }
@@ -158,7 +165,7 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
   // 라운드 로빈: 모든 장이 n번째 trait를 받기 전에는 아무 장도 n+1번째를 받지 않는다. 후보가 적은 장부터.
   for (let round = 1; round <= 4; round++) {
     const open = plans.filter(p => p.traits.length < p.target && p.traits.length < round);
-    const cands = (p: (typeof plans)[number]) => ctx.traits.filter(t => !p.traits.some(m => m.kind === "trait" && m.traitId === t.trait.id) && feasibleDomains(ctx, t, p.domains, uses).length);
+    const cands = (p: (typeof plans)[number]) => ctx.traits.filter(t => !p.traits.some(m => m.kind === "trait" && m.traitId === t.trait.id) && feasibleDomains(ctx, t, p.domains, uses, p.id).length);
     open.sort((a, b) => cands(a).length - cands(b).length || a.index - b.index);
     for (const p of open) {
       const best = cands(p).sort((a, b) => prefScore(p, b) - prefScore(p, a) || (uses.get(a.trait.id)?.count ?? 0) - (uses.get(b.trait.id)?.count ?? 0) || b.trait.score - a.trait.score || a.trait.id.localeCompare(b.trait.id))[0];
@@ -171,7 +178,7 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
     const domains: Domain[] = [...p.domains, ...(["alone", "relationships", "work", "study", "money", "love"] as Domain[]).filter(d => !p.domains.includes(d))];
     for (const d of domains) {
       if (p.traits.length + p.aux.length >= 4) break;
-      const scene = freshScene(ctx.mbti.signals[d], ctx, `${p.id}:fill:${d}`);
+      const scene = freshScene(ctx.mbti.signals[d], ctx, `${p.id}:fill:${d}`, p.c.id);
       if (scene) p.aux.push({ kind: "mbti", domain: d, scene });
     }
   }

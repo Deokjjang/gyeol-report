@@ -46,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:love:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+BANGHAP act:偏財:relationships:low",
   ],
-  "tokens": 15323,
+  "tokens": 15327,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,current-dayun,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [current-dayun,month:2026-M06,month:2026-M12]",
@@ -92,7 +92,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t7",
   ],
   "timeline": undefined,
-  "tokens": 8982,
+  "tokens": 8986,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,study,recovery]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [portrait,fortune,recovery]",

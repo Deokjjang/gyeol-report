@@ -9,13 +9,19 @@ export const OLD_NEGATIVE = /길흉|흉(하|한|함|해|으로|이라|살|신|�
 
 export const PAST_ASSERT = /겪어 ?(봤|왔)(습니다|어요|죠|을 (겁니다|거예요))|겪어 본 (사람이라|감각이라|만큼)|한 적이 (있었|많았|있습니다|있어요|있을 (겁니다|거예요))|했었(습니다|어요|죠)|(어릴 때|어렸을 때|어린 시절|학창 시절|예전에|그동안)[^.?!]{0,40}(했|였|었|났)(습니다|어요|죠|을 (겁니다|거예요))/;
 
+/**
+ * 경험 단정(P3.5 A5): 고객이 무언가를 겪었다고 전제하는 꼴("~해 본 사람", "~을 겪어 본", "~했던 사람", "~본 적이 있습니다").
+ * 경향형("~하는 편입니다")이나 질문형("~해 본 적 있지 않나요?")으로 쓴다. lint·안전망 경고가 isPastAssertion으로 함께 본다.
+ */
+export const EXPERIENCE_ASSERT = /(해|겪어|받아|느껴|당해|가|와|써|만나|들어|잃어|견뎌|버텨|살아) ?본 (사람|분|당신|감각|만큼|경험)|겪어 ?(본|봤|왔)|[가-힣]했던 (사람|분|당신)|본 적이 (있|많)(습니다|어요|죠|을 거예요|을 겁니다)/;
+
 /** 문장 단위로 자른다(마침표·물음표·느낌표·줄바꿈). */
 export function splitSentences(text: string): string[] {
   return text.match(/[^.!?\n]+[.!?]+["'”’)]*|[^.!?\n]+$/gm)?.map(s => s.trim()).filter(Boolean) ?? [];
 }
 
-/** 과거 단정: 물음표로 끝나는 문장(질문형)과 따옴표 안 대사는 허용. */
+/** 과거·경험 단정: 물음표로 끝나는 문장(질문형)과 따옴표 안 대사는 허용. */
 export function isPastAssertion(sentence: string): boolean {
   const s = sentence.trim().replace(/'[^']*'|"[^"]*"|‘[^’]*’|“[^”]*”/g, "");
-  return PAST_ASSERT.test(s) && !/\?["'”’)]*$/.test(sentence.trim());
+  return (PAST_ASSERT.test(s) || EXPERIENCE_ASSERT.test(s)) && !/\?["'”’)]*$/.test(sentence.trim());
 }

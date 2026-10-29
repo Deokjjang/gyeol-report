@@ -636,7 +636,7 @@
           { "text": "공들인 결과물을 남에게 다 넘겨주고 나면, 다음 일을 시작하기 전 이틀쯤 멍하게 쉬어야 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          { "text": "솜씨로 버는 돈에 강해서, 주말에 취미로 만든 소품을 팔아 쏠쏠한 용돈을 챙겨 본 적이 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "솜씨로 버는 돈에 강해서, 주말에 취미로 만든 소품을 팔아 쏠쏠한 용돈을 챙기는 편입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "번 만큼 주변에 잘 쓰다 보니, 경조사가 몰린 가을 달엔 통장 잔고를 보고 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [

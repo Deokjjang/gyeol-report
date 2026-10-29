@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
 import type { SajuCalcResult } from "@/lib/saju/types";
 import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
-import { planChapters, PRODUCT_CHARS, type TraitSource } from "./chapters";
+import { conditionalFamily, planChapters, PRODUCT_CHARS, type TraitSource } from "./chapters";
 import { buildCompatibility, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
 import { ageAt, ageBand, forbiddenFacts, sceneFits, toFactProfile, type CustomerFacts, type FactProfile } from "./facts";
@@ -100,7 +100,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
   selected.forEach((s, i) => {
     const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
-    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile) && !usedScenes.has(sc.text)) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
+    // 결혼·자녀 언젠가형 장면은 연애 상품에서만(P3.5 A5, 종합 '사람' 장 배정은 장 단계에서 본다).
+    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile) && !usedScenes.has(sc.text) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
   });
   const age = ageAt(input.birthDate, baseDate);
   const person: PersonBrief = {

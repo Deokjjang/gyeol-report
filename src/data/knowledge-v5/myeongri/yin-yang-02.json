@@ -313,7 +313,7 @@
         "work": [
           { "text": "어릴 때부터 '참하다, 손이 안 간다'는 말을 들었고, 어디서든 손 안 가는 사람이라 일이 소리 없이 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "연봉 협상 날 원하는 숫자를 수첩에 적어 갔지만, 팀장 앞에서는 '회사 사정에 맞추겠습니다'가 먼저 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "회의 중 떠오른 좋은 의견을 말할 때를 재다가, 비슷한 말을 남이 먼저 해서 박수를 받는 걸 지켜본 적이 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "회의 중 떠오른 좋은 의견을 말할 때를 재다가, 비슷한 말을 남이 먼저 해서 박수를 받는 걸 지켜보는 일이 잦습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
           { "text": "가계부 앱 대신 손으로 쓰는 수첩에 매일 쓴 돈을 적고, 비상금 봉투는 옷장 깊숙이 따로 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
