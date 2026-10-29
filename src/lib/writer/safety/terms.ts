@@ -9,7 +9,9 @@ import type { StyleWarning } from "./sentences";
 export type Term = { readonly term: string; readonly easy: string };
 export const TERMS: readonly Term[] = data.terms;
 const AFTER = "(?=[은는이가을를의에과와도로만랑처같으까부보라란나야]|[^가-힣]|$)";
-const PATTERNS = TERMS.map(t => ({ term: t.term, re: new RegExp(`(?<![가-힣])${t.term}${AFTER}`) }));
+/** 일상 구문과 겹치는 용어: "~하는 편인 사람"의 편인(P3.6 B 오탐). */
+const BEFORE: Readonly<Record<string, string>> = { 편인: "(?<![은는던한인운른큰진된간난] )" };
+const PATTERNS = TERMS.map(t => ({ term: t.term, re: new RegExp(`(?<![가-힣])${BEFORE[t.term] ?? ""}${t.term}${AFTER}`) }));
 
 /** 문단에서 사전 용어가 처음 나온 자리가 괄호 밖이면 term_first 경고(introduced는 책 단위, 트레이트 이름 검사와 함께 쓴다). */
 export function glossaryWarnings(chapter: number, paragraphs: readonly string[], introduced: Set<string>): StyleWarning[] {

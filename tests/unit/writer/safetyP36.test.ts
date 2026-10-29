@@ -6,6 +6,7 @@ import { filterParagraph, type Deletion, type Replacement } from "@/lib/writer/s
 import { isPastAssertion, SICK_DEATH_IMAGE, softenExperience } from "@/lib/writer/safety/patterns";
 import { glossaryWarnings, TERMS } from "@/lib/writer/safety/terms";
 import { PEOPLE } from "../../../tools/p35/people";
+import { P36_PEOPLE as P36 } from "../../../tools/p36/people";
 
 const k = loadKnowledge();
 const base = "2026-10-29";
@@ -100,5 +101,20 @@ describe("P3.6 원고 남은 문제", () => {
       for (const c of b.chapters) for (const m of c.materials) if (m.kind === "trait" && m.angle === "first") { expect(firsts.has(m.traitId)).toBe(false); firsts.set(m.traitId, c.index); }
       for (const c of b.chapters) for (const m of c.materials) if (m.kind === "trait" && m.angle !== "first") expect(firsts.get(m.traitId) ?? 0).toBeLessThan(c.index);
     }
+  });
+
+  it("B 2회차 결함 수정: 궁합 보완 원소는 브리프 부족 판단 안에서, 돈 버는 방식은 숫자 없이, '~한 편인'은 용어 아님", () => {
+    for (const [p, q, rt] of [[P36.parent, P36.child, "parentChild"], [P36.boss, PEOPLE.c1, "managerReport"]] as const) {
+      const b = buildBrief({ product: "saju_mbti_compatibility", person: p, partner: q, relationshipType: rt, baseDate: base }, k);
+      const c = b.compatibility!; const line = c.score.components[0].line;
+      for (const [side, lack] of [[c.a.callName, c.a.lacking], [c.b.callName, c.b.lacking]] as const) {
+        const m = line.match(new RegExp(`${side}에게 부족한 ([가-힣]+)\\(`));
+        if (m) expect(lack.map(e => ({ WOOD: "나무", FIRE: "불", EARTH: "흙", METAL: "쇠", WATER: "물" })[e])).toContain(m[1]);
+      }
+    }
+    const career = buildBrief({ product: "career_money_study", person: PEOPLE.c1, baseDate: base }, k);
+    const earn = career.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "earnStyle");
+    expect(JSON.stringify(earn)).not.toMatch(/\d\.\d/);
+    expect(glossaryWarnings(1, ["둘 다 물 기운이 적은 편인 사이예요."], new Set())).toEqual([]);
   });
 });

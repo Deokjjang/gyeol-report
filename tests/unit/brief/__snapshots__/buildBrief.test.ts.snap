@@ -249,7 +249,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8447,
+  "tokens": 8440,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [work-core,money,study]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - [choice-scene,study,plan]",
@@ -298,7 +298,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt7",
   ],
   "timeline": undefined,
-  "tokens": 12239,
+  "tokens": 12213,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,felt-differently]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [direction-ba,domain-scene]",

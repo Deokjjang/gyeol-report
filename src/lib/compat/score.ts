@@ -87,23 +87,23 @@ const give = (s: number) => clamp((s - 0.15) / 0.2, 0, 1);
 const heavy = (s: number) => clamp((s - 0.25) / 0.15, 0, 1);
 
 type Shares = Readonly<Record<FiveElement, number>>;
-function fills(to: Shares, from: Shares): { amount: number; element: FiveElement | null } {
+/** amount(점수)는 전 원소로 계산하고, 문장에 쓰는 원소는 받는 쪽의 부족 판단(브리프 lacking과 같은 기준) 안에서만 고른다(P3.6 B: 문장이 브리프와 다른 원소를 "부족"이라 했다). */
+function fills(to: Shares, from: Shares, toLack: readonly FiveElement[]): { amount: number; element: FiveElement | null } {
   let amount = 0, best: FiveElement | null = null, top = 0;
-  for (const e of ELEMENT_ORDER) { const x = need(to[e]) * give(from[e]); amount += x; if (x > top) { top = x; best = e; } }
+  for (const e of ELEMENT_ORDER) { const x = need(to[e]) * give(from[e]); amount += x; if (toLack.includes(e) && x > top) { top = x; best = e; } }
   return { amount: Math.min(1, amount), element: top > 0.05 ? best : null };
 }
-function elementComponent(a: Shares, b: Shares, A: string, B: string): { value: number; line: string; ab: FiveElement | null; ba: FiveElement | null } {
-  const ab = fills(b, a), ba = fills(a, b); // ab: A가 B에게 채워 줌
+function elementComponent(a: Shares, b: Shares, A: string, B: string, lackA: readonly FiveElement[], lackB: readonly FiveElement[]): { value: number; line: string; ab: FiveElement | null; ba: FiveElement | null } {
+  const ab = fills(b, a, lackB), ba = fills(a, b, lackA); // ab: A가 B에게 채워 줌
   let clash = 0, clashE: FiveElement | null = null, shared = 0, sharedE: FiveElement | null = null;
   for (const e of ELEMENT_ORDER) {
     const c = heavy(a[e]) * heavy(b[e]); if (c > clash) { clash = c; clashE = e; }
     const s = need(a[e]) * need(b[e]); if (s > shared) { shared = s; sharedE = e; }
   }
   const value = r2(clamp(0.8 * (ab.amount + ba.amount) - 0.9 * clash - 0.5 * shared));
-  // "적은 편인": 보완 원소는 비율로 고른다. 브리프의 '가장 부족한 기운'(한 개)과 다를 수 있어 "부족한"으로 쓰면 모순처럼 읽힌다(P3.6 B).
-  const line = ab.element && ba.element ? `${A}에게 적은 편인 ${josa(ko(ba.element), "을를")} ${josa(B, "이가")}, ${B}에게 적은 편인 ${josa(ko(ab.element), "을를")} ${josa(A, "이가")} 채워 주는 사이예요`
-    : ba.element ? `${A}에게 적은 편인 ${ko(ba.element)} 기운을 ${B}의 넉넉한 ${josa(ko(ba.element), "이가")} 채워 줘요`
-      : ab.element ? `${B}에게 적은 편인 ${ko(ab.element)} 기운을 ${A}의 넉넉한 ${josa(ko(ab.element), "이가")} 채워 줘요`
+  const line = ab.element && ba.element ? `${A}에게 부족한 ${josa(ko(ba.element), "을를")} ${josa(B, "이가")}, ${B}에게 부족한 ${josa(ko(ab.element), "을를")} ${josa(A, "이가")} 채워 주는 사이예요`
+    : ba.element ? `${A}에게 부족한 ${ko(ba.element)} 기운을 ${B}의 넉넉한 ${josa(ko(ba.element), "이가")} 채워 줘요`
+      : ab.element ? `${B}에게 부족한 ${ko(ab.element)} 기운을 ${A}의 넉넉한 ${josa(ko(ab.element), "이가")} 채워 줘요`
         : clashE && clash >= 0.3 ? `둘 다 ${ko(clashE)} 기운이 많아 같은 쪽으로 쏠리기 쉬워요`
           : sharedE && shared >= 0.3 ? `둘 다 ${ko(sharedE)} 기운이 적어 함께 채울 거리가 같아요`
             : "기운의 많고 적음이 크게 겹치지도, 서로 채워 주지도 않는 무난한 사이예요";
@@ -199,7 +199,7 @@ const TEN_GOD_KO: Record<string, string> = { 比肩: "비견", 劫財: "겁재",
 /** from이 to에게 어떤 사람인가: to의 일간 기준 from 일간의 십성. */
 function direction(from: CompatSide, to: CompatSide, gives: FiveElement | null): CompatDirection {
   const tg = getTenGod(to.saju.dayMaster, from.saju.dayMaster);
-  return { tenGod: `${TEN_GOD_KO[tg]}(${tg})`, role: `${to.name}에게 ${from.name}은 ${ROLE[tg]}`, gives: gives ? `${from.name}의 ${ko(gives)} 기운이 ${to.name}에게 적은 쪽을 채워 줌` : null };
+  return { tenGod: `${TEN_GOD_KO[tg]}(${tg})`, role: `${to.name}에게 ${from.name}은 ${ROLE[tg]}`, gives: gives ? `${from.name}의 ${ko(gives)} 기운이 ${to.name}에게 부족한 쪽을 채워 줌` : null };
 }
 
 /** 원점수 → 점수(유형별 분위 매듭, 단조 증가). */
@@ -212,8 +212,10 @@ export function rawToScore(raw: number, category: CompatCategory): number {
 }
 
 export function computeCompatScore(category: CompatCategory, a: CompatSide, b: CompatSide, opts: { conventional?: ConventionalFit } = {}): CompatScore {
-  const sa = judgeElementBalance(natalEntries(a.saju)).shares, sb = judgeElementBalance(natalEntries(b.saju)).shares;
-  const el = elementComponent(sa, sb, a.name, b.name);
+  const ja = judgeElementBalance(natalEntries(a.saju)), jb = judgeElementBalance(natalEntries(b.saju));
+  const lack = (j: typeof ja) => ELEMENT_ORDER.filter(e => j.status[e] === "부족" || j.status[e] === "없음");
+  const sa = ja.shares, sb = jb.shares;
+  const el = elementComponent(sa, sb, a.name, b.name, lack(ja), lack(jb));
   const dm = dayMasterComponent(a.saju.dayMaster, b.saju.dayMaster, a.name, b.name);
   const day = branchPair(a.saju.pillars.day.branch, b.saju.pillars.day.branch);
   const yr = branchPair(a.saju.pillars.year.branch, b.saju.pillars.year.branch), mo = branchPair(a.saju.pillars.month.branch, b.saju.pillars.month.branch);
