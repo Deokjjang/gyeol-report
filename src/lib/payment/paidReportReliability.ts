@@ -56,8 +56,13 @@ export async function generateReportSnapshot(job: { payload: unknown; product_ty
     return { success: false as const, result, stage: "generation", code: "GENERATION_EXCEPTION" };
   }
 }
+/**
+ * v5 작가 훅(P3.5 B). 결제 워커 배선(paidRuntime)이 WRITER_V5_PRODUCTS 상품에만 넘긴다. null이면 기존 생성 경로.
+ * claim·lease·finish_job(결제·환불 상태 전이)는 그대로이고, 생성물만 v5 스냅샷이다. 예외는 기존과 같이 GENERATION_EXCEPTION 재시도.
+ */
+export type PaidV5Builder = (job: { payload: unknown; product_type: string; report_id: string; created_at: string; attempt: number }) => Promise<{ snapshot: Record<string, unknown> } | null>;
 // Internal dependency only; HTTP handlers never accept or forward a validator.
-export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication) {
+export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication, v5?: PaidV5Builder) {
   const claimed = await store.call("claim_job", { model: "deterministic" });
   if (!claimed.ok || !isRecord(claimed.job)) return claimed;
   const job = claimed.job;
@@ -87,6 +92,8 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWrite
       }
       annualAcceptance = context as AnnualCommerceAcceptance;
     }
+    const built = v5 ? await v5({ payload: job.payload, product_type: String(job.product_type), report_id: String(job.report_id), created_at: String(job.created_at), attempt }) : null;
+    if (built) return finish({ success: true, snapshot: built.snapshot, gateVersion: PUBLISH_GATE_VERSION });
     const outcome = await generateReportSnapshot({ payload: job.payload, product_type: String(job.product_type), report_id: String(job.report_id), created_at: String(job.created_at) }, runtime, strategy, generate, validatePublication, annualAcceptance);
     const { result, ...publication } = outcome;
     externalCalls = result.externalCalls ?? [];
