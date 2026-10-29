@@ -1,13 +1,14 @@
 /**
  * 장 목록(product-narratives) + 장별 재료 배정.
- * 재료 4~6 = trait 2~4 + 보조 재료(좋은 기운·팩폭·안 쓴 기운·MBTI 신호·흐름·상품 근거). trait는 최대 3장, 장마다 다른 영역. 같은 장면 재사용 금지.
- * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + trait 1개(항목 자체가 재료를 가진다).
+ * 재료 4~6 = trait 2~4 + 보조 재료(좋은 기운·팩폭·안 쓴 기운·MBTI 신호·흐름·상품 근거). 같은 의미 그룹(trait·Fusion·팩폭 포함)은 책 전체 2장, 장마다 다른 영역. 같은 장면 재사용 금지.
+ * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + 그해·그달 글자가 실제로 건드리는 trait 0~1개(P3.7 1-1).
  */
 import type { Domain, MbtiProfile, MyeongriFeature, SceneItem } from "@/data/knowledge-v5/schema";
 import { sceneFits, type FactProfile } from "./facts";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
 import type { Rng } from "./seed";
+import { meaningGroup } from "./groups";
 import type { ChapterBrief, Material, Trait } from "./schema";
 import type { ProductKey } from "./traits";
 
@@ -44,17 +45,18 @@ const AUX: Record<string, string[]> = {
   "career_money_study/work-core": ["ref:chart.strength", "ref:mbti"],
   "career_money_study/choice-scene": ["mbti:work"],
   "career_money_study/choice-why": ["ref:chart.elements"],
-  "career_money_study/fit": ["evidence:jobFit", "evidence:currentJob", "ref:fortunes"],
-  "career_money_study/burden": ["shadow"],
-  "career_money_study/money": ["mbti:money", "evidence:earnStyle", "evidence:investment"],
+  // 직무 추천 장, 지금 일 장, 돈 버는 방식 장, 돈 굴리는 원칙 장(P3.7 1-4).
+  "career_money_study/fit": ["evidence:jobPicks", "evidence:jobFit"],
+  "career_money_study/burden": ["evidence:currentJob", "shadow"],
+  "career_money_study/money": ["mbti:money", "evidence:earnStyle"],
   "career_money_study/study": ["mbti:study", "evidence:studyFit"],
-  "career_money_study/timing-risk": ["ref:chart.thisYear", "ref:chart.currentDayun", "shadow"],
+  "career_money_study/timing-risk": ["evidence:investment", "ref:chart.thisYear", "ref:chart.currentDayun", "shadow"],
   "career_money_study/plan": ["ref:unused"],
   // 연애
   "love_marriage_child/love-core": ["ref:chart.yinYang", "ref:mbti"],
-  "love_marriage_child/spark": ["mbti:love", "ref:fortunes"],
+  "love_marriage_child/spark": ["evidence:loveSignals", "mbti:love"],
   "love_marriage_child/attracted-to": ["evidence:spouseStar", "evidence:partnerMatch"],
-  "love_marriage_child/expression": ["mbti:love"],
+  "love_marriage_child/expression": ["evidence:pushPull", "mbti:love"],
   "love_marriage_child/inner-gap": ["shadow", "fusion:tension"],
   "love_marriage_child/conflict-recovery": ["mbti:relationships"],
   "love_marriage_child/marriage": ["evidence:spouseStar", "evidence:spousePalace"],
@@ -98,7 +100,14 @@ export type PlanCtx = {
   readonly prefer?: (chapterId: string, t: Trait) => number;
   /** 고객 생활 소품(P3.5 A1). 없으면(궁합) 장면 변주 힌트를 넣지 않는다. */
   readonly props?: CustomerProps;
+  /** 타임라인 키 → 그해·그달 글자가 건드리는 trait id(우선순위 순, P3.7 1-1). 반복 장은 이 안에서만 trait를 받는다. */
+  readonly touched?: ReadonlyMap<string, readonly string[]>;
 };
+
+/** 같은 의미 그룹(trait·Fusion·팩폭)은 책 전체에서 이 장 수까지(P3.7 1-3). */
+export const MAX_GROUP_CHAPTERS = 2;
+/** 궁합은 두 사람의 같은 의미 그룹을 따로 센다. */
+const groupKey = (t: Trait) => `${t.id.match(/^[ab]/)?.[0] ?? ""}${meaningGroup(t.featureId)}`;
 
 /** 장 영역 → 소품 줄. 일·돈·배움은 직업, 사랑·결혼은 관계 상태, 사람·혼자는 생활 단계 소품을 먼저 쓴다. */
 const PROP_POOL: Record<Domain, readonly ("job" | "relationship" | "stage")[]> = {
@@ -140,12 +149,19 @@ function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label:
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }
 
-type Use = { count: number; domains: Set<Domain> };
+type Use = { count: number; domains: Set<Domain>; chapters: Set<string> };
 const hasFresh = (ctx: PlanCtx, list: readonly SceneItem[] | undefined, chapterId: string) => (list ?? []).some(s => usable(s, ctx, chapterId));
-/** 이 장에 이 trait를 놓을 수 있는가(3장 상한·영역 중복·장면 여부). 상태를 바꾸지 않는다. */
+/** 의미 그룹 사용 기록에 장 하나를 더한다(같은 장 안의 두 번째 사용은 세지 않는다). */
+function countGroup(uses: Map<string, Use>, key: string, chapterId: string, domain?: Domain) {
+  const u = uses.get(key) ?? { count: 0, domains: new Set<Domain>(), chapters: new Set<string>() };
+  if (!u.chapters.has(chapterId)) { u.chapters.add(chapterId); u.count++; }
+  if (domain) u.domains.add(domain);
+  uses.set(key, u);
+}
+/** 이 장에 이 trait를 놓을 수 있는가(의미 그룹 2장 상한·영역 중복·장면 여부). 상태를 바꾸지 않는다. */
 function feasibleDomains(ctx: PlanCtx, src: TraitSource, domains: readonly Domain[], uses: Map<string, Use>, chapterId: string): Domain[] {
-  const u = uses.get(src.trait.id);
-  if ((u?.count ?? 0) >= 3) return [];
+  const u = uses.get(groupKey(src.trait));
+  if (!u?.chapters.has(chapterId) && (u?.count ?? 0) >= MAX_GROUP_CHAPTERS) return [];
   return domains.filter(d => !u?.domains.has(d) && hasFresh(ctx, src.feature.scenes[d], chapterId));
 }
 function assign(ctx: PlanCtx, src: TraitSource, domains: readonly Domain[], uses: Map<string, Use>, chapterId: string): Material | null {
@@ -153,14 +169,15 @@ function assign(ctx: PlanCtx, src: TraitSource, domains: readonly Domain[], uses
   if (!ok.length) return null;
   const d = ok[ctx.rng.fork(`${chapterId}:${src.trait.id}:dom`).int(ok.length)];
   const scene = freshScene(src.feature.scenes[d], ctx, `${chapterId}:${src.trait.id}:${d}`, chapterId)!;
-  const u = uses.get(src.trait.id) ?? { count: 0, domains: new Set<Domain>() };
-  u.domains.add(d); u.count++; uses.set(src.trait.id, u);
+  countGroup(uses, groupKey(src.trait), chapterId, d);
   src.trait.chapters.push(chapterId);
-  return { kind: "trait", traitId: src.trait.id, domain: d, scene, angle: u.count === 1 ? "first" : "new-domain" };
+  return { kind: "trait", traitId: src.trait.id, domain: d, scene, angle: "first" };
 }
 
-function auxMaterials(ctx: PlanCtx, chapterId: string, shadowCursor: { i: number }): Material[] {
+function auxMaterials(ctx: PlanCtx, chapterId: string, shadowCursor: { i: number }, uses: Map<string, Use>): Material[] {
   const out: Material[] = [];
+  // 팩폭·Fusion 참조도 그 trait의 의미 그룹 1장으로 센다(P3.7 1-3: 같은 뜻이 세 장에 나왔다).
+  const count = (traitId: string) => { const t = ctx.traits.find(x => x.trait.id === traitId)?.trait; if (t) countGroup(uses, groupKey(t), chapterId); };
   for (const spec of AUX[`${ctx.product}/${chapterId}`] ?? []) {
     if (spec.startsWith("ref:")) { const ref = spec.slice(4); if (ctx.has(ref)) out.push({ kind: "ref", ref }); }
     else if (spec.startsWith("mbti:")) {
@@ -168,11 +185,12 @@ function auxMaterials(ctx: PlanCtx, chapterId: string, shadowCursor: { i: number
       const d = spec.slice(5) as Domain; const scene = freshScene(ctx.mbti.signals[d], ctx, `${chapterId}:mbti:${d}`, chapterId);
       if (scene) out.push({ kind: "mbti", domain: d, scene });
     } else if (spec.startsWith("evidence:")) { const e = ctx.evidence[spec.slice(9)]; if (e) out.push(e); }
-    else if (spec === "shadow") { const s = ctx.shadows[shadowCursor.i++]; if (s) out.push({ kind: "ref", ref: `shadows.${s.id}`, note: `팩폭 재료(연결 trait ${s.traitId})` }); }
+    else if (spec === "shadow") { const s = ctx.shadows[shadowCursor.i++]; if (s) { out.push({ kind: "ref", ref: `shadows.${s.id}`, note: `팩폭 재료(연결 trait ${s.traitId})` }); count(s.traitId); } }
     else if (spec === "fusion:tension") {
-      const t = ctx.traits.find(x => x.trait.fusion?.kind === "tension") ?? ctx.traits.find(x => x.trait.fusion?.kind === "conditional");
-      if (t) out.push({ kind: "ref", ref: `traits.${t.trait.id}.fusion`, note: "명리와 MBTI가 반대로 당기는 지점" });
-      else { const s = ctx.shadows[shadowCursor.i++]; if (s) out.push({ kind: "ref", ref: `shadows.${s.id}`, note: "MBTI 긴장 재료가 없어 명리 안의 팩폭으로 대신" }); }
+      const free = (x: TraitSource) => (uses.get(groupKey(x.trait))?.count ?? 0) < MAX_GROUP_CHAPTERS;
+      const t = ctx.traits.find(x => x.trait.fusion?.kind === "tension" && free(x)) ?? ctx.traits.find(x => x.trait.fusion?.kind === "conditional" && free(x));
+      if (t) { out.push({ kind: "ref", ref: `traits.${t.trait.id}.fusion`, note: "명리와 MBTI가 반대로 당기는 지점" }); count(t.trait.id); }
+      else { const s = ctx.shadows[shadowCursor.i++]; if (s) { out.push({ kind: "ref", ref: `shadows.${s.id}`, note: "MBTI 긴장 재료가 없어 명리 안의 팩폭으로 대신" }); count(s.traitId); } }
     }
   }
   return out;
@@ -188,7 +206,7 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
   const plans = ctx.narrative.chapters.flatMap(c => c.repeat
     ? ctx.timelineKeys.map(key => ({ c, repeatKey: key as string | undefined, id: `${c.id}:${key}` }))
     : [{ c, repeatKey: undefined as string | undefined, id: c.id }]).map((p, index) => {
-    const aux = p.repeatKey ? [] : auxMaterials(ctx, p.c.id, shadowCursor);
+    const aux = p.repeatKey ? [] : auxMaterials(ctx, p.id, shadowCursor, uses);
     // 재료 4~6: trait 2~4 + 보조. 반복 장은 trait 1.
     const target = p.repeatKey ? 1 : Math.min(4, Math.max(2, Math.min(TRAIT_SLOTS[p.c.role] ?? 2, 6 - aux.length), 4 - aux.length));
     return { ...p, index, aux, target, domains: domainsOf(p.c.domains as Domain[]), traits: [] as Material[] };
@@ -197,10 +215,13 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
   // 라운드 로빈: 모든 장이 n번째 trait를 받기 전에는 아무 장도 n+1번째를 받지 않는다. 후보가 적은 장부터.
   for (let round = 1; round <= 4; round++) {
     const open = plans.filter(p => p.traits.length < p.target && p.traits.length < round);
-    const cands = (p: (typeof plans)[number]) => ctx.traits.filter(t => !p.traits.some(m => m.kind === "trait" && m.traitId === t.trait.id) && feasibleDomains(ctx, t, p.domains, uses, p.id).length);
+    // 같은 장에 같은 의미 그룹 둘은 넣지 않는다. 반복 장은 그해·그달 글자가 건드리는 trait만(P3.7 1-1).
+    const inChapter = (p: (typeof plans)[number], t: TraitSource) => p.traits.some(m => m.kind === "trait" && ctx.traits.some(x => x.trait.id === m.traitId && groupKey(x.trait) === groupKey(t.trait)));
+    const cands = (p: (typeof plans)[number]) => ctx.traits.filter(t => (!p.repeatKey || ctx.touched?.get(p.repeatKey)?.includes(t.trait.id)) && !inChapter(p, t) && feasibleDomains(ctx, t, p.domains, uses, p.id).length);
     open.sort((a, b) => cands(a).length - cands(b).length || a.index - b.index);
     for (const p of open) {
-      const best = cands(p).sort((a, b) => prefScore(p, b) - prefScore(p, a) || (uses.get(a.trait.id)?.count ?? 0) - (uses.get(b.trait.id)?.count ?? 0) || b.trait.score - a.trait.score || a.trait.id.localeCompare(b.trait.id))[0];
+      const touchRank = (t: TraitSource) => p.repeatKey ? ctx.touched?.get(p.repeatKey)?.indexOf(t.trait.id) ?? 0 : 0;
+      const best = cands(p).sort((a, b) => touchRank(a) - touchRank(b) || prefScore(p, b) - prefScore(p, a) || (uses.get(groupKey(a.trait))?.count ?? 0) - (uses.get(groupKey(b.trait))?.count ?? 0) || b.trait.score - a.trait.score || a.trait.id.localeCompare(b.trait.id))[0];
       if (best) { const m = assign(ctx, best, p.domains, uses, p.id); if (m) p.traits.push(m); }
     }
   }
@@ -222,7 +243,7 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
     if (p.repeatKey) continue;
     for (const src of ctx.traits) {
       if (p.traits.length + p.aux.length >= 4 || p.traits.length >= 4) break;
-      if (p.traits.some(m => m.kind === "trait" && m.traitId === src.trait.id)) continue;
+      if (p.traits.some(m => m.kind === "trait" && ctx.traits.some(x => x.trait.id === m.traitId && groupKey(x.trait) === groupKey(src.trait)))) continue;
       const m = assign(ctx, src, p.domains, uses, p.id); if (m) p.traits.push(m);
     }
     for (const ref of FILL_REFS) {

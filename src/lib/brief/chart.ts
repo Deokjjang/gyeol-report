@@ -18,6 +18,16 @@ export type ElementState = { readonly excess: FiveElement[]; readonly lacking: F
 export function elementState(saju: SajuCalcResult): ElementState {
   return stateOf(judgeElementBalance(natalEntries(saju)));
 }
+/**
+ * 일간 강약과 오행 쏠림은 다른 저울이다(P3.7 1-2): "힘이 약한데 물이 넘친다"를 모순으로 읽지 않게 한 문장으로 풀어 준다.
+ * 오행이 고르면(많음·부족·없음 없음) 쓰지 않는다.
+ */
+function strengthNote(label: string, top: { element: FiveElement; level: string }, low: { element: FiveElement; level: string }): { note?: string } {
+  const skew = [top.level === "많음" ? `${ELEMENT_KO[top.element]} 많음` : "", low.level === "부족" || low.level === "없음" ? `${ELEMENT_KO[low.element]} ${low.level}` : ""].filter(Boolean);
+  if (!skew.length) return {};
+  return { note: `내 힘의 세기(${label})와 사주 전체 기운의 쏠림(${skew.join("·")})은 다른 저울입니다. 앞은 나를 받쳐 주는 힘이 얼마나 큰지, 뒤는 여덟 글자에 어떤 기운이 많고 적은지입니다.` };
+}
+
 export function stateOf(b: ElementBalance): ElementState {
   return {
     excess: ELEMENTS.filter(e => b.status[e] === "많음"),
@@ -67,7 +77,7 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   return {
     pillars: { year: ganjiOf(pillars.year), month: ganjiOf(pillars.month), day: ganjiOf(pillars.day), ...(pillars.hour && det.hourIncluded ? { hour: ganjiOf(pillars.hour) } : {}) },
     dayMaster: { stem: dayMaster, name: dm?.name ?? dayMaster, easyName: dm?.easyName ?? "", metaphor: dm?.image.metaphor ?? "" },
-    strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo },
+    strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo, ...strengthNote(saju.structureAnalysis.dayMasterStrength.labelKo, top, low) },
     yinYang: { yin: saju.yinYang.yin, yang: saju.yinYang.yang, label: saju.yinYang.label, reading: feature(yyId)?.oneLiner ?? "" },
     elements: {
       strongest: { element: top.element, name: ELEMENT_KO[top.element], level: top.level, reason: top.reason },

@@ -1,6 +1,6 @@
 /**
  * 궁합 브리프: 두 사람 요약, 공통점·차이(행동 차원), 오행 보완, A→B·B→A 십성, 일주끼리 관계, MBTI 통념 궁합, 관계 유형 관점, v5 궁합 점수(P4: 구성요소·구간·방향).
- * 일주끼리 관계는 원국 감지와 같은 detectRelations를 쓴다(두 일주를 년·월 자리 라벨로 넣는다 — 라벨은 계산에 쓰이지 않는다).
+ * 두 사람 기둥끼리 관계는 원국 감지와 같은 detectRelations를 쓴다(두 기둥을 년·월 자리 라벨로 넣는다 — 라벨은 계산에 쓰이지 않는다).
  */
 import type { MbtiProfile } from "@/data/knowledge-v5/schema";
 import { computeCompatScore, type ConventionalFit } from "@/lib/compat/score";
@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, SajuCalcResult } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, ganjiLabel, josa, tenGodLabel } from "./labels";
+import { ELEMENT_KO, ganjiLabel, glyphLabel, josa, tenGodLabel } from "./labels";
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
 
 const LENS_FOCUS: Record<CompatibilityRelationshipType, string> = {
@@ -28,6 +28,33 @@ function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
   for (const t of side.traits) { const f = k.features.get(t.featureId); if (f) add(f.dimensionTags, t.score); }
   if (side.mbti) add(side.mbti.dimensionTags, 1.5 * Math.max(1, ...side.traits.map(t => t.score)));
   return v;
+}
+
+const PILLAR_KO = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
+const REL_EASY: Record<string, string> = {
+  STEM_HAP: "끌려 붙는 합(천간합)", YUKHAP: "짝꿍처럼 붙는 합(육합)", SAMHAP: "반쯤 맺힌 짝(반합)", BANGHAP: "같은 계절 모임(방합)",
+  CHUNG: "서로 부딪치는 기운(충)", HYEONG: "서로 조이는 기운(형)", PA: "금이 가게 하는 기운(파)", HAE: "서로 거슬리는 기운(해)", WONJIN: "신발 속 모래알 같은 기운(원진)",
+};
+/**
+ * 두 사람 사이 관계의 자리 문장(P3.7 1-5): "정희님의 태어난 날 땅 글자 亥와 지우님의 태어난 날 땅 글자 巳: 서로 부딪치는 기운(충)".
+ * 날–날을 먼저, 그다음 날이 낀 짝, 그 밖 짝 순으로 4개까지. 시간 미상인 사람의 시각 기둥은 보지 않는다.
+ */
+function pairRelations(a: PairSide, b: PairSide, k: Knowledge): string[] {
+  const POS = ["day", "month", "year", "hour"] as const;
+  const rows: { rank: number; text: string }[] = [];
+  for (const pa of POS) for (const pb of POS) {
+    // 시각 기둥은 원국 요약에 있을 때(시간을 알 때)만.
+    const x = pa === "hour" && !a.chart.pillars.hour ? undefined : a.saju.pillars[pa], y = pb === "hour" && !b.chart.pillars.hour ? undefined : b.saju.pillars[pb];
+    if (!x || !y) continue;
+    for (const r of detectRelations([{ position: "year", pillar: x }, { position: "month", pillar: y }])) {
+      const sky = r.kind === "STEM_HAP", ga = sky ? x.stem : x.branch, gb = sky ? y.stem : y.branch;
+      const glyph = sky ? "하늘 글자" : "땅 글자";
+      const line = k.badges.find(z => z.kind === r.kind && (z.pair === r.key || z.pair === [...r.key].reverse().join("")))?.line ?? "";
+      const rank = (pa === "day" ? 0 : 2) + (pb === "day" ? 0 : 2) + (sky ? 1 : 0);
+      rows.push({ rank, text: `${a.callName}의 ${PILLAR_KO[pa]} ${glyph} ${josa(glyphLabel(ga), "과와")} ${b.callName}의 ${PILLAR_KO[pb]} ${glyph} ${glyphLabel(gb)}: ${REL_EASY[r.kind] ?? r.kind}${line ? ` — ${line}` : ""}` });
+    }
+  }
+  return rows.sort((p, q) => p.rank - q.rank).slice(0, 4).map(r => r.text);
 }
 
 export function buildCompatibility(category: CompatibilityRelationshipType, a: PairSide, b: PairSide, k: Knowledge, lensFromNarrative: { roleLabels: [string, string]; tone: string; forbidden: string[] } | undefined): CompatibilityBrief {
@@ -50,8 +77,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     .filter((e: FiveElement) => from.st.excess.includes(e) || (from.saju.elements.visible[e] ?? 0) >= 2)
     .map(e => `${fromName}의 ${ELEMENT_KO[e]} 기운이 ${toName}에게 부족한 ${josa(ELEMENT_KO[e], "을를")} 채워 줌`);
   const ab = getTenGod(a.saju.dayMaster, b.saju.dayMaster), ba = getTenGod(b.saju.dayMaster, a.saju.dayMaster);
-  const rel = detectRelations([{ position: "year", pillar: a.saju.pillars.day }, { position: "month", pillar: b.saju.pillars.day }]);
-  const badge = (kind: string, key: string) => k.badges.find(x => x.kind === kind && (x.pair === key || x.pair === [...key].reverse().join(""))) ?? k.badges.find(x => x.kind === kind && !x.pair);
+  const rel = pairRelations(a, b, k);
   const conv = a.mbti && b.mbti ? a.mbti.conventionalCompat.find(c => c.type === b.mbti!.type) : undefined;
   const conventional: ConventionalFit = (x, y) => k.mbti.get(x)?.conventionalCompat.find(c => c.type === y)?.fit ?? null;
   const s = computeCompatScore(category, { saju: a.saju, name: a.callName, mbti: a.mbti?.type ?? null }, { saju: b.saju, name: b.callName, mbti: b.mbti?.type ?? null }, { conventional });
@@ -69,7 +95,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     complement: [...fills(b, a, b.callName, a.callName), ...fills(a, b, a.callName, b.callName)],
     tenGodAB: { tenGod: tenGodLabel(ab), reading: k.features.get(`tenGod:${ab}`)?.oneLiner ?? "" },
     tenGodBA: { tenGod: tenGodLabel(ba), reading: k.features.get(`tenGod:${ba}`)?.oneLiner ?? "" },
-    dayRelations: rel.map(r => `${r.kind}(${r.key}): ${badge(r.kind, r.key)?.line ?? ""}`),
+    dayRelations: rel,
     mbtiConvention: conv ? { fit: conv.fit, why: conv.why, note: "통념" } : null,
     score: {
       value: s.total, version: s.version, band: { label: s.band.label, tone: s.band.tone, verdict: s.band.verdict },

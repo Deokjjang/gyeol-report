@@ -3,11 +3,11 @@
  * 삭제: 날짜·시기 + 사건 확정 / 입력에 없는 사실(연인·배우자·자녀·직업 형태) / 시간 미상인데 시주·자녀 자리 / MBTI 없음인데 MBTI /
  *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치 / 책 안에서 이미 나온 같은 문장(20자 이상, 뒤의 것) /
  *       스스로 김빼는 말·이별 권유(P3.5 A6) / 궁합 점수·구간과 어긋나는 말(P4 C3) /
- *       경험 단정 중 경향형·질문형으로 바꿀 수 없는 것(P3.6 A6, 바꿀 수 있으면 바꾸고 replacements에 기록).
+ *       경험 단정 중 경향형·질문형으로 바꿀 수 없는 것(P3.6 A6, 바꿀 수 있으면 바꾸고 replacements에 기록) / 인연·결혼 시기 말(P3.7 1-5).
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
-import { OLD_NEGATIVE, isPastAssertion, softenExperience, splitSentences } from "./patterns";
+import { LOVE_TIMING, OLD_NEGATIVE, isPastAssertion, softenExperience, splitSentences } from "./patterns";
 
 export type SafetyFacts = {
   readonly birthTimeKnown: boolean;
@@ -18,7 +18,7 @@ export type SafetyFacts = {
   /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
   readonly compat?: { readonly score: number; readonly band: string };
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 /** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
 export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
@@ -75,6 +75,7 @@ export function allowedWindows(briefText: string): Set<string> {
 /** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다. */
 export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false): SentenceRule | null {
   if ((DATE.test(s) && EVENT_DEFINITE.test(s)) || ABSOLUTE.test(s)) return "date_event";
+  if (LOVE_TIMING.test(s)) return "love_timing";
   const conditional = inConditionalChapter || CONDITIONAL.test(s);
   if (f.relationship !== "married" && SPOUSE.test(s.replace(SPOUSE_TERM, "")) && !conditional) return "fact_spouse";
   if ((f.relationship === "single" || f.relationship === "unknown") && PARTNER.test(s) && !conditional) return "fact_partner";
@@ -112,12 +113,15 @@ export function filterParagraph(p: string, f: SafetyFacts, chapter: number, dele
   return kept.join(" ");
 }
 
-export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse"; readonly text: string };
+export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed"; readonly text: string };
+/** "풍경 같은 기운"처럼 그림만 있고 정체(쉬운 말(용어))가 없는 기운 이름(P3.7 1-5). 같은 문단에 괄호 용어가 있으면 정체를 밝힌 것으로 본다. */
+const IMAGE_ONLY = /[가-힣]+ 같은 (기운|힘)(?![가-힣]*\()/;
 /** 경고: 과거 단정 문장, 용어가 괄호 밖에서 먼저 나온 경우(용어 목록은 호출하는 쪽이 준다). */
 export function styleWarnings(chapter: number, paragraphs: readonly string[], terms: readonly string[], introduced: Set<string>): StyleWarning[] {
   const out: StyleWarning[] = [];
   for (const p of paragraphs) {
     for (const s of splitSentences(p)) if (isPastAssertion(s)) out.push({ chapter, kind: "past_assertion", text: s });
+    if (!/\([가-힣·]{1,8}\)/.test(p)) for (const s of splitSentences(p)) if (IMAGE_ONLY.test(s) && !/앞에서|앞서|그|이 /.test(s.slice(0, s.search(IMAGE_ONLY)))) out.push({ chapter, kind: "image_unnamed", text: s });
     for (const t of terms) {
       if (introduced.has(t)) continue;
       const i = p.indexOf(t); if (i < 0) continue;

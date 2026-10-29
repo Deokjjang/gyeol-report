@@ -144,9 +144,9 @@ function extrasOf(ctx: Ctx, ch: WriterChapter, sections: readonly { heading: str
   }
   const refs = b.compatibility
     ? ["compatibility.common", "compatibility.complement", "compatibility.differences", "compatibility.dayRelations", "compatibility.mbtiConvention", "compatibility.parts", "compatibility.direction", "compatibility.lens", "compatibility.tenGodAB", "compatibility.tenGodBA", "compatibility.elements", "compatibility.yinYang"]
-    : ["chart.elements", "chart.climate", "chart.yinYang", "fortunes", "unused", "chart.strength", "chart.dayMaster", "chart.currentDayun"];
+    : ["chart.elements", "chart.climate", "chart.yinYang", "fortunes", "unused", "chart.strength", "chart.dayMaster", "chart.currentDayun", "chart.thisYear"];
   for (const ref of refs) { const s = refSection(ctx, ref, ch.id); if (s?.paragraphs.length) out.push({ heading: s.heading, append: false, text: s.paragraphs.join(" ") }); }
-  for (const t of b.traits) out.push({ heading: `${t.easyName}의 다른 얼굴`, append: false, text: join(t.positionNote?.replace(/^[^:]+:\s*/, ""), ...t.good, t.strengthNote, !ctx.used.has(`fusion:${t.id}`) && t.fusion?.why, t.overuse && `${t.overuse} ${pick(ctx, `${ch.id}:${t.id}:warm2`, WARM)}`) });
+  for (const t of b.traits) out.push({ heading: `${t.easyName}의 다른 얼굴`, append: false, text: join(t.positionNote?.replace(/^[^:]+:\s*/, ""), ...t.good, t.strengthNote, t.where && `이 기운은 ${t.where}에 걸려 있어요`, t.image.visual, !ctx.used.has(`fusion:${t.id}`) && t.fusion?.why, t.overuse && `${t.overuse} ${pick(ctx, `${ch.id}:${t.id}:warm2`, WARM)}`) });
   return out;
 }
 

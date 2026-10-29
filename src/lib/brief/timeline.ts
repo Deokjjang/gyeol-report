@@ -12,9 +12,9 @@ import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
-import { colorsOf, ganjiLabel, ganjiOf, tenGodLabel } from "./labels";
+import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel } from "./labels";
 import type { Rng } from "./seed";
-import type { TimelineEntry } from "./schema";
+import type { TimelineEntry, Trait } from "./schema";
 
 const STRENGTH_MAP = { VERY_WEAK: "WEAK", WEAK: "WEAK", BALANCED: "BALANCED", STRONG: "STRONG", VERY_STRONG: "STRONG" } as const;
 const NATAL: readonly string[] = ["year", "month", "day", "hour"];
@@ -36,7 +36,41 @@ function flowShort(key: string, clashes: readonly ChartPosition[]): string | und
 export type TimelineCtx = {
   readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile;
   readonly rng: Rng; readonly usedScenes: Set<string>; readonly usedTemplates: Set<string>;
+  /** 원국 trait(P3.7 1-1): 그해·그달 글자가 실제로 건드리는 것만 항목 재료(touched)가 된다. */
+  readonly traits?: readonly Pick<Trait, "id" | "featureId" | "family" | "positions">[];
 };
+
+/** 관계 쉬운 이름(용어 사전 easy와 같은 결). */
+const REL_EASY: Record<string, string> = {
+  STEM_HAP: "끌려 붙는 합(천간합)", YUKHAP: "짝꿍처럼 붙는 합(육합)", SAMHAP: "세 글자 한 팀(삼합)", BANGHAP: "같은 계절 모임(방합)",
+  CHUNG: "서로 부딪치는 기운(충)", HYEONG: "서로 조이는 기운(형)", PA: "금이 가게 하는 기운(파)", HAE: "서로 거슬리는 기운(해)", WONJIN: "신발 속 모래알 같은 기운(원진)",
+};
+const relEasy = (r: RelationHit) => r.kind === "SAMHAP" && r.completeness !== "full" ? "반쯤 맺힌 짝(반합)" : REL_EASY[r.kind] ?? r.kind;
+const GROUP_EASY = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는 기운(식상)", WEALTH: "재물 기운(재성)", OFFICER: "책임의 기운(관성)", RESOURCE: "받쳐 주는 기운(인성)" } as const;
+
+/**
+ * 그해·그달 글자가 건드리는 원국 trait(P3.7 1-1): ① 합충형파해로 엮인 자리의 trait, ② 같은 십성(묶음)으로 세지거나 채워지는 trait, ③ 부족 오행을 채우거나 많은 오행을 더하는 trait.
+ * 해당이 없으면 빈 목록(원국 특성을 억지로 넣지 않는다). 순서 = 우선순위.
+ */
+function touchedTraits(ctx: TimelineCtx, inc: ReturnType<typeof analyzeIncoming>, eff: ReturnType<typeof inflowEffect>): { traitId: string; how: string }[] {
+  const out: { traitId: string; how: string }[] = [];
+  const add = (traitId: string, how: string) => { if (!out.some(x => x.traitId === traitId)) out.push({ traitId, how }); };
+  for (const r of inc.relations) {
+    const natal = r.members.map(m => m.position).filter((p): p is ChartPosition => NATAL.includes(p));
+    for (const t of ctx.traits ?? []) {
+      const p = natal.find(x => t.positions.includes(x));
+      if (p) add(t.id, `${POSITION_KO[p]} 글자와 ${relEasy(r)}`);
+    }
+  }
+  for (const t of ctx.traits ?? []) {
+    const [fam, key, state] = t.featureId.split(":");
+    if (fam === "tenGod" && (key === inc.stemTenGod || key === inc.branchTenGod)) add(t.id, `같은 ${TEN_GOD_KO[key as TenGod]} 기운이 또 들어와 더 세짐`);
+    if (fam === "tenGodBalance" && key === TEN_GOD_GROUP[inc.stemTenGod]) add(t.id, state === "WEAK" ? `부족한 ${GROUP_EASY[key as keyof typeof GROUP_EASY]}이 채워짐` : `이미 많은 ${GROUP_EASY[key as keyof typeof GROUP_EASY]}이 더 커짐`);
+    if (fam === "element" && (state === "WEAK" || state === "MISSING") && eff.fills.includes(key as never)) add(t.id, `부족한 ${ELEMENT_KO[key as keyof typeof ELEMENT_KO]} 기운이 채워짐`);
+    if (fam === "element" && state === "STRONG" && eff.feeds.includes(key as never)) add(t.id, `이미 많은 ${ELEMENT_KO[key as keyof typeof ELEMENT_KO]} 기운이 더 들어옴`);
+  }
+  return out;
+}
 
 function badgeFor(hit: RelationHit, k: Knowledge): Badge | undefined {
   const pairs = [hit.key, [...hit.key].reverse().join("")];
@@ -77,10 +111,14 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
   const flow = scoreFlow(k.flowRule, flowInput);
   const badges: TimelineEntry["badges"] = [];
   for (const r of inc.relations) {
-    const b = badgeFor(r, k); if (!b || badges.some(x => x.kind === b.kind && x.pair === b.pair)) continue;
+    // 어느 원국 자리와 엮였는지(P3.7 1-1·1-5): "태어난 달 글자와". 같은 배지가 여러 자리와 엮이면 자리를 잇는다.
+    const natal = [...new Set(r.members.map(m => m.position).filter((p): p is ChartPosition => NATAL.includes(p)))].map(p => POSITION_KO[p]);
+    const b = badgeFor(r, k); if (!b) continue;
+    const same = badges.find(x => x.kind === b.kind && x.pair === b.pair);
+    if (same) { const w = [...new Set([...(same.with?.split("·") ?? []), ...natal])]; if (w.length) same.with = w.join("·"); continue; }
     // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다).
     const half = r.kind === "SAMHAP" && r.completeness !== "full";
-    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `두 글자만 만나 반쯤 맺힌 팀: ${b.line.replace(/완성/g, "반쯤 맺힘")}` : b.line, tone: b.tone });
+    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `두 글자만 만나 반쯤 맺힌 팀: ${b.line.replace(/완성/g, "반쯤 맺힘")}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
   }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }
   const eff = inflowEffect(pillar, st);
@@ -88,6 +126,7 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
   const period = k.tenGodPeriod.get(inc.stemTenGod)!;
   const stage = k.features.get(`twelveStage:${inc.twelveStage}`);
   const scene = pickScene(ctx, kind === "year" ? period.year.scenes : period.month.scenes, `scene:${key}`);
+  const touched = touchedTraits(ctx, inc, eff);
   return {
     key, label, kind, ganji: ganjiOf(pillar), colors: colorsOf(pillar),
     tenGod: { stem: tenGodLabel(inc.stemTenGod), branch: tenGodLabel(inc.branchTenGod) },
@@ -101,6 +140,7 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
       ...(scene ? { scene } : {}),
       stage: stage ? `${stage.name} — ${stage.oneLiner}` : inc.twelveStage,
     },
+    ...(touched.length ? { touched } : {}),
     ...extra,
   };
 }

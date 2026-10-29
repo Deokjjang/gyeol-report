@@ -38,7 +38,8 @@ export const MbtiBriefSchema = z.object({
 export const ChartBriefSchema = z.object({
   pillars: z.object({ year: Ganji, month: Ganji, day: Ganji, hour: Ganji.optional() }),
   dayMaster: z.object({ stem: z.string(), name: z.string(), easyName: z.string(), metaphor: z.string() }),
-  strength: z.object({ level: z.string(), label: z.string() }),
+  /** note: 일간 강약과 오행 쏠림이 다른 이야기임을 푸는 한 문장(P3.7 1-2). */
+  strength: z.object({ level: z.string(), label: z.string(), note: z.string().optional() }),
   yinYang: z.object({ yin: z.number(), yang: z.number(), label: z.string(), reading: z.string() }),
   /** 오행 단일 판단의 결론 하나(가장 강한·가장 약한 기운)와 쉬운 이유. 겉 글자 수만 보고 판단하지 않도록 숫자는 주지 않는다. */
   elements: z.object({
@@ -71,6 +72,8 @@ export const TraitSchema = z.object({
   good: z.array(z.string()).min(1).max(2),
   overuse: z.string().optional(),
   fusion: FusionBriefSchema.optional(),
+  /** 같은 대상을 그린 이미지 계열의 대표 trait id(P3.7 1-3). 있으면 그 그림이 주제이고, 이 trait는 "같은 불의 다른 얼굴"로 한 구절만 잇는다. */
+  sameImageAs: z.string().optional(),
   chapters: z.array(z.string()),
 });
 
@@ -103,7 +106,8 @@ export const TimelineEntrySchema = z.object({
   key: z.string(), label: z.string(), kind: z.enum(["year", "month"]),
   ganji: Ganji, colors: z.object({ stem: ElementColor, branch: ElementColor }),
   tenGod: z.object({ stem: z.string(), branch: z.string() }),
-  badges: z.array(z.object({ kind: z.string(), pair: z.string().optional(), label: z.string(), line: z.string(), tone: z.string() })),
+  /** with: 그해·그달 글자와 엮인 원국 자리("태어난 달·태어난 날"), P3.7 1-1. */
+  badges: z.array(z.object({ kind: z.string(), pair: z.string().optional(), label: z.string(), line: z.string(), tone: z.string(), with: z.string().optional() })),
   fillsLack: z.object({ fills: z.boolean(), elements: z.array(Element), feedsExcess: z.array(Element) }),
   flow: z.object({ score: z.number().int().min(1).max(5), label: z.string(), basis: z.array(z.string()), note: z.literal("참고") }),
   keywords: z.array(z.string()).min(2).max(3),
@@ -113,6 +117,8 @@ export const TimelineEntrySchema = z.object({
   /** 기준일 대비: past(돌아보는 말), now, future(경향). P3.6 B. */
   when: z.enum(["past", "now", "future"]).optional(),
   material: z.object({ image: z.string(), mood: z.string(), scene: z.string().optional(), stage: z.string() }),
+  /** 그해·그달 글자가 실제로 건드리는 원국 trait와 어떻게 건드리는지(P3.7 1-1). 장에 배정된 것만 남긴다. 없으면 원국 특성을 쓰지 않는다. */
+  touched: z.array(z.object({ traitId: z.string(), how: z.string() })).optional(),
 });
 export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
 
