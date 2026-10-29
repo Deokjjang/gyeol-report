@@ -80,7 +80,7 @@ export const UnusedSchema = z.object({ kind: z.enum(["element", "tenGod"]), key:
 
 export const MaterialSchema = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("trait"), traitId: z.string(), domain: z.enum(DOMAINS), scene: z.string(), angle: z.enum(["first", "new-domain"]) }),
-  z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string() }),
+  z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string(), who: z.string().optional() }),
   z.object({ kind: z.literal("ref"), ref: z.string(), note: z.string().optional() }),
   z.object({ kind: z.literal("evidence"), key: z.string(), facts: z.array(z.string()).min(1) }),
   z.object({ kind: z.literal("timeline"), entryKey: z.string() }),
@@ -109,7 +109,9 @@ export const TimelineEntrySchema = z.object({
   keywords: z.array(z.string()).min(2).max(3),
   action: z.object({ templateId: z.string(), text: z.string() }),
   dayun: z.object({ ganji: z.string(), transition: z.boolean() }).optional(),
-  change: z.object({ tenGodFrom: z.string(), flowFrom: z.number() }).optional(),
+  change: z.object({ tenGodFrom: z.string(), flowFrom: z.number(), line: z.string().optional() }).optional(),
+  /** 기준일 대비: past(돌아보는 말), now, future(경향). P3.6 B. */
+  when: z.enum(["past", "now", "future"]).optional(),
   material: z.object({ image: z.string(), mood: z.string(), scene: z.string().optional(), stage: z.string() }),
 });
 export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;

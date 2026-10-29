@@ -76,4 +76,29 @@ describe("P3.6 원고 남은 문제", () => {
     expect(replacements).toHaveLength(1);
     expect(deletions.map(d => d.rule)).toEqual(["experience_assert"]);
   });
+
+  it("B 1회차 결함 수정: 커리어 근거·궁합 관계 사실·자리 관계·타임라인 시제·소개 순서", () => {
+    const career = buildBrief({ product: "career_money_study", person: PEOPLE.c1, baseDate: base }, k);
+    const ev = career.chapters.flatMap(c => c.materials).filter(m => m.kind === "evidence").map(m => (m as { key: string }).key);
+    expect(ev).toEqual(expect.arrayContaining(["jobFit", "currentJob", "studyFit", "earnStyle", "investment"]));
+    expect(ev.filter(x => x === "investment")).toHaveLength(1);
+    const boss = buildBrief({ product: "saju_mbti_compatibility", person: PEOPLE.x, partner: PEOPLE.c1, relationshipType: "managerReport", baseDate: base }, k);
+    expect(boss.person.forbiddenFacts.join(" ")).not.toContain("상사·팀장");
+    const whos = new Set(boss.chapters.flatMap(c => c.materials).flatMap(m => m.kind === "mbti" && m.who ? [m.who] : []));
+    expect(whos.size).toBe(2);
+    const love = buildBrief({ product: "love_marriage_child", person: PEOPLE.y, baseDate: base }, k);
+    const palace = love.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "spousePalace");
+    expect(JSON.stringify(palace)).not.toContain("천간합");
+    const annual = buildBrief({ product: "annual_fortune", person: PEOPLE.c2, baseDate: base, selectedYear: 2026 }, k);
+    const months = annual.timeline!.entries.filter(e => e.kind === "month");
+    expect(months.map(e => e.when)).toEqual([...Array(8).fill("past"), "now", "future", "future", "future"]);
+    expect(months[1].change?.line).toMatch(/^지난달보다 흐름 세기/);
+    expect(annual.chapters.find(c => c.id === "current-dayun")?.title).toBe("타고난 바탕 위에 올해");
+    expect(JSON.stringify(annual.timeline!.entries.flatMap(e => e.badges))).not.toMatch(/반쯤\)[^"]*완성/);
+    for (const b of [career, love, annual]) {
+      const firsts = new Map<string, number>();
+      for (const c of b.chapters) for (const m of c.materials) if (m.kind === "trait" && m.angle === "first") { expect(firsts.has(m.traitId)).toBe(false); firsts.set(m.traitId, c.index); }
+      for (const c of b.chapters) for (const m of c.materials) if (m.kind === "trait" && m.angle !== "first") expect(firsts.get(m.traitId) ?? 0).toBeLessThan(c.index);
+    }
+  });
 });

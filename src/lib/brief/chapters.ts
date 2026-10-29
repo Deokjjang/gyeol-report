@@ -44,15 +44,15 @@ const AUX: Record<string, string[]> = {
   "career_money_study/work-core": ["ref:chart.strength", "ref:mbti"],
   "career_money_study/choice-scene": ["mbti:work"],
   "career_money_study/choice-why": ["ref:chart.elements"],
-  "career_money_study/fit": ["evidence:jobFit", "ref:fortunes"],
+  "career_money_study/fit": ["evidence:jobFit", "evidence:currentJob", "ref:fortunes"],
   "career_money_study/burden": ["shadow"],
-  "career_money_study/money": ["mbti:money", "evidence:investment"],
-  "career_money_study/study": ["mbti:study"],
+  "career_money_study/money": ["mbti:money", "evidence:earnStyle", "evidence:investment"],
+  "career_money_study/study": ["mbti:study", "evidence:studyFit"],
   "career_money_study/timing-risk": ["ref:chart.thisYear", "ref:chart.currentDayun", "shadow"],
-  "career_money_study/plan": ["ref:unused", "evidence:investment"],
+  "career_money_study/plan": ["ref:unused"],
   // 연애
   "love_marriage_child/love-core": ["ref:chart.yinYang", "ref:mbti"],
-  "love_marriage_child/spark": ["mbti:love"],
+  "love_marriage_child/spark": ["mbti:love", "ref:fortunes"],
   "love_marriage_child/attracted-to": ["evidence:spouseStar", "evidence:partnerMatch"],
   "love_marriage_child/expression": ["mbti:love"],
   "love_marriage_child/inner-gap": ["shadow", "fusion:tension"],
@@ -86,6 +86,8 @@ export type PlanCtx = {
   readonly product: ProductKey; readonly narrative: ProductNarrative; readonly traits: readonly TraitSource[];
   readonly facts: FactProfile; readonly rng: Rng; readonly usedScenes: Set<string>;
   readonly mbti: MbtiProfile | null;
+  /** 궁합: 두 사람의 MBTI(장면을 번갈아 주고 누구 장면인지 적는다, P3.6 B). */
+  readonly mbtiPair?: readonly { readonly who: string; readonly profile: MbtiProfile }[];
   readonly has: (ref: string) => boolean;
   readonly evidence: Readonly<Record<string, Material>>;
   readonly shadows: readonly { id: string; traitId: string }[];
@@ -206,10 +208,12 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
   for (const p of plans) {
     if (p.repeatKey || !ctx.mbti) continue;
     const domains: Domain[] = [...p.domains, ...(["alone", "relationships", "work", "study", "money", "love"] as Domain[]).filter(d => !p.domains.includes(d))];
+    let turn = p.index;
     for (const d of domains) {
       if (p.traits.length + p.aux.length >= 4) break;
-      const scene = freshScene(ctx.mbti.signals[d], ctx, `${p.id}:fill:${d}`, p.c.id);
-      if (scene) p.aux.push({ kind: "mbti", domain: d, scene });
+      const owner = ctx.mbtiPair?.length ? ctx.mbtiPair[turn % ctx.mbtiPair.length] : undefined;
+      const scene = freshScene((owner?.profile ?? ctx.mbti).signals[d], ctx, `${p.id}:fill:${d}${owner ? `:${owner.who}` : ""}`, p.c.id);
+      if (scene) { p.aux.push({ kind: "mbti", domain: d, scene, ...(owner ? { who: owner.who } : {}) }); turn++; }
     }
   }
   // 그래도 4개보다 적으면(MBTI 없음 등) trait를 더 붙이고(4개까지), 마지막으로 원국·흐름 참조를 붙인다.
@@ -225,6 +229,11 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
       if (p.traits.length + p.aux.length >= 4) break;
       if (ctx.has(ref) && !p.aux.some(m => m.kind === "ref" && m.ref === ref)) p.aux.push({ kind: "ref", ref, note: "앞 장과 다른 각도로만 짧게" });
     }
+  }
+  // 같은 trait의 "first"(그림으로 처음 소개)는 책 순서상 가장 앞 장이 받는다. 배정 순서(라운드 로빈)를 따르면 뒤 장이 소개하고 앞 장이 "앞에서 본"을 쓰게 된다(P3.6 B).
+  const seenTrait = new Set<string>();
+  for (const p of [...plans].sort((a, b) => a.index - b.index)) for (const m of p.traits) if (m.kind === "trait") {
+    (m as { angle: string }).angle = seenTrait.has(m.traitId) ? "new-domain" : "first"; seenTrait.add(m.traitId);
   }
   const total = plans.length;
   const hints = ctx.props ? sceneHints(ctx.props, plans).hints : [];

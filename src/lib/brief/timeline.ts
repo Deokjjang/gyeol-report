@@ -76,7 +76,12 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
   };
   const flow = scoreFlow(k.flowRule, flowInput);
   const badges: TimelineEntry["badges"] = [];
-  for (const r of inc.relations) { const b = badgeFor(r, k); if (b && !badges.some(x => x.kind === b.kind && x.pair === b.pair)) badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: b.label, line: b.line, tone: b.tone }); }
+  for (const r of inc.relations) {
+    const b = badgeFor(r, k); if (!b || badges.some(x => x.kind === b.kind && x.pair === b.pair)) continue;
+    // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다).
+    const half = r.kind === "SAMHAP" && r.completeness !== "full";
+    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `두 글자만 만나 반쯤 맺힌 팀: ${b.line.replace(/완성/g, "반쯤 맺힘")}` : b.line, tone: b.tone });
+  }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }
   const eff = inflowEffect(pillar, st);
   const g = k.ganji.get(pillar.stem + pillar.branch)!;
@@ -100,28 +105,40 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
   };
 }
 
-/** 대운 상품: 지나온 3년 → 올해 → 앞으로 10년 = 14개 연도. */
+/** 앞 항목과 달라진 점 한 줄(P3.6 B: 원고에 "지난해·지난달"과의 차이가 없었다). */
+const changeOf = (prev: TimelineEntry | undefined, unit: "해" | "달", stem: string, score: number) => prev
+  ? { change: { tenGodFrom: prev.tenGod.stem, flowFrom: prev.flow.score, line: `지난${unit}보다 흐름 세기 ${prev.flow.score}→${score}${prev.tenGod.stem !== stem ? `, 들어오는 기운 ${prev.tenGod.stem.replace(/\(.*\)/, "")}→${stem.replace(/\(.*\)/, "")}` : ", 같은 기운이 이어짐"}` } } : {};
+
+/** 대운 상품: 지나온 3년 → 올해 → 앞으로 10년 = 14개 연도. when: 지난해는 돌아보는 말로 쓴다. */
 export function buildYearEntries(ctx: TimelineCtx, thisYear: number, cycles: readonly CustomerDayunCycle[]): TimelineEntry[] {
   const start = ctx.rng.fork("slot").int(6);
-  return Array.from({ length: 14 }, (_, i) => {
+  const out: TimelineEntry[] = [];
+  for (let i = 0; i < 14; i++) {
     const year = thisYear - 3 + i;
     const pillar = getAnnualPillar(year);
     const cyc = cycles.find(c => c.startYear <= year && year <= c.endYear);
-    return buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (올해)" : ""}`, pillar, "annual", start + i,
-      cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition: cyc.startYear === year } } : {});
-  });
+    const transition = Boolean(cyc && cyc.startYear === year);
+    const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (올해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
+      { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
+    out.push({ ...e, ...changeOf(out.at(-1), "해", e.tenGod.stem, e.flow.score) });
+  }
+  return out;
 }
 
 /** 세운 상품: 선택 연도 절기 12개월(寅월~丑월). 앞달과의 차이(change)를 단다. */
-export function buildMonthEntries(ctx: TimelineCtx, year: number): TimelineEntry[] {
+export function buildMonthEntries(ctx: TimelineCtx, year: number, baseDate?: string): TimelineEntry[] {
   const start = ctx.rng.fork("slot").int(6);
   const out: TimelineEntry[] = [];
-  for (const m of getMonthlyPillars(year)) {
-    const prev = out.at(-1);
+  const months = getMonthlyPillars(year);
+  months.forEach((m, i) => {
     const date = m.startKst.slice(5, 10).replace("-", "/");
-    out.push(buildEntry(ctx, "month", `${year}-M${String(m.index).padStart(2, "0")}`, `${m.index}번째 달 ${ganjiLabel(m.pillar)} (${date} 절입부터)`, m.pillar, "monthly", start + m.index,
-      prev ? { change: { tenGodFrom: prev.tenGod.stem, flowFrom: prev.flow.score } } : {}));
-  }
+    // 기준일이 이미 지난 절기월은 past, 기준일이 든 달은 now(P3.6 B: 지난달을 예보처럼 썼다).
+    const next = months[i + 1]?.startKst.slice(0, 10);
+    const when = !baseDate ? undefined : next && next <= baseDate ? "past" : m.startKst.slice(0, 10) <= baseDate ? "now" : "future";
+    const e = buildEntry(ctx, "month", `${year}-M${String(m.index).padStart(2, "0")}`, `${m.index}번째 달 ${ganjiLabel(m.pillar)} (${date} 절입부터)${when === "now" ? " (이번 달)" : ""}`, m.pillar, "monthly", start + m.index,
+      when ? { when } : {});
+    out.push({ ...e, ...changeOf(out.at(-1), "달", e.tenGod.stem, e.flow.score) });
+  });
   return out;
 }
 

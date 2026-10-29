@@ -134,8 +134,11 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const isPair = input.product === "saju_mbti_compatibility";
   if (isPair && (!input.partner || !input.relationshipType)) throw new Error("궁합 브리프는 partner·relationshipType이 필요하다");
   const pairRel = input.relationshipType === "love" ? "dating" : input.relationshipType === "marriage" ? "married" : undefined;
-  const override = isPair ? { relationship: pairRel ?? "unknown", job: "none", children: "unknown" } as const : undefined;
-  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, override, isPair ? 6 : undefined);
+  // 궁합 입력에는 직업·관계 칸이 없다. 관계 유형이 말해 주는 사실만 쓴다(P3.6 B: 상사·팀원 책에 "상사·팀장을 전제하지 않는다"가 나갔다).
+  const pairJob = input.relationshipType === "managerReport" || input.relationshipType === "coworker" ? "employed" : input.relationshipType === "businessPartner" ? "business" : "none";
+  const override = isPair ? { relationship: pairRel ?? "unknown", job: pairJob, children: "unknown" } as const : undefined;
+  const overrideA = override && input.relationshipType === "parentChild" ? { ...override, children: "has" as const } : override;
+  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : undefined);
   const other = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6) : null;
 
   const fortunes = buildFortunes(me.scored, me.traits);
@@ -162,7 +165,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       const year = input.selectedYear ?? thisYear;
       const yp = getAnnualPillar(year);
       const yearEntry = buildEntry(tctx, "year", String(year), `${year}년 ${ganjiLabel(yp)}`, yp, "annual", 0);
-      const months = buildMonthEntries(tctx, year);
+      const months = buildMonthEntries(tctx, year, input.baseDate);
       timeline = { entries: [yearEntry, ...months], tenGodNotes: { ...tenGodNotes(months, "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun.cycles, year, year, year, tenGodOf) };
       timelineKeys = months.map(e => e.key);
     }
@@ -196,6 +199,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const chapters = planChapters({
     product: input.product, narrative, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
+    ...(isPair && other ? { mbtiPair: ([[me, me.facts.mbti], [other, other.facts.mbti]] as const).flatMap(([p, t]) => t && k.mbti.get(t) ? [{ who: p.person.callName, profile: k.mbti.get(t)! }] : []) } : {}),
     ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),
     ...(isPair ? {
       sceneDomains: narrative.compatibility?.[input.relationshipType!]?.sceneDomains,
@@ -203,6 +207,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     } : {}),
   });
 
+  // 대운을 정할 수 없으면(시간 미상 등) "지금 대운 위에 올해" 장을 원국 바탕으로 바꾼다(P3.6 B: 제목만 대운이고 재료가 없었다).
+  if (!me.chart.currentDayun) for (const c of chapters) if (c.id === "current-dayun") { c.title = "타고난 바탕 위에 올해"; c.question = "올해 흐름은 타고난 바탕의 어떤 결 위에 놓일까?"; }
   // 궁합 장 제목·질문의 "A·B" 기호(예 "A가 보는 B")는 두 사람 호칭으로 바꾼다(고객 본문에 기호가 나오지 않게, P3.5 A9).
   if (other) {
     const name: Record<string, string> = { A: me.person.callName, B: other.person.callName };

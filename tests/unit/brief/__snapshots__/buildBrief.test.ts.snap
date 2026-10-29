@@ -46,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:love:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+BANGHAP act:偏財:relationships:low",
   ],
-  "tokens": 15444,
+  "tokens": 15740,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,current-dayun,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [current-dayun,month:2026-M06,month:2026-M12]",
@@ -161,7 +161,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:study:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:love:high",
   ],
-  "tokens": 16665,
+  "tokens": 17220,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [overview,current-cycle,closing]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [current-cycle,year:2030,closing]",
@@ -182,7 +182,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
 {
   "chapters": [
     "love-core: t2/relationships t1/relationships t8/love chart.yinYang mbti",
-    "spark: t1/love t10/relationships t5/relationships mbti/love",
+    "spark: t1/love t10/relationships t5/relationships mbti/love fortunes",
     "attracted-to: t3/love t2/love t1/alone ev:spouseStar ev:partnerMatch",
     "expression: t4/love t3/relationships t10/love mbti/love",
     "inner-gap: t5/alone t4/relationships shadows.s1 traits.t2.fusion",
@@ -205,7 +205,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 9025,
+  "tokens": 9063,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [love-core,spark,attracted-to]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-core,attracted-to,marriage]",
@@ -228,12 +228,12 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "work-core: t1/work t9/work chart.strength chart.elements",
     "choice-scene: t2/work t10/work chart.elements chart.yinYang",
     "choice-why: t6/work t9/money t10/money chart.elements",
-    "fit: t3/work t5/work ev:jobFit fortunes",
+    "fit: t3/work t5/work ev:jobFit ev:currentJob fortunes",
     "burden: t4/work t7/work shadows.s1 chart.elements",
-    "money: t5/money t1/money t8/money ev:investment",
-    "study: t7/study t2/study t1/study t3/study",
+    "money: t5/money t1/money t8/money ev:earnStyle ev:investment",
+    "study: t7/study t2/study t1/study ev:studyFit",
     "timing-risk: t3/money t4/money chart.thisYear chart.currentDayun shadows.s2",
-    "plan: t8/work t6/study unused ev:investment",
+    "plan: t8/work t6/study t2/money unused",
   ],
   "chart": "戊午 己未 戊寅 癸亥 丙午",
   "fortunes": [
@@ -249,11 +249,11 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8370,
+  "tokens": 8447,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [work-core,money,study]",
-    "t2 gwiin:HAK_DANG_GWIIN strong day - [choice-scene,study]",
-    "t3 shinsal:GWIMUN strong month,day - [fit,study,timing-risk]",
+    "t2 gwiin:HAK_DANG_GWIIN strong day - [choice-scene,study,plan]",
+    "t3 shinsal:GWIMUN strong month,day - [fit,timing-risk]",
     "t4 shinsal:EUMCHAK_YANGCHA strong day - [burden,timing-risk]",
     "t5 twelveStage:長生 strong day - [fit,money]",
     "t6 tenGod:劫財 strong month - [choice-why,plan]",
