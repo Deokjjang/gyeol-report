@@ -26,11 +26,13 @@ export function safetyFacts(brief: Brief): SafetyFacts {
   return { birthTimeKnown: f.birthTimeKnown, mbti: f.mbti, relationship: f.relationship, children: f.children, job: f.job.class };
 }
 
-function filterSections(sections: readonly BookSection[], f: SafetyFacts, n: number, deletions: Deletion[], keyed: boolean, allowed: ReadonlySet<string>, seen: Set<string>): BookSection[] {
+const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
+function filterSections(sections: readonly BookSection[], f: SafetyFacts, n: number, deletions: Deletion[], keyed: boolean, allowed: ReadonlySet<string>, seen: Set<string>, title = ""): BookSection[] {
+  const cond = CONDITIONAL_TITLE.test(title.trim());
   return sections.map(s => {
-    const headingBad = !keyed && s.heading && sentenceViolation(s.heading, f, allowed);
+    const headingBad = !keyed && s.heading && sentenceViolation(s.heading, f, allowed, cond);
     if (headingBad) deletions.push({ chapter: n, rule: headingBad, sentence: `### ${s.heading}` });
-    return { heading: headingBad ? "" : s.heading, paragraphs: s.paragraphs.map(p => filterParagraph(p, f, n, deletions, allowed, seen)).filter(Boolean) };
+    return { heading: headingBad ? "" : s.heading, paragraphs: s.paragraphs.map(p => filterParagraph(p, f, n, deletions, allowed, seen, cond)).filter(Boolean) };
   }).filter(s => s.paragraphs.length);
 }
 
@@ -53,9 +55,9 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   const introduced = new Set<string>();
   const chapters = plan.map((ch): FinalChapter => {
     const draft = drafts.get(ch.n);
-    const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen);
+    const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen, ch.title);
     if (ch.keys) {
-      const have = draft ? keyedSections(filterSections(draft.chapter.sections, f, ch.n, deletions, true, allowed, seen), ch.keys) : new Map<string, BookSection>();
+      const have = draft ? keyedSections(filterSections(draft.chapter.sections, f, ch.n, deletions, true, allowed, seen, ch.title), ch.keys) : new Map<string, BookSection>();
       const missing = ch.keys.filter(k => !have.get(k)?.paragraphs.length);
       if (missing.length) for (const s of det("keys", missing)) have.set(s.heading, s);
       const sections = ch.keys.map(k => have.get(k) ?? { heading: k, paragraphs: [] });
@@ -64,7 +66,7 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
       sections.forEach(s => warnings.push(...styleWarnings(ch.n, s.paragraphs, terms, introduced)));
       return { n: ch.n, id: ch.id, title: ch.title, sections, source, ...(reason ? { reason } : {}), chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0), keys: ch.keys };
     }
-    let sections = draft ? filterSections(draft.chapter.sections, f, ch.n, deletions, false, allowed, seen) : [];
+    let sections = draft ? filterSections(draft.chapter.sections, f, ch.n, deletions, false, allowed, seen, ch.title) : [];
     let source: ChapterSource = draft?.source ?? "deterministic";
     let reason: string | undefined = draft ? undefined : "missing";
     const min = Math.round(ch.targetChars[0] * MIN_CHAPTER_RATIO);

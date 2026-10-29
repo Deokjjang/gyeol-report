@@ -57,9 +57,10 @@ export function allowedWindows(briefText: string): Set<string> {
 }
 
 /** 문장 하나의 위반 규칙(없으면 null). */
-export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>): SentenceRule | null {
+/** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다. */
+export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false): SentenceRule | null {
   if ((DATE.test(s) && EVENT_DEFINITE.test(s)) || ABSOLUTE.test(s)) return "date_event";
-  const conditional = CONDITIONAL.test(s);
+  const conditional = inConditionalChapter || CONDITIONAL.test(s);
   if (f.relationship !== "married" && SPOUSE.test(s.replace(SPOUSE_TERM, "")) && !conditional) return "fact_spouse";
   if ((f.relationship === "single" || f.relationship === "unknown") && PARTNER.test(s) && !conditional) return "fact_partner";
   if (f.children !== "has" && CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional) return "fact_children";
@@ -73,11 +74,11 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
 }
 
 /** 문단에서 위반 문장을 지운다. */
-export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>): string {
+export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false): string {
   const kept: string[] = [];
   for (const s of splitSentences(p)) {
     const key = norm(s);
-    const rule = sentenceViolation(s, f, allowed) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
+    const rule = sentenceViolation(s, f, allowed, inConditionalChapter) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
     if (rule) deletions.push({ chapter, rule, sentence: s }); else { kept.push(s); if (key.length >= 20) seen?.add(key); }
   }
   return kept.join(" ");

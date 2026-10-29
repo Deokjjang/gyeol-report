@@ -6,11 +6,12 @@
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { LOCAL_DEV_ACCOUNT } from "../../src/lib/account/localDevAccount";
 import { ACCOUNT_POLICY_VERSIONS } from "../../src/lib/account/policy";
 import { localSupabase, psql, ROOT } from "./local";
 
-export const DEV_EMAIL = "v5-dev@gyeol.local";
-export const DEV_PASSWORD = "local-dev-only-password";
+export const DEV_EMAIL = LOCAL_DEV_ACCOUNT.email;
+export const DEV_PASSWORD = LOCAL_DEV_ACCOUNT.password;
 const RECONCILE = "20260920163924_production_reliability_reconcile.sql";
 const PAID_PATCHES = ["paid_report_quarantine_recovery_patch", "paid_payment_confirm_recovery_queue_patch", "paid_report_publish_expiry_patch", "paid_report_external_call_guard_patch", "paid_checkout_consent_evidence_patch", "paid_report_one_call_delivery_patch", "paid_worker_expiry_cost_guard_patch"].map(n => `scripts/${n}.sql`);
 const QUEUE_AFTER = "20261010095005_v4_ticket_bundle_commerce.sql";
@@ -23,7 +24,8 @@ export function migrationOrder(): string[] {
   return [...numbered, `supabase/migrations/${RECONCILE}`, ...PAID_PATCHES, ...stamped.flatMap(f => f === QUEUE_AFTER ? [`supabase/migrations/${f}`, "scripts/report_ticket_publication_queue_patch.sql"] : [`supabase/migrations/${f}`])];
 }
 
-async function main() {
+/** 다시 실행해도 되는 로컬 DB 준비. 적용한 파일 수와 시드 계정 정보를 돌려준다. */
+export async function prepareLocalDb(): Promise<{ appliedNow: number; totalApplied: number; user: string; userId: string; tickets: number }> {
   const s = localSupabase();
   psql("create schema if not exists local_dev; create table if not exists local_dev.applied(name text primary key, applied_at timestamptz not null default now());", { quiet: true });
   const done = new Set(psql("select name from local_dev.applied;").split("\n").filter(Boolean));
@@ -50,7 +52,7 @@ async function main() {
   psql(`select public.record_account_consent('${user.id}', gen_random_uuid(), '로컬 검수', 'google', 'first_login', '${consents}'::jsonb);`, { quiet: true });
   psql(`select public.report_tickets('grant', '${user.id}', '{"quantity":20,"sourceType":"manual","sourceRef":"local-dev-seed","key":"local-dev-seed","reason":"LOCAL_DEV"}'::jsonb);`, { quiet: true });
   const tickets = psql(`select coalesce(sum(quantity_delta),0) from public.report_ticket_ledger where user_id='${user.id}';`);
-  console.log(JSON.stringify({ appliedNow: applied, totalApplied: done.size + applied, user: DEV_EMAIL, tickets: Number(tickets) }));
+  return { appliedNow: applied, totalApplied: done.size + applied, user: DEV_EMAIL, userId: user.id, tickets: Number(tickets) };
 }
 
-if (process.argv[1]?.endsWith("v5-db.ts")) main().catch(e => { console.error(String(e instanceof Error ? e.message : e)); process.exit(1); });
+if (process.argv[1]?.endsWith("v5-db.ts")) prepareLocalDb().then(r => console.log(JSON.stringify(r))).catch(e => { console.error(String(e instanceof Error ? e.message : e)); process.exit(1); });

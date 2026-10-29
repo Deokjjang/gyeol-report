@@ -51,8 +51,11 @@ export async function runTicketPublicationJob(store: TicketPublicationStore, gen
 export async function runTicketPublicationBatch(store: TicketPublicationStore, dependencies: { now?: () => number; rss?: () => number; runJob?: typeof runTicketPublicationJob } = {}) {
   const now = dependencies.now ?? (() => performance.now()), rss = dependencies.rss ?? (() => process.memoryUsage.rss());
   const started = now(); let processed = 0;
+  // 로컬 개발 서버(next dev)는 RSS가 수 GB라 상한에 바로 걸린다. 개발 모드에서만 env로 올릴 수 있다(운영은 그대로).
+  const devRss = process.env.NODE_ENV === "development" ? Number(process.env.TICKET_WORKER_MAX_RSS_MB) * 1024 ** 2 : NaN;
+  const maxRss = devRss > 0 ? devRss : TICKET_WORKER_LIMITS.maxRssBytes;
   while (processed < TICKET_WORKER_LIMITS.maxJobs) {
-    if (now() - started >= TICKET_WORKER_LIMITS.claimWindowMs || rss() >= TICKET_WORKER_LIMITS.maxRssBytes) return { ok: true, processed, stop: "budget" };
+    if (now() - started >= TICKET_WORKER_LIMITS.claimWindowMs || rss() >= maxRss) return { ok: true, processed, stop: "budget" };
     try {
       const result = await (dependencies.runJob ?? runTicketPublicationJob)(store);
       if (!result.ok) return { ok: false, processed, stop: "storage_error" };

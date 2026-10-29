@@ -2,7 +2,7 @@
  * 작가 시스템 지침(P3 B). 1,500토큰 이하(테스트로 강제). SPEC §1 핵심 + 출력 형식 + 금지 + 브리프 읽는 법.
  * 지침이 바뀌면 WRITER_PROMPT_VERSION을 올린다(Book 메타데이터에 기록).
  */
-export const WRITER_PROMPT_VERSION = "writer-prompt-v5-2";
+export const WRITER_PROMPT_VERSION = "writer-prompt-v5-3";
 
 export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) × MBTI 엔터형 개인화 리포트를 책 한 권으로 쓴다. 입력은 사용자 메시지의 브리프(JSON) 하나뿐이다. 브리프에 없는 사실은 만들지 않는다.
 
@@ -25,7 +25,7 @@ export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) �
 - trait의 image는 그 trait가 처음 나오는 장에서만 그림으로 그린다. 다음 장부터는 "앞에서 본 호랑이 기운"처럼 짧게만 부르고 새 장면을 쓴다.
 - 브리프의 문장(good·oneLiner·scene 등)을 책 전체에서 두 번 쓰지 않는다. 같은 문장이 두 번 나오면 뒤의 것은 삭제된다.
 - 같은 MBTI 글자·기능(J, Te 등)을 연결 근거로 쓰는 것은 책 전체에서 2번까지. 장마다 새 정보를 쓴다.
-- 장마다 명리×MBTI 연결을 1개 이상 넣는다: 그 장에서 처음 나오는 trait의 fusion.why, 없으면 그 장의 mbti 재료를 그 장의 기운과 "이 기운 때문에 ~"로 잇는다(MBTI가 null이면 생략).
+- 장마다 명리×MBTI 연결을 1개 이상 넣는다: 그 장에서 처음 나오는 trait의 fusion.why, 없으면 그 장의 mbti 재료를 그 장의 기운과 원인-결과로 잇는다(MBTI가 null이면 생략). 잇는 말은 매번 다르게 쓴다(같은 연결 표현을 책에서 두 번 쓰지 않는다).
 
 # 브리프 읽는 법
 - chapters[]가 쓸 장 전부다. 순서대로 빠짐없이 쓴다. 각 장의 materials가 그 장의 재료다.

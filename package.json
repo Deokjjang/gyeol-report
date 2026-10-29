@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:v5": "tsx scripts/dev/v5-dev.ts",
+    "db:v5": "tsx scripts/dev/v5-db.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

@@ -7,6 +7,14 @@
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-10-28 20:21 | P0-2 §5 | openai/gpt-4.1-nano | 0 | 0 | 0 | 0 | HTTP 404 (모델 deprecated, 과금 없음) | req_a34951ada3564d319978a844008f66e6 | 0.00000000 |
 | 2026-10-28 20:21 | P0-2 §5 | openai/gpt-4o-mini | 51 | 0 | 33 | 0.00002745 | complete (32 조각 스트림) | req_2c65f916f0414d28af21455e6be27c0c | 0.00002745 |
+| 2026-10-29 13:31 | P3 H 종합 · c1 하람(정시·ENTJ) | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 종합 · c1 하람(정시·ENTJ) | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 커리어 · c1 하람 | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 연애 · c2 서윤(시간 미상·INFP·연애 중) | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 대운 · 지우(ISFJ) | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 세운 2026 · 도윤(ESTP) | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 궁합 연인 · 하람×지우 | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
+| 2026-10-29 13:34 | P3 H 궁합 동료 · 도윤×서윤(B 시간 미상) | openai/gpt-4o-mini | 0 | 0 | 0 | 0.00000000 | error (missing_api_key) | - | 0.00002745 |
 
 누적 합계: **$0.00002745** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
