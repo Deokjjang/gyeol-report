@@ -105,7 +105,7 @@ export function assembleV5Book(a: {
   const c = brief.compatibility;
   const pair = c ? {
     category: c.lens.focus,
-    characters: [c.a, c.b].map(p => ({ name: p.callName.replace(/님$/, ""), core: p.image, strength: brief.traits.find(t => t.id === p.traitIds[0])?.easyName ?? "", relationship: p.role })),
+    characters: [c.a, c.b].map(p => ({ name: p.callName.replace(/님$/, ""), core: p.image, strength: brief.traits.find(t => t.id === p.traitIds[0])?.easyName ?? "", relationship: p.role === p.callName ? "" : p.role.replace(/\(.*\)$/, "") })),
     relations: c.dayRelations,
     score: { total: c.score.value, version: c.score.version, band: c.score.band.label, verdict: c.score.band.verdict, components: c.score.components.map(x => ({ name: x.name, level: x.level, line: x.line })) },
     directions: (["direction-ab", "direction-ba"] as const).map((id, i) => ({ title: a.plan.find(ch => ch.id === id)?.title ?? "", effect: (i ? c.tenGodBA : c.tenGodAB).reading.slice(0, 60), term: noHan((i ? c.tenGodBA : c.tenGodAB).tenGod), chapterN: a.plan.find(ch => ch.id === id)?.n ?? 0 })),

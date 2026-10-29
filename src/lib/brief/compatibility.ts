@@ -32,6 +32,8 @@ function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
 
 export function buildCompatibility(category: CompatibilityRelationshipType, a: PairSide, b: PairSide, k: Knowledge, lensFromNarrative: { roleLabels: [string, string]; tone: string; forbidden: string[] } | undefined): CompatibilityBrief {
   const roles = compatibilityRoleLabels(category);
+  // 고객 본문에 "A·B" 기호가 나오지 않게(P3.5 A9 1회차): 기호 역할은 이름으로, 부모·상사 같은 역할은 "역할(이름)"으로.
+  const label = (role: string, s: PairSide) => (/^[AB]$/.test(role) ? s.callName : `${role}(${s.callName})`);
   const featureName = (id: string) => k.features.get(id)?.name ?? id;
   const common = [
     ...a.hitIds.filter(id => b.hitIds.includes(id) && !/:BALANCED$|^(stem|branch|tenGod):/.test(id)).slice(0, 4).map(id => `둘 다 ${featureName(id)}`),
@@ -59,11 +61,11 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   });
   return {
     relationshipType: category,
-    lens: { focus: LENS_FOCUS[category], roleLabels: lensFromNarrative?.roleLabels ?? [roles.personA, roles.personB], tone: lensFromNarrative?.tone ?? "", forbidden: lensFromNarrative?.forbidden ?? [] },
-    a: person(a, roles.personA), b: person(b, roles.personB),
+    lens: { focus: LENS_FOCUS[category], roleLabels: [label(lensFromNarrative?.roleLabels[0] ?? roles.personA, a), label(lensFromNarrative?.roleLabels[1] ?? roles.personB, b)], tone: lensFromNarrative?.tone ?? "", forbidden: lensFromNarrative?.forbidden ?? [] },
+    a: person(a, label(roles.personA, a)), b: person(b, label(roles.personB, b)),
     common: common.length ? common : ["눈에 띄는 공통 기운이 적어 서로 다른 점이 이야기의 중심"],
     differences: dims.map(z => ({ dimension: z.d.name, a: pole(z.d, z.x), b: pole(z.d, z.y) })),
-    complement: [...fills(b, a, roles.personB, roles.personA), ...fills(a, b, roles.personA, roles.personB)],
+    complement: [...fills(b, a, b.callName, a.callName), ...fills(a, b, a.callName, b.callName)],
     tenGodAB: { tenGod: tenGodLabel(ab), reading: k.features.get(`tenGod:${ab}`)?.oneLiner ?? "" },
     tenGodBA: { tenGod: tenGodLabel(ba), reading: k.features.get(`tenGod:${ba}`)?.oneLiner ?? "" },
     dayRelations: rel.map(r => `${r.kind}(${r.key}): ${badge(r.kind, r.key)?.line ?? ""}`),

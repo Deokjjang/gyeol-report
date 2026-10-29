@@ -390,7 +390,7 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
   const yy = saju.yinYang;
   const gender = saju.input.gender;
   const suffix = yy.label !== "BALANCED" && (gender === "MALE" || gender === "FEMALE") ? `:${gender}` : "";
-  push({ id: `yinYang:${yy.label}${suffix}`, family: "yinYang", positions: [], strength: yy.yin === 0 || yy.yang === 0 ? "strong" : "medium", basis: `yin=${yy.yin},yang=${yy.yang}` });
+  push({ id: `yinYang:${yy.label}${suffix}`, family: "yinYang", positions: [], strength: Math.max(yy.yin, yy.yang) >= 0.75 * (yy.yin + yy.yang) ? "strong" : "medium", basis: `yin=${yy.yin},yang=${yy.yang}` }); // 통용 편중 기준: 8자 중 한쪽 6자 이상(P3.5 A8, 기본값 #7)
 
   // 조후
   push({ id: `climate:${det.climate.featureKey}`, family: "climate", positions: [], strength: det.climate.level, basis: `${det.climate.monthBranch}월 ${det.climate.dayMaster} 조후 ${det.climate.level}` });

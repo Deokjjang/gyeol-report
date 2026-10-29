@@ -90,9 +90,10 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
   "shadows": [
     "t2",
     "t7",
+    "t10",
   ],
   "timeline": undefined,
-  "tokens": 9232,
+  "tokens": 9398,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,study,recovery]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [portrait,fortune,recovery]",
@@ -103,7 +104,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t7 shinsal:BAEKHODAESAL strong day ENTJ/resonance [tension,strengths,relationships]",
     "t8 twelveStage:墓 strong day - [strengths,love,direction]",
     "t9 branch:丑 strong day ENTJ/tension [core,work-money,fact-bomb]",
-    "t10 climate:丁:winter medium  Fi/resonance [why,fact-bomb,study]",
+    "t10 yinYang:YIN_HEAVY:MALE strong  Te/tension [why,fact-bomb,study]",
   ],
   "unused": [],
 }
@@ -290,14 +291,14 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
   ],
   "shadows": [
     "at2",
-    "at1",
+    "at7",
     "bt2",
     "bt1",
     "bt5",
     "bt7",
   ],
   "timeline": undefined,
-  "tokens": 12085,
+  "tokens": 12194,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,felt-differently]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [direction-ba,domain-scene]",
@@ -305,7 +306,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "at4 relation:BANGHAP strong year,month,day - [pair-core,felt-differently]",
     "at5 tenGod:正官 strong month ENTJ/resonance [felt-differently,one-thing]",
     "at6 tenGod:食神 medium month,day ENTJ/tension [same-scene]",
-    "at7 climate:丁:winter medium  Fi/resonance [direction-ba]",
+    "at7 yinYang:YIN_HEAVY:MALE strong  Te/tension [direction-ba]",
     "bt1 tenGod:偏財 strong month,day ISFJ/tension [same-scene,domain-scene]",
     "bt2 shinsal:BAEKHODAESAL strong year,month,day ISFJ/tension [direction-ab,one-thing]",
     "bt3 shinsal:TWELVE_CHEONSAL strong month,day ISFJ/resonance [same-scene,attraction]",
