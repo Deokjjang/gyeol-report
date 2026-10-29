@@ -39,7 +39,7 @@
         ],
         "money": [
           { "text": "여행 영상 하나에 꽂혀 그 주말 비행기표를 끊습니다. 숙소는 도착해서 찾고 카드값은 다녀와서야 확인합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부업으로 온라인 가게, 굿즈, 원데이 클래스를 차례로 열어 봅니다. 장비는 쌓이고 정산표는 비어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "부업으로 온라인 가게, 굿즈, 원데이 클래스를 차례로 열어 봅니다. 장비는 쌓이고 정산표는 비어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "친구가 어려운 사정을 털어놓으면 계산보다 마음이 먼저 움직여 그 자리에서 송금 버튼을 누릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
@@ -55,7 +55,8 @@
         "marriage": [
           { "text": "주말마다 새 동네, 새 요리를 해 보자고 조릅니다. 배우자가 '이번 주는 그냥 쉬자'고 하면 서운함이 얼굴에 바로 납니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "고지서와 보험 서류는 배우자 서랍에 들어가 있습니다. 대신 배우자 생일 파티 아이디어는 늘 당신 머리에서 나옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "다툰 날에도 저녁쯤엔 먼저 농담을 걸어 분위기를 풉니다. 문제는 덮인 채로 다음 다툼에 다시 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "다툰 날에도 저녁쯤엔 먼저 농담을 걸어 분위기를 풉니다. 문제는 덮인 채로 다음 다툼에 다시 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "신혼집을 고르게 되면 집 보러 다니는 날 근처 카페 세 곳과 산책로를 먼저 지도에 찍어 둡니다. 관리비와 대출 이자 칸은 한참 비어 있습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "처음 간 모임에서도 30분이면 옆 사람 연애사까지 듣습니다. 연락처에 '등산 모임 언니' 같은 이름이 수십 개입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

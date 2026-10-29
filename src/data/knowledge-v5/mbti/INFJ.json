@@ -55,7 +55,8 @@
         "marriage": [
           { "text": "저녁 식탁에서 배우자가 '그냥 피곤해'라고 하면 접시를 치우다 말고 '오늘 누구랑 뭐 있었어?' 하고 의자를 당겨 앉습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "배우자 가족의 기분까지 챙기다 정작 자기 마음은 뒤로 밀립니다. 명절이 끝나면 며칠을 앓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자에게 크게 실망하면 소리 내 싸우지 않고 조용히 선을 긋습니다. 그 선은 잘 지워지지 않습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자에게 크게 실망하면 소리 내 싸우지 않고 조용히 선을 긋습니다. 그 선은 잘 지워지지 않습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 떠올리면 말 대신 한참 상대 눈을 바라봅니다. 같은 방향을 보는지 마음속으로 먼저 확인하고서야 '우리 어떻게 살고 싶어?'를 꺼냅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "처음 만난 사람에게서도 고민을 듣게 됩니다. '이상하게 당신한테는 말하게 돼요'라는 말을 자주 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

@@ -39,7 +39,8 @@
         "marriage": [
           { "text": "명절 일정, 관리비 납부일, 보험 갱신일이 달력에 미리 적혀 있습니다. 배우자는 집안 일정을 당신에게 묻습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "배우자가 갑자기 '이번 주말 캠핑 가자'고 하면 장비 목록부터 떠올립니다. '좋아'가 늦게 나와 분위기가 식습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "생활비 관리를 맡기면 1원까지 맞춥니다. 다만 배우자의 충동구매 영수증을 보면 한숨이 먼저 새어 나옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "생활비 관리를 맡기면 1원까지 맞춥니다. 다만 배우자의 충동구매 영수증을 보면 한숨이 먼저 새어 나옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 날짜가 잡히면 예식, 집, 양가 행사 일정을 달력 한 장에 모아 거꾸로 적습니다. 상대의 '그때 가서 보자'가 가장 불안한 말입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구가 많지는 않지만 15년 된 친구가 셋 있습니다. 경조사에 한 번도 빠진 적 없는 사람이라는 말을 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

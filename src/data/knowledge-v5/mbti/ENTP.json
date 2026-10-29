@@ -23,7 +23,7 @@
         ],
         "money": [
           { "text": "새로 나온 앱은 일단 결제해서 써 봅니다. 잊어버린 정기 구독이 카드 명세서에 서너 개씩 남아 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부업 아이디어가 한 달에 세 개씩 나옵니다. 사업자 등록까지 가는 건 그중 하나 정도입니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "부업 아이디어가 한 달에 세 개씩 나옵니다. 사업자 등록까지 가는 건 그중 하나 정도입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "중고 거래에서 흥정을 즐깁니다. 깎은 몇 천 원보다 말로 이겼다는 재미가 더 큽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
@@ -39,7 +39,8 @@
         "marriage": [
           { "text": "'우리 제주도로 이사 가면 어때?' 같은 제안을 저녁 식탁에서 툭 던집니다. 배우자는 진담인지 매번 확인합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "명절 관습을 두고 '이거 꼭 해야 해요?'라고 묻다가 집안 어른들과 묘하게 부딪칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "생활비 정리 같은 반복 일은 배우자에게 넘기고, 이사나 이직 같은 큰 결정 회의에는 누구보다 열심입니다.", "requires": { "relationship": "married", "children": "any", "job": "employed" } }
+          { "text": "생활비 정리 같은 반복 일은 배우자에게 넘기고, 이사나 이직 같은 큰 결정 회의에는 누구보다 열심입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "한집에 살게 되면 식탁에서 '이 집 규칙, 우리가 새로 만들까?' 하고 던집니다. 신발 벗는 자리부터 휴일 정하기까지 열 가지가 나오고 지켜지는 건 서너 가지입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "처음 보는 사람과도 5분이면 농담을 주고받습니다. 모임에서 대화가 끊기면 새 화제를 던지는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

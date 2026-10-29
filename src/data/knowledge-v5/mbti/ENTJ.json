@@ -55,7 +55,8 @@
         "marriage": [
           { "text": "결혼 생활도 운영합니다. 생활비·일정·역할을 표로 정리해 놓고, 배우자가 즉흥적이면 매번 조율이 필요합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "집에서도 지휘합니다. 배우자가 '집에서까지 회의하지 마'라고 하면 그제야 멈칫합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "이사·투자·집 계약 같은 큰일에서 강하고, 기념일과 감정의 온도 같은 작은 일에서 자주 놓칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "이사·투자·집 계약 같은 큰일에서 강하고, 기념일과 감정의 온도 같은 작은 일에서 자주 놓칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기가 나오면 일정표부터 엽니다. 상견례, 예식장, 집 계약 날짜를 거꾸로 계산해 한 장에 정리하고 상대에게 동의하는 칸에 표시해 달라고 보냅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구 모임에서 일정과 장소를 정하는 사람입니다. 안 정해지면 못 참아서 결국 자기가 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

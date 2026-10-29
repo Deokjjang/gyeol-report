@@ -38,8 +38,9 @@
         ],
         "marriage": [
           { "text": "냉장고를 열면 집안 사정이 보입니다. 식구마다 좋아하는 반찬, 유통기한, 다음 장볼 목록이 머릿속에 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "양가 어른 생신과 제사 날짜를 먼저 챙겨 선물을 준비합니다. 고맙다는 말을 못 들으면 속으로 오래 서운합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자가 갑자기 이직이나 이사 얘기를 꺼내면 '그래, 해 봐'라고 답하고 그날 밤 걱정으로 뒤척입니다.", "requires": { "relationship": "married", "children": "any", "job": "employed" } }
+          { "text": "양가 어른 생신과 제사 날짜를 먼저 챙겨 선물을 준비합니다. 고맙다는 말을 못 들으면 속으로 오래 서운합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자가 갑자기 이직이나 이사 얘기를 꺼내면 '그래, 해 봐'라고 답하고 그날 밤 걱정으로 뒤척입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "신혼집을 꾸리게 되면 서랍 칸마다 용도를 정하고 상대가 쓰기 편한 물건을 손 닿는 높이에 둡니다. 내 물건은 늘 맨 아래 칸입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구 어머니 수술 날짜까지 기억했다가 안부 문자를 보냅니다. 받은 친구가 '이걸 어떻게 기억했어?'라고 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

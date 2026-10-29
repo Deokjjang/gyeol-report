@@ -39,10 +39,11 @@
         "marriage": [
           { "text": "결혼 생활에서도 혼자 머무를 작은 공간이 필요합니다. 베란다 한쪽 의자 하나라도 내 자리가 있어야 숨이 쉬어집니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "집 안 조명, 커튼 색, 그릇 고르는 일은 당신 몫입니다. 집이 예뻐지면 하루 피로가 같이 풀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "생활비 계획이나 대출 서류는 자꾸 미룹니다. 배우자가 정리해 주면 크게 고마워하고, 그 마음을 작은 행동으로 갚습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "생활비 계획이나 대출 서류는 자꾸 미룹니다. 배우자가 정리해 주면 크게 고마워하고, 그 마음을 작은 행동으로 갚습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "살림을 합치게 되면 조명 색과 커튼 천부터 고릅니다. 상대 취향이 다르면 말없이 양보하다가 어느 날 한 칸만 내 색으로 채워 둡니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          { "text": "처음 만난 자리에서는 조용히 웃기만 합니다. 편해진 친구 앞에서는 엉뚱한 농담을 쏟아내 주변을 놀라게 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "처음 만난 자리에서는 조용히 웃기만 합니다. 편해진 친구 앞에서는 엉뚱한 농담을 쏟아내 주변을 놀라게 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "친구가 힘들어 보이면 긴 말 대신 좋아하는 음료를 사 들고 찾아갑니다. 옆에 앉아 같이 있어 주는 걸로 위로합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "싫은 부탁도 그 자리에서는 '응'이라고 합니다. 집에 와서 후회하다 결국 핑계를 대고 약속을 미룹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],

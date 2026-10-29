@@ -38,8 +38,9 @@
         ],
         "marriage": [
           { "text": "명절이면 양가 선물을 고르고 친척 안부 전화를 돌리는 사람이 됩니다. 집안 연락망이 통째로 당신 휴대폰에 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "집에 손님 초대하는 걸 좋아합니다. 배우자가 '이번 주는 그냥 쉬자'고 하면 서운한 마음을 감추느라 애씁니다.", "requires": { "relationship": "married", "children": "any", "job": "business" } },
-          { "text": "배우자가 고맙다는 말을 안 하면 설거지를 하며 조용히 쌓아 둡니다. 몇 달 치가 한꺼번에 쏟아지는 날이 옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집에 손님 초대하는 걸 좋아합니다. 배우자가 '이번 주는 그냥 쉬자'고 하면 서운한 마음을 감추느라 애씁니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자가 고맙다는 말을 안 하면 설거지를 하며 조용히 쌓아 둡니다. 몇 달 치가 한꺼번에 쏟아지는 날이 옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "양가 인사를 앞두면 상대 부모님 취향을 미리 물어 선물을 고르고 앉을 자리까지 그려 봅니다. 상대보다 내가 더 긴장해서 전날 밤 손에 땀이 납니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임 구석에 혼자 있는 사람을 그냥 못 둡니다. 데려와 '이분 등산 좋아하신대요'라며 대화에 끼워 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

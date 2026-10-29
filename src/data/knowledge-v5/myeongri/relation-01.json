@@ -31,7 +31,8 @@
         ],
         "marriage": [
           { "text": "이사가 잦거나 두 집 살림, 주말부부처럼 부부가 떨어져 지내는 구조가 생기기 쉽습니다. 그 자체가 나쁜 건 아닙니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자와 생활 방식이 정반대입니다. 아침형과 밤형, 정리형과 쌓기형. 그 차이가 매일의 작은 부딪침이 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자와 생활 방식이 정반대입니다. 아침형과 밤형, 정리형과 쌓기형. 그 차이가 매일의 작은 부딪침이 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "혼인을 앞두고 이사 이야기가 나오면 한곳에 눌러앉기보다 일 따라 옮겨 다닐 수 있는 집을 현실적으로 따져 봅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친한 친구와 크게 한 번 부딪치고 더 깊어지거나 끝납니다. 미지근한 관계가 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

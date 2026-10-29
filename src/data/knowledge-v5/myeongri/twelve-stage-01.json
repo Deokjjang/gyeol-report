@@ -32,7 +32,8 @@
         ],
         "marriage": [
           { "text": "집안의 결정권을 쥡니다. 배우자가 받쳐 주면 집이 편안하고, 배우자도 왕이면 매일 전투입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "가족에게 '내가 다 해 줄게'가 입버릇입니다. 실제로 하고, 그만큼 인정받고 싶어 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "가족에게 '내가 다 해 줄게'가 입버릇입니다. 실제로 하고, 그만큼 인정받고 싶어 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "결혼식 순서를 정하게 되면 사회자 멘트까지 직접 손보다가, 상대가 '여긴 내가 할게' 하면 자리를 내주는 데 하루가 걸립니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "어느 모임에서든 중심이 됩니다. 의도하지 않아도 사람들이 당신 의견을 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

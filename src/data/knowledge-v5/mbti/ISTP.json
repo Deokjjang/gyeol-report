@@ -39,7 +39,8 @@
         "marriage": [
           { "text": "수도꼭지, 전등, 세탁기 고장은 업체를 부르기 전에 직접 해결합니다. 배우자에게는 든든한 생활 기술자입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "주말 하루는 혼자 베란다 작업대나 차고에서 보내야 합니다. 그 시간을 빼앗기면 며칠 동안 말이 줄어듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "집안 행사 일정은 배우자가 챙기고 당신은 그날 운전과 짐을 맡습니다. 계획은 귀찮아도 현장에서는 누구보다 빠릅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안 행사 일정은 배우자가 챙기고 당신은 그날 운전과 짐을 맡습니다. 계획은 귀찮아도 현장에서는 누구보다 빠릅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "같이 살 집을 보러 가면 보일러 소리, 콘센트 위치, 베란다 작업 자리를 직접 확인합니다. 손볼 데를 파악하고 나서야 '여기면 되겠다'고 말합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구가 무슨 일을 하든 내 영역만 넘지 않으면 참견하지 않습니다. 그래서 오래 편한 친구가 몇 명 곁에 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

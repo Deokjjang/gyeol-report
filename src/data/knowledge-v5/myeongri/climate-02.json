@@ -28,11 +28,12 @@
         ],
         "love": [
           { "text": "단풍 구경 가자는 말을 먼저 꺼내고, 도시락 메뉴부터 주차 자리까지 혼자 다 알아봐 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연애 초반 불꽃은 크지 않아도, 상대가 힘든 날 퇴근길에 따뜻한 호떡 두 개를 사 들고 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
+          { "text": "연애 초반 불꽃은 크지 않아도, 상대가 힘든 날 퇴근길에 따뜻한 호떡 두 개를 사 들고 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "집안 행사 때 친척 어른들 사이를 돌며 분위기를 풀고, 돌아오는 차 안에서는 한마디도 안 하고 눈을 감습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자와 가계부를 펴 놓고 '올해 우리 남은 거 이만큼이네' 하며 숫자를 보고도 웃을 줄 압니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자와 가계부를 펴 놓고 '올해 우리 남은 거 이만큼이네' 하며 숫자를 보고도 웃을 줄 압니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 위한 저축 계획을 세우게 되면 연말 정산표처럼 월별 목표를 붉은 펜으로 적어 두고, 달성한 칸에 동그라미를 칩니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "오래 연락 없던 친구에게 '요즘 어때?'를 먼저 보내고, 답장이 오면 그 주말 약속까지 잡아 버립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -108,7 +109,8 @@
         ],
         "marriage": [
           { "text": "집안 공기가 냉랭한 날 저녁, 말없이 찌개를 끓여 상에 올리고 '일단 먹고 얘기하자'로 얼음을 깹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "양가 행사에서 예의는 칼같이 지키다가, 집에 와서 배우자에게만 '나 오늘 진짜 긴장했어' 하고 털어놓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "양가 행사에서 예의는 칼같이 지키다가, 집에 와서 배우자에게만 '나 오늘 진짜 긴장했어' 하고 털어놓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "상견례 자리가 어색해지면 먼저 웃으며 어른들께 안부를 묻고, 분위기가 풀리면 화제를 상대 쪽으로 슬쩍 넘겨 줍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "연말 모임에 빠지려다가도 '네가 와야 분위기가 산다'는 한마디에 결국 코트를 입고 나갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -180,11 +182,12 @@
         ],
         "love": [
           { "text": "벚꽃 필 무렵 마음에 드는 사람이 생기면 몇 주 동안 대화를 상상만 하다가, 친구가 등을 떠밀어야 연락합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인에게 받은 손편지를 상자에 모아 두고, 다툰 날 밤 꺼내 읽으며 마음을 다시 붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "연인에게 받은 손편지를 상자에 모아 두고, 다툰 날 밤 꺼내 읽으며 마음을 다시 붙입니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "어른들 조언을 잘 들어 결정이 순하지만, 배우자가 '그래서 당신 생각은?' 하고 물으면 그제야 진짜 답을 꺼냅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자가 미뤄 둔 서류 정리를 '내가 할게' 하고 가져가서, 주말 아침 커피 한 잔과 함께 깔끔하게 끝내 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자가 미뤄 둔 서류 정리를 '내가 할게' 하고 가져가서, 주말 아침 커피 한 잔과 함께 깔끔하게 끝내 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기가 어른들 귀에 들어가면 조언을 순하게 다 듣습니다. 하지만 상대와 둘이 있을 때 비로소 '사실 내 생각은' 하고 말합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "고민 상담을 해 주다 보면 이야기가 길어져, 친구와 통화한 시간이 두 시간을 넘기는 일이 흔합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -260,7 +263,8 @@
         ],
         "marriage": [
           { "text": "배우자가 힘들다고 하면 당장 풀어 주려고 휴가부터 내 버리는 사람입니다. 여행 계획은 차 안에서 짭니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집안일 분담표를 붙이자는 배우자의 제안이 처음엔 답답해도, 막상 지켜 보면 싸울 일이 줄어 스스로 놀랍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안일 분담표를 붙이자는 배우자의 제안이 처음엔 답답해도, 막상 지켜 보면 싸울 일이 줄어 스스로 놀랍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "신혼여행지를 정하게 되면 후보 세 곳을 밤새 찾아 놓고 신나게 발표하다, 상대가 갸웃하면 곧바로 다른 곳으로 방향을 틉니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "휴가철이면 단톡방에 '다들 언제 시간 돼?'를 제일 먼저 올리고 펜션 예약까지 혼자 끝내 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -337,10 +341,11 @@
         ],
         "marriage": [
           { "text": "배우자와 이사를 고민할 때 대출 이자와 관리비까지 표로 만들어 와서, 감보다 숫자로 대화를 시작합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "명절 준비로 지친 배우자에게 '올해는 반찬 사서 가자'고 먼저 말해 주는 현실적인 다정함이 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "명절 준비로 지친 배우자에게 '올해는 반찬 사서 가자'고 먼저 말해 주는 현실적인 다정함이 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "집 계약 조건을 따져 보게 되면 보증금, 관리비, 대출 이자를 한 장 표로 만들어, 감이 아닌 숫자로 둘의 의견을 맞춰 갑니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          { "text": "친구가 가게를 차린다고 하면 축하와 함께 '월세랑 재료비는 계산해 봤어?'를 조심스럽게 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "친구가 가게를 차린다고 하면 축하와 함께 '월세랑 재료비는 계산해 봤어?'를 조심스럽게 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "많은 사람과 어울리기보다 서로 빌린 것 하나 없는 깔끔한 사이 몇 명과 오래 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
@@ -408,12 +413,13 @@
           { "text": "혼자 버티는 공부는 금방 바닥나서, 믿는 선생님이 '잘하고 있어' 한마디만 해 줘도 일주일을 더 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          { "text": "마음을 쉽게 열지 않아 처음엔 차가워 보이지만, 한번 열면 상대의 퇴근 시간에 맞춰 따뜻한 국물을 데워 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "연인에게 서운한 게 생겨도 바로 말하지 않고 꾹 참다가, 눈 오는 날 같이 걷다 조용히 털어놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "마음을 쉽게 열지 않아 처음엔 차가워 보이지만, 한번 열면 상대의 퇴근 시간에 맞춰 따뜻한 국물을 데워 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "연인에게 서운한 게 생겨도 바로 말하지 않고 꾹 참다가, 눈 오는 날 같이 걷다 조용히 털어놓습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "가족이 추위를 타면 보일러 온도보다 먼저 이불을 한 겹 더 꺼내 덮어 주는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "집안의 책임을 혼자 짊어지려 해서, 배우자가 '그거 나눠서 하자'고 해야 비로소 짐을 반 내려놓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안의 책임을 혼자 짊어지려 해서, 배우자가 '그거 나눠서 하자'고 해야 비로소 짐을 반 내려놓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "함께 겨울을 나게 되면 보일러 점검과 연료비 계산을 말없이 먼저 해 두고, 집이 따뜻해진 뒤에야 '이제 됐다' 하고 웃습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "연말 송년회에서 구석 자리에 앉아 있다가, 혼자 온 사람 잔에 따뜻한 차를 채워 주며 말을 겁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -489,7 +495,8 @@
         ],
         "marriage": [
           { "text": "집안의 크고 작은 요구를 다 받아 주는 든든한 기둥이지만, 가끔 혼자 베란다에 나가 오래 바람을 쐽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "집 수리든 부모님 일이든 배우자가 결정을 넘기면 묵묵히 받아 실행하고, 결과는 끝까지 책임집니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집 수리든 부모님 일이든 배우자가 결정을 넘기면 묵묵히 받아 실행하고, 결과는 끝까지 책임집니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "새 가족이 생기는 이야기가 나오면 양쪽 어른의 부탁을 일단 다 받아 적고, 며칠 뒤 가능한 일정표로 정리해 건네줍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에서 부탁을 잘 거절하지 못해 총무, 장소 예약, 뒷정리까지 어느새 혼자 맡고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -565,7 +572,8 @@
         ],
         "marriage": [
           { "text": "큰 결정 앞에서 흔들리지 않는 기둥이지만, 배우자의 작은 서운함은 한참 뒤에야 '아, 그거였어?' 하고 알아챕니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "더운 날 배우자가 지쳐 보이면 말없이 수박을 썰어 냉장고에 넣어 두고 자기 할 일로 돌아갑니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "더운 날 배우자가 지쳐 보이면 말없이 수박을 썰어 냉장고에 넣어 두고 자기 할 일로 돌아갑니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기 중에 의견이 갈리면 내 방식이 맞다고 버티다가, 상대가 '잠깐 물 한 잔 하자' 하면 그제야 열이 식습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "어떤 일에도 쉽게 흥분하지 않는 사람이라, 친구들 사이에 싸움이 나면 다들 당신 쪽을 바라봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -641,7 +649,8 @@
         ],
         "marriage": [
           { "text": "고장 난 문고리나 흔들리는 의자를 공구 하나로 고쳐 놓고, 배우자가 알아챌 때까지 말을 안 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "가족을 챙기느라 바쁜 계절을 보내고 나면, 배우자에게 '이번 주말은 나 좀 쉬게 해 줘'라고 먼저 부탁합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "가족을 챙기느라 바쁜 계절을 보내고 나면, 배우자에게 '이번 주말은 나 좀 쉬게 해 줘'라고 먼저 부탁합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 앞두고 챙길 일이 쌓이면 직접 만든 청첩장 봉투와 답례품 상자를 손수 포장해, 말 대신 물건으로 정성을 보입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구 이사 날이면 공구 상자와 장갑을 챙겨 가장 먼저 도착하고, 가구 조립을 마칠 때까지 자리를 뜨지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -717,7 +726,8 @@
         ],
         "marriage": [
           { "text": "배우자가 형편을 걱정하면 말로 위로하기보다 통장 내역과 저축 계획을 펼쳐 보여 주며 안심시킵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "감정 표현이 서툴러 '당신은 너무 차가워'라는 말을 듣지만, 배우자가 아프면 밤새 머리맡을 지킵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "감정 표현이 서툴러 '당신은 너무 차가워'라는 말을 듣지만, 배우자가 아프면 밤새 머리맡을 지킵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 날짜를 정하자는 말이 나오면 바로 답하지 않고 통장과 일정을 먼저 펼쳐 봅니다. 확신이 서야 '그럼 그날로 하자' 합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "새로운 사람과는 거리를 오래 두고 지켜보지만, 오래된 친구가 부탁하면 이유를 묻지 않고 들어줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

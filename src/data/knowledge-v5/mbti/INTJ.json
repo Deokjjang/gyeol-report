@@ -39,12 +39,12 @@
         ],
         "money": [
           { "text": "사고 싶은 노트북이 생기면 석 달 동안 사양표를 비교하고, 할인이 붙는 시점까지 계산한 뒤 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "월급이 들어오면 자동이체로 통장을 나누는 규칙을 한 번 정해 두고, 그 뒤로는 거의 손대지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "월급이 들어오면 자동이체로 통장을 나누는 규칙을 한 번 정해 두고, 그 뒤로는 거의 손대지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "남들이 다 사는 종목에는 오히려 손이 안 갑니다. 왜 오르는지 스스로 설명이 안 되면 사지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "교과서를 첫 장부터 읽지 않습니다. 목차를 펼쳐 단원끼리 어떻게 이어지는지 지도부터 그립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "선생님 설명에서 앞뒤가 안 맞는 대목을 찾으면, 수업이 끝난 뒤 교무실로 따로 찾아가 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "선생님 설명에서 앞뒤가 안 맞는 대목을 찾으면, 수업이 끝난 뒤 교무실로 따로 찾아가 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
           { "text": "스터디 모임보다 혼자 짠 계획표가 잘 맞습니다. 남의 속도에 맞추면 오히려 진도가 늦어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
@@ -55,7 +55,8 @@
         "marriage": [
           { "text": "집값과 대출, 아이 키우는 비용을 십 년짜리 표로 만들어 둡니다. 배우자는 그 표를 처음 보고 놀랍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
           { "text": "배우자가 오늘 힘들었다고 하면 원인부터 분석합니다. '그냥 안아 줘'라는 말을 듣고서야 팔을 벌립니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "신혼집 가구 배치를 정할 때 줄자와 도면을 들고 와 동선을 재고, 한 번 정한 뒤엔 3년 동안 소파 위치를 바꾸지 않습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "신혼집 가구 배치를 정할 때 줄자와 도면을 들고 와 동선을 재고, 한 번 정한 뒤엔 3년 동안 소파 위치를 바꾸지 않습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 생각하는 단계가 되면 집, 돈, 아이 문제를 순서대로 나눈 질문 목록을 만듭니다. 한꺼번에 쏟지 않고 때를 골라 하나씩 묻습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구는 적지만 오래 갑니다. 일 년에 두 번 만나도 어제 본 사이처럼 대화가 바로 깊어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

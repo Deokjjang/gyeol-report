@@ -19,7 +19,7 @@
           { "text": "일이 늦어지면 참지 못하고 '이거 왜 아직이에요?'라고 바로 묻습니다. 목소리에 열이 붙어 상대가 움찔합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          { "text": "부업 강의를 결제하고, 다음 주엔 주식 책을 사고, 그다음 달엔 온라인 가게를 엽니다. 수익은 아직 하나도 안 났습니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "부업 강의를 결제하고, 다음 주엔 주식 책을 사고, 그다음 달엔 온라인 가게를 엽니다. 수익은 아직 하나도 안 났습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "돈이 모이면 불리는 방법부터 찾습니다. 통장에 가만히 두는 걸 '돈을 썩힌다'고 느낍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
@@ -32,7 +32,8 @@
         ],
         "marriage": [
           { "text": "주말마다 '이번엔 베란다 텃밭 만들자', '거실 구조 바꾸자'를 꺼내서 배우자가 '지난번 것부터 끝내자'고 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자가 머뭇거리면 답답해서 혼자 가구 배치를 바꿔 놓고, 퇴근한 배우자가 현관에서 멈춰 섭니다.", "requires": { "relationship": "married", "children": "any", "job": "employed" } }
+          { "text": "배우자가 머뭇거리면 답답해서 혼자 가구 배치를 바꿔 놓고, 퇴근한 배우자가 현관에서 멈춰 섭니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "살림을 합치면 첫 달에 베란다 화분, 책장 조립, 가계부 앱을 한꺼번에 시작합니다. 석 달 뒤 반쯤은 박스째 놓여 있습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "동호회에 들어가면 석 달 만에 운영진이 되고, 반년 뒤엔 다른 모임을 새로 차리고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -113,7 +114,8 @@
         ],
         "marriage": [
           { "text": "이사나 집 수리 이야기가 나오면 '지금도 괜찮은데'가 먼저 나와, 결국 배우자가 견적을 받아 옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "가족 여행을 가자고 하면 '어디든 좋아'라고 답해서, 행선지는 매번 배우자가 지도 앱을 뒤져 정합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "가족 여행을 가자고 하면 '어디든 좋아'라고 답해서, 행선지는 매번 배우자가 지도 앱을 뒤져 정합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "한집에 살게 되면 이사 날짜를 잡는 쪽은 상대가 됩니다. 당신은 박스에 이름을 붙이는 일을 가장 성실하게 합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에서 '다음엔 뭐 할까?'가 나오면 말을 아끼다가, 누가 정해 주면 가장 먼저 '좋아, 갈게'라고 답합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -203,7 +205,8 @@
         ],
         "marriage": [
           { "text": "집안의 큰 결정은 배우자가 정하고 당신은 성실하게 따릅니다. 문제는 배우자가 지친 날, 아무도 방향을 잡지 않는다는 것입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자가 '우리 앞으로 어떻게 살고 싶어?'라고 물으면 '지금처럼'이라고 답합니다. 상대는 그 말에서 계획이 없다는 것만 듣습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자가 '우리 앞으로 어떻게 살고 싶어?'라고 물으면 '지금처럼'이라고 답합니다. 상대는 그 말에서 계획이 없다는 것만 듣습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 앞두면 \"어떤 집에서 살고 싶어?\"라는 질문에 대답이 막힙니다. 상대가 보여 주는 선택지 중에서 고르는 건 잘합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구들이 여행지를 정하면 군말 없이 따라가 가장 잘 즐깁니다. '이번엔 네가 정해 봐'라는 말에는 하루 종일 검색만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -295,7 +298,8 @@
         ],
         "marriage": [
           { "text": "집 꾸미기를 한 번에 하지 않고 계절마다 한 곳씩 바꿉니다. 배우자와 '이번 봄엔 베란다' 하고 하나씩 정합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자가 새 일을 벌이려 하면 막지 않고 '그럼 이건 언제까지 해 볼래?'라고 묻습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자가 새 일을 벌이려 하면 막지 않고 '그럼 이건 언제까지 해 볼래?'라고 묻습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 날짜가 잡히면 한 번에 몰아치지 않고 이번 달엔 집, 다음 달엔 예식장처럼 한 마디씩 순서대로 올려 갑니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "새 모임에 들어가도 오랜 친구와의 약속을 줄이지 않습니다. 오래된 사람과 새 사람이 한 달력에 같이 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -369,8 +373,9 @@
           { "text": "서운한 말을 들으면 그 자리에서 바로 받아칩니다. 집에 오는 길에 '그 말은 하지 말걸' 하고 문자를 썼다 지웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "집들이처럼 사람이 모이는 날엔 앞치마를 두르고 제일 바쁘게 움직이다가, 손님이 가면 소파에 쓰러집니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
-          { "text": "배우자가 느긋하게 외출 준비를 하면 현관에서 차 키를 흔들며 '5분 지났어'를 외칩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집들이처럼 사람이 모이는 날엔 앞치마를 두르고 제일 바쁘게 움직이다가, 손님이 가면 소파에 쓰러집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "배우자가 느긋하게 외출 준비를 하면 현관에서 차 키를 흔들며 '5분 지났어'를 외칩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "양가 인사를 앞두면 일주일 전부터 옷을 세 벌 꺼내 놓고, 당일엔 분위기를 띄우다 정작 마음속 할 말을 놓칩니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구 생일엔 풍선과 현수막까지 준비해 깜짝 파티를 열고, 정작 주인공보다 자기가 더 신나 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -450,7 +455,8 @@
         ],
         "marriage": [
           { "text": "배우자가 차려 준 밥이 맛있어도 '응, 괜찮네' 한마디로 끝냅니다. 속으로는 두 그릇 먹고 싶을 만큼 좋았습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "손님을 부르는 주말보다 둘이 조용히 영화 보는 저녁을 좋아합니다. 배우자가 사람을 부르자고 하면 조금 지칩니다.", "requires": { "relationship": "married", "children": "any", "job": "business" } }
+          { "text": "손님을 부르는 주말보다 둘이 조용히 영화 보는 저녁을 좋아합니다. 배우자가 사람을 부르자고 하면 조금 지칩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 생각하게 되면 반지 앞에서도 \"괜찮은 것 같아\" 한마디로 끝냅니다. 속으로는 몇 번이나 꺼내 보고 있습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "단체 대화방에서 웃긴 글이 올라와도 'ㅋㅋ' 두 글자만 남깁니다. 실제로는 혼자 소리 내 웃었습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -537,11 +543,13 @@
         ],
         "love": [
           { "text": "연인이 '나 오늘 어때?'라고 물으면 '평소랑 같은데'라고 정직하게 답합니다. 상대 표정이 왜 굳었는지 그날 밤까지 모릅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
-          { "text": "사랑한다는 말 대신 연인의 자전거 체인에 기름을 쳐 둡니다. 마음은 분명한데 상대는 그게 고백인 줄 모릅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "사랑한다는 말 대신 연인의 자전거 체인에 기름을 쳐 둡니다. 마음은 분명한데 상대는 그게 고백인 줄 모릅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람 앞에서도 표정이 크게 변하지 않아 \"관심 없나 봐\"라는 오해를 삽니다. 속은 이미 한참 앞서 걷고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "기념일을 잊은 게 아니라 '굳이 챙겨야 하나' 싶은 쪽입니다. 배우자가 서운해하는 이유를 몇 년째 설명 듣습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집안 공기가 가라앉아도 본인은 잘 못 느낍니다. 배우자가 '우리 요즘 웃은 적 있어?'라고 물을 때 처음 돌아봅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안 공기가 가라앉아도 본인은 잘 못 느낍니다. 배우자가 '우리 요즘 웃은 적 있어?'라고 물을 때 처음 돌아봅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "함께 살게 되면 마음은 깊은데 \"오늘 하루 어땠어?\"를 먼저 묻는 습관이 없어, 퇴근 후 집이 조용해지기 쉽습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구가 축사를 부탁하면 정중히 거절합니다. 대신 축의금 봉투는 누구보다 일찍, 정확하게 챙겨 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -635,8 +643,9 @@
           { "text": "다툴 때 언성이 높아지려 하면 '잠깐 물 마시고 올게' 하고 스스로 불을 줄였다가 다시 이야기합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "명절에 손님을 맞을 땐 밝게 분위기를 띄우고, 다음 날은 배우자와 둘이 늦잠을 자며 쉬는 날로 비워 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "business" } },
-          { "text": "배우자 생일엔 거창한 이벤트 대신 좋아하는 식당 예약과 손편지 한 장으로 마음을 정확히 전합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "명절에 손님을 맞을 땐 밝게 분위기를 띄우고, 다음 날은 배우자와 둘이 늦잠을 자며 쉬는 날로 비워 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자 생일엔 거창한 이벤트 대신 좋아하는 식당 예약과 손편지 한 장으로 마음을 정확히 전합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기가 나오면 들뜬 마음은 숨기지 않되 계약서 앞에서는 차분해져서, 신나는 날과 따져 보는 날을 따로 정합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임 분위기가 식으면 한마디 던져 살리고, 누군가 주인공이 되면 한발 물러나 박수를 쳐 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

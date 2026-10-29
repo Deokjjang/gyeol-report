@@ -14,9 +14,9 @@
       },
       "scenes": {
         "work": [
-          { "text": "회의실 전체를 설득하기보다 담당자 한 명을 따로 불러 '이건 이렇게 가면 돼요'라고 조용히 길을 잡아 주는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "야근하는 후배 옆에 앉아 자기 일은 밀어 두고 그 사람 보고서의 문장을 같이 고쳐 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "발표 자료의 숫자가 하나 틀린 걸 발견하면 공개 지적 대신 쉬는 시간에 슬쩍 알려 주는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
+          { "text": "회의실 전체를 설득하기보다 담당자 한 명을 따로 불러 '이건 이렇게 가면 돼요'라고 조용히 길을 잡아 주는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "야근하는 후배 옆에 앉아 자기 일은 밀어 두고 그 사람 보고서의 문장을 같이 고쳐 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "발표 자료의 숫자가 하나 틀린 걸 발견하면 공개 지적 대신 쉬는 시간에 슬쩍 알려 주는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
           { "text": "큰돈을 굴리기보다 매달 정해진 날 적금과 기부 두 줄을 먼저 보내 놓고 나머지를 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -32,7 +32,9 @@
         ],
         "marriage": [
           { "text": "배우자가 늦게 들어오는 날 거실 불 하나를 켜 두고 밥을 식지 않게 덮어 놓는 사람입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "큰 다툼보다 서운한 말 한마디를 오래 품고 있다가 며칠 뒤 조용히 '그때 그 말, 아직 마음에 있어'라고 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "큰 다툼보다 서운한 말 한마디를 오래 품고 있다가 며칠 뒤 조용히 '그때 그 말, 아직 마음에 있어'라고 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "침구를 같이 사러 가면 이불 색은 상대에게 맡기고, 자기는 침대 머리맡에 둘 작은 스탠드와 따뜻한 빛 전구를 고릅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } },
+          { "text": "결혼 말이 처음 오가게 되면 큰 약속은 선뜻 못 꺼내고, 상대가 좋아하는 차 종류와 머그컵부터 조용히 사 모읍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에서 가장 말이 적은 사람 옆에 가 앉아 그 사람이 말을 꺼낼 때까지 질문을 던져 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

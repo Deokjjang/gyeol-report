@@ -9,7 +9,7 @@
           { "text": "퇴근 후 동기 셋이 모인 단톡방에서 '우리끼리 뭐 하나 해 볼까?'라는 말이 처음 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "팀장이 방식을 바꾸라고 해도 '제 방식으로 한 번만 해 볼게요' 하고 버팁니다. 결과로 보여 주려고 주말에도 노트북을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "헬스장 옆자리 사람이 나보다 무게를 더 들면 괜히 한 판을 더 올립니다. 비교가 연료가 되는 한 해입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "본가에서 나와 혼자 살 집을 알아보거나, 내 이름으로 된 통장이나 사업자를 하나 만들고 싶어집니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } }
+          { "text": "밤에 누워 부동산 앱으로 혼자 꾸릴 작업실 시세를 보고, 내 이름만 적힌 통장을 하나 새로 만듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "action": "혼자 하려던 일에 같은 목표를 가진 사람 한 명을 붙이고, 역할과 몫은 시작 전에 글로 나누세요",
         "caution": "내 힘이 세지는 만큼 고집도 세집니다. 돈과 성과를 나눠 갖는 자리라 동업이나 공동 지출에서 내 몫이 줄기 쉬워요. 원래 일간이 강한 사람은 이 해에 경쟁과 마찰을 더 크게 느낍니다."
@@ -47,8 +47,8 @@
       "month": {
         "meaning": "이달은 승부욕과 씀씀이가 같이 커집니다. 사람이 붙는 만큼 돈도 사람을 따라 나가기 쉬운 한 달이에요.",
         "scenes": [
-          { "text": "동료가 먼저 칭찬받는 걸 보고 그날 밤 보고서를 한 번 더 고칩니다. 지기 싫은 마음이 야근을 부릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구 생일, 회식, 경조사가 한 달에 몰려 이체 내역에 사람 이름이 줄줄이 찍힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "동료가 먼저 칭찬받는 걸 보고 그날 밤 보고서를 한 번 더 고칩니다. 지기 싫은 마음이 야근을 부릅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "친구 생일, 동창 모임, 경조사가 한 달에 몰려 이체 내역에 사람 이름이 줄줄이 찍힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "중고 거래에서 '조금만 깎아 주세요'에 밀려 생각보다 싸게 넘기고, 집에 와서 혼자 아쉬워합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "action": "이달 사람 만나는 데 쓸 돈의 상한을 정해 두고, 넘으면 다음 약속은 다음 달로 미루세요"
@@ -69,7 +69,7 @@
         "scenes": [
           { "text": "주말마다 빵을 굽거나 그림을 그려 사진을 올렸더니 '나도 하나 만들어 줘'라는 부탁이 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "새로 생긴 동네 식당을 찾아다니는 재미에 빠져, 지도 앱에 저장한 맛집이 서른 곳을 넘깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "맡은 일을 차근차근 끝내다 보니 사무실에서 '그건 그 사람한테 맡기면 돼'라는 말이 자연스럽게 돕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "맡은 일을 차근차근 끝내다 보니 단톡방에서 '그건 그 사람한테 맡기면 돼'라는 말이 자연스럽게 돕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "아이나 후배를 가르치는 자리가 생기고, 설명하다 보니 내 머릿속이 더 깔끔하게 정리됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "action": "올해 만들고 싶은 결과물 하나를 정해 매주 같은 요일에 조금씩 쌓고, 연말에 한곳에 모아 보세요",
@@ -98,10 +98,10 @@
       "year": {
         "meaning": "내가 만들어 내되 틀을 깨는 쪽으로 나가는 기운이 들어오는 해입니다. 말솜씨와 아이디어가 날카로워지고, 답답한 규칙에 '왜요?'를 묻는 일이 늘어나요.",
         "scenes": [
-          { "text": "회의에서 다들 넘어가려던 안건에 '이건 고객 입장에서 말이 안 돼요'라고 짚어 분위기가 잠깐 얼어붙습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "회의에서 다들 넘어가려던 안건에 '이건 쓰는 사람 입장에서 말이 안 돼요'라고 짚어 분위기가 잠깐 얼어붙습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회사 일과 별개로 내 이름을 건 글이나 디자인을 올리기 시작하고, 반응이 생각보다 빨리 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "정해진 보고 양식이 답답해 새 양식을 만들어 돌리고, 몇몇은 반기고 몇몇은 불편해합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인에게 서운한 걸 참지 않고 그 자리에서 말합니다. 맞는 말인데 표현이 세서 대화가 새벽까지 길어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "정해진 양식이 답답해 내 식으로 새 표를 만들어 돌리고, 몇몇은 반기고 몇몇은 불편해합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "연인에게 서운한 걸 참지 않고 그 자리에서 말합니다. 맞는 말인데 표현이 세서 대화가 새벽까지 길어집니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "action": "올해 하고 싶은 말은 기획서나 작품으로 바꿔 내고, 윗사람 앞에는 대안을 같이 들고 가세요",
         "caution": "상관은 정관을 치는 자리라 고전이 상관견관을 경계했습니다. 원국에 정관이 있으면 상사·규칙·계약과 부딪치는 일이 커지는 구조예요. 다만 고전도 재성이나 인성이 받쳐 주면 화가 되지 않는다고 봤습니다."
@@ -129,8 +129,8 @@
       "year": {
         "meaning": "내가 다스리는 돈 가운데 크고 움직이는 돈이 들어오는 해입니다. 사람·거래·이동이 많아지고, 월급 바깥의 기회가 여러 갈래로 보여요. 손이 크고 시원해지는 흐름입니다.",
         "scenes": [
-          { "text": "지인 소개로 부업 제안이 두세 개 한꺼번에 들어오고, 주말 일정표가 빠르게 찹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "출장과 여행이 잦아져 캐리어를 현관에 아예 펼쳐 둔 채로 지냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "지인 소개로 작은 일거리 제안이 두세 개 한꺼번에 들어오고, 주말 일정표가 빠르게 찹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "약속과 여행이 잦아져 캐리어를 현관에 아예 펼쳐 둔 채로 지냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "평소엔 안 하던 소액 투자나 온라인 판매를 시작하고, 첫 수익 알림에 하루 종일 기분이 좋습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "모임마다 계산을 먼저 하는 사람이 되고, 그 덕에 새로운 사람을 소개받는 일이 늘어납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
@@ -190,8 +190,8 @@
       "year": {
         "meaning": "나를 누르고 다그치는 힘이 들어오는 해입니다. 책임·마감·경쟁이 한꺼번에 몰리지만, 버티고 해내면 실력과 이름이 크게 남는 흐름이에요. 일간이 강한 사람에게는 판을 키우는 압력이 됩니다.",
         "scenes": [
-          { "text": "윗선에서 '이번 건은 당신이 맡아'라는 말과 함께 기한이 빡빡한 프로젝트가 떨어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "다른 팀과 비교되는 자리가 잦아져, 발표 전날 거울 앞에서 예상 질문을 소리 내 연습합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "윗선에서 '이번 건은 당신이 맡아'라는 말과 함께 기한이 빡빡한 프로젝트가 떨어집니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "남과 비교되는 자리가 잦아져, 발표 전날 거울 앞에서 예상 질문을 소리 내 연습합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "어깨와 목이 뻐근한 날이 늘어, 퇴근길에 마사지 숍 앞을 몇 번이나 서성입니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "친구가 '너 요즘 얼굴이 굳었어'라고 말해 줘서야 쉬는 날을 달력에 적어 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
@@ -201,7 +201,7 @@
       "month": {
         "meaning": "이달은 마감과 윗사람의 압박이 몰리는 달입니다. 피하고 싶은 일이 정면으로 오지만, 처리하고 나면 평가가 확 달라져요.",
         "scenes": [
-          { "text": "월말 보고와 갑작스러운 점검이 같은 주에 겹쳐, 점심을 책상에서 김밥으로 때웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "마감 두 개와 갑작스러운 점검이 같은 주에 겹쳐, 점심을 책상에서 김밥으로 때웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "평소 말 없던 상사가 '이번엔 꼭 맞춰 주세요'라고 직접 메시지를 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "운전 중에 끼어드는 차에 평소보다 크게 화가 나고, 집에 와서야 많이 지쳐 있었다는 걸 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
@@ -224,7 +224,7 @@
           { "text": "작은 팀이라도 '정리는 당신이 해 줘요'라는 말과 함께 처음으로 이름 붙은 역할이 주어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "미뤄 둔 자격 시험 접수 버튼을 누르고, 책상 앞 벽에 시험 날짜를 크게 적어 붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "출근 시간을 10분 당기고 회의록을 꼬박꼬박 남겼더니, 연말 면담에서 그 얘기가 먼저 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "연애도 애매한 채로 두기 싫어져, 양쪽 친구들에게 서로를 정식으로 소개하는 자리를 만듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "연애도 애매한 채로 두기 싫어져, 양쪽 친구들에게 서로를 정식으로 소개하는 자리를 만듭니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "action": "올해 원하는 자리의 조건을 자격·경력·추천으로 나눠 적고, 빈칸 하나를 분기마다 채우세요",
         "caution": "정관은 재성이 받쳐 주고 일간이 감당할 때 귀하다고 고전이 봤습니다. 원국에 상관이 강하면 자리를 얻고도 말로 흔드는 구조예요. 원국에 편관까지 있으면 상사가 둘인 듯 압박이 겹칩니다."
@@ -232,7 +232,7 @@
       "month": {
         "meaning": "이달은 규칙과 평가가 눈앞에 오는 달입니다. 서류·절차·공식 일정을 처리하기 좋고, 단정한 태도가 점수로 돌아와요.",
         "scenes": [
-          { "text": "미뤄 둔 연말정산 서류와 계약서 사본을 한 폴더에 모아 이름을 붙여 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "미뤄 둔 세금 서류와 계약서 사본을 한 폴더에 모아 이름을 붙여 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회사에서 공식 면담이나 발표 일정이 잡혀, 전날 셔츠를 다려 옷걸이에 걸어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "모임에서 회칙이나 당번표를 새로 짜는 일이 맡겨지고, 단톡방 공지에 내 이름이 올라갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
@@ -254,7 +254,7 @@
         "scenes": [
           { "text": "퇴근 후 전혀 다른 분야의 온라인 강의를 결제하고, 밤마다 노트에 그림까지 그려 가며 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "사람 많은 송년회 대신 혼자 낯선 도시에 가서 오래된 서점을 돌고 오는 게 더 즐겁습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "아무도 안 맡으려던 새 프로그램 도입을 자청해, 두꺼운 설명서를 혼자 끝까지 읽어 냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "모두가 귀찮아하던 새 프로그램 사용법을 자청해 익히고, 두꺼운 설명서를 혼자 끝까지 읽어 냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "친구가 추천한 길을 두고 '그게 정말 맞나?' 하며 자료를 찾다 보니 결정이 한 달 늦어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "action": "올해 파고들 주제 하나를 정하고, 석 달마다 배운 것을 남에게 설명하는 자리를 만드세요",

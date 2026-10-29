@@ -32,7 +32,8 @@
         ],
         "marriage": [
           { "text": "집안일을 나눌 때 표를 만들어 냉장고에 붙이고, 첫 달은 그 표를 본인이 가장 성실하게 지킵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부모님께 들은 조언을 '우리 엄마가 그러는데'로 자주 전해서, 배우자가 살짝 지친 얼굴을 할 때가 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "부모님께 들은 조언을 '우리 엄마가 그러는데'로 자주 전해서, 배우자가 살짝 지친 얼굴을 할 때가 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "살림을 합치면 첫 한 달은 말없이 집 안 동선만 지켜보다가, 어느 날 수납장 위치를 바꿔 그린 도면을 상대 앞에 내밉니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구가 고민을 털어놓으면 끝까지 듣고 나서 '내가 보기엔 이 순서로 하면 돼'라고 길을 그려 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -138,11 +139,12 @@
         ],
         "marriage": [
           { "text": "생활비가 빠듯한 달에도 비상금 통장 하나는 손대지 않고 지켜 둡니다. 집이 흔들릴 때 꺼내려고요.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자 집안에서 불편한 말을 들어도 그 자리에선 고개를 끄덕이고, 집에 와서 설거지를 유난히 오래 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자 집안에서 불편한 말을 들어도 그 자리에선 고개를 끄덕이고, 집에 와서 설거지를 유난히 오래 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "함께 살게 되면 처음엔 상대 습관에 맞춰 조용히 밟히다가, 석 달쯤 지나 '내 컵은 여기 둘게' 하며 작은 자리 하나부터 되찾습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "단톡방에서는 조용한데, 친구가 이사하는 날엔 목장갑을 챙겨 가장 먼저 도착해 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "처음 보는 사람에게는 말을 아끼지만, 동네 단골 가게 사장님과는 10년째 안부를 주고받습니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } }
+          { "text": "처음 보는 사람에게는 말을 아끼지만, 동네 단골 가게 사장님과는 10년째 안부를 주고받습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "겨울밤 혼자 베란다 화분에 물을 주고, 새순이 났는지 손가락으로 흙을 살살 헤쳐 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -244,10 +246,11 @@
         ],
         "marriage": [
           { "text": "주말 아침마다 '오늘 어디 가 볼까?'로 하루를 엽니다. 집에만 있으면 오후에 기운이 쭉 빠집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "집안 행사를 앞장서 벌여 놓고, 마지막 뒷정리 때쯤엔 배우자가 조용히 고무장갑을 끼고 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안 행사를 앞장서 벌여 놓고, 마지막 뒷정리 때쯤엔 배우자가 조용히 고무장갑을 끼고 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "양가 인사를 앞두면 선물보다 식당 예약과 이동 경로를 먼저 짜 오고, 당일 새벽부터 차 시동을 걸어 둘 만큼 앞장서는 쪽입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          { "text": "처음 간 모임에서도 10분이면 옆 사람 이름과 고향을 알아내고, 끝날 무렵엔 2차 장소를 정하고 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "처음 간 모임에서도 10분이면 옆 사람 이름과 고향을 알아내고, 끝날 무렵엔 2차 장소를 정하고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "친구들 사이에서 '그거 재밌겠다, 하자!'를 가장 먼저 외치는 사람이라 단톡방 공지는 대부분 당신 몫입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
@@ -350,7 +353,8 @@
         ],
         "marriage": [
           { "text": "집 안 조명을 하나씩 따뜻한 색으로 바꿔 두고, 배우자가 '집이 달라졌네' 하고 알아채 주길 조용히 기다립니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자 부모님 앞에서는 내내 웃는 얼굴이다가, 돌아오는 차 안에서 '나 오늘 좀 힘들었어'라고 작게 말합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자 부모님 앞에서는 내내 웃는 얼굴이다가, 돌아오는 차 안에서 '나 오늘 좀 힘들었어'라고 작게 말합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기가 오가면 반지나 날짜보다, 같이 살 집에 놓을 향 냄새와 창가 커튼 색을 먼저 조용히 정해 보는 사람입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구가 누구와 다투고 온 날 편을 들기보다 '그 사람도 그날 무슨 일 있었나 봐'라고 말해 화를 식혀 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -456,7 +460,8 @@
         ],
         "marriage": [
           { "text": "양가 경조사 날짜를 혼자 다 외우고, 명절 선물 목록을 3년 치 비교해 두는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자가 힘들어하면 위로의 말은 짧고, 대신 대출 이자를 줄일 방법을 밤새 찾아옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자가 힘들어하면 위로의 말은 짧고, 대신 대출 이자를 줄일 방법을 밤새 찾아옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "신혼집 대출을 알아보게 되면 금리별 월 상환액을 종이에 세 줄로 적어 두고, 상대가 놀라지 않게 가장 나쁜 경우부터 말해 줍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구들끼리 돈을 모으는 계모임의 총무를 15년째 맡고 있습니다. 아무도 그 자리를 넘보지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -565,7 +570,8 @@
         ],
         "marriage": [
           { "text": "냉장고 반찬 통의 개수와 다음 주 식단을 머릿속에 늘 들고 다니는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "명절 준비를 혼자 다 해 놓고 '괜찮아, 쉬어'라고 말하지만, 설거지가 끝나면 한마디가 날카롭게 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "명절 준비를 혼자 다 해 놓고 '괜찮아, 쉬어'라고 말하지만, 설거지가 끝나면 한마디가 날카롭게 나옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "한집에 살게 되면 첫 장보기 날 쌀과 국거리부터 두 사람 몫으로 사 두고, 냉장고 한 칸을 상대가 먹을 것으로 비워 둡니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "집들이에 가면 앉아 있지 못하고 주방에 들어가 '접시 어디 있어?'부터 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -666,7 +672,8 @@
         ],
         "marriage": [
           { "text": "집안의 원칙부터 세웁니다. 귀가 시간, 용돈, 명절에 어느 집 먼저 갈지를 정해 두어야 마음이 편합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자 앞에서 실수를 인정하는 데 하루가 걸립니다. 대신 다음 날 아침 말없이 고쳐 놓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자 앞에서 실수를 인정하는 데 하루가 걸립니다. 대신 다음 날 아침 말없이 고쳐 놓습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "신혼집 계약서를 쓰는 날에는 특약 문구를 소리 내어 끝까지 읽어 본 뒤에야 도장을 찍습니다. 대충 넘어가는 일이 없습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "동창 모임 볼링장에서 가볍게 하자던 게임이 세 판째가 되면 혼자 점수판을 노려보고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -759,7 +766,7 @@
           { "text": "회의에서 큰 소리로 주장하진 않지만, 마지막에 '이 부분은 쓰는 사람이 불편할 거예요'라는 한마디로 안을 바꿉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          { "text": "수건 한 장을 사러 가도 매장 세 곳에서 두께와 촉감을 비교하고, 결국 가장 비싼 걸 들고 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "수건 한 장을 사러 가도 매장 세 곳에서 두께와 촉감을 비교하고, 결국 가장 비싼 걸 들고 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "유행하는 물건은 잘 안 사지만, 마음에 꽂힌 작가의 그릇은 할부로라도 들여놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
@@ -772,7 +779,8 @@
         ],
         "marriage": [
           { "text": "신혼집 그릇과 수건은 직접 고르겠다고 해 놓고, 고르는 데만 석 달을 씁니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자 집안 행사에 군말 없이 다 따라가지만, 다녀오면 이틀은 혼자 조용히 쉬어야 숨이 돌아옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자 집안 행사에 군말 없이 다 따라가지만, 다녀오면 이틀은 혼자 조용히 쉬어야 숨이 돌아옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "함께 살 집을 보러 가면 벽지 색보다 욕실 수건걸이 높이와 문손잡이 촉감부터 만져 보는 사람입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구 생일 선물에 손편지를 넣는데, 맞춤법과 글씨가 마음에 들 때까지 카드를 세 장 버립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -860,7 +868,7 @@
       },
       "scenes": {
         "work": [
-          { "text": "거래처가 계약 직전에 조건을 바꾸면 당황하기보다 그 자리에서 대안 두 개를 꺼내 판을 다시 짭니다.", "requires": { "relationship": "married", "children": "any", "job": "business" } },
+          { "text": "거래처가 계약 직전에 조건을 바꾸면 당황하기보다 그 자리에서 대안 두 개를 꺼내 판을 다시 짭니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
           { "text": "회의 자료를 받으면 3분 만에 핵심을 뽑아 '결국 이거 하자는 거죠?'라고 정리해 버립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "설명을 건너뛰고 결론부터 실행해 놓아서, 동료가 '근데 이거 왜 이렇게 한 거야?'를 자주 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
@@ -869,7 +877,7 @@
           { "text": "한 가지에 묶이는 걸 답답해해서 통장을 목적별로 다섯 개쯤 나눠 굴립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          { "text": "한 문제를 세 가지 방법으로 풀어 보다가, 교과서에 없는 지름길을 찾아내면 혼자 신이 납니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "한 문제를 세 가지 방법으로 풀어 보다가, 교과서에 없는 지름길을 찾아내면 혼자 신이 납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "수업을 들으며 노트 옆 칸에 '이건 다른 과목 그거랑 같네'를 계속 적어 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
@@ -878,10 +886,11 @@
         ],
         "marriage": [
           { "text": "같이 살아도 각자 시간과 취미가 있어야 숨을 쉽니다. 주말 하루는 혼자 낚시나 드라이브를 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자가 고민을 길게 말하면 중간에 '그럼 이렇게 하면 되잖아'로 끊었다가, 다시 처음부터 듣게 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자가 고민을 길게 말하면 중간에 '그럼 이렇게 하면 되잖아'로 끊었다가, 다시 처음부터 듣게 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기가 본격적으로 나오면 두 달 안에 날짜, 장소, 예산 세 가지 안을 뽑아 오고, 상대 반응이 시원찮으면 그 자리에서 다른 안으로 갈아탑니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          { "text": "'그거 아는 사람 있어?' 하면 30분 안에 연결해 줄 사람을 찾아내는, 발 넓은 사람입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "'그거 아는 사람 있어?' 하면 30분 안에 연결해 줄 사람을 찾아내는, 발 넓은 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "모임에서 화제가 막히면 엉뚱한 뉴스 하나를 던져 이야기를 전혀 다른 방향으로 흘려보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
@@ -981,11 +990,12 @@
         ],
         "love": [
           { "text": "보낼 문자를 다 써 놓고 '~요'를 '~용'으로 바꿨다가 되돌리며 전송 버튼 앞에서 5분을 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "목소리 큰 사람보다 식당에서 직원에게 끝까지 존댓말을 쓰는 사람에게 마음이 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } }
+          { "text": "목소리 큰 사람보다 식당에서 직원에게 끝까지 존댓말을 쓰는 사람에게 마음이 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "배우자 말 속 단어 하나가 마음에 걸리면 그날 밤 '아까 그 말, 무슨 뜻이었어?'라고 조용히 묻습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "살림 도구마다 자리가 정해져 있어서, 배우자가 가위를 다른 서랍에 넣으면 말없이 원래 자리로 옮겨 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "살림 도구마다 자리가 정해져 있어서, 배우자가 가위를 다른 서랍에 넣으면 말없이 원래 자리로 옮겨 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "부모님께 인사드릴 자리를 앞두면 드릴 말을 한 줄씩 적어 연습하고, 양쪽 선물 값도 눈금 맞추듯 똑같이 맞춰 준비합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "단체 사진을 올리기 전에 모두의 얼굴을 확대해 보고, 눈 감은 사람이 있으면 다른 컷을 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

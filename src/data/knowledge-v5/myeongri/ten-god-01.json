@@ -32,7 +32,8 @@
         ],
         "marriage": [
           { "text": "결혼 생활의 규칙을 자기 식으로 다시 씁니다. 남들 다 하는 명절 방식도 '우리는 왜 이렇게 하지?'부터 묻습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "배우자가 보기에 혼자 있는 시간이 너무 깁니다. 방에서 뭘 하는지 물으면 '그냥 보던 거'라고 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "배우자가 보기에 혼자 있는 시간이 너무 깁니다. 방에서 뭘 하는지 물으면 '그냥 보던 거'라고 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 이야기가 나오면 예식 순서표부터 의심합니다. '이건 왜 하는 건데?'를 묻다가 둘만 아는 방식으로 새로 짜 보자고 합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "넓은 모임보다 특이한 관심사를 나누는 한두 사람과 깊이 갑니다. 그 사람들도 어딘가 '옆길' 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -143,7 +144,8 @@
         ],
         "marriage": [
           { "text": "결혼은 약속이라고 믿습니다. 힘든 시기에도 떠나기보다 역할을 지키는 쪽을 고릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "생활비 날짜, 명절 순서, 집안 규칙을 세우고 지킵니다. 배우자가 어기면 조용히 오래 불편합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "생활비 날짜, 명절 순서, 집안 규칙을 세우고 지킵니다. 배우자가 어기면 조용히 오래 불편합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "양가 인사를 앞두면 약속 20분 전에 도착해 있고, 선물 포장과 첫인사 말까지 전날 밤 미리 적어 둡니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "약속 시간 10분 전에 도착합니다. 늦는 친구에게 화는 안 내지만 두 번째부터 거리를 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -254,7 +256,8 @@
         ],
         "marriage": [
           { "text": "결혼 후 생활비 통장을 만들고 규칙을 정합니다. 배우자가 큰돈을 혼자 쓰면 그 자체보다 '상의 없이'가 오래 남습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집을 사는 날을 인생의 큰 날로 여깁니다. 월세에서 전세, 전세에서 자가로 가는 길을 계획표로 갖고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "집을 사는 날을 인생의 큰 날로 여깁니다. 월세에서 전세, 전세에서 자가로 가는 길을 계획표로 갖고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "신혼집을 고르게 되면 월세, 대출 이자, 관리비를 표로 만들어 둔 뒤에야 현관문을 엽니다. 숫자가 맞아야 마음이 놓입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "더치페이가 편합니다. 얻어먹으면 꼭 갚고, 안 갚는 사람은 마음속 장부에 적힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

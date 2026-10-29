@@ -22,7 +22,7 @@
           { "text": "경쟁과 평가가 강한 조직에서 빨리 소진됩니다. 글·상담·돌봄·창작처럼 자기 결을 쓰는 일에 오래 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          { "text": "돈을 가치로 씁니다. 동물 단체 후원, 독립 서점, 친구의 작은 가게. 효율보다 마음이 가는 곳에 지갑이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "돈을 가치로 씁니다. 동물 단체 후원, 독립 서점, 친구의 작은 가게. 효율보다 마음이 가는 곳에 지갑이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "돈 얘기를 꺼내는 게 불편합니다. 받을 돈을 못 받고, 가격 협상에서 늘 먼저 양보합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "통장 관리는 미루다 몰아서 봅니다. 숫자가 쌓이면 보기 싫어 더 미룹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
@@ -38,8 +38,9 @@
         ],
         "marriage": [
           { "text": "결혼 생활에서 자기만의 방, 자기만의 시간이 없으면 시들어 갑니다. 배우자가 그걸 거리감으로 읽으면 어긋납니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집안일의 분담표보다 '나를 이해해 주느냐'가 먼저입니다. 설거지보다 말투에 상처받습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "갈등이 생기면 말을 멈춥니다. 며칠 뒤 긴 편지나 메시지로 마음을 풉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "집안일의 분담표보다 '나를 이해해 주느냐'가 먼저입니다. 설거지보다 말투에 상처받습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "갈등이 생기면 말을 멈춥니다. 며칠 뒤 긴 편지나 메시지로 마음을 풉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "같이 살 집을 상상하면 창가 자리 하나와 혼자 쓰는 선반부터 떠올립니다. 이 얘기를 꺼내기가 어려워 한참 마음속으로만 돌려 봅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "넓은 모임보다 한두 명과 밤새 이야기하는 쪽입니다. 그 한두 명에게는 전부를 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

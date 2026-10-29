@@ -32,7 +32,8 @@
         ],
         "marriage": [
           { "text": "몇 해 사이에 배우자의 말버릇과 입맛이 그대로 옮아, 친구들이 '둘이 웃는 것도 똑같다'고 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "큰 결정 앞에서 '당신 생각은 어때?'를 먼저 묻고, 상대가 망설이면 자기 마음도 같이 멈춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "큰 결정 앞에서 '당신 생각은 어때?'를 먼저 묻고, 상대가 망설이면 자기 마음도 같이 멈춥니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼할 사람이 정해지면 그 사람의 취향이 금세 내 취향이 되어, 신혼집 가구 색을 고를 때 상대 쪽으로 기울어집니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에서 처음 본 사람과 고향이나 취미 하나만 겹쳐도 금세 그 사람 옆자리로 옮겨 앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -186,19 +187,20 @@
         ],
         "money": [
           { "text": "단골 가게가 정해지면 몇 년을 다닙니다. 사장님이 알아서 덤을 챙겨 줄 만큼 붙어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
-          { "text": "가족이나 연인과 생활비를 한 주머니로 묶어 쓰는 쪽이 편합니다. 따로 계산하면 오히려 어색해합니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "가족이나 연인과 생활비를 한 주머니로 묶어 쓰는 쪽이 편합니다. 따로 계산하면 오히려 어색해합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "공부 잘하는 친구 옆자리에 앉으면 필기 방식까지 따라 하며 실력이 같이 붙습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "같은 학원 버스를 타는 친구와 매일 문제를 하나씩 내 주며 외운 것이 가장 오래 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
         ],
         "love": [
-          { "text": "소개팅보다 매일 보던 사람과 정이 듭니다. 같은 층, 같은 동아리에서 연애가 시작되는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "소개팅보다 매일 보던 사람과 정이 듭니다. 같은 층, 같은 동아리에서 연애가 시작되는 쪽입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "연인과 둘만 아는 암호 같은 말이 생깁니다. 남들 앞에서 그 말 한마디로 웃음을 참습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "집안일을 딱 나누지 않았는데 어느새 한 사람은 요리, 한 사람은 설거지로 맞춰져 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부부 사이 일을 밖에 잘 말하지 않습니다. 둘이서 정한 일은 둘 사이에서 끝내는 쪽입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안일을 딱 나누지 않았는데 어느새 한 사람은 요리, 한 사람은 설거지로 맞춰져 있습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "부부 사이 일을 밖에 잘 말하지 않습니다. 둘이서 정한 일은 둘 사이에서 끝내는 쪽입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "한 지붕 아래 살게 되면 서로 말하지 않아도 아침엔 한 사람이 커피를 내리고 한 사람이 빵을 굽는 식의 호흡이 자리 잡습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구 무리 안에서도 꼭 단짝 한 명과 붙어 다닙니다. 모임이 끝나면 둘이서만 2차를 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -371,8 +373,9 @@
           { "text": "같은 꿈을 말하는 사람에게 확 끌립니다. 데이트에서도 '우리 나중에 뭐 할까'를 그리는 시간이 제일 깁니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "둘의 목표 하나를 정해 놓고 양가 일정과 휴가, 이사 계획까지 그 방향에 줄을 세웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자와 둘이 한 팀처럼 움직일 때 집이 가장 편합니다. 각자 따로 놀면 금세 허전해합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "둘의 목표 하나를 정해 놓고 양가 일정과 휴가, 이사 계획까지 그 방향에 줄을 세웁니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자와 둘이 한 팀처럼 움직일 때 집이 가장 편합니다. 각자 따로 놀면 금세 허전해합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 목표로 삼게 되면 저축, 이사, 휴가 계획을 모두 그 날짜 하나에 맞춰 세 갈래를 한 방향으로 모읍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "단짝 둘보다 셋이 모인 무리가 편합니다. 셋이 같은 걸 좋아하면 그 모임은 몇 년을 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -527,7 +530,8 @@
         ],
         "marriage": [
           { "text": "결혼 뒤에도 본가나 처가 가까이 살고 싶어 합니다. 주말마다 한 식탁에 모이는 집안 모임이 생활의 중심입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "명절 준비를 양가 식구가 한 팀처럼 나눠 맡습니다. 집안 행사가 부부 대화의 큰 주제가 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "명절 준비를 양가 식구가 한 팀처럼 나눠 맡습니다. 집안 행사가 부부 대화의 큰 주제가 됩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "집을 구하러 다니게 되면 본가 가까운 동네부터 지도에 표시하고, 같은 말씨의 이웃이 사는 골목이면 마음이 놓입니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "어릴 적 친구가 지금도 가장 친합니다. 새 친구가 생겨도 결국 옛 무리로 돌아와 앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -679,7 +683,8 @@
         ],
         "marriage": [
           { "text": "배우자의 습관 하나를 몇 년에 걸쳐 고쳐 놓습니다. 상대도 당신 버릇 하나를 똑같이 고쳐 놓고요.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집안 규칙을 정해 냉장고에 붙여 둡니다. 어긴 날은 말없이 그 종이를 손가락으로 톡톡 칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "집안 규칙을 정해 냉장고에 붙여 둡니다. 어긴 날은 말없이 그 종이를 손가락으로 톡톡 칩니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "함께 살 규칙을 정하게 되면 설거지 순서와 공과금 날짜를 항목별로 적어 보고, 어긋난 부분은 그날 안에 고칩니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "많이 챙겨 준 사람에게 서운함도 큽니다. '내가 해 준 게 얼만데'라는 말이 목까지 올라옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -864,7 +869,8 @@
         ],
         "marriage": [
           { "text": "이사나 인테리어처럼 다 정한 일이 막판에 틀어져 한 번 더 고릅니다. 그래서 부부가 차선책을 미리 짜 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "양가 일정을 다 맞춘 날에 한쪽 사정이 생기곤 해, 가족 행사는 예비 날짜를 같이 잡아 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "양가 일정을 다 맞춘 날에 한쪽 사정이 생기곤 해, 가족 행사는 예비 날짜를 같이 잡아 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼 준비 일정을 짜게 되면 예식장, 신혼집, 여행 날짜마다 일정이 틀어질 때 쓸 두 번째 안을 미리 나란히 적어 둡니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "오래 준비한 모임이 당일 한두 명 빠지면서 판이 흔들립니다. 그래도 남은 사람끼리 더 즐겁게 놉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -1031,7 +1037,8 @@
         ],
         "marriage": [
           { "text": "배우자와 크게 싸운 적은 없는데 각자 서운함 목록이 있습니다. 1년에 한 번 그걸 꺼내 보는 날을 정하면 좋아집니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "양가 어른의 말 한마디가 부부 사이에 오래 남습니다. 그 말을 두고 둘이 먼저 이야기해야 틈이 커지지 않습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "양가 어른의 말 한마디가 부부 사이에 오래 남습니다. 그 말을 두고 둘이 먼저 이야기해야 틈이 커지지 않습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 앞두고 가족이 한마디씩 얹으면 겉으로는 웃어 넘기고, 둘만 있을 때 '아까 그 말 좀 걸렸어'라고 먼저 털어놓기로 정합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "셋이 친한 무리에서 둘만 따로 만났다는 걸 알게 되면, 웃으면서도 그날 밤 잠을 설칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

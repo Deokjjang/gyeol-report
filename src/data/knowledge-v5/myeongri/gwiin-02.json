@@ -32,7 +32,8 @@
         ],
         "marriage": [
           { "text": "배우자와 크게 부딪힌 날엔 따지기 전에 같이 살기로 할 때 정한 약속 몇 가지를 꺼내 다시 맞춰 봅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "명절이면 양가 어른의 옛날이야기를 끝까지 듣고, 집안이 지켜 온 방식을 자기 집에도 조금씩 들입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "명절이면 양가 어른의 옛날이야기를 끝까지 듣고, 집안이 지켜 온 방식을 자기 집에도 조금씩 들입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "한집에 살게 되면 서로 자란 집의 밥상과 명절 방식을 먼저 묻고, 둘이 지킬 것 세 가지를 뿌리부터 골라 봅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "친구들이 편을 갈라 싸우면 누가 옳은지보다 '처음에 무슨 말이 오갔는데?'부터 차근차근 짚습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -138,8 +139,9 @@
           { "text": "다툰 뒤 바로 말하기보다 하룻밤 메모장에 할 말을 정리해 두었다가 다음 날 차분히 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "집안일 분담과 생활비 규칙을 냉장고에 붙일 한 장짜리 표로 만들어 서로 헷갈리지 않게 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자 생일에는 선물보다 한 해 동안 고마웠던 장면을 적은 카드 한 장에 더 시간을 씁니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "집안일 분담과 생활비 규칙을 냉장고에 붙일 한 장짜리 표로 만들어 서로 헷갈리지 않게 합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자 생일에는 선물보다 한 해 동안 고마웠던 장면을 적은 카드 한 장에 더 시간을 씁니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "함께 살게 되면 말다툼 대신 하고 싶은 말을 짧은 글로 적어 식탁에 놓아 두고, 다음 날 아침에 같이 읽습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "단체방에 공지가 필요할 때마다 친구들이 '네가 좀 써 줘'라고 부탁하는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -238,7 +240,8 @@
         ],
         "study": [
           { "text": "학원을 고를 때 시설보다 선생님 한 사람을 보고 정하고, 그 선생님을 몇 년씩 따라갑니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
-          { "text": "모르는 걸 그냥 넘기지 못해 쉬는 시간마다 질문 목록을 들고 교무실 문을 두드립니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
+          { "text": "모르는 걸 그냥 넘기지 못해 쉬는 시간마다 질문 목록을 들고 교무실 문을 두드립니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "시험 준비를 하다 막히면 인터넷 강의에서 마음에 든 강사 한 사람을 정해, 그 사람 수업만 끝까지 이어서 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "상대가 잘 아는 분야 이야기를 할 때 눈이 반짝이고, '그거 나도 가르쳐 줘'라는 말로 가까워집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -246,7 +249,8 @@
         ],
         "marriage": [
           { "text": "배우자와 '우리 뭐 배워 볼까' 이야기를 할 때 가장 오래 대화하고, 새집에서는 책장 자리부터 정해 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "살림도 배워서 합니다. 처음 김장하는 해에는 어머니 옆에서 양념 비율을 받아 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "살림도 배워서 합니다. 처음 김장하는 해에는 어머니 옆에서 양념 비율을 받아 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "신혼 살림을 차리게 되면 침대보다 책장을 먼저 고르고, 주말 아침마다 같이 읽을 책 한 권을 정하자고 합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에 가면 자연스럽게 나이 많은 사람 옆에 앉아 그 사람이 해 온 일 이야기를 끝까지 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -340,7 +344,7 @@
           { "text": "마감이 몰린 주에 평소 도와준 후배가 '선배, 이건 제가 할게요'라며 일 하나를 가져갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
-          { "text": "거래가 틀어질 뻔했을 때 오래 알던 거래처가 기한을 일주일 미뤄 주며 숨통을 틔워 줍니다.", "requires": { "relationship": "married", "children": "any", "job": "business" } },
+          { "text": "거래가 틀어질 뻔했을 때 오래 알던 거래처가 기한을 일주일 미뤄 주며 숨통을 틔워 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
           { "text": "돈 문제로 친척과 어색해지면 큰소리 대신 차를 한 잔 사며 '천천히 맞춰 보자'고 먼저 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
@@ -353,7 +357,8 @@
         ],
         "marriage": [
           { "text": "시댁이나 처가와 서운한 일이 생기면 배우자보다 먼저 전화를 걸어 부드러운 말로 온도를 낮춥니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "냉전 중인 집에서 당신이 먼저 저녁상을 차리고 '밥은 같이 먹자'며 대화의 문을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "냉전 중인 집에서 당신이 먼저 저녁상을 차리고 '밥은 같이 먹자'며 대화의 문을 엽니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "양가 어른이 처음 마주 앉게 되면 어색한 침묵 사이에 먼저 웃으며 화제를 꺼내, 자리 온도를 한 칸 올립니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에서 두 사람이 언성을 높이면 화제를 슬쩍 돌리고, 나중에 각자에게 따로 연락해 풀어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -461,7 +466,8 @@
         ],
         "marriage": [
           { "text": "집 계약 전에 등기부를 직접 떼어 보자고 우겨서 위험한 매물을 피한 기억이 부부 사이에 오래 남습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "가족이 아플 때를 대비해 비상 연락처와 보험 서류를 한 파일에 모아 두는 사람이 집에서 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "가족이 아플 때를 대비해 비상 연락처와 보험 서류를 한 파일에 모아 두는 사람이 집에서 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼수를 준비하게 되면 큰 가전은 결제 전에 환불 규정부터 읽고, 고장 날 때를 대비한 보증서를 한 파일에 모아 둡니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "다들 들떠 한 곳 더 가자고 할 때 '난 여기까지'라며 먼저 일어나 곤란한 일에서 빠집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -555,7 +561,7 @@
         ],
         "money": [
           { "text": "월급 통장과 따로 아무에게도 말하지 않은 작은 통장을 두고, 급한 달에 그 돈으로 버팁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "잊고 있던 환급금이나 포인트를 연말에 찾아내 소소한 공돈을 챙기는 일이 잦습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "잊고 있던 환급금이나 포인트를 연말에 찾아내 소소한 공돈을 챙기는 일이 잦습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "도서관 사물함에 졸업한 선배가 남겨 둔 문제집 묶음을 물려받아 한 학기를 버팁니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
@@ -567,7 +573,8 @@
         ],
         "marriage": [
           { "text": "배우자 몰래 조금씩 모은 돈으로 기념일에 그 사람이 오래 갖고 싶어 하던 물건을 사 옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집안에 큰돈이 필요할 때 당신이 조용히 부어 온 적금이 첫 번째 방패가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "집안에 큰돈이 필요할 때 당신이 조용히 부어 온 적금이 첫 번째 방패가 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "결혼 자금을 모으게 되면 공동 통장 말고 혼자만 아는 비상금 칸을 따로 두었다가, 막판 부족분을 조용히 채웁니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "모임에서 계산하려 하면 누군가 이미 결제해 둔 일을 자주 겪고, 당신도 그렇게 몰래 계산합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -673,10 +680,11 @@
         ],
         "marriage": [
           { "text": "현관에 늘 같은 자리에 슬리퍼와 컵이 놓여 있어야 하고, 그 단순한 질서가 가족을 편하게 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "부부 싸움을 한 다음 날에도 아침 식탁에는 꼭 같이 앉아 국을 떠 줍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "부부 싸움을 한 다음 날에도 아침 식탁에는 꼭 같이 앉아 국을 떠 줍니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "가정을 꾸리게 되면 이사 첫날부터 식사 시간과 잠자리 시간을 일정하게 정해, 집이 흔들리지 않게 잡아 줍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          { "text": "친구들이 연애나 회사 일로 들뜨거나 무너질 때 당신 집에 모여 라면을 끓여 먹으며 마음을 가라앉힙니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "친구들이 연애나 회사 일로 들뜨거나 무너질 때 당신 집에 모여 라면을 끓여 먹으며 마음을 가라앉힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "몇 년 연락이 끊겼던 친구에게도 어제 본 사람처럼 '밥은 먹었어?'라고 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
@@ -780,7 +788,8 @@
         ],
         "marriage": [
           { "text": "배우자의 기침 소리 하나에 밤새 깨어 물을 데우고, 다음 날 병원 예약부터 잡아 둡니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "가족의 약 먹는 시간과 병원 날짜를 달력에 표시해 두는 사람이 집에서는 늘 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "가족의 약 먹는 시간과 병원 날짜를 달력에 표시해 두는 사람이 집에서는 늘 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "결혼해서 가족이 늘어나면 현관 서랍에 체온계와 상비약을 채워 두고, 누가 아프다 하면 가장 먼저 일어납니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "이별한 친구가 연락을 끊으면 며칠 뒤 '밥만 먹자'며 찾아가 이야기를 꺼낼 때까지 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -868,7 +877,7 @@
       "scenes": {
         "work": [
           { "text": "출장 숙소를 고를 때 가격만 보지 않고 잠을 잘 잘 수 있는지를 따져, 다음 날 회의에서 얼굴이 밝습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "명함과 메일 서명, 발표 자료 글꼴까지 단정하게 맞춰 두어 처음 만난 거래처가 먼저 믿음을 보냅니다.", "requires": { "relationship": "married", "children": "any", "job": "business" } },
+          { "text": "명함과 메일 서명, 발표 자료 글꼴까지 단정하게 맞춰 두어 처음 만난 거래처가 먼저 믿음을 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
           { "text": "좋은 장비를 쓸 때 실력이 더 나온다는 걸 알아서 의자와 키보드에는 돈을 아끼지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
@@ -880,15 +889,16 @@
           { "text": "좋은 강의에는 돈을 아끼지 않고, 들인 비용만큼 끝까지 들어서 본전을 뽑습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
-          { "text": "상대가 식당 직원에게 어떤 말투를 쓰는지를 보고 이 사람을 더 만날지 마음을 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "상대가 식당 직원에게 어떤 말투를 쓰는지를 보고 이 사람을 더 만날지 마음을 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "함께 걷다 차도 쪽으로 슬쩍 자리를 바꿔 주는 연인의 작은 예의에 마음이 크게 움직입니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "살림을 꾸릴 때 그릇과 이불처럼 매일 쓰는 물건의 질을 먼저 올려 집 안 공기를 바꿉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "오래 함께 살아도 배우자에게 '고마워요'를 존댓말로 건넬 만큼 예의를 지키는 사이를 원합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "오래 함께 살아도 배우자에게 '고마워요'를 존댓말로 건넬 만큼 예의를 지키는 사이를 원합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "웨딩홀을 알아보게 되면 화려한 장식보다 하객이 앉는 의자와 음식의 품질을 먼저 따지고, 예산을 거기에 몰아줍니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
-          { "text": "친구를 집에 부르면 일회용 컵 대신 손님용 잔을 꺼내고, 꽃 한 송이라도 식탁에 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+          { "text": "친구를 집에 부르면 일회용 컵 대신 손님용 잔을 꺼내고, 꽃 한 송이라도 식탁에 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "말투가 거친 사람과는 조용히 거리를 두고, 서로 존중하는 사람들과 오래 어울립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
@@ -990,8 +1000,9 @@
           { "text": "다툰 뒤 말로는 못 하던 사과를 짧은 시 같은 메시지 몇 줄로 보내 분위기를 녹입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
-          { "text": "거실 벽 한쪽을 가족사진과 아이 그림으로 채우고, 계절마다 배치를 바꿔 집의 분위기를 새로 만듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자와 밤늦게 같은 영화를 보고 각자 마음에 남은 장면을 이야기하는 시간이 둘의 숨구멍입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "거실 벽 한쪽을 여행 사진과 둘이 고른 그림으로 채우고, 계절마다 배치를 바꿔 집의 분위기를 새로 만듭니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "배우자와 밤늦게 같은 영화를 보고 각자 마음에 남은 장면을 이야기하는 시간이 둘의 숨구멍입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "결혼을 약속하게 되면 청첩장 문구를 직접 쓰고, 둘이 처음 만난 장면을 굽이굽이 풀어 한 문단으로 넣습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "같은 일을 겪어도 당신이 이야기하면 다들 웃고, '그거 한 번만 다시 얘기해 줘'라는 말을 듣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -1074,7 +1085,7 @@
       "easyName": "자물쇠 건 곳간",
       "oneLiner": "들어온 재물과 경험을 흘려보내지 않고 쌓아 두는 창고, 저장하는 힘의 별",
       "image": {
-        "metaphor": "가을걷이를 마치고 곡식을 채운 뒤 자물쇠를 거는 시골 곳간",
+        "metaphor": "들어온 짐마다 번호표를 붙여 칸칸이 쌓아 두는 항구 뒤편 물류 창고",
         "visual": "은행 앱에 '집', '비상금', '여행'이라고 이름 붙인 통장 다섯 개가 나란히 뜬 화면"
       },
       "scenes": {
@@ -1097,7 +1108,8 @@
         ],
         "marriage": [
           { "text": "배우자와 함께 쓰는 가계부에 '언젠가 집'이라는 칸을 따로 만들어 매달 조금씩 채웁니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "물건을 쉽게 버리지 않아 베란다가 늘 꽉 차 있고, 배우자와 정리 문제로 실랑이를 벌입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } }
+          { "text": "물건을 쉽게 버리지 않아 베란다가 늘 꽉 차 있고, 배우자와 정리 문제로 실랑이를 벌입니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
+          { "text": "통장을 합치게 되면 월급이 들어오는 날 고정비, 저축, 비상금 칸으로 나눠 놓고 '이 칸은 건드리지 말자'고 못 박습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
         ],
         "relationships": [
           { "text": "한번 맺은 인연을 오래 챙겨서 연락처 목록에 이십 년 된 이름이 그대로 남아 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
