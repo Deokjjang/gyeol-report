@@ -824,6 +824,381 @@
         "mbti:ENFP:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ENFP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "persistence",
+      "score": 1.2,
+      "why": "촛불은 한 번 붙으면 오래 가는 불이라 꾸준함이 힘입니다. ENFP의 Ne는 새 불씨가 보이면 바로 옆 촛불로 옮겨 붙습니다. 오래 태우자는 마음과 새것에 끌리는 마음이 맞서서, 시작은 환한데 책상엔 반쯤 탄 초가 여러 개 놓입니다.",
+      "scene": { "text": "새 취미로 산 기타를 한 달 치다가, 옆 동네 도예 수업 광고를 본 날 저녁 기타 가방을 옷장 안쪽으로 밀어 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ENFP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "persistence",
+      "score": 0.58,
+      "why": "나팔꽃 덩굴은 정면으로 부딪치지 않고 틈을 하나씩 감아 올라갑니다. ENFP의 Ne는 막힌 곳마다 다른 길을 서너 개 찾아냅니다. 포기하지 않고 결국 닿지만, 돌아가는 길이 늘 재밌어서 목표 지점은 자꾸 바뀝니다.",
+      "scene": { "text": "자리가 안 나는 인기 강좌 대기 명단에 이름만 올리고, 그 사이 강사의 SNS에 댓글을 달다가 작은 모임에 먼저 초대받습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ENFP",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "detailFocus",
+      "score": 1.39,
+      "why": "베란다 텃밭은 작은 상자를 매일 살펴야 싹이 큽니다. ENFP의 Ne는 큰 그림이 먼저 보이고 상자 구석의 잡초는 늦게 눈에 들어옵니다. 매일 돌보는 흙의 성질과 날아다니는 생각이 부딪쳐서, 씨는 잔뜩 뿌리고 물 주는 날은 자주 놓칩니다.",
+      "scene": { "text": "식물 키우기에 꽂혀 화분 여섯 개를 들였는데 둘째 주부터 물 주는 날이 헷갈려, 잎이 처진 걸 보고서야 달력에 급히 표시합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ENFP",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 0.3,
+      "why": "지렛대는 아닌 건 아니라고 한 번에 끊습니다. ENFP의 Fi는 사람 마음을 먼저 헤아려서 말을 고르게 합니다. 칼 같은 판단과 따뜻한 마음이 한 몸에 있어서, 단호하게 말한 직후에 '내가 너무했나' 하고 메시지를 덧붙입니다.",
+      "scene": { "text": "친구가 보여 준 사업 계획에 '이건 안 될 것 같아'라고 바로 말하고, 5분 뒤 '그래도 이 부분은 진짜 좋아'라고 길게 문자를 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ENFP",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 1.11,
+      "why": "흙 둑은 거센 물살 앞에서도 제자리를 지킵니다. ENFP의 Ne는 새 물길이 보이면 그쪽으로 따라가고 싶어 합니다. 지켜야 한다는 무게와 가 보고 싶은 설렘이 맞서서, 가려다 멈추고 멈췄다가 다시 지도를 펼칩니다.",
+      "scene": { "text": "해외 한 달 살기 광고를 보고 항공권 창을 열었다가, 맡은 모임 일정이 떠올라 창을 닫고 십 분 뒤에 다시 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ENFP",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.65,
+      "why": "이정표는 방향을 먼저 꽂아 두고 사람들이 따라오게 합니다. ENFP는 Ne 탓에 방향이 하루에도 몇 번씩 바뀌고, Te가 켜져야 일정표가 나옵니다. 방향을 정해야 하는 자리와 계속 바뀌는 마음이 부딪쳐서, 일단 앞서 놓고 나중에 지도를 고쳐 그립니다.",
+      "scene": { "text": "친구들에게 '올해 안에 같이 전시회 열자!'고 선언해 놓고, 장소 대관을 알아보다 다른 아이디어가 떠올라 공지를 새로 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ENFP",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 0.96,
+      "why": "물안개는 보이지 않게 스며들어 잎을 살립니다. ENFP의 Fi는 상대 마음을 깊이 느끼지만 그 느낌을 스스로 확신하지 못합니다. 느낀 대로 반응하고 싶은 쪽과 틀릴까 조심하는 쪽이 갈려서, 말을 꺼냈다 지웠다 반복합니다.",
+      "scene": { "text": "친구 표정이 이상해 보여 '무슨 일 있어?' 문자를 썼다 지우고, 결국 귀여운 이모티콘만 하나 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ENFP",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "detailFocus",
+      "score": 1.01,
+      "why": "시계 톱니는 아주 작은 어긋남도 못 넘기는 정밀함을 가졌습니다. ENFP의 Ne는 큰 아이디어를 던지고 세부는 나중에 채우려 합니다. 꼼꼼히 맞추려는 눈과 일단 펼치려는 손이 엇갈려서, 완성 직전에 사소한 흠 하나로 다 갈아엎고 싶어집니다.",
+      "scene": { "text": "거의 다 만든 소개 영상에서 자막 한 글자가 어색한 걸 발견하고, 올리기 전날 밤 처음부터 다시 편집합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ENFP",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ENFP",
+      "kind": "conditional",
+      "dimension": "noveltySeeking",
+      "score": 0.36,
+      "why": "옆길 선생님은 정해진 길 대신 혼자 파고드는 호기심을 가졌습니다. ENFP의 Ne는 새 분야마다 문을 열어 보는 쪽입니다. 파고들 만한 한 가지를 만나면 깊이가 되고, 못 만나면 넓게 훑기만 해서 책장에 읽다 만 책이 쌓입니다.",
+      "scene": { "text": "서점에서 이름도 처음 듣는 분야의 책을 세 권 집어 와 밤새 첫 장만 읽고, 이튿날은 또 다른 책을 펼칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ENFP",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "persistence",
+      "score": 0.68,
+      "why": "비상벨 앞 대장은 압박이 세질수록 정신이 또렷해집니다. ENFP의 Fi는 압박이 내 마음과 어긋나면 급격히 힘을 잃습니다. 버텨야 하는 책임과 하기 싫은 마음이 맞서서, 위기의 날엔 해내고 평소엔 몸이 먼저 지칩니다.",
+      "scene": { "text": "행사 전날 문제가 터져 새벽 두 시까지 혼자 수습하고, 다음 날 행사장에서 웃다가 점심 뒤 의자에 기대 정신을 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ENFP",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.14,
+      "why": "옆 레인 사람이 앞서면 팔을 더 세게 젓는 승부사입니다. ENFP는 Ne로 사람을 끌어모으고 Fi로 내 편을 가려 아낌없이 씁니다. 함께 달리면 에너지가 두 배가 되지만, 내 편이라 느낀 사람에겐 계산을 놓아 돈이 샙니다.",
+      "scene": { "text": "같이 달리기를 시작한 동료가 대회 신청을 하자 마감 오 분 전에 나도 결제하고, 그 친구 참가비까지 '내가 쏜다'며 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ENFP",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.65,
+      "why": "교문 앞 우산은 비 오기 전에 미리 챙겨 두는 보살핌입니다. ENFP의 Ne는 준비보다 일단 해 보는 쪽에서 신이 납니다. 미리 챙기려는 손과 바로 뛰어들려는 발이 엇갈려서, 공부 계획은 예쁘게 세우고 첫날만 지킵니다.",
+      "scene": { "text": "새 자격증 교재를 사서 색색 형광펜을 고르고 일정표를 예쁘게 짠 뒤, 이틀째 밤에 갑자기 다른 책이 읽고 싶어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ENFP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.32,
+      "why": "바른 관리자는 정해진 규칙을 지켜서 신뢰를 얻습니다. ENFP의 Fi는 내 마음에 맞지 않는 규칙 앞에서 고개가 돌아갑니다. 지켜야 할 틀과 내 방식이 맞서서, 규정 안내를 듣다가 '이거 왜 이렇게 해요?'를 꼭 한 번 묻습니다.",
+      "scene": { "text": "새 학원의 규정 안내를 듣다가 '왜 이 시간에만 들어올 수 있어요?'라고 손을 들고, 설명을 듣고 나서야 고개를 끄덕입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ENFP",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ENFP",
+      "kind": "tension",
+      "dimension": "persistence",
+      "score": 0.3,
+      "why": "어깨 나란한 나는 기대지 않고 제 몫을 제 손으로 합니다. ENFP는 Ne로 함께 아이디어를 주고받을 때 신이 납니다. 혼자 끝까지 끌고 가려는 마음과 같이 떠들며 하고 싶은 마음이 갈려서, 혼자 하는 일은 중간에 흐지부지되기 쉽습니다.",
+      "scene": { "text": "혼자 하겠다고 시작한 블로그가 열흘째 비어 있다가, 친구에게 '같이 쓰자'를 보낸 순간부터 글이 줄줄 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ENFP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ENFP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 1,
+      "why": "손맛 요리사는 좋아하는 걸 만들어 나눌 때 가장 기쁩니다. ENFP의 Ne는 만들 거리를 끝없이 떠올리고 Fi는 진심 담은 것만 내놓습니다. 손에 닿는 것마다 표정이 생기지만, 쏟아 내다 보면 정작 쉬는 시간이 비어 갑니다.",
+      "scene": { "text": "친구 생일에 사진 스무 장으로 영상을 만들어 중간중간 우스운 자막을 넣고, 완성하고 보니 새벽 네 시입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
     }
   ]
 }

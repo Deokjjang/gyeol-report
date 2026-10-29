@@ -519,6 +519,431 @@
         "mbti:ISTP:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ISTP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "attentionSeeking",
+      "score": 0.54,
+      "why": "정화는 방 안 한 사람만 환하게 비추는 스탠드처럼 가까운 곳을 또렷하게 밝힙니다. ISTP의 Ti는 큰 무대보다 손이 닿는 작업대 앞에서 가장 깨어 있습니다. 박수 없는 자리에서 오래 공들이지만, 알아주는 사람이 없으면 서운함을 속에서만 태우기 쉽습니다.",
+      "scene": { "text": "밤늦게 혼자 자전거 체인을 새것처럼 닦아 놓고, 누가 알아봐 주길 바라면서도 아무 말 없이 불을 끕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ISTP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 0.6,
+      "why": "을목은 혼자 서기보다 철망이든 담이든 무언가를 감고 올라가는 덩굴입니다. ISTP는 Ti로 혼자 풀어야 직성이 풀리는 쪽이라 도움을 받는 일이 어색합니다. 몸은 기댈 곳을 찾는데 입은 '내가 할게'가 먼저 나가, 손을 못 내밀고 한 바퀴 돌아갑니다.",
+      "scene": { "text": "이사한 집에서 가구 조립이 막혔는데, 옆집 사람과 눈이 마주쳐도 '괜찮아요' 하고 설명서를 다시 펼칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ISTP",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "mobility",
+      "score": 0.82,
+      "why": "임수는 바다처럼 넓게 흘러서 한곳에 고이는 걸 답답해합니다. ISTP는 Se로 새 현장과 새 도구에 바로 손을 뻗고 계획표는 느슨하게 둡니다. 둘 다 옮겨 다니니 배우는 속도는 빠르지만, 마무리하지 않은 시작이 서랍마다 쌓입니다.",
+      "scene": { "text": "주말에 갑자기 낯선 동네로 버스를 타고 가서 골목 공방을 구경하다, 해가 진 뒤에야 집에 연락합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ISTP",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.58,
+      "why": "기토는 텃밭 흙처럼 때 맞춰 물 주고 정리해 두는 쪽으로 마음이 갑니다. ISTP는 Se로 그때그때 몸이 끌리는 일부터 잡아서 계획표가 오래 못 갑니다. 챙겨야 한다는 마음과 지금 끌리는 손이 엇갈려, 정리하는 날만 자꾸 뒤로 밀립니다.",
+      "scene": { "text": "일요일 저녁에 냉장고를 정리하려다 낡은 라디오가 눈에 들어와, 한 시간 뒤 식탁에 나사만 가득 펼쳐 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ISTP",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 0.85,
+      "why": "경금은 막힌 문을 지렛대로 비틀어 여는 쇠라서 결정을 질질 끌지 않습니다. ISTP의 Ti도 계산이 끝나면 남의 허락 없이 바로 손을 댑니다. 일은 빨리 풀리지만 혼자 정해 놓고 통보하듯 알려, 곁의 사람이 한발 늦게 놀랍니다.",
+      "scene": { "text": "공용 창고 문이 계속 삐걱거리자, 아무도 묻기 전에 공구함을 열어 경첩에 기름을 치고 '됐다' 한마디만 남깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ISTP",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 0.24,
+      "why": "무토는 둑처럼 떠들지 않고 제자리에서 무게로 버팁니다. ISTP도 말수가 적어서 곁에 있는 것만으로 믿음을 줍니다. 흔들리는 사람들이 기대 오지만, 정작 본인이 힘든 날은 아무에게도 말하지 않아 아무도 모릅니다.",
+      "scene": { "text": "친구 이삿날 옆에서 별말 없이 상자만 나르는데, 끝나고 보니 가장 무거운 짐은 전부 그 사람 손을 거쳤습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ISTP",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 0.75,
+      "why": "갑목은 먼저 방향을 꽂고 앞서 걷는 큰 나무라 판을 이끌고 싶어 합니다. ISTP는 정해진 틀보다 혼자 해법을 찾는 쪽이라 이끌기보다 먼저 가 버리기 쉽습니다. 일행이 길을 잃은 날엔 앞장서 방향을 정하고, 평범한 날엔 혼자 앞서가 뒤따르는 사람이 없습니다.",
+      "scene": { "text": "등산길이 갈라지는 곳에서 지도를 보더니 말없이 오른쪽으로 걸어가고, 일행이 따라오는지는 한참 뒤에야 돌아봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ISTP",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 0.7,
+      "why": "계수는 분무기 물안개처럼 소리 없이 스며들어 티 나지 않게 챙깁니다. ISTP는 말보다 행동으로 마음을 건네서, 위로도 문장 대신 따뜻한 물건 하나로 나옵니다. 챙김은 깊은데 말이 없으니, 받은 사람은 한참 뒤에야 알아봅니다.",
+      "scene": { "text": "몸살로 누운 친구 집 현관 손잡이에 따뜻한 국이 담긴 통을 걸어 두고 '문 앞에 있어' 한 줄만 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ISTP",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "boundarySetting",
+      "score": 0.56,
+      "why": "신금은 톱니 하나만 어긋나도 시계가 서듯 작은 틀어짐을 못 넘깁니다. ISTP는 구조가 맞아야 움직이는 Ti 때문에 선을 긋는 데 망설임이 없습니다. 기준이 분명해 결과물은 깔끔하지만, 남의 허술함도 같은 잣대로 재서 말없이 거리를 둡니다.",
+      "scene": { "text": "친구가 빌려 간 공구를 엉뚱한 칸에 넣어 두자, 아무 말 없이 꺼내 선반 윤곽선에 딱 맞춰 다시 꽂습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ISTP",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.47,
+      "why": "편인이 두드러지면 교과서 밖 옆길에서 혼자 배우고 정답부터 의심합니다. ISTP의 Ti는 안 되는 이유를 분해해서 확인해야 마음이 놓이는 머리입니다. 따져 묻는 힘이 겹쳐 날카로운 통찰이 나오지만, 의심만 깊어져 시작이 늦어지는 날도 많습니다.",
+      "scene": { "text": "새로 산 전자레인지 설명서를 덮고, 안 되는 이유를 알아야겠다며 뒷판 나사를 풀고 부품 이름부터 검색합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ISTP",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "controlNeed",
+      "score": 0.53,
+      "why": "편관이 두드러지면 압박이 올수록 눈이 또렷해져 맨 앞에서 책임을 집니다. ISTP는 Se로 위기 현장에서 몸이 먼저 움직이지만, 평소엔 이끌려는 욕심이 적습니다. 급한 날엔 지휘를 맡아 빛나고, 조용한 날 통제를 받으면 입을 닫고 빠져나갑니다.",
+      "scene": { "text": "정전이 나서 다들 우왕좌왕하는데, 손전등을 들고 두꺼비집 앞에 서서 '다들 가만히 계세요' 하고 차분히 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ISTP",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "riskTaking",
+      "score": 1.26,
+      "why": "편재가 두드러지면 사람과 돈이 지나는 길목을 먼저 읽고 크게 벌려 봅니다. ISTP는 Se로 현장에서 바로 시험해 보는 걸 즐깁니다. 기회를 낚아채는 건 빠른데, 손이 닿는 것보다 판을 많이 벌려 뒷정리가 밀립니다.",
+      "scene": { "text": "벼룩시장에서 낡은 오디오 세 대를 한꺼번에 사고 고쳐 팔 생각에 신이 나지만, 거실이 금세 좁아집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ISTP",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ISTP",
+      "kind": "conditional",
+      "dimension": "verbalOutput",
+      "score": 0.89,
+      "why": "상관이 두드러지면 굳은 규칙의 빈틈을 보고 더 나은 말로 고쳐 내고 싶어집니다. ISTP는 평소 말이 짧다가도 틀린 구조를 보면 한 줄로 정확히 찌릅니다. 흥미로운 주제 앞에선 말이 쏟아지고, 흥미 없는 자리에선 한마디도 안 해 사람마다 다른 얼굴을 봅니다.",
+      "scene": { "text": "설명서 번역이 어색한 걸 보고 혼잣말로 '이건 이렇게 써야지' 하더니, 고친 문장을 여백에 또박또박 적어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ISTP",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "riskTaking",
+      "score": 0.54,
+      "why": "겁재가 두드러지면 옆에서 누가 달릴 때 더 세게 밟고 내 편에게는 지갑도 엽니다. ISTP는 위험한 현장에 몸을 던지면서도 앞에 나서 주목받는 건 피합니다. 이기고 싶은 불은 켜졌는데 판을 키우기는 싫어, 속도만 올리다 혼자 지칩니다.",
+      "scene": { "text": "친구가 랩타임을 줄였다는 소식에 말없이 주말 새벽 서킷에 나가, 타이어 공기압부터 다시 맞춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ISTP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.17,
+      "why": "정관이 두드러지면 정해진 순서대로 일을 처리해야 마음이 놓이는 쪽입니다. ISTP는 규칙보다 눈앞에서 바로 풀리는 방식을 따르는 편입니다. 지켜야 한다는 마음과 이게 더 빠르다는 손이 부딪혀, 순서를 건너뛰고도 마음이 찜찜합니다.",
+      "scene": { "text": "조립 설명서 순서를 건너뛰어 끝냈는데 마지막에 나사 하나가 남자, 한참 말없이 노려보다 처음부터 다시 풉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ISTP",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.09,
+      "why": "정재가 두드러지면 정해진 날 정해진 금액을 모으는 꼼꼼한 돈 감각이 앞섭니다. ISTP는 계획보다 끌리는 장비를 지금 손에 넣는 쪽입니다. 모아야 한다는 숫자와 지금 갖고 싶은 물건이 맞서, 적금 이체일과 결제 알림이 같은 주에 울립니다.",
+      "scene": { "text": "적금 자동이체를 걸어 놓고도 같은 날 밤 중고 장터에서 마음에 든 납땜 인두를 한참 들여다봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ISTP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ISTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 0.59,
+      "why": "식신이 두드러지면 좋아하는 일을 꾸준히 만들어 나눠 주며 즐거움을 겉으로 냅니다. ISTP는 마음을 말로 꺼내기보다 속에 두고 손으로 먼저 풉니다. 만들어 주는 건 넘치는데 '좋았어'라는 말이 없어, 받는 사람이 반응을 몰라 서성입니다.",
+      "scene": { "text": "친구 생일에 직접 깎은 나무 거치대를 말없이 건네고, 기뻐하는 얼굴을 보기가 쑥스러워 딴 데를 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
     }
   ]
 }

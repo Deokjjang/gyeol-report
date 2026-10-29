@@ -621,6 +621,414 @@
         "mbti:INFJ:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:INFJ",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.11,
+      "why": "덩굴은 정면으로 부딪치지 않고 철망 틈을 따라 상대의 결에 맞춰 올라갑니다. INFJ의 Fe는 상대 기분이 내 일처럼 들어와 말투와 속도를 저절로 맞춥니다. 같은 방향으로 밀어서 누구와도 편하게 지내지만, 맞춰 주다 내 의견은 끝내 못 꺼내는 날이 쌓입니다.",
+      "scene": { "text": "미용실에서 '이 정도 길이 괜찮으세요?'라는 물음에 마음은 아닌데 '네, 좋아요'라고 답합니다. 집 거울 앞에서야 다음엔 꼭 말하겠다고 다짐합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:INFJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.44,
+      "why": "밀물은 넓게 밀려가 흩어진 웅덩이를 하나로 잇고 싶어 하는 물입니다. INFJ는 사람을 깊이 읽는 만큼 여럿 속에서 빨리 닳아 혼자 있어야 충전됩니다. 이어 주고 싶은 마음과 숨고 싶은 마음이 함께 당겨서, 끝까지 자리를 지키고도 돌아오는 길엔 말수가 뚝 떨어집니다.",
+      "scene": { "text": "서로 모르는 친구 세 팀을 한자리에 모아 소개해 주고, 헤어진 뒤 지하철 맨 끝 칸에서 이어폰을 낀 채 아무 말도 하기 싫어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:INFJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 1.26,
+      "why": "텃밭 흙은 싹이 필요한 것을 알아보고 매일 채워 줍니다. INFJ의 Fe는 누가 불편한지부터 눈에 들어오는 감각입니다. 같은 쪽으로 밀어서 곁의 사람들은 편해지지만, 내 몫의 물은 자꾸 비워 둔 채 지냅니다.",
+      "scene": { "text": "가족 저녁 식탁에서 아버지 컵이 비기 전에 물을 따르고 동생 앞으로 반찬 접시를 밀어 줍니다. 정작 자기 밥은 반쯤 식은 뒤에야 먹기 시작합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:INFJ",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 1.08,
+      "why": "쇠 지렛대는 아니면 아니라고 끊는 직선의 힘입니다. INFJ의 Fe는 상대 마음이 다칠까 먼저 살피는 쪽이라 그 직선과 서로 당깁니다. 속에서는 결론이 났는데 입에서는 부드러운 말만 나오다가, 참던 한마디가 어느 날 한꺼번에 날카롭게 튀어나옵니다.",
+      "scene": { "text": "에어컨 수리 기사가 세 번째로 약속 시간을 어겼는데 '괜찮아요, 천천히 오세요'라고 말합니다. 전화를 끊고 나서 이 업체는 다시 부르지 않겠다고 속으로 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:INFJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 0.87,
+      "why": "흙 둑은 물살이 와도 비켜서지 않고 뒤에 있는 사람들을 지킵니다. INFJ는 맡은 사람의 기분까지 책임지려는 마음이 깊습니다. 한 방향으로 쏠려 기대는 사람이 늘어나지만, 다 받아 주다 둑 안쪽이 먼저 무너지는 날이 옵니다.",
+      "scene": { "text": "이웃 할머니의 병원 동행을 '한 번만'으로 시작했는데 어느새 매달 첫 화요일은 비워 둡니다. 감기로 못 간 날엔 하루 종일 마음이 무겁습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:INFJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.25,
+      "why": "이정표는 가야 할 방향을 먼저 꽂아 두는 나무입니다. INFJ의 Ni는 먼 앞날의 그림이 먼저 보여서 거기서 거꾸로 순서를 짭니다. 둘 다 앞을 보는 쪽이라 계획이 단단해지는 대신, 그림이 선명한 만큼 중간에 바뀐 상황을 받아들이기 어렵습니다.",
+      "scene": { "text": "여름휴가 일정을 석 달 전부터 하루 단위로 짜 두었는데, 비 예보가 뜨자 대안을 짜는 대신 한참 말이 없어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:INFJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "intimacyPace",
+      "score": 0.43,
+      "why": "시계 톱니는 작은 어긋남도 알아보는 정밀한 쇠입니다. INFJ는 사람을 오래 지켜본 뒤에야 문을 여는 편이라 천천히 가까워집니다. 한번 들어온 사람에게는 정밀하게 마음을 쓰지만, 거기까지 가는 동안 상대는 이유 모를 거리감을 느낍니다.",
+      "scene": { "text": "새로 이사 온 이웃과 엘리베이터에서 세 달째 인사만 하다가, 어느 날 그 집 택배 상자를 대신 받아 문 앞에 놓아 둡니다. 말은 한마디도 보태지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:INFJ",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.32,
+      "why": "옆길 선생님은 교과서 밖 낯선 책에서 혼자 답을 찾는 머리입니다. INFJ는 속으로 생각을 되감아 의미를 길어 올리는 사람입니다. 둘이 같은 쪽으로 깊어져 남이 못 보는 뜻을 찾아내지만, 혼자 파고드는 시간이 길어져 연락이 뜸해집니다.",
+      "scene": { "text": "도서관 구석에서 꿈 해석 책을 읽다 심리학 논문과 옛 신화까지 따라가다 보니 폐관 방송이 나옵니다. 집으로 걸어가며 읽은 내용을 머릿속에서 이어 붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:INFJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "conflictApproach",
+      "score": 0.6,
+      "why": "비상벨 앞 대장은 압박이 센 순간 오히려 침착하게 맨 앞에서 짐을 집니다. INFJ는 평소엔 갈등을 피하다가 누군가 다칠 상황이 오면 단호하게 나섭니다. 나를 위한 다툼은 피하고 남을 위한 다툼엔 앞장서서, 같은 사람인데도 장면마다 모습이 달라집니다.",
+      "scene": { "text": "말다툼이 나면 늘 자리를 피하던 사람이, 식당에서 어린 점원에게 소리치는 손님 앞에 서서 '그만하세요'라고 낮게 말합니다. 손은 떨리는데 목소리는 흔들리지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:INFJ",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.63,
+      "why": "장사꾼은 사람이 북적이는 길목에서 기회를 찾는 감각입니다. INFJ는 북적이는 곳에 오래 있으면 기운이 빠져 조용한 자리를 찾습니다. 기회가 있는 곳은 시끄럽고 편한 곳은 조용하니, 좋은 자리를 앞에 두고 한 바퀴만 돌고 나오기도 합니다.",
+      "scene": { "text": "벼룩시장에 부스를 신청해 놓고, 당일 사람들이 몰리자 물건 설명은 잘하면서도 오후 두 시쯤엔 뒤편 의자에 앉아 물만 마십니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:INFJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 0.53,
+      "why": "틀 깨는 말솜씨는 불편한 점을 정확히 짚어 말하는 재주입니다. INFJ는 말하면 상대가 상처받을까 봐 속으로 몇 번 다듬은 뒤에야 꺼냅니다. 짚고 싶은 마음과 삼키는 마음이 당겨서, 아끼던 한마디가 나올 땐 생각보다 뾰족합니다.",
+      "scene": { "text": "집들이에서 친구의 새 수납 정리법을 몇 주 동안 속으로만 고쳐 보다가 '이쪽이 손이 더 편하지 않아?'라고 정확히 한 줄을 건넵니다. 친구는 한동안 말이 없습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:INFJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.66,
+      "why": "옆 레인 승부사는 곁에서 누가 달리면 더 빨라지는 엔진입니다. INFJ는 경쟁하는 자리의 시선과 열기에 기운이 빨리 닳습니다. 이기고 싶은 불과 쉬고 싶은 마음이 동시에 켜져서, 대결이 끝나면 이긴 날도 진 날처럼 피곤합니다.",
+      "scene": { "text": "친구들과 보드게임 대회를 열어 결승에서 이기고도, 환호가 터지는 사이 슬쩍 베란다로 나가 혼자 밤바람을 쐽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:INFJ",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.8,
+      "why": "우산을 두 개 들고 기다리는 어머니처럼 정인은 받은 보살핌을 쌓고 다시 베푸는 힘입니다. INFJ의 Fe는 받은 마음을 기억했다가 상대의 필요에 맞춰 돌려줍니다. 서로 힘을 보태 정이 깊어지지만, 받은 건 꼭 갚아야 한다는 마음에 쉴 틈이 줄어듭니다.",
+      "scene": { "text": "비 오는 날 우산을 빌려준 이웃이 다음 날 감기에 걸렸다는 걸 알고, 약국에 들러 따뜻한 유자차를 사서 현관 손잡이에 걸어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:INFJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 0.83,
+      "why": "바른 관리자는 약속과 자기 자리를 지켜 신뢰를 쌓는 힘입니다. INFJ는 맡은 일에 마음까지 얹어 책임을 집니다. 둘이 손을 잡아 믿음직한 사람이 되지만, 쉬어야 하는 날에도 쉬어도 되는지부터 스스로 따집니다.",
+      "scene": { "text": "감기 기운이 있는 아침, 체온계를 두 번 재고는 '이 정도면 나갈 수 있어' 하며 약을 삼키고 출근길에 오릅니다. 집에 돌아와선 이불에 쓰러져 말이 없습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:INFJ",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.35,
+      "why": "가계부 지갑은 정해진 돈을 꼼꼼히 모아 지키는 감각입니다. INFJ는 앞날의 그림이 보이는 만큼 미리 준비해 두는 사람입니다. 같이 밀어서 돈 계획이 단단해지지만, 마음이 가는 사람 앞에서는 계획에 없던 지출이 슬며시 늘어납니다.",
+      "scene": { "text": "월말마다 선물 예산 칸을 따로 적어 두는데, 친구가 이사한다는 말을 듣고 집들이 선물 금액을 두 배로 고쳐 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:INFJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 0.16,
+      "why": "나란히 달리는 자전거처럼 비견은 내 일은 내가 한다는 독립심입니다. INFJ는 필요한 말을 속에 품고 상대가 알아주기를 기다립니다. 혼자 해내려는 마음과 알아봐 줬으면 하는 마음이 엇갈려서, 도움이 필요할 때 입을 닫고 서운함만 쌓습니다.",
+      "scene": { "text": "이삿짐을 혼자 나르다 허리가 아픈데도 부탁하지 않고, 옆집에서 '도와줄까요?' 하고 말해 줄 때까지 현관 앞에서 박스만 만지작거립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:INFJ",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "score": 0.59,
+      "why": "손맛 요리사는 좋아하는 일을 만들어 나누며 즐거워하는 힘입니다. INFJ는 먹이고 챙기는 일에서 상대의 표정을 보며 보람을 얻습니다. 받아 주는 사람 앞에서는 힘이 솟고, 당연하게 받기만 하는 사이에서는 허탈해집니다.",
+      "scene": { "text": "주말 아침 이웃과 나눌 쿠키를 굽는 동안 부엌에 라디오가 흐릅니다. 포장해 건넨 상자가 빈 채로 돌아오면 그 하루가 통째로 환해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
     }
   ]
 }

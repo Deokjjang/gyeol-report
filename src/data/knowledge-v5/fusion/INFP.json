@@ -549,6 +549,462 @@
         "mbti:INFP:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:INFP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.27,
+      "why": "촛불은 바람 부는 밤에도 손으로 감싸면 가까운 곳을 오래 비춥니다. INFP의 Fi는 일어난 일을 안으로 들여 이게 나한테 무슨 뜻인지 오래 묻습니다. 같은 방향으로 깊어져 마음을 읽는 눈은 정확해지지만, 서운함도 속에서 오래 타오릅니다.",
+      "scene": { "text": "영화 엔딩 크레딧이 다 올라갈 때까지 극장 의자에 앉아 있다가, 돌아오는 버스에서 한 장면이 계속 떠올라 창밖만 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:INFP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.66,
+      "why": "조명탑은 켜지는 순간 사람이 몰려드는 큰 불입니다. INFP는 가까운 한두 사람과 깊게 지내야 충전되는 쪽이라 환한 무대가 부담스럽습니다. 밝게 비추고 싶은 마음과 조용히 숨고 싶은 마음이 당겨서, 웃고 떠든 날 밤에 혼자 천천히 방전됩니다.",
+      "scene": { "text": "생일 파티에서 케이크 앞 분위기를 띄우고 박수를 한가득 받습니다. 집에 돌아와 불을 끄고 한 시간 동안 아무 소리도 내지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:INFP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 0.9,
+      "why": "덩굴은 부딪치기보다 상대 결을 따라 부드럽게 올라갑니다. INFP의 Fi는 남의 아픔이 내 가치와 닿으면 바로 마음이 움직입니다. 같은 쪽으로 밀어 공감은 빠르고 따뜻하지만, 거절할 때도 상대 얼굴이 떠올라 말이 입에서 맴돕니다.",
+      "scene": { "text": "마트 앞에서 후원 서명을 부탁하는 사람의 지친 얼굴을 보고 서둘러 펜을 잡습니다. 집에 와 이번 달 내역을 보고서야 빠듯하다는 걸 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:INFP",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 0.72,
+      "why": "밀물은 넓게 번지며 새 웅덩이를 찾아 이어 갑니다. INFP의 Ne는 낯선 이야기와 가능성에 끌려 옆길로 번지는 걸 즐깁니다. 두 흐름이 나란히 달려 호기심이 바다처럼 넓어지지만, 갈래가 늘수록 하나를 끝내는 일은 멀어집니다.",
+      "scene": { "text": "중고서점에서 책 한 권만 사려다 두 시간을 걸어 다니며 처음 보는 작가 다섯 명의 이름을 적습니다. 정작 사 온 책은 한 줄도 못 읽은 채 책상에 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:INFP",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.76,
+      "why": "텃밭 흙은 작은 싹이 필요한 것을 알아보고 조용히 채워 줍니다. INFP는 가치관에 맞는 존재라면 대가 없이 정성을 쏟습니다. 마음 둔 쪽은 정말 잘 돌보게 되지만, 돌봄이 길어지면 내 일상이 뒤로 밀립니다.",
+      "scene": { "text": "길고양이 밥그릇을 매일 아침 같은 시각에 채우러 나갑니다. 비 오는 날 우산 없이 나갔다가 양말이 젖고서야 자기 아침을 떠올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:INFP",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.44,
+      "why": "쇠 지렛대는 아니면 아니라고 한 번에 끊는 직선입니다. INFP는 가치가 다치지 않으면 한없이 부드럽다가, 선을 넘으면 한마디로 문을 닫습니다. 끊는 힘과 갈등을 싫어하는 마음이 당겨서, 참다가 꺼낸 말은 상대가 놀랄 만큼 단호합니다.",
+      "scene": { "text": "외모를 애매한 농담으로 놀리던 친척에게 명절 현관에서 '그 말 이제 그만하세요'라고 한 줄로 말합니다. 방에 들어와 두근거리는 가슴을 한참 쓸어내립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:INFP",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "score": 0.2,
+      "why": "흙 둑은 흔들리지 않고 뒤에 있는 사람을 지키는 무게입니다. INFP는 마음이 닿는 사람 앞에서만 둑이 되고 닿지 않는 사람에겐 문을 닫습니다. 지킬 사람이 분명하면 믿음직하고 아니면 조용히 물러나서, 상대에 따라 다른 사람처럼 보입니다.",
+      "scene": { "text": "친한 친구가 이사하는 날엔 박스 포장부터 트럭 앞까지 묵묵히 지키지만, 별로 가깝지 않은 지인의 부탁에는 '그날 일정이 있어서요'라며 물러섭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:INFP",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 0.53,
+      "why": "이정표는 방향을 분명히 꽂아 놓고 사람들이 따라오게 합니다. INFP는 속의 가치 방향은 뚜렷한데 그걸 입 밖으로 밀어붙이는 일은 어색해합니다. 분명한 방향과 부드러운 입이 당겨서, 결론은 단단한데 겉으로는 '난 다 괜찮아'라고 말합니다.",
+      "scene": { "text": "친구들과 여행지를 고를 때 속으로는 바다로 정해 놓고도 '난 어디든 좋아'라고 합니다. 산으로 결정되자 내내 파도 소리 영상을 이어폰으로 틀어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:INFP",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.19,
+      "why": "분무기 물안개는 눈에 안 띄게 스며들어 안쪽을 적십니다. INFP의 Fi는 안에서 감정을 오래 숙성시켜 깊은 한 문장으로 바꿉니다. 깊이로 향하는 쪽이 같아서 글과 말에 진심이 배지만, 혼자 되새기는 밤이 길어집니다.",
+      "scene": { "text": "빗소리를 들으며 아침에 들은 한마디를 되새기다가, 그 마음과 닮은 노래 열 곡을 차례로 골라 재생 목록에 담습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:INFP",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 0.3,
+      "why": "시계 톱니는 하나가 어긋나면 전체가 멈추는 정밀한 쇠입니다. INFP는 가치가 걸린 일엔 선이 분명한데 사람 앞에서는 선이 흐려집니다. 날카롭게 가려내는 눈과 부드럽게 받아 주는 마음이 당겨서, 불편한 부탁에 '네' 하고 돌아서서 혼자 끙끙댑니다.",
+      "scene": { "text": "친구가 중요한 주말에 이사 도움을 부탁하자 '그래, 갈게'라고 합니다. 약속 전날 밤 덜 서운하게 거절할 문장을 세 번 고쳐 쓰다 잠이 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:INFP",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "score": 0.3,
+      "why": "비상벨 앞 대장은 압박이 세질수록 눈이 또렷해지고 결정이 빨라집니다. INFP는 가치에 맞는지 재 보느라 결정이 천천히 나오는 편입니다. 빨리 정해야 하는 압박과 나답게 고르고 싶은 마음이 엇갈려, 급한 날일수록 몸이 먼저 굳습니다.",
+      "scene": { "text": "택시 기사님이 '어느 길로 갈까요?'라고 묻자 두 길의 장단점이 머릿속에서 줄줄 돌다가 '아무 데나요'라고 답합니다. 내리고 나서 혼자 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:INFP",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.84,
+      "why": "장사꾼은 사람이 북적이는 길목에서 기회를 읽는 감각입니다. INFP는 사람이 많으면 빨리 지치고 가까운 소수와 있어야 편합니다. 기회는 사람 많은 곳에 있고 마음은 조용한 곳에 있어서, 넓은 판을 앞에 두고 한 걸음 물러서기 쉽습니다.",
+      "scene": { "text": "작은 작품 전시회에서 손님이 몰려와도 먼저 말을 걸지 못하고 부스 뒤에서 포장지만 접습니다. 누가 '이거 직접 만드신 거예요?' 하고 물어 오면 그제야 얼굴이 풀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:INFP",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "directness",
+      "score": 0.56,
+      "why": "틀 깨는 말솜씨는 규칙의 빈틈을 정확히 말로 짚는 재주입니다. INFP는 자기 가치와 어긋난 일에는 의외로 또렷하게 말을 꺼냅니다. 가치가 걸리면 칼처럼 날카롭고 걸리지 않으면 끝까지 조용해서, 같은 사람의 말이 날마다 다르게 느껴집니다.",
+      "scene": { "text": "동아리에 '회원은 게시글마다 좋아요를 눌러야 한다'는 규칙이 생기자, 처음엔 조용하다가 '이게 왜 필요한지부터 말해 주세요'라고 담담히 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:INFP",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.36,
+      "why": "옆 레인 승부사는 곁에 사람이 있어야 힘이 나는 엔진입니다. INFP는 비교당하는 자리에서 가치가 흔들려 안으로 숨습니다. 이기고 싶은 불과 비교가 싫은 마음이 당겨서, 남이 앞서가면 속은 타는데 겉은 웃고 있습니다.",
+      "scene": { "text": "같이 그림을 시작한 친구의 계정이 먼저 팔로워 천 명을 넘자 축하 댓글을 달고, 그날 밤 자기 작업 폴더를 열어 평소보다 두 시간 더 그립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:INFP",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "decisionSpeed",
+      "score": 0.61,
+      "why": "우산을 든 어머니처럼 정인은 충분히 이해한 뒤에야 움직이게 합니다. INFP는 가치와 맞는지 확인하기 전엔 결정을 미루는 편입니다. 이해가 깊을 땐 믿음직한 결정이 나오고, 너무 길어지면 기회가 먼저 지나가 버립니다.",
+      "scene": { "text": "새 휴대폰 요금제를 앞에 두고 후기와 환경 인증 마크까지 찾아보다가, 대리점 영업 종료 시각이 되어서야 '오늘은 못 정하겠어요'라고 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:INFP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 0.66,
+      "why": "바른 관리자는 약속과 규칙을 지키며 신뢰를 쌓습니다. INFP는 규칙이 내 가치와 맞아야 따르고 맞지 않으면 속으로 거절합니다. 지키려는 마음과 내 방식대로 하려는 마음이 당겨서, 겉으로는 따르면서 속으로 고쳐 쓰는 일이 잦습니다.",
+      "scene": { "text": "학교 복장 규칙이 납득되지 않아 하루 종일 마음이 답답합니다. 규칙은 지키되, 집에 와서 선생님께 보낼 질문 메일을 썼다 지웠다 합니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:INFP",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.71,
+      "why": "가계부 지갑은 정해진 수입을 꼼꼼히 모으는 현실 감각입니다. INFP는 돈 계산과 마감을 미루다가 한꺼번에 감당하는 편입니다. 모으는 틀과 흘러가는 마음이 엇갈려서, 가계부는 야심 차게 시작하고 나흘 만에 영수증만 쌓입니다.",
+      "scene": { "text": "새해 첫날 예쁜 가계부 앱을 깔고 항목을 열두 개로 나눕니다. 나흘째부터 영수증은 지갑 속에서 접힌 채 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:INFP",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 0.7,
+      "why": "나란히 달리는 자전거처럼 비견은 자기 몫을 자기 손으로 해내는 힘입니다. INFP는 혼자 있는 시간에 에너지를 채우고 가치가 걸린 일은 혼자 끝까지 갑니다. 혼자 해내는 힘은 작품 하나에는 빛나지만 사람 손이 필요한 일에선 말을 아껴 외로워지니, 일의 종류가 갈림길이 됩니다.",
+      "scene": { "text": "집에서 석 달 동안 뜨개 인형을 하나씩 완성하지만, 전시 신청서를 쓰는 단계에선 누구에게도 물어보지 못하고 서류 앞에서 멈춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:INFP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "score": 0.45,
+      "why": "손맛 요리사는 좋아하는 일을 꾸준히 만들어 나누는 힘입니다. INFP는 좋아하는 사람에게 정성으로 마음을 전합니다. 받는 사람이 기뻐하면 끝없이 이어지지만 마음 없이 해야 하는 일에선 금방 닳으니, 누구를 위한 일이냐에 따라 달라집니다.",
+      "scene": { "text": "친구 생일에 좋아하는 노래 가사를 손글씨 카드로 써서 직접 구운 마들렌과 함께 건넵니다. 반응을 숨죽여 지켜보다 친구가 웃자 어깨가 풀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
     }
   ]
 }

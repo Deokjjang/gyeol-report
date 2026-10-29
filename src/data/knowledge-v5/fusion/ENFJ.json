@@ -809,6 +809,481 @@
         "mbti:ENFJ:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ENFJ",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.96,
+      "why": "촛불은 멀리 못 비추는 대신 앞에 앉은 사람 얼굴만 또렷하게 밝혀 줍니다. ENFJ의 Fe는 그 얼굴에서 표정이 굳은 순간을 먼저 잡아냅니다. 한 사람과 오래 마주 앉아 들어 주는데, 그 밤이 끝나면 내 안의 불이 작아져 있습니다.",
+      "scene": { "text": "늦은 밤 전화로 친구 얘기를 한 시간 반 들어 주고 '잘 자'까지 말한 뒤, 불 꺼진 방에서 천장만 쳐다봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ENFJ",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.76,
+      "why": "조명탑은 켜지는 순간 운동장 전체에 사람을 모읍니다. ENFJ는 Fe로 분위기를 읽고 Ni로 오늘 판이 어디로 갈지 그려 놓고 먼저 문을 엽니다. 사람이 모이는 만큼 약속도 불어나서, 겹친 일정 앞에서 누구에게 먼저 미안해할지 고르게 됩니다.",
+      "scene": { "text": "단톡방에 '이번 주말 번개 어때요?' 한 줄을 올렸더니 열 명이 손을 들고, 일요일 하루에 약속 세 개가 겹쳐 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ENFJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.32,
+      "why": "밀물은 넓게 들어와 갈라진 웅덩이를 하나로 잇고, 한 번 들어오면 방향을 쉽게 틀지 않습니다. ENFJ의 Fe는 사람들 반응에 맞춰 바로 결을 바꾸려 합니다. 큰 흐름을 잡고도 한 사람의 표정이 걸리면 물길을 돌렸다 되돌리기를 반복합니다.",
+      "scene": { "text": "여럿이 정한 여행 코스를 한 친구가 시큰둥해하자, 출발 전날 밤 일정을 반쯤 갈아엎다가 새벽에야 원래대로 돌려놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ENFJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 1.6,
+      "why": "베란다 텃밭은 작아도 매일 물을 주면 먹을 게 올라옵니다. ENFJ의 Fe도 하루하루 챙기는 데서 힘이 나는 쪽입니다. 대신 내 흙이 모자라는 줄 모르고 남의 화분에 먼저 퍼 주다 내 상자만 마릅니다.",
+      "scene": { "text": "이웃집 동생 이력서를 봐 주고 반찬 한 통을 들려 보낸 뒤, 정작 자기 저녁은 라면으로 때웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ENFJ",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 1.37,
+      "why": "지렛대는 막힌 문을 한 번에 열고 안 되면 안 된다고 끊습니다. ENFJ의 Fe는 상대 마음이 상할까 봐 말끝을 만지작거립니다. 속에서 '그건 아니야'와 '그래도 부드럽게'가 줄다리기하다 어느 날 한 문장으로 끊어 놓고, 돌아서서 한참 곱씹습니다.",
+      "scene": { "text": "몇 달 참아 온 친구의 지각에 '다음부터는 안 기다릴게'라고 짧게 말하고, 집에 오는 길 내내 그 표정을 떠올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ENFJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 0.78,
+      "why": "흙 둑은 물살이 거세도 뒤의 마을을 위해 그 자리에 섭니다. ENFJ의 Fe는 모두가 편한지를 내 책임처럼 느끼고 Ni는 뒷일을 먼저 내다봅니다. 맡은 자리를 끝까지 지키는 대신, 힘들다는 말은 제일 마지막에 꺼냅니다.",
+      "scene": { "text": "이삿날 짐을 나르다 허리가 아픈데도 '난 괜찮아'라며 마지막 상자까지 들고, 다들 돌아간 뒤에야 바닥에 앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ENFJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 0.46,
+      "why": "이정표는 혼자 먼저 서서 방향을 가리킵니다. ENFJ의 Fe는 같이 가는 사람들의 속도를 맞추려 합니다. 앞서고 싶은 마음과 나란히 걷고 싶은 마음이 부딪쳐서, 의견을 묻고 나서 이미 정해 둔 답으로 슬쩍 끌고 가기 쉽습니다.",
+      "scene": { "text": "동아리 새 학기 계획을 '다들 하고 싶은 거 말해 봐'로 열고, 나온 의견 중 처음부터 생각해 둔 것만 칠판에 크게 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ENFJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ENFJ",
+      "kind": "conditional",
+      "dimension": "empathyResponse",
+      "score": 0.63,
+      "why": "물안개는 눈에 안 띄게 스며들어 잎을 살립니다. ENFJ의 Fe가 더해지면 상대가 말하지 않은 기분까지 읽어 냅니다. 그 감이 맞으면 가장 먼저 위로가 되고 틀리면 없는 서운함이 되니, '내가 맞게 본 거야?'라고 먼저 물어보는지에 따라 갈립니다.",
+      "scene": { "text": "친구 답장이 평소보다 짧아 화났나 싶어 이유를 열 가지쯤 떠올리다가 '혹시 나 때문에 힘들어?'라고 묻습니다. 답은 '아니, 운전 중이었어'입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ENFJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 0.77,
+      "why": "시계 톱니는 하나만 어긋나도 전체가 멈춰서 흠이 먼저 눈에 들어옵니다. ENFJ의 Fe는 상대가 상처받지 않게 좋은 점부터 말하려 합니다. 눈은 날카롭고 입은 부드러워야 해서, 고칠 말을 삼키고 혼자 대신 고쳐 놓는 날이 늘어납니다.",
+      "scene": { "text": "단체 사진에서 한 명의 옷깃이 접힌 걸 알아봤지만 말 못 하고, 사진을 받은 뒤 조용히 보정 앱을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ENFJ",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.76,
+      "why": "옆길 선생님은 정해진 길 밖에서 혼자 파고들며 의심을 놓지 않습니다. ENFJ의 Fe는 사람 속에 있어야 힘이 납니다. 혼자 파고들고 싶은 마음과 사람 곁에 있고 싶은 마음이 번갈아 와서, 약속 직전에 방에 들어앉고 싶어집니다.",
+      "scene": { "text": "좋아하는 사람들의 모임이 있는 토요일 저녁, 옷까지 입고도 현관에서 신발을 벗고 읽던 책을 다시 펼칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ENFJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ENFJ",
+      "kind": "conditional",
+      "dimension": "dutifulness",
+      "score": 0.59,
+      "why": "비상벨 앞 대장은 압박이 세질수록 눈이 맑아지고 무거운 짐을 먼저 듭니다. ENFJ의 Fe는 그 짐 때문에 흔들리는 사람들을 같이 붙잡으려 합니다. 위기에서는 모두의 중심이 되지만, 평온한 날에도 경계를 풀지 못하면 몸이 먼저 굳습니다.",
+      "scene": { "text": "정전이 된 건물에서 사람들을 비상계단으로 이끌고, 다 내려간 뒤에야 자기 손이 떨리는 걸 알아챕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ENFJ",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.64,
+      "why": "장사꾼은 좌판을 펴기 전에 골목의 사람 흐름부터 읽습니다. ENFJ의 Fe는 누가 누구와 잘 맞는지 알아보고 Ni는 그 연결이 어디로 이어질지 그립니다. 사람을 이어 주는 일이 기회가 되는데, 벌인 판이 많아질수록 챙길 얼굴도 늘어납니다.",
+      "scene": { "text": "단골 가게 사장님과 친구 한 명을 서로 소개해 줬더니, 다음 주에 둘이 같이 행사를 열자고 연락해 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ENFJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "verbalOutput",
+      "score": 0.49,
+      "why": "틀 깨는 말솜씨는 굳은 규칙의 빈틈을 보고 더 나은 표현을 꺼냅니다. ENFJ의 Fe는 그 말이 어떻게 들릴지까지 계산해 말투를 고릅니다. 날 선 내용도 웃으며 받아들이게 하지만, 더 세게 말하고 싶은 날엔 입이 먼저 나갑니다.",
+      "scene": { "text": "모두가 얼어 있던 어색한 자리에서 농담 하나로 분위기를 풀고, 그 틈에 '근데 이 규칙, 좀 이상하지 않아요?'를 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ENFJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.48,
+      "why": "옆 레인에 사람이 있으면 더 빨리 헤엄치고, 내 편이면 지갑도 활짝 엽니다. ENFJ의 Fe는 같은 편이라고 느낀 사람에게 시간과 마음을 아낌없이 씁니다. 함께 달릴 때 가장 멀리 가지만, 계산 없이 쓴 만큼 내 몫이 줄어든 걸 나중에야 압니다.",
+      "scene": { "text": "같이 운동하는 친구가 새 러닝화를 사자 나도 모르게 결제 창을 열고, 친구 몫 양말까지 장바구니에 담습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ENFJ",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.94,
+      "why": "교문 앞 우산은 비 오는 날 기다려 주는 사람이 주던 보살핌입니다. ENFJ의 Fe는 그 보살핌을 사람에게 건네는 데서 보람을 느낍니다. 배운 걸 나눠 줄 때 가장 단단해지지만, 내가 받을 차례를 미루는 버릇도 같이 굳습니다.",
+      "scene": { "text": "후배가 길 잃은 표정으로 서 있으면 우산을 내밀듯 점심부터 사 주고, 일하는 요령은 밥을 먹으며 하나씩 알려 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ENFJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "dutifulness",
+      "score": 1.01,
+      "why": "바른 관리자는 약속과 규칙을 지켜서 신뢰를 쌓습니다. ENFJ의 Fe는 규칙보다 지금 눈앞 사람의 표정이 먼저 보입니다. 원칙대로 하면 누군가 서운하고 봐주면 내 기준이 흔들려서, 어느 쪽을 골라도 밤에 다시 생각하게 됩니다.",
+      "scene": { "text": "참가 신청 마감이 지난 밤, 늦게 연락 온 친구 이름을 명단 끝에 몰래 적어 넣고는 규칙을 어겼다는 생각에 잠이 안 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ENFJ",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.35,
+      "why": "가계부 지갑은 같은 날 같은 금액을 모으고 통장을 쓰다듬습니다. ENFJ의 Ni는 이 돈이 몇 년 뒤 누구와 어떤 순간에 쓰일지를 먼저 그립니다. 저축에도 사람 얼굴이 붙어 있고, 그 돈을 나를 위해 꺼내는 날엔 손이 느려집니다.",
+      "scene": { "text": "매달 초에 통장 세 개를 만들어 '엄마 칠순' '동생 이사' 이름표를 붙이고, 내 이름 통장은 맨 마지막에 만듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ENFJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.19,
+      "why": "어깨 나란한 나는 기대지 않고 각자 자전거로 나란히 달립니다. ENFJ의 Fe는 사람 곁에서 함께하고 도울 때 힘이 납니다. 내 일은 혼자 하겠다는 마음과 같이 하자는 마음이 맞서서, 도움을 받을 때 고마움보다 미안함이 먼저 올라옵니다.",
+      "scene": { "text": "대청소를 도와주겠다는 친구들에게 '아냐, 천천히 혼자 할게'라고 했다가, 토요일 아침 쌓인 상자 앞에서 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ENFJ",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 1.25,
+      "why": "손맛 요리사는 한 냄비로 식구 모두를 깨우는 즐거움으로 삽니다. ENFJ의 Fe는 먹는 사람의 표정에서 보람을 얻습니다. 만들어 주며 충전되는 시간이 길지만, 내 밥을 차릴 때는 대충 때우는 습관이 같이 자랍니다.",
+      "scene": { "text": "일요일 아침, 친구 둘이 잔 집에서 팬케이크를 열 장 굽고 커피 취향을 하나씩 물어보며 컵을 놓아 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
     }
   ]
 }

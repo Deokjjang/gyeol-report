@@ -836,6 +836,381 @@
         "mbti:ESTP:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ESTP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 0.77,
+      "why": "정화는 손으로 감싼 촛불처럼 가까운 한 사람을 또렷하게 비추고, 혼자 곱씹는 시간이 있어야 타오르는 불입니다. ESTP는 Se로 밖에서 움직일 때 살아나고, 가만히 앉아 속을 들여다보면 답답해합니다. 뛰고 싶은 몸과 안으로 모으고 싶은 마음이 당겨서, 신나게 논 밤에 혼자 오래 깨어 있기 쉽습니다.",
+      "scene": { "text": "친구들과 늦게까지 놀고 헤어진 뒤, 버스 창가에서 아까 누군가 잠깐 보인 표정을 계속 떠올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ESTP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.73,
+      "why": "병화는 켜지는 순간 운동장 전체를 밝히는 조명탑이라 사람이 저절로 모여듭니다. ESTP는 Se로 판의 열기를 읽고 먼저 분위기를 끌어올립니다. 같은 쪽으로 밀어 어느 자리에서든 중심이 되지만, 불이 꺼진 다음 날엔 방전돼 연락이 뜸해지기 쉽습니다.",
+      "scene": { "text": "동창 모임에 어색한 침묵이 흐르자 게임을 하나 제안해 분위기를 살립니다. 집에 오는 길엔 목이 쉬고 말수가 확 줄어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ESTP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 0.85,
+      "why": "을목은 철망 틈을 한 칸씩 감아 올라가는 덩굴처럼 부딪치기보다 돌아서 원하는 곳에 닿습니다. ESTP의 Ti는 아닌 건 아니라고 바로 말하게 만듭니다. 돌려 말하고 싶은 마음과 직구를 던지고 싶은 마음이 맞서서, 말 꺼내기 직전에 웃음으로 한 번 포장하는 편입니다.",
+      "scene": { "text": "마음에 안 드는 제안에 '음, 괜찮은데…'까지 말하다가, 결국 '근데 그 시간은 좀 별로야'를 덧붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ESTP",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "score": 1.66,
+      "why": "임수는 소리 없이 넓게 밀려와 흩어진 웅덩이를 하나로 잇는 밀물입니다. ESTP는 새로운 장면만 보이면 Se를 따라 발이 먼저 나갑니다. 둘 다 새 물길을 찾아 퍼지니 아는 곳이 계속 넓어지지만, 깊게 파야 할 한 곳은 늘 얕게 남습니다.",
+      "scene": { "text": "새로 생긴 동네 가게 세 곳을 한 주에 다 돌아보고, 단골을 못 정한 채 또 다른 가게 후기를 찾아봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ESTP",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.65,
+      "why": "기토는 베란다 텃밭 상자처럼 매일 물을 줘야 싹이 나는 흙입니다. ESTP는 그때그때 눈앞 상황에 맞춰 움직일 때 편합니다. 꾸준히 챙기자는 마음과 오늘 땡기는 대로 하자는 몸이 부딪쳐, 시작은 화려한데 사흘째 물 주기를 놓칩니다.",
+      "scene": { "text": "새로 산 화분에 물 줄 요일을 달력에 적어 놓고, 둘째 주에 잎이 처진 걸 보고서야 컵을 들고 뛰어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ESTP",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 0.4,
+      "why": "무토는 물살 앞에서 꿈쩍 않고 서서 뒤의 사람을 지키는 흙 둑입니다. ESTP는 새 판이 열리면 일단 발부터 담가 보고 싶어 합니다. 지키려는 무게와 옮겨 가려는 가벼움이 당겨서, 남들이 기대는 자리에선 발을 못 떼고 속이 근질거립니다.",
+      "scene": { "text": "가족 모임 장소를 정하는데 다들 늘 가던 식당을 말하자 고개를 끄덕이면서도, 속으로는 새로 생긴 곳 지도를 열어 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ESTP",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "riskTaking",
+      "score": 0.77,
+      "why": "갑목은 길 없는 언덕에 먼저 말뚝을 박아 방향을 정하는 나무입니다. ESTP는 해 보고 안 되면 버리는 방식이라 위험 앞에서 발이 가볍습니다. 방향이 같아서 첫 사람이 되는 보상은 크지만, 뒤따라올 사람 몫의 안전선은 비워 두기 쉽습니다.",
+      "scene": { "text": "사람들이 망설이는 신종 놀이기구 줄에 제일 먼저 서고, 내리자마자 '생각보다 별로야'라며 뒤의 친구들을 말립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ESTP",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 0.77,
+      "why": "계수는 눈에 안 보여도 닿는 곳마다 잎을 살리는 물안개라, 속을 조용히 살피는 쪽입니다. ESTP는 Se로 눈앞의 일에 바로 반응합니다. 살피고 싶은 마음과 먼저 움직이는 몸이 엇갈려, 말은 가볍게 던져 놓고 뒤늦게 상대 표정을 떠올립니다.",
+      "scene": { "text": "동생이 밥을 먹다 말이 줄자 아무렇지 않게 농담을 던지고, 설거지하다가 '아까 그 표정 뭐였지' 하고 손이 멈춥니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ESTP",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ESTP",
+      "kind": "conditional",
+      "dimension": "perfectionism",
+      "score": 0.3,
+      "why": "신금은 톱니 하나만 어긋나도 시계가 멈추는 정밀한 쇠라 작은 틈을 잘 봅니다. ESTP의 Ti도 원리를 따지지만, 대충 돌아가면 다음 일로 넘어갑니다. 내 손에 쥔 일은 끝까지 맞추고 남의 일은 넘기는 식이라, 어디에 힘을 줄지가 갈립니다.",
+      "scene": { "text": "자기 자전거 체인은 기름칠에 나사까지 다 조이면서, 빌려 탄 친구 자전거의 삐걱거림은 '굴러가면 됐지' 하고 넘깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ESTP",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 0.91,
+      "why": "편인은 정해진 교과서 대신 옆길에서 혼자 파고드는 의심 많은 머리입니다. ESTP는 이론보다 직접 해 보고 판단합니다. 혼자 파고들 시간이 필요한 머리와 바로 확인하고 싶은 손이 부딪쳐, 책을 반쯤 읽다 덮고 실물을 사러 갑니다.",
+      "scene": { "text": "새 취미 입문서를 열 쪽 읽다 덮고 중고 장터에서 실물부터 삽니다. 만져 보니 책에 없던 의문이 생겨 밤에 검색창을 다시 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ESTP",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "decisionSpeed",
+      "score": 0.8,
+      "why": "편관은 압박이 셀수록 눈이 또렷해져 맨 앞에서 짐을 지는 힘입니다. ESTP는 위급할수록 Se가 최고 속도로 돕니다. 같이 밀어 위기에 가장 빠른 결정자가 되지만, 조용한 날엔 일부러 센 일을 찾아 나서기 쉽습니다.",
+      "scene": { "text": "엘리베이터가 멈춰 다들 웅성댈 때 비상 버튼을 누르고 비상문 쪽을 가장 먼저 확인합니다. 상황이 끝나면 오히려 심심해합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ESTP",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.6,
+      "why": "상관이 두드러지면 남이 짜 놓은 규칙의 빈틈부터 눈에 들어와 입이 근질거립니다. ESTP는 Ti로 허점을 짚고 바로 입 밖에 냅니다. 둘이 같은 쪽으로 밀어 말이 시원하게 통하지만, 맞는 말도 날이 서면 상대 기억에 오래 남습니다.",
+      "scene": { "text": "동네 행사 포스터 문구를 보고 '이러면 아무도 안 읽어요' 하며 더 짧은 문구를 즉석에서 불러 줍니다. 만든 사람 표정은 그제야 보입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ESTP",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "score": 1.34,
+      "why": "정인은 받은 가르침을 차곡차곡 쌓아 이해한 만큼만 움직이게 하는 힘입니다. ESTP는 이해가 덜 돼도 해 보며 배웁니다. 충분히 알고 정하려는 마음과 지금 정하고 싶은 손이 맞서서, 큰 결정을 내린 뒤에도 자꾸 뒤를 돌아봅니다.",
+      "scene": { "text": "새 휴대폰 약정 앞에서 설명을 끝까지 듣고도 '생각해 볼게요' 하고 나갔다가, 십 분 뒤 다시 들어와 결제합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ESTP",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 0.78,
+      "why": "비견이 두드러지면 남의 손을 빌리기보다 내 몫은 내가 챙기는 쪽으로 몸이 먼저 움직입니다. ESTP도 돌려 말할 시간에 직접 말하고 직접 움직입니다. 같은 쪽이라 거래가 깔끔하고 뒤끝이 적지만, 도와 달라는 말이 늦어 혼자 끙끙대기 쉽습니다.",
+      "scene": { "text": "조별 과제에서 맡은 부분을 일찍 끝내 놓고 '내 건 다 했어, 네 건 어때?'라고 묻습니다. 정작 자기 자료의 막힌 곳은 끝까지 말하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ESTP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.6,
+      "why": "식신은 좋아하는 걸 꾸준히 만들어 나누며 즐거움으로 먹고사는 힘입니다. ESTP는 사람 앞에서 직접 보여 줄 때 가장 신납니다. 같이 밀어 내 손맛이 곧 모임의 인기가 되지만, 손님 입맛에만 맞추다 내 입맛을 잃기 쉽습니다.",
+      "scene": { "text": "집들이 날 팬 하나로 볶음밥을 뚝딱 만들어 내밀고, 다들 맛있다고 하자 다음 모임 메뉴를 벌써 정하고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "성격 단정",
+          "미래 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
     }
   ]
 }

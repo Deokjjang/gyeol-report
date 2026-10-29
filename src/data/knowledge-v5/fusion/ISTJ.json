@@ -835,6 +835,381 @@
         "mbti:ISTJ:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ISTJ",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "persistence",
+      "score": 1.2,
+      "why": "촛불은 크지 않아도 한번 붙으면 오래 탑니다. ISTJ의 Si는 해 온 방식을 날짜별로 쌓아 두는 쪽입니다. 몇 년이고 같은 자리에서 꺼지지 않고 가는 대신, 서운한 일은 말없이 안에서 오래 태웁니다.",
+      "scene": { "text": "삼 년째 매주 같은 요일 같은 시간에 어르신 댁에 안부 전화를 걸고, 받지 않으신 날엔 저녁 내내 휴대폰을 곁에 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ISTJ",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "persistence",
+      "score": 0.42,
+      "why": "나팔꽃 덩굴은 부딪치지 않고 틈을 감아 올라가 끝내 닿습니다. ISTJ의 Te는 목표까지 가는 길을 한 칸씩 쪼개 놓습니다. 조용히 한 칸씩 가서 결국 도착하지만, 싫은 건 싫다고 말하지 않아 내 몫이 쌓이기 쉽습니다.",
+      "scene": { "text": "자격증 시험까지 하루 한 장씩 풀기로 하고 달력에 동그라미를 치는 동안, 놀자는 연락엔 말없이 '다음에'만 답합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ISTJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ISTJ",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 1.41,
+      "why": "밀물은 넓게 들어와 흩어진 것들을 하나로 잇습니다. ISTJ의 Si는 이미 검증된 방법 안에서 안심합니다. 넓게 받아들이는 성질과 익숙한 틀을 지키려는 마음이 맞서서, 새 방식을 들으면 일단 받아 적고 쓸지는 며칠 뒤에 정합니다.",
+      "scene": { "text": "새로 나온 앱을 쓰자는 말에 '일단 써 볼게요' 하고 깔아 놓고, 일주일은 예전 방식과 나란히 쓰면서 둘을 비교합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ISTJ",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ISTJ",
+      "kind": "conditional",
+      "dimension": "directness",
+      "score": 0.3,
+      "why": "지렛대는 아니면 아니라고 한 번에 끊습니다. ISTJ의 Te는 틀린 숫자를 그냥 넘기지 못하고 Fi는 선을 넘은 사람을 조용히 기억합니다. 맞는 말이 필요한 자리에선 믿음직하고, 마음이 걸린 사람 앞에선 말이 굳어 침묵이 됩니다.",
+      "scene": { "text": "모임 총무가 정산을 잘못한 걸 알아챈 뒤, 단톡방에 '금액 확인 부탁드립니다' 한 줄만 올리고 아무 말도 하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ISTJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.62,
+      "why": "흙 둑은 거센 물살에도 자리를 지켜 뒤의 마을을 보호합니다. ISTJ의 Si는 맡은 일을 해 온 방식대로 닫아 두는 쪽입니다. 누구보다 믿고 맡길 수 있는 대신, 쉬어도 된다는 허락은 스스로에게 가장 늦게 내줍니다.",
+      "scene": { "text": "이사 가는 날 새 집 열쇠를 받은 뒤에도 전 집을 한 바퀴 더 돌며 가스 밸브와 창문을 다시 확인합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ISTJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ISTJ",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.75,
+      "why": "이정표는 길 없는 곳에 먼저 방향을 꽂는 쪽입니다. ISTJ의 Si는 검증된 길이 아니면 선뜻 발을 떼지 않습니다. 앞장서고 싶은 쪽과 확인부터 하는 쪽이 엇갈려서, 방향은 분명한데 출발 직전까지 계획표를 고칩니다.",
+      "scene": { "text": "동네 모임에서 '이번엔 새 코스로 갑시다'라고 앞장서 놓고, 전날 밤 그 길을 혼자 먼저 걸어 보며 쉴 곳과 화장실을 확인합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ISTJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "detailFocus",
+      "score": 0.8,
+      "why": "물안개는 눈에 안 띄게 구석구석 스며듭니다. ISTJ의 Te는 사소한 숫자와 날짜까지 놓치지 않고 짚어 냅니다. 남들이 못 본 작은 틈을 메우는 대신, 빈 곳이 보일 때마다 혼자 채우다 말 한마디 없이 지칩니다.",
+      "scene": { "text": "가족 여행 예약 내역에서 체크아웃 시간과 기차 시간이 이십 분 어긋난 걸 찾아내 조용히 표를 바꿔 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ISTJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "detailFocus",
+      "score": 0.98,
+      "why": "시계 톱니는 하나 어긋나면 전체가 멈출 만큼 정밀합니다. ISTJ의 Te는 틀린 곳을 표로 만들고 Si는 지난번 기록과 맞춰 봅니다. 오류를 가장 먼저 잡는 눈이 있지만, 칭찬보다 흠이 먼저 입에 올라 곁에 있는 사람이 움츠러듭니다.",
+      "scene": { "text": "가계부 앱의 지난달 합계가 영수증 묶음과 천이백 원 달라서, 한 장씩 다시 맞춰 보며 그날 밤을 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ISTJ",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "trustThreshold",
+      "score": 0.61,
+      "why": "옆길 선생님은 정해진 교과서를 믿지 않고 혼자 확인하며 배웁니다. ISTJ의 Si도 검증된 것만 믿는 쪽입니다. 둘 다 의심에서 출발해서 한번 믿은 것은 깊이 파고들지만, 새 사람에게 마음을 여는 데는 오래 걸립니다.",
+      "scene": { "text": "새로 산 가전은 설명서를 끝까지 읽고 후기를 열 개 비교한 뒤에야 포장을 뜯고, 믿을 만하다는 확신이 선 다음에 가족에게 권합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ISTJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.38,
+      "why": "비상벨 앞 대장은 압박이 셀수록 눈이 또렷해집니다. ISTJ의 Te는 위기에서 해야 할 일을 번호 순으로 세웁니다. 모두가 허둥댈 때 가장 믿음직하지만, 일이 끝나 풀어지는 순간 몸살이 한꺼번에 옵니다.",
+      "scene": { "text": "폭우로 지하 주차장에 물이 차오르자 차 주인들 연락처부터 모으고 관리실에 전화를 돌리고, 상황이 끝난 밤엔 이유 없이 열이 납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ISTJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ISTJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.14,
+      "why": "틀 깨는 말솜씨는 굳은 규칙의 빈틈을 날카롭게 짚습니다. ISTJ의 Si는 정해진 절차를 지키는 데서 안정을 찾습니다. 지켜야 하는 마음과 고치고 싶은 마음이 맞서서, 평소엔 말이 없다가 한 번 터지면 근거 자료까지 들고 옵니다.",
+      "scene": { "text": "해마다 같은 방식으로 걷는 회비 양식을 속으로 참다가, 올해는 더 쉬운 양식을 직접 만들어 말없이 공유합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ISTJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ISTJ",
+      "kind": "tension",
+      "dimension": "riskTaking",
+      "score": 1.14,
+      "why": "옆 레인 승부사는 곁에서 달리는 사람이 있으면 더 힘을 냅니다. ISTJ의 Si는 안전한 방식을 지키며 손해부터 따져 봅니다. 따라가고 싶은 마음과 잃기 싫은 마음이 맞서서, 지인이 먼저 뛰어들면 계산기를 두드리다 반쯤만 발을 담급니다.",
+      "scene": { "text": "동네 친구가 주식 스터디에 같이 하자고 하자 위험을 표로 정리해 보고, 가진 돈의 십분의 일만 넣기로 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ISTJ",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.99,
+      "why": "교문 앞 우산은 비 오기 전에 미리 챙기는 보살핌입니다. ISTJ의 Te는 앞으로의 일을 순서와 날짜로 세워 두는 데서 편안해집니다. 준비가 단단해서 흔들릴 일이 적지만, 준비만 길어지면 시작이 자꾸 뒤로 밀립니다.",
+      "scene": { "text": "여행 한 달 전에 비 오는 날 대안 코스와 약국 위치, 환전 시간까지 적은 파일을 만들어 두고 출발 전날 밤 한 번 더 인쇄합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ISTJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ISTJ",
+      "kind": "conditional",
+      "dimension": "persistence",
+      "score": 0.35,
+      "why": "어깨 나란한 나는 제 몫을 제 손으로 끝까지 해냅니다. ISTJ의 Si는 하던 방식을 끝까지 밀고 가는 편입니다. 혼자 해낼 수 있는 일에선 끈기가 되지만, 도움이 필요한 큰 일에서도 혼자 끌다 지칩니다.",
+      "scene": { "text": "베란다 방수 작업을 혼자 하겠다고 나서서 이틀을 쓰고, 이웃이 도와줄까 하자 괜찮다고 하고는 허리를 두드립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ISTJ",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ISTJ",
+      "kind": "tension",
+      "dimension": "persistence",
+      "score": 0.87,
+      "why": "손맛 요리사는 좋아하는 일을 즐기며 꾸준히 만듭니다. ISTJ의 Te는 한 일을 결과물과 숫자로 확인해야 안심합니다. 즐기고 싶은 마음과 성과를 내야 한다는 마음이 맞서서, 쉬는 날에도 만든 걸 기록하며 지칩니다.",
+      "scene": { "text": "주말 빵 굽기를 하며 레시피마다 굽기 시간과 맛 점수를 적다가, 점수가 낮은 날엔 맛있게 먹은 빵도 실패작으로 분류합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 단정",
+          "관계 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
     }
   ]
 }

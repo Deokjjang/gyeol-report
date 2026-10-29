@@ -714,6 +714,390 @@
         "mbti:ENTJ:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ENTJ",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ENTJ",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 0.4,
+      "why": "정화인 사람은 바람에도 손으로 감싸면 꺼지지 않는 촛불이라 속불을 조용히 지킵니다. ENTJ는 Te로 겉이 단단해 보이고, Fi 쪽 속마음은 가장 늦게 알아챕니다. 겉의 침착함과 속의 서운함이 당겨, 아무렇지 않은 얼굴로 며칠 지내다 한마디에 터집니다.",
+      "scene": { "text": "동료가 내 아이디어를 자기 것처럼 말해도 웃어넘기고, 집에 와서 설거지를 하다 접시를 유난히 세게 내려놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ENTJ",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 0.65,
+      "why": "병화인 사람은 켜지면 운동장을 대낮처럼 밝히는 조명탑이라 감정도 숨기지 않고 비춥니다. ENTJ는 Te로 말이 빠르고, 좋은 일에는 기세가 한 번에 올라갑니다. 신나는 기운이 사람을 끌어오는 대신, 확인 전에 약속부터 크게 해 놓고 수습이 늦어집니다.",
+      "scene": { "text": "저녁 식탁에서 좋은 소식을 말하다 '이번 주말 내가 쏜다!' 하고 외치고, 식당 예약은 그다음에야 찾아봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ENTJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ENTJ",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "score": 0.64,
+      "why": "임수인 사람은 소리 없이 넓게 밀려들어 흩어진 웅덩이를 잇는 밀물이라 판을 넓게 봅니다. ENTJ의 Te는 결정을 빨리 내려 일을 굴리고 싶어 합니다. 자료를 더 모으고 싶은 마음과 빨리 정하고 싶은 마음이 당겨, 정한 뒤에 새 정보가 오면 마음이 흔들립니다.",
+      "scene": { "text": "이사할 동네를 오늘은 정하겠다고 마음먹고 계약서 앞까지 갔다가, 마지막으로 본 후기 하나에 도장 찍기를 하루 미룹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ENTJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.6,
+      "why": "기토인 사람은 베란다 텃밭 흙처럼 작은 씨앗도 날마다 돌보면 먹을 것으로 키웁니다. ENTJ의 Te는 목표를 단계로 쪼개 날마다 할 일을 정해야 마음이 편합니다. 꾸준히 키우는 힘이 강한 대신, 남의 몫까지 돌보다 내 쉬는 날이 계획에서 빠집니다.",
+      "scene": { "text": "일요일 저녁 다음 주 일정을 칸칸이 채우다 보면 동생 이삿날 도우미 칸까지 들어가 있고, 내 휴식 칸은 비어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ENTJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ENTJ",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 0.15,
+      "why": "무토인 사람은 태풍 밤에도 꿈쩍 않는 흙 둑이라 말보다 버티는 모습으로 믿음을 줍니다. ENTJ는 Te 때문에 지시와 결론을 말로 쏟아 내는 쪽입니다. 말없이 지키려는 무게와 앞에서 이끌려는 입이 당겨, 속으로 다 짊어지고 겉으로는 결론만 크게 말합니다.",
+      "scene": { "text": "가족에게 힘든 일이 생기면 '내가 알아볼게' 한마디만 하고, 밤새 혼자 알아본 뒤 해결책만 식탁에 올려놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ENTJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ENTJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 0.53,
+      "why": "계수인 사람은 눈에 안 보이는 물안개처럼 남의 기분에 조용히 스며듭니다. ENTJ는 사실과 효율을 먼저 보고 Fi는 가장 늦게 열립니다. 기분을 눈치채는 감과 해결부터 하는 입이 당겨, 상대가 지친 걸 알면서도 '그래서 어쩔 건데'가 먼저 나옵니다.",
+      "scene": { "text": "동생이 한숨 쉬는 걸 보고 마음이 쓰이는데도 입에서는 '원인이 뭐야?'가 먼저 나가고, 동생은 방문을 닫습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ENTJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "statusDrive",
+      "score": 0.39,
+      "why": "신금인 사람은 정밀하게 깎인 작은 톱니라 티는 작아도 빠지면 전체가 멈춥니다. ENTJ의 Te는 결과로 인정받는 걸 중요하게 보고, Ni는 올라갈 자리를 멀리 그립니다. 인정받을 만큼 정확해지는 대신, 흠을 먼저 보는 눈이 나와 곁사람 모두를 몰아붙입니다.",
+      "scene": { "text": "공모전 접수 전날, 작품 사진 모서리가 1밀리 틀어진 걸 발견하고 밤새 다시 찍어 파일을 바꿔 냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ENTJ",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ENTJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 0.36,
+      "why": "편인이 두드러지면 교과서 대신 옆길에서 혼자 배우며 기존 답을 의심하는 머리가 됩니다. ENTJ는 Te로 사람을 모아 함께 굴리는 쪽이 편합니다. 혼자 파고들고 싶은 마음과 앞에서 이끌려는 마음이 당겨, 남에게는 결론만 주고 과정은 혼자 끝냅니다.",
+      "scene": { "text": "새 분야를 맡으면 주말 내내 혼자 논문과 자료를 파고, 월요일에 팀원들에게는 정리된 결론 한 장만 건넵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ENTJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "score": 1.16,
+      "why": "편관이 두드러지면 태풍 속 갑판에서 밧줄을 다시 묶는 선장처럼 압박이 셀수록 정신이 또렷해집니다. ENTJ의 Te는 위기에 판을 잡고 역할을 나눠야 안심합니다. 위기에 앞장서는 힘이 커지는 대신, 평소에도 판을 쥐고 놓지 못해 곁사람이 숨 쉴 틈이 줄어듭니다.",
+      "scene": { "text": "정전으로 아파트가 어두워지자 손전등부터 찾아 이웃에게 '3층은 계단 쪽, 저는 관리실 갑니다' 하고 역할을 나눕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ENTJ",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "decisionSpeed",
+      "score": 1.2,
+      "why": "편재가 두드러지면 장터에서 사람과 돈의 길목을 먼저 읽는 상인처럼 기회를 보면 크게 벌입니다. ENTJ의 Te는 판단이 빨라 좋은 자리를 남보다 먼저 잡습니다. 기회를 빨리 낚는 대신, 벌인 일이 손보다 많아져 뒷정리가 늦어집니다.",
+      "scene": { "text": "중고 장터에서 싸게 나온 물건 열 개를 보고 반 시간 만에 다 사들이고, 되팔 사진 찍는 일은 몇 주째 미룹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ENTJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.07,
+      "why": "상관이 두드러지면 굳은 악보에 연필로 자기 식 꾸밈음을 적는 연주자처럼 규칙의 빈틈을 짚습니다. ENTJ는 Te로 틀린 걸 보면 바로 말하고 고칠 방법까지 붙입니다. 막힌 곳을 시원하게 뚫는 대신, 말이 날카로워 윗사람 앞에서는 분위기를 얼립니다.",
+      "scene": { "text": "교수님이 말한 이론의 허점을 수업 중에 바로 짚고 대안까지 말해 버려, 강의실이 한순간 조용해집니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ENTJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "competitiveness",
+      "score": 1.17,
+      "why": "겁재가 두드러지면 옆 레인이 앞서면 팔을 더 세게 젓는 수영 선수처럼 경쟁에서 힘이 커집니다. ENTJ는 Te로 이기는 길을 계산하고 Se로 판을 읽으며 속도를 올립니다. 상대가 있을 때 기록이 크게 오르는 대신, 이겨야 한다는 마음이 몫을 나누는 대화를 거칠게 만듭니다.",
+      "scene": { "text": "동네 마라톤에서 옆 사람이 한 발 앞서자 세워 둔 페이스를 버리고 추월하고, 결승선에서 숨이 차 걷지 못합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ENTJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.78,
+      "why": "정관이 두드러지면 정시에 출근해 일지를 빠짐없이 쓰는 사람처럼 약속과 자리를 지켜 믿음을 쌓습니다. ENTJ의 Te는 규칙을 일이 굴러가게 하는 뼈대로 쓰고 일정에 맞춰 밀어붙입니다. 믿음은 쌓이지만, 규칙이 사람보다 앞서 가까운 이에게 차갑게 보입니다.",
+      "scene": { "text": "친구가 약속에 십 분 늦게 오자 사과를 받기도 전에 '예약은 이십 분 지나면 취소야'라고 먼저 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ENTJ",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.56,
+      "why": "정재가 두드러지면 매달 같은 금액을 적금에 넣는 사람처럼 현실에 발붙인 돈 감각이 있습니다. ENTJ의 Te는 수입과 목표를 숫자로 이어 장기 계획을 세웁니다. 자산이 차곡차곡 쌓이는 대신, 숫자로 안 보이는 경험에 쓰는 돈이 아깝게 느껴집니다.",
+      "scene": { "text": "친구들이 가자는 유럽 여행 견적을 받고 비용 대비 효과를 표로 정리하다가, 정작 가고 싶은지는 마지막에야 자문합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ENTJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.18,
+      "why": "비견이 두드러지면 각자 자전거를 타고 나란히 달리는 친구처럼 제 몫은 제 손으로 합니다. ENTJ는 Te로 맡은 몫을 끝까지 책임져야 직성이 풀립니다. 남에게 안 기대고 해내는 힘이 큰 대신, 도와줄 사람이 있어도 일을 안 나눠 혼자 과로합니다.",
+      "scene": { "text": "이사 전날 박스 쉰 개를 혼자 다 싸고, 도와주겠다는 친구에게는 '내일 트럭만 같이 타 줘'라고만 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ENTJ",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ENTJ",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 0.73,
+      "why": "식신이 두드러지면 주말 아침 한 상을 차려 식구를 깨우는 사람처럼 즐겁게 만들어 나누는 힘이 있습니다. ENTJ의 Te는 요리조차 순서와 시간표로 짜서 이끌려 합니다. 같이 즐기고 싶은 마음과 내가 이끌어야 안심하는 마음이 당겨, 즐거운 자리에서 시간 배분을 지시합니다.",
+      "scene": { "text": "친구들과 캠핑 요리를 하는데 '고기는 6시, 불은 5시 반'이라고 정해 놓고, 다들 느긋하게 먹는 걸 보며 속이 탑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
     }
   ]
 }

@@ -525,6 +525,414 @@
         "mbti:INTP:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:INTP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "INTP",
+      "kind": "conditional",
+      "dimension": "socialEnergy",
+      "score": 0.28,
+      "why": "정화인 사람은 크지 않아도 가까운 곳을 또렷이 비추는 촛불이라 소수 앞에서 가장 밝습니다. INTP는 Ti로 혼자 생각을 굴리다가, 마음 맞는 한두 명에게만 Ne의 가설을 풀어놓습니다. 좁은 자리에서는 말이 쏟아지고, 큰 자리에서는 불이 꺼진 듯 조용해집니다.",
+      "scene": { "text": "단체 회식에선 앞접시만 쳐다보다가, 집에 가는 길에 둘만 남자 두 정거장 동안 쉬지 않고 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:INTP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.15,
+      "why": "병화인 사람은 켜지면 운동장 전체를 밝히는 조명탑이라 사람 앞에서 빛나려는 힘이 있습니다. INTP는 Ti의 논리를 혼자 다듬는 시간이 길고, 분위기 읽는 Fe가 가장 늦습니다. 앞에 서고 싶은 마음과 혼자 파고드는 습관이 당겨, 나서 놓고 준비가 모자랐다고 곱씹습니다.",
+      "scene": { "text": "반 대표 발표를 먼저 손들고 맡아 놓고, 막상 단상에 서자 하려던 말보다 빠뜨린 근거가 먼저 떠오릅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:INTP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 0.85,
+      "why": "을목인 사람은 담장을 타고 오르는 덩굴이라 기댈 곳이 있어야 높이 갑니다. INTP는 자기 논리 모형을 남의 도움 없이 세우려는 쪽입니다. 기대어 크는 몸과 혼자 해내려는 머리가 엇갈려, 물어보면 십 분일 일을 혼자 사흘씩 붙들고 있습니다.",
+      "scene": { "text": "프로그램 오류 하나를 사흘째 혼자 붙들고 있으면서, 온라인 커뮤니티에 물으면 십 분이면 된다는 걸 알고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:INTP",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.45,
+      "why": "기토인 사람은 텃밭 흙이라 날마다 물 주고 돌봐야 작은 싹이 큽니다. INTP는 Ne로 새 가설이 생기면 하던 일을 놓고 그쪽으로 넘어갑니다. 매일 돌보는 성실함과 호기심의 방향 전환이 당겨, 계획표는 멋지게 짜 놓고 사흘 뒤엔 다른 걸 파고 있습니다.",
+      "scene": { "text": "새해 첫날 독서 계획표를 색깔별로 만들어 붙이고, 사흘 뒤엔 계획에 없던 천문학 책을 밤새 읽고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:INTP",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "INTP",
+      "kind": "conditional",
+      "dimension": "decisionSpeed",
+      "score": 0.65,
+      "why": "경금인 사람은 꽉 막힌 문을 한 번에 여는 쇠라 결론을 내면 단호하게 끊습니다. INTP는 Ne로 선택지를 끝없이 늘리다가, Ti가 맞다고 확인한 순간에야 답을 냅니다. 확신이 서면 번개처럼 정하고, 확신 전에는 한없이 미룹니다.",
+      "scene": { "text": "노트북을 두 달 내내 비교만 하다가, 어느 날 밤 사양표 한 줄이 마음에 걸린 모델을 5분 만에 결제합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:INTP",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 0.54,
+      "why": "무토인 사람은 물살 앞에서 꿈쩍 않는 흙 둑이라 익숙한 자리를 지키는 데 강합니다. INTP는 Si의 기준점이 있으면서도 Ne 때문에 새 아이디어 앞에서 마음이 먼저 달려갑니다. 버티는 힘과 새것에 끌리는 마음이 당겨, 오래 쓴 방식은 못 바꾸면서 낯선 주제에는 하룻밤에 빠집니다.",
+      "scene": { "text": "오 년째 쓰는 편집 프로그램은 못 바꾸면서, 우연히 본 낯선 보드게임 규칙 영상에 새벽 세 시까지 빠져 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:INTP",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "INTP",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 0.49,
+      "why": "갑목인 사람은 아무도 안 간 언덕에 먼저 서는 나무라 혼자 방향을 잡으려 합니다. INTP는 Ti로 길을 세우지만 그 길을 남에게 설명하는 일은 서툽니다. 혼자 낼 때는 곧게 가고, 같이 가야 할 때는 설명이 모자라 사람들이 멈칫합니다.",
+      "scene": { "text": "스터디에서 자기만의 풀이 방식을 칠판에 쓱 적고 '이게 맞아'라고만 하니, 다들 어디서 나온 건지 몰라 쳐다봅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:INTP",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 0.35,
+      "why": "계수인 사람은 눈에 안 보이는 물안개처럼 남의 기분에 스며드는 감각이 있습니다. INTP는 Ti로 사실부터 따지고 Fe는 가장 나중에 따라옵니다. 기분을 느끼는 안테나와 논리부터 꺼내는 입이 당겨, 속으로는 안쓰러운데 입에서는 해결책이 먼저 나옵니다.",
+      "scene": { "text": "친구가 시험을 망쳤다며 울적해하자, 마음이 쓰이는데도 '공부법을 바꿔 보면 어때?'부터 꺼내고 곧 어색해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:INTP",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "emotionalExpression",
+      "score": 0.18,
+      "why": "신금인 사람은 하나만 어긋나도 시계가 서는 작은 톱니라 감정도 정밀하게 다듬어 내놓습니다. INTP는 느낀 것을 정확한 말로 바꿀 때까지 Ti 안에 담아 둡니다. 말이 나오면 정확한 대신 나오기까지 오래 걸려, 그동안 상대는 무표정으로 오해합니다.",
+      "scene": { "text": "속상한 날 친구가 물으면 '괜찮아'라고만 하고, 이틀 뒤에야 서운했던 이유를 세 줄로 정리해 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:INTP",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "dutifulness",
+      "score": 0.85,
+      "why": "편관이 두드러지면 태풍 속 갑판에 먼저 오르는 선장처럼 압박이 센 자리에서 짐을 집니다. INTP는 흥미가 붙어야 움직이고 의무만으로는 시동이 잘 안 걸립니다. 맡아야 한다는 무게와 재미없다는 거부감이 당겨, 마감 직전에야 불이 붙어 밤을 샙니다.",
+      "scene": { "text": "보고서 마감 이틀 전까지 책상 정리만 하다가, 전날 밤 갑자기 눈이 또렷해져 새벽까지 한 번에 써냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:INTP",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.86,
+      "why": "편재가 두드러지면 장날 시장 골목을 먼저 도는 상인처럼 사람과 돈이 흐르는 길목을 읽습니다. INTP는 사람 많은 곳보다 혼자 원리를 파는 시간에 에너지가 찹니다. 기회는 사람 사이에 있는데 몸은 방 안으로 가려 해서, 알아낸 정보를 쓰지 못하고 묵힙니다.",
+      "scene": { "text": "관심 분야 오픈 채팅방에서 쓸 만한 제안이 와도 답을 미루다가, 일주일 뒤 다른 사람이 맡은 걸 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:INTP",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.42,
+      "why": "겁재가 두드러지면 옆 레인이 앞서면 팔을 더 세게 젓는 수영 선수처럼 경쟁에서 속도가 붙습니다. INTP는 남과 비교하기보다 자기 모형이 맞는지가 더 중요한 쪽입니다. 이기고 싶은 불씨와 비교가 귀찮은 마음이 당겨, 판이 시시해 보이면 불이 꺼집니다.",
+      "scene": { "text": "친구가 퍼즐을 먼저 풀자 갑자기 오기가 생겨 밤새 풀어 놓고, 다음 날 '이제 이 퍼즐은 재미없어'라고 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:INTP",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "learningDrive",
+      "score": 1.11,
+      "why": "정인이 두드러지면 교문 앞에서 우산 두 개를 들고 기다리는 어머니처럼 배움을 차곡차곡 받아 쌓습니다. INTP는 Ti로 원리를 이해할 때까지 파고들고, Si에는 확인된 지식이 기준점으로 남습니다. 한 번 이해하면 오래 가는 대신, 덜 이해된 느낌이 들면 시작을 계속 미룹니다.",
+      "scene": { "text": "수영을 배우기 전에 부력 원리 영상부터 세 개를 보고, 물에 들어가는 날은 계속 다음 주로 밀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:INTP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.2,
+      "why": "정관이 두드러지면 정시에 출근해 약속을 지키는 사람처럼 규칙과 자리로 믿음을 쌓습니다. INTP는 규칙의 이유가 납득돼야 따르고, 안 맞으면 Ti가 반박문을 씁니다. 지켜야 할 자리와 따지고 싶은 머리가 당겨, 따르는 척하면서 속으로 허점을 세고 있습니다.",
+      "scene": { "text": "동네 수영장의 샤워 규칙이 앞뒤가 안 맞는 걸 알아채고, 따르면서도 탈의실에서 속으로 그 모순을 곱씹습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:INTP",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.89,
+      "why": "정재가 두드러지면 매달 같은 날 적금을 넣는 사람처럼 정해진 수입을 꼼꼼히 지키는 돈 감각이 있습니다. INTP는 Ne로 이것저것 파고들다가 돈 계획은 뒷전이 되기 쉽습니다. 모으려는 성실함과 호기심에 쓰려는 마음이 당겨, 가계부는 한 달 쓰고 부품은 끝없이 삽니다.",
+      "scene": { "text": "월말에 가계부를 열어 보면 셋째 주부터 비어 있고, 책상 서랍엔 쓰지도 않을 센서 부품이 쌓여 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:INTP",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "INTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 0.9,
+      "why": "비견이 두드러지면 각자 자전거를 타고 나란히 달리는 친구처럼 제 몫을 제 손으로 합니다. INTP는 자기 논리를 남에게 맡기기 불안해 혼자 해결하는 쪽으로 갑니다. 간섭 없이 깊이 파는 대신, 혼자 끌다가 정작 필요한 의견을 듣지 못합니다.",
+      "scene": { "text": "친구와 같이 만들기로 한 앱의 내 부분을 말없이 끝낸 뒤 보여 주는데, 친구는 이미 다른 방식으로 짜 둔 상태입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:INTP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 0.58,
+      "why": "식신이 두드러지면 냄비 하나로 한 상을 차려 나누는 사람처럼 좋아하는 걸 만들어 줄 때 마음이 풀립니다. INTP는 속 느낌을 Ti로 한참 정리한 뒤에야 말로 내놓습니다. 나누고 싶은 마음과 느린 입이 당겨, 설명은 길게 하는데 정작 기분은 말하지 않습니다.",
+      "scene": { "text": "친구에게 직접 만든 작은 프로그램을 보여 주며 구조는 한 시간 설명하면서, 칭찬받아서 기뻤다는 말은 끝내 안 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
     }
   ]
 }

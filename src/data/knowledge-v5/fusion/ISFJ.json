@@ -789,6 +789,390 @@
         "mbti:ISFJ:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ISFJ",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "score": 1.3,
+      "why": "병화는 켜지는 순간 판 전체가 환해지는 조명탑이라, 눈에 띄는 자리가 오히려 편한 불입니다. ISFJ의 Si와 Fe는 앞에 서기보다 뒤에서 빈자리를 채우는 쪽으로 힘을 씁니다. 그래서 박수받고 싶은 마음과 뒤에 숨고 싶은 마음이 한 몸에서 줄다리기를 합니다.",
+      "scene": { "text": "친구 결혼식 사회를 부탁받고 '나는 못 해' 하며 손사래를 치면서도, 사회자 멘트는 집 거울 앞에서 세 번 연습합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ISFJ",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "conflictApproach",
+      "score": 1.02,
+      "why": "을목은 철망 틈을 한 칸씩 감아 오르는 덩굴이라, 부딪치기 전에 돌아갈 길부터 찾습니다. ISFJ의 Fe는 불편한 말이 오가기 전에 분위기를 먼저 풀어 놓습니다. 싸움은 거의 안 나지만, 하고 싶은 말은 돌고 돌아 끝내 상대 귀에 닿지 않기도 합니다.",
+      "scene": { "text": "친구가 약속 시간에 또 늦자 화내는 대신 '나 먼저 시켜 놓을게, 천천히 와' 하고 웃어 줍니다. 속으로는 이번이 몇 번째인지 세고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ISFJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 1.01,
+      "why": "임수는 소리 없이 넓게 밀려와 흩어진 것을 하나로 잇는 물이라, 새 땅으로 뻗고 싶어 합니다. ISFJ의 Si는 해 본 길과 익숙한 순서를 놓지 않으려 합니다. 마음은 낯선 바다를 보고 있는데 발은 늘 쓰던 길을 걷습니다.",
+      "scene": { "text": "여행 후보지 검색창에 낯선 도시 이름을 쳐 놓고 저장만 하다가, 결국 작년에 묵은 숙소를 다시 예약합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ISFJ",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "conflictApproach",
+      "score": 0.83,
+      "why": "경금은 막힌 문을 비틀어 열고 아니면 아니라고 끊는 쇠라, 돌려 말하는 걸 답답해합니다. ISFJ의 Fe는 상대 표정이 굳을까 봐 말끝을 둥글게 깎습니다. 속에서는 '아니다'가 날을 세우는데 입으로는 '괜찮아요'가 먼저 나옵니다.",
+      "scene": { "text": "마음에 안 드는 선물을 받고 '고마워, 잘 쓸게' 하며 웃지만, 집에 와서 상자를 옷장 맨 위 칸에 올려 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ISFJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.2,
+      "why": "무토는 물살 앞에서 꿈쩍 않고 버티는 둑이라, 맡은 자리를 쉽게 떠나지 않습니다. ISFJ의 Si는 한번 맡은 책임을 기록과 습관으로 끝까지 붙듭니다. 그 덕에 믿고 기대는 사람이 늘지만, 둑이 터지기 직전까지 아프다는 말은 하지 않습니다.",
+      "scene": { "text": "열이 나는 날에도 '내가 빠지면 인수인계가 꼬인다'며 약부터 먹고 출근길 버스에 오릅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ISFJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.3,
+      "why": "갑목은 길 없는 곳에 먼저 말뚝을 박는 나무라, 방향을 먼저 정해 놓고 움직입니다. ISFJ의 Si는 일정과 준비물을 미리 깔아 두며 불안을 줄입니다. 앞날의 그림이 일찍 서 있어 흔들림이 적지만, 계획이 틀어지면 마음이 한참 따라오지 못합니다.",
+      "scene": { "text": "새해 첫 주에 가족 행사 날짜와 병원 예약, 보험 갱신일을 색깔 펜으로 달력에 다 적습니다. 4월 모임이 취소되자 그 칸만 한참 쳐다봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ISFJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 1.12,
+      "why": "계수는 눈에 안 보이게 스며 잎을 살리는 물안개라, 말하지 않은 기분까지 적십니다. ISFJ의 Fe는 상대가 꺼내기 전에 필요한 한마디를 고릅니다. 위로가 정확해서 마음을 놓는 사람이 많은데, 정작 내 눈물은 스며들 곳이 마땅치 않습니다.",
+      "scene": { "text": "친구가 '나 괜찮아' 하고 보낸 문장 끝에 점이 하나 붙은 걸 보고, 저녁에 '밥은 먹었어?'만 짧게 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ISFJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "detailFocus",
+      "score": 0.64,
+      "why": "신금은 하나 어긋나면 전체가 멈추는 시계 톱니라, 작은 틈을 그냥 지나치지 못합니다. ISFJ의 Si는 지난번과 달라진 점을 바로 알아챕니다. 남들이 못 보는 실수를 미리 막아 주지만, 그 눈은 쉬는 날에도 꺼지지 않아 쉬는 곳의 구석까지 훑습니다.",
+      "scene": { "text": "친구 집에 놀러 가서 액자가 살짝 기운 걸 보고, 대화 도중 눈이 자꾸 그쪽으로 갑니다. 돌아갈 때쯤 슬쩍 바로잡아 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ISFJ",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 0.24,
+      "why": "편인은 교과서 대신 옆길에서 혼자 배우는 머리라, 남들과 다른 방식에 끌립니다. ISFJ의 Si는 검증된 방법을 믿고 쓰던 순서를 지킵니다. 새 방법이 궁금해도 혼자 조사만 오래 하고, 직접 써 보는 일은 한 박자 늦습니다.",
+      "scene": { "text": "요리 영상에서 본 새 레시피를 즐겨찾기에 열 개째 모아 두고, 정작 저녁엔 늘 끓이던 김치찌개를 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ISFJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 0.92,
+      "why": "편관은 압박이 셀수록 눈이 또렷해지는 힘이라, 급한 순간 맨 앞에서 짐을 집니다. ISFJ의 Fe는 모두가 불안해할 때 사람부터 챙겨 앉힙니다. 위기에 가장 믿음직한 사람이 되는 대가로, 일이 끝난 뒤에야 다리가 풀려 혼자 주저앉습니다.",
+      "scene": { "text": "엘리베이터가 멈추자 옆 사람 손을 잡아 주며 관리실에 침착하게 전화를 겁니다. 문이 열리고 나서야 자기 손이 떨리는 걸 알아챕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ISFJ",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "score": 0.78,
+      "why": "편재는 길목을 먼저 읽고 크게 벌리고 돌리는 장사꾼 감각이라, 새 판에 돈을 걸고 싶어 합니다. ISFJ의 Si는 안 써 본 곳에 쓰는 돈을 가장 무겁게 봅니다. 눈은 큰 기회를 보는데 손은 통장 잔고부터 확인합니다.",
+      "scene": { "text": "중고 거래 앱에서 시세보다 싼 물건을 보고 채팅창을 열었다가, 판매자 후기를 스무 개 읽는 사이 이미 팔린 걸 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ISFJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "conflictApproach",
+      "score": 0.91,
+      "why": "겁재는 옆에서 누가 달리면 더 빨라지는 승부사라, 밀리면 속이 끓습니다. ISFJ의 Fe는 경쟁이 사람 사이를 상하게 할까 봐 겉으로는 한 걸음 물러섭니다. 지고 싶지 않은 마음과 사이 좋게 지내려는 마음이 부딪쳐, 혼자 조용히 연습량만 늘립니다.",
+      "scene": { "text": "동기가 먼저 팀장 발표를 받자 환하게 박수를 쳐 줍니다. 그날 밤 자격증 강의 결제 버튼을 누릅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ISFJ",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.75,
+      "why": "정인은 받은 보살핌을 차곡차곡 쌓아 두는 우산 같은 힘이라, 받은 만큼 돌려주고 싶어 합니다. ISFJ의 Fe와 Si는 누구에게 무엇이 필요한지 기억해 둡니다. 한 번 베푼 정성이 오래가는 반면, 도움을 받는 쪽보다 주는 쪽이 늘 편해서 기대는 법은 서툽니다.",
+      "scene": { "text": "길을 알려 준 동네 약사님이 이사를 간다는 말에, 며칠 밤 고른 손편지와 차 세트를 챙겨 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ISFJ",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "spendingControl",
+      "score": 1.76,
+      "why": "정재는 정해진 돈을 꼼꼼히 모으고 지키는 가계부 같은 힘이라, 쓰기 전에 먼저 따집니다. ISFJ의 Si는 지난달 지출을 기억해 이번 달 씀씀이를 맞춥니다. 덕분에 통장은 단단하지만, 나를 위한 한 번의 지출 앞에서만 계산기가 유난히 오래 돕니다.",
+      "scene": { "text": "마트에서 2천 원 더 싼 우유를 찾아 한 칸 더 걷고, 같은 날 부모님 생신 선물은 가격표를 보지 않고 집어 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ISFJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 0.74,
+      "why": "비견은 기대지 않고 나란히 서서 자기 몫을 해내는 힘이라, 내 선이 또렷하길 바랍니다. ISFJ의 Fe는 부탁이 오면 선을 먼저 접어 줍니다. 선을 긋고 싶은 마음과 맞춰 주려는 손이 매번 엇갈려, 부탁을 받고 나서야 '아, 그건 내 몫이 아닌데' 싶어집니다.",
+      "scene": { "text": "이웃이 아이를 한 시간만 봐 달라고 하자 '네, 그럼요' 하고, 현관문이 닫히자마자 오늘 하려던 일 목록을 바라봅니다.", "requires": { "relationship": "any", "children": "has", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ISFJ",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ISFJ",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "score": 0.63,
+      "why": "식신은 좋아하는 일을 꾸준히 만들어 나누는 손맛 요리사 같은 힘이라, 내어놓는 즐거움이 큽니다. ISFJ의 Fe는 상대가 맛있게 먹는 표정에서 힘을 얻습니다. 즐거워서 하는 날은 가볍지만 의무가 되면 같은 요리도 짐이 되니, 상황에 따라 갈립니다.",
+      "scene": { "text": "주말 아침, 아무도 시키지 않은 팬케이크를 구워 식구 수대로 접시에 놓고 첫 입 먹는 표정을 슬쩍 확인합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
     }
   ]
 }

@@ -714,6 +714,456 @@
         "mbti:ISFP:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ISFP",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 1.29,
+      "why": "정화는 손으로 감싼 촛불처럼 가까운 곳만 또렷하게 밝히고 바람 앞에서 일렁입니다. ISFP의 Fi는 남의 반응보다 내 안의 눈금을 오래 들여다봅니다. 작은 서운함도 깊이 곱씹고, 말하지 못한 채 밤마다 같은 장면을 돌려 봅니다.",
+      "scene": { "text": "지나가듯 들은 한마디가 마음에 걸려, 샤워하는 내내 그때 뭐라고 답할 걸 그랬는지 혼자 말을 이어 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ISFP",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 0.87,
+      "why": "병화는 밤 운동장을 밝히는 조명탑이라 켜지면 크게 말하고 웃게 만듭니다. ISFP는 Fi로 안에서 느끼고 소리를 아끼는 쪽입니다. 신나는 날엔 말이 쏟아지다가, 집에 오면 너무 많이 떠들었다며 입을 닫고 후회합니다.",
+      "scene": { "text": "친구들 사이에서 신나게 흉내를 내며 웃기다가, 귀갓길 버스에서는 이어폰을 꽂고 창밖만 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:ISFP",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "conflictApproach",
+      "score": 1.25,
+      "why": "을목은 부딪치는 대신 틈을 감아 돌아가는 덩굴이라 갈등을 정면으로 건드리지 않습니다. ISFP도 분위기가 굳을 기미를 Ni로 먼저 읽고 한발 비켜섭니다. 큰 싸움은 드물지만, 정작 하고 싶은 말은 돌고 돌아 상대에게 닿지 않습니다.",
+      "scene": { "text": "모임 장소가 마음에 안 들어도 '난 다 좋아'라고 답하고, 집에 오는 길에야 길게 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ISFP",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ISFP",
+      "kind": "conditional",
+      "dimension": "noveltySeeking",
+      "score": 0.52,
+      "why": "임수는 밀물처럼 넓게 들어오는 물이라 낯선 것도 일단 받아들입니다. ISFP는 Se로 새로운 맛과 색을 즐기지만 Fi로 내 취향에 맞는지 거릅니다. 마음 끌리는 새것에는 문을 열고, 남이 권한 새것에는 조용히 문을 닫습니다.",
+      "scene": { "text": "새로 생긴 카페의 시그니처 음료를 한 모금 마셔 보고, 취향이 아니면 웃으며 '맛있네요' 하고 남깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ISFP",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.88,
+      "why": "기토는 베란다 텃밭 흙처럼 작은 필요를 알아보고 하나씩 채워 줍니다. ISFP는 Se로 상대 목소리와 표정의 작은 변화를 바로 잡아냅니다. 챙김이 세심해서 곁이 편안해지지만, 내가 지친 건 모른 채 남 먼저 챙기다 바닥납니다.",
+      "scene": { "text": "동생이 감기 기운이 있는 걸 목소리만 듣고 알아채, 말없이 가방에 따뜻한 차 한 병을 넣어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ISFP",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.38,
+      "why": "무토는 둑처럼 묵직하게 버티며 뒤에 있는 사람이 안심하게 합니다. ISFP는 말 대신 곁에 앉아 있는 걸로 챙기는 쪽입니다. 급한 사람이 옆에서 숨을 돌리지만, 정작 나는 누구에게도 기대지 못한 채 속으로 무거워집니다.",
+      "scene": { "text": "친구가 울면서 전화한 밤, 해결책은 말하지 못하고 통화가 끝날 때까지 숨소리를 들어 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ISFP",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 1.18,
+      "why": "갑목은 먼저 방향을 꽂고 앞서 이끌려는 큰 나무입니다. ISFP는 내가 이끌기보다 각자 흐르게 두는 걸 편하게 여깁니다. 이끌고 싶은 마음과 맡기고 싶은 마음이 맞서, 평소엔 조용하다가 내 작업 앞에서만 갑자기 고집이 섭니다.",
+      "scene": { "text": "친구 생일 영상을 같이 편집하다 누가 자막 색을 바꾸자, 평소 말 없던 사람이 '그건 안 돼' 하고 단호히 막습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ISFP",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 0.54,
+      "why": "신금은 톱니처럼 작게 깎여 있어서 기준에 어긋나면 바로 알아챕니다. ISFP는 싫은 건 분명히 알면서 말로 선을 긋는 일은 늦게 합니다. 아는 마음과 말하는 입이 어긋나, 쌓이다 한 번에 거리를 두는 쪽으로 터집니다.",
+      "scene": { "text": "빌려 간 옷이 구겨져 돌아와도 괜찮다고 웃고, 다음 약속부터 답장 속도가 슬며시 느려집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏印:ISFP",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "score": 0.97,
+      "why": "편인이 두드러지면 정해진 답보다 옆길에서 혼자 배우고 속을 깊이 파고듭니다. ISFP는 Fi로 내 안의 질문을 오래 붙들고 지냅니다. 같은 쪽으로 밀어 독창적인 취향이 만들어지지만, 생각이 깊어질수록 사람에게서 멀어집니다.",
+      "scene": { "text": "작은 서점에서 아무도 안 집는 시집 한 권을 사 와, 밤새 한 구절만 반복해 읽으며 이유를 찾습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ISFP",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "conflictApproach",
+      "score": 1.05,
+      "why": "편관이 두드러지면 압박 앞에서 정면으로 맞서 책임을 지는 쪽으로 몰립니다. ISFP는 부딪치는 자리를 피하고 조용히 비켜서는 사람입니다. 맞서야 한다는 마음과 피하고 싶은 몸이 엇갈려, 버티다 몸이 먼저 아파 옵니다.",
+      "scene": { "text": "누가 큰 소리로 몰아붙이는 자리에서 겉으로는 고개를 끄덕이지만, 손에 쥔 컵 손잡이만 세게 쥡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ISFP",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.68,
+      "why": "편재가 두드러지면 사람이 모이는 길목에서 기회를 읽고 넓게 만납니다. ISFP는 Se로 사람 분위기를 몸으로 즐기지만 오래 있으면 힘이 빠집니다. 만남에서 얻는 소식과 일거리가 쏠쏠한 대신, 약속을 줄여야 비로소 쉬는 기분이 듭니다.",
+      "scene": { "text": "시장 구경을 가서 주인들과 수다를 떨고 좋은 물건 정보까지 챙겨 오지만, 집에 오자마자 소파에 쓰러집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ISFP",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 0.98,
+      "why": "상관이 두드러지면 어색한 곳을 보고 더 나은 말로 바로 고쳐 말하고 싶어집니다. ISFP는 상대 기분을 먼저 살펴 직설을 삼킵니다. 속에선 정확한 문장이 나오는데 입 앞에서 멈춰, 대신 표정이나 작품으로 새어 나옵니다.",
+      "scene": { "text": "친구가 고른 청첩장 글꼴이 영 아니다 싶지만 말은 못 하고, 집에서 혼자 더 나은 글꼴로 시안을 만들어 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ISFP",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "score": 1.24,
+      "why": "겁재가 두드러지면 옆에서 누가 앞서 달릴 때 더 세게 밟고 싶어집니다. ISFP는 비교당하는 게 싫어 승부 자체를 피하려 합니다. 이기고 싶은 마음이 올라와도 티 내지 못해, 혼자 밤에 연습량만 늘립니다.",
+      "scene": { "text": "친구가 올린 사진이 칭찬받자 별말 없이 하트만 누르고, 주말 내내 같은 장소를 찾아가 다시 찍습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ISFP",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ISFP",
+      "kind": "conditional",
+      "dimension": "planning",
+      "score": 0.3,
+      "why": "정인이 두드러지면 배운 걸 차곡차곡 쌓아 이해한 만큼 움직이려 합니다. ISFP는 계획표보다 그날 끌리는 느낌을 따라 움직입니다. 마음이 놓이는 날엔 배운 순서대로 착착 해내고, 기분이 흔들리는 날엔 계획이 통째로 밀립니다.",
+      "scene": { "text": "새 악기 교본 1과를 정성껏 끝내 놓고, 비 오는 날엔 연습 대신 창가에서 음만 흥얼거립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ISFP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.66,
+      "why": "정관이 두드러지면 약속과 절차를 지켜 믿음을 쌓는 쪽으로 마음이 당깁니다. ISFP는 정해진 틀보다 그날 느낌을 따라가는 쪽입니다. 지켜야 한다는 압박과 흐르고 싶은 마음이 부딪혀, 마감 전날 몰아서 끝내고 자신을 책망합니다.",
+      "scene": { "text": "제출일을 달력에 크게 적어 놓고도 미루다, 전날 밤 늦게 마지막 칸을 채우며 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ISFP",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "spendingControl",
+      "score": 1.03,
+      "why": "정재가 두드러지면 모으고 지키는 현실적인 돈 감각이 앞섭니다. ISFP는 마음에 드는 색과 질감 앞에서 지갑이 먼저 열립니다. 아끼자는 계산과 예쁜 걸 손에 쥐고 싶은 욕심이 맞서, 가격표를 보고 돌아섰다가 다음 날 다시 갑니다.",
+      "scene": { "text": "문구점에서 마음에 든 노트를 집었다 놓았다 하다 계산대를 지나치고, 이튿날 다시 와서 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ISFP",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 0.94,
+      "why": "비견이 두드러지면 내 몫은 내 손으로 한다는 단단한 중심이 섭니다. ISFP는 싫은 걸 알면서도 '아니'를 늦게 꺼냅니다. 선을 긋고 싶은 마음은 분명한데 입이 따라오지 않아, 부탁을 받아 놓고 속으로 혼자 계산합니다.",
+      "scene": { "text": "이사 도와 달라는 부탁에 '그래' 하고 답한 뒤, 날짜가 다가올수록 아무 말 없이 마음이 무거워집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:ISFP",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "ISFP",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.9,
+      "why": "식신이 두드러지면 좋아하는 걸 만들어 나누면서 기쁨을 느낍니다. ISFP는 Se로 손에 닿는 감각을 살려 선물과 정성을 건넵니다. 그 정성이 곁을 따뜻하게 하지만, 만들고 챙기다 정작 나를 쉬게 하는 날은 비어 갑니다.",
+      "scene": { "text": "직접 말린 꽃을 붙인 엽서를 쓰느라 밤을 새우고, 다음 날 몸이 천근같이 무겁습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언",
+          "성격 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
     }
   ]
 }

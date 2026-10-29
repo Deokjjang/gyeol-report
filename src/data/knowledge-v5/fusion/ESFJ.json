@@ -595,6 +595,414 @@
         "mbti:ESFJ:functionStack",
         "추정"
       ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:ESFJ",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 1,
+      "why": "정화는 크지 않아도 가까운 곳을 또렷하게 비추는 촛불이라, 곁에 있는 사람을 먼저 살핍니다. ESFJ의 Fe는 방 안의 온도와 표정을 읽어 필요한 걸 먼저 건넵니다. 챙김이 정확해서 가까운 사람은 따뜻한데, 촛농처럼 내 힘이 줄어드는 건 늦게 알아챕니다.",
+      "scene": { "text": "시험 기간인 동생 방 문 앞에 간식과 따뜻한 보리차를 놓고, 문은 열지 않은 채 '파이팅' 쪽지만 문틈에 끼워 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:ESFJ",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.55,
+      "why": "병화는 켜지면 사람들이 몰려드는 조명탑이라, 모인 자리에서 더 환해집니다. ESFJ의 Fe는 사람들 속에서 오히려 에너지가 차오릅니다. 모임에서 분위기를 끌어올리는 일은 쉬워지는 만큼, 혼자 있는 저녁엔 불이 꺼진 듯 허전해집니다.",
+      "scene": { "text": "일요일 오후에 약속이 갑자기 취소되자 '그럼 누구 시간 돼?' 하며 연락처를 위아래로 넘기다 결국 동네 친구를 불러냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:ESFJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.71,
+      "why": "임수는 소리 없이 넓게 퍼지며 혼자 깊어지는 밀물이라, 속으로 가라앉는 시간이 필요합니다. ESFJ의 Fe는 사람들 사이에서 힘을 얻고 불러 주면 거절하지 못합니다. 사람이 그리운 마음과 혼자 가라앉고 싶은 마음이 번갈아 와서, 약속을 잡고 나서 후회하기도 합니다.",
+      "scene": { "text": "약속 장소로 가는 길에 문득 집에 가고 싶어져, 지하철 환승 통로에서 한참 서성이다 결국 발길을 돌리지 못합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:ESFJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 1.6,
+      "why": "기토는 작은 자리에 씨를 품고 매일 돌보는 텃밭 흙이라, 정성이 쌓일수록 결과가 눈에 보입니다. ESFJ의 Si는 누가 무엇을 먹고 싫어하는지 기억하며 같은 정성을 되풀이합니다. 주변이 잘 자라는 만큼 내 흙이 마르는 건 가장 나중에 알아챕니다.",
+      "scene": { "text": "옆집이 감기에 걸렸다는 말에 생강차 재료와 죽을 챙겨 갑니다. 문 앞에서 '필요한 거 있으면 말해'만 하고 곧장 돌아섭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:ESFJ",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 0.89,
+      "why": "경금은 아니면 아니라고 끊는 쇠라, 사실을 먼저 짚는 말이 튀어나옵니다. ESFJ의 Fe는 상대 기분이 먼저 보여 위로부터 하려 합니다. 위로하고 싶은 마음과 고쳐 주고 싶은 말이 같은 입에서 부딪쳐, 말을 꺼낸 뒤에 표정을 살피게 됩니다.",
+      "scene": { "text": "친구가 이별 얘기를 하며 우는데 '그 사람 원래 연락 잘 안 했잖아'가 먼저 나오고, 친구 표정이 굳자 곧바로 휴지를 건넵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:ESFJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.03,
+      "why": "무토는 물살 앞에서 버티는 둑이라, 한번 맡은 자리를 쉽게 떠나지 않습니다. ESFJ의 Fe는 맡은 일이 누군가의 하루에 닿는다고 느낄 때 책임이 더 단단해집니다. 믿음직하다는 말을 가장 많이 듣지만, 쉬어도 된다는 허락은 스스로에게 가장 늦게 내립니다.",
+      "scene": { "text": "학부모 모임 총무를 4년째 맡아, 이번 학기에도 '다른 분 안 계세요?' 한 번 묻고는 아무도 손을 안 들자 명단을 받아 옵니다.", "requires": { "relationship": "any", "children": "has", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:ESFJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "independence",
+      "score": 0.3,
+      "why": "갑목은 먼저 말뚝을 박고 혼자 방향을 잡는 나무라, 스스로 정하려는 힘이 있습니다. ESFJ의 Fe는 모두 함께 가는 길이 편해서 주변 의견을 먼저 듣습니다. 일이 내 몫으로 또렷할 땐 혼자 척척 하고, 사람 사이가 걸리면 같이 정하려 해서 일마다 갈립니다.",
+      "scene": { "text": "이사 갈 동네를 지도에 직접 표시해 놓고도, 가족에게 '어디가 좋아?' 하고 물은 뒤 의견을 조금씩 반영해 다시 고칩니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:ESFJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 0.49,
+      "why": "계수는 보이지 않게 닿는 곳마다 생기를 돌게 하는 물안개라, 말 없는 아픔도 스며들듯 알아챕니다. ESFJ의 Fe는 목소리 톤 하나로 오늘 기분을 읽어 냅니다. 위로가 빠르고 정확한 대신, 남의 감정이 내 감정처럼 번져 통화가 끝난 뒤 혼자 지칩니다.",
+      "scene": { "text": "평소보다 목소리가 낮은 엄마에게 '무슨 일 있어?' 대신 '오늘 뭐 먹었어?'를 묻다가, 먹은 게 없다는 말에 바로 반찬을 싸서 집에 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:ESFJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 0.56,
+      "why": "신금은 작아도 어긋나면 전체가 멈추는 톱니라, 지켜야 할 선이 또렷합니다. ESFJ의 Fe는 사람 사이가 틀어질까 봐 선을 부드럽게 허물어 줍니다. 선을 말하고 싶은 마음과 서운해할 얼굴이 떠오르는 마음이 맞서, '아니요'를 삼키는 날이 많습니다.",
+      "scene": { "text": "빌려 간 물건을 석 달째 안 돌려주는 지인에게 '아 맞다 그거~' 하고 웃으며 돌려 말하고, 돌아오는 길에 같은 물건을 새로 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:ESFJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "dutifulness",
+      "score": 0.56,
+      "why": "편관은 압박이 셀수록 맨 앞에서 짐을 지는 힘이라, 급할수록 단호해집니다. ESFJ의 Fe는 모두의 기분을 해치지 않는 길을 찾습니다. 단호하게 지시하고 싶은 마음과 눈치 보는 마음이 맞서, 지시한 뒤에 '내가 너무 세게 말했나' 곱씹습니다.",
+      "scene": { "text": "행사장에서 음향이 끊기자 스태프에게 '이쪽 먼저요' 하고 딱 잘라 말하고, 끝나자 옆 사람에게 '아까 말투 괜찮았죠?' 하고 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:ESFJ",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.72,
+      "why": "편재는 사람과 돈이 흐르는 길목을 먼저 읽는 장사꾼 감각이라, 사람 많은 곳에서 기회를 봅니다. ESFJ의 Fe는 낯선 자리에서도 대화의 문을 쉽게 엽니다. 인맥이 넓어지는 만큼 약속이 겹치고, 모든 자리에 얼굴을 비추려다 내 시간이 줄어듭니다.",
+      "scene": { "text": "모임에서 처음 만난 사람의 직업을 듣고 '우리 사촌이 그쪽 일 하는데 소개해 줄까요?' 하며 번호를 주고받습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ESFJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.06,
+      "why": "상관은 굳은 규칙의 빈틈을 보고 더 나은 말을 꺼내는 날 선 재주라, 틀이 갑갑하게 느껴집니다. ESFJ의 Si는 정해진 예의와 절차를 지켜야 마음이 편합니다. 고치고 싶은 입과 따르고 싶은 손이 다르게 움직여, 말은 속으로 삼키고 절차는 그대로 따릅니다.",
+      "scene": { "text": "집안 제사 순서가 비효율적이라는 생각이 들어도 그날은 말없이 상을 차리고, 다음 날 사촌에게만 슬쩍 '내년엔 이렇게 하면 어때?' 하고 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:ESFJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 0.54,
+      "why": "겁재는 내 편이면 지갑도 마음도 활짝 여는 승부사 힘이라, 사람들 곁에서 더 열심히 달립니다. ESFJ의 Fe는 함께 있는 사람들의 기분을 끌어올릴 때 에너지가 납니다. 같이 있을수록 힘이 붙는 조합이지만, 어울림에 쓰는 돈과 시간이 계산 없이 새 나갑니다.",
+      "scene": { "text": "동호회 뒤풀이 계산대에서 '내가 낼게요' 하고 카드를 먼저 내밀고, 다음 날 가계 앱에 찍힌 숫자를 보고 조용히 웃습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:ESFJ",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "score": 0.94,
+      "why": "정인은 받은 보살핌을 쌓아 두었다가 돌려주는 우산 같은 힘이라, 받은 정을 오래 기억합니다. ESFJ의 Si는 누가 언제 무엇을 해 줬는지를 파일처럼 보관합니다. 은혜를 갚는 마음이 한결같아 사람이 모이지만, 갚을 때까지 마음의 빚 목록은 머릿속에서 지워지지 않습니다.",
+      "scene": { "text": "이사 날 도와준 친구의 아이 돌잔치 소식에, 선물을 며칠 동안 고르고 포장지까지 직접 사서 손글씨 카드를 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ESFJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "score": 1.47,
+      "why": "정관은 규칙과 약속을 지켜 신뢰를 쌓는 바른 관리자 같은 힘이라, 기한과 예의를 흐트러뜨리지 않습니다. ESFJ의 Si는 해 오던 절차를 정확히 따릅니다. 믿을 만한 사람이라는 평이 일찍 붙는 대신, 남이 약속을 어기면 화보다 실망이 오래갑니다.",
+      "scene": { "text": "빈 골목에서도 아이들이 보이면 차를 세우고, 약속 장소엔 늘 10분 일찍 도착해 휴대폰 없이 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ESFJ",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.85,
+      "why": "정재는 정해진 수입을 모아 지키는 가계부 같은 힘이라, 앞으로 쓸 돈을 미리 나눕니다. ESFJ의 Si는 경조사와 명절 같은 정해진 지출을 달력에 먼저 깔아 둡니다. 사람 챙기는 돈이 빠지지 않는 계획이라 든든하지만, 내 몫 칸은 늘 가장 얇게 그려집니다.",
+      "scene": { "text": "연초에 가족 생일과 명절 용돈을 달력에 다 적어 칸마다 금액을 정해 놓고, 내 옷 사는 칸에는 '여유 되면'이라고 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:ESFJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.21,
+      "why": "비견은 기대지 않고 제 몫을 제 손으로 해내는 힘이라, 혼자 해결하려는 고집이 있습니다. ESFJ의 Fe는 같이 해야 마음이 놓이고 도움을 주고받는 데 편안합니다. 혼자 해내고 싶은 마음과 함께하고 싶은 마음이 줄다리기를 해서, 부탁할까 말까 휴대폰만 들었다 놨다 합니다.",
+      "scene": { "text": "이삿짐 정리가 밤까지 이어져도 도와주겠다는 친구에게 '괜찮아, 혼자 할게' 하고, 친구가 간 뒤 박스 사이에 앉아 한참 허리를 두드립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "결과 확정"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
     }
   ]
 }
