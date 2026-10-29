@@ -59,8 +59,11 @@ describe("Book share gestures and status", () => {
 });
 describe("server event copy and closed policy", () => {
   const view: LaunchEventView = { state: "ACTIVE", serverNow: "2026-10-12T00:00:00Z", startsAt: LAUNCH_START, endsAt: LAUNCH_END, campaignAvailable: true, referralAvailable: true, inviterAvailable: true, budgetApproved: true, campaignSlug: "launch-local" };
-  it.each(["ACTIVE", "SCHEDULED", "PAUSED", "ENDED", "UNAVAILABLE"])("%s keeps sharing and all conditions available", state => {
-    const html = renderToStaticMarkup(<BookEventNotice view={state === "UNAVAILABLE" ? null : { ...view, state: state as LaunchEventView["state"] }} remaining={10000} />);
+  it.each(["SCHEDULED", "PAUSED", "ENDED", "UNAVAILABLE"])("%s leaves no event paragraph", state => {
+    expect(renderToStaticMarkup(<BookEventNotice view={state === "UNAVAILABLE" ? null : { ...view, state: state as LaunchEventView["state"] }} remaining={10000} />)).toBe("");
+  });
+  it.each(["ACTIVE"])("%s shows the closed complete conditions", state => {
+    const html = renderToStaticMarkup(<BookEventNotice view={{ ...view, state: state as LaunchEventView["state"] }} remaining={10000} />);
     expect(html).toContain("무료 이용권 참여 조건 보기"); expect(html).not.toMatch(/<details[^>]*open/); expect(html).toContain("11월 1일 0시"); expect(html).toContain("광고·친구 초대 중복 불가"); expect(html).toContain("처리 지연");
     expect(html.includes("내 책의 초대 링크로")).toBe(state === "ACTIVE");
     expect(html).not.toMatch(/KST|\+09:00|T15:00:00Z/);

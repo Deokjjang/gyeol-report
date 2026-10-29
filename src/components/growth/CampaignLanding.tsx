@@ -65,6 +65,9 @@ export function CampaignLanding({ campaign, utm, member = false, local = false }
   }
   const date = (v: string) => new Intl.DateTimeFormat("ko-KR", { timeZone: "Asia/Seoul", year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", hourCycle: "h23" }).format(new Date(v));
   const eventActive = !unavailable && (state === "ACTIVE_ELIGIBLE" || state === "ACTIVE_INELIGIBLE" || (state === "BENEFIT_ALREADY_GRANTED" && current.active && remaining !== null && remaining > 0));
+  // After the end (server state, server clock or the local countdown reaching 0), only one line and a home link remain.
+  if (state === "ENDED" || remaining === 0 || (current.endsAt !== null && Date.parse(current.serverNow) >= Date.parse(current.endsAt)))
+    return <main className={s.root} data-campaign-landing data-campaign-state="ENDED"><article className={s.sheet}><p className={s.description}>이벤트가 종료되었습니다</p><a className={s.cta} href={home}>홈으로</a></article></main>;
   return <main className={s.root} data-campaign-landing data-campaign-state={state}><header className={s.header}><a href={home}>결리포트<small>GYEOL REPORT</small></a><a href={local ? "/dev/account" : member ? "/account" : "/login"}>{member ? "내 서재" : "로그인"}</a></header>
     <article className={s.sheet}>{local ? <p className={s.note}>로컬 캠페인 검수 · 실제 고객 혜택 아님</p> : null}
       <p className={s.eyebrow}>A BOOK ABOUT YOU</p><h1>{current.headline}</h1>

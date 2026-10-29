@@ -36,7 +36,7 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
   it.each([
     ["2026-10-10T23:59:59+09:00","SCHEDULED"], ["2026-10-11T00:00:00+09:00","ACTIVE"],
     ["2026-10-12T12:00:00+09:00","ACTIVE"], ["2026-10-29T00:00:00+09:00","ACTIVE"],
-    ["2026-10-31T23:59:59+09:00","ACTIVE"], ["2026-11-01T00:00:00+09:00","ENDED"], ["2026-11-01T00:00:01+09:00","ENDED"],
+    ["2026-10-31T23:59:59+09:00","ACTIVE"], ["2026-11-01T00:00:00+09:00","ENDED"], ["2026-11-01T00:00:01+09:00","ENDED"], ["2026-11-02T00:00:00+09:00","ENDED"],
   ])("%s is %s with no browser authority", async (at,state) => {
     await h.clock(at); expect((await h.state()).state).toBe(state);
     const a=await h.acquisition(); expect(a.result.ok).toBe(state==="ACTIVE");

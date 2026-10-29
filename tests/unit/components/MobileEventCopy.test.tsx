@@ -14,15 +14,15 @@ describe("mobile event explanation follows server presentation", () => {
     expect(html.match(/ISSUE /g)).toHaveLength(6); expect(html).not.toMatch(/<details[^>]*open|KST|\+09:00/);
     for (const text of ["유입 기록 없이", "전체 최대 2장", "광고·친구 초대 중복 불가", "첫 리포트를 정상 발행 완료", "11월 1일 0시", "처리 지연", "유료 이용권"]) expect(LAUNCH_NOTICE).toContain(text);
   });
-  it.each(["SCHEDULED", "PAUSED", "ENDED", "ACTIVE_INELIGIBLE", "BENEFIT_ALREADY_GRANTED"] as CampaignState[])("%s offers only the possible action", state => {
+  it.each(["SCHEDULED", "PAUSED", "ACTIVE_INELIGIBLE", "BENEFIT_ALREADY_GRANTED"] as CampaignState[])("%s offers only the possible action", state => {
     const html = renderToStaticMarkup(<CampaignLanding campaign={{ ...campaign, state, active: !["PAUSED", "ENDED", "SCHEDULED"].includes(state) }} utm={{}} />), main = html.split("<details")[0];
     expect(main).not.toContain("이벤트 참여하고 가입하기"); expect(main).not.toContain("리포트 1권 무료"); expect(main).toContain("내 책 고르기");
-    if (["PAUSED", "ENDED", "SCHEDULED"].includes(state)) expect(main).not.toContain("나에게도 이용권 1장이 추가돼요");
+    if (["PAUSED", "SCHEDULED"].includes(state)) expect(main).not.toContain("나에게도 이용권 1장이 추가돼요");
   });
   it("generic sharing is distinct from an invitation, and recipients never see inviter copy", () => {
     expect(renderToStaticMarkup(<BookEventNotice view={launch} remaining={1000} invitation={false} />).split("<details")[0]).toContain("일반 책 공유 링크입니다");
     const recipient = renderToStaticMarkup(<BookEventNotice view={launch} remaining={1000} recipient />).split("<details")[0];
     expect(recipient).toContain("친구의 초대 링크"); expect(recipient).not.toContain("나에게도");
-    for (const state of ["SCHEDULED", "PAUSED", "ENDED"] as const) expect(renderToStaticMarkup(<BookEventNotice view={{ ...launch, state }} remaining={null} />).split("<details")[0]).not.toContain("추가돼요");
+    for (const state of ["SCHEDULED", "PAUSED", "ENDED"] as const) expect(renderToStaticMarkup(<BookEventNotice view={{ ...launch, state }} remaining={null} />)).toBe("");
   });
 });
