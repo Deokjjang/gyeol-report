@@ -48,9 +48,8 @@ it("Book uses canonical message before receipt and shares one calculation-only D
   expect(ui.indexOf('if (!result.ok)')).toBeLessThan(ui.indexOf('const nextStep'));
   expect(ui).toContain('if (attempt !== validationId.current) return');
   const css = readFileSync("src/app/dev/book-preview/book.module.css", "utf8");
-  // P5: 문서 자체가 스크롤하고 장 이동 막대는 화면 아래 고정(safe area 포함), 본문은 막대 높이만큼 아래 여백.
-  expect(css).toContain('height: calc(56px + env(safe-area-inset-bottom, 0px))');
-  expect(css).toContain('padding: 0 max(16px, 5vw) env(safe-area-inset-bottom, 0px)');
-  expect(css).toContain('padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px))');
+  expect(css).toContain('height: calc(100% - 54px - env(safe-area-inset-bottom, 0px))');
+  expect(css).toContain('height: calc(54px + env(safe-area-inset-bottom, 0px))');
+  expect(css).toContain('padding: 0 20px env(safe-area-inset-bottom, 0px)');
   expect(css).not.toContain('padding-bottom: 34px');
 });

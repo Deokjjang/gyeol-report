@@ -11,7 +11,7 @@ export async function BookHomeRoute({ internal = false }: { internal?: boolean }
   return <BookHomePresentation inputPath={internal ? "/dev/book-flow/input" : "/report/new"} year={getAnnualFortuneCurrentYear()} authEnabled={internal || accountPublicEnabled()} />;
 }
 export async function BookInputRoute({ internal = false }: { internal?: boolean }) {
-  return <Suspense fallback={<p role="status" style={{ minHeight: "100svh", padding: "96px 24px" }}>입력 준비 중</p>}><BookInputPresentation internal={internal} authEnabled={internal || accountPublicEnabled()} ticketShopEnabled={internal || ticketShopEnabled()} now={new Date().toISOString()} /></Suspense>;
+  return <Suspense fallback={<p>입력 준비 중</p>}><BookInputPresentation internal={internal} authEnabled={internal || accountPublicEnabled()} ticketShopEnabled={internal || ticketShopEnabled()} now={new Date().toISOString()} /></Suspense>;
 }
 export async function BookFooterRoute() {
   return <BookFooterPresentation />;

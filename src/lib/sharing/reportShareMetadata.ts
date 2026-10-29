@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 
 export const SHARE_ORIGIN = "https://gyeolreport.com";
-// P5: 새 표지 디자인 공유 이미지(1200×630). 파일명에 버전을 붙여 메신저·검색 캐시를 새로 받게 한다.
-export const SHARE_IMAGE = `${SHARE_ORIGIN}/brand/og-v5.jpg`;
-export const SHARE_IMAGE_SIZE = { width: 1200, height: 630 } as const;
+export const SHARE_IMAGE = `${SHARE_ORIGIN}/brand/gyeol-report-og.png`;
 export const SHARE_TOKEN_PATTERN = /^gr_[A-Za-z0-9_-]{32}$/;
 export const BRAND_DESCRIPTION = "타고난 성격과 삶의 흐름을 읽고, 나만의 결을 발견해 더 나은 선택과 미래를 설계합니다.";
 
@@ -57,7 +55,7 @@ export function reportShareMetadata(data?: ReportShareData | null): Metadata {
     openGraph: {
       title, description, ...(data ? { url: data.url } : {}), type: "website",
       siteName: "결리포트", locale: "ko_KR",
-      images: [{ url: SHARE_IMAGE, ...SHARE_IMAGE_SIZE, alt: "결리포트" }],
+      images: [{ url: SHARE_IMAGE, width: 1536, height: 1024, alt: "GYEOL REPORT" }],
     },
     twitter: { card: "summary_large_image", title, description, images: [SHARE_IMAGE] },
   };

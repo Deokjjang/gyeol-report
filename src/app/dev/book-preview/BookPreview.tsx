@@ -69,7 +69,7 @@ export default function BookPreview({ library, initialBook, initialRead = false 
   const select = (index: number) => { auto.current?.interact(); setCurrent(wrapBook(index)); };
   const animateTurn = (direction: number, action: () => void) => {
     if (turnTimer.current) return;
-    setTurn({ direction, label: "" });
+    setTurn({ direction, label: stage === "reader" ? "GYEOL REPORT / PERSONAL EDITION" : "GYEOL REPORT / YOUR STORY" });
     action();
     turnTimer.current = setTimeout(() => { turnTimer.current = null; setTurn(null); }, reduced ? 20 : 510);
   };
@@ -120,7 +120,7 @@ export default function BookPreview({ library, initialBook, initialRead = false 
     setNote(null);
   };
 
-  return <main lang="ko" className={s.root} data-book-preview data-stage={stage} data-reduced-motion={reduced} style={{ "--cover": book.color, "--cover-ink": book.ink } as CSSProperties} onKeyDown={keyboard}>
+  return <main lang="ko" className={s.root} data-book-preview data-stage={stage} data-reduced-motion={reduced} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={keyboard}>
     <header className={s.header}><button className={s.wordmark} aria-label="결리포트 책장으로" onClick={closeBook}><b>결리포트</b><span>GYEOL REPORT</span></button>
       {stage === "home" ? <button className={s.login} onClick={() => { setMember(m => !m); setMessage(member ? "비회원 미리보기로 전환했습니다." : "회원 미리보기입니다. 실제 로그인은 하지 않습니다."); }}>{member ? "로그아웃" : "로그인"}</button> : <button className={s.close} aria-label="책 닫기" onClick={closeBook}>닫기 <span aria-hidden="true">×</span></button>}
     </header>
@@ -133,9 +133,9 @@ export default function BookPreview({ library, initialBook, initialRead = false 
         <div className={s.carouselControls}><button onClick={previous} aria-label="이전 책">←</button><span className={s.micro} aria-live="polite">{book.issue} / 06</span><button onClick={next} aria-label="다음 책">→</button></div>
       </section>{stage === "home" ? <><details className={s.fixtureSelector}><summary>개발 검수 입력 · {data.names}</summary><p>기존 V4 검증 입력으로 생성한 실제 책입니다. 기준일 {data.readingDate}.</p><nav aria-label="검수 입력 선택">{library.fixtures.filter(f => f.bookId === book.id).map(f => <a key={f.id} href={`?fixture=${f.id}&book=${f.bookId}&read=1`}>{f.label} ↗</a>)}</nav><button onClick={() => { setPage(0); setStage("reader"); }}>현재 책 본문 바로 보기 →</button></details><PreviewFooter /></> : null}
     </> : null}
-    {opening ? <div className={s.opening} aria-label="책 펼치는 중"><div className={s.openPaper}><span /><span>당신의 이야기를<br />시작합니다.</span></div><div className={s.openCover}><Cover book={book} name={stage === "opening-reader" ? person.name : undefined} /></div></div> : null}
+    {opening ? <div className={s.opening} aria-label="책 펼치는 중"><div className={s.openPaper}><span>GYEOL REPORT</span><span>당신의 이야기를<br />시작합니다.</span></div><div className={s.openCover}><Cover book={book} name={stage === "opening-reader" ? person.name : undefined} /></div></div> : null}
     {stage === "publishing" ? <Publishing book={book} name={person.name} state={PUBLISHING_STATES[publication]} /> : null}
-    {stage === "complete" ? <section className={s.completed}><p className={s.micro}>완성된 책</p><button className={s.completedBook} onClick={() => { setPage(0); setStage("opening-reader"); }} aria-label="완성된 책 펼치기"><Cover book={book} title={data.title} name={data.names} /></button><h1>{data.names}님의 책이<br />준비되었습니다.</h1></section> : null}
+    {stage === "complete" ? <section className={s.completed}><p className={s.micro}>PERSONAL EDITION / READY TO READ</p><button className={s.completedBook} onClick={() => { setPage(0); setStage("opening-reader"); }} aria-label="완성된 책 펼치기"><Cover book={book} title={data.title} name={data.names} /></button><h1>{data.names}님의 책이<br />준비되었습니다.</h1></section> : null}
     {["input", "receipt", "reader"].includes(stage) ? <section className={`${s.bookShell} ${stage === "reader" && pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={pointerStart} onPointerUp={pointerEnd} onPointerCancel={() => { gesture.current = null; }}>
       <div className={s.pageScroll} role="region" ref={scroller} tabIndex={-1} aria-label="책 내용" data-page={stage === "reader" ? pages[page].kind : stage} data-page-number={stage === "reader" ? page + 1 : undefined}>
         {stage === "input" ? <><p className={s.eyebrow}>검수 입력 / 기준일 {data.readingDate}</p><h1>이 책의 주인공</h1><BookInputSummary data={data} /><p className={s.hint}>선택한 검증 입력 그대로 만든 책입니다. 다른 입력은 책장의 검수 입력에서 선택할 수 있습니다.</p></> : null}

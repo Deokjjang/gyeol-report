@@ -29,15 +29,15 @@ describe("member-aware receipt SSR boundaries", () => {
   });
   it("member waits for real balance, no assumed zero or fake store URL", () => {
     state.session = { status: "member" }; const html = render(); expect(html).toContain("이용권을 확인하고 있습니다");
-    expect(html).not.toContain("남은 이용권 0장"); expect(html).not.toContain("묶음 이용권 구매"); expect(html).toMatch(/disabled=""[^>]*>[^<]*결제하기/);
+    expect(html).not.toContain("남은 이용권 0장"); expect(html).not.toContain("묶음 이용권 구매"); expect(html).toMatch(/disabled=""[^>]*>결제하기/);
   });
   it("restored pending reservation remains ticket-priced, blocked, never falls back to payment", () => {
     state.session = { status: "member" }; state.pending = true; const html = render();
-    expect(html).toContain("이용권 1장"); expect(html).toContain("책 발행 상태 확인 중"); expect(html).not.toContain("1,490원");
+    expect(html).toContain("리포트 이용권 1장"); expect(html).toContain("책 발행 상태 확인 중"); expect(html).not.toContain("1,490원");
   });
   it("required member reconsent is explicit and checkout remains disabled", () => {
     state.session = { status: "needs_consent" }; const html = render();
-    expect(html).toContain("회원 동의 확인 후 이어서 구매하기"); expect(html).toMatch(/disabled=""[^>]*>[^<]*결제하기/);
+    expect(html).toContain("회원 동의 확인 후 이어서 구매하기"); expect(html).toMatch(/disabled=""[^>]*>결제하기/);
   });
   it.each([0, 1, 5])("real balance callback %s selects only the available method", async quantity => {
     state.session = { status: "member" };
@@ -45,7 +45,7 @@ describe("member-aware receipt SSR boundaries", () => {
     vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ ok: true, quantity }) } as Response);
     render(); const stop = hooks.effects[1](); for (let i = 0; i < 8; i++) await Promise.resolve();
     try {
-      const html = render(); if (quantity) expect(html).toContain(`남은 이용권 ${quantity}장`); else expect(html).not.toContain("남은 이용권"); // P5: 0장이면 선택지 숨김
+      const html = render(); expect(html).toContain(`남은 이용권 ${quantity}장`);
       expect(html).toContain(quantity ? "이용권 1장으로 책 발행하기" : "결제하기");
       expect(html).not.toContain("이용권을 확인하고 있습니다");
     } finally { stop?.(); }
@@ -53,7 +53,7 @@ describe("member-aware receipt SSR boundaries", () => {
   it("failed balance callback is an error, not zero tickets or an enabled payment", async () => {
     state.session = { status: "member" }; vi.stubGlobal("window", new EventTarget()); vi.stubGlobal("document", { hidden: false });
     vi.mocked(fetch).mockRejectedValue(Error("OFFLINE")); render(); const stop = hooks.effects[1](); for (let i = 0; i < 8; i++) await Promise.resolve();
-    try { const html = render(); expect(html).toContain("이용권을 확인하지 못했습니다"); expect(html).not.toContain("남은 이용권 0장"); expect(html).toMatch(/disabled=""[^>]*>[^<]*결제하기/); }
+    try { const html = render(); expect(html).toContain("이용권을 확인하지 못했습니다"); expect(html).not.toContain("남은 이용권 0장"); expect(html).toMatch(/disabled=""[^>]*>결제하기/); }
     finally { stop?.(); }
   });
 });

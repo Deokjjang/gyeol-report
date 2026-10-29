@@ -164,7 +164,7 @@ export function TicketShop({ local = false, callback = false, policyVersion = nu
   const blocked = busy || state !== "ready" || !selected || !policyVersion || !BUNDLE_PURCHASE_FIELDS.every(k => consent[k]) || !!pending?.launched;
   return <main className={s.root}><header className={s.header}><Link href={home}>결리포트</Link><Link href={local ? "/dev/account" : "/account"}>내 서재</Link></header>
     <div className={s.sheet}><nav className={s.nav} aria-label="내 계정"><Link href={local ? "/dev/account" : "/account"}>내 서재</Link><Link href={path} aria-current="page">내 이용권</Link></nav>
-      <p className={s.eyebrow}>내 이용권</p><h1>{callback && order?.status === "GRANTED" ? "이용권이 준비되었습니다" : "나의 다음 이야기를 위한 이용권"}</h1>
+      <p className={s.eyebrow}>GYEOL REPORT / MEMBER EDITIONS</p><h1>{callback && order?.status === "GRANTED" ? "이용권이 준비되었습니다" : "나의 다음 이야기를 위한 이용권"}</h1>
       <p>여섯 권의 리포트 중 원하는 책을 이용권 한 장으로 발행할 수 있습니다.</p>
       <div className={s.spines} aria-hidden="true">{BOOKS.map(book => <i key={book.id} style={{ background: book.color }} />)}</div>
       {local ? <p className={s.note}>로컬 모의 구매 · 실제 과금 없음 · 아래 동의는 검수용이며 판매 정책 승인이 아닙니다.</p> : null}

@@ -5,9 +5,9 @@ export function BookEventNotice({ view, remaining, recipient = false, invitation
   // Only while the reward can actually be earned. Ended, paused, loading or unavailable → no event paragraph, sharing stays.
   if (!launchActive(view, remaining) || !view.budgetApproved || !view.referralAvailable || !view.inviterAvailable) return null;
   const text = recipient ? "친구의 초대 링크로 처음 가입하고 필수 동의를 마치면 무료 이용권 1장을 받을 수 있어요." : invitation === false ? "일반 책 공유 링크입니다. 무료 이용권 혜택은 유효한 친구 초대 링크로 참여할 때 적용됩니다." : "내 책의 초대 링크로 친구가 처음 가입하고 첫 리포트까지 완성하면 나에게도 이용권 1장이 추가돼요.";
-  // P5 마지막 장: 한 줄 + '자세히'(조건 전문은 펼쳐 보기). 공유 버튼은 그대로.
   return <div className={s.event}>
     <p className={s.notice}>{text}</p>
-    <details className={s.conditions}><summary>자세히</summary><p>필수 동의·가입 자격과 발행 완료를 확인한 뒤 지급합니다. 가입 혜택 1장 + 초대 추가 혜택 1장, 계정당 최대 2장입니다.</p><p>{LAUNCH_NOTICE}</p></details>
+    <p className={s.notice}>필수 동의·가입 자격과 발행 완료를 확인한 뒤 지급합니다. 가입 혜택 1장 + 초대 추가 혜택 1장, 계정당 최대 2장입니다.</p>
+    <details className={s.conditions}><summary>무료 이용권 참여 조건 보기</summary><p>{LAUNCH_NOTICE}</p></details>
   </div>;
 }

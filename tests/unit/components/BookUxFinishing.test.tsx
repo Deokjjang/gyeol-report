@@ -64,7 +64,7 @@ describe("server event copy and closed policy", () => {
   });
   it.each(["ACTIVE"])("%s shows the closed complete conditions", state => {
     const html = renderToStaticMarkup(<BookEventNotice view={{ ...view, state: state as LaunchEventView["state"] }} remaining={10000} />);
-    expect(html).toContain("<summary>자세히</summary>"); expect(html).not.toMatch(/<details[^>]*open/); expect(html).toContain("11월 1일 0시"); expect(html).toContain("광고·친구 초대 중복 불가"); expect(html).toContain("처리 지연");
+    expect(html).toContain("무료 이용권 참여 조건 보기"); expect(html).not.toMatch(/<details[^>]*open/); expect(html).toContain("11월 1일 0시"); expect(html).toContain("광고·친구 초대 중복 불가"); expect(html).toContain("처리 지연");
     expect(html.includes("내 책의 초대 링크로")).toBe(state === "ACTIVE");
     expect(html).not.toMatch(/KST|\+09:00|T15:00:00Z/);
   });

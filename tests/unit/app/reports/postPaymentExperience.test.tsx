@@ -74,8 +74,8 @@ describe("post-payment canonical route, mock transport only", () => {
       expect(html).not.toContain("리포트를 찾을 수 없습니다");
       expect(html).toContain('role="status"');
       expect(html).not.toContain("<svg");
-      if (["QUEUED", "GENERATING", "RETRYING"].includes(status)) expect(html).toContain('data-state="now"');
-      else expect(html).not.toContain('data-state="now"');
+      if (["QUEUED", "GENERATING", "RETRYING"].includes(status)) expect(html).toContain('data-publishing="preparing"');
+      else expect(html).not.toContain("data-publishing");
     }
     // Optional local-only visual fixture export. No app route or transport is added.
     const directory = process.env.POSTPAYMENT_QA_DIR;
@@ -236,7 +236,7 @@ describe("status refresh lifecycle", () => {
   it("uses reduced motion, visible focus and existing paper press without fake progress", () => {
     const css = readFileSync("src/components/report/reportStatus.module.css", "utf8");
     expect(css).toContain("prefers-reduced-motion: reduce");
-    expect(css).toContain(".pages *, .visual * { animation: none !important; transition: none !important; }");
+    expect(css).toContain("animation: none; transform: none");
     expect(css).toContain(":focus-visible");
     const html = renderToStaticMarkup(<ReportStatusView state="preparing" />);
     expect(html).toContain('aria-hidden="true"');

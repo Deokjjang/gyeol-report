@@ -107,7 +107,7 @@ describe("shop browser contracts (not a visual browser test)", () => {
   });
   it("SSR has editorial shell, loading is not zero, no unapproved policy promises", () => {
     const html = renderToStaticMarkup(<TicketShop />);
-    expect(html).toContain(">내 이용권</p>"); expect(html).toContain("이용권 조회 중");
+    expect(html).toContain("MEMBER EDITIONS"); expect(html).toContain("이용권 조회 중");
     expect(html).not.toMatch(/무기한|평생|BEST|paymentKey|보유.*0장/);
   });
   it("SDK adapter passes the prepared member key and request unchanged, never report metadata",async()=>{

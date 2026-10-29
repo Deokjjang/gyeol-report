@@ -25,22 +25,9 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
   const pointerDown = useRef<{ x: number; y: number; pointerId: number } | null>(null);
   const swipeClick = useRef<{ x: number; y: number; at: number } | null>(null);
   const [turning, setTurning] = useState<number | null>(null);
-  const [bar, setBar] = useState({ hidden: false, scrolled: false });
   const book = BOOKS.find(b => b.id === data.bookId)!;
-  // 문서 자체가 스크롤한다(종이 틀 안 이중 스크롤 없음). 아래로 읽으면 머리 막대를 숨기고, 위로 올리면 다시 보인다.
   useEffect(() => {
-    let last = window.scrollY;
-    const onScroll = () => {
-      gesture.current = null;
-      const y = window.scrollY, down = y > last + 4, up = y < last - 4;
-      if (down || up || y < 8) setBar({ hidden: down && y > 96, scrolled: y > 8 });
-      last = y;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  useEffect(() => {
-    window.scrollTo({ top: restoreTop.current }); restoreTop.current = 0;
+    scroll.current?.scrollTo({ top: restoreTop.current }); restoreTop.current = 0;
     if (pendingAnchor.current) document.getElementById(pendingAnchor.current)?.scrollIntoView({ block: "start" });
     pendingAnchor.current = undefined; scroll.current?.focus({ preventScroll: true });
   }, [page]);
@@ -52,13 +39,13 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
   }, []);
   const turn = (n: number) => {
     if (timer.current || n < 0 || n >= data.pages.length || n === page) return;
-    setTurning(n > page ? 1 : -1); setPage(n); setNote(null); setBar({ hidden: false, scrolled: false });
-    timer.current = setTimeout(() => { timer.current = null; setTurning(null); }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 410);
+    setTurning(n > page ? 1 : -1); setPage(n); setNote(null);
+    timer.current = setTimeout(() => { timer.current = null; setTurning(null); }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 510);
   };
   const jump = (target: number, anchor?: string) => {
     if (timer.current || target < 0 || target >= data.pages.length) return;
     if (target === page) { if (anchor) document.getElementById(anchor)?.scrollIntoView({ block: "start" }); return; }
-    setReturnPoints(points => data.pages[page].kind === "contents" && points.length ? points : [...points, { page, top: window.scrollY }]);
+    setReturnPoints(points => data.pages[page].kind === "contents" && points.length ? points : [...points, { page, top: scroll.current?.scrollTop ?? 0 }]);
     pendingAnchor.current = anchor;
     turn(target);
   };
@@ -68,8 +55,8 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
     restoreTop.current = previous.top; setReturnPoints(points => points.slice(0, -1)); turn(previous.page);
   };
   const contents = data.pages.findIndex(p => p.id === "contents");
-  return <main className={s.root} data-book-report style={{ "--cover": book.color, "--cover-ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (!hasReadingSelection(window.getSelection()) && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
-    <header className={s.header} data-sticky data-hidden={bar.hidden} data-scrolled={bar.scrolled}><a className={s.wordmark} href={home}><b>결리포트</b><span>GYEOL REPORT</span></a><div className={s.readingTools}>{returnPoints.length ? <button onClick={returnToReading}>읽던 곳으로</button> : null}{contents >= 0 ? <button onClick={() => jump(contents)}>목차</button> : null}<a href={home}>닫기</a></div></header>
+  return <main className={s.root} data-book-report style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (!hasReadingSelection(window.getSelection()) && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
+    <header className={s.header}><a className={s.wordmark} href={home}><b>결리포트</b><span>GYEOL REPORT</span></a><div className={s.readingTools}>{returnPoints.length ? <button onClick={returnToReading}>읽던 곳으로 ↶</button> : null}{contents >= 0 ? <button onClick={() => jump(contents)}>목차</button> : null}<a href={home} className={s.close}>닫기 ×</a></div></header>
     <section className={`${s.bookShell} ${data.pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={e => {
       gesture.current = null;
       pointerDown.current = e.isPrimary ? { x: e.clientX, y: e.clientY, pointerId: e.pointerId } : null;
@@ -89,14 +76,14 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
         const click = swipeClick.current; swipeClick.current = null;
         if (click && e.detail && e.timeStamp - click.at < 500 && Math.abs(e.clientX - click.x) < 4 && Math.abs(e.clientY - click.y) < 4) { e.preventDefault(); e.stopPropagation(); }
       }}>
-      <div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1} id={data.pages[page].id} data-chapter-id={data.pages[page].id}>
+      <div className={s.pageScroll} ref={scroll} onScroll={() => { gesture.current = null; }} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1} id={data.pages[page].id} data-chapter-id={data.pages[page].id}>
         <BookReader data={data} page={data.pages[page]} onNote={setNote} onPage={jump} onShare={() => { if (local) setMessage("미리보기입니다. 실제 공유나 복사는 실행하지 않습니다."); }}
           shareActions={shared || shareOwner ? <BookShareActions owner={shared ? undefined : shareOwner} model={shared ? share : undefined} local={local || shareOwner?.local} /> : local ? undefined : <p className={shareStyle.notice}>이 책은 공유할 수 없습니다.</p>}
           backAction={shared && share.referral ? <ReferralBookCta share={share} local={local} home={home} /> : shared ? <a className={shareStyle.cta} href={home} onClick={() => bookShareEvent("shared_cta_clicked", share.productType, local)}>나도 내 책 만들기 ↗</a>
             : data.pages[page].kind === "back" && saveToLibrary ? <SaveToLibrary {...saveToLibrary} /> : undefined} />
       </div>
-      <nav className={s.pageNav} aria-label="책 읽기 위치" style={{ "--progress": `${Math.round((page + 1) / data.pages.length * 100)}%` } as CSSProperties}><button aria-label="이전 페이지" disabled={!page} onClick={() => turn(page - 1)}>←</button><span><strong>{data.title}</strong><span>{String(page + 1).padStart(2, "0")} / {data.pages.length}</span></span><button aria-label="다음 페이지" disabled={page === data.pages.length - 1} onClick={() => turn(page + 1)}>→</button></nav>
-      {turning ? <div className={s.turnLeaf} data-direction={turning} aria-hidden="true"><div className={s.turnLines}><i /><i /><i /><i /></div></div> : null}
+      <nav className={s.pageNav} aria-label="책 읽기 위치"><button aria-label="이전 페이지" disabled={!page} onClick={() => turn(page - 1)}>←</button><span><strong>{data.title}</strong><span>{String(page + 1).padStart(2, "0")} / {data.pages.length}</span></span><button aria-label="다음 페이지" disabled={page === data.pages.length - 1} onClick={() => turn(page + 1)}>→</button></nav>
+      {turning ? <div className={s.turnLeaf} data-direction={turning} aria-hidden="true"><span>GYEOL REPORT / PERSONAL EDITION</span><div className={s.turnLines}><i /><i /><i /><i /></div></div> : null}
     </section>
     {note ? <DetailSheet title={note.name} onClose={() => setNote(null)}><p>{note.text}</p></DetailSheet> : null}
     {message ? <div className={s.toast} role="status"><span>{message}</span><button onClick={() => setMessage("")}>닫기</button></div> : null}

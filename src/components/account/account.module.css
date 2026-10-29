@@ -1,39 +1,5 @@
-/* 내 서재·로그인(P5 디자인 토큰). 책 화면과 같은 종이·먹색·명조 제목. */
-.root { background: var(--paper); color: var(--ink); min-height: 100svh; font-family: var(--sans); font-size: 15px; line-height: 1.7; isolation: isolate; }
-.root * { box-sizing: border-box; }
-.header { height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(24px, 5vw); font-size: 14px; color: var(--ink-2); }
-.header > a:first-child { font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--ink); letter-spacing: -.02em; }
-.header a { min-height: 44px; display: inline-flex; align-items: center; }
-.root a { color: inherit; text-decoration: none; }
-.sheet { max-width: 420px; margin: clamp(32px, 8vh, 80px) auto; padding: 0 24px 64px; }
-.sheet h1 { font-family: var(--serif); font-size: 28px; font-weight: 600; letter-spacing: -.02em; margin: 0 0 16px; }
-.sheet p { overflow-wrap: anywhere; margin: 0 0 8px; }
-.eyebrow { font-size: 13px; color: var(--ink-2); margin-bottom: 8px !important; }
-.note { font-size: 13px; color: var(--ink-2); border-left: 2px solid var(--rule-strong); padding-left: 12px; }
-.providers { display: grid; gap: 8px; margin: 24px 0; }
-.root button { font: inherit; color: inherit; cursor: pointer; }
-.providers button { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 20px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper-raised); font-size: 15px; text-align: left; transition: border-color var(--t-fast) var(--ease); }
-.providers button:hover { border-color: var(--ink); }
-.providers svg { width: 20px; height: 20px; fill: currentColor; }
-.google { width: 20px; text-align: center; font-weight: 700; }
-.root button:disabled { opacity: .45; cursor: default; }
-.primary { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 52px; margin-top: 24px; border: 0; border-radius: var(--radius); background: var(--ink); color: var(--paper) !important; font-size: 16px; font-weight: 600; }
-.small { min-height: 44px; margin-top: 16px; padding: 0; border: 0; background: none; font-size: 13px; color: var(--ink-2) !important; text-decoration: underline; text-underline-offset: 4px; }
-.guest { display: inline-flex; align-items: center; min-height: 44px; margin-top: 24px; font-size: 14px; color: var(--ink-2); text-decoration: underline !important; text-underline-offset: 4px; }
-.consents { border: 0; padding: 0; margin: 24px 0 0; min-width: 0; }
-.consents input { width: 18px; height: 18px; accent-color: var(--ink); flex-shrink: 0; }
-.consents label { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; }
-.all { font-weight: 600; border-bottom: 1px solid var(--rule); }
-.row { display: grid; grid-template-columns: minmax(0, 1fr) 44px; }
-.row button { min-height: 44px; border: 0; background: none; font-size: 13px; color: var(--ink-2); }
-.error { margin-top: 16px !important; padding-left: 12px; border-left: 2px solid var(--accent); font-size: 14px; }
-.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.root :focus-visible { outline: 1.5px solid var(--ink); outline-offset: 3px; }
-.librarySheet { max-width: 880px; margin-top: 32px; }
-.librarySheet nav { font-size: 14px; color: var(--ink-2); margin: 8px 0 0; }
-.accountInfo { margin: 48px 0 0; padding: 0; border-top: 1px solid var(--rule); font-size: 14px; }
-.accountInfo > div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
-.accountInfo dt { color: var(--ink-2); }
-.accountInfo dd { margin: 0; }
+.root{background:#fff;color:#111;min-height:100svh;font-family:Arial,"Noto Sans KR",sans-serif;font-size:14px;line-height:1.65}.root *{box-sizing:border-box}.header{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;padding:0 24px;font-size:12px}.header>a:first-child{font-weight:800;font-size:17px}.root a{color:inherit;text-decoration:none}.sheet{max-width:410px;margin:clamp(40px,10vh,100px) auto;padding:0 24px 60px}.sheet h1{font-size:28px;letter-spacing:-1px;font-weight:750;margin:12px 0 20px}.sheet p{overflow-wrap:anywhere}.eyebrow{font-size:10px;letter-spacing:2px}.note{font-size:11px;color:#666}.providers{display:grid;gap:10px;margin:32px 0}.root button{font:inherit;cursor:pointer;background:white;color:#111;border:0}.providers button{border:1px solid #bbb;display:flex;align-items:center;gap:16px;text-align:left;padding:14px 18px;min-height:50px}.providers svg{width:20px;height:20px;fill:currentColor}.google{font:bold 22px Arial;width:20px;text-align:center}.root button:disabled{opacity:.45;cursor:default}.primary{display:block;text-align:center;background:#111!important;color:#fff!important;padding:14px;width:100%;margin:24px 0 12px}.small{display:block;margin:12px auto;font-size:12px!important;text-decoration:underline}.guest{display:block;border-top:1px solid #ddd;margin-top:32px;padding-top:20px;font-size:12px;color:#555!important}.consents{padding:0;border:0;margin:30px 0 16px}.consents input{width:16px;height:16px;accent-color:#111;flex-shrink:0}.consents label{display:flex;gap:8px;align-items:center;font-size:12px}.all{padding:14px 0;border-bottom:1px solid #111;margin-bottom:12px;font-weight:700}.row{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px}.row button{white-space:nowrap;font-size:11px;padding:10px 2px}.error{font-size:12px;border-left:2px solid #111;padding-left:10px}.srOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.root :focus-visible{outline:2px solid #111;outline-offset:4px}
+.root{isolation:isolate}
+.librarySheet{max-width:800px;margin-top:40px}.accountInfo{font-size:12px;border-top:1px solid #ddd;padding:12px 0}.accountInfo summary{cursor:pointer}
 /* Same isolated presentation rule as Book preview; public OFF routes unaffected. */
-:global(body):has(.root) > footer { display: none; }
+:global(body):has(.root)>footer{display:none}

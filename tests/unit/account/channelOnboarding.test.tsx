@@ -109,16 +109,15 @@ describe("integration and canonical book assets", () => {
   });
   it("ICO 16/32/48/64 and apple180 are exact derivatives of canonical SVG", async () => {
     const require = createRequire(resolve("package.json")); const sharp = createRequire(require.resolve("next/package.json"))("sharp");
-    // P5: 정본은 새 표지 디자인 public/brand/icon-v5.svg(파일명 버전). apple-touch-icon은 iOS가 모서리를 둥글리므로 꽉 찬 사각형 변형에서 만든다.
-    const svg = readFileSync("public/brand/icon-v5.svg"), ico = readFileSync("src/app/favicon.ico");
-    expect(svg.toString()).not.toMatch(/ellipse|circle|gradient/i); expect(svg.toString()).toContain('viewBox="0 0 512 512"');
+    const svg = readFileSync("src/app/icon.svg"), ico = readFileSync("src/app/favicon.ico");
+    expect(svg.toString()).not.toMatch(/ellipse|circle|gradient/i); expect(svg.toString()).toContain('viewBox="0 0 96 96"');
     expect(ico.readUInt16LE(2)).toBe(1); expect(ico.readUInt16LE(4)).toBe(4);
     for (const [i, size] of [16, 32, 48, 64].entries()) {
       const entry = 6 + i * 16, offset = ico.readUInt32LE(entry + 12), length = ico.readUInt32LE(entry + 8);
       expect(ico[entry]).toBe(size); expect(ico[entry + 1]).toBe(size);
       expect(ico.subarray(offset, offset + length)).toEqual(await sharp(svg).resize(size, size).png().toBuffer());
     }
-    expect(readFileSync("public/brand/apple-touch-icon-v5.png")).toEqual(await sharp(Buffer.from(svg.toString().replace(/rx="112"/, 'rx="0"'))).resize(180, 180).png().toBuffer());
-    expect(readFileSync("src/app/layout.tsx", "utf8")).toMatch(/apple-touch-icon-v\d+\.png/); // P5: 버전 붙은 파일을 metadata.icons로 가리킨다
+    expect(readFileSync("src/app/apple-icon.png")).toEqual(await sharp(svg).resize(180, 180).png().toBuffer());
+    expect(readFileSync("src/app/layout.tsx", "utf8")).not.toMatch(/icons\s*:/);
   });
 });

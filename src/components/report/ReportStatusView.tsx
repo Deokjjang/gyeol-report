@@ -14,6 +14,7 @@ type ReportStatusViewProps = {
 
 /** 책이 만들어지는 순서(실제 생성 순서와 같다: 계산 → 근거 연결 → 집필 → 검수 → 저장). */
 export const PUBLICATION_STAGES = ["원국 분석", "성향 연결", "책 집필", "검수", "제본"] as const;
+const WRITING_STAGE = 2;
 
 function PublicationStages({ stage }: { readonly stage: number }) {
   return (
@@ -25,9 +26,9 @@ function PublicationStages({ stage }: { readonly stage: number }) {
   );
 }
 
-/** 생성 대기: 단계마다 종이 한 장이 채워진다(지난 단계는 다 쓴 장, 지금 단계는 줄이 한 줄씩 써지는 장). 동작 줄이기면 멈춘 종이. */
-function FillingPages({ stage }: { readonly stage: number }) {
-  return <div className={styles.pages} aria-hidden="true">{PUBLICATION_STAGES.map((label, i) => <div key={label} className={styles.leaf} data-state={i < stage ? "done" : i === stage ? "now" : "next"}>{[0, 1, 2, 3, 4].map(n => <i key={n} />)}</div>)}</div>;
+/** 책 집필 단계의 장식: 종이에 줄이 한 줄씩 써지는 모습. 동작 줄이기 설정이면 멈춘 종이로 보인다. */
+function WritingPage() {
+  return <div className={styles.visual} aria-hidden="true"><div className={styles.writing}>{[0, 1, 2, 3, 4, 5, 6].map(i => <i key={i} />)}</div></div>;
 }
 
 const copy = {
@@ -62,9 +63,9 @@ export function ReportStatusView({ state, title, message, support = false, stage
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        <p className={styles.brand}><Link href="/" aria-label="결리포트 홈"><b>결리포트</b><span>GYEOL REPORT</span></Link></p>
+        <p className={styles.brand}><Link href="/" aria-label="결리포트 홈">GYEOL REPORT</Link></p>
         <section className={styles.content} aria-labelledby="report-status-title">
-          {waiting ? <FillingPages stage={stage ?? 0} /> : state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={false} /> : null}
+          {waiting && stage === WRITING_STAGE ? <WritingPage /> : waiting || state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={waiting} /> : null}
           <div className={styles.body}>
             <div role="status" aria-live="polite" aria-atomic="true">
               <h1 id="report-status-title" className={styles.title}>{title ?? copy[state].title}</h1>
@@ -86,7 +87,7 @@ export function ReportStatusView({ state, title, message, support = false, stage
                 </nav>
               </div>
             ) : null}
-            {state === "expired" ? <nav className={styles.links} aria-label="리포트 탐색"><Link href="/">홈으로 돌아가기</Link></nav> : null}
+            {state === "expired" ? <nav className={styles.links} aria-label="리포트 탐색"><Link href="/">홈으로 돌아가기 <span aria-hidden="true">↗</span></Link></nav> : null}
           </div>
         </section>
       </div>

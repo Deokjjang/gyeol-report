@@ -9,17 +9,14 @@ import { CONSENT_SHORT_LABELS, MBTI, requiredConsents, toggleAll, type Book, typ
 import { BusinessDetails, DetailSheet, LegalAccordion, SUPPORT_COPY } from "./BookLegal";
 import s from "./book.module.css";
 import MetaSettingsLink from "../../../components/analytics/MetaSettingsLink";
-import { SocialLinks } from "../../../components/brand/SocialLinks";
-import MBTI_PAGES from "../../../data/book-pages/mbti.json";
 
-// 버튼 안에도 들어가므로 span으로 그린다(표지 6종 공용: 홈·책 첫 쪽·서재·공유 입구).
 export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
-  return <span className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--cover-ink": book.ink } as CSSProperties}>
-    <span className={s.coverTop} aria-hidden="true"><span>결리포트</span><span>{book.issue}</span></span>
-    <span className={s.coverTitle}>{title ?? book.title}</span>
-    <span className={s.coverBottom}>{name ? <span>{name}의 책</span> : null}</span>
+  return <div className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
+    <div className={s.coverTop}><span>GYEOL<br />REPORT</span><span>ISSUE<br />{book.issue}</span></div>
+    <div className={s.coverTitle}>{title ?? book.title}</div>
+    <div className={s.coverBottom}><span>PERSONAL<br />EDITION</span><span>{name ? `${name}의 책` : "한 사람, 한 권."}</span></div>
     <span className={s.spine} aria-hidden="true" />
-  </span>;
+  </div>;
 }
 
 export function PersonFields({ person, onChange, prefix, label }: { person: Person; onChange: (v: Person) => void; prefix: string; label: string }) {
@@ -48,8 +45,8 @@ export function Receipt({ book, person, title, member, setMember, consents, setC
   return <>
     <div className={s.modeSwitch} role="group" aria-label="영수증 체험 상태">{[false, true].map(m => <button type="button" key={String(m)} aria-pressed={member === m} onClick={() => setMember(m)}>{m ? "회원" : "비회원"}</button>)}</div>
     <div className={s.receipt}>
-      <h1>발행 주문서</h1>
-      <dl>{[["책", title ?? book.title.replace("\n", " ")], ["받는 분", person.name], ["생년월일", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["금액", REPORT_PRICE_LABEL_KO]].map(([key, value]) => <div key={key} className={key === "금액" ? s.total : undefined}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
+      <p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER — PREVIEW</p>
+      <dl>{[["TITLE", title ?? book.title.replace("\n", " ")], ["ISSUED TO", person.name], ["BIRTH", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["PRICE", REPORT_PRICE_LABEL_KO]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
       <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 완료 후 즉시 생성, 최대 24시간 이내 제공<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
       {member ? <p className={s.receiptNote}>회원 미리보기 · 가입 약관 동의 가정, 실제 적용 전 검토 필요.</p> : null}
       <fieldset className={s.consents}><legend className={s.srOnly}>약관 및 개인정보 동의</legend>
@@ -71,11 +68,12 @@ export function Receipt({ book, person, title, member, setMember, consents, setC
 
 export function Publishing({ book, name, state, notice = "출판 과정 미리보기 · 결제·저장 없음", visualOnly = false }: { book?: Book; name?: string; state: PublishingState; notice?: string; visualOnly?: boolean }) {
   return <div className={s.publishing} data-publishing={state}>
-    <div className={s.press} style={{ "--cover": book?.color ?? "#111111", "--cover-ink": book?.ink ?? "#FFFFFF" } as CSSProperties} aria-hidden="true">
+    <div className={s.press} style={{ "--cover": book?.color ?? "#111111", "--ink": book?.ink ?? "#FFFFFF" } as CSSProperties} aria-hidden="true">
       {[0, 1, 2, 3].map(i => <div key={i} className={s.sheet} style={{ "--sheet": i } as CSSProperties}><i /><i /><i /><i /></div>)}
       <div className={s.binding} /><div className={s.printedCover}>{book ? <Cover book={book} name={state === "complete" ? name : undefined} /> : <div className={s.cover} />}</div>
     </div>
     {!visualOnly ? <><h1 aria-live="polite">{name ? `${name}님의 책을` : "책을"}<br />출판하고 있습니다.</h1>
+    <p className={s.micro}>A PERSONAL EDITION, IN THE MAKING.</p>
     <p className={s.hint}>{notice}</p></> : null}
   </div>;
 }
@@ -90,49 +88,35 @@ export function ShareIcon({ kind }: { kind: number }) {
     {kind === 1 ? <><circle cx="18" cy="5" r="2.5" /><circle cx="6" cy="12" r="2.5" /><circle cx="18" cy="19" r="2.5" /><path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5" /></> : <><rect x="8" y="8" width="10" height="10" rx="2" /><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" /></>}
   </svg>;
 }
-const ELEMENT_KO = { "wood-green": "목", "fire-red": "화", "earth-soil": "토", "metal-gold": "금", "water-sky": "수" } satisfies Record<ReportTableElementColorToken, string>;
-/** 십이운성 한글 → 한자 병기. 오행 '쇠(금)'과 헷갈리지 않게 衰를 함께 쓴다. */
-const STAGE_HANJA: Record<string, string> = { 장생: "長生", 목욕: "沐浴", 관대: "冠帶", 건록: "建祿", 임관: "臨官", 제왕: "帝旺", 쇠: "衰", 병: "病", 사: "死", 묘: "墓", 절: "絶", 태: "胎", 양: "養" };
-const withStageHanja = (text: string) => STAGE_HANJA[text] ? `${text}(${STAGE_HANJA[text]})` : text;
-/** 오행 막대의 쉬운 표시. 내부 가중 수치는 보이지 않고, 없는 오행을 '약함'으로 부르지 않는다. */
-export function elementLevel(e: { state?: string | null; weighted: number }) {
-  if (!(e.weighted > 0)) return "없음";
-  return /강|과다|많/.test(e.state ?? "") ? "많음" : /약|부족|적/.test(e.state ?? "") ? "적음" : "보통";
-}
-export type BookRelation = { pair: string; text: string };
-
-export function NatalTable({ data, relations }: { data: V4CustomerTables[number]; relations?: readonly BookRelation[] }) {
+export function NatalTable({ data }: { data: V4CustomerTables[number] }) {
   const t = data.manse;
   const keys = t.columns.map(c => c.key as keyof typeof t.stemRow);
   const characters = [t.stemRow, t.branchRow].flatMap(row => keys.flatMap(key => row[key] ? [row[key]!] : []));
   const yin = characters.filter(c => c.yinYang === "yin").length;
-  // v5 Book은 엔진이 감지한 관계 전부(기둥 쌍 포함), 과거 v4 Book은 저장된 합·충 칸 그대로(재계산 없음).
-  const stored = t.detailRows.find(r => r.key === "interactions");
-  const relationList = relations ?? [...new Set(keys.flatMap(key => stored?.cells[key] ?? []))].map(text => ({ pair: "", text }));
-  const max = Math.max(...data.elements.map(e => e.weighted), 1);
-  return <div className={s.tables}><table><caption className={s.srOnly}>{data.name}의 만세력</caption><thead><tr><th scope="col"><span className={s.srOnly}>구분</span></th>{t.columns.map(c => <th scope="col" key={c.key}>{c.label}</th>)}</tr></thead><tbody>
-    {[["천간", t.stemRow], ["지지", t.branchRow]].map(([label, row]) => <Fragment key={String(label)}><tr><th scope="row">{String(label)}</th>{keys.map(key => { const cell = (row as typeof t.stemRow)[key]; return <td key={key}>{cell ? <><strong data-element={cell.colorToken}>{cell.hanja}</strong><small>{cell.ko}</small><small>{cell.yinYang === "yin" ? "음" : "양"} · {ELEMENT_KO[cell.colorToken]}</small></> : <small>모름</small>}</td>; })}</tr><tr><th scope="row">십성</th>{keys.map(key => <td key={key}>{(row as typeof t.stemRow)[key]?.tenGod ?? "—"}</td>)}</tr></Fragment>)}
-    {t.detailRows.filter(row => row.key !== "interactions").map(row => <tr key={row.key}><th scope="row">{row.key === "sinsalAndGwiin" ? "신살·귀인" : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{row.key === "twelveLifeStage" ? withStageHanja(text) : text}</span>) : "—"}</td>)}</tr>)}
-    </tbody></table><p className={s.hint}>음 {yin} · 양 {characters.length - yin}{characters.length === 8 ? "" : " · 확인된 기둥 기준"}{t.timeCorrectionNote ? ` · ${t.timeCorrectionNote}` : ""}</p>
-    <h2>합·충</h2>{relationList.length ? <ul className={s.relations}>{relationList.map(r => <li key={r.pair + r.text}>{r.pair ? <><span>{r.pair}</span><span>{r.text}</span></> : <span style={{ gridColumn: "1 / -1", color: "inherit" }}>{r.text}</span>}</li>)}</ul> : <p className={s.hint}>원국 안에서 서로 합하거나 부딪치는 관계가 없습니다.</p>}
-    <h2>오행</h2><div className={s.elements}>{data.elements.map((e, i) => { const token = t.fiveElementDistribution.items[i].colorToken; return <div key={e.label} data-element={token}><b>{ELEMENT_LABELS[token]}</b><span className={s.bar} aria-hidden="true"><i style={{ "--w": `${Math.round(e.weighted / max * 100)}%` } as CSSProperties} /></span><span>{elementLevel(e)}</span></div>; })}</div></div>;
+  return <div className={s.tables}><table><caption>{data.name}의 만세력</caption><thead><tr><th scope="col">구분</th>{t.columns.map(c => <th scope="col" key={c.key}>{c.label}</th>)}</tr></thead><tbody>
+    {[["천간", t.stemRow], ["지지", t.branchRow]].map(([label, row]) => <Fragment key={String(label)}><tr><th scope="row">{String(label)}</th>{keys.map(key => { const cell = (row as typeof t.stemRow)[key]; return <td key={key} data-element-cell={cell?.colorToken}>{cell ? <><strong data-element={cell.colorToken}>{cell.hanja}</strong><span>{cell.ko} · {cell.yinYang === "yin" ? "음" : "양"}</span><span>{ELEMENT_LABELS[cell.colorToken]}</span></> : <span>미확인</span>}</td>; })}</tr><tr><th scope="row">십성</th>{keys.map(key => <td key={key}>{(row as typeof t.stemRow)[key]?.tenGod ?? "—"}</td>)}</tr></Fragment>)}
+    {t.detailRows.map(row => <tr key={row.key}><th scope="row">{row.key === "interactions" ? <abbr title={row.label}>합·충</abbr> : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{text}</span>) : "—"}</td>)}</tr>)}
+    </tbody></table><p className={s.hint}>음 {yin} · 양 {characters.length - yin} — {characters.length === 8 ? "네 기둥" : "확인된 기둥"}의 천간·지지 기준</p>{t.timeCorrectionNote ? <p className={s.hint}>{t.timeCorrectionNote}</p> : null}<h2>오행의 구성</h2><p className={s.hint}>{t.fiveElementDistribution.basisLabel} / 지장간 포함 가중</p><div className={s.elements}>{data.elements.map((e, i) => <div key={e.label} data-element-cell={t.fiveElementDistribution.items[i].colorToken}><b data-element={t.fiveElementDistribution.items[i].colorToken}>{ELEMENT_LABELS[t.fiveElementDistribution.items[i].colorToken]}</b><span>원국 {e.visible}</span><span>가중 {Number(e.weighted.toFixed(2))}</span>{e.state ? <span>{e.state}</span> : null}</div>)}</div></div>;
 }
 export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mbti"]; name: string }) {
   if (!m) return <><p className={s.eyebrow}>{name}의 MBTI</p><h1>MBTI 모름</h1><p className={s.profileLead}>입력하지 않은 유형은 추정하지 않습니다. 이 책은 확인된 명리 데이터를 기준으로 읽을 수 있습니다.</p></>;
-  const view = (MBTI_PAGES.types as Record<string, (typeof MBTI_PAGES.types)[keyof typeof MBTI_PAGES.types] | undefined>)[m.type];
-  return <><p className={s.eyebrow}>{name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}{view ? <span>{view.name}</span> : null}</h1>{view ? <p className={s.profileLead}>{view.oneLiner}</p> : null}<div className={s.profile}>
-    <h2>선호지표</h2><div className={s.axes}>{m.preferenceRows.map(r => <section key={r.axisKey} aria-label={r.label}>{[r.left, r.right].map(v => <div key={v.code} data-selected={v.selected}><b>{v.code}</b><small>{v.nameKo}{v.selected ? <span className={s.srOnly}> (선택)</span> : null}</small></div>)}</section>)}</div>
-    {view ? <><h2>핵심 요약</h2><ol className={s.summaryLines}>{view.summary.map(line => <li key={line.label}><small>{line.label}</small><p>{line.text}</p></li>)}</ol>
-    <h2>대표 키워드</h2><ul className={s.keywords}>{view.keywords.map(k => <li key={k}>{k}</li>)}</ul></> : null}
+  return <><p className={s.eyebrow}>WAYS OF BEING / {name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
+    <h2>선호지표</h2><div className={s.axes}>{m.preferenceRows.map(r => <section key={r.axisKey} aria-label={r.label}><h3>{r.label}</h3><div>{[r.left, r.right].map(v => <div key={v.code} data-selected={v.selected}><b>{v.code}</b><span><strong>{v.nameKo}{v.selected ? " ✓" : ""}</strong><small>{v.nameEn}</small><span>{v.description}</span></span></div>)}</div></section>)}</div>
+    <h2>기능서열</h2><table className={s.functions}><caption className={s.srOnly}>기능서열</caption><colgroup><col style={{ width: 56 }} /><col style={{ width: 38 }} /><col /></colgroup><thead className={s.srOnly}><tr><th scope="col">순서</th><th scope="col">기능</th><th scope="col">설명</th></tr></thead><tbody>{m.functionRows.map(r => <tr key={r.code}><th scope="row">{r.label}</th><td>{r.code}</td><td><strong>{r.nameKo}</strong><small>{r.attitude} · {r.domain}</small><p>{r.description}</p></td></tr>)}</tbody></table>
+    <h2>핵심 요약</h2><dl className={s.coreSummary}>{m.coreSummary.map(r => <div key={r.key}><dt>{r.label}</dt><dd>{r.text}</dd></div>)}</dl>
+    <h2>가까운 키워드</h2><p>{m.closeKeywords.join(" · ")}</p><h2>먼 키워드</h2><p>{m.farKeywords.join(" · ")}</p>
   </div></>;
 }
 
 export function PreviewFooter({ publicPresentation = false }: { publicPresentation?: boolean }) {
   const [legal, setLegal] = useState(false);
-  return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></span><SocialLinks className={s.social} /></div>
-    <p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
+  return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.micro}>GYEOL REPORT<br />PERSONAL PUBLISHING</span><nav aria-label="소셜과 고객 문의">
+    <a href="https://www.instagram.com/gyeolreport/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
+    <a href="http://pf.kakao.com/_sbHaX/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
+    <a href="http://pf.kakao.com/_sbHaX" target="_blank" rel="noopener noreferrer">채널 보기</a>
+    </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
-    <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책</button><MetaSettingsLink /></nav><p className={s.micro}>© 결리포트</p>
+    <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>
     {legal ? <DetailSheet title="이용약관과 정책" onClose={() => setLegal(false)}><LegalAccordion publicPresentation={publicPresentation} /></DetailSheet> : null}
   </footer>;
 }
