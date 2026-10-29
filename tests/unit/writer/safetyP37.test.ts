@@ -36,6 +36,13 @@ describe("P3.7 원고 보강", () => {
     const x = briefs.find(([n]) => n === "major_fortune:x")![1];
     const y2027 = x.timeline!.entries.find(e => e.key === "2027")!;
     expect(y2027.badges.find(b => b.label === "축미충")?.with).toBe("태어난 달·태어난 날");
+    // r2: 천간합은 천간 쪽 trait만 건드린다(월간 乙의 을경합 → 월지 丑의 묘 trait로 잇던 오류).
+    for (const [name, b] of briefs) for (const e of b.timeline?.entries ?? []) for (const t of e.touched ?? []) {
+      if (!t.how.includes("천간합")) continue;
+      const fam = b.traits.find(x => x.id === t.traitId)!.featureId.split(":")[0];
+      expect(["twelveStage", "shinsal", "gwiin", "branch"], `${name} ${e.key} ${t.traitId}`).not.toContain(fam);
+    }
+    expect(x.timeline!.entries.find(e => e.key === "2030")!.touched?.some(t => t.how.includes("천간합")) ?? false).toBe(false);
   });
 
   it("1-2: 강약·균형 단정은 엔진 판단과 맞는 문장만, 일간 강약과 오행 쏠림은 note로 구분", () => {

@@ -4,10 +4,10 @@
  */
 import { TIMELINE_ACTION_DOMAINS } from "@/data/knowledge-v5/schema";
 import { scoreFlow, type FlowInput } from "@/data/knowledge-v5/flow-score";
-import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";
+import { BRANCH_MAIN_ELEMENT, HEAVENLY_STEMS, HIDDEN_STEMS } from "@/lib/saju/constants";
 import type { CustomerDayunCycle } from "@/lib/saju/customerDayun";
 import { analyzeIncoming, getAnnualPillar, getMonthlyPillars } from "@/lib/saju/detections";
-import type { ChartPosition, RelationHit, TemporalPosition } from "@/lib/saju/detections/types";
+import type { ChartPosition, RelationHit, RelationMember, TemporalPosition } from "@/lib/saju/detections/types";
 import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
@@ -37,8 +37,9 @@ export type TimelineCtx = {
   readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile;
   readonly rng: Rng; readonly usedScenes: Set<string>; readonly usedTemplates: Set<string>;
   /** 원국 trait(P3.7 1-1): 그해·그달 글자가 실제로 건드리는 것만 항목 재료(touched)가 된다. */
-  readonly traits?: readonly Pick<Trait, "id" | "featureId" | "family" | "positions">[];
+  readonly traits?: readonly TraitRef[];
 };
+type TraitRef = Pick<Trait, "id" | "featureId" | "family" | "positions">;
 
 /** 관계 쉬운 이름(용어 사전 easy와 같은 결). */
 const REL_EASY: Record<string, string> = {
@@ -52,16 +53,29 @@ const GROUP_EASY = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는
  * 그해·그달 글자가 건드리는 원국 trait(P3.7 1-1): ① 합충형파해로 엮인 자리의 trait, ② 같은 십성(묶음)으로 세지거나 채워지는 trait, ③ 부족 오행을 채우거나 많은 오행을 더하는 trait.
  * 해당이 없으면 빈 목록(원국 특성을 억지로 넣지 않는다). 순서 = 우선순위.
  */
+/** trait가 그 자리의 천간·지지 중 관계가 걸린 글자 쪽에 있는가(P3.7 r2: 월간 乙의 을경합을 월지 丑의 묘(墓) trait에 이었다). */
+function onGlyph(saju: SajuCalcResult, t: TraitRef, m: RelationMember & { position: ChartPosition }): boolean {
+  const isStem = (HEAVENLY_STEMS as readonly string[]).includes(m.char);
+  const [fam, key] = t.featureId.split(":");
+  if (fam === "dayPillar" || fam === "relation") return true;
+  if (fam === "stem" || fam === "branch") return key === m.char;
+  if (fam === "dayMaster") return isStem;
+  if (fam === "tenGod") return isStem
+    ? m.position !== "day" && saju.tenGods.stems[m.position] === key
+    : saju.tenGods.hiddenStems.find(h => h.branch === m.char && h.stem === HIDDEN_STEMS[m.char as keyof typeof HIDDEN_STEMS][0].stem)?.tenGod === key;
+  return !isStem; // 십이운성·신살·귀인은 지지 자리
+}
+
 function touchedTraits(ctx: TimelineCtx, inc: ReturnType<typeof analyzeIncoming>, eff: ReturnType<typeof inflowEffect>): { traitId: string; how: string }[] {
   const out: { traitId: string; how: string }[] = [];
   const add = (traitId: string, how: string) => { if (!out.some(x => x.traitId === traitId)) out.push({ traitId, how }); };
   for (const r of inc.relations) {
-    const natal = r.members.map(m => m.position).filter((p): p is ChartPosition => NATAL.includes(p));
+    const natal = r.members.filter((m): m is RelationMember & { position: ChartPosition } => NATAL.includes(m.position));
     for (const t of ctx.traits ?? []) {
       // 합충형파해 trait는 같은 종류의 관계가 다시 걸릴 때만 건드려진다(P3.7 r1: 파 trait를 합이 건드린다고 이어 "합이 파를 푼다"로 읽혔다).
       if ((t.family === "relation" && t.featureId !== `relation:${r.kind}`) || (t.featureId === "shinsal:WONJIN" && r.kind !== "WONJIN")) continue;
-      const p = natal.find(x => t.positions.includes(x));
-      if (p) add(t.id, `${POSITION_KO[p]} 글자와 ${relEasy(r)}`);
+      const m = natal.find(x => t.positions.includes(x.position) && onGlyph(ctx.saju, t, x));
+      if (m) add(t.id, `${POSITION_KO[m.position]} 글자와 ${relEasy(r)}`);
     }
   }
   for (const t of ctx.traits ?? []) {
