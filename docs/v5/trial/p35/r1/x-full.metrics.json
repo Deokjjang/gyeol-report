@@ -1,0 +1,61 @@
+{
+ "case": "x-full",
+ "chapters": 13,
+ "sources": {
+  "writer": 13
+ },
+ "chars": [
+  1244,
+  1123,
+  1156,
+  1159,
+  1205,
+  1143,
+  1113,
+  1173,
+  1155,
+  1187,
+  1175,
+  1161,
+  1131
+ ],
+ "total": 15125,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "warnings": [],
+ "briefCopy": {
+  "sentences": 307,
+  "matched": 38,
+  "ratio": 0.124,
+  "writerSentences": 307,
+  "writerMatched": 38,
+  "writerRatio": 0.124
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 9
+  },
+  {
+   "phrase": "그런데",
+   "count": 4
+  },
+  {
+   "phrase": "그래도",
+   "count": 3
+  },
+  {
+   "phrase": "반대로",
+   "count": 3
+  },
+  {
+   "phrase": "여기에",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "jobMentions": 0,
+ "sceneHintsUsed": "16/16"
+}
