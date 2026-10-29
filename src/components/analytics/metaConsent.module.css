@@ -1,12 +1,14 @@
-/* Sits above the Book page navigation (54px + safe area) on every width. */
-.root { position: fixed; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); right: 12px; z-index: 90; max-width: min(420px, calc(100vw - 24px)); color: #251e1b; font: 13px/1.65 sans-serif; }
-.panel { padding: 20px; background: #fffdf9; border: 1px solid #d4c9bd; border-radius: 12px; box-shadow: 0 4px 24px #0002; max-height: min(70vh, calc(100dvh - 90px)); overflow: auto; }
-.panel p { margin: 10px 0; } .panel a { text-decoration: underline; }
-.panel label { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0; } .panel input { min-width: 18px; min-height: 18px; margin-top: 3px; }
-.actions { display: flex; gap: 10px; margin-top: 12px; }
-.actions button, .card button { border: 1px solid #b5a99b; background: #fffdf9; color: #49382e; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
+/* 광고 동의(P5 디자인 토큰). 책 아래 장 이동 막대(56px + safe area) 위에 뜬다. 첫 방문 1회 작은 카드, 이후 푸터 '광고 설정'. */
+.root { position: fixed; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); left: 12px; right: 12px; z-index: 90; margin-left: auto; max-width: 400px; color: var(--ink); font: 14px/1.65 var(--sans); }
+.panel { padding: 20px; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 8px; box-shadow: var(--shadow); max-height: min(70vh, calc(100dvh - 90px)); overflow: auto; }
+.panel p { margin: 10px 0; } .panel a { text-decoration: underline; text-underline-offset: 3px; }
+.panel label { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0; } .panel input { min-width: 18px; min-height: 18px; margin-top: 3px; accent-color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.actions button, .card button { border: 1px solid var(--rule-strong); background: transparent; color: var(--ink); border-radius: 999px; min-height: 40px; padding: 0 16px; font: inherit; font-size: 13px; cursor: pointer; transition: background var(--t-fast) var(--ease); }
+.actions button:hover, .card button:hover { background: var(--paper-sunk); }
 .actions button:disabled { opacity: .55; cursor: wait; }
-.card { max-width: 320px; padding: 12px 14px; background: #fffdf9; border: 1px solid #d4c9bd; border-radius: 10px; box-shadow: 0 4px 18px #0002; font-size: 12px; line-height: 1.6; }
-.card p { margin: 4px 0 10px; }
+.card { padding: 14px 16px; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 8px; box-shadow: var(--shadow); font-size: 13px; line-height: 1.6; animation: gyeol-reveal var(--t-mid) var(--ease) both; }
+.card strong { font-weight: 600; }
+.card p { margin: 4px 0 10px; color: var(--ink-2); }
 .card div { display: flex; flex-wrap: wrap; gap: 8px; }
-.card button { min-height: 36px; padding: 6px 12px; font-size: 12px; }
+@media (min-width: 768px) { .root { left: auto; right: 16px; } }

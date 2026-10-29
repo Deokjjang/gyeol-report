@@ -120,7 +120,7 @@ export default function BookPreview({ library, initialBook, initialRead = false 
     setNote(null);
   };
 
-  return <main lang="ko" className={s.root} data-book-preview data-stage={stage} data-reduced-motion={reduced} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={keyboard}>
+  return <main lang="ko" className={s.root} data-book-preview data-stage={stage} data-reduced-motion={reduced} style={{ "--cover": book.color, "--cover-ink": book.ink } as CSSProperties} onKeyDown={keyboard}>
     <header className={s.header}><button className={s.wordmark} aria-label="결리포트 책장으로" onClick={closeBook}><b>결리포트</b><span>GYEOL REPORT</span></button>
       {stage === "home" ? <button className={s.login} onClick={() => { setMember(m => !m); setMessage(member ? "비회원 미리보기로 전환했습니다." : "회원 미리보기입니다. 실제 로그인은 하지 않습니다."); }}>{member ? "로그아웃" : "로그인"}</button> : <button className={s.close} aria-label="책 닫기" onClick={closeBook}>닫기 <span aria-hidden="true">×</span></button>}
     </header>

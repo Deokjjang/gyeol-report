@@ -1,23 +1,23 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { bookExperiencePublicEnabled } from "../lib/book/publicGate";
 import { BookFooterRoute } from "../components/book/BookRoutes";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Serif_KR } from "next/font/google";
 import MetaPixel from "../components/analytics/MetaPixel";
 import BusinessFooter from "../components/legal/BusinessFooter";
 import {
   BRAND_DESCRIPTION,
   SHARE_IMAGE,
+  SHARE_IMAGE_SIZE,
 } from "../lib/sharing/reportShareMetadata";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 책 본문·제목 명조 1종(SIL OFL 1.1). 한글은 unicode-range 조각으로 필요한 글자만 받고, latin 조각만 미리 받는다.
+const serif = Noto_Serif_KR({
+  variable: "--font-noto-serif",
+  weight: ["400", "600"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  fallback: ["AppleMyungjo", "Nanum Myeongjo", "Batang", "serif"],
 });
 
 export const metadata: Metadata = {
@@ -28,6 +28,12 @@ export const metadata: Metadata = {
   },
   description: BRAND_DESCRIPTION,
   applicationName: "결리포트",
+  // P5 아이콘(새 표지 디자인, 파일명에 버전). favicon.ico는 app/ 파일 규칙 그대로.
+  icons: {
+    icon: [{ url: "/brand/icon-v5.svg", type: "image/svg+xml" }, { url: "/brand/icon-192-v5.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/brand/apple-touch-icon-v5.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
   keywords: [
     "결리포트",
     "사주",
@@ -42,8 +48,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: SHARE_IMAGE,
-        width: 1536,
-        height: 1024,
+        ...SHARE_IMAGE_SIZE,
         alt: "GYEOL REPORT",
       },
     ],
@@ -60,6 +65,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f2e9" },
+    { media: "(prefers-color-scheme: dark)", color: "#1b1916" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,8 +79,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="ko"
+      className={`${serif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {children}

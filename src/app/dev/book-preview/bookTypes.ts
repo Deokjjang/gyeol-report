@@ -2,7 +2,15 @@ import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTyp
 import type { Book, Person } from "./model";
 
 // Presentation-only DTO. No calculation objects, proof IDs or composer imports.
-export type BookPerson = Person & { role: string; timeLabel: string; table: V4CustomerTables[number] };
+export type BookPerson = Person & { role: string; timeLabel: string; table: V4CustomerTables[number];
+  /** v5 Book만: 엔진이 감지한 원국 관계 전부(읽을 때 저장된 기둥 글자로 감지, 표시 전용). 없으면 저장된 합·충 칸을 쓴다. */
+  relations?: { pair: string; text: string }[] };
+/** v5 대운·세운 카드(TimelineEntry 표시 전용). page는 그 연·월 본문 쪽. */
+export type BookTimelineCard = {
+  key: string; kind: "year" | "month"; heading: string; sub: string; now: boolean; page: number;
+  ganji: { hanja: string; hangul: string; stem: string; branch: string }; tenGod: { stem: string; branch: string };
+  badges: { label: string; line: string; tone: string }[]; flow: { score: number; label: string }; keywords: string[]; action: string; transition: boolean; dayun?: string;
+};
 export type BookFeature = { name: string; meaning: string; manifestation: string; person: string; group?: string; core?: boolean };
 export type BookNote = { name: string; text: string };
 export type BookParagraph = { text: string; notes: number[]; heading?: string; anchorId?: string };
@@ -25,6 +33,7 @@ export type BookData = {
   bookId: Book["id"]; title: string; names: string; people: BookPerson[];
   context: { label: string; value: string }[]; pages: BookPage[];
   share: { title: string; description: string }; readingDate: string;
+  timeline?: BookTimelineCard[];
 };
 export type BookFixtureLink = { id: string; bookId: Book["id"]; label: string };
 export type BookLibrary = { books: BookData[]; fixtures: BookFixtureLink[]; selected: string };

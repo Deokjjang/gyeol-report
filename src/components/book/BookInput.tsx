@@ -4,10 +4,11 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { BOOKS, bookForProduct, readerTitle } from "../../lib/book/product";
 import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type BookFormState } from "../../lib/book/form";
 import type { PersonInputState } from "../../lib/report-generation/reportInputPresentation";
-import { MBTI_TYPES, FOCUS_AREAS, compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
+import { compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
 import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../lib/saju/birthTimePrecisionTypes";
 import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
-import { JOBS, RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
+import { RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
+import PRODUCTS from "../../data/book-pages/products.json";
 import { Publishing } from "../../app/dev/book-preview/BookPages";
 import { BookCheckout } from "./BookCheckout";
 import s from "../../app/dev/book-preview/book.module.css";
@@ -17,21 +18,64 @@ import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
 import { AccountChannelOnboarding } from "../account/AccountSession";
 
-export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
+const pad = (v: string) => v.padStart(2, "0");
+/** 생년월일 숫자 3칸(숫자 키패드, 다 차면 다음 칸). 세 칸이 모두 맞을 때만 YYYY-MM-DD로 올린다. */
+function DateDigits({ id, value, onChange, invalid, describedBy }: { id: string; value: string; onChange: (v: string) => void; invalid: boolean; describedBy?: string }) {
+  const [parts, setParts] = useState(() => { const m = value.match(/^(\d{4})-(\d{2})-(\d{2})$/); return m ? [m[1], String(Number(m[2])), String(Number(m[3]))] : ["", "", ""]; });
+  const refs = [useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null)];
+  const set = (i: number, raw: string) => {
+    const v = raw.replace(/\D/g, "").slice(0, i ? 2 : 4), next = parts.map((p, j) => j === i ? v : p);
+    setParts(next);
+    onChange(next[0].length === 4 && next[1] && next[2] ? `${next[0]}-${pad(next[1])}-${pad(next[2])}` : "");
+    if ((i === 0 && v.length === 4) || (i === 1 && (v.length === 2 || Number(v) > 1))) refs[i + 1].current?.focus();
+  };
+  return <div className={s.digits} role="group" aria-labelledby={`${id}-label`}>{(["년", "월", "일"] as const).map((unit, i) => <label key={unit}><input ref={refs[i]} id={i ? `${id}-${i}` : id} inputMode="numeric" pattern="[0-9]*" autoComplete={["bday-year", "bday-month", "bday-day"][i]} placeholder={["1994", "3", "17"][i]} value={parts[i]} aria-label={unit === "년" ? "태어난 해" : unit === "월" ? "태어난 달" : "태어난 날"} aria-invalid={invalid} aria-describedby={describedBy} onChange={e => set(i, e.target.value)} /><span aria-hidden="true">{unit}</span></label>)}</div>;
+}
+/** 태어난 시각 시·분 숫자 2칸(24시간). 둘 다 맞을 때만 HH:MM으로 올린다. */
+function TimeDigits({ id, value, onChange, invalid, describedBy }: { id: string; value: string; onChange: (v: string) => void; invalid: boolean; describedBy?: string }) {
+  const [parts, setParts] = useState(() => { const m = value.match(/^(\d{2}):(\d{2})$/); return m ? [m[1], m[2]] : ["", ""]; });
+  const minute = useRef<HTMLInputElement>(null);
+  const set = (i: number, raw: string) => {
+    const v = raw.replace(/\D/g, "").slice(0, 2), next = parts.map((p, j) => j === i ? v : p);
+    setParts(next);
+    const ok = next[0] !== "" && next[1].length === 2 && Number(next[0]) < 24 && Number(next[1]) < 60;
+    onChange(ok ? `${pad(next[0])}:${next[1]}` : "");
+    if (i === 0 && (v.length === 2 || Number(v) > 2)) minute.current?.focus();
+  };
+  return <div className={`${s.digits} ${s.time}`} role="group" aria-labelledby={`${id}-label`}>{(["시", "분"] as const).map((unit, i) => <label key={unit}><input ref={i ? minute : undefined} id={i ? `${id}-m` : id} inputMode="numeric" pattern="[0-9]*" placeholder={i ? "27" : "8"} value={parts[i]} aria-label={unit === "시" ? "시" : "분"} aria-invalid={invalid} aria-describedby={describedBy} onChange={e => set(i, e.target.value)} /><span aria-hidden="true">{unit}</span></label>)}</div>;
+}
+function Segment<T extends string>({ label, value, options, onChange, id, even = false, labelId }: { label?: string; value: T | ""; options: readonly (readonly [T, string])[]; onChange: (v: T) => void; id?: string; even?: boolean; labelId?: string }) {
+  return <div className={`${s.segment} ${even ? s.even : ""}`} role="group" aria-label={labelId ? undefined : label} aria-labelledby={labelId}>{options.map(([v, text], i) => <button type="button" key={v} id={i === 0 ? id : undefined} aria-pressed={value === v} onClick={() => onChange(v)}>{text}</button>)}</div>;
+}
+
+export function Fields({ person, change, prefix, role, errors, now, requiredGender, pair = false }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean; pair?: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
-  const a11y = (key: string) => ({ "aria-invalid": Boolean(errors[`${prefix}.${key}`]), "aria-describedby": errors[`${prefix}.${key}`] ? `${prefix}-${key}-error` : undefined });
-  return <fieldset className={s.fields}><legend>{role}</legend>
-    <label>{role} 이름<input id={`${prefix}-name`} value={person.name} maxLength={30} autoComplete="off" {...a11y("name")} onChange={e => change({ ...person, name: e.target.value })} />{error("name")}</label>
-    <label>생년월일<input id={`${prefix}-birthDate`} type="date" min="1900-01-01" max={now.slice(0, 10)} value={person.birthDate} {...a11y("birthDate")} onChange={e => change({ ...person, birthDate: e.target.value })} />{error("birthDate")}</label>
-    <label>성별{requiredGender ? " (필수)" : ""}<select id={`${prefix}-gender`} value={person.gender} {...a11y("gender")} onChange={e => change({ ...person, gender: e.target.value })}><option value="">미선택</option><option value="FEMALE">여성</option><option value="MALE">남성</option></select>{error("gender")}</label>
-    <fieldset className={s.wide}><legend>출생시간</legend><div className={s.choices}>{[["exact", "정확"], ["approximate", "대략"], ["unknown", "모름"]].map(([value, label]) => <label key={value}><input type="radio" name={`${prefix}-precision`} checked={person.paidBirthTimeMode === value} onChange={() => change({ ...person, paidBirthTimeMode: value as PersonInputState["paidBirthTimeMode"], birthTime: "", timeBranch: "", birthTimeUnknown: value === "unknown" })} />{label}</label>)}</div></fieldset>
-    {person.paidBirthTimeMode === "exact" ? <label className={s.wide}>태어난 시각<input id={`${prefix}-birthTime`} type="time" value={person.birthTime} {...a11y("birthTime")} onChange={e => change({ ...person, birthTime: e.target.value })} />{error("birthTime")}</label> : person.paidBirthTimeMode === "approximate" ? <label className={s.wide}>대략적인 시간대<select id={`${prefix}-birthTime`} value={person.timeBranch} {...a11y("birthTime")} onChange={e => change({ ...person, timeBranch: e.target.value as PersonInputState["timeBranch"] })}><option value="">시간대 선택</option>{BIRTH_TIME_SLOT_DEFINITIONS.map(slot => <option key={slot.value} value={slot.value}>{slot.labelKo}</option>)}</select>{error("birthTime")}</label> : null}
+  const invalid = (key: string) => Boolean(errors[`${prefix}.${key}`]), described = (key: string) => errors[`${prefix}.${key}`] ? `${prefix}-${key}-error` : undefined;
+  void now;
+  return <fieldset className={s.fields}><legend className={pair ? undefined : s.srOnly}>{role}</legend>
+    <div className={s.field}><label className={s.fieldLabel} htmlFor={`${prefix}-name`}>이름</label><input className={s.textInput} id={`${prefix}-name`} value={person.name} maxLength={30} autoComplete="off" placeholder="책에 들어갈 이름이나 별명" aria-invalid={invalid("name")} aria-describedby={described("name")} onChange={e => change({ ...person, name: e.target.value })} />{error("name")}</div>
+    <div className={s.field}><span className={s.fieldLabel} id={`${prefix}-birthDate-label`}>생년월일 (양력)</span><DateDigits id={`${prefix}-birthDate`} value={person.birthDate} invalid={invalid("birthDate")} describedBy={described("birthDate")} onChange={birthDate => change({ ...person, birthDate })} />{error("birthDate")}</div>
+    <div className={s.field}><span className={s.fieldLabel} id={`${prefix}-gender-label`}>성별{requiredGender ? " (필수)" : ""}</span><Segment id={`${prefix}-gender`} labelId={`${prefix}-gender-label`} value={person.gender as "FEMALE" | "MALE" | ""} options={[["FEMALE", "여성"], ["MALE", "남성"]]} even onChange={gender => change({ ...person, gender })} />{error("gender")}</div>
+    <div className={s.field}><span className={s.fieldLabel} id={`${prefix}-precision-label`}>태어난 시각</span><Segment labelId={`${prefix}-precision-label`} value={person.paidBirthTimeMode as "exact" | "approximate" | "unknown"} options={[["exact", "정확"], ["approximate", "대략"], ["unknown", "모름"]]} even onChange={value => change({ ...person, paidBirthTimeMode: value as PersonInputState["paidBirthTimeMode"], birthTime: "", timeBranch: "", birthTimeUnknown: value === "unknown" })} />
+      {person.paidBirthTimeMode === "exact" ? <><span className={s.srOnly} id={`${prefix}-birthTime-label`}>태어난 시각 시와 분</span><TimeDigits key="exact" id={`${prefix}-birthTime`} value={person.birthTime} invalid={invalid("birthTime")} describedBy={described("birthTime")} onChange={birthTime => change({ ...person, birthTime })} /></>
+        : person.paidBirthTimeMode === "approximate" ? <select className={s.textInput} id={`${prefix}-birthTime`} aria-label="대략적인 시간대(시진)" value={person.timeBranch} aria-invalid={invalid("birthTime")} aria-describedby={described("birthTime")} onChange={e => change({ ...person, timeBranch: e.target.value as PersonInputState["timeBranch"] })}><option value="">시간대 고르기</option>{BIRTH_TIME_SLOT_DEFINITIONS.map(slot => <option key={slot.value} value={slot.value}>{slot.labelKo}</option>)}</select>
+        : <p className={s.fieldNote}>모르면 태어난 시각 없이 계산합니다. 시주는 쓰지 않아요.</p>}{error("birthTime")}</div>
   </fieldset>;
 }
 
+const AXES = [["E", "I"], ["S", "N"], ["T", "F"], ["J", "P"]] as const;
+/** MBTI 4쌍 토글. 네 쌍을 모두 고르면 유형이 정해지고, '모름'은 유형 없이 쓴다(MBTI 근거를 만들지 않음). */
 export function MbtiInput({ person, change, role }: { person: PersonInputState; change: (p: PersonInputState) => void; role: string }) {
-  return <label>{role} MBTI<select value={person.mbtiType} onChange={e => change({ ...person, mbtiType: e.target.value })}>{MBTI_TYPES.map(v => <option key={v} value={v}>{v || "모름"}</option>)}</select></label>;
+  const [letters, setLetters] = useState<string[]>(() => /^[EI][SN][TF][JP]$/.test(person.mbtiType) ? person.mbtiType.split("") : ["", "", "", ""]);
+  const pick = (i: number, letter: string) => { const next = letters.map((l, j) => j === i ? letter : l); setLetters(next); change({ ...person, mbtiType: next.every(Boolean) ? next.join("") : "" }); };
+  const unknown = letters.every(l => !l);
+  return <div className={s.field}><span className={s.fieldLabel} id={`mbti-${role || "a"}-label`}>{role ? `${role} MBTI` : "MBTI"}</span>
+    <div className={s.mbti} role="group" aria-labelledby={`mbti-${role || "a"}-label`}>{AXES.map((pair, i) => <div key={pair.join("")}>{pair.map(letter => <button type="button" key={letter} aria-pressed={letters[i] === letter} onClick={() => pick(i, letter)}>{letter}</button>)}</div>)}</div>
+    <p className={s.fieldNote}>{letters.every(Boolean) ? `${letters.join("")}로 읽습니다.` : unknown ? "모르면 비워 두세요. MBTI 없이 사주로만 씁니다." : "네 쌍을 모두 고르면 유형이 정해집니다."} {!unknown ? <button type="button" className={s.fieldNote} style={{ textDecoration: "underline", textUnderlineOffset: 3 }} onClick={() => { setLetters(["", "", "", ""]); change({ ...person, mbtiType: "" }); }}>모름으로 바꾸기</button> : <a href="https://www.16personalities.com/ko" target="_blank" rel="noopener noreferrer">무료 검사 하러 가기 (새 창)</a>}</p></div>;
 }
+
+const STATUS = [["employee", "직장인"], ["student", "학생"], ["freelancer", "프리랜서"], ["self_employed", "자영업"], ["job_seeker", "구직"], ["other", "기타"]] as const;
+const PRODUCT_PAGES = PRODUCTS.products as Record<string, { lines: string[]; toc: string[] } | undefined>;
 
 export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean }) {
   const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0];
@@ -89,7 +133,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     window.addEventListener("popstate", back); return () => { active = false; clearTimeout(restore); window.removeEventListener("popstate", back); };
   }, [key, policy.currentYear, initial, book.id, book.productKey, now, pair, requiredGender, total, internal, ticketShopEnabled]);
   useEffect(() => { if (ready && draftWritable.current) { try { sessionStorage.setItem(key, JSON.stringify({ version: 1, state })); } catch { /* optional local draft */ } } }, [state, ready, key]);
-  useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
+  useEffect(() => { window.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
   const update = (next: BookFormState) => {
     if (!draftWritable.current) {
@@ -123,25 +167,26 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     reachedStep.current = Math.max(reachedStep.current, nextStep);
     setStep(nextStep); window.history.pushState({ ...window.history.state, bookInputProduct: book.id, bookInputPage: nextStep }, "", `#page-${nextStep + 1}`);
   };
-  const relation = <label>관계 상태<select value={state.person.relationshipStatus} onChange={e => update({ ...state, person: { ...state.person, relationshipStatus: e.target.value } })}>{RELATIONSHIPS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>;
-  const home = internal ? "/dev/book-flow" : "/";
-  return <main className={`${s.root} ${f.flow}`} data-book-input data-step={step} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
+  const relation = <div className={s.field}><span className={s.fieldLabel} id="relationship-label">지금의 관계</span><Segment labelId="relationship-label" value={state.person.relationshipStatus} options={RELATIONSHIPS.filter(([value]) => value)} onChange={relationshipStatus => update({ ...state, person: { ...state.person, relationshipStatus } })} /></div>;
+  const home = internal ? "/dev/book-flow" : "/", library = internal ? "/dev/account" : "/account", intro = PRODUCT_PAGES[book.productKey];
+  return <main className={`${s.root} ${f.flow}`} data-book-input data-step={step} style={{ "--cover": book.color, "--cover-ink": book.ink } as CSSProperties}>
     {authEnabled && ready && !receipt && !publishing && !checking ? <AccountChannelOnboarding local={internal} /> : null}
-    <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
+    <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기</a></header>
     {internal && publishing ? <div data-observed-status="REQUESTED" data-intermediate-states="decorative"><Publishing book={book} name={state.person.name} state={PUBLISHING_STATES[decoration]} notice="내부 검수 · 실제 결제 없음" /><p className={f.status} role="status">책을 생성하고 있습니다. 종이·제본 움직임은 연출이며 진행률이 아닙니다.</p></div> : null}
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">
-      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
-        <p className={s.eyebrow}>{title} / {String(step + 1).padStart(2, "0")}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
-        {step === 0 ? <>{pair ? <label>관계 유형<select value={state.category} onChange={e => update({ ...state, category: e.target.value as CompatibilityRelationshipType })}>{CATEGORIES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} errors={errors} now={now} requiredGender={false} /> : null}</> : null}
+      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <><button type="button" className={s.close} style={{ marginBottom: 16, justifyContent: "flex-start" }} onClick={() => window.history.back()}>← 입력 고치기</button><BookCheckout payload={payload} now={now} internal={internal} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /></> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
+        <p className={s.eyebrow}>{title} · {step + 1} / {total + 1}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
+        {step === 0 && intro ? <section className={s.intro} aria-label="이 책에서 알게 되는 것"><ul>{intro.lines.map(line => <li key={line}>{line}</li>)}</ul><details><summary>목차 미리보기 ({intro.toc.length}장)</summary><ol>{intro.toc.map(t => <li key={t}>{t}</li>)}</ol></details></section> : null}
+        {step === 0 ? <>{pair ? <div className={s.field} style={{ marginBottom: 32 }}><span className={s.fieldLabel} id="category-label">두 사람의 관계</span><Segment labelId="category-label" value={state.category} options={CATEGORIES} onChange={category => update({ ...state, category: category as CompatibilityRelationshipType })} /></div> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} pair={pair} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} pair errors={errors} now={now} requiredGender={false} /> : null}</> : null}
         {step === 1 ? <div className={s.fields}><MbtiInput person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} role={pair ? roles.personA : ""} />{pair ? <MbtiInput person={state.personB} change={p => update({ ...state, personB: p })} role={roles.personB} /> : <>
-          <label>현재 상태<select value={state.person.jobStatus} onChange={e => update({ ...state, person: { ...state.person, jobStatus: e.target.value } })}><option value="">미선택</option>{JOBS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}<option value="other">기타</option></select></label>
-          <label className={s.wide}>현재 직업<input value={state.person.detailedJob} maxLength={200} onChange={e => update({ ...state, person: { ...state.person, detailedJob: e.target.value } })} /></label>{book.id !== "love" ? relation : null}
-          <fieldset className={s.wide}><legend>관심 분야 (선택)</legend><div className={s.choices}>{FOCUS_AREAS.map(area => <label key={area}><input type="checkbox" checked={state.person.focusAreas.includes(area)} onChange={e => update({ ...state, person: { ...state.person, focusAreas: e.target.checked ? [...state.person.focusAreas, area] : state.person.focusAreas.filter(a => a !== area) } })} />{area}</label>)}</div></fieldset>
+          <div className={s.field}><span className={s.fieldLabel} id="job-label">하는 일</span><Segment labelId="job-label" value={state.person.jobStatus} options={STATUS} onChange={jobStatus => update({ ...state, person: { ...state.person, jobStatus } })} />
+            <input className={s.textInput} aria-label="직업 (선택)" value={state.person.detailedJob} maxLength={200} placeholder="직업이 있다면 적어 주세요. 예: 서비스 기획자, 간호사" onChange={e => update({ ...state, person: { ...state.person, detailedJob: e.target.value } })} /></div>
+          {book.id !== "love" ? relation : null}
         </>}</div> : null}
-        {step === 2 ? book.id === "love" ? relation : <label>선택 연도<select value={state.person.selectedYear} onChange={e => update({ ...state, person: { ...state.person, selectedYear: e.target.value } })}>{policy.selectableYears.map(year => <option key={year}>{year}</option>)}</select></label> : null}
-        <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>
+        {step === 2 ? book.id === "love" ? <div className={s.fields}>{relation}</div> : <div className={s.fields}><div className={s.field}><span className={s.fieldLabel} id="year-label">연도</span><Segment labelId="year-label" value={state.person.selectedYear} options={policy.selectableYears.map(year => [String(year), `${year}년`] as const)} onChange={selectedYear => update({ ...state, person: { ...state.person, selectedYear } })} /></div></div> : null}
+        <button type="submit" className={s.primary} disabled={checking}>{checking ? "입력 확인 중" : step === total - 1 ? "주문서 보기" : "다음"}</button>
       </form>}
       {message ? <p className={f.error} role="alert">{message}</p> : null}
-    </div><nav className={s.pageNav} aria-label="입력 페이지"><button aria-label="이전 페이지" disabled={!step || checking} onClick={() => window.history.back()}>←</button><span><strong>{title}</strong><span>{step + 1} / {total + 1}</span></span><a href={home}>책장 ↗</a></nav></section>
+    </div>{receipt ? null : <nav className={s.pageNav} aria-label="입력 페이지" style={{ "--progress": `${Math.round((step + 1) / (total + 1) * 100)}%` } as CSSProperties}><button aria-label="이전 페이지" disabled={!step || checking} onClick={() => window.history.back()}>←</button><span><strong>{title}</strong><span>{step + 1} / {total + 1}</span></span><a href={library}>내 서재</a></nav>}</section>
   </main>;
 }

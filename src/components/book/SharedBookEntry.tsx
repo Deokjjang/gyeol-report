@@ -6,6 +6,7 @@ import type { BookData } from "../../app/dev/book-preview/bookTypes";
 import { bookForProduct } from "../../lib/book/product";
 import { bookShareEvent } from "../../lib/book/shareEvents";
 import s from "./bookShare.module.css";
+import { Cover } from "../../app/dev/book-preview/BookPages";
 const Reader = dynamic(() => import("./BookReading").then(m => m.BookReading), { loading: () => <p role="status">책을 펼치고 있습니다.</p> });
 
 export function SharedBookEntry({ model, local = false }: { model: BookShareModel; local?: boolean }) {
@@ -23,9 +24,9 @@ export function SharedBookEntry({ model, local = false }: { model: BookShareMode
     finally { pending.current = false; setBusy(false); }
   }
   if (opened) return <Reader data={opened.data} share={opened.share} shared local={local} home={home} />;
-  return <main className={s.entry}><header><a href={home}>결리포트</a></header><section>
+  return <main className={s.entry}><header><a href={home} style={{ fontFamily: "var(--serif)", fontSize: 19 }}>결리포트</a></header><section>
     <h1>{model.displayTitle}</h1><button className={s.open} type="button" disabled={busy} data-opening={busy} aria-label={`${model.displayTitle} 펼치기`} onClick={() => void open()}>
-      <span className={s.cover} style={{ background: model.coverColor, color: book.ink }}><span className={s.coverTop}><span>GYEOL<br />REPORT</span><span>ISSUE<br />{model.issueNumber}</span></span><span className={s.coverTitle}>{book.id === "annual" ? model.bookTitle.replace(" ", "\n") : book.title}</span><span className={s.coverName}>{model.displayName || "PERSONAL EDITION"}</span></span>
-    </button><p className={s.hint}>책 펼치기 ↗</p>{busy ? <p role="status">책을 펼치고 있습니다.</p> : null}{error ? <p role="alert">{error}</p> : null}
+      <span className={s.cover}><Cover book={book} title={book.id === "annual" ? model.bookTitle.replace(" ", "\n") : undefined} name={model.displayName || undefined} /></span>
+    </button><p className={s.hint}>표지를 누르면 펼쳐집니다</p>{busy ? <p role="status">책을 펼치고 있습니다.</p> : null}{error ? <p role="alert">{error}</p> : null}
   </section></main>;
 }

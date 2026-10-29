@@ -2,7 +2,7 @@
 .edition h2,
 .edition h3,
 .edition :global(.font-serif) {
-  font-family: var(--font-geist-sans), Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: var(--sans);
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
