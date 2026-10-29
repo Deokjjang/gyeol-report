@@ -272,7 +272,8 @@ function markImageFamilies(p: PersonPack, chapters: readonly { id: string }[]) {
   for (const t of used) {
     const fam = imageFamily(t.featureId, p.saju.dayMaster);
     const l = lead.get(fam);
-    if (!l) { lead.set(fam, t); if (fam === "self") p.chart.dayMaster.metaphor = t.image.metaphor; } else t.sameImageAs = l.id;
+    // 일간 쉬운 이름("촛불")도 그림이라, 대표가 일주·조후면 그 trait의 쉬운 이름으로 맞춘다(P3.7 r1: "등불의 주인은 촛불처럼").
+    if (!l) { lead.set(fam, t); if (fam === "self") { p.chart.dayMaster.metaphor = t.image.metaphor; if (t.family !== "dayMaster") p.chart.dayMaster.easyName = t.easyName; } } else t.sameImageAs = l.id;
   }
 }
 

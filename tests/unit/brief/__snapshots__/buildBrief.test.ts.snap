@@ -46,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:love:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+BANGHAP act:偏財:relationships:low",
   ],
-  "tokens": 16235,
+  "tokens": 16239,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [month:2026-M06,month:2026-M08]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [month:2026-M03,month:2026-M09]",
@@ -93,7 +93,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 9110,
+  "tokens": 9114,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,tension]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [fact-bomb,study]",
@@ -161,7 +161,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:study:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:love:high",
   ],
-  "tokens": 17666,
+  "tokens": 17667,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [year:2025,year:2033]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [year:2023,year:2035]",
@@ -205,7 +205,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 9154,
+  "tokens": 9155,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [spark]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-core]",
@@ -249,7 +249,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8799,
+  "tokens": 8802,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [work-core,plan]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - [choice-scene,choice-why]",
@@ -298,7 +298,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt7",
   ],
   "timeline": undefined,
-  "tokens": 12501,
+  "tokens": 12506,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,felt-differently]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [direction-ba,domain-scene]",
