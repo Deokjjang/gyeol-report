@@ -12,11 +12,12 @@ import {
 import "./globals.css";
 
 // 책 본문·제목 명조 1종(SIL OFL 1.1). 한글은 unicode-range 조각으로 필요한 글자만 받고, latin 조각만 미리 받는다.
+// display optional: 첫 방문에 늦게 온 글꼴로 다시 그리며 생기는 LCP 지연·흔들림을 막는다(그 방문은 폴백 명조, 다음부터 웹 글꼴).
 const serif = Noto_Serif_KR({
   variable: "--font-noto-serif",
   weight: ["400", "600"],
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
   fallback: ["AppleMyungjo", "Nanum Myeongjo", "Batang", "serif"],
 });
 

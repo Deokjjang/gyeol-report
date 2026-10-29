@@ -15,7 +15,7 @@ import MBTI_PAGES from "../../../data/book-pages/mbti.json";
 // 버튼 안에도 들어가므로 span으로 그린다(표지 6종 공용: 홈·책 첫 쪽·서재·공유 입구).
 export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
   return <span className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--cover-ink": book.ink } as CSSProperties}>
-    <span className={s.coverTop}><span>결리포트</span><span>{book.issue}</span></span>
+    <span className={s.coverTop} aria-hidden="true"><span>결리포트</span><span>{book.issue}</span></span>
     <span className={s.coverTitle}>{title ?? book.title}</span>
     <span className={s.coverBottom}>{name ? <span>{name}의 책</span> : null}</span>
     <span className={s.spine} aria-hidden="true" />

@@ -24,9 +24,11 @@ const person = { name: "김수안무", birthDate: "1994-03-17", paidBirthTimeMod
   jobStatus: "employee", detailedJob: "서비스 기획자", relationshipStatus: "single", focusAreas: [], selectedYear: "2026" };
 const draft = (productKey: string, toReceipt: boolean) => ({ productKey, toReceipt, value: JSON.stringify({ version: 1, state: { category: "love", person, personB: { ...person, name: "이도윤", birthDate: "1993-11-02", gender: "MALE", mbtiType: "ENTP" } } }) });
 
-type Shot = { name: string; path: string; widths?: number[]; login?: boolean; reduced?: boolean; full?: boolean; page?: string; nth?: number; prepare?: (p: Page) => Promise<void>; draft?: ReturnType<typeof draft> };
+type Shot = { name: string; path: string; widths?: number[]; event?: boolean; dark?: boolean; login?: boolean; reduced?: boolean; full?: boolean; page?: string; nth?: number; prepare?: (p: Page) => Promise<void>; draft?: ReturnType<typeof draft> };
 const SHOTS: Shot[] = [
   { name: "home", path: "/", full: true },
+  // 이벤트 진행 중일 때의 홈(블록 위치 확인): /api/launch-event 응답만 ACTIVE로 바꿔 끼운다.
+  { name: "home-event", path: "/", event: true },
   { name: "input-1", path: "/report/new?product=saju-mbti-full", draft: draft("saju_mbti_full", false) },
   { name: "input-2", path: "/report/new?product=saju-mbti-full", draft: draft("saju_mbti_full", false), prepare: async p => { await p.locator("form button[type=submit]").click(); await p.waitForTimeout(600); } },
   { name: "input-compat", path: "/report/new?product=compatibility", draft: draft("saju_mbti_compatibility", false) },
@@ -46,6 +48,8 @@ const SHOTS: Shot[] = [
   { name: "book-annual", path: `/reports/${REPORTS.annual}`, login: true, reduced: true, page: "months", full: true },
   { name: "book-score", path: "/dev/ui-fixtures?combo=compatibility-v5", reduced: true, page: "score", full: true },
   { name: "book-v4-manse", path: "/dev/ui-fixtures?combo=saju_mbti_full-v4", reduced: true, page: "manse", full: true },
+  { name: "dark-home", path: "/", dark: true, widths: [390] },
+  { name: "dark-book-chapter", path: `/reports/${REPORTS.full}`, login: true, reduced: true, page: "narrative", dark: true, widths: [390] },
   { name: "book-appendix", path: "/dev/ui-fixtures?combo=saju_mbti_full-v4", reduced: true, page: "appendix", full: true },
 ];
 
@@ -63,7 +67,7 @@ async function toPage(p: Page, kind: string, nth = 1) {
 async function shoot(ctx: BrowserContext, shot: Shot, width: number) {
   const p = await ctx.newPage();
   await p.setViewportSize({ width, height: width < 800 ? 844 : 900 });
-  await p.emulateMedia({ reducedMotion: shot.reduced ? "reduce" : "no-preference" });
+  await p.emulateMedia({ reducedMotion: shot.reduced ? "reduce" : "no-preference", colorScheme: shot.dark ? "dark" : "light" });
   if (shot.draft) {
     const d = shot.draft;
     await p.addInitScript(({ productKey, value, toReceipt }) => {
@@ -73,6 +77,7 @@ async function shoot(ctx: BrowserContext, shot: Shot, width: number) {
       } catch { /* capture only */ }
     }, d);
   }
+  if (shot.event) await p.route("**/api/launch-event", r => r.fulfill({ json: { state: "ACTIVE", serverNow: "2026-10-30T15:00:00Z", startsAt: "2026-10-10T15:00:00Z", endsAt: "2026-10-31T15:00:00Z", campaignAvailable: true, referralAvailable: true, inviterAvailable: true, budgetApproved: true, campaignSlug: "gyeol-opening-2026" } }));
   await p.goto(BASE + shot.path, { waitUntil: "load", timeout: 120_000 });
   await p.addStyleTag({ content: "nextjs-portal{display:none!important}" });
   await p.waitForTimeout(2500);

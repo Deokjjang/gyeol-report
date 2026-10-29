@@ -38,8 +38,11 @@
 .bookSlot[data-center=true] { transform: translateX(-50%) translateY(-6px); }
 .bookSlot[data-center=true] .cover { box-shadow: var(--shadow), inset 3px 0 0 rgb(0 0 0 / .14); }
 @media (hover: hover) and (pointer: fine) { .bookSlot[data-center=true]:hover { transform: translateX(-50%) translateY(-10px); } }
-.bookSlot:not([data-center=true]) .coverTitle, .bookSlot:not([data-center=true]) .coverBottom { opacity: 0; }
-.bookSlot[tabindex="-1"] { visibility: hidden; }
+/* 뒤 표지 제목은 흐리게만(0이면 회전해 앞으로 올 때 새로 그려져 LCP가 늦어진다). 겹친 조각은 어둡게 덮인다. */
+.bookSlot:not([data-center=true]) .coverTitle, .bookSlot:not([data-center=true]) .coverBottom { opacity: .18; }
+/* 두 칸 이상 뒤 표지는 보이기만 한다(겹쳐 가려진 좁은 누름 영역 없음). 고르기는 이웃 표지·화살표·스와이프로. */
+.bookSlot[inert] { pointer-events: none; }
+.bookSlot[style*="--distance: 3"], .bookSlot[style*="--distance:3"] { visibility: hidden; }
 .home[data-depart=true] { position: absolute; inset: 64px 0 0; }
 .home[data-depart=true] .bookSlot { transform: translateX(calc(-50% + var(--offset) * 210px)) translateZ(-700px) rotateY(calc(var(--offset) * -60deg)); }
 .home[data-depart=true] .bookSlot[data-center=true], .home[data-depart=true] .carouselControls { visibility: hidden; }
@@ -118,7 +121,7 @@
 .primary { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 56px; margin-top: 40px; border-radius: var(--radius); background: var(--ink) !important; color: var(--paper) !important; font-size: 17px; font-weight: 600; transition: opacity var(--t-fast) var(--ease); }
 .primary:disabled { opacity: .35; }
 .intro { margin: 0 0 32px; padding-bottom: 24px; border-bottom: var(--line); }
-.intro ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-family: var(--serif); font-size: 16px; line-height: 1.7; }
+.intro ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 16px; line-height: 1.7; }
 .intro li::before { content: "—"; color: var(--gold); margin-right: 8px; }
 .intro details { margin-top: 16px; font-size: 14px; }
 .intro summary { cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; color: var(--ink-2); text-decoration: underline; text-underline-offset: 4px; }
