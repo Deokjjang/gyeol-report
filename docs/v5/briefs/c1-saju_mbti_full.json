@@ -1,0 +1,1209 @@
+{
+ "version": "brief-v5-1",
+ "product": "saju_mbti_full",
+ "productTitle": "나라는 사람",
+ "seed": "6238ba4d",
+ "baseDate": "2026-10-27",
+ "person": {
+  "name": "하람",
+  "callName": "하람님",
+  "nameUse": [
+   "제목",
+   "1장 첫 문단",
+   "가운데 장 전환 문장",
+   "마지막 장 마무리",
+   "그 밖에는 '당신'"
+  ],
+  "gender": "MALE",
+  "age": 29,
+  "ageBand": "20대 후반",
+  "facts": {
+   "birthTimeKnown": true,
+   "mbti": "ENTJ",
+   "relationship": "single",
+   "children": "unknown",
+   "job": {
+    "class": "employed",
+    "status": "employee",
+    "detail": "서비스 기획자"
+   }
+  },
+  "forbiddenFacts": [
+   "지금 연인이 있다고 쓰지 않는다",
+   "배우자·결혼 생활을 전제하지 않는다(결혼은 '함께 살게 되면' 조건형으로만)",
+   "자녀가 있다고 쓰지 않는다(자녀는 '아이를 키우게 되면' 조건형으로만)",
+   "가게·사업 운영(손님·직원·매출)을 전제하지 않는다",
+   "학생(수업·담임·학기)을 전제하지 않는다",
+   "결혼·이별·합격·승진·사고·질병 같은 사건과 날짜를 확정하지 않는다",
+   "돈의 액수·투자 종목·매수 시점을 말하지 않는다",
+   "내부 용어·자료 이름·출처를 본문에 쓰지 않는다"
+  ]
+ },
+ "mbti": {
+  "type": "ENTJ",
+  "easyName": "지휘관",
+  "oneLiner": "목표가 보이면 길부터 그리고 사람을 배치하는, 앞에 서는 사람",
+  "image": {
+   "metaphor": "지도를 펼쳐 놓고 '여기서 여기로 간다' 하고 펜으로 선을 긋는 사령관",
+   "visual": "회의실 화이트보드 앞에 서서 마커 뚜껑을 입에 문 채 화살표를 그리는 사람"
+  },
+  "functions": [
+   "Te(주기능): 세상을 효율로 봅니다. 일이 되게 만드는 순서와 구조가 먼저 보이고, 안 되는 이유를 가장 싫어합니다.",
+   "Ni(부기능): 멀리 봅니다. 지금 결정이 3년 뒤 어디로 이어지는지가 머릿속에 그림으로 있습니다.",
+   "Se(3차기능)",
+   "Fi(열등기능)"
+  ],
+  "shadows": [
+   "효율이 사람을 앞설 때 가장 가까운 사람이 먼저 다칩니다. 당신의 '그래서 결론은?'이 상대에게는 '네 마음은 안 중요해'로 들립니다.",
+   "자기 감정을 못 읽다가 쌓인 것이 한 번에 터집니다. 평소 차분하던 사람이 갑자기 폭발하는 모습에 주변이 더 놀랍니다."
+  ]
+ },
+ "chart": {
+  "pillars": {
+   "year": {
+    "hanja": "丙子",
+    "hangul": "병자"
+   },
+   "month": {
+    "hanja": "己亥",
+    "hangul": "기해"
+   },
+   "day": {
+    "hanja": "丁丑",
+    "hangul": "정축"
+   },
+   "hour": {
+    "hanja": "乙巳",
+    "hangul": "을사"
+   }
+  },
+  "dayMaster": {
+   "stem": "丁",
+   "name": "정화(丁火)",
+   "easyName": "촛불",
+   "metaphor": "바람 부는 밤에도 손으로 감싸면 꺼지지 않는 촛불"
+  },
+  "strength": {
+   "level": "BALANCED",
+   "label": "중화"
+  },
+  "yinYang": {
+   "yin": 6,
+   "yang": 2,
+   "label": "YIN_HEAVY",
+   "reading": "음의 글자가 많은 남성, 모으고 기다리는 힘이 '남자는 앞장서야 한다'는 기대와 자주 부딪치는 구성"
+  },
+  "elements": {
+   "status": {
+    "WOOD": "부족",
+    "FIRE": "많음",
+    "EARTH": "보통",
+    "METAL": "부족(겉 글자는 없고 땅속에 조금 있음 — '하나도 없다'고 쓰지 않는다)",
+    "WATER": "많음"
+   },
+   "excess": [
+    "FIRE",
+    "WATER"
+   ],
+   "lacking": [
+    "WOOD",
+    "METAL"
+   ],
+   "missing": [],
+   "reading": [
+    "표현과 열정이 먼저 타올라, 속도는 빠른데 연료가 빨리 닳는 상태",
+    "생각과 감정이 강처럼 깊고 넓어, 흐르다 못해 넘치는 상태",
+    "할 힘은 충분한데 첫발을 떼는 시동이 늦게 걸리는 상태",
+    "받아 주는 힘은 큰데 자르고 거절하고 끝맺는 힘이 얇은 상태"
+   ]
+  },
+  "climate": {
+   "season": "겨울",
+   "needs": [
+    "甲(나무(목)) 있음",
+    "庚(쇠(금)) 없음"
+   ],
+   "level": "medium",
+   "lacking": [
+    "METAL"
+   ],
+   "reading": "추울수록 귀해지지만, 새 연탄을 제때 갈아 줘야 꺼지지 않는 불"
+  },
+  "currentDayun": {
+   "ganji": {
+    "hanja": "壬寅",
+    "hangul": "임인"
+   },
+   "ages": "22~31세",
+   "years": "2017~2026",
+   "tenGod": "정관(正官)",
+   "reading": "나를 바르게 다스리는 힘이 들어오는 해입니다. 소속·직함·역할이 분명해지고, 규칙을 지킨 만큼 평판이 쌓여요. 공적인 자리와 시험·면접을 잡기 좋은 해로 봅니다.",
+   "next": {
+    "ganji": {
+     "hanja": "癸卯",
+     "hangul": "계묘"
+    },
+    "startYear": 2027,
+    "tenGod": "편관(偏官)"
+   }
+  },
+  "thisYear": {
+   "year": 2026,
+   "ganji": {
+    "hanja": "丙午",
+    "hangul": "병오"
+   },
+   "tenGod": "겁재(劫財)",
+   "effect": "2026년 丙午(병오)는 불(화) 기운이 들어오는 해입니다. 이미 많은 불(화)을 더 보탭니다."
+  }
+ },
+ "traits": [
+  {
+   "id": "t1",
+   "featureId": "dayPillar:丁丑",
+   "family": "dayPillar",
+   "name": "정축(丁丑)",
+   "easyName": "겨울 외양간 등불",
+   "positions": [
+    "day"
+   ],
+   "strength": "medium",
+   "score": 2.459,
+   "image": {
+    "metaphor": "눈 내린 새벽, 소를 돌보러 나온 사람이 든 등불",
+    "visual": "하얀 입김 사이로 흔들리는 등불 하나와 그 아래 묵묵히 서 있는 소"
+   },
+   "oneLiner": "얼어붙은 땅 위에서 밤새 꺼지지 않고 버티는 작은 불",
+   "good": [
+    "돈과 물건을 허투루 쓰지 않습니다. 저장하고 보관하는 땅 위에 불이 있어, 작은 수입으로도 살림을 세웁니다.",
+    "추운 환경에서 더 밝아지는 사람입니다. 남들이 떠나는 자리에서 끝까지 남아 마무리하는 모습으로 신뢰를 삽니다."
+   ],
+   "overuse": "책임의 글자(편관)가 땅 밑에 숨어 있어, 맡은 일을 못 하면 스스로를 오래 질책합니다. 남은 이미 잊은 실수를 혼자 기억합니다.",
+   "fusion": {
+    "target": "J",
+    "kind": "resonance",
+    "why": "정해 둔 계획을 눈 오는 날에도 지키는 습관이 같습니다",
+    "source": "mbtiLink"
+   },
+   "chapters": [
+    "core",
+    "work-money",
+    "recovery"
+   ]
+  },
+  {
+   "id": "t2",
+   "featureId": "shinsal:EUMCHAK_YANGCHA",
+   "family": "shinsal",
+   "name": "음착양차살(陰錯陽差殺)",
+   "easyName": "한 칸 밀린 단추",
+   "positions": [
+    "day"
+   ],
+   "strength": "strong",
+   "score": 2.136,
+   "image": {
+    "metaphor": "단추를 한 칸씩 밀려 채운 셔츠, 다 잠갔는데 어딘가 비뚤어진",
+    "visual": "지하철 2번 출구와 3번 출구에서 서로를 기다리는 두 사람"
+   },
+   "oneLiner": "가까운 사이에서 마음과 타이밍이 한 칸씩 어긋나, 맞춰 가는 법을 배우는 기운",
+   "positionNote": "태어난 날 자리: 이 기운의 중심 자리입니다. 일주에 있으면 가까운 사이의 박자 차이로 나타나되 배우자 사실이나 관계의 결말은 정하지 않습니다.",
+   "strengthNote": "일주가 해당 간지이거나 해당 기둥이 둘 이상이면 어긋남이 가까운 관계에서 자주 느껴집니다. 확인 습관이 그만큼 중요해집니다.",
+   "good": [
+    "두 세계 사이에 서 본 사람이라 양쪽 사정을 다 압니다. 중간에서 말을 옮기고 조율하는 역할에 강합니다.",
+    "당신에게는 어긋남을 맞추는 기술이 있어서, 오해가 생긴 자리를 다시 이어 붙이는 데 남보다 능숙합니다."
+   ],
+   "chapters": [
+    "portrait",
+    "fact-bomb",
+    "fortune"
+   ]
+  },
+  {
+   "id": "t3",
+   "featureId": "shinsal:TWELVE_BANANSAL",
+   "family": "shinsal",
+   "name": "반안살(攀鞍殺)",
+   "easyName": "말 안장",
+   "positions": [
+    "day"
+   ],
+   "strength": "strong",
+   "score": 2.128,
+   "image": {
+    "metaphor": "먼 길 떠나기 전 안장을 단단히 조이고 올라앉은 사람",
+    "visual": "잘 다린 셔츠에 명함 지갑을 안주머니에 넣고 회사 로비를 지나는 사람"
+   },
+   "oneLiner": "달리는 말 위에 얹는 안장, 자리와 체면과 안정을 챙기는 기운",
+   "positionNote": "태어난 날 자리: 배우자와 가정의 격식에 작용합니다. 결혼의 형식과 양가 관계를 챙깁니다.",
+   "strengthNote": "년지와 일지 기준 둘 다 걸리거나 관성이 함께 있으면 자리에 대한 마음이 큽니다. 직함과 소속을 먼저 갖춥니다.",
+   "good": [
+    "작은 성취도 눈에 보이게 정리해 두니 기록이 남습니다. 경력과 이력이 자연스럽게 쌓입니다.",
+    "역마 바로 뒤에 오는 자리라, 움직이되 떨어지지 않습니다. 변화 속에서도 체면과 자리를 지키는 균형이 있습니다."
+   ],
+   "overuse": "체면 때문에 '힘들다'는 말을 못 합니다. 안정이 흔들릴 때, 충이나 이동이 올 때 혼자 무너지는 쪽입니다.",
+   "chapters": [
+    "tension",
+    "study",
+    "direction"
+   ]
+  },
+  {
+   "id": "t4",
+   "featureId": "relation:BANGHAP",
+   "family": "relation",
+   "name": "방합(方合) 해자축 수방",
+   "easyName": "같은 계절 모임",
+   "positions": [
+    "year",
+    "month",
+    "day"
+   ],
+   "strength": "strong",
+   "score": 2.078,
+   "image": {
+    "metaphor": "겨울 산사 처마에 고드름이 나란히 매달린 새벽",
+    "visual": "긴 겨울밤 털양말을 신고 두꺼운 책 세 권을 쌓아 둔 채 읽는 사람"
+   },
+   "oneLiner": "한겨울 석 달이 모여 깊고 고요하게 안으로 가라앉는 모임",
+   "positionNote": "태어난 날 자리: 일지가 모임에 들면 배우자와 생활이 한 계절 공기에 물듭니다. 집안 분위기가 비슷한 사람과 맺어지기 쉬운 구조로 읽습니다.",
+   "strengthNote": "세 글자가 년월일 또는 월일시로 붙어 있고 월지가 그 계절이면 가장 셉니다. 같은 오행이 천간에 드러나면 더 단단합니다.",
+   "good": [
+    "방합은 한 계절 세 글자가 다 모인 구성이라 그 오행이 아주 셉니다. 한 분야에 깊이 뿌리내리는 힘이 됩니다.",
+    "당신에게는 같은 뿌리를 가진 사람들을 묶는 힘이 있어서, 가족·동문·업계 안에서 든든한 편이 생깁니다."
+   ],
+   "overuse": "방합이 있는데 반대 계절 글자가 없으면 계절을 크게 탑니다. 약한 계절에는 일정을 가볍게 잡아 두세요.",
+   "chapters": [
+    "portrait",
+    "strengths",
+    "recovery"
+   ]
+  },
+  {
+   "id": "t5",
+   "featureId": "shinsal:BAEKHODAESAL",
+   "family": "shinsal",
+   "name": "백호대살(白虎大殺)",
+   "easyName": "흰 호랑이",
+   "positions": [
+    "day"
+   ],
+   "strength": "strong",
+   "score": 1.98,
+   "image": {
+    "metaphor": "풀숲에 엎드려 숨소리까지 죽인 채 한곳만 노려보는 흰 호랑이",
+    "visual": "마감 전날 밤, 빈 커피 캔을 옆에 줄 세워 두고 모니터만 노려보는 사람"
+   },
+   "oneLiner": "한번 붙잡으면 끝장을 볼 때까지 힘이 한곳으로 몰리는 강렬함",
+   "positionNote": "태어난 날 자리: 일주에 있으면 본인 성격의 중심입니다. 배우자와의 관계도 온도가 높아 크게 다투고 크게 화해하는 쪽입니다.",
+   "strengthNote": "일주가 백호이거나 백호 기둥이 둘 이상이면 힘이 크게 몰립니다. 괴강·양인이 함께 있으면 강도가 한 단계 더 올라갑니다.",
+   "good": [
+    "몰입의 깊이가 다릅니다. 한번 꽂힌 일은 남이 한 달 걸릴 양을 열흘 안에 해내는 힘이 있습니다.",
+    "위기에서 강합니다. 남들이 당황해 멈추는 순간 당신은 오히려 숨이 고르게 되고 할 일이 보입니다."
+   ],
+   "fusion": {
+    "target": "ENTJ",
+    "kind": "resonance",
+    "why": "목표를 정하면 끝까지 밀어붙이는 Te와 힘이 몰리는 방향이 같습니다",
+    "source": "mbtiLink"
+   },
+   "chapters": [
+    "work-money",
+    "relationships",
+    "fortune"
+   ]
+  },
+  {
+   "id": "t6",
+   "featureId": "twelveStage:墓",
+   "family": "twelveStage",
+   "name": "묘(墓)",
+   "easyName": "땅속 김장독",
+   "positions": [
+    "day"
+   ],
+   "strength": "strong",
+   "score": 1.594,
+   "image": {
+    "metaphor": "김장독을 묻어 둔 겨울 마당, 겉은 흙뿐인데 땅속에서 맛이 익어 가는",
+    "visual": "열쇠 꾸러미 중 창고 열쇠 하나만 따로 목에 걸고 다니는 사람"
+   },
+   "oneLiner": "다 자란 것을 거두어 안에 넣어 두는 자리, 모으고 지키고 오래 묵히는 때",
+   "positionNote": "태어난 날 자리: 본인 속이 깊고 잘 열리지 않습니다. 배우자 자리에 창고가 있어 부부가 함께 모으는 재산을 중히 여기는 쪽입니다.",
+   "strengthNote": "묘가 재성의 창고가 되고 일간이 받칠 힘이 있으면 모은 것을 지킵니다. 재고라 부르는 이 구조는 축적에 강합니다.",
+   "good": [
+    "당신에게는 거두어 쌓는 힘이 있어서 시간이 갈수록 가진 것이 두꺼워집니다. 돈도 자료도 경험도 새지 않고 남습니다.",
+    "묵힐 줄 압니다. 서두르지 않고 때를 기다려 꺼내기 때문에 한번 꺼낸 것에는 무게가 있습니다."
+   ],
+   "overuse": "고전은 생왕사절 어느 것도 곧장 길흉으로 정하지 말라고 했고, 통념은 묘를 재물 창고로 읽습니다. 다만 창고는 열어야 쓰임이 생깁니다.",
+   "chapters": [
+    "relationships",
+    "love",
+    "direction"
+   ]
+  },
+  {
+   "id": "t7",
+   "featureId": "tenGod:食神",
+   "family": "tenGod",
+   "name": "식신(食神)",
+   "easyName": "손맛 요리사",
+   "positions": [
+    "month",
+    "day"
+   ],
+   "strength": "medium",
+   "score": 1.572,
+   "image": {
+    "metaphor": "주말 아침 냄비 하나로 한 상을 차려 놓고 식구들을 깨우는 사람",
+    "visual": "앞치마 주머니에 맛보기 숟가락을 꽂고 국자를 천천히 젓는 사람"
+   },
+   "oneLiner": "좋아하는 일을 꾸준히 만들어 나누고, 그 즐거움으로 먹고사는 힘",
+   "positionNote": "태어난 날 자리: 배우자궁에 식신이 앉아 부부 사이가 편하고 생활의 즐거움을 함께 나누려 합니다. 여성에게 식상은 자녀를 뜻하는 비유로도 읽지만 자녀 유무를 정하는 근거는 아닙니다.",
+   "good": [
+    "말보다 결과물로 믿음을 얻습니다. 손에 잡히는 것을 만들어 내놓으니 사람들이 다시 찾아옵니다.",
+    "당신에게는 좋아하는 일을 지치지 않고 이어 가는 힘이 있어서, 같은 일을 오래 할수록 실력과 이름이 함께 쌓입니다."
+   ],
+   "fusion": {
+    "target": "Te",
+    "kind": "tension",
+    "why": "성과와 속도를 재촉하는 Te가 천천히 익는 손맛을 답답해합니다",
+    "source": "mbtiLink"
+   },
+   "chapters": [
+    "core",
+    "why",
+    "love"
+   ]
+  },
+  {
+   "id": "t8",
+   "featureId": "tenGod:正官",
+   "family": "tenGod",
+   "name": "정관(正官)",
+   "easyName": "바른 관리자",
+   "positions": [
+    "month"
+   ],
+   "strength": "strong",
+   "score": 1.523,
+   "image": {
+    "metaphor": "제복을 입고 정시에 출근해 당직 일지를 빠짐없이 쓰는 사람",
+    "visual": "횡단보도 앞, 차가 한 대도 없는데 빨간불에 서 있는 사람"
+   },
+   "oneLiner": "규칙과 약속, 자기 자리를 지키는 것으로 신뢰를 쌓는 힘",
+   "positionNote": "태어난 달 자리: 직장과 사회에서 가장 선명합니다. 조직 생활이 맞고, 공적인 자리와 책임 있는 역할에서 평판이 쌓입니다.",
+   "strengthNote": "월지에 뿌리를 두고 재성이 받쳐 주면 관리자의 자리가 단단합니다. 조직에서 자리를 얻는 구조입니다.",
+   "good": [
+    "자기 자리를 압니다. 넘치지도 모자라지도 않는 역할 감각이 있어 어디서든 '그 사람 자리'가 생깁니다.",
+    "신뢰가 쌓이는 사람입니다. 당신의 '하겠습니다'는 계약서와 같아서 사람들이 중요한 자리를 맡깁니다."
+   ],
+   "overuse": "윗사람의 평가에 예민합니다. 칭찬 한 줄에 힘이 나고 지적 한 줄에 며칠을 씁니다.",
+   "chapters": [
+    "core",
+    "why",
+    "love"
+   ]
+  },
+  {
+   "id": "t9",
+   "featureId": "branch:丑",
+   "family": "branch",
+   "name": "축토(丑土)",
+   "easyName": "언 밭 저장고",
+   "positions": [
+    "day"
+   ],
+   "strength": "strong",
+   "score": 1.428,
+   "image": {
+    "metaphor": "언 밭 밑에 씨감자를 묻어 둔 저장 구덩이, 봄까지 아무도 모르게 버티는",
+    "visual": "새벽 두 시, 문 닫은 금은방 안쪽에서 금고 다이얼을 천천히 돌리는 손"
+   },
+   "oneLiner": "얼어붙은 겉흙 아래 씨앗과 쇠붙이를 품고 봄까지 버티는 땅",
+   "positionNote": "태어난 날 자리: 일지에 오면 본인과 배우자 자리가 단단한 저장고입니다. 배우자와는 느리게 가까워지지만 한번 묶이면 쉽게 풀지 않습니다.",
+   "strengthNote": "겨울 태생이거나 토·금 글자가 받쳐 주면 저장고가 커집니다. 끈기와 축적이 또렷해지고 쉽게 흔들리지 않습니다.",
+   "good": [
+    "당신에게는 시간을 견디는 힘이 있어서, 남들이 지쳐 떠난 자리에 마지막까지 남아 결과를 거둡니다.",
+    "속에 기토·계수·신금이 함께 들어 있어 흙과 물과 쇠를 한 창고에 보관합니다. 돈과 자료와 기술을 차곡차곡 모으는 데 강합니다."
+   ],
+   "overuse": "서운함도 저장합니다. 일지에 있으면 배우자에게 쌓인 말이 한꺼번에 나와 상대가 당황합니다. 그때그때 작게 꺼내면 창고가 넘치지 않습니다.",
+   "chapters": [
+    "why",
+    "tension",
+    "fact-bomb"
+   ]
+  },
+  {
+   "id": "t10",
+   "featureId": "element:WATER:STRONG",
+   "family": "element",
+   "name": "수 과다(水 過多)",
+   "easyName": "넘치는 물",
+   "positions": [],
+   "strength": "strong",
+   "score": 1.288,
+   "image": {
+    "metaphor": "장마철 불어난 강, 깊고 조용하지만 발을 담그면 끌려 들어가는",
+    "visual": "창가에 앉아 한 시간째 같은 페이지를 펼친 채 창밖 비를 보는 사람"
+   },
+   "oneLiner": "생각과 감정이 강처럼 깊고 넓어, 흐르다 못해 넘치는 상태",
+   "strengthNote": "수 글자가 네 개 이상이거나 월지가 겨울이면 강이 바다가 됩니다. 깊이는 극에 달하고 움직임은 더 느려집니다.",
+   "good": [
+    "깊이가 있습니다. 남들이 표면을 볼 때 당신은 바닥까지 봅니다. 사람과 상황을 읽는 눈이 재산입니다.",
+    "정보와 감정을 저장하는 힘이 커서 연구·분석·상담·글쓰기·전략처럼 깊이가 필요한 일에서 빛납니다."
+   ],
+   "fusion": {
+    "target": "ENTJ",
+    "kind": "tension",
+    "why": "결론부터 내는 Te가 '조금만 더 보고요'를 답답해합니다",
+    "source": "mbtiLink"
+   },
+   "chapters": [
+    "portrait",
+    "strengths",
+    "study"
+   ]
+  }
+ ],
+ "fortunes": [
+  {
+   "featureId": "shinsal:TWELVE_BANANSAL",
+   "name": "반안살(攀鞍殺)",
+   "easyName": "말 안장",
+   "image": {
+    "metaphor": "먼 길 떠나기 전 안장을 단단히 조이고 올라앉은 사람",
+    "visual": "잘 다린 셔츠에 명함 지갑을 안주머니에 넣고 회사 로비를 지나는 사람"
+   },
+   "oneLiner": "달리는 말 위에 얹는 안장, 자리와 체면과 안정을 챙기는 기운",
+   "direct": "안정과 격식을 아는 사람입니다. 조직에서 믿고 자리를 맡길 수 있는 사람으로 보입니다.",
+   "traitId": "t3"
+  },
+  {
+   "featureId": "shinsal:CHEONMUN",
+   "name": "천문성(天門星)",
+   "easyName": "약초 서랍 주인",
+   "image": {
+    "metaphor": "증상을 듣고 수십 개 약초 서랍 중 하나를 정확히 여는 약방 주인",
+    "visual": "친구 하소연을 끝까지 듣고 '사실 그거 서운했던 거잖아' 하고 이름 붙여 주는 사람"
+   },
+   "oneLiner": "하늘로 난 문을 하나 가진 듯, 사람과 일의 아픈 곳과 속뜻을 알아보는 기운",
+   "direct": "당신에게는 겉말 밑의 속뜻을 알아보는 눈이 있어서, 사람들이 당신 앞에서 진짜 이야기를 꺼냅니다."
+  },
+  {
+   "featureId": "gwiin:CHEON_EUL_GWIIN",
+   "name": "천을귀인(天乙貴人)",
+   "easyName": "손 내미는 어른",
+   "image": {
+    "metaphor": "길을 잃은 밤 멀리서 등불을 들고 마중 나온 어른",
+    "visual": "면접장 복도에서 우연히 마주친 선배가 '이쪽이야' 하고 문을 열어 주는 장면"
+   },
+   "oneLiner": "막힌 자리에서 누군가 손을 내밀어 주는, 가장 귀하게 치는 도움의 별",
+   "direct": "사람으로 열리는 길이 있습니다. 당신은 혼자 다 하지 않아도 됩니다. 묻는 순간 답이 오는 구조입니다."
+  },
+  {
+   "featureId": "shinsal:TWELVE_JANGSEONGSAL",
+   "name": "장성살(將星殺)",
+   "easyName": "깃발 꽂는 장수",
+   "image": {
+    "metaphor": "진영 한복판에 깃발을 꽂고 '여기서 싸운다'고 외치는 장수",
+    "visual": "운동회 날 반 아이들 앞에 서서 응원 구호를 선창하는 아이"
+   },
+   "oneLiner": "군의 한가운데에서 깃발을 세우고 모두의 시선을 받는 기운",
+   "direct": "중심에 서는 힘이 있습니다. 당신이 깃발을 꽂으면 사람들이 그 주위로 모입니다. 이끄는 역할을 맡을 때 가장 편안합니다."
+  }
+ ],
+ "shadows": [
+  {
+   "id": "s1",
+   "traitId": "t2",
+   "text": "엇박자를 몇 번 겪으면 '어차피 안 맞을 거야'라고 먼저 물러서기 쉽습니다. 일주가 음착양차이면 가까운 사이에서 이 마음이 가장 크게 듭니다.",
+   "basis": "음착양차살(陰錯陽差殺) (태어난 날) — 일주가 해당 간지이거나 해당 기둥이 둘 이상이면 어긋남이 가까운 관계에서 자주 느껴집니다. 확인 습관이 그만큼 중요해집니다.",
+   "warmTurn": "확인하는 습관이 몸에 붙습니다. 날짜와 금액, 역할을 분명히 남기니 일이 커지기 전에 바로잡힙니다."
+  },
+  {
+   "id": "s2",
+   "traitId": "t5",
+   "text": "센 말이 먼저 나갑니다. 급할 때 내뱉은 한마디가 상대에게 오래 남으니, 괴강·양인과 함께 있으면 말의 속도를 한 박자 늦추세요.",
+   "basis": "백호대살(白虎大殺) (태어난 날) — 일주가 백호이거나 백호 기둥이 둘 이상이면 힘이 크게 몰립니다. 괴강·양인이 함께 있으면 강도가 한 단계 더 올라갑니다.",
+   "warmTurn": "감정과 행동이 솔직해 뒤끝이 짧습니다. 화끈하게 말하고 빨리 풀어서 오래 가는 앙금이 적습니다."
+  },
+  {
+   "id": "s3",
+   "traitId": "t10",
+   "text": "생각이 많은 것과 결정이 느린 것은 다릅니다. 열 가지를 다 보다 한 가지도 고르지 못하는 날이 쌓이면 주변이 당신을 기다리다 먼저 갑니다.",
+   "basis": "수 과다(水 過多) — 수 글자가 네 개 이상이거나 월지가 겨울이면 강이 바다가 됩니다. 깊이는 극에 달하고 움직임은 더 느려집니다.",
+   "warmTurn": "지혜와 유연함이 있습니다. 막히면 돌아가고, 벽이 있으면 스며듭니다. 정면 돌파보다 흐름으로 이기는 사람입니다."
+  },
+  {
+   "id": "s4",
+   "traitId": "t7",
+   "text": "편인이 바로 옆에서 식신을 누르면 고전이 도식이라 부른 자리입니다. 하고 싶은데 생각이 손을 붙잡으니, 작게라도 먼저 만들어 보는 쪽이 답입니다.",
+   "basis": "식신(食神) (태어난 달·태어난 날) — 좋아하는 일을 꾸준히 만들어 나누고, 그 즐거움으로 먹고사는 힘",
+   "warmTurn": "곁에 있으면 편합니다. 먹을 것과 웃음을 나누는 여유가 있어 긴장된 자리를 부드럽게 풉니다."
+  }
+ ],
+ "unused": [],
+ "chapters": [
+  {
+   "id": "core",
+   "index": 1,
+   "title": "나를 한 줄로",
+   "question": "나를 한 줄로 말하면 어떤 사람일까?",
+   "role": "HOOK",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    3,
+    4
+   ],
+   "useName": true,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t1",
+     "domain": "relationships",
+     "scene": "친구가 '요즘 힘들어'라고 하면 위로 말보다 '밥은 먹었어?' 하고 식당으로 데려갑니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t7",
+     "domain": "work",
+     "scene": "기획서 열 장보다 시제품 하나를 먼저 만들어 책상 위에 올려놓습니다. '일단 써 보세요'가 당신의 설득법입니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t8",
+     "domain": "work",
+     "scene": "규칙이 틀렸다고 느껴도 일단 지키고, 바꿀 때는 절차를 밟아 바꿉니다. 편법으로 빨리 가는 걸 가장 싫어합니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.dayMaster"
+    },
+    {
+     "kind": "ref",
+     "ref": "mbti"
+    }
+   ]
+  },
+  {
+   "id": "portrait",
+   "index": 2,
+   "title": "남들이 보는 나, 내가 아는 나",
+   "question": "겉으로 보이는 나와 속의 나는 어디서 같고 어디서 다를까?",
+   "role": "SCENE",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t2",
+     "domain": "relationships",
+     "scene": "약속 장소를 정해도 한쪽은 정문, 한쪽은 후문에 서 있는 일이 잦아 이제는 지도 핀을 꼭 보냅니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t4",
+     "domain": "relationships",
+     "scene": "우리 편과 남의 편 구분이 뚜렷합니다. 무리 안 사람이 욕먹으면 사정을 듣기도 전에 편부터 듭니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t10",
+     "domain": "relationships",
+     "scene": "사람 속을 잘 읽습니다. 모임에서 누가 누구를 불편해하는지 말없이 다 보고 있습니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "mbti",
+     "domain": "relationships",
+     "scene": "약한 소리를 하는 친구에게 해결책을 주다 '넌 공감을 못 해'라는 말을 듣습니다."
+    }
+   ]
+  },
+  {
+   "id": "why",
+   "index": 3,
+   "title": "그렇게 움직이는 이유",
+   "question": "왜 나는 그렇게 움직일까?",
+   "role": "WHY",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t7",
+     "domain": "relationships",
+     "scene": "모임에서 맛집을 고르고 사진을 찍고 다음 약속을 잡는 사람이 늘 당신입니다. 사람들은 그 덕에 편하게 놉니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t8",
+     "domain": "relationships",
+     "scene": "모임에서 총무나 간사를 맡으면 회비 내역을 1원 단위로 공유합니다. 그래서 사람들이 믿고 맡깁니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t9",
+     "domain": "work",
+     "scene": "몇 년 치 자료를 폴더별로 쌓아 두는 사람이라, 누가 '그때 그 파일' 찾으면 다들 당신 자리로 옵니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.elements"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.yinYang"
+    }
+   ]
+  },
+  {
+   "id": "tension",
+   "index": 4,
+   "title": "내 안의 두 방향",
+   "question": "내 안에서 서로 다른 쪽으로 당기는 두 성향은 무엇일까?",
+   "role": "TWIST",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t3",
+     "domain": "love",
+     "scene": "상대를 소개할 때 '이 사람 어디 다녀'가 먼저 나옵니다. 부모님께 보여 드릴 수 있는 사람인지 먼저 봅니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t9",
+     "domain": "love",
+     "scene": "마음에 둔 사람과 석 달이 넘도록 고백하지 않다가, 확신이 서는 날 한 번에 '사귀자'고 말합니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "traits.t7.fusion",
+     "note": "명리와 MBTI가 반대로 당기는 지점"
+    },
+    {
+     "kind": "mbti",
+     "domain": "work",
+     "scene": "무능한 상사 밑에서 가장 괴롭습니다. 틀린 지시를 그대로 따르느니 그 자리에서 대안을 꺼냅니다."
+    }
+   ]
+  },
+  {
+   "id": "strengths",
+   "index": 5,
+   "title": "강점이 결과가 되는 방식",
+   "question": "내 강점은 어떤 상황에서 눈에 보이는 결과로 바뀔까?",
+   "role": "PAYOFF",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t4",
+     "domain": "work",
+     "scene": "팀의 일하는 방식이 한 가지 색으로 정해지면 끝까지 그 색을 지킵니다. 다른 방식이 들어오면 회의가 길어집니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t10",
+     "domain": "work",
+     "scene": "기획안의 변수를 너무 많이 봐서 결론이 안 납니다. '조금만 더 보고요'가 세 번 반복되면 상사가 결론을 가져갑니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "fortunes"
+    },
+    {
+     "kind": "mbti",
+     "domain": "work",
+     "scene": "회의 시작 5분 만에 '그래서 결론이 뭐죠?'를 묻습니다. 배경 설명이 길어지면 손가락으로 책상을 두드립니다."
+    }
+   ]
+  },
+  {
+   "id": "work-money",
+   "index": 6,
+   "title": "일과 돈 앞에서",
+   "question": "일을 맡고 돈을 다룰 때 나는 어떤 선택을 할까?",
+   "role": "SCENE",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t5",
+     "domain": "work",
+     "scene": "평소엔 조용하다가 일이 꼬이는 순간 목소리가 한 톤 낮아지고 '지금부터 제가 정리할게요'라고 말합니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t1",
+     "domain": "work",
+     "scene": "화려한 기획보다 매주 같은 보고서를 5년째 빠짐없이 내는 사람입니다. 팀장은 그 꾸준함을 믿고 일을 맡깁니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "mbti",
+     "domain": "work",
+     "scene": "팀에 들어가면 일주일 안에 누가 뭘 잘하는지 파악하고 역할을 다시 짭니다. 시키지 않아도요."
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.thisYear"
+    }
+   ]
+  },
+  {
+   "id": "relationships",
+   "index": 7,
+   "title": "사람 사이에서",
+   "question": "친구와 가족 사이에서 내가 맡는 자리는 무엇일까?",
+   "role": "SCENE",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": true,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t6",
+     "domain": "relationships",
+     "scene": "남의 비밀을 끝까지 지킵니다. 친구들이 '너한테 말하면 땅에 묻는 거랑 같다'고 합니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t5",
+     "domain": "relationships",
+     "scene": "적당히 친한 사람이 적고, 아주 가깝거나 아예 모르는 사람으로 나뉩니다. 중간 온도가 잘 안 됩니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "mbti",
+     "domain": "relationships",
+     "scene": "친구 모임에서 일정과 장소를 정하는 사람입니다. 안 정해지면 못 참아서 결국 자기가 정합니다."
+    },
+    {
+     "kind": "mbti",
+     "domain": "relationships",
+     "scene": "돌려 말하는 사람과 오래 못 갑니다. 바로 말하는 사람을 신뢰하고, 그런 사람에게는 끝까지 갑니다."
+    }
+   ]
+  },
+  {
+   "id": "love",
+   "index": 8,
+   "title": "사랑할 때",
+   "question": "좋아하는 사람이 생기면 나는 어떻게 달라질까?",
+   "role": "SCENE",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t8",
+     "domain": "love",
+     "scene": "사귀기 시작하면 '우리 어떤 사이야?'를 분명히 합니다. 애매한 관계를 오래 못 견딥니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t6",
+     "domain": "love",
+     "scene": "마음을 오래 품고 늦게 꺼냅니다. 2년 알고 지낸 친구에게 어느 날 '사실 처음부터 좋았어'라고 말합니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t7",
+     "domain": "love",
+     "scene": "좋아하는 사람이 생기면 맛집 지도부터 만듭니다. '여기 같이 가 보자'가 고백보다 먼저 나오는 애정 표현입니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "mbti",
+     "domain": "love",
+     "scene": "애정 표현이 성과로 나옵니다. 꽃 대신 상대 문제를 해결해 주고, 그게 사랑이라고 믿습니다."
+    }
+   ]
+  },
+  {
+   "id": "fact-bomb",
+   "index": 9,
+   "title": "내가 반복하는 실수",
+   "question": "나도 알면서 또 하는 실수는 무엇일까?",
+   "role": "TWIST",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    3,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t9",
+     "domain": "relationships",
+     "scene": "친구들이 새 맛집을 가자고 해도 늘 가던 국밥집을 고르고, 사장님이 당신 주문을 먼저 압니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t2",
+     "domain": "work",
+     "scene": "두 부서 사이에 끼어 양쪽 말을 전하는 역할을 자주 맡고, 그 중간에서 오해를 푸는 요령이 늡니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "shadows.s1",
+     "note": "팩폭 재료(연결 trait t2)"
+    },
+    {
+     "kind": "ref",
+     "ref": "shadows.s2",
+     "note": "팩폭 재료(연결 trait t5)"
+    }
+   ]
+  },
+  {
+   "id": "study",
+   "index": 10,
+   "title": "배우는 방식",
+   "question": "새로운 것을 익힐 때 나는 어떤 순서로 배울까?",
+   "role": "WHY",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t10",
+     "domain": "study",
+     "scene": "공부하다 딴생각으로 빠지면 한 시간이 갑니다. 책 한 줄에서 시작한 생각이 인생 고민으로 번집니다.",
+     "angle": "first"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t3",
+     "domain": "study",
+     "scene": "공부 자리를 중요하게 여겨 도서관 지정석, 정해진 책상이 있어야 집중합니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "mbti",
+     "domain": "study",
+     "scene": "왜 배우는지 모르면 시작이 안 됩니다. 시험 범위를 받으면 출제 의도부터 역산합니다."
+    },
+    {
+     "kind": "mbti",
+     "domain": "study",
+     "scene": "못하는 과목을 오래 붙들지 않습니다. 잘하는 걸 더 잘하게 하는 전략으로 갑니다."
+    }
+   ]
+  },
+  {
+   "id": "fortune",
+   "index": 11,
+   "title": "흐름이 좋아지는 조건",
+   "question": "어떤 조건이 갖춰질 때 내 흐름이 좋아질까?",
+   "role": "PAYOFF",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t2",
+     "domain": "money",
+     "scene": "아이를 키우게 되면 용돈과 학원비 얘기를 말로 넘기지 않고, 금액과 날짜를 가계부 메모에 적어 둡니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t5",
+     "domain": "money",
+     "scene": "갖고 싶은 게 생기면 한 달 치 정보를 하루 만에 다 찾아보고 그날 밤 바로 결제합니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "fortunes"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.thisYear"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.currentDayun"
+    }
+   ]
+  },
+  {
+   "id": "recovery",
+   "index": 12,
+   "title": "회복하는 방법",
+   "question": "지쳤을 때 나는 어떻게 다시 힘을 채울까?",
+   "role": "SCENE",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": false,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t1",
+     "domain": "alone",
+     "scene": "혼자 있는 주말, 방을 치우고 서랍을 정리하고 나서야 비로소 쉬었다는 기분이 듭니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t4",
+     "domain": "alone",
+     "scene": "계절이 바뀌면 기분이 확 달라집니다. 좋아하는 계절에는 날아다니고, 반대 계절에는 이불 속에 숨습니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.climate"
+    },
+    {
+     "kind": "mbti",
+     "domain": "alone",
+     "scene": "혼자 있을 때도 계획을 세웁니다. 휴가 첫날 아침에 휴가 일정표를 짜고 있습니다."
+    }
+   ]
+  },
+  {
+   "id": "direction",
+   "index": 13,
+   "title": "앞으로 쓰는 나",
+   "question": "앞에서 찾은 나를 어디에 먼저 써 볼까?",
+   "role": "PAYOFF",
+   "targetChars": [
+    900,
+    1100
+   ],
+   "subheadings": [
+    3,
+    5
+   ],
+   "paragraphs": [
+    4,
+    4
+   ],
+   "useName": true,
+   "materials": [
+    {
+     "kind": "trait",
+     "traitId": "t3",
+     "domain": "work",
+     "scene": "자리가 정해진 회사, 직급이 적힌 명함, 안정된 월급. 이 세 가지가 갖춰져야 비로소 일에 속도가 붙습니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "trait",
+     "traitId": "t6",
+     "domain": "work",
+     "scene": "지난 5년 치 자료를 폴더별로 갖고 있습니다. 누가 '그때 그 파일 있어요?'라고 물으면 30초 안에 찾아 보냅니다.",
+     "angle": "new-domain"
+    },
+    {
+     "kind": "ref",
+     "ref": "chart.currentDayun"
+    },
+    {
+     "kind": "mbti",
+     "domain": "alone",
+     "scene": "지친 걸 가장 늦게 압니다. 몸이 먼저 아프고 나서야 '아, 내가 힘들었구나'를 압니다."
+    }
+   ]
+  }
+ ],
+ "style": {
+  "version": "style-v5-1",
+  "register": "존댓말, 가볍게(~입니다/~예요 혼용)",
+  "readingLevel": "초·중등",
+  "totalChars": [
+   11000,
+   14000
+  ],
+  "rules": [
+   "장점·좋은 기운은 직설 단정형: '당신에게는 ~가 있어서 ~합니다'. 돌려 말하지 않는다",
+   "팩폭은 shadows 재료만, 근거(어떤 기운·자리 때문인지)를 함께 쓰고 warmTurn으로 따뜻하게 끝낸다",
+   "초·중등도 아는 쉬운 단어, 짧은 문장. 진부하고 애매한 표현 금지",
+   "장마다 비유 1개 이상(trait image) + 현실 장면 1개 이상(장 재료의 scene). 같은 비유를 두 장에서 다시 쓰지 않는다",
+   "MBTI가 있으면 fusion.why로 '이 기운 때문에 당신의 유형이 이렇게 나온다'를 잇는다(소름 포인트). 없으면 MBTI 언급 금지",
+   "장면은 재료 장면을 고객에 맞게 다시 쓰되 person.forbiddenFacts를 넘지 않는다. 브리프에 없는 사실·사건·날짜를 만들지 않는다",
+   "존댓말이되 가볍게(~입니다/~예요 혼용). 소제목 3~5개, 문단 4~6문장. 한자는 처음 한 번만 괄호로",
+   "내부 id·ref·family·score·자료 이름, 그리고 '팩폭'·'재료'·'브리프'·'명식' 같은 편집 용어는 본문·소제목에 쓰지 않는다",
+   "같은 MBTI 연결(같은 기능·같은 글자)을 두 장에서 되풀이하지 않는다. 장마다 그 장 재료의 fusion만 쓴다"
+  ],
+  "forbidden": [
+   "결혼·이별·사고·질병·합격·승진 같은 사건을 일어난다고 말하기",
+   "근거 없는 '겉과 속이 다른 사람' 해석",
+   "같은 비유를 두 장에서 다시 쓰기",
+   "남다른 잠재력·숨겨진 매력 같은 정보량 0 표현",
+   "MBTI가 없을 때 유형 코드나 MBTI 성향을 언급하기",
+   "시간 미상일 때 시주(태어난 시각 기둥)를 근거로 말하기",
+   "한 feature는 한 장에서만 주 근거(PRIMARY)로 쓰고 다른 장에서는 다른 쓰임(SUPPORT/RECALL)으로만 다시 부른다.",
+   "장마다 앞 장에 없던 새 근거 1개 이상이 들어가야 한다. 마지막 장(direction)만 예외로 앞 장의 핵심을 다시 부른다."
+  ]
+ },
+ "budget": {
+  "estimatedTokens": 8881,
+  "bySection": {
+   "version": 4,
+   "product": 5,
+   "productTitle": 5,
+   "seed": 3,
+   "baseDate": 4,
+   "person": 246,
+   "mbti": 251,
+   "chart": 536,
+   "traits": 3126,
+   "fortunes": 552,
+   "shadows": 544,
+   "unused": 1,
+   "chapters": 3104,
+   "style": 500
+  },
+  "method": "추정: 한글 1.5자/토큰, 한자 1자/토큰, 기타 3.5자/토큰 (JSON 직렬화 기준)"
+ }
+}
