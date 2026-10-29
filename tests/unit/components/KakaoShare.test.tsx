@@ -27,7 +27,7 @@ describe("Kakao configured SDK", () => {
     for (let i = 0; i < 10; i++) await Promise.resolve();
     expect(init).toHaveBeenCalledTimes(1);
     expect(init).toHaveBeenCalledWith("public-test-key");
-    expect(sendDefault).toHaveBeenCalledWith(expect.objectContaining({ content: expect.objectContaining({ title: card.title, imageUrl: "https://gyeolreport.com/brand/gyeol-report-og.png", link: { webUrl: card.url, mobileWebUrl: card.url } }), buttons: [{ title: "리포트 보기", link: { webUrl: card.url, mobileWebUrl: card.url } }] }));
+    expect(sendDefault).toHaveBeenCalledWith(expect.objectContaining({ content: expect.objectContaining({ title: card.title, imageUrl: "https://gyeolreport.com/brand/og-v5.jpg", link: { webUrl: card.url, mobileWebUrl: card.url } }), buttons: [{ title: "리포트 보기", link: { webUrl: card.url, mobileWebUrl: card.url } }] }));
     expect(copy).not.toHaveBeenCalled();
     expect(mocks.track).toHaveBeenCalledWith("share_kakao", "major-fortune");
   });

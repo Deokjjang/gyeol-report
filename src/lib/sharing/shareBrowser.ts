@@ -1,4 +1,4 @@
-import { SHARE_IMAGE, type ReportShareData } from "./reportShareMetadata";
+import { SHARE_IMAGE, SHARE_IMAGE_SIZE, type ReportShareData } from "./reportShareMetadata";
 
 export type KakaoSdk = {
   init(key: string): void;
@@ -7,7 +7,7 @@ export type KakaoSdk = {
   Channel?: { addChannel(settings: { channelPublicId: string }): void };
 };
 
-export function kakaoShareCard(data: ReportShareData, presentation = { imageUrl: SHARE_IMAGE, width: 1536, height: 1024, button: "리포트 보기" }) {
+export function kakaoShareCard(data: ReportShareData, presentation = { imageUrl: SHARE_IMAGE, ...SHARE_IMAGE_SIZE, button: "리포트 보기" }) {
   const link = { mobileWebUrl: data.url, webUrl: data.url };
   return {
     objectType: "feed" as const,

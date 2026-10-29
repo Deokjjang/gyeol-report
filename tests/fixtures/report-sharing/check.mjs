@@ -14,18 +14,18 @@ for (let i = 0; i < names.length; i++) {
     const head = html.split("</head>")[0];
     assert(head.includes('property="og:title" content="가온님의 ' + names[i] + ' 리포트"'));
     assert(head.includes('property="og:url" content="https://gyeolreport.com/r/' + token + '"'));
-    assert(head.includes('property="og:image" content="https://gyeolreport.com/brand/gyeol-report-og.png"'));
+    assert(head.includes('property="og:image" content="https://gyeolreport.com/brand/og-v5.jpg"'));
     assert(head.includes('name="robots" content="noindex, nofollow'));
     assert(head.includes('name="twitter:card" content="summary_large_image"'));
     assert(!/1992-|ENTJ|report_sharefixture_|evidencePacket|paymentKey/.test(head));
     assert(html.includes("나도 내 리포트 보기"));
   }
 }
-const image = await fetch(base + "/brand/gyeol-report-og.png");
+const image = await fetch(base + "/brand/og-v5.jpg");
 assert.equal(image.status, 200);
 assert(image.headers.get("content-type")?.includes("image/png"));
 const digest = data => createHash("sha256").update(data).digest("hex");
-assert.equal(digest(Buffer.from(await image.arrayBuffer())), digest(readFileSync("public/brand/gyeol-report-og.png")));
+assert.equal(digest(Buffer.from(await image.arrayBuffer())), digest(readFileSync("public/brand/og-v5.jpg")));
 for (const path of ["/favicon.ico", "/icon.svg", "/apple-icon.png"]) assert.equal((await fetch(base + path)).status, 200);
 const invalid = await (await fetch(base + "/r/gr_" + "z".repeat(32))).text();
 assert(invalid.includes("리포트를 열 수 없습니다"));

@@ -57,7 +57,7 @@ export function reportShareMetadata(data?: ReportShareData | null): Metadata {
     openGraph: {
       title, description, ...(data ? { url: data.url } : {}), type: "website",
       siteName: "결리포트", locale: "ko_KR",
-      images: [{ url: SHARE_IMAGE, width: 1536, height: 1024, alt: "GYEOL REPORT" }],
+      images: [{ url: SHARE_IMAGE, ...SHARE_IMAGE_SIZE, alt: "결리포트" }],
     },
     twitter: { card: "summary_large_image", title, description, images: [SHARE_IMAGE] },
   };

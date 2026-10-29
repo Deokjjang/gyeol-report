@@ -2,7 +2,7 @@
 
 브랜치 `v5/p5-ui` → v5/main(운영 배포 없음, master 무변경). 진행·결정은 `docs/v5/p5-progress.md`.
 원고 생성 로직·지식 DB·브리프·작가 코드는 바꾸지 않았다(`src/data/knowledge-v5`, `src/lib/brief`, `src/lib/writer` 변경 0줄, 읽기·타입 import만).
-캡처는 로컬 dev(`PORT=3300 pnpm dev:v5`) 모바일 390px·데스크톱 1440px: `docs/v5/ui/before/`(42장) · `docs/v5/ui/after/`(48장). 도구 `tools/p5/capture.ts`.
+캡처는 로컬 dev(`PORT=3300 pnpm dev:v5`) 모바일 390px·데스크톱 1440px: `docs/v5/ui/before/`(42장) · `docs/v5/ui/after/`(46장). 도구 `tools/p5/capture.ts`.
 
 ## 1. 의도 유지 확인
 | 의도 | 결과 | 캡처 |
