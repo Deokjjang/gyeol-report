@@ -74,7 +74,8 @@ export function detectExtraShinsal(
     make("WONJIN", wonjin.flatMap((r) => r.members.map((m) => m.position as ChartPosition)), `원진 ${wonjin.map((r) => r.key).join("·")}`),
     make("GWIMUN", gwimun.flatMap((g) => g.ps), `귀문 ${gwimun.map((g) => g.key).join("·")}(월-일·일-시)`),
     make("CHEONMUN", at((n) => CHEONMUN_BRANCHES.includes(n.branch)), "천문 지지 亥·卯·未·戌"),
-    make("EUMCHAK_YANGCHA", at((n) => EUMCHAK_YANGCHA_PILLARS.includes(n.ganji)), `음착양차 ${natal.filter((n) => EUMCHAK_YANGCHA_PILLARS.includes(n.ganji)).map((n) => n.ganji).join("·")}`),
+    // 음착양차는 일주 살(통용). 월·시주 적용은 학파차이라 기본에서 뺀다 — 네 기둥 전부 보면 고객 55%에 떠서 정보량이 0이 된다(P2 빈도표).
+    make("EUMCHAK_YANGCHA", at((n) => n.position === "day" && EUMCHAK_YANGCHA_PILLARS.includes(n.ganji)), `음착양차 일주 ${natal.find((n) => n.position === "day")?.ganji ?? ""}`),
     make("CHEONRA_JIMANG", cheonra.flatMap((c) => c.ps), `${[...new Set(cheonra.map((c) => `${c.name}(${c.key})`))].join("·")}`),
     make("GONGMANG", gongmangPositions, `공망 ${gongmang.map((g) => `${g.basis}:${g.xun}순 ${g.branches.join("")}`).join(" / ")}`),
     make("AMROK", byBranch(AMROK_BRANCH[dayMaster]), `일간 ${dayMaster} → ${AMROK_BRANCH[dayMaster]}(암록)`),

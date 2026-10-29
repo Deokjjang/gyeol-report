@@ -100,7 +100,7 @@
 | `shinsal:WONJIN` | 2270 | 861 / 1134 / 275 |
 | `shinsal:GWIMUN` | 847 | 847 / 0 / 0 |
 | `shinsal:CHEONMUN` | 4634 | 3540 / 477 / 617 |
-| `shinsal:EUMCHAK_YANGCHA` | 3321 | 1668 / 577 / 1076 |
+| `shinsal:EUMCHAK_YANGCHA` | 1193 | 1193 / 0 / 0 |
 | `shinsal:CHEONRA_JIMANG` | 767 | 448 / 0 / 319 |
 | `structure:RESOURCE_SUPPORTS_DAYMASTER` | 204 | 1 / 203 / 0 |
 | `structure:OUTPUT_GENERATES_WEALTH` | 89 | 0 / 89 / 0 |
