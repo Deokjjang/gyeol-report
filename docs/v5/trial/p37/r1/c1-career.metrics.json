@@ -1,0 +1,61 @@
+{
+ "case": "c1-career",
+ "product": "career_money_study",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1230,
+  1242,
+  1182,
+  1362,
+  1214,
+  1109,
+  1124,
+  1166,
+  1124
+ ],
+ "total": 10753,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [],
+ "briefCopy": {
+  "sentences": 193,
+  "matched": 7,
+  "ratio": 0.036,
+  "writerSentences": 193,
+  "writerMatched": 7,
+  "writerRatio": 0.036
+ },
+ "connectors": [],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {
+  "기획 회의": 2,
+  "출시 일정": 2,
+  "사용자 피드백": 2,
+  "화면 설계안": 1,
+  "회의록": 1,
+  "요구사항 정리": 1,
+  "우선순위 표": 1,
+  "개발팀 협의": 1,
+  "경쟁 서비스 조사": 1,
+  "로드맵 문서": 1,
+  "베타 테스트": 1,
+  "선배 피드백": 1,
+  "기능 명세서": 1,
+  "점심 메뉴 투표": 1,
+  "출시 후 지표": 1
+ },
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "imageUnnamed": 0,
+ "loveTiming": 0,
+ "jobMentions": 0,
+ "sceneHintsUsed": "15/15"
+}

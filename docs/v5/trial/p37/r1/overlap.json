@@ -1,0 +1,332 @@
+{
+ "summary": {
+  "books": 10,
+  "crossPairs": 39,
+  "crossMatched": 2,
+  "crossSentences": 15159,
+  "maxCross": {
+   "pair": "c1-career × p36:x-major",
+   "sameCustomer": false,
+   "sentences": 383,
+   "matched": 2,
+   "ratio": 0.0052
+  }
+ },
+ "rows": [
+  {
+   "pair": "x-major × y-love",
+   "sameCustomer": false,
+   "sentences": 417,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × c1-career",
+   "sameCustomer": false,
+   "sentences": 398,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × pair-parent",
+   "sameCustomer": false,
+   "sentences": 418,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p36:c1-career",
+   "sameCustomer": false,
+   "sentences": 415,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p36:y-love",
+   "sameCustomer": false,
+   "sentences": 408,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p36:x-major",
+   "sameCustomer": true,
+   "sentences": 427,
+   "matched": 10,
+   "ratio": 0.0234
+  },
+  {
+   "pair": "x-major × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 407,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 414,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "x-major × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 405,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × c1-career",
+   "sameCustomer": false,
+   "sentences": 373,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × pair-parent",
+   "sameCustomer": false,
+   "sentences": 393,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p36:c1-career",
+   "sameCustomer": false,
+   "sentences": 390,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p36:y-love",
+   "sameCustomer": true,
+   "sentences": 383,
+   "matched": 4,
+   "ratio": 0.0104
+  },
+  {
+   "pair": "y-love × p36:x-major",
+   "sameCustomer": false,
+   "sentences": 402,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 382,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 389,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "y-love × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 380,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × pair-parent",
+   "sameCustomer": false,
+   "sentences": 374,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p36:c1-career",
+   "sameCustomer": true,
+   "sentences": 371,
+   "matched": 4,
+   "ratio": 0.0108
+  },
+  {
+   "pair": "c1-career × p36:y-love",
+   "sameCustomer": false,
+   "sentences": 364,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p36:x-major",
+   "sameCustomer": false,
+   "sentences": 383,
+   "matched": 2,
+   "ratio": 0.0052
+  },
+  {
+   "pair": "c1-career × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 363,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 370,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "c1-career × p36:pair-boss",
+   "sameCustomer": true,
+   "sentences": 361,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p36:c1-career",
+   "sameCustomer": false,
+   "sentences": 391,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p36:y-love",
+   "sameCustomer": false,
+   "sentences": 384,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p36:x-major",
+   "sameCustomer": false,
+   "sentences": 403,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 383,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "pair-parent × p36:pair-parent",
+   "sameCustomer": true,
+   "sentences": 390,
+   "matched": 4,
+   "ratio": 0.0103
+  },
+  {
+   "pair": "pair-parent × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 381,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c1-career × p36:y-love",
+   "sameCustomer": false,
+   "sentences": 381,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c1-career × p36:x-major",
+   "sameCustomer": false,
+   "sentences": 400,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c1-career × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 380,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c1-career × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 387,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c1-career × p36:pair-boss",
+   "sameCustomer": true,
+   "sentences": 378,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:y-love × p36:x-major",
+   "sameCustomer": false,
+   "sentences": 393,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:y-love × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 373,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:y-love × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 380,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:y-love × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 371,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:x-major × p36:c2-annual",
+   "sameCustomer": false,
+   "sentences": 392,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:x-major × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 399,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:x-major × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 390,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c2-annual × p36:pair-parent",
+   "sameCustomer": false,
+   "sentences": 379,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:c2-annual × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 370,
+   "matched": 0,
+   "ratio": 0
+  },
+  {
+   "pair": "p36:pair-parent × p36:pair-boss",
+   "sameCustomer": false,
+   "sentences": 377,
+   "matched": 0,
+   "ratio": 0
+  }
+ ]
+}
