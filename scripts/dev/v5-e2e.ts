@@ -87,7 +87,7 @@ async function main() {
     const sources = Object.entries((meta?.chapters ?? []).reduce<Record<string, number>>((m, c) => ((m[c.source] = (m[c.source] ?? 0) + 1), m), {})).map(([k, v]) => `${k} ${v}`).join(" · ");
     const outChars = (meta?.calls ?? []).reduce((a, c) => a + c.chars, 0), outTok = meta?.tokens.output ?? 0;
     spent += meta?.costUsd ?? 0;
-    for (const c of meta?.calls ?? []) {
+    for (const c of NO_KEY ? [] : (meta?.calls ?? []).filter(c => c.requestId || c.usage.outputTokens)) {
       cumulative += c.costUsd ?? 0;
       logRows.push(`| ${kst()} | P3 H ${label} | openai/${env.LLM_MODEL ?? "gpt-4o-mini"} | ${c.usage.inputTokens} | ${c.usage.cachedInputTokens} | ${c.usage.outputTokens} | ${(c.costUsd ?? 0).toFixed(8)} | ${c.finish}${c.error ? ` (${c.error})` : ""} | ${c.requestId ?? "-"} | ${cumulative.toFixed(8)} |`);
     }
@@ -103,8 +103,11 @@ async function main() {
     writeFileSync(path, text);
   }
   const out = join(ROOT, NO_KEY ? "docs/v5/p3-e2e-nokey.md" : "docs/v5/p3-e2e.md");
-  writeFileSync(out, `# P3 종단 시험(실호출 OpenAI, 로컬 서버·로컬 Supabase)\n\n실행: \`pnpm exec tsx scripts/dev/v5-e2e.ts\` · ${kst()} KST · 이번 실행 비용 $${spent.toFixed(5)}\n\n${rows.join("\n")}\n`);
-  appendFileSync(out, "");
+  const cap = Number(env.LLM_MAX_OUTPUT_TOKENS) > 0 ? ` · 출력 상한 LLM_MAX_OUTPUT_TOKENS=${env.LLM_MAX_OUTPUT_TOKENS}` : "";
+  const section = `실행: \`pnpm exec tsx scripts/dev/v5-e2e.ts${ONLY ? ` --only ${ONLY}` : ""}\` · ${kst()} KST${cap} · 이번 실행 비용 $${spent.toFixed(5)}\n\n${rows.join("\n")}\n`;
+  // --only 실행은 앞선 결과표 뒤에 덧붙인다.
+  if (ONLY) appendFileSync(out, `\n## 추가 실행\n\n${section}`);
+  else writeFileSync(out, `# P3 종단 시험(${NO_KEY ? "키 없음 — 작가 호출 0" : "실호출 OpenAI"}, 로컬 서버·로컬 Supabase)\n\n${section}`);
   console.log(`비용 $${spent.toFixed(5)}, 결과 ${out}`);
 }
 main().catch(e => { console.error(String(e instanceof Error ? e.message : e)); process.exit(1); });

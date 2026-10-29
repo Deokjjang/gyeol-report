@@ -51,7 +51,10 @@ export async function prepareLocalDb(): Promise<{ appliedNow: number; totalAppli
   const consents = JSON.stringify(Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type, document_version, is_agreed: true, required: true })));
   psql(`select public.record_account_consent('${user.id}', gen_random_uuid(), '로컬 검수', 'google', 'first_login', '${consents}'::jsonb);`, { quiet: true });
   psql(`select public.report_tickets('grant', '${user.id}', '{"quantity":20,"sourceType":"manual","sourceRef":"local-dev-seed","key":"local-dev-seed","reason":"LOCAL_DEV"}'::jsonb);`, { quiet: true });
-  const tickets = psql(`select coalesce(sum(quantity_delta),0) from public.report_ticket_ledger where user_id='${user.id}';`);
+  const balance = () => Number(psql(`select coalesce(sum(quantity_delta),0) from public.report_ticket_ledger where user_id='${user.id}';`));
+  // 시험으로 이용권이 10장 밑으로 줄면 20장을 보충한다(로컬 전용, 매번 새 키).
+  if (balance() < 10) psql(`select public.report_tickets('grant', '${user.id}', '{"quantity":20,"sourceType":"manual","sourceRef":"local-dev-topup-${Date.now()}","key":"local-dev-topup-${Date.now()}","reason":"LOCAL_DEV"}'::jsonb);`, { quiet: true });
+  const tickets = balance();
   return { appliedNow: applied, totalApplied: done.size + applied, user: DEV_EMAIL, userId: user.id, tickets: Number(tickets) };
 }
 

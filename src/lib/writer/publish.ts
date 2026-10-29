@@ -48,7 +48,7 @@ export async function v4People(payload: ReportInputPayload, policyAt: string): P
   } catch { return []; }
 }
 
-export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl">> & {
+export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens">> & {
   readonly provider?: LlmProvider; readonly model?: string; readonly people?: (payload: ReportInputPayload, policyAt: string) => Promise<BookPerson[]>;
 };
 
@@ -63,7 +63,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   let run: WriterRun | null = null;
   let drafts = new Map<number, DraftChapter>();
   if (!a.recover && model) {
-    try { run = await runWriter({ brief, provider, model, sink: a.sink, ...deps }); drafts = run.drafts; }
+    const envCap = Number(process.env.LLM_MAX_OUTPUT_TOKENS);
+    try { run = await runWriter({ brief, provider, model, sink: a.sink, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), ...deps }); drafts = run.drafts; }
     catch { drafts = new Map(); }
   }
   if (a.recover || !run) { try { for (const s of await a.sink.load()) if (!drafts.has(s.n)) drafts.set(s.n, { chapter: s.chapter, source: s.source }); } catch { /* 저장소가 안 되면 결정론 작가로만 */ } }

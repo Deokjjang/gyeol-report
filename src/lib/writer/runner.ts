@@ -19,12 +19,12 @@ export const WRITER_TIME_BUDGET_MS = 700_000;
 /** 모델 출력 상한(토큰). 모르는 모델은 상한 없이 공식만 쓴다. */
 export const MODEL_OUTPUT_CAP: Readonly<Record<string, number>> = { "gpt-4o-mini": 16_384, "gpt-5-nano": 128_000, "claude-sonnet-5-5": 64_000, "claude-haiku-5-5": 64_000, "claude-opus-5-5": 64_000 };
 
-/** max_tokens = 장 분량 상한 합계 × 글자당 토큰 × 1.3 (반복 장은 key 수만큼). */
-export function maxTokensFor(chapters: readonly WriterChapter[], model?: string): number {
+/** max_tokens = 장 분량 상한 합계 × 글자당 토큰 × 1.3 (반복 장은 key 수만큼). 모델 상한·운영 상한(LLM_MAX_OUTPUT_TOKENS)으로 자른다. */
+export function maxTokensFor(chapters: readonly WriterChapter[], model?: string, limit?: number): number {
   const chars = chapters.reduce((s, c) => s + c.targetChars[1] * (c.keys?.length ?? 1), 0);
   const tokens = Math.ceil(chars * TOKENS_PER_CHAR * 1.3);
-  const cap = model ? MODEL_OUTPUT_CAP[model] : undefined;
-  return cap ? Math.min(cap, tokens) : tokens;
+  const cap = Math.min(model ? MODEL_OUTPUT_CAP[model] ?? Infinity : Infinity, limit && limit > 0 ? limit : Infinity);
+  return Math.min(cap, tokens);
 }
 
 export type SavedChapter = { readonly n: number; readonly chapter: BookChapter; readonly source: DraftChapter["source"] };
@@ -50,6 +50,8 @@ export type WriterOptions = {
   readonly now?: () => number;
   readonly sleep?: (ms: number) => Promise<void>;
   readonly stream?: typeof streamCompletion;
+  /** 호출당 출력 토큰 상한(비용 상한·잘림 시험용). 없으면 공식과 모델 상한만. */
+  readonly maxOutputTokens?: number;
 };
 
 const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
@@ -76,7 +78,7 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
   /** 한 번의 호출(재시도 포함). 장 경계마다 저장한다. 출력이 있었는지 돌려준다. */
   const call = async (kind: "first" | "continuation", system: string, user: string, want: readonly WriterChapter[]): Promise<boolean> => {
     const wanted = new Set(want.map(c => c.n));
-    const maxTokens = maxTokensFor(want, o.model);
+    const maxTokens = maxTokensFor(want, o.model, o.maxOutputTokens);
     for (let attempt = 0; ; attempt++) {
       const controller = new AbortController();
       let text = "", saving = Promise.resolve();
