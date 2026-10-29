@@ -51,7 +51,7 @@ export const ChartBriefSchema = z.object({
   thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
 });
 
-export const FusionBriefSchema = z.object({ target: z.string(), kind: z.enum(["resonance", "tension", "conditional"]), why: z.string(), scene: z.string().optional(), source: z.enum(["fusion", "mbtiLink"]) });
+export const FusionBriefSchema = z.object({ target: z.string(), kind: z.enum(["resonance", "tension", "conditional"]), why: z.string(), scene: z.string().optional(), source: z.enum(["fusion", "mbtiLink", "computed"]) });
 
 export const TraitSchema = z.object({
   id: z.string().regex(/^[ab]?t\d+$/),

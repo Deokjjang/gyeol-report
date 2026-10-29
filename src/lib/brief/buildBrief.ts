@@ -20,7 +20,7 @@ import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
 import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type TimelineCtx } from "./timeline";
-import { buildFortunes, buildShadows, buildTrait, buildUnused, scoreHits, selectTraits, type ProductKey } from "./traits";
+import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { ganjiLabel } from "./labels";
 
@@ -76,17 +76,17 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const profile = { ...toFactProfile(facts), ...override };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
   const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun });
-  const scored = scoreHits(hits, k, product, { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) });
+  const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
+  const scored = scoreHits(hits, k, product, fusionFacts);
   const selected = selectTraits(scored, traitTarget);
   const groups = getTenGodGroupScores(saju.tenGods.distribution);
   const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
-  // 글자 하나(J 등)짜리 MBTI 연결은 같은 글자당 점수 높은 trait 하나에만 남긴다(장마다 "계획형"이 되풀이되는 것 방지, P2 시험 집필 1회차).
-  const letterSeen = new Set<string>();
-  traits.forEach(t => { const tg = t.fusion?.target; if (tg && tg.length === 1) { if (letterSeen.has(tg)) delete t.fusion; else letterSeen.add(tg); } });
+  // MBTI 연결 밀도(P3): 핵심 특성 정확 유형, 같은 글자·기능 최대 2, 계산 연결로 70% 이상.
+  const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts);
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
   selected.forEach((s, i) => {
-    const sc = s.fusion?.source === "fusion" ? s.fusion.scene : undefined;
+    const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
     if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile) && !usedScenes.has(sc.text)) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
   });
   const age = ageAt(input.birthDate, baseDate);

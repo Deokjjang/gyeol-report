@@ -7,9 +7,10 @@ import type { FeatureFamily, FusionRule, MbtiLink, MbtiProfile, MbtiType, Myeong
 import type { ChartPosition } from "@/lib/saju/detections/types";
 import type { TenGod, SajuCalcResult } from "@/lib/saju/types";
 import frequency from "./data/feature-frequency.json";
+import { scorePair } from "@/data/knowledge-v5/cross-score";
 import type { FeatureHit } from "./featureTypes";
 import type { Knowledge } from "./knowledge";
-import { POSITION_KO, TEN_GOD_GROUP } from "./labels";
+import { josa, POSITION_KO, TEN_GOD_GROUP } from "./labels";
 import type { Rng } from "./seed";
 import { pickN } from "./seed";
 import type { Trait } from "./schema";
@@ -184,3 +185,55 @@ export function buildUnused(saju: SajuCalcResult, missing: readonly string[], k:
   return out;
 }
 export { TEN_GOD_GROUP };
+
+// ---------- MBTI 연결 밀도(P3) ----------
+/** 계산 연결 최소 세기(scorePair strength). 이보다 약하면 '연결 없음'으로 둔다(밀도 70% 미달 시에만 낮춘다). */
+export const COMPUTED_LINK_MIN = 0.3;
+/** 같은 MBTI 글자·기능 연결은 책 전체에서 이 횟수까지. */
+export const LETTER_FUNCTION_CAP = 2;
+export const MBTI_LINK_DENSITY = 0.7;
+
+const KIND_KO = { resonance: "같은 쪽", tension: "반대쪽", conditional: "상황 따라" } as const;
+/** dimensionTags 공명·긴장 점수로 연결 후보를 만들고, 차원 설명으로 why 재료를 조립한다(출처: 계산 연결). */
+export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: Knowledge, min = COMPUTED_LINK_MIN): NonNullable<Trait["fusion"]> | null {
+  const s = scorePair(feature.id, feature.dimensionTags, profile.type, profile.dimensionTags);
+  if (!s || s.strength < min) return null;
+  const pole = (dim: string, v: number) => { const d = k.ontology.dimensions.find(x => x.id === dim); return d ? { name: d.name, pole: v >= 0 ? d.poles.plus : d.poles.minus } : null; };
+  const lines = s.contributions.slice(0, 2).flatMap(c => {
+    const f = pole(c.dimension, c.feature), m = pole(c.dimension, c.mbti);
+    if (!f || !m) return [];
+    return c.product > 0
+      ? [`${f.name}: ${feature.easyName}도 ${profile.type}도 '${f.pole.label}' 쪽(${f.pole.description})`]
+      : [`${f.name}: ${josa(feature.easyName, "은는")} '${f.pole.label}' 쪽, ${profile.type}는 '${m.pole.label}' 쪽`];
+  });
+  if (!lines.length) return null;
+  return { target: profile.type, kind: s.kind, why: `${KIND_KO[s.kind]}으로 당기는 연결 — ${lines.join(" / ")}`, source: "computed" };
+}
+
+const isLetterOrFunction = (target: string) => target.length <= 2 && !/^[EI][NS][TF][JP]$/.test(target);
+/**
+ * 브리프 규칙: ① 1장 핵심 특성(일간·일주)은 정확한 유형 연결 필수(일주에 없으면 그 일간 × 유형 Fusion),
+ * ② 같은 글자·기능 연결은 최대 2개(넘으면 계산 연결로 바꿈), ③ 연결 없는 특성은 계산 연결로 채워 70% 이상.
+ */
+export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFeature[], profile: MbtiProfile | null, k: Knowledge, f: FactsForFusion): Map<string, FusionRule["scene"]> {
+  const scenes = new Map<string, FusionRule["scene"]>();
+  if (!profile) return scenes;
+  const exactRule = (featureId: string) => (k.fusionByFeature.get(featureId) ?? []).find(r => r.mbtiTarget === profile.type && r.factBoundary.requires.every(q => q === "mbtiKnown" || (q === "exactTime" || q === "approximateTime" ? f.birthTimeKnown : q === "genderKnown" ? f.genderKnown : f.contextKnown)));
+  traits.forEach((t, i) => {
+    if (t.family !== "dayPillar" && t.family !== "dayMaster") return;
+    if (t.fusion?.target === profile.type) return;
+    const rule = exactRule(t.featureId) ?? exactRule(`dayMaster:${features[i].id.match(/[甲乙丙丁戊己庚辛壬癸]/)?.[0] ?? ""}`);
+    if (rule) { t.fusion = { target: rule.mbtiTarget, kind: rule.kind, why: rule.why, source: "fusion" }; scenes.set(t.id, rule.scene); }
+  });
+  const used = new Map<string, number>();
+  traits.forEach((t, i) => {
+    const tg = t.fusion?.target;
+    if (!tg || !isLetterOrFunction(tg)) return;
+    const n = (used.get(tg) ?? 0) + 1; used.set(tg, n);
+    if (n > LETTER_FUNCTION_CAP) { const c = computedLink(features[i], profile, k, 0); if (c) t.fusion = c; else delete t.fusion; }
+  });
+  for (const min of [COMPUTED_LINK_MIN, 0]) {
+    traits.forEach((t, i) => { if (!t.fusion && traits.filter(x => x.fusion).length / traits.length < (min ? 1 : MBTI_LINK_DENSITY)) { const c = computedLink(features[i], profile, k, min); if (c) t.fusion = c; } });
+  }
+  return scenes;
+}
