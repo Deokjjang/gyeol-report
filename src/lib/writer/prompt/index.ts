@@ -38,14 +38,21 @@ export function writerChapters(brief: Pick<Brief, "chapters">): WriterChapter[] 
   });
 }
 
+/** 객체에서 몇 필드를 뺀 얕은 사본. */
+function omit<T extends object, K extends keyof T>(o: T, ...keys: K[]): Omit<T, K> {
+  const copy = { ...o };
+  for (const k of keys) delete copy[k];
+  return copy;
+}
+
 /** 작가 입력용 브리프: 내부 값을 빼고 장을 묶는다. */
 export function renderWriterBrief(brief: Brief): Record<string, unknown> {
-  const { version: _v, seed: _s, budget: _b, chapters: _c, style, traits, timeline, fortunes, ...rest } = brief;
+  const { style, traits, timeline, fortunes } = brief;
   return {
-    ...rest,
-    fortunes: fortunes.map(({ featureId: _fi, ...f }) => f),
-    traits: traits.map(({ score: _sc, family: _f, featureId: _fi, chapters: _ch, ...t }) => t),
-    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(({ colors: _co, ganji: _g, ...e }) => e) } } : {}),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "timeline", "fortunes"),
+    fortunes: fortunes.map(f => omit(f, "featureId")),
+    traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters")),
+    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji")) } } : {}),
     style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, rules: style.rules, forbidden: style.forbidden },
     chapters: writerChapters(brief),
   };

@@ -19,7 +19,6 @@ const TEN_GODS: readonly TenGod[] = ["比肩", "劫財", "食神", "傷官", "�
 const GWIIN_SHINSAL_CODES: ReadonlySet<ShinsalCode> = new Set([
   "CHEON_EUL_GWIIN", "TAEGEUK_GWIIN", "MUN_CHANG_GWIIN", "HAK_DANG_GWIIN", "WOL_DEOK_GWIIN", "CHEON_DEOK_GWIIN",
 ]);
-const SEASON_ELEMENT: Record<Season, FiveElement> = { spring: "WOOD", summer: "FIRE", autumn: "METAL", winter: "WATER" };
 const EARTH_MONTHS: readonly EarthlyBranch[] = ["辰", "戌", "丑", "未"];
 
 type Raw = Omit<FeatureHit, "count"> & { readonly instances?: number };

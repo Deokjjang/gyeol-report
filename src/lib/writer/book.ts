@@ -98,7 +98,7 @@ export function assembleV5Book(a: {
     version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
-    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(({ material: _m, ...card }) => card), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age } } : {}),
+    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => { const c: Partial<TimelineEntry> = { ...card }; delete c.material; return c as V5TimelineCard; }), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age } } : {}),
   };
   const c = brief.compatibility;
   const pair = c ? {
