@@ -41,7 +41,7 @@ export type ClimateNeed = {
   /** 필요한 천간(조후 용신 후보). 예 "丙". */
   readonly stem: HeavenlyStem;
   readonly role: "primary" | "secondary" | "support";
-  /** 천간으로 드러난 자리 + 지지 본기/중기로 있는 자리. 시간 미상이면 hour 제외. */
+  /** 천간(년·월·시)으로 드러난 자리 + 규칙표(tables.ts CLIMATE_TABLE)가 지정한 지지가 놓인 자리. 시간 미상이면 hour 제외. */
   readonly foundAt: readonly ChartPosition[];
 };
 export type ClimateDetection = {
@@ -51,7 +51,7 @@ export type ClimateDetection = {
   /** 지식 DB id 꼬리: climate:<dayMaster>:<season>. */
   readonly featureKey: `${HeavenlyStem}:${Season}`;
   readonly needs: readonly ClimateNeed[];
-  /** strong=필요 기운이 갖춰짐, medium=일부, weak=없음(조후가 비어 있음). */
+  /** 항목별 rule의 strong·weak 조건(CLIMATE_TABLE). 대체로 strong=필요 기운이 갖춰짐, weak=비어 있음, 그 사이 medium. */
   readonly level: "strong" | "medium" | "weak";
   /** 조후상 아쉬운 오행(needs 중 foundAt이 빈 primary·secondary의 오행). */
   readonly lackingElements: readonly FiveElement[];
