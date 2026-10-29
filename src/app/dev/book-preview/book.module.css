@@ -1,7 +1,7 @@
 /* 결리포트 책 화면(P5 "도서관 열람실"): 토큰은 globals.css. 그림자 1단계, 얇은 선 1종, 여백 4·8 배수,
    모션은 회전 진열·책 넘김·생성 대기·페이지 전환 4곳만(150~400ms ease-out, 동작 줄이기면 정지).
    표지 색은 --cover, 표지 글자색은 --cover-ink(전역 --ink와 이름이 겹치지 않게). */
-.root { --black: var(--ink); --muted: var(--ink-2); --line: 1px solid var(--rule); min-height: 100svh; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; overflow-x: clip; -webkit-tap-highlight-color: transparent; }
+.root { --black: var(--ink); --muted: var(--ink-2); --line: 1px solid var(--rule); word-break: keep-all; overflow-wrap: break-word; min-height: 100svh; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; overflow-x: clip; -webkit-tap-highlight-color: transparent; }
 :global(body):has(.root) { background: var(--paper); }
 :global(body):has(.root) > footer { display: none; }
 .root *, .root *::before, .root *::after { box-sizing: border-box; }

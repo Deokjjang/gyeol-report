@@ -1,5 +1,4 @@
 .flow label { display:flex; flex-direction:column; gap:8px; font-size:13px; }
-.flow input:not([type=checkbox]):not([type=radio]), .flow select { min-width:0; width:100%; border:0; border-bottom:1px solid var(--rule-strong); border-radius:0; background:var(--paper); padding:10px 0; font:inherit; font-size:16px; }
 .flow label:has(input[type=checkbox]), .flow label:has(input[type=radio]) { flex-direction:row; align-items:center; }
 .flow fieldset { min-width:0; margin:20px 0; }
 .flow legend { font-size:13px; padding-bottom:8px; }
