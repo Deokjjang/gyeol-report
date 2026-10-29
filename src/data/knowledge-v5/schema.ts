@@ -260,3 +260,30 @@ export type ProductNarratives = z.infer<typeof ProductNarrativesSchema>;
 // ---------- 7) id-map.json (V4·v1 id → v2 id) ----------
 export const IdMapSchema = z.object({ version: z.string(), entries: z.array(z.object({ oldId: z.string(), newId: z.string(), source: z.enum(["v4", "knowledge-v5-v1", "engine"]), note: z.string().optional() })).min(1) });
 export type IdMap = z.infer<typeof IdMapSchema>;
+
+// ---------- 8) love/signals.json (P3.7 1-4: 호감 표현·연락 패턴·밀당 방식) ----------
+/** key = tenGod:<십성> | shinsal:DOHWASAL | shinsal:HONGYEOMSAL | mbti:<유형>. 장면은 고객 사실 조건(requires)으로 거른다. */
+export const LoveAspectSchema = z.object({ line: Line, scenes: z.array(SceneItemSchema).min(2).max(3) }).strict();
+export const LOVE_SIGNAL_KEY = /^(tenGod:(比肩|劫財|食神|傷官|偏財|正財|偏官|正官|偏印|正印)|shinsal:(DOHWASAL|HONGYEOMSAL)|mbti:[EI][NS][TF][JP])$/;
+export const LoveSignalSchema = z.object({
+  key: z.string().regex(LOVE_SIGNAL_KEY), name: z.string().min(2).max(30),
+  crush: LoveAspectSchema, contact: LoveAspectSchema, pushPull: LoveAspectSchema, sources: Sources,
+}).strict();
+export const LoveSignalFileSchema = z.object({ version: z.string(), family: z.literal("loveSignal"), entries: z.array(LoveSignalSchema).min(28) }).strict();
+export type LoveSignal = z.infer<typeof LoveSignalSchema>;
+
+// ---------- 9) career/jobs.json (P3.7 1-4: 구체 직무명 추천 · 지금 직업 적합도와 키울 역할) ----------
+export const TEN_GOD_GROUPS = ["PEER", "OUTPUT", "WEALTH", "OFFICER", "RESOURCE"] as const;
+const TenGodGroupSchema = z.enum(TEN_GOD_GROUPS);
+/** key = group:<묶음> | tenGod:<십성> | shinsal:<코드> | gwiin:<코드>. title은 분야가 아니라 구체 직무명, why는 그 기운이 왜 이 직무에서 쓰이는지 한 줄. */
+export const JobTitleEntrySchema = z.object({
+  key: z.string().regex(/^(group:(PEER|OUTPUT|WEALTH|OFFICER|RESOURCE)|tenGod:(比肩|劫財|食神|傷官|偏財|正財|偏官|正官|偏印|正印)|(shinsal|gwiin):[A-Z_]+)$/),
+  jobs: z.array(z.object({ title: z.string().min(2).max(20), why: Line }).strict()).min(4).max(8),
+}).strict();
+/** 지금 직업(brief/data/props.json 직업군 id) → 잘 맞는 십성 묶음 1~2 + 묶음별 그 직업 안에서 키울 역할 한 줄. */
+export const JobFitSchema = z.object({
+  jobId: z.string().min(2), groups: z.array(TenGodGroupSchema).min(1).max(2),
+  grow: z.object({ PEER: Line, OUTPUT: Line, WEALTH: Line, OFFICER: Line, RESOURCE: Line }).strict(),
+}).strict();
+export const CareerFileSchema = z.object({ version: z.string(), family: z.literal("career"), titles: z.array(JobTitleEntrySchema).min(15), fits: z.array(JobFitSchema).min(1) }).strict();
+export type CareerFile = z.infer<typeof CareerFileSchema>;

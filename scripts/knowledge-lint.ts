@@ -20,11 +20,11 @@ import { join, resolve, basename } from "node:path";
 import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema, GanjiEnergySchema, IdMapSchema,
-  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema,
+  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, LOVE_SIGNAL_KEY,
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
-import { OLD_NEGATIVE, SICK_DEATH_IMAGE, isPastAssertion } from "../src/lib/writer/safety/patterns";
+import { LOVE_TIMING, OLD_NEGATIVE, SICK_DEATH_IMAGE, isPastAssertion } from "../src/lib/writer/safety/patterns";
 import FEATURE_FREQUENCY from "../src/lib/brief/data/feature-frequency.json";
 
 /** 감지 빈도 상위 30%(P3.5 A1): 이미지 변형 3개·영역 장면 3개 이상. tools/p35/enrich.mjs topFeatureIds와 같은 규칙. */
@@ -57,6 +57,8 @@ const FORBIDDEN: readonly [string, RegExp][] = [
   ["옛 부정 낱말", OLD_NEGATIVE],
   // (P3.6 A5) 실제 질병·죽음을 떠올리게 하는 이미지. 무덤덤·상여금은 일상어라 제외, 김장독 같은 비유는 허용.
   ["질병·죽음 이미지", SICK_DEATH_IMAGE],
+  // (P3.7 1-5) 인연·결혼에 시기 형용사(늦게·일찍·몇 살쯤)는 쓰지 않는다. 경향형으로만.
+  ["인연 시기", LOVE_TIMING],
 ];
 const HAN = /[一-鿿]/;
 const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI/;
@@ -397,6 +399,37 @@ function coverage() {
   stats.coverageMissing = Object.values(missingAll).reduce((n, m) => n + m.length, 0);
 }
 
+// ---------- (P3.7 1-4) 연애 신호 · 직업명 ----------
+function lintLoveSignals() {
+  const path = join(DATA, "love", "signals.json"); if (!existsSync(path)) return fail("love/signals.json", "file", "파일 없음");
+  const r = LoveSignalFileSchema.safeParse(readJson(path)); if (!r.success) return fail("love/signals.json", "schema", "zod", zodMsg(r.error));
+  const want = [...TEN_GODS.map(t => `tenGod:${t}`), "shinsal:DOHWASAL", "shinsal:HONGYEOMSAL", ...MBTI_TYPES.map(t => `mbti:${t}`)].filter(k => LOVE_SIGNAL_KEY.test(k));
+  const keys = r.data.entries.map(e => e.key);
+  for (const k of want) if (!keys.includes(k)) fail("love/signals.json", k, "key 누락");
+  for (const k of new Set(keys)) if (keys.filter(x => x === k).length > 1) fail("love/signals.json", k, "key 중복");
+  for (const e of r.data.entries) for (const a of ["crush", "contact", "pushPull"] as const) {
+    checkProse("love/signals.json", `${e.key}.${a}.line`, e[a].line);
+    e[a].scenes.forEach((x, i) => checkProse("love/signals.json", `${e.key}.${a}.scenes[${i}]`, x.text, { scene: true, childTagged: x.requires.children !== "any", maxSentence: 100 }));
+  }
+}
+function lintCareer() {
+  const path = join(DATA, "career", "jobs.json"); if (!existsSync(path)) return fail("career/jobs.json", "file", "파일 없음");
+  const r = CareerFileSchema.safeParse(readJson(path)); if (!r.success) return fail("career/jobs.json", "schema", "zod", zodMsg(r.error));
+  const keys = r.data.titles.map(t => t.key);
+  for (const k of [...["PEER", "OUTPUT", "WEALTH", "OFFICER", "RESOURCE"].map(g => `group:${g}`), ...TEN_GODS.map(t => `tenGod:${t}`)]) if (!keys.includes(k)) fail("career/jobs.json", k, "key 누락");
+  for (const k of keys) if (/^(shinsal|gwiin):/.test(k) && featureIds.size && !featureIds.has(k)) fail("career/jobs.json", k, "없는 신살·귀인 id");
+  const titles = new Map<string, string>();
+  for (const t of r.data.titles) for (const j of t.jobs) {
+    checkProse("career/jobs.json", `${t.key}.${j.title}.why`, j.why);
+    const prev = titles.get(j.title); if (prev && prev !== t.key) warn("career/jobs.json", `${t.key}.${j.title}`, "직무명 중복", prev); titles.set(j.title, t.key);
+  }
+  const jobIds = (JSON.parse(readFileSync(join(ROOT, "src", "lib", "brief", "data", "props.json"), "utf8")) as { jobs: { id: string }[] }).jobs.map(j => j.id);
+  const fitIds = r.data.fits.map(f => f.jobId);
+  for (const id of jobIds) if (!fitIds.includes(id)) fail("career/jobs.json", id, "지금 직업 적합도 누락");
+  for (const id of fitIds) if (!jobIds.includes(id)) fail("career/jobs.json", id, "없는 직업군 id");
+  for (const f of r.data.fits) for (const [g, line] of Object.entries(f.grow)) checkProse("career/jobs.json", `${f.jobId}.grow.${g}`, line, { dedupe: false });
+}
+
 // ---------- 실행 ----------
 if (existsSync(join(DATA, "behavior-ontology.json"))) lintOntology(join(DATA, "behavior-ontology.json"));
 if (only) {
@@ -410,7 +443,7 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity();
+  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;
