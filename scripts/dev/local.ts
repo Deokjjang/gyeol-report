@@ -36,7 +36,9 @@ export function assertEnvFileLocal(): void {
 const BEGIN = "# >>> pnpm dev:v5 관리 구역(로컬 Supabase 값만, 자동 갱신) >>>", END = "# <<< pnpm dev:v5 관리 구역 <<<";
 /** 로컬 Supabase 값만 관리 구역에 쓴다. 사용자가 넣은 다른 줄(OPENAI_API_KEY 등)은 그대로 둔다. */
 export function writeLocalEnv(s: LocalSupabase, extra: Record<string, string>): void {
-  const kept = existsSync(ENV_FILE) ? readFileSync(ENV_FILE, "utf8").replace(new RegExp(`${BEGIN}[\\s\\S]*?${END}\\n?`), "").trimEnd() : "";
+  // 표지 문구에 괄호가 있어 정규식으로 쓰려면 이스케이프해야 한다(안 하면 관리 구역이 실행마다 하나씩 늘어난다).
+  const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const kept = existsSync(ENV_FILE) ? readFileSync(ENV_FILE, "utf8").replace(new RegExp(`${esc(BEGIN)}[\\s\\S]*?${esc(END)}\\n?`, "g"), "").trimEnd() : "";
   const block = [BEGIN, `NEXT_PUBLIC_SUPABASE_URL=${s.API_URL}`, `SUPABASE_URL=${s.API_URL}`, `NEXT_PUBLIC_SUPABASE_ANON_KEY=${s.ANON_KEY}`, `SUPABASE_SERVICE_ROLE_KEY=${s.SERVICE_ROLE_KEY}`, `LOCAL_DB_URL=${s.DB_URL}`,
     ...Object.entries(extra).map(([k, v]) => `${k}=${v}`), END].join("\n");
   writeFileSync(ENV_FILE, `${kept ? `${kept}\n\n` : ""}${block}\n`, { mode: 0o600 });

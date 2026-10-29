@@ -34,10 +34,13 @@ export async function runPaidReportBatch(
   const rss = dependencies.rss ?? (() => process.memoryUsage.rss());
   const runJob = dependencies.runJob ?? runPublicPaidReportJob;
   const startedAt = dependencies.startedAt ?? now();
+  // 로컬 개발 서버(next dev)는 RSS가 수 GB라 상한에 바로 걸린다. 개발 모드에서만 env로 올릴 수 있다(운영은 그대로, 이용권 워커와 같은 규칙).
+  const devRss = process.env.NODE_ENV === "development" ? Number(process.env.PAID_WORKER_MAX_RSS_MB) * 1024 ** 2 : NaN;
+  const maxRss = devRss > 0 ? devRss : PAID_WORKER_LIMITS.maxRssBytes;
   const result: BatchResult = { ok: true, processed: 0, completed: 0, retrying: 0, attention: 0, stop: "job_limit" };
   while (result.processed < PAID_WORKER_LIMITS.maxJobs) {
     if (now() - startedAt >= PAID_WORKER_LIMITS.claimWindowMs) return { ...result, ok: result.processed > 0, stop: "time_budget" };
-    if (rss() >= PAID_WORKER_LIMITS.maxRssBytes) return { ...result, ok: result.processed > 0, stop: "memory_budget" };
+    if (rss() >= maxRss) return { ...result, ok: result.processed > 0, stop: "memory_budget" };
     try {
       const job = await runJob(store, runtime);
       // A DB/HTTP failure may be a lost acknowledgement after a commit. Never
