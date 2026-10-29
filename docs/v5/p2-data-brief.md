@@ -44,5 +44,14 @@
 - 전체(중복 문장·이미지 유사는 전체 실행에서만 잡힌다): `LINT_MAX=4000 pnpm exec tsx scripts/knowledge-lint.ts | grep '<내 파일 이름>'` → 내 파일 줄 0. (다른 에이전트 파일의 실패는 무시.)
 - 새 문장을 쓰기 직전에 `grep -rn '<핵심 구절>' src/data/knowledge-v5/`로 같은 모티프가 이미 있는지 확인하라(P1에서 "친구들이 노트 빌리러 줄 섬" 모티프가 반복됐다).
 
+## 패치 모드 (장면 검수 에이전트는 이 방식으로만 일한다 — 원본 JSON을 읽거나 고치지 말 것)
+- 입력: `tools/p2-brief/b1/in/<group>.json`. 항목마다 `issues`(지금 규칙 위반)와 `scenes[영역] = [[번호, 문장, "relationship/children/job"], ...]`. `partial: true`인 영역은 의심 장면만 보여 준 것이다(나머지는 any/any/any로 안전). 결혼·연애 영역과 위반이 있는 영역은 전부 보여 준다. 항목 성격은 `easyName`·`oneLiner`·`metaphor`로 파악한다.
+- 출력: `tools/p2-brief/b1/out/<group>.json` 하나만 쓴다.
+  `{ "retag": [[id, 영역, 번호, "rel/children/job"]], "replace": [[id, 영역, 번호, "새 문장", "rel/children/job"]], "add": [[id, 영역, "새 문장", "rel/children/job"]] }`
+  - 태그만 틀리면 retag, 문장을 고쳐 써야 하면 replace(같은 번호), 새 장면은 add. 번호는 입력에 적힌 원래 번호.
+  - 영역당 장면 수 상한(명리 6, MBTI 5)을 넘기면 add 대신 약한 장면을 replace.
+- 검사: `node tools/p2-brief/b1/b1.mjs check <group>` → `errors: 0`이 될 때까지 패치를 고친다. 이 검사는 패치를 메모리에서만 적용해 장면 규칙·문장 규칙·DB 전체 중복을 본다(파일은 바뀌지 않는다). 실제 반영은 메인이 한다.
+- 중복 모티프: 새 문장을 쓰기 전 `grep -rn '<핵심 구절>' src/data/knowledge-v5/ | head -3`으로 같은 그림이 있는지 본다.
+
 ## 보고(마지막 메시지, 10줄 이내)
 파일별: 태그 고친 수(relationship/job/children), 새로 쓴 장면 수, 고쳐 쓴 장면 수, lint 결과. 판단이 애매했던 것 2~3개.

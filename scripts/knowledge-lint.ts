@@ -58,7 +58,8 @@ const sentenceStore = new Map<string, string>();
 const imageStore = new Map<string, string>();
 const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 let sentenceCount = 0, sentenceChars = 0;
-type ProseOpts = { scene?: boolean; allowHan?: boolean; dedupe?: boolean; maxSentence?: number };
+/** childTagged: 장면 requires.children이 has·none이면 자녀 언급이 조건으로 묶여 있으므로 자녀 단정 검사를 건너뛴다(P2). */
+type ProseOpts = { scene?: boolean; childTagged?: boolean; allowHan?: boolean; dedupe?: boolean; maxSentence?: number };
 function checkProse(file: string, where: string, text: string, opts: ProseOpts = {}) {
   const maxSentence = opts.maxSentence ?? 90;
   for (const [name, re] of FORBIDDEN) if (re.test(text)) fail(file, where, `금지 표현(${name})`, text);
@@ -72,7 +73,7 @@ function checkProse(file: string, where: string, text: string, opts: ProseOpts =
     if (tokens.some(t => /^[가-힣]{9,}$/.test(t))) fail(file, where, "한자어 연속(9음절 이상 붙은 낱말)", s);
     let run = 0; for (const t of tokens) { run = /(적|성|화|력|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
     if (opts.scene) {
-      if (/(^|\s)(아이|자녀|아들|딸|애들)(가|를|의|이|와|도|랑|한테|에게|\s(준비물|일정|생일|교육|학교|숙제|계획|생일상|방))/.test(s)) fail(file, where, "입력에 없는 사실 단정(자녀)", s);
+      if (!opts.childTagged && /(^|\s)(아이|자녀|아들|딸|애들)(가|를|의|이|와|도|랑|한테|에게|\s(준비물|일정|생일|교육|학교|숙제|계획|생일상|방))/.test(s)) fail(file, where, "입력에 없는 사실 단정(자녀)", s);
       if (MBTI_CODE.test(s)) fail(file, where, "용어 누출(장면에 MBTI 코드)", s);
       const j = s.match(JARGON); if (j) fail(file, where, "용어 누출(장면에 명리 용어)", `${j[0]} ← ${s}`);
     }
@@ -189,7 +190,7 @@ function lintFeatureFile(path: string) {
     checkProse(file, `${w}.name`, f.name, { allowHan: true, dedupe: false });
     checkProse(file, `${w}.oneLiner`, f.oneLiner);
     checkImage(file, `${w}.image`, f.image);
-    for (const d of DOMAINS) f.scenes[d].forEach((s, i) => checkProse(file, `${w}.scenes.${d}[${i}]`, s.text, { scene: true }));
+    for (const d of DOMAINS) f.scenes[d].forEach((s, i) => checkProse(file, `${w}.scenes.${d}[${i}]`, s.text, { scene: true, childTagged: s.requires.children !== "any" }));
     checkSceneFacts(file, `${w}.scenes`, f.scenes);
     f.strengths.forEach((s, i) => checkProse(file, `${w}.strengths[${i}]`, s));
     f.overuse.forEach((s, i) => checkProse(file, `${w}.overuse[${i}]`, s));
@@ -218,7 +219,7 @@ function lintProfile(file: string, p: MbtiProfile) {
   checkProse(file, `${w}.oneLiner`, p.oneLiner);
   checkImage(file, `${w}.image`, p.image);
   p.cognitiveFunctions.forEach((c, i) => checkProse(file, `${w}.fn[${i}]`, c.easy));
-  for (const d of DOMAINS) p.signals[d].forEach((s, i) => checkProse(file, `${w}.signals.${d}[${i}]`, s.text, { scene: true }));
+  for (const d of DOMAINS) p.signals[d].forEach((s, i) => checkProse(file, `${w}.signals.${d}[${i}]`, s.text, { scene: true, childTagged: s.requires.children !== "any" }));
   checkSceneFacts(file, `${w}.signals`, p.signals);
   p.shadows.forEach((s, i) => checkProse(file, `${w}.shadows[${i}]`, s));
   const compatTypes = new Set(p.conventionalCompat.map(c => c.type));
@@ -244,7 +245,7 @@ function lintFusionFile(path: string) {
     if (featureIds.size && !featureIds.has(x.myeongriId)) fail(file, x.id, "myeongriId 미해결", x.myeongriId);
     if (x.dimension && dimensionIds.size && !dimensionIds.has(x.dimension)) fail(file, x.id, "차원 id 미해결", x.dimension);
     checkProse(file, `${x.id}.why`, x.why);
-    if (x.scene) checkProse(file, `${x.id}.scene`, x.scene.text, { scene: true });
+    if (x.scene) checkProse(file, `${x.id}.scene`, x.scene.text, { scene: true, childTagged: x.scene.requires.children !== "any" });
     fusionRules.push(x); fusionFileOf.set(x.id, file);
   }
 }
@@ -303,7 +304,7 @@ function lintTimeline() {
   one("ten-god-period.json", TenGodPeriodFileSchema, d => {
     for (const e of d.entries) for (const k of ["year", "month"] as const) {
       checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.meaning`, e[k].meaning);
-      e[k].scenes.forEach((s: SceneItem, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.scenes[${i}]`, s.text, { scene: true }));
+      e[k].scenes.forEach((s: SceneItem, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.scenes[${i}]`, s.text, { scene: true, childTagged: s.requires.children !== "any" }));
       checkSceneFacts("timeline/ten-god-period.json", `${e.tenGod}.${k}`, { scenes: e[k].scenes });
       checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.action`, e[k].action);
       if (k === "year") checkProse("timeline/ten-god-period.json", `${e.tenGod}.year.caution`, e.year.caution);
