@@ -1,0 +1,68 @@
+{
+ "case": "c1-career",
+ "product": "career_money_study",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1120,
+  1109,
+  1191,
+  1200,
+  1238,
+  1145,
+  1156,
+  1229,
+  1047
+ ],
+ "total": 10435,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [
+  "3 term_first: 겨울의 정화"
+ ],
+ "briefCopy": {
+  "sentences": 228,
+  "matched": 0,
+  "ratio": 0,
+  "writerSentences": 228,
+  "writerMatched": 0,
+  "writerRatio": 0
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 5
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {
+  "기획 회의": 2,
+  "출시 일정": 2,
+  "사용자 피드백": 2,
+  "화면 설계안": 1,
+  "회의록": 1,
+  "요구사항 정리": 1,
+  "우선순위 표": 1,
+  "개발팀 협의": 1,
+  "경쟁 서비스 조사": 1,
+  "로드맵 문서": 1,
+  "베타 테스트": 1,
+  "선배 피드백": 1,
+  "기능 명세서": 1,
+  "점심 메뉴 투표": 1,
+  "출시 후 지표": 1
+ },
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "imageUnnamed": 0,
+ "loveTiming": 0,
+ "jobMentions": 2,
+ "sceneHintsUsed": "15/15"
+}
