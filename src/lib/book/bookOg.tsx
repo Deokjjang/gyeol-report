@@ -14,15 +14,15 @@ export async function renderBookOg(model: BookShareModel) {
   const book = bookForProduct(model.productType)!;
   const title = book.id === "annual" ? model.bookTitle.replace(" ", "\n") : book.title;
   const lines = title.split("\n"), name = ogFontText(model.displayName);
-  return new ImageResponse(<div style={{ display: "flex", width: "100%", height: "100%", background: "#f5f5f2", color: "#111", fontFamily: "Book", padding: "55px 90px", alignItems: "center", gap: 100 }}>
+  return new ImageResponse(<div style={{ display: "flex", width: "100%", height: "100%", background: "#f6f2e9", color: "#26231f", fontFamily: "Book", padding: "55px 90px", alignItems: "center", gap: 100 }}>
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flexShrink: 0, width: 365, height: 520, background: book.color, color: book.ink, padding: "34px 32px", borderLeft: "8px solid #0002", boxShadow: "12px 14px 22px #0002" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 16 }}><span>GYEOL REPORT</span><span>{model.issueNumber}</span></div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 16 }}><span>결리포트</span><span>{model.issueNumber}</span></div>
       <div style={{ display: "flex", flexDirection: "column", fontSize: 51, letterSpacing: -2, lineHeight: 1.18 }}>{lines.map((line, i) => <div key={i}>{line}</div>)}</div>
-      <div style={{ display: "flex", fontSize: name.length > 12 ? 18 : 23, lineHeight: 1.5, flexWrap: "wrap", wordBreak: "break-all" }}>{name || "PERSONAL EDITION"}</div>
+      <div style={{ display: "flex", fontSize: name.length > 12 ? 18 : 23, lineHeight: 1.5, flexWrap: "wrap", wordBreak: "break-all" }}>{name ? `${name}의 책` : ""}</div>
     </div>
     <div style={{ display: "flex", flexDirection: "column", width: 540, gap: 36 }}>
       <div style={{ display: "flex", flexDirection: "column", fontSize: 47, lineHeight: 1.4, letterSpacing: -2 }}><div>타고난 결을 읽고,</div><div>삶의 이야기를 펼치다.</div></div>
-      <div style={{ display: "flex", flexDirection: "column", fontSize: 18, letterSpacing: 3, lineHeight: 1.6 }}><div>GYEOL REPORT</div><div>PERSONAL EDITION</div></div>
+      <div style={{ display: "flex", flexDirection: "column", fontSize: 18, letterSpacing: 3, lineHeight: 1.6 }}><div>결리포트</div><div>GYEOL REPORT</div></div>
     </div>
   </div>, { width: 1200, height: 630, fonts: [{ name: "Book", data: await font, weight: 700, style: "normal" }], headers: BOOK_SHARE_HEADERS });
 }

@@ -64,7 +64,7 @@ export function ReportStatusView({ state, title, message, support = false, stage
       <div className={styles.container}>
         <p className={styles.brand}><Link href="/" aria-label="결리포트 홈"><b>결리포트</b><span>GYEOL REPORT</span></Link></p>
         <section className={styles.content} aria-labelledby="report-status-title">
-          {waiting && stage !== undefined ? <FillingPages stage={stage} /> : state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={false} /> : null}
+          {waiting ? <FillingPages stage={stage ?? 0} /> : state === "payment-check" || state === "reading" ? <BookPublishingVisual animate={false} /> : null}
           <div className={styles.body}>
             <div role="status" aria-live="polite" aria-atomic="true">
               <h1 id="report-status-title" className={styles.title}>{title ?? copy[state].title}</h1>

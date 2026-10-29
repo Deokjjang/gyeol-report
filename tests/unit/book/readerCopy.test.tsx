@@ -58,7 +58,7 @@ describe("Reader notes use one native list counter and unique valid markers", ()
     expect(html).toContain('<li value="1"><div><strong>무진(戊辰)</strong> <p>');
     expect(html).not.toContain('<span>1.</span>');
     expect(html).toContain('2028년 4월 23일 21시 42분');
-    expect(html).toContain('<h1>무진(戊辰)의 해</h1>');
+    expect(html).toContain('무진(戊辰)의 해</h1>');
     expect(JSON.stringify({ data, page })).toBe(before);
   });
   it("applies presentation helpers only at rendering, retaining stored text", () => {

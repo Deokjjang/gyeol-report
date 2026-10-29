@@ -30,7 +30,7 @@ beforeEach(() => {
   motion = Object.assign(new EventTarget(), { matches: false }); hover = Object.assign(new EventTarget(), { matches: false });
   vi.stubGlobal("matchMedia", (query: string) => query.includes("reduced-motion") ? motion : hover);
   vi.stubGlobal("document", Object.assign(new EventTarget(), { hidden: false, documentElement: { clientWidth: 390 }, getElementById: () => null }));
-  vi.stubGlobal("window", { getSelection: () => selected, visualViewport: { scale: 1 }, location: { assign: vi.fn() } });
+  vi.stubGlobal("window", Object.assign(new EventTarget(), { getSelection: () => selected, visualViewport: { scale: 1 }, location: { assign: vi.fn() }, scrollY: 0, scrollTo: vi.fn() }));
 });
 afterEach(() => { cleanups.forEach(c => c()); vi.useRealTimers(); vi.unstubAllGlobals(); });
 function renderShelf() { hooks.index = 0; hooks.effects = []; return BookShelf({ inputPath: "/reports/new", year: 2026 }); }
@@ -91,7 +91,8 @@ describe("actual BookReading pointer handlers", () => {
     for (const extra of [{ clientX: 10 }, { isPrimary: false }, { target: { closest: () => ({}) } }]) { fire(tree, "onPointerDown", readPointer(280, 240, 100, extra)); fire(tree, "onPointerUp", readPointer(80)); expect(page()).toBe(1); }
     fire(tree, "onPointerDown", readPointer(280)); fire(tree, "onPointerUp", readPointer(80, 240, 200, { pointerId: 4 })); expect(page()).toBe(1);
     fire(tree, "onPointerDown", readPointer(280)); fire(tree, "onPointerCancel", {}); fire(tree, "onPointerUp", readPointer(80)); expect(page()).toBe(1);
-    fire(tree, "onPointerDown", readPointer(280)); const scroller = nodes(tree, e => e.props["data-page-number"] !== undefined)[0]; (scroller.props.onScroll as () => void)(); fire(tree, "onPointerUp", readPointer(80)); expect(page()).toBe(1);
+    // P5: 문서 자체가 스크롤한다 — 창 스크롤이 손 떼기 전 제스처를 지운다.
+    hooks.effects.forEach(f => f()); fire(tree, "onPointerDown", readPointer(280)); window.dispatchEvent(new Event("scroll")); fire(tree, "onPointerUp", readPointer(80)); expect(page()).toBe(1);
     selected = { isCollapsed: false, toString: () => "선택" } as Selection; fire(tree, "onPointerDown", readPointer(280)); fire(tree, "onPointerUp", readPointer(80)); expect(page()).toBe(1);
   });
   it("dragging an excluded control suppresses only its release click; a fresh tap still works", () => {

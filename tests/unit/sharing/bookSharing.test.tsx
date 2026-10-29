@@ -100,7 +100,7 @@ describe("V4 Book share, real V4 generation and existing SQL", () => {
     }
     vi.stubGlobal("navigator", { share: async () => { throw new DOMException("cancel", "AbortError"); } }); expect(await nativeShare(bookNativeData(fixtures[0].model))).toBe("cancelled");
     vi.stubGlobal("navigator", {}); expect(await nativeShare(bookNativeData(fixtures[0].model))).toBe("fallback");
-    expect(readFileSync("src/app/dev/book-preview/BookPages.tsx", "utf8")).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
+    expect(readFileSync("src/components/brand/SocialLinks.tsx", "utf8")).toContain('href: "http://pf.kakao.com/_sbHaX/chat"');
   });
   it("internally enabled /r entry and data use the stored V4 version, never expose the private report ID", async () => {
     const f = fixtures[0], original = shareStore.loadSharedReport;

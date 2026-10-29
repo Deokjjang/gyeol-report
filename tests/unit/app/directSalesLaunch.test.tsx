@@ -45,7 +45,7 @@ describe("approved direct-sales launch boundary", () => {
     expect(checkout).toContain('"/auth"}/ticket-summary');
     expect(checkout).toContain('if (!internal && method === "ticket")');
     expect(checkout).toContain("await publication.submit(payload, consents");
-    expect(checkout).toContain("리포트 이용권 1장 사용");
-    expect(checkout).toContain("ticketShopEnabled && !ticketPending ? <button");
+    expect(checkout).toContain("이용권 1장 사용");
+    expect(checkout).toContain("ticketShopEnabled && !ticketPending ? <p className={s.legalLinks}><button");
   });
 });

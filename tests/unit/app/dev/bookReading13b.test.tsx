@@ -44,12 +44,11 @@ describe("Phase13B stable chapter navigation and complete presentation", () => {
       const hidden = p.items.filter(i => i.group === "지장간");
       expect(hidden.every(i => !i.meaning.includes("지지 안에 함께 담긴"))).toBe(true);
       const html = renderToStaticMarkup(<BookReader data={b} page={p} onPage={() => {}} onNote={() => {}} onShare={() => {}} />);
-      expect(html.split("지장간은 지지 안에 담긴 천간입니다").length - 1).toBe(hidden.length ? 1 : 0);
+      // P5: 머리말은 내용과 맞게 한 줄, 항목은 묶음(지장간·십이운성…)별 접기. 십이운성은 한자를 함께 써 오행 '쇠(금)'과 헷갈리지 않게.
+      expect(html.includes("<summary>지장간<span>")).toBe(hidden.length > 0);
       const stages = p.items.filter(i => i.group === "십이운성");
-      if (stages.length && new Set(stages.map(i => i.meaning)).size === 1) {
-        expect(html.split(stages[0].meaning).length - 1).toBe(1);
-        stages.forEach(stage => expect(html).toContain(stage.name));
-      }
+      stages.forEach(stage => expect(html).toContain(stage.name));
+      if (stages.length) expect(html).toMatch(/\(\S+ [長沐冠建臨帝衰病死墓絶胎養]/);
     }
   });
     if (fixture.id === "comprehensive") it("old scoreless / no-ID Book data remains renderable", () => {

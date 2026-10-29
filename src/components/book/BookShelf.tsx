@@ -11,15 +11,16 @@ import { interaction } from "../../lib/analytics/client";
 import { LaunchCountdown } from "../growth/LaunchCountdown";
 
 const HINT_KEY = "gyeol-cover-hint-v1";
+const hintVisible = () => { try { return !localStorage.getItem(HINT_KEY); } catch { return false; } };
 
 export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath: string; year: number; authEnabled?: boolean }) {
   const [current, setCurrent] = useState(0);
   const auto = useRef<ReturnType<typeof createCoverflowAuto> | null>(null);
   const hovering = useRef(false), dragged = useRef(false), gesture = useRef<{ x: number; y: number; pointerId: number; vertical: boolean } | null>(null);
   const refresh = useRef<() => void>(() => {});
+  // 표지를 한 번도 누르지 않은 방문에만 카운터 아래 한 줄 안내. 서버 렌더는 안내 없음, 저장소를 못 쓰면 보이지 않는다.
   const [hint, setHint] = useState(false);
-  // 첫 방문 때만 카운터 아래 한 줄 안내. 저장소를 못 쓰면 보이지 않는다(안내는 선택 사항).
-  useEffect(() => { const t = setTimeout(() => { try { if (!localStorage.getItem(HINT_KEY)) { localStorage.setItem(HINT_KEY, "1"); setHint(true); } } catch { /* optional hint */ } }, 0); return () => clearTimeout(t); }, []);
+  useEffect(() => { let live = true; queueMicrotask(() => { if (live) setHint(hintVisible()); }); return () => { live = false; }; }, []);
   useEffect(() => {
     const motion = matchMedia("(prefers-reduced-motion: reduce)"), hover = matchMedia("(hover: hover) and (pointer: fine)");
     auto.current = createCoverflowAuto(() => setCurrent(c => wrapBook(c + 1)));

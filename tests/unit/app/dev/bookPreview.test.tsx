@@ -1,6 +1,7 @@
 // Compare the retained legacy document branch with the V4 policy presentation.
 vi.mock("../../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => false }));
 import { readFileSync, readdirSync } from "node:fs";
+import MBTI_PAGES from "../../../../src/data/book-pages/mbti.json";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
@@ -120,7 +121,8 @@ describe("book preview: development-only presentation", () => {
     expect(pages.slice(-3).map(p => p.kind)).toEqual(["appendix", "contents", "back"]);
     pages.forEach(page => {
       const html = renderToStaticMarkup(<BookReader data={data} page={page} onNote={noop} onShare={noop} onPage={noop} />);
-      expect(html).not.toMatch(/<details|<footer|sourceRefs|confidence|seedIds|natalEvidence|fusionIds/);
+      expect(html).not.toMatch(/<footer|sourceRefs|confidence|seedIds|natalEvidence|fusionIds/);
+      if (page.kind !== "appendix") expect(html).not.toMatch(/<details/); // P5: 부록만 묶음별 접고 펼치기
       if (page.kind === "narrative") page.paragraphs.forEach(p => expect(html).toContain(renderToStaticMarkup(<span>{p.text}</span>).slice(6, -7)));
     });
   });
@@ -139,11 +141,14 @@ describe("book preview: development-only presentation", () => {
   });
   it("complete MBTI keywords/function stack and natal detail rows remain available", () => {
     const html = reader("mbti"), tables = library.books[0].people[0].table;
-    tables.mbti!.closeKeywords.concat(tables.mbti!.farKeywords).forEach(k => expect(html).toContain(k));
-    tables.mbti!.functionRows.forEach(r => expect(html).toContain(r.description));
+    // P5: 가까운·먼 키워드 원자료는 지우고 지식 DB 기준 부드러운 대표 키워드 5개, 존댓말 요약 4줄.
+    const view = (MBTI_PAGES.types as Record<string, { keywords: string[]; summary: { text: string }[] }>)[tables.mbti!.type];
+    view.keywords.forEach(k => expect(html).toContain(`<li>${k}</li>`)); view.summary.forEach(l => expect(html).toContain(l.text));
+    expect(html).not.toContain(tables.mbti!.closeKeywords.join(" · ")); expect(html).not.toContain(tables.mbti!.farKeywords.join(" · "));
     expect(html).not.toContain("리포트 활용");
     const natal = reader("manse");
-    tables.manse.detailRows.forEach(r => expect(natal).toContain(r.label));
+    tables.manse.detailRows.filter(r => r.key !== "interactions").forEach(r => expect(natal).toContain(r.key === "sinsalAndGwiin" ? "신살·귀인" : r.label));
+    expect(natal).toContain("<h2>합·충</h2>");
   });
   it("footer reuses legal values and chat URL; existing paid route rule untouched", () => {
     const html = renderToStaticMarkup(<PreviewFooter />);
@@ -166,17 +171,17 @@ describe("book preview: development-only presentation", () => {
     }
     tables.manse.detailRows.forEach(row => Object.values(row.cells).flat().forEach(value => expect(html).toContain(value)));
     Object.keys(ELEMENT_LABELS).forEach(token => expect(source("book.module.css")).toContain(`[data-element="${token}"]`));
-    expect(html).toContain("지장간 포함 가중"); expect(html).not.toContain("2.9000000000000004");
+    expect(html).not.toContain("가중"); expect(html).not.toContain("2.9000000000000004"); // P5: 내부 가중 수치는 숨기고 많음·보통·적음·없음
   });
   it("all MBTI axes, alternatives, summaries and function metadata are retained", () => {
     const html = reader("mbti");
     const m = library.books[0].people[0].table.mbti!;
-    expect(html).toContain(m.archetype); expect(html).toContain(m.oneLine);
+    // P5: 16Personalities 유형명·별칭 대신 지식 DB 이름과 한 줄.
+    const view = (MBTI_PAGES.types as Record<string, { name: string; oneLiner: string }>)[m.type];
+    expect(html).toContain(view.name); expect(html).toContain(view.oneLiner); expect(html).not.toContain(m.titleKo);
     expect(html.match(/data-selected="true"/g)).toHaveLength(4);
     expect(html.match(/data-selected="false"/g)).toHaveLength(4);
-    m.preferenceRows.forEach(r => [r.left, r.right].forEach(v => { expect(html).toContain(v.nameEn); expect(html).toContain(v.description); }));
-    m.functionRows.forEach(r => { expect(html).toContain(r.attitude + " · " + r.domain); expect(html).toContain(r.nameKo); });
-    m.coreSummary.forEach(r => expect(html).toContain(r.text));
+    m.preferenceRows.forEach(r => [r.left, r.right].forEach(v => { expect(html).toContain(`<b>${v.code}</b>`); expect(html).toContain(v.nameKo); }));
   });
   it("back cover has exactly three icon actions, without SDK/runtime or second CTA", () => {
     const html = reader("back");
@@ -214,11 +219,12 @@ describe("book preview: development-only presentation", () => {
     expect(renderToStaticMarkup(<Preview library={library} />)).not.toMatch(/자동 회전|재생|일시정지/);
     expect(source("book.module.css")).toContain("@media (prefers-reduced-motion: reduce)");
     expect(source("book.module.css")).toContain("animation: none !important; transition: none !important;");
-    expect(source("book.module.css")).toContain(".coverflow { pointer-events: none; }");
-    expect(source("book.module.css")).toContain(".bookSlot { pointer-events: auto; }");
-    expect(source("book.module.css")).toContain(".bookShell { overflow: clip; }");
+    expect(source("book.module.css")).toMatch(/\.coverflow \{[^}]*pointer-events: none;/);
+    expect(source("book.module.css")).toMatch(/\.bookSlot \{[^}]*pointer-events: auto;/);
+    expect(source("book.module.css")).not.toMatch(/\.bookShell \{[^}]*height: calc/); // P5: 종이 틀 안 이중 스크롤 없음
     expect(source("BookPreview.tsx")).toContain('aria-label="다음 페이지"');
     expect(source("BookPreview.tsx")).toContain('closeLabel="각주 닫기"');
-    expect(source("book.module.css")).not.toContain("gradient");
+    // P5: 그라데이션은 표지 천 결·책등 그림자에만.
+    expect(source("book.module.css").split("\n").filter(l => l.includes("gradient")).every(l => /^\s+background-image:|^\.spine /.test(l))).toBe(true);
   });
 });
