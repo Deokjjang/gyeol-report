@@ -70,7 +70,7 @@ export function chapterEvidence(brief: Brief, ch: WriterChapter): string[] {
 }
 
 export function payloadToBriefInput(payload: ReportInputPayload, baseDate: string) {
-  const person = (p: ReportInputPayload extends infer _ ? Extract<ReportInputPayload, { person: unknown }>["person"] : never, ctx?: Extract<ReportInputPayload, { userContext: unknown }>["userContext"]) => ({
+  const person = (p: Extract<ReportInputPayload, { person: unknown }>["person"], ctx?: Extract<ReportInputPayload, { userContext: unknown }>["userContext"]) => ({
     name: p.name, gender: (p.gender === "MALE" || p.gender === "FEMALE" ? p.gender : "") as "MALE" | "FEMALE" | "", birthDate: p.birthDate, birthTime: p.birthTime, birthTimeUnknown: p.birthTimeUnknown,
     approximateBirthTimeSlot: p.approximateBirthTimeSlot, mbtiType: (p.mbtiType || "") as never,
     ...(ctx ? { context: { relationshipStatus: ctx.relationshipStatus, jobStatus: ctx.jobStatus, detailJob: ctx.detailJob } } : {}),

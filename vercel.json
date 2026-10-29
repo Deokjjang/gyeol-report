@@ -2,7 +2,6 @@
   "crons": [
     { "path": "/api/internal/report-jobs", "schedule": "* * * * *" },
     { "path": "/api/internal/report-ticket-jobs", "schedule": "* * * * *" },
-    { "path": "/api/internal/report-writer-recovery", "schedule": "* * * * *" },
     { "path": "/api/internal/meta-events", "schedule": "*/5 * * * *" }
   ]
 }
