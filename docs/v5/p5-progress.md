@@ -41,6 +41,5 @@
 
 주의(시간을 쓴 함정): `pnpm start`를 TaskStop으로 끄면 `next-server` 자식이 남아 이전 빌드를 계속 낸다 → 새 빌드 뒤 CSS 조각이 없어 무스타일 페이지를 측정하게 된다. 포트로 pid를 찾아 끈다(`kill $(lsof -nP -iTCP:3400 -sTCP:LISTEN -t)`). zsh에서 `path` 변수 이름은 PATH를 덮는다.
 
-## 남은 일(턴이 끊기면 여기서 이어감)
-1. 전체 시험 1회 결과를 기준선과 비교해 보고서 §10에 기록.
-2. after 전체 재캡처(줄바꿈 변경 반영), origin/v5/main으로 리베이스·fast-forward push.
+## 마무리
+- origin/v5/main 95223c07(P3.7) 위로 리베이스(충돌 없음), 카카오 공유 카드 이미지 크기 수정, after 46장 재촬영, 전체 시험 비교(신규 실패 0, 보고서 §8), v5/main fast-forward push.
