@@ -102,7 +102,13 @@
 ## 8. 시험
 - tsc 0, eslint 0(바뀐 ts/tsx/mjs/mts), `pnpm build` 성공.
 - 관련 시험 110파일: 의도한 표시 변경에 맞춰 12파일 갱신. 남은 실패는 기준선 파일(`docs/baseline-failures-v5main.txt`)에 있는 것과 `bookPreview 'reader contains actual pages…'` 1건 — origin/v5/main 63e7bab0 깨끗한 worktree(`v5-ui-base`)에서도 같은 실패라 기존 오류.
-- 전체 시험 결과는 아래 §10.
+- 전체 시험 1회(리베이스 전 8d0a8007): 31,086건 중 실패 821, 기준선 밖 사례 6건 → 각 파일 단독 재실행·깨끗한 base worktree(63e7bab0) 대조:
+  - `KakaoShare` 1건: 내 변경(공유 카드 이미지가 새 og-v5) → 코드가 새 크기(1200×630)를 쓰게 고치고 시험 기대값 갱신 → 통과.
+  - `compatibilityUnknownTimePreflight` 1·`releaseActivation` 1: 단독 실행 통과(부하 시간 초과).
+  - `measurement` 1(12B 쿠폰 구매): base에서도 같은 실패(5초 시간 초과) → 기존 오류.
+  - `contentRebuild` 2(10-minjae·11-doyun)·같은 파일 3건: base에서도 같은 실패(시간 초과). 그중 만세력 표 검사는 새 표시(합·충 목록·오행 막대·칸 표기)에 맞춰 기대값 갱신, 시간 제한을 늘린 단독 실행에서 통과.
+  - `bookPreview 'reader contains actual pages…'`: base에서도 같은 실패(조정자 확인, 기존 오류).
+  - → 신규 실패 0. 리베이스 후(origin/v5/main 95223c07 위) tsc 0, 핵심 시험(동일성·운영 버전 조합·13B·event-end·모바일 제스처) 74/74 통과, v5·v4 픽스처 화면 200.
 
 ## 9. 남은 문제
 1. 생성 대기 단계가 경과 시간 기준(PARTIAL). 실제 진행 신호(계산 끝·장별 집필 저장·검수)를 작가 실행기/작업 상태에서 내보내야 함 → A 영역(`src/lib/writer` runner·ticketJob) 변경 필요.

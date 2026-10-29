@@ -138,20 +138,21 @@ describe("Phase13A real-calculation content review exports", () => {
       expect(result.ok).toBe(true); if (!result.ok) continue;
       const table = projectV4Tables(result.evidencePacket as V4RuntimeEvidence)[0];
       const html = renderToStaticMarkup(createElement(NatalTable, { data: table }));
-      expect(html).toContain("오행의 구성");
-      expect(html).toContain("천간·지지");
+      // P5: 표 아래 "합·충" 목록과 "오행" 막대(많음·보통·적음·없음), 칸은 한자·한글·음양·오행.
+      expect(html).toContain("<h2>오행</h2>");
+      expect(html).toContain("<h2>합·충</h2>");
       expect(html).toMatch(/data-element="wood-green"/);
       expect(html).toMatch(/data-element="fire-red"/);
       const text = html.replace(/<[^>]*>/g, " ");
       for (const cell of [...Object.values(table.manse.stemRow), ...Object.values(table.manse.branchRow)]) {
         if (!cell) continue;
-        expect(text).toContain(`${cell.ko} · ${cell.yinYang === "yin" ? "음" : "양"}`);
+        expect(text).toContain(cell.ko); expect(text).toContain(`${cell.yinYang === "yin" ? "음" : "양"} · `);
         const start = html.indexOf(`>${cell.hanja}</strong>`);
-        expect(html.slice(start, html.indexOf("</td>", start))).toContain(`</span><span>`);
+        expect(html.slice(start, html.indexOf("</td>", start))).toContain(`</small><small>`);
       }
       if (!f.time) {
         expect(table.manse.stemRow.hour).toBeNull();
-        expect(html).toContain("미확인");
+        expect(html).toContain("모름");
       }
     }
   });
