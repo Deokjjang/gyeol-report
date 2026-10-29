@@ -98,19 +98,20 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
 
 /** 문단에서 위반 문장을 지운다. */
 export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false, replacements?: Replacement[]): string {
-  const kept: string[] = [];
+  // 바뀐 문장만 원문에서 고친다. 문단을 쪼갰다 다시 잇지 않는다(P3.7: "0.1"이 "0. 1"로, '?" 를'처럼 공백이 끼었다).
+  let out = p;
   for (const raw of splitSentences(p)) {
     let s = raw;
     if (isPastAssertion(s)) {
       const soft = softenExperience(s);
-      if (!soft) { deletions.push({ chapter, rule: "experience_assert", sentence: s }); continue; }
-      replacements?.push({ chapter, rule: "experience_assert", from: s, to: soft }); s = soft;
+      if (!soft) { deletions.push({ chapter, rule: "experience_assert", sentence: s }); out = out.replace(raw, ""); continue; }
+      replacements?.push({ chapter, rule: "experience_assert", from: s, to: soft }); s = soft; out = out.replace(raw, soft);
     }
     const key = norm(s);
     const rule = sentenceViolation(s, f, allowed, inConditionalChapter) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
-    if (rule) deletions.push({ chapter, rule, sentence: s }); else { kept.push(s); if (key.length >= 20) seen?.add(key); }
+    if (rule) { deletions.push({ chapter, rule, sentence: s }); out = out.replace(s, ""); } else if (key.length >= 20) seen?.add(key);
   }
-  return kept.join(" ");
+  return out === p ? p : out.replace(/ {2,}/g, " ").trim();
 }
 
 export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed"; readonly text: string };

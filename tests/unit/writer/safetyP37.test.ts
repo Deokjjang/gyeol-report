@@ -5,7 +5,7 @@ import { MAX_GROUP_CHAPTERS } from "@/lib/brief/chapters";
 import { meaningGroup } from "@/lib/brief/groups";
 import type { Brief } from "@/lib/brief/schema";
 import { LOVE_TIMING } from "@/lib/writer/safety/patterns";
-import { sentenceViolation, styleWarnings } from "@/lib/writer/safety/sentences";
+import { filterParagraph, sentenceViolation, styleWarnings, type Deletion } from "@/lib/writer/safety/sentences";
 import { PEOPLE } from "../../../tools/p35/people";
 import { P36_PEOPLE as P36 } from "../../../tools/p36/people";
 
@@ -74,7 +74,7 @@ describe("P3.7 원고 보강", () => {
   it("1-4: 커리어 직무 8~12개(근거 한 줄)·지금 직업 적합도·키울 역할·투자 원칙, 연애 호감·연락·밀당 재료", () => {
     const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
     const ev = (b: Brief, key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
-    const picks = ev(career, "jobPicks")!.facts.slice(1);
+    const picks = ev(career, "jobPicks")!.facts;
     expect(picks.length).toBeGreaterThanOrEqual(8); expect(picks.length).toBeLessThanOrEqual(12);
     for (const p of picks) expect(p).toMatch(/^[^—]{2,20} — [^:]+: .{6,}/);
     expect(new Set(picks.map(p => p.split(" — ")[0])).size).toBe(picks.length);
@@ -105,5 +105,31 @@ describe("P3.7 원고 보강", () => {
       expect(c.dayRelations.length, name).toBeGreaterThan(0);
       for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자 .+ ${c.b.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자 .+: `));
     }
+  });
+
+  it("r1 채점 원인: 성향 키 2장·기능 코드 2번·참조 한 장·궁합 두 방향·대운 전환·관계 trait·근거 지시문 분리·문단 원문 보존", () => {
+    for (const [name, b] of briefs) {
+      const codes = new Map<string, number>();
+      for (const t of b.traits.filter(t => t.chapters.length)) for (const c of new Set(t.fusion?.why.match(/\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/g) ?? [])) codes.set(c, (codes.get(c) ?? 0) + 1);
+      for (const [c, n] of codes) expect(n, `${name} ${c}`).toBeLessThanOrEqual(2);
+      const auxUse = new Map<string, number>();
+      for (const c of b.chapters) for (const m of c.materials) if ((m.kind === "ref" && !m.note) || m.kind === "evidence") { const key = m.kind === "ref" ? m.ref : m.key; auxUse.set(key, (auxUse.get(key) ?? 0) + 1); }
+      for (const [key, n] of auxUse) if (!/^shadows\.|^traits\./.test(key)) expect(n, `${name} ${key}`).toBe(1);
+      for (const c of b.chapters) for (const m of c.materials) if (m.kind === "evidence") for (const f of m.facts) expect(f, `${name} ${m.key}`).not.toMatch(/(단정하지 않는다|말하지 않는다|쓰지 않는다|짝지어 쓴다)$/);
+      expect(b.mbti?.shadows.length ?? 0, name).toBeLessThanOrEqual(1);
+    }
+    const pair = briefs.find(([n]) => n === "pair-parent")![1];
+    if (pair.compatibility!.tenGodAB.tenGod === pair.compatibility!.tenGodBA.tenGod) expect(pair.compatibility!.tenGodBA.reading).not.toBe(pair.compatibility!.tenGodAB.reading);
+    expect(pair.partner!.person.facts.job.detail).toBe("");
+    const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
+    expect(career.chart.currentDayun?.reading).toMatch(/2027년부터 癸卯\(계묘\) 편관/);
+    const x = briefs.find(([n]) => n === "major_fortune:x")![1];
+    for (const e of x.timeline!.entries) for (const t of e.touched ?? []) {
+      const trait = x.traits.find(y => y.id === t.traitId)!;
+      if (trait.family === "relation") expect(t.how, `${e.key} ${trait.featureId}`).toContain({ CHUNG: "(충)", PA: "(파)", HYEONG: "(형)", HAE: "(해)", YUKHAP: "(육합)", SAMHAP: "합)", BANGHAP: "(방합)", STEM_HAP: "(천간합)" }[trait.featureId.split(":")[1]] ?? "@@");
+    }
+    const del: Deletion[] = [];
+    expect(filterParagraph(`성장률이 0.1배 늘어도 "정말?" 를 묻는 사람입니다.`, facts, 1, del)).toBe(`성장률이 0.1배 늘어도 "정말?" 를 묻는 사람입니다.`);
+    expect(filterParagraph("좋은 문장입니다. 인연이 일찍 열리는 편입니다. 다음 문장입니다.", facts, 1, del)).toBe("좋은 문장입니다. 다음 문장입니다.");
   });
 });

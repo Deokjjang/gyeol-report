@@ -68,7 +68,7 @@ type PersonPack = {
   readonly det: ReturnType<typeof analyzeChartDetections>; readonly dayun: ReturnType<typeof dayunOf>; readonly st: ElementState; readonly bc: BalanceCtx;
 };
 
-function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number): PersonPack {
+function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number, fnUsed?: Map<string, number>): PersonPack {
   const gender = input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null;
   const saju = calculateSaju({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: (input.approximateBirthTimeSlot ?? "") as never, calendarType: "SOLAR", gender: gender ?? "OTHER_OR_UNSPECIFIED", timezone: "Asia/Seoul" });
   const det = analyzeChartDetections(saju);
@@ -110,7 +110,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     const good = t.good.map(clean).filter((x): x is string => Boolean(x));
     if (good.length) t.good = good;
   }
-  const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts);
+  const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts, fnUsed);
   for (const t of traits) if (t.fusion) { const why = keepBalanced(t.fusion.why, bc, splitSentences); if (why) t.fusion.why = why; else delete t.fusion; }
   chart.climate.reading = keepBalanced(chart.climate.reading, bc, splitSentences) ?? "";
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
@@ -124,7 +124,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     name: input.name, callName: `${input.name}님`,
     nameUse: ["제목", "1장 첫 문단", "가운데 장 전환 문장", "마지막 장 마무리", "그 밖에는 '당신'"],
     gender, age, ageBand: ageBand(age),
-    facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: facts.jobStatus, detail: facts.detailJob } },
+    // 궁합은 관계 유형이 정한 사실만 쓴다: 입력에 직업이 있어도 넘기지 않는다(P3.7 r1: "대학생"과 "학생 전제 금지"가 함께 나갔다).
+    facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
     forbiddenFacts: forbiddenFacts(facts, profile),
   };
   return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc };
@@ -136,7 +137,8 @@ function mbtiBrief(k: Knowledge, type: MbtiType | null) {
   return {
     type: p.type, easyName: p.easyName, oneLiner: p.oneLiner, image: p.image,
     functions: p.cognitiveFunctions.map((c, i) => (i < 2 ? `${c.code}(${c.role}): ${c.easy}` : `${c.code}(${c.role})`)),
-    shadows: [...p.shadows],
+    // 그늘 문장은 하나만: 여러 개면 trait 팩폭·과사용과 같은 뜻이 겹쳐 반복된다(P3.7 r1).
+    shadows: p.shadows.slice(0, 1),
   };
 }
 
@@ -153,8 +155,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const pairJob = input.relationshipType === "managerReport" || input.relationshipType === "coworker" ? "employed" : input.relationshipType === "businessPartner" ? "business" : "none";
   const override = isPair ? { relationship: pairRel ?? "unknown", job: pairJob, children: "unknown" } as const : undefined;
   const overrideA = override && input.relationshipType === "parentChild" ? { ...override, children: "has" as const } : override;
-  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : undefined);
-  const other = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6) : null;
+  const fnUsed = new Map<string, number>();
+  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : undefined, fnUsed);
+  const other = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed) : null;
 
   const fortunes = buildFortunes(me.scored, me.traits);
   const shadows = buildShadows(me.selected, me.traits);
@@ -218,7 +221,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),
     ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])) } : {}),
     ...(isPair ? {
-      sceneDomains: narrative.compatibility?.[input.relationshipType!]?.sceneDomains,
+      // 부모·자녀 궁합에 배움(교과서·시험) 장면은 부모 쪽에 맞지 않는다(P3.7 r1: 55세 부모에게 입문서 장면).
+      sceneDomains: narrative.compatibility?.[input.relationshipType!]?.sceneDomains.filter(d => !(input.relationshipType === "parentChild" && d === "study")),
       prefer: (cid: string, t: Trait) => (cid === "direction-ab" ? (t.id.startsWith("b") ? 1 : 0) : cid === "direction-ba" ? (t.id.startsWith("a") ? 1 : 0) : 0),
     } : {}),
   });
@@ -234,6 +238,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
 
   // 입력 직업이 없으면 '지금 일' 장은 원래 주제(장점이 부담이 되는 환경)로 둔다(P3.7 1-4).
   if (input.product === "career_money_study" && !me.facts.detailJob) for (const c of chapters) if (c.id === "burden") { c.title = "장점이 부담이 되는 환경"; c.question = "같은 장점이 어디서는 왜 짐이 될까?"; }
+  // 다음 대운이 1년 안에 시작하면 지금 대운 설명에 전환을 붙인다(P3.7 r1: 2026년에 끝나는 대운을 시기 장이 끝나는 줄 모르고 썼다).
+  const cd = me.chart.currentDayun, ty = me.chart.thisYear.year;
+  if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.startYear - 1}년에 끝나고 ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
   // 대운을 정할 수 없으면(시간 미상 등) "지금 대운 위에 올해" 장을 원국 바탕으로 바꾼다(P3.6 B: 제목만 대운이고 재료가 없었다).
   if (!me.chart.currentDayun) for (const c of chapters) if (c.id === "current-dayun") { c.title = "타고난 바탕 위에 올해"; c.question = "올해 흐름은 타고난 바탕의 어떤 결 위에 놓일까?"; }
   // 궁합 장 제목·질문의 "A·B" 기호(예 "A가 보는 B")는 두 사람 호칭으로 바꾼다(고객 본문에 기호가 나오지 않게, P3.5 A9).

@@ -39,7 +39,7 @@ function refsOf(brief: Brief): Ref[] {
 /** 책 앞쪽 글(prior)에 X가 소개됐는지 보고 고친다. prior는 이 함수가 문장을 지나가며 늘린다. */
 export function fixBackrefs(sections: readonly BookSection[], brief: Brief, prior: { text: string }): { sections: BookSection[]; fixed: number } {
   const refs = refsOf(brief); let fixed = 0;
-  const out = sections.map(s => ({ ...s, paragraphs: s.paragraphs.map(p => splitSentences(p).map(sen => {
+  const out = sections.map(s => ({ ...s, paragraphs: s.paragraphs.map(p => splitSentences(p).reduce((para, sen) => {
     const m = sen.match(BACKREF);
     let result = sen;
     if (m && m.index !== undefined) {
@@ -49,7 +49,7 @@ export function fixBackrefs(sections: readonly BookSection[], brief: Brief, prio
       if (!introduced) { result = `${ref ? `${ref.intro} ` : ""}${sen.replace(BACKREF, "")}`; fixed++; }
     }
     prior.text += ` ${result}`;
-    return result;
-  }).join(" ")) }));
+    return result === sen ? para : para.replace(sen, result);
+  }, p)) }));
   return { sections: out, fixed };
 }

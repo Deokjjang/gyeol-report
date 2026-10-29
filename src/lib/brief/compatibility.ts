@@ -94,7 +94,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     differences: dims.map(z => ({ dimension: z.d.name, a: pole(z.d, z.x), b: pole(z.d, z.y) })),
     complement: [...fills(b, a, b.callName, a.callName), ...fills(a, b, a.callName, b.callName)],
     tenGodAB: { tenGod: tenGodLabel(ab), reading: k.features.get(`tenGod:${ab}`)?.oneLiner ?? "" },
-    tenGodBA: { tenGod: tenGodLabel(ba), reading: k.features.get(`tenGod:${ba}`)?.oneLiner ?? "" },
+    // 두 방향이 같은 십성이면 같은 문장을 두 장에 주지 않는다(P3.7 r1: 3·4장이 같은 "나란히 걷는 같은 편").
+    tenGodBA: { tenGod: tenGodLabel(ba), reading: ab === ba ? `서로를 같은 기운으로 본다. 앞 장과 겹치지 않게, 이 방향에서는 ${k.features.get(`tenGod:${ba}`)?.strengths[1] ?? k.features.get(`tenGod:${ba}`)?.strengths[0] ?? ""}` : k.features.get(`tenGod:${ba}`)?.oneLiner ?? "" },
     dayRelations: rel,
     mbtiConvention: conv ? { fit: conv.fit, why: conv.why, note: "통념" } : null,
     score: {

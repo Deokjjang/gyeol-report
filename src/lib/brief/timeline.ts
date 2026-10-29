@@ -58,6 +58,8 @@ function touchedTraits(ctx: TimelineCtx, inc: ReturnType<typeof analyzeIncoming>
   for (const r of inc.relations) {
     const natal = r.members.map(m => m.position).filter((p): p is ChartPosition => NATAL.includes(p));
     for (const t of ctx.traits ?? []) {
+      // 합충형파해 trait는 같은 종류의 관계가 다시 걸릴 때만 건드려진다(P3.7 r1: 파 trait를 합이 건드린다고 이어 "합이 파를 푼다"로 읽혔다).
+      if ((t.family === "relation" && t.featureId !== `relation:${r.kind}`) || (t.featureId === "shinsal:WONJIN" && r.kind !== "WONJIN")) continue;
       const p = natal.find(x => t.positions.includes(x));
       if (p) add(t.id, `${POSITION_KO[p]} 글자와 ${relEasy(r)}`);
     }
@@ -79,9 +81,11 @@ function badgeFor(hit: RelationHit, k: Knowledge): Badge | undefined {
 
 function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number): { templateId: string; text: string } {
   const band = flow >= 4 ? "high" : "low";
-  const n = TIMELINE_ACTION_DOMAINS.length;
+  // 학생이 아니면 시험 공부 행동, 기혼이면 연애 행동을 주지 않는다(P3.7 r1: 37세 기혼 간호사에게 연애형 행동을 억지로 각색).
+  const domains = TIMELINE_ACTION_DOMAINS.filter(d => !(d === "study" && ctx.facts.job !== "student") && !(d === "love" && ctx.facts.relationship === "married"));
+  const n = domains.length;
   for (let i = 0; i < n * 2; i++) {
-    const domain = TIMELINE_ACTION_DOMAINS[(slot + i) % n];
+    const domain = domains[(slot + i) % n];
     const b = i < n ? band : band === "high" ? "low" : "high";
     const t = ctx.k.actions.find(a => a.id === `act:${tenGod}:${domain}:${b}`);
     if (t && !ctx.usedTemplates.has(t.id)) { ctx.usedTemplates.add(t.id); return { templateId: t.id, text: ctx.rng.fork(t.id).pick(t.text) }; }

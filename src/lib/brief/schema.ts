@@ -85,7 +85,8 @@ export const MaterialSchema = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("trait"), traitId: z.string(), domain: z.enum(DOMAINS), scene: z.string(), angle: z.enum(["first", "new-domain"]) }),
   z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string(), who: z.string().optional() }),
   z.object({ kind: z.literal("ref"), ref: z.string(), note: z.string().optional() }),
-  z.object({ kind: z.literal("evidence"), key: z.string(), facts: z.array(z.string()).min(1) }),
+  /** note: 쓰는 법(작가 지시). 본문에 옮기지 않는다(P3.7 r1: 지시문이 독자용 면책 문구로 옮겨졌다). */
+  z.object({ kind: z.literal("evidence"), key: z.string(), facts: z.array(z.string()).min(1), note: z.string().optional() }),
   z.object({ kind: z.literal("timeline"), entryKey: z.string() }),
 ]);
 export type Material = z.infer<typeof MaterialSchema>;

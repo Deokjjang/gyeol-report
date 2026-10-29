@@ -15,7 +15,7 @@ import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, josa, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO } from "./labels";
 import type { ChartBrief, Trait } from "./schema";
 
-type Evidence = { kind: "evidence"; key: string; facts: string[] };
+type Evidence = { kind: "evidence"; key: string; facts: string[]; note?: string };
 const STARS = { WEALTH: ["偏財", "正財"], OFFICER: ["偏官", "正官"], OUTPUT: ["食神", "傷官"] } as const satisfies Record<string, readonly TenGod[]>;
 const GROUP_KO = { PEER: "비겁(나와 같은 기운)", OUTPUT: "식상(표현·생산)", WEALTH: "재성(재물·현실)", OFFICER: "관성(책임·규칙)", RESOURCE: "인성(배움·보호)" } as const;
 /** 강한 십성 묶음 → 맞는 공부 방식(P3.6 B 학업 방향). */
@@ -25,6 +25,14 @@ const STUDY_BY_GROUP = {
   WEALTH: "숫자와 결과가 바로 보이는 실무 공부(실무 자격·데이터·회계)",
   OFFICER: "범위와 기한이 정해진 공부(시험·공인 자격·학위 과정)",
   RESOURCE: "깊이 파고 정리하는 공부(이론·연구·글쓰기)",
+} as const;
+/** 묶음별 구체 공부 예(P3.7 r1: "분야 하나를 짝지어 쓴다"만 주니 공부 이름이 비었다). */
+const STUDY_EXAMPLES = {
+  PEER: "실기형 자격과 독학 과정(예: 번역 자격, 코딩 부트캠프, 생활체육 지도자)",
+  OUTPUT: "포트폴리오를 남기는 실습 과정(예: UX 라이팅, 영상 편집, 콘텐츠 기획 과정)",
+  WEALTH: "숫자로 성과가 보이는 실무 자격(예: 전산회계, 데이터분석 준전문가, 물류관리사)",
+  OFFICER: "범위가 정해진 공인 자격(예: 정보처리기사, 품질경영기사, 행정사)",
+  RESOURCE: "깊이 파는 학위·연구형 과정(예: 대학원 강좌, 상담·교육 관련 자격)",
 } as const;
 const ROLE_BY_GROUP = {
   PEER: "혼자 판을 짜고 내 이름으로 책임지는 일(독립 업무·개인 브랜드·현장 리더)",
@@ -47,11 +55,11 @@ function starPositions(saju: SajuCalcResult, det: ChartDetections, stars: readon
 }
 
 function starEvidence(key: string, label: string, saju: SajuCalcResult, det: ChartDetections, k: Knowledge, stars: readonly TenGod[] | null): Evidence {
-  if (!stars) return { kind: "evidence", key, facts: [`성별 정보가 없어 ${label} 판단을 보류합니다. 본문에서 이 별을 말하지 않습니다.`] };
+  if (!stars) return { kind: "evidence", key, facts: [`성별 정보가 없어 ${label} 판단은 보류합니다.`], note: "본문에서 이 별을 말하지 않는다" };
   const found = starPositions(saju, det, stars);
   const names = stars.map(t => TEN_GOD_KO[t]).join("·");
   if (!found.length) {
-    return { kind: "evidence", key, facts: [`${josa(`${label}(${names})`, "이가")} 드러난 자리에 없습니다. 없다는 것은 '정해진 틀보다 스스로 찾아 쓰는 인연'으로 읽고 단정하지 않습니다.`] };
+    return { kind: "evidence", key, facts: [`${josa(`${label}(${names})`, "이가")} 드러난 자리에 없습니다. '정해진 틀보다 스스로 찾아 쓰는 인연'으로 읽습니다.`], note: "단정하지 않는다" };
   }
   const main = found[0].tenGod; const f = k.features.get(`tenGod:${main}`);
   return { kind: "evidence", key, facts: [`${label}(${names}) ${found.length}자리: ${found.map(x => `${x.where} ${TEN_GOD_KO[x.tenGod]}`).join(", ")}`, ...(f ? [`${TEN_GOD_KO[main]}의 결: ${f.oneLiner}`] : [])] };
@@ -59,14 +67,14 @@ function starEvidence(key: string, label: string, saju: SajuCalcResult, det: Cha
 
 function palaceEvidence(key: string, label: string, position: ChartPosition, saju: SajuCalcResult, det: ChartDetections, k: Knowledge): Evidence {
   const pillar = saju.pillars[position];
-  if (!pillar || (position === "hour" && !det.hourIncluded)) return { kind: "evidence", key, facts: [`보류: 출생시간을 몰라 ${label.replace(/\(.*\)$/, "")}는 보지 않습니다. 본문에서 이 자리를 말하지 않습니다.`] };
+  if (!pillar || (position === "hour" && !det.hourIncluded)) return { kind: "evidence", key, facts: [`출생시간을 몰라 ${label.replace(/\(.*\)$/, "")}는 보지 않습니다.`], note: "본문에서 이 자리를 말하지 않는다" };
   const b = pillar.branch; const f = k.features.get(`branch:${b}`);
   const stage = det.twelveStages.find(s => s.position === position);
   const stageF = stage ? k.features.get(`twelveStage:${stage.stage}`) : undefined;
   const main = saju.tenGods.hiddenStems.find(h => h.branch === b && h.weight >= 0.5)?.tenGod;
   // 자리는 땅 글자다: 천간합(하늘 글자끼리)은 이 자리의 관계가 아니다(P3.6 B).
   const rel = det.relations.filter(r => r.kind !== "STEM_HAP" && r.members.some(m => m.position === position) && r.members.length >= 2)
-    .map(r => `${josa(r.members.filter(m => m.position !== position).map(m => POSITION_KO[m.position as ChartPosition]).join("·"), "과와")} ${RELATION_KO[r.kind]}(${r.key})`);
+    .map(r => { const line = k.badges.find(b => b.kind === r.kind && (b.pair === r.key || b.pair === [...r.key].reverse().join("")))?.line; return `${josa(r.members.filter(m => m.position !== position).map(m => POSITION_KO[m.position as ChartPosition]).join("·"), "과와")} ${RELATION_KO[r.kind]}(${r.key})${line ? `: ${line}` : ""}`; });
   return { kind: "evidence", key, facts: [
     `${label}: ${b}(${ELEMENT_KO[BRANCH_MAIN_ELEMENT[b]]})${main ? `, 속 기운 ${TEN_GOD_KO[main]}` : ""}`,
     ...(f?.positionNuance ? [f.positionNuance[position]] : []),
@@ -108,7 +116,9 @@ function loveSignals(saju: SajuCalcResult, hitIds: ReadonlySet<string>, k: Knowl
   const d = saju.tenGods.distribution as Partial<Record<TenGod, number>>;
   const tenGods = (Object.keys(TEN_GOD_KO) as TenGod[]).filter(t => (d[t] ?? 0) > 0).sort((a, b) => (d[b] ?? 0) - (d[a] ?? 0) || a.localeCompare(b)).slice(0, 2);
   const keys = [...["shinsal:DOHWASAL", "shinsal:HONGYEOMSAL"].filter(x => hitIds.has(x)), ...tenGods.map(t => `tenGod:${t}`), ...(mbti ? [`mbti:${mbti.type}`] : [])];
-  const sources = keys.flatMap(x => { const e = k.loveSignals.get(x); if (!e) return []; const f = k.features.get(x); return [{ e, label: f ? `${f.easyName}(${f.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "")})` : e.name }]; }).slice(0, 3);
+  // 근거는 명리 하나 + MBTI 하나까지(P3.7 r1: 세 갈래 나열이 장면 대신 목록 복사를 불렀다).
+  const all = keys.flatMap(x => { const e = k.loveSignals.get(x); if (!e) return []; const f = k.features.get(x); return [{ e, label: f ? `${f.easyName}(${f.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "")})` : e.name }]; });
+  const sources = [...all.filter(x => !x.e.key.startsWith("mbti:")).slice(0, 1), ...all.filter(x => x.e.key.startsWith("mbti:"))].slice(0, 2);
   if (!sources.length) return null;
   const facts_: string[] = [];
   for (const a of aspects) {
@@ -125,7 +135,8 @@ export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Know
   const childStars = gender === "MALE" ? STARS.OFFICER : gender === "FEMALE" ? STARS.OUTPUT : null;
   const lack = st.lacking;
   const partnerLines = lack.flatMap(e => { const f = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`); return f?.remedy ? [`채워 줄 ${josa(ELEMENT_KO[e], "을를")} 가진 사람: ${f.remedy.partner[0]}`] : []; });
-  const places = lack.flatMap(e => k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places.slice(0, 3) ?? []);
+  // 남녀가 나뉘는 곳(사우나·온천·찜질방)은 새 인연을 만나는 자리가 아니다(P3.7 r1).
+  const places = lack.flatMap(e => (k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places ?? []).filter(x => !/사우나|온천|찜질|목욕/.test(x)).slice(0, 3));
   return {
     spouseStar: starEvidence("spouseStar", "배우자 별", saju, det, k, spouseStars),
     spousePalace: palaceEvidence("spousePalace", "배우자 자리(태어난 날의 땅 글자)", "day", saju, det, k),
@@ -133,7 +144,7 @@ export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Know
     childPalace: palaceEvidence("childPalace", "자녀 자리(태어난 시각의 땅 글자)", "hour", saju, det, k),
     partnerMatch: { kind: "evidence", key: "partnerMatch", facts: [...partnerPortrait(k, st, mbti), ...(partnerLines.length ? partnerLines : ["뚜렷하게 부족한 기운이 없어 '나와 속도가 비슷한 사람'이 편합니다."])] },
     ...Object.fromEntries(Object.entries(sig).filter((x): x is [string, Evidence] => x[1] !== null)),
-    meetingPlaces: { kind: "evidence", key: "meetingPlaces", facts: places.length ? [`새 인연을 만나기 좋은 곳(부족한 기운을 채우는 곳, 쉼터가 아니라 사람을 만나는 자리로 쓴다): ${places.join(", ")}`] : ["부족한 기운이 뚜렷하지 않아 장소 추천은 일상 동선(늘 가는 곳에서 한 번 더 말 걸기)으로 둡니다."] },
+    meetingPlaces: { kind: "evidence", key: "meetingPlaces", facts: places.length ? [`새 인연을 만나기 좋은 곳(부족한 기운을 채우는 곳): ${places.join(", ")}`] : ["부족한 기운이 뚜렷하지 않아 장소 추천은 일상 동선(늘 가는 곳에서 한 번 더 말 걸기)으로 둡니다."], note: "쉼터가 아니라 사람을 만나는 자리로 쓴다" },
   };
 }
 
@@ -176,7 +187,7 @@ function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, n
     : group === "OUTPUT" ? "올해는 버는 길이 늘어나는 해: 새로 생긴 수입은 들어온 날 일부를 적립으로 돌린다"
     : group === "OFFICER" ? "올해는 책임과 고정 지출이 붙기 쉬운 해: 고정 지출부터 한 번 점검한다"
     : group === "RESOURCE" ? "올해는 공부·준비의 해: 큰 결정보다 공부와 기록을 먼저 한다" : "";
-  return [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...habit, ...(year ? [year] : []), "방식 수준으로만 쓴다: 특정 종목·시점·액수·수익률은 말하지 않는다"];
+  return [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...habit, ...(year ? [year] : [])];
 }
 
 export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = []): Record<string, Evidence> {
@@ -191,24 +202,24 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const fitLevel = fit ? (fit.groups.includes(topG[0]) ? "잘 맞는 편" : fit.groups.some(g => topG.includes(g)) ? "절반쯤 맞는 편" : "다른 힘으로 하는 일(맞지 않는다는 뜻이 아니라 쓰는 근육이 다르다)") : null;
   const picks = jobPicks(k, traits, topG);
   return {
-    ...(picks.length ? { jobPicks: { kind: "evidence" as const, key: "jobPicks", facts: ["추천 직무(구체 직무명 8~12개를 모두 쓰고 직무마다 근거 한 줄. 지금 직업을 바꾸라고 단정하지 않는다):", ...picks] } } : {}),
+    ...(picks.length ? { jobPicks: { kind: "evidence" as const, key: "jobPicks", facts: picks, note: "추천 직무를 모두 쓰고 직무마다 근거 한 줄. 지금 직업을 바꾸라고 단정하지 않는다" } } : {}),
     jobFit: { kind: "evidence", key: "jobFit", facts: [
       `강한 십성 묶음: ${top.map(([g, v]) => `${GROUP_KO[g]} ${v.toFixed(1)}`).join(" · ")}`,
       ...top.map(([g]) => `어울리는 판: ${ROLE_BY_GROUP[g]}`),
       ...(mbti ? [`MBTI로 흔히 꼽는 직업: ${mbti.jobs.slice(0, 6).join(", ")}`] : []),
-      `입력 직업: ${detailJob || "없음"}${jobStatus ? ` (${jobStatus})` : ""} — 위 판과 겹치는 지점을 짚되 직업을 바꾸라고 단정하지 않는다`,
-    ] },
+      `입력 직업: ${detailJob || "없음"}${jobStatus ? ` (${jobStatus})` : ""}`,
+    ], note: "위 판과 입력 직업이 겹치는 지점을 짚는다" },
     // 지금 직업 해설(P3.6 B): 입력 직업이 있으면 그 직업의 일상 소품과 강한 판을 함께 준다.
     currentJob: { kind: "evidence", key: "currentJob", facts: detailJob ? [
       `지금 직업: ${detailJob}${job ? ` (직업군: ${job.name})` : ""}`,
       ...(job ? [`이 직업의 일상: ${job.props.slice(0, 5).join(", ")}`] : []),
       ...(fit && fitLevel ? [`지금 직업 적합도: ${fitLevel} — 이 일이 주로 쓰는 힘은 ${fit.groups.map(g => GROUP_KO[g]).join("·")}, 당신이 강한 힘은 ${topG.map(g => GROUP_KO[g]).join("·")}`, `이 일 안에서 키울 역할: ${fit.grow[topG[0]]}${topG[1] && fit.grow[topG[1]] !== fit.grow[topG[0]] ? ` / 그다음: ${fit.grow[topG[1]]}` : ""}`] : [`이 사주가 지금 일에서 쓰이는 곳: ${ROLE_BY_GROUP[top[0][0]]}`]),
-      "지금 직업 해설은 두 문단 이상: 적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나, 덜 맞는 지점 하나와 다루는 법, 키울 역할",
-    ] : ["입력 직업 없음: 지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다"] },
+    ] : ["입력 직업 없음"], note: detailJob ? "두 문단 이상: 적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나, 덜 맞는 지점 하나와 다루는 법, 키울 역할" : "지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다" },
     studyFit: { kind: "evidence", key: "studyFit", facts: [
       ...top.map(([g]) => `맞는 공부 방식(${GROUP_KO[g]}): ${STUDY_BY_GROUP[g]}`),
-      `학업 방향: ${detailJob ? `지금 일(${detailJob})과 이어지는 분야 하나와 ` : ""}강한 판에서 나온 분야 하나를 짝지어 쓴다. 합격·성적은 단정하지 않는다`,
-    ] },
+      ...(fit && detailJob ? [`지금 일(${detailJob})과 이어지는 공부: ${STUDY_EXAMPLES[fit.groups[0]]}`] : []),
+      `강한 힘에서 나온 공부: ${STUDY_EXAMPLES[topG[0]]}`,
+    ], note: "합격·성적은 단정하지 않는다" },
     earnStyle: { kind: "evidence", key: "earnStyle", facts: [
       // 숫자는 주지 않는다(작가가 그대로 옮김). 둘 다 옅거나 비슷하면 유형을 붙이지 않는다(P3.6 B).
       `돈 버는 방식: ${Math.max(d.正財 ?? 0, d.偏財 ?? 0) < 0.5 ? "돈 기운(재성)이 옅어, 큰 판을 굴리기보다 일한 만큼 받는 구조에서 돈이 남는 쪽" : Math.abs((d.正財 ?? 0) - (d.偏財 ?? 0)) < 0.3 ? "고정 수입과 성과형 수입을 함께 굴리는 쪽(어느 한쪽으로 기울지 않음)" : (d.正財 ?? 0) > (d.偏財 ?? 0) ? "고정 수입을 차곡차곡 쌓을 때 돈이 남는 쪽(정재형)" : "성과·부업·기회를 크게 굴릴 때 돈이 붙는 쪽(편재형)"}`,
@@ -217,6 +228,6 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
     investment: { kind: "evidence", key: "investment", facts: [
       `올해 ${chart.thisYear.ganji.hanja}(${chart.thisYear.ganji.hangul}): ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해${period ? `. 주의: ${period.year.caution}` : ""}`,
       ...investment(d, scores, saju.structureAnalysis.dayMasterStrength.level, yearTg),
-    ] },
+    ], note: "방식 수준으로만 쓴다: 특정 종목·시점·액수·수익률은 말하지 않는다" },
   };
 }

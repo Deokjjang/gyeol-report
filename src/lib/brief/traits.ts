@@ -220,12 +220,13 @@ export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: 
   return { target: profile.type, kind: s.kind, why: sentences.join(" "), source: "computed" };
 }
 
+const FUNCTION_CODE = /\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/g;
 const isLetterOrFunction = (target: string) => target.length <= 2 && !/^[EI][NS][TF][JP]$/.test(target);
 /**
  * 브리프 규칙: ① 1장 핵심 특성(일간·일주)은 정확한 유형 연결 필수(일주에 없으면 그 일간 × 유형 Fusion),
  * ② 같은 글자·기능 연결은 최대 2개(넘으면 계산 연결로 바꿈), ③ 연결 없는 특성은 계산 연결로 채워 70% 이상.
  */
-export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFeature[], profile: MbtiProfile | null, k: Knowledge, f: FactsForFusion): Map<string, FusionRule["scene"]> {
+export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFeature[], profile: MbtiProfile | null, k: Knowledge, f: FactsForFusion, fnUsed: Map<string, number> = new Map()): Map<string, FusionRule["scene"]> {
   const scenes = new Map<string, FusionRule["scene"]>();
   if (!profile) return scenes;
   const exactRule = (featureId: string) => (k.fusionByFeature.get(featureId) ?? []).find(r => r.mbtiTarget === profile.type && r.factBoundary.requires.every(q => q === "mbtiKnown" || (q === "exactTime" || q === "approximateTime" ? f.birthTimeKnown : q === "genderKnown" ? f.genderKnown : f.contextKnown)));
@@ -245,5 +246,17 @@ export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFea
   for (const min of [COMPUTED_LINK_MIN, 0]) {
     traits.forEach((t, i) => { if (!t.fusion && traits.filter(x => x.fusion).length / traits.length < (min ? 1 : MBTI_LINK_DENSITY)) { const c = computedLink(features[i], profile, k, min); if (c) t.fusion = c; } });
   }
+  // 연결 설명(why) 안의 인지기능 코드도 책 전체 2번까지(P3.7 r1: ENFP 책에 "Ne 큰 그림 대 세부"가 네 번). 넘는 trait는 계산 연결(기능 코드 없음)로 바꾼다. 궁합은 두 사람이 fnUsed를 함께 쓴다.
+  traits.forEach((t, i) => {
+    const codes = [...new Set(t.fusion?.why.match(FUNCTION_CODE) ?? [])];
+    if (!codes.length) return;
+    if (codes.some(c => (fnUsed.get(c) ?? 0) >= LETTER_FUNCTION_CAP)) {
+      const c = computedLink(features[i], profile, k, 0);
+      if (c) t.fusion = c; else delete t.fusion;
+      scenes.delete(t.id);
+      return;
+    }
+    for (const c of codes) fnUsed.set(c, (fnUsed.get(c) ?? 0) + 1);
+  });
   return scenes;
 }
