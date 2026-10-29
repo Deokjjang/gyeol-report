@@ -22,6 +22,10 @@ export function launchRemaining(v: LaunchEventView, elapsed: number) {
   // Reaching the earliest start is not operator activation. Await the next server state.
   return v.state === "SCHEDULED" && remaining === 0 ? null : remaining;
 }
+/** Event copy shows only while the server says ACTIVE and time remains. Ended, paused, loading or unavailable → nothing. */
+export function launchActive(v: LaunchEventView | null, remaining: number | null): v is LaunchEventView {
+  return v?.state === "ACTIVE" && remaining !== null && remaining > 0;
+}
 export function launchCountdown(ms: number) {
   const s = Math.max(0, Math.floor(ms / 1000));
   const [days, ...time] = [Math.floor(s / 86400), Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60].map(n => String(n).padStart(2, "0"));

@@ -28,28 +28,33 @@ describe("countdown actual component effects with isolated browser clock",()=>{
   });
   it("passing start floor is never activation; focus accepts explicit server activation",async()=>{
     payload={...active,state:"SCHEDULED",serverNow:"2026-10-10T14:59:59Z",budgetApproved:false,campaignAvailable:false};
-    await mount();expect(text(render())).toContain("시작 예정까지");await vi.advanceTimersByTimeAsync(2000);
-    expect(text(render())).not.toContain("이벤트 진행 중");expect(text(render())).toContain("이벤트 시작을 기다리고");
+    await mount();expect(render()).toBeNull();await vi.advanceTimersByTimeAsync(2000);expect(render()).toBeNull();
     payload={...active};window.dispatchEvent(new Event("focus"));await flush();expect(text(render())).toContain("이벤트 진행 중");
   });
-  it("scheduled after earliest start shows no false countdown",async()=>{
-    payload={...active,state:"SCHEDULED",budgetApproved:false,campaignAvailable:false};await mount();
-    expect(text(render())).toContain("이벤트 시작을 기다리고");expect(text(render())).not.toContain("이벤트 종료까지");
+  it("scheduled after earliest start shows no block and no false countdown",async()=>{
+    payload={...active,state:"SCHEDULED",budgetApproved:false,campaignAvailable:false};await mount();expect(render()).toBeNull();
   });
   it("background return refreshes authoritative state; cleanup leaves no timers or requests",async()=>{
     await mount();Object.assign(document,{hidden:true});await vi.advanceTimersByTimeAsync(20_000);expect(fetch).toHaveBeenCalledTimes(1);
     payload={...active,state:"PAUSED",campaignAvailable:false};Object.assign(document,{hidden:false});document.dispatchEvent(new Event("visibilitychange"));await flush();
-    expect(text(render())).toContain("이벤트 일시 중단");expect(fetch).toHaveBeenCalledTimes(2);
+    expect(render()).toBeNull();expect(fetch).toHaveBeenCalledTimes(2);
     cleanup?.();cleanup=undefined;expect(vi.getTimerCount()).toBe(0);window.dispatchEvent(new Event("focus"));await flush();expect(fetch).toHaveBeenCalledTimes(2);
   });
-  it("deadline removes timer and benefit without disabling book selection; failure clears old active state",async()=>{
-    payload={...active,serverNow:"2026-10-31T14:59:59Z"};await mount();await vi.advanceTimersByTimeAsync(1000);
-    expect(text(render())).toContain("이벤트가 종료되었습니다");expect(text(render())).toContain("책 선택과 유료 구매는 계속");expect(text(render())).not.toContain("이벤트 참여 안내");
-    vi.mocked(fetch).mockResolvedValue(new Response(null,{status:503}));window.dispatchEvent(new Event("focus"));await flush();
-    expect(render().props["data-launch-state"]).toBe("UNAVAILABLE");
+  it("deadline removes the whole block (no 0일 00:00:00); failure clears old active state",async()=>{
+    payload={...active,serverNow:"2026-10-31T14:59:59Z"};await mount();expect(text(render())).toContain("00일 00 : 00 : 01");
+    await vi.advanceTimersByTimeAsync(1000);expect(render()).toBeNull();
+    payload={...active};window.dispatchEvent(new Event("focus"));await flush();expect(text(render())).toContain("이벤트 진행 중");
+    vi.mocked(fetch).mockResolvedValue(new Response(null,{status:503}));window.dispatchEvent(new Event("focus"));await flush();expect(render()).toBeNull();
   });
   it("Oct 29 is a continuing countdown, not a restart",async()=>{
     payload={...active,serverNow:"2026-10-28T14:59:59Z"};await mount();expect(text(render())).toContain("03일 00 : 00 : 01");
     await vi.advanceTimersByTimeAsync(2000);expect(text(render())).toContain("02일 23 : 59 : 59");expect(text(render())).toContain("이벤트 진행 중");
+  });
+  // Fixed KST times around the end: 10/31 23:59:59 counts down, 11/1 00:00:00 and 11/2 show nothing (server says ENDED; a stale ACTIVE after the end is rejected).
+  it.each([
+    ["2026-10-31T14:59:59Z","ACTIVE","00일 00 : 00 : 01"],["2026-10-31T15:00:00Z","ENDED",null],["2026-11-01T15:00:00Z","ENDED",null],["2026-10-31T15:00:00Z","ACTIVE",null],
+  ] as const)("server %s %s → %s",async(serverNow,state,shown)=>{
+    payload={...active,state,serverNow,campaignAvailable:state==="ACTIVE",referralAvailable:state==="ACTIVE",inviterAvailable:state==="ACTIVE"};await mount();
+    if(shown)expect(text(render())).toContain(shown);else expect(render()).toBeNull();
   });
 });

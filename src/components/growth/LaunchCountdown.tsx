@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { isLaunchEventView, launchCountdown, launchRemaining, LAUNCH_NOTICE, type LaunchEventView } from "../../lib/growth/launchEvent";
+import { isLaunchEventView, launchActive, launchCountdown, launchRemaining, LAUNCH_NOTICE, type LaunchEventView } from "../../lib/growth/launchEvent";
 import s from "./launchCountdown.module.css";
 
 export function useLaunchEvent(local: boolean, enabled = true) {
@@ -34,17 +34,15 @@ export function useLaunchEvent(local: boolean, enabled = true) {
 }
 export function LaunchCountdown({ local = false }: { local?: boolean }) {
   const { view, remaining } = useLaunchEvent(local);
-  // A countdown can remove a benefit, but cannot promote SCHEDULED to ACTIVE.
-  const state = view?.state === "ACTIVE" && remaining === 0 ? "ENDED" : view?.state;
-  const label = state === "SCHEDULED" ? remaining === null ? "이벤트 시작을 기다리고 있습니다" : "이벤트 시작 예정까지" : state === "ACTIVE" ? "이벤트 종료까지" : state === "ENDED" ? "이벤트가 종료되었습니다" : state === "PAUSED" ? "이벤트 혜택이 잠시 중단되었습니다" : "이벤트 혜택 상태를 확인하고 있습니다";
-  const title = state === "ACTIVE" ? "이벤트 진행 중" : state === "ENDED" ? "이벤트 종료" : state === "PAUSED" ? "이벤트 일시 중단" : "이벤트 시작 대기";
-  const eligible = state === "ACTIVE" && remaining !== null && remaining > 0 && view?.campaignAvailable && view.budgetApproved && view.campaignSlug;
-  return <section className={s.event} aria-label="이벤트 카운트다운" data-launch-state={state ?? "UNAVAILABLE"}>
-    <div className={s.heading}><p>EVENT COUNTDOWN</p><h2>{title}</h2>{eligible ? <p className={s.benefit}>이벤트 참여 후 처음 가입하면 리포트 1권 무료</p> : null}<small>11월 1일 0시 종료</small></div>
-    <div className={s.clock}><p role="status">{label}</p>{remaining !== null && (state === "SCHEDULED" || state === "ACTIVE") ? <>
-      <time aria-hidden="true" dateTime={state === "SCHEDULED" ? view?.startsAt : view?.endsAt}>{launchCountdown(remaining)}</time>
-      <span className={s.srOnly}>{state === "SCHEDULED" ? "이벤트 참여 가능 여부는 안내에 따라 확인해 주세요." : "11월 1일 0시 종료"}</span>
-    </> : <small>책 선택과 유료 구매는 계속 이용할 수 있습니다.</small>}</div>
+  // The block exists only while the server says ACTIVE and time remains: no loading, scheduled, paused or ended block.
+  if (!launchActive(view, remaining)) return null;
+  const eligible = view.campaignAvailable && view.budgetApproved && view.campaignSlug;
+  return <section className={s.event} aria-label="이벤트 카운트다운" data-launch-state="ACTIVE">
+    <div className={s.heading}><p>EVENT COUNTDOWN</p><h2>이벤트 진행 중</h2>{eligible ? <p className={s.benefit}>이벤트 참여 후 처음 가입하면 리포트 1권 무료</p> : null}<small>11월 1일 0시 종료</small></div>
+    <div className={s.clock}><p role="status">이벤트 종료까지</p>
+      <time aria-hidden="true" dateTime={view.endsAt}>{launchCountdown(remaining!)}</time>
+      <span className={s.srOnly}>11월 1일 0시 종료</span>
+    </div>
     <details className={s.notice}><summary>기간·혜택 자세히 보기</summary><p>{LAUNCH_NOTICE}</p><p>가입 자격과 계정당 지급 한도를 서버에서 확인한 뒤 지급합니다. 카카오톡 채널 친구 추가는 필수 조건이 아닙니다.</p></details>
     {eligible ? <a className={s.entry} href={`${local ? "/dev" : ""}/campaign/${view.campaignSlug}`}>이벤트 참여 안내 →</a> : null}
   </section>;
