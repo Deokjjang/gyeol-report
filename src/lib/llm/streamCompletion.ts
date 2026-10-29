@@ -47,8 +47,10 @@ export async function streamCompletion(input: StreamCompletionInput): Promise<St
   if (!apiKey) return finish("error", { code: "missing_api_key", message: `${driver.apiKeyEnv}가 없습니다.` });
 
   const controller = new AbortController();
-  let timedOut = false;
+  let timedOut = false, aborted = false;
   const timer = setTimeout(() => { timedOut = true; controller.abort(); }, input.timeoutMs);
+  const onAbort = () => { aborted = true; controller.abort(); };
+  if (input.signal?.aborted) onAbort(); else input.signal?.addEventListener("abort", onAbort, { once: true });
   const fetchImpl = input.fetchImpl ?? fetch;
   try {
     const response = await fetchImpl(driver.endpoint, { method: "POST", headers: driver.headers(apiKey), body: JSON.stringify(driver.body(input)), signal: controller.signal });
@@ -64,10 +66,12 @@ export async function streamCompletion(input: StreamCompletionInput): Promise<St
     return finish(state.finish);
   } catch (caught) {
     if (timedOut) return finish("timeout", { code: "timeout", message: `${input.timeoutMs}ms 안에 끝나지 않았습니다.` });
+    if (aborted) return finish("error", { code: "aborted", message: "호출한 쪽이 스트림을 끊었습니다." });
     if (caught instanceof InvalidEventError) return finish("error", { code: "invalid_event", message: scrub(caught.message, apiKey) });
     const message = scrub(caught instanceof Error ? caught.message : String(caught), apiKey);
     return finish("error", { code: state.text || state.requestId ? "stream_interrupted" : "network", message });
   } finally {
     clearTimeout(timer);
+    input.signal?.removeEventListener("abort", onAbort);
   }
 }

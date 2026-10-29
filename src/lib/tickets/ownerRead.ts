@@ -4,6 +4,7 @@ import { accountSession } from "../account/policy";
 import type { TicketStore } from "./service";
 import { isProductPreviewSnapshot, type ProductPreviewSnapshot } from "../report-generation/productPreviewSnapshot";
 import { projectV4Snapshot } from "../interpretation-v4/runtimeProjection";
+import { projectV5Book } from "../writer/book";
 
 export type TicketOwnerRead = { kind: "absent" | "storageError" | "expired" | "invalidSnapshot" } | { kind: "ticketBook"; snapshot: ProductPreviewSnapshot };
 export async function readOwnedTicketReport(reportId: string, auth: AccountPort, store: TicketStore): Promise<TicketOwnerRead> {
@@ -18,7 +19,8 @@ export async function readOwnedTicketReport(reportId: string, auth: AccountPort,
     if ((await auth.currentUser())?.id !== user.id) return { kind: "absent" };
     if (result.status === "EXPIRED") return { kind: "expired" };
     const snapshot = result.snapshot;
-    if (result.status !== "COMPLETED" || !isProductPreviewSnapshot(snapshot) || snapshot.reportId !== reportId || snapshot.productVersion !== "v4" || !projectV4Snapshot(snapshot)) return { kind: "invalidSnapshot" };
+    if (result.status !== "COMPLETED" || !isProductPreviewSnapshot(snapshot) || snapshot.reportId !== reportId
+      || (snapshot.productVersion === "v5" ? !projectV5Book(snapshot) : snapshot.productVersion !== "v4" || !projectV4Snapshot(snapshot))) return { kind: "invalidSnapshot" };
     return { kind: "ticketBook", snapshot };
   } catch { return { kind: "storageError" }; }
 }

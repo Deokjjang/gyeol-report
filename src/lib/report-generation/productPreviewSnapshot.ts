@@ -101,7 +101,7 @@ export type CreateProductPreviewSnapshotParams = {
   readonly evidencePacket?: unknown;
 };
 
-const productSlugByType = {
+export const productSlugByType = {
   career_money_study: "career-money-study",
   love_marriage_child: "love-marriage-child",
   saju_mbti_compatibility: "compatibility",

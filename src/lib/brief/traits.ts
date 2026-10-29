@@ -202,21 +202,19 @@ export const COMPUTED_LINK_MIN = 0.3;
 export const LETTER_FUNCTION_CAP = 2;
 export const MBTI_LINK_DENSITY = 0.7;
 
-const KIND_KO = { resonance: "같은 쪽", tension: "반대쪽", conditional: "상황 따라" } as const;
-/** dimensionTags 공명·긴장 점수로 연결 후보를 만들고, 차원 설명으로 why 재료를 조립한다(출처: 계산 연결). */
+/** dimensionTags 공명·긴장 점수로 연결 후보를 만들고, 차원 설명으로 why를 조립한다(출처: 계산 연결). 유형 코드는 모두 J·P로 끝나 조사는 가/는. */
 export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: Knowledge, min = COMPUTED_LINK_MIN): NonNullable<Trait["fusion"]> | null {
   const s = scorePair(feature.id, feature.dimensionTags, profile.type, profile.dimensionTags);
   if (!s || s.strength < min) return null;
-  const pole = (dim: string, v: number) => { const d = k.ontology.dimensions.find(x => x.id === dim); return d ? { name: d.name, pole: v >= 0 ? d.poles.plus : d.poles.minus } : null; };
-  const lines = s.contributions.slice(0, 2).flatMap(c => {
-    const f = pole(c.dimension, c.feature), m = pole(c.dimension, c.mbti);
-    if (!f || !m) return [];
+  const sentences = s.contributions.slice(0, 2).flatMap(c => {
+    const d = k.ontology.dimensions.find(x => x.id === c.dimension); if (!d) return [];
+    const f = c.feature >= 0 ? d.poles.plus : d.poles.minus, m = c.mbti >= 0 ? d.poles.plus : d.poles.minus;
     return c.product > 0
-      ? [`${f.name}: ${feature.easyName}도 ${profile.type}도 '${f.pole.label}' 쪽(${f.pole.description})`]
-      : [`${f.name}: ${josa(feature.easyName, "은는")} '${f.pole.label}' 쪽, ${profile.type}는 '${m.pole.label}' 쪽`];
+      ? [`${d.name}에서는 ${josa(feature.easyName, "과와")} ${profile.type}가 같은 '${f.label}' 쪽입니다. ${f.description}`]
+      : [`${d.name}에서는 ${josa(feature.easyName, "은는")} '${f.label}' 쪽인데 ${profile.type}는 '${m.label}' 쪽이라 서로 반대로 당깁니다.`];
   });
-  if (!lines.length) return null;
-  return { target: profile.type, kind: s.kind, why: `${KIND_KO[s.kind]}으로 당기는 연결 — ${lines.join(" / ")}`, source: "computed" };
+  if (!sentences.length) return null;
+  return { target: profile.type, kind: s.kind, why: sentences.join(" "), source: "computed" };
 }
 
 const isLetterOrFunction = (target: string) => target.length <= 2 && !/^[EI][NS][TF][JP]$/.test(target);

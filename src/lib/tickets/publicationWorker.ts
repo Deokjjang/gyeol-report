@@ -6,14 +6,19 @@ import { createAnnualCommerceAcceptance } from "../payment/annualPurchasePolicy"
 import { isRecord } from "../report-generation/productPublishGate";
 import type { TicketPublicationStore } from "./publication";
 import type { TicketResult } from "./service";
+import { writerV5Products } from "../writer/flags";
+import { runV5TicketJob, type V5JobDeps } from "../writer/ticketJob";
 
 // Separate from the paid worker: two sequential jobs, never Promise.all generation.
 // With the existing paid batch: at most 8 paid + 2 ticket claims per paired run.
 // No cron schedule is activated here. Lease=10m exceeds the 300s route deadline.
 export const TICKET_WORKER_LIMITS = { maxJobs: 2, claimWindowMs: 30_000, maxRssBytes: 1.25 * 1024 ** 3 } as const;
-export async function runTicketPublicationJob(store: TicketPublicationStore, generate?: ProductGenerator): Promise<TicketResult> {
-  const job = await store.call("claim", null);
+export async function runTicketPublicationJob(store: TicketPublicationStore, generate?: ProductGenerator, v5?: V5JobDeps): Promise<TicketResult> {
+  // 플래그가 비어 있으면 claim 인자는 기존과 같다(v4 경로 그대로).
+  const v5Products = writerV5Products();
+  const job = v5Products.length ? await store.call("claim", null, { v5Products }) : await store.call("claim", null);
   if (!job.ok || job.empty) return job;
+  if (job.writerVersion === "v5") return runV5TicketJob(store, job, v5);
   if (typeof job.userId !== "string" || typeof job.redemptionId !== "string" || typeof job.token !== "string") return { ok: false, code: "INVALID_CLAIM" };
   const user = job.userId, origin = { redemptionId: job.redemptionId, token: job.token };
   const reverse = async (reason: string) => {

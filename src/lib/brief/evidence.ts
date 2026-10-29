@@ -55,7 +55,7 @@ function palaceEvidence(key: string, label: string, position: ChartPosition, saj
   const stageF = stage ? k.features.get(`twelveStage:${stage.stage}`) : undefined;
   const main = saju.tenGods.hiddenStems.find(h => h.branch === b && h.weight >= 0.5)?.tenGod;
   const rel = det.relations.filter(r => r.members.some(m => m.position === position) && r.members.length >= 2)
-    .map(r => `${r.members.filter(m => m.position !== position).map(m => POSITION_KO[m.position as ChartPosition]).join("·")}와 ${r.kind}(${r.key})`);
+    .map(r => `${josa(r.members.filter(m => m.position !== position).map(m => POSITION_KO[m.position as ChartPosition]).join("·"), "과와")} ${RELATION_KO[r.kind]}(${r.key})`);
   return { kind: "evidence", key, facts: [
     `${label}: ${b}(${ELEMENT_KO[BRANCH_MAIN_ELEMENT[b]]})${main ? `, 속 기운 ${TEN_GOD_KO[main]}` : ""}`,
     ...(f?.positionNuance ? [f.positionNuance[position]] : []),
@@ -63,6 +63,9 @@ function palaceEvidence(key: string, label: string, position: ChartPosition, saj
     ...(rel.length ? [`그 자리와 엮인 관계: ${rel.join(", ")}`] : []),
   ] };
 }
+
+/** 관계 코드는 작가에게 쉬운 이름으로 넘긴다(내부 코드 노출 방지). */
+const RELATION_KO: Record<string, string> = { STEM_HAP: "천간합", YUKHAP: "육합", SAMHAP: "삼합", BANGHAP: "방합", CHUNG: "충", HYEONG: "형", PA: "파", HAE: "해", WONJIN: "원진" };
 
 export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, st: ElementState, mbti: MbtiProfile | null): Record<string, Evidence> {
   const spouseStars = gender === "MALE" ? STARS.WEALTH : gender === "FEMALE" ? STARS.OFFICER : null;

@@ -34,6 +34,8 @@ export type StreamCompletionInput = {
   readonly fetchImpl?: typeof fetch;
   /** Anthropic 시스템 프롬프트에 cache_control을 붙인다. 기본 true. */
   readonly cacheSystem?: boolean;
+  /** 호출하는 쪽이 스트림을 끊을 때(예: 작업 lease를 잃음). 끊기면 finishReason "error", code "aborted". */
+  readonly signal?: AbortSignal;
 };
 
 export type StreamCompletionResult = {

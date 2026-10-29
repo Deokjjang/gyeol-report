@@ -5,18 +5,22 @@ import { isProductPreviewSnapshot } from "../report-generation/productPreviewSna
 import { projectBook } from "../../app/dev/book-preview/bookProjection";
 import { projectBookShare } from "./shareModel";
 import { BookReadingPresentation } from "../../components/book/BookEntry";
+import { projectV5Book, validateV5Publication } from "../writer/book";
 
 // Called only behind the server gate (or an explicit local test store).
 // Stored version, not request input, selects the validator. No regeneration.
 export const validateBookPublication: typeof validateProductPublication = (product, draft, evidence) =>
-  typeof draft === "object" && draft !== null && "productVersion" in draft && draft.productVersion === "v4"
-    ? validateV4Publication(product, draft, evidence) : validateProductPublication(product, draft, evidence);
+  typeof draft === "object" && draft !== null && "productVersion" in draft && draft.productVersion === "v5"
+    ? validateV5Publication(product, draft, evidence)
+    : typeof draft === "object" && draft !== null && "productVersion" in draft && draft.productVersion === "v4"
+      ? validateV4Publication(product, draft, evidence) : validateProductPublication(product, draft, evidence);
 
 export function storedBook(snapshot: unknown, shareUrl?: string | null) {
-  if (!isProductPreviewSnapshot(snapshot) || snapshot.productVersion !== "v4" || !projectV4Snapshot(snapshot)) return null;
-  const data = projectBook(snapshot.evidencePacket as V4RuntimeEvidence);
+  if (!isProductPreviewSnapshot(snapshot)) return null;
+  if (snapshot.productVersion !== "v5" && (snapshot.productVersion !== "v4" || !projectV4Snapshot(snapshot))) return null;
+  const data = snapshot.productVersion === "v5" ? projectV5Book(snapshot) : projectBook(snapshot.evidencePacket as V4RuntimeEvidence);
   if (!data) return null;
-  const share = projectBookShare({ productType: snapshot.productType, names: data.people[0].name, selectedYear: data.title.match(/\d{4}/)?.[0], shareUrl });
+  const share = projectBookShare({ productType: snapshot.productType, names: data.people[0]?.name ?? data.names, selectedYear: data.title.match(/\d{4}/)?.[0], shareUrl });
   return share ? { data, share } : null;
 }
 export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary, shareOwner }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean } }) {

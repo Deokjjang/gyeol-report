@@ -22,6 +22,7 @@ import { sectionBudget, TOKEN_METHOD } from "./size";
 import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type TimelineCtx } from "./timeline";
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
+import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
 import { ganjiLabel } from "./labels";
 
 export type BriefPersonInput = {
@@ -84,6 +85,17 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
   // MBTI 연결 밀도(P3): 핵심 특성 정확 유형, 같은 글자·기능 최대 2, 계산 연결로 70% 이상.
+  // 특성 설명 중 고객 사실과 어긋나는 문장(미혼에게 "배우자와 ~", 시간 미상에 시주 등)은 작가에게 넘기지 않는다(P3, 안전망과 같은 규칙).
+  const sf: SafetyFacts = { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
+  const clean = (t: string | undefined) => t ? splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative)/.test(sentenceViolation(x, sf) ?? "")).join(" ") || undefined : undefined;
+  for (const t of traits) {
+    const positionNote = clean(t.positionNote), strengthNote = clean(t.strengthNote), overuse = clean(t.overuse);
+    if (positionNote) t.positionNote = positionNote; else delete t.positionNote;
+    if (strengthNote) t.strengthNote = strengthNote; else delete t.strengthNote;
+    if (overuse) t.overuse = overuse; else delete t.overuse;
+    const good = t.good.map(clean).filter((x): x is string => Boolean(x));
+    if (good.length) t.good = good;
+  }
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts);
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
   selected.forEach((s, i) => {
@@ -161,6 +173,12 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null)
     : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus) : {};
 
+  // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
+  const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
+  for (const [key, m] of Object.entries(evidence)) if (m.kind === "evidence") {
+    const facts = m.facts.map(t => splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative)/.test(sentenceViolation(x, esf) ?? "")).join(" ")).filter(Boolean);
+    evidence[key] = { ...m, facts: facts.length ? facts : m.facts.slice(0, 1) };
+  }
   const has = (ref: string): boolean => {
     if (ref === "mbti") return mbti !== null;
     if (ref === "chart.currentDayun") return me.chart.currentDayun !== null;
