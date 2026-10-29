@@ -64,12 +64,16 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     + (!eff.fills.length && !eff.feeds.length ? "부족하거나 넘치는 기운을 크게 건드리지는 않습니다." : "");
   const cur = opts.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
   const curTenGod = cur ? getTenGod(dayMaster, cur.stem) : null;
+  const next = cur && cur.endYear - year <= 2 ? opts.dayun.cycles.find(c => c.index === cur.index + 1) : undefined;
   return {
     pillars: { year: ganjiOf(pillars.year), month: ganjiOf(pillars.month), day: ganjiOf(pillars.day), ...(pillars.hour && det.hourIncluded ? { hour: ganjiOf(pillars.hour) } : {}) },
     dayMaster: { stem: dayMaster, name: dm?.name ?? dayMaster, easyName: dm?.easyName ?? "", metaphor: dm?.image.metaphor ?? "" },
     strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo },
     yinYang: { yin: saju.yinYang.yin, yang: saju.yinYang.yang, label: saju.yinYang.label, reading: feature(yyId)?.oneLiner ?? "" },
-    elements: { counts: { ...saju.elements.visible }, excess: st.excess, lacking: st.lacking, missing: st.missing, reading: elementReading },
+    elements: {
+      status: Object.fromEntries(ELEMENTS.map(e => [e, st.excess.includes(e) ? "많음" : st.missing.includes(e) ? "없음(땅속에도 없음)" : st.lacking.includes(e) ? (saju.elements.visible[e] === 0 ? "부족(겉 글자는 없고 땅속에 조금 있음 — '하나도 없다'고 쓰지 않는다)" : "부족") : "보통"])) as Record<FiveElement, string>,
+      excess: st.excess, lacking: st.lacking, missing: st.missing, reading: elementReading,
+    },
     climate: {
       season: SEASON_KO[det.climate.season],
       needs: det.climate.needs.filter(n => n.role !== "support").map(n => `${n.stem}(${ELEMENT_KO[STEM_ELEMENT[n.stem]]}) ${n.foundAt.length ? "있음" : "없음"}`),
@@ -78,6 +82,7 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     currentDayun: cur && curTenGod ? {
       ganji: ganjiOf(cur), ages: `${cur.startAge}~${cur.endAge}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
       reading: k.tenGodPeriod.get(curTenGod)?.year.meaning ?? "",
+      ...(next ? { next: { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(getTenGod(dayMaster, next.stem)) } } : {}),
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect: effect.trim() },
   };

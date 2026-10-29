@@ -65,8 +65,9 @@ export function chooseFusion(featureId: string, feature: MyeongriFeature, k: Kno
   const ok = (r: FusionRule) => r.factBoundary.requires.every(q => q === "mbtiKnown" || (q === "exactTime" || q === "approximateTime" ? f.birthTimeKnown : q === "genderKnown" ? f.genderKnown : f.contextKnown));
   const rules = (k.fusionByFeature.get(featureId) ?? []).filter(ok).map(r => ({ r, rank: linkRank(r.mbtiTarget, profile) })).filter(x => x.rank > 0)
     .sort((a, b) => b.rank - a.rank || Math.abs(b.r.score ?? 0) - Math.abs(a.r.score ?? 0) || a.r.id.localeCompare(b.r.id));
-  if (rules[0]) return { target: rules[0].r.mbtiTarget, kind: rules[0].r.kind, why: rules[0].r.why, scene: rules[0].r.scene, source: "fusion", rank: rules[0].rank };
   const links = feature.mbtiLinks.map((l: MbtiLink) => ({ l, rank: linkRank(l.target, profile) })).filter(x => x.rank > 0).sort((a, b) => b.rank - a.rank || a.l.target.localeCompare(b.l.target));
+  // 작성된 Fusion(장면 있음)에 +0.5를 주고 같은 잣대로 비교: 글자 하나(J)짜리 Fusion보다 주·부기능 연결이 더 "내 얘기"다(P2 시험 집필 1회차).
+  if (rules[0] && (!links[0] || rules[0].rank + 0.5 >= links[0].rank)) return { target: rules[0].r.mbtiTarget, kind: rules[0].r.kind, why: rules[0].r.why, scene: rules[0].r.scene, source: "fusion", rank: rules[0].rank };
   return links[0] ? { target: links[0].l.target, kind: links[0].l.kind, why: links[0].l.why, source: "mbtiLink", rank: links[0].rank } : null;
 }
 const mbtiFactor = (c: FusionChoice | null) => !c ? 1 : c.source === "mbtiLink" ? 1.05 : c.rank >= 4 ? 1.35 : c.rank >= 3 ? 1.25 : c.rank >= 1.5 ? 1.15 : 1.08;

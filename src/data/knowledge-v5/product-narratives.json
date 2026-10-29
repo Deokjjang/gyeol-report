@@ -44,15 +44,15 @@
       "productKey": "love_marriage_child", "title": "내 사랑 이야기", "funType": "감정과 관계의 서사",
       "narrativeMode": "호감, 표현, 갈등, 회복, 관계의 깊이를 서로 다른 장면으로 보여 준다. 겉으로 드러나는 모습과 속의 기대가 다를 수 있는 조건을 살핀다. 실제로 존재하지 않는 연인·배우자·자녀를 사실처럼 쓰지 않는다.",
       "chapters": [
-        { "id": "love-core", "title": "사랑할 때의 나", "question": "좋아하는 마음이 생기면 나는 어떤 사람이 될까?", "role": "HOOK", "domains": ["love"], "evidenceFamilies": ["dayPillar", "tenGod", "shinsal"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "spark", "title": "호감이 생기는 순간", "question": "어떤 순간에 마음이 먼저 움직일까?", "role": "SCENE", "domains": ["love"], "dimensionFocus": ["intimacyPace", "attentionSeeking"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "attracted-to", "title": "끌리는 사람과 그 이유", "question": "나는 왜 그런 사람에게 끌릴까?", "role": "WHY", "domains": ["love"], "requires": ["mbtiKnown"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "expression", "title": "표현하는 방식", "question": "마음을 말할 때 나는 어떤 방법을 고를까?", "role": "SCENE", "domains": ["love"], "dimensionFocus": ["emotionalExpression", "directness", "caretaking"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "inner-gap", "title": "겉모습과 속마음이 다른 지점", "question": "내가 보여 주는 것과 바라는 것은 어디서 어긋날까?", "role": "TWIST", "domains": ["love"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "love-core", "title": "사랑할 때의 나", "question": "좋아하는 마음이 생기면 나는 어떤 사람이 될까?", "role": "HOOK", "domains": ["love", "relationships"], "evidenceFamilies": ["dayPillar", "tenGod", "shinsal"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "spark", "title": "호감이 생기는 순간", "question": "어떤 순간에 마음이 먼저 움직일까?", "role": "SCENE", "domains": ["love", "relationships"], "dimensionFocus": ["intimacyPace", "attentionSeeking"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "attracted-to", "title": "끌리는 사람과 그 이유", "question": "나는 왜 그런 사람에게 끌릴까?", "role": "WHY", "domains": ["love", "alone"], "requires": ["mbtiKnown"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "expression", "title": "표현하는 방식", "question": "마음을 말할 때 나는 어떤 방법을 고를까?", "role": "SCENE", "domains": ["love", "relationships"], "dimensionFocus": ["emotionalExpression", "directness", "caretaking"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "inner-gap", "title": "겉모습과 속마음이 다른 지점", "question": "내가 보여 주는 것과 바라는 것은 어디서 어긋날까?", "role": "TWIST", "domains": ["love", "alone", "relationships"], "paragraphs": { "min": 4, "max": 4 } },
         { "id": "conflict-recovery", "title": "다툼과 회복", "question": "싸우고 나면 나는 어떻게 다시 가까워질까?", "role": "SCENE", "domains": ["love", "relationships"], "dimensionFocus": ["conflictApproach", "reactivity", "boundarySetting"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "marriage", "title": "함께 살게 된다면", "question": "같이 살게 되면 내게서 어떤 모습이 나올까?", "role": "WHY", "domains": ["love", "money"], "dimensionFocus": ["possessiveness", "spendingControl", "dutifulness"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "parenting", "title": "부모가 된다면", "question": "아이를 키우게 되면 나는 무엇을 강하게 주고 무엇을 힘들게 할까?", "role": "TWIST", "domains": ["relationships"], "dimensionFocus": ["controlNeed", "caretaking", "ruleAdherence"], "paragraphs": { "min": 4, "max": 4 } },
-        { "id": "strategy", "title": "좋은 관계를 만드는 방법", "question": "내 방식 그대로 더 좋은 관계를 만들려면 무엇을 먼저 할까?", "role": "PAYOFF", "domains": ["love", "relationships"], "paragraphs": { "min": 4, "max": 4 } }
+        { "id": "marriage", "title": "함께 살게 된다면", "question": "같이 살게 되면 내게서 어떤 모습이 나올까?", "role": "WHY", "domains": ["marriage", "money", "love"], "dimensionFocus": ["possessiveness", "spendingControl", "dutifulness"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "parenting", "title": "부모가 된다면", "question": "아이를 키우게 되면 나는 무엇을 강하게 주고 무엇을 힘들게 할까?", "role": "TWIST", "domains": ["marriage", "relationships"], "dimensionFocus": ["controlNeed", "caretaking", "ruleAdherence"], "paragraphs": { "min": 4, "max": 4 } },
+        { "id": "strategy", "title": "좋은 관계를 만드는 방법", "question": "내 방식 그대로 더 좋은 관계를 만들려면 무엇을 먼저 할까?", "role": "PAYOFF", "domains": ["love", "relationships", "alone"], "paragraphs": { "min": 4, "max": 4 } }
       ],
       "forbidden": ["실제 연인·배우자·자녀가 있다고 가정하기(입력 관계 상태가 없으면 '만약'으로만 쓴다)", "결혼·이별·이혼 시기나 여부를 말하기", "자녀의 성별·수·성격을 단정하기", "상대 유형을 비난하기", "MBTI가 없을 때 '잘 맞는 MBTI' 장면 만들기", "시간 미상일 때 시주 근거 언급"],
       "noRepeatRules": ["spark·expression·conflict-recovery는 각각 다른 차원을 중심으로 쓴다.", "inner-gap의 반전은 근거(서로 다른 feature 또는 MBTI와의 긴장)가 있을 때만 쓰고, 없으면 확인 가능한 특징만 쓴다.", "marriage와 parenting은 '만약'의 조건문으로만 쓰고 같은 장면을 반복하지 않는다.", "조언은 strategy 장에만 둔다."]

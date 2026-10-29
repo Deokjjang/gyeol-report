@@ -28,7 +28,7 @@ export function renderMd(b: Brief): string {
   L.push(`- 토큰 추정 ${b.budget.estimatedTokens} (${Object.entries(b.budget.bySection).map(([k, v]) => `${k} ${v}`).join(", ")})`, "");
   const c = b.chart;
   L.push("## 원국", `- ${c.pillars.year.hanja} ${c.pillars.month.hanja} ${c.pillars.day.hanja} ${c.pillars.hour?.hanja ?? "(시주 없음)"} · 일간 ${c.dayMaster.name} "${c.dayMaster.easyName}" · ${c.strength.label}`);
-  L.push(`- 오행 ${Object.entries(c.elements.counts).map(([e, n]) => `${e} ${n}`).join(" ")} · 과다 ${c.elements.excess.join(",") || "-"} · 부족 ${c.elements.lacking.join(",") || "-"} · 없음 ${c.elements.missing.join(",") || "-"}`);
+  L.push(`- 오행 ${Object.entries(c.elements.status).map(([e, n]) => `${e} ${n.replace(/\(.*$/, "")}`).join(" ")} · 과다 ${c.elements.excess.join(",") || "-"} · 부족 ${c.elements.lacking.join(",") || "-"} · 없음 ${c.elements.missing.join(",") || "-"}`);
   L.push(`- 음양 ${c.yinYang.label}: ${c.yinYang.reading}`, `- 조후(${c.climate.season}, ${c.climate.level}): ${c.climate.needs.join(", ")} — ${c.climate.reading}`);
   L.push(`- 현재 대운: ${c.currentDayun ? `${c.currentDayun.ganji.hanja} ${c.currentDayun.years} ${c.currentDayun.tenGod}` : "없음"}`, `- 올해: ${c.thisYear.effect} (${c.thisYear.tenGod})`, "");
   if (b.mbti) L.push("## MBTI", `- ${b.mbti.type} ${b.mbti.easyName}: ${b.mbti.oneLiner}`, "");

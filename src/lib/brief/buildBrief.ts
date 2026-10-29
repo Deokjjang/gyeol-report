@@ -53,7 +53,8 @@ const STYLE_RULES = [
   "MBTI가 있으면 fusion.why로 '이 기운 때문에 당신의 유형이 이렇게 나온다'를 잇는다(소름 포인트). 없으면 MBTI 언급 금지",
   "장면은 재료 장면을 고객에 맞게 다시 쓰되 person.forbiddenFacts를 넘지 않는다. 브리프에 없는 사실·사건·날짜를 만들지 않는다",
   "존댓말이되 가볍게(~입니다/~예요 혼용). 소제목 3~5개, 문단 4~6문장. 한자는 처음 한 번만 괄호로",
-  "내부 id·ref·family·score·자료 이름은 본문에 쓰지 않는다",
+  "내부 id·ref·family·score·자료 이름, 그리고 '팩폭'·'재료'·'브리프'·'명식' 같은 편집 용어는 본문·소제목에 쓰지 않는다",
+  "같은 MBTI 연결(같은 기능·같은 글자)을 두 장에서 되풀이하지 않는다. 장마다 그 장 재료의 fusion만 쓴다",
 ];
 
 type PersonPack = {
@@ -80,10 +81,13 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const groups = getTenGodGroupScores(saju.tenGods.distribution);
   const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
+  // 글자 하나(J 등)짜리 MBTI 연결은 같은 글자당 점수 높은 trait 하나에만 남긴다(장마다 "계획형"이 되풀이되는 것 방지, P2 시험 집필 1회차).
+  const letterSeen = new Set<string>();
+  traits.forEach(t => { const tg = t.fusion?.target; if (tg && tg.length === 1) { if (letterSeen.has(tg)) delete t.fusion; else letterSeen.add(tg); } });
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
   selected.forEach((s, i) => {
     const sc = s.fusion?.source === "fusion" ? s.fusion.scene : undefined;
-    if (sc && traits[i].fusion && sceneFits(sc.requires, profile) && !usedScenes.has(sc.text)) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
+    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile) && !usedScenes.has(sc.text)) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
   });
   const age = ageAt(input.birthDate, baseDate);
   const person: PersonBrief = {

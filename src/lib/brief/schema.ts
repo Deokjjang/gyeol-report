@@ -41,12 +41,13 @@ export const ChartBriefSchema = z.object({
   strength: z.object({ level: z.string(), label: z.string() }),
   yinYang: z.object({ yin: z.number(), yang: z.number(), label: z.string(), reading: z.string() }),
   elements: z.object({
-    counts: z.record(Element, z.number()),
+    /** 상태 말(많음·보통·부족·없음). 겉 글자 수만 보고 "하나도 없다"고 쓰지 않도록 숫자 대신 판정을 준다. */
+    status: z.record(Element, z.string()),
     excess: z.array(Element), lacking: z.array(Element), missing: z.array(Element),
     reading: z.array(z.string()),
   }),
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
-  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), tenGod: z.string(), reading: z.string() }).nullable(),
+  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), tenGod: z.string(), reading: z.string(), next: z.object({ ganji: Ganji, startYear: z.number().int(), tenGod: z.string() }).optional() }).nullable(),
   thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
 });
 

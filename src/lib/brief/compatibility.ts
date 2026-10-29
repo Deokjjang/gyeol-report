@@ -44,7 +44,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     .sort((p, q) => Math.abs(q.x - q.y) - Math.abs(p.x - p.y) || p.d.id.localeCompare(q.d.id)).slice(0, 3);
   const pole = (d: (typeof dims)[number]["d"], x: number) => (x >= 0 ? d.poles.plus.label : d.poles.minus.label);
   const fills = (from: PairSide, to: PairSide, fromName: string, toName: string) => to.chart.elements.lacking
-    .filter((e: FiveElement) => from.chart.elements.excess.includes(e) || (from.chart.elements.counts[e] ?? 0) >= 2)
+    .filter((e: FiveElement) => from.chart.elements.excess.includes(e) || (from.saju.elements.visible[e] ?? 0) >= 2)
     .map(e => `${fromName}의 ${ELEMENT_KO[e]} 기운이 ${toName}에게 부족한 ${josa(ELEMENT_KO[e], "을를")} 채워 줌`);
   const ab = getTenGod(a.saju.dayMaster, b.saju.dayMaster), ba = getTenGod(b.saju.dayMaster, a.saju.dayMaster);
   const rel = detectRelations([{ position: "year", pillar: a.saju.pillars.day }, { position: "month", pillar: b.saju.pillars.day }]);
