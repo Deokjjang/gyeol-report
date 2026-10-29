@@ -12,6 +12,7 @@
  *      → (P2) 장면 사실 조건: requires 필수(스키마), 고객 프로필(미혼·연애 중·기혼 × 직업 정보 없음)마다 영역별 장면 ≥ 1,
  *        결혼 영역은 기혼 전용과 언젠가형(unmarried)을 둘 다, 자녀 있음 전용 장면은 같은 영역에 언젠가형(none)도.
  *      → (P2, 경고) 이미지 유사: 문자 3-gram Dice ≥ 0.6. --strict에서는 실패로 친다.
+ *      → (P3) 옛 부정 낱말(흉·액·불길·재앙 등, 부정문 포함)·과거 경험 단정 금지(src/lib/writer/safety/patterns.ts).
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -23,6 +24,7 @@ import {
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
+import { OLD_NEGATIVE, isPastAssertion } from "../src/lib/writer/safety/patterns";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const DATA = join(ROOT, "src", "data", "knowledge-v5");
@@ -47,6 +49,8 @@ const FORBIDDEN: readonly [string, RegExp][] = [
   ["흐린 말투", /일 수도 있습니다|가능성이 있습니다|일지도 모릅니다|참고하세요|미입력|입력되지 않았/],
   ["비하", /문제가 있습니다|불행|저주|한심|쓸모없|멍청|게으른 사람|못난|열등/],
   ["라벨 서술어", /(리더십|추진력|카리스마|잠재력|재능|복)이 (있|강|많)습니다\.$|성향입니다\.$|기운입니다\.$/],
+  // (P3 A-3) 옛 해석의 부정 낱말은 부정하는 문장 안에서도 쓰지 않는다.
+  ["옛 부정 낱말", OLD_NEGATIVE],
 ];
 const HAN = /[一-鿿]/;
 const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI/;
@@ -69,6 +73,7 @@ function checkProse(file: string, where: string, text: string, opts: ProseOpts =
   for (const s of sentences) {
     sentenceCount++; sentenceChars += s.length;
     if (s.length > maxSentence) fail(file, where, `문장 길이 > ${maxSentence}`, s);
+    if (isPastAssertion(s)) fail(file, where, "과거 경험 단정(질문형·경향형으로)", s);
     const tokens = s.split(/\s+/);
     if (tokens.some(t => /^[가-힣]{9,}$/.test(t))) fail(file, where, "한자어 연속(9음절 이상 붙은 낱말)", s);
     let run = 0; for (const t of tokens) { run = /(적|성|화|력|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
