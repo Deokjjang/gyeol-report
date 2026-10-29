@@ -223,7 +223,8 @@ export function planChapters(input: PlanCtx): ChapterBrief[] {
     : [{ c, repeatKey: undefined as string | undefined, id: c.id }]).map((p, index) => {
     const aux = p.repeatKey ? [] : auxMaterials(ctx, p.id, shadowCursor, uses);
     // 재료 4~6: trait 2~4 + 보조. 반복 장은 trait 1.
-    const target = p.repeatKey ? 1 : Math.min(4, Math.max(2, Math.min(TRAIT_SLOTS[p.c.role] ?? 2, 6 - aux.length), 4 - aux.length));
+    // 반복 장(연·월)은 trait 재료(장면·그림)를 받지 않는다. 건드려진 원국 특성은 아래에서 짧은 참조로만 붙인다(P3.7 1-1).
+    const target = p.repeatKey ? 0 : Math.min(4, Math.max(2, Math.min(TRAIT_SLOTS[p.c.role] ?? 2, 6 - aux.length), 4 - aux.length));
     // 학생이 아닌 고객의 연·월 장면에 시험·교과서 장면을 주지 않는다(P3.7 r1: 37세 간호사에게 "평가 전날").
     const domains = domainsOf(p.c.domains as Domain[]).filter(d => !(p.repeatKey && d === "study" && ctx.facts.job !== "student"));
     return { ...p, index, aux, target, domains, traits: [] as Material[] };
@@ -270,12 +271,14 @@ export function planChapters(input: PlanCtx): ChapterBrief[] {
       if (ctx.has(ref) && !p.aux.some(m => m.kind === "ref" && m.ref === ref)) p.aux.push({ kind: "ref", ref, note: "앞 장과 다른 각도로만 짧게" });
     }
   }
-  // 연·월 항목의 trait는 앞의 일반 장에서 이미 소개된 것만 남긴다(원국 특성은 다시 소개하지 않고 짧게 부른다, P3.7 r1: 연도 key에서 trait가 처음 나와 그림을 새로 그렸다).
+  // 연·월 항목: 그해·그달 글자가 건드리는 trait 중 앞의 일반 장에서 이미 소개된 것 하나를 짧은 참조로(새 그림·장면 없이 touched.how로).
+  // 같은 trait는 연·월 항목 2개까지(P3.7 r1: 연도 key에서 trait가 처음 나와 그림을 새로 그렸다, 같은 trait가 여러 해에 반복).
   const introducedAt = (traitId: string) => Math.min(...plans.filter(q => !q.repeatKey && q.traits.some(m => m.kind === "trait" && m.traitId === traitId)).map(q => q.index));
-  for (const p of plans) if (p.repeatKey) p.traits = p.traits.filter(m => {
-    if (m.kind !== "trait" || introducedAt(m.traitId) < p.index) return true;
-    const src = ctx.traits.find(x => x.trait.id === m.traitId)!; src.trait.chapters.splice(src.trait.chapters.indexOf(p.id), 1); return false;
-  });
+  const repeatUses = new Map<string, number>();
+  for (const p of plans) if (p.repeatKey) {
+    const id = (ctx.touched?.get(p.repeatKey) ?? []).find(t => introducedAt(t) < p.index && (repeatUses.get(t) ?? 0) < 2);
+    if (id) { repeatUses.set(id, (repeatUses.get(id) ?? 0) + 1); p.aux.push({ kind: "ref", ref: `traits.${id}`, note: "짧게만" }); }
+  }
   // 같은 trait의 "first"(그림으로 처음 소개)는 책 순서상 가장 앞 장이 받는다. 배정 순서(라운드 로빈)를 따르면 뒤 장이 소개하고 앞 장이 "앞에서 본"을 쓰게 된다(P3.6 B).
   const seenTrait = new Set<string>();
   for (const p of [...plans].sort((a, b) => a.index - b.index)) for (const m of p.traits) if (m.kind === "trait") {
@@ -287,7 +290,7 @@ export function planChapters(input: PlanCtx): ChapterBrief[] {
   for (const t of ctx.traits) t.trait.chapters.sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
   return plans.map(p => {
     const repeat = Boolean(p.repeatKey);
-    const materials: Material[] = repeat ? [{ kind: "timeline", entryKey: p.repeatKey! }, ...p.traits] : [...p.traits, ...p.aux].slice(0, 6);
+    const materials: Material[] = repeat ? [{ kind: "timeline", entryKey: p.repeatKey! }, ...p.traits, ...p.aux] : [...p.traits, ...p.aux].slice(0, 6);
     return {
       id: p.id, index: p.index + 1, title: p.c.title, question: p.c.question, role: p.c.role,
       targetChars: repeat ? chars.repeat! : chars.chapter,

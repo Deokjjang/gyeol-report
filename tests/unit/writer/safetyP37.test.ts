@@ -20,12 +20,14 @@ const briefs: [string, Brief][] = [
 ];
 
 describe("P3.7 원고 보강", () => {
-  it("1-1: 연·월 항목의 trait는 그해·그달 글자가 건드리는 것만, 없으면 넣지 않는다(배지에 원국 자리)", () => {
+  it("1-1: 연·월 항목은 그해·그달 글자가 건드리고 앞 장에서 소개된 trait만 짧은 참조로, 없으면 넣지 않는다(배지에 원국 자리)", () => {
     for (const [name, b] of briefs.filter(([n]) => /major|annual/.test(n))) {
       for (const c of b.chapters.filter(c => c.id.includes(":"))) {
         const key = c.id.split(":")[1], e = b.timeline!.entries.find(x => x.key === key)!;
-        const traits = c.materials.flatMap(m => m.kind === "trait" ? [m.traitId] : []);
+        expect(c.materials.some(m => m.kind === "trait"), `${name} ${key}`).toBe(false);
+        const traits = c.materials.flatMap(m => m.kind === "ref" && /^traits\.t\d+$/.test(m.ref) ? [m.ref.slice(7)] : []);
         expect(traits.length, `${name} ${key}`).toBeLessThanOrEqual(1);
+        for (const id of traits) expect(b.chapters.findIndex(x => !x.id.includes(":") && x.materials.some(m => m.kind === "trait" && m.traitId === id)), `${name} ${key} ${id}`).toBeLessThan(b.chapters.indexOf(c));
         expect((e.touched ?? []).map(t => t.traitId).sort(), `${name} ${key}`).toEqual([...traits].sort());
       }
       const relBadges = b.timeline!.entries.flatMap(e => e.badges.filter(x => x.kind !== "GONGMANG"));

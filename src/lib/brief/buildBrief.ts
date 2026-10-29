@@ -229,7 +229,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
 
   // 항목의 touched는 그 장에 배정된 trait만 남긴다(P3.7 1-1: 원국 특성은 건드려진 것만, 배정된 것만 짧게 부른다).
   if (timeline) for (const e of timeline.entries) {
-    const assigned = new Set(chapters.filter(c => c.id.endsWith(`:${e.key}`)).flatMap(c => c.materials.flatMap(m => m.kind === "trait" ? [m.traitId] : [])));
+    const assigned = new Set(chapters.filter(c => c.id.endsWith(`:${e.key}`)).flatMap(c => c.materials.flatMap(m => m.kind === "trait" ? [m.traitId] : m.kind === "ref" && /^traits\.[ab]?t\d+$/.test(m.ref) ? [m.ref.slice(7)] : [])));
     const kept = (e.touched ?? []).filter(t => assigned.has(t.traitId));
     if (kept.length) e.touched = kept; else delete e.touched;
   }
