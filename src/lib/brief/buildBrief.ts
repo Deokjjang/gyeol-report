@@ -80,7 +80,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const scored = scoreHits(hits, k, product, fusionFacts);
   const selected = selectTraits(scored, traitTarget);
   const groups = getTenGodGroupScores(saju.tenGods.distribution);
-  const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups));
+  const hitIdSet = new Set(hits.map(h => h.id));
+  const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
   // MBTI 연결 밀도(P3): 핵심 특성 정확 유형, 같은 글자·기능 최대 2, 계산 연결로 70% 이상.
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts);

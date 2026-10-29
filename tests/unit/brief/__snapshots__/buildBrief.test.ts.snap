@@ -30,7 +30,6 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
   "shadows": [
     "t2",
     "t7",
-    "t6",
   ],
   "timeline": [
     "2026 丙午 겁재(劫財) f4 CHUNG+HAE+WONJIN act:劫財:work:high",
@@ -47,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:love:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+BANGHAP act:偏財:relationships:low",
   ],
-  "tokens": 15627,
+  "tokens": 15462,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,current-dayun,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [current-dayun,month:2026-M06,month:2026-M12]",
@@ -91,10 +90,9 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
   "shadows": [
     "t2",
     "t7",
-    "t6",
   ],
   "timeline": undefined,
-  "tokens": 9246,
+  "tokens": 9088,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,study,recovery]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [portrait,fortune,recovery]",
@@ -162,7 +160,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:study:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:love:high",
   ],
-  "tokens": 16683,
+  "tokens": 16672,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [overview,current-cycle,closing]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [current-cycle,year:2030,closing]",
@@ -206,7 +204,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 8918,
+  "tokens": 8910,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [love-core,spark,attracted-to]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-core,attracted-to,marriage]",
@@ -250,7 +248,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8252,
+  "tokens": 8228,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [work-core,money,study]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - [choice-scene,study]",
@@ -292,14 +290,14 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
   ],
   "shadows": [
     "at2",
-    "at6",
+    "at1",
     "bt2",
     "bt1",
     "bt5",
     "bt7",
   ],
   "timeline": undefined,
-  "tokens": 11703,
+  "tokens": 11609,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,felt-differently]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [direction-ba,domain-scene]",

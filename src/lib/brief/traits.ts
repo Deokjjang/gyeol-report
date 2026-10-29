@@ -8,6 +8,8 @@ import type { ChartPosition } from "@/lib/saju/detections/types";
 import type { TenGod, SajuCalcResult } from "@/lib/saju/types";
 import frequency from "./data/feature-frequency.json";
 import { scorePair } from "@/data/knowledge-v5/cross-score";
+import { splitSentences } from "@/lib/writer/safety/patterns";
+import { conditionsHold, type ConditionCtx } from "./conditions";
 import type { FeatureHit } from "./featureTypes";
 import type { Knowledge } from "./knowledge";
 import { josa, POSITION_KO, TEN_GOD_GROUP } from "./labels";
@@ -108,8 +110,9 @@ export function mainPosition(hit: FeatureHit): ChartPosition | null { return MAI
 
 export type GroupScores = Readonly<Record<"PEER" | "OUTPUT" | "WEALTH" | "OFFICER" | "RESOURCE", number>>;
 const GROUP_WORD: Record<string, keyof GroupScores> = { 비겁: "PEER", 식상: "OUTPUT", 재성: "WEALTH", 관성: "OFFICER", 인성: "RESOURCE" };
-/** 과사용 문장에 적힌 조건(신강·신약, 십성 묶음 많음·약함)이 이 원국과 어긋나면 고르지 않는다(근거 없는 팩폭 방지). 임계값은 extractSajuTags와 같다(≥2.5 강, <1 약). */
-export function overuseFits(line: string, strengthLevel: string, groups?: GroupScores): boolean {
+/** 과사용 문장에 적힌 조건(신강·신약, 십성 묶음 많음·약함, P3: 자리·인접·관계·오행 다소·신살 동반·계절)이 이 원국과 어긋나면 고르지 않는다(근거 없는 팩폭 방지). 임계값은 extractSajuTags와 같다(≥2.5 강, <1 약). */
+export function overuseFits(line: string, strengthLevel: string, groups?: GroupScores, cond?: ConditionCtx): boolean {
+  if (cond && !conditionsHold(line, cond)) return false;
   const weak = strengthLevel === "WEAK" || strengthLevel === "VERY_WEAK", strong = strengthLevel === "STRONG" || strengthLevel === "VERY_STRONG";
   if (/(일간|몸|내 힘)이 약하|신약/.test(line) && !weak) return false;
   if (/(일간|몸|내 힘)이 (강하|세)|신강/.test(line) && !strong) return false;
@@ -120,7 +123,13 @@ export function overuseFits(line: string, strengthLevel: string, groups?: GroupS
   return true;
 }
 
-export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "BALANCED", groups?: GroupScores): Trait {
+/** 강약 설명 문장 중 원국과 어긋나는 조건 문장("괴강·양인이 함께 있으면")은 뺀다(P3 A4). */
+function onlyHolding(text: string, cond?: ConditionCtx): { strengthNote?: string } {
+  const kept = cond ? splitSentences(text).filter(x => conditionsHold(x, cond)).join(" ") : text;
+  return kept ? { strengthNote: kept } : {};
+}
+
+export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "BALANCED", groups?: GroupScores, cond?: ConditionCtx): Trait {
   const { hit, feature } = s;
   const variant = hit.variantKey ? feature.variants?.find(v => v.key === hit.variantKey || [...v.key].reverse().join("") === hit.variantKey) : undefined;
   const pos = mainPosition(hit);
@@ -132,9 +141,9 @@ export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "
     image: variant?.image ?? feature.image,
     oneLiner: variant?.oneLiner ?? feature.oneLiner,
     ...(pos && feature.positionNuance ? { positionNote: `${POSITION_KO[pos]} 자리: ${feature.positionNuance[pos]}` } : variant?.nuance ? { positionNote: variant.nuance } : {}),
-    ...(hit.strength === "strong" ? { strengthNote: feature.strengthRules.strong } : hit.strength === "weak" ? { strengthNote: feature.strengthRules.weak } : {}),
+    ...(hit.strength === "strong" || hit.strength === "weak" ? onlyHolding(hit.strength === "strong" ? feature.strengthRules.strong : feature.strengthRules.weak, cond) : {}),
     good,
-    ...(feature.overuse.some(o => overuseFits(o, strengthLevel, groups)) ? { overuse: rng.fork("overuse").pick(feature.overuse.filter(o => overuseFits(o, strengthLevel, groups))) } : {}),
+    ...(feature.overuse.some(o => overuseFits(o, strengthLevel, groups, cond)) ? { overuse: rng.fork("overuse").pick(feature.overuse.filter(o => overuseFits(o, strengthLevel, groups, cond))) } : {}),
     ...(s.fusion ? { fusion: { target: s.fusion.target, kind: s.fusion.kind, why: s.fusion.why, source: s.fusion.source } } : {}),
     chapters: [],
   };
