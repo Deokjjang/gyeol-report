@@ -30,16 +30,16 @@
 2. **과거 경험 단정**: 겪어 봤습니다·한 적이 있습니다·했었습니다·"어릴 때 ~였습니다" 꼴을 금지, 물음표로 끝나는 질문형과 따옴표 안 대사는 허용. 년주 자리 뉘앙스 13개는 질문형("~않았나요?")이나 경향형("~하는 편입니다")으로 바꿨다.
 3. **Fusion 320 해석**: id가 (요소, 유형)마다 하나라 기존 56쌍은 유지하고 빠진 264쌍을 새로 쓴다 → 320쌍 전부 존재.
 
-## 기존 파이프라인 메모 (탐색 결과)
-
-- 저장: `paid_report_snapshots.snapshot_json` = `ProductPreviewSnapshot{draft: V4CustomerReport, evidencePacket: V4RuntimeEvidence}`. 읽을 때 `projectBook(evidence)`로 BookData를 다시 만들고 다이제스트·draft 일치를 검사한다.
-- 이용권 발행 RPC `report_ticket_publication`(scripts/report_ticket_publication_queue_patch.sql)은 `productVersion='v4'`만 받는다. 만료 lease는 환불(reverse)한다.
-- 워커 maxDuration 300, lease 10분. 장 단위 부분 저장·회수 크론은 없다.
-- v5 발행에 손댈 곳: 발행 RPC(v5 허용), `tickets/ownerRead.ts`, `isProductPreviewSnapshot`, `readPublishedReport` 검증, `book/storedReport.tsx` 검증 선택.
-
 4. **v5 작업 상태는 RUNNING 유지**: 새 상태(WRITING)를 만들면 묶음권 환불 판정 등 기존 함수가 진행 중 작업을 못 본다. 대신 v5만 writer_lease_until(15분)·lease_until(25분, 정산 기한)을 따로 둔다.
 5. **이용권 공개 API는 로컬에서 쓰지 않음**: 운영 도메인 출처만 받는 보안 설계(로컬 예외 없음)를 유지하고, 종단 시험은 같은 RPC로 접수 → 로컬 서버 워커 라우트 → 페이지 열기로 한다.
 6. **개발 모드 워커 메모리 상한**: next dev RSS 6GB로 1.25GiB 상한에 즉시 걸림 → NODE_ENV=development일 때만 TICKET_WORKER_MAX_RSS_MB로 올림(운영 불변).
 7. **OpenAI 키 복사는 권한 검사에서 거부** → 사용자가 직접 넣기로(비밀값 입력은 사용자 몫).
 8. **문체 예시 고객 이름 가림**: 예시의 "하람님"을 "[이름]님"으로, 안전망이 [이름]을 내부 용어로 지움.
 9. **실호출 모델 gpt-4o-mini**: gpt-5-nano가 더 싸지만 추론 토큰이 출력 상한을 먹어 배관 검증에 부적합(P0-2 메모), gpt-4.1-nano는 404.
+
+## 기존 파이프라인 메모 (탐색 결과)
+
+- 저장: `paid_report_snapshots.snapshot_json` = `ProductPreviewSnapshot{draft: V4CustomerReport, evidencePacket: V4RuntimeEvidence}`. 읽을 때 `projectBook(evidence)`로 BookData를 다시 만들고 다이제스트·draft 일치를 검사한다.
+- 이용권 발행 RPC `report_ticket_publication`(scripts/report_ticket_publication_queue_patch.sql)은 `productVersion='v4'`만 받는다. 만료 lease는 환불(reverse)한다.
+- 워커 maxDuration 300, lease 10분. 장 단위 부분 저장·회수 크론은 없다.
+- v5 발행에 손댈 곳: 발행 RPC(v5 허용), `tickets/ownerRead.ts`, `isProductPreviewSnapshot`, `readPublishedReport` 검증, `book/storedReport.tsx` 검증 선택.
