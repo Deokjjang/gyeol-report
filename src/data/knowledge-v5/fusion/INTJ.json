@@ -104,7 +104,7 @@
       "dimension": "inquiry",
       "score": 1.81,
       "why": "현침의 바늘은 남이 못 보는 작은 틈을 정확히 찌릅니다. INTJ는 다들 찬성할 때 '이건 어느 지점에서 막힌다'를 시기까지 짚어 내는 사람입니다. 큰 그림과 바늘 끝이 함께 있어 계획의 구멍을 가장 먼저 찾지만, 70점짜리 안으로 먼저 가야 할 때도 100점을 기다리다 때를 놓칩니다.",
-      "scene": { "text": "친구가 들뜬 얼굴로 창업 계획을 설명하자 끝까지 듣고 나서 '석 달째 고정비는 어디서 나와?' 하나만 묻습니다. 친구의 대답이 한참 늦게 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "친구가 들뜬 얼굴로 창업 계획을 설명하자 끝까지 듣고 나서 '석 달째 고정비는 어디서 나와?' 하나만 묻습니다. 친구의 대답이 한참 늦게 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -375,6 +375,150 @@
       },
       "sources": [
         "shinsal:HWAGAE",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙午:INTJ",
+      "myeongriId": "dayPillar:丙午",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.59,
+      "why": "병오 일주는 불 위에 불이 얹혀서, 들어서기만 해도 자리 온도가 오르고 사람들이 판의 가운데로 끌어당깁니다. 그런데 INTJ는 사람 사이에서 기운이 닳고, 혼자 있는 시간에 다시 채우는 쪽이에요. 분위기는 내가 데우고 충전은 혼자 해야 해서, 신나게 논 다음 날은 아무도 안 만나는 날로 비워 둡니다.",
+      "scene": { "text": "회사 워크숍 저녁, 레크리에이션 진행을 맡아 다들 배를 잡고 웃게 만듭니다. 아홉 시가 되자 '내일 자료 좀 볼게요' 하고 숙소 방으로 올라가 불을 끕니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙午",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:STRONG:INTJ",
+      "myeongriId": "element:FIRE:STRONG",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.27,
+      "why": "화 기운이 넘치는 구성은 기쁨과 고마움을 그 자리에서 크게 터뜨리게 밀어붙입니다. INTJ는 감정을 말로 꺼내기보다, 상대의 막힌 문제를 대신 풀어 주는 것으로 마음을 전하는 쪽이지요. 속은 뜨겁게 끓는데 표현은 일로 바뀌어 나가서, '고마워' 한마디보다 손봐 준 결과물이 먼저 도착합니다.",
+      "scene": { "text": "이사를 도와준 친구에게 고맙다는 말은 짧게 하고, 그 주말 친구의 고장 난 노트북을 가져와 부품까지 갈아 돌려줍니다. 건네는 날엔 귀까지 빨개져 '별거 아냐'만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:STRONG",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:乙:INTJ",
+      "myeongriId": "stem:乙",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.25,
+      "why": "을목은 정면으로 부딪히는 대신 틈을 찾아 휘어 돌아가며, 끝내 원하는 자리까지 닿게 합니다. INTJ의 Te는 원래 결론과 근거를 한 번에 내밀어 정면에서 끝내는 쪽이고요. 답을 통보할지 돌아서 갈지 매번 저울질하다가, 결론 대신 상대가 스스로 떠올리게 질문을 깔아 두곤 합니다.",
+      "scene": { "text": "가족 여행지를 바꾸자고 하는 대신, 저녁 식탁에서 '거기 그 주에 비 온다던데?' 한마디와 다른 바닷가 사진 두 장을 슬쩍 보여 줍니다. 다음 날 행선지가 바뀌어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:乙",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:長生:INTJ",
+      "myeongriId": "twelveStage:長生",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.18,
+      "why": "장생은 막 태어나 배우는 힘이 가장 맑은 자리라, 묻고 따르면서 앞선 사람의 손길을 잘 받습니다. INTJ는 남이 알려 준 방법도 직접 확인하기 전엔 고개를 끄덕이지 않는 독학파예요. 배우는 속도는 빠른데 들은 말을 그대로 믿지 않아서, 한 번 묻고 세 번 검증한 뒤에야 다음 걸음을 뗍니다.",
+      "scene": { "text": "새로 시작한 수영 강습에서 코치가 고쳐 준 팔 동작을 그 자리에선 그대로 따라 합니다. 집에 와서 선수 영상 세 개를 느리게 돌려 보고서야 '아, 이래서구나' 하고 노트를 덮습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:長生",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:METAL:MISSING:INTJ",
+      "myeongriId": "element:METAL:MISSING",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.08,
+      "why": "금이 비어 있으면 거절하는 칼이 무뎌서, 부탁이 오면 '응'부터 나가기 쉽습니다. 반면 INTJ는 사람을 믿기까지 오래 지켜보고, 속으로는 넘지 않는 기준이 또렷한 사람이지요. 마음의 문은 잠겨 있는데 대문은 열려 있는 셈이라, 들어준 부탁을 끼워 넣느라 내 계획표가 자꾸 다시 짜입니다.",
+      "scene": { "text": "토요일 하루에 이력서 봐 주기, 짐 옮기기, 사진 골라 주기 부탁을 전부 '그래'로 받습니다. 정작 몇 달째 붙든 내 고민은 그중 누구에게도 꺼내지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:METAL:MISSING",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WOOD:MISSING:INTJ",
+      "myeongriId": "element:WOOD:MISSING",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.11,
+      "why": "목이 전혀 없으면 스스로 새 판을 열어 본 경험이 적어서, 누가 정해 준 길 위에 있을 때 가장 편합니다. 그런데 INTJ의 Ni는 남이 정한 길보다 내가 그린 먼 노선을 먼저 봅니다. 노선도는 해마다 선명해지는데 갈아탈 레버 앞에서 손이 무거워, 지금 자리를 지키며 계획서만 고쳐 씁니다.",
+      "scene": { "text": "독립해서 해 보고 싶은 일을 정리한 문서가 일곱 번째 버전까지 쌓였습니다. 오늘도 버스 안에서 그 문서를 열어, 시작 날짜만 한 달 뒤로 고쳐 저장합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직·창업 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:WOOD:MISSING",
         "mbti:INTJ:functionStack",
         "추정"
       ]

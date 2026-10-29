@@ -35,7 +35,7 @@
       "dimension": "mobility",
       "score": 2.57,
       "why": "임수는 막히면 옆으로 돌아서라도 멀리 흘러가는 큰물입니다. ESTP는 멈춰 서서 안내를 기다리는 시간을 가장 못 견딥니다. 길이 끊긴 자리에서 지도를 펴기 전에 이미 우회로를 달리고 있고, 돌아간 길에서 뜻밖의 수확까지 챙겨 옵니다.",
-      "scene": { "text": "출장 가는 고속도로가 공사로 막히자 안내를 기다리지 않고 바로 국도로 빠집니다. 도착해서는 '덕분에 맛집 하나 찾았어요' 하고 사진을 내밉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "출장 가는 고속도로가 공사로 막히자 안내를 기다리지 않고 바로 국도로 빠집니다. 도착해서는 '덕분에 맛집 하나 찾았어요' 하고 사진을 내밉니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -200,7 +200,7 @@
       "dimension": "noveltySeeking",
       "score": 2.27,
       "why": "지살은 익숙한 동네를 벗어나 새 판을 여는 첫걸음의 별입니다. ESTP에게는 이번 주가 3년 뒤보다 훨씬 또렷해서, 새 골목에 들어서면 계획보다 발이 먼저 신이 납니다. 출발선에서는 누구보다 빠르니, 두 번째 달의 지루함을 넘길 장치만 따로 만들면 됩니다.",
-      "scene": { "text": "처음 간 도시에서 숙소에 짐만 던져 두고 지도 없이 골목부터 걷습니다. 저녁이면 단골 삼을 국밥집 하나를 벌써 찾아 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "처음 간 도시에서 숙소에 짐만 던져 두고 지도 없이 골목부터 걷습니다. 저녁이면 단골 삼을 국밥집 하나를 벌써 찾아 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -394,7 +394,7 @@
       "dimension": "spendingControl",
       "score": 2.11,
       "why": "정축은 언 땅 위에서 밤새 참고 버티며 조금씩 쌓아 두는 작은 불입니다. ESTP의 손은 돈이 들어온 그 주말, 갖고 싶던 걸 바로 결제하는 쪽으로 움직입니다. 쓰는 속도와 묵히는 속도가 한 사람 안에서 다퉈, 밖에서는 시원하게 쓰고 집에 오면 조용히 메웁니다.",
-      "scene": { "text": "회식 자리에선 농담으로 분위기를 띄우고 2차 계산까지 먼저 하지만, 집에 와서는 자동이체 목록을 열어 다음 달 적금을 조용히 1만 원 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "회식 자리에선 농담으로 분위기를 띄우고 2차 계산까지 먼저 하지만, 집에 와서는 자동이체 목록을 열어 다음 달 적금을 조용히 1만 원 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -605,7 +605,7 @@
       "dimension": "decisionSpeed",
       "score": 1.92,
       "why": "병화가 신금 위에 앉은 이 일주는 한낮 볕을 받아 번쩍이며 짐을 옮기는 부두 크레인입니다. 상대 눈썹이 살짝 움직이는 것만 보고도 ESTP는 제안을 고쳐 내놓습니다. 판단과 흥정이 빛처럼 빠른 대신 상대 말을 끝까지 듣기 전에 답이 나갑니다.",
-      "scene": { "text": "단골 가게 사장님이 '요즘 손님이 없어서…'까지 말하자, 끝까지 듣기도 전에 '입구에 할인 칠판 세우세요' 하고 분필을 집어 직접 써 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "단골 가게 사장님이 '요즘 손님이 없어서…'까지 말하자, 끝까지 듣기도 전에 '입구에 할인 칠판 세우세요' 하고 분필을 집어 직접 써 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -690,6 +690,150 @@
         "climate:丙:summer",
         "mbti:ESTP:functionStack",
         "mbti:ESTP:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ESTP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "riskTaking",
+      "score": 1.66,
+      "why": "정관은 정해진 규칙과 약속을 지켜 믿음을 쌓으라고 안에서 선을 그어 줍니다. ESTP의 Se·Ti는 현장에서 통하면 규칙보다 빠른 길을 먼저 택하고, 위험도 일단 몸으로 부딪쳐 봅니다. 판을 뒤집는 속도는 빠른데, 넘지 말아야 할 선 앞에선 누가 보지 않아도 발을 멈춥니다.",
+      "scene": { "text": "당구 내기 마지막 공에서 큐 끝이 공을 살짝 건드린 걸 상대가 못 봤는데도 '방금 파울이에요' 하고 큐를 내려놓습니다. 그러고는 바로 한 게임 더 걸자고 조릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "법적 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:癸亥:ESTP",
+      "myeongriId": "dayPillar:癸亥",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 1.8,
+      "why": "계해 일주는 사람과 상황의 미세한 결을 오래 품고, 지나간 장면을 깊이 되짚게 합니다. ESTP의 Se는 겪은 일을 그 자리에서 털고 넘어가고, Fe는 상대 표정 변화만 슬쩍 기억해 둡니다. 그래서 낮에는 웃으며 넘긴 한마디가, 밤이 깊으면 그 사람 얼굴과 함께 다시 떠올라 잠을 미룹니다.",
+      "scene": { "text": "낮에 농담으로 던진 말에 동료 표정이 살짝 굳었던 게 밤 열두 시 샤워기 아래에서 떠오릅니다. '아까 그 말 괜찮았어?'를 썼다 지웠다 하다 결국 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "우울 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸亥",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:辛亥:ESTP",
+      "myeongriId": "dayPillar:辛亥",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 1.65,
+      "why": "신해 일주는 미묘한 차이를 알아보고, 그 차이를 딱 맞는 단어로 옮기려 생각을 여러 갈래로 뻗습니다. ESTP는 Se·Ti로 상황을 보자마자 되는 쪽을 골라 정면으로 말하는 편이죠. 평소엔 한마디로 끝내다가도, 마음이 걸린 상대에게 보낼 문장 앞에선 단어 하나를 몇 번씩 바꿉니다.",
+      "scene": { "text": "평소 단톡방 답장은 'ㅇㅋ' 두 글자인데, 오랜만에 연락 온 옛 친구에게 보낼 답장은 카페 구석에서 사십 분째 고치고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "대인 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:辛亥",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:己亥:ESTP",
+      "myeongriId": "dayPillar:己亥",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 1.64,
+      "why": "기해 일주는 상대 사정을 속으로 깊이 헤아려, 내 몫보다 남의 필요를 먼저 계산하게 합니다. ESTP는 Se·Ti로 문제를 보면 사정보다 해법을 먼저 정면으로 꺼내는 사람이고요. 첫마디는 세게 나가도, 상대 형편이 들리는 순간 말을 접고 자기 손으로 빈자리를 메웁니다.",
+      "scene": { "text": "회비가 석 달째 밀린 동호회 회원에게 '이건 좀 아니지' 하고 따지러 갑니다. 요즘 일이 끊겼다는 말을 듣자 그 자리에서 '이번 달은 내가 넣어 둘게'로 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재물 손실 단정",
+          "대인 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:己亥",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_HWAGAE:ESTP",
+      "myeongriId": "shinsal:TWELVE_HWAGAE",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 1.58,
+      "why": "화개는 끝난 일을 다시 펼쳐 보고, 쓸 것과 버릴 것을 갈라 차곡차곡 정리해 두게 합니다. ESTP의 Se는 끝난 판보다 다음 판에 먼저 발을 올리고, 지난 일을 곱씹는 시간은 짧게 끝냅니다. 몸은 이미 다음 계획으로 뛰어가 있는데, 손은 지난 판의 기록을 묶어 상자에 넣고 있습니다.",
+      "scene": { "text": "여행에서 돌아온 밤, 짐도 풀기 전에 다음 여행 항공권을 검색하다가, 문득 이번 여행 영수증과 사진을 날짜별 폴더로 나눠 정리하기 시작합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_HWAGAE",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WATER:STRONG:ESTP",
+      "myeongriId": "element:WATER:STRONG",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "score": 1.61,
+      "why": "수가 넘치면 정면으로 부딪치기보다 흐름을 끝까지 읽고 틈으로 스며드는 쪽을 택하게 됩니다. ESTP의 Se는 기회가 보이는 순간 바로 손을 뻗어 결론을 내고 싶어 합니다. 마음은 이미 결정을 끝냈는데, 한 박자 더 지켜보는 사이 상대가 먼저 패를 보여 주는 일이 잦습니다.",
+      "scene": { "text": "이사할 집을 보러 간 날, 마음에 들자마자 '계약할게요'가 목까지 올라오지만 참고 집주인 이야기를 끝까지 듣습니다. 그사이 집주인이 먼저 관리비를 깎아 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재물 손실 단정",
+          "투자 성과 단정"
+        ]
+      },
+      "sources": [
+        "element:WATER:STRONG",
+        "mbti:ESTP:functionStack",
         "추정"
       ]
     }

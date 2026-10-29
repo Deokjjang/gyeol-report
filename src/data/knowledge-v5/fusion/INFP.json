@@ -199,7 +199,7 @@
       "dimension": "introspection",
       "score": 1.66,
       "why": "계수는 작고 조용하게 스며 주변을 바꾸는 물입니다. INFP는 여럿 앞에서는 반대를 삼키고, 자리가 끝난 뒤 한 사람에게만 조용히 속마음을 꺼냅니다. 큰소리 없이 스미는 방식이라 그 한마디가 결국 판을 바꾸지만, 끝내 꺼내지 못한 말은 속에 고여 마음을 무겁게 합니다.",
-      "scene": { "text": "팀 회식 장소가 또 고깃집으로 정해지자 그 자리에선 웃고, 다음 날 총무에게만 '채식하는 분도 있던데요' 하고 살짝 귀띔합니다. 다음 달 공지엔 메뉴가 바뀌어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "팀 회식 장소가 또 고깃집으로 정해지자 그 자리에선 웃고, 다음 날 총무에게만 '채식하는 분도 있던데요' 하고 살짝 귀띔합니다. 다음 달 공지엔 메뉴가 바뀌어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -402,6 +402,150 @@
       },
       "sources": [
         "branch:申",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚戌:INFP",
+      "myeongriId": "dayPillar:庚戌",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 1.83,
+      "why": "경술 일주는 지킬 것과 들일 것의 선을 분명히 긋고, 한번 굳힌 판단을 쉽게 다시 열지 않습니다. INFP의 Fi도 속에 단단한 저울이 있지만, 그 선을 밖에 대고 말하는 일은 상대가 다칠까 봐 가장 늦게 하지요. 속의 기준은 쇠처럼 굳은데 거절은 솜처럼 나가서, 끝까지 웃다가 어느 날 문을 통째로 잠급니다.",
+      "scene": { "text": "회비를 매번 늦게 내는 지인에게 세 번째도 '괜찮아, 다음에 줘'라고 웃어 줍니다. 네 번째 모임 공지가 올라오자 말없이 불참에 표시합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚戌",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:丙:INFP",
+      "myeongriId": "stem:丙",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.8,
+      "why": "병화가 있으면 마음에 불이 붙는 순간 그걸 사람들 앞에 크게 비추고 싶어집니다. INFP의 Fi는 정말 아끼는 것일수록 속 깊이 넣어 두고 아무에게나 보여 주지 않으려 하지요. 좋아하는 게 생기면 온 동네에 알리고 싶다가도, 막상 입을 열 땐 '그냥 괜찮더라' 한 줄로 줄여 버립니다.",
+      "scene": { "text": "몇 주째 빠져 있는 밴드의 공연 영상을 친구에게 보내려고 긴 소개 글을 씁니다. 전송 직전에 다 지우고 '이거 들어 봐' 한 줄과 링크만 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:丙",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:庚:INFP",
+      "myeongriId": "stem:庚",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.65,
+      "why": "경금이 있으면 엉킨 고민을 한 번에 잘라 '이걸로 하자'를 말하고 싶은 힘이 생깁니다. INFP는 Ne가 갈래를 계속 늘리고 Fi가 마음에 꼭 맞는지 다시 묻는 탓에, 하나를 고르면 나머지가 아까운 사람이에요. 입은 이미 단호하게 정했는데 손은 남은 선택지를 쓰다듬고 있어, 결정 직후에 한 번씩 멈칫합니다.",
+      "scene": { "text": "가구점에서 두 시간을 돈 끝에 '이걸로 할게요'라고 또렷하게 말합니다. 그래 놓고 계산대 앞에서 다른 색 소파 사진을 한 번 더 넘겨 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "소비 습관 단정",
+          "대인 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "stem:庚",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲申:INFP",
+      "myeongriId": "dayPillar:甲申",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "score": 1.51,
+      "why": "갑신 일주는 압박이 오면 우선순위를 골라내고, 누가 시키지 않아도 스스로 기준을 올립니다. INFP의 Te는 순서와 마감이 가장 늦게 깨는 자리라, 마음이 동하지 않은 일 앞에선 손이 굳고요. 계획표는 누구보다 촘촘한데 실행은 마음의 허락을 기다려, 빈칸이 생길 때마다 표를 처음부터 다시 짭니다.",
+      "scene": { "text": "일요일 밤 다음 주 할 일을 색깔 펜으로 칸칸이 채웁니다. 수요일에 첫 칸을 놓치자 그 장을 찢고, 새 장에 목요일부터 다시 그립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "업무 태만 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲申",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:辛:autumn:INFP",
+      "myeongriId": "climate:辛:autumn",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 1.32,
+      "why": "가을의 신금은 쇠가 가장 단단한 철이라, 필요 없는 것을 빨리 잘라 내는 결단이 무기입니다. INFP의 Si는 좋았던 날의 영수증 한 장까지 기억과 함께 붙들어 두려 하지요. 정리할 땐 칼같이 시작하다가 물건마다 얽힌 사연 앞에서 손이 멈춰, 버릴 상자보다 남길 상자가 더 무거워집니다.",
+      "scene": { "text": "이사 전날 옷장을 열며 '일 년 안 입은 건 다 버린다'고 선언합니다. 그런데 첫 공연 날 입었던 셔츠를 집어 들고는, 결국 그 옷만 따로 상자에 담습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이사 계획 단정",
+          "대인 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "climate:辛:autumn",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WATER:WEAK:INFP",
+      "myeongriId": "element:WATER:WEAK",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "score": 1.29,
+      "why": "수가 부족하면 감정을 쌓아 두지 않고 빨리 털고 다음으로 넘어가려는 힘이 큽니다. INFP는 반대로 Si가 상처의 결까지 보관하고, Fi가 그 의미를 오래 되새기는 사람이에요. 겉으로는 다음 날 먼저 웃으며 인사하는데, 그 장면은 몇 해가 지나도 마음 서랍에서 꺼내 볼 수 있습니다.",
+      "scene": { "text": "말다툼한 다음 날 아침, 먼저 '어제는 미안' 하며 커피를 건넵니다. 그날 들은 한마디는 이 년 뒤 비슷한 드라마 대사만 들어도 토씨까지 떠오릅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:WATER:WEAK",
         "mbti:INFP:functionStack",
         "추정"
       ]

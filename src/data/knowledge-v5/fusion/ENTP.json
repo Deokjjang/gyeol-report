@@ -34,7 +34,7 @@
       "dimension": "verbalOutput",
       "score": 2.39,
       "why": "식상이 넘치면 압력솥 추처럼 생각이 쉬지 않고 밖으로 새어 나옵니다. ENTP의 Ne는 사소한 질문 하나에서도 전혀 다른 주제로 건너가는 다리를 놓습니다. 생각이 입 밖으로 나오는 속도가 정리하는 속도보다 빨라, 뒷정리는 자주 남에게 넘어갑니다.",
-      "scene": { "text": "점심 메뉴를 고르다 '근데 왜 점심은 꼭 한 시간이에요?'로 시작해, 식당에 도착할 즈음엔 유연근무 기획안 목차를 말로 다 짜 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "점심 메뉴를 고르다 '근데 왜 점심은 꼭 한 시간이에요?'로 시작해, 식당에 도착할 즈음엔 유연근무 기획안 목차를 말로 다 짜 놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -106,7 +106,7 @@
       "dimension": "noveltySeeking",
       "score": 2.07,
       "why": "임인은 새벽 물레방아처럼 넓은 물을 새 숲과 새 일로 쉬지 않고 내보내고, 앉은자리 식신이 시작하는 힘을 키웁니다. ENTP에게는 한 달에도 부업 구상이 몇 개씩 생기고, 그중 하나쯤은 정말 등록까지 밀어붙입니다. 판을 여는 속도는 누구보다 빨라, 손에 쥔 일이 다섯을 넘기는 날이 흔합니다.",
-      "scene": { "text": "동네 빵집 줄에 서 있다가 '이거 구독제로 하면 되겠는데' 하며 휴대폰에 메모를 씁니다. 빵을 받을 즈음엔 가게 이름과 로고 후보까지 정해 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "동네 빵집 줄에 서 있다가 '이거 구독제로 하면 되겠는데' 하며 휴대폰에 메모를 씁니다. 빵을 받을 즈음엔 가게 이름과 로고 후보까지 정해 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -365,7 +365,7 @@
       "dimension": "noveltySeeking",
       "score": 1.42,
       "why": "충은 같은 극 자석을 맞댄 듯 마주 선 두 글자가 서로 밀어내 자리를 흔듭니다. 익숙한 자리가 세 번만 반복돼도 지루해지는 ENTP는, 바뀌는 판에서 숨을 쉽니다. 흔들림이 불편이 아니라 연료가 되는 대신, 머무는 연습이 없으면 뿌리 내릴 자리를 계속 미룹니다.",
-      "scene": { "text": "사무실 자리 배치가 바뀐 날 투덜대는 동료들 사이에서 혼자 신이 나 새 동선을 그려 봅니다. 석 달 뒤엔 그 자리도 지겹다며 창가 쪽으로 옮겨 달라고 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "사무실 자리 배치가 바뀐 날 투덜대는 동료들 사이에서 혼자 신이 나 새 동선을 그려 봅니다. 석 달 뒤엔 그 자리도 지겹다며 창가 쪽으로 옮겨 달라고 합니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -389,7 +389,7 @@
       "dimension": "noveltySeeking",
       "score": 1.41,
       "why": "목이 하나도 없으면 스스로 판을 열어 본 근육이 약해 정해진 선로 위에서 편합니다. ENTP는 반대로 사람들 반응이 달아오를수록 아이디어를 더 크게 부풀려 말합니다. 머릿속에는 갈림길이 수십 개인데 실제로 레버를 당겨 본 적은 드물어, 아이디어가 말로만 끝나는 날이 잦습니다.",
-      "scene": { "text": "술자리에서 창업 아이템을 다섯 개 쏟아 내고 반응도 뜨거웠는데, 다음 날 아침엔 늘 하던 업무 메일부터 엽니다. 메모장의 아이템 목록만 길어집니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "술자리에서 창업 아이템을 다섯 개 쏟아 내고 반응도 뜨거웠는데, 다음 날 아침엔 늘 하던 업무 메일부터 엽니다. 메모장의 아이템 목록만 길어집니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -495,6 +495,148 @@
       },
       "sources": [
         "climate:丙:summer",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:ENTP",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "riskTaking",
+      "score": 1.9,
+      "why": "정재는 정해진 수입을 꼼꼼히 모아 지키는 돈 감각이라, 내 지갑에서는 모험을 싫어합니다. ENTP의 Ne는 판을 크게 벌이는 대담한 아이디어를 즐기고, 말로는 누구보다 과감합니다. 친구 창업에는 '해 봐야 알지'를 외치면서, 자기 돈은 금리 0.1% 차이를 따져 적금에 넣습니다.",
+      "scene": { "text": "술자리에선 '망해도 배우는 거지!'로 친구의 창업을 부추기고, 집에 오는 길엔 은행 앱 두 개를 열어 적금 금리를 소수점까지 비교합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "금전 손실 단정",
+          "사업 성패 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲戌:ENTP",
+      "myeongriId": "dayPillar:甲戌",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.7,
+      "why": "갑술은 땅속에 정관이 숨어 있어, 한번 정한 선을 남에게도 똑같이 요구합니다. ENTP의 Ti는 남이 만든 규칙에 '그거 왜 해요?'부터 묻고 빈틈을 찾습니다. 남의 규칙엔 물음표를 달면서, 내가 만든 규칙에는 예외를 거의 두지 않습니다.",
+      "scene": { "text": "학교 다닐 때 교칙마다 '왜요?'를 달던 사람이, 자기가 만든 러닝 크루에선 '지각 세 번이면 그달 간식 담당'을 한 번도 봐주지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "인간관계 단절 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲戌",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:ENTP",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.56,
+      "why": "정관은 내가 한 '하겠습니다'를 계약서처럼 지키게 하는 글자입니다. ENTP는 Ne가 열어 둔 아이디어에 신이 나 '제가 해 볼게요'를 쉽게 꺼냅니다. 약속은 가볍게 나가는데 지키는 마음은 무거워서, 회의에서 던진 일 세 개를 결국 밤에 혼자 다 해냅니다.",
+      "scene": { "text": "모임에서 '포스터는 제가', '장소도 제가', '후원도 알아볼게요'를 연달아 말해 놓고, 그 주 내내 밤마다 하나씩 지우며 '내가 왜 그랬지'를 중얼거립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "상사 갈등 사건 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:癸丑:ENTP",
+      "myeongriId": "dayPillar:癸丑",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "riskTaking",
+      "score": 1.52,
+      "why": "계축은 참는 힘이 큰 만큼 한계에 닿으면 세게 끊어 내는 구성입니다. ENTP의 Ti는 사소한 의견 차이도 그 자리에서 따져 봐야 풀리는 쪽입니다. 작은 일에는 시끄럽게 따지는데, 정말 아픈 일은 말없이 쌓아 두다 어느 날 조용히 정리합니다.",
+      "scene": { "text": "라면에 식초를 넣느냐로는 한 시간을 떠들며 싸우던 사람이, 친구가 약속을 세 번째 깨자 아무 말 없이 단톡방 알림만 꺼 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "인간관계 단절 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:癸丑",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YIN_HEAVY:FEMALE:ENTP",
+      "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 1.36,
+      "why": "음의 글자가 많은 여성은 '조용하고 참하다'는 칭찬과 기운의 방향이 같아, 목소리가 안쪽에 머물기 쉽습니다. ENTP의 Ne와 Ti는 반론을 던지고 판을 흔들 때 가장 살아납니다. 머릿속엔 날카로운 반박이 이미 완성돼 있는데, 입 밖으로는 '혹시 이런 방법은요?'로 둥글게 나옵니다.",
+      "scene": { "text": "동네 모임 회의에서 상대 안의 구멍 세 개를 메모해 두고, 손을 들어서는 '제가 잘 몰라서 그런데요'로 첫마디를 엽니다. 그 질문 하나에 회의실이 조용해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "yinYang:YIN_HEAVY:FEMALE",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丁丑:ENTP",
+      "myeongriId": "dayPillar:丁丑",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.38,
+      "why": "정축은 일지 식신이 꾸준한 산출을 만드는 구성이라, 하루 조금씩 쌓는 일을 오래 이어 갑니다. ENTP의 Ne는 같은 일이 몇 주만 반복돼도 지루해하며 새 판을 찾습니다. 취미와 계획은 계절마다 갈아엎으면서, 손에 익은 작은 습관 하나만은 몇 년째 끊지 않습니다.",
+      "scene": { "text": "새 앱과 새 취미는 석 달마다 갈아타면서, 잠든 시각과 일어난 시각을 엑셀 한 줄에 적는 일은 4년째 하루도 거르지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丁丑",
         "mbti:ENTP:functionStack",
         "추정"
       ]

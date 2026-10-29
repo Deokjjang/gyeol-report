@@ -201,7 +201,7 @@
       "dimension": "boundarySetting",
       "score": 1.99,
       "why": "경술은 마당을 지키는 진돗개처럼 지킬 것과 들일 것의 선이 분명하고, 한번 굳힌 판단은 잘 다시 열지 않습니다. ISFP도 책상 한쪽, 손에 익은 펜처럼 '내 자리'에 대한 감각이 예민합니다. 그 선을 미리 말로 그어 두면 신뢰가 되고, 참기만 하면 어느 날 울타리가 소리 없이 한 칸 높아집니다.",
-      "scene": { "text": "옆자리 동료가 세 번째로 말없이 펜을 가져가자 그날은 웃고 넘기고, 다음 날 아침 펜꽂이에 이름 스티커를 붙여 둡니다. 그 뒤로 그 사람과는 업무 말만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "옆자리 동료가 세 번째로 말없이 펜을 가져가자 그날은 웃고 넘기고, 다음 날 아침 펜꽂이에 이름 스티커를 붙여 둡니다. 그 뒤로 그 사람과는 업무 말만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -225,7 +225,7 @@
       "dimension": "directness",
       "score": 1.98,
       "why": "ISFP가 가장 오래 미루는 말은 가격과 조건처럼 딱 잘라야 하는 문장입니다. 그런데 경금 일간은 녹슨 문도 한 번에 비트는 지렛대라, 미루던 말이 나올 때는 군더더기 없이 짧게 끊깁니다. 망설임은 길고 문장은 짧아서, 늦게 도착한 말이 예상보다 단단하게 들립니다.",
-      "scene": { "text": "작업 의뢰 견적을 묻는 메일에 사흘째 답을 못 쓰다가, 마침내 보낸 답장은 '30만 원입니다. 수정은 두 번까지.' 두 줄뿐입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "작업 의뢰 견적을 묻는 메일에 사흘째 답을 못 쓰다가, 마침내 보낸 답장은 '30만 원입니다. 수정은 두 번까지.' 두 줄뿐입니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -342,7 +342,7 @@
       "dimension": "introspection",
       "score": 1.79,
       "why": "해수는 초겨울 밤 멀리서 모여든 물이 크게 고이는 자리라 남의 감정까지 넓게 받아 품습니다. ISFP는 그렇게 받은 마음을 말로 돌려주기보다 혼자 음악을 고르고 손을 움직이며 천천히 소화합니다. 곱씹는 깊이가 생기는 대신, 남의 고민에 잠긴 밤엔 내 할 일이 뒤로 밀립니다.",
-      "scene": { "text": "늦은 밤 회사 일로 지친 친구의 전화를 끊고 나서, 그 친구가 좋아하던 노래만 모은 재생 목록을 만들어 말없이 링크만 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "scene": { "text": "늦은 밤 회사 일로 지친 친구의 전화를 끊고 나서, 그 친구가 좋아하던 노래만 모은 재생 목록을 만들어 말없이 링크만 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -412,7 +412,7 @@
       "dimension": "empathyResponse",
       "score": 1.59,
       "why": "묘목은 철망을 타는 덩굴손처럼 분위기의 결을 먼저 읽고, 부딪히지 않게 일을 돌려놓습니다. ISFP 역시 마음을 정면으로 말하기보다 기억해 둔 취향 하나로 슬쩍 건네는 사람입니다. 그 손길은 상대에게 잘 닿지만, 원하는 것까지 돌려 말하다 '알아서 알아주겠지'에 혼자 서운해집니다.",
-      "scene": { "text": "아끼는 동료가 지나가듯 말한 동네 빵집을 기억해 두었다가, 그 빵을 사 와 '많이 샀어요' 하며 탕비실에 두고 갑니다. 누가 샀냐는 말엔 웃기만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "아끼는 동료가 지나가듯 말한 동네 빵집을 기억해 두었다가, 그 빵을 사 와 '많이 샀어요' 하며 탕비실에 두고 갑니다. 누가 샀냐는 말엔 웃기만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -566,6 +566,151 @@
       },
       "sources": [
         "shinsal:GOEGANG",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬辰:ISFP",
+      "myeongriId": "dayPillar:壬辰",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "score": 1.67,
+      "why": "임진은 흩어진 사람과 일을 한데 모아 물밑에서 큰 판을 굴리려는 힘을 줍니다. ISFP는 남에게 지시하기보다 Se로 그날의 감각을 따라 움직이고, 판을 쥐는 자리는 비켜서는 편이에요. 그래서 속으로는 전체 그림을 다 그려 두고도, 입으로는 '다들 편한 대로 해요'라고 말합니다.",
+      "scene": { "text": "여행 가기 전엔 '난 다 좋아'라고만 해 놓고, 밤에 혼자 동선 지도와 식당 목록을 만들어 둡니다. 둘째 날 길이 꼬이자 그 지도를 슬쩍 꺼내 방향을 잡습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "리더 역할 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬辰",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲申:ISFP",
+      "myeongriId": "dayPillar:甲申",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "score": 1.54,
+      "why": "갑신은 압박과 평가가 걸릴수록 몸을 곧게 세우고 스스로 기준을 올리게 합니다. ISFP는 점수가 오가는 자리를 피하고, 그날 흐름에 몸을 맡기려는 Se가 앞서는 쪽이에요. 평소엔 느긋하다가 누가 지켜보는 마감이 걸리면, 딴사람처럼 할 일을 쳐내며 버팁니다.",
+      "scene": { "text": "기분 내킬 때만 강변을 뛰던 사람이 동네 마라톤을 접수하고 나서는 냉장고에 훈련표를 붙입니다. 비 오는 저녁에도 우비를 입고 나갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "시험 합격 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲申",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙午:ISFP",
+      "myeongriId": "dayPillar:丙午",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "verbalOutput",
+      "score": 1.46,
+      "why": "병오는 불 위에 불이 겹쳐, 기분이 오르면 말과 웃음이 한꺼번에 터져 나오게 합니다. ISFP의 Fi는 마음을 안에서 오래 고르고, 낯선 자리에선 말수를 아낍니다. 그래서 조용하다는 말을 듣던 사람이, 좋아하는 것 앞에서만 불이 확 붙어 주변이 놀랍니다.",
+      "scene": { "text": "모임 내내 고개만 끄덕이다가, 누가 좋아하는 밴드 이름을 꺼내자 공연장 음향 얘기를 이십 분 넘게 쏟아 냅니다. 집에 와서는 말이 너무 많았나 싶어 이불을 뒤집어씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙午",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:structure:WEALTH_HEAVY:ISFP",
+      "myeongriId": "structure:WEALTH_HEAVY",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.33,
+      "why": "재성이 강하면 무엇이 남고 무엇이 새는지 숫자로 따져 보는 눈이 먼저 뜹니다. ISFP는 손에 닿는 촉감과 그날 마음에 끌려 지갑을 열고, 계획을 세우는 Te는 가장 늦게 옵니다. 그래서 가격 비교는 누구보다 꼼꼼히 해 두고도, 마지막엔 마음이 끌린 쪽을 계산대에 올립니다.",
+      "scene": { "text": "니트 두 벌을 두고 울 함량과 한 번 입을 때 드는 값까지 메모장에 계산해 둡니다. 그러고는 소매를 한 번 더 만져 보고 비싼 쪽을 들고 계산대로 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정",
+          "투자 성패 단정"
+        ]
+      },
+      "sources": [
+        "structure:WEALTH_HEAVY",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:yinYang:YANG_HEAVY:FEMALE:ISFP",
+      "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.28,
+      "why": "여덟 글자 중 양이 많은 여성은 먼저 움직이고, 할 말도 바로 꺼내려는 힘이 큽니다. ISFP는 Se 덕에 몸은 재빨리 나가도, 마음을 말로 옮기는 일은 Fi가 한참 고른 뒤에야 합니다. 그래서 손은 누구보다 먼저 드는데, 그 손에 붙는 말은 가장 짧고 늦게 나옵니다.",
+      "scene": { "text": "횡단보도 앞에서 누가 장바구니를 쏟자 제일 먼저 뛰어가 귤을 줍습니다. 고맙다는 인사엔 고개만 꾸벅하고, 다들 흩어진 뒤에야 '조심히 가세요'를 혼잣말처럼 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown",
+          "genderKnown"
+        ],
+        "forbids": [
+          "외모 평가",
+          "성 역할 고정관념"
+        ]
+      },
+      "sources": [
+        "yinYang:YANG_HEAVY:FEMALE",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:relation:HYEONG:ISFP",
+      "myeongriId": "relation:HYEONG",
+      "mbtiTarget": "ISFP",
+      "kind": "tension",
+      "dimension": "conflictApproach",
+      "score": 1.2,
+      "why": "형은 가까운 것끼리 서로 깎고 고치게 해, 어긋난 부분을 그냥 넘기지 못하게 합니다. ISFP의 Fi는 그 지적이 상대 마음을 다치게 할까 봐 정면으로 말하는 대신 입을 닫아요. 그래서 고칠 마음은 사람 대신 물건과 작업물로 향하고, 보이지 않는 곳에서 조용히 다시 손봅니다.",
+      "scene": { "text": "동생이 조립한 책장이 살짝 기운 걸 보고 '잘했네' 하고 웃습니다. 동생이 방을 나가자마자 드라이버를 꺼내 나사를 하나씩 다시 조입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "가족 갈등 사건 단정",
+          "법적 분쟁 단정"
+        ]
+      },
+      "sources": [
+        "relation:HYEONG",
         "mbti:ISFP:functionStack",
         "추정"
       ]

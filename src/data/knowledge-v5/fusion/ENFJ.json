@@ -10,7 +10,7 @@
       "dimension": "caretaking",
       "score": 2.6,
       "why": "계미는 땡볕 밭에 한 방울씩 스며드는 물이라, 메마른 사람 곁에서 조용히 일합니다. ENFJ의 Fe는 방 안에서 말을 삼킨 사람을 먼저 찾아냅니다. 지친 사람을 알아보는 눈과 끝까지 적셔 주는 손이 한 사람 안에 있지만, 일지 편관 탓에 부탁을 전부 내 책임으로 받습니다.",
-      "scene": { "text": "회식 자리 끝에서 말없이 앉아 있던 막내 옆으로 옮겨 앉고, 다음 날 아침 그 책상에 꿀물 한 병과 '어제 고생했어요' 메모를 붙여 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "회식 자리 끝에서 말없이 앉아 있던 막내 옆으로 옮겨 앉고, 다음 날 아침 그 책상에 꿀물 한 병과 '어제 고생했어요' 메모를 붙여 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -58,7 +58,7 @@
       "dimension": "caretaking",
       "score": 2.34,
       "why": "기해는 떠내려온 것을 다 받아 쉬게 하는 강 가운데 모래톱입니다. ENFJ의 Ni는 상대가 내일 아침 어디서 막힐지를 미리 그려 봅니다. 위로가 말에서 끝나지 않고 막힐 자리의 짐을 실제로 덜어 주는데, 자기 몫은 늘 맨 뒤에 남습니다.",
-      "scene": { "text": "자취를 시작한 친구가 '밥을 어떻게 해 먹지' 하자, 다음 날 반찬 가게 세 곳 위치와 일주일 장보기 목록을 정리해 보내 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "자취를 시작한 친구가 '밥을 어떻게 해 먹지' 하자, 다음 날 반찬 가게 세 곳 위치와 일주일 장보기 목록을 정리해 보내 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -296,7 +296,7 @@
       "dimension": "caretaking",
       "score": 1.72,
       "why": "천의성은 아픈 사람과 지친 마음을 먼저 알아보고 손을 쓰는 감각입니다. 쉬던 사람이 돌아올 때 어색하지 않도록 자리부터 만들어 두는 게 ENFJ입니다. 알아보는 눈과 자리를 만드는 손이 겹쳐 돌봄이 회복까지 이어지는데, 모두의 아픔을 떠안으면 그 돌봄이 의무로 바뀝니다.",
-      "scene": { "text": "쉬느라 휴직한 동료에게 매주 금요일 짧은 안부를 보내고, 복직 첫날엔 그 사람 책상에 작은 화분과 밀린 일정 정리 메모를 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "쉬느라 휴직한 동료에게 매주 금요일 짧은 안부를 보내고, 복직 첫날엔 그 사람 책상에 작은 화분과 밀린 일정 정리 메모를 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -664,6 +664,148 @@
       },
       "sources": [
         "twelveStage:養",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚戌:ENFJ",
+      "myeongriId": "dayPillar:庚戌",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 1.57,
+      "why": "경술은 마른 흙에 단련된 쇠라, 들일 사람과 막을 사람의 선을 분명히 긋고 그 선을 압박에도 내주지 않습니다. ENFJ의 Fe는 문 앞에 선 누구든 일단 안으로 데려오고 싶어 합니다. 그래서 처음 본 사람도 활짝 반기지만, 속으로 매긴 믿음의 점수는 몇 년에 걸쳐 한 칸씩만 오릅니다.",
+      "scene": { "text": "새로 이사 온 옆집 사람을 저녁에 불러 찌개까지 싸 보내면서도, 현관 비밀번호는 십 년 지기 한 명에게만 알려 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "인간관계 사건 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚戌",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚子:ENFJ",
+      "myeongriId": "dayPillar:庚子",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 1.52,
+      "why": "경자는 앉은자리 상관이 생각을 곧장 날 선 문장으로 내보내, 분석이 다듬어지기 전에 입끝에 와 있습니다. ENFJ의 Fe는 상대 얼굴이 굳지 않을 표현부터 찾습니다. 맞는 말을 감쌀 포장지를 고르느라, 피드백 한마디에 남보다 시간이 두 배로 듭니다.",
+      "scene": { "text": "친구가 보낸 자기소개서에 고칠 곳 열두 군데를 빨간 글씨로 달아 놓고, 보내기 직전 맨 위에 '전체적으로 진짜 좋아!'와 웃는 얼굴 세 개를 붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚子",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:庚:winter:ENFJ",
+      "myeongriId": "climate:庚:winter",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 1.5,
+      "why": "겨울 경금은 불을 쬐지 못하면 머리만 맑고 마음은 식어, 혼자일 때 하루를 숫자와 사실로 정리합니다. ENFJ는 사람들 얼굴을 마주해야 Fe가 켜지고 기운이 돕니다. 모임에선 누구보다 따뜻한데, 집에 돌아와 혼자가 되면 같은 사람이 서늘한 계산기로 바뀝니다.",
+      "scene": { "text": "모임에선 막내 잔이 빈 것까지 챙기며 웃다가, 귀갓길 버스에선 메모 앱에 오늘 쓴 돈과 다음엔 고칠 점 세 가지를 번호 붙여 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "climate:庚:winter",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚申:ENFJ",
+      "myeongriId": "dayPillar:庚申",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "score": 1.24,
+      "why": "경신은 쇠 위에 쇠가 앉은 구성이라, 자기 손의 속도를 남에게도 그대로 기대합니다. ENFJ의 Ni는 서툰 사람이 몇 달 뒤 해낼 모습을 믿고 기다리려 합니다. 기다려 주겠다고 마음먹은 입과 대신 해 버리고 싶은 손이 같은 자리에서 다툽니다.",
+      "scene": { "text": "친구 운전 연수를 맡아 조수석에서 '천천히 해도 돼'를 열 번 말하고, 세 번째 주차를 다시 할 땐 자기도 모르게 핸들 쪽으로 손이 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "사고 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚申",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:GWASUKSAL:ENFJ",
+      "myeongriId": "shinsal:GWASUKSAL",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 1.2,
+      "why": "과숙살은 사람을 천천히 믿는 별이라, 속마음을 여는 문이 반 걸음 뒤에서 늦게 열립니다. ENFJ는 Fe로 먼저 다가가 상대의 속 얘기를 잘 끌어냅니다. 그래서 내 고민을 아는 사람보다 내게 고민을 털어놓은 사람이 훨씬 많고, 그 차이를 주변은 잘 모릅니다.",
+      "scene": { "text": "자기 생일 모임에서도 친구들 근황을 하나하나 묻다가, 누가 '그래서 너는 요즘 어때?' 하면 '나야 똑같지' 하고 얼른 케이크 칼을 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "결혼 시기 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:GWASUKSAL",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:壬:winter:ENFJ",
+      "myeongriId": "climate:壬:winter",
+      "mbtiTarget": "ENFJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.2,
+      "why": "겨울 임수는 비겁이 강한 큰물이라, 큰 결정일수록 기대지 않고 혼자 정해 혼자 집니다. ENFJ는 Fe로 주변 뜻을 살피며 작은 일도 함께 고르는 쪽이 편합니다. 점심 메뉴는 단톡방 투표로 정하면서, 이사처럼 큰일은 다 정한 뒤에야 알립니다.",
+      "scene": { "text": "카페 디저트 하나 고를 때도 '뭐가 나아?'를 묻던 사람이, 어느 날 '나 다음 달에 부산 내려가' 하며 이미 계약한 집 사진을 보여 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이사 시기 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:壬:winter",
         "mbti:ENFJ:functionStack",
         "추정"
       ]

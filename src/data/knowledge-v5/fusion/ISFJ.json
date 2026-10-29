@@ -10,7 +10,7 @@
       "dimension": "caretaking",
       "score": 3.06,
       "why": "계미는 땡볕 밭에 물을 한 방울씩 대는 호스라, 마른 사람 곁에 조용히 스며듭니다. ISFJ의 Fe는 웃고 있는 얼굴에서도 피곤한 기색을 먼저 읽어 냅니다. 둘이 겹치면 돌봄이 습관을 넘어 생활이 되고, 거절은 그만큼 더 어려워집니다.",
-      "scene": { "text": "팀 막내가 점심을 거른 걸 알아채고, 오후 세 시쯤 말없이 그 책상에 삼각김밥과 두유를 놓고 돌아섭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "팀 막내가 점심을 거른 걸 알아채고, 오후 세 시쯤 말없이 그 책상에 삼각김밥과 두유를 놓고 돌아섭니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -247,7 +247,7 @@
       "dimension": "caretaking",
       "score": 1.99,
       "why": "봄의 계수는 잎마다 물을 내주고 해가 뜨면 사라지는 이슬이라, 곁의 사람과 일이 조용히 살아납니다. ISFJ는 비어 있는 주말이 생겨도 남의 부탁과 다음 주 준비로 금세 채워 버리는 사람이고요. 나무 글자가 많은 구성일수록 당신 몫의 물이 먼저 마릅니다.",
-      "scene": { "text": "토요일엔 친구 가게 오픈 준비를 돕고 일요일엔 동료 발표 자료를 봐 줍니다. 일요일 밤에야 '나 이번 주말에 뭐 했지' 하며 텅 빈 개인 일정 칸을 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "business" } },
+      "scene": { "text": "토요일엔 친구 가게 오픈 준비를 돕고 일요일엔 동료 발표 자료를 봐 줍니다. 일요일 밤에야 '나 이번 주말에 뭐 했지' 하며 텅 빈 개인 일정 칸을 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -293,7 +293,7 @@
       "dimension": "boundarySetting",
       "score": 1.83,
       "why": "금이 얇으면 받아 주는 힘은 큰데 자르고 끝맺는 칼이 무뎌, 받은 부탁이 정리되지 않고 쌓입니다. ISFJ는 한번 맡은 일을 끝까지 책임지려는 마음이 커서, 그만둘 시점을 스스로 정하지 못합니다. 임시로 받은 일이 고정 업무가 되고, 배려라고 넘긴 일이 금요일 저녁의 피로로 돌아옵니다.",
-      "scene": { "text": "옆 팀 선배가 '이번 한 번만' 부탁한 회의록 정리가 넉 달째 당신 일이 됐습니다. 매주 화요일 파일을 열 때마다 꺼낼 문장만 고르다 닫습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "옆 팀 선배가 '이번 한 번만' 부탁한 회의록 정리가 넉 달째 당신 일이 됐습니다. 매주 화요일 파일을 열 때마다 꺼낼 문장만 고르다 닫습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -438,7 +438,7 @@
       "dimension": "dutifulness",
       "score": 1.6,
       "why": "무토는 높고 두터운 돌담처럼 버티며 그 뒤의 것들을 지켜 냅니다. ISFJ는 낯선 가능성을 가장 늦게 받아들이는 Ne를 가져서, 아끼는 사람이 새 길을 꺼내면 응원보다 걱정 목록이 먼저 나옵니다. 들은 비밀은 새지 않지만, 성벽이 손님도 막듯 걱정이 상대의 발걸음까지 붙잡기 쉽습니다.",
-      "scene": { "text": "친한 후배가 회사를 그만두고 공부하러 떠나겠다고 하자 '해 봐'보다 먼저 통장 잔고와 서류 목록을 묻습니다. 그 주에 몰래 공항 가는 버스 시간표를 찾아 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "scene": { "text": "친한 후배가 회사를 그만두고 공부하러 떠나겠다고 하자 '해 봐'보다 먼저 통장 잔고와 서류 목록을 묻습니다. 그 주에 몰래 공항 가는 버스 시간표를 찾아 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -510,7 +510,7 @@
       "dimension": "dutifulness",
       "score": 1.54,
       "why": "관성이 많으면 책임과 규칙이 사방에서 눌러, 잘 지키지만 긴장이 좀처럼 풀리지 않습니다. ISFJ의 Fe는 '실망시키면 어쩌지'에 유난히 예민해서, 일이 남아 있으면 몸이 쉬어도 마음은 퇴근을 못 합니다. 조직이 가장 안심하고 맡기는 사람이 되는 대신, '해야 하는 것'이 쉬는 시간까지 차지합니다.",
-      "scene": { "text": "여름휴가 첫날 아침에도 공용 메일함을 열어 밀린 건이 없는지 확인합니다. 그다음에야 여행 가방 지퍼를 잠급니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "여름휴가 첫날 아침에도 공용 메일함을 열어 밀린 건이 없는지 확인합니다. 그다음에야 여행 가방 지퍼를 잠급니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown"
@@ -558,7 +558,7 @@
       "dimension": "caretaking",
       "score": 1.47,
       "why": "음의 글자가 많은 남성은 해 진 뒤에야 꽃잎을 여는 달맞이꽃처럼 조용히 고르고 뒤에서 마무리합니다. ISFJ는 고맙다는 말을 들을 자리보다 아무도 모르게 도울 수 있는 자리를 더 편해하지요. 챙김의 섬세함은 두 배지만, '남자가 앞장서야지'라는 기대에 맞춰 목소리를 억지로 키우면 그 장점이 묻힙니다.",
-      "scene": { "text": "회식 자리에서 건배사는 끝까지 사양하고, 대신 술 못 마시는 동료 잔에 몰래 사이다를 채워 둡니다. 돌아가는 길엔 막차 놓친 후배의 택시를 불러 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "scene": { "text": "회식 자리에서 건배사는 끝까지 사양하고, 대신 술 못 마시는 동료 잔에 몰래 사이다를 채워 둡니다. 돌아가는 길엔 막차 놓친 후배의 택시를 불러 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
       "factBoundary": {
         "requires": [
           "mbtiKnown",
@@ -643,6 +643,150 @@
         "branch:卯",
         "mbti:ISFJ:functionStack",
         "mbti:ISFJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGodBalance:OFFICER:WEAK:ISFJ",
+      "myeongriId": "tenGodBalance:OFFICER:WEAK",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.44,
+      "why": "관성이 약하면 직함이나 윗선의 지시가 나를 꽉 붙잡지 못해, 남이 그은 선이 자주 느슨해집니다. ISFJ의 Si는 반대로 익숙한 순서가 있어야 안심하는 기억 창고예요. 그래서 남이 정한 규칙엔 덜 매이면서, 스스로 만든 순서표는 누구보다 꼼꼼히 지킵니다.",
+      "scene": { "text": "아무도 마감을 정해 주지 않은 동네 바자회 준비를 미루다가, 전날 밤 혼자 체크리스트 스무 줄을 써 놓고 새벽 두 시까지 한 줄씩 지워 나갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 형태 단정",
+          "업무 태만 단정"
+        ]
+      },
+      "sources": [
+        "tenGodBalance:OFFICER:WEAK",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:structure:OUTPUT_HEAVY:ISFJ",
+      "myeongriId": "structure:OUTPUT_HEAVY",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "score": 1.39,
+      "why": "식상이 판을 이끌면 손으로 만든 것을 내보이고 반응을 듣고 싶은 마음이 계속 올라옵니다. ISFJ의 Fe는 칭찬받는 자리보다 남이 편한 자리를 먼저 고르고, 내 공은 뒤로 숨기려 해요. 손은 쉬지 않고 뭔가를 만들어 내는데, '이거 누가 했어?' 앞에서는 대답이 작아집니다.",
+      "scene": { "text": "주말 내내 구운 쿠키를 상자마다 리본으로 묶어 이웃에게 돌립니다. 맛있다는 메시지는 몰래 캡처해 두면서, 답장은 '별거 아니에요' 한 줄로 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "창작 활동 단정"
+        ]
+      },
+      "sources": [
+        "structure:OUTPUT_HEAVY",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:EARTH:MISSING:ISFJ",
+      "myeongriId": "element:EARTH:MISSING",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 1.14,
+      "why": "토가 없으면 생활의 중심을 오래 붙박아 둔 경험이 적어, 바깥 틀이 사라지면 하루가 쉽게 흩어집니다. ISFJ의 Si는 같은 길, 같은 가게, 같은 순서를 지키며 그 빈자리를 메우려 해요. 그래서 루틴이 살아 있는 평일엔 단단한데, 일정이 통째로 빈 연휴엔 오히려 마음이 떠다닙니다.",
+      "scene": { "text": "긴 연휴 첫날, 알람 없이 눈을 뜨고 한참 천장만 보다가 결국 평일처럼 아홉 시에 동네 빵집에 가서 늘 사던 소금빵 두 개를 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이사·이직 사건 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "element:EARTH:MISSING",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:ISFJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "score": 1.12,
+      "why": "상관은 낡은 방식의 허점을 짚고 더 나은 말로 고쳐 쓰고 싶은 충동을 줍니다. ISFJ의 Fe는 그 말이 분위기를 깨거나 누군가를 민망하게 할까 봐 먼저 입을 막아요. 고칠 점은 누구보다 많이 보는데, 그 목록은 대개 내 메모장 안에서만 길어집니다.",
+      "scene": { "text": "동네 도서관 봉사 첫날, 대출 장부 쓰는 순서가 번거로운 걸 바로 알아채고도 말없이 따라 적습니다. 그날 밤 메모 앱에 '이렇게 바꾸면 반으로 줄 텐데'를 세 줄 남깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "상사 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:YANGIN:ISFJ",
+      "myeongriId": "shinsal:YANGIN",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "score": 1.12,
+      "why": "양인은 내 사람과 내 자리를 건드리면 칼자루부터 쥐게 하는 강한 방어 본능을 줍니다. ISFJ의 Fe는 다툼이 생길 바에야 내가 조금 손해 보는 쪽을 고르고요. 그래서 내 몫은 쉽게 양보하다가도, 아끼는 사람이 부당한 일을 겪으면 평소와 딴판으로 단호해집니다.",
+      "scene": { "text": "내 국에서 머리카락이 나왔을 땐 조용히 건져 내고 먹었는데, 같이 간 동생 주문이 세 번째 밀리자 직원을 불러 '이건 아니죠'라고 또박또박 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "다툼 사건 단정",
+          "폭력성 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:YANGIN",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_MANGSINSAL:ISFJ",
+      "myeongriId": "shinsal:TWELVE_MANGSINSAL",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 1.07,
+      "why": "망신살은 다 정리되지 않은 속마음을 표정과 말끝으로 먼저 새어 나가게 합니다. ISFJ는 서운해도 Fe로 분위기부터 챙겨 '괜찮아'로 덮으려는 사람이에요. 입은 괜찮다는데 얼굴이 먼저 말해 버려서, 감춘다고 감춘 마음을 주변이 다 알아채는 날이 생깁니다.",
+      "scene": { "text": "단골 미용실에서 생각보다 짧게 잘린 머리를 보고 '괜찮아요, 예쁘네요'라고 말합니다. 거울 속 표정을 본 원장님이 먼저 '다음에 무료로 다듬어 드릴게요' 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "외모 평가"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_MANGSINSAL",
+        "mbti:ISFJ:functionStack",
         "추정"
       ]
     }
