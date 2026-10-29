@@ -52,7 +52,7 @@ describe("collectFeatureHits: id 무결성", () => {
       }
     }
     expect(total).toBeGreaterThan(600 * 20);
-  });
+  }, 30_000); // 600차트: 단독 4~5초, 전체 스위트 부하에서 기본 5초를 넘는다
 });
 
 describe("collectFeatureHits: 가족별 매핑", () => {

@@ -98,7 +98,7 @@ function prep() {
 
 function allSentenceKeys(exclude) {
   const keys = new Map();
-  const walk = (v, where) => { if (typeof v === "string") { for (const s of sentences(v)) { const k = norm(s); if (k.length >= 12 && !exclude.has(v)) keys.set(k, where); } } else if (Array.isArray(v)) v.forEach((x, i) => walk(x, where)); else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (k !== "sources" && k !== "id") walk(x, where); };
+  const walk = (v, where) => { if (typeof v === "string") { for (const s of sentences(v)) { const k = norm(s); if (k.length >= 12 && !exclude.has(v)) keys.set(k, where); } } else if (Array.isArray(v)) v.forEach(x => walk(x, where)); else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (k !== "sources" && k !== "id") walk(x, where); };
   for (const dir of ["myeongri", "mbti", "fusion", "timeline"]) for (const f of fs.readdirSync(path.join(K, dir))) walk(JSON.parse(fs.readFileSync(path.join(K, dir, f), "utf8")), `${dir}/${f}`);
   return keys;
 }

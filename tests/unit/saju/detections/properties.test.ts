@@ -53,14 +53,14 @@ describe("시간 미상 → 시주 관여 0건", () => {
       expect(json).not.toContain('"hour"');
       for (const hit of collectFeatureHits(saju, det)) expect(hit.positions).not.toContain("hour");
     }
-  });
+  }, 30_000);
   it("시간을 알면 hourIncluded=true이고 시지 운성이 있다", () => {
     for (const saju of known) {
       const det = analyzeChartDetections(saju);
       expect(det.hourIncluded).toBe(true);
       expect(det.twelveStages.map((t) => t.position)).toContain("hour");
     }
-  });
+  }, 30_000);
 });
 
 describe("결정론", () => {
@@ -70,7 +70,7 @@ describe("결정론", () => {
       expect(analyzeChartDetections(again)).toEqual(analyzeChartDetections(saju));
       expect(collectFeatureHits(again, analyzeChartDetections(again))).toEqual(collectFeatureHits(saju, analyzeChartDetections(saju)));
     }
-  });
+  }, 30_000);
 });
 
 describe("유입 관계", () => {
@@ -90,5 +90,5 @@ describe("유입 관계", () => {
       }
     }
     expect(relationCount).toBeGreaterThan(100);
-  });
+  }, 30_000);
 });
