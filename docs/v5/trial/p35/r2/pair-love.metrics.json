@@ -1,0 +1,38 @@
+{
+ "case": "pair-love",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1254,
+  1345,
+  1367,
+  1288,
+  1298,
+  1234,
+  1160,
+  1213,
+  1211
+ ],
+ "total": 11370,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "warnings": [],
+ "briefCopy": {
+  "sentences": 221,
+  "matched": 5,
+  "ratio": 0.023,
+  "writerSentences": 221,
+  "writerMatched": 5,
+  "writerRatio": 0.023
+ },
+ "connectors": [],
+ "merged": 0,
+ "backrefFixed": 1,
+ "jobMentions": 0,
+ "sceneHintsUsed": "0/0",
+ "score": 49,
+ "band": "노력이 필요한"
+}

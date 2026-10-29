@@ -1,0 +1,20 @@
+[
+ {
+  "pair": "c1-full × x-full",
+  "sentences": 551,
+  "matched": 0,
+  "ratio": 0
+ },
+ {
+  "pair": "c1-full × y-full",
+  "sentences": 553,
+  "matched": 0,
+  "ratio": 0
+ },
+ {
+  "pair": "x-full × y-full",
+  "sentences": 532,
+  "matched": 0,
+  "ratio": 0
+ }
+]
