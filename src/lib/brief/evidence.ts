@@ -49,7 +49,7 @@ function starEvidence(key: string, label: string, saju: SajuCalcResult, det: Cha
 
 function palaceEvidence(key: string, label: string, position: ChartPosition, saju: SajuCalcResult, det: ChartDetections, k: Knowledge): Evidence {
   const pillar = saju.pillars[position];
-  if (!pillar || (position === "hour" && !det.hourIncluded)) return { kind: "evidence", key, facts: [`출생시간을 몰라 ${label}(태어난 시각의 땅 글자)는 보지 않습니다. 본문에서 이 자리를 말하지 않습니다.`] };
+  if (!pillar || (position === "hour" && !det.hourIncluded)) return { kind: "evidence", key, facts: [`보류: 출생시간을 몰라 ${label.replace(/\(.*\)$/, "")}는 보지 않습니다. 본문에서 이 자리를 말하지 않습니다.`] };
   const b = pillar.branch; const f = k.features.get(`branch:${b}`);
   const stage = det.twelveStages.find(s => s.position === position);
   const stageF = stage ? k.features.get(`twelveStage:${stage.stage}`) : undefined;

@@ -1,7 +1,7 @@
 /**
  * 안전망 문장 검사(P3 D, 결정론·호출 0). 위반 문장은 지우고 기록한다.
  * 삭제: 날짜·시기 + 사건 확정 / 입력에 없는 사실(연인·배우자·자녀·직업 형태) / 시간 미상인데 시주·자녀 자리 / MBTI 없음인데 MBTI /
- *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치.
+ *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치 / 책 안에서 이미 나온 같은 문장(20자 이상, 뒤의 것).
  * 경고(지우지 않음): 과거 경험 단정, 용어가 쉬운 말 없이 먼저 나옴.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
@@ -14,7 +14,7 @@ export type SafetyFacts = {
   readonly children: "has" | "none" | "unknown";
   readonly job: "employed" | "business" | "student" | "none";
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 
 const CONDITIONAL = /(되면|된다면|생기면|생긴다면|만나면|만난다면|라면|이라면|할 때|하게 될|언젠가|훗날|앞으로|미래의|만약|혹시|키우게|키운다면|함께 살게|함께 산다면|결혼한다면|결혼하면|할수록|마음에 둔|좋아하는 사람)/;
@@ -33,7 +33,7 @@ const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
 const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\})/;
 
-const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
+export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
 const exampleWindows = (() => {
   const set = new Set<string>();
@@ -73,11 +73,12 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
 }
 
 /** 문단에서 위반 문장을 지운다. */
-export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>): string {
+export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>): string {
   const kept: string[] = [];
   for (const s of splitSentences(p)) {
-    const rule = sentenceViolation(s, f, allowed);
-    if (rule) deletions.push({ chapter, rule, sentence: s }); else kept.push(s);
+    const key = norm(s);
+    const rule = sentenceViolation(s, f, allowed) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
+    if (rule) deletions.push({ chapter, rule, sentence: s }); else { kept.push(s); if (key.length >= 20) seen?.add(key); }
   }
   return kept.join(" ");
 }

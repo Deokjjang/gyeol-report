@@ -8,6 +8,8 @@ import { josa } from "@/lib/brief/labels";
 import type { Brief, Material, Trait } from "@/lib/brief/schema";
 import type { BookChapter, BookSection } from "../format";
 import type { WriterChapter } from "../prompt";
+import { splitSentences } from "../safety/patterns";
+import { norm } from "../safety/sentences";
 
 const noHan = (s: string) => s.replace(/\s*\([^)]*[一-鿿][^)]*\)/g, "").replace(/[一-鿿]+/g, "").replace(/\s{2,}/g, " ").trim();
 const sentence = (s: string) => { const t = s.trim(); return !t ? "" : /[.!?]$/.test(t) ? t : `${t}.`; };
@@ -93,7 +95,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
 }
 
 function evidenceSection(m: Extract<Material, { kind: "evidence" }>): BookSection | null {
-  const facts = m.facts.filter(f => !/보류/.test(f)).map(f => noHan(f));
+  const facts = m.facts.filter(f => !/보류|보지 않습니다/.test(f)).map(f => noHan(f));
   if (!facts.length) return null;
   return { heading: EVIDENCE_HEAD[m.key] ?? "타고난 근거", paragraphs: [join(...facts)] };
 }
@@ -112,8 +114,23 @@ function timelineSection(ctx: Ctx, key: string, extra: readonly Material[]): Boo
   )] };
 }
 
-/** 장 하나를 결정론으로 쓴다. keys가 주어지면 그 key만(반복 장 누락 보충). */
-export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[] } = {}): BookChapter {
+/** 책 안에서 이미 나온 문장(avoid)과 이 장에서 이미 쓴 문장은 뺀다. 반복 장(keepEmpty)은 키를 지우지 않고, 다 빠진 키는 원래 문단을 둔다. */
+function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, keepEmpty: boolean): BookSection[] {
+  const local = new Set<string>();
+  const out = sections.map(s => {
+    const paragraphs = s.paragraphs.map(p => splitSentences(p).filter(x => { const k = norm(x); if (k.length >= 20 && (avoid.has(k) || local.has(k))) return false; local.add(k); return true; }).join(" ")).filter(Boolean);
+    return { ...s, paragraphs: keepEmpty && !paragraphs.length ? s.paragraphs : paragraphs };
+  });
+  return keepEmpty ? out : out.filter(s => s.paragraphs.length);
+}
+
+/** 장 하나를 결정론으로 쓴다. keys가 주어지면 그 key만(반복 장 누락 보충). avoid: 책 안에서 이미 쓴 문장(정규화). */
+export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[]; avoid?: ReadonlySet<string> } = {}): BookChapter {
+  const chapter = writeChapter(brief, ch, opts);
+  return { ...chapter, sections: dedupe(chapter.sections, opts.avoid ?? new Set(), Boolean(ch.keys)) };
+}
+
+function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[] }): BookChapter {
   const ctx: Ctx = { brief, rng: createRng(fnv1a(`${brief.seed}:${ch.id}:deterministic`)), you: brief.person.callName, used: new Set() };
   if (ch.keys) {
     const keys = opts.keys ?? ch.keys;

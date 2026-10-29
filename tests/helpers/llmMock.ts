@@ -6,6 +6,8 @@ import type { Brief } from "@/lib/brief/schema";
 import { writeDeterministicChapter } from "@/lib/writer/deterministic";
 import { renderChapter } from "@/lib/writer/format";
 import { buildWriterPrompt, type WriterChapter } from "@/lib/writer/prompt";
+import { splitSentences } from "@/lib/writer/safety/patterns";
+import { norm } from "@/lib/writer/safety/sentences";
 
 export type MockBehavior = { status?: number; text?: string; cutAt?: number; finish?: "completed" | "incomplete"; hang?: boolean };
 export type MockCall = { body: Record<string, unknown> };
@@ -47,9 +49,14 @@ export function mockOpenAi(behaviors: MockBehavior[]): { fetch: typeof fetch; ca
 /** 목업 작가 원고: 결정론 장 + 장마다 다른 덧붙임 문단(분량 하한을 넘기도록). */
 export function mockBookText(brief: Brief, chapters?: readonly WriterChapter[]): string {
   const plan = chapters ?? buildWriterPrompt(brief).chapters;
+  const avoid = new Set<string>(); // 실제 작가처럼 책 안에서 같은 문장을 두 번 쓰지 않는다
   return plan.map(ch => {
-    const c = writeDeterministicChapter(brief, ch);
-    const extra = ch.keys ? [] : [{ heading: `${ch.n}장을 덮으며`, paragraphs: [`이 장에서 본 모습은 하루아침에 생긴 것이 아니라 오래 다듬어진 결입니다. 그래서 작은 습관 하나만 바꿔도 결과가 달라지는 편이에요. 오늘 한 가지를 골라 일주일만 지켜보세요. 그게 ${ch.n}장의 숙제입니다.`] }];
+    const c = writeDeterministicChapter(brief, ch, { avoid });
+    for (const s of c.sections) for (const p of s.paragraphs) for (const x of splitSentences(p)) avoid.add(norm(x));
+    // 분량 하한을 넘기도록 장 번호가 들어간(책 안에서 겹치지 않는) 덧붙임 문단.
+    const filler = [`${ch.n}장에서 본 모습은 하루아침에 생긴 것이 아니라 오래 다듬어진 결입니다.`, `그래서 ${ch.n}장의 결은 작은 습관 하나만 바꿔도 결과가 달라지는 편이에요.`, `오늘 ${ch.n}장에서 한 가지를 골라 일주일만 지켜보세요.`, `그게 ${ch.n}장의 숙제이고, 일주일 뒤 ${ch.n}장을 다시 펼치면 달라진 점이 보입니다.`, `${ch.n}장의 이야기를 누군가에게 한 줄로 말해 보는 것도 좋은 연습입니다.`];
+    const chars = c.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0);
+    const extra = ch.keys ? [] : Array.from({ length: Math.max(1, Math.ceil((1100 - chars) / 200)) }, (_, i) => ({ heading: `${ch.n}장을 덮으며 ${i + 1}`, paragraphs: [filler.map(x => `${x.replace(/\.$/, "")}(${i + 1}).`).join(" ")] }));
     return renderChapter({ ...c, sections: [...c.sections, ...extra] });
   }).join("\n\n") + "\n";
 }

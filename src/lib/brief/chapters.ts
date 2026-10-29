@@ -30,7 +30,8 @@ const AUX: Record<string, string[]> = {
   "saju_mbti_full/why": ["ref:chart.elements", "ref:chart.yinYang"],
   "saju_mbti_full/tension": ["fusion:tension"],
   "saju_mbti_full/strengths": ["ref:fortunes"],
-  "saju_mbti_full/work-money": ["mbti:work", "ref:chart.thisYear"],
+  // 올해 기운 한 줄은 '지금의 흐름' 장 하나에만 둔다(P3 전체 원고 시험: 6장·11장 중복).
+  "saju_mbti_full/work-money": ["mbti:work", "mbti:money"],
   "saju_mbti_full/relationships": ["mbti:relationships"],
   "saju_mbti_full/love": ["mbti:love"],
   "saju_mbti_full/fact-bomb": ["shadow", "shadow"],

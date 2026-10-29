@@ -176,7 +176,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
   const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
   for (const [key, m] of Object.entries(evidence)) if (m.kind === "evidence") {
-    const facts = m.facts.map(t => splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative)/.test(sentenceViolation(x, esf) ?? "")).join(" ")).filter(Boolean);
+    // 시주 규칙은 빼고 본다: 시간 미상이면 근거 쪽에 '자녀 자리는 보지 않습니다' 같은 유보 안내가 들어 있다.
+    const facts = m.facts.map(t => splitSentences(t).filter(x => !/^(fact_|old_negative)/.test(sentenceViolation(x, esf) ?? "")).join(" ")).filter(Boolean);
     evidence[key] = { ...m, facts: facts.length ? facts : m.facts.slice(0, 1) };
   }
   const has = (ref: string): boolean => {
