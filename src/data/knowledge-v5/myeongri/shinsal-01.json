@@ -29,7 +29,7 @@
           { "text": "같은 과자라도 용량과 가격을 휴대폰 계산기로 나눠 보고, 광고에 '대용량'이라고 적힌 쪽이 오히려 더 비싼 걸 찾아냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
-          { "text": "문제집 해설에서 오류를 찾아 출판사에 메일을 보내 본 적이 있는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "문제집 해설에서 오류를 찾으면 출판사에 메일을 보내는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "외울 때 뭉뚱그려 넘어가지 못하고 단어 하나, 연도 하나를 정확히 박아 넣어야 넘어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "객관식 보기 중 '항상'과 '대체로'처럼 한 낱말만 다른 문장에 동그라미를 치고, 그 한 낱말 때문에 틀린 보기를 정확히 골라냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],

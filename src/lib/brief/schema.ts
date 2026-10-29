@@ -93,6 +93,8 @@ export const ChapterBriefSchema = z.object({
   useName: z.boolean(),
   materials: z.array(MaterialSchema).min(1).max(6),
   note: z.string().optional(),
+  /** 장면 변주 힌트(P3.5 A1): 이 고객의 생활 소품 2개. 재료 장면을 이 소품으로 다시 짠다(문장 복사 방지). */
+  sceneHint: z.array(z.string()).min(1).max(3).optional(),
 });
 
 export const TimelineEntrySchema = z.object({

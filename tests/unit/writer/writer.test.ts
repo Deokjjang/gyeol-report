@@ -32,7 +32,9 @@ describe("작가 지침(B)", () => {
   it("문체 예시 2개는 A-3 규칙을 지킨다(옛 부정 낱말·과거 단정 없음, 용어는 쉬운 말 다음 괄호)", () => {
     expect(STYLE_EXAMPLES).toHaveLength(2);
     for (const e of STYLE_EXAMPLES) for (const s of splitSentences(e.text)) { expect(OLD_NEGATIVE.test(s), s).toBe(false); expect(isPastAssertion(s), s).toBe(false); }
-    expect(STYLE_EXAMPLES[1].text).toContain("기운(음착양차살)");
+    expect(STYLE_EXAMPLES[1].text).toContain("매력(홍염살)");
+    // P3.5 A3: 시험 고객(c1 丁丑·ENTJ, c2 庚辰·INFP, X 丁丑·ISFJ, Y ENFP)과 원국·MBTI가 겹치지 않는 가상 인물
+    for (const e of STYLE_EXAMPLES) for (const banned of ["ENTJ", "INFP", "ISFJ", "ENFP", "(정축)", "(경진)", "천문성", "정관"]) expect(e.text.includes(banned), banned).toBe(false);
   });
   it("대운·세운은 반복 장을 keys로 묶는다", () => {
     const major = writerChapters(buildBrief({ product: "major_fortune", baseDate: "2026-10-27", person: haram }, k));
@@ -69,7 +71,7 @@ describe("안전망 문장 검사(D)", () => {
     ["ENTJ다운 결정입니다.", "mbti_absent"],
     ["t3 재료는 브리프에 있습니다.", "internal_term"],
     ["옛날에는 흉으로 읽었지만 괜찮습니다.", "old_negative"],
-    ["손님이 다 떠난 뒤 혼자 남아 의자를 테이블 위에 올리는 찻집 주인 같습니다.", "example_copy"],
+    ["알림을 다 끄고 소파에 누워 천장만 보는 한 시간이 필요합니다.", "example_copy"],
   ])("%s → %s", (s, rule) => { expect(sentenceViolation(s, single)).toBe(rule); });
   it.each(["함께 살게 되면 배우자와 장을 볼 때 목록부터 씁니다.", "배우자 자리에는 겨울 땅이 놓여 있습니다.", "아이처럼 웃습니다.", "물기둥을 쏟아내는 댐 같은 달입니다.", "올해는 이직을 고민하기 좋은 흐름입니다."])("통과: %s", s => {
     expect(sentenceViolation(s, single)).toBeNull();

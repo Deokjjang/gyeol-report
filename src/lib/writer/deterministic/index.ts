@@ -2,11 +2,12 @@
  * 결정론 작가(P3 E, 최후 폴백). 브리프만으로 장을 조립한다(호출 0).
  * 재료(특성 이미지·장면·좋은 면·Fusion·팩폭·상품 근거·타임라인)를 장의 질문 순서대로 배치하고, 이어 주는 문장은 여러 변형 중 시드로 고른다.
  * 새 문체(직설·이미지)만 쓴다. V4 문장은 쓰지 않는다. 결과도 안전망 문장 검사를 통과해야 한다(테스트).
+ * 분량(P3.5 A7): 비반복 장이 DET_MIN_CHARS 미만이면 보충 재료(그 장 특성의 둘째 장점·세기·과사용, MBTI 기능, 쓰지 않은 원국·궁합 절)를 더한다. 책 안 같은 문장은 넣지 않는다.
  */
 import { createRng, fnv1a, type Rng } from "@/lib/brief/seed";
 import { josa } from "@/lib/brief/labels";
 import type { Brief, Material, Trait } from "@/lib/brief/schema";
-import type { BookChapter, BookSection } from "../format";
+import { chapterChars, type BookChapter, type BookSection } from "../format";
 import type { WriterChapter } from "../prompt";
 import { splitSentences } from "../safety/patterns";
 import { norm } from "../safety/sentences";
@@ -20,6 +21,11 @@ const DOMAIN_KO: Record<string, string> = { work: "일할 때", money: "돈 앞�
 const EVIDENCE_HEAD: Record<string, string> = { spouseStar: "끌리는 상대를 비추는 별", spousePalace: "곁에 둘 사람의 자리", childStar: "아이를 키우게 된다면", childPalace: "아이 자리에 놓인 기운", partnerMatch: "잘 맞는 사람의 모습", meetingPlaces: "만나기 좋은 곳", jobFit: "잘 맞는 일의 모양", investment: "돈을 다루는 방식" };
 
 type Ctx = { readonly brief: Brief; readonly rng: Rng; readonly you: string; readonly used: Set<string> };
+/** 결정론 장 최소 분량(공백 포함, 소제목 포함). */
+export const DET_MIN_CHARS = 900;
+/** 보충 재료: heading이 있는 소제목에 붙이거나(append), 새 소제목으로 더한다. */
+type Extra = { readonly heading: string; readonly text: string; readonly append: boolean };
+const WARM = ["알고 있으면 충분히 조절할 수 있는 결이에요", "이걸 알아차리는 순간부터는 오히려 무기가 됩니다", "속도를 한 번만 늦추면 장점 쪽으로 돌아옵니다"];
 
 function pick<T>(ctx: Ctx, label: string, list: readonly T[]): T { return ctx.rng.fork(label).pick(list); }
 const traitOf = (b: Brief, id: string): Trait | undefined => b.traits.find(t => t.id === id);
@@ -90,6 +96,10 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref === "compatibility.dayRelations" && x.dayRelations.length) return { heading: "두 사람의 날이 만나는 방식", paragraphs: [join(...x.dayRelations.slice(0, 2))] };
   if (ref === "compatibility.lens") return { heading: x.lens.focus, paragraphs: [join(`이 관계에서는 ${x.lens.focus}이 가장 중요합니다`, x.lens.tone)] };
   if (ref === "compatibility.common" && x.common.length) return { heading: "둘이 닮은 곳", paragraphs: [join(`두 사람은 ${x.common.slice(0, 3).join(", ")}이라는 점이 같습니다`)] };
+  if (ref === "compatibility.elements" && b.partner) { const pc = b.partner.chart; return { heading: "두 사람의 강한 기운과 약한 기운", paragraphs: [join(`${A}에게는 ${josa(c.elements.strongest.name, "이가")} 가장 세고 ${josa(c.elements.weakest.name, "이가")} 가장 약합니다`, `${B}에게는 ${josa(pc.elements.strongest.name, "이가")} 가장 세고 ${josa(pc.elements.weakest.name, "이가")} 가장 약합니다`, c.elements.strongest.element === pc.elements.weakest.element ? `${A}의 넉넉한 쪽이 ${B}의 빈 곳과 맞닿아 있어요` : pc.elements.strongest.element === c.elements.weakest.element ? `${B}의 넉넉한 쪽이 ${A}의 빈 곳과 맞닿아 있어요` : "강한 쪽과 약한 쪽이 서로 엇갈려 있어, 각자 잘하는 몫을 나누기 좋습니다")] }; }
+  if (ref === "compatibility.yinYang" && b.partner) { const py = b.partner.chart.yinYang; return { heading: "두 사람의 음과 양", paragraphs: [join(`${A}는 음 ${c.yinYang.yin}·양 ${c.yinYang.yang}, ${B}는 음 ${py.yin}·양 ${py.yang}입니다`, c.yinYang.reading && `${A} 쪽은 '${c.yinYang.reading}'에 가깝고`, py.reading && `${B} 쪽은 '${py.reading}'에 가깝습니다`)] }; }
+  if (ref === "compatibility.parts") return { heading: "점수를 만든 여섯 가지", paragraphs: [join(...x.score.components.filter(c => c.level !== "보통").map(c => c.line))] };
+  if (ref === "compatibility.direction") return { heading: "서로에게 어떤 사람인가", paragraphs: [join(x.score.direction.aToB.role, x.score.direction.aToB.gives, x.score.direction.bToA.role, x.score.direction.bToA.gives)] };
   if (ref === "compatibility.score") {
     const s = x.score, good = s.components.filter(c => c.level === "좋음"), adjust = s.components.filter(c => c.level === "조율");
     return { heading: `${s.value}점, ${s.band.label} 사이`, paragraphs: [
@@ -120,6 +130,43 @@ function timelineSection(ctx: Ctx, key: string, extra: readonly Material[]): Boo
   )] };
 }
 
+/** 그 장의 특성·MBTI 소제목에 붙일 보충 재료와, 아직 안 쓴 원국·궁합 절. 순서 = 넣는 우선순위. */
+function extrasOf(ctx: Ctx, ch: WriterChapter, sections: readonly { heading: string; traitId?: string; mbti?: boolean }[]): Extra[] {
+  const b = ctx.brief, out: Extra[] = [];
+  for (const s of sections) {
+    if (s.traitId) {
+      const t = traitOf(b, s.traitId); if (!t) continue;
+      out.push({ heading: s.heading, append: true, text: join(t.strengthNote, ...t.good) });
+      if (t.fusion && !ctx.used.has(`fusion:${t.id}`)) { ctx.used.add(`fusion:${t.id}`); out.push({ heading: s.heading, append: true, text: join(t.fusion.why, t.fusion.scene) }); }
+      if (t.overuse) out.push({ heading: s.heading, append: true, text: join(t.overuse, pick(ctx, `${ch.id}:${t.id}:warm`, WARM)) });
+    }
+    if (s.mbti && b.mbti) out.push({ heading: s.heading, append: true, text: join(...b.mbti.functions.slice(0, 2).map(f => f.replace(/^\w+\([^)]*\):\s*/, "")), b.mbti.shadows[0] && `${b.mbti.shadows[0]}`, pick(ctx, `${ch.id}:mbti:warm`, WARM)) });
+  }
+  const refs = b.compatibility
+    ? ["compatibility.common", "compatibility.complement", "compatibility.differences", "compatibility.dayRelations", "compatibility.mbtiConvention", "compatibility.parts", "compatibility.direction", "compatibility.lens", "compatibility.tenGodAB", "compatibility.tenGodBA", "compatibility.elements", "compatibility.yinYang"]
+    : ["chart.elements", "chart.climate", "chart.yinYang", "fortunes", "unused", "chart.strength", "chart.dayMaster", "chart.currentDayun"];
+  for (const ref of refs) { const s = refSection(ctx, ref, ch.id); if (s?.paragraphs.length) out.push({ heading: s.heading, append: false, text: s.paragraphs.join(" ") }); }
+  for (const t of b.traits) out.push({ heading: `${t.easyName}의 다른 얼굴`, append: false, text: join(t.positionNote?.replace(/^[^:]+:\s*/, ""), ...t.good, t.strengthNote, !ctx.used.has(`fusion:${t.id}`) && t.fusion?.why, t.overuse && `${t.overuse} ${pick(ctx, `${ch.id}:${t.id}:warm2`, WARM)}`) });
+  return out;
+}
+
+/** 분량 보충: 목표에 닿을 때까지 보충 재료를 넣는다. 소제목은 5개까지, 넘으면 마지막 소제목에 붙인다. */
+function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: ReadonlySet<string>, n: number): BookSection[] {
+  const local = new Set(sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p).map(norm))));
+  const out = sections.map(s => ({ heading: s.heading, paragraphs: [...s.paragraphs] }));
+  const chars = () => chapterChars({ n, title: "", sections: out });
+  for (const x of extras) {
+    if (chars() >= DET_MIN_CHARS) break;
+    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (local.has(k) || (k.length >= 20 && avoid.has(k))) return false; local.add(k); return true; }).join(" ");
+    if (!text) continue;
+    const target = x.append ? out.find(s => s.heading === x.heading) : undefined;
+    if (target) target.paragraphs.push(text);
+    else if (out.length < 5) out.push({ heading: x.heading, paragraphs: [text] });
+    else out[out.length - 1].paragraphs.push(text);
+  }
+  return out;
+}
+
 /** 책 안에서 이미 나온 문장(avoid)과 이 장에서 이미 쓴 문장은 뺀다. 반복 장(keepEmpty)은 키를 지우지 않고, 다 빠진 키는 원래 문단을 둔다. */
 function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, keepEmpty: boolean): BookSection[] {
   const local = new Set<string>();
@@ -132,20 +179,23 @@ function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, ke
 
 /** 장 하나를 결정론으로 쓴다. keys가 주어지면 그 key만(반복 장 누락 보충). avoid: 책 안에서 이미 쓴 문장(정규화). */
 export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[]; avoid?: ReadonlySet<string> } = {}): BookChapter {
-  const chapter = writeChapter(brief, ch, opts);
-  return { ...chapter, sections: dedupe(chapter.sections, opts.avoid ?? new Set(), Boolean(ch.keys)) };
+  const { chapter, extras } = writeChapter(brief, ch, opts);
+  const avoid = opts.avoid ?? new Set<string>();
+  const sections = dedupe(chapter.sections, avoid, Boolean(ch.keys));
+  return { ...chapter, sections: ch.keys ? sections : pad(sections, extras, avoid, ch.n) };
 }
 
-function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[] }): BookChapter {
+function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[] }): { chapter: BookChapter; extras: Extra[] } {
   const ctx: Ctx = { brief, rng: createRng(fnv1a(`${brief.seed}:${ch.id}:deterministic`)), you: brief.person.callName, used: new Set() };
   if (ch.keys) {
     const keys = opts.keys ?? ch.keys;
-    return { n: ch.n, title: ch.title, sections: keys.map(k => timelineSection(ctx, k, ch.perKey?.[k] ?? [])) };
+    return { chapter: { n: ch.n, title: ch.title, sections: keys.map(k => timelineSection(ctx, k, ch.perKey?.[k] ?? [])) }, extras: [] };
   }
   const sections: BookSection[] = [];
+  const origin: { heading: string; traitId?: string; mbti?: boolean }[] = [];
   for (const m of ch.materials) {
     const s = m.kind === "trait" ? traitSection(ctx, m, ch.id) : m.kind === "mbti" ? mbtiSection(ctx, m, ch.id) : m.kind === "ref" ? refSection(ctx, m.ref, ch.id) : m.kind === "evidence" ? evidenceSection(m) : null;
-    if (s && s.paragraphs.length) sections.push(s);
+    if (s && s.paragraphs.length) { sections.push(s); origin.push({ heading: s.heading, ...(m.kind === "trait" ? { traitId: m.traitId } : {}), ...(m.kind === "mbti" ? { mbti: true } : {}) }); }
   }
   // 소제목 3개 미만이면 원국 요약으로 채운다(이미 쓴 절은 다시 쓰지 않음).
   for (const ref of ["chart.elements", "chart.thisYear", "chart.climate", "fortunes", "chart.yinYang", "chart.currentDayun"]) {
@@ -154,5 +204,5 @@ function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly s
   }
   const top = sections.slice(0, 5);
   if (ch.useName && top[0]) top[0] = { ...top[0], paragraphs: [`${brief.person.callName}, 이 장에서는 이 질문에 답해 볼게요. ${/[?？]$/.test(ch.question) ? ch.question : `${ch.question}?`} ${top[0].paragraphs[0]}`, ...top[0].paragraphs.slice(1)] };
-  return { n: ch.n, title: ch.title, sections: top };
+  return { chapter: { n: ch.n, title: ch.title, sections: top }, extras: extrasOf(ctx, ch, origin) };
 }

@@ -12,7 +12,7 @@ import { productSlugByType, type ProductPreviewSnapshot } from "@/lib/report-gen
 import type { BookSection, ChapterSource } from "./format";
 import type { WriterChapter } from "./prompt";
 import type { CallLog } from "./runner";
-import type { FinalChapter, SafetyReport } from "./safety";
+import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
@@ -33,7 +33,7 @@ export type WriterMeta = {
   readonly tokens: { readonly input: number; readonly cachedInput: number; readonly output: number };
   readonly costUsd: number; readonly calls: readonly CallLog[]; readonly durationMs: number;
   readonly chapters: readonly ChapterMeta[];
-  readonly safety: { readonly deletions: number; readonly byRule: Readonly<Record<string, number>>; readonly warnings: number };
+  readonly safety: { readonly deletions: number; readonly byRule: Readonly<Record<string, number>>; readonly warnings: number; readonly metrics?: SafetyMetrics };
   readonly recovered: boolean;
 };
 export type V5Evidence = {
@@ -122,7 +122,7 @@ export function assembleV5Book(a: {
       writer: a.writer, promptVersion: a.promptVersion, knowledgeVersion: a.knowledgeVersion, briefVersion: brief.version, briefHash: a.briefHash,
       tokens: a.tokens, costUsd: a.costUsd, calls: a.calls, durationMs: a.durationMs, recovered: a.recovered,
       chapters: a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, source: f.source, ...(f.reason ? { reason: f.reason } : {}), chars: f.chars, evidence: chapterEvidence(brief, a.plan.find(ch => ch.n === f.n)!) })),
-      safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length },
+      safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length, ...(a.report.metrics ? { metrics: a.report.metrics } : {}) },
     },
   };
   return { draft, evidence };

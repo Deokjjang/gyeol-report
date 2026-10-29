@@ -5,6 +5,7 @@
  */
 import type { Domain, MbtiProfile, MyeongriFeature, SceneItem } from "@/data/knowledge-v5/schema";
 import { sceneFits, type FactProfile } from "./facts";
+import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
 import type { Rng } from "./seed";
 import type { ChapterBrief, Material, Trait } from "./schema";
@@ -93,7 +94,25 @@ export type PlanCtx = {
   readonly sceneDomains?: readonly Domain[];
   /** 궁합: A·B trait 선호(direction-ab는 B의 trait를 먼저). */
   readonly prefer?: (chapterId: string, t: Trait) => number;
+  /** 고객 생활 소품(P3.5 A1). 없으면(궁합) 장면 변주 힌트를 넣지 않는다. */
+  readonly props?: CustomerProps;
 };
+
+/** 장 영역 → 소품 줄. 일·돈·배움은 직업, 사랑·결혼은 관계 상태, 사람·혼자는 나이대 소품을 먼저 쓴다. */
+const PROP_POOL: Record<Domain, readonly ("job" | "relationship" | "age")[]> = {
+  work: ["job", "job"], money: ["job", "age"], study: ["job", "age"], love: ["relationship", "age"], marriage: ["relationship", "relationship"], relationships: ["age", "relationship"], alone: ["age", "job"],
+};
+/** 장마다 소품 2개를 줄별 커서로 돌려 준다(같은 소품이 연달아 나오지 않게). */
+function sceneHints(props: CustomerProps, plans: readonly { repeatKey?: string; domains: readonly Domain[] }[]): (string[] | undefined)[] {
+  const pools = { job: props.job.props, relationship: props.relationship, age: props.age };
+  const cursor = { job: 0, relationship: 0, age: 0 };
+  return plans.map(p => {
+    if (p.repeatKey) return undefined;
+    const out: string[] = [];
+    for (const line of PROP_POOL[p.domains[0] ?? "relationships"]) { const pool = pools[line]; const x = pool[cursor[line]++ % pool.length]; if (x && !out.includes(x)) out.push(x); }
+    return out.length ? out : undefined;
+  });
+}
 
 const FAMILY_IF = /결혼(하면|한다면|을 (생각|앞둔))|함께 살게|같이 살게|아이를 (키우|낳)|부모가 (되|된)/;
 /** 결혼·자녀 언젠가형 장면(unmarried·children none·조건 문구). */
@@ -197,6 +216,7 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
     }
   }
   const total = plans.length;
+  const hints = ctx.props ? sceneHints(ctx.props, plans) : [];
   const order = new Map(plans.map(p => [p.id, p.index]));
   for (const t of ctx.traits) t.trait.chapters.sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
   return plans.map(p => {
@@ -210,6 +230,7 @@ export function planChapters(ctx: PlanCtx): ChapterBrief[] {
       useName: p.index === 0 || p.index === total - 1 || p.index === Math.floor(total / 2),
       materials,
       ...(repeat ? { note: "### 소제목은 타임라인 항목 label 그대로. 간지·배지·세기 숫자는 UI 카드가 보여 주므로 본문은 해석만." } : {}),
+      ...(hints[p.index] ? { sceneHint: hints[p.index] } : {}),
     };
   });
 }

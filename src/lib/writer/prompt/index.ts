@@ -16,6 +16,7 @@ export type WriterChapter = {
   readonly keys?: readonly string[];
   readonly perKey?: Readonly<Record<string, readonly Material[]>>;
   readonly note?: string;
+  readonly sceneHint?: readonly string[];
 };
 
 export function writerChapters(brief: Pick<Brief, "chapters">): WriterChapter[] {
@@ -23,7 +24,7 @@ export function writerChapters(brief: Pick<Brief, "chapters">): WriterChapter[] 
   const byBase = new Map<string, ChapterBrief[]>();
   for (const c of brief.chapters) {
     const base = c.id.split(":")[0];
-    if (!c.id.includes(":")) { out.push({ n: out.length + 1, id: c.id, title: c.title, question: c.question, role: c.role, targetChars: c.targetChars, subheadings: c.subheadings, useName: c.useName, materials: c.materials }); continue; }
+    if (!c.id.includes(":")) { out.push({ n: out.length + 1, id: c.id, title: c.title, question: c.question, role: c.role, targetChars: c.targetChars, subheadings: c.subheadings, useName: c.useName, materials: c.materials, ...(c.sceneHint ? { sceneHint: c.sceneHint } : {}) }); continue; }
     if (!byBase.has(base)) {
       byBase.set(base, []);
       out.push({ n: out.length + 1, id: base, title: c.title, question: c.question, role: c.role, targetChars: c.targetChars, subheadings: c.subheadings, useName: c.useName, materials: [], keys: [], perKey: {} });

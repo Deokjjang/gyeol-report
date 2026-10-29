@@ -67,19 +67,39 @@ function palaceEvidence(key: string, label: string, position: ChartPosition, saj
 /** 관계 코드는 작가에게 쉬운 이름으로 넘긴다(내부 코드 노출 방지). */
 const RELATION_KO: Record<string, string> = { STEM_HAP: "천간합", YUKHAP: "육합", SAMHAP: "삼합", BANGHAP: "방합", CHUNG: "충", HYEONG: "형", PA: "파", HAE: "해", WONJIN: "원진" };
 
+/**
+ * 추천 상대 초상(P3.5 A6): 부족한 기운을 채우는 오행 성향 + 잘 맞는 MBTI를 한 사람으로 합친 재료.
+ * 예) "물 기운이 넉넉한 INFJ 같은 사람: 말수가 적고 핵심을 한 마디로 짚는…". 오행은 가장 부족한 기운(없으면 가장 약한 기운),
+ * MBTI는 통념 궁합표의 첫 '좋음'. MBTI가 없으면 오행 초상만.
+ */
+export function partnerPortrait(k: Knowledge, st: ElementState, mbti: MbtiProfile | null): string[] {
+  const e = st.lacking[0] ?? st.missing[0];
+  if (!e) return [];
+  const bal = k.features.get(`element:${e}:BALANCED`), remedy = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy;
+  const fit = mbti?.conventionalCompat.find(c => c.fit === "좋음");
+  const other = fit ? k.mbti.get(fit.type) : undefined;
+  const who = `${ELEMENT_KO[e]} 기운이 넉넉한 ${other ? `${other.type} 같은 사람` : "사람"}`;
+  return [
+    `초상(한 사람으로 합쳐 쓴다): ${who}`,
+    ...(bal ? [`${ELEMENT_KO[e]} 기운이 넉넉한 사람의 결: ${bal.oneLiner}. ${bal.strengths[0]}`] : []),
+    ...(other ? [`${other.type}(${other.easyName})의 결: ${other.oneLiner}. 모습: ${other.image.visual}`] : []),
+    `맞는 이유: 당신에게 부족한 ${josa(ELEMENT_KO[e], "을를")} 채워 줌${fit ? ` / ${fit.why}` : ""}`,
+    ...(remedy?.partner[1] ? [`곁에 있을 때 장면: ${remedy.partner[1]}`] : []),
+  ];
+}
+
 export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, st: ElementState, mbti: MbtiProfile | null): Record<string, Evidence> {
   const spouseStars = gender === "MALE" ? STARS.WEALTH : gender === "FEMALE" ? STARS.OFFICER : null;
   const childStars = gender === "MALE" ? STARS.OFFICER : gender === "FEMALE" ? STARS.OUTPUT : null;
   const lack = st.lacking;
   const partnerLines = lack.flatMap(e => { const f = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`); return f?.remedy ? [`채워 줄 ${josa(ELEMENT_KO[e], "을를")} 가진 사람: ${f.remedy.partner[0]}`] : []; });
-  const good = mbti?.conventionalCompat.filter(c => c.fit === "좋음").slice(0, 3).map(c => `${c.type}(통념상 좋음: ${c.why})`) ?? [];
   const places = lack.flatMap(e => k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places.slice(0, 3) ?? []);
   return {
     spouseStar: starEvidence("spouseStar", "배우자 별", saju, det, k, spouseStars),
     spousePalace: palaceEvidence("spousePalace", "배우자 자리(태어난 날의 땅 글자)", "day", saju, det, k),
     childStar: starEvidence("childStar", "자녀 별", saju, det, k, childStars),
     childPalace: palaceEvidence("childPalace", "자녀 자리(태어난 시각의 땅 글자)", "hour", saju, det, k),
-    partnerMatch: { kind: "evidence", key: "partnerMatch", facts: [...(partnerLines.length ? partnerLines : ["뚜렷하게 부족한 기운이 없어 '나와 속도가 비슷한 사람'이 편합니다."]), ...(good.length ? [`MBTI 통념 궁합(근거 주장 아님): ${good.join(" / ")}`] : [])] },
+    partnerMatch: { kind: "evidence", key: "partnerMatch", facts: [...partnerPortrait(k, st, mbti), ...(partnerLines.length ? partnerLines : ["뚜렷하게 부족한 기운이 없어 '나와 속도가 비슷한 사람'이 편합니다."])] },
     meetingPlaces: { kind: "evidence", key: "meetingPlaces", facts: places.length ? places : ["부족한 기운이 뚜렷하지 않아 장소 추천은 일상 동선(늘 가는 곳에서 한 번 더 말 걸기)으로 둡니다."] },
   };
 }
@@ -94,7 +114,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
     jobFit: { kind: "evidence", key: "jobFit", facts: [
       `강한 십성 묶음: ${top.map(([g, v]) => `${GROUP_KO[g]} ${v.toFixed(1)}`).join(" · ")}`,
       ...top.map(([g]) => `어울리는 판: ${ROLE_BY_GROUP[g]}`),
-      ...(mbti ? [`MBTI 통념 직업(근거 주장 아님): ${mbti.jobs.slice(0, 6).join(", ")}`] : []),
+      ...(mbti ? [`MBTI로 흔히 꼽는 직업: ${mbti.jobs.slice(0, 6).join(", ")}`] : []),
       `입력 직업: ${detailJob || "없음"}${jobStatus ? ` (${jobStatus})` : ""} — 위 판과 겹치는 지점을 짚되 직업을 바꾸라고 단정하지 않는다`,
     ] },
     investment: { kind: "evidence", key: "investment", facts: [

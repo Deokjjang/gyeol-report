@@ -24,6 +24,7 @@ import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks,
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
 import { ganjiLabel } from "./labels";
+import { customerProps } from "./props";
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -195,6 +196,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const chapters = planChapters({
     product: input.product, narrative, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
+    ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),
     ...(isPair ? {
       sceneDomains: narrative.compatibility?.[input.relationshipType!]?.sceneDomains,
       prefer: (cid: string, t: Trait) => (cid === "direction-ab" ? (t.id.startsWith("b") ? 1 : 0) : cid === "direction-ba" ? (t.id.startsWith("a") ? 1 : 0) : 0),
