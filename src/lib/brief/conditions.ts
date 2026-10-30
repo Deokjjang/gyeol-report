@@ -79,7 +79,7 @@ function atoms(text: string, ctx: ConditionCtx): boolean[] {
     out.push(/많|여럿|넘치/.test(m[2]) ? st === "많음" || bal.parts[e].visible >= 3 : st === "부족" || st === "없음");
   }
   // 십성 있음·없음: "정관이 없으면", "편인이 있으면"
-  for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:이|가) (있|없)으면/g)) {
+  for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:이|가|까지|도) (있|없)으면/g)) {
     const n = saju.tenGods.distribution[TEN_GOD_WORD[m[1]]] ?? 0;
     out.push(m[2] === "있" ? n > 0 : n === 0);
   }
@@ -89,6 +89,24 @@ function atoms(text: string, ctx: ConditionCtx): boolean[] {
     const present = all.some(s => s.row === "stem" && s.glyph === stem) || all.some(s => s.row === "branch" && HIDDEN_STEMS[s.glyph as EarthlyBranch].some(h => h.stem === stem));
     out.push(m[3] === "있" ? present : !present);
   }
+  // 월지 본기: "월지 본기가 겁재면"(P3.8 r1: 월지 亥 본기는 정관인데 겁재 조건 문장을 단정)
+  for (const m of text.matchAll(/([년연월일시])지 (?:본기|속 기운)(?:가|이) (비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)/g)) {
+    const slot = all.find(s => s.pos === POS_WORD[m[1]] && s.row === "branch");
+    out.push(Boolean(slot) && slot!.tenGod === TEN_GOD_WORD[m[2]]);
+  }
+  // 두 천간이 함께: "갑목과 경금이 함께 있으면"(P3.8 r1: 庚이 없는데 단정)
+  for (const m of text.matchAll(/(?<![가-힣])([갑을병정무기경신임계])(목|화|토|금|수)(?:과|와) ([갑을병정무기경신임계])(목|화|토|금|수)(?:이|가) (함께|같이|모두) 있/g)) {
+    const has = (c: string) => { const st = STEM_WORD[c]; return all.some(s => s.row === "stem" && s.glyph === st) || all.some(s => s.row === "branch" && HIDDEN_STEMS[s.glyph as EarthlyBranch].some(h => h.stem === st)); };
+    out.push(has(m[1]) && has(m[3]));
+  }
+  // 십성 많음: "상관이 많고", "겁재가 많으면"(드러난 글자 + 지장간 무게 2 이상)
+  for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:이|가) 많/g)) out.push((saju.tenGods.distribution[TEN_GOD_WORD[m[1]]] ?? 0) >= 2);
+  // 일간 음양: "일간까지 음이면", "일간이 양이면"
+  for (const m of text.matchAll(/일간(?:까지|이|도|마저)? (음|양)이면/g)) out.push((["甲", "丙", "戊", "庚", "壬"].includes(saju.pillars.day.stem)) === (m[1] === "양"));
+  // 이 요소가 일주에: "일주가 백호면", "일주가 해당 간지이거나"
+  if (/일주가 (백호|괴강|해당|그 간지)/.test(text) && ctx.positions.length) out.push(ctx.positions.includes("day"));
+  // 기둥 수: "해당 기둥이 둘 이상이면", "백호 기둥이 둘 이상이면"
+  if (/(해당|그|백호|괴강) 기둥이 (둘|두 개) 이상/.test(text) && ctx.positions.length) out.push(ctx.positions.length >= 2);
   // 신살 동반: "괴강·양인과 함께 있으면"
   if (/함께 있|같이 있|겹치면|만나면/.test(text)) {
     const names = Object.keys(SHINSAL_WORD).filter(n => text.includes(n));

@@ -9,6 +9,7 @@ import type { FiveElement, Pillar, SajuCalcResult } from "@/lib/saju/types";
 import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, ganjiLabel, ganjiOf, josa, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
+import { dropSourceSentences } from "@/lib/writer/safety/patterns";
 
 const ELEMENTS: readonly FiveElement[] = ["WOOD", "FIRE", "EARTH", "METAL", "WATER"];
 /** 일간 강약 한 줄(P3.8 5: 강약에 해석이 없어 작가가 "힘이 남아도 모자라도" 같은 빈 문장으로 채웠다). */
@@ -99,7 +100,7 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     },
     currentDayun: cur && curTenGod ? {
       ganji: ganjiOf(cur), ages: `${cur.startAge}~${cur.endAge}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
-      reading: k.tenGodPeriod.get(curTenGod)?.year.meaning ?? "",
+      reading: dropSourceSentences(k.tenGodPeriod.get(curTenGod)?.year.meaning ?? ""),
       // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
       ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f ? { easyName: f.easyName } : {}), ...(meaning ? { reading: meaning } : {}) }; })() } : {}),
     } : null,

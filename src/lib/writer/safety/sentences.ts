@@ -7,7 +7,7 @@
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
-import { LOVE_TIMING, OLD_NEGATIVE, isPastAssertion, softenExperience, splitSentences } from "./patterns";
+import { LOVE_TIMING, OLD_NEGATIVE, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences } from "./patterns";
 
 export type SafetyFacts = {
   readonly birthTimeKnown: boolean;
@@ -18,7 +18,7 @@ export type SafetyFacts = {
   /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
   readonly compat?: { readonly score: number; readonly band: string };
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement" | "source_mention";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 /** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
 export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
@@ -87,6 +87,7 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
   if (INTERNAL.test(s)) return "internal_term";
   if (OLD_NEGATIVE.test(s)) return "old_negative";
+  if (SOURCE_MENTION.test(s)) return "source_mention";
   if (copiesExample(s, allowed)) return "example_copy";
   if (DEFLATING.test(s)) return "self_deflating";
   if (BREAKUP.test(s)) return "breakup_advice";

@@ -42,6 +42,15 @@ export function imageObject(metaphor: string): string | null {
   return null;
 }
 /**
+ * 대표 그림의 대상 낱말로 맞춘다(P3.8 r1: 대표 그림은 등불인데 연결 문장이 "손으로 감싸면 꺼지지 않는 촛불"). 같은 대상 계열의 다른 낱말만 바꾼다.
+ */
+export function alignImageWords(text: string, representative: string): string {
+  const cls = IMAGE_OBJECTS.find(([id]) => id === imageObject(representative));
+  if (!cls) return text;
+  const rep = cls[1].find(w => representative.includes(w))!;
+  return cls[1].filter(w => w !== rep && !rep.includes(w) && !w.includes(rep)).reduce((t, w) => t.split(w).join(rep), text);
+}
+/**
  * 이미지 계열 id: 일간 글자를 그린 그림(일간·일주·같은 천간·조후·일간 오행)은 한 계열(self).
  * 그 밖에는 그림의 대상(저장·식물·불·물·밭·쇠·길)으로 묶고, 대상을 못 찾으면 의미 그룹과 같다.
  */

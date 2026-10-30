@@ -135,7 +135,7 @@
       "scenes": {
         "work": [
           { "text": "자리가 정해진 회사, 직급이 적힌 명함, 안정된 월급. 이 세 가지가 갖춰져야 비로소 일에 속도가 붙습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "승진 발표 날 겉으론 담담해도, 그날 저녁 가족 단톡방에 가장 먼저 소식을 올리는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "좋은 소식을 들은 날 겉으론 담담해도, 그날 저녁 가족 단톡방에 가장 먼저 소식을 올리는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "프리랜서로 일해도 명함을 만들고, 포트폴리오에 수상 이력을 맨 앞에 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [

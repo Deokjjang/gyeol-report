@@ -199,8 +199,9 @@ export const GanjiEnergyFileSchema = z.object({ version: z.string(), entries: z.
 /** 일간 대비 십성이 연·월로 들어올 때의 뜻. */
 export const TenGodPeriodSchema = z.object({
   tenGod: TenGodSchema,
-  year: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: Para }),
-  month: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line }),
+  /** keywords: 같은 십성이 다시 오는 해·달에는 다음 묶음(3개·2개씩)을 준다(P3.8 r1: 2023·2033 편관이 같은 열쇠말). */
+  year: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(6).max(9), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: Para }),
+  month: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(4).max(6), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line }),
   sources: Sources, confidence: ConfidenceSchema,
 });
 export const TenGodPeriodFileSchema = z.object({ version: z.string(), entries: z.array(TenGodPeriodSchema).length(10) });
@@ -251,6 +252,8 @@ export const SECTION_USE = /^(scene|mbti|rel|shadow|fusion|mbtiShadow|touched|ev
 export const SectionPlanSchema = z.object({
   q: z.string().min(6).max(40), domain: DomainSchema, use: z.array(z.string().regex(SECTION_USE)).min(1).max(2),
   trait: z.enum(["core", "intro", "apply", "any", "none"]).optional(), dims: z.array(DimensionId).max(3).optional(), side: z.enum(["a", "b"]).optional(),
+  /** 이 절에서 참조·근거를 쓰는 각도(작가 지시, 본문에 옮기지 않음). 같은 참조의 뜻을 다른 장이 되풀이하지 않게(P3.8 r1). */
+  note: z.string().min(6).max(80).optional(),
 }).strict();
 export type SectionPlan = z.infer<typeof SectionPlanSchema>;
 export const ChapterPlanSchema = z.object({

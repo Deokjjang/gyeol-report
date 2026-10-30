@@ -57,7 +57,10 @@ export function connectorRepeats(chapters: readonly Chapter[], limit = CONNECTOR
 /** 책 단위 trait 언급 상한(P3.8 1): 소개 1 + 적용 2 = 소제목 3개, 한 장에 1개. 같은 축도 같은 상한. 브리프 배정(plan)과 같다. */
 export const TRAIT_SECTION_LIMIT = 3;
 export type TraitUse = { readonly id: string; readonly name: string; readonly sections: number; readonly chapters: number; readonly maxInChapter: number; readonly planned: number };
-export type TraitUseMetric = { readonly traits: readonly TraitUse[]; readonly axes: Readonly<Record<string, number>>; readonly warnings: readonly string[] };
+export type TraitUseMetric = { readonly traits: readonly TraitUse[]; readonly axes: Readonly<Record<string, number>>; readonly mbti?: Readonly<Record<string, number>>; readonly advice?: number; readonly warnings: readonly string[] };
+const ADVICE = /(한 ?줄|한마디|한 문장|짧은 (말|대꾸|답|문자))(?=[^.?!]{0,40}(붙이|덧붙|보내|말해|건네|적어|물어|곁들|옮겨|남겨|바꿔))/;
+/** MBTI 근거로 자주 쓰는 성향 이름(행동 차원 이름)·기능 코드: MBTI 유형이 나온 문장에서 센다. */
+const MBTI_BASIS = /\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b|직설성|결정 속도|위험 감수|감정 표현|통제 욕구|끈기|사교 에너지|규칙 준수|완벽주의|독립성|공감 반응|새로움 추구|계획성|승부욕|경계심|말수|세부 초점|챙김|돈 조절|지위 욕구|반응 속도|자기 성찰|따져 묻기|의무감|갈등 대응|배움 욕구/g;
 const noHan = (s: string) => s.replace(/\s*\([^)]*\)/g, "").replace(/[一-鿿]+/g, "").trim();
 /**
  * 원고에서 trait 이름(쉬운 이름·용어)이 나온 소제목을 센다. 같은 소제목 안 여러 번은 1로 센다.
@@ -89,5 +92,17 @@ export function traitMentions(brief: Brief, chapters: readonly { readonly n: num
     if (uniq.length > TRAIT_SECTION_LIMIT) warnings.push(`축 ${a} 소제목 ${uniq.length}개`);
     if (perChapterMax(uniq) > 1) warnings.push(`축 ${a} 한 장 ${perChapterMax(uniq)}개`);
   }
-  return { traits, axes, warnings };
+  // MBTI 근거 반복(P3.8 r1: 'ENTJ의 계획성'이 한 장에 다섯 번): 같은 기능·성향 이름이 MBTI 문장에 세 번 이상이면 경고.
+  const mbti: Record<string, number> = {};
+  const type = brief.mbti?.type, types = [type, brief.partner?.mbti?.type].filter((x): x is NonNullable<typeof x> => Boolean(x));
+  if (types.length) for (const c of chapters) for (const s of c.sections) for (const p of s.paragraphs) for (const sen of splitSentences(p)) {
+    if (!types.some(t => sen.includes(t))) continue;
+    for (const m of new Set(sen.match(MBTI_BASIS) ?? [])) mbti[m] = (mbti[m] ?? 0) + 1;
+  }
+  for (const [m, n] of Object.entries(mbti)) if (n > 2) warnings.push(`MBTI 근거 ${m} ${n}회`);
+  // 같은 꼴의 처방(P3.8 r1: "한 줄 먼저 말하기"가 한 책에 7~8번): 짧은 말·글을 먼저 건네라는 행동 조언 문장 수.
+  let advice = 0;
+  for (const c of chapters) for (const s of c.sections) for (const p of s.paragraphs) for (const sen of splitSentences(p)) if (ADVICE.test(sen)) advice++;
+  if (advice > 2) warnings.push(`'한 줄·한마디' 처방 ${advice}회`);
+  return { traits, axes, mbti, advice, warnings };
 }

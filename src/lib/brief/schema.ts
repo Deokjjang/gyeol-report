@@ -125,7 +125,10 @@ export const TimelineEntrySchema = z.object({
   /** 기준일 대비: past(돌아보는 말), now, future(경향). P3.6 B. */
   when: z.enum(["past", "now", "future"]).optional(),
   /** 그림은 간지(image), 뜻은 일간 기준 십성(tenGodNotes·keywords)으로 나눈다(P3.8 1: 간지 기준 mood가 십성과 어긋났다). */
-  material: z.object({ image: z.string(), scene: z.string().optional(), stage: z.string() }),
+  /** stage: 같은 십이운성 단계가 앞 항목에 이미 나왔으면 뺀다(같은 문구 반복 방지). */
+  material: z.object({ image: z.string(), scene: z.string().optional(), stage: z.string().optional() }),
+  /** 앞 항목과 같은 십성이 다시 들어오면 그 항목 key(P3.8 r1). 작가는 뜻을 다시 풀지 않고 이번에 달라진 것만 쓴다. */
+  repeatOf: z.string().optional(),
   /** 그해·그달 글자가 실제로 건드리는 원국 trait와 어떻게 건드리는지(P3.7 1-1). 장에 배정된 것만 남긴다. 없으면 원국 특성을 쓰지 않는다. */
   touched: z.array(z.object({ traitId: z.string(), how: z.string() })).optional(),
 });

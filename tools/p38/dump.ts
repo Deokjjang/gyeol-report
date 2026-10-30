@@ -2,13 +2,13 @@
 import { join, resolve } from "node:path";
 import { buildBrief, loadKnowledge } from "../../src/lib/brief";
 import type { Material } from "../../src/lib/brief/schema";
-import { CASES } from "./cases";
+import { CASES, EXTRA } from "./cases";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const k = loadKnowledge(join(ROOT, "src/data/knowledge-v5"));
 const short = (m: Material) => m.kind === "trait" ? `T:${m.traitId}/${m.angle === "first" ? "소개" : "적용"}${m.scene ? "+장면" : ""}` : m.kind === "ref" ? `R:${m.ref}` : m.kind === "evidence" ? `E:${m.key}` : m.kind === "mbti" ? `M:${m.domain}` : m.kind === "rel" ? `REL:${m.topic}` : `TL:${m.entryKey}`;
 for (const name of process.argv.slice(2)) {
-  const b = buildBrief(CASES[name].input, k);
+  const b = buildBrief((CASES[name] ?? EXTRA[name]).input, k);
   console.log(`=== ${name} tokens ${b.budget.estimatedTokens}`);
   console.log(b.traits.map(t => `${t.id}:${t.easyName}(${t.name}) ${t.sameImageAs ? "~" + t.sameImageAs : ""}`).join(" | "));
   console.log("plan:", JSON.stringify(b.plan));

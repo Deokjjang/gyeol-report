@@ -67,3 +67,8 @@ export function opposes(a: Readonly<Record<string, number>>, b: Readonly<Record<
   const cb = top(b);
   return top(a).some(([d, v]) => cb.some(([e, w]) => d === e && Math.sign(v) !== Math.sign(w)));
 }
+
+/** 느슨한 반대(빼도 되는 재료용, P3.8 r1: 오행 읽기 "자르고 거절하는 힘이 얇다" ↔ trait "선이 분명함"): 같은 차원에서 둘 다 min 이상이고 방향이 반대. */
+export function opposesLoose(a: Readonly<Record<string, number>>, b: Readonly<Record<string, number>>, min = 0.5): boolean {
+  return Object.entries(a).some(([d, v]) => Math.abs(v) >= min && Math.abs(b[d] ?? 0) >= min && Math.sign(v) !== Math.sign(b[d]!));
+}

@@ -23,11 +23,13 @@ import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type Tim
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
+import { dropSourceSentences } from "@/lib/writer/safety/patterns";
 import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
-import { imageFamily } from "./groups";
-import { balanceHolds, keepBalanced, opposes, oppositeToDrop, type BalanceCtx } from "./balance";
+import { alignImageWords, imageFamily, imageObject } from "./groups";
+import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage } from "./props";
+import { conditionsHold } from "./conditions";
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -89,8 +91,11 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const level = saju.structureAnalysis.dayMasterStrength.level;
   const bc: BalanceCtx = { strength: level === "VERY_WEAK" || level === "WEAK" ? "WEAK" : level === "STRONG" || level === "VERY_STRONG" ? "STRONG" : "BALANCED", excess: st0.excess, lacking: st0.lacking };
   // 한 줄 설명이나 그림이 모두 이 원국과 어긋나는 요소는 고르지 않는다(P3.7 r2: '물이 모자란 여름 흙'인데 물이 가장 많은 원국).
-  const imageOk = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc);
-  const scored = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(imageOk));
+  // 성별이 다른 사람 그림(여성 고객에게 "기다리는 아버지")도 고르지 않는다(P3.8 r1).
+  const OTHER_GENDER = gender === "FEMALE" ? /아버지|아빠|남편|아들|할아버지|오빠|형(?![가-힣])/ : gender === "MALE" ? /어머니|엄마|아내|딸(?![기])|할머니|언니|누나/ : null;
+  const imageOk = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc) && !(OTHER_GENDER?.test(im.metaphor) || OTHER_GENDER?.test(im.visual));
+  const balanceImage = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc);
+  const scored = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(balanceImage));
   // 같은 핵심 차원을 반대로 당기는 trait 둘은 긴장(MBTI와 반대로 당기는 Fusion) 표시가 없으면 점수 낮은 쪽을 빼고 다시 고른다(P3.7 1-2).
   const dropped = new Set<string>();
   let selected = selectTraits(scored, traitTarget);
@@ -106,17 +111,18 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   // MBTI 연결 밀도(P3): 핵심 특성 정확 유형, 같은 글자·기능 최대 2, 계산 연결로 70% 이상.
   // 특성 설명 중 고객 사실과 어긋나는 문장(미혼에게 "배우자와 ~", 시간 미상에 시주 등)은 작가에게 넘기지 않는다(P3, 안전망과 같은 규칙).
   const sf: SafetyFacts = { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
-  const clean = (t: string | undefined) => t ? splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative)/.test(sentenceViolation(x, sf) ?? "") && balanceHolds(x, bc)).join(" ") || undefined : undefined;
+  // 조건 문장("월지 본기가 겁재면", "갑목과 경금이 함께 있으면")은 이 원국에서 성립할 때만 남긴다(P3.8 r1: 조건을 판정하지 않아 작가가 단정).
+  const clean = (t: string | undefined, positions: readonly ("year" | "month" | "day" | "hour")[] = []) => t ? splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative|source_mention)/.test(sentenceViolation(x, sf) ?? "") && balanceHolds(x, bc) && conditionsHold(x, { saju, det, positions, hitIds: hitIdSet })).join(" ") || undefined : undefined;
   for (const t of traits) {
-    const positionNote = clean(t.positionNote), strengthNote = clean(t.strengthNote), overuse = clean(t.overuse);
+    const positionNote = clean(t.positionNote, t.positions), strengthNote = clean(t.strengthNote, t.positions), overuse = clean(t.overuse, t.positions);
     if (positionNote) t.positionNote = positionNote; else delete t.positionNote;
     if (strengthNote) t.strengthNote = strengthNote; else delete t.strengthNote;
     if (overuse) t.overuse = overuse; else delete t.overuse;
-    const good = t.good.map(clean).filter((x): x is string => Boolean(x));
+    const good = t.good.map(g => clean(g, t.positions)).filter((x): x is string => Boolean(x));
     if (good.length) t.good = good;
   }
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts, fnUsed);
-  for (const t of traits) if (t.fusion) { const why = keepBalanced(t.fusion.why, bc, splitSentences); if (why) t.fusion.why = why; else delete t.fusion; }
+  for (const t of traits) if (t.fusion) { const why = clean(keepBalanced(t.fusion.why, bc, splitSentences), t.positions); if (why) t.fusion.why = why; else delete t.fusion; }
   chart.climate.reading = keepBalanced(chart.climate.reading, bc, splitSentences) ?? "";
   // 오행 읽기 문장도 trait와 같은 차원에서 반대면 뺀다(P3.7 r2: 오행 읽기 "거절하는 힘이 얇다·오래 잰다" ↔ trait "바로 정함").
   const readingIds = [
@@ -125,7 +131,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   ].filter(id => k.features.get(id)?.oneLiner);
   const traitTags = selected.filter(x => x.fusion?.kind !== "tension").map(x => ({ id: x.hit.id, tags: x.feature.dimensionTags }));
   const clashes = (id: string, tags: Readonly<Record<string, number>> | undefined) => Boolean(tags) && traitTags.some(t => t.id !== id && opposes(tags!, t.tags));
-  chart.elements.reading = chart.elements.reading.filter((_, i) => !readingIds[i] || !clashes(readingIds[i], k.features.get(readingIds[i])?.dimensionTags));
+  const readingClash = (id: string) => { const tags = k.features.get(id)?.dimensionTags ?? {}; return traitTags.some(t => t.id !== id && opposesLoose(tags, t.tags)); };
+  chart.elements.reading = chart.elements.reading.filter((_, i) => !readingIds[i] || !readingClash(readingIds[i]));
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
   selected.forEach((s, i) => {
     const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
@@ -175,6 +182,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
 
   // 두 사람이 같은 요소를 가지면 같은 그림이 두 번 나온다: 뒤 사람은 다른 그림 변형으로(P3.8, 부모·자녀 둘 다 '교문 앞 우산').
   const other = otherRaw;
+  // 두 사람에게 같은 오행 읽기 문장이 가면 한 사람 것만 둔다(P3.8 r1: "첫발 시동이 늦게"가 두 사람 모두에게).
+  if (other) other.chart.elements.reading = other.chart.elements.reading.filter(x => !me.chart.elements.reading.includes(x));
   if (other) for (const t of other.traits) {
     if (!me.traits.some(x => x.image.metaphor === t.image.metaphor)) continue;
     const f = k.features.get(t.featureId);
@@ -193,10 +202,11 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   let timeline: Brief["timeline"];
   let timelineKeys: string[] = [];
   if (input.product === "major_fortune" || input.product === "annual_fortune") {
-    const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set(), traits: me.traits };
+    const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set(), traits: me.traits, seenTenGod: new Map(), seenStage: new Set() };
     const thisYear = me.chart.thisYear.year;
     const tenGodOf = (s: Parameters<typeof getTenGod>[1]) => getTenGod(me.saju.dayMaster, s);
-    const tenGodNotes = tenGodNotesOf(k);
+    // 십성 주의 문장의 조건("원국에 편관까지 있으면")은 이 원국에서 성립할 때만(P3.8 r1).
+    const tenGodNotes = tenGodNotesOf(k, t => splitSentences(t).filter(x => conditionsHold(x, { saju: me.saju, det: me.det, positions: [], hitIds: new Set(me.hitIds) })).join(" "));
     if (input.product === "major_fortune") {
       const entries = buildYearEntries(tctx, thisYear, me.dayun.cycles);
       const transitions = entries.filter(e => e.dayun?.transition).map(e => e.key);
@@ -224,7 +234,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
   for (const [key, m] of Object.entries(evidence)) if (m.kind === "evidence") {
     // 시주 규칙은 빼고 본다: 시간 미상이면 근거 쪽에 '자녀 자리는 보지 않습니다' 같은 유보 안내가 들어 있다.
-    const facts = m.facts.map(t => splitSentences(t).filter(x => !/^(fact_|old_negative)/.test(sentenceViolation(x, esf) ?? "") && balanceHolds(x, me.bc)).join(" ")).filter(Boolean);
+    // 지울 문장이 없으면 원문 그대로(나눴다 다시 이으면 "0.1"이 "0. 1"이 된다).
+    const facts = m.facts.map(t => { const ss = splitSentences(t), kept = ss.filter(x => !/^(fact_|old_negative|source_mention)/.test(sentenceViolation(x, esf) ?? "") && balanceHolds(x, me.bc)); return kept.length === ss.length ? t : kept.join(" "); }).filter(Boolean);
     evidence[key] = { ...m, facts: facts.length ? facts : m.facts.slice(0, 1) };
   }
   const has = (ref: string): boolean => {
@@ -239,7 +250,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   };
   const traitsAll = [...me.traits, ...(other?.traits ?? [])];
   // 전환 해(대운 전환·세운 핵심 달)가 건드리는 trait: 전환 장은 원국 특성을 다시 소개하지 않고 이것만 짧게 부른다(P3.8 1).
-  const transitionTouched = timeline ? timeline.entries.filter(e => timeline!.keyEntries.includes(e.key)).flatMap(e => (e.touched ?? []).map(t => ({ traitId: t.traitId, how: `${e.label}: ${t.how}` }))) : [];
+  const transitionTouched = timeline ? timeline.entries.filter(e => timeline!.keyEntries.includes(e.key)).flatMap(e => (e.touched ?? []).map(t => ({ traitId: t.traitId, how: `${e.label}: ${t.how}`, key: e.key }))) : [];
   const mbtiTop = mbti ? topDimension(k.mbti.get(mbti.type)!.dimensionTags) : null;
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
   const { chapters, plan } = planChapters({
@@ -250,7 +261,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])), transitionTouched } : {}),
     ...(mbtiTop ? { mbtiAxes: [mbtiTop] } : {}),
     // 궁합 장면은 그 관계 유형의 생활 주제에서만(P3.8 3: 부모·자녀 책에 친구 보온병·동창 회비). 부모·자녀는 자녀 나이대로 거른다.
-    ...(relTopics && other ? { relScenes: { topics: relTopics, ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const } : {}) } } : {}),
+    ...(relTopics && other ? { relScenes: { topics: relTopics, ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const, exclude: parentChildExclude(me.person.gender, other.person.gender, other.person.age >= 20 ? rng.fork("living").pick(["together", "apart"] as const) : "together") } : {}) } } : {}),
   });
 
   // 항목의 touched는 그 장에 배정된 trait만 남긴다(P3.7 1-1: 원국 특성은 건드려진 것만, 배정된 것만 짧게 부른다).
@@ -259,7 +270,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const kept = (e.touched ?? []).filter(t => assigned.has(t.traitId));
     if (kept.length) e.touched = kept; else delete e.touched;
   }
-  markImageFamilies(me, chapters);
+  markImageFamilies(me, chapters, fortunes);
   if (other) markImageFamilies(other, chapters);
 
   // 입력 직업이 없으면 '지금 일' 장은 원래 주제(장점이 부담이 되는 환경)로 둔다(P3.7 1-4).
@@ -298,24 +309,57 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
  * 이미지 계열(P3.7 1-3): 같은 대상을 그린 trait가 둘 이상 배정되면 책 순서상 먼저 나오는 것이 대표 그림이다.
  * 나머지는 sameImageAs로 대표를 가리키고, 일간 계열이면 원국 요약의 일간 비유도 대표 그림으로 맞춘다(촛불·등불·연탄불이 한 책에 섞였다).
  */
-function markImageFamilies(p: PersonPack, chapters: readonly { id: string }[]) {
+function markImageFamilies(p: PersonPack, chapters: readonly { id: string }[], fortunes: Brief["fortunes"] = []) {
   const order = new Map(chapters.map((c, i) => [c.id, i]));
   const first = (t: Trait) => Math.min(...t.chapters.map(c => order.get(c) ?? Infinity));
   const used = p.traits.filter(t => t.chapters.length).sort((a, b) => first(a) - first(b) || a.id.localeCompare(b.id));
+  // 일간 계열 대표 그림의 대상(불·흙…)과 같은 대상을 그린 다른 trait도 일간 계열로 묶는다(P3.8 r1: 등불 일간 + 천을귀인 '등불 마중' + 연탄).
+  const base = (t: Trait) => imageFamily(t.featureId, p.saju.dayMaster, t.image.metaphor);
+  const selfLead = used.find(t => base(t) === "self");
+  const selfObj = selfLead ? imageObject(selfLead.image.metaphor) : null;
+  const famOf = (t: Trait) => { const f = base(t); return selfObj && f === `img:${selfObj}` ? "self" : f; };
   const lead = new Map<string, Trait>();
   for (const t of used) {
-    const fam = imageFamily(t.featureId, p.saju.dayMaster, t.image.metaphor);
+    const fam = famOf(t);
     const l = lead.get(fam);
     // 일간 쉬운 이름("촛불")도 그림이라, 대표가 일주·조후면 그 trait의 쉬운 이름으로 맞춘다(P3.7 r1: "등불의 주인은 촛불처럼").
     if (!l) { lead.set(fam, t); if (fam === "self") { p.chart.dayMaster.metaphor = t.image.metaphor; if (t.family !== "dayMaster") p.chart.dayMaster.easyName = t.easyName; } } else t.sameImageAs = l.id;
   }
+  // 대표 그림과 같은 대상의 다른 낱말(등불↔촛불·연탄)은 대표 낱말로 맞춘다: 연결 문장·좋은 면·계절 문장에서 그림이 갈리지 않게.
+  for (const t of p.traits) {
+    const l = lead.get(famOf(t));
+    if (!l) continue;
+    if (t.fusion) t.fusion.why = alignImageWords(t.fusion.why, l.image.metaphor);
+    t.good = t.good.map(g => alignImageWords(g, l.image.metaphor));
+  }
+  const self = lead.get("self");
+  if (self) {
+    p.chart.climate.reading = alignImageWords(p.chart.climate.reading, self.image.metaphor);
+  }
+  // trait가 아닌 좋은 기운의 그림이 이미 대표 그림이 있는 대상(일간 계열·저장·불…)이면 그림을 빼고 쉬운 이름만 둔다.
+  for (const f of fortunes) { const obj = f.traitId ? null : imageObject(f.image.metaphor); if (obj && (obj === selfObj || lead.has(`img:${obj}`))) f.image = { metaphor: "", visual: "" }; }
+}
+
+/**
+ * 부모·자녀 장면 거르기(P3.8 r1): 부모·자녀 성별과 다른 호칭(엄마인데 아빠 장면), 함께 사는지·따로 사는지 섞임(외박 알림 ↔ 올라오는 기차표).
+ * 함께 사는지는 입력에 없어, 성인 자녀는 책마다 한쪽으로 정하고 다른 쪽 장면을 뺀다.
+ */
+function parentChildExclude(parent: "MALE" | "FEMALE" | null, child: "MALE" | "FEMALE" | null, living: "together" | "apart"): RegExp {
+  const parts = [
+    ...(parent === "FEMALE" ? ["아빠", "아버지"] : parent === "MALE" ? ["엄마", "어머니"] : ["아빠", "아버지", "엄마", "어머니"]),
+    ...(child === "FEMALE" ? ["아들"] : child === "MALE" ? ["(?<![가-힣])딸(?![기])"] : ["아들", "(?<![가-힣])딸(?![기])"]),
+    ...(living === "together" ? ["올라오", "내려오", "올라가", "내려가", "기차표", "버스표", "표를 (끊|예매)", "택배", "영상 통화", "자취", "혼자 사는", "다녀가", "들르"] : ["외박", "현관", "귀가", "늦은 밤[^.]{0,12}(들어|오)", "거실", "아침 식탁", "방문을", "같은 집"]),
+  ];
+  return new RegExp(parts.join("|"));
 }
 
 /** 타임라인 항목이 가리키는 십성 뜻을 한 번만 싣는다(항목마다 반복하면 토큰이 두 배). */
-function tenGodNotesOf(k: Knowledge) {
+function tenGodNotesOf(k: Knowledge, holds: (t: string) => string = t => t) {
   return (entries: readonly { tenGod: { stem: string } }[], kind: "year" | "month") => Object.fromEntries(entries.map(e => {
     const tg = e.tenGod.stem.match(/\((.+)\)/)?.[1] ?? ""; const p = k.tenGodPeriod.get(tg);
-    return [e.tenGod.stem, kind === "year" ? { meaning: p?.year.meaning ?? "", caution: p?.year.caution } : { meaning: p?.month.meaning ?? "" }];
+    // 출처 문장("고전이 ~라 봤다")은 작가에게 넘기지 않는다(P3.8 r1).
+    const caution = p?.year.caution ? holds(dropSourceSentences(p.year.caution)) : "";
+    return [e.tenGod.stem, kind === "year" ? { meaning: dropSourceSentences(p?.year.meaning ?? ""), ...(caution ? { caution } : {}) } : { meaning: dropSourceSentences(p?.month.meaning ?? "") }];
   }));
 }
 

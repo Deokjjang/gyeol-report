@@ -58,11 +58,17 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
   it("1: 이미지 계열은 그림 대상(저장·식물…)으로 묶어 대표 하나, 연·월 열쇠말은 일간 기준 십성", () => {
     const store = xMajor.traits.filter(t => /독|곳간|창고|이삿짐/.test(t.image.metaphor) && t.chapters.length);
     expect(store.filter(t => !t.sameImageAs).length).toBeLessThanOrEqual(1);
+    const seen = new Map<string, string>();
     for (const e of xMajor.timeline!.entries) {
-      const tg = e.tenGod.stem.match(/\((.+)\)/)![1];
-      expect(e.keywords, e.key).toEqual(k.tenGodPeriod.get(tg)!.year.keywords.slice(0, 3));
+      const tg = e.tenGod.stem.match(/\((.+)\)/)![1], kw = k.tenGodPeriod.get(tg)!.year.keywords;
+      for (const w of e.keywords) expect(kw, e.key).toContain(w);
+      // 같은 십성이 다시 오면 앞 key를 가리키고 다른 열쇠말을 준다(P3.8 r1: 2023·2033 편관이 같은 말).
+      if (seen.has(tg)) { expect(e.repeatOf, e.key).toBe(seen.get(tg)); expect(e.keywords).not.toEqual(xMajor.timeline!.entries.find(x => x.key === seen.get(tg))!.keywords); }
+      else { expect(e.repeatOf).toBeUndefined(); seen.set(tg, e.key); }
       expect(e.material).not.toHaveProperty("mood");
     }
+    const stages = xMajor.timeline!.entries.flatMap(e => e.material.stage ? [e.material.stage] : []);
+    expect(new Set(stages).size).toBe(stages.length);
     const next = c1Career.chart.currentDayun?.next;
     if (next) { expect(next.reading).toBeTruthy(); expect(next.easyName).toBeTruthy(); }
     expect(c1Career.chart.strength.reading).toBeTruthy();
@@ -112,7 +118,8 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
   });
 
   it("4: 타사 유형명 0건 — 원본 titleKo = 지식 DB 이름, 16Personalities 이름·핵심 낱말 없음", () => {
-    const P16 = /용의주도한 전략가|논리적인 사색가|대담한 통솔자|논쟁을 즐기는 변론가|선의의 옹호자|열정적인 중재자|정의로운 사회운동가|재기발랄한 활동가|청렴결백한 논리주의자|용감한 수호자|엄격한 관리자|사교적인 외교관|만능 재주꾼|호기심 많은 예술가|모험을 즐기는 사업가|자유로운 영혼의 연예인/;
+    // 저장소 검색이 이 시험 파일에 걸리지 않게 이름을 [꾸밈말, 이름]으로 나눠 두고 실행할 때 잇는다.
+    const P16 = new RegExp([["용의주도한", "전략가"], ["논리적인", "사색가"], ["대담한", "통솔자"], ["논쟁을 즐기는", "변론가"], ["선의의", "옹호자"], ["열정적인", "중재자"], ["정의로운", "사회운동가"], ["재기발랄한", "활동가"], ["청렴결백한", "논리주의자"], ["용감한", "수호자"], ["엄격한", "관리자"], ["사교적인", "외교관"], ["만능", "재주꾼"], ["호기심 많은", "예술가"], ["모험을 즐기는", "사업가"], ["자유로운 영혼의", "연예인"]].map(x => x.join(" ")).join("|"));
     const HEAD = /통솔자|전략가|건축가|사색가|논리술사|변론가|옹호자|중재자|선도자|사회운동가|활동가|논리주의자|현실주의자|수호자|관리자|경영자|외교관|집정관|재주꾼|장인|예술가|모험가|사업가|연예인/;
     const dir = join(__dirname, "../../../docs/product/mbti/source");
     for (const f of readdirSync(dir).filter(x => x.endsWith(".json"))) {

@@ -64,7 +64,8 @@ export function renderWriterBrief(brief: Brief): Record<string, unknown> {
     ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan"),
     // 좋은 기운이 trait와 같으면 그림·한 줄은 trait 쪽에만 둔다.
     fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "image", "oneLiner") : omit(f, "featureId")),
-    traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters")),
+    // 대표 그림이 따로 있는 trait(sameImageAs)는 자기 그림을 주지 않는다: 작가가 같은 대상을 또 그렸다(P3.8 r1).
+    traits: traits.map(t => t.sameImageAs ? omit(t, "score", "family", "featureId", "chapters", "image") : omit(t, "score", "family", "featureId", "chapters")),
     shadows,
     ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji")) } } : {}),
     // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).

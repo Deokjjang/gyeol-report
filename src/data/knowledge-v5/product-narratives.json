@@ -68,7 +68,7 @@
           ] },
         { "id": "fortune", "title": "흐름이 좋아지는 조건", "question": "어떤 조건이 갖춰질 때 내 흐름이 좋아질까?", "role": "PAYOFF", "domains": ["work", "money", "relationships"], "evidenceFamilies": ["gwiin", "shinsal", "structure"], "paragraphs": { "min": 4, "max": 4 }, "sections": [
             {"q": "올해 나에게 들어오는 기운은?", "domain": "work", "use": ["ref:chart.thisYear"], "trait": "none"},
-            {"q": "지금 10년 흐름이 주는 조건은?", "domain": "work", "use": ["ref:chart.currentDayun"], "trait": "none"},
+            {"q": "지금 10년 흐름이 주는 조건은?", "domain": "work", "use": ["ref:chart.currentDayun"], "trait": "none", "note": "올해 기운 절과 겹치지 않게 10년 바탕만"},
             {"q": "흐름이 좋아질 때 돕는 기운은?", "domain": "relationships", "use": ["scene"], "trait": "intro"},
             {"q": "흐름을 살리는 습관은?", "domain": "money", "use": ["scene"], "trait": "apply"}
           ] },
@@ -136,7 +136,7 @@
           ] },
         { "id": "timing-risk", "title": "힘이 붙는 시기와 돈 굴리는 원칙", "question": "올해 흐름에서 밀어붙일 곳, 조심할 곳, 돈을 굴리는 원칙은 무엇일까?", "role": "TWIST", "domains": ["work", "money"], "evidenceFamilies": ["twelveStage", "relation", "shinsal"], "paragraphs": { "min": 4, "max": 4 }, "sections": [
             {"q": "올해 일에서 밀어붙일 곳은?", "domain": "work", "use": ["ref:chart.thisYear"], "trait": "none"},
-            {"q": "지금 10년 흐름과 다음 흐름은?", "domain": "work", "use": ["ref:chart.currentDayun"], "trait": "none"},
+            {"q": "지금 10년 흐름과 다음 흐름은?", "domain": "work", "use": ["ref:chart.currentDayun"], "trait": "none", "note": "올해 절과 겹치지 않게 10년 바탕과 다음 흐름만"},
             {"q": "돈을 굴리는 나의 원칙은?", "domain": "money", "use": ["ev:investment"], "trait": "none"},
             {"q": "올해 조심할 곳은?", "domain": "money", "use": ["shadow"]}
           ] },
@@ -288,7 +288,7 @@
       "narrativeMode": "14개 연도를 독립된 운세로 쓰지 않고, 계산된 시간 근거를 따라 이전 흐름과 다음 흐름의 차이를 연결한다. 근거가 허용하는 범위에서 삶의 흐름을 하나의 이야기처럼 읽게 하되, 구체적 미래 사건은 확정하지 않는다.",
       "chapters": [
         { "id": "overview", "title": "앞으로 14년을 한 줄로", "question": "앞으로의 흐름은 어떤 모양으로 이어질까?", "role": "HOOK", "domains": ["work", "relationships"], "requires": ["genderKnown"], "evidenceFamilies": ["twelveStage", "tenGod", "relation"], "paragraphs": { "min": 3, "max": 4 }, "sections": [
-            {"q": "앞으로 14년을 한 줄로 말하면?", "domain": "work", "use": ["ref:timeline.cycles"], "trait": "none"},
+            {"q": "앞으로 14년을 한 줄로 말하면?", "domain": "work", "use": ["ref:timeline.cycles"], "trait": "none", "note": "14년이 몇 개의 대운으로 나뉘고 언제 바뀌는지만. 대운의 뜻 풀이는 2장 몫"},
             {"q": "타고난 바탕은 이 흐름을 어떻게 탈까?", "domain": "relationships", "use": ["scene"], "trait": "core"},
             {"q": "흐름을 버티게 하는 힘은?", "domain": "work", "use": ["scene"], "trait": "intro"},
             {"q": "흐름 속에서 조심할 버릇은?", "domain": "relationships", "use": ["shadow"]}
@@ -301,14 +301,15 @@
           ] },
         { "id": "year", "title": "연도별 흐름", "question": "이 해는 지난해와 무엇이 달라질까?", "role": "SCENE", "domains": ["work", "money", "love", "relationships", "study"], "requires": ["genderKnown"], "evidenceFamilies": ["tenGod", "relation", "twelveStage", "shinsal"], "paragraphs": { "min": 2, "max": 3 }, "repeat": 14 },
         { "id": "transition", "title": "흐름이 바뀌는 해", "question": "흐름이 바뀌는 해에 나는 무엇을 다르게 느낄까?", "role": "TWIST", "domains": ["work", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 3, "max": 4 }, "sections": [
-            {"q": "흐름이 바뀌는 해에는 무엇이 바뀔까?", "domain": "work", "use": ["ref:timeline.keyEntries"], "trait": "none"},
+            {"q": "흐름이 바뀌는 해에는 무엇이 바뀔까?", "domain": "work", "use": ["ref:timeline.keyEntries"], "trait": "none", "note": "그 해 key에서 쓴 내용은 다시 쓰지 않는다. 바뀌기 전 10년과 뒤 10년의 차이만"},
             {"q": "바뀌는 해가 건드리는 타고난 자리는?", "domain": "work", "use": ["touched"], "trait": "none"},
-            {"q": "새 흐름의 기운은 무엇을 요구할까?", "domain": "relationships", "use": ["ref:timeline.tenGodNotes"], "trait": "none"}
+            {"q": "새 흐름의 기운은 무엇을 요구할까?", "domain": "relationships", "use": ["ref:timeline.tenGodNotes"], "trait": "none", "note": "새 대운 십성 하나의 뜻만. 연도 key에서 쓴 문장을 다시 쓰지 않는다"}
           ] },
         { "id": "closing", "title": "흐름을 타는 방법", "question": "이 흐름에서 내 방식으로 잘 지내려면 무엇을 먼저 할까?", "role": "PAYOFF", "domains": ["work", "relationships"], "paragraphs": { "min": 3, "max": 4 }, "sections": [
             {"q": "아직 덜 쓴 기운은 이 흐름에서 무엇을 도울까?", "domain": "work", "use": ["ref:unused"], "trait": "none"},
             {"q": "14년 동안 지킬 나의 속도는?", "domain": "work", "use": ["recap:current-cycle"], "trait": "none"},
-            {"q": "사람 사이에서 지킬 한 가지는?", "domain": "relationships", "use": ["recap:overview"], "trait": "none"}
+            {"q": "사람 사이에서 지킬 한 가지는?", "domain": "relationships", "use": ["recap:overview"], "trait": "none"},
+            {"q": "흐름이 바뀌는 해를 맞을 때 지킬 것은?", "domain": "work", "use": ["recap:transition"], "trait": "none"}
           ] }
       ],
       "forbidden": ["특정 연도에 사건(결혼·이직·사고·질병·합격)이 일어난다고 말하기", "대운 경계가 불확실한 입력(시간 미상·경계 근처)에서 경계 연도를 단정하기", "연도마다 같은 조언 순서 반복", "MBTI가 없을 때 MBTI 근거 언급"],
@@ -327,18 +328,20 @@
         { "id": "current-dayun", "title": "지금 대운 위에 올해", "question": "올해 흐름은 지금 대운의 어떤 바탕 위에 놓일까?", "role": "WHY", "domains": ["work", "money", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 3, "max": 4 }, "sections": [
             {"q": "올해는 지금 10년 흐름의 어떤 바탕 위에 놓일까?", "domain": "work", "use": ["ref:chart.currentDayun"], "trait": "none"},
             {"q": "많은 기운과 모자란 기운은 올해 어떻게 움직일까?", "domain": "money", "use": ["ref:chart.elements"], "trait": "none"},
-            {"q": "올해 힘이 되는 타고난 기운은?", "domain": "work", "use": ["scene"], "trait": "intro"}
+            {"q": "올해 힘이 되는 타고난 기운은?", "domain": "work", "use": ["scene"], "trait": "intro"},
+            {"q": "올해 사람 사이에서 이 바탕은 어떻게 보일까?", "domain": "relationships", "use": ["scene"], "trait": "any"}
           ] },
         { "id": "month", "title": "월별 흐름", "question": "이번 달은 지난달과 무엇이 다를까?", "role": "SCENE", "domains": ["work", "money", "love", "relationships", "study"], "requires": ["genderKnown"], "evidenceFamilies": ["tenGod", "relation", "shinsal"], "paragraphs": { "min": 2, "max": 3 }, "repeat": 12 },
         { "id": "key-months", "title": "눈여겨볼 달", "question": "올해 중 흐름이 크게 움직이는 달은 언제이고 왜일까?", "role": "TWIST", "domains": ["work", "money", "relationships"], "requires": ["genderKnown"], "paragraphs": { "min": 3, "max": 4 }, "sections": [
-            {"q": "흐름이 크게 움직이는 달은 왜 그럴까?", "domain": "work", "use": ["ref:timeline.keyEntries"], "trait": "none"},
+            {"q": "흐름이 크게 움직이는 달은 왜 그럴까?", "domain": "work", "use": ["ref:timeline.keyEntries"], "trait": "none", "note": "그 달 key에서 쓴 내용은 다시 쓰지 않고, 그 달들의 공통점만"},
             {"q": "그 달들이 건드리는 타고난 자리는?", "domain": "work", "use": ["touched"], "trait": "none"},
-            {"q": "그 달을 준비하는 방법은?", "domain": "relationships", "use": ["ref:timeline.tenGodNotes"], "trait": "none"}
+            {"q": "그 달을 준비하는 방법은?", "domain": "relationships", "use": ["ref:timeline.tenGodNotes"], "trait": "none", "note": "그 달들의 십성 뜻만 짧게. 월 key에서 쓴 문장을 다시 쓰지 않는다"}
           ] },
         { "id": "closing", "title": "올해를 내 방식으로", "question": "올해를 내 방식으로 잘 보내려면 어디에 힘을 둘까?", "role": "PAYOFF", "domains": ["work", "relationships"], "paragraphs": { "min": 3, "max": 4 }, "sections": [
             {"q": "아직 덜 쓴 기운은 올해 무엇을 도울까?", "domain": "work", "use": ["ref:unused"], "trait": "none"},
             {"q": "올해 지킬 나의 속도는?", "domain": "work", "use": ["recap:current-dayun"], "trait": "none"},
-            {"q": "사람 사이에서 지킬 한 가지는?", "domain": "relationships", "use": ["recap:overview"], "trait": "none"}
+            {"q": "사람 사이에서 지킬 한 가지는?", "domain": "relationships", "use": ["recap:overview"], "trait": "none"},
+            {"q": "크게 움직이는 달에 붙잡을 한 가지는?", "domain": "work", "use": ["recap:key-months"], "trait": "none"}
           ] }
       ],
       "forbidden": ["특정 달에 사건(결혼·이별·사고·질병·합격·승진)이 일어난다고 말하기", "매달 같은 조언 문장 반복", "중요도가 낮은 달을 억지로 부풀리기", "MBTI가 없을 때 MBTI 근거 언급", "절입(달이 바뀌는 날) 경계를 넘어 한 달의 특징을 다른 달에 쓰기"],

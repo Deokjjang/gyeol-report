@@ -36,6 +36,8 @@ function flowShort(key: string, clashes: readonly ChartPosition[]): string | und
 export type TimelineCtx = {
   readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile;
   readonly rng: Rng; readonly usedScenes: Set<string>; readonly usedTemplates: Set<string>;
+  /** 이미 나온 십성(→ 첫 항목 key·횟수)과 십이운성 단계(P3.8 r1: 같은 십성 해에 같은 열쇠말·단계 문구가 되풀이). */
+  readonly seenTenGod?: Map<string, { key: string; n: number }>; readonly seenStage?: Set<string>;
   /** 원국 trait(P3.7 1-1): 그해·그달 글자가 실제로 건드리는 것만 항목 재료(touched)가 된다. */
   readonly traits?: readonly TraitRef[];
 };
@@ -145,20 +147,27 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
   const stage = k.features.get(`twelveStage:${inc.twelveStage}`);
   const scene = pickScene(ctx, kind === "year" ? period.year.scenes : period.month.scenes, `scene:${key}`);
   const touched = touchedTraits(ctx, inc, eff);
+  const seen = ctx.seenTenGod?.get(`${kind}:${inc.stemTenGod}`);
+  ctx.seenTenGod?.set(`${kind}:${inc.stemTenGod}`, { key: seen?.key ?? key, n: (seen?.n ?? 0) + 1 });
+  const kw = kind === "year" ? period.year.keywords : period.month.keywords, per = kind === "year" ? 3 : 2, occ = seen?.n ?? 0;
+  const keywords = Array.from({ length: per }, (_, i) => kw[(occ * per + i) % kw.length]);
+  const stageText = stage ? `${stage.name} — ${stage.oneLiner}` : inc.twelveStage;
+  const stageNew = !ctx.seenStage?.has(inc.twelveStage); ctx.seenStage?.add(inc.twelveStage);
   return {
     key, label, kind, ganji: ganjiOf(pillar), colors: colorsOf(pillar),
     tenGod: { stem: tenGodLabel(inc.stemTenGod), branch: tenGodLabel(inc.branchTenGod) },
     badges,
     fillsLack: { fills: eff.fills.length > 0, elements: eff.fills, feedsExcess: eff.feeds },
     flow: { score: flow.score, label: flow.label, basis: flow.applied.map(a => `${flowShort(a.key, flowInput.clashes) ?? a.when} ${a.delta > 0 ? "+" : ""}${a.delta}`), note: "참고" },
-    // 뜻(열쇠말)은 일간 기준 십성, 그림은 간지(P3.8 1: 간지 기준 열쇠말·분위기가 정인 해에 '독립·경쟁자'를 줬다).
-    keywords: (kind === "year" ? period.year.keywords : period.month.keywords).slice(0, 3),
+    // 뜻(열쇠말)은 일간 기준 십성, 그림은 간지(P3.8 1: 간지 기준 열쇠말·분위기가 정인 해에 '독립·경쟁자'를 줬다). 같은 십성이 다시 오면 다음 묶음.
+    keywords,
     action: pickAction(ctx, inc.stemTenGod, flow.score, slot),
     material: {
       image: g.image.metaphor,
       ...(scene ? { scene } : {}),
-      stage: stage ? `${stage.name} — ${stage.oneLiner}` : inc.twelveStage,
+      ...(stageNew ? { stage: stageText } : {}),
     },
+    ...(seen ? { repeatOf: seen.key } : {}),
     ...(touched.length ? { touched } : {}),
     ...extra,
   };

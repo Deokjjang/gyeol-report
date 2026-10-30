@@ -10,3 +10,8 @@ export const CASES: Record<string, { input: BriefInput; customers: readonly stri
   "x-major": { input: { product: "major_fortune", baseDate: BASE, person: PEOPLE.x }, customers: ["x"] },
   "c1-full": { input: { product: "saju_mbti_full", baseDate: BASE, person: PEOPLE.c1 }, customers: ["c1"] },
 };
+/** 재시험 밖 확인용(배정 점검만). */
+export const EXTRA: Record<string, { input: BriefInput; customers: readonly string[] }> = {
+  "y-love": { input: { product: "love_marriage_child", baseDate: BASE, person: PEOPLE.y }, customers: ["y"] },
+  "c2-annual": { input: { product: "annual_fortune", baseDate: BASE, person: PEOPLE.c2, selectedYear: 2026 }, customers: ["c2"] },
+};

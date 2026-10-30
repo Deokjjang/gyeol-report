@@ -1,0 +1,219 @@
+{
+ "case": "c1-full",
+ "product": "saju_mbti_full",
+ "chapters": 13,
+ "sources": {
+  "writer": 13
+ },
+ "chars": [
+  1110,
+  1153,
+  1143,
+  1206,
+  849,
+  1107,
+  866,
+  924,
+  1284,
+  1081,
+  1144,
+  1060,
+  1077
+ ],
+ "total": 14004,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [
+  "11 term_first: 편관",
+  "0 trait_repeat: t5 바른 관리자 소제목 4개",
+  "0 trait_repeat: t10 옆 레인 승부사 소제목 4개",
+  "0 trait_repeat: 축 tg:OFFICER 소제목 4개",
+  "0 trait_repeat: 축 dim:dutifulness+ 소제목 4개",
+  "0 trait_repeat: 축 tg:PEER 소제목 4개",
+  "0 trait_repeat: 축 dim:competitiveness+ 소제목 4개",
+  "0 trait_repeat: '한 줄·한마디' 처방 8회"
+ ],
+ "briefCopy": {
+  "sentences": 299,
+  "matched": 9,
+  "ratio": 0.03,
+  "writerSentences": 299,
+  "writerMatched": 9,
+  "writerRatio": 0.03
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 5
+  },
+  {
+   "phrase": "여기에",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {
+  "선배 피드백": 1,
+  "혼밥 메뉴": 1,
+  "점심 메뉴 투표": 1,
+  "친구 단톡방": 0,
+  "기획 회의": 2,
+  "출시 일정": 2,
+  "사용자 피드백": 2,
+  "화면 설계안": 1,
+  "회의록": 1,
+  "요구사항 정리": 1,
+  "우선순위 표": 1,
+  "개발팀 협의": 1,
+  "막내 업무": 1,
+  "주말 약속": 1,
+  "운동 루틴": 1,
+  "사수 질문 노트": 0,
+  "경쟁 서비스 조사": 1,
+  "로드맵 문서": 1,
+  "베타 테스트": 1,
+  "보고서 수정본": 1,
+  "기능 명세서": 1,
+  "출시 후 지표": 1,
+  "연차 눈치": 0
+ },
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "imageUnnamed": 0,
+ "loveTiming": 0,
+ "jobMentions": 1,
+ "sceneHintsUsed": "20/23",
+ "traitUse": {
+  "traits": [
+   {
+    "id": "t1",
+    "name": "겨울 외양간 등불",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t2",
+    "name": "한 칸 밀린 단추",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t3",
+    "name": "말 안장",
+    "sections": 3,
+    "chapters": 3,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t4",
+    "name": "같은 계절 모임",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t5",
+    "name": "바른 관리자",
+    "sections": 4,
+    "chapters": 4,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t6",
+    "name": "손맛 요리사",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t7",
+    "name": "흰 호랑이",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t8",
+    "name": "땅속 김장독",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t10",
+    "name": "옆 레인 승부사",
+    "sections": 4,
+    "chapters": 4,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t11",
+    "name": "조용히 고르는 남자",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "t12",
+    "name": "겨울밤 연탄불",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 2
+   }
+  ],
+  "axes": {
+   "core": 2,
+   "dim:persistence+": 3,
+   "shinsal:EUMCHAK_YANGCHA": 2,
+   "shinsal:TWELVE_BANANSAL": 3,
+   "dim:statusDrive+": 3,
+   "relation:BANGHAP": 1,
+   "dim:boundarySetting+": 1,
+   "tg:OFFICER": 4,
+   "dim:dutifulness+": 4,
+   "tg:OUTPUT": 2,
+   "dim:caretaking+": 3,
+   "shinsal:BAEKHODAESAL": 1,
+   "twelveStage:墓": 2,
+   "dim:possessiveness+": 2,
+   "tg:PEER": 4,
+   "dim:competitiveness+": 4,
+   "yinYang:YIN_HEAVY": 2,
+   "dim:introspection+": 2,
+   "climate:丁": 1
+  },
+  "mbti": {
+   "Te": 2,
+   "Fi": 1
+  },
+  "advice": 8,
+  "warnings": [
+   "t5 바른 관리자 소제목 4개",
+   "t10 옆 레인 승부사 소제목 4개",
+   "축 tg:OFFICER 소제목 4개",
+   "축 dim:dutifulness+ 소제목 4개",
+   "축 tg:PEER 소제목 4개",
+   "축 dim:competitiveness+ 소제목 4개",
+   "'한 줄·한마디' 처방 8회"
+  ]
+ },
+ "planWarnings": []
+}

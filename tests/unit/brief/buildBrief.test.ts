@@ -155,7 +155,8 @@ describe("brief builder — 성질", () => {
         for (const s of c.sections!) expect(s.materials.length).toBeGreaterThanOrEqual(1);
         if (c.sections!.length < 4) expect(c.targetChars[1]).toBeLessThan(1250);
       }
-      expect(brief.chapters.filter(c => c.sections && c.sections.length < 3).length, brief.product).toBeLessThanOrEqual(1);
+      // MBTI가 없으면 MBTI가 1순위인 절이 빠져 짧은 장이 하나 더 생길 수 있다.
+      expect(brief.chapters.filter(c => c.sections && c.sections.length < 3).length, brief.product).toBeLessThanOrEqual(brief.mbti ? 1 : 2);
     }
   });
 

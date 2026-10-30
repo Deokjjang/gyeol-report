@@ -143,7 +143,7 @@
         "work": [
           { "text": "규칙이 틀렸다고 느껴도 일단 지키고, 바꿀 때는 절차를 밟아 바꿉니다. 편법으로 빨리 가는 걸 가장 싫어합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "상사가 없어도 같은 시간에 출근하고 같은 품질로 일합니다. 그래서 남들이 당신 뒤를 안 봐도 됩니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "공무·법무·행정·품질·회계·교육처럼 책임이 분명한 일에서 평판이 쌓입니다. 승진은 빠르지 않아도 꾸준합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "공무·법무·행정·품질·회계·교육처럼 책임이 분명한 일에서 평판이 쌓입니다. 속도는 빠르지 않아도 믿음은 꾸준히 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
           { "text": "월급처럼 정해진 날 들어오는 돈을 신뢰합니다. 한 방보다 꾸준함, 수익률보다 원금 보존입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
