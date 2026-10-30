@@ -47,7 +47,8 @@ export type V5Evidence = {
 };
 
 const REF_NAMES: Record<string, string> = { "chart.dayMaster": "타고난 바탕", "chart.elements": "가장 강한·약한 기운", "chart.yinYang": "음양 균형", "chart.climate": "태어난 계절", "chart.thisYear": "올해 기운", "chart.currentDayun": "지금 대운", "chart.strength": "타고난 힘의 세기", fortunes: "좋은 기운", unused: "아직 쓰지 못한 기운", "timeline.cycles": "대운 지도", "timeline.keyEntries": "눈여겨볼 때", "compatibility.tenGodAB": "주는 기운(A→B)", "compatibility.tenGodBA": "주는 기운(B→A)", "compatibility.complement": "서로 채워 주는 기운", "compatibility.dayRelations": "두 사람의 날", "compatibility.differences": "다른 반응", "compatibility.mbtiConvention": "MBTI 통념 궁합", "compatibility.lens": "관계의 초점", "compatibility.common": "닮은 점", "compatibility.score": "타고난 맞물림", "compatibility.a": "A의 모습", "compatibility.b": "B의 모습" };
-const EVIDENCE_NAMES: Record<string, string> = { spouseStar: "배우자 별", spousePalace: "배우자 자리", childStar: "자녀 별", childPalace: "자녀 자리", partnerMatch: "잘 맞는 상대", meetingPlaces: "만나기 좋은 곳", jobFit: "잘 맞는 일", investment: "돈 쓰는 방식" };
+const EVIDENCE_NAMES: Record<string, string> = { spouseStar: "배우자 별", spousePalace: "배우자 자리", childStar: "자녀 별", childPalace: "자녀 자리", partnerMatch: "잘 맞는 상대", meetingPlaces: "만나기 좋은 곳", jobFit: "잘 맞는 일", investment: "돈 쓰는 방식",
+  jobRoles: "지금 자리에서 넓힐 역할", jobAdjacent: "옮겨 갈 직무", jobLongterm: "길게 보는 다른 길", currentJob: "지금 일과의 궁합", earnStyle: "돈 버는 방식", moneyLeak: "돈이 새는 곳", studyFit: "맞는 공부 방식", studyPick: "이어지는 공부", crush: "호감 표현", contact: "연락 패턴", pushPull: "밀당" };
 const noHan = (s: string) => s.replace(/\s*\([^)]*[一-鿿][^)]*\)/g, "").replace(/[一-鿿]+/g, "").trim();
 
 /** 장별 근거 요약: 그 장 재료의 쉬운 이름 3~5개. */
@@ -59,7 +60,10 @@ export function chapterEvidence(brief: Brief, ch: WriterChapter): string[] {
     if (m.kind === "trait") { const t = brief.traits.find(x => x.id === m.traitId); add(t && `${t.easyName}(${noHan(t.name)})`); }
     else if (m.kind === "mbti") add(brief.mbti ? `MBTI ${brief.mbti.type}` : undefined);
     else if (m.kind === "evidence") add(EVIDENCE_NAMES[m.key]);
+    else if (m.kind === "rel") add(`${m.topic} 장면`);
     else if (m.kind === "ref") {
+      if (m.ref.startsWith("chapters.")) { const c = brief.chapters.find(x => x.id === m.ref.slice(9)); add(c && `앞 장: ${c.title}`); continue; }
+      if (m.ref.startsWith("mbti.")) { add(brief.mbti ? `MBTI ${brief.mbti.type}` : undefined); continue; }
       if (m.ref.startsWith("shadows.")) { const s = brief.shadows.find(x => x.id === m.ref.slice(8)); const t = s && brief.traits.find(x => x.id === s.traitId); add(t && `${t.easyName}(${noHan(t.name)})`); }
       else if (m.ref.startsWith("traits.")) { const t = brief.traits.find(x => x.id === m.ref.split(".")[1]); add(t && `${t.easyName}×MBTI`); }
       else if (m.ref === "mbti") add(brief.mbti ? `MBTI ${brief.mbti.type}` : undefined);
@@ -67,7 +71,7 @@ export function chapterEvidence(brief: Brief, ch: WriterChapter): string[] {
     }
   }
   if (ch.keys) add(`${ch.keys.length}개 ${ch.keys[0]?.includes("-M") ? "달" : "해"} 카드`);
-  for (const fill of [REF_NAMES["chart.dayMaster"], REF_NAMES["chart.elements"]]) if (names.length < 3) add(fill);
+  for (const fill of [REF_NAMES["chart.dayMaster"], REF_NAMES["chart.elements"], REF_NAMES["chart.yinYang"]]) if (names.length < 3) add(fill);
   return names.slice(0, 5);
 }
 

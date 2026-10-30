@@ -24,7 +24,7 @@ for (const e of k.tenGodPeriod.values()) for (const s of [...e.year.scenes, ...e
 
 function scenesOf(b: Brief): string[] {
   return [
-    ...b.chapters.flatMap(c => c.materials.flatMap(m => (m.kind === "trait" || m.kind === "mbti" ? [m.scene] : []))),
+    ...b.chapters.flatMap(c => c.materials.flatMap(m => ((m.kind === "trait" || m.kind === "mbti") && m.scene ? [m.scene] : []))),
     ...b.traits.flatMap(t => (t.fusion?.scene ? [t.fusion.scene] : [])),
     ...(b.timeline?.entries.flatMap(e => (e.material.scene ? [e.material.scene] : [])) ?? []),
   ];
@@ -33,7 +33,7 @@ function digest(b: Brief) {
   return {
     traits: b.traits.map(t => `${t.id} ${t.featureId} ${t.strength} ${t.positions.join(",")} ${t.fusion ? `${t.fusion.target}/${t.fusion.kind}` : "-"} [${t.chapters.join(",")}]`),
     fortunes: b.fortunes.map(f => f.featureId), shadows: b.shadows.map(s => s.traitId), unused: b.unused.map(u => u.key),
-    chapters: b.chapters.map(c => `${c.id}: ${c.materials.map(m => (m.kind === "trait" ? `${m.traitId}/${m.domain}` : m.kind === "ref" ? m.ref : m.kind === "evidence" ? `ev:${m.key}` : m.kind === "timeline" ? `tl:${m.entryKey}` : `mbti/${m.domain}`)).join(" ")}`),
+    chapters: b.chapters.map(c => `${c.id}: ${c.materials.map(m => (m.kind === "trait" ? `${m.traitId}/${m.domain}/${m.angle}` : m.kind === "ref" ? m.ref : m.kind === "evidence" ? `ev:${m.key}` : m.kind === "timeline" ? `tl:${m.entryKey}` : m.kind === "rel" ? `rel:${m.topic}` : `mbti/${m.domain}`)).join(" ")}`),
     timeline: b.timeline?.entries.map(e => `${e.key} ${e.ganji.hanja} ${e.tenGod.stem} f${e.flow.score} ${e.badges.map(x => x.kind).join("+") || "-"} ${e.action.templateId}`),
     chart: `${b.chart.pillars.year.hanja} ${b.chart.pillars.month.hanja} ${b.chart.pillars.day.hanja} ${b.chart.pillars.hour?.hanja ?? "-"} ${b.chart.thisYear.ganji.hanja}`,
     tokens: b.budget.estimatedTokens,
@@ -129,7 +129,7 @@ describe("brief builder — 성질", () => {
     }
   });
 
-  it("trait 8~12개, 가족 다양성 상한, 같은 trait 최대 3장·장마다 다른 영역", () => {
+  it("trait 8~12개, 가족 다양성 상한, trait는 소개 1 + 적용 2·한 장에 한 번(P3.8)", () => {
     for (const { brief } of samples) {
       const persons = brief.compatibility ? ["a", "b"] : [""];
       for (const pre of persons) {
@@ -138,18 +138,24 @@ describe("brief builder — 성질", () => {
         expect(ts.length).toBeLessThanOrEqual(12);
         for (const g of GROUPS) expect(ts.filter(t => g.families.includes(t.family)).length).toBeLessThanOrEqual(g.max);
       }
-      for (const t of brief.traits) {
-        expect(t.chapters.length).toBeLessThanOrEqual(3);
-        const doms = brief.chapters.flatMap(c => c.materials).filter(m => m.kind === "trait" && m.traitId === t.id).map(m => (m.kind === "trait" ? m.domain : ""));
-        expect(new Set(doms).size).toBe(doms.length);
+      for (const t of brief.traits) expect(t.chapters.length).toBeLessThanOrEqual(3);
+      for (const [id, u] of Object.entries(brief.plan!.traits)) {
+        expect(u.applies.length, id).toBeLessThanOrEqual(2);
+        expect(new Set([u.intro, ...u.applies]).size, id).toBe(1 + u.applies.length);
       }
+      expect(brief.plan!.warnings).toEqual([]);
     }
   });
 
-  it("비반복 장 재료 4~6, 반복 장은 타임라인 항목을 가진다", () => {
-    for (const { brief } of samples) for (const c of brief.chapters) {
-      if (c.id.includes(":")) expect(c.materials[0].kind).toBe("timeline");
-      else { expect(c.materials.length).toBeGreaterThanOrEqual(4); expect(c.materials.length).toBeLessThanOrEqual(6); }
+  it("비반복 장은 절 1~5개(절마다 재료 1~4, 절이 적으면 목표 분량도 줄임, 3개 미만인 장은 책에 1개까지), 반복 장은 타임라인 항목을 가진다", () => {
+    for (const { brief } of samples) {
+      for (const c of brief.chapters) {
+        if (c.id.includes(":")) { expect(c.materials[0].kind).toBe("timeline"); continue; }
+        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(5);
+        for (const s of c.sections!) expect(s.materials.length).toBeGreaterThanOrEqual(1);
+        if (c.sections!.length < 4) expect(c.targetChars[1]).toBeLessThan(1250);
+      }
+      expect(brief.chapters.filter(c => c.sections && c.sections.length < 3).length, brief.product).toBeLessThanOrEqual(1);
     }
   });
 
@@ -165,8 +171,9 @@ describe("brief builder — 성질", () => {
     for (const { input, brief } of samples.slice(0, 8)) expect(buildBrief(input, k)).toEqual(brief);
   });
 
-  // P3.6: 소품 사전 확대(직업군 13개)와 합충 자리 문장(where)으로 상한을 1% 올렸다(추정은 작가에게 안 가는 style·score도 센다).
-  it("종합 브리프 토큰 추정 10.1k 이내", () => {
-    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(10_100);
+  // P3.6: 소품 사전 확대(직업군 13개)와 합충 자리 문장(where)으로 상한을 1% 올렸다.
+  // P3.8: 추정을 작가가 실제로 받는 입력으로 바꿨다(배정 기록·안 쓰는 trait·style.rules 제외). 절 질문 52개가 늘어 10.8k.
+  it("종합 브리프 토큰 추정 10.8k 이내", () => {
+    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(10_800);
   });
 });

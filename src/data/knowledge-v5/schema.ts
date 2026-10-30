@@ -199,8 +199,8 @@ export const GanjiEnergyFileSchema = z.object({ version: z.string(), entries: z.
 /** 일간 대비 십성이 연·월로 들어올 때의 뜻. */
 export const TenGodPeriodSchema = z.object({
   tenGod: TenGodSchema,
-  year: z.object({ meaning: Para, scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: Para }),
-  month: z.object({ meaning: Para, scenes: z.array(SceneItemSchema).min(2).max(5), action: Line }),
+  year: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: Para }),
+  month: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line }),
   sources: Sources, confidence: ConfidenceSchema,
 });
 export const TenGodPeriodFileSchema = z.object({ version: z.string(), entries: z.array(TenGodPeriodSchema).length(10) });
@@ -240,12 +240,27 @@ export const ActionTemplateFileSchema = z.object({ version: z.string(), template
 
 // ---------- 6) product-narratives.json (v1 유지) ----------
 export const ChapterRoleSchema = z.enum(["HOOK", "WHY", "SCENE", "TWIST", "PAYOFF"]);
+/**
+ * 절(소제목) 계획(P3.8 1): 절마다 그 절의 질문과 1순위 재료(use)를 정하고, trait는 그다음에 붙인다.
+ * use: scene(trait 장면이 주재료) · mbti(MBTI 행동 장면) · ev:<근거 key> · ref:<브리프 경로> · rel(궁합 관계 장면) · shadow(팩폭) · fusion(긴장 연결)
+ *      · mbtiShadow(MBTI 그늘) · touched(전환 해가 건드린 trait, 소개된 것만) · recap:<장 id>(앞 장 종합, 새 재료 없음).
+ * trait: core(1장 핵심) · intro(새 trait 소개) · apply(소개된 trait 적용) · any · none. side: 궁합에서 a·b 중 누구의 trait인지.
+ * q의 {topic}은 고른 관계 장면 주제(궁합 domain-scene)로 바뀐다.
+ */
+export const SECTION_USE = /^(scene|mbti|rel|shadow|fusion|mbtiShadow|touched|ev:[a-zA-Z]+|ref:[a-zA-Z.]+|recap:[a-z-]+)$/;
+export const SectionPlanSchema = z.object({
+  q: z.string().min(6).max(40), domain: DomainSchema, use: z.array(z.string().regex(SECTION_USE)).min(1).max(2),
+  trait: z.enum(["core", "intro", "apply", "any", "none"]).optional(), dims: z.array(DimensionId).max(3).optional(), side: z.enum(["a", "b"]).optional(),
+}).strict();
+export type SectionPlan = z.infer<typeof SectionPlanSchema>;
 export const ChapterPlanSchema = z.object({
   id: z.string().min(2), title: z.string().min(2).max(30), question: z.string().min(8).max(80), role: ChapterRoleSchema,
   domains: z.array(DomainSchema).min(1), dimensionFocus: z.array(DimensionId).optional(),
   evidenceFamilies: z.array(z.string()).optional(), requires: z.array(z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown", "pair"])).optional(),
   paragraphs: z.object({ min: z.number().int().min(1), max: z.number().int().min(1) }),
   repeat: z.number().int().min(2).optional(),
+  /** 비반복 장의 절 계획(P3.8 1). 반복 장(연·월)은 key가 절이다. */
+  sections: z.array(SectionPlanSchema).min(3).max(5).optional(),
 });
 export const ProductNarrativeSchema = z.object({
   productKey: z.enum(PRODUCT_KEYS), title: z.string(), funType: z.string().min(2).max(20), narrativeMode: z.string().min(8).max(200),
@@ -287,3 +302,52 @@ export const JobFitSchema = z.object({
 }).strict();
 export const CareerFileSchema = z.object({ version: z.string(), family: z.literal("career"), titles: z.array(JobTitleEntrySchema).min(15), fits: z.array(JobFitSchema).min(1) }).strict();
 export type CareerFile = z.infer<typeof CareerFileSchema>;
+
+// ---------- 10) compat/scenes.json (P3.8 3: 궁합 관계 유형별 장면) ----------
+/**
+ * 관계 유형마다 그 관계에서만 나오는 생활 주제(부모·자녀 = 용돈·명절·안부 전화…, 상사·팀원 = 보고·지시 변경·평가…)와 장면.
+ * 장면은 두 역할이 함께 나오는 1~2문장, 역할 낱말(부모·자녀/상사·팀원/두 사람)로만 쓴다(이름·MBTI·명리 용어 금지).
+ * dims: 장면이 드러내는 행동 차원 1~3개(±). 브리프가 두 사람의 차이·trait 축과 맞춰 고른다.
+ * ages: 부모·자녀에서 자녀 나이대(minor 20세 미만, adult 20세 이상). 없으면 any.
+ */
+export const CompatSceneSchema = z.object({
+  text: Scene,
+  dims: DimensionTagsSchema.refine(t => Object.keys(t).length >= 1 && Object.keys(t).length <= 3, "dims 1~3개"),
+  ages: z.enum(["any", "minor", "adult"]).optional(),
+}).strict();
+export const CompatTopicSchema = z.object({ key: z.string().regex(/^[a-z][a-zA-Z]+$/), label: z.string().min(2).max(12), scenes: z.array(CompatSceneSchema).min(3).max(6) }).strict();
+export const CompatSceneFileSchema = z.object({
+  version: z.string(), family: z.literal("compatScene"),
+  types: z.array(z.object({ type: z.enum(COMPATIBILITY_CATEGORIES), topics: z.array(CompatTopicSchema).min(8).max(12) }).strict()).length(7),
+}).strict();
+export type CompatSceneFile = z.infer<typeof CompatSceneFileSchema>;
+export type CompatTopic = z.infer<typeof CompatTopicSchema>;
+
+// ---------- 11) career/catalog.json (P3.8 2: 직무 추천 = 명리 적성 × MBTI 적성 × 인접성 × 생활 단계) ----------
+/** 직무 묶음. near = 옮겨 가기 쉬운(전환 비용이 낮은) 이웃 묶음. */
+export const CAREER_CLUSTERS = ["plan", "it", "design", "content", "marketing", "sales", "finance", "admin", "legal", "public", "edu", "care", "research", "biz", "craft", "logistics", "food", "beauty", "arts", "hospitality"] as const;
+export const CareerClusterSchema = z.enum(CAREER_CLUSTERS);
+export const CAREER_STAGES = ["student", "job_seeker", "early_career", "mid_career", "self_employed", "homemaker", "parenting", "retired"] as const;
+/**
+ * 직무 하나: title(구체 직무명), cluster, groups(주로 쓰는 십성 묶음 1~2), keys(특히 잘 맞는 신살·귀인·십성·구조 id, 선택),
+ * dims(이 일이 요구하는 행동 차원 2~4개 ±, MBTI 적성 계산), stages(어울리는 생활 단계, 없으면 전부),
+ * entry(easy 바로 옮김 / retrain 1~2년 재교육 / license 면허·긴 학위), why(이 일에서 쓰이는 힘 한 줄, 명리 쪽).
+ */
+export const CareerJobSchema = z.object({
+  title: z.string().min(2).max(20), cluster: CareerClusterSchema,
+  groups: z.array(z.enum(TEN_GOD_GROUPS)).min(1).max(2),
+  keys: z.array(z.string().regex(/^(tenGod|shinsal|gwiin|structure):[A-Z_一-鿿]+$/)).max(3).optional(),
+  dims: DimensionTagsSchema.refine(t => Object.keys(t).length >= 2 && Object.keys(t).length <= 4, "dims 2~4개"),
+  stages: z.array(z.enum(CAREER_STAGES)).min(1).optional(),
+  entry: z.enum(["easy", "retrain", "license"]),
+  why: Line,
+}).strict();
+export const CareerCatalogSchema = z.object({
+  version: z.string(), family: z.literal("careerCatalog"),
+  clusters: z.array(z.object({ id: CareerClusterSchema, name: z.string().min(2).max(12), near: z.array(CareerClusterSchema).min(2).max(5) }).strict()).length(CAREER_CLUSTERS.length),
+  /** 지금 직업(brief/data/props.json 직업군 id) → 묶음. */
+  jobClusters: z.record(z.string(), CareerClusterSchema),
+  jobs: z.array(CareerJobSchema).min(120),
+}).strict();
+export type CareerCatalog = z.infer<typeof CareerCatalogSchema>;
+export type CareerJob = z.infer<typeof CareerJobSchema>;

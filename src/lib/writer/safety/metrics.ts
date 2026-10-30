@@ -53,3 +53,41 @@ export function connectorRepeats(chapters: readonly Chapter[], limit = CONNECTOR
   }
   return [...count].filter(([, n]) => n >= limit).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([phrase, n]) => ({ phrase, count: n }));
 }
+
+/** 책 단위 trait 언급 상한(P3.8 1): 소개 1 + 적용 2 = 소제목 3개, 한 장에 1개. 같은 축도 같은 상한. 브리프 배정(plan)과 같다. */
+export const TRAIT_SECTION_LIMIT = 3;
+export type TraitUse = { readonly id: string; readonly name: string; readonly sections: number; readonly chapters: number; readonly maxInChapter: number; readonly planned: number };
+export type TraitUseMetric = { readonly traits: readonly TraitUse[]; readonly axes: Readonly<Record<string, number>>; readonly warnings: readonly string[] };
+const noHan = (s: string) => s.replace(/\s*\([^)]*\)/g, "").replace(/[一-鿿]+/g, "").trim();
+/**
+ * 원고에서 trait 이름(쉬운 이름·용어)이 나온 소제목을 센다. 같은 소제목 안 여러 번은 1로 센다.
+ * 경고: 소제목 3개 초과, 한 장 2개 이상, 같은 축(plan.axes) 소제목 3개 초과·한 장 2개 이상.
+ */
+export function traitMentions(brief: Brief, chapters: readonly { readonly n: number; readonly sections: readonly BookSection[] }[]): TraitUseMetric {
+  const tokens = new Map(brief.traits.map(t => [t.id, [...new Set([t.easyName, noHan(t.name), noHan(t.name).replace(/살$/, "")].filter(x => x.length >= 2))]]));
+  const hits = new Map<string, { n: number; s: number }[]>();
+  chapters.forEach(c => c.sections.forEach((s, si) => {
+    const text = [s.heading, ...s.paragraphs].join(" ");
+    for (const [id, ts] of tokens) if (ts.some(x => text.includes(x))) hits.set(id, [...(hits.get(id) ?? []), { n: c.n, s: si }]);
+  }));
+  const warnings: string[] = [];
+  const perChapterMax = (list: readonly { n: number; s: number }[]) => Math.max(0, ...[...new Set(list.map(x => x.n))].map(n => new Set(list.filter(x => x.n === n).map(x => x.s)).size));
+  const traits = brief.traits.flatMap(t => {
+    const list = hits.get(t.id) ?? [], p = brief.plan?.traits[t.id];
+    if (!list.length && !p) return [];
+    const use = { id: t.id, name: t.easyName, sections: list.length, chapters: new Set(list.map(x => x.n)).size, maxInChapter: perChapterMax(list), planned: p ? 1 + p.applies.length : 0 };
+    if (use.sections > TRAIT_SECTION_LIMIT) warnings.push(`${t.id} ${t.easyName} 소제목 ${use.sections}개`);
+    if (use.maxInChapter > 1) warnings.push(`${t.id} ${t.easyName} 한 장 ${use.maxInChapter}개`);
+    return [use];
+  });
+  const axes: Record<string, number> = {};
+  const axisHits = new Map<string, { n: number; s: number }[]>();
+  for (const [id, p] of Object.entries(brief.plan?.traits ?? {})) for (const a of p.axes) axisHits.set(a, [...(axisHits.get(a) ?? []), ...(hits.get(id) ?? [])]);
+  for (const [a, list] of axisHits) {
+    const uniq = [...new Map(list.map(x => [`${x.n}:${x.s}`, x])).values()];
+    axes[a] = uniq.length;
+    if (uniq.length > TRAIT_SECTION_LIMIT) warnings.push(`축 ${a} 소제목 ${uniq.length}개`);
+    if (perChapterMax(uniq) > 1) warnings.push(`축 ${a} 한 장 ${perChapterMax(uniq)}개`);
+  }
+  return { traits, axes, warnings };
+}

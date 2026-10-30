@@ -124,7 +124,7 @@ function timelineSection(ctx: Ctx, key: string, extra: readonly Material[]): Boo
   const trait = extra.find((m): m is Extract<Material, { kind: "trait" }> => m.kind === "trait");
   const t = trait ? traitOf(b, trait.traitId) : undefined;
   return { heading: key, paragraphs: [join(
-    `${josa(unit, "은는")} ${e.material.image} 같은 때입니다`, e.material.mood, note?.meaning, note?.caution,
+    `${josa(unit, "은는")} ${e.material.image} 같은 때입니다`, note?.meaning, note?.caution,
     e.badges[0] && e.badges[0].line, e.fillsLack.fills ? "원래 부족한 기운을 채워 주는 쪽이라 숨이 한결 편해집니다" : undefined,
     `${unit}의 열쇠말은 ${e.keywords.join("·")}입니다`, e.action.text, e.material.scene, t && trait ? `${t.easyName}의 결이 ${DOMAIN_KO[trait.domain] ?? "이때"} 드러납니다` : undefined,
   )] };
@@ -194,7 +194,7 @@ function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly s
   const sections: BookSection[] = [];
   const origin: { heading: string; traitId?: string; mbti?: boolean }[] = [];
   for (const m of ch.materials) {
-    const s = m.kind === "trait" ? traitSection(ctx, m, ch.id) : m.kind === "mbti" ? mbtiSection(ctx, m, ch.id) : m.kind === "ref" ? refSection(ctx, m.ref, ch.id) : m.kind === "evidence" ? evidenceSection(m) : null;
+    const s = m.kind === "trait" ? traitSection(ctx, m, ch.id) : m.kind === "mbti" ? mbtiSection(ctx, m, ch.id) : m.kind === "ref" ? refSection(ctx, m.ref, ch.id) : m.kind === "evidence" ? evidenceSection(m) : m.kind === "rel" ? { heading: `${m.topic} 앞의 두 사람`, paragraphs: [m.scene] } : null;
     if (s && s.paragraphs.length) { sections.push(s); origin.push({ heading: s.heading, ...(m.kind === "trait" ? { traitId: m.traitId } : {}), ...(m.kind === "mbti" ? { mbti: true } : {}) }); }
   }
   // 소제목 3개 미만이면 원국 요약으로 채운다(이미 쓴 절은 다시 쓰지 않음).

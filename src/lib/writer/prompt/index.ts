@@ -13,6 +13,8 @@ export type WriterChapter = {
   readonly n: number; readonly id: string; readonly title: string; readonly question: string; readonly role: string;
   readonly targetChars: readonly [number, number]; readonly subheadings: readonly [number, number]; readonly useName: boolean;
   readonly materials: readonly Material[];
+  /** 절 계획(P3.8 1): 절 하나 = 소제목 하나. 있으면 작가에게는 materials 대신 이것만 간다. */
+  readonly sections?: readonly { readonly q: string; readonly domain: string; readonly materials: readonly Material[] }[];
   readonly keys?: readonly string[];
   readonly perKey?: Readonly<Record<string, readonly Material[]>>;
   readonly note?: string;
@@ -24,7 +26,7 @@ export function writerChapters(brief: Pick<Brief, "chapters">): WriterChapter[] 
   const byBase = new Map<string, ChapterBrief[]>();
   for (const c of brief.chapters) {
     const base = c.id.split(":")[0];
-    if (!c.id.includes(":")) { out.push({ n: out.length + 1, id: c.id, title: c.title, question: c.question, role: c.role, targetChars: c.targetChars, subheadings: c.subheadings, useName: c.useName, materials: c.materials, ...(c.sceneHint ? { sceneHint: c.sceneHint } : {}) }); continue; }
+    if (!c.id.includes(":")) { out.push({ n: out.length + 1, id: c.id, title: c.title, question: c.question, role: c.role, targetChars: c.targetChars, subheadings: c.subheadings, useName: c.useName, materials: c.materials, ...(c.sections ? { sections: c.sections } : {}), ...(c.sceneHint ? { sceneHint: c.sceneHint } : {}) }); continue; }
     if (!byBase.has(base)) {
       byBase.set(base, []);
       out.push({ n: out.length + 1, id: base, title: c.title, question: c.question, role: c.role, targetChars: c.targetChars, subheadings: c.subheadings, useName: c.useName, materials: [], keys: [], perKey: {} });
@@ -47,15 +49,28 @@ function omit<T extends object, K extends keyof T>(o: T, ...keys: K[]): Omit<T, 
 }
 
 /** 작가 입력용 브리프: 내부 값을 빼고 장을 묶는다. */
+/** 작가가 읽을 trait·팩폭: 장에 배정된 것(또는 대표 그림으로 가리켜지는 것)만(P3.8: 안 쓰는 재료는 토큰만 쓰고 반복을 부른다). */
+export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters">) {
+  const refs = new Set(brief.chapters.flatMap(c => c.materials.flatMap(m => m.kind === "ref" ? [m.ref] : [])));
+  const traits = brief.traits.filter(t => t.chapters.length || brief.traits.some(x => x.sameImageAs === t.id && x.chapters.length));
+  const shadows = brief.shadows.filter(s => refs.has(`shadows.${s.id}`));
+  return { traits, shadows };
+}
+
 export function renderWriterBrief(brief: Brief): Record<string, unknown> {
-  const { style, traits, timeline, fortunes } = brief;
+  const { style, timeline, fortunes } = brief;
+  const { traits, shadows } = writerFacing(brief);
   return {
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "timeline", "fortunes", "usedProps"),
-    fortunes: fortunes.map(f => omit(f, "featureId")),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan"),
+    // 좋은 기운이 trait와 같으면 그림·한 줄은 trait 쪽에만 둔다.
+    fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "image", "oneLiner") : omit(f, "featureId")),
     traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters")),
+    shadows,
     ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji")) } } : {}),
-    style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, rules: style.rules, forbidden: style.forbidden },
-    chapters: writerChapters(brief),
+    // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).
+    style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, forbidden: style.forbidden },
+    // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).
+    chapters: writerChapters(brief).map(c => (c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => ({ q: x.q, materials: x.materials })) } : c)),
   };
 }
 

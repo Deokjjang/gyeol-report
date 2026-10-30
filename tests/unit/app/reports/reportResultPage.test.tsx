@@ -1373,7 +1373,7 @@ describe("report result page", () => {
     expect(html).toContain("manse-element-wood-green");
     expect(html).toContain("manse-element-earth-soil");
     expect(html).toContain("manse-element-metal-gold");
-    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("ENTJ 지휘관");
     expect(html).toContain("목표를 현실화하는 전략 지휘관");
     expect(html).toContain("선호 지표 비교");
     expect(html).toContain("외향 Extravert");
@@ -1505,7 +1505,7 @@ describe("report result page", () => {
     expect(html).toContain("기초 만세력");
     expect(html).toContain("덕민님의 만세력");
     expect(html).toContain("MBTI 성향표");
-    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("ENTJ 지휘관");
     expect(html).toContain("명리 핵심 근거");
     expect(html).toContain("재성");
     expect(html).toContain("사랑 방식");

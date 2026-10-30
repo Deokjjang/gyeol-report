@@ -5,6 +5,7 @@
       "tenGod": "比肩",
       "year": {
         "meaning": "나와 같은 기운이 한 해 동안 들어옵니다. 내 힘과 고집이 커지고, 비슷한 처지의 동료·친구·경쟁자가 늘어나는 해예요. 혼자 서려는 마음이 강해져 독립·분가·개인 일을 자주 떠올립니다.",
+        "keywords": ["내 몫 지키기", "같은 편", "독립 마음"],
         "scenes": [
           { "text": "퇴근 후 동기 셋이 모인 단톡방에서 '우리끼리 뭐 하나 해 볼까?'라는 말이 처음 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "팀장이 방식을 바꾸라고 해도 '제 방식으로 한 번만 해 볼게요' 하고 버팁니다. 결과로 보여 주려고 주말에도 노트북을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -16,6 +17,7 @@
       },
       "month": {
         "meaning": "한 달 동안 내 편과 경쟁자가 같이 눈에 띄는 달입니다. 자존심이 올라가고, 남에게 맡기기보다 직접 하려는 마음이 커져요.",
+        "keywords": ["내 속도", "동료와 나란히"],
         "scenes": [
           { "text": "친구가 같은 학원, 같은 강의를 등록했다는 소식을 듣고 책상 서랍에서 진도표를 다시 꺼내 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
           { "text": "점심 메뉴 하나도 '내가 고를게' 하고 정해 버립니다. 회의에서는 남의 안보다 내 안을 먼저 밀어 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -35,6 +37,7 @@
       "tenGod": "劫財",
       "year": {
         "meaning": "나와 같은 오행이지만 음양이 달라, 내 것을 나눠 가지려는 힘이 들어오는 해입니다. 경쟁심과 밀어붙이는 힘이 확 올라가고, 사람을 통해 돈과 기회가 오가는 폭이 커져요.",
+        "keywords": ["경쟁 자극", "나눠 갖기", "돈 단속"],
         "scenes": [
           { "text": "오래 연락 없던 친구가 '좋은 거 있는데 같이 하자'며 투자나 장사 얘기를 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회사에 나와 비슷한 경력의 사람이 들어와 같은 자리를 두고 은근한 신경전이 시작됩니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -46,6 +49,7 @@
       },
       "month": {
         "meaning": "이달은 승부욕과 씀씀이가 같이 커집니다. 사람이 붙는 만큼 돈도 사람을 따라 나가기 쉬운 한 달이에요.",
+        "keywords": ["승부욕", "지출 단속"],
         "scenes": [
           { "text": "동료가 먼저 칭찬받는 걸 보고 그날 밤 보고서를 한 번 더 고칩니다. 지기 싫은 마음이 야근을 부릅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "친구 생일, 동창 모임, 경조사가 한 달에 몰려 이체 내역에 사람 이름이 줄줄이 찍힙니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -66,6 +70,7 @@
       "tenGod": "食神",
       "year": {
         "meaning": "내가 만들어 내는 기운이 들어오는 해입니다. 하고 싶은 일, 먹고 즐기는 일, 손으로 결과물을 내는 일이 늘어나요. 마음에 여유가 생기고 표정이 풀리는 흐름입니다.",
+        "keywords": ["만들어 내기", "여유와 맛", "꾸준한 손"],
         "scenes": [
           { "text": "주말마다 빵을 굽거나 그림을 그려 사진을 올렸더니 '나도 하나 만들어 줘'라는 부탁이 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "새로 생긴 동네 식당을 찾아다니는 재미에 빠져, 지도 앱에 저장한 맛집이 서른 곳을 넘깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -77,6 +82,7 @@
       },
       "month": {
         "meaning": "이달은 손과 입이 즐거운 달입니다. 만들고, 먹고, 나누는 일에서 힘이 나고 말투가 부드러워져요.",
+        "keywords": ["작은 결과물", "편한 리듬"],
         "scenes": [
           { "text": "퇴근길에 장을 봐서 오랜만에 직접 요리를 하고, 남은 반찬을 통에 담아 옆집에 건넵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "미뤄 둔 블로그 글이나 짧은 영상을 하나 끝내 올리고, 달린 댓글 몇 개에 하루가 기분 좋게 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -97,6 +103,7 @@
       "tenGod": "傷官",
       "year": {
         "meaning": "내가 만들어 내되 틀을 깨는 쪽으로 나가는 기운이 들어오는 해입니다. 말솜씨와 아이디어가 날카로워지고, 답답한 규칙에 '왜요?'를 묻는 일이 늘어나요.",
+        "keywords": ["새 방식", "말과 표현", "틀 깨기"],
         "scenes": [
           { "text": "회의에서 다들 넘어가려던 안건에 '이건 쓰는 사람 입장에서 말이 안 돼요'라고 짚어 분위기가 잠깐 얼어붙습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회사 일과 별개로 내 이름을 건 글이나 디자인을 올리기 시작하고, 반응이 생각보다 빨리 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -108,6 +115,7 @@
       },
       "month": {
         "meaning": "이달은 말이 빠르고 날카로워지는 달입니다. 아이디어는 많이 나오지만 윗사람이나 규칙과 부딪치는 순간도 같이 늘어요.",
+        "keywords": ["의견 내기", "말 고르기"],
         "scenes": [
           { "text": "상사의 피드백에 '그건 지난번에 말씀드렸는데요'가 입 밖으로 먼저 나오고, 엘리베이터에서 후회합니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "샤워하다 떠오른 아이디어를 메모 앱에 적다 보니 한 달 동안 스무 개가 넘게 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -128,6 +136,7 @@
       "tenGod": "偏財",
       "year": {
         "meaning": "내가 다스리는 돈 가운데 크고 움직이는 돈이 들어오는 해입니다. 사람·거래·이동이 많아지고, 월급 바깥의 기회가 여러 갈래로 보여요. 손이 크고 시원해지는 흐름입니다.",
+        "keywords": ["넓은 기회", "사람과 거래", "움직이는 돈"],
         "scenes": [
           { "text": "지인 소개로 작은 일거리 제안이 두세 개 한꺼번에 들어오고, 주말 일정표가 빠르게 찹니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "약속과 여행이 잦아져 캐리어를 현관에 아예 펼쳐 둔 채로 지냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -139,6 +148,7 @@
       },
       "month": {
         "meaning": "이달은 돈과 사람이 바쁘게 오가는 달입니다. 월급 밖의 작은 기회가 보이고, 약속과 이동이 평소보다 많아져요.",
+        "keywords": ["바깥 기회", "씀씀이 점검"],
         "scenes": [
           { "text": "안 쓰는 물건을 중고 앱에 올렸더니 하루에 문의가 열 개 넘게 오고, 퇴근 후 직거래 약속이 줄줄이 잡힙니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "친구의 친구까지 섞인 모임에 나갔다가 일 얘기가 오가고, 명함을 두 장 받아 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -158,6 +168,7 @@
       "tenGod": "正財",
       "year": {
         "meaning": "내가 다스리는 돈 가운데 정해지고 꾸준한 돈이 들어오는 해입니다. 일한 만큼 받는 구조가 단단해지고, 살림·계약·저축처럼 현실을 다지는 일에 마음이 가요.",
+        "keywords": ["꾸준한 몫", "살림 정리", "약속 지키기"],
         "scenes": [
           { "text": "연초에 적금을 하나 새로 들고, 매달 25일 자동이체 알림을 보며 통장 숫자가 느는 재미를 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "이직 사이트를 닫고, 지금 회사에서 연봉 협상 자료를 차곡차곡 모아 면담 날짜를 잡습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -169,6 +180,7 @@
       },
       "month": {
         "meaning": "이달은 작고 확실한 돈에 눈이 가는 달입니다. 월급 밖의 소소한 수입이 생기거나, 새는 고정비를 정리하기 좋아요.",
+        "keywords": ["차곡차곡", "가계 점검"],
         "scenes": [
           { "text": "안 보는 구독 서비스 세 개를 해지하고, 아낀 돈이면 한 달 교통비가 나온다는 걸 계산해 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회사 일 외에 번역이나 과외 같은 작은 일로 몇만 원이 들어와, 따로 봉투에 넣어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -189,6 +201,7 @@
       "tenGod": "偏官",
       "year": {
         "meaning": "나를 누르고 다그치는 힘이 들어오는 해입니다. 책임·마감·경쟁이 한꺼번에 몰리지만, 버티고 해내면 실력과 이름이 크게 남는 흐름이에요. 일간이 강한 사람에게는 판을 키우는 압력이 됩니다.",
+        "keywords": ["압박과 도전", "책임 무게", "결단"],
         "scenes": [
           { "text": "윗선에서 '이번 건은 당신이 맡아'라는 말과 함께 기한이 빡빡한 프로젝트가 떨어집니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "남과 비교되는 자리가 잦아져, 발표 전날 거울 앞에서 예상 질문을 소리 내 연습합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -200,6 +213,7 @@
       },
       "month": {
         "meaning": "이달은 마감과 윗사람의 압박이 몰리는 달입니다. 피하고 싶은 일이 정면으로 오지만, 처리하고 나면 평가가 확 달라져요.",
+        "keywords": ["버티는 힘", "몸 챙기기"],
         "scenes": [
           { "text": "마감 두 개와 갑작스러운 점검이 같은 주에 겹쳐, 점심을 책상에서 김밥으로 때웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "평소 말 없던 상사가 '이번엔 꼭 맞춰 주세요'라고 직접 메시지를 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -220,6 +234,7 @@
       "tenGod": "正官",
       "year": {
         "meaning": "나를 바르게 다스리는 힘이 들어오는 해입니다. 소속·직함·역할이 분명해지고, 규칙을 지킨 만큼 평판이 쌓여요. 공적인 자리와 시험·면접을 잡기 좋은 해로 봅니다.",
+        "keywords": ["자리와 책임", "규칙 정리", "인정받기"],
         "scenes": [
           { "text": "작은 팀이라도 '정리는 당신이 해 줘요'라는 말과 함께 처음으로 이름 붙은 역할이 주어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "미뤄 둔 자격 시험 접수 버튼을 누르고, 책상 앞 벽에 시험 날짜를 크게 적어 붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -231,6 +246,7 @@
       },
       "month": {
         "meaning": "이달은 규칙과 평가가 눈앞에 오는 달입니다. 서류·절차·공식 일정을 처리하기 좋고, 단정한 태도가 점수로 돌아와요.",
+        "keywords": ["맡은 일", "기준 세우기"],
         "scenes": [
           { "text": "미뤄 둔 세금 서류와 계약서 사본을 한 폴더에 모아 이름을 붙여 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회사에서 공식 면담이나 발표 일정이 잡혀, 전날 셔츠를 다려 옷걸이에 걸어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
@@ -251,6 +267,7 @@
       "tenGod": "偏印",
       "year": {
         "meaning": "나를 돕되 옆길로 끌고 가는 기운이 들어오는 해입니다. 특이한 공부, 기술, 연구, 마음공부에 끌리고 혼자 생각하는 시간이 길어져요. 남들이 안 보는 분야에서 실력이 쌓입니다.",
+        "keywords": ["혼자 파고들기", "새 공부", "방향 고민"],
         "scenes": [
           { "text": "퇴근 후 전혀 다른 분야의 온라인 강의를 결제하고, 밤마다 노트에 그림까지 그려 가며 정리합니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
           { "text": "사람 많은 송년회 대신 혼자 낯선 도시에 가서 오래된 서점을 돌고 오는 게 더 즐겁습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -262,6 +279,7 @@
       },
       "month": {
         "meaning": "이달은 생각이 깊어지고 혼자 있고 싶은 달입니다. 낯선 지식에 끌리지만, 결정과 실행은 평소보다 느려져요.",
+        "keywords": ["생각 정리", "한발 물러서기"],
         "scenes": [
           { "text": "주말 내내 다큐멘터리를 몰아 보고, 월요일 아침 동료에게 처음 듣는 이야기를 늘어놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "단톡방 알림을 꺼 두고 카페 구석 자리에서 두 시간 넘게 혼자 책을 읽습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -282,6 +300,7 @@
       "tenGod": "正印",
       "year": {
         "meaning": "나를 낳고 돌봐 주는 기운이 들어오는 해입니다. 윗사람·스승·가족의 도움이 닿고, 공부·자격·문서처럼 오래 남는 것을 얻기 좋아요. 마음이 안정되고 받는 일이 많아지는 흐름입니다.",
+        "keywords": ["배움과 도움", "준비의 해", "받쳐 주는 손"],
         "scenes": [
           { "text": "오래 연락 못 한 은사님이 먼저 안부를 묻고, 대화 끝에 필요한 사람을 소개해 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "부모님이나 집안 어른이 '필요한 거 있으면 말해'라며 먼저 손을 내밉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -293,6 +312,7 @@
       },
       "month": {
         "meaning": "이달은 도움과 배움이 들어오는 달입니다. 누군가의 조언이 길을 열고, 서류·신청·공부를 마무리하기 좋아요.",
+        "keywords": ["공부 시간", "도움 받기"],
         "scenes": [
           { "text": "선배에게 이력서를 봐 달라고 부탁했더니 빨간 펜으로 꼼꼼히 고쳐서 돌려줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "엄마가 반찬을 잔뜩 싸 보내 주셔서, 한 주 동안 배달 앱을 한 번도 열지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

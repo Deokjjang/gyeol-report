@@ -61,7 +61,7 @@ describe("MBTI source registry", () => {
     expect(source).not.toBeNull();
     expect(source).toMatchObject({
       type: "ENTJ",
-      titleKo: "대담한 통솔자",
+      titleKo: "지휘관",
       preferenceAxes: {
         energy: "E",
         perception: "N",

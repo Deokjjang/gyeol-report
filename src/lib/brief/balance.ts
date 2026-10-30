@@ -57,3 +57,13 @@ export function oppositeToDrop<T extends { readonly id: string; readonly score: 
   }
   return null;
 }
+
+/**
+ * 같은 차원의 반대 극성(P3.8 1): a의 핵심 차원(상위 둘, 0.6 이상) 중 하나가 b의 핵심 차원과 같은 차원에서 반대 방향이면 true.
+ * trait 사이만이 아니라 원국 요약 문장·장면 근거·궁합 공통점도 이 사람의 trait와 견준다(P3.7 r2: "바로 정함" ↔ "오래 잼", 역마살 공통점 ↔ '익숙한 것 지킴').
+ */
+export function opposes(a: Readonly<Record<string, number>>, b: Readonly<Record<string, number>>, min = 0.6): boolean {
+  const top = (t: Readonly<Record<string, number>>) => Object.entries(t).sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]) || x[0].localeCompare(y[0])).slice(0, 2).filter(([, v]) => Math.abs(v) >= min);
+  const cb = top(b);
+  return top(a).some(([d, v]) => cb.some(([e, w]) => d === e && Math.sign(v) !== Math.sign(w)));
+}

@@ -7,7 +7,7 @@ import {
 
 const sourceInput: MbtiCommonProfileSourceInput = {
   type: "ENTJ",
-  titleKo: "대담한 통솔자",
+  titleKo: "지휘관",
   archetype: "목표를 현실화하는 전략 지휘관",
   oneLine:
     "비효율을 발견하면 구조를 새로 짜고 목표를 현실로 밀어붙이는 사람",

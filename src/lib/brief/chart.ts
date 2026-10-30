@@ -11,6 +11,14 @@ import { ELEMENT_KO, ganjiLabel, ganjiOf, josa, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
 
 const ELEMENTS: readonly FiveElement[] = ["WOOD", "FIRE", "EARTH", "METAL", "WATER"];
+/** 일간 강약 한 줄(P3.8 5: 강약에 해석이 없어 작가가 "힘이 남아도 모자라도" 같은 빈 문장으로 채웠다). */
+const STRENGTH_READING: Record<string, string> = {
+  VERY_STRONG: "내 힘이 아주 센 편이라, 남을 따라가기보다 내 판을 직접 짤 때 힘이 제대로 쓰입니다.",
+  STRONG: "내 힘이 센 편이라, 맡은 일을 밀고 나가는 쪽에서 힘이 잘 쓰입니다.",
+  BALANCED: "내 힘이 세지도 여리지도 않은 가운데라, 상황에 맞춰 밀고 당기기를 고를 수 있습니다.",
+  WEAK: "내 힘이 여린 편이라, 받쳐 주는 사람과 정해진 틀이 있을 때 힘이 오래 갑니다.",
+  VERY_WEAK: "내 힘이 많이 여린 편이라, 혼자 버티기보다 도움과 순서를 빌릴 때 힘이 납니다.",
+};
 const SEASON_KO = { spring: "봄", summer: "여름", autumn: "가을", winter: "겨울" } as const;
 
 export type ElementState = { readonly excess: FiveElement[]; readonly lacking: FiveElement[]; readonly missing: FiveElement[] };
@@ -77,7 +85,7 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   return {
     pillars: { year: ganjiOf(pillars.year), month: ganjiOf(pillars.month), day: ganjiOf(pillars.day), ...(pillars.hour && det.hourIncluded ? { hour: ganjiOf(pillars.hour) } : {}) },
     dayMaster: { stem: dayMaster, name: dm?.name ?? dayMaster, easyName: dm?.easyName ?? "", metaphor: dm?.image.metaphor ?? "" },
-    strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo, ...strengthNote(saju.structureAnalysis.dayMasterStrength.labelKo, top, low) },
+    strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo, reading: STRENGTH_READING[saju.structureAnalysis.dayMasterStrength.level] ?? STRENGTH_READING.BALANCED, ...strengthNote(saju.structureAnalysis.dayMasterStrength.labelKo, top, low) },
     yinYang: { yin: saju.yinYang.yin, yang: saju.yinYang.yang, label: saju.yinYang.label, reading: feature(yyId)?.oneLiner ?? "" },
     elements: {
       strongest: { element: top.element, name: ELEMENT_KO[top.element], level: top.level, reason: top.reason },
@@ -92,7 +100,8 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     currentDayun: cur && curTenGod ? {
       ganji: ganjiOf(cur), ages: `${cur.startAge}~${cur.endAge}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
       reading: k.tenGodPeriod.get(curTenGod)?.year.meaning ?? "",
-      ...(next ? { next: { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(getTenGod(dayMaster, next.stem)) } } : {}),
+      // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
+      ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f ? { easyName: f.easyName } : {}), ...(meaning ? { reading: meaning } : {}) }; })() } : {}),
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
   };

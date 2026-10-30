@@ -21,6 +21,7 @@ import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema, GanjiEnergySchema, IdMapSchema,
   MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, LOVE_SIGNAL_KEY,
+  CompatSceneFileSchema, CareerCatalogSchema, CAREER_CLUSTERS, COMPATIBILITY_CATEGORIES,
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
@@ -350,6 +351,16 @@ function lintNarratives() {
   for (const prod of r.data.products) {
     const ids = new Set<string>();
     for (const c of prod.chapters) { if (ids.has(c.id)) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "chapter id 중복"); ids.add(c.id); c.dimensionFocus?.forEach(d => { if (dimensionIds.size && !dimensionIds.has(d)) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "차원 id 미해결", d); }); }
+    // (P3.8 1) 비반복 장은 절 계획 필수, 절 질문은 상품 안에서 겹치지 않는다. recap은 앞 장만 가리킨다.
+    const qs = new Set<string>();
+    prod.chapters.forEach((c, i) => {
+      if (!c.repeat && !c.sections?.length) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "절 계획 없음");
+      for (const s of c.sections ?? []) {
+        if (qs.has(s.q) && !s.q.includes("{topic}")) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "절 질문 중복", s.q); qs.add(s.q);
+        s.dims?.forEach(d => { if (dimensionIds.size && !dimensionIds.has(d)) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "차원 id 미해결", d); });
+        for (const u of s.use) if (u.startsWith("recap:") && !prod.chapters.slice(0, i).some(x => x.id === u.slice(6))) fail("product-narratives.json", `${prod.productKey}.${c.id}`, "recap이 앞 장이 아님", u);
+      }
+    });
     const roles = new Set(prod.chapters.map(c => c.role));
     for (const need of ["HOOK", "PAYOFF"]) if (!roles.has(need as never)) fail("product-narratives.json", prod.productKey, `장 역할 ${need} 없음`);
   }
@@ -430,6 +441,56 @@ function lintCareer() {
   for (const f of r.data.fits) for (const [g, line] of Object.entries(f.grow)) checkProse("career/jobs.json", `${f.jobId}.grow.${g}`, line, { dedupe: false });
 }
 
+// ---------- (P3.8) 궁합 관계 장면 · 직무 카탈로그 ----------
+/** 관계 유형마다 그 관계 밖 장면 낱말이 들어오면 안 된다(부모·자녀 책에 친구 보온병·동창 회비·단풍 단톡방). */
+const COMPAT_ROLE_WORDS: Record<string, RegExp> = {
+  parentChild: /부모|자녀|엄마|아빠|어머니|아버지|아들|딸/, managerReport: /상사|팀장|팀원|부하|부장|과장/, coworker: /동료|두 사람|옆자리|같은 팀/,
+  businessPartner: /동업|공동 대표|두 대표|두 사람|파트너/, friendship: /친구|두 사람/, love: /연인|두 사람|애인/, marriage: /부부|배우자|두 사람|남편|아내/,
+};
+const COMPAT_FOREIGN: Record<string, RegExp> = {
+  parentChild: /동창|단톡방|회비|동기|회식|연인|데이트|애인/, managerReport: /데이트|연인|애인|명절|용돈|동창/, coworker: /데이트|연인|애인|용돈|명절/,
+  businessPartner: /데이트|연인|애인|용돈|명절/, friendship: /데이트|연인|애인|용돈|상사|결재/, love: /용돈|상사|결재|회식|지분/, marriage: /용돈|상사|결재|지분|데이트 신청/,
+};
+function lintCompatScenes() {
+  const path = join(DATA, "compat", "scenes.json"); if (!existsSync(path)) return fail("compat/scenes.json", "file", "파일 없음");
+  const r = CompatSceneFileSchema.safeParse(readJson(path)); if (!r.success) return fail("compat/scenes.json", "schema", "zod", zodMsg(r.error));
+  const types = r.data.types.map(t => t.type);
+  for (const t of COMPATIBILITY_CATEGORIES) if (!types.includes(t)) fail("compat/scenes.json", t, "관계 유형 누락");
+  for (const t of r.data.types) {
+    const keys = t.topics.map(x => x.key);
+    for (const k of new Set(keys)) if (keys.filter(x => x === k).length > 1) fail("compat/scenes.json", `${t.type}.${k}`, "주제 key 중복");
+    if (t.type === "parentChild") for (const age of ["minor", "adult"]) if (t.topics.flatMap(x => x.scenes).filter(s => (s.ages ?? "any") === age || (s.ages ?? "any") === "any").length < 24) fail("compat/scenes.json", `${t.type}.${age}`, "자녀 나이대 장면 24개 미만");
+    for (const topic of t.topics) topic.scenes.forEach((sc, i) => {
+      const where = `${t.type}.${topic.key}[${i}]`;
+      checkProse("compat/scenes.json", where, sc.text, { scene: true, childTagged: t.type === "parentChild", maxSentence: 100 });
+      if (!COMPAT_ROLE_WORDS[t.type].test(sc.text)) fail("compat/scenes.json", where, "역할 낱말 없음(두 역할이 함께 나와야 함)", sc.text);
+      const foreign = sc.text.match(COMPAT_FOREIGN[t.type]); if (foreign) fail("compat/scenes.json", where, "다른 관계 유형 장면 낱말", `${foreign[0]} ← ${sc.text}`);
+      for (const d of Object.keys(sc.dims)) if (dimensionIds.size && !dimensionIds.has(d)) fail("compat/scenes.json", where, "차원 id 미해결", d);
+      if (t.type !== "parentChild" && sc.ages) fail("compat/scenes.json", where, "ages는 부모·자녀 전용");
+    });
+  }
+  stats.compatScenes = r.data.types.reduce((n, t) => n + t.topics.reduce((m, x) => m + x.scenes.length, 0), 0);
+}
+function lintCareerCatalog() {
+  const path = join(DATA, "career", "catalog.json"); if (!existsSync(path)) return fail("career/catalog.json", "file", "파일 없음");
+  const r = CareerCatalogSchema.safeParse(readJson(path)); if (!r.success) return fail("career/catalog.json", "schema", "zod", zodMsg(r.error));
+  const ids = r.data.clusters.map(c => c.id);
+  for (const c of CAREER_CLUSTERS) if (!ids.includes(c)) fail("career/catalog.json", c, "묶음 누락");
+  for (const c of r.data.clusters) for (const n of c.near) { if (n === c.id) fail("career/catalog.json", c.id, "near에 자기 자신"); const back = r.data.clusters.find(x => x.id === n); if (back && !back.near.includes(c.id)) warn("career/catalog.json", `${c.id}→${n}`, "near 비대칭"); }
+  const jobIds = (JSON.parse(readFileSync(join(ROOT, "src", "lib", "brief", "data", "props.json"), "utf8")) as { jobs: { id: string }[] }).jobs.map(j => j.id);
+  for (const id of jobIds) if (!r.data.jobClusters[id]) fail("career/catalog.json", id, "지금 직업 묶음 누락");
+  for (const id of Object.keys(r.data.jobClusters)) if (!jobIds.includes(id)) fail("career/catalog.json", id, "없는 직업군 id");
+  const titles = new Set<string>();
+  for (const j of r.data.jobs) {
+    if (titles.has(j.title)) fail("career/catalog.json", j.title, "직무명 중복"); titles.add(j.title);
+    checkProse("career/catalog.json", `${j.title}.why`, j.why);
+    for (const d of Object.keys(j.dims)) if (dimensionIds.size && !dimensionIds.has(d)) fail("career/catalog.json", j.title, "차원 id 미해결", d);
+    for (const key of j.keys ?? []) if (featureIds.size && !featureIds.has(key) && !/^tenGod:/.test(key)) fail("career/catalog.json", j.title, "없는 feature id", key);
+  }
+  for (const c of CAREER_CLUSTERS) { const n = r.data.jobs.filter(j => j.cluster === c).length; if (n < 6) fail("career/catalog.json", c, "묶음 직무 6개 미만", String(n)); }
+  stats.careerJobs = r.data.jobs.length;
+}
+
 // ---------- 실행 ----------
 if (existsSync(join(DATA, "behavior-ontology.json"))) lintOntology(join(DATA, "behavior-ontology.json"));
 if (only) {
@@ -443,7 +504,7 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer();
+  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer(); lintCompatScenes(); lintCareerCatalog();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;

@@ -1,8 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildBrief, loadKnowledge, type BriefInput } from "@/lib/brief";
 import { balanceHolds } from "@/lib/brief/balance";
-import { MAX_GROUP_CHAPTERS } from "@/lib/brief/chapters";
-import { meaningGroup } from "@/lib/brief/groups";
+import { MAX_AXIS_USES } from "@/lib/brief/chapters";
 import type { Brief } from "@/lib/brief/schema";
 import { LOVE_TIMING } from "@/lib/writer/safety/patterns";
 import { filterParagraph, sentenceViolation, styleWarnings, type Deletion } from "@/lib/writer/safety/sentences";
@@ -62,17 +61,16 @@ describe("P3.7 원고 보강", () => {
     }
   });
 
-  it("1-3: 같은 의미 그룹은 책 전체 2장, 한 장에 둘 없음, 이미지 계열은 대표 하나", () => {
+  it("1-3(P3.8): trait·팩폭·Fusion·전환 참조를 합쳐 같은 trait와 같은 축은 한 장에 한 번, 축은 책 전체 3회, 이미지 계열은 대표 하나", () => {
     for (const [name, b] of briefs) {
-      const group = (id: string) => { const t = b.traits.find(x => x.id === id)!; return `${t.id[0] === "a" || t.id[0] === "b" ? t.id[0] : ""}${meaningGroup(t.featureId)}`; };
-      const byGroup = new Map<string, Set<string>>();
+      const axisUse = new Map<string, number>();
       for (const c of b.chapters) {
-        const ids = c.materials.flatMap(m => m.kind === "trait" ? [m.traitId] : m.kind === "ref" && /^shadows\./.test(m.ref) ? [b.shadows.find(s => `shadows.${s.id}` === m.ref)!.traitId] : m.kind === "ref" && /^traits\..+\.fusion$/.test(m.ref) ? [m.ref.split(".")[1]] : []);
-        const inChapter = c.materials.flatMap(m => m.kind === "trait" ? [group(m.traitId)] : []);
-        expect(new Set(inChapter).size, `${name} ${c.id}`).toBe(inChapter.length);
-        for (const id of ids) { const g = group(id); byGroup.set(g, (byGroup.get(g) ?? new Set()).add(c.id)); }
+        const ids = [...new Set(c.materials.flatMap(m => m.kind === "trait" ? [m.traitId] : m.kind === "ref" && /^shadows\./.test(m.ref) ? [b.shadows.find(s => `shadows.${s.id}` === m.ref)!.traitId] : m.kind === "ref" && /^traits\./.test(m.ref) ? [m.ref.split(".")[1]] : []))];
+        const axes = ids.flatMap(id => b.plan!.traits[id]?.axes ?? []);
+        expect(new Set(axes).size, `${name} ${c.id}`).toBe(axes.length);
+        for (const a of axes) axisUse.set(a, (axisUse.get(a) ?? 0) + 1);
       }
-      for (const [g, chs] of byGroup) expect(chs.size, `${name} ${g}`).toBeLessThanOrEqual(MAX_GROUP_CHAPTERS);
+      for (const [a, n] of axisUse) expect(n, `${name} ${a}`).toBeLessThanOrEqual(MAX_AXIS_USES);
       for (const t of b.traits.filter(t => t.sameImageAs)) expect(b.traits.find(x => x.id === t.sameImageAs)?.chapters.length, name).toBeGreaterThan(0);
     }
     const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
@@ -83,20 +81,24 @@ describe("P3.7 원고 보강", () => {
   it("1-4: 커리어 직무 8~12개(근거 한 줄)·지금 직업 적합도·키울 역할·투자 원칙, 연애 호감·연락·밀당 재료", () => {
     const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
     const ev = (b: Brief, key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
-    const picks = ev(career, "jobPicks")!.facts;
-    expect(picks.length).toBeGreaterThanOrEqual(8); expect(picks.length).toBeLessThanOrEqual(12);
-    for (const p of picks) expect(p).toMatch(/^[^—]{2,20} — [^:]+: .{6,}/);
-    expect(new Set(picks.map(p => p.split(" — ")[0])).size).toBe(picks.length);
+    // P3.8 2: 직무 3단(넓힐 역할 2~3 · 인접 직무 3~4 · 다른 길 2~3), 줄마다 명리 근거와 MBTI 근거.
+    const roles = ev(career, "jobRoles")!.facts.slice(1), adj = ev(career, "jobAdjacent")!.facts.slice(1), far = ev(career, "jobLongterm")!.facts.slice(1);
+    expect(roles.length).toBeGreaterThanOrEqual(2); expect(roles.length).toBeLessThanOrEqual(3);
+    expect(adj.length).toBeGreaterThanOrEqual(3); expect(adj.length).toBeLessThanOrEqual(4);
+    expect(far.length).toBeGreaterThanOrEqual(2); expect(far.length).toBeLessThanOrEqual(3);
+    for (const p of [...roles, ...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 명리: .+ \/ MBTI: ENTJ의 '.+' 쪽/);
+    expect(new Set([...adj, ...far].map(p => p.split(" — ")[0])).size).toBe(adj.length + far.length);
+    for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect([...adj, ...far].join(" "), bad).not.toContain(bad);
     const current = ev(career, "currentJob")!.facts.join(" ");
-    expect(current).toMatch(/지금 직업 적합도: (잘 맞는 편|절반쯤 맞는 편|다른 힘으로 하는 일)/); expect(current).toMatch(/이 일 안에서 키울 역할: /);
+    expect(current).toMatch(/지금 직업 적합도: (잘 맞는 편|절반쯤 맞는 편|다른 힘으로 하는 일)/);
     const inv = ev(career, "investment")!.facts.join(" ");
     expect(inv).toMatch(/돈 굴리는 성향: /); expect(inv).toMatch(/운영 원칙: .*적립/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사/);
-    expect(career.chapters.find(c => c.id === "fit")!.materials.some(m => m.kind === "evidence" && m.key === "jobPicks")).toBe(true);
+    expect(career.chapters.find(c => c.id === "fit")!.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobFit", "jobRoles", "jobAdjacent", "jobLongterm"]);
     expect(career.chapters.find(c => c.id === "timing-risk")!.materials.some(m => m.kind === "evidence" && m.key === "investment")).toBe(true);
     for (const n of ["c1", "y", "c2"]) {
       const love = briefs.find(([x]) => x === `love_marriage_child:${n}`)![1];
-      const sig = ev(love, "loveSignals")!.facts.join(" "), pp = ev(love, "pushPull")!.facts.join(" ");
-      expect(sig).toMatch(/호감 표현: .* 쪽은/); expect(sig).toMatch(/연락 패턴: /); expect(pp).toMatch(/밀당: /);
+      const crush = ev(love, "crush")!.facts.join(" "), contact = ev(love, "contact")!.facts.join(" "), pp = ev(love, "pushPull")!.facts.join(" ");
+      expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(contact).toMatch(/연락 패턴: /); expect(pp).toMatch(/밀당: /);
       expect(love.chapters.find(c => c.id === "expression")!.title).toBe("표현하는 방식과 밀당");
     }
   });

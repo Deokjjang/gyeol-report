@@ -3,8 +3,8 @@
  * 연애: 배우자성(남=재성, 여=관성)·배우자궁(일지), 자녀성(남=관성, 여=식상)·자녀궁(시지, 시간 미상이면 유보), 잘 맞는 상대(부족 오행 보완 + MBTI 통념), 만남 장소.
  * 커리어: 직업·역할 추천 근거(강한 십성 묶음 + MBTI 통념 직업 + 입력 직업), 올해 기운이 돈·재산 흐름에 주는 영향(투자 지시 아님).
  */
-import { matchJob } from "./props";
-import type { MbtiProfile, SceneItem } from "@/data/knowledge-v5/schema";
+import { matchJob, type LifeStage } from "./props";
+import type { CareerJob, MbtiProfile, SceneItem } from "@/data/knowledge-v5/schema";
 import { sceneFits, type FactProfile } from "./facts";
 import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";
 import type { ChartDetections, ChartPosition } from "@/lib/saju/detections/types";
@@ -112,10 +112,11 @@ const ASPECT_KO = { crush: "호감 표현", contact: "연락 패턴", pushPull: 
  * 연애 신호(P3.7 1-4): 도화·홍염(있으면) → 가장 센 십성 둘 → MBTI 순으로 근거를 모아, 측면마다 근거별 한 줄 + 고객 사실에 맞는 장면 하나.
  * crush·contact는 '호감이 생기는 순간' 장, pushPull은 '표현하는 방식과 밀당' 장 재료다.
  */
-function loveSignals(saju: SajuCalcResult, hitIds: ReadonlySet<string>, k: Knowledge, mbti: MbtiProfile | null, facts: FactProfile, usedScenes: Set<string>, aspects: readonly (keyof typeof ASPECT_KO)[], key: string): Evidence | null {
+function loveSignals(saju: SajuCalcResult, hitIds: ReadonlySet<string>, k: Knowledge, mbti: MbtiProfile | null, facts: FactProfile, usedScenes: Set<string>, aspects: readonly (keyof typeof ASPECT_KO)[], key: string, avoid?: (featureKey: string) => boolean): Evidence | null {
   const d = saju.tenGods.distribution as Partial<Record<TenGod, number>>;
   const tenGods = (Object.keys(TEN_GOD_KO) as TenGod[]).filter(t => (d[t] ?? 0) > 0).sort((a, b) => (d[b] ?? 0) - (d[a] ?? 0) || a.localeCompare(b)).slice(0, 2);
-  const keys = [...["shinsal:DOHWASAL", "shinsal:HONGYEOMSAL"].filter(x => hitIds.has(x)), ...tenGods.map(t => `tenGod:${t}`), ...(mbti ? [`mbti:${mbti.type}`] : [])];
+  // 이 사람의 trait와 같은 차원에서 반대인 근거는 쓰지 않는다(P3.7 r2: 1장 "날카롭게" ↔ 밀당 "한참 지켜봄").
+  const keys = [...["shinsal:DOHWASAL", "shinsal:HONGYEOMSAL"].filter(x => hitIds.has(x)), ...tenGods.map(t => `tenGod:${t}`), ...(mbti ? [`mbti:${mbti.type}`] : [])].filter(x => !avoid?.(x));
   // 근거는 명리 하나 + MBTI 하나까지(P3.7 r1: 세 갈래 나열이 장면 대신 목록 복사를 불렀다).
   const all = keys.flatMap(x => { const e = k.loveSignals.get(x); if (!e) return []; const f = k.features.get(x); return [{ e, label: f ? `${f.easyName}(${f.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "")})` : e.name }]; });
   const sources = [...all.filter(x => !x.e.key.startsWith("mbti:")).slice(0, 1), ...all.filter(x => x.e.key.startsWith("mbti:"))].slice(0, 2);
@@ -129,8 +130,9 @@ function loveSignals(saju: SajuCalcResult, hitIds: ReadonlySet<string>, k: Knowl
   return { kind: "evidence", key, facts: facts_ };
 }
 
-export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, st: ElementState, mbti: MbtiProfile | null, signals?: { hitIds: ReadonlySet<string>; facts: FactProfile; usedScenes: Set<string> }): Record<string, Evidence> {
-  const sig = signals ? { loveSignals: loveSignals(saju, signals.hitIds, k, mbti, signals.facts, signals.usedScenes, ["crush", "contact"], "loveSignals"), pushPull: loveSignals(saju, signals.hitIds, k, mbti, signals.facts, signals.usedScenes, ["pushPull"], "pushPull") } : {};
+export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, st: ElementState, mbti: MbtiProfile | null, signals?: { hitIds: ReadonlySet<string>; facts: FactProfile; usedScenes: Set<string>; avoid?: (featureKey: string) => boolean }): Record<string, Evidence> {
+  // 호감 표현·연락 패턴·밀당은 절마다 따로(P3.8 1: 절 하나에 질문 하나).
+  const sig = signals ? Object.fromEntries((["crush", "contact", "pushPull"] as const).map(a => [a, loveSignals(saju, signals.hitIds, k, mbti, signals.facts, signals.usedScenes, [a], a, signals.avoid)])) : {};
   const spouseStars = gender === "MALE" ? STARS.WEALTH : gender === "FEMALE" ? STARS.OFFICER : null;
   const childStars = gender === "MALE" ? STARS.OFFICER : gender === "FEMALE" ? STARS.OUTPUT : null;
   const lack = st.lacking;
@@ -148,27 +150,71 @@ export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Know
   };
 }
 
+/** 십성 묶음의 행동 차원: 두 십성 feature의 dimensionTags 평균(지금 자리 역할의 MBTI 근거를 찾는 데 쓴다). */
+function groupDims(k: Knowledge, g: keyof typeof GROUP_KO): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const t of (Object.keys(TEN_GOD_GROUP) as TenGod[]).filter(x => TEN_GOD_GROUP[x] === g)) for (const [d, v] of Object.entries(k.features.get(`tenGod:${t}`)?.dimensionTags ?? {})) out[d] = (out[d] ?? 0) + v / 2;
+  return out;
+}
+/** MBTI 적성(-1~1): 직무가 요구하는 행동 차원과 이 유형 차원의 내적 ÷ 직무 차원 크기. 가장 크게 맞는 차원을 근거로 돌려준다. */
+function mbtiFit(k: Knowledge, dims: Readonly<Record<string, number>>, mbti: MbtiProfile): { fit: number; clash: boolean; reason?: string } {
+  let dot = 0, size = 0, best: [string, number] | null = null, clash = false;
+  for (const [d, v] of Object.entries(dims)) {
+    const m = mbti.dimensionTags[d] ?? 0; dot += v * m; size += Math.abs(v);
+    if (v * m > (best?.[1] ?? 0)) best = [d, v * m];
+    // 직무의 핵심 요구(0.5 이상)가 유형의 핵심(0.6 이상)과 정면으로 반대면 뺀다(ENTJ에게 지시를 따르는 임원 비서).
+    if (Math.abs(v) >= 0.5 && Math.abs(m) >= 0.6 && Math.sign(v) !== Math.sign(m)) clash = true;
+  }
+  const dim = best ? k.ontology.dimensions.find(x => x.id === best![0]) : undefined;
+  const pole = dim ? (dims[dim.id] > 0 ? dim.poles.plus : dim.poles.minus) : undefined;
+  return { fit: size ? dot / size : 0, clash, ...(dim && pole ? { reason: `${mbti.type}의 '${pole.label}' 쪽(${dim.name})` } : {}) };
+}
+
+type JobCtx = { readonly k: Knowledge; readonly traits: readonly Trait[]; readonly hitIds: ReadonlySet<string>; readonly scores: Record<string, number>; readonly mbti: MbtiProfile | null; readonly stage: LifeStage; readonly cluster?: string; readonly detailJob: string };
+type Scored = { job: CareerJob; total: number; myeongri: number; fit: number; adjacency: number; basis: string; mbtiReason?: string };
 /**
- * 구체 직무 추천(P3.7 1-4): 이 고객의 trait(십성·직업 신살·귀인) → 강한 십성 묶음 순으로 근거를 모아 근거마다 돌아가며 한 개씩, 10개(근거당 3개까지).
- * 줄마다 "직무명 — 근거 쉬운 이름: 이유 한 줄".
+ * 직무 점수(P3.8 2) = 명리 적성(십성 묶음 세기·특히 맞는 신살·귀인·십성·구조) × MBTI 적성(행동 차원) × 지금 직업과의 인접성(전환 비용) × 생활 단계.
+ * 한쪽만 맞는 직무는 근거가 강할 때만, MBTI 핵심과 정면으로 어긋나는 직무는 뺀다.
  */
-function jobPicks(k: Knowledge, traits: readonly Trait[], top: readonly (keyof typeof GROUP_KO)[]): string[] {
-  const titles = new Map(k.career.titles.map(t => [t.key, t.jobs]));
-  const sources = [
-    ...[...traits].sort((a, b) => b.score - a.score).flatMap(t => { const jobs = titles.get(t.featureId); return jobs ? [{ label: `${t.easyName}(${t.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "").trim()})`, jobs }] : []; }),
-    ...top.flatMap(g => { const jobs = titles.get(`group:${g}`); return jobs ? [{ label: GROUP_KO[g], jobs }] : []; }),
-  ];
-  const out: string[] = [], seen = new Set<string>(), taken = sources.map(() => 0);
-  for (let round = 0; round < 6 && out.length < 10; round++) sources.forEach((src, i) => {
-    if (out.length >= 10 || taken[i] >= 3) return;
-    const j = src.jobs.find(x => !seen.has(x.title)); if (!j) return;
-    seen.add(j.title); taken[i]++; out.push(`${j.title} — ${src.label}: ${j.why}`);
-  });
+function scoreJobs(c: JobCtx): Scored[] {
+  const near = new Set(c.k.catalog.clusters.find(x => x.id === c.cluster)?.near ?? []);
+  const traitByKey = new Map(c.traits.map(t => [t.featureId, t]));
+  const out: Scored[] = [];
+  for (const job of c.k.catalog.jobs) {
+    if (c.detailJob && (job.title.includes(c.detailJob) || c.detailJob.includes(job.title))) continue;
+    const g = Math.max(...job.groups.map(x => Math.min(1, (c.scores[x] ?? 0) / 3)));
+    const keyHit = (job.keys ?? []).find(x => traitByKey.has(x) || c.hitIds.has(x));
+    const myeongri = Math.min(1, g + (keyHit ? 0.35 : 0));
+    const m = c.mbti ? mbtiFit(c.k, job.dims, c.mbti) : { fit: 0.3, clash: false };
+    if (m.clash) continue;
+    // 한쪽만 맞는 직무: 명리가 약하면 MBTI가 아주 잘 맞을 때만, MBTI가 맞지 않으면 명리 근거(특히 맞는 기운)가 있을 때만.
+    if (myeongri < 0.4 && m.fit < 0.55) continue;
+    if (c.mbti && m.fit < 0.1 && !keyHit) continue;
+    const adjacency = !c.cluster ? 0.7 : job.cluster === c.cluster ? 1 : near.has(job.cluster) ? 0.75 : 0.4;
+    const stageOk = !job.stages || job.stages.includes(c.stage as never);
+    const entry = job.entry === "license" ? (c.stage === "student" || c.stage === "job_seeker" || job.cluster === c.cluster ? 0.8 : 0.3) : job.entry === "retrain" ? (c.stage === "mid_career" ? 0.7 : 0.85) : 1;
+    const total = myeongri * (0.5 + 0.5 * Math.max(0, m.fit)) * adjacency * (stageOk ? 1 : 0.5) * entry;
+    const t = keyHit ? traitByKey.get(keyHit) : undefined;
+    const top = job.groups.slice().sort((a, b) => (c.scores[b] ?? 0) - (c.scores[a] ?? 0))[0];
+    const basis = t ? `${t.easyName}(${t.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "").trim()})` : `강한 ${GROUP_KO[top as keyof typeof GROUP_KO]}`;
+    out.push({ job, total, myeongri, fit: m.fit, adjacency, basis, ...("reason" in m && m.reason ? { mbtiReason: m.reason } : {}) });
+  }
+  return out.sort((a, b) => b.total - a.total || a.job.title.localeCompare(b.job.title));
+}
+const jobLine = (x: Scored) => `${x.job.title} — 명리: ${x.basis}, ${x.job.why}${x.mbtiReason ? ` / MBTI: ${x.mbtiReason}` : ""}`;
+/** 같은 묶음은 한 단에서 2개까지(목록이 한 분야로 쏠리지 않게). */
+function takeSpread(list: readonly Scored[], n: number, used: Set<string>): Scored[] {
+  const out: Scored[] = [], per = new Map<string, number>();
+  for (const x of list) {
+    if (out.length >= n) break;
+    if (used.has(x.job.title) || (per.get(x.job.cluster) ?? 0) >= 2) continue;
+    out.push(x); used.add(x.job.title); per.set(x.job.cluster, (per.get(x.job.cluster) ?? 0) + 1);
+  }
   return out;
 }
 
 /** 돈 굴리는 성향·원칙(P3.7 1-4): 재성의 결(정재·편재·옅음) × 강한 묶음의 버릇 × 올해 십성. 방식 수준만(종목·시점·액수 금지). */
-function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, number>, strength: string, yearTg: TenGod | undefined): string[] {
+function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, number>, strength: string, yearTg: TenGod | undefined): { invest: string[]; leak: string[] } {
   const jung = d.正財 ?? 0, pyeon = d.偏財 ?? 0;
   const style = Math.max(jung, pyeon) < 0.5 ? { name: "지키는 쪽부터(돈 기운이 옅은 편)", rules: ["비상금을 먼저 채우고, 그다음에 적립을 시작한다", "잘 아는 것에만 넣고 남이 권하는 것은 한 번 미룬다"] }
     : Math.abs(jung - pyeon) < 0.3 ? { name: "고정 수입과 성과 수입을 나눠 굴리는 쪽", rules: ["고정 수입은 자동 적립, 성과로 들어온 돈은 나눠서 일부만 도전 몫으로", "도전 몫의 크기를 처음에 정해 두고 넘기지 않는다"] }
@@ -187,10 +233,10 @@ function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, n
     : group === "OUTPUT" ? "올해는 버는 길이 늘어나는 해: 새로 생긴 수입은 들어온 날 일부를 적립으로 돌린다"
     : group === "OFFICER" ? "올해는 책임과 고정 지출이 붙기 쉬운 해: 고정 지출부터 한 번 점검한다"
     : group === "RESOURCE" ? "올해는 공부·준비의 해: 큰 결정보다 공부와 기록을 먼저 한다" : "";
-  return [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...habit, ...(year ? [year] : [])];
+  return { invest: [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...(year ? [year] : [])], leak: habit };
 }
 
-export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = []): Record<string, Evidence> {
+export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = [], opts: { stage?: LifeStage; hitIds?: ReadonlySet<string> } = {}): Record<string, Evidence> {
   const scores = getTenGodGroupScores(saju.tenGods.distribution);
   const top = (Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 2);
   const yearTg = chart.thisYear.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
@@ -200,23 +246,38 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const topG = top.map(([g]) => g);
   const fit = job ? k.career.fits.find(f => f.jobId === job.id) : undefined;
   const fitLevel = fit ? (fit.groups.includes(topG[0]) ? "잘 맞는 편" : fit.groups.some(g => topG.includes(g)) ? "절반쯤 맞는 편" : "다른 힘으로 하는 일(맞지 않는다는 뜻이 아니라 쓰는 근육이 다르다)") : null;
-  const picks = jobPicks(k, traits, topG);
+  // 직무 3단(P3.8 2): 지금 자리에서 넓힐 역할 2~3 · 옮겨 갈 인접 직무 3~4 · 길게 보면 다른 길 2~3. 줄마다 명리 근거와 MBTI 근거를 함께.
+  const cluster = job ? k.catalog.jobClusters[job.id] : undefined;
+  const scored = scoreJobs({ k, traits, hitIds: opts.hitIds ?? new Set(traits.map(t => t.featureId)), scores, mbti, stage: opts.stage ?? "unknown" as LifeStage, cluster, detailJob });
+  const used = new Set<string>();
+  const adjacent = takeSpread(scored.filter(x => x.adjacency >= 0.75), 4, used);
+  const longterm = takeSpread(scored.filter(x => x.adjacency < 0.75 && x.myeongri >= 0.5 && (!mbti || x.fit >= 0.3)), 3, used);
+  const roleMbti = (g: keyof typeof GROUP_KO) => { if (!mbti) return ""; const r = mbtiFit(k, groupDims(k, g), mbti).reason; return r ? ` / MBTI: ${r}` : ""; };
+  // 명리 근거와 MBTI 근거가 함께 있는 묶음만(MBTI가 있으면): 강한 묶음 → 그다음 묶음 순(P3.8 2).
+  const groupsForRoles = [...new Set([...topG, ...(Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1]).filter(([, v]) => v >= 1.5).map(([g]) => g)])]
+    .filter(g => !mbti || roleMbti(g)).slice(0, 3);
+  const roles = fit
+    ? [...new Map(groupsForRoles.map(g => [fit.grow[g], g])).entries()].slice(0, 3).map(([role, g]) => `${role} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`)
+    : groupsForRoles.slice(0, 2).map(g => `${ROLE_BY_GROUP[g]} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`);
+  const inv = investment(d, scores, saju.structureAnalysis.dayMasterStrength.level, yearTg);
+  const lineNote = "줄마다 직무 하나: 명리 근거와 MBTI 근거를 한 문장에 함께 쓴다. 지금 직업을 바꾸라고 단정하지 않는다";
   return {
-    ...(picks.length ? { jobPicks: { kind: "evidence" as const, key: "jobPicks", facts: picks, note: "추천 직무를 모두 쓰고 직무마다 근거 한 줄. 지금 직업을 바꾸라고 단정하지 않는다" } } : {}),
     jobFit: { kind: "evidence", key: "jobFit", facts: [
       `강한 십성 묶음: ${top.map(([g, v]) => `${GROUP_KO[g]} ${v.toFixed(1)}`).join(" · ")}`,
       ...top.map(([g]) => `어울리는 판: ${ROLE_BY_GROUP[g]}`),
-      ...(mbti ? [`MBTI로 흔히 꼽는 직업: ${mbti.jobs.slice(0, 6).join(", ")}`] : []),
       `입력 직업: ${detailJob || "없음"}${jobStatus ? ` (${jobStatus})` : ""}`,
     ], note: "위 판과 입력 직업이 겹치는 지점을 짚는다" },
-    // 지금 직업 해설(P3.6 B): 입력 직업이 있으면 그 직업의 일상 소품과 강한 판을 함께 준다.
+    jobRoles: { kind: "evidence", key: "jobRoles", facts: [`${detailJob ? `지금 자리(${detailJob})` : "지금 하는 일"}에서 넓힐 역할`, ...roles], note: lineNote },
+    ...(adjacent.length ? { jobAdjacent: { kind: "evidence" as const, key: "jobAdjacent", facts: ["옮겨 갈 만한 가까운 직무(지금 일에서 쓰던 힘을 그대로 가져가는 쪽)", ...adjacent.map(jobLine)], note: lineNote } } : {}),
+    ...(longterm.length ? { jobLongterm: { kind: "evidence" as const, key: "jobLongterm", facts: ["길게 보면 열려 있는 다른 길(준비 기간이 필요한 쪽)", ...longterm.map(jobLine)], note: lineNote } } : {}),
+    // 지금 직업 해설(P3.6 B): 입력 직업이 있으면 그 직업의 일상 소품과 강한 판을 함께 준다. 키울 역할은 jobRoles에만(같은 말 반복 방지).
     currentJob: { kind: "evidence", key: "currentJob", facts: detailJob ? [
       `지금 직업: ${detailJob}${job ? ` (직업군: ${job.name})` : ""}`,
       ...(job ? [`이 직업의 일상: ${job.props.slice(0, 5).join(", ")}`] : []),
-      ...(fit && fitLevel ? [`지금 직업 적합도: ${fitLevel} — 이 일이 주로 쓰는 힘은 ${fit.groups.map(g => GROUP_KO[g]).join("·")}, 당신이 강한 힘은 ${topG.map(g => GROUP_KO[g]).join("·")}`, `이 일 안에서 키울 역할: ${fit.grow[topG[0]]}${topG[1] && fit.grow[topG[1]] !== fit.grow[topG[0]] ? ` / 그다음: ${fit.grow[topG[1]]}` : ""}`] : [`이 사주가 지금 일에서 쓰이는 곳: ${ROLE_BY_GROUP[top[0][0]]}`]),
-    ] : ["입력 직업 없음"], note: detailJob ? "두 문단 이상: 적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나, 덜 맞는 지점 하나와 다루는 법, 키울 역할" : "지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다" },
-    studyFit: { kind: "evidence", key: "studyFit", facts: [
-      ...top.map(([g]) => `맞는 공부 방식(${GROUP_KO[g]}): ${STUDY_BY_GROUP[g]}`),
+      ...(fit && fitLevel ? [`지금 직업 적합도: ${fitLevel} — 이 일이 주로 쓰는 힘은 ${fit.groups.map(g => GROUP_KO[g]).join("·")}, 당신이 강한 힘은 ${topG.map(g => GROUP_KO[g]).join("·")}`] : [`이 사주가 지금 일에서 쓰이는 곳: ${ROLE_BY_GROUP[top[0][0]]}`]),
+    ] : ["입력 직업 없음"], note: detailJob ? "적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나, 덜 맞는 지점 하나" : "지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다" },
+    studyFit: { kind: "evidence", key: "studyFit", facts: top.map(([g]) => `맞는 공부 방식(${GROUP_KO[g]}): ${STUDY_BY_GROUP[g]}`), note: "합격·성적은 단정하지 않는다" },
+    studyPick: { kind: "evidence", key: "studyPick", facts: [
       ...(fit && detailJob ? [`지금 일(${detailJob})과 이어지는 공부: ${STUDY_EXAMPLES[fit.groups[0]]}`] : []),
       `강한 힘에서 나온 공부: ${STUDY_EXAMPLES[topG[0]]}`,
     ], note: "합격·성적은 단정하지 않는다" },
@@ -225,9 +286,10 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
       `돈 버는 방식: ${Math.max(d.正財 ?? 0, d.偏財 ?? 0) < 0.5 ? "돈 기운(재성)이 옅어, 큰 판을 굴리기보다 일한 만큼 받는 구조에서 돈이 남는 쪽" : Math.abs((d.正財 ?? 0) - (d.偏財 ?? 0)) < 0.3 ? "고정 수입과 성과형 수입을 함께 굴리는 쪽(어느 한쪽으로 기울지 않음)" : (d.正財 ?? 0) > (d.偏財 ?? 0) ? "고정 수입을 차곡차곡 쌓을 때 돈이 남는 쪽(정재형)" : "성과·부업·기회를 크게 굴릴 때 돈이 붙는 쪽(편재형)"}`,
       ...(top.some(([g]) => g === "OUTPUT") ? ["만든 결과물이 그대로 돈이 되는 길이 열려 있다(표현하는 기운이 강함)"] : []),
     ] },
+    moneyLeak: { kind: "evidence", key: "moneyLeak", facts: inv.leak.length ? inv.leak : [`올해 ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해의 돈 주의: ${period?.year.caution ?? "큰 지출은 하루 미뤄 다시 본다"}`] },
     investment: { kind: "evidence", key: "investment", facts: [
-      `올해 ${chart.thisYear.ganji.hanja}(${chart.thisYear.ganji.hangul}): ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해${period ? `. 주의: ${period.year.caution}` : ""}`,
-      ...investment(d, scores, saju.structureAnalysis.dayMasterStrength.level, yearTg),
+      `올해 ${chart.thisYear.ganji.hanja}(${chart.thisYear.ganji.hangul}): ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해${period && inv.leak.length ? `. 주의: ${period.year.caution}` : ""}`,
+      ...inv.invest,
     ], note: "방식 수준으로만 쓴다: 특정 종목·시점·액수·수익률은 말하지 않는다" },
   };
 }

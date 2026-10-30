@@ -129,17 +129,19 @@ function onlyHolding(text: string, cond?: ConditionCtx): { strengthNote?: string
   return kept ? { strengthNote: kept } : {};
 }
 
-export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "BALANCED", groups?: GroupScores, cond?: ConditionCtx): Trait {
+export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "BALANCED", groups?: GroupScores, cond?: ConditionCtx, imageOk: (im: { metaphor: string; visual: string }) => boolean = () => true): Trait {
   const { hit, feature } = s;
   const variant = hit.variantKey ? feature.variants?.find(v => v.key === hit.variantKey || [...v.key].reverse().join("") === hit.variantKey) : undefined;
   const pos = mainPosition(hit);
   const good = pickN(rng.fork("good"), feature.strengths, 2);
+  const pool = [feature.image, ...(feature.imageVariants ?? [])], okPool = pool.filter(imageOk);
   return {
     id, featureId: hit.id, family: hit.family,
     name: variant ? `${feature.name} ${variant.name}` : feature.name,
     easyName: feature.easyName, positions: [...hit.positions], strength: hit.strength, score: s.score,
     // 같은 요소라도 고객마다 다른 그림(P3.5 A1): [기본 + 변형] 중 시드로 하나.
-    image: variant?.image ?? rng.fork("image").pick([feature.image, ...(feature.imageVariants ?? [])]),
+    // 이 원국과 어긋나는 그림("물이 모자란 흙"인데 물이 가장 많다)은 고르지 않는다(P3.8 5).
+    image: variant?.image && imageOk(variant.image) ? variant.image : rng.fork("image").pick(okPool.length ? okPool : pool),
     oneLiner: variant?.oneLiner ?? feature.oneLiner,
     ...(hit.pairs?.length ? { where: pairWhere(hit.pairs) } : {}),
     ...(pos && feature.positionNuance ? { positionNote: `${POSITION_KO[pos]} 자리: ${feature.positionNuance[pos]}` } : variant?.nuance ? { positionNote: variant.nuance } : {}),

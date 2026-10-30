@@ -1,0 +1,3094 @@
+{
+  "version": "compat-scene-v5-1",
+  "family": "compatScene",
+  "types": [
+    {
+      "type": "love",
+      "topics": [
+        {
+          "key": "datePlan",
+          "label": "데이트 계획",
+          "scenes": [
+            {
+              "text": "토요일 약속을 잡는 두 사람 중 한쪽은 식당 세 곳의 예약 가능 시간을 적어 오고, 다른 쪽은 만나서 걸으며 정하자고 합니다.",
+              "dims": {
+                "planning": 0.7,
+                "controlNeed": 0.3
+              }
+            },
+            {
+              "text": "영화 예매 앱을 켠 두 사람 중 한쪽은 후기부터 읽고, 다른 쪽은 포스터 분위기만 보고 좌석을 고릅니다.",
+              "dims": {
+                "inquiry": 0.5,
+                "decisionSpeed": 0.5
+              }
+            },
+            {
+              "text": "연인이 처음 가는 동네에 가 보자고 하면, 다른 사람은 지도 앱에서 후기가 있는 곳만 저장해 두고 마음을 놓습니다.",
+              "dims": {
+                "noveltySeeking": 0.6,
+                "riskTaking": -0.3
+              }
+            },
+            {
+              "text": "약속한 날 비가 오자 연인 한 사람은 바로 실내 코스로 바꾸고, 다른 한 사람은 우산 하나로 걷는 것도 괜찮다고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.5,
+                "mobility": 0.4
+              }
+            },
+            {
+              "text": "두 사람이 같은 시간에 만나기로 한 날, 한쪽은 십 분 먼저 와서 기다리고 다른 쪽은 시간에 딱 맞춰 뛰어옵니다.",
+              "dims": {
+                "planning": 0.5,
+                "ruleAdherence": 0.4
+              }
+            },
+            {
+              "text": "볼링장 점수판 앞에서 연인 한 사람은 한 판 더 하자고 하고, 다른 사람은 이미 즐거웠다며 신발을 벗습니다.",
+              "dims": {
+                "competitiveness": 0.7,
+                "persistence": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "contact",
+          "label": "연락",
+          "scenes": [
+            {
+              "text": "점심시간에 연인이 사진 한 장과 함께 뭐 먹었냐고 묻고, 다른 사람은 일이 끝나면 한꺼번에 답하겠다고 합니다.",
+              "dims": {
+                "verbalOutput": 0.5,
+                "reactivity": -0.4
+              }
+            },
+            {
+              "text": "답이 없는 한 시간 동안 연인 한 사람은 휴대폰을 자꾸 뒤집어 보고, 다른 사람은 일에 집중하느라 알림을 꺼 둡니다.",
+              "dims": {
+                "emotionalExpression": 0.4,
+                "boundarySetting": 0.5
+              }
+            },
+            {
+              "text": "잠들기 전 통화에서 두 사람 중 한쪽은 하루를 길게 풀어 놓고, 다른 쪽은 응, 응 하고 들으며 눈을 감습니다.",
+              "dims": {
+                "verbalOutput": 0.7
+              }
+            },
+            {
+              "text": "두 사람 중 한쪽은 문자 끝의 이모티콘 유무까지 마음으로 읽고, 다른 쪽은 용건만 적어도 같은 마음이라고 말합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "empathyResponse": 0.5
+              }
+            },
+            {
+              "text": "퇴근길 위치를 공유하자는 제안에 연인 한 사람은 바로 앱을 깔고, 다른 사람은 필요할 때 말로 알려 주겠다고 합니다.",
+              "dims": {
+                "possessiveness": 0.5,
+                "boundarySetting": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "anniversary",
+          "label": "기념일",
+          "scenes": [
+            {
+              "text": "백 일 기념으로 두 사람 중 한쪽은 한 달 전부터 편지 문구를 고민하고, 다른 쪽은 전날 밤에야 꽃집 영업시간을 검색합니다.",
+              "dims": {
+                "planning": 0.7,
+                "emotionalExpression": 0.3
+              }
+            },
+            {
+              "text": "기념일 선물로 연인 한 사람은 둘이 찍은 사진을 모은 앨범을 내밀고, 다른 사람은 갖고 싶다던 물건을 말없이 건넵니다.",
+              "dims": {
+                "emotionalExpression": 0.5,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "기념일 저녁 메뉴를 정하며 한쪽은 처음 같이 먹은 식당으로 가자고 하고, 다른 쪽은 새로 생긴 곳을 예약해 둡니다. 두 사람 다 웃으며 지도 앱을 봅니다.",
+              "dims": {
+                "noveltySeeking": 0.6
+              }
+            },
+            {
+              "text": "기념일은 챙기지 않아도 된다는 연인의 말에, 다른 사람은 진심인지 알 수 없어 작은 케이크라도 사 들고 갑니다.",
+              "dims": {
+                "empathyResponse": 0.5,
+                "directness": -0.5
+              }
+            },
+            {
+              "text": "달력 앱에 기념일 알림을 석 달 치 걸어 두는 한 사람과 날짜보다 분위기를 보는 다른 한 사람, 두 사람이 한 식탁에 앉습니다.",
+              "dims": {
+                "planning": 0.7,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "기념일 선물로 함께 들을 수업을 고를 때 연인 한 사람은 처음 배우는 분야를 고르고, 다른 사람은 이미 아는 분야를 더 깊게 익히자고 합니다.",
+              "dims": {
+                "learningDrive": 0.6,
+                "noveltySeeking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "hurt",
+          "label": "서운함",
+          "scenes": [
+            {
+              "text": "약속에 십오 분 늦은 연인이 미안하다고 하자, 다른 사람은 괜찮다고 하면서 메뉴만 말없이 고릅니다.",
+              "dims": {
+                "emotionalExpression": -0.6,
+                "directness": -0.5
+              }
+            },
+            {
+              "text": "서운한 일이 생기면 한쪽은 그날 안에 말로 꺼내고 다른 쪽은 며칠 정리한 뒤 꺼내서, 두 사람의 대화 시간이 어긋납니다.",
+              "dims": {
+                "reactivity": 0.6,
+                "emotionalExpression": 0.4
+              }
+            },
+            {
+              "text": "친구들 앞에서 연인이 장난으로 던진 말에 다른 사람은 웃어 넘기지만, 집에 오는 길에 그 말을 다시 떠올립니다.",
+              "dims": {
+                "reactivity": -0.5,
+                "introspection": 0.5
+              }
+            },
+            {
+              "text": "바쁜 주간이 끝나고 연인이 미안하다며 전화하자, 다른 사람은 미안하다는 말보다 언제 시간이 나는지를 먼저 묻습니다.",
+              "dims": {
+                "directness": 0.5,
+                "empathyResponse": -0.4
+              }
+            },
+            {
+              "text": "생일 축하 문자가 자정이 아닌 아침에 오자, 연인 한 사람은 바로 고맙다고 답하고 다른 한 사람은 그 이유를 속으로 곱씹습니다.",
+              "dims": {
+                "introspection": 0.5,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "두 사람이 가족 이야기를 나누는 저녁, 한쪽은 속 이야기까지 풀어 놓고 다른 쪽은 천천히 알아 가고 싶다고 말합니다.",
+              "dims": {
+                "intimacyPace": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "key": "friendMeet",
+          "label": "친구 모임",
+          "scenes": [
+            {
+              "text": "연인이 친구 모임에 같이 가자고 하자 다른 사람은 가겠다고 답하고, 가는 길에 누가 오는지 하나씩 물어봅니다.",
+              "dims": {
+                "planning": 0.5,
+                "socialEnergy": -0.3
+              }
+            },
+            {
+              "text": "모임이 길어지자 연인 한 사람은 한 번 더 놀고 싶어 하고, 다른 사람은 먼저 들어간다는 문자를 보내며 자리를 정리합니다.",
+              "dims": {
+                "socialEnergy": 0.7
+              }
+            },
+            {
+              "text": "서로의 친구 모임에 번갈아 가는 주에, 두 사람 중 한쪽은 낯선 자리에서도 먼저 인사를 건네고 다른 쪽은 옆에서 듣습니다.",
+              "dims": {
+                "socialEnergy": 0.5,
+                "verbalOutput": 0.4
+              }
+            },
+            {
+              "text": "연인이 친구와 단둘이 만난다고 하자 다른 사람은 잘 다녀오라며 웃고, 밤에 사진 한 장만 보내 달라고 덧붙입니다.",
+              "dims": {
+                "possessiveness": 0.4,
+                "trustThreshold": 0.4
+              }
+            },
+            {
+              "text": "연인의 친구가 놀러 오는 날 한 사람은 집을 미리 치우고 간식을 사 두고, 다른 사람은 편하게 오라는 문자만 보냅니다.",
+              "dims": {
+                "planning": 0.5,
+                "caretaking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "dateCost",
+          "label": "데이트 비용",
+          "scenes": [
+            {
+              "text": "계산대 앞에서 연인 한 사람은 카드를 바로 내밀고, 다른 사람은 반반 정산 앱을 열어 둡니다.",
+              "dims": {
+                "spendingControl": -0.5,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "연인이 고급 식당을 예약했다고 하자 다른 사람은 가격표를 보고 기쁘다는 말과 부담된다는 말을 함께 꺼냅니다.",
+              "dims": {
+                "spendingControl": 0.5,
+                "directness": 0.5
+              }
+            },
+            {
+              "text": "한쪽은 이번 달 데이트 예산을 정해 놓자고 하고, 다른 쪽은 마음에 드는 날은 예산을 넘겨도 된다고 하는 두 사람입니다.",
+              "dims": {
+                "spendingControl": 0.7,
+                "ruleAdherence": 0.4
+              }
+            },
+            {
+              "text": "통장 잔고가 비는 주에 연인은 집에서 영화를 보자고 하고, 다른 사람은 그래도 나가고 싶다며 편의점 간식을 고릅니다.",
+              "dims": {
+                "spendingControl": 0.5,
+                "mobility": 0.3
+              }
+            },
+            {
+              "text": "커피값을 번갈아 내던 두 사람이 한 번 계산이 어긋나자, 한 사람은 바로 정산하고 다른 사람은 웃으며 다음에 사겠다고 합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "possessiveness": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "future",
+          "label": "앞날 이야기",
+          "scenes": [
+            {
+              "text": "내년 여름에 가고 싶은 곳을 두 사람이 이야기하다 한쪽은 지도 앱에 저장하고, 다른 쪽은 그때 가서 정하자고 웃습니다.",
+              "dims": {
+                "planning": 0.6,
+                "decisionSpeed": -0.3
+              }
+            },
+            {
+              "text": "몇 년 뒤에 어디서 살고 싶은지 연인이 묻자 다른 사람은 도시 이름을 세 곳 말하고, 이유는 나중에 설명하겠다고 합니다.",
+              "dims": {
+                "mobility": 0.6,
+                "decisionSpeed": 0.3
+              }
+            },
+            {
+              "text": "하고 싶은 일이 바뀔 수 있다는 연인의 말에 다른 사람은 놀라지 않고, 바뀌면 바뀐 대로 같이 정리해 보자고 답합니다.",
+              "dims": {
+                "noveltySeeking": 0.4,
+                "empathyResponse": 0.4
+              }
+            },
+            {
+              "text": "두 사람이 앞으로 하고 싶은 일을 세 가지씩 적을 때, 한쪽은 한 줄로 끝내고 다른 쪽은 이유까지 길게 씁니다.",
+              "dims": {
+                "verbalOutput": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "연인이 이사 이야기를 꺼내자 다른 사람은 지금 동네의 단골 가게부터 떠올리며 천천히 생각해 보자고 합니다.",
+              "dims": {
+                "mobility": -0.6,
+                "decisionSpeed": -0.5
+              }
+            },
+            {
+              "text": "두 사람이 서로의 집 열쇠 이야기를 하다 연인 한 사람은 비밀번호를 바로 알려 주고, 다른 사람은 천천히 정하고 싶다고 말합니다.",
+              "dims": {
+                "intimacyPace": 0.7,
+                "boundarySetting": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "afterFight",
+          "label": "다툰 뒤",
+          "scenes": [
+            {
+              "text": "다툰 다음 날 아침 두 사람 중 한쪽은 먼저 안부 문자를 보내고, 다른 쪽은 저녁에 얼굴 보고 이야기하자고 답합니다.",
+              "dims": {
+                "reactivity": -0.4,
+                "conflictApproach": 0.4
+              }
+            },
+            {
+              "text": "말다툼 뒤에 연인은 방에 들어가 문을 닫고, 다른 사람은 문 앞에 이십 분만 지나면 이야기하자는 쪽지를 밀어 넣습니다.",
+              "dims": {
+                "conflictApproach": -0.6
+              }
+            },
+            {
+              "text": "화해하는 방법으로 연인 한 사람은 미안하다는 말을 바로 하고, 다른 사람은 좋아하는 간식을 사 와서 말없이 건넵니다.",
+              "dims": {
+                "directness": 0.6,
+                "caretaking": 0.4
+              }
+            },
+            {
+              "text": "같은 문제를 다시 꺼내지 않기로 한 두 사람 중 한쪽은 약속을 글로 남기고, 다른 쪽은 말로만 약속하고 넘어갑니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "ruleAdherence": 0.4
+              }
+            },
+            {
+              "text": "화가 풀리면 연인 한 사람은 웃긴 사진 한 장으로 말을 걸고, 다른 사람은 정리한 긴 문장으로 마음을 전합니다.",
+              "dims": {
+                "emotionalExpression": 0.5,
+                "verbalOutput": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "photoShare",
+          "label": "사진과 SNS",
+          "scenes": [
+            {
+              "text": "여행 사진을 올리기 전 연인이 어떤 사진이 괜찮은지 묻자, 다른 사람은 올려도 된다며 얼굴이 가장 잘 나온 컷을 고릅니다.",
+              "dims": {
+                "attentionSeeking": 0.5,
+                "boundarySetting": -0.3
+              }
+            },
+            {
+              "text": "두 사람 중 한쪽은 같이 찍은 사진을 프로필에 걸고 싶어 하고, 다른 쪽은 사진을 비공개 앨범에만 모아 두고 싶어 합니다.",
+              "dims": {
+                "attentionSeeking": 0.6,
+                "boundarySetting": 0.5
+              }
+            },
+            {
+              "text": "연인이 찍어 준 사진이 마음에 안 들자 다른 사람은 구도를 바꿔 가며 열 장을 더 찍어 보자고 합니다.",
+              "dims": {
+                "perfectionism": 0.7,
+                "persistence": 0.4
+              }
+            },
+            {
+              "text": "SNS에 달린 연인의 오랜 친구 댓글을 보고, 한 사람은 누구냐고 바로 묻고 다른 사람은 궁금하면 말해 달라고 합니다.",
+              "dims": {
+                "possessiveness": 0.6,
+                "trustThreshold": 0.5,
+                "directness": 0.4
+              }
+            },
+            {
+              "text": "연인과 맛집에서 사진을 찍느라 음식이 식자, 한쪽은 먼저 먹자고 하고 다른 쪽은 한 장만 더 찍겠다고 합니다.",
+              "dims": {
+                "perfectionism": 0.5,
+                "decisionSpeed": -0.3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "marriage",
+      "topics": [
+        {
+          "key": "budget",
+          "label": "가계부",
+          "scenes": [
+            {
+              "text": "월말에 부부가 가계부 앱을 열면 한쪽은 항목별 합계를 먼저 보고, 다른 쪽은 남은 돈이 얼마인지부터 묻습니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "spendingControl": 0.4
+              }
+            },
+            {
+              "text": "배우자가 커피값 지출을 하나씩 짚자 다른 쪽은 큰 지출만 맞으면 작은 건 넘어가자고 합니다.",
+              "dims": {
+                "perfectionism": 0.6,
+                "spendingControl": 0.4
+              }
+            },
+            {
+              "text": "생활비 통장에 넣는 금액을 정할 때 한쪽은 월급 비율로, 다른 쪽은 똑같은 금액으로 나누자고 말하는 부부입니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "directness": 0.4
+              }
+            },
+            {
+              "text": "배우자가 쿠폰 앱에 살 물건 목록을 모아 두면, 다른 한 사람은 필요한 날 바로 결제하는 쪽입니다.",
+              "dims": {
+                "planning": 0.6,
+                "spendingControl": 0.5
+              }
+            },
+            {
+              "text": "각자 마음대로 쓸 수 있는 돈의 액수를 정하는 대화에서, 부부 중 한쪽은 숫자를 바로 말하고 다른 쪽은 한 달 지켜보고 정하자고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.6,
+                "ruleAdherence": 0.3
+              }
+            },
+            {
+              "text": "공동 통장 비밀번호를 서로 알려 줄지 정하는 날 배우자는 모두 공유하자고 하고, 다른 쪽은 각자 관리하는 몫을 남기자고 합니다.",
+              "dims": {
+                "possessiveness": 0.6,
+                "trustThreshold": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "chores",
+          "label": "집안일",
+          "scenes": [
+            {
+              "text": "퇴근한 부부 중 한쪽은 설거지부터 하고 다른 쪽은 빨래부터 개는데, 두 사람 모두 상대가 시작한 일은 건드리지 않습니다.",
+              "dims": {
+                "dutifulness": 0.5,
+                "independence": 0.5
+              }
+            },
+            {
+              "text": "배우자가 냉장고 반찬 통에 날짜 스티커를 붙이면, 다른 쪽은 냄새로 확인하면 된다며 뚜껑을 엽니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "perfectionism": 0.5
+              }
+            },
+            {
+              "text": "집안일 분담표를 만든 부부 중 한쪽은 표대로 움직이고, 다른 쪽은 눈에 띄는 일부터 하다가 표를 놓칩니다.",
+              "dims": {
+                "planning": 0.6,
+                "ruleAdherence": 0.5
+              }
+            },
+            {
+              "text": "일요일 청소 시간에 한 배우자는 창틀까지 닦고, 다른 배우자는 바닥만 밀고 소파에 앉아 쉬자고 합니다.",
+              "dims": {
+                "perfectionism": 0.7
+              }
+            },
+            {
+              "text": "빨래를 건조기로 돌릴지 널어 말릴지를 두고, 두 사람은 시간과 옷감 중 어느 쪽을 먼저 볼지 이야기합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "decisionSpeed": -0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "inLaws",
+          "label": "명절과 양가",
+          "scenes": [
+            {
+              "text": "명절 일정을 짜는 부부 중 한쪽은 양가 방문 시간을 표로 나누고, 다른 쪽은 그날 분위기를 보고 정하자고 합니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "양가 부모님께 보낼 선물을 고를 때 배우자는 가격대를 맞추자고 하고, 다른 쪽은 각자 마음 가는 대로 사자고 합니다.",
+              "dims": {
+                "spendingControl": 0.5,
+                "ruleAdherence": 0.4
+              }
+            },
+            {
+              "text": "양가 모임을 마치고 돌아오는 차 안에서 부부 중 한 사람은 오늘 있었던 일을 하나씩 되짚고, 다른 사람은 피곤하다며 음악을 켭니다.",
+              "dims": {
+                "verbalOutput": 0.6,
+                "socialEnergy": -0.4
+              }
+            },
+            {
+              "text": "배우자 가족 모임에 가는 날 한쪽은 인사말을 미리 정리해 두고, 다른 쪽은 가서 분위기를 보고 말하자고 합니다.",
+              "dims": {
+                "planning": 0.5,
+                "noveltySeeking": 0.3
+              }
+            },
+            {
+              "text": "양가에서 같은 날 오라는 연락이 오자 부부 중 한쪽은 반씩 나눠 가자고 하고, 다른 쪽은 올해는 한 곳만 길게 머물자고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.4,
+                "boundarySetting": 0.5
+              }
+            },
+            {
+              "text": "양가 모임 사진을 찍을 때 부부 중 한쪽은 가운데 서서 포즈를 잡고, 다른 쪽은 가장자리에서 카메라를 듭니다.",
+              "dims": {
+                "attentionSeeking": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "key": "bigSpend",
+          "label": "큰 지출",
+          "scenes": [
+            {
+              "text": "새 냉장고를 고르는 날 한 배우자는 전기료와 용량표를 비교해 오고, 다른 배우자는 매장에서 문을 열어 보고 마음에 드는 것을 가리킵니다.",
+              "dims": {
+                "inquiry": 0.6,
+                "decisionSpeed": 0.5
+              }
+            },
+            {
+              "text": "여행 비용이 예상보다 늘어나자 부부 중 한쪽은 항공권을 바로 결제하자고 하고, 다른 쪽은 이틀만 더 비교하자고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.7
+              }
+            },
+            {
+              "text": "중고 가구를 사자는 배우자의 제안에 다른 쪽은 새 제품의 보증 기간이 더 마음 편하다고 말합니다.",
+              "dims": {
+                "trustThreshold": 0.6,
+                "riskTaking": -0.4
+              }
+            },
+            {
+              "text": "큰 돈을 쓰기 전 사흘 동안 장바구니에 담아 두기로 한 두 사람 중, 둘째 날 한쪽이 먼저 결제 창을 엽니다.",
+              "dims": {
+                "ruleAdherence": 0.4,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "적금을 늘릴지 여행에 쓸지 의견이 갈리자 부부는 종이에 각자의 이유를 한 줄씩 적어 번갈아 읽습니다.",
+              "dims": {
+                "spendingControl": 0.6,
+                "empathyResponse": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "weekend",
+          "label": "주말 계획",
+          "scenes": [
+            {
+              "text": "토요일 아침 부부 중 한쪽은 가고 싶은 곳을 이미 세 군데 찾아 두고, 다른 쪽은 늦잠 자고 일어나서 정하자고 합니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "배우자가 캠핑을 가자고 하면 다른 쪽은 집에서 쉬는 주말이 필요하다며 소파 쿠션을 끌어안습니다.",
+              "dims": {
+                "mobility": 0.6
+              }
+            },
+            {
+              "text": "주말 약속 두 개가 겹치자 부부 중 한쪽은 둘 다 가자고 하고, 다른 쪽은 하나만 골라도 충분하다고 합니다.",
+              "dims": {
+                "socialEnergy": 0.6,
+                "boundarySetting": 0.3
+              }
+            },
+            {
+              "text": "일요일 오후 두 사람은 영화관과 서점 중 어디를 갈지 정하지 못해, 시간을 반씩 나눠 한 곳씩 다녀오기로 합니다.",
+              "dims": {
+                "learningDrive": 0.5,
+                "mobility": 0.3
+              }
+            },
+            {
+              "text": "비가 오는 주말 아침 부부 중 한 사람은 예정된 외출을 그대로 가자고 하고, 다른 사람은 집에서 요리를 하자고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.4,
+                "mobility": 0.4
+              }
+            },
+            {
+              "text": "주말 밤 보드게임에서 부부 중 한쪽은 지고 나면 한 판 더를 외치고, 다른 쪽은 이기든 지든 과자를 먼저 집습니다.",
+              "dims": {
+                "competitiveness": 0.7,
+                "persistence": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "aloneTime",
+          "label": "혼자 시간",
+          "scenes": [
+            {
+              "text": "저녁 식사 뒤 배우자가 이어폰을 꺼내 혼자 걷고 오겠다고 하자, 다른 쪽은 잘 다녀오라며 거실 불을 켜 둡니다.",
+              "dims": {
+                "socialEnergy": -0.6,
+                "boundarySetting": 0.4
+              }
+            },
+            {
+              "text": "한 사람은 퇴근하면 바로 이야기를 나누고 싶어 하고, 다른 사람은 삼십 분 조용히 쉬어야 말이 나오는 부부입니다.",
+              "dims": {
+                "socialEnergy": -0.6,
+                "verbalOutput": 0.4
+              }
+            },
+            {
+              "text": "한 배우자가 토요일 오후를 취미 시간으로 쓰겠다고 하자, 다른 배우자는 그동안 장을 보며 자기 시간을 만듭니다.",
+              "dims": {
+                "independence": 0.6,
+                "boundarySetting": 0.4
+              }
+            },
+            {
+              "text": "여행지에서 아내가 혼자 서점에 다녀오겠다고 하면 남편은 카페에 앉아 기다리며 사진을 정리합니다.",
+              "dims": {
+                "independence": 0.5,
+                "learningDrive": 0.3
+              }
+            },
+            {
+              "text": "각자 방에서 쉬는 일요일 오전, 배우자가 문을 열고 점심 메뉴를 묻자 다른 쪽은 책에서 눈을 떼지 않고 아무거나 괜찮다고 답합니다.",
+              "dims": {
+                "introspection": 0.5,
+                "controlNeed": -0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "sickDay",
+          "label": "아픈 날",
+          "scenes": [
+            {
+              "text": "배우자가 감기로 누워 있으면 다른 쪽은 음식을 직접 정하지 않고, 먹고 싶은 걸 먼저 물은 뒤 배달 앱을 엽니다.",
+              "dims": {
+                "caretaking": 0.6,
+                "inquiry": 0.3
+              }
+            },
+            {
+              "text": "몸살이 난 날 부부 중 한 사람은 괜찮다며 평소처럼 나갈 준비를 하고, 다른 사람은 오늘은 쉬라며 휴대폰 알람을 끕니다.",
+              "dims": {
+                "dutifulness": 0.6,
+                "caretaking": 0.5
+              }
+            },
+            {
+              "text": "머리가 아프다는 배우자에게 다른 쪽은 약 이름과 먹는 시간을 메모지에 적어 침대 옆에 올려 둡니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "caretaking": 0.6
+              }
+            },
+            {
+              "text": "몸이 안 좋은 날 부부 중 한쪽은 옆에서 계속 말을 걸어 주고, 다른 쪽은 조용히 혼자 쉬게 두는 게 낫다고 말합니다.",
+              "dims": {
+                "verbalOutput": 0.5,
+                "boundarySetting": 0.5
+              }
+            },
+            {
+              "text": "한 배우자가 열이 있어 일찍 누우면, 다른 배우자는 집 불을 하나씩 끄고 알림 소리를 무음으로 바꿉니다.",
+              "dims": {
+                "caretaking": 0.7,
+                "emotionalExpression": -0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "housing",
+          "label": "이사와 집",
+          "scenes": [
+            {
+              "text": "이사할 집을 보러 간 부부 중 한쪽은 수압과 콘센트 위치까지 확인하고, 다른 쪽은 창으로 들어오는 빛만 보고 마음을 정합니다.",
+              "dims": {
+                "detailFocus": 0.7,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "이사 날짜가 정해지자 한 배우자는 짐 상자마다 번호표를 붙이고, 다른 배우자는 큰 가구부터 옮기자고 합니다.",
+              "dims": {
+                "planning": 0.7,
+                "perfectionism": 0.4
+              }
+            },
+            {
+              "text": "새집 꾸미기를 두고 배우자는 같은 색 계열로 맞추자고 하고, 다른 쪽은 마음에 드는 물건을 하나씩 놓아 보자고 합니다.",
+              "dims": {
+                "controlNeed": 0.5,
+                "noveltySeeking": 0.4
+              }
+            },
+            {
+              "text": "집을 옮길지 그대로 살지 이야기하는 저녁, 두 사람 중 한쪽은 새 동네 지도를 펼치고 다른 쪽은 지금 동네 가게들이 좋다고 말합니다.",
+              "dims": {
+                "mobility": 0.6,
+                "noveltySeeking": 0.4
+              }
+            },
+            {
+              "text": "집 계약서를 읽는 날 부부 중 한쪽은 특약 문구를 소리 내어 읽고, 다른 쪽은 요약 메모만 보고 서명할 준비를 합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "trustThreshold": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "key": "meals",
+          "label": "식사 준비",
+          "scenes": [
+            {
+              "text": "저녁 메뉴를 묻는 문자에 부부 중 한 사람은 메뉴 세 개를 바로 말하고, 다른 사람은 아무거나 괜찮다고만 답합니다.",
+              "dims": {
+                "decisionSpeed": 0.5,
+                "controlNeed": 0.4
+              }
+            },
+            {
+              "text": "장보기 전 부부가 목록을 만들 때 한쪽은 칸마다 수량을 적고, 다른 쪽은 마트에서 눈에 들어오는 것을 담습니다.",
+              "dims": {
+                "planning": 0.7,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "레시피 영상을 틀어 놓고 배우자는 계량스푼을 꺼내는데, 다른 쪽은 눈대중으로 소금을 넣습니다.",
+              "dims": {
+                "perfectionism": 0.6,
+                "ruleAdherence": 0.4
+              }
+            },
+            {
+              "text": "배달 앱을 보며 부부 중 한쪽은 늘 시키던 집을 누르고, 다른 쪽은 처음 보는 가게를 찾아봅니다.",
+              "dims": {
+                "noveltySeeking": 0.7
+              }
+            },
+            {
+              "text": "식사 뒤 접시를 개수대에 두고 일어나는 배우자와 바로 헹구는 배우자가 서로의 손을 쳐다봅니다.",
+              "dims": {
+                "dutifulness": 0.5,
+                "perfectionism": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "routine",
+          "label": "생활 리듬",
+          "scenes": [
+            {
+              "text": "아침 알람을 오 분 간격으로 맞추는 배우자와 한 번에 일어나는 배우자가 같은 침대에서 서로 다른 소리를 듣습니다.",
+              "dims": {
+                "reactivity": 0.5,
+                "decisionSpeed": 0.3
+              }
+            },
+            {
+              "text": "잠들기 전 두 사람 중 한쪽은 내일 일정을 한 번 더 확인하고, 다른 쪽은 불을 끄며 내일 일은 내일 보자고 합니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "출근 준비 시간에 배우자는 욕실 사용 순서를 정하자고 하고, 다른 쪽은 서로 눈치껏 비켜 주자고 말합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "controlNeed": 0.4
+              }
+            },
+            {
+              "text": "주말 기상 시간을 놓고 한 배우자는 평일과 같게 맞추자고 하고, 다른 배우자는 이틀만큼은 알람 없이 자고 싶어 합니다.",
+              "dims": {
+                "ruleAdherence": 0.6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "parentChild",
+      "topics": [
+        {
+          "key": "career",
+          "label": "진로",
+          "scenes": [
+            {
+              "text": "부모가 직업 소개 기사를 캡처해서 보내고, 자녀는 읽음 표시만 남긴 채 한동안 답하지 않습니다.",
+              "dims": {
+                "reactivity": -0.6,
+                "verbalOutput": -0.4
+              }
+            },
+            {
+              "text": "진로 상담 주간 전날, 엄마는 학원 후보를 표로 정리해 두고 딸은 하고 싶은 일이 아직 한 줄도 안 정해졌다고 말합니다.",
+              "dims": {
+                "planning": 0.7,
+                "decisionSpeed": -0.5
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "자녀가 새 분야를 배워 보겠다고 하자 아빠는 수입과 안정성부터 묻고, 자녀는 일단 시작해 보고 정하겠다고 답합니다.",
+              "dims": {
+                "riskTaking": 0.7,
+                "inquiry": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "부모는 아는 분과의 소개 자리를 잡아 두려 하고, 자녀는 직접 신청 서류를 쓰겠다며 일정표를 보여 줍니다.",
+              "dims": {
+                "controlNeed": 0.6,
+                "independence": 0.6
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀가 하고 싶은 일을 말하는 동안 엄마는 끝까지 듣다가, 마지막에 왜 그걸 하고 싶은지 한 가지만 묻습니다.",
+              "dims": {
+                "inquiry": 0.6,
+                "verbalOutput": -0.4
+              }
+            },
+            {
+              "text": "아빠는 직업 체험 프로그램의 신청 창을 열어 두고, 아들은 어떤 직업이 있는지부터 더 알아보고 싶다고 합니다.",
+              "dims": {
+                "controlNeed": 0.5,
+                "learningDrive": 0.5
+              },
+              "ages": "minor"
+            }
+          ]
+        },
+        {
+          "key": "moveOut",
+          "label": "독립",
+          "scenes": [
+            {
+              "text": "자녀가 집을 찾는 앱 화면을 보여 주자 엄마는 역에서 얼마나 먼지, 골목이 밝은지부터 묻습니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "caretaking": 0.6
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "독립하겠다는 말에 아빠는 조용히 밥만 먹고, 다음 날 아침 식탁에 보증금 계산을 적은 쪽지를 올려 둡니다.",
+              "dims": {
+                "emotionalExpression": -0.6,
+                "caretaking": 0.5
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "부모는 이삿날을 잡고 짐 목록부터 만들자고 하고, 자녀는 몸만 먼저 옮기고 나머지는 천천히 정하자고 합니다.",
+              "dims": {
+                "planning": 0.7
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀가 혼자 사는 집의 열쇠를 맡길지 고민하는 동안, 부모는 비상용 열쇠가 어디 있어야 마음이 놓이는지 말합니다.",
+              "dims": {
+                "boundarySetting": 0.7,
+                "possessiveness": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "아들이 자기 방 문을 닫고 지내는 시간이 늘자 엄마는 노크하는 순서를 정하자고 하고, 아들은 문에 쪽지를 붙입니다.",
+              "dims": {
+                "boundarySetting": 0.6,
+                "conflictApproach": -0.3
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "딸이 혼자 버스를 타 보겠다고 하자 아빠는 도착하면 문자부터 하라고 하고, 딸은 지도 앱의 경로를 보여 줍니다.",
+              "dims": {
+                "independence": 0.7,
+                "caretaking": 0.5
+              },
+              "ages": "minor"
+            }
+          ]
+        },
+        {
+          "key": "allowance",
+          "label": "용돈",
+          "scenes": [
+            {
+              "text": "딸이 이번 달 용돈 기입장을 열어 보이자 엄마는 남은 금액부터 보고, 딸은 산 물건 이야기부터 꺼냅니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "spendingControl": 0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "아들이 용돈을 올려 달라며 표를 만들어 오자 아빠는 표를 보다 웃으며 한 항목만 되묻습니다.",
+              "dims": {
+                "directness": 0.5,
+                "inquiry": 0.5
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "자녀가 용돈을 모아 운동화를 사려고 하자 부모는 반만 모으면 나머지는 보태 주겠다고 제안합니다.",
+              "dims": {
+                "spendingControl": 0.6,
+                "caretaking": 0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "자녀가 명절에 용돈 봉투를 건네면 엄마는 사양하다가, 다음 날 같은 금액을 자녀의 가방에 몰래 넣어 둡니다.",
+              "dims": {
+                "caretaking": 0.7,
+                "emotionalExpression": -0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "부모가 생활비가 모자라지 않느냐고 묻자 자녀는 괜찮다고 답하고, 부모는 그 말 뒤의 표정을 살핍니다.",
+              "dims": {
+                "independence": 0.6,
+                "empathyResponse": 0.6
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "부모가 매달 용돈을 보내며 문자를 남기면, 자녀는 받았다는 답을 한 글자로만 보냅니다.",
+              "dims": {
+                "verbalOutput": -0.6,
+                "emotionalExpression": -0.3
+              },
+              "ages": "adult"
+            }
+          ]
+        },
+        {
+          "key": "holiday",
+          "label": "명절",
+          "scenes": [
+            {
+              "text": "명절 전날 밤, 부모는 도착 시간과 상차림 순서를 문자로 적어 보내고 자녀는 기차표 예매 창을 캡처해서 답합니다.",
+              "dims": {
+                "planning": 0.6,
+                "detailFocus": 0.5
+              }
+            },
+            {
+              "text": "명절 아침 부엌에서 엄마는 손이 모자란다는 말 대신 접시만 꺼내 놓고, 자녀는 말해 주면 하겠다며 옆에 서 있습니다.",
+              "dims": {
+                "directness": -0.7
+              }
+            },
+            {
+              "text": "연휴 일정을 정하며 부모는 이틀 내내 머물다 가라고 하고, 자녀는 하루 자고 올라오는 표를 이미 끊어 두었다고 말합니다.",
+              "dims": {
+                "boundarySetting": 0.6,
+                "planning": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "친척 모임에서 부모가 자녀의 근황을 먼저 소개하려 하자 자녀는 직접 말하겠다며 부모의 팔을 살짝 잡습니다.",
+              "dims": {
+                "independence": 0.6,
+                "controlNeed": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "친척 집에 세배하러 가기 전, 아빠는 인사말을 같이 연습하자고 하고 딸은 웃으며 알아서 하겠다고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "independence": 0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "먼 길을 가는 차 안에서 부모는 노래를 틀고 계속 말을 걸고, 자녀는 창밖을 보며 짧게만 답합니다.",
+              "dims": {
+                "verbalOutput": 0.6,
+                "socialEnergy": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "checkInCall",
+          "label": "안부 전화",
+          "scenes": [
+            {
+              "text": "부모는 별일 없냐고 하루에 두 번 문자를 보내고, 자녀는 저녁에 한 번 몰아서 답합니다.",
+              "dims": {
+                "verbalOutput": 0.4,
+                "reactivity": -0.5
+              }
+            },
+            {
+              "text": "일요일 저녁 통화에서 엄마는 반찬 이야기부터 꺼내고, 자녀는 용건이 뭔지 먼저 묻습니다.",
+              "dims": {
+                "directness": 0.6,
+                "empathyResponse": -0.3
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀가 바빠서 전화를 못 받은 날, 아빠는 부재중 표시를 보고도 다시 걸지 않고 다음 날 밥은 먹었냐는 한 줄만 보냅니다.",
+              "dims": {
+                "emotionalExpression": -0.6,
+                "caretaking": 0.5
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀가 영상통화를 걸자 부모는 화면 속 방의 정리 상태와 얼굴빛부터 살핍니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "caretaking": 0.5
+              }
+            },
+            {
+              "text": "학원이 끝난 시간에 맞춰 엄마가 전화를 걸지만, 아들은 친구들과 있다며 '이따 할게요' 하고 끊습니다.",
+              "dims": {
+                "socialEnergy": 0.4,
+                "boundarySetting": 0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "부모가 가까운 친구처럼 속 이야기를 나누고 싶어 하면, 자녀는 천천히 마음을 열고 싶다며 안부 정도만 전합니다.",
+              "dims": {
+                "intimacyPace": -0.6,
+                "emotionalExpression": -0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "roleReversal",
+          "label": "돌봄 역전",
+          "scenes": [
+            {
+              "text": "부모가 스마트폰 설정을 헷갈려 하면 자녀는 대신 눌러 주지 않고, 한 단계씩 같이 눌러 가며 알려 줍니다.",
+              "dims": {
+                "caretaking": 0.5,
+                "learningDrive": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀가 건강 검진 예약을 대신 해 주겠다고 하자 부모는 그건 내가 할 수 있다며 먼저 예약 창을 엽니다.",
+              "dims": {
+                "independence": 0.7,
+                "caretaking": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "무거운 짐을 든 부모에게서 자녀가 말없이 짐을 받아 들면, 부모는 아직 들 수 있다며 한 손을 놓지 않습니다.",
+              "dims": {
+                "caretaking": 0.7,
+                "independence": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀가 은행 앱 비밀번호를 정리해 두자고 하자 부모는 직접 적어 두겠다며 수첩을 꺼냅니다.",
+              "dims": {
+                "planning": 0.4,
+                "trustThreshold": 0.6
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "부모가 식당에서 '네가 정해 줘' 하며 메뉴판을 넘기면, 자녀는 잠시 말을 고르며 메뉴판을 천천히 넘깁니다.",
+              "dims": {
+                "decisionSpeed": -0.5,
+                "empathyResponse": 0.5
+              },
+              "ages": "adult"
+            }
+          ]
+        },
+        {
+          "key": "nagging",
+          "label": "잔소리",
+          "scenes": [
+            {
+              "text": "부모가 현관에서 우산을 챙겼냐고 묻자 자녀는 챙겼다며 문을 닫고, 부모는 닫히는 문에 대고 조심하라고 한 번 더 말합니다.",
+              "dims": {
+                "caretaking": 0.6,
+                "reactivity": 0.3
+              }
+            },
+            {
+              "text": "같은 말을 세 번 하는 부모에게 자녀는 세 번째에 방금 한 얘기라고 짚고, 부모는 중요해서 그렇다고 답합니다.",
+              "dims": {
+                "directness": 0.7,
+                "conflictApproach": 0.4
+              }
+            },
+            {
+              "text": "아빠가 숙제를 했냐고 묻는 소리가 들리면, 딸은 이미 책상 앞에 앉아 책을 펴 보이며 대답을 대신합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "conflictApproach": -0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "자녀가 현관에 들어서자 부모는 살이 빠졌다고 한마디를 하고, 자녀는 그 말이 걱정인지 평가인지 가늠하며 신발을 벗습니다.",
+              "dims": {
+                "introspection": 0.5,
+                "emotionalExpression": -0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "자녀는 부모의 조언에 알겠다고 답하고도 자기 방식대로 하며, 부모는 왜 안 따르냐고 묻고 자녀는 듣고 있다고 말합니다.",
+              "dims": {
+                "ruleAdherence": -0.5,
+                "conflictApproach": -0.3
+              },
+              "ages": "adult"
+            }
+          ]
+        },
+        {
+          "key": "table",
+          "label": "식탁",
+          "scenes": [
+            {
+              "text": "저녁 식탁에서 부모는 먹는 동안 오늘 하루를 묻고, 자녀는 숟가락을 내려놓은 뒤에야 한두 마디를 꺼냅니다.",
+              "dims": {
+                "verbalOutput": -0.5,
+                "reactivity": -0.4
+              }
+            },
+            {
+              "text": "자녀가 먹다 남긴 반찬을 부모가 싸 주려 하자 자녀는 가방이 무겁다며 한 가지만 받습니다.",
+              "dims": {
+                "caretaking": 0.7,
+                "boundarySetting": 0.3
+              }
+            },
+            {
+              "text": "새로 생긴 식당에 가자는 자녀에게 부모는 늘 가던 집이 낫다고 하며 주문할 메뉴까지 미리 말합니다.",
+              "dims": {
+                "noveltySeeking": 0.6
+              }
+            },
+            {
+              "text": "아침 식탁에서 엄마는 한 숟갈이라도 먹고 가라고 하고, 딸은 가방을 멘 채 빵을 들고 나갑니다.",
+              "dims": {
+                "caretaking": 0.6,
+                "reactivity": 0.3
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "오랜만에 차린 밥상에서 부모는 더 먹으라고 계속 권하고, 자녀는 배부르다는 말 대신 젓가락을 천천히 내려놓습니다.",
+              "dims": {
+                "directness": -0.4,
+                "caretaking": 0.5
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "식탁에서 휴대폰을 내려놓자는 부모 말에 자녀는 알림만 확인하고 엎어 두겠다고 답합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "reactivity": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "chores",
+          "label": "집안일",
+          "scenes": [
+            {
+              "text": "아빠는 설거지 당번표를 냉장고에 붙이고, 아들은 표 없이 그때그때 하면 안 되냐고 묻습니다.",
+              "dims": {
+                "planning": 0.7,
+                "ruleAdherence": 0.5
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "빨래를 개는 부모 옆에 자녀가 와서 앉으면, 부모는 양말 짝부터 맞추고 자녀는 큰 옷부터 쌓습니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "perfectionism": 0.4
+              }
+            },
+            {
+              "text": "자녀가 오랜만에 집에 와서 청소기를 돌리면 부모는 그냥 쉬라고 하면서도 구석진 곳을 알려 줍니다.",
+              "dims": {
+                "dutifulness": 0.5,
+                "directness": -0.3
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "분리수거 날 아침, 부모는 전날 밤에 문 앞에 모아 두고 자녀는 나가는 길에 한꺼번에 나눠 담습니다.",
+              "dims": {
+                "planning": 0.6
+              }
+            },
+            {
+              "text": "엄마가 방 정리를 말하자 딸은 뭐가 어디 있는지 자기는 안다며 쌓인 책 더미를 가리킵니다.",
+              "dims": {
+                "perfectionism": -0.6,
+                "ruleAdherence": -0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "아들이 설거지 내기를 하자고 하자 아빠는 규칙을 꼼꼼히 정하고, 아들은 이기고 싶은 마음에 접시 개수부터 셉니다.",
+              "dims": {
+                "competitiveness": 0.7,
+                "ruleAdherence": 0.4
+              },
+              "ages": "minor"
+            }
+          ]
+        },
+        {
+          "key": "healthCare",
+          "label": "건강 챙김",
+          "scenes": [
+            {
+              "text": "부모가 검진 결과표를 접어 서랍에 넣자 자녀는 수치를 같이 읽어 보자고 하고, 부모는 괜찮다며 서랍을 닫습니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "emotionalExpression": -0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "목이 잠긴 날, 부모는 생강차를 끓여 자녀 방문 앞에 두고 말은 걸지 않습니다.",
+              "dims": {
+                "caretaking": 0.7,
+                "emotionalExpression": -0.4
+              }
+            },
+            {
+              "text": "부모가 영양제를 주문해 보내면 자녀는 먹고 있다는 사진을 보내고, 부모는 사진 속 통의 개수를 셉니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "caretaking": 0.6
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "아빠는 아침마다 비타민을 책상에 올려 두고, 아들은 먹는 시간을 잊지 않으려고 휴대폰 알람을 맞춥니다.",
+              "dims": {
+                "planning": 0.6,
+                "dutifulness": 0.5
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "같이 걷자는 자녀 말에 부모는 숨이 차면 먼저 말하겠다고 하고, 자녀는 속도를 맞춰 반 걸음 앞서 걷습니다.",
+              "dims": {
+                "caretaking": 0.5,
+                "independence": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "houseRule",
+          "label": "집 규칙",
+          "scenes": [
+            {
+              "text": "귀가 시간을 열 시로 하자는 부모와 열한 시로 하자는 자녀가 아홉 시 반에 서로 한 번씩 문자하기로 정합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "boundarySetting": 0.4
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "휴대폰 사용 시간을 정하는 가족 회의에서 아빠는 시간표를 그려 오고, 아들은 숙제를 먼저 끝내는 날은 예외로 하자고 합니다.",
+              "dims": {
+                "ruleAdherence": -0.5,
+                "planning": 0.5
+              },
+              "ages": "minor"
+            },
+            {
+              "text": "자녀가 친구를 데려와 자고 가도 되냐고 묻기 전에 이미 방을 치워 두면, 부모는 미리 말해 줘서 고맙다고 합니다.",
+              "dims": {
+                "planning": 0.5,
+                "empathyResponse": 0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "늦은 밤 자녀가 현관 비밀번호를 조용히 누르면, 불 켜진 거실에서 부모가 책을 읽다 왔냐고 한마디만 합니다.",
+              "dims": {
+                "caretaking": 0.6,
+                "emotionalExpression": -0.4
+              },
+              "ages": "adult"
+            },
+            {
+              "text": "외박할 때는 미리 알려 달라는 부모 말에 자녀는 알겠다며 가족 단체 문자 대신 부모에게만 한 줄을 보냅니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "boundarySetting": 0.3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "coworker",
+      "topics": [
+        {
+          "key": "workSplit",
+          "label": "업무 분담",
+          "scenes": [
+            {
+              "text": "새 프로젝트 첫 회의에서 동료 한 사람은 공유 문서에 담당자 표부터 만들고, 다른 동료는 맡고 싶은 일을 먼저 말해 보자고 합니다.",
+              "dims": {
+                "controlNeed": 0.6,
+                "planning": 0.5
+              }
+            },
+            {
+              "text": "옆자리 동료가 자료 조사를 맡겠다고 하자, 다른 동료는 발표를 맡겠다며 바로 손을 듭니다.",
+              "dims": {
+                "attentionSeeking": 0.6,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "일이 한쪽에 몰리자 동료 한 사람은 바쁘다고 먼저 말하고, 다른 동료는 속으로 조절하며 말을 아낍니다.",
+              "dims": {
+                "directness": 0.6,
+                "boundarySetting": 0.4
+              }
+            },
+            {
+              "text": "두 사람이 나눈 업무를 공유 시트에 적을 때 한쪽은 소소한 일까지 칸을 만들고, 다른 쪽은 큰 덩어리만 적습니다.",
+              "dims": {
+                "detailFocus": 0.7,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "급한 요청이 들어온 동료를 보고 옆자리 동료는 자기 일을 접고 돕겠다고 하고, 요청받은 동료는 순서를 정해서 맡기겠다고 합니다.",
+              "dims": {
+                "caretaking": 0.6,
+                "controlNeed": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "deadline",
+          "label": "마감",
+          "scenes": [
+            {
+              "text": "마감 이틀 전 동료 한 사람은 초안을 공유 폴더에 올려 두고, 다른 동료는 마감 날 아침에 마지막 장을 채웁니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "마감 직전 오타를 발견하자 옆자리 동료는 처음부터 다시 읽자고 하고, 다른 동료는 큰 틀이 맞으니 제출하자고 합니다.",
+              "dims": {
+                "perfectionism": 0.7,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "마감이 겹친 주에 두 사람 중 한쪽은 점심시간을 줄여 일하고, 다른 쪽은 잠을 지키며 다음 날 아침에 이어서 합니다.",
+              "dims": {
+                "boundarySetting": 0.5,
+                "persistence": 0.4
+              }
+            },
+            {
+              "text": "마감 알림이 울리자 동료 한 사람은 체크리스트를 하나씩 지우고, 다른 동료는 지금 되는 것부터 보내자고 말합니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "제출 버튼 앞에서 한 동료가 마지막으로 수치를 다시 맞춰 보는 동안, 같은 팀 동료는 어깨너머로 시계를 바라봅니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "perfectionism": 0.4
+              }
+            },
+            {
+              "text": "실적 순위표가 공유되자 동료 한 사람은 매일 순위를 확인하며 힘을 내고, 다른 동료는 지난달 자기 기록과만 비교합니다.",
+              "dims": {
+                "competitiveness": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "key": "meeting",
+          "label": "회의",
+          "scenes": [
+            {
+              "text": "회의 중 동료 한 사람은 의견을 바로 말해 흐름을 만들고, 다른 동료는 끝까지 듣다가 마지막에 한마디만 합니다.",
+              "dims": {
+                "verbalOutput": 0.7
+              }
+            },
+            {
+              "text": "회의 자료의 한 줄에 대해 옆자리 동료가 근거를 묻자, 다른 동료는 출처 화면을 바로 띄워 보여 줍니다.",
+              "dims": {
+                "inquiry": 0.7,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "회의가 길어지자 동료 한 사람은 오늘 정할 것만 정리하자고 하고, 다른 동료는 이야기가 더 나오게 두자고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.6,
+                "controlNeed": 0.4
+              }
+            },
+            {
+              "text": "의견이 갈리자 동료 한 사람은 표를 그려 장단점을 나누고, 다른 동료는 일단 시도하고 고치자고 합니다.",
+              "dims": {
+                "riskTaking": 0.5,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "회의록 담당을 정할 때 한 동료는 바로 자원하고, 다른 동료는 화면 공유를 맡는 쪽이 편하다고 말합니다.",
+              "dims": {
+                "attentionSeeking": -0.4,
+                "dutifulness": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "credit",
+          "label": "공로",
+          "scenes": [
+            {
+              "text": "발표가 끝나 박수를 받는 자리에서 동료 한 사람은 함께 준비한 사람의 이름도 말하고, 다른 동료는 조용히 자리에 앉습니다.",
+              "dims": {
+                "attentionSeeking": -0.4,
+                "caretaking": 0.4
+              }
+            },
+            {
+              "text": "성과 보고 메일에 이름을 적는 칸에서 한 동료는 한 일의 크기대로 쓰자고 하고, 다른 동료는 가나다순으로 쓰자고 합니다.",
+              "dims": {
+                "competitiveness": 0.5,
+                "detailFocus": 0.4,
+                "statusDrive": 0.4
+              }
+            },
+            {
+              "text": "칭찬 메시지를 받은 동료가 팀 채널에 공유하자, 옆자리 동료는 같이 한 일이라는 한 줄을 덧붙입니다.",
+              "dims": {
+                "competitiveness": 0.4,
+                "directness": 0.5
+              }
+            },
+            {
+              "text": "자기 아이디어가 다른 동료의 발표에 쓰이자, 동료는 바로 말하지 않고 회의가 끝난 뒤 따로 이야기하자고 합니다.",
+              "dims": {
+                "directness": -0.5,
+                "reactivity": -0.4
+              }
+            },
+            {
+              "text": "시상식 사진을 찍을 때 한 동료는 가운데에 서서 소감을 미리 적어 둔 종이를 꺼내고, 다른 동료는 뒤쪽에 섭니다.",
+              "dims": {
+                "attentionSeeking": 0.6,
+                "planning": 0.4,
+                "statusDrive": 0.4
+              }
+            },
+            {
+              "text": "사내 소식지에 이름이 실릴 기회가 오자 동료 한 사람은 인터뷰를 자원하고, 다른 동료는 일하는 모습만 사진으로 남기겠다고 합니다.",
+              "dims": {
+                "statusDrive": 0.6,
+                "attentionSeeking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "lunch",
+          "label": "점심",
+          "scenes": [
+            {
+              "text": "점심시간 십 분 전 동료 한 사람은 오늘 메뉴를 투표에 올리고, 다른 동료는 가고 싶은 가게 이름만 말합니다.",
+              "dims": {
+                "controlNeed": 0.4,
+                "directness": 0.4
+              }
+            },
+            {
+              "text": "점심을 같이 먹자는 제안에 동료 한 사람은 바로 일어나고, 다른 동료는 혼자 산책하며 먹겠다고 말합니다.",
+              "dims": {
+                "socialEnergy": 0.7
+              }
+            },
+            {
+              "text": "계산을 따로 할지 한꺼번에 할지 정하는 동안, 두 사람 중 한쪽은 영수증 앱을 열어 금액을 나눕니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "spendingControl": 0.5
+              }
+            },
+            {
+              "text": "새로 생긴 식당 앞에서 동료 한 사람은 줄이 길다며 돌아서고, 다른 동료는 기다릴 만하다고 말합니다.",
+              "dims": {
+                "noveltySeeking": 0.5,
+                "persistence": 0.4
+              }
+            },
+            {
+              "text": "식사 중에 한 동료는 요즘 이야기를 쏟아 놓고, 옆자리 동료는 고개만 끄덕이며 밥을 먹습니다.",
+              "dims": {
+                "verbalOutput": 0.7
+              }
+            },
+            {
+              "text": "새로 온 동료가 점심 자리에서 가족 이야기까지 꺼내자, 옆자리 동료는 웃으며 듣고 자기 이야기는 아끼는 편입니다.",
+              "dims": {
+                "intimacyPace": 0.6,
+                "boundarySetting": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "messenger",
+          "label": "메신저",
+          "scenes": [
+            {
+              "text": "용건이 길게 적힌 메신저 메시지가 오면, 옆자리 동료는 긴 글 대신 통화로 풀자고 답합니다.",
+              "dims": {
+                "directness": 0.5,
+                "detailFocus": -0.3
+              }
+            },
+            {
+              "text": "동료 한 사람은 읽음 표시가 뜨면 바로 답하고, 다른 동료는 하던 일을 끝낸 뒤 한꺼번에 답합니다.",
+              "dims": {
+                "reactivity": 0.7
+              }
+            },
+            {
+              "text": "퇴근 시간 이후에 온 메시지에 동료 한 사람은 내일 아침에 답하겠다고 쓰고, 다른 동료는 바로 확인해 짧게 답합니다.",
+              "dims": {
+                "boundarySetting": 0.7
+              }
+            },
+            {
+              "text": "팀 채널에서 한 동료는 이모티콘으로 반응하고, 다른 동료는 짧은 문장으로 일정을 정리해 올립니다.",
+              "dims": {
+                "emotionalExpression": 0.5,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "메시지가 오해를 낳자 두 사람 중 한쪽은 바로 전화를 걸어 풀고, 다른 쪽은 글로 상황을 정리해 다시 보냅니다.",
+              "dims": {
+                "conflictApproach": 0.5,
+                "detailFocus": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "handover",
+          "label": "인수인계",
+          "scenes": [
+            {
+              "text": "인수인계 문서를 쓰는 동료 한 사람은 화면 캡처와 순서를 붙이고, 받는 동료는 직접 따라 하며 배우고 싶어 합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "independence": -0.3
+              }
+            },
+            {
+              "text": "넘겨받은 파일 이름이 낯설자 새로 맡은 동료는 바로 물어보고, 넘기는 동료는 질문 목록을 먼저 모아 달라고 합니다.",
+              "dims": {
+                "inquiry": 0.6,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "인수인계 마지막 날 동료 한 사람은 자주 쓰는 단축키까지 알려 주고, 다른 동료는 중요한 것만 알려 달라고 합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "caretaking": 0.5
+              }
+            },
+            {
+              "text": "넘겨받은 업무에서 낡은 방식을 발견한 동료는 바꾸고 싶어 하고, 넘긴 동료는 지금 방식의 이유를 설명합니다.",
+              "dims": {
+                "noveltySeeking": 0.6,
+                "ruleAdherence": -0.4
+              }
+            },
+            {
+              "text": "인수인계 뒤 질문이 올 때마다 동료 한 사람은 바로 알려 주고, 다른 동료는 질문 내용을 문서에 덧붙입니다.",
+              "dims": {
+                "dutifulness": 0.5,
+                "caretaking": 0.4
+              }
+            },
+            {
+              "text": "수정 요청이 여러 번 들어와도 동료 한 사람은 끝까지 다시 고치고, 다른 동료는 세 번째쯤 범위를 정하자고 합니다.",
+              "dims": {
+                "persistence": 0.7,
+                "boundarySetting": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "mistake",
+          "label": "실수 수습",
+          "scenes": [
+            {
+              "text": "잘못된 숫자가 담긴 파일이 이미 발송되자 동료 한 사람은 정정 메일 초안부터 쓰고, 다른 동료는 어디서 틀어졌는지부터 찾습니다.",
+              "dims": {
+                "decisionSpeed": 0.6,
+                "inquiry": 0.5
+              }
+            },
+            {
+              "text": "실수한 동료가 미안하다는 말을 여러 번 하자, 옆자리 동료는 이제 고치는 방법을 같이 적어 보자고 합니다.",
+              "dims": {
+                "empathyResponse": -0.4,
+                "emotionalExpression": 0.4
+              }
+            },
+            {
+              "text": "작은 오류가 나온 날 동료 한 사람은 팀 채널에 바로 알리고, 다른 동료는 고친 뒤에 알리는 편이 낫다고 합니다.",
+              "dims": {
+                "directness": 0.6,
+                "decisionSpeed": 0.3
+              }
+            },
+            {
+              "text": "일정이 밀리자 동료 한 사람은 원인을 표로 정리하고, 다른 동료는 다음 주 계획부터 다시 세웁니다.",
+              "dims": {
+                "introspection": 0.5,
+                "planning": 0.5
+              }
+            },
+            {
+              "text": "실수한 동료가 말없이 밤에 혼자 고쳐 놓자, 다음 날 다른 동료는 같이 봤으면 더 빨랐을 거라고 말합니다.",
+              "dims": {
+                "independence": 0.7,
+                "boundarySetting": -0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "desk",
+          "label": "자리와 소리",
+          "scenes": [
+            {
+              "text": "옆자리 동료가 통화를 길게 하자 다른 동료는 이어폰 소리를 키우고, 점심 때 조용히 말하자는 메시지를 남깁니다.",
+              "dims": {
+                "conflictApproach": -0.5,
+                "directness": -0.4
+              }
+            },
+            {
+              "text": "책상 위를 매일 정리하는 동료와 서류를 쌓아 두는 옆자리 동료가 칸막이 하나를 사이에 두고 일합니다.",
+              "dims": {
+                "perfectionism": 0.6,
+                "detailFocus": 0.3
+              }
+            },
+            {
+              "text": "창가 자리의 블라인드를 올리고 싶은 동료와 모니터 빛 반사 때문에 내리고 싶은 동료가 서로 이유를 설명합니다.",
+              "dims": {
+                "boundarySetting": 0.5,
+                "directness": 0.4
+              }
+            },
+            {
+              "text": "에어컨 온도를 두고 동료 한 사람은 담요를 꺼내고, 다른 동료는 이마를 닦으며 리모컨만 만지작거립니다.",
+              "dims": {
+                "directness": -0.5,
+                "conflictApproach": -0.4
+              }
+            },
+            {
+              "text": "공용 냉장고에 이름표를 붙이는 동료와 표시 없이 넣어 두는 옆자리 동료가 서로의 도시락 통을 구분해 봅니다.",
+              "dims": {
+                "possessiveness": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "key": "vacationCover",
+          "label": "휴가 대신 맡기",
+          "scenes": [
+            {
+              "text": "휴가 가는 동료가 할 일을 목록으로 만들어 주면, 대신 맡는 동료는 중요한 세 가지만 표시해 달라고 합니다.",
+              "dims": {
+                "planning": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "휴가 중인 동료에게 급한 질문이 생기자, 남은 동료는 연락하지 않고 먼저 혼자 찾아봅니다.",
+              "dims": {
+                "independence": 0.7,
+                "boundarySetting": 0.5
+              }
+            },
+            {
+              "text": "휴가에서 돌아온 동료가 쌓인 메시지를 시간순으로 읽는 동안, 대신 일한 동료는 요약 한 장을 건넵니다.",
+              "dims": {
+                "detailFocus": 0.4,
+                "caretaking": 0.5
+              }
+            },
+            {
+              "text": "휴가 일정이 겹칠 것 같자 동료 한 사람은 달력 앱에서 날짜를 바로 정하고, 다른 동료는 서로 얘기해 보고 정하자고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.5,
+                "empathyResponse": 0.3
+              }
+            },
+            {
+              "text": "휴가지에서 사진을 보낸 동료에게 다른 동료는 업무 이야기 없이 풍경 사진 한 장으로 답합니다.",
+              "dims": {
+                "boundarySetting": 0.5,
+                "emotionalExpression": 0.3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "managerReport",
+      "topics": [
+        {
+          "key": "report",
+          "label": "보고",
+          "scenes": [
+            {
+              "text": "아침 보고 시간에 팀장은 결론부터 한 줄로 듣고 싶어 하고, 팀원은 배경부터 차근차근 설명하려고 합니다.",
+              "dims": {
+                "directness": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "팀원이 진행 상황을 하루 두 번 메신저로 보내면 팀장은 마감 직전에만 보내도 된다고 말합니다.",
+              "dims": {
+                "verbalOutput": 0.5,
+                "controlNeed": -0.4
+              }
+            },
+            {
+              "text": "보고서 첫 장에 팀장은 숫자 요약만 남기자고 하고, 팀원은 근거 표를 앞에 두고 싶어 합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "inquiry": 0.4
+              }
+            },
+            {
+              "text": "중간 점검 때 팀원은 아직 완성되지 않았다며 화면 공유를 망설이고, 팀장은 미완성이어도 보여 달라고 합니다.",
+              "dims": {
+                "perfectionism": 0.7,
+                "riskTaking": -0.3
+              }
+            },
+            {
+              "text": "문제를 보고하러 온 팀원이 해결책을 두 가지 들고 오면, 팀장은 그중 하나를 바로 고릅니다.",
+              "dims": {
+                "decisionSpeed": 0.6,
+                "planning": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "instructionChange",
+          "label": "지시 변경",
+          "scenes": [
+            {
+              "text": "퇴근 한 시간 전 팀장이 목차를 다시 짜 달라고 하자, 팀원은 기존 목차를 화면에 띄우고 바뀐 항목에 번호를 붙입니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "회의가 끝나고 팀장이 아까 한 말과 반대로 지시하자, 팀원은 바뀐 이유를 한 줄로 적어 달라고 요청합니다.",
+              "dims": {
+                "inquiry": 0.7,
+                "directness": 0.5
+              }
+            },
+            {
+              "text": "지시가 바뀔 때마다 팀원은 새 파일을 만들어 버전 이름을 붙이고, 팀장은 파일 이름보다 내용을 먼저 봅니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "detailFocus": 0.5
+              }
+            },
+            {
+              "text": "팀장이 급하게 방향을 바꾸면 팀원은 알겠다고 답하고 자리로 돌아가, 바뀐 이유를 혼자 추측해 봅니다.",
+              "dims": {
+                "directness": -0.6,
+                "introspection": 0.5
+              }
+            },
+            {
+              "text": "일정이 바뀌었다는 팀장의 한마디에 팀원은 달력 앱을 열어 영향받는 일정 세 개를 바로 표시합니다.",
+              "dims": {
+                "planning": 0.7,
+                "reactivity": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "review",
+          "label": "평가 면담",
+          "scenes": [
+            {
+              "text": "평가 면담 전날 팀원은 한 해 성과를 표로 정리해 오고, 팀장은 표를 훑다가 가장 중요한 두 가지만 짚습니다.",
+              "dims": {
+                "planning": 0.6,
+                "statusDrive": 0.4
+              }
+            },
+            {
+              "text": "면담에서 팀장이 칭찬 뒤에 보완점을 말하자, 팀원은 보완점부터 메모하고 칭찬은 나중에 다시 읽습니다.",
+              "dims": {
+                "introspection": 0.5,
+                "emotionalExpression": -0.4
+              }
+            },
+            {
+              "text": "평가 결과를 설명하는 자리에서 팀장은 기준을 하나씩 읽어 주고, 팀원은 구체적인 사례를 들어 달라고 합니다.",
+              "dims": {
+                "inquiry": 0.7,
+                "ruleAdherence": 0.4
+              }
+            },
+            {
+              "text": "다음 해 목표를 정할 때 팀원은 도전적인 숫자를 먼저 말하고, 팀장은 달성할 수 있는 선으로 맞추자고 합니다.",
+              "dims": {
+                "riskTaking": 0.6,
+                "competitiveness": 0.4,
+                "statusDrive": 0.4
+              }
+            },
+            {
+              "text": "면담이 끝나고 팀장은 언제든 와서 이야기하라고 하고, 팀원은 필요하면 메신저로 먼저 시간을 잡겠다고 답합니다.",
+              "dims": {
+                "boundarySetting": 0.4,
+                "directness": -0.3
+              }
+            },
+            {
+              "text": "다음 직책을 이야기하는 면담에서 팀원은 더 큰 역할을 맡고 싶다고 말하고, 팀장은 지금 맡은 일의 마무리를 먼저 살핍니다.",
+              "dims": {
+                "statusDrive": 0.7,
+                "directness": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "dinner",
+          "label": "회식",
+          "scenes": [
+            {
+              "text": "회식 장소를 정할 때 팀장은 늘 가던 식당을 예약하자고 하고, 팀원은 새로 생긴 곳을 후보에 올려 둡니다.",
+              "dims": {
+                "noveltySeeking": 0.6
+              }
+            },
+            {
+              "text": "회식 자리에서 팀장이 한 잔 더 하자고 하자, 팀원은 다음 날 일정을 이유로 정중히 먼저 일어납니다.",
+              "dims": {
+                "socialEnergy": -0.5,
+                "boundarySetting": 0.6
+              }
+            },
+            {
+              "text": "회식 뒤 팀장이 계산서를 한 번에 결제하겠다고 하자, 팀원은 영수증을 받아 지출 항목을 입력해 둡니다.",
+              "dims": {
+                "dutifulness": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "회식 중 건배사 차례가 오자 팀원은 미리 적어 둔 한 문장을 읽고, 팀장은 즉석에서 짧게 말합니다.",
+              "dims": {
+                "planning": 0.6,
+                "verbalOutput": -0.3
+              }
+            },
+            {
+              "text": "점심 회식 메뉴로 팀장은 모두 같은 메뉴로 맞추자고 하고, 팀원은 각자 고르는 편이 편하다고 말합니다.",
+              "dims": {
+                "controlNeed": 0.6,
+                "independence": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "deadline",
+          "label": "마감",
+          "scenes": [
+            {
+              "text": "마감 이틀 전 팀장은 중간본을 미리 보내라고 하고, 팀원은 완성본으로 한 번에 보내고 싶어 합니다.",
+              "dims": {
+                "planning": 0.6,
+                "perfectionism": 0.5
+              }
+            },
+            {
+              "text": "마감이 당겨졌다는 팀장의 말에 팀원은 줄일 수 있는 항목 목록을 바로 만들어 보여 줍니다.",
+              "dims": {
+                "decisionSpeed": 0.6,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "마감 전날 밤 팀원이 마지막 확인을 요청하자 팀장은 아침에 보겠다고 하고, 팀원은 아침까지 수정할 수 있게 파일을 열어 둡니다.",
+              "dims": {
+                "boundarySetting": 0.5,
+                "persistence": 0.4
+              }
+            },
+            {
+              "text": "마감 당일 팀장은 직접 표지를 맡겠다며 팀원에게 본문에만 집중하라고 하고, 팀원은 표지 규격을 먼저 확인합니다.",
+              "dims": {
+                "caretaking": 0.5,
+                "detailFocus": 0.5
+              }
+            },
+            {
+              "text": "마감이 끝나고 팀장은 수고했다는 문자를 짧게 보내고, 팀원은 다음 마감 일정부터 달력에 적어 둡니다.",
+              "dims": {
+                "emotionalExpression": -0.4,
+                "planning": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "leaveApproval",
+          "label": "휴가 결재",
+          "scenes": [
+            {
+              "text": "휴가 신청서의 결재 버튼을 누르기 전 팀장이 그 주에 마감이 있는지 묻자, 팀원은 인수인계 표를 함께 보냅니다.",
+              "dims": {
+                "planning": 0.6,
+                "dutifulness": 0.5
+              }
+            },
+            {
+              "text": "휴가 날짜를 바꾸고 싶은 팀원은 이유를 길게 쓰고, 팀장은 바뀐 날짜만 확인하고 결재합니다.",
+              "dims": {
+                "verbalOutput": 0.6,
+                "decisionSpeed": 0.5
+              }
+            },
+            {
+              "text": "연휴 앞뒤로 쉬고 싶은 팀원은 한 달 전에 미리 말하고, 팀장은 팀 전체 일정을 본 뒤 대답을 미룹니다.",
+              "dims": {
+                "planning": 0.7,
+                "decisionSpeed": -0.5
+              }
+            },
+            {
+              "text": "급한 일로 하루 쉬겠다는 팀원의 연락에 팀장은 이유를 묻지 않고 대체 업무 확인만 요청합니다.",
+              "dims": {
+                "boundarySetting": 0.5,
+                "trustThreshold": -0.5
+              }
+            },
+            {
+              "text": "휴가 중에 온 질문에는 답하지 않겠다고 팀원이 미리 알리자, 팀장은 급한 건만 문자로 보내겠다고 합니다.",
+              "dims": {
+                "boundarySetting": 0.7,
+                "ruleAdherence": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "feedback",
+          "label": "피드백",
+          "scenes": [
+            {
+              "text": "빨간 표시가 많이 달린 초안을 받은 팀원은 고칠 순서를 번호로 정리하고, 팀장은 번호 없는 부분이 핵심이라고 알려 줍니다.",
+              "dims": {
+                "planning": 0.6,
+                "detailFocus": 0.5
+              }
+            },
+            {
+              "text": "팀장이 칭찬을 말로 하는 대신 파일에 한 줄 댓글로 남기면, 팀원은 그 댓글을 몇 번 다시 열어 봅니다.",
+              "dims": {
+                "emotionalExpression": -0.5,
+                "introspection": 0.4
+              }
+            },
+            {
+              "text": "피드백을 받은 자리에서 팀원은 바로 반박하지 않고 하루 뒤에 정리된 의견을 보내며, 팀장은 그 하루를 기다립니다.",
+              "dims": {
+                "reactivity": -0.6,
+                "introspection": 0.4
+              }
+            },
+            {
+              "text": "팀장이 괜찮다고 한 문서에 대해 팀원은 어디가 괜찮은지 구체적으로 알려 달라고 요청합니다.",
+              "dims": {
+                "inquiry": 0.7,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "팀원이 먼저 자기 일의 약한 부분을 말하자 팀장은 보완 방법을 두 가지 제안합니다.",
+              "dims": {
+                "directness": 0.6,
+                "learningDrive": 0.5
+              }
+            },
+            {
+              "text": "여러 번 반려된 문서를 팀원은 한 번 더 고쳐 올리고, 팀장은 이번 주에는 이 정도면 충분하다고 말합니다.",
+              "dims": {
+                "persistence": 0.7,
+                "perfectionism": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "meeting",
+          "label": "회의",
+          "scenes": [
+            {
+              "text": "주간 회의에서 팀장이 의견을 돌아가며 묻자, 팀원은 자기 차례에 맞춰 메모를 정리해 둡니다.",
+              "dims": {
+                "planning": 0.5,
+                "verbalOutput": -0.3
+              }
+            },
+            {
+              "text": "회의 중 팀원이 팀장의 방향에 다른 의견을 내자, 팀장은 근거를 끝까지 듣고 메모를 더합니다.",
+              "dims": {
+                "directness": 0.6,
+                "conflictApproach": 0.5
+              }
+            },
+            {
+              "text": "짧은 회의를 선호하는 팀장이 타이머를 켜면, 팀원은 타이머가 울리기 전에 핵심만 말하려 서두릅니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "decisionSpeed": 0.5
+              }
+            },
+            {
+              "text": "회의가 끝나고 팀원이 정한 일을 확인 메일로 남기자고 하자, 팀장은 그건 직접 쓰겠다고 합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "controlNeed": 0.5
+              }
+            },
+            {
+              "text": "화상 회의에서 팀장은 카메라를 켜자고 하고, 팀원은 화면 공유만 하고 소리로 참여하고 싶어 합니다.",
+              "dims": {
+                "attentionSeeking": -0.5,
+                "boundarySetting": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "assignment",
+          "label": "업무 분배",
+          "scenes": [
+            {
+              "text": "팀장이 새 업무를 나누며 가장 어려운 부분을 맡기자, 팀원은 기한을 정하고 중간 점검을 제안합니다.",
+              "dims": {
+                "planning": 0.6,
+                "controlNeed": 0.4
+              }
+            },
+            {
+              "text": "지금 하는 일이 많다고 팀원이 말하자, 팀장은 우선순위를 한 장에 적어 주겠다고 합니다.",
+              "dims": {
+                "directness": 0.6,
+                "controlNeed": 0.5
+              }
+            },
+            {
+              "text": "팀원이 하고 싶은 일을 먼저 말하자, 팀장은 지금 필요한 일과 함께 정리해 보자고 합니다.",
+              "dims": {
+                "learningDrive": 0.5,
+                "statusDrive": 0.4
+              }
+            },
+            {
+              "text": "새 업무를 설명하는 팀장에게 팀원은 비슷한 자료가 있는지 먼저 확인하고 시작하겠다고 말합니다.",
+              "dims": {
+                "inquiry": 0.5,
+                "independence": 0.4
+              }
+            },
+            {
+              "text": "업무가 겹치자 팀원은 어느 쪽을 먼저 할지 팀장에게 묻고, 팀장은 팀원이 정해서 알려 달라고 합니다.",
+              "dims": {
+                "independence": -0.5,
+                "decisionSpeed": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "proposal",
+          "label": "새 제안",
+          "scenes": [
+            {
+              "text": "팀원이 새 방식을 제안하며 시범 기간 한 주를 요청하자, 팀장은 기간과 확인 기준을 먼저 묻습니다.",
+              "dims": {
+                "riskTaking": 0.6,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "팀장이 제안서 분량을 한 장으로 줄이라고 하자, 팀원은 빠진 근거를 부록으로 붙입니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "perfectionism": 0.5
+              }
+            },
+            {
+              "text": "팀원이 아이디어를 메신저에 먼저 올리면, 팀장은 회의에서 정식으로 말해 달라고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "noveltySeeking": 0.4
+              }
+            },
+            {
+              "text": "팀원의 제안에 팀장은 좋다고 하면서도 올해 안에는 어렵다고 답하고, 팀원은 다음 분기용 초안을 바로 준비합니다.",
+              "dims": {
+                "persistence": 0.6,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "팀장이 새 도구를 써 보자고 하자 팀원은 사용법 문서를 찾아 읽고 팀 채널에 요약을 올립니다.",
+              "dims": {
+                "learningDrive": 0.7,
+                "caretaking": 0.4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "businessPartner",
+      "topics": [
+        {
+          "key": "settlement",
+          "label": "지분과 정산",
+          "scenes": [
+            {
+              "text": "월말 정산 시트를 열면 동업자 한 사람은 매출 항목을 줄마다 대조하고, 다른 동업자는 합계가 맞으면 넘어가자고 합니다.",
+              "dims": {
+                "detailFocus": 0.7,
+                "perfectionism": 0.4
+              }
+            },
+            {
+              "text": "수익을 나누는 비율을 다시 이야기하는 날 두 대표 중 한쪽은 일한 시간을, 다른 쪽은 떠안은 위험을 근거로 꺼냅니다.",
+              "dims": {
+                "inquiry": 0.5,
+                "competitiveness": 0.4
+              }
+            },
+            {
+              "text": "공동 대표 한 사람은 정산 내역을 매주 공유 문서에 올리자고 하고, 다른 사람은 월 한 번이면 충분하다고 말합니다.",
+              "dims": {
+                "trustThreshold": 0.6,
+                "ruleAdherence": 0.5
+              }
+            },
+            {
+              "text": "지분 계약서를 다시 읽는 날 파트너 한 사람은 바뀐 조항에 밑줄을 긋고, 다른 파트너는 처음 합의한 문서의 첫 장을 찾습니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "trustThreshold": 0.5
+              }
+            },
+            {
+              "text": "영수증 하나가 빠지자 동업자는 바로 카드 명세서를 뒤지고, 다른 동업자는 이번 달 합계만 고치자고 합니다.",
+              "dims": {
+                "perfectionism": 0.6,
+                "persistence": 0.4
+              }
+            },
+            {
+              "text": "공동 계좌에서 개인 비용을 처리하는 기준을 두고 동업자 한 사람은 모두 기록하자고 하고, 다른 동업자는 개인 비용은 따로 두자고 합니다.",
+              "dims": {
+                "possessiveness": 0.6,
+                "trustThreshold": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "investment",
+          "label": "투자 결정",
+          "scenes": [
+            {
+              "text": "새 장비 구매를 두고 두 대표 중 한쪽은 견적서 세 장을 비교해 오고, 다른 쪽은 지금 사야 할인이 된다고 말합니다.",
+              "dims": {
+                "inquiry": 0.6,
+                "decisionSpeed": 0.5
+              }
+            },
+            {
+              "text": "투자자 미팅 전날 공동 대표 한 사람은 예상 질문표를 만들고, 다른 사람은 제품 시연만 연습합니다.",
+              "dims": {
+                "planning": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "여유 자금을 광고에 쓸지 예비비로 둘지 두 사람은 은행 앱의 잔액 화면을 같이 보며 의견을 나눕니다.",
+              "dims": {
+                "spendingControl": 0.6,
+                "riskTaking": -0.4
+              }
+            },
+            {
+              "text": "사업 계획서의 매출 숫자가 높다는 말에 동업자는 근거를 묻고, 다른 동업자는 목표를 높게 잡은 것이라고 설명합니다.",
+              "dims": {
+                "inquiry": 0.6,
+                "riskTaking": 0.5
+              }
+            },
+            {
+              "text": "결정해야 하는 날 파트너 한 사람은 하루 더 생각하자고 하고, 다른 파트너는 오늘 정하고 일정부터 잡자고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.7
+              }
+            },
+            {
+              "text": "투자 설명회 무대에서 공동 대표 한 사람은 마이크를 잡고 앞에 서고, 다른 사람은 뒤에서 자료를 넘기는 쪽을 택합니다.",
+              "dims": {
+                "attentionSeeking": 0.7,
+                "verbalOutput": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "roles",
+          "label": "역할 분담",
+          "scenes": [
+            {
+              "text": "공동 대표 한 사람은 외부 미팅을 맡고, 다른 사람은 내부 일정을 관리하며 서로의 달력을 공유합니다.",
+              "dims": {
+                "socialEnergy": 0.6,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "고객 응대를 두고 동업자는 직접 받겠다고 하고, 다른 동업자는 응대 매뉴얼을 만들어 둘이 같은 답을 하자고 합니다.",
+              "dims": {
+                "controlNeed": 0.5,
+                "ruleAdherence": 0.5
+              }
+            },
+            {
+              "text": "결정 권한을 나눌 때 두 대표 중 한쪽은 금액 기준을 표로 적자고 하고, 다른 쪽은 서로 알아서 판단하자고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "independence": 0.5
+              }
+            },
+            {
+              "text": "한 파트너가 제품을 만들고 다른 파트너가 홍보를 맡으면, 만든 파트너는 홍보 문구를 몇 번이고 고쳐 달라고 합니다.",
+              "dims": {
+                "perfectionism": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "일이 몰린 주에 동업자 한 사람이 남의 일까지 돕겠다고 하자, 다른 동업자는 먼저 자기 몫부터 끝내겠다고 합니다.",
+              "dims": {
+                "caretaking": 0.6,
+                "dutifulness": 0.5
+              }
+            },
+            {
+              "text": "명함에 적을 직함을 정하는 날 공동 대표 한 사람은 대표라는 말을 앞에 두고 싶어 하고, 다른 사람은 하는 일을 그대로 적자고 합니다.",
+              "dims": {
+                "statusDrive": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "key": "riskChoice",
+          "label": "위험 감수",
+          "scenes": [
+            {
+              "text": "검증된 거래처와 새 거래처 사이에서 두 대표 중 한쪽은 기존 거래처를 지키자고 하고, 다른 쪽은 새 곳에 시범 주문을 넣자고 합니다.",
+              "dims": {
+                "riskTaking": 0.7,
+                "noveltySeeking": 0.5
+              }
+            },
+            {
+              "text": "신제품 출시일을 앞당길지 정하는 회의에서 동업자 한 사람은 테스트를 한 번 더 하자고 하고, 다른 동업자는 출시 뒤에 고치자고 합니다.",
+              "dims": {
+                "riskTaking": 0.6,
+                "perfectionism": 0.5
+              }
+            },
+            {
+              "text": "대출 상환 계획을 짤 때 파트너 한 사람은 여유를 두고 짜자고 하고, 다른 파트너는 매출이 오를 때 한 번에 갚자고 합니다.",
+              "dims": {
+                "riskTaking": 0.5,
+                "planning": 0.5
+              }
+            },
+            {
+              "text": "큰 계약 제안이 오자 동업자는 위약금 조항부터 읽고, 다른 동업자는 계약 규모가 만들 기회를 먼저 말합니다.",
+              "dims": {
+                "trustThreshold": 0.6,
+                "riskTaking": 0.4
+              }
+            },
+            {
+              "text": "시장이 흔들리자 두 사람 중 한쪽은 지출 항목을 하나씩 줄이자고 하고, 다른 쪽은 오히려 광고를 늘리자고 합니다.",
+              "dims": {
+                "spendingControl": 0.7,
+                "riskTaking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "complaint",
+          "label": "고객 불만",
+          "scenes": [
+            {
+              "text": "고객 불만 메시지가 오자 동업자 한 사람은 바로 사과 문구를 보내고, 다른 동업자는 주문 기록부터 확인합니다.",
+              "dims": {
+                "reactivity": 0.6,
+                "inquiry": 0.4
+              }
+            },
+            {
+              "text": "환불 요청이 들어오자 공동 대표 한 사람은 규정대로 처리하자고 하고, 다른 사람은 이번에는 예외로 해 드리자고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.7
+              }
+            },
+            {
+              "text": "불만 전화를 받은 파트너는 통화 내용을 한 줄로 요약해 공유 시트에 적고, 다른 파트너는 곧바로 고객에게 다시 전화합니다.",
+              "dims": {
+                "detailFocus": 0.4,
+                "conflictApproach": 0.5
+              }
+            },
+            {
+              "text": "후기에 낮은 별점이 달린 날 두 대표 중 한쪽은 답글을 길게 다듬고, 다른 쪽은 짧게 사과하고 개선 약속만 쓰자고 합니다.",
+              "dims": {
+                "perfectionism": 0.5,
+                "verbalOutput": 0.5
+              }
+            },
+            {
+              "text": "같은 불만을 모아 둔 표를 보며 동업자 한 사람은 원인을 나누어 분류하고, 다른 동업자는 가장 많은 항목부터 고치자고 합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "decisionSpeed": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "expansion",
+          "label": "확장",
+          "scenes": [
+            {
+              "text": "두 번째 매장 자리를 보러 간 공동 대표 한 사람은 지나가는 사람 수를 세어 확인하고, 다른 사람은 거리를 걸으며 분위기를 느낍니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "inquiry": 0.4
+              }
+            },
+            {
+              "text": "온라인 판매를 늘릴지 단골을 더 챙길지 의견이 갈린 두 사람은 한 달씩 나누어 각자 방식으로 해 보기로 합니다.",
+              "dims": {
+                "noveltySeeking": 0.5,
+                "mobility": 0.4
+              }
+            },
+            {
+              "text": "사람을 늘리기 전에 두 대표 중 한쪽은 업무 흐름도부터 그리자고 하고, 다른 쪽은 일단 뽑고 흐름을 만들자고 합니다.",
+              "dims": {
+                "planning": 0.7,
+                "riskTaking": 0.4
+              }
+            },
+            {
+              "text": "새 지역 진출 계획을 발표하는 날 파트너 한 사람은 지도에 점을 찍어 가며 설명하고, 다른 파트너는 예산표를 펼칩니다.",
+              "dims": {
+                "mobility": 0.6,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "사업이 잘 풀리는 때 동업자는 천천히 키우자고 하고, 다른 동업자는 지금 속도를 올려야 한다고 말합니다.",
+              "dims": {
+                "competitiveness": 0.6,
+                "riskTaking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "dayOff",
+          "label": "쉬는 날",
+          "scenes": [
+            {
+              "text": "일요일에는 쉬자는 공동 대표의 말에, 다른 대표는 가게를 연 채 주문만 확인하겠다고 합니다.",
+              "dims": {
+                "boundarySetting": 0.6,
+                "dutifulness": 0.4
+              }
+            },
+            {
+              "text": "연휴에 문을 닫을지 정하는 날 동업자 한 사람은 쉬는 안내문을 미리 올려 두고, 다른 동업자는 빠지는 매출을 계산해 봅니다.",
+              "dims": {
+                "planning": 0.6,
+                "spendingControl": 0.4
+              }
+            },
+            {
+              "text": "휴가를 번갈아 쓰기로 한 두 사람은 한쪽은 한 달 전에 날짜를 확정하고, 다른 쪽은 일이 한가할 때 정하자고 합니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "쉬는 날 새벽에 거래처 메일이 오자 동업자 한 사람은 바로 열어 보고, 다른 동업자는 다음 날 아침에 확인하자고 합니다.",
+              "dims": {
+                "boundarySetting": 0.6,
+                "reactivity": 0.5
+              }
+            },
+            {
+              "text": "쉬는 날을 맞추려고 일정표를 겹쳐 본 두 대표 중 한쪽은 함께 쉬는 날을 늘리고 싶어 하고, 다른 쪽은 따로 쉬자고 합니다.",
+              "dims": {
+                "independence": 0.5,
+                "socialEnergy": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "hiring",
+          "label": "채용",
+          "scenes": [
+            {
+              "text": "면접을 마친 공동 대표 한 사람은 경력과 기술부터 정리하고, 다른 사람은 대화할 때의 분위기를 먼저 말합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "empathyResponse": 0.5
+              }
+            },
+            {
+              "text": "채용 공고 문구를 쓸 때 동업자는 필요한 조건을 항목별로 적고, 다른 동업자는 사업 이야기를 먼저 쓰자고 합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "verbalOutput": 0.4
+              }
+            },
+            {
+              "text": "지원자 두 명을 놓고 동업자는 비슷한 일의 경력이 있는 사람을 고르고, 다른 동업자는 배우는 속도가 빠른 사람을 고릅니다.",
+              "dims": {
+                "learningDrive": 0.5,
+                "riskTaking": 0.4
+              }
+            },
+            {
+              "text": "수습 기간 평가표를 만들 때 파트너는 항목마다 점수를 매기자고 하고, 다른 파트너는 한 줄 소감이면 충분하다고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "detailFocus": 0.5
+              }
+            },
+            {
+              "text": "새 직원이 첫 출근하는 날 두 대표 중 한쪽은 일정표와 자리를 미리 준비해 두고, 다른 쪽은 점심을 같이 먹으며 천천히 알려 주자고 합니다.",
+              "dims": {
+                "planning": 0.6,
+                "caretaking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "pricing",
+          "label": "가격 정하기",
+          "scenes": [
+            {
+              "text": "가격표를 고치는 날 동업자 한 사람은 원가에 비율을 더해 계산하고, 다른 동업자는 경쟁 가게 가격부터 확인합니다.",
+              "dims": {
+                "detailFocus": 0.5,
+                "competitiveness": 0.5
+              }
+            },
+            {
+              "text": "할인 행사를 열자는 제안에 공동 대표 한 사람은 마진이 줄어든다며 기간을 짧게 하자고 하고, 다른 사람은 길게 가자고 합니다.",
+              "dims": {
+                "spendingControl": 0.6,
+                "riskTaking": 0.4
+              }
+            },
+            {
+              "text": "가격을 올릴 때 두 대표 중 한쪽은 고객에게 이유를 먼저 알리자고 하고, 다른 쪽은 조용히 반영해도 된다고 합니다.",
+              "dims": {
+                "directness": 0.6,
+                "trustThreshold": -0.3
+              }
+            },
+            {
+              "text": "구독 상품 구성을 짜다가 파트너 한 사람은 선택지를 줄이자고 하고, 다른 파트너는 고객이 고를 폭을 넓히자고 합니다.",
+              "dims": {
+                "controlNeed": 0.5,
+                "noveltySeeking": 0.5
+              }
+            },
+            {
+              "text": "단골에게 줄 혜택을 정하며 동업자는 숫자로 기준을 세우자고 하고, 다른 동업자는 그때그때 마음을 표현하자고 합니다.",
+              "dims": {
+                "ruleAdherence": 0.5,
+                "emotionalExpression": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "negotiation",
+          "label": "계약과 협상",
+          "scenes": [
+            {
+              "text": "거래처와 단가를 협상하는 자리에서 두 대표 중 한쪽은 숫자를 먼저 내밀고, 다른 쪽은 상대의 사정을 먼저 묻습니다.",
+              "dims": {
+                "directness": 0.6,
+                "empathyResponse": 0.5
+              }
+            },
+            {
+              "text": "계약서에 서명하기 전 동업자는 전문가에게 보낼 질문 목록을 만들고, 다른 동업자는 믿을 만한 상대이니 진행하자고 합니다.",
+              "dims": {
+                "trustThreshold": 0.7,
+                "inquiry": 0.5
+              }
+            },
+            {
+              "text": "상대가 조건을 바꾸자고 하자 공동 대표 한 사람은 현장에서 대안을 내고, 다른 사람은 하루 뒤에 답하겠다고 합니다.",
+              "dims": {
+                "decisionSpeed": 0.6,
+                "reactivity": 0.4
+              }
+            },
+            {
+              "text": "협상이 막힌 날 파트너 한 사람은 저녁 식사 자리를 잡자고 하고, 다른 파트너는 서면으로 정리해 보내자고 합니다.",
+              "dims": {
+                "intimacyPace": 0.5,
+                "detailFocus": 0.4
+              }
+            },
+            {
+              "text": "계약 기간을 두고 동업자는 길게 묶어 안정을 얻자고 하고, 다른 동업자는 짧게 두어 선택지를 남기자고 합니다.",
+              "dims": {
+                "riskTaking": -0.5,
+                "noveltySeeking": -0.3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "friendship",
+      "topics": [
+        {
+          "key": "plans",
+          "label": "약속 잡기",
+          "scenes": [
+            {
+              "text": "약속을 잡는 날 친구 한 명은 달력 앱에 날짜 후보를 세 개 올리고, 다른 친구는 그날 컨디션을 보고 말하자고 합니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "토요일 저녁을 정하며 두 사람 중 한쪽은 이미 가게를 예약해 두었고, 다른 쪽은 갑자기 집에서 쉬고 싶다고 말합니다.",
+              "dims": {
+                "planning": 0.5,
+                "socialEnergy": -0.5
+              }
+            },
+            {
+              "text": "약속 시간에 늦는 친구가 길에서 위치 사진을 보내자, 먼저 도착한 친구는 괜찮다며 메뉴판을 찍어 보냅니다.",
+              "dims": {
+                "ruleAdherence": 0.4,
+                "caretaking": 0.4
+              }
+            },
+            {
+              "text": "당일 약속이 취소되자 친구 한 명은 바로 다른 사람을 찾아 만나고, 다른 친구는 집에서 혼자 시간을 보냅니다.",
+              "dims": {
+                "socialEnergy": 0.7,
+                "mobility": 0.4
+              }
+            },
+            {
+              "text": "장소를 정하는 투표에서 친구 한 명은 아무 데나 좋다고 하고, 다른 친구는 가고 싶은 곳을 분명히 말합니다.",
+              "dims": {
+                "directness": 0.6,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "모임 총무를 맡은 친구는 매번 날짜와 장소를 먼저 챙기고, 다른 친구는 총무를 돌아가며 맡자고 말합니다.",
+              "dims": {
+                "dutifulness": 0.7,
+                "controlNeed": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "trip",
+          "label": "여행",
+          "scenes": [
+            {
+              "text": "여행 준비 때 친구 한 명은 시간표를 엑셀로 만들고, 다른 친구는 도착해서 걷다 보이는 곳에 들어가자고 합니다.",
+              "dims": {
+                "planning": 0.7,
+                "noveltySeeking": 0.4
+              }
+            },
+            {
+              "text": "숙소를 고르는 두 사람 중 한쪽은 후기 사진을 확대해 침대 크기까지 확인하고, 다른 쪽은 가격과 위치만 봅니다.",
+              "dims": {
+                "detailFocus": 0.7,
+                "decisionSpeed": -0.3
+              }
+            },
+            {
+              "text": "여행 첫날 아침 친구 한 명은 일찍 일어나 근처를 걷고, 다른 친구는 이불 속에서 점심때 만나자고 합니다.",
+              "dims": {
+                "mobility": 0.6,
+                "planning": -0.3
+              }
+            },
+            {
+              "text": "여행지에서 길이 헷갈리자 친구 한 명은 지나가는 사람에게 바로 묻고, 다른 친구는 지도 앱을 다시 켭니다.",
+              "dims": {
+                "independence": -0.5,
+                "socialEnergy": 0.4
+              }
+            },
+            {
+              "text": "여행 경비를 정산할 때 두 사람 중 한쪽은 앱에 모든 항목을 적고, 다른 쪽은 대충 반으로 나누자고 합니다.",
+              "dims": {
+                "detailFocus": 0.7,
+                "spendingControl": 0.4
+              }
+            },
+            {
+              "text": "여행 중 보조 배터리를 같이 쓰자는 말에 친구 한 명은 바로 내밀고, 다른 친구는 자기 배터리의 남은 양을 확인한 뒤 빌려주겠다고 합니다.",
+              "dims": {
+                "possessiveness": -0.5,
+                "detailFocus": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "key": "groupChat",
+          "label": "단톡방",
+          "scenes": [
+            {
+              "text": "단톡방에 모임 공지가 올라오면 친구 한 명은 바로 참석 여부를 누르고, 다른 친구는 이틀 뒤에 답합니다.",
+              "dims": {
+                "reactivity": 0.7,
+                "decisionSpeed": 0.4
+              }
+            },
+            {
+              "text": "단톡방 대화가 쏟아지는 밤 친구 한 명은 모든 메시지에 반응하고, 다른 친구는 아침에 한꺼번에 읽습니다.",
+              "dims": {
+                "verbalOutput": 0.6,
+                "socialEnergy": 0.5
+              }
+            },
+            {
+              "text": "단톡방에 올라온 농담에 두 사람 중 한쪽은 웃음 표시를 보내고, 다른 쪽은 뜻을 곱씹다가 답할 때를 놓칩니다.",
+              "dims": {
+                "emotionalExpression": 0.5,
+                "introspection": 0.4
+              }
+            },
+            {
+              "text": "단톡방에서 의견이 갈리자 친구 한 명은 투표 기능을 열고, 다른 친구는 개인 메시지로 조용히 의견을 전합니다.",
+              "dims": {
+                "controlNeed": 0.5,
+                "conflictApproach": -0.4
+              }
+            },
+            {
+              "text": "단톡방 알림을 꺼 둔 친구에게 다른 친구는 중요한 소식만 따로 전화로 알려 줍니다.",
+              "dims": {
+                "boundarySetting": 0.6,
+                "caretaking": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "birthday",
+          "label": "생일",
+          "scenes": [
+            {
+              "text": "친구 생일 한 달 전에 한 명은 선물 후보를 메모해 두고, 다른 친구는 당일 아침에야 케이크 가게를 검색합니다.",
+              "dims": {
+                "planning": 0.7
+              }
+            },
+            {
+              "text": "깜짝 파티를 준비하는 친구 옆에서 다른 친구는 비밀을 지키려고 휴대폰 화면을 손으로 가립니다.",
+              "dims": {
+                "emotionalExpression": 0.4,
+                "planning": 0.4
+              }
+            },
+            {
+              "text": "생일 선물로 친구 한 명은 필요한 물건을 물어본 뒤 사 주고, 다른 친구는 손편지를 정성껏 씁니다.",
+              "dims": {
+                "directness": 0.5,
+                "emotionalExpression": 0.5
+              }
+            },
+            {
+              "text": "생일인 친구는 조용히 밥만 먹고 싶다고 하고, 다른 친구는 노래와 촛불을 준비해 두었다고 말합니다.",
+              "dims": {
+                "attentionSeeking": -0.6,
+                "socialEnergy": -0.4
+              }
+            },
+            {
+              "text": "생일 메시지를 보낼 때 친구 한 명은 자정에 맞춰 예약 전송을 걸고, 다른 친구는 아침에 직접 써서 보냅니다.",
+              "dims": {
+                "planning": 0.6,
+                "detailFocus": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "advice",
+          "label": "고민 상담",
+          "scenes": [
+            {
+              "text": "힘들다는 이야기를 꺼낸 친구에게 다른 친구는 해결책부터 말하고, 이야기한 친구는 그냥 들어 달라고 합니다.",
+              "dims": {
+                "empathyResponse": -0.7
+              }
+            },
+            {
+              "text": "고민을 털어놓는 전화에서 친구 한 명은 두 시간 동안 이야기하고, 다른 친구는 중간중간 맞장구만 칩니다.",
+              "dims": {
+                "verbalOutput": 0.7,
+                "empathyResponse": 0.4
+              }
+            },
+            {
+              "text": "진로 고민을 들은 친구는 가능한 선택지를 표로 그려 보여 주고, 이야기한 친구는 표보다 응원이 필요했다고 말합니다.",
+              "dims": {
+                "planning": 0.5,
+                "empathyResponse": -0.5
+              }
+            },
+            {
+              "text": "고민을 이야기하다 친구 한 명이 눈물이 나서 휴지를 찾자, 다른 친구는 말없이 물 한 잔을 건넵니다.",
+              "dims": {
+                "emotionalExpression": 0.6,
+                "caretaking": 0.5
+              }
+            },
+            {
+              "text": "같은 고민을 반복해 말하는 친구에게 다른 친구는 이제 어떻게 하고 싶은지를 묻고, 이야기하던 친구는 잠시 말을 멈춥니다.",
+              "dims": {
+                "directness": 0.6,
+                "inquiry": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "loan",
+          "label": "돈 빌리기",
+          "scenes": [
+            {
+              "text": "점심값이 모자라 이체를 부탁하는 친구에게, 다른 친구는 바로 보내고 다음에 사 달라며 웃습니다.",
+              "dims": {
+                "possessiveness": -0.6,
+                "spendingControl": -0.4
+              }
+            },
+            {
+              "text": "빌린 돈을 갚는 날 친구 한 명은 금액을 정확히 적은 메모와 함께 보내고, 다른 친구는 커피 한 잔으로 대신하자고 합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "possessiveness": 0.4
+              }
+            },
+            {
+              "text": "큰 금액을 빌려 달라는 말에 친구는 이유와 갚을 날짜를 먼저 묻고, 부탁한 친구는 그 질문을 들으며 잠시 조용해집니다.",
+              "dims": {
+                "trustThreshold": 0.7,
+                "inquiry": 0.5
+              }
+            },
+            {
+              "text": "정산 앱에서 요청을 받은 친구 한 명은 영수증과 금액을 맞춰 보고, 다른 친구는 확인 없이 바로 송금합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "trustThreshold": 0.5
+              }
+            },
+            {
+              "text": "빌려준 돈 이야기를 꺼내기 어려운 친구가 일부러 다른 주제를 말하자, 다른 친구는 눈치채고 먼저 갚겠다고 합니다.",
+              "dims": {
+                "directness": -0.6,
+                "empathyResponse": 0.5
+              }
+            }
+          ]
+        },
+        {
+          "key": "contactRhythm",
+          "label": "연락 빈도",
+          "scenes": [
+            {
+              "text": "일주일 내내 연락이 없어도 친구 한 명은 괜찮다고 하고, 다른 친구는 하루만 지나도 안부를 묻습니다.",
+              "dims": {
+                "independence": 0.5,
+                "emotionalExpression": -0.3
+              }
+            },
+            {
+              "text": "친구가 보낸 긴 메시지에 다른 친구는 사진 한 장과 한 줄로 답하고, 두 사람은 서로의 방식에 웃습니다.",
+              "dims": {
+                "verbalOutput": -0.6
+              }
+            },
+            {
+              "text": "한 친구는 매일 짧게 연락하는 쪽을 좋아하고, 다른 친구는 한 달에 한 번 길게 만나는 쪽을 좋아합니다.",
+              "dims": {
+                "intimacyPace": 0.5,
+                "verbalOutput": 0.4
+              }
+            },
+            {
+              "text": "바쁜 시기에 답이 늦어진 친구가 먼저 미안하다고 보내자, 다른 친구는 바쁜 일부터 끝내라고 답합니다.",
+              "dims": {
+                "empathyResponse": 0.5,
+                "boundarySetting": 0.3
+              }
+            },
+            {
+              "text": "안부 인사가 길어지자 두 사람 중 한쪽은 통화로 바꾸자고 하고, 다른 쪽은 글로 천천히 쓰는 편이 좋다고 합니다.",
+              "dims": {
+                "verbalOutput": 0.5,
+                "reactivity": 0.4
+              }
+            }
+          ]
+        },
+        {
+          "key": "reunion",
+          "label": "오랜만의 만남",
+          "scenes": [
+            {
+              "text": "오랜만에 만난 두 사람 중 한쪽은 그동안의 일을 순서대로 이야기하고, 다른 쪽은 먼저 상대의 이야기를 묻습니다.",
+              "dims": {
+                "verbalOutput": 0.6,
+                "empathyResponse": 0.5
+              }
+            },
+            {
+              "text": "서로 달라진 모습을 보며 친구 한 명은 변했다고 바로 말하고, 다른 친구는 조용히 웃기만 합니다.",
+              "dims": {
+                "directness": 0.7
+              }
+            },
+            {
+              "text": "만나기 전 친구 한 명은 어색할까 봐 대화 주제를 몇 가지 적어 오고, 다른 친구는 만나면 자연스럽게 이어질 거라고 말합니다.",
+              "dims": {
+                "planning": 0.6,
+                "introspection": 0.3
+              }
+            },
+            {
+              "text": "옛날 사진을 꺼내 보며 친구 한 명은 그날의 날짜까지 정확히 기억하고, 다른 친구는 그날의 분위기만 떠올립니다.",
+              "dims": {
+                "detailFocus": 0.7
+              }
+            },
+            {
+              "text": "헤어지기 전 친구 한 명은 다음 약속 날짜를 바로 정하자고 하고, 다른 친구는 다음에 또 보자며 손을 흔듭니다.",
+              "dims": {
+                "planning": 0.6,
+                "decisionSpeed": 0.5
+              }
+            },
+            {
+              "text": "오랜만에 만난 자리에서 친구 한 명은 속 이야기를 바로 꺼내고, 다른 친구는 몇 번 더 만난 뒤에 말하고 싶다고 합니다.",
+              "dims": {
+                "intimacyPace": 0.7
+              }
+            }
+          ]
+        },
+        {
+          "key": "hobby",
+          "label": "같이 하는 취미",
+          "scenes": [
+            {
+              "text": "함께 운동을 시작한 날 친구 한 명은 목표 기록을 적어 두고, 다른 친구는 즐거우면 충분하다고 말합니다.",
+              "dims": {
+                "competitiveness": 0.7,
+                "persistence": 0.4
+              }
+            },
+            {
+              "text": "같은 영화를 보고 나온 두 사람 중 한쪽은 장면 분석을 길게 하고, 다른 쪽은 주인공 표정이 좋았다고만 말합니다.",
+              "dims": {
+                "detailFocus": 0.6,
+                "emotionalExpression": 0.4
+              }
+            },
+            {
+              "text": "새 취미를 배우는 수업에서 친구 한 명은 첫 시간부터 질문을 쏟아내고, 다른 친구는 따라 하며 감을 잡습니다.",
+              "dims": {
+                "learningDrive": 0.6,
+                "inquiry": 0.5
+              }
+            },
+            {
+              "text": "보드게임을 시작할 때 친구 한 명은 설명서를 끝까지 읽고, 다른 친구는 하면서 익히자고 말합니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "riskTaking": 0.4
+              }
+            },
+            {
+              "text": "같이 요리 수업을 다니는 두 사람 중 한쪽은 레시피를 그대로 따르고, 다른 쪽은 재료를 바꿔 새로운 맛을 시도합니다.",
+              "dims": {
+                "ruleAdherence": 0.6,
+                "noveltySeeking": 0.6
+              }
+            }
+          ]
+        },
+        {
+          "key": "makeUp",
+          "label": "서운함과 화해",
+          "scenes": [
+            {
+              "text": "친구가 약속을 잊고 연락이 없자 다른 친구는 서운하다는 말을 그날 바로 하고, 잊은 친구는 놀라며 사과합니다.",
+              "dims": {
+                "directness": 0.7,
+                "emotionalExpression": 0.5
+              }
+            },
+            {
+              "text": "서운한 일이 있어도 친구 한 명은 며칠 조용하다가 정리된 문장으로 이야기하고, 다른 친구는 그동안 기다립니다.",
+              "dims": {
+                "reactivity": -0.6,
+                "introspection": 0.5
+              }
+            },
+            {
+              "text": "다툰 뒤 친구 한 명은 먼저 만나서 얼굴 보고 풀자고 하고, 다른 친구는 서로 시간이 필요하다고 말합니다.",
+              "dims": {
+                "conflictApproach": 0.7
+              }
+            },
+            {
+              "text": "농담이 지나쳤다는 말을 들은 친구는 바로 사과하고, 다른 친구는 사과보다 앞으로 어떻게 할지를 묻습니다.",
+              "dims": {
+                "empathyResponse": 0.4,
+                "inquiry": 0.4
+              }
+            },
+            {
+              "text": "화해한 뒤 친구 한 명은 그 일을 다시 꺼내지 않기로 약속하자고 하고, 다른 친구는 필요하면 다시 말하자고 합니다.",
+              "dims": {
+                "boundarySetting": 0.5,
+                "directness": 0.3
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

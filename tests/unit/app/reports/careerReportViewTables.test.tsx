@@ -176,7 +176,7 @@ describe("CareerReportView common table slots", () => {
     expect(html).toContain("현침살");
     expect(html).toContain("천을귀인");
     expect(html).toContain("문서형 공부");
-    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("ENTJ 지휘관");
     expect(html).toContain("가까운 키워드");
     expect(html).toContain("먼 키워드");
     expect(html).toContain("선호 지표와 기능 서열 자세히 보기");

@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
 import type { SajuCalcResult } from "@/lib/saju/types";
 import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
-import { conditionalFamily, planChapters, PRODUCT_CHARS, type TraitSource } from "./chapters";
+import { conditionalFamily, planChapters, PRODUCT_CHARS, topDimension, type TraitSource } from "./chapters";
 import { buildCompatibility, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
 import { ageAt, ageBand, forbiddenFacts, sceneFits, toFactProfile, type CustomerFacts, type FactProfile } from "./facts";
@@ -24,9 +24,10 @@ import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks,
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
 import { ganjiLabel, josa } from "./labels";
+import { renderWriterBrief } from "@/lib/writer/prompt";
 import { imageFamily } from "./groups";
-import { balanceHolds, keepBalanced, oppositeToDrop, type BalanceCtx } from "./balance";
-import { customerProps } from "./props";
+import { balanceHolds, keepBalanced, opposes, oppositeToDrop, type BalanceCtx } from "./balance";
+import { customerProps, lifeStage } from "./props";
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -66,6 +67,8 @@ type PersonPack = {
   readonly chart: ChartBrief; readonly traits: Trait[]; readonly sources: TraitSource[]; readonly hitIds: string[];
   readonly scored: ReturnType<typeof scoreHits>; readonly selected: ReturnType<typeof selectTraits>;
   readonly det: ReturnType<typeof analyzeChartDetections>; readonly dayun: ReturnType<typeof dayunOf>; readonly st: ElementState; readonly bc: BalanceCtx;
+  /** 이 재료(feature id·차원)가 고른 trait와 같은 차원에서 반대인가(P3.8 1). */
+  readonly clashes: (id: string, tags: Readonly<Record<string, number>> | undefined) => boolean;
 };
 
 function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number, fnUsed?: Map<string, number>): PersonPack {
@@ -81,7 +84,13 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
   const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
-  const scored = scoreHits(hits, k, product, fusionFacts);
+  // 강약·균형 단정은 엔진 단일 판단과 맞는 문장만(P3.7 1-2).
+  const st0 = stateOf(det.elementBalance);
+  const level = saju.structureAnalysis.dayMasterStrength.level;
+  const bc: BalanceCtx = { strength: level === "VERY_WEAK" || level === "WEAK" ? "WEAK" : level === "STRONG" || level === "VERY_STRONG" ? "STRONG" : "BALANCED", excess: st0.excess, lacking: st0.lacking };
+  // 한 줄 설명이나 그림이 모두 이 원국과 어긋나는 요소는 고르지 않는다(P3.7 r2: '물이 모자란 여름 흙'인데 물이 가장 많은 원국).
+  const imageOk = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc);
+  const scored = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(imageOk));
   // 같은 핵심 차원을 반대로 당기는 trait 둘은 긴장(MBTI와 반대로 당기는 Fusion) 표시가 없으면 점수 낮은 쪽을 빼고 다시 고른다(P3.7 1-2).
   const dropped = new Set<string>();
   let selected = selectTraits(scored, traitTarget);
@@ -90,13 +99,9 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     if (!lose) break;
     dropped.add(lose.id); selected = selectTraits(scored.filter(x => !dropped.has(x.hit.id)), traitTarget);
   }
-  // 강약·균형 단정은 엔진 단일 판단과 맞는 문장만(P3.7 1-2).
-  const st0 = stateOf(det.elementBalance);
-  const level = saju.structureAnalysis.dayMasterStrength.level;
-  const bc: BalanceCtx = { strength: level === "VERY_WEAK" || level === "WEAK" ? "WEAK" : level === "STRONG" || level === "VERY_STRONG" ? "STRONG" : "BALANCED", excess: st0.excess, lacking: st0.lacking };
   const groups = getTenGodGroupScores(saju.tenGods.distribution);
   const hitIdSet = new Set(hits.map(h => h.id));
-  const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }));
+  const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }, imageOk));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
   // MBTI 연결 밀도(P3): 핵심 특성 정확 유형, 같은 글자·기능 최대 2, 계산 연결로 70% 이상.
   // 특성 설명 중 고객 사실과 어긋나는 문장(미혼에게 "배우자와 ~", 시간 미상에 시주 등)은 작가에게 넘기지 않는다(P3, 안전망과 같은 규칙).
@@ -113,6 +118,14 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts, fnUsed);
   for (const t of traits) if (t.fusion) { const why = keepBalanced(t.fusion.why, bc, splitSentences); if (why) t.fusion.why = why; else delete t.fusion; }
   chart.climate.reading = keepBalanced(chart.climate.reading, bc, splitSentences) ?? "";
+  // 오행 읽기 문장도 trait와 같은 차원에서 반대면 뺀다(P3.7 r2: 오행 읽기 "거절하는 힘이 얇다·오래 잰다" ↔ trait "바로 정함").
+  const readingIds = [
+    ...(chart.elements.strongest.level === "많음" ? [`element:${chart.elements.strongest.element}:STRONG`] : []),
+    ...(/^(부족|없음)/.test(chart.elements.weakest.level) ? [`element:${chart.elements.weakest.element}:${chart.elements.weakest.level.startsWith("없음") ? "MISSING" : "WEAK"}`] : []),
+  ].filter(id => k.features.get(id)?.oneLiner);
+  const traitTags = selected.filter(x => x.fusion?.kind !== "tension").map(x => ({ id: x.hit.id, tags: x.feature.dimensionTags }));
+  const clashes = (id: string, tags: Readonly<Record<string, number>> | undefined) => Boolean(tags) && traitTags.some(t => t.id !== id && opposes(tags!, t.tags));
+  chart.elements.reading = chart.elements.reading.filter((_, i) => !readingIds[i] || !clashes(readingIds[i], k.features.get(readingIds[i])?.dimensionTags));
   // Fusion 장면: 사실 조건에 맞고 아직 안 쓴 것만 trait에 붙인다.
   selected.forEach((s, i) => {
     const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
@@ -128,7 +141,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
     forbiddenFacts: forbiddenFacts(facts, profile),
   };
-  return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc };
+  return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc, clashes };
 }
 
 function mbtiBrief(k: Knowledge, type: MbtiType | null) {
@@ -156,11 +169,21 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const override = isPair ? { relationship: pairRel ?? "unknown", job: pairJob, children: "unknown" } as const : undefined;
   const overrideA = override && input.relationshipType === "parentChild" ? { ...override, children: "has" as const } : override;
   const fnUsed = new Map<string, number>();
-  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : undefined, fnUsed);
-  const other = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed) : null;
+  // 종합은 52절이라 trait 12개(소개 1 + 적용 2 × 12)까지: trait를 늘려 같은 trait 재사용 대신 새 정보로 채운다(P3.8 1).
+  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : input.product === "saju_mbti_full" ? 12 : undefined, fnUsed);
+  const otherRaw = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed) : null;
 
+  // 두 사람이 같은 요소를 가지면 같은 그림이 두 번 나온다: 뒤 사람은 다른 그림 변형으로(P3.8, 부모·자녀 둘 다 '교문 앞 우산').
+  const other = otherRaw;
+  if (other) for (const t of other.traits) {
+    if (!me.traits.some(x => x.image.metaphor === t.image.metaphor)) continue;
+    const f = k.features.get(t.featureId);
+    const alt = [f?.image, ...(f?.imageVariants ?? [])].find(im => im && !me.traits.some(x => x.image.metaphor === im.metaphor) && balanceHolds(im.metaphor, other.bc));
+    if (alt) t.image = alt;
+  }
   const fortunes = buildFortunes(me.scored, me.traits);
-  const shadows = buildShadows(me.selected, me.traits);
+  // 종합은 팩폭 장(절 3개)과 긴장 장이 팩폭 재료를 쓰므로 3개 이상(P3.8).
+  const shadows = buildShadows(me.selected, me.traits, input.product === "saju_mbti_full" ? 3 : 2);
   if (other) buildShadows(other.selected, other.traits).forEach((s, i) => shadows.push({ ...s, id: `s${shadows.length + i + 1}` }));
   const unused = buildUnused(me.saju, me.st.missing, k);
   const mbti = mbtiBrief(k, me.facts.mbti);
@@ -193,8 +216,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const compatibility = isPair && other ? buildCompatibility(input.relationshipType!, side(me, k), side(other, k), k, narrative.compatibility?.[input.relationshipType!]) : undefined;
 
   // 상품 근거
-  const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, { hitIds: new Set(me.hitIds), facts: profile, usedScenes })
-    : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits) : {};
+  const tagsOf = (key: string) => key.startsWith("mbti:") ? k.mbti.get(key.slice(5) as never)?.dimensionTags : k.features.get(key)?.dimensionTags;
+  const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, { hitIds: new Set(me.hitIds), facts: profile, usedScenes, avoid: key => me.clashes(key, tagsOf(key)) })
+    : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds) }) : {};
 
   // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
   const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
@@ -214,17 +238,19 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     return true;
   };
   const traitsAll = [...me.traits, ...(other?.traits ?? [])];
-  const chapters = planChapters({
+  // 전환 해(대운 전환·세운 핵심 달)가 건드리는 trait: 전환 장은 원국 특성을 다시 소개하지 않고 이것만 짧게 부른다(P3.8 1).
+  const transitionTouched = timeline ? timeline.entries.filter(e => timeline!.keyEntries.includes(e.key)).flatMap(e => (e.touched ?? []).map(t => ({ traitId: t.traitId, how: `${e.label}: ${t.how}` }))) : [];
+  const mbtiTop = mbti ? topDimension(k.mbti.get(mbti.type)!.dimensionTags) : null;
+  const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
+  const { chapters, plan } = planChapters({
     product: input.product, narrative, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
     ...(isPair && other ? { mbtiPair: ([[me, me.facts.mbti], [other, other.facts.mbti]] as const).flatMap(([p, t]) => t && k.mbti.get(t) ? [{ who: p.person.callName, profile: k.mbti.get(t)! }] : []) } : {}),
     ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),
-    ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])) } : {}),
-    ...(isPair ? {
-      // 부모·자녀 궁합에 배움(교과서·시험) 장면은 부모 쪽에 맞지 않는다(P3.7 r1: 55세 부모에게 입문서 장면).
-      sceneDomains: narrative.compatibility?.[input.relationshipType!]?.sceneDomains.filter(d => !(input.relationshipType === "parentChild" && d === "study")),
-      prefer: (cid: string, t: Trait) => (cid === "direction-ab" ? (t.id.startsWith("b") ? 1 : 0) : cid === "direction-ba" ? (t.id.startsWith("a") ? 1 : 0) : 0),
-    } : {}),
+    ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])), transitionTouched } : {}),
+    ...(mbtiTop ? { mbtiAxes: [mbtiTop] } : {}),
+    // 궁합 장면은 그 관계 유형의 생활 주제에서만(P3.8 3: 부모·자녀 책에 친구 보온병·동창 회비). 부모·자녀는 자녀 나이대로 거른다.
+    ...(relTopics && other ? { relScenes: { topics: relTopics, ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const } : {}) } } : {}),
   });
 
   // 항목의 touched는 그 장에 배정된 trait만 남긴다(P3.7 1-1: 원국 특성은 건드려진 것만, 배정된 것만 짧게 부른다).
@@ -248,7 +274,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const name: Record<string, string> = { A: me.person.callName, B: other.person.callName };
     const PAIR = { 가: "이가", 는: "은는", 와: "과와", 를: "을를" } as const;
     const sub = (s: string) => s.replace(/(?<![A-Za-z])([AB])(가|는|와|를|의)?(?![A-Za-z])/g, (_, x: string, p?: keyof typeof PAIR | "의") => !p ? name[x] : p === "의" ? `${name[x]}의` : josa(name[x], PAIR[p]));
-    for (const c of chapters) { c.title = sub(c.title); c.question = sub(c.question); }
+    for (const c of chapters) { c.title = sub(c.title); c.question = sub(c.question); for (const x of c.sections ?? []) x.q = sub(x.q); }
   }
   const chars = PRODUCT_CHARS[input.product];
   // 책 단위 소품 사용 기록(P3.6 A1): 안전망이 본문에서 같은 소품이 2회를 넘는지 센다.
@@ -256,13 +282,14 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   for (const c of chapters) for (const x of c.sceneHint ?? []) usedProps[x] = (usedProps[x] ?? 0) + 1;
   const draft = {
     version: BRIEF_VERSION, product: input.product, productTitle: narrative.title, seed: seed.toString(16), baseDate: input.baseDate,
-    person: me.person, mbti, chart: me.chart, traits: traitsAll, fortunes, shadows, unused, chapters,
+    person: me.person, mbti, chart: me.chart, traits: traitsAll, fortunes, shadows, unused, chapters, plan,
     ...(timeline ? { timeline } : {}),
     ...(other ? { partner: { person: other.person, mbti: mbtiBrief(k, other.facts.mbti), chart: other.chart } } : {}),
     ...(compatibility ? { compatibility } : {}),
     style: { version: "style-v5-1", register: "존댓말, 가볍게(~입니다/~예요 혼용)", readingLevel: "초·중등", totalChars: chars.total, rules: STYLE_RULES, forbidden: [...narrative.forbidden, ...narrative.noRepeatRules.slice(0, 2)] },
   };
-  const budget = sectionBudget(draft);
+  // 토큰 추정은 작가가 실제로 받는 입력 그대로(P3.8: 절·배정 기록·안 쓰는 trait를 빼고 센다).
+  const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
   // usedProps는 안전망용이라 작가 토큰 추정·작가 입력에서 뺀다.
   return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), budget: { ...budget, method: TOKEN_METHOD } });
 }
@@ -277,7 +304,7 @@ function markImageFamilies(p: PersonPack, chapters: readonly { id: string }[]) {
   const used = p.traits.filter(t => t.chapters.length).sort((a, b) => first(a) - first(b) || a.id.localeCompare(b.id));
   const lead = new Map<string, Trait>();
   for (const t of used) {
-    const fam = imageFamily(t.featureId, p.saju.dayMaster);
+    const fam = imageFamily(t.featureId, p.saju.dayMaster, t.image.metaphor);
     const l = lead.get(fam);
     // 일간 쉬운 이름("촛불")도 그림이라, 대표가 일주·조후면 그 trait의 쉬운 이름으로 맞춘다(P3.7 r1: "등불의 주인은 촛불처럼").
     if (!l) { lead.set(fam, t); if (fam === "self") { p.chart.dayMaster.metaphor = t.image.metaphor; if (t.family !== "dayMaster") p.chart.dayMaster.easyName = t.easyName; } } else t.sameImageAs = l.id;

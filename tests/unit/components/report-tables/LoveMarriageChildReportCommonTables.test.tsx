@@ -123,7 +123,7 @@ describe("LoveMarriageChildReportCommonTables", () => {
     expect(html).not.toContain("홍염");
     expect(html).not.toContain("합충형파해");
     expect(html).not.toContain("申亥해");
-    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("ENTJ 지휘관");
     expect(html).toContain("관계");
     expect(html).toContain("가까운 키워드");
     expect(html).toContain("먼 키워드");
@@ -145,7 +145,7 @@ describe("LoveMarriageChildReportCommonTables", () => {
     );
 
     expect(manseHtml).toContain("덕민님의 만세력");
-    expect(mbtiHtml).toContain("ENTJ 대담한 통솔자");
+    expect(mbtiHtml).toContain("ENTJ 지휘관");
   });
 
   it("renders full four-pillar manse ryeok details without the day-pillar note", () => {

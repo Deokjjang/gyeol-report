@@ -18,7 +18,7 @@ export type SafetyFacts = {
   /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
   readonly compat?: { readonly score: number; readonly band: string };
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 /** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
 export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
@@ -47,6 +47,8 @@ const BAND_HIGH = /타고난 짝|천생연분|찰떡궁합|완벽한 궁합|최�
 const BAND_LOW = /서로 다른 세계/;
 const BAND_NEVER = /최악의 궁합|안 맞는 사이|상극인 사이|궁합이 (나쁜|안 좋은|나쁩|안 좋)/;
 const SCORE_NUM = /(\d{2,3}) ?점/;
+/** 궁합에서 한쪽을 평가·훈계하는 말(P3.7 r2: 부모 쪽 소제목 끝 "정확함이 마음의 넉넉함을 대신하지는 않아요"). */
+const JUDGE = /(부모|자녀|상사|팀장|팀원|부하|동료|배우자|친구|연인|동업자)(로서)?의? ?(자격|실격)|좋은 (부모|자녀|상사|팀장|팀원|배우자|친구|연인)(가|이)? (아니|못 되|되려면|되기 어렵)|[을를] 대신하지는 (않아요|않습니다|못해요|못합니다)[.!]?$|(이|가) (모자란|부족한) (부모|자녀|상사|팀장|팀원|배우자)/;
 
 export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
@@ -89,6 +91,7 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (DEFLATING.test(s)) return "self_deflating";
   if (BREAKUP.test(s)) return "breakup_advice";
   if (f.compat) {
+    if (JUDGE.test(s)) return "compat_judgement";
     if (BAND_NEVER.test(s) || (BAND_HIGH.test(s) && f.compat.score < 90) || (BAND_LOW.test(s) && f.compat.score >= 45)) return "band_mismatch";
     const m = s.match(SCORE_NUM);
     if (m && Number(m[1]) !== f.compat.score && /맞물림|궁합|점수|두 사람/.test(s)) return "score_mismatch";
@@ -114,7 +117,7 @@ export function filterParagraph(p: string, f: SafetyFacts, chapter: number, dele
   return out === p ? p : out.replace(/ {2,}/g, " ").trim();
 }
 
-export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed"; readonly text: string };
+export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed" | "trait_repeat"; readonly text: string };
 /** "풍경 같은 기운"처럼 그림만 있고 정체(쉬운 말(용어))가 없는 기운 이름(P3.7 1-5). 같은 문단에 괄호 용어가 있으면 정체를 밝힌 것으로 본다. */
 const IMAGE_ONLY = /[가-힣]+ 같은 (기운|힘)(?![가-힣]*\()/;
 /** 경고: 과거 단정 문장, 용어가 괄호 밖에서 먼저 나온 경우(용어 목록은 호출하는 쪽이 준다). */

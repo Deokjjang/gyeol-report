@@ -85,8 +85,10 @@ describe("P3.6 원고 남은 문제", () => {
     expect(ev.filter(x => x === "investment")).toHaveLength(1);
     const boss = buildBrief({ product: "saju_mbti_compatibility", person: PEOPLE.x, partner: PEOPLE.c1, relationshipType: "managerReport", baseDate: base }, k);
     expect(boss.person.forbiddenFacts.join(" ")).not.toContain("상사·팀장");
-    const whos = new Set(boss.chapters.flatMap(c => c.materials).flatMap(m => m.kind === "mbti" && m.who ? [m.who] : []));
-    expect(whos.size).toBe(2);
+    // P3.8 3: 궁합 장면은 MBTI 장면 대신 그 관계 유형의 생활 장면(상사·팀원: 보고·지시 변경·평가…)이다.
+    const rel = boss.chapters.flatMap(c => c.materials).filter(m => m.kind === "rel");
+    expect(new Set(rel.map(m => (m as { topic: string }).topic)).size).toBeGreaterThanOrEqual(6);
+    expect(boss.chapters.flatMap(c => c.materials).some(m => m.kind === "mbti")).toBe(false);
     const love = buildBrief({ product: "love_marriage_child", person: PEOPLE.y, baseDate: base }, k);
     const palace = love.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "spousePalace");
     expect(JSON.stringify(palace)).not.toContain("천간합");

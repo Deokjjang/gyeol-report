@@ -7,8 +7,8 @@ import { join, resolve } from "node:path";
 import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema,
-  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema,
-  type BehaviorOntology, type CareerFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
+  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema,
+  type BehaviorOntology, type CareerCatalog, type CareerFile, type CompatSceneFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
 } from "@/data/knowledge-v5/schema";
 
 export type GanjiEnergy = z.infer<typeof GanjiEnergyFileSchema>["entries"][number];
@@ -32,6 +32,10 @@ export type Knowledge = {
   readonly loveSignals: ReadonlyMap<string, LoveSignal>;
   /** 구체 직무명 추천·지금 직업 적합도(P3.7 1-4). */
   readonly career: CareerFile;
+  /** 직무 카탈로그(P3.8 2): 묶음·인접 묶음·직무별 십성 묶음·행동 차원·생활 단계. */
+  readonly catalog: CareerCatalog;
+  /** 궁합 관계 유형별 생활 주제·장면(P3.8 3). */
+  readonly compatScenes: CompatSceneFile;
 };
 
 export const DEFAULT_KNOWLEDGE_ROOT = resolve(process.cwd(), "src", "data", "knowledge-v5");
@@ -59,6 +63,8 @@ export function loadKnowledge(root: string = DEFAULT_KNOWLEDGE_ROOT): Knowledge 
     ontology: BehaviorOntologySchema.parse(read("behavior-ontology.json")),
     loveSignals: new Map(LoveSignalFileSchema.parse(read("love", "signals.json")).entries.map(e => [e.key, e])),
     career: CareerFileSchema.parse(read("career", "jobs.json")),
+    catalog: CareerCatalogSchema.parse(read("career", "catalog.json")),
+    compatScenes: CompatSceneFileSchema.parse(read("compat", "scenes.json")),
   };
   cache.set(root, k);
   return k;

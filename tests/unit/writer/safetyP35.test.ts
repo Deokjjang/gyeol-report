@@ -58,7 +58,7 @@ describe("P3.5 안전망·작가 보강", () => {
 
   it("A1·A2: 브리프 일치 비율과 연결 어구 반복을 메타에 기록한다(지우지 않음)", () => {
     const brief = buildBrief({ product: "saju_mbti_full", person: PEOPLE.c1, baseDate: base }, k);
-    const scene = brief.chapters[0].materials.find(m => m.kind === "trait")!;
+    const scene = brief.chapters.flatMap(c => c.materials).find(m => m.kind === "trait" && m.scene)!;
     const copied = { heading: "h", paragraphs: [`${(scene as { scene: string }).scene} 이 기운 때문에 그렇습니다. 이 기운 때문에 또 그렇습니다. 이 기운 때문에 늘 그렇습니다.`] };
     const m = briefCopyMetric(brief, [{ sections: [copied], source: "writer" }]);
     expect(m.writerMatched).toBeGreaterThanOrEqual(1);

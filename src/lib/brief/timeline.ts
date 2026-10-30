@@ -151,10 +151,11 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     badges,
     fillsLack: { fills: eff.fills.length > 0, elements: eff.fills, feedsExcess: eff.feeds },
     flow: { score: flow.score, label: flow.label, basis: flow.applied.map(a => `${flowShort(a.key, flowInput.clashes) ?? a.when} ${a.delta > 0 ? "+" : ""}${a.delta}`), note: "참고" },
-    keywords: (kind === "year" ? g.year.keywords : g.month.keywords).slice(0, 3),
+    // 뜻(열쇠말)은 일간 기준 십성, 그림은 간지(P3.8 1: 간지 기준 열쇠말·분위기가 정인 해에 '독립·경쟁자'를 줬다).
+    keywords: (kind === "year" ? period.year.keywords : period.month.keywords).slice(0, 3),
     action: pickAction(ctx, inc.stemTenGod, flow.score, slot),
     material: {
-      image: g.image.metaphor, mood: kind === "year" ? g.year.mood : g.month.mood,
+      image: g.image.metaphor,
       ...(scene ? { scene } : {}),
       stage: stage ? `${stage.name} — ${stage.oneLiner}` : inc.twelveStage,
     },
