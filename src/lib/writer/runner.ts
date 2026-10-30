@@ -17,12 +17,15 @@ export const TOKENS_PER_CHAR = 1 / 1.5;
 /** 작가 호출 전체 시간 예산(워커 maxDuration 800초 안에서 조립·발행 몫 100초를 남긴다). */
 export const WRITER_TIME_BUDGET_MS = 700_000;
 /** 모델 출력 상한(토큰). 모르는 모델은 상한 없이 공식만 쓴다. */
-export const MODEL_OUTPUT_CAP: Readonly<Record<string, number>> = { "gpt-4o-mini": 16_384, "gpt-5-nano": 128_000, "claude-sonnet-5-5": 64_000, "claude-haiku-5-5": 64_000, "claude-opus-5-5": 64_000 };
+export const MODEL_OUTPUT_CAP: Readonly<Record<string, number>> = { "gpt-4o-mini": 16_384, "gpt-5-nano": 128_000, "claude-sonnet-5-5": 64_000, "claude-haiku-5-5": 64_000, "claude-opus-5-5": 64_000, "gpt-6.1-terra": 128_000 };
+
+/** 모델별 한글 글자당 출력 토큰(P6 실측: Sonnet 5.5 약 1.1, gpt-6.1-terra 약 0.9). 없으면 TOKENS_PER_CHAR. */
+export const MODEL_TOKENS_PER_CHAR: Readonly<Record<string, number>> = { "claude-sonnet-5-5": 1.1, "gpt-6.1-terra": 1.0 };
 
 /** max_tokens = 장 분량 상한 합계 × 글자당 토큰 × 1.3 (반복 장은 key 수만큼). 모델 상한·운영 상한(LLM_MAX_OUTPUT_TOKENS)으로 자른다. */
 export function maxTokensFor(chapters: readonly WriterChapter[], model?: string, limit?: number): number {
   const chars = chapters.reduce((s, c) => s + c.targetChars[1] * (c.keys?.length ?? 1), 0);
-  const tokens = Math.ceil(chars * TOKENS_PER_CHAR * 1.3);
+  const tokens = Math.ceil(chars * (model ? MODEL_TOKENS_PER_CHAR[model] ?? TOKENS_PER_CHAR : TOKENS_PER_CHAR) * 1.3);
   const cap = Math.min(model ? MODEL_OUTPUT_CAP[model] ?? Infinity : Infinity, limit && limit > 0 ? limit : Infinity);
   return Math.min(cap, tokens);
 }

@@ -143,7 +143,8 @@ describe("brief builder — 성질", () => {
         expect(u.applies.length, id).toBeLessThanOrEqual(2);
         expect(new Set([u.intro, ...u.applies]).size, id).toBe(1 + u.applies.length);
       }
-      expect(brief.plan!.warnings).toEqual([]);
+      // 축 책 3회 초과는 경고로만 남는다(P6: 같은 성향이 다른 영역의 새 정보와 함께 나오는 것은 반복이 아니다).
+      expect(brief.plan!.warnings.filter(w => !w.startsWith("축 "))).toEqual([]);
     }
   });
 

@@ -32,7 +32,7 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
         expect(new Set(ids).size, c.id).toBe(ids.length);
       }
       for (const [id, u] of Object.entries(b.plan!.traits)) expect(u.applies.length, id).toBeLessThanOrEqual(MAX_TRAIT_APPLIES);
-      expect(b.plan!.warnings).toEqual([]);
+      expect(b.plan!.warnings.filter(w => !w.startsWith("축 "))).toEqual([]);
       // 같은 요소는 두 사람 합쳐 책 3회·한 장 1회
       const shared = new Map<string, string[]>();
       for (const t of b.traits) if (/^[ab]/.test(t.id)) shared.set(t.featureId, [...(shared.get(t.featureId) ?? []), ...t.chapters]);

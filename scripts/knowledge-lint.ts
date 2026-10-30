@@ -13,6 +13,7 @@
  *        결혼 영역은 기혼 전용과 언젠가형(unmarried)을 둘 다, 자녀 있음 전용 장면은 같은 영역에 언젠가형(none)도.
  *      → (P2, 경고) 이미지 유사: 문자 3-gram Dice ≥ 0.6. --strict에서는 실패로 친다.
  *      → (P3) 옛 부정 낱말(흉·액·불길·재앙 등, 부정문 포함)·과거 경험 단정 금지(src/lib/writer/safety/patterns.ts).
+ *      → (P6) 성별 고정관념(문장·이름, 배우자성 규칙 문장 제외)·다른 직업 예시 나열("A·B·C처럼 ~하는 일") 금지.
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -25,7 +26,7 @@ import {
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
-import { LOVE_TIMING, OLD_NEGATIVE, SICK_DEATH_IMAGE, isPastAssertion } from "../src/lib/writer/safety/patterns";
+import { GENDER_WORD, LOVE_TIMING, OLD_NEGATIVE, SICK_DEATH_IMAGE, isGenderStereotype, isPastAssertion, jobFieldList } from "../src/lib/writer/safety/patterns";
 import FEATURE_FREQUENCY from "../src/lib/brief/data/feature-frequency.json";
 
 /** 감지 빈도 상위 30%(P3.5 A1): 이미지 변형 3개·영역 장면 3개 이상. tools/p35/enrich.mjs topFeatureIds와 같은 규칙. */
@@ -83,6 +84,9 @@ function checkProse(file: string, where: string, text: string, opts: ProseOpts =
     sentenceCount++; sentenceChars += s.length;
     if (s.length > maxSentence) fail(file, where, `문장 길이 > ${maxSentence}`, s);
     if (isPastAssertion(s)) fail(file, where, "과거 경험 단정(질문형·경향형으로)", s);
+    // (P6) 성별 고정관념(배우자성 규칙 문장은 허용)·다른 직업 예시 나열(원고에 그대로 옮겨진다).
+    if (isGenderStereotype(s)) fail(file, where, "성별 고정관념", s);
+    const jobs = !/\.scenes\.(?!work)/.test(where) && jobFieldList(s); if (jobs) fail(file, where, "직업 예시 나열(장면 하나로)", jobs);
     const tokens = s.split(/\s+/);
     if (tokens.some(t => /^[가-힣]{9,}$/.test(t))) fail(file, where, "한자어 연속(9음절 이상 붙은 낱말)", s);
     let run = 0; for (const t of tokens) { run = /(적|성|화|력|률)(으로|이|을|가|의|에)?$/.test(t) && t.length >= 3 ? run + 1 : 0; if (run >= 3) { fail(file, where, "한자어 연속(접미사 3연속)", s); break; } }
@@ -165,7 +169,8 @@ export const EXPECTED_IDS: Record<string, string[]> = {
   twelveStage: TWELVE_STAGES.map(s => `twelveStage:${s}`),
   relation: RELATIONS.map(r => `relation:${r}`),
   element: ELEMENTS.flatMap(e => ["STRONG", "WEAK", "MISSING", "BALANCED"].map(s => `element:${e}:${s}`)),
-  yinYang: ["YANG_HEAVY", "YANG_HEAVY:MALE", "YANG_HEAVY:FEMALE", "YIN_HEAVY", "YIN_HEAVY:MALE", "YIN_HEAVY:FEMALE", "BALANCED"].map(k => `yinYang:${k}`),
+  // (P6) 음양 편중은 성별로 나누지 않는다(성별 변형은 중립 항목에 합쳤다).
+  yinYang: ["YANG_HEAVY", "YIN_HEAVY", "BALANCED"].map(k => `yinYang:${k}`),
   climate: STEMS.flatMap(s => SEASONS.map(se => `climate:${s}:${se}`)),
   structure: STRUCTURES.map(s => `structure:${s}`),
 };
@@ -202,6 +207,7 @@ function lintFeatureFile(path: string) {
     if (featureIds.has(f.id)) fail(file, w, "feature id 중복"); featureIds.add(f.id);
     (featuresByFamily[f.family] ??= []).push(f);
     checkProse(file, `${w}.name`, f.name, { allowHan: true, dedupe: false });
+    if (GENDER_WORD.test(f.easyName) || GENDER_WORD.test(f.name)) fail(file, w, "성별 고정관념(이름)", `${f.name} / ${f.easyName}`);
     checkProse(file, `${w}.oneLiner`, f.oneLiner);
     checkImage(file, `${w}.image`, f.image);
     f.imageVariants?.forEach((im, i) => checkImage(file, `${w}.imageVariants[${i}]`, im));

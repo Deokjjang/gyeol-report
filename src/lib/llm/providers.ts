@@ -34,6 +34,16 @@ const parse = (message: SseMessage): Record<string, any> => {
 };
 const num = (value: unknown): number => (typeof value === "number" && Number.isFinite(value) ? value : 0);
 
+/**
+ * 모델별 요청 옵션(P6). 작가는 추론 없이 쓴다: 출력 토큰이 전부 원고가 되어 비용·시간이 예측된다.
+ * - claude-sonnet-5-5: thinking을 빼면 adaptive로 켜진다. 끄는 값은 between_tools(도구가 없으면 생각 안 함, effort high 이하).
+ * - gpt-6.1-terra: reasoning effort "none" 지원(상위 모델 중 유일).
+ */
+const MODEL_OPTIONS: Readonly<Record<string, Record<string, unknown>>> = {
+  "claude-sonnet-5-5": { thinking: { type: "between_tools" } },
+  "gpt-6.1-terra": { reasoning: { effort: "none" } },
+};
+
 export const anthropicDriver: ProviderDriver = {
   endpoint: "https://api.anthropic.com/v1/messages",
   apiKeyEnv: "ANTHROPIC_API_KEY",
@@ -45,6 +55,7 @@ export const anthropicDriver: ProviderDriver = {
     stream: true,
     system: [{ type: "text", text: input.system, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) }],
     messages: [{ role: "user", content: input.user }],
+    ...MODEL_OPTIONS[input.model],
   }),
   handle(message, state, onText) {
     const type = message.event ?? "";
@@ -87,6 +98,7 @@ export const openaiDriver: ProviderDriver = {
     max_output_tokens: input.maxOutputTokens,
     stream: true,
     store: false,
+    ...MODEL_OPTIONS[input.model],
   }),
   handle(message, state, onText) {
     if (message.data === "[DONE]") return;

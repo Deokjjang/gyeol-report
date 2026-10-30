@@ -149,8 +149,8 @@
  "gwiin:GEUMYEO": 0.2683,
  "gwiin:HAK_DANG_GWIIN": 0.2909,
  "gwiin:JAEGO": 0.2824,
- "gwiin:MUN_CHANG_GWIIN": 0.2923,
  "gwiin:MUNGOK": 0.2896,
+ "gwiin:MUN_CHANG_GWIIN": 0.2923,
  "gwiin:TAEGEUK_GWIIN": 0.5541,
  "gwiin:WOL_DEOK_GWIIN": 0.3334,
  "relation:BANGHAP": 0.0421,
@@ -247,8 +247,6 @@
  "twelveStage:長生": 0.2909,
  "twelveStage:養": 0.2608,
  "yinYang:BALANCED": 0.2853,
- "yinYang:YANG_HEAVY:FEMALE": 0.1773,
- "yinYang:YANG_HEAVY:MALE": 0.177,
- "yinYang:YIN_HEAVY:FEMALE": 0.1774,
- "yinYang:YIN_HEAVY:MALE": 0.183
+ "yinYang:YANG_HEAVY": 0.3543,
+ "yinYang:YIN_HEAVY": 0.3604
 }

@@ -121,32 +121,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YIN_HEAVY:FEMALE:ISFP",
-      "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
-      "mbtiTarget": "ISFP",
-      "kind": "resonance",
-      "dimension": "introspection",
-      "score": 2.07,
-      "why": "음의 글자가 많은 여성은 모으고 기다리는 힘이 '참하다'는 칭찬과 맞물려 목소리가 안쪽에 머물기 쉽습니다. ISFP도 좋고 싫음은 누구보다 분명한데, 그걸 남에게 요구하는 문장으로 바꾸는 데는 한참이 걸립니다. 칭찬은 받되 원하는 건 못 받는 날이 잦으니, 한 문장을 먼저 꺼내 보세요.",
-      "scene": { "text": "식당에서 주문과 다른 메뉴가 나와도 '괜찮아요' 하고 수저를 듭니다. 같이 간 친구가 대신 말해 주자 그제야 작게 '사실 저도 그게 아니었어요'라고 덧붙입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "성별 고정관념 단정",
-          "외모 평가"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:FEMALE",
-        "mbti:ISFP:functionStack",
-        "mbti:ISFP:signals",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:dayPillar:丁亥:ISFP",
       "myeongriId": "dayPillar:丁亥",
       "mbtiTarget": "ISFP",
@@ -662,31 +636,6 @@
       },
       "sources": [
         "structure:WEALTH_HEAVY",
-        "mbti:ISFP:functionStack",
-        "추정"
-      ]
-    },
-    {
-      "id": "fusion:yinYang:YANG_HEAVY:FEMALE:ISFP",
-      "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
-      "mbtiTarget": "ISFP",
-      "kind": "tension",
-      "dimension": "directness",
-      "score": 1.28,
-      "why": "여덟 글자 중 양이 많은 여성은 먼저 움직이고, 할 말도 바로 꺼내려는 힘이 큽니다. ISFP는 Se 덕에 몸은 재빨리 나가도, 마음을 말로 옮기는 일은 Fi가 한참 고른 뒤에야 합니다. 그래서 손은 누구보다 먼저 드는데, 그 손에 붙는 말은 가장 짧고 늦게 나옵니다.",
-      "scene": { "text": "횡단보도 앞에서 누가 장바구니를 쏟자 제일 먼저 뛰어가 귤을 줍습니다. 고맙다는 인사엔 고개만 꾸벅하고, 다들 흩어진 뒤에야 '조심히 가세요'를 혼잣말처럼 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "외모 평가",
-          "성 역할 고정관념"
-        ]
-      },
-      "sources": [
-        "yinYang:YANG_HEAVY:FEMALE",
         "mbti:ISFP:functionStack",
         "추정"
       ]

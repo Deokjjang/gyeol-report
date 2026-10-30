@@ -170,30 +170,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YIN_HEAVY:MALE:INFJ",
-      "myeongriId": "yinYang:YIN_HEAVY:MALE",
-      "mbtiTarget": "INFJ",
-      "kind": "resonance",
-      "dimension": "introspection",
-      "score": 1.65,
-      "why": "음이 많은 남성은 해 진 뒤 꽃잎을 여는 달맞이꽃처럼 모으고 기다리는 힘이 커, '앞장서라'는 기대와 자주 엇갈립니다. INFJ는 자리에서 말을 아끼는 대신 누가 불편한지를 끝까지 지켜보는 사람이고요. 다 읽고 늦게 말하는 방식이 겹쳐, 마음은 확실한데 표현이 계절 하나쯤 늦습니다.",
-      "scene": { "text": "팀 회의에서 신입의 의견이 묻히는 걸 내내 지켜보다가, 회의가 끝난 뒤 복도에서 '아까 그 안, 다음 회의 때 제가 다시 꺼내 볼게요'라고 조용히 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "연애 사건 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:MALE",
-        "mbti:INFJ:functionStack",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:dayMaster:丁:INFJ",
       "myeongriId": "dayMaster:丁",
       "mbtiTarget": "INFJ",
@@ -236,32 +212,6 @@
       "sources": [
         "shinsal:CHEONMUN",
         "mbti:INFJ:functionStack",
-        "추정"
-      ]
-    },
-    {
-      "id": "fusion:yinYang:YIN_HEAVY:FEMALE:INFJ",
-      "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
-      "mbtiTarget": "INFJ",
-      "kind": "resonance",
-      "dimension": "introspection",
-      "score": 1.56,
-      "why": "음이 많은 여성은 조개가 진주를 감듯 오래 품어 단단하게 만들고, 사람 말 뒤의 마음을 읽습니다. INFJ는 남의 감정을 받아 주는 그릇이 커서, 그릇이 넘치는 순간까지 티를 내지 않는 사람이고요. 털어놓는 사람은 끊이지 않는데, 받아 낸 감정이 바닥나는 날은 본인도 미리 알기 어렵습니다.",
-      "scene": { "text": "친구들의 고민 상담을 한 달 내내 받아 주다가, 어느 금요일 밤 휴대폰 알림을 전부 끄고 이틀 동안 누구에게도 답하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "성별 고정관념 단정",
-          "우울 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:FEMALE",
-        "mbti:INFJ:functionStack",
-        "mbti:INFJ:signals",
         "추정"
       ]
     },

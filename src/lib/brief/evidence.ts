@@ -35,12 +35,15 @@ const STUDY_EXAMPLES = {
   OFFICER: "범위가 정해진 공인 자격(예: 정보처리기사, 품질경영기사, 행정사)",
   RESOURCE: "깊이 파는 학위·연구형 과정(예: 대학원 강좌, 상담·교육 관련 자격)",
 } as const;
+/** 입력 상태 값(내부 영문 값을 본문에 옮기지 않게). */
+const JOB_STATUS_KO: Readonly<Record<string, string>> = { student: "학생", job_seeker: "구직 중", employee: "직장인", freelancer: "프리랜서", self_employed: "자영업", business_owner: "사업 운영", homemaker: "살림", unemployed: "쉬는 중" };
+/** 강한 묶음이 힘을 내는 판. 다른 직업 예시는 붙이지 않는다(P6: "공무, 법무, 품질, 회계 같은 일은"이 원고에 그대로 나열됐다). */
 const ROLE_BY_GROUP = {
-  PEER: "혼자 판을 짜고 내 이름으로 책임지는 일(독립 업무·개인 브랜드·현장 리더)",
-  OUTPUT: "만들고 말해서 결과물을 내는 일(기획·콘텐츠·디자인·강의)",
-  WEALTH: "숫자와 결과를 다루며 자원을 굴리는 일(영업·운영·재무·유통)",
-  OFFICER: "규칙과 책임이 분명한 조직의 일(관리·공공·품질·법무)",
-  RESOURCE: "배우고 정리해서 남에게 전하는 일(연구·분석·교육·상담)",
+  PEER: "혼자 판을 짜고 내 이름으로 책임지는 일",
+  OUTPUT: "만들고 말해서 결과물을 내는 일",
+  WEALTH: "숫자와 결과를 다루며 자원을 굴리는 일",
+  OFFICER: "규칙과 책임이 분명한 조직의 일",
+  RESOURCE: "배우고 정리해서 남에게 전하는 일",
 } as const;
 
 /** 십성 위치: 드러난 천간(년·월·시) + 지지 본기(일지 포함). 시간 미상이면 시주 제외. */
@@ -168,7 +171,8 @@ function mbtiFit(k: Knowledge, dims: Readonly<Record<string, number>>, mbti: Mbt
     // 직무의 핵심 요구(0.5 이상)가 유형의 핵심(0.6 이상)과 정면으로 반대면 뺀다(ENTJ에게 지시를 따르는 임원 비서).
     if (Math.abs(v) >= 0.5 && Math.abs(m) >= 0.6 && Math.sign(v) !== Math.sign(m)) clash = true;
   }
-  const say = (id: string) => { const dim = k.ontology.dimensions.find(x => x.id === id)!; const pole = dims[id] > 0 ? dim.poles.plus : dim.poles.minus; return `${mbti.type}의 '${pole.label}' 쪽(${dim.name})`; };
+  // 근거는 그 성향의 쉬운 설명 한 구절(P6: "ENTJ의 '말이 많음' 쪽(말수)"을 작가가 "말수가 많은 ENTJ의 쪽이"로 옮겼다).
+  const say = (id: string) => { const dim = k.ontology.dimensions.find(x => x.id === id)!; const pole = dims[id] > 0 ? dim.poles.plus : dim.poles.minus; return `${mbti.type}는 ${pole.description.replace(/입니다\.?$/, "")}`; };
   const reasons = pos.sort((a, b) => b[1] - a[1]).map(([d]) => say(d));
   return { fit: size ? dot / size : 0, clash, ...(best ? { reason: say(best[0]) } : {}), reasons };
 }
@@ -279,29 +283,32 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
     ? [...new Map(groupsForRoles.map(g => [fit.grow[g], g])).entries()].slice(0, 3).map(([role, g]) => `${role} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`)
     : groupsForRoles.slice(0, 2).map(g => `${ROLE_BY_GROUP[g]} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`);
   const inv = investment(d, scores, saju.structureAnalysis.dayMasterStrength.level, yearTg);
-  const lineNote = "줄마다 직무 하나: 명리 근거와 MBTI 근거를 한 문장에 함께 쓴다. 지금 직업을 바꾸라고 단정하지 않는다";
+  // 줄마다 같은 틀("A는 ~과 ~이 함께 쓰이는 일이에요")이 9번 되풀이됐다(P6): 문장 모양을 줄마다 바꾸게 한다.
+  const lineNote = "줄마다 직무 하나, 명리·MBTI 근거를 함께 쓰되 문장 모양은 줄마다 다르게(그 일의 한 장면으로·지금 일과 견주어·근거부터). 지금 직업을 바꾸라고 단정하지 않는다";
+  // 직업 소품은 목록이 아니라 장면 하나(P6: "하루는 A, B, C, D, E로 채워져요"가 그대로 나왔다). 같은 직업군이어도 고객마다 다르게.
+  const prop = job ? job.props[[...detailJob].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7) % Math.min(5, job.props.length)] : undefined;
   return {
     jobFit: { kind: "evidence", key: "jobFit", facts: [
       // 숫자는 주지 않는다(작가가 그대로 옮기고, 문장 나누기에서 "1.9"가 "1. 9"로 쪼개졌다).
       `강한 십성 묶음: ${top.map(([g]) => GROUP_KO[g]).join(" · ")}`,
       ...top.map(([g]) => `어울리는 판: ${ROLE_BY_GROUP[g]}`),
-      `입력 직업: ${detailJob || "없음"}${jobStatus ? ` (${jobStatus})` : ""}`,
+      `입력 직업: ${detailJob || "없음"}${JOB_STATUS_KO[jobStatus] ? ` (${JOB_STATUS_KO[jobStatus]})` : ""}`,
     ], note: "위 판과 입력 직업이 겹치는 지점을 짚는다" },
     jobRoles: { kind: "evidence", key: "jobRoles", facts: [`${detailJob ? `지금 자리(${detailJob})` : "지금 하는 일"}에서 넓힐 역할`, ...roles], note: lineNote },
     ...(adjacent.length ? { jobAdjacent: { kind: "evidence" as const, key: "jobAdjacent", facts: ["옮겨 갈 만한 가까운 직무(지금 일에서 쓰던 힘을 그대로 가져가는 쪽)", ...adjacent.map(jobLine)], note: lineNote } } : {}),
     ...(longterm.length ? { jobLongterm: { kind: "evidence" as const, key: "jobLongterm", facts: ["길게 보면 열려 있는 다른 길(준비 기간이 필요한 쪽)", ...longterm.map(jobLine)], note: lineNote } } : {}),
     // 지금 직업 해설(P3.6 B): 입력 직업이 있으면 그 직업의 일상 소품과 강한 판을 함께 준다. 키울 역할은 jobRoles에만(같은 말 반복 방지).
     currentJob: { kind: "evidence", key: "currentJob", facts: detailJob ? [
-      `지금 직업: ${detailJob}${job ? ` (직업군: ${job.name})` : ""}`,
-      ...(job ? [`이 직업의 일상: ${job.props.slice(0, 5).join(", ")}`] : []),
+      `지금 직업: ${detailJob}`,
+      ...(prop ? [`이 직업의 장면 소품: ${prop}`] : []),
       // 강한 십성 묶음은 jobFit 한 곳에서만 말한다(P3.8 r1: 근거 다섯 곳이 '식상·비겁이 강하다'를 되풀이).
       ...(fit && fitLevel ? [`지금 직업 적합도: ${fitLevel} — 이 일이 주로 쓰는 힘은 ${fit.groups.map(g => GROUP_KO[g]).join("·")}(앞 장의 강한 힘과 견준다)`] : [`이 사주가 지금 일에서 쓰이는 곳: ${ROLE_BY_GROUP[top[0][0]]}`]),
-    ] : ["입력 직업 없음"], note: detailJob ? "적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나, 덜 맞는 지점 하나" : "지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다" },
+    ] : ["입력 직업 없음"], note: detailJob ? "적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나(소품은 그 장면에만), 덜 맞는 지점 하나. 직업 분류 이름·하루 일과 목록은 쓰지 않는다" : "지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다" },
     studyFit: { kind: "evidence", key: "studyFit", facts: top.map(([g]) => `맞는 공부 방식: ${STUDY_BY_GROUP[g]}`), note: "합격·성적은 단정하지 않는다. 강한 힘의 설명은 다시 하지 않는다" },
     studyPick: { kind: "evidence", key: "studyPick", facts: [...new Set([
       ...(fit && detailJob ? [`지금 일(${detailJob})과 이어지는 공부: ${STUDY_EXAMPLES[fit.groups[0]]}`] : []),
       ...(!fit || fit.groups[0] !== topG[0] ? [`더 넓혀 볼 공부: ${STUDY_EXAMPLES[topG[0]]}`] : topG[1] ? [`더 넓혀 볼 공부: ${STUDY_EXAMPLES[topG[1]]}`] : []),
-    ])], note: "합격·성적은 단정하지 않는다" },
+    ])], note: "합격·성적은 단정하지 않는다. 괄호 속 예는 하나만 골라 쓴다(나열하지 않는다)" },
     earnStyle: { kind: "evidence", key: "earnStyle", facts: [
       // 숫자는 주지 않는다(작가가 그대로 옮김). 둘 다 옅거나 비슷하면 유형을 붙이지 않는다(P3.6 B).
       `돈 버는 방식: ${Math.max(d.正財 ?? 0, d.偏財 ?? 0) < 0.5 ? "돈 기운(재성)이 옅어, 큰 판을 굴리기보다 일한 만큼 받는 구조에서 돈이 남는 쪽" : Math.abs((d.正財 ?? 0) - (d.偏財 ?? 0)) < 0.3 ? "고정 수입과 성과형 수입을 함께 굴리는 쪽(어느 한쪽으로 기울지 않음)" : (d.正財 ?? 0) > (d.偏財 ?? 0) ? "고정 수입을 차곡차곡 쌓을 때 돈이 남는 쪽(정재형)" : "성과·부업·기회를 크게 굴릴 때 돈이 붙는 쪽(편재형)"}`,

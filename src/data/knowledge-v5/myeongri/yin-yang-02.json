@@ -12,6 +12,11 @@
         "metaphor": "뚜껑을 따자마자 거품이 병 입구로 솟구쳐 넘치는 탄산수",
         "visual": "엘리베이터 문이 반쯤 열렸을 때 이미 어깨부터 내밀고 나가는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "브레이크 패드는 새것 그대로인데 가속 페달 고무만 닳아 반들반들한 승합차", "visual": "고깃집에 앉자마자 집게와 가위를 먼저 쥐고 불판을 혼자 맡는 사람" },
+        { "metaphor": "한낮 운동장에 먼저 나가 호루라기를 부는 체육 선생님", "visual": "식당에서 '여기요!' 하고 손을 드는 사람, 테이블의 다른 이들은 아직 메뉴를 보고 있다" },
+        { "metaphor": "신호가 바뀌기도 전에 페달에 한 발을 올려 둔 출근길 자전거", "visual": "단체 사진을 찍을 때 셋을 세기도 전에 먼저 웃으며 '찍어요!' 하고 손짓하는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "새 업무 메일이 오면 첨부 파일을 끝까지 읽기 전에 담당자에게 '일단 통화 한번 하죠' 하고 전화를 겁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -20,15 +25,18 @@
         ],
         "money": [
           { "text": "세일 문자가 오면 장바구니를 고민하기보다 결제 버튼부터 누르고, 마음에 안 들면 반품 신청서를 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "돈이 모자라면 지출 줄이는 표를 짜기보다 주말 부업이나 중고 거래 앱부터 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "돈이 모자라면 지출 줄이는 표를 짜기보다 주말 부업이나 중고 거래 앱부터 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구들과의 술자리 계산대 앞에서 지갑을 먼저 꺼내고, 집에 가는 택시에서 카드 앱을 열어 보고 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "인강을 처음부터 듣기보다 기출문제부터 풀고, 틀린 문제를 따라 거꾸로 개념을 찾아 들어갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "빈 강의실에서 친구를 앉혀 놓고 칠판에 설명하면서 외울 때 가장 오래 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
+          { "text": "빈 강의실에서 친구를 앉혀 놓고 칠판에 설명하면서 외울 때 가장 오래 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+          { "text": "시험 범위를 다 보기도 전에 스터디 모임을 만들어 조장을 맡고, 단체 대화방 공지부터 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "마음에 둔 사람에게 '이번 주 토요일 6시 어때요?'라고 날짜와 시간까지 정해서 먼저 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "다툰 날 밤, 생각할 시간을 주기보다 상대 집 앞까지 가서 '지금 얘기하자'고 문자를 보냅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
+          { "text": "다툰 날 밤, 생각할 시간을 주기보다 상대 집 앞까지 가서 '지금 얘기하자'고 문자를 보냅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } },
+          { "text": "좋아하는 사람과 두 번째 만난 날 '우리 사귈래요?'를 먼저 꺼내고, 상대가 답을 미루면 그 주 내내 휴대폰만 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "이사 갈 집을 보러 간 날 부동산에서 바로 가계약금을 넣자고 해서, 배우자가 '하루만 생각하자'며 팔을 잡습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -38,18 +46,20 @@
         ],
         "relationships": [
           { "text": "모임 날짜가 몇 주째 안 잡히면 단체 대화방에 '19일, 강남역, 7시. 안 되는 사람만 말해'라고 못 박습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "처음 간 동호회에서 그날 바로 옆 사람 번호를 받고, 다음 뒤풀이 장소까지 알아 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "처음 간 동호회에서 그날 바로 옆 사람 번호를 받고, 다음 뒤풀이 장소까지 알아 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "힘들다는 말 대신 '괜찮아, 별거 아니야'를 입에 달고 살아서, 친구들은 당신이 지친 걸 맨 마지막에 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "쉬는 날 소파에 누운 지 한 시간도 안 돼 운동화를 신고 동네 한 바퀴라도 돌고 와야 마음이 풀립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "혼자 영화를 보다가도 중간에 멈추고 냉장고 정리나 베란다 분갈이를 시작합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "혼자 영화를 보다가도 중간에 멈추고 냉장고 정리나 베란다 분갈이를 시작합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "혼자 있는 밤에도 헬스장이나 야간 달리기로 몸을 굴려야 잠이 옵니다. 가만히 누워 있으면 괜히 죄책감이 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ]
       },
       "strengths": [
         "당신에게는 시작 버튼을 누르는 힘이 있어서, 남들이 계획표를 고치는 동안 결과물 첫 장을 먼저 내놓습니다.",
         "막힌 판을 움직이는 데 강합니다. 아무도 말을 꺼내지 않는 자리에서 첫마디를 던져 대화의 물꼬를 틉니다.",
         "넘어져도 오래 주저앉지 않습니다. 이유를 따지기 전에 다시 일어나 다른 문을 두드리는 회복이 빠릅니다.",
-        "현장·영업·운영·초기 기획처럼 빠르기가 결과를 바꾸는 자리에서 몸이 먼저 답을 찾습니다."
+        "빠르기가 결과를 바꾸는 자리에서 몸이 먼저 답을 찾습니다."
       ],
       "overuse": [
         "네 기둥이 모두 양이거나 월주와 일주가 함께 양이면 멈추는 브레이크가 약해집니다. 출발은 빠른데 점검을 건너뛰어 같은 실수를 두 번 합니다.",
@@ -78,80 +88,6 @@
       "confidence": "통용"
     },
     {
-      "id": "yinYang:YANG_HEAVY:MALE",
-      "family": "yinYang",
-      "name": "양 과다·남성(陽 偏重)",
-      "easyName": "앞장서는 남자",
-      "oneLiner": "양의 글자가 많은 남성, 밀고 나가는 힘에 '남자답다'는 칭찬까지 붙어 속도가 더 나는 구성",
-      "image": {
-        "metaphor": "브레이크 패드는 새것 그대로인데 가속 페달 고무만 닳아 반들반들한 승합차",
-        "visual": "고깃집에 앉자마자 집게와 가위를 먼저 쥐고 불판을 혼자 맡는 사람"
-      },
-      "scenes": {
-        "work": [
-          { "text": "처음 일을 배울 때부터 '남자가 먼저 나서야지'라는 말과 함께 궂은일이 먼저 돌아왔고, 당신은 그걸 마다한 적이 없습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "팀이 막히면 회의실 의자에서 먼저 일어나 '제가 거래처 다녀오겠습니다' 하고 외투를 챙깁니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "상사가 '역시 밀어붙이는 맛이 있네'라고 칭찬할수록 일정을 더 당기고, 팀원들은 말없이 야근을 늘립니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
-        ],
-        "money": [
-          { "text": "친구들과의 술자리 계산대 앞에서 지갑을 먼저 꺼내고, 집에 가는 택시에서 카드 앱을 열어 보고 한숨을 쉽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "차나 장비처럼 큰돈 드는 물건을 살 때 비교표 대신 매장 직원 말 몇 마디에 계약서를 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "study": [
-          { "text": "시험 범위를 다 보기도 전에 스터디 모임을 만들어 조장을 맡고, 단체 대화방 공지부터 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "자격증도 '석 달 안에 끝낸다'고 주변에 선언해 두고, 그 말에 등이 떠밀려 새벽 책상에 앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "love": [
-          { "text": "좋아하는 사람과 두 번째 만난 날 '우리 사귈래요?'를 먼저 꺼내고, 상대가 답을 미루면 그 주 내내 휴대폰만 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인이 고민을 털어놓으면 다 듣기 전에 '그럼 내일 내가 같이 가 줄게'라고 해결책부터 냅니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
-        ],
-        "marriage": [
-          { "text": "명절 장거리 운전을 혼자 다 하겠다고 고집해서, 휴게소마다 배우자가 '나도 운전할 줄 알아'라고 말합니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "부모님 칠순 잔치 장소를 혼자 예약해 놓고 '정했어'라고 말했다가, 배우자의 침묵이 길어지는 저녁을 겪습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "어른들과의 첫 식사 자리가 잡히면 식당 예약부터 주차 자리, 가는 길 운전까지 혼자 다 맡으려 해서, 상대가 할 일을 못 찾습니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } },
-          { "text": "결혼 준비를 하게 되면 예식장 계약금도 '내가 낼게' 하고 먼저 이체하고, 비용 얘기는 한 줄도 나누지 못한 채 넘어갑니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
-        ],
-        "relationships": [
-          { "text": "남자들 모임에서 늘 형 노릇을 맡아, 후배 이삿날이면 가장 먼저 트럭을 빌려 나타납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "힘들다는 말 대신 '괜찮아, 별거 아니야'를 입에 달고 살아서, 친구들은 당신이 지친 걸 맨 마지막에 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "alone": [
-          { "text": "혼자 있는 밤에도 헬스장이나 야간 달리기로 몸을 굴려야 잠이 옵니다. 가만히 누워 있으면 괜히 죄책감이 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "집 앞 주차장에 차를 세우고 시동을 끈 채 한참 앉아 있다가 들어가는 날이 있습니다. 그게 하루 중 유일한 쉼입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ]
-      },
-      "strengths": [
-        "당신에게는 판을 끌고 가는 엔진이 있어서, 다들 망설이는 자리에서 첫 삽을 뜨고 길을 냅니다.",
-        "책임 앞에서 주저하지 않습니다. 일이 커져도 '내가 맡을게'를 먼저 말해 주변이 안심합니다.",
-        "몸으로 부딪쳐 배우는 힘이 큽니다. 현장·영업·창업·운동처럼 직접 움직여야 성과가 나는 곳에서 실력이 붙습니다."
-      ],
-      "overuse": [
-        "양이 많은 남성은 사회의 '남자답다'는 기대와 방향이 같아 아무도 브레이크를 걸어 주지 않습니다. 칭찬받는 속도가 몸을 먼저 닳게 합니다.",
-        "약한 소리를 하면 안 된다는 기대까지 겹쳐 지침을 숨깁니다. 음의 기둥이 하나뿐이거나 없으면 쉬는 법을 배울 자리가 더 좁습니다.",
-        "집에서도 앞장서다 보면 배우자의 몫까지 대신 정합니다. 이끄는 것과 상의하는 것은 다른 일이고, 묻는 한마디가 당신의 힘을 더 크게 만듭니다.",
-        "돌봄·위로·기다림이 필요한 자리에서 '남자가 왜'라는 시선 때문에 그 역할을 피하기 쉽습니다. 그건 성별과 상관없이 누구나 키울 수 있는 다른 근육입니다."
-      ],
-      "strengthRules": {
-        "strong": "여덟 글자가 모두 양이거나 일간과 월지가 함께 양이면 가속이 극에 달합니다. 주변의 기대까지 겹쳐 쉬는 날에도 일을 만듭니다.",
-        "weak": "양 여섯에 음 둘이고 그 음이 일주에 있으면, 밖에서는 앞장서도 집과 본인 자리에서는 속도를 낮출 줄 압니다.",
-        "clash": "인신충처럼 양 기둥끼리 부딪치면 앞장서는 힘이 이리저리 방향을 틉니다. 일을 벌이는 속도보다 접는 기준을 먼저 정해 두면 손실이 줄어듭니다.",
-        "rule": "엔진 YinYangLabel YANG_HEAVY + gender MALE. yang ≥ yin+2: 8자 6:2 이상, 시간 미상 6자 4:2 이상(기둥 단위로 짝수)."
-      },
-      "dimensionTags": { "controlNeed": 0.7, "decisionSpeed": 0.7, "dutifulness": 0.6, "competitiveness": 0.6, "independence": 0.6, "riskTaking": 0.5, "emotionalExpression": -0.5 },
-      "mbtiLinks": [
-        { "target": "ESTJ", "kind": "resonance", "why": "책임을 맡고 일정을 당기는 Te-Si가 앞장서는 남성상과 그대로 겹칩니다" },
-        { "target": "ENTJ", "kind": "resonance", "why": "목표를 정하고 사람을 끄는 Te가 닳은 가속 페달과 같은 쪽입니다" },
-        { "target": "Se", "kind": "resonance", "why": "몸으로 부딪쳐 해결하는 Se가 현장으로 먼저 나가는 습관과 맞물립니다" },
-        { "target": "ISFP", "kind": "tension", "why": "지금 내 마음을 먼저 살피는 Fi가 '남자답게'라는 속도를 버거워합니다" },
-        { "target": "INTP", "kind": "tension", "why": "오래 따져 보고 움직이는 Ti가 결정을 먼저 내리는 속도와 엇갈립니다" },
-        { "target": "F", "kind": "conditional", "why": "감정형이면 앞장서는 겉모습 안에서 상처를 혼자 삭여, 겉과 속의 온도 차가 커집니다" }
-      ],
-      "engineSupport": true,
-      "engineKey": "YANG_HEAVY",
-      "sources": ["classic:sm1:原造化之始", "foundation:yin_yang:yang", "통용(성별 결합 해석은 현대 한국 명리 통념)"],
-      "confidence": "통용"
-    },
-    {
       "id": "yinYang:YIN_HEAVY",
       "family": "yinYang",
       "name": "음 과다(陰 偏重)",
@@ -161,6 +97,11 @@
         "metaphor": "사진관 암실 약품 속에서 천천히 얼굴이 떠오르는 인화지",
         "visual": "약국 대기 의자에서 번호표를 쥔 채 앞사람들 처방전 봉투를 차례로 눈으로 좇는 사람"
       },
+      "imageVariants": [
+        { "metaphor": "해가 진 뒤에야 노란 꽃잎을 천천히 여는 달맞이꽃", "visual": "목공방 구석에서 대패질한 나무 결을 손바닥으로 몇 번이고 쓸어 보는 사람" },
+        { "metaphor": "조개 속에서 몇 해에 걸쳐 한 겹씩 감겨 단단해지는 진주", "visual": "회의실 문을 나서며 '아까 그 숫자, 3쪽이 틀렸어요' 하고 작게 알려 주는 사람" },
+        { "metaphor": "겨울 내내 땅속에서 뿌리만 늘리다 늦봄에야 싹을 올리는 마늘", "visual": "모임이 끝난 다음 날 단체 대화방에 그날 사진을 조용히 골라 올려 두는 사람" }
+      ],
       "scenes": {
         "work": [
           { "text": "새 팀에 들어가면 첫 2주는 말을 아끼고, 누가 실제로 결정하는지 회의록과 메일 참조란을 보며 파악합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
@@ -169,15 +110,18 @@
         ],
         "money": [
           { "text": "갖고 싶은 물건은 장바구니에 넣어 두고 일주일을 묵힙니다. 그래도 생각나면 그때 삽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "월급이 들어오면 쓰기 전에 비상금 통장으로 일부를 옮겨 두고, 그 잔액은 남에게 잘 말하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
+          { "text": "월급이 들어오면 쓰기 전에 비상금 통장으로 일부를 옮겨 두고, 그 잔액은 남에게 잘 말하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+          { "text": "친구들이 코인이나 새 차 얘기로 들뜰 때, 조용히 적금 만기일을 달력에 동그라미 쳐 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "study": [
           { "text": "수업 시간엔 질문을 거의 안 하지만, 집에 와서 노트를 처음부터 다시 정리하며 혼자 이해를 끝냅니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
-          { "text": "벼락치기가 안 됩니다. 시험 3주 전부터 매일 같은 자리, 같은 시간에 앉아야 머리에 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "벼락치기가 안 됩니다. 시험 3주 전부터 매일 같은 자리, 같은 시간에 앉아야 머리에 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "조별 과제에서 조장은 피하지만, 마감 전날 밤 모든 자료를 한 파일로 합쳐 낸 사람은 늘 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "love": [
           { "text": "좋아하는 사람이 생겨도 몇 달은 그 사람의 말버릇과 좋아하는 음식만 휴대폰 메모에 조용히 모아 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "메시지 답장은 늦어도 한 줄 한 줄이 길고, 상대가 지난주에 지나가듯 한 말을 정확히 기억해 답합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "메시지 답장은 늦어도 한 줄 한 줄이 길고, 상대가 지난주에 지나가듯 한 말을 정확히 기억해 답합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "데이트 장소를 고를 때 화려한 곳보다 상대가 지난번에 좋다고 한 조용한 골목 식당을 다시 예약합니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
         ],
         "marriage": [
           { "text": "배우자가 화를 내면 그 자리에서 맞서지 않고 방에 들어가 있다가, 다음 날 아침 식탁에서 차분히 말을 꺼냅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
@@ -187,17 +131,19 @@
         ],
         "relationships": [
           { "text": "열 명 넘는 회식 자리에서 말은 적어도, 누가 누구와 어색한지는 가장 먼저 알아챕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구가 고민을 꺼내면 끝까지 듣고 나서 '그래서 넌 어떻게 하고 싶은데?' 한마디만 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "친구가 고민을 꺼내면 끝까지 듣고 나서 '그래서 넌 어떻게 하고 싶은데?' 한마디만 묻습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "친구가 '너는 속을 모르겠다'고 할 때, 당신은 그 친구 생일과 좋아하는 술 이름까지 다 외우고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "alone": [
           { "text": "주말에 약속이 없으면 오히려 반갑습니다. 이불 속에서 밀린 드라마나 책을 몰아 보며 배터리를 채웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "휴대폰 메모장에 그날 본 것, 들은 말, 떠오른 생각을 날짜별로 쌓아 둡니다. 몇 년 치가 들어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "휴대폰 메모장에 그날 본 것, 들은 말, 떠오른 생각을 날짜별로 쌓아 둡니다. 몇 년 치가 들어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+          { "text": "퇴근길에 일부러 한 정거장 먼저 내려 이어폰을 끼고 걸어야 하루치 소음이 가라앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } }
         ]
       },
       "strengths": [
         "당신에게는 지켜보는 힘이 있어서, 남들이 말하는 동안 판의 흐름과 사람의 속마음을 먼저 읽어 냅니다.",
         "모으는 힘이 큽니다. 돈·지식·자료·신뢰를 조금씩 쌓아 두어 시간이 갈수록 손에 든 게 많아집니다.",
-        "서두르지 않아 실수가 적습니다. 검토·연구·관리·상담처럼 깊이와 정확함이 필요한 자리에서 믿음을 얻습니다.",
+        "서두르지 않아 실수가 적습니다. 깊이와 정확함이 필요한 자리에서 믿음을 얻습니다.",
         "상대를 받아들이는 폭이 넓습니다. 다른 사람의 속도를 기다려 주니 곁에 오래 머무는 사람이 생깁니다."
       ],
       "overuse": [
@@ -224,151 +170,6 @@
       "engineSupport": true,
       "engineKey": "YIN_HEAVY",
       "sources": ["classic:sm1:原造化之始", "foundation:yin_yang:yin", "통용"],
-      "confidence": "통용"
-    },
-    {
-      "id": "yinYang:YIN_HEAVY:MALE",
-      "family": "yinYang",
-      "name": "음 과다·남성(陰 偏重)",
-      "easyName": "조용히 고르는 남자",
-      "oneLiner": "음의 글자가 많은 남성, 모으고 기다리는 힘이 '남자는 앞장서야 한다'는 기대와 자주 부딪치는 구성",
-      "image": {
-        "metaphor": "해가 진 뒤에야 노란 꽃잎을 천천히 여는 달맞이꽃",
-        "visual": "목공방 구석에서 대패질한 나무 결을 손바닥으로 몇 번이고 쓸어 보는 남자"
-      },
-      "scenes": {
-        "work": [
-          { "text": "팀장이 '남자가 왜 이렇게 조용해, 의견 좀 내 봐'라고 할 때, 당신 머릿속에는 이미 정리된 답이 세 줄 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "앞에 서서 발표하는 역할보다 발표 자료의 숫자와 근거를 밤새 맞추는 역할에서 이름이 납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "현장 관리를 맡기면 고함 대신 작업 순서표를 벽에 붙이고, 사람마다 따로 불러 할 일을 알려 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "money": [
-          { "text": "친구들이 코인이나 새 차 얘기로 들뜰 때, 조용히 적금 만기일을 달력에 동그라미 쳐 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "회식에서 '형이 쏜다' 분위기가 와도 무리하지 않고, 대신 다음 날 후배에게 커피 쿠폰을 보내 정을 챙깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "study": [
-          { "text": "조별 과제에서 조장은 피하지만, 마감 전날 밤 모든 자료를 한 파일로 합쳐 낸 사람은 늘 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "강의실에서 손 들고 묻는 대신, 수업이 끝나면 교수 연구실 문을 두드려 조용히 질문합니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } }
-        ],
-        "love": [
-          { "text": "'남자가 먼저 고백해야지'라는 말이 가장 부담스럽습니다. 마음은 몇 달째 확실한데 타이밍만 재다 계절이 바뀝니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "데이트 장소를 고를 때 화려한 곳보다 상대가 지난번에 좋다고 한 조용한 골목 식당을 다시 예약합니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
-        ],
-        "marriage": [
-          { "text": "명절에 어른들이 '집안 대표로 한마디 해'라고 하면 진땀이 나지만, 상 물린 뒤 설거지와 정리는 끝까지 맡습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "배우자와 의견이 갈리면 큰소리 대신 며칠 생각한 뒤 장단점을 적은 쪽지를 건넵니다. 배우자는 그 느린 진심을 믿습니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "둘이 쓸 방을 꾸미게 되면 조명 색과 책상 높이를 말 대신 메모장에 조용히 그려 놓고, 상대가 볼 때까지 기다립니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } },
-          { "text": "어른들 앞에 처음 앉게 되면 건배사 연습보다 선물 포장 상태와 가방 안 휴지까지 세 번 확인하고, 말은 가장 마지막에 꺼냅니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
-        ],
-        "relationships": [
-          { "text": "남자들 술자리에서 분위기를 띄우는 쪽은 아니지만, 다들 취한 뒤 대리기사를 불러 주고 마지막에 나오는 사람입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구가 '너는 속을 모르겠다'고 할 때, 당신은 그 친구 생일과 좋아하는 술 이름까지 다 외우고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "alone": [
-          { "text": "퇴근길에 일부러 한 정거장 먼저 내려 이어폰을 끼고 걸어야 하루치 소음이 가라앉습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "주말 내내 방에서 모형을 조립하거나 게임 공략을 정리하며 아무와도 연락하지 않아도 허전하지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ]
-      },
-      "strengths": [
-        "당신에게는 판을 조용히 읽는 눈이 있어서, 큰소리 내는 사람보다 먼저 일의 빈틈과 사람의 마음을 짚어 냅니다.",
-        "믿음이 오래갑니다. 말보다 행동이 앞서서, 몇 년을 같이 지낸 사람일수록 당신을 가장 의지합니다.",
-        "섬세한 챙김과 꼼꼼한 마무리가 무기입니다. 설계·연구·의료·회계·상담처럼 깊이로 승부하는 자리에서 실력이 쌓입니다."
-      ],
-      "overuse": [
-        "음이 많은 남성은 '남자는 먼저 나서야 한다'는 주변의 기대와 자주 엇갈립니다. 억지로 목소리를 키우면 당신의 진짜 무기인 관찰과 정확함이 묻힙니다.",
-        "양의 기둥이 하나뿐이거나 없으면 결정과 고백을 남이 대신 해 주길 기다립니다. 그사이 상대는 관심이 없는 줄 알고 떠나니, 마음은 짧게라도 먼저 말로 꺼냅니다.",
-        "참는 게 남자다움이라는 말을 믿으면 서운함이 속에 고입니다. 일간까지 음이면 한계에 닿을 때까지 티가 안 나니, 작은 불편부터 그날 말하는 연습을 합니다."
-      ],
-      "strengthRules": {
-        "strong": "여덟 글자가 모두 음이거나 일간과 월지가 함께 음이면 고요가 깊습니다. 앞장서라는 요구가 클수록 더 안으로 물러나는 반작용이 생깁니다.",
-        "weak": "음 여섯, 양 둘이고 그 양이 월주에 있으면 일터에서는 필요한 만큼 앞에 섭니다. 집과 혼자일 때는 음의 속도로 돌아옵니다.",
-        "clash": "묘유충처럼 음 기둥끼리 부딪치면 모아 둔 생각이 한꺼번에 흔들립니다. 겉은 무덤덤해도 속은 시끄러우니 믿는 한 사람에게 털어놓을 통로를 둡니다.",
-        "rule": "엔진 YinYangLabel YIN_HEAVY + gender MALE. yin ≥ yang+2: 8자 6:2 이상, 시간 미상 6자 4:2 이상(기둥 단위로 짝수)."
-      },
-      "dimensionTags": { "introspection": 0.7, "reactivity": -0.6, "attentionSeeking": -0.6, "intimacyPace": -0.6, "caretaking": 0.5, "detailFocus": 0.5, "emotionalExpression": -0.5 },
-      "mbtiLinks": [
-        { "target": "ISFJ", "kind": "resonance", "why": "말없이 챙기고 기억하는 Si-Fe가 뒤에서 마무리하는 방식과 같은 결입니다" },
-        { "target": "INTJ", "kind": "resonance", "why": "혼자 다 그려 둔 뒤 움직이는 Ni-Te가 기다렸다 한 번에 꺼내는 방식과 겹칩니다" },
-        { "target": "ISTP", "kind": "resonance", "why": "말보다 손으로 정리하는 Ti-Se가 조용히 끝을 맺는 습관과 맞물립니다" },
-        { "target": "Te", "kind": "tension", "why": "앞에서 지휘하길 바라는 Te의 기대가 기다리는 속도와 자주 부딪칩니다" },
-        { "target": "ENFJ", "kind": "tension", "why": "사람 앞에 서서 분위기를 끄는 Fe가 뒤에서 챙기는 방식과 서는 자리가 다릅니다" },
-        { "target": "T", "kind": "conditional", "why": "사고형이면 감정보다 근거를 모아 늦게 말해, 무심하다는 오해를 받기 쉽습니다" }
-      ],
-      "engineSupport": true,
-      "engineKey": "YIN_HEAVY",
-      "sources": ["classic:sm1:原造化之始", "foundation:yin_yang:yin", "통용(성별 결합 해석은 현대 한국 명리 통념)"],
-      "confidence": "통용"
-    },
-    {
-      "id": "yinYang:YIN_HEAVY:FEMALE",
-      "family": "yinYang",
-      "name": "음 과다·여성(陰 偏重)",
-      "easyName": "속이 깊은 여자",
-      "oneLiner": "음의 글자가 많은 여성, 모으고 기다리는 힘이 '참하다'는 칭찬과 맞물려 목소리가 안쪽에 머물기 쉬운 구성",
-      "image": {
-        "metaphor": "조개 속에서 몇 해에 걸쳐 한 겹씩 감겨 단단해지는 진주",
-        "visual": "회의실 문을 나서며 '아까 그 숫자, 3쪽이 틀렸어요' 하고 작게 알려 주는 사람"
-      },
-      "scenes": {
-        "work": [
-          { "text": "어릴 때부터 '참하다, 손이 안 간다'는 말을 들었고, 어디서든 손 안 가는 사람이라 일이 소리 없이 쌓입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연봉 협상 날 원하는 숫자를 수첩에 적어 갔지만, 팀장 앞에서는 '회사 사정에 맞추겠습니다'가 먼저 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-          { "text": "회의 중 떠오른 좋은 의견을 말할 때를 재다가, 비슷한 말을 남이 먼저 해서 박수를 받는 걸 지켜보는 일이 잦습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "money": [
-          { "text": "가계부 앱 대신 손으로 쓰는 수첩에 매일 쓴 돈을 적고, 비상금 봉투는 옷장 깊숙이 따로 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "친구들이 명품 가방 이야기를 할 때 웃으며 듣고, 집에 와서 조용히 청약 통장 납입 횟수를 확인합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "study": [
-          { "text": "발표 수업은 떨리지만 기말 보고서는 늘 가장 두껍고 꼼꼼해서, 교수님 코멘트가 제일 길게 달립니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
-          { "text": "스터디에서 말은 적어도, 모두가 돌려 보는 정리 노트의 주인은 늘 당신입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "love": [
-          { "text": "좋아하는 사람이 생기면 먼저 말하기보다, 그 사람이 다가올 수 있게 같은 시간 같은 카페 자리에 앉아 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "연인이 서운하게 해도 그 자리에서는 '응, 알겠어' 하고 넘기고, 집에 와서 일기장에 그날 대화를 그대로 받아 적습니다.", "requires": { "relationship": "dating", "children": "any", "job": "any" } }
-        ],
-        "marriage": [
-          { "text": "시댁 모임에서 '며느리가 참 조용하고 좋다'는 칭찬을 들은 날, 정작 하고 싶던 말은 하나도 못 하고 돌아옵니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "집안의 큰 결정 앞에서 배우자가 '네 생각은 어때?'라고 물어야, 그제야 며칠 동안 정리해 둔 의견을 꺼냅니다.", "requires": { "relationship": "married", "children": "any", "job": "any" } },
-          { "text": "첫 인사 날이 잡히면 '조용하고 참하다'는 평이 벌써 정해진 것 같아서, 하고 싶은 말을 수첩에 적어 한 줄이라도 꺼내 보려 연습합니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } },
-          { "text": "살림을 나눠 맡게 되면 집안일 분담을 먼저 말하지 못하고 한 달 넘게 혼자 해내다가, 상대가 눈치챌 때쯤 표로 정리해 건넵니다.", "requires": { "relationship": "unmarried", "children": "any", "job": "any" } }
-        ],
-        "relationships": [
-          { "text": "친구들 사이 고민 상담 창구라 새벽 1시에도 전화가 옵니다. 정작 당신의 고민은 누구에게도 꺼낸 적이 없습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "단체 여행에서 일정표는 안 짜지만 상비약, 보조 배터리, 물티슈를 챙겨 와서 다들 당신 가방부터 찾습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ],
-        "alone": [
-          { "text": "혼자 있는 저녁, 차를 우려 놓고 미뤄 둔 뜨개질을 하며 하루 동안 삼킨 말을 천천히 풀어냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "아무도 없는 방에서 거울을 보며 낮에 못 한 말을 소리 내 연습해 봅니다. 내일은 말하자고 다짐하면서요.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
-        ]
-      },
-      "strengths": [
-        "당신에게는 오래 품어 단단하게 만드는 힘이 있어서, 시간이 지날수록 실력과 신뢰가 겹겹이 쌓입니다.",
-        "사람의 말 뒤에 있는 마음을 읽습니다. 그래서 당신에게 한 번 털어놓은 사람은 다시 찾아옵니다.",
-        "꼼꼼함과 끈기가 결과로 남습니다. 연구·기록·디자인·의료·교육처럼 깊이가 쌓이는 자리에서 실력이 드러납니다."
-      ],
-      "overuse": [
-        "음이 많은 여성은 '조용하고 참하다'는 사회의 칭찬과 방향이 같아, 그 칭찬이 오히려 목소리를 안쪽에 가둡니다. 칭찬받는 모습이 곧 당신이 원하는 모습은 아닙니다.",
-        "양의 기둥이 하나뿐이거나 없으면 거절과 요구가 가장 어렵습니다. 부탁을 다 받아 주다 지치니, 원하는 것을 한 문장으로 먼저 말하는 습관 하나면 충분합니다.",
-        "요즘 일터는 자기 홍보와 적극성을 요구해 음의 속도와 정면으로 부딪칩니다. 느린 건 고칠 흠이 아니라 작업 방식이니, 말 대신 기록으로 결과를 보여 주면 됩니다."
-      ],
-      "strengthRules": {
-        "strong": "여덟 글자가 모두 음이거나 일간과 월지가 함께 음이면 진주층이 두껍습니다. 속은 단단한데 밖에서는 늘 '괜찮은 사람'으로 보여 지침이 가려집니다.",
-        "weak": "음 여섯, 양 둘이고 그 양이 일주에 있으면 평소엔 조용해도 자기 일과 자기 사람 앞에서는 분명하게 선을 긋습니다.",
-        "clash": "사해충처럼 음 기둥끼리 충이 있으면 참아 둔 것이 한꺼번에 흔들립니다. 오래 조용하다 갑자기 단호해지는 순간이 오니, 주변에 미리 작은 신호를 보냅니다.",
-        "rule": "엔진 YinYangLabel YIN_HEAVY + gender FEMALE. yin ≥ yang+2: 8자 6:2 이상, 시간 미상 6자 4:2 이상(기둥 단위로 짝수)."
-      },
-      "dimensionTags": { "introspection": 0.7, "caretaking": 0.6, "persistence": 0.6, "conflictApproach": -0.6, "boundarySetting": -0.5, "verbalOutput": -0.5, "detailFocus": 0.5 },
-      "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "자기 마음을 안쪽에서 다듬는 Fi가 진주처럼 품는 방식과 겹칩니다" },
-        { "target": "ISFJ", "kind": "resonance", "why": "기억하고 챙기는 Si-Fe가 조용히 받쳐 주는 습관과 맞물립니다" },
-        { "target": "ENTJ", "kind": "tension", "why": "먼저 요구하고 밀어붙이는 Te가 기다리는 속도와 정면으로 엇갈립니다" },
-        { "target": "ESFP", "kind": "tension", "why": "지금 이 자리를 즐기며 드러내는 Se가 안으로 모으는 습관과 방향이 다릅니다" },
-        { "target": "Fe", "kind": "conditional", "why": "Fe가 강하면 남의 기분을 먼저 맞춰, 칭찬받는 '참함'이 더 단단히 굳습니다" }
-      ],
-      "engineSupport": true,
-      "engineKey": "YIN_HEAVY",
-      "sources": ["classic:sm1:原造化之始", "foundation:yin_yang:yin", "통용(성별 결합 해석은 현대 한국 명리 통념)"],
       "confidence": "통용"
     },
     {
@@ -428,7 +229,7 @@
         "당신에게는 상황을 보고 힘을 바꿔 쓰는 감각이 있어서, 밀어야 할 때와 기다려야 할 때를 몸이 압니다.",
         "한쪽 끝으로 치우치지 않아 다양한 사람과 오래 갑니다. 결이 다른 사람들 사이에서 통역사 역할을 맡습니다.",
         "충격을 받아도 회복이 고르게 옵니다. 한쪽 힘이 막히면 다른 쪽 힘으로 버텨 쉽게 바닥나지 않습니다.",
-        "조율·중재·기획·인사처럼 양쪽을 다 이해해야 하는 자리에서 균형 감각이 바로 결과가 됩니다."
+        "양쪽을 다 이해해야 하는 자리에서 균형 감각이 바로 결과가 됩니다."
       ],
       "overuse": [
         "양쪽 힘이 같은 무게라 결정적인 순간에 어느 쪽도 못 고르는 모습이 나옵니다. 저울이 멈춘 채로는 길이 안 열리니, 마감 시간을 먼저 정해 두면 손이 움직입니다.",

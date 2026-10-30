@@ -389,10 +389,9 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
   }
 
   // 음양
+  // 성별로 나누지 않는다(P6: 성별 변형은 "남자답다" 같은 고정관념이 핵심이라 중립 항목에 합쳤다).
   const yy = saju.yinYang;
-  const gender = saju.input.gender;
-  const suffix = yy.label !== "BALANCED" && (gender === "MALE" || gender === "FEMALE") ? `:${gender}` : "";
-  push({ id: `yinYang:${yy.label}${suffix}`, family: "yinYang", positions: [], strength: Math.max(yy.yin, yy.yang) >= 0.75 * (yy.yin + yy.yang) ? "strong" : "medium", basis: `yin=${yy.yin},yang=${yy.yang}` }); // 통용 편중 기준: 8자 중 한쪽 6자 이상(P3.5 A8, 기본값 #7)
+  push({ id: `yinYang:${yy.label}`, family: "yinYang", positions: [], strength: Math.max(yy.yin, yy.yang) >= 0.75 * (yy.yin + yy.yang) ? "strong" : "medium", basis: `yin=${yy.yin},yang=${yy.yang}` }); // 통용 편중 기준: 8자 중 한쪽 6자 이상(P3.5 A8, 기본값 #7)
 
   // 조후
   push({ id: `climate:${det.climate.featureKey}`, family: "climate", positions: [], strength: det.climate.level, basis: `${det.climate.monthBranch}월 ${det.climate.dayMaster} 조후 ${det.climate.level}` });

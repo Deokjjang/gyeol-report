@@ -99,57 +99,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YANG_HEAVY:FEMALE:ENTJ",
-      "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
-      "mbtiTarget": "ENTJ",
-      "kind": "resonance",
-      "dimension": "directness",
-      "score": 2.48,
-      "why": "양의 글자가 많은 여성은 다들 망설일 때 먼저 움직이는 쪽입니다. ENTJ도 모임 날짜가 공중에 떠 있는 꼴을 오래 못 봐서, 기다리다 결국 직접 정해 버리죠. 시원하다는 말과 세다는 말을 같이 듣지만, 그건 당신의 결함이 아니라 주변 기대와의 온도 차입니다.",
-      "scene": { "text": "동창 여행 단톡방에 사흘째 '아무 데나 좋아'만 오가자, 숙소 세 곳 비교표와 투표 링크를 올리고 '오늘 밤 12시 마감'이라고 적습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "연애 사건 단정",
-          "성 역할 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YANG_HEAVY:FEMALE",
-        "mbti:ENTJ:functionStack",
-        "추정"
-      ]
-    },
-    {
-      "id": "fusion:yinYang:YANG_HEAVY:MALE:ENTJ",
-      "myeongriId": "yinYang:YANG_HEAVY:MALE",
-      "mbtiTarget": "ENTJ",
-      "kind": "resonance",
-      "dimension": "controlNeed",
-      "score": 2.35,
-      "why": "양의 글자가 많은 남성은 밀고 가는 힘에 '남자답다'는 칭찬까지 붙어 브레이크가 잘 안 걸립니다. ENTJ의 Fi는 가장 늦게 깨어나서, 달리는 동안엔 쌓인 피로를 거의 못 느낍니다. 판을 잡는 속도는 누구보다 빠른데, 운전대를 넘기고 쉬는 법은 늦게 배웁니다.",
-      "scene": { "text": "큰 일을 끝낸 다음 날에도 아침 여섯 시에 눈을 떠 다음 목표 목록을 씁니다. 친구가 '좀 쉬어'라고 하면 '쉬는 것도 계획에 넣었어'라고 답합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "성별 고정관념 단정",
-          "건강 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YANG_HEAVY:MALE",
-        "mbti:ENTJ:functionStack",
-        "mbti:ENTJ:signals",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:climate:庚:autumn:ENTJ",
       "myeongriId": "climate:庚:autumn",
       "mbtiTarget": "ENTJ",

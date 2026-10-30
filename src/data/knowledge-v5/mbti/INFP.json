@@ -19,7 +19,7 @@
         "work": [
           { "text": "의미 없는 일에는 몸이 안 움직입니다. '이게 누구한테 좋은 일인지'가 납득되면 밤을 새웁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
           { "text": "회의에서 말이 없다가 끝나고 한 사람에게 '아까 그 결정, 저는 좀 불편했어요'라고 조용히 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-          { "text": "경쟁과 평가가 강한 조직에서 빨리 소진됩니다. 글·상담·돌봄·창작처럼 자기 결을 쓰는 일에 오래 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
+          { "text": "경쟁과 평가가 강한 조직에서 빨리 소진됩니다. 자기 결을 쓰는 일에 오래 남습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } }
         ],
         "money": [
           { "text": "돈을 가치로 씁니다. 동물 단체 후원, 독립 서점, 친구의 작은 가게. 효율보다 마음이 가는 곳에 지갑이 열립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

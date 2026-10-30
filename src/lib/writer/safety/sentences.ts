@@ -7,7 +7,7 @@
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
-import { LOVE_TIMING, OLD_NEGATIVE, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences } from "./patterns";
+import { AWKWARD_PHRASE, LOVE_TIMING, OLD_NEGATIVE, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences } from "./patterns";
 
 export type SafetyFacts = {
   readonly birthTimeKnown: boolean;
@@ -118,7 +118,7 @@ export function filterParagraph(p: string, f: SafetyFacts, chapter: number, dele
   return out === p ? p : out.replace(/ {2,}/g, " ").trim();
 }
 
-export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed" | "trait_repeat"; readonly text: string };
+export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed" | "trait_repeat" | "awkward_phrase" | "info_repeat"; readonly text: string };
 /** "풍경 같은 기운"처럼 그림만 있고 정체(쉬운 말(용어))가 없는 기운 이름(P3.7 1-5). 같은 문단에 괄호 용어가 있으면 정체를 밝힌 것으로 본다. */
 const IMAGE_ONLY = /[가-힣]+ 같은 (기운|힘)(?![가-힣]*\()/;
 /** 경고: 과거 단정 문장, 용어가 괄호 밖에서 먼저 나온 경우(용어 목록은 호출하는 쪽이 준다). */
@@ -126,6 +126,7 @@ export function styleWarnings(chapter: number, paragraphs: readonly string[], te
   const out: StyleWarning[] = [];
   for (const p of paragraphs) {
     for (const s of splitSentences(p)) if (isPastAssertion(s)) out.push({ chapter, kind: "past_assertion", text: s });
+    for (const s of splitSentences(p)) if (AWKWARD_PHRASE.test(s)) out.push({ chapter, kind: "awkward_phrase", text: s });
     if (!/\([가-힣·]{1,8}\)/.test(p)) for (const s of splitSentences(p)) if (IMAGE_ONLY.test(s) && !/앞에서|앞서|그|이 /.test(s.slice(0, s.search(IMAGE_ONLY)))) out.push({ chapter, kind: "image_unnamed", text: s });
     for (const t of terms) {
       if (introduced.has(t)) continue;

@@ -237,30 +237,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YANG_HEAVY:MALE:ISTP",
-      "myeongriId": "yinYang:YANG_HEAVY:MALE",
-      "mbtiTarget": "ISTP",
-      "kind": "conditional",
-      "dimension": "independence",
-      "score": 1.54,
-      "why": "양이 많은 남성은 가속 페달만 닳은 승합차처럼 출발이 빠르고, 몸으로 부딪쳐 배우는 힘이 큽니다. ISTP는 일정과 계획은 남에게 맡겨도 운전과 짐, 고장 난 것 앞에서는 가장 먼저 손을 씁니다. 그래서 '남자니까 이끌어라'는 기대가 붙는 자리는 버겁고, 몸으로 풀 문제가 생긴 자리는 가장 편합니다.",
-      "scene": { "text": "워크숍에서 '네가 조장 해'라는 말엔 손을 내젓다가, 가는 길에 버스가 멈춰 서자 제일 먼저 내려 보닛을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "연애 사건 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YANG_HEAVY:MALE",
-        "mbti:ISTP:functionStack",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:twelveStage:死:ISTP",
       "myeongriId": "twelveStage:死",
       "mbtiTarget": "ISTP",

@@ -55,6 +55,31 @@ export function softenExperience(sentence: string): string | null {
   return out !== sentence && !isPastAssertion(out) ? out : null;
 }
 
+/**
+ * 비문·번역투(P6, 경고만): 브리프의 동사·평가어를 명사로 바꿔 붙인 꼴("손잡음이 걸려서", "좋음과 부담이 섞인 결"),
+ * 소유격 뒤 '쪽'("말수가 많은 ENTJ의 쪽이"), 딱딱한 번역 어미("~함에 있어", "~에 의해"). 지식 lint도 같은 정규식을 본다.
+ */
+export const AWKWARD_PHRASE = /의 쪽(이|은|을|으로|에서)?(?=[\s,.]|$)|손잡음|(좋음|나쁨|기쁨|설렘|부담|걱정)과 [가-힣]{1,4}이 섞인|섞인 결|함에 있어|에 의해(서)?(?=[\s,])/;
+
+/**
+ * 성별 고정관념(P6, 지식 lint 금지): "남자답다", "참는 게 남자다움", "여자치고 세다", 성별로 사람을 부르는 이름("조용히 고르는 남자").
+ * 배우자성·자녀성처럼 명리 규칙이 성별로 갈리는 문장은 허용. "둘만 남자"(남다)는 낱말이 아니라 동사라 뺀다.
+ */
+export const GENDER_WORD = /(?<!(?:만|가|이|하나|둘) )남자|여자|남성|여성|사내대장부|조신|참하[다고게]|참한/;
+const SPOUSE_RULE = /배우자|자녀성|자녀 별|자녀를 뜻/;
+export const isGenderStereotype = (sentence: string) => GENDER_WORD.test(sentence) && !SPOUSE_RULE.test(sentence);
+
+/**
+ * 직업·분야 예시 나열(P6): "공무·법무·품질·회계처럼 책임이 분명한 일". 원고에 다른 직업 목록이 그대로 옮겨졌다.
+ * 가운뎃점이나 쉼표로 이은 세 개 이상 중 직업·분야 낱말이 둘 이상이고 바로 뒤에 "처럼·같은"이 오면 목록이다.
+ */
+const JOB_FIELD = new Set("영업 홍보 기획 연구 교육 상담 디자인 법무 법 감사 품질 회계 의료 관리 행정 공무 공공 편집 콘텐츠 강의 강단 방송 무역 유통 재무 금융 운영 개발 창업 미용 요리 서비스 인사 총무 기술 분석 설계 보안 검수 검토 검증 운송 기자 외교 공연 무대 발표 판매 글쓰기 번역 전략 정보 조사 조율 중재 변론 비평 협상 사업 구매 입찰 투자 제조 경영 대표 전문직 패션 뷰티 예술 돌봄 복지 정비 교정 데이터 물류 현장 운동 공학 건설 부동산 창작 마케팅 개척".split(" "));
+const LIST_BEFORE_LIKE = /((?:[가-힣A-Za-z]{1,8}(?: [가-힣A-Za-z]{1,6})?·){2,}[가-힣A-Za-z]{1,8}(?: [가-힣A-Za-z]{1,6})?|(?:[가-힣A-Za-z]{1,8}, ){2,}[가-힣A-Za-z]{1,8}) ?(처럼|같은)/g;
+export function jobFieldList(text: string): string | null {
+  for (const m of text.matchAll(LIST_BEFORE_LIKE)) if (m[1].split(/·|, /).filter(x => JOB_FIELD.has(x.trim().split(" ").at(-1)!)).length >= 2) return m[0];
+  return null;
+}
+
 /** 문장 단위로 자른다(마침표·물음표·느낌표·줄바꿈). */
 export function splitSentences(text: string): string[] {
   return text.match(/[^.!?\n]+[.!?]+["'”’)]*|[^.!?\n]+$/gm)?.map(s => s.trim()).filter(Boolean) ?? [];

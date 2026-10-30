@@ -2,7 +2,8 @@
  * 장 목록(product-narratives) + 절 단위 재료 배정(P3.8 1).
  * 절마다 그 절의 질문과 1순위 재료(영역 장면·상품 근거·원국 참조·관계 장면·연·월 항목)를 먼저 놓고, trait는 그다음에 붙인다.
  * trait는 책 전체에서 소개 1회(그 절에서 그림으로) + 적용 2회까지("앞에서 본 ○○" 한 문장 + 그 절의 새 정보), 같은 장 안에서는 1회.
- * 같은 축(의미 그룹·가장 센 행동 차원)은 trait·Fusion·팩폭·MBTI 그늘을 합쳐 책 전체 3회, 한 장에 1회.
+ * 같은 축(의미 그룹·가장 센 행동 차원)은 trait·Fusion·팩폭·MBTI 그늘을 합쳐 한 장에 1회. 책 전체 3회는 경고만(P6: 같은 성향이 다른 영역의
+ * 새 정보와 함께 나오는 것은 반복이 아니다 — 반복은 같은 주장·장면·처방이 다시 나오는 것, 안전망 infoRepeats가 센다).
  * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + 그해·그달 글자가 건드리고 앞에서 소개된 trait 0~1개(P3.7 1-1, 적용 1회로 센다).
  */
 import type { CompatTopic, Domain, MbtiProfile, MyeongriFeature, SceneItem, SectionPlan } from "@/data/knowledge-v5/schema";
@@ -27,7 +28,7 @@ export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; chapte
 
 /** trait 적용(소개 뒤 다시 부르기)은 책 전체에서 이 횟수까지. */
 export const MAX_TRAIT_APPLIES = 2;
-/** 같은 축(의미 그룹·가장 센 행동 차원)은 책 전체에서 이 횟수까지(소개 1 + 적용 2). */
+/** 같은 축(의미 그룹·가장 센 행동 차원)이 책 전체에서 이 횟수를 넘으면 경고(배정은 막지 않는다, P6). */
 export const MAX_AXIS_USES = 3;
 /** 한 장에서 새로 소개하는 trait(새 그림)는 이 수까지(앞 장에 소개가 몰리지 않게). */
 export const MAX_INTROS_PER_CHAPTER = 2;
@@ -121,7 +122,8 @@ class Ledger {
   readonly warnings: string[] = [];
   introduced(id: string) { return Boolean(this.trait.get(id)?.intro); }
   inChapter(id: string, chapter: string) { const u = this.trait.get(id); return u?.intro === chapter || Boolean(u?.applies.includes(chapter)); }
-  axisFree(keys: readonly string[], chapter: string) { return keys.every(k => { const a = this.axis.get(k); return !a?.chapters.has(chapter) && (a?.count ?? 0) < MAX_AXIS_USES; }); }
+  // 행동 축은 한 장 1회만 막는다. 궁합 두 사람의 같은 요소(pair:)는 같은 뜻이라 책 3회도 막는다(같은 정보 반복).
+  axisFree(keys: readonly string[], chapter: string) { return keys.every(k => { const a = this.axis.get(k); return !a?.chapters.has(chapter) && (!k.startsWith("pair:") || (a?.count ?? 0) < MAX_AXIS_USES); }); }
   /** mode: intro = 아직 소개 안 된 것만, apply = 소개된 것만(적용 2회 안), any = 둘 다. */
   can(src: TraitSource, chapter: string, mode: "intro" | "apply" | "any"): boolean {
     const id = src.trait.id, intro = this.introduced(id);
@@ -192,7 +194,7 @@ export function planChapters(input: PlanCtx): PlanResult {
     const rs = ctx.relScenes; if (!rs) return null;
     const dims = [...(spec.dims ?? []), ...(p.c.dimensionFocus ?? [])];
     const inChapter = new Set(p.sections.flatMap(s => s.materials.flatMap(m => m.kind === "rel" ? [m.topic] : [])));
-    // 장면의 가장 센 행동 차원도 축으로 센다(책 3회·한 장 1회, P3.8 r1: '부모 챙김이 점검으로 읽힘' 다섯 번).
+    // 장면의 가장 센 행동 차원도 축으로 센다(한 장 1회, 책 3회 초과는 경고. P3.8 r1: '부모 챙김이 점검으로 읽힘' 다섯 번).
     const relAxis = (d: Readonly<Record<string, number>>) => { const a = topDimension(d, 0.5); return a ? [`rel:${a}`] : []; };
     const cands = rs.topics.flatMap(t => t.scenes.filter(s => !usedRel.has(s.text) && !rs.exclude?.test(s.text) && (!s.ages || s.ages === "any" || !rs.childAge || s.ages === rs.childAge)).map(s => ({ t, s })))
       .filter(x => !inChapter.has(x.t.label) && ledger.axisFree(relAxis(x.s.dims), p.id));

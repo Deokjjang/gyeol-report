@@ -13,7 +13,7 @@ export type ModelPrice = {
 };
 
 // 단일 가격표. 출처와 확인일을 항목 옆에 적는다. 확인하지 못한 값은 넣지 않는다(없으면 null → 토큰만 기록).
-// Anthropic: https://platform.claude.com/docs/en/about-claude/pricing (2026-10-28 확인, 5분 캐시 쓰기 기준, 표준 처리)
+// Anthropic: https://platform.claude.com/docs/en/about-claude/pricing (2026-10-28 확인, 2026-10-30 재확인, 5분 캐시 쓰기 기준, 표준 처리)
 // OpenAI:    https://developers.openai.com/api/docs/pricing (2026-10-28 확인, 표준 등급, 짧은 컨텍스트)
 const PRICES: Record<LlmProvider, Record<string, ModelPrice>> = {
   anthropic: {
@@ -30,6 +30,8 @@ const PRICES: Record<LlmProvider, Record<string, ModelPrice>> = {
     "gpt-4.1-nano": { input: 0.1, cachedInput: 0.025, cacheWrite: null, output: 0.4 },
     "gpt-4o-mini": { input: 0.15, cachedInput: 0.075, cacheWrite: null, output: 0.6 },
     "gpt-5.4-nano": { input: 0.2, cachedInput: 0.02, cacheWrite: null, output: 1.25 },
+    // 2026-10-30 확인(P6 작가 후보 B).
+    "gpt-6.1-terra": { input: 1, cachedInput: 0.05, cacheWrite: null, output: 5 },
   },
 };
 

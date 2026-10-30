@@ -594,31 +594,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YIN_HEAVY:FEMALE:ENTP",
-      "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
-      "mbtiTarget": "ENTP",
-      "kind": "tension",
-      "dimension": "verbalOutput",
-      "score": 1.36,
-      "why": "음의 글자가 많은 여성은 '조용하고 참하다'는 칭찬과 기운의 방향이 같아, 목소리가 안쪽에 머물기 쉽습니다. ENTP의 Ne와 Ti는 반론을 던지고 판을 흔들 때 가장 살아납니다. 머릿속엔 날카로운 반박이 이미 완성돼 있는데, 입 밖으로는 '혹시 이런 방법은요?'로 둥글게 나옵니다.",
-      "scene": { "text": "동네 모임 회의에서 상대 안의 구멍 세 개를 메모해 두고, 손을 들어서는 '제가 잘 몰라서 그런데요'로 첫마디를 엽니다. 그 질문 하나에 회의실이 조용해집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "외모 평가",
-          "연애 사건 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:FEMALE",
-        "mbti:ENTP:functionStack",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:dayPillar:丁丑:ENTP",
       "myeongriId": "dayPillar:丁丑",
       "mbtiTarget": "ENTP",

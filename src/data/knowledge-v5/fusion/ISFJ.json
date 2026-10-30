@@ -334,32 +334,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YIN_HEAVY:FEMALE:ISFJ",
-      "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
-      "mbtiTarget": "ISFJ",
-      "kind": "resonance",
-      "dimension": "caretaking",
-      "score": 1.77,
-      "why": "음이 많은 여성은 품고 기다리는 힘이 '손이 안 간다'는 칭찬과 겹쳐, 그 칭찬이 오히려 목소리를 안쪽에 가둡니다. ISFJ는 남의 부탁은 바로 들어주면서, 내 부탁 하나를 문장으로 만드는 데는 며칠을 씁니다. 고마운 사람은 많은데, 막상 기대고 싶은 날 연락할 이름은 잘 떠오르지 않습니다.",
-      "scene": { "text": "친구들과 메뉴를 정할 때 '아무거나 괜찮아'가 먼저 나옵니다. 사실 오늘은 국밥이 먹고 싶었다는 걸 집에 가는 길에 혼자 떠올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "성별 고정관념 단정",
-          "가족 갈등 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:FEMALE",
-        "mbti:ISFJ:functionStack",
-        "mbti:ISFJ:signals",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:climate:戊:spring:ISFJ",
       "myeongriId": "climate:戊:spring",
       "mbtiTarget": "ISFJ",
@@ -547,31 +521,6 @@
         "climate:丁:winter",
         "mbti:ISFJ:functionStack",
         "mbti:ISFJ:signals",
-        "추정"
-      ]
-    },
-    {
-      "id": "fusion:yinYang:YIN_HEAVY:MALE:ISFJ",
-      "myeongriId": "yinYang:YIN_HEAVY:MALE",
-      "mbtiTarget": "ISFJ",
-      "kind": "resonance",
-      "dimension": "caretaking",
-      "score": 1.47,
-      "why": "음의 글자가 많은 남성은 해 진 뒤에야 꽃잎을 여는 달맞이꽃처럼 조용히 고르고 뒤에서 마무리합니다. ISFJ는 고맙다는 말을 들을 자리보다 아무도 모르게 도울 수 있는 자리를 더 편해하지요. 챙김의 섬세함은 두 배지만, '남자가 앞장서야지'라는 기대에 맞춰 목소리를 억지로 키우면 그 장점이 묻힙니다.",
-      "scene": { "text": "회식 자리에서 건배사는 끝까지 사양하고, 대신 술 못 마시는 동료 잔에 몰래 사이다를 채워 둡니다. 돌아가는 길엔 막차 놓친 후배의 택시를 불러 줍니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "외모 평가",
-          "연애 사건 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:MALE",
-        "mbti:ISFJ:functionStack",
         "추정"
       ]
     },

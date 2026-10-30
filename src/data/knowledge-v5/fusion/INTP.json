@@ -406,31 +406,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YANG_HEAVY:FEMALE:INTP",
-      "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
-      "mbtiTarget": "INTP",
-      "kind": "tension",
-      "dimension": "independence",
-      "score": 1.25,
-      "why": "양의 글자가 많은 여성은 남들이 망설일 때 먼저 손을 들고 판을 쥐는 힘이 큽니다. INTP는 일이 왜 그렇게 돌아가는지는 궁금해도, 사람을 챙기고 일정을 관리하는 데는 흥미가 잘 붙지 않지요. 앞장은 서 놓고 운영은 귀찮아서, 맡은 자리의 절반은 구조를 뜯어고치는 데 쓰고 나머지는 미룹니다.",
-      "scene": { "text": "동네 플리마켓 준비 모임에서 아무도 안 나서자 '제가 맡을게요' 하고 손을 듭니다. 첫 회의엔 역할표 대신 부스 동선 설계도 세 장을 그려 오고, 일정 공지는 이틀째 잊고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "직업 단정",
-          "연애 사건 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YANG_HEAVY:FEMALE",
-        "mbti:INTP:functionStack",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:structure:OFFICER_HEAVY:INTP",
       "myeongriId": "structure:OFFICER_HEAVY",
       "mbtiTarget": "INTP",

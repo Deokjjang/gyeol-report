@@ -311,31 +311,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YANG_HEAVY:FEMALE:INFP",
-      "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
-      "mbtiTarget": "INFP",
-      "kind": "tension",
-      "dimension": "directness",
-      "score": 1.46,
-      "why": "양의 글자가 많은 여성은 먼저 손 들고 먼저 움직이는 힘이 큽니다. INFP는 움직이기 전에 그 일이 정말 자기다운지부터 마음속 저울에 올려 봅니다. 손은 먼저 올라가는데 마음의 허락은 늦게 와서, 앞서 걷다 혼자 멈춰 서는 날이 생깁니다.",
-      "scene": { "text": "동아리 회의에서 아무도 안 나서자 회장을 맡겠다고 손을 들고, 그날 밤 이불 속에서 '내가 왜 그랬지'를 세 번쯤 중얼거립니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "성별 고정관념 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YANG_HEAVY:FEMALE",
-        "mbti:INFP:functionStack",
-        "mbti:INFP:signals",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:shinsal:GWIMUN:INFP",
       "myeongriId": "shinsal:GWIMUN",
       "mbtiTarget": "INFP",

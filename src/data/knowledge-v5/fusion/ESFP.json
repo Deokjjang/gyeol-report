@@ -551,31 +551,6 @@
       ]
     },
     {
-      "id": "fusion:yinYang:YIN_HEAVY:MALE:ESFP",
-      "myeongriId": "yinYang:YIN_HEAVY:MALE",
-      "mbtiTarget": "ESFP",
-      "kind": "tension",
-      "dimension": "attentionSeeking",
-      "score": 1.41,
-      "why": "음이 많은 남성은 해 진 뒤에야 꽃잎을 여는 달맞이꽃처럼 판을 조용히 읽는 쪽입니다. ESFP는 좋아하는 마음이 본인보다 얼굴에 먼저 떠서 친구들이 먼저 눈치채는 사람이고요. 마음은 이미 다 들켰는데 고백할 땐 타이밍을 재다 계절을 넘겨, 겉과 속의 속도 차가 생깁니다.",
-      "scene": { "text": "동호회 뒤풀이에선 분위기를 띄우는 사람인데, 좋아하는 사람에게 보낼 메시지는 쓰고 지우기를 일주일째 반복하고 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
-      "factBoundary": {
-        "requires": [
-          "mbtiKnown",
-          "genderKnown"
-        ],
-        "forbids": [
-          "연애 사건 단정",
-          "성별 고정관념 단정"
-        ]
-      },
-      "sources": [
-        "yinYang:YIN_HEAVY:MALE",
-        "mbti:ESFP:functionStack",
-        "추정"
-      ]
-    },
-    {
       "id": "fusion:dayMaster:乙:ESFP",
       "myeongriId": "dayMaster:乙",
       "mbtiTarget": "ESFP",

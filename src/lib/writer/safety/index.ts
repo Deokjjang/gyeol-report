@@ -6,7 +6,7 @@ import type { Brief } from "@/lib/brief/schema";
 import { writeDeterministicChapter } from "../deterministic";
 import { chapterChars, type BookChapter, type BookSection, type ChapterSource } from "../format";
 import type { WriterChapter } from "../prompt";
-import { briefCopyMetric, connectorRepeats, traitMentions, type BriefCopyMetric, type ConnectorRepeat, type TraitUseMetric } from "./metrics";
+import { briefCopyMetric, connectorRepeats, infoRepeats, traitMentions, type BriefCopyMetric, type ConnectorRepeat, type InfoRepeatMetric, type TraitUseMetric } from "./metrics";
 import { allowedWindows, filterParagraph, sentenceViolation, styleWarnings, type Deletion, type Replacement, type SafetyFacts, type StyleWarning } from "./sentences";
 import { glossaryWarnings } from "./terms";
 import { fixBackrefs, mergeShrunk } from "./tidy";
@@ -20,8 +20,8 @@ export const MIN_CHAPTER_RATIO = 0.6;
 export type DraftChapter = { readonly chapter: BookChapter; readonly source: Exclude<ChapterSource, "deterministic"> };
 export type FinalChapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly keys?: readonly string[] };
 /** props: 브리프 usedProps 소품이 본문에 나온 장 수(P3.6 A1). experience: 경험 단정 바꿈·지움 수(P3.6 A6). */
-/** traitUse: 원고의 trait 언급(소개·적용)·장 안 중복·같은 축 중복(P3.8 1). */
-export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric };
+/** traitUse: 원고의 trait 언급(소개·적용)·장 안 중복·같은 축 중복(P3.8 1, 참고용). infoRepeats: 같은 정보(주장·장면·처방) 반복(P6 반복의 정의). */
+export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric };
 export type SafetyReport = { readonly deletions: readonly Deletion[]; readonly warnings: readonly StyleWarning[]; readonly replacements?: readonly Replacement[]; readonly metrics?: SafetyMetrics };
 /** 같은 소품이 본문에 나와도 되는 장 수(P3.6 A1). */
 export const MAX_PROP_CHAPTERS = 2;
@@ -102,5 +102,7 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   const experience = { replaced: replacements.length, deleted: deletions.filter(d => d.rule === "experience_assert").length };
   const traitUse = traitMentions(brief, chapters);
   for (const w of traitUse.warnings) warnings.push({ chapter: 0, kind: "trait_repeat", text: w });
-  return { chapters, report: { deletions, warnings, replacements, metrics: { briefCopy: briefCopyMetric(brief, chapters), connectors: connectorRepeats(chapters), merged, backrefFixed, props, experience, traitUse } } };
+  const info = infoRepeats(brief, chapters);
+  for (const r of info.pairs) warnings.push({ chapter: Number(r.at[1].split(".")[0]), kind: "info_repeat", text: `${r.kind} ${r.at.join("~")}: ${r.b}` });
+  return { chapters, report: { deletions, warnings, replacements, metrics: { briefCopy: briefCopyMetric(brief, chapters), connectors: connectorRepeats(chapters), merged, backrefFixed, props, experience, traitUse, infoRepeats: info } } };
 }

@@ -102,7 +102,8 @@ describe("collectFeatureHits: 가족별 매핑", () => {
     expect(elementHits.filter((h) => h.id.endsWith(":STRONG")).map((h) => h.id)).toEqual(bal.strongest.level === "많음" ? [`element:${bal.strongest.element}:STRONG`] : []);
     expect(elementHits.filter((h) => /:(WEAK|MISSING)$/.test(h.id)).length).toBeLessThanOrEqual(1);
     for (const h of elementHits.filter((x) => x.id.endsWith(":BALANCED"))) expect(bal.status[h.id.split(":")[1] as keyof typeof bal.status]).toBe("보통");
-    expect(hits.find((h) => h.family === "yinYang")?.id).toBe("yinYang:YANG_HEAVY:FEMALE");
+    // P6: 음양 편중은 성별로 나누지 않는다.
+    expect(hits.find((h) => h.family === "yinYang")?.id).toBe("yinYang:YANG_HEAVY");
     expect(hitsOf("甲子 丙寅 甲午 丙寅", { gender: "OTHER_OR_UNSPECIFIED" }).find((h) => h.family === "yinYang")?.id).toBe("yinYang:YANG_HEAVY");
     expect(hitsOf("甲子 丁卯 甲午 丁卯", { gender: "MALE" }).find((h) => h.family === "yinYang")?.id).toBe("yinYang:BALANCED");
   });

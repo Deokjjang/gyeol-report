@@ -61,7 +61,7 @@ describe("P3.7 원고 보강", () => {
     }
   });
 
-  it("1-3(P3.8): trait·팩폭·Fusion·전환 참조를 합쳐 같은 trait와 같은 축은 한 장에 한 번, 축은 책 전체 3회, 이미지 계열은 대표 하나", () => {
+  it("1-3(P3.8·P6): trait·팩폭·Fusion·전환 참조를 합쳐 같은 trait와 같은 축은 한 장에 한 번, 축 책 3회 초과는 경고, 이미지 계열은 대표 하나", () => {
     for (const [name, b] of briefs) {
       const axisUse = new Map<string, number>();
       for (const c of b.chapters) {
@@ -70,7 +70,8 @@ describe("P3.7 원고 보강", () => {
         expect(new Set(axes).size, `${name} ${c.id}`).toBe(axes.length);
         for (const a of axes) axisUse.set(a, (axisUse.get(a) ?? 0) + 1);
       }
-      for (const [a, n] of axisUse) expect(n, `${name} ${a}`).toBeLessThanOrEqual(MAX_AXIS_USES);
+      // P6: 축 책 3회는 배정 제약이 아니라 경고(plan.warnings)로 남는다.
+      for (const [a, n] of axisUse) if (n > MAX_AXIS_USES) expect(b.plan!.warnings, `${name} ${a}`).toContain(`축 ${a} ${b.plan!.axes[a]}회`);
       for (const t of b.traits.filter(t => t.sameImageAs)) expect(b.traits.find(x => x.id === t.sameImageAs)?.chapters.length, name).toBeGreaterThan(0);
     }
     const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
@@ -86,7 +87,8 @@ describe("P3.7 원고 보강", () => {
     expect(roles.length).toBeGreaterThanOrEqual(2); expect(roles.length).toBeLessThanOrEqual(3);
     expect(adj.length).toBeGreaterThanOrEqual(3); expect(adj.length).toBeLessThanOrEqual(4);
     expect(far.length).toBeGreaterThanOrEqual(2); expect(far.length).toBeLessThanOrEqual(3);
-    for (const p of [...roles, ...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 명리: .+ \/ MBTI: ENTJ의 '.+' 쪽/);
+    // P6: MBTI 근거는 성향의 쉬운 설명 한 구절("ENTJ는 … 편").
+    for (const p of [...roles, ...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 명리: .+ \/ MBTI: ENTJ는 .+ 편$/);
     expect(new Set([...adj, ...far].map(p => p.split(" — ")[0])).size).toBe(adj.length + far.length);
     for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect([...adj, ...far].join(" "), bad).not.toContain(bad);
     const current = ev(career, "currentJob")!.facts.join(" ");

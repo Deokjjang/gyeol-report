@@ -106,3 +106,46 @@ export function traitMentions(brief: Brief, chapters: readonly { readonly n: num
   if (advice > 2) warnings.push(`'한 줄·한마디' 처방 ${advice}회`);
   return { traits, axes, mbti, advice, warnings };
 }
+
+/**
+ * 같은 정보 반복(P6 새 정의). 반복 = 다른 소제목에 같은 주장·같은 장면·같은 처방이 다시 나온 것.
+ * 같은 성향(trait·축)이 다른 영역에서 새 정보와 함께 나오는 것은 세지 않는다: 문장 내용이 겹칠 때만 센다.
+ * 판정: 이름(trait 쉬운 이름·용어, MBTI 유형, 고객 이름, 직업)과 되짚기 말("앞에서 본")을 지운 두 문장이
+ * 공백·문장부호를 뺀 글자 3개 묶음 자카드 ≥ INFO_JACCARD, 또는 같은 글자 INFO_RUN자 이상이 이어지면 같은 정보.
+ * 종류: 처방(권유 끝맺음) · 장면(따옴표 대사 또는 브리프 장면 소품) · 주장(그 밖).
+ */
+export const INFO_JACCARD = 0.45;
+export const INFO_RUN = 14;
+export type InfoRepeat = { readonly kind: "claim" | "scene" | "advice"; readonly at: readonly [string, string]; readonly a: string; readonly b: string };
+export type InfoRepeatMetric = { readonly count: number; readonly byKind: Readonly<Record<InfoRepeat["kind"], number>>; readonly pairs: readonly InfoRepeat[] };
+const ADVICE_END = /(보세요|하세요|두세요|주세요|마세요|해요\?|봐요|좋아요|좋습니다|됩니다|충분합니다)[.!?]?["'”’)]*$/;
+const grams = (t: string) => { const g = new Set<string>(); for (let i = 0; i + 3 <= t.length; i++) g.add(t.slice(i, i + 3)); return g; };
+function longestRun(a: string, b: string): number {
+  // 짧은 문장끼리라 O(n·m) DP로 충분하다(문장 80자 안팎).
+  let best = 0; const prev = new Array<number>(b.length + 1).fill(0);
+  for (let i = 1; i <= a.length; i++) { let diag = 0; for (let j = 1; j <= b.length; j++) { const tmp = prev[j]; prev[j] = a[i - 1] === b[j - 1] ? diag + 1 : 0; if (prev[j] > best) best = prev[j]; diag = tmp; } }
+  return best;
+}
+export function infoRepeats(brief: Brief, chapters: readonly { readonly n: number; readonly sections: readonly BookSection[] }[]): InfoRepeatMetric {
+  const names = [...new Set([
+    ...brief.traits.flatMap(t => [t.easyName, noHan(t.name)]),
+    brief.mbti?.type, brief.partner?.mbti?.type, brief.person.name, brief.person.callName, brief.partner?.person.name, brief.partner?.person.callName, brief.person.facts.job.detail,
+  ].filter((x): x is string => typeof x === "string" && x.length >= 2))].sort((a, b) => b.length - a.length);
+  const props = [...new Set([...Object.keys(brief.usedProps ?? {}), ...brief.chapters.flatMap(c => c.sceneHint ?? [])])].filter(x => x.length >= 2);
+  const strip = (sen: string) => norm(names.reduce((t, n) => t.split(n).join(" "), sen).replace(/앞에서 본|앞서 본|앞에서 말한/g, " "));
+  const items = chapters.flatMap(c => c.sections.flatMap((s, si) => s.paragraphs.flatMap(p => splitSentences(p)).map(sen => ({ at: `${c.n}.${si + 1}`, sen, key: strip(sen) }))))
+    .filter(x => x.key.length >= 15).map(x => ({ ...x, g: grams(x.key) }));
+  const pairs: InfoRepeat[] = [];
+  for (let i = 0; i < items.length; i++) for (let j = i + 1; j < items.length; j++) {
+    const A = items[i], B = items[j];
+    if (A.at === B.at) continue;
+    let inter = 0; for (const g of A.g) if (B.g.has(g)) inter++;
+    const jac = inter / (A.g.size + B.g.size - inter);
+    if (jac < INFO_JACCARD && (inter < INFO_RUN - 2 || longestRun(A.key, B.key) < INFO_RUN)) continue;
+    const kind = ADVICE_END.test(A.sen) && ADVICE_END.test(B.sen) ? "advice" : /["“'‘]/.test(A.sen + B.sen) || props.some(p => A.sen.includes(p) && B.sen.includes(p)) ? "scene" : "claim";
+    pairs.push({ kind, at: [A.at, B.at], a: A.sen.slice(0, 80), b: B.sen.slice(0, 80) });
+  }
+  const byKind = { claim: 0, scene: 0, advice: 0 };
+  for (const p of pairs) byKind[p.kind]++;
+  return { count: pairs.length, byKind, pairs };
+}
