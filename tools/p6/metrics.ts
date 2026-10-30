@@ -30,6 +30,8 @@ export function bookMetrics(draft: V5BookDraft, e: V5Evidence) {
     awkward: awkward.length, awkwardSamples: awkward.slice(0, 5), dbLeak: dbLeak.length, dbLeakSamples: dbLeak.slice(0, 5), gender: gender.length, genderSamples: gender.slice(0, 3),
     infoRepeats: info?.count ?? null, infoByKind: info?.byKind ?? null, infoPairs: (info?.pairs ?? []).slice(0, 8),
     briefCopy: meta.safety.metrics?.briefCopy?.ratio ?? null,
+    // 만세력 표가 고정됐는지(v4 계산이 입력을 거절하면 표 없이 발행된다).
+    manseTables: e.people.map(p => Boolean(p.table)),
     durationMs: meta.durationMs, tokens: meta.tokens, costUsd: meta.costUsd, costKrw: Math.round(meta.costUsd * KRW_PER_USD * 10) / 10,
     calls: meta.calls.map(c => ({ kind: c.kind, finish: c.finish, ...(c.error ? { error: c.error } : {}), ms: c.ms, chars: c.chars, maxTokens: c.maxTokens, usage: c.usage, costUsd: c.costUsd })),
     writer: meta.writer, promptVersion: meta.promptVersion, knowledgeVersion: meta.knowledgeVersion,

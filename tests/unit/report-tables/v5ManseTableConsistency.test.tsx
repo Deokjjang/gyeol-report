@@ -34,7 +34,7 @@ const SLOT = { stem: { year: "연간", month: "월간", day: "일간", hour: "�
 type Case = { id: string; birthDate: string; birthTime: string; gender: "MALE" | "FEMALE"; pillars: string; mbti?: string };
 /**
  * 20 기준 사례: 절입일에서 떨어진 날짜, 남녀·시간 미상 섞음, 드문 관계(삼합·방합·삼형·자형·상형·천간충·쟁합·괴강·귀문) 포함. pillars = 년 월 일 시.
- * c01은 MBTI를 넣는다: MBTI 없이는 v4 종합 원고 안전 검사(COMPREHENSIVE_MANUSCRIPT_UNSAFE)에 걸려 v4People가 표를 못 만든다(P6 이전부터 있던 문제, 별도 과제).
+ * c01은 MBTI를 넣는다: MBTI 없으면 v4 종합 원고 안전 검사(COMPREHENSIVE_MANUSCRIPT_UNSAFE)에 걸려 v4People가 표만 따로 만드는 길로 간다(아래 "거절해도" 테스트).
  */
 const CASES: Case[] = [
   { id: "c01 사용자 신고(남)", birthDate: "1999-07-31", birthTime: "08:27", gender: "MALE", pillars: "己卯 辛未 甲申 戊辰", mbti: "ENTJ" },
@@ -225,6 +225,25 @@ describe("P6 만세력 표 = 엔진 결과(20 기준 사례)", () => {
       const { table } = await buildCase(c);
       expect(people[i].table.manse.detailRows).toEqual(table.detailRows);
     }
+  }, 120_000);
+
+  // 운영 결제 입력은 compatibilityRoleVersion을 보내지 않아 v4 궁합 생성이 늘 실패한다(P6 발견, 그 전에는 궁합 v5 Book이 표 없이 발행됐다).
+  it("v4 원고 생성이 입력을 거절해도 표는 계산만으로 만든다(종합 MBTI 없음, 운영 입력 그대로의 궁합 하람×서윤)", async () => {
+    const noMbti = { ...CASES[0], mbti: undefined };
+    const v4 = await generateV4ShadowReport(payloadOf(noMbti), { evaluatedAt: POLICY_AT, policyDate: POLICY_AT });
+    expect(v4.ok).toBe(false);
+    const [solo] = await v4People(payloadOf(noMbti), POLICY_AT);
+    expect(solo.table.manse.detailRows).toEqual((await buildCase(CASES[0])).table.detailRows);
+    expect(solo.table.mbti).toBeNull();
+
+    const haram = { name: "하람", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
+    const seoyun = { name: "서윤", birthDate: "1989-03-21", birthTime: "", birthTimeUnknown: true, approximateBirthTimeSlot: "", gender: "FEMALE", mbtiType: "INFP" };
+    const n = normalizeReportInputPayload({ productKey: "saju_mbti_compatibility", productSlug: "compatibility", relationshipType: "love", personA: haram, personB: seoyun }, { now: () => new Date(POLICY_AT) });
+    if (!n.ok) throw new Error(String(n.error));
+    expect((await generateV4ShadowReport(n.value, { evaluatedAt: POLICY_AT, policyDate: POLICY_AT })).ok).toBe(false);
+    const pair = await v4People(n.value as ReportInputPayload, POLICY_AT);
+    expect(pair.map((p) => [p.name, p.table.mbti?.type, p.table.manse.columns.length])).toEqual([["하람", "ENTJ", 4], ["서윤", "INFP", 4]]);
+    expect(pair[1].timeLabel).toBe("출생시간 모름");
   }, 120_000);
 });
 

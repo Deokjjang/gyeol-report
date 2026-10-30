@@ -14,6 +14,13 @@ import type { Brief } from "@/lib/brief/schema";
 import { generateV4ShadowReport } from "@/lib/interpretation-v4/runtimeShadow";
 import { projectV4Tables, type V4RuntimeEvidence } from "@/lib/interpretation-v4/runtimeProjection";
 import { resolveLlmConfig, type LlmProvider } from "@/lib/llm";
+import { calculateCompatibilitySaju } from "@/lib/report-generation/compatibilityGenerationHandler";
+import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
+import { buildCanonicalNatalTable, type CanonicalNatalTableEvidence } from "@/lib/report-knowledge/natalTableEvidence";
+import { buildMbtiCommonProfileTableData } from "@/lib/report-tables/mbtiProfileTableData";
+import { getMbtiSourceByType } from "@/lib/report-tables/mbtiSourceRegistry";
+import type { MbtiCommonProfileTableData } from "@/lib/report-tables/types";
+import type { SajuCalcResult } from "@/lib/saju/types";
 import { birthTimeSlotLabel } from "@/lib/saju/birthTimePrecisionTypes";
 import { SAJU_CALENDAR_VERSION } from "@/lib/saju/calendarVersion";
 import type { ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
@@ -40,12 +47,29 @@ export const briefHash = (b: Brief) => createHash("sha256").update(stableStringi
 /** KST 기준 날짜(YYYY-MM-DD). */
 export const kstDate = (iso: string) => new Date(Date.parse(iso) + 9 * 3_600_000).toISOString().slice(0, 10);
 
-/** 만세력·MBTI 표(BookPerson): 기존 v4 계산을 한 번 빌려 고정한다. 십이신살·신살/귀인·합충형파해 줄은 v5 엔진 결과로 바꾼다(P6). 실패하면 빈 배열(표 페이지 없이 발행). */
+/** 표만 쓰는 v4 근거 묶음: v4 원고 생성 없이 같은 계산(calculateSaju)·원국 표·MBTI 표만 만든다. */
+function v4TableEvidence(payload: ReportInputPayload, policyAt: string): V4RuntimeEvidence | null {
+  const n = normalizeReportInputPayload(payload, { now: () => new Date(policyAt) });
+  if (!n.ok) return null;
+  const input = n.value;
+  const slots = input.kind === "compatibility" ? [["personA", input.personA], ["personB", input.personB]] as const : [["person", input.person]] as const;
+  const calculations: Record<string, SajuCalcResult> = {}, natalTableEvidence: Record<string, CanonicalNatalTableEvidence> = {}, mbtiTables: Record<string, MbtiCommonProfileTableData | null> = {};
+  for (const [slot, p] of slots) {
+    const calc = calculateCompatibilitySaju(p), table = calc.birthTimeContext && buildCanonicalNatalTable(calc.birthTimeContext);
+    if (!table) return null;
+    const source = getMbtiSourceByType(p.mbtiType);
+    calculations[slot] = calc; natalTableEvidence[slot] = table; mbtiTables[slot] = source ? buildMbtiCommonProfileTableData(source) : null;
+  }
+  return JSON.parse(JSON.stringify({ input, calculations, natalTableEvidence, mbtiTables })) as V4RuntimeEvidence;
+}
+
+/** 만세력·MBTI 표(BookPerson): 기존 v4 계산을 한 번 빌려 고정한다. 십이신살·신살/귀인·합충형파해 줄은 v5 엔진 결과로 바꾼다(P6).
+ * v4 원고 생성이 입력을 거절하면(P6: 궁합 V4_COMPATIBILITY_GENERATION_FAILED) 표만 따로 만든다. 그마저 실패하면 빈 배열(표 페이지 없이 발행). */
 export async function v4People(payload: ReportInputPayload, policyAt: string): Promise<BookPerson[]> {
   try {
     const v4 = await generateV4ShadowReport(payload, { evaluatedAt: policyAt, policyDate: policyAt });
-    if (!v4.ok || !v4.evidencePacket) return [];
-    const evidence = v4.evidencePacket as V4RuntimeEvidence;
+    const evidence = v4.ok && v4.evidencePacket ? v4.evidencePacket as V4RuntimeEvidence : v4TableEvidence(payload, policyAt);
+    if (!evidence) return [];
     const tables = projectV4Tables(evidence);
     const persons = payload.productKey === "saju_mbti_compatibility" ? [[payload.personA, "A", "personA"], [payload.personB, "B", "personB"]] as const : [[payload.person, "주인공", "person"]] as const;
     return persons.map(([p, role, slot], i) => ({ name: p.name, role, birth: p.birthDate, gender: p.gender, precision: p.birthTimeUnknown ? "unknown" : p.birthTimePrecision ?? "exact", time: p.birthTime ?? "", mbti: p.mbtiType ?? "",
