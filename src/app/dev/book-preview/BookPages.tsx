@@ -5,6 +5,7 @@ import type { ReportTableElementColorToken } from "../../../lib/report-tables/ty
 import { prePaymentRefundNoticeKo } from "../../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../../lib/legal/privacyPolicy";
 import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTypes";
+import { V5_ROW_LABELS } from "../../../lib/report-tables/v5NatalRows";
 import { CONSENT_SHORT_LABELS, MBTI, requiredConsents, toggleAll, type Book, type Person, type PublishingState } from "./model";
 import { BusinessDetails, DetailSheet, LegalAccordion, SUPPORT_COPY } from "./BookLegal";
 import s from "./book.module.css";
@@ -95,7 +96,7 @@ export function NatalTable({ data }: { data: V4CustomerTables[number] }) {
   const yin = characters.filter(c => c.yinYang === "yin").length;
   return <div className={s.tables}><table><caption>{data.name}의 만세력</caption><thead><tr><th scope="col">구분</th>{t.columns.map(c => <th scope="col" key={c.key}>{c.label}</th>)}</tr></thead><tbody>
     {[["천간", t.stemRow], ["지지", t.branchRow]].map(([label, row]) => <Fragment key={String(label)}><tr><th scope="row">{String(label)}</th>{keys.map(key => { const cell = (row as typeof t.stemRow)[key]; return <td key={key} data-element-cell={cell?.colorToken}>{cell ? <><strong data-element={cell.colorToken}>{cell.hanja}</strong><span>{cell.ko} · {cell.yinYang === "yin" ? "음" : "양"}</span><span>{ELEMENT_LABELS[cell.colorToken]}</span></> : <span>미확인</span>}</td>; })}</tr><tr><th scope="row">십성</th>{keys.map(key => <td key={key}>{(row as typeof t.stemRow)[key]?.tenGod ?? "—"}</td>)}</tr></Fragment>)}
-    {t.detailRows.map(row => <tr key={row.key}><th scope="row">{row.key === "interactions" ? <abbr title={row.label}>합·충</abbr> : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{text}</span>) : "—"}</td>)}</tr>)}
+    {t.detailRows.map(row => <tr key={row.key}><th scope="row">{row.key === "interactions" && row.label !== V5_ROW_LABELS.interactions ? <abbr title={row.label}>합·충</abbr> : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{text}</span>) : "—"}</td>)}</tr>)}
     </tbody></table><p className={s.hint}>음 {yin} · 양 {characters.length - yin} — {characters.length === 8 ? "네 기둥" : "확인된 기둥"}의 천간·지지 기준</p>{t.timeCorrectionNote ? <p className={s.hint}>{t.timeCorrectionNote}</p> : null}<h2>오행의 구성</h2><p className={s.hint}>{t.fiveElementDistribution.basisLabel} / 지장간 포함 가중</p><div className={s.elements}>{data.elements.map((e, i) => <div key={e.label} data-element-cell={t.fiveElementDistribution.items[i].colorToken}><b data-element={t.fiveElementDistribution.items[i].colorToken}>{ELEMENT_LABELS[t.fiveElementDistribution.items[i].colorToken]}</b><span>원국 {e.visible}</span><span>가중 {Number(e.weighted.toFixed(2))}</span>{e.state ? <span>{e.state}</span> : null}</div>)}</div></div>;
 }
 export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mbti"]; name: string }) {

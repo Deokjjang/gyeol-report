@@ -1,6 +1,6 @@
 /**
  * 원국·유입 공용 관계 감지. 같은 함수가 원국 4자리와 대운·세운·월운 유입 자리를 함께 본다.
- * 규칙표: tables.ts. 학파 기본값: 반합=왕지 포함 2자, 방합=3자 완성만, 삼형 2자=partial.
+ * 규칙표: tables.ts. 학파 기본값: 반합=삼합 세 글자 중 아무 두 글자, 방합=3자 완성만, 삼형 2자=partial (docs/v5/shinsal-rules.md).
  */
 import type { EarthlyBranch, HeavenlyStem } from "../types";
 import {
@@ -12,6 +12,7 @@ import {
   SAMHAP_TABLE,
   SAMHYEONG_TABLE,
   SANGHYEONG_TABLE,
+  STEM_CHUNG_TABLE,
   STEM_HAP_TABLE,
   WONJIN_TABLE,
   YUKHAP_TABLE,
@@ -98,11 +99,8 @@ export function detectRelations(entries: readonly PositionedPillar[]): RelationH
     const full = tripleCombos(branches, row.members);
     for (const combo of full) out.push(hit("SAMHAP", row.members.join(""), combo, { element: row.element }));
     if (full.length) continue;
-    const wang = row.members[1];
     for (const [x, y] of branchPairs) {
-      const chars = [x.char, y.char];
-      const other = chars.find((c) => c !== wang);
-      if (chars.includes(wang) && other && other !== wang && row.members.includes(other)) {
+      if (x.char !== y.char && row.members.includes(x.char) && row.members.includes(y.char)) {
         out.push(hit("SAMHAP", row.members.join(""), [x, y], { completeness: "half", element: row.element }));
       }
     }
@@ -136,5 +134,19 @@ export function detectRelations(entries: readonly PositionedPillar[]): RelationH
     if (x.char === y.char && JAHYEONG_BRANCHES.includes(x.char)) out.push(hit("HYEONG", x.char + y.char, [x, y], { subtype: "자형" }));
   }
 
+  return out;
+}
+
+/**
+ * 천간충(STEM_CHUNG). 지식 DB 항목이 아직 없어 브리프 관계 목록(detectRelations)과 따로 낸다 — v5 만세력 표에만 쓰인다.
+ * 구성원 순서·쟁충(같은 글자 여러 자리) 처리는 detectRelations와 같다.
+ */
+export function detectStemClashes(entries: readonly PositionedPillar[]): RelationHit[] {
+  const stems: Slot<HeavenlyStem>[] = entries.map((e, index) => ({ position: e.position, char: e.pillar.stem, index }));
+  const out: RelationHit[] = [];
+  for (const [x, y] of pairs(stems)) {
+    const pair = STEM_CHUNG_TABLE.find((p) => samePair(x.char, y.char, p));
+    if (pair) out.push(hit("STEM_CHUNG", pair.join(""), [x, y]));
+  }
   return out;
 }

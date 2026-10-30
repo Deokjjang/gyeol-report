@@ -1,5 +1,6 @@
 export * from "./types";
-export { detectRelations, membersAdjacent } from "./relations";
+export { detectRelations, detectStemClashes, membersAdjacent } from "./relations";
+export { detectNatalShinsal } from "./natalShinsal";
 export { getTwelveStage, getStageBranch } from "./twelveStages";
 export { getGongmang } from "./gongmang";
 export { analyzeClimate } from "./climate";

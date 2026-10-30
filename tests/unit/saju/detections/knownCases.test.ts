@@ -62,8 +62,9 @@ describe("known cases: 합충형파해", () => {
     const hit = find(rel("甲子 丙辰 戊午 庚午"), "SAMHAP", "申子辰");
     expect(hit.map((h) => h.completeness)).toEqual(["half"]);
   });
-  it("14 申+辰(생지+고지)은 기본 반합 아님 (본 DB 규칙: 왕지 포함 2자만)", () => {
-    expect(find(rel("甲申 丙辰 戊午 庚午"), "SAMHAP")).toHaveLength(0);
+  it("14 申+辰(생지+고지)도 반합 (P6 기준: 삼합 세 글자 중 아무 두 글자, docs/v5/shinsal-rules.md)", () => {
+    const hit = find(rel("甲申 丙辰 戊午 庚午"), "SAMHAP", "申子辰");
+    expect(hit.map((h) => [h.completeness, h.members.map((m) => m.position).join("-")])).toEqual([["half", "year-month"]]);
   });
   it("15 亥子丑 방합 3자 = WATER (통용 방합)", () => {
     expect(find(rel("乙亥 丙子 丁丑 戊午"), "BANGHAP", "亥子丑")[0]).toMatchObject({ element: "WATER", completeness: "full", adjacent: true });

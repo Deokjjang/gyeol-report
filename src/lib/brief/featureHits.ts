@@ -6,7 +6,7 @@
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
 import { membersAdjacent } from "@/lib/saju/detections/relations";
-import { CHEONRA_JIMANG_PAIRS, ROK_BRANCH, SEASON_BY_BRANCH } from "@/lib/saju/detections/tables";
+import { CHEONRA_JIMANG_PAIRS, HYEONCHIM_CHARS, ROK_BRANCH, SEASON_BY_BRANCH } from "@/lib/saju/detections/tables";
 import type { ChartDetections, ChartPosition, ExtraShinsalHit, RelationHit, Season } from "@/lib/saju/detections/types";
 import type { ShinsalCode } from "@/lib/saju/shinsalTypes";
 import type { EarthlyBranch, FiveElement, HeavenlyStem, SajuCalcResult, TenGod } from "@/lib/saju/types";
@@ -129,8 +129,6 @@ function tenGodStrength(c: Ctx, tg: TenGod): FeatureStrength {
 
 /* ───────── 신살·귀인 ───────── */
 
-const HYEONCHIM_CHARS: readonly string[] = ["甲", "辛", "卯", "午", "申"];
-
 function shinsalStrength(c: Ctx, code: ShinsalCode, positions: readonly ChartPosition[]): FeatureStrength {
   if (code === "HYEONCHIMSAL") {
     const n = c.natal.reduce((sum, p) => sum + (HYEONCHIM_CHARS.includes(p.stem) ? 1 : 0) + (HYEONCHIM_CHARS.includes(p.branch) ? 1 : 0), 0);
@@ -196,12 +194,14 @@ function relationStrength(r: RelationHit): FeatureStrength {
   const graded = (strong: boolean): FeatureStrength => (strong ? "strong" : yearHour ? "weak" : "medium");
   switch (r.kind) {
     case "STEM_HAP":
+    case "STEM_CHUNG":
     case "YUKHAP":
       return graded(r.adjacent);
     case "CHUNG":
       return graded(ps.includes("day") && (ps.includes("month") || ps.includes("hour")));
     case "SAMHAP":
-      return r.completeness === "full" ? "strong" : r.adjacent ? "medium" : "weak";
+      // 반합 중 왕지(key 가운데 글자)가 빠진 두 글자는 더 약하다(지식 DB relation:SAMHAP strengthRules.weak).
+      return r.completeness === "full" ? "strong" : r.adjacent && r.members.some((m) => m.char === [...r.key][1]) ? "medium" : "weak";
     case "BANGHAP":
       return ps.includes("month") ? "strong" : "medium";
     case "HYEONG":
@@ -347,7 +347,7 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
   // 기존 신살·귀인
   // 같은 코드가 기준별(년지·일지)로 여러 건이면 자리를 합친 뒤 강약을 매긴다.
   const shinsalByCode = new Map<ShinsalCode, { positions: ChartPosition[]; basis: string[] }>();
-  for (const s of saju.shinsal) {
+  for (const s of det.shinsal) {
     const cur = shinsalByCode.get(s.code) ?? { positions: [], basis: [] };
     cur.positions.push(...keep(s.positions));
     cur.basis.push(...s.evidence.slice(0, 2));
