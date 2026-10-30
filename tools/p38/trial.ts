@@ -8,7 +8,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { buildBrief, loadKnowledge, type BriefInput } from "../../src/lib/brief";
+import { buildBrief, loadKnowledge } from "../../src/lib/brief";
 import { chapterChars, parseChapters, renderChapter } from "../../src/lib/writer/format";
 import { buildWriterPrompt } from "../../src/lib/writer/prompt";
 import { applySafetyNet, splitSentences, type DraftChapter } from "../../src/lib/writer/safety";
