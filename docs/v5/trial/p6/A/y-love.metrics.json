@@ -1,0 +1,95 @@
+{
+ "case": "y-love",
+ "label": "연애 · 도현(Y)",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_5b04ff75ea144a709205df9dd9b1b827",
+ "status": "COMPLETED",
+ "wallMs": 73311,
+ "chars": 8274,
+ "chapterChars": [
+  986,
+  906,
+  1024,
+  935,
+  849,
+  926,
+  967,
+  948,
+  733
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 3,
+ "byRule": {
+  "fact_partner": 3
+ },
+ "replacements": 0,
+ "warnings": 11,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "작은 어긋남을 먼저 보는 도현님은 집 안 수도꼭지가 똑똑 새면 그날 밤 바로 영상을 찾아 고무 패킹을 갈아 끼우는 사람입니다.",
+   "b": "집 안 수도꼭지가 똑똑 새면 그날 밤 바로 영상을 찾아보고 고무 패킹을 갈아 끼우는 부모예요.",
+   "at": [
+    "6.4",
+    "8.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.138,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 73284,
+ "tokens": {
+  "input": 16669,
+  "output": 9481,
+  "cachedInput": 5258
+ },
+ "costUsd": 0.1286738,
+ "costKrw": 186.6,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 66663,
+   "chars": 8761,
+   "maxTokens": 15642,
+   "usage": {
+    "inputTokens": 16669,
+    "outputTokens": 9481,
+    "cachedInputTokens": 5258
+   },
+   "costUsd": 0.1286738
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:aa3e77f9f529"
+}

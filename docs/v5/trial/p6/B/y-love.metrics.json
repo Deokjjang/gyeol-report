@@ -1,0 +1,85 @@
+{
+ "case": "y-love",
+ "label": "연애 · 도현(Y)",
+ "which": "B",
+ "provider": "openai",
+ "model": "gpt-6.1-terra",
+ "reportId": "report_7a1a442a28244762a9c941fe083204cd",
+ "status": "COMPLETED",
+ "wallMs": 77989,
+ "chars": 8186,
+ "chapterChars": [
+  1006,
+  936,
+  968,
+  915,
+  935,
+  982,
+  901,
+  909,
+  634
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 1,
+ "byRule": {
+  "fact_spouse": 1
+ },
+ "replacements": 0,
+ "warnings": 15,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 77975,
+ "tokens": {
+  "input": 9928,
+  "output": 4967,
+  "cachedInput": 3099
+ },
+ "costUsd": 0.03491795,
+ "costKrw": 50.6,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 75686,
+   "chars": 8669,
+   "maxTokens": 14220,
+   "usage": {
+    "inputTokens": 9928,
+    "outputTokens": 4967,
+    "cachedInputTokens": 3099
+   },
+   "costUsd": 0.03491795
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

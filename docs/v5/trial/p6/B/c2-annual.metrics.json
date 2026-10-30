@@ -1,0 +1,98 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "which": "B",
+ "provider": "openai",
+ "model": "gpt-6.1-terra",
+ "reportId": "report_e810437352534157bc5d66b10253cc9c",
+ "status": "COMPLETED",
+ "wallMs": 67085,
+ "chars": 6817,
+ "chapterChars": [
+  940,
+  963,
+  3632,
+  679,
+  603
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 6,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 2,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 1
+ },
+ "infoPairs": [
+  {
+   "a": "하지만 당신은 쉽게 흔들리지 않고, 믿음을 쌓은 관계를 오래 지키는 사람입니다.",
+   "b": "당신은 혼자 정리하는 시간이 필요하고, 믿음을 쌓은 관계를 오래 지키는 사람입니다.",
+   "at": [
+    "1.4",
+    "5.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 날의 글자와 물의 기운이 일부 모여 생각과 정보를 살피기 좋습니다.",
+   "b": "태어난 날의 글자와 물의 기운이 일부 모여 생각과 정보를 나누기 좋습니다.",
+   "at": [
+    "3.7",
+    "3.11"
+   ],
+   "kind": "advice"
+  }
+ ],
+ "briefCopy": 0,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 67069,
+ "tokens": {
+  "input": 12909,
+  "output": 4271,
+  "cachedInput": 3099
+ },
+ "costUsd": 0.03441895,
+ "costKrw": 49.9,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 65160,
+   "chars": 7247,
+   "maxTokens": 15829,
+   "usage": {
+    "inputTokens": 12909,
+    "outputTokens": 4271,
+    "cachedInputTokens": 3099
+   },
+   "costUsd": 0.03441895
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

@@ -1,0 +1,98 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_b1c57d34edf24a8085d91d893da647df",
+ "status": "COMPLETED",
+ "wallMs": 64485,
+ "chars": 7375,
+ "chapterChars": [
+  1189,
+  1298,
+  3389,
+  796,
+  703
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 13,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 2,
+ "infoByKind": {
+  "claim": 2,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "사람과 일이 함께 움직이는 시기이니, 내 몫을 분명히 해 두는 것이 중요해요.",
+   "b": "지금 10년 흐름은 사람과 일이 함께 움직이는 시기이고, 당신의 사주는 불은 많고 물은 모자랍니다.",
+   "at": [
+    "2.1",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "나와 같은 오행의 다른 힘(겁재)이 들어와 승부욕과 씀씀이가 같이 커진 달이에요.",
+   "b": "2월처럼 나와 같은 오행의 다른 힘(겁재)이 들어와 몫을 확인하게 되고, 사람이 붙는 만큼 돈도 사람을 따라 나가기 쉬워요.",
+   "at": [
+    "3.2",
+    "3.12"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.178,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 64441,
+ "tokens": {
+  "input": 20851,
+  "output": 8286,
+  "cachedInput": 5258
+ },
+ "costUsd": 0.1250878,
+ "costKrw": 181.4,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 58185,
+   "chars": 7726,
+   "maxTokens": 17412,
+   "usage": {
+    "inputTokens": 20851,
+    "outputTokens": 8286,
+    "cachedInputTokens": 5258
+   },
+   "costUsd": 0.1250878
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

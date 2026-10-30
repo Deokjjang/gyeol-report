@@ -1,0 +1,79 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_d223b4fb90de4b99926538d8846f47d4",
+ "status": "COMPLETED",
+ "wallMs": 72773,
+ "chars": 8854,
+ "chapterChars": [
+  1345,
+  1422,
+  4408,
+  848,
+  831
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 8,
+ "forbiddenResidual": 1,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 1
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.217,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 72731,
+ "tokens": {
+  "input": 21726,
+  "output": 9837,
+  "cachedInput": 5258
+ },
+ "costUsd": 0.1423478,
+ "costKrw": 206.4,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 66636,
+   "chars": 9178,
+   "maxTokens": 18270,
+   "usage": {
+    "inputTokens": 21726,
+    "outputTokens": 9837,
+    "cachedInputTokens": 5258
+   },
+   "costUsd": 0.1423478
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

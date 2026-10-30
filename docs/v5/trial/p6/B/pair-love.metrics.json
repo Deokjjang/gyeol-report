@@ -1,0 +1,96 @@
+{
+ "case": "pair-love",
+ "label": "궁합 연애 · 하람×서윤",
+ "which": "B",
+ "provider": "openai",
+ "model": "gpt-6.1-terra",
+ "reportId": "report_c8b1c6cce46d4236b34ea86c4cd05e18",
+ "status": "COMPLETED",
+ "wallMs": 70914,
+ "chars": 8108,
+ "chapterChars": [
+  854,
+  921,
+  993,
+  953,
+  863,
+  879,
+  765,
+  902,
+  978
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 1,
+ "byRule": {
+  "duplicate_sentence": 1
+ },
+ "replacements": 0,
+ "warnings": 14,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "앞에서 본 서윤님의 마른 물에는 생각을 움직임으로 옮기는 힘이 있습니다.",
+   "b": "앞에서 본 서윤님의 마른 물에는 행동으로 옮기는 힘이 있습니다.",
+   "at": [
+    "5.3",
+    "8.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.006,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 70900,
+ "tokens": {
+  "input": 11241,
+  "output": 5015,
+  "cachedInput": 3099
+ },
+ "costUsd": 0.03647095,
+ "costKrw": 52.9,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 70726,
+   "chars": 8600,
+   "maxTokens": 14625,
+   "usage": {
+    "inputTokens": 11241,
+    "outputTokens": 5015,
+    "cachedInputTokens": 3099
+   },
+   "costUsd": 0.03647095
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

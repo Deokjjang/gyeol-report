@@ -1,0 +1,87 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "which": "B",
+ "provider": "openai",
+ "model": "gpt-6.1-terra",
+ "reportId": "report_0cf46099c95847b8b1f3df869b591dbe",
+ "status": "COMPLETED",
+ "wallMs": 118965,
+ "chars": 9805,
+ "chapterChars": [
+  794,
+  802,
+  757,
+  758,
+  813,
+  776,
+  790,
+  720,
+  817,
+  733,
+  702,
+  749,
+  594
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 7,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 118931,
+ "tokens": {
+  "input": 14117,
+  "output": 5896,
+  "cachedInput": 0
+ },
+ "costUsd": 0.043597,
+ "costKrw": 63.2,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 91512,
+   "chars": 10438,
+   "maxTokens": 20720,
+   "usage": {
+    "inputTokens": 14117,
+    "outputTokens": 5896,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.043597
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}
