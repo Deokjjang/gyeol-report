@@ -5,7 +5,8 @@ import type { Pillar, SajuCalcResult } from "../types";
 import { analyzeClimate } from "./climate";
 import { detectExtraShinsal } from "./extraShinsal";
 import { getGongmang } from "./gongmang";
-import { detectRelations } from "./relations";
+import { detectNatalShinsal } from "./natalShinsal";
+import { detectRelations, detectStemClashes } from "./relations";
 import { detectStructureFlows } from "./structureFlows";
 import { judgeElementBalance } from "./elementBalance";
 import { getTwelveStage } from "./twelveStages";
@@ -56,6 +57,8 @@ export function analyzeChartDetections(saju: SajuCalcResult, opts: DetectionOpti
     version: DETECTIONS_VERSION,
     hourIncluded: isHourIncluded(saju),
     relations,
+    stemClashes: detectStemClashes(natal),
+    shinsal: detectNatalShinsal(saju, natal),
     twelveStages: natal.map((e) => ({ position: e.position, branch: e.pillar.branch, stage: getTwelveStage(dayMaster, e.pillar.branch) })),
     climate: analyzeClimate(natal),
     gongmang,

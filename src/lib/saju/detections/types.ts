@@ -3,9 +3,11 @@
  * 규칙표와 학파 기본값: docs/manseryeok-policy.md "v5 감지 규칙". 시간 미상이면 hour가 관여하는 감지는 0건이다.
  */
 import type { EarthlyBranch, FiveElement, HeavenlyStem, Pillar, TenGod } from "../types";
+import type { ShinsalDetection } from "../shinsalTypes";
 import type { ElementBalance } from "./elementBalance";
 
-export const DETECTIONS_VERSION = "chart-detections-v2" as const;
+/** v3(P6): 반합=삼합 아무 두 글자, 천간충(stemClashes), v5 신살(shinsal, 현침 글자 기준). */
+export const DETECTIONS_VERSION = "chart-detections-v3" as const;
 
 export type ChartPosition = "year" | "month" | "day" | "hour";
 /** 유입 자리: 대운·세운·월운. */
@@ -13,8 +15,8 @@ export type TemporalPosition = "dayun" | "annual" | "monthly";
 export type AnyPosition = ChartPosition | TemporalPosition;
 export type PositionedPillar = { readonly position: AnyPosition; readonly pillar: Pillar };
 
-/** 지식 DB relation 가족 + 배지(BADGE_KINDS)와 같은 이름. WONJIN은 지식 DB에서 shinsal:WONJIN. */
-export type RelationKind = "STEM_HAP" | "YUKHAP" | "SAMHAP" | "BANGHAP" | "CHUNG" | "HYEONG" | "PA" | "HAE" | "WONJIN";
+/** 지식 DB relation 가족 + 배지(BADGE_KINDS)와 같은 이름. WONJIN은 지식 DB에서 shinsal:WONJIN. STEM_CHUNG(천간충)은 지식 DB 항목이 없어 ChartDetections.stemClashes로만 낸다. */
+export type RelationKind = "STEM_HAP" | "STEM_CHUNG" | "YUKHAP" | "SAMHAP" | "BANGHAP" | "CHUNG" | "HYEONG" | "PA" | "HAE" | "WONJIN";
 
 export type RelationMember = { readonly position: AnyPosition; readonly char: HeavenlyStem | EarthlyBranch };
 
@@ -23,7 +25,7 @@ export type RelationHit = {
   /** 지식 DB variants.key와 같은 표기. 예 "子午", "甲己", "申子辰", "寅巳申", "子卯", "辰辰". */
   readonly key: string;
   readonly members: readonly RelationMember[];
-  /** SAMHAP: full(3자)·half(왕지 포함 2자). HYEONG 삼형: full(3자)·partial(2자). 그 외 full. */
+  /** SAMHAP: full(3자)·half(세 글자 중 2자=반합). HYEONG 삼형: full(3자)·partial(2자). 그 외 full. */
   readonly completeness: "full" | "half" | "partial";
   /** HYEONG 세부: 삼형·상형·자형. */
   readonly subtype?: "삼형" | "상형" | "자형";
@@ -79,6 +81,12 @@ export type ExtraShinsalHit = {
   readonly basis: string;
 };
 
+/**
+ * v5 원국 신살·귀인(detectShinsal 27종). 자리마다 한 건(기존 ShinsalDetection과 같은 단위)이고, 현침살만 v5 기준(tables.HYEONCHIM_CHARS)으로 다시 낸다.
+ * 시간 미상이면 hour 건이 없다.
+ */
+export type NatalShinsalDetection = Omit<ShinsalDetection, "basis" | "positions"> & { readonly positions: readonly ChartPosition[] };
+
 /** 타입에만 있던 구조 코드 3개(SajuStructurePatternCode). 지식 DB structure:<code>. */
 export type StructureFlowCode = "RESOURCE_SUPPORTS_DAYMASTER" | "OUTPUT_GENERATES_WEALTH" | "WEALTH_GENERATES_OFFICER";
 export type StructureFlowHit = { readonly code: StructureFlowCode; readonly scores: Readonly<Record<string, number>> };
@@ -88,6 +96,10 @@ export type ChartDetections = {
   /** 시주가 감지에 들어갔는가. 시간 미상이면 false이고 어떤 항목에도 hour가 없다. */
   readonly hourIncluded: boolean;
   readonly relations: readonly RelationHit[];
+  /** 천간충(kind STEM_CHUNG). 지식 DB 항목이 없어 relations와 따로 둔다(브리프 미사용, v5 만세력 표 표시). */
+  readonly stemClashes: readonly RelationHit[];
+  /** v5 신살·귀인 27종(자리마다 한 건). 브리프와 v5 만세력 표가 이것을 쓴다(calculateSaju().shinsal은 v4용). */
+  readonly shinsal: readonly NatalShinsalDetection[];
   /** 일간 기준 각 지지의 십이운성. */
   readonly twelveStages: readonly TwelveStageHit[];
   readonly climate: ClimateDetection;

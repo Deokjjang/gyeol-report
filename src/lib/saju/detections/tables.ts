@@ -1,6 +1,7 @@
 /**
  * v5 감지 규칙표 (P2). 근거: 지식 DB strengthRules.rule 문장, 정책 docs/manseryeok-policy.md §5.
- * 표는 데이터만 담는다. 판정 로직은 relations.ts·twelveStages.ts·climate.ts·extraShinsal.ts.
+ * 표는 데이터만 담는다. 판정 로직은 relations.ts·twelveStages.ts·climate.ts·extraShinsal.ts·natalShinsal.ts.
+ * 학파에 따라 갈리는 기준은 여기 한 곳에 두고 엔진·v5 만세력 표·브리프가 같이 쓴다(한 줄 요약: docs/v5/shinsal-rules.md).
  */
 import { STEM_COMBINATIONS, BRANCH_COMBINATIONS, BRANCH_CLASHES } from "../constants";
 import type { EarthlyBranch as B, FiveElement, HeavenlyStem as S } from "../types";
@@ -15,6 +16,8 @@ export const STEM_HAP_TABLE: readonly { pair: Pair<S>; element: FiveElement }[] 
   pair,
   element: STEM_HAP_ELEMENT[pair.join("")],
 }));
+/** 천간충: 甲庚·乙辛·丙壬·丁癸(같은 음양, 일곱째 글자). 戊·己는 충 없음(戊甲·己乙 추가설 미채택). */
+export const STEM_CHUNG_TABLE: readonly Pair<S>[] = [["甲", "庚"], ["乙", "辛"], ["丙", "壬"], ["丁", "癸"]];
 
 /** 육합 합화 오행. 午未는 火/土 학파차이라 미지정. */
 const YUKHAP_ELEMENT: Record<string, FiveElement | undefined> = { 子丑: "EARTH", 寅亥: "WOOD", 卯戌: "FIRE", 辰酉: "METAL", 巳申: "WATER", 午未: undefined };
@@ -33,7 +36,7 @@ export const WONJIN_TABLE: readonly Pair<B>[] = [["子", "未"], ["丑", "午"],
 /** 귀문: 子酉·丑午·寅未·卯申·辰亥·巳戌 (월-일·일-시 인접만). */
 export const GWIMUN_TABLE: readonly Pair<B>[] = [["子", "酉"], ["丑", "午"], ["寅", "未"], ["卯", "申"], ["辰", "亥"], ["巳", "戌"]];
 
-/** 삼합: [생지, 왕지, 고지]. 반합 = 왕지 포함 2자(생지+고지 2자는 기본 미포함). */
+/** 삼합: [생지, 왕지, 고지]. 반합 = 세 글자 중 아무 두 글자(생지+고지 申辰 등 포함, 왕지가 빠지면 약한 반합). */
 export const SAMHAP_TABLE: readonly { members: Triple; element: FiveElement }[] = [
   { members: ["申", "子", "辰"], element: "WATER" },
   { members: ["寅", "午", "戌"], element: "FIRE" },
@@ -67,6 +70,8 @@ export const CHANGSAENG_BRANCH: Record<S, B> = {
 };
 export const STAGE_ORDER: readonly TwelveStage[] = ["長生", "沐浴", "冠帶", "建祿", "帝旺", "衰", "病", "死", "墓", "絶", "胎", "養"];
 
+/** 현침: 바늘 모양 글자 甲·辛·卯·午·申. 천간이든 지지든 이 글자가 있는 기둥마다 성립(기존 v4 표 卯·酉, 未 추가설 미채택). */
+export const HYEONCHIM_CHARS: readonly (S | B)[] = ["甲", "辛", "卯", "午", "申"];
 /** 괴강: 庚辰·庚戌·壬辰·戊戌 (壬戌·戊辰 미채택). */
 export const GOEGANG_PILLARS: readonly string[] = ["庚辰", "庚戌", "壬辰", "戊戌"];
 /** 양인: 양간만(자평). 음간은 학파차이로 미채택. */

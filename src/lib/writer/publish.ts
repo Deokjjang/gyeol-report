@@ -18,6 +18,8 @@ import { birthTimeSlotLabel } from "@/lib/saju/birthTimePrecisionTypes";
 import { SAJU_CALENDAR_VERSION } from "@/lib/saju/calendarVersion";
 import type { ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
 import type { ReportInputPayload } from "@/lib/report-generation/reportInputTypes";
+import { withV5NatalRows } from "@/lib/report-tables/v5NatalRows";
+import { analyzeChartDetections } from "@/lib/saju/detections";
 import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta } from "./book";
 import { buildWriterPrompt, WRITER_PROMPT_VERSION } from "./prompt";
 import { runWriter, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
@@ -38,16 +40,18 @@ export const briefHash = (b: Brief) => createHash("sha256").update(stableStringi
 /** KST 기준 날짜(YYYY-MM-DD). */
 export const kstDate = (iso: string) => new Date(Date.parse(iso) + 9 * 3_600_000).toISOString().slice(0, 10);
 
-/** 만세력·MBTI 표(BookPerson): 기존 v4 계산을 한 번 빌려 고정한다. 실패하면 빈 배열(표 페이지 없이 발행). */
+/** 만세력·MBTI 표(BookPerson): 기존 v4 계산을 한 번 빌려 고정한다. 십이신살·신살/귀인·합충형파해 줄은 v5 엔진 결과로 바꾼다(P6). 실패하면 빈 배열(표 페이지 없이 발행). */
 export async function v4People(payload: ReportInputPayload, policyAt: string): Promise<BookPerson[]> {
   try {
     const v4 = await generateV4ShadowReport(payload, { evaluatedAt: policyAt, policyDate: policyAt });
     if (!v4.ok || !v4.evidencePacket) return [];
-    const tables = projectV4Tables(v4.evidencePacket as V4RuntimeEvidence);
-    const persons = payload.productKey === "saju_mbti_compatibility" ? [[payload.personA, "A"], [payload.personB, "B"]] as const : [[payload.person, "주인공"]] as const;
-    return persons.map(([p, role], i) => ({ name: p.name, role, birth: p.birthDate, gender: p.gender, precision: p.birthTimeUnknown ? "unknown" : p.birthTimePrecision ?? "exact", time: p.birthTime ?? "", mbti: p.mbtiType ?? "",
+    const evidence = v4.evidencePacket as V4RuntimeEvidence;
+    const tables = projectV4Tables(evidence);
+    const persons = payload.productKey === "saju_mbti_compatibility" ? [[payload.personA, "A", "personA"], [payload.personB, "B", "personB"]] as const : [[payload.person, "주인공", "person"]] as const;
+    return persons.map(([p, role, slot], i) => ({ name: p.name, role, birth: p.birthDate, gender: p.gender, precision: p.birthTimeUnknown ? "unknown" : p.birthTimePrecision ?? "exact", time: p.birthTime ?? "", mbti: p.mbtiType ?? "",
       // 대략 시간대도 같은 줄 형식(P6: 대략 입력이 "정확 · "(빈 시각)으로 나왔다). 새 책은 현재 달력 기준 시간대 이름.
-      timeLabel: p.birthTimeUnknown ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION) ?? "입력 시간대"}` : `정확 · ${p.birthTime}`, table: tables[i] }));
+      timeLabel: p.birthTimeUnknown ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION) ?? "입력 시간대"}` : `정확 · ${p.birthTime}`,
+      table: withV5NatalRows(tables[i], analyzeChartDetections(evidence.calculations[slot])) }));
   } catch { return []; }
 }
 
