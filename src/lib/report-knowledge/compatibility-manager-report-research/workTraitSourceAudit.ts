@@ -15,7 +15,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "f7ad7437e121f449b5498e1673b585536746a47e1934c8ded8b08b6bbf7ac5ef",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "public_institution_fit",
@@ -64,7 +64,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "precision_profession_fit",
@@ -115,7 +115,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "8cd97df0600ff1446d9790bc77fb5f33ec25ea6807dc6b3ac3dd99ff823256ae",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "teacher_favored_student",
@@ -164,7 +164,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "aec9ba21c4e198010438947882261b3f39899a2a6e2b5e670de8a596a83d6693",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "long_term_income_builder",
@@ -214,7 +214,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "4113f7a4b980c17a0ff2f2227a0b4b9dbbf780492105b9cac8801edf39867487",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "stable_independent_worker",
@@ -263,7 +263,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "5dd42c010927ed8435a15484c2c5189853a0c3e84118f351c782b0e54d3f20a4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "avoid_chaotic_creative_work",
@@ -312,7 +312,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/career/6",
     "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "process_quality_operator",
@@ -361,7 +361,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rule_following_reliability",
@@ -409,7 +409,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "03658b00bf4ae588d7e28191aaa3a40770278f8897c62a5eebfd165012533f09",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "time_promise_strictness",
@@ -458,7 +458,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "controlled_authority_risk",
@@ -508,7 +508,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "b198333f868394e7ea56a20e051363ba02228b5ee347e9448f36d067f2657af9",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "silent_frustration_explosion",
@@ -558,7 +558,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "instant_error_correction",
@@ -607,7 +607,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "dcb0852a7bbc8f82ebbc86a703d6fb3cdb5ccc85778ce54ce0f62c316e848055",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "clear_instruction_boundary",
@@ -656,7 +656,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "past_data_decision",
@@ -706,7 +706,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "efficient_error_detection",
@@ -756,7 +756,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "4603cebb992cd8cdf0389ce6beb4a96af2fda562cec3c2dc481c4ab5ed90e1bd",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "manual_mastery",
@@ -805,7 +805,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "4de90af117b730604820bc3b37812656d365af43166ba68c4028c5a0938e9283",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "detail_memory",
@@ -855,7 +855,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "44cde147899bb64d2338ebcbd15be7806d413afba0affd4e5956f1effee20685",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "narrow_but_deep_focus",
@@ -905,7 +905,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "2a80bce83ed91c247cbc435aaf922b3da8cf1c388269136107881ca05c920c0a",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "reserved_directness",
@@ -955,7 +955,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "b6d82c7330c576ea3aede8875dc6ccf55b9cb77ea152f84dc435a502a9bf8188",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "apology_difficulty",
@@ -1005,7 +1005,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "56f972c3824c62245947783c1de3b24414225ac8ee5fdbaad1cd2078b666871c",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "hard_boundary_after_disrespect",
@@ -1055,7 +1055,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "f73eb6b94f509aa6a07aa3d1ec9dc857e5248faba005205e54d863f066e968f1",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "few_but_stable_bonds",
@@ -1104,7 +1104,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "3c5489cc15ebe46c38c2ef9b9c278ba709abe435276afcf678f096bc5a3cda1f",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "self_withdrawal_when_unready",
@@ -1153,7 +1153,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "930180041d19fececa769aeb2711d6afb6b4b9014585f276085d61ac86b7bea4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "execution_reliability",
@@ -1202,7 +1202,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "31e5dd09d543d3a34e9b02d8915116f34197e26b80650a5f7e5948c77e1c65c4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "calm_under_procedure",
@@ -1251,7 +1251,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "2a7d850d3f813c0a5b5dd6bdde60ba8b830fe7aa70b2f6ad059f0437f71ee444",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rigidity_under_change",
@@ -1301,7 +1301,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "49609347f266217cd86372be760e5a8716f6c420612bcba7417e76d10dd9bcc0",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotional_blind_spot",
@@ -1351,7 +1351,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "d6d14271522e478e991a916e51a44c62442cb9587181269090bf40a6dc2be59b",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "prejudice_from_experience",
@@ -1400,7 +1400,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "06c2f4b8291413681236e659ed143db62da15cc43adbb090164d66694584f5a0",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "feedback_order_upgrade",
@@ -1450,7 +1450,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "647836a01ee692022cbc9cd71a5c52d59ee3eb5fe928188804b6520583dd0370",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "controlled_flexibility",
@@ -1501,7 +1501,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "d0ea1fa645cfdcb3b2843d65bcec0dc92d37ae501dc7a8da7f622a87e96d17f5",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "hands_on_technical_fit",
@@ -1549,7 +1549,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "ff6bed5f556c3f26a2e9974ce3fb5a64372d6e5ea21938fa9f0ace5720e22589",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "crisis_response_work",
@@ -1600,7 +1600,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "8d11ace9dd27a911bb942bb28747fd82a95da0a872405a2b2a26067585dffd38",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "precision_sensory_work",
@@ -1649,7 +1649,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "43e233c7217268000a222a54c0678720cdbc0a11118d5acb55bbc0ccb1ebf637",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "autonomy_required_work",
@@ -1697,7 +1697,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "d09d065556c3ea17b8757af6fd2861a9957c493a34400698192fb16aa5cdd06a",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "resourceful_reformer",
@@ -1746,7 +1746,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "e9bbdbb4bb90e28befbcd6866d3a0a088ca27d40b03019e73d4cdfe3953e62e5",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "boredom_sensitive_work",
@@ -1795,7 +1795,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/career/6",
     "recordSha256": "7bb9a53cbad6eabc17361c6979b43140494ea4cbdfc4c6d0111f6bceb1b55667",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "technical_problem_income",
@@ -1844,7 +1844,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "cf77535e83aaeeb8f03e95e64f3c70a24a4cf2f9ad3ce9025ccf5f6341e661f9",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_micromanagement",
@@ -1893,7 +1893,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "3311741928b386bd1a69912f722095ed516bfc038baaab33b02478c7686c31de",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quiet_but_social_when_needed",
@@ -1942,7 +1942,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "5e525b5452b88e7b86b4c025c35e459ff366c42d1d82de69ff81603aeb073f13",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "competence_respect_needed",
@@ -1990,7 +1990,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "4ad29ccb342224f51c644a1cafcc32c7f5dc6668b4188733623d4e1eed2663da",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_peer_work",
@@ -2039,7 +2039,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "action_over_meeting",
@@ -2088,7 +2088,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "minimal_report_protocol",
@@ -2137,7 +2137,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "338eed22757b31b46acff7c65bbe1d2f4cab066451eaead1db698cc8d08d82e0",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "internal_logic_frame",
@@ -2187,7 +2187,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "495b835a1a5271d3d23e3e4bef5852f17ccc5399658591fcf4e3617c968b4f7d",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "contradiction_intolerance",
@@ -2237,7 +2237,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "causal_principle_focus",
@@ -2287,7 +2287,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "82a7b529ccf46af64a7e191979143ec8caf4ce33267388e879187907d7229b65",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_insight",
@@ -2337,7 +2337,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "7493b1c7c47fd56c4ac4a9837087f9c7036678fd9b512152043d09c339487806",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "minimal_effort_efficiency",
@@ -2387,7 +2387,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "few_words_direct",
@@ -2436,7 +2436,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "a9eb456deefbd12260f6edf18ee2d6c1eebfa95294415e4f8d2f0074f38c22e1",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "no_fake_comfort",
@@ -2486,7 +2486,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "2f7025bfbb77d5a0df49b074ffe4ff502a0d61b19274eb4f5f569fe7775b1095",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_intrusion_relation",
@@ -2536,7 +2536,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "b2056a3cd8fc13a84efca6755469dc9f916efea838f98de9d8e8ddd65dc4a70c",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "comfortable_people_only",
@@ -2586,7 +2586,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "7900d6d557f10202afa6c6ba283636db9fa4592c3278374a792e3274c5d95802",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_distance_when_overwhelmed",
@@ -2636,7 +2636,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "2be8b562b33f115ec74731348fb1eb8c7d6bcca28632b375b1e36ad5126be1eb",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "crisis_calm_action",
@@ -2687,7 +2687,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "ddf5f940486c2aee8bdcf23e37b6cf156fd7488ae423878b869352793cf0537f",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "strong_mental_filter",
@@ -2737,7 +2737,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "57a2b941836221266d87cba0523f2cd30ab723fc4a8c72738e7d6c962f78a68b",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "adaptable_realism",
@@ -2786,7 +2786,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "aee326262a4f6e23dc20a604f087b0b6cd00c2fcaec85cd7342eee146616064f",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotional_blind_spot",
@@ -2836,7 +2836,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "e17e8fc9c828beb6009b97156ab1bb358750caaf7dd74d760bd5b9f081834afc",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "risk_seeking_impulse",
@@ -2886,7 +2886,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "8dc06b34a91d50fcdc595e6036b65bae8b46c1e7274d5a6f82932b469d481c15",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "boredom_dropoff",
@@ -2936,7 +2936,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "984225e504cd1048fc81c80443bea6769f0f1ae94b99a8a08a989d180b1c03bb",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "minimum_emotion_translation",
@@ -2986,7 +2986,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "c9c02cbf32f75efe5cd04f66444edc51a53f8f305037143cb28ed02084144183",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "long_term_mission_structure",
@@ -3036,7 +3036,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "514fc7bfedad77785168833ca442a7180347d88ddca46220a0da0a1ce1df6f56",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "management_leadership_fit",
@@ -3085,7 +3085,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "4f73c3bc45515f576d25f010b8f97501e27fab962725710aa20c92603aafb72b",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "public_order_career",
@@ -3134,7 +3134,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "5f52974f0c6f8de5bad6d5dc8040fb27a3d520859244219d702103ef20cb0838",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "law_finance_fit",
@@ -3184,7 +3184,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "b06d3ab672efcfda5f282f3730e2ec64462591b1336e89d675246cf1b7138831",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "education_with_structure",
@@ -3234,7 +3234,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "95f2397e4e4ac1c08686f58a7537759929aef4add3e24bfec26a901e92d67ad5",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "healthcare_authority_fit",
@@ -3283,7 +3283,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "d85ddc2dcdab38a57f580d7ee2972b39c3c15e2824f9d969763f54ca206bce58",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "operations_scale_manager",
@@ -3332,7 +3332,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "clear_expectations",
@@ -3379,7 +3379,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "69b56a359f88090d6f539ffffb5b78c94a990d78b33b72c7f7b491de316de3e0",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "micro_management_precision",
@@ -3428,7 +3428,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "08586c8e9d144086759d92994fa80d0b2492709a2b8ed34e5cba8a93d78c55d0",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "delegation_difficulty",
@@ -3477,7 +3477,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "47e9b3c4710b733538d06fe8e90e28a8225aa803c1ba0b7dd757120b0fc8de57",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "hierarchy_comfort",
@@ -3526,7 +3526,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "ae3b016cc9e6695ce01938644e77d5bfd57700dde498540dfedecc4db5ea3d4d",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "honesty_and_work_ethic",
@@ -3575,7 +3575,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "5bf022de603a61855d7ac011e3db0ebd9a822cca2a6e7af1aa3eda47feba7493",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "collaborative_but_demanding",
@@ -3624,7 +3624,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/workplace/6",
     "recordSha256": "505c0e99063d3e3ebe5a165084f5c27ec6941fbb4e836f2f599d39faadcd3687",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "delegation_with_feedback",
@@ -3673,7 +3673,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "e10d70926043670273b44683625c1115300541bfd97f7b1a8db557085a8741d0",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "te_fact_execution",
@@ -3723,7 +3723,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "32bde5ce93d902fe5654839c8cb40a36fab14f3313fceb0e3af59ea3934d93b9",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "si_verified_process",
@@ -3773,7 +3773,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "1d2a4f9d8aeae6dc682ad257ffb7910cb4025a66b23a898709d02609e9e2da5e",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "efficiency_filter",
@@ -3823,7 +3823,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "574fa64e874a6b1bef2a9f3d464e1a7c8fdbb42620072358b946348b3250c000",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "weak_fi_emotional_blindspot",
@@ -3873,7 +3873,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "1d391a3c02ce9ae743b9642ab2883273e1187e0515eaf2b7cb650f72661d8590",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "selective_flexibility",
@@ -3923,7 +3923,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "direct_speech",
@@ -3973,7 +3973,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "4ef9edc04b4c3f1ba00d89d5e4a5cff76c71adad971e82774843f467c791f540",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "logic_over_emotional_appeal",
@@ -4023,7 +4023,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "f257c3a956697751e8d8dccc1846fd61fbc277d0a57eb7ebe3ab165d821c484e",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "corrective_feedback",
@@ -4073,7 +4073,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "00c3fd5619f1c714a812ef2f31c4ce43b8867d3db7cf78ac6443d950f54fbd7a",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conflict_full_response",
@@ -4123,7 +4123,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "176b38d4428ed652bb680d4446d7da57ed37ce0d9823b9888c506902510c4aaf",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "trust_by_reliability",
@@ -4173,7 +4173,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "8b750a7435d2750c5941b645324cdd4bf77c1939fcf81d92da365c02985833e4",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "solution_first_relation",
@@ -4223,7 +4223,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "7e94d99330243389ca92f3d7129efd3c5a4b51a04b714d35bf251ddcefc5d531",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "boundary_by_standard",
@@ -4272,7 +4272,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "c47d0ff1b076a64ebcd17a80386b15546a97b14bf9cb75740202e0e44e63ff10",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_support",
@@ -4322,7 +4322,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/relationships/4",
     "recordSha256": "06e0bae52b40fb9d56c5489f671482ac7b7d9d54abbc28f9566082cfec077e54",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "less_social_extrovert",
@@ -4371,7 +4371,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "77194ad4ae9fe511f550c5c7b6067717b4289215ecbd8802e26207eba1ff4a49",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "execution_power",
@@ -4420,7 +4420,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "1b4b017adc8061f9d8aa35663b0b4238a93e04b5b74df8ad3a51ec369ce46d91",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "reliable_consistency",
@@ -4470,7 +4470,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "9544256d56ce0b69961c0b964e53a199e4b1dc9217bda69a4397d1e946904008",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "early_problem_detection",
@@ -4520,7 +4520,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "fd14bad390ba04502863f79b1cbc6b22fd2be7a59405ab147e6763015d00728d",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "crisis_rationality",
@@ -4570,7 +4570,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "32efb86354ff55b880c4267eaa64010345d64f424b32242eac7638928f76b770",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rigid_traditionalism",
@@ -4620,7 +4620,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "ffe85678c05c01b87f7e63f9e8887a81677cd2bea43ae7d72644352f5cbe8c46",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "controlling_tendency",
@@ -4671,7 +4671,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "c0390ecada88be9fcf54357a0b23fad7bd605376d45700082639135226102cdb",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "empathy_gap",
@@ -4721,7 +4721,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "daae111fa706a91042aa0dbc7670de651dea3418713447570bdf7e365b5ae74f",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "workaholic_burnout",
@@ -4771,7 +4771,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "ced3159a58e9061f1bae5615cbd28eed247e2e0f53e723866ab584e00f38dc29",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "status_bias",
@@ -4821,7 +4821,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "2775bdd4707d40af9a088e60f0e8c1abf9ea8a4495ed1ff05762b8af6acba10d",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "soften_directness",
@@ -4872,7 +4872,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "fd1dcba95b40172e37dc1d08a63e62fe2db9585a145d3754996070b243c741b2",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "practice_emotional_checkin",
@@ -4923,7 +4923,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "18b8a82297773b4daab139383c99d09b97735f68fe9213f94daff57df0f04be4",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "allow_experiment",
@@ -4973,7 +4973,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "dd2bb7d2efdc9b223c220543c9c13121b7379309053e924e293acee0a1786535",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "delegate_with_trust",
@@ -5022,7 +5022,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "697390e0d9eb7046603150f3253eaa89c2fd4e9d9aff8a4ada3cba0a83442d3f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "live_content_fit",
@@ -5071,7 +5071,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "01bcce8dccc579b2a5656130e74f2c42c2513d4c5b54954b19629cdc2b803404",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fitness_sports_fit",
@@ -5120,7 +5120,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "9a539a6c7287ca1197b080e8d8248de13dd650b96e6532db674e064cf6be3350",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "field_emergency_fit",
@@ -5169,7 +5169,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "5dfebcad3a406dc90324481eafd0cd7a4b1d50b118020ef36a28eda63f574050",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "teacher_activity_fit",
@@ -5219,7 +5219,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "b854b0cb2eb1190943eacc48f4a85c1755c2cf64e9483aa5f889032bc47f0059",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "travel_game_handson_fit",
@@ -5268,7 +5268,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "65ae4fcd2629536412f100a00b8a9766ab839e1307a1817e108e0f37ed0ae49a",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "deal_to_repeat_business",
@@ -5317,7 +5317,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "249425dac315323aad0301a098a9db041b6b0e33a7c16272fedcf115d4049a55",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "crisis_solver",
@@ -5366,7 +5366,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "0b62fca8b2c4527f947468cdfd3c0626c1c60b350f8f664df19c62b67398bf5f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_tolerance_for_boredom",
@@ -5415,7 +5415,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "c521c829d045c2753a6b60ca37b87338bf2dde3f7b869ee05199efa6b578ce74",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "flexible_negotiator",
@@ -5465,7 +5465,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "7ca603cf98e91730024a76688efd28e64d1dd2b205cf4dc5e572f8bdee9b7596",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "visible_charisma",
@@ -5514,7 +5514,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "ea72d02009ad14675c3d2b697bfaabd443131864711c0a704c73ace424205e07",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "fast_approval_lane",
@@ -5563,7 +5563,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "7b714a4789afdae5915c4e27fae3baf7e7684c091792eb841f8fadd3b1cd9526",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "se_now_data",
@@ -5613,7 +5613,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "0b8a1e5dd626d6ca6b2787646a40bb3bc3b68a7edc5097ae8a439eca45a5cbbf",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ti_practical_analysis",
@@ -5663,7 +5663,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "363744364e96425d515dd8bf0175b0d4d18d5b8ac81b03447d6496ac051043ec",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fast_decision_objectivity",
@@ -5713,7 +5713,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "c1db33b510b4d632fa3797c64926095cec6e8ee8bfb665922cd5baafdaf5772f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "weak_ni_long_term_gap",
@@ -5763,7 +5763,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "664a901c7274a8bd44d7bf73ade10f53af463e76713afe951c18a2ce9ccf120f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fe_social_adjustment",
@@ -5813,7 +5813,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "f41f2724524fce8f5a17a4bdd31363250fec9d52698401b4e24a6a1572e7bbe4",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "straight_humor",
@@ -5863,7 +5863,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "92bf7e499845fe670b9b4a145658581cacf21948f2c2958d593068905b447adb",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "short_explanation_preference",
@@ -5913,7 +5913,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "3b7b41a2fbf87fdc2b692b379fc6099a674ac0e3dc754f507cf01e26d6e439ee",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "no_poker_face",
@@ -5963,7 +5963,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "38f3d4836b1416a763ac51f74f5336dc2a8ede729ac0b32a8b55c33d839b3896",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_impatience",
@@ -6013,7 +6013,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "4d4b3e723671bfe763a5d3ab28c099bdec707125b229052c203877b7a433c552",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "wide_social_circle",
@@ -6063,7 +6063,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "296282c871c4863515117db3b63421d1105ea3f34c4de4c0781710780ebd2411",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "slow_to_cut_off",
@@ -6113,7 +6113,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "c11143ca79e2ea2c99786f5eb3949146ef7941b2084f8ce8d03089c113c7dd98",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "intent_reader",
@@ -6164,7 +6164,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "3872b4853cee3b7c6b662266ea739f982bbec843494779a3d8ac4ccd6d5c32fb",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_grudge_high_motion",
@@ -6214,7 +6214,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "edb50ee814b323ea5e9fa04fa06bd906b9df505684bba647bd18ddb30fbb1b55",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "instant_adaptation",
@@ -6263,7 +6263,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "8abd3342643234d29cb041ea52539eee2ca3978eb07b6a8463e5d41fe9efc511",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sharp_observation",
@@ -6313,7 +6313,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "e1db335bbd4e4b61bae4c1b3197614f961860581a0a9f4ee49f1f64d90414174",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fearless_initiative",
@@ -6363,7 +6363,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "3b9df9e1411c2c7094bda7e34fc0a25f828452789137e9cf390f4ca8638625b6",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_energy",
@@ -6413,7 +6413,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "d26028e11339d837af9a8f4afeec97f10fcbbd797025de0013ef6ded77664db5",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "impulsive_risk",
@@ -6464,7 +6464,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "2baffff5394dc6a7fb969e8793f8e738580cb7405e36cad35de171ef75e79e83",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_long_term_persistence",
@@ -6515,7 +6515,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "3c8156d3055fafe4c429321d3af9758e5d8ccafa6ebb0bde7a4778f207853b0f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotional_bluntness",
@@ -6565,7 +6565,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "7b5d5b49d0b5fb28c39dfbe9acef3427a4f425806d1a2b16ff3e01d739f3f7e4",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "freedom_responsibility_conflict",
@@ -6616,7 +6616,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "475ece10666fb6e52a04f6690f5d44a2c4881bd20823db409d2df62de7cfa383",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "destructive_unhealthy_gap",
@@ -6666,7 +6666,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "8d45c326703fbb911b68ff9cce9439e8ea6726c8b500ca1a6edf39b55b915c36",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "build_short_to_long_goals",
@@ -6716,7 +6716,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "21da0d19d3109c2228590a95ef1569c12ab848f67a34181d7935a6af6734b821",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "check_impact_before_action",
@@ -6766,7 +6766,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "c5e3b01a5c413c09ee3b6cf91f99f076354bfb1a2aa7c6fa46f98664fd7bdb5c",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "design_responsible_freedom",
@@ -6817,7 +6817,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "795f14301b3e69e23790a744ea82857f86d67a2ca94471658bc8e05d0f074957",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "use_observation_with_verification",
@@ -6867,7 +6867,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "1d0c01746496721b92ae5be2cf506c3a12cabf3c375dfea59d1b91b525ed6a1b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "service_stability_career",
@@ -6915,7 +6915,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "33b82f6459ca4a940abf0af14f5a158de033f4130db7221a830f34b98fe3b902",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_helper_work",
@@ -6965,7 +6965,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "bf87ff4de53b38f474ff8eeabcd5bddf361aa9e9ca5bf030d774e8f50925501a",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "structured_care_profession",
@@ -7013,7 +7013,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "67f7d235d3623bb5de58b653cac9e6ddd86892b8c51f18df5c8b1d959eedb96c",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "behind_the_scenes_worker",
@@ -7062,7 +7062,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "91667e3dde77bb536c90be02ff02276e4fd147de91e8855ce5668b5ea1b30144",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "stable_org_fit",
@@ -7112,7 +7112,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "3181712b65c0d3e74e299f7b3d404ad2bb14fcf5dabf2b5f96b81fd218f024a3",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "memory_observation_practitioner",
@@ -7161,7 +7161,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/career/6",
     "recordSha256": "cb814819768adcdd908e40ee898ca2dbdb43822959269275fa2874a071bc5c97",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "care_operations_income",
@@ -7210,7 +7210,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "guideline_micro_manager",
@@ -7258,7 +7258,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "f0d99d785c86be30c60799eef1f2308deb47e6ecd56041f6bb2ff31f49de4eb5",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conflict_avoidance_at_work",
@@ -7307,7 +7307,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "7152c5d39c9694e3b7631185403068268eaa599cdef538773f60d79bae8e799b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "work_ethic_overload",
@@ -7357,7 +7357,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "753da8a1074f6e91c303f45cfc6715428cb7f2f077fa5d5b6580b27967392ddb",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quiet_reputation_worker",
@@ -7406,7 +7406,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "87bc7b78d233623ece8c3d82406e949fb6711eef329bb7a08db3c573a168f39a",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "formal_culture_fit",
@@ -7455,7 +7455,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "99ed9bc67643d3617dd626e8771fca98d8de0cb2486a5e7f37cc51218a6403b3",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "recognition_and_boundary",
@@ -7504,7 +7504,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "9312705ee838258bd8e6de956a289c6457ff46dbb6ef35b1a90b23fcf7e5fbd8",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensory_memory_judgment",
@@ -7554,7 +7554,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "8646bc3f85bee87eee40948f05a655d1886df7a743ca6cb3ee6a97e8f8fbc74b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "detail_first_attention",
@@ -7604,7 +7604,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "296ff055b7bf860bfbe556e5f196e1d669b1afff4b8a3a4ff3f13a630e3a6449",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_feeling_scanner",
@@ -7654,7 +7654,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "470e2a7c6caad1c5922f727a86d53b4ffb0f72ea6cbbaae1bce0444173fbc795",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "suppressed_inner_logic",
@@ -7704,7 +7704,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "1e16feda2f8ddda324f8736bb85bd7a71ec5c6a305e1cd6608806e4c50a9ac3e",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "careful_word_choice",
@@ -7754,7 +7754,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "69353cca61d7833d4be82b5d22c2be57caf2b225522590342eabd255c550ea1a",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "small_talk_support",
@@ -7803,7 +7803,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "7502f705fb668fcadca5b2792acc7d3f509abcb6b58027108b21ee61e809e146",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "listen_more_than_speak",
@@ -7852,7 +7852,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "2d56cfbede1a040db6c45c75d5f7c6803dbe9547d1b171de97cba18323627792",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "hard_to_enter_reliable_once_in",
@@ -7901,7 +7901,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "efb3024caab1a5b8715d58dbbe704bb89df96e9d50bc395afb73fd42095be5fb",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "memory_based_affection",
@@ -7950,7 +7950,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "cb9f1f850dfd924437edd37d861856bbc8d8e5a9361974d2e6c0db34018e8b6f",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "secret_keeper",
@@ -8000,7 +8000,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "d0baa9f07a50e0c97a2baff543c386a4d67faf056047197f765f0b450e8b61e6",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "relationship_stress_absorber",
@@ -8050,7 +8050,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "bb8c029909c8bf77bff750bf5577a45e3fad28c9eb04ec874fd2de6a3c9821da",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sharp_memory_observation",
@@ -8100,7 +8100,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "57a44007f9c9fa99d1af311d55dfe7e13a5129a0b00c457506329d540f8f9695",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "loyal_responsible_execution",
@@ -8149,7 +8149,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "c7bd7d69cbe588a26c022e4683fe99480e1f45b68e3f83751d3365ba14857d1d",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "competent_helper",
@@ -8199,7 +8199,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "45aae8d0702efd468ca65967b21a1a73a4386840e49a951484635e6784390aa0",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "role_model_drive",
@@ -8249,7 +8249,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "914d209924e7a8f621020765d96a36ae974aea1cdf7ede5fcc4ed17a8efd1b18",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "tradition_lock",
@@ -8299,7 +8299,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "1fb2cfacdbab5f782d53b21492b7058f34a196cea05c11cfd10e7c770ff44645",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "personalized_criticism",
@@ -8349,7 +8349,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "619c1345482dbb698ff425c88227d55d9aa5159ceed44eb13745d9d1c6dfefa7",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "burnout_from_helping",
@@ -8399,7 +8399,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "a7d092fa4ef50691fe2fc813598e8aacc4e8cdc98e1b9beb9ea8006856f6557b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "perfectionism_distraction",
@@ -8448,7 +8448,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "8b8d378bfb869a0bad79c590cc1a3adc11c3d89ea4a6efe9ae098523fa423237",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_complexity_overwhelm",
@@ -8498,7 +8498,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "ed24a315d098e0edf57a29c7e2ff1bb0915f428cb44afcc10d49a13eb61a7f1e",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "learn_to_say_no",
@@ -8548,7 +8548,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "84a8a9e7576afc7a2379169a7467c29407b5ed17e79ba572e06e469c0ebc29ee",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "express_feelings_more",
@@ -8598,7 +8598,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "5fc1f705f9c975a079c3a2411333d4c87c83bd59d9e584961bcf5749cfb7f278",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "controlled_newness",
@@ -8648,7 +8648,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "0caf4edb9b72718f56538feae03db372c5d85967623962c7a5ff0a229e5e55be",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "lighter_rest",
@@ -8698,7 +8698,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "artistic_expression_fit",
@@ -8746,7 +8746,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "106e9914c9186aaea22243cce24f702697255c00acbf2cc6895a974bd07107d6",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "field_service_mission",
@@ -8796,7 +8796,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "d0c069b9716336d3a45d5ee492d54d259f1bc582f1f3a4b40f6d5df8b0b70ebf",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "autonomous_field_work",
@@ -8845,7 +8845,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "f3f86e54aa17d6df6d1145862d82ab7a3314667efc096caf0b201acb635e10a8",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "horizontal_team_fit",
@@ -8894,7 +8894,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "8455dd0210bc99e8848c70d7b2d36f982180fdc297820213cfe01f2cd26cad45",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ordinary_office_possible_but_limited",
@@ -8942,7 +8942,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "f3e0b6734614824e4421ef6c4108590fde9df77d82435280931679665ac9325b",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "burst_focus_work",
@@ -8992,7 +8992,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/career/6",
     "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "taste_to_service_value",
@@ -9041,7 +9041,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "3b2933a71c929755e951eee60da9b89acb5fd344f90cc1f8a5370158426fee2b",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conflict_silent_exit",
@@ -9091,7 +9091,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_authority_control",
@@ -9140,7 +9140,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "fe25e629b443a330a469d118765c2dcc2ec3dc773b59eef1620f58008a5ec468",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_competition_best",
@@ -9188,7 +9188,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "88bb0ffa0dabdd09bffa8f561c4667749f9433d88d9346dcca221c5577ff9744",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "direct_with_close_people",
@@ -9238,7 +9238,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "47a4677fafbea82e38a7c89b920a1326788dfad347fb4c5cbc62f72251085708",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "extravert_energy_fatigue",
@@ -9288,7 +9288,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "gentle_feedback_space",
@@ -9337,7 +9337,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "4caa36e09c4ac6b75f03896f15cd9c7281a14fc92428f244a4630ec2d12d137d",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fi_value_alignment",
@@ -9387,7 +9387,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "571de81aac5352f2bf331f6fb87ce131f94cffd56c037250363329aef29ceb93",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensory_truth_detector",
@@ -9438,7 +9438,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "b7b8d9f2439cf5c73461e04a99920df04b457979e17af9985eb99901e719d3fc",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "third_ni_hunch",
@@ -9489,7 +9489,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "4251b70bfcefbe354873d3ad9a2191748d3627ed31f0afcaf4a7f10e80839d72",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "open_but_undecided",
@@ -9539,7 +9539,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "42d2275633a4d21ce955c9facb5278a9a0248100b35e3b14a92e99b6fd457fbe",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "weak_long_term_structure",
@@ -9590,7 +9590,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "7b725d5a619245716d2d89eee1baae81f48f24c70d1fc98265e374fcbc1995e8",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "silent_when_angry",
@@ -9640,7 +9640,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "hard_to_state_opinion",
@@ -9690,7 +9690,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "2a98570ebbb4bae6dd811dda21a8fcc26582e98386d54d88d567c61b878d38ad",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "no_bad_words_to_others",
@@ -9740,7 +9740,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "110a040afc0cc0697447bda53e60663fe58d9b5b7d4d40a0fd98f7311dd198e2",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "harmony_before_argument",
@@ -9790,7 +9790,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "16e419dd6a72a7dac24dc380dc32707ee5d0dcb93a116984b29d3f8bf91979f8",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "accepting_but_boundaried",
@@ -9839,7 +9839,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "960e3000a38d81f84dd45311dd5274b96c881d6c8b0d3ef0ea57eafbbd262776",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "easily_trusting",
@@ -9889,7 +9889,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "9258bbe398f3379a3f5c4b20c7beae68f9281cfaf7ffe5d1cd9c02bb37c9187a",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quiet_social_acceptance",
@@ -9939,7 +9939,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "ebde6bbeaca6edf964667150e6c6efaae52e172f38dc703ace0251e9352f4058",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "aesthetic_sense",
@@ -9988,7 +9988,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "e8f9b1e958c666c5d9189ed8815ec93cfcedff0d6dd68aea8cf435de605f7cbb",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "embodied_expression",
@@ -10038,7 +10038,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "649e355aff715a26de583905c61535f7ec416d98fa8604b28667e40605a246b8",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "real_time_empathy",
@@ -10088,7 +10088,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "a5d342ccb447555856c3b09520ae241bf3ff45e61925a75f4053b58aeda93ca8",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "gentle_acceptance",
@@ -10138,7 +10138,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "d108017297b75e80de61b7b7847faadb89a7641bfb1320a77af80556a76b58d9",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "decision_delay",
@@ -10188,7 +10188,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "eff5137932f89b05ed80274fe4011283ecd51ef91f1c169bcddf801c7dbfbb64",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_self_esteem_from_acceptance",
@@ -10238,7 +10238,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "6a90ba16e66662786c3ac987753b1220299de38a08ece877545f8c5ac21a466b",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "mental_recovery_slow",
@@ -10288,7 +10288,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "757934db7eea9211a231b18b1bb002240c9a725a2e04f4904600b1e6f83bfa17",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "comfort_over_ambition",
@@ -10338,7 +10338,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "dab0b7ffa8afc426f00b886a9113d91eeca49143af54df2b7fde100b40c9834d",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "unhealthy_emotional_outburst",
@@ -10388,7 +10388,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "831f3ee04bed1c2ce8baf917ea6740ccba9d52158dcf04fce3831428506fbf1e",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practice_direct_boundaries",
@@ -10438,7 +10438,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "4a310d7434164ebf463846217b676946c48528e97c39fa14e25cf03ccfbdacc0",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "decision_deadline",
@@ -10488,7 +10488,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "2029386181e945a02931f082bf0368bbc626b417e49c7a6ce9532c8eb914e1d9",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "structure_for_talent",
@@ -10538,7 +10538,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "e85a01748dfffbc52a3833cd50a9b09ffaf79addc55e4eda1b794afadd2d43fe",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "recover_before_withdrawing",
@@ -10588,7 +10588,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "b7e8ada7c1bc7556d262b7c83ab99773f4d5f499b9ff4e698befaa55f665329b",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "service_helping_fit",
@@ -10639,7 +10639,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "c24a6eac6c5804518411ff65037506e17517849e63b55a3d0210071b4b1bee10",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "structured_future_career",
@@ -10691,7 +10691,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "a3e01e2ced97dcb9133e5aa28e8bb9467d632e250edbbbe8d9f1978457cb3bb7",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "organizational_relationship_advantage",
@@ -10742,7 +10742,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "2e5d3171b8117db082e62b85fb7ebaf0227cd6aa64e02ffee508de20ec17085c",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "repeat_process_strength",
@@ -10793,7 +10793,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "f669d2f02f5655c614808bb78ca2314d65226ad89aabefbdd362c9fbfadb15e0",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "public_recognition_motivation",
@@ -10844,7 +10844,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "relationship_service_revenue",
@@ -10893,7 +10893,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "19fefb12072b733d8482b14fac1b560356d0c82f36617c220ab4568a7a97780e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "team_morale_builder",
@@ -10944,7 +10944,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "179378693d1a83243bbc8e83b30d5f8f8e4af3092c8ff157bf4481b7555a48e1",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "punctual_pressure",
@@ -10994,7 +10994,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "9d002288fc4a4a954ae536acea83a3f02f2ad85f8152623554bdfaba9db9c967",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "visible_leadership",
@@ -11045,7 +11045,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "perfectionist_completion",
@@ -11095,7 +11095,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "policy_alignment_need",
@@ -11146,7 +11146,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "2da8173c2d39ceccddfc1a9e17832ab1e28e7defe35da75a9079406c7504e49c",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "change_adaptation_limit",
@@ -11196,7 +11196,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/workplace/6",
     "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "praise_boundary_balance",
@@ -11245,7 +11245,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_evidence_need",
@@ -11296,7 +11296,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "2213fb829517f8926ed309f947b65bf15c5821c9693b0fc08d9cb5f2ebc836f5",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "memory_over_understanding",
@@ -11346,7 +11346,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "3ceadbd470f17b0809174714b203585b7d195aaaca517baa6f3952b4357a7d86",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fe_si_file_cabinet",
@@ -11398,7 +11398,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "848bbb3244e50b2be6789d8cf87a9bed6394a75d694fba10bd13e05dc80c5369",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "weak_abstract_analysis",
@@ -11448,7 +11448,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "73d8483a62094f125795b6a2a3d28274ae185bf1f986bd71a6d98393b9071fcd",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quick_social_judgment",
@@ -11498,7 +11498,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "c4796ca08aa9def8be551c002396db24c78f476f09e22e8dcc8154381d63bdcd",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "warm_positive_communication",
@@ -11547,7 +11547,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "goal_process_instruction",
@@ -11597,7 +11597,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "0cd60b3652ba1c482721d18904760de17872cc5f7d37477b63c1116623c3a413",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "belief_conflict_trigger",
@@ -11645,7 +11645,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "a9030fcac3b0c8b5c352635745023c59784dac304ecfea9835943d7ba4ccf1bf",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "visible_reaction_style",
@@ -11695,7 +11695,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "e1d403262ae3f2dd124ffc9c260916ac6de94ee74cb041dd9402716032de16d8",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "small_talk_bonding",
@@ -11744,7 +11744,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "69ab438697a7008913eae7eb36f1bb29e2c8e28d76f430009e44718ae8801414",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "inclusion_drive",
@@ -11793,7 +11793,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "78b1af0d58561789081e6bd6e27bf35776d7bd42211be43fc44c0952c9698dbe",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "loyalty_boundary",
@@ -11843,7 +11843,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "ccde32f00215e131bce94969ce2e02eedbb93177f84a7c72e3aeced70f95d2dc",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conservative_partner_preference",
@@ -11893,7 +11893,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/relationships/4",
     "recordSha256": "0474569e3025c606d0ec6e37f0a131aba44f259fdd001c62db0ff2b82fdcb417",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "habitual_empathy",
@@ -11942,7 +11942,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "2a6d83a2a3ffb44abc2532e8741bb8c7a7fe5dbe9700323263ae2a57a7d0132b",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_thinking",
@@ -11991,7 +11991,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "df8878cc91c6c16e90a9df3f4252cb64d51b6787c5cf5e7176a88439b015e949",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "active_expression",
@@ -12042,7 +12042,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "1313fc07bbf41a5cace0e4a7df59a9fa0008d107b6501172f5675e6e6e8bbc2e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "trust_drawing",
@@ -12093,7 +12093,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "d185d959808a9b5d33f2eb74d520a49fc3d48503b67b841448d993f8a2699efa",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "stress_relief_social",
@@ -12143,7 +12143,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "9b059e2c6ae98cf7deca3cec5f4cd0304cfa3d23647bb63f1ce34730327fa5c8",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rejection_sensitivity",
@@ -12193,7 +12193,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "94a353fb11fe71c679cf8c953f71447716abfafb7d35eefdbcf3ff2c5aaaf78a",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rigidity_and_hasty_judgment",
@@ -12243,7 +12243,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "fbba159062561fa857ddbd8b41b12d8041033208e21b4e30b5be37184e31f68b",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "need_for_gratitude",
@@ -12294,7 +12294,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "61648d7ff5197e5ad6db9ee6f658df74a7c1c0ed04936b13f7e06e3ebaf04557",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_conformity_bias",
@@ -12344,7 +12344,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "28daaf95a3c1271e2076fc6de6e2d10a9d7a56ab84fbe7f1d931b96d83f2c1cd",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "logical_partner_friction",
@@ -12394,7 +12394,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "5d9f23fc477cf287665813aeaddaca4de80ca4a4f26433157a7c31cd82b2fe1e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "separate_care_from_control",
@@ -12445,7 +12445,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "968f58fcd004ee7ff7ad0e70644dafc3f087770a7265b7bfa9a2b3da1c1e3cee",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "fact_check_before_support",
@@ -12495,7 +12495,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "d2d0fb061d2c23d77f69f67299258c6ea16b59356c9a8ce51a6fa8d4276ea020",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "build_ti_checkpoint",
@@ -12546,7 +12546,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "cf5513d6e899ca699a83c30376a52e54879fcd5035e0b3e1c57de5a3bd458d99",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "practice_change_in_small_steps",
@@ -12597,7 +12597,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "82f8c47b02fb267e775c08ab7ed0a7b94fa98e31f599c45476876bcb24595430",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "entertainment_fit",
@@ -12648,7 +12648,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "d5998323ab9b63185da77f635e70377dc416e9a82d2ce08b2fc8a25544f297e6",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sales_service_fit",
@@ -12698,7 +12698,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "0185e1e4764c465607caf66972c330a9357b051d514fbedad0aa956b139f9888",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "free_environment_performance",
@@ -12748,7 +12748,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "0e7506aa6eee94f92c42334e17f35ae44e5275fc67527740f576f3f578801ccf",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "atmosphere_role",
@@ -12798,7 +12798,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "46283a06c8348270c4fd3fd49ae39eef47c2065de0a51abab6a14e681bbec6bc",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "responsibility_avoidance_risk",
@@ -12847,7 +12847,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "experience_content_revenue",
@@ -12896,7 +12896,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "d98fbc035ba01882f404c6e6afd2172039165ad9d98e66f3682212b421e71bd5",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_bureaucracy_work",
@@ -12945,7 +12945,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "4ff6e93042fd35a0f07bf9a8169ff4506a518275c594e740f54d6db74476ce06",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "people_nearby_energy",
@@ -12995,7 +12995,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "82b47839c3325bfb438c68fc61f6de81fd260c466e334e97827838c25d248ec3",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "improvised_action",
@@ -13045,7 +13045,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "6e615862b0670086e0c36b6374009de0c656a7bd87b4a0008609d00099cd742f",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "finish_line_weakness",
@@ -13095,7 +13095,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "7b3e5016f2286d02c9f4d693771c032219da9777b5dbe3088f0c9482843db03f",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "messy_detail_risk",
@@ -13145,7 +13145,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "responsive_team_needed",
@@ -13194,7 +13194,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "091482385d1a47948a96eebd365e4084c746231019e1eb1b61821bf75b595507",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "experience_based_learning",
@@ -13244,7 +13244,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "b023995b28071496ca86caf6543964a6eaba2043d392e93018ac90a48a9b40e5",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_theory_bias",
@@ -13294,7 +13294,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "11084459adc3b67309fdc9a546a1e58e37fe4a82af39a3fb4e9861f614543921",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "broad_shallow_curiosity",
@@ -13344,7 +13344,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "e4961b53e8f6d2526a12f3af20f2a1d1f90c9602f46a01fd1e1ec60482288be9",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "late_start_pressure",
@@ -13394,7 +13394,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "bf60b44ac43ef746589cfc02bcf2bcd03e91724ddeb917178ec1e6c487ccd3ef",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_protective_optimism",
@@ -13444,7 +13444,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "88e603e0b43570f9790e874e20ef59c138648ff3ee68bee2146c9657dedd5b24",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "honest_self_disclosure",
@@ -13494,7 +13494,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "5d309999ace192324d0bef627ae27e0eada1be4453aacb3900ed5896ed389a90",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "many_words_low_structure",
@@ -13544,7 +13544,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "8712f49355736039f04d9c1fe6f7ae2ed727c82a0ed8e3a9478b12493cb4c57a",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "not_saying_real_point",
@@ -13594,7 +13594,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "7dcc72df565dfd37aa3c66dfe9dde62343032b928b2fb5c1e35168b8bd7053a4",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "value_opinion_talk",
@@ -13644,7 +13644,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "997b1edd30ef8d1d17f07cd0527af6187c699b32bd00b036541e66dcccf357f9",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "no_prejudice_acceptance",
@@ -13694,7 +13694,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "ac70058de1245b35aace49398843fb890e339bae7abc8393390b9dd247d5834d",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "story_and_episode_talk",
@@ -13744,7 +13744,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "cc8a12a15ab773276ef70a0423bec6da4d94adffe0d7520071740448f169a69c",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_visible_relation",
@@ -13794,7 +13794,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "7024e1972048decf4c461f9b0084002db860ab50dc466c7b40d0b9a9d27e94a6",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "introvert_bridge",
@@ -13844,7 +13844,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "e7ad5196056f6996d61d68f4519be5a0a1df60817526c464066beab98f1f775c",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "high_adaptability",
@@ -13894,7 +13894,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "e2c4828c7d5ab1ab4c812cdeabc7ada85b1571e22c4ae7b15a2cec5e5b42fae5",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "optimistic_energy",
@@ -13944,7 +13944,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "d07d5725906b28f0c36fc9ef75a3f8087a5e61b95a6b9e7d3c85901d6aa81750",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_common_sense",
@@ -13994,7 +13994,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "3083a5af4aa3ae55fdc49d37fcf5bea0bd9901c7089156943d071350acbc3f84",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "surprise_generosity",
@@ -14044,7 +14044,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "f976713c86c4094e5b485712d2ea0115a2889addec5f59e98956380f73a6d1e0",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "boredom_intolerance",
@@ -14094,7 +14094,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "54558ef16736ad8281287e387c38770aa9e9a4562317d27efefb12b158987d0b",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "impulsive_emotion",
@@ -14144,7 +14144,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "c678d5a95962818c1f22ebdf4ff0f6f6c9a541f1a24c18c8aeb1dc2f835b37aa",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "irresponsible_fun_loop",
@@ -14194,7 +14194,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "dabd957aed9d9ab2de0da6f5c0ea1906db16b559816f197c1d591923e6b33e7f",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "control_conflict",
@@ -14244,7 +14244,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "3d9fcebe283a933ed59c12e9ec4423c4142825760f5417d42ed1d8e3a7fcd768",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_deep_focus",
@@ -14294,7 +14294,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "1383807dfd043320f9a7e767dba4572c7ee94a847c44c8304586653cedf6c47a",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "make_fun_responsible",
@@ -14344,7 +14344,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "8d0aa2c1c8ad12b39bbee25a8b3ce4911662d2e874c39cae72381db7e2a3208c",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "build_finish_system",
@@ -14394,7 +14394,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "8dfae579f37740751d2899c40379f21d4ef0e121c35693d6293312c72145a036",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "practice_depth",
@@ -14444,7 +14444,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "1db4ee356f91010d4194a6aa91ffad16484532433f4cf19598406ba5f8ede410",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "slow_down_emotion_decision",
@@ -14495,7 +14495,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "e7d3ccc3ff0c555085ebf85eab220b86aa3b93055878cf19345158e5baa10fb5",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "science_tech_law_fit",
@@ -14545,7 +14545,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "1ce70bbcd5e2860ef1811690d9f5bd74737a3ab9cc6f699c8652a90ef89620bd",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "purpose_over_promotion",
@@ -14594,7 +14594,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "1c43049625a5e1766ed30ae0f1577dc543c6e8bc6aa8ec1ecd0d48c944dd9bc4",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "small_team_deep_work",
@@ -14642,7 +14642,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "671cbab5669228f26038118ba3c6a2639c483e76419740c50487c25f16acc5cd",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "meritocracy_expectation",
@@ -14691,7 +14691,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "58ec4d1f7d5d6485a3288df74a18349bd415b1a6cefe498868ead72deed72f13",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "strategic_supervisor",
@@ -14739,7 +14739,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "21160c05e131d68c602615babcf34f11e32c261cfb076fa4877a3bfac274d959",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "autonomy_required_role",
@@ -14789,7 +14789,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/6",
     "recordSha256": "568c68310514d56d94cec7a9d6a0059a8293141fb6bf6fbdcc2562e3657380d0",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "innovation_over_convention",
@@ -14839,7 +14839,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/career/7",
     "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "strategy_to_asset_work",
@@ -14888,7 +14888,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "c51c73b93437abd92c1ce601ccccb2c0901ccc340293c88eeb5135863c42f718",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_politics_work_style",
@@ -14936,7 +14936,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "0f66f85ecca0cfbc68b82e75e43f6bb80a675995f13945efb1a6d1d102a470f3",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "boss_challenge_risk",
@@ -14985,7 +14985,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "eab3c5e64d469e29bf5286a91745fdce1c3021c5de0432e9e972cd7ef838cb11",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "free_rider_intolerance",
@@ -15033,7 +15033,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "b09f8133b7f5655879789d5c4c4cc27de50c96ad559803b70ee3ce7216c1ce38",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "private_chatter_drain",
@@ -15082,7 +15082,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "d49bb3c9b9d3897249781647e202104d76f512e53b3b807cbd90b4c9d03bbc07",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "flattery_resistant",
@@ -15131,7 +15131,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "96c9b5a595fa11402a714ddc14ccb6480ece92cd14d7835cb7a8123bf7eb0ce3",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "broad_structure_leadership",
@@ -15180,7 +15180,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/workplace/6",
     "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "authority_scope_alignment",
@@ -15229,7 +15229,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "system_first_thinking",
@@ -15279,7 +15279,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "ddf7f2eba206d54f33cf4cecd1dd451eab68197b731f9db34a24fe50c67923b2",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "evidence_based_vision",
@@ -15330,7 +15330,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "ec9e84e7375669b87e4859e47d4786267726c00f2f26f1b88ab6365076b4549b",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "elegant_solution_drive",
@@ -15380,7 +15380,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "7676722361fc8f7c6bfcc1eab2427d1d8c773e51b63116da017f01712fd7a359",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "definition_precision",
@@ -15430,7 +15430,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "d89d1b020b258173af64aca1b5869553725f09bb71419524fd6e34cf58686f0f",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "future_result_orientation",
@@ -15480,7 +15480,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/thinkingStyle/5",
     "recordSha256": "afb87bef40a6aa95b648c651e798f73043af31ce7de654ffc68d229fa2e58a7f",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "hidden_inconsistency_detector",
@@ -15530,7 +15530,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "3863957658b32ead1194c028ad3bfdc871854d1e424b2d743d464fb3ede00ba1",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "blunt_fact_delivery",
@@ -15580,7 +15580,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "f3c295610db3fc3704b0db9d189712a938c0f6c4960b5b198bd5295bc4b12ffe",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sarcastic_humor",
@@ -15630,7 +15630,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "e6f00752a11c3e4db5d708beb5c44bf7f9f05c0c8db71fe848b71e9fdfb047e5",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_praise_style",
@@ -15680,7 +15680,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "1aeb156ead2dbcbb29e864bd5f59523dbe4c84c549fa1572680f149d34563fca",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "abstract_conversation_preference",
@@ -15730,7 +15730,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "0a113bb165fb54de1ea72840bd81387563f77c529e2d198e5e3ceb2c0fe1363a",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "selective_friendship",
@@ -15780,7 +15780,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "6eb7fb4a058bcd1cc948025d173b19eebd86e306722a02c2b314ddc01e9cedc4",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "deep_idea_bond",
@@ -15830,7 +15830,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "77fd7039c90d1a57bec7c598989112eb5cffdb8ba8d03b87b1ad0bd9275779ca",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "insight_as_care",
@@ -15880,7 +15880,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "72ef5ee36a2f5ecbbd72f24eebf4b4e870136519e978ffaf96ef61f6fe7fb85d",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "line_crossing_memory",
@@ -15930,7 +15930,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "44abc7b57c30361bc25c33101e28e81ce61e9f14fba21057d446f2ea2c063ef2",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rational_under_pressure",
@@ -15979,7 +15979,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "35c386e460217df0e2ff1d3c9c3357030f1ef3f380ae21b6136f451cb9cf82a4",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "intellectual_depth",
@@ -16029,7 +16029,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "3596507fb05c9e8c2205785d909f357f555d45c787f649e8c891e5b69b559cb6",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "independent_creativity",
@@ -16079,7 +16079,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "8126bb4e0f5859b9fffb3eb10946f8cc782cdd32f63303ac528f748378f78b4f",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "original_innovation",
@@ -16129,7 +16129,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "8f3a9c0f3b941ef1899a90847deaf2e0f568d7aa16859e48bf90aaaad3aceba9",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "arrogance_risk",
@@ -16179,7 +16179,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "3dc3448c28cc430810437266b21b195d9d418bf6be425c06960257fdd601a2df",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_sociability_risk",
@@ -16230,7 +16230,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "c6778e41a1d19794bdefe6853390dc15141d0bc40b9d4c6a048e72d86ec71376",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "over_intellectualizing_relationship",
@@ -16280,7 +16280,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "cffa97281a74c495b9b660c4580dad1bf0340fe00edd234980da267ec5d16900",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ni_fi_loop_anxiety",
@@ -16330,7 +16330,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "1d4838974fc061be2f8ed7603d5602b123d98b6209011ce2fea2844b41d0d7e2",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "sensory_reality_neglect",
@@ -16380,7 +16380,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "202c6ddd6ac21119d9f0d9cbb502432f996a97bacf8df25408d09215c616dbaa",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sequence_feedback_softly",
@@ -16430,7 +16430,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "0a0279f88ffbaa07707abf7f4fadd77970c691f16c2c59a4c8e2039aa7f7a945",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practice_small_affection",
@@ -16480,7 +16480,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "955fc6683c1a0978b7332f3d31ea3e32178e2ec56cad7063c6a59516742cdc1a",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "invite_real_world_feedback",
@@ -16530,7 +16530,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "57742f72832486f6606c75894aba15a7462b5a5497cab9004ee09b1a7deb0e14",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "build_social_translation",
@@ -16581,7 +16581,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "35bc899e4b1cfd5fffb4f6b0722b05e1ea713fc8cae0d32e088b7b805dc8215c",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "research_field_fit",
@@ -16630,7 +16630,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "072e2275a09e000777abb395adf02619ee3944fa837cce16686f48aff00a18c2",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "programming_engineering_fit",
@@ -16680,7 +16680,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "ab2f61f3cbfc868883220876e2454b3381c72b124d73a7f9b8933e35c5e6ce6d",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "late_blooming_income",
@@ -16730,7 +16730,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "409528503fe897eeac28cbba9e411e8bd87b9b9a346b119e8fc10d228383cf95",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "freelance_autonomy_fit",
@@ -16779,7 +16779,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "ca5b50142d59751c70d9e68787adb45bf4c18f9a4addd5f7a2bc4fd4fc31e75b",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "education_for_adults_fit",
@@ -16828,7 +16828,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "96779cccadadd54bf0dcbcb08c01e11091fbd9e6a48ea83c65c43d8f8abf3f59",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "esports_and_online_skill",
@@ -16878,7 +16878,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/career/6",
     "recordSha256": "68472788cbec737f9dde506809696f440cc3950c1b5415090a7d71abffe0214a",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "model_to_product_bridge",
@@ -16927,7 +16927,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "needs_thinking_time",
@@ -16976,7 +16976,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "d96777ab6bf534320352780a6c262710853fdaf3752029fe096a32ce6f2cce72",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_bureaucracy_work",
@@ -17024,7 +17024,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "2fee39e4af6a18791cd9709e89f43075de26cef9d2852963b1025a11b7376386",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_reaction_meeting_drain",
@@ -17073,7 +17073,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "last_minute_execution",
@@ -17122,7 +17122,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "22449b13abb80270f95c24821c1dd6ab942f74abd6d8fd44b98acbdafffdb87c",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "effort_efficiency_filter",
@@ -17172,7 +17172,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "scope_clarity_contract",
@@ -17221,7 +17221,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "faa7efdfc185dff4a7b34613861d2ac332abb49cec4a6654dd5477bf6f865cf0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ti_internal_model",
@@ -17271,7 +17271,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ne_possibility_storm",
@@ -17321,7 +17321,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "why_question_loop",
@@ -17371,7 +17371,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "8f9715698fd681bcc3f8d36694f0567f35a7e0530e5a5edd4f77d0314412b180",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "proof_before_agreement",
@@ -17421,7 +17421,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "big_picture_first",
@@ -17471,7 +17471,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/thinkingStyle/5",
     "recordSha256": "64e6eb454b95b12a0f298595c325d8d27087019e3152ae9bd866e68e9ce9f691",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "pattern_leap_risk",
@@ -17521,7 +17521,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "direct_everyday_speech",
@@ -17571,7 +17571,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "b6b5ccd1a13e01c4acb38a1b8dad090aeee8a4c1f6cab3ddfb3ea239089ef3cb",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "learned_social_reactions",
@@ -17621,7 +17621,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "b9c76e2190a8602b5d357d59aef83f2a85001f9c602d39344f9140f50514e553",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conclusion_hungry_dialogue",
@@ -17671,7 +17671,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "96112e32ee358f2a0bb5443e36f29bfddb4209949f3b106a0ebb258753316ed2",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_after_thought",
@@ -17721,7 +17721,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/communication/4",
     "recordSha256": "b80ee9ec7e231d030fddb5a5ce2ec3877a8e3dbe789d1ba843cf1199fb2ce5b0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "topic_triggered_talk",
@@ -17772,7 +17772,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "6486a235e1eec8a9ea0973db228a8f96b07296f6acce030ad39323c4ce035be2",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_need_for_human_ties",
@@ -17822,7 +17822,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "fa39ae35ddbdee96ce319bf0cb4337333ffc550b993921e8cd4b724ea3cb1d88",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "respect_for_listening_mind",
@@ -17872,7 +17872,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "1c443cea80ebd18c2e5999901cec3a13c6119e7ca1f02166c428025b436fc097",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "no_debt_independence",
@@ -17922,7 +17922,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "92f2e5e50a8be25fb1f030e90e3e509a851304dafe2e956fc8066a3fa1b53b66",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quiet_cutoff_pattern",
@@ -17972,7 +17972,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "ac2c18ba7af5e3f23b6dcada7caffa63681564bfbed45585ed13822e71747bdd",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_intelligence",
@@ -18022,7 +18022,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "7b3dd44bf1d15593e79b8b9ff4042321ebb112436c5d7812e315795955b26bc0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "open_criticism_processing",
@@ -18072,7 +18072,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "b40b0ae2c4775850eb43f6dbfb061c55acd42624b2140204773387f377c1fe24",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "lie_and_trick_detection",
@@ -18122,7 +18122,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "a31d5318807d5c167df3b80458e97dbb3efb3d1f4abf4a109728003a17a35090",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "long_game_thinking",
@@ -18172,7 +18172,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "fc0e2862be3f7acbc4b70e23ac1519d5bc15c80ba157fea47d93b615d11670a0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "chronic_laziness",
@@ -18222,7 +18222,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "ad68cf5a8e5c97913e948424a563fe0296369a84ca316a1f5b24e3c1125bcb0b",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_happiness_void",
@@ -18272,7 +18272,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "2731ae7236b72b9e74b176f832e9541cc12fb26dc0482148b6b6183ad65f506d",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "analysis_without_application",
@@ -18322,7 +18322,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "f74a7bf49eec69ae78f6b6600dca5f1dc8d9dfceb8520cecbe0e67d50d2dd9f9",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_blindness",
@@ -18372,7 +18372,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "4e56cc031431668b41f21d928cb9faa43d601ccb6fc4e7a63f6eb55cd3e71b85",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "passive_aggressive_unhealthy",
@@ -18422,7 +18422,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/risks/5",
     "recordSha256": "545cfe5f94379d32e44bd8e7c3f92d708a76f98b0028ee57e9f08df50ec0be8f",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_physical_action",
@@ -18471,7 +18471,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "c8b1b2dab171c450b2914c9949aa60f51cf4737302025c0ebf6962307bf6adaa",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "find_meaningful_motive",
@@ -18521,7 +18521,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "c38517fd1a808f40b9e322957cac750490da952db442ec4494d277af17e25110",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "respect_own_talent",
@@ -18571,7 +18571,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "56aaec3c6729b7176417126e7145a28aa0d8238cd40a0a55e6e6aa67e8dd05d8",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "optimism_from_one_merit",
@@ -18621,7 +18621,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "ab35bd6d1b8c16f645554523b5c7cf0e9bb714f9390113bf7ced731a077a0489",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "close_the_loop",
@@ -18671,7 +18671,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "4f1e0ed66f3d3897018963f63cb6ab79c59c851c08fca41d1ab8ab77b796eb8a",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "executive_natural_habitat",
@@ -18722,7 +18722,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "1e17d7ec4a825edad887c7884174efcd956da1bdac07f9b0438d795a512bd27e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ownership_priority",
@@ -18772,7 +18772,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "aaaea44e246acfc5a7944d0beffc3fb5b9e1f4aedae19dbd4235b8a704944e87",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "large_team_manager",
@@ -18823,7 +18823,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "44573956e7a52e8e40a8935d277f5a99f0add875b43830fd9a3cc1e466d83a82",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "objective_performance_environment",
@@ -18873,7 +18873,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "905af1748e735d1cdd5b1902751be69f80fef8aadac7180f3d0d3cbb9355c191",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "entrepreneurial_income_potential",
@@ -18925,7 +18925,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "ea70a10cfdd0d66d7beaae6aedd44cc4659e3e1ecba466e165bf5e4417334401",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "workaholic_drive",
@@ -18976,7 +18976,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/career/6",
     "recordSha256": "cfc584991999e6aee6e6bc824c149b74156038a94cf8332eeb596d81f2f831d3",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "scale_operator",
@@ -19025,7 +19025,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "e1cfdae0aec0f7ce594fbab4f80a484dd0a2c494e36134f9be0c341cb04ba662",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "direct_feedback_leader",
@@ -19076,7 +19076,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "d756495d716d5e38df050b4efaa0359d33450112241810decc3471f2f16b7e8e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "turnaround_reformer",
@@ -19127,7 +19127,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "1b9a082f16d65f46dba03589765673237c2222526d0c876a49ba4e5fc1894578",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "equal_competence_team",
@@ -19177,7 +19177,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "4eca9c36502f573914dc23c6d237b914584c5f91c2bb526804c28922025156b7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "crisis_momentum",
@@ -19227,7 +19227,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "d4026842668d76783bc941547d0c1c24f868cb219ff92614ed299089f4410b33",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "democratic_until_decision",
@@ -19277,7 +19277,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "delegation_pressure_control",
@@ -19326,7 +19326,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "ff9002bafb78de0dcf7541c09b8c6dfa124676a4ca41032bef5e0b050630aba7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "te_ni_strategy",
@@ -19377,7 +19377,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "e2db910f89b51e4f32b0c2bd581c3456433fc00a041388728baed46cf05f4887",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "criticism_as_growth",
@@ -19427,7 +19427,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "ec60da6592e87ba0bba8fadc332b6defbd4d93ec155f8548c05142a52f5f2e75",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fast_decisive_filter",
@@ -19477,7 +19477,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "407577b6e7f3bd039cc07f0a7698f8c1953d947840b24fbd44a345e2c93d7187",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "time_attack_processing",
@@ -19527,7 +19527,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "e0e5de6d105b530ace470e4bb67c692e92f0106a8b2557434b98ae00eeff2f05",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "future_obstacle_logic",
@@ -19579,7 +19579,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "clear_assertive_language",
@@ -19629,7 +19629,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "a0f766ff3a81b676773ad95c9240adc01a4507f01e29b69b13328977c71bd7ff",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "challenge_communication",
@@ -19679,7 +19679,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "wait_and_listen_gap",
@@ -19729,7 +19729,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "fdcac2dd345ce6447db0ce601ea21d1dd9a0d25360f40a11e24d43ea208cb4e7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_not_language",
@@ -19780,7 +19780,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "af63824d2e44e7414eebdfa760cc6f311910d493746249d65b75df990591a641",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "strategic_friend_filter",
@@ -19830,7 +19830,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "e46e2bad62e563cb119f04c51cc58523120a8383206cdea74e303f52e2ccfa25",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "debate_as_bonding",
@@ -19880,7 +19880,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "da49157ebfff83ceb2b1ced2015da34e1fe8fd81aae6d5b98760b296338c023e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "useful_support_style",
@@ -19930,7 +19930,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "35194aa3edd6c89b83d5ef68efacdad752284bfc27c46341a5b2c5378b9f2dfa",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_emotional_support_need",
@@ -19980,7 +19980,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "af7e2673c032c7031d3c6366ca40de8896198b81a26297ad3ff2423566790e05",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "problem_solver_energy",
@@ -20030,7 +20030,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "78428c8e86686f45ad93f81588ec5a303ed48fa025170d1d25bf1007bc6e16ad",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "talent_diagnosis",
@@ -20080,7 +20080,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "687ebbaeafc515835d36c13dde0a73932dc745a5e56a702e6138f61733517d14",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "execution_after_planning",
@@ -20130,7 +20130,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "b257eac1c6b5b3869730b47aa6b894018a13e335a79a9c6cbedadd14c4e60f2c",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "resilience_under_resistance",
@@ -20180,7 +20180,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "626a0eadea68ab7161fe9b7487ea1d4f2aefec395a6e191792a56e96d89c459d",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ruthless_rationality",
@@ -20231,7 +20231,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "c9a02dce92f6680255242855cb15de09f12026576543eb38b52d21b5f5c7c442",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "my_way_or_leave",
@@ -20282,7 +20282,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "aa6c12455c2f8b42a985966fb23c4ba9987399d6a2cce03db951f5bafa8ee2b2",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_empathy_execution",
@@ -20333,7 +20333,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "af0534c3c86edc92e018805410c3e382af2e325d092403c5f59583aa29864fe5",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "public_contempt_risk",
@@ -20383,7 +20383,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "4cfa5e42fb3cf3833f86b7ebb1701473bd34dbaeb21d5a7ae2a0458ee7f459ad",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rest_and_family_neglect",
@@ -20433,7 +20433,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "3f17f40d4c05f3df57d2b4b837346a721527cfa6578eae816f1b178f4c918f40",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "eq_as_strategy",
@@ -20484,7 +20484,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "2e198401149424e9f4d2faf8479962546fb3a6d02eb5a984db19408a0559cd2a",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "slow_down_feedback",
@@ -20535,7 +20535,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "132cee3610524a0a9084ba1e704e9016b9393775eacdaa2afd9e8b73d62c7a10",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "cooperation_over_victory",
@@ -20586,7 +20586,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "42aad4dcff108e8e0151749a4f506eef769b524ed1d9f4b664b8874476828f6d",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_impact_check",
@@ -20637,7 +20637,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "2063622d8439bb11a4aea8816a7d443b64726c29801945770c1b00e6c0be5751",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "verbal_profession_fit",
@@ -20686,7 +20686,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "60ec87aef05ea294cc0224dbbec7837d0f3e1ebb58fc942243437fab61ddb082",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "tech_problem_solver",
@@ -20735,7 +20735,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "6c6b692865e2df705718db49baf96354a6a43f6cac019b47d83ef26426841fc2",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "entrepreneurial_drive",
@@ -20785,7 +20785,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "4502f86be269e02c287c900524facf656c105792900d4fcbbec355819c1dbf01",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "performance_and_entertainment",
@@ -20834,7 +20834,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "1ceadb0f4174fbc6a744bf8350dee39a7c0a66d9cafb8974f08152722e2aed6a",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "high_variance_outcome",
@@ -20884,7 +20884,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "49ad364068ab431ef65856e61bbb0298a2cf8931eaef123127d84b66b9029fe1",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "prototype_to_market_path",
@@ -20933,7 +20933,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "7ecd06a09dcb82d85dc0371268f747e382c6dc1cd809e46c5075150631715b7e",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "autonomy_required",
@@ -20981,7 +20981,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "c06eb2a4558a9b3cfe5ced1d10e581c7f3d1c68d1bcce2dac22007c8f8beb47d",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "brainstorming_leader",
@@ -21029,7 +21029,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "b3247a082d7c9fac9657d91a940aa8cddc3c5cb46c79045a2ec4ffe51fb86ba8",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "constructive_critic",
@@ -21077,7 +21077,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "d2d82b782f29ed049f3fad1cb5e5266c733aa6743c40046893d3a7c65960819e",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "multi_task_starter",
@@ -21125,7 +21125,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "85f265b95948daa274a10f4b4ec8216c930bdd8917534896d23b068384ab22ae",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "political_misread_risk",
@@ -21174,7 +21174,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "d41bc09c022e19f8dccd5beca429151aac94202711eabec8f986eabb41fb8387",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "routine_owner_pairing",
@@ -21223,7 +21223,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "022a47d4dd2f078284c0817cc681f94eaa2b7415509a6b77ff2281a8b0ab5b46",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "possibility_scanning",
@@ -21273,7 +21273,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "2b292a3ec7ff689ec6cdc8ee3844636f7333a03b78a47c45401db436ba1bdb6d",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "logical_core_detection",
@@ -21323,7 +21323,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "4b6ad4d5744833e82403b106634c6e5d17f5dc1285eaab4f945bdf53b2a3439d",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "debate_as_processing",
@@ -21373,7 +21373,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "1fe4ab6f44647a9fc5aef8319681a868cd1ec346e0d21c6719f0b938f94bab59",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fast_approximate_grasp",
@@ -21422,7 +21422,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "flaw_detection",
@@ -21472,7 +21472,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/thinkingStyle/5",
     "recordSha256": "c40141502ad847a82c7439943684db1b477bcacfdb79cc7f721a1b52060031e2",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "idea_before_detail",
@@ -21521,7 +21521,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "0ab8e8d97a4797efc462340f2a9a260f7a48a2293845f06cb5f5fac04f196ca6",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "direct_speech",
@@ -21570,7 +21570,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "bb3a1df7f020bf8f7a23f7ee9e7c98dfc68bdb074f1d21583ae98eb66da8afe8",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "charming_argument",
@@ -21620,7 +21620,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "979f769b04b3ccf05e5a5764f10d77840c57502d37ae15ab671f06514dddad87",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "why_question_habit",
@@ -21669,7 +21669,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "d05bb3949c2928ec4e5a8ee906be5f40f95e4b306f0b54eb519abaa1e882b2cb",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "large_frame_explanation",
@@ -21718,7 +21718,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "d920745c8fc4e3cfe32719e74579b6eed6f73b7621afa6a0e8d878eb2c4dafa7",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quick_connection",
@@ -21767,7 +21767,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "02aa1d50f13ebd4c8d0122762b820aa79d3dd84bbf045393075d40030d050099",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "selective_loyalty",
@@ -21816,7 +21816,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "34930bb8779108295af2101c69e88afc2d1a35822403f2701f2897ffefc4cbbe",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_learning",
@@ -21865,7 +21865,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "f84709cc6aa2d77eda9fccc32c4ab7e505f18052aefd576fdea7527939b3ceed",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "cutoff_without_regret",
@@ -21913,7 +21913,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "0b7d2bad82a7eb5147dd7a5430f8f26d3cf92d096f5ac6181ce633f72821467f",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_problem_solving",
@@ -21962,7 +21962,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "b4a8b59225d75ec97be12d38f75e4d1eb8ac803581b1b4787df13200fc16833f",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quick_adaptation",
@@ -22012,7 +22012,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "161825bacdc832120ddab6257f958dd0440b098842f6c86da77ab7d9e65deac8",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "people_potential_reader",
@@ -22062,7 +22062,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "64c07df333486b15ab7b18359063b14d45d3d73eec91b2f2ca5cf0cd9e0e7567",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "accepts_good_criticism",
@@ -22111,7 +22111,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "091111b77d107921f86e595e2125332edf8312262f6c87251054e74f287d94e6",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "unfinished_projects",
@@ -22160,7 +22160,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "4703478a81f26188e745c69692ededbef97e69bf2a9978370dae70836c14be3b",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_routine_tolerance",
@@ -22209,7 +22209,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "1f4ca57eb58cd3ebe7400f2f0723183ab5cce02d0ad2e6c2076053664aa378f1",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sharp_tongue_damage",
@@ -22259,7 +22259,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "b68cd8c2340af39e59d9ed8b4e51bef45b493faaa163d67e52c580cc6a1b8477",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "manipulative_fe_shadow",
@@ -22309,7 +22309,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "d5693cd8309418c7a21f9db4891d10f6e722e88b21fb79deb931fdd7d5eb656b",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rebellion_without_timing",
@@ -22358,7 +22358,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "8519cce6df59cc43e1d51b69b431bc160e75dfa86485e72a45e0faf40728dbf1",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "narrow_the_attempts",
@@ -22407,7 +22407,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "ca7966ddadc0f61c376edc696a128813571d139bb6f18436d909e082a892f797",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "soften_the_truth",
@@ -22457,7 +22457,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "68a0950ded747048d1f4179fbf9b6c8ee6eb6bcf881eb278ed225fb7d02286ac",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "build_memory_system",
@@ -22507,7 +22507,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "26cd37d16147605acd405725261674516ead5a4f4fdf2fff97024bd1574bc9c2",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practice_emotional_presence",
@@ -22556,7 +22556,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "ac1e04ef773d1303b0a3f0524db442b234795a48e698d2033c38b5ef2761828d",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "helping_profession_fit",
@@ -22605,7 +22605,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "1e0f88d42d9d01359c10d98f512f38d935d527db705ec7f10af09fc20267575e",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_language_arts",
@@ -22655,7 +22655,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "cb6809f4645d7ae9f1945d02a2dc4c1fc03c2a8ff2de8e124fa536b9ae2a6833",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "research_academic_track",
@@ -22704,7 +22704,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "6a1fa45a2365dc4f38d742cc168a385ec627bf0e9aff5dff15c646ab01bc1b85",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "healthcare_meaning_path",
@@ -22753,7 +22753,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "91abe64b4ab1081a025920ba5c84da78e8e6f1c2bccdc1e722dcb044f44be874",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_fit_fieldwork",
@@ -22801,7 +22801,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "c9c04304465e2cde4597aca0ba4c5a70c1e60818b7d78fbc3cafd48a441621be",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "mission_over_income",
@@ -22850,7 +22850,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/career/6",
     "recordSha256": "07cff2e577212ffa6c5078d0605ec79310e1097b7f4963eed4bbf2021e783a8f",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "vision_to_content_strategy",
@@ -22899,7 +22899,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "4d939ac685a6d57573fe725bbd12b75047e381dee843cda1c6c111cf70855a5d",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "horizontal_structure_fit",
@@ -22947,7 +22947,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "calm_deep_work",
@@ -22996,7 +22996,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "4dcfc1e9716eed6516b6df3aa956406b1034c2810ddb73f7882fdb89f774f8f0",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "project_completion_will",
@@ -23045,7 +23045,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "0a316f6b3e7086e19c8858e3657786b20cd2305b9536a6a21dba6f7c4b046b31",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "people_centered_value",
@@ -23094,7 +23094,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "83e4bf7c1e15bb0449ff1890fec3bdfc86701728a6b333cc4e9334e62597912a",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "slow_pace_quality",
@@ -23143,7 +23143,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "4261450c0a40e4bcd6cedcb465574872dc4b0055e65291bb034607349167f4ad",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "emotional_boundary_at_work",
@@ -23192,7 +23192,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "6aceff748015655ffdc57b68bf3db577ef84afcd031855f6dbad51f1712d04d1",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ni_pattern_prediction",
@@ -23242,7 +23242,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "5411c3cb9de564e78e11d2fd24d1e5c8ba861cab348a2362ce7dd50a280f3293",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "private_analysis_loop",
@@ -23292,7 +23292,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "fca63b19382c8b9d4109d9b41c210013f0a8a734ea7cbb3b0633a507ad799585",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "forest_before_tree",
@@ -23342,7 +23342,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "c9909ae65ad1011f1acf72c9a85f4dcd9708f221290a57aa52b973fa73cad265",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "symbolic_imagination",
@@ -23392,7 +23392,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "b76fd2d74f67eec6c97b925450c2d7e0620ff73000c5610f000590ca7f8e427e",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "moral_sensitivity",
@@ -23442,7 +23442,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/thinkingStyle/5",
     "recordSha256": "2cc4a3aadb2adef95d1fe0d0ba0eac5ee0cb39cf61b4daa326c6e382c4a44896",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "intuition_needs_questioning",
@@ -23491,7 +23491,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "a0b6ec1ef19bedca75dfa8f19e1c49093d63aa6e119533b56d86f37d00155818",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "indirect_expression",
@@ -23541,7 +23541,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "gentle_language",
@@ -23591,7 +23591,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "2bf705286b98047b314f1606738eb23de5347769e39b88a3c113f790125f571a",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "infj_stare_analysis",
@@ -23641,7 +23641,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "fd107e4bf544da95518616de0c6c61b798f2d9c2586ed113ee8cd7f20b909f81",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_smalltalk_energy",
@@ -23690,7 +23690,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/communication/4",
     "recordSha256": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "firm_refusal_when_decided",
@@ -23739,7 +23739,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "24d3e4a213be148ff1409b7beb37a39ddfddd8d265e2ea63f950b4f5974b2720",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "deep_true_connection",
@@ -23789,7 +23789,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "afb13a83c632c6eae4ec1b8311e2f2f98f90186c62db1f2b22c07c40fe8473ed",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "door_slam_boundary",
@@ -23838,7 +23838,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "7c22ddaaf149b53c94a6f43d333147a5034196e0ac495fb579140b283ed7cc24",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_chameleon",
@@ -23888,7 +23888,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "9d4e979d2b9b24494652a99c0919e3ebb1acb7ebdfca9dbebc075ab479748fab",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "control_for_safety",
@@ -23937,7 +23937,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "a8450fb5b6dad2665627ce832de40b1ef5878dd94706ec234508e3d701de7028",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_insight",
@@ -23986,7 +23986,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "2c07590971ab63f49df1866af3719fccc1c37d58465350f1a38d16167db363c2",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "compassion",
@@ -24036,7 +24036,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "20af02512cb16d677c0e00b156e496dbd8d7c53c75c706370b73eb9a8c36d201",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "peace_keeping",
@@ -24086,7 +24086,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "c6fc52e2930206ac1a113e472668e22c134317463f3a454a263b099414a9c278",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_vision",
@@ -24136,7 +24136,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "b5fea6b656effdf87c60c232431f9cce031f11daf1fc9f7ee72be2427b817e76",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "empathy_burnout",
@@ -24186,7 +24186,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "53990406993a09c610aa4bab53f0663dad66207f5b8757f6eab9141ca6fbb1f9",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conflict_avoidance",
@@ -24236,7 +24236,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "19973c8e6215e847b10003621d1929952b2ffcef83e4fe2487fd76329f0a3f74",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensitivity_to_rejection",
@@ -24286,7 +24286,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "25f0fbc2481470a2385786c5c540035499d1ca0b6277ae669909407659b5f058",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "perfectionist_self_blame",
@@ -24336,7 +24336,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "6cbfdff48696d7ec216c96617a33cbeb5fc760c87acd18adc494671d34c736f0",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "details_gap",
@@ -24386,7 +24386,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/risks/5",
     "recordSha256": "513d4b1cf2014fb85479cbf502d7facedd1ba035592c7c2c945c4186be70a897",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "isolation_from_world",
@@ -24435,7 +24435,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "b48d861cb7570deb946a7406461dcf69ddcd2b319133d6130ba4d05217f76459",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "question_own_intuition",
@@ -24484,7 +24484,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "93d76db20a066b222770f888143ec3dd4f24e3272e0db4459bfd6f1afd905328",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "accept_disagreement",
@@ -24534,7 +24534,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "58820dd2887a50229d8132abbd6bd77825a5edab77bbb739ab80c76b7f2079e1",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "meet_extroverts",
@@ -24584,7 +24584,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "7bcc9236ee4cdaa9a21e6902101dc43bfb4d762e0068a970058194fbb8561e3f",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "help_without_overcontrol",
@@ -24634,7 +24634,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_arts_fit",
@@ -24683,7 +24683,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "056f2d4078f4ebd3fadfff7ad240c40616c352b9605d499a0eacad85b8b5c38b",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "counseling_healing_fit",
@@ -24732,7 +24732,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "49e891b033c91adf1231c366c939ef1f556c71d18ee24b73fa689b25b2ed4523",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "education_gentle_teacher",
@@ -24782,7 +24782,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "63a73a402986012fb8173208daa415cb6e745ed9c716cbd48f81a938c3f3fe86",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "small_independent_business",
@@ -24831,7 +24831,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "media_community_fit",
@@ -24880,7 +24880,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "383989fc739d880f5351b7f454aeb200dfc27a19e740b6592721d947ba10ff28",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "bureaucracy_low_fit",
@@ -24928,7 +24928,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/career/6",
     "recordSha256": "5efbf1c735eea46590a62df382c44498d3765d1413604279a2e570710a6055f4",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "value_to_income_bridge",
@@ -24977,7 +24977,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "8fdf31b355c616feb78bc871e91b6c2ddd7f11563eeb9b648d90d67ad26f9f96",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "autonomy_required",
@@ -25025,7 +25025,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "fbf9817f01bbcf5a1065fba7362c48bc6c06b242d6be587b36dd6c979102016e",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_competition_environment",
@@ -25074,7 +25074,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "9de63eec6f85666cde1c4bd59c4121df6aabdb186d00bb087141d93c7e2e7223",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "meaning_driven_diligence",
@@ -25123,7 +25123,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "44c3b57100ecb50822205e3cc36bbb65482a9ae4e11f7bc1d10984af84c491cb",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "soft_conflict_style",
@@ -25172,7 +25172,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "a655cae43b122bc3fe4a2df183eeb3fa78967a2c42eebf86478574d6c49fdcfa",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "second_leader_fit",
@@ -25221,7 +25221,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "feedback_safety_contract",
@@ -25270,7 +25270,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fi_inner_alignment",
@@ -25320,7 +25320,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "be7d45e0280d72ec356da7dad2d8bcaeb0889de1a7500c6e1f4e8267ddad3e73",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ne_branching_imagination",
@@ -25370,7 +25370,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "cfe08f39fc302aad1decd20cbd0745705ce30ada76c4003b2a26f141fdd17257",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "empathic_projection",
@@ -25420,7 +25420,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "42183a3928c266aa5a29517338148a577fd02833647688c887b34f08ce48641e",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "si_story_memory",
@@ -25470,7 +25470,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "3b4e51668ec5215568de2511fc364903d12e79c0fe749fcc434519259190feef",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "te_execution_gap",
@@ -25520,7 +25520,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/thinkingStyle/5",
     "recordSha256": "274398cf9e120d6cd633dff6e484b3051ee56ff0ec71c9444cd8de9af769ebf4",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "contextual_truth_detection",
@@ -25570,7 +25570,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "482049047490d1ebd61c9b658e2dba9125c92e9c423b57cef3d757627b81166b",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "gentle_metaphoric_speech",
@@ -25620,7 +25620,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "3e45295193309706218115f7b1d0c3fb3264cd150ddd149d50cbc9ed0863f28f",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "slow_to_show_affection",
@@ -25669,7 +25669,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "1f15f8110d2c67584490ec0e59dfc9925211c431e6536790c63094813e2cff84",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anger_private_processing",
@@ -25719,7 +25719,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/communication/3",
     "recordSha256": "b573aec58d177a8db57620ac7f470d1f666dac87667f79cc03f74fb088e0fa9d",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "authenticity_over_skill",
@@ -25768,7 +25768,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/communication/4",
     "recordSha256": "f1ae2bb1c81e77cd5b4249bfa3d1a0426b3593caf63ea4cdcf9d842bcbaa859a",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "criticism_fragility",
@@ -25818,7 +25818,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "d0e53407328238f1b1932bca059a3021d2dae3c1ff971ca2445785b30fe5e85f",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "deep_value_based_bonds",
@@ -25868,7 +25868,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "810c8bcf6d33607f2eb536148ea99d4e71c0746a48237598ea45dcc45e800426",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "boundary_against_cruelty",
@@ -25917,7 +25917,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "7947be1cb027adfda72de01605e4547763a648553f057459223b47b424edbd55",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotional_distance",
@@ -25967,7 +25967,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/relationships/3",
     "recordSha256": "626d0e7dc2aba3b0106ac17004a86488df225ade9f13a3e908585bb5cdf865f3",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "low_interference_individualism",
@@ -26017,7 +26017,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "54bdd9f03cf1147569c34bfbcf0f7d6b0dece8d78056f4968d1204723d1d7df7",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "warm_worldview",
@@ -26067,7 +26067,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "ac1bdce416361b83a327a21dde02c2e7f216d184de9d6df2bfde9ff371cd0ea1",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "conflict_mediation",
@@ -26117,7 +26117,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "1b12320168d53e9f28d2535bbb267bbbb2d84506bcf6b854ed84bf53d4c25c00",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_emotional_processing",
@@ -26167,7 +26167,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/strengths/3",
     "recordSha256": "a9ed68e63fcb12a8152e8d100427290a3d1f8c91b1f83a5aa2c0cc50cae455f2",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "non_interfering_kindness",
@@ -26217,7 +26217,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "ee4455eb9dcbb0eca1447d43480e97a353dce9393c0177de08f6a276fc7d59f5",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotional_overload",
@@ -26267,7 +26267,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "ed8319bae00884ec9c29c6faf15bd14c6f7969d3722047588bd9a4addf41d7b7",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "reality_ideal_gap",
@@ -26317,7 +26317,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "92948fdcf8434f7ee015b04ff8083d1b09eed644434ad391179e62ed26c38e8b",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "weak_decision_execution",
@@ -26367,7 +26367,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "44fa75c0f5a843c0bfb4df05f970d7778bc3fa7a001ad88f4a17a8a2fd2a1e24",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "over_screening_people",
@@ -26417,7 +26417,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/risks/4",
     "recordSha256": "bc23caa8f41276faf6c7036d8429f81bb415f379f4c17b315045beed705d7e83",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "burnout_from_unfit_work",
@@ -26466,7 +26466,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/risks/5",
     "recordSha256": "7e6414883ade37f0003f0965dbccadbae93ca95dfe4222e16d28a9ae6c55ca57",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "overgiving_to_trusted_person",
@@ -26516,7 +26516,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "3b3cf3ff5626d1a58ebb5e3362f1025bffebae69380b1d2b726de9a826ae9ab1",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "develop_ne_perspective",
@@ -26566,7 +26566,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "5aefe5a32109bbcd85a7fa810eccdc3b741512514673dae0e363777b08415557",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "small_control_routine",
@@ -26616,7 +26616,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "b663d0979c458dad8bcd225f45daa9da457cd4fe29dd7aa1e90a44177399851b",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "body_activity_grounding",
@@ -26665,7 +26665,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/growth/3",
     "recordSha256": "7ca8cf754c3d7e0d8cd91b88a0de605db4ad6c87089f09d6d7a955dad5488eea",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "express_emotions_for_love",
@@ -26715,7 +26715,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/career/0",
     "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "teacher_facilitator_fit",
@@ -26765,7 +26765,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/career/1",
     "recordSha256": "1559f225082f600de30b38f79937a5f91116b856b0ae8a8f55b7c63601b59138",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "counseling_and_welfare",
@@ -26815,7 +26815,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/career/2",
     "recordSha256": "a9056c19e20871916b00ef061e9798a61993521eae3c447cf2cd2dedb8c4c749",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "public_communication_fit",
@@ -26864,7 +26864,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/career/3",
     "recordSha256": "b6be3faedbc88050d4b490b326faca6ed5695aba5b590efa68a5a23953a0ed93",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "diplomatic_bridge",
@@ -26913,7 +26913,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/career/4",
     "recordSha256": "74b14b54ecf3d2b4e1f44fd0aafb3f062d21a0e2db8a6820f484d102c3dd70ab",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "activist_leadership",
@@ -26963,7 +26963,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/career/5",
     "recordSha256": "37675ac7b537d062b70f22a6d779123281bcf25dbe7f0bdc4663daef4a75eb7f",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "people_growth_business",
@@ -27012,7 +27012,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "collaborative_environment",
@@ -27059,7 +27059,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "7131317a8cc2955b06aee4c7c11babdd33787abbf37b1d10d9e414f2ec69bfb6",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "tension_sensitive_work",
@@ -27107,7 +27107,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "d82d54b196675db626684fcd5eb5be6d6f5c41947773faa6dde25d12b034f6c3",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "persuasive_presenter",
@@ -27156,7 +27156,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "care_overload_at_work",
@@ -27204,7 +27204,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "criticism_avoidance",
@@ -27252,7 +27252,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "role_boundary_for_leadership",
@@ -27301,7 +27301,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "1e0ff2118c8a1b2e158d02be5bd4f8ff99adb352800d83112e3d8072c44368d7",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fe_first_judgment",
@@ -27351,7 +27351,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "22543ef515c4f77d5cc8e7c254250307f783c18a4509723b2bdec9281af33ce2",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "future_meaning_orientation",
@@ -27401,7 +27401,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "388ad399bd89165f1417ecc7be7e213c746be192f09aae41e360a3d47a96493f",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fast_people_reading",
@@ -27451,7 +27451,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "d7a3309e43209218d94dd4a04786046c7eac8a0a2a7f4bcfc9c8c85e30b6b29b",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "meaningful_discussion",
@@ -27500,7 +27500,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "b83d338588a0cba437b54a2044b8c459e36d7c098195b54551bb92a6d764d388",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "self_reflective_growth",
@@ -27549,7 +27549,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "3d962b24e96da939dec02304178a8678858f19f3054ead5086cb30e849c81a21",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "eloquent_social_speech",
@@ -27599,7 +27599,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "gentle_feedback",
@@ -27648,7 +27648,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "d7fb0e8bcdb779325be7ed389c80e89affe3e0a18c7828337ee5c7a32a349ed9",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "expressive_face",
@@ -27698,7 +27698,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "2be2bea9e1f5a45dee2e354a5f805a3518e8144592b130f5940444f9781a36de",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "wide_social_bonding",
@@ -27748,7 +27748,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "18c723e122ea6f08084a0a002c61b2ef92a36d4ac4fb53f186d625f50dd088f4",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "warm_but_selective_cutoff",
@@ -27798,7 +27798,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "64bda34f1af07fa8a6ed4349231958632ed3ab815f7877ce91829b18d2c377e8",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "idealizing_people",
@@ -27847,7 +27847,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "3714d7b5df1b81fc63030b98900e3f177b0dbf40abd6780a15e9103e4d25c1ab",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "mobilizing_people",
@@ -27896,7 +27896,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "8354d4d6b0c2252ab7a9040915dc2d7dc2f0ff1969b5ebc43736b0d279531c9e",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "growth_support",
@@ -27946,7 +27946,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "e86729dad4dfcf85ad7e95ae8e57afeda244f4af027ce60c694221f71d23013b",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_humor",
@@ -27995,7 +27995,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "815b40faa58f716cfaa3a11c126061d8afff1f894f898b6c7c3598da62cf5254",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "empathy_burnout",
@@ -28044,7 +28044,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "31a3c64b6258f488d92e7b2935c014f40a39dd06f0e44a52bcfac1df694d4e24",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "surface_emotion_bias",
@@ -28092,7 +28092,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "3c5edf3a39c031a6bc3a473c50c3f3f870fcd0f9d509749b2f01f52dc5601694",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "over_involvement",
@@ -28141,7 +28141,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "50af9ab6552725acaa9a5ad527bf7b2253f0ae9d6fa5f62e35212ecf714c840b",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "moral_dividing",
@@ -28191,7 +28191,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "74f77a2aa78df34d68f40f3e320ee78e8a61bd884b7e2f2c0d5a9c637ef98534",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "separate_self_and_others",
@@ -28240,7 +28240,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "6ecf91570c35700d899efe9d9f123b08f15625036123c1d59c16e8565382740d",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practice_clear_criticism",
@@ -28290,7 +28290,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "bffc5c9dda52f92637969de2d7a426f53b3356195bb4f2f3bb230d79ffb7505d",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fact_structure_training",
@@ -28340,7 +28340,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/career/0",
     "recordSha256": "556956e102163dcce3fd751fccb5ddc733ea3d2d3cc50fe57dc84265630ab24d",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "counseling_fit",
@@ -28390,7 +28390,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/career/1",
     "recordSha256": "feff669ff1790d226ae8032dedf96313660d8bf375ff8f4ec76ccf14f5058a6f",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "education_motivator",
@@ -28440,7 +28440,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/career/2",
     "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "arts_and_creative_field",
@@ -28489,7 +28489,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/career/3",
     "recordSha256": "5f466d2b651240d9ef803e33d8eb7388c8ee251b1913d3a0778d6982c618969d",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "community_event_starter",
@@ -28539,7 +28539,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/career/4",
     "recordSha256": "42ed7b7dea12e563ec6f966ec1fde45659048a97b3ff8afe8caf361fd148a7d4",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "idea_to_campaign_path",
@@ -28588,7 +28588,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/career/5",
     "recordSha256": "fc6d66dbc4b453310c462c3b18c6a5d749c6fd661cc54bd26c770496baa9a81b",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "portfolio_project_income",
@@ -28637,7 +28637,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/workplace/0",
     "recordSha256": "d8685fab29595435c32cde027da986ad4900e5734c7bad26d143b5c28057a482",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "novelty_required_work",
@@ -28686,7 +28686,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/workplace/1",
     "recordSha256": "0afca097c5a24d357f0b929466917dc999deefaf2c357997a8a88acd83ca8b28",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "deadline_sprint_style",
@@ -28735,7 +28735,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/workplace/2",
     "recordSha256": "c39ed98c94e2381d51d34410b8ee7d1ba4f31c588fb66fed9a9ba41babf90473",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_mood_maker",
@@ -28784,7 +28784,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/workplace/3",
     "recordSha256": "56b17a827b1cc029da44621c5cc130807c14e474ddc33e3e08d551ba9c111806",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "autonomy_over_control",
@@ -28832,7 +28832,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/workplace/4",
     "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "follow_through_system",
@@ -28881,7 +28881,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/workplace/5",
     "recordSha256": "0b021e39254372891d285daef48feb8313bf295e971e543398b03b9d162ceb57",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "raw": {
       "id": "open_culture_fit",
@@ -28930,7 +28930,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "a7901c07e7ef80a12b76c53d0b81f3b1abf2abd6954749e9fcd97b6a27bb265f",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "ne_connection_thinking",
@@ -28980,7 +28980,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "6eaee42c7d380c6589f47703577fbc06cb309eb39ffbcf0b9e2304ecc1f1b422",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "imaginative_storytelling",
@@ -29030,7 +29030,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "f38da8479159d770996d88212a814b46b18803ec357b0dc62888065838b09140",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "meaning_before_fact",
@@ -29080,7 +29080,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/thinkingStyle/3",
     "recordSha256": "122c029a4d6173d6849000e6fb82fb11593cd50bc8ccfaf18b27dbb896c6682d",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "question_burst_pattern",
@@ -29129,7 +29129,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "e16fc78b862293813a91da0f9dc3c0815e3da4416bbdf72e39c3b1adfde0d633",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "emotion_amplified_processing",
@@ -29178,7 +29178,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/communication/0",
     "recordSha256": "248a769ed031c22c8f5f04d81c483daf3860668a2ab29783a7a9f62e17f9ea82",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "easy_conversation",
@@ -29228,7 +29228,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/communication/1",
     "recordSha256": "6c9fb483fb816e769f60d5f7253aa34906a0809a169e77e49e641776772742f1",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "random_but_charming_speech",
@@ -29277,7 +29277,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/communication/2",
     "recordSha256": "01bda98d8b575181c70868ffef98c38ccb88bf779d7b2274a0fa72358c353762",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "encouragement_over_criticism",
@@ -29326,7 +29326,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/relationships/0",
     "recordSha256": "c06ad27341da69b15a2107b24f3f392afef635ad6aeca6f7966479442e5d1cbc",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "wide_light_network",
@@ -29376,7 +29376,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/relationships/1",
     "recordSha256": "17f63b45b9c2eca5df78e08ed7eabc50a23f48d5541a265d613dfe1a8a08e354",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "joy_giver",
@@ -29426,7 +29426,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/relationships/2",
     "recordSha256": "27b34a6ed3eda971fbb531b4b85b981cffbfea8867f9afbd9694fdef2580aaa5",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "likes_and_dislikes_visible",
@@ -29475,7 +29475,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/strengths/0",
     "recordSha256": "5530a0e3f2eae0b625d4fb668aff40fe4857cd043a8d997b7231cf3ceee09e92",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_imagination",
@@ -29525,7 +29525,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/strengths/1",
     "recordSha256": "4f336437e7c645b4256a7950b82d785a1eba57ac120dc196545f38c5020e9279",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "friendly_leadership",
@@ -29574,7 +29574,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/strengths/2",
     "recordSha256": "866403e31193db02950da1a050bd48f9f8ac6bed9e6608f1fd58442968a3ddf3",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "crisis_big_picture",
@@ -29622,7 +29622,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/risks/0",
     "recordSha256": "78b6a479e1c826d1d5cfef8fe944298acff0c0f82520e2a14b9a31c692dbf6dc",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "unfinished_many_starts",
@@ -29671,7 +29671,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/risks/1",
     "recordSha256": "ea6a6a6eb2469d9fac5ad35b50447fbf6ff5e56198fa998a6488c36735fdbc68",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "detail_boredom",
@@ -29720,7 +29720,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/risks/2",
     "recordSha256": "3cd2e5897792460ea894efa9a779271971d41487b0b229f17fc52f4dd74670c3",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "criticism_sensitivity",
@@ -29769,7 +29769,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/risks/3",
     "recordSha256": "fd942402b17086913ad84a7355fa57e8f17b7b121439f4e908cb19a8bf126f0b",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "recognition_dependence",
@@ -29819,7 +29819,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/growth/0",
     "recordSha256": "047005e020505690ed344b88711f383d70ae077710729c3762d358223d7dd16f",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "make_completion_structure",
@@ -29868,7 +29868,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/growth/1",
     "recordSha256": "ef31be814ee25ddfa1c5c5b29cfbd97fde27c3767d83db0fcf6ea5608091c649",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "train_fact_and_logic",
@@ -29918,7 +29918,7 @@ export const MR_WORK_TRAIT_SOURCES: readonly WorkTraitReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/growth/2",
     "recordSha256": "349a80eb1c1b45acb41a27b925e508319de3b7f3313bf39910707c8f1ed09b30",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practice_boundaries",

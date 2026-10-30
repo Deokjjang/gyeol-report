@@ -43,7 +43,7 @@ export function verifyTermSource(root: string, term: TermStudy): TermSourceVerif
       } : withheld;
     }
     const reviewed = sealed<{ rows: TermRevision[] }>(proofFile, 'af9d901f52f32c007b5dd01418efd8f6f3004fda309ed29a03aebf74093124fe');
-    const contract = sealed<{ priorRevisions: Revision[] }>(receipt, '1c2495895978aeccdfd43f30b84e474d7fbc7c5b7b45b616b1c63c5edc8ae9b1');
+    const contract = sealed<{ priorRevisions: Revision[] }>(receipt, '9ca5f4e57ce09eda79e613b338c62c0438206cbd4c3ee0a49d2a5e4196662323');
     const safety = sealed<{ deltas: Record<string, { before: string; after: string }> }>(publication, 'afdcb18f96f9a6252c96b23c3a050d71473b6c27385affa97752d790b1f30580');
     const rows = reviewed.rows.filter(r => r.sourceId === term.id), revisions = contract.priorRevisions.filter(r => r.file === renderer);
     if (!targets.includes(term.id) || rows.length !== 1 || revisions.length !== 1) return withheld;

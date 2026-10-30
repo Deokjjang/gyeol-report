@@ -47,7 +47,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#01e7c19fe260d7d8dd0d",
         "sourceKind": "mbti_trait",
         "recordSha256": "e106fb929accb6d10551347630c458bb31cfc5f336eb14d7a4a2a9d890bbf5de",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "love",
@@ -162,7 +162,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#04d364954a00555e56e1",
         "sourceKind": "mbti_trait",
         "recordSha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
-        "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+        "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
         "originalState": {
           "type": "ISTP",
           "area": "love",
@@ -277,7 +277,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#962137f48456cc9e196d",
         "sourceKind": "mbti_trait",
         "recordSha256": "7798937240c84e59f327be4628eacc7e608ee4c5d7af70a662f0a8838b500ef8",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "love",
@@ -392,7 +392,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#efd2df690e448ae25f53",
         "sourceKind": "mbti_trait",
         "recordSha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
-        "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+        "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
         "originalState": {
           "type": "ISFP",
           "area": "love",
@@ -507,7 +507,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#9001b550f225e0c6153d",
         "sourceKind": "mbti_trait",
         "recordSha256": "8161fb47b480bdf5d0a9aaf78fb46975955dfdb75c808fc6e0ba6b5560ae5ea3",
-        "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+        "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
         "originalState": {
           "type": "INTP",
           "area": "love",
@@ -622,7 +622,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#cfc4d324191f14d671cd",
         "sourceKind": "mbti_trait",
         "recordSha256": "3d5dc96e8a36559dfdca6761f16b1fe50fc1ccfe7ca804be0abbfd0f3a2481a9",
-        "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+        "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
         "originalState": {
           "type": "ENFP",
           "area": "love",
@@ -737,7 +737,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
         "sourceKind": "mbti_trait",
         "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-        "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+        "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
         "originalState": {
           "type": "INTJ",
           "area": "love",
@@ -852,7 +852,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#962137f48456cc9e196d",
         "sourceKind": "mbti_trait",
         "recordSha256": "7798937240c84e59f327be4628eacc7e608ee4c5d7af70a662f0a8838b500ef8",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "love",
@@ -967,7 +967,7 @@ export const CH10_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#04d364954a00555e56e1",
         "sourceKind": "mbti_trait",
         "recordSha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
-        "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+        "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
         "originalState": {
           "type": "ISTP",
           "area": "love",

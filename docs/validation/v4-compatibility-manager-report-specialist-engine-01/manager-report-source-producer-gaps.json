@@ -22,7 +22,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
           "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -76,7 +76,7 @@
               "catalogKey": "kc:v1:97ace5d04275f3188665edba3e7b2e182a0c18782acacb7d702a0d10907a75b2",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -112,7 +112,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#60699f5629066c047ea1",
           "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -166,7 +166,7 @@
               "catalogKey": "kc:v1:a5f7cae26e9249ff150676ae57f17124850831bfab4f7016d78c4d33becab590",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -976,7 +976,7 @@
                 {
                   "file": "docs/product/mbti/source/ESTP.json",
                   "pointer": "/traits/parenting/2/plainKo",
-                  "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                  "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                   "catalogKeys": [
                     "kc:v1:c47c1935e14b185c04af5d6d3825655a7968159588752f0ecf35f6dbdae5c64c"
                   ],
@@ -1064,7 +1064,7 @@
                 {
                   "file": "docs/product/mbti/source/ESTP.json",
                   "pointer": "/traits/parenting/1/plainKo",
-                  "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                  "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                   "catalogKeys": [
                     "kc:v1:4eea3451ab75a8c45139650c28ab5cc7fae835b664d6e7b658e80e251aff7d96"
                   ],
@@ -1446,7 +1446,7 @@
                 {
                   "file": "docs/product/mbti/source/ESTP.json",
                   "pointer": "/traits/strengths/1/plainKo",
-                  "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                  "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                   "catalogKeys": [
                     "kc:v1:4ec704ad0dcc8114d5611ea122a66368254a7b0f7e3060c282450df3d6278ad2"
                   ],
@@ -1512,7 +1512,7 @@
                 {
                   "file": "docs/product/mbti/source/ESTP.json",
                   "pointer": "/traits/growth/3/plainKo",
-                  "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                  "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                   "catalogKeys": [
                     "kc:v1:269cb7f840bcb97fe0958122f16eddf137b1288c1ccff3d21fa1ad5dbba027ed"
                   ],
@@ -1626,7 +1626,7 @@
                 {
                   "file": "docs/product/mbti/source/ESTP.json",
                   "pointer": "/traits/thinkingStyle/0/plainKo",
-                  "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                  "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                   "catalogKeys": [
                     "kc:v1:ce01947401f534f820f98526f3c5356b7299334fce37ed90d15242b8523d98b7"
                   ],
@@ -1768,7 +1768,7 @@
                 {
                   "file": "docs/product/mbti/source/ESTP.json",
                   "pointer": "/traits/relationships/2/plainKo",
-                  "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                  "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                   "catalogKeys": [
                     "kc:v1:c303666184fee3dc11741cc0d06e67ce777484d3fe05d4ac10f798568c19c3c2"
                   ],
@@ -1869,7 +1869,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#a405c7c47aa46bef385b",
           "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -1923,7 +1923,7 @@
               "catalogKey": "kc:v1:cbb42e1f3adcc63bf75292e30e6caa2fc9cdce1ce4722161050c6fbddca83630",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -1959,7 +1959,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -2013,7 +2013,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -2093,7 +2093,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -2147,7 +2147,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -2183,7 +2183,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
           "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -2237,7 +2237,7 @@
               "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -2558,7 +2558,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
           "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -2612,7 +2612,7 @@
               "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -2648,7 +2648,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -2702,7 +2702,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -3753,7 +3753,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/workplace/5/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:5e009788253c06c4dca5e839960a0cd2c55c0d22eb6435af99cd55ccfe1df029"
                   ],
@@ -3841,7 +3841,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/thinkingStyle/1/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:c767687927d072c8097de43695aef9147705cf89e0d072aa40dc1faa5f297276"
                   ],
@@ -3977,7 +3977,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/thinkingStyle/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:38a042ccf4246c44aa96d9d03f3f8975988ca64393d7e115f731f3d9004bc7d0"
                   ],
@@ -4134,7 +4134,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/strengths/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:0a2253cc83a2400ae7323341cc00ce0c0c871bf0fe4dacf39c3e18482ca5af67"
                   ],
@@ -4200,7 +4200,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/6/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:174faf0da838db848ea4faaf91d285df3f2011678825e9e4d127cf4dc92220e7"
                   ],
@@ -4266,7 +4266,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:27e76716894917c8c8fc12bf142d818c113fbad225c53b0035a46a376f77a85c"
                   ],
@@ -4332,7 +4332,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/5/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:06e974b8dbdd3f0652b54c79149e9ed5094644306ec230146dcff4cb35465a1d"
                   ],
@@ -4494,7 +4494,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/study/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:dd926345edf955337c5f247640b00e2b658296804acca7cdc1cfb509dfdc54e2"
                   ],
@@ -4601,7 +4601,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -4655,7 +4655,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -4691,7 +4691,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -4745,7 +4745,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -5426,7 +5426,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/identity/2/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:e4a8c09a46c3986fb091f599f1619112674f54fcce2f9c4a744813d4eaa82835"
                   ],
@@ -5514,7 +5514,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/strengths/2/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:a08ef233aabdd0e86aacad378b24ab2e22d6597b9701476900172daf36d38024"
                   ],
@@ -5650,7 +5650,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/identity/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:1a7cb15d4f7b8b84235c0fb4cb17628220a52fe0495fb875dab08f12cc907069"
                   ],
@@ -5973,7 +5973,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/identity/1/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:66b6c09f50810ec3874cfd0225f510f5cc94cd535e65dcc9fd63ce7f52bee54a"
                   ],
@@ -6039,7 +6039,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/growth/1/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:6ebca89c972bac7b4003b7082bc5a51c672c0b01bac635f80e66bc1b399f6d2b"
                   ],
@@ -6105,7 +6105,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/strengths/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:0a2253cc83a2400ae7323341cc00ce0c0c871bf0fe4dacf39c3e18482ca5af67"
                   ],
@@ -6305,7 +6305,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/thinkingStyle/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:3ae316ade2f19879fa814bd5038914559f037541bfc08081b34a6fb5cef58e24"
                   ],
@@ -6439,7 +6439,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/identity/5/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:f9952500029ee80fd75219383f172c525a0bc12a1462d0d95da4e439ffebeda6"
                   ],
@@ -6505,7 +6505,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/strengths/1/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:190ebb8373ce4dd1742148767b053ff18566239d212e6c8210dbece4ce47abcd"
                   ],
@@ -6593,7 +6593,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/identity/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:18a354b7424ef2c9f68a5a14b52cc6eaf05be806efd1d39cf4d972c743475a61"
                   ],
@@ -6659,7 +6659,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/strengths/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:663f2098c80c4d8a3d681135688726a54c4a71f35039fa61d9b707f25f53bbc7"
                   ],
@@ -6747,7 +6747,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/identity/4/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:e8c4d5a97663709bc5a0f59fa2820b2040a5baf3f4f0007153e8c437bbe28c9b"
                   ],
@@ -6897,7 +6897,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/risks/2/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:6c52799070f467ce0a0ad3cca7c9037e3eda822d465c5761fe374799c0582524"
                   ],
@@ -7014,7 +7014,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/workplace/5/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:5e009788253c06c4dca5e839960a0cd2c55c0d22eb6435af99cd55ccfe1df029"
                   ],
@@ -7080,7 +7080,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/1/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:033a76e5fbb322f896e08b5cad883efbaaf2430dbc4913ff2c8f053d4ef12aa3"
                   ],
@@ -7146,7 +7146,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/6/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:174faf0da838db848ea4faaf91d285df3f2011678825e9e4d127cf4dc92220e7"
                   ],
@@ -7212,7 +7212,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/2/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:7c34c13fd70be9d8558ff2f4264b6060c6a7c5bce1f692fa32140456bddce183"
                   ],
@@ -7278,7 +7278,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:637bb7319458418fac3202b81ed3ea4f6eb24dc3d572e1fab4c747198cf60c11"
                   ],
@@ -7429,7 +7429,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/workplace/2/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:d52a3b6896102d5590ec6cb94acef7e985e0bb1571e5d26ab4f71be6ba1aad77"
                   ],
@@ -7495,7 +7495,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/workplace/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:45c1de45ec95b801f6ed8635f96ce09ae4d5cc3e2ac3d2fa0c394db788524ee4"
                   ],
@@ -7560,7 +7560,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
           "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -7614,7 +7614,7 @@
               "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -7650,7 +7650,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -7704,7 +7704,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -8710,7 +8710,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/workplace/5/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:5e009788253c06c4dca5e839960a0cd2c55c0d22eb6435af99cd55ccfe1df029"
                   ],
@@ -8798,7 +8798,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/thinkingStyle/1/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:c767687927d072c8097de43695aef9147705cf89e0d072aa40dc1faa5f297276"
                   ],
@@ -8934,7 +8934,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/thinkingStyle/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:38a042ccf4246c44aa96d9d03f3f8975988ca64393d7e115f731f3d9004bc7d0"
                   ],
@@ -9091,7 +9091,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/strengths/0/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:0a2253cc83a2400ae7323341cc00ce0c0c871bf0fe4dacf39c3e18482ca5af67"
                   ],
@@ -9157,7 +9157,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/6/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:174faf0da838db848ea4faaf91d285df3f2011678825e9e4d127cf4dc92220e7"
                   ],
@@ -9223,7 +9223,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:27e76716894917c8c8fc12bf142d818c113fbad225c53b0035a46a376f77a85c"
                   ],
@@ -9289,7 +9289,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/career/5/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:06e974b8dbdd3f0652b54c79149e9ed5094644306ec230146dcff4cb35465a1d"
                   ],
@@ -9451,7 +9451,7 @@
                 {
                   "file": "docs/product/mbti/source/ISFJ.json",
                   "pointer": "/traits/study/3/plainKo",
-                  "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "catalogKeys": [
                     "kc:v1:dd926345edf955337c5f247640b00e2b658296804acca7cdc1cfb509dfdc54e2"
                   ],
@@ -9650,7 +9650,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#7d3a67f375180035e30f",
           "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -9704,7 +9704,7 @@
               "catalogKey": "kc:v1:d4df84c7ac219ed596c5dfd2f9a208dfe74d0617874cb7d6e832e2a39052fdc8",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -10241,7 +10241,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#4b43fdff038f96814956",
           "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "communication",
@@ -10295,7 +10295,7 @@
               "catalogKey": "kc:v1:5f8b4227dab350ca4040f928ecdb61c42ba380834bf937d337caca9321f1ba1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/communication/0",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -10331,7 +10331,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#9157cb32f6c4c40c5336",
           "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -10385,7 +10385,7 @@
               "catalogKey": "kc:v1:59073951b406e74a2ae34e3498dc74fc12c1b405af26033c973797672bf16328",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/0",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -10839,7 +10839,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#4d4a080342aae90654f6",
           "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "communication",
@@ -10893,7 +10893,7 @@
               "catalogKey": "kc:v1:d930ff98ff5aa174e6f212624e0a99b17cc7c7c1f238f7cab4453ce583edf53e",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -10929,7 +10929,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f1a63049534f1dfb09b7",
           "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "communication",
@@ -10983,7 +10983,7 @@
               "catalogKey": "kc:v1:37279407a9e48f6459d3f86b4404300759acfd0368ad8624007e7d51773a7f14",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -11437,7 +11437,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -11491,7 +11491,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -11527,7 +11527,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#4d4a080342aae90654f6",
           "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "communication",
@@ -11581,7 +11581,7 @@
               "catalogKey": "kc:v1:d930ff98ff5aa174e6f212624e0a99b17cc7c7c1f238f7cab4453ce583edf53e",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -12036,7 +12036,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5c3113996849818dc94a",
           "recordSha256": "faa7efdfc185dff4a7b34613861d2ac332abb49cec4a6654dd5477bf6f865cf0",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -12090,7 +12090,7 @@
               "catalogKey": "kc:v1:d5013d3fb3716c61e2e2c80be0d3a7fe7a88550a614905d954e649ec5b8c3d27",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -12126,7 +12126,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#72685cd9261c6060b22d",
           "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "thinkingStyle",
@@ -12180,7 +12180,7 @@
               "catalogKey": "kc:v1:4528a264d2c121e5f3ef6db4e87f623a52a82d04a9b16a61e5909184fc4ec238",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -12216,7 +12216,7 @@
           "sourceKind": "mbti_pair_reference",
           "auditRef": "source-locator-audit.json#2fe4d73f766a08fb06e6",
           "recordSha256": "c9561f145688a2c635a823c2ef47c1c7e3cfb606fcc530a4685ba2e17e06aad0",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceType": "INTP",
             "targetType": "ESFJ",
@@ -12269,7 +12269,7 @@
               "catalogKey": "kc:v1:785091e78b9c7b8cad7e047673ecf3fdce7e6194897c161313033300c0b43f30",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/relationshipHints/notablePairs/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -12469,7 +12469,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#871f1880dae3d3831abc",
           "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -12523,7 +12523,7 @@
               "catalogKey": "kc:v1:c47fe1abc36abfb9f981e13166120f6e89a984dd2c17abbafd5a5e60a17e4d52",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -12559,7 +12559,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#01b252c15ec6d3cc4064",
           "recordSha256": "dcb0852a7bbc8f82ebbc86a703d6fb3cdb5ccc85778ce54ce0f62c316e848055",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -12613,7 +12613,7 @@
               "catalogKey": "kc:v1:4a37b2ad394e4f9e1c422d1a5c34bcc856c4329c0ca7f37093b904fbc819d88b",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -12649,7 +12649,7 @@
           "sourceKind": "mbti_pair_reference",
           "auditRef": "source-locator-audit.json#38fa9db618761c3db5b0",
           "recordSha256": "336fed2cb17ed88f30d0a4532ac0350963fa7defc634a6f44ddc3a265d73f0a4",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceType": "ISTJ",
             "targetType": "ISTJ",
@@ -12702,7 +12702,7 @@
               "catalogKey": "kc:v1:be875a820813bce966383609d687600b965b62f32f60a1af32c1ed7c6914952b",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/relationshipHints/notablePairs/1",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -12902,7 +12902,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#e08ef500cdb091985a2e",
           "recordSha256": "73d8483a62094f125795b6a2a3d28274ae185bf1f986bd71a6d98393b9071fcd",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "thinkingStyle",
@@ -12956,7 +12956,7 @@
               "catalogKey": "kc:v1:43a2516613535917ff534cbfbf4e8fa53ce3444c5de7abf6f4931187a403ed3b",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -12992,7 +12992,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -13046,7 +13046,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -13619,7 +13619,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -13673,7 +13673,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -13709,7 +13709,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab7a3cfbec4c729e713c",
           "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -13763,7 +13763,7 @@
               "catalogKey": "kc:v1:6bbb3444e6f0afbd5c12668a63e8077660aebcdd3b3eb6a4a1be512ec629bc3e",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -14281,7 +14281,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -14335,7 +14335,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -14371,7 +14371,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab7a3cfbec4c729e713c",
           "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -14425,7 +14425,7 @@
               "catalogKey": "kc:v1:6bbb3444e6f0afbd5c12668a63e8077660aebcdd3b3eb6a4a1be512ec629bc3e",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -14901,7 +14901,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b778076e2f7f6a60f75",
           "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -14955,7 +14955,7 @@
               "catalogKey": "kc:v1:01659adf43caf3cf99730ceb4e3b73dfcc6f1f99fea38ee1d8e858bd433279f9",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -14991,7 +14991,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab01acce90e1dd368d2d",
           "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -15045,7 +15045,7 @@
               "catalogKey": "kc:v1:3769097061ae48372d70f4653743fb8d641c2cecfd3c40b6a972df747c68d724",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -15504,7 +15504,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -15558,7 +15558,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -15594,7 +15594,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#8df480c9e6bb997fbe0e",
           "recordSha256": "d96777ab6bf534320352780a6c262710853fdaf3752029fe096a32ce6f2cce72",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -15648,7 +15648,7 @@
               "catalogKey": "kc:v1:bafe633d2e60a1c5063a03028aab9dc4a24e212982b5328748a77a83076e1f77",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -16107,7 +16107,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f1a63049534f1dfb09b7",
           "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "communication",
@@ -16161,7 +16161,7 @@
               "catalogKey": "kc:v1:37279407a9e48f6459d3f86b4404300759acfd0368ad8624007e7d51773a7f14",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -16197,7 +16197,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
           "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -16251,7 +16251,7 @@
               "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -16715,7 +16715,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -16769,7 +16769,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -16805,7 +16805,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -16859,7 +16859,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -17322,7 +17322,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
           "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -17376,7 +17376,7 @@
               "catalogKey": "kc:v1:97ace5d04275f3188665edba3e7b2e182a0c18782acacb7d702a0d10907a75b2",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -17412,7 +17412,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
           "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -17466,7 +17466,7 @@
               "catalogKey": "kc:v1:f437ef771597c393b0c19b2ad2f38cffd65f3f0dd85e0bc335e96baea5777708",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -17925,7 +17925,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f666c10a6db231abcc92",
           "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -17979,7 +17979,7 @@
               "catalogKey": "kc:v1:c5235feb95db8f7add013718373ca8d85be90317d3fc839bfe9750cd0c9818a1",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/2",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -18015,7 +18015,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -18069,7 +18069,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -18530,7 +18530,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab7a3cfbec4c729e713c",
           "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -18584,7 +18584,7 @@
               "catalogKey": "kc:v1:6bbb3444e6f0afbd5c12668a63e8077660aebcdd3b3eb6a4a1be512ec629bc3e",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -18620,7 +18620,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -18674,7 +18674,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -19138,7 +19138,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
           "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -19192,7 +19192,7 @@
               "catalogKey": "kc:v1:f437ef771597c393b0c19b2ad2f38cffd65f3f0dd85e0bc335e96baea5777708",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -19228,7 +19228,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -19282,7 +19282,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -19748,7 +19748,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b778076e2f7f6a60f75",
           "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -19802,7 +19802,7 @@
               "catalogKey": "kc:v1:01659adf43caf3cf99730ceb4e3b73dfcc6f1f99fea38ee1d8e858bd433279f9",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -19838,7 +19838,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab01acce90e1dd368d2d",
           "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -19892,7 +19892,7 @@
               "catalogKey": "kc:v1:3769097061ae48372d70f4653743fb8d641c2cecfd3c40b6a972df747c68d724",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -20285,7 +20285,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
           "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "communication",
@@ -20339,7 +20339,7 @@
               "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -20747,7 +20747,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -20801,7 +20801,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -21218,7 +21218,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#25034b1d3583cb77b7ab",
           "recordSha256": "d82d54b196675db626684fcd5eb5be6d6f5c41947773faa6dde25d12b034f6c3",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -21272,7 +21272,7 @@
               "catalogKey": "kc:v1:f5b99143b589dde77f9cd48852471e5dc8f16fa927af981305714e1b2c8cc186",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -21690,7 +21690,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -21744,7 +21744,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -22162,7 +22162,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -22216,7 +22216,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -22252,7 +22252,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#4d4a080342aae90654f6",
           "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "communication",
@@ -22306,7 +22306,7 @@
               "catalogKey": "kc:v1:d930ff98ff5aa174e6f212624e0a99b17cc7c7c1f238f7cab4453ce583edf53e",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -22521,7 +22521,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -22575,7 +22575,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -22611,7 +22611,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#4d4a080342aae90654f6",
           "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "communication",
@@ -22665,7 +22665,7 @@
               "catalogKey": "kc:v1:d930ff98ff5aa174e6f212624e0a99b17cc7c7c1f238f7cab4453ce583edf53e",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -22883,7 +22883,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f666c10a6db231abcc92",
           "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -22937,7 +22937,7 @@
               "catalogKey": "kc:v1:c5235feb95db8f7add013718373ca8d85be90317d3fc839bfe9750cd0c9818a1",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/2",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -22973,7 +22973,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
           "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -23027,7 +23027,7 @@
               "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -23255,7 +23255,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#871f1880dae3d3831abc",
           "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -23309,7 +23309,7 @@
               "catalogKey": "kc:v1:c47fe1abc36abfb9f981e13166120f6e89a984dd2c17abbafd5a5e60a17e4d52",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -23345,7 +23345,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#e5bb3aac2a342fa953aa",
           "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -23399,7 +23399,7 @@
               "catalogKey": "kc:v1:5d381a45fb5ff9dd832f41534479d2cff540c619b353c053c3c4741b2fdb57c9",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -23623,7 +23623,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -23677,7 +23677,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -23713,7 +23713,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c0fbe9a4b01f0f51c46b",
           "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "thinkingStyle",
@@ -23767,7 +23767,7 @@
               "catalogKey": "kc:v1:8f4f62899a945cbff3e824da709799a2ec5e32aae713e3d17f050a385ad779e2",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/thinkingStyle/2",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -23995,7 +23995,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
           "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -24049,7 +24049,7 @@
               "catalogKey": "kc:v1:f437ef771597c393b0c19b2ad2f38cffd65f3f0dd85e0bc335e96baea5777708",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -24085,7 +24085,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
           "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -24139,7 +24139,7 @@
               "catalogKey": "kc:v1:97ace5d04275f3188665edba3e7b2e182a0c18782acacb7d702a0d10907a75b2",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -24363,7 +24363,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -24417,7 +24417,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -24453,7 +24453,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#8df480c9e6bb997fbe0e",
           "recordSha256": "d96777ab6bf534320352780a6c262710853fdaf3752029fe096a32ce6f2cce72",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -24507,7 +24507,7 @@
               "catalogKey": "kc:v1:bafe633d2e60a1c5063a03028aab9dc4a24e212982b5328748a77a83076e1f77",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -24731,7 +24731,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -24785,7 +24785,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -24821,7 +24821,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
           "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "communication",
@@ -24875,7 +24875,7 @@
               "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -25100,7 +25100,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f1a63049534f1dfb09b7",
           "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "communication",
@@ -25154,7 +25154,7 @@
               "catalogKey": "kc:v1:37279407a9e48f6459d3f86b4404300759acfd0368ad8624007e7d51773a7f14",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -25190,7 +25190,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -25244,7 +25244,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -25473,7 +25473,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f1a63049534f1dfb09b7",
           "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "communication",
@@ -25527,7 +25527,7 @@
               "catalogKey": "kc:v1:37279407a9e48f6459d3f86b4404300759acfd0368ad8624007e7d51773a7f14",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -25563,7 +25563,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -25617,7 +25617,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -25915,7 +25915,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -25969,7 +25969,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -26005,7 +26005,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
           "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "communication",
@@ -26059,7 +26059,7 @@
               "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -26285,7 +26285,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -26339,7 +26339,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -26375,7 +26375,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#7d3a67f375180035e30f",
           "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -26429,7 +26429,7 @@
               "catalogKey": "kc:v1:d4df84c7ac219ed596c5dfd2f9a208dfe74d0617874cb7d6e832e2a39052fdc8",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -26654,7 +26654,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#a405c7c47aa46bef385b",
           "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -26708,7 +26708,7 @@
               "catalogKey": "kc:v1:cbb42e1f3adcc63bf75292e30e6caa2fc9cdce1ce4722161050c6fbddca83630",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -26744,7 +26744,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -26798,7 +26798,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -27027,7 +27027,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -27081,7 +27081,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -27117,7 +27117,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
           "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -27171,7 +27171,7 @@
               "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -27400,7 +27400,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -27454,7 +27454,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -27490,7 +27490,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#7d3a67f375180035e30f",
           "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -27544,7 +27544,7 @@
               "catalogKey": "kc:v1:d4df84c7ac219ed596c5dfd2f9a208dfe74d0617874cb7d6e832e2a39052fdc8",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -27769,7 +27769,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -27823,7 +27823,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -27859,7 +27859,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -27913,7 +27913,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -28138,7 +28138,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -28192,7 +28192,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -28228,7 +28228,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -28282,7 +28282,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -28511,7 +28511,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ef731f4b889ed40d780d",
           "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "communication",
@@ -28565,7 +28565,7 @@
               "catalogKey": "kc:v1:8eedfc4f40e2b5d658f0a8d598b7059836b7d873fab624ab9994279abfd3a579",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/communication/0",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -28601,7 +28601,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
           "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -28655,7 +28655,7 @@
               "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -28885,7 +28885,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -28939,7 +28939,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -28975,7 +28975,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab7a3cfbec4c729e713c",
           "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -29029,7 +29029,7 @@
               "catalogKey": "kc:v1:6bbb3444e6f0afbd5c12668a63e8077660aebcdd3b3eb6a4a1be512ec629bc3e",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -29259,7 +29259,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#76d4c68e32d1662f8abf",
           "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -29313,7 +29313,7 @@
               "catalogKey": "kc:v1:eeaf25174db015e673a8a0cac4565447a6dbdb5f874f7d9c180a06c506028ae5",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -29349,7 +29349,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
           "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -29403,7 +29403,7 @@
               "catalogKey": "kc:v1:f437ef771597c393b0c19b2ad2f38cffd65f3f0dd85e0bc335e96baea5777708",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -29634,7 +29634,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -29688,7 +29688,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -29724,7 +29724,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -29778,7 +29778,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -30003,7 +30003,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ef731f4b889ed40d780d",
           "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "communication",
@@ -30057,7 +30057,7 @@
               "catalogKey": "kc:v1:8eedfc4f40e2b5d658f0a8d598b7059836b7d873fab624ab9994279abfd3a579",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/communication/0",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -30093,7 +30093,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
           "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -30147,7 +30147,7 @@
               "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -30446,7 +30446,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -30500,7 +30500,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -30536,7 +30536,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -30590,7 +30590,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -30888,7 +30888,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -30942,7 +30942,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -30978,7 +30978,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -31032,7 +31032,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -31258,7 +31258,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -31312,7 +31312,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -31348,7 +31348,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -31402,7 +31402,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -31628,7 +31628,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#76d4c68e32d1662f8abf",
           "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -31682,7 +31682,7 @@
               "catalogKey": "kc:v1:eeaf25174db015e673a8a0cac4565447a6dbdb5f874f7d9c180a06c506028ae5",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -31718,7 +31718,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
           "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -31772,7 +31772,7 @@
               "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -32000,7 +32000,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -32054,7 +32054,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -32090,7 +32090,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
           "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "communication",
@@ -32144,7 +32144,7 @@
               "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -32372,7 +32372,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -32426,7 +32426,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -32462,7 +32462,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#8df480c9e6bb997fbe0e",
           "recordSha256": "d96777ab6bf534320352780a6c262710853fdaf3752029fe096a32ce6f2cce72",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -32516,7 +32516,7 @@
               "catalogKey": "kc:v1:bafe633d2e60a1c5063a03028aab9dc4a24e212982b5328748a77a83076e1f77",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -32743,7 +32743,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
           "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -32797,7 +32797,7 @@
               "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -32833,7 +32833,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
           "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "communication",
@@ -32887,7 +32887,7 @@
               "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -33115,7 +33115,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#871f1880dae3d3831abc",
           "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -33169,7 +33169,7 @@
               "catalogKey": "kc:v1:c47fe1abc36abfb9f981e13166120f6e89a984dd2c17abbafd5a5e60a17e4d52",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -33205,7 +33205,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#e5bb3aac2a342fa953aa",
           "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -33259,7 +33259,7 @@
               "catalogKey": "kc:v1:5d381a45fb5ff9dd832f41534479d2cff540c619b353c053c3c4741b2fdb57c9",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -33486,7 +33486,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -33540,7 +33540,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -33576,7 +33576,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#7d3a67f375180035e30f",
           "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -33630,7 +33630,7 @@
               "catalogKey": "kc:v1:d4df84c7ac219ed596c5dfd2f9a208dfe74d0617874cb7d6e832e2a39052fdc8",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/1",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -33858,7 +33858,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -33912,7 +33912,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -33948,7 +33948,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -34002,7 +34002,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -34230,7 +34230,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#76d4c68e32d1662f8abf",
           "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -34284,7 +34284,7 @@
               "catalogKey": "kc:v1:eeaf25174db015e673a8a0cac4565447a6dbdb5f874f7d9c180a06c506028ae5",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -34320,7 +34320,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
           "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -34374,7 +34374,7 @@
               "catalogKey": "kc:v1:f437ef771597c393b0c19b2ad2f38cffd65f3f0dd85e0bc335e96baea5777708",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -34608,7 +34608,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -34662,7 +34662,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -34698,7 +34698,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab7a3cfbec4c729e713c",
           "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -34752,7 +34752,7 @@
               "catalogKey": "kc:v1:6bbb3444e6f0afbd5c12668a63e8077660aebcdd3b3eb6a4a1be512ec629bc3e",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -34985,7 +34985,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
           "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -35039,7 +35039,7 @@
               "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -35075,7 +35075,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#412d7ea5f91628d61b5d",
           "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -35129,7 +35129,7 @@
               "catalogKey": "kc:v1:7e42b6edb479abdeedd6efce4e226500bd1f949dc5946075358601878247cc1b",
               "file": "docs/product/mbti/source/ISTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+              "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
             },
             "fields": [
               {
@@ -38171,7 +38171,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#16577eb313d7ad41b01b",
           "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "communication",
@@ -38225,7 +38225,7 @@
               "catalogKey": "kc:v1:aa0cccb5bc2b85b0fabf7571c4e076d7ab677bd724b5af3e805c91de220a1b1b",
               "file": "docs/product/mbti/source/ENTJ.json",
               "pointer": "/traits/communication/2",
-              "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+              "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
             },
             "fields": [
               {
@@ -38407,7 +38407,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#f1a63049534f1dfb09b7",
           "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "communication",
@@ -38461,7 +38461,7 @@
               "catalogKey": "kc:v1:37279407a9e48f6459d3f86b4404300759acfd0368ad8624007e7d51773a7f14",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/communication/1",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -38648,7 +38648,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#76d4c68e32d1662f8abf",
           "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -38702,7 +38702,7 @@
               "catalogKey": "kc:v1:eeaf25174db015e673a8a0cac4565447a6dbdb5f874f7d9c180a06c506028ae5",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/4",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -38892,7 +38892,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#0d96f1fc326be0f4a50a",
           "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -38946,7 +38946,7 @@
               "catalogKey": "kc:v1:f7f3ce244c0f26eda53a7bef776125486c8583559e9259dbcc73c48fc7f4d1de",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/2",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -39136,7 +39136,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab01acce90e1dd368d2d",
           "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -39190,7 +39190,7 @@
               "catalogKey": "kc:v1:3769097061ae48372d70f4653743fb8d641c2cecfd3c40b6a972df747c68d724",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -39380,7 +39380,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
           "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -39434,7 +39434,7 @@
               "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -39628,7 +39628,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
           "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "thinkingStyle",
@@ -39682,7 +39682,7 @@
               "catalogKey": "kc:v1:f437ef771597c393b0c19b2ad2f38cffd65f3f0dd85e0bc335e96baea5777708",
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/0",
-              "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+              "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
             },
             "fields": [
               {
@@ -39873,7 +39873,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#5b778076e2f7f6a60f75",
           "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -39927,7 +39927,7 @@
               "catalogKey": "kc:v1:01659adf43caf3cf99730ceb4e3b73dfcc6f1f99fea38ee1d8e858bd433279f9",
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+              "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
             },
             "fields": [
               {
@@ -40118,7 +40118,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
           "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "workplace",
@@ -40172,7 +40172,7 @@
               "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+              "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
             },
             "fields": [
               {
@@ -40367,7 +40367,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ee94f546d508b18941b2",
           "recordSha256": "19fefb12072b733d8482b14fac1b560356d0c82f36617c220ab4568a7a97780e",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -40421,7 +40421,7 @@
               "catalogKey": "kc:v1:c9dab50e2c3c43f907be0206e3ec029236157dc0db3760877c1945f3ed1fa704",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/0",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {
@@ -40612,7 +40612,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#ab7a3cfbec4c729e713c",
           "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "workplace",
@@ -40666,7 +40666,7 @@
               "catalogKey": "kc:v1:6bbb3444e6f0afbd5c12668a63e8077660aebcdd3b3eb6a4a1be512ec629bc3e",
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/3",
-              "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+              "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
             },
             "fields": [
               {
@@ -40861,7 +40861,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
           "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "workplace",
@@ -40915,7 +40915,7 @@
               "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+              "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
             },
             "fields": [
               {

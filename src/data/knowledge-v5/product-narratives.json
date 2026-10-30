@@ -111,7 +111,7 @@
             {"q": "명리와 MBTI가 다르게 고르는 순간은?", "domain": "work", "use": ["fusion"]}
           ] },
         { "id": "fit", "title": "잘 맞는 직무와 그 이유", "question": "내 힘이 그대로 성과가 되는 직무는 무엇일까?", "role": "PAYOFF", "domains": ["work"], "paragraphs": { "min": 4, "max": 4 }, "sections": [
-            {"q": "어떤 판에서 내 힘이 성과가 될까?", "domain": "work", "use": ["ev:jobFit"], "trait": "apply"},
+            {"q": "어떤 판에서 내 힘이 성과가 될까?", "domain": "work", "use": ["ev:jobFit"], "trait": "none", "note": "직무 줄이 trait를 근거로 부르므로 이 절은 강한 판만"},
             {"q": "지금 자리에서 넓힐 역할은?", "domain": "work", "use": ["ev:jobRoles"], "trait": "none"},
             {"q": "옮겨 갈 만한 가까운 직무는?", "domain": "work", "use": ["ev:jobAdjacent"], "trait": "none"},
             {"q": "길게 보면 열려 있는 다른 길은?", "domain": "work", "use": ["ev:jobLongterm"], "trait": "none"}

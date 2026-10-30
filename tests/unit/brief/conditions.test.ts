@@ -40,6 +40,14 @@ describe("팩폭 자리 조건 대조(P3 A4)", () => {
     expect(conditionsHold("시지에 놓이면 늦게 꽃핍니다.", ctxOf("丙子 己亥 丁丑", ["day"]))).toBe(false);
   });
 
+  it("십성 묶음은 일간 기준 오행 다소로, 용신·기신 조건은 확인할 수 없으니 고르지 않는다(P3.8 r2)", () => {
+    // 丁 일간: 재성 = 쇠(c1은 쇠 부족), 인성 = 나무
+    expect(conditionsHold("조직에서 자리를 얻는 구조라서, 재성이 받쳐 주면 관리가 성과로 이어집니다.", c1)).toBe(false);
+    expect(conditionsHold("조직에서 자리를 얻는 구조라서, 재성이 받쳐 주면 관리가 성과로 이어집니다.", ctxOf("庚申 辛酉 丁丑 乙巳"))).toBe(true);
+    expect(conditionsHold("인성이 많으면 생각이 길어집니다.", c1)).toBe(false);
+    expect(conditionsHold("그 오행이 기신이면 돈 쓰는 방식을 되풀이합니다.", c1)).toBe(false);
+  });
+
   it("조건이 없거나 알아보지 못한 조건은 통과", () => {
     expect(conditionsHold("속을 너무 감춰 가까운 사람도 당신을 계산적이라고 오해합니다.", c1)).toBe(true);
     expect(conditionClauses("움직임이 많을수록 한 가지는 끝까지 붙드는 장치가 필요합니다.")).toHaveLength(0);

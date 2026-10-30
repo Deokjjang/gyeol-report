@@ -4,7 +4,7 @@ import { expect, it } from 'vitest';
 import { stagingProtectionContract, validateStagingProtectionContract } from '../../helpers/versionedProtection';
 const hash = (file: string) => createHash('sha256').update(readFileSync(file)).digest('hex');
 it('pins only exact setup revisions and preserves the original technical receipt', () => {
-  expect(hash('tests/fixtures/protected-staging-integration-01/source-revision-contract.json')).toBe('027417bfee13bbc30588b28eac148359bb646a3ad03a5ef9d2c52cc414399569');
+  expect(hash('tests/fixtures/protected-staging-integration-01/source-revision-contract.json')).toBe('bcb18bf24fa3418e52a83c10fa683054c3ccf44581299be930f2f73ee3f191e8');
   const old = stagingProtectionContract.immutableTechnicalReceipt;
   expect(hash(old.file)).toBe(old.sha256);
   expect(Object.keys(stagingProtectionContract.currentDeltas)).toHaveLength(2);

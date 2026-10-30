@@ -60,7 +60,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
           "plainKoSha256": "30d0d50f3d11e4597f36b79d39545f13efdc0e843f741d3c5bea43d9652c4372"
         }
@@ -194,7 +194,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
           "plainKoSha256": "30d0d50f3d11e4597f36b79d39545f13efdc0e843f741d3c5bea43d9652c4372"
         }
@@ -340,7 +340,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/thinkingStyle/2",
           "sourceCoverage": "direct",
-          "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "sha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
           "plainKoSha256": "739dc638b462814fed1ee27da1ffc47cb7fb2a3999e74896cddb17632f5b5b4e"
         }
@@ -480,7 +480,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTP.json",
           "pointer": "/traits/thinkingStyle/4",
           "sourceCoverage": "direct",
-          "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "sha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
           "plainKoSha256": "28cb06912c33644c7843a196656c55ea751c554948499212ef09e2d7a07eda6d"
         }
@@ -629,7 +629,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
           "plainKoSha256": "30d0d50f3d11e4597f36b79d39545f13efdc0e843f741d3c5bea43d9652c4372"
         }
@@ -764,7 +764,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/identity/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
           "plainKoSha256": "333bf6b7d9175641fe0898d7f47025c7bed026b74e01eb3d201d8fb694329ad5"
         }
@@ -893,7 +893,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/thinkingStyle/2",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "ec60da6592e87ba0bba8fadc332b6defbd4d93ec155f8548c05142a52f5f2e75",
           "plainKoSha256": "1308d13c7177a0cd7b29e46a4abfb6241ab958bb27ea474c914e17c81d47c411"
         }
@@ -1021,7 +1021,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/identity/4",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "b304a20b6dc45d6479ccfac3daf7043848162f299799e2e787f4834d4a85a131",
           "plainKoSha256": "597b98e1837181dd3bfcbdb8c37a0b41634bb1623022bc1b3f743ce3e5aaf5ce"
         }
@@ -1177,7 +1177,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTJ.json",
           "pointer": "/traits/thinkingStyle/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "sha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
           "plainKoSha256": "7fbbc908f57f42701222f1021bc8736ed0b4be9dcad1909c0d891cc88e2b5cbf"
         }
@@ -1310,7 +1310,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTJ.json",
           "pointer": "/traits/love/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "sha256": "2f8fc9cceba32de6e199c6220fab7d9fef1dada30e4cba75293e5e88718b7d3d",
           "plainKoSha256": "0b9cfffe4bbb1b70d2e853bddec5a469cd194f10e753064e06aa13e228722df0"
         }
@@ -1461,7 +1461,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTJ.json",
           "pointer": "/traits/money/3",
           "sourceCoverage": "inferred",
-          "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "sha256": "593dab331795ea2eb3b71adc106c582b81ebd9313941afe64d416eb4cd69f8e0",
           "plainKoSha256": "2709acb43e3d427cd0d560fd5601cb1b6c7f6812fba7fa599ed053169b78d656"
         }
@@ -1617,7 +1617,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/thinkingStyle/2",
           "sourceCoverage": "direct",
-          "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "sha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
           "plainKoSha256": "739dc638b462814fed1ee27da1ffc47cb7fb2a3999e74896cddb17632f5b5b4e"
         }
@@ -1757,7 +1757,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/love/3",
           "sourceCoverage": "direct",
-          "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "sha256": "e0c6e86484eb4e18ed09f552d844eed205d79e57d932f9361fb576e95f73fa40",
           "plainKoSha256": "d99c8368f208e8f6b200e21fa298529080ce26c4339901976049ce259283fce4"
         }
@@ -1903,7 +1903,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/communication/4",
           "sourceCoverage": "direct",
-          "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "sha256": "b80ee9ec7e231d030fddb5a5ce2ec3877a8e3dbe789d1ba843cf1199fb2ce5b0",
           "plainKoSha256": "26d31a88aca37456da9fd636b13a304fca97d455fd0e6d859cb72369b30b8e7c"
         }
@@ -2061,7 +2061,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTP.json",
           "pointer": "/traits/thinkingStyle/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "sha256": "022a47d4dd2f078284c0817cc681f94eaa2b7415509a6b77ff2281a8b0ab5b46",
           "plainKoSha256": "679603cb68926194d9f090465587172a616d7e1d2f72506ef2a1d0ed40dea019"
         }
@@ -2202,7 +2202,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTP.json",
           "pointer": "/traits/thinkingStyle/4",
           "sourceCoverage": "direct",
-          "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "sha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
           "plainKoSha256": "28cb06912c33644c7843a196656c55ea751c554948499212ef09e2d7a07eda6d"
         }
@@ -2352,7 +2352,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFJ.json",
           "pointer": "/traits/thinkingStyle/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "sha256": "5411c3cb9de564e78e11d2fd24d1e5c8ba861cab348a2362ce7dd50a280f3293",
           "plainKoSha256": "6f3cd6efacc501dc5aebe73fc78d77089398317eb5a48d59d81f0445f7df1def"
         }
@@ -2491,7 +2491,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFJ.json",
           "pointer": "/traits/marriage/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "sha256": "0c8d2331162ffcae7502ee7fe2e00d904c4443cc59f7340d2258281c0eb6dc07",
           "plainKoSha256": "4e13217a80bfa20d60992d1d50149ff2ebf9af095110ca0362f81ae63436d1ff"
         }
@@ -2637,7 +2637,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFP.json",
           "pointer": "/traits/study/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "sha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
           "plainKoSha256": "b417a8a233dafbbc945db2da122aabdcf5a8fd520eb2021fdf035f104b4be7e2"
         }
@@ -2777,7 +2777,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFP.json",
           "pointer": "/traits/thinkingStyle/5",
           "sourceCoverage": "direct",
-          "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "sha256": "274398cf9e120d6cd633dff6e484b3051ee56ff0ec71c9444cd8de9af769ebf4",
           "plainKoSha256": "3c09c9a5077b5e0aa44a011f88fed917b945b9cde9bbd9bfcfc65f915acda0ca"
         }
@@ -2933,7 +2933,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/identity/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "sha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
           "plainKoSha256": "493c5a7a585674ee3c43172d48956f9dc9bc6cc92695a98254b75165a9649b13"
         }
@@ -3067,7 +3067,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/communication/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "sha256": "3d962b24e96da939dec02304178a8678858f19f3054ead5086cb30e849c81a21",
           "plainKoSha256": "c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f"
         }
@@ -3226,7 +3226,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFP.json",
           "pointer": "/traits/thinkingStyle/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "sha256": "a7901c07e7ef80a12b76c53d0b81f3b1abf2abd6954749e9fcd97b6a27bb265f",
           "plainKoSha256": "68d176153713f5206cea0bd613cecc83c1987d0aa20263fbdefaa2f852c58fdc"
         }
@@ -3355,7 +3355,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFP.json",
           "pointer": "/traits/identity/3",
           "sourceCoverage": "direct",
-          "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "sha256": "7cc03d8d37dbec0c99385f0472d23a018eb0401b4a35bfb39021d6f5c8250c56",
           "plainKoSha256": "954a3906e8ff1a7a6537de8f0e3b2f5f27a5cb1fefe1b764b0b8314a7a1c5c8d"
         }
@@ -3516,7 +3516,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFP.json",
           "pointer": "/traits/identity/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "sha256": "d5ee57333a4e56a077112db8baf7a9b84ee5878e7195fef1344042ffa83c3f5e",
           "plainKoSha256": "1e14ee4eb570ac885bea5400233f4caadc1cd6d359d417a81d5608f4ba6aaa52"
         }
@@ -3655,7 +3655,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFP.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "inferred",
-          "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "sha256": "a039fb5ebbd332c4df2c1933f7bbb17e7c7681f9e2e96bf771dcd5a6c181b2ae",
           "plainKoSha256": "413e4bee7116671a6c36b6e15f3a919c1e437fb581f5add47c96adf0f0c235da"
         }
@@ -3790,7 +3790,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTJ.json",
           "pointer": "/traits/thinkingStyle/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "sha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
           "plainKoSha256": "b1c4340792a2be816e9c9dda32267554926f1fbe92a37f646777f2ee35b77113"
         }
@@ -3930,7 +3930,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTJ.json",
           "pointer": "/traits/love/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "sha256": "17eec3bac834387f9c208dd6a2bc5ca527d14720aa113c4bcd13b59e507e05a0",
           "plainKoSha256": "6cf5aaf11c27bd6255903f9e39e5dc8f87c903d2aed9f451ff36205ee1bae04b"
         }
@@ -4063,7 +4063,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTJ.json",
           "pointer": "/traits/marriage/2",
           "sourceCoverage": "inferred",
-          "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "sha256": "cf342a791bcdb1515b83c8fd88c4eb8f2d94ee89a11dc1bd9f02f9afbb763c7e",
           "plainKoSha256": "c7315c0dbc80ccc218bbd74d2c41751c2749e561e2fac9050537769885390737"
         }
@@ -4209,7 +4209,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFJ.json",
           "pointer": "/traits/thinkingStyle/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "sha256": "9312705ee838258bd8e6de956a289c6457ff46dbb6ef35b1a90b23fcf7e5fbd8",
           "plainKoSha256": "32e2faf7bc710674473d1544aeaa3062f5fc5b70d4894f1a84d8ed4d7b3b6c94"
         }
@@ -4343,7 +4343,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFJ.json",
           "pointer": "/traits/love/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "sha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
           "plainKoSha256": "2b74f1a4a53087aff6ee0fa0f320610698bc8ca29e91d5e370159141bdd73c35"
         }
@@ -4477,7 +4477,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTJ.json",
           "pointer": "/traits/communication/2",
           "sourceCoverage": "direct",
-          "sourceVersion": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceVersion": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "sha256": "f257c3a956697751e8d8dccc1846fd61fbc277d0a57eb7ebe3ab165d821c484e",
           "plainKoSha256": "0bfd1840f8efbf8aeb302a975d9e6bfbb6ffb9519d769ebc1c745548c2197e19"
         }
@@ -4618,7 +4618,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTJ.json",
           "pointer": "/traits/identity/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceVersion": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "sha256": "cc90d5ce07e2707070dff522f22e3db8afb0f43ea520b755b986df0ad3c78833",
           "plainKoSha256": "fde888702a41a8a41d872a3c33904971f8c317126655597b46d07ca5258b134e"
         }
@@ -4767,7 +4767,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESFJ.json",
           "pointer": "/traits/identity/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceVersion": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "sha256": "ec99220bf92305dd5aa42a031b2546557b46c1e4df10dd0b29733db37353813a",
           "plainKoSha256": "710a4b9318f25b21860959e72b17c7f9b399799bae9c4381532efce48db06170"
         }
@@ -4900,7 +4900,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESFJ.json",
           "pointer": "/traits/identity/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceVersion": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "sha256": "ec8e811aecd95c0e4a11af7b4c24e24b53e345f1c2c615abf578e657b6a3f912",
           "plainKoSha256": "6603fc98a0bec74866125f573fa99f114e0aa62f52023d8e0f874641a72a026b"
         }
@@ -5035,7 +5035,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTP.json",
           "pointer": "/traits/study/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "sha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
           "plainKoSha256": "ed5c7ae76780fdc9eaaf6ccdb480309117e8aaabdf7b2bfab21e5155bd365160"
         }
@@ -5190,7 +5190,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTP.json",
           "pointer": "/traits/love/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "sha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
           "plainKoSha256": "a8e7109a34d1aad89bc233fd0df96a16beb27737232147d73c32124a0e350fc7"
         }
@@ -5311,7 +5311,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTP.json",
           "pointer": "/traits/marriage/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "sha256": "9c87a39b77f3a980c984cccbcdc66a691a808b41e0b7326d3d2e0893a3a6729f",
           "plainKoSha256": "85a45872c9105751f918f46094e7edde43b64c904b7495d0b647f2bf7844d224"
         }
@@ -5457,7 +5457,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFP.json",
           "pointer": "/traits/love/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceVersion": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "sha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
           "plainKoSha256": "5472e24d811bfa3b9385abd4c2d577af19f3dbea3e3bdec6a5b06e98bb674c9e"
         }
@@ -5615,7 +5615,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFP.json",
           "pointer": "/traits/thinkingStyle/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceVersion": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "sha256": "571de81aac5352f2bf331f6fb87ce131f94cffd56c037250363329aef29ceb93",
           "plainKoSha256": "9b6f388f24143d0a6fe95d75c6eca9931955bfcce9a30eb3ce5cd631cafa9cb5"
         }
@@ -5755,7 +5755,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTP.json",
           "pointer": "/traits/thinkingStyle/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "sha256": "7b714a4789afdae5915c4e27fae3baf7e7684c091792eb841f8fadd3b1cd9526",
           "plainKoSha256": "ed73b917431b4226d522423661e98ad01864eb3f964eb22fa47c99c9362de3c5"
         }
@@ -5894,7 +5894,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTP.json",
           "pointer": "/traits/study/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "sha256": "d74635abd854a1f57c2957d408fe15960e1f805ff3206e56ea49c8efa41216ed",
           "plainKoSha256": "0c96181db11af35f6079e19c032e0b84a663c39ab1040b179a6824a34a06cc40"
         }
@@ -6029,7 +6029,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESFP.json",
           "pointer": "/traits/identity/5",
           "sourceCoverage": "direct",
-          "sourceVersion": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceVersion": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "sha256": "0cf17a07ef58030fde017c017741eb3a1836d2d3de2ef4020d20f1257b3b26be",
           "plainKoSha256": "bb068dde71bb281299a51fe0635248220ef89223aefc4b2e8ab4bdc572e9213f"
         }
@@ -6175,7 +6175,7 @@ export const LEGACY_FUSION_RESEARCH: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESFP.json",
           "pointer": "/traits/communication/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceVersion": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "sha256": "88e603e0b43570f9790e874e20ef59c138648ff3ee68bee2146c9657dedd5b24",
           "plainKoSha256": "5409ea6f8c4e4a24b657675a5243577873701e6a7d85cee52f8fa3fdba060e88"
         }

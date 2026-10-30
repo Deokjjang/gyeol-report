@@ -23,14 +23,20 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
   it("1: 절마다 질문과 재료, trait는 소개 1 + 적용 2·한 장 1회, 소개는 책 순서상 첫 절", () => {
     for (const b of [c1Career, c1Full, xMajor, ...pairs.map(p => p[1])]) {
       const seen = new Set<string>();
+      // 궁합 두 사람이 같은 요소를 가지면 먼저 나온 쪽만 소개(P3.8 r2)
+      const keyOf = (id: string) => { const t = b.traits.find(x => x.id === id)!; return /^[ab]/.test(id) ? `pair:${t.featureId}` : id; };
       for (const c of b.chapters) {
         if (c.sections) for (const s of c.sections) { expect(s.q).not.toMatch(/\{topic\}|(?<![A-Za-z])[AB](가|는|의|를|에게)/); expect(s.materials.length).toBeGreaterThan(0); }
-        for (const m of c.materials) if (m.kind === "trait") { expect(m.angle, `${c.id} ${m.traitId}`).toBe(seen.has(m.traitId) ? "new-domain" : "first"); seen.add(m.traitId); }
+        for (const m of c.materials) if (m.kind === "trait") { const k = keyOf(m.traitId); expect(m.angle, `${c.id} ${m.traitId}`).toBe(seen.has(k) ? "new-domain" : "first"); seen.add(k); }
         const ids = c.materials.filter(m => m.kind === "trait").map(m => (m as { traitId: string }).traitId);
         expect(new Set(ids).size, c.id).toBe(ids.length);
       }
       for (const [id, u] of Object.entries(b.plan!.traits)) expect(u.applies.length, id).toBeLessThanOrEqual(MAX_TRAIT_APPLIES);
       expect(b.plan!.warnings).toEqual([]);
+      // 같은 요소는 두 사람 합쳐 책 3회·한 장 1회
+      const shared = new Map<string, string[]>();
+      for (const t of b.traits) if (/^[ab]/.test(t.id)) shared.set(t.featureId, [...(shared.get(t.featureId) ?? []), ...t.chapters]);
+      for (const [f, chs] of shared) { expect(chs.length, f).toBeLessThanOrEqual(3); expect(new Set(chs).size, f).toBe(chs.length); }
     }
     // 하람 커리어의 음착양차살(P3.7: 5장 두 문단 + 8장)은 한 장에 한 번, 책 전체 3회까지.
     const t = c1Career.traits.find(x => x.featureId === "shinsal:EUMCHAK_YANGCHA")!;

@@ -4,7 +4,7 @@
     "sourceId": "mbti:INTP:traits:thinkingStyle:big_picture_first",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
     "originalState": {
@@ -42,7 +42,7 @@
     "sourceId": "mbti:ESFJ:traits:communication:goal_process_instruction",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/communication/1",
     "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
     "originalState": {
@@ -109,7 +109,7 @@
     "sourceId": "mbti:ENFJ:traits:workplace:role_boundary_for_leadership",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/workplace/5",
     "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
     "originalState": {
@@ -146,7 +146,7 @@
     "sourceId": "mbti:ISTP:traits:workplace:minimal_report_protocol",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTP.json",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "pointer": "/traits/workplace/5",
     "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
     "originalState": {
@@ -467,7 +467,7 @@
     "sourceId": "mbti:INTP:traits:thinkingStyle:ti_internal_model",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "faa7efdfc185dff4a7b34613861d2ac332abb49cec4a6654dd5477bf6f865cf0",
     "originalState": {
@@ -505,7 +505,7 @@
     "sourceId": "mbti:ESFJ:traits:thinkingStyle:practical_evidence_need",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
     "originalState": {
@@ -544,7 +544,7 @@
     "sourceId": "mbti-pair:INTP>ESFJ",
     "sourceKind": "mbti_pair_reference",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/relationshipHints/notablePairs/3",
     "recordSha256": "c9561f145688a2c635a823c2ef47c1c7e3cfb606fcc530a4685ba2e17e06aad0",
     "originalState": {
@@ -592,7 +592,7 @@
     "sourceId": "mbti:ISTJ:traits:workplace:rule_following_reliability",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/workplace/0",
     "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
     "originalState": {
@@ -628,7 +628,7 @@
     "sourceId": "mbti:ISTJ:traits:workplace:clear_instruction_boundary",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/workplace/5",
     "recordSha256": "dcb0852a7bbc8f82ebbc86a703d6fb3cdb5ccc85778ce54ce0f62c316e848055",
     "originalState": {
@@ -665,7 +665,7 @@
     "sourceId": "mbti-pair:ISTJ>ISTJ",
     "sourceKind": "mbti_pair_reference",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/relationshipHints/notablePairs/1",
     "recordSha256": "336fed2cb17ed88f30d0a4532ac0350963fa7defc634a6f44ddc3a265d73f0a4",
     "originalState": {
@@ -713,7 +713,7 @@
     "sourceId": "mbti:ISTJ:traits:workplace:controlled_authority_risk",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/workplace/2",
     "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
     "originalState": {
@@ -751,7 +751,7 @@
     "sourceId": "mbti:ISFP:traits:workplace:anti_authority_control",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFP.json",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "pointer": "/traits/workplace/1",
     "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
     "originalState": {
@@ -950,7 +950,7 @@
     "sourceId": "mbti:ENFJ:traits:workplace:persuasive_presenter",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/workplace/2",
     "recordSha256": "d82d54b196675db626684fcd5eb5be6d6f5c41947773faa6dde25d12b034f6c3",
     "originalState": {
@@ -1053,7 +1053,7 @@
     "sourceId": "mbti:ISTJ:traits:thinkingStyle:past_data_decision",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/thinkingStyle/0",
     "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
     "originalState": {
@@ -1091,7 +1091,7 @@
     "sourceId": "mbti:ENTJ:traits:communication:wait_and_listen_gap",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "pointer": "/traits/communication/2",
     "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
     "originalState": {
@@ -1158,7 +1158,7 @@
     "sourceId": "mbti:ISTJ:traits:workplace:instant_error_correction",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/workplace/4",
     "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
     "originalState": {
@@ -1195,7 +1195,7 @@
     "sourceId": "mbti:ENFJ:traits:workplace:care_overload_at_work",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/workplace/3",
     "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
     "originalState": {
@@ -1231,7 +1231,7 @@
     "sourceId": "mbti:ENFJ:traits:communication:gentle_feedback",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/communication/1",
     "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
     "originalState": {
@@ -1438,7 +1438,7 @@
     "sourceId": "mbti:ISFP:traits:workplace:gentle_feedback_space",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFP.json",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "pointer": "/traits/workplace/5",
     "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
     "originalState": {
@@ -1475,7 +1475,7 @@
     "sourceId": "mbti:INTP:traits:workplace:scope_clarity_contract",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/workplace/5",
     "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
     "originalState": {
@@ -1512,7 +1512,7 @@
     "sourceId": "mbti:ISTJ:traits:thinkingStyle:efficient_error_detection",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
     "originalState": {
@@ -1588,7 +1588,7 @@
     "sourceId": "mbti:ESFJ:traits:workplace:team_morale_builder",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/workplace/0",
     "recordSha256": "19fefb12072b733d8482b14fac1b560356d0c82f36617c220ab4568a7a97780e",
     "originalState": {
@@ -1627,7 +1627,7 @@
     "sourceId": "mbti:ESFJ:traits:workplace:praise_boundary_balance",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/workplace/6",
     "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
     "originalState": {
@@ -1702,7 +1702,7 @@
     "sourceId": "mbti:INTP:traits:workplace:last_minute_execution",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/workplace/3",
     "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
     "originalState": {
@@ -1739,7 +1739,7 @@
     "sourceId": "mbti:ESFJ:traits:workplace:perfectionist_completion",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/workplace/3",
     "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
     "originalState": {
@@ -1777,7 +1777,7 @@
     "sourceId": "mbti:INTP:traits:thinkingStyle:why_question_loop",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
     "originalState": {
@@ -1853,7 +1853,7 @@
     "sourceId": "mbti:ISTP:traits:thinkingStyle:causal_principle_focus",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTP.json",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "pointer": "/traits/thinkingStyle/2",
     "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
     "originalState": {
@@ -1891,7 +1891,7 @@
     "sourceId": "mbti:INTP:traits:thinkingStyle:ne_possibility_storm",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/thinkingStyle/1",
     "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
     "originalState": {
@@ -1929,7 +1929,7 @@
     "sourceId": "mbti:ENFJ:traits:workplace:criticism_avoidance",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/workplace/4",
     "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
     "originalState": {
@@ -2069,7 +2069,7 @@
     "sourceId": "mbti:ESFJ:traits:workplace:policy_alignment_need",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/workplace/4",
     "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
     "originalState": {
@@ -2259,7 +2259,7 @@
     "sourceId": "mbti:ISFP:traits:communication:hard_to_state_opinion",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFP.json",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "pointer": "/traits/communication/1",
     "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
     "originalState": {
@@ -2514,7 +2514,7 @@
     "sourceId": "mbti:INTP:traits:workplace:anti_bureaucracy_work",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/workplace/1",
     "recordSha256": "d96777ab6bf534320352780a6c262710853fdaf3752029fe096a32ce6f2cce72",
     "originalState": {
@@ -2771,7 +2771,7 @@
     "sourceId": "mbti:ESFJ:traits:thinkingStyle:quick_social_judgment",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/thinkingStyle/4",
     "recordSha256": "73d8483a62094f125795b6a2a3d28274ae185bf1f986bd71a6d98393b9071fcd",
     "originalState": {
@@ -2979,7 +2979,7 @@
     "sourceId": "mbti:ISTP:traits:communication:few_words_direct",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTP.json",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "pointer": "/traits/communication/0",
     "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
     "originalState": {
@@ -3016,7 +3016,7 @@
     "sourceId": "mbti:ENTJ:traits:communication:clear_assertive_language",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "pointer": "/traits/communication/0",
     "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
     "originalState": {
@@ -3470,7 +3470,7 @@
     "sourceId": "mbti:INTP:traits:communication:direct_everyday_speech",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/communication/0",
     "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
     "originalState": {

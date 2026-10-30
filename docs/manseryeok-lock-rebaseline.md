@@ -63,3 +63,10 @@
 | interpretation-v4/engineFusionAudit | 규칙 인벤토리 ≠ `docs/product/v4/AUDIT_DATA.json`. 차이는 신살 표 3개 | 예 | `AUDIT_DATA.json`은 여러 `docs/validation` 매니페스트에 바이트 해시가 있어 그대로 두고 `expectLock`으로 v5 인벤토리 digest를 기록 |
 | report-tables/loveMarriageChildReportTablePresenter | 연애 픽스처(손으로 쓴 덕민 원국 표식)의 일주 `망신살` vs v5 커리어 계산. 己卯년(亥卯未) 亡神은 이제 寅이고 원국에 寅이 없다 | 예 | 픽스처 일주 신살을 `[]`로. 같은 파일의 다른 단정은 이 칸을 쓰지 않는다 |
 | interpretation-v3/comprehensiveEnrichment (락 파일 안의 동작 단정) | 가온(丙子년) `shinsal:GOSINSAL` 관찰 기대. 亥子丑 孤辰은 寅이고 원국에 寅이 없다. v5에서 새로 생긴 `shinsal:*` 표식은 없다 | 예 | 관찰 목록에서 `shinsal:GOSINSAL`만 뺌 |
+
+## P3.8 재기록 (2026-10-30, 브랜치 `v5/p38`)
+
+- **사유: MBTI 원본 이름 변경.** `docs/product/mbti/source/*.json` 16개의 `titleKo`를 지식 DB의 자체 이름으로, archetype 8개를 자체 문구로 바꿨다(타사 유형명 저장소 검색 0건, `docs/v5/p38-progress.md` 결정). v4 책 출력(MBTI 표·문장)에 이 이름이 들어가 잠금 값이 바뀐다. 품질 승인이 아니다.
+- 방법: `locks.json`을 비우고 잠금을 쓰는 시험 19개 파일 전체를 `V5_LOCK_RECORD=1 --no-file-parallelism`으로 다시 기록했다(키가 이미 있으면 `V5_LOCK_CONFLICT`로 멈추므로 덮어쓰기 대신 처음부터). 385/385 PASS.
+- 결과: 키 250 → 255. 같은 값 154, 값 변경 95, 새 키 6(전에는 과거값과 같았던 MBTI 표·연애 묶음 등), 빠진 키 1(이번 기록 실행에서 쓰이지 않음 — 새 overlay로 일반 실행 시 잠금 시험은 기준선과 같은 결과).
+- 함께 바뀐 해시 기록: 원본 파일·leaf·record 해시가 `docs/validation`·`src`·`tests`의 출처 기록에 사슬로 걸려 있어, 각 파일이 가졌던 모든 해시 → 현재 해시로 고정점까지 기계적으로 바꿨다(기록의 문장·이름은 그대로). 예외 1곳: `v4-mbti-16type-knowledge-depth-01/report-use-cases-audit.json`의 ENTJ 안내 미러(원본과 같아야 하는 잠금 값)를 원본과 함께 "지휘관, 전략 지휘관"으로.

@@ -47,7 +47,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#57df72fa18aaa83db72e",
         "sourceKind": "mbti_trait",
         "recordSha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
-        "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+        "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
         "originalState": {
           "type": "ESTJ",
           "area": "workplace",
@@ -359,7 +359,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#1ad06916b42f0eb3ee39",
         "sourceKind": "mbti_trait",
         "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "workplace",
@@ -513,7 +513,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#7c9e075f5b0a5dcf9ca2",
         "sourceKind": "mbti_trait",
         "recordSha256": "e7d3ccc3ff0c555085ebf85eab220b86aa3b93055878cf19345158e5baa10fb5",
-        "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+        "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
         "originalState": {
           "type": "INTJ",
           "area": "career",
@@ -664,7 +664,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#b54b44778d3ddfda8eae",
         "sourceKind": "mbti_trait",
         "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-        "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+        "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
         "originalState": {
           "type": "ISTJ",
           "area": "workplace",
@@ -779,7 +779,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#0041c8de2fd1fe3af227",
         "sourceKind": "mbti_trait",
         "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "career",
@@ -894,7 +894,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#c4c9446c351f8635705c",
         "sourceKind": "mbti_trait",
         "recordSha256": "cf77535e83aaeeb8f03e95e64f3c70a24a4cf2f9ad3ce9025ccf5f6341e661f9",
-        "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+        "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
         "originalState": {
           "type": "ISTP",
           "area": "workplace",
@@ -1009,7 +1009,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#b2d8c079b6947d1e86cc",
         "sourceKind": "mbti_trait",
         "recordSha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "workplace",
@@ -1124,7 +1124,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#af11cbc3b971aff61984",
         "sourceKind": "mbti_trait",
         "recordSha256": "d98fbc035ba01882f404c6e6afd2172039165ad9d98e66f3682212b421e71bd5",
-        "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+        "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
         "originalState": {
           "type": "ESFP",
           "area": "workplace",
@@ -1239,7 +1239,7 @@ export const CH08_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#518e597eb9bf5d2febcc",
         "sourceKind": "mbti_trait",
         "recordSha256": "07729ac8cc8c59714e2f703657166b994c1c19462fcd0df01b887ffc30b981d8",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "study",

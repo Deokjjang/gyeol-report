@@ -47,7 +47,7 @@ export const CH09_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#1ab2480dc05b0f303177",
         "sourceKind": "mbti_trait",
         "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-        "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+        "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
         "originalState": {
           "type": "ENTJ",
           "area": "money",
@@ -162,7 +162,7 @@ export const CH09_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#412220bcf92a4c16363f",
         "sourceKind": "mbti_trait",
         "recordSha256": "bd3500b042d52f5e794eae3e4fc4a726647ae1e6dd646ebed97b14ddaaecd37a",
-        "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+        "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
         "originalState": {
           "type": "ESFP",
           "area": "money",
@@ -277,7 +277,7 @@ export const CH09_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#5aa3def40f487ada68fe",
         "sourceKind": "mbti_trait",
         "recordSha256": "08406615ad1ee236e78f7a2c4e1359668e46f6f3ec2b88aba29dfec4555014bb",
-        "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+        "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
         "originalState": {
           "type": "INFP",
           "area": "money",
@@ -998,7 +998,7 @@ export const CH09_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#aab403f317e44128dd16",
         "sourceKind": "mbti_trait",
         "recordSha256": "a3a45a773d25b99dba2a1200ab9dd00190606201ad57b8d7bac6e23688baacbb",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "money",
@@ -1113,7 +1113,7 @@ export const CH09_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#ee27329e2a832f94c820",
         "sourceKind": "mbti_trait",
         "recordSha256": "ebb134b9b6b52ca1dd8fd188862589414ea377529ca7bd0fa0a87c244c299e48",
-        "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+        "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
         "originalState": {
           "type": "ISFP",
           "area": "money",

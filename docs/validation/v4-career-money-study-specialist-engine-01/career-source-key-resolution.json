@@ -81,7 +81,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5d8f68e414bf0c19b5ed",
           "recordSha256": "bf87ff4de53b38f474ff8eeabcd5bddf361aa9e9ca5bf030d774e8f50925501a",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -93,7 +93,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 14,
           "originalId": "ckr:source:5d8f68e414bf0c19b5ed",
-          "recordSha256": "b91607a0007b8c506ec7428025998a708e4a7d0eae68988cf3bca0120aa08a3d",
+          "recordSha256": "4e4dd68159a0267a9d66b0185346ddddf83b73205e22e3db67a17c55419f901f",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "structured_care_profession",
@@ -196,7 +196,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1decd822e13cf76d8f8e",
           "recordSha256": "21160c05e131d68c602615babcf34f11e32c261cfb076fa4877a3bfac274d959",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -208,7 +208,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 21,
           "originalId": "ckr:source:1decd822e13cf76d8f8e",
-          "recordSha256": "0c86dcd7cf6a429f8c76e53bd36527cc8167d54f768bd3438d90e5cfe81c6a1d",
+          "recordSha256": "ff1448eb94d62114553770e03330bd3d8ebce410015730ed1d82c18d506d37c2",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "autonomy_required_role",
@@ -247,7 +247,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cd19631fd0781dd2ef4c",
           "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFP",
@@ -259,7 +259,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 17,
           "originalId": "ckr:source:cd19631fd0781dd2ef4c",
-          "recordSha256": "08696cac96ac2f74fad1cf0eb7e75ca4882f152a036e46a68d8d3f4875354b11",
+          "recordSha256": "5bdc43abbcaa135340821c25d36a624f5bef0e8c4475587a0e71ab9dfb1ddd28",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "follow_through_system",
@@ -357,7 +357,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d5a3f16c5cef50521cd4",
           "recordSha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -369,7 +369,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 95,
           "originalId": "ckr:source:d5a3f16c5cef50521cd4",
-          "recordSha256": "0e6492ac7a4853d8f20fb344bb554f3584c8e97414d5cacc4fc7a0c9c8ab5a75",
+          "recordSha256": "9959e136a019a47c12312e1d73cfccb40387477170209ea52d9420844821f66d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "storytelling_learning",
@@ -467,7 +467,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ba9c4a59def3be6ff655",
           "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -479,7 +479,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 41,
           "originalId": "ckr:source:ba9c4a59def3be6ff655",
-          "recordSha256": "eb9a8fb29f08ee8b44e571bc800d97e0441d5e1219debe5197a2fc413e73d6ff",
+          "recordSha256": "4856ad4b6d4efef92b5b5f543c07a1a4ef4d38e20938faab27819310346c8c75",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "artistic_expression_fit",
@@ -518,7 +518,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1d7da5209fe3284e2d3e",
           "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTJ",
@@ -530,7 +530,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 37,
           "originalId": "ckr:source:1d7da5209fe3284e2d3e",
-          "recordSha256": "ed16abff1eefb2a771bdf2db39a91e8364454957804bd0555671bc7e49fa3afd",
+          "recordSha256": "2f33b5e093206cbe7fb54ecb752706fd6f7f9f6aa9fe4d7be674e37b9f8d0919",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "strategy_to_asset_work",
@@ -569,7 +569,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#caf2f3ef4f21ea3ad88f",
           "recordSha256": "0f66f85ecca0cfbc68b82e75e43f6bb80a675995f13945efb1a6d1d102a470f3",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -581,7 +581,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 66,
           "originalId": "ckr:source:caf2f3ef4f21ea3ad88f",
-          "recordSha256": "1dcb2104e8cf8c68467c97d667e2a0494c60dbc87f99dc10a4371691e477217c",
+          "recordSha256": "d5dccb90594d0ae3c0bc09431cc7a128ad42c3883c2bbce276ad47c7f2b196f9",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "boss_challenge_risk",
@@ -668,7 +668,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ce1c5899365d6cd736a8",
           "recordSha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -680,7 +680,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 19,
           "originalId": "ckr:source:ce1c5899365d6cd736a8",
-          "recordSha256": "02c4fb0d696a3dd36cd69414bf008496b6072dba013eb65abe596771667bb477",
+          "recordSha256": "a60a69ea3b6af5b5aa57c461968afebaef016336ab6fd401864f80871c8e0acc",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "needs_thinking_time",
@@ -723,7 +723,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d3f1d896063ae672f97b",
           "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -735,7 +735,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 39,
           "originalId": "ckr:source:d3f1d896063ae672f97b",
-          "recordSha256": "f27ca4d201fdacf2b72db90f648ee4ac13e8ab59f28528dabffe916601ab4095",
+          "recordSha256": "e5f28fe5a9040d101fcd6242ba699a3595b5a13945dec56c63615568c2fc0ace",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "creative_arts_fit",
@@ -833,7 +833,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#8bf155c8bcdbb54b9142",
           "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -845,7 +845,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 42,
           "originalId": "ckr:source:8bf155c8bcdbb54b9142",
-          "recordSha256": "2b1c920c7e97a821d48fb347b08029e5921947b12466a3d882bcba1292840c69",
+          "recordSha256": "c4cff85a1a90f507b1ccab7c7adb15620c0b7bb41a70c2e3bb1087c4ddccae10",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "teacher_facilitator_fit",
@@ -940,7 +940,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#8a3b104ce2a794e55b60",
           "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFJ",
@@ -952,7 +952,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 59,
           "originalId": "ckr:source:8a3b104ce2a794e55b60",
-          "recordSha256": "2d6fa7ba6fb3a58c991c176f7d647fa5a0e9367a14bf9d720624dd3ee73c86c1",
+          "recordSha256": "a5de5d3b348479c78b773fc6f4280996c855e3f220ab10d311e014a8dcf0a23d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "gentle_language",
@@ -1055,7 +1055,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f93bf80f81c4305dbee6",
           "recordSha256": "c521c829d045c2753a6b60ca37b87338bf2dde3f7b869ee05199efa6b578ce74",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ESTP",
@@ -1067,7 +1067,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 65,
           "originalId": "ckr:source:f93bf80f81c4305dbee6",
-          "recordSha256": "8010e02631435b199789d8588aa5326e9599b7617e968e37cfe82bcc725f159c",
+          "recordSha256": "b311976bc2379e070ae85910bb28406db145cb06c9a612f38bb115f8995b931d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "flexible_negotiator",
@@ -1106,7 +1106,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f23be8c338fde8896938",
           "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISFP",
@@ -1118,7 +1118,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 71,
           "originalId": "ckr:source:f23be8c338fde8896938",
-          "recordSha256": "b8dc6f3fcff348613d6f311871e29b217e98a8f426b39dfde840d5c0f4636a00",
+          "recordSha256": "539b69caaeec68abc5dbd4bd7164ae91ed73814c24825112cad0f607fed1c3b6",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "taste_to_service_value",
@@ -1337,7 +1337,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f25b06eb266a5bc7f915",
           "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -1349,7 +1349,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 45,
           "originalId": "ckr:source:f25b06eb266a5bc7f915",
-          "recordSha256": "f8689ac1136ac4a02408c6fea276b291496690569653fb8c48333c1cf651277e",
+          "recordSha256": "8b9d8178c6fb4ce7f5019cfcf16517374ad359001f822c60fd6ba5a898ad372c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "process_quality_operator",
@@ -1452,7 +1452,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#2ca38b805cc09d2e2625",
           "recordSha256": "63cdc79124a12f3c5a015790f9f2feaac526c94ded1a259405dd2297e2433072",
-          "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTP",
@@ -1464,7 +1464,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 85,
           "originalId": "ckr:source:2ca38b805cc09d2e2625",
-          "recordSha256": "979ad95930f4b04a4841ebdc5ba0a52034d6fb2546cba57cb307d731bd41643d",
+          "recordSha256": "62f4314dda5cfbaca68b15d845d5d40321ee0e4d3d8092a73112bbd8698be8b8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "project_cost_sprawl",
@@ -1576,7 +1576,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#be18df3416f4583503eb",
           "recordSha256": "568c68310514d56d94cec7a9d6a0059a8293141fb6bf6fbdcc2562e3657380d0",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -1588,7 +1588,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 49,
           "originalId": "ckr:source:be18df3416f4583503eb",
-          "recordSha256": "b6155706029fef70f7b76fcdd45e96626f7b235a1732f020a4a612e299ee2725",
+          "recordSha256": "a40cc0f8aa6f10dbd542d1c16dca95df5d71a76aca198a958452a776c3aaf6a6",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "innovation_over_convention",
@@ -1686,7 +1686,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cf6e4b6c104165d3fff3",
           "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFP",
@@ -1698,7 +1698,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 9,
           "originalId": "ckr:source:cf6e4b6c104165d3fff3",
-          "recordSha256": "0483639ef24b0d0b813667e2dca17b853f7d6ae40507ab837e73a09e11f90433",
+          "recordSha256": "d47d9652197d9796c8153088b14f1fb43b2e1d171c68364f1ee456b79b3e71c8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "arts_and_creative_field",
@@ -1737,7 +1737,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cd6db5be5e62ed3b4f56",
           "recordSha256": "4b44ef8bad63105f5f41b4e7347a88235fe8e111e2bcec6fca8a66ecc6dd1e05",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTJ",
@@ -1749,7 +1749,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 84,
           "originalId": "ckr:source:cd6db5be5e62ed3b4f56",
-          "recordSha256": "1682e2d89e7935670e1ac9b8215861592e3c0da9fcbf851925f909cf1a7696a6",
+          "recordSha256": "c468e56f80ddeb33869b735dbe858b2f42c1ab778fac7917c31e55ddd4755883",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "spending_for_speed",
@@ -1959,7 +1959,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#6aac2c369ca11d84cf6b",
           "recordSha256": "bc4df3c57ecca5479bb535593f9ed8b37813034f36adf801d5ca9f1a0d5750f4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -1971,7 +1971,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 94,
           "originalId": "ckr:source:6aac2c369ca11d84cf6b",
-          "recordSha256": "70fbff99dc1e26d69996e30f0555819b96343f2431dd233abb22755006f494e2",
+          "recordSha256": "1326a26a9d27a2df11ad5381d834abb80497d79f33286df74de6c1a3547425e6",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "fast_social_learning",
@@ -2010,7 +2010,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#248692af90259c9eebe4",
           "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFJ",
@@ -2022,7 +2022,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 22,
           "originalId": "ckr:source:248692af90259c9eebe4",
-          "recordSha256": "dd97ccb76b109494239dd79173124b33bfbaf6cb352bab40f08b516341a24b85",
+          "recordSha256": "98a07d8e222b78a06c45e8d4af355a00c29465653c12e232c23e33296abf6e83",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "calm_deep_work",
@@ -2061,7 +2061,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d1d38d962c1cc346bc86",
           "recordSha256": "33b82f6459ca4a940abf0af14f5a158de033f4130db7221a830f34b98fe3b902",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -2073,7 +2073,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 27,
           "originalId": "ckr:source:d1d38d962c1cc346bc86",
-          "recordSha256": "732fcebe9bc5b478733e2dda15b1a8b51e4db211ac0e9942c4c3eb242ae65d9d",
+          "recordSha256": "51082dddc12f23b43905e0ac2ba73aeeb0380e55adca780985dd5ff80f8854ca",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "practical_helper_work",
@@ -2112,7 +2112,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b846da55e4e5cf6a302b",
           "recordSha256": "0c48739ba667f672241a18ff6d3af3307d49ef84fc0e32470589b286ff285a67",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -2124,7 +2124,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 106,
           "originalId": "ckr:source:b846da55e4e5cf6a302b",
-          "recordSha256": "0d5741604246408e758c8923b4e5f635b6dd95022a92c637ab1d1b1aa840d8f6",
+          "recordSha256": "13f699c3cf30b328f441aaff81d62c1515626c8d57c75174bfd7753dd370fe07",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "manual_learning_curve",
@@ -2163,7 +2163,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f25b06eb266a5bc7f915",
           "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -2175,7 +2175,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 45,
           "originalId": "ckr:source:f25b06eb266a5bc7f915",
-          "recordSha256": "f8689ac1136ac4a02408c6fea276b291496690569653fb8c48333c1cf651277e",
+          "recordSha256": "8b9d8178c6fb4ce7f5019cfcf16517374ad359001f822c60fd6ba5a898ad372c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "process_quality_operator",
@@ -2262,7 +2262,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#17481957d3ad7c46239e",
           "recordSha256": "ff6bed5f556c3f26a2e9974ce3fb5a64372d6e5ea21938fa9f0ace5720e22589",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTP",
@@ -2274,7 +2274,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 53,
           "originalId": "ckr:source:17481957d3ad7c46239e",
-          "recordSha256": "8b2ae812ff229c8fb03569e4a866964fe3a9f8498943aa5318b0db1402f90881",
+          "recordSha256": "c394b8cac1e61145f8bff2c6623ed330fc5ae48cdbba313b6d1112c9dba2b74a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "crisis_response_work",
@@ -2372,7 +2372,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#130ebac8873e64f99e23",
           "recordSha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTP",
@@ -2384,7 +2384,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 92,
           "originalId": "ckr:source:130ebac8873e64f99e23",
-          "recordSha256": "349af92a84559866e2f9d37459c52413d96f93f2a7e9ae5772dcbc863fbdc225",
+          "recordSha256": "319e1372a470f2157f8ad088d16991fbca170c3982a12bbda3a7219320323e9a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "hands_on_learning",
@@ -2417,8 +2417,8 @@
           "sourceId": "fkr:legacy:istp-study",
           "sourceKind": "fusion_research",
           "auditRef": "source-catalog.json#c009e50b177f9c93ca31",
-          "recordSha256": "be22d063b285a41a288fb787c53b100953218042b5f72ae5bde154fc1b513429",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "2f9ad989e1a508c8a6a028b54fceafb18355e73969017c5b709aef6c4478f67e",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -2436,7 +2436,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 93,
           "originalId": "ckr:source:c009e50b177f9c93ca31",
-          "recordSha256": "d65a752799e0553cc6eb5e2853dfb3e0e5f7ff7502a574735cde70d31687c827",
+          "recordSha256": "ac843db2cec45177c338ecc857792f943b7aa4e2c5831ce8d5a3846e5f0c6c0d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "fkr:legacy:istp-study",
@@ -2446,7 +2446,7 @@
           "exportName": "LEGACY_FUSION_RESEARCH",
           "index": 35,
           "originalId": "fkr:legacy:istp-study",
-          "recordSha256": "be22d063b285a41a288fb787c53b100953218042b5f72ae5bde154fc1b513429",
+          "recordSha256": "2f9ad989e1a508c8a6a028b54fceafb18355e73969017c5b709aef6c4478f67e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "verified": true,
@@ -2540,7 +2540,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1288e7c671389c17eb7d",
           "recordSha256": "d07b97834e43016a7378a78bca60d07781ce3334dcf74df998eb4184cd4b2b1c",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -2552,7 +2552,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 35,
           "originalId": "ckr:source:1288e7c671389c17eb7d",
-          "recordSha256": "4d9cbfe9f2344bb851d21c5c3977d674d5d18b3fa174a25ce4c0d5b9567d4449",
+          "recordSha256": "3d7d84e15a4160af396501dedda4c8906179956a10ba33683c6e2252490a35d0",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "concrete_praise_learning",
@@ -2591,7 +2591,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#4b48516cd55d06412f8a",
           "recordSha256": "4af9a7b97ea903a16cec0560938059db88ffcf7c8c0b9b9f4214a5bfe8a99835",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTP",
@@ -2603,7 +2603,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 36,
           "originalId": "ckr:source:4b48516cd55d06412f8a",
-          "recordSha256": "d1689c754fe70f9a1587e91dc62660ffe6470772c78fe9dad68a0d7ee54a9e60",
+          "recordSha256": "e9ee8be12016fb0f6ff1df14185146d4d9bc33725ae19c2fa9b036a6661a5ce8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "theory_to_tool_bridge",
@@ -2642,7 +2642,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#c2b9d32b8dc32f41a677",
           "recordSha256": "07cff2e577212ffa6c5078d0605ec79310e1097b7f4963eed4bbf2021e783a8f",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INFJ",
@@ -2654,7 +2654,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 34,
           "originalId": "ckr:source:c2b9d32b8dc32f41a677",
-          "recordSha256": "3b7668483e3c01ceaebe83c2d4269280fca06b7e874e807e964851a137dd73c2",
+          "recordSha256": "8eb28587c93ed58cc033245f3bb5fb5d3562d8ac03bd57e6d840407325d152f9",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "vision_to_content_strategy",
@@ -2757,7 +2757,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#db6c7a28d75b72af5336",
           "recordSha256": "9a539a6c7287ca1197b080e8d8248de13dd650b96e6532db674e064cf6be3350",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ESTP",
@@ -2769,7 +2769,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 33,
           "originalId": "ckr:source:db6c7a28d75b72af5336",
-          "recordSha256": "01c09ff6e0dabc073535bdd3143265dab8af7cae73b9ac0f7cb9dd7ae5df893c",
+          "recordSha256": "1471e91d3306eb7cc0add758a97b6be692429a9cc048bada751dcc22e84bec65",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "field_emergency_fit",
@@ -2931,7 +2931,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f25b06eb266a5bc7f915",
           "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -2943,7 +2943,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 45,
           "originalId": "ckr:source:f25b06eb266a5bc7f915",
-          "recordSha256": "f8689ac1136ac4a02408c6fea276b291496690569653fb8c48333c1cf651277e",
+          "recordSha256": "8b9d8178c6fb4ce7f5019cfcf16517374ad359001f822c60fd6ba5a898ad372c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "process_quality_operator",
@@ -3094,7 +3094,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#120b3da73ae37f6baf51",
           "recordSha256": "ea70a10cfdd0d66d7beaae6aedd44cc4659e3e1ecba466e165bf5e4417334401",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENTJ",
@@ -3106,7 +3106,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 115,
           "originalId": "ckr:source:120b3da73ae37f6baf51",
-          "recordSha256": "4e1842f42c087c8248b9f5dcfa20d4aec3a724557f35f93ee97da607f131b561",
+          "recordSha256": "8ddf3743f81f872a51fb90b214aadd35b85e99cef553b5d4dce5ef97ed87faf2",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "workaholic_drive",
@@ -3209,7 +3209,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b64fa2920704301bf622",
           "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -3221,7 +3221,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 88,
           "originalId": "ckr:source:b64fa2920704301bf622",
-          "recordSha256": "808ed0b6d71a2cd65a4096ace625ee4d7b1fa7b1f287d0fbe5e5fa48a6657a84",
+          "recordSha256": "5a0299735b7c22764ada075fa59e1a232f09456dec8952cb3534ae0ce1232f6c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "cost_and_contract_mind",
@@ -3397,7 +3397,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#46b1ab895711e38e6215",
           "recordSha256": "f0acf37f350ba7627c15d04ba89bc4e0e9d05529dd8d205fd895592f2d6bdb8f",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTP",
@@ -3409,7 +3409,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 100,
           "originalId": "ckr:source:46b1ab895711e38e6215",
-          "recordSha256": "78085a77dbbc3fe6bf542621fa971355094ebd21c3addd6faae22e8aa208ea66",
+          "recordSha256": "6b0df3256887b3044c930570c90924ea8154474b724e36ecb77ad24892d18301",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "repeat_check_system",
@@ -3448,7 +3448,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#3c2b6472c0c4d3051d9f",
           "recordSha256": "d7a51b98eda0aa44ddcc20d467869aa76357441c69e6a4d9d3d760ff0a3a3cc5",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTJ",
@@ -3460,7 +3460,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 81,
           "originalId": "ckr:source:3c2b6472c0c4d3051d9f",
-          "recordSha256": "273d46fa0043011df82deaf299f324a0522b6a485375890a0a160c6f9daeea04",
+          "recordSha256": "f9a4d6c4f2d21fa41aaa84f4f82cb7232d8c58846ba749fdfd0dbe9b017d2def",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "operations_income_engine",
@@ -3499,7 +3499,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cdc60c6b316ee8a858c1",
           "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -3511,7 +3511,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 3,
           "originalId": "ckr:source:cdc60c6b316ee8a858c1",
-          "recordSha256": "bfcbfd4d132ac61f51502794ec87d3e8d34d4449539b7e771c5d3448eb6945dc",
+          "recordSha256": "239108eaacb5d3a69e040f13437751bf11dd9add0331e32ca806cb7c11452832",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "collaborative_environment",
@@ -3550,7 +3550,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#25034b1d3583cb77b7ab",
           "recordSha256": "d82d54b196675db626684fcd5eb5be6d6f5c41947773faa6dde25d12b034f6c3",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -3562,7 +3562,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 25,
           "originalId": "ckr:source:25034b1d3583cb77b7ab",
-          "recordSha256": "4f0e343f06df0bba60341deade67482a910e16cbe49f838514fcb8a361a5091a",
+          "recordSha256": "253d19165956ad6dca48e7dc47dbb9490e4cb6690e19d53264b33a0bc2087f86",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "persuasive_presenter",
@@ -3601,7 +3601,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b2d2427cbee48429f3e8",
           "recordSha256": "67f7d235d3623bb5de58b653cac9e6ddd86892b8c51f18df5c8b1d959eedb96c",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -3613,7 +3613,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 50,
           "originalId": "ckr:source:b2d2427cbee48429f3e8",
-          "recordSha256": "275a55f039b7061ab23bbb7c88ad0badac7d2d5b315ecc29c4fc7863db1b43dc",
+          "recordSha256": "b2b6e295c93befeb453a481dc73da102ba4813146c1803c4e2400cd209891913",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "behind_the_scenes_worker",
@@ -3716,7 +3716,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#8bf155c8bcdbb54b9142",
           "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -3728,7 +3728,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 42,
           "originalId": "ckr:source:8bf155c8bcdbb54b9142",
-          "recordSha256": "2b1c920c7e97a821d48fb347b08029e5921947b12466a3d882bcba1292840c69",
+          "recordSha256": "c4cff85a1a90f507b1ccab7c7adb15620c0b7bb41a70c2e3bb1087c4ddccae10",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "teacher_facilitator_fit",
@@ -3767,7 +3767,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#a4e17745da4f51f467aa",
           "recordSha256": "c51c73b93437abd92c1ce601ccccb2c0901ccc340293c88eeb5135863c42f718",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -3779,7 +3779,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 116,
           "originalId": "ckr:source:a4e17745da4f51f467aa",
-          "recordSha256": "b890d2ad719b882eebf0aeb2713d784d5a88ef82fde84218f25d59051506a954",
+          "recordSha256": "c58ecbceb04adb72aeb4a9ca49b49ec408cf2b78e1b9f38dd5ef188b1695a851",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "anti_politics_work_style",
@@ -3818,7 +3818,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#6de6be185ee5f6ecec9b",
           "recordSha256": "5fa0a324a0bbc2b9ec67f6a9f310ece01ec29e48cc7fa0fdb02432d9fb8bdf85",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -3830,7 +3830,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 114,
           "originalId": "ckr:source:6de6be185ee5f6ecec9b",
-          "recordSha256": "de1b2d6693484bd0e9b59c9c5ffb934b3c12f6625d8798684ec08db07badb040",
+          "recordSha256": "e424fa3b8b8985e9027ae3c822ce4150d7114d1d6c5e025afb108e07853d9cca",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "perfectionism_recovery_limit",
@@ -3869,7 +3869,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#0b4c5f82e25554523be7",
           "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFP",
@@ -3881,7 +3881,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 20,
           "originalId": "ckr:source:0b4c5f82e25554523be7",
-          "recordSha256": "e8086ac69adc4f25d787caed39e87c61cc2458441ad5addce1846d52ff082e4d",
+          "recordSha256": "f853908047b1cf29ece034819345f849fb3790f7a300b18f7716a477010f3667",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "responsive_team_needed",
@@ -4036,7 +4036,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#01b252c15ec6d3cc4064",
           "recordSha256": "dcb0852a7bbc8f82ebbc86a703d6fb3cdb5ccc85778ce54ce0f62c316e848055",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -4048,7 +4048,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 67,
           "originalId": "ckr:source:01b252c15ec6d3cc4064",
-          "recordSha256": "dafa84bf39ac0998cb7de22606528aa566fe0a725b99f4547e1fca1ebc7f87de",
+          "recordSha256": "a256200375f8cbee2e50add9d8d3d8c33a46edafdeb838c77e9c335fa1a038fa",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "clear_instruction_boundary",
@@ -4087,7 +4087,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f666c10a6db231abcc92",
           "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -4099,7 +4099,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 1,
           "originalId": "ckr:source:f666c10a6db231abcc92",
-          "recordSha256": "9a49e43a50a4f6f79023071c4efb895e08c39adf7ccfe5d8c98de05a7d9c81e8",
+          "recordSha256": "64ffda8a5691cec6e10a1920be7f80c59d6e66b2791262278b67265775bcc715",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "why_question_loop",
@@ -4138,7 +4138,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f25b06eb266a5bc7f915",
           "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -4150,7 +4150,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 45,
           "originalId": "ckr:source:f25b06eb266a5bc7f915",
-          "recordSha256": "f8689ac1136ac4a02408c6fea276b291496690569653fb8c48333c1cf651277e",
+          "recordSha256": "8b9d8178c6fb4ce7f5019cfcf16517374ad359001f822c60fd6ba5a898ad372c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "process_quality_operator",
@@ -4248,7 +4248,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#4d87fbb51867b1899de4",
           "recordSha256": "07729ac8cc8c59714e2f703657166b994c1c19462fcd0df01b887ffc30b981d8",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -4260,7 +4260,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 96,
           "originalId": "ckr:source:4d87fbb51867b1899de4",
-          "recordSha256": "9db2f197595d2161419ec24216f8a5a4a93567758820eb30fd9661c5f7f6de3f",
+          "recordSha256": "6fd17c00d04f147127cf88ea20564a3384044d8317b93ceb83a3e8ad17ebb6e8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "dutiful_study_rhythm",
@@ -4372,7 +4372,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5b8d6b11c49970419712",
           "recordSha256": "d85ddc2dcdab38a57f580d7ee2972b39c3c15e2824f9d969763f54ca206bce58",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTJ",
@@ -4384,7 +4384,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 51,
           "originalId": "ckr:source:5b8d6b11c49970419712",
-          "recordSha256": "e1d4a779f493500b7452f2e38b47a0fed2170afc5749201bda02efb7530bc929",
+          "recordSha256": "d9dd37604a26e22c646f5f616ac309c0c22c218feb2107488c80ddddca537f57",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "operations_scale_manager",
@@ -4423,7 +4423,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#4b48516cd55d06412f8a",
           "recordSha256": "4af9a7b97ea903a16cec0560938059db88ffcf7c8c0b9b9f4214a5bfe8a99835",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTP",
@@ -4435,7 +4435,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 36,
           "originalId": "ckr:source:4b48516cd55d06412f8a",
-          "recordSha256": "d1689c754fe70f9a1587e91dc62660ffe6470772c78fe9dad68a0d7ee54a9e60",
+          "recordSha256": "e9ee8be12016fb0f6ff1df14185146d4d9bc33725ae19c2fa9b036a6661a5ce8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "theory_to_tool_bridge",
@@ -4474,7 +4474,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#76d4c68e32d1662f8abf",
           "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -4486,7 +4486,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 63,
           "originalId": "ckr:source:76d4c68e32d1662f8abf",
-          "recordSha256": "a40890d1e74729c677d0dce30ee6802fc5643e6943d6bb11555e1ebbb4da281f",
+          "recordSha256": "e31e3b8285f76d3f8f8c7d8c1a7a878a9e0d040e62e2cb1751a7f14ab28f2ae7",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "instant_error_correction",
@@ -4525,7 +4525,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#563ac17bf788fce06e6f",
           "recordSha256": "92bb4640dad90c9d1b0f6ecccf8913a9b55677c7f2cea314db368f544f26672b",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INFJ",
@@ -4537,7 +4537,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 90,
           "originalId": "ckr:source:563ac17bf788fce06e6f",
-          "recordSha256": "e7e1aa1425a03dbf5afad15c57e55f6a9224716aaf67e310a37ae5ebc66f59b4",
+          "recordSha256": "8fa12fc7f64b3e5d41a432130ade6af58926542a6910401b45bd10f0ecc942e3",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "quiet_accumulation_money",
@@ -4576,7 +4576,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ce00081ce37c25f1db93",
           "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTJ",
@@ -4588,7 +4588,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 26,
           "originalId": "ckr:source:ce00081ce37c25f1db93",
-          "recordSha256": "d60f64805bdd464746bb1e8c2a60090b7d918d9827e146d8f60ead6914a37547",
+          "recordSha256": "e220ba60e232135d800caf447545502d69b899b8ea99aec96ad8ddb410231005",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "delegation_pressure_control",
@@ -4627,7 +4627,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#76c5466694297d1a36cf",
           "recordSha256": "9ded9785447853619b133e93f96f0037ec00efdea474b3d05e5de02a1fe78256",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -4639,7 +4639,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 98,
           "originalId": "ckr:source:76c5466694297d1a36cf",
-          "recordSha256": "7b15c4d0f731974f4ca0454702e9cb57aa8614f7cb891596f2fd5a9a6e73220a",
+          "recordSha256": "389a203d7d537bd595b0c5d5f8d85ed0c5f2fee189c61d3bc963ee82511e5251",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "arts_literature_preference",
@@ -4746,7 +4746,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5b8d6b11c49970419712",
           "recordSha256": "d85ddc2dcdab38a57f580d7ee2972b39c3c15e2824f9d969763f54ca206bce58",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTJ",
@@ -4758,7 +4758,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 51,
           "originalId": "ckr:source:5b8d6b11c49970419712",
-          "recordSha256": "e1d4a779f493500b7452f2e38b47a0fed2170afc5749201bda02efb7530bc929",
+          "recordSha256": "d9dd37604a26e22c646f5f616ac309c0c22c218feb2107488c80ddddca537f57",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "operations_scale_manager",
@@ -4797,7 +4797,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b7cf3c6e7279367349b5",
           "recordSha256": "968203bbceb977f9ed5f45f1c2e137d462df641f98ff52f187f4e0b1194287f0",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTJ",
@@ -4809,7 +4809,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 103,
           "originalId": "ckr:source:b7cf3c6e7279367349b5",
-          "recordSha256": "475bd0b4c865aae9048cb1fa68bb811921531b13d8c7cf51b7141c830c0de9ba",
+          "recordSha256": "2648f5ad86a3750f5b2936d45c304f160ed51360fe86e166cd56dc7dac48df5d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "perfectionism_start_gate",
@@ -4971,7 +4971,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#9742bfa47ad032c7c9f8",
           "recordSha256": "cb0c31fbb917ca5746cf8c34dd29c18f3ade254996f05ee64c99c9ce3503f74b",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -4983,7 +4983,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 75,
           "originalId": "ckr:source:9742bfa47ad032c7c9f8",
-          "recordSha256": "15a149a7cebbcd6e77674a7e8d149ce9632db56d91364fe807ab948ee746ed69",
+          "recordSha256": "2a7247fa8fc3d655e84dff3139cf4ff137974c5b7ef32f097b5a73e4589cbae9",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "stable_income_preference",
@@ -5022,7 +5022,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#0cc422b5a853b4a67ac0",
           "recordSha256": "9de63eec6f85666cde1c4bd59c4121df6aabdb186d00bb087141d93c7e2e7223",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -5034,7 +5034,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 24,
           "originalId": "ckr:source:0cc422b5a853b4a67ac0",
-          "recordSha256": "ce033ffb529bbed4cb37fc8b354feb204c14899667617f2740bbdd2ee26eea6e",
+          "recordSha256": "4fb9cb6b6804bd223a2a5b53e9cf69164b8b437802528339ca33872c9cca9bb5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "meaning_driven_diligence",
@@ -5208,7 +5208,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#53113e9ff18319b22c8a",
           "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -5220,7 +5220,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 29,
           "originalId": "ckr:source:53113e9ff18319b22c8a",
-          "recordSha256": "9a530b0d2a5f30dde8e531f90e0c89fdb1f5046e10ff5e6567b3742f99b376d0",
+          "recordSha256": "b21e75e2bcc6389b32c34ed1fc3aa6f5f205747332d0b9426e273b2af257e90a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "precision_profession_fit",
@@ -5259,7 +5259,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#0447fe32a9bb113f3855",
           "recordSha256": "d5998323ab9b63185da77f635e70377dc416e9a82d2ce08b2fc8a25544f297e6",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ESFP",
@@ -5271,7 +5271,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 47,
           "originalId": "ckr:source:0447fe32a9bb113f3855",
-          "recordSha256": "9d0118d52bc0648119ac8e870c25dfeb9223bcd37ca3ce0e7e44713c30485e7a",
+          "recordSha256": "5ee4482d3113d11a6cfe528114b267da5bf73d60c6743f9eb171b84b45895edf",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "sales_service_fit",
@@ -5310,7 +5310,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b211b5d3637a2f223e18",
           "recordSha256": "ed1042b2e39f219e99668b1bc9150dcff240841606091de41830616dd3b06120",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ESTJ",
@@ -5322,7 +5322,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 107,
           "originalId": "ckr:source:b211b5d3637a2f223e18",
-          "recordSha256": "9958d751110a8acb63a279cbfb7d3bb1331655e3d16c66b93a1a3859513e3775",
+          "recordSha256": "8187abe99690048a186a3ed2b0968e1078da684bb06c7b867bcdbf7ae832c7d6",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "technical_problem_solving",
@@ -5420,7 +5420,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d92063c1e7fc9ba8b4dd",
           "recordSha256": "072e2275a09e000777abb395adf02619ee3944fa837cce16686f48aff00a18c2",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -5432,7 +5432,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 40,
           "originalId": "ckr:source:d92063c1e7fc9ba8b4dd",
-          "recordSha256": "f71cc91352fd4b07f65beb1201e91e41f2ed0272fca4a1d1e127b525c4fb7ec7",
+          "recordSha256": "47be0c6366daa63abb8645974a7cc9c9f66739357854252c1169c97939af4b6b",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "programming_engineering_fit",
@@ -5471,7 +5471,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#300c56cfaf4d8929142e",
           "recordSha256": "e1cfdae0aec0f7ce594fbab4f80a484dd0a2c494e36134f9be0c341cb04ba662",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENTJ",
@@ -5483,7 +5483,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 112,
           "originalId": "ckr:source:300c56cfaf4d8929142e",
-          "recordSha256": "6c1377391f728b11676fc995c41f705f12956161c7fe2d9c2f461072a56776ea",
+          "recordSha256": "da2a2545bf6d18dded9d47557599add86c1c0dea4a75f142bc514621f13a753e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "direct_feedback_leader",
@@ -5522,7 +5522,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#81f5a3a397cd43e89959",
           "recordSha256": "68472788cbec737f9dde506809696f440cc3950c1b5415090a7d71abffe0214a",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTP",
@@ -5534,7 +5534,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 72,
           "originalId": "ckr:source:81f5a3a397cd43e89959",
-          "recordSha256": "6d4dc53789da25ab5f9107e6e280e9018b11992886a1302881a9aaff5c6d5ccf",
+          "recordSha256": "4c0766c4ad9f425ca0fee1df048fb3819b8f323354c5b538afcf90d6f79b6190",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "model_to_product_bridge",
@@ -5632,7 +5632,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#53113e9ff18319b22c8a",
           "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -5644,7 +5644,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 29,
           "originalId": "ckr:source:53113e9ff18319b22c8a",
-          "recordSha256": "9a530b0d2a5f30dde8e531f90e0c89fdb1f5046e10ff5e6567b3742f99b376d0",
+          "recordSha256": "b21e75e2bcc6389b32c34ed1fc3aa6f5f205747332d0b9426e273b2af257e90a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "precision_profession_fit",
@@ -5683,7 +5683,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#0559dd6941aec884dc1a",
           "recordSha256": "2b52176f0629bcdf00b3eb4bdadf169967ed4f99f6ec5b04f6d96d0a4ec66b1c",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -5695,7 +5695,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 97,
           "originalId": "ckr:source:0559dd6941aec884dc1a",
-          "recordSha256": "a87a3dcb84452e97f41d86248667793187a1cbc168b0662abe52ce3b75f7c763",
+          "recordSha256": "5900f53e663d40d6b4d41579d70317d7cc26bfd549591356f02227660c5eeb81",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "math_science_affinity",
@@ -5734,7 +5734,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5b778076e2f7f6a60f75",
           "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -5746,7 +5746,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 56,
           "originalId": "ckr:source:5b778076e2f7f6a60f75",
-          "recordSha256": "ca3fd8454ab669f50561ed4ae0b5ffcc16d4594cf660da49c273bbc63d091fe8",
+          "recordSha256": "8eefe8ce44de83976cd96ed739e3c587274d3523aee8fca9f0868ca2258848c2",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "care_overload_at_work",
@@ -5848,7 +5848,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#56954437569c5ef8f1f1",
           "recordSha256": "1e17d7ec4a825edad887c7884174efcd956da1bdac07f9b0438d795a512bd27e",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENTJ",
@@ -5860,7 +5860,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 44,
           "originalId": "ckr:source:56954437569c5ef8f1f1",
-          "recordSha256": "da1621d02a1794e4c1a89d51b5323ac5e661c8774023af27f3996147a86cfa1d",
+          "recordSha256": "9266e8c4fa87c6cc6ea4671eb7ba2471e002f61b165992992d48345d8de6b0ef",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "ownership_priority",
@@ -5899,7 +5899,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5b778076e2f7f6a60f75",
           "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -5911,7 +5911,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 56,
           "originalId": "ckr:source:5b778076e2f7f6a60f75",
-          "recordSha256": "ca3fd8454ab669f50561ed4ae0b5ffcc16d4594cf660da49c273bbc63d091fe8",
+          "recordSha256": "8eefe8ce44de83976cd96ed739e3c587274d3523aee8fca9f0868ca2258848c2",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "care_overload_at_work",
@@ -5950,7 +5950,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#e0f1223ff781ce157244",
           "recordSha256": "35bc899e4b1cfd5fffb4f6b0722b05e1ea713fc8cae0d32e088b7b805dc8215c",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -5962,7 +5962,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 38,
           "originalId": "ckr:source:e0f1223ff781ce157244",
-          "recordSha256": "4bbfefd37bd46170124fcad15f98cde8f5a11c63dd4a5f284940abe542c23741",
+          "recordSha256": "6e794e2d101bb30e23bd1758b76942bb5fcd0028619261f7be6e2b0a36080783",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "research_field_fit",
@@ -6108,7 +6108,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#67821ba0891eef23e2a5",
           "recordSha256": "ca5b50142d59751c70d9e68787adb45bf4c18f9a4addd5f7a2bc4fd4fc31e75b",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -6120,7 +6120,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 30,
           "originalId": "ckr:source:67821ba0891eef23e2a5",
-          "recordSha256": "d7467b5184069395d00a2f78acebc415f3093ecfa08a77ef9d44b1244fe6126a",
+          "recordSha256": "30f9c059216661b86506393820d255599095617c9bf01729e485cfe73e4c4a05",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "education_for_adults_fit",
@@ -6271,7 +6271,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#66a9cd49cd16d86ca992",
           "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENTJ",
@@ -6283,7 +6283,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 11,
           "originalId": "ckr:source:66a9cd49cd16d86ca992",
-          "recordSha256": "fc8730b6b8864b86b0fdf3ba2cea3151b9e0a2e9eaaa75e1121bc1c149362caf",
+          "recordSha256": "6f197e621d3186b2b1638e853ad84b7222a2a5d9ec5caff0013bea28b793c925",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "capitalist_resource_logic",
@@ -6316,8 +6316,8 @@
           "sourceId": "fkr:legacy:entj-wealth",
           "sourceKind": "fusion_research",
           "auditRef": "source-catalog.json#f7a5e64e8b2f2d997bb1",
-          "recordSha256": "5fb087bc99fa425485abaa21df8820fbc0f9e56b2bc63f6114a93fb0c4a500a0",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "0e546bce64df83fb904123590133c9b8567f71ed7fec98f9cf5af10fd22028d7",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -6334,7 +6334,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 12,
           "originalId": "ckr:source:f7a5e64e8b2f2d997bb1",
-          "recordSha256": "081550cb4c70d53f80dd4085bdf4365691ba1194c12cec3df569d2ac39264335",
+          "recordSha256": "d84bf43096ffc073951dc43539be24fbe9700123fb2656a1d0586c56a019ac16",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "fkr:legacy:entj-wealth",
@@ -6344,7 +6344,7 @@
           "exportName": "LEGACY_FUSION_RESEARCH",
           "index": 4,
           "originalId": "fkr:legacy:entj-wealth",
-          "recordSha256": "5fb087bc99fa425485abaa21df8820fbc0f9e56b2bc63f6114a93fb0c4a500a0",
+          "recordSha256": "0e546bce64df83fb904123590133c9b8567f71ed7fec98f9cf5af10fd22028d7",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "verified": true,
@@ -6374,7 +6374,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#a78eebeaa12bff33d79b",
           "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -6386,7 +6386,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 70,
           "originalId": "ckr:source:a78eebeaa12bff33d79b",
-          "recordSha256": "d2779f5f100f8ad1f0dc1dc83f5e23184475fda80f0babc40239e116de6d3854",
+          "recordSha256": "0a351db97c080c3af8ed5c9e1f8fa16e493127c6b435eeafb0eaafaea8a12d27",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "hands_on_learning",
@@ -6425,7 +6425,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#59ee9c7408ed5dac4efe",
           "recordSha256": "f0d99d785c86be30c60799eef1f2308deb47e6ecd56041f6bb2ff31f49de4eb5",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -6437,7 +6437,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 64,
           "originalId": "ckr:source:59ee9c7408ed5dac4efe",
-          "recordSha256": "ba4dc13cdcb624143470d40479165b70234eed0cd96a96c4def4c1b5dd45ec7f",
+          "recordSha256": "b9416100857a2cef9a259f4d5b71e8946d7c445cabc08c87c921dfbfaba2baef",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "conflict_avoidance_at_work",
@@ -6476,7 +6476,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cca22a892a0cdcc5f2e8",
           "recordSha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFP",
@@ -6488,7 +6488,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 101,
           "originalId": "ckr:source:cca22a892a0cdcc5f2e8",
-          "recordSha256": "7c88aee6b64225650d6041178db4a0005fc5833273117dfbb0e625890f8d4429",
+          "recordSha256": "d5462665097984509271e4e790d9d5f32ea6e9ef4a1be8d1a7f0bcdfc374fd8e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "interest_switch_learning",
@@ -6527,7 +6527,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#9a241cbad4de6e655789",
           "recordSha256": "3181712b65c0d3e74e299f7b3d404ad2bb14fcf5dabf2b5f96b81fd218f024a3",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -6539,7 +6539,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 60,
           "originalId": "ckr:source:9a241cbad4de6e655789",
-          "recordSha256": "80a280ee94a8797912ab1bf494d8f04a1800e46ff248c49ab4757534f6ffe8ca",
+          "recordSha256": "bba5b3f67c66729e432386a53ec7cdbc882a5c0975af0be22f6d8962aeb42223",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "memory_observation_practitioner",
@@ -6710,7 +6710,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#7ff3a8b05b74a93b59af",
           "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -6722,7 +6722,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 6,
           "originalId": "ckr:source:7ff3a8b05b74a93b59af",
-          "recordSha256": "5f2384cb292095a23f94c931c8e465ce0a4464a1bbcee64f68cab7573281213f",
+          "recordSha256": "c4b6cd7553387d5234ef4b092b8285f7f60ded7bd7adb44365c7a2670dc8d163",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "system_first_thinking",
@@ -6891,7 +6891,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#a78eebeaa12bff33d79b",
           "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -6903,7 +6903,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 70,
           "originalId": "ckr:source:a78eebeaa12bff33d79b",
-          "recordSha256": "d2779f5f100f8ad1f0dc1dc83f5e23184475fda80f0babc40239e116de6d3854",
+          "recordSha256": "0a351db97c080c3af8ed5c9e1f8fa16e493127c6b435eeafb0eaafaea8a12d27",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "hands_on_learning",
@@ -6942,7 +6942,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#9a241cbad4de6e655789",
           "recordSha256": "3181712b65c0d3e74e299f7b3d404ad2bb14fcf5dabf2b5f96b81fd218f024a3",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -6954,7 +6954,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 60,
           "originalId": "ckr:source:9a241cbad4de6e655789",
-          "recordSha256": "80a280ee94a8797912ab1bf494d8f04a1800e46ff248c49ab4757534f6ffe8ca",
+          "recordSha256": "bba5b3f67c66729e432386a53ec7cdbc882a5c0975af0be22f6d8962aeb42223",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "memory_observation_practitioner",
@@ -7066,7 +7066,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ede4c870287adb0ff868",
           "recordSha256": "a489423ec4ea0ee4a1f1af28a995730d7b8735761b10e38e257fbc30421784e7",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISFJ",
@@ -7078,7 +7078,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 78,
           "originalId": "ckr:source:ede4c870287adb0ff868",
-          "recordSha256": "d6ef8fa95c82e1cdcc9cbc635eac7790ec4b12a9c83a0521c6b57b59e46281a3",
+          "recordSha256": "60efd3cc1e90cfd9836ee060204be7baa9007da8e0424840084bff10a57f6dc5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "service_income_fit",
@@ -7176,7 +7176,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#fac606c7c6c40893bc49",
           "recordSha256": "66f7aa2eb0dc7d8187e2206da59355cdbb6182008d26c01619255393e0d2b7e3",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTP",
@@ -7188,7 +7188,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 46,
           "originalId": "ckr:source:fac606c7c6c40893bc49",
-          "recordSha256": "7c1c685800f357288108289e8ff4df734b156bad7b7332297cd29769205fc656",
+          "recordSha256": "64fad6fe46fc59eef1af72018746a39a61d336fd0b8d1820b35a58d503ac7c9d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "deal_and_sales_income",
@@ -7286,7 +7286,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#51b0bd2bbf8f57a25a91",
           "recordSha256": "ec0b27603fe5a4d01d04384bf43ca93a50e45f6df471c037b6710e95b6855545",
-          "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTP",
@@ -7298,7 +7298,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 76,
           "originalId": "ckr:source:51b0bd2bbf8f57a25a91",
-          "recordSha256": "9579c4278ef763b69d3dc7b999c35b4913a2302fb33cb20951f27c0cd03e9ed6",
+          "recordSha256": "6395b0ff99b8cf1b666a70771c5f562c1eee0a1847e3255b3ab71c10929037b8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "idea_to_revenue_filter",
@@ -7337,7 +7337,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5697e5371d9b4b34d523",
           "recordSha256": "ed71f81eba2119ae610e819c57b964d7b5186fe47e107072a5fbeb8010246d1d",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISFJ",
@@ -7349,7 +7349,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 82,
           "originalId": "ckr:source:5697e5371d9b4b34d523",
-          "recordSha256": "e1a61a8a1b4b0a340b950c53b08b3c9e4fe694bcb6231da8b98bc774fdb412e5",
+          "recordSha256": "f4f3555a9b5c4efc35dd5222100ce00b925422136bb6df41b154617886ce397b",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "care_labor_underpricing",
@@ -7388,7 +7388,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1668268fb9233e277c7b",
           "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INFP",
@@ -7400,7 +7400,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 55,
           "originalId": "ckr:source:1668268fb9233e277c7b",
-          "recordSha256": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
+          "recordSha256": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "feedback_safety_contract",
@@ -7439,7 +7439,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#428155544a315487e6a6",
           "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -7451,7 +7451,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 48,
           "originalId": "ckr:source:428155544a315487e6a6",
-          "recordSha256": "50e69e978939a5b75e55d31fd25d864d36671dd430ffe936c4c386e938e2aedc",
+          "recordSha256": "d64fe4f200012dccfe3b1c798e9e18252094dab6540ba2837a51da8f548dc375",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "media_community_fit",
@@ -7558,7 +7558,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d12ffea3e7e02bd3f478",
           "recordSha256": "cb814819768adcdd908e40ee898ca2dbdb43822959269275fa2874a071bc5c97",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISFJ",
@@ -7570,7 +7570,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 32,
           "originalId": "ckr:source:d12ffea3e7e02bd3f478",
-          "recordSha256": "64d0b48c2f3902a86d8015ad281a20e9b37a778a0b2809ded8b5cd7d77c3cd0e",
+          "recordSha256": "0dc042e0b27b7b97ece98e3a099ec611999bd72fb0dffa3ace4320f4a04f56fd",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "care_operations_income",
@@ -7609,7 +7609,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#c3e0328ac10371fa55ab",
           "recordSha256": "f29fd57342f7940da0cc1970fee57c214399d317366d28869a332091a0fc22e4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFJ",
@@ -7621,7 +7621,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 86,
           "originalId": "ckr:source:c3e0328ac10371fa55ab",
-          "recordSha256": "438f69596cdd096e4561adfc61c92efee44150a64512ac7cba0b3430cf5c8be6",
+          "recordSha256": "af1539ed788606543983583e99788f6bdd0c7bf961bf848a41340fad13c43c1e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "support_limit_rule",
@@ -7708,7 +7708,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#58f001425acf022b0d6b",
           "recordSha256": "a2b86b22d997e0d6bbf82a7ffef33a7dcaf203c1a006a65f1a659f6838aed475",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTP",
@@ -7720,7 +7720,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 79,
           "originalId": "ckr:source:58f001425acf022b0d6b",
-          "recordSha256": "07f14b7fa17a1e1e3e676f60a1c414ff7730bb64ac55c83fd71efb0c0400bcce",
+          "recordSha256": "f740437934400d21f24b5b132747f38a21bce349a79b480393b6870617300228",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "technical_problem_income",
@@ -7759,7 +7759,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cdc60c6b316ee8a858c1",
           "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -7771,7 +7771,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 3,
           "originalId": "ckr:source:cdc60c6b316ee8a858c1",
-          "recordSha256": "bfcbfd4d132ac61f51502794ec87d3e8d34d4449539b7e771c5d3448eb6945dc",
+          "recordSha256": "239108eaacb5d3a69e040f13437751bf11dd9add0331e32ca806cb7c11452832",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "collaborative_environment",
@@ -7810,7 +7810,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#81f5a3a397cd43e89959",
           "recordSha256": "68472788cbec737f9dde506809696f440cc3950c1b5415090a7d71abffe0214a",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTP",
@@ -7822,7 +7822,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 72,
           "originalId": "ckr:source:81f5a3a397cd43e89959",
-          "recordSha256": "6d4dc53789da25ab5f9107e6e280e9018b11992886a1302881a9aaff5c6d5ccf",
+          "recordSha256": "4c0766c4ad9f425ca0fee1df048fb3819b8f323354c5b538afcf90d6f79b6190",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "model_to_product_bridge",
@@ -7861,7 +7861,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#8c7eb0318961ed4e1cce",
           "recordSha256": "9bfabd9a26bb34191d2fd8b66e3d342bc5c819f198348582b906763a720cfa3d",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTP",
@@ -7873,7 +7873,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 83,
           "originalId": "ckr:source:8c7eb0318961ed4e1cce",
-          "recordSha256": "b1a1779106c0b0d8989faa72c5b4209e47b9d4b0971686b05af9e1afeaaecc0d",
+          "recordSha256": "8060667dc7a2fdf5032d307820820c2c2e66dc20fce1155bc865e55ddf6fd7c1",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "tool_hobby_budget_limit",
@@ -7976,7 +7976,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#51a36ebd6ebe0593251c",
           "recordSha256": "03658b00bf4ae588d7e28191aaa3a40770278f8897c62a5eebfd165012533f09",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -7988,7 +7988,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 18,
           "originalId": "ckr:source:51a36ebd6ebe0593251c",
-          "recordSha256": "06f96e6583300d812067d11857fe6f2993876471d596b578dcaa435f39d96a9e",
+          "recordSha256": "43f949bf07faf94981a8a41eace75b4282ab76d15edfbbfea30d7103d15bcb7c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "time_promise_strictness",
@@ -8027,7 +8027,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#e0f1223ff781ce157244",
           "recordSha256": "35bc899e4b1cfd5fffb4f6b0722b05e1ea713fc8cae0d32e088b7b805dc8215c",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -8039,7 +8039,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 38,
           "originalId": "ckr:source:e0f1223ff781ce157244",
-          "recordSha256": "4bbfefd37bd46170124fcad15f98cde8f5a11c63dd4a5f284940abe542c23741",
+          "recordSha256": "6e794e2d101bb30e23bd1758b76942bb5fcd0028619261f7be6e2b0a36080783",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "research_field_fit",
@@ -8178,7 +8178,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#248692af90259c9eebe4",
           "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFJ",
@@ -8190,7 +8190,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 22,
           "originalId": "ckr:source:248692af90259c9eebe4",
-          "recordSha256": "dd97ccb76b109494239dd79173124b33bfbaf6cb352bab40f08b516341a24b85",
+          "recordSha256": "98a07d8e222b78a06c45e8d4af355a00c29465653c12e232c23e33296abf6e83",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "calm_deep_work",
@@ -8229,7 +8229,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#2f83590d0543224f2684",
           "recordSha256": "d530f80264012752e9baf5dd721d4f5ffad37adb069b34fdc8b1fd757a671620",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTP",
@@ -8241,7 +8241,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 87,
           "originalId": "ckr:source:2f83590d0543224f2684",
-          "recordSha256": "97a1ffe554251e705c8e2ac2e5289929f9a34f96f65a30225eebda11a664c9db",
+          "recordSha256": "0fef9bd57e6471894db29663f940d61476fefa8ac2ab834116d99189149611a9",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "irregular_income_buffer",
@@ -8280,7 +8280,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1949199fcd8a2e08e71e",
           "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFP",
@@ -8292,7 +8292,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 113,
           "originalId": "ckr:source:1949199fcd8a2e08e71e",
-          "recordSha256": "f09a6405a3ed795428e0129ac72898a023251d2e2ae57013ef832bc1c12ee0b2",
+          "recordSha256": "c113ab0c57f9262cc9ea9a6c314395761a7991808a9698dc7ed5e851ff2724ae",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "experience_content_revenue",
@@ -8331,7 +8331,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#932f48a511820a551fae",
           "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTP",
@@ -8343,7 +8343,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 57,
           "originalId": "ckr:source:932f48a511820a551fae",
-          "recordSha256": "a35503e005858ccaeca3f1a76131f0cf506a4a58a16624dfe3e3a4a196e3970d",
+          "recordSha256": "f9caa35c3c9deff31da56eff1a81ce2befe1b8a0e2263bf234442f85f919fdb9",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "action_over_meeting",
@@ -8430,7 +8430,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#47ce8c7dff225ae9a200",
           "recordSha256": "505c0e99063d3e3ebe5a165084f5c27ec6941fbb4e836f2f599d39faadcd3687",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTJ",
@@ -8442,7 +8442,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 74,
           "originalId": "ckr:source:47ce8c7dff225ae9a200",
-          "recordSha256": "766deca5507cba564bf12cd47b45d5857ef55a59f229d78df13d6cc893bd4042",
+          "recordSha256": "47e7e2f939373aa8efb08d971644189455a1d230ab120f7ef3507d7d9d0ead77",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "delegation_with_feedback",
@@ -8481,7 +8481,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#aaccdefbe9afed4f9db6",
           "recordSha256": "d0ea1fa645cfdcb3b2843d65bcec0dc92d37ae501dc7a8da7f622a87e96d17f5",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTP",
@@ -8493,7 +8493,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 28,
           "originalId": "ckr:source:aaccdefbe9afed4f9db6",
-          "recordSha256": "cd78013a94cce0914d59b270727ef3b8e08f41a6a80f5905f015a373bf39be67",
+          "recordSha256": "a2d809b87ff62623d6229661ce041e2a913315c6b42022a5ebbb9e7d2d0afb83",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "hands_on_technical_fit",
@@ -8532,7 +8532,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ce00081ce37c25f1db93",
           "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTJ",
@@ -8544,7 +8544,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 26,
           "originalId": "ckr:source:ce00081ce37c25f1db93",
-          "recordSha256": "d60f64805bdd464746bb1e8c2a60090b7d918d9827e146d8f60ead6914a37547",
+          "recordSha256": "e220ba60e232135d800caf447545502d69b899b8ea99aec96ad8ddb410231005",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "delegation_pressure_control",
@@ -8587,7 +8587,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#e2ab11baeaebb982a96e",
           "recordSha256": "671cbab5669228f26038118ba3c6a2639c483e76419740c50487c25f16acc5cd",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -8599,7 +8599,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 68,
           "originalId": "ckr:source:e2ab11baeaebb982a96e",
-          "recordSha256": "31ad2ca5c002daa5d9d9bbed62a3193762b7708a0f81bba860135595644d4d2a",
+          "recordSha256": "83f3c41b9b19c61a50672c807c942b1e7b3ce31fd676cd43ead71bd24239a0dd",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "meritocracy_expectation",
@@ -8750,7 +8750,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#0b4c5f82e25554523be7",
           "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFP",
@@ -8762,7 +8762,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 20,
           "originalId": "ckr:source:0b4c5f82e25554523be7",
-          "recordSha256": "e8086ac69adc4f25d787caed39e87c61cc2458441ad5addce1846d52ff082e4d",
+          "recordSha256": "f853908047b1cf29ece034819345f849fb3790f7a300b18f7716a477010f3667",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "responsive_team_needed",
@@ -8913,7 +8913,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#9c00dd07d98a425ce1c5",
           "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFJ",
@@ -8925,7 +8925,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 52,
           "originalId": "ckr:source:9c00dd07d98a425ce1c5",
-          "recordSha256": "d8f55562e51c95f96266cfaf2d3ea5aa314f1ebc1e58700ddbba965a1180aae4",
+          "recordSha256": "573f81dde428e6d8be7e9464ec746920af5ec2af6ef88efc55b2031da8a8dda5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "relationship_service_revenue",
@@ -8968,7 +8968,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ce00081ce37c25f1db93",
           "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTJ",
@@ -8980,7 +8980,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 26,
           "originalId": "ckr:source:ce00081ce37c25f1db93",
-          "recordSha256": "d60f64805bdd464746bb1e8c2a60090b7d918d9827e146d8f60ead6914a37547",
+          "recordSha256": "e220ba60e232135d800caf447545502d69b899b8ea99aec96ad8ddb410231005",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "delegation_pressure_control",
@@ -9023,7 +9023,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#a8c6b85971d9f1208b22",
           "recordSha256": "cfc584991999e6aee6e6bc824c149b74156038a94cf8332eeb596d81f2f831d3",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENTJ",
@@ -9035,7 +9035,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 54,
           "originalId": "ckr:source:a8c6b85971d9f1208b22",
-          "recordSha256": "f94d7f4cbf80d3024ae7fec0f88d6900da98e0f80040b11fb54f87c30fe64083",
+          "recordSha256": "8bc54a965963330ebf95bbfb39b0a2f052fecc2e316553d206111e6ae391027c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "scale_operator",
@@ -9078,7 +9078,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#e0f1223ff781ce157244",
           "recordSha256": "35bc899e4b1cfd5fffb4f6b0722b05e1ea713fc8cae0d32e088b7b805dc8215c",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTP",
@@ -9090,7 +9090,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 38,
           "originalId": "ckr:source:e0f1223ff781ce157244",
-          "recordSha256": "4bbfefd37bd46170124fcad15f98cde8f5a11c63dd4a5f284940abe542c23741",
+          "recordSha256": "6e794e2d101bb30e23bd1758b76942bb5fcd0028619261f7be6e2b0a36080783",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "research_field_fit",
@@ -9129,7 +9129,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b2d2427cbee48429f3e8",
           "recordSha256": "67f7d235d3623bb5de58b653cac9e6ddd86892b8c51f18df5c8b1d959eedb96c",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -9141,7 +9141,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 50,
           "originalId": "ckr:source:b2d2427cbee48429f3e8",
-          "recordSha256": "275a55f039b7061ab23bbb7c88ad0badac7d2d5b315ecc29c4fc7863db1b43dc",
+          "recordSha256": "b2b6e295c93befeb453a481dc73da102ba4813146c1803c4e2400cd209891913",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "behind_the_scenes_worker",
@@ -9180,7 +9180,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#58333fe1ce51da5e5389",
           "recordSha256": "4569fdbe0d5b6a99c0549d11711247006acae08b139954dd89ac15eb9502d63d",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTJ",
@@ -9192,7 +9192,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 77,
           "originalId": "ckr:source:58333fe1ce51da5e5389",
-          "recordSha256": "e22ecd20328a01d4374cbee5e736f9af1f8ed510fdf288f8931057851429c2a2",
+          "recordSha256": "adf14ecdb055f0db4ba638cb1cee3e78bf789092ccc6e5487e0c4956a3f63a8c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "expertise_income_path",
@@ -9436,7 +9436,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1668268fb9233e277c7b",
           "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INFP",
@@ -9448,7 +9448,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 55,
           "originalId": "ckr:source:1668268fb9233e277c7b",
-          "recordSha256": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
+          "recordSha256": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "feedback_safety_contract",
@@ -9539,7 +9539,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#eb4b0b7bcdda51afcf86",
           "recordSha256": "d11e0266d97950f7b83d87cce12061fc0d1275c372bc6ef3f4929d0b21c69fdb",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTJ",
@@ -9551,7 +9551,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 99,
           "originalId": "ckr:source:eb4b0b7bcdda51afcf86",
-          "recordSha256": "4f6c1193be9d1aff6f03e6c186760a73c2495fca7a11308b986a30e0b08ab6de",
+          "recordSha256": "589bd57d9b12c3eb5eab5b20161dc7f53bdaa4ac85c5d3e09d4e3e2ec71bb5bf",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "new_type_adaptation_drill",
@@ -9590,7 +9590,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#331d66e109fedda15aa9",
           "recordSha256": "c0cdf4b5e294a122133295ae3fbf0b7502d6ed3b1c5e463241d24a9730b77bb8",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTP",
@@ -9602,7 +9602,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 104,
           "originalId": "ckr:source:331d66e109fedda15aa9",
-          "recordSha256": "5c251eb67a5bd3bbe8a9daf8715bb5d2a0d126398a35c66c0c79f5ae69bd988d",
+          "recordSha256": "0c1647f03b59d7945939249522a494eda47664d09a43df0ff60a90c04a17ca08",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "error_record_short_loop",
@@ -9641,7 +9641,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#b8b1788be86a366e0070",
           "recordSha256": "efa2dea48c269ab7697aa28f92cd22639f0f5cefeede9dc91e5b04fd0858fde4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFJ",
@@ -9653,7 +9653,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 105,
           "originalId": "ckr:source:b8b1788be86a366e0070",
-          "recordSha256": "5e0535d2e8b678e9079b6d652a5ddb8070d1aa56b750a2b4ecd2b63995fea55b",
+          "recordSha256": "3ddf67b390d1a5d3a65755affe80d5bc5455ba18461f52fcd8530232885d1f77",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "protected_solo_study_time",
@@ -9804,7 +9804,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d1d38d962c1cc346bc86",
           "recordSha256": "33b82f6459ca4a940abf0af14f5a158de033f4130db7221a830f34b98fe3b902",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -9816,7 +9816,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 27,
           "originalId": "ckr:source:d1d38d962c1cc346bc86",
-          "recordSha256": "732fcebe9bc5b478733e2dda15b1a8b51e4db211ac0e9942c4c3eb242ae65d9d",
+          "recordSha256": "51082dddc12f23b43905e0ac2ba73aeeb0380e55adca780985dd5ff80f8854ca",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "practical_helper_work",
@@ -9855,7 +9855,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#392a9907c29658c54cc8",
           "recordSha256": "1b9a082f16d65f46dba03589765673237c2222526d0c876a49ba4e5fc1894578",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENTJ",
@@ -9867,7 +9867,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 61,
           "originalId": "ckr:source:392a9907c29658c54cc8",
-          "recordSha256": "eebdde65ab5bae3699125cf84774973628617a28518a2f4278eceac68f3f8c1e",
+          "recordSha256": "a8a022a2703235685aa1f9152d11522070268ecd33d07b01665e1abcbb8d67b6",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "equal_competence_team",
@@ -9906,7 +9906,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#c782e08817e7f4ae8cd7",
           "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTJ",
@@ -9918,7 +9918,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 62,
           "originalId": "ckr:source:c782e08817e7f4ae8cd7",
-          "recordSha256": "045a1a13c53e46a36b3a6f92f04c01f4f98ed60b1af66f667d8d973168cf311f",
+          "recordSha256": "23b6d846b8565b5cc7adf903bee5a2fa6e11a748f8b22726bbaa19ed2d13d483",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "authority_scope_alignment",
@@ -10084,7 +10084,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#6293cdd44ddf08f38c74",
           "recordSha256": "d74635abd854a1f57c2957d408fe15960e1f805ff3206e56ea49c8efa41216ed",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ESTP",
@@ -10096,7 +10096,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 15,
           "originalId": "ckr:source:6293cdd44ddf08f38c74",
-          "recordSha256": "fc6b2a5cf55bcee9bca1bc547fee2fff8b624fd86a0461bc339736343a813953",
+          "recordSha256": "e175dab777830a762412c744a0a779f3d036ea4037e20b9292cd8ff77e23d944",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "experiential_learning",
@@ -10129,8 +10129,8 @@
           "sourceId": "fkr:legacy:estp-study",
           "sourceKind": "fusion_research",
           "auditRef": "source-catalog.json#b02ceb60ba64a77dc688",
-          "recordSha256": "dea405009a563ee88fe280b177b6bc7085cfdebb885d34527e3b44053b12f8b3",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "5b223d5a3f2209d7d08debbea08df9f6e9601ed49bacbfce4a5262a627f0ae11",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -10146,7 +10146,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 16,
           "originalId": "ckr:source:b02ceb60ba64a77dc688",
-          "recordSha256": "b43cd912bbae69ece81e70930b01f567950bb046783ab9690833fd6eaceb9f2d",
+          "recordSha256": "41438f5105e77440bbd125153da1ac0f73532c99a7fd2b66470981a8b11ecb55",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "fkr:legacy:estp-study",
@@ -10156,7 +10156,7 @@
           "exportName": "LEGACY_FUSION_RESEARCH",
           "index": 41,
           "originalId": "fkr:legacy:estp-study",
-          "recordSha256": "dea405009a563ee88fe280b177b6bc7085cfdebb885d34527e3b44053b12f8b3",
+          "recordSha256": "5b223d5a3f2209d7d08debbea08df9f6e9601ed49bacbfce4a5262a627f0ae11",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "verified": true,
@@ -10186,7 +10186,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#9adba86c70d3adba42da",
           "recordSha256": "c9c04304465e2cde4597aca0ba4c5a70c1e60818b7d78fbc3cafd48a441621be",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFJ",
@@ -10198,7 +10198,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 58,
           "originalId": "ckr:source:9adba86c70d3adba42da",
-          "recordSha256": "92c7f68f1a577b5494ac944ecef7c7d26f71c820521e2ac136846399967875a4",
+          "recordSha256": "24e21bbe453c381f46ed9ca68b86d002e27d724b743031efd2cd3fe611b80ebb",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "mission_over_income",
@@ -10237,7 +10237,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1668268fb9233e277c7b",
           "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INFP",
@@ -10249,7 +10249,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 55,
           "originalId": "ckr:source:1668268fb9233e277c7b",
-          "recordSha256": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
+          "recordSha256": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "feedback_safety_contract",
@@ -10288,7 +10288,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#53f96587bbaa900e8b0e",
           "recordSha256": "c0b961d8ed074bed2c0b0f406afd78c973a971efdc71fd7968399755a7d31fd2",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFP",
@@ -10300,7 +10300,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 89,
           "originalId": "ckr:source:53f96587bbaa900e8b0e",
-          "recordSha256": "ccd4529f7e8ed8b876eb0fded9ced0381b02e35395e1f7add16dd2961df32b2a",
+          "recordSha256": "3d9502f29f9bf82f754a47baeb8e28b02fbf933883c2ac2d73cda0b8b97a765a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "possibility_spending_spread",
@@ -10339,7 +10339,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#dc4c6fa772a27851195b",
           "recordSha256": "2bc04332c1dd5c09e24206e612c1b8d48f3051a26b1dee46f8384df7761bd806",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFJ",
@@ -10351,7 +10351,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 80,
           "originalId": "ckr:source:dc4c6fa772a27851195b",
-          "recordSha256": "30e7aa429b10c9e2cb6a889e584d5cea5b4962511b7ca311eb0a1ff2bfab209e",
+          "recordSha256": "27256b62c14ba82a5ebfba12f4b5b0a8650d41ca80d2bea6cafb2f5e04d0881e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "growth_based_income",
@@ -10390,7 +10390,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ed5c3e422134873cef0d",
           "recordSha256": "4b70086e13539b52704d18dc9a96babc57040ad528de17028b440322ad7178de",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFJ",
@@ -10402,7 +10402,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 102,
           "originalId": "ckr:source:ed5c3e422134873cef0d",
-          "recordSha256": "fe4466da61ae19232ebb84303e3a530155545b3afd253f6a7e3a2f829eb1dba4",
+          "recordSha256": "97d2f6dbf48b9f4971efe0669c37fe95a98267718821ea086d95bc797cf6eedd",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "mindmap_connection_need",
@@ -10441,7 +10441,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#c92cbae7d0a74770dee8",
           "recordSha256": "ea72d02009ad14675c3d2b697bfaabd443131864711c0a704c73ace424205e07",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTP",
@@ -10453,7 +10453,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 23,
           "originalId": "ckr:source:c92cbae7d0a74770dee8",
-          "recordSha256": "e6bfed2d5ab1567fb54446a1a1099c8a3aba5ad90fd095db25e2352dd6616588",
+          "recordSha256": "4f764b9b2af9fa4ef07f60f8d4335714a2ff0888f08cf0cc2089a303b59c85fa",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "fast_approval_lane",
@@ -10620,7 +10620,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1d7da5209fe3284e2d3e",
           "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTJ",
@@ -10632,7 +10632,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 37,
           "originalId": "ckr:source:1d7da5209fe3284e2d3e",
-          "recordSha256": "ed16abff1eefb2a771bdf2db39a91e8364454957804bd0555671bc7e49fa3afd",
+          "recordSha256": "2f33b5e093206cbe7fb54ecb752706fd6f7f9f6aa9fe4d7be674e37b9f8d0919",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "strategy_to_asset_work",
@@ -10671,7 +10671,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#746762687f99d3e36684",
           "recordSha256": "37675ac7b537d062b70f22a6d779123281bcf25dbe7f0bdc4663daef4a75eb7f",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFJ",
@@ -10683,7 +10683,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 73,
           "originalId": "ckr:source:746762687f99d3e36684",
-          "recordSha256": "e6113d986b19448d39b321ed410b065010df07716a9a3fc445b41b111849983b",
+          "recordSha256": "d0e833155b1c499292d83e155714c8adc644681bc8ab934c80ef50161b3063eb",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "people_growth_business",
@@ -10781,7 +10781,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#042ffda8801ebeaf2c6d",
           "recordSha256": "a962ef34a78ea2b8ba0c784c6ea77eca814662297bc7048553410e5267d7996a",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INTJ",
@@ -10793,7 +10793,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 91,
           "originalId": "ckr:source:042ffda8801ebeaf2c6d",
-          "recordSha256": "572883e11accfc764ac2ea5f4960b444aa3582cb7debd85dc18f747757f3ee9b",
+          "recordSha256": "a6268c3672260dfbc767f5635db517993d36a1299ff174fce9e34af06686e687",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalId": "deep_project_learning",

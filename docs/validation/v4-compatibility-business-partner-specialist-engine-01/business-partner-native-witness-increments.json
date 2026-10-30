@@ -134,7 +134,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
                 "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
                 "originalState": {
                   "type": "ENTJ",
                   "area": "money",
@@ -152,7 +152,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 3,
                 "originalId": "bppr:source:66a9cd49cd16d86ca992",
-                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "recordSha256": "6bb60517f1beb8e96288d9b870ad6806d21a50ccc0d4f333bd0dbe755049a2d3",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []
@@ -441,7 +441,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
                 "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
                 "originalState": {
                   "type": "ENTJ",
                   "area": "money",
@@ -459,7 +459,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 3,
                 "originalId": "bppr:source:66a9cd49cd16d86ca992",
-                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "recordSha256": "6bb60517f1beb8e96288d9b870ad6806d21a50ccc0d4f333bd0dbe755049a2d3",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []
@@ -748,7 +748,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
                 "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
                 "originalState": {
                   "type": "ENTJ",
                   "area": "money",
@@ -766,7 +766,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 3,
                 "originalId": "bppr:source:66a9cd49cd16d86ca992",
-                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "recordSha256": "6bb60517f1beb8e96288d9b870ad6806d21a50ccc0d4f333bd0dbe755049a2d3",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []
@@ -1055,7 +1055,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
                 "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
                 "originalState": {
                   "type": "ENTJ",
                   "area": "money",
@@ -1073,7 +1073,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 3,
                 "originalId": "bppr:source:66a9cd49cd16d86ca992",
-                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "recordSha256": "6bb60517f1beb8e96288d9b870ad6806d21a50ccc0d4f333bd0dbe755049a2d3",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []
@@ -1362,7 +1362,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
                 "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-                "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                 "originalState": {
                   "type": "INTP",
                   "area": "thinkingStyle",
@@ -1380,7 +1380,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 0,
                 "originalId": "bppr:source:0ba71def5f7dd66a4424",
-                "recordSha256": "2e04c5c994774723a137b11fe7b6f68f20cb8a5ba422a169472deb953483153d",
+                "recordSha256": "4c81f85eff2b0b301be0044f5dae05729aa55e36868f8334f4a1db721e0d4260",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []
@@ -1673,7 +1673,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#60699f5629066c047ea1",
                 "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
-                "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                 "originalState": {
                   "type": "ESFJ",
                   "area": "workplace",
@@ -1691,7 +1691,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 27,
                 "originalId": "bppr:source:60699f5629066c047ea1",
-                "recordSha256": "1039c6256faa66cf0be3b9e42cb33e658c30df565ac42abcfff9d42f9dfdec2e",
+                "recordSha256": "fb4ebd1ead6b20a14a3437ede087e203fd5c6819f111b70f9b1e9d6ecdc1e106",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []
@@ -1980,7 +1980,7 @@
                 "sourceKind": "individual_mbti",
                 "auditRef": "source-locator-audit.json#c0fbe9a4b01f0f51c46b",
                 "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
-                "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+                "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
                 "originalState": {
                   "type": "ISTP",
                   "area": "thinkingStyle",
@@ -1998,7 +1998,7 @@
                 "exportName": "BP_SOURCES",
                 "index": 30,
                 "originalId": "bppr:source:c0fbe9a4b01f0f51c46b",
-                "recordSha256": "dbb7b6ee5f32d8318ffec4f64578fce3b5ece386c739dd5ff512960b0c3fdcb8",
+                "recordSha256": "0719f43068a62790be26d8112f850ff0726affae08d639d0b893a98d9c6ebb39",
                 "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
               },
               "missingConditions": []

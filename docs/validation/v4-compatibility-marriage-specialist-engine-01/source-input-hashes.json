@@ -13,5 +13,5 @@
   "tools/compatibility-marriage-specialist-engine/verify.mjs": "65b546b573d97c0ce16c82eb2b009b8182d5ae8d0d54b98335c77e0530f1582b",
   "tests/fixtures/compatibility-marriage-specialist-engine-01/synthetic-knowledge.json": "b676adb6f10db984c3875c107ea740baa88bab444a2eddae51dc636e18270d08",
   "docs/validation/v4-compatibility-marriage-specialist-engine-01/pair-baseline-digests.json": "29613aafc54747bc9fefbc7851c6796ade2f20a5eed9a6b72707342fa7a066fa",
-  "docs/validation/v4-compatibility-marriage-specialist-engine-01/original-file-hashes.json": "5ddd0a6f25a22ea4d4bdf10564a3cbcbd6dc8f6dd8b2aca9aa6f5f0b851088f0"
+  "docs/validation/v4-compatibility-marriage-specialist-engine-01/original-file-hashes.json": "df56a3f44b0f908cd8fd3712b8cd8788330c2dc9f499ef452ea95ec350098ca6"
 }

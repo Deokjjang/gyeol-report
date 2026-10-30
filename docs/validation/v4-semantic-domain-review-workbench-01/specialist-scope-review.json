@@ -912,7 +912,7 @@
               {
                 "file": "docs/product/mbti/source/INFP.json",
                 "pointer": "/traits/parenting/0/plainKo",
-                "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+                "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
                 "catalogKeys": [
                   "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed"
                 ],
@@ -5670,7 +5670,7 @@
               {
                 "file": "docs/product/mbti/source/INFP.json",
                 "pointer": "/traits/love/0/plainKo",
-                "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+                "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
                 "catalogKeys": [
                   "kc:v1:f0af2ad6111728f04b5a5912f2687505549afcea628a88e0d29fdc42505debbd"
                 ],
@@ -6842,7 +6842,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/identity/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:33d2e49de60964d28129175a8d9e5910c9c920f910bbd0bcfae358db65d6c6c4"
                 ],
@@ -8713,7 +8713,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/love/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781"
                 ],
@@ -10327,7 +10327,7 @@
               {
                 "file": "docs/product/mbti/source/INFP.json",
                 "pointer": "/traits/love/1/plainKo",
-                "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+                "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
                 "catalogKeys": [
                   "kc:v1:f0e37451868138a2c70d09b52a14b28bbc59413856da4457c50874af3952034b"
                 ],
@@ -11173,7 +11173,7 @@
               {
                 "file": "docs/product/mbti/source/ISFJ.json",
                 "pointer": "/traits/child/0/plainKo",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                 "catalogKeys": [
                   "kc:v1:ab458d841fa3de8996bed9663cafb290bb89c1761ce08a990177e71636da1386"
                 ],
@@ -11376,7 +11376,7 @@
                 "pointer": "/traits/child/2",
                 "traitId": "stable_friendship_child",
                 "recordHash": "94f9ff64abe5fe3eb441493fab2c1192726f5656bf2624aefc9f3e44fa775e5f",
-                "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                 "sourceCoverage": "direct",
                 "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                 "originalDomain": "CHILDREN",
@@ -11412,7 +11412,7 @@
                 "pointer": "/traits/child/0",
                 "traitId": "model_student_child",
                 "recordHash": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-                "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                 "sourceCoverage": "direct",
                 "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                 "originalDomain": "CHILDREN",
@@ -11448,7 +11448,7 @@
                 "pointer": "/traits/child/1",
                 "traitId": "sensitive_child",
                 "recordHash": "07c4038c3b1b8f1ef1a73ade65e5f50e89067c1afe5722f02cace05215656966",
-                "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                 "sourceCoverage": "direct",
                 "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                 "originalDomain": "CHILDREN",
@@ -11484,7 +11484,7 @@
                 "pointer": "/traits/child/3",
                 "traitId": "practical_imagination_child",
                 "recordHash": "122ec8c4fdfca890b11a9c883a6920abe8cd15df34cbe5310d86b3ccbfdb1c68",
-                "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                 "sourceCoverage": "direct",
                 "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                 "originalDomain": "CHILDREN",
@@ -11606,7 +11606,7 @@
                   "pointer": "/traits/child/2",
                   "traitId": "stable_friendship_child",
                   "recordHash": "94f9ff64abe5fe3eb441493fab2c1192726f5656bf2624aefc9f3e44fa775e5f",
-                  "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "sourceCoverage": "direct",
                   "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                   "originalDomain": "CHILDREN",
@@ -11642,7 +11642,7 @@
                   "pointer": "/traits/child/0",
                   "traitId": "model_student_child",
                   "recordHash": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-                  "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "sourceCoverage": "direct",
                   "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                   "originalDomain": "CHILDREN",
@@ -11678,7 +11678,7 @@
                   "pointer": "/traits/child/1",
                   "traitId": "sensitive_child",
                   "recordHash": "07c4038c3b1b8f1ef1a73ade65e5f50e89067c1afe5722f02cace05215656966",
-                  "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "sourceCoverage": "direct",
                   "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                   "originalDomain": "CHILDREN",
@@ -11714,7 +11714,7 @@
                   "pointer": "/traits/child/3",
                   "traitId": "practical_imagination_child",
                   "recordHash": "122ec8c4fdfca890b11a9c883a6920abe8cd15df34cbe5310d86b3ccbfdb1c68",
-                  "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                  "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                   "sourceCoverage": "direct",
                   "classification": "DOCUMENTARY_SOURCE_NOT_PERSON_OBSERVATION",
                   "originalDomain": "CHILDREN",
@@ -12007,7 +12007,7 @@
               {
                 "file": "docs/product/mbti/source/ISFJ.json",
                 "pointer": "/traits/love/0/plainKo",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                 "catalogKeys": [
                   "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c"
                 ],
@@ -12370,7 +12370,7 @@
               {
                 "file": "docs/product/mbti/source/ESTP.json",
                 "pointer": "/traits/love/2/plainKo",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
                 "catalogKeys": [
                   "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105"
                 ],
@@ -16039,7 +16039,7 @@
               {
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/relationships/1/plainKo",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                 "catalogKeys": [
                   "kc:v1:16bd3948022615e9dcae69f4d966712da3919ad48eff578603dae41868eca3b4"
                 ],
@@ -16117,7 +16117,7 @@
               {
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/relationships/1/plainKo",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                 "catalogKeys": [
                   "kc:v1:16bd3948022615e9dcae69f4d966712da3919ad48eff578603dae41868eca3b4"
                 ],

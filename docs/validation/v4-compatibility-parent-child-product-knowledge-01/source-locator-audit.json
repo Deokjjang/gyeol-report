@@ -4,7 +4,7 @@
     "sourceId": "mbti:ISTJ:traits:parenting:diligent_responsible_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/parenting/0",
     "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
     "originalState": {
@@ -42,7 +42,7 @@
     "sourceId": "mbti:ENFP:traits:child:all_or_nothing_study_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFP.json",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "pointer": "/traits/child/1",
     "recordSha256": "83fd0d140dac476afeecbc7ed6eb2c459715d67557e143890ee8ecfc2341d6f1",
     "originalState": {
@@ -117,7 +117,7 @@
     "sourceId": "mbti:INFP:traits:parenting:autonomy_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INFP.json",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "pointer": "/traits/parenting/0",
     "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
     "originalState": {
@@ -155,7 +155,7 @@
     "sourceId": "mbti:ESTJ:traits:child:fair_rule_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESTJ.json",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "pointer": "/traits/child/1",
     "recordSha256": "855b28fd97ceca1deea8263bc7d49694d35a4c2af403c067560c34c87025a180",
     "originalState": {
@@ -491,7 +491,7 @@
     "sourceId": "mbti:INTJ:traits:parenting:teach_how_to_think",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTJ.json",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "pointer": "/traits/parenting/0",
     "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
     "originalState": {
@@ -530,7 +530,7 @@
     "sourceId": "mbti:ENTP:traits:child:rule_testing_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTP.json",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "pointer": "/traits/child/0",
     "recordSha256": "721ee892031fe553c5f6d2c41dad537a5fc7cf0a8ab4aa0ca180719515157194",
     "originalState": {
@@ -568,7 +568,7 @@
     "sourceId": "mbti-pair:INTJ>ENTP",
     "sourceKind": "mbti_pair_reference",
     "file": "docs/product/mbti/source/INTJ.json",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "pointer": "/relationshipHints/notablePairs/2",
     "recordSha256": "318ce163cecb6383cd6d3dd68e5d598b2312bf8c58e9a380354c4a12e4181626",
     "originalState": {
@@ -616,7 +616,7 @@
     "sourceId": "mbti-pair:ENTP>INTJ",
     "sourceKind": "mbti_pair_reference",
     "file": "docs/product/mbti/source/ENTP.json",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "pointer": "/relationshipHints/notablePairs/5",
     "recordSha256": "6b8ba7c1d237d3f0402f225c38ba87d89b38fb1bdd30485d9acfe47eff4e0c3c",
     "originalState": {
@@ -663,7 +663,7 @@
     "sourceId": "mbti:ISFJ:traits:parenting:structured_home_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFJ.json",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "pointer": "/traits/parenting/0",
     "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
     "originalState": {
@@ -701,7 +701,7 @@
     "sourceId": "mbti:ISFJ:traits:child:model_student_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFJ.json",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "pointer": "/traits/child/0",
     "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
     "originalState": {
@@ -739,7 +739,7 @@
     "sourceId": "mbti-pair:ISFJ>ISFJ",
     "sourceKind": "mbti_pair_reference",
     "file": "docs/product/mbti/source/ISFJ.json",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "pointer": "/relationshipHints/notablePairs/0",
     "recordSha256": "91bb027f959e53a6247fd2cc87107dc9298146f762e076b054b34f4af28b9ac5",
     "originalState": {
@@ -823,7 +823,7 @@
     "sourceId": "mbti:ENTJ:traits:parenting:serious_responsible_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "pointer": "/traits/parenting/0",
     "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
     "originalState": {
@@ -898,7 +898,7 @@
     "sourceId": "mbti:INFP:traits:parenting:moral_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INFP.json",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "pointer": "/traits/parenting/1",
     "recordSha256": "4fbc70750d4ef8b61d61afef6585b4c4aee919fc4d20795b2e0fb8a794675959",
     "originalState": {
@@ -936,7 +936,7 @@
     "sourceId": "mbti:ISTJ:traits:parenting:practical_success_parenting",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/parenting/1",
     "recordSha256": "d6bb019d1160d32132fc5f2dfffc625f72da5ed40d19465185daaa561de7f126",
     "originalState": {
@@ -975,7 +975,7 @@
     "sourceId": "mbti:ISFJ:traits:parenting:self_sacrificing_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFJ.json",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "pointer": "/traits/parenting/3",
     "recordSha256": "c2e82d0f132277e60df054592d574ec269164a648bb2fd7ca2070843e08bffee",
     "originalState": {
@@ -1049,7 +1049,7 @@
     "sourceId": "mbti:INTP:traits:parenting:parent_needs_alone_time",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/parenting/2",
     "recordSha256": "a41d287eb62159ec396fba5ab216f7e7512ab2dc3530059720b0236b001a3208",
     "originalState": {
@@ -1087,7 +1087,7 @@
     "sourceId": "mbti:ENFJ:traits:parenting:emotional_anchor_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/parenting/1",
     "recordSha256": "843672eaa659db97651c14c919387fc3c45aca0f296be526fa29f0e802da1af3",
     "originalState": {
@@ -1126,7 +1126,7 @@
     "sourceId": "mbti:ENTP:traits:parenting:intellectual_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTP.json",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "pointer": "/traits/parenting/1",
     "recordSha256": "215767da3c83401d59252c25f97afec5b4fa69aee4afd24398b2c24ce7ad5997",
     "originalState": {
@@ -1165,7 +1165,7 @@
     "sourceId": "mbti:ISTP:traits:parenting:privacy_respecting_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTP.json",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "pointer": "/traits/parenting/1",
     "recordSha256": "79177137d218c02d0ef93abd0bd143d2d1244f8ec61d59632c1400e1acd484fe",
     "originalState": {
@@ -1203,7 +1203,7 @@
     "sourceId": "mbti:ISFP:traits:parenting:experience_based_parenting",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFP.json",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "pointer": "/traits/parenting/2",
     "recordSha256": "b80b9c0997a084b19fc1d0f3b498d79090ede973cca78a6849203becd1784f17",
     "originalState": {
@@ -1277,7 +1277,7 @@
     "sourceId": "mbti:ESTJ:traits:parenting:traditional_parenting",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESTJ.json",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "pointer": "/traits/parenting/0",
     "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
     "originalState": {
@@ -1316,7 +1316,7 @@
     "sourceId": "mbti:ESFJ:traits:parenting:harmony_home_pressure",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/parenting/3",
     "recordSha256": "2e8f6c27bf56f9fbccf616990afbf601a7d3a1dc25518513c089790f844f2ef4",
     "originalState": {
@@ -1355,7 +1355,7 @@
     "sourceId": "mbti:INFJ:traits:parenting:values_and_manners_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INFJ.json",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "pointer": "/traits/parenting/1",
     "recordSha256": "c275e3e3e37868e1bb3c1ecda03ce96f2e21b26182a5d242109404180aac5c26",
     "originalState": {
@@ -1393,7 +1393,7 @@
     "sourceId": "mbti:INTP:traits:child:knowledge_rich_but_uneven_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/child/0",
     "recordSha256": "a70e69a3a5a0e388c9ae199a8f7992a00ee3e353962d99bdde8b29b7327fe928",
     "originalState": {
@@ -1431,7 +1431,7 @@
     "sourceId": "mbti:ISFP:traits:child:visual_art_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFP.json",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "pointer": "/traits/child/1",
     "recordSha256": "5103f1907ee95b31a9828d58ee0cc106a795759e6952009ec52c4c77a1df4fa3",
     "originalState": {
@@ -1470,7 +1470,7 @@
     "sourceId": "mbti:ESFJ:traits:child:predictable_sequence_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "pointer": "/traits/child/1",
     "recordSha256": "9df2baf5a30e45df53bda05967a6cdb9875b8e3d2bba5e493426fadc65093001",
     "originalState": {
@@ -1509,7 +1509,7 @@
     "sourceId": "mbti:INFJ:traits:child:written_expression_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INFJ.json",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "pointer": "/traits/child/0",
     "recordSha256": "ab8065e35bc597b4a9542fb6c65f8cf6d6efa5506951d8e770210c2213194684",
     "originalState": {
@@ -1548,7 +1548,7 @@
     "sourceId": "mbti:INFP:traits:child:sensitive_to_harshness_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INFP.json",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "pointer": "/traits/child/1",
     "recordSha256": "62a1820483be8f5fca2600c7ac673d07d451df1a19e37aa3d861db03bec7918a",
     "originalState": {
@@ -1586,7 +1586,7 @@
     "sourceId": "mbti:ENTP:traits:child:curious_knowledge_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTP.json",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "pointer": "/traits/child/1",
     "recordSha256": "e53faa5f4755342605bde45824befe8aeb1beca2cd0d229b97dfaa207e0e698f",
     "originalState": {
@@ -1623,7 +1623,7 @@
     "sourceId": "mbti:ENFJ:traits:child:popular_helper_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "pointer": "/traits/child/0",
     "recordSha256": "468d4c25327ff26e8b1a40c0af400a305a9eed5c3ce9e8c124bcb5af8c9ea55d",
     "originalState": {
@@ -1662,7 +1662,7 @@
     "sourceId": "mbti:INTJ:traits:child:single_field_mastery",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTJ.json",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "pointer": "/traits/child/3",
     "recordSha256": "0cdce5983a4642732d6c2b2cbbf635fd0620fdcf112d51721741c2fcf84b406b",
     "originalState": {
@@ -1701,7 +1701,7 @@
     "sourceId": "mbti:ISTP:traits:child:brief_answer_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTP.json",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "pointer": "/traits/child/2",
     "recordSha256": "e37b2e715db59e31a1674355630fa246ca429c125c2a380cd58b80c355bf4c11",
     "originalState": {
@@ -1739,7 +1739,7 @@
     "sourceId": "mbti:ESTP:traits:child:serious_talk_avoidance_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESTP.json",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "pointer": "/traits/child/2",
     "recordSha256": "d5c0bb91253140189d8928aefecd562c772595735f3deed7ff5493262a945569",
     "originalState": {
@@ -1778,7 +1778,7 @@
     "sourceId": "mbti:ENFP:traits:parenting:understanding_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFP.json",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "pointer": "/traits/parenting/0",
     "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
     "originalState": {
@@ -1816,7 +1816,7 @@
     "sourceId": "mbti:ENFP:traits:child:playful_social_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENFP.json",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "pointer": "/traits/child/0",
     "recordSha256": "99a96095188f2ecf7e9b24a47095bd438e09b4bd2c799bd926ec19feb868ae75",
     "originalState": {
@@ -1855,7 +1855,7 @@
     "sourceId": "mbti:ESTP:traits:parenting:self_development_support",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESTP.json",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "pointer": "/traits/parenting/2",
     "recordSha256": "48ca428383c9a0fa9259b1aa038a3e75c11a98da45f513b4c53a9b8dbd14a3d3",
     "originalState": {
@@ -1894,7 +1894,7 @@
     "sourceId": "mbti:ENTJ:traits:child:respect_independent_thinking_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "pointer": "/traits/child/1",
     "recordSha256": "1596abb52067c60ebe493112cb6bdaa2f219d8782f83f73fa99112755e56e01a",
     "originalState": {
@@ -1933,7 +1933,7 @@
     "sourceId": "mbti:INTJ:traits:parenting:knowledge_centered_support",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTJ.json",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "pointer": "/traits/parenting/3",
     "recordSha256": "92dfa9123694cda58c4375827fa6d93dcd25addc6c64da64b69097fad3ec602f",
     "originalState": {
@@ -1972,7 +1972,7 @@
     "sourceId": "mbti:ISTJ:traits:child:responsible_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "pointer": "/traits/child/0",
     "recordSha256": "ac0257a3067daa68cb93aa2065b75d2ae650804555bd03e808e69cc480d31a47",
     "originalState": {
@@ -2010,7 +2010,7 @@
     "sourceId": "mbti:ESFP:traits:parenting:fun_support_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFP.json",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "pointer": "/traits/parenting/2",
     "recordSha256": "ad12e2126273860a4145025f6dd3134d975757b807e24db08f6913aec90124fa",
     "originalState": {
@@ -2049,7 +2049,7 @@
     "sourceId": "mbti:ESFP:traits:child:active_outdoor_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ESFP.json",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "pointer": "/traits/child/0",
     "recordSha256": "595f626c373bb22ae357d5f404ab5a2ad763da4e2166b7016d1331ea6d51a709",
     "originalState": {
@@ -2565,7 +2565,7 @@
     "sourceId": "mbti:ENTJ:traits:parenting:independence_test_parent",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "pointer": "/traits/parenting/3",
     "recordSha256": "6309ac96c84ae858417f7f1d317428f057dfb0566680a033b202a86c1fd14a77",
     "originalState": {
@@ -2670,7 +2670,7 @@
     "sourceId": "mbti:ISFP:traits:child:peaceful_peer_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFP.json",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "pointer": "/traits/child/2",
     "recordSha256": "2ba497c67a7642a78a9d398f5f9dfe59229b42dc3b8a32d749f2611c68bc39fd",
     "originalState": {
@@ -2709,7 +2709,7 @@
     "sourceId": "mbti:ISTP:traits:child:solo_play_precision_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISTP.json",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "pointer": "/traits/child/1",
     "recordSha256": "b181a835aa1a66cba1437cf9d82bf756b6dbc98d3db91d2cd5458893eeb87b1f",
     "originalState": {
@@ -2747,7 +2747,7 @@
     "sourceId": "mbti:INTP:traits:parenting:answering_child_questions",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTP.json",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "pointer": "/traits/parenting/1",
     "recordSha256": "eea208b46302133eb6f69e9ddf59fbe92a2c13fc19b466c375b4c557bd2e3c8e",
     "originalState": {
@@ -2785,7 +2785,7 @@
     "sourceId": "mbti:INTJ:traits:child:rule_questioning_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/INTJ.json",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "pointer": "/traits/child/1",
     "recordSha256": "f5e37b3c25eca3280098727d50e2e59280ec42ac596b5b0eb75bc9f0744e7afc",
     "originalState": {
@@ -2824,7 +2824,7 @@
     "sourceId": "mbti:ENTJ:traits:parenting:child_success_projection",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "pointer": "/traits/parenting/1",
     "recordSha256": "a6723c12f1459badd486df675e9d47dfcbb66582711f720f36530285756c47cc",
     "originalState": {
@@ -2863,7 +2863,7 @@
     "sourceId": "mbti:ISFJ:traits:parenting:protective_overinvolvement",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ISFJ.json",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "pointer": "/traits/parenting/1",
     "recordSha256": "dc0c1e013a05e5c0e40733001cce34939a4b20d9d1103fb5b2a86ebd5964dbfe",
     "originalState": {
@@ -2902,7 +2902,7 @@
     "sourceId": "mbti:ENTP:traits:parenting:debating_with_child",
     "sourceKind": "individual_mbti",
     "file": "docs/product/mbti/source/ENTP.json",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "pointer": "/traits/parenting/3",
     "recordSha256": "17af9cf87e8943b111c88723181a0bc56fc9b994519f78e0094b91471d2cd83a",
     "originalState": {

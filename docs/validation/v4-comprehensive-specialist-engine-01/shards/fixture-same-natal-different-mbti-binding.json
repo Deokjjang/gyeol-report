@@ -344,7 +344,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
-      "originalRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "originalRecordHash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -703,7 +703,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:0454906bf1de28f9a681068c2c78f1c115e373edcc576077a16ac9cdcd8ae038",
-      "originalRecordHash": "763a54f0a27068be2e03261a429e2681dc80e3ac6296541f321a8da60ccf0e93",
+      "originalRecordHash": "056fb4dc92941081b5480134ec41b74afbf31776b248dc52a58a7a9fd59ef88f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -1062,7 +1062,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:05cf3b58055d0d45b50fd5a6262c10b6bc41dee98e19424576f870201ec1eeef",
-      "originalRecordHash": "4ddcce00e1e870342e94d5e4bd2309818a1c3d46f918559e5324cd8d62150d13",
+      "originalRecordHash": "327011615280324b62621184cf26250eddda77edf116247b9aad97c07fcf2571",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -1928,7 +1928,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:098c94e69cd414beb06ce163e28d2031ae4ddfcb4f6869005a8deaa6949be458",
-      "originalRecordHash": "f8433d2f99afe8f2ebe0e295be7444003fe591e8bdd9d4e4c01bba1afbaac8dd",
+      "originalRecordHash": "7d0b78749a9245b7011f72da6f1413ab600fb0949f1e47915eb0aa5e77ffc8fe",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -3493,7 +3493,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:0ca9d3dcf85003d619f0c9d9d9ed16240bc42f5fff43d85dfa4653770768d6f8",
-      "originalRecordHash": "08036fe933edad03d99cef2f545dac1c66f835de42cc11a1c438f366c170c30a",
+      "originalRecordHash": "9db6092244856b534a9a2e712e297876d27a596d8dacd779d7f69251f8485978",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -4085,7 +4085,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:0cbc7c3e508b26d92ff0870ab378d765ea30cfa7c401a6d043cb789d1c95770d",
-      "originalRecordHash": "21590951f3f97e045d0e085a8c52fdff42b858cb8c3f65348e67a19cb5365dfc",
+      "originalRecordHash": "3e74153d6ebab21179ab505586b61c12654f559410ed2c6b1c59a203444f734f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -4476,7 +4476,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:0cd6ed319511840819f668c2ae92c17437d81426ee1d799b79fb121aa082de1c",
-      "originalRecordHash": "814d182382984074264fbc2fddab6f657a0c8cd611f1f441eee3b1fd24dfe21c",
+      "originalRecordHash": "78d22b4e590f8bb0c0a2a11287ccffbb033334be7d501fc7eaebca2ced8e0b9e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -5473,7 +5473,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:101cfc19ac2e036b8f7cd2763db95688584c14a9da0612a46488376b496453a6",
-      "originalRecordHash": "a711b93af187321d18c6fa5a935432b9a7952ad4ff212ba95d19c8c081efd9f6",
+      "originalRecordHash": "c5347cc666ecf92d2b2c9e1ca45c151028dc815c2f577ea72f37beb2c88f4488",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -5864,7 +5864,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:10bf9e175dc74699c879991af9dc83944c2d836772bc9e374be78ac8e1000a3f",
-      "originalRecordHash": "65a43d04351d3b10367e345da8ec8e04d357916ff40eeb617bee0986133c35a1",
+      "originalRecordHash": "e2b083144d3f5ef14ddf143e7512cc3fa7fd2e2111b594be4376504ffa5bdbde",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -5949,7 +5949,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/love/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781"
                 ],
@@ -6256,7 +6256,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
-      "originalRecordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "originalRecordHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -6644,7 +6644,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:1186ad946b3cf04dedd2c4a5530311f71047be17aec3d3535a53225b948de5d4",
-      "originalRecordHash": "46d59aa1b7ba83aa83bdbe8410597737e904c528689b8146dca01790e7f0ff96",
+      "originalRecordHash": "19ba511933ddc8f50461656a4bea28f5558ad8d0db922368509cd049f39edf74",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -7830,7 +7830,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:1525a566595ad7a8c096195d5e0e0ac9e0752099740d513ec5564ae8de26947c",
-      "originalRecordHash": "3dc3ff7143f2b3f7da3def8a6c6ebfbbefa38b597b90fffb7ff6555991d12126",
+      "originalRecordHash": "a7605b65864e7aaadeb6c6392df5b1d6d410c3e96c03519e6df3d7db1ef251d4",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -8289,7 +8289,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/strengths/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:6967ac3ffd18a0acfb3010294a15f942fe997a5343ffe720bddebff4729c253b"
                 ],
@@ -9016,7 +9016,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:15c65609d1f6835e83b47743599d5b6aef97ef26229921334b5419a32f3472a9",
-      "originalRecordHash": "d94fd3e369d0f0daa28b3cd38a38fab8282754393b2344c3081e496733bc6df8",
+      "originalRecordHash": "2a00061aa182356897ea5e32e05a74788278ba9db18bd2a69a78760e76c4f38b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -10929,7 +10929,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:22535ce65671a59e803e372658b761f7170e08600937655c24bdbe802087175e",
-      "originalRecordHash": "a3e61ba80b17b292fb8d661aac0f4c5c4aee1f3b008e4c5cbc4575f2c4fa75ac",
+      "originalRecordHash": "ac26426eac2d63fcae2e8313d33732af834dc299345dc7612a6abfb283f45114",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -11288,7 +11288,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:2795cdc0e397642f23efbf0a6829884e8d6036eaf145ff4801edb8e2de2e5619",
-      "originalRecordHash": "5d61c8a497e4a0cf3f6d79fbb515bf881206ddcc35207ddf17db441afecdb395",
+      "originalRecordHash": "ea24e9ecda41740cb81ab4d2e8979aa8a13395378d1f7a4ac54e8d61454c6f6b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -14571,7 +14571,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:30a9b19c975d4c9a00c1622939984a1a33e3b315cc003b24d4290bba9d2376fa",
-      "originalRecordHash": "95af7d67de36d0e7253698a466285e4ebd97fb913c3395ce755ffa92eb745776",
+      "originalRecordHash": "4688b2896e76c1fad5c7f2cf42fabaf3bdc61f87f2fce99d5df794d78872bf19",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -15508,7 +15508,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:34009d0a463258fb22f0242aaf8abe857dd8bf63d6d3e1cb3b26eb93cbb7ebb5",
-      "originalRecordHash": "cec6f4cd1c50d13b1bcf0ba549fe8ffb3ca78efe3e353dd965043a44d4db5152",
+      "originalRecordHash": "4d801ed115ddaddcf1d8d7dc3b6d408c46177017ae7ec57153c37b9cd67ac097",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -15895,7 +15895,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:34165975f31d0e7593552f33955c5699df467ac1493d2e0c906d31dee19f4ff1",
-      "originalRecordHash": "76d4ca10a8182530f40e252522e01def8c0cc2bc6739792421ced4156815504a",
+      "originalRecordHash": "a818839aacfdd8073bbca1ba21725160bf16fef699f69ad6f9deae09b360bcdd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -16603,7 +16603,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
-      "originalRecordHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+      "originalRecordHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -17683,7 +17683,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:41adaee2bf50c32751be8e08f1a77d52a1b3e93176749eebfd7bf643245b799e",
-      "originalRecordHash": "462ab8d2d85a51265e4f67cf8f4586f6d404aa505c1a6526bc69dac69af646ac",
+      "originalRecordHash": "7b4763a9455d8f015293fc7ef73f93ef9b61e8e0712adf4f1f3df702250caf2b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -18574,7 +18574,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/identity/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:33d2e49de60964d28129175a8d9e5910c9c920f910bbd0bcfae358db65d6c6c4"
                 ],
@@ -19218,7 +19218,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:4426cf0425d73c07e11b066e8ab3aad72b1db9cb9616cc93658e9b837cbb92b7",
-      "originalRecordHash": "7d60977901e0d777a3746a4992675f884914e46288316302e5ff69411fbe597e",
+      "originalRecordHash": "0978ab4b7433acb000c09d077bcde193a8809e4a33b12ff316bd64795723d623",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -19601,7 +19601,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:4491ddb15b5ad8b94968574c234757b22a428fb642aca5484c23408999e88fe2",
-      "originalRecordHash": "88106d0a9dabf4dcdd976c2d01c91f89854bf75f0846fc8a2d55d3c1d0a3c801",
+      "originalRecordHash": "a6585ad0bc10fb4a5d7cab14a7e640817e151626a879c387ad776b925194d8d3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -23803,7 +23803,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:540713cf3d6a05766ef39377485379df58cff669a9972db3961b97686cdd21cf",
-      "originalRecordHash": "003b31a1fc678fde7532ad1322821e2a0a29ebd1083ae2971294f7b02ea92597",
+      "originalRecordHash": "70bfe60e9c1727b6ebce24546b9a8af5c2ab6fd909eeb7377de6596fe42beae9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -24982,7 +24982,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:576c9a95c04e90967c0054eb9d64ba4fdfc37c551e49368abfd7818ea53a0de6",
-      "originalRecordHash": "06aaa720b3f29bf8288d2dd075764fd1e53dfaee8d0078241c6d46bff47f1767",
+      "originalRecordHash": "bc3ff6c75ca9eb809589521efdf9b9e3ca70f6862be077366ed7ff6f67942495",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -25763,7 +25763,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:59085e59f0273706dc7b3e2ff9d8a4d64685ff4e9e65a331ad559812e64e2d7f",
-      "originalRecordHash": "e7b65a8092fcf637ed0b23b675c8dc9b422bdab1b722cda5354c8453e3fdfe01",
+      "originalRecordHash": "5ee454fb1ba3a8b905207e7e7587e49bd3c92c06589a1dd5bd8ca96add6723a3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -26482,7 +26482,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:5ab4b06afc1802602c027be16a68fc58e7c277b6058418c926f1c7920227b9eb",
-      "originalRecordHash": "c2526a49b878a5b26738036aef7e2f0aaf134554256d791bd707b249cf8afa32",
+      "originalRecordHash": "33d75581ed9ba7c7a226f2f18bb54b2b6bb15e24aa10845b56d3008609b47cbf",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -27233,7 +27233,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:5b70fc17177fe1d5e60ecd9a2c44463c0dac30c028ff200289459dc2c4bf4ae5",
-      "originalRecordHash": "b7f053e1ce75dfd2f862bd8d522cef004cca893434a3fc1adf329ca6ef7df3df",
+      "originalRecordHash": "bbf819ea3bb3beb91868f4a093e5ad771920d197b878b06f6440ca173759ba96",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -27855,7 +27855,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:5c28cbbd8766fedb085127e861a72c88bbc05646d0d16eeb7872869340be2acf",
-      "originalRecordHash": "a2ebfef35942ffd16c1fafb4b55d60c8a7428e7a49771da4f038229d993924a6",
+      "originalRecordHash": "18f50d286a9d3a4341adbed434e23fc58978cbce3cd1af01967458d968628e5c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -27974,7 +27974,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/relationships/0/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:c13bbab2b94f56806169aa4bce2fa46d859dffe0813caa4c1ebcf8d4d8d2064c"
                 ],
@@ -28283,7 +28283,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:5dfc691b9acc6eca873b509a06cf7aa2bfa6826d56938c60fce8064ef8098fba",
-      "originalRecordHash": "1c6a48ba4bcb42fee0d93d0e9adb57edbe0ac200f0ed3642b429df9222c5ad55",
+      "originalRecordHash": "d568f42b5900add591c2c5dc3e043e04d68f6511955d16239049603913fc90b6",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -28650,7 +28650,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:5f18ec9e5a1782ae461f5647a2f5fb663d6399094642d29e04d9ccef5e26fe93",
-      "originalRecordHash": "c168a8a77232b17f13d66513036ae550a3835d4722284becf969fe3e89f64716",
+      "originalRecordHash": "3ee7608500e9a475ff6771fd254acef72cc1dc93f88232490aa8b1cf2a9030b9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -29009,7 +29009,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:60f588d19f76b5a02dca9c66ea5a5769ed2685ae3b134fbbc809d6d85c44e17f",
-      "originalRecordHash": "c4ca93a7bc6fd09fb03589073ed9c2728a82ded5bab28c8722071994cadb5d8e",
+      "originalRecordHash": "0e735568d14a128bb300061031003047bcd66810748af25e94aaa5304d2285b7",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -29867,7 +29867,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:637ebf19bb583e2a2502d1ac34a5749181d588b079dbffcd8d607c9a7dd72f20",
-      "originalRecordHash": "2303748d358b0cc0b86e9f6b4ab823459b08aee733bd42d9b8a27bd0830d68d8",
+      "originalRecordHash": "ba7b08cb3b49c7a96972ae8ac047ff0b7fe460428f95889bf84ba92746e2e2eb",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -30226,7 +30226,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:65c3ca5bfb3cb1d7ddc1162d1c3ffa2a525651c9acd9da14372aafdb31abaebe",
-      "originalRecordHash": "0b3dc5c1ef0bccc4c795f46a137786f5b6899a48ee228bb0d2f5c64f7a134201",
+      "originalRecordHash": "2693075d5f6c9678e132667ee1096568a6287bd2d283815caf43464631c0bc99",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -31999,7 +31999,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:68fcdbbf92a146441153d014c85a4d579c44a3c5bb5ccda46f978476b56f0c15",
-      "originalRecordHash": "a5da05dbca4710bcb49490d0cf1e7c6ce48b6aa4ca1bf1f81f76f01e748d735c",
+      "originalRecordHash": "77cf2364dd8dd3da6ff9c70a6324018300685f6358d85ca59d44c00febd7b295",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -32713,7 +32713,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:6a069060cd1038d6d516247ae1478038c519c6541dfe40fa9a3709f02dd5f456",
-      "originalRecordHash": "2251f1465c170a351b693746b0fa8f2b294fb3c2ecf90dbc17a2a99903ccbeab",
+      "originalRecordHash": "9ecf9c9d568223ca23a103a2ca3523f8850fb1a6fcd64305248c8cb2f1e548f1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -33876,7 +33876,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:7001146068a635f2e18032360dc7922d51a2a947c8cadec4a65ff133aa1a6e4a",
-      "originalRecordHash": "04a6febd29f30ef515f4b4c866b51c5d202871afb39f89cf482af33903b80abe",
+      "originalRecordHash": "b265014e1d59c2b25b44dede422cb4be42c06b827375b67703dd0d585bb8146f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -34235,7 +34235,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:70b83a41cd83f3706d88b8286cb3d773023e9d3aabfd0ea3ccefc326f80776fe",
-      "originalRecordHash": "abdd9184b4e8be9dbd5c0ebb7de31ef95f62de9659b34759facf0fbf156f0bd7",
+      "originalRecordHash": "740b55f028c5fb7fd21bde88456fcf4ff679212c4e15164dba25aaa9d591cccd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -34776,7 +34776,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:71809b3c11a6095f891acfb2b69949fcdcd0a46f8a66b8a6e4a982f86bb9f41c",
-      "originalRecordHash": "dcb544932b98444ed4d5d2a8c292be0334aeaf66bf990f9685fc3065c363fc02",
+      "originalRecordHash": "eec193f587bd365dacb4b30ff28b6ee6807c42199d080a5d944b91d310aa121a",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -36092,7 +36092,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:735d3149ec952d60f3f0c5fa57e7ef66f170d740f4f67ae37ae52e01990dceda",
-      "originalRecordHash": "82a6e30085227fbbbedfcddf2dbd61bd5f11926c8a1308810c29bfd3afc199e1",
+      "originalRecordHash": "922fe6892ae75a362844e5f49a5c8deaf40ca6cf52139dbb9a786ecb0b3cada4",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -36451,7 +36451,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
-      "originalRecordHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+      "originalRecordHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -37441,7 +37441,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:75763a9ceff8f8867d85c4fa113a10a6c90bba3144447a470dfab27ab9aaf74e",
-      "originalRecordHash": "70d61b1ad12f45bcece4fa141e327d1ea2e07397b0faf8f2d569aa58be42ed74",
+      "originalRecordHash": "c794ec5bf2c9d1bcfe87d9bdd6c376fb0e1ef01df5d6652cdb2a089398528760",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -40207,7 +40207,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:79516077f7580ba635ec6631ddcfdf6e8f45e438c9aafcccca2ea8067e819c79",
-      "originalRecordHash": "2a1b4f25c53ca5000752bf4e9373c6455fcc0ad891f6c4ec36cf2d9ddc95b4ff",
+      "originalRecordHash": "5562b8c12f059e24389f39a377e63de14f22ab16e4f6005b0a1b93ec1e73dad6",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -40917,7 +40917,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:7aba9ac15bd262a07cb65ce799f2a4560db6b88cb7b0dfe2533e9740236bbffa",
-      "originalRecordHash": "a4b775eaa5040f7b05ada9ecb2c6f966a9419d82664e5d6af27db2ab3d387618",
+      "originalRecordHash": "f108dc0ff36f3c44ff9caef61e7d8af0d66e201cea2674470fbe5317df135f5c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -42061,7 +42061,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:7fc5c9547a8f1f17921f1b1ac174b88daa927ae6ad885e7311355aa9dece3c00",
-      "originalRecordHash": "20da119835c898f75446bcb32801915287ececa4bded6adc10d3d14b95c45a21",
+      "originalRecordHash": "219c5857e8845937911e365aac08e52bd393ecbd9b46c31ce6ac37fbe05c75cc",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -42967,7 +42967,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:80b6543fb3e99089aee2b8cd6827a549c1d8d12c40305df964e8950bacf04217",
-      "originalRecordHash": "7e1fd57af639dfcd412b4ad6394657609fea24c70e66bc41cae94451147dd2bc",
+      "originalRecordHash": "cc75e4c918ac4b13deb9e6c2d73deff6ba919bbc87285651572e28931841aff0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -44116,7 +44116,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:84762f7461856463d961015e20e36b1d8b087b235f04e6a1129ab07008c966d6",
-      "originalRecordHash": "14c8752b7ddfdbc06821ee20989e3a7b35f14322025d8ff6a59428f8792a3c41",
+      "originalRecordHash": "6d086ccfd2d8d586544be4ae117bf0080cf1a034c0d9b5eb8093654259f86597",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -44201,7 +44201,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/identity/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:33d2e49de60964d28129175a8d9e5910c9c920f910bbd0bcfae358db65d6c6c4"
                 ],
@@ -44508,7 +44508,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:85858588ec1dd938d553d7d5c7a26df71fb46a743dbe977eaa68496da3a5922b",
-      "originalRecordHash": "79ceabf190fa14ee1154b47f2dc1ec245d4d976601a686e4519e8643e4880bfc",
+      "originalRecordHash": "bceb9959e735aa996b08819c20098e63e2e37d55e466512aaa5cb5e2e2eef0ef",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -44625,7 +44625,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/identity/0/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:ec64c8946864f3b176098f44d8a4f790a207848cf681bae7c83435c812e0bed4"
                 ],
@@ -44679,7 +44679,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/thinkingStyle/0/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:93fe2583f64ab220cf99513d1db431a53e43f809520bac24fbf1df2500b53023"
                 ],
@@ -45205,7 +45205,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:866cc7db4e868a11ad5cab2ae44e31ec3764c74cdbfe13c5d2f7de6c96ea56b3",
-      "originalRecordHash": "8228f80e35531b447f061d71d27b338f7dcf7abd5e66b342ad34823fbc89c73d",
+      "originalRecordHash": "44df32a33c0779b8edfc02fe35298f085bfc38a6323dff1c8917673247888372",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -45582,7 +45582,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:8884f4ab649eb57cde72a3f1ac0cb8bc723e2a68303392040503043ef61c2899",
-      "originalRecordHash": "d0b666b36513f46bb4e0d86fd3f4142e26e162c25433bb9d4e2b74f17f44b444",
+      "originalRecordHash": "b34ff010eeceede77bc3750b3eb3ad493942043ddba75539ae3aa5f3a1d09ec0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -46375,7 +46375,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:8c4e041d101cb5916405f6bafdfc73d90473a9acedee3a0e9d8013966c4d2f9f",
-      "originalRecordHash": "d09afc4a9efbeb2e3a41359c42b3d9ca0b6b1a4dc829292f96dfe6aae477e82b",
+      "originalRecordHash": "b1884263d74f2ca49909d188982c8046361ccbb9e8ed3e1213bcce0561598bbe",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -47090,7 +47090,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:8d831ae9e4b9d6ca28d9454144a96ae8a9bd6ae42412b8095e56fa5ffb4a02ab",
-      "originalRecordHash": "2281f1e85a43a8c64ff7147ab42f57fbe2c87761a6a0eb8e8d495c9ca0f7fc2f",
+      "originalRecordHash": "6ed260125e54545f5e94580ebc948a53c4281683ce2952f4540a2fecced3a55e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -48241,7 +48241,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:8feaad7fa61d9116490fc94a170940a1fee280500d688836fffd43ffd18eae19",
-      "originalRecordHash": "8ea3d6c73a4355d81e2e3c6219cf08e48d5770fd25c6b6329e4340a94283b833",
+      "originalRecordHash": "3c7926a5b480d3ea23670554274fe2845c6a2f84457a1b5bf94a903a3f92bb1c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -48951,7 +48951,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:90ba59f2b710cf513b94c939aab29cd045826e120994f71bde1ea869d9760101",
-      "originalRecordHash": "390f6125c0112a348bc5a7a3ada1f3751d4503dcc874fb265244911a06156882",
+      "originalRecordHash": "f2f283e2593b0586930badcdff3b167750248af995061694b08da436a6fba81e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -49310,7 +49310,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
-      "originalRecordHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "originalRecordHash": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -49871,7 +49871,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:919d29672d57887687a295ed7f50ea868d3704ce636fc88a78a0dc5e455e4294",
-      "originalRecordHash": "d760008b46b7db3f183d7d0f1a65b5047e59bcdb561ae42b03c24bb1216c1b02",
+      "originalRecordHash": "07ab5bf03dd5568f8b34be445b2645e30d218b5b7d60d596fc4d578e12650a2a",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -51212,7 +51212,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/career/0/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:48f515c45718774babf43230a6245f4012d501977028dfa2e139e61a0eb8fcfb"
                 ],
@@ -51915,7 +51915,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:966f311c0521fe9c04ffc3299b3372aa4eacc5122d3ee658f8eec6d3c953bf5e",
-      "originalRecordHash": "55bcc37067661ce0964ba7c453c896a3672cb1815bacde9f9c4e5db2338bcf51",
+      "originalRecordHash": "9a5f77394c5d42232676a6c079a6df6fc4cca5e4c11ddb46ba0bc4b9f7b83b77",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -52517,7 +52517,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:98320e7ee07354d34551d2fe310e1c38fec32796e719532e84fd07972e734268",
-      "originalRecordHash": "9efe8ab13e8ddd96d98ce656656632792810cabee223300c5dfe4c3f190fa5a8",
+      "originalRecordHash": "40810203b2c54bb802153f0f42ec2c663e2df20ea69501f36046f4bced902167",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -52916,7 +52916,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:9b376c1f4cf58cd68b7f1499ab277e991443e158c9123f15ba82dfeb7c516b9e",
-      "originalRecordHash": "706c54fc4ff183a736b8007d6227f662461e1e83629d31fdf2c72c0b9ac6b329",
+      "originalRecordHash": "9b17751a01b06aeffb3e53bd98cf42d38990222bed2b6b604fb794f9d1199389",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -54088,7 +54088,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:9ccb1c7d09666f85ba5904716909fc9947ae00ec7a9c78955a848e2295492739",
-      "originalRecordHash": "e97bf57d170ac85571c5067e8a973a7a6062e9d3ce95acff72d3b097e11af1e2",
+      "originalRecordHash": "a88c4283aeaebcb45e20250296d10048ab8f3f4d285e5a08cd886e9839ad9c59",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -54447,7 +54447,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:9d24825beb9059d19fafa67b262af0f4f883dc5a7684602520eb7125bd2acc7f",
-      "originalRecordHash": "248f3be6a99bf00b5a28e7435153eac6323e291b56e8478afd655926be0b7494",
+      "originalRecordHash": "c8251612812a92f040dae96773914877302b1dd08fa6bf45ae52213680f9ada3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -55736,7 +55736,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a28031db7b8bf4c4fc1399bfdb1d461263f2ad64472ff6a8fb50b67d160cc834",
-      "originalRecordHash": "52bab841ff6babe8fd1d40586ae6fdb0fe253439af7162644a51eb5d2f87edd3",
+      "originalRecordHash": "a0f8dc758b63175854aac42763419523e0292e4e059e7d8683f4d664c1124875",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -56374,7 +56374,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a373e12d98b5f15be21c964e8432dc1a0e67a7b6bc53a23b5e553c58d4c849df",
-      "originalRecordHash": "19f75fa79ccd940de1e26498dadcca9b56cb11311960c709ec08fb4ac7409c60",
+      "originalRecordHash": "3df3eea88a7f6895bbcb641d2a6350b05e74d455619c3703d34a1eb5b7b26ff0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -58007,7 +58007,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a53b8185c8dd26fdee320388186589c5f33e76625944da09007d1876a21a76e3",
-      "originalRecordHash": "4a6f84d055d29f700fac0bececf4cc71c9f39af9a5a31ead6400d7f24ddb7c09",
+      "originalRecordHash": "a3a7dfc8f0af1196e16578eb401334299eaedf5f68e53f3d8d76bfe5cac2d4a0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -58804,7 +58804,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a617d160ef78d99e265d33d4d533346d9f0b92538d902c8edff349eaf6b9ed0a",
-      "originalRecordHash": "34a029dca1a603a0ff67a7b9d90974111b24cb029a923ed6b4225f8d74bad085",
+      "originalRecordHash": "7e8263ae372124a5fba91e2ca149d910a23cd53e79230a1d01b90adf6177b254",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -59429,7 +59429,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a6e375452f0b3c9cd5a86b2aad670a1b7847569ed51cdb18330466749266fd84",
-      "originalRecordHash": "ca76572e210e650e29166db0eeb76b8f688603c9b9912643b0a4ecff8121b899",
+      "originalRecordHash": "f4d68c9acfc0c47850aea29b78354dc8134fe7bce53e7891e2b7db3d5291b496",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -59828,7 +59828,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a721f9f24afa1fc6b45d96b0e8d8bef974015f95043835f36541f9ba906d9b95",
-      "originalRecordHash": "d68fb2783d5adf1d2592afa68d86125d8bfcb42af3d8186d43ac7b3441c44736",
+      "originalRecordHash": "7aee8332b74db089b1a8c621f1da5da3078c802facb30d85df6c19d890708483",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -60397,7 +60397,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a72a8eddaad80ce44ffbd4d15f2e8602087986654a2b3ba51936c5ffcb738c34",
-      "originalRecordHash": "fb2ff6532be44360c1ee588d87fcd15a6cf92bbe847b3280ea301cfdcad69f4e",
+      "originalRecordHash": "8d10669302559f2fb2704eb6d003ec280da6763a0151c236dd8ff55d68b309c9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -61126,7 +61126,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:a93dae963a0648b536adbe0cc7258fd76c175121e4fbeb81a15ccfa4e03838f2",
-      "originalRecordHash": "810125d67afa4134a97da84c37f3a35bafcdf6a94ed63cb86582e4b7db87f5ee",
+      "originalRecordHash": "0b93d5d7ec582536b1f7b7c842f396275ed50882627740dccad1e3135db033d1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -63485,7 +63485,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/identity/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:33d2e49de60964d28129175a8d9e5910c9c920f910bbd0bcfae358db65d6c6c4"
                 ],
@@ -63792,7 +63792,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:b1174921203c68a4cee65a57cec3e74117eb9fd078babfb201f74a3469e199b3",
-      "originalRecordHash": "db295746473ba7fb92228f52325a73887ce696bf232d4cda8eec3867a10e4b72",
+      "originalRecordHash": "514389ce587d167dd0ca046689f0286ce430dd478270045fc5b03745c3a9317e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -64595,7 +64595,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:b51f912b1d7676e95ea795e4310f55dc43fcf6684cfd9f53ba00487c2c3b2815",
-      "originalRecordHash": "5bbcfaf270f04ea75b10404b8db20b0d246ad4db7b1e3674f927f048981bcc1c",
+      "originalRecordHash": "12bd400fb879878ce44ee8ae05d61a5634061e0397badac08d597681f70623c3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -65541,7 +65541,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:b6609a22b1c04480092b880297d965a641e7f83b5b2972295e077e3a34ff3a7d",
-      "originalRecordHash": "a2e5abb560b4f9393af354cd60c553d9c877a6d155afd5f93b41393ce8644c45",
+      "originalRecordHash": "9c2b7fe1572d0afcee2ca72a46b2cd28e9988c86c4bdb539cce1da8e58b6f101",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -70996,7 +70996,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:c93982d48273cc9526e7220d0536437df2b303ffad4280ee0b3a168fa3f95251",
-      "originalRecordHash": "39ba9db67d5b02e8896c4c29b199611f15f4e67fbfe31c79f39cf83752884951",
+      "originalRecordHash": "18d131bc911aae998ed56b70505635bd1a9f76a18390d5d4a78883bdc0fa3ec9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -71878,7 +71878,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:d43fe0158bfc41ebaa3ea21d9d0f7d4dd995818d852930411e7e922fa0813ac8",
-      "originalRecordHash": "d3fd1eb4669aea3f96e253363ea061ae3cc1fecbab5af3ee4f547040fd439abf",
+      "originalRecordHash": "8222dde51c9d80469cb62b439a077a6691eb791e459b1f39d158a9ee42ec5b87",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -73725,7 +73725,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:d9f461123c12a299387ad9dc6a20606ff5a35b21e84f297a9277ec911337f8a8",
-      "originalRecordHash": "d2e4d33d5d37c86ab52ed06bb58d5cf8f63755e1d35baa61cce10c44fe578cb7",
+      "originalRecordHash": "fc570732ab669c9396b40138ca7a6867e6457849d121e59fd7b7e1515595b8dd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -74923,7 +74923,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:ddb375b0d66c60b3c0083b5d2e6d580e3bcff0281a9ee7d313abebf5623f01a1",
-      "originalRecordHash": "2c7edb91a631c79eee322745851de2134fa86c6a76a12341b6906262dda5a697",
+      "originalRecordHash": "450454060e60290f122c9523a2d79aff53c78ebc7b69b2e9d05e88658b866cb1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -75623,7 +75623,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
-      "originalRecordHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+      "originalRecordHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -76891,7 +76891,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:e2d791f8ff60a94ebb139bb5e2bd3b85f3bf4655eb59960d682da751f87a95bb",
-      "originalRecordHash": "0b57082b3801beb3524fb65caff97c28595b7b72eb0870aea9b82a1be03d3aab",
+      "originalRecordHash": "efbdedf32b7006d9a64abc2adaf6d67d2eaa5009843b035ceb4fd3782c7b5e9f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -77460,7 +77460,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:e4e217149f8fcd380a143e159f775532f88a35a97817c6e5ac41e460e7cef08f",
-      "originalRecordHash": "e645098c2d950c29d2a2b3057a4d7ec21197eb6208fb362fc235ea0871acc4f9",
+      "originalRecordHash": "8c244ae639e6806e18622fff0cdc92c3d77806ed36982903d8ab53f2394a2d06",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -77829,7 +77829,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:e588fba258dcbcb623609f38c5a45243e50c8b453f0834c39ba34615be142e93",
-      "originalRecordHash": "f61f5c0432c2282a0e58c885991cd4b7b584a694635dfb59584fa9e708129172",
+      "originalRecordHash": "6fed93607f23f89271c272015a76f57240dcf7aba25ab9571249297199794349",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -80045,7 +80045,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:eb93771b06beae925f1413794873a4dd970bfe8a4c4dc8796b8fd1e83facc19e",
-      "originalRecordHash": "2d1db0a7e4a9ba8ddbcdd1b61318b72eebff8b3b2ba2abcc085a2feb4d1ffb2c",
+      "originalRecordHash": "c8e9c5f5ea9a2fc1cb4036b90d9b87cfbb1fd8a7bba3cbf00aec3019f9d255fd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -80734,7 +80734,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:ee50b73a8aeba0c13cc6b7cbd8c514460c046fc8452c7e63c819cd97f180dbfe",
-      "originalRecordHash": "9144007ec04c4322107a0d0cd816d0def6f2c0be1c15486180415bd32fc76acb",
+      "originalRecordHash": "30a6fd1117fa2364f5228f17bdcac06baf3a37ffca1d5afd5626e7008eb18b93",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -81195,7 +81195,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/identity/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:33d2e49de60964d28129175a8d9e5910c9c920f910bbd0bcfae358db65d6c6c4"
                 ],
@@ -81502,7 +81502,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
-      "originalRecordHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "originalRecordHash": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -81869,7 +81869,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:f24365ed534d909bb613e08ef0812bc951e3bbb26c35c28fc496a5c13a3f471e",
-      "originalRecordHash": "0256c4c50d805ba04aa54ce80f690e39a7779b1ca86a9e194e083b60f5d6e070",
+      "originalRecordHash": "aef66176c6c6aaa94eb7abdd01b284ae3c84ae41012c4a66ee8e20d1b0b45153",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -82886,7 +82886,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:f462fd1dcda4fcfaaca0d0c99254e8c94671fc7e87fc0d385f9afb190280fd4d",
-      "originalRecordHash": "f525f368cec3dae56559a4bb598cb3d057678e3b70ab3143bb5c86431769d3b7",
+      "originalRecordHash": "68035ffaac36cd95bd253905bc1b0568000d208cfcc86513522d92280e1e987c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -83713,7 +83713,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:f730cad28bc19a54468077aeb51b3ca546202fd7e92a3700f58305a3ce16b248",
-      "originalRecordHash": "85d755250747d19483fb0e5b2fb6cf84973a67a340ccd3f51a50c4168f360389",
+      "originalRecordHash": "8e70657ad97b8c15d486381e60ea08eb8c5d7955000ce51b7539ae4407eff1e1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -84623,7 +84623,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:fbf8c51bee006756b62ea7f4a31e52f60a5ca94e3ffce7170e068224b7fb9a59",
-      "originalRecordHash": "214ff147a615edb08753a7919c6880734148db3288a83613a4ef7d69066e8cf8",
+      "originalRecordHash": "800588c77eb3e91c8aec3180489f2a23df51c8cf199181817c8ff77597153118",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -85619,7 +85619,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:fddaad8ffd02ffee19400bb8c1f232fa9b9b2c174db6ea6a4e7ac1a83e1a82e3",
-      "originalRecordHash": "da566c8fd9ef8c705d6f067717f4e158cf74c59254f7fbe0e1df3779791083e2",
+      "originalRecordHash": "82f68381b40421a9f2da86b440036f04400212ec08c2c1cd8ed6906c56db7a83",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,
@@ -86010,7 +86010,7 @@
     "operatorApproved": false,
     "approvalRequirement": {
       "catalogKey": "kc:v1:ff357660fd43124a8df044c6bc9764f5e698a5fc3605ba2532f5c8db81b8a1bd",
-      "originalRecordHash": "28c6ffad818395dcb826c4f076248bb8b0a18f6f03ad3e1ba5b1c0369007b249",
+      "originalRecordHash": "27ca367fc6b47824a434fb9aa6325c03f367d98cd015ebf15413faf70697aa86",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "meaningIdentity": null,
       "claimIdentity": null,

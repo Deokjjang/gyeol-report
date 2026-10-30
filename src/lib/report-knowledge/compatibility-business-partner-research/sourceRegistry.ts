@@ -14,7 +14,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
     "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "thinkingStyle",
@@ -40,7 +40,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#72685cd9261c6060b22d",
     "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "thinkingStyle",
@@ -103,7 +103,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
     "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "money",
@@ -129,7 +129,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b64fa2920704301bf622",
     "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "money",
@@ -340,7 +340,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f666c10a6db231abcc92",
     "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "thinkingStyle",
@@ -366,7 +366,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#2fe4d73f766a08fb06e6",
     "recordSha256": "c9561f145688a2c635a823c2ef47c1c7e3cfb606fcc530a4685ba2e17e06aad0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "sourceType": "INTP",
       "targetType": "ESFJ",
@@ -392,7 +392,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#be75c6da843ca261cd98",
     "recordSha256": "9563bc15e11bbd9aafc59d063ddef323ecf144550154d7564aa6e2850ab1d52a",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "investment",
@@ -418,7 +418,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#38fa9db618761c3db5b0",
     "recordSha256": "336fed2cb17ed88f30d0a4532ac0350963fa7defc634a6f44ddc3a265d73f0a4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "sourceType": "ISTJ",
       "targetType": "ISTJ",
@@ -444,7 +444,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#6256f57a0be573a6725a",
     "recordSha256": "682f7031cddd237fa755c49412391f100dd7e04d13710970168f8af2f16529d7",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "investment",
@@ -470,7 +470,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#81c172dd5bbbb1920ae6",
     "recordSha256": "417063b9865e146c0262684a512888e221870222677e50eee5e1a8b397ac6c91",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "money",
@@ -628,7 +628,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#fd240bf6e5740f4fe5d6",
     "recordSha256": "4d0c9450481f970a446685e0a3f89d93838a464f1d83129e379bc61a52f4df13",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "money",
@@ -654,7 +654,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#932f48a511820a551fae",
     "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "workplace",
@@ -680,7 +680,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#76d4c68e32d1662f8abf",
     "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "workplace",
@@ -748,7 +748,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1f7d00a7995b32bad2b3",
     "recordSha256": "7cdeb05a69dad1e33c64e7c80971e06c202ab3442059c1ca0288f0152dcd3bf3",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "investment",
@@ -774,7 +774,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c3e0328ac10371fa55ab",
     "recordSha256": "f29fd57342f7940da0cc1970fee57c214399d317366d28869a332091a0fc22e4",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "money",
@@ -833,7 +833,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#60699f5629066c047ea1",
     "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "workplace",
@@ -925,7 +925,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c0fbe9a4b01f0f51c46b",
     "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "thinkingStyle",
@@ -1017,7 +1017,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f30fa018d453a0318547",
     "recordSha256": "49db188de9af8a7e9c7a4b3a692d9f70d4024641977bcfea280b8af0b5051548",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "money",
@@ -1043,7 +1043,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e08ef500cdb091985a2e",
     "recordSha256": "73d8483a62094f125795b6a2a3d28274ae185bf1f986bd71a6d98393b9071fcd",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "thinkingStyle",
@@ -1069,7 +1069,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
     "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "thinkingStyle",
@@ -1128,7 +1128,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#446d4547c9d18193acaa",
     "recordSha256": "604c710157278ade2a6ec04c45dc63c0efb67d4c9622949dca9ba3283d9fbd42",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "investment",
@@ -1196,7 +1196,7 @@ export const BP_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#756426b20e7a45cb7d82",
     "recordSha256": "c65204510b430dce4f0d9d135896431b7523a31cee3d44df9fefe722a2e8b743",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "investment",

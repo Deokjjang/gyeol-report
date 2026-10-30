@@ -1119,7 +1119,7 @@
     "meaning": "비견 위치 확인",
     "researchId": "cpr:material:CH05.P3:boundaries-enable-support",
     "catalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
-    "sourceRecordHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "sourceRecordHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "sourceRefs"
@@ -1425,7 +1425,7 @@
     "meaning": "자기 선택·도움의 조건부 병치",
     "researchId": "cpr:material:CH05.P3:boundaries-enable-support",
     "catalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
-    "sourceRecordHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "sourceRecordHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "roleContributions",
@@ -1741,7 +1741,7 @@
     "meaning": "제공 범위·상대 선택",
     "researchId": "cpr:material:CH05.P3:boundaries-enable-support",
     "catalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
-    "sourceRecordHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "sourceRecordHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "application",
@@ -2057,7 +2057,7 @@
     "meaning": "의존·감사 추론 차단",
     "researchId": "cpr:material:CH05.P3:boundaries-enable-support",
     "catalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
-    "sourceRecordHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "sourceRecordHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "counterexample",
@@ -2373,7 +2373,7 @@
     "meaning": "자기보고 유형 입력",
     "researchId": "cpr:material:CH06.P1:help-with-hidden-expectation",
     "catalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
-    "sourceRecordHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "sourceRecordHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "sourceRefs"
@@ -2631,7 +2631,7 @@
     "meaning": "유형 설명·실제 경험 구분",
     "researchId": "cpr:material:CH06.P1:help-with-hidden-expectation",
     "catalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
-    "sourceRecordHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "sourceRecordHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "sourceRefs",
@@ -2889,7 +2889,7 @@
     "meaning": "도움 시작 전 기대 합의",
     "researchId": "cpr:material:CH06.P1:help-with-hidden-expectation",
     "catalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
-    "sourceRecordHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "sourceRecordHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "application",
@@ -3148,7 +3148,7 @@
     "meaning": "미공개 기대·계약 구분",
     "researchId": "cpr:material:CH06.P1:help-with-hidden-expectation",
     "catalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
-    "sourceRecordHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "sourceRecordHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "factBomb",
@@ -3406,7 +3406,7 @@
     "meaning": "업무 원천의 제한된 선호 설명",
     "researchId": "cpr:material:CH08.P1:work-through-shared-purpose",
     "catalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
-    "sourceRecordHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "sourceRecordHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "sourceRefs",
@@ -3664,7 +3664,7 @@
     "meaning": "분위기·목표 일치 구분",
     "researchId": "cpr:material:CH08.P1:work-through-shared-purpose",
     "catalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
-    "sourceRecordHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "sourceRecordHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "factBomb",
@@ -3923,7 +3923,7 @@
     "meaning": "목적·이견·지원 확인",
     "researchId": "cpr:material:CH08.P1:work-through-shared-purpose",
     "catalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
-    "sourceRecordHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "sourceRecordHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "application",
@@ -4181,7 +4181,7 @@
     "meaning": "역할·동의의 적용 한계",
     "researchId": "cpr:material:CH08.P1:work-through-shared-purpose",
     "catalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
-    "sourceRecordHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "sourceRecordHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
     "researchFields": [
       "shadow",

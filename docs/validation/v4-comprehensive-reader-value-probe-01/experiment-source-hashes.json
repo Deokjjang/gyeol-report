@@ -26,7 +26,7 @@
     },
     {
       "path": "tools/comprehensive-reader-value-probe/prototypes.json",
-      "sha256": "ccd479efebdd459866639786e20ebce47ce719f6c60d1a2deb1d38d9c58cf97c"
+      "sha256": "dc8f59267fe7c48fed68468904aa27931a87cdf0cd098fa5e8a89fae4dae3e56"
     },
     {
       "path": "tools/comprehensive-reader-value-probe/run.mjs",

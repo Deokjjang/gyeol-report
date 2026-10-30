@@ -13,7 +13,7 @@
   {
     "id": "cpr:material:CH01.P1:open-small-door",
     "product": "comprehensive-product-research",
-    "hash": "da566c8fd9ef8c705d6f067717f4e158cf74c59254f7fbe0e1df3779791083e2",
+    "hash": "82f68381b40421a9f2da86b440036f04400212ec08c2c1cd8ed6906c56db7a83",
     "readerQuestion": "나는 어떤 일을 먼저 확인하는 사람인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -24,7 +24,7 @@
   {
     "id": "cpr:material:CH01.P1:keep-room-for-others",
     "product": "comprehensive-product-research",
-    "hash": "f525f368cec3dae56559a4bb598cb3d057678e3b70ab3143bb5c86431769d3b7",
+    "hash": "68035ffaac36cd95bd253905bc1b0568000d208cfcc86513522d92280e1e987c",
     "readerQuestion": "나는 어떤 일을 먼저 확인하는 사람인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -68,7 +68,7 @@
   {
     "id": "cpr:material:CH01.P3:criteria-and-questions",
     "product": "comprehensive-product-research",
-    "hash": "8228f80e35531b447f061d71d27b338f7dcf7abd5e66b342ad34823fbc89c73d",
+    "hash": "44df32a33c0779b8edfc02fe35298f085bfc38a6323dff1c8917673247888372",
     "readerQuestion": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -79,7 +79,7 @@
   {
     "id": "cpr:material:CH01.P3:lead-and-listen",
     "product": "comprehensive-product-research",
-    "hash": "a2e5abb560b4f9393af354cd60c553d9c877a6d155afd5f93b41393ce8644c45",
+    "hash": "9c2b7fe1572d0afcee2ca72a46b2cd28e9988c86c4bdb539cce1da8e58b6f101",
     "readerQuestion": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -90,7 +90,7 @@
   {
     "id": "cpr:material:CH01.P3:values-and-expression",
     "product": "comprehensive-product-research",
-    "hash": "a711b93af187321d18c6fa5a935432b9a7952ad4ff212ba95d19c8c081efd9f6",
+    "hash": "c5347cc666ecf92d2b2c9e1ca45c151028dc815c2f577ea72f37beb2c88f4488",
     "readerQuestion": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -112,7 +112,7 @@
   {
     "id": "cpr:material:CH01.P4:care-with-choice",
     "product": "comprehensive-product-research",
-    "hash": "ca76572e210e650e29166db0eeb76b8f688603c9b9912643b0a4ecff8121b899",
+    "hash": "f4d68c9acfc0c47850aea29b78354dc8134fe7bce53e7891e2b7db3d5291b496",
     "readerQuestion": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -123,7 +123,7 @@
   {
     "id": "cpr:material:CH01.P4:change-keeps-purpose",
     "product": "comprehensive-product-research",
-    "hash": "70d61b1ad12f45bcece4fa141e327d1ea2e07397b0faf8f2d569aa58be42ed74",
+    "hash": "c794ec5bf2c9d1bcfe87d9bdd6c376fb0e1ef01df5d6652cdb2a089398528760",
     "readerQuestion": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -266,7 +266,7 @@
   {
     "id": "cpr:material:CH03.P1:question-roots",
     "product": "comprehensive-product-research",
-    "hash": "e645098c2d950c29d2a2b3057a4d7ec21197eb6208fb362fc235ea0871acc4f9",
+    "hash": "8c244ae639e6806e18622fff0cdc92c3d77806ed36982903d8ab53f2394a2d06",
     "readerQuestion": "정확히 같은 대상·방향을 가리키는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -277,7 +277,7 @@
   {
     "id": "cpr:material:CH03.P1:learn-with-practice",
     "product": "comprehensive-product-research",
-    "hash": "7e1fd57af639dfcd412b4ad6394657609fea24c70e66bc41cae94451147dd2bc",
+    "hash": "cc75e4c918ac4b13deb9e6c2d73deff6ba919bbc87285651572e28931841aff0",
     "readerQuestion": "정확히 같은 대상·방향을 가리키는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -288,7 +288,7 @@
   {
     "id": "cpr:material:CH03.P1:promise-and-regularity",
     "product": "comprehensive-product-research",
-    "hash": "e97bf57d170ac85571c5067e8a973a7a6062e9d3ce95acff72d3b097e11af1e2",
+    "hash": "a88c4283aeaebcb45e20250296d10048ab8f3f4d285e5a08cd886e9839ad9c59",
     "readerQuestion": "정확히 같은 대상·방향을 가리키는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -299,7 +299,7 @@
   {
     "id": "cpr:material:CH03.P2:resource-versus-goal",
     "product": "comprehensive-product-research",
-    "hash": "dcb544932b98444ed4d5d2a8c292be0334aeaf66bf990f9685fc3065c363fc02",
+    "hash": "eec193f587bd365dacb4b30ff28b6ee6807c42199d080a5d944b91d310aa121a",
     "readerQuestion": "비슷한 장점의 원인은 정말 같은가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -310,7 +310,7 @@
   {
     "id": "cpr:material:CH03.P2:support-received-and-given",
     "product": "comprehensive-product-research",
-    "hash": "08036fe933edad03d99cef2f545dac1c66f835de42cc11a1c438f366c170c30a",
+    "hash": "9db6092244856b534a9a2e712e297876d27a596d8dacd779d7f69251f8485978",
     "readerQuestion": "비슷한 장점의 원인은 정말 같은가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -321,7 +321,7 @@
   {
     "id": "cpr:material:CH03.P2:output-and-meaning",
     "product": "comprehensive-product-research",
-    "hash": "d760008b46b7db3f183d7d0f1a65b5047e59bcdb561ae42b03c24bb1216c1b02",
+    "hash": "07ab5bf03dd5568f8b34be445b2645e30d218b5b7d60d596fc4d578e12650a2a",
     "readerQuestion": "비슷한 장점의 원인은 정말 같은가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -332,7 +332,7 @@
   {
     "id": "cpr:material:CH03.P3:private-social-channel",
     "product": "comprehensive-product-research",
-    "hash": "2c7edb91a631c79eee322745851de2134fa86c6a76a12341b6906262dda5a697",
+    "hash": "450454060e60290f122c9523a2d79aff53c78ebc7b69b2e9d05e88658b866cb1",
     "readerQuestion": "두 신호는 반대인가 다른 상황인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -343,7 +343,7 @@
   {
     "id": "cpr:material:CH03.P3:learn-before-try",
     "product": "comprehensive-product-research",
-    "hash": "d3fd1eb4669aea3f96e253363ea061ae3cc1fecbab5af3ee4f547040fd439abf",
+    "hash": "8222dde51c9d80469cb62b439a077a6691eb791e459b1f39d158a9ee42ec5b87",
     "readerQuestion": "두 신호는 반대인가 다른 상황인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -354,7 +354,7 @@
   {
     "id": "cpr:material:CH03.P3:save-and-experience",
     "product": "comprehensive-product-research",
-    "hash": "06aaa720b3f29bf8288d2dd075764fd1e53dfaee8d0078241c6d46bff47f1767",
+    "hash": "bc3ff6c75ca9eb809589521efdf9b9e3ca70f6862be077366ed7ff6f67942495",
     "readerQuestion": "두 신호는 반대인가 다른 상황인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -365,7 +365,7 @@
   {
     "id": "cpr:material:CH03.P4:from-question-to-small-proof",
     "product": "comprehensive-product-research",
-    "hash": "e7b65a8092fcf637ed0b23b675c8dc9b422bdab1b722cda5354c8453e3fdfe01",
+    "hash": "5ee454fb1ba3a8b905207e7e7587e49bd3c92c06589a1dd5bd8ca96add6723a3",
     "readerQuestion": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -376,7 +376,7 @@
   {
     "id": "cpr:material:CH03.P4:choose-support-mode",
     "product": "comprehensive-product-research",
-    "hash": "9efe8ab13e8ddd96d98ce656656632792810cabee223300c5dfe4c3f190fa5a8",
+    "hash": "40810203b2c54bb802153f0f42ec2c663e2df20ea69501f36046f4bced902167",
     "readerQuestion": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -387,7 +387,7 @@
   {
     "id": "cpr:material:CH03.P4:keep-joy-and-reserve",
     "product": "comprehensive-product-research",
-    "hash": "a2ebfef35942ffd16c1fafb4b55d60c8a7428e7a49771da4f038229d993924a6",
+    "hash": "18f50d286a9d3a4341adbed434e23fc58978cbce3cd1af01967458d968628e5c",
     "readerQuestion": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -398,7 +398,7 @@
   {
     "id": "cpr:material:CH04.P1:clear-request-first",
     "product": "comprehensive-product-research",
-    "hash": "0b3dc5c1ef0bccc4c795f46a137786f5b6899a48ee228bb0d2f5c64f7a134201",
+    "hash": "2693075d5f6c9678e132667ee1096568a6287bd2d283815caf43464631c0bc99",
     "readerQuestion": "처음 드러난 행동에서 무엇을 알 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -409,7 +409,7 @@
   {
     "id": "cpr:material:CH04.P1:quiet-first-contact",
     "product": "comprehensive-product-research",
-    "hash": "f61f5c0432c2282a0e58c885991cd4b7b584a694635dfb59584fa9e708129172",
+    "hash": "6fed93607f23f89271c272015a76f57240dcf7aba25ab9571249297199794349",
     "readerQuestion": "처음 드러난 행동에서 무엇을 알 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -420,7 +420,7 @@
   {
     "id": "cpr:material:CH04.P1:invite-into-conversation",
     "product": "comprehensive-product-research",
-    "hash": "763a54f0a27068be2e03261a429e2681dc80e3ac6296541f321a8da60ccf0e93",
+    "hash": "056fb4dc92941081b5480134ec41b74afbf31776b248dc52a58a7a9fd59ef88f",
     "readerQuestion": "처음 드러난 행동에서 무엇을 알 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -431,7 +431,7 @@
   {
     "id": "cpr:material:CH04.P2:private-criteria",
     "product": "comprehensive-product-research",
-    "hash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+    "hash": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
     "readerQuestion": "혼자 정리할 때 어떤 여건이 필요한가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -442,7 +442,7 @@
   {
     "id": "cpr:material:CH04.P2:inner-values-not-secret",
     "product": "comprehensive-product-research",
-    "hash": "462ab8d2d85a51265e4f67cf8f4586f6d404aa505c1a6526bc69dac69af646ac",
+    "hash": "7b4763a9455d8f015293fc7ef73f93ef9b61e8e0712adf4f1f3df702250caf2b",
     "readerQuestion": "혼자 정리할 때 어떤 여건이 필요한가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -453,7 +453,7 @@
   {
     "id": "cpr:material:CH04.P2:after-help-load",
     "product": "comprehensive-product-research",
-    "hash": "2a1b4f25c53ca5000752bf4e9373c6455fcc0ad891f6c4ec36cf2d9ddc95b4ff",
+    "hash": "5562b8c12f059e24389f39a377e63de14f22ab16e4f6005b0a1b93ec1e73dad6",
     "readerQuestion": "혼자 정리할 때 어떤 여건이 필요한가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -464,7 +464,7 @@
   {
     "id": "cpr:material:CH04.P3:selective-warmth",
     "product": "comprehensive-product-research",
-    "hash": "214ff147a615edb08753a7919c6880734148db3288a83613a4ef7d69066e8cf8",
+    "hash": "800588c77eb3e91c8aec3180489f2a23df51c8cf199181817c8ff77597153118",
     "readerQuestion": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -475,7 +475,7 @@
   {
     "id": "cpr:material:CH04.P3:playful-after-trust",
     "product": "comprehensive-product-research",
-    "hash": "76d4ca10a8182530f40e252522e01def8c0cc2bc6739792421ced4156815504a",
+    "hash": "a818839aacfdd8073bbca1ba21725160bf16fef699f69ad6f9deae09b360bcdd",
     "readerQuestion": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -486,7 +486,7 @@
   {
     "id": "cpr:material:CH04.P3:firm-boundary-close",
     "product": "comprehensive-product-research",
-    "hash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+    "hash": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
     "readerQuestion": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -497,7 +497,7 @@
   {
     "id": "cpr:material:CH04.P4:invisible-maintenance",
     "product": "comprehensive-product-research",
-    "hash": "2d1db0a7e4a9ba8ddbcdd1b61318b72eebff8b3b2ba2abcc085a2feb4d1ffb2c",
+    "hash": "c8e9c5f5ea9a2fc1cb4036b90d9b87cfbb1fd8a7bba3cbf00aec3019f9d255fd",
     "readerQuestion": "처음에 놓칠 수 있는 가치는 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -508,7 +508,7 @@
   {
     "id": "cpr:material:CH04.P4:soft-precise-request",
     "product": "comprehensive-product-research",
-    "hash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+    "hash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
     "readerQuestion": "처음에 놓칠 수 있는 가치는 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -519,7 +519,7 @@
   {
     "id": "cpr:material:CH04.P4:useful-small-making",
     "product": "comprehensive-product-research",
-    "hash": "d68fb2783d5adf1d2592afa68d86125d8bfcb42af3d8186d43ac7b3441c44736",
+    "hash": "7aee8332b74db089b1a8c621f1da5da3078c802facb30d85df6c19d890708483",
     "readerQuestion": "처음에 놓칠 수 있는 가치는 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -574,7 +574,7 @@
   {
     "id": "cpr:material:CH05.P1:analysis-that-decides",
     "product": "comprehensive-product-research",
-    "hash": "d94fd3e369d0f0daa28b3cd38a38fab8282754393b2344c3081e496733bc6df8",
+    "hash": "2a00061aa182356897ea5e32e05a74788278ba9db18bd2a69a78760e76c4f38b",
     "readerQuestion": "이 기능은 무엇을 가능하게 하는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -585,7 +585,7 @@
   {
     "id": "cpr:material:CH05.P1:start-with-consent",
     "product": "comprehensive-product-research",
-    "hash": "9144007ec04c4322107a0d0cd816d0def6f2c0be1c15486180415bd32fc76acb",
+    "hash": "30a6fd1117fa2364f5228f17bdcac06baf3a37ffca1d5afd5626e7008eb18b93",
     "readerQuestion": "이 기능은 무엇을 가능하게 하는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -596,7 +596,7 @@
   {
     "id": "cpr:material:CH05.P1:support-need-not-guess",
     "product": "comprehensive-product-research",
-    "hash": "fb2ff6532be44360c1ee588d87fcd15a6cf92bbe847b3280ea301cfdcad69f4e",
+    "hash": "8d10669302559f2fb2704eb6d003ec280da6763a0151c236dd8ff55d68b309c9",
     "readerQuestion": "이 기능은 무엇을 가능하게 하는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -607,7 +607,7 @@
   {
     "id": "cpr:material:CH05.P2:make-visible",
     "product": "comprehensive-product-research",
-    "hash": "2251f1465c170a351b693746b0fa8f2b294fb3c2ecf90dbc17a2a99903ccbeab",
+    "hash": "9ecf9c9d568223ca23a103a2ca3523f8850fb1a6fcd64305248c8cb2f1e548f1",
     "readerQuestion": "첫 강점과 다른 두 번째 기능은 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -618,7 +618,7 @@
   {
     "id": "cpr:material:CH05.P2:resource-route",
     "product": "comprehensive-product-research",
-    "hash": "c2526a49b878a5b26738036aef7e2f0aaf134554256d791bd707b249cf8afa32",
+    "hash": "33d75581ed9ba7c7a226f2f18bb54b2b6bb15e24aa10845b56d3008609b47cbf",
     "readerQuestion": "첫 강점과 다른 두 번째 기능은 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -629,7 +629,7 @@
   {
     "id": "cpr:material:CH05.P2:translate-for-learner",
     "product": "comprehensive-product-research",
-    "hash": "21590951f3f97e045d0e085a8c52fdff42b858cb8c3f65348e67a19cb5365dfc",
+    "hash": "3e74153d6ebab21179ab505586b61c12654f559410ed2c6b1c59a203444f734f",
     "readerQuestion": "첫 강점과 다른 두 번째 기능은 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -640,7 +640,7 @@
   {
     "id": "cpr:material:CH05.P3:quiet-lead",
     "product": "comprehensive-product-research",
-    "hash": "7d60977901e0d777a3746a4992675f884914e46288316302e5ff69411fbe597e",
+    "hash": "0978ab4b7433acb000c09d077bcde193a8809e4a33b12ff316bd64795723d623",
     "readerQuestion": "예상과 다른 장점은 어떤 조합에서 가능한가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -651,7 +651,7 @@
   {
     "id": "cpr:material:CH05.P3:standards-open-way",
     "product": "comprehensive-product-research",
-    "hash": "cec6f4cd1c50d13b1bcf0ba549fe8ffb3ca78efe3e353dd965043a44d4db5152",
+    "hash": "4d801ed115ddaddcf1d8d7dc3b6d408c46177017ae7ec57153c37b9cd67ac097",
     "readerQuestion": "예상과 다른 장점은 어떤 조합에서 가능한가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -662,7 +662,7 @@
   {
     "id": "cpr:material:CH05.P3:boundaries-enable-support",
     "product": "comprehensive-product-research",
-    "hash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "hash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
     "readerQuestion": "예상과 다른 장점은 어떤 조합에서 가능한가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -728,7 +728,7 @@
   {
     "id": "cpr:material:CH06.P1:correction-before-request",
     "product": "comprehensive-product-research",
-    "hash": "3dc3ff7143f2b3f7da3def8a6c6ebfbbefa38b597b90fffb7ff6555991d12126",
+    "hash": "a7605b65864e7aaadeb6c6392df5b1d6d410c3e96c03519e6df3d7db1ef251d4",
     "readerQuestion": "좋은 기능이 언제 비용이 되는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -739,7 +739,7 @@
   {
     "id": "cpr:material:CH06.P1:goal-eats-capacity",
     "product": "comprehensive-product-research",
-    "hash": "39ba9db67d5b02e8896c4c29b199611f15f4e67fbfe31c79f39cf83752884951",
+    "hash": "18d131bc911aae998ed56b70505635bd1a9f76a18390d5d4a78883bdc0fa3ec9",
     "readerQuestion": "좋은 기능이 언제 비용이 되는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -750,7 +750,7 @@
   {
     "id": "cpr:material:CH06.P1:help-with-hidden-expectation",
     "product": "comprehensive-product-research",
-    "hash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "hash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
     "readerQuestion": "좋은 기능이 언제 비용이 되는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -761,7 +761,7 @@
   {
     "id": "cpr:material:CH06.P2:output-authority-collision",
     "product": "comprehensive-product-research",
-    "hash": "04a6febd29f30ef515f4b4c866b51c5d202871afb39f89cf482af33903b80abe",
+    "hash": "b265014e1d59c2b25b44dede422cb4be42c06b827375b67703dd0d585bb8146f",
     "readerQuestion": "그 비용을 무엇으로 설명할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -772,7 +772,7 @@
   {
     "id": "cpr:material:CH06.P2:wealth-and-load",
     "product": "comprehensive-product-research",
-    "hash": "f8433d2f99afe8f2ebe0e295be7444003fe591e8bdd9d4e4c01bba1afbaac8dd",
+    "hash": "7d0b78749a9245b7011f72da6f1413ab600fb0949f1e47915eb0aa5e77ffc8fe",
     "readerQuestion": "그 비용을 무엇으로 설명할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -783,7 +783,7 @@
   {
     "id": "cpr:material:CH06.P2:support-versus-obligation",
     "product": "comprehensive-product-research",
-    "hash": "19f75fa79ccd940de1e26498dadcca9b56cb11311960c709ec08fb4ac7409c60",
+    "hash": "3df3eea88a7f6895bbcb641d2a6350b05e74d455619c3703d34a1eb5b7b26ff0",
     "readerQuestion": "그 비용을 무엇으로 설명할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -794,7 +794,7 @@
   {
     "id": "cpr:material:CH06.P3:feedback-as-evaluation",
     "product": "comprehensive-product-research",
-    "hash": "20da119835c898f75446bcb32801915287ececa4bded6adc10d3d14b95c45a21",
+    "hash": "219c5857e8845937911e365aac08e52bd393ecbd9b46c31ce6ac37fbe05c75cc",
     "readerQuestion": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -805,7 +805,7 @@
   {
     "id": "cpr:material:CH06.P3:decide-for-everyone",
     "product": "comprehensive-product-research",
-    "hash": "85d755250747d19483fb0e5b2fb6cf84973a67a340ccd3f51a50c4168f360389",
+    "hash": "8e70657ad97b8c15d486381e60ea08eb8c5d7955000ce51b7539ae4407eff1e1",
     "readerQuestion": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -816,7 +816,7 @@
   {
     "id": "cpr:material:CH06.P3:care-without-request",
     "product": "comprehensive-product-research",
-    "hash": "95af7d67de36d0e7253698a466285e4ebd97fb913c3395ce755ffa92eb745776",
+    "hash": "4688b2896e76c1fad5c7f2cf42fabaf3bdc61f87f2fce99d5df794d78872bf19",
     "readerQuestion": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1047,7 +1047,7 @@
   {
     "id": "cpr:material:CH08.P1:criteria-before-delivery",
     "product": "comprehensive-product-research",
-    "hash": "0256c4c50d805ba04aa54ce80f690e39a7779b1ca86a9e194e083b60f5d6e070",
+    "hash": "aef66176c6c6aaa94eb7abdd01b284ae3c84ae41012c4a66ee8e20d1b0b45153",
     "readerQuestion": "실제 일에서 나는 무엇부터 맞추는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1069,7 +1069,7 @@
   {
     "id": "cpr:material:CH08.P1:work-through-shared-purpose",
     "product": "comprehensive-product-research",
-    "hash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "hash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
     "readerQuestion": "실제 일에서 나는 무엇부터 맞추는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1080,7 +1080,7 @@
   {
     "id": "cpr:material:CH08.P2:diagnose-assumptions",
     "product": "comprehensive-product-research",
-    "hash": "55bcc37067661ce0964ba7c453c896a3672cb1815bacde9f9c4e5db2338bcf51",
+    "hash": "9a5f77394c5d42232676a6c079a6df6fc4cca5e4c11ddb46ba0bc4b9f7b83b77",
     "readerQuestion": "어떤 역할에 내 기능을 배정할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1091,7 +1091,7 @@
   {
     "id": "cpr:material:CH08.P2:handoff-continuity",
     "product": "comprehensive-product-research",
-    "hash": "14c8752b7ddfdbc06821ee20989e3a7b35f14322025d8ff6a59428f8792a3c41",
+    "hash": "6d086ccfd2d8d586544be4ae117bf0080cf1a034c0d9b5eb8093654259f86597",
     "readerQuestion": "어떤 역할에 내 기능을 배정할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1102,7 +1102,7 @@
   {
     "id": "cpr:material:CH08.P2:explain-use-for-people",
     "product": "comprehensive-product-research",
-    "hash": "390f6125c0112a348bc5a7a3ada1f3751d4503dcc874fb265244911a06156882",
+    "hash": "f2f283e2593b0586930badcdff3b167750248af995061694b08da436a6fba81e",
     "readerQuestion": "어떤 역할에 내 기능을 배정할 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1113,7 +1113,7 @@
   {
     "id": "cpr:material:CH08.P3:control-without-method-space",
     "product": "comprehensive-product-research",
-    "hash": "248f3be6a99bf00b5a28e7435153eac6323e291b56e8478afd655926be0b7494",
+    "hash": "c8251612812a92f040dae96773914877302b1dd08fa6bf45ae52213680f9ada3",
     "readerQuestion": "어떤 환경 조건이 기능을 막을 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1124,7 +1124,7 @@
   {
     "id": "cpr:material:CH08.P3:changing-standard-without-log",
     "product": "comprehensive-product-research",
-    "hash": "52bab841ff6babe8fd1d40586ae6fdb0fe253439af7162644a51eb5d2f87edd3",
+    "hash": "a0f8dc758b63175854aac42763419523e0292e4e059e7d8683f4d664c1124875",
     "readerQuestion": "어떤 환경 조건이 기능을 막을 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1135,7 +1135,7 @@
   {
     "id": "cpr:material:CH08.P3:feedback-never-reaches-work",
     "product": "comprehensive-product-research",
-    "hash": "2303748d358b0cc0b86e9f6b4ab823459b08aee733bd42d9b8a27bd0830d68d8",
+    "hash": "ba7b08cb3b49c7a96972ae8ac047ff0b7fe460428f95889bf84ba92746e2e2eb",
     "readerQuestion": "어떤 환경 조건이 기능을 막을 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1146,7 +1146,7 @@
   {
     "id": "cpr:material:CH08.P4:learn-with-feedback",
     "product": "comprehensive-product-research",
-    "hash": "28c6ffad818395dcb826c4f076248bb8b0a18f6f03ad3e1ba5b1c0369007b249",
+    "hash": "27ca367fc6b47824a434fb9aa6325c03f367d98cd015ebf15413faf70697aa86",
     "readerQuestion": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1201,7 +1201,7 @@
   {
     "id": "cpr:material:CH09.P1:money-as-project-resource",
     "product": "comprehensive-product-research",
-    "hash": "8ea3d6c73a4355d81e2e3c6219cf08e48d5770fd25c6b6329e4340a94283b833",
+    "hash": "3c7926a5b480d3ea23670554274fe2845c6a2f84457a1b5bf94a903a3f92bb1c",
     "readerQuestion": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1212,7 +1212,7 @@
   {
     "id": "cpr:material:CH09.P1:money-as-experience",
     "product": "comprehensive-product-research",
-    "hash": "82a6e30085227fbbbedfcddf2dbd61bd5f11926c8a1308810c29bfd3afc199e1",
+    "hash": "922fe6892ae75a362844e5f49a5c8deaf40ca6cf52139dbb9a786ecb0b3cada4",
     "readerQuestion": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1223,7 +1223,7 @@
   {
     "id": "cpr:material:CH09.P1:money-as-meaning",
     "product": "comprehensive-product-research",
-    "hash": "a5da05dbca4710bcb49490d0cf1e7c6ce48b6aa4ca1bf1f81f76f01e748d735c",
+    "hash": "77cf2364dd8dd3da6ff9c70a6324018300685f6358d85ca59d44c00febd7b295",
     "readerQuestion": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1267,7 +1267,7 @@
   {
     "id": "cpr:material:CH09.P3:generosity-has-a-budget",
     "product": "comprehensive-product-research",
-    "hash": "d2e4d33d5d37c86ab52ed06bb58d5cf8f63755e1d35baa61cce10c44fe578cb7",
+    "hash": "fc570732ab669c9396b40138ca7a6867e6457849d121e59fd7b7e1515595b8dd",
     "readerQuestion": "어떤 판단이 자원 부담을 가릴 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1278,7 +1278,7 @@
   {
     "id": "cpr:material:CH09.P3:expertise-price-silence",
     "product": "comprehensive-product-research",
-    "hash": "d09afc4a9efbeb2e3a41359c42b3d9ca0b6b1a4dc829292f96dfe6aae477e82b",
+    "hash": "b1884263d74f2ca49909d188982c8046361ccbb9e8ed3e1213bcce0561598bbe",
     "readerQuestion": "어떤 판단이 자원 부담을 가릴 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1344,7 +1344,7 @@
   {
     "id": "cpr:material:CH10.P1:affection-through-small-actions",
     "product": "comprehensive-product-research",
-    "hash": "0b57082b3801beb3524fb65caff97c28595b7b72eb0870aea9b82a1be03d3aab",
+    "hash": "efbdedf32b7006d9a64abc2adaf6d67d2eaa5009843b035ceb4fd3782c7b5e9f",
     "readerQuestion": "관심을 어떤 통로와 속도로 전하고 싶은가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1355,7 +1355,7 @@
   {
     "id": "cpr:material:CH10.P1:space-and-return",
     "product": "comprehensive-product-research",
-    "hash": "4a6f84d055d29f700fac0bececf4cc71c9f39af9a5a31ead6400d7f24ddb7c09",
+    "hash": "a3a7dfc8f0af1196e16578eb401334299eaedf5f68e53f3d8d76bfe5cac2d4a0",
     "readerQuestion": "관심을 어떤 통로와 속도로 전하고 싶은가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1366,7 +1366,7 @@
   {
     "id": "cpr:material:CH10.P1:ask-about-direction",
     "product": "comprehensive-product-research",
-    "hash": "c168a8a77232b17f13d66513036ae550a3835d4722284becf969fe3e89f64716",
+    "hash": "3ee7608500e9a475ff6771fd254acef72cc1dc93f88232490aa8b1cf2a9030b9",
     "readerQuestion": "관심을 어떤 통로와 속도로 전하고 싶은가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1377,7 +1377,7 @@
   {
     "id": "cpr:material:CH10.P2:warmth-in-chosen-details",
     "product": "comprehensive-product-research",
-    "hash": "a4b775eaa5040f7b05ada9ecb2c6f966a9419d82664e5d6af27db2ab3d387618",
+    "hash": "f108dc0ff36f3c44ff9caef61e7d8af0d66e201cea2674470fbe5317df135f5c",
     "readerQuestion": "어떤 표현이 관계에서 가치가 될 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1388,7 +1388,7 @@
   {
     "id": "cpr:material:CH10.P2:curiosity-as-intimacy",
     "product": "comprehensive-product-research",
-    "hash": "814d182382984074264fbc2fddab6f657a0c8cd611f1f441eee3b1fd24dfe21c",
+    "hash": "78d22b4e590f8bb0c0a2a11287ccffbb033334be7d501fc7eaebca2ced8e0b9e",
     "readerQuestion": "어떤 표현이 관계에서 가치가 될 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1399,7 +1399,7 @@
   {
     "id": "cpr:material:CH10.P2:respond-with-room",
     "product": "comprehensive-product-research",
-    "hash": "65a43d04351d3b10367e345da8ec8e04d357916ff40eeb617bee0986133c35a1",
+    "hash": "e2b083144d3f5ef14ddf143e7512cc3fa7fd2e2111b594be4376504ffa5bdbde",
     "readerQuestion": "어떤 표현이 관계에서 가치가 될 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1410,7 +1410,7 @@
   {
     "id": "cpr:material:CH10.P3:romance-as-problem-set",
     "product": "comprehensive-product-research",
-    "hash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+    "hash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
     "readerQuestion": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1421,7 +1421,7 @@
   {
     "id": "cpr:material:CH10.P3:confirmation-pressure",
     "product": "comprehensive-product-research",
-    "hash": "d0b666b36513f46bb4e0d86fd3f4142e26e162c25433bb9d4e2b74f17f44b444",
+    "hash": "b34ff010eeceede77bc3750b3eb3ad493942043ddba75539ae3aa5f3a1d09ec0",
     "readerQuestion": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1432,7 +1432,7 @@
   {
     "id": "cpr:material:CH10.P3:space-without-signal",
     "product": "comprehensive-product-research",
-    "hash": "4ddcce00e1e870342e94d5e4bd2309818a1c3d46f918559e5324cd8d62150d13",
+    "hash": "327011615280324b62621184cf26250eddda77edf116247b9aad97c07fcf2571",
     "readerQuestion": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1520,7 +1520,7 @@
   {
     "id": "cpr:material:CH11.P1:protect-with-permission",
     "product": "comprehensive-product-research",
-    "hash": "003b31a1fc678fde7532ad1322821e2a0a29ebd1083ae2971294f7b02ea92597",
+    "hash": "70bfe60e9c1727b6ebce24546b9a8af5c2ab6fd909eeb7377de6596fe42beae9",
     "readerQuestion": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1531,7 +1531,7 @@
   {
     "id": "cpr:material:CH11.P1:own-choice-near-family",
     "product": "comprehensive-product-research",
-    "hash": "79ceabf190fa14ee1154b47f2dc1ec245d4d976601a686e4519e8643e4880bfc",
+    "hash": "bceb9959e735aa996b08819c20098e63e2e37d55e466512aaa5cb5e2e2eef0ef",
     "readerQuestion": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1553,7 +1553,7 @@
   {
     "id": "cpr:material:CH11.P2:practical-care-with-agreement",
     "product": "comprehensive-product-research",
-    "hash": "88106d0a9dabf4dcdd976c2d01c91f89854bf75f0846fc8a2d55d3c1d0a3c801",
+    "hash": "a6585ad0bc10fb4a5d7cab14a7e640817e151626a879c387ad776b925194d8d3",
     "readerQuestion": "가까운 사람에게 어떤 도움이 실제로 남는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1564,7 +1564,7 @@
   {
     "id": "cpr:material:CH11.P2:clear-shared-logistics",
     "product": "comprehensive-product-research",
-    "hash": "abdd9184b4e8be9dbd5c0ebb7de31ef95f62de9659b34759facf0fbf156f0bd7",
+    "hash": "740b55f028c5fb7fd21bde88456fcf4ff679212c4e15164dba25aaa9d591cccd",
     "readerQuestion": "가까운 사람에게 어떤 도움이 실제로 남는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1586,7 +1586,7 @@
   {
     "id": "cpr:material:CH11.P3:care-load-becomes-default",
     "product": "comprehensive-product-research",
-    "hash": "2281f1e85a43a8c64ff7147ab42f57fbe2c87761a6a0eb8e8d495c9ca0f7fc2f",
+    "hash": "6ed260125e54545f5e94580ebc948a53c4281683ce2952f4540a2fecced3a55e",
     "readerQuestion": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1597,7 +1597,7 @@
   {
     "id": "cpr:material:CH11.P3:protection-becomes-decision",
     "product": "comprehensive-product-research",
-    "hash": "5bbcfaf270f04ea75b10404b8db20b0d246ad4db7b1e3674f927f048981bcc1c",
+    "hash": "12bd400fb879878ce44ee8ae05d61a5634061e0397badac08d597681f70623c3",
     "readerQuestion": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1608,7 +1608,7 @@
   {
     "id": "cpr:material:CH11.P3:privacy-and-coordination",
     "product": "comprehensive-product-research",
-    "hash": "db295746473ba7fb92228f52325a73887ce696bf232d4cda8eec3867a10e4b72",
+    "hash": "514389ce587d167dd0ca046689f0286ce430dd478270045fc5b03745c3a9317e",
     "readerQuestion": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1663,7 +1663,7 @@
   {
     "id": "cpr:material:CH12.P1:open-a-voluntary-meeting",
     "product": "comprehensive-product-research",
-    "hash": "706c54fc4ff183a736b8007d6227f662461e1e83629d31fdf2c72c0b9ac6b329",
+    "hash": "9b17751a01b06aeffb3e53bd98cf42d38990222bed2b6b604fb794f9d1199389",
     "readerQuestion": "자발적인 우정에서 어떤 참여를 제안하는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1674,7 +1674,7 @@
   {
     "id": "cpr:material:CH12.P1:reliable-invitation",
     "product": "comprehensive-product-research",
-    "hash": "810125d67afa4134a97da84c37f3a35bafcdf6a94ed63cb86582e4b7db87f5ee",
+    "hash": "0b93d5d7ec582536b1f7b7c842f396275ed50882627740dccad1e3135db033d1",
     "readerQuestion": "자발적인 우정에서 어떤 참여를 제안하는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1685,7 +1685,7 @@
   {
     "id": "cpr:material:CH12.P1:curious-listener",
     "product": "comprehensive-product-research",
-    "hash": "34a029dca1a603a0ff67a7b9d90974111b24cb029a923ed6b4225f8d74bad085",
+    "hash": "7e8263ae372124a5fba91e2ca149d910a23cd53e79230a1d01b90adf6177b254",
     "readerQuestion": "자발적인 우정에서 어떤 참여를 제안하는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1696,7 +1696,7 @@
   {
     "id": "cpr:material:CH12.P2:space-with-respect",
     "product": "comprehensive-product-research",
-    "hash": "1c6a48ba4bcb42fee0d93d0e9adb57edbe0ac200f0ed3642b429df9222c5ad55",
+    "hash": "d568f42b5900add591c2c5dc3e043e04d68f6511955d16239049603913fc90b6",
     "readerQuestion": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1707,7 +1707,7 @@
   {
     "id": "cpr:material:CH12.P2:remember-and-check",
     "product": "comprehensive-product-research",
-    "hash": "5d61c8a497e4a0cf3f6d79fbb515bf881206ddcc35207ddf17db441afecdb395",
+    "hash": "ea24e9ecda41740cb81ab4d2e8979aa8a13395378d1f7a4ac54e8d61454c6f6b",
     "readerQuestion": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1718,7 +1718,7 @@
   {
     "id": "cpr:material:CH12.P2:shared-making-not-performance",
     "product": "comprehensive-product-research",
-    "hash": "46d59aa1b7ba83aa83bdbe8410597737e904c528689b8146dca01790e7f0ff96",
+    "hash": "19ba511933ddc8f50461656a4bea28f5558ad8d0db922368509cd049f39edf74",
     "readerQuestion": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1729,7 +1729,7 @@
   {
     "id": "cpr:material:CH12.P3:repair-not-correct-person",
     "product": "comprehensive-product-research",
-    "hash": "c4ca93a7bc6fd09fb03589073ed9c2728a82ded5bab28c8722071994cadb5d8e",
+    "hash": "0e735568d14a128bb300061031003047bcd66810748af25e94aaa5304d2285b7",
     "readerQuestion": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1740,7 +1740,7 @@
   {
     "id": "cpr:material:CH12.P3:invite-without-oversubscription",
     "product": "comprehensive-product-research",
-    "hash": "b7f053e1ce75dfd2f862bd8d522cef004cca893434a3fc1adf329ca6ef7df3df",
+    "hash": "bbf819ea3bb3beb91868f4a093e5ad771920d197b878b06f6440ca173759ba96",
     "readerQuestion": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,
@@ -1751,7 +1751,7 @@
   {
     "id": "cpr:material:CH12.P3:quiet-without-disappearance",
     "product": "comprehensive-product-research",
-    "hash": "a3e61ba80b17b292fb8d661aac0f4c5c4aee1f3b008e4c5cbc4575f2c4fa75ac",
+    "hash": "ac26426eac2d63fcae2e8313d33732af834dc299345dc7612a6abfb283f45114",
     "readerQuestion": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
     "review": "conditional_editorial_research",
     "relatedMeaningOnly": true,

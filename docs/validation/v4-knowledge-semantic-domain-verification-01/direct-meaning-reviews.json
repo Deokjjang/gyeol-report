@@ -343,7 +343,7 @@
   {
     "reviewId": "sdv:review:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
     "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
-    "originalRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+    "originalRecordHash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
     "sourceFields": [
       "/coreMeaning",
       "/readerQuestion"
@@ -687,7 +687,7 @@
   {
     "reviewId": "sdv:review:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
     "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
-    "originalRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+    "originalRecordHash": "607c643d9d755a0cec3da642d42e9fd892eead45684fbf93287e72ae74e86292",
     "sourceFields": [
       "/originalState/raw/plainKo",
       "/originalState/node/sourceDomain"
@@ -723,7 +723,7 @@
   {
     "reviewId": "sdv:review:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
     "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
-    "originalRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+    "originalRecordHash": "cc253e2bcf0931fb1e9b99164979cc793bee8e662bc9dcd290be9bcd5b863454",
     "sourceFields": [
       "/originalState/raw/plainKo",
       "/originalState/node/sourceDomain"
@@ -960,7 +960,7 @@
   {
     "reviewId": "sdv:review:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
     "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
-    "originalRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+    "originalRecordHash": "2b18b99e41955acd089ff684ab8cfa10f0665cf11684aee344cf253b12165e90",
     "sourceFields": [
       "/raw/plainKo",
       "/semanticNode/sourceDomain",
@@ -995,7 +995,7 @@
   {
     "reviewId": "sdv:review:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
     "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
-    "originalRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+    "originalRecordHash": "9b02074ca645935be9f3e4b3c5e97782bb7032a2f2772c622806ea3e875e35fc",
     "sourceFields": [
       "/raw/plainKo",
       "/semanticNode/sourceDomain",

@@ -14,7 +14,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#2f90ecfe06a11bd76f98",
     "recordSha256": "e0c6e86484eb4e18ed09f552d844eed205d79e57d932f9361fb576e95f73fa40",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "love",
@@ -36,7 +36,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#99d6728eeef28d090237",
     "recordSha256": "9815d6041c569c4d52d18f62f0beb6e2ba16aa3c8367d4000dee2d4c15e5d6b2",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "love",
@@ -58,7 +58,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#2fe4d73f766a08fb06e6",
     "recordSha256": "c9561f145688a2c635a823c2ef47c1c7e3cfb606fcc530a4685ba2e17e06aad0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "sourceType": "INTP",
       "targetType": "ESFJ",
@@ -81,7 +81,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#b890602102b781593253",
     "recordSha256": "68e7700be17523fbab1582638e43a0a3230af8b200025ec255143579bc72711a",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "sourceType": "ESFJ",
       "targetType": "INTP",
@@ -104,7 +104,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#5190684455c102b45097",
     "recordSha256": "17eec3bac834387f9c208dd6a2bc5ca527d14720aa113c4bcd13b59e507e05a0",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "love",
@@ -126,7 +126,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#dfc34b2596abcc59968f",
     "recordSha256": "230ab008bf8b2c783b38446c0c0a064a46e70395e344720d51330eaf32e07c2a",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "love",
@@ -148,7 +148,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#5b05125a1c9e81d25d44",
     "recordSha256": "c686a3d0ed295a9b9f9f8c2cbf1a1aa87da2605b2f8c257ffe7d44847020c417",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "sourceType": "ISTJ",
       "targetType": "ENFP",
@@ -171,7 +171,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#765b734d69351a52f114",
     "recordSha256": "19c2841de1895fa0ba3496d155ff16b34205706578338a5e1fabac946c72aa1a",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "sourceType": "ENFP",
       "targetType": "ISTJ",
@@ -346,7 +346,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#63e067b6cec4f0da1ffe",
     "recordSha256": "f92b01decf1d1872edfa31371d6c710bf868277c25843bfde5fc537974f9e3fc",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "love",
@@ -368,7 +368,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f4b08443773729cee364",
     "recordSha256": "24b05c9fb97883d4405f2da495462d694be33bd49bb4adef6b31e22875ee2110",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "love",
@@ -390,7 +390,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#6e846060eca8b8a32399",
     "recordSha256": "79af7c97d79a4ede31a94b9413b867ec41189013925984c22f386f8ef2b4ba60",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "love",
@@ -412,7 +412,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#90de97440a025970e638",
     "recordSha256": "a72c230d6b67647aaabe37f7787ac13e28dce517897b20642540ccf1f826fc41",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "love",
@@ -434,7 +434,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#cf5158655a04bd3117e9",
     "recordSha256": "017e65b33ec7f0c838c02d695edb2c02dc7e2baf6a43b62dbdca52f2aed6e184",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "sourceType": "ENFJ",
       "targetType": "ISTP",
@@ -457,7 +457,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#5c1631c8cc56ab7b4857",
     "recordSha256": "9be5f77b471955316a78ffaec4720c0e8e031cdad201f672e9439b696903e5a3",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "sourceType": "ISTP",
       "targetType": "ENFJ",
@@ -480,7 +480,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#00a52eadb4c1c9dbf9d1",
     "recordSha256": "2f8fc9cceba32de6e199c6220fab7d9fef1dada30e4cba75293e5e88718b7d3d",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "love",
@@ -502,7 +502,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#829aba7d8c1c08596ec1",
     "recordSha256": "671a130725a307f72ae75ffd00479bf7de6ee30b406ea151ee7d1a7cfa77ff70",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "love",
@@ -524,7 +524,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#1da26b1b725caf974077",
     "recordSha256": "f0a254b588e6bc04d169b5295759090379c49e9f37d9ccbf8fc9ea1e4f98c707",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "sourceType": "INTJ",
       "targetType": "INTJ",
@@ -547,7 +547,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#22219e4de369178b0387",
     "recordSha256": "4e1dc511906a93a05438d88ff0602b05cf3be29db7f8e035e9e49e1d004c14b7",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "love",
@@ -569,7 +569,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d048a1db929d8e81a67f",
     "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "love",
@@ -670,7 +670,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d311c40e8b3f4b157c09",
     "recordSha256": "c103bc826f0160cc8ac0b292362b0d61368b3f56ee55705c233f136cebd234a4",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "love",
@@ -692,7 +692,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8e927df60c470175a28b",
     "recordSha256": "3e6d8164d5b6bfbcb0c08b214f4cf3d189ce9ef6cd64b814377ffdb69390ae04",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "love",
@@ -714,7 +714,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1ad75d65f36179f32968",
     "recordSha256": "6f1967dae9a1f0c3c53563ea39076f7aa21f1184dbac71032fbe19cef74e3fab",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "love",
@@ -736,7 +736,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f3a71de74732acc8d4fd",
     "recordSha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "love",
@@ -758,7 +758,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8a6e798d5bb288c958fa",
     "recordSha256": "7798937240c84e59f327be4628eacc7e608ee4c5d7af70a662f0a8838b500ef8",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "love",
@@ -780,7 +780,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b71d7b721fd430f52898",
     "recordSha256": "9f4fddea629440871fbe6c3971735850db9644ec492bb89a804833ad92036584",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "love",
@@ -842,7 +842,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#96a809889e7203550ec2",
     "recordSha256": "3d5dc96e8a36559dfdca6761f16b1fe50fc1ccfe7ca804be0abbfd0f3a2481a9",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "love",
@@ -864,7 +864,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#7262748ae842a059b4fc",
     "recordSha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "love",
@@ -886,7 +886,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d35d738ef528ee981728",
     "recordSha256": "da49157ebfff83ceb2b1ced2015da34e1fe8fd81aae6d5b98760b296338c023e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "relationships",
@@ -908,7 +908,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b237ee4b3b3a29f96aa1",
     "recordSha256": "658918804fbb8696ab340dead4395d7cdd2cb8351bfa5a55b4277b5b825a0337",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "love",
@@ -930,7 +930,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#4b43fdff038f96814956",
     "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "communication",
@@ -985,7 +985,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#db247d65aafcb4dee108",
     "recordSha256": "bf6789553336686423fbf238d69bd6fad4f4d62f2aca6d34a3cdacfc43fd4f45",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "love",
@@ -1007,7 +1007,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#9157cb32f6c4c40c5336",
     "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "communication",
@@ -1029,7 +1029,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#36656d3001309491d0b4",
     "recordSha256": "d10a4e1693d0a5f5845fd84fd866985032ef22604796e494b0eef1f8fb8be37a",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "love",
@@ -1051,7 +1051,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1004e6a907ac24e91902",
     "recordSha256": "e106fb929accb6d10551347630c458bb31cfc5f336eb14d7a4a2a9d890bbf5de",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "love",
@@ -1113,7 +1113,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#2b93d97c1e2c796152d6",
     "recordSha256": "979f769b04b3ccf05e5a5764f10d77840c57502d37ae15ab671f06514dddad87",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "communication",
@@ -1135,7 +1135,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#4d4a080342aae90654f6",
     "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "communication",
@@ -1157,7 +1157,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#3c4908e2cedec63d2de9",
     "recordSha256": "dbbc7469109e06b3e69456086de5fa4b3995eb1a7a565c5281f4315a97ae5a95",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "love",
@@ -1179,7 +1179,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cbf1428b3d23661a2472",
     "recordSha256": "de8d53096994f8d593a20c2aa61e257c22acbe76a76a1aee701c17fa8e3c7829",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "love",
@@ -1201,7 +1201,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#471b73edd84a2be883e2",
     "recordSha256": "efb3024caab1a5b8715d58dbbe704bb89df96e9d50bc395afb73fd42095be5fb",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "relationships",
@@ -1223,7 +1223,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#da819a8014c02653d68c",
     "recordSha256": "cc69ae961d2ede1e94d53d7d34288e4873372addbf2cc541e75e8e25c4825890",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "sourceType": "ENTP",
       "targetType": "ISFJ",
@@ -1246,7 +1246,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#9b4682e6d53366baf3e7",
     "recordSha256": "69e4a69e2b37a3e90b6bcc638a103be13316f10b8ea5a97ea7632924b5d56c9d",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "sourceType": "ISFJ",
       "targetType": "ENTP",
@@ -1269,7 +1269,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8a3b104ce2a794e55b60",
     "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "communication",
@@ -1291,7 +1291,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e49363e69d48e0771b10",
     "recordSha256": "e1f3b0ca16f8d907a0a83a6b17df11dabc63be38d4b636b4575e0abb8c019723",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "love",
@@ -1313,7 +1313,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ba4aed5f58e7de310848",
     "recordSha256": "814540157d57cd6ebd42a2e9a7011d25724c847217defacde8632caeb848b7ff",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "love",
@@ -1378,7 +1378,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ed6c765a89a6653fbe49",
     "recordSha256": "5fc039227f3dc245b1f209764f3698d89cbf70682e002f6c7efeb46d9b038e31",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "love",
@@ -1440,7 +1440,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#a469049c0715564eddeb",
     "recordSha256": "24d3e4a213be148ff1409b7beb37a39ddfddd8d265e2ea63f950b4f5974b2720",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "relationships",
@@ -1495,7 +1495,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c0d70c49b5a928ce5a82",
     "recordSha256": "96112e32ee358f2a0bb5443e36f29bfddb4209949f3b106a0ebb258753316ed2",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "communication",
@@ -1517,7 +1517,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#09f88fe7ec21e62f0659",
     "recordSha256": "f257c3a956697751e8d8dccc1846fd61fbc277d0a57eb7ebe3ab165d821c484e",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "communication",
@@ -1539,7 +1539,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#78cdb2e803560073a1c5",
     "recordSha256": "2801f90240fd789686f0770b9cb3c1745d45e77ee5c6a4fe05585c5f79eb8f00",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "love",
@@ -1561,7 +1561,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e8152f5a228dde8da538",
     "recordSha256": "a0b6ec1ef19bedca75dfa8f19e1c49093d63aa6e119533b56d86f37d00155818",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "communication",
@@ -1583,7 +1583,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d88467512c1c5489e7d0",
     "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "love",
@@ -1671,7 +1671,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8fce1695b6195da81f9d",
     "recordSha256": "b80ee9ec7e231d030fddb5a5ce2ec3877a8e3dbe789d1ba843cf1199fb2ce5b0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "communication",
@@ -1693,7 +1693,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#be4762318c579457d41c",
     "recordSha256": "c4796ca08aa9def8be551c002396db24c78f476f09e22e8dcc8154381d63bdcd",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "communication",
@@ -1715,7 +1715,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#738f089cfefc104fd626",
     "recordSha256": "a364b7fc18b85948bd53c0782bfba523400e5cac58e9f65e76a51c5dc5b3597c",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "love",
@@ -1737,7 +1737,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#fbf6075c276ff0b58116",
     "recordSha256": "7b725d5a619245716d2d89eee1baae81f48f24c70d1fc98265e374fcbc1995e8",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "communication",
@@ -1759,7 +1759,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#0893c89cb6a0f134a6d6",
     "recordSha256": "a69083dde951a66106e8dab5f7534b45f8d95b12f25e80794cf37a62d52a669b",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "love",
@@ -1781,7 +1781,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d2bab7db06e5a988314b",
     "recordSha256": "a9eb456deefbd12260f6edf18ee2d6c1eebfa95294415e4f8d2f0074f38c22e1",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "communication",
@@ -1803,7 +1803,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#9480be75092745eda721",
     "recordSha256": "3e45295193309706218115f7b1d0c3fb3264cd150ddd149d50cbc9ed0863f28f",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "communication",
@@ -1825,7 +1825,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#ec946768eedaf2debe5c",
     "recordSha256": "61fad77d49babc848265fd6327b2e64d7042bf42d8ae7d5070e9fc434a5ac500",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "sourceType": "INTP",
       "targetType": "INTP",
@@ -1977,7 +1977,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#77f627655304fd8ba002",
     "recordSha256": "810c8bcf6d33607f2eb536148ea99d4e71c0746a48237598ea45dcc45e800426",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "relationships",
@@ -1999,7 +1999,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8264ae5e3ee1beaf0072",
     "recordSha256": "c113469886636f74f2a2b7180483e52de4f76e4720c2da99209c35d27d089480",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "love",
@@ -2021,7 +2021,7 @@ export const LOVE_PAIR_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ab58584bb46db51081a8",
     "recordSha256": "92bf7e499845fe670b9b4a145658581cacf21948f2c2958d593068905b447adb",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "communication",

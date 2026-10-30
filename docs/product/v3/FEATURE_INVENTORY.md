@@ -567,7 +567,7 @@
 | life-stage:절 / 절 | src/lib/report-knowledge/sajuPillarFeaturePlacement.ts#twelveLifeStageByStem / buildSajuPillarGridColumns | per-pillar label | identity | 종합·직업·연애·궁합·대운·세운 | derived / needs-source |
 | life-stage:태 / 태 | src/lib/report-knowledge/sajuPillarFeaturePlacement.ts#twelveLifeStageByStem / buildSajuPillarGridColumns | per-pillar label | identity | 종합·직업·연애·궁합·대운·세운 | derived / needs-source |
 | life-stage:양 / 양 | src/lib/report-knowledge/sajuPillarFeaturePlacement.ts#twelveLifeStageByStem / buildSajuPillarGridColumns | per-pillar label | identity | 종합·직업·연애·궁합·대운·세운 | derived / needs-source |
-| mbti:INTJ / 용의주도한 전략가 | docs/product/mbti/source/INTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:INTJ / 전략 설계자 | docs/product/mbti/source/INTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INTJ:axis:energy / energy | docs/product/mbti/source/INTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INTJ:axis:perception / perception | docs/product/mbti/source/INTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INTJ:axis:judgment / judgment | docs/product/mbti/source/INTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -693,7 +693,7 @@
 | mbti-use:INTJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/INTJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:INTJ:daeunReport / daeunReport | docs/product/mbti/source/INTJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:INTJ:saeunReport / saeunReport | docs/product/mbti/source/INTJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:INTP / 객관적인 분석가 | docs/product/mbti/source/INTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:INTP / 원리 탐구자 | docs/product/mbti/source/INTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INTP:axis:energy / energy | docs/product/mbti/source/INTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INTP:axis:perception / perception | docs/product/mbti/source/INTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INTP:axis:judgment / judgment | docs/product/mbti/source/INTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -818,7 +818,7 @@
 | mbti-use:INTP:compatibilityReport / compatibilityReport | docs/product/mbti/source/INTP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:INTP:daeunReport / daeunReport | docs/product/mbti/source/INTP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:INTP:saeunReport / saeunReport | docs/product/mbti/source/INTP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ENTJ / 대담한 통솔자 | docs/product/mbti/source/ENTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ENTJ / 지휘관 | docs/product/mbti/source/ENTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENTJ:axis:energy / energy | docs/product/mbti/source/ENTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENTJ:axis:perception / perception | docs/product/mbti/source/ENTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENTJ:axis:judgment / judgment | docs/product/mbti/source/ENTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -940,7 +940,7 @@
 | mbti-use:ENTJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/ENTJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ENTJ:daeunReport / daeunReport | docs/product/mbti/source/ENTJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ENTJ:saeunReport / saeunReport | docs/product/mbti/source/ENTJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ENTP / 논쟁을 즐기는 발명가 | docs/product/mbti/source/ENTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ENTP / 반론 발명가 | docs/product/mbti/source/ENTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENTP:axis:energy / energy | docs/product/mbti/source/ENTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENTP:axis:perception / perception | docs/product/mbti/source/ENTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENTP:axis:judgment / judgment | docs/product/mbti/source/ENTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1063,7 +1063,7 @@
 | mbti-use:ENTP:compatibilityReport / compatibilityReport | docs/product/mbti/source/ENTP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ENTP:daeunReport / daeunReport | docs/product/mbti/source/ENTP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ENTP:saeunReport / saeunReport | docs/product/mbti/source/ENTP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:INFJ / 통찰력 있는 선지자 | docs/product/mbti/source/INFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:INFJ / 속을 읽는 상담가 | docs/product/mbti/source/INFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INFJ:axis:energy / energy | docs/product/mbti/source/INFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INFJ:axis:perception / perception | docs/product/mbti/source/INFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INFJ:axis:judgment / judgment | docs/product/mbti/source/INFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1190,7 +1190,7 @@
 | mbti-use:INFJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/INFJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:INFJ:daeunReport / daeunReport | docs/product/mbti/source/INFJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:INFJ:saeunReport / saeunReport | docs/product/mbti/source/INFJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:INFP / 중재자 | docs/product/mbti/source/INFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:INFP / 꿈꾸는 치유자 | docs/product/mbti/source/INFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INFP:axis:energy / energy | docs/product/mbti/source/INFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INFP:axis:perception / perception | docs/product/mbti/source/INFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:INFP:axis:judgment / judgment | docs/product/mbti/source/INFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1317,7 +1317,7 @@
 | mbti-use:INFP:compatibilityReport / compatibilityReport | docs/product/mbti/source/INFP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:INFP:daeunReport / daeunReport | docs/product/mbti/source/INFP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:INFP:saeunReport / saeunReport | docs/product/mbti/source/INFP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ENFJ / 선도자 | docs/product/mbti/source/ENFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ENFJ / 사람을 세우는 코치 | docs/product/mbti/source/ENFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENFJ:axis:energy / energy | docs/product/mbti/source/ENFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENFJ:axis:perception / perception | docs/product/mbti/source/ENFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENFJ:axis:judgment / judgment | docs/product/mbti/source/ENFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1431,7 +1431,7 @@
 | mbti-use:ENFJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/ENFJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ENFJ:daeunReport / daeunReport | docs/product/mbti/source/ENFJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ENFJ:saeunReport / saeunReport | docs/product/mbti/source/ENFJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ENFP / 재기발랄한 활동가 | docs/product/mbti/source/ENFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ENFP / 불씨를 퍼뜨리는 이야기꾼 | docs/product/mbti/source/ENFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENFP:axis:energy / energy | docs/product/mbti/source/ENFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENFP:axis:perception / perception | docs/product/mbti/source/ENFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ENFP:axis:judgment / judgment | docs/product/mbti/source/ENFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1546,7 +1546,7 @@
 | mbti-use:ENFP:compatibilityReport / compatibilityReport | docs/product/mbti/source/ENFP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ENFP:daeunReport / daeunReport | docs/product/mbti/source/ENFP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ENFP:saeunReport / saeunReport | docs/product/mbti/source/ENFP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ISTJ / 청렴결백한 논리주의자 | docs/product/mbti/source/ISTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ISTJ / 원칙의 기록자 | docs/product/mbti/source/ISTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISTJ:axis:energy / energy | docs/product/mbti/source/ISTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISTJ:axis:perception / perception | docs/product/mbti/source/ISTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISTJ:axis:judgment / judgment | docs/product/mbti/source/ISTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1656,7 +1656,7 @@
 | mbti-use:ISTJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/ISTJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ISTJ:daeunReport / daeunReport | docs/product/mbti/source/ISTJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ISTJ:saeunReport / saeunReport | docs/product/mbti/source/ISTJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ISFJ / 실용적인 조력가 | docs/product/mbti/source/ISFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ISFJ / 조용한 버팀목 | docs/product/mbti/source/ISFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISFJ:axis:energy / energy | docs/product/mbti/source/ISFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISFJ:axis:perception / perception | docs/product/mbti/source/ISFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISFJ:axis:judgment / judgment | docs/product/mbti/source/ISFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1777,7 +1777,7 @@
 | mbti-use:ISFJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/ISFJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ISFJ:daeunReport / daeunReport | docs/product/mbti/source/ISFJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ISFJ:saeunReport / saeunReport | docs/product/mbti/source/ISFJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ESTJ / 엄격한 관리자 | docs/product/mbti/source/ESTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ESTJ / 현장 감독 | docs/product/mbti/source/ESTJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESTJ:axis:energy / energy | docs/product/mbti/source/ESTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESTJ:axis:perception / perception | docs/product/mbti/source/ESTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESTJ:axis:judgment / judgment | docs/product/mbti/source/ESTJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -1901,7 +1901,7 @@
 | mbti-use:ESTJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/ESTJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ESTJ:daeunReport / daeunReport | docs/product/mbti/source/ESTJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ESTJ:saeunReport / saeunReport | docs/product/mbti/source/ESTJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ESFJ / 사교적인 외교관 | docs/product/mbti/source/ESFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ESFJ / 모임의 호스트 | docs/product/mbti/source/ESFJ.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESFJ:axis:energy / energy | docs/product/mbti/source/ESFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESFJ:axis:perception / perception | docs/product/mbti/source/ESFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESFJ:axis:judgment / judgment | docs/product/mbti/source/ESFJ.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -2025,7 +2025,7 @@
 | mbti-use:ESFJ:compatibilityReport / compatibilityReport | docs/product/mbti/source/ESFJ.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ESFJ:daeunReport / daeunReport | docs/product/mbti/source/ESFJ.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ESFJ:saeunReport / saeunReport | docs/product/mbti/source/ESFJ.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ISTP / 만능 재주꾼 | docs/product/mbti/source/ISTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ISTP / 손끝 해결사 | docs/product/mbti/source/ISTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISTP:axis:energy / energy | docs/product/mbti/source/ISTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISTP:axis:perception / perception | docs/product/mbti/source/ISTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISTP:axis:judgment / judgment | docs/product/mbti/source/ISTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -2137,7 +2137,7 @@
 | mbti-use:ISTP:compatibilityReport / compatibilityReport | docs/product/mbti/source/ISTP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ISTP:daeunReport / daeunReport | docs/product/mbti/source/ISTP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ISTP:saeunReport / saeunReport | docs/product/mbti/source/ISTP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ISFP / 호기심 많은 예술가 | docs/product/mbti/source/ISFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ISFP / 조용한 감각파 | docs/product/mbti/source/ISFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISFP:axis:energy / energy | docs/product/mbti/source/ISFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISFP:axis:perception / perception | docs/product/mbti/source/ISFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ISFP:axis:judgment / judgment | docs/product/mbti/source/ISFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -2258,7 +2258,7 @@
 | mbti-use:ISFP:compatibilityReport / compatibilityReport | docs/product/mbti/source/ISFP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ISFP:daeunReport / daeunReport | docs/product/mbti/source/ISFP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ISFP:saeunReport / saeunReport | docs/product/mbti/source/ISFP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ESTP / 모험을 즐기는 사업가 | docs/product/mbti/source/ESTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ESTP / 몸으로 뚫는 해결사 | docs/product/mbti/source/ESTP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESTP:axis:energy / energy | docs/product/mbti/source/ESTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESTP:axis:perception / perception | docs/product/mbti/source/ESTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESTP:axis:judgment / judgment | docs/product/mbti/source/ESTP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
@@ -2378,7 +2378,7 @@
 | mbti-use:ESTP:compatibilityReport / compatibilityReport | docs/product/mbti/source/ESTP.json / getMbtiReportUseCase | string[4] | compatibilityReport | 궁합 | knowledge-only / source-material |
 | mbti-use:ESTP:daeunReport / daeunReport | docs/product/mbti/source/ESTP.json / getMbtiReportUseCase | string[4] | daeunReport | 대운 | knowledge-only / source-material |
 | mbti-use:ESTP:saeunReport / saeunReport | docs/product/mbti/source/ESTP.json / getMbtiReportUseCase | string[4] | saeunReport | 세운 | knowledge-only / source-material |
-| mbti:ESFP / 자유로운 영혼의 연예인 | docs/product/mbti/source/ESFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
+| mbti:ESFP / 자리를 밝히는 사람 | docs/product/mbti/source/ESFP.json / getMbtiSourceProfile | type,archetype,oneLine,summary | all | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESFP:axis:energy / energy | docs/product/mbti/source/ESFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESFP:axis:perception / perception | docs/product/mbti/source/ESFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |
 | mbti:ESFP:axis:judgment / judgment | docs/product/mbti/source/ESFP.json / getMbtiSourceProfile | string | identity | 종합·직업·연애·궁합·대운·세운 | knowledge-only / source-material |

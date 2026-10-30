@@ -2,7 +2,7 @@
   {
     "catalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
     "originalId": "cpr:material:CH04.P2:private-criteria",
-    "expectedRecordHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+    "expectedRecordHash": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
     "engine": "comprehensive",
     "primaryMeaning": "개인 판단을 정돈할 공간과 공동 응답 기한을 나누는 질문이다.",
     "relatedButDifferentMeaning": "CH03 원천 간 긴장이 아닌 사적 판단 환경",
@@ -45,7 +45,7 @@
   {
     "catalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
     "originalId": "cpr:material:CH04.P3:firm-boundary-close",
-    "expectedRecordHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+    "expectedRecordHash": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
     "engine": "comprehensive",
     "primaryMeaning": "친절하게 도우면서도 수용할 요청의 경계를 정할 수 있다는 조건부 응용이다.",
     "relatedButDifferentMeaning": "CH06 단점 규정과 달리 친밀도 안의 선택권",

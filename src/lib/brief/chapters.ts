@@ -66,7 +66,9 @@ export function topDimension(tags: Readonly<Record<string, number>>, min = 0.6):
   const [d, v] = Object.entries(tags).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]) || a[0].localeCompare(b[0]))[0] ?? [];
   return d && Math.abs(v) >= min ? `dim:${d}${v > 0 ? "+" : "-"}` : null;
 }
-export const axesOf = (src: TraitSource): string[] => { const d = topDimension(src.feature.dimensionTags); return [groupKey(src.trait), ...(d ? [`${sideOf(src.trait)}${d}`] : [])]; };
+/** 궁합 두 사람이 같은 요소(예: 둘 다 정인)를 가지면 한 축으로 센다(P3.8 r2: 같은 뜻을 각자 소개·적용해 4번). */
+const sharedKey = (t: Trait) => sideOf(t) ? `pair:${t.featureId}` : null;
+export const axesOf = (src: TraitSource): string[] => { const d = topDimension(src.feature.dimensionTags), s = sharedKey(src.trait); return [groupKey(src.trait), ...(d ? [`${sideOf(src.trait)}${d}`] : []), ...(s ? [s] : [])]; };
 
 /** 장 영역 → 소품 줄. 일·돈·배움은 직업, 사랑·결혼은 관계 상태, 사람·혼자는 생활 단계 소품을 먼저 쓴다. */
 const PROP_POOL: Record<Domain, readonly ("job" | "relationship" | "stage")[]> = {
@@ -323,9 +325,11 @@ export function planChapters(input: PlanCtx): PlanResult {
   }
   for (const p of plans) p.sections = p.sections.filter(s => s.materials.length);
   // 소개(first)는 책 순서상 가장 앞 절이 받는다(①·② 배정 순서와 책 순서가 다르다). 장부의 소개 장도 책 순서로 다시 맞춘다.
-  const seen = new Set<string>();
+  // 궁합에서 상대도 가진 같은 요소는 먼저 나온 쪽만 소개하고, 다른 쪽은 "앞에서 본 ○○"로 잇는다.
+  const seen = new Set<string>(), traitById = new Map(ctx.traits.map(t => [t.trait.id, t.trait]));
   for (const p of [...plans].sort((a, b) => a.index - b.index)) for (const s of p.sections) for (const m of s.materials) if (m.kind === "trait") {
-    (m as { angle: string }).angle = seen.has(m.traitId) ? "new-domain" : "first"; seen.add(m.traitId);
+    const t = traitById.get(m.traitId), key = (t && sharedKey(t)) ?? m.traitId;
+    (m as { angle: string }).angle = seen.has(key) ? "new-domain" : "first"; seen.add(key);
   }
   for (const [id, u] of ledger.trait) { const all = [u.intro!, ...u.applies].sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0)); ledger.trait.set(id, { intro: all[0], applies: all.slice(1) }); }
   for (const t of ctx.traits) t.trait.chapters.sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));

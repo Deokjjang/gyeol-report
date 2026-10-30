@@ -7,10 +7,10 @@
       "exportName": "CH10_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
-      "recordSha256": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "recordSha256": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "originalRecordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+    "originalRecordHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
     "originalText": {
       "id": "cpr:material:CH10.P3:romance-as-problem-set",
       "product": "saju_mbti_full",
@@ -57,7 +57,7 @@
           "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
           "sourceKind": "mbti_trait",
           "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "love",
@@ -133,15 +133,15 @@
         "exportName": "CH10_MATERIALS",
         "index": 6,
         "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
-        "recordSha256": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+        "recordSha256": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-        "fileSha256": "b773c3b26896810f5f9a39c5da22415dbfe23607e063d1a1c2cc262e0c1c3e5f"
+        "fileSha256": "6126c5c9266437b45c072c218cb0e3b6139ff99aa452e4927655db2430ace329"
       },
       "matchedCatalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
       "role": "ORIGINAL_RECORD",
-      "expectedHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
-      "actualHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "expectedHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
+      "actualHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "hashAlgorithm": "SHA256_JSON_INSERTION",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -185,7 +185,7 @@
             "originalId": "strategic_romance_awkwardness",
             "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+            "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
           },
           "matchedCatalogKey": "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781",
           "originalId": "strategic_romance_awkwardness",
@@ -210,7 +210,7 @@
               "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
               "sourceKind": "mbti_trait",
               "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-              "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+              "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
               "originalState": {
                 "type": "INTJ",
                 "area": "love",
@@ -234,7 +234,7 @@
               "source": {
                 "catalogKey": "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781",
                 "file": "docs/product/mbti/source/INTJ.json",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
               },
               "fields": [
                 {
@@ -271,7 +271,7 @@
               "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
               "sourceKind": "mbti_trait",
               "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-              "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+              "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
               "originalState": {
                 "type": "INTJ",
                 "area": "love",
@@ -295,7 +295,7 @@
               "source": {
                 "catalogKey": "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781",
                 "file": "docs/product/mbti/source/INTJ.json",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
               },
               "fields": [
                 {
@@ -332,7 +332,7 @@
               "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
               "sourceKind": "mbti_trait",
               "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-              "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+              "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
               "originalState": {
                 "type": "INTJ",
                 "area": "love",
@@ -356,7 +356,7 @@
               "source": {
                 "catalogKey": "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781",
                 "file": "docs/product/mbti/source/INTJ.json",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
               },
               "fields": [
                 {
@@ -393,7 +393,7 @@
               "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
               "sourceKind": "mbti_trait",
               "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-              "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+              "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
               "originalState": {
                 "type": "INTJ",
                 "area": "love",
@@ -417,7 +417,7 @@
               "source": {
                 "catalogKey": "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781",
                 "file": "docs/product/mbti/source/INTJ.json",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
               },
               "fields": [
                 {
@@ -492,7 +492,7 @@
     "modelReview": {
       "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
-      "expectedRecordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "expectedRecordHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "engine": "comprehensive",
       "primaryMeaning": "분석은 상대의 뜻을 확인할 질문을 정리하는 데 쓸 수 있다. 분석 결과로 상대 진심을 확정할 근거는 아니다.",
       "relatedButDifferentMeaning": "전략적 사고와 상대의 동의·실제 감정은 서로 다른 정보다.",
@@ -2090,7 +2090,7 @@
             "originalId": "ckr:source:47fcf46be449c285af54",
             "recordSha256": "d20db3c1d96e7a19c8ad8491041663f62eaa1db401649d3bfd1a0b99bfc2c265",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:8a5586196e0e5b92b3b1fcb540833b19cd5a3bd26c10dd211b7c5be0377c52f1",
           "originalId": "ckr:source:47fcf46be449c285af54",
@@ -3011,7 +3011,7 @@
           "exportName": "LOVE_SOURCE_REGISTRY",
           "index": 103,
           "originalId": "lkr:source:10d4177606458102491b",
-          "recordSha256": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
+          "recordSha256": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalSourceText": {
@@ -3028,7 +3028,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#10d4177606458102491b",
           "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -3041,15 +3041,15 @@
             "exportName": "LOVE_SOURCE_REGISTRY",
             "index": 103,
             "originalId": "lkr:source:10d4177606458102491b",
-            "recordSha256": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
+            "recordSha256": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "7dad6d648f063e5f27625564138740e516e0e345f753acd8c0190398faea5a24"
+            "fileSha256": "6399fba910f66edd4af95ba589a489f1b94029f8be9e949c70aaaf049a4e089e"
           },
           "matchedCatalogKey": "kc:v1:0776560f3d9f9fc18cf5c2ea81745264e2e5a69f4aa7e0a2d8fad70d43e63ce4",
           "originalId": "lkr:source:10d4177606458102491b",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
-          "actualHash": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
+          "expectedHash": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
+          "actualHash": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3090,7 +3090,7 @@
             "originalId": "autonomy_parent",
             "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed",
           "originalId": "autonomy_parent",
@@ -3128,7 +3128,7 @@
               "source": {
                 "catalogKey": "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed",
                 "file": "docs/product/mbti/source/INFP.json",
-                "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+                "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
               },
               "fields": [
                 {
@@ -3178,7 +3178,7 @@
               "source": {
                 "catalogKey": "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed",
                 "file": "docs/product/mbti/source/INFP.json",
-                "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+                "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
               },
               "fields": [
                 {
@@ -3760,7 +3760,7 @@
           "exportName": "LOVE_PAIR_SOURCES",
           "index": 62,
           "originalId": "clr:source:d88467512c1c5489e7d0",
-          "recordSha256": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
+          "recordSha256": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalSourceText": {
@@ -3776,7 +3776,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#d88467512c1c5489e7d0",
           "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "type": "ESTP",
             "area": "love",
@@ -3791,15 +3791,15 @@
             "exportName": "LOVE_PAIR_SOURCES",
             "index": 62,
             "originalId": "clr:source:d88467512c1c5489e7d0",
-            "recordSha256": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
+            "recordSha256": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c0f13c42e8553ec7df28b1c60ddd307d92f87cec9324b144394e2371f19116a1"
+            "fileSha256": "3970ee8cb73e5889e6fa791a26fa568de3ce9c4797dd5e2a6717c3fe6a1076e1"
           },
           "matchedCatalogKey": "kc:v1:aba606af9baa9a3d6251e069fbfb1c9d5bc891c732be67c2d5db63e69b7b459f",
           "originalId": "clr:source:d88467512c1c5489e7d0",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
-          "actualHash": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
+          "expectedHash": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
+          "actualHash": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3839,7 +3839,7 @@
             "originalId": "active_affection",
             "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+            "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
           },
           "matchedCatalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
           "originalId": "active_affection",
@@ -3859,7 +3859,7 @@
           "exportName": "LOVE_PAIR_SOURCES",
           "index": 22,
           "originalId": "clr:source:d048a1db929d8e81a67f",
-          "recordSha256": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
+          "recordSha256": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "originalSourceText": {
@@ -3875,7 +3875,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#d048a1db929d8e81a67f",
           "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "love",
@@ -3890,15 +3890,15 @@
             "exportName": "LOVE_PAIR_SOURCES",
             "index": 22,
             "originalId": "clr:source:d048a1db929d8e81a67f",
-            "recordSha256": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
+            "recordSha256": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c0f13c42e8553ec7df28b1c60ddd307d92f87cec9324b144394e2371f19116a1"
+            "fileSha256": "3970ee8cb73e5889e6fa791a26fa568de3ce9c4797dd5e2a6717c3fe6a1076e1"
           },
           "matchedCatalogKey": "kc:v1:93b2c7c8ea249d16855919bfc114efb690c83735666230ab9538c9d1fac0bf31",
           "originalId": "clr:source:d048a1db929d8e81a67f",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
-          "actualHash": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
+          "expectedHash": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
+          "actualHash": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3939,7 +3939,7 @@
             "originalId": "slow_trust_love",
             "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+            "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
           },
           "matchedCatalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
           "originalId": "slow_trust_love",
@@ -3980,7 +3980,7 @@
               "source": {
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4017,7 +4017,7 @@
               "source": {
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4089,7 +4089,7 @@
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
                 "pointer": "/traits/love/2",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4135,7 +4135,7 @@
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
                 "pointer": "/traits/love/0",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4191,7 +4191,7 @@
               "source": {
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4228,7 +4228,7 @@
               "source": {
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4300,7 +4300,7 @@
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
                 "pointer": "/traits/love/2",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4346,7 +4346,7 @@
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
                 "pointer": "/traits/love/0",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4402,7 +4402,7 @@
               "source": {
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4439,7 +4439,7 @@
               "source": {
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4511,7 +4511,7 @@
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
                 "pointer": "/traits/love/2",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4557,7 +4557,7 @@
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
                 "pointer": "/traits/love/0",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4613,7 +4613,7 @@
               "source": {
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4650,7 +4650,7 @@
               "source": {
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -4722,7 +4722,7 @@
                 "catalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
                 "file": "docs/product/mbti/source/ESTP.json",
                 "pointer": "/traits/love/2",
-                "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+                "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
               },
               "fields": [
                 {
@@ -4768,7 +4768,7 @@
                 "catalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
                 "file": "docs/product/mbti/source/ISFJ.json",
                 "pointer": "/traits/love/0",
-                "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+                "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
               },
               "fields": [
                 {
@@ -6125,7 +6125,7 @@
             "originalId": "pcpr:source:58ee6bd5417794df4aec",
             "recordSha256": "6519746e5b04383b8c3fc482c7e8536c576b1a89e4627e2f937b2fcdca105c09",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+            "fileSha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
           },
           "matchedCatalogKey": "kc:v1:1d4ef10327198fbdcd1af46226fcca027b34ef6fec69931f416515bef5f62c78",
           "originalId": "pcpr:source:58ee6bd5417794df4aec",
@@ -6827,7 +6827,7 @@
             "originalId": "cwpr:source:607d86e676269d444952",
             "recordSha256": "0f21b5af66900ac040b9b90b57b646d77be8cd2521efe4e57a964278057cdc4e",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:7120d4667501cab0b7ae638d0fb9b4a50168ccefc7ba454253738c3dcbb524e4",
           "originalId": "cwpr:source:607d86e676269d444952",

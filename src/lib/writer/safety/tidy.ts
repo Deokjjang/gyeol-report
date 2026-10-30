@@ -24,6 +24,8 @@ export function mergeShrunk(sections: readonly BookSection[], shrunk: ReadonlySe
 }
 
 const BACKREF = /(앞에서 본|앞서 본|앞 장에서 본|앞에서 말한|앞에서 나온) /;
+// "앞에서 본 것처럼"처럼 X 없이 앞 글 전체를 되짚는 말: 앞 글이 있으면 두고, 없으면 의존명사까지 함께 지운다.
+const GENERIC = /^(것처럼|것과 같이|것같이|대로|그대로|바와 같이|바처럼|만큼),?\s*/;
 const noHan = (s: string) => s.replace(/\s*\([^)]*\)/g, "").replace(/[一-鿿]+/g, "").trim();
 const lastWord = (s: string) => s.trim().split(/\s+/).at(-1) ?? "";
 
@@ -42,7 +44,10 @@ export function fixBackrefs(sections: readonly BookSection[], brief: Brief, prio
   const out = sections.map(s => ({ ...s, paragraphs: s.paragraphs.map(p => splitSentences(p).reduce((para, sen) => {
     const m = sen.match(BACKREF);
     let result = sen;
-    if (m && m.index !== undefined) {
+    const generic = m?.index !== undefined ? sen.slice(m.index + m[0].length).match(GENERIC) : null;
+    if (m && m.index !== undefined && generic) {
+      if (!prior.text.trim()) { result = sen.slice(0, m.index) + sen.slice(m.index + m[0].length + generic[0].length); fixed++; }
+    } else if (m && m.index !== undefined) {
       const head = sen.slice(m.index + m[0].length, m.index + m[0].length + 24);
       const ref = refs.find(r => r.tokens.some(t => head.includes(t)));
       const introduced = ref ? ref.tokens.some(t => prior.text.includes(t)) : prior.text.includes(head.split(/\s+/)[0]?.replace(/(의|은|는|이|가)$/, "") ?? "");

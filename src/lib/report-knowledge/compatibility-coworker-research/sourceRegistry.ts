@@ -14,7 +14,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ce1c5899365d6cd736a8",
     "recordSha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "workplace",
@@ -40,7 +40,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d0c24f23fe8ce695264a",
     "recordSha256": "249425dac315323aad0301a098a9db041b6b0e33a7c16272fedcf115d4049a55",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "workplace",
@@ -97,7 +97,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#871f1880dae3d3831abc",
     "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "workplace",
@@ -123,7 +123,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#467622fb374bd18f05b9",
     "recordSha256": "c06eb2a4558a9b3cfe5ced1d10e581c7f3d1c68d1bcce2dac22007c8f8beb47d",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "workplace",
@@ -149,7 +149,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#248692af90259c9eebe4",
     "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "workplace",
@@ -175,7 +175,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cdc60c6b316ee8a858c1",
     "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "workplace",
@@ -232,7 +232,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c782e08817e7f4ae8cd7",
     "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "workplace",
@@ -258,7 +258,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c537d089d3ff0412ed96",
     "recordSha256": "99ed9bc67643d3617dd626e8771fca98d8de0cb2486a5e7f37cc51218a6403b3",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "workplace",
@@ -444,7 +444,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#053c20b20130d6ffcf7b",
     "recordSha256": "4b6ad4d5744833e82403b106634c6e5d17f5dc1285eaab4f945bdf53b2a3439d",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "thinkingStyle",
@@ -470,7 +470,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#5559e5065c4be9076ec2",
     "recordSha256": "93c346f94814e4850b34607f98efe21327596d31505834eeb38917b2587e2c7e",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "sourceType": "ENTP",
       "targetType": "INTP",
@@ -496,7 +496,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#48ccafc8053b86a1df7e",
     "recordSha256": "268d33016ac096992a08985460115a7b1725d657a1e10ef7c4f47bb3bd961662",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "sourceType": "INTP",
       "targetType": "ENTP",
@@ -522,7 +522,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ab58584bb46db51081a8",
     "recordSha256": "92bf7e499845fe670b9b4a145658581cacf21948f2c2958d593068905b447adb",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "communication",
@@ -548,7 +548,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#51a36ebd6ebe0593251c",
     "recordSha256": "03658b00bf4ae588d7e28191aaa3a40770278f8897c62a5eebfd165012533f09",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "workplace",
@@ -574,7 +574,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#c2540685581fa615363b",
     "recordSha256": "ce638ed013b8c353c67123f372d0608717a640956c48bdf02aec1725565d6e17",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "sourceType": "ESTP",
       "targetType": "ISTJ",
@@ -600,7 +600,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
     "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "thinkingStyle",
@@ -626,7 +626,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#45a8725d424b6f14e7fd",
     "recordSha256": "7676722361fc8f7c6bfcc1eab2427d1d8c773e51b63116da017f01712fd7a359",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "thinkingStyle",
@@ -776,7 +776,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c3c4464cae8ed35c5fd1",
     "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "thinkingStyle",
@@ -835,7 +835,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#932f48a511820a551fae",
     "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "workplace",
@@ -894,7 +894,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#5c3113996849818dc94a",
     "recordSha256": "faa7efdfc185dff4a7b34613861d2ac332abb49cec4a6654dd5477bf6f865cf0",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "thinkingStyle",
@@ -986,7 +986,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#da2991406740ddaa73b2",
     "recordSha256": "8fdf31b355c616feb78bc871e91b6c2ddd7f11563eeb9b648d90d67ad26f9f96",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "workplace",
@@ -1054,7 +1054,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
     "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "workplace",
@@ -1080,7 +1080,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#06354a7d2a22fa623758",
     "recordSha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "workplace",
@@ -1106,7 +1106,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#6152607d3b4ca7ca4d3d",
     "recordSha256": "afb87bef40a6aa95b648c651e798f73043af31ce7de654ffc68d229fa2e58a7f",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "thinkingStyle",
@@ -1174,7 +1174,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#65d471aa8db24caa2475",
     "recordSha256": "4eca9c36502f573914dc23c6d237b914584c5f91c2bb526804c28922025156b7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "workplace",
@@ -1200,7 +1200,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ee94f546d508b18941b2",
     "recordSha256": "19fefb12072b733d8482b14fac1b560356d0c82f36617c220ab4568a7a97780e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "workplace",
@@ -1226,7 +1226,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#9e0f7ae075403f55b6b7",
     "recordSha256": "a7901c07e7ef80a12b76c53d0b81f3b1abf2abd6954749e9fcd97b6a27bb265f",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "thinkingStyle",
@@ -1252,7 +1252,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e863f74f7e45829c7f31",
     "recordSha256": "b3247a082d7c9fac9657d91a940aa8cddc3c5cb46c79045a2ec4ffe51fb86ba8",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "workplace",
@@ -1278,7 +1278,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ef55c59f6850a285c270",
     "recordSha256": "7152c5d39c9694e3b7631185403068268eaa599cdef538773f60d79bae8e799b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "workplace",
@@ -1304,7 +1304,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#71236ed18e2db1b4e80d",
     "recordSha256": "e4961b53e8f6d2526a12f3af20f2a1d1f90c9602f46a01fd1e1ec60482288be9",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "thinkingStyle",
@@ -1330,7 +1330,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f93bf80f81c4305dbee6",
     "recordSha256": "c521c829d045c2753a6b60ca37b87338bf2dde3f7b869ee05199efa6b578ce74",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "workplace",
@@ -1387,7 +1387,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#177b2958f26170896737",
     "recordSha256": "7b714a4789afdae5915c4e27fae3baf7e7684c091792eb841f8fadd3b1cd9526",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "thinkingStyle",
@@ -1446,7 +1446,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e11ec427a007ae55816b",
     "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "thinkingStyle",
@@ -1472,7 +1472,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cefc9bb4efca51ea8c5e",
     "recordSha256": "9312705ee838258bd8e6de956a289c6457ff46dbb6ef35b1a90b23fcf7e5fbd8",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "thinkingStyle",
@@ -1531,7 +1531,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#73981b48efb8c236ae71",
     "recordSha256": "5411c3cb9de564e78e11d2fd24d1e5c8ba861cab348a2362ce7dd50a280f3293",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "thinkingStyle",
@@ -1557,7 +1557,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#60699f5629066c047ea1",
     "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "workplace",
@@ -1583,7 +1583,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#3a3b59d50baec6cbaa25",
     "recordSha256": "7ecd06a09dcb82d85dc0371268f747e382c6dc1cd809e46c5075150631715b7e",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "workplace",
@@ -1609,7 +1609,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ba8a7871afe5dc74dabe",
     "recordSha256": "0b021e39254372891d285daef48feb8313bf295e971e543398b03b9d162ceb57",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "workplace",
@@ -1635,7 +1635,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b309b2fed169336d7de1",
     "recordSha256": "4ad29ccb342224f51c644a1cafcc32c7f5dc6668b4188733623d4e1eed2663da",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "workplace",
@@ -1661,7 +1661,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d126d308701e650b60a3",
     "recordSha256": "82b47839c3325bfb438c68fc61f6de81fd260c466e334e97827838c25d248ec3",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "workplace",
@@ -1687,7 +1687,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#9f873cac7c23741a2897",
     "recordSha256": "3b2933a71c929755e951eee60da9b89acb5fd344f90cc1f8a5370158426fee2b",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "workplace",
@@ -1713,7 +1713,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ce00081ce37c25f1db93",
     "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "workplace",
@@ -1739,7 +1739,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#5b778076e2f7f6a60f75",
     "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "workplace",
@@ -1765,7 +1765,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
     "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "workplace",
@@ -1791,7 +1791,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#4195ef0324b99b8b4145",
     "recordSha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "workplace",
@@ -1817,7 +1817,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f666c10a6db231abcc92",
     "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "thinkingStyle",
@@ -1843,7 +1843,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#7ff3a8b05b74a93b59af",
     "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "thinkingStyle",
@@ -1869,7 +1869,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#6272392db3d121b2186f",
     "recordSha256": "22543ef515c4f77d5cc8e7c254250307f783c18a4509723b2bdec9281af33ce2",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "thinkingStyle",
@@ -1895,7 +1895,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#7fbb41c4694b6f1bb95a",
     "recordSha256": "b1279c3a73af3bbe4f48111a1ae0f7fe5d65ca8b8e8bc5c3df1e38da0667b3eb",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "sourceType": "ENFP",
       "targetType": "ISTP",
@@ -1921,7 +1921,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#1ab0d83a75b18e1a06f7",
     "recordSha256": "cea10459c4d76acaa7590910b2ad95d1a3a81238a918e98625308d547a40133f",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "sourceType": "INTJ",
       "targetType": "ISTJ",
@@ -1947,7 +1947,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#09f88fe7ec21e62f0659",
     "recordSha256": "f257c3a956697751e8d8dccc1846fd61fbc277d0a57eb7ebe3ab165d821c484e",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "communication",
@@ -1973,7 +1973,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#96063bd88dbf202887bc",
     "recordSha256": "e0e5de6d105b530ace470e4bb67c692e92f0106a8b2557434b98ae00eeff2f05",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "thinkingStyle",
@@ -2071,7 +2071,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cd19631fd0781dd2ef4c",
     "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "workplace",
@@ -2097,7 +2097,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#76d4c68e32d1662f8abf",
     "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "workplace",
@@ -2123,7 +2123,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#7fbb91f5c728576a88c5",
     "recordSha256": "d49bb3c9b9d3897249781647e202104d76f512e53b3b807cbd90b4c9d03bbc07",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "workplace",
@@ -2233,7 +2233,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#6018d7a73502e6594176",
     "recordSha256": "022a47d4dd2f078284c0817cc681f94eaa2b7415509a6b77ff2281a8b0ab5b46",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "thinkingStyle",
@@ -2325,7 +2325,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#72685cd9261c6060b22d",
     "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "thinkingStyle",
@@ -2351,7 +2351,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1668268fb9233e277c7b",
     "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "workplace",
@@ -2410,7 +2410,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f271d2c1f50a55776b46",
     "recordSha256": "d8685fab29595435c32cde027da986ad4900e5734c7bad26d143b5c28057a482",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "workplace",
@@ -2436,7 +2436,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cea6bec946f076f953df",
     "recordSha256": "4de90af117b730604820bc3b37812656d365af43166ba68c4028c5a0938e9283",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "thinkingStyle",
@@ -2462,7 +2462,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b9668c5b2bf584376414",
     "recordSha256": "7b3e5016f2286d02c9f4d693771c032219da9777b5dbe3088f0c9482843db03f",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "workplace",
@@ -2521,7 +2521,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f1a63049534f1dfb09b7",
     "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "communication",
@@ -2547,7 +2547,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#14e0d37499fd6ba64d97",
     "recordSha256": "1e16feda2f8ddda324f8736bb85bd7a71ec5c6a305e1cd6608806e4c50a9ac3e",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "communication",
@@ -2573,7 +2573,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#548767870da81527d09a",
     "recordSha256": "0afca097c5a24d357f0b929466917dc999deefaf2c357997a8a88acd83ca8b28",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "workplace",
@@ -2599,7 +2599,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#6ae05663db2f14fb5f4d",
     "recordSha256": "cf77535e83aaeeb8f03e95e64f3c70a24a4cf2f9ad3ce9025ccf5f6341e661f9",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "workplace",
@@ -2625,7 +2625,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b975a4ecb4600742752d",
     "recordSha256": "ec60da6592e87ba0bba8fadc332b6defbd4d93ec155f8548c05142a52f5f2e75",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "thinkingStyle",
@@ -2651,7 +2651,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e5bb3aac2a342fa953aa",
     "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "workplace",
@@ -2677,7 +2677,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#73d21afa744144ccac1d",
     "recordSha256": "5bf022de603a61855d7ac011e3db0ebd9a822cca2a6e7af1aa3eda47feba7493",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "workplace",
@@ -2703,7 +2703,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#4640646a95583666e071",
     "recordSha256": "4caa36e09c4ac6b75f03896f15cd9c7281a14fc92428f244a4630ec2d12d137d",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "thinkingStyle",
@@ -2729,7 +2729,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#a79c6fc76f4cb656d5ad",
     "recordSha256": "ff9002bafb78de0dcf7541c09b8c6dfa124676a4ca41032bef5e0b050630aba7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "thinkingStyle",
@@ -2755,7 +2755,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f760755a3758093a0c21",
     "recordSha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "thinkingStyle",
@@ -2781,7 +2781,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#a9f319cf6beb7e4f620e",
     "recordSha256": "44cde147899bb64d2338ebcbd15be7806d413afba0affd4e5956f1effee20685",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "thinkingStyle",
@@ -2807,7 +2807,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
     "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "thinkingStyle",
@@ -2833,7 +2833,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f304dd14d4acff465ca2",
     "recordSha256": "e10d70926043670273b44683625c1115300541bfd97f7b1a8db557085a8741d0",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "thinkingStyle",
@@ -2859,7 +2859,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e89f0e2eb775b48cc9b4",
     "recordSha256": "b09f8133b7f5655879789d5c4c4cc27de50c96ad559803b70ee3ce7216c1ce38",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "workplace",
@@ -2885,7 +2885,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c76b5014cac3ec7c5985",
     "recordSha256": "69b56a359f88090d6f539ffffb5b78c94a990d78b33b72c7f7b491de316de3e0",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "workplace",
@@ -2911,7 +2911,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#59ee9c7408ed5dac4efe",
     "recordSha256": "f0d99d785c86be30c60799eef1f2308deb47e6ecd56041f6bb2ff31f49de4eb5",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "workplace",
@@ -2937,7 +2937,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c14702d873dba150262f",
     "recordSha256": "2cc4a3aadb2adef95d1fe0d0ba0eac5ee0cb39cf61b4daa326c6e382c4a44896",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "thinkingStyle",
@@ -2963,7 +2963,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#9157cb32f6c4c40c5336",
     "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "communication",
@@ -2989,7 +2989,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e367e16b9b2175516747",
     "recordSha256": "4ff6e93042fd35a0f07bf9a8169ff4506a518275c594e740f54d6db74476ce06",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "workplace",
@@ -3015,7 +3015,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#47ce8c7dff225ae9a200",
     "recordSha256": "505c0e99063d3e3ebe5a165084f5c27ec6941fbb4e836f2f599d39faadcd3687",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "workplace",
@@ -3041,7 +3041,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#300c56cfaf4d8929142e",
     "recordSha256": "e1cfdae0aec0f7ce594fbab4f80a484dd0a2c494e36134f9be0c341cb04ba662",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "workplace",
@@ -3067,7 +3067,7 @@ export const CW_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
     "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "workplace",

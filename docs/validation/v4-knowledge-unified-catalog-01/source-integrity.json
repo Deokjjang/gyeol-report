@@ -1,99 +1,99 @@
 [
   {
     "file": "docs/product/mbti/source/ENFJ.json",
-    "sha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+    "sha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
   },
   {
     "file": "docs/product/mbti/source/ENFP.json",
-    "sha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+    "sha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
   },
   {
     "file": "docs/product/mbti/source/ENTJ.json",
-    "sha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+    "sha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
   },
   {
     "file": "docs/product/mbti/source/ENTP.json",
-    "sha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+    "sha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
   },
   {
     "file": "docs/product/mbti/source/ESFJ.json",
-    "sha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+    "sha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
   },
   {
     "file": "docs/product/mbti/source/ESFP.json",
-    "sha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+    "sha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
   },
   {
     "file": "docs/product/mbti/source/ESTJ.json",
-    "sha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+    "sha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
   },
   {
     "file": "docs/product/mbti/source/ESTP.json",
-    "sha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+    "sha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
   },
   {
     "file": "docs/product/mbti/source/INFJ.json",
-    "sha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+    "sha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
   },
   {
     "file": "docs/product/mbti/source/INFP.json",
-    "sha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+    "sha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
   },
   {
     "file": "docs/product/mbti/source/INTJ.json",
-    "sha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+    "sha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
   },
   {
     "file": "docs/product/mbti/source/INTP.json",
-    "sha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+    "sha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
   },
   {
     "file": "docs/product/mbti/source/ISFJ.json",
-    "sha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+    "sha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
   },
   {
     "file": "docs/product/mbti/source/ISFP.json",
-    "sha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+    "sha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
   },
   {
     "file": "docs/product/mbti/source/ISTJ.json",
-    "sha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+    "sha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
   },
   {
     "file": "docs/product/mbti/source/ISTP.json",
-    "sha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+    "sha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
   },
   {
     "file": "docs/validation/v4-career-product-knowledge-01/source-catalog.json",
-    "sha256": "aaf4c6ed4c5bf390d9341708109419c81bc525fb5885ed2546bfccafe009cfe5"
+    "sha256": "6611dee43235bbaa5958c6123fb4ce91f9187309e90309045ee72ad94cbfb344"
   },
   {
     "file": "docs/validation/v4-compatibility-business-partner-product-knowledge-01/source-locator-audit.json",
-    "sha256": "b9f370607fef58a120b11c65c37d99048c1560c329dfe6ab36b36bdb3262a34e"
+    "sha256": "62847ecd5b1bb33cf420cdf317f6c7fc232645daff73346d5e0dae20a5f5e7b3"
   },
   {
     "file": "docs/validation/v4-compatibility-coworker-product-knowledge-01/source-locator-audit.json",
-    "sha256": "c3049f332991a3cd58d720ba658dee0302e5234aa2ca2c16622c0aa6149df689"
+    "sha256": "9f661717eb0eea331014d8d22bb6b40ac455f5afe1c81e65f1db5f4275b4f976"
   },
   {
     "file": "docs/validation/v4-compatibility-love-product-knowledge-01/source-locator-audit.json",
-    "sha256": "fe96b4dc5d950cb3c3fa6b35181edaa8e72e23762ca8265f4a45b39525f7e748"
+    "sha256": "8e7237f21fc3ebf6ce6d81c2256e3cec4506597b5b4b10d75478dfcc2433208f"
   },
   {
     "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/source-locator-audit.json",
-    "sha256": "8b83965d84ed51957c8bb9d59ce8e27fd3f9b8b1612ded36382fc1856eff5244"
+    "sha256": "ac5671db226ea92a568bc32d9de19ac9b7bc41dc4fbd291edec1ffc524f73a57"
   },
   {
     "file": "docs/validation/v4-compatibility-marriage-product-knowledge-01/source-locator-audit.json",
-    "sha256": "3dd4b5f39a420b521940b7ca49862fb17af17fa1a441f8b129db13959364f73e"
+    "sha256": "8e62fa70e4ba1b938fc8effdd93adde8d74cd5e43426a5713c4933f5c2d8abc0"
   },
   {
     "file": "docs/validation/v4-compatibility-parent-child-product-knowledge-01/source-locator-audit.json",
-    "sha256": "4537a49ab2d1f6ace8af7eccf9c44a883f05ace325422969126413628cf8297c"
+    "sha256": "84e3f54daeb18daae27957b8189ee5d65e14a48bf3331759b21c36ac05e7a325"
   },
   {
     "file": "docs/validation/v4-comprehensive-product-knowledge-01/source-catalog.json",
-    "sha256": "ac9261b92c3d4f6b3c0e4d5b2f53724d4b7416429b3745f5c2073b48f03d2c15"
+    "sha256": "993d9969dca610967d1e56a81ad5c5003c87565ab25d0771c4e2d09b30f05b0e"
   },
   {
     "file": "docs/validation/v4-fusion-semantic-knowledge-depth-01/source-ref-catalog.json",
@@ -101,7 +101,7 @@
   },
   {
     "file": "docs/validation/v4-korean-editorial-knowledge-01/inherited-research-inventory.json",
-    "sha256": "5697ac1600ae57a395da1399109aeba6e571c6a227602d3a32639d9a071c4b1c"
+    "sha256": "2bc3a6b2e507bc5dfeb65b5e6e244734545ab77a2b38817b428690880938346d"
   },
   {
     "file": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
@@ -109,7 +109,7 @@
   },
   {
     "file": "docs/validation/v4-love-marriage-child-product-knowledge-01/source-catalog.json",
-    "sha256": "e030056b2068d084ab6eaa25fa496fa0f27ebc994ef279d1384111a384f3755a"
+    "sha256": "2bf09841da84e5971f728c6cab13d056eab4de085467cde1dc6a074575da3c39"
   },
   {
     "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/source-verification.json",
@@ -533,7 +533,7 @@
   },
   {
     "file": "src/lib/report-knowledge/career-product-research/sourceRegistry.ts",
-    "sha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+    "sha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-business-partner-research/axisBusinessResearch.ts",
@@ -713,7 +713,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
-    "sha256": "7202cac3c5cd3b7ac24bd4e97cadbe3e022403f5e8f6b4cff89c3a82839c3912"
+    "sha256": "780b7089e7e4623868c0a1d1af8be0422ca0f0fafb4db0ab5227b36b140f46d7"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-business-partner-research/typeWorkResearch.ts",
@@ -721,7 +721,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-business-partner-research/workTraitSourceAudit.ts",
-    "sha256": "c7097f491fc156afa3861bb783eacc7e595116cf7a6b0c48df5ba648d6062783"
+    "sha256": "58f7b70280668670371751888344c6174c78db40e483ed8cdc4accfaadcae252"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-coworker-research/bindingPolicy.ts",
@@ -869,7 +869,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-coworker-research/sourceRegistry.ts",
-    "sha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+    "sha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-coworker-research/typeWorkResearch.ts",
@@ -877,7 +877,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-coworker-research/workTraitSourceAudit.ts",
-    "sha256": "03d0e036a98273328673a945705323de1086882968965a4881efaf25728568a0"
+    "sha256": "c458a0ea29f33730e99c3345e888bf057c93ba2a7914cb8625d294cf578f5bc7"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-friendship-research/bindingDesign.ts",
@@ -909,11 +909,11 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-friendship-research/fusionCrosswalk.ts",
-    "sha256": "fbe0151db828448a097f41a7185e9e522bb50545cbc16f9c8b6d8f85a617f24f"
+    "sha256": "9fcc150e29559294dd52c65eae1262d0d41143690f2f74cb56cd0ecafb9159a7"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-friendship-research/individualMbtiCrosswalk.ts",
-    "sha256": "f1e24e1ecb5f645925af8811561b1bbefce1fc373cb21a1fa1c21bcf12854181"
+    "sha256": "28efdd776fa1b4c7422b21d52856346254743ec6049b1a9e9c9242ee8eadf158"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-friendship-research/lifeContextResearch.ts",
@@ -929,7 +929,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-friendship-research/personResearch.ts",
-    "sha256": "6db18c11451aa8435c0372e7df4f217b5a79d23f6a321954f107937f950d98b1"
+    "sha256": "75a1b9654c84539fa6d92f6d0ce8164e48e55b354bf979d082c9232f980daf26"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-friendship-research/recipientTenGodResearch.ts",
@@ -1053,7 +1053,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-love-research/sourceRegistry.ts",
-    "sha256": "c0f13c42e8553ec7df28b1c60ddd307d92f87cec9324b144394e2371f19116a1"
+    "sha256": "3970ee8cb73e5889e6fa791a26fa568de3ce9c4797dd5e2a6717c3fe6a1076e1"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-manager-report-research/authorityResponsibilityResearch.ts",
@@ -1229,7 +1229,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-manager-report-research/sourceRegistry.ts",
-    "sha256": "f9bc85e24b906e81d56281d59f24a945ccb1996720043d633ff44d7935a9caa2"
+    "sha256": "62760757839be9382555dae89722cc3fd798bebb6f7561ac982450adc572087c"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-manager-report-research/teamMemberResearch.ts",
@@ -1245,7 +1245,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-manager-report-research/workTraitSourceAudit.ts",
-    "sha256": "1e5881543a67fe42939d5f885feb995c49bb9e5ab08335a3e8374c63c3d8bdc2"
+    "sha256": "05f0f136c105b638ba390e5c48086864d51250ee6ff2e66458a1dde6ba251dde"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-marriage-research/autonomyResearch.ts",
@@ -1369,7 +1369,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-marriage-research/sourceRegistry.ts",
-    "sha256": "29b2fe063bccc2af8ac8cd1364af38c38fa0a44e3ec4285f7eebd60398695688"
+    "sha256": "18bca68b8742898bbd6d0e5b54d243a67a0e08207a15e8e56883af354d9454e9"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-parent-child-research/autonomyProtectionResearch.ts",
@@ -1425,7 +1425,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-parent-child-research/childMbtiSourceAudit.ts",
-    "sha256": "f631c670a7d0cee2ff79c3d717dfe05b40094eead6e164ba13c424de267791eb"
+    "sha256": "a52ad025b1f6e566003d3c64a2e78ea2e26fa01fd486c32b9774336ec3648d44"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-parent-child-research/childResearch.ts",
@@ -1469,7 +1469,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-parent-child-research/parentMbtiSourceAudit.ts",
-    "sha256": "e32b174dc3769de0edc5f5f3274645debaf4e58452c70985b0f88bc7764108ff"
+    "sha256": "3b68c594b6f6662461c82bf01ffd43e9871c83da12a440a4602a29b23f78643f"
   },
   {
     "file": "src/lib/report-knowledge/compatibility-parent-child-research/parentResearch.ts",
@@ -1509,7 +1509,7 @@
   },
   {
     "file": "src/lib/report-knowledge/compatibility-parent-child-research/sourceRegistry.ts",
-    "sha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+    "sha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
   },
   {
     "file": "src/lib/report-knowledge/compatibilityTypes.ts",
@@ -1589,7 +1589,7 @@
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter01Materials.ts",
-    "sha256": "65997032e9eb3e8034579fe57d86808c572772a38ad0de48e4728809dfef1c5b"
+    "sha256": "ddd4c4a0412caca935ab3fc3efeccb00a5db0b8f5c335bbabfb6081ab7cacc69"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter02Materials.ts",
@@ -1597,19 +1597,19 @@
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter03Materials.ts",
-    "sha256": "ba372d54d698da7b934fab1b20784a4513c767bb7710051fbac9738566480393"
+    "sha256": "36f819b24449515af59c107c121014d6972e447be90ad5c898c9c48f2fd452cd"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter04Materials.ts",
-    "sha256": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096"
+    "sha256": "491dcd1c28db6ac860646e9b24bec01a2a53b89767e303502c33076578df0b02"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter05Materials.ts",
-    "sha256": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6"
+    "sha256": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter06Materials.ts",
-    "sha256": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321"
+    "sha256": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter07Materials.ts",
@@ -1617,23 +1617,23 @@
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter08Materials.ts",
-    "sha256": "0af6d347e9607d08ca3a806878db5da989415ceb40fdde81d9ce44c20d4d9dd4"
+    "sha256": "7b5931870ee2b50b33bcee2b6ecd0dc1b67d3e34f263f4143926da8c80bb4710"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter09Materials.ts",
-    "sha256": "7b699c5549395a24248e1620e41de69cc7fc65c3690bbc0ea3f51bc0b8716bc4"
+    "sha256": "8d41bf735c27f62a54e09e731e85307014a01ee5ae6991a352aa95ceaeb0eae9"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter10Materials.ts",
-    "sha256": "b773c3b26896810f5f9a39c5da22415dbfe23607e063d1a1c2cc262e0c1c3e5f"
+    "sha256": "6126c5c9266437b45c072c218cb0e3b6139ff99aa452e4927655db2430ace329"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter11Materials.ts",
-    "sha256": "04882329e7b067f20832b111dd8bdd050b9891978e77628708c5cddf2a280ace"
+    "sha256": "3399f0b54321db63bd7ea021108549de082fcb2080e78d389e7c23bc352e2728"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter12Materials.ts",
-    "sha256": "146a4a684281cb220563662c33618678cac8bac901170664d82761d0161f4a77"
+    "sha256": "814c5d3293f7b464b8864f0297f386b6b7ba61007e90352e15622dffba61d5f7"
   },
   {
     "file": "src/lib/report-knowledge/comprehensive-product-research/chapter13Materials.ts",
@@ -1785,11 +1785,11 @@
   },
   {
     "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
-    "sha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+    "sha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
   },
   {
     "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
-    "sha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+    "sha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
   },
   {
     "file": "src/lib/report-knowledge/fusion-knowledge-research/rejectedFusionResearch.ts",
@@ -1961,7 +1961,7 @@
   },
   {
     "file": "src/lib/report-knowledge/love-product-research/sourceRegistry.ts",
-    "sha256": "7dad6d648f063e5f27625564138740e516e0e345f753acd8c0190398faea5a24"
+    "sha256": "6399fba910f66edd4af95ba589a489f1b94029f8be9e949c70aaaf049a4e089e"
   },
   {
     "file": "src/lib/report-knowledge/major-fortune-product-research/axisCrosswalk.ts",

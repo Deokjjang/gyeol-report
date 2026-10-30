@@ -54,6 +54,10 @@ describe("P3.5 안전망·작가 보강", () => {
     expect(fresh.sections[0].paragraphs[0]).not.toContain("앞에서 본");
     const known = fixBackrefs(sections, brief, { text: `당신에게는 ${t.easyName}이 있습니다.` });
     expect(known.fixed).toBe(0);
+    // X 없는 "앞에서 본 것처럼": 앞 글이 있으면 그대로, 없으면 의존명사까지 지워 깨진 문장을 남기지 않는다(P3.8 r2).
+    const generic: BookSection[] = [{ heading: "h", paragraphs: ["앞에서 본 것처럼 당신은 지친 걸 가장 늦게 압니다."] }];
+    expect(fixBackrefs(generic, brief, { text: "몸이 먼저 말합니다." })).toMatchObject({ fixed: 0, sections: generic });
+    expect(fixBackrefs(generic, brief, { text: "" }).sections[0].paragraphs[0]).toBe("당신은 지친 걸 가장 늦게 압니다.");
   });
 
   it("A1·A2: 브리프 일치 비율과 연결 어구 반복을 메타에 기록한다(지우지 않음)", () => {

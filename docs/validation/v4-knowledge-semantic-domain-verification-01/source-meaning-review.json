@@ -786,12 +786,12 @@
         "exportName": "CH04_MATERIALS",
         "index": 10,
         "originalId": "cpr:material:CH04.P4:soft-precise-request",
-        "recordSha256": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+        "recordSha256": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
       },
-      "originalRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
-      "actualRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
-      "fileHash": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096",
+      "originalRecordHash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
+      "actualRecordHash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
+      "fileHash": "491dcd1c28db6ac860646e9b24bec01a2a53b89767e303502c33076578df0b02",
       "meaningFields": {
         "coreMeaning": "부드러운 말 안에 자기 요청을 남기는 숨은 가치",
         "positive": "관계와 선택 기준을 함께 전달할 여지",
@@ -813,7 +813,7 @@
     "directReview": {
       "reviewId": "sdv:review:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
       "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
-      "originalRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "originalRecordHash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
       "sourceFields": [
         "/coreMeaning",
         "/readerQuestion"
@@ -860,7 +860,7 @@
         },
         "originalRecordHash": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
         "actualRecordHash": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
-        "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+        "fileHash": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
         "meaningFields": {
           "plainKo": "INFJ는 따뜻하고 섬세한 언어로 인간 대 인간의 대화를 나누는 것을 좋아한다. 예의범절을 중요하게 여기고 거친 말이나 비속어를 자제한다.",
           "risk": "직설이 필요한 순간에도 너무 조심해 결론이 늦어질 수 있다."
@@ -882,7 +882,7 @@
         },
         "originalRecordHash": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
         "actualRecordHash": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
-        "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+        "fileHash": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
         "meaningFields": {
           "plainKo": "INFJ는 평소 부드럽지만 결단력이 있어 거절할 때는 단호하게 거절한다. 기준이 분명해진 뒤에는 흔들림이 적다.",
           "risk": "상대에게는 갑작스러운 단절이나 차가운 태도로 느껴질 수 있다."
@@ -1606,12 +1606,12 @@
         "exportName": "FRIENDSHIP_MBTI_TRAIT_CROSSWALK",
         "index": 506,
         "originalId": "frpr:trait:ESTJ:child:mature_hardworking_child",
-        "recordSha256": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+        "recordSha256": "607c643d9d755a0cec3da642d42e9fd892eead45684fbf93287e72ae74e86292",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
       },
-      "originalRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
-      "actualRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
-      "fileHash": "f1e24e1ecb5f645925af8811561b1bbefce1fc373cb21a1fa1c21bcf12854181",
+      "originalRecordHash": "607c643d9d755a0cec3da642d42e9fd892eead45684fbf93287e72ae74e86292",
+      "actualRecordHash": "607c643d9d755a0cec3da642d42e9fd892eead45684fbf93287e72ae74e86292",
+      "fileHash": "28efdd776fa1b4c7422b21d52856346254743ec6049b1a9e9c9242ee8eadf158",
       "meaningFields": {
         "/originalState/raw/plainKo": "ESTJ 아이는 주변에서 일을 열심히 하고 성숙하다는 말을 듣기 쉽다. 책임감이 강하고 맡은 역할을 제대로 해내려는 태도가 일찍 드러난다.",
         "/originalState/node/sourceDomain": "CHILDREN"
@@ -1627,7 +1627,7 @@
     "directReview": {
       "reviewId": "sdv:review:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
       "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
-      "originalRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+      "originalRecordHash": "607c643d9d755a0cec3da642d42e9fd892eead45684fbf93287e72ae74e86292",
       "sourceFields": [
         "/originalState/raw/plainKo",
         "/originalState/node/sourceDomain"
@@ -1673,7 +1673,7 @@
         },
         "originalRecordHash": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
         "actualRecordHash": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
-        "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+        "fileHash": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
         "meaningFields": {
           "plainKo": "ESTJ 아이는 주변에서 일을 열심히 하고 성숙하다는 말을 듣기 쉽다. 책임감이 강하고 맡은 역할을 제대로 해내려는 태도가 일찍 드러난다.",
           "risk": "실패나 변화에 대한 부담이 커지고, 쉬는 시간을 죄책감으로 느낄 수 있다."
@@ -1701,12 +1701,12 @@
         "exportName": "FRIENDSHIP_MBTI_TRAIT_CROSSWALK",
         "index": 122,
         "originalId": "frpr:trait:ENFP:child:anti_conservative_child",
-        "recordSha256": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+        "recordSha256": "cc253e2bcf0931fb1e9b99164979cc793bee8e662bc9dcd290be9bcd5b863454",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
       },
-      "originalRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
-      "actualRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
-      "fileHash": "f1e24e1ecb5f645925af8811561b1bbefce1fc373cb21a1fa1c21bcf12854181",
+      "originalRecordHash": "cc253e2bcf0931fb1e9b99164979cc793bee8e662bc9dcd290be9bcd5b863454",
+      "actualRecordHash": "cc253e2bcf0931fb1e9b99164979cc793bee8e662bc9dcd290be9bcd5b863454",
+      "fileHash": "28efdd776fa1b4c7422b21d52856346254743ec6049b1a9e9c9242ee8eadf158",
       "meaningFields": {
         "/originalState/raw/plainKo": "엄격하고 보수적인 기성세대 문화와는 마찰이 크다. 부모가 둔감하거나 통제적인 성향이면 아이의 자유와 감정이 부딪히기 쉽다.",
         "/originalState/node/sourceDomain": "CHILDREN"
@@ -1722,7 +1722,7 @@
     "directReview": {
       "reviewId": "sdv:review:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
       "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
-      "originalRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+      "originalRecordHash": "cc253e2bcf0931fb1e9b99164979cc793bee8e662bc9dcd290be9bcd5b863454",
       "sourceFields": [
         "/originalState/raw/plainKo",
         "/originalState/node/sourceDomain"
@@ -1768,7 +1768,7 @@
         },
         "originalRecordHash": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
         "actualRecordHash": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
-        "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+        "fileHash": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
         "meaningFields": {
           "plainKo": "엄격하고 보수적인 기성세대 문화와는 마찰이 크다. 부모가 둔감하거나 통제적인 성향이면 아이의 자유와 감정이 부딪히기 쉽다.",
           "risk": "권위로 누르면 관계가 멀어지고, 아이는 자기 세계를 숨길 수 있다."
@@ -2235,12 +2235,12 @@
         "exportName": "BP_WORK_TRAIT_SOURCES",
         "index": 695,
         "originalId": "bppr:work-trait:ENFJ:career:activist_leadership",
-        "recordSha256": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+        "recordSha256": "2b18b99e41955acd089ff684ab8cfa10f0665cf11684aee344cf253b12165e90",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
       },
-      "originalRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
-      "actualRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
-      "fileHash": "c7097f491fc156afa3861bb783eacc7e595116cf7a6b0c48df5ba648d6062783",
+      "originalRecordHash": "2b18b99e41955acd089ff684ab8cfa10f0665cf11684aee344cf253b12165e90",
+      "actualRecordHash": "2b18b99e41955acd089ff684ab8cfa10f0665cf11684aee344cf253b12165e90",
+      "fileHash": "58f7b70280668670371751888344c6174c78db40e483ed8cdc4accfaadcae252",
       "meaningFields": {
         "/raw/plainKo": "사회 정의, 인권, 사회 운동 같은 주제에 관심이 생기면 ENFJ는 단순 공감에 머물지 않고 사람을 모으고 행동으로 옮기려 한다.",
         "/semanticNode/sourceDomain": "CAREER",
@@ -2258,7 +2258,7 @@
     "directReview": {
       "reviewId": "sdv:review:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
       "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
-      "originalRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+      "originalRecordHash": "2b18b99e41955acd089ff684ab8cfa10f0665cf11684aee344cf253b12165e90",
       "sourceFields": [
         "/raw/plainKo",
         "/semanticNode/sourceDomain",
@@ -2308,12 +2308,12 @@
         "exportName": "BP_WORK_TRAIT_SOURCES",
         "index": 729,
         "originalId": "bppr:work-trait:ENFJ:money:support_limit_rule",
-        "recordSha256": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+        "recordSha256": "9b02074ca645935be9f3e4b3c5e97782bb7032a2f2772c622806ea3e875e35fc",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
       },
-      "originalRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
-      "actualRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
-      "fileHash": "c7097f491fc156afa3861bb783eacc7e595116cf7a6b0c48df5ba648d6062783",
+      "originalRecordHash": "9b02074ca645935be9f3e4b3c5e97782bb7032a2f2772c622806ea3e875e35fc",
+      "actualRecordHash": "9b02074ca645935be9f3e4b3c5e97782bb7032a2f2772c622806ea3e875e35fc",
+      "fileHash": "58f7b70280668670371751888344c6174c78db40e483ed8cdc4accfaadcae252",
       "meaningFields": {
         "/raw/plainKo": "ENFJ는 상대의 가능성을 보면 시간, 돈, 인맥, 기회를 함께 밀어주고 싶어 한다. 이 힘은 사람을 살리는 장점이지만, 상대가 스스로 책임져야 할 비용까지 대신 감당하면 관계가 불균형해진다. 지원은 금액보다 기준이 먼저다.",
         "/semanticNode/sourceDomain": "MONEY",
@@ -2331,7 +2331,7 @@
     "directReview": {
       "reviewId": "sdv:review:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
       "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
-      "originalRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+      "originalRecordHash": "9b02074ca645935be9f3e4b3c5e97782bb7032a2f2772c622806ea3e875e35fc",
       "sourceFields": [
         "/raw/plainKo",
         "/semanticNode/sourceDomain",

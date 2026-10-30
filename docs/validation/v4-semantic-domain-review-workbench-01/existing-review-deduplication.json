@@ -72,7 +72,7 @@
     },
     {
       "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
-      "hash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "hash": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
       "originalId": "cpr:material:CH04.P4:soft-precise-request",
       "origin": "SEMANTIC_DOMAIN_31",
       "reviewId": "sdv:review:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399"
@@ -142,14 +142,14 @@
     },
     {
       "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
-      "hash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+      "hash": "607c643d9d755a0cec3da642d42e9fd892eead45684fbf93287e72ae74e86292",
       "originalId": "frpr:trait:ESTJ:child:mature_hardworking_child",
       "origin": "SEMANTIC_DOMAIN_31",
       "reviewId": "sdv:review:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a"
     },
     {
       "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
-      "hash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+      "hash": "cc253e2bcf0931fb1e9b99164979cc793bee8e662bc9dcd290be9bcd5b863454",
       "originalId": "frpr:trait:ENFP:child:anti_conservative_child",
       "origin": "SEMANTIC_DOMAIN_31",
       "reviewId": "sdv:review:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c"
@@ -198,14 +198,14 @@
     },
     {
       "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
-      "hash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+      "hash": "2b18b99e41955acd089ff684ab8cfa10f0665cf11684aee344cf253b12165e90",
       "originalId": "bppr:work-trait:ENFJ:career:activist_leadership",
       "origin": "SEMANTIC_DOMAIN_31",
       "reviewId": "sdv:review:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904"
     },
     {
       "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
-      "hash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+      "hash": "9b02074ca645935be9f3e4b3c5e97782bb7032a2f2772c622806ea3e875e35fc",
       "originalId": "bppr:work-trait:ENFJ:money:support_limit_rule",
       "origin": "SEMANTIC_DOMAIN_31",
       "reviewId": "sdv:review:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23"
@@ -219,7 +219,7 @@
     },
     {
       "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
-      "hash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "hash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
       "origin": "RESOLUTION_12",
       "reviewId": "c45e91082b93da7b02fa0a50ccd79140a4177e57cf6248741a48d4b3e866df22"

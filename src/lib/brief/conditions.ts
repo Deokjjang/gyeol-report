@@ -2,7 +2,7 @@
  * 팩폭(과사용) 문장의 조건절을 원국과 대조한다(P3 A4). "~면" 조건절만 본다("~이라" 같은 사실 서술은 그 요소 자체의 뜻).
  * 조건절은 "거나"로 나뉜 선택지 중 하나라도 맞으면 성립. 선택지 안의 원자 조건(자리·인접 십성·관계·오행 다소·신살 동반·계절)이
  * 하나라도 원국과 어긋나면 그 선택지는 거짓. 알아보지 못한 원자는 판단하지 않는다(통과).
- * 신강·신약·십성 묶음 조건은 traits.overuseFits가 따로 본다.
+ * 신강·신약 조건은 traits.overuseFits가 따로 본다. 십성 묶음(비겁·식상·재성·관성·인성) 다소는 일간 기준 오행으로 여기서 본다.
  */
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
 import type { ChartDetections, ChartPosition } from "@/lib/saju/detections/types";
@@ -26,6 +26,8 @@ const BRANCH_WORD: Record<string, EarthlyBranch> = { 자: "子", 축: "丑", 인
 const SHINSAL_WORD: Record<string, string> = { 괴강: "shinsal:GOEGANG", 양인: "shinsal:YANGIN", 백호: "shinsal:BAEKHODAESAL", 도화: "shinsal:DOHWASAL", 홍염: "shinsal:HONGYEOMSAL", 역마: "shinsal:YEOKMASAL", 화개: "shinsal:HWAGAE", 현침: "shinsal:HYEONCHIMSAL", 원진: "shinsal:WONJIN", 귀문: "shinsal:GWIMUN", 고신: "shinsal:GOSINSAL", 과숙: "shinsal:GWASUKSAL" };
 const SEASON_WORD: Record<string, string> = { 봄: "spring", 여름: "summer", 가을: "autumn", 겨울: "winter" };
 const ORDER: readonly ChartPosition[] = ["year", "month", "day", "hour"];
+const GENERATES: readonly FiveElement[] = ["WOOD", "FIRE", "EARTH", "METAL", "WATER"];
+const GROUP_STEP: Record<string, number> = { 비겁: 0, 식상: 1, 재성: 2, 관성: 3, 인성: 4 };
 
 type Slot = { readonly pos: ChartPosition; readonly row: "stem" | "branch"; readonly element: FiveElement; readonly tenGod: TenGod | null; readonly glyph: string };
 function slots(saju: SajuCalcResult, det: ChartDetections): Slot[] {
@@ -101,6 +103,13 @@ function atoms(text: string, ctx: ConditionCtx): boolean[] {
   }
   // 십성 많음: "상관이 많고", "겁재가 많으면"(드러난 글자 + 지장간 무게 2 이상)
   for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:이|가) 많/g)) out.push((saju.tenGods.distribution[TEN_GOD_WORD[m[1]]] ?? 0) >= 2);
+  // 십성 묶음: "재성이 받쳐 주면", "인성이 많으면"(P3.8 r2: 쇠=재성 부족인데 단정). 묶음 = 일간 기준 오행, 원고가 쓰는 오행 다소로 판정
+  for (const m of text.matchAll(/(비겁|식상|재성|관성|인성)(?:이|가|까지|도) (많|넘치|여럿|강하|세|받쳐|있|없|약하|부족|적)/g)) {
+    const e = GENERATES[(GENERATES.indexOf(STEM_ELEMENT[saju.pillars.day.stem]) + GROUP_STEP[m[1]]) % 5]; const st = bal.status[e];
+    out.push(/많|넘치|여럿/.test(m[2]) ? st === "많음" : /강하|세|받쳐|있/.test(m[2]) ? st !== "부족" && st !== "없음" : m[2] === "없" ? st === "없음" : st === "부족" || st === "없음");
+  }
+  // 용신·기신은 브리프가 계산하지 않으므로 그 조건은 성립을 확인할 수 없다(단정 금지)
+  if (/(용신|희신|기신|구신)(?:이면|이라면|일 때|인 경우)/.test(text)) out.push(false);
   // 일간 음양: "일간까지 음이면", "일간이 양이면"
   for (const m of text.matchAll(/일간(?:까지|이|도|마저)? (음|양)이면/g)) out.push((["甲", "丙", "戊", "庚", "壬"].includes(saju.pillars.day.stem)) === (m[1] === "양"));
   // 이 요소가 일주에: "일주가 백호면", "일주가 해당 간지이거나"

@@ -166000,7 +166000,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/identity/5/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:8082b60816ea879871082a94166c8c0b9510dbf330e812eb3845256a495b4566"
                   ],
@@ -166132,7 +166132,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/relationships/1/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:864ec81475284fdbd6fae2fa782b3127fd8ea53b73784b100e930bd863757d84"
                   ],
@@ -166198,7 +166198,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/parenting/0/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:45e49b1843e44b51192fb872b4a191b8a94af86c1c43d6d212abde084f441a15"
                   ],
@@ -166264,7 +166264,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/child/2/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:b5a67cb580432964162d92eec14579ff91fcd29f87911225468f3e2fe4169c90"
                   ],
@@ -166330,7 +166330,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/parenting/2/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:e40306090d3bf0cd6cf1de9701020308fb92a39cd797d284ee8f18d081d5b41f"
                   ],
@@ -166396,7 +166396,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/identity/1/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:3a19dc1acc57c08d0332d66e03ff059e8eba9f4bf2d5d87a532e1edfa9b584d1"
                   ],
@@ -166462,7 +166462,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/relationships/2/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:1bf0d1a4402f5ad2973d93d7f6d93349c936afa999e3794f636a4ecaf8e6efa5"
                   ],
@@ -166572,7 +166572,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/parenting/0/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:70c952e81c7b96bebfca7e09a9c45c9afbb8b0a6d2efe010dd2067c59afbbaa7"
                   ],
@@ -166660,7 +166660,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/thinkingStyle/1/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:97ace5d04275f3188665edba3e7b2e182a0c18782acacb7d702a0d10907a75b2"
                   ],
@@ -166770,7 +166770,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/child/3/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:1ad47c9874264243585a3bf4111be0da399acf3f928d4bbdf3a8c05011ac9021"
                   ],
@@ -167020,7 +167020,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/identity/1/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:d64cfd9e85946198e2518ab94655ec19b34096c15a5dc33bdc99c5851428cea7"
                   ],
@@ -167086,7 +167086,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/thinkingStyle/2/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:c5235feb95db8f7add013718373ca8d85be90317d3fc839bfe9750cd0c9818a1"
                   ],
@@ -167781,7 +167781,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/relationships/0/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:a162bd2b5ebf8e70988f0fb1602921cfc280a45364164ec31801885a25f14898"
                   ],
@@ -167909,7 +167909,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/identity/3/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:0cb80b320da00a3feb81e34ece24a47a8cbe4891208cbb494040de9a61fc8062"
                   ],
@@ -167975,7 +167975,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/child/1/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:4cdd430c5d46a7767d4f33a3a1fb6af07a9698c7fb375577dede486092094c94"
                   ],
@@ -168041,7 +168041,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/relationships/3/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:466e1b4bf8ef9ac4d2ec6b9a6937f0236e0513c9f1a74cfa930a7cd687232739"
                   ],
@@ -168151,7 +168151,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/child/0/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:38f1630494ed3eb8641a66436f8fd2539d5724c07c0a695661eb410c584abf8e"
                   ],
@@ -168217,7 +168217,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/thinkingStyle/4/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:43a2516613535917ff534cbfbf4e8fa53ce3444c5de7abf6f4931187a403ed3b"
                   ],
@@ -168283,7 +168283,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/identity/3/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:1912070dbfb3adfecbfbc40493ce45c4edf3fde12afa944cdc1549432819f419"
                   ],
@@ -168349,7 +168349,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/identity/0/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:0701c7613467e55e666a1501b2251e7946d3b611b3eb6af4f4d44238c39a164a"
                   ],
@@ -168459,7 +168459,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/thinkingStyle/2/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:7554b2feda74d63fcdcd91f82101d30f01211f0874608606c8880edd267cdd65"
                   ],
@@ -168525,7 +168525,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/relationships/4/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:0a00ea60af5c30387868a7eff4dfda13585c0581bf410ef1bfef6c399ee8cea0"
                   ],
@@ -168651,7 +168651,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/strengths/2/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:15fe5f0e2afa9b2bcb13a2d4725d689b0bb290294b9be3674ff342a86d04b40d"
                   ],
@@ -169256,7 +169256,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/child/3/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:734ffd958c247bfad302f44a2a8424b9e6cc156f7ab3ce0b59b33c27b90f2c16"
                   ],
@@ -169653,7 +169653,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/communication/1/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905"
                   ],
@@ -169719,7 +169719,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/thinkingStyle/0/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:4528a264d2c121e5f3ef6db4e87f623a52a82d04a9b16a61e5909184fc4ec238"
                   ],
@@ -169785,7 +169785,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/parenting/1/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:fcc8ba461b4862305c574adb4332c42ac490adc3d704d39781cd983648e1c378"
                   ],
@@ -169851,7 +169851,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/identity/4/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:0c28008012a248e171e157aeea9857af881129d77318f78b1047def5d15276ee"
                   ],
@@ -169917,7 +169917,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/thinkingStyle/1/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:d21b703df81566056194c5cd158dac2e07ff564647539da05899ded571c6c295"
                   ],
@@ -169983,7 +169983,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/child/1/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:6ef75419e5b8e71f94634c60c654dd22172170bc157c0eaa98e254b375b8d2c2"
                   ],
@@ -170528,7 +170528,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/identity/0/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:36efa087b3d2afedcbfde324657aec59c263c1a2bb862491ab997dbf35a5de0f"
                   ],
@@ -170594,7 +170594,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/child/2/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:93aeb95cdd5dd2b869a6ccf6c3294b142407623439d6c54642f1e6306e6c1444"
                   ],
@@ -170660,7 +170660,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/identity/4/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:435c4fb73f5be62294f0fd7323afd1517c32821090296ee7a24fa8f8be535b50"
                   ],
@@ -170726,7 +170726,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/parenting/2/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:266836019592d9c1a94aff619289b19d8f8d25a4ead0cf3b431a9d4784aa8c63"
                   ],
@@ -170994,7 +170994,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/child/0/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:74a61e7fb49f8c497de462d7c753b2ecd834239000b90df53e7cfac7e9ae6e84"
                   ],
@@ -171060,7 +171060,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/communication/3/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:af727e11802c5797d55f807ff83e90822499ea3abbd935a01373041a6e8bfd71"
                   ],
@@ -171148,7 +171148,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/thinkingStyle/4/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c"
                   ],
@@ -171274,7 +171274,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/thinkingStyle/0/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:d5013d3fb3716c61e2e2c80be0d3a7fe7a88550a614905d954e649ec5b8c3d27"
                   ],
@@ -171362,7 +171362,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/strengths/3/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:e48bf7f5e02b07b0be2be7c156caadf455a7e72f51f57197ee20e9f527314c63"
                   ],
@@ -171488,7 +171488,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/identity/2/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:ceaf28bda12d7a4647bafaadbeb4c3bd554503e507bdbb37a939c3ff96d89f13"
                   ],
@@ -171710,7 +171710,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/relationships/2/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:ef25636dc144a889905b1817d53c408e3f8ef26df64f797abfc131ec91083bd4"
                   ],
@@ -171776,7 +171776,7 @@
                 {
                   "file": "docs/product/mbti/source/INTP.json",
                   "pointer": "/traits/identity/5/plainKo",
-                  "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                  "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                   "catalogKeys": [
                     "kc:v1:f1ec124c5a4f93832642e894cf9f6249e9846f27ffdd5c8e430af8760db38743"
                   ],
@@ -172399,7 +172399,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/parenting/3/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:bcac100eb8466399d9627af78a2592da88d2ea6eb78af9b553813beac1c4f9ce"
                   ],
@@ -172465,7 +172465,7 @@
                 {
                   "file": "docs/product/mbti/source/ESFJ.json",
                   "pointer": "/traits/identity/2/plainKo",
-                  "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                  "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                   "catalogKeys": [
                     "kc:v1:dcd34f656a04eddc1522f2e35d56508ad55de6cb0bc115dbf33db68f36966739"
                   ],

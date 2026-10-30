@@ -273,7 +273,7 @@
     },
     {
       "file": "src/app/dev/book-preview/fixture.json",
-      "sha256": "c0d1181950a330ab729eb6b23397e6573727821287fb392dfd5f1ccc4cdd56f5"
+      "sha256": "5a427e891b6d337b0045f1e10bbd755ec6cec5f05a83fc98c73c3a5d0d856881"
     },
     {
       "file": "src/app/dev/book-preview/model.ts",
@@ -2777,7 +2777,7 @@
     },
     {
       "file": "src/lib/report-generation/comprehensiveReportDraftValidator.ts",
-      "sha256": "1879c463ba40e0a41dac3c1ae64f606c91dcc5e5cde222d34c066ebc2bbf2302"
+      "sha256": "c9025aa0669037cc8d932674bd93345a6611a19d2eb06a68498b703fc25bbdbf"
     },
     {
       "file": "src/lib/report-generation/comprehensiveReportNarrativePostProcessor.ts",

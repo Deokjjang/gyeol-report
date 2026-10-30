@@ -14,8 +14,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 0,
-      "recordSha256": "3e8193928fd06df225500bf8e3549d0d611aa70c6ea1f71bcbe4e907cdb2ce61",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "c7935534efacef8815083bd59cf848857796785914f0eaa636a173a24a8f152a",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -53,7 +53,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
             "plainKoSha256": "30d0d50f3d11e4597f36b79d39545f13efdc0e843f741d3c5bea43d9652c4372"
           }
@@ -89,8 +89,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 1,
-      "recordSha256": "86ffe7f632a34af2e8bc502ad08408191549ae967c0d1595f4002bfb645652dc",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "241d6e6a772a573fd79c2c3e26b74b0984aa3b68cf68b95bdebff45dee847d83",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -128,7 +128,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
             "plainKoSha256": "30d0d50f3d11e4597f36b79d39545f13efdc0e843f741d3c5bea43d9652c4372"
           }
@@ -164,8 +164,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 2,
-      "recordSha256": "95ea7bbc497713adeb7ea4b444f680f80f53d0bb0b8dfde79305b4d3d93c9767",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "e9ff3e157680c1e844799a7548025540613c17d82e4e009b4ac6049c9e974ce2",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -203,7 +203,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTP.json",
             "pointer": "/traits/thinkingStyle/2",
             "sourceCoverage": "direct",
-            "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "sha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
             "plainKoSha256": "739dc638b462814fed1ee27da1ffc47cb7fb2a3999e74896cddb17632f5b5b4e"
           }
@@ -239,8 +239,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 3,
-      "recordSha256": "de317a726e6e9b18de0e40f759308255db7b1f21921b8fe375ae689776311d7c",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "d5a2ddc1f0b44b9191253241acbbb23a1502ae8cb3bfa60ab6138bd7a7ab8c8b",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -278,7 +278,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTP.json",
             "pointer": "/traits/thinkingStyle/4",
             "sourceCoverage": "direct",
-            "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+            "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
             "sha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
             "plainKoSha256": "28cb06912c33644c7843a196656c55ea751c554948499212ef09e2d7a07eda6d"
           }
@@ -314,8 +314,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 4,
-      "recordSha256": "5fb087bc99fa425485abaa21df8820fbc0f9e56b2bc63f6114a93fb0c4a500a0",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "0e546bce64df83fb904123590133c9b8567f71ed7fec98f9cf5af10fd22028d7",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -368,7 +368,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
             "plainKoSha256": "30d0d50f3d11e4597f36b79d39545f13efdc0e843f741d3c5bea43d9652c4372"
           }
@@ -404,8 +404,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 5,
-      "recordSha256": "6ec9023ba18ac6a1bfd31a0c46dfad2f7bbb758c89fd443325fb42d2bcacbf79",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "8fdde932c65156b84187712d2f9dbb20c7fd1fbbd3ee1c822819df1a6bd1875b",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -443,7 +443,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/identity/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
             "plainKoSha256": "333bf6b7d9175641fe0898d7f47025c7bed026b74e01eb3d201d8fb694329ad5"
           }
@@ -479,8 +479,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 6,
-      "recordSha256": "ea2b863f9ae6d5042262df6118e52b997e6efee6738482e5ddc34f44f0918718",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "cde58ef974ea95b263086726e327b2ad2982dac2efd583a51d9e911dbabfb7a2",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -518,7 +518,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/thinkingStyle/2",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "ec60da6592e87ba0bba8fadc332b6defbd4d93ec155f8548c05142a52f5f2e75",
             "plainKoSha256": "1308d13c7177a0cd7b29e46a4abfb6241ab958bb27ea474c914e17c81d47c411"
           }
@@ -554,8 +554,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 7,
-      "recordSha256": "0234e43c54794ed98515d2ff963441d563d1a82d5c5c24ef5a6837aa62b4142f",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "7ec332ea30e5dc1da67cf62191637cf37cca2afd9d624e0b9a76f3f073ad717b",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -593,7 +593,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/identity/4",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "b304a20b6dc45d6479ccfac3daf7043848162f299799e2e787f4834d4a85a131",
             "plainKoSha256": "597b98e1837181dd3bfcbdb8c37a0b41634bb1623022bc1b3f743ce3e5aaf5ce"
           }
@@ -629,8 +629,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 8,
-      "recordSha256": "a14d80c742f58029ef2790ef1329cbbe03ab06b5639d1217c878625f2c7dfb1e",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "e3bcb2d1754d5e2a645eda6a18e59d32717669813cad54ab3c2fe4a8bbd67d06",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -683,7 +683,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTJ.json",
             "pointer": "/traits/thinkingStyle/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+            "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
             "sha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
             "plainKoSha256": "7fbbc908f57f42701222f1021bc8736ed0b4be9dcad1909c0d891cc88e2b5cbf"
           }
@@ -719,8 +719,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 9,
-      "recordSha256": "fc8f83222e50fb5c6f5d3b5bdebb605a744e425b0ec22d0fd6f106f02442945d",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "58547876c50c0cdc2876d6b6d9a03fd3be63be29ea7fc2861dc5f9129da95655",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -758,7 +758,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTJ.json",
             "pointer": "/traits/love/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+            "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
             "sha256": "2f8fc9cceba32de6e199c6220fab7d9fef1dada30e4cba75293e5e88718b7d3d",
             "plainKoSha256": "0b9cfffe4bbb1b70d2e853bddec5a469cd194f10e753064e06aa13e228722df0"
           }
@@ -794,8 +794,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 10,
-      "recordSha256": "fe518e097771fa93da89991586225183e07aaa4387e6d24366b16625f83c0574",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "705408b172ccc9801dfbff334af8e5e5967d0cd0621e7947b883e91bfb64f0e4",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -833,7 +833,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTJ.json",
             "pointer": "/traits/money/3",
             "sourceCoverage": "inferred",
-            "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+            "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
             "sha256": "593dab331795ea2eb3b71adc106c582b81ebd9313941afe64d416eb4cd69f8e0",
             "plainKoSha256": "2709acb43e3d427cd0d560fd5601cb1b6c7f6812fba7fa599ed053169b78d656"
           }
@@ -869,8 +869,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 11,
-      "recordSha256": "df1b7cdc18daae5966078af5bd068df2d489dcfa12c5a8aeae7b0a174ff2cac7",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "965f049dc309d8b7e27e0613703053ebd74e93abf10a97d82f36592d737a2a99",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -923,7 +923,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTP.json",
             "pointer": "/traits/thinkingStyle/2",
             "sourceCoverage": "direct",
-            "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "sha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
             "plainKoSha256": "739dc638b462814fed1ee27da1ffc47cb7fb2a3999e74896cddb17632f5b5b4e"
           }
@@ -959,8 +959,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 12,
-      "recordSha256": "d590fda12eb28c92e0aaf1ed09718fd16e3467aa1438726de133c545021c614b",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "9f3794441d4637b778c7c3e67799e5df7ed1c3307187606ba872d52f5b4736be",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -998,7 +998,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTP.json",
             "pointer": "/traits/love/3",
             "sourceCoverage": "direct",
-            "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "sha256": "e0c6e86484eb4e18ed09f552d844eed205d79e57d932f9361fb576e95f73fa40",
             "plainKoSha256": "d99c8368f208e8f6b200e21fa298529080ce26c4339901976049ce259283fce4"
           }
@@ -1034,8 +1034,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 13,
-      "recordSha256": "4f22e34e85c6ef541414742135fb139e45f0f1f35f87b6c2d64bb689aa1a0859",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "35896ed62bbf03b4e8f832b26dc2816c0387ce0a28517131fc1833a1db1b0c15",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1073,7 +1073,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTP.json",
             "pointer": "/traits/communication/4",
             "sourceCoverage": "direct",
-            "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "sha256": "b80ee9ec7e231d030fddb5a5ce2ec3877a8e3dbe789d1ba843cf1199fb2ce5b0",
             "plainKoSha256": "26d31a88aca37456da9fd636b13a304fca97d455fd0e6d859cb72369b30b8e7c"
           }
@@ -1109,8 +1109,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 14,
-      "recordSha256": "407d7263adcfc387bda12c020285472f887448852aa10d3b7bf0643543cf6efc",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "3fdb5280db09579ec0726eb0ba018739ed21b6ab47f7597f6c4cd90e006a1175",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1148,7 +1148,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTP.json",
             "pointer": "/traits/thinkingStyle/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+            "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
             "sha256": "022a47d4dd2f078284c0817cc681f94eaa2b7415509a6b77ff2281a8b0ab5b46",
             "plainKoSha256": "679603cb68926194d9f090465587172a616d7e1d2f72506ef2a1d0ed40dea019"
           }
@@ -1184,8 +1184,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 15,
-      "recordSha256": "800789c0282846ac6e218bc13b499a4530209d1ae4d529dfaac4d27f73d57972",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "b9374f664f45dd20bcedec0e204ae5e2da9c8abd57264548b1ce67ff79013c4b",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1223,7 +1223,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTP.json",
             "pointer": "/traits/thinkingStyle/4",
             "sourceCoverage": "direct",
-            "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+            "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
             "sha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
             "plainKoSha256": "28cb06912c33644c7843a196656c55ea751c554948499212ef09e2d7a07eda6d"
           }
@@ -1259,8 +1259,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 16,
-      "recordSha256": "8291959485dc946ecfbfde959e97c63d27bbd71839423bccc366d1fd7e0ad56e",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "34cf7b914d6b79ff8ba5d76156679b8fb24309da60676dca1a3fa87a18b9c439",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1313,7 +1313,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFJ.json",
             "pointer": "/traits/thinkingStyle/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+            "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
             "sha256": "5411c3cb9de564e78e11d2fd24d1e5c8ba861cab348a2362ce7dd50a280f3293",
             "plainKoSha256": "6f3cd6efacc501dc5aebe73fc78d77089398317eb5a48d59d81f0445f7df1def"
           }
@@ -1349,8 +1349,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 17,
-      "recordSha256": "ca533ceadb76cc687ea697c2d74d9baef8d4b7da3c193f6c0d8ac9e1ca72f875",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "17206ce894dca2c4de1ef35e438725ae8c6e662b20c0df61a69c48c32f1a436f",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1388,7 +1388,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFJ.json",
             "pointer": "/traits/marriage/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+            "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
             "sha256": "0c8d2331162ffcae7502ee7fe2e00d904c4443cc59f7340d2258281c0eb6dc07",
             "plainKoSha256": "4e13217a80bfa20d60992d1d50149ff2ebf9af095110ca0362f81ae63436d1ff"
           }
@@ -1424,8 +1424,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 18,
-      "recordSha256": "95bc8f6c67f36303be4c0d6e56fc7d967d43ef90bc0e93d1f38475a20919bfb7",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "10781204cdbd7d3239a5e4cecc734266347cf46ddaba13b0dd6737f439791007",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1463,7 +1463,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFP.json",
             "pointer": "/traits/study/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+            "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
             "sha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
             "plainKoSha256": "b417a8a233dafbbc945db2da122aabdcf5a8fd520eb2021fdf035f104b4be7e2"
           }
@@ -1499,8 +1499,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 19,
-      "recordSha256": "013ffbf4740d508ed4491b9e173de0c5b7a06c7df878ab43550dec714d8f1893",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "0de39b62bb10d1847c91ff1deb8f219832894dd35ca9191ea333050970a3f7aa",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1538,7 +1538,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFP.json",
             "pointer": "/traits/thinkingStyle/5",
             "sourceCoverage": "direct",
-            "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+            "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
             "sha256": "274398cf9e120d6cd633dff6e484b3051ee56ff0ec71c9444cd8de9af769ebf4",
             "plainKoSha256": "3c09c9a5077b5e0aa44a011f88fed917b945b9cde9bbd9bfcfc65f915acda0ca"
           }
@@ -1574,8 +1574,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 20,
-      "recordSha256": "2c1295e1a1c9902e0c19515ce77514704358d1d7ef8980b98d71080c0909d632",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "90b1b4e7948feff6dae7c97d41d00c2489419a656d6a8eb176acdc8f193af206",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1628,7 +1628,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFJ.json",
             "pointer": "/traits/identity/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "sha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
             "plainKoSha256": "493c5a7a585674ee3c43172d48956f9dc9bc6cc92695a98254b75165a9649b13"
           }
@@ -1664,8 +1664,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 21,
-      "recordSha256": "634e767c8f7e154d61361c1b9c2f6902a4a58c444de5f27cc668da028a77fcdc",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "948dc4ac407ebdafcf79ad8f99137f6ea27a0451eb2b8dbe877e4b8ed1b935a9",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1703,7 +1703,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFJ.json",
             "pointer": "/traits/communication/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "sha256": "3d962b24e96da939dec02304178a8678858f19f3054ead5086cb30e849c81a21",
             "plainKoSha256": "c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f"
           }
@@ -1739,8 +1739,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 22,
-      "recordSha256": "b2069c3f0a9447037c492848a6af4b26484d3e9d9daf7f76181929602d4f62d9",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "f4b7235dc18042566e52b1197c1f5d494dc01919b9b8948d83a30de6596d6064",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1778,7 +1778,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFP.json",
             "pointer": "/traits/thinkingStyle/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+            "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
             "sha256": "a7901c07e7ef80a12b76c53d0b81f3b1abf2abd6954749e9fcd97b6a27bb265f",
             "plainKoSha256": "68d176153713f5206cea0bd613cecc83c1987d0aa20263fbdefaa2f852c58fdc"
           }
@@ -1814,8 +1814,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 23,
-      "recordSha256": "647b07b3b82278e6236c231ed98ff3478693b5764efcd2c06bff71c2f7406392",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "f59dd04f78e20a4a88bec8157f7ab6024d5af96727fef9437613f85a82e0731b",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1853,7 +1853,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFP.json",
             "pointer": "/traits/identity/3",
             "sourceCoverage": "direct",
-            "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+            "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
             "sha256": "7cc03d8d37dbec0c99385f0472d23a018eb0401b4a35bfb39021d6f5c8250c56",
             "plainKoSha256": "954a3906e8ff1a7a6537de8f0e3b2f5f27a5cb1fefe1b764b0b8314a7a1c5c8d"
           }
@@ -1889,8 +1889,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 24,
-      "recordSha256": "635170d30ded12e1fc59a4490e3fc51eec39696f22948b7537354e652219283b",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "922322a6437890b0c61850d9221a46d6009b9861ea3e1b97ca4c782bf1425887",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -1943,7 +1943,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFP.json",
             "pointer": "/traits/identity/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+            "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
             "sha256": "d5ee57333a4e56a077112db8baf7a9b84ee5878e7195fef1344042ffa83c3f5e",
             "plainKoSha256": "1e14ee4eb570ac885bea5400233f4caadc1cd6d359d417a81d5608f4ba6aaa52"
           }
@@ -1979,8 +1979,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 25,
-      "recordSha256": "4cc534d57d289ef27c8d1bebb4317dd0e0e1f81cb4c87486819cbf45e1c735fb",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "6da442bba6caa77eab3689cff9afdb0111d1e3c020fadd00d12a970f51f529c8",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2018,7 +2018,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFP.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "inferred",
-            "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+            "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
             "sha256": "a039fb5ebbd332c4df2c1933f7bbb17e7c7681f9e2e96bf771dcd5a6c181b2ae",
             "plainKoSha256": "413e4bee7116671a6c36b6e15f3a919c1e437fb581f5add47c96adf0f0c235da"
           }
@@ -2054,8 +2054,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 26,
-      "recordSha256": "152b171c9e09ae9d23925a80df775a780082372fe4728b615da6ef4433c534e1",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "4028a2ba9153b1ad7393cf06f9024c7eaddc462eba7827027cceef80a72c1b63",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2093,7 +2093,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTJ.json",
             "pointer": "/traits/thinkingStyle/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+            "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
             "sha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
             "plainKoSha256": "b1c4340792a2be816e9c9dda32267554926f1fbe92a37f646777f2ee35b77113"
           }
@@ -2129,8 +2129,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 27,
-      "recordSha256": "e30bdb2ff900d6c9f990b0d8d3ed5706653ee9848a704a0cc01b80de1158a798",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "a2a68697693cf73b334b5597f04962e834e1334cc24533920660a73277ec25b4",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2168,7 +2168,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTJ.json",
             "pointer": "/traits/love/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+            "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
             "sha256": "17eec3bac834387f9c208dd6a2bc5ca527d14720aa113c4bcd13b59e507e05a0",
             "plainKoSha256": "6cf5aaf11c27bd6255903f9e39e5dc8f87c903d2aed9f451ff36205ee1bae04b"
           }
@@ -2204,8 +2204,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 28,
-      "recordSha256": "cc95bfaac8d5a98fcdb071600729099a83aaa7b66993a3d066772a2d06dda01f",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "e30083e5641ec68255fb790b4e8dd9bb10dee7594620035793c816881d5d0f46",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2243,7 +2243,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTJ.json",
             "pointer": "/traits/marriage/2",
             "sourceCoverage": "inferred",
-            "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+            "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
             "sha256": "cf342a791bcdb1515b83c8fd88c4eb8f2d94ee89a11dc1bd9f02f9afbb763c7e",
             "plainKoSha256": "c7315c0dbc80ccc218bbd74d2c41751c2749e561e2fac9050537769885390737"
           }
@@ -2279,8 +2279,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 29,
-      "recordSha256": "b74d86180cf2a74d7b0ced941fc5d5e3a9da1138b403e25aae633861bfb3e02e",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "f4dc23b7df2d8570dfd249cd2284e04124b8de3afd8e613e9477acb3b3e9a75f",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2318,7 +2318,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFJ.json",
             "pointer": "/traits/thinkingStyle/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+            "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
             "sha256": "9312705ee838258bd8e6de956a289c6457ff46dbb6ef35b1a90b23fcf7e5fbd8",
             "plainKoSha256": "32e2faf7bc710674473d1544aeaa3062f5fc5b70d4894f1a84d8ed4d7b3b6c94"
           }
@@ -2354,8 +2354,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 30,
-      "recordSha256": "a8d5863bd824064ff5d4bebc460e02a126c30aa70416ab6f0f6e9cacf4211c30",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "0e6fe18f1a9d9558973a5fe9f74f5c691cb60e6189d9529afbc431a6f51eb115",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2393,7 +2393,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFJ.json",
             "pointer": "/traits/love/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+            "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
             "sha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
             "plainKoSha256": "2b74f1a4a53087aff6ee0fa0f320610698bc8ca29e91d5e370159141bdd73c35"
           }
@@ -2429,8 +2429,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 31,
-      "recordSha256": "ad85cb0cc8ee39781b9a4d7fb47f5e21bed739ea6b9769519e0a4cb77f9cfdd8",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "6e111d45120f46c4dc1fbf345e225e975ad4fb606d918b03c57f8fc0d633d96c",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2468,7 +2468,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTJ.json",
             "pointer": "/traits/communication/2",
             "sourceCoverage": "direct",
-            "sourceVersion": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+            "sourceVersion": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
             "sha256": "f257c3a956697751e8d8dccc1846fd61fbc277d0a57eb7ebe3ab165d821c484e",
             "plainKoSha256": "0bfd1840f8efbf8aeb302a975d9e6bfbb6ffb9519d769ebc1c745548c2197e19"
           }
@@ -2504,8 +2504,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 32,
-      "recordSha256": "054c35cc57aee0e9d24d1f69cc84f0d03a51dff96e1c86732136fbaba3fed65b",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "017ac2be74eb72e88bb254bcbddbac058c86885083b79f8aebd9ac2efe29a57c",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2543,7 +2543,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTJ.json",
             "pointer": "/traits/identity/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+            "sourceVersion": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
             "sha256": "cc90d5ce07e2707070dff522f22e3db8afb0f43ea520b755b986df0ad3c78833",
             "plainKoSha256": "fde888702a41a8a41d872a3c33904971f8c317126655597b46d07ca5258b134e"
           }
@@ -2579,8 +2579,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 33,
-      "recordSha256": "2fb9dd6671742f16ac3d8cdd6f201b52045bb1f036f385f437fa2c1808d204d1",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "7ddd6588f254b8d9fb0ab336848d789a461b39a911965290a6681c6071b44fb0",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2633,7 +2633,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESFJ.json",
             "pointer": "/traits/identity/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+            "sourceVersion": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
             "sha256": "ec99220bf92305dd5aa42a031b2546557b46c1e4df10dd0b29733db37353813a",
             "plainKoSha256": "710a4b9318f25b21860959e72b17c7f9b399799bae9c4381532efce48db06170"
           }
@@ -2669,8 +2669,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 34,
-      "recordSha256": "4bea4ab9f3de1c3467454a993b35ff8e6f145241884cb0e9b9b352c5744c0f32",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "0aae89fd87f08ca08b0aca325c9d3393c925361f22b9018cb975ba61278134d9",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2708,7 +2708,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESFJ.json",
             "pointer": "/traits/identity/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+            "sourceVersion": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
             "sha256": "ec8e811aecd95c0e4a11af7b4c24e24b53e345f1c2c615abf578e657b6a3f912",
             "plainKoSha256": "6603fc98a0bec74866125f573fa99f114e0aa62f52023d8e0f874641a72a026b"
           }
@@ -2744,8 +2744,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 35,
-      "recordSha256": "be22d063b285a41a288fb787c53b100953218042b5f72ae5bde154fc1b513429",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "2f9ad989e1a508c8a6a028b54fceafb18355e73969017c5b709aef6c4478f67e",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2783,7 +2783,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTP.json",
             "pointer": "/traits/study/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+            "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
             "sha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
             "plainKoSha256": "ed5c7ae76780fdc9eaaf6ccdb480309117e8aaabdf7b2bfab21e5155bd365160"
           }
@@ -2819,8 +2819,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 36,
-      "recordSha256": "53d9cb0c46814ec33f3b3b77b3368c664fa6278df833d310739fe8f98d427744",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "edfa5370ce1443de2b0a141e97405d9d32809dae23ba4036105e82f6857fb7f2",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2873,7 +2873,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTP.json",
             "pointer": "/traits/love/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+            "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
             "sha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
             "plainKoSha256": "a8e7109a34d1aad89bc233fd0df96a16beb27737232147d73c32124a0e350fc7"
           }
@@ -2909,8 +2909,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 37,
-      "recordSha256": "dd0c264861a5529621dc533b0b3338c4f22b76265eba944833c7d5b4beaf15cd",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "057470dd2d1c4703ed6953d9ccbb52118905afdd2d4ae30a00f50bf47305b748",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -2948,7 +2948,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTP.json",
             "pointer": "/traits/marriage/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+            "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
             "sha256": "9c87a39b77f3a980c984cccbcdc66a691a808b41e0b7326d3d2e0893a3a6729f",
             "plainKoSha256": "85a45872c9105751f918f46094e7edde43b64c904b7495d0b647f2bf7844d224"
           }
@@ -2984,8 +2984,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 38,
-      "recordSha256": "de477c611ed5a144d20f36161deb8e2eecd39efb11b7197bc0b2133beb32adab",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "cf5009476c1a06503c9f9c6abe99ed4352e1ef7f47c11775e12bcebc1e2df269",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -3023,7 +3023,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFP.json",
             "pointer": "/traits/love/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+            "sourceVersion": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
             "sha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
             "plainKoSha256": "5472e24d811bfa3b9385abd4c2d577af19f3dbea3e3bdec6a5b06e98bb674c9e"
           }
@@ -3059,8 +3059,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 39,
-      "recordSha256": "22f770c957f75ca37e08d33af88ffb55c81f6c325857b5c261ab76e8a5d8d169",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "b7af752eb4ea127959939cbb7e912e500acbaf4e3c03d57aa3a514ac6b2b2079",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -3098,7 +3098,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFP.json",
             "pointer": "/traits/thinkingStyle/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+            "sourceVersion": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
             "sha256": "571de81aac5352f2bf331f6fb87ce131f94cffd56c037250363329aef29ceb93",
             "plainKoSha256": "9b6f388f24143d0a6fe95d75c6eca9931955bfcce9a30eb3ce5cd631cafa9cb5"
           }
@@ -3134,8 +3134,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 40,
-      "recordSha256": "a940a044141c0e3a894212ca04decd0f717a174916efb01367755dfdc365e23b",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "50da8e181af245cf359e08e6e0ca3c1847005f5ce7e66baecc0fed27cebc6359",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -3173,7 +3173,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTP.json",
             "pointer": "/traits/thinkingStyle/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+            "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
             "sha256": "7b714a4789afdae5915c4e27fae3baf7e7684c091792eb841f8fadd3b1cd9526",
             "plainKoSha256": "ed73b917431b4226d522423661e98ad01864eb3f964eb22fa47c99c9362de3c5"
           }
@@ -3209,8 +3209,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 41,
-      "recordSha256": "dea405009a563ee88fe280b177b6bc7085cfdebb885d34527e3b44053b12f8b3",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "5b223d5a3f2209d7d08debbea08df9f6e9601ed49bacbfce4a5262a627f0ae11",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -3248,7 +3248,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTP.json",
             "pointer": "/traits/study/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+            "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
             "sha256": "d74635abd854a1f57c2957d408fe15960e1f805ff3206e56ea49c8efa41216ed",
             "plainKoSha256": "0c96181db11af35f6079e19c032e0b84a663c39ab1040b179a6824a34a06cc40"
           }
@@ -3284,8 +3284,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 42,
-      "recordSha256": "838ec370c3b870d258381467fc2463fffeb5cde13f5f76cc3c5c02bfdf927885",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "75fa92d30a9c86fb96119c5ab536f788280136cfbd15215f360f175ebfe16d3a",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -3323,7 +3323,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESFP.json",
             "pointer": "/traits/identity/5",
             "sourceCoverage": "direct",
-            "sourceVersion": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+            "sourceVersion": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
             "sha256": "0cf17a07ef58030fde017c017741eb3a1836d2d3de2ef4020d20f1257b3b26be",
             "plainKoSha256": "bb068dde71bb281299a51fe0635248220ef89223aefc4b2e8ab4bdc572e9213f"
           }
@@ -3359,8 +3359,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/legacyFusionResearch.ts",
       "exportName": "LEGACY_FUSION_RESEARCH",
       "index": 43,
-      "recordSha256": "6ceedebc54805f3e9638c7135da869278cacc151bf66a13779eab8dead10f17d",
-      "fileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318"
+      "recordSha256": "de9e826746c1a7c0fd13022daa3a0187bc2c5ca71c3a46581270a9164a38d0e5",
+      "fileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -3398,7 +3398,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESFP.json",
             "pointer": "/traits/communication/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+            "sourceVersion": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
             "sha256": "88e603e0b43570f9790e874e20ef59c138648ff3ee68bee2146c9657dedd5b24",
             "plainKoSha256": "5409ea6f8c4e4a24b657675a5243577873701e6a7d85cee52f8fa3fdba060e88"
           }
@@ -8490,8 +8490,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 0,
-      "recordSha256": "2c269393314c94fc09f0c444bcdac795f4ddd3bbba516ae628c614dc0706da5d",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "7fba8221e04a68b55fd4d3c17c78de51dba55ab75f97276ca19fc8fe4304a91e",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8531,7 +8531,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTJ.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+            "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
             "sha256": "c51c73b93437abd92c1ce601ccccb2c0901ccc340293c88eeb5135863c42f718",
             "plainKoSha256": "2cd4a099223cd20b305ce9054b48bdfb6b498f80b12c21d7984bbad52054a38d"
           }
@@ -8567,8 +8567,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 1,
-      "recordSha256": "e7773ef0d74c13ada308d5f3e67fa8e63a78d34969d1fe1e5d42680f5dafb3df",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "7199fef6118b0703f144795431943e283e25719fab20f71bee52ae0fee9ccee9",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8608,7 +8608,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "inferred",
-            "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+            "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
             "sha256": "4569fdbe0d5b6a99c0549d11711247006acae08b139954dd89ac15eb9502d63d",
             "plainKoSha256": "5d947010755f3c193bd910b8a9370317d026c329b971ec1e89333a8fff262b3e"
           }
@@ -8644,8 +8644,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 2,
-      "recordSha256": "fe59e6d6401c2334f7b889dbc40511ee1424c73f5cad1a04ecdc08df1ba085f0",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "a1c2367085fc62fd10c6da240d41d8202b34a2a39924781b375af4a4306008dd",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8685,7 +8685,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INTP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "sha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
             "plainKoSha256": "0744f9e46934b3bbe67347f67d651f543e9c3fff29270f033ae5b79e6da8aef8"
           }
@@ -8721,8 +8721,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 3,
-      "recordSha256": "345d8f640404e47334c1b4363fa54b0b4efbecbed9e4ae20a507d643afd17959",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "9071c7b1595e8907f45d284ca2e517819f8a82646cd824fe3366e599c3918dd3",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8762,7 +8762,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/money/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
             "plainKoSha256": "c975c69eca24f1a3b2dd58ea6902108c6bc9b83ce8f4b7f1fcbd7341f83cd11d"
           }
@@ -8798,8 +8798,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 4,
-      "recordSha256": "5a39b0ca90d363db823304fad35fdb8e51cf5f53c87ef9ca242a3e82230dcb09",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "dfcfed7bde3e7c66ef9613b8d0636e0e46197df7bf0120de7fc8e3b5112d1d58",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8839,7 +8839,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTJ.json",
             "pointer": "/traits/study/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+            "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
             "sha256": "defc9bb0e8d8708a67d624bc1aeaa9923d950ae0f5de20a552dc3cdea22fedb5",
             "plainKoSha256": "3aa6af125f50c78b37670cce2eece4965095c90d3daa2ca35534ac7107a972b3"
           }
@@ -8875,8 +8875,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 5,
-      "recordSha256": "08944621d5c18aca204e9223a1a594c57e499c878e1cfd7ca3d0bc6913f3f64d",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "5a4c6749d84bff1d198f506695de6379eaf88c09bdc31221cbec41a9e5923164",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8916,7 +8916,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENTP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+            "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
             "sha256": "7ecd06a09dcb82d85dc0371268f747e382c6dc1cd809e46c5075150631715b7e",
             "plainKoSha256": "3f3a7056b94a574fd3b2182b4ffb6bd1a73c3c4b8b840f93061bb269f47b0e5d"
           }
@@ -8952,8 +8952,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 6,
-      "recordSha256": "c70926eb4ce3ec174e138e9e0cffef3956acc35bd4798bd8cced2b5f2637e279",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "a832af2ed3521d8faa62733f9bcad38376b79e3469d849a345874b603c230f5b",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -8993,7 +8993,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFJ.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+            "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
             "sha256": "4d939ac685a6d57573fe725bbd12b75047e381dee843cda1c6c111cf70855a5d",
             "plainKoSha256": "7920656d5923663f214c95918124951f6ad41a598843fa163a57bcb474339669"
           }
@@ -9029,8 +9029,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 7,
-      "recordSha256": "dba73fdbc8e7ae91ce3736ad3363678dc2bc6026ddb8931aac7e7f9a96224188",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "59ec61211ec2b780734624efe3a90eb3bc0189dac926a4412a74cbea6360ffa9",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9070,7 +9070,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+            "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
             "sha256": "d54edd48cfecad7db67483bf4045854efb59a433ae9eca6de6fca2c31d8ba9ce",
             "plainKoSha256": "60413848d9799e814ce856a65e9ff4d764cdea4080d9d3bfee7bbd494e537bac"
           }
@@ -9106,8 +9106,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 8,
-      "recordSha256": "baebdfc6e530799dd8d299ac0b3c44e7adf7d179e4793051c91e858d696b7b3b",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "83ddf7f9111121deb9ad05a7635ee7e393a5c1abbbd0effb17680eb4e55307ec",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9147,7 +9147,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFP.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+            "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
             "sha256": "08406615ad1ee236e78f7a2c4e1359668e46f6f3ec2b88aba29dfec4555014bb",
             "plainKoSha256": "ef67a563f6fe5b179c27d4901570680ecb8500be3c77edf77489b09c26967384"
           }
@@ -9183,8 +9183,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 9,
-      "recordSha256": "badb8c09af0a9015ca13577dda5b8a4da65a7b9f1b415f26a8bc7e1602752232",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "79bea2b24e2b3b8c0fe4f277e04e5f4dcc94bc92af426df338f190ba9b5365e7",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9224,7 +9224,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/INFP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+            "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
             "sha256": "8fdf31b355c616feb78bc871e91b6c2ddd7f11563eeb9b648d90d67ad26f9f96",
             "plainKoSha256": "74580027ae5ad27e773634ec2a08d5d721bdfcf9645f255fcbf4bc8eb869d876"
           }
@@ -9260,8 +9260,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 10,
-      "recordSha256": "6ce46ed9d0b1012a936f4e7712531eedbc4d64aa604750d4ee209fa1a43ef6f4",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "5584f1f30572551a12ff57d5b32f21df634a5d3832fd365d2bc855a61c914468",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9301,7 +9301,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "sha256": "a3a45a773d25b99dba2a1200ab9dd00190606201ad57b8d7bac6e23688baacbb",
             "plainKoSha256": "6dd02b6720d006de9ef834a8f5bea1fb730a37440e6dba3548539347b649e798"
           }
@@ -9337,8 +9337,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 11,
-      "recordSha256": "7f6f857d6d613c08ac928fd8f0484cc2b00f83afd233577ea5ebd5c4916027f9",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "87aaf1c5afaa104d2b9383977eb0550d09ca080e850017cabf9f28e5f8b6df46",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9378,7 +9378,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFJ.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "sha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
             "plainKoSha256": "8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e"
           }
@@ -9414,8 +9414,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 12,
-      "recordSha256": "56d96a2bb484ce9804ba7c8efdcbe8067f8b0af663c49a1b336a0cc8aa74e2c8",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "6233bb7c41b6d3757d7fa9bbd5e546dfa6a4b8b82c4a9e532b1794a6d849fa92",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9455,7 +9455,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+            "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
             "sha256": "d8685fab29595435c32cde027da986ad4900e5734c7bad26d143b5c28057a482",
             "plainKoSha256": "3e6855d9cb854cbe5a02bfaa327200e5b63faa9f913e8754b8c498cb117ef0e8"
           }
@@ -9491,8 +9491,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 13,
-      "recordSha256": "366d357f866691a9c75beba1ac1738e730eaae92a785f094aa4dedcd98ac5bbe",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "0e95f5ac3f92446ed41dd6023b26c208066c511141c02edb991dfffd92419c18",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9532,7 +9532,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ENFP.json",
             "pointer": "/traits/study/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+            "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
             "sha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
             "plainKoSha256": "16a1c664ddeda9a85aa4a61b42fb2ae24be2709805953bf3a2e0288eec17c448"
           }
@@ -9568,8 +9568,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 14,
-      "recordSha256": "f9380f02e5d0966e90d8f9a79e46b54aae9ed7d0b466ef74c3eb5905acf7e898",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "a4531988bd6c5978ec4c1da4e10104448b7d94e66565cfc57125e7d433b56db1",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9609,7 +9609,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTJ.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+            "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
             "sha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
             "plainKoSha256": "718254e25a4059b2ee415f8c20895622eb30fde5652862527de34c9fa2821cee"
           }
@@ -9645,8 +9645,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 15,
-      "recordSha256": "95dfc0c7b064e9f0f5814372477aeb3f29f06b34c07ba805b8b53e78ffdb2413",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "bcf0f4f9c3843a4e6e84c09f0efebdd32b540e9452daf926d69ac3d28e433bf6",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9686,7 +9686,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFJ.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+            "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
             "sha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
             "plainKoSha256": "16250fc8cd51bb8bad1e1448b928cd5a60a9ebc6396843bb70b81ea28923343e"
           }
@@ -9722,8 +9722,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 16,
-      "recordSha256": "6dee1a0b8bed31e812f0b794fa97585898809b5332d9a385cfa399f1cac123e5",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "dac359f442bf2cb6acb432eecf13ddf045a0186f110533a24d7e0c31abfdd3da",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9763,7 +9763,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+            "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
             "sha256": "d7de4e18454c3b221b1d336262189ed6caa5ee72d82231fe228d59797e5ccb86",
             "plainKoSha256": "7cb622594dff6a2b55db5f37e0d6148646a89bbce04de0d7b5f82293e4ece585"
           }
@@ -9799,8 +9799,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 17,
-      "recordSha256": "51c90e20bf719a8b9ca06998ecf83d3b3160956e186376275706365a40db2440",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "6abe420d0c86e2a5aa3f23724bd71d452aad6c817697c70b6139bb0316f65661",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9840,7 +9840,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTJ.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+            "sourceVersion": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
             "sha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
             "plainKoSha256": "843cb5aa623a28a56fb9e8d5504b18e374a6511bdc96ea59aa9ca7e1a09128e8"
           }
@@ -9876,8 +9876,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 18,
-      "recordSha256": "52d728057355c2e851d539ad77220300c010dd399d2c558e8824ea9dc0080fed",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "47854dd2936085f45f5ec38cb33152b8f7b02f2ae2ef7f881a661d540f5d6593",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9917,7 +9917,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESFJ.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+            "sourceVersion": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
             "sha256": "8f59c3cd894c88b237bf44fa5fe37eca8b8b0643202a3d1d5a5acc80b8118e60",
             "plainKoSha256": "13e5f1acbde258cdf66bc4e3f96ceae2b7017b53209c7c3c1f14b5cb338f9196"
           }
@@ -9953,8 +9953,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 19,
-      "recordSha256": "2c8e09deb5c5def0e98c201ea1c320cf04a90963c56b1e5ec4e5f270b2caee6a",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "d0ff5731640f88ee624930b9a49abab4f4f6e71cd7f30b7d48b6ded07b2e9026",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -9994,7 +9994,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISTP.json",
             "pointer": "/traits/money/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+            "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
             "sha256": "1bfac198a56ea421abc1b83499b78c5f0069628275e36b57fc48ef7b889efcd2",
             "plainKoSha256": "84b89c64b12be8f6d6c99835b8e743440dfd2e68da8124270d65a17d9cc5aa03"
           }
@@ -10030,8 +10030,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 20,
-      "recordSha256": "1d9cf15219d5d79ea1048df6ac2699d2075c8ec419d029781892efd2bf55dd09",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "41114c134b39095e2de2d13850ede92b01d9dfbb765b6aa4cdd727f3fe439089",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -10071,7 +10071,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ISFP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+            "sourceVersion": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
             "sha256": "3b2933a71c929755e951eee60da9b89acb5fd344f90cc1f8a5370158426fee2b",
             "plainKoSha256": "ad65d328a8cc03ad0072b3c4850876529e51edd57a958309cdd4875fb30a8378"
           }
@@ -10107,8 +10107,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 21,
-      "recordSha256": "1a090b3b338f607e85ea005d1a6e4c1cba822152d4b333a17b4cd3b7e254e596",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "e125e49990590ddd2b9c8dd37e8a63cf23ec35a75e9ff98a9a81583b2c930dec",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -10148,7 +10148,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTP.json",
             "pointer": "/traits/study/1",
             "sourceCoverage": "direct",
-            "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+            "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
             "sha256": "e157227a7a65402aad995c3e0c5b0a3fca0836265e6c194cc0bd96455f8b396b",
             "plainKoSha256": "fb19c5794274fb0d7f9e851476c7dee64ff437e5bbd2d37dbdec4398e2c18201"
           }
@@ -10184,8 +10184,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 22,
-      "recordSha256": "5956d6e5e6d888b9be591499dac47458ff3dad86226965672a144a3e4ab08d49",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "621483657b01755fbc2c474efa99d8cd558b30f646e58af76ff837d820b02ccc",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -10225,7 +10225,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESTP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+            "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
             "sha256": "249425dac315323aad0301a098a9db041b6b0e33a7c16272fedcf115d4049a55",
             "plainKoSha256": "a920fe885ef9bdc8676d8393ec9222b8a1bed20c6a1599becad19041f8ae07b3"
           }
@@ -10261,8 +10261,8 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
       "file": "src/lib/report-knowledge/fusion-knowledge-research/newFusionCandidates.ts",
       "exportName": "NEW_FUSION_CANDIDATES",
       "index": 23,
-      "recordSha256": "5739aea91d08f9488e4ad3c87657bd3bfc47e7faddc2c0bc64375722b50855bb",
-      "fileSha256": "0ad2d5d915f9c7d4cdc5d68d73468bb3c007aee5e625dda784ef78b92b81d28c"
+      "recordSha256": "a4cadb45ebdbe4324a20ebd9ecb5114238eeaf6bf151c7d95df0c7fc3c94d9cf",
+      "fileSha256": "391f563d94c34b6d7fd27d6fd0b8013019ffb4f393dd70097c874d45efacfbcd"
     },
     "originalState": {
       "review": "conditional_editorial_not_empirical",
@@ -10302,7 +10302,7 @@ export const FRIENDSHIP_FUSION_CROSSWALK: readonly Crosswalk[] = [
             "file": "docs/product/mbti/source/ESFP.json",
             "pointer": "/traits/workplace/0",
             "sourceCoverage": "direct",
-            "sourceVersion": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+            "sourceVersion": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
             "sha256": "d98fbc035ba01882f404c6e6afd2172039165ad9d98e66f3682212b421e71bd5",
             "plainKoSha256": "c100494a64248c4982419afa4b99705dae0e4b588d4f938ba55c7769de064f19"
           }

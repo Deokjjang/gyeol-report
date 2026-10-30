@@ -69,7 +69,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "2ba497c67a7642a78a9d398f5f9dfe59229b42dc3b8a32d749f2611c68bc39fd",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -200,7 +200,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "4394cb48040649dfcf8e2247c0c50374a747511b9d485e702b65c38f3be815d8",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -829,7 +829,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "ac3753ee996eeeb98dfda9167477f70f4ff5a70cdeb093419f45dc55c4be91b5",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -864,7 +864,7 @@
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "d50bc653976cb3ffdfdb1da30979d209e4ad8642f909fe0c1c3a43a17b58de7c",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -919,7 +919,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "a6ece0eba0a5edf9e5f1e481de26340352d080b528d90b3701aa0fdb17314c36",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -954,7 +954,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "cd7371eecefd4e1c8fa9645dee2068831d794f998e815e88b8af396b8d283921",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -1019,7 +1019,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "bdf0dd336a7a8345a93cf81b56c9fab562e693593d6d64c1d6d1d6c7a3c23bbb",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -1327,7 +1327,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "4fbc70750d4ef8b61d61afef6585b4c4aee919fc4d20795b2e0fb8a794675959",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -2068,7 +2068,7 @@
       "sourceId": "mbti:ESFJ:traits:parenting:harmony_home_pressure",
       "auditRef": "source-locator-audit.json#f56616fb042e916a2137",
       "recordSha256": "2e8f6c27bf56f9fbccf616990afbf601a7d3a1dc25518513c089790f844f2ef4",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -2166,7 +2166,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "3178111e477ac826bcaa27d71a8f628c698766128ef3321bca190ebf5f55ddd4",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -2394,7 +2394,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "721ee892031fe553c5f6d2c41dad537a5fc7cf0a8ab4aa0ca180719515157194",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -2449,7 +2449,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/4",
       "recordSha256": "d06b0760af82d0aa0fbd1ced2071bee774c66c2a3f7a7899435ecd027edc8494",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -2846,7 +2846,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "0fd85f2e003f987d3f0f47a0d036981e2a9ebfb4ffb9a6f8d091c46899616fb8",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -2901,7 +2901,7 @@
       "sourceId": "mbti:ENTP:traits:parenting:intellectual_parent",
       "auditRef": "source-locator-audit.json#9e14ddceb99de8f8c245",
       "recordSha256": "215767da3c83401d59252c25f97afec5b4fa69aee4afd24398b2c24ce7ad5997",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -3303,7 +3303,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "48ca428383c9a0fa9259b1aa038a3e75c11a98da45f513b4c53a9b8dbd14a3d3",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -3559,7 +3559,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "f5e37b3c25eca3280098727d50e2e59280ec42ac596b5b0eb75bc9f0744e7afc",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -4404,7 +4404,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "a41d287eb62159ec396fba5ab216f7e7512ab2dc3530059720b0236b001a3208",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -4835,7 +4835,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "94f9ff64abe5fe3eb441493fab2c1192726f5656bf2624aefc9f3e44fa775e5f",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -5133,7 +5133,7 @@
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "ac0257a3067daa68cb93aa2065b75d2ae650804555bd03e808e69cc480d31a47",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -5268,7 +5268,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -5526,7 +5526,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "051d2694a9f0cc0a2615a3e51eef5aa95a1dfc01c7883bf5a5e5ad47ac44b21c",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -5993,7 +5993,7 @@
       "sourceId": "mbti:INTJ:traits:child:single_field_mastery",
       "auditRef": "source-locator-audit.json#e522803dbd756411fcef",
       "recordSha256": "0cdce5983a4642732d6c2b2cbbf635fd0620fdcf112d51721741c2fcf84b406b",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -6091,7 +6091,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -6628,7 +6628,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "93d038c785ce1a6be5f15663ceecb24a1c27ccd9eb96a9759a80accd71bc3339",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -6776,7 +6776,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "2e8f6c27bf56f9fbccf616990afbf601a7d3a1dc25518513c089790f844f2ef4",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -6811,7 +6811,7 @@
       "sourceId": "mbti:INFP:traits:child:sensitive_to_harshness_child",
       "auditRef": "source-locator-audit.json#7ad9ba971bacdf36c537",
       "recordSha256": "62a1820483be8f5fca2600c7ac673d07d451df1a19e37aa3d861db03bec7918a",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -6929,7 +6929,7 @@
       "sourceId": "mbti-pair:INTJ>ENTP",
       "auditRef": "source-locator-audit.json#4c8fec77bf18db714ce9",
       "recordSha256": "318ce163cecb6383cd6d3dd68e5d598b2312bf8c58e9a380354c4a12e4181626",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -7286,7 +7286,7 @@
       "sourceId": "mbti:ISFP:traits:child:peaceful_peer_child",
       "auditRef": "source-locator-audit.json#272c67e0206eba757597",
       "recordSha256": "2ba497c67a7642a78a9d398f5f9dfe59229b42dc3b8a32d749f2611c68bc39fd",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -8420,7 +8420,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "07c4038c3b1b8f1ef1a73ade65e5f50e89067c1afe5722f02cace05215656966",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -8887,7 +8887,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "03fe43b2988a0e7e16727a5de62d970a7fd0145e8f5f702632355993167727d7",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -9944,7 +9944,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "17af9cf87e8943b111c88723181a0bc56fc9b994519f78e0094b91471d2cd83a",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -9979,7 +9979,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "25d7b27bcef140f067caac55c8e98a825cfeacc503525d9fc1b0a240c36d2d26",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -10164,7 +10164,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "99a96095188f2ecf7e9b24a47095bd438e09b4bd2c799bd926ec19feb868ae75",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -10249,7 +10249,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "3ab801b655d24dfa3d836f10738092a04cb89985c380cb5c4e5175eae5264e93",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -11327,7 +11327,7 @@
       "sourceId": "mbti:INFJ:traits:child:written_expression_child",
       "auditRef": "source-locator-audit.json#d50e782170a5c0a71e15",
       "recordSha256": "ab8065e35bc597b4a9542fb6c65f8cf6d6efa5506951d8e770210c2213194684",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -11767,7 +11767,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "3b4be6a077852ec5dfd45b7cfe95bc99cab4a7e3571f54c7ffac863071ada7b5",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -11802,7 +11802,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "fc7321ad97f99612022ae91476ae6982c00b995291b8cb862452f025797c06ab",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -12396,7 +12396,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -12481,7 +12481,7 @@
       "sourceId": "mbti:ESFP:traits:child:active_outdoor_child",
       "auditRef": "source-locator-audit.json#6cb81b925a2eedef0907",
       "recordSha256": "595f626c373bb22ae357d5f404ab5a2ad763da4e2166b7016d1331ea6d51a709",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -12556,7 +12556,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -12591,7 +12591,7 @@
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "e34e7880ff364ca6b1acdbdac88646e731000dd3df4b84860eef9aeec413f264",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -12759,7 +12759,7 @@
       "sourceId": "mbti:INTP:traits:parenting:answering_child_questions",
       "auditRef": "source-locator-audit.json#43161eed254c850e342b",
       "recordSha256": "eea208b46302133eb6f69e9ddf59fbe92a2c13fc19b466c375b4c557bd2e3c8e",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -13480,7 +13480,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "855b28fd97ceca1deea8263bc7d49694d35a4c2af403c067560c34c87025a180",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -13565,7 +13565,7 @@
       "sourceId": "mbti:ISTP:traits:child:brief_answer_child",
       "auditRef": "source-locator-audit.json#242d420d68455dae6761",
       "recordSha256": "e37b2e715db59e31a1674355630fa246ca429c125c2a380cd58b80c355bf4c11",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -13600,7 +13600,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -13738,7 +13738,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "b40fcf62b82dfe5390d5b0d1a62e5a6310e27c01e73c95367da853ddb93af5ed",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -14251,7 +14251,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "23d64080cf001c4668b45eeb6c07ed320a3083e2dbbeae82a13581689f4adc84",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -14642,7 +14642,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "e59f90b2471fc4b07cd7fc15c0f1a50c3548fe484c8d83ea5bdd941f7b4101b6",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -15000,7 +15000,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -15354,7 +15354,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "f4e45f288abfdba67cffe04425089fa89c2c39b5e4d2d2c4fbf1d75a2d3575f7",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -15449,7 +15449,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "70880143a75fc92edbcaf056e4c176643d0d3bfbca6cad7a6e308a783a409954",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -15484,7 +15484,7 @@
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "a014bc9f7fec9febaedb2259f1a47611a2852af3e60defca65a03e7eee8de2bf",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -15834,7 +15834,7 @@
       "sourceId": "mbti:ESTJ:traits:parenting:traditional_parenting",
       "auditRef": "source-locator-audit.json#f5fb513fa5e97583225b",
       "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -15932,7 +15932,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "a5c8a5fe013a4f3cbf7006ed15a5d13059b5854d9650e7a1b59aacce0a486fb5",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -16033,7 +16033,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "d0768d8556c41b20ee9172eec38300b5dae08536e233b938485981973d321ee2",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -16244,7 +16244,7 @@
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "5e784ea52f3f9cfe009005d26066231e7bc80ab3535f0821068cc8d5dd1b5178",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -18613,7 +18613,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "870aa2d528ccbc53f257ab5774222927e63e397895fd38a879f5726a9dc77190",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -18768,7 +18768,7 @@
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "79177137d218c02d0ef93abd0bd143d2d1244f8ec61d59632c1400e1acd484fe",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -19936,7 +19936,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "62a1820483be8f5fca2600c7ac673d07d451df1a19e37aa3d861db03bec7918a",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -20021,7 +20021,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "a35737b507b0e9c5990830e72732cf7f8d21a404389542089ce68ccc5fc0cc24",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -20342,7 +20342,7 @@
       "sourceId": "mbti:ESTP:traits:child:serious_talk_avoidance_child",
       "auditRef": "source-locator-audit.json#15bdd9dde80da5ce278d",
       "recordSha256": "d5c0bb91253140189d8928aefecd562c772595735f3deed7ff5493262a945569",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -20736,7 +20736,7 @@
       "sourceId": "mbti:ENTP:traits:child:curious_knowledge_child",
       "auditRef": "source-locator-audit.json#3b16f6d2078a7dd2a82f",
       "recordSha256": "e53faa5f4755342605bde45824befe8aeb1beca2cd0d229b97dfaa207e0e698f",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -20877,7 +20877,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "347126ecb6c63612bd23fe5d485df834dd9571a0a21bca33f9b8525a61cb7b12",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -21324,7 +21324,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "e53faa5f4755342605bde45824befe8aeb1beca2cd0d229b97dfaa207e0e698f",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -21359,7 +21359,7 @@
       "sourceId": "mbti:ENFP:traits:child:playful_social_child",
       "auditRef": "source-locator-audit.json#67f918c8959cf547910b",
       "recordSha256": "99a96095188f2ecf7e9b24a47095bd438e09b4bd2c799bd926ec19feb868ae75",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -21593,7 +21593,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "1cdcbb33a8ff4573dbf1ea3ebe2c8b7a0f3d0b9b1b9a00626e648a01707507b6",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -22094,7 +22094,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "57de886d1b9fc0a76308e8486cc34512d5e67f380a2b8eb69ec86e634e19deb9",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -22331,7 +22331,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "0a234a142a0980368754418ab4aad704a507b301e60617030993c2c0619d54c7",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -22921,7 +22921,7 @@
       "sourceId": "mbti:ISFP:traits:child:visual_art_child",
       "auditRef": "source-locator-audit.json#e082f6c2d0c63170fc6e",
       "recordSha256": "5103f1907ee95b31a9828d58ee0cc106a795759e6952009ec52c4c77a1df4fa3",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -23046,7 +23046,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "0cdce5983a4642732d6c2b2cbbf635fd0620fdcf112d51721741c2fcf84b406b",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -23693,7 +23693,7 @@
       "sourceId": "mbti:ENFJ:traits:parenting:emotional_anchor_parent",
       "auditRef": "source-locator-audit.json#cb9ee7415c4e3089e7f9",
       "recordSha256": "843672eaa659db97651c14c919387fc3c45aca0f296be526fa29f0e802da1af3",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -23791,7 +23791,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "aef7ea386213ca42c37fcf30ecf882dfa3855315021b6bdfdb6a423ecf330127",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -23846,7 +23846,7 @@
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "e37b2e715db59e31a1674355630fa246ca429c125c2a380cd58b80c355bf4c11",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -23964,7 +23964,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "84cfb0d78158bc3f835f4bd1fb0b22038540741edac5f14a672b531c81f5519c",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -23999,7 +23999,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "9c56581269d9cf16517f1ce34b62485058c0b3024a78e41d8307afcad1d8e688",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24120,7 +24120,7 @@
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "f270175ebee0b6fea22ef02fdeffc77ebec0a69f601d2b9de53eb0a191da8ffd",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24155,7 +24155,7 @@
       "sourceId": "mbti-pair:ENTP>INTJ",
       "auditRef": "source-locator-audit.json#7b92392c46e9ec2206cf",
       "recordSha256": "6b8ba7c1d237d3f0402f225c38ba87d89b38fb1bdd30485d9acfe47eff4e0c3c",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24190,7 +24190,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "a6723c12f1459badd486df675e9d47dfcbb66582711f720f36530285756c47cc",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24225,7 +24225,7 @@
       "sourceId": "mbti:ISFJ:traits:parenting:self_sacrificing_parent",
       "auditRef": "source-locator-audit.json#31fe578398dda7ed2b7e",
       "recordSha256": "c2e82d0f132277e60df054592d574ec269164a648bb2fd7ca2070843e08bffee",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24320,7 +24320,7 @@
       "sourceId": "mbti:ISTJ:traits:parenting:practical_success_parenting",
       "auditRef": "source-locator-audit.json#d34d165d4966692ca6cb",
       "recordSha256": "d6bb019d1160d32132fc5f2dfffc625f72da5ed40d19465185daaa561de7f126",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24491,7 +24491,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "f86de17a40ca04fc84224bf49dc909c3fd863e4605fbcd883dbe7369cabeceb6",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24828,7 +24828,7 @@
       "sourceId": "mbti:ENTJ:traits:child:respect_independent_thinking_child",
       "auditRef": "source-locator-audit.json#0b40f2b7112d3c882b3a",
       "recordSha256": "1596abb52067c60ebe493112cb6bdaa2f219d8782f83f73fa99112755e56e01a",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -24926,7 +24926,7 @@
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "468d4c25327ff26e8b1a40c0af400a305a9eed5c3ce9e8c124bcb5af8c9ea55d",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -25390,7 +25390,7 @@
       "sourceId": "mbti:ENTP:traits:child:rule_testing_child",
       "auditRef": "source-locator-audit.json#71b3ec665e36ff80d62e",
       "recordSha256": "721ee892031fe553c5f6d2c41dad537a5fc7cf0a8ab4aa0ca180719515157194",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -25523,7 +25523,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "a70e69a3a5a0e388c9ae199a8f7992a00ee3e353962d99bdde8b29b7327fe928",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -25558,7 +25558,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/4",
       "recordSha256": "8720a58a997e9cc7957b7054eff37609f65336fbbdae0d51b16cd497e873773e",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -25722,7 +25722,7 @@
       "sourceId": "mbti:ISTJ:traits:parenting:diligent_responsible_parent",
       "auditRef": "source-locator-audit.json#63aa4d746575e86c7743",
       "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -26064,7 +26064,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "2efe0693680cab479cc0de55c7192d32e6e45500ffc02dcee4831ff35faa198e",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -26664,7 +26664,7 @@
       "sourceId": "mbti:ENTP:traits:parenting:debating_with_child",
       "auditRef": "source-locator-audit.json#1de5594bb3cc1a883744",
       "recordSha256": "17af9cf87e8943b111c88723181a0bc56fc9b994519f78e0094b91471d2cd83a",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -26855,7 +26855,7 @@
       "sourceId": "mbti:ENFP:traits:parenting:understanding_parent",
       "auditRef": "source-locator-audit.json#ea9519a12540624c4823",
       "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -27674,7 +27674,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "612e523625d11d7bb0db34baaa4e23c93d680c27f9c5a7df2bc58f4f1e8c2c5f",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -28284,7 +28284,7 @@
       "sourceId": "mbti:ISTP:traits:child:solo_play_precision_child",
       "auditRef": "source-locator-audit.json#b7c4f738dad8d6d8d61c",
       "recordSha256": "b181a835aa1a66cba1437cf9d82bf756b6dbc98d3db91d2cd5458893eeb87b1f",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -28887,7 +28887,7 @@
       "sourceId": "mbti:ENFP:traits:child:all_or_nothing_study_child",
       "auditRef": "source-locator-audit.json#6fa914122dba7be984fd",
       "recordSha256": "83fd0d140dac476afeecbc7ed6eb2c459715d67557e143890ee8ecfc2341d6f1",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -29501,7 +29501,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "122ec8c4fdfca890b11a9c883a6920abe8cd15df34cbe5310d86b3ccbfdb1c68",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -29536,7 +29536,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "9df2baf5a30e45df53bda05967a6cdb9875b8e3d2bba5e493426fadc65093001",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -29667,7 +29667,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "92dfa9123694cda58c4375827fa6d93dcd25addc6c64da64b69097fad3ec602f",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -30450,7 +30450,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "53525dd8a02e2c724f7e9431b5f8de022499ebb31b4927cd4af0093fa742e157",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -30548,7 +30548,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "9dae122f6205ff81bd577e6b390787200964bd965427a4851fb4b094b7f457ec",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -30743,7 +30743,7 @@
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -30904,7 +30904,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "dc0c1e013a05e5c0e40733001cce34939a4b20d9d1103fb5b2a86ebd5964dbfe",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -31406,7 +31406,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "7f8dfb9c32c79ae8afe14576aefe2d94253bc44750a4ebb293064487247df83f",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -31732,7 +31732,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "83fd0d140dac476afeecbc7ed6eb2c459715d67557e143890ee8ecfc2341d6f1",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -31767,7 +31767,7 @@
       "sourceId": "mbti:INTJ:traits:parenting:teach_how_to_think",
       "auditRef": "source-locator-audit.json#825fd4e9a742a121464b",
       "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -32318,7 +32318,7 @@
       "sourceId": "mbti:INFP:traits:parenting:autonomy_parent",
       "auditRef": "source-locator-audit.json#10d4177606458102491b",
       "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -32915,7 +32915,7 @@
       "sourceId": "mbti:ISFJ:traits:parenting:structured_home_parent",
       "auditRef": "source-locator-audit.json#f9709a2aaf92c814cb26",
       "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -33769,7 +33769,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "8f49179970fa54c9f63e82ae43318b18420beb5f1072ada37c9ed285018bf4f4",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -33804,7 +33804,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "bb99638ad99ff4561b752109fab7f6fa36e63b28edb3eb41af1231021f11e331",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -34055,7 +34055,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "61881e1f59fc615449cf7b9559ae0c343d983a010a8f922dcce9926ad677efb4",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -34090,7 +34090,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "1596abb52067c60ebe493112cb6bdaa2f219d8782f83f73fa99112755e56e01a",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -34511,7 +34511,7 @@
       "sourceId": "mbti:INFP:traits:parenting:moral_parent",
       "auditRef": "source-locator-audit.json#8340bca1aae1ff5a8c69",
       "recordSha256": "4fbc70750d4ef8b61d61afef6585b4c4aee919fc4d20795b2e0fb8a794675959",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -34629,7 +34629,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "97852a9eb329f338e7b82ac7a5cd554973f5c59824fc16a819108792babbfb64",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -34873,7 +34873,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "f819edbe16ca483c553ab2211bb82989da6379531946c064a454def61b0fa5f5",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -35221,7 +35221,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "ab8065e35bc597b4a9542fb6c65f8cf6d6efa5506951d8e770210c2213194684",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -35542,7 +35542,7 @@
       "sourceId": "mbti:ESTP:traits:parenting:self_development_support",
       "auditRef": "source-locator-audit.json#34a4a6cf8a718fb338a9",
       "recordSha256": "48ca428383c9a0fa9259b1aa038a3e75c11a98da45f513b4c53a9b8dbd14a3d3",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -35730,7 +35730,7 @@
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "b181a835aa1a66cba1437cf9d82bf756b6dbc98d3db91d2cd5458893eeb87b1f",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -36254,7 +36254,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "92b847f9cfdb7127c1100c9d8bd7c45b224d4dca064bf0015e280104532787db",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -36422,7 +36422,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -36803,7 +36803,7 @@
       "sourceId": "mbti:ESFP:traits:parenting:fun_support_parent",
       "auditRef": "source-locator-audit.json#537c223e51462b4fd6bd",
       "recordSha256": "ad12e2126273860a4145025f6dd3134d975757b807e24db08f6913aec90124fa",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -37466,7 +37466,7 @@
       "sourceId": "mbti:ESTJ:traits:child:fair_rule_child",
       "auditRef": "source-locator-audit.json#dbac6788077f6b449dd2",
       "recordSha256": "855b28fd97ceca1deea8263bc7d49694d35a4c2af403c067560c34c87025a180",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -37564,7 +37564,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "6f0127c8257ca6df00c3aaa206f1593843268b1c77a8181584da107600cd19df",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -38221,7 +38221,7 @@
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "d6bb019d1160d32132fc5f2dfffc625f72da5ed40d19465185daaa561de7f126",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -38316,7 +38316,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "215767da3c83401d59252c25f97afec5b4fa69aee4afd24398b2c24ce7ad5997",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -38560,7 +38560,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "de18c5915be64f1d9b48976ae5fb00843278653b2b6215fe1ea505901b53710e",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -38658,7 +38658,7 @@
       "sourceId": "mbti:ISFP:traits:parenting:experience_based_parenting",
       "auditRef": "source-locator-audit.json#88e81f230552092ca55c",
       "recordSha256": "b80b9c0997a084b19fc1d0f3b498d79090ede973cca78a6849203becd1784f17",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -38916,7 +38916,7 @@
       "sourceId": "mbti:INFJ:traits:parenting:values_and_manners_parent",
       "auditRef": "source-locator-audit.json#d617367bfe748e497cb9",
       "recordSha256": "c275e3e3e37868e1bb3c1ecda03ce96f2e21b26182a5d242109404180aac5c26",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -38951,7 +38951,7 @@
       "sourceId": "mbti:INTJ:traits:parenting:knowledge_centered_support",
       "auditRef": "source-locator-audit.json#7cad2339fed7bcabefd7",
       "recordSha256": "92dfa9123694cda58c4375827fa6d93dcd25addc6c64da64b69097fad3ec602f",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -39049,7 +39049,7 @@
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "acd8c8b14f96c11f1b3e5c916100ff310b608f7f0ff132aafc7775d0be44a2c4",
-      "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -39084,7 +39084,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "7f67d01f669ae065df7a55555b08c451464240ab8ea90561877e64347b0ac808",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -39189,7 +39189,7 @@
       "sourceId": "mbti:INTP:traits:parenting:parent_needs_alone_time",
       "auditRef": "source-locator-audit.json#ff09b3cb5318045846ad",
       "recordSha256": "a41d287eb62159ec396fba5ab216f7e7512ab2dc3530059720b0236b001a3208",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -39540,7 +39540,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/4",
       "recordSha256": "89af67b3659ba194689ed5667a40784a1394a3c488f62dc334dd495bc67cb98d",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -39575,7 +39575,7 @@
       "sourceId": "mbti:ISTP:traits:parenting:privacy_respecting_parent",
       "auditRef": "source-locator-audit.json#5d03c8ad1c25fc371767",
       "recordSha256": "79177137d218c02d0ef93abd0bd143d2d1244f8ec61d59632c1400e1acd484fe",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -40202,7 +40202,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "3cb518e50b65bdc06d8a0e7382261e7450f9888f79985fa6a04e13d8ccf49e55",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -40599,7 +40599,7 @@
       "sourceId": "mbti:ENTJ:traits:parenting:child_success_projection",
       "auditRef": "source-locator-audit.json#46eb373ed8de497e1ba3",
       "recordSha256": "a6723c12f1459badd486df675e9d47dfcbb66582711f720f36530285756c47cc",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -40817,7 +40817,7 @@
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "efbd8ac7efc82c09efd42bc1b1aadb5c6f694b1640872eb7458a4623fa8e1aeb",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -40972,7 +40972,7 @@
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "6309ac96c84ae858417f7f1d317428f057dfb0566680a033b202a86c1fd14a77",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -41445,7 +41445,7 @@
       "sourceId": "mbti:INTP:traits:child:knowledge_rich_but_uneven_child",
       "auditRef": "source-locator-audit.json#5895562b63068759bb90",
       "recordSha256": "a70e69a3a5a0e388c9ae199a8f7992a00ee3e353962d99bdde8b29b7327fe928",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -41676,7 +41676,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "b80b9c0997a084b19fc1d0f3b498d79090ede973cca78a6849203becd1784f17",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -41967,7 +41967,7 @@
       "sourceId": "mbti:ISFJ:traits:child:model_student_child",
       "auditRef": "source-locator-audit.json#a98212d9a6491c70cd80",
       "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42002,7 +42002,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "ad12e2126273860a4145025f6dd3134d975757b807e24db08f6913aec90124fa",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42187,7 +42187,7 @@
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "c1c92490d780d29aec480d0610a8223aa31a4c153fc19614da30c3ca4ea203e6",
-      "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42499,7 +42499,7 @@
       "sourceId": "mbti:ENTJ:traits:parenting:serious_responsible_parent",
       "auditRef": "source-locator-audit.json#41f807794a6c25d13e93",
       "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42534,7 +42534,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "fb9a116fa418aa2e3e1051bccfc6239a33f494464f98a8483b753efece03b357",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42639,7 +42639,7 @@
       "sourceId": "mbti:ENTJ:traits:parenting:independence_test_parent",
       "auditRef": "source-locator-audit.json#0c2824cc2f62a5c72693",
       "recordSha256": "6309ac96c84ae858417f7f1d317428f057dfb0566680a033b202a86c1fd14a77",
-      "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42714,7 +42714,7 @@
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "40eb2e3e7cd8aa05d91320e90da21ce77f353068660901459636ebea529dda29",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42815,7 +42815,7 @@
       "sourceId": "mbti:INTJ:traits:child:rule_questioning_child",
       "auditRef": "source-locator-audit.json#668bff6bf74135a0bc03",
       "recordSha256": "f5e37b3c25eca3280098727d50e2e59280ec42ac596b5b0eb75bc9f0744e7afc",
-      "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -42850,7 +42850,7 @@
       "sourceId": "mbti:ISFJ:traits:parenting:protective_overinvolvement",
       "auditRef": "source-locator-audit.json#3888aa2e5b9fb179e218",
       "recordSha256": "dc0c1e013a05e5c0e40733001cce34939a4b20d9d1103fb5b2a86ebd5964dbfe",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -43118,7 +43118,7 @@
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "2ac7943c2c20bd102d42bb993f91ec98d6db7eecbe2c1a4ea40f2d78762cd771",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -43402,7 +43402,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "595f626c373bb22ae357d5f404ab5a2ad763da4e2166b7016d1331ea6d51a709",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -43457,7 +43457,7 @@
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "46692e37d3817333c502410b8b50e123c732d40cb0b85d4dffac628cd18dd75b",
-      "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -43595,7 +43595,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "8e6050d2bd7999b9a798002999558b546cbf7053e0a2cf2a89c765370217a980",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -43716,7 +43716,7 @@
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "af459fe0fd73b5d79a293b7c30f30e18cddde55819f3f56551ad5e392bba0d3d",
-      "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -43844,7 +43844,7 @@
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "df9fe15fb469647a148715b7eee99d0ff7bd9ffd577ffd9f234f7f2bc560277b",
-      "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -44069,7 +44069,7 @@
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "666711bd854c3435018452e50916eac3b93c19d1dfbee264731380e79377759b",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -44104,7 +44104,7 @@
       "sourceId": "mbti-pair:ISFJ>ISFJ",
       "auditRef": "source-locator-audit.json#eb40d39f2065a867ad79",
       "recordSha256": "91bb027f959e53a6247fd2cc87107dc9298146f762e076b054b34f4af28b9ac5",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -44262,7 +44262,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "8d507aa490a7b71702efd8015efedcfad9e1a54b1f88d9be9e4f3ad3daa81e28",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -44702,7 +44702,7 @@
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "c2e82d0f132277e60df054592d574ec269164a648bb2fd7ca2070843e08bffee",
-      "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -45413,7 +45413,7 @@
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "843672eaa659db97651c14c919387fc3c45aca0f296be526fa29f0e802da1af3",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -46027,7 +46027,7 @@
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "5103f1907ee95b31a9828d58ee0cc106a795759e6952009ec52c4c77a1df4fa3",
-      "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -46122,7 +46122,7 @@
       "sourceId": "mbti:ENFJ:traits:child:popular_helper_child",
       "auditRef": "source-locator-audit.json#758f1fd0edec5f2f8304",
       "recordSha256": "468d4c25327ff26e8b1a40c0af400a305a9eed5c3ce9e8c124bcb5af8c9ea55d",
-      "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -46326,7 +46326,7 @@
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -46703,7 +46703,7 @@
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
-      "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -47459,7 +47459,7 @@
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "c275e3e3e37868e1bb3c1ecda03ce96f2e21b26182a5d242109404180aac5c26",
-      "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -48006,7 +48006,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "d237d41997b1ac9e641cf400b9d223c59b36e2053bb9e73f1b35cf7ec9e0616b",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -48297,7 +48297,7 @@
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "eea208b46302133eb6f69e9ddf59fbe92a2c13fc19b466c375b4c557bd2e3c8e",
-      "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -48395,7 +48395,7 @@
       "sourceId": "mbti:ESFJ:traits:child:predictable_sequence_child",
       "auditRef": "source-locator-audit.json#cf5096af08861edcca86",
       "recordSha256": "9df2baf5a30e45df53bda05967a6cdb9875b8e3d2bba5e493426fadc65093001",
-      "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -48493,7 +48493,7 @@
       "sourceId": "mbti:ISTJ:traits:child:responsible_child",
       "auditRef": "source-locator-audit.json#a147b57a7d16ec148fec",
       "recordSha256": "ac0257a3067daa68cb93aa2065b75d2ae650804555bd03e808e69cc480d31a47",
-      "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,
@@ -48631,7 +48631,7 @@
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "d5c0bb91253140189d8928aefecd562c772595735f3deed7ff5493262a945569",
-      "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "kind": "REUSES_SOURCE",
     "establishesPersonalEvidence": false,

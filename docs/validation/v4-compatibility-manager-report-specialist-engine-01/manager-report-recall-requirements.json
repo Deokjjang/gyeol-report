@@ -312,7 +312,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#a405c7c47aa46bef385b",
             "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "workplace",
@@ -366,7 +366,7 @@
                 "catalogKey": "kc:v1:cbb42e1f3adcc63bf75292e30e6caa2fc9cdce1ce4722161050c6fbddca83630",
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/4",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -402,7 +402,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
             "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-            "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+            "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
             "originalState": {
               "type": "ESFJ",
               "area": "workplace",
@@ -456,7 +456,7 @@
                 "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
                 "file": "docs/product/mbti/source/ESFJ.json",
                 "pointer": "/traits/workplace/6",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -536,7 +536,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
             "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "workplace",
@@ -590,7 +590,7 @@
                 "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/5",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -626,7 +626,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
             "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-            "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+            "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
             "originalState": {
               "type": "ISFP",
               "area": "workplace",
@@ -680,7 +680,7 @@
                 "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
                 "file": "docs/product/mbti/source/ISFP.json",
                 "pointer": "/traits/workplace/5",
-                "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+                "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
               },
               "fields": [
                 {
@@ -973,7 +973,7 @@
               "source": {
                 "catalogKey": "kc:v1:cbb42e1f3adcc63bf75292e30e6caa2fc9cdce1ce4722161050c6fbddca83630",
                 "file": "docs/product/mbti/source/ENFJ.json",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -1010,7 +1010,7 @@
               "source": {
                 "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
                 "file": "docs/product/mbti/source/ESFJ.json",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -1066,7 +1066,7 @@
               "source": {
                 "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
                 "file": "docs/product/mbti/source/ENFJ.json",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -1103,7 +1103,7 @@
               "source": {
                 "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
                 "file": "docs/product/mbti/source/ISFP.json",
-                "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+                "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
               },
               "fields": [
                 {
@@ -1168,7 +1168,7 @@
                 "catalogKey": "kc:v1:cbb42e1f3adcc63bf75292e30e6caa2fc9cdce1ce4722161050c6fbddca83630",
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/4",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -1214,7 +1214,7 @@
                 "catalogKey": "kc:v1:5d308e5bd9a0af3fb18dd3a6bd6cace8c7e45cad942d45edd9664fdc44cbeb35",
                 "file": "docs/product/mbti/source/ESFJ.json",
                 "pointer": "/traits/workplace/6",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -1260,7 +1260,7 @@
                 "catalogKey": "kc:v1:9cf9e4edbc806976711589c51ba4adad557dd0985a3583be5e881050f8a383ba",
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/5",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -1306,7 +1306,7 @@
                 "catalogKey": "kc:v1:cbe81201ad789d5a3a54c8254e1f0bd72f06091f5aa5d10688e2e2c1dd3128d0",
                 "file": "docs/product/mbti/source/ISFP.json",
                 "pointer": "/traits/workplace/5",
-                "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+                "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
               },
               "fields": [
                 {
@@ -1780,7 +1780,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#a405c7c47aa46bef385b",
                     "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
-                    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                     "originalState": {
                       "type": "ENFJ",
                       "area": "workplace",
@@ -1798,7 +1798,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 44,
                     "originalId": "mrpr:source:a405c7c47aa46bef385b",
-                    "recordSha256": "4bc9bb513ce47df55de237e2c3e975c52b141de643e673121aadc2d170976fba",
+                    "recordSha256": "e87d4a3e37c0a84bcb638e8ce8031626e9c3af8fc58dca77046a6fd5a4ff1664",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -1856,7 +1856,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#15401c66ebefeba6594d",
                     "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-                    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                     "originalState": {
                       "type": "ESFJ",
                       "area": "workplace",
@@ -1874,7 +1874,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 36,
                     "originalId": "mrpr:source:15401c66ebefeba6594d",
-                    "recordSha256": "35cb3a2dcfe5719ca56a8b6d4a3a9feddb747c5205fb1c4758d87d086a10faff",
+                    "recordSha256": "ab87c15c67d2d4af34cf12791020efc95318c55a8f393f0f99e846f465c29e04",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -2101,7 +2101,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#80abdb3362bb5a5279c3",
                     "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-                    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                     "originalState": {
                       "type": "ENFJ",
                       "area": "workplace",
@@ -2119,7 +2119,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 3,
                     "originalId": "mrpr:source:80abdb3362bb5a5279c3",
-                    "recordSha256": "e26825676e630b422cf2216a278b4a766ee1f183e178be76be0effce9844a2dc",
+                    "recordSha256": "9c2d591399d213d70bc77f608e092823a69d0917c5be889005c5355f4b41a260",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -2177,7 +2177,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#1fa4cae7d38bb8fe8883",
                     "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-                    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+                    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
                     "originalState": {
                       "type": "ISFP",
                       "area": "workplace",
@@ -2195,7 +2195,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 31,
                     "originalId": "mrpr:source:1fa4cae7d38bb8fe8883",
-                    "recordSha256": "0d781427621887d49087787ec41abfccf93a808c343ed82710e860a04b265265",
+                    "recordSha256": "50996ce9cacf7d3f0d59de1259391455d8e1e0380383db9991557afdb4737f79",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -3503,7 +3503,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/4",
-              "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+              "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
               "recordHash": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -3537,7 +3537,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/6",
-              "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+              "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
               "recordHash": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
               "sourceCoverage": "inferred",
               "classification": "SCORING_SEMANTIC",
@@ -3571,7 +3571,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/5",
-              "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+              "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
               "recordHash": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
               "sourceCoverage": "inferred",
               "classification": "SCORING_SEMANTIC",
@@ -3605,7 +3605,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ISFP.json",
               "pointer": "/traits/workplace/5",
-              "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+              "fileHash": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
               "recordHash": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
               "sourceCoverage": "inferred",
               "classification": "SCORING_SEMANTIC",
@@ -4030,7 +4030,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/workplace/4",
-          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "recordHash": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -4064,7 +4064,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ESFJ.json",
           "pointer": "/traits/workplace/6",
-          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "recordHash": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
           "sourceCoverage": "inferred",
           "classification": "SCORING_SEMANTIC",
@@ -4098,7 +4098,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/workplace/5",
-          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "recordHash": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
           "sourceCoverage": "inferred",
           "classification": "SCORING_SEMANTIC",
@@ -4132,7 +4132,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ISFP.json",
           "pointer": "/traits/workplace/5",
-          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fileHash": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "recordHash": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
           "sourceCoverage": "inferred",
           "classification": "SCORING_SEMANTIC",
@@ -4490,7 +4490,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
             "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-            "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+            "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
             "originalState": {
               "type": "ISTJ",
               "area": "thinkingStyle",
@@ -4544,7 +4544,7 @@
                 "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
                 "file": "docs/product/mbti/source/ISTJ.json",
                 "pointer": "/traits/thinkingStyle/1",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
               },
               "fields": [
                 {
@@ -4580,7 +4580,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
             "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-            "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "originalState": {
               "type": "INTP",
               "area": "thinkingStyle",
@@ -4634,7 +4634,7 @@
                 "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
                 "file": "docs/product/mbti/source/INTP.json",
                 "pointer": "/traits/thinkingStyle/4",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -5050,7 +5050,7 @@
               "source": {
                 "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
                 "file": "docs/product/mbti/source/ISTJ.json",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
               },
               "fields": [
                 {
@@ -5087,7 +5087,7 @@
               "source": {
                 "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
                 "file": "docs/product/mbti/source/INTP.json",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -5210,7 +5210,7 @@
                 "catalogKey": "kc:v1:8d7f10be67563debf68b450c64341c08e673163b8eec631a7bf10ee6569ec0b1",
                 "file": "docs/product/mbti/source/ISTJ.json",
                 "pointer": "/traits/thinkingStyle/1",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
               },
               "fields": [
                 {
@@ -5256,7 +5256,7 @@
                 "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
                 "file": "docs/product/mbti/source/INTP.json",
                 "pointer": "/traits/thinkingStyle/4",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -5829,7 +5829,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#c7fee219fcf7a5b642fd",
                     "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-                    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+                    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
                     "originalState": {
                       "type": "ISTJ",
                       "area": "thinkingStyle",
@@ -5847,7 +5847,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 33,
                     "originalId": "mrpr:source:c7fee219fcf7a5b642fd",
-                    "recordSha256": "fe1e51598c3f2bd529b68aa298018b12719b3a168e55920e540c288e243baae4",
+                    "recordSha256": "bc88f9f56f98e8633fe7847215b17bcc2e1dbc90fb4a01c2eedeff56f3d6f178",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -5905,7 +5905,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
                     "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-                    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                     "originalState": {
                       "type": "INTP",
                       "area": "thinkingStyle",
@@ -5923,7 +5923,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 0,
                     "originalId": "mrpr:source:45c222b77f8da3a044fc",
-                    "recordSha256": "97fe4af1a8bbdf1ff93fe8c4fbc2bbaae70674bac7b8b6cce50f9a56c6d02c57",
+                    "recordSha256": "5b4b8c27669dcf58ec02fd829788cb54418eb2b9416a4e186a075e8be1566485",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -7797,7 +7797,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/workplace/5/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:5e009788253c06c4dca5e839960a0cd2c55c0d22eb6435af99cd55ccfe1df029"
                     ],
@@ -7885,7 +7885,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/thinkingStyle/1/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:c767687927d072c8097de43695aef9147705cf89e0d072aa40dc1faa5f297276"
                     ],
@@ -8021,7 +8021,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/thinkingStyle/0/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:38a042ccf4246c44aa96d9d03f3f8975988ca64393d7e115f731f3d9004bc7d0"
                     ],
@@ -8178,7 +8178,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/strengths/0/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:0a2253cc83a2400ae7323341cc00ce0c0c871bf0fe4dacf39c3e18482ca5af67"
                     ],
@@ -8244,7 +8244,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/career/6/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:174faf0da838db848ea4faaf91d285df3f2011678825e9e4d127cf4dc92220e7"
                     ],
@@ -8310,7 +8310,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/career/3/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:27e76716894917c8c8fc12bf142d818c113fbad225c53b0035a46a376f77a85c"
                     ],
@@ -8376,7 +8376,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/career/5/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:06e974b8dbdd3f0652b54c79149e9ed5094644306ec230146dcff4cb35465a1d"
                     ],
@@ -8538,7 +8538,7 @@
                   {
                     "file": "docs/product/mbti/source/ISFJ.json",
                     "pointer": "/traits/study/3/plainKo",
-                    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+                    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
                     "catalogKeys": [
                       "kc:v1:dd926345edf955337c5f247640b00e2b658296804acca7cdc1cfb509dfdc54e2"
                     ],
@@ -8627,7 +8627,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/thinkingStyle/1",
-              "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+              "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
               "recordHash": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -8661,7 +8661,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+              "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
               "recordHash": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -9090,7 +9090,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ISTJ.json",
           "pointer": "/traits/thinkingStyle/1",
-          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "recordHash": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -9124,7 +9124,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/thinkingStyle/4",
-          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "recordHash": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -9471,7 +9471,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#5b778076e2f7f6a60f75",
             "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "workplace",
@@ -9525,7 +9525,7 @@
                 "catalogKey": "kc:v1:01659adf43caf3cf99730ceb4e3b73dfcc6f1f99fea38ee1d8e858bd433279f9",
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/3",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -9561,7 +9561,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#ab01acce90e1dd368d2d",
             "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-            "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "originalState": {
               "type": "INTP",
               "area": "workplace",
@@ -9615,7 +9615,7 @@
                 "catalogKey": "kc:v1:3769097061ae48372d70f4653743fb8d641c2cecfd3c40b6a972df747c68d724",
                 "file": "docs/product/mbti/source/INTP.json",
                 "pointer": "/traits/workplace/5",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -9917,7 +9917,7 @@
               "source": {
                 "catalogKey": "kc:v1:01659adf43caf3cf99730ceb4e3b73dfcc6f1f99fea38ee1d8e858bd433279f9",
                 "file": "docs/product/mbti/source/ENFJ.json",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -9954,7 +9954,7 @@
               "source": {
                 "catalogKey": "kc:v1:3769097061ae48372d70f4653743fb8d641c2cecfd3c40b6a972df747c68d724",
                 "file": "docs/product/mbti/source/INTP.json",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -10040,7 +10040,7 @@
                 "catalogKey": "kc:v1:01659adf43caf3cf99730ceb4e3b73dfcc6f1f99fea38ee1d8e858bd433279f9",
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/3",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
               },
               "fields": [
                 {
@@ -10086,7 +10086,7 @@
                 "catalogKey": "kc:v1:3769097061ae48372d70f4653743fb8d641c2cecfd3c40b6a972df747c68d724",
                 "file": "docs/product/mbti/source/INTP.json",
                 "pointer": "/traits/workplace/5",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -10622,7 +10622,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#5b778076e2f7f6a60f75",
                     "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-                    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                     "originalState": {
                       "type": "ENFJ",
                       "area": "workplace",
@@ -10640,7 +10640,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 26,
                     "originalId": "mrpr:source:5b778076e2f7f6a60f75",
-                    "recordSha256": "93863b3a43640828aba35e8eb234e27e21cc864fdd26ad6928441e8647fee5e7",
+                    "recordSha256": "7a3459de7cb592c4a13310b61bea8dd51fcab3a7bdc0606144d95b86bdbe2e29",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -10698,7 +10698,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#ab01acce90e1dd368d2d",
                     "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-                    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                     "originalState": {
                       "type": "INTP",
                       "area": "workplace",
@@ -10716,7 +10716,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 32,
                     "originalId": "mrpr:source:ab01acce90e1dd368d2d",
-                    "recordSha256": "2799469a340b86e422edf2b80c8459db2b1fbd0e4e47caf316ccd216172dac02",
+                    "recordSha256": "f2c86e7f944332b688eba8d76aaf2a96d768c8bfbc073266310f45ea4561a517",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -11925,7 +11925,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ENFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+              "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
               "recordHash": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -11959,7 +11959,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/workplace/5",
-              "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+              "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
               "recordHash": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
               "sourceCoverage": "inferred",
               "classification": "SCORING_SEMANTIC",
@@ -12361,7 +12361,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/workplace/3",
-          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "recordHash": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -12395,7 +12395,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/workplace/5",
-          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "recordHash": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
           "sourceCoverage": "inferred",
           "classification": "SCORING_SEMANTIC",
@@ -12732,7 +12732,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
             "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-            "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+            "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
             "originalState": {
               "type": "INTP",
               "area": "thinkingStyle",
@@ -12786,7 +12786,7 @@
                 "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
                 "file": "docs/product/mbti/source/INTP.json",
                 "pointer": "/traits/thinkingStyle/4",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -12822,7 +12822,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
             "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-            "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+            "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
             "originalState": {
               "type": "ESFJ",
               "area": "communication",
@@ -12876,7 +12876,7 @@
                 "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
                 "file": "docs/product/mbti/source/ESFJ.json",
                 "pointer": "/traits/communication/1",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -13087,7 +13087,7 @@
               "source": {
                 "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
                 "file": "docs/product/mbti/source/INTP.json",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -13124,7 +13124,7 @@
               "source": {
                 "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
                 "file": "docs/product/mbti/source/ESFJ.json",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -13189,7 +13189,7 @@
                 "catalogKey": "kc:v1:91dd7724b34fbd0048fb6d674bd596101f59d18bd5f15a14fac4e490f1b2186c",
                 "file": "docs/product/mbti/source/INTP.json",
                 "pointer": "/traits/thinkingStyle/4",
-                "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+                "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
               },
               "fields": [
                 {
@@ -13235,7 +13235,7 @@
                 "catalogKey": "kc:v1:50fb6d85d3e1bcefdd3e70ff3664a4bf5f47b9f9273b49809f02129de7b79905",
                 "file": "docs/product/mbti/source/ESFJ.json",
                 "pointer": "/traits/communication/1",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -13620,7 +13620,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#45c222b77f8da3a044fc",
                     "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-                    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
                     "originalState": {
                       "type": "INTP",
                       "area": "thinkingStyle",
@@ -13638,7 +13638,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 0,
                     "originalId": "mrpr:source:45c222b77f8da3a044fc",
-                    "recordSha256": "97fe4af1a8bbdf1ff93fe8c4fbc2bbaae70674bac7b8b6cce50f9a56c6d02c57",
+                    "recordSha256": "5b4b8c27669dcf58ec02fd829788cb54418eb2b9416a4e186a075e8be1566485",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -13696,7 +13696,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#5b5228616e5b4f21b980",
                     "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-                    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                     "originalState": {
                       "type": "ESFJ",
                       "area": "communication",
@@ -13714,7 +13714,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 1,
                     "originalId": "mrpr:source:5b5228616e5b4f21b980",
-                    "recordSha256": "a423b13b62ae56338f766e03fdcf15a42782a2c7f3443293c5bdde63c4807b08",
+                    "recordSha256": "b579aa69400b040877b9c9eb704e12e40ac724f10a5b896fbfb924be15d76e47",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -14717,7 +14717,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/INTP.json",
               "pointer": "/traits/thinkingStyle/4",
-              "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+              "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
               "recordHash": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -14751,7 +14751,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/communication/1",
-              "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+              "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
               "recordHash": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -15150,7 +15150,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/thinkingStyle/4",
-          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "recordHash": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -15184,7 +15184,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ESFJ.json",
           "pointer": "/traits/communication/1",
-          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "recordHash": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -15519,7 +15519,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#871f1880dae3d3831abc",
             "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-            "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+            "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
             "originalState": {
               "type": "ISTJ",
               "area": "workplace",
@@ -15573,7 +15573,7 @@
                 "catalogKey": "kc:v1:c47fe1abc36abfb9f981e13166120f6e89a984dd2c17abbafd5a5e60a17e4d52",
                 "file": "docs/product/mbti/source/ISTJ.json",
                 "pointer": "/traits/workplace/0",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
               },
               "fields": [
                 {
@@ -15609,7 +15609,7 @@
             "sourceKind": "individual_mbti",
             "auditRef": "source-locator-audit.json#e5bb3aac2a342fa953aa",
             "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-            "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+            "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
             "originalState": {
               "type": "ESFJ",
               "area": "workplace",
@@ -15663,7 +15663,7 @@
                 "catalogKey": "kc:v1:5d381a45fb5ff9dd832f41534479d2cff540c619b353c053c3c4741b2fdb57c9",
                 "file": "docs/product/mbti/source/ESFJ.json",
                 "pointer": "/traits/workplace/3",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -15874,7 +15874,7 @@
               "source": {
                 "catalogKey": "kc:v1:c47fe1abc36abfb9f981e13166120f6e89a984dd2c17abbafd5a5e60a17e4d52",
                 "file": "docs/product/mbti/source/ISTJ.json",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
               },
               "fields": [
                 {
@@ -15911,7 +15911,7 @@
               "source": {
                 "catalogKey": "kc:v1:5d381a45fb5ff9dd832f41534479d2cff540c619b353c053c3c4741b2fdb57c9",
                 "file": "docs/product/mbti/source/ESFJ.json",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -15976,7 +15976,7 @@
                 "catalogKey": "kc:v1:c47fe1abc36abfb9f981e13166120f6e89a984dd2c17abbafd5a5e60a17e4d52",
                 "file": "docs/product/mbti/source/ISTJ.json",
                 "pointer": "/traits/workplace/0",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
               },
               "fields": [
                 {
@@ -16022,7 +16022,7 @@
                 "catalogKey": "kc:v1:5d381a45fb5ff9dd832f41534479d2cff540c619b353c053c3c4741b2fdb57c9",
                 "file": "docs/product/mbti/source/ESFJ.json",
                 "pointer": "/traits/workplace/3",
-                "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+                "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
               },
               "fields": [
                 {
@@ -16431,7 +16431,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#871f1880dae3d3831abc",
                     "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-                    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+                    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
                     "originalState": {
                       "type": "ISTJ",
                       "area": "workplace",
@@ -16449,7 +16449,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 11,
                     "originalId": "mrpr:source:871f1880dae3d3831abc",
-                    "recordSha256": "51b45b4fce79ada65ea316ce1e16d537e2469b0dda4abee45c5ec17f8de99bba",
+                    "recordSha256": "b4e1f099afa2316e4190b677de5dd97758a91ba1e020338338f21d8f344a0571",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -16507,7 +16507,7 @@
                     "sourceKind": "individual_mbti",
                     "auditRef": "source-locator-audit.json#e5bb3aac2a342fa953aa",
                     "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-                    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
                     "originalState": {
                       "type": "ESFJ",
                       "area": "workplace",
@@ -16525,7 +16525,7 @@
                     "exportName": "MR_SOURCES",
                     "index": 39,
                     "originalId": "mrpr:source:e5bb3aac2a342fa953aa",
-                    "recordSha256": "8bbe29093814760d598a8b7beb4b5fbd1d7e0b5aa915e53227dd4d65f2ba7ae1",
+                    "recordSha256": "88e7d94a1ce1bcf87b5be743c4a4cc6d7e56e74c236529efcae533da17cf0e5e",
                     "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
                   },
                   "requiredOwner": [
@@ -17527,7 +17527,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ISTJ.json",
               "pointer": "/traits/workplace/0",
-              "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+              "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
               "recordHash": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -17561,7 +17561,7 @@
               "typeMatched": false,
               "file": "docs/product/mbti/source/ESFJ.json",
               "pointer": "/traits/workplace/3",
-              "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+              "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
               "recordHash": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
               "sourceCoverage": "direct",
               "classification": "SCORING_SEMANTIC",
@@ -17960,7 +17960,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ISTJ.json",
           "pointer": "/traits/workplace/0",
-          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "recordHash": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",
@@ -17994,7 +17994,7 @@
           "typeMatched": false,
           "file": "docs/product/mbti/source/ESFJ.json",
           "pointer": "/traits/workplace/3",
-          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "recordHash": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
           "sourceCoverage": "direct",
           "classification": "SCORING_SEMANTIC",

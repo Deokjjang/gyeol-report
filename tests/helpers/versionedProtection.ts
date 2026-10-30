@@ -18,14 +18,14 @@ export const stagingProtectionContract = stagingRaw;
 // Frozen receipts remain historical; this test-only edition extends the same chain.
 export const sourceRevisionContract = revisionRaw;
 const reviewedTechnical = JSON.stringify(raw), reviewedStaging = JSON.stringify(stagingRaw), reviewedRevision = JSON.stringify(revisionRaw);
-const technicalManifestSha = "1c2495895978aeccdfd43f30b84e474d7fbc7c5b7b45b616b1c63c5edc8ae9b1";
+const technicalManifestSha = "9ca5f4e57ce09eda79e613b338c62c0438206cbd4c3ee0a49d2a5e4196662323";
 const revisionManifestSha = "3f4343013b014b43c6d693f8679d88214a2c5c0387798ae1ef53e4ec277c1e50";
 if (createHash("sha256").update(readFileSync("tests/fixtures/technical-stabilization-01/source-revision-contract.json")).digest("hex") !== technicalManifestSha) throw Error("EXACT_TECHNICAL_RECEIPT_REQUIRED");
 if (createHash("sha256").update(readFileSync("tests/fixtures/knowledge-source-revision-contract-01/source-revision-contract.json")).digest("hex") !== revisionManifestSha) throw Error("EXACT_SOURCE_TEST_RECEIPT_REQUIRED");
 export function validateSourceRevisionContract(contract = sourceRevisionContract): void {
   if (JSON.stringify(contract) !== reviewedRevision) throw Error("EXACT_SOURCE_TEST_REVISION_REQUIRED");
 }
-const stagingManifestSha = "027417bfee13bbc30588b28eac148359bb646a3ad03a5ef9d2c52cc414399569";
+const stagingManifestSha = "bcb18bf24fa3418e52a83c10fa683054c3ccf44581299be930f2f73ee3f191e8";
 if (createHash("sha256").update(readFileSync("tests/fixtures/protected-staging-integration-01/source-revision-contract.json")).digest("hex") !== stagingManifestSha) throw Error("EXACT_STAGING_TEST_RECEIPT_REQUIRED");
 const stagingFiles = ["tests/unit/interpretation-v4/runtimeShadow.test.tsx", "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts"] as const;
 export function validateStagingProtectionContract(contract = stagingProtectionContract): void {

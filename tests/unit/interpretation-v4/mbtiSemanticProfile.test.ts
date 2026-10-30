@@ -16,14 +16,14 @@ const source = (type: MbtiType) => JSON.parse(readFileSync(`docs/product/mbti/so
 const good = (r: MbtiProfileResult) => { expect(r.ok, !r.ok ? JSON.stringify(r.diagnostics.hardErrors) : "").toBe(true); if (!r.ok) return expect.unreachable(); return r.value; };
 const errors = (r: MbtiProfileResult) => { expect(r.ok).toBe(false); return r.ok ? [] : r.diagnostics.hardErrors.map(e => e.code); };
 const snapshots = {
-  ENFJ: "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8", ENFP: "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
-  ENTJ: "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e", ENTP: "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
-  ESFJ: "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8", ESFP: "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
-  ESTJ: "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6", ESTP: "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
-  INFJ: "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500", INFP: "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
-  INTJ: "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83", INTP: "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
-  ISFJ: "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2", ISFP: "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
-  ISTJ: "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a", ISTP: "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+  ENFJ: "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c", ENFP: "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
+  ENTJ: "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c", ENTP: "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
+  ESFJ: "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb", ESFP: "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
+  ESTJ: "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407", ESTP: "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
+  INFJ: "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76", INFP: "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
+  INTJ: "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a", INTP: "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
+  ISFJ: "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9", ISFP: "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
+  ISTJ: "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e", ISTP: "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
 };
 const cases = MBTI_TYPES.map(type => ({ type }));
 
