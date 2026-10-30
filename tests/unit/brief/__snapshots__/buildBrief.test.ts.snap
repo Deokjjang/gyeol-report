@@ -46,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:money:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+BANGHAP act:偏財:love:low",
   ],
-  "tokens": 10856,
+  "tokens": 10811,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,month,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [overview,month,key-months]",
@@ -93,7 +93,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t12",
   ],
   "timeline": undefined,
-  "tokens": 9896,
+  "tokens": 9825,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,portrait,tension]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [fact-bomb,study,direction]",
@@ -163,7 +163,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:alone:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:money:high",
   ],
-  "tokens": 10743,
+  "tokens": 10687,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [overview,current-cycle,transition]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [overview,year]",
@@ -207,7 +207,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 8434,
+  "tokens": 8376,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [attracted-to,inner-gap,conflict-recovery]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-core,attracted-to,conflict-recovery]",
@@ -251,7 +251,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8442,
+  "tokens": 8393,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [work-core,choice-scene,study]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - [choice-scene,burden,study]",
@@ -300,7 +300,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt7",
   ],
   "timeline": undefined,
-  "tokens": 10633,
+  "tokens": 10587,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,same-scene,domain-scene]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [friction,domain-scene,felt-differently]",

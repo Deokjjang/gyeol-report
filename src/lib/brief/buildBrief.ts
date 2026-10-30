@@ -297,7 +297,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(timeline ? { timeline } : {}),
     ...(other ? { partner: { person: other.person, mbti: mbtiBrief(k, other.facts.mbti), chart: other.chart } } : {}),
     ...(compatibility ? { compatibility } : {}),
-    style: { version: "style-v5-1", register: "존댓말, 가볍게(~입니다/~예요 혼용)", readingLevel: "초·중등", totalChars: chars.total, rules: STYLE_RULES, forbidden: [...narrative.forbidden, ...narrative.noRepeatRules.slice(0, 2)] },
+    style: { version: "style-v5-1", register: "존댓말, 가볍게(~입니다/~예요 혼용)", readingLevel: "초·중등", totalChars: chars.total, rules: STYLE_RULES, forbidden: [...narrative.forbidden] },
   };
   // 토큰 추정은 작가가 실제로 받는 입력 그대로(P3.8: 절·배정 기록·안 쓰는 trait를 빼고 센다).
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));

@@ -14,6 +14,8 @@ import type { Brief } from "@/lib/brief/schema";
 import { generateV4ShadowReport } from "@/lib/interpretation-v4/runtimeShadow";
 import { projectV4Tables, type V4RuntimeEvidence } from "@/lib/interpretation-v4/runtimeProjection";
 import { resolveLlmConfig, type LlmProvider } from "@/lib/llm";
+import { birthTimeSlotLabel } from "@/lib/saju/birthTimePrecisionTypes";
+import { SAJU_CALENDAR_VERSION } from "@/lib/saju/calendarVersion";
 import type { ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
 import type { ReportInputPayload } from "@/lib/report-generation/reportInputTypes";
 import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta } from "./book";
@@ -44,7 +46,8 @@ export async function v4People(payload: ReportInputPayload, policyAt: string): P
     const tables = projectV4Tables(v4.evidencePacket as V4RuntimeEvidence);
     const persons = payload.productKey === "saju_mbti_compatibility" ? [[payload.personA, "A"], [payload.personB, "B"]] as const : [[payload.person, "주인공"]] as const;
     return persons.map(([p, role], i) => ({ name: p.name, role, birth: p.birthDate, gender: p.gender, precision: p.birthTimeUnknown ? "unknown" : p.birthTimePrecision ?? "exact", time: p.birthTime ?? "", mbti: p.mbtiType ?? "",
-      timeLabel: p.birthTimeUnknown ? "출생시간 모름" : `정확 · ${p.birthTime}`, table: tables[i] }));
+      // 대략 시간대도 같은 줄 형식(P6: 대략 입력이 "정확 · "(빈 시각)으로 나왔다). 새 책은 현재 달력 기준 시간대 이름.
+      timeLabel: p.birthTimeUnknown ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION) ?? "입력 시간대"}` : `정확 · ${p.birthTime}`, table: tables[i] }));
   } catch { return []; }
 }
 

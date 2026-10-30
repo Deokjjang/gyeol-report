@@ -12,7 +12,8 @@ export const P6_CASES: readonly { readonly id: string; readonly label: string; r
   { id: "y-love", label: "연애 · 도현(Y)", payload: single("love_marriage_child", "love-marriage-child", PEOPLE.y) },
   { id: "pair-love", label: "궁합 연애 · 하람×서윤", payload: { productKey: "saju_mbti_compatibility", productSlug: "compatibility", relationshipType: "love", personA: person(PEOPLE.c1), personB: person(PEOPLE.c2) } },
   { id: "x-major", label: "대운 · 수진(X)", payload: single("major_fortune", "major-fortune", PEOPLE.x) },
-  { id: "c2-annual", label: "세운 2026 · 서윤(c2)", payload: single("annual_fortune", "annual-fortune", PEOPLE.c2, { selectedYear: "2026" }) },
+  // 시간 미상 c2는 세운 결제 입력 검사(DAYUN_UNCERTAIN)에서 막혀 대략 시간대 오시(11:30~13:30)로 넣는다(사용자 결정 2026-10-30).
+  { id: "c2-annual", label: "세운 2026 · 서윤(c2, 대략 오시)", payload: (() => { const x = single("annual_fortune", "annual-fortune", PEOPLE.c2, { selectedYear: "2026" }); return { ...x, person: { ...x.person, birthTimeUnknown: false, birthTimePrecision: "approximate", approximateBirthTimeSlot: "OSI", birthTime: "" } }; })() },
 ];
 
 /** 작가 후보. 키는 각 worktree의 env 파일에서 실행 중에만 읽는다(복사하지 않는다). */
