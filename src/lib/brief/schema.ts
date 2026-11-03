@@ -49,6 +49,8 @@ export const ChartBriefSchema = z.object({
     strongest: z.object({ element: Element, name: z.string(), level: z.string(), reason: z.string() }),
     weakest: z.object({ element: Element, name: z.string(), level: z.string(), reason: z.string() }),
     reading: z.array(z.string()),
+    /** 오행 유무(P6c B2): 겉 글자 수(천간 + 지지 본기)와 지장간에 있는지. 겉 0·hidden=true면 "겉에는 없고 땅속에 조금"만 허용. */
+    presence: z.record(Element, z.object({ surface: z.number(), hidden: z.boolean() })).optional(),
   }),
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
   currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), tenGod: z.string(), reading: z.string(), next: z.object({ ganji: Ganji, startYear: z.number().int(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),

@@ -74,7 +74,8 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   const { pillars, dayMaster } = saju;
   const feature = (id: string) => k.features.get(id);
   const dm = feature(`dayMaster:${dayMaster}`);
-  const yyId = saju.yinYang.label === "BALANCED" ? "yinYang:BALANCED" : `yinYang:${saju.yinYang.label}${opts.gender ? `:${opts.gender}` : ""}`;
+  // 음양 설명은 비율에 맞는 것만(P6c B1): 성별 변형 trait는 P6a에서 중립으로 합쳐졌다. 예전 id(…:MALE)로 찾으면 없어서 균형 설명이 붙었다(하람 6:2).
+  const yyId = `yinYang:${saju.yinYang.label}`;
   const bal = det.elementBalance;
   const top = bal.strongest, low = bal.weakest;
   const elementReading = [
@@ -98,6 +99,8 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       strongest: { element: top.element, name: ELEMENT_KO[top.element], level: top.level, reason: top.reason },
       weakest: { element: low.element, name: ELEMENT_KO[low.element], level: low.level === "없음" ? "없음(땅속에도 없음)" : low.level, reason: low.reason },
       reading: elementReading,
+      // 오행 유무(P6c B2): 겉 글자 수와 땅속(지장간) 유무. 겉 0·땅속 있음은 "겉에는 없고 땅속에 조금"으로만 쓴다.
+      presence: Object.fromEntries(ELEMENTS.map(e => [e, { surface: bal.parts[e].visible, hidden: bal.parts[e].hidden > 0 }])) as Record<FiveElement, { surface: number; hidden: boolean }>,
     },
     climate: {
       season: SEASON_KO[det.climate.season],
