@@ -87,7 +87,8 @@ describe("궁합 첫 화면과 점수 쪽", () => {
     expect(out.indexOf(pair.image!)).toBeLessThan(out.indexOf(pair.characters[0].core));
     expect(pair.relationsPlain!.length).toBeGreaterThan(0);
     for (const line of pair.relationsPlain!) expect(out).toContain(line.replace(/'/g, "&#x27;"));
-    expect(out).not.toContain("↗"); expect(out).not.toContain("보는");
+    // 방향 바로가기는 없다. ↗는 사람마다 부록 바로가기(P6c-ui2 f) 두 개뿐.
+    expect(out.match(/↗/g)).toEqual(["↗", "↗"]); expect(out.match(/다른 기운들 보기 ↗/g)?.length).toBe(2); expect(out).not.toContain("보는");
   });
   it("과거 V4 관계 쪽은 원자료 줄·바로가기 없이 예전 소개를 유지", () => {
     const old = readerBook(storedBook(v4("saju_mbti_compatibility-v4"))!.data), out = html(old, pageOf(old, "pair"));
