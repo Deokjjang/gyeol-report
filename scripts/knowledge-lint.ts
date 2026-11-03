@@ -26,7 +26,7 @@ import {
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
-import { GENDER_WORD, LOVE_TIMING, OLD_NEGATIVE, SICK_DEATH_IMAGE, isGenderStereotype, isPastAssertion, jobFieldList } from "../src/lib/writer/safety/patterns";
+import { FAMILY_MEMBER, GENDER_WORD, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SCENE_CONTEXT, SICK_DEATH_IMAGE, SIMILE, isGenderStereotype, isPastAssertion, jobFieldList } from "../src/lib/writer/safety/patterns";
 import FEATURE_FREQUENCY from "../src/lib/brief/data/feature-frequency.json";
 
 /** 감지 빈도 상위 30%(P3.5 A1): 이미지 변형 3개·영역 장면 3개 이상. tools/p35/enrich.mjs topFeatureIds와 같은 규칙. */
@@ -67,18 +67,30 @@ const MBTI_CODE = /\b[EI][NS][TF][JP]\b|MBTI/;
 // 장면 문장에 들어오면 안 되는 체계 용어. 일상어와 겹치는 낱말(사주다·일주일·지지 않다)은 조사까지 붙여 잡는다.
 const JARGON = /(^|\s)사주(가|를|에|의|는|로|와|도|상|팔자)|명리|(^|\s)일간(이|을|의|에|과|은)|(^|\s)일주(가|를|의|에|는|라)|(^|\s)월지|(^|\s)일지(가|를|의|에)|(^|\s)시지(가|를|에)|(^|\s)년지|천간|(^|\s)지지(가|를|의|에|는|로)|오행|십성|신살|귀인|대운(이|을|의|에|은|도|과|에서)|세운(이|을|의|에|은|도|과|에서)|원국|용신|격국|지장간|십이운성|삼합|육합|방합|형살|인지기능|주기능|열등기능/;
 
+// (P6b B-2) 그림 별명(easyName)은 내부 별칭: 고객 문장(뜻·장면·이유·규칙 문장)에 나오면 실패.
+const NICKNAMES: readonly string[] = (() => {
+  const out = new Set<string>();
+  for (const p of listJson(join(DATA, "myeongri"))) { try { for (const f of readJson(p).features ?? []) if (typeof f.easyName === "string" && f.easyName.length >= 2) out.add(f.easyName); } catch { /* 스키마 검사가 따로 잡는다 */ } }
+  return [...out].sort((a, b) => b.length - a.length);
+})();
+
 // ---------- 문장 규칙 ----------
 const sentenceStore = new Map<string, string>();
 const imageStore = new Map<string, string>();
 const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 let sentenceCount = 0, sentenceChars = 0;
 /** childTagged: 장면 requires.children이 has·none이면 자녀 언급이 조건으로 묶여 있으므로 자녀 단정 검사를 건너뛴다(P2). */
-type ProseOpts = { scene?: boolean; childTagged?: boolean; allowHan?: boolean; dedupe?: boolean; maxSentence?: number };
+/** internal: 그림 별명·이미지처럼 작가에게 가지 않는 내부 글(P6b 금지어·별명 검사 제외). */
+type ProseOpts = { scene?: boolean; childTagged?: boolean; allowHan?: boolean; dedupe?: boolean; maxSentence?: number; internal?: boolean };
 function checkProse(file: string, where: string, text: string, opts: ProseOpts = {}) {
   const maxSentence = opts.maxSentence ?? 90;
   for (const [name, re] of FORBIDDEN) if (re.test(text)) fail(file, where, `금지 표현(${name})`, text);
   if (!opts.allowHan && HAN.test(text)) fail(file, where, "한자", text);
   if (/\{[a-z]+\}/i.test(text) && !/\{name\}/.test(text)) fail(file, where, "알 수 없는 치환자", text);
+  if (!opts.internal) {
+    const r = text.match(RURAL_PROP); if (r) fail(file, where, "농촌·고전 소품(P6b)", `${r[0]} ← ${text}`);
+    const n = NICKNAMES.find(x => text.includes(x)); if (n) fail(file, where, "그림 별명 노출(P6b)", `${n} ← ${text}`);
+  }
   const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [];
   for (const s of sentences) {
     sentenceCount++; sentenceChars += s.length;
@@ -103,7 +115,7 @@ function checkProse(file: string, where: string, text: string, opts: ProseOpts =
   }
 }
 function checkImage(file: string, where: string, image: { metaphor: string; visual: string }) {
-  checkProse(file, `${where}.metaphor`, image.metaphor); checkProse(file, `${where}.visual`, image.visual);
+  checkProse(file, `${where}.metaphor`, image.metaphor, { internal: true }); checkProse(file, `${where}.visual`, image.visual, { internal: true });
   for (const k of ["metaphor", "visual"] as const) {
     const key = norm(image[k]); const prev = imageStore.get(key);
     if (prev && prev !== where) fail(file, `${where}.${k}`, "이미지 중복", `${image[k]} (먼저: ${prev})`); else imageStore.set(key, where);
@@ -208,8 +220,19 @@ function lintFeatureFile(path: string) {
     (featuresByFamily[f.family] ??= []).push(f);
     checkProse(file, `${w}.name`, f.name, { allowHan: true, dedupe: false });
     if (GENDER_WORD.test(f.easyName) || GENDER_WORD.test(f.name)) fail(file, w, "성별 고정관념(이름)", `${f.name} / ${f.easyName}`);
-    checkProse(file, `${w}.oneLiner`, f.oneLiner);
+    checkProse(file, `${w}.oneLiner`, f.oneLiner, { internal: true });
     checkImage(file, `${w}.image`, f.image);
+    // (P6b B-1) 뜻·나에게·그늘·생활 장면. 뜻 필드는 비유 없이, 생활 장면은 직업·학교·가족 구성원 소품 없이.
+    const plain = (where: string, t: string) => { if (SIMILE.test(t)) fail(file, where, "비유(뜻 필드는 비유 없이, P6b)", t); };
+    if (f.meaning) { checkProse(file, `${w}.meaning`, f.meaning, { maxSentence: 120 }); plain(`${w}.meaning`, f.meaning); }
+    if (f.forYou) for (const [k, v] of Object.entries(f.forYou)) if (v) { checkProse(file, `${w}.forYou.${k}`, v); plain(`${w}.forYou.${k}`, v); }
+    if (f.shadow) checkProse(file, `${w}.shadow`, f.shadow);
+    if (f.life) {
+      checkProse(file, `${w}.life`, f.life, { scene: true });
+      if (FAMILY_MEMBER.test(f.life)) fail(file, `${w}.life`, "생활 장면에 가족 구성원(P6b)", f.life);
+      for (const [k, re] of Object.entries(SCENE_CONTEXT)) if (re.test(f.life)) fail(file, `${w}.life`, `생활 장면에 ${k} 소품(P6b)`, f.life);
+    }
+    if (strict && (!f.meaning || !f.forYou || !f.shadow || !f.life)) fail(file, w, "P6b 뜻 필드 누락(meaning·forYou·shadow·life)");
     f.imageVariants?.forEach((im, i) => checkImage(file, `${w}.imageVariants[${i}]`, im));
     if (TOP_FEATURES.has(f.id)) {
       if ((f.imageVariants?.length ?? 0) < 3) fail(file, w, "감지 빈도 상위 30%인데 이미지 변형 3개 미만(P3.5 A1)", String(f.imageVariants?.length ?? 0));
@@ -316,6 +339,7 @@ function lintGanjiEntries(file: string, entries: z.infer<typeof GanjiEnergySchem
     if (seen.has(e.ganji)) fail(file, e.ganji, "간지 중복"); seen.add(e.ganji);
     checkImage(file, `${e.ganji}.image`, e.image);
     for (const k of ["year", "month"] as const) { checkProse(file, `${e.ganji}.${k}.mood`, e[k].mood); checkProse(file, `${e.ganji}.${k}.action`, e[k].action); }
+    if (e.imageLine) checkProse(file, `${e.ganji}.imageLine`, e.imageLine, { dedupe: false }); else if (strict) fail(file, e.ganji, "P6b 카드 그림 줄 누락(imageLine)");
   }
 }
 function lintTimeline() {

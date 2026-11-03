@@ -104,6 +104,12 @@ export const RemedySchema = z.object({
   places: z.array(z.string().min(2).max(40)).min(3).max(6),
 });
 
+/** (P6b B-1) 뜻 필드. 고객 문장의 정체 설명은 그림 별명(easyName·image)이 아니라 이것으로 한다. */
+export const Meaning = z.string().min(40).max(280);
+/** (P6b B-1) 이 사람에게 주는 힘: base 필수, 조건별 문장은 해당 가족만(브리프가 개수·강약으로 하나를 고른다). */
+export const ForYouSchema = z.object({ base: Para, strong: Para.optional(), weak: Para.optional(), many: Para.optional(), none: Para.optional() }).strict();
+export type ForYou = z.infer<typeof ForYouSchema>;
+
 export const MyeongriFeatureSchema = z.object({
   id: z.string().min(3).max(60),
   family: FeatureFamilySchema,
@@ -133,6 +139,13 @@ export const MyeongriFeatureSchema = z.object({
   sources: Sources,
   confidence: ConfidenceSchema,
   aliases: z.array(z.string()).optional(),
+  /** (P6b B-1) 명리학에서 이 용어가 뜻하는 바(2~3문장). 많을 때·없을 때를 구분. 비유·별명 없이. */
+  meaning: Meaning.optional(),
+  forYou: ForYouSchema.optional(),
+  /** (P6b B-1) 지나치게 쓰일 때의 모습(조건을 문장 안에). */
+  shadow: Para.optional(),
+  /** (P6b B-1) 현대 생활 장면 하나: 직업·학교·가족 구성원 소품 없이 누구에게나 맞게. */
+  life: Scene.optional(),
 });
 export type MyeongriFeature = z.infer<typeof MyeongriFeatureSchema>;
 export const MyeongriFileSchema = z.object({ version: z.string(), family: FeatureFamilySchema, features: z.array(MyeongriFeatureSchema).min(1) });
@@ -190,6 +203,8 @@ export const GanjiEnergySchema = z.object({
   ganji: z.string().regex(/^[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]$/),
   name: z.string().min(2).max(10),
   image: ImageSchema,
+  /** (P6b B-5·E-4) 카드 그림 줄: 짧고 현대적인 한 줄, " 해"로 끝난다(달 카드는 "달"로 바꿔 쓴다). */
+  imageLine: z.string().min(8).max(32).regex(/ 해$/).optional(),
   year: z.object({ mood: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), action: Line }),
   month: z.object({ mood: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), action: Line }),
   sources: Sources, confidence: ConfidenceSchema,
