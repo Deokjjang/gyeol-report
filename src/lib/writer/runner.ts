@@ -2,6 +2,7 @@
  * 작가 실행기(P3 C). 책 1권 = 스트리밍 호출 1회(정상 시). SPEC §4 방어:
  *  1) 출력 0인 실패(연결·429·5xx·과부하)만 시간 예산 안에서 재시도한다.
  *  2) 중간 끊김·length 종료면 받은 장은 확정하고, 누락 장만 이어쓰기 1회(브리프 + 이미 쓴 장의 요약 + 남은 장 목록).
+ *  1-1) (P6b A-2) 대체 모델(fallback)이 있으면, 기본 모델이 출력 0으로 실패할 때(스트리밍 시작 전) 재시도 대신 대체 모델로 한 번 전환한다.
  *  3) 그래도 누락된 장은 안전망 단계에서 결정론 작가가 채운다(여기서는 비워 둔다).
  *  4) 장 경계마다 완성된 장을 저장소에 저장한다(워커가 죽어도 회수 크론이 저장된 장으로 Book을 완성).
  * 저장소가 lease를 잃었다고 하면(save=false) 스트림을 끊고 stale로 끝낸다(회수 쪽이 이어받음).
@@ -33,7 +34,9 @@ export function maxTokensFor(chapters: readonly WriterChapter[], model?: string,
 export type SavedChapter = { readonly n: number; readonly chapter: BookChapter; readonly source: DraftChapter["source"] };
 /** 장 저장소. save가 false면 lease를 잃은 것(다른 워커·회수 크론이 이어받음). */
 export type ChapterSink = { save(c: SavedChapter): Promise<boolean>; load(): Promise<readonly SavedChapter[]> };
-export type CallLog = { readonly kind: "first" | "retry" | "continuation"; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number };
+export type WriterTarget = { readonly provider: LlmProvider; readonly model: string; readonly apiKey?: string };
+export type WriterFallback = { readonly from: { provider: string; model: string }; readonly to: { provider: string; model: string } | "deterministic"; readonly reason: string };
+export type CallLog = { readonly kind: "first" | "retry" | "continuation" | "fallback"; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number };
 export type WriterRun = {
   readonly drafts: Map<number, DraftChapter>;
   readonly calls: readonly CallLog[];
@@ -41,6 +44,10 @@ export type WriterRun = {
   readonly usage: { inputTokens: number; cachedInputTokens: number; outputTokens: number };
   readonly costUsd: number;
   readonly outputChars: number;
+  /** 실제로 원고를 쓴 모델(대체되면 대체 모델, 출력이 없으면 null). */
+  readonly writer: { provider: string; model: string } | null;
+  /** 대체가 일어났으면 기록(P6b A-2). */
+  readonly fallback: WriterFallback | null;
 };
 export type WriterOptions = {
   readonly brief: Brief;
@@ -55,6 +62,8 @@ export type WriterOptions = {
   readonly stream?: typeof streamCompletion;
   /** 호출당 출력 토큰 상한(비용 상한·잘림 시험용). 없으면 공식과 모델 상한만. */
   readonly maxOutputTokens?: number;
+  /** 기본 모델이 출력 0으로 실패하면 한 번 전환할 모델(P6b A-2). 없으면 기존처럼 같은 모델로 재시도. */
+  readonly fallback?: WriterTarget | null;
 };
 
 const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
@@ -62,6 +71,9 @@ const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_
 export function isZeroOutputRetryable(r: Pick<StreamCompletionResult, "text" | "finishReason" | "error">): boolean {
   return r.text.length === 0 && r.finishReason !== "complete" && r.finishReason !== "length" && RETRYABLE.test(r.error?.code ?? "");
 }
+
+/** 대체로 넘길 실패: 출력 0이고 lease를 잃어 끊은 것(aborted)이 아니면 무엇이든(401·거절·과부하·네트워크). */
+export const isZeroOutputFailure = (r: Pick<StreamCompletionResult, "text" | "finishReason" | "error">) => r.text.length === 0 && r.finishReason !== "complete" && r.error?.code !== "aborted";
 
 const summaryOf = (c: BookChapter) => `${c.sections.map(s => s.heading).filter(Boolean).slice(0, 5).join(" / ")} — ${(c.sections[0]?.paragraphs[0] ?? "").slice(0, 80)}`;
 
@@ -77,12 +89,15 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
   const calls: CallLog[] = [];
   const usage = { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 };
   let cost = 0, outputChars = 0, stale = false;
+  let target: WriterTarget = { provider: o.provider, model: o.model, ...(o.apiKey ? { apiKey: o.apiKey } : {}) };
+  let fallback: WriterFallback | null = null, wrote: WriterTarget | null = null;
 
-  /** 한 번의 호출(재시도 포함). 장 경계마다 저장한다. 출력이 있었는지 돌려준다. */
+  /** 한 번의 호출(재시도·대체 포함). 장 경계마다 저장한다. 출력이 있었는지 돌려준다. */
   const call = async (kind: "first" | "continuation", system: string, user: string, want: readonly WriterChapter[]): Promise<boolean> => {
     const wanted = new Set(want.map(c => c.n));
-    const maxTokens = maxTokensFor(want, o.model, o.maxOutputTokens);
+    let switched = false;
     for (let attempt = 0; ; attempt++) {
+      const maxTokens = maxTokensFor(want, target.model, o.maxOutputTokens);
       const controller = new AbortController();
       let text = "", saving = Promise.resolve();
       const flush = (finished: boolean) => {
@@ -94,7 +109,7 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
         }
       };
       const t0 = now();
-      const result = await stream({ provider: o.provider, model: o.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, left() - 5_000), apiKey: o.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal,
+      const result = await stream({ provider: target.provider, model: target.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, left() - 5_000), apiKey: target.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal,
         onText: d => { text += d; if (d.includes("\n")) flush(false); } });
       text = result.text;
       // 완전히 끝났을 때만 마지막 장도 완성으로 친다(length·끊김이면 마지막 장은 잘렸을 수 있음).
@@ -102,8 +117,15 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
       await saving;
       for (const k of ["inputTokens", "cachedInputTokens", "outputTokens"] as const) usage[k] += result.usage[k];
       cost += result.costUsd ?? 0; outputChars += result.text.length;
-      calls.push({ kind: attempt ? "retry" : kind, finish: result.finishReason, ...(result.error ? { error: result.error.code } : {}), usage: result.usage, costUsd: result.costUsd, requestId: result.requestId, ms: now() - t0, chars: result.text.length, maxTokens });
+      calls.push({ kind: switched && attempt === 0 ? "fallback" : attempt ? "retry" : kind, provider: target.provider, model: target.model, finish: result.finishReason, ...(result.error ? { error: result.error.code } : {}), usage: result.usage, costUsd: result.costUsd, requestId: result.requestId, ms: now() - t0, chars: result.text.length, maxTokens });
       if (stale) return true;
+      if (result.text.length > 0) wrote = target;
+      // 스트리밍 시작 전 실패: 대체 모델로 한 번 전환(재시도보다 먼저). 대체도 출력 0이면 아래 재시도 규칙 → 결정론.
+      if (isZeroOutputFailure(result) && o.fallback && !fallback && left() > 60_000) {
+        fallback = { from: { provider: target.provider, model: target.model }, to: { provider: o.fallback.provider, model: o.fallback.model }, reason: result.error?.code ?? result.finishReason };
+        target = o.fallback; switched = true; attempt = -1;
+        continue;
+      }
       if (!isZeroOutputRetryable(result)) return result.text.length > 0;
       const wait = Math.min(30_000, 2_000 * 2 ** attempt);
       if (left() - wait < 30_000) return false;
@@ -121,5 +143,8 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
       await call("continuation", cont.system, cont.user, rest);
     }
   }
-  return { drafts, calls, stale, usage, costUsd: Math.round(cost * 1e8) / 1e8, outputChars };
+  // 대체 모델도 쓰지 못했으면 최후 대체는 결정론 작가(안전망이 채운다).
+  // (클로저 안에서 바뀌는 값이라 타입을 다시 적는다.)
+  const w = wrote as WriterTarget | null, f = fallback as WriterFallback | null;
+  return { drafts, calls, stale, usage, costUsd: Math.round(cost * 1e8) / 1e8, outputChars, writer: w ? { provider: w.provider, model: w.model } : null, fallback: f && !w ? { ...f, to: "deterministic" } : f };
 }

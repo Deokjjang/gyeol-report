@@ -11,18 +11,24 @@ import type { ReportInputPayload } from "@/lib/report-generation/reportInputType
 import { productSlugByType, type ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
 import type { BookSection, ChapterSource } from "./format";
 import type { WriterChapter } from "./prompt";
-import type { CallLog } from "./runner";
+import type { CallLog, WriterFallback } from "./runner";
 import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
 
+/** 판 정보(P6b A-4, p6b-fields.md 1). 원고 체계가 바뀌면 판 번호·개정일을 올린다(책마다 같은 값). */
+export const BOOK_EDITION = { number: 5, label: "제5판", revisedAt: "2026-11-03" } as const;
+export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
+
 export type V5TimelineCard = Omit<TimelineEntry, "material">;
 export type V5Chapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly keys?: readonly string[] };
 export type V5BookDraft = {
   readonly version: typeof V5_DRAFT_VERSION; readonly productVersion: "v5"; readonly productType: Brief["product"];
   readonly title: string; readonly headline: string; readonly finalLine: string;
+  /** P6b 이전 Book에는 없다. */
+  readonly edition?: BookEdition;
   readonly chapters: readonly V5Chapter[];
   readonly timeline?: { readonly cards: readonly V5TimelineCard[]; readonly tenGodNotes: NonNullable<Brief["timeline"]>["tenGodNotes"]; readonly thisYear: number; readonly age: number };
 };
@@ -35,6 +41,8 @@ export type WriterMeta = {
   readonly chapters: readonly ChapterMeta[];
   readonly safety: { readonly deletions: number; readonly byRule: Readonly<Record<string, number>>; readonly warnings: number; readonly metrics?: SafetyMetrics };
   readonly recovered: boolean;
+  /** 작가 대체 기록(P6b A-2, p6b-fields.md 2). 대체가 없으면 null, P6b 이전 Book에는 없음. */
+  readonly fallback?: WriterFallback | null;
 };
 export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
@@ -91,7 +99,7 @@ const lastSentence = (sections: readonly BookSection[]) => splitSentences(sectio
 
 export function assembleV5Book(a: {
   brief: Brief; plan: readonly WriterChapter[]; finals: readonly FinalChapter[]; report: SafetyReport; payload: ReportInputPayload; generatedAt: string;
-  people: readonly BookPerson[]; writer: WriterMeta["writer"]; calls: readonly CallLog[]; tokens: WriterMeta["tokens"]; costUsd: number; durationMs: number;
+  people: readonly BookPerson[]; writer: WriterMeta["writer"]; fallback?: WriterFallback | null; calls: readonly CallLog[]; tokens: WriterMeta["tokens"]; costUsd: number; durationMs: number;
   briefHash: string; knowledgeVersion: string; promptVersion: string; recovered: boolean;
 }): { draft: V5BookDraft; evidence: V5Evidence } {
   const { brief } = a;
@@ -101,7 +109,7 @@ export function assembleV5Book(a: {
   const byRule: Record<string, number> = {};
   for (const d of a.report.deletions) byRule[d.rule] = (byRule[d.rule] ?? 0) + 1;
   const draft: V5BookDraft = {
-    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title,
+    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => { const c: Partial<TimelineEntry> = { ...card }; delete c.material; return c as V5TimelineCard; }), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age } } : {}),
@@ -124,7 +132,7 @@ export function assembleV5Book(a: {
     names: c ? `${c.a.callName.replace(/님$/, "")} · ${c.b.callName.replace(/님$/, "")}` : brief.person.name, context, ...(pair ? { pair } : {}),
     meta: {
       writer: a.writer, promptVersion: a.promptVersion, knowledgeVersion: a.knowledgeVersion, briefVersion: brief.version, briefHash: a.briefHash,
-      tokens: a.tokens, costUsd: a.costUsd, calls: a.calls, durationMs: a.durationMs, recovered: a.recovered,
+      tokens: a.tokens, costUsd: a.costUsd, calls: a.calls, durationMs: a.durationMs, recovered: a.recovered, fallback: a.fallback ?? null,
       chapters: a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, source: f.source, ...(f.reason ? { reason: f.reason } : {}), chars: f.chars, evidence: chapterEvidence(brief, a.plan.find(ch => ch.n === f.n)!) })),
       safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length, ...(a.report.metrics ? { metrics: a.report.metrics } : {}) },
     },

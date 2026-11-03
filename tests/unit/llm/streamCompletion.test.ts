@@ -162,8 +162,12 @@ describe("streamCompletion", () => {
 
 describe("config and prices", () => {
   it("defaults to anthropic and rejects unknown providers", () => {
-    expect(resolveLlmConfig({})).toEqual({ provider: "anthropic", model: null });
-    expect(resolveLlmConfig({ LLM_PROVIDER: "openai", LLM_MODEL: " gpt-4.1-nano " })).toEqual({ provider: "openai", model: "gpt-4.1-nano" });
+    // P6b A-1·A-2: 운영 작가 기본 Sonnet 5.5, 스트리밍 전 실패 시 gpt-6.1-terra로 한 번 전환.
+    expect(resolveLlmConfig({})).toEqual({ provider: "anthropic", model: "claude-sonnet-5-5", fallback: { provider: "openai", model: "gpt-6.1-terra" } });
+    expect(resolveLlmConfig({ LLM_PROVIDER: "openai", LLM_MODEL: " gpt-4.1-nano " })).toEqual({ provider: "openai", model: "gpt-4.1-nano", fallback: null });
+    expect(resolveLlmConfig({ LLM_FALLBACK: "none" }).fallback).toBeNull();
+    expect(resolveLlmConfig({ LLM_FALLBACK: "anthropic/claude-haiku-5-5" }).fallback).toEqual({ provider: "anthropic", model: "claude-haiku-5-5" });
+    expect(resolveLlmConfig({ LLM_PROVIDER: "openai", LLM_FALLBACK: "openai/gpt-6.1-terra" }).fallback).toBeNull();
     expect(() => resolveLlmConfig({ LLM_PROVIDER: "gemini" })).toThrow();
   });
 

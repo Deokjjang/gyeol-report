@@ -16,9 +16,10 @@ function memorySink(stale = false): ChapterSink & { saved: SavedChapter[] } {
   const saved: SavedChapter[] = [];
   return { saved, async save(c) { if (stale && saved.length >= 2) return false; saved.push(c); return true; }, async load() { return saved; } };
 }
-async function run(behaviors: MockBehavior[], opts: { stale?: boolean; budgetMs?: number } = {}) {
+async function run(behaviors: MockBehavior[], opts: { stale?: boolean; budgetMs?: number; fallback?: boolean } = {}) {
   const m = mockOpenAi(behaviors), sink = memorySink(opts.stale);
-  const r = await runWriter({ brief, provider: "openai", model: "gpt-4o-mini", apiKey: "sk-test-mock", sink, fetchImpl: m.fetch, sleep: async () => undefined, ...(opts.budgetMs ? { budgetMs: opts.budgetMs } : {}) });
+  const r = await runWriter({ brief, provider: "openai", model: "gpt-4o-mini", apiKey: "sk-test-mock", sink, fetchImpl: m.fetch, sleep: async () => undefined, ...(opts.budgetMs ? { budgetMs: opts.budgetMs } : {}),
+    ...(opts.fallback ? { fallback: { provider: "openai" as const, model: "gpt-6.1-terra", apiKey: "sk-test-mock" } } : {}) });
   const finals = applySafetyNet(brief, plan, r.drafts).chapters;
   return { r, m, sink, sources: finals.map(f => f.source) };
 }
@@ -37,6 +38,30 @@ describe("작가 실행기 — 실패 주입(목업, 비용 0)", () => {
     expect(m.calls).toHaveLength(3);
     expect(r.calls.map(c => c.kind)).toEqual(["first", "retry", "retry"]);
     expect(sources.every(s => s === "writer")).toBe(true);
+  });
+
+  it("P6b 대체: 기본 모델이 스트리밍 전에 실패하면 대체 모델로 한 번 전환(재시도보다 먼저), 메타에 기록", async () => {
+    const { m, sources, r } = await run([{ status: 529 }, { text: full }], { fallback: true });
+    expect(m.calls).toHaveLength(2);
+    expect(r.calls.map(c => [c.kind, c.model])).toEqual([["first", "gpt-4o-mini"], ["fallback", "gpt-6.1-terra"]]);
+    expect(sources.every(s => s === "writer")).toBe(true);
+    expect(r.writer).toEqual({ provider: "openai", model: "gpt-6.1-terra" });
+    expect(r.fallback).toEqual({ from: { provider: "openai", model: "gpt-4o-mini" }, to: { provider: "openai", model: "gpt-6.1-terra" }, reason: "http_529" });
+  });
+
+  it("P6b 대체: 401·거절처럼 재시도 대상이 아닌 실패도 대체, 대체도 실패하면 결정론(최후)", async () => {
+    const { m, sources, r } = await run([{ status: 401 }, { status: 401 }], { fallback: true });
+    expect(m.calls).toHaveLength(2);
+    expect(sources.every(s => s === "deterministic")).toBe(true);
+    expect(r.writer).toBeNull();
+    expect(r.fallback).toEqual({ from: { provider: "openai", model: "gpt-4o-mini" }, to: "deterministic", reason: "http_401" });
+  });
+
+  it("P6b 대체: 출력이 나온 뒤의 끊김은 대체하지 않고 같은 모델로 이어쓰기", async () => {
+    const { r } = await run([{ text: full, cutAt: half + 40 }, { text: full.slice(half) }], { fallback: true });
+    expect(r.fallback).toBeNull();
+    expect(r.calls.map(c => c.kind)).toEqual(["first", "continuation"]);
+    expect(r.calls.every(c => c.model === "gpt-4o-mini")).toBe(true);
   });
 
   it("출력 0이어도 재시도하지 않는 실패(401): 전부 결정론 작가", async () => {

@@ -3,13 +3,31 @@ import { DRIVERS, InvalidEventError, type StreamState } from "./providers";
 import { parseSse } from "./sse";
 import type { LlmError, LlmProvider, StreamCompletionInput, StreamCompletionResult } from "./types";
 
-export type LlmConfig = { readonly provider: LlmProvider; readonly model: string | null };
+export type LlmTarget = { readonly provider: LlmProvider; readonly model: string };
+export type LlmConfig = { readonly provider: LlmProvider; readonly model: string; readonly fallback: LlmTarget | null };
 
-/** LLM_PROVIDER(기본 anthropic), LLM_MODEL. 모델은 호출하는 쪽이 정한다. */
+/** (P6b A-1) 운영 작가 기본 모델. 결제·이용권(업그레이드 포함) 모두 이 경로를 쓴다. */
+export const DEFAULT_WRITER_MODEL: Readonly<Record<LlmProvider, string>> = { anthropic: "claude-sonnet-5-5", openai: "gpt-6.1-terra" };
+/** (P6b A-2) 기본 작가가 스트리밍 전에 실패하면 한 번 전환할 모델. */
+export const DEFAULT_FALLBACK: LlmTarget = { provider: "openai", model: "gpt-6.1-terra" };
+
+const provider = (raw: string, name: string): LlmProvider => {
+  if (raw !== "anthropic" && raw !== "openai") throw new Error(`${name}는 anthropic 또는 openai여야 합니다: ${raw}`);
+  return raw;
+};
+
+/**
+ * LLM_PROVIDER(기본 anthropic), LLM_MODEL(기본 공급자별 DEFAULT_WRITER_MODEL).
+ * LLM_FALLBACK: "공급자/모델" 또는 "none". 없으면 기본 공급자가 anthropic일 때 openai/gpt-6.1-terra, 대체 모델이 기본 모델과 같으면 없음.
+ */
 export function resolveLlmConfig(env: Readonly<Record<string, string | undefined>> = process.env): LlmConfig {
-  const raw = env.LLM_PROVIDER?.trim() || "anthropic";
-  if (raw !== "anthropic" && raw !== "openai") throw new Error(`LLM_PROVIDER는 anthropic 또는 openai여야 합니다: ${raw}`);
-  return { provider: raw, model: env.LLM_MODEL?.trim() || null };
+  const p = provider(env.LLM_PROVIDER?.trim() || "anthropic", "LLM_PROVIDER");
+  const model = env.LLM_MODEL?.trim() || DEFAULT_WRITER_MODEL[p];
+  const raw = env.LLM_FALLBACK?.trim();
+  let fallback: LlmTarget | null = p === "anthropic" ? DEFAULT_FALLBACK : null;
+  if (raw === "none") fallback = null;
+  else if (raw) { const [fp, ...rest] = raw.split("/"); fallback = { provider: provider(fp, "LLM_FALLBACK"), model: rest.join("/") || DEFAULT_WRITER_MODEL[provider(fp, "LLM_FALLBACK")] }; }
+  return { provider: p, model, fallback: fallback && (fallback.provider !== p || fallback.model !== model) ? fallback : null };
 }
 
 // 오류 메시지·본문에 키가 섞여 나가지 않게 지운다.

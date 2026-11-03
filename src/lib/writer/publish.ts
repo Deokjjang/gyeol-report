@@ -13,7 +13,7 @@ import { stableStringify } from "@/lib/brief/seed";
 import type { Brief } from "@/lib/brief/schema";
 import { generateV4ShadowReport } from "@/lib/interpretation-v4/runtimeShadow";
 import { projectV4Tables, type V4RuntimeEvidence } from "@/lib/interpretation-v4/runtimeProjection";
-import { resolveLlmConfig, type LlmProvider } from "@/lib/llm";
+import { resolveLlmConfig, type LlmProvider, type LlmTarget } from "@/lib/llm";
 import { calculateCompatibilitySaju } from "@/lib/report-generation/compatibilityGenerationHandler";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { buildCanonicalNatalTable, type CanonicalNatalTableEvidence } from "@/lib/report-knowledge/natalTableEvidence";
@@ -81,6 +81,8 @@ export async function v4People(payload: ReportInputPayload, policyAt: string): P
 
 export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens">> & {
   readonly provider?: LlmProvider; readonly model?: string; readonly people?: (payload: ReportInputPayload, policyAt: string) => Promise<BookPerson[]>;
+  /** 대체 모델(P6b A-2). undefined면 환경 설정(LLM_FALLBACK, 기본 openai/gpt-6.1-terra), null이면 대체 없음. */
+  readonly fallback?: LlmTarget | null;
 };
 
 export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
@@ -90,12 +92,14 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const brief = buildBrief(payloadToBriefInput(a.payload, kstDate(a.policyAt)) as never, k);
   const plan = buildWriterPrompt(brief).chapters;
   const llm = resolveLlmConfig();
-  const provider = deps.provider ?? llm.provider, model = deps.model ?? llm.model ?? "";
+  const provider = deps.provider ?? llm.provider, model = deps.model ?? llm.model;
+  const fallbackTarget = deps.fallback === undefined ? llm.fallback : deps.fallback;
   let run: WriterRun | null = null;
   let drafts = new Map<number, DraftChapter>();
   if (!a.recover && model) {
     const envCap = Number(process.env.LLM_MAX_OUTPUT_TOKENS);
-    try { run = await runWriter({ brief, provider, model, sink: a.sink, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), ...deps }); drafts = run.drafts; }
+    const fb = fallbackTarget && (fallbackTarget.provider !== provider || fallbackTarget.model !== model) ? fallbackTarget : null;
+    try { run = await runWriter({ brief, provider, model, sink: a.sink, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), ...deps, fallback: fb }); drafts = run.drafts; }
     catch { drafts = new Map(); }
   }
   if (a.recover || !run) { try { for (const s of await a.sink.load()) if (!drafts.has(s.n)) drafts.set(s.n, { chapter: s.chapter, source: s.source }); } catch { /* 저장소가 안 되면 결정론 작가로만 */ } }
@@ -103,7 +107,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const people = await (deps.people ?? v4People)(a.payload, a.policyAt);
   const { draft, evidence } = assembleV5Book({
     brief, plan, finals, report, payload: a.payload, generatedAt: a.policyAt, people,
-    writer: run && model ? { provider, model } : null, calls: run?.calls ?? [],
+    writer: run?.writer ?? null, fallback: run?.fallback ?? null, calls: run?.calls ?? [],
     tokens: { input: run?.usage.inputTokens ?? 0, cachedInput: run?.usage.cachedInputTokens ?? 0, output: run?.usage.outputTokens ?? 0 },
     costUsd: run?.costUsd ?? 0, durationMs: now() - started, briefHash: briefHash(brief), knowledgeVersion, promptVersion: WRITER_PROMPT_VERSION, recovered: Boolean(a.recover),
   });
