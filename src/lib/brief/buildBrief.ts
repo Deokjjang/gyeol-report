@@ -173,6 +173,19 @@ function appendixOf(p: PersonPack, k: Knowledge) {
   return { name: p.person.name, items: items.map(x => ({ group: x.group, name: x.name, meaning: x.meaning, core: x.core })) };
 }
 
+/** 용어 뜻(P6c-ui2 g): 화면에서 장마다 첫 등장을 표시하고 누르면 뜻 한 줄을 띄운다. 이름은 괄호 앞 한글, 같은 이름은 앞의 것.
+ * 십이운성 한 글자 이름(쇠·병·사·묘·절·태·양)은 보통 낱말과 겹쳐 뺀다. */
+const GLOSSARY_FAMILIES = ["tenGod", "shinsal", "gwiin", "twelveStage"] as const;
+function glossaryOf(k: Knowledge) {
+  const out = new Map<string, { group: string; name: string; meaning: string }>();
+  for (const family of GLOSSARY_FAMILIES) for (const f of [...k.features.values()].filter(f => f.family === family).sort((a, b) => a.id.localeCompare(b.id))) {
+    const name = f.name.split("(")[0].trim();
+    if (name.length < 2 || out.has(name)) continue;
+    out.set(name, { group: FAMILY_KO[family], name, meaning: meaningLine(f.meaning) });
+  }
+  return [...out.values()];
+}
+
 function mbtiBrief(k: Knowledge, type: MbtiType | null) {
   const p = type ? k.mbti.get(type) : undefined;
   if (!p) return null;
@@ -326,9 +339,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   };
   // 토큰 추정은 작가가 실제로 받는 입력 그대로(P3.8: 절·배정 기록·안 쓰는 trait를 빼고 센다).
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
-  // usedProps는 안전망용, appendix는 부록 쪽용이라 작가 토큰 추정·작가 입력에서 뺀다.
+  // usedProps는 안전망용, appendix·glossary는 부록·용어 표시용이라 작가 토큰 추정·작가 입력에서 뺀다.
   const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k));
-  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, budget: { ...budget, method: TOKEN_METHOD } });
+  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD } });
 }
 
 /**

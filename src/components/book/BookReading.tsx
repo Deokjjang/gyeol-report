@@ -16,9 +16,9 @@ import { ReferralBookCta } from "./ReferralBookCta";
 import { interaction } from "../../lib/analytics/client";
 import { readableBookText } from "../../lib/book/readerCopy";
 
-export function BookReading({ data: stored, edition, share, home = "/", saveToLibrary, shareOwner, shared = false, local = false }: { data: BookData; edition?: string; share: BookShareModel; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; shared?: boolean; local?: boolean }) {
+export function BookReading({ data: stored, edition, today, share, home = "/", saveToLibrary, shareOwner, shared = false, local = false }: { data: BookData; edition?: string; today?: string; share: BookShareModel; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; shared?: boolean; local?: boolean }) {
   useEffect(() => { interaction(shared && share.referral ? "referral_landing_opened" : "report_opened", share.productType); }, [shared, share.referral, share.productType]);
-  const data = readerBook(edition ? { ...stored, edition } : stored);
+  const data = readerBook(edition ? { ...stored, edition } : stored, today);
   const [page, setPage] = useState(0), [note, setNote] = useState<BookNote | null>(null), [message, setMessage] = useState(""), [toc, setToc] = useState(false);
   const scroll = useRef<HTMLDivElement>(null);
   const [returnPoints, setReturnPoints] = useState<{ page: number; top: number }[]>([]);

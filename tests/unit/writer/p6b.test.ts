@@ -165,6 +165,6 @@ describe("P6b 세운 달 번호", () => {
     const page = data.pages.find(p => p.kind === "months") as { months: { month: number }[] };
     const months = (page as { months: { order?: number; range?: string }[] }).months;
     expect(months.map(m => m.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    expect([months[0].range, months[11].range]).toEqual(["2/4~3/4", "1/5~2/3"]);
+    expect([months[0].range, months[11].range]).toEqual(["2/4~3/5", "1/5~2/4"]); // 끝 = 다음 절입일(P6c-ui2 결정)
   });
 });

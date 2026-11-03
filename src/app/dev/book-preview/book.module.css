@@ -132,7 +132,12 @@
 .consentRow button { min-height: 44px; font-size: 11px; color: #555; }
 .consentRow label { cursor: pointer; }
 .legalLinks button { min-height: 44px; text-align: left; font-size: 11px; }
-.prose { font-size: 16.5px; line-height: 1.95; word-break: keep-all; overflow-wrap: anywhere; }
+.prose { position: relative; font-size: 16.5px; line-height: 1.95; word-break: keep-all; overflow-wrap: anywhere; }
+/* 핵심 구절·용어(P6c-ui2 g): 핵심 구절은 굵게 + 옅은 밑줄, 용어는 장마다 첫 등장만 점선, 누르면 뜻 한 줄 */
+.keySpan { font-weight: 600; text-decoration-line: underline; text-decoration-color: color-mix(in srgb, var(--cover, #111) 35%, transparent); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.prose button.term { border-bottom: 1px dotted #9a9a9a; line-height: inherit; }
+.termTip { position: absolute; z-index: 5; width: 240px; max-width: 100%; padding: 10px 12px; border: 1px solid #111; background: #fff; font-size: 12px; font-weight: 400; line-height: 1.7; word-break: keep-all; overflow-wrap: anywhere; }
+.termTip b { font-weight: 600; }
 .prose p + p, .prose section + section { margin-top: 25px; }
 .prose, .prose p { user-select: text; -webkit-user-select: text; }
 .prose section h2 { margin-block: 30px 18px; }
@@ -182,6 +187,12 @@
 .ledger > li[data-now=true] .rowBadge { border-color: #111; background: #111; color: #fff; }
 .rowDetail { display: grid; gap: 6px; padding-bottom: 16px; font-size: 13px; line-height: 1.8; }
 .rowDetail > button { min-height: 44px; text-align: left; font-size: 15px; font-weight: 600; line-height: 1.7; }
+/* 관계 원어(P6c-ui2 i): 쉬운 문장 아래 작은 글씨 */
+.rowTerms { font-size: 10px; color: #555; line-height: 1.6; }
+/* 주인공 쪽 오행 아래 부록 바로가기(P6c-ui2 f): 표 상세의 본문 링크와 같은 모양 */
+.toAppendix { display: block; min-height: 44px; margin-top: 14px; text-align: left; font-size: 15px; font-weight: 600; line-height: 1.7; }
+/* 줄바꿈은 낱말 단위(P6c-ui2 b): 표지 제목·장 제목·소제목·카드 머리 */
+.readerCover .coverTitle, .pageScroll h1, .pageScroll h2, .pageScroll h3, .ledgerRow > summary, .rowDetail > button { word-break: keep-all; overflow-wrap: break-word; }
 .rowBadges { list-style: none; margin: 0; padding: 0; font-size: 12px; line-height: 1.75; color: var(--muted); }
 .rowBadges b { color: #111; font-weight: 600; }
 .ganjiChip { display: inline-flex; align-items: center; gap: 2px; }

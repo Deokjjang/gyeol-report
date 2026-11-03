@@ -64,7 +64,7 @@ export function renderWriterBrief(brief: Brief): Record<string, unknown> {
   const { style, timeline, fortunes } = brief;
   const { traits, shadows } = writerFacing(brief);
   return {
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix"),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary"),
     chart: writerChart(brief.chart),
     mbti: brief.mbti ? omit(brief.mbti, "image") : null,
     // 그림 별명·이미지·한 줄은 내부 별칭(P6b B-2): 작가는 이름(한자)·뜻(meaning)·나에게(forYou)만 받는다.

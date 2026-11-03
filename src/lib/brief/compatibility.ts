@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, SajuCalcResult } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, ganjiLabel, josa, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { ELEMENT_KO, ganjiLabel, josa, relationPlain, tenGodLabel } from "./labels";
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
 import { pairImage } from "./coreImage";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
@@ -34,7 +34,6 @@ function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
 }
 
 const PILLAR_KO = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
-const REL_EASY = REL_PLAIN;
 /**
  * 두 사람 사이 관계의 자리 문장(P3.7 1-5): "정희님의 태어난 날 땅 글자 亥와 지우님의 태어난 날 땅 글자 巳: 서로 부딪치는 기운(충)".
  * 날–날을 먼저, 그다음 날이 낀 짝, 그 밖 짝 순으로 4개까지. 시간 미상인 사람의 시각 기둥은 보지 않는다.
@@ -52,8 +51,7 @@ function pairRelations(a: PairSide, b: PairSide, k: Knowledge): string[] {
       const line = k.badges.find(z => z.kind === r.kind && (z.pair === r.key || z.pair === [...r.key].reverse().join("")))?.line ?? "";
       const rank = (pa === "day" ? 0 : 2) + (pb === "day" ? 0 : 2) + (sky ? 1 : 0);
       // 쉬운 문장(P6b D 궁합 relationsPlain): 글자 표기 없이 자리와 관계 이름·뜻만(E-9: "(정축·정축(丁丑))" 같은 겹친 표기 방지).
-      const term = r.kind === "SAMHAP" ? HALF_HAP_PLAIN : REL_EASY[r.kind] ?? r.kind;
-      rows.push({ rank, text: `${a.callName}의 ${PILLAR_KO[pa]} ${josa(glyph, "과와")} ${b.callName}의 ${PILLAR_KO[pb]} ${josa(glyph, "이가")} ${term} 관계예요.${line ? ` ${line}이에요.` : ""}` });
+      rows.push({ rank, text: relationPlain(`${a.callName}의 ${PILLAR_KO[pa]} ${glyph}`, `${b.callName}의 ${PILLAR_KO[pb]} ${glyph}`, r.kind, r.kind === "SAMHAP", line) });
     }
   }
   return rows.sort((p, q) => p.rank - q.rank).slice(0, 4).map(r => r.text);

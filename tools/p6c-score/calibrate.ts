@@ -1,17 +1,17 @@
 // 점수 v2 분포 측정: pnpm exec tsx tools/p6c-score/calibrate.ts [n=10000] [seed=20261103] [--json]
-// 무작위 n쌍(tools/p4-compat/pairs.ts, 시간 미상 20%·MBTI 없음 10%/사람) × 7유형. 목표: 중앙값 70±3, 50 미만 ≤5%, 90 이상 약 5%.
+// 무작위 n쌍(tools/p4-compat/pairs.ts, 시간 미상 20%·MBTI 없음 10%/사람) × 7유형. 목표(v2.1): 중앙값 70±3, 50 미만·90 이상 각 3~6%.
 // 절기 경계일 + 시간 미상(원국 불확정)은 calculateSaju가 throw → 제외(제외 수를 함께 적는다).
 import type { MbtiType } from "../../src/data/knowledge-v5/schema";
 import { calculateSaju } from "../../src/lib/saju/calculateSaju";
-import { computeCompatScore, FLOOR, TIERS, tiersFor, type CompatCategory } from "../../src/lib/compat/score";
+import { COMPAT_SCORE_VERSION, computeCompatScore, TIERS, tiersFor, type CompatCategory } from "../../src/lib/compat/score";
 import { CATEGORIES, randomPairs, type RandPerson } from "../p4-compat/pairs";
 
 const args = process.argv.slice(2).filter(a => !a.startsWith("--"));
 const n = Number(args[0] ?? 10000), seed = Number(args[1] ?? 20261103), json = process.argv.includes("--json");
-// --floor=x: 다른 FLOOR로 세부 점수를 다시 내려 잰다(보정 탐색용). 없으면 score.ts의 FLOOR.
+// --floor=x: v2 방식(FLOOR로 세부 점수를 내림)으로 잰다(--floor=0.36 = v2). 없으면 score.ts의 지금 표(v2.1, P6c-ui2).
 const floorArg = process.argv.find(a => a.startsWith("--floor="));
-const floor = floorArg ? Number(floorArg.slice(8)) : FLOOR;
-Object.assign(TIERS, tiersFor(floor));
+const floor = floorArg ? Number(floorArg.slice(8)) : null;
+if (floor !== null) Object.assign(TIERS, tiersFor(floor));
 const saju = (p: RandPerson) => calculateSaju({ birthDate: p.birthDate, birthTime: p.birthTime, birthTimeUnknown: p.birthTimeUnknown, approximateBirthTimeSlot: "" as never, calendarType: "SOLAR", gender: p.gender, timezone: "Asia/Seoul" });
 const q = (s: number[], p: number) => s[Math.min(s.length - 1, Math.floor(p * (s.length - 1)))];
 const totals: Record<string, number[]> = {}, items: Record<string, Record<string, number[]>> = {};
@@ -32,7 +32,7 @@ const rows = CATEGORIES.map(c => {
 });
 if (json) console.log(JSON.stringify({ n, seed, floor, skipped, rows }, null, 1));
 else {
-  console.log(`n=${n} seed=${seed} FLOOR=${floor} 제외=${skipped}`);
+  console.log(`n=${n} seed=${seed} ${floor === null ? `표=${COMPAT_SCORE_VERSION}` : `FLOOR=${floor}`} 제외=${skipped}`);
   console.log("| 유형 | n | 중앙값 | p10 | p90 | 최소 | 최대 | 50 미만 | 90 이상 |\n|---|---|---|---|---|---|---|---|---|");
   for (const r of rows) console.log(`| ${r.type} | ${r.n} | ${r.median} | ${r.p10} | ${r.p90} | ${r.min} | ${r.max} | ${r.under50}% | ${r.over90}% |`);
   console.log("항목 평균(만점 대비):"); for (const r of rows) console.log(r.type, JSON.stringify(r.items));

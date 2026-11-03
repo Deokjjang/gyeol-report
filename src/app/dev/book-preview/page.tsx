@@ -11,5 +11,7 @@ export default async function BookPreviewPage({ searchParams }: { searchParams?:
   const query = await searchParams ?? {};
   const library = await loadBookLibrary(query.fixture);
   if (!library) return <p role="alert">검수용 책 데이터를 준비하지 못했습니다. 입력 계약을 확인해 주세요.</p>;
-  return <BookPreview key={`${library.selected}:${query.book ?? ""}`} library={library} initialBook={query.book} initialRead={query.read === "1"} />;
+  const { kstDay } = await import("../../../lib/book/readerCopy");
+  // 읽는 날(KST): V4 세운 표의 지금 기준(P6c-ui2 j). 픽스처를 만든 고정 시각과 따로.
+  return <BookPreview key={`${library.selected}:${query.book ?? ""}`} library={library} initialBook={query.book} initialRead={query.read === "1"} today={kstDay(new Date().toISOString())} />;
 }

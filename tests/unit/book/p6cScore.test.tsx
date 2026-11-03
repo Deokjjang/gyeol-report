@@ -39,13 +39,14 @@ const html = (data: BookData, page: BookPage) => renderToStaticMarkup(<BookReade
 const pageOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pages.find((p): p is Extract<BookPage, { kind: K }> => p.kind === kind)!;
 const pagesOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pages.filter((p): p is Extract<BookPage, { kind: K }> => p.kind === kind);
 
-describe("궁합 점수 v2 점수 쪽", () => {
+describe("궁합 점수 v2.1 점수 쪽", () => {
   const data = read(snap("saju_mbti_compatibility"));
-  it("총점 = 40 + 항목 점수 합, 항목 막대는 점수/만점(연애 배점), 이유는 2~3문장, 버전 v2", () => {
+  it("총점 = 40 + 항목 점수 합, 항목 막대는 점수/만점(연애 배점), 이유는 2~3문장, 버전 v2.1", () => {
     const score = pageOf(data, "score"), out = html(data, score);
-    expect(score.scoreVersion).toBe("v2");
-    expect(score.total).toBe(62); // 하람×서윤 연애(P4 49 → v2 62)
-    expect(score.band).toBe("맞춰 가면 좋아지는 사이");
+    expect(score.scoreVersion).toBe("v2.1");
+    expect(score.total).toBe(54); // 하람×서윤 연애(P4 49 → v2 62 → v2.1 54)
+    expect(score.band).toBe("노력이 필요한 사이");
+    expect(out).toContain('data-score-version="v2"'); // v2·v2.1은 같은 화면(이유 keep-all)
     expect(score.total).toBe(40 + score.scores.reduce((n, s) => n + s.value, 0));
     expect(score.scores.map(s => s.max)).toEqual(Object.values(ITEM_MAX.love));
     for (const s of score.scores) { expect(out).toContain(`${s.value} / ${s.max}`); const n = splitSentences(s.reason!).length; expect(n).toBeGreaterThanOrEqual(2); expect(n).toBeLessThanOrEqual(3); }

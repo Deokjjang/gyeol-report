@@ -2,7 +2,8 @@
  * 작가 출력 형식(P3 B): "## N. 장 제목" → "### 소제목" → 문단(빈 줄로 구분). 반복 장은 "### {key}".
  * 스트리밍 중에는 다음 "## " 머리글이 나타난 장까지만 완성으로 본다(마지막 장은 종료 신호 뒤에 완성).
  */
-export type BookSection = { readonly heading: string; readonly paragraphs: readonly string[] };
+/** keySpans: 문단마다 핵심 구절 [시작, 끝)(원문 글자 위치, 없으면 null). 작가가 아직 내지 않는다 — 화면은 있으면 굵게 + 옅은 밑줄(P6c-ui2 g). */
+export type BookSection = { readonly heading: string; readonly paragraphs: readonly string[]; readonly keySpans?: readonly (readonly [number, number] | null)[] };
 export type BookChapter = { readonly n: number; readonly title: string; readonly sections: readonly BookSection[] };
 export type ChapterSource = "writer" | "continuation" | "deterministic";
 

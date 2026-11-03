@@ -43,3 +43,7 @@ export const REL_PLAIN: Readonly<Record<string, string>> = {
   CHUNG: "충(마주 서서 부딪침)", HYEONG: "형(서로 깎고 다듬는 마찰)", PA: "파(맞춰 둔 것에 금이 감)", HAE: "해(가까운 사이의 작은 서운함)", WONJIN: "원진(이유 없이 거슬리는 엇박자)",
 };
 export const HALF_HAP_PLAIN = "반합(삼합 세 글자 중 두 글자가 만남)";
+/** 관계 쉬운 문장(relationsPlain): "왼쪽 글자와 오른쪽 글자가 {관계 이름(쉬운 뜻)} 관계예요. {뜻}이에요."
+ * 궁합 관계 쪽(두 사람 자리끼리, P6b D)과 대운·세운 카드(들어오는 글자와 내 자리, P6c-ui2 i)가 같이 쓴다. half: 세 글자 중 두 글자만 만난 삼합. */
+export const relationPlain = (left: string, right: string, kind: string, half: boolean, line: string) =>
+  `${josa(left, "과와")} ${josa(right, "이가")} ${half ? HALF_HAP_PLAIN : REL_PLAIN[kind] ?? kind} 관계예요.${line ? ` ${line}이에요.` : ""}`;

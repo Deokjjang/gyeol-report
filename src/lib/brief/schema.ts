@@ -204,6 +204,8 @@ export const BriefSchema = z.object({
   usedProps: z.record(z.string(), z.number().int().min(1).max(2)).optional(),
   /** 부록 "내 모든 기운"(P6c): 사람마다 내 사주에 있는 기운(지식 DB 이름)과 뜻 한 줄. 작가 입력에서 뺀다. core: 본문 trait로 쓴 기운. */
   appendix: z.array(z.object({ name: z.string(), items: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string(), core: z.boolean() })) })).optional(),
+  /** 용어 뜻(P6c-ui2 g): 십성·신살·귀인·십이운성 이름(한글)과 지식 DB 뜻 한 줄. 작가 입력에서 빼고, Book에는 본문에 나온 것만 남긴다. */
+  glossary: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string() })).optional(),
   style: z.object({
     version: z.string(), register: z.string(), readingLevel: z.string(),
     totalChars: z.tuple([z.number().int(), z.number().int()]),

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { MbtiType } from "../../../src/data/knowledge-v5/schema";
-import { BASE_SCORE, BASE_TIERS, bandOf, branchTier, COMPAT_SCORE_VERSION, computeCompatScore, ITEM_MAX, TIERS, type CompatCategory, type CompatSide } from "../../../src/lib/compat/score";
+import { BASE_SCORE, BASE_TIERS, bandOf, branchTier, COMPAT_SCORE_VERSION, computeCompatScore, ITEM_MAX, itemMax, TIERS, type CompatCategory, type CompatSide } from "../../../src/lib/compat/score";
 import { calculateSaju } from "../../../src/lib/saju/calculateSaju";
 import { STEM_HAP_TABLE } from "../../../src/lib/saju/detections/tables";
 import { splitSentences } from "../../../src/lib/writer/safety/patterns";
@@ -13,13 +13,14 @@ const side = (p: RandPerson, name: string): CompatSide | null => {
 const sides = randomPairs(400, 20261031).map(([a, b]) => [side(a, "가람님"), side(b, "나래님")] as const).filter((x): x is readonly [CompatSide, CompatSide] => Boolean(x[0] && x[1]));
 const cats = CATEGORIES as CompatCategory[];
 
-describe("v5 궁합 점수 v2(P6c)", () => {
-  it("총점 = 기본 40 + 항목 합(MBTI가 없으면 사주 항목 합을 60점으로 환산), 결정론", () => {
+describe("v5 궁합 점수 v2.1(P6c-ui2)", () => {
+  it("총점 = 기본 40 + 항목 합(MBTI가 없어도 화면 항목 합 = 총점 − 40, 만점 합 60), 결정론", () => {
     for (const [a, b] of sides.slice(0, 80)) for (const c of cats) {
       const s = computeCompatScore(c, a, b);
       const sum = s.items.reduce((n, i) => n + i.points, 0), full = s.items.reduce((n, i) => n + i.max, 0);
       expect(s.scaled).toBe(!(a.mbti && b.mbti));
-      expect(s.total).toBe(BASE_SCORE + (s.scaled ? Math.round(sum * 60 / full) : sum));
+      expect(full).toBe(60);
+      expect(s.total).toBe(BASE_SCORE + sum);
       expect(s.band).toBe(bandOf(s.total));
       expect(s.items.every(i => i.points >= 0 && i.points <= i.max)).toBe(true);
     }
@@ -37,13 +38,18 @@ describe("v5 궁합 점수 v2(P6c)", () => {
     expect([ITEM_MAX.friendship.mbti, ITEM_MAX.friendship.dayBranch]).toEqual([18, 7]);
   });
 
-  it("세부 점수: 보정 뒤에도 합의 순서를 지키고 가장 좋은 단계는 만점", () => {
+  it("세부 점수(v2.1): 합의 순서를 지키고 가장 좋은 단계는 만점, 가장 낮은 단계(충·원진·상극 등)는 0", () => {
     const desc = (xs: readonly number[]) => xs.every((x, i) => i === 0 || xs[i - 1] >= x);
-    expect(desc([TIERS.element["filled+filled"], TIERS.element["filled+missed"], TIERS.element["missed+missed"]])).toBe(true);
+    const E = TIERS.element, M = TIERS.mbti;
+    expect(desc([E["filled+filled"], E["filled+free"], E["filled+missed"], E["free+missed"], E["missed+missed"]])).toBe(true);
+    expect(E["free+free"]).toBe(E["filled+missed"]); // 합의 기준에서 같은 단계
     expect(desc([TIERS.dayMaster.hap, TIERS.dayMaster.generate, TIERS.dayMaster.same, TIERS.dayMaster.control])).toBe(true);
-    expect(desc([TIERS.dayBranch.hap, TIERS.dayBranch.none, TIERS.dayBranch.friction, TIERS.dayBranch.clash])).toBe(true);
-    expect(desc([TIERS.yearMonth.hap, TIERS.yearMonth.none, TIERS.yearMonth.clash])).toBe(true);
-    for (const t of [TIERS.element["filled+filled"], TIERS.dayMaster.hap, TIERS.dayBranch.hap, TIERS.yearMonth.hap, TIERS.role.exact, TIERS.yinYang[0]]) expect(t).toBe(1);
+    for (const t of [TIERS.dayBranch, TIERS.yearMonth]) expect(desc([t.hap, t.hapMixed, t.none, t.friction, t.clash])).toBe(true);
+    expect(desc([TIERS.role.exact, TIERS.role.near, TIERS.role.generate, TIERS.role.other])).toBe(true);
+    expect(desc(TIERS.yinYang)).toBe(true); expect(desc([M.talkSame, M.talkDiff])).toBe(true); expect(desc([M.golden, M.shared, M.plain, M.mirror])).toBe(true); expect(desc(M.rhythm)).toBe(true);
+    for (const t of [E["filled+filled"], TIERS.dayMaster.hap, TIERS.dayBranch.hap, TIERS.yearMonth.hap, TIERS.role.exact, TIERS.yinYang[0], M.talkSame, M.golden, M.rhythm[0]]) expect(t).toBe(1);
+    for (const t of [E["missed+missed"], TIERS.dayMaster.control, TIERS.dayBranch.clash, TIERS.yearMonth.clash, TIERS.role.other, TIERS.yinYang[3], M.talkDiff, M.mirror, M.rhythm[3]]) expect(t).toBe(0);
+    expect(COMPAT_SCORE_VERSION).toBe("v2.1");
     expect(BASE_TIERS.dayMaster).toEqual({ hap: 1, generate: 0.8, same: 0.6, control: 0.4 }); // 합의 10/8/6/4
   });
 
@@ -79,6 +85,9 @@ describe("v5 궁합 점수 v2(P6c)", () => {
     expect(s.items.some(i => i.key === "mbti")).toBe(false);
     expect(s.scaled).toBe(true);
     expect(s.notice).toContain("MBTI 항목은 빼고");
+    // MBTI 몫 15점을 사주 항목 만점 비율대로 나눔(동료 12·10·6·10·4·3 × 60/45 → 내림 16·13·8·13·5·4, 남은 1점은 나머지가 같아 앞 항목에, 합 60).
+    expect(Object.fromEntries(s.items.map(i => [i.key, i.max]))).toEqual({ element: 16, dayMaster: 14, dayBranch: 8, yearMonth: 13, role: 5, yinYang: 4 });
+    for (const c of cats) expect(Object.values(itemMax(c, false)).reduce((n, x) => n + x!, 0)).toBe(60);
     expect(s.items.map(i => i.reason).join(" ")).not.toMatch(/MBTI|[EI][NS][TF][JP]/);
   });
 
@@ -91,11 +100,11 @@ describe("v5 궁합 점수 v2(P6c)", () => {
     }
   });
 
-  it("분포(보정 표본 밖 시드, 400쌍): 유형마다 중앙값 67~73, 50 미만 5% 이하", () => {
+  it("분포(보정 표본 밖 시드, 400쌍): 유형마다 중앙값 67~73, 50 미만·90 이상 둘 다 있음(1만 쌍 3~6%는 문서 §8)", () => {
     for (const c of cats) {
       const xs = sides.map(([a, b]) => computeCompatScore(c, a, b).total), s = stats(xs);
       expect(s.median).toBeGreaterThanOrEqual(67); expect(s.median).toBeLessThanOrEqual(73);
-      expect(xs.filter(x => x < 50).length / xs.length).toBeLessThanOrEqual(0.05);
+      for (const tail of [xs.filter(x => x < 50).length / xs.length, xs.filter(x => x >= 90).length / xs.length]) { expect(tail).toBeGreaterThanOrEqual(0.01); expect(tail).toBeLessThanOrEqual(0.08); }
       expect(s.min).toBeGreaterThanOrEqual(40); expect(s.max).toBeLessThanOrEqual(100);
     }
     expect([90, 89, 80, 79, 70, 69, 60, 59, 50, 49].map(x => bandOf(x).label)).toEqual(["천생연분", "잘 맞는 사이", "잘 맞는 사이", "끌림과 보완이 있는 사이", "끌림과 보완이 있는 사이", "맞춰 가면 좋아지는 사이", "맞춰 가면 좋아지는 사이", "노력이 필요한 사이", "노력이 필요한 사이", "서로 다른 세계"]);

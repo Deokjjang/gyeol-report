@@ -38,14 +38,14 @@ describe("세운 절기월 표기와 지금 달", () => {
   it("절기월 순번·날짜 구간으로 쓰고 달력 달 이름은 쓰지 않는다", () => {
     const months = pageOf(projectV5Book(annual, BASE)!, "months").months;
     expect(months.map(m => m.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    expect(months[0].range).toBe("2/4~3/4");
+    expect(months[0].range).toBe("2/4~3/5"); // 끝 = 다음 절입일(P6c-ui2 결정)
     const out = html(projectV5Book(annual, BASE)!, pageOf(projectV5Book(annual, BASE)!, "months"));
-    expect(out).toContain("1번째 달"); expect(out).toContain("2/4~3/4");
+    expect(out).toContain("1번째 달"); expect(out).toContain("2/4~3/5");
     expect(out).not.toMatch(/<b>\d+월<\/b>/);
   });
   it("2026-11-03이면 9번째 달 무술월이 지금", () => {
     const months = pageOf(projectV5Book(annual, BASE)!, "months").months;
-    expect(months.filter(m => m.time === "지금").map(m => [m.order, m.ganji, m.range])).toEqual([[9, "戊戌", "10/8~11/6"]]);
+    expect(months.filter(m => m.time === "지금").map(m => [m.order, m.ganji, m.range])).toEqual([[9, "戊戌", "10/8~11/7"]]);
     expect(months.slice(0, 8).every(m => m.time === "돌아보기") && months.slice(9).every(m => m.time === "앞으로")).toBe(true);
   });
   it("읽는 날이 바뀌면 지금 달도 따라간다(경계 하루 포함)", () => {
@@ -91,7 +91,8 @@ describe("궁합 첫 화면과 점수 쪽", () => {
   });
   it("과거 V4 관계 쪽은 원자료 줄·바로가기 없이 예전 소개를 유지", () => {
     const old = readerBook(storedBook(v4("saju_mbti_compatibility-v4"))!.data), out = html(old, pageOf(old, "pair"));
-    expect(out).not.toContain("두 사람 사이의 기운"); expect(out).not.toContain("↗");
+    // 방향 바로가기는 없다. ↗는 사람마다 부록 바로가기(P6c-ui2 f) 두 개뿐.
+    expect(out).not.toContain("두 사람 사이의 기운"); expect(out.match(/↗/g)).toEqual(["↗", "↗"]); expect(out.match(/다른 기운들 보기 ↗/g)?.length).toBe(2);
     expect(out).toContain("말하기 전에 이유를 끝까지 알아보는 사람");
   });
   it("점수 쪽: 총점·구간 이름·항목 막대(점수/만점)·항목 이유", () => {
