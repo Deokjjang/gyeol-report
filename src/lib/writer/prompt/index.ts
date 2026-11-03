@@ -80,9 +80,16 @@ export function renderWriterBrief(brief: Brief): Record<string, unknown> {
     // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).
     style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, forbidden: style.forbidden },
     // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).
-    chapters: writerChapters(brief).map(c => (c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => ({ q: x.q, materials: x.materials })) } : c)),
+    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => ({ q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars) })),
   };
 }
+
+/**
+ * 작가에게 보이는 분량 보정(P6b C-4): Sonnet 5.5·terra 모두 브리프 targetChars의 70~82%만 쓴다(P6a 12권, P6b 1회차 실측).
+ * 작가가 보는 목표만 1.25배로 보여 결과가 상품 목표(종합 13~16천 등)에 닿게 한다. 교체 판정(60%)·지표는 원래 목표를 쓴다.
+ */
+export const WRITER_TARGET_FACTOR = 1.25;
+const shownTarget = (t: readonly [number, number]) => [Math.round(t[0] * WRITER_TARGET_FACTOR), Math.round(t[1] * WRITER_TARGET_FACTOR)] as const;
 
 /** 캐시 접두부: 시스템 지침 + 문체 예시. 고객 정보가 없어 모든 호출이 공유한다. */
 export const WRITER_PREFIX = `${WRITER_SYSTEM}\n\n# 문체 예시 (사실·문장을 가져오지 말 것)\n${STYLE_EXAMPLES.map(e => `## ${e.label}\n\`\`\`markdown\n${e.text}\n\`\`\``).join("\n\n")}`;

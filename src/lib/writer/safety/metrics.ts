@@ -162,10 +162,11 @@ export function p6bMetric(brief: Brief, chapters: readonly { readonly n: number;
   const sentences = splitSentences(text);
   const terms = [...new Set(brief.traits.map(t => t.name.replace(/\s*\(.*$/, "").replace(/[一-鿿]/g, "").replace(/·.*$/, "").trim()).filter(t => t.length >= 2))];
   let ok = 0; const misses: string[] = [], seenTerms: string[] = [];
+  // 첫 등장 문장 또는 바로 다음 문장이 "명리학에서 ~"(뜻 풀이)면 형식을 지킨 것으로 본다("정축(丁丑)일주예요. 정축일주는 명리학에서 ~").
   for (const t of terms) {
-    const first = sentences.find(s => s.includes(t)); if (!first) continue;
+    const i = sentences.findIndex(s => s.includes(t)); if (i < 0) continue;
     seenTerms.push(t);
-    if (new RegExp(`${t}(\\([一-鿿]+\\))?(은|는|이란|란) 명리학에서`).test(first) || (/명리학에서/.test(first) && /뜻/.test(first))) ok++; else misses.push(t);
+    if ([sentences[i], sentences[i + 1] ?? ""].some(s => /명리학에서/.test(s))) ok++; else misses.push(t);
   }
   const hits = banned.flatMap(re => sentences.filter(s => re.test(s)).map(s => `${re.source.slice(0, 12)}…: ${s.slice(0, 60)}`));
   return { similes, maxSimile: Math.max(0, ...similes.map(s => s.count)), termFirst: { terms: seenTerms.length, ok, rate: seenTerms.length ? Math.round((ok / seenTerms.length) * 100) / 100 : 1, misses }, banned: hits };

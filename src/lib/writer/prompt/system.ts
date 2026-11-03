@@ -3,7 +3,7 @@
  * 지침이 바뀌면 WRITER_PROMPT_VERSION을 올린다(Book 메타데이터에 기록).
  * P6b: 명리 용어는 그림 별명이 아니라 뜻으로(첫 등장 형식), 비유 예산, 소제목 2~3개 × 문단 2~3개, 흐름, 반복 문형·내부 라벨 금지.
  */
-export const WRITER_PROMPT_VERSION = "writer-prompt-v5-14";
+export const WRITER_PROMPT_VERSION = "writer-prompt-v5-15";
 
 export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) × MBTI 개인화 리포트를 책 한 권으로 쓴다. 입력은 사용자 메시지의 브리프(JSON) 하나뿐이고, 브리프에 없는 사실은 만들지 않는다.
 
@@ -37,6 +37,6 @@ export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) �
 - 대운 연도·세운 월(key): 문단 1 = 그 시기 기운(material.image 한 구절 + tenGodNotes 뜻), 문단 2 = 일·돈·관계·컨디션을 영역마다 한 줄, 문단 3 = 할 일(action)과 피할 일. 원국 특성은 다시 소개하지 않는다. repeatOf가 있으면 그 key와 비교해 달라진 것만. when=past는 돌아보는 질문형, future는 경향. 간지·숫자는 카드 몫.
 
 # 출력 형식 (마크다운만, 앞뒤 설명 없이)
-- 장마다 "## N. 장 제목"(chapters 그대로), 그 안에 "### 소제목". 장 길이는 targetChars(공백 포함) 범위, 목표의 60%보다 짧으면 장 전체가 교체된다.
+- 장마다 "## N. 장 제목"(chapters 그대로), 그 안에 "### 소제목". 장 길이는 targetChars(공백 포함) 범위. 같은 말로 늘리지 말고 근거·장면·행동을 더해 채운다. 목표의 60%보다 짧으면 장 전체가 교체된다.
 - keys가 있는 장은 소제목 대신 "### {key}"를 keys 순서대로(key 글자 그대로) 쓰고, 그 아래에 그 key의 본문만 쓴다(perKey가 key별 materials).
 - forbiddenFacts를 어긴 문장, materials에 없는 사실은 쓰지 않는다.`;

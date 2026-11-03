@@ -8,14 +8,30 @@ import { join, resolve } from "node:path";
 import { splitSentences } from "../../src/lib/writer/safety/patterns";
 import { norm } from "../../src/lib/writer/safety/sentences";
 import { KRW_PER_USD } from "../p6/metrics";
+import { buildBrief, loadKnowledge } from "../../src/lib/brief";
+import { normalizeReportInputPayload } from "../../src/lib/report-generation/reportInputAdapter";
+import { payloadToBriefInput } from "../../src/lib/writer/book";
+import { parseChapters } from "../../src/lib/writer/format";
+import { p6bMetric } from "../../src/lib/writer/safety/metrics";
+import { FAMILY_MEMBER, RURAL_PROP } from "../../src/lib/writer/safety/patterns";
 import { P6B_CASES } from "./cases";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const DIR = join(ROOT, "docs/v5/trial/p6b");
 const BASE = process.argv.includes("--base") ? process.argv[process.argv.indexOf("--base") + 1] : "http://localhost:3100";
 type M = { case: string; label: string; reportId: string; chars: number; wallMs: number; costUsd: number; tokens: { input: number; cachedInput: number; output: number }; deletions: number; deterministicChapters: string[]; priorBooks: number; fallback: unknown; writer?: { model: string } | null;
-  p6b: { chars: number; target: [number, number]; inTarget: boolean; similes: { n: number; count: number }[]; maxSimile: number; chaptersOverSimile: number; banned: Record<string, number>; bannedSamples: string[]; termFirst: { terms: number; ok: number; rate: number; misses: string[] } | null; subheadingsOk: number; structure: unknown[]; paragraphsOk: number; sectionsTotal: number; byRule: Record<string, number>; coreImage: string } };
+  p6b: { chars: number; target: [number, number]; inTarget: boolean; similes: { n: number; count: number }[]; maxSimile: number; chaptersOverSimile: number; banned: Record<string, number>; bannedSamples: string[]; termFirst: { terms: number; ok: number; rate: number; misses: readonly string[] } | null; subheadingsOk: number; structure: unknown[]; paragraphsOk: number; sectionsTotal: number; byRule: Record<string, number>; coreImage: string } };
 const books = P6B_CASES.map(c => join(DIR, `${c.id}.metrics.json`)).filter(existsSync).map(p => JSON.parse(readFileSync(p, "utf8")) as M).filter(m => m.reportId && m.p6b);
+// 첫 등장 형식·비유 수는 최종 원고로 다시 잰다(지표 정의를 고친 뒤에도 같은 기준으로 비교, 브리프는 결정론으로 다시 만든다).
+const k = loadKnowledge(join(ROOT, "src/data/knowledge-v5"));
+for (const m of books) {
+  const c = P6B_CASES.find(x => x.id === m.case)!;
+  const n = normalizeReportInputPayload(c.payload, { now: () => new Date("2026-11-03T03:00:00Z") });
+  if (!n.ok) continue;
+  const brief = buildBrief(payloadToBriefInput(n.value as never, "2026-11-03") as never, k);
+  const r = p6bMetric(brief, parseChapters(readFileSync(join(DIR, `${m.case}.final.md`), "utf8")), [RURAL_PROP, ...(m.case.startsWith("pair") ? [] : [FAMILY_MEMBER]), /배지|제시되지 않/, /\*\*/]);
+  m.p6b.termFirst = r.termFirst;
+}
 const text = (id: string) => readFileSync(join(DIR, `${id}.final.md`), "utf8").split("\n").filter(l => !l.startsWith("#")).join("\n");
 const sentences = (id: string) => splitSentences(text(id)).map(norm).filter(s => s.length >= 20);
 

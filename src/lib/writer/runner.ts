@@ -10,7 +10,7 @@
 import { streamCompletion, type LlmProvider, type LlmUsage, type StreamCompletionResult } from "@/lib/llm";
 import type { Brief } from "@/lib/brief/schema";
 import { completedChapters, type BookChapter } from "./format";
-import { buildContinuationPrompt, buildWriterPrompt, type WriterChapter } from "./prompt";
+import { buildContinuationPrompt, buildWriterPrompt, WRITER_TARGET_FACTOR, type WriterChapter } from "./prompt";
 import type { DraftChapter } from "./safety";
 
 /** 글자당 출력 토큰. 한글 1.5자 ≈ 1토큰(P2 size.ts 추정). OpenAI 실호출 실측은 docs/v5/api-cost-log.md, Claude 실측은 P6. */
@@ -25,7 +25,8 @@ export const MODEL_TOKENS_PER_CHAR: Readonly<Record<string, number>> = { "claude
 
 /** max_tokens = 장 분량 상한 합계 × 글자당 토큰 × 1.3 (반복 장은 key 수만큼). 모델 상한·운영 상한(LLM_MAX_OUTPUT_TOKENS)으로 자른다. */
 export function maxTokensFor(chapters: readonly WriterChapter[], model?: string, limit?: number): number {
-  const chars = chapters.reduce((s, c) => s + c.targetChars[1] * (c.keys?.length ?? 1), 0);
+  // 작가가 보는 목표는 WRITER_TARGET_FACTOR배(P6b C-4)라 그만큼 여유를 둔다.
+  const chars = chapters.reduce((s, c) => s + c.targetChars[1] * (c.keys?.length ?? 1), 0) * WRITER_TARGET_FACTOR;
   const tokens = Math.ceil(chars * (model ? MODEL_TOKENS_PER_CHAR[model] ?? TOKENS_PER_CHAR : TOKENS_PER_CHAR) * 1.3);
   const cap = Math.min(model ? MODEL_OUTPUT_CAP[model] ?? Infinity : Infinity, limit && limit > 0 ? limit : Infinity);
   return Math.min(cap, tokens);
