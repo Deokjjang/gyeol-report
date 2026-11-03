@@ -14,6 +14,7 @@ import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
 import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, josa, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
 import { splitSentences } from "@/lib/writer/safety/patterns";
+import { periodDomains } from "./productEvidence";
 import type { Rng } from "./seed";
 import type { TimelineEntry, Trait } from "./schema";
 
@@ -178,7 +179,7 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     // 카드 행동 줄(P6b E-5): 앞으로는 할 일(todo), 지난 기간은 돌아보는 질문(review).
     ...(state === "past" ? { review: reviewLine(keywords, slot) } : { todo: action.text }),
     material: {
-      image: imageLine,
+      image: imageLine, domains: periodDomains(inc.stemTenGod),
       ...(scene ? { scene } : {}),
       ...(stageNew ? { stage: stageText } : {}),
     },

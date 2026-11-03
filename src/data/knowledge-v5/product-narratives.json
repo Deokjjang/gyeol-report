@@ -2166,6 +2166,14 @@
               ],
               "trait": "core",
               "note": "핵심 이미지(chart.coreImage)를 여기서 한 번 소개한다"
+            },
+            {
+              "q": "올해 사람 사이에서는 무엇이 달라질까?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
             }
           ]
         },
@@ -2271,6 +2279,14 @@
                 "touched"
               ],
               "trait": "none"
+            },
+            {
+              "q": "그 달을 준비하는 방법은?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
             }
           ]
         },

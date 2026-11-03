@@ -1,0 +1,212 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "reportId": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+ "status": "COMPLETED",
+ "wallMs": 67944,
+ "fallback": null,
+ "priorBooks": 1,
+ "chars": 7820,
+ "chapterChars": [
+  714,
+  1111,
+  4778,
+  622,
+  595
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 1,
+ "byRule": {
+  "example_copy": 1
+ },
+ "replacements": 0,
+ "warnings": 22,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 5,
+ "infoByKind": {
+  "claim": 5,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "어려워서 미뤄 둔 일 하나를 골라 첫 10분만 손을 대 보세요.",
+   "b": "그래서 올해의 첫 행동은 어려워서 미뤄 둔 일 하나를 골라 첫 10분만 손을 대는 것이에요.",
+   "at": [
+    "1.1",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "일이 몰릴 때는 건별로 포기할 수 없는 것 하나만 정하고, 나머지 분량은 줄이거나 일정을 미루는 식으로 조절하세요.",
+   "b": "마감이 겹칠 때 포기할 수 없는 것 하나만 정하고 나머지는 줄이거나 나누는 것입니다.",
+   "at": [
+    "2.1",
+    "5.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "2월(신묘월, 3월 5일 절입부터)은 겁재의 달입니다.",
+   "b": "12월(신축월, 내년 1월 5일 절입부터)은 겁재의 달입니다.",
+   "at": [
+    "3.2",
+    "3.12"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "관계에서는 말이 날카로워지기 쉬워 한 번 고르고 전하는 연습이 필요하고, 돈은 크게 움직이지 않는 편이 낫습니다.",
+   "b": "일에서는 구상과 자료 조사에 어울리지만 결정은 늦어지고, 돈은 크게 움직이지 않는 편이 낫습니다.",
+   "at": [
+    "3.4",
+    "3.9"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "다만 빈칸(공망)에 드는 달이라 힘을 줘도 일부는 빠져나가니 기대를 조금 낮추는 쪽이 현명합니다.",
+   "b": "다만 7월과 8월은 공망에 드는 달이라 힘을 줘도 일부가 빠져나갑니다.",
+   "at": [
+    "3.7",
+    "4.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.137,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 67833,
+ "tokens": {
+  "input": 18464,
+  "output": 8772,
+  "cachedInput": 4017
+ },
+ "costUsd": 0.1250497,
+ "costKrw": 181.3,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 60297,
+   "chars": 8238,
+   "maxTokens": 26169,
+   "usage": {
+    "inputTokens": 18464,
+    "outputTokens": 8772,
+    "cachedInputTokens": 4017
+   },
+   "costUsd": 0.1250497
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 7966,
+  "target": [
+   12000,
+   15000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 3
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   }
+  ],
+  "maxSimile": 3,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 4,
+   "rate": 0.8,
+   "terms": 5,
+   "misses": [
+    "경진"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 9,
+  "sectionsTotal": 9,
+  "byRule": {
+   "example_copy": 1
+  },
+  "coreImage": "용광로 불 속에서 달궈지는 쇳덩이",
+  "edition": "제5판"
+ }
+}

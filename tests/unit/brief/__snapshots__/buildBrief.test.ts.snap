@@ -3,7 +3,7 @@
 exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
 {
   "chapters": [
-    "overview: chart.thisYear t1/relationships/first chart.dayMaster",
+    "overview: chart.thisYear t1/relationships/first chart.dayMaster t3/relationships/first",
     "current-dayun: ev:yearPlan chart.currentDayun t2/relationships/first shadows.s1",
     "month:2026-M01: tl:2026-M01",
     "month:2026-M02: tl:2026-M02",
@@ -13,11 +13,11 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "month:2026-M06: tl:2026-M06",
     "month:2026-M07: tl:2026-M07",
     "month:2026-M08: tl:2026-M08 traits.t2",
-    "month:2026-M09: tl:2026-M09",
+    "month:2026-M09: tl:2026-M09 traits.t3",
     "month:2026-M10: tl:2026-M10",
     "month:2026-M11: tl:2026-M11",
     "month:2026-M12: tl:2026-M12",
-    "key-months: timeline.keyEntries traits.t1 traits.t2",
+    "key-months: timeline.keyEntries traits.t2 traits.t3 t1/relationships/new-domain",
     "closing: chapters.current-dayun chapters.key-months",
   ],
   "chart": "丙子 己亥 丁丑 乙巳 丙午",
@@ -46,11 +46,11 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:money:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+SAMHAP+BANGHAP act:偏財:love:low",
   ],
-  "tokens": 9952,
+  "tokens": 11185,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,month,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [current-dayun,month,key-months]",
-    "t3 shinsal:TWELVE_BANANSAL strong day J/resonance []",
+    "t3 shinsal:TWELVE_BANANSAL strong day J/resonance [overview,month,key-months]",
     "t4 relation:BANGHAP strong year,month,day - []",
     "t5 tenGod:正官 strong month ENTJ/resonance []",
     "t6 tenGod:食神 medium month,day ENTJ/tension []",
@@ -163,7 +163,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:alone:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:money:high",
   ],
-  "tokens": 9803,
+  "tokens": 10589,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [overview,current-cycle,transition]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [decade]",
