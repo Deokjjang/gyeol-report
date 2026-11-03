@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, SajuCalcResult } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, ganjiLabel, glyphLabel, josa, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { ELEMENT_KO, ganjiLabel, josa, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
 import { pairImage } from "./coreImage";
 import { getTenGodGroupScores } from "@/lib/saju/extractTags";
@@ -47,14 +47,13 @@ function pairRelations(a: PairSide, b: PairSide, k: Knowledge): string[] {
     const x = pa === "hour" && !a.chart.pillars.hour ? undefined : a.saju.pillars[pa], y = pb === "hour" && !b.chart.pillars.hour ? undefined : b.saju.pillars[pb];
     if (!x || !y) continue;
     for (const r of detectRelations([{ position: "year", pillar: x }, { position: "month", pillar: y }])) {
-      const sky = r.kind === "STEM_HAP", ga = sky ? x.stem : x.branch, gb = sky ? y.stem : y.branch;
+      const sky = r.kind === "STEM_HAP";
       const glyph = sky ? "하늘 글자" : "땅 글자";
       const line = k.badges.find(z => z.kind === r.kind && (z.pair === r.key || z.pair === [...r.key].reverse().join("")))?.line ?? "";
       const rank = (pa === "day" ? 0 : 2) + (pb === "day" ? 0 : 2) + (sky ? 1 : 0);
       // 쉬운 문장(P6b D 궁합 relationsPlain): 글자 표기 없이 자리와 관계 이름·뜻만(E-9: "(정축·정축(丁丑))" 같은 겹친 표기 방지).
       const term = r.kind === "SAMHAP" ? HALF_HAP_PLAIN : REL_EASY[r.kind] ?? r.kind;
       rows.push({ rank, text: `${a.callName}의 ${PILLAR_KO[pa]} ${josa(glyph, "과와")} ${b.callName}의 ${PILLAR_KO[pb]} ${josa(glyph, "이가")} ${term} 관계예요.${line ? ` ${line}이에요.` : ""}` });
-      void ga; void gb;
     }
   }
   return rows.sort((p, q) => p.rank - q.rank).slice(0, 4).map(r => r.text);

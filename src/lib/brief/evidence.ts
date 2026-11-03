@@ -4,7 +4,7 @@
  * 커리어: 직업·역할 추천 근거(강한 십성 묶음 + MBTI 통념 직업 + 입력 직업), 올해 기운이 돈·재산 흐름에 주는 영향(투자 지시 아님).
  */
 import { matchJob, type LifeStage } from "./props";
-import { dropSourceSentences, splitSentences } from "@/lib/writer/safety/patterns";
+import { splitSentences } from "@/lib/writer/safety/patterns";
 import type { CareerJob, MbtiProfile, SceneItem } from "@/data/knowledge-v5/schema";
 import { sceneFits, type FactProfile } from "./facts";
 import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";

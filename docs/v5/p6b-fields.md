@@ -68,3 +68,14 @@ cycles?: { ganji: string /* 한자 2자 */; years: string /* "2021~2030" */; age
 
 장 수는 그대로(종합 13, 커리어·연애·궁합 9, 대운 5, 세운 5). 장 제목과 `chapters[].id`는 바뀐다. 화면은 장 id에 기대지 않는다(1장은 지금처럼 `core`).
 새 id 목록은 병합 때 이 문서 끝에 덧붙인다.
+
+### 새 장 id (P6b 병합 기준)
+
+- 종합: `core` 나를 한 줄로 · `portrait` 성격: 겉과 속 · `why` 기질의 뿌리 · `strengths` 재능: 결과가 되는 힘 · `tension` 내 안의 두 방향 · `fact-bomb` 단점: 알면서 또 하는 실수 · `fortune` 좋은 기운과 귀인 · `work` 일과 성과 · `money` 돈의 흐름 · `love` 연애 · `family` 가족 · `relationships` 관계 · `direction` 실행 전략
+- 커리어: `current-fit` 지금 일과의 궁합 · `paths` 진로 유형별 적합 · `jobs` 추천 직무 3단 · `wealth` 재물운: 돈이 오는 길 · `invest` 돈 굴리는 원칙 · `honor` 명예와 이름 · `study` 공부와 자격 · `weakness` 약점과 보완 · `plan` 힘을 실어 주는 마무리
+- 연애: `love-core` 나의 연애 스타일 · `contact` 호감과 연락 · `push-pull` 표현과 밀당 · `match` 만나야 할 사람 · `combos` 잘 맞는 조합과 어려운 조합 · `conflict-recovery` 다툼과 회복 · `marriage` 함께 살게 된다면 · `parenting` 부모가 된다면 · `strategy` 지금 관계에서 지향점
+- 궁합: `pair-core` 한 줄 판정 · `bases` 각자의 바탕 · `attraction` 잘 맞는 부분 · `direction-ab` A가 보는 B · `direction-ba` B가 보는 A · `friction` 안 맞는 부분 · `domain-scene` 관계의 현장에서 · `felt-differently` 보완할 부분 · `one-thing` 조화를 위한 방법
+- 대운: `overview` 지난 3년 돌아보기 · `current-cycle` 지금 대운 · `decade` 앞으로 10년의 설계 · `year` 연도별 지침 · `transition` 전환 대비
+- 세운: `overview` 올해 전체 설계도 · `current-dayun` 영역별 설계 · `month` 월별 흐름 · `key-months` 눈여겨볼 달 · `closing` 올해 지침
+
+궁합 `direction-ab`·`direction-ba` id는 그대로다(화면의 두 방향 페이지 연결). 대운은 연도 장이 4번째(`year`), 세운은 월 장이 3번째(`month`).
