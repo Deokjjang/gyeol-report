@@ -37,7 +37,7 @@ export function writerChapters(brief: Pick<Brief, "chapters">): WriterChapter[] 
     const group = byBase.get(ch.id);
     if (!group) return ch;
     const keys = group.map(c => c.id.slice(ch.id.length + 1));
-    return { ...ch, keys, perKey: Object.fromEntries(group.map((c, i) => [keys[i], c.materials.filter(m => m.kind !== "timeline")])), note: "keys마다 ### {key} 하나. targetChars는 key 하나의 분량. 간지·관계 표시·세기 숫자는 카드가 보여 주니 본문은 해석만." };
+    return { ...ch, keys, perKey: Object.fromEntries(group.map((c, i) => [keys[i], c.materials.filter(m => m.kind !== "timeline")])), note: "keys마다 ### {key} 하나, 그 아래 문단 3개. targetChars는 key 하나의 분량(장 전체가 아니다). 간지·관계 표시·세기 숫자는 카드가 보여 주니 본문은 해석만." };
   });
 }
 
