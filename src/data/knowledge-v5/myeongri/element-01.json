@@ -56,13 +56,13 @@
       ],
       "strengthRules": {
         "strong": "수 글자가 네 개 이상이거나 월지가 겨울이면 강이 바다가 됩니다. 깊이는 극에 달하고 움직임은 더 느려집니다.",
-        "weak": "토 글자가 둑처럼 막거나 화 글자가 데워 주면 넘치는 물이 쓸모 있는 물이 됩니다. 생각이 실행으로 넘어갑니다.",
+        "weak": "토 글자가 둑처럼 막거나 화 글자가 데워 주면 넘치던 물이 쓸모 있는 물이 됩니다. 생각이 실행으로 넘어갑니다.",
         "clash": "화 글자가 바로 옆에 있으면 물이 불을 끄는 모양입니다. 의욕이 생겼다 꺼지길 반복하니 불을 지켜 줄 목 글자가 있는지 봅니다.",
         "rule": "엔진 ElementLabel WATER_STRONG (weighted 비중 기준). 수 weighted ≥ 전체의 40% 또는 월지 亥子丑 + 수 글자 ≥ 3이면 strong 단계"
       },
       "dimensionTags": { "introspection": 0.9, "inquiry": 0.6, "learningDrive": 0.5, "decisionSpeed": -0.7, "emotionalExpression": -0.5, "reactivity": -0.5, "socialEnergy": -0.5 },
       "mbtiLinks": [
-        { "target": "INFP", "kind": "resonance", "why": "말보다 안에서 오래 흐르는 Fi와 넘치는 물이 같은 깊이입니다" },
+        { "target": "INFP", "kind": "resonance", "why": "말보다 안에서 오래 흐르는 Fi가 수 과다의 깊은 생각과 같은 깊이입니다" },
         { "target": "INTP", "kind": "resonance", "why": "열 가지 해석을 돌리는 Ti-Ne와 겹칩니다" },
         { "target": "INFJ", "kind": "resonance", "why": "사람 속을 읽는 Ni와 맞물립니다" },
         { "target": "ISFP", "kind": "conditional", "why": "감정의 깊이는 같지만 Se가 몸을 움직여 물을 흘려보냅니다" },
@@ -72,7 +72,13 @@
       "engineSupport": true,
       "engineKey": "WATER_STRONG",
       "sources": ["classic:sm1:論五行生尅", "foundation:element:water", "v4:depth:element_water", "통용"],
-      "confidence": "통용"
+      "confidence": "통용",
+      "meaning": "수 과다는 수가 여덟 글자와 땅속 숨은 글자(지장간)를 합쳐 가장 강하고 전체의 약 30% 이상을 차지하는 상태입니다. 수는 생각과 지혜, 유연함과 저장을 맡으므로, 이 구성에서는 생각의 깊이와 감정을 담아 두는 양이 크게 나타납니다.",
+      "forYou": {
+        "base": "생각이 깊고 사람과 상황의 속을 읽는 눈이 큽니다. 막히면 돌아가고 벽이 있으면 스며드는 유연함이 있어, 깊이와 정보 저장이 필요한 일에서 힘을 냅니다."
+      },
+      "shadow": "수가 지나치게 많으면 생각이 의욕을 덮어 시작이 늦어지고, 감정을 오래 저장해 혼자 가라앉기 쉽습니다. 화 글자가 약하면 몸이 차고 움직임이 둔해지는 쪽으로 기웁니다.",
+      "life": "메신저 답장을 쓰려다 문장을 몇 번이나 고쳐 쓰고, 결국 다음 날 보내는 편입니다. 저녁에는 조용한 노래를 틀어 놓고 생각에 잠기는 시간이 깁니다."
     },
     {
       "id": "element:WATER:WEAK",
@@ -157,7 +163,7 @@
       },
       "dimensionTags": { "decisionSpeed": 0.8, "reactivity": 0.6, "emotionalExpression": 0.3, "introspection": -0.8, "spendingControl": -0.5, "persistence": -0.3 },
       "mbtiLinks": [
-        { "target": "ESTP", "kind": "resonance", "why": "생각보다 몸이 먼저 가는 Se와 마른 물이 같은 속도입니다" },
+        { "target": "ESTP", "kind": "resonance", "why": "생각보다 몸이 먼저 가는 Se가 수 부족의 빠른 판단과 같은 속도입니다" },
         { "target": "ESFP", "kind": "resonance", "why": "지금 이 순간을 쓰는 Se-Fi와 겹칩니다" },
         { "target": "ENTJ", "kind": "resonance", "why": "결론부터 내는 Te와 맞물립니다" },
         { "target": "INFP", "kind": "tension", "why": "안에서 오래 흐르는 Fi가 뒤끝 없는 빠름을 가볍다고 느낍니다" },
@@ -167,7 +173,13 @@
       "engineSupport": true,
       "engineKey": "WATER_WEAK",
       "sources": ["classic:sm1:論五行生尅", "foundation:structure:water_weak", "v4:depth:element_water_missing", "통용"],
-      "confidence": "통용"
+      "confidence": "통용",
+      "meaning": "수 부족은 수가 전체의 10%에 못 미치지만 땅속 숨은 글자 등에 조금은 남아 있는 상태입니다. 수는 생각과 지혜, 저장을 맡는 오행이라, 판단과 실행은 빠른 반면 쉬면서 생각을 쌓고 감정을 가라앉히는 힘은 얇게 나타납니다.",
+      "forYou": {
+        "base": "판단이 빠르고 방향 전환에 망설임이 적어, 고민이 길어지는 자리에서 먼저 한 걸음을 뗍니다. 감정을 오래 끌지 않아 부딪혀도 빠르게 회복하고, 분석보다 착수가 필요한 일에서 성과가 납니다."
+      },
+      "shadow": "수가 부족한데 불 글자가 많으면 쉬지 못해 몸이 달아오르고 잠이 얕아집니다. 상대의 깊은 마음을 놓쳐 서운함을 뒤늦게 알거나, 돈과 지식을 쌓지 못하고 흘려보내기 쉽습니다.",
+      "life": "지하철에서도 다음 일정부터 확인하고, 쉬는 날에도 가만히 누워 있기를 힘들어하는 편입니다. 주문한 음식이 오기까지 10분도 휴대폰으로 뭔가를 처리합니다."
     }
   ]
 }

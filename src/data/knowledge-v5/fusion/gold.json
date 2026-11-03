@@ -19,7 +19,7 @@
       "mbtiTarget": "ISFP",
       "kind": "conditional",
       "dimension": "introspection",
-      "why": "넘치는 물은 생각을 안에 오래 가두고, ISFP의 Fi는 그 깊이를 같이 갑니다. 다만 Se가 몸을 움직여 물을 흘려보내니 겉은 가볍고 속은 무거운 사람이 됩니다. 몸을 쓰는 날은 괜찮고, 집에만 있는 날은 잠깁니다.",
+      "why": "수가 넘치면 생각을 안에 오래 가두고, ISFP의 Fi는 그 깊이를 같이 갑니다. 다만 Se가 몸을 움직여 물을 흘려보내니 겉은 가볍고 속은 무거운 사람이 됩니다. 몸을 쓰는 날은 괜찮고, 집에만 있는 날은 잠깁니다.",
       "scene": { "text": "친구들과 신나게 놀고 집에 돌아와 현관에 앉은 채 한 시간 동안 아까 한 말을 되새깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": { "requires": ["mbtiKnown"], "forbids": ["우울 단정", "건강 단정"] },
       "sources": ["element:WATER:STRONG", "mbti:ISFP:functionStack", "통용"]
@@ -30,7 +30,7 @@
       "mbtiTarget": "E",
       "kind": "resonance",
       "dimension": "attentionSeeking",
-      "why": "꽃길은 눈길이 먼저 오는 기운이고, 외향형은 받은 눈길에서 에너지를 얻습니다. 둘이 겹치면 사람 앞에서 평소보다 큰 사람이 되고, 혼자 있는 시간이 유난히 길게 느껴집니다.",
+      "why": "도화살은 사람들의 눈길을 먼저 끄는 기운이고, 외향형은 받은 눈길에서 에너지를 얻습니다. 둘이 겹치면 사람 앞에서 평소보다 큰 사람이 되고, 혼자 있는 시간이 유난히 길게 느껴집니다.",
       "scene": { "text": "모임이 끝나고 '오늘 네가 제일 재밌었어'라는 말을 듣고 집에 와서, 그 말 하나로 다음 모임을 기다립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": { "requires": ["mbtiKnown"], "forbids": ["연애 사건 단정", "외모 평가"] },
       "sources": ["shinsal:DOHWASAL", "v4:fusionKnowledgeBase:fusion_dohwa_entj_public_love", "통용"]

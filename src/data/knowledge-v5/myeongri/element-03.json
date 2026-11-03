@@ -65,18 +65,18 @@
         "토가 많고 금이 묻히면 하고 싶은 말이 흙 속에 갇힙니다. 속은 단단한데 표현이 늦으니, 서운함은 쌓기 전에 한 번씩 꺼내 주세요."
       ],
       "strengthRules": {
-        "strong": "월지가 진·술·축·미이거나 화 글자가 흙을 데워 주면 곳간이 성이 됩니다. 지키는 힘은 더 세지고 바꾸는 힘은 더 느려집니다.",
+        "strong": "월지가 진·술·축·미이거나 화 글자가 흙을 데워 주면 쌓아 두는 힘이 성벽처럼 단단해집니다. 지키는 힘은 더 세지고 바꾸는 힘은 더 느려집니다.",
         "weak": "목 글자가 흙을 갈아 주거나 금 글자가 기운을 받아 흘려보내면 쌓인 흙이 쓸모 있는 밭이 됩니다. 쌓은 것이 결과로 나갑니다.",
         "duplicate": "무·기·진·술·축·미가 여러 자리에 겹치면 고집이 겹으로 섭니다. 한번 정한 방식을 남의 말로는 잘 바꾸지 않습니다.",
-        "clash": "진술충이나 축미충이 있으면 곳간 문 두 짝이 부딪쳐 열리는 모양입니다. 지키던 자리가 흔들리는 구조로 읽되 시기는 정하지 않습니다.",
+        "clash": "진술충이나 축미충이 있으면 닫혀 있던 저장 칸의 문 두 짝이 부딪쳐 열리는 모양입니다. 지키던 자리가 흔들리는 구조로 읽되 시기는 정하지 않습니다.",
         "rule": "엔진 ElementLabel EARTH_STRONG: elements.weighted.EARTH ≥ 3 (본기 각 1 + 지장간 가중 0.1~0.6, 시주 미상이면 세 기둥만). 월지 辰戌丑未면 강도 위로, 금 weighted < 1.5면 토다매금 함께 확인"
       },
       "dimensionTags": { "persistence": 0.8, "dutifulness": 0.7, "spendingControl": 0.6, "possessiveness": 0.5, "trustThreshold": 0.4, "noveltySeeking": -0.7, "decisionSpeed": -0.4 },
       "mbtiLinks": [
-        { "target": "ISTJ", "kind": "resonance", "why": "매일 같은 절차로 쌓아 두는 Si가 꽉 찬 곳간과 같은 저장 방식입니다" },
+        { "target": "ISTJ", "kind": "resonance", "why": "매일 같은 절차로 쌓아 두는 Si가 토 과다의 쌓는 방식과 같습니다" },
         { "target": "ISFJ", "kind": "resonance", "why": "남의 몫까지 말없이 떠안는 Si-Fe와 겹칩니다" },
         { "target": "Si", "kind": "resonance", "why": "익숙한 방식에서 안심하는 감각이 흙의 고집과 같은 결입니다" },
-        { "target": "ESTJ", "kind": "conditional", "why": "Te가 쌓은 것을 성과로 꺼내 써서 곳간 문이 넓은 편입니다" },
+        { "target": "ESTJ", "kind": "conditional", "why": "Te가 쌓은 것을 성과로 꺼내 써서 나가는 문이 넓은 편입니다" },
         { "target": "ENFP", "kind": "tension", "why": "새 판을 여는 Ne가 '하던 대로'를 답답해합니다" },
         { "target": "ENTP", "kind": "tension", "why": "기존 방식을 뒤집어 보는 Ne-Ti가 이사 온 날 그대로인 소파를 못 견딥니다" }
       ],
@@ -84,7 +84,13 @@
       "engineKey": "EARTH_STRONG",
       "sources": ["classic:sm1:論五行生尅", "classic:sm1:論五行生成", "classic:dt:順反論 土重埋金", "foundation:element:earth", "foundation:structure:toda_maegeum", "v4:depth:element_earth", "통용"],
       "confidence": "통용",
-      "aliases": ["토 과다", "토 강함"]
+      "aliases": ["토 과다", "토 강함"],
+      "meaning": "토 과다는 토가 여덟 글자와 땅속 숨은 글자를 합쳐 가장 강하고 전체의 약 30% 이상을 차지하는 상태입니다. 토는 믿음과 중재, 버팀을 맡으므로, 이 구성에서는 지키고 쌓고 맡는 힘이 크고 바꾸는 속도는 느려집니다.",
+      "forYou": {
+        "base": "흔들리는 자리에서 끝까지 남아 일을 마무리하는 버티는 힘이 큽니다. 말한 것을 지키고 맡은 것을 잃지 않아 신뢰를 얻고, 돈과 자료와 관계를 오래 쌓아 가는 일에 어울립니다."
+      },
+      "shadow": "토가 지나치게 많으면 '하던 대로'가 먼저 나와 좋은 기회도 낯설다는 이유로 지나칩니다. 다 맡아 두는 습관이 짐이 되고, 하고 싶은 말이 안에 갇혀 서운함이 쌓이기도 합니다.",
+      "life": "정기 구독과 단골 가게, 쓰던 앱을 몇 년째 그대로 유지하는 편입니다. 새 기능이 나와도 익숙해질 때까지 한참 지켜본 뒤 바꿉니다."
     },
     {
       "id": "element:EARTH:WEAK",
@@ -169,7 +175,13 @@
       "engineKey": "EARTH_WEAK",
       "sources": ["classic:sm1:論五行生尅", "foundation:element:earth", "v4:depth:element_earth_low", "통용"],
       "confidence": "통용",
-      "aliases": ["토 부족", "토 약함"]
+      "aliases": ["토 부족", "토 약함"],
+      "meaning": "토 부족은 토가 전체의 10%에 못 미치지만 땅속 숨은 글자 등에 조금은 남아 있는 상태입니다. 믿음과 버팀을 맡는 토가 얇아, 적응은 빠르지만 돌아와 쉴 바닥과 생활 리듬이 흔들리기 쉽습니다.",
+      "forYou": {
+        "base": "낯선 환경에도 빨리 발을 붙이고 짐이 적어 가볍게 움직이는 힘이 됩니다. 고집이 적어 의견이 갈릴 때 먼저 양보하고, 어느 모임에서든 편안한 사람이 됩니다."
+      },
+      "shadow": "토가 부족하면서 나무 글자가 많으면 받쳐 줄 바닥이 모자라 시작한 일이 흩어집니다. 밥·잠·돈의 시간이 흔들리면 기분도 함께 흔들리고, 믿음을 줄 기록이 적어 보이기도 합니다.",
+      "life": "끼니 시간이 매번 달라서 배달 앱을 열기까지 오래 고민하는 편입니다. 주말 계획은 당일 아침에야 정하고, 약속 장소도 가면서 바꿉니다."
     },
     {
       "id": "element:EARTH:MISSING",
@@ -246,7 +258,7 @@
       },
       "dimensionTags": { "mobility": 0.8, "noveltySeeking": 0.6, "planning": -0.7, "persistence": -0.6, "dutifulness": -0.4, "conflictApproach": -0.4, "boundarySetting": -0.3 },
       "mbtiLinks": [
-        { "target": "ENFP", "kind": "resonance", "why": "가능성마다 옮겨 다니는 Ne가 내릴 곳 없는 열기구와 같은 비행입니다" },
+        { "target": "ENFP", "kind": "resonance", "why": "가능성마다 옮겨 다니는 Ne가 토 없음의 머물 자리 없는 움직임과 같습니다" },
         { "target": "ENTP", "kind": "resonance", "why": "한곳에 묶이길 싫어하는 Ne-Ti와 겹칩니다" },
         { "target": "INFP", "kind": "conditional", "why": "Fi 안쪽에 지키고 싶은 가치가 있어, 그걸 찾으면 내려앉을 자리가 생깁니다" },
         { "target": "ISFJ", "kind": "tension", "why": "같은 자리를 오래 지키는 Si-Fe가 석 달째 열린 캐리어를 이해하지 못합니다" },
@@ -256,7 +268,13 @@
       "engineKey": "EARTH_MISSING",
       "sources": ["classic:sm1:論五行生尅", "foundation:element:earth", "v4:depth:element_earth_low", "통용"],
       "confidence": "통용",
-      "aliases": ["토 없음", "무토"]
+      "aliases": ["토 없음", "무토"],
+      "meaning": "토 없음은 겉으로 드러난 글자와 땅속 숨은 글자를 모두 살펴도 토가 보이지 않는 상태이며, 출생 시각을 모르면 보이는 범위에서 없다는 뜻입니다. 믿음과 중재, 버팀을 맡는 토의 힘, 곧 한곳에 머무는 바닥을 일부러 만들어야 하는 구성이고, 큰 결핍이라는 뜻은 아닙니다.",
+      "forYou": {
+        "base": "어디에도 묶이지 않는 가벼움으로 낯선 도시와 새 사람 앞에서도 금방 숨을 고르는 힘이 됩니다. 편견이 적어 양쪽 사정을 모두 들어 보고, 상황이 바뀌어도 바로 새 판에 올라탑니다."
+      },
+      "shadow": "토가 보이지 않는 구성에서는 남이 정한 틀이 사라질 때 중심이 붕 뜨기 쉽습니다. 지키려는 마음은 있어도 지켜 온 흔적이 흩어져 가까운 사람이 불안해할 수 있습니다.",
+      "life": "한 동네에 오래 살아도 단골 가게가 없고, 여행 가방은 한동안 열어 둔 채로 두는 편입니다. 한곳에 정착하기보다 새 동네 구경에 마음이 먼저 갑니다."
     },
     {
       "id": "element:EARTH:BALANCED",
@@ -327,7 +345,7 @@
       },
       "dimensionTags": { "dutifulness": 0.5, "persistence": 0.5, "caretaking": 0.4, "conflictApproach": 0.4, "planning": 0.4, "noveltySeeking": -0.2 },
       "mbtiLinks": [
-        { "target": "ESFJ", "kind": "resonance", "why": "모두의 사정을 듣고 한 상에 앉히는 Fe-Si가 잘 다진 마당과 같습니다" },
+        { "target": "ESFJ", "kind": "resonance", "why": "모두의 사정을 듣고 한 상에 앉히는 Fe-Si가 토 균형의 고른 중심과 같습니다" },
         { "target": "ISTJ", "kind": "resonance", "why": "지킬 틀을 두고 하나씩만 바꾸는 Si-Te와 겹칩니다" },
         { "target": "ENFJ", "kind": "conditional", "why": "Fe가 강해 남의 짐까지 받아 두기 쉬워, 돌려주는 연습이 균형을 지킵니다" },
         { "target": "ENTP", "kind": "tension", "why": "규칙부터 뒤집어 보는 Ne-Ti가 옛 방식과 새 방식을 나란히 쓰는 신중함을 더디다고 봅니다" },
@@ -336,7 +354,13 @@
       "engineSupport": true,
       "sources": ["classic:sm1:論五行生尅", "foundation:element:earth", "v4:depth:element_earth", "추정"],
       "confidence": "추정",
-      "aliases": ["토 균형", "토 중화"]
+      "aliases": ["토 균형", "토 중화"],
+      "meaning": "토 균형은 토가 많지도 적지도 않은 보통 범위에 놓인 상태입니다. 믿음과 중재를 맡는 토가 알맞아, 지킬 것은 지키고 바꿀 것은 바꾸는 중심이 무겁지도 가볍지도 않게 나타납니다.",
+      "forYou": {
+        "base": "의견이 갈리는 자리에서 양쪽을 담아 하나로 묶어 내는 중심이 됩니다. 약속은 지키되 사정이 바뀌면 고칠 줄 알아 오래 함께하고 싶은 사람이 되며, 먹고 자고 모으는 생활 리듬이 단단합니다."
+      },
+      "shadow": "흙 기운이 센 해나 달이 겹쳐 토가 지나치게 많아지면 균형이 고집 쪽으로 기울어 '그냥 하던 대로'가 늘어납니다. 중재를 잘하다 보니 남의 짐까지 받아 두는 일도 생깁니다.",
+      "life": "친구들 사이에 약속이 엇갈리면 중간 시간과 장소를 찾아 조율해 단톡방에 정리해 올리는 편입니다. 평소 식사와 수면 시간도 크게 어긋나지 않습니다."
     },
     {
       "id": "element:METAL:STRONG",
@@ -410,7 +434,13 @@
       "engineKey": "METAL_STRONG",
       "sources": ["classic:sm1:論五行生尅", "classic:sm1:論五行生成", "foundation:element:metal", "foundation:structure:geumda_mokjeol", "foundation:structure:fire_metal", "v4:depth:element_metal", "통용"],
       "confidence": "통용",
-      "aliases": ["금 과다", "금 강함"]
+      "aliases": ["금 과다", "금 강함"],
+      "meaning": "금 과다는 금이 여덟 글자와 땅속 숨은 글자를 합쳐 가장 강하고 전체의 약 30% 이상을 차지하는 상태입니다. 금은 결단과 원칙, 정리를 맡으므로, 이 구성에서는 자르고 가르고 끝맺는 힘이 크고 맞는 말이 먼저 나가기 쉽습니다.",
+      "forYou": {
+        "base": "머뭇거리는 자리에서 결단을 내리고 그 결과까지 책임지는 힘이 큽니다. 기준이 분명해 옳고 그름을 가리는 일에 날카롭고, 일을 정리하고 끝맺는 솜씨가 깔끔합니다."
+      },
+      "shadow": "금이 지나치게 많으면 맞는 말이 차갑게 나가 사람들이 말을 고르게 됩니다. 서툰 시작을 기다리지 못하고 잘라 내거나, 누가 더 정확한지 겨루느라 양보가 줄기도 합니다.",
+      "life": "단톡방에서 대화가 길어지면 '정리하면 이거죠?' 하고 결론을 요약해 올리는 편입니다. 쓰지 않는 앱과 사진은 정기적으로 지워 버립니다."
     },
     {
       "id": "element:METAL:WEAK",
@@ -495,7 +525,7 @@
       },
       "dimensionTags": { "boundarySetting": -0.8, "conflictApproach": -0.6, "decisionSpeed": -0.5, "empathyResponse": 0.5, "caretaking": 0.4, "possessiveness": 0.3 },
       "mbtiLinks": [
-        { "target": "ISFP", "kind": "resonance", "why": "상대 뜻을 따르고 다툼을 피하는 Fi-Se가 무뎌진 가위와 같은 결입니다" },
+        { "target": "ISFP", "kind": "resonance", "why": "상대 뜻을 따르고 다툼을 피하는 Fi-Se가 금 부족의 무딘 기준과 같은 결입니다" },
         { "target": "INFP", "kind": "resonance", "why": "가능성을 쉽게 버리지 못하는 Fi-Ne와 겹칩니다" },
         { "target": "F", "kind": "resonance", "why": "사실보다 마음을 먼저 보는 판단 습관이 거절을 늦춥니다" },
         { "target": "ESTJ", "kind": "tension", "why": "그날 안에 정리하는 Te가 '조금만 더 다듬고요'를 견디기 어려워합니다" },
@@ -505,7 +535,13 @@
       "engineKey": "METAL_WEAK",
       "sources": ["classic:sm1:論五行生尅", "foundation:element:metal", "v4:depth:element_metal_low", "통용"],
       "confidence": "통용",
-      "aliases": ["금 부족", "금 약함"]
+      "aliases": ["금 부족", "금 약함"],
+      "meaning": "금 부족은 금이 전체의 10%에 못 미치지만 땅속 숨은 글자 등에 조금은 남아 있는 상태입니다. 결단과 원칙을 맡는 금이 얇아, 받아 주는 힘은 큰 반면 거절하고 끝맺는 힘은 약하게 나타납니다.",
+      "forYou": {
+        "base": "다른 의견과 서툰 사람도 일단 받아 주고 함께 갈 길을 찾는 품이 됩니다. 날을 세우지 않아 사람들이 긴장을 풀고 속 이야기를 꺼내며, 남이 버린 아이디어에서 쓸 조각을 건져 냅니다."
+      },
+      "shadow": "금이 부족하면서 불 글자가 많으면 분위기에 휩쓸려 하겠다고 한 일이 쌓입니다. 거절을 미루면 배려가 아니라 부담을 뒤로 넘기는 일이 되어, 정리되지 않은 일이 먼저 지치게 합니다.",
+      "life": "부탁을 받으면 일단 '네, 해 볼게요'라고 답하고 나중에 일정표 앞에서 한숨을 쉬는 편입니다. 휴대폰 사진과 파일을 정리하려다 매번 다음으로 미룹니다."
     },
     {
       "id": "element:METAL:MISSING",
@@ -582,7 +618,7 @@
       },
       "dimensionTags": { "boundarySetting": -0.9, "trustThreshold": -0.6, "directness": -0.6, "conflictApproach": -0.5, "planning": -0.4, "caretaking": 0.5 },
       "mbtiLinks": [
-        { "target": "ESFJ", "kind": "resonance", "why": "모두의 부탁을 받아 주는 Fe가 자물쇠 없는 대문과 같은 마음입니다" },
+        { "target": "ESFJ", "kind": "resonance", "why": "모두의 부탁을 받아 주는 Fe가 금 없음의 열린 경계와 같은 마음입니다" },
         { "target": "ENFP", "kind": "resonance", "why": "모든 가능성을 열어 두는 Ne가 고르는 순간을 늦춥니다" },
         { "target": "Fe", "kind": "resonance", "why": "분위기를 지키려 무례한 농담에도 웃는 반응이 같습니다" },
         { "target": "INTJ", "kind": "tension", "why": "필요 없는 관계와 일을 단번에 끊는 Ni-Te가 천 명짜리 연락처를 이해하지 못합니다" },
@@ -592,7 +628,13 @@
       "engineKey": "METAL_MISSING",
       "sources": ["classic:sm1:論五行生尅", "foundation:element:metal", "v4:depth:element_metal_low", "통용"],
       "confidence": "통용",
-      "aliases": ["금 없음", "무금"]
+      "aliases": ["금 없음", "무금"],
+      "meaning": "금 없음은 겉으로 드러난 글자와 땅속 숨은 글자를 모두 살펴도 금이 보이지 않는 상태이며, 출생 시각을 모르면 보이는 범위에서 없다는 뜻입니다. 결단과 원칙, 정리를 맡는 금의 힘, 곧 선을 긋고 끊어 내는 일을 의식해서 해야 하는 구성이고, 사람이 무르다는 단정은 아닙니다.",
+      "forYou": {
+        "base": "문턱이 낮아 처음 보는 사람도 금방 편하게 만들고 속 이야기를 꺼내게 하는 힘이 됩니다. 판단하기 전에 먼저 받아 주어 남이 쉽게 잘라 낸 사람에게도 한 번 더 기회를 주며, 정해진 틀이 없는 일에서 부드럽게 길을 엽니다."
+      },
+      "shadow": "금이 보이지 않는 구성에서는 '여기까지'라는 선이 늦게 서서 남의 부탁과 감정이 다 들어옵니다. 아닌 것을 아니라고 말하는 순간이 늦어 손해를 보고도 웃고 넘기기 쉽습니다.",
+      "life": "중고 거래에서 깎아 달라는 말에 끝내 거절하지 못하고 가격을 내려 주는 편입니다. 불편한 농담에도 일단 웃으며 분위기를 맞춥니다."
     },
     {
       "id": "element:METAL:BALANCED",
@@ -672,7 +714,13 @@
       "engineSupport": true,
       "sources": ["classic:sm1:論五行生尅", "foundation:element:metal", "v4:depth:element_metal", "추정"],
       "confidence": "추정",
-      "aliases": ["금 균형", "금 중화"]
+      "aliases": ["금 균형", "금 중화"],
+      "meaning": "금 균형은 금이 많지도 적지도 않은 보통 범위에 놓인 상태입니다. 결단과 정리를 맡는 금이 알맞아, 자를 때는 자르고 둘 때는 두는 기준이 날카로움을 갈무리한 채 나타납니다.",
+      "forYou": {
+        "base": "할 일과 안 할 일을 빠르게 가르고 고른 일은 끝까지 해내는 힘이 됩니다. 단호하지만 거절할 때 대안을 붙여 관계가 상하지 않으며, 일을 닫을 때 정리까지 해 두어 다음 사람이 편합니다."
+      },
+      "shadow": "쇠 기운이 센 해나 달이 겹쳐 금이 지나치게 많아지면 말이 짧아지고 남의 실수가 크게 보입니다. 정리하는 습관이 사람에게까지 향하면 관계를 너무 빨리 정리하려 들기도 합니다.",
+      "life": "옷장을 계절마다 정리하면서 입지 않은 옷은 과감히 기부함에 담는 편입니다. 부탁은 가능한 부분만 분명히 말하고, 나머지는 정중하게 사양합니다."
     },
     {
       "id": "element:WATER:MISSING",
@@ -723,13 +771,13 @@
       ],
       "overuse": [
         "수가 지장간까지 0이면 식히는 물이 아예 없습니다. 화 글자가 많은 구성이면 몸과 머리가 계속 달아올라, 지친 줄 모르고 달리다 한 번에 멈춥니다.",
-        "수는 지혜와 저장의 글자입니다. 수가 없으면 겪은 일이 경험으로 고이지 않아 같은 문제를 매번 처음처럼 풉니다. 기록 하나가 우물이 됩니다.",
+        "수는 지혜와 저장의 글자입니다. 수가 없으면 겪은 일이 경험으로 고이지 않아 같은 문제를 매번 처음처럼 풉니다. 기록 하나가 저장 창고가 됩니다.",
         "본인은 쉬는 게 불편할 뿐이라고 여깁니다. 금 글자가 있으면 물을 낳을 바탕이 있어 늦게라도 샘이 나니, 밤 시간 하나만 비워 두세요."
       ],
       "strengthRules": {
-        "strong": "수가 지장간에도 없고 여름(사·오·미월) 태생이라 화가 세면 마른 우물에 볕까지 내리쬐는 격입니다. 쉬는 법을 처음부터 배워야 합니다.",
+        "strong": "수가 지장간에도 없고 여름(사·오·미월) 태생이라 화가 세면 물 한 방울 없이 볕만 내리쬐는 격입니다. 쉬는 법을 처음부터 배워야 합니다.",
         "weak": "금 글자가 많으면 물을 낳을 바위가 있어 계기 하나에 늦게라도 샘이 납니다. 출생 시각을 모르면 시주의 수를 알 수 없어 없음을 단정하지 않습니다.",
-        "clash": "토 글자가 두껍게 쌓여 있으면 우물 자리까지 흙으로 메운 모양입니다. 생각할 틈 없이 일만 쌓이니 비우는 시간을 먼저 정합니다.",
+        "clash": "토 글자가 두껍게 쌓여 있으면 물이 고일 자리까지 흙으로 메운 모양입니다. 생각할 틈 없이 일만 쌓이니 비우는 시간을 먼저 정합니다.",
         "rule": "엔진 ElementLabel WATER_MISSING: elements.weighted.WATER = 0(壬癸 천간 없고 지지에 亥子申辰丑 없음). 0<w<1.5는 element:WATER:WEAK. 시주 미상이면 '보이는 범위에서 없음'으로 완화"
       },
       "remedy": {
@@ -743,16 +791,16 @@
         "partner": [
           "같은 이야기를 몇 년 뒤에도 기억해 주는 사람, '너 그때 이렇게 말했잖아' 하며 당신의 지난 시간을 대신 간직해 주는 사람입니다.",
           "밤에 불 끄고 누워 '오늘 어땠어?'를 천천히 묻는 사람, 대답이 짧아도 끝까지 기다려 주는 사람이 맞습니다.",
-          "책 한 권을 같이 읽자고 권하는 사람, 다 읽고 나서 한 시간 동안 이야기를 나눌 줄 아는 사람이 우물을 채워 줍니다."
+          "책 한 권을 같이 읽자고 권하는 사람, 다 읽고 나서 한 시간 동안 이야기를 나눌 줄 아는 사람이 마음의 저장고를 채워 줍니다."
         ],
         "places": ["겨울 바닷가 숙소", "호숫가 캠핑장", "새벽 수영 강습반", "심야 책방", "찜질방 수면실", "필사 모임"]
       },
       "dimensionTags": { "decisionSpeed": 0.8, "reactivity": 0.7, "mobility": 0.4, "introspection": -0.9, "spendingControl": -0.5, "learningDrive": -0.4 },
       "mbtiLinks": [
-        { "target": "ESTP", "kind": "resonance", "why": "쉬지 않고 다음 현장을 찾는 Se가 마른 우물의 속도와 같습니다" },
+        { "target": "ESTP", "kind": "resonance", "why": "쉬지 않고 다음 현장을 찾는 Se가 수 없음의 멈추지 않는 속도와 같습니다" },
         { "target": "ESTJ", "kind": "resonance", "why": "결과부터 내고 다음 일로 넘어가는 Te-Si와 겹칩니다" },
         { "target": "Se", "kind": "resonance", "why": "지금 눈앞만 보는 감각이 저장 없이 달리는 쪽과 같습니다" },
-        { "target": "ISTJ", "kind": "conditional", "why": "Si가 기억을 쌓아 주어 물이 없어도 기록으로 우물을 대신 팝니다" },
+        { "target": "ISTJ", "kind": "conditional", "why": "Si가 기억을 쌓아 주어 물이 없어도 기록으로 저장을 대신합니다" },
         { "target": "INFJ", "kind": "tension", "why": "속에서 오래 익히는 Ni-Fe가 지난 고민을 잊는 쪽을 서운해합니다" },
         { "target": "INTP", "kind": "tension", "why": "이유를 끝까지 파는 Ti가 '그냥 하면 되지'를 받아들이지 못합니다" }
       ],
@@ -760,7 +808,13 @@
       "engineKey": "WATER_MISSING",
       "sources": ["classic:sm1:論五行生尅", "foundation:element:water", "foundation:structure:water_weak", "v4:depth:element_water_missing", "통용"],
       "confidence": "통용",
-      "aliases": ["수 없음", "무수"]
+      "aliases": ["수 없음", "무수"],
+      "meaning": "수 없음은 겉으로 드러난 글자와 땅속 숨은 글자를 모두 살펴도 수가 보이지 않는 상태이며, 출생 시각을 모르면 보이는 범위에서 없다는 뜻입니다. 생각과 지혜, 저장을 맡는 수의 힘, 곧 쉬고 경험을 쌓아 두는 일을 일부러 챙겨야 하는 구성이고, 지혜가 없다는 말은 아닙니다.",
+      "forYou": {
+        "base": "멈추지 않는 추진으로 남들이 고민을 시작할 때 이미 결과물을 손에 들고 있는 힘이 됩니다. 지난 일에 매이지 않아 넘어져도 다음 날 다시 시작하고, 지금 바로 움직여야 하는 자리에서 속도가 납니다."
+      },
+      "shadow": "수가 보이지 않는 구성에서는 식혀 줄 완충이 없어 지친 줄 모르고 달리다 한 번에 멈추기 쉽습니다. 겪은 일이 경험으로 저장되지 않아 같은 문제를 매번 처음부터 풀기도 합니다.",
+      "life": "주말에도 일정을 빽빽하게 채우고 쉬는 날이 오면 오히려 불안해 약속을 잡는 편입니다. 지난 일은 곧잘 잊고 새 계획 이야기를 먼저 꺼냅니다."
     },
     {
       "id": "element:WATER:BALANCED",
@@ -840,7 +894,13 @@
       "engineSupport": true,
       "sources": ["classic:sm1:論五行生尅", "foundation:element:water", "v4:depth:element_water", "추정"],
       "confidence": "추정",
-      "aliases": ["수 균형", "수 중화"]
+      "aliases": ["수 균형", "수 중화"],
+      "meaning": "수 균형은 수가 많지도 적지도 않은 보통 범위에 놓인 상태입니다. 생각과 저장을 맡는 수가 넘치거나 마르지 않아, 깊이 생각할 때와 흘려보낼 때를 오가는 물길이 고르게 나타납니다.",
+      "forYou": {
+        "base": "깊이 생각하는 힘과 망설이지 않는 실행이 함께 있습니다. 들은 이야기를 오래 간직하되 거기에 잠기지 않아 비밀을 맡기기 좋은 사람이 되고, 배운 것을 쌓아 두었다 필요할 때 꺼내 씁니다."
+      },
+      "shadow": "물 기운이 센 해나 달이 겹쳐 수가 지나치게 많아지면 생각이 밤마다 길어지고 결정이 하루씩 늦어집니다. 균형이 잘 잡혀 있어 남의 감정까지 대신 맡아 두는 일도 생깁니다.",
+      "life": "결정할 일이 생기면 하룻밤 잠을 자며 생각을 정리한 뒤 다음 날 담백하게 답하는 편입니다. 책이나 영상으로 배운 내용은 메모 앱에 요약해 두고 필요할 때 찾아봅니다."
     }
   ]
 }
