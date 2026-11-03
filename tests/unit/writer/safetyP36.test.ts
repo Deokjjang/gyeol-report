@@ -109,9 +109,9 @@ describe("P3.6 원고 남은 문제", () => {
   it("B 2회차 결함 수정: 궁합 보완 원소는 브리프 부족 판단 안에서, 돈 버는 방식은 숫자 없이, '~한 편인'은 용어 아님", () => {
     for (const [p, q, rt] of [[P36.parent, P36.child, "parentChild"], [P36.boss, PEOPLE.c1, "managerReport"]] as const) {
       const b = buildBrief({ product: "saju_mbti_compatibility", person: p, partner: q, relationshipType: rt, baseDate: base }, k);
-      const c = b.compatibility!; const line = c.score.components[0].line;
+      const c = b.compatibility!; const line = c.score.components[0].onScorePage;
       for (const [side, lack] of [[c.a.callName, c.a.lacking], [c.b.callName, c.b.lacking]] as const) {
-        const m = line.match(new RegExp(`${side}에게 부족한 ([가-힣]+)\\(`));
+        const m = line.match(new RegExp(`${side}에게 모자란 ([가-힣]+)\\(`));
         if (m) expect(lack.map(e => ({ WOOD: "나무", FIRE: "불", EARTH: "흙", METAL: "쇠", WATER: "물" })[e])).toContain(m[1]);
       }
     }

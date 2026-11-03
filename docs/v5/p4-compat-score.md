@@ -1,5 +1,7 @@
 # P4 궁합 점수 재설계 — v5 궁합 점수(`compat-score-v5-1`)
 
+> P6c에서 점수 v2(`docs/v5/compat-score-v2.md`)로 바뀌었다. 이 문서는 v5-1로 저장된 Book의 기록이다. `tools/p4-compat/calibrate.ts`는 `tools/p6c-score/calibrate.ts`로 대체돼 지웠다.
+
 코드 `src/lib/compat/score.ts`, 시험 `tests/unit/compat/score.test.ts`, 측정 도구 `tools/p4-compat/{diagnose,calibrate,pairs}.ts`.
 기존 Book의 점수(v4 `compatibilityIndex.ts`, v3 `scoreCompatibility`)는 그대로 두고, 새 점수는 v5 브리프·v5 Book에만 쓴다(§5).
 

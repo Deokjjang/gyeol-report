@@ -32,6 +32,10 @@ function LedgerRow({ when, sub, ganji, row, summary, time, now, impact, mark, ch
   </summary><div className={s.rowDetail}>{children}</div></details></li>;
 }
 
+/** 표 왼쪽 굵은 줄(data-impact=HIGH) 범례(P6c). v5 표는 흐름 세기 4칸 이상인 줄에 긋는다(writer/book.ts importance). 흐름 막대가 없는 V4 표에는 두지 않는다. */
+const legend = (rows: readonly (BookRowExtras & { importance?: string })[], unit: string) =>
+  rows.some(r => r.flow && r.importance === "HIGH") ? <p className={s.hint}>왼쪽 굵은 줄은 흐름 세기가 4칸 이상인 {unit}.</p> : null;
+
 export function BookReader({ data, page, onNote, onShare, onPage, backAction, shareActions }: { data: BookData; page: BookPage; onNote: (note: BookNote) => void; onShare: (text: string) => void; onPage: (page: number, anchor?: string) => void; backAction?: ReactNode; shareActions?: ReactNode }) {
   const book = BOOKS.find(b => b.id === data.bookId)!;
   const text = (value: string) => readableBookText(value, data.people.map(p => p.name));
@@ -56,14 +60,14 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
     {page.relationsPlain?.length ? <section className={s.pairRelations}><h2>두 사람 사이의 기운</h2><ul>{page.relationsPlain.map(line => <li key={line}>{text(line)}</li>)}</ul></section> : null}<PersonTables data={data} /></>;
   if (page.kind === "timeline") return <><p className={s.eyebrow}>{page.years[0].year} — {page.years.at(-1)!.year}</p><h1>{text(page.title)}</h1><p className={s.hint}>최근 3년 · 지금 · 앞으로 10년</p>
     <ol className={s.transitions}>{page.transitions.map((t, i) => <li key={i}><button onClick={() => onPage(t.page)}><strong>{text(t.date)}</strong><span>{text(t.before)} → {text(t.after)} · 전환 이야기 ↗</span></button>{t.exact && t.exact !== t.date ? <details className={s.periodDetails}><summary>계산 구간 보기</summary><p>{text(t.exact)}</p></details> : null}</li>)}</ol>
-    {page.years.some(y => y.flow) ? <p className={s.hint}>줄을 누르면 자세히 열려요. 막대는 흐름 세기(정해진 규칙으로 센 참고 값)예요.</p> : null}
+    {page.years.some(y => y.flow) ? <p className={s.hint}>줄을 누르면 자세히 열려요. 막대는 흐름 세기(정해진 규칙으로 센 참고 값)예요.</p> : null}{legend(page.years, "해예요")}
     <ol className={s.ledger}>{page.years.map(y => <LedgerRow key={y.year} data-year={y.year} when={String(y.year)} sub={y.ageLabel ?? `${y.age}세`} ganji={y.annual} row={y} summary={text(y.theme)} time={y.time} now={y.time === "지금"} impact={y.importance}
       mark={y.transition ? <strong className={s.transitionLabel}>{text(y.transition)} · 대운 전환</strong> : null}>
       <button onClick={() => onPage(y.page)}>{text(y.title)} ↗</button>{y.cycle ? <div className={s.periodPair}><span>대운 <GanjiChip value={y.cycle.replace(/ 대운$/, "")} /></span></div> : null}
       <p className={s.hint}>{y.goodLabel ?? "좋은 힘"} · {text(y.good)}</p>{y.caution ? <p className={s.hint}>살필 점 · {text(y.caution)}</p> : null}
       {y.badges?.length ? <ul className={s.rowBadges}>{y.badges.map((b, i) => <li key={i}><b>{b.label}</b>{b.with ? ` · ${b.with}` : ""} — {text(b.line)}</li>)}</ul> : null}
     </LedgerRow>)}</ol></>;
-  if (page.kind === "months") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1>{page.map?.length ? <dl className={s.yearMap}>{page.map.map(group => <div key={group.label}><dt>{group.label}</dt><dd>{group.months.map(month => <button key={month} onClick={() => onPage(page.months.find(m => m.month === month)!.page)}>{month}월 ↗</button>)}</dd></div>)}</dl> : null}<p className={s.hint}>{page.months.some(m => m.order) ? "달은 절기(절입일)로 나눠요. 지금 지나는 달에 굵은 선을 그었어요. 줄을 누르면 자세히 열려요." : "달력월과 절기월은 경계가 달라요. 현재 달은 지금 지나고 있는 구간을 먼저 보여줍니다."}</p>
+  if (page.kind === "months") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1>{page.map?.length ? <dl className={s.yearMap}>{page.map.map(group => <div key={group.label}><dt>{group.label}</dt><dd>{group.months.map(month => <button key={month} onClick={() => onPage(page.months.find(m => m.month === month)!.page)}>{month}월 ↗</button>)}</dd></div>)}</dl> : null}<p className={s.hint}>{page.months.some(m => m.order) ? "달은 절기(절입일)로 나눠요. 지금 지나는 달에 굵은 선을 그었어요. 줄을 누르면 자세히 열려요." : "달력월과 절기월은 경계가 달라요. 현재 달은 지금 지나고 있는 구간을 먼저 보여줍니다."}</p>{legend(page.months, "달이에요")}
     <ol className={s.ledger}>{page.months.map(m => <LedgerRow key={m.order ?? m.month} data-month={m.order ?? m.month} when={m.order ? `${m.order}번째 달` : `${m.month}월`} sub={m.range ?? ""} ganji={m.ganji} row={{ ...m, tenGod: m.tenGod ?? m.gods }} summary={text(m.theme)} time={m.time} now={m.time === "지금"} impact={m.importance}>
       <button onClick={() => onPage(m.page)}>{text(m.title)} ↗</button>{m.good ? <p className={s.hint}>{m.goodLabel ?? "좋은 힘"} · {text(m.good)}</p> : null}{m.caution ? <p className={s.hint}>살필 점 · {text(m.caution)}</p> : null}
       {m.badges?.length ? <ul className={s.rowBadges}>{m.badges.map((b, i) => <li key={i}><b>{b.label}</b>{b.with ? ` · ${b.with}` : ""} — {text(b.line)}</li>)}</ul> : m.markers.length ? <p className={s.hint}>{m.markers.join(" · ")}</p> : null}
@@ -71,8 +75,8 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
     </LedgerRow>)}</ol></>;
   if (page.kind === "appendix") {
     const stageMeanings = new Set(page.items.filter(item => item.group === "십이운성").map(item => item.meaning));
-    const sharedStageMeaning = stageMeanings.size === 1 ? [...stageMeanings][0] : undefined;
-    return <><p className={s.eyebrow}>APPENDIX · {page.total}개 기운</p><h1>{text(page.title)}</h1>{page.items.some(item => item.group === "지장간") ? <p className={s.hint}>지장간은 지지 안에 담긴 천간입니다. 아래는 각 천간이 내 일간에 대해 갖는 십성의 뜻이에요. 위치는 만세력표에서 볼 수 있습니다.</p> : null}{sharedStageMeaning ? <p className={s.hint}>십이운성 · {text(sharedStageMeaning)}</p> : null}<ol start={page.from} className={s.glossary}>{page.items.map((item, i) => <li key={i}><span className={s.micro}>{String(page.from + i).padStart(2, "0")}</span><div><small>{item.group ?? "명리 기운"}{item.core ? " · 본문 핵심" : ""}</small><h2>{text(item.name)}</h2>{item.group !== "십이운성" || item.meaning !== sharedStageMeaning ? <p>{text(item.meaning)}</p> : null}</div></li>)}</ol></>;
+    const sharedStageMeaning = !page.lead && stageMeanings.size === 1 ? [...stageMeanings][0] : undefined;
+    return <><p className={s.eyebrow}>APPENDIX · {page.total}개 기운</p><h1>{text(page.title)}</h1>{page.lead ? <p className={s.hint}>{text(page.lead)}</p> : page.items.some(item => item.group === "지장간") ? <p className={s.hint}>지장간은 지지 안에 담긴 천간입니다. 아래는 각 천간이 내 일간에 대해 갖는 십성의 뜻이에요. 위치는 만세력표에서 볼 수 있습니다.</p> : null}{sharedStageMeaning ? <p className={s.hint}>십이운성 · {text(sharedStageMeaning)}</p> : null}<ol start={page.from} className={s.glossary}>{page.items.map((item, i) => <li key={i}><span className={s.micro}>{String(page.from + i).padStart(2, "0")}</span><div><small>{item.group ?? "명리 기운"}{item.core ? " · 본문 핵심" : ""}</small><h2>{text(item.name)}</h2>{item.group !== "십이운성" || item.meaning !== sharedStageMeaning ? <p>{text(item.meaning)}</p> : null}</div></li>)}</ol></>;
   }
   if (page.kind === "back") return <div className={s.backContent}><span className={s.micro}>PERSONAL EDITION / FIN</span><h1>{data.title}</h1><p data-final-line>{text(page.finalLine)}</p>{shareActions ?? <section className={s.sharePreview} aria-label="이 책 공유하기 미리보기"><h2>이 책 공유하기</h2><p className={s.shareTitle}>{data.share.title}</p><div>{["카카오톡", "공유", "링크 복사"].map((label, i) => <button type="button" key={label} onClick={() => onShare(`${data.share.title} · ${label} 미리보기입니다. 실제 공유나 복사는 실행하지 않습니다.`)}><ShareIcon kind={i} /><span>{label}</span></button>)}</div></section>}{backAction}{data.edition ? <span className={s.edition}>{data.edition}</span> : null}<span className={s.micro}>END OF BOOK</span></div>;
   const titleLines = text(page.title).split("\n");

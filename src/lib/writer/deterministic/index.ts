@@ -95,13 +95,16 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref === "compatibility.common" && x.common.length) return { heading: "둘이 닮은 곳", paragraphs: [join(`두 사람은 ${x.common.slice(0, 3).join(", ")}이라는 점이 같습니다`)] };
   if (ref === "compatibility.elements" && b.partner) { const pc = b.partner.chart; return { heading: "두 사람의 강한 기운과 약한 기운", paragraphs: [join(`${A}에게는 ${josa(c.elements.strongest.name, "이가")} 가장 세고 ${josa(c.elements.weakest.name, "이가")} 가장 약합니다`, `${B}에게는 ${josa(pc.elements.strongest.name, "이가")} 가장 세고 ${josa(pc.elements.weakest.name, "이가")} 가장 약합니다`, c.elements.strongest.element === pc.elements.weakest.element ? `${A}의 넉넉한 쪽이 ${B}의 빈 곳과 맞닿아 있어요` : pc.elements.strongest.element === c.elements.weakest.element ? `${B}의 넉넉한 쪽이 ${A}의 빈 곳과 맞닿아 있어요` : "강한 쪽과 약한 쪽이 서로 엇갈려 있어, 각자 잘하는 몫을 나누기 좋습니다")] }; }
   if (ref === "compatibility.yinYang" && b.partner) { const py = b.partner.chart.yinYang; return { heading: "두 사람의 음과 양", paragraphs: [join(`${A}는 음 ${c.yinYang.yin}·양 ${c.yinYang.yang}, ${B}는 음 ${py.yin}·양 ${py.yang}입니다`, c.yinYang.reading && `${A} 쪽은 '${c.yinYang.reading}'에 가깝고`, py.reading && `${B} 쪽은 '${py.reading}'에 가깝습니다`)] }; }
-  if (ref === "compatibility.parts") return { heading: "점수를 만든 여섯 가지", paragraphs: [join(...x.score.components.filter(c => c.level !== "보통").map(c => c.line))] };
+  // 점수 v2(P6c): 항목 이유(onScorePage)는 점수 쪽에 이미 있어 옮기지 않고, 항목 이름으로만 짚는다.
+  const names = (cs: readonly { name: string }[]) => cs.map((c, i) => (i < cs.length - 1 ? josa(c.name, "과와") : c.name)).join(" ");
+  if (ref === "compatibility.parts") { const good = x.score.components.filter(c => c.level === "좋음"), adjust = x.score.components.filter(c => c.level === "조율");
+    return { heading: "점수를 만든 항목", paragraphs: [join(good.length ? `잘 맞물리는 쪽은 ${names(good)}입니다` : "", adjust.length ? `맞춰 갈 쪽은 ${names(adjust)}입니다` : "", "항목마다 무엇을 보았는지는 점수 쪽에 적어 두었어요")] }; }
   if (ref === "compatibility.direction") return { heading: "서로에게 어떤 사람인가", paragraphs: [join(x.score.direction.aToB.role, x.score.direction.aToB.gives, x.score.direction.bToA.role, x.score.direction.bToA.gives)] };
   if (ref === "compatibility.score") {
     const s = x.score, good = s.components.filter(c => c.level === "좋음"), adjust = s.components.filter(c => c.level === "조율");
-    return { heading: `${s.value}점, ${s.band.label} 사이`, paragraphs: [
-      join(`두 사람의 타고난 맞물림은 ${s.value}점입니다`, s.band.verdict, ...good.slice(0, 2).map(c => c.line)),
-      join(...adjust.slice(0, 2).map(c => c.line), adjust.length ? "이런 자리는 다투기 전에 둘만의 약속 하나를 정해 두면 훨씬 편해집니다" : "맞춰 갈 자리가 크지 않으니, 좋은 점을 일상에서 자주 꺼내 쓰면 됩니다"),
+    return { heading: `${s.value}점, ${s.band.label}`, paragraphs: [
+      join(`두 사람의 타고난 맞물림은 ${s.value}점입니다`, s.band.verdict, good.length ? `특히 ${names(good.slice(0, 2))}에서 잘 맞물립니다` : ""),
+      join(adjust.length ? `${names(adjust.slice(0, 2))}에서는 다투기 전에 둘만의 약속 하나를 정해 두면 훨씬 편해집니다` : "맞춰 갈 자리가 크지 않으니, 좋은 점을 일상에서 자주 꺼내 쓰면 됩니다"),
     ].filter(Boolean) };
   }
   return null;

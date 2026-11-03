@@ -159,6 +159,20 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc, clashes };
 }
 
+const FAMILY_KO: Record<string, string> = { stem: "천간", branch: "지지", dayMaster: "일간", dayPillar: "일주", element: "오행", yinYang: "음양", climate: "계절", tenGod: "십성", tenGodBalance: "십성", twelveStage: "십이운성", relation: "합·충", shinsal: "신살", gwiin: "귀인", structure: "짜임" };
+const FAMILY_ORDER = Object.keys(FAMILY_KO);
+/** meaning에서 뜻을 말하는 문장("~을 뜻합니다·맡습니다")을 고르고, 정의·자리 설명·많고 적음 문장은 피한다. */
+const MEANS = /뜻[합하]|맡[습으아고]/, DEFINES = /부릅니다|라는 뜻입니다|때 봅니다|째 (천간|지지)|물상으로|많으면|없으면|이상이면|앉은 날입니다|상태입니다|상태를 말합니다|태어난 것이고|나뉘는데/;
+export const meaningLine = (meaning: string) => { const s = splitSentences(meaning); return s.find(x => MEANS.test(x) && !DEFINES.test(x)) ?? s.find(x => !DEFINES.test(x)) ?? s[1] ?? s[0] ?? ""; };
+/** 부록 한 사람분: 감지된 기운(지식 DB에 있는 것)과 뜻 한 줄. core: 본문 trait로 쓴 기운. */
+function appendixOf(p: PersonPack, k: Knowledge) {
+  const core = new Set(p.traits.map(t => t.featureId));
+  const items = [...new Set(p.hitIds)].flatMap(id => { const f = k.features.get(id); if (!f) return [];
+    return [{ family: f.family, group: FAMILY_KO[f.family] ?? "명리 기운", name: f.name, meaning: meaningLine(f.meaning), core: core.has(id) }]; });
+  items.sort((a, b) => FAMILY_ORDER.indexOf(a.family) - FAMILY_ORDER.indexOf(b.family) || a.name.localeCompare(b.name));
+  return { name: p.person.name, items: items.map(x => ({ group: x.group, name: x.name, meaning: x.meaning, core: x.core })) };
+}
+
 function mbtiBrief(k: Knowledge, type: MbtiType | null) {
   const p = type ? k.mbti.get(type) : undefined;
   if (!p) return null;
@@ -312,8 +326,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   };
   // 토큰 추정은 작가가 실제로 받는 입력 그대로(P3.8: 절·배정 기록·안 쓰는 trait를 빼고 센다).
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
-  // usedProps는 안전망용이라 작가 토큰 추정·작가 입력에서 뺀다.
-  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), budget: { ...budget, method: TOKEN_METHOD } });
+  // usedProps는 안전망용, appendix는 부록 쪽용이라 작가 토큰 추정·작가 입력에서 뺀다.
+  const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k));
+  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, budget: { ...budget, method: TOKEN_METHOD } });
 }
 
 /**
@@ -341,6 +356,6 @@ function tenGodNotesOf(k: Knowledge, ctx: CautionCtx) {
 
 function side(p: PersonPack, k: Knowledge): PairSide {
   return {
-    saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName,
+    saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName, gender: p.person.gender,
   };
 }

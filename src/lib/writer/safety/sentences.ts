@@ -119,7 +119,7 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (BREAKUP.test(s)) return "breakup_advice";
   if (f.compat) {
     if (JUDGE.test(s)) return "compat_judgement";
-    if (BAND_NEVER.test(s) || (BAND_HIGH.test(s) && f.compat.score < 90) || (BAND_LOW.test(s) && f.compat.score >= 45)) return "band_mismatch";
+    if (BAND_NEVER.test(s) || (BAND_HIGH.test(s) && f.compat.score < 90) || (BAND_LOW.test(s) && f.compat.band !== "서로 다른 세계")) return "band_mismatch";
     const m = s.match(SCORE_NUM);
     if (m && Number(m[1]) !== f.compat.score && /맞물림|궁합|점수|두 사람/.test(s)) return "score_mismatch";
   }

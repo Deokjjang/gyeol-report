@@ -163,11 +163,12 @@ export const CompatibilityBriefSchema = z.object({
   /** 장면 역할(P6b D 궁합): 누가 먼저 무엇을 하는지와 근거(E/I·J/P·십성). */
   roles: z.array(z.string()).min(1),
   mbtiConvention: z.object({ fit: z.string(), why: z.string(), note: z.literal("통념") }).nullable(),
-  /** v5 궁합 점수(P4, src/lib/compat/score.ts). 본문은 band 톤과 맞아야 하고(안전망), 낮은 점수에도 보완법을 쓴다. */
+  /** v5 궁합 점수 v2(P6c, src/lib/compat/score.ts): 기본 40 + 항목 합. 본문은 band 톤과 맞아야 하고(안전망), 낮은 점수에도 보완법을 쓴다.
+   * components[].onScorePage: 점수 쪽에 이미 실린 이유 문장(작가는 되풀이하지 않고 본문에서 더 깊게 푼다). */
   score: z.object({
-    value: z.number().int().min(35).max(95), version: z.string(),
-    band: z.object({ label: z.string(), tone: z.string(), verdict: z.string() }),
-    components: z.array(z.object({ name: z.string(), level: z.enum(["좋음", "보통", "조율"]), weight: z.number(), line: z.string() })).min(5).max(6),
+    value: z.number().int().min(40).max(100), version: z.string(),
+    band: z.object({ label: z.string(), tone: z.string(), verdict: z.string() }), notice: z.string(),
+    components: z.array(z.object({ name: z.string(), points: z.number().int().min(0), max: z.number().int().min(1), level: z.enum(["좋음", "보통", "조율"]), onScorePage: z.string() })).min(6).max(7),
     direction: z.object({ aToB: z.object({ tenGod: z.string(), role: z.string(), gives: z.string().nullable() }), bToA: z.object({ tenGod: z.string(), role: z.string(), gives: z.string().nullable() }) }),
     rules: z.array(z.string()),
   }),
@@ -201,6 +202,8 @@ export const BriefSchema = z.object({
   }).optional(),
   /** 책 단위 소품 사용 기록(P3.6 A1): 소품 → 힌트로 준 장 수(최대 2). */
   usedProps: z.record(z.string(), z.number().int().min(1).max(2)).optional(),
+  /** 부록 "내 모든 기운"(P6c): 사람마다 내 사주에 있는 기운(지식 DB 이름)과 뜻 한 줄. 작가 입력에서 뺀다. core: 본문 trait로 쓴 기운. */
+  appendix: z.array(z.object({ name: z.string(), items: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string(), core: z.boolean() })) })).optional(),
   style: z.object({
     version: z.string(), register: z.string(), readingLevel: z.string(),
     totalChars: z.tuple([z.number().int(), z.number().int()]),

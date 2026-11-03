@@ -116,11 +116,16 @@ export function solarTimeCorrectionNote(context: unknown): string | undefined {
   const { timeBasis: basis, birthTimePrecision } = context as Partial<BirthTimeCalculationContext>;
   if (!basis || basis.calcVersion !== SAJU_CALC_VERSION_ID || birthTimePrecision === "unknown" ||
       typeof basis.solarTimeCorrectionMinutes !== "number" || typeof basis.longitude !== "number") return;
+  // "태양시 기준 · 30분 보정 (09:30 → 09:00)": typed time and the solar time the pillars use.
   const minutes = Math.round(basis.solarTimeCorrectionMinutes);
-  const meridian = `${basis.longitudeSource === "birthplace" ? "출생지 경도" : "기준 경도"} 동경 ${basis.longitude}°`;
-  const era = basis.utcOffsetMinutes === 570 || basis.utcOffsetMinutes === 600 ? " (당시 서머타임 반영)"
-    : basis.utcOffsetMinutes === 510 ? " (당시 표준시 UTC+8:30 반영)" : "";
+  const head = basis.longitudeSource === "birthplace" ? `태양시 기준(출생지 동경 ${basis.longitude}°)` : "태양시 기준";
+  const era = basis.utcOffsetMinutes === 570 || basis.utcOffsetMinutes === 600 ? " · 당시 서머타임 반영"
+    : basis.utcOffsetMinutes === 510 ? " · 당시 표준시 UTC+8:30 반영" : "";
+  const typed = basis.civilDateTime.match(/T(\d{2}):(\d{2})$/);
   // 1954-61 standard time was UTC+8:30, i.e. exactly the 127.5°E meridian.
-  if (minutes === 0) return `${meridian}로 시간 보정 없음${era}`;
-  return `${meridian}로 시간 보정 ${minutes > 0 ? "+" : ""}${minutes}분 적용${era}`;
+  if (minutes === 0) return `${head} · 보정 없음${typed ? ` (${typed[1]}:${typed[2]})` : ""}${era}`;
+  if (!typed) return `${head} · ${Math.abs(minutes)}분 보정${era}`;
+  const from = Number(typed[1]) * 60 + Number(typed[2]), to = from + minutes, day = to < 0 ? "전날 " : to >= 1440 ? "다음 날 " : "";
+  const hm = (m: number) => `${String(Math.floor(((m % 1440) + 1440) % 1440 / 60)).padStart(2, "0")}:${String(((m % 60) + 60) % 60).padStart(2, "0")}`;
+  return `${head} · ${Math.abs(minutes)}분 보정 (${hm(from)} → ${day}${hm(to)})${era}`;
 }

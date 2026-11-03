@@ -40,6 +40,8 @@ export type V5BookDraft = {
   /** 핵심 이미지(P6b B-4, p6b-fields.md 3). 궁합은 pairImage. P6b 이전 Book에는 없다. */
   readonly coreImage?: { readonly line: string; readonly ruleId: string };
   readonly pairImage?: { readonly line: string; readonly a: string; readonly b: string; readonly ruleId: string };
+  /** 부록 "내 모든 기운"(P6c): 사람마다 내 사주 기운과 지식 DB 뜻 한 줄. P6c 이전 Book에는 없다(부록 쪽 없음). */
+  readonly appendix?: Brief["appendix"];
 };
 export type ChapterMeta = { readonly n: number; readonly id: string; readonly title: string; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly evidence: readonly string[] };
 export type WriterMeta = {
@@ -56,6 +58,8 @@ export type WriterMeta = {
   readonly scenes?: readonly string[];
   readonly priorBooks?: number;
 };
+type V5ScoreV51 = { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] };
+type V5ScoreV2 = { readonly total: number; readonly version: "v2"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
 export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
   readonly input: ReportInputPayload; readonly people: readonly BookPerson[]; readonly names: string;
@@ -63,8 +67,8 @@ export type V5Evidence = {
   readonly pair?: { readonly category: string; readonly characters: readonly { name: string; core: string; strength: string; relationship: string }[]; readonly relations: readonly string[];
     /** 관계 쉬운 문장(P6b D 궁합, p6b-fields.md 4). */
     readonly relationsPlain?: readonly string[]; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[];
-    /** v5 궁합 점수(P4). 구성요소는 수준(좋음·보통·조율)만 보여 준다 — 하위 점수 합이 총점과 어긋나 보이지 않게. 없는 v5 Book(P3)은 점수 쪽 없이 연다. */
-    readonly score?: { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] } };
+    /** v5 궁합 점수. 없는 v5 Book(P3)은 점수 쪽 없이 연다. v5-1(P4): 구성요소 수준(좋음·보통·조율)을 3칸으로. v2(P6c): 항목 점수/만점·이유·계산 안내. */
+    readonly score?: V5ScoreV51 | V5ScoreV2 };
   readonly meta: WriterMeta;
 };
 
@@ -138,13 +142,14 @@ export function assembleV5Book(a: {
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
       cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number); return { ganji: c.ganji, years: c.years, ages: [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current }; }) } } : {}),
     ...(brief.compatibility ? { pairImage: brief.compatibility.pairImage } : { coreImage: brief.chart.coreImage }),
+    ...(brief.appendix ? { appendix: brief.appendix } : {}),
   };
   const c = brief.compatibility;
   const pair = c ? {
     category: c.lens.focus,
     characters: [c.a, c.b].map(p => ({ name: p.callName.replace(/님$/, ""), core: p.image, strength: brief.traits.find(t => t.id === p.traitIds[0])?.easyName ?? "", relationship: p.role === p.callName ? "" : p.role.replace(/\(.*\)$/, "") })),
     relations: c.dayRelations, relationsPlain: c.relationsPlain,
-    score: { total: c.score.value, version: c.score.version, band: c.score.band.label, verdict: c.score.band.verdict, components: c.score.components.map(x => ({ name: x.name, level: x.level, line: x.line })) },
+    score: { total: c.score.value, version: "v2" as const, band: c.score.band.label, verdict: c.score.band.verdict, notice: c.score.notice, components: c.score.components.map(x => ({ name: x.name, points: x.points, max: x.max, reason: x.onScorePage })) },
     directions: (["direction-ab", "direction-ba"] as const).map((id, i) => ({ title: a.plan.find(ch => ch.id === id)?.title ?? "", effect: (i ? c.tenGodBA : c.tenGodAB).reading.slice(0, 60), term: noHan((i ? c.tenGodBA : c.tenGodAB).tenGod), chapterN: a.plan.find(ch => ch.id === id)?.n ?? 0 })),
   } : undefined;
   const p = brief.person.facts;
@@ -220,14 +225,19 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   const d = snapshot.draft as unknown as V5BookDraft, e = snapshot.evidencePacket as V5Evidence;
   if (!validateV5Publication(snapshot.productType, d, e).ok) return null;
   const book = BOOKS.find(b => b.productKey === d.productType)!;
-  const pages: BookPage[] = [{ kind: "cover", title: d.title, names: e.names, headline: d.headline }];
+  // 표지 아래 한 줄(P6c): 핵심 이미지 한 줄. 핵심 이미지가 없는 Book(P6b 이전, 궁합)은 예전 첫 문장.
+  const pages: BookPage[] = [{ kind: "cover", title: d.title, names: e.names, headline: d.coreImage?.line ?? d.headline }];
   if (!e.pair && e.people.length) pages.push({ kind: "input", title: "이 책의 주인공" });
   if (e.pair) pages.push({ kind: "pair", title: "우리라는 사이", category: e.pair.category, characters: [...e.pair.characters], directions: [], relations: [...e.pair.relations],
     ...(d.pairImage ? { image: d.pairImage.line } : {}), ...(e.pair.relationsPlain ? { relationsPlain: [...e.pair.relationsPlain] } : {}) });
   const sc = e.pair?.score;
-  // 점수 쪽(P6b-ui): 총점·구간 이름·항목 막대(3칸)·항목 이유. 새 점수 기준은 합의 후 반영.
-  if (sc) pages.push({ kind: "score", scoreVersion: sc.version, title: "타고난 맞물림", total: sc.total, band: sc.band, scores: sc.components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3, reason: x.line })),
-    verdict: sc.verdict, notice: "두 사람의 명리와 MBTI가 맞물리는 정도를 정해진 규칙으로 계산했어요. 항목은 3칸 중 몇 칸이 맞물리는지로 보여 줍니다.", limitations: [] });
+  // 점수 쪽: 총점·구간 이름·항목 막대·항목 이유. v2(P6c)는 항목 점수/만점, v5-1(P4·P6b-ui)은 수준 3칸 그대로.
+  if (sc) {
+    const v2 = "notice" in sc ? sc : null;
+    pages.push({ kind: "score", scoreVersion: sc.version, title: "타고난 맞물림", total: sc.total, band: sc.band,
+      scores: v2 ? v2.components.map(x => ({ label: x.name, value: x.points, max: x.max, reason: x.reason })) : (sc as V5ScoreV51).components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3, reason: x.line })),
+      verdict: sc.verdict, notice: v2 ? v2.notice : "두 사람의 명리와 MBTI가 맞물리는 정도를 정해진 규칙으로 계산했어요. 항목은 3칸 중 몇 칸이 맞물리는지로 보여 줍니다.", limitations: [] });
+  }
   e.people.forEach((p, i) => pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }));
   const chapterPage = new Map<number, number>(), keyPage = new Map<string, number>();
   for (const ch of d.chapters) {
@@ -254,6 +264,15 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
       gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score), ...rowExtras(c) }));
   }
   if (e.pair) { const pair = pages.find((p): p is Extract<BookPage, { kind: "pair" }> => p.kind === "pair")!; pair.directions = e.pair.directions.map(x => ({ title: x.title, effect: x.effect, term: x.term, page: chapterPage.get(x.chapterN) ?? 0 })); }
+  // 부록(P6c): 사람마다 한 쪽, 번호는 이어서. 머리말은 "내 사주에 있는 기운과 그 뜻".
+  const total = d.appendix?.reduce((n, p) => n + p.items.length, 0) ?? 0;
+  let from = 1;
+  for (const p of d.appendix ?? []) {
+    const pair = d.appendix!.length > 1;
+    pages.push({ kind: "appendix", title: pair ? `${p.name}의 모든 기운` : "내 모든 기운", lead: pair ? `${p.name}님 사주에 있는 기운과 그 뜻이에요.` : "내 사주에 있는 기운과 그 뜻이에요.", from, total,
+      items: p.items.map(x => ({ name: x.name, meaning: x.meaning, manifestation: "", person: p.name, group: x.group, core: x.core })) });
+    from += p.items.length;
+  }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: d.finalLine });
   return { bookId: book.id, title: d.title, names: e.names, people: [...e.people], context: [...e.context], pages: composeBookNavigation(pages), readingDate: e.generatedAt.slice(0, 10), share: { title: `${e.names} · ${d.title}`, description: d.headline.slice(0, 80) } };
 }

@@ -3,7 +3,7 @@
  * 두 사람 기둥끼리 관계는 원국 감지와 같은 detectRelations를 쓴다(두 기둥을 년·월 자리 라벨로 넣는다 — 라벨은 계산에 쓰이지 않는다).
  */
 import type { MbtiProfile } from "@/data/knowledge-v5/schema";
-import { computeCompatScore, type ConventionalFit } from "@/lib/compat/score";
+import { computeCompatScore } from "@/lib/compat/score";
 import { compatibilityRoleLabels, type CompatibilityRelationshipType } from "@/lib/report-generation/reportInputTypes";
 import { detectRelations } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
@@ -22,7 +22,7 @@ const LENS_FOCUS: Record<CompatibilityRelationshipType, string> = {
 
 export type PairSide = {
   readonly saju: SajuCalcResult; readonly chart: ChartBrief; readonly st: ElementState; readonly traits: readonly Trait[]; readonly hitIds: readonly string[];
-  readonly mbti: MbtiProfile | null; readonly callName: string;
+  readonly mbti: MbtiProfile | null; readonly callName: string; readonly gender: "MALE" | "FEMALE" | null;
 };
 
 function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
@@ -111,8 +111,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const ab = getTenGod(a.saju.dayMaster, b.saju.dayMaster), ba = getTenGod(b.saju.dayMaster, a.saju.dayMaster);
   const rel = pairRelations(a, b, k);
   const conv = a.mbti && b.mbti ? a.mbti.conventionalCompat.find(c => c.type === b.mbti!.type) : undefined;
-  const conventional: ConventionalFit = (x, y) => k.mbti.get(x)?.conventionalCompat.find(c => c.type === y)?.fit ?? null;
-  const s = computeCompatScore(category, { saju: a.saju, name: a.callName, mbti: a.mbti?.type ?? null }, { saju: b.saju, name: b.callName, mbti: b.mbti?.type ?? null }, { conventional });
+  const s = computeCompatScore(category, { saju: a.saju, name: a.callName, mbti: a.mbti?.type ?? null, gender: a.gender }, { saju: b.saju, name: b.callName, mbti: b.mbti?.type ?? null, gender: b.gender });
   const person = (s: PairSide, role: string) => ({
     role, callName: s.callName, mbti: s.mbti?.type ?? null, dayPillar: ganjiLabel(s.saju.pillars.day),
     image: s.chart.coreImage.line,
@@ -131,13 +130,15 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     tenGodBA: { tenGod: tenGodLabel(ba), reading: ab === ba ? `서로를 같은 기운으로 본다. 앞 장과 겹치지 않게, 이 방향에서는 ${k.features.get(`tenGod:${ba}`)?.strengths[1] ?? k.features.get(`tenGod:${ba}`)?.strengths[0] ?? ""}` : meaningLine(k, ba) },
     dayRelations: rel, relationsPlain: rel, roles: sceneRoles(a, b),
     mbtiConvention: conv ? { fit: conv.fit, why: conv.why, note: "통념" } : null,
+    // 점수 v2(P6c): 항목 점수·만점·이유. onScorePage = 점수 쪽에 이미 실린 문장(본문에서 되풀이하지 않고 더 깊게 푼다).
     score: {
-      value: s.total, version: s.version, band: { label: s.band.label, tone: s.band.tone, verdict: s.band.verdict },
-      components: s.components.map(c => ({ name: c.name, level: c.level, weight: c.weight, line: c.line })),
+      value: s.total, version: s.version, band: { label: s.band.label, tone: s.band.tone, verdict: s.band.verdict }, notice: s.notice,
+      components: s.items.map(c => ({ name: c.name, points: c.points, max: c.max, level: c.level, onScorePage: c.reason })),
       direction: s.direction,
       rules: [
         `점수 ${s.total}점은 '${s.band.label}' 구간이다. 결론과 분위기를 이 구간에 맞춘다(다른 구간 이름·다른 점수를 쓰지 않는다)`,
-        "구성요소의 line을 근거로 왜 그런 점수인지 쉬운 말로 풀고, '조율' 요소마다 보완법을 하나씩 쓴다",
+        "components의 onScorePage는 점수 쪽에 이미 실린 문장이다. 그대로 옮기거나 같은 말로 되풀이하지 말고, 그 항목이 두 사람의 장면에서 어떻게 드러나는지 더 깊게 푼다. '조율' 항목마다 보완법을 하나씩 쓴다",
+        "항목 점수(points/max)를 본문에 다시 적지 않는다(점수 쪽에 있다)",
         "점수가 낮아도 헤어짐·멀어짐을 권하지 않는다. 점수를 스스로 깎아내리는 말(근거가 없다, 재미로 보는)도 쓰지 않는다",
       ],
     },

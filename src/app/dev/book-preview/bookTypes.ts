@@ -22,7 +22,8 @@ export type BookPage = (
   | { kind: "score"; versionLabel?: string; scoreVersion?: string; explanations?: string[]; title: string; total: number; band?: string; scores: { label: string; value: number; max: number; reason?: string }[]; verdict: string; notice: string; limitations: string[] }
   | { kind: "timeline"; title: string; years: BookYear[]; transitions: { date: string; exact?: string; before: string; after: string; page: number }[] }
   | { kind: "months"; title: string; months: BookMonth[]; map?: { label: string; months: number[] }[] }
-  | { kind: "appendix"; title: string; items: BookFeature[]; from: number; total: number }
+  /** lead: 머리말 한 줄(v5 P6c). 있으면 V4의 지장간·십이운성 안내 대신 이것만 보인다. */
+  | { kind: "appendix"; title: string; items: BookFeature[]; from: number; total: number; lead?: string }
   | { kind: "back"; title: string; finalLine: string }) & { id?: string; anchors?: string[] };
 export type BookData = {
   bookId: Book["id"]; title: string; names: string; people: BookPerson[];

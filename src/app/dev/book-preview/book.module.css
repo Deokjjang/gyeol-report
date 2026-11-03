@@ -54,7 +54,7 @@
 .pairPortraits > section { border-top: 1px solid var(--rule); padding-block: 24px; font-size: 15px; line-height: 1.9; }
 .pairPortraits p { margin-top: 12px; }
 .readerCover > div { max-width: 250px; height: 365px; margin: 0 auto 32px; }
-.readerCover h1 { font-size: 22px; }
+.readerCover h1 { font-size: 22px; word-break: keep-all; overflow-wrap: anywhere; }
 .chapterNotes { border-top: 1px solid #777; margin-top: 38px; padding-top: 18px; font-size: 11px; line-height: 1.8; }
 .chapterNotes ol { list-style: decimal; margin: 0; padding-inline-start: 22px; }
 .chapterNotes li { display: list-item; padding-inline-start: 4px; margin-bottom: 13px; }
