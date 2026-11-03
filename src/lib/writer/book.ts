@@ -217,7 +217,9 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot): BookData | null
     if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
       caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, time: c.period ? PERIOD_KO[c.period] : TIME(Number(c.key), t.thisYear), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? "큰 흐름이 바뀌는 해" : null, importance: importance(c.flow.score) }));
     const ms = pages.find((p): p is Extract<BookPage, { kind: "months" }> => p.kind === "months");
-    if (ms) ms.months = cards.filter(c => c.kind === "month").map(c => ({ month: Number(c.key.slice(-2)), title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, theme: c.keywords.join(" · "), time: c.period ? PERIOD_KO[c.period] : "", ganji: c.ganji.hanja,
+    // 달 번호는 절입 날짜의 달력 달(P6b: key의 Mxx는 절기 순서라 묘월(3월 무렵)이 "2월"로 보였다). 옛 Book도 label의 "(MM/DD 절입부터)"로 계산.
+    const calMonth = (c: V5TimelineCard) => Number(c.label.match(/\((\d{2})\/\d{2} 절입부터\)/)?.[1]) || Number(c.key.slice(-2));
+    if (ms) ms.months = cards.filter(c => c.kind === "month").map(c => ({ month: calMonth(c), title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, theme: c.keywords.join(" · "), time: c.period ? PERIOD_KO[c.period] : "", ganji: c.ganji.hanja,
       gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score) }));
   }
   if (e.pair) { const pair = pages.find((p): p is Extract<BookPage, { kind: "pair" }> => p.kind === "pair")!; pair.directions = e.pair.directions.map(x => ({ title: x.title, effect: x.effect, term: x.term, page: chapterPage.get(x.chapterN) ?? 0 })); }

@@ -153,3 +153,16 @@ describe("P6b 지침 누출(r1)", () => {
     expect(sentenceViolation("필요할 때 이 그림을 다시 떠올려 보세요.", f)).toBeNull();
   });
 });
+
+import { createV5Snapshot, projectV5Book } from "@/lib/writer/book";
+describe("P6b 세운 달 번호", () => {
+  it("화면의 달 번호는 절입 날짜의 달력 달(묘월 = 3월 무렵), 라벨도 같은 이름", () => {
+    const b = book("annual_fortune", PEOPLE.c1);
+    const cards = b.draft.timeline!.cards.filter(c => c.kind === "month");
+    expect(cards[1].label).toMatch(/^3월 무렵 辛卯\(신묘\)월/);
+    expect(cards[11].label).toMatch(/^이듬해 1월 무렵/);
+    const data = projectV5Book(createV5Snapshot({ reportId: "report_p6bmonthtest0000", createdAtIso: `${BASE}T00:00:00.000Z`, draft: b.draft, evidence: b.evidence }))!;
+    const page = data.pages.find(p => p.kind === "months") as { months: { month: number }[] };
+    expect(page.months.map(m => m.month)).toEqual([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1]);
+  });
+});

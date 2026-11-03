@@ -62,6 +62,8 @@ age?: number                             // 연 카드만: 그해 만 나이(yea
 cycles?: { ganji: string /* 한자 2자 */; years: string /* "2021~2030" */; ages: [number, number] /* 만 나이 */; tenGod: string; current: boolean }[]
 ```
 
+세운 달 카드의 `key`(`2026-M02`)는 **절기 순서**(M01 = 인월, 2월 4일 무렵 시작)이고 달력 달이 아니다. 달 이름은 `label`(예: "3월 무렵 辛卯(신묘)월 (03/05 절입부터)", 12번째는 "이듬해 1월 무렵 …")을 쓴다. 본문도 같은 이름을 쓴다.
+
 `projectV5Book`(BookData 투영)은 원고 쪽이 맞춘다: `BookYear.title ← imageLine`, `good ← todo ?? review`, `caution ← caution`, `age ← age`, `time ← period("돌아보기"·"지금"·"앞으로")`. BookMonth도 같은 방식(`title ← imageLine`, `good ← todo ?? review`, `caution ← caution`).
 
 ## 6. 장 구성 (D)
