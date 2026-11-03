@@ -92,16 +92,16 @@ describe("P3.7 원고 보강", () => {
     expect(new Set([...adj, ...far].map(p => p.split(" — ")[0])).size).toBe(adj.length + far.length);
     for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect([...adj, ...far].join(" "), bad).not.toContain(bad);
     const current = ev(career, "currentJob")!.facts.join(" ");
-    expect(current).toMatch(/지금 직업 적합도: (잘 맞는 편|절반쯤 맞는 편|다른 힘으로 하는 일)/);
+    expect(current).toMatch(/판정: (잘 맞음|보통|덜 맞음) — /); // P6b D 커리어 1
     const inv = ev(career, "investment")!.facts.join(" ");
     expect(inv).toMatch(/돈 굴리는 성향: /); expect(inv).toMatch(/운영 원칙: .*적립/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사/);
-    expect(career.chapters.find(c => c.id === "fit")!.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobFit", "jobRoles", "jobAdjacent", "jobLongterm"]);
-    expect(career.chapters.find(c => c.id === "timing-risk")!.materials.some(m => m.kind === "evidence" && m.key === "investment")).toBe(true);
+    expect(career.chapters.find(c => c.id === "jobs")!.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobRoles", "jobAdjacent", "jobLongterm"]); // P6b D 커리어 3
+    expect(career.chapters.find(c => c.id === "invest")!.materials.some(m => m.kind === "evidence" && m.key === "investment")).toBe(true);
     for (const n of ["c1", "y", "c2"]) {
       const love = briefs.find(([x]) => x === `love_marriage_child:${n}`)![1];
       const crush = ev(love, "crush")!.facts.join(" "), contact = ev(love, "contact")!.facts.join(" "), pp = ev(love, "pushPull")!.facts.join(" ");
       expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(contact).toMatch(/연락 패턴: /); expect(pp).toMatch(/밀당: /);
-      expect(love.chapters.find(c => c.id === "expression")!.title).toBe("표현하는 방식과 밀당");
+      expect(love.chapters.find(c => c.id === "push-pull")!.title).toBe("표현과 밀당"); // P6b D 연애
     }
   });
 
@@ -116,7 +116,8 @@ describe("P3.7 원고 보강", () => {
     for (const [name, b] of briefs.filter(([n]) => n.startsWith("pair"))) {
       const c = b.compatibility!;
       expect(c.dayRelations.length, name).toBeGreaterThan(0);
-      for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자 .+ ${c.b.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자 .+: `));
+      // P6b D 궁합: 글자 표기 없는 쉬운 문장(자리·관계 이름·뜻).
+      for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자(와|과) ${c.b.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자(이|가) .+ 관계예요\\.`));
     }
   });
 

@@ -301,7 +301,7 @@ function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, n
     : group === "RESOURCE" ? "올해는 공부·준비의 해: 큰 결정보다 공부와 기록을 먼저 한다" : "";
   // 원국·운으로 개인화한 원칙(P6b D 커리어): 겁재 해는 지인 권유 거절, 방합(같은 계절 세 글자)은 가족 공동 자금 규칙.
   const personal = [
-    ...(yearTg === "劫財" ? ["올해는 겁재가 들어오는 해: 지인이 권하는 투자·동업·빌려주기는 거절을 기본값으로 둔다"] : []),
+    ...(yearTg === "劫財" ? ["겁재가 들어오는 올해의 원칙: 지인이 권하는 투자·동업·빌려주기는 거절을 기본값으로 둔다"] : []),
     ...(natal.banghap ? ["원국에 방합(한 계절 세 글자가 모인 구조)이 있어 가족·가까운 사람과 돈이 한데 묶이기 쉽다: 가족 공동 자금은 누가·얼마·언제 돌려받는지 글로 정한다"] : []),
   ];
   return { invest: [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...personal, ...(year && yearTg !== "劫財" ? [year] : [])], leak: habit };

@@ -37,7 +37,7 @@ export function writerChapters(brief: Pick<Brief, "chapters">): WriterChapter[] 
     const group = byBase.get(ch.id);
     if (!group) return ch;
     const keys = group.map(c => c.id.slice(ch.id.length + 1));
-    return { ...ch, keys, perKey: Object.fromEntries(group.map((c, i) => [keys[i], c.materials.filter(m => m.kind !== "timeline")])), note: "keys마다 ### {key} 하나. targetChars는 key 하나의 분량. 간지·배지·세기 숫자는 카드가 보여 주니 본문은 해석만." };
+    return { ...ch, keys, perKey: Object.fromEntries(group.map((c, i) => [keys[i], c.materials.filter(m => m.kind !== "timeline")])), note: "keys마다 ### {key} 하나. targetChars는 key 하나의 분량. 간지·관계 표시·세기 숫자는 카드가 보여 주니 본문은 해석만." };
   });
 }
 
@@ -75,7 +75,8 @@ export function renderWriterBrief(brief: Brief): Record<string, unknown> {
     traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs")),
     shadows,
     // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
-    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji", "imageLine", "period", "todo", "review")) } } : {}),
+    // "badges"라는 키 이름이 본문 낱말 "배지"로 새어 나갔다(P6b E-6): 작가에게는 marks로 준다.
+    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => ({ ...omit(e, "colors", "ganji", "imageLine", "period", "todo", "review", "badges"), marks: e.badges })) } } : {}),
     // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).
     style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, forbidden: style.forbidden },
     // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).

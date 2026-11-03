@@ -46,7 +46,7 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
 
   it("1: 마지막 장(실행 플랜·먼저 맞출 한 가지·흐름 타는 법)은 새 특성 소개 없이 앞 장 종합, 커리어 플랜은 일·돈·공부 축", () => {
     const plan = c1Career.chapters.find(c => c.id === "plan")!;
-    expect(plan.materials.every(m => m.kind === "ref" && /^chapters\.(fit|money|study|timing-risk)$/.test(m.ref))).toBe(true);
+    expect(plan.materials.every(m => m.kind === "ref" && /^chapters\.(jobs|invest|current-fit)$/.test(m.ref))).toBe(true); // P6b D 커리어 7
     for (const [, b] of pairs) {
       const last = b.chapters.find(c => c.id === "one-thing")!;
       expect(last.materials.some(m => m.kind === "trait" && m.angle === "first"), b.compatibility!.relationshipType).toBe(false);
@@ -76,7 +76,7 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
     const stages = xMajor.timeline!.entries.flatMap(e => e.material.stage ? [e.material.stage] : []);
     expect(new Set(stages).size).toBe(stages.length);
     const next = c1Career.chart.currentDayun?.next;
-    if (next) { expect(next.reading).toBeTruthy(); expect(next.easyName).toBeTruthy(); }
+    if (next) { expect(next.reading).toBeTruthy(); expect(next.easyName).toBeUndefined(); } // P6b B-2: 그림 별명 없음
     expect(c1Career.chart.strength.reading).toBeTruthy();
   });
 
@@ -113,7 +113,7 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
     for (const [rt, b] of pairs) {
       const own = new Set(k.compatScenes.types.find(t => t.type === rt)!.topics.flatMap(t => t.scenes.map(s => s.text)));
       const rel = b.chapters.flatMap(c => c.materials).filter(m => m.kind === "rel") as { scene: string; topic: string }[];
-      expect(rel.length, rt).toBeGreaterThanOrEqual(15);
+      expect(rel.length, rt).toBeGreaterThanOrEqual(8); // P6b C-1: 절 2~3개라 관계 장면 절은 9개
       for (const r of rel) expect(own.has(r.scene), `${rt} ${r.scene}`).toBe(true);
       expect(b.chapters.flatMap(c => c.materials).some(m => (m.kind === "trait" && m.scene) || m.kind === "mbti"), rt).toBe(false);
     }

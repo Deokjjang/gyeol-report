@@ -96,7 +96,8 @@ describe("P3.6 원고 남은 문제", () => {
     const months = annual.timeline!.entries.filter(e => e.kind === "month");
     expect(months.map(e => e.when)).toEqual([...Array(8).fill("past"), "now", "future", "future", "future"]);
     expect(months[1].change?.line).toMatch(/^지난달보다 흐름 세기/);
-    expect(annual.chapters.find(c => c.id === "current-dayun")?.title).toBe("타고난 바탕 위에 올해");
+    // P6b D: 세운 2장은 영역별 설계(대운이 없으면 그 절만 빠진다).
+    expect(annual.chapters.find(c => c.id === "current-dayun")?.title).toBe("영역별 설계");
     expect(JSON.stringify(annual.timeline!.entries.flatMap(e => e.badges))).not.toMatch(/반쯤\)[^"]*완성/);
     for (const b of [career, love, annual]) {
       const firsts = new Map<string, number>();
