@@ -1,0 +1,303 @@
+{
+ "case": "me-full",
+ "label": "종합 · 장덕민(본인)",
+ "reportId": "report_3526ac6d3181494b909d193e499dbf94",
+ "status": "COMPLETED",
+ "wallMs": 88536,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 9994,
+ "chapterChars": [
+  916,
+  864,
+  922,
+  822,
+  729,
+  917,
+  700,
+  846,
+  764,
+  706,
+  510,
+  746,
+  552
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 2,
+ "byRule": {
+  "example_copy": 1,
+  "fact_partner": 1
+ },
+ "replacements": 0,
+ "warnings": 24,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 1,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "약한 소리를 하는 친구에게 해결책부터 주다 \"넌 공감을 못 해\"라는 말을 듣는 장면이 그래요.",
+   "b": "여기에 ENTJ의 해결 중심 말투가 겹치면, 약한 소리를 하는 친구에게 해결책부터 주다 \"넌 공감을 못 해\"라는 말을 듣기도 해요.",
+   "at": [
+    "6.3",
+    "11.2"
+   ],
+   "kind": "scene"
+  }
+ ],
+ "briefCopy": 0.143,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 88504,
+ "tokens": {
+  "input": 19095,
+  "output": 11332,
+  "cachedInput": 3907
+ },
+ "costUsd": 0.1519007,
+ "costKrw": 220.3,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 80052,
+   "chars": 10588,
+   "maxTokens": 22273,
+   "usage": {
+    "inputTokens": 19095,
+    "outputTokens": 11332,
+    "cachedInputTokens": 3907
+   },
+   "costUsd": 0.1519007
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 10054,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 2
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 2
+   },
+   {
+    "n": 10,
+    "count": 1
+   },
+   {
+    "n": 11,
+    "count": 1
+   },
+   {
+    "n": 12,
+    "count": 0
+   },
+   {
+    "n": 13,
+    "count": 1
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 8,
+   "rate": 0.8,
+   "terms": 10,
+   "misses": [
+    "갑신",
+    "여름의 갑목"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 35,
+  "sectionsTotal": 35,
+  "byRule": {
+   "example_copy": 1,
+   "fact_partner": 1
+  },
+  "coreImage": "한여름 도시 아스팔트 위에 선 큰 나무",
+  "edition": "제5판"
+ }
+}

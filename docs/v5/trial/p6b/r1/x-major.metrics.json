@@ -1,0 +1,203 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "reportId": "report_ffac292c05da4c4eab47476c6b8ba78a",
+ "status": "COMPLETED",
+ "wallMs": 55771,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 7096,
+ "chapterChars": [
+  749,
+  1231,
+  730,
+  3608,
+  778
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 1,
+ "byRule": {
+  "duplicate_sentence": 1
+ },
+ "replacements": 0,
+ "warnings": 34,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 4,
+ "infoByKind": {
+  "claim": 4,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "정인은 나를 낳고 돌봐 주는 기운이라, 누군가의 도움이나 배움이 닿았던 해로 읽어요.",
+   "b": "정인은 나를 낳고 돌봐 주는 기운이라 윗사람이나 스승의 도움이 닿기 좋은 해예요.",
+   "at": [
+    "1.1",
+    "4.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "편인은 나를 돕되 옆길로 끌고 가는 기운이라, 혼자 파고들고 방향을 고민하는 시간이 길었을 수 있어요.",
+   "b": "편인은 나를 돕되 옆길로 끌고 가는 기운이라 혼자 파고드는 시간이 길어져요.",
+   "at": [
+    "1.1",
+    "4.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "사주 전체의 핵심 이미지는 넓은 광장을 은은하게 밝히는 조명이에요.",
+   "b": "넓은 광장을 은은하게 밝히는 조명처럼, 당신이 쌓아 온 기록과 신뢰는 다음 대운에서 더 오래 곁을 밝혀 줄 거예요.",
+   "at": [
+    "1.2",
+    "5.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "다만 흙 기운이 이미 많은데 더 들어와 흐름은 느렸을 거예요.",
+   "b": "2026년의 겁재가 돌아오지만 이번에는 흙 기운이 이미 많은데 더 들어와 흐름이 느려요.",
+   "at": [
+    "4.2",
+    "4.14"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.168,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 55732,
+ "tokens": {
+  "input": 20189,
+  "output": 7973,
+  "cachedInput": 3907
+ },
+ "costUsd": 0.1204987,
+ "costKrw": 174.7,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 53882,
+   "chars": 7472,
+   "maxTokens": 25025,
+   "usage": {
+    "inputTokens": 20189,
+    "outputTokens": 7973,
+    "cachedInputTokens": 3907
+   },
+   "costUsd": 0.1204987
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 7195,
+  "target": [
+   14000,
+   18000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 2,
+   "rate": 0.67,
+   "terms": 3,
+   "misses": [
+    "정축"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     3,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 9,
+  "sectionsTotal": 9,
+  "byRule": {
+   "duplicate_sentence": 1
+  },
+  "coreImage": "넓은 광장을 은은하게 밝히는 조명",
+  "edition": "제5판"
+ }
+}

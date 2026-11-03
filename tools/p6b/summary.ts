@@ -17,7 +17,7 @@ import { FAMILY_MEMBER, RURAL_PROP } from "../../src/lib/writer/safety/patterns"
 import { P6B_CASES } from "./cases";
 
 const ROOT = resolve(import.meta.dirname, "../..");
-const DIR = join(ROOT, "docs/v5/trial/p6b");
+const DIR = join(ROOT, "docs/v5/trial/p6b", process.argv.includes("--round") ? process.argv[process.argv.indexOf("--round") + 1] : "");
 const BASE = process.argv.includes("--base") ? process.argv[process.argv.indexOf("--base") + 1] : "http://localhost:3100";
 type M = { case: string; label: string; reportId: string; chars: number; wallMs: number; costUsd: number; tokens: { input: number; cachedInput: number; output: number }; deletions: number; deterministicChapters: string[]; priorBooks: number; fallback: unknown; writer?: { model: string } | null;
   p6b: { chars: number; target: [number, number]; inTarget: boolean; similes: { n: number; count: number }[]; maxSimile: number; chaptersOverSimile: number; banned: Record<string, number>; bannedSamples: string[]; termFirst: { terms: number; ok: number; rate: number; misses: readonly string[] } | null; subheadingsOk: number; structure: unknown[]; paragraphsOk: number; sectionsTotal: number; byRule: Record<string, number>; coreImage: string } };

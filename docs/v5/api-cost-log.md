@@ -32,8 +32,15 @@
 | 2026-10-30 20:30 | P6 궁합 연애 · 하람×서윤 (B) | openai/gpt-6.1-terra | 11241 | 3099 | 5015 | 0.03647095 | complete | req_caac0063d25748948ab1cd6a79a03409 | 1.29936745 |
 | 2026-10-30 20:32 | P6 대운 · 수진(X) (B) | openai/gpt-6.1-terra | 13370 | 3099 | 5968 | 0.04336495 | complete | req_bb617bc64a944d09b84cc176bf487545 | 1.34273240 |
 | 2026-10-30 20:33 | P6 세운 2026 · 서윤(c2, 대략 오시) (B) | openai/gpt-6.1-terra | 12909 | 3099 | 4271 | 0.03441895 | complete | req_7593884b68464193a45b220261ce20fd | 1.37715135 |
+| 2026-11-03 11:50 | P6b 종합 · 하람(c1) | anthropic/claude-sonnet-5-5 | 22167 | 0 | 11940 | 0.16568750 | complete | req_011CgfERPAArwJqjNsMtwzfk | 1.54283885 |
+| 2026-11-03 11:51 | P6b 커리어 · 하람(c1) | anthropic/claude-sonnet-5-5 | 14094 | 3907 | 8759 | 0.11616870 | complete | req_011CgfEYJogWozSL7n6SZfhp | 1.65900755 |
+| 2026-11-03 11:52 | P6b 연애 · 도현(Y) | anthropic/claude-sonnet-5-5 | 13492 | 3907 | 7997 | 0.10734470 | complete | req_011CgfEcyaRtyJAVqY5khGf6 | 1.76635225 |
+| 2026-11-03 11:53 | P6b 궁합 연애 · 하람×서윤 | anthropic/claude-sonnet-5-5 | 17976 | 3907 | 9691 | 0.13325270 | complete | req_011CgfEhMKkFcwsfaSjYCVB1 | 1.89960495 |
+| 2026-11-03 11:54 | P6b 대운 · 수진(X) | anthropic/claude-sonnet-5-5 | 20189 | 3907 | 7973 | 0.12049870 | complete | req_011CgfEnTwWCBLSM5vePc8R4 | 2.02010365 |
+| 2026-11-03 11:55 | P6b 세운 2026 · 서윤(c2, 대략 오시) | anthropic/claude-sonnet-5-5 | 18438 | 3907 | 7353 | 0.11079670 | complete | req_011CgfEraj98tRAA3n34jpKq | 2.13090035 |
+| 2026-11-03 11:56 | P6b 종합 · 장덕민(본인) | anthropic/claude-sonnet-5-5 | 19095 | 3907 | 11332 | 0.15190070 | complete | req_011CgfEvXdidGaQK4gc7AwC9 | 2.28280105 |
 
-누적 합계: **$1.37715135** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$2.28280105** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.

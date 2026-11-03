@@ -145,3 +145,11 @@ describe("P6b 같은 고객의 다른 상품(E-1)", () => {
     expect(await priorBooks({ call: async () => { throw new Error("db"); } } as never, "u1", me)).toEqual({ scenes: [], sentences: [], books: 0 });
   });
 });
+
+describe("P6b 지침 누출(r1)", () => {
+  it("지침을 그대로 말하는 문장은 지운다", () => {
+    const f: SafetyFacts = { birthTimeKnown: true, mbti: "ENTJ", relationship: "single", children: "unknown", job: "employed" };
+    expect(sentenceViolation("이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요.", f)).toBe("internal_label");
+    expect(sentenceViolation("필요할 때 이 그림을 다시 떠올려 보세요.", f)).toBeNull();
+  });
+});

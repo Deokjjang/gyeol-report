@@ -61,6 +61,8 @@ const POLE_LABELS = ontology.dimensions.flatMap(d => [d.poles.plus.label, d.pole
 const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const INTERNAL_LABEL = new RegExp([
   "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
+  // 지침을 그대로 말하는 문장(P6b r1: "이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요").
+  "필요할 때만 (짧게 |한 번씩 )?(되짚|꺼내|꺼낼|부르)", "(이|그) 그림은 (뒤에서|앞으로|이 책에서)", "뒤에서 (다시 )?(되짚|꺼내|꺼낼)겠?",
   `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
 ].join("|"));
 /** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */

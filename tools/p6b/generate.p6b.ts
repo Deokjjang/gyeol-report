@@ -78,7 +78,8 @@ test("P6b 실호출 원고(Sonnet 5.5)", async () => {
     return action === "library" && Array.isArray(r.items) ? { ...r, items: (r.items as { reportId: string }[]).filter(x => runIds.has(x.reportId)) } : r;
   } };
   const consent = { policyVersions: CHECKOUT_POLICY_VERSIONS, assertions: { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, termsAccepted: true, privacyAccepted: true, refundAccepted: true, age14OrOlder: true } };
-  const dir = join(ROOT, "docs/v5/trial/p6b", DRY ? "dry" : INJECT ? "inject" : ""); mkdirSync(dir, { recursive: true });
+  // P6B_ROUND=r2 → docs/v5/trial/p6b/r2(회차별 보관). 비우면 p6b 바로 아래.
+  const dir = join(ROOT, "docs/v5/trial/p6b", DRY ? "dry" : INJECT ? "inject" : process.env.P6B_ROUND ?? ""); mkdirSync(dir, { recursive: true });
   const { k } = writerKnowledge();
 
   for (const c of P6B_CASES.filter(x => !only || only.has(x.id))) {
@@ -109,7 +110,7 @@ test("P6b 실호출 원고(Sonnet 5.5)", async () => {
     const snap = (await db.from("paid_report_snapshots").select("status,snapshot_json").eq("report_id", reportId).single()).data as { status: string; snapshot_json: { draft: V5BookDraft; evidencePacket: V5Evidence } } | null;
     const meta = snap?.snapshot_json.evidencePacket.meta;
     const rows = (meta?.calls ?? []).filter(x => x.requestId || x.usage.outputTokens || x.error).map(x =>
-      `| ${kst()} | P6b ${c.label}${INJECT ? " 실패 주입" : ""} | ${x.provider ?? A.provider}/${x.model ?? A.model} | ${x.usage.inputTokens} | ${x.usage.cachedInputTokens} | ${x.usage.outputTokens} | ${(x.costUsd ?? 0).toFixed(8)} | ${x.finish}${x.error ? ` (${x.error})` : ""} | ${x.requestId ?? "-"} |`);
+      `| ${kst()} | P6b ${c.label}${INJECT ? " 실패 주입" : ""}${process.env.P6B_ROUND ? ` ${process.env.P6B_ROUND}` : ""} | ${x.provider ?? A.provider}/${x.model ?? A.model} | ${x.usage.inputTokens} | ${x.usage.cachedInputTokens} | ${x.usage.outputTokens} | ${(x.costUsd ?? 0).toFixed(8)} | ${x.finish}${x.error ? ` (${x.error})` : ""} | ${x.requestId ?? "-"} |`);
     if (rows.length && !DRY) appendCostRows(rows);
     if (!snap) { writeFileSync(join(dir, `${c.id}.metrics.json`), JSON.stringify({ case: c.id, reportId, error: result.code ?? "NO_SNAPSHOT", calls: meta?.calls }, null, 1) + "\n"); console.log(c.id, "발행 실패", result.code); continue; }
     const draft = snap.snapshot_json.draft;
