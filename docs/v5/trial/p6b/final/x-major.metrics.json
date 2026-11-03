@@ -1,0 +1,233 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "reportId": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+ "status": "COMPLETED",
+ "wallMs": 103817,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 13055,
+ "chapterChars": [
+  1203,
+  1693,
+  1183,
+  7823,
+  1153
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 48,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 12,
+ "infoByKind": {
+  "claim": 11,
+  "scene": 0,
+  "advice": 1
+ },
+ "infoPairs": [
+  {
+   "a": "오래 연락이 끊겼던 누군가가 먼저 안부를 묻거나, 필요한 사람을 소개해 준 일이 있었는지 짚어 보세요.",
+   "b": "오래 연락을 못 한 은사님이나 선배가 먼저 안부를 묻고, 필요한 사람을 소개해 준 일이 있었는지 떠올려 보세요.",
+   "at": [
+    "1.1",
+    "4.2"
+   ],
+   "kind": "advice"
+  },
+  {
+   "a": "하며 자료를 찾다가 결정이 한 달쯤 늦어진 적이 있었을지도 몰라요.",
+   "b": "하며 자료를 찾다가 결정이 한 달쯤 늦어졌던 장면이 이 해의 모습이에요.",
+   "at": [
+    "1.1",
+    "4.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 크게 움직이던 돈의 결이 안정되는 쪽으로 바뀝니다.",
+   "b": "돈에서는 정재 대운으로 넘어가는 문턱이라, 크게 움직이던 돈의 결이 안정되는 쪽으로 방향을 틀 준비를 하세요.",
+   "at": [
+    "3.1",
+    "4.10"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 달·날의 축토와 파(破)가 생겨 묵은 일이 다시 올라오고, 글자끼리 서로 눌러 손봐야 할 일이 드러나는 해였습니다.",
+   "b": "태어난 달·날과 축진파가 생겨 묵은 일이 올라오고, 글자끼리 서로 눌러 손봐야 할 일이 드러나는 해예요.",
+   "at": [
+    "4.2",
+    "4.14"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 흐름은 보통이었고, 태어난 달·날과 사유축 금국이 반쯤 모여 정리와 결단의 기운이 조금 붙었어요.",
+   "b": "이 해도 공망에 들어 기대를 낮추는 편이 좋지만, 태어난 해와 진유합이 되어 틀이 잡히고, 태어난 달·날과는 사유축 금국이 반쯤 모여 정리와 결",
+   "at": [
+    "4.3",
+    "4.7"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "일에서는 비슷한 경력의 사람과 같은 자리를 두고 은근한 신경전이 생길 수 있어요.",
+   "b": "일에서는 비슷한 경력의 사람이 들어와 같은 자리를 두고 은근한 신경전이 시작되는 모습이 어울려요.",
+   "at": [
+    "4.4",
+    "4.14"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "하지만 이미 흙이 많은 사주에 흙이 더 들어오는 데다 태어난 날과 달 글자와 부딪혀서 흐름은 활발한 쪽이에요.",
+   "b": "이미 흙이 많은 사주에 흙이 더 들어와도 활발한 흐름이라, 압박과 여유가 함께 오는 해입니다.",
+   "at": [
+    "4.5",
+    "4.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "하지만 이미 흙이 많은 사주에 흙이 더 들어오는 데다 태어난 날과 달 글자와 부딪혀서 흐름은 활발한 쪽이에요.",
+   "b": "이미 흙이 많은 사주에 흙이 더 들어와서 흐름은 느린 편입니다.",
+   "at": [
+    "4.5",
+    "4.14"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.129,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 103711,
+ "tokens": {
+  "input": 20215,
+  "output": 14294,
+  "cachedInput": 4017
+ },
+ "costUsd": 0.1837717,
+ "costKrw": 266.5,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 96272,
+   "chars": 13434,
+   "maxTokens": 31282,
+   "usage": {
+    "inputTokens": 20215,
+    "outputTokens": 14294,
+    "cachedInputTokens": 4017
+   },
+   "costUsd": 0.1837717
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 13175,
+  "target": [
+   14000,
+   18000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   }
+  ],
+  "maxSimile": 0,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 3,
+   "rate": 1,
+   "terms": 3,
+   "misses": []
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 9,
+  "sectionsTotal": 9,
+  "byRule": {},
+  "coreImage": "넓은 광장을 은은하게 밝히는 조명",
+  "edition": "제5판"
+ }
+}

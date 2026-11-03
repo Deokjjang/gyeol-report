@@ -1,0 +1,200 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "reportId": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+ "status": "COMPLETED",
+ "wallMs": 66173,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 9299,
+ "chapterChars": [
+  1018,
+  1123,
+  5277,
+  911,
+  970
+ ],
+ "chapters": 5,
+ "deterministicChapters": [
+  "5:too_short:539<540"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 37,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 3,
+ "infoByKind": {
+  "claim": 3,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "일에서는 내 이름을 걸고 직접 하려는 마음이 커지고, 돈에서는 나눠 내는 돈에서 내 몫이 줄기 쉬워요.",
+   "b": "일에서는 내 이름을 걸고 직접 하려는 마음이 커지고, 돈에서는 같이 쓰는 돈에서 내 몫이 줄기 쉬워요.",
+   "at": [
+    "3.1",
+    "3.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "관계에서는 동료가 경쟁자처럼 느껴지기도 하고, 컨디션은 체력이 받쳐 줄 때 고집이 힘이 됩니다.",
+   "b": "관계에서는 동료가 경쟁자처럼 느껴지기 쉽고, 컨디션은 체력이 받쳐 줄 때 고집이 힘이 돼요.",
+   "at": [
+    "3.1",
+    "3.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "일에서는 경쟁이 붙는 일에서 힘이 났고, 돈에서는 지인을 통한 지출이 늘기 쉬웠어요.",
+   "b": "일에서는 경쟁이 붙는 일에서 힘이 나고, 돈에서는 지인을 통한 지출이나 빌려주기가 늘기 쉬워요.",
+   "at": [
+    "3.2",
+    "3.12"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.205,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 66145,
+ "tokens": {
+  "input": 25299,
+  "output": 9988,
+  "cachedInput": 0
+ },
+ "costUsd": 0.152533,
+ "costKrw": 221.2,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 64114,
+   "chars": 9263,
+   "maxTokens": 28171,
+   "usage": {
+    "inputTokens": 25299,
+    "outputTokens": 9988,
+    "cacheWriteTokens": 4110,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.152533
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-16",
+ "knowledgeVersion": "knowledge-v5:291b1115d654",
+ "p6b": {
+  "chars": 9451,
+  "target": [
+   12000,
+   15000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 2
+   },
+   {
+    "n": 4,
+    "count": 2
+   },
+   {
+    "n": 5,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 3,
+   "rate": 0.5,
+   "terms": 6,
+   "misses": [
+    "천문성",
+    "편인",
+    "정관"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   }
+  ],
+  "subheadingsOk": 3,
+  "paragraphsOk": 8,
+  "sectionsTotal": 14,
+  "byRule": {},
+  "coreImage": "용광로 불 속에서 달궈지는 쇳덩이",
+  "edition": "제5판"
+ }
+}

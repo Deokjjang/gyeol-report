@@ -1,0 +1,332 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "reportId": "report_400deb1a454a4d938a5131324cb4f20e",
+ "status": "COMPLETED",
+ "wallMs": 135855,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 12695,
+ "chapterChars": [
+  1132,
+  1160,
+  1081,
+  1023,
+  702,
+  1158,
+  831,
+  1146,
+  1039,
+  1025,
+  720,
+  1005,
+  673
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 3,
+ "byRule": {
+  "example_copy": 1,
+  "internal_term": 1,
+  "duplicate_sentence": 1
+ },
+ "replacements": 0,
+ "warnings": 34,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 4,
+ "infoByKind": {
+  "claim": 4,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "그래서 당신에게는 한 번 맡은 일을 조용히 오래 이어 가며 눈에 보이는 결과물로 쌓는 힘이 있습니다.",
+   "b": "그래서 당신에게는 한번 맡은 일을 끝까지 끌고 가는 힘이 있어요.",
+   "at": [
+    "1.1",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "또 식신은 기분이 표정에 바로 묻어나는 쪽이고 ENTJ는 속상해도 티를 내지 않는 쪽이라, 가까운 사람은 당신의 속을 읽기 전에 한 박자 헤매기",
+   "b": "또 식신은 기분이 표정에 바로 나오고, ENTJ는 속상해도 티를 내지 않는 쪽이라 표현 방식도 두 갈래예요.",
+   "at": [
+    "2.2",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "또 이 구조는 같은 뿌리를 가진 사람들을 묶는 힘이어서, 같은 분야를 공부하는 모임 안에서 든든한 편이 생기기도 합니다.",
+   "b": "방합 해자축 수방은 같은 뿌리를 가진 사람들을 묶는 힘이에요.",
+   "at": [
+    "4.2",
+    "11.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "백호대살과 ENTJ는 같은 쪽으로 겹쳐서, 둘 다 결론부터 말하고 틀린 것은 그 자리에서 짚는 편입니다.",
+   "b": "백호대살과 ENTJ는 같은 쪽으로 겹쳐서, 결론부터 말하고 틀린 것은 그 자리에서 짚어요.",
+   "at": [
+    "6.2",
+    "12.2"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.154,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 135755,
+ "tokens": {
+  "input": 22281,
+  "output": 14441,
+  "cachedInput": 0
+ },
+ "costUsd": 0.1909805,
+ "costKrw": 276.9,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 102185,
+   "chars": 13377,
+   "maxTokens": 27841,
+   "usage": {
+    "inputTokens": 22281,
+    "outputTokens": 14441,
+    "cacheWriteTokens": 4017,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.1909805
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 12752,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 1
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 1
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 5
+   },
+   {
+    "n": 9,
+    "count": 0
+   },
+   {
+    "n": 10,
+    "count": 0
+   },
+   {
+    "n": 11,
+    "count": 0
+   },
+   {
+    "n": 12,
+    "count": 0
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 5,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 10,
+   "rate": 0.91,
+   "terms": 11,
+   "misses": [
+    "겨울의 정화"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 35,
+  "sectionsTotal": 35,
+  "byRule": {
+   "example_copy": 1,
+   "internal_term": 1,
+   "duplicate_sentence": 1
+  },
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ }
+}

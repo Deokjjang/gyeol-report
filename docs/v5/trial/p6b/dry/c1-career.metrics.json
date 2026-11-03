@@ -1,0 +1,338 @@
+{
+ "case": "c1-career",
+ "label": "커리어 · 하람(c1)",
+ "reportId": "report_543f3e7e469f454dadbc875a0f298261",
+ "status": "COMPLETED",
+ "wallMs": 4190,
+ "fallback": null,
+ "priorBooks": 4,
+ "chars": 8707,
+ "chapterChars": [
+  1025,
+  969,
+  1024,
+  905,
+  914,
+  902,
+  977,
+  942,
+  1049
+ ],
+ "chapters": 9,
+ "deterministicChapters": [
+  "1:missing",
+  "2:missing",
+  "3:missing",
+  "4:missing",
+  "5:missing",
+  "6:missing",
+  "7:missing",
+  "8:missing",
+  "9:missing"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 540,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 517,
+ "infoByKind": {
+  "claim": 425,
+  "scene": 36,
+  "advice": 56
+ },
+ "infoPairs": [
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "1.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "1.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "6.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "8.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "추운 환경에서 더 밝아지는 사람입니다.",
+   "b": "추운 환경에서 더 밝아지는 사람입니다.",
+   "at": [
+    "1.1",
+    "2.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "추운 환경에서 더 밝아지는 사람입니다.",
+   "b": "추운 환경에서 더 밝아지는 사람입니다.",
+   "at": [
+    "1.1",
+    "3.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "추운 환경에서 더 밝아지는 사람입니다.",
+   "b": "추운 환경에서 더 밝아지는 사람입니다.",
+   "at": [
+    "1.1",
+    "4.2"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.005,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 4145,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cachedInput": 0
+ },
+ "costUsd": 0,
+ "costKrw": 0,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "error",
+   "error": "dry",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 19970,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  }
+ ],
+ "writer": null,
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 8856,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 0,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 6,
+   "misses": [
+    "정축",
+    "식신",
+    "음착양차살",
+    "반안살",
+    "백호대살",
+    "겁재"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     1,
+     3,
+     1,
+     14
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     2,
+     1,
+     1,
+     12
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     13
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     3,
+     1,
+     1,
+     10
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     12
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     1,
+     3,
+     1,
+     11
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     12
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 5,
+    "paragraphs": [
+     2,
+     1,
+     1,
+     1,
+     12
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     12
+    ]
+   }
+  ],
+  "subheadingsOk": 0,
+  "paragraphsOk": 8,
+  "sectionsTotal": 45,
+  "byRule": {},
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ }
+}
