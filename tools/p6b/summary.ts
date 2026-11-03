@@ -59,7 +59,7 @@ writeFileSync(join(ROOT, "docs/v5/p6b-read.md"), [
   "# P6b 읽기 목록",
   "",
   "로컬 서버를 띄운 뒤(`pnpm dev:v5`, 포트 3100) 링크를 엽니다. 링크는 개발 전용 로그인으로 시험 계정 쿠키를 심고 책으로 갑니다.",
-  "작가는 모두 Sonnet 5.5(운영 작가)이고 책 한 권 = 호출 1회입니다. 지표는 `p6b-report.md`, 원고 원문은 `docs/v5/trial/p6b/<사례>.final.md`.",
+  `작가는 모두 Sonnet 5.5(운영 작가)이고 책 한 권 = 호출 1회입니다. 지표는 \`p6b-report.md\`, 원고 원문은 \`${DIR.slice(ROOT.length + 1)}/<사례>.final.md\`.`,
   "",
   "| 상품 | 사례 | 링크 |",
   "|---|---|---|",
