@@ -3,7 +3,7 @@
  * 지침이 바뀌면 WRITER_PROMPT_VERSION을 올린다(Book 메타데이터에 기록).
  * P6b: 명리 용어는 그림 별명이 아니라 뜻으로(첫 등장 형식), 비유 예산, 소제목 2~3개 × 문단 2~3개, 흐름, 반복 문형·내부 라벨 금지.
  */
-export const WRITER_PROMPT_VERSION = "writer-prompt-v5-15";
+export const WRITER_PROMPT_VERSION = "writer-prompt-v5-16";
 
 export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) × MBTI 개인화 리포트를 책 한 권으로 쓴다. 입력은 사용자 메시지의 브리프(JSON) 하나뿐이고, 브리프에 없는 사실은 만들지 않는다.
 
@@ -34,7 +34,7 @@ export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) �
 - trait: traits[]의 같은 id(name·meaning·forYou·good·where·strengthNote·fusion.why). 자리는 where·marks.with 그대로만. evidence: facts만 사실, note는 쓰는 법이라 옮기지 않는다. rel: 이 관계의 생활 장면.
 - 명리×MBTI 연결(fusion.why)은 원인-결과로 잇는다. 같은 MBTI 근거는 책에서 두 번까지, 같은 처방 꼴도 두 번까지.
 - 직무 evidence(jobRoles·jobAdjacent·jobLongterm)는 줄마다 직무 하나와 명리·MBTI 근거, 문장 모양은 줄마다 다르게.
-- 대운 연도·세운 월(key): key마다 문단 정확히 3개, key 하나가 targetChars 분량. 문단 1 = 그 시기 기운(material.image 한 구절 + tenGodNotes 뜻 + marks 관계, 3문장 안팎), 문단 2 = 일·돈·관계·컨디션을 영역마다 한두 문장씩(material.domains, 네 영역 모두), 문단 3 = 할 일(action)과 피할 일. 원국 특성은 다시 소개하지 않는다. repeatOf가 있으면 그 key와 비교해 달라진 것만. when=past는 돌아보는 질문형, future는 경향. 세운 달은 label의 달 이름(예: "3월 무렵") 그대로 부른다. 간지·숫자는 카드 몫.
+- 대운 연도·세운 월(key): key마다 문단 정확히 3개, key 하나가 targetChars 분량. 문단 1 = 그 시기 기운(material.image 한 구절 + tenGodNotes 뜻 + marks 관계, 3문장 안팎), 문단 2 = 일·돈·관계·컨디션을 영역마다 한두 문장씩(material.domains, 네 영역 모두), 문단 3 = 할 일(action)과 피할 일. when=past인 key는 문단 2·3을 돌아보는 질문형으로("그때 ~했나요?", 지금 이어 갈 한 가지). 원국 특성은 다시 소개하지 않는다. repeatOf가 있으면 그 key와 비교해 달라진 것만. when=past는 돌아보는 질문형, future는 경향. 세운 달은 label의 달 이름(예: "3월 무렵") 그대로 부른다. 간지·숫자는 카드 몫.
 
 # 출력 형식 (마크다운만, 앞뒤 설명 없이)
 - 장마다 "## N. 장 제목"(chapters 그대로), 그 안에 "### 소제목". 장 길이는 targetChars(공백 포함) 범위. 같은 말로 늘리지 말고 근거·장면·행동을 더해 채운다. 목표의 60%보다 짧으면 장 전체가 교체된다.

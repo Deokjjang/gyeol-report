@@ -1,0 +1,233 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "reportId": "report_952482e58d954ce4b5499cca1251ae97",
+ "status": "COMPLETED",
+ "wallMs": 59837,
+ "fallback": null,
+ "priorBooks": 1,
+ "chars": 8049,
+ "chapterChars": [
+  1025,
+  1089,
+  4367,
+  986,
+  582
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 31,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 7,
+ "infoByKind": {
+  "claim": 7,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "마감이 겹치면 일마다 포기할 수 없는 것 하나만 표시하고 나머지 분량은 줄이세요.",
+   "b": "해 볼 일은 마감이 겹치면 일마다 포기할 수 없는 것 하나만 표시하고 나머지 분량을 줄이는 거예요.",
+   "at": [
+    "2.1",
+    "3.7"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "컨디션은 압박이 쌓여 회복 시간이 필요해요.",
+   "b": "관계에서는 윗사람이나 규칙과 부딪치기 쉽고, 컨디션은 압박이 쌓여 회복 시간이 필요합니다.",
+   "at": [
+    "2.1",
+    "3.7"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "쉬는 날을 달력에 먼저 적어 두는 것이 가장 쉬운 회복 루틴이에요.",
+   "b": "한 번에 한 가지씩 끝내고, 쉬는 날을 달력에 먼저 적어 두는 것입니다.",
+   "at": [
+    "2.1",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "일에서는 내 이름을 걸고 직접 하려는 마음이 커져요.",
+   "b": "일에서는 내 이름을 걸고 직접 하려는 마음이 커지고, 돈에서는 같이 쓰는 돈에서 내 몫이 줄기 쉬워요.",
+   "at": [
+    "3.1",
+    "3.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "관계에서는 동료가 경쟁자처럼 느껴질 수 있고, 컨디션은 체력이 받쳐 줄 때 고집이 힘이 돼요.",
+   "b": "관계에서는 동료가 경쟁자처럼 느껴지기도 하고, 컨디션은 체력이 받쳐 줄 때 고집이 힘이 됩니다.",
+   "at": [
+    "3.1",
+    "3.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "돈에서는 지인을 통한 지출이나 빌려주기가 늘기 쉽고, 관계에서는 사람이 몰리는 만큼 비교도 따라옵니다.",
+   "b": "관계에서는 사람이 몰리는 만큼 비교도 따라오고, 컨디션은 무리해서 이기려다 지치기 쉽습니다.",
+   "at": [
+    "3.2",
+    "3.12"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "컨디션은 무리해서 이기려다 지치기 쉬워요.",
+   "b": "관계에서는 사람이 몰리는 만큼 비교도 따라오고, 컨디션은 무리해서 이기려다 지치기 쉽습니다.",
+   "at": [
+    "3.2",
+    "3.12"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.133,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 59812,
+ "tokens": {
+  "input": 21110,
+  "output": 9045,
+  "cachedInput": 4057
+ },
+ "costUsd": 0.1330757,
+ "costKrw": 193,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 57852,
+   "chars": 8386,
+   "maxTokens": 28171,
+   "usage": {
+    "inputTokens": 21110,
+    "outputTokens": 9045,
+    "cachedInputTokens": 4057
+   },
+   "costUsd": 0.1330757
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:291b1115d654",
+ "p6b": {
+  "chars": 8199,
+  "target": [
+   12000,
+   15000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 2
+   },
+   {
+    "n": 4,
+    "count": 2
+   },
+   {
+    "n": 5,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 1,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [
+   "문 닫는 찻집(과숙살)은 손님이 다 떠난 뒤 혼자 남아 의자를 테이블 위에 올리는 찻집 주인 같은 기운입니다."
+  ],
+  "termFirst": {
+   "ok": 1,
+   "rate": 0.2,
+   "terms": 5,
+   "misses": [
+    "과숙살",
+    "편인",
+    "정관",
+    "경진"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 11,
+  "sectionsTotal": 11,
+  "byRule": {},
+  "coreImage": "용광로 불 속에서 달궈지는 쇳덩이",
+  "edition": "제5판"
+ }
+}

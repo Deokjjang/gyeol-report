@@ -46,8 +46,12 @@
 | 2026-11-03 12:05 | P6b 대운 · 수진(X) r2 | anthropic/claude-sonnet-5-5 | 20215 | 4017 | 14294 | 0.18377170 | complete | req_011CgfFZsVr11L1PUduhMp7Y | 3.02997235 |
 | 2026-11-03 12:06 | P6b 세운 2026 · 서윤(c2, 대략 오시) r2 | anthropic/claude-sonnet-5-5 | 18464 | 4017 | 8772 | 0.12504970 | complete | req_011CgfFhZKBV7LfvkEt7U5pH | 3.15502205 |
 | 2026-11-03 12:08 | P6b 종합 · 장덕민(본인) r2 | anthropic/claude-sonnet-5-5 | 19099 | 4017 | 11366 | 0.15225970 | complete | req_011CgfFnZmMQUmkrui1JkRwT | 3.30728175 |
+| 2026-11-03 12:13 | P6b 커리어 · 하람(c1) r3 | anthropic/claude-sonnet-5-5 | 19831 | 0 | 10620 | 0.14789050 | complete | req_011CgfGBv38uLFcBrt71fEnT | 3.45517225 |
+| 2026-11-03 12:14 | P6b 연애 · 도현(Y) r3 | anthropic/claude-sonnet-5-5 | 16452 | 4057 | 9874 | 0.13204970 | complete | req_011CgfGJJeMGzX5PSYaDCix6 | 3.58722195 |
+| 2026-11-03 12:15 | P6b 궁합 연애 · 하람×서윤 r3 | anthropic/claude-sonnet-5-5 | 18063 | 4057 | 11960 | 0.15613170 | complete | req_011CgfGPrbMWLZ7KX1ZHeXgh | 3.74335365 |
+| 2026-11-03 12:16 | P6b 세운 2026 · 서윤(c2, 대략 오시) r3 | anthropic/claude-sonnet-5-5 | 21110 | 4057 | 9045 | 0.13307570 | complete | req_011CgfGW3gXJQ3FbqpkAAiG5 | 3.87642935 |
 
-누적 합계: **$3.30728175** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$3.87642935** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.
