@@ -23,6 +23,6 @@
 - [x] 3a 브리프·스냅샷·점수 쪽·결정론 작가·안전망(구간 이름 기준)·작가 지침 v5-17
 - [x] 3 점수 쪽 화면·브리프(onScorePage) — 커밋 525aa62f
 - [x] 4 작은 화면 수정 a~d — 같은 커밋. d: 왼쪽 굵은 줄 = `data-impact=HIGH` = v5 카드 흐름 세기 4 이상(`writer/book.ts` importance) → 뜻이 분명해 범례 한 줄(v5 표만)
-- [ ] 5 시험·캡처·보고·병합
+- [x] 5 시험·캡처·보고 — tsc·lint·build 0, 신규 실패 0(잠금 재기록 뒤), 캡처 요청 외 14쪽 바이트 동일. 보고 `docs/v5/p6c-score-report.md`
   - 캡처용 로컬 Book(결정론 원고, 비용 0): `tools/p6c-score/books.p6c.ts` → `docs/v5/ui-p6c/books.json`
   - 캡처: before = 기준 트리(v5-p6b-ui, bcef108a) dev 3300, after = 이 브랜치 dev 3400, `tools/p6c-score/capture.mjs`

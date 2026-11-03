@@ -70,3 +70,10 @@
 - 방법: `locks.json`을 비우고 잠금을 쓰는 시험 19개 파일 전체를 `V5_LOCK_RECORD=1 --no-file-parallelism`으로 다시 기록했다(키가 이미 있으면 `V5_LOCK_CONFLICT`로 멈추므로 덮어쓰기 대신 처음부터). 385/385 PASS.
 - 결과: 키 250 → 255. 같은 값 154, 값 변경 95, 새 키 6(전에는 과거값과 같았던 MBTI 표·연애 묶음 등), 빠진 키 1(이번 기록 실행에서 쓰이지 않음 — 새 overlay로 일반 실행 시 잠금 시험은 기준선과 같은 결과).
 - 함께 바뀐 해시 기록: 원본 파일·leaf·record 해시가 `docs/validation`·`src`·`tests`의 출처 기록에 사슬로 걸려 있어, 각 파일이 가졌던 모든 해시 → 현재 해시로 고정점까지 기계적으로 바꿨다(기록의 문장·이름은 그대로). 예외 1곳: `v4-mbti-16type-knowledge-depth-01/report-use-cases-audit.json`의 ENTJ 안내 미러(원본과 같아야 하는 잠금 값)를 원본과 함께 "지휘관, 전략 지휘관"으로.
+
+## P6c 재기록 (2026-11-03, 브랜치 `v5/p6c-score`)
+
+- **사유: 만세력 보정 문구 변경**(사용자 결정, 모든 Book). `solarTimeCorrectionNote`가 "기준 경도 동경 127.5°로 시간 보정 -30분 적용" → "태양시 기준 · 30분 보정 (09:30 → 09:00)". 이 문구는 Book을 만들 때 사람 표(`timeCorrectionNote`)에 들어가므로 새로 만드는 V2/V4 출력의 잠금 값이 바뀐다. 저장된 Book은 그대로다. 품질 승인이 아니다.
+- 원인 확인: 보정 문구만 예전 것으로 되돌리면 `v2Regression`·`careerQuality`가 기준 트리(bcef108a)와 같은 결과(실패 0)였다. 새 실패 36건은 모두 `expectLock`이었다.
+- 방법: P3.8과 같다. `locks.json`을 비우고 잠금을 쓰는 시험 19개 파일을 `V5_LOCK_RECORD=1 --no-file-parallelism`으로 다시 기록했다. 385/385 PASS.
+- 결과: 키 255 → 255. 같은 값 230, 값 변경 25, 새 키 0, 빠진 키 0.
