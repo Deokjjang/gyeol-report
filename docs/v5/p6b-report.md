@@ -12,7 +12,7 @@
 | D 상품별 핵심 설계 | PASS(설계·원고 반영) · UNVERIFIED(독자 판단) | 장 질문·근거를 설계대로 바꿨고 원고에 그대로 나온다. 재미·납득은 읽기 몫 |
 | E 결함 11 | PASS | 11개 모두 코드·데이터 수정 + 단위 시험(`tests/unit/writer/p6b.test.ts` 등) |
 | F 시험 7권 | PASS(생성·지표) | 7권 모두 발행, 지표 아래 |
-| G 게이트 | 아래 "검증" | 지식 lint `--strict` 0/0 · tsc 0 · eslint(변경 파일) 0 · 전체 테스트 기준선 비교 |
+| G 게이트 | PASS | 지식 lint `--strict` 0/0 · tsc 0 · eslint(변경 파일) 0 · 전체 테스트 신규 실패 0 · v5/main 병합 |
 
 API: Anthropic **$2.6518 / 상한 $3**(19호출), OpenAI **$0.0433 / 상한 $0.2**(1호출). 모든 호출은 `api-cost-log.md`에 한 줄씩("P6b").
 
@@ -86,8 +86,9 @@ API: Anthropic **$2.6518 / 상한 $3**(19호출), OpenAI **$0.0433 / 상한 $0.2
 ## 검증
 
 - 지식 lint `--strict` 0 이슈/0 경고, `tsc --noEmit` 0, eslint(변경 파일) 0.
-- 집중 테스트: brief·writer·llm·payment(v5 워커) 통과(writer 118, brief 88, P6b 전용 24 포함).
-- 전체 테스트: 깨끗한 v5/main(bace26c8)과 사례 단위 비교 — 결과는 아래 "전체 테스트" 줄.
+- 집중 테스트: brief 88·writer 118(P6b 24 포함)·llm·payment(v5 워커) 통과.
+- 전체 테스트(병렬): v5/main(bace26c8) 31,120건 중 실패 822, v5/p6b 31,151건 중 실패 829. 사례 단위로 v5/p6b에만 있는 실패 19건은 세 파일(manualReview 15·protected-staging/isolation 2·actualCalculationSemanticBridge 2) — 기준 실행에서 앞의 둘은 부하로 건너뛰어졌던 파일이다. 세 파일을 두 트리에서 따로 돌리면 결과가 같다(manualReview 19 통과·3 실패, isolation 2 실패, semanticBridge 23 통과·35 실패). **신규 실패 0.** 두 트리 모두 실패하는 기존 실패(해시 고정·.gitignore 등)는 이번 변경과 무관.
+- P6b 전용: `tests/unit/writer/p6b.test.ts` 24건·`tests/unit/brief/coreImage.test.ts` 4건 통과.
 
 ## 남은 것
 
