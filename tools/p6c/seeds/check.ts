@@ -10,7 +10,8 @@ import { norm } from "../../../src/lib/writer/safety/sentences";
 import { KNOW, type Item } from "./extract";
 
 const NICK = [...readdirSync(join(KNOW, "myeongri")).flatMap(f => (JSON.parse(readFileSync(join(KNOW, "myeongri", f), "utf8")).features as { easyName: string }[]).map(x => x.easyName)), ...NICKNAME_KEYS];
-const LIMIT: Record<Item["kind"], [number, number, number]> = { seed: [6, 24, 12], dir: [10, 52, 16], core: [14, 70, 18], fn: [4, 44, 16] };
+// 복사 한도: 씨앗은 짧은 구라 12자, 방향·뜻은 작가 lint와 같은 20자(20자 이상 이어 붙으면 실패, P6c A1).
+const LIMIT: Record<Item["kind"], [number, number, number]> = { seed: [6, 24, 12], dir: [10, 56, 20], core: [14, 70, 20], fn: [4, 44, 20] };
 /** 문장 끝맺음(…니다·…해요·…한다). "필요·중요·바다"처럼 요·다로 끝나는 명사는 허용. */
 const ENDING = /(니다|[어아여해예에세네군지]요|이에요|죠|까|[는한된진있없했였겠인]다)[.!?…]*$/;
 /** 두 글의 정규화 최장 공통 부분 길이. */

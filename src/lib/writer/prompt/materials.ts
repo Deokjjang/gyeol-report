@@ -1,10 +1,11 @@
 /**
  * 작가 재료(P6c A1). 브리프는 결정론 작가·부록을 위해 지식 DB 원문 문장을 그대로 들고 있고, 작가에게 보낼 때만 원문을 재료로 바꾼다.
  * 재료 표 = knowledge-v5/materials.json(원문 sha1 앞 12자 → 상황 씨앗·적용 방향·핵심 뜻, tools/p6c/seeds가 만든다).
- * 브리프 문자열이 원문을 통째로 품고 있으면(근거 사실처럼 이어 붙인 줄도) 그 부분만 바꾼다. 재료가 없는 원문은 그대로 둔다.
+ * 브리프 문자열이 원문을 통째로 품고 있으면(근거 사실처럼 이어 붙인 줄도) 그 부분만 바꾼다. 원문의 한 문장만 옮긴 곳도 그 원문의 재료로 바꾼다. 재료가 없는 원문은 그대로 둔다.
  */
 import { createHash } from "node:crypto";
 import type { Knowledge } from "@/lib/brief/knowledge";
+import { splitSentences } from "@/lib/writer/safety/patterns";
 
 export const materialKey = (text: string) => createHash("sha1").update(text).digest("hex").slice(0, 12);
 export type MaterialTable = { readonly exact: ReadonlyMap<string, string>; readonly byHead: ReadonlyMap<string, readonly (readonly [string, string])[]>; readonly plain: ReadonlyMap<string, string> };
@@ -49,7 +50,10 @@ export function materialTable(k: Knowledge): MaterialTable {
     if (b) { exact.set(text, b); plain.set(text, a); } else exact.set(text, m);
   }
   const byHead = new Map<string, [string, string][]>();
-  for (const [text, mat] of exact) { const h = text.slice(0, HEAD); const l = byHead.get(h); if (l) l.push([text, mat]); else byHead.set(h, [[text, mat]]); }
+  const put = (text: string, mat: string) => { const h = text.slice(0, HEAD); const l = byHead.get(h); if (l) l.push([text, mat]); else byHead.set(h, [[text, mat]]); };
+  for (const [text, mat] of exact) put(text, mat);
+  // 브리프가 원문 일부만 옮긴 경우(첫 문장, 출처 문장을 뺀 나머지)도 문장 단위로 그 원문의 재료로 바꾼다. 긴 일치(원문 전체)가 먼저.
+  for (const [text, mat] of exact) { const ss = splitSentences(text); if (ss.length > 1) for (const x of ss) if (x.length >= HEAD * 2 && !exact.has(x)) put(x, mat); }
   for (const l of byHead.values()) l.sort((a, b) => b[0].length - a[0].length);
   const t = { exact, byHead, plain };
   cache.set(k, t);
@@ -64,7 +68,8 @@ export function swapMaterials(s: string, t: MaterialTable): string {
   while (i < s.length) {
     const cands = i + HEAD <= s.length ? t.byHead.get(s.slice(i, i + HEAD)) : undefined;
     const hit = cands?.find(([text]) => s.startsWith(text, i));
-    if (hit) { out += hit[1]; i += hit[0].length; } else { out += s[i]; i++; }
+    // 같은 원문의 문장이 이어 나오면 재료는 한 번만.
+    if (hit) { if (!out.trimEnd().endsWith(hit[1])) out += hit[1]; else out = out.trimEnd(); i += hit[0].length; } else { out += s[i]; i++; }
   }
   return out;
 }
