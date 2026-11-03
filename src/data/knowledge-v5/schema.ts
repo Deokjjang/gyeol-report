@@ -291,7 +291,7 @@ export const ChapterPlanSchema = z.object({
   paragraphs: z.object({ min: z.number().int().min(1), max: z.number().int().min(1) }),
   repeat: z.number().int().min(2).optional(),
   /** 비반복 장의 절 계획(P3.8 1). 반복 장(연·월)은 key가 절이다. */
-  sections: z.array(SectionPlanSchema).min(3).max(5).optional(),
+  sections: z.array(SectionPlanSchema).min(2).max(3).optional(),
 });
 export const ProductNarrativeSchema = z.object({
   productKey: z.enum(PRODUCT_KEYS), title: z.string(), funType: z.string().min(2).max(20), narrativeMode: z.string().min(8).max(200),

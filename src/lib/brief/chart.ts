@@ -9,7 +9,8 @@ import type { FiveElement, Pillar, SajuCalcResult } from "@/lib/saju/types";
 import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, ganjiLabel, ganjiOf, josa, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
-import { dropSourceSentences } from "@/lib/writer/safety/patterns";
+import { dropSourceSentences, splitSentences } from "@/lib/writer/safety/patterns";
+import { coreImage } from "./coreImage";
 
 const ELEMENTS: readonly FiveElement[] = ["WOOD", "FIRE", "EARTH", "METAL", "WATER"];
 /** 일간 강약 한 줄(P3.8 5: 강약에 해석이 없어 작가가 "힘이 남아도 모자라도" 같은 빈 문장으로 채웠다). */
@@ -66,7 +67,10 @@ export function inflowEffect(pillar: Pillar, st: ElementState) {
   return { incoming, fills, feeds };
 }
 
-export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, opts: { gender: "MALE" | "FEMALE" | null; baseDate: string; dayun: DayunInfo }): ChartBrief {
+/** 그해에 이르는 만 나이(그해 생일이 지난 뒤, P6b E-3). 카드·본문·대운 구간이 모두 이 값을 쓴다. */
+export const manAge = (year: number, birthYear: number) => year - birthYear;
+
+export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, opts: { gender: "MALE" | "FEMALE" | null; baseDate: string; dayun: DayunInfo; birthYear: number }): ChartBrief {
   const { pillars, dayMaster } = saju;
   const feature = (id: string) => k.features.get(id);
   const dm = feature(`dayMaster:${dayMaster}`);
@@ -74,8 +78,9 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   const bal = det.elementBalance;
   const top = bal.strongest, low = bal.weakest;
   const elementReading = [
-    ...(top.level === "많음" ? [feature(`element:${top.element}:STRONG`)?.oneLiner] : []),
-    ...(low.level === "부족" || low.level === "없음" ? [feature(`element:${low.element}:${low.level === "없음" ? "MISSING" : "WEAK"}`)?.oneLiner] : []),
+    // 그림 한 줄(oneLiner) 대신 이 사람에게 주는 힘(P6b B-1).
+    ...(top.level === "많음" ? [feature(`element:${top.element}:STRONG`)?.forYou.base] : []),
+    ...(low.level === "부족" || low.level === "없음" ? [feature(`element:${low.element}:${low.level === "없음" ? "MISSING" : "WEAK"}`)?.forYou.base] : []),
   ].filter((x): x is string => Boolean(x));
   const climateItem = feature(`climate:${det.climate.featureKey}`);
   const { year, pillar: yearPillar } = sajuYearAt(opts.baseDate);
@@ -86,8 +91,9 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   return {
     pillars: { year: ganjiOf(pillars.year), month: ganjiOf(pillars.month), day: ganjiOf(pillars.day), ...(pillars.hour && det.hourIncluded ? { hour: ganjiOf(pillars.hour) } : {}) },
     dayMaster: { stem: dayMaster, name: dm?.name ?? dayMaster, easyName: dm?.easyName ?? "", metaphor: dm?.image.metaphor ?? "" },
+    coreImage: coreImage({ stem: dayMaster, season: det.climate.season, strength: saju.structureAnalysis.dayMasterStrength.level, levels: bal.status, strongest: { element: top.element, level: top.level } }),
     strength: { level: saju.structureAnalysis.dayMasterStrength.level, label: saju.structureAnalysis.dayMasterStrength.labelKo, reading: STRENGTH_READING[saju.structureAnalysis.dayMasterStrength.level] ?? STRENGTH_READING.BALANCED, ...strengthNote(saju.structureAnalysis.dayMasterStrength.labelKo, top, low) },
-    yinYang: { yin: saju.yinYang.yin, yang: saju.yinYang.yang, label: saju.yinYang.label, reading: feature(yyId)?.oneLiner ?? "" },
+    yinYang: { yin: saju.yinYang.yin, yang: saju.yinYang.yang, label: saju.yinYang.label, reading: feature(yyId)?.forYou.base ?? feature("yinYang:BALANCED")?.forYou.base ?? "" },
     elements: {
       strongest: { element: top.element, name: ELEMENT_KO[top.element], level: top.level, reason: top.reason },
       weakest: { element: low.element, name: ELEMENT_KO[low.element], level: low.level === "없음" ? "없음(땅속에도 없음)" : low.level, reason: low.reason },
@@ -96,13 +102,13 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     climate: {
       season: SEASON_KO[det.climate.season],
       needs: det.climate.needs.filter(n => n.role !== "support").map(n => `${n.stem}(${ELEMENT_KO[STEM_ELEMENT[n.stem]]}) ${n.foundAt.length ? "있음" : "없음"}`),
-      level: det.climate.level, lacking: [...det.climate.lackingElements], reading: climateItem?.oneLiner ?? "",
+      level: det.climate.level, lacking: [...det.climate.lackingElements], reading: climateItem?.forYou.base ?? "",
     },
     currentDayun: cur && curTenGod ? {
-      ganji: ganjiOf(cur), ages: `${cur.startAge}~${cur.endAge}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
+      ganji: ganjiOf(cur), ages: `만 ${manAge(cur.startYear, opts.birthYear)}~${manAge(cur.endYear, opts.birthYear)}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
       reading: dropSourceSentences(k.tenGodPeriod.get(curTenGod)?.year.meaning ?? ""),
       // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
-      ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f ? { easyName: f.easyName } : {}), ...(meaning ? { reading: meaning } : {}) }; })() } : {}),
+      ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
   };

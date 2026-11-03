@@ -38,6 +38,8 @@ export const MbtiBriefSchema = z.object({
 export const ChartBriefSchema = z.object({
   pillars: z.object({ year: Ganji, month: Ganji, day: Ganji, hour: Ganji.optional() }),
   dayMaster: z.object({ stem: z.string(), name: z.string(), easyName: z.string(), metaphor: z.string() }),
+  /** 핵심 이미지(P6b B-4): 일간·계절·강약·오행 분포로 합성한 한 줄. 작가에게는 line만 간다. */
+  coreImage: z.object({ line: z.string(), ruleId: z.string() }),
   /** note: 일간 강약과 오행 쏠림이 다른 이야기임을 푸는 한 문장(P3.7 1-2). */
   /** reading: 강약 한 줄 해석(P3.8 5: 해석이 비어 작가가 채웠다). */
   strength: z.object({ level: z.string(), label: z.string(), reading: z.string().optional(), note: z.string().optional() }),
@@ -64,8 +66,13 @@ export const TraitSchema = z.object({
   positions: z.array(Position),
   strength: z.enum(["strong", "medium", "weak"]),
   score: z.number(),
+  /** 그림 별명·이미지·한 줄(easyName·image·oneLiner)은 내부 별칭(P6b B-2): 작가에게 보내지 않는다. */
   image: Image,
   oneLiner: z.string(),
+  /** 명리학에서 이 용어가 뜻하는 바(P6b B-1). 첫 등장은 "이름(한자)은 명리학에서 ~를 뜻해요. 그래서 당신에게는 ~(forYou)". */
+  meaning: z.string(),
+  /** 이 사람에게 주는 힘: 개수·자리·강약 조건으로 고른 한 문단. */
+  forYou: z.string(),
   positionNote: z.string().optional(),
   /** 합충형해의 자리 문장(P3.6 A4). 작가는 자리를 이 문장과 같은 의미로만 쓴다. */
   where: z.string().optional(),
@@ -78,9 +85,9 @@ export const TraitSchema = z.object({
   chapters: z.array(z.string()),
 });
 
-export const FortuneSchema = z.object({ featureId: z.string(), name: z.string(), easyName: z.string(), image: Image, oneLiner: z.string(), direct: z.string(), traitId: z.string().optional() });
+export const FortuneSchema = z.object({ featureId: z.string(), name: z.string(), easyName: z.string(), image: Image, oneLiner: z.string(), meaning: z.string(), forYou: z.string(), direct: z.string(), traitId: z.string().optional() });
 export const ShadowSchema = z.object({ id: z.string(), traitId: z.string(), text: z.string(), basis: z.string(), warmTurn: z.string() });
-export const UnusedSchema = z.object({ kind: z.enum(["element", "tenGod"]), key: z.string(), name: z.string(), easyName: z.string(), oneLiner: z.string(), actions: z.array(z.string()), places: z.array(z.string()) });
+export const UnusedSchema = z.object({ kind: z.enum(["element", "tenGod"]), key: z.string(), name: z.string(), easyName: z.string(), oneLiner: z.string(), meaning: z.string(), forYou: z.string(), actions: z.array(z.string()), places: z.array(z.string()) });
 
 export const MaterialSchema = z.discriminatedUnion("kind", [
   /** angle: first = 이 trait를 책에서 처음 소개(그림 + 쉬운 말(용어)), new-domain = 앞에서 소개된 trait를 "앞에서 본 ○○" 한 문장으로만 부르고 이 절의 새 정보를 붙인다(P3.8 1). */
@@ -120,6 +127,11 @@ export const TimelineEntrySchema = z.object({
   flow: z.object({ score: z.number().int().min(1).max(5), label: z.string(), basis: z.array(z.string()), note: z.literal("참고") }),
   keywords: z.array(z.string()).min(2).max(3),
   action: z.object({ templateId: z.string(), text: z.string() }),
+  /** 카드 필드(P6b, p6b-fields.md 5): 기간 상태·그림 줄·할 일(앞으로)·돌아보기(지난 기간). */
+  period: z.enum(["past", "current", "future"]),
+  imageLine: z.string(),
+  todo: z.string().optional(),
+  review: z.string().optional(),
   dayun: z.object({ ganji: z.string(), transition: z.boolean() }).optional(),
   change: z.object({ tenGodFrom: z.string(), flowFrom: z.number(), line: z.string().optional() }).optional(),
   /** 기준일 대비: past(돌아보는 말), now, future(경향). P3.6 B. */
@@ -139,10 +151,16 @@ export const CompatibilityBriefSchema = z.object({
   relationshipType: z.enum(COMPATIBILITY_CATEGORIES),
   lens: z.object({ focus: z.string(), roleLabels: z.tuple([z.string(), z.string()]), tone: z.string(), forbidden: z.array(z.string()) }),
   a: PairPersonSchema, b: PairPersonSchema,
-  common: z.array(z.string()), differences: z.array(z.object({ dimension: z.string(), a: z.string(), b: z.string() })),
+  common: z.array(z.string()), differences: z.array(z.object({ a: z.string(), b: z.string() })),
   complement: z.array(z.string()),
   tenGodAB: z.object({ tenGod: z.string(), reading: z.string() }), tenGodBA: z.object({ tenGod: z.string(), reading: z.string() }),
+  /** 두 사람 관계 이미지(P6b B-4 pairImage). */
+  pairImage: z.object({ line: z.string(), a: z.string(), b: z.string(), ruleId: z.string() }),
   dayRelations: z.array(z.string()),
+  /** 관계 쉬운 문장 목록(P6b D 궁합, 화면 evidence.pair.relationsPlain). */
+  relationsPlain: z.array(z.string()),
+  /** 장면 역할(P6b D 궁합): 누가 먼저 무엇을 하는지와 근거(E/I·J/P·십성). */
+  roles: z.array(z.string()).min(1),
   mbtiConvention: z.object({ fit: z.string(), why: z.string(), note: z.literal("통념") }).nullable(),
   /** v5 궁합 점수(P4, src/lib/compat/score.ts). 본문은 band 톤과 맞아야 하고(안전망), 낮은 점수에도 보완법을 쓴다. */
   score: z.object({

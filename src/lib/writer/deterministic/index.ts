@@ -88,7 +88,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   const x = b.compatibility; if (!x) return null;
   const A = x.a.callName, B = x.b.callName;
   if (ref === "compatibility.a" || ref === "compatibility.b") { const p = ref.endsWith("a") ? x.a : x.b; return { heading: `${p.callName}이라는 사람`, paragraphs: [join(`${p.callName}을 한 장면으로 그리면 ${p.image}입니다`, p.mbti && `MBTI는 ${p.mbti}예요`)] }; }
-  if (ref === "compatibility.differences" && x.differences.length) return { heading: "같은 장면, 다른 반응", paragraphs: x.differences.slice(0, 2).map(d => join(`${d.dimension}에서 ${josa(A, "은는")} ${d.a} 쪽이고, ${josa(B, "은는")} ${d.b} 쪽입니다`)) };
+  if (ref === "compatibility.differences" && x.differences.length) return { heading: "같은 장면, 다른 반응", paragraphs: x.differences.slice(0, 2).map(d => join(`${josa(A, "은는")} ${d.a} ${josa(B, "은는")} ${d.b}`)) };
   if (ref === "compatibility.tenGodAB") return { heading: `${A}이 ${B}에게 주는 것`, paragraphs: [join(x.tenGodAB.reading)] };
   if (ref === "compatibility.tenGodBA") return { heading: `${B}이 ${A}에게 주는 것`, paragraphs: [join(x.tenGodBA.reading)] };
   if (ref === "compatibility.complement" && x.complement.length) return { heading: "서로 채워 주는 기운", paragraphs: [join(...x.complement.slice(0, 3))] };

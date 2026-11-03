@@ -88,8 +88,8 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
         if (!id) continue;
         const tags = k.features.get(id)!.dimensionTags;
         for (const d of c.differences) {
-          const dim = k.ontology.dimensions.find(x => x.name === d.dimension)!;
-          if (Math.abs(tags[dim.id] ?? 0) >= 0.5) throw new Error(`${rt} 공통점 ${item} ↔ 차이 ${d.dimension}`);
+          const dim = k.ontology.dimensions.find(x => [x.poles.plus.description, x.poles.minus.description].includes(d.a))!;
+          if (Math.abs(tags[dim.id] ?? 0) >= 0.5) throw new Error(`${rt} 공통점 ${item} ↔ 차이 ${dim.name}`);
         }
       }
       expect(c.common.join(" "), rt).not.toMatch(/텃밭 같은 기운\(기토\)/);

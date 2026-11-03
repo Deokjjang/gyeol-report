@@ -15,15 +15,17 @@ import { meaningGroup } from "./groups";
 import type { Brief, ChapterBrief, Material, Trait } from "./schema";
 import type { ProductKey } from "./traits";
 
-/** SPEC §1 분량(P3 고정): 장 1,000~1,250자. 반복 항목(대운 연도·세운 월)은 항목당. 총량 = 장 수 × 장 목표 + 항목 수 × 항목 목표. */
-export const CHAPTER_CHARS: [number, number] = [1000, 1250];
-export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; chapter: [number, number]; repeat?: [number, number] }> = {
-  saju_mbti_full: { total: [13000, 16250], chapter: CHAPTER_CHARS },
-  career_money_study: { total: [9000, 11250], chapter: CHAPTER_CHARS },
-  love_marriage_child: { total: [9000, 11250], chapter: CHAPTER_CHARS },
-  saju_mbti_compatibility: { total: [9000, 11250], chapter: CHAPTER_CHARS },
-  major_fortune: { total: [10300, 13400], chapter: CHAPTER_CHARS, repeat: [450, 600] },
-  annual_fortune: { total: [9400, 12800], chapter: CHAPTER_CHARS, repeat: [450, 650] },
+/**
+ * 분량(P6b C-4, 정보 밀도 우선·채우기 금지): 장 목표 = 절(소제목) 목표 × 절 수, 반복 항목(대운 연도·세운 월)은 항목당.
+ * 상품 목표: 종합 13~16천, 커리어·연애·궁합 11~14천, 대운 14~18천, 세운 12~15천(장 구성의 절 수로 맞춘 값).
+ */
+export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; section: [number, number]; repeat?: [number, number] }> = {
+  saju_mbti_full: { total: [13000, 16000], section: [360, 445] },
+  career_money_study: { total: [11000, 14000], section: [525, 665] },
+  love_marriage_child: { total: [11000, 14000], section: [525, 665] },
+  saju_mbti_compatibility: { total: [11000, 14000], section: [525, 665] },
+  major_fortune: { total: [14000, 18000], section: [450, 560], repeat: [680, 890] },
+  annual_fortune: { total: [12000, 15000], section: [450, 560], repeat: [630, 800] },
 };
 
 /** trait 적용(소개 뒤 다시 부르기)은 책 전체에서 이 횟수까지. */
@@ -102,7 +104,7 @@ const FAMILY_IF = /결혼(하면|한다면|을 (생각|앞둔))|함께 살게|�
 /** 결혼·자녀 언젠가형 장면(unmarried·children none·조건 문구). */
 export const conditionalFamily = (s: SceneItem) => s.requires.relationship === "unmarried" || s.requires.children === "none" || FAMILY_IF.test(s.text);
 /** 결혼·자녀 조건부 장면은 연애 상품과 종합 '사람 사이에서' 장에만 둔다(P3.5 A5). */
-export const familyChapter = (product: ProductKey, chapterId: string) => product === "love_marriage_child" || (product === "saju_mbti_full" && chapterId === "relationships");
+export const familyChapter = (product: ProductKey, chapterId: string) => product === "love_marriage_child" || (product === "saju_mbti_full" && (chapterId === "family" || chapterId === "love"));
 /** 사건 확정 낱말이 든 장면은 고르지 않는다(P3.8 r1: "승진은 빠르지 않아도 꾸준합니다"가 승진 암시 문장이 됐다). */
 const EVENT_SCENE = /승진|합격|불합격|이혼|임신|출산|당첨/;
 const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s));
@@ -344,7 +346,7 @@ export function planChapters(input: PlanCtx): PlanResult {
     return {
       id: p.id, index: p.index + 1, title: p.c.title, question: p.c.question, role: p.c.role,
       // 절이 4개보다 적으면(재료가 적은 고객) 목표 분량도 절 수만큼만: 같은 말로 채우지 않게(길이는 정보량의 결과).
-      targetChars: repeat ? chars.repeat! : p.sections.length >= 4 ? chars.chapter : [Math.round(chars.chapter[0] * Math.max(1, p.sections.length) / 4), Math.round(chars.chapter[1] * Math.max(1, p.sections.length) / 4)],
+      targetChars: repeat ? chars.repeat! : [chars.section[0] * Math.max(1, p.sections.length), chars.section[1] * Math.max(1, p.sections.length)],
       subheadings: repeat ? [1, 1] : [p.sections.length, p.sections.length],
       paragraphs: [p.c.paragraphs.min, p.c.paragraphs.max],
       useName: p.index === 0 || p.index === total - 1 || p.index === Math.floor(total / 2),

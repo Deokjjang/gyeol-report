@@ -129,6 +129,18 @@ function onlyHolding(text: string, cond?: ConditionCtx): { strengthNote?: string
   return kept ? { strengthNote: kept } : {};
 }
 
+/**
+ * 이 사람에게 주는 힘(P6b B-1): 지식 DB forYou에서 조건 하나를 고른다.
+ * 일간·일주는 일간 강약, 십성은 개수(2개 이상=strong)·강약, 그 밖에는 감지 강약과 개수(같은 것이 둘 이상=many).
+ */
+export function forYouOf(feature: Pick<MyeongriFeature, "family" | "forYou">, strength: string, dayMasterLevel: string, count = 1): string {
+  const f = feature.forYou;
+  const dmStrong = dayMasterLevel === "STRONG" || dayMasterLevel === "VERY_STRONG", dmWeak = dayMasterLevel === "WEAK" || dayMasterLevel === "VERY_WEAK";
+  if (feature.family === "dayMaster" || feature.family === "dayPillar") return (dmStrong ? f.strong : dmWeak ? f.weak : undefined) ?? f.base;
+  if (count >= 2 && f.many) return f.many;
+  return (strength === "strong" ? f.strong : strength === "weak" ? f.weak : undefined) ?? f.base;
+}
+
 export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "BALANCED", groups?: GroupScores, cond?: ConditionCtx, imageOk: (im: { metaphor: string; visual: string }) => boolean = () => true): Trait {
   const { hit, feature } = s;
   const variant = hit.variantKey ? feature.variants?.find(v => v.key === hit.variantKey || [...v.key].reverse().join("") === hit.variantKey) : undefined;
@@ -143,6 +155,7 @@ export function buildTrait(s: ScoredHit, id: string, rng: Rng, strengthLevel = "
     // 이 원국과 어긋나는 그림("물이 모자란 흙"인데 물이 가장 많다)은 고르지 않는다(P3.8 5).
     image: variant?.image && imageOk(variant.image) ? variant.image : rng.fork("image").pick(okPool.length ? okPool : pool),
     oneLiner: variant?.oneLiner ?? feature.oneLiner,
+    meaning: feature.meaning, forYou: forYouOf(feature, hit.strength, strengthLevel, hit.positions.length),
     ...(hit.pairs?.length ? { where: pairWhere(hit.pairs) } : {}),
     ...(pos && feature.positionNuance ? { positionNote: `${POSITION_KO[pos]} 자리: ${feature.positionNuance[pos]}` } : variant?.nuance ? { positionNote: variant.nuance } : {}),
     ...(hit.strength === "strong" || hit.strength === "weak" ? onlyHolding(hit.strength === "strong" ? feature.strengthRules.strong : feature.strengthRules.weak, cond) : {}),
@@ -160,7 +173,7 @@ const WARNING_IDS = /^(shinsal:(BAEKHODAESAL|GOEGANG|YANGIN|WONJIN|GWIMUN|HYEONC
 export function buildFortunes(scored: readonly ScoredHit[], traits: readonly Trait[], limit = 4) {
   return scored.filter(s => GOOD_IDS.test(s.hit.id)).slice(0, limit).map(s => {
     const t = traits.find(x => x.featureId === s.hit.id);
-    return { featureId: s.hit.id, name: s.feature.name, easyName: s.feature.easyName, image: t?.image ?? s.feature.image, oneLiner: s.feature.oneLiner, direct: s.feature.strengths[0], ...(t ? { traitId: t.id } : {}) };
+    return { featureId: s.hit.id, name: s.feature.name, easyName: s.feature.easyName, image: t?.image ?? s.feature.image, oneLiner: s.feature.oneLiner, meaning: s.feature.meaning, forYou: t?.forYou ?? s.feature.forYou.base, direct: s.feature.strengths[0], ...(t ? { traitId: t.id } : {}) };
   });
 }
 
@@ -175,7 +188,7 @@ export function buildShadows(selected: readonly ScoredHit[], traits: Trait[], mi
     const where = x.t.where ? "" : x.t.positions.map(p => POSITION_KO[p]).join("·");
     const shadow = {
       id: `s${i + 1}`, traitId: x.t.id, text: x.t.overuse!,
-      basis: `${x.t.name}${where ? ` (${where})` : ""} — ${x.t.strengthNote ?? x.t.oneLiner}`,
+      basis: `${x.t.name}${where ? ` (${where})` : ""} — ${x.t.strengthNote ?? x.t.forYou}`,
       warmTurn: x.s.feature.strengths.find(g => !x.t.good.includes(g)) ?? x.t.good[0],
     };
     delete x.t.overuse; // 압축: 팩폭 재료는 shadows에만 둔다
@@ -188,13 +201,13 @@ export function buildUnused(saju: SajuCalcResult, missing: readonly string[], k:
   const out = [];
   for (const e of missing) {
     const f = k.features.get(`element:${e}:MISSING`); if (!f) continue;
-    out.push({ kind: "element" as const, key: e, name: f.name, easyName: f.easyName, oneLiner: f.oneLiner, actions: f.remedy?.actions.slice(0, 3) ?? [], places: f.remedy?.places.slice(0, 3) ?? [] });
+    out.push({ kind: "element" as const, key: e, name: f.name, easyName: f.easyName, oneLiner: f.oneLiner, meaning: f.meaning, forYou: f.forYou.base, actions: f.remedy?.actions.slice(0, 3) ?? [], places: f.remedy?.places.slice(0, 3) ?? [] });
   }
   const dist = saju.tenGods.distribution;
   for (const [g, tgs] of Object.entries(GROUP_TEN_GODS)) {
     if (tgs.some(t => dist[t] > 0)) continue;
     const f = k.features.get(`tenGodBalance:${g}:WEAK`); if (!f) continue;
-    out.push({ kind: "tenGod" as const, key: g, name: f.name, easyName: f.easyName, oneLiner: f.oneLiner, actions: [], places: [] });
+    out.push({ kind: "tenGod" as const, key: g, name: f.name, easyName: f.easyName, oneLiner: f.oneLiner, meaning: f.meaning, forYou: f.forYou.base, actions: [], places: [] });
   }
   return out;
 }
@@ -214,9 +227,11 @@ export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: 
   const sentences = s.contributions.slice(0, 2).flatMap(c => {
     const d = k.ontology.dimensions.find(x => x.id === c.dimension); if (!d) return [];
     const f = c.feature >= 0 ? d.poles.plus : d.poles.minus, m = c.mbti >= 0 ? d.poles.plus : d.poles.minus;
+    // 축 이름·양끝 이름은 내부 라벨이라 쓰지 않는다(P6b E-6). 그림 별명 대신 용어 이름(B-2).
+    const name = feature.name.replace(/\(.*?\)/g, "").trim();
     return c.product > 0
-      ? [`${d.name}에서는 ${josa(feature.easyName, "과와")} ${profile.type}가 같은 '${f.label}' 쪽입니다. ${f.description}`]
-      : [`${d.name}에서는 ${josa(feature.easyName, "은는")} '${f.label}' 쪽인데 ${profile.type}는 '${m.label}' 쪽이라 서로 반대로 당깁니다.`];
+      ? [`${josa(name, "과와")} ${profile.type}가 같은 쪽으로 겹칩니다. 둘 다 ${f.description}`]
+      : [`${josa(name, "은는")} ${f.description.replace(/ 편입니다\.$/, " 쪽인데")} ${profile.type}는 ${m.description}`];
   });
   if (!sentences.length) return null;
   return { target: profile.type, kind: s.kind, why: sentences.join(" "), source: "computed" };

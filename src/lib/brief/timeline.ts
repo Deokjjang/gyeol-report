@@ -12,7 +12,8 @@ import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
-import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel } from "./labels";
+import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, josa, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { splitSentences } from "@/lib/writer/safety/patterns";
 import type { Rng } from "./seed";
 import type { TimelineEntry, Trait } from "./schema";
 
@@ -43,12 +44,8 @@ export type TimelineCtx = {
 };
 type TraitRef = Pick<Trait, "id" | "featureId" | "family" | "positions">;
 
-/** 관계 쉬운 이름(용어 사전 easy와 같은 결). */
-const REL_EASY: Record<string, string> = {
-  STEM_HAP: "끌려 붙는 합(천간합)", YUKHAP: "짝꿍처럼 붙는 합(육합)", SAMHAP: "세 글자 한 팀(삼합)", BANGHAP: "같은 계절 모임(방합)",
-  CHUNG: "서로 부딪치는 기운(충)", HYEONG: "서로 조이는 기운(형)", PA: "금이 가게 하는 기운(파)", HAE: "서로 거슬리는 기운(해)", WONJIN: "신발 속 모래알 같은 기운(원진)",
-};
-const relEasy = (r: RelationHit) => r.kind === "SAMHAP" && r.completeness !== "full" ? "반쯤 맺힌 짝(반합)" : REL_EASY[r.kind] ?? r.kind;
+const REL_EASY = REL_PLAIN;
+const relEasy = (r: RelationHit) => r.kind === "SAMHAP" && r.completeness !== "full" ? HALF_HAP_PLAIN : REL_EASY[r.kind] ?? r.kind;
 const GROUP_EASY = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는 기운(식상)", WEALTH: "재물 기운(재성)", OFFICER: "책임의 기운(관성)", RESOURCE: "받쳐 주는 기운(인성)" } as const;
 
 /**
@@ -116,6 +113,16 @@ function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Pa
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }
 
+/** 지난 기간 카드의 돌아보기 질문(P6b E-5). 열쇠말 두 개와 문형 셋을 돌려 쓴다(질문형이라 지난 경험 단정이 아니다). */
+export function reviewLine(keywords: readonly string[], slot: number): string {
+  const [a, b = a] = keywords;
+  return [
+    `${a}·${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 지금까지 이어진 것은 무엇인가요?`,
+    `${a} 쪽으로 힘이 실린 때였어요. 그때 정한 것 중 지금 다시 꺼내 볼 하나는 무엇인가요?`,
+    `${josa(b, "이가")} 앞에 섰던 때였어요. 그때 미뤄 둔 일 하나를 지금 다시 살펴볼까요?`,
+  ][Math.abs(slot) % 3];
+}
+
 export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string, label: string, pillar: Pillar, position: TemporalPosition, slot: number, extra: Partial<TimelineEntry> = {}): TimelineEntry {
   const { saju, k, st } = ctx;
   const inc = analyzeIncoming(saju, position, pillar);
@@ -138,7 +145,7 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     if (same) { const w = [...new Set([...(same.with?.split("·") ?? []), ...natal])]; if (w.length) same.with = w.join("·"); continue; }
     // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다).
     const half = r.kind === "SAMHAP" && r.completeness !== "full";
-    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `두 글자만 만나 반쯤 맺힌 팀: ${b.line.replace(/완성/g, "반쯤 맺힘")}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
+    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `반합(세 글자 중 두 글자만 만남): ${b.line.replace(/팀이 완성되어/g, "기운이 절반쯤 모여")}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
   }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }
   const eff = inflowEffect(pillar, st);
@@ -151,7 +158,12 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
   ctx.seenTenGod?.set(`${kind}:${inc.stemTenGod}`, { key: seen?.key ?? key, n: (seen?.n ?? 0) + 1 });
   const kw = kind === "year" ? period.year.keywords : period.month.keywords, per = kind === "year" ? 3 : 2, occ = seen?.n ?? 0;
   const keywords = Array.from({ length: per }, (_, i) => kw[(occ * per + i) % kw.length]);
-  const stageText = stage ? `${stage.name} — ${stage.oneLiner}` : inc.twelveStage;
+  // 십이운성은 그림 한 줄이 아니라 뜻으로(P6b B-1).
+  const stageText = stage ? `${stage.name}: ${splitSentences(stage.meaning)[1] ?? splitSentences(stage.meaning)[0]}` : inc.twelveStage;
+  // 카드 그림 줄(P6b E-4): 작가 원고를 잘라 오지 않는 독립 문장. 달 카드는 "해"를 "달"로.
+  const imageLine = kind === "month" ? g.imageLine.replace(/ 해$/, " 달") : g.imageLine;
+  const action = pickAction(ctx, inc.stemTenGod, flow.score, slot);
+  const state = extra.when === "past" ? "past" : extra.when === "future" ? "future" : "current";
   const stageNew = !ctx.seenStage?.has(inc.twelveStage); ctx.seenStage?.add(inc.twelveStage);
   return {
     key, label, kind, ganji: ganjiOf(pillar), colors: colorsOf(pillar),
@@ -161,9 +173,12 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     flow: { score: flow.score, label: flow.label, basis: flow.applied.map(a => `${flowShort(a.key, flowInput.clashes) ?? a.when} ${a.delta > 0 ? "+" : ""}${a.delta}`), note: "참고" },
     // 뜻(열쇠말)은 일간 기준 십성, 그림은 간지(P3.8 1: 간지 기준 열쇠말·분위기가 정인 해에 '독립·경쟁자'를 줬다). 같은 십성이 다시 오면 다음 묶음.
     keywords,
-    action: pickAction(ctx, inc.stemTenGod, flow.score, slot),
+    action,
+    period: state, imageLine,
+    // 카드 행동 줄(P6b E-5): 앞으로는 할 일(todo), 지난 기간은 돌아보는 질문(review).
+    ...(state === "past" ? { review: reviewLine(keywords, slot) } : { todo: action.text }),
     material: {
-      image: g.image.metaphor,
+      image: imageLine,
       ...(scene ? { scene } : {}),
       ...(stageNew ? { stage: stageText } : {}),
     },

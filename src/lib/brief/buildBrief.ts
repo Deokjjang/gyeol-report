@@ -26,10 +26,10 @@ import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/write
 import { dropSourceSentences } from "@/lib/writer/safety/patterns";
 import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
-import { alignImageWords, imageFamily, imageObject } from "./groups";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage } from "./props";
 import { cautionFor, type CautionCtx } from "./caution";
+import { annualDesign, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
 
 export type BriefPersonInput = {
@@ -57,7 +57,7 @@ const STYLE_RULES = [
   "장점·좋은 기운은 직설 단정형: '당신에게는 ~가 있어서 ~합니다'. 돌려 말하지 않는다",
   "팩폭은 shadows 재료만, 근거(어떤 기운·자리 때문인지)를 함께 쓰고 warmTurn으로 따뜻하게 끝낸다",
   "초·중등도 아는 쉬운 단어, 짧은 문장. 진부하고 애매한 표현 금지",
-  "장마다 비유 1개 이상(trait image) + 현실 장면 1개 이상(장 재료의 scene). 같은 비유를 두 장에서 다시 쓰지 않는다",
+  "핵심 이미지(chart.coreImage) 외 비유는 장당 최대 1개. 용어는 첫 등장에 '이름(한자)은 명리학에서 ~를 뜻해요. 그래서 당신에게는 ~', 이후 이름만",
   "MBTI가 있으면 fusion.why로 '이 기운 때문에 당신의 유형이 이렇게 나온다'를 잇는다(소름 포인트). 없으면 MBTI 언급 금지",
   "장면은 재료 장면을 고객에 맞게 다시 쓰되 person.forbiddenFacts를 넘지 않는다. 브리프에 없는 사실·사건·날짜를 만들지 않는다",
   "존댓말이되 가볍게(~입니다/~예요 혼용). 소제목 3~5개, 문단 4~6문장. 한자는 처음 한 번만 괄호로",
@@ -85,7 +85,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   };
   const profile = { ...toFactProfile(facts), ...override };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
-  const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun });
+  const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
   // 강약·균형 단정은 엔진 단일 판단과 맞는 문장만(P3.7 1-2).
   const st0 = stateOf(det.elementBalance);
@@ -228,7 +228,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
 
   // 상품 근거
   const tagsOf = (key: string) => key.startsWith("mbti:") ? k.mbti.get(key.slice(5) as never)?.dimensionTags : k.features.get(key)?.dimensionTags;
-  const evidence: Record<string, Material> = input.product === "love_marriage_child" ? loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, { hitIds: new Set(me.hitIds), facts: profile, usedScenes, avoid: key => me.clashes(key, tagsOf(key)) })
+  const evidence: Record<string, Material> = input.product === "love_marriage_child" ? { ...loveDesign(me.saju, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, profile), ...loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, { hitIds: new Set(me.hitIds), facts: profile, usedScenes, avoid: key => me.clashes(key, tagsOf(key)) }) }
+    : input.product === "major_fortune" && timeline ? majorDesign(timeline.entries, timeline.cycles, me.chart.thisYear.year)
+    : input.product === "annual_fortune" && timeline ? annualDesign(timeline.entries.find(e => e.kind === "year"), timeline.entries.filter(e => e.kind === "month"))
     : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds) }) : {};
 
   // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
@@ -271,16 +273,12 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const kept = (e.touched ?? []).filter(t => assigned.has(t.traitId));
     if (kept.length) e.touched = kept; else delete e.touched;
   }
-  markImageFamilies(me, chapters, fortunes);
-  if (other) markImageFamilies(other, chapters);
 
   // 입력 직업이 없으면 '지금 일' 장은 원래 주제(장점이 부담이 되는 환경)로 둔다(P3.7 1-4).
-  if (input.product === "career_money_study" && !me.facts.detailJob) for (const c of chapters) if (c.id === "burden") { c.title = "장점이 부담이 되는 환경"; c.question = "같은 장점이 어디서는 왜 짐이 될까?"; }
+  if (input.product === "career_money_study" && !me.facts.detailJob) for (const c of chapters) if (c.id === "current-fit") { c.title = "내 힘이 빛나는 일의 환경"; c.question = "내 힘은 어떤 일의 환경에서 가장 잘 쓰일까?"; }
   // 다음 대운이 1년 안에 시작하면 지금 대운 설명에 전환을 붙인다(P3.7 r1: 2026년에 끝나는 대운을 시기 장이 끝나는 줄 모르고 썼다).
   const cd = me.chart.currentDayun, ty = me.chart.thisYear.year;
   if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.startYear - 1}년에 끝나고 ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
-  // 대운을 정할 수 없으면(시간 미상 등) "지금 대운 위에 올해" 장을 원국 바탕으로 바꾼다(P3.6 B: 제목만 대운이고 재료가 없었다).
-  if (!me.chart.currentDayun) for (const c of chapters) if (c.id === "current-dayun") { c.title = "타고난 바탕 위에 올해"; c.question = "올해 흐름은 타고난 바탕의 어떤 결 위에 놓일까?"; }
   // 궁합 장 제목·질문의 "A·B" 기호(예 "A가 보는 B")는 두 사람 호칭으로 바꾼다(고객 본문에 기호가 나오지 않게, P3.5 A9).
   if (other) {
     const name: Record<string, string> = { A: me.person.callName, B: other.person.callName };
@@ -304,41 +302,6 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
   // usedProps는 안전망용이라 작가 토큰 추정·작가 입력에서 뺀다.
   return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), budget: { ...budget, method: TOKEN_METHOD } });
-}
-
-/**
- * 이미지 계열(P3.7 1-3): 같은 대상을 그린 trait가 둘 이상 배정되면 책 순서상 먼저 나오는 것이 대표 그림이다.
- * 나머지는 sameImageAs로 대표를 가리키고, 일간 계열이면 원국 요약의 일간 비유도 대표 그림으로 맞춘다(촛불·등불·연탄불이 한 책에 섞였다).
- */
-function markImageFamilies(p: PersonPack, chapters: readonly { id: string }[], fortunes: Brief["fortunes"] = []) {
-  const order = new Map(chapters.map((c, i) => [c.id, i]));
-  const first = (t: Trait) => Math.min(...t.chapters.map(c => order.get(c) ?? Infinity));
-  const used = p.traits.filter(t => t.chapters.length).sort((a, b) => first(a) - first(b) || a.id.localeCompare(b.id));
-  // 일간 계열 대표 그림의 대상(불·흙…)과 같은 대상을 그린 다른 trait도 일간 계열로 묶는다(P3.8 r1: 등불 일간 + 천을귀인 '등불 마중' + 연탄).
-  const base = (t: Trait) => imageFamily(t.featureId, p.saju.dayMaster, t.image.metaphor);
-  const selfLead = used.find(t => base(t) === "self");
-  const selfObj = selfLead ? imageObject(selfLead.image.metaphor) : null;
-  const famOf = (t: Trait) => { const f = base(t); return selfObj && f === `img:${selfObj}` ? "self" : f; };
-  const lead = new Map<string, Trait>();
-  for (const t of used) {
-    const fam = famOf(t);
-    const l = lead.get(fam);
-    // 일간 쉬운 이름("촛불")도 그림이라, 대표가 일주·조후면 그 trait의 쉬운 이름으로 맞춘다(P3.7 r1: "등불의 주인은 촛불처럼").
-    if (!l) { lead.set(fam, t); if (fam === "self") { p.chart.dayMaster.metaphor = t.image.metaphor; if (t.family !== "dayMaster") p.chart.dayMaster.easyName = t.easyName; } } else t.sameImageAs = l.id;
-  }
-  // 대표 그림과 같은 대상의 다른 낱말(등불↔촛불·연탄)은 대표 낱말로 맞춘다: 연결 문장·좋은 면·계절 문장에서 그림이 갈리지 않게.
-  for (const t of p.traits) {
-    const l = lead.get(famOf(t));
-    if (!l) continue;
-    if (t.fusion) t.fusion.why = alignImageWords(t.fusion.why, l.image.metaphor);
-    t.good = t.good.map(g => alignImageWords(g, l.image.metaphor));
-  }
-  const self = lead.get("self");
-  if (self) {
-    p.chart.climate.reading = alignImageWords(p.chart.climate.reading, self.image.metaphor);
-  }
-  // trait가 아닌 좋은 기운의 그림이 이미 대표 그림이 있는 대상(일간 계열·저장·불…)이면 그림을 빼고 쉬운 이름만 둔다.
-  for (const f of fortunes) { const obj = f.traitId ? null : imageObject(f.image.metaphor); if (obj && (obj === selfObj || lead.has(`img:${obj}`))) f.image = { metaphor: "", visual: "" }; }
 }
 
 /**

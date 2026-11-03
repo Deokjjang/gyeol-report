@@ -36,3 +36,10 @@ export const colorsOf = (p: Pillar) => ({
   branch: { element: BRANCH_MAIN_ELEMENT[p.branch], hex: ELEMENT_HEX[BRANCH_MAIN_ELEMENT[p.branch]] },
 });
 export const tenGodLabel = (t: TenGod) => `${TEN_GOD_KO[t]}(${t})`;
+
+/** 관계 이름(P6b B-3): 용어를 먼저, 괄호에 쉬운 뜻. 그림 별명은 쓰지 않는다. */
+export const REL_PLAIN: Readonly<Record<string, string>> = {
+  STEM_HAP: "천간합(하늘 글자끼리 끌려 묶임)", YUKHAP: "육합(땅 글자끼리 맞물림)", SAMHAP: "삼합(세 글자가 한 기운으로 모임)", BANGHAP: "방합(한 계절 세 글자가 모임)",
+  CHUNG: "충(마주 서서 부딪침)", HYEONG: "형(서로 깎고 다듬는 마찰)", PA: "파(맞춰 둔 것에 금이 감)", HAE: "해(가까운 사이의 작은 서운함)", WONJIN: "원진(이유 없이 거슬리는 엇박자)",
+};
+export const HALF_HAP_PLAIN = "반합(삼합 세 글자 중 두 글자가 만남)";

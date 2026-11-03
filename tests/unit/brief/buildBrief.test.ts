@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { PRODUCT_CHARS } from "@/lib/brief/chapters";
 import { buildBrief, loadKnowledge, sceneFits, type Brief, type BriefInput, type BriefPersonInput } from "@/lib/brief";
 import { GROUPS } from "@/lib/brief/traits";
 import type { SceneRequires } from "@/data/knowledge-v5/schema";
@@ -148,16 +149,15 @@ describe("brief builder — 성질", () => {
     }
   });
 
-  it("비반복 장은 절 1~5개(절마다 재료 1~4, 절이 적으면 목표 분량도 줄임, 3개 미만인 장은 책에 1개까지), 반복 장은 타임라인 항목을 가진다", () => {
+  // P6b C-1: 장마다 소제목 2~3개(재료가 빠지면 1개까지), 장 목표 = 절 목표 × 절 수.
+  it("비반복 장은 절 1~3개(절마다 재료 1~4, 목표 분량 = 절 목표 × 절 수), 반복 장은 타임라인 항목을 가진다", () => {
     for (const { brief } of samples) {
       for (const c of brief.chapters) {
         if (c.id.includes(":")) { expect(c.materials[0].kind).toBe("timeline"); continue; }
-        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(5);
+        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(3);
         for (const s of c.sections!) expect(s.materials.length).toBeGreaterThanOrEqual(1);
-        if (c.sections!.length < 4) expect(c.targetChars[1]).toBeLessThan(1250);
+        expect(c.targetChars[1]).toBe(PRODUCT_CHARS[brief.product].section[1] * c.sections!.length);
       }
-      // MBTI가 없으면 MBTI가 1순위인 절이 빠져 짧은 장이 하나 더 생길 수 있다.
-      expect(brief.chapters.filter(c => c.sections && c.sections.length < 3).length, brief.product).toBeLessThanOrEqual(brief.mbti ? 1 : 2);
     }
   });
 

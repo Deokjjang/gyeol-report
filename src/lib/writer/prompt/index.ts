@@ -57,17 +57,25 @@ export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters
   return { traits, shadows };
 }
 
+/** 원국 요약: 일간 그림 별명·비유는 빼고 핵심 이미지 한 줄만(P6b B-2·B-4). */
+const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage"), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.line });
+
 export function renderWriterBrief(brief: Brief): Record<string, unknown> {
   const { style, timeline, fortunes } = brief;
   const { traits, shadows } = writerFacing(brief);
   return {
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan"),
-    // 좋은 기운이 trait와 같으면 그림·한 줄은 trait 쪽에만 둔다.
-    fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "image", "oneLiner") : omit(f, "featureId")),
-    // 대표 그림이 따로 있는 trait(sameImageAs)는 자기 그림을 주지 않는다: 작가가 같은 대상을 또 그렸다(P3.8 r1).
-    traits: traits.map(t => t.sameImageAs ? omit(t, "score", "family", "featureId", "chapters", "image") : omit(t, "score", "family", "featureId", "chapters")),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner"),
+    chart: writerChart(brief.chart),
+    mbti: brief.mbti ? omit(brief.mbti, "image") : null,
+    // 그림 별명·이미지·한 줄은 내부 별칭(P6b B-2): 작가는 이름(한자)·뜻(meaning)·나에게(forYou)만 받는다.
+    unused: brief.unused.map(u => omit(u, "easyName", "oneLiner")),
+    ...(brief.partner ? { partner: { ...brief.partner, chart: writerChart(brief.partner.chart), mbti: brief.partner.mbti ? omit(brief.partner.mbti, "image") : null } } : {}),
+    // 좋은 기운이 trait와 같으면 뜻·나에게는 trait 쪽에만 둔다.
+    fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "easyName", "image", "oneLiner", "meaning", "forYou") : omit(f, "featureId", "easyName", "image", "oneLiner")),
+    traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs")),
     shadows,
-    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji")) } } : {}),
+    // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
+    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => omit(e, "colors", "ganji", "imageLine", "period", "todo", "review")) } } : {}),
     // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).
     style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, forbidden: style.forbidden },
     // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).
