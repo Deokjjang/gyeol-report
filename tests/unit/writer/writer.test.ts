@@ -24,16 +24,19 @@ const inputs: [string, BriefInput][] = [
 ];
 
 describe("작가 지침(B)", () => {
-  it("시스템 지침 1,500토큰 이하, 출력 형식·금지·브리프 읽는 법 포함", () => {
-    expect(estimateTokens(WRITER_SYSTEM)).toBeLessThanOrEqual(1500);
+  it("시스템 지침 2,200토큰 이하(P6c: 재료·사실·카드·표지·강조), 출력 형식·금지·브리프 읽는 법 포함", () => {
+    expect(estimateTokens(WRITER_SYSTEM)).toBeLessThanOrEqual(2200);
     for (const s of ["## N. 장 제목", "### 소제목", "### {key}", "15자 이상", "forbiddenFacts", "materials"]) expect(WRITER_SYSTEM).toContain(s);
     expect(WRITER_PREFIX.startsWith(WRITER_SYSTEM)).toBe(true);
   });
-  it("문체 예시 2개는 A-3 규칙을 지킨다(옛 부정 낱말·과거 단정 없음, 용어는 쉬운 말 다음 괄호)", () => {
-    expect(STYLE_EXAMPLES).toHaveLength(2);
+  it("문체 예시 3개는 A-3·P6c 규칙을 지킨다(옛 부정 낱말·과거 단정·명리학에서 없음, 뜻 공식 예시마다 1번 이하, 소제목마다 핵심 문장 하나)", () => {
+    expect(STYLE_EXAMPLES).toHaveLength(3);
     for (const e of STYLE_EXAMPLES) for (const s of splitSentences(e.text)) { expect(OLD_NEGATIVE.test(s), s).toBe(false); expect(isPastAssertion(s), s).toBe(false); }
-    // P6b B-3: 용어 첫 등장 형식 "이름(한자)은 명리학에서 ~를 뜻해요".
-    for (const e of STYLE_EXAMPLES) expect(e.text).toMatch(/[가-힣]+\([一-鿿]+\)은 명리학에서 [^.]+뜻해요\./);
+    // P6c A4: "명리학에서" 없음, 뜻 공식("이름(한자)은 ~을 뜻해요")은 예시마다 1번 이하.
+    for (const e of STYLE_EXAMPLES) { expect(e.text).not.toMatch(/명리학에서/); expect(splitSentences(e.text).filter(x => /\([一-鿿]+\)(은|는) [^.]*뜻해요/.test(x)).length).toBeLessThanOrEqual(1); }
+    // P6c H: 소제목마다 ⟪ ⟫ 하나. P6c G·F1: 표지 줄과 카드 줄 예시.
+    for (const e of STYLE_EXAMPLES) for (const sec of e.text.split(/^### /m).slice(1)) expect(sec.match(/⟪/g)?.length ?? 0, sec.slice(0, 20)).toBe(1);
+    expect(STYLE_EXAMPLES[0].text).toMatch(/^\[표지\] /); expect(STYLE_EXAMPLES[2].text).toMatch(/\[그림\] .+\n\[해 볼 것\] .+\n\[살필 점\] /);
     // P3.5 A3: 시험 고객(c1 丁丑·ENTJ, c2 庚辰·INFP, X 丁丑·ISFJ, Y ENFP)과 원국·MBTI가 겹치지 않는 가상 인물
     for (const e of STYLE_EXAMPLES) for (const banned of ["ENTJ", "INFP", "ISFJ", "ENFP", "(정축)", "(경진)", "(갑신)", "천문성", "정관"]) expect(e.text.includes(banned), banned).toBe(false);
   });

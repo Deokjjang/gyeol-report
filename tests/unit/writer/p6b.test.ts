@@ -142,7 +142,8 @@ describe("P6b 같은 고객의 다른 상품(E-1)", () => {
     const r = await priorBooks(store as never, "u1", me);
     expect(r.books).toBe(1); expect(r.scenes.length).toBeGreaterThan(0); expect(r.sentences.length).toBeGreaterThan(20);
     expect((await priorBooks(store as never, "u1", { person: { name: "다른", birthDate: "2000-01-01", birthTime: "" } })).books).toBe(0);
-    expect(await priorBooks({ call: async () => { throw new Error("db"); } } as never, "u1", me)).toEqual({ scenes: [], sentences: [], books: 0 });
+    expect(r.explained?.length).toBeGreaterThan(0); // P6c A3: 앞 책이 뜻을 푼 특성
+    expect(await priorBooks({ call: async () => { throw new Error("db"); } } as never, "u1", me)).toEqual({ scenes: [], sentences: [], books: 0, explained: [] });
   });
 });
 
@@ -156,11 +157,12 @@ describe("P6b 지침 누출(r1)", () => {
 
 import { createV5Snapshot, projectV5Book } from "@/lib/writer/book";
 describe("P6b 세운 달 번호", () => {
-  it("라벨은 절입 날짜의 달력 달(묘월 = 3월 무렵), 화면 표는 절기월 순번·날짜 구간(P6b-ui)", () => {
+  it("라벨은 'N번째 달 · 간지월 (절입일~)'(P6c E5: 달력 달 이름·이번 달 없음), 화면 표는 절기월 순번·날짜 구간(P6b-ui)", () => {
     const b = book("annual_fortune", PEOPLE.c1);
     const cards = b.draft.timeline!.cards.filter(c => c.kind === "month");
-    expect(cards[1].label).toMatch(/^3월 무렵 辛卯\(신묘\)월/);
-    expect(cards[11].label).toMatch(/^이듬해 1월 무렵/);
+    expect(cards[1].label).toBe("2번째 달 · 신묘월 (03/05~)");
+    expect(cards[11].label).toMatch(/^12번째 달 · [가-힣]{2}월 \(01\/\d{2}~\)$/);
+    expect(cards.some(c => /무렵|이번 달/.test(c.label))).toBe(false);
     const data = projectV5Book(createV5Snapshot({ reportId: "report_p6bmonthtest0000", createdAtIso: `${BASE}T00:00:00.000Z`, draft: b.draft, evidence: b.evidence }))!;
     const page = data.pages.find(p => p.kind === "months") as { months: { month: number }[] };
     const months = (page as { months: { order?: number; range?: string }[] }).months;

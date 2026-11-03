@@ -26,7 +26,11 @@ export type DraftChapter = { readonly chapter: BookChapter; readonly source: Exc
 export type FinalChapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly keys?: readonly string[] };
 /** props: 브리프 usedProps 소품이 본문에 나온 장 수(P3.6 A1). experience: 경험 단정 바꿈·지움 수(P3.6 A6). */
 /** traitUse: 원고의 trait 언급(소개·적용)·장 안 중복·같은 축 중복(P3.8 1, 참고용). infoRepeats: 같은 정보(주장·장면·처방) 반복(P6 반복의 정의). */
-export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric };
+/** p6c(P6c): 결정론 정리 수, 수리 전 검사 결과(규칙별), 수리 대상·적용·호출 수, 재요청 장, 수리 뒤 남은 것(지운 문장·뺀 문단), 표지 출처, 대체한 카드 줄. */
+export type P6cMetric = { readonly tidy: { readonly prefix: number; readonly mbtiCode: number; readonly monthNow: number; readonly keyMarks: number }; readonly flags: Readonly<Record<string, number>>;
+  readonly repairTargets: number; readonly repaired: number; readonly repairCalls: number; readonly redoCalls: number; readonly redoChapters: readonly number[];
+  readonly remaining: Readonly<Record<string, number>>; readonly removed: number; readonly droppedParagraphs: number; readonly cover: "writer" | "fallback"; readonly cardFlags: readonly string[] };
+export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric; readonly p6c?: P6cMetric };
 export type SafetyReport = { readonly deletions: readonly Deletion[]; readonly warnings: readonly StyleWarning[]; readonly replacements?: readonly Replacement[]; readonly metrics?: SafetyMetrics };
 /** 같은 소품이 본문에 나와도 되는 장 수(P3.6 A1). */
 export const MAX_PROP_CHAPTERS = 2;
@@ -63,7 +67,7 @@ function filterSections(sections: readonly BookSection[], f: SafetyFacts, n: num
     const headingBad = !keyed && s.heading && sentenceViolation(s.heading, f, allowed, cond);
     if (headingBad) deletions.push({ chapter: n, rule: headingBad, sentence: `### ${s.heading}` });
     const before = deletions.length;
-    const out = { heading: headingBad ? "" : tidyHeading(s.heading), paragraphs: s.paragraphs.map(p => filterParagraph(p, f, n, deletions, allowed, seen, cond, replacements)).filter(Boolean) };
+    const out = { heading: headingBad ? "" : tidyHeading(s.heading), paragraphs: s.paragraphs.map(p => filterParagraph(p, f, n, deletions, allowed, seen, cond, replacements)).filter(Boolean), ...(s.card ? { card: s.card } : {}) };
     if (deletions.length > before) shrunk?.add(out);
     return out;
   }).filter(s => s.paragraphs.length);
@@ -74,7 +78,7 @@ function keyedSections(sections: readonly BookSection[], keys: readonly string[]
   const out = new Map<string, BookSection>();
   for (const s of sections) {
     const key = keys.find(k => s.heading.trim() === k) ?? keys.find(k => s.heading.includes(k));
-    if (key && !out.has(key)) out.set(key, { heading: key, paragraphs: s.paragraphs });
+    if (key && !out.has(key)) out.set(key, { heading: key, paragraphs: s.paragraphs, ...(s.card ? { card: s.card } : {}) });
   }
   return out;
 }

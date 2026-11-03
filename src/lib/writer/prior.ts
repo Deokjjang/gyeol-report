@@ -8,8 +8,9 @@ import type { TicketPublicationStore } from "../tickets/publication";
 import type { V5BookDraft, V5Evidence } from "./book";
 import { splitSentences } from "./safety/patterns";
 
-export type PriorBooks = { readonly scenes: readonly string[]; readonly sentences: readonly string[]; readonly books: number };
-export const NO_PRIOR: PriorBooks = { scenes: [], sentences: [], books: 0 };
+/** explained(P6c A3): 앞 책들이 뜻을 푼 특성(feature id). 이번 책은 그 특성의 뜻을 다시 풀지 않고 이 상품에 맞는 쓰임만 쓴다. */
+export type PriorBooks = { readonly scenes: readonly string[]; readonly sentences: readonly string[]; readonly books: number; readonly explained?: readonly string[] };
+export const NO_PRIOR: PriorBooks = { scenes: [], sentences: [], books: 0, explained: [] };
 /** 책마다 최대 몇 권까지 거슬러 본다(최근 순). */
 export const PRIOR_LIMIT = 8;
 
@@ -28,7 +29,7 @@ export async function priorBooks(store: TicketPublicationStore, user: string, in
     const lib = await store.call("library", user);
     if (!lib.ok || !Array.isArray(lib.items)) return NO_PRIOR;
     const ids = (lib.items as { reportId?: string; status?: string }[]).filter(x => x.status === "available" && x.reportId).slice(0, PRIOR_LIMIT).map(x => x.reportId!);
-    const scenes: string[] = [], sentences: string[] = []; let books = 0;
+    const scenes: string[] = [], sentences: string[] = [], explained: string[] = []; let books = 0;
     for (const reportId of ids) {
       const r = await store.call("read", user, { reportId });
       const snap = r.ok ? r.snapshot as { productVersion?: string; draft?: V5BookDraft; evidencePacket?: V5Evidence } | null : null;
@@ -37,9 +38,17 @@ export async function priorBooks(store: TicketPublicationStore, user: string, in
       books++;
       sentences.push(...snap.draft.chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p)))));
       scenes.push(...(snap.evidencePacket.meta.scenes ?? []));
+      explained.push(...(snap.evidencePacket.meta.explained ?? []));
     }
-    return { scenes: [...new Set(scenes)], sentences, books };
+    return { scenes: [...new Set(scenes)], sentences, books, explained: [...new Set(explained)] };
   } catch { return NO_PRIOR; }
+}
+
+/** 이 책이 뜻을 푼 특성(angle=first인 trait의 feature id, P6c A3). 다음 책이 뜻을 다시 풀지 않는다. */
+export function explainedOf(brief: Brief): string[] {
+  const ids = new Set<string>();
+  for (const c of brief.chapters) for (const m of [...c.materials, ...(c.sections ?? []).flatMap(s => s.materials)]) if (m.kind === "trait" && m.angle === "first") { const t = brief.traits.find(x => x.id === m.traitId); if (t) ids.add(t.featureId); }
+  return [...ids];
 }
 
 /** 브리프가 고른 지식 DB 장면 글(다음 책이 피하도록 Book 메타에 남긴다). */

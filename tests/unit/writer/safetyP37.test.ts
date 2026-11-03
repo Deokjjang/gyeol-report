@@ -87,8 +87,9 @@ describe("P3.7 원고 보강", () => {
     expect(roles.length).toBeGreaterThanOrEqual(2); expect(roles.length).toBeLessThanOrEqual(3);
     expect(adj.length).toBeGreaterThanOrEqual(3); expect(adj.length).toBeLessThanOrEqual(4);
     expect(far.length).toBeGreaterThanOrEqual(2); expect(far.length).toBeLessThanOrEqual(3);
-    // P6: MBTI 근거는 성향의 쉬운 설명 한 구절("ENTJ는 … 편").
-    for (const p of [...roles, ...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 명리: .+ \/ MBTI: ENTJ는 .+ 편$/);
+    // P6: MBTI 근거는 성향의 쉬운 설명 한 구절("ENTJ는 … 편"). P6c E1: 옮겨 갈 직무·다른 길은 근거 둘 + 맞는 조건·안 맞는 조건.
+    for (const p of roles) expect(p).toMatch(/^[^—]{2,40} — 명리: .+ \/ MBTI: ENTJ는 .+ 편$/);
+    for (const p of [...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 근거1\(명리\): .+ \/ 근거2\(MBTI\): ENTJ는 .+ 편 \/ 맞는 조건: .+ \/ 안 맞는 조건: .+$/);
     expect(new Set([...adj, ...far].map(p => p.split(" — ")[0])).size).toBe(adj.length + far.length);
     for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect([...adj, ...far].join(" "), bad).not.toContain(bad);
     const current = ev(career, "currentJob")!.facts.join(" ");

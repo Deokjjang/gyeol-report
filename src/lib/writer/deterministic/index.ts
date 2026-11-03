@@ -9,14 +9,29 @@ import { josa } from "@/lib/brief/labels";
 import type { Brief, Material, Trait } from "@/lib/brief/schema";
 import { chapterChars, type BookChapter, type BookSection } from "../format";
 import type { WriterChapter } from "../prompt";
+import { overlapping } from "../safety/lint";
 import { splitSentences } from "../safety/patterns";
 import { norm } from "../safety/sentences";
 
 const noHan = (s: string) => s.replace(/\s*\([^)]*[一-鿿][^)]*\)/g, "").replace(/[一-鿿]+/g, "").replace(/\s{2,}/g, " ").trim();
 const sentence = (s: string) => { const t = s.trim(); return !t ? "" : /[.!?]$/.test(t) ? t : `${t}.`; };
 const join = (...parts: (string | null | undefined | false)[]) => parts.filter((p): p is string => Boolean(p && p.trim())).map(sentence).join(" ");
-/** '…'예요/'…'이에요: 따옴표 안 마지막 글자의 받침으로 고른다. */
-const yeyo = (quoted: string) => `'${quoted}'${(((quoted.charCodeAt(quoted.length - 1) - 0xac00) % 28) !== 0) ? "이에요" : "예요"}`;
+/** 명사 + 이에요/예요(받침으로 고른다, 괄호는 건너뛴다). P6c I: 따옴표 인용 대신 평서문으로. */
+const ieyo = (noun: string) => { const bare = noun.replace(/\([^)]*\)\s*$/, "").trim(); const c = bare.charCodeAt(bare.length - 1) - 0xac00; return `${noun}${c >= 0 && c < 11172 && c % 28 !== 0 ? "이에요" : "예요"}`; };
+/**
+ * 근거 사실 한 줄 → 읽히는 문장(P6c I: 규칙 설명·쓰는 법 꼬리 없이). "라벨: 내용" → "라벨은 내용", " — "·" / "는 문장을 나눈다.
+ * 괄호 속 쓰는 법("(한 사람으로 합쳐 쓴다)")은 뺀다. 명사로 끝나면 "이에요/예요"를 붙인다.
+ */
+export function factSentences(f: string): string[] {
+  const clean = f.replace(/\([^)]*(쓴다|쓰지|짚는다|단정|옮기지)[^)]*\)/g, "").replace(/\s{2,}/g, " ").trim();
+  return clean.split(/ — | \/ /).flatMap(part => {
+    const m = part.match(/^([^:：]{2,14})[:：]\s*(.+)$/);
+    const body = m ? `${josa(m[1].trim(), "은는")} ${m[2].trim()}` : part.trim();
+    if (!body) return [];
+    if (/[.!?]$/.test(body) || /(다|요)$/.test(body)) return [body];
+    return [/(쪽|길|일|해|달|곳|사람|구조|방식|자리|때|힘|흐름|기운|성향|모양|감각|편)(\([^)]*\))?$/.test(body) ? ieyo(body) : body];
+  });
+}
 const DOMAIN_KO: Record<string, string> = { work: "일할 때", money: "돈 앞에서", study: "배울 때", love: "사랑할 때", marriage: "함께 살게 되면", relationships: "사람들 사이에서", alone: "혼자 있을 때" };
 const EVIDENCE_HEAD: Record<string, string> = { spouseStar: "끌리는 상대를 비추는 별", spousePalace: "곁에 둘 사람의 자리", childStar: "아이를 키우게 된다면", childPalace: "아이 자리에 놓인 기운", partnerMatch: "잘 맞는 사람의 모습", meetingPlaces: "만나기 좋은 곳", jobFit: "잘 맞는 일의 모양", investment: "돈을 다루는 방식" };
 
@@ -38,8 +53,9 @@ function traitSection(ctx: Ctx, m: Extract<Material, { kind: "trait" }>, chapter
   const heading = first
     ? pick(ctx, `${chapterId}:${t.id}:h`, [`${name}의 뜻`, `당신 안의 ${name}`, `${josa(name, "이가")} 보이는 순간`, `${name}, 이렇게 씁니다`])
     : `${DOMAIN_KO[m.domain] ?? "다른 자리"}에서의 ${name}`;
+  // 뜻은 지식 DB 뜻 문장 그대로(앞 두 문장), 이어서 나에게 주는 힘. "명리학에서·이런 뜻을 가진" 같은 틀 문장은 쓰지 않는다(P6c A4·I).
   const intro = first
-    ? join(`${josa(t.name, "은는")} 명리학에서 이런 뜻을 가진 기운이에요`, t.meaning, `그래서 당신에게는 이런 힘이 있습니다`, t.forYou)
+    ? join(...splitSentences(t.meaning).slice(0, 2), t.forYou)
     : `${DOMAIN_KO[m.domain] ?? "다른 자리"}에서도 ${josa(name, "이가")} 드러납니다`;
   const fusion = first && t.fusion && !ctx.used.has(`fusion:${t.id}`) ? (ctx.used.add(`fusion:${t.id}`), t.fusion) : undefined;
   const p1 = join(intro, first ? t.good[0] : t.good[1] ?? t.good[0], first ? t.positionNote?.replace(/^[^:]+:\s*/, "") : undefined);
@@ -58,10 +74,10 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ctx.used.has(`ref:${ref}`)) return null;
   ctx.used.add(`ref:${ref}`);
   if (ref === "chart.dayMaster") return { heading: "타고난 바탕", paragraphs: [join(`태어난 날의 기운은 ${noHan(c.dayMaster.name)}입니다`, `당신을 한 줄로 그리면 ${c.coreImage.line}예요`, `타고난 힘의 세기는 ${c.strength.label} 쪽입니다`)] };
-  if (ref === "mbti" && b.mbti) return { heading: `${b.mbti.type}, ${b.mbti.easyName}`, paragraphs: [join(`MBTI는 ${b.mbti.type}, ${b.mbti.easyName}입니다`, `한마디로 ${yeyo(b.mbti.oneLiner)}`, b.mbti.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""), b.mbti.functions[1]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
-  if (ref === "chart.elements") return { heading: "가장 강한 기운과 가장 약한 기운", paragraphs: [join(`다섯 기운 가운데 ${josa(c.elements.strongest.name, "이가")} 가장 셉니다`, c.elements.strongest.reason, `반대로 ${josa(c.elements.weakest.name, "은는")} ${c.elements.weakest.reason}`, ...c.elements.reading.map(r => `그래서 '${r}'에 가깝습니다`))] };
-  if (ref === "chart.yinYang") return { heading: "음과 양의 균형", paragraphs: [join(`음의 글자 ${c.yinYang.yin}개, 양의 글자 ${c.yinYang.yang}개입니다`, c.yinYang.reading && `'${c.yinYang.reading}'이라는 뜻이에요`)] };
-  if (ref === "chart.climate") return { heading: `${c.climate.season}에 태어난 사람`, paragraphs: [join(`당신은 ${c.climate.season}에 태어났습니다`, c.climate.reading && `이 계절의 당신은 '${c.climate.reading}'에 가깝습니다`)] };
+  if (ref === "mbti" && b.mbti) return { heading: `${b.mbti.type}, ${b.mbti.easyName}`, paragraphs: [join(`MBTI는 ${b.mbti.type}, ${b.mbti.easyName}입니다`, `한마디로 ${ieyo(b.mbti.oneLiner)}`, b.mbti.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""), b.mbti.functions[1]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
+  if (ref === "chart.elements") return { heading: "가장 강한 기운과 가장 약한 기운", paragraphs: [join(`다섯 기운 가운데 ${josa(c.elements.strongest.name, "이가")} 가장 셉니다`, c.elements.strongest.reason, `반대로 ${josa(c.elements.weakest.name, "은는")} ${c.elements.weakest.reason}`, ...c.elements.reading)] };
+  if (ref === "chart.yinYang") return { heading: c.yinYang.yin === c.yinYang.yang ? "음과 양의 균형" : "음과 양의 비율", paragraphs: [join(`음의 글자 ${c.yinYang.yin}개, 양의 글자 ${c.yinYang.yang}개입니다`, c.yinYang.reading)] };
+  if (ref === "chart.climate") return { heading: `${c.climate.season}에 태어난 사람`, paragraphs: [join(`당신은 ${c.climate.season}에 태어났습니다`, c.climate.reading)] };
   if (ref === "chart.thisYear") return { heading: `${c.thisYear.year}년의 기운`, paragraphs: [join(c.thisYear.effect, `올해 들어오는 힘은 ${noHan(c.thisYear.tenGod)} 쪽이에요`)] };
   if (ref === "chart.currentDayun" && c.currentDayun) return { heading: "지금 지나는 큰 흐름", paragraphs: [join(`지금은 ${c.currentDayun.ages}에 걸친 ${noHan(c.currentDayun.tenGod)}의 큰 흐름(대운) 위에 있습니다`, c.currentDayun.reading, c.currentDayun.next && `${c.currentDayun.next.startYear}년부터는 ${noHan(c.currentDayun.next.tenGod)} 쪽 흐름으로 넘어갑니다`)] };
   if (ref === "chart.strength") return { heading: "타고난 힘의 세기", paragraphs: [join(`타고난 힘의 세기는 ${c.strength.label} 쪽입니다`, `그래서 기댈 곳과 쓸 곳을 함께 보는 게 중요해요`)] };
@@ -85,20 +101,20 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   const x = b.compatibility; if (!x) return null;
   const A = x.a.callName, B = x.b.callName;
   if (ref === "compatibility.a" || ref === "compatibility.b") { const p = ref.endsWith("a") ? x.a : x.b; return { heading: `${p.callName}이라는 사람`, paragraphs: [join(`${p.callName}을 한 줄로 그리면 ${p.image}예요`, p.mbti && `MBTI는 ${p.mbti}예요`)] }; }
-  if (ref === "compatibility.differences" && x.differences.length) return { heading: "같은 장면, 다른 반응", paragraphs: x.differences.slice(0, 2).map(d => join(`${josa(A, "은는")} ${d.a} ${josa(B, "은는")} ${d.b}`)) };
+  if (ref === "compatibility.differences" && x.differences.length) return { heading: "같은 장면, 다른 반응", paragraphs: x.differences.slice(0, 2).map(d => join(`${josa(A, "은는")} ${d.a}`, `${josa(B, "은는")} ${d.b}`)) };
   if (ref === "compatibility.tenGodAB") return { heading: `${A}이 ${B}에게 주는 것`, paragraphs: [join(x.tenGodAB.reading)] };
   if (ref === "compatibility.tenGodBA") return { heading: `${B}이 ${A}에게 주는 것`, paragraphs: [join(x.tenGodBA.reading)] };
   if (ref === "compatibility.complement" && x.complement.length) return { heading: "서로 채워 주는 기운", paragraphs: [join(...x.complement.slice(0, 3))] };
-  if (ref === "compatibility.mbtiConvention" && x.mbtiConvention) return { heading: "흔히 하는 MBTI 궁합 이야기", paragraphs: [join(`흔히 하는 말(통념)로는 '${x.mbtiConvention.fit}'인 조합입니다`, x.mbtiConvention.why)] };
+  if (ref === "compatibility.mbtiConvention" && x.mbtiConvention) return { heading: "흔히 하는 MBTI 궁합 이야기", paragraphs: [join(`흔히 하는 말(통념)로는 ${({ 좋음: "잘 맞는", 보통: "무난한", 노력: "맞추려면 노력이 드는" } as Record<string, string>)[x.mbtiConvention.fit] ?? "무난한"} 조합으로 봅니다`, x.mbtiConvention.why)] };
   if (ref === "compatibility.dayRelations" && x.dayRelations.length) return { heading: "두 사람의 날이 만나는 방식", paragraphs: [join(...x.dayRelations.slice(0, 2))] };
   if (ref === "compatibility.lens") return { heading: x.lens.focus, paragraphs: [join(`이 관계에서는 ${x.lens.focus}이 가장 중요합니다`, x.lens.tone)] };
   if (ref === "compatibility.common" && x.common.length) return { heading: "둘이 닮은 곳", paragraphs: [join(`두 사람은 ${x.common.slice(0, 3).join(", ")}이라는 점이 같습니다`)] };
   if (ref === "compatibility.elements" && b.partner) { const pc = b.partner.chart; return { heading: "두 사람의 강한 기운과 약한 기운", paragraphs: [join(`${A}에게는 ${josa(c.elements.strongest.name, "이가")} 가장 세고 ${josa(c.elements.weakest.name, "이가")} 가장 약합니다`, `${B}에게는 ${josa(pc.elements.strongest.name, "이가")} 가장 세고 ${josa(pc.elements.weakest.name, "이가")} 가장 약합니다`, c.elements.strongest.element === pc.elements.weakest.element ? `${A}의 넉넉한 쪽이 ${B}의 빈 곳과 맞닿아 있어요` : pc.elements.strongest.element === c.elements.weakest.element ? `${B}의 넉넉한 쪽이 ${A}의 빈 곳과 맞닿아 있어요` : "강한 쪽과 약한 쪽이 서로 엇갈려 있어, 각자 잘하는 몫을 나누기 좋습니다")] }; }
-  if (ref === "compatibility.yinYang" && b.partner) { const py = b.partner.chart.yinYang; return { heading: "두 사람의 음과 양", paragraphs: [join(`${A}는 음 ${c.yinYang.yin}·양 ${c.yinYang.yang}, ${B}는 음 ${py.yin}·양 ${py.yang}입니다`, c.yinYang.reading && `${A} 쪽은 '${c.yinYang.reading}'에 가깝고`, py.reading && `${B} 쪽은 '${py.reading}'에 가깝습니다`)] }; }
+  if (ref === "compatibility.yinYang" && b.partner) { const py = b.partner.chart.yinYang; return { heading: "두 사람의 음과 양", paragraphs: [join(`${josa(A, "은는")} 음 ${c.yinYang.yin}·양 ${c.yinYang.yang}, ${josa(B, "은는")} 음 ${py.yin}·양 ${py.yang}입니다`, c.yinYang.reading, py.reading !== c.yinYang.reading ? py.reading : undefined)] }; }
   // 점수 v2(P6c): 항목 이유(onScorePage)는 점수 쪽에 이미 있어 옮기지 않고, 항목 이름으로만 짚는다.
   const names = (cs: readonly { name: string }[]) => cs.map((c, i) => (i < cs.length - 1 ? josa(c.name, "과와") : c.name)).join(" ");
   if (ref === "compatibility.parts") { const good = x.score.components.filter(c => c.level === "좋음"), adjust = x.score.components.filter(c => c.level === "조율");
-    return { heading: "점수를 만든 항목", paragraphs: [join(good.length ? `잘 맞물리는 쪽은 ${names(good)}입니다` : "", adjust.length ? `맞춰 갈 쪽은 ${names(adjust)}입니다` : "", "항목마다 무엇을 보았는지는 점수 쪽에 적어 두었어요")] }; }
+    return { heading: "점수를 만든 항목", paragraphs: [join(good.length ? `잘 맞물리는 쪽은 ${names(good)}입니다` : "", adjust.length ? `맞춰 갈 쪽은 ${names(adjust)}입니다` : "")] }; }
   if (ref === "compatibility.direction") return { heading: "서로에게 어떤 사람인가", paragraphs: [join(x.score.direction.aToB.role, x.score.direction.aToB.gives, x.score.direction.bToA.role, x.score.direction.bToA.gives)] };
   if (ref === "compatibility.score") {
     const s = x.score, good = s.components.filter(c => c.level === "좋음"), adjust = s.components.filter(c => c.level === "조율");
@@ -111,7 +127,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
 }
 
 function evidenceSection(m: Extract<Material, { kind: "evidence" }>): BookSection | null {
-  const facts = m.facts.filter(f => !/보류|보지 않습니다/.test(f)).map(f => noHan(f));
+  const facts = m.facts.filter(f => !/보류|보지 않습니다/.test(f)).map(f => noHan(f)).flatMap(factSentences);
   if (!facts.length) return null;
   return { heading: EVIDENCE_HEAD[m.key] ?? "타고난 근거", paragraphs: [join(...facts)] };
 }
@@ -124,7 +140,7 @@ function timelineSection(ctx: Ctx, key: string, extra: readonly Material[]): Boo
   const trait = extra.find((m): m is Extract<Material, { kind: "trait" }> => m.kind === "trait");
   const t = trait ? traitOf(b, trait.traitId) : undefined;
   return { heading: key, paragraphs: [join(
-    `${e.material.image}예요`, note?.meaning, note?.caution,
+    ieyo(e.material.image), note?.meaning, note?.caution,
     e.badges[0] && e.badges[0].line, e.fillsLack.fills ? "원래 부족한 기운을 채워 주는 쪽이라 숨이 한결 편해집니다" : undefined,
     `${unit}의 열쇠말은 ${e.keywords.join("·")}입니다`, e.action.text, e.material.scene, t && trait ? `${josa(noHan(t.name), "이가")} ${DOMAIN_KO[trait.domain] ?? "이때"} 드러납니다` : undefined,
   )] };
@@ -153,11 +169,13 @@ function extrasOf(ctx: Ctx, ch: WriterChapter, sections: readonly { heading: str
 /** 분량 보충: 목표에 닿을 때까지 보충 재료를 넣는다. 소제목은 5개까지, 넘으면 마지막 소제목에 붙인다. */
 function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: ReadonlySet<string>, n: number): BookSection[] {
   const local = new Set(sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p).map(norm))));
+  const seen = sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p)));
   const out = sections.map(s => ({ heading: s.heading, paragraphs: [...s.paragraphs] }));
   const chars = () => chapterChars({ n, title: "", sections: out });
   for (const x of extras) {
     if (chars() >= DET_MIN_CHARS) break;
-    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (local.has(k) || (k.length >= 20 && avoid.has(k))) return false; local.add(k); return true; }).join(" ");
+    // 같은 말 되풀이(P6c I): 정확히 같은 문장뿐 아니라 거의 같은 문장(5-gram 자카드 0.5 이상)도 넣지 않는다.
+    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (local.has(k) || (k.length >= 20 && avoid.has(k)) || overlapping(seen, [s]).length) return false; local.add(k); seen.push(s); return true; }).join(" ");
     if (!text) continue;
     const target = x.append ? out.find(s => s.heading === x.heading) : undefined;
     if (target) target.paragraphs.push(text);
@@ -203,6 +221,7 @@ function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly s
     const s = refSection(ctx, ref, ch.id); if (s && s.paragraphs.length) sections.push(s);
   }
   const top = sections.slice(0, 5);
-  if (ch.useName && top[0]) top[0] = { ...top[0], paragraphs: [`${brief.person.callName}, 이 장에서는 이 질문에 답해 볼게요. ${/[?？]$/.test(ch.question) ? ch.question : `${ch.question}?`} ${top[0].paragraphs[0]}`, ...top[0].paragraphs.slice(1)] };
+  // 이름 부르기: 안내 문장("이 장에서는 이 질문에 답해 볼게요") 없이 장 질문을 존댓말 질문으로(P6c I).
+  if (ch.useName && top[0]) top[0] = { ...top[0], paragraphs: [`${brief.person.callName}, ${ch.question.replace(/[?？]$/, "").replace(/(까|나|가)$/, "$1요")}? ${top[0].paragraphs[0]}`, ...top[0].paragraphs.slice(1)] };
   return { chapter: { n: ch.n, title: ch.title, sections: top }, extras: extrasOf(ctx, ch, origin) };
 }

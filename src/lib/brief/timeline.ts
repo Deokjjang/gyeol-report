@@ -219,9 +219,8 @@ export function buildMonthEntries(ctx: TimelineCtx, year: number, baseDate?: str
     // 기준일이 이미 지난 절기월은 past, 기준일이 든 달은 now(P3.6 B: 지난달을 예보처럼 썼다).
     const next = months[i + 1]?.startKst.slice(0, 10);
     const when = !baseDate ? undefined : next && next <= baseDate ? "past" : m.startKst.slice(0, 10) <= baseDate ? "now" : "future";
-    // 달 이름은 절입 날짜의 달력 달로(P6b r1: "2번째 달 신묘(03/06 절입부터)"를 작가가 "2월은 신묘월"로 옮겼다). key의 Mxx는 절기 순서(1=인월).
-    const cal = Number(m.startKst.slice(5, 7)), nextYear = Number(m.startKst.slice(0, 4)) > year;
-    const e = buildEntry(ctx, "month", `${year}-M${String(m.index).padStart(2, "0")}`, `${nextYear ? "이듬해 " : ""}${cal}월 무렵 ${ganjiLabel(m.pillar)}월 (${date} 절입부터)${when === "now" ? " (이번 달)" : ""}`, m.pillar, "monthly", start + m.index,
+    // 달 이름(P6c E5): "N번째 달 · 간지월 (절입일~)". 본문은 "경인월"처럼 부른다. "N월 무렵"(달력 달)과 "(이번 달)"은 쓰지 않는다(지금 달 강조는 화면이 읽는 날로).
+    const e = buildEntry(ctx, "month", `${year}-M${String(m.index).padStart(2, "0")}`, `${m.index}번째 달 · ${ganjiOf(m.pillar).hangul}월 (${date}~)`, m.pillar, "monthly", start + m.index,
       when ? { when } : {});
     out.push({ ...e, ...changeOf(out.at(-1), "달", e.tenGod.stem, e.flow.score) });
   });

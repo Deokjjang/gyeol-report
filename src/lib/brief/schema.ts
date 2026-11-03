@@ -27,6 +27,10 @@ export const PersonBriefSchema = z.object({
     job: z.object({ class: z.enum(["employed", "business", "student", "none"]), status: z.string(), detail: z.string() }),
   }),
   forbiddenFacts: z.array(z.string()).min(1),
+  /** 생활 단계(P6c C1): 장면이 맞아야 하는 삶의 자리(학생이 아니면 학교 장면 금지 등). 궁합은 없음. */
+  lifeStage: z.string().optional(),
+  /** 입력 직업의 실제 업무 단위(P6c E1): 기획·실행·운영·협상마다 장면 씨앗 2개. 직업군을 모르면 없음. */
+  workScenes: z.object({ plan: z.array(z.string()), execute: z.array(z.string()), operate: z.array(z.string()), negotiate: z.array(z.string()) }).optional(),
 });
 
 export const MbtiBriefSchema = z.object({
@@ -35,6 +39,7 @@ export const MbtiBriefSchema = z.object({
   shadows: z.array(z.string()),
 });
 
+const StarFact = z.object({ star: z.string(), where: z.enum(["surface", "hidden", "none"]), places: z.array(z.string()), line: z.string() });
 export const ChartBriefSchema = z.object({
   pillars: z.object({ year: Ganji, month: Ganji, day: Ganji, hour: Ganji.optional() }),
   dayMaster: z.object({ stem: z.string(), name: z.string(), easyName: z.string(), metaphor: z.string() }),
@@ -53,8 +58,11 @@ export const ChartBriefSchema = z.object({
     presence: z.record(Element, z.object({ surface: z.number(), hidden: z.boolean() })).optional(),
   }),
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
-  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), tenGod: z.string(), reading: z.string(), next: z.object({ ganji: Ganji, startYear: z.number().int(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
+  /** phase(P6c B5): 대운 안의 위치(엔진 연차: 1~3년 앞쪽, 4~7년 중간, 8~10년 끝 무렵), yearsLeft = 올해 뒤로 남은 해. */
+  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), tenGod: z.string(), reading: z.string(), phase: z.object({ yearIndex: z.number().int(), label: z.string(), yearsLeft: z.number().int() }).optional(), next: z.object({ ganji: Ganji, startYear: z.number().int(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
   thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
+  /** 배우자 별·자녀 별(P6c B4): 성별 기준 별, 자리(surface 드러남·hidden 지장간에만·none 없음), 사실 한 줄. 성별 미상이면 없음. */
+  stars: z.object({ spouse: StarFact, child: StarFact }).optional(),
 });
 
 export const FusionBriefSchema = z.object({ target: z.string(), kind: z.enum(["resonance", "tension", "conditional"]), why: z.string(), scene: z.string().optional(), source: z.enum(["fusion", "mbtiLink", "computed"]) });
@@ -93,7 +101,8 @@ export const UnusedSchema = z.object({ kind: z.enum(["element", "tenGod"]), key:
 
 export const MaterialSchema = z.discriminatedUnion("kind", [
   /** angle: first = 이 trait를 책에서 처음 소개(그림 + 쉬운 말(용어)), new-domain = 앞에서 소개된 trait를 "앞에서 본 ○○" 한 문장으로만 부르고 이 절의 새 정보를 붙인다(P3.8 1). */
-  z.object({ kind: z.literal("trait"), traitId: z.string(), domain: z.enum(DOMAINS), scene: z.string().optional(), angle: z.enum(["first", "new-domain"]) }),
+  /** known(P6c A3): 같은 고객의 다른 책에서 이미 뜻을 푼 특성 — 이름만 부르고 이 상품에 맞는 쓰임만. */
+  z.object({ kind: z.literal("trait"), traitId: z.string(), domain: z.enum(DOMAINS), scene: z.string().optional(), angle: z.enum(["first", "new-domain", "known"]) }),
   z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string(), who: z.string().optional() }),
   z.object({ kind: z.literal("ref"), ref: z.string(), note: z.string().optional() }),
   /** note: 쓰는 법(작가 지시). 본문에 옮기지 않는다(P3.7 r1: 지시문이 독자용 면책 문구로 옮겨졌다). */

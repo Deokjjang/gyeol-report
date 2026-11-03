@@ -382,3 +382,12 @@ export const CareerCatalogSchema = z.object({
 }).strict();
 export type CareerCatalog = z.infer<typeof CareerCatalogSchema>;
 export type CareerJob = z.infer<typeof CareerJobSchema>;
+
+// ---------- 12) materials.json (P6c A1: 지식 DB 문장 → 작가 재료) ----------
+/**
+ * 원문 문장의 sha1 앞 12자 → 재료. 재료 = 상황 씨앗(장면 → 짧은 명사구) · 적용 방향(해석 → "무엇 → 어디서" 구) · 핵심 뜻(정의 → 낱말 묶음) ·
+ * MBTI 기능("쉬운 이름 | 방향"). 원문 파일은 그대로 두고(결정론 작가·부록이 원문을 쓴다), 작가 입력을 만들 때만 원문을 이것으로 바꾼다.
+ * 원문이 바뀌면 키가 달라져 재료가 비고, 지식 lint가 잡는다. 만드는 법: tools/p6c/seeds.
+ */
+export const MaterialsFileSchema = z.object({ version: z.string(), note: z.string().optional(), items: z.record(z.string().regex(/^[0-9a-f]{12}$/), z.string().min(3).max(80)) }).strict();
+export type MaterialsFile = z.infer<typeof MaterialsFileSchema>;

@@ -111,7 +111,9 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (INTERNAL_LABEL.test(s) || axisList(s)) return "internal_label";
   if (RURAL_PROP.test(s)) return "rural_prop";
   if (f.nicknames?.some(n => s.includes(n))) return "nickname";
-  if (!f.familyOk && FAMILY_MEMBER.test(s)) return "family_member";
+  // 가족 구성원은 조건형으로만(P6c E2: "부모님이 계시다면", "형제가 있다면"). 단정·과거 장면은 지운다.
+  // 명리 자리 이름("부모·형제 자리" = 월주)은 가족 구성원 전제가 아니다(P6c E2).
+  if (!f.familyOk && FAMILY_MEMBER.test(s.replace(/부모·?형제 ?(자리|궁)|부모 ?(자리|궁)|형제 ?(자리|궁)/g, "")) && !/(계시다면|계신다면|있다면|있으면|이라면|라면)/.test(s)) return "family_member";
   if (OLD_NEGATIVE.test(s)) return "old_negative";
   if (SOURCE_MENTION.test(s)) return "source_mention";
   if (copiesExample(s, allowed)) return "example_copy";

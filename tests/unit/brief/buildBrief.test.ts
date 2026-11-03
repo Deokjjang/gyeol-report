@@ -175,7 +175,8 @@ describe("brief builder — 성질", () => {
 
   // P3.6: 소품 사전 확대(직업군 13개)와 합충 자리 문장(where)으로 상한을 1% 올렸다.
   // P3.8: 추정을 작가가 실제로 받는 입력으로 바꿨다(배정 기록·안 쓰는 trait·style.rules 제외). 절 질문 52개가 늘어 10.8k.
-  it("종합 브리프 토큰 추정 10.8k 이내", () => {
-    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(10_800);
+  // P6c: 절마다 근거 2개(J)·사실 필드(오행 유무·대운 위치·배우자/자녀 별·생활 단계)로 늘어 11.6k(원문 기준, 작가는 재료로 바꾼 더 짧은 글을 받는다).
+  it("종합 브리프 토큰 추정 11.6k 이내", () => {
+    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(11_600);
   });
 });

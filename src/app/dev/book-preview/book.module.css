@@ -141,6 +141,8 @@
 .prose p + p, .prose section + section { margin-top: 25px; }
 .prose, .prose p { user-select: text; -webkit-user-select: text; }
 .prose section h2 { margin-block: 30px 18px; }
+/* 소제목마다 핵심 문장 하나(v5 P6c keySpan): 굵게 + 아래쪽 옅은 밑줄. */
+.keySpan { font-weight: 700; background: linear-gradient(transparent 62%, rgba(17, 17, 17, .08) 62%); }
 .bookContents { list-style: none; padding: 0; }
 .bookContents li { border-top: 1px solid var(--rule); }
 .bookContents button { display: flex; width: 100%; align-items: baseline; justify-content: space-between; gap: 16px; text-align: left; min-height: 52px; padding-block: 14px; font-size: 14px; line-height: 1.6; }

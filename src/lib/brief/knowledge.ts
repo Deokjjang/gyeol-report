@@ -2,12 +2,12 @@
  * knowledge-v5 로더. 브리프 빌더(buildBrief)는 이 결과를 인자로 받는 순수 함수다.
  * 읽기·zod 검증은 여기서 한 번만 한다(프로세스 캐시). 런타임 번들링(파일 추적)은 작가 통합 단계에서 붙인다.
  */
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema,
-  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema,
+  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema,
   type BehaviorOntology, type CareerCatalog, type CareerFile, type CompatSceneFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
 } from "@/data/knowledge-v5/schema";
 
@@ -36,6 +36,8 @@ export type Knowledge = {
   readonly catalog: CareerCatalog;
   /** 궁합 관계 유형별 생활 주제·장면(P3.8 3). */
   readonly compatScenes: CompatSceneFile;
+  /** 작가 재료(P6c A1): 원문 sha1 앞 12자 → 상황 씨앗·적용 방향·핵심 뜻. 파일이 없으면 빈 표(작가는 원문을 받는다). */
+  readonly materials: ReadonlyMap<string, string>;
 };
 
 export const DEFAULT_KNOWLEDGE_ROOT = resolve(process.cwd(), "src", "data", "knowledge-v5");
@@ -65,6 +67,7 @@ export function loadKnowledge(root: string = DEFAULT_KNOWLEDGE_ROOT): Knowledge 
     career: CareerFileSchema.parse(read("career", "jobs.json")),
     catalog: CareerCatalogSchema.parse(read("career", "catalog.json")),
     compatScenes: CompatSceneFileSchema.parse(read("compat", "scenes.json")),
+    materials: new Map(existsSync(join(root, "materials.json")) ? Object.entries(MaterialsFileSchema.parse(read("materials.json")).items) : []),
   };
   cache.set(root, k);
   return k;

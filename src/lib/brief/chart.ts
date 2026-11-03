@@ -5,7 +5,8 @@ import { getAnnualPillar, judgeElementBalance, natalEntries, type ElementBalance
 import type { ChartDetections } from "@/lib/saju/detections/types";
 import { getYearPillarFromSolarDateTime } from "@/lib/saju/pillars";
 import { getTenGod } from "@/lib/saju/tenGods";
-import type { FiveElement, Pillar, SajuCalcResult } from "@/lib/saju/types";
+import type { FiveElement, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
+import { DAYUN_PHASE_KO, dayunPhase } from "@/lib/writer/safety/lint";
 import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, ganjiLabel, ganjiOf, josa, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
@@ -88,7 +89,9 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
   const effect = yearEffectLine(year, yearPillar, bal, STEM_ELEMENT[dayMaster]);
   const cur = opts.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
   const curTenGod = cur ? getTenGod(dayMaster, cur.stem) : null;
-  const next = cur && cur.endYear - year <= 2 ? opts.dayun.cycles.find(c => c.index === cur.index + 1) : undefined;
+  // 다음 대운은 늘 준다(P6c E1 커리어 타이밍: 남은 기간·전환 해). 대운 안의 위치(앞쪽·중간·끝 무렵)는 엔진의 연차로(P6c B5).
+  const next = cur ? opts.dayun.cycles.find(c => c.index === cur.index + 1) : undefined;
+  const yearIndex = cur ? year - cur.startYear : 0;
   return {
     pillars: { year: ganjiOf(pillars.year), month: ganjiOf(pillars.month), day: ganjiOf(pillars.day), ...(pillars.hour && det.hourIncluded ? { hour: ganjiOf(pillars.hour) } : {}) },
     dayMaster: { stem: dayMaster, name: dm?.name ?? dayMaster, easyName: dm?.easyName ?? "", metaphor: dm?.image.metaphor ?? "" },
@@ -109,12 +112,39 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     },
     currentDayun: cur && curTenGod ? {
       ganji: ganjiOf(cur), ages: `만 ${manAge(cur.startYear, opts.birthYear)}~${manAge(cur.endYear, opts.birthYear)}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
+      phase: { yearIndex: yearIndex + 1, label: DAYUN_PHASE_KO[dayunPhase(yearIndex)], yearsLeft: cur.endYear - year },
       reading: dropSourceSentences(k.tenGodPeriod.get(curTenGod)?.year.meaning ?? ""),
       // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
       ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
+    ...(opts.gender ? { stars: starFacts(saju, det, opts.gender) } : {}),
   };
+}
+
+/**
+ * 배우자 별·자녀 별(P6c B4): 성별 기준 별과 자리를 사실 하나로. surface = 드러난 천간(일간 제외) 또는 지지 본기, hidden = 지장간에만, none = 없음.
+ * 남 = 배우자 재성·자녀 관성, 여 = 배우자 관성·자녀 식상. 시간 미상이면 시주는 보지 않는다.
+ */
+const STAR_TENGODS = { WEALTH: ["偏財", "正財"], OFFICER: ["偏官", "正官"], OUTPUT: ["食神", "傷官"] } as const;
+const POS_KO = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
+export function starFacts(saju: SajuCalcResult, det: ChartDetections, gender: "MALE" | "FEMALE") {
+  const one = (label: string, stars: readonly TenGod[]) => {
+    const surface: string[] = [], hidden: string[] = [];
+    for (const p of ["year", "month", "day", "hour"] as const) {
+      const pillar = saju.pillars[p]; if (!pillar || (p === "hour" && !det.hourIncluded)) continue;
+      const stemTg = p === "day" ? null : saju.tenGods.stems[p as "year" | "month" | "hour"];
+      if (stemTg && stars.includes(stemTg)) surface.push(`${POS_KO[p]} 하늘 글자`);
+      for (const h of saju.tenGods.hiddenStems.filter(x => x.branch === pillar.branch)) if (h.tenGod && stars.includes(h.tenGod)) (h.weight >= 0.5 ? surface : hidden).push(`${POS_KO[p]} 땅 글자${h.weight >= 0.5 ? "" : " 속"}`);
+    }
+    const where: "surface" | "hidden" | "none" = surface.length ? "surface" : hidden.length ? "hidden" : "none";
+    const name = stars.map(t => tenGodLabel(t).replace(/\(.*\)/, "")).join("·");
+    return { star: `${label}(${name})`, where, places: [...new Set([...surface, ...hidden])],
+      line: where === "surface" ? `${label}(${name})이 ${[...new Set(surface)].join("·")}에 드러나 있음` : where === "hidden" ? `${label}(${name})은 겉에는 없고 ${[...new Set(hidden)].join("·")}에 조금 있음` : `${label}(${name})이 원국에 없음(정해진 틀보다 스스로 찾는 쪽으로 읽음)` };
+  };
+  return gender === "MALE"
+    ? { spouse: one("배우자 별", STAR_TENGODS.WEALTH), child: one("자녀 별", STAR_TENGODS.OFFICER) }
+    : { spouse: one("배우자 별", STAR_TENGODS.OFFICER), child: one("자녀 별", STAR_TENGODS.OUTPUT) };
 }
 
 const GENERATES: Record<FiveElement, FiveElement> = { WOOD: "FIRE", FIRE: "EARTH", EARTH: "METAL", METAL: "WATER", WATER: "WOOD" };

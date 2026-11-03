@@ -17,10 +17,13 @@ export const PropsSchema = z.object({
   jobs: z.array(z.object({
     id: z.string().regex(/^[a-z][a-z0-9-]+$/), name: z.string().min(2).max(16),
     keywords: z.array(z.string().min(1).max(12)).min(2), props: z.array(Prop).min(12).max(16),
+    /** 일의 단계별 장면 씨앗(P6c E1 커리어 2): 기획·실행·운영·협상마다 그 직업의 실제 업무 단위 2개(서비스 기획 = PRD·스프린트·지표·QA). */
+    stages: z.object({ plan: z.array(Prop).length(2), execute: z.array(Prop).length(2), operate: z.array(Prop).length(2), negotiate: z.array(Prop).length(2) }).optional(),
   })).min(40),
   jobStatus: z.object({ student: Props, job_seeker: Props, employee: Props, freelancer: Props, self_employed: Props, business_owner: Props, homemaker: Props, unemployed: Props, other: Props, unknown: Props }),
   relationship: z.object({ single: Props, dating: Props, married: Props, unknown: Props }),
-  lifeStage: z.object(Object.fromEntries(LIFE_STAGES.map(k => [k, Props])) as Record<LifeStage, typeof Props>),
+  /** college(P6c C1): 대학생 이상 학생의 생활 소품. student 소품은 초·중·고 소품(매점·성적표·필기 노트 빌리기)이라 19세 이상 학생에게는 이것을 쓴다. */
+  lifeStage: z.object({ ...(Object.fromEntries(LIFE_STAGES.map(k => [k, Props])) as Record<LifeStage, typeof Props>), college: Props }),
 });
 export type PropsData = z.infer<typeof PropsSchema>;
 export const PROPS: PropsData = PropsSchema.parse(data);
@@ -56,6 +59,6 @@ export function customerProps(f: { detailJob: string; jobStatus: string; age: nu
   return {
     job: { group: group?.name ?? null, props: group?.props ?? p.jobStatus[status] },
     relationship: p.relationship[profile.relationship],
-    stage: { key: stage, props: p.lifeStage[stage] },
+    stage: { key: stage, props: stage === "student" && f.age >= 19 ? p.lifeStage.college : p.lifeStage[stage] },
   };
 }

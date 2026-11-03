@@ -82,13 +82,14 @@ export function jobFieldList(text: string): string | null {
 
 /** 문장 단위로 자른다(마침표·물음표·느낌표·줄바꿈). */
 export function splitSentences(text: string): string[] {
-  return text.match(/[^.!?\n]+[.!?]+["'”’)]*|[^.!?\n]+$/gm)?.map(s => s.trim()).filter(Boolean) ?? [];
+  // 닫는 핵심 문장 기호(⟫, P6c H)는 마침표 뒤에 와도 그 문장에 붙인다.
+  return text.match(/[^.!?\n]+[.!?]+["'”’)⟫]*|[^.!?\n]+$/gm)?.map(s => s.trim()).filter(Boolean) ?? [];
 }
 
 /** 과거·경험 단정: 물음표로 끝나는 문장(질문형)과 따옴표 안 대사는 허용. */
 export function isPastAssertion(sentence: string): boolean {
   const s = sentence.trim().replace(/'[^']*'|"[^"]*"|‘[^’]*’|“[^”]*”/g, "");
-  return (PAST_ASSERT.test(s) || EXPERIENCE_ASSERT.test(s) || EXPERIENCE_RESIDUE.test(s)) && !/\?["'”’)]*$/.test(sentence.trim());
+  return (PAST_ASSERT.test(s) || EXPERIENCE_ASSERT.test(s) || EXPERIENCE_RESIDUE.test(s)) && !/\?["'”’)⟫]*$/.test(sentence.trim());
 }
 
 /**
@@ -108,8 +109,9 @@ export const FAMILY_MEMBER = /(?<![가-힣])(엄마|아빠|어머니|아버지|�
  * school_minor: 초·중·고 소품(대학생·직장인 금지), school: 학생 소품(직장인 금지), office: 사무직 소품(간호사·현장직·학생 금지).
  */
 export const SCENE_CONTEXT: Readonly<Record<"school_minor" | "school" | "office", RegExp>> = {
-  school_minor: /매점|담임|반 친구|교복|급식|조회 시간|쉬는 시간 종|학부모|생활기록부|수행평가|중간고사|기말고사|야자|하굣길|등굣길/,
-  school: /성적표|교과서|시험 범위|수업 시간|강의실|과제 제출|학점|학원|숙제|시험지|도서관 자리|기숙사|조별 과제|동아리방/,
+  // P6c C1: 모의고사·학원·수능·독서실·쪽지 시험·성적표는 초·중·고 장면(대학생·직장인 금지), 필기 노트·기출은 학생 장면(원고 lint SCHOOL_SCENE과 같은 낱말).
+  school_minor: /매점|담임|반 친구|교복|급식|조회 시간|쉬는 시간 종|학부모|생활기록부|수행평가|중간고사|기말고사|야자|하굣길|등굣길|모의고사|학원|수능|독서실|쪽지 ?시험|성적표/,
+  school: /성적표|교과서|시험 범위|수업 시간|강의실|과제 제출|학점|학원|숙제|시험지|도서관 자리|기숙사|조별 과제|동아리방|필기 ?노트|기출/,
   office: /기획서|시제품|회의실|보고서|결재|팀장|부장님|과장님|사내|주간 회의|분기 목표|엑셀|프레젠테이션|발표 자료|슬라이드|거래처|출장|사무실|파티션|사원증|인사 평가|연봉 협상/,
 };
 

@@ -82,6 +82,36 @@ const DOMAIN_BY_GROUP: Readonly<Record<Group, readonly [string, string, string, 
 };
 const domainLines = (g: Group) => { const [w, m, r, l] = DOMAIN_BY_GROUP[g]; return [`일: ${w}`, `돈: ${m}`, `관계: ${r}`, `생활: ${l}`]; };
 
+/** 지난 3년의 패턴 한 줄(P6c E4): 같은 묶음이 이어졌는지, 어디서 넘어갔는지. */
+function pastPattern(past: readonly TimelineEntry[]): string {
+  const gs = past.map(e => GROUP_OF(e.tenGod.stem));
+  const word = (g?: Group) => (g ? DOMAIN_BY_GROUP[g][0] : "흐름");
+  if (gs.every(g => g && g === gs[0])) return `패턴: 세 해 내내 같은 쪽 — ${word(gs[0])}`;
+  if (gs.length === 3 && gs[0] === gs[1]) return `패턴: 두 해 이어진 흐름(${word(gs[0])})이 ${past[2].key}년에 바뀜(${word(gs[2])})`;
+  if (gs.length === 3 && gs[1] === gs[2]) return `패턴: ${past[0].key}년의 흐름(${word(gs[0])}) 뒤로 두 해가 같은 쪽(${word(gs[1])})`;
+  return `패턴: 해마다 다른 쪽으로 옮겨 감 — ${gs.map(g => word(g)).join(" → ")}`;
+}
+
+/** 종합 가족 장(P6c E2): 연주·월주(뿌리·부모 자리), 인성(돌봄을 받는 방식), 비겁(형제·또래), 식상(돌보는 방식). 가족 구성원은 조건형으로만. */
+const FAMILY_TG: Readonly<Record<TenGod, string>> = {
+  比肩: "나란히 서는 대등한 분위기", 劫財: "겨루며 크는 분위기", 食神: "먹이고 챙기는 분위기", 傷官: "말과 표현이 자유로운 분위기", 偏財: "바깥 활동이 많은 분위기",
+  正財: "살림을 꼼꼼히 챙기는 분위기", 偏官: "책임을 먼저 배우는 엄한 분위기", 正官: "규칙과 예의를 먼저 배우는 분위기", 偏印: "혼자 생각할 틈이 많은 분위기", 正印: "보살핌과 배움을 받는 분위기",
+};
+export function familyDesign(saju: SajuCalcResult, groups: Readonly<Record<string, number>>): Record<string, Evidence> {
+  const main = (p: "year" | "month") => saju.tenGods.hiddenStems.find(h => h.branch === saju.pillars[p].branch && h.weight >= 0.5)?.tenGod;
+  const seat = (p: "year" | "month", label: string) => { const st = saju.tenGods.stems[p], br = main(p); const tgs = [...new Set([st, br].filter((x): x is TenGod => Boolean(x)))]; return tgs.length ? `${label}: ${tgs.map(t => FAMILY_TG[t]).join(" + ")}` : ""; };
+  const level = (g: string) => (groups[g] ?? 0) >= 2.5 ? "strong" : (groups[g] ?? 0) > 0 ? "weak" : "none";
+  const receive = { strong: "인성이 강해 돌봄과 배움을 잘 받아들이는 쪽: 기대는 법을 안다(과하면 결정을 남에게 미룸)", weak: "인성이 옅어 스스로 해결하는 쪽: 도움을 청하는 말이 늦음 → 한 줄 부탁 연습", none: "인성이 없어 받기보다 주는 쪽에 익숙함: 도움받는 것도 관계의 일로 연습" }[level("RESOURCE")];
+  const give = { strong: "식상이 강해 먹이고 챙기는 손으로 마음을 표현하는 쪽(과하면 잔소리로 들림)", weak: "식상이 옅어 말보다 한 번의 행동으로 챙기는 쪽", none: "식상이 없어 챙기는 마음이 겉으로 덜 보이는 쪽: 표현 한 줄을 정해 둔다" }[level("OUTPUT")];
+  const peer = { strong: "비겁이 강해 형제·또래와 대등하게 겨루며 크는 쪽(형제가 있다면 경쟁과 의리가 함께)", weak: "비겁이 옅어 또래와 거리를 두고 혼자 서는 쪽", none: "비겁이 없어 혼자 결정하는 데 익숙한 쪽" }[level("PEER")];
+  const note = "가족 구성원(부모·형제 등)은 지어내지 않는다. 쓴다면 '부모님이 계시다면'처럼 조건형으로만, 과거 사건 단정 금지. 친구·모임 이야기는 관계 장 몫";
+  return {
+    familyRoots: { kind: "evidence", key: "familyRoots", facts: [seat("year", "뿌리 자리(태어난 해)"), seat("month", "부모·형제 자리(태어난 달)")].filter(Boolean).length ? [seat("year", "뿌리 자리(태어난 해)"), seat("month", "부모·형제 자리(태어난 달)")].filter(Boolean) : ["뿌리 자리의 기운이 뚜렷하지 않아 지금의 관계로 본다"], note },
+    careReceive: { kind: "evidence", key: "careReceive", facts: [receive], note },
+    careGive: { kind: "evidence", key: "careGive", facts: [give, peer], note },
+  };
+}
+
 export function majorDesign(entries: readonly TimelineEntry[], cycles: NonNullable<import("./schema").Brief["timeline"]>["cycles"], thisYear: number): Record<string, Evidence> {
   const past = entries.filter(e => e.period === "past");
   const cur = cycles.find(c => c.current), next = cycles.find(c => !c.current && Number(c.years.slice(0, 4)) > thisYear);
@@ -92,7 +122,7 @@ export function majorDesign(entries: readonly TimelineEntry[], cycles: NonNullab
   ];
   // 사실이 없으면 근거를 만들지 않는다(빈 근거는 그 절을 비운다).
   return {
-    ...(past.length ? { pastSummary: { kind: "evidence" as const, key: "pastSummary", facts: past.map(e => `${e.key}년: ${e.tenGod.stem}의 해(${e.keywords.join("·")})`), note: "지난 3년을 한 장으로 짧게 돌아본다: 해마다 한두 문장, 질문형으로. 사건을 단정하지 않는다" } } : {}),
+    ...(past.length ? { pastSummary: { kind: "evidence" as const, key: "pastSummary", facts: [`세 해의 십성: ${past.map(e => `${e.key}년 ${e.tenGod.stem}`).join(" → ")}`, pastPattern(past)], note: "세 해를 하나의 흐름(패턴)으로만 요약한다. 해마다 따로 풀지 않는다(연도 장에서 푼다). 질문형으로, 사건을 단정하지 않는다" } } : {}),
     ...(decade.length ? { decade: { kind: "evidence" as const, key: "decade", facts: decade, note: "앞으로 10년을 일·돈·관계·생활 네 영역으로 나눠 설계한다. 영역마다 근거(대운 십성)와 할 일 하나" } } : {}),
   };
 }
@@ -108,5 +138,16 @@ export function annualDesign(yearEntry: TimelineEntry | undefined, months: reado
       ...(top.at(-1) && top.at(-1)!.flow.score < top[0].flow.score ? [`가장 조용한 달: ${top.at(-1)!.label}`] : []),
     ], note: "올해 전체 설계도: 영역마다 근거 하나와 할 일 하나. '가장 ~한 달'은 이 줄의 달만 그렇게 부른다" },
   };
+}
+
+/** 눈여겨볼 달(P6c E5): 세 달이 어떻게 이어지는지만(월별 장 설명을 되풀이하지 않는다). keyEntries를 달 순서로. */
+export function keyMonthsLink(months: readonly TimelineEntry[], keys: readonly string[]): Evidence | null {
+  const picked = months.filter(e => keys.includes(e.key)).sort((a, b) => a.key.localeCompare(b.key));
+  if (picked.length < 2) return null;
+  const name = (e: TimelineEntry) => e.label.split(" · ")[1]?.split(" ")[0] ?? e.label;
+  const gs = picked.map(e => GROUP_OF(e.tenGod.stem));
+  const link = gs.every(g => g === gs[0]) ? `이어지는 점: ${picked.length}달 모두 같은 쪽 기운이라 한 흐름이 길게 이어짐(${picked[0].keywords[0]})`
+    : `이어지는 점: ${name(picked[0])}에 연 '${picked[0].keywords[0]}'이 ${name(picked.at(-1)!)}의 '${picked.at(-1)!.keywords[0]}'으로 넘어감`;
+  return { kind: "evidence", key: "keyMonthsLink", facts: [`세 달: ${picked.map(e => `${name(e)}(${e.tenGod.stem})`).join(" → ")}`, link], note: "월별 장에서 쓴 각 달의 설명을 되풀이하지 않는다. 세 달이 어떻게 이어지는지(앞 달이 무엇을 열고 뒤 달이 무엇을 받는지)만 쓴다" };
 }
 

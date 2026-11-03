@@ -29,7 +29,7 @@ import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage, matchJob } from "./props";
 import { cautionFor, type CautionCtx } from "./caution";
-import { annualDesign, loveDesign, majorDesign } from "./productEvidence";
+import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
 
 export type BriefPersonInput = {
@@ -53,6 +53,8 @@ export type BriefInput = {
   readonly selectedYear?: number;
   /** 같은 고객의 이전 Book이 쓴 지식 DB 장면(P6b E-1): 이번 책에서는 고르지 않는다. */
   readonly excludeScenes?: readonly string[];
+  /** 같은 고객의 이전 Book이 뜻을 푼 특성(P6c A3): 이번 책에서는 처음 나와도 뜻을 다시 풀지 않는다(angle=known). */
+  readonly knownTraits?: readonly string[];
 };
 
 const STYLE_RULES = [
@@ -155,9 +157,18 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     // 궁합은 관계 유형이 정한 사실만 쓴다: 입력에 직업이 있어도 넘기지 않는다(P3.7 r1: "대학생"과 "학생 전제 금지"가 함께 나갔다).
     facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
     forbiddenFacts: forbiddenFacts(facts, profile),
+    ...(override ? {} : (() => { const stage = lifeStage({ jobStatus: facts.jobStatus, age }, profile), job = matchJob(facts.detailJob);
+      return { lifeStage: LIFE_STAGE_KO(stage, age), ...(job?.stages ? { workScenes: job.stages } : {}) }; })()),
   };
   return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc, clashes };
 }
+
+/** 생활 단계 이름(P6c C1): 작가가 장면을 이 고객의 삶에 맞추게 한다. */
+const LIFE_STAGE_KO = (stage: string, age: number) => ({
+  student: age < 19 ? "초·중·고 학생" : "대학생 이상 학생(초·중·고 장면 금지: 모의고사·학원·급식·담임 등)",
+  job_seeker: "구직 중(학교 장면 금지)", early_career: "사회 초년 직장인(학교 장면 금지)", mid_career: "직장인(학교 장면 금지)",
+  self_employed: "사업·자영업·프리랜서(학교 장면 금지)", homemaker: "살림(학교 장면 금지)", parenting: "아이를 키우는 중", retired: "은퇴 뒤 생활", unknown: "생활 단계 모름(학교 장면 금지)",
+} as Record<string, string>)[stage] ?? "생활 단계 모름";
 
 const FAMILY_KO: Record<string, string> = { stem: "천간", branch: "지지", dayMaster: "일간", dayPillar: "일주", element: "오행", yinYang: "음양", climate: "계절", tenGod: "십성", tenGodBalance: "십성", twelveStage: "십이운성", relation: "합·충", shinsal: "신살", gwiin: "귀인", structure: "짜임" };
 const FAMILY_ORDER = Object.keys(FAMILY_KO);
@@ -199,7 +210,7 @@ function mbtiBrief(k: Knowledge, type: MbtiType | null) {
 
 export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 시드는 이전 책 목록과 무관하게(같은 입력 = 같은 시드).
-  const { excludeScenes: _exclude, ...seedInput } = input; void _exclude;
+  const { excludeScenes: _exclude, knownTraits: _known, ...seedInput } = input; void _exclude; void _known;
   const seed = fnv1a(stableStringify(seedInput));
   const rng = createRng(seed);
   const usedScenes = new Set<string>(input.excludeScenes ?? []);
@@ -269,8 +280,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const tagsOf = (key: string) => key.startsWith("mbti:") ? k.mbti.get(key.slice(5) as never)?.dimensionTags : k.features.get(key)?.dimensionTags;
   const evidence: Record<string, Material> = input.product === "love_marriage_child" ? { ...loveDesign(me.saju, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, profile), ...loveEvidence(me.saju, me.det, k, me.person.gender, me.st, mbti ? k.mbti.get(mbti.type)! : null, { hitIds: new Set(me.hitIds), facts: profile, usedScenes, avoid: key => me.clashes(key, tagsOf(key)) }) }
     : input.product === "major_fortune" && timeline ? majorDesign(timeline.entries, timeline.cycles, me.chart.thisYear.year)
-    : input.product === "annual_fortune" && timeline ? annualDesign(timeline.entries.find(e => e.kind === "year"), timeline.entries.filter(e => e.kind === "month"))
-    : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds) }) : {};
+    : input.product === "annual_fortune" && timeline ? (() => { const months = timeline!.entries.filter(e => e.kind === "month"), link = keyMonthsLink(months, timeline!.keyEntries); return { ...annualDesign(timeline!.entries.find(e => e.kind === "year"), months), ...(link ? { keyMonthsLink: link } : {}) }; })()
+    : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages })
+    : input.product === "saju_mbti_full" ? familyDesign(me.saju, getTenGodGroupScores(me.saju.tenGods.distribution)) : {};
 
   // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
   const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
@@ -297,6 +309,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
   const { chapters, plan } = planChapters({
     product: input.product, narrative, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
+    ...(input.knownTraits?.length ? { known: new Set(input.knownTraits) } : {}),
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
     ...(isPair && other ? { mbtiPair: ([[me, me.facts.mbti], [other, other.facts.mbti]] as const).flatMap(([p, t]) => t && k.mbti.get(t) ? [{ who: p.person.callName, profile: k.mbti.get(t)! }] : []) } : {}),
     ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),

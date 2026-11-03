@@ -81,7 +81,8 @@ describe("P3.6 원고 남은 문제", () => {
   it("B 1회차 결함 수정: 커리어 근거·궁합 관계 사실·자리 관계·타임라인 시제·소개 순서", () => {
     const career = buildBrief({ product: "career_money_study", person: PEOPLE.c1, baseDate: base }, k);
     const ev = career.chapters.flatMap(c => c.materials).filter(m => m.kind === "evidence").map(m => (m as { key: string }).key);
-    expect(ev).toEqual(expect.arrayContaining(["jobFit", "currentJob", "studyFit", "earnStyle", "investment"]));
+    // P6c E1: 커리어 9장(지금 일 궁합·단계별 강점·타이밍·진로 유형·직무 3단·재물 구조·돈 굴리기·평판·공부와 마무리).
+    expect(ev).toEqual(expect.arrayContaining(["currentJob", "jobLess", "workStagesA", "workStagesB", "timingNow", "timingShift", "timingPrep", "pathsGood", "pathsLess", "studyFit", "earnStyle", "accumulate", "investment"]));
     expect(ev.filter(x => x === "investment")).toHaveLength(1);
     const boss = buildBrief({ product: "saju_mbti_compatibility", person: PEOPLE.x, partner: PEOPLE.c1, relationshipType: "managerReport", baseDate: base }, k);
     expect(boss.person.forbiddenFacts.join(" ")).not.toContain("상사·팀장");
