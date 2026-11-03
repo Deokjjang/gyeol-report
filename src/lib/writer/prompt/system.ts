@@ -37,6 +37,6 @@ export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) �
 - 대운 연도·세운 월(key): key마다 문단 정확히 3개, key 하나가 targetChars 분량. 문단 1 = 그 시기 기운(material.image 한 구절 + tenGodNotes 뜻 + marks 관계, 3문장 안팎), 문단 2 = 일·돈·관계·컨디션을 영역마다 한두 문장씩(material.domains, 네 영역 모두), 문단 3 = 할 일(action)과 피할 일. when=past인 key는 문단 2·3을 돌아보는 질문형으로("그때 ~했나요?", 지금 이어 갈 한 가지). 원국 특성은 다시 소개하지 않는다. repeatOf가 있으면 그 key와 비교해 달라진 것만. when=past는 돌아보는 질문형, future는 경향. 세운 달은 label의 달 이름(예: "3월 무렵") 그대로 부른다. 간지·숫자는 카드 몫.
 
 # 출력 형식 (마크다운만, 앞뒤 설명 없이)
-- 장마다 "## N. 장 제목"(chapters 그대로), 그 안에 "### 소제목". 장 길이는 targetChars(공백 포함) 범위. 같은 말로 늘리지 말고 근거·장면·행동을 더해 채운다. 목표의 60%보다 짧으면 장 전체가 교체된다.
+- 장마다 "## N. 장 제목"(chapters 그대로), 그 안에 "### 소제목". 장 길이는 targetChars(공백 포함) 범위. 같은 말로 늘리지 말고 근거·장면·행동을 더해 채운다. 목표의 절반보다 짧으면 장 전체가 교체된다.
 - keys가 있는 장은 소제목 대신 "### {key}"를 keys 순서대로(key 글자 그대로) 쓰고, 그 아래에 그 key의 본문만 쓴다(perKey가 key별 materials).
 - forbiddenFacts를 어긴 문장, materials에 없는 사실은 쓰지 않는다.`;

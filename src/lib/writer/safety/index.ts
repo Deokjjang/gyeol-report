@@ -1,5 +1,5 @@
 /**
- * 안전망(P3 D, 결정론·호출 0). 문장 검사 → 장 검사(장 수·순서, 분량 60% 미만 교체, 반복 장 키 누락 보충) → 장별 source·사유 기록.
+ * 안전망(P3 D, 결정론·호출 0). 문장 검사 → 장 검사(장 수·순서, 분량 50% 미만 교체(P6b: 60%→50%), 반복 장 키 누락 보충) → 장별 source·사유 기록.
  * 결정론 작가가 쓴 장도 같은 문장 검사를 거친다.
  */
 import type { Brief } from "@/lib/brief/schema";
@@ -16,8 +16,11 @@ export { OLD_NEGATIVE, isPastAssertion, splitSentences } from "./patterns";
 export { sentenceViolation, copiesExample, type SafetyFacts, type Deletion, type Replacement, type StyleWarning } from "./sentences";
 import { norm } from "./sentences";
 
-/** 장 분량이 목표 하한의 이 비율 미만이면 결정론 작가로 교체한다. */
-export const MIN_CHAPTER_RATIO = 0.6;
+/**
+ * 장 분량이 목표 하한의 이 비율 미만이면 결정론 작가로 교체한다.
+ * P6b: 60%에서 50%로. 절 단위 목표에서 실호출 4번이 60%를 1~7자 차이로 못 넘어 온전한 작가 원고가 결정론 장으로 바뀌었다(539<540, 731<738 등).
+ */
+export const MIN_CHAPTER_RATIO = 0.5;
 
 export type DraftChapter = { readonly chapter: BookChapter; readonly source: Exclude<ChapterSource, "deterministic"> };
 export type FinalChapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly keys?: readonly string[] };

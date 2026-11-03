@@ -50,8 +50,11 @@
 | 2026-11-03 12:14 | P6b 연애 · 도현(Y) r3 | anthropic/claude-sonnet-5-5 | 16452 | 4057 | 9874 | 0.13204970 | complete | req_011CgfGJJeMGzX5PSYaDCix6 | 3.58722195 |
 | 2026-11-03 12:15 | P6b 궁합 연애 · 하람×서윤 r3 | anthropic/claude-sonnet-5-5 | 18063 | 4057 | 11960 | 0.15613170 | complete | req_011CgfGPrbMWLZ7KX1ZHeXgh | 3.74335365 |
 | 2026-11-03 12:16 | P6b 세운 2026 · 서윤(c2, 대략 오시) r3 | anthropic/claude-sonnet-5-5 | 21110 | 4057 | 9045 | 0.13307570 | complete | req_011CgfGW3gXJQ3FbqpkAAiG5 | 3.87642935 |
+| 2026-11-03 12:18 | P6b 세운 2026 · 서윤(c2, 대략 오시) r4 | anthropic/claude-sonnet-5-5 | 25299 | 0 | 9988 | 0.15253300 | complete | req_011CgfGeCRrAjeYp2ifGnaQg | 4.02896235 |
+| 2026-11-03 12:24 | P6b 커리어 · 하람(c1) 실패 주입 | anthropic/claude-sonnet-5-5 | 0 | 0 | 0 | 0.00000000 | error (http_401) | req_011CgfH5hVHmxNCia3aLxbQt | 4.02896235 |
+| 2026-11-03 12:24 | P6b 커리어 · 하람(c1) 실패 주입 | openai/gpt-6.1-terra | 11789 | 0 | 6310 | 0.04333900 | complete | req_74162cb9fe0b49038b9c9c331a683dd2 | 4.07230135 |
 
-누적 합계: **$3.87642935** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$4.07230135** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.
