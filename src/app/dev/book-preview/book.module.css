@@ -199,6 +199,8 @@
 .scoreMeter { display: block; height: 6px; margin: 8px 0 10px; background: #ececec; }
 .scoreMeter i { display: block; height: 100%; background: #111; }
 .scoreItems p { font-size: 13px; line-height: 1.8; }
+/* 점수 v2(P6c) 항목 이유는 2~3문장이라 단어 중간에서 끊기지 않게. V4·v5-1 점수 쪽은 그대로. */
+.scoreItems[data-score-version="v2"] p { word-break: keep-all; overflow-wrap: anywhere; }
 .pairImages { list-style: none; margin: -8px 0 26px; padding: 0; font-size: 12px; line-height: 1.8; color: var(--muted); }
 .pairImages b { margin-right: 6px; color: #111; font-weight: 600; }
 .pairRelations { margin-top: 26px; }

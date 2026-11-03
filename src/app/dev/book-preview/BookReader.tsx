@@ -45,7 +45,7 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
     const own = (label: string) => page.explanations?.find(line => line.startsWith(`${label} `) && line.includes(" — "));
     const rest = page.explanations?.filter(line => !page.scores.some(score => own(score.label) === line)) ?? [];
     return <><p className={s.eyebrow}>{data.names}</p><h1>{text(page.title)}</h1><p className={s.compatibilityScore}><strong>{page.total}</strong> / 100</p>{page.band ? <p className={s.scoreBand}>{text(page.band)} 구간</p> : null}<p className={s.profileLead}>{text(page.verdict)}</p>
-      <ol className={s.scoreItems}>{page.scores.map(score => { const reason = score.reason ?? own(score.label)?.split(" — ").slice(1).join(" — ");
+      <ol className={s.scoreItems} data-score-version={page.scoreVersion === "v2" ? "v2" : undefined}>{page.scores.map(score => { const reason = score.reason ?? own(score.label)?.split(" — ").slice(1).join(" — ");
         return <li key={score.label}><div><h2>{score.label}</h2><span>{score.value} / {score.max}</span></div><span className={s.scoreMeter} aria-hidden="true"><i style={{ width: `${Math.round(score.value / score.max * 100)}%` }} /></span>{reason ? <p>{text(reason)}</p> : null}</li>; })}</ol>
       <p className={s.hint}>{text(page.notice)}</p>{page.versionLabel || rest.length || page.limitations.length ? <details className={s.periodDetails}><summary>지수를 읽는 기준</summary>{page.versionLabel ? <p>{text(page.versionLabel)}</p> : null}{rest.map(line => <p key={line}>{text(line)}</p>)}{page.limitations.map(line => <p key={line}>{line}</p>)}</details> : null}</>;
   }

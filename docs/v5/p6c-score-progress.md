@@ -21,6 +21,8 @@
 - [x] 1 현재 상태 확인
 - [x] 2 점수 v2 엔진·보정(FLOOR 0.36, 1만 쌍 중앙값 69~70) — 문서는 5단계에서 마무리
 - [x] 3a 브리프·스냅샷·점수 쪽·결정론 작가·안전망(구간 이름 기준)·작가 지침 v5-17
-- [ ] 3 점수 쪽 화면·브리프
-- [ ] 4 작은 화면 수정 a~d
+- [x] 3 점수 쪽 화면·브리프(onScorePage) — 커밋 525aa62f
+- [x] 4 작은 화면 수정 a~d — 같은 커밋. d: 왼쪽 굵은 줄 = `data-impact=HIGH` = v5 카드 흐름 세기 4 이상(`writer/book.ts` importance) → 뜻이 분명해 범례 한 줄(v5 표만)
 - [ ] 5 시험·캡처·보고·병합
+  - 캡처용 로컬 Book(결정론 원고, 비용 0): `tools/p6c-score/books.p6c.ts` → `docs/v5/ui-p6c/books.json`
+  - 캡처: before = 기준 트리(v5-p6b-ui, bcef108a) dev 3300, after = 이 브랜치 dev 3400, `tools/p6c-score/capture.mjs`

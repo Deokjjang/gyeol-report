@@ -142,25 +142,43 @@ export function branchTier(x: EarthlyBranch, y: EarthlyBranch): { tier: BranchTi
   const tier: BranchTier = has(HAP).length ? (has([...CLASH, ...FRICTION]).length ? "hapMixed" : "hap") : has(CLASH).length ? "clash" : has(FRICTION).length ? "friction" : "none";
   return { tier, kinds: [...has(HAP), ...has(CLASH), ...has(FRICTION)] };
 }
-const BRANCH_EFFECT: Record<BranchTier, string> = {
-  hap: "서로 맞물려 함께할수록 편해져요",
-  hapMixed: "잘 맞다가도 사소한 데서 어긋날 수 있어요",
-  none: "특별히 당기지도 부딪치지도 않아 무난해요",
-  friction: "작은 습관에서 서운함이 쌓이기 쉬워, 그때그때 말로 풀면 좋아요",
-  clash: "방식이 정면으로 부딪치기 쉬워, 각자의 시간과 공간을 정해 두면 훨씬 편해져요",
+type Place = "일지" | "연지" | "월지";
+/** 자리마다 다른 말: 일지 = 생활, 연지 = 자란 집, 월지 = 밖에서 움직이는 방식(같은 조언이 한 쪽에 겹치지 않게). */
+const BRANCH_EFFECT: Record<Place, Record<BranchTier, string>> = {
+  일지: {
+    hap: "서로 맞물려 같이 지낼수록 생활이 편해져요",
+    hapMixed: "잘 맞다가도 사소한 생활 습관에서 어긋날 수 있어요",
+    none: "특별히 당기지도 부딪치지도 않아, 생활 방식은 이야기하며 맞추면 돼요",
+    friction: "작은 생활 습관에서 서운함이 쌓이기 쉬워, 그때그때 말로 풀면 좋아요",
+    clash: "생활 방식이 정면으로 부딪치기 쉬워, 각자의 시간과 공간을 정해 두면 훨씬 편해져요",
+  },
+  연지: {
+    hap: "자란 집의 분위기가 닮아 가족 이야기가 편하게 통해요",
+    hapMixed: "자란 분위기는 통하지만 집안의 작은 습관에서 차이가 날 수 있어요",
+    none: "자란 환경이 특별히 닮지도 부딪치지도 않아요",
+    friction: "자란 집의 습관이 조금 달라, 서로의 집안 방식을 먼저 물어보면 좋아요",
+    clash: "자란 집의 분위기가 정반대였을 수 있어, 서로의 집안 방식을 먼저 물어보면 좋아요",
+  },
+  월지: {
+    hap: "밖에서 움직이는 방식이 맞물려 함께 일을 벌이기 좋아요",
+    hapMixed: "밖에서는 잘 맞물리지만 일의 순서에서 작은 마찰이 날 수 있어요",
+    none: "밖에서 움직이는 방식이 특별히 닮지도 부딪치지도 않아요",
+    friction: "밖에서 일하는 방식이 조금씩 어긋나, 일의 순서를 미리 맞추면 좋아요",
+    clash: "밖에서 일하는 방식이 정면으로 부딪치기 쉬워, 역할을 미리 나눠 두면 좋아요",
+  },
 };
 /** 관계 이름은 둘까지: 합이 섞이면 "합이지만 (가장 센 마찰)도 섞여". */
-function branchPhrase(r: ReturnType<typeof branchTier>): string {
-  const [first, second] = r.kinds.map(relName);
-  if (!first) return BRANCH_EFFECT.none;
-  if (r.tier === "hapMixed") return `${first}이지만 ${second}도 섞여, ${BRANCH_EFFECT.hapMixed}`;
-  return `${ira(second ? `${josa(first, "과와")} ${second}` : first)} ${BRANCH_EFFECT[r.tier]}`;
+function branchPhrase(r: ReturnType<typeof branchTier>, place: Place): string {
+  const [first, second] = r.kinds.map(relName), effect = BRANCH_EFFECT[place][r.tier];
+  if (!first) return effect;
+  if (r.tier === "hapMixed") return `${first}이지만 ${second}도 섞여, ${effect}`;
+  return `${ira(second ? `${josa(first, "과와")} ${second}` : first)} ${effect}`;
 }
 /** "A의 일지 축(丑)과 B의 일지 진(辰)은 …" / 같은 글자면 "A과 B의 일지는 둘 다 해(亥)라 …". */
-function branchLine(place: string, aName: string, bName: string, x: EarthlyBranch, y: EarthlyBranch, r: ReturnType<typeof branchTier>): string {
-  if (x !== y) return `${aName}의 ${place} ${josa(branchLabel(x), "과와")} ${bName}의 ${place} ${josa(branchLabel(y), "은는")} ${branchPhrase(r)}`;
+function branchLine(place: Place, aName: string, bName: string, x: EarthlyBranch, y: EarthlyBranch, r: ReturnType<typeof branchTier>): string {
+  if (x !== y) return `${aName}의 ${place} ${josa(branchLabel(x), "과와")} ${bName}의 ${place} ${josa(branchLabel(y), "은는")} ${branchPhrase(r, place)}`;
   const both = `${josa(aName, "과와")} ${bName}의 ${place}는 둘 다 ${branchLabel(x)}`;
-  return r.kinds.length ? `${both}인데, 같은 글자끼리 ${branchPhrase(r)}` : `${ira(both)} 감각이 닮았고 특별히 부딪치지 않아요`;
+  return r.kinds.length ? `${both}인데, 같은 글자끼리 ${branchPhrase(r, place)}` : `${ira(both)} 감각이 닮았고 특별히 부딪치지 않아요`;
 }
 function dayBranchItem(a: CompatSide, b: CompatSide) {
   const x = a.saju.pillars.day.branch, y = b.saju.pillars.day.branch, r = branchTier(x, y);
