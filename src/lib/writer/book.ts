@@ -14,6 +14,7 @@ import type { WriterChapter } from "./prompt";
 import type { CallLog, WriterFallback } from "./runner";
 import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
+import { manAge } from "@/lib/brief/chart";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -22,7 +23,9 @@ export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
 export const BOOK_EDITION = { number: 5, label: "제5판", revisedAt: "2026-11-03" } as const;
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
-export type V5TimelineCard = Omit<TimelineEntry, "material">;
+/** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
+export type V5TimelineCard = Omit<TimelineEntry, "material"> & { readonly caution?: string | null; readonly age?: number };
+export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean };
 export type V5Chapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly keys?: readonly string[] };
 export type V5BookDraft = {
   readonly version: typeof V5_DRAFT_VERSION; readonly productVersion: "v5"; readonly productType: Brief["product"];
@@ -30,7 +33,10 @@ export type V5BookDraft = {
   /** P6b 이전 Book에는 없다. */
   readonly edition?: BookEdition;
   readonly chapters: readonly V5Chapter[];
-  readonly timeline?: { readonly cards: readonly V5TimelineCard[]; readonly tenGodNotes: NonNullable<Brief["timeline"]>["tenGodNotes"]; readonly thisYear: number; readonly age: number };
+  readonly timeline?: { readonly cards: readonly V5TimelineCard[]; readonly tenGodNotes: NonNullable<Brief["timeline"]>["tenGodNotes"]; readonly thisYear: number; readonly age: number; readonly cycles?: readonly V5Cycle[] };
+  /** 핵심 이미지(P6b B-4, p6b-fields.md 3). 궁합은 pairImage. P6b 이전 Book에는 없다. */
+  readonly coreImage?: { readonly line: string; readonly ruleId: string };
+  readonly pairImage?: { readonly line: string; readonly a: string; readonly b: string; readonly ruleId: string };
 };
 export type ChapterMeta = { readonly n: number; readonly id: string; readonly title: string; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly evidence: readonly string[] };
 export type WriterMeta = {
@@ -48,7 +54,9 @@ export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
   readonly input: ReportInputPayload; readonly people: readonly BookPerson[]; readonly names: string;
   readonly context: readonly { readonly label: string; readonly value: string }[];
-  readonly pair?: { readonly category: string; readonly characters: readonly { name: string; core: string; strength: string; relationship: string }[]; readonly relations: readonly string[]; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[];
+  readonly pair?: { readonly category: string; readonly characters: readonly { name: string; core: string; strength: string; relationship: string }[]; readonly relations: readonly string[];
+    /** 관계 쉬운 문장(P6b D 궁합, p6b-fields.md 4). */
+    readonly relationsPlain?: readonly string[]; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[];
     /** v5 궁합 점수(P4). 구성요소는 수준(좋음·보통·조율)만 보여 준다 — 하위 점수 합이 총점과 어긋나 보이지 않게. 없는 v5 Book(P3)은 점수 쪽 없이 연다. */
     readonly score?: { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] } };
   readonly meta: WriterMeta;
@@ -97,6 +105,12 @@ export function payloadToBriefInput(payload: ReportInputPayload, baseDate: strin
 const firstSentence = (sections: readonly BookSection[]) => splitSentences(sections.flatMap(s => s.paragraphs)[0] ?? "")[0] ?? "";
 const lastSentence = (sections: readonly BookSection[]) => splitSentences(sections.flatMap(s => s.paragraphs).at(-1) ?? "").at(-1) ?? "";
 
+/** 카드 하나(P6b E-2·E-3·E-4·E-5): 작가 재료는 빼고, 살필 점은 원국으로 판정된 문장(연 카드), 나이는 그해 만 나이. */
+function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>["tenGodNotes"], birthYear: number): V5TimelineCard {
+  const c: Partial<TimelineEntry> = { ...card }; delete c.material;
+  return { ...(c as Omit<TimelineEntry, "material">), caution: card.kind === "year" ? notes[card.tenGod.stem]?.caution || null : null, ...(card.kind === "year" ? { age: manAge(Number(card.key), birthYear) } : {}) };
+}
+
 export function assembleV5Book(a: {
   brief: Brief; plan: readonly WriterChapter[]; finals: readonly FinalChapter[]; report: SafetyReport; payload: ReportInputPayload; generatedAt: string;
   people: readonly BookPerson[]; writer: WriterMeta["writer"]; fallback?: WriterFallback | null; calls: readonly CallLog[]; tokens: WriterMeta["tokens"]; costUsd: number; durationMs: number;
@@ -108,17 +122,22 @@ export function assembleV5Book(a: {
   const chapters: V5Chapter[] = a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, sections: f.sections, ...(f.keys ? { keys: f.keys } : {}) }));
   const byRule: Record<string, number> = {};
   for (const d of a.report.deletions) byRule[d.rule] = (byRule[d.rule] ?? 0) + 1;
+  // 만 나이 기준 출생 연도(입력이 없으면 기준일 나이로 거꾸로 셈).
+  const born = (a.payload as { person?: { birthDate?: string }; personA?: { birthDate?: string } } | undefined);
+  const birthYear = Number((born?.person ?? born?.personA)?.birthDate?.slice(0, 4)) || brief.chart.thisYear.year - brief.person.age;
   const draft: V5BookDraft = {
     version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
-    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => { const c: Partial<TimelineEntry> = { ...card }; delete c.material; return c as V5TimelineCard; }), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age } } : {}),
+    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
+      cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number); return { ganji: c.ganji, years: c.years, ages: [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current }; }) } } : {}),
+    ...(brief.compatibility ? { pairImage: brief.compatibility.pairImage } : { coreImage: brief.chart.coreImage }),
   };
   const c = brief.compatibility;
   const pair = c ? {
     category: c.lens.focus,
     characters: [c.a, c.b].map(p => ({ name: p.callName.replace(/님$/, ""), core: p.image, strength: brief.traits.find(t => t.id === p.traitIds[0])?.easyName ?? "", relationship: p.role === p.callName ? "" : p.role.replace(/\(.*\)$/, "") })),
-    relations: c.dayRelations,
+    relations: c.dayRelations, relationsPlain: c.relationsPlain,
     score: { total: c.score.value, version: c.score.version, band: c.score.band.label, verdict: c.score.band.verdict, components: c.score.components.map(x => ({ name: x.name, level: x.level, line: x.line })) },
     directions: (["direction-ab", "direction-ba"] as const).map((id, i) => ({ title: a.plan.find(ch => ch.id === id)?.title ?? "", effect: (i ? c.tenGodBA : c.tenGodAB).reading.slice(0, 60), term: noHan((i ? c.tenGodBA : c.tenGodAB).tenGod), chapterN: a.plan.find(ch => ch.id === id)?.n ?? 0 })),
   } : undefined;
@@ -159,6 +178,7 @@ export function validateV5Publication(product: string, draft: unknown, evidence:
 
 const toParagraphs = (sections: readonly BookSection[]): BookParagraph[] => sections.flatMap(s => s.paragraphs.map((text, i) => ({ text, notes: [], ...(i === 0 && s.heading ? { heading: s.heading } : {}) })));
 const TIME = (y: number, now: number) => (y < now ? "돌아보기" : y === now ? "지금" : "앞으로");
+const PERIOD_KO = { past: "돌아보기", current: "지금", future: "앞으로" } as const;
 const LEVEL_POINTS = { 좋음: 3, 보통: 2, 조율: 1 } as const;
 const importance = (score: number) => (score >= 4 ? "HIGH" : score === 3 ? "MEDIUM" : "BACKGROUND") as "HIGH" | "MEDIUM" | "BACKGROUND";
 
@@ -189,11 +209,12 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot): BookData | null
     const t = d.timeline, cards = t.cards;
     const text = (key: string) => d.chapters.flatMap(c => c.sections).find(s => s.heading === key)?.paragraphs[0] ?? "";
     const tl = pages.find((p): p is Extract<BookPage, { kind: "timeline" }> => p.kind === "timeline");
-    if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: t.age + Number(c.key) - t.thisYear, cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.action.text,
-      caution: t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, time: TIME(Number(c.key), t.thisYear), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? "큰 흐름이 바뀌는 해" : null, importance: importance(c.flow.score) }));
+    // P6b(p6b-fields.md 5): 그림 줄·할 일/돌아보기·살필 점·만 나이·기간 상태는 카드 필드에서. 없으면(P6b 이전 Book) 예전 방식.
+    if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
+      caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, time: c.period ? PERIOD_KO[c.period] : TIME(Number(c.key), t.thisYear), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? "큰 흐름이 바뀌는 해" : null, importance: importance(c.flow.score) }));
     const ms = pages.find((p): p is Extract<BookPage, { kind: "months" }> => p.kind === "months");
-    if (ms) ms.months = cards.filter(c => c.kind === "month").map(c => ({ month: Number(c.key.slice(-2)), title: splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, theme: c.keywords.join(" · "), time: "", ganji: c.ganji.hanja,
-      gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.action.text, importance: importance(c.flow.score) }));
+    if (ms) ms.months = cards.filter(c => c.kind === "month").map(c => ({ month: Number(c.key.slice(-2)), title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, theme: c.keywords.join(" · "), time: c.period ? PERIOD_KO[c.period] : "", ganji: c.ganji.hanja,
+      gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score) }));
   }
   if (e.pair) { const pair = pages.find((p): p is Extract<BookPage, { kind: "pair" }> => p.kind === "pair")!; pair.directions = e.pair.directions.map(x => ({ title: x.title, effect: x.effect, term: x.term, page: chapterPage.get(x.chapterN) ?? 0 })); }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: d.finalLine });
