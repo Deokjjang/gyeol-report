@@ -9,7 +9,8 @@ import { DAYUN_CALCULATION_VERSION, LEGACY_DAYUN_CALCULATION_VERSIONS, LEGACY_SA
 // (a hash string as is, anything else by v4Digest), replaces that value for this engine.
 // Reasons per lock: docs/manseryeok-lock-rebaseline.md. Regenerate with V5_LOCK_RECORD=1 and
 // --no-file-parallelism; recording never fails a lock, so review the diff of the JSON file.
-const FILE = resolve(__dirname, "../fixtures/v5-lmt-rebaseline/locks.json");
+// V5_LOCK_FILE: another overlay (tools/p6c-ui2 lock proof runs the old one).
+const FILE = process.env.V5_LOCK_FILE ?? resolve(__dirname, "../fixtures/v5-lmt-rebaseline/locks.json");
 type Entry = unknown | { readonly v4Digest: string };
 const load = (): Record<string, Entry> => JSON.parse(readFileSync(FILE, "utf8"));
 const overlay = load();
@@ -21,6 +22,8 @@ const entryFor = (actual: unknown): Entry => JSON.stringify(actual ?? null).leng
 
 // key: when the historical baseline is looked up by input (and a pinned input has none), name the slot.
 export function expectLock(actual: unknown, historical: unknown, message?: string, key = keyOf(historical)) {
+  // Lock proof (tools/p6c-ui2/lockProof.setup.ts) records every locked value with its hash inputs.
+  (globalThis as { __v5LockDump?: (key: string, actual: unknown) => void }).__v5LockDump?.(key, actual);
   if (process.env.V5_LOCK_RECORD === "1") {
     if (v4Digest(actual ?? null) === v4Digest(historical ?? null)) return;
     const current = load(), entry = entryFor(actual);
