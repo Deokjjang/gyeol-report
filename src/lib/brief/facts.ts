@@ -2,12 +2,18 @@
  * 고객 사실 → 장면 선택 프로필, 금지 사실 목록, 호칭·나이대.
  * 장면 판정(sceneFits)은 scripts/knowledge-lint.ts의 fitsProfile과 같은 규칙이다(결정 기록 docs/v5/p2-progress.md 2·3).
  */
+import { FAMILY_MEMBER, SCENE_CONTEXT } from "@/lib/writer/safety/patterns";
 import type { MbtiType, SceneRequires } from "@/data/knowledge-v5/schema";
 
 export type RelationshipFact = "single" | "dating" | "married" | "unknown";
 export type ChildrenFact = "has" | "none" | "unknown";
 export type JobFact = "employed" | "business" | "student" | "none";
-export type FactProfile = { readonly relationship: RelationshipFact; readonly children: ChildrenFact; readonly job: JobFact };
+/**
+ * scene(P6b B-6): 장면 글이 고객 사실과 맞는지 보는 생활 맥락. office = 사무직 소품(기획서·회의실…)이 맞는 직업,
+ * school = 학생 소품(minor: 매점·담임까지, college: 강의실·학점까지), familyOk = 부모·형제 호칭이 입력 사실인 책(부모·자녀 궁합).
+ */
+export type SceneCtx = { readonly office: boolean; readonly school: "minor" | "college" | null; readonly familyOk: boolean };
+export type FactProfile = { readonly relationship: RelationshipFact; readonly children: ChildrenFact; readonly job: JobFact; readonly scene?: SceneCtx };
 
 export type CustomerFacts = {
   readonly name: string;
@@ -34,11 +40,29 @@ export function toFactProfile(f: CustomerFacts): FactProfile {
   return { relationship, children: f.children ?? "unknown", job };
 }
 
-export function sceneFits(req: SceneRequires, p: FactProfile): boolean {
+export function sceneFits(req: SceneRequires, p: FactProfile, text?: string): boolean {
   const rel = req.relationship === "any" || req.relationship === p.relationship || (req.relationship === "unmarried" && p.relationship !== "married");
   const child = req.children === "any" || (req.children === "has" ? p.children === "has" : p.children !== "has");
   const job = req.job === "any" || req.job === p.job;
-  return rel && child && job;
+  return rel && child && job && (text === undefined || sceneTextFits(text, p));
+}
+
+/** 장면 글 검사(P6b B-6): 입력에 없는 가족 구성원, 학생이 아닌데 학교 소품, 사무직이 아닌데 사무실 소품이면 쓰지 않는다. */
+export function sceneTextFits(text: string, p: FactProfile): boolean {
+  if (!p.scene?.familyOk && FAMILY_MEMBER.test(text)) return false;
+  if (!p.scene) return true;
+  if (SCENE_CONTEXT.school_minor.test(text) && p.scene.school !== "minor") return false;
+  if (SCENE_CONTEXT.school.test(text) && !p.scene.school) return false;
+  if (SCENE_CONTEXT.office.test(text) && !p.scene.office) return false;
+  return true;
+}
+
+/** 사무직 소품이 맞는 직업군(props.json 직업군 id). 직업 입력이 없으면 직장·사업 상태로만 본다. */
+const OFFICE_GROUPS = new Set(["startup-founder", "ui-ux-designer", "graphic-designer", "marketer", "pm-planner", "data-ai", "researcher-professor", "real-estate", "hr-admin", "developer", "lawyer", "insurance", "finance", "sales", "accounting", "reporter", "writer-editor", "civil-servant", "manufacturing-engineer"]);
+export function sceneCtxOf(a: { jobGroupId: string | null; job: JobFact; age: number; familyOk?: boolean }): SceneCtx {
+  const office = a.jobGroupId ? OFFICE_GROUPS.has(a.jobGroupId) : a.job === "employed" || a.job === "business";
+  const school = a.job !== "student" ? null : a.age < 20 || a.jobGroupId === "highschool-student" ? "minor" : "college";
+  return { office, school, familyOk: Boolean(a.familyOk) };
 }
 
 /** 작가가 단정하면 안 되는 사실(입력에 없거나 반대인 것). */

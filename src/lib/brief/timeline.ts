@@ -108,7 +108,7 @@ function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number
 }
 
 function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Parameters<typeof sceneFits>[0] }[], label: string): string | undefined {
-  const ok = list.filter(s => sceneFits(s.requires, ctx.facts) && !ctx.usedScenes.has(s.text));
+  const ok = list.filter(s => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text));
   if (!ok.length) return undefined;
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }

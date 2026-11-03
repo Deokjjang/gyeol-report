@@ -5,7 +5,7 @@
  */
 import type { Brief } from "@/lib/brief/schema";
 import type { BookSection, ChapterSource } from "../format";
-import { splitSentences } from "./patterns";
+import { simileCount, splitSentences } from "./patterns";
 import { norm } from "./sentences";
 
 export const BRIEF_COPY_WINDOW = 20;
@@ -148,4 +148,25 @@ export function infoRepeats(brief: Brief, chapters: readonly { readonly n: numbe
   const byKind = { claim: 0, scene: 0, advice: 0 };
   for (const p of pairs) byKind[p.kind]++;
   return { count: pairs.length, byKind, pairs };
+}
+
+/**
+ * P6b 지표: 장별 비유 수(핵심 이미지 되짚기 제외)·용어 첫 등장 형식 준수율·금지어(농촌 소품·그림 별명·가족 구성원·내부 라벨) 잔여.
+ * 첫 등장 형식: 그 용어가 처음 나온 문장이 "이름(한자)?은/는 명리학에서 ~"이거나, 그 문장에 "명리학에서"와 "뜻"이 함께 있는가.
+ */
+export type P6bMetric = { readonly similes: readonly { readonly n: number; readonly count: number }[]; readonly maxSimile: number; readonly termFirst: { readonly terms: number; readonly ok: number; readonly rate: number; readonly misses: readonly string[] }; readonly banned: readonly string[] };
+export function p6bMetric(brief: Brief, chapters: readonly { readonly n: number; readonly sections: readonly BookSection[] }[], banned: readonly RegExp[]): P6bMetric {
+  const core = brief.compatibility?.pairImage.line ?? brief.chart.coreImage.line;
+  const similes = chapters.map(c => ({ n: c.n, count: c.sections.flatMap(s => s.paragraphs).flatMap(p => splitSentences(p)).filter(s => !s.includes(core.slice(0, 8))).reduce((a, s) => a + simileCount(s), 0) }));
+  const text = chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs)).join("\n");
+  const sentences = splitSentences(text);
+  const terms = [...new Set(brief.traits.map(t => t.name.replace(/\s*\(.*$/, "").replace(/[一-鿿]/g, "").replace(/·.*$/, "").trim()).filter(t => t.length >= 2))];
+  let ok = 0; const misses: string[] = [], seenTerms: string[] = [];
+  for (const t of terms) {
+    const first = sentences.find(s => s.includes(t)); if (!first) continue;
+    seenTerms.push(t);
+    if (new RegExp(`${t}(\\([一-鿿]+\\))?(은|는|이란|란) 명리학에서`).test(first) || (/명리학에서/.test(first) && /뜻/.test(first))) ok++; else misses.push(t);
+  }
+  const hits = banned.flatMap(re => sentences.filter(s => re.test(s)).map(s => `${re.source.slice(0, 12)}…: ${s.slice(0, 60)}`));
+  return { similes, maxSimile: Math.max(0, ...similes.map(s => s.count)), termFirst: { terms: seenTerms.length, ok, rate: seenTerms.length ? Math.round((ok / seenTerms.length) * 100) / 100 : 1, misses }, banned: hits };
 }

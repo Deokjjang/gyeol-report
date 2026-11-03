@@ -107,7 +107,7 @@ export const conditionalFamily = (s: SceneItem) => s.requires.relationship === "
 export const familyChapter = (product: ProductKey, chapterId: string) => product === "love_marriage_child" || (product === "saju_mbti_full" && (chapterId === "family" || chapterId === "love"));
 /** 사건 확정 낱말이 든 장면은 고르지 않는다(P3.8 r1: "승진은 빠르지 않아도 꾸준합니다"가 승진 암시 문장이 됐다). */
 const EVENT_SCENE = /승진|합격|불합격|이혼|임신|출산|당첨/;
-const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s));
+const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s));
 
 function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string): string | undefined {
   const ok = (list ?? []).filter(s => usable(s, ctx, chapterId));

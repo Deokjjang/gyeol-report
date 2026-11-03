@@ -79,7 +79,8 @@ describe("P3.5 안전망·작가 보강", () => {
     for (const [product, person] of cases) {
       const brief = buildBrief({ product, person, baseDate: base }, k), plan = buildWriterPrompt(brief).chapters;
       const { chapters } = applySafetyNet(brief, plan, new Map());
-      for (const c of chapters) if (!c.keys) expect(chapterChars({ n: c.n, title: c.title, sections: c.sections }), `${product} ${c.n}`).toBeGreaterThanOrEqual(DET_MIN_CHARS);
+      // P6b C-4: 절 수에 맞춘 장 목표가 900자보다 작을 수 있다(종합 2절 장 720자) — 둘 중 작은 값 이상.
+      for (const c of chapters) if (!c.keys) expect(chapterChars({ n: c.n, title: c.title, sections: c.sections }), `${product} ${c.n}`).toBeGreaterThanOrEqual(Math.min(DET_MIN_CHARS, plan.find(x => x.n === c.n)!.targetChars[0]));
     }
   });
 

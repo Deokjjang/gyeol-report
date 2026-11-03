@@ -6,9 +6,10 @@ import type { Brief } from "@/lib/brief/schema";
 import { writeDeterministicChapter } from "../deterministic";
 import { chapterChars, type BookChapter, type BookSection, type ChapterSource } from "../format";
 import type { WriterChapter } from "../prompt";
-import { briefCopyMetric, connectorRepeats, infoRepeats, traitMentions, type BriefCopyMetric, type ConnectorRepeat, type InfoRepeatMetric, type TraitUseMetric } from "./metrics";
+import { briefCopyMetric, connectorRepeats, infoRepeats, p6bMetric, traitMentions, type BriefCopyMetric, type ConnectorRepeat, type InfoRepeatMetric, type P6bMetric, type TraitUseMetric } from "./metrics";
 import { allowedWindows, filterParagraph, sentenceViolation, styleWarnings, type Deletion, type Replacement, type SafetyFacts, type StyleWarning } from "./sentences";
 import { glossaryWarnings } from "./terms";
+import { FAMILY_MEMBER, RURAL_PROP, splitSentences, tidyHeading } from "./patterns";
 import { fixBackrefs, mergeShrunk } from "./tidy";
 
 export { OLD_NEGATIVE, isPastAssertion, splitSentences } from "./patterns";
@@ -21,7 +22,7 @@ export type DraftChapter = { readonly chapter: BookChapter; readonly source: Exc
 export type FinalChapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly keys?: readonly string[] };
 /** props: 브리프 usedProps 소품이 본문에 나온 장 수(P3.6 A1). experience: 경험 단정 바꿈·지움 수(P3.6 A6). */
 /** traitUse: 원고의 trait 언급(소개·적용)·장 안 중복·같은 축 중복(P3.8 1, 참고용). infoRepeats: 같은 정보(주장·장면·처방) 반복(P6 반복의 정의). */
-export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric };
+export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric };
 export type SafetyReport = { readonly deletions: readonly Deletion[]; readonly warnings: readonly StyleWarning[]; readonly replacements?: readonly Replacement[]; readonly metrics?: SafetyMetrics };
 /** 같은 소품이 본문에 나와도 되는 장 수(P3.6 A1). */
 export const MAX_PROP_CHAPTERS = 2;
@@ -31,7 +32,23 @@ const ANY_WINDOW: ReadonlySet<string> = { has: () => true } as unknown as Readon
 
 export function safetyFacts(brief: Brief): SafetyFacts {
   const f = brief.person.facts;
-  return { birthTimeKnown: f.birthTimeKnown, mbti: f.mbti, relationship: f.relationship, children: f.children, job: f.job.class, ...(brief.compatibility ? { compat: { score: brief.compatibility.score.value, band: brief.compatibility.score.band.label } } : {}) };
+  // 그림 별명은 띄어쓰기가 있는 것만 지운다("말 안장"): 한 낱말 별명("꽃길")은 일상어와 겹친다(P6b B-2).
+  const nicknames = [...new Set([...brief.traits.map(t => t.easyName), ...brief.fortunes.map(x => x.easyName), ...brief.unused.map(x => x.easyName)].filter(n => n.includes(" ")))];
+  return { birthTimeKnown: f.birthTimeKnown, mbti: f.mbti, relationship: f.relationship, children: f.children, job: f.job.class, nicknames,
+    ...(brief.compatibility ? { compat: { score: brief.compatibility.score.value, band: brief.compatibility.score.band.label }, familyOk: brief.compatibility.relationshipType === "parentChild" } : {}) };
+}
+
+/**
+ * 세기 주장(P6b E-11): "가장 거센/센/강한 달·해"는 흐름 점수가 가장 높은 항목에서만, "가장 조용한/약한"은 가장 낮은 항목에서만.
+ * 반복 장(대운 연도·세운 월)의 key 본문을 엔진 흐름 점수(card.flow.score)와 대조해 어긋난 문장을 지운다.
+ */
+const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
+const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
+export function intensityViolations(brief: Brief, key: string, text: string): string[] {
+  const entries = (brief.timeline?.entries ?? []).filter(e => e.kind === (key.includes("-M") ? "month" : "year"));
+  const me = entries.find(e => e.key === key); if (!me || entries.length < 2) return [];
+  const max = Math.max(...entries.map(e => e.flow.score)), min = Math.min(...entries.map(e => e.flow.score));
+  return splitSentences(text).filter(s => (PEAK.test(s) && me.flow.score < max) || (LOW.test(s) && me.flow.score > min));
 }
 
 const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
@@ -42,7 +59,7 @@ function filterSections(sections: readonly BookSection[], f: SafetyFacts, n: num
     const headingBad = !keyed && s.heading && sentenceViolation(s.heading, f, allowed, cond);
     if (headingBad) deletions.push({ chapter: n, rule: headingBad, sentence: `### ${s.heading}` });
     const before = deletions.length;
-    const out = { heading: headingBad ? "" : s.heading, paragraphs: s.paragraphs.map(p => filterParagraph(p, f, n, deletions, allowed, seen, cond, replacements)).filter(Boolean) };
+    const out = { heading: headingBad ? "" : tidyHeading(s.heading), paragraphs: s.paragraphs.map(p => filterParagraph(p, f, n, deletions, allowed, seen, cond, replacements)).filter(Boolean) };
     if (deletions.length > before) shrunk?.add(out);
     return out;
   }).filter(s => s.paragraphs.length);
@@ -74,6 +91,11 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
       const have = draft ? keyedSections(filterSections(draft.chapter.sections, f, ch.n, deletions, true, allowed, seen, ch.title, undefined, replacements), ch.keys) : new Map<string, BookSection>();
       const missing = ch.keys.filter(k => !have.get(k)?.paragraphs.length);
       if (missing.length) for (const s of det("keys", missing)) have.set(s.heading, s);
+      // 세기 주장 대조(E-11): 어긋난 "가장 ~한 달·해" 문장을 지운다.
+      for (const [key, sec] of have) {
+        const bad = intensityViolations(brief, key, sec.paragraphs.join(" "));
+        if (bad.length) { for (const b of bad) deletions.push({ chapter: ch.n, rule: "intensity_mismatch", sentence: b }); have.set(key, { ...sec, paragraphs: sec.paragraphs.map(p => bad.reduce((x, b) => x.replace(b, ""), p).replace(/ {2,}/g, " ").trim()).filter(Boolean) }); }
+      }
       const sections = tidy(ch.keys.map(k => have.get(k) ?? { heading: k, paragraphs: [] }));
       const source: ChapterSource = !draft || missing.length === ch.keys.length ? "deterministic" : draft.source;
       const reason = !draft ? "missing" : missing.length ? `keys_filled:${missing.join(",")}` : undefined;
@@ -104,5 +126,6 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   for (const w of traitUse.warnings) warnings.push({ chapter: 0, kind: "trait_repeat", text: w });
   const info = infoRepeats(brief, chapters);
   for (const r of info.pairs) warnings.push({ chapter: Number(r.at[1].split(".")[0]), kind: "info_repeat", text: `${r.kind} ${r.at.join("~")}: ${r.b}` });
-  return { chapters, report: { deletions, warnings, replacements, metrics: { briefCopy: briefCopyMetric(brief, chapters), connectors: connectorRepeats(chapters), merged, backrefFixed, props, experience, traitUse, infoRepeats: info } } };
+  return { chapters, report: { deletions, warnings, replacements, metrics: { briefCopy: briefCopyMetric(brief, chapters), connectors: connectorRepeats(chapters), merged, backrefFixed, props, experience, traitUse, infoRepeats: info,
+    p6b: p6bMetric(brief, chapters, [RURAL_PROP, ...(f.familyOk ? [] : [FAMILY_MEMBER]), /배지|제시되지 않/, /\*\*/]) } } };
 }

@@ -13,7 +13,7 @@ import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
 import { conditionalFamily, planChapters, PRODUCT_CHARS, topDimension, type TraitSource } from "./chapters";
 import { buildCompatibility, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
-import { ageAt, ageBand, forbiddenFacts, sceneFits, toFactProfile, type CustomerFacts, type FactProfile } from "./facts";
+import { ageAt, ageBand, forbiddenFacts, sceneCtxOf, sceneFits, toFactProfile, type CustomerFacts, type FactProfile } from "./facts";
 import { collectFeatureHits } from "./featureHits";
 import type { Knowledge } from "./knowledge";
 import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
@@ -27,7 +27,7 @@ import { dropSourceSentences } from "@/lib/writer/safety/patterns";
 import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
-import { customerProps, lifeStage } from "./props";
+import { customerProps, lifeStage, matchJob } from "./props";
 import { cautionFor, type CautionCtx } from "./caution";
 import { annualDesign, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
@@ -83,7 +83,9 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     name: input.name, gender, birthDate: input.birthDate, birthTimeUnknown: input.birthTimeUnknown || !det.hourIncluded, mbti: input.mbtiType || null,
     relationshipStatus: input.context?.relationshipStatus ?? "", jobStatus: input.context?.jobStatus ?? "", detailJob: input.context?.detailJob ?? "", children: input.context?.children,
   };
-  const profile = { ...toFactProfile(facts), ...override };
+  const base = { ...toFactProfile(facts), ...override };
+  // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
+  const profile: FactProfile = { ...base, scene: sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false }) };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
   const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
@@ -113,7 +115,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   // 특성 설명 중 고객 사실과 어긋나는 문장(미혼에게 "배우자와 ~", 시간 미상에 시주 등)은 작가에게 넘기지 않는다(P3, 안전망과 같은 규칙).
   const sf: SafetyFacts = { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
   // 조건 문장("월지 본기가 겁재면", "갑목과 경금이 함께 있으면")은 이 원국에서 성립할 때만 남긴다(P3.8 r1: 조건을 판정하지 않아 작가가 단정).
-  const clean = (t: string | undefined, positions: readonly ("year" | "month" | "day" | "hour")[] = []) => t ? splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative|source_mention)/.test(sentenceViolation(x, sf) ?? "") && balanceHolds(x, bc) && conditionsHold(x, { saju, det, positions, hitIds: hitIdSet })).join(" ") || undefined : undefined;
+  const clean = (t: string | undefined, positions: readonly ("year" | "month" | "day" | "hour")[] = []) => t ? splitSentences(t).filter(x => !/^(fact_|hour_pillar|old_negative|source_mention|family_member|rural_prop|internal_label)/.test(sentenceViolation(x, sf) ?? "") && balanceHolds(x, bc) && conditionsHold(x, { saju, det, positions, hitIds: hitIdSet })).join(" ") || undefined : undefined;
   for (const t of traits) {
     const positionNote = clean(t.positionNote, t.positions), strengthNote = clean(t.strengthNote, t.positions), overuse = clean(t.overuse, t.positions);
     if (positionNote) t.positionNote = positionNote; else delete t.positionNote;
@@ -121,6 +123,9 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     if (overuse) t.overuse = overuse; else delete t.overuse;
     const good = t.good.map(g => clean(g, t.positions)).filter((x): x is string => Boolean(x));
     if (good.length) t.good = good;
+    // 뜻·나에게(P6b)도 같은 규칙: 조건이 원국과 어긋나거나 시간 미상인데 시주를 말하는 문장은 뺀다(다 빠지면 원문).
+    t.forYou = clean(t.forYou, t.positions) ?? clean(k.features.get(t.featureId)?.forYou.base, t.positions) ?? t.forYou;
+    t.meaning = splitSentences(t.meaning).filter(x => sentenceViolation(x, sf) !== "hour_pillar").join(" ") || t.meaning;
   }
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts, fnUsed);
   for (const t of traits) if (t.fusion) { const why = clean(keepBalanced(t.fusion.why, bc, splitSentences), t.positions); if (why) t.fusion.why = why; else delete t.fusion; }
@@ -138,7 +143,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   selected.forEach((s, i) => {
     const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
     // 결혼·자녀 언젠가형 장면은 연애 상품에서만(P3.5 A5, 종합 '사람' 장 배정은 장 단계에서 본다).
-    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile) && !usedScenes.has(sc.text) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
+    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile, sc.text) && !usedScenes.has(sc.text) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
   });
   const age = ageAt(input.birthDate, baseDate);
   const person: PersonBrief = {
@@ -191,11 +196,14 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const alt = [f?.image, ...(f?.imageVariants ?? [])].find(im => im && !me.traits.some(x => x.image.metaphor === im.metaphor) && balanceHolds(im.metaphor, other.bc));
     if (alt) t.image = alt;
   }
+  const profile0 = me.profile;
   const fortunes = buildFortunes(me.scored, me.traits);
+  const hourFree = (t: string) => splitSentences(t).filter(x => sentenceViolation(x, { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile0.relationship, children: profile0.children, job: profile0.job }) !== "hour_pillar").join(" ") || t;
+  for (const f of fortunes) { f.meaning = hourFree(f.meaning); f.forYou = hourFree(f.forYou); }
   // 종합은 팩폭 장(절 3개)과 긴장 장이 팩폭 재료를 쓰므로 3개 이상(P3.8).
   const shadows = buildShadows(me.selected, me.traits, input.product === "saju_mbti_full" ? 3 : 2);
   if (other) buildShadows(other.selected, other.traits).forEach((s, i) => shadows.push({ ...s, id: `s${shadows.length + i + 1}` }));
-  const unused = buildUnused(me.saju, me.st.missing, k);
+  const unused = buildUnused(me.saju, me.st.missing, k).map(u => ({ ...u, meaning: hourFree(u.meaning), forYou: hourFree(u.forYou) }));
   const mbti = mbtiBrief(k, me.facts.mbti);
   const profile = me.profile;
 

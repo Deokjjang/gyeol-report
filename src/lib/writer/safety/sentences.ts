@@ -7,7 +7,8 @@
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
-import { AWKWARD_PHRASE, LOVE_TIMING, OLD_NEGATIVE, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences } from "./patterns";
+import ontology from "@/data/knowledge-v5/behavior-ontology.json";
+import { AWKWARD_PHRASE, FAMILY_MEMBER, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences, tidyText } from "./patterns";
 
 export type SafetyFacts = {
   readonly birthTimeKnown: boolean;
@@ -17,8 +18,12 @@ export type SafetyFacts = {
   readonly job: "employed" | "business" | "student" | "none";
   /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
   readonly compat?: { readonly score: number; readonly band: string };
+  /** 부모·자녀 궁합처럼 가족 호칭이 입력 사실인 책(P6b B-6 예외). */
+  readonly familyOk?: boolean;
+  /** 이 책 내부 별칭(그림 별명) 중 띄어쓰기가 있는 것: 본문에 나오면 지운다(P6b B-2). */
+  readonly nicknames?: readonly string[];
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement" | "source_mention";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement" | "source_mention" | "rural_prop" | "nickname" | "family_member" | "internal_label" | "orphan_ref" | "intensity_mismatch";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 /** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
 export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
@@ -49,6 +54,21 @@ const BAND_NEVER = /최악의 궁합|안 맞는 사이|상극인 사이|궁합�
 const SCORE_NUM = /(\d{2,3}) ?점/;
 /** 궁합에서 한쪽을 평가·훈계하는 말(P3.7 r2: 부모 쪽 소제목 끝 "정확함이 마음의 넉넉함을 대신하지는 않아요"). */
 const JUDGE = /(부모|자녀|상사|팀장|팀원|부하|동료|배우자|친구|연인|동업자)(로서)?의? ?(자격|실격)|좋은 (부모|자녀|상사|팀장|팀원|배우자|친구|연인)(가|이)? (아니|못 되|되려면|되기 어렵)|[을를] 대신하지는 (않아요|않습니다|못해요|못합니다)[.!]?$|(이|가) (모자란|부족한) (부모|자녀|상사|팀장|팀원|배우자)/;
+
+/** 내부 라벨(P6b E-6): 행동 축 이름 목록·양끝 이름 인용, 편집 낱말 "배지", 안내문 "제시되지 않습니다". */
+const DIM_NAMES = ontology.dimensions.map(d => d.name).filter(n => n.length >= 2);
+const POLE_LABELS = ontology.dimensions.flatMap(d => [d.poles.plus.label, d.poles.minus.label]);
+const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const INTERNAL_LABEL = new RegExp([
+  "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
+  `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
+].join("|"));
+/** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */
+const DIM_WORDS = new Set([...DIM_NAMES, ...DIM_NAMES.map(n => n.split(" ")[0]).filter(w => w.length >= 2)]);
+const axisList = (s: string) => [...s.matchAll(/(?:[가-힣]+(?: [가-힣]+)?·){1,}[가-힣]+(?: [가-힣]+)?/g)].some(m => m[0].split("·").filter(x => DIM_WORDS.has(x.trim().replace(/(이|가|은|는|을|를|와|과|도)$/, ""))).length >= 2);
+/** 지운 문장 바로 뒤에서 앞 문장을 가리키며 시작하는 문장(P6b E-8): 지시어는 지우고, 연결어는 떼어 낸다. */
+const ORPHAN_REF = /^(이것|이건|이게|그것|그건|그게|이런|그런|이렇게|그렇게|이 때문에|그 때문에|이 덕분에|그 덕분에|그 결과|이 점)(은|이|이란|을|도|만)?\s/;
+const ORPHAN_CONNECTOR = /^(그래서|그러니|그러니까|그래서인지|따라서|그렇기에|그렇다 보니|그러다 보니|그러면|게다가|또한),?\s+/;
 
 export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
@@ -86,6 +106,10 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (!f.birthTimeKnown && HOUR.test(s)) return "hour_pillar";
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
   if (INTERNAL.test(s)) return "internal_term";
+  if (INTERNAL_LABEL.test(s) || axisList(s)) return "internal_label";
+  if (RURAL_PROP.test(s)) return "rural_prop";
+  if (f.nicknames?.some(n => s.includes(n))) return "nickname";
+  if (!f.familyOk && FAMILY_MEMBER.test(s)) return "family_member";
   if (OLD_NEGATIVE.test(s)) return "old_negative";
   if (SOURCE_MENTION.test(s)) return "source_mention";
   if (copiesExample(s, allowed)) return "example_copy";
@@ -101,21 +125,26 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
 }
 
 /** 문단에서 위반 문장을 지운다. */
-export function filterParagraph(p: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false, replacements?: Replacement[]): string {
+export function filterParagraph(p0: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false, replacements?: Replacement[]): string {
   // 바뀐 문장만 원문에서 고친다. 문단을 쪼갰다 다시 잇지 않는다(P3.7: "0.1"이 "0. 1"로, '?" 를'처럼 공백이 끼었다).
-  let out = p;
+  const p = tidyText(p0);
+  let out = p, prevDeleted = false;
   for (const raw of splitSentences(p)) {
     let s = raw;
+    // 앞 문장이 지워졌으면 그 문장을 가리키던 말을 정리한다(P6b E-8).
+    if (prevDeleted && ORPHAN_REF.test(s)) { deletions.push({ chapter, rule: "orphan_ref", sentence: s }); out = out.replace(raw, ""); continue; }
+    if (prevDeleted && ORPHAN_CONNECTOR.test(s)) { const t = s.replace(ORPHAN_CONNECTOR, ""); out = out.replace(raw, t); s = t; }
+    prevDeleted = false;
     if (isPastAssertion(s)) {
       const soft = softenExperience(s);
-      if (!soft) { deletions.push({ chapter, rule: "experience_assert", sentence: s }); out = out.replace(raw, ""); continue; }
+      if (!soft) { deletions.push({ chapter, rule: "experience_assert", sentence: s }); out = out.replace(raw, ""); prevDeleted = true; continue; }
       replacements?.push({ chapter, rule: "experience_assert", from: s, to: soft }); s = soft; out = out.replace(raw, soft);
     }
     const key = norm(s);
     const rule = sentenceViolation(s, f, allowed, inConditionalChapter) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
-    if (rule) { deletions.push({ chapter, rule, sentence: s }); out = out.replace(s, ""); } else if (key.length >= 20) seen?.add(key);
+    if (rule) { deletions.push({ chapter, rule, sentence: s }); out = out.replace(s, ""); prevDeleted = true; } else if (key.length >= 20) seen?.add(key);
   }
-  return out === p ? p : out.replace(/ {2,}/g, " ").trim();
+  return out === p0 ? p0 : out.replace(/ {2,}/g, " ").trim();
 }
 
 export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed" | "trait_repeat" | "awkward_phrase" | "info_repeat"; readonly text: string };

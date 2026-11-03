@@ -32,20 +32,17 @@ const traitOf = (b: Brief, id: string): Trait | undefined => b.traits.find(t => 
 
 function traitSection(ctx: Ctx, m: Extract<Material, { kind: "trait" }>, chapterId: string): BookSection | null {
   const t = traitOf(ctx.brief, m.traitId); if (!t) return null;
-  const name = noHan(t.name), easy = t.easyName;
+  // 그림 별명·이미지 대신 용어 이름 + 명리 뜻 + 나에게 주는 힘(P6b B-1·B-3).
+  const name = noHan(t.name);
   const first = m.angle === "first";
   const heading = first
-    ? pick(ctx, `${chapterId}:${t.id}:h`, [`${easy} 같은 힘`, `당신 안의 ${easy}`, `${josa(easy, "이가")} 보이는 순간`, `${easy}, 이렇게 씁니다`])
-    : `${DOMAIN_KO[m.domain] ?? "다른 자리에서"}의 ${easy}`;
+    ? pick(ctx, `${chapterId}:${t.id}:h`, [`${name}의 뜻`, `당신 안의 ${name}`, `${josa(name, "이가")} 보이는 순간`, `${name}, 이렇게 씁니다`])
+    : `${DOMAIN_KO[m.domain] ?? "다른 자리"}에서의 ${name}`;
   const intro = first
-    ? pick(ctx, `${chapterId}:${t.id}:i`, [
-      `당신에게는 ${t.image.metaphor} 같은 기운(${name})이 있습니다`,
-      `당신을 한 장면으로 그리면 ${t.image.metaphor}입니다. 이것이 ${easy}(${name})의 모습이에요`,
-      `${t.image.metaphor}. 당신 안에 놓인 ${easy}(${name})를 그림으로 그리면 이렇습니다`,
-    ])
-    : pick(ctx, `${chapterId}:${t.id}:i2`, [`앞에서 본 ${josa(easy, "은는")} ${DOMAIN_KO[m.domain] ?? "다른 자리에서"} 또 다른 얼굴을 보입니다`, `${DOMAIN_KO[m.domain] ?? "다른 자리에서"}도 ${josa(easy, "이가")} 그대로 드러납니다`]);
+    ? join(`${josa(t.name, "은는")} 명리학에서 이런 뜻을 가진 기운이에요`, t.meaning, `그래서 당신에게는 이런 힘이 있습니다`, t.forYou)
+    : `${DOMAIN_KO[m.domain] ?? "다른 자리"}에서도 ${josa(name, "이가")} 드러납니다`;
   const fusion = first && t.fusion && !ctx.used.has(`fusion:${t.id}`) ? (ctx.used.add(`fusion:${t.id}`), t.fusion) : undefined;
-  const p1 = join(intro, first ? `한마디로 '${t.oneLiner}'입니다` : undefined, first ? t.good[0] : t.good[1] ?? t.good[0], first ? t.positionNote?.replace(/^[^:]+:\s*/, "") : undefined);
+  const p1 = join(intro, first ? t.good[0] : t.good[1] ?? t.good[0], first ? t.positionNote?.replace(/^[^:]+:\s*/, "") : undefined);
   const p2 = join(m.scene, fusion?.why, fusion?.scene, !first && t.good[1] ? t.good[0] : undefined);
   return { heading, paragraphs: [p1, p2].filter(Boolean) };
 }
@@ -60,7 +57,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   const b = ctx.brief, c = b.chart;
   if (ctx.used.has(`ref:${ref}`)) return null;
   ctx.used.add(`ref:${ref}`);
-  if (ref === "chart.dayMaster") return { heading: `타고난 바탕, ${c.dayMaster.easyName}`, paragraphs: [join(`태어난 날의 기운은 ${c.dayMaster.easyName}(${noHan(c.dayMaster.name)})입니다`, c.dayMaster.metaphor && `${c.dayMaster.metaphor} 같은 사람이에요`, `타고난 힘의 세기는 ${c.strength.label} 쪽입니다`)] };
+  if (ref === "chart.dayMaster") return { heading: "타고난 바탕", paragraphs: [join(`태어난 날의 기운은 ${noHan(c.dayMaster.name)}입니다`, `당신을 한 줄로 그리면 ${c.coreImage.line}예요`, `타고난 힘의 세기는 ${c.strength.label} 쪽입니다`)] };
   if (ref === "mbti" && b.mbti) return { heading: `${b.mbti.type}, ${b.mbti.easyName}`, paragraphs: [join(`MBTI는 ${b.mbti.type}, ${b.mbti.easyName}입니다`, `한마디로 ${yeyo(b.mbti.oneLiner)}`, b.mbti.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""), b.mbti.functions[1]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
   if (ref === "chart.elements") return { heading: "가장 강한 기운과 가장 약한 기운", paragraphs: [join(`다섯 기운 가운데 ${josa(c.elements.strongest.name, "이가")} 가장 셉니다`, c.elements.strongest.reason, `반대로 ${josa(c.elements.weakest.name, "은는")} ${c.elements.weakest.reason}`, ...c.elements.reading.map(r => `그래서 '${r}'에 가깝습니다`))] };
   if (ref === "chart.yinYang") return { heading: "음과 양의 균형", paragraphs: [join(`음의 글자 ${c.yinYang.yin}개, 양의 글자 ${c.yinYang.yang}개입니다`, c.yinYang.reading && `'${c.yinYang.reading}'이라는 뜻이에요`)] };
@@ -68,18 +65,18 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref === "chart.thisYear") return { heading: `${c.thisYear.year}년의 기운`, paragraphs: [join(c.thisYear.effect, `올해 들어오는 힘은 ${noHan(c.thisYear.tenGod)} 쪽이에요`)] };
   if (ref === "chart.currentDayun" && c.currentDayun) return { heading: "지금 지나는 큰 흐름", paragraphs: [join(`지금은 ${c.currentDayun.ages}에 걸친 ${noHan(c.currentDayun.tenGod)}의 큰 흐름(대운) 위에 있습니다`, c.currentDayun.reading, c.currentDayun.next && `${c.currentDayun.next.startYear}년부터는 ${noHan(c.currentDayun.next.tenGod)} 쪽 흐름으로 넘어갑니다`)] };
   if (ref === "chart.strength") return { heading: "타고난 힘의 세기", paragraphs: [join(`타고난 힘의 세기는 ${c.strength.label} 쪽입니다`, `그래서 기댈 곳과 쓸 곳을 함께 보는 게 중요해요`)] };
-  if (ref === "fortunes" && b.fortunes.length) return { heading: "타고난 좋은 패", paragraphs: b.fortunes.slice(0, 2).map(f => join(`${f.image.metaphor} 같은 기운(${noHan(f.name)})이 있습니다`, f.direct)) };
+  if (ref === "fortunes" && b.fortunes.length) return { heading: "타고난 좋은 패", paragraphs: b.fortunes.slice(0, 2).map(f => join(`당신에게는 ${josa(noHan(f.name), "이가")} 있습니다`, f.meaning, f.direct)) };
   if (ref.startsWith("shadows.")) {
     const s = b.shadows.find(x => x.id === ref.slice(8)); if (!s) return null;
     const t = traitOf(b, s.traitId);
-    return { heading: pick(ctx, `${chapterId}:${ref}`, ["한 가지 짚고 갈 점", "알아 두면 덜 지치는 습관", "속도를 한 번 늦출 자리"]), paragraphs: [join(s.text, t && `${t.easyName}(${noHan(t.name)}) 때문에 생기는 결이에요`, s.warmTurn)] };
+    return { heading: pick(ctx, `${chapterId}:${ref}`, ["한 가지 짚고 갈 점", "알아 두면 덜 지치는 습관", "속도를 한 번 늦출 자리"]), paragraphs: [join(s.text, t && `${noHan(t.name)} 때문에 생기는 모습이에요`, s.warmTurn)] };
   }
   if (ref.startsWith("traits.") && ref.endsWith(".fusion")) {
     const t = traitOf(b, ref.split(".")[1]); if (!t?.fusion || ctx.used.has(`fusion:${t.id}`)) return null;
     ctx.used.add(`fusion:${t.id}`);
     return { heading: "기운과 성격이 반대로 당기는 곳", paragraphs: [join(t.fusion.why, t.fusion.scene)] };
   }
-  if (ref === "unused" && b.unused.length) return { heading: "아직 쓰지 못한 기운", paragraphs: b.unused.slice(0, 2).map(u => join(`당신에게 아직 비어 있는 자리는 ${u.easyName}(${noHan(u.name)})입니다`, `'${u.oneLiner}'에 가까워요`, u.actions[0], u.places.length ? `${u.places.slice(0, 3).join(", ")} 같은 곳이 이 기운을 채워 줍니다` : undefined)) };
+  if (ref === "unused" && b.unused.length) return { heading: "아직 쓰지 못한 기운", paragraphs: b.unused.slice(0, 2).map(u => join(`당신에게 아직 덜 쓴 기운은 ${noHan(u.name)}입니다`, u.forYou, u.actions[0], u.places.length ? `${u.places.slice(0, 3).join(", ")} 같은 곳이 이 기운을 채워 줍니다` : undefined)) };
   if (ref === "timeline.cycles" && b.timeline) return { heading: "큰 흐름의 지도", paragraphs: [join(...b.timeline.cycles.map(x => `${x.years}는 ${noHan(x.tenGod)}의 흐름${x.current ? "이고, 지금 여기에 있습니다" : "입니다"}`))] };
   if (ref === "timeline.keyEntries" && b.timeline) {
     const keys = b.timeline.keyEntries.map(k => b.timeline!.entries.find(e => e.key === k)).filter((e): e is NonNullable<typeof e> => Boolean(e));
@@ -87,7 +84,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   }
   const x = b.compatibility; if (!x) return null;
   const A = x.a.callName, B = x.b.callName;
-  if (ref === "compatibility.a" || ref === "compatibility.b") { const p = ref.endsWith("a") ? x.a : x.b; return { heading: `${p.callName}이라는 사람`, paragraphs: [join(`${p.callName}을 한 장면으로 그리면 ${p.image}입니다`, p.mbti && `MBTI는 ${p.mbti}예요`)] }; }
+  if (ref === "compatibility.a" || ref === "compatibility.b") { const p = ref.endsWith("a") ? x.a : x.b; return { heading: `${p.callName}이라는 사람`, paragraphs: [join(`${p.callName}을 한 줄로 그리면 ${p.image}예요`, p.mbti && `MBTI는 ${p.mbti}예요`)] }; }
   if (ref === "compatibility.differences" && x.differences.length) return { heading: "같은 장면, 다른 반응", paragraphs: x.differences.slice(0, 2).map(d => join(`${josa(A, "은는")} ${d.a} ${josa(B, "은는")} ${d.b}`)) };
   if (ref === "compatibility.tenGodAB") return { heading: `${A}이 ${B}에게 주는 것`, paragraphs: [join(x.tenGodAB.reading)] };
   if (ref === "compatibility.tenGodBA") return { heading: `${B}이 ${A}에게 주는 것`, paragraphs: [join(x.tenGodBA.reading)] };
@@ -124,9 +121,9 @@ function timelineSection(ctx: Ctx, key: string, extra: readonly Material[]): Boo
   const trait = extra.find((m): m is Extract<Material, { kind: "trait" }> => m.kind === "trait");
   const t = trait ? traitOf(b, trait.traitId) : undefined;
   return { heading: key, paragraphs: [join(
-    `${josa(unit, "은는")} ${e.material.image} 같은 때입니다`, note?.meaning, note?.caution,
+    `${e.material.image}예요`, note?.meaning, note?.caution,
     e.badges[0] && e.badges[0].line, e.fillsLack.fills ? "원래 부족한 기운을 채워 주는 쪽이라 숨이 한결 편해집니다" : undefined,
-    `${unit}의 열쇠말은 ${e.keywords.join("·")}입니다`, e.action.text, e.material.scene, t && trait ? `${t.easyName}의 결이 ${DOMAIN_KO[trait.domain] ?? "이때"} 드러납니다` : undefined,
+    `${unit}의 열쇠말은 ${e.keywords.join("·")}입니다`, e.action.text, e.material.scene, t && trait ? `${josa(noHan(t.name), "이가")} ${DOMAIN_KO[trait.domain] ?? "이때"} 드러납니다` : undefined,
   )] };
 }
 
@@ -146,7 +143,7 @@ function extrasOf(ctx: Ctx, ch: WriterChapter, sections: readonly { heading: str
     ? ["compatibility.common", "compatibility.complement", "compatibility.differences", "compatibility.dayRelations", "compatibility.mbtiConvention", "compatibility.parts", "compatibility.direction", "compatibility.lens", "compatibility.tenGodAB", "compatibility.tenGodBA", "compatibility.elements", "compatibility.yinYang"]
     : ["chart.elements", "chart.climate", "chart.yinYang", "fortunes", "unused", "chart.strength", "chart.dayMaster", "chart.currentDayun", "chart.thisYear"];
   for (const ref of refs) { const s = refSection(ctx, ref, ch.id); if (s?.paragraphs.length) out.push({ heading: s.heading, append: false, text: s.paragraphs.join(" ") }); }
-  for (const t of b.traits) out.push({ heading: `${t.easyName}의 다른 얼굴`, append: false, text: join(t.positionNote?.replace(/^[^:]+:\s*/, ""), ...t.good, t.strengthNote, t.where && `이 기운은 ${t.where}에 걸려 있어요`, t.image.visual, !ctx.used.has(`fusion:${t.id}`) && t.fusion?.why, t.overuse && `${t.overuse} ${pick(ctx, `${ch.id}:${t.id}:warm2`, WARM)}`) });
+  for (const t of b.traits) out.push({ heading: `${noHan(t.name)}의 다른 얼굴`, append: false, text: join(t.positionNote?.replace(/^[^:]+:\s*/, ""), ...t.good, t.strengthNote, t.where && `이 기운은 ${t.where}에 걸려 있어요`, t.forYou, !ctx.used.has(`fusion:${t.id}`) && t.fusion?.why, t.overuse && `${t.overuse} ${pick(ctx, `${ch.id}:${t.id}:warm2`, WARM)}`) });
   return out;
 }
 

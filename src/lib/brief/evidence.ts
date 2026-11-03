@@ -131,7 +131,7 @@ function loveSignals(saju: SajuCalcResult, hitIds: ReadonlySet<string>, k: Knowl
   const facts_: string[] = [];
   for (const a of aspects) {
     facts_.push(`${ASPECT_KO[a]}: ${sources.map(x => `${x.label} 쪽은 ${x.e[a].line}`).join(" / ")}`);
-    const scene = sources.flatMap(x => x.e[a].scenes).find((sc: SceneItem) => sceneFits(sc.requires, facts) && !usedScenes.has(sc.text));
+    const scene = sources.flatMap(x => x.e[a].scenes).find((sc: SceneItem) => sceneFits(sc.requires, facts, sc.text) && !usedScenes.has(sc.text));
     if (scene) { usedScenes.add(scene.text); facts_.push(`${ASPECT_KO[a]} 장면: ${scene.text}`); }
   }
   return { kind: "evidence", key, facts: facts_ };
