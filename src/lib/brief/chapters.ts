@@ -107,7 +107,32 @@ export const conditionalFamily = (s: SceneItem) => s.requires.relationship === "
 export const familyChapter = (product: ProductKey, chapterId: string) => product === "love_marriage_child" || (product === "saju_mbti_full" && (chapterId === "family" || chapterId === "love"));
 /** 사건 확정 낱말이 든 장면은 고르지 않는다(P3.8 r1: "승진은 빠르지 않아도 꾸준합니다"가 승진 암시 문장이 됐다). */
 const EVENT_SCENE = /승진|합격|불합격|이혼|임신|출산|당첨/;
-const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s));
+/**
+ * 행동 방향 낱말(P6b E-10): 책의 주 성향(trait·MBTI에서 0.6 이상인 차원, 서로 반대인 차원은 긴장이라 제외)과
+ * 반대 방향 낱말만 든 장면은 고르지 않는다(특성은 "바로 정함"인데 예시 장면은 "며칠을 고민").
+ */
+const DIRECTION_WORDS: Readonly<Record<string, { plus: RegExp; minus: RegExp }>> = {
+  decisionSpeed: { plus: /바로 정|곧장|즉석에서|그 자리에서 (정|결정)|망설임 없이/, minus: /고민하다|미루(고|다|는)|한참 (재|고민)|며칠(을|째) (고민|재)|결정을 못|망설이/ },
+  socialEnergy: { plus: /먼저 말을 걸|모임을 (열|잡)|사람들 (속|사이)에서 (힘|기운)/, minus: /혼자 있어야|만나고 (오면|나면) 지치|모임이 끝나면 (녹초|지쳐)|집에 틀어박/ },
+  directness: { plus: /대놓고|돌려 말하지 않|바로 말하|직설/, minus: /돌려 말|참고 넘어|말을 삼키|속으로 삼키/ },
+  planning: { plus: /계획표|미리 (짜|정해)|일정을 (짜|표로)|순서를 정해/, minus: /즉흥|그때그때|계획 없이|일단 떠나/ },
+  riskTaking: { plus: /일단 해 보|과감하게|모험/, minus: /검증된|안전한 쪽|보장된/ },
+  emotionalExpression: { plus: /감정을 (바로|그대로) 드러|티가 (바로|다) 나/, minus: /감정을 숨기|표정 변화가 없|티를 안 내/ },
+};
+const dominantCache = new WeakMap<PlanCtx, Record<string, number>>();
+export function dominantDims(ctx: Pick<PlanCtx, "traits" | "mbti">): Record<string, number> {
+  const out: Record<string, number> = {}, flip = new Set<string>();
+  const add = (tags: Readonly<Record<string, number>>) => { for (const [d, v] of Object.entries(tags)) { if (Math.abs(v) < 0.6 || !DIRECTION_WORDS[d]) continue; if (out[d] !== undefined && Math.sign(out[d]) !== Math.sign(v)) flip.add(d); else if (Math.abs(v) > Math.abs(out[d] ?? 0)) out[d] = v; } };
+  for (const t of ctx.traits) if (t.trait.fusion?.kind !== "tension") add(t.feature.dimensionTags);
+  if (ctx.mbti) add(ctx.mbti.dimensionTags);
+  for (const d of flip) delete out[d];
+  return out;
+}
+export function directionClash(text: string, dims: Readonly<Record<string, number>>): boolean {
+  return Object.entries(dims).some(([d, v]) => { const w = DIRECTION_WORDS[d]; return Boolean(w) && (v > 0 ? w.minus : w.plus).test(text) && !(v > 0 ? w.plus : w.minus).test(text); });
+}
+const dominantOf = (ctx: PlanCtx) => { let d = dominantCache.get(ctx); if (!d) { d = dominantDims(ctx); dominantCache.set(ctx, d); } return d; };
+const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts, s.text) && !directionClash(s.text, dominantOf(ctx)) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s));
 
 function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string): string | undefined {
   const ok = (list ?? []).filter(s => usable(s, ctx, chapterId));

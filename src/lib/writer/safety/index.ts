@@ -14,6 +14,7 @@ import { fixBackrefs, mergeShrunk } from "./tidy";
 
 export { OLD_NEGATIVE, isPastAssertion, splitSentences } from "./patterns";
 export { sentenceViolation, copiesExample, type SafetyFacts, type Deletion, type Replacement, type StyleWarning } from "./sentences";
+import { norm } from "./sentences";
 
 /** 장 분량이 목표 하한의 이 비율 미만이면 결정론 작가로 교체한다. */
 export const MIN_CHAPTER_RATIO = 0.6;
@@ -75,10 +76,12 @@ function keyedSections(sections: readonly BookSection[], keys: readonly string[]
   return out;
 }
 
-export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], drafts: ReadonlyMap<number, DraftChapter>): { chapters: FinalChapter[]; report: SafetyReport } {
+/** priorSentences: 같은 고객의 이전 Book 문장(P6b E-1). 같은 문장(20자 이상)이 이번 책에 나오면 지운다. */
+export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], drafts: ReadonlyMap<number, DraftChapter>, opts: { priorSentences?: readonly string[] } = {}): { chapters: FinalChapter[]; report: SafetyReport } {
   const f = safetyFacts(brief);
   const allowed = allowedWindows(JSON.stringify(brief));
   const seen = new Set<string>(); // 책 전체 같은 문장(장 순서대로 먼저 나온 것만 남긴다)
+  for (const s of opts.priorSentences ?? []) { const key = norm(s); if (key.length >= 20) seen.add(key); }
   const deletions: Deletion[] = [], warnings: StyleWarning[] = [], replacements: Replacement[] = [];
   const terms = [...new Set(brief.traits.map(t => t.name.replace(/\s*\(.*$/, "").replace(/[一-鿿]/g, "").trim()).filter(t => t.length >= 2))];
   const introduced = new Set<string>();

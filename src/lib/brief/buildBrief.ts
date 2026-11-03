@@ -51,6 +51,8 @@ export type BriefInput = {
   readonly baseDate: string;
   /** 세운 상품의 선택 연도(없으면 기준 날짜의 사주 해). */
   readonly selectedYear?: number;
+  /** 같은 고객의 이전 Book이 쓴 지식 DB 장면(P6b E-1): 이번 책에서는 고르지 않는다. */
+  readonly excludeScenes?: readonly string[];
 };
 
 const STYLE_RULES = [
@@ -169,9 +171,11 @@ function mbtiBrief(k: Knowledge, type: MbtiType | null) {
 }
 
 export function buildBrief(input: BriefInput, k: Knowledge): Brief {
-  const seed = fnv1a(stableStringify(input));
+  // 시드는 이전 책 목록과 무관하게(같은 입력 = 같은 시드).
+  const { excludeScenes: _exclude, ...seedInput } = input; void _exclude;
+  const seed = fnv1a(stableStringify(seedInput));
   const rng = createRng(seed);
-  const usedScenes = new Set<string>();
+  const usedScenes = new Set<string>(input.excludeScenes ?? []);
   const narrative = k.narratives.get(input.product);
   if (!narrative) throw new Error(`product-narratives에 ${input.product} 없음`);
   const isPair = input.product === "saju_mbti_compatibility";

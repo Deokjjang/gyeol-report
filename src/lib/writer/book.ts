@@ -15,6 +15,7 @@ import type { CallLog, WriterFallback } from "./runner";
 import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
 import { manAge } from "@/lib/brief/chart";
+import { usedScenesOf } from "./prior";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -49,6 +50,9 @@ export type WriterMeta = {
   readonly recovered: boolean;
   /** 작가 대체 기록(P6b A-2, p6b-fields.md 2). 대체가 없으면 null, P6b 이전 Book에는 없음. */
   readonly fallback?: WriterFallback | null;
+  /** 이 책이 쓴 지식 DB 장면 글(P6b E-1): 같은 고객의 다음 책이 피한다. priorBooks: 참고한 이전 책 수. */
+  readonly scenes?: readonly string[];
+  readonly priorBooks?: number;
 };
 export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
@@ -114,7 +118,7 @@ function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>
 export function assembleV5Book(a: {
   brief: Brief; plan: readonly WriterChapter[]; finals: readonly FinalChapter[]; report: SafetyReport; payload: ReportInputPayload; generatedAt: string;
   people: readonly BookPerson[]; writer: WriterMeta["writer"]; fallback?: WriterFallback | null; calls: readonly CallLog[]; tokens: WriterMeta["tokens"]; costUsd: number; durationMs: number;
-  briefHash: string; knowledgeVersion: string; promptVersion: string; recovered: boolean;
+  briefHash: string; knowledgeVersion: string; promptVersion: string; recovered: boolean; priorBooks?: number;
 }): { draft: V5BookDraft; evidence: V5Evidence } {
   const { brief } = a;
   const book = BOOKS.find(b => b.productKey === brief.product)!;
@@ -151,7 +155,7 @@ export function assembleV5Book(a: {
     names: c ? `${c.a.callName.replace(/님$/, "")} · ${c.b.callName.replace(/님$/, "")}` : brief.person.name, context, ...(pair ? { pair } : {}),
     meta: {
       writer: a.writer, promptVersion: a.promptVersion, knowledgeVersion: a.knowledgeVersion, briefVersion: brief.version, briefHash: a.briefHash,
-      tokens: a.tokens, costUsd: a.costUsd, calls: a.calls, durationMs: a.durationMs, recovered: a.recovered, fallback: a.fallback ?? null,
+      tokens: a.tokens, costUsd: a.costUsd, calls: a.calls, durationMs: a.durationMs, recovered: a.recovered, fallback: a.fallback ?? null, scenes: usedScenesOf(brief), priorBooks: a.priorBooks ?? 0,
       chapters: a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, source: f.source, ...(f.reason ? { reason: f.reason } : {}), chars: f.chars, evidence: chapterEvidence(brief, a.plan.find(ch => ch.n === f.n)!) })),
       safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length, ...(a.report.metrics ? { metrics: a.report.metrics } : {}) },
     },

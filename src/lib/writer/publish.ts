@@ -31,6 +31,7 @@ import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta 
 import { buildWriterPrompt, WRITER_PROMPT_VERSION } from "./prompt";
 import { runWriter, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { applySafetyNet, type DraftChapter } from "./safety";
+import type { PriorBooks } from "./prior";
 
 let knowledgeCache: { k: Knowledge; version: string } | null = null;
 /** 지식 DB와 그 내용 해시(Book 메타데이터의 지식 버전). */
@@ -85,11 +86,12 @@ export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep"
   readonly fallback?: LlmTarget | null;
 };
 
-export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
+export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
   const deps = a.deps ?? {};
   const now = deps.now ?? (() => Date.now()), started = now();
   const { k, version: knowledgeVersion } = writerKnowledge();
-  const brief = buildBrief(payloadToBriefInput(a.payload, kstDate(a.policyAt)) as never, k);
+  // 같은 고객의 이전 책이 쓴 장면은 고르지 않는다(P6b E-1).
+  const brief = buildBrief({ ...payloadToBriefInput(a.payload, kstDate(a.policyAt)), ...(a.prior?.scenes.length ? { excludeScenes: a.prior.scenes } : {}) } as never, k);
   const plan = buildWriterPrompt(brief).chapters;
   const llm = resolveLlmConfig();
   const provider = deps.provider ?? llm.provider, model = deps.model ?? llm.model;
@@ -103,13 +105,13 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     catch { drafts = new Map(); }
   }
   if (a.recover || !run) { try { for (const s of await a.sink.load()) if (!drafts.has(s.n)) drafts.set(s.n, { chapter: s.chapter, source: s.source }); } catch { /* 저장소가 안 되면 결정론 작가로만 */ } }
-  const { chapters: finals, report } = applySafetyNet(brief, plan, drafts);
+  const { chapters: finals, report } = applySafetyNet(brief, plan, drafts, { priorSentences: a.prior?.sentences ?? [] });
   const people = await (deps.people ?? v4People)(a.payload, a.policyAt);
   const { draft, evidence } = assembleV5Book({
     brief, plan, finals, report, payload: a.payload, generatedAt: a.policyAt, people,
     writer: run?.writer ?? null, fallback: run?.fallback ?? null, calls: run?.calls ?? [],
     tokens: { input: run?.usage.inputTokens ?? 0, cachedInput: run?.usage.cachedInputTokens ?? 0, output: run?.usage.outputTokens ?? 0 },
-    costUsd: run?.costUsd ?? 0, durationMs: now() - started, briefHash: briefHash(brief), knowledgeVersion, promptVersion: WRITER_PROMPT_VERSION, recovered: Boolean(a.recover),
+    costUsd: run?.costUsd ?? 0, durationMs: now() - started, briefHash: briefHash(brief), knowledgeVersion, promptVersion: WRITER_PROMPT_VERSION, recovered: Boolean(a.recover), priorBooks: a.prior?.books ?? 0,
   });
   return { snapshot: createV5Snapshot({ reportId: a.reportId, createdAtIso: a.policyAt, draft, evidence }), meta: evidence.meta, run };
 }

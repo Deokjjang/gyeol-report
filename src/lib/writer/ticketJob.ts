@@ -7,6 +7,7 @@ import type { TicketPublicationStore } from "../tickets/publication";
 import type { TicketResult } from "../tickets/service";
 import type { BookChapter } from "./format";
 import { buildV5Snapshot, type V5BuildDeps } from "./publish";
+import { priorBooks } from "./prior";
 import type { ChapterSink, SavedChapter } from "./runner";
 
 export type V5JobDeps = V5BuildDeps;
@@ -32,11 +33,13 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
   const policyAt = new Date(job.policyAt).toISOString();
   const sink = ticketChapterSink(store, user, origin);
   const recover = job.recover === true;
+  // 같은 고객의 이전 Book(P6b E-1): 읽기 실패는 빈 값(발행은 막지 않는다).
+  const prior = await priorBooks(store, user, job.input);
   let built;
-  try { built = await buildV5Snapshot({ payload: job.input as never, reportId: job.reportId, policyAt, sink, recover, ...(deps ? { deps } : {}) }); }
+  try { built = await buildV5Snapshot({ payload: job.input as never, reportId: job.reportId, policyAt, sink, recover, prior, ...(deps ? { deps } : {}) }); }
   catch {
     // 작가 단계 밖의 예외(브리프 등): 저장된 장 + 결정론 작가로 한 번 더.
-    try { built = await buildV5Snapshot({ payload: job.input as never, reportId: job.reportId, policyAt, sink, recover: true, ...(deps ? { deps: { ...deps, stream: undefined } } : {}) }); }
+    try { built = await buildV5Snapshot({ payload: job.input as never, reportId: job.reportId, policyAt, sink, recover: true, prior, ...(deps ? { deps: { ...deps, stream: undefined } } : {}) }); }
     catch { return { ok: true, state: "RUNNING", code: "V5_BUILD_FAILED", reportId: job.reportId }; }
   }
   if (built.run?.stale) return { ok: true, state: "RUNNING", code: "STALE_LEASE", reportId: job.reportId };

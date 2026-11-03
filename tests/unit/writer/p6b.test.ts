@@ -59,7 +59,7 @@ describe("P6b 핵심 이미지·판 정보·작가 입력", () => {
 
 import { sceneTextFits, sceneCtxOf } from "@/lib/brief/facts";
 import { filterParagraph, sentenceViolation, type SafetyFacts } from "@/lib/writer/safety/sentences";
-import { tidyHeading, tidyText } from "@/lib/writer/safety/patterns";
+import { splitSentences, tidyHeading, tidyText } from "@/lib/writer/safety/patterns";
 import { intensityViolations } from "@/lib/writer/safety";
 
 describe("P6b 안전망(E-6·E-8·E-9·E-11·B-2·B-5·B-6)", () => {
@@ -109,5 +109,39 @@ describe("P6b 안전망(E-6·E-8·E-9·E-11·B-2·B-5·B-6)", () => {
     const { brief } = book("saju_mbti_full");
     const scenes = JSON.stringify(brief.chapters.flatMap(c => c.materials)).match(/"scene":"[^"]+"/g) ?? [];
     for (const s of scenes) expect(/기획서|시제품|성적표|매점|엄마|아빠|어머니|아버지/.test(s), s).toBe(false);
+  });
+});
+
+import { directionClash } from "@/lib/brief/chapters";
+describe("P6b 특성과 예시의 방향(E-10)", () => {
+  it("주 성향이 '바로 정함'이면 '며칠을 고민'만 있는 장면은 고르지 않는다", () => {
+    expect(directionClash("메뉴 하나를 두고 며칠을 고민하다 결국 미루고 맙니다.", { decisionSpeed: 0.8 })).toBe(true);
+    expect(directionClash("메뉴는 그 자리에서 정하고 바로 주문합니다.", { decisionSpeed: 0.8 })).toBe(false);
+    expect(directionClash("며칠을 고민하다 결국 미루고 맙니다.", {})).toBe(false);
+  });
+});
+
+import { priorBooks, usedScenesOf } from "@/lib/writer/prior";
+import { norm } from "@/lib/writer/safety/sentences";
+describe("P6b 같은 고객의 다른 상품(E-1)", () => {
+  it("이전 책의 장면은 고르지 않고, 같은 문장(20자 이상)은 지운다", () => {
+    const first = book("saju_mbti_full", PEOPLE.c1);
+    const scenes = usedScenesOf(first.brief), sentences = first.draft.chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs));
+    const brief = buildBrief({ product: "career_money_study", baseDate: BASE, person: PEOPLE.c1, excludeScenes: scenes }, k);
+    expect(usedScenesOf(brief).filter(s => scenes.includes(s))).toEqual([]);
+    const { chapters } = applySafetyNet(brief, buildWriterPrompt(brief).chapters, new Map(), { priorSentences: sentences.flatMap(p => splitSentences(p)) });
+    const prev = new Set(sentences.flatMap(p => splitSentences(p)).map(norm).filter(x => x.length >= 20));
+    const again = chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p)))).filter(s => prev.has(norm(s)));
+    expect(again).toEqual([]);
+  });
+  it("이용권 저장소에서 같은 사람의 v5 Book만 모은다(읽기 실패는 빈 값)", async () => {
+    const first = book("saju_mbti_full", PEOPLE.c1);
+    const snap = { productVersion: "v5", draft: first.draft, evidencePacket: { ...first.evidence, input: { person: { name: PEOPLE.c1.name, birthDate: PEOPLE.c1.birthDate, birthTime: PEOPLE.c1.birthTime } } } };
+    const store = { call: async (action: string) => action === "library" ? { ok: true, items: [{ reportId: "report_a", status: "available" }, { reportId: "report_b", status: "expired" }] } : action === "read" ? { ok: true, snapshot: snap } : { ok: false } };
+    const me = { person: { name: PEOPLE.c1.name, birthDate: PEOPLE.c1.birthDate, birthTime: PEOPLE.c1.birthTime } };
+    const r = await priorBooks(store as never, "u1", me);
+    expect(r.books).toBe(1); expect(r.scenes.length).toBeGreaterThan(0); expect(r.sentences.length).toBeGreaterThan(20);
+    expect((await priorBooks(store as never, "u1", { person: { name: "다른", birthDate: "2000-01-01", birthTime: "" } })).books).toBe(0);
+    expect(await priorBooks({ call: async () => { throw new Error("db"); } } as never, "u1", me)).toEqual({ scenes: [], sentences: [], books: 0 });
   });
 });
