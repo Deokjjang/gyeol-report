@@ -101,7 +101,11 @@ export function NatalTable({ data }: { data: V4CustomerTables[number] }) {
 }
 export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mbti"]; name: string }) {
   if (!m) return <><p className={s.eyebrow}>{name}의 MBTI</p><h1>MBTI 모름</h1><p className={s.profileLead}>입력하지 않은 유형은 추정하지 않습니다. 이 책은 확인된 명리 데이터를 기준으로 읽을 수 있습니다.</p></>;
-  return <><p className={s.eyebrow}>WAYS OF BEING / {name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
+  return <><p className={s.eyebrow}>WAYS OF BEING / {name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><MbtiProfile data={m} /></>;
+}
+/** MBTI 쪽 본문(유형 제목 아래). 주인공 쪽에서는 접어서 보여 준다. */
+export function MbtiProfile({ data: m }: { data: NonNullable<V4CustomerTables[number]["mbti"]> }) {
+  return <><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
     <h2>선호지표</h2><div className={s.axes}>{m.preferenceRows.map(r => <section key={r.axisKey} aria-label={r.label}><h3>{r.label}</h3><div>{[r.left, r.right].map(v => <div key={v.code} data-selected={v.selected}><b>{v.code}</b><span><strong>{v.nameKo}{v.selected ? " ✓" : ""}</strong><small>{v.nameEn}</small><span>{v.description}</span></span></div>)}</div></section>)}</div>
     <h2>기능서열</h2><table className={s.functions}><caption className={s.srOnly}>기능서열</caption><colgroup><col style={{ width: 56 }} /><col style={{ width: 38 }} /><col /></colgroup><thead className={s.srOnly}><tr><th scope="col">순서</th><th scope="col">기능</th><th scope="col">설명</th></tr></thead><tbody>{m.functionRows.map(r => <tr key={r.code}><th scope="row">{r.label}</th><td>{r.code}</td><td><strong>{r.nameKo}</strong><small>{r.attitude} · {r.domain}</small><p>{r.description}</p></td></tr>)}</tbody></table>
     <h2>핵심 요약</h2><dl className={s.coreSummary}>{m.coreSummary.map(r => <div key={r.key}><dt>{r.label}</dt><dd>{r.text}</dd></div>)}</dl>

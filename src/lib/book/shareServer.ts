@@ -27,7 +27,7 @@ export async function loadSharedBookData(token: string, port?: ShareStorePort) {
   const shared = await loadBookShare(token, port);
   if (!shared) return null;
   const book = storedBook(shared.snapshot);
-  return book ? { data: book.data, share: shared.model } : null;
+  return book ? { data: book.data, share: shared.model, ...(book.edition ? { edition: book.edition } : {}) } : null;
 }
 // Read-only reuse of 9C purchase authority. A share credential never proves ownership.
 export async function mayShareBook(request: NextRequest, reportId: string, auth: AccountPort, library: LibraryPort, local: boolean, port?: ShareStorePort) {

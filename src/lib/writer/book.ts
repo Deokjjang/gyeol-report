@@ -6,6 +6,7 @@
 import type { BookData, BookPage, BookPerson, BookParagraph } from "@/app/dev/book-preview/bookTypes";
 import { composeBookNavigation } from "@/app/dev/book-preview/bookNavigation";
 import { BOOKS, readerTitle } from "@/lib/book/product";
+import { koreanDate, kstDay } from "@/lib/book/readerCopy";
 import type { Brief, Material, TimelineEntry } from "@/lib/brief/schema";
 import type { ReportInputPayload } from "@/lib/report-generation/reportInputTypes";
 import { productSlugByType, type ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
@@ -15,6 +16,7 @@ import type { CallLog, WriterFallback } from "./runner";
 import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
 import { manAge } from "@/lib/brief/chart";
+import { getMonthlyPillars } from "@/lib/saju/detections";
 import { usedScenesOf } from "./prior";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
@@ -182,22 +184,50 @@ export function validateV5Publication(product: string, draft: unknown, evidence:
 
 const toParagraphs = (sections: readonly BookSection[]): BookParagraph[] => sections.flatMap(s => s.paragraphs.map((text, i) => ({ text, notes: [], ...(i === 0 && s.heading ? { heading: s.heading } : {}) })));
 const TIME = (y: number, now: number) => (y < now ? "돌아보기" : y === now ? "지금" : "앞으로");
-const PERIOD_KO = { past: "돌아보기", current: "지금", future: "앞으로" } as const;
+const noHanja = (s: string) => s.replace(/\([^)]*\)/g, "").trim();
+/** 표 한 줄 값. todo는 "해 볼 것", review는 "돌아보기"(P6b 이전 Book의 추천 행동도 "해 볼 것"). */
+const rowExtras = (c: V5TimelineCard) => ({ tenGod: noHanja(c.tenGod.stem), flow: c.flow.score, keywords: [...c.keywords], badges: c.badges.map(b => ({ label: b.label, line: b.line, ...(b.with ? { with: b.with } : {}) })),
+  goodLabel: c.review && !c.todo ? "돌아보기" : "해 볼 것" });
 const LEVEL_POINTS = { 좋음: 3, 보통: 2, 조율: 1 } as const;
 const importance = (score: number) => (score >= 4 ? "HIGH" : score === 3 ? "MEDIUM" : "BACKGROUND") as "HIGH" | "MEDIUM" | "BACKGROUND";
 
-/** 저장된 v5 스냅샷 → 기존 렌더러가 그대로 보여 주는 BookData. */
-export function projectV5Book(snapshot: ProductPreviewSnapshot): BookData | null {
+/** 세운 달 카드의 절기월 구간(P6b-ui): 시작은 라벨의 "(MM/DD 절입부터)", 끝은 다음 달 절입 전날(12번째는 이듬해 입춘 전날).
+ * key의 Mxx는 절기 순서(M01 = 인월). 달력 달 이름은 쓰지 않는다. */
+export function seasonMonths(cards: readonly Pick<V5TimelineCard, "key" | "label">[]) {
+  const starts = cards.map(c => {
+    const year = Number(c.key.slice(0, 4)), index = Number(c.key.slice(-2));
+    const m = c.label.match(/\((\d{2})\/(\d{2}) 절입부터\)/);
+    return m ? `${Number(m[1]) < 2 && index >= 11 ? year + 1 : year}-${m[1]}-${m[2]}` : getMonthlyPillars(year)[index - 1].startKst.slice(0, 10);
+  });
+  const last = cards.at(-1), next = last ? getMonthlyPillars(Number(last.key.slice(0, 4)) + 1)[0].startKst.slice(0, 10) : "";
+  const dayBefore = (day: string) => new Date(Date.parse(`${day}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10);
+  const md = (day: string) => `${Number(day.slice(5, 7))}/${Number(day.slice(8, 10))}`;
+  return cards.map((c, i) => {
+    const start = starts[i], end = starts[i + 1] ?? next;
+    return { order: Number(c.key.slice(-2)), start, end, range: `${md(start)}~${md(dayBefore(end))}` };
+  });
+}
+/** 기준일(KST 날짜)이 든 절기월이 "지금"(시험: 2026-11-03 → 9번째 달 戊戌). */
+export const seasonTime = (m: { start: string; end: string }, today: string) => today >= m.end ? "돌아보기" : today >= m.start ? "지금" : "앞으로";
+
+/** 판 표기(표지·마지막 쪽): "제5판 · 2026년 11월 3일 개정". P6b 이전 v5 Book은 없음. */
+export const v5EditionLabel = (draft: unknown) => { const e = (draft as V5BookDraft | null)?.edition; return e ? `${e.label} · ${koreanDate(e.revisedAt)} 개정` : undefined; };
+
+/** 저장된 v5 스냅샷 → 기존 렌더러가 그대로 보여 주는 BookData.
+ * today(KST 날짜): 표의 지금·돌아보기·앞으로 기준. 열람 화면은 읽는 날을 넘기고, 없으면 책을 만든 날. */
+export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string): BookData | null {
   if (snapshot.productVersion !== "v5") return null;
   const d = snapshot.draft as unknown as V5BookDraft, e = snapshot.evidencePacket as V5Evidence;
   if (!validateV5Publication(snapshot.productType, d, e).ok) return null;
   const book = BOOKS.find(b => b.productKey === d.productType)!;
   const pages: BookPage[] = [{ kind: "cover", title: d.title, names: e.names, headline: d.headline }];
   if (!e.pair && e.people.length) pages.push({ kind: "input", title: "이 책의 주인공" });
-  if (e.pair) pages.push({ kind: "pair", title: "우리라는 사이", category: e.pair.category, characters: [...e.pair.characters], directions: [], relations: [...e.pair.relations] });
+  if (e.pair) pages.push({ kind: "pair", title: "우리라는 사이", category: e.pair.category, characters: [...e.pair.characters], directions: [], relations: [...e.pair.relations],
+    ...(d.pairImage ? { image: d.pairImage.line } : {}), ...(e.pair.relationsPlain ? { relationsPlain: [...e.pair.relationsPlain] } : {}) });
   const sc = e.pair?.score;
-  if (sc) pages.push({ kind: "score", scoreVersion: sc.version, title: "타고난 맞물림", total: sc.total, scores: sc.components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3 })),
-    verdict: `${sc.band} · ${sc.verdict}`, notice: "두 사람의 명리와 MBTI가 맞물리는 정도를 정해진 규칙으로 계산했어요. 항목은 3칸 중 몇 칸이 맞물리는지로 보여 줍니다.", explanations: sc.components.map(x => `${x.name}: ${x.line}`), limitations: [] });
+  // 점수 쪽(P6b-ui): 총점·구간 이름·항목 막대(3칸)·항목 이유. 새 점수 기준은 합의 후 반영.
+  if (sc) pages.push({ kind: "score", scoreVersion: sc.version, title: "타고난 맞물림", total: sc.total, band: sc.band, scores: sc.components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3, reason: x.line })),
+    verdict: sc.verdict, notice: "두 사람의 명리와 MBTI가 맞물리는 정도를 정해진 규칙으로 계산했어요. 항목은 3칸 중 몇 칸이 맞물리는지로 보여 줍니다.", limitations: [] });
   e.people.forEach((p, i) => pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }));
   const chapterPage = new Map<number, number>(), keyPage = new Map<string, number>();
   for (const ch of d.chapters) {
@@ -210,17 +240,18 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot): BookData | null
     }
   }
   if (d.timeline) {
-    const t = d.timeline, cards = t.cards;
+    const t = d.timeline, cards = t.cards, day = today ?? kstDay(e.generatedAt);
     const text = (key: string) => d.chapters.flatMap(c => c.sections).find(s => s.heading === key)?.paragraphs[0] ?? "";
     const tl = pages.find((p): p is Extract<BookPage, { kind: "timeline" }> => p.kind === "timeline");
     // P6b(p6b-fields.md 5): 그림 줄·할 일/돌아보기·살필 점·만 나이·기간 상태는 카드 필드에서. 없으면(P6b 이전 Book) 예전 방식.
-    if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
-      caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, time: c.period ? PERIOD_KO[c.period] : TIME(Number(c.key), t.thisYear), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? "큰 흐름이 바뀌는 해" : null, importance: importance(c.flow.score) }));
+    // P6b-ui: 표 한 줄 값(십성·흐름 세기·핵심어·관계 배지), 할 일/돌아보기 이름, 지금·돌아보기·앞으로는 기준일(today) 대비.
+    if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, ...(c.age !== undefined ? { ageLabel: `만 ${c.age}세` } : {}), cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
+      caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, time: TIME(Number(c.key), Number(day.slice(0, 4))), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? "큰 흐름이 바뀌는 해" : null, importance: importance(c.flow.score), ...rowExtras(c) }));
     const ms = pages.find((p): p is Extract<BookPage, { kind: "months" }> => p.kind === "months");
-    // 달 번호는 절입 날짜의 달력 달(P6b: key의 Mxx는 절기 순서라 묘월(3월 무렵)이 "2월"로 보였다). 옛 Book도 label의 "(MM/DD 절입부터)"로 계산.
-    const calMonth = (c: V5TimelineCard) => Number(c.label.match(/\((\d{2})\/\d{2} 절입부터\)/)?.[1]) || Number(c.key.slice(-2));
-    if (ms) ms.months = cards.filter(c => c.kind === "month").map(c => ({ month: calMonth(c), title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, theme: c.keywords.join(" · "), time: c.period ? PERIOD_KO[c.period] : "", ganji: c.ganji.hanja,
-      gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score) }));
+    // 달은 절기월 순번·날짜 구간으로 보여 주고(달력 달 이름 없음), 지금은 기준일이 든 절기월(P6b-ui: 달력 달 번호를 붙여 엉뚱한 달로 보였다).
+    const monthCards = cards.filter(c => c.kind === "month"), season = seasonMonths(monthCards);
+    if (ms) ms.months = monthCards.map((c, i) => ({ month: season[i].order, order: season[i].order, range: season[i].range, title: c.imageLine ?? splitSentences(text(c.key))[0]?.slice(0, 60) ?? c.label, theme: c.keywords.join(" · "), time: seasonTime(season[i], day), ganji: c.ganji.hanja,
+      gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score), ...rowExtras(c) }));
   }
   if (e.pair) { const pair = pages.find((p): p is Extract<BookPage, { kind: "pair" }> => p.kind === "pair")!; pair.directions = e.pair.directions.map(x => ({ title: x.title, effect: x.effect, term: x.term, page: chapterPage.get(x.chapterN) ?? 0 })); }
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: d.finalLine });

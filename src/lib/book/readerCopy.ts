@@ -52,3 +52,8 @@ export function readableBookTime(value: string): string {
 }
 
 export const readableBookText = (value: string, names: readonly string[] = []) => readableBookTime(readableSajuText(value, names));
+
+/** KST 날짜(YYYY-MM-DD). 날짜만 있는 값은 그대로. */
+export const kstDay = (iso: string) => iso.length === 10 ? iso : new Date(Date.parse(iso) + 9 * 3_600_000).toISOString().slice(0, 10);
+/** "2026-11-03" → "2026년 11월 3일"(판 표기). */
+export const koreanDate = (iso: string) => { const [y, m, d] = kstDay(iso).split("-").map(Number); return `${y}년 ${m}월 ${d}일`; };

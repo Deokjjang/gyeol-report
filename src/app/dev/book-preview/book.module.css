@@ -157,6 +157,57 @@
 .yearMap button { min-height: 40px; }
 .compatibilityScore { margin-bottom: 22px !important; }
 .compatibilityScore strong { font-size: 60px; font-weight: 500; }
+/* P6b-ui: 주인공 쪽 표, 대운·세운 표, 점수 쪽, 판 표기. 기존 선·글자 크기·오행 색만 쓴다. */
+.personTables { margin-top: 30px; }
+.pageScroll h2.personTableTitle { margin-top: 26px; font-size: 18px; }
+.fold { border-block: 1px solid var(--rule); margin-bottom: 4px; }
+.fold > summary { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; }
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary span { font-size: 18px; font-weight: 300; }
+.fold[open] > summary span { transform: rotate(45deg); }
+.fold[open] { padding-bottom: 18px; }
+.ledger { list-style: none; padding: 0; margin: 24px 0 0; }
+.ledger > li { border-top: 1px solid var(--rule); }
+.ledger > li[data-now=true] { border-top: 2px solid #111; }
+.ledger > li[data-impact=HIGH] { border-left: 3px solid #444; padding-left: 10px; }
+.ledgerRow > summary { display: grid; grid-template-columns: 74px minmax(0, 1fr) auto; gap: 10px; align-items: start; min-height: 44px; padding: 14px 0; cursor: pointer; list-style: none; }
+.ledgerRow > summary::-webkit-details-marker { display: none; }
+.rowWhen { display: flex; flex-direction: column; }
+.rowWhen b { font-size: 16px; line-height: 1.45; font-variant-numeric: tabular-nums; word-break: keep-all; }
+.rowWhen small { font-size: 10px; color: #555; font-variant-numeric: tabular-nums; }
+.rowMain { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.rowLine { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 12px; }
+.rowKeywords { font-size: 13px; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+.rowBadge { font-size: 10px; line-height: 1.5; padding: 2px 6px; border: 1px solid #aaa; white-space: nowrap; }
+.ledger > li[data-now=true] .rowBadge { border-color: #111; background: #111; color: #fff; }
+.rowDetail { display: grid; gap: 6px; padding-bottom: 16px; font-size: 13px; line-height: 1.8; }
+.rowDetail > button { min-height: 44px; text-align: left; font-size: 15px; font-weight: 600; line-height: 1.7; }
+.rowBadges { list-style: none; margin: 0; padding: 0; font-size: 12px; line-height: 1.75; color: var(--muted); }
+.rowBadges b { color: #111; font-weight: 600; }
+.ganjiChip { display: inline-flex; align-items: center; gap: 2px; }
+.ganjiChip b { display: inline-grid; place-items: center; width: 24px; height: 26px; font-size: 15px; font-weight: 600; border: 1px solid #aaa; }
+.ganjiChip small { margin-left: 4px; font-size: 11px; }
+.flowBar { display: inline-flex; gap: 2px; }
+.flowBar i { width: 7px; height: 10px; border: 1px solid #555; }
+.flowBar i[data-on=true] { background: #111; border-color: #111; }
+.scoreBand { font-size: 15px; font-weight: 600; margin-bottom: 10px !important; }
+.scoreItems { list-style: none; padding: 0; margin: 24px 0; }
+.scoreItems li { border-top: 1px solid var(--rule); padding: 16px 0; }
+.scoreItems li > div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.pageScroll .scoreItems h2 { font-size: 15px; }
+.scoreItems li > div span { font-size: 13px; font-variant-numeric: tabular-nums; }
+.scoreMeter { display: block; height: 6px; margin: 8px 0 10px; background: #ececec; }
+.scoreMeter i { display: block; height: 100%; background: #111; }
+.scoreItems p { font-size: 13px; line-height: 1.8; }
+.pairImages { list-style: none; margin: -8px 0 26px; padding: 0; font-size: 12px; line-height: 1.8; color: var(--muted); }
+.pairImages b { margin-right: 6px; color: #111; font-weight: 600; }
+.pairRelations { margin-top: 26px; }
+.pageScroll .pairRelations h2 { font-size: 15px; }
+.pairRelations ul { margin: 8px 0 0; padding-inline-start: 18px; font-size: 13px; line-height: 1.85; }
+.pairRelations li + li { margin-top: 6px; }
+.edition { display: block; margin-top: 16px !important; font-size: 11px; letter-spacing: .02em; opacity: .7; }
+.backContent > .edition { margin-top: 30px !important; }
+.backContent > .edition + .micro:last-child { margin-top: 6px; }
 @media (min-width: 1000px) {
   .bookShell:has([data-page=narrative]), .bookShell:has([data-page=timeline]), .bookShell:has([data-page=months]), .bookShell:has([data-page=appendix]), .bookShell:has([data-page=contents]) { max-width: 940px; }
   .prose { max-width: 780px; font-size: 17px; }

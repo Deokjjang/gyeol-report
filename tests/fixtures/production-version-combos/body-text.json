@@ -1,0 +1,35 @@
+{
+ "annual_fortune-v4": {
+  "pages": 17,
+  "sha256": "8038a4d8f35d9fec3269fb81203a48a06ef2e98f8583fcd5d76f01994bd99f2b",
+  "chars": 13374
+ },
+ "career_money_study-v1": null,
+ "career_money_study-v4": {
+  "pages": 9,
+  "sha256": "f0d4137cd0571c4e278fbfde0830bceacf5c070661a3522fe4db6f5eec7c2840",
+  "chars": 9814
+ },
+ "love_marriage_child-v4": {
+  "pages": 9,
+  "sha256": "586594fb2e3508486bfafb752b248a2c5656b2a9d0552499e4b7d92628d7c7b9",
+  "chars": 8750
+ },
+ "major_fortune-v4": {
+  "pages": 21,
+  "sha256": "c97a794017cb4d98e212504f61ad07ebd9fd0d09b83dc3017740d3578a053994",
+  "chars": 18295
+ },
+ "saju_mbti_compatibility-1.0": null,
+ "saju_mbti_compatibility-v4": {
+  "pages": 9,
+  "sha256": "ad8408b01fbabcb3c438e295487ce2c0afafb09df8ecc7f13b7726845ba4492a",
+  "chars": 10225
+ },
+ "saju_mbti_full-v2": null,
+ "saju_mbti_full-v4": {
+  "pages": 13,
+  "sha256": "e7c37ea3469db6db0f5c99eb5d133f6f5ee33aa973333e8d2f45505ce327c1d0",
+  "chars": 10955
+ }
+}
