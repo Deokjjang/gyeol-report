@@ -85,6 +85,14 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref === "chart.currentDayun" && c.currentDayun) return { heading: "지금 지나는 큰 흐름", paragraphs: [join(`지금은 ${c.currentDayun.ages}에 걸친 ${noHan(c.currentDayun.tenGod)}의 큰 흐름(대운) 위에 있습니다`, c.currentDayun.reading, c.currentDayun.next && `${c.currentDayun.next.startYear}년부터는 ${noHan(c.currentDayun.next.tenGod)} 쪽 흐름으로 넘어갑니다`)] };
   if (ref === "chart.strength") return { heading: "타고난 힘의 세기", paragraphs: [join(`타고난 힘의 세기는 ${c.strength.label} 쪽입니다`, `그래서 기댈 곳과 쓸 곳을 함께 보는 게 중요해요`)] };
   if (ref === "fortunes" && b.fortunes.length) return { heading: "타고난 좋은 패", paragraphs: b.fortunes.slice(0, 2).map(f => join(`당신에게는 ${josa(noHan(f.name), "이가")} 있습니다`, f.meaning, f.direct)) };
+  // 앞 장 종합(recap, P6c I): 그 장이 쓴 특성마다 이번 달 행동 한 줄. 뜻·장면은 다시 쓰지 않는다(결정론 마지막 장이 비었다).
+  if (ref.startsWith("chapters.")) {
+    const src = b.chapters.find(x => x.id === ref.slice(9)); if (!src) return null;
+    const ts = [...new Map((src.sections ?? []).flatMap(s => s.materials).flatMap(m => (m.kind === "trait" ? [[m.traitId, m] as const] : []))).values()].slice(0, 3);
+    const lines = ts.flatMap(m => { const t = traitOf(b, m.traitId); return t ? [`이번 달에는 ${DOMAIN_KO[m.domain] ?? "하루 중"} ${josa(noHan(t.name), "을를")} 한 번 의식해서 써 보세요`] : []; });
+    if (!lines.length) return null;
+    return { heading: `${src.title}에서 이어 갈 것`, paragraphs: [join(...lines, "한 달 뒤 달라진 장면 하나를 짧게 적어 두면 다음 걸음이 보입니다")] };
+  }
   if (ref.startsWith("shadows.")) {
     const s = b.shadows.find(x => x.id === ref.slice(8)); if (!s) return null;
     const t = traitOf(b, s.traitId);

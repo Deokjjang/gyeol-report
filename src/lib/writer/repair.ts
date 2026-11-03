@@ -72,7 +72,8 @@ export function parseRepair(text: string): Map<number, string> {
 export function applyRepairs(chapters: readonly FinalChapter[], targets: readonly Target[], fixes: ReadonlyMap<number, string>): { chapters: FinalChapter[]; applied: number } {
   let applied = 0;
   const out = chapters.map(c => ({ ...c, sections: c.sections.map((s, si) => {
-    let heading = s.heading, paragraphs = [...s.paragraphs], card: SectionCard | undefined = s.card ? { ...s.card } : undefined;
+    let heading = s.heading, card: SectionCard | undefined = s.card ? { ...s.card } : undefined;
+    const paragraphs = [...s.paragraphs];
     targets.forEach((t, i) => {
       if (t.chapter !== c.n || t.section !== si) return;
       const v = fixes.get(i + 1); if (!v) return;

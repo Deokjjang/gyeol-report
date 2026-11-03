@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { overlapIndex } from "@/lib/writer/safety/lint";
+import { splitSentences } from "@/lib/writer/safety/patterns";
 import { buildBrief, loadKnowledge } from "@/lib/brief";
 import { customerProps, matchJob } from "@/lib/brief/props";
 import { buildWriterPrompt } from "@/lib/writer/prompt";
@@ -74,13 +76,20 @@ describe("P3.5 안전망·작가 보강", () => {
     expect(report.metrics?.connectors.length).toBeGreaterThanOrEqual(0);
   });
 
-  it("A7: 결정론 작가 비반복 장은 대부분 900자 이상(c1·X·Y 종합, c2 연애, 커리어)", () => {
+  it("A7: 결정론 작가 비반복 장은 대부분 900자 이상(c1·X·Y 종합, c2 연애, 커리어) — P6c I: 같은 말·거의 같은 말은 되풀이하지 않는다", () => {
     const cases = [["saju_mbti_full", PEOPLE.c1], ["saju_mbti_full", PEOPLE.x], ["saju_mbti_full", PEOPLE.y], ["love_marriage_child", PEOPLE.c2], ["career_money_study", PEOPLE.x]] as const;
     for (const [product, person] of cases) {
       const brief = buildBrief({ product, person, baseDate: base }, k), plan = buildWriterPrompt(brief).chapters;
       const { chapters } = applySafetyNet(brief, plan, new Map());
-      // P6b C-4: 절 수에 맞춘 장 목표가 900자보다 작을 수 있다(종합 2절 장 720자) — 둘 중 작은 값 이상.
-      for (const c of chapters) if (!c.keys) expect(chapterChars({ n: c.n, title: c.title, sections: c.sections }), `${product} ${c.n}`).toBeGreaterThanOrEqual(Math.min(DET_MIN_CHARS, plan.find(x => x.n === c.n)!.targetChars[0]));
+      // P6b C-4: 절 수에 맞춘 장 목표가 900자보다 작을 수 있다(종합 2절 장 720자) — 둘 중 작은 값.
+      // P6c I·J: 채우기 금지 + 반복 금지라 책 전체가 결정론일 때 뒤 장은 재료가 모자라 짧아진다. 절반 이상의 장이 목표, 모든 장 200자 이상, 반복 0.
+      const rows = chapters.filter(c => !c.keys).map(c => ({ n: c.n, chars: chapterChars({ n: c.n, title: c.title, sections: c.sections }), floor: Math.min(DET_MIN_CHARS, plan.find(x => x.n === c.n)!.targetChars[0]) }));
+      expect(rows.filter(r => r.chars >= r.floor).length, product).toBeGreaterThanOrEqual(Math.ceil(rows.length / 2));
+      for (const r of rows) expect(r.chars, `${product} ${r.n}`).toBeGreaterThanOrEqual(200);
+      const sents = chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p))));
+      const idx = overlapIndex(); let repeats = 0;
+      for (const x of sents) { if (idx.has(x)) repeats++; idx.add(x); }
+      expect(repeats, product).toBe(0);
     }
   });
 

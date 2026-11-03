@@ -85,9 +85,9 @@ cycles?: { ganji: string /* 한자 2자 */; years: string /* "2021~2030" */; age
 ## 7. P6c-content 추가 (2026-11-03, 모두 선택 필드 — 이전 Book에는 없다)
 
 ```ts
-draft.coverLine?: string                 // 표지 한 줄(G): 작가가 쓴 16~26자, 검사에 걸리면 핵심 이미지(coreImage·pairImage line). 투영 cover.headline = coverLine ?? coreImage.line ?? headline
-draft.chapters[].sections[].keySpan?: { paragraph: number; start: number; end: number }  // 핵심 문장(H): 소제목마다 최대 1개, 그 문단 안 [start, end). 본문에는 기호 없음
-BookParagraph.keySpan?: [number, number] // 투영(projectV5Book)이 위 값을 문단에 옮긴다. BookReader는 그 구간을 <strong class=keySpan>으로 보여 준다
+draft.coverLine?: string                 // 표지 한 줄(G): 화면 계약 P6c-ui2 c 그대로. 작가가 쓴 16~26자, 검사에 걸리면 핵심 이미지(coreImage·pairImage line)
+draft.chapters[].sections[].keySpans?: ([number, number] | null)[]  // 핵심 문장(H): 화면 계약 P6c-ui2 g 그대로(문단마다 [start, end) 또는 null). 작가 ⟪ ⟫ → 위치, 소제목마다 최대 1개, 본문에는 기호 없음
+BookParagraph.keySpan?: [number, number] // 투영(projectV5Book keySpanOf)이 위 값을 문단에 옮기고, BookReader가 굵게 + 옅은 밑줄로 보여 준다(P6c-ui2)
 evidencePacket.meta.explained?: string[] // 이 책이 뜻을 푼 특성(feature id, A3). 같은 고객의 다음 책은 뜻을 다시 풀지 않는다
 evidencePacket.meta.safety.metrics.p6c?   // 검사·수리 기록(결정론 정리 수, 규칙별 검사 결과, 수리 대상·적용·호출 수, 재요청 장, 남은 것, 표지 출처, 대체한 카드 줄)
 ```

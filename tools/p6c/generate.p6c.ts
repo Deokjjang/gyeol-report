@@ -62,7 +62,7 @@ function appendCostRows(rows: string[]): void {
 function manuscript(d: V5BookDraft): string {
   const cards = new Map((d.timeline?.cards ?? []).map(c => [c.key, c]));
   const body = d.chapters.map(ch => renderChapter({ n: ch.n, title: ch.title, sections: ch.sections.map(s => {
-    const ps = s.paragraphs.map((p, i) => (s.keySpan && s.keySpan.paragraph === i ? `${p.slice(0, s.keySpan.start)}⟪${p.slice(s.keySpan.start, s.keySpan.end)}⟫${p.slice(s.keySpan.end)}` : p));
+    const ps = s.paragraphs.map((p, i) => { const k = s.keySpans?.[i]; return k ? `${p.slice(0, k[0])}⟪${p.slice(k[0], k[1])}⟫${p.slice(k[1])}` : p; });
     const c = cards.get(s.heading);
     return { heading: s.heading, paragraphs: ps, ...(c ? { card: { image: c.imageLine, ...(c.review ? { review: c.review } : { todo: c.todo }), caution: c.caution ?? null } } : {}) };
   }) }));
@@ -122,7 +122,7 @@ test("P6c 실호출 원고(Sonnet 5.5)", async () => {
     const draft = snap.snapshot_json.draft;
     writeFileSync(join(dir, `${c.id}.final.md`), manuscript(draft));
     const m = { case: c.id, label: c.label, reportId, status: snap.status, wallMs: ms, fallback: meta?.fallback ?? null, priorBooks: meta?.priorBooks ?? 0, explainedFromPrior: meta?.explained?.length ?? 0,
-      coverLine: draft.coverLine ?? null, keySpans: draft.chapters.reduce((a, ch) => a + ch.sections.filter(x => x.keySpan).length, 0), sections: draft.chapters.reduce((a, ch) => a + ch.sections.length, 0),
+      coverLine: draft.coverLine ?? null, keySpans: draft.chapters.reduce((a, ch) => a + ch.sections.filter(x => x.keySpans?.some(Boolean)).length, 0), sections: draft.chapters.reduce((a, ch) => a + ch.sections.length, 0),
       ...bookMetrics(draft, snap.snapshot_json.evidencePacket), p6b: p6bBookMetrics(draft, snap.snapshot_json.evidencePacket), p6c: meta?.safety.metrics?.p6c ?? null };
     writeFileSync(join(dir, `${c.id}.metrics.json`), JSON.stringify(m, null, 1) + "\n");
     console.log(JSON.stringify({ case: c.id, reportId, chars: m.chars, det: m.deterministicChapters, cost: m.costUsd, sec: Math.round(ms / 1000), calls: m.calls.map(x => `${x.kind}:${x.finish}`).join("→"), p6c: m.p6c && { flags: m.p6c.flags, repaired: m.p6c.repaired, remaining: m.p6c.remaining, cover: m.p6c.cover } }));

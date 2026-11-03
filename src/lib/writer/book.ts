@@ -149,11 +149,11 @@ const lastSentence = (sections: readonly BookSection[]) => splitSentences(sectio
  */
 function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>["tenGodNotes"], birthYear: number, writer?: SectionCard, bad: ReadonlySet<string> = new Set()): V5TimelineCard {
   const c: Partial<TimelineEntry> = { ...card }; delete c.material;
-  const use = (f: keyof SectionCard) => (writer && writer[f] !== undefined && !bad.has(f) ? writer[f] : undefined);
-  const caution = use("caution") !== undefined ? use("caution") ?? null : card.kind === "year" ? notes[card.tenGod.stem]?.caution || null : null;
+  const fromWriter = (f: keyof SectionCard) => (writer && writer[f] !== undefined && !bad.has(f) ? writer[f] : undefined);
+  const caution = fromWriter("caution") !== undefined ? fromWriter("caution") ?? null : card.kind === "year" ? notes[card.tenGod.stem]?.caution || null : null;
   const past = card.period === "past";
-  return { ...(c as Omit<TimelineEntry, "material">), imageLine: use("image") ?? card.imageLine,
-    ...(past ? { review: use("review") ?? card.review } : { todo: use("todo") ?? card.todo }),
+  return { ...(c as Omit<TimelineEntry, "material">), imageLine: fromWriter("image") ?? card.imageLine,
+    ...(past ? { review: fromWriter("review") ?? card.review } : { todo: fromWriter("todo") ?? card.todo }),
     caution, ...(card.kind === "year" ? { age: manAge(Number(card.key), birthYear) } : {}) };
 }
 
