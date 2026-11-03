@@ -140,12 +140,12 @@ export const MyeongriFeatureSchema = z.object({
   confidence: ConfidenceSchema,
   aliases: z.array(z.string()).optional(),
   /** (P6b B-1) 명리학에서 이 용어가 뜻하는 바(2~3문장). 많을 때·없을 때를 구분. 비유·별명 없이. */
-  meaning: Meaning.optional(),
-  forYou: ForYouSchema.optional(),
+  meaning: Meaning,
+  forYou: ForYouSchema,
   /** (P6b B-1) 지나치게 쓰일 때의 모습(조건을 문장 안에). */
-  shadow: Para.optional(),
+  shadow: Para,
   /** (P6b B-1) 현대 생활 장면 하나: 직업·학교·가족 구성원 소품 없이 누구에게나 맞게. */
-  life: Scene.optional(),
+  life: Scene,
 });
 export type MyeongriFeature = z.infer<typeof MyeongriFeatureSchema>;
 export const MyeongriFileSchema = z.object({ version: z.string(), family: FeatureFamilySchema, features: z.array(MyeongriFeatureSchema).min(1) });
@@ -204,18 +204,31 @@ export const GanjiEnergySchema = z.object({
   name: z.string().min(2).max(10),
   image: ImageSchema,
   /** (P6b B-5·E-4) 카드 그림 줄: 짧고 현대적인 한 줄, " 해"로 끝난다(달 카드는 "달"로 바꿔 쓴다). */
-  imageLine: z.string().min(8).max(32).regex(/ 해$/).optional(),
+  imageLine: z.string().min(8).max(32).regex(/ 해$/),
   year: z.object({ mood: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), action: Line }),
   month: z.object({ mood: Para, keywords: z.array(z.string().min(1).max(8)).min(2).max(3), action: Line }),
   sources: Sources, confidence: ConfidenceSchema,
 });
 export const GanjiEnergyFileSchema = z.object({ version: z.string(), entries: z.array(GanjiEnergySchema).length(60) });
 
+/** (P6b E-2) 카드 "살필 점" 문장과 그 조건. 조건이 없으면 누구에게나 해당. 브리프가 원국으로 판정해 성립하는 문장만 남긴다(src/lib/brief/caution.ts). */
+const CAUTION_GROUPS = ["peer", "output", "wealth", "officer", "resource"] as const;
+export const CautionLineSchema = z.object({
+  text: Para,
+  when: z.object({
+    strength: z.enum(["strong", "weak"]).optional(),
+    tenGod: z.string().regex(/^(比肩|劫財|食神|傷官|偏財|正財|偏官|正官|偏印|正印)$/).optional(), min: z.number().int().min(1).optional(),
+    groupAny: z.array(z.enum(CAUTION_GROUPS)).min(1).optional(),
+    groupMin: z.object({ group: z.enum(CAUTION_GROUPS), min: z.number().int().min(1) }).strict().optional(),
+  }).strict().optional(),
+}).strict();
+export type CautionLine = z.infer<typeof CautionLineSchema>;
+
 /** 일간 대비 십성이 연·월로 들어올 때의 뜻. */
 export const TenGodPeriodSchema = z.object({
   tenGod: TenGodSchema,
   /** keywords: 같은 십성이 다시 오는 해·달에는 다음 묶음(3개·2개씩)을 준다(P3.8 r1: 2023·2033 편관이 같은 열쇠말). */
-  year: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(6).max(9), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: Para }),
+  year: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(6).max(9), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line, caution: z.array(CautionLineSchema).min(1).max(4) }),
   month: z.object({ meaning: Para, keywords: z.array(z.string().min(1).max(8)).min(4).max(6), scenes: z.array(SceneItemSchema).min(2).max(5), action: Line }),
   sources: Sources, confidence: ConfidenceSchema,
 });

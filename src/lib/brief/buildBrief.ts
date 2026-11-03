@@ -29,6 +29,7 @@ import { renderWriterBrief } from "@/lib/writer/prompt";
 import { alignImageWords, imageFamily, imageObject } from "./groups";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage } from "./props";
+import { cautionFor, type CautionCtx } from "./caution";
 import { conditionsHold } from "./conditions";
 
 export type BriefPersonInput = {
@@ -205,8 +206,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set(), traits: me.traits, seenTenGod: new Map(), seenStage: new Set() };
     const thisYear = me.chart.thisYear.year;
     const tenGodOf = (s: Parameters<typeof getTenGod>[1]) => getTenGod(me.saju.dayMaster, s);
-    // 십성 주의 문장의 조건("원국에 편관까지 있으면")은 이 원국에서 성립할 때만(P3.8 r1).
-    const tenGodNotes = tenGodNotesOf(k, t => splitSentences(t).filter(x => conditionsHold(x, { saju: me.saju, det: me.det, positions: [], hitIds: new Set(me.hitIds) })).join(" "));
+    // 십성 주의 문장의 조건("원국에 편관까지 있으면")은 이 원국에서 성립할 때만(P3.8 r1, P6b E-2 구조화).
+    const tenGodNotes = tenGodNotesOf(k, { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: getTenGodGroupScores(me.saju.tenGods.distribution) });
     if (input.product === "major_fortune") {
       const entries = buildYearEntries(tctx, thisYear, me.dayun.cycles);
       const transitions = entries.filter(e => e.dayun?.transition).map(e => e.key);
@@ -354,11 +355,11 @@ function parentChildExclude(parent: "MALE" | "FEMALE" | null, child: "MALE" | "F
 }
 
 /** 타임라인 항목이 가리키는 십성 뜻을 한 번만 싣는다(항목마다 반복하면 토큰이 두 배). */
-function tenGodNotesOf(k: Knowledge, holds: (t: string) => string = t => t) {
+function tenGodNotesOf(k: Knowledge, ctx: CautionCtx) {
   return (entries: readonly { tenGod: { stem: string } }[], kind: "year" | "month") => Object.fromEntries(entries.map(e => {
     const tg = e.tenGod.stem.match(/\((.+)\)/)?.[1] ?? ""; const p = k.tenGodPeriod.get(tg);
-    // 출처 문장("고전이 ~라 봤다")은 작가에게 넘기지 않는다(P3.8 r1).
-    const caution = p?.year.caution ? holds(dropSourceSentences(p.year.caution)) : "";
+    // 살필 점은 원국으로 판정해 성립하는 문장만(P6b E-2: "원국에 ~있으면", "일간이 약하면"이 그대로 카드에 나갔다).
+    const caution = p ? cautionFor(p.year.caution, ctx) : "";
     return [e.tenGod.stem, kind === "year" ? { meaning: dropSourceSentences(p?.year.meaning ?? ""), ...(caution ? { caution } : {}) } : { meaning: dropSourceSentences(p?.month.meaning ?? "") }];
   }));
 }

@@ -356,7 +356,7 @@ function lintTimeline() {
       e[k].scenes.forEach((s: SceneItem, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.scenes[${i}]`, s.text, { scene: true, childTagged: s.requires.children !== "any" }));
       checkSceneFacts("timeline/ten-god-period.json", `${e.tenGod}.${k}`, { scenes: e[k].scenes });
       checkProse("timeline/ten-god-period.json", `${e.tenGod}.${k}.action`, e[k].action);
-      if (k === "year") checkProse("timeline/ten-god-period.json", `${e.tenGod}.year.caution`, e.year.caution);
+      if (k === "year") e.year.caution.forEach((c: { text: string }, i: number) => checkProse("timeline/ten-god-period.json", `${e.tenGod}.year.caution[${i}]`, c.text));
     }
     stats.tenGodPeriod = d.entries.length;
   });

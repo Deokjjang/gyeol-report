@@ -313,7 +313,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
       // 숫자는 주지 않는다(작가가 그대로 옮김). 둘 다 옅거나 비슷하면 유형을 붙이지 않는다(P3.6 B).
       `돈 버는 방식: ${Math.max(d.正財 ?? 0, d.偏財 ?? 0) < 0.5 ? "돈 기운(재성)이 옅어, 큰 판을 굴리기보다 일한 만큼 받는 구조에서 돈이 남는 쪽" : Math.abs((d.正財 ?? 0) - (d.偏財 ?? 0)) < 0.3 ? "고정 수입과 성과형 수입을 함께 굴리는 쪽(어느 한쪽으로 기울지 않음)" : (d.正財 ?? 0) > (d.偏財 ?? 0) ? "고정 수입을 차곡차곡 쌓을 때 돈이 남는 쪽(정재형)" : "성과·부업·기회를 크게 굴릴 때 돈이 붙는 쪽(편재형)"}`,
     ] },
-    moneyLeak: { kind: "evidence", key: "moneyLeak", facts: inv.leak.length ? inv.leak : [`올해 ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해의 돈 주의: ${(period ? dropSourceSentences(period.year.caution) : undefined) ?? "큰 지출은 하루 미뤄 다시 본다"}`] },
+    moneyLeak: { kind: "evidence", key: "moneyLeak", facts: inv.leak.length ? inv.leak : [`올해 ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해의 돈 주의: ${(period?.year.caution.find(c => !c.when)?.text) ?? "큰 지출은 하루 미뤄 다시 본다"}`] },
     investment: { kind: "evidence", key: "investment", facts: [
       `올해 ${chart.thisYear.ganji.hanja}(${chart.thisYear.ganji.hangul}): ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해(돈의 주의는 '새는 곳'에서 한 번만)`,
       // '새는 곳'이 올해 주의 문장을 쓰면(버릇 줄이 없으면) 올해 줄을 여기서 다시 쓰지 않는다.
