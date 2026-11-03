@@ -10,7 +10,8 @@ import { buildV5Snapshot, type V5BuildDeps } from "./publish";
 import { priorBooks } from "./prior";
 import type { ChapterSink, SavedChapter } from "./runner";
 
-export type V5JobDeps = V5BuildDeps;
+/** priorReader: 이전 Book을 읽는 저장소(이용권 report_tickets의 library·read, P6b E-1). 없으면 발행 저장소로 시도한다. */
+export type V5JobDeps = V5BuildDeps & { readonly priorReader?: TicketPublicationStore };
 const GATE_VERSION = "paid-report-v1";
 
 export function ticketChapterSink(store: TicketPublicationStore, user: string, origin: { redemptionId: string; token: string }): ChapterSink {
@@ -34,7 +35,7 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
   const sink = ticketChapterSink(store, user, origin);
   const recover = job.recover === true;
   // 같은 고객의 이전 Book(P6b E-1): 읽기 실패는 빈 값(발행은 막지 않는다).
-  const prior = await priorBooks(store, user, job.input);
+  const prior = await priorBooks(deps?.priorReader ?? store, user, job.input);
   let built;
   try { built = await buildV5Snapshot({ payload: job.input as never, reportId: job.reportId, policyAt, sink, recover, prior, ...(deps ? { deps } : {}) }); }
   catch {
