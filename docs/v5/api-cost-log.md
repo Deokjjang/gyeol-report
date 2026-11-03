@@ -53,8 +53,22 @@
 | 2026-11-03 12:18 | P6b 세운 2026 · 서윤(c2, 대략 오시) r4 | anthropic/claude-sonnet-5-5 | 25299 | 0 | 9988 | 0.15253300 | complete | req_011CgfGeCRrAjeYp2ifGnaQg | 4.02896235 |
 | 2026-11-03 12:24 | P6b 커리어 · 하람(c1) 실패 주입 | anthropic/claude-sonnet-5-5 | 0 | 0 | 0 | 0.00000000 | error (http_401) | req_011CgfH5hVHmxNCia3aLxbQt | 4.02896235 |
 | 2026-11-03 12:24 | P6b 커리어 · 하람(c1) 실패 주입 | openai/gpt-6.1-terra | 11789 | 0 | 6310 | 0.04333900 | complete | req_74162cb9fe0b49038b9c9c331a683dd2 | 4.07230135 |
+| 2026-11-04 08:31 | P6c 종합 · 하람(c1) r1 | anthropic/claude-sonnet-5-5 | 21961 | 0 | 12268 | 0.16925500 | complete | req_011Cggs4wcnANC7GzCbqu91f | 4.24155635 |
+| 2026-11-04 08:31 | P6c 종합 · 하람(c1) r1 수리 | anthropic/claude-sonnet-5-5 | 2721 | 0 | 922 | 0.01466200 | complete | req_011CggsBfJTGwotuC9rGX2Mn | 4.25621835 |
+| 2026-11-04 08:32 | P6c 커리어 · 하람(c1) r1 | anthropic/claude-sonnet-5-5 | 15044 | 5306 | 9914 | 0.12975860 | complete | req_011CggsCzGVh9kiWwDzN8Rc6 | 4.38597695 |
+| 2026-11-04 08:32 | P6c 커리어 · 하람(c1) r1 수리 | anthropic/claude-sonnet-5-5 | 5621 | 0 | 2204 | 0.03328200 | complete | req_011CggsJ9FPPSgPpwi6JARaj | 4.41925895 |
+| 2026-11-04 08:34 | P6c 연애 · 도현(Y) r1 | anthropic/claude-sonnet-5-5 | 14959 | 5306 | 11239 | 0.14283860 | complete | req_011CggsKQNVhpabKHc9mE9tC | 4.56209755 |
+| 2026-11-04 08:34 | P6c 연애 · 도현(Y) r1 수리 | anthropic/claude-sonnet-5-5 | 3724 | 0 | 1441 | 0.02185800 | complete | req_011CggsRsbmKbGugWqAwmkCr | 4.58395555 |
+| 2026-11-04 08:35 | P6c 궁합 연애 · 하람×서윤 r1 | anthropic/claude-sonnet-5-5 | 18441 | 5306 | 9617 | 0.13358260 | complete | req_011CggsSkFmQkNEa6w6UVHLa | 4.71753815 |
+| 2026-11-04 08:35 | P6c 궁합 연애 · 하람×서윤 r1 수리 | anthropic/claude-sonnet-5-5 | 2041 | 0 | 570 | 0.00978200 | complete | req_011CggsY7uf4n9dAJj3nuTjq | 4.72732015 |
+| 2026-11-04 08:37 | P6c 대운 · 수진(X) r1 | anthropic/claude-sonnet-5-5 | 21084 | 5306 | 10103 | 0.14372860 | complete | req_011CggsYbGwnG6j6rXP5R6nj | 4.87104875 |
+| 2026-11-04 08:37 | P6c 대운 · 수진(X) r1 수리 | anthropic/claude-sonnet-5-5 | 3349 | 0 | 1013 | 0.01682800 | complete | req_011CggsdfGwsFDKssLYWST14 | 4.88787675 |
+| 2026-11-04 08:38 | P6c 세운 2026 · 서윤(c2, 대략 오시) r1 | anthropic/claude-sonnet-5-5 | 20896 | 5306 | 11160 | 0.15392260 | complete | req_011CggseQBNfnTfKQkydJrdt | 5.04179935 |
+| 2026-11-04 08:38 | P6c 세운 2026 · 서윤(c2, 대략 오시) r1 수리 | anthropic/claude-sonnet-5-5 | 1940 | 0 | 449 | 0.00837000 | complete | req_011Cggsk8depgDKu1aBJZ9Lf | 5.05016935 |
+| 2026-11-04 08:40 | P6c 종합 · 장덕민(본인) r1 | anthropic/claude-sonnet-5-5 | 16941 | 5306 | 13026 | 0.16467260 | complete | req_011CggskdR1hBKB4FzCL9hWG | 5.21484195 |
+| 2026-11-04 08:40 | P6c 종합 · 장덕민(본인) r1 수리 | anthropic/claude-sonnet-5-5 | 4554 | 0 | 1778 | 0.02688800 | complete | req_011CggsskmEhEsuSabW5rHZ3 | 5.24172995 |
 
-누적 합계: **$4.07230135** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$5.24172995** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.

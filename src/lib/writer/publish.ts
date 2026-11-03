@@ -96,7 +96,9 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const f = safetyFacts(brief), compat = Boolean(brief.compatibility), c = brief.chart;
   const job = matchJob(brief.person.facts.job.detail);
   const status = brief.person.facts.job.status as keyof typeof PROPS.jobStatus;
-  const jobProps = compat ? [] : [...(job?.props ?? PROPS.jobStatus[status] ?? []), ...Object.values(job?.stages ?? {}).flat()];
+  // 커리어 책은 일의 단계 장면(PRD·스프린트·지표·QA, E1)이 절마다의 근거라 세지 않는다. 장식 소품(props)만 장마다 1번(C4).
+  const stages = Object.values(job?.stages ?? {}).flat(), career = brief.product === "career_money_study";
+  const jobProps = compat ? [] : career ? (job?.props ?? PROPS.jobStatus[status] ?? []).filter(x => !stages.includes(x)) : [...(job?.props ?? PROPS.jobStatus[status] ?? []), ...stages];
   const ids = (re: RegExp) => new Set(plan.filter(ch => re.test(ch.id)).map(ch => ch.n));
   const table = materialTable(k), plain: Record<string, string> = {};
   for (const t of [brief.mbti?.type, brief.partner?.mbti?.type]) for (const fn of (t ? k.mbti.get(t)?.cognitiveFunctions : undefined) ?? []) { const v = table.plain.get(fn.easy); if (v && !plain[fn.code]) plain[fn.code] = v; }

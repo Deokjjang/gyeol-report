@@ -1,0 +1,419 @@
+{
+ "case": "me-full",
+ "label": "종합 · 장덕민(본인)",
+ "reportId": "report_fd7e3babb03e4255996c82d4e62a5dbd",
+ "status": "COMPLETED",
+ "wallMs": 116050,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 12,
+ "coverLine": "스물일곱에 사업을 굴리는 큰 나무의 여름",
+ "keySpans": 36,
+ "sections": 36,
+ "chars": 10773,
+ "chapterChars": [
+  939,
+  760,
+  1129,
+  802,
+  635,
+  933,
+  696,
+  919,
+  836,
+  844,
+  817,
+  856,
+  607
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 2,
+ "byRule": {
+  "fact_job": 1,
+  "example_copy": 1
+ },
+ "replacements": 0,
+ "warnings": 39,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 8,
+ "infoByKind": {
+  "claim": 7,
+  "scene": 1,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "그런데 여덟 글자에는 물이 겉에 하나도 없고 땅속에 조금 숨어 있을 뿐이에요.",
+   "b": "반대로 물(수)은 겉에 하나도 없고 땅속에 조금 숨어 있을 뿐이에요.",
+   "at": [
+    "1.2",
+    "3.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그런데 ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이에요.",
+   "b": "두세 가지만 보고 정하고 뒤돌아보지 않는 결단도 이 몰입을 지켜 줍니다.",
+   "at": [
+    "3.3",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그런데 ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이에요.",
+   "b": "ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이라 이 속도가 더 붙습니다.",
+   "at": [
+    "3.3",
+    "6.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그런데 ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이에요.",
+   "b": "절과 ENTJ가 같은 쪽으로 겹쳐서, 두세 가지만 보고 정하고 뒤돌아보지 않는 결단이 관계에도 적용됩니다.",
+   "at": [
+    "3.3",
+    "12.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "두세 가지만 보고 정하고 뒤돌아보지 않는 결단도 이 몰입을 지켜 줍니다.",
+   "b": "ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이라 이 속도가 더 붙습니다.",
+   "at": [
+    "4.1",
+    "6.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "두세 가지만 보고 정하고 뒤돌아보지 않는 결단도 이 몰입을 지켜 줍니다.",
+   "b": "절과 ENTJ가 같은 쪽으로 겹쳐서, 두세 가지만 보고 정하고 뒤돌아보지 않는 결단이 관계에도 적용됩니다.",
+   "at": [
+    "4.1",
+    "12.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)일주는 압박 속에서도 우선순위를 가려내는 힘이 있어서, 배움도 \"오늘은 무엇만 하면 되나\"로 쪼갭니다.",
+   "b": "갑신(甲申)일주는 압박 속에서 우선순위를 가려내는 힘이 있어서, 급한 자리일수록 사람들이 먼저 찾습니다.",
+   "at": [
+    "4.2",
+    "8.2"
+   ],
+   "kind": "scene"
+  },
+  {
+   "a": "ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이라 이 속도가 더 붙습니다.",
+   "b": "절과 ENTJ가 같은 쪽으로 겹쳐서, 두세 가지만 보고 정하고 뒤돌아보지 않는 결단이 관계에도 적용됩니다.",
+   "at": [
+    "6.1",
+    "12.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.011,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 116011,
+ "tokens": {
+  "input": 21495,
+  "output": 14804,
+  "cachedInput": 5306
+ },
+ "costUsd": 0.1915606,
+ "costKrw": 277.8,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 96489,
+   "chars": 11980,
+   "maxTokens": 28722,
+   "usage": {
+    "inputTokens": 16941,
+    "outputTokens": 13026,
+    "cachedInputTokens": 5306
+   },
+   "costUsd": 0.1646726
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 11181,
+   "chars": 1626,
+   "maxTokens": 2917,
+   "usage": {
+    "inputTokens": 4554,
+    "outputTokens": 1778,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.026888
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-18",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 11419,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 2
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 1
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 2
+   },
+   {
+    "n": 10,
+    "count": 2
+   },
+   {
+    "n": 11,
+    "count": 1
+   },
+   {
+    "n": 12,
+    "count": 1
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 3,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 1,
+   "internal": 0
+  },
+  "bannedSamples": [
+   "부모님이 계시다면 그 분위기가 어땠는지 한 번 떠올려 보세요."
+  ],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 9,
+   "misses": [
+    "현침살",
+    "정재",
+    "겁살",
+    "갑신",
+    "천덕귀인",
+    "편관",
+    "정관",
+    "신금",
+    "여름의 갑목"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 36,
+  "sectionsTotal": 36,
+  "byRule": {
+   "fact_job": 1,
+   "example_copy": 1
+  },
+  "coreImage": "한여름 도시 아스팔트 위에 선 큰 나무",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 1,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 6,
+   "element_claim": 1,
+   "past_assertion": 1,
+   "presumed_partner": 3
+  },
+  "removed": 1,
+  "repaired": 9,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "past_assertion": 1
+  },
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 9,
+  "droppedParagraphs": 0
+ }
+}

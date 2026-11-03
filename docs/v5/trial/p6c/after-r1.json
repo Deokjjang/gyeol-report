@@ -1,0 +1,338 @@
+{
+ "dir": "docs/v5/trial/p6c/r1",
+ "books": [
+  {
+   "id": "c1-full",
+   "chars": 10823,
+   "units": 281,
+   "sentences": 245,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 1,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 1,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [
+     "8: 월주의 정관(正官)은 질서와 책임이 생활의 뼈대라는 뜻이에요."
+    ],
+    "prefix": [],
+    "backref": [
+     "13: 하람님, 앞에서 본 가장 큰 힘은 조용히 쌓아 결과로 내놓는 꾸준함과, 방향을 그리고 사람을 맞는 자리에 앉히는 눈이었어요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "c1-career",
+   "chars": 8553,
+   "units": 212,
+   "sentences": 184,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 0,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "y-love",
+   "chars": 10059,
+   "units": 251,
+   "sentences": 224,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 1,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "9: 오래 좋은 관계를 위해 앞에서 본 것 중 하나만 고르면 서운함은 쌓기 전에 말하기예요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "pair-love",
+   "chars": 8476,
+   "units": 235,
+   "sentences": 208,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 1,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "9: 이 한 가지만 습관이 돼도 앞에서 본 어긋남이 눈에 띄게 줄어듭니다."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "x-major",
+   "chars": 7736,
+   "units": 211,
+   "sentences": 202,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 2,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "5: 앞에서 본 정축(丁丑) 일주가 이 해에 건드려져요.",
+     "5: 앞에서 본 식신(食神)도 건드려져요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "c2-annual",
+   "chars": 8768,
+   "units": 200,
+   "sentences": 189,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 1,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 2,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [
+     "1: 편관(偏官)은 나를 누르는 힘으로, 책임·마감·평가가 몰려오는 기운을 뜻해요."
+    ],
+    "prefix": [],
+    "backref": [
+     "2: 앞에서 본 것처럼 한번 믿으면 오래 가는 장점이 있지만, 올해처럼 말해야 할 일이 많은 해에는 물러서는 게 습관이 되어 마음을 표현할 때를 놓치기 쉽습니다.",
+     "4: 앞에서 본 것처럼 경진은 결론이 빠른 쪽인데, 이 달에는 그 단단함에 부드러움이 붙어 말이 한결 덜 날카로워져요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "me-full",
+   "chars": 11426,
+   "units": 296,
+   "sentences": 260,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 0,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  }
+ ],
+ "cross": [
+  {
+   "a": "c1-full",
+   "b": "c1-career",
+   "overlap": 0,
+   "of": 184,
+   "samples": []
+  },
+  {
+   "a": "c1-full",
+   "b": "pair-love",
+   "overlap": 0,
+   "of": 208,
+   "samples": []
+  },
+  {
+   "a": "c1-career",
+   "b": "pair-love",
+   "overlap": 0,
+   "of": 208,
+   "samples": []
+  },
+  {
+   "a": "pair-love",
+   "b": "c2-annual",
+   "overlap": 0,
+   "of": 189,
+   "samples": []
+  }
+ ]
+}
