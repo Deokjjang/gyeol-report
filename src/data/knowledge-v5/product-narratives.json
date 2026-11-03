@@ -668,6 +668,14 @@
                 "mbti"
               ],
               "trait": "intro"
+            },
+            {
+              "q": "그 길에서 하루는 어떻게 흘러갈까?",
+              "domain": "work",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
             }
           ]
         },
@@ -743,6 +751,14 @@
                 "ev:moneyLeak"
               ],
               "trait": "apply"
+            },
+            {
+              "q": "돈이 붙는 장면은?",
+              "domain": "money",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
             }
           ]
         },
@@ -774,6 +790,14 @@
               "use": [
                 "ref:chart.thisYear",
                 "ref:chart.currentDayun"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "MBTI는 돈을 굴릴 때 무엇을 더할까?",
+              "domain": "money",
+              "use": [
+                "mbti"
               ],
               "trait": "none"
             }
@@ -811,6 +835,14 @@
                 "scene"
               ],
               "trait": "apply"
+            },
+            {
+              "q": "이름을 얻는 데 걸림돌은 무엇일까?",
+              "domain": "work",
+              "use": [
+                "fusion"
+              ],
+              "trait": "any"
             }
           ]
         },
@@ -842,6 +874,14 @@
                 "ev:studyPick"
               ],
               "trait": "none"
+            },
+            {
+              "q": "공부를 끝까지 끌고 가는 힘은?",
+              "domain": "study",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
             }
           ]
         },
@@ -871,6 +911,14 @@
               "use": [
                 "mbtiShadow"
               ]
+            },
+            {
+              "q": "약점이 힘으로 바뀌는 순간은?",
+              "domain": "work",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
             }
           ]
         },
@@ -1014,6 +1062,14 @@
                 "ev:contact"
               ],
               "trait": "none"
+            },
+            {
+              "q": "호감을 숨길 때와 드러낼 때는?",
+              "domain": "love",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
             }
           ]
         },
@@ -1054,6 +1110,14 @@
                 "ev:pushPull"
               ],
               "trait": "none"
+            },
+            {
+              "q": "상대를 챙기는 방식은?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
             }
           ]
         },
@@ -1124,6 +1188,14 @@
                 "fusion"
               ],
               "trait": "intro"
+            },
+            {
+              "q": "어려운 조합과 맞춰 가는 법은?",
+              "domain": "love",
+              "use": [
+                "mbti"
+              ],
+              "trait": "none"
             }
           ]
         },
@@ -1160,6 +1232,14 @@
                 "mbti"
               ],
               "trait": "apply"
+            },
+            {
+              "q": "되풀이되는 다툼을 끊는 법은?",
+              "domain": "love",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
             }
           ]
         },
@@ -1197,6 +1277,14 @@
                 "scene"
               ],
               "trait": "any"
+            },
+            {
+              "q": "함께 사는 리듬에서 지킬 것은?",
+              "domain": "marriage",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
             }
           ]
         },
@@ -1230,6 +1318,14 @@
             },
             {
               "q": "아이에게 강하게 줄 것은?",
+              "domain": "marriage",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "아이를 키울 때 힘든 지점은?",
               "domain": "marriage",
               "use": [
                 "scene"
@@ -1334,6 +1430,14 @@
               ],
               "trait": "core",
               "note": "관계 이미지(compatibility.pairImage)로 그린다"
+            },
+            {
+              "q": "함께 있으면 가장 먼저 보이는 장면은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
             }
           ]
         },
@@ -1370,6 +1474,14 @@
               ],
               "trait": "intro",
               "side": "b"
+            },
+            {
+              "q": "둘이 닮은 곳은 어디일까?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.common"
+              ],
+              "trait": "none"
             }
           ]
         },
@@ -1447,6 +1559,14 @@
                 "rel"
               ],
               "trait": "none"
+            },
+            {
+              "q": "A가 B를 오해하기 쉬운 지점은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
             }
           ]
         },
@@ -1477,6 +1597,14 @@
             },
             {
               "q": "B가 A에게 기대게 되는 순간은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "B가 A를 오해하기 쉬운 지점은?",
               "domain": "relationships",
               "use": [
                 "rel"
@@ -1565,6 +1693,14 @@
                 "rel"
               ],
               "trait": "none"
+            },
+            {
+              "q": "{topic} 장면에서 서로에게 필요한 것은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
             }
           ]
         },
@@ -1599,6 +1735,14 @@
             },
             {
               "q": "챙김을 다르게 받아들일 때는?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "반응하는 속도가 다를 때는?",
               "domain": "relationships",
               "use": [
                 "rel"

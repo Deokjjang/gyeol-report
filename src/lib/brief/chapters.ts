@@ -8,6 +8,7 @@
  */
 import type { CompatTopic, Domain, MbtiProfile, MyeongriFeature, SceneItem, SectionPlan } from "@/data/knowledge-v5/schema";
 import { sceneFits, type FactProfile } from "./facts";
+import { FAMILY_MEMBER } from "@/lib/writer/safety/patterns";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
 import type { Rng } from "./seed";
@@ -21,9 +22,9 @@ import type { ProductKey } from "./traits";
  */
 export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; section: [number, number]; repeat?: [number, number] }> = {
   saju_mbti_full: { total: [13000, 16000], section: [360, 445] },
-  career_money_study: { total: [11000, 14000], section: [525, 665] },
-  love_marriage_child: { total: [11000, 14000], section: [525, 665] },
-  saju_mbti_compatibility: { total: [11000, 14000], section: [525, 665] },
+  career_money_study: { total: [11000, 14000], section: [410, 520] },
+  love_marriage_child: { total: [11000, 14000], section: [410, 520] },
+  saju_mbti_compatibility: { total: [11000, 14000], section: [410, 520] },
   major_fortune: { total: [14000, 18000], section: [450, 560], repeat: [680, 890] },
   annual_fortune: { total: [12000, 15000], section: [450, 560], repeat: [630, 800] },
 };
@@ -223,7 +224,8 @@ export function planChapters(input: PlanCtx): PlanResult {
     const inChapter = new Set(p.sections.flatMap(s => s.materials.flatMap(m => m.kind === "rel" ? [m.topic] : [])));
     // 장면의 가장 센 행동 차원도 축으로 센다(한 장 1회, 책 3회 초과는 경고. P3.8 r1: '부모 챙김이 점검으로 읽힘' 다섯 번).
     const relAxis = (d: Readonly<Record<string, number>>) => { const a = topDimension(d, 0.5); return a ? [`rel:${a}`] : []; };
-    const cands = rs.topics.flatMap(t => t.scenes.filter(s => !usedRel.has(s.text) && !rs.exclude?.test(s.text) && (!s.ages || s.ages === "any" || !rs.childAge || s.ages === rs.childAge)).map(s => ({ t, s })))
+    // 부모·자녀 관계(childAge 있음)가 아니면 입력에 없는 가족 구성원(양가 부모님 등) 장면은 쓰지 않는다(P6b B-6).
+    const cands = rs.topics.flatMap(t => t.scenes.filter(s => !usedRel.has(s.text) && !rs.exclude?.test(s.text) && (!s.ages || s.ages === "any" || !rs.childAge || s.ages === rs.childAge) && (rs.childAge !== undefined || !FAMILY_MEMBER.test(s.text))).map(s => ({ t, s })))
       .filter(x => !inChapter.has(x.t.label) && ledger.axisFree(relAxis(x.s.dims), p.id));
     if (!cands.length) return null;
     const r = ctx.rng.fork(`${p.id}:rel:${p.sections.length}`);
