@@ -9,7 +9,7 @@ import { josa } from "@/lib/brief/labels";
 import type { Brief, Material, Trait } from "@/lib/brief/schema";
 import { chapterChars, type BookChapter, type BookSection } from "../format";
 import type { WriterChapter } from "../prompt";
-import { overlapping } from "../safety/lint";
+import { overlapIndex } from "../safety/lint";
 import { splitSentences } from "../safety/patterns";
 import { norm } from "../safety/sentences";
 
@@ -33,6 +33,9 @@ export function factSentences(f: string): string[] {
   });
 }
 const DOMAIN_KO: Record<string, string> = { work: "일할 때", money: "돈 앞에서", study: "배울 때", love: "사랑할 때", marriage: "함께 살게 되면", relationships: "사람들 사이에서", alone: "혼자 있을 때" };
+/** "~에서도"·"~에서의"를 그대로 붙이면 "일할 때에서도"가 된다(P6c I 조사 오류): 영역마다 '도'·'의' 꼴을 따로 둔다. */
+const DOMAIN_TOO: Record<string, string> = { work: "일할 때도", money: "돈 앞에서도", study: "배울 때도", love: "사랑할 때도", marriage: "함께 살게 되면", relationships: "사람들 사이에서도", alone: "혼자 있을 때도" };
+const DOMAIN_OF: Record<string, string> = { work: "일할 때의", money: "돈 앞에서의", study: "배울 때의", love: "사랑할 때의", marriage: "함께 살게 되면 보이는", relationships: "사람들 사이에서의", alone: "혼자 있을 때의" };
 const EVIDENCE_HEAD: Record<string, string> = { spouseStar: "끌리는 상대를 비추는 별", spousePalace: "곁에 둘 사람의 자리", childStar: "아이를 키우게 된다면", childPalace: "아이 자리에 놓인 기운", partnerMatch: "잘 맞는 사람의 모습", meetingPlaces: "만나기 좋은 곳", jobFit: "잘 맞는 일의 모양", investment: "돈을 다루는 방식" };
 
 type Ctx = { readonly brief: Brief; readonly rng: Rng; readonly you: string; readonly used: Set<string> };
@@ -51,12 +54,12 @@ function traitSection(ctx: Ctx, m: Extract<Material, { kind: "trait" }>, chapter
   const name = noHan(t.name);
   const first = m.angle === "first";
   const heading = first
-    ? pick(ctx, `${chapterId}:${t.id}:h`, [`${name}의 뜻`, `당신 안의 ${name}`, `${josa(name, "이가")} 보이는 순간`, `${name}, 이렇게 씁니다`])
-    : `${DOMAIN_KO[m.domain] ?? "다른 자리"}에서의 ${name}`;
+    ? pick(ctx, `${chapterId}:${t.id}:h`, [`${name}${/[가-힣]의 [가-힣]+$/.test(name) ? "," : "의"} 뜻`.replace(", 뜻", ", 그 뜻"), `당신 안의 ${name}`, `${josa(name, "이가")} 보이는 순간`, `${name}, 이렇게 씁니다`])
+    : `${DOMAIN_OF[m.domain] ?? "다른 자리의"} ${name}`;
   // 뜻은 지식 DB 뜻 문장 그대로(앞 두 문장), 이어서 나에게 주는 힘. "명리학에서·이런 뜻을 가진" 같은 틀 문장은 쓰지 않는다(P6c A4·I).
   const intro = first
     ? join(...splitSentences(t.meaning).slice(0, 2), t.forYou)
-    : `${DOMAIN_KO[m.domain] ?? "다른 자리"}에서도 ${josa(name, "이가")} 드러납니다`;
+    : `${DOMAIN_TOO[m.domain] ?? "다른 자리에서도"} ${josa(name, "이가")} 드러납니다`;
   const fusion = first && t.fusion && !ctx.used.has(`fusion:${t.id}`) ? (ctx.used.add(`fusion:${t.id}`), t.fusion) : undefined;
   const p1 = join(intro, first ? t.good[0] : t.good[1] ?? t.good[0], first ? t.positionNote?.replace(/^[^:]+:\s*/, "") : undefined);
   const p2 = join(m.scene, fusion?.why, fusion?.scene, !first && t.good[1] ? t.good[0] : undefined);
@@ -73,7 +76,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   const b = ctx.brief, c = b.chart;
   if (ctx.used.has(`ref:${ref}`)) return null;
   ctx.used.add(`ref:${ref}`);
-  if (ref === "chart.dayMaster") return { heading: "타고난 바탕", paragraphs: [join(`태어난 날의 기운은 ${noHan(c.dayMaster.name)}입니다`, `당신을 한 줄로 그리면 ${c.coreImage.line}예요`, `타고난 힘의 세기는 ${c.strength.label} 쪽입니다`)] };
+  if (ref === "chart.dayMaster") return { heading: "타고난 바탕", paragraphs: [join(`태어난 날의 기운은 ${noHan(c.dayMaster.name)}입니다`, `당신을 한 줄로 그리면 ${ieyo(c.coreImage.line)}`, `타고난 힘의 세기는 ${c.strength.label} 쪽입니다`)] };
   if (ref === "mbti" && b.mbti) return { heading: `${b.mbti.type}, ${b.mbti.easyName}`, paragraphs: [join(`MBTI는 ${b.mbti.type}, ${b.mbti.easyName}입니다`, `한마디로 ${ieyo(b.mbti.oneLiner)}`, b.mbti.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""), b.mbti.functions[1]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
   if (ref === "chart.elements") return { heading: "가장 강한 기운과 가장 약한 기운", paragraphs: [join(`다섯 기운 가운데 ${josa(c.elements.strongest.name, "이가")} 가장 셉니다`, c.elements.strongest.reason, `반대로 ${josa(c.elements.weakest.name, "은는")} ${c.elements.weakest.reason}`, ...c.elements.reading)] };
   if (ref === "chart.yinYang") return { heading: c.yinYang.yin === c.yinYang.yang ? "음과 양의 균형" : "음과 양의 비율", paragraphs: [join(`음의 글자 ${c.yinYang.yin}개, 양의 글자 ${c.yinYang.yang}개입니다`, c.yinYang.reading)] };
@@ -167,16 +170,16 @@ function extrasOf(ctx: Ctx, ch: WriterChapter, sections: readonly { heading: str
 }
 
 /** 분량 보충: 목표에 닿을 때까지 보충 재료를 넣는다. 소제목은 5개까지, 넘으면 마지막 소제목에 붙인다. */
-function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: ReadonlySet<string>, n: number): BookSection[] {
+function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: ReadonlySet<string>, n: number, near: ReturnType<typeof overlapIndex>, priorExact: Set<string>): BookSection[] {
   const local = new Set(sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p).map(norm))));
-  const seen = sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p)));
   const out = sections.map(s => ({ heading: s.heading, paragraphs: [...s.paragraphs] }));
   const chars = () => chapterChars({ n, title: "", sections: out });
   for (const x of extras) {
     if (chars() >= DET_MIN_CHARS) break;
     // 같은 말 되풀이(P6c I): 정확히 같은 문장뿐 아니라 거의 같은 문장(5-gram 자카드 0.5 이상)도 넣지 않는다.
-    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (local.has(k) || (k.length >= 20 && avoid.has(k)) || overlapping(seen, [s]).length) return false; local.add(k); seen.push(s); return true; }).join(" ");
-    if (!text) continue;
+    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (local.has(k) || priorExact.has(k) || (k.length >= 20 && avoid.has(k)) || near.has(s)) return false; local.add(k); priorExact.add(k); near.add(s); return true; }).join(" ");
+    // 남은 것이 한 줄 토막이면 넣지 않는다("서운함도 저장합니다."만 남은 보충).
+    if (!text || norm(text).length < 15) continue;
     const target = x.append ? out.find(s => s.heading === x.heading) : undefined;
     if (target) target.paragraphs.push(text);
     else if (out.length < 5) out.push({ heading: x.heading, paragraphs: [text] });
@@ -185,22 +188,33 @@ function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: 
   return out;
 }
 
-/** 책 안에서 이미 나온 문장(avoid)과 이 장에서 이미 쓴 문장은 뺀다. 반복 장(keepEmpty)은 키를 지우지 않고, 다 빠진 키는 원래 문단을 둔다. */
-function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, keepEmpty: boolean): BookSection[] {
+/** 책 안에서 이미 나온 문장(avoid)과 이 장에서 이미 쓴 문장은 뺀다(같은 문장 + 거의 같은 문장, P6c I). 반복 장(keepEmpty)은 키를 지우지 않고, 다 빠진 키는 원래 문단을 둔다. */
+function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, keepEmpty: boolean, near: ReturnType<typeof overlapIndex>, priorExact: Set<string>): BookSection[] {
   const local = new Set<string>();
   const out = sections.map(s => {
-    const paragraphs = s.paragraphs.map(p => splitSentences(p).filter(x => { const k = norm(x); if (k.length >= 20 && (avoid.has(k) || local.has(k))) return false; local.add(k); return true; }).join(" ")).filter(Boolean);
+    // 짧은 문장도 같은 문장이면 다시 쓰지 않는다("세상을 효율로 봅니다."가 장마다 나왔다). 지우고 남은 문단이 한 줄 토막이면 뺀다.
+    const paragraphs = s.paragraphs.map(p => splitSentences(p).filter(x => { const k = norm(x); if ((k.length >= 20 && avoid.has(k)) || local.has(k) || (!keepEmpty && (priorExact.has(k) || near.has(x)))) return false; local.add(k); priorExact.add(k); near.add(x); return true; }).join(" ")).filter(p => keepEmpty ? Boolean(p) : norm(p).length >= 15);
     return { ...s, paragraphs: keepEmpty && !paragraphs.length ? s.paragraphs : paragraphs };
   });
   return keepEmpty ? out : out.filter(s => s.paragraphs.length);
 }
 
 /** 장 하나를 결정론으로 쓴다. keys가 주어지면 그 key만(반복 장 누락 보충). avoid: 책 안에서 이미 쓴 문장(정규화). */
-export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[]; avoid?: ReadonlySet<string> } = {}): BookChapter {
+/** prior: 앞 장들의 문장 전부(짧은 문장 포함). 같은 문장·거의 같은 문장은 다시 쓰지 않는다(P6c I). */
+export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[]; avoid?: ReadonlySet<string>; prior?: readonly string[] } = {}): BookChapter {
   const { chapter, extras } = writeChapter(brief, ch, opts);
   const avoid = opts.avoid ?? new Set<string>();
-  const sections = dedupe(chapter.sections, avoid, Boolean(ch.keys));
-  return { ...chapter, sections: ch.keys ? sections : pad(sections, extras, avoid, ch.n) };
+  // 앞 장들에 나온 문장과 거의 같은 문장도 다시 쓰지 않는다(책 단위 반복 검사가 지우기 전에, 보충 재료로 갈음한다).
+  const near = overlapIndex([...avoid, ...(opts.prior ?? [])]), priorExact = new Set((opts.prior ?? []).map(norm));
+  const sections = dedupe(chapter.sections, avoid, Boolean(ch.keys), near, priorExact);
+  return { ...chapter, sections: ch.keys ? sections : mergeSameHeading(pad(sections, extras, avoid, ch.n, near, priorExact)) };
+}
+
+/** 한 장 안 같은 소제목(결정론 MBTI 절 "지휘관의 습관"이 세 번)은 처음 것에 합친다. */
+function mergeSameHeading(sections: readonly BookSection[]): BookSection[] {
+  const out: BookSection[] = [];
+  for (const s of sections) { const same = out.find(x => x.heading === s.heading); if (same) out[out.indexOf(same)] = { ...same, paragraphs: [...same.paragraphs, ...s.paragraphs] }; else out.push(s); }
+  return out;
 }
 
 function writeChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[] }): { chapter: BookChapter; extras: Extra[] } {

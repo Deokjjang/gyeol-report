@@ -139,7 +139,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
   const flag = (f: Omit<LintFlag, "hint">) => out.push({ ...f, hint: HINT[f.rule] });
   let formulas = 0, backrefs = 0;
   const explained = new Set<string>();
-  const bookSeen: { text: string; at: string }[] = [];
+  // 책 안 반복(A2): 소제목마다 색인 하나, 다른 소제목 색인과 견준다(같은 소제목 안 비슷한 문장은 문단 흐름이라 보지 않는다).
+  const bySection: { at: string; idx: ReturnType<typeof L.overlapIndex> }[] = [];
   for (const c of chapters) {
     const writer = c.source !== "deterministic";
     let jobUses = 0;
@@ -162,9 +163,9 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (ctx.jobProps.some(x => sen.includes(x)) && (ctx.noJobChapters.has(c.n) || ++jobUses > 1)) { flag({ ...at, rule: "job_prop" }); continue; }
           // 책 안 같은 장면·문장(A2): 다른 소제목의 문장과 5-gram 자카드 0.5 이상.
           const key = `${c.n}.${si}`;
-          const twin = bookSeen.filter(x => x.at !== key).length ? L.overlapping(bookSeen.filter(x => x.at !== key).map(x => x.text), [sen]) : [];
-          if (twin.length) { flag({ ...at, rule: "scene_repeat" }); continue; }
-          bookSeen.push({ text: sen, at: key });
+          if (bySection.some(x => x.at !== key && x.idx.has(sen))) { flag({ ...at, rule: "scene_repeat" }); continue; }
+          let mine = bySection.find(x => x.at === key); if (!mine) { mine = { at: key, idx: L.overlapIndex() }; bySection.push(mine); }
+          mine.idx.add(sen);
         }
       });
     });

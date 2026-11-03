@@ -81,3 +81,22 @@ cycles?: { ganji: string /* 한자 2자 */; years: string /* "2021~2030" */; age
 - 세운: `overview` 올해 전체 설계도 · `current-dayun` 영역별 설계 · `month` 월별 흐름 · `key-months` 눈여겨볼 달 · `closing` 올해 지침
 
 궁합 `direction-ab`·`direction-ba` id는 그대로다(화면의 두 방향 페이지 연결). 대운은 연도 장이 4번째(`year`), 세운은 월 장이 3번째(`month`).
+
+## 7. P6c-content 추가 (2026-11-03, 모두 선택 필드 — 이전 Book에는 없다)
+
+```ts
+draft.coverLine?: string                 // 표지 한 줄(G): 작가가 쓴 16~26자, 검사에 걸리면 핵심 이미지(coreImage·pairImage line). 투영 cover.headline = coverLine ?? coreImage.line ?? headline
+draft.chapters[].sections[].keySpan?: { paragraph: number; start: number; end: number }  // 핵심 문장(H): 소제목마다 최대 1개, 그 문단 안 [start, end). 본문에는 기호 없음
+BookParagraph.keySpan?: [number, number] // 투영(projectV5Book)이 위 값을 문단에 옮긴다. BookReader는 그 구간을 <strong class=keySpan>으로 보여 준다
+evidencePacket.meta.explained?: string[] // 이 책이 뜻을 푼 특성(feature id, A3). 같은 고객의 다음 책은 뜻을 다시 풀지 않는다
+evidencePacket.meta.safety.metrics.p6c?   // 검사·수리 기록(결정론 정리 수, 규칙별 검사 결과, 수리 대상·적용·호출 수, 재요청 장, 남은 것, 표지 출처, 대체한 카드 줄)
+```
+
+- 대운·세운 카드(F1): `imageLine`·`todo`·`review`·`caution`은 이제 작가가 key마다 쓴 카드 줄([그림]·[해 볼 것]/[돌아보기]·[살필 점])에서 온다. 검사(빠짐·꼴·길이·같은 필드끼리 겹침·금지 규칙)에 걸린 필드만 예전 결정론 값. 필드 이름·모양은 그대로.
+- 세운 달 `label`(E5): `"N번째 달 · 간지월 (MM/DD~)"`(예: `2번째 달 · 신묘월 (03/05~)`). 달력 달 이름("3월 무렵")과 `(이번 달)`은 없다. 지금 달 강조는 화면이 읽는 날 기준(`seasonTime`). `seasonMonths`는 옛 라벨 `(MM/DD 절입부터)`과 새 라벨을 모두 읽는다.
+- 머리 문장(F3): 카드 제목·두 방향 effect·공유 설명은 글자 수로 자르지 않고 첫 문장 전체(`headSentence`).
+
+### 커리어 새 장 id (P6c E1)
+
+`current-fit` 지금 일과의 궁합 · `work-stages` 일의 단계별 강점 · `timing` 커리어 타이밍 · `paths` 진로 유형 다섯 갈래 · `jobs` 추천 직무 3단 · `wealth` 재물 구조 · `invest` 돈 굴리는 원칙 · `honor` 평판과 이름 · `study` 공부·자격과 마무리
+(`weakness`·`plan`은 없어졌다. 화면은 장 id에 기대지 않는다.)

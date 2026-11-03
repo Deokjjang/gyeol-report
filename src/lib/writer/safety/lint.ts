@@ -26,6 +26,20 @@ export const shingles = (s: string, n = 5): Set<string> => { const t = norm(s), 
 export const OVERLAP_JACCARD = 0.5;
 /** 짧은 문장(정규화 10자 미만)은 겹침을 보지 않는다(인사·짧은 질문). */
 const MIN_OVERLAP_CHARS = 10;
+/** 늘려 가며 쓰는 겹침 색인: has(s) = 이미 넣은 문장 가운데 5-gram 자카드가 기준 이상인 것이 있는가. 책 안 반복 검사·결정론 작가가 쓴다. */
+export function overlapIndex(seed: readonly string[] = [], th = OVERLAP_JACCARD) {
+  const sets: Set<string>[] = [], index = new Map<string, number[]>();
+  const add = (s: string) => { if (norm(s).length < MIN_OVERLAP_CHARS) return; const g = shingles(s), i = sets.length; sets.push(g); for (const x of g) { const l = index.get(x); if (l) l.push(i); else index.set(x, [i]); } };
+  const has = (s: string) => {
+    if (norm(s).length < MIN_OVERLAP_CHARS) return false;
+    const g = shingles(s), shared = new Map<number, number>();
+    for (const x of g) for (const i of index.get(x) ?? []) shared.set(i, (shared.get(i) ?? 0) + 1);
+    for (const [i, n] of shared) if (n / (g.size + sets[i].size - n) >= th) return true;
+    return false;
+  };
+  for (const s of seed) add(s);
+  return { add, has };
+}
 /** b의 문장 가운데 a의 어떤 문장과 5-gram 자카드가 기준 이상인 것(역색인으로 후보만 비교). */
 export function overlapping(a: readonly string[], b: readonly string[], th = OVERLAP_JACCARD): { a: string; b: string; j: number }[] {
   const sa = a.filter(s => norm(s).length >= MIN_OVERLAP_CHARS).map(s => ({ s, g: shingles(s) }));

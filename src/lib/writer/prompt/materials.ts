@@ -17,8 +17,10 @@ export function* dbTexts(k: Knowledge): Generator<string> {
   for (const f of k.features.values()) {
     for (const l of Object.values(f.scenes)) yield* scenes(l);
     yield f.life; yield f.shadow; yield f.meaning; yield* Object.values(f.forYou); yield* f.strengths; yield* f.overuse;
-    yield* Object.values(f.strengthRules).filter((x): x is string => typeof x === "string"); yield* Object.values(f.positionNuance ?? {});
-    for (const l of f.mbtiLinks) yield l.why;
+    // strengthRules.rule은 계산식 메모(작가에게 가지 않음).
+    for (const key of ["strong", "weak", "duplicate", "clash"] as const) { const v = f.strengthRules[key]; if (v) yield v; }
+    yield* Object.values(f.positionNuance ?? {});
+    // MBTI 연결 이유(mbtiLinks.why)는 20~30자 한 줄이라 재료로 바꾸지 않는다.
     if (f.remedy) yield* f.remedy.partner;
   }
   for (const p of k.mbti.values()) {

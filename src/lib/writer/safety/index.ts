@@ -93,10 +93,13 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   const terms = [...new Set(brief.traits.map(t => t.name.replace(/\s*\(.*$/, "").replace(/[一-鿿]/g, "").trim()).filter(t => t.length >= 2))];
   const introduced = new Set<string>();
   const prior = { text: "" }; let merged = 0, backrefFixed = 0;
+  // 앞 장들의 문장 전부(짧은 문장 포함): 결정론 장이 같은 말·거의 같은 말을 되풀이하지 않게 넘긴다(P6c I).
+  const bookSentences: string[] = [];
+  const remember = (sections: readonly BookSection[]) => { for (const s of sections) for (const p of s.paragraphs) bookSentences.push(...splitSentences(p)); };
   const tidy = (sections: readonly BookSection[]) => { const r = fixBackrefs(sections, brief, prior); backrefFixed += r.fixed; return r.sections; };
   const chapters = plan.map((ch): FinalChapter => {
     const draft = drafts.get(ch.n);
-    const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen, ch.title, undefined, replacements);
+    const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen, prior: bookSentences }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen, ch.title, undefined, replacements);
     if (ch.keys) {
       const have = draft ? keyedSections(filterSections(draft.chapter.sections, f, ch.n, deletions, true, allowed, seen, ch.title, undefined, replacements), ch.keys) : new Map<string, BookSection>();
       const missing = ch.keys.filter(k => !have.get(k)?.paragraphs.length);
@@ -110,6 +113,7 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
       const source: ChapterSource = !draft || missing.length === ch.keys.length ? "deterministic" : draft.source;
       const reason = !draft ? "missing" : missing.length ? `keys_filled:${missing.join(",")}` : undefined;
       sections.forEach(s => { warnings.push(...styleWarnings(ch.n, s.paragraphs, terms, introduced)); warnings.push(...glossaryWarnings(ch.n, s.paragraphs, introduced)); });
+      remember(sections);
       return { n: ch.n, id: ch.id, title: ch.title, sections, source, ...(reason ? { reason } : {}), chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0), keys: ch.keys };
     }
     const shrunk = new Set<BookSection>();
@@ -123,6 +127,7 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
     if (!sections.length) { sections = det(reason ?? "empty"); source = "deterministic"; reason ??= "empty"; }
     sections = tidy(sections);
     sections.forEach(s => { warnings.push(...styleWarnings(ch.n, s.paragraphs, terms, introduced)); warnings.push(...glossaryWarnings(ch.n, s.paragraphs, introduced)); });
+    remember(sections);
     return { n: ch.n, id: ch.id, title: ch.title, sections, source, ...(reason ? { reason } : {}), chars: chapterChars({ n: ch.n, title: "", sections }) };
   });
   // 책 단위 소품 사용(P3.6 A1): 힌트로 준 소품이 본문 몇 장에 나왔는지. 2장 초과는 경고.

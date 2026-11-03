@@ -83,7 +83,10 @@ export function jobFieldList(text: string): string | null {
 /** 문장 단위로 자른다(마침표·물음표·느낌표·줄바꿈). */
 export function splitSentences(text: string): string[] {
   // 닫는 핵심 문장 기호(⟫, P6c H)는 마침표 뒤에 와도 그 문장에 붙인다.
-  return text.match(/[^.!?\n]+[.!?]+["'”’)⟫]*|[^.!?\n]+$/gm)?.map(s => s.trim()).filter(Boolean) ?? [];
+  // 따옴표 안 물음·느낌표 뒤에 조사가 바로 붙으면("'그래서 결론은?'이 상대에게는") 문장 끝이 아니다(P6c I: 결정론 문장이 반으로 잘렸다).
+  const QQ = "\uE000", QE = "\uE001";
+  const masked = text.replace(/\?(["'”’])(?=[가-힣])/g, `${QQ}$1`).replace(/!(["'”’])(?=[가-힣])/g, `${QE}$1`);
+  return masked.match(/[^.!?\n]+[.!?]+["'”’)⟫]*|[^.!?\n]+$/gm)?.map(s => s.trim().replaceAll(QQ, "?").replaceAll(QE, "!")).filter(Boolean) ?? [];
 }
 
 /** 과거·경험 단정: 물음표로 끝나는 문장(질문형)과 따옴표 안 대사는 허용. */

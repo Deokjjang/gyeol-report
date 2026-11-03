@@ -22,12 +22,14 @@ import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema, GanjiEnergySchema, IdMapSchema,
   MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, LOVE_SIGNAL_KEY,
-  CompatSceneFileSchema, CareerCatalogSchema, CAREER_CLUSTERS, COMPATIBILITY_CATEGORIES,
+  CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema, CAREER_CLUSTERS, COMPATIBILITY_CATEGORIES,
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
 import { FAMILY_MEMBER, GENDER_WORD, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SCENE_CONTEXT, SICK_DEATH_IMAGE, SIMILE, isGenderStereotype, isPastAssertion, jobFieldList } from "../src/lib/writer/safety/patterns";
 import FEATURE_FREQUENCY from "../src/lib/brief/data/feature-frequency.json";
+import { loadKnowledge } from "../src/lib/brief/knowledge";
+import { dbTexts, materialKey } from "../src/lib/writer/prompt/materials";
 
 /** 감지 빈도 상위 30%(P3.5 A1): 이미지 변형 3개·영역 장면 3개 이상. tools/p35/enrich.mjs topFeatureIds와 같은 규칙. */
 const TOP_FEATURES = new Set(Object.entries(FEATURE_FREQUENCY as Record<string, number>).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, Math.ceil(Object.keys(FEATURE_FREQUENCY).length * 0.3)).map(([id]) => id));
@@ -521,6 +523,25 @@ function lintCareerCatalog() {
   stats.careerJobs = r.data.jobs.length;
 }
 
+// ---------- P6c A1 재료(materials.json) ----------
+/** 원문 sha1 앞 12자 → 재료. 변환 대상 원문마다 재료가 있어야 하고(--strict), 원문이 없어진 키는 경고. */
+function lintMaterials(): void {
+  const file = join(DATA, "materials.json");
+  if (!existsSync(file)) { if (strict) fail("materials.json", "file", "P6c 재료 파일 없음"); return; }
+  const r = MaterialsFileSchema.safeParse(readJson(file));
+  if (!r.success) { fail("materials.json", "schema", "zod", zodMsg(r.error)); return; }
+  const k = loadKnowledge(DATA), keys = new Set(Object.keys(r.data.items)), used = new Set<string>();
+  let total = 0, missing = 0;
+  for (const text of new Set(dbTexts(k))) {
+    if (!text || text.length < 10) continue;
+    total++; const key = materialKey(text); used.add(key);
+    if (!keys.has(key)) { missing++; if (missing <= 20) warn("materials.json", key, "P6c 재료 누락", text.slice(0, 60)); }
+  }
+  if (missing > 20) warn("materials.json", "rest", "P6c 재료 누락", `외 ${missing - 20}개`);
+  for (const key of keys) if (!used.has(key)) warn("materials.json", key, "원문 없는 재료(원문이 바뀜)", r.data.items[key]);
+  stats.materials = { total, covered: total - missing, keys: keys.size };
+}
+
 // ---------- 실행 ----------
 if (existsSync(join(DATA, "behavior-ontology.json"))) lintOntology(join(DATA, "behavior-ontology.json"));
 if (only) {
@@ -534,7 +555,7 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer(); lintCompatScenes(); lintCareerCatalog();
+  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer(); lintCompatScenes(); lintCareerCatalog(); lintMaterials();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;
