@@ -218,13 +218,13 @@ const jobLine = (x: Scored) => `${x.job.title} — 명리: ${x.basis}, ${x.job.w
  * 같은 묶음은 한 단에서 2개까지(목록이 한 분야로 쏠리지 않게). 같은 명리 근거(trait·십성 묶음 이름)가 이미 쓰였으면 점수를 깎아 다른 근거를 먼저 고른다
  * (P3.8 r1: 직무 줄마다 "바른 관리자(정관)"를 근거로 붙여 한 장에 세 번 나왔다). 점수가 min 아래면 넣지 않는다.
  */
-function takeSpread(list: readonly Scored[], n: number, used: Set<string>, basisUse: Map<string, number>, min = 0): Scored[] {
+function takeSpread(list: readonly Scored[], n: number, used: Set<string>, basisUse: Map<string, number>, min = 0, perCluster = 2): Scored[] {
   const out: Scored[] = [], per = new Map<string, number>();
   // MBTI 근거도 같은 축이 이미 쓰였으면 다음 근거로(P3.8 r1: 직무 7개 중 5개가 '미리 짬').
   const reasonOf = (x: Scored) => x.mbtiReasons?.find(r => !basisUse.has(r)) ?? x.mbtiReason;
   const eff = (x: Scored) => x.total * 0.8 ** (basisUse.get(x.basis) ?? 0) * 0.85 ** (basisUse.get(reasonOf(x) ?? "") ?? 0);
   while (out.length < n) {
-    const best = list.filter(x => !used.has(x.job.title) && (per.get(x.job.cluster) ?? 0) < 2 && x.total >= min).sort((a, b) => eff(b) - eff(a) || a.job.title.localeCompare(b.job.title))[0];
+    const best = list.filter(x => !used.has(x.job.title) && (per.get(x.job.cluster) ?? 0) < perCluster && x.total >= min).sort((a, b) => eff(b) - eff(a) || a.job.title.localeCompare(b.job.title))[0];
     if (!best) break;
     const reason = reasonOf(best);
     out.push({ ...best, ...(reason ? { mbtiReason: reason } : {}) }); used.add(best.job.title); per.set(best.job.cluster, (per.get(best.job.cluster) ?? 0) + 1);
@@ -321,9 +321,11 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const cluster = job ? k.catalog.jobClusters[job.id] : undefined;
   const scored = scoreJobs({ k, traits, hitIds: opts.hitIds ?? new Set(traits.map(t => t.featureId)), scores, mbti, stage: opts.stage ?? "unknown" as LifeStage, cluster, detailJob });
   const used = new Set<string>(), basisUse = new Map<string, number>();
-  const adjacent = takeSpread(scored.filter(x => x.adjacency >= 0.75), 4, used, basisUse);
-  // 다른 길은 인접 직무 점수의 절반 이상인 것만(억지로 세 개를 채우지 않는다, 최소 2개).
-  const farList = scored.filter(x => x.adjacency < 0.75 && x.myeongri >= 0.5 && (!mbti || x.fit >= 0.3));
+  // 인접 직무는 지금 일과 같은 분야에서(P6b D 커리어 3: ENTJ 서비스 기획자 → 전략기획·사업개발·PM 계열). 같은 분야가 모자라면 가까운 분야로.
+  const adjacent = cluster ? takeSpread(scored.filter(x => x.adjacency === 1 && (!mbti || x.mbtiReason)), 4, used, basisUse, 0, 4) : [];
+  if (adjacent.length < 2) adjacent.push(...takeSpread(scored.filter(x => x.adjacency >= 0.75), 4 - adjacent.length, used, basisUse));
+  // 다른 길(가까운 분야·먼 분야)은 인접 직무 점수의 절반 이상인 것만(억지로 세 개를 채우지 않는다, 최소 2개).
+  const farList = scored.filter(x => (cluster ? x.adjacency < 1 : x.adjacency < 0.75) && x.myeongri >= 0.5 && (!mbti || x.fit >= 0.3));
   const longterm = takeSpread(farList, 3, used, basisUse, (adjacent[0]?.total ?? 0) * 0.5);
   if (longterm.length < 2) longterm.push(...takeSpread(farList, 2 - longterm.length, used, basisUse));
   const roleReasons = new Set<string>();
