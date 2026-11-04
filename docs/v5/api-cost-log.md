@@ -92,7 +92,28 @@
 | 2026-11-04 13:38 | P6d 커리어 · 권태오(구직) r2 | anthropic/claude-sonnet-5-5 | 22507 | 0 | 13467 | 0.18308400 | complete | req_011CghGSrxHEBN49Vn9Gtq2v | 7.65408195 |
 | 2026-11-04 13:38 | P6d 커리어 · 권태오(구직) r2 수리 | anthropic/claude-sonnet-5-5 | 8421 | 0 | 3506 | 0.05190200 | complete | req_011CghGa5eiTwNm2AvEsqTjh | 7.70598395 |
 
-누적 합계: **$7.70598395** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-04 23:36 | 최종판 시험 1장 · 종합 · 장소담(카페 사장·INTP·연애 중) 1장 continuation | anthropic/claude-sonnet-5-5 | 0 | 0 | 0 | 0.00000000 | error:http_401 | req_011Cgi4E2z1roBwF2dHgUEfj | 7.70598395 |
+| 2026-11-05 00:14 | 최종판 시험 1장 · 종합 · 장소담(카페 사장·INTP·연애 중) 1장 continuation | anthropic/claude-sonnet-5-5 | 26069 | 0 | 1682 | 0.07244250 | complete | req_011Cgi77A6ZgwF7MYhgoNmLe | 7.77842645 |
+| 2026-11-05 00:18 | 최종판 4권(결제 경로) · official report_0c7636d107c84b8baa997c7051fe5cea | anthropic/claude-sonnet-5-5 | 19215 | 6969 | 13673 | 0.17585690 | complete | req_011Cgi7Kf4vQMtKXBJgGQXQS | 7.95428335 |
+| 2026-11-05 00:19 | 최종판 4권(결제 경로) · official report_0c7636d107c84b8baa997c7051fe5cea repair | anthropic/claude-sonnet-5-5 | 5935 | 0 | 1860 | 0.03072850 | complete | req_011Cgi7TWXCJ66cJVMmvh27y | 7.98501185 |
+| 2026-11-05 00:19 | 최종판 4권(결제 경로) · official report_0c7636d107c84b8baa997c7051fe5cea rewrite | anthropic/claude-sonnet-5-5 | 2419 | 0 | 477 | 0.00960800 | complete | req_011Cgi7ULjMKidGzGRPsiSbb | 7.99461985 |
+| 2026-11-05 00:20 | 최종판 4권(결제 경로) · official report_065b67917da04a3983333fa0bbfdb296 | anthropic/claude-sonnet-5-5 | 17139 | 6969 | 11517 | 0.15014490 | complete | req_011Cgi7VBGcWjFzwUYvroMj9 | 8.14476475 |
+| 2026-11-05 00:21 | 최종판 4권(결제 경로) · official report_065b67917da04a3983333fa0bbfdb296 repair | anthropic/claude-sonnet-5-5 | 14788 | 517 | 5576 | 0.08538770 | complete | req_011Cgi7bKQBL6HqLS3G45GCx | 8.23015245 |
+| 2026-11-05 00:22 | 최종판 4권(결제 경로) · official report_c136f0c838d94fd0811717ca80883562 | anthropic/claude-sonnet-5-5 | 22819 | 6969 | 13738 | 0.18371490 | complete | req_011Cgi7dmWsHX2N6XgkBQ7jB | 8.41386735 |
+| 2026-11-05 00:22 | 최종판 4권(결제 경로) · official report_c136f0c838d94fd0811717ca80883562 cover | anthropic/claude-sonnet-5-5 | 407 | 0 | 36 | 0.00117400 | complete | req_011Cgi7m1vVPcMrteaWjovUj | 8.41504135 |
+| 2026-11-05 00:23 | 최종판 4권(결제 경로) · official report_c136f0c838d94fd0811717ca80883562 repair | anthropic/claude-sonnet-5-5 | 5018 | 517 | 1332 | 0.02340770 | complete | req_011Cgi7mAe7Sy5J4fny3WXCq | 8.43844905 |
+| 2026-11-05 00:26 | 최종판 4권(결제 경로) · official report_8dbe7218366449868ff33aaf364f1a58 | anthropic/claude-sonnet-5-5 | 15423 | 6969 | 12489 | 0.15643290 | complete | req_011Cgi7wsBCBk2ak4eJYbbrG | 8.59488195 |
+| 2026-11-05 00:26 | 최종판 4권(결제 경로) · official report_8dbe7218366449868ff33aaf364f1a58 cover | anthropic/claude-sonnet-5-5 | 416 | 0 | 38 | 0.00121200 | complete | req_011Cgi84nuQbDP2kd7vcQi4g | 8.59609395 |
+| 2026-11-05 00:27 | 최종판 4권(결제 경로) · official report_8dbe7218366449868ff33aaf364f1a58 repair | anthropic/claude-sonnet-5-5 | 6993 | 517 | 2767 | 0.04170770 | complete | req_011Cgi84tXjogsJuGswtsahV | 8.63780165 |
+| 2026-11-05 00:27 | 최종판 4권(결제 경로) · official report_8dbe7218366449868ff33aaf364f1a58 rewrite | anthropic/claude-sonnet-5-5 | 3986 | 0 | 1149 | 0.01946200 | complete | req_011Cgi85yvi5WCmrSFKLodqE | 8.65726365 |
+| 2026-11-05 00:39 | 최종판 4 궁합 장면 주인 고침 · 소제목 재작성 12 repair | anthropic/claude-sonnet-5-5 | 5175 | 0 | 1194 | 0.02254850 | complete | req_011Cgi8zyYNAeazsqQHcSMiV | 8.67981215 |
+| 2026-11-05 00:39 | 최종판 4 궁합 장면 주인 고침 · 소제목 재작성 12 rewrite | anthropic/claude-sonnet-5-5 | 14632 | 0 | 6122 | 0.09048400 | complete | req_011Cgi91YkQ1obg8GJFku5UD | 8.77029615 |
+| 2026-11-05 00:44 | 최종판 4·5 실질 결함 고침(새 검사(자녀 단정·조건 안내)) · 소제목 재작성 0 repair | anthropic/claude-sonnet-5-5 | 8266 | 0 | 3080 | 0.04759050 | complete | req_011Cgi9RGeh17RvX9RXtJwVS | 8.81788665 |
+| 2026-11-05 00:45 | 최종판 4·5 실질 결함 고침(새 검사(자녀 단정·조건 안내)) · 소제목 재작성 0 rewrite | anthropic/claude-sonnet-5-5 | 3512 | 0 | 1045 | 0.01747400 | complete | req_011Cgi9STanBnkYjEK3kyzoW | 8.83536065 |
+| 2026-11-05 00:49 | 최종판 4·5 실질 결함 고침(새 검사(자녀 단정·조건 안내)) · 소제목 재작성 0 rewrite | anthropic/claude-sonnet-5-5 | 5760 | 0 | 1873 | 0.03025000 | complete | req_011Cgi9jxVKR4jAEeupBNUS5 | 8.86561065 |
+| 2026-11-05 00:51 | 최종판 4·5 실질 결함 고침(새 검사) · 소제목 재작성 0 repair | anthropic/claude-sonnet-5-5 | 6209 | 0 | 2028 | 0.03295650 | complete | req_011Cgi9x47zAYNBDtttxDAju | 8.89856715 |
+| 2026-11-05 00:51 | 최종판 4·5 실질 결함 고침(새 검사) · 소제목 재작성 0 rewrite | anthropic/claude-sonnet-5-5 | 2433 | 0 | 503 | 0.00989600 | complete | req_011Cgi9y21kzSmFfzjRwCTfr | 8.90846315 |
+누적 합계: **$8.90846315** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.
