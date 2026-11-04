@@ -40,8 +40,8 @@ async function main() {
   }
   const reportId = process.argv[2];
   if (!/^report_[a-z0-9]+$/.test(reportId ?? "")) { console.error("사용: lane-seed.ts <reportId>"); process.exit(2); }
-  const row = JSON.parse(sql(`select json_build_object('order', s.order_id, 'status', s.status, 'paid', o.status, 'job', j.status, 'payload', o.input_snapshot->'reportInputPayload', 'created', coalesce(o.input_snapshot->'bookGeneration'->>'evaluatedAt', j.created_at::text)) from public.paid_report_snapshots s join public.payment_orders o on o.payment_order_id=s.order_id join public.report_generation_jobs j on j.report_id=s.report_id where s.report_id='${reportId}'`) || "null");
-  if (!row || row.paid !== "paid") { console.error(`결제 완료 주문이 아니다: ${JSON.stringify(row)?.slice(0, 200)}`); process.exit(3); }
+  const row = JSON.parse(sql(`select json_build_object('order', s.order_id, 'status', s.status, 'paid', o.status, 'job', j.status, 'payload', i.payload_json->'reportInputPayload', 'created', coalesce(i.payload_json->'bookGeneration'->>'evaluatedAt', j.created_at::text)) from public.paid_report_snapshots s join public.payment_orders o on o.payment_order_id=s.order_id join public.report_generation_jobs j on j.report_id=s.report_id left join public.report_input_snapshots i on i.order_id=o.payment_order_id where s.report_id='${reportId}'`) || "null");
+  if (!row || row.paid !== "paid" || !row.payload) { console.error(`결제 완료 주문이 아니다: ${JSON.stringify(row)?.slice(0, 200)}`); process.exit(3); }
   if (row.status === "COMPLETED") { console.error("이미 발행된 Book이다(자리표시를 덮지 않는다)"); process.exit(3); }
   const payload = row.payload as ReportInputPayload, policyAt = new Date(row.created).toISOString();
   const sink = { async save() { return true; }, async load() { return []; } };
@@ -49,7 +49,7 @@ async function main() {
   if (built.meta.chapters.some(c => c.source === "deterministic")) { console.error("자리표시 Book에 빈 장이 있다"); process.exit(4); }
   const snap = JSON.stringify(built.snapshot).replace(/\$snap\$/g, "");
   const out = sql(`begin;
-update public.paid_report_snapshots set status='COMPLETED', snapshot_json=$snap$${snap}$snap$::jsonb, gate_version='paid-report-v1', published_at=now()-interval '30 minutes' where report_id='${reportId}';
+update public.paid_report_snapshots set status='COMPLETED', snapshot_json=$snap$${snap}$snap$::jsonb, gate_version='paid-report-v1', published_at=now()-interval '30 minutes', expires_at=now()-interval '30 minutes'+interval '2160 hours' where report_id='${reportId}';
 update public.report_generation_jobs set status='COMPLETED', lease_token=null, lease_until=null, last_error_code='LANE_TEST_INTERIM' where report_id='${reportId}';
 insert into public.book_generation_state(report_id,origin,origin_ref,phase,first_attempt_at,first_failure_at,failures,next_at,interim_at,last_reason)
   values('${reportId}','paid','${row.order}','interim',now()-interval '150 minutes',now()-interval '150 minutes',4,now()-interval '1 minute',now()-interval '30 minutes','interim:자리표시(최종판 교체 레인 확인, 호출 0)')

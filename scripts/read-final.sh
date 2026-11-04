@@ -22,7 +22,7 @@ disown 2>/dev/null || true
 for _ in $(seq 1 180); do
   if curl -s -o /dev/null --max-time 2 "http://localhost:$PORT/"; then
     echo "읽기 서버: http://localhost:$PORT  (v5/final $(git -C "$HERE" rev-parse --short HEAD), 로그 $LOG)"
-    echo "읽을 책 목록: docs/v5/final/final-read.md (링크의 포트가 다르면 $PORT로 바꿔 연다)"
+    echo "읽을 책 목록: docs/v5/final-read.md (링크의 포트가 다르면 ${PORT}로 바꿔 연다)"
     exit 0
   fi
   sleep 1

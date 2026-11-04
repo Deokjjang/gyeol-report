@@ -83,9 +83,11 @@ try {
     const tk = Object.keys(t.inputSnapshot).sort().join(","), ck = Object.keys(inputSnapshot).sort().join(",");
     if (tk !== ck) throw new Error(`inputSnapshot 키가 화면과 다르다: 화면 ${tk} · 사례 ${ck}`);
     const body = { ...t, productType: p.productKey, inputSnapshot };
-    const r = await page.request.post(`${BASE}/api/payment-checkout/prepare`, { data: body });
-    const prepared = await r.json();
-    if (!r.ok()) throw new Error(`결제 준비 실패 ${r.status()}: ${JSON.stringify(prepared).slice(0, 300)}`);
+    // 결제하기 버튼과 같은 요청: 페이지 안에서 같은 출처(Origin)로 보낸다(같은 출처 검사, isPublicSameOrigin).
+    await page.goto(`${BASE}/report/new?product=${p.productSlug}`, { waitUntil: "load" });
+    const res = await page.evaluate(async b => { const r = await fetch("/api/payment-checkout/prepare", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(b) }); return { status: r.status, text: await r.text() }; }, body);
+    const prepared = res.text ? JSON.parse(res.text) : {};
+    if (res.status < 200 || res.status >= 300) throw new Error(`결제 준비 실패 ${res.status}: ${res.text.slice(0, 300)}`);
     const rp = prepared.tossCheckoutRequest?.requestPayment ?? {};
     const success = new URL(rp.successUrl); success.searchParams.set("paymentKey", `tmock_${crypto.randomUUID().replace(/-/g, "")}`);
     success.searchParams.set("orderId", rp.orderId); success.searchParams.set("amount", String(typeof rp.amount === "object" ? rp.amount.value : rp.amount)); success.searchParams.set("paymentType", "NORMAL");
