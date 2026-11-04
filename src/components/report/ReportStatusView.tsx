@@ -27,7 +27,7 @@ function PublicationStages({ stage }: { readonly stage: number }) {
   );
 }
 
-/** 책 집필 단계의 장식: 종이에 줄이 한 줄씩 써지는 모습. 동작 줄이기 설정이면 멈춘 종이로 보인다. */
+/** 책 집필 단계의 장식: 종이에 줄이 한 줄씩 써지는 모습. 진행 표시 자체라 동작 줄이기 설정에서도 움직인다(2-1 #7). */
 function WritingPage() {
   return <div className={styles.visual} aria-hidden="true"><div className={styles.writing}>{[0, 1, 2, 3, 4, 5, 6].map(i => <i key={i} />)}</div></div>;
 }
