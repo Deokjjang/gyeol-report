@@ -233,10 +233,10 @@ describe("status refresh lifecycle", () => {
     expect(retry).toContain('href="tel:050-6664-8562"');
   });
 
-  it("uses reduced motion, visible focus and existing paper press without fake progress", () => {
+  it("keeps the book-making motion moving (also under reduced motion), visible focus and existing paper press without fake progress", () => {
     const css = readFileSync("src/components/report/reportStatus.module.css", "utf8");
-    expect(css).toContain("prefers-reduced-motion: reduce");
-    expect(css).toContain("animation: none; transform: none");
+    expect(css).not.toContain("prefers-reduced-motion");
+    expect(readFileSync("src/components/report/BookPublishingVisual.tsx", "utf8")).not.toContain("matchMedia");
     expect(css).toContain(":focus-visible");
     const html = renderToStaticMarkup(<ReportStatusView state="preparing" />);
     expect(html).toContain('aria-hidden="true"');

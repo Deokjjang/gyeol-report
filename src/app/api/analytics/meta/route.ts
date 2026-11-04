@@ -27,14 +27,14 @@ export async function POST(request: NextRequest) {
       const value = `${META_CONSENT_VERSION}:${body.agreed ? "yes" : "no"}:${visitor}`;
       if (local) {
         const response = json({ ok: true, choice: body.agreed });
-        response.cookies.set(metaCookieName(true), value, { httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 180 });
+        response.cookies.set(metaCookieName(true), value, { httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 365 });
         return response; // Isolated UI adapter: NO production DB or vendor network.
       }
       request.cookies.set(META_CONSENT_COOKIE, value);
       const auth = createAccountPort(request), user = await auth?.currentUser();
       if (!await recordMetaConsent(request, user?.id ?? null)) return json({ ok: false }, 503);
       const response = auth?.finish(json({ ok: true, choice: body.agreed })) ?? json({ ok: true, choice: body.agreed });
-      response.cookies.set(META_CONSENT_COOKIE, value, { secure: true, httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 180 });
+      response.cookies.set(META_CONSENT_COOKIE, value, { secure: true, httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 365 });
       return response;
     }
     if (!metaDeliveryReady() || await metaRequestConsent(request) !== true) return json({ ok: false, ready: false, choice: false }, 202);

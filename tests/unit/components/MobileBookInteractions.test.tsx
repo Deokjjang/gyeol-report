@@ -30,7 +30,7 @@ beforeEach(() => {
   motion = Object.assign(new EventTarget(), { matches: false }); hover = Object.assign(new EventTarget(), { matches: false });
   vi.stubGlobal("matchMedia", (query: string) => query.includes("reduced-motion") ? motion : hover);
   vi.stubGlobal("document", Object.assign(new EventTarget(), { hidden: false, documentElement: { clientWidth: 390 }, getElementById: () => null }));
-  vi.stubGlobal("window", { getSelection: () => selected, visualViewport: { scale: 1 }, location: { assign: vi.fn() } });
+  vi.stubGlobal("window", Object.assign(new EventTarget(), { getSelection: () => selected, visualViewport: { scale: 1 }, location: { assign: vi.fn() } }));
 });
 afterEach(() => { cleanups.forEach(c => c()); vi.useRealTimers(); vi.unstubAllGlobals(); });
 function renderShelf() { hooks.index = 0; hooks.effects = []; return BookShelf({ inputPath: "/reports/new", year: 2026 }); }
@@ -60,9 +60,17 @@ describe("actual BookShelf handlers and timer lifecycle", () => {
     hover.matches = true; const tree = mountShelf(); fire(tree, "onPointerEnter", pointer(260, 200, { pointerType: "mouse" }));
     expect(vi.getTimerCount()).toBe(0); Object.assign(document, { hidden: true }); document.dispatchEvent(new Event("visibilitychange"));
     Object.assign(document, { hidden: false }); document.dispatchEvent(new Event("visibilitychange")); expect(vi.getTimerCount()).toBe(1);
-    motion.matches = true; motion.dispatchEvent(new Event("change")); expect(vi.getTimerCount()).toBe(0);
+    // prefers-reduced-motion no longer pauses the shelf (the rotation is the presentation); media changes never duplicate timers.
+    motion.matches = true; motion.dispatchEvent(new Event("change")); expect(vi.getTimerCount()).toBe(1);
     motion.matches = false; motion.dispatchEvent(new Event("change")); motion.dispatchEvent(new Event("change")); expect(vi.getTimerCount()).toBe(1);
     fire(renderShelf(), "onPointerDown", pointer(260)); fire(renderShelf(), "onPointerCancel", {}); expect(vi.getTimerCount()).toBe(1);
+  });
+  it("a touch the browser takes over or ends outside the shelf never leaves the rotation paused", () => {
+    const tree = mountShelf(); fire(tree, "onPointerDown", pointer(260)); expect(vi.getTimerCount()).toBe(0);
+    window.dispatchEvent(new Event("pointercancel")); expect(vi.getTimerCount()).toBe(1);
+    fire(renderShelf(), "onPointerDown", pointer(260)); expect(vi.getTimerCount()).toBe(0);
+    window.dispatchEvent(new Event("touchend")); expect(vi.getTimerCount()).toBe(1);
+    void tree;
   });
   it("vertical movement and wrong pointer IDs never select a book", () => {
     const tree = mountShelf(); fire(tree, "onPointerDown", pointer(260)); fire(tree, "onPointerMove", pointer(250, 250)); fire(tree, "onPointerUp", pointer(80, 260)); expect(centered()).toContain("나라는 사람");

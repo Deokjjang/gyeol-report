@@ -17,16 +17,22 @@ export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }:
   const hovering = useRef(false), dragged = useRef(false), gesture = useRef<{ x: number; y: number; pointerId: number; vertical: boolean } | null>(null);
   const refresh = useRef<() => void>(() => {});
   useEffect(() => {
-    const motion = matchMedia("(prefers-reduced-motion: reduce)"), hover = matchMedia("(hover: hover) and (pointer: fine)");
+    // The rotating shelf is the home presentation itself: it is not gated on prefers-reduced-motion (manual arrows/swipe/keys stay).
+    const hover = matchMedia("(hover: hover) and (pointer: fine)");
     auto.current = createCoverflowAuto(() => setCurrent(c => wrapBook(c + 1)));
     refresh.current = () => {
       if (document.hidden || !hover.matches) hovering.current = false;
       if (document.hidden) gesture.current = null;
-      auto.current?.setActive(!motion.matches && !document.hidden && !(hover.matches && hovering.current) && !gesture.current);
+      auto.current?.setActive(!document.hidden && !(hover.matches && hovering.current) && !gesture.current);
     };
-    refresh.current(); document.addEventListener("visibilitychange", refresh.current); motion.addEventListener("change", refresh.current); hover.addEventListener("change", refresh.current);
+    // A touch that ends outside this section (or is taken over by the browser) must never leave the auto-rotation paused.
+    const release = () => { if (gesture.current) { gesture.current = null; refresh.current(); } };
+    const events = ["pointerup", "pointercancel", "touchend", "touchcancel", "blur", "pagehide"] as const;
+    refresh.current(); document.addEventListener("visibilitychange", refresh.current); hover.addEventListener("change", refresh.current);
+    events.forEach(name => window.addEventListener(name, release));
+    window.addEventListener("pageshow", refresh.current);
     const update = refresh.current;
-    return () => { auto.current?.dispose(); document.removeEventListener("visibilitychange", update); motion.removeEventListener("change", update); hover.removeEventListener("change", update); auto.current = null; };
+    return () => { auto.current?.dispose(); document.removeEventListener("visibilitychange", update); hover.removeEventListener("change", update); events.forEach(name => window.removeEventListener(name, release)); window.removeEventListener("pageshow", update); auto.current = null; };
   }, []);
   const select = (n: number) => { auto.current?.interact(); setCurrent(wrapBook(n)); interaction("book_selected", BOOKS[wrapBook(n)].productKey); };
   return <main className={s.root} data-book-home><header className={s.header}><Link href="/" className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></Link>{authEnabled ? <AccountEntry local={inputPath === "/dev/book-flow/input"} /> : <span className={s.login} aria-label="로그인 준비 중">로그인</span>}</header>
