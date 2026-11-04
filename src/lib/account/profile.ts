@@ -35,13 +35,13 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
     if (accountSession(user, snapshot).status !== "member") return json({ code: "MEMBER_CONSENT_REQUIRED", error: "약관 동의를 먼저 마쳐 주세요." }, 401);
     const factsResult = await deps.ops.call("facts_read", user.id);
     const facts = (factsResult.facts ?? null) as ProviderFacts;
+    // 확정 이메일(화면 미리 채움과 저장이 같은 기준): 카카오는 is_email_valid·is_email_verified가 둘 다 참일 때만, Google은 Supabase가 확인한 이메일.
+    const trusted = facts?.emailTrusted && facts.email ? facts.email : user.provider === "google" && user.emailVerified && user.email ? user.email.toLowerCase() : null;
     if (action === "profile" && request.method === "GET") {
       const read = await deps.ops.call("read", user.id);
       if (!read.ok) return json({ code: "STORAGE_UNAVAILABLE" }, 503);
       const contact = read.contact as (ContactValue & { upgradeState?: string }) | null;
-      // 카카오 확정 이메일 → 미리 채우고 잠금. Google은 Supabase가 확인한 이메일만 미리 채운다.
-      const trusted = facts?.emailTrusted && facts.email ? facts.email : user.provider === "google" && user.emailVerified && user.email ? user.email.toLowerCase() : null;
-      return json({ ok: true, contact, prefill: { name: contact?.name ?? safeDisplayName(user.displayName), email: contact?.email ?? trusted ?? facts?.email ?? "", emailLocked: Boolean(trusted) && !contact,
+      return json({ ok: true, contact, prefill: { name: contact?.name ?? safeDisplayName(user.displayName), email: contact?.email ?? trusted ?? facts?.email ?? "", emailLocked: Boolean(trusted) && !contact, emailFrom: trusted ? user.provider : null,
         emailNotice: !trusted && user.provider === "kakao" ? (facts?.emailDeclinedAt ? "카카오 이메일을 받지 못했어요. 직접 입력해 주세요." : "카카오 이메일이 확인되지 않았어요. 직접 입력해 주세요.") : null } });
     }
     if (action === "withdraw" && request.method === "GET") {
@@ -66,7 +66,7 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
       await port.logout();
       return json({ ok: true });
     }
-    const checked = validateContact(body, facts);
+    const checked = validateContact(body, trusted ? { ...(facts ?? {}), emailTrusted: true, email: trusted } as NonNullable<ProviderFacts> : facts);
     if (!checked.ok) return json({ code: "PROFILE_INVALID", field: checked.field, error: checked.message }, 400);
     if (typeof body.requestId !== "string" || !/^[0-9a-f-]{36}$/i.test(body.requestId)) return json({ code: "PROFILE_INVALID", error: "다시 시도해 주세요." }, 400);
     const saved = await deps.ops.call("save", user.id, { requestId: body.requestId, ...checked.value, marketingVersion: MARKETING_CONSENT_VERSION });

@@ -102,6 +102,17 @@ describe("가입 정보 저장", () => {
     expect(ok.status).toBe(200);
     expect(calls.find(c => (c as [string])[0] === "save")).toMatchObject(["save", { email: "k@kakao.com", emailSource: "provider", marketing: true, marketingVersion: "2026-11-04.1" }]);
   });
+  it("Google 확인 이메일: 미리 채운 값 그대로 저장되고(화면과 저장이 같은 기준), 확인 안 된 이메일은 직접 입력", async () => {
+    const google = (emailVerified: boolean) => { const p = port({ contact: null }); const g = { ...user, provider: "google" as const, email: "G.User@Gmail.com", emailVerified }; return { ...p, currentUser: async () => g, read: async () => ({ profile: g, consents, contact: null }) }; };
+    const noFacts = (calls: unknown[]) => ({ ...deps(calls), ops: { call: async (action: string, _u: string, data?: Record<string, unknown>) => { calls.push([action, data]); return action === "facts_read" ? { ok: true, facts: null } : action === "read" ? { ok: true, contact: null } : { ok: true, contact: { name: "하람" } }; } } });
+    const got = await (await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`), "profile", google(true), noFacts([]))).json();
+    expect(got.prefill).toMatchObject({ email: "g.user@gmail.com", emailLocked: true, emailFrom: "google" });
+    const body = JSON.stringify({ requestId: crypto.randomUUID(), name: "하람", email: "g.user@gmail.com", emailSource: "provider" });
+    const calls: unknown[] = [];
+    expect((await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", body, headers: { origin: ORIGIN } }), "profile", google(true), noFacts(calls))).status).toBe(200);
+    expect(calls.find(c => (c as [string])[0] === "save")).toMatchObject(["save", { email: "g.user@gmail.com", emailSource: "provider" }]);
+    expect((await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", body, headers: { origin: ORIGIN } }), "profile", google(false), noFacts([]))).status).toBe(400);
+  });
 });
 
 describe("결제·이용권 게이트", () => {

@@ -209,7 +209,7 @@ async function loadProductPreviewPageState(
   }
 
   const productPreview = record.productPreview;
-  if (bookExperiencePublicEnabled() && productPreview.productVersion === "v4") {
+  if (bookExperiencePublicEnabled() && isBookSnapshotVersion(productPreview.productVersion)) {
     const { storedBook } = await import("../../../lib/book/storedReport");
     return storedBook(productPreview) ? { kind: "productPreview", productPreview } : { kind: "invalidSnapshot" };
   }
@@ -1539,6 +1539,9 @@ function renderPlaceholderState(result: PaidReportResult) {
   );
 }
 
+/** Book 열람 화면(StoredBookReport)으로 그리는 저장본: V4와 v5(작가 원고). v5 유료본도 같은 구매자 확인·열람 경로를 탄다(P6d-ops). */
+function isBookSnapshotVersion(version: unknown): boolean { return version === "v4" || version === "v5"; }
+
 export default async function ReportResultPage({
   params,
 }: ReportResultPageProps) {
@@ -1585,7 +1588,7 @@ export default async function ReportResultPage({
   if (state.kind === "productPreview") {
   const reportId = routeParams.reportId ?? "";
   const isPaid = state.productPreview.access.mode === "paid";
-  if (isPaid && state.productPreview.productVersion === "v4" && accountPublicEnabled()) {
+  if (isPaid && isBookSnapshotVersion(state.productPreview.productVersion) && accountPublicEnabled()) {
     const { canReadPurchasedBook } = await import("../../../lib/book/ownerAccess");
     if (!await canReadPurchasedBook(reportId)) return renderUnavailableState();
   }
@@ -1619,11 +1622,11 @@ export default async function ReportResultPage({
             : undefined
         }
       >
-        {bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4"
+        {bookExperiencePublicEnabled() && isBookSnapshotVersion(state.productPreview.productVersion)
           ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, shareOwner: isPaid ? { reportId } : undefined, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined })
           : renderProductPreviewState(state.productPreview)}
       </ReportShareProvider>
-      {SaveLibrary && !(bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4") ? <SaveLibrary reportId={reportId} /> : null}
+      {SaveLibrary && !(bookExperiencePublicEnabled() && isBookSnapshotVersion(state.productPreview.productVersion)) ? <SaveLibrary reportId={reportId} /> : null}
     </>
   );
 }

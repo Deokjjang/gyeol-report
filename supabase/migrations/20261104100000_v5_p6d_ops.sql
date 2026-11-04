@@ -212,7 +212,7 @@ create table public.gift_rewards(
   id uuid primary key default gen_random_uuid(),
   owner_user_id uuid not null references auth.users(id) on delete cascade,
   source_order_id text not null unique references public.payment_orders(payment_order_id) on delete cascade,
-  status text not null default 'available' check(status in ('available','used_self','gifted','claimed','expired')),
+  status text not null default 'available' check(status in ('available','used_self','gifted','claimed','expired','revoked')),
   product_scope text,
   token_hash text unique check(token_hash is null or token_hash ~ '^[a-f0-9]{64}$'),
   recipient_user_id uuid references auth.users(id) on delete set null,
@@ -459,7 +459,11 @@ begin
       update public.payment_orders set status='refunded',refunded_at=coalesce(refunded_at,now()),updated_at=now() where payment_order_id=f.payment_order_id and status='paid';
       update public.report_generation_jobs set status='FAILED_REQUIRES_ATTENTION',last_error_code='ORDER_REFUNDED',lease_token=null,lease_until=null
         where order_id=f.payment_order_id and status in ('QUEUED','RETRYING');
-      return jsonb_build_object('ok',true,'state','done');
+      -- 이벤트 이용권: 환불된 주문에서 나온 아직 안 쓴 이용권(보유·선물 링크 대기)은 회수한다. 이미 쓴 것은 그대로 두고 결과만 알린다.
+      update public.gift_rewards set status='revoked',token_hash=null where source_order_id=f.payment_order_id and status in ('available','gifted');
+      get diagnostics n = row_count;
+      return jsonb_build_object('ok',true,'state','done','giftRevoked',n>0,
+        'giftKept',(select status from public.gift_rewards where source_order_id=f.payment_order_id and status in ('used_self','claimed')));
     end if;
     update public.order_refunds set state='failed',provider_status=p_data->>'providerStatus',last_error=p_data->>'error',lease_until=null,updated_at=now() where payment_order_id=f.payment_order_id;
     return jsonb_build_object('ok',true,'state','failed');

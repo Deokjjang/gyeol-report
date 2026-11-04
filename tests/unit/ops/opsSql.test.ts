@@ -158,8 +158,14 @@ describe("가입 정보·탈퇴", () => {
     expect((await ops.gift.call("claim", { userId: B, tokenHash: link.hash })).status).toBe("claimed");
     const before = Number((await h.tickets.call("summary", A, {})).quantity);
     await pay("g4", B);
-    expect((await afterPaidOrder(ops.gift, "g4", cfg))?.bonus).toMatchObject({ granted: true });
+    const g4 = await afterPaidOrder(ops.gift, "g4", cfg);
+    expect(g4?.bonus).toMatchObject({ granted: true }); expect(g4?.issued.issued).toBe(true);
     expect(Number((await h.tickets.call("summary", A, {})).quantity)).toBe(before + 1);
+    // 환불: 그 주문에서 나온 아직 안 쓴 이용권은 회수(revoked), 다른 주문의 쓴 이용권(본인 사용·친구가 받음)은 그대로.
+    expect(await ops.order.call("refund_request", { paymentOrderId: "g4", source: "admin", reason: "시험" })).toMatchObject({ ok: true });
+    expect(await processRefunds(ops, providerOf(), { paymentOrderId: "g4" })).toEqual([{ paymentOrderId: "g4", state: "done" }]);
+    expect(await one("select status,token_hash from gift_rewards where source_order_id='g4'")).toEqual({ status: "revoked", token_hash: null });
+    expect((await h.db.query<{ status: string }>("select status from gift_rewards where source_order_id in ('g1','g2') order by status")).rows.map(r => r.status)).toEqual(["claimed", "used_self"]);
   }, 120_000);
 
   it("탈퇴: 주문은 분리 보관, 연락처·프로필·출생 입력 삭제, Book은 열람 종료", async () => {

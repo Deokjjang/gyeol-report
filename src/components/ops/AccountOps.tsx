@@ -5,7 +5,7 @@ import { productLabel, seoulDateTime, type OrderSummary, type PendingBook } from
 import { OrderRequestForm, OrderSummaryCard } from "./OrderParts";
 import s from "./ops.module.css";
 
-type Prefill = { name: string; email: string; emailLocked: boolean; emailNotice: string | null };
+type Prefill = { name: string; email: string; emailLocked: boolean; emailFrom?: string | null; emailNotice: string | null };
 
 /** 가입 정보 화면(P6d-ops 2). 로그인 직후 서재 위에 보인다. 마치기 전에도 서재·책 열람은 된다(결제·이용권 사용만 막힘). */
 export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSaved: (next?: string) => void }) {
@@ -40,7 +40,7 @@ export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSave
     {!prefill && !error ? <p role="status">불러오는 중</p> : null}
     {prefill ? <div className={s.form}>
       <label>이름(필수)<input type="text" value={v.name} maxLength={40} autoComplete="name" onChange={e => setV({ ...v, name: e.target.value })} /></label>
-      {useProvider ? <div><span className={s.hint}>이메일(필수) · 카카오 계정에서 확인된 이메일</span><div className={s.locked}>{prefill.email}</div><button type="button" className={`${s.button} ${s.link}`} onClick={() => { setUseProvider(false); setV({ ...v, email: "", emailConfirm: "" }); }}>다른 이메일 쓰기</button></div> : <>
+      {useProvider ? <div><span className={s.hint}>이메일(필수) · {prefill.emailFrom === "google" ? "Google" : "카카오"} 계정에서 확인된 이메일</span><div className={s.locked}>{prefill.email}</div><button type="button" className={`${s.button} ${s.link}`} onClick={() => { setUseProvider(false); setV({ ...v, email: "", emailConfirm: "" }); }}>다른 이메일 쓰기</button></div> : <>
         <label>이메일(필수)<input type="email" value={v.email} maxLength={254} autoComplete="email" onChange={e => setV({ ...v, email: e.target.value })} /></label>
         <label>이메일 확인(필수)<input type="email" value={v.emailConfirm} maxLength={254} autoComplete="off" onChange={e => setV({ ...v, emailConfirm: e.target.value })} /></label>
         {prefill.emailNotice ? <p className={s.hint}>{prefill.emailNotice}</p> : null}
@@ -89,7 +89,7 @@ export function GiftPanel({ base = "/auth" }: { base?: string }) {
     load();
   }
   if (!state || (!state.active && !state.gifts.length)) return null;
-  const label: Record<string, string> = { available: "사용 가능", used_self: "내가 사용", gifted: "선물 링크 보냄", claimed: "친구가 받음", expired: "기간 종료" };
+  const label: Record<string, string> = { available: "사용 가능", used_self: "내가 사용", gifted: "선물 링크 보냄", claimed: "친구가 받음", expired: "기간 종료", revoked: "환불로 회수" };
   return <section className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">이벤트 이용권</h2>
     <p>결제 1건마다 이용권 1장(계정당 2회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>
     {state.gifts.length ? <ul className={s.list}>{state.gifts.map(g => <li key={g.id} className={s.order}><span className={s.badge}>{label[g.status] ?? g.status}</span> 주문 {g.orderCode} · {seoulDateTime(g.expiresAt)}까지{g.bonus ? " · 보너스 1장 받음" : ""}
