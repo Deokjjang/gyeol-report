@@ -53,6 +53,12 @@ describe("Toss confirm durable boundary (mock payment)", () => {
     expect(body).not.toContain("mock-secret");
     expect(body).not.toContain("mock-key");
   });
+  it("does not pin a price: any well-formed amount goes to the stored-order amount check (confirm_claim)", async () => {
+    call.mockResolvedValueOnce({ ok: false, code: "PAYMENT_MISMATCH" });
+    expect((await POST(request({ ...payment, amount: 1990 }))).status).toBe(503);
+    expect(call).toHaveBeenCalledWith("confirm_claim", { ...payment, amount: 1990 });
+    expect(confirmTossPayment).not.toHaveBeenCalled();
+  });
   it("rejects disabled, malformed, wrong amount, and missing config requests", async () => {
     expect((await POST(request({}))).status).toBe(400);
     expect((await POST(request({ ...payment, amount: 1 }))).status).toBe(400);

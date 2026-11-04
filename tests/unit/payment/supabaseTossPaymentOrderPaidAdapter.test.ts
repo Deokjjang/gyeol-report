@@ -130,12 +130,13 @@ describe("Supabase Toss payment order paid adapter", () => {
     expect(fake.calls).toEqual([]);
   });
 
-  it("enforces amount 1290", async () => {
+  // 가격 숫자는 고정하지 않고(주문 저장 금액이 기준) 금액 모양만 거른다.
+  it("rejects a malformed amount", async () => {
     const fake = createFakeClient();
     const result = await markTossPaymentOrderPaid({
       providerOrderId: "provider_order_paid_adapter_test",
       providerPaymentId: "toss_payment_paid_adapter_test",
-      amount: 990,
+      amount: 99,
       currency: "KRW",
       client: fake.client,
     });

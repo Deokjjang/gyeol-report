@@ -75,16 +75,17 @@ describe("Toss payment success page", () => {
     expect(html).toContain("결제 승인에 필요한 정보가 누락되었습니다.");
   });
 
-  it("shows amount mismatch state for unsupported direct-report amount", async () => {
+  // 가격 숫자는 화면에서 고정하지 않는다(주문 저장 금액 대조는 서버 승인 단계). 모양이 틀린 금액만 여기서 막는다.
+  it("shows amount mismatch state for a malformed amount", async () => {
     const html = await renderSuccessPage({
       paymentKey: "pay_wrong_amount",
       orderId: "provider_order",
-      amount: "990",
+      amount: "99.5",
     });
 
     expect(html).toContain("결제 금액이 올바르지 않습니다.");
     expect(html).toContain("결제 승인 요청 금액을 다시 확인해 주세요.");
-    expect(html).not.toContain("990");
+    expect(html).not.toContain("99.5");
   });
 
   it("keeps confirm and report generation server-side only", () => {
