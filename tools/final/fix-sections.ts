@@ -60,7 +60,7 @@ async function main() {
     targets.push({ chapter: Number(m[1]), section: Number(m[2]) - 1, reason: r });
     notes.push(`- ${m[1]}.${m[2]} (수동) 사유: ${r}`);
   });
-  const kind = argv.includes("--section") ? "판정 실질 결함" : argv.includes("--relint") ? "새 검사(자녀 단정·조건 안내)" : "궁합 장면 주인 규칙 결함";
+  const kind = argv.includes("--section") ? "판정 실질 결함" : argv.includes("--relint") ? "새 검사" : "궁합 장면 주인 규칙 결함";
   console.log(`재작성 대상 소제목 ${targets.length}:\n${notes.join("\n")}`);
   // --relint: 강제 대상 없이 새 검사로만(걸린 문장 수리 → 남으면 그 소제목 재작성, 0-1 구조 그대로).
   const relint = argv.includes("--relint");
