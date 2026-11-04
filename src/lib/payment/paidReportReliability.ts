@@ -6,7 +6,7 @@ import type { ProductGenerationResult } from "../report-generation/productGenera
 import type { NoWriterRuntime } from "../report-generation/writerDisabled";
 import { deliveryIssueCodes } from "../report-generation/deliveryAudit";
 import { unknownCalculationVersions } from "../saju/calendarVersion";
-import type { ReliabilityStore } from "./paidReportReliabilityStore";
+import type { ReliabilityResult, ReliabilityStore } from "./paidReportReliabilityStore";
 import type { TossConfirmClientResult, TossConfirmRequest } from "./tossConfirmTypes";
 
 // A crash after provider approval leaves the claimed payment key durable. The worker
@@ -60,7 +60,8 @@ export async function generateReportSnapshot(job: { payload: unknown; product_ty
  * v5 작가 훅(P3.5 B). 결제 워커 배선(paidRuntime)이 WRITER_V5_PRODUCTS 상품에만 넘긴다. null이면 기존 생성 경로.
  * claim·lease·finish_job(결제·환불 상태 전이)는 그대로이고, 생성물만 v5 스냅샷이다. 예외는 기존과 같이 GENERATION_EXCEPTION 재시도.
  */
-export type PaidV5Builder = (job: { payload: unknown; product_type: string; report_id: string; created_at: string; attempt: number }) => Promise<{ snapshot: Record<string, unknown> } | null>;
+export type PaidV5Builder = (job: { payload: unknown; product_type: string; report_id: string; created_at: string; attempt: number; job_id: string; lease_token: string; order_id: string },
+  finish: (data: Record<string, unknown>) => Promise<ReliabilityResult>) => Promise<{ snapshot: Record<string, unknown> } | { settled: ReliabilityResult } | null>;
 // Internal dependency only; HTTP handlers never accept or forward a validator.
 export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWriterRuntime, generate: ProductGenerator = generateProductReport, validatePublication = validateNewProductPublication, v5?: PaidV5Builder) {
   const claimed = await store.call("claim_job", { model: "deterministic" });
@@ -92,7 +93,10 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWrite
       }
       annualAcceptance = context as AnnualCommerceAcceptance;
     }
-    const built = v5 ? await v5({ payload: job.payload, product_type: String(job.product_type), report_id: String(job.report_id), created_at: String(job.created_at), attempt }) : null;
+    // P6d-ops: v5 훅이 발행·보류·포기를 직접 끝냈으면(settled) 그 결과를 그대로 돌려준다.
+    const built = v5 ? await v5({ payload: job.payload, product_type: String(job.product_type), report_id: String(job.report_id), created_at: String(job.created_at), attempt,
+      job_id: String(job.job_id), lease_token: String(job.lease_token), order_id: String(job.order_id) }, data => finish(data)) : null;
+    if (built && "settled" in built) return built.settled;
     if (built) return finish({ success: true, snapshot: built.snapshot, gateVersion: PUBLISH_GATE_VERSION });
     const outcome = await generateReportSnapshot({ payload: job.payload, product_type: String(job.product_type), report_id: String(job.report_id), created_at: String(job.created_at) }, runtime, strategy, generate, validatePublication, annualAcceptance);
     const { result, ...publication } = outcome;
