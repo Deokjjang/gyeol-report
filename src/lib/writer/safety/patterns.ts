@@ -85,7 +85,10 @@ export function splitSentences(text: string): string[] {
   // 닫는 핵심 문장 기호(⟫, P6c H)는 마침표 뒤에 와도 그 문장에 붙인다.
   // 따옴표 안 물음·느낌표 뒤에 조사가 바로 붙으면("'그래서 결론은?'이 상대에게는") 문장 끝이 아니다(P6c I: 결정론 문장이 반으로 잘렸다).
   const QQ = "\uE000", QE = "\uE001";
-  const masked = text.replace(/\?(["'”’])(?=[가-힣])/g, `${QQ}$1`).replace(/!(["'”’])(?=[가-힣])/g, `${QE}$1`);
+  // 따옴표 뒤 한 칸 띄고 인용을 받는 말("'이게 맞나?' 하는 물음")도 문장 끝이 아니다(P6d B: 앞 인용이 지워져 "하는 물음이 자주 올라와요"만 남았다).
+  const QUOTE_TAIL = /(?=(하|라|이라|이란|란|싶|같|묻|물|되묻|말하|말할|외치|다짐|생각|고민|속으로|혼잣말|되뇌)|(는|은|을|를|에|의|와|과|로|으로|며|고) )/.source;
+  const masked = text.replace(/\?(["'”’])(?=[가-힣])/g, `${QQ}$1`).replace(/!(["'”’])(?=[가-힣])/g, `${QE}$1`)
+    .replace(new RegExp(`\\?(["'”’])(\\s+)${QUOTE_TAIL}`, "g"), `${QQ}$1$2`).replace(new RegExp(`!(["'”’])(\\s+)${QUOTE_TAIL}`, "g"), `${QE}$1$2`);
   return masked.match(/[^.!?\n]+[.!?]+["'”’)⟫]*|[^.!?\n]+$/gm)?.map(s => s.trim().replaceAll(QQ, "?").replaceAll(QE, "!")).filter(Boolean) ?? [];
 }
 

@@ -35,6 +35,9 @@ import { repairPass } from "./repair";
 import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } from "./safety";
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { enforce, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
+import { INVEST_NOTICE } from "./safety/p6d";
+import { allowedWindows, writeKeyFill, type FinalChapter } from "./safety";
+import type { BookSection } from "./format";
 import { matchJob, PROPS } from "@/lib/brief/props";
 import type { PriorBooks } from "./prior";
 
@@ -117,7 +120,58 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     noJobChapters: brief.product === "love_marriage_child" ? new Set(plan.map(ch => ch.n)) : ids(/^(love|family)$/),
     parentingChapters: brief.product === "love_marriage_child" ? ids(/^parenting$/) : new Set(), monthChapters: brief.product === "annual_fortune" ? ids(/^month$/) : new Set(),
     mbtiPlain: plain, periods: Object.fromEntries((brief.timeline?.entries ?? []).map(e => [e.key, e.period])),
+    ...p6dContext(brief, plan),
   };
+}
+
+const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
+/** P6d 검사 문맥: 묶음 세기·궁합 두 사람 값·대운 안 몇 번째 해·시점·관계 수·소품·투자 장·세기 점수·카드 십성. */
+function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintCtx> {
+  const ids = (re: RegExp) => new Set(plan.filter(ch => re.test(ch.id)).map(ch => ch.n));
+  const entries = brief.timeline?.entries ?? [];
+  const c = brief.compatibility, partner = brief.partner;
+  const names = (i: number) => new Set((brief.appendix?.[i]?.items ?? []).map(x => x.name.replace(/\s*\(.*$/, "").trim()).filter(Boolean));
+  const flow: Record<string, { score: number; max: number; min: number }> = {};
+  for (const kind of ["year", "month"] as const) { const es = entries.filter(e => e.kind === kind); if (es.length < 2) continue; const max = Math.max(...es.map(e => e.flow.score)), min = Math.min(...es.map(e => e.flow.score)); for (const e of es) flow[e.key] = { score: e.flow.score, max, min }; }
+  const timelineBook = brief.product === "major_fortune" || brief.product === "annual_fortune";
+  return {
+    ...(c || !brief.chart.groups ? {} : { groupLevels: brief.chart.groups.levels }),
+    ...(c && partner && brief.chart.groups && partner.chart.groups ? {
+      groupLevelsBy: [{ name: c.a.callName.replace(/님$/, ""), levels: brief.chart.groups.levels }, { name: c.b.callName.replace(/님$/, ""), levels: partner.chart.groups.levels }],
+      pair: { names: [c.a.callName, c.b.callName], features: [names(0), names(1)], groups: [brief.chart.groups.levels, partner.chart.groups.levels], lacking: [c.a.lacking, c.b.lacking], excess: [c.a.excess, c.b.excess], mbti: [c.a.mbti, c.b.mbti] },
+      pairRelations: c.dayRelations.length,
+    } : {}),
+    yearIndex: Object.fromEntries(entries.filter(e => e.kind === "year" && e.dayun?.yearIndex).map(e => [e.key, { index: e.dayun!.yearIndex!, total: e.dayun!.total ?? 10 }])),
+    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)) } : {}),
+    relationCount: Object.fromEntries(entries.map(e => [e.key, e.badges.filter(b => b.kind !== "GONGMANG").length])),
+    props: Object.keys(brief.usedProps ?? {}), investChapters: ids(/^invest/),
+    allowed: allowedWindows(JSON.stringify(brief)), conditionalChapters: new Set(plan.filter(ch => CONDITIONAL_TITLE.test(ch.title.trim())).map(ch => ch.n)),
+    flow, cardTenGod: Object.fromEntries(entries.map(e => [e.key, e.tenGod.stem])),
+  };
+}
+
+/** 머리 문장 같은 첫 문장(작가가 직접 쓴 것): 결정론 머리 문장으로 바꾸기 전에 뗀다(P6d D). */
+const WRITER_HEAD = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-鿿]{2}月?\))?(은|는) [^.?!]{0,40}(하늘에|천간에)[^.?!]{0,40}(땅에|지지에)[^.?!]{0,20}[.!]/;
+/**
+ * 조립 직전 결정론 넣기(P6d D·E·G): key마다 머리 문장, 1장 첫 문장에 기준 날짜, 투자 장 안내 1회. 검사·수리 뒤에 넣어 작가가 바꾸지 못한다.
+ */
+export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief): FinalChapter[] {
+  const heads = new Map((brief.timeline?.entries ?? []).map(e => [e.key, e.head]));
+  const [y, m, d] = brief.baseDate.split("-").map(Number);
+  const dateLine = `이 책은 ${y}년 ${m}월 ${d}일 기준으로 썼어요.`;
+  const prepend = (s: BookSection, line: string): BookSection => ({ ...s, paragraphs: s.paragraphs.length ? [`${line} ${s.paragraphs[0]}`, ...s.paragraphs.slice(1)] : [line] });
+  return chapters.map((c, ci) => {
+    let sections = c.sections.map(s => {
+      const head = c.keys?.includes(s.heading) ? heads.get(s.heading) : undefined;
+      if (!head) return s;
+      const first = s.paragraphs[0] ?? "";
+      const stripped = first.replace(WRITER_HEAD, "").trim();
+      return prepend({ ...s, paragraphs: [stripped, ...s.paragraphs.slice(1)].filter(Boolean) }, head);
+    });
+    if (ci === 0 && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(dateLine)))) sections = [prepend(sections[0], dateLine), ...sections.slice(1)];
+    if (/^invest/.test(c.id) && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(INVEST_NOTICE)))) sections = [prepend(sections[0], INVEST_NOTICE), ...sections.slice(1)];
+    return { ...c, sections, chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) };
+  });
 }
 
 /** 표지 한 줄(P6c G): 16~26자, 설명문("~일주예요")·"명리학에서" 금지. 어기면 핵심 이미지. */
@@ -171,7 +225,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   }
   const remaining = lintBook(tidyBook(chapters, lctx).chapters, lctx);
   const enforced = enforce(tidyBook(chapters, lctx).chapters, remaining);
-  chapters = enforced.chapters;
+  // 문단을 다 뺀 key(대운 연도·세운 달)는 결정론 문단으로 채운다(빈 key 금지). 그 밖 장은 남은 문단만.
+  chapters = writeKeyFill(brief, plan, enforced.chapters, enforced.emptyKeys);
+  chapters = insertFixedLines(chapters, brief);
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   const cover = coverLineOf(run?.cover ?? null, brief);
   report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: repair.targets, repaired: repair.applied, repairCalls: repair.calls, redoCalls, redoChapters: redo.map(c => c.n), remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs, cover: cover.source, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`) } } };

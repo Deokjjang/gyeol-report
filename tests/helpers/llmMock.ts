@@ -54,7 +54,8 @@ export function mockBookText(brief: Brief, chapters?: readonly WriterChapter[]):
     const c = writeDeterministicChapter(brief, ch, { avoid });
     for (const s of c.sections) for (const p of s.paragraphs) for (const x of splitSentences(p)) avoid.add(norm(x));
     // 분량 하한을 넘기도록 장 번호가 들어간(책 안에서 겹치지 않는) 덧붙임 문단.
-    const filler = [`${ch.n}장에서 본 모습은 하루아침에 생긴 것이 아니라 오래 다듬어진 결입니다.`, `그래서 ${ch.n}장의 결은 작은 습관 하나만 바꿔도 결과가 달라지는 편이에요.`, `오늘 ${ch.n}장에서 한 가지를 골라 일주일만 지켜보세요.`, `그게 ${ch.n}장의 숙제이고, 일주일 뒤 ${ch.n}장을 다시 펼치면 달라진 점이 보입니다.`, `${ch.n}장의 이야기를 누군가에게 한 줄로 말해 보는 것도 좋은 연습입니다.`];
+    // 장 번호 참조("7장에서")는 P6d 검사에 걸리므로 덧붙임 문단은 번호 꼬리표(n-i)로만 서로 다르게 한다.
+    const filler = [`이 모습은 하루아침에 생긴 것이 아니라 오래 다듬어진 결입니다 ${ch.n}`, `그래서 이 결은 작은 습관 하나만 바꿔도 결과가 달라지는 편이에요 ${ch.n}`, `오늘 여기서 한 가지를 골라 일주일만 지켜보세요 ${ch.n}`, `그게 이 이야기의 숙제이고, 일주일 뒤 다시 펼치면 달라진 점이 보입니다 ${ch.n}`, `이 이야기를 누군가에게 한 줄로 말해 보는 것도 좋은 연습입니다 ${ch.n}`];
     const chars = c.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0);
     const extra = ch.keys ? [] : Array.from({ length: Math.max(1, Math.ceil((1100 - chars) / 200)) }, (_, i) => ({ heading: `${ch.n}장을 덮으며 ${i + 1}`, paragraphs: [filler.map(x => `${x.replace(/\.$/, "")}(${i + 1}).`).join(" ")] }));
     return renderChapter({ ...c, sections: [...c.sections, ...extra] });

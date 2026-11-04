@@ -9,7 +9,7 @@ import type { WriterChapter } from "../prompt";
 import { briefCopyMetric, connectorRepeats, infoRepeats, p6bMetric, traitMentions, type BriefCopyMetric, type ConnectorRepeat, type InfoRepeatMetric, type P6bMetric, type TraitUseMetric } from "./metrics";
 import { allowedWindows, filterParagraph, sentenceViolation, styleWarnings, type Deletion, type Replacement, type SafetyFacts, type StyleWarning } from "./sentences";
 import { glossaryWarnings } from "./terms";
-import { FAMILY_MEMBER, RURAL_PROP, splitSentences, tidyHeading } from "./patterns";
+import { FAMILY_MEMBER, isPastAssertion, RURAL_PROP, softenExperience, splitSentences, tidyHeading, tidyText } from "./patterns";
 import { fixBackrefs, mergeShrunk } from "./tidy";
 
 export { OLD_NEGATIVE, isPastAssertion, splitSentences } from "./patterns";
@@ -60,7 +60,19 @@ export function intensityViolations(brief: Brief, key: string, text: string): st
 }
 
 const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
-/** shrunk: 문장이 지워져 줄어든 소제목(삭제 후 정리 대상, P3.5 A4). */
+/**
+ * 작가 원고 정리(P6d B): 문장을 지우지 않는다. 뜻을 바꾸지 않는 정리(tidyText·소제목 다듬기)와 경험 단정의 경향형 바꿈(기록)만 하고,
+ * 규칙에 걸린 문장은 lintBook이 문단째 수리로 보낸다(수리 뒤에도 사실·금지 규칙이면 문단째 뺀다). 문장 삭제는 조각 문장을 남겼다("하는 물음이 자주 올라와요").
+ */
+function tidySections(sections: readonly BookSection[], n: number, replacements: Replacement[]): BookSection[] {
+  return sections.map(s => ({ heading: tidyHeading(s.heading), paragraphs: s.paragraphs.map(p => softenParagraph(tidyText(p), n, replacements)).filter(Boolean), ...(s.card ? { card: s.card } : {}) })).filter(s => s.paragraphs.length);
+}
+function softenParagraph(p: string, n: number, replacements: Replacement[]): string {
+  let out = p;
+  for (const s of splitSentences(p)) if (isPastAssertion(s)) { const soft = softenExperience(s); if (soft && soft !== s) { replacements.push({ chapter: n, rule: "experience_assert", from: s, to: soft }); out = out.replace(s, soft); } }
+  return out;
+}
+/** 결정론 작가 장(호출 0): 지식 DB 문장을 고를 때 규칙에 걸린 문장은 처음부터 고르지 않는다(ok). 쓴 뒤에 지우지 않는다. */
 function filterSections(sections: readonly BookSection[], f: SafetyFacts, n: number, deletions: Deletion[], keyed: boolean, allowed: ReadonlySet<string>, seen: Set<string>, title = "", shrunk?: Set<BookSection>, replacements?: Replacement[]): BookSection[] {
   const cond = CONDITIONAL_TITLE.test(title.trim());
   return sections.map(s => {
@@ -99,16 +111,14 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   const tidy = (sections: readonly BookSection[]) => { const r = fixBackrefs(sections, brief, prior); backrefFixed += r.fixed; return r.sections; };
   const chapters = plan.map((ch): FinalChapter => {
     const draft = drafts.get(ch.n);
-    const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen, prior: bookSentences }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen, ch.title, undefined, replacements);
+    const cond = CONDITIONAL_TITLE.test(ch.title.trim());
+    const ok = (s: string) => !sentenceViolation(s, f, ANY_WINDOW, cond) && !isPastAssertion(s);
+    const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen, prior: bookSentences, ok }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen, ch.title, undefined, replacements);
     if (ch.keys) {
-      const have = draft ? keyedSections(filterSections(draft.chapter.sections, f, ch.n, deletions, true, allowed, seen, ch.title, undefined, replacements), ch.keys) : new Map<string, BookSection>();
+      const have = draft ? keyedSections(tidySections(draft.chapter.sections, ch.n, replacements), ch.keys) : new Map<string, BookSection>();
       const missing = ch.keys.filter(k => !have.get(k)?.paragraphs.length);
       if (missing.length) for (const s of det("keys", missing)) have.set(s.heading, s);
-      // 세기 주장 대조(E-11): 어긋난 "가장 ~한 달·해" 문장을 지운다.
-      for (const [key, sec] of have) {
-        const bad = intensityViolations(brief, key, sec.paragraphs.join(" "));
-        if (bad.length) { for (const b of bad) deletions.push({ chapter: ch.n, rule: "intensity_mismatch", sentence: b }); have.set(key, { ...sec, paragraphs: sec.paragraphs.map(p => bad.reduce((x, b) => x.replace(b, ""), p).replace(/ {2,}/g, " ").trim()).filter(Boolean) }); }
-      }
+      // 세기 주장 대조(E-11)는 lintBook(intensity_claim)이 수리로 보낸다(P6d B: 지우지 않는다).
       const sections = tidy(ch.keys.map(k => have.get(k) ?? { heading: k, paragraphs: [] }));
       const source: ChapterSource = !draft || missing.length === ch.keys.length ? "deterministic" : draft.source;
       const reason = !draft ? "missing" : missing.length ? `keys_filled:${missing.join(",")}` : undefined;
@@ -116,9 +126,8 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
       remember(sections);
       return { n: ch.n, id: ch.id, title: ch.title, sections, source, ...(reason ? { reason } : {}), chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0), keys: ch.keys };
     }
-    const shrunk = new Set<BookSection>();
-    let sections = draft ? filterSections(draft.chapter.sections, f, ch.n, deletions, false, allowed, seen, ch.title, shrunk, replacements) : [];
-    if (draft) { const m = mergeShrunk(sections, shrunk); sections = m.sections; merged += m.merged; }
+    let sections = draft ? tidySections(draft.chapter.sections, ch.n, replacements) : [];
+    void allowed; void mergeShrunk;
     let source: ChapterSource = draft?.source ?? "deterministic";
     let reason: string | undefined = draft ? undefined : "missing";
     const min = Math.round(ch.targetChars[0] * MIN_CHAPTER_RATIO);
@@ -143,4 +152,23 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   for (const r of info.pairs) warnings.push({ chapter: Number(r.at[1].split(".")[0]), kind: "info_repeat", text: `${r.kind} ${r.at.join("~")}: ${r.b}` });
   return { chapters, report: { deletions, warnings, replacements, metrics: { briefCopy: briefCopyMetric(brief, chapters), connectors: connectorRepeats(chapters), merged, backrefFixed, props, experience, traitUse, infoRepeats: info,
     p6b: p6bMetric(brief, chapters, [RURAL_PROP, ...(f.familyOk ? [] : [FAMILY_MEMBER]), /배지|제시되지 않/, /\*\*/]) } } };
+}
+
+export { allowedWindows } from "./sentences";
+/**
+ * 수리 뒤 문단을 다 뺀 key(P6d B): 그 key만 결정론 문단으로 채운다(규칙에 걸리는 지식 DB 문장은 고르지 않는다). 다른 장은 건드리지 않는다.
+ */
+export function writeKeyFill(brief: Brief, plan: readonly WriterChapter[], chapters: readonly FinalChapter[], empty: readonly { chapter: number; key: string }[]): FinalChapter[] {
+  const f = safetyFacts(brief);
+  const ok = (s: string) => !sentenceViolation(s, f, ANY_WINDOW) && !isPastAssertion(s);
+  const prior = chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p))));
+  return chapters.map(c => {
+    // 소제목이 하나도 남지 않은 장은 장 전체를 결정론으로(빈 장 금지).
+    if (!c.keys && !c.sections.some(s => s.paragraphs.length)) { const ch = plan.find(p => p.n === c.n); if (!ch) return c; const sections = writeDeterministicChapter(brief, ch, { prior, ok }).sections; return { ...c, sections, source: "deterministic" as const, reason: [c.reason, "emptied"].filter(Boolean).join(";"), chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) }; }
+    const keys = empty.filter(e => e.chapter === c.n).map(e => e.key); const ch = plan.find(p => p.n === c.n);
+    if (!keys.length || !ch) return c;
+    const fill = new Map(writeDeterministicChapter(brief, ch, { keys, prior, ok }).sections.map(s => [s.heading, s]));
+    const sections = c.sections.map(s => keys.includes(s.heading) && !s.paragraphs.length ? { ...s, paragraphs: fill.get(s.heading)?.paragraphs ?? [] } : s);
+    return { ...c, sections, source: c.source, reason: [c.reason, `keys_filled:${keys.join(",")}`].filter(Boolean).join(";"), chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) };
+  });
 }

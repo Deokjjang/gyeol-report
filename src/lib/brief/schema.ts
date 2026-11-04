@@ -145,7 +145,12 @@ export const TimelineEntrySchema = z.object({
   imageLine: z.string(),
   todo: z.string().optional(),
   review: z.string().optional(),
-  dayun: z.object({ ganji: z.string(), transition: z.boolean() }).optional(),
+  /** 대운(P6d C): 이 해가 대운 안 몇 번째 해인지(엔진 연차, 1~total)와 위치 말(앞쪽·중간·끝 무렵·마지막 해). 작가는 위치를 이 값으로만 쓴다. tenGod: 대운 천간 십성. */
+  dayun: z.object({ ganji: z.string(), transition: z.boolean(), yearIndex: z.number().int().optional(), total: z.number().int().optional(), position: z.string().optional(), tenGod: z.string().optional() }).optional(),
+  /** 머리 문장(P6d D): 결정론 형식 "YYYY년 간지(한자)는 천간 십성이 하늘에, 지지 십성이 땅에 들어오는 해예요." 대운 전환 해는 새 대운 이름과 십성. 작가는 쓰지 않고 조립 때 넣는다. */
+  head: z.string().optional(),
+  /** 살필 점 결정론 값(P6d D): 그 해·달의 실제 조합(관계 표시 → 천간 십성 → 지지 십성)에서 고르고, 앞 항목과 같은 문장은 쓰지 않는다. 작가 줄이 없거나 걸리면 쓴다. */
+  caution: z.string().optional(),
   change: z.object({ tenGodFrom: z.string(), flowFrom: z.number(), line: z.string().optional() }).optional(),
   /** 기준일 대비: past(돌아보는 말), now, future(경향). P3.6 B. */
   when: z.enum(["past", "now", "future"]).optional(),

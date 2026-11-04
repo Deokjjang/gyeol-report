@@ -28,7 +28,7 @@ import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage, matchJob } from "./props";
-import { cautionFor, type CautionCtx } from "./caution";
+import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
 
@@ -273,6 +273,13 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     }
   }
 
+  // 살필 점 결정론 값(P6d D): 같은 십성 해(2023·2033 癸)에 같은 문장이 가지 않게, 관계 → 천간 십성 → 지지 십성 순으로 아직 안 쓴 줄.
+  if (timeline) {
+    const cctx: CautionCtx = { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) };
+    const used = new Set<string>();
+    for (const e of timeline.entries) e.caution = cautionOf(e, k, cctx, used);
+  }
+
   // 궁합
   const compatibility = isPair && other ? buildCompatibility(input.relationshipType!, side(me, k), side(other, k), k, narrative.compatibility?.[input.relationshipType!]) : undefined;
 
@@ -378,6 +385,19 @@ function tenGodNotesOf(k: Knowledge, ctx: CautionCtx) {
     const caution = p ? cautionFor(p.year.caution, ctx) : "";
     return [e.tenGod.stem, kind === "year" ? { meaning: dropSourceSentences(p?.year.meaning ?? ""), ...(caution ? { caution } : {}) } : { meaning: dropSourceSentences(p?.month.meaning ?? "") }];
   }));
+}
+
+/** 살필 점 후보(P6d D): ① 주의 쪽 관계 표시(충·형·파·해·원진·공망 등) ② 천간 십성 주의 문장(원국 조건 성립분) ③ 지지 십성 주의 문장. 앞 항목이 쓴 문장은 건너뛴다. */
+const CAUTION_KINDS = /CHUNG|HYEONG|PA|HAE|WONJIN|GONGMANG|CLASH/;
+function cautionOf(e: import("./schema").TimelineEntry, k: Knowledge, c: CautionCtx, used: Set<string>): string | undefined {
+  const unit = e.kind === "month" ? "달" : "해";
+  const tgOf = (label: string) => label.match(/\((.+)\)/)?.[1] ?? "";
+  const lines = (tg: string) => (k.tenGodPeriod.get(tg)?.year.caution ?? []).filter(l => cautionHolds(l.when, c)).map(l => l.text.replace(/해(예요|입니다|라)/g, `${unit}$1`));
+  const badge = e.badges.filter(b => CAUTION_KINDS.test(b.kind) || b.tone === "minus").map(b => `${b.with ? `${b.with} 글자와 ` : ""}${josa(b.label.replace(/\(.*\)$/, ""), "이가")} 걸리는 ${unit}: ${b.line}`.replace(/ (흐름|해|달)$/, " 쪽을 살피기"));
+  const cands = [...badge, ...lines(tgOf(e.tenGod.stem)), ...lines(tgOf(e.tenGod.branch))].filter(x => x.length >= 8 && x.length <= 60);
+  const pick = cands.find(x => !used.has(x));
+  if (pick) used.add(pick);
+  return pick;
 }
 
 function side(p: PersonPack, k: Knowledge): PairSide {

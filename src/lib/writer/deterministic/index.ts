@@ -178,14 +178,14 @@ function extrasOf(ctx: Ctx, ch: WriterChapter, sections: readonly { heading: str
 }
 
 /** 분량 보충: 목표에 닿을 때까지 보충 재료를 넣는다. 소제목은 5개까지, 넘으면 마지막 소제목에 붙인다. */
-function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: ReadonlySet<string>, n: number, near: ReturnType<typeof overlapIndex>, priorExact: Set<string>): BookSection[] {
+function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: ReadonlySet<string>, n: number, near: ReturnType<typeof overlapIndex>, priorExact: Set<string>, bad: ReadonlySet<string> = new Set()): BookSection[] {
   const local = new Set(sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p).map(norm))));
   const out = sections.map(s => ({ heading: s.heading, paragraphs: [...s.paragraphs] }));
   const chars = () => chapterChars({ n, title: "", sections: out });
   for (const x of extras) {
     if (chars() >= DET_MIN_CHARS) break;
     // 같은 말 되풀이(P6c I): 정확히 같은 문장뿐 아니라 거의 같은 문장(5-gram 자카드 0.5 이상)도 넣지 않는다.
-    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (local.has(k) || priorExact.has(k) || (k.length >= 20 && avoid.has(k)) || near.has(s)) return false; local.add(k); priorExact.add(k); near.add(s); return true; }).join(" ");
+    const text = splitSentences(x.text).filter(s => { const k = norm(s); if (bad.has(k) || local.has(k) || priorExact.has(k) || (k.length >= 20 && avoid.has(k)) || near.has(s)) return false; local.add(k); priorExact.add(k); near.add(s); return true; }).join(" ");
     // 남은 것이 한 줄 토막이면 넣지 않는다("서운함도 저장합니다."만 남은 보충).
     if (!text || norm(text).length < 15) continue;
     const target = x.append ? out.find(s => s.heading === x.heading) : undefined;
@@ -197,11 +197,11 @@ function pad(sections: readonly BookSection[], extras: readonly Extra[], avoid: 
 }
 
 /** 책 안에서 이미 나온 문장(avoid)과 이 장에서 이미 쓴 문장은 뺀다(같은 문장 + 거의 같은 문장, P6c I). 반복 장(keepEmpty)은 키를 지우지 않고, 다 빠진 키는 원래 문단을 둔다. */
-function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, keepEmpty: boolean, near: ReturnType<typeof overlapIndex>, priorExact: Set<string>): BookSection[] {
+function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, keepEmpty: boolean, near: ReturnType<typeof overlapIndex>, priorExact: Set<string>, bad: ReadonlySet<string> = new Set()): BookSection[] {
   const local = new Set<string>();
   const out = sections.map(s => {
     // 짧은 문장도 같은 문장이면 다시 쓰지 않는다("세상을 효율로 봅니다."가 장마다 나왔다). 지우고 남은 문단이 한 줄 토막이면 뺀다.
-    const paragraphs = s.paragraphs.map(p => splitSentences(p).filter(x => { const k = norm(x); if ((k.length >= 20 && avoid.has(k)) || local.has(k) || (!keepEmpty && (priorExact.has(k) || near.has(x)))) return false; local.add(k); priorExact.add(k); near.add(x); return true; }).join(" ")).filter(p => keepEmpty ? Boolean(p) : norm(p).length >= 15);
+    const paragraphs = s.paragraphs.map(p => splitSentences(p).filter(x => { const k = norm(x); if (bad.has(k) || (k.length >= 20 && avoid.has(k)) || local.has(k) || (!keepEmpty && (priorExact.has(k) || near.has(x)))) return false; local.add(k); priorExact.add(k); near.add(x); return true; }).join(" ")).filter(p => keepEmpty ? Boolean(p) : norm(p).length >= 15);
     return { ...s, paragraphs: keepEmpty && !paragraphs.length ? s.paragraphs : paragraphs };
   });
   return keepEmpty ? out : out.filter(s => s.paragraphs.length);
@@ -209,13 +209,16 @@ function dedupe(sections: readonly BookSection[], avoid: ReadonlySet<string>, ke
 
 /** 장 하나를 결정론으로 쓴다. keys가 주어지면 그 key만(반복 장 누락 보충). avoid: 책 안에서 이미 쓴 문장(정규화). */
 /** prior: 앞 장들의 문장 전부(짧은 문장 포함). 같은 문장·거의 같은 문장은 다시 쓰지 않는다(P6c I). */
-export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[]; avoid?: ReadonlySet<string>; prior?: readonly string[] } = {}): BookChapter {
+export function writeDeterministicChapter(brief: Brief, ch: WriterChapter, opts: { keys?: readonly string[]; avoid?: ReadonlySet<string>; prior?: readonly string[]; ok?: (sentence: string) => boolean } = {}): BookChapter {
   const { chapter, extras } = writeChapter(brief, ch, opts);
   const avoid = opts.avoid ?? new Set<string>();
   // 앞 장들에 나온 문장과 거의 같은 문장도 다시 쓰지 않는다(책 단위 반복 검사가 지우기 전에, 보충 재료로 갈음한다).
   const near = overlapIndex([...avoid, ...(opts.prior ?? [])]), priorExact = new Set((opts.prior ?? []).map(norm));
-  const sections = dedupe(chapter.sections, avoid, Boolean(ch.keys), near, priorExact);
-  return { ...chapter, sections: ch.keys ? sections : mergeSameHeading(pad(sections, extras, avoid, ch.n, near, priorExact)) };
+  // 규칙에 걸리는 지식 DB 문장은 처음부터 고르지 않는다(P6d B: 쓴 뒤에 지우지 않는다). 걸린 문장 자리를 이미 본 문장으로 막아 두면 dedupe·pad가 건너뛴다.
+  const bad = new Set<string>();
+  if (opts.ok) for (const t of [...chapter.sections.flatMap(s => s.paragraphs), ...extras.map(x => x.text)]) for (const x of splitSentences(t)) if (!opts.ok(x)) bad.add(norm(x));
+  const sections = dedupe(chapter.sections, avoid, Boolean(ch.keys), near, priorExact, bad);
+  return { ...chapter, sections: ch.keys ? sections : mergeSameHeading(pad(sections, extras, avoid, ch.n, near, priorExact, bad)) };
 }
 
 /** 한 장 안 같은 소제목(결정론 MBTI 절 "지휘관의 습관"이 세 번)은 처음 것에 합친다. */

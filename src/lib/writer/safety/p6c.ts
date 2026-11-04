@@ -8,15 +8,27 @@
 import type { BookSection, SectionCard } from "../format";
 import type { FinalChapter } from "./index";
 import * as L from "./lint";
-import { splitSentences } from "./patterns";
-import { sentenceViolation, type SafetyFacts } from "./sentences";
+import { isPastAssertion, splitSentences } from "./patterns";
+import { sentenceViolation, type SafetyFacts, type SentenceRule } from "./sentences";
+import * as D from "./p6d";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
-  | "marriage_talk" | "card_missing" | "card_form" | "card_overlap" | "card_length" | "card_rule";
+  | "marriage_talk" | "card_missing" | "card_form" | "card_overlap" | "card_length" | "card_rule"
+  // P6d: 안전망 문장 규칙(삭제하지 않고 수리로) · 묶음 세기 · 조각 문장 · 사실·위치 · 시점 · 부정 단정 · 소품 · 투자
+  | "safety" | "group_claim" | "fragment" | "empty_preview" | "count_mismatch" | "dayun_year" | "pair_both" | "self_correction" | "chapter_ref"
+  | "time_deictic" | "calendar_month" | "closing_repeat" | "negative_claim" | "prop_repeat" | "invest_directive" | "intensity_claim";
 export type CardField = "image" | "todo" | "review" | "caution";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
-export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string };
+export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
+/**
+ * 수리 뒤에도 걸리면 문단째 빼는 규칙(사용자 결정 2026-11-04: 사실·금지 규칙만 문단째, 문체·반복은 그대로 두고 기록).
+ * 문장만 지우면 조각 문장이 남는다(P6c "하는 물음이 자주 올라와요").
+ */
+export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
+  "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim"]);
+/** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
+const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
   readonly facts: SafetyFacts; readonly jobDetail: string; readonly schoolStage: L.SchoolStage | "student";
   readonly yinYang?: { readonly yin: number; readonly yang: number }; readonly presence?: L.ElementPresence; readonly dayunPhase?: L.DayunPhase;
@@ -26,7 +38,25 @@ export type LintCtx = {
   readonly compat: boolean; readonly mbtiPlain: Readonly<Record<string, string>>;
   /** 카드 기간 상태(key → past·current·future). */
   readonly periods?: Readonly<Record<string, "past" | "current" | "future">>;
+  /** P6d A: 묶음 세기 단계(만세력 가중값). 궁합은 사람마다(이름이 나온 문장만 본다). */
+  readonly groupLevels?: L.GroupLevels; readonly groupLevelsBy?: readonly { readonly name: string; readonly levels: L.GroupLevels }[];
+  /** P6d C: 궁합 두 사람의 엔진 값("둘 다" 검사). */
+  readonly pair?: D.PairFacts;
+  /** P6d C: 대운 연도 key → 대운 안 몇 번째 해(1~10). */
+  readonly yearIndex?: Readonly<Record<string, { readonly index: number; readonly total: number }>>;
+  /** P6d E: 달력이 있는 책(대운·세운)은 "지금" 전부 금지. calendarChapters: 달력월 이름 금지 장(세운 전체). */
+  readonly strictTime?: boolean; readonly calendarChapters?: ReadonlySet<number>;
+  /** P6d F: key → 엔진 관계 표시 수(0이면 "건드리지 않는다" 허용). 궁합은 두 사람 날 관계 수. */
+  readonly relationCount?: Readonly<Record<string, number>>; readonly pairRelations?: number;
+  /** P6d F: 책당 1회만 쓰는 소품 명사. G: 투자 장. 안전망 규칙 문맥(예시 창·조건형 장). */
+  readonly props?: readonly string[]; readonly investChapters?: ReadonlySet<number>; readonly allowed?: ReadonlySet<string>; readonly conditionalChapters?: ReadonlySet<number>;
+  /** 세기 주장(P6b E-11): key → 흐름 점수와 같은 종류(연·월) 안의 최고·최저. */
+  readonly flow?: Readonly<Record<string, { readonly score: number; readonly max: number; readonly min: number }>>;
+  /** 카드 key → 천간 십성(같은 십성 key끼리 카드 줄을 더 엄격히 견준다, P6d D). */
+  readonly cardTenGod?: Readonly<Record<string, string>>;
 };
+const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
+const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
 
 const HINT: Readonly<Record<P6cRule, string>> = {
   db_copy: "브리프 글을 20자 넘게 그대로 옮겼다 → 같은 뜻을 이 고객의 말로 새로 쓴다",
@@ -53,6 +83,22 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   card_overlap: "다른 key의 카드와 같은 문장·꼴이다 → 이 시기의 십성·관계에서 나온 다른 한 줄",
   card_length: "카드 줄 길이가 맞지 않는다 → 그림 14~30자, 나머지 10~50자 한 줄",
   card_rule: "카드 줄이 금지 규칙에 걸렸다 → 같은 뜻을 규칙 안에서",
+  safety: "금지 규칙(입력에 없는 사실·시주·내부 용어·확정 예언 등)에 걸렸다 → 그 사실 없이 같은 흐름으로 다시 쓴다",
+  group_claim: "십성 묶음 세기가 엔진 값과 다르다 → chart.groups 단계(강·보통·약) 그대로",
+  fragment: "앞 구절이 빠진 조각 문장이다 → 주어·앞말을 갖춘 온전한 문장으로",
+  empty_preview: "예고만 하고 받는 내용이 없다('이런 변화가 있을 거예요') → 무엇이 바뀌는지 바로 쓴다",
+  count_mismatch: "'이 세 가지'처럼 가리키는 개수가 앞의 항목 수와 다르다 → 개수를 맞추거나 항목을 직접 부른다",
+  dayun_year: "대운 안의 위치(앞쪽·중간·마지막 해·남은 해)가 엔진의 '대운 안 몇 번째 해'와 다르다 → 그 값 그대로",
+  pair_both: "'둘 다 ~'가 한 사람에게만 맞는다 → 두 사람 각각의 엔진 값대로 나눠 쓴다",
+  self_correction: "괄호 안에 자기 정정('~이 아니라')이 드러났다 → 맞는 이름 하나만",
+  chapter_ref: "장 번호로 앞 장을 가리켰다('7장에서') → 번호 없이 그 내용을 짧게 다시 부른다",
+  time_deictic: "읽는 때를 못 박는 말('지금·이번 달·올해 남은')이다 → 기준일(이 책의 기준 날짜)·그 해·그 달 이름으로",
+  calendar_month: "세운 본문에 달력월 이름('1월·2월')을 썼다 → 간지월 이름(경인월 등)으로",
+  closing_repeat: "여러 달이 같은 마무리 문형으로 끝난다 → 이 달만의 끝맺음으로",
+  negative_claim: "엔진이 관계(합·충·형·해 등)를 짚었는데 '건드리지 않는다'고 했다 → 관계 표시(marks) 그대로",
+  prop_repeat: "같은 소품이 책에서 두 번째로 나왔다 → 다른 생활 장면으로",
+  invest_directive: "특정 종목·상품·매수 시점을 말했다 → 성향과 원칙만",
+  intensity_claim: "'가장 ~한 달·해'가 엔진 흐름 점수와 다르다 → 그 시기의 기운만",
 };
 
 /** B3: 십성 누름 방향(키가 값을 누른다). 문장에 두 십성(묶음)이 능동·수동으로 나오면 방향을 본다. */
@@ -88,6 +134,14 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (ctx.stars?.child && L.starClaim(s, "자녀", ctx.stars.child)) return "star_claim";
   if (tenGodDirection(s)) return "ten_god_direction";
   if (ctx.parentingChapters.has(n) && MARRIAGE_TALK.test(s)) return "marriage_talk";
+  if (ctx.groupLevels && L.groupClaimMismatch(s, ctx.groupLevels)) return "group_claim";
+  if (ctx.groupLevelsBy) for (const p of ctx.groupLevelsBy) if (s.includes(p.name) && !ctx.groupLevelsBy.some(o => o !== p && s.includes(o.name)) && L.groupClaimMismatch(s, p.levels)) return "group_claim";
+  if (ctx.pair && D.pairBothClaims(s, ctx.pair).length) return "pair_both";
+  if (D.selfCorrection(s)) return "self_correction";
+  if (D.CHAPTER_REF.test(s)) return "chapter_ref";
+  if (D.timeDeictic(s, Boolean(ctx.strictTime))) return "time_deictic";
+  if (ctx.calendarChapters?.has(n) && D.calendarMonth(s)) return "calendar_month";
+  if (ctx.investChapters?.has(n) && D.INVEST_DIRECTIVE.test(s)) return "invest_directive";
   return null;
 }
 
@@ -119,6 +173,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     let ps = s.paragraphs.map(p => {
       let q = p;
       if (L.MYEONGRI_PREFIX.test(q)) { const r = L.dropMyeongriPrefix(q); if (r !== q) prefix++; q = r; }
+      // 장 번호 참조("7장에서 본 것처럼,")는 뜻을 바꾸지 않고 뗄 수 있는 꼴만 뗀다(P6d C). 나머지는 검사가 수리로 보낸다.
+      if (D.CHAPTER_REF.test(q)) { const r = D.dropChapterRef(q); if (r !== q) prefix++; q = r; }
       const r2 = fixCodes(q); q = r2;
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       return q;
@@ -138,6 +194,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
   const out: LintFlag[] = [];
   const flag = (f: Omit<LintFlag, "hint">) => out.push({ ...f, hint: HINT[f.rule] });
   let formulas = 0, backrefs = 0;
+  const propSeen = new Set<string>();
   const explained = new Set<string>();
   // 책 안 반복(A2): 소제목마다 색인 하나, 다른 소제목 색인과 견준다(같은 소제목 안 비슷한 문장은 문단 흐름이라 보지 않는다).
   const bySection: { at: string; idx: ReturnType<typeof L.overlapIndex> }[] = [];
@@ -146,11 +203,26 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
     let jobUses = 0;
     c.sections.forEach((s, si) => {
       if (s.heading && !/^\d{4}(-M\d{2})?$/.test(s.heading)) { const r = sentenceRules(s.heading, c.n, ctx, true); if (r) flag({ chapter: c.n, section: si, paragraph: -1, rule: r, sentence: s.heading }); }
+      const key = s.heading, keyed = Boolean(c.keys?.includes(key));
+      const yi = keyed ? ctx.yearIndex?.[key] : undefined, rel = keyed ? ctx.relationCount?.[key] : ctx.pairRelations, fl = keyed ? ctx.flow?.[key] : undefined;
+      // B3 개수 지시: 소제목 글 전체에서 찾고 그 구절이 든 문단에 단다.
+      const secText = s.paragraphs.map(stripMarks).join(" ");
+      for (const ref of D.countMismatch(secText)) { const pi = s.paragraphs.findIndex(p => stripMarks(p).includes(ref)); if (pi >= 0) flag({ chapter: c.n, section: si, paragraph: pi, rule: "count_mismatch", sentence: ref }); }
       s.paragraphs.forEach((p, pi) => {
-        for (const raw of splitSentences(p)) {
+        const sens = splitSentences(p);
+        for (const [i, raw] of sens.entries()) {
           const sen = stripMarks(raw);
           const at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
           const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r }); continue; }
+          // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
+          const sv = sentenceViolation(sen, ctx.facts, ctx.allowed, Boolean(ctx.conditionalChapters?.has(c.n)));
+          if (sv && !SOFT_SAFETY.has(sv)) { flag({ ...at, rule: "safety", detail: sv }); continue; }
+          if (L.pastAssertion(sen) === null && isPastAssertion(sen)) { flag({ ...at, rule: "past_assertion", detail: "experience_assert" }); continue; }
+          if (D.fragmentSentence(raw, i === sens.length - 1)) { flag({ ...at, rule: "fragment" }); continue; }
+          if (D.emptyPreview(sen, sens[i + 1])) { flag({ ...at, rule: "empty_preview" }); continue; }
+          if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
+          if (rel !== undefined && rel > 0 && D.NEGATIVE_RELATION.test(sen)) { flag({ ...at, rule: "negative_claim" }); continue; }
+          if (fl && ((PEAK.test(sen) && fl.score < fl.max) || (LOW.test(sen) && fl.score > fl.min))) { flag({ ...at, rule: "intensity_claim" }); continue; }
           if (writer && L.copiedWindow(sen, ctx.corpus)) { flag({ ...at, rule: "db_copy" }); continue; }
           if (writer && ctx.prior.length && L.overlapping(ctx.prior, [sen]).length) { flag({ ...at, rule: "prior_overlap" }); continue; }
           if (L.MEANING_FORMULA.test(sen)) {
@@ -161,61 +233,76 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           }
           if (L.BACKREF_WORD.test(sen) && ++backrefs > L.MAX_BACKREF) { flag({ ...at, rule: "backref_excess" }); continue; }
           if (ctx.jobProps.some(x => sen.includes(x)) && (ctx.noJobChapters.has(c.n) || ++jobUses > 1)) { flag({ ...at, rule: "job_prop" }); continue; }
+          // F 소품 원장: 같은 소품 명사는 책당 1회(두 번째부터).
+          const prop = ctx.props?.find(x => sen.includes(x));
+          if (prop) { if (propSeen.has(prop)) { flag({ ...at, rule: "prop_repeat", detail: prop }); continue; } propSeen.add(prop); }
           // 책 안 같은 장면·문장(A2): 다른 소제목의 문장과 5-gram 자카드 0.5 이상.
-          const key = `${c.n}.${si}`;
-          if (bySection.some(x => x.at !== key && x.idx.has(sen))) { flag({ ...at, rule: "scene_repeat" }); continue; }
-          let mine = bySection.find(x => x.at === key); if (!mine) { mine = { at: key, idx: L.overlapIndex() }; bySection.push(mine); }
+          const at2 = `${c.n}.${si}`;
+          if (bySection.some(x => x.at !== at2 && x.idx.has(sen))) { flag({ ...at, rule: "scene_repeat" }); continue; }
+          let mine = bySection.find(x => x.at === at2); if (!mine) { mine = { at: at2, idx: L.overlapIndex() }; bySection.push(mine); }
           mine.idx.add(sen);
         }
       });
+    });
+  }
+  // E 마무리 문형: 달 장(세운 월)의 key마다 마지막 문장 끝 두 어절, 같은 꼴은 12달 가운데 3번까지.
+  for (const c of chapters) if (c.keys && ctx.calendarChapters?.has(c.n)) {
+    const seenFrame = new Map<string, number>();
+    c.sections.forEach((s, si) => {
+      const pi = s.paragraphs.length - 1; if (pi < 0) return;
+      const last = splitSentences(s.paragraphs[pi]).at(-1) ?? ""; const f = D.closingFrame(last); if (!f) return;
+      const n = (seenFrame.get(f) ?? 0) + 1; seenFrame.set(f, n);
+      if (n > D.MAX_CLOSING_REPEAT) flag({ chapter: c.n, section: si, paragraph: pi, rule: "closing_repeat", sentence: stripMarks(last), detail: f });
     });
   }
   out.push(...lintCards(chapters, ctx));
   return out;
 }
 
-/** 카드 줄(F1·F2): 빠짐·꼴·길이·같은 필드끼리 겹침·문장 규칙. */
+/** 카드 줄(F1·F2, P6d D): 빠짐(살필 점 포함)·꼴·길이·같은 필드끼리 겹침(같은 천간 십성 key끼리는 더 엄격히)·문장 규칙. */
+export const SAME_TEN_GOD_JACCARD = 0.3;
 export function lintCards(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];
-  const seen: Record<CardField, string[]> = { image: [], todo: [], review: [], caution: [] };
+  const seen: Record<CardField, { v: string; tg?: string }[]> = { image: [], todo: [], review: [], caution: [] };
   for (const c of chapters) if (c.keys) c.sections.forEach((s, si) => {
     const period = ctx.periods?.[s.heading] ?? "current";
     const card: SectionCard = s.card ?? {};
-    const want: CardField[] = ["image", period === "past" ? "review" : "todo"];
+    const tg = ctx.cardTenGod?.[s.heading];
+    // 살필 점도 작가가 그 시기의 실제 십성·관계 조합으로 쓴다(P6d D): "없음"은 받지 않는다.
+    const want: CardField[] = ["image", period === "past" ? "review" : "todo", "caution"];
     const f = (field: CardField, rule: P6cRule, sentence: string) => out.push({ chapter: c.n, section: si, paragraph: -1, card: field, rule, sentence, hint: HINT[rule] });
     for (const field of want) if (!card[field]) f(field, "card_missing", "");
+    if (period === "past" && card.todo && !card.review) f("review", "card_form", card.todo);
     for (const field of ["image", "todo", "review", "caution"] as CardField[]) {
       const v = card[field]; if (!v) continue;
+      if (field === "todo" && period === "past") continue;
       const len = v.length;
       if (field === "image" ? len < 10 || len > 34 : len < 8 || len > 60) { f(field, "card_length", v); continue; }
       if (field === "review" && !/\?$/.test(v.trim())) { f(field, "card_form", v); continue; }
       if (field === "todo" && /\?$/.test(v.trim())) { f(field, "card_form", v); continue; }
       if (sentenceRules(v, c.n, ctx, true) || sentenceViolation(v, ctx.facts)) { f(field, "card_rule", v); continue; }
-      if (L.overlapping(seen[field], [v]).length) { f(field, "card_overlap", v); continue; }
-      seen[field].push(v);
+      if (L.overlapping(seen[field].map(x => x.v), [v]).length || (tg && L.overlapping(seen[field].filter(x => x.tg === tg).map(x => x.v), [v], SAME_TEN_GOD_JACCARD).length)) { f(field, "card_overlap", v); continue; }
+      seen[field].push({ v, ...(tg ? { tg } : {}) });
     }
   });
   return out;
 }
 
-/** 수리 뒤에도 걸리는 문장을 지운다. 지운 뒤 한 문장도 안 남은 문단은 뺀다(소제목에 문단이 하나뿐이면 남긴다). */
-export function enforce(chapters: readonly FinalChapter[], flags: readonly LintFlag[]): { chapters: FinalChapter[]; removed: number; droppedParagraphs: number } {
-  let removed = 0, droppedParagraphs = 0;
-  const by = new Map<string, LintFlag[]>();
-  for (const f of flags) { if (f.paragraph < 0 || f.card) continue; const k = `${f.chapter}.${f.section}.${f.paragraph}`; by.set(k, [...(by.get(k) ?? []), f]); }
+/**
+ * 수리 뒤에도 걸리는 문단(P6d B, 사용자 결정): 사실·금지 규칙(HARD_RULES)에 걸린 문단은 문단째 뺀다. 문장 하나만 지우면 조각 문장이 남는다.
+ * 문체·반복 규칙(db_copy·scene_repeat 등)은 문단을 그대로 두고 기록만 한다. 문단이 다 빠진 소제목은 뺀다(반복 장 key는 비워 두고 부르는 쪽이 채운다).
+ */
+export function enforce(chapters: readonly FinalChapter[], flags: readonly LintFlag[]): { chapters: FinalChapter[]; removed: number; droppedParagraphs: number; emptyKeys: readonly { chapter: number; key: string }[] } {
+  let droppedParagraphs = 0;
+  const bad = new Set(flags.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => `${f.chapter}.${f.section}.${f.paragraph}`));
+  const emptyKeys: { chapter: number; key: string }[] = [];
   const out = chapters.map(c => ({ ...c, sections: c.sections.map((s, si) => {
-    const ps = s.paragraphs.map((p, pi) => {
-      const fs = by.get(`${c.n}.${si}.${pi}`); if (!fs) return p;
-      const bad = new Set(fs.map(f => f.sentence));
-      const kept = splitSentences(p).filter(x => !bad.has(stripMarks(x)));
-      removed += splitSentences(p).length - kept.length;
-      return kept.join(" ");
-    });
-    const nonEmpty = ps.filter(p => splitSentences(p).length >= 1);
-    droppedParagraphs += ps.length - nonEmpty.length;
-    return { ...s, paragraphs: nonEmpty.length ? nonEmpty : ps.filter(Boolean).slice(0, 1) };
-  }).filter(s => s.paragraphs.length) }));
-  return { chapters: out.map(c => ({ ...c, chars: c.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) })), removed, droppedParagraphs };
+    const ps = s.paragraphs.filter((_, pi) => !bad.has(`${c.n}.${si}.${pi}`));
+    droppedParagraphs += s.paragraphs.length - ps.length;
+    if (!ps.length && c.keys?.includes(s.heading)) emptyKeys.push({ chapter: c.n, key: s.heading });
+    return { ...s, paragraphs: ps };
+  }).filter(s => s.paragraphs.length || c.keys?.includes(s.heading)) }));
+  return { chapters: out.map(c => ({ ...c, chars: c.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) })), removed: 0, droppedParagraphs, emptyKeys };
 }
 
 /** 같은 소제목 수(이전·이후)를 맞춰 볼 때 쓰는 키. */

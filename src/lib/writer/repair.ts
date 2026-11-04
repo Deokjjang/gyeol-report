@@ -14,6 +14,13 @@ export const REPAIR_SYSTEM = `너는 결리포트 원고의 교정 작가다. [�
 - "명리학에서" 금지. 그림 별명·농사 비유 금지. 브리프의 사실(facts)과 어긋나지 않게.
 - 출력: 항목마다 "[P번호] 고친 글". 앞뒤 설명 없이.`;
 
+/** 안전망 문장 규칙의 쉬운 이름(수리 지시용). */
+const SAFETY_DETAIL: Readonly<Record<string, string>> = {
+  date_event: "날짜·사건 확정", love_timing: "인연·결혼 시기", fact_spouse: "입력에 없는 배우자", fact_partner: "입력에 없는 연인", fact_children: "입력에 없는 자녀", fact_job: "입력과 다른 직업 형태",
+  hour_pillar: "시간 미상인데 시주·자녀 자리", mbti_absent: "MBTI 없음인데 MBTI", internal_term: "내부 용어", internal_label: "내부 라벨·지침 말", family_member: "입력에 없는 가족 구성원",
+  old_negative: "옛 부정 낱말", source_mention: "출처 언급", self_deflating: "스스로 김빼는 말", breakup_advice: "이별 권유", compat_judgement: "한쪽 평가", band_mismatch: "궁합 구간과 다른 말", score_mismatch: "점수와 다른 숫자",
+  experience_assert: "입력에 없는 경험 단정 → 질문형·경향형",
+};
 type Target = { readonly key: string; readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly flags: LintFlag[] };
 const CARD_LABEL: Readonly<Record<CardField, string>> = { image: "그림", todo: "해 볼 것", review: "돌아보기", caution: "살필 점" };
 
@@ -24,6 +31,9 @@ function factsOf(brief: Brief): Record<string, unknown> {
     person: { facts: brief.person.facts, forbiddenFacts: brief.person.forbiddenFacts, lifeStage: (brief.person as { lifeStage?: string }).lifeStage },
     yinYang: `${c.yinYang.yin}:${c.yinYang.yang}`, elementsPresence: c.elements.presence, currentDayun: c.currentDayun && { years: c.currentDayun.years, phase: c.currentDayun.phase },
     stars: c.stars ? { spouse: c.stars.spouse.line, child: c.stars.child.line } : undefined, coreImage: brief.compatibility?.pairImage.line ?? c.coreImage.line,
+    // P6d: 묶음 세기(만세력 가중값 단계)·기준 날짜(시점 말 대신)·궁합 두 사람 값.
+    groups: c.groups?.line, ...(brief.partner?.chart.groups ? { partnerGroups: brief.partner.chart.groups.line } : {}), baseDate: brief.baseDate,
+    ...(brief.compatibility ? { pair: { a: { name: brief.compatibility.a.callName, lacking: brief.compatibility.a.lacking, excess: brief.compatibility.a.excess, mbti: brief.compatibility.a.mbti }, b: { name: brief.compatibility.b.callName, lacking: brief.compatibility.b.lacking, excess: brief.compatibility.b.excess, mbti: brief.compatibility.b.mbti }, dayRelations: brief.compatibility.dayRelations } } : {}),
   };
 }
 
@@ -51,11 +61,12 @@ export function repairPrompt(brief: Brief, chapters: readonly FinalChapter[], ta
   const items = targets.map((t, i) => {
     const ch = chapters.find(c => c.n === t.chapter)!, s = ch.sections[t.section];
     const where = t.card ? `${t.chapter}장 · ${s.heading}의 카드 줄 [${CARD_LABEL[t.card]}]` : t.paragraph < 0 ? `${t.chapter}장 「${ch.title}」의 소제목` : `${t.chapter}장 「${ch.title}」 · 소제목 「${s.heading}」 · 문단 ${t.paragraph + 1}`;
-    const entry = t.card ? brief.timeline?.entries.find(e => e.key === s.heading) : undefined;
-    const cardInfo = entry ? ` (이 시기: ${entry.tenGod.stem}·${entry.tenGod.branch}, 관계 ${entry.badges.map(b => b.label).join("·") || "없음"}, ${entry.period === "past" ? "지난 기간 → 질문형" : "지금·앞으로 → 명령형"})` : "";
+    const entry = brief.timeline?.entries.find(e => e.key === s.heading);
+    const cardInfo = entry ? ` (이 시기: ${entry.tenGod.stem}·${entry.tenGod.branch}, 관계 ${entry.badges.map(b => b.label).join("·") || "없음"}, ${entry.period === "past" ? "발행일 전 → 질문형" : "앞으로 → 명령형"})` : "";
     const orig = originalOf(t, chapters); chars += orig.length;
-    const problems = t.flags.map((f, j) => `(${j + 1}) ${f.hint}${f.sentence ? ` — 걸린 부분: "${f.sentence.slice(0, 120)}"` : ""}`).join("\n");
-    return `[P${i + 1}] ${where}${cardInfo}\n문제:\n${problems}\n원문: ${orig || "(없음 — 새로 한 줄)"}`;
+    const problems = t.flags.map((f, j) => `(${j + 1}) ${f.hint}${f.detail ? ` [${SAFETY_DETAIL[f.detail] ?? f.detail}]` : ""}${f.sentence ? ` — 걸린 부분: "${f.sentence.slice(0, 120)}"` : ""}`).join("\n");
+    const yi = entry?.dayun?.position ? ` 대운 위치: ${entry.dayun.position}` : "";
+    return `[P${i + 1}] ${where}${t.card ? cardInfo : yi}\n문제:\n${problems}\n원문: ${orig || "(없음 — 새로 한 줄)"}`;
   });
   const user = `facts:\n\`\`\`json\n${JSON.stringify(factsOf(brief))}\n\`\`\`\n\n[항목]\n${items.join("\n\n")}\n\n항목마다 "[P번호] 고친 글"로 돌려주세요.`;
   return { system: REPAIR_SYSTEM, user, chars };

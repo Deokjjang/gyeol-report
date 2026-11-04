@@ -29,7 +29,7 @@ export const BOOK_EDITION = { number: 5, label: "제5판", revisedAt: "2026-11-0
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
-export type V5TimelineCard = Omit<TimelineEntry, "material"> & { readonly caution?: string | null; readonly age?: number };
+export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number };
 export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean };
 export type V5Chapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly keys?: readonly string[] };
 export type V5BookDraft = {
@@ -150,9 +150,11 @@ const lastSentence = (sections: readonly BookSection[]) => splitSentences(sectio
 function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>["tenGodNotes"], birthYear: number, writer?: SectionCard, bad: ReadonlySet<string> = new Set()): V5TimelineCard {
   const c: Partial<TimelineEntry> = { ...card }; delete c.material;
   const fromWriter = (f: keyof SectionCard) => (writer && writer[f] !== undefined && !bad.has(f) ? writer[f] : undefined);
-  const caution = fromWriter("caution") !== undefined ? fromWriter("caution") ?? null : card.kind === "year" ? notes[card.tenGod.stem]?.caution || null : null;
+  // 살필 점(P6d D): 작가 줄(검사 통과분) → 그 해·달 조합의 결정론 줄(card.caution, 앞 항목과 다른 문장). 십성 뜻 문장 하나로 같은 십성 해마다 같은 줄이 가던 것(2023=2033)을 막는다.
+  void notes;
+  const caution = fromWriter("caution") ?? card.caution ?? null;
   const past = card.period === "past";
-  return { ...(c as Omit<TimelineEntry, "material">), imageLine: fromWriter("image") ?? card.imageLine,
+  return { ...(c as Omit<TimelineEntry, "material" | "caution">), imageLine: fromWriter("image") ?? card.imageLine,
     ...(past ? { review: fromWriter("review") ?? card.review } : { todo: fromWriter("todo") ?? card.todo }),
     caution, ...(card.kind === "year" ? { age: manAge(Number(card.key), birthYear) } : {}) };
 }

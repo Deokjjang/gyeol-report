@@ -17,6 +17,7 @@ import { splitSentences } from "@/lib/writer/safety/patterns";
 import { periodDomains } from "./productEvidence";
 import type { Rng } from "./seed";
 import type { TimelineEntry, Trait } from "./schema";
+import { getTenGod } from "@/lib/saju/tenGods";
 
 const STRENGTH_MAP = { VERY_WEAK: "WEAK", WEAK: "WEAK", BALANCED: "BALANCED", STRONG: "STRONG", VERY_STRONG: "STRONG" } as const;
 const NATAL: readonly string[] = ["year", "month", "day", "hour"];
@@ -202,8 +203,12 @@ export function buildYearEntries(ctx: TimelineCtx, thisYear: number, cycles: rea
     const pillar = getAnnualPillar(year);
     const cyc = cycles.find(c => c.startYear <= year && year <= c.endYear);
     const transition = Boolean(cyc && cyc.startYear === year);
+    // 대운 안 몇 번째 해(P6d C): 엔진 연차 그대로. 위치 말(앞쪽·중간·끝 무렵·마지막 해)은 이 값으로만.
+    const yi = cyc ? year - cyc.startYear + 1 : 0, total = cyc ? cyc.endYear - cyc.startYear + 1 : 0;
+    const dyTg = cyc ? tenGodLabel(getTenGod(ctx.saju.dayMaster, cyc.stem)) : "";
     const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (올해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
-      { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
+      { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition, yearIndex: yi, total, position: dayunPositionLine(cyc.startYear, cyc.endYear, yi, total), tenGod: dyTg } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
+    e.head = headLine(e, cyc ? { ganji: `${ganjiOf(cyc).hangul}(${ganjiOf(cyc).hanja})`, tenGod: dyTg } : undefined);
     out.push({ ...e, ...changeOf(out.at(-1), "해", e.tenGod.stem, e.flow.score) });
   }
   return out;
@@ -222,9 +227,27 @@ export function buildMonthEntries(ctx: TimelineCtx, year: number, baseDate?: str
     // 달 이름(P6c E5): "N번째 달 · 간지월 (절입일~)". 본문은 "경인월"처럼 부른다. "N월 무렵"(달력 달)과 "(이번 달)"은 쓰지 않는다(지금 달 강조는 화면이 읽는 날로).
     const e = buildEntry(ctx, "month", `${year}-M${String(m.index).padStart(2, "0")}`, `${m.index}번째 달 · ${ganjiOf(m.pillar).hangul}월 (${date}~)`, m.pillar, "monthly", start + m.index,
       when ? { when } : {});
+    e.head = headLine(e);
     out.push({ ...e, ...changeOf(out.at(-1), "달", e.tenGod.stem, e.flow.score) });
   });
   return out;
+}
+
+/** 대운 안 위치 한 줄(P6d C): "2022~2031 대운 10년 가운데 10번째 해(마지막 해)". */
+export function dayunPositionLine(startYear: number, endYear: number, index: number, total: number): string {
+  const where = index === 1 ? "첫해" : index === total ? "마지막 해" : index <= 3 ? "앞쪽" : index <= 7 ? "중간" : "끝 무렵";
+  return `${startYear}~${endYear} 대운 ${total}년 가운데 ${index}번째 해(${where}${index < total ? `, 뒤로 ${total - index}해 남음` : ""})`;
+}
+
+/**
+ * 머리 문장(P6d D): 결정론 형식. 해 = "2028년 무신(戊申)은 상관(傷官)이 하늘에, 정재(正財)가 땅에 들어오는 해예요."
+ * 달 = "경인월(庚寅月)은 …이 하늘에, …이 땅에 들어오는 달이에요." 대운 전환 해는 새 대운 이름과 십성을 잇는다.
+ */
+export function headLine(e: Pick<TimelineEntry, "kind" | "key" | "ganji" | "tenGod" | "dayun">, cycle?: { ganji: string; tenGod: string }): string {
+  const sky = `${josa(e.tenGod.stem, "이가")} 하늘에, ${josa(e.tenGod.branch, "이가")} 땅에 들어오는`;
+  if (e.kind === "month") return `${e.ganji.hangul}월(${e.ganji.hanja}月)은 ${sky} 달이에요.`;
+  const base = `${e.key}년 ${josa(`${e.ganji.hangul}(${e.ganji.hanja})`, "은는")} ${sky} 해예요.`;
+  return e.dayun?.transition && cycle ? `${base} 이 해부터 ${cycle.ganji} 대운이 시작되고, 10년의 중심 기운은 ${cycle.tenGod}${josa(cycle.tenGod, "이가").endsWith("이") ? "이에요" : "예요"}.` : base;
 }
 
 export function cycleSummary(cycles: readonly CustomerDayunCycle[], from: number, to: number, thisYear: number, getTenGodFn: (s: Pillar["stem"]) => TenGod) {

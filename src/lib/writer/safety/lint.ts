@@ -136,6 +136,9 @@ export const ELEMENT_WORDS: Readonly<Record<"WOOD" | "FIRE" | "EARTH" | "METAL" 
 };
 export type ElementPresence = Readonly<Record<keyof typeof ELEMENT_WORDS, { readonly surface: number; readonly hidden: boolean }>>;
 const ABSENT_TAIL = "(이|가|은|는)? (전혀 |하나도 |아예 |거의 )?없(어요|습니다|는|고|다|으니|어서|죠|지만|이|는데|음)";
+/** P6d C: 오행 이름과 "없다" 사이에 자리 말("원국에·사주에·내 안에")이 끼거나 한자로 쓴 꼴("金이 없어서"). */
+const ABSENT_PLACE = "(이|가|은|는)? (원국에|사주에|타고난 자리에|여덟 글자에|내 안에|당신 안에|당신에게|안에)(는|도)? (전혀 |하나도 |아예 |거의 )?없(어요|습니다|는|고|다|으니|어서|죠|지만|이|는데|음|어|으면)";
+const HANJA_EL: Readonly<Record<string, string>> = { WOOD: "木", FIRE: "火", EARTH: "土", METAL: "金", WATER: "水" };
 const QUALIFIED = /겉(으로|에|에서)?(는|도|만)?|드러난|땅속|지장간|숨은|숨어|속에 (조금|살짝)/;
 /** B2: 겉 글자 0 · 지장간에 있음인데 "없다"로 단정한 오행(겉·땅속 한정어가 있으면 허용). 겉에 있는데 "없다"도 잡는다. */
 export function elementAbsenceClaims(sentence: string, presence: ElementPresence): string[] {
@@ -143,7 +146,8 @@ export function elementAbsenceClaims(sentence: string, presence: ElementPresence
   const out: string[] = [];
   for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
     const p = presence[e]; if (!p || (p.surface === 0 && !p.hidden)) continue;
-    const re = new RegExp(`(?<![가-힣])(${w.native}(\\(${w.reading}\\))?( ?기운| ?글자| ?기둥)?|${w.reading} ?(기운|글자))${ABSENT_TAIL}`);
+    const name = `(?<![가-힣])(${w.native}(\\(${w.reading}\\))?( ?기운| ?글자| ?기둥)?|${w.reading} ?(기운|글자)|${w.reading}\\(${HANJA_EL[e]}\\)( ?기운)?)|${HANJA_EL[e]}( ?기운)?`;
+    const re = new RegExp(`(${name})(${ABSENT_TAIL}|${ABSENT_PLACE})`);
     if (re.test(sentence)) out.push(e);
   }
   return out;

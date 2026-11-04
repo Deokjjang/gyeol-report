@@ -36,7 +36,9 @@ describe("P6b 카드 필드(E-2·E-3·E-4·E-5)", () => {
   });
   it("세운 달 카드는 해→달, 지난 달은 돌아보기", () => {
     const annual = book("annual_fortune", PEOPLE.c1).draft.timeline!.cards.filter(c => c.kind === "month");
-    for (const c of annual) { expect(c.imageLine, c.key).toMatch(/ 달$/); expect(c.caution).toBeNull(); }
+    // P6d D: 달 카드도 살필 점이 있다(그 달의 관계·십성 조합, 앞 달과 다른 문장).
+    for (const c of annual) { expect(c.imageLine, c.key).toMatch(/ 달$/); expect(c.caution === null || typeof c.caution === "string").toBe(true); }
+    const cs = annual.map(c => c.caution).filter(Boolean); expect(new Set(cs).size).toBe(cs.length);
     expect(annual.filter(c => c.period === "past").every(c => c.review)).toBe(true);
   });
 });

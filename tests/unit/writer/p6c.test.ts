@@ -181,8 +181,9 @@ describe("P6c F·G·H 카드·표지·강조", () => {
   it("F1·F2 카드 검사: 빠짐·꼴(지난 기간은 질문형)·같은 필드끼리 겹침", () => {
     const keyed = (cards: object[]) => [fin(4, cards.map((c, i) => ({ heading: `20${23 + i}`, paragraphs: ["본문"], card: c })), { keys: cards.map((_, i) => `20${23 + i}`) })];
     const periods = { 2023: "past", 2024: "current", 2025: "future" } as const;
-    const flags = lintCards(keyed([{ image: "지난 계절의 창고를 정리하는 해", review: "그때 무엇을 정리했나요" }, { image: "새 노트 첫 장에 계획을 적는 해", todo: "계획 한 줄을 적어 두세요" }, { image: "새 노트 첫 장에 계획을 적는 해!", todo: "운동 일정을 먼저 잡아 두세요" }]), ctx0({ periods }));
-    expect(flags.map(f => `${f.section}:${f.card}:${f.rule}`).sort()).toEqual(["0:review:card_form", "2:image:card_overlap"]);
+    // P6d D: 살필 점도 작가가 key마다 쓴다(빠지면 card_missing).
+    const flags = lintCards(keyed([{ image: "지난 계절의 창고를 정리하는 해", review: "그때 무엇을 정리했나요", caution: "정리한 것을 다시 쌓지 않게 살피기" }, { image: "새 노트 첫 장에 계획을 적는 해", todo: "계획 한 줄을 적어 두세요", caution: "계획만 세우고 시작을 미루지 않기" }, { image: "새 노트 첫 장에 계획을 적는 해!", todo: "운동 일정을 먼저 잡아 두세요" }]), ctx0({ periods }));
+    expect(flags.map(f => `${f.section}:${f.card}:${f.rule}`).sort()).toEqual(["0:review:card_form", "2:caution:card_missing", "2:image:card_overlap"]);
   });
   it("G 표지 한 줄: 16~26자·설명문·명리학에서·입력에 없는 연차 금지, 어기면 핵심 이미지", () => {
     const b = brief("saju_mbti_full", ME);
@@ -207,7 +208,7 @@ describe("P6c F·G·H 카드·표지·강조", () => {
 });
 
 describe("P6c A5 수리 패스 · I 안전망", () => {
-  it("수리 응답 [P번호]를 걸린 자리에 넣고, 그래도 걸리면 지운다", () => {
+  it("수리 응답 [P번호]를 걸린 자리에 넣고, 그래도 사실 규칙에 걸리면 문단째 뺀다(P6d B: 문장 삭제 없음)", () => {
     const book = [fin(1, [{ heading: "흙은 많고 물은 없는 사주", paragraphs: ["좋은 문장이에요. 그 말에 진로를 튼 친구도 있고요."] }])];
     const flags = lintBook(book, ctx0({ presence: { WOOD: { surface: 2, hidden: true }, FIRE: { surface: 0, hidden: true }, EARTH: { surface: 4, hidden: true }, METAL: { surface: 2, hidden: true }, WATER: { surface: 0, hidden: true } } }));
     expect(flags.map(f => `${f.paragraph}:${f.rule}`)).toEqual(["-1:element_claim", "0:past_assertion"]);
@@ -217,8 +218,9 @@ describe("P6c A5 수리 패스 · I 안전망", () => {
     expect(applied).toBe(2);
     expect(chapters[0].sections[0].heading).toBe("흙은 많고 물은 땅속에만 있는 사주");
     expect(lintBook(chapters, ctx0())).toEqual([]);
-    const e = enforce(book, flags);
-    expect(e.chapters[0].sections[0].paragraphs).toEqual(["좋은 문장이에요."]); expect(e.removed).toBe(1);
+    const book2 = [fin(1, [{ heading: "h", paragraphs: ["좋은 문장이에요. 그 말에 진로를 튼 친구도 있고요.", "다른 문단은 그대로예요."] }])];
+    const e = enforce(book2, lintBook(book2, ctx0()));
+    expect(e.chapters[0].sections[0].paragraphs).toEqual(["다른 문단은 그대로예요."]); expect(e.removed).toBe(0); expect(e.droppedParagraphs).toBe(1);
   });
   it("I 안전망 문장: 명리학에서·따옴표 인용·안내 문장 없이, 장 질문은 존댓말", () => {
     for (const [product, person] of [["saju_mbti_full", PEOPLE.c1], ["career_money_study", PEOPLE.c1], ["annual_fortune", PEOPLE.c2], ["saju_mbti_compatibility", PEOPLE.c1]] as const) {
