@@ -130,7 +130,8 @@ describe("P6e B·C 요청·품질 11~21", () => {
     expect(v5EditionLabel({ edition: { number: 6, label: "제6판", revisedAt: "2026-11-04" }, baseDate: "2026-11-04" } as V5BookDraft)).toBe("제6판 · 2026년 11월 4일 기준");
   });
   it("11 책 첫 쪽 만세력 칸의 '내 사주의 다른 기운 보기' 링크 없음(부록 쪽은 그대로)", () => {
-    const src = readFileSync(join(ROOT, "src/app/dev/book-preview/BookReader.tsx"), "utf8");
+    // 주석은 빼고 본다(최종판 1-17 커밋이 주석에 옛 문구를 남겼다).
+    const src = readFileSync(join(ROOT, "src/app/dev/book-preview/BookReader.tsx"), "utf8").replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/.*$/gm, "");
     expect(src).not.toMatch(/다른 기운들? 보기/);
     expect(src).toMatch(/page\.kind === "appendix"/);
   });
