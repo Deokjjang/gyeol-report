@@ -76,9 +76,15 @@ API: Anthropic **$1.0333 / 상한 $1.3**(10호출: 작가 5 · 수리 5), OpenAI
 | 대운 카드 살필 점 2023=2033 | D 조합 대체 줄 | 브리프 시험(앞 항목과 다른 문장) · card_overlap(같은 십성 0.3) |
 | 장덕민 "원국에 없어서"·"이런 변화가 있을 거예요." | C·B | element_claim · empty_preview(+ count_mismatch "이 세 가지") |
 
-## 검증
+## 검증 (J, 실행한 명령과 수치)
 
-(J 결과는 아래 「J 실행 기록」에 명령과 수치로 적는다.)
+- `pnpm exec tsc --noEmit` → 0. `pnpm lint`(eslint 전체) → 0.
+- `pnpm exec tsx scripts/knowledge-lint.ts --strict` → issues 0 · warnings 0. `pnpm exec tsx tools/p6d/deep-check.ts src/data/knowledge-v5/deep/*.json src/data/knowledge-v5/mbti-seeds/*.json` → OK 3,862줄.
+- 단위: `pnpm exec vitest run tests/unit/writer tests/unit/brief tests/unit/saju tests/unit/knowledge-v5` → 50파일 통과, P6d 회귀 `tests/unit/writer/p6d.test.ts` 24개 통과.
+- 전체 시험: 기준(origin/v5/main 638254e3, worktree v5-p6c-content) 31,223개 중 실패 831(159파일) / 이 브랜치 31,247개 중 실패 820(157파일). 이 브랜치 전체 실행에만 나온 실패 5건(knowledgeBinder 1·knowledgeSourceVerification 2·publicationSafety 2)은 파일 단독 실행에서 기준도 **똑같이** 실패한다(실행 순서·환경). 기준 전체 실행에만 나온 실패 16건도 같은 종류. **신규 실패 0**.
+- 병합: v5/main fast-forward 638254e3 → 4c5bb501, push. 뒤이어 캡처·보고 커밋을 같은 방식으로 병합.
+- 화면(390px, `docs/v5/ui-p6d/`, 도구 `tools/p6d/capture.mjs`, 서버 = `scripts/read-latest.sh`로 띄운 v5/main 4c5bb501): 궁합 점수 쪽 v2.1 `score-business`(78 = 40 + 일곱 항목 38), 세운 달 카드 `annual-table`·`annual-detail`("5번째 달 · 갑오월 · 6/6~7/7", 지난 달 돌아보기·살필 점), 대운 카드 `major-table`·`major-detail`(2023~2025 돌아보기, 2026~ 해 볼 것, 14해 모두 살필 점), 새 책 1장 `sodam-chapter1`·`career-chapter1`·`love-chapter1`(기준 날짜 줄). → PASS.
+- `scripts/read-latest.sh`: 모든 dev 서버 종료(다른 세션의 dev 서버도 멈춘다 — 지시대로) → `~/Developer/gyeol-worktrees/v5-read`(detached = origin/v5/main) 갱신 → `pnpm install --frozen-lockfile` → `pnpm dev:v5` → 포트 출력. 첫 실행은 서버는 떴지만 스크립트가 끝나지 않았다(서버 하위 셸이 부르는 쪽 파이프를 붙잡음) → 하위 셸 출력 전체를 로그로·`exec`·`disown`으로 고치고, 같은 꼴을 가짜 장기 프로세스로 확인(파이프 0초 반환, 프로세스 유지). 고친 스크립트로 다시 띄우는 실행은 다른 세션의 3300 서버를 멈추게 돼 하지 않았다(UNVERIFIED: 실제 서버로 끝까지 반환).
 
 ## 남은 것
 

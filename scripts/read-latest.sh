@@ -32,7 +32,9 @@ echo "3) 설치"
 
 echo "4) 실행"
 while lsof -nP -iTCP:"$PORT" -sTCP:LISTEN >/dev/null 2>&1; do PORT=$((PORT + 1)); done
-(cd "$READ_DIR" && PORT="$PORT" nohup pnpm dev:v5 >"$LOG" 2>&1 &)
+# 서버는 이 스크립트와 떨어져 돈다: 모든 출력은 로그로(부르는 쪽 파이프를 붙잡지 않게), 끝나도 남는다.
+( cd "$READ_DIR" && exec env PORT="$PORT" nohup pnpm dev:v5 ) >"$LOG" 2>&1 </dev/null &
+disown 2>/dev/null || true
 for _ in $(seq 1 180); do
   if curl -s -o /dev/null --max-time 2 "http://localhost:$PORT/"; then
     echo "읽기 서버: http://localhost:$PORT  (v5/main $(git -C "$READ_DIR" rev-parse --short HEAD), 로그 $LOG)"

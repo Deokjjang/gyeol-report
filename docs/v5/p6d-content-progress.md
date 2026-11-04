@@ -27,7 +27,7 @@
 | G 커리어·연애 재설계 | 완료 | 설계기 `brief/design/{career,love}.ts`, 서술 9장씩(product-narratives), 상태별 절 질문·근거, 필수 근거 표(브리프 시험 + evidence_missing 검사), 새 지식 DB 8주제(deep/*, 1,242줄, `tools/p6d/deep-check.ts` OK), 투자 안내 1회·invest_directive |
 | H 지난 판독 문장 회귀 | 완료 | `tests/unit/writer/p6d.test.ts`(저장된 P6c 7권을 새 검사로: 8개 사례 모두 걸림) |
 | I 생성 4권 | 완료 | r1 4권($0.7983) + 커리어 r2($0.2350) = $1.0333 / $1.3. 최종 = r1 종합·연애·궁합 + r2 커리어(`docs/v5/trial/p6d/final`), 결정론 장 0, 분량 89~106% |
-| J 검증·보고·병합 | 대기 | 기준선 전체 시험: v5-p6c-content(= origin/v5/main 638254e3) 31,223개 중 실패 831(159파일) |
+| J 검증·보고·병합 | 완료 | tsc 0 · eslint 0 · 전체 시험 기준 831 → 이 브랜치 820(신규 0) · v5/main 병합·push · 390px 캡처 8장 · `scripts/read-latest.sh` |
 
 ## I 회차
 
