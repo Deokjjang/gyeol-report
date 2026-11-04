@@ -109,7 +109,9 @@ async function main() {
       const n = next.chapters.find(x => x.n === c.n)!;
       if (![...keys].some(k => k.startsWith(`${c.n}.`))) return c;
       if (n.sections.length !== c.sections.length) throw new Error(`${c.n}장 소제목 수가 다르다(${c.sections.length} → ${n.sections.length}) — 이어 붙이지 않는다`);
-      return { ...c, sections: c.sections.map((x, i) => keys.has(`${c.n}.${i}`) ? n.sections[i] : x) };
+      // 한자 표기는 장마다 첫 등장 한 번(최종판 1-6): 이어 붙인 소제목과 원래 소제목에 같은 용어 표기가 겹치면 뒤의 것을 뺀다.
+      const seen = new Set<string>(), once = (t: string) => t.replace(/([가-힣]+)\(([一-龥]+)\)/g, (all, ko: string, hz: string) => { const key = `${ko}|${hz}`; if (seen.has(key)) return ko; seen.add(key); return all; });
+      return { ...c, sections: c.sections.map((x, i) => keys.has(`${c.n}.${i}`) ? n.sections[i] : x).map(x => ({ ...x, heading: x.heading, paragraphs: x.paragraphs.map(once) })) };
     });
     const known = new Set((meta.raw ?? []).map(e => e.key)), added = (built.meta.raw ?? []).filter(e => !known.has(e.key) && e.kind !== "first");
     finalSnap = { ...snap, draft: { ...snap.draft, chapters }, evidencePacket: { ...snap.evidencePacket, meta: { ...meta, raw: [...(meta.raw ?? []), ...added],
