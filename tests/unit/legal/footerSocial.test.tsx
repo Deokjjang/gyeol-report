@@ -1,6 +1,6 @@
 /**
- * P6e-ops 9: 푸터 X·스레드 아이콘. 주소는 src/lib/legal/socialLinks.ts 상수이고, 비어 있으면(기본) 아이콘을 그리지 않는다.
- * 아이콘은 공식 로고 모양(단색 SVG). 관리자 화면에는 두 푸터 모두 붙지 않는다.
+ * P6e-ops 9 + v5 최종 2-2: 푸터 X·스레드 아이콘. 주소는 src/lib/legal/socialLinks.ts 상수(x.com/gyeolreport · threads.com/@gyeolreport)이고,
+ * 비어 있으면 아이콘을 그리지 않는다. 아이콘은 공식 로고 모양(단색 SVG). 관리자 화면에는 두 푸터 모두 붙지 않는다.
  */
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -16,7 +16,13 @@ async function withLinks(links: { instagram: string; x: string; threads: string 
 }
 
 describe("푸터 소셜 아이콘", () => {
-  it("기본값(주소 비어 있음)이면 X·스레드 아이콘을 숨긴다", async () => {
+  it("운영 주소: X https://x.com/gyeolreport, 스레드 https://www.threads.com/@gyeolreport", async () => {
+    const { SOCIAL_LINKS, safeSocialUrl } = await import("../../../src/lib/legal/socialLinks");
+    expect(SOCIAL_LINKS).toMatchObject({ x: "https://x.com/gyeolreport", threads: "https://www.threads.com/@gyeolreport" });
+    expect(safeSocialUrl(SOCIAL_LINKS.x)).toBe("https://x.com/gyeolreport");
+    expect(safeSocialUrl(SOCIAL_LINKS.threads)).toBe("https://www.threads.com/@gyeolreport");
+  });
+  it("주소가 비어 있으면 X·스레드 아이콘을 숨긴다", async () => {
     const Icons = await withLinks({ instagram: "https://www.instagram.com/gyeolreport/", x: "", threads: "" });
     expect(renderToStaticMarkup(<Icons />)).toBe("");
   });
@@ -42,5 +48,18 @@ describe("푸터 소셜 아이콘", () => {
     route.pathname = "/account";
     const html = renderToStaticMarkup(<BookFooter />);
     expect(html).toContain("<footer"); expect(html).not.toContain("채널 보기"); expect(html).toContain("카카오톡 고객 문의");
+  });
+  it("Book 푸터 순서는 인스타그램·카카오톡·X·스레드, 아이콘 크기 같음(20px), 새 탭·noopener", async () => {
+    const { BookFooter } = await import("../../../src/components/book/BookLegalRoutes");
+    route.pathname = "/";
+    const html = renderToStaticMarkup(<BookFooter />);
+    const order = ["Instagram", "카카오톡 고객 문의", "결리포트 X", "결리포트 스레드"].map(label => html.indexOf(`aria-label="${label}"`));
+    expect(order.every(i => i >= 0)).toBe(true);
+    expect([...order].sort((a, b) => a - b)).toEqual(order);
+    const nav = html.slice(html.indexOf('aria-label="소셜과 고객 문의"'), html.indexOf("</nav>"));
+    expect(nav.match(/target="_blank" rel="noopener noreferrer"/g)).toHaveLength(4);
+    expect(nav.match(/<svg[^>]*width="20" height="20"/g)).toHaveLength(3);
+    // '광고 설정'은 Meta 픽셀이 켜졌다는 서버 신호(ready)가 오기 전에는 그리지 않는다(⑨ 동작 그대로).
+    expect(html).not.toContain("광고 설정");
   });
 });

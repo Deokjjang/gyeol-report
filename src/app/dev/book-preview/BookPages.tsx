@@ -119,8 +119,8 @@ export function PreviewFooter({ publicPresentation = false }: { publicPresentati
   const [legal, setLegal] = useState(false);
   return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.micro}>GYEOL REPORT<br />PERSONAL PUBLISHING</span><nav aria-label="소셜과 고객 문의">
     <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
-    <SocialIconLinks />
     <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
+    <SocialIconLinks />
     </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
     <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>

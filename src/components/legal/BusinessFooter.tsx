@@ -24,10 +24,10 @@ export default function BusinessFooter() {
             <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="결리포트 Instagram" className={iconLink}>
               <svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
             </a>
-            <SocialIconLinks className={iconLink} />
             <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의" className={iconLink}>
               <Image src="/brand/kakao-talk-share.svg" width={24} height={25} alt="" />
             </a>
+            <SocialIconLinks className={iconLink} size={21} />
             <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" className={`${styles.footerChat} rounded-full bg-[#6f1d35] px-4 py-3 text-sm font-semibold hover:bg-[#542032]`}>채팅하기</a>
           </div>
           <p className={styles.footerNote}>고객 문의는 카카오톡 채널 채팅으로 받고 있습니다.</p>
