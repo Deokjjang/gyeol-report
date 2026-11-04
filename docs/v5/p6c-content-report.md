@@ -125,7 +125,7 @@ API: Anthropic **$2.6004 / 상한 $3**(28호출: r1 14 · r2 12 · r3 2), OpenAI
 - `pnpm exec tsx scripts/knowledge-lint.ts --strict` → issues 0, warnings 0(재료 12,383/12,383).
 - `pnpm exec tsc --noEmit` → 0. `pnpm exec eslint <변경 TS 43파일>` → 0.
 - 단위: `pnpm exec vitest run tests/unit/writer tests/unit/brief tests/unit/knowledge-v5` → 17파일 237개 통과(마지막 수정 뒤 writer 142개 다시 통과).
-- 전체 시험: v5/main 422c02f1 worktree 31,199개 중 실패 832 / 이 브랜치 31,223개 중 실패 827. 이 브랜치에만 있는 실패 3개(`contentRebuild` 1·`actualCalculationSemanticBridge` 2, 둘 다 V4·report-knowledge이고 이 브랜치가 바꾸지 않은 영역)는 생성과 동시에 돌려 생긴 시간 초과였다. 두 파일만 다시 돌리면 브랜치·기준선 모두 같은 38개만 실패(그 3개는 통과) → **신규 실패 0**.
+- 전체 시험(최종 커밋): v5/main 422c02f1 worktree 31,199개 중 실패 832 / 이 브랜치 31,223개 중 실패 830. 이 브랜치 전체 실행에만 나온 실패 4개는 `contentRebuild`(30초 시간 초과, 실행마다 걸리는 사례가 다름) 2개와 `protected-staging/isolation`(모듈 그래프 49/692) 2개다. 두 파일만 따로 돌리면 브랜치와 v5/main이 **똑같이** 5개 실패한다(isolation 2개 포함) → 실행 환경·시간 탓이고 이 브랜치가 만든 실패는 0(**신규 실패 0**).
 - 실호출 7권(+재생성 1권): `P6C_ROUND=r1|r2|r3 pnpm exec vitest run --config tools/p6c/vitest.p6c.config.ts` → 지표 `pnpm exec tsx tools/p6c/baseline.ts --dir docs/v5/trial/p6c/final --out after.json`.
 
 ## 남은 것
