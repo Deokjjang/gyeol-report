@@ -32,7 +32,7 @@ import { avoidImagesFor } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
-import { CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
+import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
 import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
 
 export type BriefPersonInput = {
@@ -311,7 +311,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     : input.product === "career_money_study" ? (() => {
       const base = careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages });
       // 커리어 전용 설계기(P6d G): 장마다 정해진 근거·상태별 근거. 직무 3단·진로 다섯 갈래·돈 새는 곳은 base에서 재사용.
-      return { ...base, ...careerDesign({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, jobStatus: me.facts.jobStatus, detailJob: me.facts.detailJob, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base }) };
+      return { ...base, ...careerDesign({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, jobStatus: me.facts.jobStatus, detailJob: me.facts.detailJob, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base, shop: me.profile.scene?.shop, jobProps: matchJob(me.facts.detailJob)?.props }) };
     })()
     : input.product === "saju_mbti_full" ? familyDesign(me.saju, groupValues(me.saju)) : {};
 
@@ -361,7 +361,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 입력 직업이 없으면 '지금 일' 장은 원래 주제(장점이 부담이 되는 환경)로 둔다(P3.7 1-4).
   if (input.product === "career_money_study" && !me.facts.detailJob) for (const c of chapters) if (c.id === "current-fit") { c.title = "내 힘이 빛나는 일의 환경"; c.question = "내 힘은 어떤 일의 환경에서 가장 잘 쓰일까?"; }
   // 상태별 절 질문(P6d G): "{status:now}" → 입력 상태의 질문(미입력이면 단정하지 않는 질문).
-  const statusQ = input.product === "career_money_study" ? (key: string) => CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
+  const noShopBiz = careerStatusOf(me.facts.jobStatus) === "business" && me.profile.scene?.shop === false;
+  const statusQ = input.product === "career_money_study" ? (key: string) => (noShopBiz ? CAREER_BUSINESS_NOSHOP_Q[key] : undefined) ?? CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
     : input.product === "love_marriage_child" ? (key: string) => LOVE_STATUS_Q[key]?.[loveStatusOf(me.facts.relationshipStatus)] : null;
   if (statusQ) for (const c of chapters) for (const x of c.sections ?? []) { const m = x.q.match(/^\{status:(\w+)\}$/); if (m) x.q = statusQ(m[1]) ?? x.q; }
   // P6e 8: 연애 4장 제목은 상태에 따라(연애 중·기혼 = 표현과 대화의 리듬).

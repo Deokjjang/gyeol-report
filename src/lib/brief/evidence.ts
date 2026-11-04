@@ -6,7 +6,7 @@
 import { matchJob, type LifeStage } from "./props";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import type { CareerJob, MbtiProfile, SceneItem } from "@/data/knowledge-v5/schema";
-import { sceneFits, type FactProfile } from "./facts";
+import { sceneFits, shopLife, type FactProfile } from "./facts";
 import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";
 import type { ChartDetections, ChartPosition } from "@/lib/saju/detections/types";
 import { GROUP_STRONG, GROUP_WEAK, groupValues } from "@/lib/saju/groupStrength";
@@ -345,6 +345,7 @@ export const CLUSTER_ROLE: Readonly<Record<string, { desc: string; scene: string
   arts: { desc: "내 감각을 작품과 무대로 보여 주는", scene: "머릿속 장면을 소리나 그림으로 꺼내 남 앞에 내놓는 장면" },
   hospitality: { desc: "낯선 사람을 편하게 맞이하고 일정을 챙기는", scene: "처음 온 손님이 헤매지 않게 동선과 시간을 미리 짜 두는 장면" },
 };
+const BIZ_NOSHOP_ROLE = { desc: "내 이름을 걸고 서비스나 판을 직접 꾸리는", scene: "출시 날짜와 첫 고객까지 내 손으로 정해 문을 여는 장면" };
 
 function takeSpread(list: readonly Scored[], n: number, used: Set<string>, basisUse: Map<string, number>, min = 0, perCluster = 2): Scored[] {
   const out: Scored[] = [], per = new Map<string, number>();
@@ -452,6 +453,9 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   // 최종판 1-9: 구직·살림(상태 직업군)은 분야가 아니다 — 그 카탈로그 분야(경영지원·인사 등)를 목표·지금 분야로 두지 않는다(P6e r4 "1순위는 경영지원·인사 직군").
   const cluster = job && job.id !== "job-seeker" && job.id !== "homemaker" ? k.catalog.jobClusters[job.id] : undefined;
   const scored = scoreJobs({ k, traits, hitIds: opts.hitIds ?? new Set(traits.map(t => t.featureId)), scores, mbti, stage: opts.stage ?? "unknown" as LifeStage, cluster, detailJob });
+  // 최종판 1-15: 가게형이 아닌 사업자(IT 서비스 창업 등)에게 창업·자영업 직군을 가게 말(가게·메뉴·손님 동선)로 설명하지 않는다.
+  const noShopBiz = (jobStatus === "self_employed" || jobStatus === "business_owner") && Boolean(job) && !shopLife(job!.id, "business");
+  const roleOf = (id: string) => id === "biz" && noShopBiz ? BIZ_NOSHOP_ROLE : CLUSTER_ROLE[id];
   const used = new Set<string>(), basisUse = new Map<string, number>();
   // 인접 직무는 지금 일과 같은 분야에서(P6b D 커리어 3: ENTJ 서비스 기획자 → 전략기획·사업개발·PM 계열). 같은 분야가 모자라면 가까운 분야로.
   const adjacent = cluster ? takeSpread(scored.filter(x => x.adjacency === 1 && (!mbti || x.mbtiReason)), 4, used, basisUse, 0, 4) : [];
@@ -477,7 +481,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   // 묶음 세기는 만세력 가중값 단계 하나(chart.groups)로만 적는다(P6d A). 묶음 이름은 쉬운 이름(P6e 14).
   const levelOf = (g: string) => chart.groups?.levels[GROUP_NAME_BY_KEY[g] as keyof NonNullable<ChartBrief["groups"]>["levels"]] ?? "";
   const jobGroupLines = clusterRank.map(([id, l], i) => {
-    const r = CLUSTER_ROLE[id], name = k.catalog.clusters.find(c => c.id === id)?.name ?? id;
+    const r = roleOf(id), name = k.catalog.clusters.find(c => c.id === id)?.name ?? id;
     const why = l.slice(0, 5).find(x => x.mbtiReason && !groupReasons.has(x.mbtiReason))?.mbtiReason ?? l[0].mbtiReason;
     if (why) groupReasons.add(why);
     const feature = l.slice(0, 5).map(x => x.basis).find(b => !/^강한 /.test(b));
@@ -506,7 +510,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const lessMbti = fit && mbti ? (() => { const dims = groupDims(k, fit.groups[0] as keyof typeof GROUP_KO); const worst = Object.entries(dims).map(([d, v]) => ({ d, v, f: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => a.f - b.f)[0]; const dim = worst && worst.f < 0 && poleFits(mbti.type, worst.d, -worst.v) ? k.ontology.dimensions.find(o => o.id === worst.d) : undefined; return dim ? `${mbti.type}는 ${(worst.v > 0 ? dim.poles.minus : dim.poles.plus).description.replace(/입니다\.?$/, "")}` : undefined; })() : undefined;
   // 최종판 1-9: 구직·학생의 입력 직업은 "지금 자리"가 아니라 목표다. 목표 직무의 성격은 분야(직군 설명) 기준으로 쓰고, 목표를 부정하는 판정(덜 맞음)은 주지 않는다.
   const seeking = jobStatus === "job_seeker" || jobStatus === "unemployed" || jobStatus === "student";
-  const targetField = cluster && CLUSTER_ROLE[cluster] ? `${CLUSTER_ROLE[cluster].desc} ${k.catalog.clusters.find(c => c.id === cluster)?.name ?? cluster} 직군 — 일 장면: ${CLUSTER_ROLE[cluster].scene}` : null;
+  const targetField = cluster && CLUSTER_ROLE[cluster] ? `${roleOf(cluster).desc} ${k.catalog.clusters.find(c => c.id === cluster)?.name ?? cluster} 직군 — 일 장면: ${roleOf(cluster).scene}` : null;
   // 직업 소품은 목록이 아니라 장면 하나(P6: "하루는 A, B, C, D, E로 채워져요"가 그대로 나왔다). 같은 직업군이어도 고객마다 다르게.
   const prop = job ? job.props[[...detailJob].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7) % Math.min(5, job.props.length)] : undefined;
   return {

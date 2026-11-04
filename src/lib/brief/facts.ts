@@ -88,12 +88,15 @@ const SHOP_GROUPS = new Set(["self-employed", "cafe", "pastry", "chef", "store-s
 const CARE_GROUPS = new Set(["nurse", "doctor", "physio", "nursing-assistant", "vet", "dentist", "pharmacist", "counselor", "social-worker"]);
 /** 의뢰·외주·개인 프로젝트 장면이 맞는 직업군(창작·개발·글). */
 const FREELANCE_GROUPS = new Set(["developer", "data-ai", "ui-ux-designer", "graphic-designer", "illustrator-webtoon", "creator", "writer-editor", "music", "actor-model", "startup-founder"]);
+/** 최종판 1-15: 가게 장면(손님·단골·매장)이 맞는 생활인가 — 직군을 알면 가게형 직군만, 모르면 사업자 전부. */
+export const shopLife = (jobGroupId: string | null, job: JobFact): boolean => jobGroupId ? SHOP_GROUPS.has(jobGroupId) : job === "business";
 export function sceneCtxOf(a: { jobGroupId: string | null; job: JobFact; age: number; familyOk?: boolean; freelancer?: boolean }): SceneCtx {
   const office = a.jobGroupId ? OFFICE_GROUPS.has(a.jobGroupId) : a.job === "employed" || a.job === "business";
   const school = a.job !== "student" ? null : a.age < 20 || a.jobGroupId === "highschool-student" ? "minor" : "college";
   // P6e 16: 카페 사장에게 "작은 프로그램·보고서 서론·업무 지시", 물리치료사에게 "연차 눈치·보고서 수정본", 구직자에게 "팀에 나눠 주는"이 갔다.
+  // 최종판 1-15: 가게 장면은 입력 직업이 가게형 직군일 때만(직군을 모르면 사업자 전부). 「IT 서비스 창업」에게 「단골손님 발길 뜸한 주」·「위생 점검」이 갔다.
   return { office, school, familyOk: Boolean(a.familyOk),
-    code: a.jobGroupId ? CODE_GROUPS.has(a.jobGroupId) : false, team: a.job === "employed", shop: a.job === "business" || (a.jobGroupId ? SHOP_GROUPS.has(a.jobGroupId) : false), freelance: Boolean(a.freelancer) || (a.jobGroupId ? FREELANCE_GROUPS.has(a.jobGroupId) : false), care: a.jobGroupId ? CARE_GROUPS.has(a.jobGroupId) : false };
+    code: a.jobGroupId ? CODE_GROUPS.has(a.jobGroupId) : false, team: a.job === "employed", shop: shopLife(a.jobGroupId, a.job), freelance: Boolean(a.freelancer) || (a.jobGroupId ? FREELANCE_GROUPS.has(a.jobGroupId) : false), care: a.jobGroupId ? CARE_GROUPS.has(a.jobGroupId) : false };
 }
 
 /** 작가가 단정하면 안 되는 사실(입력에 없거나 반대인 것). */

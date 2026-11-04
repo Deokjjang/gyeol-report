@@ -199,4 +199,20 @@ describe("1-9·1-10·1-14·1-15", () => {
     const mbti = B.sodam.chapters.flatMap(c => (c.sections ?? []).flatMap(s => s.materials)).filter(m => m.kind === "mbti") as { scene: string; seedId?: string }[];
     expect(mbti.every(m => m.seedId)).toBe(true); // 공용 신호 장면(씨앗 id 없음)은 없다
   });
+  it("장면: 가게형이 아닌 사업자(IT 서비스 창업)에게 가게 씨앗·질문이 가지 않고 그 직업 소품을 쓴다(카페 사장은 그대로)", () => {
+    const career = (detailJob: string) => {
+      const c = P6D_CASES.find(x => x.id === "taeo-career")!, p = structuredClone(c.payload) as { userContext: Record<string, unknown> };
+      p.userContext = { ...p.userContext, jobStatus: "business_owner", detailJob };
+      const n = normalizeReportInputPayload(p as never, { now: () => new Date("2026-11-04T05:00:00Z") });
+      if (!n.ok) throw new Error(n.error);
+      return JSON.stringify(renderWriterBrief(buildBrief(payloadToBriefInput(n.value as never, "2026-11-04") as never, k), { knowledge: k }));
+    };
+    // 다른 직군 설명(예: 뷰티·패션 "손님 얼굴에 맞춰…")은 그 직업의 장면이라 뺀다 — 고객 자신의 분야 줄은 남긴다.
+    const startup = career("IT 서비스 창업(대표·개발)").replace(/"(?:\d순위 )?직군: [^"]*"/g, m => m.includes("지금 목표·직업 분야") ? m : "");
+    expect(startup).toMatch(/출시 날짜와 첫 고객까지/);
+    expect(startup).not.toMatch(/가게|단골|손님|매장|위생 점검|임대차|상권/);
+    expect(startup).toMatch(/내 사업은 운영형일까 확장형일까/);
+    expect(startup).toMatch(/상황 씨앗: (투자 유치 자료|출시 일정|월간 지표|팀원 채용|고객 인터뷰|서비스 로드맵|사무실 계약|지원사업 신청서|데모 시연|주간 팀 미팅)/);
+    expect(career("카페 사장")).toMatch(/내 가게는 운영형일까 확장형일까/);
+  });
 });

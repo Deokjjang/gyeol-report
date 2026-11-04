@@ -10,6 +10,7 @@ import { GROUP_LEVEL_KO, GROUP_NAME_KO, groupStrength, TEN_GOD_GROUP_KEYS, type 
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { deepLines, type Knowledge } from "../knowledge";
+import { SCENE_TAGS } from "../facts";
 import { ganjiOf, GROUP_EASY, koCount, tenGodLabel, TEN_GOD_GROUP } from "../labels";
 import type { ChartBrief, Material } from "../schema";
 import { DOMAIN_BY_TEN_GOD } from "../productEvidence";
@@ -32,6 +33,8 @@ export type CareerCtx = {
   readonly priorEvidence?: ReadonlySet<string>;
   /** 기존 커리어 근거(직무 3단·진로 다섯 갈래·돈 새는 곳·축적): evidence.ts careerEvidence 결과에서 재사용. */
   readonly base: Readonly<Record<string, Material>>;
+  /** 최종판 1-15: 가게 장면이 맞는 생활인가(facts.sceneCtxOf). false인 사업자(스타트업 대표 등)는 가게 씨앗 대신 그 직업 소품(jobProps)을 받는다. */
+  readonly shop?: boolean; readonly jobProps?: readonly string[];
 };
 
 /** 상태별 절 질문(2·3·4·6·7장, P6d G). 상태 미입력이면 단정하지 않는 질문. */
@@ -44,6 +47,10 @@ export const CAREER_STATUS_Q: Readonly<Record<string, Readonly<Record<CareerStat
   pay: { employee: "연봉 협상에서는 어떻게 말할까?", business: "가격을 정하고 올릴 때는?", freelancer: "단가를 정하고 올릴 때는?", student: "첫 일의 조건을 물을 때는?", job_seeker: "처우를 물을 때는 어떻게 말할까?", homemaker: "내 일의 값을 매길 때는?", other: "내 일의 값을 말할 때는?", unknown: "내 일의 값을 말할 때는?" },
   docs: { employee: "승진과 평가는 어떻게 준비할까?", business: "계약·임대차·인허가 서류는 어떻게 챙길까?", freelancer: "계약서와 작업 범위는 어떻게 지킬까?", student: "시험과 자격은 어떻게 준비할까?", job_seeker: "시험·자격은 어떤 순서로 갖출까?", homemaker: "다시 시작할 때 필요한 자격은?", other: "평가·자격은 어떻게 준비할까?", unknown: "평가·자격은 어떻게 준비할까?" },
   money: { employee: "월급형 구조에서 돈은 어떻게 남을까?", business: "매출형 구조에서 돈은 어떻게 남을까?", freelancer: "건당형 구조에서 돈은 어떻게 남을까?", student: "용돈·첫 수입은 어떻게 다룰까?", job_seeker: "수입이 없는 동안 돈은 어떻게 지킬까?", homemaker: "살림 돈과 내 돈은 어떻게 나눌까?", other: "내 수입 구조에서 돈은 어떻게 남을까?", unknown: "월급형·매출형·건당형 가운데 나는 어디에 맞을까?" },
+};
+/** 최종판 1-15: 가게형이 아닌 사업자(스타트업 대표 등)의 질문 — 「가게」·「임대차」 대신 사업. 없는 열쇠는 CAREER_STATUS_Q.business를 쓴다. */
+export const CAREER_BUSINESS_NOSHOP_Q: Readonly<Record<string, string>> = {
+  now: "내 사업은 운영형일까 확장형일까, 함께 일할 사람과 고객은?", jobs: "내 사업과 이어지는 직군은?", pitch: "서비스와 브랜드는 어떤 톤으로 알릴까?", docs: "계약·세금·지원사업 서류는 어떻게 챙길까?",
 };
 
 export function careerDesign(c: CareerCtx): Record<string, Evidence> {
@@ -59,12 +66,19 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
   const line = (g: TenGodGroupKey) => `${GROUP_EASY[g]}(${GROUP_NAME_KO[g]}) ${GROUP_LEVEL_KO[gs[g].level]}`;
   const groupLine = TEN_GOD_GROUP_KEYS.map(line).join(" · ");
   const we = (g: TenGodGroupKey, facet: string, n = 1) => pick(fresh(deepLines(k, "work-engine", `group:${g}`, facet, lvl(g))), seed, n);
-  const statusSeeds = (facet: string, n = 2) => status === "unknown" ? [] : pick(deepLines(k, "status-scenes", `status:${status}`, facet), seed, n).map(x => `상황 씨앗: ${x}`);
+  // 최종판 1-15: 가게형이 아닌 사업자에게는 가게 장면(손님·단골·매장…)을 주지 않는다. 상황 씨앗은 그 직업의 소품에서 장마다 다른 것을 고른다.
+  const noShop = status === "business" && c.shop === false;
+  const fit = (xs: readonly string[]) => noShop ? xs.filter(x => !SCENE_TAGS.shop.test(x)) : xs;
+  const propPool = noShop ? fit(c.jobProps ?? []) : [];
+  let propAt = 0;
+  const statusSeeds = (facet: string, n = 2) => status === "unknown" ? []
+    : (noShop ? Array.from({ length: Math.min(n, propPool.length) }, () => propPool[(seed + propAt++) % propPool.length])
+      : pick(deepLines(k, "status-scenes", `status:${status}`, facet), seed, n)).map(x => `상황 씨앗: ${x}`);
   const statusTag = `상태: ${CAREER_STATUS_KO[status]}${c.detailJob ? ` · 입력 직업 ${c.detailJob}` : ""}`;
   const unknownNote = status === "unknown" ? "상태가 입력되지 않았다: 직장·사업·구직 가운데 하나로 단정하지 말고 '~라면' 두 갈래로만 쓴다" : undefined;
   // 강한 오행(보이는 힘)과 약한 오행.
   const elStrong = det.elementBalance.strongest.element, elWeak = det.elementBalance.weakest.element;
-  const appeal = (facet: string, n = 1) => [...pick(fresh(deepLines(k, "element-appeal", `element:${elStrong}`, facet, "strong")), seed, n), ...pick(fresh(deepLines(k, "element-appeal", `element:${elWeak}`, facet, "weak")), seed + 1, 1)];
+  const appeal = (facet: string, n = 1) => [...pick(fresh(fit(deepLines(k, "element-appeal", `element:${elStrong}`, facet, "strong"))), seed, n), ...pick(fresh(fit(deepLines(k, "element-appeal", `element:${elWeak}`, facet, "weak"))), seed + 1, 1)];
   // 월주: 월간·월지 본기 십성.
   const monthStemTg = saju.tenGods.stems.month, monthBranchTg = saju.tenGods.hiddenStems.find(h => h.branch === saju.pillars.month.branch && h.weight >= 0.5)?.tenGod;
   // P6e 5: 십성마다 자리를 붙인다("월지의 비견" 오류: 월간 비견·월지 정인을 자리 없이 나란히 줘서 작가가 바꿔 썼다).
@@ -73,7 +87,7 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
   const present = (Object.entries(saju.tenGods.distribution) as [TenGod, number][]).filter(([, v]) => v >= 0.5).sort((a, b) => b[1] - a[1]).map(([t]) => t).slice(0, 3);
   const people = present.flatMap(t => pick(fresh(deepLines(k, "workplace-people", `tenGod:${t}`, "person")), seed, 1).map(x => `${tenGodLabel(t)}(이 사람 곁의 ${GROUP_NAME_KO[TEN_GOD_GROUP[t] as TenGodGroupKey]} 쪽 사람): ${x}`));
   const roleFacet = status === "business" ? "asOwner" : status === "employee" ? "asMember" : "asLeader";
-  const roleLines = present.slice(0, 2).flatMap(t => pick(fresh(deepLines(k, "workplace-people", `tenGod:${t}`, roleFacet)), seed, 1).map(x => `${tenGodLabel(t)} 사람을 대할 때: ${x}`));
+  const roleLines = present.slice(0, 2).flatMap(t => pick(fresh(fit(deepLines(k, "workplace-people", `tenGod:${t}`, roleFacet))), seed, 1).map(x => `${tenGodLabel(t)} 사람을 대할 때: ${x}`));
   const partner = present.slice(0, 1).flatMap(t => deepLines(k, "workplace-people", `tenGod:${t}`, "partnerCaution").slice(0, 1).map(x => `동업할 때(${tenGodLabel(t)}): ${x}`));
   const POS = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as Record<string, string>;
   const gwiin = det.shinsal.filter(s => /GWIIN/.test(s.code)).map(s => `${k.features.get(`gwiin:${s.code}`)?.name ?? s.code}: ${s.positions.map(p => POS[p] ?? p).join("·")} 자리`);
@@ -115,7 +129,7 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
     payTalk: ev("payTalk", [statusTag, ...appeal("pay", 1).map(x => `내세울 근거: ${x}`), ...we(top, "decision", 1).map(x => `말할 때의 버릇: ${x}`)], "금액·퍼센트는 쓰지 않는다. 말의 순서와 근거만"),
     peopleTypes: ev("peopleTypes", people.length ? people : ["원국에 뚜렷한 십성이 적어 사람 유형은 한 갈래로만"], "십성을 사람으로: '이런 사람이 곁에 오면'으로 쓴다. 실제 동료·지인을 지어내지 않는다"),
     helpers: ev("helpers", [...(gwiin.length ? gwiin.slice(0, 3) : ["드러난 귀인 자리가 뚜렷하지 않음 → 돕는 사람은 아래 십성 쪽에서"]), ...helper]),
-    roleMode: ev("roleMode", [statusTag, ...roleLines, ...partner], unknownNote ?? (status === "business" ? "사장일 때(직원·손님) 쪽으로" : status === "employee" ? "팀원일 때와 리더가 될 때를 나눠서" : "리더·팀원 어느 쪽이든 조건형으로")),
+    roleMode: ev("roleMode", [statusTag, ...roleLines, ...partner], unknownNote ?? (status === "business" ? (noShop ? "사장일 때(팀원·고객) 쪽으로" : "사장일 때(직원·손님) 쪽으로") : status === "employee" ? "팀원일 때와 리더가 될 때를 나눠서" : "리더·팀원 어느 쪽이든 조건형으로")),
     docsLevel: ev("docsLevel", [`규칙의 힘(관성) ${GROUP_LEVEL_KO[gs.OFFICER.level]} · 배우는 힘(인성) ${GROUP_LEVEL_KO[gs.RESOURCE.level]}(만세력 가중값)`, ...docs]),
     docsTiming: ev("docsTiming", [...docYears, ...docsTrend], "해 이름은 경향으로만: 합격·승진·계약 성사를 단정하지 않는다"),
     docsStatus: ev("docsStatus", [statusTag, ...statusSeeds("c6", 2), ...(["OFFICER", "RESOURCE"] as const).flatMap(g => pick(deepLines(k, "documents", `group:${g}`, docFacet, lvl(g)), seed + 1, 1))], unknownNote),
