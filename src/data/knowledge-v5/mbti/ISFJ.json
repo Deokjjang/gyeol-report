@@ -59,24 +59,24 @@
       ],
       "jobs": ["간호사", "초등·보육 교사", "사회복지사", "행정·총무", "의료 행정", "약사", "급여·인사 관리", "도서관 사서", "고객 지원", "영양사", "사무 지원·비서"],
       "conventionalCompat": [
-        { "type": "INTJ", "fit": "노력", "why": "결론만 말하는 상대 앞에서 당신의 배려가 묻히기 쉽습니다" },
-        { "type": "INTP", "fit": "노력", "why": "감정보다 이론을 먼저 꺼내는 상대라 대화가 자주 비껴갑니다" },
-        { "type": "ENTJ", "fit": "노력", "why": "속도를 내는 상대 옆에서 당신의 챙김이 시간 낭비로 취급되기 쉽습니다" },
-        { "type": "ENTP", "fit": "노력", "why": "늘 새 판을 벌이는 상대라 당신의 안정감이 자주 흔들립니다" },
-        { "type": "INFJ", "fit": "보통", "why": "조용한 배려는 통하고 상대의 큰 이상이 막막하게 느껴집니다" },
-        { "type": "INFP", "fit": "보통", "why": "다정함은 닮았고 상대의 들쭉날쭉한 기분에 당황합니다" },
-        { "type": "ENFJ", "fit": "보통", "why": "서로 챙겨 주는 사이지만 상대의 큰 계획에 당신이 끌려다닙니다" },
-        { "type": "ENFP", "fit": "보통", "why": "상대의 밝음에 웃게 되고 매번 바뀌는 약속에 지칩니다" },
+        { "type": "INTJ", "fit": "보통", "why": "말은 짧아도 믿음직한 상대 곁에서 당신의 배려가 천천히 신뢰로 쌓입니다" },
+        { "type": "INTP", "fit": "보통", "why": "상대의 독특한 사고방식이 흥미롭고 감정 표현은 당신이 먼저 건네면 좋습니다" },
+        { "type": "ENTJ", "fit": "보통", "why": "상대의 빠른 추진력 덕에 일이 풀리고 당신의 꼼꼼함이 뒤를 받쳐 줍니다" },
+        { "type": "ENTP", "fit": "보통", "why": "상대가 새 시도를 계속 꺼내도 당신의 안정감이 중심을 잡아 주는 사이입니다" },
+        { "type": "INFJ", "fit": "노력", "why": "상대의 큰 이상은 멋지지만 구체적으로 어떻게 하는지가 잘 보이지 않습니다" },
+        { "type": "INFP", "fit": "노력", "why": "상대의 감정 기복을 어떻게 받아야 할지 몰라 당신이 조심스러워지기 쉽습니다" },
+        { "type": "ENFJ", "fit": "노력", "why": "상대의 열정이 크다 보니 당신이 어느새 따라가는 쪽에 서기 쉽습니다" },
+        { "type": "ENFP", "fit": "노력", "why": "상대의 환한 웃음에 마음이 풀리지만 갑작스런 약속 변경에는 적응이 필요합니다" },
         { "type": "ISTJ", "fit": "좋음", "why": "생활 리듬과 책임감이 닮아 말이 적어도 편한 사이입니다" },
         { "type": "ESTJ", "fit": "좋음", "why": "상대가 방향을 정하고 당신이 빈틈을 메워 집이 안정됩니다" },
         { "type": "ESFJ", "fit": "좋음", "why": "둘 다 사람을 챙겨 모임과 집안 행사가 순조롭게 굴러갑니다" },
         { "type": "ISTP", "fit": "보통", "why": "간섭이 적어 편하고 감정 표현이 적어 서운할 때가 있습니다" },
-        { "type": "ISFP", "fit": "좋음", "why": "조용한 다정함이 같아 서로 부담 없이 기댑니다" },
+        { "type": "ISFP", "fit": "보통", "why": "조용한 곳에서 함께 쉬는 시간이 편하고 큰 결정은 서로 한 번 더 물어봅니다" },
         { "type": "ESTP", "fit": "좋음", "why": "상대가 바깥 활력을 끌어오고 당신이 집 안을 챙겨 균형이 맞습니다" },
         { "type": "ESFP", "fit": "좋음", "why": "웃음을 몰고 오는 상대 덕에 당신의 일상이 가벼워집니다" }
       ],
       "dimensionTags": { "caretaking": 0.9, "dutifulness": 0.9, "detailFocus": 0.7, "empathyResponse": 0.7, "ruleAdherence": 0.6, "planning": 0.6, "spendingControl": 0.5, "emotionalExpression": -0.5, "noveltySeeking": -0.6, "attentionSeeking": -0.7, "boundarySetting": -0.8, "conflictApproach": -0.8 },
-      "sources": ["mbti:ISFJ:summary", "mbti:ISFJ:functionStack", "mbti:ISFJ:traits", "v1:legacy:mbti-profiles:ISFJ", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ISFJ:summary", "mbti:ISFJ:functionStack", "mbti:ISFJ:traits", "v1:legacy:mbti-profiles:ISFJ", "통념(유형 궁합표)"]
     }
   ]
 }

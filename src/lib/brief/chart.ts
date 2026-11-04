@@ -12,6 +12,7 @@ import { ELEMENT_KO, ganjiLabel, ganjiOf, josa, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
 import { dropSourceSentences, splitSentences } from "@/lib/writer/safety/patterns";
 import { coreImage } from "./coreImage";
+import { GROUP_LEVEL_KO, GROUP_NAME_KO, groupStrength, TEN_GOD_GROUP_KEYS } from "@/lib/saju/groupStrength";
 
 const ELEMENTS: readonly FiveElement[] = ["WOOD", "FIRE", "EARTH", "METAL", "WATER"];
 /** 일간 강약 한 줄(P3.8 5: 강약에 해석이 없어 작가가 "힘이 남아도 모자라도" 같은 빈 문장으로 채웠다). */
@@ -118,8 +119,16 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
+    groups: groupsFact(saju),
     ...(opts.gender ? { stars: starFacts(saju, det, opts.gender) } : {}),
   };
+}
+
+/** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값 하나의 단계. */
+export function groupsFact(saju: SajuCalcResult): NonNullable<ChartBrief["groups"]> {
+  const gs = groupStrength(saju);
+  const levels = Object.fromEntries(TEN_GOD_GROUP_KEYS.map(g => [GROUP_NAME_KO[g], GROUP_LEVEL_KO[gs[g].level]])) as NonNullable<ChartBrief["groups"]>["levels"];
+  return { levels, line: `${TEN_GOD_GROUP_KEYS.map(g => `${GROUP_NAME_KO[g]} ${GROUP_LEVEL_KO[gs[g].level]}`).join(" · ")} — 만세력 오행 칸(겉 글자 + 지장간) 기준. 묶음 세기는 이 단계로만 쓰고 다른 말(옅다·보통 수준 등)로 바꾸지 않는다` };
 }
 
 /**

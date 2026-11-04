@@ -62,21 +62,21 @@
         { "type": "ESTJ", "fit": "좋음", "why": "상대가 현실의 틀을 잡아 주고 당신은 생활에 온기와 색을 더합니다" },
         { "type": "ESFJ", "fit": "좋음", "why": "상대가 먼저 다가와 챙겨 주니 낯가림이 금방 풀립니다" },
         { "type": "ENFJ", "fit": "좋음", "why": "상대의 따뜻한 이끎이 조용한 당신을 사람들 앞으로 데려갑니다" },
-        { "type": "INFP", "fit": "좋음", "why": "감정과 취향이 잘 통하고 둘 다 현실 정리를 미루기 쉽습니다" },
-        { "type": "ISFJ", "fit": "좋음", "why": "조용한 생활 리듬이 닮아 같은 공간에 있어도 편안합니다" },
-        { "type": "ESFP", "fit": "좋음", "why": "즐거움의 취향이 같아 상대가 이끄는 나들이가 당신에게도 반갑습니다" },
+        { "type": "INFP", "fit": "노력", "why": "서로 마음을 이해하는 건 쉬운데 생활 문제를 먼저 꺼낼 사람이 없습니다" },
+        { "type": "ISFJ", "fit": "보통", "why": "상대의 꾸준한 배려가 편안하고 새로운 경험은 당신이 조금 이끌어 주면 좋습니다" },
+        { "type": "ESFP", "fit": "보통", "why": "취향이 잘 통해 같이 놀기 좋고 가끔은 쉴 시간을 따로 챙겨야 합니다" },
         { "type": "ISTP", "fit": "보통", "why": "취향으로 가까워지고 해결책부터 말하는 상대에게 서운해집니다" },
         { "type": "ISTJ", "fit": "보통", "why": "차분한 일상은 맞고 상대의 직설적인 지적이 오래 아픕니다" },
         { "type": "ESTP", "fit": "보통", "why": "감각적인 재미가 통하고 장난이 선을 넘으면 당신이 닫힙니다" },
         { "type": "INTP", "fit": "보통", "why": "조용히 함께 있을 수 있고 감정과 논리의 말이 엇갈립니다" },
-        { "type": "INFJ", "fit": "보통", "why": "따뜻한 지지가 통하고 앞날을 보는 속도가 다릅니다" },
-        { "type": "ENFP", "fit": "보통", "why": "자유로운 감성은 닮았고 관심사와 속도가 자꾸 어긋납니다" },
-        { "type": "INTJ", "fit": "노력", "why": "상대의 구조와 당신의 감각이 다르고 차가운 피드백에 금방 멀어집니다" },
-        { "type": "ENTJ", "fit": "노력", "why": "상대의 센 말투 앞에서 당신이 가장 먼저 입을 닫습니다" },
-        { "type": "ENTP", "fit": "노력", "why": "상대는 따져 묻고 당신은 침묵해서 다툼이 길어집니다" }
+        { "type": "INFJ", "fit": "노력", "why": "상대의 깊은 이상 앞에서 당신은 지금 이 순간의 편안함이 더 소중하게 느껴집니다" },
+        { "type": "ENFP", "fit": "노력", "why": "자유로운 마음은 닮았는데 상대의 관심사가 너무 빨리 바뀌어 따라가기 벅찹니다" },
+        { "type": "INTJ", "fit": "보통", "why": "상대의 정리된 생각이 도움이 되고 날카로운 피드백은 부드럽게 전해 주면 좋습니다" },
+        { "type": "ENTJ", "fit": "보통", "why": "상대의 시원한 추진력은 든든하고 말투는 당신이 편한 정도로 조절하면 좋습니다" },
+        { "type": "ENTP", "fit": "보통", "why": "상대의 재치 있는 토론이 흥미롭고 쉬고 싶을 땐 그만하자고 말하면 됩니다" }
       ],
       "dimensionTags": { "conflictApproach": -0.8, "introspection": 0.7, "empathyResponse": 0.7, "directness": -0.7, "controlNeed": -0.7, "competitiveness": -0.6, "statusDrive": -0.6, "planning": -0.6, "boundarySetting": -0.6, "verbalOutput": -0.6, "caretaking": 0.5, "socialEnergy": -0.5, "spendingControl": -0.5, "noveltySeeking": 0.4, "detailFocus": 0.4 },
-      "sources": ["mbti:ISFP:summary", "mbti:ISFP:functionStack", "mbti:ISFP:notablePairs", "legacy:mbti-profiles:ISFP", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ISFP:summary", "mbti:ISFP:functionStack", "mbti:ISFP:notablePairs", "legacy:mbti-profiles:ISFP", "통념(유형 궁합표)"]
     }
   ]
 }

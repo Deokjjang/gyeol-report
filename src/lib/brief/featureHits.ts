@@ -4,7 +4,7 @@
  * 시간 미상이면 어떤 hit에도 hour 자리가 없다.
  */
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
-import { getTenGodGroupScores } from "@/lib/saju/extractTags";
+import { GROUP_STRONG, GROUP_WEAK, groupLevel, groupValues, TEN_GOD_GROUP_KEYS, type TenGodGroupKey } from "@/lib/saju/groupStrength";
 import { membersAdjacent } from "@/lib/saju/detections/relations";
 import { CHEONRA_JIMANG_PAIRS, HYEONCHIM_CHARS, ROK_BRANCH, SEASON_BY_BRANCH } from "@/lib/saju/detections/tables";
 import type { ChartDetections, ChartPosition, ExtraShinsalHit, RelationHit, Season } from "@/lib/saju/detections/types";
@@ -27,7 +27,8 @@ type Ctx = {
   readonly saju: SajuCalcResult;
   readonly det: ChartDetections;
   readonly natal: readonly { position: ChartPosition; stem: HeavenlyStem; branch: EarthlyBranch }[];
-  readonly groups: ReturnType<typeof getTenGodGroupScores>;
+  /** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값 하나(groupStrength.ts). */
+  readonly groups: Readonly<Record<TenGodGroupKey, number>>;
   readonly monthBranch: EarthlyBranch;
   readonly season: Season;
   /** 글자 수(천간·지지 본기 오행, 일간 제외). */
@@ -115,14 +116,15 @@ function tenGodStrength(c: Ctx, tg: TenGod): FeatureStrength {
   if (d[tg] >= 2 || monthMain === tg) return "strong";
   const g = c.groups;
   const weak: Partial<Record<TenGod, boolean>> = {
-    偏印: g.WEALTH >= 2,
+    // 묶음 조건은 가중값 기준(P6d A): 강(3 이상)·매우 강(4.5 이상)·둘 합 6 이상.
+    偏印: g.WEALTH >= GROUP_STRONG,
     正官: d.傷官 >= 2,
-    正財: g.PEER >= 3,
-    比肩: g.OFFICER + g.WEALTH >= 4,
-    劫財: g.OFFICER >= 2,
-    傷官: g.RESOURCE >= 2,
-    偏財: g.PEER >= 3,
-    正印: g.WEALTH >= 3,
+    正財: g.PEER >= GROUP_STRONG * 1.5,
+    比肩: g.OFFICER + g.WEALTH >= GROUP_STRONG * 2,
+    劫財: g.OFFICER >= GROUP_STRONG,
+    傷官: g.RESOURCE >= GROUP_STRONG,
+    偏財: g.PEER >= GROUP_STRONG * 1.5,
+    正印: g.WEALTH >= GROUP_STRONG * 1.5,
   };
   return weak[tg] ? "weak" : "medium";
 }
@@ -152,7 +154,7 @@ function extraStrength(c: Ctx, hit: ExtraShinsalHit): FeatureStrength {
     case "GOEGANG":
       return (ps.includes("day") && dmStrong) || ps.length >= 2 ? "strong" : only("year", "hour") && dmWeak ? "weak" : "medium";
     case "YANGIN":
-      return ps.includes("month") || (dmStrong && g.PEER >= 2.5) ? "strong" : dmWeak || g.OFFICER >= 2.5 ? "weak" : "medium";
+      return ps.includes("month") || (dmStrong && g.PEER >= GROUP_STRONG) ? "strong" : dmWeak || g.OFFICER >= GROUP_STRONG ? "weak" : "medium";
     case "GWIMUN":
       return "strong";
     case "CHEONMUN":
@@ -174,12 +176,12 @@ function extraStrength(c: Ctx, hit: ExtraShinsalHit): FeatureStrength {
     case "BOKSEONG":
       return allVoid ? "weak" : has(ps, "day", "month") && c.saju.tenGods.distribution.食神 >= 1 ? "strong" : "medium";
     case "CHEON_EUI":
-      return allVoid ? "weak" : ps.includes("day") || g.RESOURCE >= 1.5 ? "strong" : "medium";
+      return allVoid ? "weak" : ps.includes("day") || g.RESOURCE >= GROUP_STRONG ? "strong" : "medium";
     case "MUNGOK":
-      return allVoid ? "weak" : has(ps, "day", "hour") && g.OUTPUT >= 1 ? "strong" : "medium";
+      return allVoid ? "weak" : has(ps, "day", "hour") && g.OUTPUT >= GROUP_WEAK ? "strong" : "medium";
     case "JAEGO": {
       const wealthVisible = Object.values(c.saju.tenGods.stems).some((t) => t === "偏財" || t === "正財");
-      return has(ps, "day", "month") && wealthVisible ? "strong" : g.WEALTH < 1 || g.PEER >= 2.5 ? "weak" : "medium";
+      return has(ps, "day", "month") && wealthVisible ? "strong" : g.WEALTH < GROUP_WEAK || g.PEER >= GROUP_STRONG ? "weak" : "medium";
     }
     case "WONJIN":
       return "medium";
@@ -232,11 +234,11 @@ function structureStrength(c: Ctx, code: string, scores?: Readonly<Record<string
   const d = c.saju.tenGods.distribution;
   if (scores) {
     const groupScores = Object.entries(scores).filter(([k]) => k !== "dayMaster").map(([, v]) => v);
-    return Math.min(...groupScores) >= 2.5 ? "strong" : "medium";
+    return Math.min(...groupScores) >= GROUP_STRONG ? "strong" : "medium";
   }
   if (code.startsWith("WEAK_DAYMASTER")) return c.saju.structureAnalysis.dayMasterStrength.level === "VERY_WEAK" ? "strong" : "medium";
   const group = STRUCTURE_GROUP[code];
-  if (group) return g[group] >= 2.5 ? "strong" : "medium";
+  if (group) return g[group] >= GROUP_STRONG * 1.5 ? "strong" : "medium";
   if (code === "MIXED_OFFICER_KILLING") return Math.min(d.偏官, d.正官) >= 1 ? "strong" : Math.min(d.偏官, d.正官) < 0.5 ? "weak" : "medium";
   if (code === "WATER_WEAK_RECOVERY_NEEDED") return c.saju.elements.labels.includes("WATER_MISSING") ? "strong" : "medium";
   return "medium";
@@ -290,7 +292,7 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
     saju,
     det,
     natal,
-    groups: getTenGodGroupScores(saju.tenGods.distribution),
+    groups: groupValues(saju),
     monthBranch,
     season: SEASON_BY_BRANCH[monthBranch],
     chars: (...els) =>
@@ -338,10 +340,11 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
     if (ps) push({ id: `tenGod:${tg}`, family: "tenGod", positions: ps, strength: tenGodStrength(c, tg), basis: `십성 ${tg} dist=${saju.tenGods.distribution[tg]}` });
   }
 
-  // 십성 균형(extractSajuTags와 같은 임계: ≥2.5 STRONG, <1 WEAK)
-  for (const [group, score] of Object.entries(c.groups) as [keyof Ctx["groups"], number][]) {
-    if (score >= 2.5) push({ id: `tenGodBalance:${group}:STRONG`, family: "tenGodBalance", positions: [], strength: score >= 3 ? "strong" : "medium", basis: `${group}=${score.toFixed(2)}` });
-    else if (score < 1) push({ id: `tenGodBalance:${group}:WEAK`, family: "tenGodBalance", positions: [], strength: score === 0 ? "strong" : "medium", basis: `${group}=${score.toFixed(2)}` });
+  // 십성 균형(P6d A): 만세력 오행 칸 가중값의 단계 그대로(강 = 3 이상, 약 = 1.5 미만).
+  for (const group of TEN_GOD_GROUP_KEYS) {
+    const score = c.groups[group], level = groupLevel(score);
+    if (level === "strong") push({ id: `tenGodBalance:${group}:STRONG`, family: "tenGodBalance", positions: [], strength: score >= GROUP_STRONG * 1.5 ? "strong" : "medium", basis: `${group}=${score.toFixed(2)}` });
+    else if (level === "weak") push({ id: `tenGodBalance:${group}:WEAK`, family: "tenGodBalance", positions: [], strength: score === 0 ? "strong" : "medium", basis: `${group}=${score.toFixed(2)}` });
   }
 
   // 기존 신살·귀인
@@ -397,7 +400,17 @@ export function collectFeatureHits(saju: SajuCalcResult, det: ChartDetections): 
   push({ id: `climate:${det.climate.featureKey}`, family: "climate", positions: [], strength: det.climate.level, basis: `${det.climate.monthBranch}월 ${det.climate.dayMaster} 조후 ${det.climate.level}` });
 
   // 구조
-  for (const p of saju.structureAnalysis.patterns) push({ id: `structure:${p.code}`, family: "structure", positions: [], strength: structureStrength(c, p.code), basis: p.labelKo });
+  // 묶음 세기를 말하는 구조(○○ 강한 구조·신약 + 강한 ○○)는 엔진 구조 판정이 아니라 같은 단일 기준(P6d A)으로 거른다:
+  // 그 묶음이 "강"일 때만 낸다(하람: 엔진은 식상 강한 구조라 했지만 만세력 칸의 식상은 2.9 = 보통).
+  for (const p of saju.structureAnalysis.patterns) {
+    const g = STRUCTURE_GROUP[p.code] ?? (p.code.match(/^WEAK_DAYMASTER_WITH_STRONG_([A-Z]+)$/)?.[1] as TenGodGroupKey | undefined);
+    if (g && groupLevel(c.groups[g]) !== "strong") continue;
+    push({ id: `structure:${p.code}`, family: "structure", positions: [], strength: structureStrength(c, p.code), basis: p.labelKo });
+  }
+  for (const g of TEN_GOD_GROUP_KEYS) {
+    const code = `${g}_HEAVY`;
+    if (groupLevel(c.groups[g]) === "strong" && !saju.structureAnalysis.patterns.some(p => p.code === code)) push({ id: `structure:${code}`, family: "structure", positions: [], strength: structureStrength(c, code), basis: `${g}=${c.groups[g].toFixed(2)}(만세력 가중값 강)` });
+  }
   for (const f of det.structureFlows) {
     push({ id: `structure:${f.code}`, family: "structure", positions: [], strength: structureStrength(c, f.code, f.scores), basis: Object.entries(f.scores).map(([k, v]) => `${k}=${v}`).join(",") });
   }

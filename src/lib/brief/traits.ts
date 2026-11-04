@@ -15,6 +15,7 @@ import type { Knowledge } from "./knowledge";
 import { josa, pairWhere, POSITION_KO, TEN_GOD_GROUP } from "./labels";
 import type { Rng } from "./seed";
 import { pickN } from "./seed";
+import { GROUP_STRONG, GROUP_WEAK } from "@/lib/saju/groupStrength";
 import type { Trait } from "./schema";
 
 export type ProductKey = "saju_mbti_full" | "career_money_study" | "love_marriage_child" | "saju_mbti_compatibility" | "major_fortune" | "annual_fortune";
@@ -110,7 +111,7 @@ export function mainPosition(hit: FeatureHit): ChartPosition | null { return MAI
 
 export type GroupScores = Readonly<Record<"PEER" | "OUTPUT" | "WEALTH" | "OFFICER" | "RESOURCE", number>>;
 const GROUP_WORD: Record<string, keyof GroupScores> = { 비겁: "PEER", 식상: "OUTPUT", 재성: "WEALTH", 관성: "OFFICER", 인성: "RESOURCE" };
-/** 과사용 문장에 적힌 조건(신강·신약, 십성 묶음 많음·약함, P3: 자리·인접·관계·오행 다소·신살 동반·계절)이 이 원국과 어긋나면 고르지 않는다(근거 없는 팩폭 방지). 임계값은 extractSajuTags와 같다(≥2.5 강, <1 약). */
+/** 과사용 문장에 적힌 조건(신강·신약, 십성 묶음 많음·약함, P3: 자리·인접·관계·오행 다소·신살 동반·계절)이 이 원국과 어긋나면 고르지 않는다(근거 없는 팩폭 방지). 임계값은 만세력 가중값 단계(P6d A: 3 이상 강, 1.5 미만 약). */
 export function overuseFits(line: string, strengthLevel: string, groups?: GroupScores, cond?: ConditionCtx): boolean {
   if (cond && !conditionsHold(line, cond)) return false;
   const weak = strengthLevel === "WEAK" || strengthLevel === "VERY_WEAK", strong = strengthLevel === "STRONG" || strengthLevel === "VERY_STRONG";
@@ -118,7 +119,7 @@ export function overuseFits(line: string, strengthLevel: string, groups?: GroupS
   if (/(일간|몸|내 힘)이 (강하|세)|신강/.test(line) && !strong) return false;
   if (groups) for (const m of line.matchAll(/(비겁|식상|재성|관성|인성)(이|가)? ?(약하|약한|약해|없|많|강하|강한|세면|넘치)/g)) {
     const v = groups[GROUP_WORD[m[1]]];
-    if (/약|없/.test(m[3]) ? v >= 1 : v < 2.5) return false;
+    if (/약|없/.test(m[3]) ? v >= GROUP_WEAK : v < GROUP_STRONG) return false;
   }
   return true;
 }

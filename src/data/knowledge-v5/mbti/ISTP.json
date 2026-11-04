@@ -61,7 +61,7 @@
       "conventionalCompat": [
         { "type": "ESFJ", "fit": "좋음", "why": "상대가 생활의 온기를 채우고 당신은 손으로 할 일을 맡습니다" },
         { "type": "ESTJ", "fit": "좋음", "why": "상대가 판을 짜고 당신이 현장을 맡으면 일이 빠르게 끝납니다" },
-        { "type": "ESTP", "fit": "좋음", "why": "현장 감각과 모험심이 통해 같이 움직일 때 손발이 척척 맞습니다" },
+        { "type": "ESTP", "fit": "보통", "why": "같이 몸 쓰는 일엔 척척 맞고 계획 없이 가다 보면 정리할 사람이 아쉽습니다" },
         { "type": "ISTJ", "fit": "보통", "why": "뜨겁진 않아도 생활 방식이 맞으면 조용히 오래 갑니다" },
         { "type": "ISFJ", "fit": "보통", "why": "상대의 돌봄과 당신의 해결력이 만나고 잔손질이 간섭처럼 느껴질 때가 있습니다" },
         { "type": "ESFP", "fit": "보통", "why": "함께 움직일 때 신나고 표현의 양과 돈 쓰는 기준이 다릅니다" },
@@ -70,13 +70,13 @@
         { "type": "INTJ", "fit": "보통", "why": "상대의 전략과 당신의 현장 감각이 맞물리면 강합니다" },
         { "type": "ENTJ", "fit": "보통", "why": "상대의 지시가 많아지면 당신이 말없이 빠집니다" },
         { "type": "ENTP", "fit": "보통", "why": "실험을 좋아하는 건 같고 상대의 말 속도에 당신이 지칩니다" },
-        { "type": "INFP", "fit": "보통", "why": "조용한 자유는 닮았고 당신의 짧은 말이 상대에게는 차갑게 닿습니다" },
+        { "type": "INFP", "fit": "노력", "why": "당신은 짧게 말해도 상대는 마음 깊이 새기니 말 한마디가 조심스러워집니다" },
         { "type": "ENFJ", "fit": "노력", "why": "상대가 마음을 나누자고 다가올수록 당신은 한 걸음 물러섭니다" },
         { "type": "INFJ", "fit": "노력", "why": "상대는 감정의 뜻을 해석하고 당신은 고칠 곳을 찾아 쓰는 말이 다릅니다" },
         { "type": "ENFP", "fit": "노력", "why": "상대의 잦은 마음 확인이 당신에게는 거리가 필요하다는 신호로 옵니다" }
       ],
       "dimensionTags": { "independence": 0.9, "verbalOutput": -0.8, "emotionalExpression": -0.7, "inquiry": 0.7, "boundarySetting": 0.7, "riskTaking": 0.6, "socialEnergy": -0.6, "planning": -0.6, "controlNeed": -0.6, "attentionSeeking": -0.6, "mobility": 0.5, "decisionSpeed": 0.5, "ruleAdherence": -0.5 },
-      "sources": ["mbti:ISTP:summary", "mbti:ISTP:functionStack", "mbti:ISTP:notablePairs", "legacy:mbti-profiles:ISTP", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ISTP:summary", "mbti:ISTP:functionStack", "mbti:ISTP:notablePairs", "legacy:mbti-profiles:ISTP", "통념(유형 궁합표)"]
     }
   ]
 }

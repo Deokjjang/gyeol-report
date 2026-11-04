@@ -60,23 +60,23 @@
       "jobs": ["작가·시인", "상담·심리", "교사·특수교육", "일러스트·디자인", "사회복지·NGO", "편집·번역", "음악·공연", "동물 관련 일", "명상·요가 지도", "콘텐츠 기획"],
       "conventionalCompat": [
         { "type": "ENFJ", "fit": "좋음", "why": "당신의 속을 먼저 읽어 주고 밖으로 이끌어 줍니다" },
-        { "type": "ENTJ", "fit": "노력", "why": "결론부터 묻는 사람 앞에서 당신의 말이 늦어집니다" },
-        { "type": "INTJ", "fit": "보통", "why": "깊이는 통하지만 감정을 다루는 방식이 다릅니다" },
-        { "type": "INTP", "fit": "보통", "why": "조용한 거리가 편하고 감정 대화에서 어긋납니다" },
-        { "type": "ENTP", "fit": "보통", "why": "아이디어는 통하고 날카로운 농담에 상처받기 쉽습니다" },
+        { "type": "ENTJ", "fit": "좋음", "why": "당신이 말을 고르는 사이 상대가 방향을 잡아 주면 서로의 빈 곳이 채워집니다" },
+        { "type": "INTJ", "fit": "좋음", "why": "깊은 속마음을 알아봐 주는 상대 덕에 당신의 이상이 단단해집니다" },
+        { "type": "INTP", "fit": "좋음", "why": "서로의 세계를 존중하는 조용한 사이라 편안히 오래 이야기할 수 있습니다" },
+        { "type": "ENTP", "fit": "좋음", "why": "상대의 번뜩이는 발상이 당신의 상상력에 불을 붙여 이야기가 끝없이 이어집니다" },
         { "type": "INFJ", "fit": "좋음", "why": "말 없이도 통하고 서로의 방을 존중합니다" },
         { "type": "ENFP", "fit": "좋음", "why": "같은 가치를 보고 당신을 밖으로 데리고 나갑니다" },
         { "type": "ISTJ", "fit": "노력", "why": "규칙과 가치가 자주 부딪칩니다" },
-        { "type": "ISFJ", "fit": "보통", "why": "돌봄은 통하고 변화에 대한 태도가 다릅니다" },
+        { "type": "ISFJ", "fit": "노력", "why": "상대는 익숙한 방식이 편하고 당신은 새로운 길이 끌려 속도가 다릅니다" },
         { "type": "ESTJ", "fit": "노력", "why": "효율과 의미가 정면으로 어긋납니다" },
-        { "type": "ESFJ", "fit": "보통", "why": "따뜻함은 통하고 사람 많은 자리에서 당신이 먼저 지칩니다" },
-        { "type": "ISTP", "fit": "보통", "why": "서로 간섭하지 않아 편하지만 감정 대화가 적습니다" },
-        { "type": "ISFP", "fit": "좋음", "why": "같은 결의 조용함과 가치를 공유합니다" },
+        { "type": "ESFJ", "fit": "노력", "why": "상대가 반기는 큰 모임이 당신에게는 힘이 쏙 빠지는 자리일 수 있습니다" },
+        { "type": "ISTP", "fit": "노력", "why": "서로 건드리지 않아 편하지만 마음을 나누는 시간이 점점 줄 수 있습니다" },
+        { "type": "ISFP", "fit": "노력", "why": "비슷한 결의 조용한 감성이 편하지만 현실 문제는 서로 미루게 됩니다" },
         { "type": "ESTP", "fit": "노력", "why": "지금 당장과 속뜻이 자주 엇갈립니다" },
-        { "type": "ESFP", "fit": "보통", "why": "밝음에 끌리지만 속도에서 지칩니다" }
+        { "type": "ESFP", "fit": "노력", "why": "상대의 밝은 에너지에 끌리지만 따라가다 보면 당신의 충전 시간이 부족해집니다" }
       ],
       "dimensionTags": { "introspection": 0.9, "empathyResponse": 0.8, "independence": 0.5, "caretaking": 0.5, "noveltySeeking": 0.4, "emotionalExpression": -0.3, "ruleAdherence": -0.4, "planning": -0.5, "decisionSpeed": -0.6, "socialEnergy": -0.6, "boundarySetting": -0.6, "directness": -0.7 },
-      "sources": ["mbti:INFP:summary", "mbti:INFP:functionStack", "v4:fusionRules:infp-value", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:INFP:summary", "mbti:INFP:functionStack", "v4:fusionRules:infp-value", "통념(유형 궁합표)"]
     }
   ]
 }

@@ -63,20 +63,20 @@
         { "type": "ISTP", "fit": "좋음", "why": "당신이 생활의 온기를 채우고 상대가 고장 난 것을 고쳐 줍니다" },
         { "type": "ISTJ", "fit": "좋음", "why": "성실함이 같아 믿음이 빨리 쌓이고 당신의 다정함이 상대를 녹입니다" },
         { "type": "ISFJ", "fit": "좋음", "why": "배려하는 결이 닮아 말하지 않아도 서로 챙기는 게 보입니다" },
-        { "type": "ESTJ", "fit": "보통", "why": "집안 운영은 맞고 효율보다 마음을 먼저 봐 주길 바랄 때 엇갈립니다" },
+        { "type": "ESTJ", "fit": "좋음", "why": "생활을 꾸리는 손발이 잘 맞아 당신의 정성이 상대의 체계 속에서 빛납니다" },
         { "type": "ESFP", "fit": "보통", "why": "밝은 자리에서 잘 어울리고 생활 규칙에서 기준이 갈립니다" },
         { "type": "ESTP", "fit": "보통", "why": "금방 친해지고 당신이 준 만큼 돌아오지 않아 지치기 쉽습니다" },
-        { "type": "INFP", "fit": "보통", "why": "다정함은 닮았고 북적이는 자리를 반기는 정도가 다릅니다" },
-        { "type": "ENFJ", "fit": "보통", "why": "둘 다 사람을 챙기는데 당신은 오늘의 온도를, 상대는 앞날의 방향을 봅니다" },
-        { "type": "INFJ", "fit": "보통", "why": "사람을 아끼는 마음은 같은데 당신은 지금 분위기를, 상대는 숨은 뜻을 봅니다" },
-        { "type": "ENFP", "fit": "보통", "why": "끌림은 강하고 한쪽만 맞춰 주는 관계로 기울지 않게 살펴야 합니다" },
-        { "type": "INTP", "fit": "노력", "why": "사람과 논리라는 정반대 세계라 온도 차이를 맞추는 데 품이 듭니다" },
-        { "type": "ENTP", "fit": "노력", "why": "상대의 장난스러운 반박이 당신에게는 분위기를 깨는 말로 들립니다" },
-        { "type": "INTJ", "fit": "노력", "why": "관계를 가운데 두는 당신과 효율을 가운데 두는 상대가 자주 부딪힙니다" },
-        { "type": "ENTJ", "fit": "노력", "why": "상대의 결론부터 말하는 화법이 당신에게 평가처럼 들립니다" }
+        { "type": "INFP", "fit": "노력", "why": "다정한 마음은 닮았지만 상대는 조용한 자리를 원해 당신과 에너지가 갈립니다" },
+        { "type": "ENFJ", "fit": "노력", "why": "서로 마음을 쓰는 건 같은데 챙기는 방향이 달라 오해가 생기기도 합니다" },
+        { "type": "INFJ", "fit": "노력", "why": "상대의 말없는 속뜻을 읽어 내려면 당신이 한 템포 천천히 귀 기울여야 합니다" },
+        { "type": "ENFP", "fit": "노력", "why": "밝은 매력에 끌리지만 상대의 즉흥이 당신의 안정 욕구와 자주 부딪칩니다" },
+        { "type": "INTP", "fit": "보통", "why": "상대의 논리적인 시선이 새롭고 감정 표현은 서로 설명해 주면 풀립니다" },
+        { "type": "ENTP", "fit": "보통", "why": "재치 있는 상대 덕에 웃을 일이 늘지만 장난의 선은 미리 알려 주면 좋습니다" },
+        { "type": "INTJ", "fit": "보통", "why": "상대의 차분한 판단이 믿음직하고 당신의 따뜻한 한마디가 거리를 좁혀 줍니다" },
+        { "type": "ENTJ", "fit": "보통", "why": "상대의 시원시원한 결단은 든든하고 말투의 온도는 서로 알아 가면 됩니다" }
       ],
       "dimensionTags": { "socialEnergy": 0.9, "caretaking": 0.9, "empathyResponse": 0.7, "emotionalExpression": 0.7, "dutifulness": 0.7, "ruleAdherence": 0.6, "verbalOutput": 0.6, "planning": 0.5, "boundarySetting": -0.7, "independence": -0.6, "noveltySeeking": -0.5, "inquiry": -0.4, "conflictApproach": -0.4 },
-      "sources": ["mbti:ESFJ:summary", "mbti:ESFJ:functionStack", "mbti:ESFJ:notablePairs", "legacy:mbti-profiles:ESFJ", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ESFJ:summary", "mbti:ESFJ:functionStack", "mbti:ESFJ:notablePairs", "legacy:mbti-profiles:ESFJ", "통념(유형 궁합표)"]
     }
   ]
 }

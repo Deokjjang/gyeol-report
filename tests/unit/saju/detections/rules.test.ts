@@ -107,17 +107,20 @@ describe("gongmang options", () => {
 });
 
 describe("structure flows", () => {
+  // P6d A: 묶음 세기는 만세력 오행 칸 가중값(elements.weighted). 戊 일간: 비겁=흙, 식상=쇠, 재성=물, 관성=나무, 인성=불.
   const base = chartOf("甲子 丙寅 戊午 庚申");
-  const withScores = (dist: Partial<Record<TenGod, number>>, level: "WEAK" | "BALANCED") => ({
-    tenGods: { ...base.tenGods, distribution: { ...base.tenGods.distribution, 比肩: 0, 劫財: 0, 食神: 0, 傷官: 0, 偏財: 0, 正財: 0, 偏官: 0, 正官: 0, 偏印: 0, 正印: 0, ...dist } },
+  const EL = { PEER: "EARTH", OUTPUT: "METAL", WEALTH: "WATER", OFFICER: "WOOD", RESOURCE: "FIRE" } as const;
+  const withScores = (g: Partial<Record<keyof typeof EL, number>>, level: "WEAK" | "BALANCED") => ({
+    dayMaster: base.dayMaster,
+    elements: { ...base.elements, weighted: Object.fromEntries((Object.keys(EL) as (keyof typeof EL)[]).map(k => [EL[k], g[k] ?? 0])) as typeof base.elements.weighted },
     structureAnalysis: { ...base.structureAnalysis, dayMasterStrength: { ...base.structureAnalysis.dayMasterStrength, level, score: level === "WEAK" ? -1 : 0 } },
   });
-  it("임계 1.5: 식상생재·재생관은 일간 WEAK 아님, 살인상생은 WEAK 이하", () => {
-    expect(detectStructureFlows(withScores({ 食神: 1, 傷官: 0.5, 偏財: 1.5 }, "BALANCED")).map((f) => f.code)).toEqual(["OUTPUT_GENERATES_WEALTH"]);
-    expect(detectStructureFlows(withScores({ 食神: 1, 傷官: 0.5, 偏財: 1.5 }, "WEAK"))).toEqual([]);
-    expect(detectStructureFlows(withScores({ 偏財: 1.5, 正官: 1.5 }, "BALANCED")).map((f) => f.code)).toEqual(["WEALTH_GENERATES_OFFICER"]);
-    expect(detectStructureFlows(withScores({ 偏官: 1.5, 正印: 1.5 }, "WEAK")).map((f) => f.code)).toEqual(["RESOURCE_SUPPORTS_DAYMASTER"]);
-    expect(detectStructureFlows(withScores({ 偏官: 1.4, 正印: 1.5 }, "WEAK"))).toEqual([]);
+  it("임계 1.5(약 아님): 식상생재·재생관은 일간 WEAK 아님, 살인상생은 WEAK 이하", () => {
+    expect(detectStructureFlows(withScores({ OUTPUT: 1.5, WEALTH: 1.5 }, "BALANCED")).map((f) => f.code)).toEqual(["OUTPUT_GENERATES_WEALTH"]);
+    expect(detectStructureFlows(withScores({ OUTPUT: 1.5, WEALTH: 1.5 }, "WEAK"))).toEqual([]);
+    expect(detectStructureFlows(withScores({ WEALTH: 1.5, OFFICER: 1.5 }, "BALANCED")).map((f) => f.code)).toEqual(["WEALTH_GENERATES_OFFICER"]);
+    expect(detectStructureFlows(withScores({ OFFICER: 1.5, RESOURCE: 1.5 }, "WEAK")).map((f) => f.code)).toEqual(["RESOURCE_SUPPORTS_DAYMASTER"]);
+    expect(detectStructureFlows(withScores({ OFFICER: 1.4, RESOURCE: 1.5 }, "WEAK"))).toEqual([]);
   });
 });
 

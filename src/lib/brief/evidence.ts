@@ -9,7 +9,7 @@ import type { CareerJob, MbtiProfile, SceneItem } from "@/data/knowledge-v5/sche
 import { sceneFits, type FactProfile } from "./facts";
 import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";
 import type { ChartDetections, ChartPosition } from "@/lib/saju/detections/types";
-import { getTenGodGroupScores } from "@/lib/saju/extractTags";
+import { GROUP_STRONG, GROUP_WEAK, groupValues } from "@/lib/saju/groupStrength";
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
@@ -299,9 +299,9 @@ function accumulate(d: Partial<Record<TenGod, number>>, scores: Record<string, n
   const base = Math.max(jung, pyeon) < 0.5 ? "재성이 옅어 쌓는 구조를 밖에 맡기는 쪽: 받은 날 먼저 떼는 자동 적립"
     : jung >= pyeon ? "정재 쪽: 같은 날 같은 금액을 꾸준히 쌓을 때 돈이 남는 구조" : "편재 쪽: 기회 몫과 저축 몫을 통장부터 나눠 둘 때 돈이 남는 구조";
   return { kind: "evidence", key: "accumulate", facts: [base,
-    ...(scores.RESOURCE >= 2.5 ? ["인성이 강해 자격·지식이 자산이 되는 쪽: 배움에 쓰는 돈은 쌓는 돈으로 본다"] : []),
-    ...(scores.OFFICER >= 2.5 ? ["관성이 강해 규칙이 돈을 지키는 쪽: 자동이체·연금처럼 바꾸기 어려운 장치가 맞다"] : []),
-    ...(scores.OUTPUT >= 2.5 ? ["식상이 강해 버는 힘이 지키는 힘보다 큰 쪽: 들어온 날 일부를 떼어 두는 순서가 쌓는 법"] : []),
+    ...(scores.RESOURCE >= GROUP_STRONG ? ["인성이 강해 자격·지식이 자산이 되는 쪽: 배움에 쓰는 돈은 쌓는 돈으로 본다"] : []),
+    ...(scores.OFFICER >= GROUP_STRONG ? ["관성이 강해 규칙이 돈을 지키는 쪽: 자동이체·연금처럼 바꾸기 어려운 장치가 맞다"] : []),
+    ...(scores.OUTPUT >= GROUP_STRONG ? ["식상이 강해 버는 힘이 지키는 힘보다 큰 쪽: 들어온 날 일부를 떼어 두는 순서가 쌓는 법"] : []),
     ...(weak && Math.max(jung, pyeon) >= 0.5 ? ["재물 기운에 비해 내 힘이 약한 편: 감당할 만큼만 굴리고 현금 비율을 넉넉히"] : []),
   ].slice(0, 3), note: "쌓는 방식만 쓴다. 액수·수익률·종목은 쓰지 않는다" };
 }
@@ -332,7 +332,8 @@ const CAREER_PATHS: readonly { name: string; groups: Partial<Record<keyof typeof
   { name: "사업", groups: { WEALTH: 1, PEER: 0.7, OUTPUT: 0.4 }, dims: { riskTaking: 0.6, controlNeed: 0.5, decisionSpeed: 0.4 }, why: "판을 벌이고 사람과 돈을 굴리는 길", risky: true },
   { name: "프리랜서", groups: { OUTPUT: 1, PEER: 0.6 }, dims: { independence: 0.7, noveltySeeking: 0.4, ruleAdherence: -0.4 }, why: "내 솜씨를 내 일정으로 파는 길" },
 ];
-const LEVEL_WORD = (s: number) => (s >= 2.5 ? "강함" : s >= 1.5 ? "보통" : s > 0 ? "옅음" : "없음");
+/** 묶음 세기 낱말(P6d A): 만세력 가중값 단계 그대로(강 3 이상 · 약 1.5 미만, 0은 없음). */
+export const LEVEL_WORD = (s: number) => (s >= GROUP_STRONG ? "강함" : s >= GROUP_WEAK ? "보통" : s > 0 ? "약함" : "없음");
 function careerPaths(k: Knowledge, scores: Record<string, number>, mbti: MbtiProfile | null, strength: string, part?: "good" | "less"): Evidence {
   const strong = strength === "STRONG" || strength === "VERY_STRONG", weak = strength === "WEAK" || strength === "VERY_WEAK";
   const rows = CAREER_PATHS.map(p => {
@@ -364,8 +365,8 @@ function honorEvidence(d: Partial<Record<TenGod, number>>, scores: Record<string
   const officer = jg + pg < 0.5 ? "관성(자리·직함의 기운)이 옅어, 직함보다 결과물과 실력으로 이름을 얻는 쪽"
     : jg >= pg ? "정관이 있어, 정해진 자리에서 약속을 지키며 신뢰로 이름을 쌓는 길" : "편관이 있어, 남들이 피하는 어려운 일을 맡아 해결하며 이름이 나는 길";
   return { kind: "evidence", key: "honor", facts: [officer,
-    ...(scores.OUTPUT >= 2.5 ? ["식상이 강해, 만든 것과 말이 곧 이름표가 되는 길"] : []),
-    ...(scores.RESOURCE >= 2.5 ? ["인성이 강해, 자격·전문성·기록으로 인정받는 길"] : []),
+    ...(scores.OUTPUT >= GROUP_STRONG ? ["식상이 강해, 만든 것과 말이 곧 이름표가 되는 길"] : []),
+    ...(scores.RESOURCE >= GROUP_STRONG ? ["인성이 강해, 자격·전문성·기록으로 인정받는 길"] : []),
     ...Object.entries(HONOR_HITS).filter(([id]) => hitIds.has(id)).slice(0, 2).map(([, line]) => line),
   ], note: "명예를 얻는 '방식'만 쓴다. 승진·수상·유명해짐을 단정하지 않는다" };
 }
@@ -378,15 +379,15 @@ function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, n
     : jung > pyeon ? { name: "정해진 금액을 꾸준히 모으는 안정형(정재 쪽)", rules: ["매달 같은 날 같은 금액을 자동으로 적립한다", "한곳에 몰지 않고 여러 갈래로 나눠 둔다"] }
     : { name: "기회를 보고 크게 움직이는 기회형(편재 쪽)", rules: ["대부분은 적립으로 묶어 두고 기회 몫은 작게 따로 둔다", "들어가기 전에 '여기까지 잃으면 멈춘다'를 적어 둔다"] };
   const habit = [
-    ...(scores.PEER >= 2.5 ? ["나와 같은 기운(비겁)이 강해 빌려주기·공동 투자·보증에서 돈이 새기 쉽다: 이런 제안은 하루 미루고 답한다"] : []),
-    ...(scores.OUTPUT >= 2.5 ? ["버는 힘이 지키는 힘보다 크다: 들어온 날 먼저 떼어 두는 규칙이 맞다"] : []),
-    ...(scores.RESOURCE >= 2.5 ? ["생각이 길어 시점을 놓치기 쉽다: 날짜와 금액을 자동이체로 정해 두면 편하다"] : []),
-    ...(scores.OFFICER >= 2.5 ? ["정한 규칙은 잘 지킨다: 원칙을 한 장에 적어 두면 흔들림이 적다"] : []),
-    ...((strength === "WEAK" || strength === "VERY_WEAK") && scores.WEALTH >= 2.5 ? ["재물 기운에 비해 내 힘이 약한 편: 감당할 만큼만 굴리고 현금 비율을 넉넉히 둔다"] : []),
+    ...(scores.PEER >= GROUP_STRONG ? ["나와 같은 기운(비겁)이 강해 빌려주기·공동 투자·보증에서 돈이 새기 쉽다: 이런 제안은 하루 미루고 답한다"] : []),
+    ...(scores.OUTPUT >= GROUP_STRONG ? ["버는 힘이 지키는 힘보다 크다: 들어온 날 먼저 떼어 두는 규칙이 맞다"] : []),
+    ...(scores.RESOURCE >= GROUP_STRONG ? ["생각이 길어 시점을 놓치기 쉽다: 날짜와 금액을 자동이체로 정해 두면 편하다"] : []),
+    ...(scores.OFFICER >= GROUP_STRONG ? ["정한 규칙은 잘 지킨다: 원칙을 한 장에 적어 두면 흔들림이 적다"] : []),
+    ...((strength === "WEAK" || strength === "VERY_WEAK") && scores.WEALTH >= GROUP_STRONG ? ["재물 기운에 비해 내 힘이 약한 편: 감당할 만큼만 굴리고 현금 비율을 넉넉히 둔다"] : []),
   ].slice(0, 2);
   const group = yearTg ? TEN_GOD_GROUP[yearTg] : undefined;
   // 올해 십성이 '새는 곳' 버릇과 같은 묶음이면 올해 줄은 뺀다(같은 주의를 두 장에서 하지 않게, P3.8 r1).
-  const sameAsHabit = group !== undefined && scores[group] >= 2.5 && ["PEER", "OUTPUT", "RESOURCE", "OFFICER"].includes(group);
+  const sameAsHabit = group !== undefined && scores[group] >= GROUP_STRONG && ["PEER", "OUTPUT", "RESOURCE", "OFFICER"].includes(group);
   const year = sameAsHabit ? "" : group === "WEALTH" ? "올해는 재물 기운이 들어와 기회가 많아 보이는 해: 한도를 먼저 정하고 움직인다"
     : group === "PEER" ? "올해는 같은 기운이 들어와 돈이 나가기 쉬운 해: 빌려주기·동업 제안은 천천히"
     : group === "OUTPUT" ? "올해는 버는 길이 늘어나는 해: 새로 생긴 수입은 들어온 날 일부를 적립으로 돌린다"
@@ -401,7 +402,7 @@ function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, n
 }
 
 export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = [], opts: { stage?: LifeStage; hitIds?: ReadonlySet<string>; work?: WorkScenes } = {}): Record<string, Evidence> {
-  const scores = getTenGodGroupScores(saju.tenGods.distribution);
+  const scores = groupValues(saju);
   const top = (Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 2);
   const yearTg = chart.thisYear.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
   const period = yearTg ? k.tenGodPeriod.get(yearTg) : undefined;
@@ -424,7 +425,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const roleReasons = new Set<string>();
   const roleMbti = (g: keyof typeof GROUP_KO) => { if (!mbti) return ""; const rs = mbtiFit(k, groupDims(k, g), mbti).reasons; const r = rs.find(x => !roleReasons.has(x)) ?? rs[0]; if (r) roleReasons.add(r); return r ? ` / MBTI: ${r}` : ""; };
   // 명리 근거와 MBTI 근거가 함께 있는 묶음만(MBTI가 있으면): 강한 묶음 → 그다음 묶음 순(P3.8 2).
-  const groupsForRoles = [...new Set([...topG, ...(Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1]).filter(([, v]) => v >= 1.5).map(([g]) => g)])]
+  const groupsForRoles = [...new Set([...topG, ...(Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1]).filter(([, v]) => v >= GROUP_WEAK).map(([g]) => g)])]
     .filter(g => !mbti || mbtiFit(k, groupDims(k, g), mbti).reasons.length).slice(0, 3);
   const roles = fit
     ? [...new Map(groupsForRoles.map(g => [fit.grow[g], g])).entries()].slice(0, 3).map(([role, g]) => `${role} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`)

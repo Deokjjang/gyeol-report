@@ -60,12 +60,12 @@
       "jobs": ["회계·세무", "감사·품질관리", "공무원·행정", "법률 사무", "데이터 관리", "설비 엔지니어", "은행·보험", "의료 기록 관리", "물류·재고 관리", "군·경 간부"],
       "conventionalCompat": [
         { "type": "INTJ", "fit": "보통", "why": "계획을 존중하는 점은 같고 새 방식을 들이는 속도가 다릅니다" },
-        { "type": "INTP", "fit": "노력", "why": "조용한 거리는 편하지만 이유를 캐묻는 상대와 절차를 두고 자주 맞섭니다" },
+        { "type": "INTP", "fit": "보통", "why": "상대의 호기심이 당신의 틀에 새 시각을 주고 절차는 서로 설명하면 맞춰집니다" },
         { "type": "ENTJ", "fit": "보통", "why": "일의 질서는 통하고 상대가 판을 너무 자주 키웁니다" },
-        { "type": "ENTP", "fit": "노력", "why": "정해진 규칙을 일부러 시험하는 상대라 당신이 자주 피곤해집니다" },
-        { "type": "INFJ", "fit": "보통", "why": "약속을 지키는 점은 닮았고 대화의 깊이에서 엇갈립니다" },
+        { "type": "ENTP", "fit": "보통", "why": "상대의 재기발랄함이 신선하고 당신의 기준은 미리 알려 주면 존중받습니다" },
+        { "type": "INFJ", "fit": "노력", "why": "상대는 말 뒤의 속뜻까지 나누길 원하는데 당신은 사실만 말해도 충분합니다" },
         { "type": "INFP", "fit": "노력", "why": "당신의 원칙과 상대의 감정 기준이 자주 다른 답을 냅니다" },
-        { "type": "ENFJ", "fit": "보통", "why": "책임감은 통하고 상대의 감정 대화가 길게 느껴집니다" },
+        { "type": "ENFJ", "fit": "노력", "why": "상대가 마음 얘기를 길게 나누고 싶어 할 때 당신은 결론이 궁금해집니다" },
         { "type": "ENFP", "fit": "노력", "why": "계획을 바꾸는 상대와 지키는 당신이 매번 줄다리기를 합니다" },
         { "type": "ISFJ", "fit": "좋음", "why": "말없이 맡은 일을 해내는 방식이 같아 오래 편안합니다" },
         { "type": "ESTJ", "fit": "좋음", "why": "기준과 기한을 같이 지켜 일도 살림도 깔끔하게 굴러갑니다" },
@@ -76,7 +76,7 @@
         { "type": "ESFP", "fit": "좋음", "why": "밝은 상대가 당신을 밖으로 꺼내고 당신은 그 생활을 받쳐 줍니다" }
       ],
       "dimensionTags": { "ruleAdherence": 0.9, "dutifulness": 0.9, "planning": 0.8, "detailFocus": 0.8, "persistence": 0.7, "spendingControl": 0.7, "trustThreshold": 0.6, "emotionalExpression": -0.6, "socialEnergy": -0.5, "intimacyPace": -0.6, "noveltySeeking": -0.7, "riskTaking": -0.7 },
-      "sources": ["mbti:ISTJ:summary", "mbti:ISTJ:functionStack", "mbti:ISTJ:traits", "v1:legacy:mbti-profiles:ISTJ", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ISTJ:summary", "mbti:ISTJ:functionStack", "mbti:ISTJ:traits", "v1:legacy:mbti-profiles:ISTJ", "통념(유형 궁합표)"]
     }
   ]
 }

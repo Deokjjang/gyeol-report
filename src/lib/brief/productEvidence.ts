@@ -9,6 +9,7 @@ import type { FactProfile } from "./facts";
 import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, josa, TEN_GOD_GROUP } from "./labels";
 import type { Material, TimelineEntry } from "./schema";
+import { GROUP_STRONG, GROUP_WEAK } from "@/lib/saju/groupStrength";
 
 type Evidence = Extract<Material, { kind: "evidence" }>;
 type Group = "PEER" | "OUTPUT" | "WEALTH" | "OFFICER" | "RESOURCE";
@@ -100,10 +101,11 @@ const FAMILY_TG: Readonly<Record<TenGod, string>> = {
 export function familyDesign(saju: SajuCalcResult, groups: Readonly<Record<string, number>>): Record<string, Evidence> {
   const main = (p: "year" | "month") => saju.tenGods.hiddenStems.find(h => h.branch === saju.pillars[p].branch && h.weight >= 0.5)?.tenGod;
   const seat = (p: "year" | "month", label: string) => { const st = saju.tenGods.stems[p], br = main(p); const tgs = [...new Set([st, br].filter((x): x is TenGod => Boolean(x)))]; return tgs.length ? `${label}: ${tgs.map(t => FAMILY_TG[t]).join(" + ")}` : ""; };
-  const level = (g: string) => (groups[g] ?? 0) >= 2.5 ? "strong" : (groups[g] ?? 0) > 0 ? "weak" : "none";
-  const receive = { strong: "인성이 강해 돌봄과 배움을 잘 받아들이는 쪽: 기대는 법을 안다(과하면 결정을 남에게 미룸)", weak: "인성이 옅어 스스로 해결하는 쪽: 도움을 청하는 말이 늦음 → 한 줄 부탁 연습", none: "인성이 없어 받기보다 주는 쪽에 익숙함: 도움받는 것도 관계의 일로 연습" }[level("RESOURCE")];
-  const give = { strong: "식상이 강해 먹이고 챙기는 손으로 마음을 표현하는 쪽(과하면 잔소리로 들림)", weak: "식상이 옅어 말보다 한 번의 행동으로 챙기는 쪽", none: "식상이 없어 챙기는 마음이 겉으로 덜 보이는 쪽: 표현 한 줄을 정해 둔다" }[level("OUTPUT")];
-  const peer = { strong: "비겁이 강해 형제·또래와 대등하게 겨루며 크는 쪽(형제가 있다면 경쟁과 의리가 함께)", weak: "비겁이 옅어 또래와 거리를 두고 혼자 서는 쪽", none: "비겁이 없어 혼자 결정하는 데 익숙한 쪽" }[level("PEER")];
+  // 묶음 세기(P6d A): 만세력 가중값 단계. 보통은 "옅다"고 쓰지 않는다(하람 식상 2.9 = 보통인데 "식상이 옅어서"가 나왔다).
+  const level = (g: string) => { const v = groups[g] ?? 0; return v >= GROUP_STRONG ? "strong" : v >= GROUP_WEAK ? "medium" : v > 0 ? "weak" : "none"; };
+  const receive = { strong: "인성이 강해 돌봄과 배움을 잘 받아들이는 쪽: 기대는 법을 안다(과하면 결정을 남에게 미룸)", medium: "인성이 보통이라 필요할 때 도움을 청하고 혼자 할 일은 혼자 하는 쪽", weak: "인성이 약해 스스로 해결하는 쪽: 도움을 청하는 말이 늦음 → 한 줄 부탁 연습", none: "인성이 없어 받기보다 주는 쪽에 익숙함: 도움받는 것도 관계의 일로 연습" }[level("RESOURCE")];
+  const give = { strong: "식상이 강해 먹이고 챙기는 손으로 마음을 표현하는 쪽(과하면 잔소리로 들림)", medium: "식상이 보통이라 말과 행동을 섞어 챙기는 쪽: 필요한 걸 먼저 묻고 해 준다", weak: "식상이 약해 말보다 한 번의 행동으로 챙기는 쪽", none: "식상이 없어 챙기는 마음이 겉으로 덜 보이는 쪽: 표현 한 줄을 정해 둔다" }[level("OUTPUT")];
+  const peer = { strong: "비겁이 강해 형제·또래와 대등하게 겨루며 크는 쪽(형제가 있다면 경쟁과 의리가 함께)", medium: "비겁이 보통이라 또래와 어울리되 내 몫은 따로 챙기는 쪽", weak: "비겁이 약해 또래와 거리를 두고 혼자 서는 쪽", none: "비겁이 없어 혼자 결정하는 데 익숙한 쪽" }[level("PEER")];
   const note = "가족 구성원(부모·형제 등)은 지어내지 않는다. 쓴다면 '부모님이 계시다면'처럼 조건형으로만, 과거 사건 단정 금지. 친구·모임 이야기는 관계 장 몫";
   return {
     familyRoots: { kind: "evidence", key: "familyRoots", facts: [seat("year", "뿌리 자리(태어난 해)"), seat("month", "부모·형제 자리(태어난 달)")].filter(Boolean).length ? [seat("year", "뿌리 자리(태어난 해)"), seat("month", "부모·형제 자리(태어난 달)")].filter(Boolean) : ["뿌리 자리의 기운이 뚜렷하지 않아 지금의 관계로 본다"], note },

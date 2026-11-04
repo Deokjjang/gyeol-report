@@ -13,7 +13,7 @@ import type { Knowledge } from "./knowledge";
 import { ELEMENT_KO, ganjiLabel, josa, relationPlain, tenGodLabel } from "./labels";
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
 import { pairImage } from "./coreImage";
-import { getTenGodGroupScores } from "@/lib/saju/extractTags";
+import { groupValues } from "@/lib/saju/groupStrength";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 
 const LENS_FOCUS: Record<CompatibilityRelationshipType, string> = {
@@ -69,7 +69,7 @@ function sceneRoles(a: PairSide, b: PairSide): string[] {
     if (ca !== cb) { const lead = ca === x ? a : cb === x ? b : null; const other = lead === a ? b : a; if (lead) out.push(`${what}: ${lead.callName}(${x}), 받아서 맞추는 쪽: ${other.callName}(${y})`); }
   }
   if (out.length < 2) {
-    const ga = getTenGodGroupScores(a.saju.tenGods.distribution), gb = getTenGodGroupScores(b.saju.tenGods.distribution);
+    const ga = groupValues(a.saju), gb = groupValues(b.saju);
     for (const [g, what] of [["PEER", "앞장서서 정하는 쪽"], ["OUTPUT", "먼저 표현하는 쪽"], ["OFFICER", "약속과 규칙을 챙기는 쪽"]] as const) {
       if (Math.abs(ga[g] - gb[g]) < 1 || out.length >= 3) continue;
       const lead = ga[g] > gb[g] ? a : b;

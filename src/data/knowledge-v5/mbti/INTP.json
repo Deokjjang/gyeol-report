@@ -63,20 +63,20 @@
         { "type": "ENTP", "fit": "좋음", "why": "말꼬리를 잡고 늘어지는 토론이 둘에게는 놀이처럼 즐겁습니다" },
         { "type": "INTJ", "fit": "좋음", "why": "각자 방에서 생각하다 저녁에 결론만 맞춰 봐도 통하는 사이입니다" },
         { "type": "ENFP", "fit": "좋음", "why": "엉뚱한 상상을 같이 굴리며 밤새 떠들 수 있는 상대입니다" },
-        { "type": "INFJ", "fit": "보통", "why": "깊은 질문은 잘 주고받고, 상대가 감정을 묻는 순간 당신 말문이 막힙니다" },
-        { "type": "INFP", "fit": "보통", "why": "간섭이 적어 편하지만 마음을 표현하는 방식에서 자주 엇갈립니다" },
-        { "type": "ENFJ", "fit": "보통", "why": "당신을 사람들 앞으로 끌어내 주지만 너무 자주 끌려 나가면 지칩니다" },
-        { "type": "ISTJ", "fit": "노력", "why": "절차를 지키자는 쪽과 왜 그래야 하냐고 묻는 쪽이라 자주 부딪칩니다" },
-        { "type": "ISFJ", "fit": "노력", "why": "상대가 챙겨 준 정성에 당신의 반응이 늦어 서운함이 생기기 쉽습니다" },
-        { "type": "ESTJ", "fit": "노력", "why": "마감과 보고를 계속 재촉받으면 당신의 생각이 아예 멈춰 버리기 쉽습니다" },
-        { "type": "ESFJ", "fit": "노력", "why": "연락을 중시하는 상대에게 당신의 느린 답장이 상처로 남기 쉽습니다" },
+        { "type": "INFJ", "fit": "좋음", "why": "당신의 날카로운 호기심을 상대의 깊은 통찰이 받아 줘 대화가 깊어집니다" },
+        { "type": "INFP", "fit": "좋음", "why": "서로 간섭이 적어 편안하고 마음속 이야기는 천천히 열어 가는 사이입니다" },
+        { "type": "ENFJ", "fit": "좋음", "why": "상대가 당신을 세상 밖으로 이끌어 주고 쉴 틈만 확보되면 든든한 짝입니다" },
+        { "type": "ISTJ", "fit": "보통", "why": "상대의 성실한 기본기에 당신의 호기심이 더해지면 의외로 단단한 팀이 됩니다" },
+        { "type": "ISFJ", "fit": "보통", "why": "상대의 정성은 따뜻한데 당신이 반응을 조금 서두르면 마음이 더 잘 전해집니다" },
+        { "type": "ESTJ", "fit": "좋음", "why": "당신의 깊은 분석에 상대의 실행 체계가 붙으면 생각이 결과가 됩니다" },
+        { "type": "ESFJ", "fit": "보통", "why": "상대는 연락으로 마음을 확인하니 짧은 안부 한 줄만 보내도 편해집니다" },
         { "type": "ISTP", "fit": "보통", "why": "각자 몰두하는 점은 같고, 당신은 원리를 묻고 상대는 손부터 댑니다" },
         { "type": "ISFP", "fit": "보통", "why": "서로의 자유를 존중하지만 대화 주제가 잘 겹치지 않습니다" },
         { "type": "ESTP", "fit": "보통", "why": "상대가 당신을 밖으로 데리고 나가고, 당신은 상대의 무모함에 이유를 붙여 줍니다" },
-        { "type": "ESFP", "fit": "노력", "why": "상대의 들뜬 속도 앞에서 당신이 한참 뒤에서 생각만 하게 되기 쉽습니다" }
+        { "type": "ESFP", "fit": "보통", "why": "상대의 밝은 에너지가 당신을 움직이게 하고 속도는 서로 맞춰 가는 중입니다" }
       ],
       "dimensionTags": { "inquiry": 0.9, "learningDrive": 0.9, "independence": 0.8, "noveltySeeking": 0.6, "verbalOutput": -0.3, "controlNeed": -0.4, "dutifulness": -0.4, "planning": -0.5, "decisionSpeed": -0.5, "empathyResponse": -0.5, "ruleAdherence": -0.6, "emotionalExpression": -0.6, "socialEnergy": -0.7 },
-      "sources": ["mbti:INTP:summary", "mbti:INTP:functionStack", "docs:mbti-source:INTP", "legacy:mbti-profiles:INTP", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:INTP:summary", "mbti:INTP:functionStack", "docs:mbti-source:INTP", "legacy:mbti-profiles:INTP", "통념(유형 궁합표)"]
     }
   ]
 }

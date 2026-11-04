@@ -3,16 +3,17 @@
  * 임계값은 extractSajuTags 고급 태그(FOOD_WEALTH_FLOW·KILLING_RESOURCE_FLOW: 두 그룹 ≥ 1.5)와 같은 점수.
  * 지식 DB rule이 더 엄격한 일간 조건(살인상생=일간 WEAK 이하, 나머지=WEAK 아님)을 더한다.
  */
-import { getTenGodGroupScores } from "../extractTags";
+import { GROUP_WEAK, groupValues } from "../groupStrength";
 import type { SajuCalcResult } from "../types";
 import type { StructureFlowHit } from "./types";
 
-export const STRUCTURE_FLOW_THRESHOLD = 1.5;
+/** 두 묶음 모두 약(만세력 가중값 1.5 미만)이 아닐 때(P6d A: 묶음 세기 단일 기준). */
+export const STRUCTURE_FLOW_THRESHOLD = GROUP_WEAK;
 
 const round = (v: number) => Math.round(v * 100) / 100;
 
-export function detectStructureFlows(saju: Pick<SajuCalcResult, "tenGods" | "structureAnalysis">): StructureFlowHit[] {
-  const g = getTenGodGroupScores(saju.tenGods.distribution);
+export function detectStructureFlows(saju: Pick<SajuCalcResult, "dayMaster" | "elements" | "structureAnalysis">): StructureFlowHit[] {
+  const g = groupValues(saju);
   const strength = saju.structureAnalysis.dayMasterStrength;
   const weak = strength.level === "WEAK" || strength.level === "VERY_WEAK";
   const t = STRUCTURE_FLOW_THRESHOLD;

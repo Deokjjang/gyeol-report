@@ -1,0 +1,983 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "ENFP",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "ENFP-work-01",
+        "text": "기획 회의에서 아이디어 열 개를 쏟아 내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-02",
+        "text": "새 프로젝트 첫 주에 밤새 시안 만들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-03",
+        "text": "셋째 주 엑셀 정리 앞에서 답장이 느려지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-04",
+        "text": "알아서 해 보라는 말에 눈 반짝이기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-05",
+        "text": "결재 단계 많은 문서 앞에서 기운 빠지기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "ENFP-work-06",
+        "text": "회의 중 딴 주제로 번져 한참 신나게 말하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-07",
+        "text": "마감 임박해서 갑자기 집중력이 폭발하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-08",
+        "text": "브레인스토밍 화이트보드를 낙서로 채우기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-09",
+        "text": "일하다 떠오른 아이디어에 손 멈추기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-10",
+        "text": "팀 메신저에 아이디어 링크 불쑥 공유하기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "ENFP-work-11",
+        "text": "처음 보는 거래처와 30분 만에 친해지기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "ENFP-work-12",
+        "text": "가게 이벤트 아이디어를 새벽에 떠올려 적기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "ENFP-work-13",
+        "text": "이직 사이트를 열고 이것저것 구경하다 설레기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-14",
+        "text": "포트폴리오에 새 작업 끼우다 마감 놓치기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-15",
+        "text": "부업 아이디어만 서른 개 적어 놓은 노트",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-16",
+        "text": "반복 업무 중 갑자기 창작 욕구가 올라오기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-17",
+        "text": "발표 직전까지 슬라이드 순서 바꾸기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-18",
+        "text": "동료 장점을 찾아 회의에서 크게 칭찬하기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "ENFP-work-19",
+        "text": "새 협업 툴에 흥분해 팀에 제안하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-20",
+        "text": "채용 공고 한 줄에 마음 꽂혀 바로 지원하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-21",
+        "text": "점심 약속 잡으며 오후 일정 슬쩍 미루기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-22",
+        "text": "재택 날 카페를 세 곳 옮겨 다니며 일하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-23",
+        "text": "루틴 대신 기분 따라 일 순서 바꾸기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-24",
+        "text": "엉뚱한 제안을 던지고 반응 살피며 웃기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-25",
+        "text": "일 얘기 도중 전혀 다른 분야 관심사로 새기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-26",
+        "text": "시작한 프로젝트 두고 새 것에 눈 돌리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-27",
+        "text": "회의 시간에 자꾸 생기는 질문 참지 못하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-28",
+        "text": "팀 빌딩 행사 기획을 자원해서 맡기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "ENFP-work-29",
+        "text": "세미나에서 만난 사람에게 즉석 협업 제안하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-30",
+        "text": "경력 상담에서 하고 싶은 일이 매번 바뀌기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-work-31",
+        "text": "교내 아이디어 대회 포스터를 밤새 그리기",
+        "rel": "any",
+        "job": "student"
+      },
+      {
+        "id": "ENFP-work-32",
+        "text": "조별 모임에서 새 주제를 계속 제안하기",
+        "rel": "any",
+        "job": "student"
+      }
+    ],
+    "money": [
+      {
+        "id": "ENFP-money-01",
+        "text": "여행 영상에 꽂혀 주말 항공권 끊기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-02",
+        "text": "숙소는 도착해서 찾고 카드값은 다녀와서 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-03",
+        "text": "온라인 가게에 굿즈 부업을 차례로 열어 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-04",
+        "text": "장비부터 사 놓고 정산표는 비워 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-05",
+        "text": "친구 사정 듣고 그 자리에서 송금하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-06",
+        "text": "월급날 며칠 만에 잔액이 반 토막 나기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-07",
+        "text": "세일 알림에 홀려 장바구니 가득 담기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-08",
+        "text": "한정판 굿즈 오픈 시간에 알람 맞춰 놓기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-09",
+        "text": "원데이 클래스 결제 내역이 가득한 달",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-10",
+        "text": "가계부 앱을 설치하고 사흘 뒤 방치하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-11",
+        "text": "새로운 구독 서비스 무료 체험 신청하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-12",
+        "text": "전시회와 팝업 스토어에 쓰는 주말 지출",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-13",
+        "text": "친구 생일 선물로 즉흥적으로 큰 선물 사기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-14",
+        "text": "적금 만기일을 잊고 지내다 나중에 발견하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-15",
+        "text": "친구들과 즉석 여행 짜고 숙소 예약",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-16",
+        "text": "여행지에서 즉흥 소비로 환전한 돈 다 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-17",
+        "text": "취미 용품을 사고 한 번 쓰고 서랍에 넣기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-18",
+        "text": "공동 구매 모집 글에 신나서 먼저 참여하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-19",
+        "text": "중고 거래 앱에서 신기한 물건에 끌리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-20",
+        "text": "식당에서 추천 메뉴를 전부 시켜 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-21",
+        "text": "카드 혜택 비교를 하다가 딴 앱으로 새기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-22",
+        "text": "창업 아이디어에 설레어 사업자 등록 알아보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-23",
+        "text": "친구 크라우드펀딩 소식에 바로 후원하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-24",
+        "text": "저축 앱의 목표 이름을 여행 자금으로 바꾸기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-25",
+        "text": "월말 잔액 보며 다음 달 반성 다짐하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-26",
+        "text": "택배 상자가 도착하는 날 기분이 오르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-27",
+        "text": "돈이 없는데 하고 싶은 일이 먼저 떠오르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-28",
+        "text": "무지출 챌린지 시작하고 삼 일 만에 포기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-29",
+        "text": "공유 오피스 체험 신청 버튼을 누르고 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-30",
+        "text": "친구와 더치페이 정산 앱을 깔고 잊어버리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-31",
+        "text": "결제한 온라인 강의를 쌓아 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-money-32",
+        "text": "기분 전환 쇼핑 후 영수증 보고 놀라기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "love": [
+      {
+        "id": "ENFP-love-01",
+        "text": "좋아하는 사람에게 하루 몇 번 사진 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-02",
+        "text": "소개팅 첫 만남에서 취미 얘기에 빠지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-03",
+        "text": "호감 가는 사람 스토리에 바로 반응하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-04",
+        "text": "고백 대신 자연스럽게 놀러 가자고 제안하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-05",
+        "text": "상대의 특이한 점을 발견하고 반하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-06",
+        "text": "썸 상대와 새로운 장소를 계속 탐험하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-07",
+        "text": "마음이 앞서서 연락을 너무 자주 하는 날",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-08",
+        "text": "소개팅 앱에서 프로필 사진을 계속 바꿔 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-09",
+        "text": "마음 가는 사람과 시간 가는 줄 모르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-10",
+        "text": "연락이 끊기면 온갖 이유 상상하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-11",
+        "text": "첫 만남 귀갓길에 다음 약속 구상",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-12",
+        "text": "좋아하는 사람 생일 이벤트 즉석 기획",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-13",
+        "text": "이상형이 매번 달라져서 친구에게 놀림받기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-14",
+        "text": "썸 타는 중에도 다른 사람에 흔들리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-15",
+        "text": "감정이 올라오면 바로 표현하고 후회하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-16",
+        "text": "상대의 신기한 취미에 눈 번쩍 뜨기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-17",
+        "text": "이별 후 한동안 감정이 롤러코스터 타기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-18",
+        "text": "호감이 갑자기 식어 연락을 미루게 되는 순간",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-19",
+        "text": "상대 말 한마디에 하루 기분이 오르내리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-20",
+        "text": "새로운 데이트 코스를 즐겁게 검색하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-21",
+        "text": "마음에 드는 사람에게 장난스러운 농담 던지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-22",
+        "text": "설레는 감정을 친구에게 한참 얘기하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-23",
+        "text": "좋은 사람인데 설렘이 없어 고민하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-24",
+        "text": "연애 상담 오픈채팅에서 사연 읽다 몰입하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-25",
+        "text": "첫 데이트 직전 옷을 세 번 갈아입기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-26",
+        "text": "연인과 같이 갈 곳 목록이 스무 개가 되기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-27",
+        "text": "같은 데이트 코스가 석 달째면 마음이 출렁",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-28",
+        "text": "재밌겠다 한마디에 다시 살아나기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-29",
+        "text": "연인에게 갑자기 여행 가자고 조르기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-30",
+        "text": "기념일에 즉석 이벤트를 열어 놓고 허둥대기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-31",
+        "text": "연인과 싸운 날 저녁 먼저 농담을 걸기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-32",
+        "text": "연인이 그게 되겠어 하면 크게 상처받기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-love-33",
+        "text": "연인 몰래 깜짝 파티 준비하다 들통나기",
+        "rel": "partner",
+        "job": "any"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ENFP-relationships-01",
+        "text": "첫 모임에서 30분 만에 옆 사람 사연 듣기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-02",
+        "text": "연락처에 모임 이름이 붙은 사람이 수십 명",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-03",
+        "text": "친구 장점을 먼저 발견해 해 보라고 부추기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-04",
+        "text": "신나게 잡은 약속이 당일 아침 부담스러움",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-05",
+        "text": "단톡방에 신나서 사진과 링크를 마구 올리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-06",
+        "text": "낯선 모임에서 연락처 먼저 교환하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-07",
+        "text": "친구의 새 도전을 누구보다 크게 응원하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-08",
+        "text": "여러 모임을 동시에 가입했다가 정리 못 하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-09",
+        "text": "술자리에서 분위기를 띄우는 역할 맡기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-10",
+        "text": "오랜만에 연락한 친구와 밤새 수다 떨기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-11",
+        "text": "다툰 뒤 금세 먼저 연락해 풀어 버리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-12",
+        "text": "친구가 힘들다고 하면 같이 울다 웃기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-13",
+        "text": "동호회 번개 모임에 즉흥적으로 참석하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-14",
+        "text": "새 사람 소개받을 때 질문 쏟아 내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-15",
+        "text": "모임 총무를 자원했다가 정산을 미루기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-16",
+        "text": "전화 한 통에 친구 동네까지 달려가기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-17",
+        "text": "친구 취미를 듣다 나도 같이 시작하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-18",
+        "text": "SNS 댓글로 처음 본 사람과 친해지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-19",
+        "text": "장난이 진지한 속 얘기로 번지는 밤",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-20",
+        "text": "관심사가 같은 사람을 만나면 말이 빨라지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-21",
+        "text": "상대 속마음을 눈치채고 조용히 배려하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-22",
+        "text": "어색한 자리에서 먼저 웃음으로 분위기 풀기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-23",
+        "text": "이름과 얼굴을 헷갈려 미안해하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-24",
+        "text": "단체 여행 계획에서 코스를 마구 추가하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-25",
+        "text": "무리한 부탁에 일단 좋다고 하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-26",
+        "text": "오랜 친구에게 갑자기 손 편지 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-27",
+        "text": "뒷담화 자리에서 슬그머니 다른 화제 꺼내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-28",
+        "text": "친구가 보낸 밈 하나에 하루 종일 웃기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-29",
+        "text": "모임 호스트 역할을 즐기다 지쳐 쓰러지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-30",
+        "text": "의견 다른 사람과도 일단 흥미롭게 들어보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-31",
+        "text": "몇 달 잠수 친구에게 갑자기 만나자기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-relationships-32",
+        "text": "처음 본 사람도 어느새 친구처럼 대하기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "alone": [
+      {
+        "id": "ENFP-alone-01",
+        "text": "혼자 있는 밤 메모장이 스무 줄로 불기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-02",
+        "text": "사람 만난 주 하루 종일 침대 영화",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-03",
+        "text": "지적 한마디를 샤워하다 떠올리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-04",
+        "text": "새 취미 영상 보다 장비 검색하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-05",
+        "text": "혼자 산책하며 즉흥 상상으로 이야기 만들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-06",
+        "text": "책 열 권 동시에 펴 놓고 한 권도 못 끝냄",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-07",
+        "text": "주말 아침 아무 계획 없이 침대에서 뒹굴기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-08",
+        "text": "SNS 알고리즘 따라 새벽까지 영상 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-09",
+        "text": "혼자 카페에서 낙서하듯 계획표 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-10",
+        "text": "갑자기 방 정리를 시작해 가구 위치 바꾸기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-11",
+        "text": "시작만 한 취미 도구가 쌓인 책상",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-12",
+        "text": "혼자 있는 시간 음악 틀고 춤추듯 청소하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-13",
+        "text": "머릿속에서 가상의 대화를 여러 번 반복하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-14",
+        "text": "혼자 여행 갈 도시를 정하다 밤 새우기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-15",
+        "text": "다이어리 꾸미기를 열정적으로 시작",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-16",
+        "text": "유튜브 알고리즘에 이끌려 새 분야 파고들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-17",
+        "text": "혼자 보는 영화에 몰입해 현실 걱정 잊기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-18",
+        "text": "불쑥 일기에 인생 목표를 새로 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-19",
+        "text": "혼자 먹는 저녁에 새로운 레시피 도전하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-20",
+        "text": "집에서 팟캐스트 틀고 이것저것 하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-21",
+        "text": "쉬는 날 갑자기 근교 당일치기 떠나기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-22",
+        "text": "노래방 앱으로 혼자 열창하다 목 쉬기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-23",
+        "text": "공원 벤치에서 지나가는 사람들 사연 상상하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-24",
+        "text": "사고 싶은 물건 위시리스트 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-25",
+        "text": "기운 바닥나면 연락 끊고 쉬기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-26",
+        "text": "꿈꾸던 가게나 공간 그림을 노트에 그려 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-27",
+        "text": "새벽에 갑자기 떠오른 노래 가사 녹음해 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-28",
+        "text": "혼자 있으면 생각이 많아져 오히려 외로워지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-29",
+        "text": "손뜨개나 요리처럼 새 기술에 며칠 빠지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-30",
+        "text": "감정 복잡할 때 산책 대신 이불 속",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-31",
+        "text": "작은 성취도 혼자 축하하며 케이크 사 오기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "ENFP-alone-32",
+        "text": "읽던 책을 덮고 새 책을 펼치는 밤",
+        "rel": "any",
+        "job": "any"
+      }
+    ]
+  }
+}

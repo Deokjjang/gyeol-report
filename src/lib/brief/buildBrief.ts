@@ -7,7 +7,7 @@ import type { CompatibilityRelationshipType } from "@/lib/report-generation/repo
 import { calculateSaju } from "@/lib/saju/calculateSaju";
 import { analyzeChartDetections } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
-import { getTenGodGroupScores } from "@/lib/saju/extractTags";
+import { groupValues } from "@/lib/saju/groupStrength";
 import type { SajuCalcResult } from "@/lib/saju/types";
 import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
 import { conditionalFamily, planChapters, PRODUCT_CHARS, topDimension, type TraitSource } from "./chapters";
@@ -111,7 +111,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     if (!lose) break;
     dropped.add(lose.id); selected = selectTraits(scored.filter(x => !dropped.has(x.hit.id)), traitTarget);
   }
-  const groups = getTenGodGroupScores(saju.tenGods.distribution);
+  const groups = groupValues(saju);
   const hitIdSet = new Set(hits.map(h => h.id));
   const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }, imageOk));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
@@ -257,7 +257,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const thisYear = me.chart.thisYear.year;
     const tenGodOf = (s: Parameters<typeof getTenGod>[1]) => getTenGod(me.saju.dayMaster, s);
     // 십성 주의 문장의 조건("원국에 편관까지 있으면")은 이 원국에서 성립할 때만(P3.8 r1, P6b E-2 구조화).
-    const tenGodNotes = tenGodNotesOf(k, { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: getTenGodGroupScores(me.saju.tenGods.distribution) });
+    const tenGodNotes = tenGodNotesOf(k, { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) });
     if (input.product === "major_fortune") {
       const entries = buildYearEntries(tctx, thisYear, me.dayun.cycles);
       const transitions = entries.filter(e => e.dayun?.transition).map(e => e.key);
@@ -282,7 +282,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     : input.product === "major_fortune" && timeline ? majorDesign(timeline.entries, timeline.cycles, me.chart.thisYear.year)
     : input.product === "annual_fortune" && timeline ? (() => { const months = timeline!.entries.filter(e => e.kind === "month"), link = keyMonthsLink(months, timeline!.keyEntries); return { ...annualDesign(timeline!.entries.find(e => e.kind === "year"), months), ...(link ? { keyMonthsLink: link } : {}) }; })()
     : input.product === "career_money_study" ? careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages })
-    : input.product === "saju_mbti_full" ? familyDesign(me.saju, getTenGodGroupScores(me.saju.tenGods.distribution)) : {};
+    : input.product === "saju_mbti_full" ? familyDesign(me.saju, groupValues(me.saju)) : {};
 
   // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
   const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };

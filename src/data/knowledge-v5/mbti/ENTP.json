@@ -64,19 +64,19 @@
         { "type": "INTP", "fit": "좋음", "why": "반박에 반박을 이어 가도 기분 상하지 않는 토론 친구입니다" },
         { "type": "ENTJ", "fit": "좋음", "why": "판을 키우는 당신과 판을 굴리는 상대가 만나 일에 속도가 붙습니다" },
         { "type": "ENFP", "fit": "좋음", "why": "새 아이디어에 같이 흥분해 주지만 마무리 담당이 비어 있기 쉽습니다" },
-        { "type": "INFP", "fit": "보통", "why": "상대가 아끼는 가치를 장난으로 건드리면 생각보다 오래 상처가 남습니다" },
-        { "type": "ENFJ", "fit": "보통", "why": "사람을 모으는 상대와 판을 흔드는 당신, 방향만 맞으면 강한 짝입니다" },
-        { "type": "ISTJ", "fit": "노력", "why": "상대가 지켜 온 방식을 당신이 '왜요?'로 흔들 때마다 긴장이 생깁니다" },
-        { "type": "ISFJ", "fit": "노력", "why": "상대는 평온한 일상을 원하고 당신은 매주 새 계획을 들고 오기 쉽습니다" },
+        { "type": "INFP", "fit": "좋음", "why": "깊은 가치관을 지닌 상대와 얘기하면 당신의 아이디어가 한층 진지해집니다" },
+        { "type": "ENFJ", "fit": "좋음", "why": "당신이 판을 벌이면 상대가 사람을 모아 줘서 일이 크게 굴러갑니다" },
+        { "type": "ISTJ", "fit": "보통", "why": "상대의 성실한 기본기 위에 당신의 새 시도를 얹으면 쓸 만한 결과가 나옵니다" },
+        { "type": "ISFJ", "fit": "보통", "why": "상대의 차분한 일상이 당신에게 쉼터가 되고 변화는 속도를 조절해야 합니다" },
         { "type": "ESTJ", "fit": "보통", "why": "결정이 빠른 점은 같고 규칙을 지킬지 깰지에서 자주 맞섭니다" },
-        { "type": "ESFJ", "fit": "노력", "why": "분위기를 지키려는 상대 앞에서 당신의 농담이 선을 넘기 쉽습니다" },
+        { "type": "ESFJ", "fit": "보통", "why": "상대의 따뜻한 배려는 고마운데 당신의 농담 수위는 살짝 낮춰야 합니다" },
         { "type": "ISTP", "fit": "보통", "why": "서로 구속하지 않아 편하고, 당신 말이 길어지면 상대가 조용히 지칩니다" },
-        { "type": "ISFP", "fit": "노력", "why": "상대의 조용한 감정을 당신이 논리로 따지면 상대가 마음을 닫기 쉽습니다" },
+        { "type": "ISFP", "fit": "보통", "why": "말수 적은 상대의 감각에 끌리지만 당신의 논리는 부드럽게 꺼내야 합니다" },
         { "type": "ESTP", "fit": "보통", "why": "함께 일을 저지르는 재미는 크고 뒷수습은 둘 다 미루기 쉽습니다" },
         { "type": "ESFP", "fit": "보통", "why": "같이 놀면 시간 가는 줄 모르지만 진지한 대화에서 결이 다릅니다" }
       ],
       "dimensionTags": { "noveltySeeking": 0.9, "verbalOutput": 0.8, "inquiry": 0.8, "riskTaking": 0.7, "directness": 0.6, "competitiveness": 0.6, "socialEnergy": 0.6, "conflictApproach": 0.6, "reactivity": 0.6, "persistence": -0.5, "planning": -0.5, "detailFocus": -0.6, "ruleAdherence": -0.8 },
-      "sources": ["mbti:ENTP:summary", "mbti:ENTP:functionStack", "docs:mbti-source:ENTP", "legacy:mbti-profiles:ENTP", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ENTP:summary", "mbti:ENTP:functionStack", "docs:mbti-source:ENTP", "legacy:mbti-profiles:ENTP", "통념(유형 궁합표)"]
     }
   ]
 }

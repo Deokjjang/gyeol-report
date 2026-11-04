@@ -1,0 +1,1037 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "INTJ",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "INTJ-work-01",
+        "text": "새 프로젝트 첫날 전체 흐름도부터 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-02",
+        "text": "모두 찬성한 안건의 석 달 뒤 병목 짚기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-03",
+        "text": "같은 실수 막는 업무 양식 새로 만들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-04",
+        "text": "갑작스러운 일정 변경 앞에서 계획 재정렬",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-05",
+        "text": "칭찬보다 개선점이 먼저 떠오를 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-06",
+        "text": "업무 메신저 알림 끄고 두 시간 몰입하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-07",
+        "text": "불필요한 회의 초대에 거절 사유 적기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-work-08",
+        "text": "분기 목표를 역산해 주간 할 일로 쪼개기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-09",
+        "text": "마감 일주일 전 예비 시나리오 세 개 준비",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-10",
+        "text": "피드백을 수치 기준으로 요구하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-11",
+        "text": "인수인계 문서를 처음부터 다시 쓰기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-work-12",
+        "text": "구직 사이트 대신 목표 직무 로드맵 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-13",
+        "text": "포트폴리오를 읽을 사람 기준으로 재배치",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-14",
+        "text": "개인 프로젝트 마일스톤을 노션에 깔아 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-15",
+        "text": "설명 없이 던져진 지시의 목적부터 되묻기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-16",
+        "text": "집안일 동선을 한 번에 끝나게 다시 짜기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-17",
+        "text": "장보기 목록을 매대 순서대로 정렬하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-18",
+        "text": "프리랜서 단가를 일 단위로 쪼개 계산하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-19",
+        "text": "팀 단톡방의 두서없는 논의를 세 줄로 요약",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-work-20",
+        "text": "그럴듯한 보고서의 빠진 가정 찾아내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-21",
+        "text": "능력 없는 리더 밑에서 조용히 대안 설계",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-work-22",
+        "text": "장기 과제 앞에서 마지막 장면부터 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-23",
+        "text": "야근 대신 자동화 스크립트 한 줄 짜기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-24",
+        "text": "이직 고민 중 오 년 뒤 모습부터 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-25",
+        "text": "신입에게 규칙 대신 원리부터 설명하기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-work-26",
+        "text": "끊기지 않는 오후 집중 시간 지키기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-27",
+        "text": "회의록에 결정 사항과 담당자만 남기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-28",
+        "text": "자격증 공부 계획을 역산 달력으로 짜기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-29",
+        "text": "계약서 특약 조항의 빈틈 꼼꼼히 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-30",
+        "text": "가게 재고 회전율을 혼자 계산해 보기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "INTJ-work-31",
+        "text": "새 직원 교육 매뉴얼을 단계별로 만들기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "INTJ-work-32",
+        "text": "팀장 앞에서 대안 없이 문제만 말하지 않기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-work-33",
+        "text": "팀플 역할 분담표를 먼저 만들어 돌리기",
+        "rel": "any",
+        "job": "student"
+      },
+      {
+        "id": "INTJ-work-34",
+        "text": "일정이 밀린 프로젝트의 핵심 경로만 남기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-work-35",
+        "text": "부업 아이템의 3년 뒤 수익 구조 그려 보기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "money": [
+      {
+        "id": "INTJ-money-01",
+        "text": "노트북 사양표 석 달 비교 뒤 할인철 맞추기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-02",
+        "text": "월급 들어오면 자동이체로 통장 나누기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-money-03",
+        "text": "남들이 다 사는 상품 앞에서 이유부터 묻기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-04",
+        "text": "연간 구독료 합계 계산해 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-05",
+        "text": "가계부 앱 대신 오 년 자산 곡선 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-06",
+        "text": "충동구매 장바구니를 일주일 묵히기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-07",
+        "text": "보험 약관의 보장 공백 직접 찾아보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-08",
+        "text": "전세 대출 이자 시나리오 세 가지 계산",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-09",
+        "text": "비상금 계좌 목표액을 개월 수로 환산하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-10",
+        "text": "연말정산 공제 항목 미리 역산하기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INTJ-money-11",
+        "text": "배달 앱 대신 주간 식비 상한선 정하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-12",
+        "text": "저렴한 열 개보다 오래 쓸 하나 고르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-13",
+        "text": "카드 혜택을 소비 패턴에 맞춰 갈아타기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-14",
+        "text": "리뷰 별점보다 불만 후기부터 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-15",
+        "text": "중고 시세 그래프 보고 되팔 가격 가늠하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-16",
+        "text": "결제 직전 이 물건의 쓸모 기간 따져 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-17",
+        "text": "연금 수령 시점을 나이별 표로 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-18",
+        "text": "선물 예산을 연초에 미리 배정해 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-19",
+        "text": "지출 항목을 목표 기준으로 다시 나누기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-20",
+        "text": "환율 알림만 걸어 두고 감정 없이 기다리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-21",
+        "text": "부수입을 장기 계획 재료로 쪼개 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-22",
+        "text": "사업 자금 흐름을 월별 표로 그리기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "INTJ-money-23",
+        "text": "월세 계약 갱신 전 주변 시세 조사하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-24",
+        "text": "통신 요금제를 사용량 기준으로 갈아타기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-25",
+        "text": "큰 지출 전에 대안 세 개 비교표 만들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-26",
+        "text": "무료 체험 종료일을 달력에 미리 등록하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-27",
+        "text": "할인 문자보다 필요 목록을 먼저 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-28",
+        "text": "지인의 투자 권유 앞에서 구조부터 따지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-29",
+        "text": "소액 적금 만기를 다음 계획과 연결하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-30",
+        "text": "공동 지출 정산 규칙을 미리 정해 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-31",
+        "text": "취향 소비는 허용 한도 안에서만 즐기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-32",
+        "text": "이사 비용을 항목별로 쪼개 예상하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-money-33",
+        "text": "학자금 상환 일정 역산해 두기",
+        "rel": "any",
+        "job": "student"
+      },
+      {
+        "id": "INTJ-money-34",
+        "text": "경조사비 기준을 미리 정해 두기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "love": [
+      {
+        "id": "INTJ-love-01",
+        "text": "호감 가는 사람의 말투 패턴 조용히 관찰하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-02",
+        "text": "소개팅 전 대화 주제 세 개 미리 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-03",
+        "text": "첫 만남 뒤 관계의 가능성 혼자 분석하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-04",
+        "text": "행동의 일관성으로 상대 마음을 판단하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-05",
+        "text": "호감이 생기면 오히려 연락 간격 계산하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-06",
+        "text": "고백 전에 오 년 뒤 모습 그려 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-07",
+        "text": "가벼운 만남 제안 앞에서 목적부터 확인하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-08",
+        "text": "취향 질문에 깊이 있는 답을 준비하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-09",
+        "text": "연애 앱 프로필을 한 줄로 압축하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-10",
+        "text": "첫 데이트 장소를 동선까지 미리 답사하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-11",
+        "text": "마음에 든 사람 앞에서 표정이 굳을 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-12",
+        "text": "애매한 썸 앞에서 관계 정의가 궁금할 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-13",
+        "text": "감정이 커져도 이성적인 이유부터 찾기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-14",
+        "text": "연애관을 노트에 원칙으로 적어 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-15",
+        "text": "호감을 느낀 뒤 사흘간 속마음 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-16",
+        "text": "상대의 가치관이 보일 때까지 말 아끼기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-17",
+        "text": "대화가 통하는 사람 앞에서 말이 길어질 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-18",
+        "text": "소개 제안이 오면 조건부터 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-19",
+        "text": "답장 규칙을 혼자 정해 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-20",
+        "text": "연락 횟수보다 대화 깊이를 기준 삼기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-21",
+        "text": "좋아하는 사람에게 건넬 한마디 고쳐 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-22",
+        "text": "취향 겹치는 전시를 데이트로 제안하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-23",
+        "text": "고백 타이밍을 상대 일정 보고 가늠하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-24",
+        "text": "이별 뒤 원인 분석 보고서 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-25",
+        "text": "설렘이 일상 계획을 흔들 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-26",
+        "text": "천천히 오래 보고 마음 여는 방식",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-27",
+        "text": "첫인상보다 두 번째 만남의 대화 비교하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-28",
+        "text": "서툰 감정 표현 대신 작은 배려 설계하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-29",
+        "text": "썸 상대의 말과 행동이 어긋날 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-30",
+        "text": "이상형 조건 목록을 해마다 고쳐 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-31",
+        "text": "기념일 선물을 상대 취향 메모에서 고르기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-32",
+        "text": "갈등 뒤 대화 주제를 정리해 오기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-33",
+        "text": "힘든 날 위로보다 해결책이 먼저 나올 때",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-34",
+        "text": "함께 쓸 공동 일정표를 먼저 만들기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-love-35",
+        "text": "동거나 결혼 계획을 단계표로 그리기",
+        "rel": "partner",
+        "job": "any"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "INTJ-relationships-01",
+        "text": "모임에서 말수는 적고 허점은 정확히 짚기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-02",
+        "text": "친구 단톡방 약속 잡기에서 일정 정리 맡기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-03",
+        "text": "뒷말 앞에서 사실 확인부터 하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-04",
+        "text": "인사치레 대화에 쓰는 에너지 아끼기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-05",
+        "text": "모임 전 참석자 구도를 머릿속에 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-06",
+        "text": "부탁을 받으면 목적과 기한부터 되묻기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-07",
+        "text": "오랜만에 온 연락에 용건부터 묻기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-08",
+        "text": "동호회 뒤편에서 운영 규칙 손보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-09",
+        "text": "술자리 중간에 조용히 먼저 빠지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-10",
+        "text": "친구 고민 상담에 해결 단계 짜 주기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-11",
+        "text": "소수의 깊은 관계만 오래 유지하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-12",
+        "text": "단체 채팅에서 결론 날 때까지 지켜보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-13",
+        "text": "낯선 모임에서 한 사람과 깊게 대화하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-14",
+        "text": "동료의 감정 호소 앞에서 말문이 막힐 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-15",
+        "text": "결혼식 하객석에서 인맥 구도 관찰하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-16",
+        "text": "팀 회식 장소를 후보 세 곳으로 압축하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-17",
+        "text": "무리한 부탁을 논리로 정중히 거절하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-18",
+        "text": "친구 사이 오해를 사실 순서대로 풀기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-19",
+        "text": "새로 만난 사람의 일관성을 몇 달 지켜보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-20",
+        "text": "오픈채팅방 정보 글의 출처 확인하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-21",
+        "text": "사소한 농담에 진지하게 답해 버린 순간",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-22",
+        "text": "모임 총무를 맡아 회비 장부부터 만들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-23",
+        "text": "이웃 소음 문제를 글로 차분히 전달하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-24",
+        "text": "스터디 모임에서 진행 방식 먼저 제안하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-25",
+        "text": "약속 취소 연락에 대안 날짜를 함께 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-26",
+        "text": "비슷한 관점의 사람에게 끌리는 순간",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-27",
+        "text": "솔직한 평가를 요청받았을 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-28",
+        "text": "협업 상대의 역량을 이틀 만에 파악하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-29",
+        "text": "동창 모임 참석 여부를 득실로 따져 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-30",
+        "text": "선물 고를 때 상대의 쓰임부터 떠올리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-31",
+        "text": "말다툼 중에 감정 대신 근거를 꺼낼 때",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-32",
+        "text": "낯선 자리에 관찰 모드로 입장하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-relationships-33",
+        "text": "회의 뒤 복도에서 속마음 한 줄 나누기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "alone": [
+      {
+        "id": "INTJ-alone-01",
+        "text": "퇴근 후 불 끄고 다음 달 계획 곱씹기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-02",
+        "text": "주말 아침 카페에서 노트에 구상 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-03",
+        "text": "전략 게임에서 장기 빌드 연구하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-04",
+        "text": "다큐멘터리 보며 구조적 원인 메모하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-05",
+        "text": "혼자 걷는 산책에서 머릿속 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-06",
+        "text": "책장을 분류 체계부터 다시 짜기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-07",
+        "text": "새벽 시간 방해받지 않는 독서",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-08",
+        "text": "바둑 복기 영상 반복해서 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-09",
+        "text": "약속 없는 연휴에 계획서 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-10",
+        "text": "혼자 여행 일정을 분 단위로 짜 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-11",
+        "text": "팟캐스트 들으며 반론을 속으로 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-12",
+        "text": "방 가구를 동선 중심으로 재배치하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-13",
+        "text": "배운 내용을 개인 위키에 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-14",
+        "text": "새 취미 전에 로드맵부터 검색하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-15",
+        "text": "영화 끝나고 결말의 복선 분석하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-16",
+        "text": "침대에 누워 오 년 뒤 시나리오 그리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-17",
+        "text": "지하철에서 이어폰으로 세상 차단하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-18",
+        "text": "사람 많은 날 뒤에 조용한 하루 예약하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-19",
+        "text": "취미 장비 목록을 효율 순으로 정렬하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-20",
+        "text": "글쓰기 앱에 장기 구상 쌓아 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-21",
+        "text": "직관으로 떠오른 생각의 근거 따져 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-22",
+        "text": "운동 기록을 숫자로 남기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-23",
+        "text": "빈 일요일 저녁 한 주 복기하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-24",
+        "text": "보드게임 규칙서를 끝까지 파고들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-25",
+        "text": "사진첩에서 불필요한 파일 대량 삭제하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-26",
+        "text": "새벽 두 시에 번뜩인 아이디어 메모하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-27",
+        "text": "음악 플레이리스트를 분위기별로 분류하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-28",
+        "text": "심야 드라이브 중 생각 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-29",
+        "text": "원고 퇴고를 몇 번이고 반복하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-30",
+        "text": "방해금지 모드 켜고 생각에 잠기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-31",
+        "text": "서점에서 표지 대신 목차 훑기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-32",
+        "text": "미래 연표를 혼자 그려 보는 밤",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INTJ-alone-33",
+        "text": "낯선 분야 입문서를 단숨에 독파하기",
+        "rel": "any",
+        "job": "any"
+      }
+    ]
+  }
+}

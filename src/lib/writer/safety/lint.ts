@@ -198,3 +198,35 @@ export function starClaim(sentence: string, label: "배우자" | "자녀", where
 /** H: 핵심 문장 표시 기호. 저장 전에 지우고 위치만 남긴다. 남으면 실패. */
 export const KEY_OPEN = "⟪", KEY_CLOSE = "⟫";
 export const KEY_MARK = /[⟪⟫]/g;
+
+/**
+ * P6d A: 십성 묶음 세기 말. 묶음 이름(비겁·식상·재성·관성·인성, 쉬운 이름 뒤 괄호 "(관성)" 포함) 뒤 같은 마디(쉼표·마침표 전 16자) 안의 세기 낱말.
+ * 엔진 단계(만세력 오행 칸 가중값: 강·보통·약)와 다르면 실패. 부정("약하지 않")은 세지 않는다.
+ */
+export type GroupLevelKo = "강" | "보통" | "약";
+export type GroupLevels = Readonly<Record<"비겁" | "식상" | "재성" | "관성" | "인성", GroupLevelKo>>;
+const GROUP_NAME_RE = /(?<![가-힣])(비겁|식상|재성|관성|관살|인성)(?=\)|[이가은는의도]|\s|$|[,.])/g;
+const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리)/;
+const LV_MEDIUM = /^(보통|중간 정도|적당|평균)/;
+const LV_WEAK = /^(약하|약한|약해|약합|약함|옅|부족|모자라|모자란|적은 편|적어|적고|없어|없는|없고|없으|빈약|얇)/;
+export function groupClaims(sentence: string): { group: keyof GroupLevels; level: GroupLevelKo }[] {
+  const out: { group: keyof GroupLevels; level: GroupLevelKo }[] = [];
+  for (const m of sentence.matchAll(GROUP_NAME_RE)) {
+    const group = (m[1] === "관살" ? "관성" : m[1]) as keyof GroupLevels;
+    const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!·]/)[0].slice(0, 16);
+    // 괄호 닫힘·조사·"의 힘"·"기운"·"쪽" 다음, 이름 뒤 말을 한 낱말씩 본다.
+    const words = tail.replace(/^\)?(이|가|은|는|의|도)?\s?/, "").split(/\s+/);
+    for (let i = 0; i < Math.min(words.length, 5); i++) {
+      const w = words.slice(i).join(" ");
+      if (/^(지 않|지는 않|지 않은)/.test(words[i + 1] ?? "") || /지 ?않/.test(w.slice(0, 8))) break;
+      const level: GroupLevelKo | null = LV_STRONG.test(w) ? "강" : LV_MEDIUM.test(w) ? "보통" : LV_WEAK.test(w) ? "약" : null;
+      if (level) { out.push({ group, level }); break; }
+    }
+  }
+  return out;
+}
+/** 엔진 단계와 다른 세기 말(없으면 null). */
+export function groupClaimMismatch(sentence: string, levels: GroupLevels): string | null {
+  for (const c of groupClaims(sentence)) if (levels[c.group] !== c.level) return `${c.group}:${c.level}≠${levels[c.group]}`;
+  return null;
+}

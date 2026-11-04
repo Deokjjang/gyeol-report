@@ -62,20 +62,20 @@
         { "type": "ISTP", "fit": "좋음", "why": "말보다 결과를 보는 점이 같아 일에서 손발이 잘 맞습니다" },
         { "type": "ISTJ", "fit": "좋음", "why": "책임감과 꾸준함이 같아 말이 적어도 서로 믿고 맡깁니다" },
         { "type": "ISFJ", "fit": "좋음", "why": "상대의 세심한 뒷받침에 당신의 추진이 더해져 생활이 단단해집니다" },
-        { "type": "ESFJ", "fit": "보통", "why": "생활 운영은 척척 맞고 효율과 마음 중 무엇이 먼저냐로 다툽니다" },
+        { "type": "ESFJ", "fit": "좋음", "why": "생활의 틀을 함께 짜는 데 손발이 맞아 당신의 체계에 상대의 온기가 더해집니다" },
         { "type": "ESTP", "fit": "보통", "why": "현실 감각은 통하고 계획을 지킬지 말지에서 부딪칩니다" },
         { "type": "ESFP", "fit": "보통", "why": "같이 놀 때는 즐겁고 돈과 약속 관리에서 서로 답답해합니다" },
         { "type": "ENTJ", "fit": "보통", "why": "목표는 같고 절차를 지킬지 새로 짤지에서 주도권 다툼이 납니다" },
         { "type": "INTJ", "fit": "보통", "why": "체계를 좋아하는 건 같고 상대는 그 체계를 자꾸 다시 설계하려 합니다" },
         { "type": "ENTP", "fit": "보통", "why": "아이디어와 실행이 맞물리면 강하고 규칙을 두고 말싸움이 길어집니다" },
-        { "type": "ENFJ", "fit": "보통", "why": "둘 다 이끄는데 한쪽은 마음을, 한쪽은 규칙을 먼저 챙깁니다" },
-        { "type": "INTP", "fit": "노력", "why": "논리로는 대화가 되고 당신의 마감이 상대의 탐구 시간을 자꾸 자릅니다" },
+        { "type": "ENFJ", "fit": "노력", "why": "상대는 사람의 마음을 먼저 살피고 당신은 일의 순서를 먼저 세우려 합니다" },
+        { "type": "INTP", "fit": "좋음", "why": "당신의 추진력과 상대의 분석력이 맞물려 믿고 맡길 수 있는 짝이 됩니다" },
         { "type": "INFP", "fit": "노력", "why": "당신의 마감과 상대가 찾는 의미가 정면으로 엇갈립니다" },
         { "type": "ENFP", "fit": "노력", "why": "끌림은 크고 즉흥과 계획 사이에서 쌓이는 피로도 큽니다" },
         { "type": "INFJ", "fit": "노력", "why": "서로 가장 낯선 언어를 쓰지만 배우고 나면 시야가 넓어집니다" }
       ],
       "dimensionTags": { "dutifulness": 0.9, "controlNeed": 0.8, "directness": 0.8, "ruleAdherence": 0.8, "planning": 0.8, "decisionSpeed": 0.7, "persistence": 0.7, "detailFocus": 0.6, "statusDrive": 0.6, "spendingControl": 0.5, "noveltySeeking": -0.5, "empathyResponse": -0.5, "emotionalExpression": -0.5 },
-      "sources": ["mbti:ESTJ:summary", "mbti:ESTJ:functionStack", "mbti:ESTJ:notablePairs", "legacy:mbti-profiles:ESTJ", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ESTJ:summary", "mbti:ESTJ:functionStack", "mbti:ESTJ:notablePairs", "legacy:mbti-profiles:ESTJ", "통념(유형 궁합표)"]
     }
   ]
 }

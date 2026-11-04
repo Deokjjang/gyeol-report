@@ -1,0 +1,977 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "INFJ",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "INFJ-work-01",
+        "text": "회의 뒤 굳은 표정 동료에게 메시지 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-02",
+        "text": "발표 전날 청중 분위기까지 그려 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-03",
+        "text": "프로젝트 이름을 한참 고민해 의미 맞추기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-04",
+        "text": "업무 채팅방 말투 변한 사람 먼저 알아채기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-05",
+        "text": "기획서 첫 문단에 왜 이 일인지 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-06",
+        "text": "의견 갈릴 때 양쪽 입장 한 장 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-07",
+        "text": "의미 없어 보이는 반복 업무 앞에서 멈칫하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-08",
+        "text": "퇴근 뒤 조용한 사무실에서 기획안 다듬기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INFJ-work-09",
+        "text": "협업 툴 댓글로 반대 의견을 돌려 말하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-10",
+        "text": "미팅 직전 상대가 진짜 원하는 것부터 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-11",
+        "text": "팀 막내의 부담을 눈치채고 일 나눠 맡기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-12",
+        "text": "후기 별점보다 한 줄 평 속 마음을 곱씹기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "INFJ-work-13",
+        "text": "손님 표정이 어두우면 한마디 더 건네기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "INFJ-work-14",
+        "text": "회식 자리에서 구석에 앉은 사람 옆으로 가기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INFJ-work-15",
+        "text": "포트폴리오 첫 장에 일의 이유 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-16",
+        "text": "구직 공고를 보며 회사 분위기부터 상상하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-17",
+        "text": "프리랜서 의뢰인의 한 줄 요청 뒤 속뜻 짚기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-18",
+        "text": "번아웃 직전 일정표에서 약속 하나 지우기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-19",
+        "text": "이직 고민을 걸으면서 혼자 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-20",
+        "text": "팀 목표 문구를 단어 하나까지 고쳐 쓰기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INFJ-work-21",
+        "text": "집안일 순서를 머릿속으로 미리 그려 놓기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-22",
+        "text": "회의록 끝에 다음 사람 위한 말 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-23",
+        "text": "새 일 맡기 전 누구에게 도움 될지 따지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-24",
+        "text": "퇴근길 지하철에서 오늘 한 말을 되짚기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INFJ-work-25",
+        "text": "사이드 프로젝트 노션 첫 페이지에 방향 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-26",
+        "text": "면접관의 미묘한 표정 변화 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-27",
+        "text": "공동 문서에서 남의 문장 조심스레 고치기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-28",
+        "text": "팀장의 평소와 다른 목소리 톤 알아채기",
+        "rel": "any",
+        "job": "employed"
+      },
+      {
+        "id": "INFJ-work-29",
+        "text": "단골 후기 한 줄에 하루 기분이 바뀌기",
+        "rel": "any",
+        "job": "business"
+      },
+      {
+        "id": "INFJ-work-30",
+        "text": "거절 메일을 세 번 고쳐 쓰고 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-work-31",
+        "text": "팀플 조원들 분위기 살피며 역할 정하기",
+        "rel": "any",
+        "job": "student"
+      },
+      {
+        "id": "INFJ-work-32",
+        "text": "교내 발표 준비하며 청중 입장에서 대본 읽기",
+        "rel": "any",
+        "job": "student"
+      }
+    ],
+    "money": [
+      {
+        "id": "INFJ-money-01",
+        "text": "후원 정기결제 버튼 앞에서 오래 머뭇거리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-02",
+        "text": "오래 쓸 만년필 하나에 월급 일부 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-03",
+        "text": "힘든 친구 앞에서 계산 대신 택시비 내주기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-04",
+        "text": "큰 계약서 앞에서 숫자보다 직감 먼저 따르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-05",
+        "text": "가계부 앱에 의미 있는 소비 칸 만들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-06",
+        "text": "필요 없는 구독을 해지하며 마음 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-07",
+        "text": "세일 알림 앞에서 의미 있는지 되묻기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-08",
+        "text": "기부 영수증을 모아 연말에 한꺼번에 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-09",
+        "text": "충동구매 직전 장바구니를 이틀 묵히기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-10",
+        "text": "비싼 선물보다 상대 취향 저격 소품 고르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-11",
+        "text": "생일 선물 고르다 검색창에 밤을 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-12",
+        "text": "중고 거래에서 깎아 달라는 말을 못 하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-13",
+        "text": "월급날 통장을 보며 몇 년 뒤 그림 떠올리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-14",
+        "text": "돈 얘기 나오면 화제를 슬쩍 돌리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-15",
+        "text": "적금 만기 알림을 보고 쓸 곳부터 구상하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-16",
+        "text": "배달 앱 대신 조용한 동네 식당 찾아가기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-17",
+        "text": "공동 구매 총무를 맡고 정산을 꼼꼼히 챙기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-18",
+        "text": "여행 경비 나눌 때 남이 더 내게 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-19",
+        "text": "독립 서점에서 책 세 권을 한 번에 사기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-20",
+        "text": "의미 있는 전시 티켓은 망설임 없이 결제하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-21",
+        "text": "생활비 앱 알림을 끄고 월말에 몰아 확인하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-22",
+        "text": "누군가의 크라우드펀딩 소식에 조용히 참여하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-23",
+        "text": "고급 제품 앞에서 만든 이 이야기 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-24",
+        "text": "카드 명세서 속 쓴 이유를 하나씩 되짚기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-25",
+        "text": "연말정산 서류 정리하며 한 해 돌아보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-26",
+        "text": "통장 쪼개기 앱 설정을 밤새 완벽히 맞추기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-27",
+        "text": "밥값을 계산대에서 슬며시 먼저 내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-28",
+        "text": "단가 말하기 전 상대 사정부터 헤아리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-29",
+        "text": "선물 카드 받고 쓸 곳 오래 고민하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-30",
+        "text": "저축 목표를 숫자 대신 하고 싶은 일로 적기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-31",
+        "text": "수리비 견적 앞에서 믿을 만한 사람부터 찾기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-money-32",
+        "text": "환불 요청 메시지를 몇 번씩 다듬어 보내기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "love": [
+      {
+        "id": "INFJ-love-01",
+        "text": "호감 가는 사람의 말투를 몇 번씩 되새기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-02",
+        "text": "소개팅 첫 만남에서 눈빛으로 느낌 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-03",
+        "text": "마음이 생겨도 몇 달 동안 지켜보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-04",
+        "text": "답장 늦어지면 상대 사정부터 헤아리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-05",
+        "text": "고백 직전 상대의 속마음을 오래 가늠하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-06",
+        "text": "이 사람이다 싶을 때 갑자기 깊이 빠져들기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-07",
+        "text": "연락처 이름을 바꿔 놓고 혼자 웃기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-08",
+        "text": "썸 단계에서 상대의 하루를 먼저 묻기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-09",
+        "text": "연애관을 노트에 길게 적어 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-10",
+        "text": "첫 데이트 장소를 조용한 곳으로 고르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-11",
+        "text": "상대의 지친 말투를 읽고 전화 먼저 걸기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-12",
+        "text": "이별 후 한참 지나서야 감정이 몰려오기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-13",
+        "text": "좋아하는 마음을 숨기고 평소처럼 대하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-14",
+        "text": "소개팅 앱 프로필 문구에 오래 공들이기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-15",
+        "text": "상대와 눈이 마주친 순간을 하루 종일 곱씹기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-16",
+        "text": "마음이 식은 뒤 조용히 선을 긋기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-17",
+        "text": "결혼관 꺼내기 전 상대 눈 오래 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-18",
+        "text": "말없이 함께 걷는 산책에서 편안함 느끼기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-19",
+        "text": "좋아하는 사람 말버릇 따라 하는 나 발견",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-20",
+        "text": "첫 만남 뒤 집에서 대화 복기하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-21",
+        "text": "상대가 힘들다는 말에 밤새 문장을 고르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-22",
+        "text": "관계의 방향을 속으로 먼저 정해 놓기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-23",
+        "text": "호감 가는 사람 얘기에 깊이 귀 기울이기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-24",
+        "text": "카페 창가에서 둘이 같은 곳을 보는 상상하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-25",
+        "text": "얕은 만남이 길어질수록 마음이 멀어지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-26",
+        "text": "연락 빈도보다 한마디의 깊이를 따지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-27",
+        "text": "기념일 편지를 몇 번이나 새로 쓰기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-28",
+        "text": "연인의 말투 변화를 가장 먼저 알아채기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-29",
+        "text": "연인이 피곤하다는 말에 속사정을 조용히 묻기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-30",
+        "text": "싸운 뒤 말 대신 긴 메시지로 마음 풀기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-31",
+        "text": "연인과 같은 방향인지 묻는 대화 꺼내기",
+        "rel": "partner",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-love-32",
+        "text": "연인에게 서운함이 쌓이면 혼자 정리하기",
+        "rel": "partner",
+        "job": "any"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "INFJ-relationships-01",
+        "text": "처음 만난 사람이 고민을 털어놓는 자리",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-02",
+        "text": "단톡방 조용해진 사람에게 따로 메시지",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-03",
+        "text": "모임에서 분위기 가라앉는 순간 먼저 느끼기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-04",
+        "text": "속마음 보이는 친구가 두세 명뿐인 자리",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-05",
+        "text": "친구의 이상한 웃음에서 숨은 사정 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-06",
+        "text": "오래 참다가 연락처를 정리하듯 관계 끊기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-07",
+        "text": "부탁을 거절하기 전 문장을 머릿속에서 고르기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-08",
+        "text": "동창 모임 말수 줄어든 친구 옆자리",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-09",
+        "text": "경조사 단톡방에 정성 담은 한 줄 쓰기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-10",
+        "text": "사람 많은 모임 후 집에서 한참 멍하니 있기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-11",
+        "text": "엘리베이터 이웃과 눈인사하며 분위기 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-12",
+        "text": "친구 새 연애 얘기 속 불안한 낌새 알기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-13",
+        "text": "싸운 두 사람 사이에서 듣기만 하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-14",
+        "text": "카톡 프로필 바뀐 친구 마음 헤아리기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-15",
+        "text": "소개 자리에서 첫인상으로 상대의 결을 느끼기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-16",
+        "text": "선물 고를 때 상대 취향 오래 기억하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-17",
+        "text": "독서 모임에서 작가의 마음 얘기하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-18",
+        "text": "친구가 힘들 때 해결책 대신 옆에 앉아 있기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-19",
+        "text": "단체 사진 속 어색한 표정의 사람 챙기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-20",
+        "text": "모임 총무가 없을 때 조용히 일정 조율 맡기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-21",
+        "text": "술자리 취한 친구 속마음 끝까지 듣기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-22",
+        "text": "가볍게 던진 농담에 상처받은 사람 뒤따라가기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-23",
+        "text": "이름만 아는 사이에 깊은 대화 시작",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-24",
+        "text": "퇴사한 동료와 오랜만에 안부 메시지 주고받기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-25",
+        "text": "온라인 커뮤니티 고민 글에 긴 댓글 남기기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-26",
+        "text": "여러 모임 중 한 곳에만 오래 남기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-27",
+        "text": "약속 장소를 상대 동네로 먼저 제안하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-28",
+        "text": "모임 뒤풀이 대신 일찍 조용히 귀가",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-29",
+        "text": "친구 생일에 의미 담은 손편지 건네기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-30",
+        "text": "관계가 멀어진 이유를 혼자 오래 되짚기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-31",
+        "text": "처음 본 사람의 사연에 눈시울이 붉어지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-relationships-32",
+        "text": "오해가 생겼을 때 직접 만나 풀자고 제안하기",
+        "rel": "any",
+        "job": "any"
+      }
+    ],
+    "alone": [
+      {
+        "id": "INFJ-alone-01",
+        "text": "사람 많이 만난 밤 불 끄고 가만히 있기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-02",
+        "text": "일기장에 오늘 들은 말의 속뜻 적어 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-03",
+        "text": "혼자 산책하다 몇 년 뒤 모습이 선명해지기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-04",
+        "text": "조용한 카페 구석 자리에서 책 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-05",
+        "text": "샤워하면서 오늘 만난 사람들의 감정 털어내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-06",
+        "text": "잠들기 전 내일 할 일 대신 의미를 생각하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-07",
+        "text": "주말 아침 아무 약속 없이 창가에 앉아 있기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-08",
+        "text": "심리학 책을 읽다 밑줄 긋고 사진 찍어 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-09",
+        "text": "영화를 보고 나서 결말의 의미를 오래 곱씹기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-10",
+        "text": "빗소리 영상을 틀어 놓고 생각 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-11",
+        "text": "새벽 라디오 사연 들으며 남의 삶 상상",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-12",
+        "text": "혼자 한강 벤치에 앉아 사람들 구경하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-13",
+        "text": "다이어리에 올해의 한 단어 정하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-14",
+        "text": "옛 음악 재생목록으로 기억 거슬러 가기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-15",
+        "text": "미술관에서 한 작품 앞에 오래 서 있기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-16",
+        "text": "비행기 모드로 몇 시간 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-17",
+        "text": "꿈에서 본 장면을 아침에 메모해 두기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-18",
+        "text": "손글씨로 편지를 쓰고 부치지 않고 간직하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-19",
+        "text": "따뜻한 차를 우리며 머릿속 생각 가라앉히기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-20",
+        "text": "불면의 밤 천장을 보며 예감 따라가기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-21",
+        "text": "혼자 갈 여행지를 지도 앱에 저장하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-22",
+        "text": "내가 왜 지쳤는지 이유를 차근차근 적어 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-23",
+        "text": "고요한 도서관에서 철학 에세이 읽기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-24",
+        "text": "기억나는 사람들 얼굴을 떠올리며 안부 빌기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-25",
+        "text": "일요일 저녁 다음 주 마음가짐 정리하기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-26",
+        "text": "영화관 맨 뒷줄 엔딩 크레딧까지 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-27",
+        "text": "식물에 물을 주며 말없이 시간 보내기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-28",
+        "text": "명상 앱을 켜고 호흡만 따라가기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-29",
+        "text": "옛 노트 펼쳐 지난 직감 맞았나 확인",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-30",
+        "text": "혼자 먹는 저녁에도 상을 예쁘게 차려 보기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-31",
+        "text": "퇴근 후 이어폰 끼고 일부러 먼 길로 걷기",
+        "rel": "any",
+        "job": "any"
+      },
+      {
+        "id": "INFJ-alone-32",
+        "text": "하루를 마치고 오늘의 장면 하나만 고르기",
+        "rel": "any",
+        "job": "any"
+      }
+    ]
+  }
+}

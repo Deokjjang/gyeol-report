@@ -61,6 +61,8 @@ export const ChartBriefSchema = z.object({
   /** phase(P6c B5): 대운 안의 위치(엔진 연차: 1~3년 앞쪽, 4~7년 중간, 8~10년 끝 무렵), yearsLeft = 올해 뒤로 남은 해. */
   currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), tenGod: z.string(), reading: z.string(), phase: z.object({ yearIndex: z.number().int(), label: z.string(), yearsLeft: z.number().int() }).optional(), next: z.object({ ganji: Ganji, startYear: z.number().int(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
   thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
+  /** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값의 단계(강·보통·약)만. 숫자는 주지 않는다. 작가는 묶음 세기를 이 단계로만 쓴다. */
+  groups: z.object({ levels: z.object({ 비겁: z.enum(["강", "보통", "약"]), 식상: z.enum(["강", "보통", "약"]), 재성: z.enum(["강", "보통", "약"]), 관성: z.enum(["강", "보통", "약"]), 인성: z.enum(["강", "보통", "약"]) }), line: z.string() }).optional(),
   /** 배우자 별·자녀 별(P6c B4): 성별 기준 별, 자리(surface 드러남·hidden 지장간에만·none 없음), 사실 한 줄. 성별 미상이면 없음. */
   stars: z.object({ spouse: StarFact, child: StarFact }).optional(),
 });

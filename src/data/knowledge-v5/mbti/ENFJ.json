@@ -60,24 +60,24 @@
       ],
       "jobs": ["교사·강사", "상담·코칭", "인사·조직문화", "홍보·커뮤니케이션", "비영리 단체 운영", "커뮤니티 기획", "간호·보건", "방송 진행자", "교육 기획", "종교·봉사 지도"],
       "conventionalCompat": [
-        { "type": "INTJ", "fit": "보통", "why": "먼 미래를 같이 그리지만 상대가 당신의 다정함을 군더더기로 볼 때가 있습니다" },
-        { "type": "INTP", "fit": "보통", "why": "생각의 깊이는 통하고 논리로 파고드는 질문이 차갑게 들릴 때가 있습니다" },
-        { "type": "ENTJ", "fit": "보통", "why": "목표는 같이 세우고 사람을 다루는 방식에서 부딪칩니다" },
-        { "type": "ENTP", "fit": "보통", "why": "대화는 불꽃이 튀고 장난 섞인 반박에 당신이 먼저 지칩니다" },
+        { "type": "INTJ", "fit": "좋음", "why": "멀리 내다보는 상대와 함께 있으면 당신의 이상이 현실의 계획이 됩니다" },
+        { "type": "INTP", "fit": "좋음", "why": "깊이 파고드는 상대의 질문이 당신의 생각을 더 넓혀 줍니다" },
+        { "type": "ENTJ", "fit": "좋음", "why": "목표를 향해 같이 달리면 당신의 공감과 상대의 추진력이 서로를 키웁니다" },
+        { "type": "ENTP", "fit": "좋음", "why": "아이디어를 던지는 상대 덕에 당신의 대화가 훨씬 신선해집니다" },
         { "type": "INFJ", "fit": "좋음", "why": "말하지 않은 마음까지 서로 알아채 조용히 기대게 됩니다" },
         { "type": "INFP", "fit": "좋음", "why": "속마음을 꺼내 주는 당신 곁에서 상대가 활짝 열립니다" },
         { "type": "ENFP", "fit": "좋음", "why": "둘 다 사람을 좋아해 만날 때마다 함께할 계획이 늘어납니다" },
-        { "type": "ISTJ", "fit": "보통", "why": "약속을 지키는 점은 통하고 사실부터 보는 상대라 챙김이 덜 전해집니다" },
-        { "type": "ISFJ", "fit": "보통", "why": "서로 챙기느라 바쁘고 둘 다 서운함을 늦게 꺼냅니다" },
-        { "type": "ESTJ", "fit": "보통", "why": "책임감은 닮았고 사람을 대하는 온도가 다릅니다" },
-        { "type": "ESFJ", "fit": "보통", "why": "분위기는 같이 띄우고 누가 더 챙기는지 은근히 겨룹니다" },
+        { "type": "ISTJ", "fit": "노력", "why": "말보다 행동으로 답하는 상대라 당신의 마음 표현이 닿기까지 시간이 걸립니다" },
+        { "type": "ISFJ", "fit": "노력", "why": "서로 맞춰 주려다 정작 속마음은 아끼게 되는 조합입니다" },
+        { "type": "ESTJ", "fit": "노력", "why": "원칙을 앞세우는 상대 앞에서 당신의 따뜻한 설득이 힘을 잃기도 합니다" },
+        { "type": "ESFJ", "fit": "노력", "why": "둘 다 챙김이 몸에 배어 있어 누가 주는 쪽인지 은근히 헷갈립니다" },
         { "type": "ISTP", "fit": "노력", "why": "혼자 두어야 편한 상대라 당신의 관심이 간섭으로 느껴집니다" },
         { "type": "ISFP", "fit": "좋음", "why": "조용한 상대를 무대 쪽으로 이끌고 상대는 당신을 쉬게 합니다" },
-        { "type": "ESTP", "fit": "보통", "why": "현장에서 사람을 모으는 힘은 통하고 의미를 묻는 대목에서 엇갈립니다" },
-        { "type": "ESFP", "fit": "보통", "why": "함께 있으면 즐겁고 진지한 얘기로 넘어갈 때 속도가 다릅니다" }
+        { "type": "ESTP", "fit": "노력", "why": "지금 이 순간을 즐기는 상대에게 당신의 깊은 얘기가 무겁게 들릴 수 있습니다" },
+        { "type": "ESFP", "fit": "노력", "why": "분위기는 쉽게 맞지만 속 깊은 대화로 가는 길이 조금 멉니다" }
       ],
       "dimensionTags": { "caretaking": 0.9, "empathyResponse": 0.9, "socialEnergy": 0.8, "verbalOutput": 0.7, "dutifulness": 0.7, "emotionalExpression": 0.6, "intimacyPace": 0.6, "planning": 0.5, "directness": -0.4, "conflictApproach": -0.5, "independence": -0.6, "boundarySetting": -0.7 },
-      "sources": ["mbti:ENFJ:summary", "mbti:ENFJ:functionStack", "mbti:ENFJ:traits", "v1:legacy:mbti-profiles:ENFJ", "통념(유형 궁합표)"]
+      "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ENFJ:summary", "mbti:ENFJ:functionStack", "mbti:ENFJ:traits", "v1:legacy:mbti-profiles:ENFJ", "통념(유형 궁합표)"]
     }
   ]
 }
