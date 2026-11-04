@@ -374,18 +374,6 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  // P6d-ops 2·3: 구매자. 회원은 가입 정보가 있어야 하고(없으면 정보 화면), 비회원은 결제 화면 입력값.
-  const opsModule = await import("../../../../lib/ops/store");
-  const ops = opsModule.createOpsStores();
-  let buyer: import("../../../../lib/ops/orders/buyer").Buyer;
-  {
-    const { resolveBuyer, accountPortFor } = await import("../../../../lib/ops/orders/buyer");
-    const { createAccountPort } = await import("../../../../lib/account/supabase");
-    const resolved = await resolveBuyer(request, json.buyer, { port: accountPublicEnabled() ? accountPortFor(request, createAccountPort) : null, account: ops.account });
-    if (!resolved.ok) return createErrorResponse(resolved.code as CheckoutPrepareRouteErrorCode, resolved.message, resolved.status);
-    buyer = resolved.buyer;
-  }
-
   // One server clock for validation and durable acceptance, even across midnight.
   const acceptedAt = new Date();
   const inputSnapshot = { ...json.inputSnapshot };
@@ -434,6 +422,18 @@ export async function POST(request: Request): Promise<NextResponse> {
       isInvalidRequest ? invalidRequestMessage : createFailedMessage,
       isInvalidRequest ? 400 : 500,
     );
+  }
+
+  // P6d-ops 2·3: 구매자. 입력 검증 뒤, 주문을 쓰기 전에 확인한다. 회원은 가입 정보가 있어야 하고(없으면 정보 화면), 비회원은 결제 화면 입력값.
+  const opsModule = await import("../../../../lib/ops/store");
+  const ops = opsModule.createOpsStores();
+  let buyer: import("../../../../lib/ops/orders/buyer").Buyer;
+  {
+    const { resolveBuyer, accountPortFor } = await import("../../../../lib/ops/orders/buyer");
+    const { createAccountPort } = await import("../../../../lib/account/supabase");
+    const resolved = await resolveBuyer(request, json.buyer, { port: accountPublicEnabled() ? accountPortFor(request, createAccountPort) : null, account: ops.account });
+    if (!resolved.ok) return createErrorResponse(resolved.code as CheckoutPrepareRouteErrorCode, resolved.message, resolved.status);
+    buyer = resolved.buyer;
   }
 
   const orderRuntime = createPaymentOrderPersistenceRuntime();

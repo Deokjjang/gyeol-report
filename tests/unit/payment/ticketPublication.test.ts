@@ -34,6 +34,9 @@ const request = (action: string, body?: unknown, origin = "https://gyeolreport.c
 const exportDir = process.env.TICKET_PUBLICATION_EXPORT;
 const exports: unknown[] = [];
 const sharePort = () => ({ ...sqlBookSharePort(local.db), async owned(reportId: string, user: string) { return (await local.db.query<{ r: { ok: boolean } }>("select book_share_publication($1,$2) r", [reportId, user])).rows[0].r.ok; } });
+// P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
 beforeAll(async () => { local = await ticketPublicationSql(); }, 30000);
 beforeEach(async () => { await local.db.exec("reset role; truncate ticket_bundle_orders,report_ticket_grants,payment_orders cascade; set role service_role;"); });
 afterAll(async () => {

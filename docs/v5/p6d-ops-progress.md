@@ -46,3 +46,8 @@
 
 - 기준선(v5-p6d-base, 638254e3) 전체 시험: 31,223개 중 실패 831(파일 165). JSON은 세션 scratchpad baseline/base.json.
 - 생성 신뢰성 핵심(감독·정책·장 저장·잔액 감지·교체 레인·결제/이용권 연결) + migration + 실패 주입 시험 19개 통과. 기존 ticketQueue 시험은 새 정책(결정론 원고 발행 안 함)에 맞춰 기대값만 갱신.
+- 고객 화면 슬라이스(7ec22f6a): 판매 중지, 가입 정보, 카카오 이메일·채널, 주문 기록, 결제 완료 화면, 구매 내역·문의, 선물, 탈퇴, 개인정보 초안(/privacy/draft).
+- 관리자 화면(87cbe5ac, 서브에이전트 구현 + 메인 검토): 환불 하루 상한을 DB 잠금 안에서 다시 세도록 보강(동시 요청).
+- 로컬 E2E 출처 예외(f06ea9d8): next dev + 로컬 Supabase일 때만 localhost.
+- 로컬 DB에 migration 적용(`pnpm db:v5`, 누적 39). ⑥ 세션과 같은 로컬 DB라 이용권 큐 함수가 바뀐 것(보류·회수=큐로 되돌림)을 보고서에 적는다.
+- 과거 주문 연결(로컬 시험 데이터 `tools/p6d/seed-legacy.ts`): provider_order_…(구매 묶음 buyer) → GR-EBN8, gyeol20260915-…(비회원 → 서재 연결) → GR-SF46. 고객 구매 내역(ops_order summary)과 관리자 검색(gyeol2026·provider_order_·GR-) 모두 나옴(SQL 확인). 화면 확인은 E2E 캡처.

@@ -40,6 +40,9 @@ const settle=(id:string,secret:string)=>settleAcquisition(c,r,id,hashes(secret),
 const balance=async(id:string)=>(await sqlTicketStore(db).call("summary",id)).quantity;
 const attr=async(id:string)=>(await db.query<Record<string,unknown>>("select * from campaign_attributions where user_id=$1",[id])).rows[0];
 const payload=(index:number)=>{const p=structuredClone(RUNTIME_FIXTURES[index].payload);return p.productKey==="annual_fortune"?{...p,productOptions:{selectedYear:String(new Date().getFullYear())}}:p;};
+// P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
 beforeAll(async()=>{db=(await localCampaignDatabase())!;await seedCampaignFixtures(db);c=sqlCampaignStore(db);r=sqlReferralStore(db);
   if(process.env.CAMPAIGN_REVIEW_EXPORT){mkdirSync(process.env.CAMPAIGN_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.CAMPAIGN_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(RUNTIME_FIXTURES));}
 },30000);

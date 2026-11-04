@@ -18,7 +18,8 @@ export async function resolveBuyer(request: Request, raw: unknown, deps: { port:
   if (user && snapshot && accountSession(user, snapshot).status === "member") {
     if (snapshot.contact === null) return { ok: false, code: PROFILE_REQUIRED_CODE, message: PROFILE_REQUIRED_MESSAGE, status: 403 };
     const read = await deps.account.call("read", user.id);
-    const c = read.ok ? read.contact as { name: string; email: string; phone: string | null } | null : null;
+    if (!read.ok) return { ok: false, code: "PAYMENT_CHECKOUT_UNAVAILABLE", message: "결제 준비가 잠시 어려워요. 잠시 후 다시 시도해 주세요.", status: 503 };
+    const c = read.contact as { name: string; email: string; phone: string | null } | null;
     if (!c) return { ok: false, code: PROFILE_REQUIRED_CODE, message: PROFILE_REQUIRED_MESSAGE, status: 403 };
     return { ok: true, buyer: { userId: user.id, name: c.name, email: c.email, phone: c.phone ?? null } };
   }

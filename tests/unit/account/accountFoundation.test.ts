@@ -74,7 +74,7 @@ describe("OAuth redirects, CSRF, session", () => {
     const verifier=response.cookies.getAll().find(c=>c.name.includes("code-verifier"));
     expect(verifier).toMatchObject({httpOnly:true,secure:true,sameSite:"lax",path:"/"});
     expect(url.searchParams.has("scopes")).toBe(false);
-    expect(url.searchParams.get("scope")).toBe(provider==="kakao"?"profile_nickname":null);
+    expect(url.searchParams.get("scope")).toBe(provider==="kakao"?"account_email,profile_nickname,plusfriends":null); // P6d-ops: 콘솔에 설정된 세 항목만
     expect(fetch).not.toHaveBeenCalled();
   });
   it("safe error codes distinguish invalid input, origin, provider and destination failures without secrets", async () => {

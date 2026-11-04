@@ -10,6 +10,9 @@ import { TICKET_A } from "../../helpers/ticketPublicationSql";
 import { sqlReferralStore } from "../../../src/lib/referrals/localReview";
 import { withReferralTickets, validReferralSnapshot } from "../../../src/lib/referrals/service";
 let db: PGlite, h: ReturnType<typeof launchHelpers>;
+// P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
 beforeAll(async () => { ({db,h}=await launchSql()); },30000);
 afterAll(async () => { await db?.close(); });
 beforeEach(async () => {

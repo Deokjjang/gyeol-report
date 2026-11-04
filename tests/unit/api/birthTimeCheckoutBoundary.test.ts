@@ -1,14 +1,16 @@
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
+import { TEST_BUYER } from "../../helpers/opsStoreStub";
 
 const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ ok: true, value: record })) }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 const person = { name: "검증", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
 function request(input: object) {
   return new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
     method: "POST", headers: { "Content-Type": "application/json", Origin: "https://gyeolreport.com" }, body: JSON.stringify({
-      consent: adultCheckoutConsent(), provider: "toss", productType: "saju_mbti_full", inputSnapshot: {
+      consent: adultCheckoutConsent(), buyer: TEST_BUYER, provider: "toss", productType: "saju_mbti_full", inputSnapshot: {
         displayName: person.name, birthDate: person.birthDate,
         reportInputPayload: { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: input, userContext: { focusAreas: [] }, productOptions: {} },
       },

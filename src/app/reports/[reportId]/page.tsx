@@ -1550,8 +1550,9 @@ export default async function ReportResultPage({
     const ticket = await loadOwnedTicketBook(routeParams.reportId ?? "");
     if (ticket.kind === "ticketBook") {
       const { StoredBookReport } = await import("../../../lib/book/storedReport");
-      const { EditionNotice } = await import("../../../components/ops/EditionNotice");
-      return <><EditionNotice reportId={ticket.snapshot.reportId} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} /></>;
+      const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
+      const interim = await isInterimEdition(ticket.snapshot.reportId);
+      return <><EditionNotice interim={interim} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} /></>;
     }
     if (ticket.kind === "storageError") return <ReportGenerationStatus retry />;
     if (ticket.kind === "expired") return renderExpiredState();
@@ -1597,11 +1598,12 @@ export default async function ReportResultPage({
     ? getReportProduct(state.productPreview.productType)
     : null;
   const SaveLibrary = isPaid && accountPublicEnabled() ? (await import("../../../components/account/SaveToLibrary")).SaveToLibrary : null;
-  const { EditionNotice } = await import("../../../components/ops/EditionNotice");
+  const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
+  const interim = isPaid ? await isInterimEdition(reportId) : false;
 
   return (
     <>
-      {isPaid ? <EditionNotice reportId={reportId} /> : null}
+      <EditionNotice interim={interim} />
       {product ? (
         <MetaPurchaseTracker
           reportId={reportId}

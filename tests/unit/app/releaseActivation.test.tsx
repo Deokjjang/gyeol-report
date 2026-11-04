@@ -9,6 +9,7 @@ vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => s
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => state.library }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => ({ create: async (order: Record<string, unknown>) => { state.orders.push(order); return { ok: true, value: order }; } }) }));
 vi.mock("../../../src/lib/sharing/reportShareStore", async original => ({ ...await original<object>(), sharePort: () => ({ owned: async () => state.owned }) }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 vi.mock("next/headers", () => ({ headers: async () => new Headers({ cookie: state.cookie }) }));
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
 import { handleAccount, type AccountPort } from "../../../src/lib/account/handler";
@@ -26,6 +27,7 @@ import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog"
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "../interpretation-v4/runtimeFixtures";
+import { TEST_BUYER } from "../../helpers/opsStoreStub";
 const origin = "https://www.gyeolreport.com", reportId = "report_release_12345678901234567890";
 const consents = Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type: consent_type as "terms" | "privacy", document_version, required: true, is_agreed: true, recorded_at: SHADOW_CLOCK.evaluatedAt }));
 function auth(member = true): AccountPort {
@@ -35,12 +37,12 @@ function auth(member = true): AccountPort {
 function library(): LibraryPort { return { bind: vi.fn(async () => true), claim: vi.fn(async () => "unavailable" as const), orderForReport: vi.fn(async () => "order-release"), list: vi.fn(async () => []) }; }
 function request(payload: unknown = RUNTIME_FIXTURES[0].payload, requestOrigin: string | null = origin, host = origin) {
   const p = payload as ReportInputPayload;
-  return new NextRequest(`${host}/api/payment-checkout/prepare`, { method: "POST", headers: { "content-type": "application/json", ...(requestOrigin === null ? {} : { origin: requestOrigin }), cookie: "test-session=forwarded" }, body: JSON.stringify({ provider: "toss", productType: p.productKey, inputSnapshot: { ...bookCheckoutSnapshot(p), bookGeneration: { version: "v4", evaluatedAt: "forged" } }, consent: adultCheckoutConsent() }) });
+  return new NextRequest(`${host}/api/payment-checkout/prepare`, { method: "POST", headers: { "content-type": "application/json", ...(requestOrigin === null ? {} : { origin: requestOrigin }), cookie: "test-session=forwarded" }, body: JSON.stringify({ provider: "toss", productType: p.productKey, inputSnapshot: { ...bookCheckoutSnapshot(p), bookGeneration: { version: "v4", evaluatedAt: "forged" } }, consent: adultCheckoutConsent(), buyer: TEST_BUYER }) });
 }
 beforeEach(() => {
   state.book = state.account = false; state.orders = []; state.auth = auth(); state.library = library(); state.cookie = ""; state.owned = false;
   vi.useFakeTimers(); vi.setSystemTime(new Date(SHADOW_CLOCK.evaluatedAt));
-  vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
 });
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 

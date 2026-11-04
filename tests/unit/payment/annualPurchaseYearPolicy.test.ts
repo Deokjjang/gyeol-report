@@ -13,7 +13,9 @@ vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOr
 // Keep the live same-origin and binding code; only external ports are synthetic.
 vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => null, finish: (response: Response) => response }) }));
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: mocks.bind }) }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
+import { TEST_BUYER } from "../../helpers/opsStoreStub";
 
 const beforeRollover = new Date("2026-12-31T14:59:59.000Z");
 const afterRollover = new Date("2026-12-31T15:00:00.000Z");
@@ -43,6 +45,7 @@ beforeEach(async () => {
   mocks.bind.mockReset().mockResolvedValue(true);
   mocks.runtime.mockReset().mockReturnValue(createDurablePaymentOrderAdapter(store));
   vi.stubEnv("NODE_ENV", "test");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
   vi.useFakeTimers({ toFake: ["Date"] });
@@ -53,7 +56,7 @@ afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 async function checkout(year: string, snapshotExtra: Record<string, unknown> = {}, payloadExtra: Record<string, unknown> = {}) {
   const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
     method: "POST", headers: { "content-type": "application/json", origin: "https://gyeolreport.com" },
-    body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
+    body: JSON.stringify({ consent: adultCheckoutConsent(), buyer: TEST_BUYER, provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
   }));
   return { status: response.status, body: await response.json() };
 }
@@ -152,7 +155,7 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
       ? { productKey, productSlug, relationshipType: "love", personA: person, personB: { ...person, name: "상대", mbtiType: "INTP" } }
       : { ...payloadFor("2021"), productKey, productSlug, productOptions: {} };
     const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
-      method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
+      method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({ consent: adultCheckoutConsent(), buyer: TEST_BUYER, provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
     }));
     expect(response.status).toBe(200);
     const body = await response.json();
