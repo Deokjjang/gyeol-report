@@ -4,6 +4,7 @@
  * - ADMIN_USER_IDS: 관리자 화면(/admin/orders)을 열 수 있는 계정 id(쉼표 구분). 비어 있으면 아무도 못 연다.
  * - GIFT_EVENT_*: 결제 1건마다 이용권 1장 이벤트(기본: 꺼짐).
  * - COMP_*: 보상 이용권 두 등급(P6e-ops, 기본: 꺼짐). A = 결제 후 환불한 고객(관리자가 지정), B = 기존 무료 이벤트 가입자 명단.
+ *   v5 최종 2-3: A 2장·B 1장, 장마다 고객이 '내가 쓰기 / 선물 링크 만들기'를 고른다(이벤트 이용권과 같은 종류·화면·규칙).
  */
 type Env = Readonly<Record<string, string | undefined>>;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -36,9 +37,9 @@ export function giftEventConfig(env: Env = process.env, now = Date.now()): GiftE
 
 export type CompConfig = {
   readonly enabled: boolean;
-  /** A: 본인용 이용권 장수 · 선물 링크 장수 · 유효일. */
-  readonly aSelf: number; readonly aGift: number; readonly aDays: number;
-  /** B: 장수 · 유효일. */
+  /** A: 총 장수(장마다 내가 쓰기/선물 선택) · 유효일. */
+  readonly aQty: number; readonly aDays: number;
+  /** B: 장수(장마다 내가 쓰기/선물 선택) · 유효일. */
   readonly bQty: number; readonly bDays: number;
   /** 보상 이용권으로 만들 수 있는 상품(기본 4종: 종합·커리어·연애·궁합). 이용권 자체에 담겨 사용 때 서버가 다시 확인한다. */
   readonly products: readonly string[];
@@ -50,8 +51,12 @@ export function compConfig(env: Env = process.env): CompConfig {
   const listed = (env.COMP_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
   return {
     enabled: env.COMP_ENABLED === "1",
-    aSelf: compInt(env.COMP_A_SELF_QTY, 1, 0, 5), aGift: compInt(env.COMP_A_GIFT_QTY, 1, 0, 5), aDays: compInt(env.COMP_A_VALID_DAYS, 60, 1, 365),
+    aQty: compInt(env.COMP_A_QTY, 2, 0, 5), aDays: compInt(env.COMP_A_VALID_DAYS, 60, 1, 365),
     bQty: compInt(env.COMP_B_QTY, 1, 0, 5), bDays: compInt(env.COMP_B_VALID_DAYS, 30, 1, 365),
     products: listed.length ? [...new Set(listed)] : [...COMP_DEFAULT_PRODUCTS],
   };
+}
+/** ops_comp('sync')에 넘기는 설정값(서재 안내·관리자 지정이 같이 쓴다). */
+export function compSyncArgs(cfg: CompConfig, enabled = cfg.enabled) {
+  return { enabled, aQty: cfg.aQty, aDays: cfg.aDays, bQty: cfg.bQty, bDays: cfg.bDays, products: cfg.products };
 }

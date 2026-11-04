@@ -93,7 +93,10 @@ export function CompNotice({ base = "/auth", className, fallback = null }: { bas
 }
 
 type Gift = { id: string; status: string; expiresAt: string; orderCode: string | null; kind?: "event" | "comp"; giftOnly?: boolean; bonus: boolean };
-/** 이벤트 이용권(P6d-ops 6): 결제 1건마다 1장. 내가 쓰거나 선물 링크로 보낸다. 이벤트가 꺼져 있고 받은 것도 없으면 안 보인다. */
+/**
+ * 이벤트 이용권(P6d-ops 6): 결제 1건마다 1장. 내가 쓰거나 선물 링크로 보낸다. 이벤트가 꺼져 있고 받은 것도 없으면 안 보인다.
+ * 보상 이용권(v5 최종 2-3)도 같은 목록·같은 버튼이다(장마다 내가 쓰기 / 선물 링크 만들기). 예전에 지급한 선물 링크 전용(giftOnly)만 내가 쓰기를 숨긴다.
+ */
 export function GiftPanel({ base = "/auth" }: { base?: string }) {
   const [state, setState] = useState<{ gifts: Gift[]; active: boolean } | null>(null), [message, setMessage] = useState(""), [link, setLink] = useState("");
   const load = () => void fetch(`${base}/gift`, { cache: "no-store" }).then(async r => { const b = await r.json(); if (r.ok) setState({ gifts: b.gifts ?? [], active: Boolean(b.event?.active) }); }).catch(() => undefined);
@@ -110,8 +113,8 @@ export function GiftPanel({ base = "/auth" }: { base?: string }) {
   if (!state || (!state.active && !state.gifts.length)) return null;
   const label: Record<string, string> = { available: "사용 가능", used_self: "내가 사용", gifted: "선물 링크 보냄", claimed: "친구가 받음", expired: "기간 종료", revoked: "환불로 회수" };
   const onlyComp = !state.active && state.gifts.every(g => g.kind === "comp");
-  return <section className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">{onlyComp ? "선물 이용권" : "이벤트 이용권"}</h2>
-    {onlyComp ? <p>친구에게 선물할 수 있는 이용권이에요. 링크를 만들어 친구에게 보내 주세요.</p> : <p>결제 1건마다 이용권 1장(계정당 2회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>}
+  return <section className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">{onlyComp ? "보상 이용권" : "이벤트 이용권"}</h2>
+    {onlyComp ? <p>한 장마다 내가 쓰거나, 선물 링크를 만들어 친구에게 보낼 수 있어요.</p> : <p>결제 1건마다 이용권 1장(계정당 2회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>}
     {state.gifts.length ? <ul className={s.list}>{state.gifts.map(g => <li key={g.id} className={s.order}><span className={s.badge}>{label[g.status] ?? g.status}</span> {g.kind === "comp" ? "보상 이용권" : `주문 ${g.orderCode}`} · {seoulDateTime(g.expiresAt)}까지{g.bonus ? " · 보너스 1장 받음" : ""}
       {g.status === "available" || g.status === "gifted" ? <div className={s.actions}>{g.status === "available" && !g.giftOnly ? <button type="button" className={s.button} onClick={() => void act("use_self", g.id)}>내가 쓰기</button> : null}<button type="button" className={s.button} onClick={() => void act("link", g.id)}>{g.status === "gifted" ? "새 선물 링크" : "선물 링크 만들기"}</button></div> : null}</li>)}</ul> : <p className={s.hint}>이벤트 기간에 결제하면 여기에 이용권이 생겨요.</p>}
     {link ? <p className={s.locked}>{link}</p> : null}

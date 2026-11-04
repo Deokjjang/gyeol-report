@@ -11,7 +11,7 @@ import { adminRefundsBetween, buyerPhones, orderDetail, parseSearch, pinFailures
 import { ordersCsv } from "./exportCsv";
 import { kst, ORDER_CODE_RE, UUID_RE, won } from "./format";
 import { adminRpc, compRpc, grantTickets, reconRpc, type Json } from "./rpc";
-import { compConfig } from "../config";
+import { compConfig, compSyncArgs } from "../config";
 import { lookupToss, lookupTossMany, TOSS_BATCH_LIMIT, TOSS_ERROR_LABEL, type TossStatus } from "./toss";
 
 /**
@@ -346,7 +346,7 @@ async function compDesignate(ctx: Ctx): Promise<NextResponse> {
   const userId = str(r.userId), cfg = compConfig(ctx.deps.env);
   let state = "off";
   if (cfg.enabled) {
-    const s2 = await compRpc(ctx.stores.db, "sync", { userId, enabled: true, aSelf: cfg.aSelf, aGift: cfg.aGift, aDays: cfg.aDays, bQty: cfg.bQty, bDays: cfg.bDays, products: cfg.products });
+    const s2 = await compRpc(ctx.stores.db, "sync", { userId, ...compSyncArgs(cfg, true) });
     state = s2.ok === true ? str(s2.state) : "sync_failed";
   }
   await audit(ctx, "comp_designate", str(r.orderCode), { ok: true, userId, already: r.already === true, state });
