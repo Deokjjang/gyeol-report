@@ -87,13 +87,13 @@ describe("궁합 첫 화면과 점수 쪽", () => {
     expect(out.indexOf(pair.image!)).toBeLessThan(out.indexOf(pair.characters[0].core));
     expect(pair.relationsPlain!.length).toBeGreaterThan(0);
     for (const line of pair.relationsPlain!) expect(out).toContain(line.replace(/'/g, "&#x27;"));
-    // 방향 바로가기는 없다. ↗는 사람마다 부록 바로가기(P6c-ui2 f) 두 개뿐.
-    expect(out.match(/↗/g)).toEqual(["↗", "↗"]); expect(out.match(/다른 기운들 보기 ↗/g)?.length).toBe(2); expect(out).not.toContain("보는");
+    // 방향 바로가기는 없다. P6e 11: 사람마다 있던 부록 바로가기도 뺐다.
+    expect(out.match(/↗/g)).toBeNull(); expect(out).not.toContain("다른 기운들 보기"); expect(out).not.toContain("보는");
   });
   it("과거 V4 관계 쪽은 원자료 줄·바로가기 없이 예전 소개를 유지", () => {
     const old = readerBook(storedBook(v4("saju_mbti_compatibility-v4"))!.data), out = html(old, pageOf(old, "pair"));
-    // 방향 바로가기는 없다. ↗는 사람마다 부록 바로가기(P6c-ui2 f) 두 개뿐.
-    expect(out).not.toContain("두 사람 사이의 기운"); expect(out.match(/↗/g)).toEqual(["↗", "↗"]); expect(out.match(/다른 기운들 보기 ↗/g)?.length).toBe(2);
+    // 방향 바로가기는 없다. P6e 11: 사람마다 있던 부록 바로가기도 뺐다.
+    expect(out).not.toContain("두 사람 사이의 기운"); expect(out.match(/↗/g)).toBeNull(); expect(out).not.toContain("다른 기운들 보기");
     expect(out).toContain("말하기 전에 이유를 끝까지 알아보는 사람");
   });
   it("점수 쪽: 총점·구간 이름·항목 막대(점수/만점)·항목 이유", () => {
@@ -126,14 +126,15 @@ describe("대운 표와 카드 라벨", () => {
 });
 
 describe("개정본 표기", () => {
-  it("v5는 제5판 개정일, 과거 V4는 제4판 발행일", () => {
-    expect(storedBook(snapshot("saju_mbti_full"), null, BASE)!.edition).toBe("제5판 · 2026년 11월 3일 개정");
+  it("v5는 제6판 기준일(P6e 12: 기준일은 판 표기에만), 과거 V4는 제4판 발행일", () => {
+    expect(storedBook(snapshot("saju_mbti_full"), null, BASE)!.edition).toBe(`제6판 · ${Number(BASE.slice(0, 4))}년 ${Number(BASE.slice(5, 7))}월 ${Number(BASE.slice(8, 10))}일 기준`);
     expect(storedBook(v4("saju_mbti_full-v4"))!.edition).toMatch(/^제4판 · \d{4}년 \d{1,2}월 \d{1,2}일 발행$/);
   });
   it("표지 아래와 마지막 쪽에 보인다", () => {
     const stored = storedBook(snapshot("saju_mbti_full"), null, BASE)!, data = readerBook({ ...stored.data, edition: stored.edition });
-    expect(html(data, data.pages[0])).toContain("제5판 · 2026년 11월 3일 개정");
-    expect(html(data, data.pages.at(-1)!)).toContain("제5판 · 2026년 11월 3일 개정");
+    expect(html(data, data.pages[0])).toContain(stored.edition!);
+    expect(html(data, data.pages.at(-1)!)).toContain(stored.edition!);
+    expect(stored.edition).toMatch(/^제6판 · \d{4}년 \d{1,2}월 \d{1,2}일 기준$/);
   });
 });
 

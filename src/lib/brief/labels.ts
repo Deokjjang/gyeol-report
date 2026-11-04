@@ -47,3 +47,9 @@ export const HALF_HAP_PLAIN = "반합(삼합 세 글자 중 두 글자가 만남
  * 궁합 관계 쪽(두 사람 자리끼리, P6b D)과 대운·세운 카드(들어오는 글자와 내 자리, P6c-ui2 i)가 같이 쓴다. half: 세 글자 중 두 글자만 만난 삼합. */
 export const relationPlain = (left: string, right: string, kind: string, half: boolean, line: string) =>
   `${josa(left, "과와")} ${josa(right, "이가")} ${half ? HALF_HAP_PLAIN : REL_PLAIN[kind] ?? kind} 관계예요.${line ? ` ${line}이에요.` : ""}`;
+/** 한 자리 수 + 고유어 단위(해·달·번·명·가지)는 고유어 수로(P6e 19: "남은 해는 1해" → "한 해"). 10 이상은 숫자. */
+const NATIVE_NUM = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉"];
+export const koCount = (n: number, unit: string) => (Number.isInteger(n) && n >= 1 && n <= 9 ? `${NATIVE_NUM[n]} ${unit}` : `${n}${unit}`);
+/** 다섯 힘의 쉬운 이름(P6e 14): 첫 등장에 "내 방식의 힘(비겁)", 그 뒤로는 쉬운 이름만. */
+export const GROUP_EASY: Readonly<Record<"PEER" | "OUTPUT" | "WEALTH" | "OFFICER" | "RESOURCE", string>> = { PEER: "내 방식의 힘", OUTPUT: "만드는 힘", WEALTH: "값을 받는 힘", OFFICER: "규칙의 힘", RESOURCE: "배우는 힘" };
+export const GROUP_EASY_BY_NAME: Readonly<Record<string, string>> = { 비겁: "내 방식의 힘", 식상: "만드는 힘", 재성: "값을 받는 힘", 관성: "규칙의 힘", 인성: "배우는 힘" };

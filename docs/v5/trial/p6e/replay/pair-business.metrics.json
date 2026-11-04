@@ -1,0 +1,363 @@
+{
+ "case": "pair-business",
+ "label": "궁합 사업 파트너 · 남궁현×백은솔",
+ "reportId": "report_6563808296934fa6b49ac9991cfe6fcc",
+ "status": "COMPLETED",
+ "wallMs": 245,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 9,
+ "coverLine": "큰 나무가 불빛을 타오르게 돕는 사이",
+ "keySpans": 0,
+ "sections": 25,
+ "chars": 9025,
+ "chapterChars": [
+  1232,
+  1193,
+  1076,
+  691,
+  1007,
+  1072,
+  1040,
+  955,
+  759
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 31,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 208,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cachedInput": 0
+ },
+ "costUsd": 0,
+ "costKrw": 0,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 19,
+   "chars": 10687,
+   "maxTokens": 25183,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 819,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  },
+  {
+   "kind": "rewrite",
+   "finish": "complete",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 2037,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-22",
+ "knowledgeVersion": "knowledge-v5:474b6a322d99",
+ "p6b": {
+  "chars": 9576,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 2
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 10,
+   "misses": [
+    "겁살",
+    "갑신",
+    "정관",
+    "현침살",
+    "편관",
+    "정미",
+    "비견",
+    "반안살",
+    "음착양차살",
+    "식신"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     4
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 24,
+  "sectionsTotal": 25,
+  "byRule": {},
+  "coreImage": "큰 나무가 불빛을 타오르게 돕는 사이",
+  "edition": "제6판"
+ },
+ "p6c": {
+  "tidy": {
+   "hanja": 16,
+   "fnJoin": 0,
+   "prefix": 0,
+   "numbers": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "core",
+  "flags": {
+   "safety": 1,
+   "feature_owner": 1
+  },
+  "dropped": [],
+  "removed": 0,
+  "repaired": 0,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "rewritten": 0,
+  "noticesKept": [],
+  "repairCalls": 1,
+  "redoChapters": [],
+  "rewriteCalls": 1,
+  "hanjaStripped": 16,
+  "repairTargets": 2,
+  "noticesRemoved": [],
+  "rewriteTargets": 2,
+  "termsAnnotated": 32,
+  "droppedSections": [
+   {
+    "at": "4.2",
+    "rules": [
+     "feature_owner"
+    ],
+    "heading": "남궁현님이 백은솔님을 오해하기 쉬운 지점은?",
+    "sentences": [
+     "그런데 백은솔님에게는 겁살에 해당하는 경계심이 일지에 있어요."
+    ]
+   },
+   {
+    "at": "9.2",
+    "rules": [
+     "safety"
+    ],
+    "heading": "서운함을 줄이는 둘만의 규칙은?",
+    "sentences": [
+     "두 사람은 78점의 끌림과 보완이 있는 사이예요."
+    ]
+   }
+  ],
+  "droppedParagraphs": 0
+ },
+ "ledger": {
+  "seeds": [],
+  "angles": [
+   "shinsal:TWELVE_GEOPSAL:fusion:ESTJ",
+   "dayPillar:甲申:fusion:ESTJ",
+   "tenGod:正官:fusion:ESTJ",
+   "shinsal:HYEONCHIMSAL:fusion:ESTJ",
+   "dayPillar:丁未:fusion:ENFP",
+   "tenGod:比肩:fusion:ENFP",
+   "shinsal:TWELVE_BANANSAL:fusion:ENFP",
+   "shinsal:EUMCHAK_YANGCHA:fusion:ENFP",
+   "element:FIRE:STRONG:fusion:ENFP",
+   "shinsal:TWELVE_GEOPSAL:shadow",
+   "dayPillar:甲申:meaning",
+   "dayPillar:丁未:meaning",
+   "tenGod:比肩:meaning",
+   "shinsal:EUMCHAK_YANGCHA:meaning",
+   "shinsal:TWELVE_BANANSAL:meaning",
+   "shinsal:TWELVE_GEOPSAL:meaning",
+   "tenGod:正官:meaning",
+   "shinsal:HYEONCHIMSAL:meaning",
+   "element:FIRE:STRONG:meaning"
+  ],
+  "evidence": [
+   "feature:shinsal:TWELVE_GEOPSAL",
+   "feature:dayPillar:甲申",
+   "feature:tenGod:正官",
+   "feature:shinsal:HYEONCHIMSAL",
+   "feature:dayPillar:丁未",
+   "feature:tenGod:比肩",
+   "feature:shinsal:TWELVE_BANANSAL",
+   "feature:shinsal:EUMCHAK_YANGCHA",
+   "feature:element:FIRE:STRONG"
+  ],
+  "newShare": 1
+ }
+}

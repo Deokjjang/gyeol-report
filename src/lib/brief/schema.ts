@@ -65,6 +65,8 @@ export const ChartBriefSchema = z.object({
   groups: z.object({ levels: z.object({ 비겁: z.enum(["강", "보통", "약"]), 식상: z.enum(["강", "보통", "약"]), 재성: z.enum(["강", "보통", "약"]), 관성: z.enum(["강", "보통", "약"]), 인성: z.enum(["강", "보통", "약"]) }), line: z.string() }).optional(),
   /** 배우자 별·자녀 별(P6c B4): 성별 기준 별, 자리(surface 드러남·hidden 지장간에만·none 없음), 사실 한 줄. 성별 미상이면 없음. */
   stars: z.object({ spouse: StarFact, child: StarFact }).optional(),
+  /** 자리별 십성(P6e 5): 천간 = 그 글자, 지지 = 지장간 십성(본기 먼저). 시간 미상이면 시주 없음. */
+  positions: z.object({ yearStem: z.array(z.string()), monthStem: z.array(z.string()), hourStem: z.array(z.string()).optional(), yearBranch: z.array(z.string()), monthBranch: z.array(z.string()), dayBranch: z.array(z.string()), hourBranch: z.array(z.string()).optional(), line: z.string() }).optional(),
 });
 
 export const FusionBriefSchema = z.object({ target: z.string(), kind: z.enum(["resonance", "tension", "conditional"]), why: z.string(), scene: z.string().optional(), source: z.enum(["fusion", "mbtiLink", "computed"]) });
@@ -166,7 +168,7 @@ export const TimelineEntrySchema = z.object({
 });
 export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
 
-export const PairPersonSchema = z.object({ role: z.string(), callName: z.string(), mbti: z.string().nullable(), dayPillar: z.string(), image: z.string(), traitIds: z.array(z.string()), excess: z.array(Element), lacking: z.array(Element) });
+export const PairPersonSchema = z.object({ role: z.string(), callName: z.string(), mbti: z.string().nullable(), dayPillar: z.string(), image: z.string(), traitIds: z.array(z.string()), excess: z.array(Element), lacking: z.array(Element), shinsal: z.array(z.string()).optional() });
 export const CompatibilityBriefSchema = z.object({
   relationshipType: z.enum(COMPATIBILITY_CATEGORIES),
   lens: z.object({ focus: z.string(), roleLabels: z.tuple([z.string(), z.string()]), tone: z.string(), forbidden: z.array(z.string()) }),

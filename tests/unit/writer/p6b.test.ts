@@ -47,8 +47,10 @@ describe("P6b 핵심 이미지·판 정보·작가 입력", () => {
   it("본인(1999-07-31 08:27 남, 甲申·여름·신약·수 없음) → 과제 예시 그대로", () => {
     const me = { name: "장덕민", gender: "MALE" as const, birthDate: "1999-07-31", birthTime: "08:27", birthTimeUnknown: false, mbtiType: "ENTJ" as const, context: { relationshipStatus: "single", jobStatus: "business_owner", detailJob: "사업" } };
     const { draft } = book("saju_mbti_full", me);
-    expect(draft.coreImage?.line).toBe("한여름 도시 아스팔트 위에 선 큰 나무");
-    expect(draft.edition).toEqual({ number: 5, label: "제5판", revisedAt: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) });
+    // P6e 10: 일간 명사 + 오행 분포 술어(R1 더위) + 계절·시간대(진시 = 아침) + 직업 장소(사업 → 가게) + 고객 해시.
+    expect(draft.coreImage?.line).toMatch(/^여름 아침 가게 창밖 (땡볕에도 잎을 지킨|목마름을 견디는) 큰 나무$/);
+    expect(draft.coreImage?.ruleId).toMatch(/^R1:甲:summer:辰:place:v[01]$/);
+    expect(draft.edition).toEqual({ number: 6, label: "제6판", revisedAt: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) });
   });
   it("작가 입력에 그림 별명·이미지·한 줄이 없다(뜻·나에게만)", () => {
     for (const product of ["saju_mbti_full", "major_fortune"] as const) {

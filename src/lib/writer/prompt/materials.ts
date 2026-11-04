@@ -8,7 +8,7 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 
 export const materialKey = (text: string) => createHash("sha1").update(text).digest("hex").slice(0, 12);
-export type MaterialTable = { readonly exact: ReadonlyMap<string, string>; readonly byHead: ReadonlyMap<string, readonly (readonly [string, string])[]>; readonly plain: ReadonlyMap<string, string> };
+export type MaterialTable = { readonly exact: ReadonlyMap<string, string>; readonly byHead: ReadonlyMap<string, readonly (readonly [string, string])[]>; readonly plain: ReadonlyMap<string, string>; readonly direction: ReadonlyMap<string, string> };
 const HEAD = 10;
 
 /** 재료가 있는 지식 DB 원문 전체(tools/p6c/seeds/rules.ts의 변환 대상과 같은 필드). */
@@ -41,13 +41,14 @@ export function* dbTexts(k: Knowledge): Generator<string> {
 const cache = new WeakMap<Knowledge, MaterialTable>();
 export function materialTable(k: Knowledge): MaterialTable {
   const hit = cache.get(k); if (hit) return hit;
-  const exact = new Map<string, string>(), plain = new Map<string, string>();
+  const exact = new Map<string, string>(), plain = new Map<string, string>(), direction = new Map<string, string>();
   for (const text of dbTexts(k)) {
     if (!text || text.length < HEAD || exact.has(text)) continue;
     const m = k.materials.get(materialKey(text)); if (!m) continue;
-    // MBTI 기능은 "쉬운 이름 | 방향": 원문 자리에는 방향만, 쉬운 이름은 따로(기능 목록을 만들 때 쓴다).
+    // MBTI 기능은 "쉬운 이름 | 방향": 기능 목록은 이름·방향을 따로 쓰고, 장 재료 자리("연애 기능: …")에는 "쉬운 이름: 방향"으로 둔다
+    // (P6e: 방향만 두면 작가가 기능 이름을 거의 쓰지 않았다 — 연애 r1 기능 이름 0회).
     const [a, b] = m.split("|").map(x => x.trim());
-    if (b) { exact.set(text, b); plain.set(text, a); } else exact.set(text, m);
+    if (b) { exact.set(text, `${a}: ${b}`); plain.set(text, a); direction.set(text, b); } else exact.set(text, m);
   }
   const byHead = new Map<string, [string, string][]>();
   const put = (text: string, mat: string) => { const h = text.slice(0, HEAD); const l = byHead.get(h); if (l) l.push([text, mat]); else byHead.set(h, [[text, mat]]); };
@@ -55,7 +56,7 @@ export function materialTable(k: Knowledge): MaterialTable {
   // 브리프가 원문 일부만 옮긴 경우(첫 문장, 출처 문장을 뺀 나머지)도 문장 단위로 그 원문의 재료로 바꾼다. 긴 일치(원문 전체)가 먼저.
   for (const [text, mat] of exact) { const ss = splitSentences(text); if (ss.length > 1) for (const x of ss) if (x.length >= HEAD * 2 && !exact.has(x)) put(x, mat); }
   for (const l of byHead.values()) l.sort((a, b) => b[0].length - a[0].length);
-  const t = { exact, byHead, plain };
+  const t = { exact, byHead, plain, direction };
   cache.set(k, t);
   return t;
 }

@@ -15,19 +15,14 @@ export function BookInputSummary({ data }: { data: BookData }) {
 }
 
 /** 주인공 쪽(궁합은 관계 쪽)에 합친 사람별 표: MBTI는 접고, 만세력·오행은 펼친다.
- * 오행 아래 "내 사주의 다른 기운들 보기"(P6c-ui2 f): 그 사람의 부록 쪽으로 간다. 부록 쪽이 없는 Book은 두지 않는다. */
-function PersonTables({ data, onPage }: { data: BookData; onPage: (page: number) => void }) {
+ * P6e 11: 만세력·내 정보 칸 아래의 부록 쪽 바로 가기 링크는 뺐다(책 끝의 부록 쪽은 그대로, 목차로 간다). */
+function PersonTables({ data }: { data: BookData; onPage: (page: number) => void }) {
   const pair = data.people.length > 1;
-  // 그 사람의 부록 쪽: 이름으로 찾고, 없으면 사람 순서대로(부록은 사람 순서로 한 쪽씩).
-  const appendices = data.pages.flatMap((pg, i) => pg.kind === "appendix" ? [{ pg, i }] : []);
-  const appendixOf = (name: string, n: number) => !appendices.length ? -1 : !pair ? appendices[0].i
-    : (appendices.find(({ pg }) => pg.kind === "appendix" && (pg.title.startsWith(`${name}의 `) || pg.items.some(item => item.person === name))) ?? appendices[n] ?? appendices[0]).i;
-  return <>{data.people.map((p, n) => { const appendix = appendixOf(p.name, n); return <section key={p.role} className={s.personTables}>
+  return <>{data.people.map(p => <section key={p.role} className={s.personTables}>
     {p.table.mbti ? <details className={s.fold}><summary>{pair ? `${p.name}의 ` : ""}MBTI {p.table.mbti.type} · {p.table.mbti.titleKo} 자세히<span aria-hidden="true">+</span></summary><MbtiProfile data={p.table.mbti} /></details>
       : <p className={s.hint}>{pair ? `${p.name}님의 ` : ""}MBTI는 입력하지 않아 추정하지 않습니다.</p>}
     <h2 className={s.personTableTitle}>{p.name}의 만세력</h2><p className={s.hint}>{p.timeLabel}</p><NatalTable data={p.table} />
-    {appendix >= 0 ? <button type="button" className={s.toAppendix} onClick={() => onPage(appendix)}>{pair ? `${p.name}님 사주의` : "내 사주의"} 다른 기운들 보기 ↗</button> : null}
-  </section>; })}</>;
+  </section>)}</>;
 }
 
 /** 상세의 관계 줄(P6c-ui2 i): 쉬운 문장(relationsPlain)이 있으면 그 문장을, 배지 이름(원어)은 아래 작은 글씨로. 없으면 예전 배지 목록. */

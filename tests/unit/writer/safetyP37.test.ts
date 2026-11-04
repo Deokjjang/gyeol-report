@@ -82,28 +82,30 @@ describe("P3.7 원고 보강", () => {
   it("1-4: 커리어 직무 8~12개(근거 한 줄)·지금 직업 적합도·키울 역할·투자 원칙, 연애 호감·연락·밀당 재료", () => {
     const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
     const ev = (b: Brief, key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
-    // P3.8 2: 직무 3단(넓힐 역할 2~3 · 인접 직무 3~4 · 다른 길 2~3), 줄마다 명리 근거와 MBTI 근거.
-    const roles = ev(career, "jobRoles")!.facts.slice(1), adj = ev(career, "jobAdjacent")!.facts.slice(1), far = ev(career, "jobLongterm")!.facts.slice(1);
-    expect(roles.length).toBeGreaterThanOrEqual(2); expect(roles.length).toBeLessThanOrEqual(3);
-    expect(adj.length).toBeGreaterThanOrEqual(3); expect(adj.length).toBeLessThanOrEqual(4);
-    expect(far.length).toBeGreaterThanOrEqual(2); expect(far.length).toBeLessThanOrEqual(3);
-    // P6: MBTI 근거는 성향의 쉬운 설명 한 구절("ENTJ는 … 편"). P6c E1: 옮겨 갈 직무·다른 길은 근거 둘 + 맞는 조건·안 맞는 조건.
-    for (const p of roles) expect(p).toMatch(/^[^—]{2,40} — 명리: .+ \/ MBTI: ENTJ는 .+ 편$/);
-    for (const p of [...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 근거1\(명리\): .+ \/ 근거2\(MBTI\): ENTJ는 .+ 편 \/ 맞는 조건: .+ \/ 안 맞는 조건: .+$/);
-    expect(new Set([...adj, ...far].map(p => p.split(" — ")[0])).size).toBe(adj.length + far.length);
-    for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect([...adj, ...far].join(" "), bad).not.toContain(bad);
+    // P6e 13: 직무 하나씩이 아니라 직군 → 맞는 이유(명리·MBTI·일 장면) → 예시 직업 3~5개.
+    const near = ev(career, "jobGroups")!.facts.slice(1), far = ev(career, "jobGroupsFar")!.facts.slice(1), groups = [...near, ...far];
+    expect(near).toHaveLength(2); expect(far.length).toBeGreaterThanOrEqual(1); expect(far.length).toBeLessThanOrEqual(2);
+    for (const p of groups) expect(p).toMatch(/^(\d순위 )?직군: .+ 직군(\(지금 목표·직업 분야\))? — 이 직군이 쓰는 힘: .+ \/ (MBTI: ENTJ는 .+ 편 \/ )?누구나 떠올릴 일 장면: .+ \/ 예시 직업: [^,]+(, [^,]+){2,4}$/);
+    const titles = groups.flatMap(p => p.split("예시 직업: ")[1].split(", "));
+    expect(new Set(titles).size).toBe(titles.length);
+    for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect(groups.join(" "), bad).not.toContain(bad);
+    expect(career.chapters.flatMap(c => c.materials).some(m => m.kind === "evidence" && m.key === "jobRoles")).toBe(false);
     const current = ev(career, "nowFit")!.facts.join(" ");
     expect(current).toMatch(/판정: (잘 맞음|보통|덜 맞음) — /); // P6b D 커리어 1 → P6d G 지금 자리 진단
     const inv = ["investStyle", "investMistakes", "investPrinciples"].map(x => ev(career, x)!.facts.join(" ")).join(" ");
     expect(inv).toMatch(/예적금: /); expect(inv).toMatch(/주식이라면 (회전형|장기 분산형)/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사|매수|매도/);
-    expect(career.chapters.find(c => c.id === "paths")!.sections![1].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobRoles", "jobAdjacent", "jobLongterm"]); // P6b D 커리어 3 → P6d 맞는 일과 길 둘째 절
+    expect(career.chapters.find(c => c.id === "paths")!.sections![1].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobGroups"]); // P6b D 커리어 3 → P6d 맞는 일과 길 둘째 절 → P6e 13 직군(셋째 절 = 길게 보면 열려 있는 직군)
+    expect(career.chapters.find(c => c.id === "paths")!.sections![2].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobGroupsFar"]);
     expect(career.chapters.find(c => c.id === "invest")!.materials.some(m => m.kind === "evidence" && m.key === "investStyle")).toBe(true);
     for (const n of ["c1", "y", "c2"]) {
       const love = briefs.find(([x]) => x === `love_marriage_child:${n}`)![1];
       // P6d G: 연애 9장(사랑의 엔진·매력·맞는 사람·호감과 연락·연애할 때·갈등·결혼관·부모 역할·흐름). 호감은 crush, 연락 리듬은 talkRhythm(상태별).
       const crush = ev(love, "crush")!.facts.join(" "), talk = ev(love, "talkRhythm")!.facts.join(" ");
-      expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(talk).toMatch(/^관계 상태: /);
-      expect(love.chapters.find(c => c.id === "contact")!.title).toBe("호감·연락·고백");
+      // P6e 8: 연애 중·기혼은 고백·첫 연락 대신 지금 관계의 표현 리듬(4장 제목도 "표현과 대화의 리듬").
+      const together = /^관계 상태: (연애 중|기혼)/.test(talk);
+      if (together) { expect(crush).toMatch(/^관계 상태: (연애 중|기혼)/); expect(crush).not.toMatch(/고백/); expect(love.chapters.find(c => c.id === "contact")!.title).toBe("표현과 대화의 리듬"); }
+      else { expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(love.chapters.find(c => c.id === "contact")!.title).toBe("호감·연락·고백"); }
+      expect(talk).toMatch(/^관계 상태: /);
     }
   });
 
@@ -119,7 +121,10 @@ describe("P3.7 원고 보강", () => {
       const c = b.compatibility!;
       expect(c.dayRelations.length, name).toBeGreaterThan(0);
       // P6b D 궁합: 글자 표기 없는 쉬운 문장(자리·관계 이름·뜻).
-      for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자(와|과) ${c.b.callName}의 태어난 (해|달|날|시각) (하늘|땅) 글자(이|가) .+ 관계예요\\.`));
+      // P6e 20: 같은 관계가 한 사람의 여러 자리에 걸리면 한 줄("태어난 해·달 땅 글자 모두")로 합친다.
+      const W = "태어난 ((해|달|날|시각)|(해|달|날|시각)(·(해|달|날|시각))+) (하늘|땅) 글자( 모두)?";
+      for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 ${W}(와|과) ${c.b.callName}의 ${W}(이|가) .+ 관계예요\\.`));
+      expect(new Set(c.dayRelations.map(r => r.replace(/^.*?(?=[가-힣]+\()/, ""))).size, name).toBe(c.dayRelations.length);
     }
   });
 

@@ -1,0 +1,23 @@
+{
+ "dims": [
+  {
+   "type": "ISFP",
+   "dim": "caretaking+",
+   "value": 0.5,
+   "tag": "Fe·Si"
+  },
+  {
+   "type": "ISFP",
+   "dim": "detailFocus+",
+   "value": 0.4,
+   "tag": "Si"
+  },
+  {
+   "type": "ESFP",
+   "dim": "caretaking+",
+   "value": 0.6,
+   "tag": "Fe·Si"
+  }
+ ],
+ "sentences": []
+}

@@ -25,6 +25,10 @@ const POS = { year: "태어난 해", month: "태어난 달", day: "태어난 날
 
 /** 상태별 절 질문(3·4·7·8·9장). */
 export const LOVE_STATUS_Q: Readonly<Record<string, Readonly<Record<LoveStatus, string>>>> = {
+  // P6e 8: 2장 둘째·셋째 절, 4장 첫 절도 상태별(연애 중·기혼에게 프로필·첫 만남·고백 이야기를 하지 않는다).
+  profile: { single: "프로필에는 무엇을 담을까?", some: "썸 상대에게 어떤 모습을 더 보여 줄까?", dating: "오래된 사이에서 다시 보이는 내 매력은?", married: "오래 함께한 사이에서 다시 보이는 내 매력은?", unknown: "처음 보는 사람에게 무엇을 먼저 보여 줄까?" },
+  firstMeet: { single: "첫 만남 30분에는 무엇을 보여 줄까?", some: "다음 만남에서는 무엇을 보여 줄까?", dating: "처음 끌렸던 모습은 어떻게 다시 켤까?", married: "처음 끌렸던 모습은 어떻게 다시 켤까?", unknown: "처음 만난 자리에서는 무엇을 보여 줄까?" },
+  crush: { single: "호감이 생기면 나는 어떻게 움직일까?", some: "호감이 커지면 나는 어떻게 움직일까?", dating: "좋아하는 마음은 지금 어떻게 표현될까?", married: "아끼는 마음은 요즘 어떻게 표현될까?", unknown: "호감이 생기면 나는 어떻게 움직일까?" },
   meet: { single: "어디서 만나고, 어떤 신호는 피할까?", some: "이 썸을 이어 갈지 볼 신호는?", dating: "지금 관계를 점검할 질문은?", married: "배우자와 맞는 점과 다른 점은?", unknown: "어떤 사람을 만나면 편하고, 어떤 신호는 피할까?" },
   talk: { single: "연락 리듬과 고백은 어떻게 할까?", some: "연락 리듬과 마음을 전하는 순간은?", dating: "둘의 대화 리듬은 어떻게 맞출까?", married: "부부 대화의 리듬은 어떻게 맞출까?", unknown: "호감이 생기면 연락은 어떻게 할까?" },
   home: { single: "언젠가 함께 산다면 무엇을 먼저 정할까?", some: "함께하는 생활을 떠올리면 무엇이 중요할까?", dating: "함께 살게 된다면 돈·역할·집은?", married: "지금 생활에서 돈·역할·양가·집은 어떻게 나눌까?", unknown: "함께 살게 된다면 무엇을 먼저 정할까?" },
@@ -47,6 +51,7 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
   const seed = hash(`${saju.pillars.day.stem}${saju.pillars.day.branch}${c.relationshipStatus}`);
   const fresh = (lines: readonly string[]) => [...lines].sort((a, b) => Number(c.priorEvidence?.has(a) ?? false) - Number(c.priorEvidence?.has(b) ?? false));
   const statusTag = `관계 상태: ${LOVE_STATUS_KO[status]}`;
+  const together = status === "dating" || status === "married";
   const unknownNote = status === "unknown" ? "관계 상태가 입력되지 않았다: 연인·배우자가 있다고도 없다고도 단정하지 말고 조건형('생기면·만약')으로만" : undefined;
   // 자녀 장(l8) 씨앗에서 결혼·양가 낱말은 뺀다(P6c E3 marriage_talk).
   const seeds = (facet: string, n = 2) => status === "unknown" ? [] : pick(deepLines(k, "status-scenes", `love:${status}`, facet).filter(x => facet !== "l8" || !/결혼|시댁|처가|양가|상견례|신혼|혼수|예식|배우자|부부/.test(x)), seed, n).map(x => `상황 씨앗: ${x}`);
@@ -95,12 +100,19 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
     loveEngine: ev("loveEngine", [...baseFacts("spousePalace").slice(0, 2), ...(spouseGroup ? [`배우자 별 묶음(${GROUP_NAME_KO[spouseGroup]}) 세기: ${GROUP_LEVEL_KO[gs[spouseGroup].level]}`] : []), ...baseFacts("spouseStar").slice(0, 1), chart.stars ? `자리: ${chart.stars.spouse.line}` : ""], "배우자 자리·별은 엔진 값 그대로(있음·땅속·없음을 바꾸지 않는다)"),
     dayStage: ev("dayStage", [...(dayStage && stageF ? [`태어난 날 땅 글자의 십이운성: ${stageF.name} — ${stageF.meaning.split(/(?<=[.!?])\s+/)[1] ?? stageF.meaning.split(/(?<=[.!?])\s+/)[0]}`] : []), ...(mbti ? [`연애 기능: ${mbti.cognitiveFunctions.slice(0, 2).map(f => f.easy).join(" / ")}`] : [])]),
     charm: ev("charm", [...charmLines, ...appeal("loveImage"), ...la("charm", 1), `식상(표현하는 힘) ${GROUP_LEVEL_KO[gs.OUTPUT.level]}`]),
-    profile: ev("profile", appeal("profile"), "프로필 문장 예시는 하나만 직접 지어 보여 준다"),
-    firstMeet: ev("firstMeet", appeal("firstMeet")),
+    // P6e 8: 연애 중·기혼은 프로필·첫 만남 대신 오래된 사이에서 다시 보이는 매력·처음 끌렸던 모습 다시 켜기.
+    profile: together
+      ? ev("profile", [statusTag, ...la("attachment", 1), ...appeal("loveImage").slice(0, 1), ...seeds("l3", 1)], "오래 만난 상대가 다시 알아보는 내 모습으로 쓴다. 프로필·소개팅·첫 만남 이야기는 쓰지 않는다")
+      : ev("profile", appeal("profile"), "프로필 문장 예시는 하나만 직접 지어 보여 준다"),
+    firstMeet: together
+      ? ev("firstMeet", [statusTag, ...la("date", 1), ...la("charm", 2).slice(1), ...seeds("l9", 1)], "처음 끌렸던 모습을 다시 보여 주는 행동 하나로 쓴다. 첫 만남·소개팅·고백 이야기는 쓰지 않는다")
+      : ev("firstMeet", appeal("firstMeet")),
     matchTypes: ev("matchTypes", baseFacts("matchTypes"), "유형마다 근거 하나와 장면 하나. 만남 시기는 쓰지 않는다"),
     combos: ev("combos", [...good.map(x => `통념상 잘 맞는 조합: ${x.type} — ${x.why}`), ...hard.map(x => `통념상 맞추는 데 노력이 드는 조합: ${x.type} — ${x.why}`)], "MBTI 조합은 흔히 도는 궁합표의 통념이다. 어려운 조합도 만나면 안 된다고 쓰지 않는다"),
     meetState: ev("meetState", [statusTag, ...(status === "single" || status === "unknown" ? baseFacts("meetingPlaces") : []), ...flags.map(x => x.startsWith("점검") ? x : `피해야 할 신호: ${x}`), ...seeds("l3", 2)], unknownNote ?? (status === "married" ? "배우자와 맞는 점·다른 점은 단정하지 않고 '이런 점이 맞는다면'으로" : status === "dating" ? "관계 점검 질문을 둘 셋, 상대를 평가하지 않는다" : "만남 경로·장소와 피해야 할 신호")),
-    crush: ev("crush", [...baseFacts("crush").slice(0, 2), ...la("confess", 1)]),
+    crush: together
+      ? ev("crush", [statusTag, ...la("attachment", 2), ...la("contact", 1)], "지금 관계에서 마음을 표현하는 리듬으로 쓴다. 고백·첫 연락·썸 이야기는 쓰지 않는다")
+      : ev("crush", [...baseFacts("crush").slice(0, 2), ...la("confess", 1)]),
     talkRhythm: ev("talkRhythm", [statusTag, ...la("contact", 2), ...seeds("l4", 2)], unknownNote ?? (status === "single" || status === "some" ? "연락 리듬·고백 성향, 문장 예시 하나(따옴표 한 줄)" : "대화 리듬, 문장 예시 하나")),
     express: ev("express", [...la("attachment", 2), ...la("date", 1)]),
     jealousy: ev("jealousy", [...(solitary.length ? [`관계 신살: ${solitary.join("·")} → 혼자 정리하는 시간이 필요한 쪽`] : []), ...la("conflict", 2)], "서운함은 한 문장만: 같은 말을 장마다 되풀이하지 않는다"),
@@ -115,11 +127,29 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
   };
 }
 
+/**
+ * 9장 × 관계 상태 주제표(P6e 8). 브리프 질문(LOVE_STATUS_Q)·근거(loveDesign2)가 이 표대로 갈린다. 장 제목은 4장만 상태에 따라 바뀐다(LOVE_STATUS_TITLE).
+ * 솔로·미입력 = 만남 준비, 썸 = 마음을 키우는 단계, 연애 중·기혼 = 지금 관계를 가꾸는 단계.
+ */
+export const LOVE_STATUS_TABLE: Readonly<Record<string, Readonly<Record<LoveStatus, string>>>> = {
+  "love-engine": { single: "사랑의 엔진(공통)", some: "사랑의 엔진(공통)", dating: "사랑의 엔진(공통)", married: "사랑의 엔진(공통)", unknown: "사랑의 엔진(공통)" },
+  charm: { single: "끄는 매력 · 프로필 · 첫 만남 30분", some: "끄는 매력 · 썸 상대에게 더 보여 줄 모습 · 다음 만남", dating: "끄는 매력 · 오래된 사이에서 다시 보이는 매력 · 처음 끌렸던 모습 다시 켜기", married: "끄는 매력 · 오래 함께한 사이의 매력 · 처음 끌렸던 모습 다시 켜기", unknown: "끄는 매력 · 처음 보는 사람에게 보여 줄 것 · 처음 만난 자리" },
+  match: { single: "맞는 사람 · 통념 궁합 · 만날 곳과 피할 신호", some: "맞는 사람 · 통념 궁합 · 이 썸을 이어 갈 신호", dating: "맞는 사람 · 통념 궁합 · 지금 관계 점검 질문", married: "맞는 사람 · 통념 궁합 · 배우자와 맞는 점·다른 점", unknown: "맞는 사람 · 통념 궁합 · 편한 사람과 피할 신호(조건형)" },
+  contact: { single: "호감 · 연락 리듬과 고백 · 숨길 때와 드러낼 때", some: "커지는 호감 · 연락 리듬과 마음 전하기 · 숨길 때와 드러낼 때", dating: "지금의 표현 · 둘의 대화 리듬 · 숨길 때와 드러낼 때", married: "요즘의 표현 · 부부 대화 리듬 · 숨길 때와 드러낼 때", unknown: "호감 · 연락(조건형) · 숨길 때와 드러낼 때" },
+  "in-love": { single: "연애할 때의 나(조건형)", some: "연애할 때의 나(조건형)", dating: "연애할 때의 나", married: "함께 지낼 때의 나", unknown: "연애할 때의 나(조건형)" },
+  conflict: { single: "갈등과 회복(조건형)", some: "갈등과 회복", dating: "갈등과 회복", married: "갈등과 회복", unknown: "갈등과 회복(조건형)" },
+  marriage: { single: "결혼관 · 언젠가 함께 산다면", some: "결혼관 · 함께하는 생활 상상", dating: "결혼관 · 함께 살게 된다면 돈·역할·집", married: "결혼관 · 지금 생활의 돈·역할·양가·집", unknown: "결혼관 · 함께 살게 된다면(조건형)" },
+  parenting: { single: "자녀 별·자리 · 아이를 키운다면", some: "자녀 별·자리 · 아이를 키운다면", dating: "자녀 별·자리 · 아이를 키운다면 둘이 나눌 것", married: "자녀 별·자리 · 아이와의 생활 설계", unknown: "자녀 별·자리 · 아이를 키운다면(조건형)" },
+  flow: { single: "인연의 흐름 · 3년 인연 로드맵", some: "인연의 흐름 · 3년 마음 키우기", dating: "인연의 흐름 · 3년 관계 다지기", married: "인연의 흐름 · 3년 생활 가꾸기", unknown: "인연의 흐름 · 3년 관계 로드맵(조건형)" },
+};
+/** 4장 제목: 연애 중·기혼은 고백 대신 지금 관계의 표현 리듬. */
+export const LOVE_STATUS_TITLE: Readonly<Record<string, Partial<Record<LoveStatus, string>>>> = { contact: { dating: "표현과 대화의 리듬", married: "표현과 대화의 리듬" } };
+
 export const LOVE_REQUIRED: Readonly<Record<string, { readonly evidence: readonly string[]; readonly terms: readonly RegExp[] }>> = {
   "love-engine": { evidence: ["loveEngine", "dayStage"], terms: [/배우자 (자리|별)/, /장생|목욕|관대|건록|제왕|쇠|병|사|묘|절|태|양|십이운성/] },
   charm: { evidence: ["charm", "profile", "firstMeet"], terms: [/도화|홍염|장성|식상|나무|불|흙|쇠|물/] },
   match: { evidence: ["matchTypes", "combos", "meetState"], terms: [/[EI][NS][TF][JP]|기운|별/] },
-  contact: { evidence: ["crush", "talkRhythm"], terms: [/연락|대화|고백/] },
+  contact: { evidence: ["crush", "talkRhythm"], terms: [/연락|대화|고백|표현/] },
   "in-love": { evidence: ["express", "jealousy"], terms: [/표현|질투|서운|데이트/] },
   conflict: { evidence: ["dayRelations", "dangerSigns"], terms: [/충|형|파|해|원진|태어난 날/] },
   marriage: { evidence: ["marriageView", "homeState"], terms: [/정관|재성|반안/] },

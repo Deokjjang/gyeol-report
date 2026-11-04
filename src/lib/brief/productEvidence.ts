@@ -7,7 +7,7 @@ import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { FactProfile } from "./facts";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, josa, TEN_GOD_GROUP } from "./labels";
+import { ELEMENT_KO, josa, koCount, TEN_GOD_GROUP } from "./labels";
 import type { Material, TimelineEntry } from "./schema";
 import { GROUP_STRONG, GROUP_WEAK } from "@/lib/saju/groupStrength";
 
@@ -148,7 +148,7 @@ export function keyMonthsLink(months: readonly TimelineEntry[], keys: readonly s
   if (picked.length < 2) return null;
   const name = (e: TimelineEntry) => e.label.split(" · ")[1]?.split(" ")[0] ?? e.label;
   const gs = picked.map(e => GROUP_OF(e.tenGod.stem));
-  const link = gs.every(g => g === gs[0]) ? `이어지는 점: ${picked.length}달 모두 같은 쪽 기운이라 한 흐름이 길게 이어짐(${picked[0].keywords[0]})`
+  const link = gs.every(g => g === gs[0]) ? `이어지는 점: ${koCount(picked.length, "달")} 모두 같은 쪽 기운이라 한 흐름이 길게 이어짐(${picked[0].keywords[0]})`
     : `이어지는 점: ${name(picked[0])}에 연 '${picked[0].keywords[0]}'이 ${name(picked.at(-1)!)}의 '${picked.at(-1)!.keywords[0]}'으로 넘어감`;
   return { kind: "evidence", key: "keyMonthsLink", facts: [`세 달: ${picked.map(e => `${name(e)}(${e.tenGod.stem})`).join(" → ")}`, link], note: "월별 장에서 쓴 각 달의 설명을 되풀이하지 않는다. 세 달이 어떻게 이어지는지(앞 달이 무엇을 열고 뒤 달이 무엇을 받는지)만 쓴다" };
 }

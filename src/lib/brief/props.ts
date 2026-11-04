@@ -6,7 +6,7 @@
  */
 import { z } from "zod";
 import data from "./data/props.json";
-import type { FactProfile } from "./facts";
+import { sceneTextFits, type FactProfile } from "./facts";
 
 const Prop = z.string().min(2).max(14);
 const Props = z.array(Prop).min(10).max(16);
@@ -30,11 +30,19 @@ export const PROPS: PropsData = PropsSchema.parse(data);
 
 const squash = (s: string) => s.replace(/\s+/g, "").toLowerCase();
 
-/** 입력 직업(자유 입력)에서 직업군을 찾는다. 없으면 null. */
+/** 상태를 말하는 직업군(구직·자영업·살림): 분야 낱말이 함께 있으면 분야 쪽을 고른다. */
+const STATUS_JOBS = new Set(["job-seeker", "self-employed", "homemaker"]);
+/** 입력 직업(자유 입력)에서 직업군을 찾는다. 없으면 null.
+ * P6e 판독: "마케팅 직무 재취업준비"가 구직(경영지원·인사 분야)으로 잡혀 커리어 직군 1순위에 "지금 목표 분야"로 붙었다 → 분야 낱말(마케팅)이 있으면 그쪽. */
 export function matchJob(detailJob: string, p: PropsData = PROPS): PropsData["jobs"][number] | null {
   const d = squash(detailJob);
   if (!d) return null;
-  return p.jobs.find(j => j.keywords.some(k => d.includes(squash(k)))) ?? null;
+  const hits = p.jobs.filter(j => j.keywords.some(k => d.includes(squash(k))));
+  // 상태 낱말 안에 든 분야 낱말("자영업" 안의 "영업")은 분야로 세지 않는다.
+  const spans = (j: PropsData["jobs"][number]) => j.keywords.map(squash).filter(k => k && d.includes(k)).map(k => [d.indexOf(k), d.indexOf(k) + k.length] as const);
+  const statusSpans = hits.filter(j => STATUS_JOBS.has(j.id)).flatMap(spans);
+  const field = hits.find(j => !STATUS_JOBS.has(j.id) && spans(j).some(([a, b]) => !statusSpans.some(([x, y]) => x <= a && b <= y)));
+  return field ?? hits[0] ?? null;
 }
 
 export type CustomerProps = { readonly job: { readonly group: string | null; readonly props: readonly string[] }; readonly relationship: readonly string[]; readonly stage: { readonly key: LifeStage; readonly props: readonly string[] } };
@@ -56,9 +64,30 @@ export function customerProps(f: { detailJob: string; jobStatus: string; age: nu
   const group = matchJob(f.detailJob, p);
   const status = (f.jobStatus && f.jobStatus in p.jobStatus ? f.jobStatus : "unknown") as keyof PropsData["jobStatus"];
   const stage = lifeStage(f, profile);
+  // P6e 16: 소품도 직업군·상태 태그로 거른다(물리치료사에게 "보고서 수정본·연차 눈치", 구직자에게 팀·사무 소품이 생활 단계 소품으로 갔다).
+  const fit = (xs: readonly string[]) => xs.filter(x => sceneTextFits(x, profile));
   return {
-    job: { group: group?.name ?? null, props: group?.props ?? p.jobStatus[status] },
+    job: { group: group?.name ?? null, props: fit(group?.props ?? p.jobStatus[status]) },
     relationship: p.relationship[profile.relationship],
-    stage: { key: stage, props: stage === "student" && f.age >= 19 ? p.lifeStage.college : p.lifeStage[stage] },
+    stage: { key: stage, props: fit(stage === "student" && f.age >= 19 ? p.lifeStage.college : p.lifeStage[stage]) },
   };
+}
+
+/** P6e 10 핵심 이미지의 장소(직업군 → 그 사람이 일하는 곳). 학교 장소는 학생에게만. */
+const JOB_PLACE: Readonly<Record<string, string>> = {
+  "grad-student": "연구실", "college-student": "도서관", "job-seeker": "스터디 카페", "startup-founder": "작은 사무실", "illustrator-webtoon": "작업실", beauty: "샵", "ui-ux-designer": "사무실", "graphic-designer": "작업실",
+  marketer: "회의실", creator: "촬영 방", "pm-planner": "회의실", "data-ai": "사무실", "researcher-professor": "연구실", "real-estate": "중개 사무소", "hr-admin": "사무실", developer: "사무실", lawyer: "사무실", insurance: "상담 테이블",
+  finance: "사무실", "self-employed": "가게", pastry: "빵집", cafe: "카페", chef: "주방", sales: "사무실", accounting: "사무실", reporter: "편집국", "writer-editor": "작업실", trainer: "체육관",
+  kindergarten: "교실", "academy-instructor": "강의실", "school-teacher": "교실", vet: "진료실", dentist: "진료실", "nursing-assistant": "병동", nurse: "병동", doctor: "진료실", pharmacist: "약국", physio: "치료실",
+  "hotel-travel": "로비", "call-center": "상담석", counselor: "상담실", "social-worker": "상담실", police: "파출소", firefighter: "소방서", soldier: "부대", "civil-servant": "민원실", music: "연습실",
+  construction: "현장", "manufacturing-engineer": "공장", "farm-fishery": "바닷가", "factory-worker": "공장", logistics: "물류센터", "driver-delivery": "도로", "store-staff": "매장", "security-facility": "건물", "actor-model": "무대",
+  homemaker: "부엌", "highschool-student": "교실",
+};
+const STATUS_PLACE: Readonly<Record<string, string>> = { job_seeker: "스터디 카페", unemployed: "스터디 카페", student: "도서관", homemaker: "부엌", self_employed: "가게", business_owner: "가게", freelancer: "작업실", employee: "사무실" };
+/** 입력 직업에 장소 낱말이 바로 있으면 그 낱말(카페 사장 → 카페). */
+const PLACE_WORD = /카페|빵집|베이커리|식당|주방|병원|약국|치료실|학원|공방|작업실|매장|편의점|헬스장|미용실|꽃집|서점|사무실|연구실|도서관|스튜디오/;
+export function placeOf(detailJob: string, jobStatus: string): string | null {
+  const w = detailJob.match(PLACE_WORD)?.[0]; if (w) return w;
+  const g = matchJob(detailJob)?.id;
+  return (g && JOB_PLACE[g]) || STATUS_PLACE[jobStatus] || null;
 }

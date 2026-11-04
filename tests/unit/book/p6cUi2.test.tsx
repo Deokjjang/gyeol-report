@@ -47,15 +47,14 @@ describe("c 표지 아래 한 줄", () => {
   });
 });
 
-describe("f 내 사주의 다른 기운들 보기", () => {
-  it("주인공 쪽 오행 아래에 부록 바로가기, 궁합은 사람마다, 부록 없는 Book은 없음", () => {
+describe("f → P6e 11 만세력·내 정보 칸의 부록 바로가기 링크 없음(부록 쪽은 그대로)", () => {
+  it("주인공 쪽·궁합 관계 쪽 모두 링크가 없고, 책 끝 부록 쪽은 남는다", () => {
     const full = read("saju_mbti_full"), out = html(full, pageOf(full, "input"));
-    expect(out).toContain("내 사주의 다른 기운들 보기 ↗");
-    expect(out.indexOf("오행의 구성")).toBeLessThan(out.indexOf("다른 기운들 보기"));
+    expect(out).not.toContain("다른 기운들 보기");
+    expect(out).toContain("오행의 구성");
     const pair = read("saju_mbti_compatibility"), pairOut = html(pair, pageOf(pair, "pair"));
-    expect(pairOut.match(/님 사주의 다른 기운들 보기 ↗/g)?.length).toBe(2);
-    const none = read("saju_mbti_full", d => ({ ...d, appendix: undefined }));
-    expect(html(none, pageOf(none, "input"))).not.toContain("다른 기운들");
+    expect(pairOut).not.toContain("다른 기운들 보기");
+    expect(full.pages.some(p => p.kind === "appendix")).toBe(true);
   });
 });
 

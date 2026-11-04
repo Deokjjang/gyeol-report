@@ -36,7 +36,8 @@ describe("작가 지침(B)", () => {
     for (const e of STYLE_EXAMPLES) { expect(e.text).not.toMatch(/명리학에서/); expect(splitSentences(e.text).filter(x => /\([一-鿿]+\)(은|는) [^.]*뜻해요/.test(x)).length).toBeLessThanOrEqual(1); }
     // P6c H: 소제목마다 ⟪ ⟫ 하나. P6c G·F1: 표지 줄과 카드 줄 예시.
     for (const e of STYLE_EXAMPLES) for (const sec of e.text.split(/^### /m).slice(1)) expect(sec.match(/⟪/g)?.length ?? 0, sec.slice(0, 20)).toBe(1);
-    expect(STYLE_EXAMPLES[0].text).toMatch(/^\[표지\] /); expect(STYLE_EXAMPLES[2].text).toMatch(/\[그림\] .+\n\[해 볼 것\] .+\n\[살필 점\] /);
+    // P6e: 표지 줄은 시스템이 핵심 이미지로 넣고, 작가는 한자를 쓰지 않는다(예시에도 없다).
+    for (const e of STYLE_EXAMPLES) expect(e.text).not.toMatch(/\[표지\]|[一-鿿]/); expect(STYLE_EXAMPLES[2].text).toMatch(/\[그림\] .+\n\[해 볼 것\] .+\n\[살필 점\] /);
     // P3.5 A3: 시험 고객(c1 丁丑·ENTJ, c2 庚辰·INFP, X 丁丑·ISFJ, Y ENFP)과 원국·MBTI가 겹치지 않는 가상 인물
     for (const e of STYLE_EXAMPLES) for (const banned of ["ENTJ", "INFP", "ISFJ", "ENFP", "(정축)", "(경진)", "(갑신)", "천문성", "정관"]) expect(e.text.includes(banned), banned).toBe(false);
   });

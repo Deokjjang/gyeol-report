@@ -13,7 +13,10 @@ import { GROUP_STRONG, GROUP_WEAK, groupValues } from "@/lib/saju/groupStrength"
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, josa, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO } from "./labels";
+import { ELEMENT_KO, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO } from "./labels";
+import { POLE_DEMAND, poleFits, poleKey } from "./mbtiFn";
+import { GROUP_EASY } from "./labels";
+const GROUP_NAME_BY_KEY: Readonly<Record<string, string>> = { PEER: "비겁", OUTPUT: "식상", WEALTH: "재성", OFFICER: "관성", RESOURCE: "인성" };
 import type { ChartBrief, Trait } from "./schema";
 
 type Evidence = { kind: "evidence"; key: string; facts: string[]; note?: string };
@@ -68,7 +71,7 @@ function starEvidence(key: string, label: string, saju: SajuCalcResult, det: Cha
   // 자리마다 용어를 나열하지 않는다(P6b E-7): 어디에 몇 번 보이는지 + 대표 별 하나의 뜻을 문장으로.
   const main = found[0].tenGod; const f = k.features.get(`tenGod:${main}`);
   const places = [...new Set(found.map(x => x.where.replace(/ (하늘 글자|땅 글자 속)$/, "")))].join("·");
-  return { kind: "evidence", key, facts: [`${label}로 보는 기운(${names})이 ${places} 자리에 ${found.length}번 보입니다.`, ...(f ? [`그중 ${josa(TEN_GOD_KO[main], "은는")} ${splitSentences(f.meaning)[1] ?? splitSentences(f.meaning)[0]}`] : [])], note: "용어를 자리마다 늘어놓지 말고 쉬운 문장으로 푼다" };
+  return { kind: "evidence", key, facts: [`${label}로 보는 기운(${names})이 ${places} 자리에 ${koCount(found.length, "번")} 보입니다.`, ...(f ? [`그중 ${josa(TEN_GOD_KO[main], "은는")} ${splitSentences(f.meaning)[1] ?? splitSentences(f.meaning)[0]}`] : [])], note: "용어를 자리마다 늘어놓지 말고 쉬운 문장으로 푼다" };
 }
 
 function palaceEvidence(key: string, label: string, position: ChartPosition, saju: SajuCalcResult, det: ChartDetections, k: Knowledge): Evidence {
@@ -169,8 +172,9 @@ function mbtiFit(k: Knowledge, dims: Readonly<Record<string, number>>, mbti: Mbt
   const pos: [string, number][] = [];
   for (const [d, v] of Object.entries(dims)) {
     const m = mbti.dimensionTags[d] ?? 0; dot += v * m; size += Math.abs(v);
-    if (v * m > 0) pos.push([d, v * m]);
-    if (v * m > (best?.[1] ?? 0)) best = [d, v * m];
+    // P6e 4: 그 유형의 기능·태도에 맞지 않는 끝은 그 유형의 근거로 쓰지 않는다(ISFP에게 "구체 사실부터 확인"(Si) 금지).
+    if (v * m > 0 && poleFits(mbti.type, d, m)) pos.push([d, v * m]);
+    if (v * m > (best?.[1] ?? 0) && poleFits(mbti.type, d, m)) best = [d, v * m];
     // 직무의 핵심 요구(0.5 이상)가 유형의 핵심(0.6 이상)과 정면으로 반대면 뺀다(ENTJ에게 지시를 따르는 임원 비서).
     if (Math.abs(v) >= 0.5 && Math.abs(m) >= 0.6 && Math.sign(v) !== Math.sign(m)) clash = true;
   }
@@ -221,9 +225,15 @@ function conditions(x: Scored, k: Knowledge, mbti: MbtiProfile | null, scores: R
   // 양끝 이름(라벨)은 내부 축 이름이라 쓰지 않고, 그 끝의 쉬운 설명("~하는 편")으로 조건을 쓴다(P6b E-6 내부 라벨 규칙).
   const pole = (id: string, plus: boolean) => { const d = k.ontology.dimensions.find(o => o.id === id); return d ? (plus ? d.poles.plus : d.poles.minus).description.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "") : id; };
   if (mbti) {
-    const rows = Object.entries(x.job.dims).map(([d, v]) => ({ d, v, fit: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => b.fit - a.fit);
-    const good = rows[0], bad = rows.at(-1)!;
-    return ` / 맞는 조건: ${pole(good.d, good.v > 0)}이 통하는 자리 / 안 맞는 조건: ${bad.fit < 0 ? `${pole(bad.d, bad.v > 0)}을 오래 요구받을 때` : `${pole(bad.d, bad.v > 0)}인 일만 이어질 때`}`;
+    // P6e 4: 맞는 조건은 그 유형에 맞는 끝(이 사람의 성향)으로, 안 맞는 조건은 직무가 요구하는 일(POLE_DEMAND)과 이 사람의 맞는 끝으로 쓴다.
+    // 사람 성향 설명을 반대 끝으로 빌리지 않는다(ISFP 조건에 "모임이 끝나면 오히려 기운이 나는 사람의 역할"이 붙었다).
+    const rows = Object.entries(x.job.dims).map(([d, v]) => ({ d, v, m: mbti.dimensionTags[d] ?? 0, fit: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => b.fit - a.fit);
+    const good = rows.find(r => r.fit > 0 && poleFits(mbti.type, r.d, r.m)) ?? rows.find(r => poleFits(mbti.type, r.d, r.v));
+    const bad = [...rows].reverse().find(r => r.fit < 0 && poleFits(mbti.type, r.d, r.m));
+    const demand = (r: { d: string; v: number }) => POLE_DEMAND[poleKey(r.d, r.v)] ?? `${pole(r.d, r.v > 0)} 일`;
+    const goodText = good ? `${pole(good.d, (good.m || good.v) > 0)}이 통하는 자리` : "이 직무의 핵심 일을 내 속도로 할 수 있는 자리";
+    const badText = bad ? `${demand(bad)}을 오래 요구받을 때(${mbti.type}는 ${pole(bad.d, bad.m > 0)})` : `${demand(rows.at(-1)!)}만 이어질 때`;
+    return ` / 맞는 조건: ${goodText} / 안 맞는 조건: ${badText}`;
   }
   const weak = (Object.keys(GROUP_KO) as (keyof typeof GROUP_KO)[]).sort((a, b) => (scores[a] ?? 0) - (scores[b] ?? 0))[0];
   return ` / 맞는 조건: ${ROLE_BY_GROUP[x.job.groups[0] as keyof typeof ROLE_BY_GROUP]}이 중심일 때 / 안 맞는 조건: ${GROUP_KO[weak]} 쪽 일이 중심이 될 때`;
@@ -309,6 +319,33 @@ function accumulate(d: Partial<Record<TenGod, number>>, scores: Record<string, n
  * 같은 묶음은 한 단에서 2개까지(목록이 한 분야로 쏠리지 않게). 같은 명리 근거(trait·십성 묶음 이름)가 이미 쓰였으면 점수를 깎아 다른 근거를 먼저 고른다
  * (P3.8 r1: 직무 줄마다 "바른 관리자(정관)"를 근거로 붙여 한 장에 세 번 나왔다). 점수가 min 아래면 넣지 않는다.
  */
+/**
+ * 직군(P6e 13): 직무 카탈로그 20개 분야를 "무엇을 하는 사람들인지"(직군 설명)와 누구나 떠올릴 수 있는 일 장면으로 묶는다.
+ * 커리어 3장은 직업을 하나씩 따로 풀지 않고 직군 → 맞는 이유(명리·MBTI·일 장면) → 예시 직업 3~5개로 쓴다.
+ */
+export const CLUSTER_ROLE: Readonly<Record<string, { desc: string; scene: string }>> = {
+  plan: { desc: "흩어진 일을 한 방향으로 묶고 순서를 정하는", scene: "회의에서 나온 의견 열 개를 한 장으로 정리해 다음 할 일을 정하는 장면" },
+  it: { desc: "반복되는 일을 줄이는 방법을 만들고 숫자로 확인하는", scene: "매일 손으로 하던 일을 한 번에 끝나게 바꿔 두는 장면" },
+  design: { desc: "보기 좋고 쓰기 편한 모양을 만드는", scene: "같은 내용을 색과 배치만 바꿔 한눈에 들어오게 다듬는 장면" },
+  content: { desc: "말과 글로 생각을 정리해 내놓는", scene: "긴 이야기를 읽는 사람이 끝까지 따라오게 문장을 고르는 장면" },
+  marketing: { desc: "사람들의 마음을 읽고 알리는 방법을 찾는", scene: "같은 상품을 누구에게 어떤 말로 보여 줄지 골라 반응을 보는 장면" },
+  sales: { desc: "사람을 만나 필요를 듣고 조건을 맞추는", scene: "처음 만난 사람의 고민을 듣고 맞는 선택지를 함께 고르는 장면" },
+  finance: { desc: "돈의 흐름을 숫자로 따지고 지키는", scene: "들어오고 나가는 돈을 표로 맞춰 새는 곳을 찾는 장면" },
+  admin: { desc: "사람과 일정을 꼼꼼히 챙겨 조직이 굴러가게 하는 지원·관리", scene: "여러 사람의 일정과 서류를 미리 챙겨 일이 막히지 않게 하는 장면" },
+  legal: { desc: "규칙과 문서를 따져 권리를 지키는", scene: "계약서 한 줄 한 줄을 읽고 빠진 조건을 짚는 장면" },
+  public: { desc: "정해진 규칙 안에서 여러 사람의 안전과 질서를 맡는", scene: "급한 상황에서도 절차대로 차분히 처리하는 장면" },
+  edu: { desc: "아는 것을 쉬운 순서로 풀어 남이 배우게 돕는", scene: "어려워하는 사람에게 같은 내용을 다른 예로 다시 설명하는 장면" },
+  care: { desc: "사람의 몸과 마음을 가까이서 살피고 돌보는", scene: "말하지 않은 불편을 표정에서 먼저 읽고 손을 쓰는 장면" },
+  research: { desc: "한 가지를 깊이 파고들어 원리를 밝히는", scene: "남들이 지나친 작은 차이를 붙잡고 끝까지 이유를 찾는 장면" },
+  biz: { desc: "내 이름을 걸고 가게나 판을 직접 꾸리는", scene: "메뉴와 가격, 손님 동선까지 내 손으로 정해 문을 여는 장면" },
+  craft: { desc: "손과 도구로 현장에서 직접 만들고 고치는", scene: "도면대로 안 맞는 부분을 그 자리에서 손봐 맞추는 장면" },
+  logistics: { desc: "물건과 일정이 제때 오가게 흐름을 짜는", scene: "늦어질 것 같은 배송을 미리 알아채 길을 바꿔 두는 장면" },
+  food: { desc: "맛과 손맛으로 사람을 대접하는", scene: "같은 재료로 맛을 조금씩 바꿔 가며 가장 좋은 한 접시를 찾는 장면" },
+  beauty: { desc: "사람의 모습을 가꾸고 어울리게 꾸미는", scene: "손님 얼굴에 맞춰 한 끗을 더해 분위기를 바꾸는 장면" },
+  arts: { desc: "내 감각을 작품과 무대로 보여 주는", scene: "머릿속 장면을 소리나 그림으로 꺼내 남 앞에 내놓는 장면" },
+  hospitality: { desc: "낯선 사람을 편하게 맞이하고 일정을 챙기는", scene: "처음 온 손님이 헤매지 않게 동선과 시간을 미리 짜 두는 장면" },
+};
+
 function takeSpread(list: readonly Scored[], n: number, used: Set<string>, basisUse: Map<string, number>, min = 0, perCluster = 2): Scored[] {
   const out: Scored[] = [], per = new Map<string, number>();
   // MBTI 근거도 같은 축이 이미 쓰였으면 다음 근거로(P3.8 r1: 직무 7개 중 5개가 '미리 짬').
@@ -422,6 +459,26 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const farList = scored.filter(x => (cluster ? x.adjacency < 1 : x.adjacency < 0.75) && x.myeongri >= 0.5 && (!mbti || x.fit >= 0.3));
   const longterm = takeSpread(farList, 3, used, basisUse, (adjacent[0]?.total ?? 0) * 0.5);
   if (longterm.length < 2) longterm.push(...takeSpread(farList, 2 - longterm.length, used, basisUse));
+  // P6e 13 직군: 점수 매긴 직무를 분야로 묶어 분야 점수(상위 3개 평균) 순으로 3개. 구직이면 지원할 순서, 재직이면 지금 일에서 넓힐 쪽(가까운 분야 먼저).
+  const byCluster = new Map<string, Scored[]>();
+  for (const x of scored) { if (!CLUSTER_ROLE[x.job.cluster]) continue; const l = byCluster.get(x.job.cluster) ?? []; if (!l.some(y => y.job.title === x.job.title)) l.push(x); byCluster.set(x.job.cluster, l); }
+  const clusterScore = (l: Scored[]) => { const t = l.slice(0, 3); return t.reduce((a, x) => a + x.total, 0) / Math.max(3, t.length); };
+  const ranked = [...byCluster.entries()].filter(([, l]) => l.length >= 3).sort((a, b) => clusterScore(b[1]) - clusterScore(a[1]) || a[0].localeCompare(b[0]));
+  // 지금 직업(구직이면 목표 직무)의 분야는 순위 안에 꼭 넣는다(맞는 정도는 근거 그대로).
+  // 앞 두 직군(지원 순서·넓힐 쪽) + 길게 보면 열려 있는 두 직군(준비 기간이 필요한 쪽). 지금 분야는 앞 두 직군 안에 꼭 둔다.
+  const nearTwo = cluster && byCluster.has(cluster) && !ranked.slice(0, 2).some(([id]) => id === cluster) ? [...ranked.slice(0, 1), ...ranked.filter(([id]) => id === cluster)] : ranked.slice(0, 2);
+  const clusterRank = [...nearTwo, ...ranked.filter(r => !nearTwo.includes(r)).slice(0, 2)];
+  const groupReasons = new Set<string>();
+  // 묶음 세기는 만세력 가중값 단계 하나(chart.groups)로만 적는다(P6d A). 묶음 이름은 쉬운 이름(P6e 14).
+  const levelOf = (g: string) => chart.groups?.levels[GROUP_NAME_BY_KEY[g] as keyof NonNullable<ChartBrief["groups"]>["levels"]] ?? "";
+  const jobGroupLines = clusterRank.map(([id, l], i) => {
+    const r = CLUSTER_ROLE[id], name = k.catalog.clusters.find(c => c.id === id)?.name ?? id;
+    const why = l.slice(0, 5).find(x => x.mbtiReason && !groupReasons.has(x.mbtiReason))?.mbtiReason ?? l[0].mbtiReason;
+    if (why) groupReasons.add(why);
+    const feature = l.slice(0, 5).map(x => x.basis).find(b => !/^강한 /.test(b));
+    const groups = [...new Set(l.slice(0, 5).flatMap(x => x.job.groups))].slice(0, 2).map(g => `${GROUP_EASY[g as keyof typeof GROUP_EASY]}(${GROUP_NAME_BY_KEY[g]}) ${levelOf(g)}`).join(" · ");
+    return `${i + 1}순위 직군: ${r.desc} ${name} 직군${id === cluster ? "(지금 목표·직업 분야)" : ""} — 이 직군이 쓰는 힘: ${groups}${feature ? ` · 맞는 기운: ${feature}` : ""} / ${why ? `MBTI: ${why} / ` : ""}누구나 떠올릴 일 장면: ${r.scene} / 예시 직업: ${l.slice(0, 5).map(x => x.job.title).join(", ")}`;
+  });
   const roleReasons = new Set<string>();
   const roleMbti = (g: keyof typeof GROUP_KO) => { if (!mbti) return ""; const rs = mbtiFit(k, groupDims(k, g), mbti).reasons; const r = rs.find(x => !roleReasons.has(x)) ?? rs[0]; if (r) roleReasons.add(r); return r ? ` / MBTI: ${r}` : ""; };
   // 명리 근거와 MBTI 근거가 함께 있는 묶음만(MBTI가 있으면): 강한 묶음 → 그다음 묶음 순(P3.8 2).
@@ -441,7 +498,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const stages = workStages(k, scores, mbti, opts.work);
   // 지금 일에서 덜 맞는 점(P6c E1 커리어 1): 이 일이 쓰는 힘 가운데 이 사람에게 옅은 묶음, 또는 이 일의 행동 차원과 MBTI가 어긋나는 쪽.
   const lessGroup = fit?.groups.find(g => !topG.includes(g)) ?? (Object.keys(GROUP_KO) as (keyof typeof GROUP_KO)[]).sort((a, b) => (scores[a] ?? 0) - (scores[b] ?? 0))[0];
-  const lessMbti = fit && mbti ? (() => { const dims = groupDims(k, fit.groups[0] as keyof typeof GROUP_KO); const worst = Object.entries(dims).map(([d, v]) => ({ d, v, f: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => a.f - b.f)[0]; const dim = worst && worst.f < 0 ? k.ontology.dimensions.find(o => o.id === worst.d) : undefined; return dim ? `${mbti.type}는 ${(worst.v > 0 ? dim.poles.minus : dim.poles.plus).description.replace(/입니다\.?$/, "")}` : undefined; })() : undefined;
+  const lessMbti = fit && mbti ? (() => { const dims = groupDims(k, fit.groups[0] as keyof typeof GROUP_KO); const worst = Object.entries(dims).map(([d, v]) => ({ d, v, f: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => a.f - b.f)[0]; const dim = worst && worst.f < 0 && poleFits(mbti.type, worst.d, -worst.v) ? k.ontology.dimensions.find(o => o.id === worst.d) : undefined; return dim ? `${mbti.type}는 ${(worst.v > 0 ? dim.poles.minus : dim.poles.plus).description.replace(/입니다\.?$/, "")}` : undefined; })() : undefined;
   // 직업 소품은 목록이 아니라 장면 하나(P6: "하루는 A, B, C, D, E로 채워져요"가 그대로 나왔다). 같은 직업군이어도 고객마다 다르게.
   const prop = job ? job.props[[...detailJob].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7) % Math.min(5, job.props.length)] : undefined;
   return {
@@ -454,6 +511,10 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
     jobRoles: { kind: "evidence", key: "jobRoles", facts: [`${detailJob ? `지금 자리(${detailJob})` : "지금 하는 일"}에서 넓힐 역할`, ...roles], note: lineNote },
     ...(adjacent.length ? { jobAdjacent: { kind: "evidence" as const, key: "jobAdjacent", facts: ["옮겨 갈 만한 가까운 직무(지금 일에서 쓰던 힘을 그대로 가져가는 쪽)", ...adjacent.map(x => jobLine(x, cond(x)))], note: lineNote } } : {}),
     ...(longterm.length ? { jobLongterm: { kind: "evidence" as const, key: "jobLongterm", facts: ["길게 보면 열려 있는 다른 길(준비 기간이 필요한 쪽)", ...longterm.map(x => jobLine(x, cond(x)))], note: lineNote } } : {}),
+    jobGroups: { kind: "evidence", key: "jobGroups", facts: jobGroupLines.length ? [jobStatus === "job_seeker" || jobStatus === "unemployed" ? "지원할 직군 순서(1순위부터)" : detailJob ? `지금 일(${detailJob})에서 넓혀 갈 직군` : "맞는 직군", ...jobGroupLines.slice(0, 2)] : ["직군 근거 없음: 다섯 힘이 쓰이는 판으로만 짧게"],
+      note: "직군마다 한두 문단: 직군 이름과 맞는 이유(명리 근거·MBTI 근거·누구나 겪어 봤을 일 장면)를 먼저 쓰고, 예시 직업은 3~5개를 한 문장 안에 나열한다. 직업 하나에 문단을 따로 주지 않는다. 지금 직업을 바꾸라고 단정하지 않는다" },
+    ...(jobGroupLines.length > 2 ? { jobGroupsFar: { kind: "evidence" as const, key: "jobGroupsFar", facts: ["길게 보면 열려 있는 직군(준비 기간이 필요한 쪽)", ...jobGroupLines.slice(2).map(x => x.replace(/^\d순위 직군: /, "직군: "))],
+      note: "직군마다 한두 문단: 맞는 이유(명리·MBTI·일 장면)와 준비할 것 하나, 예시 직업은 3~5개를 한 문장 안에 나열한다. 직업 하나에 문단을 따로 주지 않는다. 지금 바꾸라는 말이 아니라 선택지를 넓히는 이야기로" } } : {}),
     workStagesA: stages.a, workStagesB: stages.b,
     ...careerTiming(chart),
     accumulate: accumulate(d, scores, saju.structureAnalysis.dayMasterStrength.level),

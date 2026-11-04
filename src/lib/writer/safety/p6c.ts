@@ -11,13 +11,17 @@ import * as L from "./lint";
 import { isPastAssertion, splitSentences } from "./patterns";
 import { sentenceViolation, type SafetyFacts, type SentenceRule } from "./sentences";
 import * as D from "./p6d";
+import * as E from "./p6e";
+import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
   | "marriage_talk" | "card_missing" | "card_form" | "card_overlap" | "card_length" | "card_rule"
   // P6d: 안전망 문장 규칙(삭제하지 않고 수리로) · 묶음 세기 · 조각 문장 · 사실·위치 · 시점 · 부정 단정 · 소품 · 투자
   | "safety" | "group_claim" | "fragment" | "empty_preview" | "count_mismatch" | "dayun_year" | "pair_both" | "self_correction" | "chapter_ref"
-  | "time_deictic" | "calendar_month" | "closing_repeat" | "negative_claim" | "prop_repeat" | "invest_directive" | "intensity_claim" | "evidence_missing";
+  | "time_deictic" | "calendar_month" | "closing_repeat" | "negative_claim" | "prop_repeat" | "invest_directive" | "intensity_claim" | "evidence_missing"
+  // P6e: 지침 노출 · 고아 문장 · 신살 주인 · MBTI 오귀속 · 기둥 자리 · 안내 중복 · 씨앗 원문 · 기능 이어 쓰기 · 비문 꼴
+  | "short_section" | "guide_copy" | "guide_echo" | "orphan_start" | "feature_owner" | "mbti_misattr" | "pillar_claim" | "notice_repeat" | "seed_copy" | "fn_join" | "awkward";
 export type CardField = "image" | "todo" | "review" | "caution";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -26,7 +30,8 @@ export type LintFlag = { readonly chapter: number; readonly section: number; rea
  * 문장만 지우면 조각 문장이 남는다(P6c "하는 물음이 자주 올라와요").
  */
 export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
-  "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim"]);
+  "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
+  "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -50,12 +55,28 @@ export type LintCtx = {
   readonly relationCount?: Readonly<Record<string, number>>; readonly pairRelations?: number;
   /** P6d F: 책당 1회만 쓰는 소품 명사. G: 투자 장. 안전망 규칙 문맥(예시 창·조건형 장). */
   readonly props?: readonly string[]; readonly investChapters?: ReadonlySet<number>; readonly allowed?: ReadonlySet<string>; readonly conditionalChapters?: ReadonlySet<number>;
+  /** P6e: 부모 역할 장(자녀 입력이 '있음'이 아닐 때 장 전체가 가정형). 자녀 문장은 이미 있다고 단정할 때만 잡는다. */
+  readonly childChapters?: ReadonlySet<number>;
   /** 세기 주장(P6b E-11): key → 흐름 점수와 같은 종류(연·월) 안의 최고·최저. */
   readonly flow?: Readonly<Record<string, { readonly score: number; readonly max: number; readonly min: number }>>;
   /** 카드 key → 천간 십성(같은 십성 key끼리 카드 줄을 더 엄격히 견준다, P6d D). */
   readonly cardTenGod?: Readonly<Record<string, string>>;
   /** 장마다 반드시 써야 하는 근거 낱말(P6d G 커리어·연애): 장 번호 → 낱말 꼴들(하나라도 없으면 evidence_missing). */
   readonly requiredTerms?: ReadonlyMap<number, readonly RegExp[]>;
+  /** P6e 1: 작가 지침·브리프 규칙(note)의 정규화 8자 창(사실·재료 글과 겹치는 창은 뺀 것). */
+  readonly guide?: ReadonlySet<string>;
+  /** P6e 3: 궁합 두 사람의 이름 꼴과 신살·귀인·십이운성 이름(사람별). */
+  readonly owners?: E.OwnerFacts;
+  /** P6e 4: 이 책 사람들의 MBTI(유형·그 유형을 말한 문장 단서). */
+  readonly mbtiPeople?: readonly E.MbtiPerson[];
+  /** P6e 5: 자리별 십성(천간 = 그 글자, 지지 = 지장간 십성 전부). 궁합은 사람마다(이름이 나온 문장만). */
+  readonly positions?: E.PositionTenGods; readonly positionsBy?: readonly { readonly name: string; readonly positions: E.PositionTenGods }[];
+  /** P6e 10: 재료의 꼬리표·압축 구(×·→ 꼴 마디). */
+  readonly seedLabels?: ReadonlySet<string>;
+  /** P6e: 이보다 짧거나 문단 3개 미만인 소제목은 수리에서 문단을 더하게 한다(없으면 보지 않는다). */
+  readonly minSectionChars?: number;
+  /** P6e 7: 용어 이름(한자 없이 쓰는 "식신은 ~을 뜻해요" 꼴을 뜻 공식으로 센다). */
+  readonly termNames?: RegExp;
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
 const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
@@ -102,6 +123,17 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   invest_directive: "특정 종목·상품·매수 시점을 말했다 → 성향과 원칙만",
   intensity_claim: "'가장 ~한 달·해'가 엔진 흐름 점수와 다르다 → 그 시기의 기운만",
   evidence_missing: "이 장이 반드시 써야 하는 근거가 본문에 없다 → 그 절 materials의 근거를 한 문장 더해 잇는다",
+  guide_copy: "작가에게 준 지침·규칙 문장을 독자에게 옮겼다('~쓰지 마세요' 등) → 그 문장을 빼고 이 사람 이야기만 쓴다",
+  short_section: "소제목이 짧다(문단 3개가 안 된다) → 이 소제목 뒤에 붙일 새 문단 하나(4문장)만 쓴다. 지금 글에 없는 절 재료(근거·장면·행동)로, 지금 글과 같은 말을 되풀이하지 않는다",
+  guide_echo: "작가 지침 문장과 같은 말을 옮겼다 → 이 사람 이야기로 새로 쓴다",
+  orphan_start: "앞 문단이 없는 자리인데 '도·또한·여기에·이처럼·그래서·반대로'로 열었다 → 이 소제목만 읽어도 뜻이 서는 첫 문장으로",
+  feature_owner: "신살·귀인을 다른 사람의 것으로 썼다 → 그 기운을 가진 사람 이름으로(facts.pair의 사람별 목록 그대로)",
+  mbti_misattr: "이 유형의 기능·태도에 없는 성향을 그 유형의 특성으로 썼다 → 그 유형의 네 기능(mbti.functions)과 E/I·J/P에 맞는 성향으로",
+  pillar_claim: "기둥 자리(연·월·일·시의 하늘/땅 글자)와 십성이 엔진 값과 다르다 → facts.positions 그대로",
+  notice_repeat: "안내·면책 문장('단정하는 말은 아니에요', '권유가 아니라')은 책에 한 번 시스템이 넣는다 → 이 문장을 빼고 내용만",
+  seed_copy: "재료의 꼬리표·압축 구를 그대로 옮겼다 → 그 뜻을 이 사람의 장면 문장으로 새로 쓴다",
+  fn_join: "MBTI 기능 둘을 하이픈으로 이었다 → '~와 ~'처럼 풀어 쓰고 같은 낱말을 되풀이하지 않는다",
+  awkward: "말이 어색한 꼴('어차피 ~한 당신은', '~를 챙기는 점심 같은') → 자연스러운 문장으로",
 };
 
 /** B3: 십성 누름 방향(키가 값을 누른다). 문장에 두 십성(묶음)이 능동·수동으로 나오면 방향을 본다. */
@@ -145,6 +177,30 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (D.timeDeictic(s, Boolean(ctx.strictTime))) return "time_deictic";
   if (ctx.calendarChapters?.has(n) && D.calendarMonth(s)) return "calendar_month";
   if (ctx.investChapters?.has(n) && D.INVEST_DIRECTIVE.test(s)) return "invest_directive";
+  // P6e 1: 독자에게 쓰는 법을 시키는 꼴("~쓰지 마세요")만 사실·금지(guide_copy). 지침 글과 겹치는 창은 문체(guide_echo, 수리만, 빼지 않는다).
+  if (E.metaInstruction(s) && !E.isNoticeSentence(s)) return "guide_copy";
+  if (ctx.owners && E.featureOwnerMismatch(s, ctx.owners)) return "feature_owner";
+  if (ctx.positions && E.pillarClaims(s, ctx.positions)) return "pillar_claim";
+  if (ctx.positionsBy) for (const p of ctx.positionsBy) if (s.includes(p.name) && !ctx.positionsBy.some(o => o !== p && s.includes(o.name)) && E.pillarClaims(s, p.positions)) return "pillar_claim";
+  if (ctx.mbtiPeople && mbtiMisattr(s, ctx.mbtiPeople)) return "mbti_misattr";
+  return null;
+}
+
+/** P6e 4: 그 사람의 MBTI(유형 이름·기능 쉬운 이름)를 말한 문장의 성향 단서가 그 유형의 기능·태도와 맞지 않는다. 궁합은 한 사람만 말한 문장만. */
+export function mbtiMisattr(s: string, people: readonly E.MbtiPerson[]): string | null {
+  // 한 사람 책은 성향을 말한 문장(유형·기능 이름·"성향·당신")이면 그 사람 이야기다. 궁합은 한 사람만 말한 문장만.
+  const single = people.length === 1 && /성향|당신|타고난|[EI][NS][TF][JP]/.test(s);
+  const who = people.filter(p => p.anchors.test(s) || (p.name ? s.includes(p.name) && /성격|성향|MBTI/.test(s) : false));
+  const t = who.length === 1 ? who[0].type : single ? people[0].type : null;
+  if (!t) return null;
+  // 바로 뒤에서 부정하면("~하는 편은 아니에요", "~하지 않는") 그 사람 특성이 아니다.
+  const negated = (end: number) => /^[^,.?!]{0,8}(아니|지 않|진 않|지는 않)/.test(s.slice(end));
+  for (const [pole, re] of Object.entries(POLE_CUES)) {
+    const m = s.match(re); if (!m || poleFits(t, pole.slice(0, -1), pole.endsWith("+") ? 1 : -1)) continue;
+    if (negated((m.index ?? 0) + m[0].length)) continue;
+    return `${t}:${pole}`;
+  }
+  for (const c of cueMisfits(t, s)) { const m = s.match(c.re); if (m && negated((m.index ?? 0) + m[0].length)) continue; return `${t}:${c.why}`; }
   return null;
 }
 
@@ -158,41 +214,58 @@ function oneKeySpan(paragraphs: readonly string[]): string[] {
   });
 }
 
-export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; readonly monthNow: number; readonly keyMarks: number };
-/** 뜻을 바꾸지 않는 결정론 정리(A4·C5·E5·H). */
+export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; readonly monthNow: number; readonly keyMarks: number; readonly hanja?: number; readonly numbers?: number; readonly fnJoin?: number };
+/**
+ * 뜻을 바꾸지 않는 결정론 정리(A4·C5·E5·H, P6e 7·17·19).
+ * P6e: 작가 출력의 한자는 지운다(렌더 단계가 사전·엔진 간지로 장마다 첫 등장에만 붙인다, 지운 수는 경고로 센다).
+ * MBTI 약어는 쉬운 이름으로만 바꾸고(약어는 렌더 단계가 장마다 첫 등장에 붙인다), 기능 둘을 하이픈으로 이은 꼴("Fi-Se")은 "~와 ~"로 푼다.
+ * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해").
+ */
 export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters">): { chapters: FinalChapter[]; count: TidyCount } {
-  let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0;
-  const introduced = new Set<string>();
-  // 조사는 바뀐 낱말의 받침으로 다시 고른다(P6d: "속마음의 가치 기준는"), "Te(일 되게 하는 판단)"은 "일 되게 하는 판단(Te)" 하나로(겹쳐 쓰기 방지).
+  let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0;
+  // 조사는 바뀐 낱말의 받침으로 다시 고른다(P6d: "속마음의 가치 기준는").
   const PARTICLE: Readonly<Record<string, string>> = { 은: "은는", 는: "은는", 이: "이가", 가: "이가", 을: "을를", 를: "을를", 과: "과와", 와: "과와" };
-  const withJosa = (word: string, particle: string) => { const pair = PARTICLE[particle]; if (!pair) return word + particle; const ch = word.replace(/\([^)]*\)$/, "").slice(-1), code = ch.charCodeAt(0) - 0xac00; return word + ((code >= 0 && code <= 11171 && code % 28 !== 0) ? pair[0] : pair[1]); };
+  const hasBatchim = (w: string) => { const ch = w.replace(/\([^)]*\)$/, "").slice(-1), code = ch.charCodeAt(0) - 0xac00; return code >= 0 && code <= 11171 && code % 28 !== 0; };
+  const withJosa = (word: string, particle: string) => { const pair = PARTICLE[particle]; return pair ? word + (hasBatchim(word) ? pair[0] : pair[1]) : word + particle; };
+  const CODE = "(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)";
+  // "가치 기준(Fi)-지금 이 순간 감각(Se) 감각", "Fi-Se 감각": 기능 둘을 "A와 B"로 풀고 뒤에 겹친 낱말을 하나로.
+  const plains = Object.values(ctx.mbtiPlain).filter(Boolean).sort((a, b) => b.length - a.length).map(x => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const PLAIN = plains.length ? `(?:(?:${plains.join("|")})\\()?` : "";
+  const fixJoins = (p: string) => p.replace(new RegExp(`${PLAIN}${CODE}\\)?\\s?[-–]\\s?${PLAIN}${CODE}\\)?`, "g"), (all, a: string, b: string) => {
+    const pa = ctx.mbtiPlain[a], pb = ctx.mbtiPlain[b]; if (!pa || !pb) return all;
+    fnJoin++; return `${pa}${hasBatchim(pa) ? "과" : "와"} ${pb}`;
+  // 바꾼 뒤 겹친 낱말("감각 감각과")은 하나로.
+  }).replace(/([가-힣]{2,4}) \1(?=[과와은는이가을를의에도]|\s|$|[,.])/g, "$1");
   const fixCodes = (p: string) => p.replace(/(?<![A-Za-z(])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z)])(\(([^()]{2,24})\))?(은|는|이|가|을|를|과|와)?/g, (all, code: string, _g: string, inner: string | undefined, particle: string | undefined, offset: number, whole: string) => {
     // 괄호 안이면 그대로(쉬운말(Te)).
     const open = whole.lastIndexOf("(", offset), close = whole.lastIndexOf(")", offset);
     if (open > close) return all;
     const plain = ctx.mbtiPlain[code] ?? inner; if (!plain) return all;
     mbtiCode++;
-    const word = introduced.has(code) ? plain : `${plain}(${code})`;
-    introduced.add(code);
-    return particle ? withJosa(word, particle) : word;
-  });
+    return particle ? withJosa(plain, particle) : plain;
+  // 쉬운 이름 뒤에 작가가 붙인 약어("지난 경험 기억(Si)")는 떼고 렌더 단계가 장마다 첫 등장에만 붙인다.
+  }).replace(new RegExp(`\\(${CODE}\\)`, "g"), () => { mbtiCode++; return ""; });
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => {
     let ps = s.paragraphs.map(p => {
       let q = p;
       if (L.MYEONGRI_PREFIX.test(q)) { const r = L.dropMyeongriPrefix(q); if (r !== q) prefix++; q = r; }
       // 장 번호 참조("7장에서 본 것처럼,")는 뜻을 바꾸지 않고 뗄 수 있는 꼴만 뗀다(P6d C). 나머지는 검사가 수리로 보낸다.
       if (D.CHAPTER_REF.test(q)) { const r = D.dropChapterRef(q); if (r !== q) prefix++; q = r; }
-      const r2 = fixCodes(q); q = r2;
+      q = fixCodes(fixJoins(q));
+      const h = E.stripHanja(q); hanja += h.count; q = h.text;
+      const nn = E.nativeNumbers(q); numbers += nn.count; q = nn.text;
+      // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
+      q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       return q;
     });
     const marks = ps.join("").match(L.KEY_MARK)?.length ?? 0;
     ps = oneKeySpan(ps);
     keyMarks += marks - (ps.join("").match(L.KEY_MARK)?.length ?? 0);
-    const heading = L.dropMyeongriPrefix(s.heading).replace(L.KEY_MARK, "");
+    const heading = E.stripHanja(L.dropMyeongriPrefix(s.heading).replace(L.KEY_MARK, "")).text;
     return { ...s, heading, paragraphs: ps };
   }) }));
-  return { chapters: out, count: { prefix, mbtiCode, monthNow, keyMarks } };
+  return { chapters: out, count: { prefix, mbtiCode, monthNow, keyMarks, hanja, numbers, fnJoin } };
 }
 
 const stripMarks = (s: string) => s.replace(L.KEY_MARK, "");
@@ -223,18 +296,27 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r }); continue; }
+          // P6e 2: 앞 문단이 없는 자리(소제목 첫 문단의 첫 문장)가 앞말에 기대어 연다.
+          if (pi === 0 && i === 0 && !keyed && E.orphanStart(sen)) { flag({ ...at, rule: "orphan_start", detail: E.orphanStart(sen)! }); continue; }
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
-          const sv = sentenceViolation(sen, ctx.facts, ctx.allowed, Boolean(ctx.conditionalChapters?.has(c.n)));
+          const sv = sentenceViolation(sen, ctx.facts, ctx.allowed, Boolean(ctx.conditionalChapters?.has(c.n)), Boolean(ctx.childChapters?.has(c.n)));
           if (sv && !SOFT_SAFETY.has(sv)) { flag({ ...at, rule: "safety", detail: sv }); continue; }
           if (L.pastAssertion(sen) === null && isPastAssertion(sen)) { flag({ ...at, rule: "past_assertion", detail: "experience_assert" }); continue; }
           if (D.fragmentSentence(raw, i === sens.length - 1)) { flag({ ...at, rule: "fragment" }); continue; }
           if (D.emptyPreview(sen, sens[i + 1])) { flag({ ...at, rule: "empty_preview" }); continue; }
           if (rel !== undefined && rel > 0 && D.NEGATIVE_RELATION.test(sen)) { flag({ ...at, rule: "negative_claim" }); continue; }
           if (fl && ((PEAK.test(sen) && fl.score < fl.max) || (LOW.test(sen) && fl.score > fl.min))) { flag({ ...at, rule: "intensity_claim" }); continue; }
+          // P6e 6·15: 안내·면책은 책에 한 번(시스템이 넣는 줄). 작가가 쓴 안내 문장은 빼게 한다.
+          if (writer && E.isNoticeSentence(sen)) { flag({ ...at, rule: "notice_repeat" }); continue; }
+          if (writer && ctx.guide && E.guideCopy(sen, ctx.guide)) { flag({ ...at, rule: "guide_echo", detail: E.guideCopy(sen, ctx.guide)! }); continue; }
+          if (writer && ctx.seedLabels && E.seedCopy(sen, ctx.seedLabels)) { flag({ ...at, rule: "seed_copy", detail: E.seedCopy(sen, ctx.seedLabels)! }); continue; }
+          if (E.FN_JOIN.test(raw)) { flag({ ...at, rule: "fn_join" }); continue; }
+          if (E.AWKWARD.test(sen)) { flag({ ...at, rule: "awkward" }); continue; }
           if (writer && L.copiedWindow(sen, ctx.corpus)) { flag({ ...at, rule: "db_copy" }); continue; }
           if (writer && ctx.prior.length && L.overlapping(ctx.prior, [sen]).length) { flag({ ...at, rule: "prior_overlap" }); continue; }
-          if (L.MEANING_FORMULA.test(sen)) {
-            const term = sen.match(/([가-힣]{1,10}) ?\([一-鿿]{1,6}\)/)?.[1] ?? sen.match(/([가-힣]{1,10})(은|는) 명리/)?.[1] ?? "";
+          const plainFormula = ctx.termNames ? sen.match(ctx.termNames) : null;
+          if (L.MEANING_FORMULA.test(sen) || plainFormula) {
+            const term = sen.match(/([가-힣]{1,10}) ?\([一-鿿]{1,6}\)/)?.[1] ?? sen.match(/([가-힣]{1,10})(은|는) 명리/)?.[1] ?? plainFormula?.[1] ?? "";
             if (term && explained.has(term)) { flag({ ...at, rule: "meaning_repeat" }); continue; }
             if (term) explained.add(term);
             if (++formulas > L.MAX_FORMULA) { flag({ ...at, rule: "formula_excess" }); continue; }
@@ -253,6 +335,12 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
       });
     });
   }
+  // P6e: 짧은 소제목(문단 3개 미만 또는 360자 미만, 반복 장 key 제외)은 수리에서 문단을 더하게 한다(문체 규칙: 빼지 않는다).
+  if (ctx.minSectionChars) for (const c of chapters) if (c.source !== "deterministic") c.sections.forEach((s, si) => {
+    if (c.keys?.includes(s.heading) || !s.paragraphs.length) return;
+    const chars = s.paragraphs.reduce((a, p) => a + stripMarks(p).length, 0);
+    if (s.paragraphs.length < 3 && chars < ctx.minSectionChars! * 1.2) out.push({ chapter: c.n, section: si, paragraph: s.paragraphs.length - 1, rule: "short_section", sentence: "", detail: `${s.paragraphs.length}문단·${chars}자`, hint: HINT.short_section });
+  });
   // G 장마다 써야 하는 근거(문체 규칙: 문단은 빼지 않고 수리로 근거 한 문장을 더하게 한다).
   for (const c of chapters) { const terms = ctx.requiredTerms?.get(c.n); if (!terms || c.source === "deterministic") continue;
     const text = c.sections.flatMap(s => s.paragraphs).join(" ");
@@ -316,6 +404,26 @@ export function enforce(chapters: readonly FinalChapter[], flags: readonly LintF
     return { ...s, paragraphs: ps };
   }).filter(s => s.paragraphs.length || c.keys?.includes(s.heading)) }));
   return { chapters: out.map(c => ({ ...c, chars: c.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) })), removed: 0, droppedParagraphs, emptyKeys };
+}
+
+/**
+ * P6e 6·15: 수리 뒤에도 남은 작가 안내·면책 문장(notice_repeat)은 책 한 줄 안내와 겹친다. 홀로 선 안내 문장만 뗀다
+ * (문단에 다른 문장이 둘 이상 남고, 다음 문장이 앞말에 기대지 않을 때). 그렇지 않으면 그대로 두고 센다.
+ */
+export function dropNoticeSentences(chapters: readonly FinalChapter[], flags: readonly LintFlag[]): { chapters: FinalChapter[]; removed: string[]; kept: string[] } {
+  const removed: string[] = [], kept: string[] = [];
+  const targets = new Set(flags.filter(f => f.rule === "notice_repeat").map(f => `${f.chapter}.${f.section}.${f.paragraph}|${f.sentence}`));
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map((s, si) => ({ ...s, paragraphs: s.paragraphs.map((p, pi) => {
+    const sens = splitSentences(p);
+    const keep = sens.filter((x, i) => {
+      if (!targets.has(`${c.n}.${si}.${pi}|${stripMarks(x)}`)) return true;
+      const next = sens[i + 1];
+      if (sens.length - 1 >= 2 && !(next && E.orphanStart(next)) && !/[⟪⟫]/.test(x)) { removed.push(stripMarks(x)); return false; }
+      kept.push(stripMarks(x)); return true;
+    });
+    return keep.length === sens.length ? p : keep.join(" ");
+  }) })) }));
+  return { chapters: out, removed, kept };
 }
 
 /** 같은 소제목 수(이전·이후)를 맞춰 볼 때 쓰는 키. */

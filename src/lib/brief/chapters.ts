@@ -7,7 +7,7 @@
  * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + 그해·그달 글자가 건드리고 앞에서 소개된 trait 0~1개(P3.7 1-1, 적용 1회로 센다).
  */
 import type { CompatTopic, Domain, MbtiProfile, MyeongriFeature, SceneItem, SectionPlan } from "@/data/knowledge-v5/schema";
-import { sceneFits, type FactProfile } from "./facts";
+import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, type FactProfile } from "./facts";
 import { FAMILY_MEMBER } from "@/lib/writer/safety/patterns";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
@@ -62,7 +62,7 @@ export type PlanCtx = {
   /** 같은 고객의 다른 책에서 이미 뜻을 푼 특성(feature id, P6c A3): 이 책에서는 처음 나와도 뜻을 다시 풀지 않는다(angle=known). */
   readonly known?: ReadonlySet<string>;
   /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
-  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string }[]>>>;
+  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
   readonly excludeSeeds?: ReadonlySet<string>;
 };
 const SEED_DOMAIN: Readonly<Record<string, string>> = { work: "work", study: "work", money: "money", love: "love", marriage: "love", relationships: "relationships", alone: "alone" };
@@ -145,10 +145,17 @@ const MARRIAGE_TALK = /결혼|시댁|처가|양가|시부모|시어머니|시아
 const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts, s.text) && !directionClash(s.text, dominantOf(ctx)) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s))
   && !(chapterId === "parenting" && MARRIAGE_TALK.test(s.text));
 
-function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string): string | undefined {
+/** P6e 18: 장면을 돌릴 가까운 영역(같은 절 질문에 어울리는 영역). */
+const NEAR_DOMAINS: Readonly<Partial<Record<Domain, readonly Domain[]>>> = { love: ["marriage", "relationships"], marriage: ["love", "relationships"], relationships: ["love", "alone"], work: ["money", "study"], money: ["work"], study: ["work"], alone: ["relationships"] };
+function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string, allowSkip = false): string | undefined {
   const ok = (list ?? []).filter(s => usable(s, ctx, chapterId));
   if (!ok.length) return undefined;
-  const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
+  // P6e 18: 고객 해시(이름·생일·시각이 든 rng)로 돌려 고른다. 고를 장면이 한두 개뿐이면 "다른 영역으로 돌림" 칸을 하나 더 둔다
+  // (같은 일주·같은 계절 고객이 모두 같은 장면을 받던 문제: 하람·장소담 "퇴근 시간에 맞춰 국물을 데워 두는"). 돌릴 곳이 없으면 부르는 쪽이 다시 고른다.
+  const r = ctx.rng.fork(label);
+  const i = r.int(allowSkip && ok.length <= 2 ? ok.length + 1 : ok.length);
+  if (i >= ok.length) return undefined;
+  const s = ok[i]; ctx.usedScenes.add(s.text); return s.text;
 }
 const hasFresh = (ctx: PlanCtx, list: readonly SceneItem[] | undefined, chapterId: string) => (list ?? []).some(s => usable(s, ctx, chapterId));
 const isCore = (t: Trait) => t.family === "dayPillar" || t.family === "dayMaster";
@@ -207,9 +214,17 @@ export function planChapters(input: PlanCtx): PlanResult {
   const mbtiOf = (turn: number) => ctx.mbtiPair?.length ? ctx.mbtiPair[turn % ctx.mbtiPair.length] : ctx.mbti ? { who: undefined, profile: ctx.mbti } : undefined;
   /** trait 하나를 이 절에 놓는다(장면은 needScene일 때만, 궁합은 관계 장면이 장면이라 trait 장면을 주지 않는다). */
   const place = (p: Plan, spec: SectionPlan, src: TraitSource, needScene: boolean): Material => {
-    const domains = [spec.domain, ...p.domains.filter(d => d !== spec.domain)];
-    const d = (needScene ? domains.find(x => hasFresh(ctx, src.feature.scenes[x], p.c.id)) : undefined) ?? spec.domain;
-    const scene = needScene ? freshScene(src.feature.scenes[d], ctx, `${p.id}:${src.trait.id}:${d}`, p.c.id) : undefined;
+    const domains = [...new Set([spec.domain, ...p.domains.filter(d => d !== spec.domain), ...(NEAR_DOMAINS[spec.domain] ?? [])])] as Domain[];
+    const fresh = needScene ? domains.filter(x => hasFresh(ctx, src.feature.scenes[x], p.c.id)) : [];
+    let d = fresh[0] ?? spec.domain;
+    let scene: string | undefined;
+    // P6e 18: 첫 영역에 맞는 장면이 셋 미만이면(같은 일주·같은 계절 고객이 모두 같은 장면을 받는다) 가까운 영역 장면까지 묶어 고객 해시로 고른다.
+    const pool = (x: Domain) => (src.feature.scenes[x] ?? []).filter(sc => usable(sc, ctx, p.c.id));
+    if (needScene && fresh.length && pool(fresh[0]).length < 3 && fresh.length > 1) {
+      const all = fresh.flatMap(x => pool(x).map(sc => ({ x, sc })));
+      const pick = all[ctx.rng.fork(`${p.id}:${src.trait.id}:rotate`).int(all.length)];
+      d = pick.x; scene = pick.sc.text; ctx.usedScenes.add(scene);
+    } else if (needScene) scene = freshScene(src.feature.scenes[d], ctx, `${p.id}:${src.trait.id}:${d}`, p.c.id);
     const angle = ledger.use(src, p.id);
     return { kind: "trait", traitId: src.trait.id, domain: d, ...(scene ? { scene } : {}), angle };
   };
@@ -254,7 +269,9 @@ export function planChapters(input: PlanCtx): PlanResult {
     const pool = ctx.mbtiSeeds?.get(owner.profile.type)?.[SEED_DOMAIN[d] ?? d] ?? [];
     const f = ctx.facts;
     const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
-      && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx)));
+      && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx))
+      // P6e 16: 직업군·상태 태그(ctx, 없으면 글에서 읽음)가 이 고객 생활과 맞지 않으면 뽑지 않는다. 학교·가족 소품도 같은 규칙.
+      && sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f));
     if (!ok.length) return null;
     const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
     return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };

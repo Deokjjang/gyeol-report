@@ -42,7 +42,7 @@ export type SavedChapter = { readonly n: number; readonly chapter: BookChapter; 
 export type ChapterSink = { save(c: SavedChapter): Promise<boolean>; load(): Promise<readonly SavedChapter[]> };
 export type WriterTarget = { readonly provider: LlmProvider; readonly model: string; readonly apiKey?: string };
 export type WriterFallback = { readonly from: { provider: string; model: string }; readonly to: { provider: string; model: string } | "deterministic"; readonly reason: string };
-export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair";
+export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair" | "rewrite";
 export type CallLog = { readonly kind: CallKind; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number };
 export type WriterRun = {
   readonly drafts: Map<number, DraftChapter>;
@@ -116,7 +116,7 @@ function session(o: WriterOptions, prev?: WriterRun): Session {
  * 한 번의 호출(재시도·대체 포함). want가 있으면 장 경계마다 저장한다(없으면 글만 돌려준다: 수리 패스).
  * 돌려주는 값: 받은 글(출력이 없으면 "").
  */
-async function call(s: Session, kind: "first" | "continuation" | "redo" | "repair", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number): Promise<string> {
+async function call(s: Session, kind: "first" | "continuation" | "redo" | "repair" | "rewrite", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number): Promise<string> {
   const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms))), stream = o.stream ?? streamCompletion;
   const wanted = new Set((want ?? []).map(c => c.n));
   let switched = false;
@@ -195,10 +195,10 @@ export async function redoChapters(o: WriterOptions, prev: WriterRun, targets: r
   return finish(s);
 }
 
-/** (P6c A5) 글만 받는 호출 1회(수리 패스). 같은 모델·대체 규칙, 장 저장 없음. */
-export async function completeText(o: WriterOptions, prev: WriterRun, system: string, user: string, maxTokens: number): Promise<{ run: WriterRun; text: string }> {
+/** (P6c A5) 글만 받는 호출 1회(수리 패스·P6e 소제목 재작성). 같은 모델·대체 규칙, 장 저장 없음. */
+export async function completeText(o: WriterOptions, prev: WriterRun, system: string, user: string, maxTokens: number, kind: "repair" | "rewrite" = "repair"): Promise<{ run: WriterRun; text: string }> {
   const s = session(o, prev);
   if (!s.wrote || leftOf(s) < 60_000) return { run: finish(s), text: "" };
-  const text = await call(s, "repair", system, user, null, Math.min(maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? maxTokens));
+  const text = await call(s, kind, system, user, null, Math.min(maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? maxTokens));
   return { run: finish(s), text };
 }

@@ -158,7 +158,7 @@ describe("brief builder — 성질", () => {
     for (const { brief } of samples) {
       for (const c of brief.chapters) {
         if (c.id.includes(":")) { expect(c.materials[0].kind).toBe("timeline"); continue; }
-        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(3);
+        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(4);
         for (const s of c.sections!) expect(s.materials.length).toBeGreaterThanOrEqual(1);
         expect(c.targetChars[1]).toBe(PRODUCT_CHARS[brief.product].section[1] * c.sections!.length);
       }

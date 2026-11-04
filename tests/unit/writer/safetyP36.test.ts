@@ -82,7 +82,7 @@ describe("P3.6 원고 남은 문제", () => {
     const career = buildBrief({ product: "career_money_study", person: PEOPLE.c1, baseDate: base }, k);
     const ev = career.chapters.flatMap(c => c.materials).filter(m => m.kind === "evidence").map(m => (m as { key: string }).key);
     // P6d G: 커리어 9장(일의 엔진·지금 자리·맞는 일과 길·보여 주는 법·일터의 사람·평가와 문서·돈의 길·투자 성향·타이밍과 3년).
-    expect(ev).toEqual(expect.arrayContaining(["engineGroups", "monthPillar", "rhythm", "nowFit", "statusNow", "pathsGood", "pathsLess", "jobRoles", "sideBiz", "visiblePower", "pitch", "payTalk", "peopleTypes", "helpers", "roleMode", "docsLevel", "docsTiming", "docsStatus", "moneyStructure", "moneyStatus", "moneyRisk", "investStyle", "investMistakes", "investPrinciples", "timingNow", "threeYears", "roadmap"]));
+    expect(ev).toEqual(expect.arrayContaining(["engineGroups", "monthPillar", "rhythm", "nowFit", "statusNow", "pathsGood", "pathsLess", "jobGroups", "sideBiz", "visiblePower", "pitch", "payTalk", "peopleTypes", "helpers", "roleMode", "docsLevel", "docsTiming", "docsStatus", "moneyStructure", "moneyStatus", "moneyRisk", "investStyle", "investMistakes", "investPrinciples", "timingNow", "threeYears", "roadmap"]));
     expect(ev.filter(x => x === "investStyle")).toHaveLength(1);
     const boss = buildBrief({ product: "saju_mbti_compatibility", person: PEOPLE.x, partner: PEOPLE.c1, relationshipType: "managerReport", baseDate: base }, k);
     expect(boss.person.forbiddenFacts.join(" ")).not.toContain("상사·팀장");

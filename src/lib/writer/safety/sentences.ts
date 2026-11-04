@@ -37,12 +37,14 @@ const SPOUSE_TERM = /배우자 ?(자리|별|궁|성)|(남편|아내|배우자)�
 const PARTNER = /(?<![가-힣])(애인|연인|남자친구|여자친구|남친|여친)/;
 const CHILD = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|를|의|이|와|도|랑|한테|에게|는|은)\s/;
 const CHILD_TERM = /자녀 ?(자리|별|궁|성)|어린아이|아이처럼|아이 같은/g;
+/** 부모 역할 장(자녀 미입력·없음)에서도 잡는 꼴: 아이가 이미 있다고 단정하는 말(P6e — 그 장의 가정·명식 설명 문장은 통과). */
+const CHILD_EXIST = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은|도)? ?(있어|있고|있는|있습니다|있으니|있다|있지만|생겼|태어났)|(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은)? [^.?!]{0,12}(다니(는|고|며|니)|자라고 있)|우리 아이|(아이|자녀)를 (키우고 있|키우는 지금|두고 있|둔 지금)|아이 (둘|하나|셋)을? 키우/;
 const JOB_EMPLOYED = /(당신의 회사|다니는 회사|직장 상사|팀장님|부장님|사무실에서|회사 동료)/;
 const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
-const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\})/;
+const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\})/;
 
 /** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
 const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
@@ -96,14 +98,15 @@ export function allowedWindows(briefText: string): Set<string> {
 }
 
 /** 문장 하나의 위반 규칙(없으면 null). */
-/** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다. */
-export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false): SentenceRule | null {
+/** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다.
+ * inChildChapter(P6e): 부모 역할 장은 장 전체가 "아이를 키우게 된다면"이다(브리프 parentState) — 자녀 문장은 이미 있다고 단정할 때만 잡는다. */
+export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false, inChildChapter = false): SentenceRule | null {
   if ((DATE.test(s) && EVENT_DEFINITE.test(s)) || ABSOLUTE.test(s)) return "date_event";
   if (LOVE_TIMING.test(s)) return "love_timing";
   const conditional = inConditionalChapter || CONDITIONAL.test(s);
   if (f.relationship !== "married" && SPOUSE.test(s.replace(SPOUSE_TERM, "")) && !conditional) return "fact_spouse";
   if ((f.relationship === "single" || f.relationship === "unknown") && PARTNER.test(s) && !conditional) return "fact_partner";
-  if (f.children !== "has" && CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional) return "fact_children";
+  if (f.children !== "has" && (inChildChapter ? CHILD_EXIST.test(s) : CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional)) return "fact_children";
   if (!conditional && ((f.job !== "employed" && JOB_EMPLOYED.test(s)) || (f.job !== "business" && JOB_BUSINESS.test(s)) || (f.job !== "student" && JOB_STUDENT.test(s)))) return "fact_job";
   if (!f.birthTimeKnown && HOUR.test(s)) return "hour_pillar";
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";

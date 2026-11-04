@@ -1,1001 +1,1180 @@
 {
- "version": "mbti-seeds-v1",
- "type": "ISTP",
- "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
- "seeds": {
-  "work": [
-   {
-    "id": "ISTP-work-01",
-    "text": "고장 난 프린터 뚜껑부터 열어 보기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-02",
-    "text": "회의 중 말 대신 화면 공유로 재현하기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-03",
-    "text": "설명서 덮고 일단 만져 보며 원인 찾기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-04",
-    "text": "에러 로그 한 줄부터 끝까지 따라가기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-05",
-    "text": "공구함에서 필요한 것만 꺼내 정리하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-06",
-    "text": "협업 툴 알림을 전부 끄고 몰입하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-07",
-    "text": "긴 기획안 대신 시제품부터 만들기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-08",
-    "text": "복잡한 절차를 두 단계로 줄이는 지름길 찾기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-09",
-    "text": "회의록 쓰기보다 현장 점검이 편할 때",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-10",
-    "text": "한 시간마다 진행을 묻는 상사 앞에서",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-11",
-    "text": "급한 장애 호출에 신발 신고 바로 나서기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-12",
-    "text": "남들이 포기한 장비 수리를 맡아 살리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-13",
-    "text": "설치 기사 옆에서 배선 구조 지켜보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-14",
-    "text": "코드 리뷰에 설명 없이 수정본만 올리기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-15",
-    "text": "회식 대신 정시 퇴근 후 작업대로 가기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-16",
-    "text": "튜토리얼 없이 새 프로그램 익히기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-17",
-    "text": "납땜 인두를 잡으면 시간 가는 줄 모르기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-18",
-    "text": "출장지 현장에서 임시 해결책 만들어 내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-19",
-    "text": "구직 중 포트폴리오에 실물 사진부터 넣기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-20",
-    "text": "견적서에 작업 시간만 담백하게 적기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-21",
-    "text": "설명서 없이 조립 가구를 맞추는 이삿날",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-22",
-    "text": "새벽에 공유기 설정을 직접 바꿔 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-23",
-    "text": "세탁기 배수 호스를 분리해 막힘 찾기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-24",
-    "text": "팀 채팅에 해결책 한 줄만 남기기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-25",
-    "text": "막힌 동료 대신 말없이 문제를 풀어 주기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-26",
-    "text": "사무실 의자 높이를 렌치로 직접 조절하기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-27",
-    "text": "면접 질문에 실무 사례로만 답하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-28",
-    "text": "납기 이틀 전에 몰아서 끝내는 집중 작업",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-29",
-    "text": "헤드폰 쓴 채 말 거는 사람에게 손짓하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-30",
-    "text": "새 장비 도착하면 상자부터 뜯어 구조 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-31",
-    "text": "수리 견적 대신 부품값 검색해 직접 교체하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-32",
-    "text": "기획 회의에서 되는지 안 되는지만 말하기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-work-33",
-    "text": "기계 소리만 듣고 이상 부위 짚기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-work-34",
-    "text": "고객 문의에 정답만 짧게 답장하기",
-    "rel": "any",
-    "job": "business"
-   }
-  ],
-  "money": [
-   {
-    "id": "ISTP-money-01",
-    "text": "공구 앞에서만 결제 버튼이 빨라지기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-02",
-    "text": "낡은 신발을 끝까지 신고 옷 쇼핑 미루기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-03",
-    "text": "캠핑 장비 장바구니를 몇 주째 비교하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-04",
-    "text": "부품 하나 사려고 최저가 사이트 열 곳 돌기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-05",
-    "text": "가계부 앱을 사흘 쓰고 접기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-06",
-    "text": "적금과 카드값을 자동이체로 걸어 두기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-07",
-    "text": "친구 노트북 고쳐 주고 밥 한 끼로 끝내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-08",
-    "text": "수리비 견적보다 부품값 검색이 먼저인 습관",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-09",
-    "text": "새 가전이 고장 나면 분해부터 해 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-10",
-    "text": "중고 장터 고장품을 싸게 사 와 살리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-11",
-    "text": "구독 서비스를 정리해 쓰는 것만 남기기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-12",
-    "text": "배달 앱 쿠폰 대신 직접 해 먹기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-13",
-    "text": "오일 교환을 직접 해서 정비비 아끼기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-14",
-    "text": "카드 명세서를 한 줄씩 훑으며 항목 지우기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-15",
-    "text": "충동구매 대신 일주일 장바구니에 묵혀 두기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-16",
-    "text": "비싼 공구를 한 번 사서 십 년 쓰기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-17",
-    "text": "통신사 요금제를 계산기 두드려 갈아타기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-18",
-    "text": "세일 문자엔 무반응이다 필요할 때 바로 결제",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-19",
-    "text": "무료 체험 구독 해지일에 알람 걸기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-20",
-    "text": "해외 직구 배송을 새로고침하며 기다리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-21",
-    "text": "용돈이 취미 한두 군데로 몰리는 소비",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-22",
-    "text": "수수료 없는 이체 방법 찾아 갈아타기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-23",
-    "text": "지갑에 카드 한 장만 넣고 다니기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-24",
-    "text": "더치페이 앱으로 돈 얘기를 짧게 끝내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-25",
-    "text": "보험 약관은 건너뛰고 보장 표만 훑기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-26",
-    "text": "텀블러에 집에서 내린 커피 담아 가기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-27",
-    "text": "이사 비용을 항목별로 쪼개 직접 뽑기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-28",
-    "text": "보증기간 끝나기 전에 가전 점검하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-29",
-    "text": "월급날 잔고 숫자만 확인하고 앱 닫기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-30",
-    "text": "부품 가격표 스크린샷을 모아 두는 폴더",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-31",
-    "text": "큰돈 쓰기 전 후기 영상 세 편 이상 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-32",
-    "text": "중고로 팔 때 구성품 사진까지 꼼꼼히 올리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-money-33",
-    "text": "택배 상자 쌓인 걸 보고서야 소비 돌아보기",
-    "rel": "any",
-    "job": "any"
-   }
-  ],
-  "love": [
-   {
-    "id": "ISTP-love-01",
-    "text": "호감 가는 사람 앞에서 말수가 더 줄기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-02",
-    "text": "좋아하는 사람 자전거 바람을 말없이 채우기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-03",
-    "text": "소개팅 자리에서 취미 얘기만 한참 하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-04",
-    "text": "메신저에 긴 문장 대신 한 줄 보내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-05",
-    "text": "답장을 읽고 반나절 뒤에 보내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-06",
-    "text": "먼저 연락하기까지 한 주 걸리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-07",
-    "text": "첫 데이트 장소를 미리 가서 동선 확인하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-08",
-    "text": "수다보다 같이 만드는 활동이 편할 때",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-09",
-    "text": "고백 타이밍을 머릿속으로 시뮬레이션",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-10",
-    "text": "호감 상대의 고장 난 물건 앞에서 소매 걷기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-11",
-    "text": "말 대신 행동으로 보여 주려는 고민",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-12",
-    "text": "썸 상대의 이모티콘 폭탄에 하나만 보내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-13",
-    "text": "연애는 혼자 정리할 시간이 필요하다는 연애관",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-14",
-    "text": "하루 일과를 묻는 질문 앞에서 머뭇거리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-15",
-    "text": "영화관에서 줄거리보다 촬영 기법에 눈 가기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-16",
-    "text": "첫 만남 뒤 집에 와서 혼자 곱씹기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-17",
-    "text": "이별 뒤 말없이 작업대로 가서 손을 움직이기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-18",
-    "text": "데이트 앱 프로필 사진 고르다 지치기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-19",
-    "text": "상대의 속상한 얘기에 해결책부터 떠올리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-20",
-    "text": "호감 표시를 돌려 하다 상대가 못 알아챌 때",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-21",
-    "text": "연락 빈도를 두고 서로 눈치 보는 초반 며칠",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-22",
-    "text": "함께 드라이브하며 말없이 음악 듣는 편안함",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-23",
-    "text": "선물로 마음을 대신 전하려는 고민",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-24",
-    "text": "기념일 챙기기가 어려워 달력 알림 걸기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-25",
-    "text": "연인 집 흔들리는 의자 다리를 말없이 조이기",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-26",
-    "text": "연인이 하루 동선을 정해 주려 할 때",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-27",
-    "text": "서운하다는 연인 문자에 해결책부터 보내기",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-28",
-    "text": "주말 하루를 혼자 보내고 싶다고 말하는 순간",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-29",
-    "text": "같은 방에서 각자 다른 일 하며 쉬는 연인",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-30",
-    "text": "긴 감정 문자에 짧게 답했다 다투기",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-31",
-    "text": "연인 집 인터넷 설정을 대신 잡아 주기",
-    "rel": "partner",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-love-32",
-    "text": "연인 앞에서 사랑한다는 말 대신 밥 챙기기",
-    "rel": "partner",
-    "job": "any"
-   }
-  ],
-  "relationships": [
-   {
-    "id": "ISTP-relationships-01",
-    "text": "단톡방은 읽기만 하다 필요할 때 한마디",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-02",
-    "text": "누가 시동이 안 걸린다고 올리면 바로 전화",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-03",
-    "text": "모임에서 구석 자리에 앉아 관찰하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-04",
-    "text": "참견 없이 오래가는 몇 명의 친구",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-05",
-    "text": "위로 대신 맞는 말부터 건네기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-06",
-    "text": "동호회 장비 질문에 정답만 알려 주기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-07",
-    "text": "친구 이사 날 공구 가방 들고 가기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-08",
-    "text": "술자리 이차 제안에 조용히 먼저 빠지기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-09",
-    "text": "회식 건배 순서 앞에서 어색하게 잔 들기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-relationships-10",
-    "text": "갑작스러운 안부 전화를 받을지 말지 고민하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-11",
-    "text": "오랜만에 만난 친구와 말없이 게임만 하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-12",
-    "text": "소개 자리에서 직업 대신 취미를 말하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-13",
-    "text": "첫 대화를 장비 얘기로 푸는 모임",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-14",
-    "text": "새로 온 동료의 컴퓨터 세팅 도와주기",
-    "rel": "any",
-    "job": "employed"
-   },
-   {
-    "id": "ISTP-relationships-15",
-    "text": "단체 사진에서 한 발 뒤로 물러서기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-16",
-    "text": "친구의 하소연을 듣다 해결책을 나열하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-17",
-    "text": "이웃집 현관 센서등을 말없이 고쳐 주기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-18",
-    "text": "모임 장소 투표에 아무 데나로 답하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-19",
-    "text": "약속 직전 일정 바꾸자는 연락 받기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-20",
-    "text": "석 달 만에 만나도 어제 본 듯한 친구",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-21",
-    "text": "농담을 짧고 건조하게 던지고 반응 기다리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-22",
-    "text": "캠핑 모임에서 텐트 설치를 도맡기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-23",
-    "text": "친구 차 엔진 소리로 이상 부위 짚어 내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-24",
-    "text": "온라인 커뮤니티에 답변만 남기고 사라지기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-25",
-    "text": "조별 역할 분담에서 자기 몫만 챙기기",
-    "rel": "any",
-    "job": "student"
-   },
-   {
-    "id": "ISTP-relationships-26",
-    "text": "감정 싸움 번지는 단톡방에서 알림 끄기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-27",
-    "text": "친구 부탁은 들어주되 이유는 묻지 않기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-28",
-    "text": "시끄러운 모임에서 바깥 공기 쐬러 나가기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-29",
-    "text": "동네 정비소 사장님과 짧게 정보 주고받기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-30",
-    "text": "생일 축하 메시지를 하루 늦게 보내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-31",
-    "text": "처음 만난 사람이 질문할 때까지 기다리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-32",
-    "text": "친구 컴퓨터 조립을 같이 하며 대화하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-relationships-33",
-    "text": "다투는 두 친구 사이에서 사실관계만 정리하기",
-    "rel": "any",
-    "job": "any"
-   }
-  ],
-  "alone": [
-   {
-    "id": "ISTP-alone-01",
-    "text": "목적지 없이 오토바이로 한 바퀴 돌기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-02",
-    "text": "낚시터에서 몇 시간 말 없이 찌 바라보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-03",
-    "text": "고장 난 물건을 바닥에 늘어놓고 분해하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-04",
-    "text": "다 맞춰진 부품 앞에서 혼자 작게 웃기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-05",
-    "text": "게임 속 장비 조합을 밤새 연구하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-06",
-    "text": "수리 영상으로 모르는 원리 파고들기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-07",
-    "text": "책상 위에서 돌아가는 3D 프린터 지켜보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-08",
-    "text": "새벽 헬스장에서 이어폰 끼고 기구 돌리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-09",
-    "text": "캠핑 의자에 앉아 랜턴을 정비하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-10",
-    "text": "라디오 없이 야간 드라이브하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-11",
-    "text": "속상한 일을 말하지 않고 운동으로 풀기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-12",
-    "text": "쉬는 날 하루를 계획 없이 비워 두기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-13",
-    "text": "공구 벽걸이를 새로 짜서 정리하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-14",
-    "text": "조립 키트 설명서를 훑고 순서를 바꿔 만들기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-15",
-    "text": "주말 오전 공원에서 정비 도구 펼치기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-16",
-    "text": "고물상에서 쓸 만한 부품 뒤지기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-17",
-    "text": "라면 끓이며 분해 영상 틀어 두기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-18",
-    "text": "러닝 앱 기록을 보고 구간 시간 줄이기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-19",
-    "text": "오래된 노트북에 리눅스 깔아 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-20",
-    "text": "기계식 키보드 스위치 소리 비교하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-21",
-    "text": "새벽 세 시에 원리 하나를 파헤치는 웹 서핑",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-22",
-    "text": "샤워하다 어제 막힌 문제의 해법 떠올리기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-23",
-    "text": "알림을 끄고 사흘간 연락 두절 되기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-24",
-    "text": "암벽장에서 루트 하나만 반복해 풀어 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-25",
-    "text": "책상 위치를 바꿔 방 구조 새로 짜기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-26",
-    "text": "수족관 필터를 분해 청소하며 시간 보내기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-27",
-    "text": "혼자 먹는 밥에 영상 대신 고요함 택하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-28",
-    "text": "비 오는 날 베란다에 작업대 펴기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-29",
-    "text": "방 안에서 하루 종일 퍼즐 맞추기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-30",
-    "text": "중고 카메라를 사서 셔터부터 열어 보기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-31",
-    "text": "서바이벌 게임장에서 혼자 장비 점검하기",
-    "rel": "any",
-    "job": "any"
-   },
-   {
-    "id": "ISTP-alone-32",
-    "text": "오래된 시계를 열어 태엽 구조 들여다보기",
-    "rel": "any",
-    "job": "any"
-   }
-  ]
- }
+  "version": "mbti-seeds-v1",
+  "type": "ISTP",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "ISTP-work-01",
+        "text": "고장 난 프린터 뚜껑부터 열어 보기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-02",
+        "text": "회의 중 말 대신 화면 공유로 재현하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-03",
+        "text": "설명서 덮고 일단 만져 보며 원인 찾기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-04",
+        "text": "에러 로그 한 줄부터 끝까지 따라가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-05",
+        "text": "공구함에서 필요한 것만 꺼내 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-06",
+        "text": "협업 툴 알림을 전부 끄고 몰입하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-07",
+        "text": "긴 기획안 대신 시제품부터 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ISTP-work-08",
+        "text": "복잡한 절차를 두 단계로 줄이는 지름길 찾기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-09",
+        "text": "회의록 쓰기보다 현장 점검이 편할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ISTP-work-10",
+        "text": "한 시간마다 진행을 묻는 상사 앞에서",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ISTP-work-11",
+        "text": "급한 장애 호출에 신발 신고 바로 나서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-12",
+        "text": "남들이 포기한 장비 수리를 맡아 살리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-13",
+        "text": "설치 기사 옆에서 배선 구조 지켜보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-14",
+        "text": "코드 리뷰에 설명 없이 수정본만 올리기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "office",
+          "code"
+        ]
+      },
+      {
+        "id": "ISTP-work-15",
+        "text": "회식 대신 정시 퇴근 후 작업대로 가기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-16",
+        "text": "튜토리얼 없이 새 프로그램 익히기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "code"
+        ]
+      },
+      {
+        "id": "ISTP-work-17",
+        "text": "납땜 인두를 잡으면 시간 가는 줄 모르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-18",
+        "text": "출장지 현장에서 임시 해결책 만들어 내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ISTP-work-19",
+        "text": "구직 중 포트폴리오에 실물 사진부터 넣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-20",
+        "text": "견적서에 작업 시간만 담백하게 적기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-21",
+        "text": "설명서 없이 조립 가구를 맞추는 이삿날",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-22",
+        "text": "새벽에 공유기 설정을 직접 바꿔 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-23",
+        "text": "세탁기 배수 호스를 분리해 막힘 찾기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-24",
+        "text": "팀 채팅에 해결책 한 줄만 남기기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-25",
+        "text": "막힌 동료 대신 말없이 문제를 풀어 주기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-26",
+        "text": "사무실 의자 높이를 렌치로 직접 조절하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-27",
+        "text": "면접 질문에 실무 사례로만 답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-28",
+        "text": "납기 이틀 전에 몰아서 끝내는 집중 작업",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-29",
+        "text": "헤드폰 쓴 채 말 거는 사람에게 손짓하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-30",
+        "text": "새 장비 도착하면 상자부터 뜯어 구조 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-31",
+        "text": "수리 견적 대신 부품값 검색해 직접 교체하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-32",
+        "text": "기획 회의에서 되는지 안 되는지만 말하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-33",
+        "text": "기계 소리만 듣고 이상 부위 짚기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-work-34",
+        "text": "고객 문의에 정답만 짧게 답장하기",
+        "rel": "any",
+        "job": "business",
+        "ctx": []
+      }
+    ],
+    "money": [
+      {
+        "id": "ISTP-money-01",
+        "text": "공구 앞에서만 결제 버튼이 빨라지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-02",
+        "text": "낡은 신발을 끝까지 신고 옷 쇼핑 미루기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-03",
+        "text": "캠핑 장비 장바구니를 몇 주째 비교하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-04",
+        "text": "부품 하나 사려고 최저가 사이트 열 곳 돌기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-05",
+        "text": "가계부 앱을 사흘 쓰고 접기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-06",
+        "text": "적금과 카드값을 자동이체로 걸어 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-07",
+        "text": "친구 노트북 고쳐 주고 밥 한 끼로 끝내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-08",
+        "text": "수리비 견적보다 부품값 검색이 먼저인 습관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-09",
+        "text": "새 가전이 고장 나면 분해부터 해 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-10",
+        "text": "중고 장터 고장품을 싸게 사 와 살리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-11",
+        "text": "구독 서비스를 정리해 쓰는 것만 남기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-12",
+        "text": "배달 앱 쿠폰 대신 직접 해 먹기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-13",
+        "text": "오일 교환을 직접 해서 정비비 아끼기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-14",
+        "text": "카드 명세서를 한 줄씩 훑으며 항목 지우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-15",
+        "text": "충동구매 대신 일주일 장바구니에 묵혀 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-16",
+        "text": "비싼 공구를 한 번 사서 십 년 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-17",
+        "text": "통신사 요금제를 계산기 두드려 갈아타기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-18",
+        "text": "세일 문자엔 무반응이다 필요할 때 바로 결제",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-19",
+        "text": "무료 체험 구독 해지일에 알람 걸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-20",
+        "text": "해외 직구 배송을 새로고침하며 기다리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-21",
+        "text": "용돈이 취미 한두 군데로 몰리는 소비",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-22",
+        "text": "수수료 없는 이체 방법 찾아 갈아타기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-23",
+        "text": "지갑에 카드 한 장만 넣고 다니기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-24",
+        "text": "더치페이 앱으로 돈 얘기를 짧게 끝내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-25",
+        "text": "보험 약관은 건너뛰고 보장 표만 훑기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-26",
+        "text": "텀블러에 집에서 내린 커피 담아 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-27",
+        "text": "이사 비용을 항목별로 쪼개 직접 뽑기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-28",
+        "text": "보증기간 끝나기 전에 가전 점검하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-29",
+        "text": "월급날 잔고 숫자만 확인하고 앱 닫기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-30",
+        "text": "부품 가격표 스크린샷을 모아 두는 폴더",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-31",
+        "text": "큰돈 쓰기 전 후기 영상 세 편 이상 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-32",
+        "text": "중고로 팔 때 구성품 사진까지 꼼꼼히 올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-money-33",
+        "text": "택배 상자 쌓인 걸 보고서야 소비 돌아보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "love": [
+      {
+        "id": "ISTP-love-01",
+        "text": "호감 가는 사람 앞에서 말수가 더 줄기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-02",
+        "text": "좋아하는 사람 자전거 바람을 말없이 채우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-03",
+        "text": "소개팅 자리에서 취미 얘기만 한참 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-04",
+        "text": "메신저에 긴 문장 대신 한 줄 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-05",
+        "text": "답장을 읽고 반나절 뒤에 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-06",
+        "text": "먼저 연락하기까지 한 주 걸리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-07",
+        "text": "첫 데이트 장소를 미리 가서 동선 확인하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-08",
+        "text": "수다보다 같이 만드는 활동이 편할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-09",
+        "text": "고백 타이밍을 머릿속으로 시뮬레이션",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-10",
+        "text": "호감 상대의 고장 난 물건 앞에서 소매 걷기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-11",
+        "text": "말 대신 행동으로 보여 주려는 고민",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-12",
+        "text": "썸 상대의 이모티콘 폭탄에 하나만 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-13",
+        "text": "연애는 혼자 정리할 시간이 필요하다는 연애관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-14",
+        "text": "하루 일과를 묻는 질문 앞에서 머뭇거리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-15",
+        "text": "영화관에서 줄거리보다 촬영 기법에 눈 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-16",
+        "text": "첫 만남 뒤 집에 와서 혼자 곱씹기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-17",
+        "text": "이별 뒤 말없이 작업대로 가서 손을 움직이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-18",
+        "text": "데이트 앱 프로필 사진 고르다 지치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-19",
+        "text": "상대의 속상한 얘기에 해결책부터 떠올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-20",
+        "text": "호감 표시를 돌려 하다 상대가 못 알아챌 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-21",
+        "text": "연락 빈도를 두고 서로 눈치 보는 초반 며칠",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-22",
+        "text": "함께 드라이브하며 말없이 음악 듣는 편안함",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-23",
+        "text": "선물로 마음을 대신 전하려는 고민",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-24",
+        "text": "기념일 챙기기가 어려워 달력 알림 걸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-25",
+        "text": "연인 집 흔들리는 의자 다리를 말없이 조이기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-26",
+        "text": "연인이 하루 동선을 정해 주려 할 때",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-27",
+        "text": "서운하다는 연인 문자에 해결책부터 보내기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-28",
+        "text": "주말 하루를 혼자 보내고 싶다고 말하는 순간",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-29",
+        "text": "같은 방에서 각자 다른 일 하며 쉬는 연인",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-30",
+        "text": "긴 감정 문자에 짧게 답했다 다투기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-31",
+        "text": "연인 집 인터넷 설정을 대신 잡아 주기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-love-32",
+        "text": "연인 앞에서 사랑한다는 말 대신 밥 챙기기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ISTP-relationships-01",
+        "text": "단톡방은 읽기만 하다 필요할 때 한마디",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-02",
+        "text": "누가 시동이 안 걸린다고 올리면 바로 전화",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-03",
+        "text": "모임에서 구석 자리에 앉아 관찰하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-04",
+        "text": "참견 없이 오래가는 몇 명의 친구",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-05",
+        "text": "위로 대신 맞는 말부터 건네기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-06",
+        "text": "동호회 장비 질문에 정답만 알려 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-07",
+        "text": "친구 이사 날 공구 가방 들고 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-08",
+        "text": "술자리 이차 제안에 조용히 먼저 빠지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-09",
+        "text": "회식 건배 순서 앞에서 어색하게 잔 들기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-10",
+        "text": "갑작스러운 안부 전화를 받을지 말지 고민하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-11",
+        "text": "오랜만에 만난 친구와 말없이 게임만 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-12",
+        "text": "소개 자리에서 직업 대신 취미를 말하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-13",
+        "text": "첫 대화를 장비 얘기로 푸는 모임",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-14",
+        "text": "새로 온 동료의 컴퓨터 세팅 도와주기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ISTP-relationships-15",
+        "text": "단체 사진에서 한 발 뒤로 물러서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-16",
+        "text": "친구의 하소연을 듣다 해결책을 나열하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-17",
+        "text": "이웃집 현관 센서등을 말없이 고쳐 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-18",
+        "text": "모임 장소 투표에 아무 데나로 답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-19",
+        "text": "약속 직전 일정 바꾸자는 연락 받기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-20",
+        "text": "석 달 만에 만나도 어제 본 듯한 친구",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-21",
+        "text": "농담을 짧고 건조하게 던지고 반응 기다리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-22",
+        "text": "캠핑 모임에서 텐트 설치를 도맡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-23",
+        "text": "친구 차 엔진 소리로 이상 부위 짚어 내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-24",
+        "text": "온라인 커뮤니티에 답변만 남기고 사라지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-25",
+        "text": "조별 역할 분담에서 자기 몫만 챙기기",
+        "rel": "any",
+        "job": "student",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-26",
+        "text": "감정 싸움 번지는 단톡방에서 알림 끄기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-27",
+        "text": "친구 부탁은 들어주되 이유는 묻지 않기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-28",
+        "text": "시끄러운 모임에서 바깥 공기 쐬러 나가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-29",
+        "text": "동네 정비소 사장님과 짧게 정보 주고받기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-30",
+        "text": "생일 축하 메시지를 하루 늦게 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-31",
+        "text": "처음 만난 사람이 질문할 때까지 기다리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-32",
+        "text": "친구 컴퓨터 조립을 같이 하며 대화하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-relationships-33",
+        "text": "다투는 두 친구 사이에서 사실관계만 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "alone": [
+      {
+        "id": "ISTP-alone-01",
+        "text": "목적지 없이 오토바이로 한 바퀴 돌기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-02",
+        "text": "낚시터에서 몇 시간 말 없이 찌 바라보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-03",
+        "text": "고장 난 물건을 바닥에 늘어놓고 분해하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-04",
+        "text": "다 맞춰진 부품 앞에서 혼자 작게 웃기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-05",
+        "text": "게임 속 장비 조합을 밤새 연구하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-06",
+        "text": "수리 영상으로 모르는 원리 파고들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-07",
+        "text": "책상 위에서 돌아가는 3D 프린터 지켜보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-08",
+        "text": "새벽 헬스장에서 이어폰 끼고 기구 돌리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-09",
+        "text": "캠핑 의자에 앉아 랜턴을 정비하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-10",
+        "text": "라디오 없이 야간 드라이브하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-11",
+        "text": "속상한 일을 말하지 않고 운동으로 풀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-12",
+        "text": "쉬는 날 하루를 계획 없이 비워 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-13",
+        "text": "공구 벽걸이를 새로 짜서 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-14",
+        "text": "조립 키트 설명서를 훑고 순서를 바꿔 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-15",
+        "text": "주말 오전 공원에서 정비 도구 펼치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-16",
+        "text": "고물상에서 쓸 만한 부품 뒤지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-17",
+        "text": "라면 끓이며 분해 영상 틀어 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-18",
+        "text": "러닝 앱 기록을 보고 구간 시간 줄이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-19",
+        "text": "오래된 노트북에 리눅스 깔아 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-20",
+        "text": "기계식 키보드 스위치 소리 비교하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-21",
+        "text": "새벽 세 시에 원리 하나를 파헤치는 웹 서핑",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-22",
+        "text": "샤워하다 어제 막힌 문제의 해법 떠올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-23",
+        "text": "알림을 끄고 사흘간 연락 두절 되기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-24",
+        "text": "암벽장에서 루트 하나만 반복해 풀어 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-25",
+        "text": "책상 위치를 바꿔 방 구조 새로 짜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-26",
+        "text": "수족관 필터를 분해 청소하며 시간 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-27",
+        "text": "혼자 먹는 밥에 영상 대신 고요함 택하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-28",
+        "text": "비 오는 날 베란다에 작업대 펴기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-29",
+        "text": "방 안에서 하루 종일 퍼즐 맞추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-30",
+        "text": "중고 카메라를 사서 셔터부터 열어 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-31",
+        "text": "서바이벌 게임장에서 혼자 장비 점검하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISTP-alone-32",
+        "text": "오래된 시계를 열어 태엽 구조 들여다보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ]
+  }
 }

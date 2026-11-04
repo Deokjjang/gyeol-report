@@ -1,5 +1,5 @@
-// 점수 v2.1 단계 비율 탐색(보정 도구, 결과는 score.ts에 손으로 옮긴다):
-//   pnpm exec tsx tools/p6c-ui2/optimize.ts [n=10000] [seed=20261103] [iterations=4000]
+// 점수 v2.1·v2.2 단계 비율 탐색(보정 도구, 결과는 score.ts에 손으로 옮긴다):
+//   [TIER_CACHE=<폴더>] [BOUNDS=fn.2=0.3:0.6,...] pnpm exec tsx tools/p6c-ui2/optimize.ts [n=10000] [seed=20261103] [iterations=4000]
 // 규칙: 항목마다 가장 좋은 단계 = 1(만점), 단계 순서 유지(이웃 단계 사이 최소 MIN_GAP, 기본 0.1), 가장 낮은 단계는 0까지. 총점은 40 + 항목 합 그대로(사후 늘림·줄임 없음).
 // 목표(7유형 모두): 중앙값 70, 50 미만 4.5%, 90 이상 4.5% 근처(허용 70±3, 3~6%).
 import { TIERS } from "../../src/lib/compat/score";
@@ -29,6 +29,9 @@ const ORDER = {
 } as const;
 type Gaps = Record<keyof typeof ORDER, number[]>;
 const MIN_GAP = Number(process.env.MIN_GAP ?? 0.1);
+// BOUNDS=<항목>.<칸>=<최소>:<최대>,…: 그 칸(ORDER 순서, 0 = 가장 좋은 단계) 값을 범위 안에 묶는다(v2.2: MBTI '무난'·'E/I만 같음'에 부분 점수, '대화 결 다름' 0 고정).
+const BOUNDS = (process.env.BOUNDS ?? "").split(",").filter(Boolean).map(b => { const [, k, j, lo, hi] = b.match(/^(\w+)\.(\d+)=([\d.]+):([\d.]+)$/)!; return { k: k as keyof typeof ORDER, j: Number(j), lo: Number(lo), hi: Number(hi) }; });
+const inBounds = (k: keyof typeof ORDER, vals: number[]) => BOUNDS.every(b => b.k !== k || (vals[b.j] >= b.lo - 1e-9 && vals[b.j] <= b.hi + 1e-9));
 function build(g: Gaps): typeof TIERS {
   // 비율은 0.01 단위(문서·코드에 그대로 옮길 값을 잰다).
   const values = (k: keyof typeof ORDER) => { let v = 1; return ORDER[k].map((_, i) => (i === 0 ? 1 : Math.round((v = Math.max(0, v - g[k][i - 1])) * 100) / 100)); };
@@ -38,9 +41,11 @@ function build(g: Gaps): typeof TIERS {
 }
 // LOSS=band: 허용 범위(중앙값 67~73, 꼬리 3~6%) 밖으로 벗어난 만큼만 센다(경계 탐색용). 기본: 가운데(70, 4.5%)에 가깝게.
 const BAND = (process.env.BAND ?? "3.2,5.8").split(",").map(Number);
+// MED=lo,hi: 중앙값 허용 범위(기본 67.5~72.5 = 70±2; v2.2는 68~70을 지키려고 67.6,70.4).
+const MED = (process.env.MED ?? "67.5,72.5").split(",").map(Number);
 const out = (x: number, lo: number, hi: number) => (x < lo ? lo - x : x > hi ? x - hi : 0);
 const loss = (T: typeof TIERS) => distribution(tiers, T).reduce((sum, r) => sum + (process.env.LOSS === "band"
-  ? (out(r.median, 67.5, 72.5) * 3) ** 2 + (out(r.under50, BAND[0], BAND[1]) * 2) ** 2 + (out(r.over90, BAND[0], BAND[1]) * 2) ** 2 + 0.01 * ((r.under50 - 4.5) ** 2 + (r.over90 - 4.5) ** 2)
+  ? (out(r.median, MED[0], MED[1]) * 3) ** 2 + (out(r.under50, BAND[0], BAND[1]) * 2) ** 2 + (out(r.over90, BAND[0], BAND[1]) * 2) ** 2 + 0.01 * ((r.under50 - 4.5) ** 2 + (r.over90 - 4.5) ** 2)
   : ((r.median - 70) / 1.5) ** 2 + ((r.under50 - 4.5) / 1) ** 2 + ((r.over90 - 4.5) / 1) ** 2), 0);
 // REG: 목표 범위 안에서는 단계가 덜 합쳐지게(이웃 단계 간격이 0.1보다 좁으면 벌점). 결정: 목표 충족이 먼저, 단계 구분은 그다음.
 const REG = Number(process.env.REG ?? 0);
@@ -60,15 +65,17 @@ const start = (): Gaps => {
   };
 };
 const r = rng(Number(process.env.SEARCH_SEED ?? 7));
-let best = start(), bestLoss = loss(build(best)) + REG * merged(best);
 const valuesOf = (g: number[]) => { let v = 1; return [1, ...g.map(x => (v -= x))]; };
+let best = start();
+for (const k of Object.keys(best) as (keyof Gaps)[]) if (!inBounds(k, valuesOf(best[k]))) throw new Error(`시작 비율표가 BOUNDS 밖: ${k} ${valuesOf(best[k])}`);
+let bestLoss = loss(build(best)) + REG * merged(best);
 for (let i = 0; i < iterations; i++) {
   const next = structuredClone(best) as Gaps, keys = Object.keys(next) as (keyof Gaps)[];
   const k = keys[Math.floor(r() * keys.length)], vals = valuesOf(next[k]), j = 1 + Math.floor(r() * (vals.length - 1));
   // 단계 값 하나를 옮긴다(가장 좋은 단계 1은 고정). 순서·최소 간격·0 이상을 지키지 못하면 버린다.
   vals[j] = Math.round((vals[j] + (r() - 0.5) * 0.3) * 100) / 100;
   if (vals[j] < 0) vals[j] = 0;
-  if (vals.slice(1).some((v, x) => vals[x] - v < MIN_GAP - 1e-9)) continue;
+  if (vals.slice(1).some((v, x) => vals[x] - v < MIN_GAP - 1e-9) || !inBounds(k, vals)) continue;
   next[k] = vals.slice(1).map((v, x) => vals[x] - v);
   const l = loss(build(next)) + REG * merged(next);
   if (l <= bestLoss) { best = next; bestLoss = l; }

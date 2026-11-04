@@ -91,6 +91,45 @@ export type CoreImageInput = {
 };
 export type CoreImage = { readonly line: string; readonly ruleId: string };
 
+/**
+ * P6e 10 핵심 이미지: 일간(명사) + 오행 분포 규칙(R1~R5, 술어) + 태어난 달(계절) + 태어난 시각(시간대) + 직업(장소)으로 한 줄.
+ * 같은 일주라도 시각·직업·고객 해시(술어 두 갈래)가 다르면 줄이 달라진다(P6d: 하람·장소담이 같은 "빗속에서도 꺼지지 않는 캠핑 랜턴").
+ * 표지 한 줄과 1장 이미지는 이 한 줄 하나에서 나온다(표지 16~26자: 넘치면 장소 → 시간대 순으로 덜어 낸다).
+ */
+type Element5 = "WOOD" | "FIRE" | "EARTH" | "METAL" | "WATER";
+type RuleKey = "hot" | "cold" | "peer" | Relation | StrengthClass;
+const PREDICATE: Readonly<Record<Element5, Readonly<Record<RuleKey, readonly [string, string]>>>> = {
+  FIRE: { hot: ["더위에도 식지 않는", "한낮보다 뜨거운"], cold: ["언 밤을 데우는", "추위 속에 더 밝은"], peer: ["여럿이 모여 더 환한", "서로 불을 옮겨 주는"], resource: ["땔감을 넉넉히 받은", "바람을 타고 커지는"], output: ["주변을 고루 데우는", "넓게 온기를 퍼뜨리는"], wealth: ["쇠를 달궈 다듬는", "단단한 것을 빚어내는"], officer: ["빗속에서도 꺼지지 않는", "젖은 바람에도 버티는"], strong: ["환하게 켜 둔", "멀리서도 보이는"], medium: ["따뜻하게 켜진", "꾸준히 타오르는"], weak: ["작게 흔들리는", "조용히 지켜 낸"] },
+  WOOD: { hot: ["땡볕에도 잎을 지킨", "목마름을 견디는"], cold: ["언 땅에서 봄을 기다리는", "찬 바람에 뿌리를 다지는"], peer: ["숲을 이뤄 함께 자라는", "빽빽이 어깨를 맞댄"], resource: ["물을 넉넉히 머금은", "비를 받아 무성해진"], output: ["햇볕에 잎을 활짝 편", "꽃을 피워 내는"], wealth: ["빈 터를 홀로 덮어 가는", "넓은 땅에 뿌리를 넓히는"], officer: ["철골 사이로 곧게 자란", "가지치기를 견딘"], strong: ["굵게 뿌리 내린", "하늘로 곧게 뻗은"], medium: ["곧게 선", "줄기를 뻗어 가는"], weak: ["막 자리를 잡은", "새순을 낸"] },
+  EARTH: { hot: ["볕에 바짝 마른", "열기를 품은"], cold: ["꽁꽁 언", "눈 아래 숨을 고르는"], peer: ["겹겹이 이어진", "넓게 다져진"], resource: ["햇볕에 따뜻해진", "온기를 머금은"], output: ["속에 광맥을 품은", "보석을 감춘"], wealth: ["물을 흠뻑 머금은", "호수를 품은"], officer: ["나무뿌리가 촘촘히 박힌", "숲에 덮인"], strong: ["듬직하게 쌓인", "넉넉히 쌓인"], medium: ["고르게 다져진", "단단히 자리 잡은"], weak: ["얇게 깔린", "부드럽게 고른"] },
+  METAL: { hot: ["볕에 달궈진", "뜨거운 열을 견디는"], cold: ["찬 바람에 식은", "서리 맺힌"], peer: ["겹겹이 맞물린", "나란히 빛나는"], resource: ["흙 속에 깊이 묻힌", "바위 속에 숨은"], output: ["물에 씻겨 반짝이는", "맑게 닦인"], wealth: ["나무를 다듬어 내는", "단단한 결을 가르는"], officer: ["불 속에서 달궈지는", "불길에 다듬어지는"], strong: ["단단히 버틴", "곧게 선"], medium: ["곱게 다듬어진", "반듯하게 선"], weak: ["아직 다듬기 전의", "작게 반짝이는"] },
+  WATER: { hot: ["가뭄에도 마르지 않는", "더위를 식히는"], cold: ["얼음 아래로 흐르는", "차갑게 맑은"], peer: ["여러 물줄기가 모인", "넓게 불어난"], resource: ["바위틈에서 끝없이 솟는", "맑게 걸러진"], output: ["숲을 적시며 흐르는", "새싹을 키우는"], wealth: ["노을을 받아 빛나는", "햇빛에 반짝이는"], officer: ["둑에 막혀 깊어진", "물길을 따라 고인"], strong: ["힘차게 흐르는", "쏟아지는"], medium: ["유유히 흐르는", "조용히 흐르는"], weak: ["가늘게 이어지는", "살짝 맺힌"] },
+};
+/** 실내에 둘 수 있는 일간 명사(불빛·보석·흙·덩굴)는 "장소의", 바깥 명사는 "장소 창밖". */
+const INDOOR = new Set<HeavenlyStem>(["丁", "辛", "己", "乙"]);
+const SEASON_KO: Readonly<Record<Season, string>> = { spring: "봄", summer: "여름", autumn: "가을", winter: "겨울" };
+const HOUR_KO: Readonly<Record<string, string>> = { 子: "한밤", 丑: "새벽", 寅: "새벽", 卯: "아침", 辰: "아침", 巳: "오전", 午: "한낮", 未: "오후", 申: "늦은 오후", 酉: "해 질 녘", 戌: "저녁", 亥: "밤" };
+export type CoreImageCtx = { readonly hourBranch?: string | null; readonly place?: string | null; readonly key: string };
+const hashOf = (s: string) => [...s].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 17);
+function ruleOf(i: CoreImageInput): { rule: RuleKey; ruleId: string } {
+  const day = STEM_ELEMENT[i.stem];
+  if (i.season === "summer" && LACK.includes(i.levels.WATER)) return { rule: "hot", ruleId: "R1" };
+  if (i.season === "winter" && LACK.includes(i.levels.FIRE)) return { rule: "cold", ruleId: "R2" };
+  if (i.strongest.level === "많음") { const rel = relationOf(day, i.strongest.element); return rel ? { rule: rel, ruleId: `R3:${rel}` } : { rule: "peer", ruleId: "R4" }; }
+  const s = strengthClass(i.strength); return { rule: s, ruleId: `R5:${s}` };
+}
+export function coreImageLine(i: CoreImageInput, c: CoreImageCtx): CoreImage {
+  const { rule, ruleId } = ruleOf(i);
+  const v = hashOf(`${c.key}|${c.hourBranch ?? ""}`) % 2;
+  const pred = PREDICATE[STEM_ELEMENT[i.stem] as Element5][rule][v], noun = CORE_IMAGES[i.stem].noun;
+  const time = c.hourBranch ? HOUR_KO[c.hourBranch] : null;
+  const when = time ? (time === "밤" ? `${SEASON_KO[i.season]}밤` : `${SEASON_KO[i.season]} ${time}`) : `${SEASON_KO[i.season]}날`;
+  const where = c.place ? (INDOOR.has(i.stem) ? `${c.place}의` : `${c.place} 창밖`) : null;
+  const cands = [where && `${when} ${where} ${pred} ${noun}`, where && `${SEASON_KO[i.season]} ${where} ${pred} ${noun}`, `${when}, ${pred} ${noun}`, `${pred} ${noun}`].filter((x): x is string => Boolean(x));
+  const line = cands.find(x => x.length >= 12 && x.length <= 26) ?? cands.at(-1)!;
+  return { line, ruleId: `${ruleId}:${i.stem}:${i.season}:${c.hourBranch ?? "-"}:${c.place ? "place" : "-"}:v${v}` };
+}
+
 export function coreImage(i: CoreImageInput): CoreImage {
   const t = CORE_IMAGES[i.stem], day = STEM_ELEMENT[i.stem];
   if (i.season === "summer" && LACK.includes(i.levels.WATER)) return { line: t.hot, ruleId: `R1:${i.stem}:hot` };

@@ -12,6 +12,12 @@
 상품 키: saju_mbti_full / career_money_study / love_marriage_child / saju_mbti_compatibility / major_fortune / annual_fortune
 (`src/lib/payment/reportProductCatalog.ts`). 궁합 7관계: `src/lib/report-generation/reportInputTypes.ts`.
 
+## 품질 하한선 (상시 원칙, P6e — 덕짱님 결정 2026-11-04)
+정보량·재미·개인화는 지금이 하한선이다. 이후 모든 변경은 이 이상으로만 간다.
+- 기준 원고: `docs/v5/baseline/<판>/`(본문 전문 `*.final.md` + Book 스냅샷 `*.snapshot.json` + 지표). 판이 바뀌면(원고 체계 개정·재생성) 기준 원고를 새 결과로 갱신한다.
+- 지표: `pnpm exec tsx tools/quality/ratchet.ts --baseline <기준> --current <새 결과>`(NODE_PATH=tools/quality/shim). ① 순수 본문 글자 수(기준일·안내·면책 제외) ② 쓰인 고유 근거 수(명리 특성·MBTI 기능·성향·Fusion) ③ 생활 장면 문장 수 ④ 다른 고객 원고와 겹치지 않는 문장 비율 ⑤ lint 위반 수.
+- 통과: ①은 기준의 97% 이상, ②③④는 기준 이상, ⑤는 기준 미만. 여기에 장별로 전후를 직접 읽고 "나아짐/같음/나빠짐"과 근거 문장을 표로 남긴다. "나빠짐"인 장이 하나라도 있으면 미완료.
+
 ## 원고 규칙
 근거(계산·DB) 없는 주장 금지. 시간 미상→시주 생성 금지. MBTI 없음→MBTI 근거 날조 금지.
 같은 성향 반복 금지(챕터별 새 정보). 분량은 정보량의 결과이며 초과 허용(수치는 SPEC §1).

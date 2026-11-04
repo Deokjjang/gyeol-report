@@ -1,17 +1,21 @@
-// 점수 v2.1 보정 탐색: pnpm exec tsx tools/p6c-ui2/explore.ts [n=10000] [seed=20261103] [--freq] [--tiers=<json 파일>]
+// 점수 v2.1·v2.2 보정 탐색: [TIER_CACHE=<폴더>] pnpm exec tsx tools/p6c-ui2/explore.ts [n=10000] [seed=20261103] [--freq] [--tiers=<json 파일>]
 // 무작위 쌍의 항목 단계를 한 번만 구해 두고(compatTiers), 비율표(TIERS)만 바꿔 총점 분포를 빠르게 잰다.
-// 총점 = 40 + Σ round(비율 × 항목 만점)(MBTI 없으면 itemMax가 나눈 만점) — score.ts와 같은 식이다.
-import { readFileSync } from "node:fs";
+// 총점 = 40 + 항목 점수 합(score.ts itemPoints: 사주 항목은 round(비율 × 만점), MBTI는 세 부분 점수 합; MBTI 없으면 itemMax가 나눈 만점) — score.ts와 같은 식이다.
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import type { MbtiType } from "../../src/data/knowledge-v5/schema";
 import { calculateSaju } from "../../src/lib/saju/calculateSaju";
-import { BASE_SCORE, compatTiers, itemFractions, itemMax, TIERS, type CompatCategory, type CompatTiers, type ItemKey } from "../../src/lib/compat/score";
+import { BASE_SCORE, compatTiers, itemPoints, TIERS, type CompatCategory, type CompatTiers, type ItemKey } from "../../src/lib/compat/score";
 import { CATEGORIES, randomPairs, type RandPerson } from "../p4-compat/pairs";
 
 const args = process.argv.slice(2).filter(a => !a.startsWith("--"));
 const n = Number(args[0] ?? 10000), seed = Number(args[1] ?? 20261103);
 const saju = (p: RandPerson) => calculateSaju({ birthDate: p.birthDate, birthTime: p.birthTime, birthTimeUnknown: p.birthTimeUnknown, approximateBirthTimeSlot: "" as never, calendarType: "SOLAR", gender: p.gender, timezone: "Asia/Seoul" });
 
-export function sampleTiers(count: number, s: number) {
+// TIER_CACHE=<폴더>: 시드별 단계 표본을 JSON으로 저장·재사용한다(단계는 비율표와 무관해 한 번만 구하면 된다).
+export function sampleTiers(count: number, s: number): { tiers: Record<string, CompatTiers[]>; skipped: number } {
+  const file = process.env.TIER_CACHE ? join(process.env.TIER_CACHE, `tiers-${count}-${s}.json`) : null;
+  if (file && existsSync(file)) return JSON.parse(readFileSync(file, "utf8"));
   const out: Record<string, CompatTiers[]> = {};
   let skipped = 0;
   for (const [a, b] of randomPairs(count, s)) {
@@ -19,16 +23,37 @@ export function sampleTiers(count: number, s: number) {
     try { sa = saju(a); sb = saju(b); } catch { skipped++; continue; }
     for (const c of CATEGORIES) (out[c] ??= []).push(compatTiers(c as CompatCategory, { saju: sa, name: "가람님", mbti: (a.mbtiType || null) as MbtiType | null, gender: a.gender }, { saju: sb, name: "나래님", mbti: (b.mbtiType || null) as MbtiType | null, gender: b.gender }));
   }
+  if (file) { mkdirSync(dirname(file), { recursive: true }); writeFileSync(file, JSON.stringify({ tiers: out, skipped })); }
   return { tiers: out, skipped };
 }
-const total = (c: CompatCategory, t: CompatTiers, T: typeof TIERS) => {
-  const f = itemFractions(c, t, T), m = itemMax(c, !!t.mbti);
-  return BASE_SCORE + (Object.keys(m) as ItemKey[]).reduce((sum, k) => sum + Math.round(f[k]! * m[k]!), 0);
-};
+// score.ts와 같은 식(itemPoints): MBTI는 세 부분 점수(반올림)의 합.
+export const total = (c: CompatCategory, t: CompatTiers, T: typeof TIERS) => BASE_SCORE + Object.values(itemPoints(c, t, T)).reduce((sum, x) => sum + x!, 0);
+// 빠른 계산(값은 total과 같다): 항목 점수는 그 항목의 단계와 MBTI 유무(사주 항목 만점이 달라짐)에만 달려 있다.
+// 표본마다 항목 단계를 번호로 한 번 바꿔 두고, 비율표마다 (항목, 단계, MBTI 유무) 점수표를 itemPoints로 만들어 더한다.
+const ITEMS: readonly ItemKey[] = ["element", "dayMaster", "dayBranch", "yearMonth", "role", "yinYang", "mbti"];
+const keyOf = (k: ItemKey, t: CompatTiers) => (k === "yearMonth" ? t.yearMonth.join("|") : k === "mbti" ? JSON.stringify(t.mbti) : String(t[k]));
+type Encoded = { idx: Uint16Array[]; examples: CompatTiers[][]; withMbti: Uint8Array };
+const encoded = new WeakMap<CompatTiers[], Encoded>();
+function encode(list: CompatTiers[]): Encoded {
+  const hit = encoded.get(list);
+  if (hit) return hit;
+  const idx = ITEMS.map(() => new Uint16Array(list.length)), examples: CompatTiers[][] = ITEMS.map(() => []);
+  ITEMS.forEach((k, ki) => { const seen = new Map<string, number>(); list.forEach((t, i) => { const key = keyOf(k, t); let j = seen.get(key); if (j === undefined) { seen.set(key, (j = seen.size)); examples[ki].push(t); } idx[ki][i] = j; }); });
+  const out = { idx, examples, withMbti: Uint8Array.from(list, t => (t.mbti ? 1 : 0)) };
+  encoded.set(list, out);
+  return out;
+}
+const ANY_MBTI = { talk: "talkSame", fn: "golden", rhythm: 0 } as const;
+export function totals(c: CompatCategory, list: CompatTiers[], T: typeof TIERS): number[] {
+  const e = encode(list);
+  // pts[항목][단계 번호 × 2 + MBTI 유무]
+  const pts = ITEMS.map((k, ki) => e.examples[ki].flatMap(ex => [0, 1].map(w => (k === "mbti" ? (w && ex.mbti ? itemPoints(c, ex, T).mbti! : 0) : itemPoints(c, { ...ex, mbti: w ? (ex.mbti ?? ANY_MBTI) : null }, T)[k]!))));
+  return list.map((_, i) => { let s = BASE_SCORE; for (let ki = 0; ki < ITEMS.length; ki++) s += pts[ki][e.idx[ki][i] * 2 + e.withMbti[i]]; return s; });
+}
 const q = (s: number[], p: number) => s[Math.min(s.length - 1, Math.floor(p * (s.length - 1)))];
 export function distribution(tiers: Record<string, CompatTiers[]>, T: typeof TIERS) {
   return CATEGORIES.map(c => {
-    const s = tiers[c].map(t => total(c as CompatCategory, t, T)).sort((x, y) => x - y), pct = (f: (x: number) => boolean) => +(100 * s.filter(f).length / s.length).toFixed(1);
+    const s = totals(c as CompatCategory, tiers[c], T).sort((x, y) => x - y), pct = (f: (x: number) => boolean) => +(100 * s.filter(f).length / s.length).toFixed(1);
     const mean = s.reduce((x, y) => x + y, 0) / s.length, sd = Math.sqrt(s.reduce((x, y) => x + (y - mean) ** 2, 0) / s.length);
     return { type: c, n: s.length, median: q(s, 0.5), p10: q(s, 0.1), p90: q(s, 0.9), min: s[0], max: s.at(-1)!, under50: pct(x => x < 50), over90: pct(x => x >= 90), sd: +sd.toFixed(1) };
   });

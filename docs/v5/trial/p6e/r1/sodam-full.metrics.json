@@ -1,0 +1,422 @@
+{
+ "case": "sodam-full",
+ "label": "종합 · 장소담(카페 사장·INTP·관계 미입력)",
+ "reportId": "report_82cb9a802ad34a02ae24d834361e5625",
+ "status": "COMPLETED",
+ "wallMs": 146934,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 12,
+ "coverLine": "겨울 오후 카페의 젖은 바람에도 버티는 불빛",
+ "keySpans": 36,
+ "sections": 36,
+ "chars": 13238,
+ "chapterChars": [
+  1236,
+  1096,
+  1049,
+  1094,
+  751,
+  1028,
+  827,
+  1028,
+  1077,
+  1070,
+  1088,
+  1095,
+  799
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 31,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.015,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 146809,
+ "tokens": {
+  "input": 26007,
+  "output": 17901,
+  "cachedInput": 7777
+ },
+ "costUsd": 0.2318017,
+ "costKrw": 336.1,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 118320,
+   "chars": 14084,
+   "maxTokens": 32158,
+   "usage": {
+    "inputTokens": 19270,
+    "outputTokens": 15257,
+    "cachedInputTokens": 7183
+   },
+   "costUsd": 0.1918283
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 15207,
+   "chars": 2419,
+   "maxTokens": 4102,
+   "usage": {
+    "inputTokens": 6737,
+    "outputTokens": 2644,
+    "cachedInputTokens": 594
+   },
+   "costUsd": 0.0399734
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-22",
+ "knowledgeVersion": "knowledge-v5:7f6cd7b5cb8e",
+ "p6b": {
+  "chars": 13965,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": true,
+  "similes": [
+   {
+    "n": 1,
+    "count": 3
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 1
+   },
+   {
+    "n": 6,
+    "count": 1
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 0
+   },
+   {
+    "n": 10,
+    "count": 0
+   },
+   {
+    "n": 11,
+    "count": 0
+   },
+   {
+    "n": 12,
+    "count": 0
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 3,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 1,
+   "nickname": 0,
+   "family": 3,
+   "internal": 0
+  },
+  "bannedSamples": [
+   "재고귀인은 들어온 것을 흘리지 않고 곳간에 모아 두는 힘이라, 시간이 갈수록 쌓인 몫이 눈에 보여요.",
+   "사주에서 태어난 해는 뿌리 자리, 태어난 달은 부모와 형제 자리로 봅니다.",
+   "부모님이 계시다면, 그분들이 건넨 규칙 속에 챙김이 숨어 있었는지 한 번 돌아보세요.",
+   "또 내 방식의 힘인 비겁(比劫)도 강해서, 형제가 있다면 경쟁과 의리가 함께 있는 관계였을 수 있어요."
+  ],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 10,
+   "misses": [
+    "식신",
+    "정축",
+    "방합",
+    "정관",
+    "음착양차살",
+    "반안살",
+    "백호대살",
+    "축토",
+    "편관",
+    "겨울의 정화"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     4
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 35,
+  "sectionsTotal": 36,
+  "byRule": {},
+  "coreImage": "겨울 오후 카페의 젖은 바람에도 버티는 불빛",
+  "edition": "제6판"
+ },
+ "p6c": {
+  "tidy": {
+   "hanja": 0,
+   "fnJoin": 0,
+   "prefix": 0,
+   "numbers": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "core",
+  "flags": {
+   "db_copy": 3,
+   "job_prop": 2,
+   "nickname": 1,
+   "seed_copy": 8,
+   "prop_repeat": 1,
+   "time_deictic": 1,
+   "count_mismatch": 2
+  },
+  "dropped": [],
+  "removed": 0,
+  "repaired": 16,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "db_copy": 1,
+   "nickname": 1
+  },
+  "rewritten": 0,
+  "noticesKept": [],
+  "repairCalls": 1,
+  "redoChapters": [],
+  "rewriteCalls": 0,
+  "hanjaStripped": 0,
+  "repairTargets": 16,
+  "noticesRemoved": [],
+  "rewriteTargets": 0,
+  "termsAnnotated": 44,
+  "droppedSections": [],
+  "droppedParagraphs": 0
+ },
+ "ledger": {
+  "seeds": [
+   "INTP-relationships-11",
+   "INTP-work-12",
+   "INTP-alone-14",
+   "INTP-work-13",
+   "INTP-work-04",
+   "INTP-love-19",
+   "INTP-relationships-14",
+   "INTP-alone-04",
+   "INTP-work-22",
+   "INTP-relationships-18"
+  ],
+  "angles": [
+   "tenGod:食神:fusion:INTP",
+   "dayPillar:丁丑:fusion:INTP",
+   "relation:BANGHAP:fusion:Si",
+   "tenGod:正官:fusion:INTP",
+   "shinsal:EUMCHAK_YANGCHA:fusion:INTP",
+   "shinsal:TWELVE_BANANSAL:fusion:INTP",
+   "shinsal:BAEKHODAESAL:fusion:INTP",
+   "relation:CHUNG:fusion:P",
+   "branch:丑:fusion:Si",
+   "element:WATER:STRONG:fusion:INTP",
+   "tenGod:偏官:fusion:INTP",
+   "climate:丁:winter:fusion:Ne",
+   "tenGod:正官:shadow",
+   "shinsal:EUMCHAK_YANGCHA:shadow",
+   "dayPillar:丁丑:meaning",
+   "climate:丁:winter:meaning",
+   "relation:BANGHAP:meaning",
+   "element:WATER:STRONG:meaning",
+   "tenGod:食神:meaning",
+   "relation:CHUNG:meaning",
+   "branch:丑:meaning",
+   "tenGod:偏官:meaning",
+   "tenGod:正官:meaning",
+   "shinsal:EUMCHAK_YANGCHA:meaning",
+   "shinsal:TWELVE_BANANSAL:meaning",
+   "shinsal:BAEKHODAESAL:meaning"
+  ],
+  "evidence": [
+   "feature:tenGod:食神",
+   "feature:dayPillar:丁丑",
+   "feature:relation:BANGHAP",
+   "feature:tenGod:正官",
+   "feature:shinsal:EUMCHAK_YANGCHA",
+   "feature:shinsal:TWELVE_BANANSAL",
+   "feature:shinsal:BAEKHODAESAL",
+   "feature:relation:CHUNG",
+   "feature:branch:丑",
+   "feature:element:WATER:STRONG",
+   "feature:tenGod:偏官",
+   "feature:climate:丁:winter",
+   "뿌리 자리(태어난 해): 겨루며 크는 분위기 + 책임을 먼저 배우는 엄한 분위기",
+   "부모·형제 자리(태어난 달): 먹이고 챙기는 분위기 + 규칙과 예의를 먼저 배우는 분위기",
+   "인성이 약해 스스로 해결하는 쪽: 도움을 청하는 말이 늦음 → 한 줄 부탁 연습",
+   "식상이 강해 먹이고 챙기는 손으로 마음을 표현하는 쪽(과하면 잔소리로 들림)",
+   "비겁이 강해 형제·또래와 대등하게 겨루며 크는 쪽(형제가 있다면 경쟁과 의리가 함께)"
+  ],
+  "newShare": 1
+ }
+}

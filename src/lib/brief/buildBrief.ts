@@ -27,12 +27,12 @@ import { dropSourceSentences } from "@/lib/writer/safety/patterns";
 import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
-import { customerProps, lifeStage, matchJob } from "./props";
+import { customerProps, lifeStage, matchJob, placeOf } from "./props";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
 import { CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
-import { LOVE_STATUS_Q, loveDesign2, loveStatusOf } from "./design/love";
+import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -99,7 +99,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
   const profile: FactProfile = { ...base, scene: sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false }) };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
-  const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
+  const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)),
+    image: { hourBranch: saju.pillars.hour?.branch ?? null, place: override ? null : placeOf(facts.detailJob, facts.jobStatus), key: `${input.name}|${input.birthDate}|${input.birthTime ?? ""}` } });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
   // 강약·균형 단정은 엔진 단일 판단과 맞는 문장만(P3.7 1-2).
   const st0 = stateOf(det.elementBalance);
@@ -363,6 +364,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const statusQ = input.product === "career_money_study" ? (key: string) => CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
     : input.product === "love_marriage_child" ? (key: string) => LOVE_STATUS_Q[key]?.[loveStatusOf(me.facts.relationshipStatus)] : null;
   if (statusQ) for (const c of chapters) for (const x of c.sections ?? []) { const m = x.q.match(/^\{status:(\w+)\}$/); if (m) x.q = statusQ(m[1]) ?? x.q; }
+  // P6e 8: 연애 4장 제목은 상태에 따라(연애 중·기혼 = 표현과 대화의 리듬).
+  if (input.product === "love_marriage_child") for (const c of chapters) { const t = LOVE_STATUS_TITLE[c.id]?.[loveStatusOf(me.facts.relationshipStatus)]; if (t) (c as { title: string }).title = t; }
   // 다음 대운이 1년 안에 시작하면 지금 대운 설명에 전환을 붙인다(P3.7 r1: 2026년에 끝나는 대운을 시기 장이 끝나는 줄 모르고 썼다).
   const cd = me.chart.currentDayun, ty = me.chart.thisYear.year;
   if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.startYear - 1}년에 끝나고 ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;

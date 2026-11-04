@@ -209,7 +209,9 @@ export const KEY_MARK = /[⟪⟫]/g;
  */
 export type GroupLevelKo = "강" | "보통" | "약";
 export type GroupLevels = Readonly<Record<"비겁" | "식상" | "재성" | "관성" | "인성", GroupLevelKo>>;
-const GROUP_NAME_RE = /(?<![가-힣])(비겁|식상|재성|관성|관살|인성)(?=\)|[이가은는의도]|\s|$|[,.])/g;
+const GROUP_NAME_RE = /(?<![가-힣])(비겁|식상|재성|관성|관살|인성|내 방식의 힘|만드는 힘|값을 받는 힘|규칙의 힘|배우는 힘)(?=\)|\(|[이가은는의도]|\s|$|[,.])/g;
+/** P6e 14: 쉬운 이름 → 묶음 이름. */
+const EASY_GROUP: Readonly<Record<string, string>> = { "내 방식의 힘": "비겁", "만드는 힘": "식상", "값을 받는 힘": "재성", "규칙의 힘": "관성", "배우는 힘": "인성" };
 // "많이 쓴다"는 쓰임(일이 그 힘을 많이 쓴다)이지 세기가 아니다(r2 커리어: 문단을 잘못 뺐다).
 const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리)/;
 const LV_MEDIUM = /^(보통|중간 정도|적당|평균)/;
@@ -217,11 +219,11 @@ const LV_WEAK = /^(약하|약한|약해|약합|약함|옅|부족|모자라|모�
 export function groupClaims(sentence: string): { group: keyof GroupLevels; level: GroupLevelKo }[] {
   const out: { group: keyof GroupLevels; level: GroupLevelKo }[] = [];
   for (const m of sentence.matchAll(GROUP_NAME_RE)) {
-    const group = (m[1] === "관살" ? "관성" : m[1]) as keyof GroupLevels;
+    const group = (m[1] === "관살" ? "관성" : EASY_GROUP[m[1]] ?? m[1]) as keyof GroupLevels;
     // 마디는 쉼표·마침표 또는 다음 묶음 이름 앞까지(r1: "식상은 있는데 재성이 약하다"의 "약하다"를 식상에 붙였다).
     const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!·]|(?<![가-힣])(?:비겁|식상|재성|관성|관살|인성)(?=[)이가은는의도]|\s)/)[0].slice(0, 16);
     // 괄호 닫힘·조사·"의 힘"·"기운"·"쪽" 다음, 이름 뒤 말을 한 낱말씩 본다.
-    const words = tail.replace(/^\)?(이|가|은|는|의|도)?\s?/, "").split(/\s+/);
+    const words = tail.replace(/^\([^)]*\)/, "").replace(/^\)?(이|가|은|는|의|도)?\s?/, "").split(/\s+/);
     for (let i = 0; i < Math.min(words.length, 5); i++) {
       const w = words.slice(i).join(" ");
       if (/^(지 않|지는 않|지 않은)/.test(words[i + 1] ?? "") || /지 ?않/.test(w.slice(0, 8))) break;

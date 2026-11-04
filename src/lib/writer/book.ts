@@ -25,7 +25,8 @@ export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
 
 /** 판 정보(P6b A-4, p6b-fields.md 1). 원고 체계가 바뀌면 판 번호·개정일을 올린다(책마다 같은 값). */
-export const BOOK_EDITION = { number: 5, label: "제5판", revisedAt: "2026-11-03" } as const;
+/** P6e(2026-11-04) 제6판: 원고 체계 개정(지침 노출·고아 문장·한자 렌더·면책 1회·기준일은 판 표기에만). */
+export const BOOK_EDITION = { number: 6, label: "제6판", revisedAt: "2026-11-04" } as const;
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
@@ -46,6 +47,8 @@ export type V5BookDraft = {
   readonly appendix?: Brief["appendix"];
   /** 표지 한 줄(P6c-ui2 c 화면, P6c-content G 작가): 작가가 쓴 이 책의 상징 한 줄(16~26자). 검사에 걸리면 핵심 이미지. 있으면 핵심 이미지보다 먼저 쓴다. */
   readonly coverLine?: string;
+  /** 기준일(P6e 12): 책을 쓴 발행일(KST). 본문 첫 문장 대신 표지·마지막 쪽 판 표기에만 보인다. P6e 이전 Book에는 없다. */
+  readonly baseDate?: string;
   /** 용어 뜻(P6c-ui2 g): 본문에 나온 십성·신살·귀인·십이운성과 지식 DB 뜻 한 줄. P6c-ui2 이전 Book에는 없다(용어 표시 없음). */
   readonly glossary?: Brief["glossary"];
 };
@@ -69,7 +72,7 @@ export type WriterMeta = {
   readonly ledger?: BookLedger & { readonly newShare?: number };
 };
 type V5ScoreV51 = { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] };
-type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
+type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1" | "v2.2"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
 export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
   readonly input: ReportInputPayload; readonly people: readonly BookPerson[]; readonly names: string;
@@ -183,7 +186,7 @@ export function assembleV5Book(a: {
   const born = (a.payload as { person?: { birthDate?: string }; personA?: { birthDate?: string } } | undefined);
   const birthYear = Number((born?.person ?? born?.personA)?.birthDate?.slice(0, 4)) || brief.chart.thisYear.year - brief.person.age;
   const draft: V5BookDraft = {
-    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION,
+    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION, baseDate: brief.baseDate,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
@@ -289,7 +292,8 @@ export const seasonTime = (m: { start: string; end: string }, today: string) => 
 export const seasonLabel = (m: { order: number; range: string }, hangul: string) => ({ title: `${m.order}번째 달 · ${hangul}월 · ${m.range}`, sub: `${hangul}월 · ${m.range}` });
 
 /** 판 표기(표지·마지막 쪽): "제5판 · 2026년 11월 3일 개정". P6b 이전 v5 Book은 없음. */
-export const v5EditionLabel = (draft: unknown) => { const e = (draft as V5BookDraft | null)?.edition; return e ? `${e.label} · ${koreanDate(e.revisedAt)} 개정` : undefined; };
+/** 판 표기: P6e부터 "제6판 · 2026년 11월 4일 기준"(기준일은 본문이 아니라 여기에만), 그 전 Book은 "제5판 · … 개정" 그대로. */
+export const v5EditionLabel = (draft: unknown) => { const d = draft as V5BookDraft | null, e = d?.edition; return e ? (d?.baseDate ? `${e.label} · ${koreanDate(d.baseDate)} 기준` : `${e.label} · ${koreanDate(e.revisedAt)} 개정`) : undefined; };
 
 /** 저장된 v5 스냅샷 → 기존 렌더러가 그대로 보여 주는 BookData.
  * today(KST 날짜): 표의 지금·돌아보기·앞으로 기준. 열람 화면은 읽는 날을 넘기고, 없으면 책을 만든 날. */

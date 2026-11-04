@@ -75,7 +75,7 @@
         { "type": "ENTJ", "fit": "보통", "why": "상대의 시원한 추진력은 든든하고 말투는 당신이 편한 정도로 조절하면 좋습니다" },
         { "type": "ENTP", "fit": "보통", "why": "상대의 재치 있는 토론이 흥미롭고 쉬고 싶을 땐 그만하자고 말하면 됩니다" }
       ],
-      "dimensionTags": { "conflictApproach": -0.8, "introspection": 0.7, "empathyResponse": 0.7, "directness": -0.7, "controlNeed": -0.7, "competitiveness": -0.6, "statusDrive": -0.6, "planning": -0.6, "boundarySetting": -0.6, "verbalOutput": -0.6, "caretaking": 0.5, "socialEnergy": -0.5, "spendingControl": -0.5, "noveltySeeking": 0.4, "detailFocus": 0.4 },
+      "dimensionTags": { "conflictApproach": -0.8, "introspection": 0.7, "empathyResponse": 0.7, "directness": -0.7, "controlNeed": -0.7, "competitiveness": -0.6, "statusDrive": -0.6, "planning": -0.6, "boundarySetting": -0.6, "verbalOutput": -0.6, "socialEnergy": -0.5, "spendingControl": -0.5, "noveltySeeking": 0.4 },
       "sources": ["통념 궁합표: 흔히 도는 16유형 궁합 차트(천생연분·좋음·최악) 정리본 대조(P6d C)", "mbti:ISFP:summary", "mbti:ISFP:functionStack", "mbti:ISFP:notablePairs", "legacy:mbti-profiles:ISFP", "통념(유형 궁합표)"]
     }
   ]

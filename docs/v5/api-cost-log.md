@@ -91,9 +91,38 @@
 | 2026-11-04 13:31 | P6d 궁합 사업 파트너 · 남궁현×백은솔 r1 수리 | anthropic/claude-sonnet-5-5 | 2967 | 0 | 563 | 0.01156400 | complete | req_011CghG5U2JkBR39X7aC4Eez | 7.47099795 |
 | 2026-11-04 13:38 | P6d 커리어 · 권태오(구직) r2 | anthropic/claude-sonnet-5-5 | 22507 | 0 | 13467 | 0.18308400 | complete | req_011CghGSrxHEBN49Vn9Gtq2v | 7.65408195 |
 | 2026-11-04 13:38 | P6d 커리어 · 권태오(구직) r2 수리 | anthropic/claude-sonnet-5-5 | 8421 | 0 | 3506 | 0.05190200 | complete | req_011CghGa5eiTwNm2AvEsqTjh | 7.70598395 |
+| 2026-11-04 18:05 | P6e 커리어 · 권태오(구직) r1 | anthropic/claude-sonnet-5-5 | 23636 | 0 | 11375 | 0.16460300 | complete | req_011CghctB6UBSFf4uPqxjFLy | 7.87058695 |
+| 2026-11-04 18:05 | P6e 커리어 · 권태오(구직) r1 수리 | anthropic/claude-sonnet-5-5 | 9062 | 0 | 3284 | 0.05123150 | complete | req_011CghcyynVFVgqp68Z6wpjV | 7.92181845 |
+| 2026-11-04 18:05 | P6e 커리어 · 권태오(구직) r1 재작성 | anthropic/claude-sonnet-5-5 | 2562 | 0 | 748 | 0.01260400 | complete | req_011Cghd1NfB5981LVr7sPnTz | 7.93442245 |
+| 2026-11-04 18:10 | P6e 커리어 · 권태오(구직) r2 | anthropic/claude-sonnet-5-5 | 16986 | 7162 | 10211 | 0.13679820 | complete | req_011CghdGrXeLpbHS7xMPfmQu | 8.07122065 |
+| 2026-11-04 18:10 | P6e 커리어 · 권태오(구직) r2 수리 | anthropic/claude-sonnet-5-5 | 9567 | 535 | 3829 | 0.05747750 | complete | req_011CghdN7fcx5L7CXuSfRndy | 8.12869815 |
+| 2026-11-04 18:10 | P6e 커리어 · 권태오(구직) r2 재작성 | anthropic/claude-sonnet-5-5 | 3111 | 0 | 593 | 0.01215200 | complete | req_011CghdPeDv1GWSBGZm6xom5 | 8.14085015 |
+| 2026-11-04 18:16 | P6e 커리어 · 권태오(구직) r3 | anthropic/claude-sonnet-5-5 | 24169 | 0 | 11742 | 0.16934950 | complete | req_011Cghddb35EBkyEBSu92uhb | 8.31019965 |
+| 2026-11-04 18:16 | P6e 커리어 · 권태오(구직) r3 수리 | anthropic/claude-sonnet-5-5 | 21077 | 0 | 11527 | 0.15771750 | complete | req_011Cghdjj9eX1h3sJznjBLD3 | 8.46791715 |
+| 2026-11-04 18:16 | P6e 커리어 · 권태오(구직) r3 재작성 | anthropic/claude-sonnet-5-5 | 2796 | 0 | 598 | 0.01157200 | complete | req_011CghdpsEi9mpkcNok3v5qL | 8.47948915 |
+| 2026-11-04 18:27 | P6e 커리어 · 권태오(구직) r4 | anthropic/claude-sonnet-5-5 | 24169 | 0 | 12905 | 0.18097950 | complete | req_011CgheTve8SxutEH3zJkbj3 | 8.66046865 |
+| 2026-11-04 18:27 | P6e 커리어 · 권태오(구직) r4 수리 | anthropic/claude-sonnet-5-5 | 11138 | 0 | 4158 | 0.06415300 | complete | req_011Cgheamg4QBNLGgbGQTU7q | 8.72462165 |
+| 2026-11-04 18:27 | P6e 커리어 · 권태오(구직) r4 재작성 | anthropic/claude-sonnet-5-5 | 2604 | 0 | 567 | 0.01087800 | complete | req_011CghecSVTEk6hY3xUkyuB7 | 8.73549965 |
+| 2026-11-04 18:30 | P6e 종합 · 장소담(카페 사장·INTP·관계 미입력) r1 | anthropic/claude-sonnet-5-5 | 19270 | 7183 | 15257 | 0.19182830 | complete | req_011CghefhtF48VKExgmNRGAw | 8.92732795 |
+| 2026-11-04 18:30 | P6e 종합 · 장소담(카페 사장·INTP·관계 미입력) r1 수리 | anthropic/claude-sonnet-5-5 | 6737 | 594 | 2644 | 0.03997340 | complete | req_011CghepSCg4uGqLRuuU4KQR | 8.96730135 |
+| 2026-11-04 18:31 | P6e 연애 · 문채린(연애 중) r1 | anthropic/claude-sonnet-5-5 | 16337 | 7183 | 12012 | 0.15351230 | complete | req_011CgherYB9xFyTSk4xY6QJK | 9.12081365 |
+| 2026-11-04 18:31 | P6e 연애 · 문채린(연애 중) r1 수리 | anthropic/claude-sonnet-5-5 | 5144 | 594 | 1945 | 0.02979740 | complete | req_011CgheydDxNmxvZk5SYUrYH | 9.15061105 |
+| 2026-11-04 18:31 | P6e 연애 · 문채린(연애 중) r1 재작성 | anthropic/claude-sonnet-5-5 | 2473 | 0 | 497 | 0.00991600 | complete | req_011CghezYsYVLq6cGP2mA5qr | 9.16052705 |
+| 2026-11-04 18:33 | P6e 궁합 사업 파트너 · 남궁현×백은솔 r1 | anthropic/claude-sonnet-5-5 | 21702 | 7183 | 14325 | 0.18737230 | complete | req_011Cghf13WV1w7MkbDJjefZL | 9.34789935 |
+| 2026-11-04 18:33 | P6e 궁합 사업 파트너 · 남궁현×백은솔 r1 수리 | anthropic/claude-sonnet-5-5 | 4693 | 594 | 1369 | 0.02313540 | complete | req_011Cghf92PjHbFxbugJwn2Cb | 9.37103475 |
+| 2026-11-04 18:35 | P6e 연애 · 윤서하(솔로, 그래픽 디자이너·INFP) r1 | anthropic/claude-sonnet-5-5 | 16389 | 7183 | 12171 | 0.15520630 | complete | req_011Cghf9hSzQVnBiD4hZcKhr | 9.52624105 |
+| 2026-11-04 18:35 | P6e 연애 · 윤서하(솔로, 그래픽 디자이너·INFP) r1 수리 | anthropic/claude-sonnet-5-5 | 4336 | 594 | 1287 | 0.02160140 | complete | req_011CghfGZ1Bg8BBPghifRa4g | 9.54784245 |
+| 2026-11-04 18:35 | P6e 연애 · 윤서하(솔로, 그래픽 디자이너·INFP) r1 재작성 | anthropic/claude-sonnet-5-5 | 3529 | 0 | 1022 | 0.01727800 | complete | req_011CghfH6k9dCJRDAp1nXqan | 9.56512045 |
+| 2026-11-04 18:46 | P6e 연애 · 문채린(연애 중) r2 | anthropic/claude-sonnet-5-5 | 23545 | 0 | 11514 | 0.16582150 | complete | req_011CghfwaDhDKevFAsUKjfpM | 9.73094195 |
+| 2026-11-04 18:46 | P6e 연애 · 문채린(연애 중) r2 수리 | anthropic/claude-sonnet-5-5 | 5467 | 0 | 1615 | 0.02738100 | complete | req_011Cghg4AjWNSzc6sP8dtWU1 | 9.75832295 |
+| 2026-11-04 18:46 | P6e 연애 · 문채린(연애 중) r2 재작성 | anthropic/claude-sonnet-5-5 | 2585 | 0 | 529 | 0.01046000 | complete | req_011Cghg4syy2G9LVRMGneCo6 | 9.76878295 |
+| 2026-11-04 18:48 | P6e 연애 · 윤서하(솔로, 그래픽 디자이너·INFP) r2 | anthropic/claude-sonnet-5-5 | 16412 | 7183 | 15386 | 0.18740230 | complete | req_011Cghg6TUPfYAgn7eM5MjsW | 9.95618525 |
+| 2026-11-04 18:48 | P6e 연애 · 윤서하(솔로, 그래픽 디자이너·INFP) r2 수리 | anthropic/claude-sonnet-5-5 | 5644 | 594 | 2269 | 0.03403740 | complete | req_011CghgFD7wCAjasnzYSzn43 | 9.99022265 |
+| 2026-11-04 18:48 | P6e 연애 · 윤서하(솔로, 그래픽 디자이너·INFP) r2 재작성 | anthropic/claude-sonnet-5-5 | 3327 | 0 | 1040 | 0.01705400 | complete | req_011CghgGAQFBi3TUMS7KfC6W | 10.00727665 |
 
-누적 합계: **$7.70598395** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$10.00727665** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
+- P6e-content(2026-11-04): Anthropic 28줄 합 $2.3013, 작업 상한 $2.4(사용자 결정, 처음 $1.6). 최종 5권 $1.1405 + 버린 회차 $1.1608. 위 누적 합계는 OpenAI·Anthropic 합이라 "개발 총 상한 $8"(머리 규칙에서는 OpenAI 상한)을 넘었다 — 상한을 공급자 합으로 볼지 확인이 필요하다.
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.
 - 추론 모델(gpt-5-nano 등)은 출력 상한 안에서 추론에 토큰을 쓸 수 있어 배관 검증에는 비추론 모델이 안전하다.
