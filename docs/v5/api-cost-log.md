@@ -81,8 +81,16 @@
 | 2026-11-04 08:58 | P6c 종합 · 장덕민(본인) r2 수리 | anthropic/claude-sonnet-5-5 | 3403 | 0 | 1293 | 0.01973600 | complete | req_011CgguED7ReNBfxMz1pVgdG | 6.41691195 |
 | 2026-11-04 09:05 | P6c 종합 · 하람(c1) r3 | anthropic/claude-sonnet-5-5 | 22843 | 0 | 17220 | 0.22098000 | complete | req_011CgguaqkNqJBMfNej6tFT5 | 6.63789195 |
 | 2026-11-04 09:05 | P6c 종합 · 하람(c1) r3 수리 | anthropic/claude-sonnet-5-5 | 5498 | 0 | 2379 | 0.03478600 | complete | req_011CggukiGx4Ds2as6Mne5Ma | 6.67267795 |
+| 2026-11-04 13:25 | P6d 종합 · 장소담(카페 사장·INTP·관계 미입력) r1 | anthropic/claude-sonnet-5-5 | 24091 | 0 | 14264 | 0.19422200 | complete | req_011CghFVEPp3Txr9nr8oKhEJ | 6.86689995 |
+| 2026-11-04 13:25 | P6d 종합 · 장소담(카페 사장·INTP·관계 미입력) r1 수리 | anthropic/claude-sonnet-5-5 | 6230 | 0 | 2331 | 0.03577000 | complete | req_011CghFd59fReoL9D56TZiNX | 6.90266995 |
+| 2026-11-04 13:28 | P6d 커리어 · 권태오(구직) r1 | anthropic/claude-sonnet-5-5 | 15707 | 6800 | 12687 | 0.15896400 | complete | req_011CghFfhbTd91bmsA5fhvdM | 7.06163395 |
+| 2026-11-04 13:28 | P6d 커리어 · 권태오(구직) r1 수리 | anthropic/claude-sonnet-5-5 | 9604 | 0 | 3970 | 0.05890800 | complete | req_011CghFnNBr4L4GUHbcKu7Gh | 7.12054195 |
+| 2026-11-04 13:29 | P6d 연애 · 문채린(연애 중) r1 | anthropic/claude-sonnet-5-5 | 14954 | 6800 | 12149 | 0.15207800 | complete | req_011CghFpdJVkUKDy5npY2KTY | 7.27261995 |
+| 2026-11-04 13:29 | P6d 연애 · 문채린(연애 중) r1 수리 | anthropic/claude-sonnet-5-5 | 5153 | 0 | 1978 | 0.03008600 | complete | req_011CghFwaX1QnyYNeZBSZf5i | 7.30270595 |
+| 2026-11-04 13:31 | P6d 궁합 사업 파트너 · 남궁현×백은솔 r1 | anthropic/claude-sonnet-5-5 | 20074 | 6800 | 11590 | 0.15672800 | complete | req_011CghFy2y1HumKEU7GqBnbo | 7.45943395 |
+| 2026-11-04 13:31 | P6d 궁합 사업 파트너 · 남궁현×백은솔 r1 수리 | anthropic/claude-sonnet-5-5 | 2967 | 0 | 563 | 0.01156400 | complete | req_011CghG5U2JkBR39X7aC4Eez | 7.47099795 |
 
-누적 합계: **$6.67267795** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$7.47099795** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.

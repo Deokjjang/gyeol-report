@@ -154,6 +154,8 @@ describe("P6d D 카드(대운·세운)", () => {
     const inv = insertFixedLines([{ n: 1, id: "engine", title: "e", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["엔진이에요."] }] }, { n: 8, id: "invest", title: "i", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["원칙이에요."] }] }], c);
     expect(inv[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`);
     expect(insertFixedLines(inv, c)[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`); // 한 번만
+    const own = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."] }] }], c);
+    expect(own[1].sections[0].paragraphs[0]).toBe("이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."); // 작가가 쓴 안내가 있으면 넣지 않는다
   });
 });
 

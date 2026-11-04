@@ -34,7 +34,7 @@ import { redoChapters, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type 
 import { repairPass } from "./repair";
 import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } from "./safety";
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
-import { enforce, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
+import { enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
 import { INVEST_NOTICE } from "./safety/p6d";
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
@@ -172,7 +172,8 @@ export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief
       return prepend({ ...s, paragraphs: [stripped, ...s.paragraphs.slice(1)].filter(Boolean) }, head);
     });
     if (ci === 0 && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(dateLine)))) sections = [prepend(sections[0], dateLine), ...sections.slice(1)];
-    if (/^invest/.test(c.id) && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(INVEST_NOTICE)))) sections = [prepend(sections[0], INVEST_NOTICE), ...sections.slice(1)];
+    // 투자 안내는 장에 한 번: 작가가 같은 뜻을 이미 썼으면 넣지 않는다(r1 커리어: 두 번 나왔다).
+    if (/^invest/.test(c.id) && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(INVEST_NOTICE) || /투자 권유(가|는)? 아니/.test(p)))) sections = [prepend(sections[0], INVEST_NOTICE), ...sections.slice(1)];
     return { ...c, sections, chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) };
   });
 }
@@ -236,7 +237,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   chapters = insertFixedLines(chapters, brief);
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   const cover = coverLineOf(run?.cover ?? null, brief);
-  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: repair.targets, repaired: repair.applied, repairCalls: repair.calls, redoCalls, redoChapters: redo.map(c => c.n), remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs, cover: cover.source, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`) } } };
+  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: repair.targets, repaired: repair.applied, repairCalls: repair.calls, redoCalls, redoChapters: redo.map(c => c.n), remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
+    dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: cover.source, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`) } } };
   const people = await (deps.people ?? v4People)(a.payload, a.policyAt);
   const { draft, evidence } = assembleV5Book({
     brief, plan, finals: chapters, report, payload: a.payload, generatedAt: a.policyAt, people, cover: cover.line, ...(pl ? { priorLedger: pl } : {}), badCards: new Set(remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}`)),

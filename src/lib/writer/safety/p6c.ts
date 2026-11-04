@@ -163,14 +163,18 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
 export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters">): { chapters: FinalChapter[]; count: TidyCount } {
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0;
   const introduced = new Set<string>();
-  const fixCodes = (p: string) => p.replace(/(?<![A-Za-z(])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z)])/g, (code, _c, offset: number, whole: string) => {
+  // 조사는 바뀐 낱말의 받침으로 다시 고른다(P6d: "속마음의 가치 기준는"), "Te(일 되게 하는 판단)"은 "일 되게 하는 판단(Te)" 하나로(겹쳐 쓰기 방지).
+  const PARTICLE: Readonly<Record<string, string>> = { 은: "은는", 는: "은는", 이: "이가", 가: "이가", 을: "을를", 를: "을를", 과: "과와", 와: "과와" };
+  const withJosa = (word: string, particle: string) => { const pair = PARTICLE[particle]; if (!pair) return word + particle; const ch = word.replace(/\([^)]*\)$/, "").slice(-1), code = ch.charCodeAt(0) - 0xac00; return word + ((code >= 0 && code <= 11171 && code % 28 !== 0) ? pair[0] : pair[1]); };
+  const fixCodes = (p: string) => p.replace(/(?<![A-Za-z(])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z)])(\(([^()]{2,24})\))?(은|는|이|가|을|를|과|와)?/g, (all, code: string, _g: string, inner: string | undefined, particle: string | undefined, offset: number, whole: string) => {
     // 괄호 안이면 그대로(쉬운말(Te)).
     const open = whole.lastIndexOf("(", offset), close = whole.lastIndexOf(")", offset);
-    if (open > close) return code;
-    const plain = ctx.mbtiPlain[code]; if (!plain) return code;
+    if (open > close) return all;
+    const plain = ctx.mbtiPlain[code] ?? inner; if (!plain) return all;
     mbtiCode++;
-    if (introduced.has(code)) return plain;
-    introduced.add(code); return `${plain}(${code})`;
+    const word = introduced.has(code) ? plain : `${plain}(${code})`;
+    introduced.add(code);
+    return particle ? withJosa(word, particle) : word;
   });
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => {
     let ps = s.paragraphs.map(p => {

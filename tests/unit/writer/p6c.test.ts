@@ -103,7 +103,8 @@ describe("P6c C 개인화", () => {
   });
   it("C5 괄호 밖 MBTI 약어는 처음 '쉬운 이름(Te)', 그 뒤로는 쉬운 이름", () => {
     const { chapters } = tidyBook([fin(1, [{ heading: "h", paragraphs: ["주기능 Te는 효율을 봐요. 그리고 Te가 앞서면 Ni도 따라와요."] }])], ctx0());
-    expect(chapters[0].sections[0].paragraphs[0]).toBe("주기능 일 되게 하는 판단(Te)는 효율을 봐요. 그리고 일 되게 하는 판단가 앞서면 멀리 보는 직관(Ni)도 따라와요.");
+    // P6d: 바뀐 낱말의 받침으로 조사를 다시 고른다("판단(Te)는"·"판단가" → "판단(Te)은"·"판단이").
+    expect(chapters[0].sections[0].paragraphs[0]).toBe("주기능 일 되게 하는 판단(Te)은 효율을 봐요. 그리고 일 되게 하는 판단이 앞서면 멀리 보는 직관(Ni)도 따라와요.");
     expect(L.bareFunctionCodes(chapters[0].sections[0].paragraphs[0])).toEqual([]);
   });
 });

@@ -14,7 +14,8 @@ const TERMINATED = /([.!?…]|[다요죠까네])["'”’)⟫]*$/;
 export function fragmentSentence(sentence: string, last = false): boolean {
   const s = sentence.replace(/[⟪⟫]/g, "").trim();
   if (!s) return false;
-  if (FRAGMENT_START.test(s) || /^["'”’)\]]/.test(s) || /^[,.?!·]/.test(s)) return true;
+  // 곧은 따옴표(' ")는 여는 따옴표일 수 있어 보지 않는다(r1: "'너 그 자격증 따면…' 하며"를 조각으로 잡았다). 닫는 굽은 따옴표·괄호로 시작하면 조각.
+  if (FRAGMENT_START.test(s) || /^[”’)\]]/.test(s) || /^[,.?!·]/.test(s)) return true;
   return last && !TERMINATED.test(s);
 }
 
@@ -104,8 +105,10 @@ export const dropChapterRef = (s: string) => s.replace(/(?<![0-9가-힣])\d{1,2}
 
 /** E 시점 지시: 대운·세운(달력이 있는 책)은 "지금" 전부, 그 밖은 시점을 못 박는 말만. */
 const TIME_STRICT = /지금|이번 달|이번 한 달|올해 남은|요즘 들어/;
-const TIME_LOOSE = /지금 우리가 있는|지금 (이|그) (시기|때|달|해|순간)|이번 달|이번 한 달|올해 남은 (두|세|한|몇) ?(달|개월)|올해 남은/;
-export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s);
+const TIME_LOOSE = /지금 우리가 있는|지금 (이|그) (시기|때|달|해)(?![가-힣])|이번 달|이번 한 달|올해 남은 (두|세|한|몇) ?(달|개월)|올해 남은/;
+/** MBTI 기능 쉬운 이름("지금 이 순간 감각(Se)")은 시점 말이 아니다(r1 커리어: 기능 이름이 걸렸다). */
+const FUNCTION_NAME_NOW = /지금 이 순간(의)? 감각/g;
+export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s.replace(FUNCTION_NAME_NOW, ""));
 
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
 export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?![0-9가-힣]*(일 기준|일부터))/;

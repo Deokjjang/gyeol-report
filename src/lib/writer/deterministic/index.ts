@@ -89,7 +89,9 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref.startsWith("chapters.")) {
     const src = b.chapters.find(x => x.id === ref.slice(9)); if (!src) return null;
     const ts = [...new Map((src.sections ?? []).flatMap(s => s.materials).flatMap(m => (m.kind === "trait" ? [[m.traitId, m] as const] : []))).values()].slice(0, 3);
-    const lines = ts.flatMap(m => { const t = traitOf(b, m.traitId); return t ? [`이번 달에는 ${DOMAIN_KO[m.domain] ?? "하루 중"} ${josa(noHan(t.name), "을를")} 한 번 의식해서 써 보세요`] : []; });
+    // "이번 달"은 읽는 때를 못 박는 말이라(P6d E) 기준일의 달 이름으로.
+    const month = `${Number(b.baseDate.slice(0, 4))}년 ${Number(b.baseDate.slice(5, 7))}월`;
+    const lines = ts.flatMap(m => { const t = traitOf(b, m.traitId); return t ? [`${month}에는 ${DOMAIN_KO[m.domain] ?? "하루 중"} ${josa(noHan(t.name), "을를")} 한 번 의식해서 써 보세요`] : []; });
     if (!lines.length) return null;
     return { heading: `${src.title}에서 이어 갈 것`, paragraphs: [join(...lines, "한 달 뒤 달라진 장면 하나를 짧게 적어 두면 다음 걸음이 보입니다")] };
   }

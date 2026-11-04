@@ -217,7 +217,8 @@ export function groupClaims(sentence: string): { group: keyof GroupLevels; level
   const out: { group: keyof GroupLevels; level: GroupLevelKo }[] = [];
   for (const m of sentence.matchAll(GROUP_NAME_RE)) {
     const group = (m[1] === "관살" ? "관성" : m[1]) as keyof GroupLevels;
-    const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!·]/)[0].slice(0, 16);
+    // 마디는 쉼표·마침표 또는 다음 묶음 이름 앞까지(r1: "식상은 있는데 재성이 약하다"의 "약하다"를 식상에 붙였다).
+    const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!·]|(?<![가-힣])(?:비겁|식상|재성|관성|관살|인성)(?=[)이가은는의도]|\s)/)[0].slice(0, 16);
     // 괄호 닫힘·조사·"의 힘"·"기운"·"쪽" 다음, 이름 뒤 말을 한 낱말씩 본다.
     const words = tail.replace(/^\)?(이|가|은|는|의|도)?\s?/, "").split(/\s+/);
     for (let i = 0; i < Math.min(words.length, 5); i++) {

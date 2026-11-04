@@ -29,7 +29,9 @@ export type FinalChapter = { readonly n: number; readonly id: string; readonly t
 /** p6c(P6c): 결정론 정리 수, 수리 전 검사 결과(규칙별), 수리 대상·적용·호출 수, 재요청 장, 수리 뒤 남은 것(지운 문장·뺀 문단), 표지 출처, 대체한 카드 줄. */
 export type P6cMetric = { readonly tidy: { readonly prefix: number; readonly mbtiCode: number; readonly monthNow: number; readonly keyMarks: number }; readonly flags: Readonly<Record<string, number>>;
   readonly repairTargets: number; readonly repaired: number; readonly repairCalls: number; readonly redoCalls: number; readonly redoChapters: readonly number[];
-  readonly remaining: Readonly<Record<string, number>>; readonly removed: number; readonly droppedParagraphs: number; readonly cover: "writer" | "fallback"; readonly cardFlags: readonly string[] };
+  readonly remaining: Readonly<Record<string, number>>; readonly removed: number; readonly droppedParagraphs: number; readonly cover: "writer" | "fallback"; readonly cardFlags: readonly string[];
+  /** P6d B: 수리 뒤에도 사실·금지 규칙에 걸려 문단째 뺀 자리와 규칙·문장(진단용). */
+  readonly dropped?: readonly { readonly at: string; readonly rule: string; readonly detail?: string; readonly sentence: string }[] };
 export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric; readonly p6c?: P6cMetric };
 export type SafetyReport = { readonly deletions: readonly Deletion[]; readonly warnings: readonly StyleWarning[]; readonly replacements?: readonly Replacement[]; readonly metrics?: SafetyMetrics };
 /** 같은 소품이 본문에 나와도 되는 장 수(P3.6 A1). */
