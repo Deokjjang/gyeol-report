@@ -3,6 +3,7 @@
  * - FORTUNE_SALES_OPEN=1: 대운·세운 판매를 다시 연다(기본: 닫힘, 이미 산 Book은 어느 쪽이든 열린다).
  * - ADMIN_USER_IDS: 관리자 화면(/admin/orders)을 열 수 있는 계정 id(쉼표 구분). 비어 있으면 아무도 못 연다.
  * - GIFT_EVENT_*: 결제 1건마다 이용권 1장 이벤트(기본: 꺼짐).
+ * - COMP_*: 보상 이용권 두 등급(P6e-ops, 기본: 꺼짐). A = 결제 후 환불한 고객(관리자가 지정), B = 기존 무료 이벤트 가입자 명단.
  */
 type Env = Readonly<Record<string, string | undefined>>;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -31,4 +32,26 @@ export function giftEventConfig(env: Env = process.env, now = Date.now()): GiftE
   const products = (listed.length ? listed : [...ALL_PRODUCTS]).filter(p => productOnSale(p, env));
   return { active: env.GIFT_EVENT_ENABLED === "1" && valid && now >= Date.parse(start) && now < Date.parse(end), start: valid ? new Date(start).toISOString() : "", end: valid ? new Date(end).toISOString() : "",
     maxPerAccount: int(env.GIFT_EVENT_MAX_PER_ACCOUNT, 2, 20), bonusMax: int(env.GIFT_EVENT_BONUS_MAX, 2, 20), products, validDays: int(env.GIFT_EVENT_VALID_DAYS, 30, 365) || 30 };
+}
+
+export type CompConfig = {
+  readonly enabled: boolean;
+  /** A: 본인용 이용권 장수 · 선물 링크 장수 · 유효일. */
+  readonly aSelf: number; readonly aGift: number; readonly aDays: number;
+  /** B: 장수 · 유효일. */
+  readonly bQty: number; readonly bDays: number;
+  /** 보상 이용권으로 만들 수 있는 상품(기본 4종: 종합·커리어·연애·궁합). 이용권 자체에 담겨 사용 때 서버가 다시 확인한다. */
+  readonly products: readonly string[];
+};
+export const COMP_DEFAULT_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] as const;
+const compInt = (v: string | undefined, d: number, min: number, max: number) => { const n = Number(v); return v !== undefined && v.trim() !== "" && Number.isInteger(n) && n >= min && n <= max ? n : d; };
+/** COMP_ENABLED=1이어야 지급·안내가 켜진다(지정·집계는 꺼져 있어도 된다). 모든 장수·유효일·상품은 환경 설정값. */
+export function compConfig(env: Env = process.env): CompConfig {
+  const listed = (env.COMP_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
+  return {
+    enabled: env.COMP_ENABLED === "1",
+    aSelf: compInt(env.COMP_A_SELF_QTY, 1, 0, 5), aGift: compInt(env.COMP_A_GIFT_QTY, 1, 0, 5), aDays: compInt(env.COMP_A_VALID_DAYS, 60, 1, 365),
+    bQty: compInt(env.COMP_B_QTY, 1, 0, 5), bDays: compInt(env.COMP_B_VALID_DAYS, 30, 1, 365),
+    products: listed.length ? [...new Set(listed)] : [...COMP_DEFAULT_PRODUCTS],
+  };
 }

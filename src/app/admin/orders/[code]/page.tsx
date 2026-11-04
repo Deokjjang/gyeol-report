@@ -6,7 +6,7 @@ import { adminPinConfigured } from "../../../../lib/ops/admin/config";
 import { orderDetail, type OrderDetail } from "../../../../lib/ops/admin/data";
 import {
   bookStatusLabel, duration, genderLabel, jobLabel, jobStatusLabel, kst, laneLabel, maskEmail, maskKey, maskPhone, ORDER_CODE_RE, outcomeLabel, paymentStatusLabel,
-  phaseLabel, productLabel, refundStateLabel, relationshipLabel, relationshipTypeLabel, requestReasonLabel, usd, won,
+  phaseLabel, productLabel, refundSourceLabel, refundStateLabel, relationshipLabel, relationshipTypeLabel, requestReasonLabel, usd, won,
 } from "../../../../lib/ops/admin/format";
 import { manseSummary } from "../../../../lib/ops/admin/manse";
 import type { Json } from "../../../../lib/ops/admin/rpc";
@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: Promise<{ code: string 
       <Section title={`고객 요청 (${d.requests.length})`}>{d.requests.length === 0 ? <p className={styles.note}>없어요.</p> : (
         <ul className={styles.list}>{d.requests.map(q => (
           <li key={s(q.id)} className={styles.item}>
-            <div className={styles.itemHead}><Badge alert={q.reason === "refund"}>{requestReasonLabel(q.reason)}</Badge><Badge>{q.status === "open" ? "처리 전" : "처리 완료"}</Badge></div>
+            <div className={styles.itemHead}><Badge alert={q.reason === "refund"}>{requestReasonLabel(q.reason)}</Badge><Badge>{q.status === "open" ? "처리 전" : q.resolved_by === "auto" ? "자동 처리 완료" : "처리 완료"}</Badge></div>
             <div className={styles.meta}><span>{kst(q.created_at)}</span>{q.resolved_at ? <span>처리 {kst(q.resolved_at)}</span> : null}</div>
             {s(q.memo) ? <p className={styles.pre}>{s(q.memo)}</p> : null}
             {s(q.admin_note) ? <p className={styles.note}>메모: {s(q.admin_note)}</p> : null}
@@ -91,7 +91,7 @@ export default async function Page({ params }: { params: Promise<{ code: string 
         ))}</ul>
       )}</Section>
       <Section title="환불">{!d.refund ? <p className={styles.note}>환불 기록이 없어요.</p> : <Dl rows={[
-        ["상태", refundStateLabel(d.refund.state)], ["경로", d.refund.source === "auto" ? "자동(24시간 실패)" : "관리자"], ["사유", s(d.refund.reason)],
+        ["상태", refundStateLabel(d.refund.state)], ["경로", refundSourceLabel(d.refund.source)], ["사유", s(d.refund.reason)],
         ["금액", won(d.refund.amount)], ["시도", `${s(d.refund.attempts) || 0}회`], ["토스 상태", s(d.refund.provider_status)], ["최근 오류", s(d.refund.last_error)],
         ["요청", kst(d.refund.created_at)], ["첫 시도", kst(d.refund.first_attempt_at)], ["완료", kst(d.refund.completed_at)],
       ]} />}</Section>
@@ -131,6 +131,7 @@ function actionProps(d: OrderDetail): OrderActionsProps {
   const buyer = [s(o.buyerName), o.buyerEmail ? maskEmail(o.buyerEmail) : ""].filter(Boolean).join(" · ") || (o.userId ? `회원 ${o.userId.slice(0, 8)}…` : "정보 없음");
   return {
     orderCode: o.orderCode, amountLabel: won(o.amount), buyerLabel: buyer, pinReady: adminPinConfigured(), regenerate, grantAllowed: Boolean(o.userId), refundAllowed,
+    tossCheckAllowed: Boolean(s(o.paymentKey) && s(o.providerOrderId)), externalRefundAllowed: o.status === "paid" && !d.refund,
     refundHint: o.status !== "paid" ? `결제 완료 주문만 환불할 수 있어요(지금: ${paymentStatusLabel(o.status)}).` : refundState === "done" ? "환불이 끝났어요." : "환불 처리 중이에요.",
   };
 }

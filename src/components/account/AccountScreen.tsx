@@ -8,7 +8,7 @@ import s from "./account.module.css";
 import { Library } from "./Library";
 import { interaction } from "../../lib/analytics/client";
 import { KakaoChannelPrompt } from "./KakaoChannelPrompt";
-import { GiftPanel, ProfileForm, PurchaseHistory, WithdrawPanel } from "../ops/AccountOps";
+import { CompNotice, GiftPanel, ProfileForm, PurchaseHistory, WithdrawPanel } from "../ops/AccountOps";
 
 export function AccountScreen({ local = false, loginError = false, next, ticketShopEnabled = false }: { local?: boolean; loginError?: boolean; next?: string; ticketShopEnabled?: boolean }) {
   const { session, loaded, error, refresh, base, verifying } = useAccountSession(local);
@@ -51,8 +51,8 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </> : <>
         <p className={s.eyebrow}>ACCOUNT</p><h1>내 서재</h1><p>{session.displayName}님, 반갑습니다.</p>
+        {!local ? <CompNotice key={session.profile ?? "none"} className={s.note} fallback={session.upgradeState === "eligible" ? <p className={s.note} data-upgrade-eligible>기존 회원 업그레이드 이용권 지급 대상이에요. 지급 일정은 따로 안내해 드릴게요.</p> : null} /> : null}
         {!local && session.profile === "required" ? <ProfileForm onSaved={next => { if (next) { window.location.assign(next); return; } announceAccountChange(); void refresh(); }} /> : null}
-        {!local && session.upgradeState === "eligible" ? <p className={s.note} data-upgrade-eligible>기존 회원 업그레이드 이용권 지급 대상이에요. 지급 일정은 따로 안내해 드릴게요.</p> : null}
         {local || ticketShopEnabled ? <nav aria-label="내 계정"><Link href={local ? "/dev/account" : "/account"} aria-current="page">내 서재</Link> · <Link href={local ? "/dev/account/tickets" : "/account/tickets"}>내 이용권 →</Link></nav> : null}
         <Library local={local} />
         {!local ? <><PurchaseHistory /><GiftPanel /></> : null}

@@ -68,15 +68,21 @@ describe("BusinessFooter", () => {
     route.pathname = pathname;
     expect(renderToStaticMarkup(<BusinessFooter />)).toBe("");
   });
+  it.each(["/admin/orders", "/admin/orders/GR-ABCD", "/admin"])("관리자 화면 %s에는 고객용 푸터를 붙이지 않는다", pathname => {
+    route.pathname = pathname;
+    expect(renderToStaticMarkup(<BusinessFooter />)).toBe("");
+  });
   it.each(["/", "/products/major-fortune", "/checkout", "/payment/success", "/terms", "/privacy", "/reports"])("retains footer on general route %s", pathname => {
     route.pathname = pathname;
     expect(renderToStaticMarkup(<BusinessFooter />)).toContain("<footer");
   });
   it("uses secure plain external links and makes Kakao chat the primary contact", () => {
     const html = renderToStaticMarkup(<BusinessFooter />);
-    for (const href of ["https://www.instagram.com/gyeolreport/", "http://pf.kakao.com/_sbHaX/chat", "http://pf.kakao.com/_sbHaX"]) {
+    for (const href of ["https://www.instagram.com/gyeolreport/", "http://pf.kakao.com/_sbHaX/chat"]) {
       expect(html).toContain(`href="${href}" target="_blank" rel="noopener noreferrer"`);
     }
+    // P6e-ops 9: "채널 보기"(채널 홈 링크)는 삭제 — 문의는 채팅 링크만 남긴다.
+    expect(html).not.toContain("채널 보기"); expect(html).not.toContain('href="http://pf.kakao.com/_sbHaX"');
     expect(html.match(/href="http:\/\/pf.kakao.com\/_sbHaX\/chat"/g)).toHaveLength(2);
     expect(html).toContain("채팅하기"); expect(html).not.toContain("support@dvem.ai");
     expect(html).not.toContain("<script");

@@ -53,3 +53,5 @@
 @media (max-width:520px){.search{grid-template-columns:1fr}}
 /* 계정 화면과 같은 규칙: 이 화면에서는 사이트 하단 정보를 숨긴다. */
 :global(body):has(.root)>footer{display:none}
+
+.warn{border:1px solid #b3261e;background:#fff5f4;padding:10px 12px;display:grid;gap:6px;font-size:13px}.warn ul{margin:0;padding-left:18px}

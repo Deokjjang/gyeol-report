@@ -19,6 +19,10 @@ export function adminRpc(db: SupabaseClient | null, action: AdminRpcAction, data
   return call(db, "ops_admin", { p_action: action, p_data: data });
 }
 
+/** ops_recon(환불 경고·토스 상태 대조·외부 환불·요청 자동 처리)·ops_comp(보상 이용권). 접근 검사는 호출 쪽. */
+export function reconRpc(db: SupabaseClient | null, action: string, data: Json = {}): Promise<Json> { return call(db, "ops_recon", { p_action: action, p_data: data }); }
+export function compRpc(db: SupabaseClient | null, action: string, data: Json = {}): Promise<Json> { return call(db, "ops_comp", { p_action: action, p_data: data }); }
+
 /** 기존 이용권 지급 RPC(report_tickets 'grant'). 같은 key·sourceRef면 한 번만 지급된다. */
 export function grantTickets(db: SupabaseClient | null, userId: string, data: { quantity: number; sourceRef: string; key: string }): Promise<Json> {
   return call(db, "report_tickets", { p_action: "grant", p_user: userId, p_data: { quantity: data.quantity, sourceType: "manual", sourceRef: data.sourceRef, key: data.key, reason: "ADMIN_GRANT" } });

@@ -50,7 +50,21 @@ export const auditActionLabel = label({
   admin_retry: "결제 큐 재시도", admin_regenerate: "정식본 재생성", grant_ticket: "이용권 지급", refund_request: "환불 요청", refund_done: "환불 완료", refund_failed: "환불 실패",
   refund_blocked_cap: "환불 한도 차단", auto_refund_requested: "자동 환불 요청", request_done: "문의 처리", provider_enable: "OpenAI 다시 켬", admin_pin_failed: "PIN 오류",
   pii_view: "개인정보 보기", orders_export: "주문 내보내기",
+  toss_check: "토스 상태 확인", toss_check_batch: "토스 상태 일괄 확인", external_refund: "외부 환불 기록", external_refund_blocked: "외부 환불 기록 막힘",
+  comp_designate: "보상 A 지정", request_auto_done: "고객 요청 자동 처리",
 });
+export const refundSourceLabel = label({ admin: "관리자", auto: "자동(24시간 실패)", external: "외부(토스 상점관리자에서 직접)" });
+export const compStateLabel = label({ granted: "지급됨", ready: "지급 대기(가입 정보 완료)", waiting_profile: "가입 정보 입력 전" });
+
+/** 환불 확인 단계 경고 문구(P6e-ops 3). 서버 응답(warnings)을 그대로 받아 같은 문장을 화면·서버 메시지가 쓴다. */
+export function refundWarningLines(w: { giftUsed: readonly { status: string }[]; giftPendingRevoked?: number; bonusSent: boolean }): string[] {
+  const lines: string[] = [];
+  if (w.giftUsed.some(g => g.status === "used_self")) lines.push("이 주문으로 받은 이벤트 이용권을 본인이 이미 사용했어요.");
+  if (w.giftUsed.some(g => g.status === "claimed")) lines.push("이 주문으로 받은 이벤트 이용권을 친구가 이미 받았어요.");
+  if (w.bonusSent) lines.push("이 주문이 선물받은 친구의 첫 결제라 보낸 사람에게 보너스 이용권이 이미 나갔어요.");
+  if (lines.length) lines.push("정책상 이미 쓴 이용권·나간 보너스는 회수하지 않아요(안 쓴 이벤트 이용권만 환불 때 회수돼요).");
+  return lines;
+}
 
 /** 이메일 가리기: "hong@example.com" → "ho***@ex***.com". */
 export function maskEmail(value: unknown): string {

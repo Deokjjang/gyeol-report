@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { MARKETING_CONSENT_LABEL, validateContact } from "../../lib/account/contact";
 import { productLabel, seoulDateTime, type OrderSummary, type PendingBook } from "../../lib/ops/orders/summary";
 import { OrderRequestForm, OrderSummaryCard } from "./OrderParts";
@@ -73,7 +73,26 @@ export function PurchaseHistory({ base = "/auth" }: { base?: string }) {
   </>;
 }
 
-type Gift = { id: string; status: string; expiresAt: string; orderCode: string; bonus: boolean };
+/**
+ * 보상 이용권 안내 한 줄(P6e-ops 5): 서재 맨 위. A(결제 후 환불한 고객)는 사과·감사, B(기존 무료 이벤트 가입자)는 업그레이드 안내.
+ * 문구는 서버가 src/lib/ops/compMessages.ts에서 만들어 준다. 켜져 있지 않거나 대상이 아니면 fallback(예: 기존 "업그레이드 대상" 한 줄)만 보인다.
+ * 서재를 열 때마다 서버가 멱등으로 지급을 시도하므로(가입 정보를 마친 계정만), 가입 정보 저장 뒤 key를 바꿔 다시 마운트하면 바로 반영된다.
+ */
+export function CompNotice({ base = "/auth", className, fallback = null }: { base?: string; className?: string; fallback?: ReactNode }) {
+  const [state, setState] = useState<{ show: true; tier: string; notice: string } | { show: false } | null>(null);
+  useEffect(() => {
+    let alive = true;
+    void fetch(`${base}/comp`, { cache: "no-store" }).then(async r => {
+      const b = await r.json().catch(() => null) as { show?: boolean; tier?: string; notice?: string } | null;
+      if (alive) setState(r.ok && b?.show === true && typeof b.notice === "string" ? { show: true, tier: String(b.tier), notice: b.notice } : { show: false });
+    }).catch(() => { if (alive) setState({ show: false }); });
+    return () => { alive = false; };
+  }, [base]);
+  if (!state) return null;
+  return state.show ? <p className={className} data-comp-notice={state.tier}>{state.notice}</p> : <>{fallback}</>;
+}
+
+type Gift = { id: string; status: string; expiresAt: string; orderCode: string | null; kind?: "event" | "comp"; giftOnly?: boolean; bonus: boolean };
 /** 이벤트 이용권(P6d-ops 6): 결제 1건마다 1장. 내가 쓰거나 선물 링크로 보낸다. 이벤트가 꺼져 있고 받은 것도 없으면 안 보인다. */
 export function GiftPanel({ base = "/auth" }: { base?: string }) {
   const [state, setState] = useState<{ gifts: Gift[]; active: boolean } | null>(null), [message, setMessage] = useState(""), [link, setLink] = useState("");
@@ -90,10 +109,11 @@ export function GiftPanel({ base = "/auth" }: { base?: string }) {
   }
   if (!state || (!state.active && !state.gifts.length)) return null;
   const label: Record<string, string> = { available: "사용 가능", used_self: "내가 사용", gifted: "선물 링크 보냄", claimed: "친구가 받음", expired: "기간 종료", revoked: "환불로 회수" };
-  return <section className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">이벤트 이용권</h2>
-    <p>결제 1건마다 이용권 1장(계정당 2회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>
-    {state.gifts.length ? <ul className={s.list}>{state.gifts.map(g => <li key={g.id} className={s.order}><span className={s.badge}>{label[g.status] ?? g.status}</span> 주문 {g.orderCode} · {seoulDateTime(g.expiresAt)}까지{g.bonus ? " · 보너스 1장 받음" : ""}
-      {g.status === "available" || g.status === "gifted" ? <div className={s.actions}>{g.status === "available" ? <button type="button" className={s.button} onClick={() => void act("use_self", g.id)}>내가 쓰기</button> : null}<button type="button" className={s.button} onClick={() => void act("link", g.id)}>{g.status === "gifted" ? "새 선물 링크" : "선물 링크 만들기"}</button></div> : null}</li>)}</ul> : <p className={s.hint}>이벤트 기간에 결제하면 여기에 이용권이 생겨요.</p>}
+  const onlyComp = !state.active && state.gifts.every(g => g.kind === "comp");
+  return <section className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">{onlyComp ? "선물 이용권" : "이벤트 이용권"}</h2>
+    {onlyComp ? <p>친구에게 선물할 수 있는 이용권이에요. 링크를 만들어 친구에게 보내 주세요.</p> : <p>결제 1건마다 이용권 1장(계정당 2회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>}
+    {state.gifts.length ? <ul className={s.list}>{state.gifts.map(g => <li key={g.id} className={s.order}><span className={s.badge}>{label[g.status] ?? g.status}</span> {g.kind === "comp" ? "보상 이용권" : `주문 ${g.orderCode}`} · {seoulDateTime(g.expiresAt)}까지{g.bonus ? " · 보너스 1장 받음" : ""}
+      {g.status === "available" || g.status === "gifted" ? <div className={s.actions}>{g.status === "available" && !g.giftOnly ? <button type="button" className={s.button} onClick={() => void act("use_self", g.id)}>내가 쓰기</button> : null}<button type="button" className={s.button} onClick={() => void act("link", g.id)}>{g.status === "gifted" ? "새 선물 링크" : "선물 링크 만들기"}</button></div> : null}</li>)}</ul> : <p className={s.hint}>이벤트 기간에 결제하면 여기에 이용권이 생겨요.</p>}
     {link ? <p className={s.locked}>{link}</p> : null}
     {message ? <p className={s.message} role="status">{message}</p> : null}
   </section>;

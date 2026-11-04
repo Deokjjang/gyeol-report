@@ -16,7 +16,7 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     try { return await handleTicketPublication(request, action.slice(7), original, createTicketPublicationStore()); }
     catch { return original.finish(NextResponse.json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, { status: 503, headers: { "Cache-Control": "private, no-store" } })); }
   }
-  if (action === "profile" || action === "withdraw" || action === "gift" || action === "orders") return opsAccountAction(request, action, original);
+  if (action === "profile" || action === "withdraw" || action === "gift" || action === "orders" || action === "comp") return opsAccountAction(request, action, original);
   const { createReferralStore } = await import("../../../lib/referrals/supabase");
   const { withReferralTickets } = await import("../../../lib/referrals/service");
   const { withAcquisitionAccount, withCampaignTickets } = await import("../../../lib/growth/service");
@@ -36,12 +36,16 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   return handleAccount(request, action, port);
 }
 /** P6d-ops: 가입 정보·탈퇴·선물(회원 본인 요청). */
-async function opsAccountAction(request: NextRequest, action: "profile" | "withdraw" | "gift" | "orders", port: NonNullable<ReturnType<typeof import("../../../lib/account/supabase").createAccountPort>>) {
+async function opsAccountAction(request: NextRequest, action: "profile" | "withdraw" | "gift" | "orders" | "comp", port: NonNullable<ReturnType<typeof import("../../../lib/account/supabase").createAccountPort>>) {
   const { createOpsStores } = await import("../../../lib/ops/store");
   const ops = createOpsStores();
   if (action === "orders") {
     const { handleOrders } = await import("../../../lib/ops/orders/handler");
     return handleOrders(request, port, ops);
+  }
+  if (action === "comp") {
+    const { handleComp } = await import("../../../lib/ops/comp/handler");
+    return handleComp(request, port, ops);
   }
   if (action === "gift") {
     const { handleGift } = await import("../../../lib/ops/gift/handler");

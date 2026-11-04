@@ -33,7 +33,9 @@ export default function MetaPixel() {
       const firstVisit = result.choice === null && result.ready === true && !cardSeen();
       if (firstVisit) markCardSeen();
       setCard(firstVisit);
-      document.documentElement.dataset.metaSettings = "available"; window.dispatchEvent(new Event(META_AVAILABLE_EVENT));
+      // 푸터 "광고 설정"은 Meta 픽셀이 실제로 켜져 있을 때(서버 ready)만 보인다. 꺼져 있으면 숨긴다(P6e-ops 9).
+      if (result.ready === true) document.documentElement.dataset.metaSettings = "available"; else delete document.documentElement.dataset.metaSettings;
+      window.dispatchEvent(new Event(META_AVAILABLE_EVENT));
     }).catch(() => {});
     return () => { current = false; };
   }, []);

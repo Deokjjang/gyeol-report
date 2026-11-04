@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
 import { BookPublishingVisual } from "./BookPublishingVisual";
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 import styles from "./reportStatus.module.css";
 
 type ReportStatusViewProps = {
-  readonly state: "preparing" | "delayed" | "attention" | "expired" | "payment-check" | "reading" | "unavailable";
+  readonly state: "preparing" | "delayed" | "attention" | "expired" | "payment-check" | "reading" | "unavailable" | "refunded";
   readonly title?: string;
   readonly message?: string;
   readonly support?: boolean;
@@ -33,6 +34,7 @@ function WritingPage() {
 
 const copy = {
   unavailable: { title: "책을 확인하지 못했습니다.", message: "잠시 후 다시 열어 주세요." },
+  refunded: { title: "환불된 주문의 책이라 열 수 없어요", message: "환불이 끝난 주문이라 이 책은 더 이상 열 수 없어요. 결제나 환불 내용이 궁금하면 문의해 주세요." },
   reading: { title: "책장을 펼치고 있습니다.", message: "잠시만 기다려 주세요." },
   preparing: {
     title: "책을 제본하고 있습니다",
@@ -87,6 +89,7 @@ export function ReportStatusView({ state, title, message, support = false, stage
                 </nav>
               </div>
             ) : null}
+            {state === "refunded" ? <nav className={styles.links} aria-label="안내"><Link href="/account">내 서재 <span aria-hidden="true">↗</span></Link><a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer">문의하기 <span aria-hidden="true">↗</span></a></nav> : null}
             {state === "expired" ? <nav className={styles.links} aria-label="리포트 탐색"><Link href="/">홈으로 돌아가기 <span aria-hidden="true">↗</span></Link></nav> : null}
           </div>
         </section>

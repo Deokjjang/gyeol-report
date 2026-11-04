@@ -16,11 +16,12 @@ import { ticketPublicationSql, TICKET_A as A } from "./ticketPublicationSql";
 export const V5_MIGRATION = "supabase/migrations/20261029130000_v5_writer_jobs.sql";
 /** P6d-ops: 생성 감독(보류·포기·기록)과 이용권 큐 보류(not_before). */
 export const OPS_MIGRATION = "supabase/migrations/20261104100000_v5_p6d_ops.sql";
+export const OPS_MIGRATION_P6E = "supabase/migrations/20261104180000_v5_p6e_ops.sql";
 export const RAW_FULL = { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: { name: "하람", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" }, userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "서비스 기획자", focusAreas: [] }, productOptions: {} };
 
 export async function v5Queue() {
   const h = await ticketPublicationSql();
-  await h.db.exec(`reset role; ${readFileSync(V5_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION, "utf8")} set role service_role;`);
+  await h.db.exec(`reset role; ${readFileSync(V5_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION_P6E, "utf8")} set role service_role;`);
   await h.db.query("select report_tickets('grant',$1,$2::jsonb)", [A, JSON.stringify({ quantity: 50, sourceType: "manual", sourceRef: "p3-v5", key: `p3:${randomUUID()}`, reason: "P3_TEST" })]);
   return h;
 }

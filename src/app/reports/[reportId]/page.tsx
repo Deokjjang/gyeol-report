@@ -116,6 +116,10 @@ type PageState =
       readonly kind: "expired";
     }
   | {
+      /** 환불된 주문의 책(P6e-ops): 다시 확인하지 않고 안내만 한다. */
+      readonly kind: "refunded";
+    }
+  | {
       readonly kind: "unsupportedProductPreview";
     }
   | {
@@ -136,6 +140,15 @@ function createResultClient() {
   });
 }
 
+/** 이 Book의 주문이 환불됐는지(내용은 읽지 않는다). 확인 실패는 false — 기존 안내(재확인)로 간다. */
+async function refundedBook(reportId: string): Promise<boolean> {
+  try {
+    const { createOpsStores } = await import("../../../lib/ops/store");
+    const r = await createOpsStores().recon.call("report_refunded", { reportId });
+    return r.ok === true && r.refunded === true;
+  } catch { return false; }
+}
+
 async function loadPageState(reportId: string): Promise<PageState> {
   const localPreview = process.env.NODE_ENV !== "production" && process.env.REPORT_PERSISTENCE_MODE === "preview_memory";
   if (process.env.NODE_ENV !== "test" && !localPreview) {
@@ -146,6 +159,8 @@ async function loadPageState(reportId: string): Promise<PageState> {
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
       return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING" };
     }
+    // 환불된 주문의 책이면 재확인 없이 안내한다. 기존 읽기 함수는 환불을 '없음'으로 돌려줘서 여기서 따로 확인한다.
+    if (await refundedBook(reportId)) return { kind: "refunded" };
     // 저장소 일시 장애는 자동으로 다시 확인한다(정적 화면에 멈추지 않게).
     if (process.env.NODE_ENV === "production") return { kind: "unavailable", retry: true };
   }
@@ -1577,6 +1592,10 @@ export default async function ReportResultPage({
     return renderExpiredState();
   }
 
+  if (state.kind === "refunded") {
+    return <ReportStatusView state="refunded" />;
+  }
+
   if (state.kind === "invalidSnapshot") {
     return renderInvalidSnapshotState();
   }
@@ -1590,7 +1609,7 @@ export default async function ReportResultPage({
   const isPaid = state.productPreview.access.mode === "paid";
   if (isPaid && isBookSnapshotVersion(state.productPreview.productVersion) && accountPublicEnabled()) {
     const { canReadPurchasedBook } = await import("../../../lib/book/ownerAccess");
-    if (!await canReadPurchasedBook(reportId)) return renderUnavailableState();
+    if (!await canReadPurchasedBook(reportId)) return await refundedBook(reportId) ? <ReportStatusView state="refunded" /> : renderUnavailableState();
   }
 
   const url = isPaid

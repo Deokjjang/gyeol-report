@@ -3,7 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { withDeadline } from "../../network/withDeadline";
 import { ALL_PRODUCTS } from "../config";
 import { OPS_RPC_TIMEOUT_MS, type OpsStores } from "../store";
-import { adminRpc, type Json } from "./rpc";
+import { adminRpc, compRpc, type Json } from "./rpc";
 
 /** 관리자 화면 읽기(ops_admin 결과 모양 = supabase/migrations/20261104100000_v5_p6d_ops.sql). */
 export type OrderRow = {
@@ -12,7 +12,7 @@ export type OrderRow = {
   bookStatus: string | null; edition: string | null; failures: number | null; lastReason: string | null; jobStatus: string | null; refundState: string | null; openRequests: number;
 };
 export type TicketDelay = { redemptionId: string; reportId: string | null; productType: string; state: string; createdAt: string; notBefore: string | null; failures: number | null; lastReason: string | null };
-export type RequestRow = { id: string; orderCode: string; reason: string; memo: string; status: string; createdAt: string; productType: string; paymentStatus: string; buyerName: string | null };
+export type RequestRow = { id: string; orderCode: string; reason: string; memo: string; status: string; createdAt: string; productType: string; paymentStatus: string; buyerName: string | null; adminNote?: string | null; resolvedAt?: string | null; resolvedBy?: "admin" | "auto" | null };
 export type MemberRow = { userId: string; joinedAt: string; lastLoginAt: string | null; emailSecured: boolean; orders: number; upgradeState: string | null };
 export type MemberSummary = { total: number; emailSecured: number; emailMissing: number; withOrders: number; profileDone: number; eligible: number; members: MemberRow[] };
 export type ProviderState = Record<string, { disabledAt: string | null; reason: string | null }>;
@@ -84,6 +84,21 @@ export async function legacyMembers(db: SupabaseClient | null, limit = 30): Prom
   return { ok: true, value: { total: n(r.total), emailSecured: n(r.emailSecured), emailMissing: n(r.emailMissing), withOrders: n(r.withOrders), profileDone: n(r.profileDone), eligible: n(r.eligible), members } };
 }
 
+export type CompTierKey = "A" | "B";
+export type CompCount = { total: number; granted: number; ready: number; waitingProfile: number; used: number };
+export type CompMember = { userId: string; tier: CompTierKey; orderCode: string | null; email: string | null; lastLoginAt: string | null; state: "granted" | "ready" | "waiting_profile";
+  grantedAt: string | null; expiresAt: string | null; quantity: number; usedTickets: number; ticketLots: number; usedGifts: number; giftLots: number };
+export type CompSummary = { counts: Record<CompTierKey, CompCount>; members: CompMember[] };
+/** 기존 가입자 탭의 보상 이용권 현황(등급별 인원·지급·사용). ops_comp 'admin'. */
+export async function compSummary(db: SupabaseClient | null, limit = 100): Promise<Loaded<CompSummary>> {
+  const r = await compRpc(db, "admin", { limit });
+  const c = obj(r.counts);
+  if (r.ok !== true || !c) return fail(r);
+  const n = (v: unknown) => typeof v === "number" ? v : Number(v) || 0;
+  const one = (v: unknown): CompCount => { const o = obj(v) ?? {}; return { total: n(o.total), granted: n(o.granted), ready: n(o.ready), waitingProfile: n(o.waitingProfile), used: n(o.used) }; };
+  return { ok: true, value: { counts: { A: one(c.A), B: one(c.B) }, members: list(r.members) as CompMember[] } };
+}
+
 /** 표 직접 읽기(service_role, 10초 상한). 실패하면 null — 호출 쪽이 막을지(안전 검사) 비울지(표시) 정한다. */
 async function rows<T>(query: (signal: AbortSignal) => PromiseLike<{ data: unknown; error: unknown }>): Promise<T[] | null> {
   try {
@@ -93,7 +108,7 @@ async function rows<T>(query: (signal: AbortSignal) => PromiseLike<{ data: unkno
 }
 
 export type ActivityRow = { id: number; actor: string; actor_user_id: string | null; action: string; target: string; created_at: string };
-export const ACTIVITY_SYSTEM_ACTIONS = ["refund_done", "refund_failed", "refund_blocked_cap", "auto_refund_requested"] as const;
+export const ACTIVITY_SYSTEM_ACTIONS = ["refund_done", "refund_failed", "refund_blocked_cap", "auto_refund_requested", "request_auto_done"] as const;
 /** "최근 관리자 동작" 패널(메일 알림 대신): 관리자 동작 + 환불 결과(시스템) 최근 20건, 최신순. */
 export async function recentActivity(db: SupabaseClient | null, limit = 20): Promise<ActivityRow[] | null> {
   if (!db) return null;

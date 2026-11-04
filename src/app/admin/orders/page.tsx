@@ -2,11 +2,11 @@ import Link from "next/link";
 import styles from "../admin.module.css";
 import { adminPageGate } from "../../../lib/ops/admin/access";
 import { adminPinConfigured } from "../../../lib/ops/admin/config";
-import { delayedOrders, legacyMembers, parseSearch, providerState, requestInbox, searchOrders, type SearchFilters } from "../../../lib/ops/admin/data";
-import { kst, paymentStatusLabel, productLabel, requestReasonLabel } from "../../../lib/ops/admin/format";
+import { compSummary, delayedOrders, legacyMembers, parseSearch, providerState, requestInbox, searchOrders, type SearchFilters } from "../../../lib/ops/admin/data";
+import { compStateLabel, kst, maskEmail, paymentStatusLabel, productLabel, requestReasonLabel } from "../../../lib/ops/admin/format";
 import { ALL_PRODUCTS } from "../../../lib/ops/config";
 import { createOpsStores } from "../../../lib/ops/store";
-import { ExportCsv, ProviderEnableButton, RequestDoneForm } from "./AdminClient";
+import { CompDesignate, ExportCsv, ProviderEnableButton, RequestDoneForm, TossBatchCheck } from "./AdminClient";
 import { AdminShell, Badge, Dl, ExpiredView, LoadError, OrderItem } from "./ui";
 
 export const dynamic = "force-dynamic";
@@ -53,6 +53,7 @@ async function SearchTab({ filters }: { filters: SearchFilters }) {
         <label>끝일(포함)<input className={styles.input} type="date" name="to" defaultValue={filters.to} /></label>
         <div className={styles.wide}><button className={styles.primary} type="submit">검색</button></div>
       </form>
+      <TossBatchCheck />
       {!r.ok ? <LoadError code={r.code} /> : r.value.length === 0 ? <p className={styles.note}>맞는 주문이 없어요.</p> : (
         <>
           <ExportCsv filters={filters} pinReady={adminPinConfigured()} />
@@ -120,6 +121,7 @@ async function RequestsTab({ status }: { status: "open" | "done" }) {
             </div>
             <div className={styles.meta}><span>{kst(q.createdAt)}</span><span>{productLabel(q.productType)}</span><span>{paymentStatusLabel(q.paymentStatus)}</span><span>{q.buyerName ?? "이름 없음"}</span></div>
             {q.memo ? <p className={styles.pre}>{q.memo}</p> : null}
+            {q.status === "done" && q.adminNote ? <p className={styles.note}>{q.resolvedBy === "auto" ? <Badge>자동 처리</Badge> : null} {q.adminNote}</p> : null}
             {q.status === "open" ? <RequestDoneForm id={q.id} orderCode={q.orderCode} /> : null}
           </li>
         ))}</ul>
@@ -128,13 +130,38 @@ async function RequestsTab({ status }: { status: "open" | "done" }) {
   );
 }
 
+const TIER_NAME = { A: "A · 결제 후 환불한 고객", B: "B · 기존 무료 이벤트 가입자" } as const;
 async function MembersTab() {
-  const r = await legacyMembers(createOpsStores().db, 30);
+  const db = createOpsStores().db;
+  const [r, comp] = await Promise.all([legacyMembers(db, 30), compSummary(db, 60)]);
   if (!r.ok) return <LoadError code={r.code} />;
   const v = r.value;
   const counts = [["명단 전체", v.total], ["이메일 확보", v.emailSecured], ["이메일 없음", v.emailMissing], ["주문 있음", v.withOrders], ["정보 입력 완료", v.profileDone], ["업그레이드 대상", v.eligible]] as const;
   return (
     <>
+      <section className={styles.section} data-comp-summary>
+        <h2>보상 이용권</h2>
+        <CompDesignate pinReady={adminPinConfigured()} />
+        {!comp.ok ? <LoadError code={comp.code} /> : (
+          <>
+            {(["A", "B"] as const).map(t => { const c = comp.value.counts[t]; return (
+              <div key={t} data-comp-tier={t}>
+                <p className={styles.note} style={{ margin: "10px 0 4px" }}><b>{TIER_NAME[t]}</b></p>
+                <div className={styles.counts}>{([["인원", c.total], ["지급됨", c.granted], ["지급 대기", c.ready], ["정보 입력 전", c.waitingProfile], ["사용", c.used]] as const).map(([k, n]) => <div key={k} className={styles.count}><strong>{n.toLocaleString("ko-KR")}</strong><span>{k}</span></div>)}</div>
+              </div>); })}
+            {comp.value.members.length === 0 ? <p className={styles.note}>보상 대상이 없어요.</p> : (
+              <ul className={styles.list}>{comp.value.members.map(m => (
+                <li key={`${m.tier}-${m.userId}`} className={styles.item}>
+                  <div className={styles.itemHead}><Badge alert={m.tier === "A"}>등급 {m.tier}</Badge><span className={styles.mono}>{m.userId.slice(0, 8)}…</span><span>{maskEmail(m.email)}</span>
+                    <Badge>{compStateLabel(m.state)}</Badge>
+                    {m.state === "granted" ? <Badge>{m.usedTickets + m.usedGifts > 0 ? `사용 ${m.usedTickets + m.usedGifts}/${m.ticketLots ? m.quantity : m.giftLots}` : "미사용"}</Badge> : null}
+                  </div>
+                  <div className={styles.meta}>{m.orderCode ? <span>환불 주문 {m.orderCode}</span> : null}{m.grantedAt ? <span>지급 {kst(m.grantedAt)} · {m.expiresAt ? `${kst(m.expiresAt)}까지` : ""} · {m.quantity}장</span> : null}<span>최근 로그인 {kst(m.lastLoginAt)}</span></div>
+                </li>))}</ul>
+            )}
+          </>
+        )}
+      </section>
       <p className={styles.note}>2026-11-01 00:00(한국) 전 가입자 명단 기준. 이메일 확보 = 가입 정보 이메일 또는 공급자 확정 이메일.</p>
       <div className={styles.counts}>{counts.map(([k, n]) => <div key={k} className={styles.count}><strong>{n.toLocaleString("ko-KR")}</strong><span>{k}</span></div>)}</div>
       <h2 style={{ fontSize: 15 }}>최근 로그인 순 {v.members.length}명</h2>
