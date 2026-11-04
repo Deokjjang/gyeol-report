@@ -33,7 +33,7 @@ import { analyzeChartDetections } from "@/lib/saju/detections";
 import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta } from "./book";
 import { buildWriterPrompt, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
 import { materialTable } from "./prompt/materials";
-import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterCache, type WriterOptions, type WriterRun } from "./runner";
+import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { dropHardSections, hardSections, repairPass, rewritePass, REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import * as E from "./safety/p6e";
 import { annotateChapter, termDictionary } from "./render";
@@ -307,7 +307,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   if (a.recover || !run) { try { for (const s of await a.sink.load()) if (!drafts.has(s.n)) drafts.set(s.n, { chapter: s.chapter, source: s.source }); } catch { /* 저장소가 안 되면 결정론 작가로만 */ } }
   const net = (d: ReadonlyMap<number, DraftChapter>) => applySafetyNet(brief, plan, d, { priorSentences: a.prior?.sentences ?? [] });
   // 최종판 0-1: 짧은 장도 작가 원고 그대로(장 재요청 없음). 결정론 장은 작가가 못 쓴(빠진) 장뿐 — 감독이 다음 시도에서 그 장만 이어 쓴다.
-  let { chapters: finals, report } = net(drafts);
+  const first = net(drafts), finals = first.chapters;
+  let report = first.report;
   const live = Boolean(run?.writer && !run.stale);
   // (최종판 1-7) 핵심 이미지: 작가가 [표지]에서 한 번 지은 줄. 피할 이미지(같은 일주의 다른 책 명사)와 겹치거나 규칙에 걸리면 표지 줄만 수리(호출 1회 이하).
   const avoid = brief.chart.avoidImages ?? [];
