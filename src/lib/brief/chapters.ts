@@ -145,6 +145,8 @@ export function directionClash(text: string, dims: Readonly<Record<string, numbe
 const dominantOf = (ctx: PlanCtx) => { let d = dominantCache.get(ctx); if (!d) { d = dominantDims(ctx); dominantCache.set(ctx, d); } return d; };
 /** 연애 자녀 장(P6c E3): 결혼·양가 어른 이야기는 쓰지 않는다. */
 const MARRIAGE_TALK = /결혼|시댁|처가|양가|시부모|시어머니|시아버지|장인|장모|상견례|신혼|혼수|예식|배우자|부부/;
+/** 최종판 4: 「{topic} 때」에 「다툰 뒤」가 들어가 「다툰 뒤 때」가 됐다 — 뒤·후·전으로 끝나는 주제는 「~에」로 잇는다. */
+export const fillTopic = (q: string, topic: string) => (/(뒤|후|전)$/.test(topic) ? q.replace("{topic} 때", `${topic}에`) : q).replace("{topic}", topic);
 const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts, s.text) && !directionClash(s.text, dominantOf(ctx)) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s))
   && !(chapterId === "parenting" && MARRIAGE_TALK.test(s.text));
 
@@ -261,14 +263,19 @@ export function planChapters(input: PlanCtx): PlanResult {
     const score = (x: (typeof cands)[number]) => dims.reduce((a, d) => a + Math.abs(x.s.dims[d] ?? 0), 0) * 2 - (topicUse.get(x.t.key) ?? 0) * 3 + jitter.get(x.s.text)!;
     const best = [...cands].sort((a, b) => score(b) - score(a))[0];
     usedRel.add(best.s.text); topicUse.set(best.t.key, (topicUse.get(best.t.key) ?? 0) + 1); ledger.useAxes(relAxis(best.s.dims), p.id);
-    // 최종판 1-5: 장면 차원마다 "그 끝 = 그 사람"(값 차이 0.2 이상만). P6e 궁합 8장 '쉬는 날 메일'에서 두 사람 역할이 뒤바뀌었다.
+    // 최종판 1-5: 장면 차원마다 그 끝에 선 사람. P6e 궁합 8장 '쉬는 날 메일'에서 두 사람 역할이 뒤바뀌었다.
     // 장면의 가장 센 차원 하나로만 정한다(두 차원이 같은 사람을 가리키면 장면의 두 쪽을 나눌 수 없다).
+    // 끝은 값의 부호로 정한다(|값| 0.5 미만 = 어느 쪽도 아님). 최종판 4: 둘 다 계획형(6.33·5.65)인데 낮은 쪽을 "세부는 닥쳐서 정하는 편"으로 적었다.
+    //   반대쪽이면 양 끝에 한 사람씩, 같은 쪽이면 "두 사람 모두"(차이가 1 이상이면 누가 더), 한 사람만 뚜렷하면 그 사람만.
     const topDim = Object.entries(best.s.dims).sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]))[0]?.[0];
     const who = rs.sides && rs.poles && topDim ? [topDim].flatMap(d => {
       const [a, b] = rs.sides!, va = a.vec.get(d) ?? 0, vb = b.vec.get(d) ?? 0, pole = rs.poles![d];
-      if (!pole || Math.abs(va - vb) < 0.2) return [];
-      const [hi, lo] = va > vb ? [a, b] : [b, a];
-      return [`${pole.plus} 쪽 = ${hi.name}, ${pole.minus} 쪽 = ${lo.name}`];
+      if (!pole) return [];
+      const sgn = (v: number) => Math.abs(v) < 0.5 ? 0 : Math.sign(v), sa = sgn(va), sb = sgn(vb), end = (s: number) => s > 0 ? pole.plus : pole.minus;
+      if (sa && sb && sa !== sb) { const [p, m] = sa > 0 ? [a, b] : [b, a]; return [`${pole.plus} 쪽 = ${p.name}, ${pole.minus} 쪽 = ${m.name}`]; }
+      if (sa && sa === sb) return [`${end(sa)} 쪽 = ${a.name}·${b.name}${Math.abs(va - vb) >= 1 ? `(${Math.abs(va) > Math.abs(vb) ? a.name : b.name}이 더)` : ""}`];
+      if (sa || sb) return [`${end(sa || sb)} 쪽 = ${(sa ? a : b).name}`];
+      return [];
     }) : [];
     return { m: { kind: "rel", topic: best.t.label, scene: best.s.text, ...(who.length ? { who } : {}) }, dims: Object.keys(best.s.dims) };
   };
@@ -363,7 +370,7 @@ export function planChapters(input: PlanCtx): PlanResult {
       else if (use.startsWith("ev:")) { const e = ctx.evidence[use.slice(3)]; if (e && takeAux(use)) sec.materials.push(spec.note && e.kind === "evidence" ? { ...e, note: [e.note, spec.note].filter(Boolean).join(" / ") } : e); }
       else if (use.startsWith("recap:")) sec.materials.push({ kind: "ref", ref: `chapters.${use.slice(6)}`, note: spec.note ?? "앞 장을 종합한다: 새 특성·새 그림 없이 그 장의 근거로 이번 행동 하나" });
       else if (use === "mbti") { const m = mbtiScene(p, [spec.domain], "mbti", sec); if (m) sec.materials.push(m); }
-      else if (use === "rel") { const r = pickRel(p, spec); if (r) { sec.materials.push(r.m); sl.relDims.push(...r.dims); sec.q = sec.q.replace("{topic}", r.m.topic); } }
+      else if (use === "rel") { const r = pickRel(p, spec); if (r) { sec.materials.push(r.m); sl.relDims.push(...r.dims); sec.q = fillTopic(sec.q, r.m.topic); } }
     }
     // 1순위 재료가 참조·근거뿐인데 비었으면(덜 쓴 기운 없음·MBTI 없음 등) 이 절은 뺀다: 질문만 남으면 작가가 뜻을 지어낸다(P3.8 r1).
     if (spec.use.every(u => /^(ref|ev):/.test(u)) && !sec.materials.length) { sl.skip = true; continue; }
@@ -407,7 +414,7 @@ export function planChapters(input: PlanCtx): PlanResult {
     if (src) { sec.materials.push(place(p, spec, src, !ctx.relScenes)); continue; }
     if (p.index < plans.length - 1 && takeShadow(p, spec, sec)) continue;
     const m = ctx.relScenes ? pickRel(p, spec)?.m : mbtiScene(p, [spec.domain, ...ALL.filter(d => d !== spec.domain)], "fill");
-    if (m) { sec.materials.push(m); if (m.kind === "rel") sec.q = sec.q.replace("{topic}", m.topic); continue; }
+    if (m) { sec.materials.push(m); if (m.kind === "rel") sec.q = fillTopic(sec.q, m.topic); continue; }
     const ref = ["chart.elements", "chart.yinYang", "chart.climate", "fortunes", "unused", "chart.thisYear"].find(r => !reserved.has(`ref:${r}`) && ctx.has(r) && takeAux(`ref:${r}`));
     if (ref) { sec.materials.push({ kind: "ref", ref, note: "앞 장과 다른 각도로만 짧게" }); continue; }
     // 마지막 두 장은 같은 영역의 앞 장을 종합하고(새 재료 없이), 그 밖에는 MBTI 기능 설명을 한 번만.

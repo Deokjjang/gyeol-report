@@ -142,9 +142,12 @@ function sceneOwnersOf(brief: Brief, k: Knowledge): E.SceneOwner[] {
   const poles = new Map(k.ontology.dimensions.flatMap(d => [[short(d.poles.plus.description), `${d.id}+`], [short(d.poles.minus.description), `${d.id}-`]] as const));
   const out: E.SceneOwner[] = [];
   for (const c of brief.chapters) for (const m of [...c.materials, ...(c.sections ?? []).flatMap(x => x.materials)]) if (m.kind === "rel") for (const line of m.who ?? []) {
-    const x = line.match(/^(.+) 쪽 = (.+), (.+) 쪽 = (.+)$/); if (!x) continue;
-    const p1 = poles.get(x[1]), p2 = poles.get(x[3]);
-    if (p1) out.push({ name: x[2], pole: p1 }); if (p2) out.push({ name: x[4], pole: p2 });
+    // 「끝 = 사람, 끝 = 사람」(반대쪽) · 「끝 = 사람·사람(누가 더)」(같은 쪽) · 「끝 = 사람」(한 사람만), 최종판 4.
+    const x = line.match(/^(.+) 쪽 = (.+), (.+) 쪽 = (.+)$/) ?? line.match(/^(.+) 쪽 = (.+)$/); if (!x) continue;
+    for (const [poleText, names] of x.length > 3 && x[3] ? [[x[1], x[2]], [x[3], x[4]]] : [[x[1], x[2]]]) {
+      const pole = poles.get(poleText!); if (!pole) continue;
+      for (const name of names!.replace(/\(.*\)$/, "").split("·")) if (name.trim()) out.push({ name: name.trim(), pole });
+    }
   }
   return out;
 }

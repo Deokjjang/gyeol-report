@@ -152,6 +152,23 @@ describe("1-5 사실 대조(새 검사)", () => {
     const o = owners.find(x => x.pole === "boundarySetting+");
     if (o) { const other = o.name.includes("백은솔") ? "남궁현" : "백은솔"; expect(rulesOf(B.pair, `${other}님은 퇴근 뒤 무리한 부탁을 분명히 거절하는 편이에요.`)).toContain("scene_owner"); }
   });
+  it("궁합 장면 주인은 값의 부호로: 같은 쪽이면 두 사람 모두(낮은 사람을 반대 끝으로 적지 않는다), 0에 가까운 사람은 붙이지 않는다", async () => {
+    const { FINAL_CASES } = await import("../../../tools/final/cases");
+    const c = FINAL_CASES.find(x => x.id === "deokmin-jiwoo")!, n = normalizeReportInputPayload(c.payload as never, { now: () => new Date("2026-11-04T05:00:00Z") });
+    if (!n.ok) throw new Error(n.error);
+    const b = buildBrief(payloadToBriefInput(n.value as never, "2026-11-04") as never, k);
+    const who = b.chapters.flatMap(ch => (ch.sections ?? []).flatMap(s => s.materials)).flatMap(m => m.kind === "rel" ? m.who ?? [] : []);
+    // 장덕민 계획 +6.33·최지우 +5.65(둘 다 계획형), 지출 조절 +2.73·+6.86, 감정 표현 −2.79·−5.19(둘 다 숨김)
+    expect(who.join("\n")).not.toMatch(/큰 방향만 잡고 세부는 닥쳐서 정하는 편 쪽 = 최지우님|마음에 들면 가격보다 경험을 먼저 사는 편 쪽 = 장덕민님|표정과 말에 기분이 바로 묻어나는 편 쪽 = 장덕민님/);
+    expect(who).toContain("일정표와 준비물을 전날 정리해 두는 편 쪽 = 장덕민님·최지우님");
+    expect(who.some(w => /^말보다 표정 변화를 먼저 알아채고 반응하는 편 쪽 = 최지우님, 속상한 이야기에도 해결책부터 말하는 편 쪽 = 장덕민님$/.test(w))).toBe(true); // 반대쪽은 양 끝
+    const owners = lintContext(b, k, buildWriterPrompt(b, { knowledge: k }).chapters, []).sceneOwners ?? [];
+    expect([...new Set(owners.filter(o => o.pole === "planning+").map(o => o.name))].sort()).toEqual(["장덕민님", "최지우님"]);
+    expect(owners.some(o => o.pole === "planning-")).toBe(false);
+    const { fillTopic } = await import("@/lib/brief/chapters");
+    expect(fillTopic("{topic} 때 두 사람이 맡는 몫은?", "다툰 뒤")).toBe("다툰 뒤에 두 사람이 맡는 몫은?");
+    expect(fillTopic("{topic} 때 두 사람이 맡는 몫은?", "기념일")).toBe("기념일 때 두 사람이 맡는 몫은?");
+  });
 });
 
 describe("1-7 핵심 이미지", () => {
