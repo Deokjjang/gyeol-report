@@ -104,7 +104,7 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   const deletions: Deletion[] = [], warnings: StyleWarning[] = [], replacements: Replacement[] = [];
   const terms = [...new Set(brief.traits.map(t => t.name.replace(/\s*\(.*$/, "").replace(/[一-鿿]/g, "").trim()).filter(t => t.length >= 2))];
   const introduced = new Set<string>();
-  const prior = { text: "" }; let merged = 0, backrefFixed = 0;
+  const prior = { text: "" }; const merged = 0; let backrefFixed = 0;
   // 앞 장들의 문장 전부(짧은 문장 포함): 결정론 장이 같은 말·거의 같은 말을 되풀이하지 않게 넘긴다(P6c I).
   const bookSentences: string[] = [];
   const remember = (sections: readonly BookSection[]) => { for (const s of sections) for (const p of s.paragraphs) bookSentences.push(...splitSentences(p)); };

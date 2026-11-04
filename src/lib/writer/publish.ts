@@ -36,6 +36,8 @@ import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } fro
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { enforce, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
 import { INVEST_NOTICE } from "./safety/p6d";
+import { CAREER_REQUIRED } from "@/lib/brief/design/career";
+import { LOVE_REQUIRED } from "@/lib/brief/design/love";
 import { allowedWindows, writeKeyFill, type FinalChapter } from "./safety";
 import type { BookSection } from "./format";
 import { matchJob, PROPS } from "@/lib/brief/props";
@@ -147,6 +149,7 @@ function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintC
     props: Object.keys(brief.usedProps ?? {}), investChapters: ids(/^invest/),
     allowed: allowedWindows(JSON.stringify(brief)), conditionalChapters: new Set(plan.filter(ch => CONDITIONAL_TITLE.test(ch.title.trim())).map(ch => ch.n)),
     flow, cardTenGod: Object.fromEntries(entries.map(e => [e.key, e.tenGod.stem])),
+    requiredTerms: new Map(plan.flatMap(ch => { const r = (brief.product === "career_money_study" ? CAREER_REQUIRED : brief.product === "love_marriage_child" ? LOVE_REQUIRED : {})[ch.id]; return r ? [[ch.n, r.terms] as const] : []; })),
   };
 }
 

@@ -14,7 +14,7 @@ import {
   TWELVE_STAGES,
 } from "@/lib/saju/detections";
 import { CLIMATE_TABLE } from "@/lib/saju/detections/tables";
-import type { HeavenlyStem, TenGod } from "@/lib/saju/types";
+import type { HeavenlyStem } from "@/lib/saju/types";
 import { chartOf, natalOf, P } from "./chartFixture";
 
 const STEMS = "甲乙丙丁戊己庚辛壬癸".split("") as HeavenlyStem[];

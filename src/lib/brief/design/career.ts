@@ -10,7 +10,7 @@ import { GROUP_LEVEL_KO, GROUP_NAME_KO, groupStrength, TEN_GOD_GROUP_KEYS, type 
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { deepLines, type Knowledge } from "../knowledge";
-import { ganjiOf, josa, tenGodLabel, TEN_GOD_GROUP } from "../labels";
+import { ganjiOf, tenGodLabel, TEN_GOD_GROUP } from "../labels";
 import type { ChartBrief, Material } from "../schema";
 import { DOMAIN_BY_TEN_GOD } from "../productEvidence";
 

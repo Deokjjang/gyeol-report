@@ -17,7 +17,7 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   | "marriage_talk" | "card_missing" | "card_form" | "card_overlap" | "card_length" | "card_rule"
   // P6d: 안전망 문장 규칙(삭제하지 않고 수리로) · 묶음 세기 · 조각 문장 · 사실·위치 · 시점 · 부정 단정 · 소품 · 투자
   | "safety" | "group_claim" | "fragment" | "empty_preview" | "count_mismatch" | "dayun_year" | "pair_both" | "self_correction" | "chapter_ref"
-  | "time_deictic" | "calendar_month" | "closing_repeat" | "negative_claim" | "prop_repeat" | "invest_directive" | "intensity_claim";
+  | "time_deictic" | "calendar_month" | "closing_repeat" | "negative_claim" | "prop_repeat" | "invest_directive" | "intensity_claim" | "evidence_missing";
 export type CardField = "image" | "todo" | "review" | "caution";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -54,6 +54,8 @@ export type LintCtx = {
   readonly flow?: Readonly<Record<string, { readonly score: number; readonly max: number; readonly min: number }>>;
   /** 카드 key → 천간 십성(같은 십성 key끼리 카드 줄을 더 엄격히 견준다, P6d D). */
   readonly cardTenGod?: Readonly<Record<string, string>>;
+  /** 장마다 반드시 써야 하는 근거 낱말(P6d G 커리어·연애): 장 번호 → 낱말 꼴들(하나라도 없으면 evidence_missing). */
+  readonly requiredTerms?: ReadonlyMap<number, readonly RegExp[]>;
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
 const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
@@ -99,6 +101,7 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   prop_repeat: "같은 소품이 책에서 두 번째로 나왔다 → 다른 생활 장면으로",
   invest_directive: "특정 종목·상품·매수 시점을 말했다 → 성향과 원칙만",
   intensity_claim: "'가장 ~한 달·해'가 엔진 흐름 점수와 다르다 → 그 시기의 기운만",
+  evidence_missing: "이 장이 반드시 써야 하는 근거가 본문에 없다 → 그 절 materials의 근거를 한 문장 더해 잇는다",
 };
 
 /** B3: 십성 누름 방향(키가 값을 누른다). 문장에 두 십성(묶음)이 능동·수동으로 나오면 방향을 본다. */
@@ -213,6 +216,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         for (const [i, raw] of sens.entries()) {
           const sen = stripMarks(raw);
           const at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
+          // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
+          if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r }); continue; }
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
           const sv = sentenceViolation(sen, ctx.facts, ctx.allowed, Boolean(ctx.conditionalChapters?.has(c.n)));
@@ -220,7 +225,6 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (L.pastAssertion(sen) === null && isPastAssertion(sen)) { flag({ ...at, rule: "past_assertion", detail: "experience_assert" }); continue; }
           if (D.fragmentSentence(raw, i === sens.length - 1)) { flag({ ...at, rule: "fragment" }); continue; }
           if (D.emptyPreview(sen, sens[i + 1])) { flag({ ...at, rule: "empty_preview" }); continue; }
-          if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           if (rel !== undefined && rel > 0 && D.NEGATIVE_RELATION.test(sen)) { flag({ ...at, rule: "negative_claim" }); continue; }
           if (fl && ((PEAK.test(sen) && fl.score < fl.max) || (LOW.test(sen) && fl.score > fl.min))) { flag({ ...at, rule: "intensity_claim" }); continue; }
           if (writer && L.copiedWindow(sen, ctx.corpus)) { flag({ ...at, rule: "db_copy" }); continue; }
@@ -244,6 +248,11 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         }
       });
     });
+  }
+  // G 장마다 써야 하는 근거(문체 규칙: 문단은 빼지 않고 수리로 근거 한 문장을 더하게 한다).
+  for (const c of chapters) { const terms = ctx.requiredTerms?.get(c.n); if (!terms || c.source === "deterministic") continue;
+    const text = c.sections.flatMap(s => s.paragraphs).join(" ");
+    for (const re of terms) if (!re.test(text)) { const si = Math.max(0, c.sections.findIndex(s => s.paragraphs.length)); if (c.sections[si]?.paragraphs.length) flag({ chapter: c.n, section: si, paragraph: 0, rule: "evidence_missing", sentence: "", detail: re.source }); }
   }
   // E 마무리 문형: 달 장(세운 월)의 key마다 마지막 문장 끝 두 어절, 같은 꼴은 12달 가운데 3번까지.
   for (const c of chapters) if (c.keys && ctx.calendarChapters?.has(c.n)) {
