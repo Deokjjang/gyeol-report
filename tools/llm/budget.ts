@@ -84,7 +84,8 @@ export function budgetGate(o: GateOptions): Gate {
   const stream: typeof streamCompletion = async input => {
     const l = readLedger(), sc = l.scopes[o.scope];
     if (!sc) return refuse(`범위 없음: ${o.scope}`);
-    if (pendingKey && l.calls.some(c => c.key === pendingKey) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
+    // 같은 입력 해시 재생성 거절: 원고(출력)나 비용이 난 호출만 센다. 출력 0·비용 0인 실패(401 등 요청 거절)는 다시 불러도 재생성이 아니다.
+    if (pendingKey && l.calls.some(c => c.key === pendingKey && (c.output > 0 || c.costUsd > 0)) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
     const worst = worstCost(input), s = spent(l, o.scope), r = spent(l, o.scope, o.run);
     if (s + worst > sc.cap) return refuse(`범위 상한 초과 예상: 누적 $${s.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 상한 $${sc.cap}`);
     if (r + worst > o.runBudget) return refuse(`실행 예산 초과 예상: 이번 실행 $${r.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 예산 $${o.runBudget}`);

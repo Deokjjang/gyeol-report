@@ -117,6 +117,9 @@ describe("0-5 예산 관문(tools/llm/budget.ts)", () => {
       await g.cache.get("k1"); const r = B2.readLedger(); r.calls.push({ ...r.calls[0], key: "k1" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r));
       await g.cache.get("k1"); expect((await call(100)).error?.code).toBe("budget_refused"); expect(g.refusals().some(x => /같은 입력 해시/.test(x))).toBe(true);
       expect(readFileSync(log, "utf8")).toMatch(/누적 합계: \*\*\$0\.00100000\*\*/);
+      // 출력 0·비용 0인 실패(401 등)는 재생성으로 세지 않는다 — 같은 입력을 다시 부를 수 있다.
+      const r2 = B2.readLedger(); r2.calls.push({ ...r2.calls[0], key: "k401", output: 0, costUsd: 0, finish: "error:http_401" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r2));
+      await g.cache.get("k401"); expect((await call(100)).text).toBe("x"); expect(inner).toBe(2);
       expect(B2.startGate({ scope: "t", runBudget: 1, books: 1, log: () => undefined }).ok).toBe(false);
       expect(() => B2.budgetGate({ scope: "t", run: "r2", runBudget: 0, stage: "x" })).toThrow();
     } finally { delete process.env.LLM_CACHE_DIR; delete process.env.LLM_COST_LOG; }
