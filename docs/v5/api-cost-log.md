@@ -67,8 +67,22 @@
 | 2026-11-04 08:38 | P6c 세운 2026 · 서윤(c2, 대략 오시) r1 수리 | anthropic/claude-sonnet-5-5 | 1940 | 0 | 449 | 0.00837000 | complete | req_011Cggsk8depgDKu1aBJZ9Lf | 5.05016935 |
 | 2026-11-04 08:40 | P6c 종합 · 장덕민(본인) r1 | anthropic/claude-sonnet-5-5 | 16941 | 5306 | 13026 | 0.16467260 | complete | req_011CggskdR1hBKB4FzCL9hWG | 5.21484195 |
 | 2026-11-04 08:40 | P6c 종합 · 장덕민(본인) r1 수리 | anthropic/claude-sonnet-5-5 | 4554 | 0 | 1778 | 0.02688800 | complete | req_011CggsskmEhEsuSabW5rHZ3 | 5.24172995 |
+| 2026-11-04 08:49 | P6c 종합 · 하람(c1) r2 | anthropic/claude-sonnet-5-5 | 22823 | 0 | 16045 | 0.20918000 | complete | req_011CggtLU4dqKzAWGxTuhaap | 5.45090995 |
+| 2026-11-04 08:49 | P6c 종합 · 하람(c1) r2 수리 | anthropic/claude-sonnet-5-5 | 4133 | 0 | 1675 | 0.02501600 | complete | req_011CggtVMAeqvTxwLFNYVUJo | 5.47592595 |
+| 2026-11-04 08:50 | P6c 커리어 · 하람(c1) r2 | anthropic/claude-sonnet-5-5 | 15044 | 6168 | 11403 | 0.14473480 | complete | req_011CggtYoiAYZRKLVBNb6pmb | 5.62066075 |
+| 2026-11-04 08:50 | P6c 커리어 · 하람(c1) r2 수리 | anthropic/claude-sonnet-5-5 | 5930 | 0 | 2289 | 0.03475000 | complete | req_011CggtewbrPgtqY31Zyj5uC | 5.65541075 |
+| 2026-11-04 08:52 | P6c 궁합 연애 · 하람×서윤 r2 | anthropic/claude-sonnet-5-5 | 18441 | 6168 | 10652 | 0.14401880 | complete | req_011Cggth8vnoutKgHoxLsapQ | 5.79942955 |
+| 2026-11-04 08:52 | P6c 궁합 연애 · 하람×서윤 r2 수리 | anthropic/claude-sonnet-5-5 | 2637 | 0 | 845 | 0.01372400 | complete | req_011CggtnzbuQQ8KJ4AkC7FHP | 5.81315355 |
+| 2026-11-04 08:54 | P6c 대운 · 수진(X) r2 | anthropic/claude-sonnet-5-5 | 21084 | 6168 | 15272 | 0.19550480 | complete | req_011CggtoewFYH5n3FNGTRpZA | 6.00865835 |
+| 2026-11-04 08:54 | P6c 대운 · 수진(X) r2 수리 | anthropic/claude-sonnet-5-5 | 3555 | 0 | 1499 | 0.02210000 | complete | req_011CggtwYLLYZfKueDHbrPqZ | 6.03075835 |
+| 2026-11-04 08:56 | P6c 세운 2026 · 서윤(c2, 대략 오시) r2 | anthropic/claude-sonnet-5-5 | 20896 | 6168 | 12072 | 0.16312880 | complete | req_011CggtxgKLqHwyXUfJ5p8qS | 6.19388715 |
+| 2026-11-04 08:56 | P6c 세운 2026 · 서윤(c2, 대략 오시) r2 수리 | anthropic/claude-sonnet-5-5 | 4215 | 0 | 1660 | 0.02503000 | complete | req_011Cggu4ibgZ3osky3kDVHZs | 6.21891715 |
+| 2026-11-04 08:58 | P6c 종합 · 장덕민(본인) r2 | anthropic/claude-sonnet-5-5 | 16941 | 6168 | 14376 | 0.17825880 | complete | req_011Cggu65sd7McuuVhByHji8 | 6.39717595 |
+| 2026-11-04 08:58 | P6c 종합 · 장덕민(본인) r2 수리 | anthropic/claude-sonnet-5-5 | 3403 | 0 | 1293 | 0.01973600 | complete | req_011CgguED7ReNBfxMz1pVgdG | 6.41691195 |
+| 2026-11-04 09:05 | P6c 종합 · 하람(c1) r3 | anthropic/claude-sonnet-5-5 | 22843 | 0 | 17220 | 0.22098000 | complete | req_011CgguaqkNqJBMfNej6tFT5 | 6.63789195 |
+| 2026-11-04 09:05 | P6c 종합 · 하람(c1) r3 수리 | anthropic/claude-sonnet-5-5 | 5498 | 0 | 2379 | 0.03478600 | complete | req_011CggukiGx4Ds2as6Mne5Ma | 6.67267795 |
 
-누적 합계: **$5.24172995** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$6.67267795** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.

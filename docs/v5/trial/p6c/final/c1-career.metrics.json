@@ -1,0 +1,350 @@
+{
+ "case": "c1-career",
+ "label": "커리어 · 하람(c1)",
+ "reportId": "report_a37f608aae3945b7ba7204743acf6016",
+ "status": "COMPLETED",
+ "wallMs": 112139,
+ "fallback": null,
+ "priorBooks": 1,
+ "explainedFromPrior": 0,
+ "coverLine": "서비스 기획자 하람, 이름 걸고 서는 해",
+ "keySpans": 18,
+ "sections": 27,
+ "chars": 9863,
+ "chapterChars": [
+  1168,
+  1132,
+  1032,
+  1017,
+  1322,
+  996,
+  1095,
+  1047,
+  1054
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 33,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 8,
+ "infoByKind": {
+  "claim": 8,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "ENTJ는 역할과 순서를 내가 정해야 안심하는 편이라, 남이 짠 기준에 맞춰 움직여야 할 때 답답함이 올라옵니다.",
+   "b": "나와 같은 기운(비겁)이 보통 이상이고, ENTJ는 역할과 순서를 내가 정해야 안심하는 유형이라 판을 짜는 자리가 어색하지 않아요.",
+   "at": [
+    "1.2",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "ENTJ는 역할과 순서를 내가 정해야 안심하는 편이라, 남이 짠 기준에 맞춰 움직여야 할 때 답답함이 올라옵니다.",
+   "b": "식신(食神)은 누가 이끌든 정해진 대로 따라가는 쪽인데, ENTJ는 역할과 순서를 내가 정해야 안심하는 편이에요.",
+   "at": [
+    "1.2",
+    "7.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "ENTJ는 일정표와 준비물을 전날 정리해 두는 유형이라, PRD 초안을 열기 전에 이미 뼈대가 서 있어요.",
+   "b": "그래도 ENTJ는 일정표와 준비물을 전날 정리해 두는 유형이라 틀 안에서도 제 몫을 합니다.",
+   "at": [
+    "2.1",
+    "4.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "출시 후 지표를 꾸준히 보고 QA 이슈를 정리하는 일은 책임·규칙의 힘(관성)이 받쳐 줘야 편한데, 하람님에게는 보통 수준이라 의식적으로 루틴을",
+   "b": "정해진 틀에서 책임과 평가를 받으며 크는 길은 책임·규칙의 힘(관성)이 받쳐 줘야 편한데, 하람님에게는 보통 수준이에요.",
+   "at": [
+    "2.2",
+    "4.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "2027년부터는 계묘(癸卯) 대운, 편관(偏官)의 10년이 시작됩니다.",
+   "b": "이 흐름은 올해로 끝나고, 2027년부터는 계묘(癸卯) 편관(偏官)의 10년이 시작돼요.",
+   "at": [
+    "3.2",
+    "7.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "나와 같은 기운(비겁)이 보통 이상이고, ENTJ는 역할과 순서를 내가 정해야 안심하는 유형이라 판을 짜는 자리가 어색하지 않아요.",
+   "b": "식신(食神)은 누가 이끌든 정해진 대로 따라가는 쪽인데, ENTJ는 역할과 순서를 내가 정해야 안심하는 편이에요.",
+   "at": [
+    "4.1",
+    "7.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "반대로 규칙보다 더 나은 길이 보이는 일만 이어지면 지칠 수 있어요.",
+   "b": "다만 규칙보다 더 나은 길이 보이는 일만 이어지면 사업이 흔들릴 수 있어요.",
+   "at": [
+    "5.2",
+    "5.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "정축(丁丑)의 속불은 참고 버티는 게 습관이 되어 서운함을 안고 가는 성향이 있어요.",
+   "b": "정축(丁丑)의 속불은 참고 버티는 게 습관이 되어서, 말할 서운함을 몇 년씩 안고 가다가 한마디에 터지는 모양으로 나옵니다.",
+   "at": [
+    "6.2",
+    "8.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.06,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 112071,
+ "tokens": {
+  "input": 20974,
+  "output": 13692,
+  "cachedInput": 6168
+ },
+ "costUsd": 0.1794848,
+ "costKrw": 260.3,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 82135,
+   "chars": 10613,
+   "maxTokens": 25183,
+   "usage": {
+    "inputTokens": 15044,
+    "outputTokens": 11403,
+    "cachedInputTokens": 6168
+   },
+   "costUsd": 0.1447348
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 14222,
+   "chars": 2127,
+   "maxTokens": 3713,
+   "usage": {
+    "inputTokens": 5930,
+    "outputTokens": 2289,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.03475
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-19",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 10333,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 2
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 1
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 2
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 3
+   }
+  ],
+  "maxSimile": 3,
+  "chaptersOverSimile": 3,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 6,
+   "misses": [
+    "정축",
+    "정관",
+    "식신",
+    "반안살",
+    "방합",
+    "겁재"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 27,
+  "sectionsTotal": 27,
+  "byRule": {},
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 15
+  },
+  "removed": 0,
+  "repaired": 14,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 14,
+  "droppedParagraphs": 0
+ }
+}

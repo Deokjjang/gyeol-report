@@ -7,8 +7,8 @@
  */
 export const STYLE_EXAMPLES: readonly { readonly label: string; readonly text: string }[] = [
   {
-    label: "예시 1 — 가상 인물(정시·ESTP·영업 4년 차·솔로)의 표지 한 줄과 종합 2장",
-    text: `[표지] 사람이 모이는 영업 4년 차의 온도
+    label: "예시 1 — 가상 인물(정시·ESTP·영업직·솔로)의 표지 한 줄과 종합 2장",
+    text: `[표지] 첫 통화부터 사람이 모이는 영업의 온도
 
 ## 2. 성격: 겉과 속
 ### 첫 자리에서는 분위기부터 푸는 사람

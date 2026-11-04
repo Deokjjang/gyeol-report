@@ -184,9 +184,10 @@ describe("P6c F·G·H 카드·표지·강조", () => {
     const flags = lintCards(keyed([{ image: "지난 계절의 창고를 정리하는 해", review: "그때 무엇을 정리했나요" }, { image: "새 노트 첫 장에 계획을 적는 해", todo: "계획 한 줄을 적어 두세요" }, { image: "새 노트 첫 장에 계획을 적는 해!", todo: "운동 일정을 먼저 잡아 두세요" }]), ctx0({ periods }));
     expect(flags.map(f => `${f.section}:${f.card}:${f.rule}`).sort()).toEqual(["0:review:card_form", "2:image:card_overlap"]);
   });
-  it("G 표지 한 줄: 16~26자·설명문·명리학에서 금지, 어기면 핵심 이미지", () => {
+  it("G 표지 한 줄: 16~26자·설명문·명리학에서·입력에 없는 연차 금지, 어기면 핵심 이미지", () => {
     const b = brief("saju_mbti_full", ME);
-    expect(coverLineOf("사업 2년 차, 물길을 여는 큰 나무의 해", b)).toEqual({ line: "사업 2년 차, 물길을 여는 큰 나무의 해", source: "writer" });
+    expect(coverLineOf("스물일곱, 물길을 여는 큰 나무의 사업", b)).toEqual({ line: "스물일곱, 물길을 여는 큰 나무의 사업", source: "writer" });
+    expect(coverLineOf("사업 2년 차, 물길을 여는 큰 나무의 해", b).source).toBe("fallback");
     expect(coverLineOf("당신은 갑신일주예요", b).source).toBe("fallback");
     expect(coverLineOf("명리학에서 보는 당신의 큰 나무 같은 하루", b).source).toBe("fallback");
     expect(coverLineOf(null, b)).toEqual({ line: b.chart.coreImage.line, source: "fallback" });

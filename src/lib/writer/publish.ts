@@ -124,7 +124,8 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
 export function coverLineOf(raw: string | null, brief: Brief): { line: string; source: "writer" | "fallback" } {
   const fallback = brief.compatibility?.pairImage.line ?? brief.chart.coreImage.line;
   const v = (raw ?? "").replace(/^\[표지\]\s*/, "").replace(/[*"“”]/g, "").trim();
-  const bad = !v || v.length < 16 || v.length > 26 || MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v) || sentenceViolation(v, safetyFacts(brief)) !== null;
+  // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
+  const bad = !v || v.length < 16 || v.length > 26 || MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v) || /\d+ ?년 ?(차|째)|경력 \d+/.test(v) || sentenceViolation(v, safetyFacts(brief)) !== null;
   return bad ? { line: fallback, source: "fallback" } : { line: v, source: "writer" };
 }
 
