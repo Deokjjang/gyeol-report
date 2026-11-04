@@ -405,6 +405,16 @@ begin
           or exists(select 1 from public.report_account_links l where l.report_id=po.report_id and l.user_id=(p_data->>'userId')::uuid and l.revoked_at is null))))
       limit 100) t;
     return jsonb_build_object('ok',true,'orders',result);
+  elsif p_action='find_paid' then
+    -- 비회원 결제 완료 화면: 토스 orderId + paymentKey가 맞아야 그 주문을 본다(둘 다 결제한 사람만 안다).
+    select * into o from public.payment_orders where provider_order_id=p_data->>'providerOrderId' and provider_payment_id=p_data->>'paymentKey' and status in ('paid','refunded','canceled');
+    if not found then return jsonb_build_object('ok',false,'code','ORDER_NOT_FOUND'); end if;
+    return jsonb_build_object('ok',true,'paymentOrderId',o.payment_order_id);
+  elsif p_action='pending_books' then
+    -- 서재 "제본 중": 회원의 이용권 Book 중 아직 발행 전인 것.
+    return jsonb_build_object('ok',true,'books',(select coalesce(jsonb_agg(jsonb_build_object('reportId',r0.report_id,'productType',r0.product_type,'state',r0.state,
+      'createdAt',r0.created_at,'notBefore',r0.not_before,'displayName',r0.display_name) order by r0.created_at desc),'[]')
+      from public.report_ticket_redemptions r0 where r0.user_id=(p_data->>'userId')::uuid and r0.state in ('QUEUED','RUNNING') and r0.publication_mode='queue-v1'));
   elsif p_action='request' then
     select * into o from public.payment_orders where payment_order_id=p_data->>'paymentOrderId';
     if not found or o.status not in ('paid','refunded') then return jsonb_build_object('ok',false,'code','ORDER_NOT_FOUND'); end if;
@@ -591,6 +601,11 @@ begin
     if n>=(p_data->>'maxPerAccount')::integer then return jsonb_build_object('ok',true,'issued',false,'code','ACCOUNT_LIMIT'); end if;
     insert into public.gift_rewards(owner_user_id,source_order_id,product_scope,expires_at) values(x.user_id,x.payment_order_id,nullif(p_data->>'productScope',''),(p_data->>'expiresAt')::timestamptz) returning * into w;
     return jsonb_build_object('ok',true,'issued',true,'giftId',w.id);
+  elsif p_action='pending_orders' then
+    -- 크론: 이벤트 기간의 회원 결제 완료 주문 중 아직 따지지 않은 것(결제 완료 화면을 못 본 경우).
+    return jsonb_build_object('ok',true,'orders',(select coalesce(jsonb_agg(x.payment_order_id),'[]') from (select r.payment_order_id from public.order_records r join public.payment_orders o on o.payment_order_id=r.payment_order_id
+      where r.user_id is not null and r.gift_checked_at is null and o.status='paid' and o.paid_at>=(p_data->>'start')::timestamptz and o.paid_at<(p_data->>'end')::timestamptz
+      order by o.paid_at limit 20) x));
   elsif p_action='list' then
     update public.gift_rewards set status='expired' where owner_user_id=v_user and status in ('available','gifted') and expires_at<=now();
     return jsonb_build_object('ok',true,'gifts',(select coalesce(jsonb_agg(jsonb_build_object('id',g.id,'status',g.status,'expiresAt',g.expires_at,'createdAt',g.created_at,

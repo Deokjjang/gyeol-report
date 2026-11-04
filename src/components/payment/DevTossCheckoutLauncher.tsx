@@ -72,7 +72,11 @@ export type DevTossCheckoutLauncherRuntime = {
 type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
   readonly easyPay: SupportedEasyPay;
+  /** P6d-ops: 비회원 구매자 정보(회원은 서버가 가입 정보를 쓴다). */
+  readonly buyer?: { readonly name: string; readonly email: string; readonly emailConfirm: string; readonly phone?: string };
 };
+/** 서버가 고객에게 그대로 보여 줄 수 있는 안내(가입 정보·구매자 입력·판매 종료). */
+const PASS_THROUGH_CODES = ["PROFILE_REQUIRED", "BUYER_INFO_INVALID", "PRODUCT_SALES_CLOSED"];
 
 export type DevTossCheckoutLegalConfirmations = CheckoutLegalConfirmations;
 export type DevTossCheckoutAgeGateStatus = CheckoutAgeGateStatus;
@@ -214,6 +218,7 @@ export async function runDevTossCheckout(
         productType: options.productType ?? "saju_mbti_full",
         inputSnapshot,
         consent: createCheckoutConsentAssertion(legalConfirmations),
+        ...(options.buyer ? { buyer: options.buyer } : {}),
       }),
     });
   } catch {
@@ -234,8 +239,8 @@ export async function runDevTossCheckout(
     body.ok !== true ||
     !isRecord(body.tossCheckoutRequest)
   ) {
-    return createFailureResult(isRecord(body) && isRecord(body.error) && body.error.message === "필수 항목을 확인해 주세요."
-      ? "필수 항목을 확인해 주세요." : DEV_TOSS_CHECKOUT_ERROR_MESSAGE);
+    return createFailureResult(isRecord(body) && isRecord(body.error) && (body.error.message === "필수 항목을 확인해 주세요." || (PASS_THROUGH_CODES.includes(String(body.error.code)) && typeof body.error.message === "string"))
+      ? String(body.error.message) : DEV_TOSS_CHECKOUT_ERROR_MESSAGE);
   }
 
   let launchResult: TossClientCheckoutLaunchResult;

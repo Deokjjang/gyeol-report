@@ -19,6 +19,7 @@ import { interaction, syncLocalFacts } from "../../lib/analytics/client";
 import { checkoutReturnKey, useTicketPublication } from "./useTicketPublication";
 import { recordBookReturn } from "../../lib/tickets/shopClient";
 import { receiptMethodKey } from "../../lib/tickets/shopContract";
+import { PROFILE_REQUIRED_MESSAGE, validateContact } from "../../lib/account/contact";
 
 type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; authEnabled?: boolean; ticketShopEnabled?: boolean; onPublishing: () => void; onError: (message: string) => void };
 export function BookCheckout(props: CheckoutProps) {
@@ -43,6 +44,10 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const [tickets, setTickets] = useState<number | null>(null), [method, setMethod] = useState<"payment" | "ticket">("payment");
   const [balanceError, setBalanceError] = useState(false), [balanceRetry, setBalanceRetry] = useState(0);
   const [accountChanged, setAccountChanged] = useState(false);
+  // P6d-ops 2·3: 비회원 구매자 정보(회원은 가입 정보를 서버가 쓴다).
+  const [buyer, setBuyer] = useState({ name: "", email: "", emailConfirm: "", phone: "" });
+  const guestBuyer = !internal && session.status !== "member";
+  const profileRequired = !internal && session.status === "member" && session.profile === "required";
   const publication = useTicketPublication(payload.productKey, !internal && session.status === "member");
   useEffect(() => {
     if (session.status !== "member") return;
@@ -92,7 +97,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const checkingBalance = session.status === "member" && (tickets === null || balanceError);
   const ticketPending = !internal && publication.pending;
   const ticketSelected = ticketPending || method === "ticket";
-  const blocked = busy || publication.submitting || ticketPending || checkingBalance || accountChanged || (!internal && !publication.loaded) || session.status === "needs_consent";
+  const blocked = busy || publication.submitting || ticketPending || checkingBalance || accountChanged || (!internal && !publication.loaded) || session.status === "needs_consent" || profileRequired;
   const selected = items.find(c => c.id === detail);
   const submit = async () => {
     if (lock.current || blocked || !ready || (method === "ticket" && !tickets) || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)) return;
@@ -116,7 +121,13 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     if (!internal) {
       // Reuse the existing production prepare + validated Toss SDK launcher.
       // Local preview below still requires its explicit mock runtime.
-      const result = await runDevTossCheckout(snapshot, consents, undefined, { productType: payload.productKey, easyPay: "TOSSPAY" });
+      let buyerInfo: { name: string; email: string; emailConfirm: string; phone?: string } | undefined;
+      if (guestBuyer) {
+        const checked = validateContact({ ...buyer, emailSource: "typed" });
+        if (!checked.ok) { onError(checked.message); lock.current = false; setBusy(false); return; }
+        buyerInfo = { name: checked.value.name, email: checked.value.email, emailConfirm: checked.value.email, ...(checked.value.phone ? { phone: checked.value.phone } : {}) };
+      }
+      const result = await runDevTossCheckout(snapshot, consents, undefined, { productType: payload.productKey, easyPay: "TOSSPAY", ...(buyerInfo ? { buyer: buyerInfo } : {}) });
       if (!result.ok) { onError(result.messageKo); lock.current = false; setBusy(false); }
       return;
     }
@@ -191,6 +202,13 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
         {ticketShopEnabled && !ticketPending ? <button type="button" disabled={blocked} onClick={() => void visitShop()}>묶음 이용권 구매하기 →</button> : null}
       </>}
     </fieldset> : null}
+    {profileRequired ? <p role="alert">{PROFILE_REQUIRED_MESSAGE} <a href="/account">가입 정보 입력하기 →</a></p> : null}
+    {guestBuyer && !ticketSelected ? <fieldset className={s.consents} data-buyer-fields><legend>구매자 정보</legend><div className={s.fields}>
+      <label>이름<input value={buyer.name} maxLength={40} autoComplete="name" disabled={busy} onChange={e => setBuyer({ ...buyer, name: e.target.value })} /></label>
+      <label>이메일<input type="email" value={buyer.email} maxLength={254} autoComplete="email" disabled={busy} onChange={e => setBuyer({ ...buyer, email: e.target.value })} /></label>
+      <label>이메일 확인<input type="email" value={buyer.emailConfirm} maxLength={254} autoComplete="off" disabled={busy} onChange={e => setBuyer({ ...buyer, emailConfirm: e.target.value })} /></label>
+      <label>휴대폰(선택)<input type="tel" inputMode="numeric" value={buyer.phone} maxLength={13} placeholder="010-0000-0000" autoComplete="tel" disabled={busy} onChange={e => setBuyer({ ...buyer, phone: e.target.value })} /></label>
+    </div><p className={s.receiptNote}>주문 확인·환불 안내에만 씁니다.</p></fieldset> : null}
     {!internal && publication.message ? <p role="status">{publication.message}</p> : null}
     {ticketPending && publication.retryable ? <button disabled={!ready || publication.submitting || accountChanged} onClick={() => void publication.submit(payload, consents, accountScope.current || undefined)}>같은 발행 요청 다시 확인</button> : null}
     {!internal && publication.completedUrl ? <a href={publication.completedUrl}>완성된 책 펼쳐보기</a> : null}
@@ -199,6 +217,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
       {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={consents[c.id]} disabled={!allowed || busy} onChange={e => setConsents({ ...consents, [c.id]: e.target.checked })} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}
     </fieldset>
     {!allowed ? <p role="alert">만 14세 이상만 이용할 수 있습니다.</p> : null}
+    <p className={s.receiptNote}><a href="/privacy" target="_blank" rel="noopener">개인정보처리방침 보기 ›</a></p>
     {!internal && authEnabled && session.status !== "member" ? <a onClick={() => { try { sessionStorage.setItem(checkoutReturnKey(payload.productKey), "1"); } catch { /* draft remains optional */ } }} href={`/login?next=${encodeURIComponent(`/report/new?product=${payload.productKey}`)}`}>{session.status === "needs_consent" ? "회원 동의 확인 후 이어서 구매하기" : "로그인하고 이어서 구매하기"}</a> : null}
     <button type="button" className={s.orderButton} disabled={!ready || blocked || (method === "ticket" && !tickets) || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)} onClick={submit}>{ticketPending ? "책 발행 상태 확인 중" : busy && method === "ticket" ? "이용권으로 책을 만드는 중" : method === "ticket" ? "이용권 1장으로 책 발행하기" : internal ? "모의 결제 · 책 발행" : "결제하기"} →</button>
     {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? <p>{selected.id === "policyAgreement" && session.status === "member" ? "환불정책을 확인하고 동의합니다." : selected.label}</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}

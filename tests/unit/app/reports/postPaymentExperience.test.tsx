@@ -109,10 +109,10 @@ describe("post-payment canonical route, mock transport only", () => {
   });
 
   it("refresh reaches the existing completed report at the same canonical address", async () => {
-    expect(await renderState("GENERATING")).toContain("리포트를 준비하고 있습니다");
+    expect(await renderState("GENERATING")).toContain("책을 제본하고 있습니다");
     const completed = await renderState("COMPLETED");
     expect(completed).toContain("리포트 공유하기");
-    expect(completed).not.toContain("리포트를 준비하고 있습니다");
+    expect(completed).not.toContain("책을 제본하고 있습니다");
     expect(mocks.redirect).not.toHaveBeenCalled();
   });
 

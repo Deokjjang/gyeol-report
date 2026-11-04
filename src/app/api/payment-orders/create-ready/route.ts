@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../../../../lib/ops/config";
 
 import { NextResponse } from "next/server";
 
@@ -8,7 +9,8 @@ import { createSupabaseReadyPaymentOrderClient } from "../../../../lib/payment/s
 type ReadyPaymentOrderRouteErrorCode =
   | "PAYMENT_READY_ORDER_API_DISABLED"
   | "PAYMENT_READY_ORDER_INVALID_REQUEST"
-  | "PAYMENT_READY_ORDER_CREATE_FAILED";
+  | "PAYMENT_READY_ORDER_CREATE_FAILED"
+  | typeof SALES_CLOSED_CODE;
 
 const readyOrderApiEnabledEnv = "PAYMENT_READY_ORDER_API_ENABLED";
 const defaultProductType = "saju_mbti_full";
@@ -84,6 +86,11 @@ export async function POST(request: Request): Promise<NextResponse> {
       invalidRequestMessage,
       400,
     );
+  }
+
+  // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 주문을 만들지 않는다.
+  if (!productOnSale(json.productType ?? defaultProductType)) {
+    return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
   }
 
   if (!isJsonObject(json.inputSnapshot)) {

@@ -35,11 +35,11 @@ const copy = {
   unavailable: { title: "책을 확인하지 못했습니다.", message: "잠시 후 다시 열어 주세요." },
   reading: { title: "책장을 펼치고 있습니다.", message: "잠시만 기다려 주세요." },
   preparing: {
-    title: "리포트를 준비하고 있습니다",
+    title: "책을 제본하고 있습니다",
     message: "입력하신 정보를 바탕으로 나를 이해하는 리포트를 구성하고 있습니다.",
   },
   delayed: {
-    title: "리포트를 준비하고 있습니다",
+    title: "책을 제본하고 있습니다",
     message: "평소보다 조금 더 걸리고 있습니다. 완성된 리포트를 보여드릴 수 있도록 준비를 이어가고 있습니다.",
   },
   attention: {

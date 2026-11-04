@@ -15,7 +15,7 @@ export async function confirmPaidReport(input: TossConfirmRequest, store: Reliab
   confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>) {
   const claim = await store.call("confirm_claim", { ...input });
   if (!claim.ok || claim.reportId || claim.pending) return claim;
-  let paidAt: string | undefined;
+  let paidAt: string | undefined, receiptUrl: string | undefined;
   if (!claim.alreadyPaid) {
     try {
       const result = await confirm(input);
@@ -23,11 +23,14 @@ export async function confirmPaidReport(input: TossConfirmRequest, store: Reliab
         return { ok: false, code: "PAYMENT_CONFIRM_PENDING" };
       }
       paidAt = result.confirm.approvedAt;
+      receiptUrl = result.confirm.receiptUrl;
     } catch {
       return { ok: false, code: "PAYMENT_CONFIRM_PENDING" };
     }
   }
-  return store.call("confirm_finish", { ...input, token: claim.token, paidAt });
+  const finished = await store.call("confirm_finish", { ...input, token: claim.token, paidAt });
+  // P6d-ops 4: 영수증 주소는 결제 기록 밖(주문 기록)에 남긴다. confirm_finish 결과는 그대로.
+  return receiptUrl && finished.ok ? { ...finished, receiptUrl } : finished;
 }
 
 export type ProductGenerator = (payload: unknown, runtime: NoWriterRuntime, strategy: GenerationStrategy, annualAcceptance?: AnnualCommerceAcceptance) => Promise<ProductGenerationResult>;

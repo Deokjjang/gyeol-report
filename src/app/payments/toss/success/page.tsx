@@ -117,10 +117,10 @@ async function confirmAndGenerateReport(input: {
   readonly paymentKey: string;
   readonly orderId: string;
   readonly amount: number;
-}): Promise<InitialSuccessState | { readonly redirectReportId: string }> {
+}): Promise<InitialSuccessState | { readonly redirectReportId: string; readonly receiptUrl?: string }> {
   const result = await confirmPaidReport(input, createPaidReportReliabilityStore(),
     (payment) => confirmTossPayment({ ...payment, secretKey: process.env[tossSecretKeyEnv] ?? "" }));
-  if (result.ok && typeof result.reportId === "string") return { redirectReportId: result.reportId };
+  if (result.ok && typeof result.reportId === "string") return { redirectReportId: result.reportId, ...(typeof result.receiptUrl === "string" ? { receiptUrl: result.receiptUrl } : {}) };
   if (result.ok && result.pending) return "ready_to_confirm";
   return "generation_failed";
 }
@@ -143,6 +143,10 @@ export default async function TossPaymentSuccessPage({
       : initialState;
 
   if (typeof finalState === "object") {
+    // P6d-ops 4: 결제 완료 화면(주문코드·상품·일시·금액·상태·영수증·문의). 주문 기록을 못 읽으면 기존처럼 책 화면으로 보낸다.
+    const { PaymentCompleteView } = await import("../../../../components/ops/PaymentComplete");
+    const view = await PaymentCompleteView({ providerOrderId: orderId, paymentKey, reportId: finalState.redirectReportId, receiptUrl: finalState.receiptUrl });
+    if (view) return view;
     redirect(`/reports/${finalState.redirectReportId}?purchase=1`);
   }
 

@@ -193,6 +193,8 @@ function mapTossConfirmResponse(
   const status = readStringField(body, "status") ?? "UNKNOWN";
   const method = readStringField(body, "method");
   const approvedAt = readStringField(body, "approvedAt");
+  const receipt = typeof body === "object" && body !== null && typeof (body as { receipt?: { url?: unknown } }).receipt?.url === "string" ? String((body as { receipt: { url: string } }).receipt.url) : undefined;
+  const receiptUrl = receipt && /^https:\/\/[^\s]{1,490}$/.test(receipt) ? receipt : undefined;
   const confirm: TossConfirmSafeResult = {
     provider: "toss",
     paymentKeyReceived: true,
@@ -203,6 +205,7 @@ function mapTossConfirmResponse(
     ...(method === undefined ? {} : { method }),
     ...(approvedAt === undefined ? {} : { approvedAt }),
     ...(status === "UNKNOWN" ? {} : { rawPaymentStatus: status }),
+    ...(receiptUrl ? { receiptUrl } : {}),
   };
 
   return {

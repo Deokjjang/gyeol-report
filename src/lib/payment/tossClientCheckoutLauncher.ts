@@ -60,6 +60,10 @@ function isTossRequestPayment(
     return false;
   }
 
+  if ((value.customerEmail !== undefined && !isNonEmptyString(value.customerEmail)) || (value.customerMobilePhone !== undefined && !(typeof value.customerMobilePhone === "string" && /^01\d{8,9}$/.test(value.customerMobilePhone)))) {
+    return false;
+  }
+
   if (!isRecord(value.amount)) {
     return false;
   }
@@ -150,6 +154,8 @@ function parseTossCheckoutRequest(
         successUrl: value.requestPayment.successUrl,
         failUrl: value.requestPayment.failUrl,
         customerName: value.requestPayment.customerName,
+        ...(value.requestPayment.customerEmail ? { customerEmail: value.requestPayment.customerEmail } : {}),
+        ...(value.requestPayment.customerMobilePhone ? { customerMobilePhone: value.requestPayment.customerMobilePhone } : {}),
       },
       metadata: {
         paymentOrderId: value.metadata.paymentOrderId,

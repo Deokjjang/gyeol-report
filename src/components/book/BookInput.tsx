@@ -16,6 +16,7 @@ import { interaction } from "../../lib/analytics/client";
 import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
 import { AccountChannelOnboarding } from "../account/AccountSession";
+import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
@@ -33,11 +34,26 @@ export function MbtiInput({ person, change, role }: { person: PersonInputState; 
   return <label>{role} MBTI<select value={person.mbtiType} onChange={e => change({ ...person, mbtiType: e.target.value })}>{MBTI_TYPES.map(v => <option key={v} value={v}>{v || "모름"}</option>)}</select></label>;
 }
 
-export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean }) {
+export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false, closed = [] }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean; closed?: readonly string[] }) {
   const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0];
+  // P6d-ops 1: 판매를 잠시 닫은 책(대운·세운)은 입력·결제 대신 공개 안내. 서버(결제·이용권 API)도 같은 설정으로 거절한다.
+  if (closed.includes(book.productKey)) return <SalesClosedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />;
   // Product is the component key supplied by the wrapper below via navigation;
   // drafts are additionally namespaced per product and cannot activate routes.
   return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} />;
+}
+function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
+  useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
+  return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-closed style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
+    <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
+    <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="공개 안내">
+      <p className={s.eyebrow}>{book.title.replace("\n", " ")} / NOTICE</p><h1>2027 신년판으로 새로 단장하고 있어요</h1>
+      <p><b>{FORTUNE_REOPEN_LINE}</b></p>
+      <p>대운(앞으로의 나)과 세운(나의 한 해)은 2027년 흐름을 담아 12월 1일에 새로 공개해요. 그때까지는 새로 구매하거나 이용권으로 만들 수 없어요.</p>
+      <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
+      <p><a href={home}>다른 책 고르기 →</a></p><p><a href="/account">내 서재 →</a></p>
+    </div></section>
+  </main>;
 }
 function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);

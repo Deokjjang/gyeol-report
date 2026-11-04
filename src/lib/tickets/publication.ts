@@ -4,6 +4,7 @@ import { normalizeReportInputPayload } from "../report-generation/reportInputAda
 import { purchaseMetadata } from "../library/model";
 import type { CheckoutConsentEvidence } from "../payment/checkoutConsent";
 import type { TicketResult } from "./service";
+import { productOnSale, SALES_CLOSED_CODE } from "../ops/config";
 
 export type TicketPublicationStore = { call(action: string, user: string | null, data?: Record<string, unknown>): Promise<TicketResult> };
 export const validTicketRequestId = (id: unknown): id is string => typeof id === "string" && /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(id);
@@ -15,6 +16,8 @@ export async function enqueueTicketPublication(store: TicketPublicationStore, us
   const normalized = normalizeReportInputPayload(payload, { now: () => now });
   if (!normalized.ok) return { ok: false, code: "INVALID_INPUT" };
   const input = normalized.value;
+  // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 이용권으로도 새로 만들 수 없다(이미 발행된 Book 열람은 그대로).
+  if (!productOnSale(input.productKey)) return { ok: false, code: SALES_CLOSED_CODE };
   try {
     return await store.call("enqueue", user, { requestId: requestId.toLowerCase(), input, productType: input.productKey,
       inputHash: createHash("sha256").update(JSON.stringify(input)).digest("hex"),

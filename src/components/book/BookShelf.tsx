@@ -9,8 +9,9 @@ import s from "../../app/dev/book-preview/book.module.css";
 import { AccountEntry } from "../account/AccountSession";
 import { interaction } from "../../lib/analytics/client";
 import { LaunchCountdown } from "../growth/LaunchCountdown";
+import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
 
-export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath: string; year: number; authEnabled?: boolean }) {
+export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }: { inputPath: string; year: number; authEnabled?: boolean; closed?: readonly string[] }) {
   const [current, setCurrent] = useState(0);
   const auto = useRef<ReturnType<typeof createCoverflowAuto> | null>(null);
   const hovering = useRef(false), dragged = useRef(false), gesture = useRef<{ x: number; y: number; pointerId: number; vertical: boolean } | null>(null);
@@ -51,7 +52,7 @@ export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath:
         refresh.current();
       }} onClickCapture={e => { if (e.detail && dragged.current) { e.preventDefault(); e.stopPropagation(); } }}>
       <h1 className={s.srOnly}>나에 관한 한 권을 고르세요</h1><div className={s.coverflow} role="group" aria-label="책 표지" aria-roledescription="회전 책장">
-        {BOOKS.map((book, i) => { const offset = coverOffset(i, current), title = readerTitle(book, String(year)); return <button key={book.id} className={s.bookSlot} style={{ "--offset": offset, "--distance": Math.abs(offset), zIndex: 10 - Math.abs(offset) } as CSSProperties} data-center={current === i} aria-current={current === i ? "true" : undefined} aria-label={`${title} ${current === i ? "펼치기" : "선택"}`} tabIndex={Math.abs(offset) < 3 ? 0 : -1} onClick={() => { if (dragged.current) return; if (i !== current) select(i); else { auto.current?.interact(); window.location.assign(`${inputPath}?product=${book.slug}`); } }}><Cover book={book} title={book.id === "annual" ? `나의\n${year}` : undefined} /></button>; })}
+        {BOOKS.map((book, i) => { const offset = coverOffset(i, current), title = readerTitle(book, String(year)); return <button key={book.id} className={s.bookSlot} style={{ "--offset": offset, "--distance": Math.abs(offset), zIndex: 10 - Math.abs(offset) } as CSSProperties} data-center={current === i} data-closed={closed.includes(book.productKey) ? "true" : undefined} aria-current={current === i ? "true" : undefined} aria-label={`${title}${closed.includes(book.productKey) ? ` · ${FORTUNE_REOPEN_LINE}` : ""} ${current === i ? "펼치기" : "선택"}`} tabIndex={Math.abs(offset) < 3 ? 0 : -1} onClick={() => { if (dragged.current) return; if (i !== current) select(i); else { auto.current?.interact(); window.location.assign(`${inputPath}?product=${book.slug}`); } }}><Cover book={book} title={book.id === "annual" ? `나의\n${year}` : undefined} />{closed.includes(book.productKey) ? <span className={s.coverNotice} aria-hidden="true">{FORTUNE_REOPEN_LINE}</span> : null}</button>; })}
       </div><div className={s.carouselControls}><button aria-label="이전 책" onClick={() => select(current - 1)}>←</button><span className={s.micro} aria-live="polite">{BOOKS[current].issue} / 06</span><button aria-label="다음 책" onClick={() => select(current + 1)}>→</button></div>
     </section></main>;
 }

@@ -21,6 +21,8 @@ describe("public ticket gates before dependency construction", () => {
       { path: "/api/internal/meta-events", schedule: "*/5 * * * *" },
       // v5 작가 회수 크론(P3.5 D, v5/main에만 — 운영 적용은 P6 이후 승인)
       { path: "/api/internal/report-writer-recovery", schedule: "*/5 * * * *" },
+      // P6d-ops: 정식본 교체 레인·환불 처리·이벤트 이용권 발급·보관본 정리(v5/main에만 — 운영 적용은 승인 후)
+      { path: "/api/internal/ops-jobs", schedule: "*/5 * * * *" },
     ]);
   });
   it.each([[false,false],[true,false],[false,true]])("Book %s / Account %s rejects redeem/status before Auth/DB", async (book, account) => {

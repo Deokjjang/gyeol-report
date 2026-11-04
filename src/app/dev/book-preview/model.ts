@@ -16,14 +16,14 @@ export const roleNames = (category: string) => category === "parentChild" ? ["�
 export const CONSENTS = [
   { id: "inputAccuracy", label: "[필수] 입력한 정보가 정확하며, 결제 후 입력값을 기준으로 리포트 생성이 진행되는 것을 확인했습니다." },
   { id: "digitalReportStart", label: "[필수] 결제 완료 후 온라인 열람형 디지털 리포트 생성 절차가 시작되는 것을 확인했습니다." },
-  { id: "refundRestriction", label: "[필수] 생성 시작 후 단순 변심에 의한 환불이 제한될 수 있으며, 장애·중복결제·결과 미제공·법령상 취소 사유는 예외임을 확인했습니다." },
+  { id: "refundRestriction", label: "[필수] 디지털 콘텐츠라 책 만들기가 시작되면 청약철회(단순 변심 환불)가 제한됩니다. 계산 오류가 확인되면 다시 만들어 드리거나 환불해 드리며, 장애·중복결제·결과 미제공·법령상 취소 사유도 예외임을 확인했습니다." },
   { id: "policyAgreement", label: "[필수] 이용약관, 개인정보처리방침, 환불정책을 확인하고 동의합니다." },
   { id: "age14OrOlder", label: "[필수] 만 14세 이상입니다." },
   { id: "minorLegalRepresentative", label: "[필수] 미성년자는 법정대리인 동의가 필요하며, 동의가 없는 경우 본인 또는 법정대리인이 계약을 취소할 수 있음을 확인했습니다." },
 ] as const;
 export const CONSENT_SHORT_LABELS = {
   inputAccuracy: "입력 정보 확인", digitalReportStart: "디지털 리포트 생성 시작",
-  refundRestriction: "환불·청약철회 제한 확인", policyAgreement: "이용약관·개인정보·환불정책 동의",
+  refundRestriction: "청약철회 제한 · 계산 오류는 재생성·환불", policyAgreement: "이용약관·개인정보·환불정책 동의",
   age14OrOlder: "만 14세 이상", minorLegalRepresentative: "미성년자 법정대리인 동의",
 } as const;
 export function requiredConsents(member: boolean, birth: string) {

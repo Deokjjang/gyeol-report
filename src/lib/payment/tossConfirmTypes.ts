@@ -13,6 +13,8 @@ export type TossConfirmSafeResult = {
   readonly method?: string;
   readonly approvedAt?: string;
   readonly rawPaymentStatus?: string;
+  /** P6d-ops 4: 토스 영수증 주소(https만, 고객 구매 내역에 링크). */
+  readonly receiptUrl?: string;
   // Only set by strict provider-body identity verification, never echoed input.
   readonly currency?: "KRW";
   readonly paymentKeyVerified?: true;
