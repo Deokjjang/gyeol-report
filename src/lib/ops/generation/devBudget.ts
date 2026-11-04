@@ -15,7 +15,11 @@ export async function devBudget(label: string, env: Readonly<Record<string, stri
     const refuse: typeof streamCompletion = async () => ({ text: "", finishReason: "error", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, error: { code: "budget_refused", message: "LLM_BUDGET_SCOPE·LLM_BUDGET_RUN 없음" } });
     return { stream: refuse, cache: null, note: "budget_missing" };
   }
-  const { budgetGate } = await import("../../../../tools/llm/budget");
-  const g = budgetGate({ scope, run: env.LLM_BUDGET_RUN_ID ?? `dev-${scope}`, runBudget: run, stage: `${env.LLM_BUDGET_STAGE ?? "개발 서버"} · ${label}` });
-  return { stream: g.stream, cache: g.cache, note: `gate:${scope}` };
+  // 운영 빌드에서는 process.env.NODE_ENV가 "production" 상수로 바뀌어 이 분기가 빠진다 — tools/llm/budget.ts(개발 전용 파일 경로)를 운영 묶음에 넣지 않는다(최종판 3 빌드 경고).
+  if (process.env.NODE_ENV === "development") {
+    const { budgetGate } = await import("../../../../tools/llm/budget");
+    const g = budgetGate({ scope, run: env.LLM_BUDGET_RUN_ID ?? `dev-${scope}`, runBudget: run, stage: `${env.LLM_BUDGET_STAGE ?? "개발 서버"} · ${label}` });
+    return { stream: g.stream, cache: g.cache, note: `gate:${scope}` };
+  }
+  return null;
 }

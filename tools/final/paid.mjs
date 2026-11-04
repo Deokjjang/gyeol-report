@@ -1,6 +1,6 @@
 /**
  * 최종판 4: 실제 결제 경로로 책 만들기(정보 입력 → 결제 준비 → 토스 대역 승인 → 결제 워커(감독) → 발행 → 서재).
- *   BASE=http://localhost:3800 PLAYWRIGHT=<playwright index.mjs> AS=final node tools/final/paid.mjs template|pay <사례>|work|status
+ *   BASE=http://localhost:3800 PLAYWRIGHT=<playwright index.mjs> AS=final node tools/final/paid.mjs template|pay <사례>|work|ops|status
  * - template: 실제 화면(/report/new)에서 종합 입력을 채우고 결제하기를 눌러 결제 준비 요청 본문을 잡는다(요청은 보내지 않음 — 주문을 만들지 않는다).
  * - pay <사례>: 그 본문에 사례 입력(tools/final/cases.ts의 payload, 같은 꼴)을 넣어 같은 로그인으로 결제 준비 → 토스 성공 주소로 이동(승인은 dev 서버의 토스 대역).
  * - work: 로컬 CRON_SECRET으로 결제 워커(/api/internal/report-jobs)를 돌린다(감독 → 발행). status: 사례별 주문·Book 상태.
@@ -24,11 +24,17 @@ const sql = q => execFileSync("docker", ["exec", "supabase_db_gyeol-report", "ps
 const phase = process.argv[2], arg = process.argv[3];
 const log = (...a) => console.log(`[${phase}]`, ...a);
 
-if (phase === "work") {
+if (phase === "work" || phase === "ops") {
+  // 책 한 권이 수 분 걸린다: Node fetch(머리글 300초 제한) 대신 curl(최대 900초). 비밀값은 표준 입력 설정 파일로 넘긴다(명령줄·로그에 남기지 않음).
+  // work = 결제 워커(/api/internal/report-jobs), ops = 운영 크론(/api/internal/ops-jobs: 교체 레인·환불·정리).
   const secret = envFile().CRON_SECRET; const out = [];
-  for (let i = 0; i < Number(process.env.ROUNDS ?? 3); i++) {
-    const r = await fetch(`${BASE}/api/internal/report-jobs`, { headers: { authorization: `Bearer ${secret}` } });
-    out.push(`${r.status}:${(await r.text()).slice(0, 160)}`);
+  const path = phase === "work" ? "/api/internal/report-jobs" : "/api/internal/ops-jobs";
+  for (let i = 0; i < Number(process.env.ROUNDS ?? (phase === "work" ? 3 : 1)); i++) {
+    const t0 = Date.now();
+    let body = "";
+    try { body = execFileSync("curl", ["-s", "-w", "\n%{http_code}", "--max-time", "900", "-K", "-", `${BASE}${path}`], { input: `header = "authorization: Bearer ${secret}"\n`, encoding: "utf8", maxBuffer: 1 << 20 }); }
+    catch (e) { body = `curl 실패: ${String(e).slice(0, 160)}`; }
+    out.push(`${i + 1}회 ${Math.round((Date.now() - t0) / 1000)}초 · ${body.trim().split("\n").reverse().join(" · ").slice(0, 300)}`);
   }
   log(out.join("\n")); process.exit(0);
 }
