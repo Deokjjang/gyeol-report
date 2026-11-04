@@ -140,14 +140,15 @@ describe("P6c A·D 문형·별명·겹침", () => {
 });
 
 describe("P6c E 상품 구조", () => {
-  it("E1 커리어 9장 = 지금 일 궁합·단계별 강점·타이밍·진로 유형·직무 3단·재물 구조·돈 굴리기·평판·공부와 마무리, 서비스 기획은 실제 업무 단위", () => {
+  it("E1 → P6d G 커리어 9장 = 일의 엔진·지금 자리·맞는 일과 길·보여 주는 법·일터의 사람·평가와 문서·돈의 길·투자 성향·타이밍과 3년, 서비스 기획은 실제 업무 단위", () => {
     const b = brief("career_money_study", PEOPLE.c1);
-    expect(b.chapters.map(c => c.id)).toEqual(["current-fit", "work-stages", "timing", "paths", "jobs", "wealth", "invest", "honor", "study"]);
+    expect(b.chapters.map(c => c.id)).toEqual(["engine", "now", "paths", "show", "people", "docs", "money", "invest", "roadmap"]);
     expect(b.person.workScenes?.plan).toEqual(["PRD 초안", "로드맵 우선순위"]);
     const ev = (key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
-    expect(ev("timingNow")!.facts[0]).toMatch(/10년 가운데 10번째 해\(끝 무렵\), 올해 뒤로 0년 남음/);
-    expect(ev("timingShift")!.facts[0]).toMatch(/^전환 해: 2027년부터/);
-    expect(ev("workStagesA")!.facts.join(" ")).toMatch(/PRD 초안/);
+    // 하람 2026 = 임인 대운(2017~2026)의 마지막 해, 다음 대운 2027 계묘.
+    expect(ev("timingNow")!.facts.join(" ")).toMatch(/10번째 해\(마지막 해, 뒤로 0해\)/);
+    expect(ev("timingNow")!.facts.join(" ")).toMatch(/다음 대운: 2027년부터/);
+    expect(ev("engineGroups")!.facts[0]).toBe("다섯 힘(만세력 가중값): 비겁 강 · 식상 보통 · 재성 약 · 관성 강 · 인성 약");
   });
   it("E2 종합 가족 장은 뿌리·부모 자리·인성·식상·비겁 근거, E3 자녀 장 장면에 결혼·양가 이야기 없음", () => {
     const full = brief("saju_mbti_full", PEOPLE.c1);

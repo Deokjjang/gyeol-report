@@ -9,8 +9,32 @@ import type { V5BookDraft, V5Evidence } from "./book";
 import { splitSentences } from "./safety/patterns";
 
 /** explained(P6c A3): 앞 책들이 뜻을 푼 특성(feature id). 이번 책은 그 특성의 뜻을 다시 풀지 않고 이 상품에 맞는 쓰임만 쓴다. */
-export type PriorBooks = { readonly scenes: readonly string[]; readonly sentences: readonly string[]; readonly books: number; readonly explained?: readonly string[] };
+/** ledger(P6d F 고객 원장): 앞 책들이 쓴 각도(feature:facet)·MBTI 씨앗 id·근거 항목(feature:id·근거 줄). 다음 책은 쓰지 않은 것을 먼저 고른다. */
+export type PriorBooks = { readonly scenes: readonly string[]; readonly sentences: readonly string[]; readonly books: number; readonly explained?: readonly string[]; readonly ledger?: BookLedger; readonly products?: readonly string[] };
+export type BookLedger = { readonly angles: readonly string[]; readonly seeds: readonly string[]; readonly evidence: readonly string[] };
 export const NO_PRIOR: PriorBooks = { scenes: [], sentences: [], books: 0, explained: [] };
+
+/** 이 책의 원장(P6d F): 쓴 특성·Fusion 각도·팩폭 각도·뜻 풀이·MBTI 씨앗·근거 줄. */
+export function ledgerOf(brief: Brief): BookLedger {
+  const mats = brief.chapters.flatMap(c => [...c.materials, ...(c.sections ?? []).flatMap(s => s.materials)]);
+  const used = new Set(mats.flatMap(m => m.kind === "trait" ? [m.traitId] : m.kind === "ref" && /^traits\.[ab]?t\d+/.test(m.ref) ? [m.ref.split(".")[1]] : []));
+  const traits = brief.traits.filter(t => used.has(t.id));
+  const shadowTraits = new Set(mats.flatMap(m => m.kind === "ref" && m.ref.startsWith("shadows.") ? [brief.shadows.find(s => s.id === m.ref.slice(8))?.traitId ?? ""] : []));
+  const angles = [...new Set([
+    ...traits.flatMap(t => t.fusion ? [`${t.featureId}:fusion:${t.fusion.target}`] : []),
+    ...brief.traits.filter(t => shadowTraits.has(t.id)).map(t => `${t.featureId}:shadow`),
+    ...mats.flatMap(m => m.kind === "trait" && m.angle === "first" ? [`${brief.traits.find(t => t.id === m.traitId)?.featureId}:meaning`] : []),
+  ])];
+  const seeds = [...new Set(mats.flatMap(m => m.kind === "mbti" && m.seedId ? [m.seedId] : []))];
+  const evidence = [...new Set([...traits.map(t => `feature:${t.featureId}`), ...mats.flatMap(m => m.kind === "evidence" ? m.facts : [])])];
+  return { angles, seeds, evidence };
+}
+/** 앞 책과 겹치지 않는 근거 항목의 몫(P6d G: 심화 상품은 종합 대비 60% 이상). 앞 책이 없으면 1. */
+export function newEvidenceShare(current: BookLedger, prior: BookLedger | undefined): number {
+  if (!prior?.evidence.length || !current.evidence.length) return 1;
+  const p = new Set(prior.evidence);
+  return Math.round((current.evidence.filter(x => !p.has(x)).length / current.evidence.length) * 1000) / 1000;
+}
 /** 책마다 최대 몇 권까지 거슬러 본다(최근 순). */
 export const PRIOR_LIMIT = 8;
 
@@ -29,7 +53,7 @@ export async function priorBooks(store: TicketPublicationStore, user: string, in
     const lib = await store.call("library", user);
     if (!lib.ok || !Array.isArray(lib.items)) return NO_PRIOR;
     const ids = (lib.items as { reportId?: string; status?: string }[]).filter(x => x.status === "available" && x.reportId).slice(0, PRIOR_LIMIT).map(x => x.reportId!);
-    const scenes: string[] = [], sentences: string[] = [], explained: string[] = []; let books = 0;
+    const scenes: string[] = [], sentences: string[] = [], explained: string[] = [], angles: string[] = [], seeds: string[] = [], evidence: string[] = [], products: string[] = []; let books = 0;
     for (const reportId of ids) {
       const r = await store.call("read", user, { reportId });
       const snap = r.ok ? r.snapshot as { productVersion?: string; draft?: V5BookDraft; evidencePacket?: V5Evidence } | null : null;
@@ -39,8 +63,10 @@ export async function priorBooks(store: TicketPublicationStore, user: string, in
       sentences.push(...snap.draft.chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p)))));
       scenes.push(...(snap.evidencePacket.meta.scenes ?? []));
       explained.push(...(snap.evidencePacket.meta.explained ?? []));
+      const l = snap.evidencePacket.meta.ledger; if (l) { angles.push(...l.angles); seeds.push(...l.seeds); evidence.push(...l.evidence); }
+      products.push(snap.evidencePacket.productType);
     }
-    return { scenes: [...new Set(scenes)], sentences, books, explained: [...new Set(explained)] };
+    return { scenes: [...new Set(scenes)], sentences, books, explained: [...new Set(explained)], ledger: { angles: [...new Set(angles)], seeds: [...new Set(seeds)], evidence: [...new Set(evidence)] }, products };
   } catch { return NO_PRIOR; }
 }
 

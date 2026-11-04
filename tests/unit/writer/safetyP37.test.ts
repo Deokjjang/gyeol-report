@@ -92,17 +92,18 @@ describe("P3.7 원고 보강", () => {
     for (const p of [...adj, ...far]) expect(p).toMatch(/^[^—]{2,40} — 근거1\(명리\): .+ \/ 근거2\(MBTI\): ENTJ는 .+ 편 \/ 맞는 조건: .+ \/ 안 맞는 조건: .+$/);
     expect(new Set([...adj, ...far].map(p => p.split(" — ")[0])).size).toBe(adj.length + far.length);
     for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect([...adj, ...far].join(" "), bad).not.toContain(bad);
-    const current = ev(career, "currentJob")!.facts.join(" ");
-    expect(current).toMatch(/판정: (잘 맞음|보통|덜 맞음) — /); // P6b D 커리어 1
-    const inv = ev(career, "investment")!.facts.join(" ");
-    expect(inv).toMatch(/돈 굴리는 성향: /); expect(inv).toMatch(/운영 원칙: .*적립/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사/);
-    expect(career.chapters.find(c => c.id === "jobs")!.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobRoles", "jobAdjacent", "jobLongterm"]); // P6b D 커리어 3
-    expect(career.chapters.find(c => c.id === "invest")!.materials.some(m => m.kind === "evidence" && m.key === "investment")).toBe(true);
+    const current = ev(career, "nowFit")!.facts.join(" ");
+    expect(current).toMatch(/판정: (잘 맞음|보통|덜 맞음) — /); // P6b D 커리어 1 → P6d G 지금 자리 진단
+    const inv = ["investStyle", "investMistakes", "investPrinciples"].map(x => ev(career, x)!.facts.join(" ")).join(" ");
+    expect(inv).toMatch(/예적금: /); expect(inv).toMatch(/주식이라면 (회전형|장기 분산형)/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사|매수|매도/);
+    expect(career.chapters.find(c => c.id === "paths")!.sections![1].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobRoles", "jobAdjacent", "jobLongterm"]); // P6b D 커리어 3 → P6d 맞는 일과 길 둘째 절
+    expect(career.chapters.find(c => c.id === "invest")!.materials.some(m => m.kind === "evidence" && m.key === "investStyle")).toBe(true);
     for (const n of ["c1", "y", "c2"]) {
       const love = briefs.find(([x]) => x === `love_marriage_child:${n}`)![1];
-      const crush = ev(love, "crush")!.facts.join(" "), contact = ev(love, "contact")!.facts.join(" "), pp = ev(love, "pushPull")!.facts.join(" ");
-      expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(contact).toMatch(/연락 패턴: /); expect(pp).toMatch(/밀당: /);
-      expect(love.chapters.find(c => c.id === "push-pull")!.title).toBe("표현과 밀당"); // P6b D 연애
+      // P6d G: 연애 9장(사랑의 엔진·매력·맞는 사람·호감과 연락·연애할 때·갈등·결혼관·부모 역할·흐름). 호감은 crush, 연락 리듬은 talkRhythm(상태별).
+      const crush = ev(love, "crush")!.facts.join(" "), talk = ev(love, "talkRhythm")!.facts.join(" ");
+      expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(talk).toMatch(/^관계 상태: /);
+      expect(love.chapters.find(c => c.id === "contact")!.title).toBe("호감·연락·고백");
     }
   });
 

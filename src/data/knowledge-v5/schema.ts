@@ -278,7 +278,7 @@ export const ChapterRoleSchema = z.enum(["HOOK", "WHY", "SCENE", "TWIST", "PAYOF
  */
 export const SECTION_USE = /^(scene|mbti|rel|shadow|fusion|mbtiShadow|touched|ev:[a-zA-Z]+|ref:[a-zA-Z.]+|recap:[a-z-]+)$/;
 export const SectionPlanSchema = z.object({
-  q: z.string().min(6).max(40), domain: DomainSchema, use: z.array(z.string().regex(SECTION_USE)).min(1).max(2),
+  q: z.string().min(6).max(40), domain: DomainSchema, use: z.array(z.string().regex(SECTION_USE)).min(1).max(3),
   trait: z.enum(["core", "intro", "apply", "any", "none"]).optional(), dims: z.array(DimensionId).max(3).optional(), side: z.enum(["a", "b"]).optional(),
   /** 이 절에서 참조·근거를 쓰는 각도(작가 지시, 본문에 옮기지 않음). 같은 참조의 뜻을 다른 장이 되풀이하지 않게(P3.8 r1). */
   note: z.string().min(6).max(80).optional(),

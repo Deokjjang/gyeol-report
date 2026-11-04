@@ -113,7 +113,8 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     },
     currentDayun: cur && curTenGod ? {
       ganji: ganjiOf(cur), ages: `만 ${manAge(cur.startYear, opts.birthYear)}~${manAge(cur.endYear, opts.birthYear)}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
-      phase: { yearIndex: yearIndex + 1, label: DAYUN_PHASE_KO[dayunPhase(yearIndex)], yearsLeft: cur.endYear - year },
+      // 위치 말(P6d C): 첫해·마지막 해는 이름 그대로, 그 밖은 앞쪽·중간·끝 무렵(대운 연도 카드와 같은 말).
+      phase: { yearIndex: yearIndex + 1, label: yearIndex === 0 ? "첫해" : year === cur.endYear ? "마지막 해" : DAYUN_PHASE_KO[dayunPhase(yearIndex)], yearsLeft: cur.endYear - year },
       reading: dropSourceSentences(k.tenGodPeriod.get(curTenGod)?.year.meaning ?? ""),
       // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
       ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),

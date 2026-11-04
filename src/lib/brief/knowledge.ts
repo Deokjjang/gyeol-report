@@ -16,6 +16,12 @@ export type TenGodPeriod = z.infer<typeof TenGodPeriodFileSchema>["entries"][num
 export type Badge = z.infer<typeof BadgeFileSchema>["badges"][number];
 export type ActionTemplate = z.infer<typeof ActionTemplateFileSchema>["templates"][number];
 export type ProductNarrative = ProductNarratives["products"][number];
+/** P6d G: 심화 상품 재료(처음부터 작가 재료 꼴: 구·"조건 → 결과", 검사 tools/p6d/deep-check.ts). */
+const DeepFileSchema = z.object({ version: z.string(), topic: z.string(), note: z.string().optional(), entries: z.array(z.object({ key: z.string(), when: z.enum(["strong", "weak", "any"]).optional(), items: z.record(z.string(), z.array(z.string())) })) });
+export type DeepEntry = z.infer<typeof DeepFileSchema>["entries"][number];
+/** P6d F: MBTI 장면 씨앗(유형 × 영역 30개 이상, 6~24자 명사구). rel: partner = 연인·배우자 전제, job: 직업 형태 전제. */
+const SeedFileSchema = z.object({ version: z.string(), type: z.string(), seeds: z.record(z.string(), z.array(z.object({ id: z.string(), text: z.string(), rel: z.enum(["any", "partner"]).optional(), job: z.enum(["any", "employed", "business", "student"]).optional() }))) });
+export type MbtiSeed = z.infer<typeof SeedFileSchema>["seeds"][string][number];
 
 export type Knowledge = {
   readonly features: ReadonlyMap<string, MyeongriFeature>;
@@ -38,7 +44,14 @@ export type Knowledge = {
   readonly compatScenes: CompatSceneFile;
   /** 작가 재료(P6c A1): 원문 sha1 앞 12자 → 상황 씨앗·적용 방향·핵심 뜻. 파일이 없으면 빈 표(작가는 원문을 받는다). */
   readonly materials: ReadonlyMap<string, string>;
+  /** P6d G: 심화 상품 재료(topic → 항목). 파일이 없으면 빈 표. */
+  readonly deep: ReadonlyMap<string, readonly DeepEntry[]>;
+  /** P6d F: MBTI 장면 씨앗(유형 → 영역 → 씨앗). */
+  readonly mbtiSeeds: ReadonlyMap<string, Readonly<Record<string, readonly MbtiSeed[]>>>;
 };
+/** 심화 재료 한 칸: topic·key·when(없으면 any)·facet. */
+export const deepLines = (k: Pick<Knowledge, "deep">, topic: string, key: string, facet: string, when: "strong" | "weak" | "any" = "any"): readonly string[] =>
+  k.deep.get(topic)?.find(e => e.key === key && (e.when ?? "any") === when)?.items[facet] ?? [];
 
 export const DEFAULT_KNOWLEDGE_ROOT = resolve(process.cwd(), "src", "data", "knowledge-v5");
 const cache = new Map<string, Knowledge>();
@@ -68,6 +81,8 @@ export function loadKnowledge(root: string = DEFAULT_KNOWLEDGE_ROOT): Knowledge 
     catalog: CareerCatalogSchema.parse(read("career", "catalog.json")),
     compatScenes: CompatSceneFileSchema.parse(read("compat", "scenes.json")),
     materials: new Map(existsSync(join(root, "materials.json")) ? Object.entries(MaterialsFileSchema.parse(read("materials.json")).items) : []),
+    deep: new Map(existsSync(join(root, "deep")) ? list("deep").map(f => { const d = DeepFileSchema.parse(read("deep", f)); return [d.topic, d.entries] as const; }) : []),
+    mbtiSeeds: new Map(existsSync(join(root, "mbti-seeds")) ? list("mbti-seeds").map(f => { const d = SeedFileSchema.parse(read("mbti-seeds", f)); return [d.type, d.seeds] as const; }) : []),
   };
   cache.set(root, k);
   return k;

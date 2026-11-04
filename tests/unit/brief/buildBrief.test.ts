@@ -20,6 +20,9 @@ const person = (key: string, ctx?: string): BriefPersonInput => {
 const sceneIndex = new Map<string, SceneRequires>();
 for (const f of k.features.values()) for (const list of Object.values(f.scenes)) for (const s of list) sceneIndex.set(s.text, s.requires);
 for (const p of k.mbti.values()) for (const list of Object.values(p.signals)) for (const s of list) sceneIndex.set(s.text, s.requires);
+// P6d F: MBTI 장면 씨앗(rel·job 전제 → 같은 조건 꼴).
+const partnerSeeds = new Set<string>();
+for (const seeds of k.mbtiSeeds.values()) for (const list of Object.values(seeds)) for (const s of list) { sceneIndex.set(s.text, { relationship: "any", children: "any", job: !s.job || s.job === "any" ? "any" : s.job } as SceneRequires); if (s.rel === "partner") partnerSeeds.add(s.text); }
 for (const rules of k.fusionByFeature.values()) for (const r of rules) if (r.scene) sceneIndex.set(r.scene.text, r.scene.requires);
 for (const e of k.tenGodPeriod.values()) for (const s of [...e.year.scenes, ...e.month.scenes]) sceneIndex.set(s.text, s.requires);
 
@@ -94,6 +97,7 @@ describe("brief builder — 성질", () => {
         const req = sceneIndex.get(s);
         expect(req, `지식 DB에 없는 장면: ${s}`).toBeDefined();
         expect(sceneFits(req!, profile), `${brief.product} ${JSON.stringify(profile)} ← ${JSON.stringify(req)} ${s}`).toBe(true);
+        if (partnerSeeds.has(s)) expect(["dating", "married"], `연인 전제 씨앗: ${s}`).toContain(profile.relationship);
       }
     }
   });

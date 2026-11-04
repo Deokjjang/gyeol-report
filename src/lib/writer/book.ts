@@ -19,7 +19,7 @@ import { splitSentences } from "./safety/patterns";
 import { manAge } from "@/lib/brief/chart";
 import { REL_PLAIN, relationPlain } from "@/lib/brief/labels";
 import { getMonthlyPillars } from "@/lib/saju/detections";
-import { explainedOf, usedScenesOf } from "./prior";
+import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -65,6 +65,8 @@ export type WriterMeta = {
   /** 이 책이 뜻을 푼 특성(P6c A3): 같은 고객의 다음 책은 뜻을 다시 풀지 않는다. */
   readonly explained?: readonly string[];
   readonly priorBooks?: number;
+  /** 고객 원장(P6d F): 이 책이 쓴 각도·MBTI 씨앗·근거 항목. newShare: 앞 책들과 겹치지 않는 근거 항목의 몫. */
+  readonly ledger?: BookLedger & { readonly newShare?: number };
 };
 type V5ScoreV51 = { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] };
 type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
@@ -165,6 +167,8 @@ export function assembleV5Book(a: {
   briefHash: string; knowledgeVersion: string; promptVersion: string; recovered: boolean; priorBooks?: number;
   /** 표지 한 줄(P6c G, 검사 통과분 또는 핵심 이미지). badCards: 검사에 걸려 결정론 값으로 바꿀 카드 필드("장.소제목.필드"). */
   cover?: string; badCards?: ReadonlySet<string>;
+  /** 같은 고객의 앞 책 원장(P6d F·G): 근거 항목 새 몫을 잰다. */
+  priorLedger?: BookLedger;
 }): { draft: V5BookDraft; evidence: V5Evidence } {
   const { brief } = a;
   const book = BOOKS.find(b => b.productKey === brief.product)!;
@@ -208,6 +212,7 @@ export function assembleV5Book(a: {
     meta: {
       writer: a.writer, promptVersion: a.promptVersion, knowledgeVersion: a.knowledgeVersion, briefVersion: brief.version, briefHash: a.briefHash,
       tokens: a.tokens, costUsd: a.costUsd, calls: a.calls, durationMs: a.durationMs, recovered: a.recovered, fallback: a.fallback ?? null, scenes: usedScenesOf(brief), explained: explainedOf(brief), priorBooks: a.priorBooks ?? 0,
+      ledger: (() => { const l = ledgerOf(brief); return { ...l, newShare: newEvidenceShare(l, a.priorLedger) }; })(),
       chapters: a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, source: f.source, ...(f.reason ? { reason: f.reason } : {}), chars: f.chars, evidence: chapterEvidence(brief, a.plan.find(ch => ch.n === f.n)!) })),
       safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length, ...(a.report.metrics ? { metrics: a.report.metrics } : {}) },
     },

@@ -105,7 +105,8 @@ export const MaterialSchema = z.discriminatedUnion("kind", [
   /** angle: first = 이 trait를 책에서 처음 소개(그림 + 쉬운 말(용어)), new-domain = 앞에서 소개된 trait를 "앞에서 본 ○○" 한 문장으로만 부르고 이 절의 새 정보를 붙인다(P3.8 1). */
   /** known(P6c A3): 같은 고객의 다른 책에서 이미 뜻을 푼 특성 — 이름만 부르고 이 상품에 맞는 쓰임만. */
   z.object({ kind: z.literal("trait"), traitId: z.string(), domain: z.enum(DOMAINS), scene: z.string().optional(), angle: z.enum(["first", "new-domain", "known"]) }),
-  z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string(), who: z.string().optional() }),
+  /** seedId(P6d F): MBTI 장면 씨앗(유형 × 영역 30개 이상)에서 고른 것. 명리 근거·입력 맥락이 있는 절에만 놓는다. */
+  z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string(), who: z.string().optional(), seedId: z.string().optional() }),
   z.object({ kind: z.literal("ref"), ref: z.string(), note: z.string().optional() }),
   /** note: 쓰는 법(작가 지시). 본문에 옮기지 않는다(P3.7 r1: 지시문이 독자용 면책 문구로 옮겨졌다). */
   z.object({ kind: z.literal("evidence"), key: z.string(), facts: z.array(z.string()).min(1), note: z.string().optional() }),

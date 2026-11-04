@@ -45,10 +45,10 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
   });
 
   it("1: 마지막 장(실행 플랜·먼저 맞출 한 가지·흐름 타는 법)은 새 특성 소개 없이 앞 장 종합, 커리어 마무리는 공부·자격 + 단계별 강점 종합", () => {
-    // P6c E1: 커리어 마지막 장 = 공부·자격과 마무리(공부 근거 둘 + 앞 장 종합 한 절), 새 특성 소개 없음.
+    // P6d G: 커리어 마지막 장 = 타이밍과 3년 로드맵(대운 위치·다음 대운·세운 3년·분기 행동), 새 특성 소개 없음.
     const study = c1Career.chapters.at(-1)!;
-    expect(study.id).toBe("study");
-    expect(study.sections!.at(-1)!.materials.some(m => m.kind === "ref" && m.ref === "chapters.work-stages")).toBe(true);
+    expect(study.id).toBe("roadmap");
+    expect(study.sections!.map(s => s.materials.find(m => m.kind === "evidence") as { key: string } | undefined).map(m => m?.key)).toEqual(["timingNow", "threeYears", "roadmap"]);
     expect(study.materials.some(m => m.kind === "trait" && m.angle === "first")).toBe(false);
     for (const [, b] of pairs) {
       const last = b.chapters.find(c => c.id === "one-thing")!;

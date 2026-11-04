@@ -61,7 +61,11 @@ export type PlanCtx = {
   readonly usedAux?: Set<string>;
   /** 같은 고객의 다른 책에서 이미 뜻을 푼 특성(feature id, P6c A3): 이 책에서는 처음 나와도 뜻을 다시 풀지 않는다(angle=known). */
   readonly known?: ReadonlySet<string>;
+  /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
+  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string }[]>>>;
+  readonly excludeSeeds?: ReadonlySet<string>;
 };
+const SEED_DOMAIN: Readonly<Record<string, string>> = { work: "work", study: "work", money: "money", love: "love", marriage: "love", relationships: "relationships", alone: "alone" };
 
 const sideOf = (t: Trait) => t.id.match(/^[ab]/)?.[0] ?? "";
 /** 원국 참조 → 같은 내용을 trait로도 가진 가족(P3.8 r1: 음양 참조와 '음 과다' trait가 따로 소개됐다). */
@@ -82,7 +86,7 @@ const PROP_POOL: Record<Domain, readonly ("job" | "relationship" | "stage")[]> =
   work: ["job", "stage"], money: ["job", "stage"], study: ["job", "stage"], love: ["relationship", "stage"], marriage: ["relationship", "relationship"], relationships: ["stage", "relationship"], alone: ["stage", "job"],
 };
 /** 같은 소품은 책 전체에서 이 횟수까지만 힌트로 준다(P3.6 A1). */
-export const MAX_PROP_USES = 2;
+export const MAX_PROP_USES = 1; // P6d F 소품 원장: 같은 소품 명사는 책당 1회
 /** 장마다 소품 2개를 줄별 커서로 돌려 준다. 책 단위 사용 기록(usedProps)으로 한 소품은 2회까지. */
 export function sceneHints(props: CustomerProps, plans: readonly { repeatKey?: string; domains: readonly Domain[] }[]): { hints: (string[] | undefined)[]; usedProps: Record<string, number> } {
   const pools = { job: props.job.props, relationship: props.relationship, stage: props.stage.props };
@@ -244,8 +248,21 @@ export function planChapters(input: PlanCtx): PlanResult {
   const takeAux = (key: string) => { if (ctx.usedAux!.has(key)) return false; ctx.usedAux!.add(key); return true; };
 
   let mbtiTurn = 0;
-  const mbtiScene = (p: Plan, domains: readonly Domain[], label: string): Material | null => {
+  const usedSeeds = new Set<string>(ctx.excludeSeeds ?? []);
+  /** 씨앗(P6d F): 그 절에 명리 근거(trait·근거·원국 참조)나 입력 맥락이 이미 있을 때만, 고객 해시로 고른다. */
+  const seedFor = (p: Plan, d: Domain, label: string, owner: { profile: MbtiProfile; who?: string }): Material | null => {
+    const pool = ctx.mbtiSeeds?.get(owner.profile.type)?.[SEED_DOMAIN[d] ?? d] ?? [];
+    const f = ctx.facts;
+    const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
+      && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx)));
+    if (!ok.length) return null;
+    const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
+    return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
+  };
+  const hasBasis = (sec: Section | undefined) => Boolean(sec?.materials.some(m => m.kind === "trait" || m.kind === "evidence" || m.kind === "ref" || m.kind === "rel"));
+  const mbtiScene = (p: Plan, domains: readonly Domain[], label: string, sec?: Section): Material | null => {
     const owner = mbtiOf(mbtiTurn); if (!owner) return null;
+    if (hasBasis(sec)) for (const d of domains) { const m = seedFor(p, d, label, owner); if (m) { mbtiTurn++; return m; } }
     for (const d of domains) {
       const scene = freshScene(owner.profile.signals[d], ctx, `${p.id}:${label}:${d}`, p.c.id);
       if (scene) { mbtiTurn++; return { kind: "mbti", domain: d, scene, ...(owner.who ? { who: owner.who } : {}) }; }
@@ -305,7 +322,7 @@ export function planChapters(input: PlanCtx): PlanResult {
       }
       else if (use.startsWith("ev:")) { const e = ctx.evidence[use.slice(3)]; if (e && takeAux(use)) sec.materials.push(spec.note && e.kind === "evidence" ? { ...e, note: [e.note, spec.note].filter(Boolean).join(" / ") } : e); }
       else if (use.startsWith("recap:")) sec.materials.push({ kind: "ref", ref: `chapters.${use.slice(6)}`, note: spec.note ?? "앞 장을 종합한다: 새 특성·새 그림 없이 그 장의 근거로 이번 행동 하나" });
-      else if (use === "mbti") { const m = mbtiScene(p, [spec.domain], "mbti"); if (m) sec.materials.push(m); }
+      else if (use === "mbti") { const m = mbtiScene(p, [spec.domain], "mbti", sec); if (m) sec.materials.push(m); }
       else if (use === "rel") { const r = pickRel(p, spec); if (r) { sec.materials.push(r.m); sl.relDims.push(...r.dims); sec.q = sec.q.replace("{topic}", r.m.topic); } }
     }
     // 1순위 재료가 참조·근거뿐인데 비었으면(덜 쓴 기운 없음·MBTI 없음 등) 이 절은 뺀다: 질문만 남으면 작가가 뜻을 지어낸다(P3.8 r1).
@@ -372,7 +389,7 @@ export function planChapters(input: PlanCtx): PlanResult {
     const tm = sec.materials.find((m): m is Extract<Material, { kind: "trait" }> => m.kind === "trait");
     const src = tm ? byId.get(tm.traitId) : undefined;
     if (n < 2 && room() && src?.trait.fusion && !ctx.usedAux!.has(`fusion:${src.trait.id}`)) { ctx.usedAux!.add(`fusion:${src.trait.id}`); sec.materials.push({ kind: "ref", ref: `traits.${src.trait.id}.fusion`, note: "이 절의 둘째 근거: 명리와 MBTI의 연결" }); n++; }
-    if (n < 2 && room() && !ctx.relScenes) { const m = mbtiScene(p, [spec.domain], "second"); if (m) { sec.materials.push(m); n++; } }
+    if (n < 2 && room() && !ctx.relScenes) { const m = mbtiScene(p, [spec.domain], "second", sec); if (m) { sec.materials.push(m); n++; } }
     if (n < 2 && room() && p.index < plans.length - 1) { const t = pickTrait(p, spec, "apply", false); if (t) { sec.materials.push(place(p, spec, t, false)); n++; } }
     if (n < 2 && room()) { const ref = SECOND_REFS.find(r => !reserved.has(`ref:${r}`) && ctx.has(r) && takeAux(`ref:${r}`)); if (ref) sec.materials.push({ kind: "ref", ref, note: "이 절의 둘째 근거(앞 장과 다른 각도로만)" }); }
   }

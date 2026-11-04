@@ -81,9 +81,9 @@ describe("P3.6 원고 남은 문제", () => {
   it("B 1회차 결함 수정: 커리어 근거·궁합 관계 사실·자리 관계·타임라인 시제·소개 순서", () => {
     const career = buildBrief({ product: "career_money_study", person: PEOPLE.c1, baseDate: base }, k);
     const ev = career.chapters.flatMap(c => c.materials).filter(m => m.kind === "evidence").map(m => (m as { key: string }).key);
-    // P6c E1: 커리어 9장(지금 일 궁합·단계별 강점·타이밍·진로 유형·직무 3단·재물 구조·돈 굴리기·평판·공부와 마무리).
-    expect(ev).toEqual(expect.arrayContaining(["currentJob", "jobLess", "workStagesA", "workStagesB", "timingNow", "timingShift", "timingPrep", "pathsGood", "pathsLess", "studyFit", "earnStyle", "accumulate", "investment"]));
-    expect(ev.filter(x => x === "investment")).toHaveLength(1);
+    // P6d G: 커리어 9장(일의 엔진·지금 자리·맞는 일과 길·보여 주는 법·일터의 사람·평가와 문서·돈의 길·투자 성향·타이밍과 3년).
+    expect(ev).toEqual(expect.arrayContaining(["engineGroups", "monthPillar", "rhythm", "nowFit", "statusNow", "pathsGood", "pathsLess", "jobRoles", "sideBiz", "visiblePower", "pitch", "payTalk", "peopleTypes", "helpers", "roleMode", "docsLevel", "docsTiming", "docsStatus", "moneyStructure", "moneyStatus", "moneyRisk", "investStyle", "investMistakes", "investPrinciples", "timingNow", "threeYears", "roadmap"]));
+    expect(ev.filter(x => x === "investStyle")).toHaveLength(1);
     const boss = buildBrief({ product: "saju_mbti_compatibility", person: PEOPLE.x, partner: PEOPLE.c1, relationshipType: "managerReport", baseDate: base }, k);
     expect(boss.person.forbiddenFacts.join(" ")).not.toContain("상사·팀장");
     // P3.8 3: 궁합 장면은 MBTI 장면 대신 그 관계 유형의 생활 장면(상사·팀원: 보고·지시 변경·평가…)이다.
@@ -91,8 +91,9 @@ describe("P3.6 원고 남은 문제", () => {
     expect(new Set(rel.map(m => (m as { topic: string }).topic)).size).toBeGreaterThanOrEqual(6);
     expect(boss.chapters.flatMap(c => c.materials).some(m => m.kind === "mbti")).toBe(false);
     const love = buildBrief({ product: "love_marriage_child", person: PEOPLE.y, baseDate: base }, k);
-    const palace = love.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "spousePalace");
-    expect(JSON.stringify(palace)).not.toContain("천간합");
+    // P6d G: 배우자 자리는 사랑의 엔진 근거(loveEngine)에 담긴다. 자리 관계에 천간합을 섞지 않는다.
+    const palace = love.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "loveEngine");
+    expect(palace).toBeDefined(); expect(JSON.stringify(palace)).not.toContain("천간합");
     const annual = buildBrief({ product: "annual_fortune", person: PEOPLE.c2, baseDate: base, selectedYear: 2026 }, k);
     const months = annual.timeline!.entries.filter(e => e.kind === "month");
     expect(months.map(e => e.when)).toEqual([...Array(8).fill("past"), "now", "future", "future", "future"]);
@@ -117,8 +118,9 @@ describe("P3.6 원고 남은 문제", () => {
       }
     }
     const career = buildBrief({ product: "career_money_study", person: PEOPLE.c1, baseDate: base }, k);
-    const earn = career.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "earnStyle");
-    expect(JSON.stringify(earn)).not.toMatch(/\d\.\d/);
+    // P6d G: 돈의 길 근거도 숫자 없이(묶음 세기는 단계 낱말만).
+    const earn = career.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "moneyStructure");
+    expect(earn).toBeDefined(); expect(JSON.stringify(earn)).not.toMatch(/\d\.\d/);
     expect(glossaryWarnings(1, ["둘 다 물 기운이 적은 편인 사이예요."], new Set())).toEqual([]);
   });
 });
