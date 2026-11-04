@@ -173,7 +173,7 @@ export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief
     });
     if (ci === 0 && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(dateLine)))) sections = [prepend(sections[0], dateLine), ...sections.slice(1)];
     // 투자 안내는 장에 한 번: 작가가 같은 뜻을 이미 썼으면 넣지 않는다(r1 커리어: 두 번 나왔다).
-    if (/^invest/.test(c.id) && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(INVEST_NOTICE) || /투자 권유(가|는)? 아니/.test(p)))) sections = [prepend(sections[0], INVEST_NOTICE), ...sections.slice(1)];
+    if (/^invest/.test(c.id) && sections[0] && !sections.some(s => s.paragraphs.some(p => p.includes(INVEST_NOTICE) || /권유(가|는)? 아니/.test(p)))) sections = [prepend(sections[0], INVEST_NOTICE), ...sections.slice(1)];
     return { ...c, sections, chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) };
   });
 }

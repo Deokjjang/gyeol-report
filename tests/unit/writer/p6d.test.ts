@@ -59,6 +59,9 @@ describe("P6d A 십성 묶음 세기 = 만세력 오행 칸 가중값 하나", (
     expect(L.groupClaimMismatch("책임·규칙의 힘(관성)이 하람님에게는 보통 수준이라", lv)).toBe("관성:보통≠강");
     expect(L.groupClaimMismatch("표현을 담당하는 기운(식상)이 옅어서, 말보다 행동으로 챙겨요.", lv)).toBe("식상:약≠보통");
     expect(L.groupClaimMismatch("만들어 내는 힘(식상)이 보통 수준이어서 꾸준히 밀고 가요.", lv)).toBeNull();
+    // r1·r2 생성에서 나온 오탐: 다음 묶음 이름의 세기 낱말, 일이 그 힘을 "많이 쓴다".
+    expect(L.groupClaims("식상은 있는데 재성이 약하다: 값을 매기는 단계")).toEqual([{ group: "재성", level: "약" }]);
+    expect(L.groupClaims("조직의 일은 배움과 보호(인성), 책임과 규칙(관성)의 힘을 많이 씁니다.")).toEqual([]);
     // 같은 고객 세 상품의 브리프 단계가 한 값이라, 원고마다 엔진 단계로 검사하면 책끼리도 같다.
     const books = ["saju_mbti_full", "career_money_study", "love_marriage_child"].map(p => brief(p, PEOPLE.c1).chart.groups!.line);
     expect(new Set(books).size).toBe(1);
@@ -156,6 +159,8 @@ describe("P6d D 카드(대운·세운)", () => {
     expect(insertFixedLines(inv, c)[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`); // 한 번만
     const own = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."] }] }], c);
     expect(own[1].sections[0].paragraphs[0]).toBe("이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."); // 작가가 쓴 안내가 있으면 넣지 않는다
+    const own2 = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 권유가 아니라 성향 이야기예요."] }] }], c);
+    expect(own2[1].sections[0].paragraphs[0]).toBe("이 장은 권유가 아니라 성향 이야기예요."); // r2: "투자" 없이 쓴 안내도 같은 뜻
   });
 });
 

@@ -1,0 +1,329 @@
+{
+ "case": "pair-business",
+ "label": "궁합 사업 파트너 · 남궁현×백은솔",
+ "reportId": "report_7097ef942e504964b8149fbb9c6b81db",
+ "status": "COMPLETED",
+ "wallMs": 91997,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 9,
+ "coverLine": "큰 나무와 네온이 한 간판을 켜는 사업",
+ "keySpans": 27,
+ "sections": 27,
+ "chars": 9747,
+ "chapterChars": [
+  1266,
+  1183,
+  1078,
+  1059,
+  1005,
+  1069,
+  1033,
+  952,
+  1102
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 32,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "겁살은 지킬 것과 버릴 것을 가르는 결단의 기운입니다.",
+   "b": "남궁현님의 겁살은 지킬 것과 버릴 것을 가르는 결단의 기운이에요.",
+   "at": [
+    "4.3",
+    "6.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 91951,
+ "tokens": {
+  "input": 23041,
+  "output": 12153,
+  "cachedInput": 6800
+ },
+ "costUsd": 0.168292,
+ "costKrw": 244,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 87158,
+   "chars": 10669,
+   "maxTokens": 25183,
+   "usage": {
+    "inputTokens": 20074,
+    "outputTokens": 11590,
+    "cachedInputTokens": 6800
+   },
+   "costUsd": 0.156728
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 4451,
+   "chars": 515,
+   "maxTokens": 1198,
+   "usage": {
+    "inputTokens": 2967,
+    "outputTokens": 563,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.011564
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-21",
+ "knowledgeVersion": "knowledge-v5:567c4a02b174",
+ "p6b": {
+  "chars": 10290,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 2
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 10,
+   "misses": [
+    "겁살",
+    "갑신",
+    "정관",
+    "현침살",
+    "편관",
+    "정미",
+    "비견",
+    "반안살",
+    "음착양차살",
+    "식신"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 27,
+  "sectionsTotal": 27,
+  "byRule": {},
+  "coreImage": "큰 나무가 불빛을 타오르게 돕는 사이",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "fragment": 3,
+   "scene_repeat": 1
+  },
+  "removed": 0,
+  "repaired": 4,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 4,
+  "droppedParagraphs": 0
+ },
+ "ledger": {
+  "seeds": [],
+  "angles": [
+   "shinsal:TWELVE_GEOPSAL:fusion:ESTJ",
+   "dayPillar:甲申:fusion:ESTJ",
+   "tenGod:正官:fusion:ESTJ",
+   "shinsal:HYEONCHIMSAL:fusion:ESTJ",
+   "dayPillar:丁未:fusion:ENFP",
+   "tenGod:比肩:fusion:ENFP",
+   "shinsal:TWELVE_BANANSAL:fusion:ENFP",
+   "shinsal:EUMCHAK_YANGCHA:fusion:ENFP",
+   "element:FIRE:STRONG:fusion:ENFP",
+   "shinsal:TWELVE_GEOPSAL:shadow",
+   "dayPillar:甲申:meaning",
+   "dayPillar:丁未:meaning",
+   "tenGod:比肩:meaning",
+   "shinsal:EUMCHAK_YANGCHA:meaning",
+   "shinsal:TWELVE_BANANSAL:meaning",
+   "shinsal:TWELVE_GEOPSAL:meaning",
+   "tenGod:正官:meaning",
+   "shinsal:HYEONCHIMSAL:meaning",
+   "element:FIRE:STRONG:meaning"
+  ],
+  "evidence": [
+   "feature:shinsal:TWELVE_GEOPSAL",
+   "feature:dayPillar:甲申",
+   "feature:tenGod:正官",
+   "feature:shinsal:HYEONCHIMSAL",
+   "feature:dayPillar:丁未",
+   "feature:tenGod:比肩",
+   "feature:shinsal:TWELVE_BANANSAL",
+   "feature:shinsal:EUMCHAK_YANGCHA",
+   "feature:element:FIRE:STRONG"
+  ],
+  "newShare": 1
+ }
+}

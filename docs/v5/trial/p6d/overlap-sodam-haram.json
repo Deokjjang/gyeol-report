@@ -1,0 +1,98 @@
+{
+ "sentences": {
+  "sodam": 305,
+  "haram": 362,
+  "jaccard05": 3,
+  "examples": [
+   {
+    "a": "손에 잡히는 것을 만들어 내놓으면 사람들이 다시 찾습니다.",
+    "b": "손에 잡히는 것을 만들어 내놓으면 사람들이 다시 찾아와요.",
+    "j": 0.74
+   },
+   {
+    "a": "한 번 맡은 일은 겨울이 지나서라도 끝내는 사람이에요.",
+    "b": "그래서 한 번 맡은 일은 겨울이 지나서라도 끝내요.",
+    "j": 0.55
+   },
+   {
+    "a": "막히면 물어볼 사람이 떠올라서 풀리는 속도가 빠르고, 소개나 추천으로 길이 열리는 일이 잦습니다.",
+    "b": "막히면 물어볼 사람이 떠올라 풀리는 속도가 빠르고, 소개나 추천으로 길이 열리는 일도 잦아요.",
+    "j": 0.59
+   }
+  ],
+  "copy20": 6,
+  "copyExamples": [
+   "태어난 달의 주인 기운이 물이라 힘이 두 배로 실리고, 겉 글자에도 물이 둘, 땅속에도 물이 더 있어요.",
+   "음이 많은 사람은 앞장서기보다 분위기와 상대의 속마음을 먼저 살피고, 돈과 지식과 신뢰를 한 걸음씩 모아 가요.",
+   "손에 잡히는 것을 만들어 내놓으면 사람들이 다시 찾아와요."
+  ]
+ },
+ "ideas": {
+  "explainedShared": [
+   "dayPillar:丁丑",
+   "climate:丁:winter",
+   "relation:BANGHAP",
+   "element:WATER:STRONG",
+   "tenGod:食神",
+   "branch:丑",
+   "tenGod:正官",
+   "shinsal:EUMCHAK_YANGCHA",
+   "shinsal:TWELVE_BANANSAL",
+   "shinsal:BAEKHODAESAL"
+  ],
+  "sodamFeatures": 12,
+  "sodamFeaturesAlsoExplainedInHaram": [
+   "tenGod:食神",
+   "dayPillar:丁丑",
+   "relation:BANGHAP",
+   "tenGod:正官",
+   "shinsal:EUMCHAK_YANGCHA",
+   "shinsal:TWELVE_BANANSAL",
+   "shinsal:BAEKHODAESAL",
+   "branch:丑",
+   "element:WATER:STRONG",
+   "climate:丁:winter"
+  ],
+  "sodamAngles": 26
+ },
+ "seeds": {
+  "scenesShared": 2,
+  "sceneExamples": [
+   "급하게 처리하자는 동료 옆에서 '이거 한 번만 더 보죠' 하고 검토 칸을 하나 더 만듭니다.",
+   "마음을 쉽게 열지 않아 처음엔 차가워 보이지만, 한번 열면 상대의 퇴근 시간에 맞춰 따뜻한 국물을 데워 둡니다."
+  ],
+  "sodamMbtiSeeds": 10
+ },
+ "chapters": {
+  "sodam": [
+   "나를 한 줄로",
+   "성격: 겉과 속",
+   "기질의 뿌리",
+   "재능: 결과가 되는 힘",
+   "내 안의 두 방향",
+   "단점: 알면서 또 하는 실수",
+   "좋은 기운과 귀인",
+   "일과 성과",
+   "돈의 흐름",
+   "연애",
+   "가족",
+   "관계",
+   "실행 전략"
+  ],
+  "haram": [
+   "나를 한 줄로",
+   "성격: 겉과 속",
+   "기질의 뿌리",
+   "재능: 결과가 되는 힘",
+   "내 안의 두 방향",
+   "단점: 알면서 또 하는 실수",
+   "좋은 기운과 귀인",
+   "일과 성과",
+   "돈의 흐름",
+   "연애",
+   "가족",
+   "관계",
+   "실행 전략"
+  ]
+ }
+}

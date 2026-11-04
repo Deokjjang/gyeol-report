@@ -210,7 +210,8 @@ export const KEY_MARK = /[⟪⟫]/g;
 export type GroupLevelKo = "강" | "보통" | "약";
 export type GroupLevels = Readonly<Record<"비겁" | "식상" | "재성" | "관성" | "인성", GroupLevelKo>>;
 const GROUP_NAME_RE = /(?<![가-힣])(비겁|식상|재성|관성|관살|인성)(?=\)|[이가은는의도]|\s|$|[,.])/g;
-const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리)/;
+// "많이 쓴다"는 쓰임(일이 그 힘을 많이 쓴다)이지 세기가 아니다(r2 커리어: 문단을 잘못 뺐다).
+const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리)/;
 const LV_MEDIUM = /^(보통|중간 정도|적당|평균)/;
 const LV_WEAK = /^(약하|약한|약해|약합|약함|옅|부족|모자라|모자란|적은 편|적어|적고|없어|없는|없고|없으|빈약|얇)/;
 export function groupClaims(sentence: string): { group: keyof GroupLevels; level: GroupLevelKo }[] {

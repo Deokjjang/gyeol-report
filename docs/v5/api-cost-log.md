@@ -89,8 +89,10 @@
 | 2026-11-04 13:29 | P6d 연애 · 문채린(연애 중) r1 수리 | anthropic/claude-sonnet-5-5 | 5153 | 0 | 1978 | 0.03008600 | complete | req_011CghFwaX1QnyYNeZBSZf5i | 7.30270595 |
 | 2026-11-04 13:31 | P6d 궁합 사업 파트너 · 남궁현×백은솔 r1 | anthropic/claude-sonnet-5-5 | 20074 | 6800 | 11590 | 0.15672800 | complete | req_011CghFy2y1HumKEU7GqBnbo | 7.45943395 |
 | 2026-11-04 13:31 | P6d 궁합 사업 파트너 · 남궁현×백은솔 r1 수리 | anthropic/claude-sonnet-5-5 | 2967 | 0 | 563 | 0.01156400 | complete | req_011CghG5U2JkBR39X7aC4Eez | 7.47099795 |
+| 2026-11-04 13:38 | P6d 커리어 · 권태오(구직) r2 | anthropic/claude-sonnet-5-5 | 22507 | 0 | 13467 | 0.18308400 | complete | req_011CghGSrxHEBN49Vn9Gtq2v | 7.65408195 |
+| 2026-11-04 13:38 | P6d 커리어 · 권태오(구직) r2 수리 | anthropic/claude-sonnet-5-5 | 8421 | 0 | 3506 | 0.05190200 | complete | req_011CghGa5eiTwNm2AvEsqTjh | 7.70598395 |
 
-누적 합계: **$7.47099795** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+누적 합계: **$7.70598395** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.
