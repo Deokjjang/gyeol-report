@@ -1,0 +1,395 @@
+{
+ "case": "pair-business",
+ "label": "궁합 사업 파트너 · 남궁현×백은솔",
+ "reportId": "report_08fd2462c70847cfaceecfc1c1b3bb99",
+ "status": "COMPLETED",
+ "wallMs": 687,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 9,
+ "coverLine": "큰 나무가 불빛을 타오르게 돕는 사이",
+ "keySpans": 0,
+ "sections": 41,
+ "chars": 8896,
+ "chapterChars": [
+  1211,
+  923,
+  974,
+  894,
+  813,
+  1033,
+  1148,
+  1186,
+  714
+ ],
+ "chapters": 9,
+ "deterministicChapters": [
+  "1:missing",
+  "2:missing",
+  "3:missing",
+  "4:missing",
+  "5:missing",
+  "6:missing",
+  "7:missing",
+  "8:missing",
+  "9:missing"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 39,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 6,
+ "infoByKind": {
+  "claim": 5,
+  "scene": 0,
+  "advice": 1
+ },
+ "infoPairs": [
+  {
+   "a": "음착양차살은 일정표와 준비물을 전날 정리해 두는 쪽인데 ENFP는 큰 방향만 잡고 세부는 닥쳐서 정하는 편입니다.",
+   "b": "남궁현님은 일정표와 준비물을 전날 정리해 두는 편입니다.",
+   "at": [
+    "2.3",
+    "4.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "음착양차살은 일정표와 준비물을 전날 정리해 두는 쪽인데 ENFP는 큰 방향만 잡고 세부는 닥쳐서 정하는 편입니다.",
+   "b": "백은솔님은 큰 방향만 잡고 세부는 닥쳐서 정하는 편입니다.",
+   "at": [
+    "2.3",
+    "4.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "월지·일지에 있거나 비겁이 많으면 붙잡는 힘이 커집니다.",
+   "b": "월지나 일지에 있거나 비겁이 많으면 붙잡는 힘이 커져서, 경쟁심과 경계심이 함께 올라갑니다.",
+   "at": [
+    "4.5",
+    "6.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "경쟁심과 경계심이 함께 올라갑니다.",
+   "b": "월지나 일지에 있거나 비겁이 많으면 붙잡는 힘이 커져서, 경쟁심과 경계심이 함께 올라갑니다.",
+   "at": [
+    "4.5",
+    "6.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "정관이 둘 이상이거나 월지 본기가 정관이면 질서와 책임이 생활의 뼈대가 됩니다.",
+   "b": "비견이 둘 이상이거나 월지 본기가 비견이면 자립심이 생활의 중심에 섭니다.",
+   "at": [
+    "5.1",
+    "9.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "이번 달에는 사람들 사이에서 정관을 한 번 의식해서 써 보세요.",
+   "b": "이번 달에는 사람들 사이에서 화 과다를 한 번 의식해서 써 보세요.",
+   "at": [
+    "9.1",
+    "9.4"
+   ],
+   "kind": "advice"
+  }
+ ],
+ "briefCopy": 0.665,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 623,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cachedInput": 0
+ },
+ "costUsd": 0,
+ "costKrw": 0,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "error",
+   "error": "dry",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 25183,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  }
+ ],
+ "writer": null,
+ "promptVersion": "writer-prompt-v5-21",
+ "knowledgeVersion": "knowledge-v5:567c4a02b174",
+ "p6b": {
+  "chars": 9441,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 11,
+   "misses": [
+    "겁살",
+    "갑신",
+    "정관",
+    "현침살",
+    "편관",
+    "정미",
+    "비견",
+    "반안살",
+    "음착양차살",
+    "식신",
+    "화 과다"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 5,
+    "paragraphs": [
+     2,
+     2,
+     2,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     1,
+     3,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 5,
+    "paragraphs": [
+     4,
+     1,
+     1,
+     2,
+     1
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     1,
+     1,
+     1,
+     4
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     2,
+     1,
+     1,
+     5
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     1,
+     1,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 2,
+  "paragraphsOk": 11,
+  "sectionsTotal": 41,
+  "byRule": {},
+  "coreImage": "큰 나무가 불빛을 타오르게 돕는 사이",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 4,
+   "monthNow": 0
+  },
+  "cover": "fallback",
+  "flags": {
+   "time_deictic": 3
+  },
+  "removed": 0,
+  "repaired": 0,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "time_deictic": 3
+  },
+  "repairCalls": 0,
+  "redoChapters": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "repairTargets": 0,
+  "droppedParagraphs": 3
+ },
+ "ledger": {
+  "seeds": [],
+  "angles": [
+   "shinsal:TWELVE_GEOPSAL:fusion:ESTJ",
+   "dayPillar:甲申:fusion:ESTJ",
+   "tenGod:正官:fusion:ESTJ",
+   "shinsal:HYEONCHIMSAL:fusion:ESTJ",
+   "dayPillar:丁未:fusion:ENFP",
+   "tenGod:比肩:fusion:ENFP",
+   "shinsal:TWELVE_BANANSAL:fusion:ENFP",
+   "shinsal:EUMCHAK_YANGCHA:fusion:ENFP",
+   "element:FIRE:STRONG:fusion:ENFP",
+   "shinsal:TWELVE_GEOPSAL:shadow",
+   "dayPillar:甲申:meaning",
+   "dayPillar:丁未:meaning",
+   "tenGod:比肩:meaning",
+   "shinsal:EUMCHAK_YANGCHA:meaning",
+   "shinsal:TWELVE_BANANSAL:meaning",
+   "shinsal:TWELVE_GEOPSAL:meaning",
+   "tenGod:正官:meaning",
+   "shinsal:HYEONCHIMSAL:meaning",
+   "element:FIRE:STRONG:meaning"
+  ],
+  "evidence": [
+   "feature:shinsal:TWELVE_GEOPSAL",
+   "feature:dayPillar:甲申",
+   "feature:tenGod:正官",
+   "feature:shinsal:HYEONCHIMSAL",
+   "feature:dayPillar:丁未",
+   "feature:tenGod:比肩",
+   "feature:shinsal:TWELVE_BANANSAL",
+   "feature:shinsal:EUMCHAK_YANGCHA",
+   "feature:element:FIRE:STRONG"
+  ],
+  "newShare": 1
+ }
+}

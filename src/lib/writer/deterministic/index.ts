@@ -138,7 +138,8 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
 }
 
 function evidenceSection(m: Extract<Material, { kind: "evidence" }>): BookSection | null {
-  const facts = m.facts.filter(f => !/보류|보지 않습니다/.test(f)).map(f => noHan(f)).flatMap(factSentences);
+  // 작가 재료 줄(상황 씨앗·상태 표지·분기 이름·쓰는 법)은 결정론 문장으로 옮기지 않는다(P6d G: "상황 씨앗은 …"이 본문에 새어 나왔다).
+  const facts = m.facts.filter(f => !/보류|보지 않습니다/.test(f) && !/^(상황 씨앗|상태|관계 상태|분기 이름|첫 달|위험 신호 체크리스트|근거 없음|부업·창업 적합 체크)/.test(f)).map(f => noHan(f)).flatMap(factSentences);
   if (!facts.length) return null;
   return { heading: EVIDENCE_HEAD[m.key] ?? "타고난 근거", paragraphs: [join(...facts)] };
 }
