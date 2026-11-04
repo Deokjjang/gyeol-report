@@ -153,7 +153,7 @@ describe("1-5 사실 대조(새 검사)", () => {
 
 describe("1-7 핵심 이미지", () => {
   it("이미지 대장 명사·피할 이미지", () => {
-    expect(imageNoun("빗속에서도 꺼지지 않는 캠핑 랜턴")).toBe("랜턴"); expect(imageNoun("큰 나무가 돕는 사이")).toBe("사이"); expect(imageNoun("작은 불")).toBe("");
+    expect(imageNoun("빗속에서도 꺼지지 않는 캠핑 랜턴")).toBe("랜턴"); expect(imageNoun("큰 나무가 돕는 사이")).toBe("사이"); expect(imageNoun("강변 숲을 적시며 흐르는 큰 강")).toBe("큰 강");
     const l = { version: "t", built: "", byDayPillar: { 丁丑: [{ line: "캠핑 랜턴", noun: "랜턴", source: "x" }, { line: "돕는 사이", noun: "사이", source: "x" }] } };
     expect(avoidImagesFor(["丁丑"], l)).toEqual(["랜턴"]); expect(avoidNounsIn("카페 랜턴 불빛", ["랜턴"])).toEqual(["랜턴"]);
     expect(B.sodam.chart.avoidImages).toEqual(expect.arrayContaining(["랜턴"]));

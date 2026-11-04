@@ -12,9 +12,9 @@ export const IMAGE_LEDGER = ledger as ImageLedger;
 export function imageNoun(line: string): string {
   const words = line.replace(/[.,!?·"“”'‘’⟪⟫]/g, " ").trim().split(/\s+/).filter(Boolean);
   const raw = words.at(-1) ?? "", stripped = raw.replace(/(을|를|은|는|의|에|와|과|도)$/, "");
-  // 한 글자 낱말(불·길·해·손)은 너무 흔해 피할 명사로 쓰지 않는다(빈 문자열).
+  // 한 글자 낱말(강·흙·불·손)은 혼자서는 너무 흔하다 → 앞 낱말과 함께("큰 강", "화단 흙"): 그 두 낱말이 이어 나올 때만 피한다.
   const last = stripped.length >= 2 ? stripped : raw;
-  return last.length >= 2 ? last : "";
+  return last.length >= 2 ? last : words.slice(-2).join(" ");
 }
 /** 그림이 아닌 흔한 말(관계·추상 낱말): 피할 이미지로 쓰지 않는다(궁합 표지 "…돕는 사이" 등). */
 const NOT_IMAGE = new Set(["사이", "사람", "사업", "길", "이야기", "온도", "마음", "힘", "책", "관계", "두 사람", "하루", "시간", "순간", "방식", "자리", "일"]);
