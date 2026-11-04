@@ -99,6 +99,8 @@ export async function v4People(payload: ReportInputPayload, policyAt: string): P
 export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens" | "cache" | "costCapUsd">> & {
   /** book:replay(최종판 0-3): 저장 원문으로만 다시 돌린다. 저장본이 없는 수리·재작성은 부르지 않고(호출 0), 걸린 소제목·문단도 빼지 않고 기록만 남긴다. */
   readonly replay?: boolean;
+  /** 최종판 4 실질 결함 고침(tools/final/fix-sections.ts): 이 소제목들을 사유와 함께 재작성 대상에 더한다(검사 깃발과 같은 재작성 1회). 작가는 다시 부르지 않는다. */
+  readonly rewriteSections?: readonly { readonly chapter: number; readonly section: number; readonly reason: string }[];
   readonly provider?: LlmProvider; readonly model?: string; readonly people?: (payload: ReportInputPayload, policyAt: string) => Promise<BookPerson[]>;
   /** 대체 모델(P6b A-2). undefined면 환경 설정(LLM_FALLBACK, 기본 openai/gpt-6.1-terra), null이면 대체 없음. 키를 넣으면 그 키로 부른다. */
   readonly fallback?: (LlmTarget & { readonly apiKey?: string }) | null;
@@ -342,6 +344,10 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   let remaining = lintBook(fixed, lctx);
   let rewrite = { targets: 0, applied: 0, calls: 0 };
   const rewriteTargets = hardSections(remaining, fixed, HARD_RULES);
+  for (const f of deps.rewriteSections ?? []) {
+    const t = rewriteTargets.find(x => x.chapter === f.chapter && x.section === f.section), flag: LintFlag = { chapter: f.chapter, section: f.section, paragraph: -1, rule: "scene_owner", sentence: "", hint: f.reason };
+    if (t) t.flags.push(flag); else if (fixed.find(c => c.n === f.chapter)?.sections[f.section]) rewriteTargets.push({ chapter: f.chapter, section: f.section, flags: [flag] });
+  }
   if (run?.writer && rewriteTargets.length && !run.stale) {
     try { const before = run.calls.length; const r = await rewritePass(opts(), run, brief, fixed, rewriteTargets, writerBrief); run = r.run; fixed = tidyBook(r.chapters, lctx).chapters; rewrite = { targets: rewriteTargets.length, applied: r.applied, calls: run.calls.length - before }; remaining = lintBook(fixed, lctx); }
     catch { /* 재작성 실패: 아래에서 소제목을 뺀다 */ }
