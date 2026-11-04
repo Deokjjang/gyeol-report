@@ -92,7 +92,11 @@ export function seedLabels(materials: Iterable<string>, min = 7): Set<string> {
   const out = new Set<string>();
   for (const t of materials) {
     if (!/[×→]/.test(t)) continue;
-    for (const part of t.split(/[×→\/]| · |, /)) { const n = norm(part.replace(/^[^:：]{1,14}[:：]\s*/, "")); if (n.length >= min && n.length <= 24) out.add(n); }
+    for (const part of t.split(/[×→\/]| · |, /)) {
+      // 다섯 힘 세기("규칙의 힘(관성) 약")는 사실이라 그대로 써도 된다(최종판: P6d 커리어 1장 오탐).
+      if (/(내 방식의 힘|만드는 힘|값을 받는 힘|규칙의 힘|배우는 힘|비겁|식상|재성|관성|인성)[^가-힣]*\(?[가-힣]*\)?\s*(강|보통|약)\s*$/.test(part.trim())) continue;
+      const n = norm(part.replace(/^[^:：]{1,14}[:：]\s*/, "")); if (n.length >= min && n.length <= 24) out.add(n);
+    }
   }
   return out;
 }
@@ -188,7 +192,7 @@ export function plainWords(text: string): { text: string; count: number } {
   t = sub(t, /몰려 (올|온|오는|와)(?![가-힣])/g, "몰려$1");
   t = sub(t, /때 일수록/g, "때일수록");
   // 이중 표기: "충 축미충" → "축미충"(관계 이름 앞에 같은 관계 글자를 한 번 더 썼다).
-  t = sub(t, /(?<![가-힣])(충|합|형|파|해) ([가-힣]{2}\1)(?![가-힣])/g, "$2");
+  t = sub(t, /(?<![가-힣])(충|합|형|파|해) ([가-힣]{2}\1)(?=[은는이가을를의에도과와로]|\s|$|[,.])/g, "$2");
   // 전문어(1-14): "내 힘의 세기는 매우 신약" → "혼자 버티는 힘이 아주 여린 편", 중화 → "세지도 약하지도 않은 가운데".
   t = sub(t, /(매우 |아주 |조금 )?신약한 사주/g, (_a, deg: string | undefined) => `혼자 버티는 힘이 ${deg ? "아주 " : ""}여린 사주`);
   t = sub(t, /(?:내 힘의 세기는|일간의 힘이|일간의 힘은|내 힘은) (매우 |아주 |조금 )?신약(?=이|으로|인|,|\.)/g, (_a, deg: string | undefined) => `혼자 버티는 힘이 ${deg ? "아주 " : ""}여린 편`);
@@ -210,7 +214,7 @@ export function careerGroupNames(text: string, defined: Set<string>, heading = f
   const sentences = text.split(/(?<=[.!?])\s/);
   const out = sentences.map(sen => {
     const others = (sen.match(GROUP_CTX) ?? []).length;
-    return sen.replace(/(내 방식의 힘|만드는 힘|값을 받는 힘|규칙의 힘|배우는 힘)(\((비겁|식상|재성|관성|인성)\))?|(?<![가-힣(·])(비겁|식상|재성|관성|인성)(?![가-힣)]|하|한)/g, (all, easy: string | undefined, paren: string | undefined, pg: string | undefined, bare: string | undefined, off: number) => {
+    return sen.replace(/(내 방식의 힘|만드는 힘|값을 받는 힘|규칙의 힘|배우는 힘)(\((비겁|식상|재성|관성|인성)\))?|(?<![가-힣(·])(비겁|식상|재성|관성|인성)(?=[이가은는을를의도과와로만에]|\s|[,.·]|$)/g, (all, easy: string | undefined, paren: string | undefined, pg: string | undefined, bare: string | undefined, off: number) => {
       if (easy) {
         const g = Object.keys(GROUP_EASY_NAME).find(x => GROUP_EASY_NAME[x] === easy)!;
         if (paren || defined.has(g) || heading) { defined.add(g); return all; }

@@ -172,6 +172,7 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (ctx.presence && L.elementAbsenceClaims(s, ctx.presence).length) return "element_claim";
   // 최종판 1-5: 오행 개수(없다·가장 많다·가장 적다). 궁합은 한 사람 이름만 나온 문장을 그 사람 값과 견준다.
   if (ctx.presence && L.elementCountClaims(s, ctx.presence)) return "element_count";
+  if (ctx.presenceBy && L.elementOwnedClaims(s, ctx.presenceBy)) return "element_count";
   if (ctx.presenceBy) for (const p of ctx.presenceBy) if (s.includes(p.name) && !ctx.presenceBy.some(o => o !== p && s.includes(o.name)) && (L.elementAbsenceClaims(s, p.presence).length || L.elementCountClaims(s, p.presence))) return "element_count";
   if (ctx.dayunPhase && L.dayunPhaseClaim(s, ctx.dayunPhase)) return "dayun_claim";
   if (ctx.stars?.spouse && L.starClaim(s, "배우자", ctx.stars.spouse)) return "star_claim";
@@ -248,7 +249,13 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     const pa = ctx.mbtiPlain[a], pb = ctx.mbtiPlain[b]; if (!pa || !pb) return all;
     fnJoin++; introduced.add(a); introduced.add(b);
     return `${pa}(${a})${hasBatchim(`${pa}(${a})`) ? "과" : "와"} ${pb}(${b})`;
-  }).replace(/([가-힣]{2,4}) \1(?=[과와은는이가을를의에도]|\s|$|[,.])/g, "$1");
+  }).replace(/([가-힣]{2,4})(\((?:Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\))? \1(?=[과와은는이가을를의에도]|\s|$|[,.])/g, "$1$2");
+  // 작가가 쓴 "쉬운 이름(약어)"도 바로 앞(24자)에 그 이름의 말이 있으면 "성향(약어)"로("지난 경험을 기준점으로 삼는 지난 경험 기억(Si)", 최종판 1-14).
+  const fixEcho = (p: string) => p.replace(new RegExp(`(${plains.length ? plains.join("|") : "(?!)"})\\((Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\\)`, "g"), (all, plain: string, code: string, offset: number, whole: string) => {
+    const before = whole.slice(Math.max(0, offset - 24), offset);
+    if (!plain.split(/\s+/).some(w => w.length >= 2 && before.includes(w))) return all;
+    mbtiCode++; introduced.add(code); return `성향(${code})`;
+  });
   const fixCodes = (p: string) => p.replace(/(?<![A-Za-z(])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z)])(\(([^()]{2,24})\))?(은|는|이|가|을|를|과|와)?/g, (all, code: string, _g: string, inner: string | undefined, particle: string | undefined, offset: number, whole: string) => {
     // 괄호 안이면 그대로(쉬운말(Te)).
     const open = whole.lastIndexOf("(", offset), close = whole.lastIndexOf(")", offset);
@@ -269,7 +276,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (L.MYEONGRI_PREFIX.test(q)) { const r = L.dropMyeongriPrefix(q); if (r !== q) prefix++; q = r; }
       // 장 번호 참조("7장에서 본 것처럼,")는 뜻을 바꾸지 않고 뗄 수 있는 꼴만 뗀다(P6d C). 나머지는 검사가 수리로 보낸다.
       if (D.CHAPTER_REF.test(q)) { const r = D.dropChapterRef(q); if (r !== q) prefix++; q = r; }
-      q = fixCodes(fixJoins(q));
+      q = fixEcho(fixCodes(fixJoins(q)));
       const h = E.stripHanja(q); hanja += h.count; q = h.text;
       const nn = E.nativeNumbers(q); numbers += nn.count; q = nn.text;
       const pw = E.plainWords(q); words += pw.count; q = pw.text;

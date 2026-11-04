@@ -162,10 +162,20 @@ export function elementCountClaims(sentence: string, presence: ElementPresence):
   const counts = Object.values(presence).map(p => p.surface), max = Math.max(...counts), min = Math.min(...counts);
   for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
     const p = presence[e]; if (!p) continue;
-    const name = `(?:${w.native}(?:\\(${w.reading}\\))?(?: ?기운| ?글자)?|${w.reading} ?(?:기운|글자)|${HANJA_EL[e]})(?![가-힣])`;
+    const name = `(?:${w.native}(?:\\(${w.reading}\\))?(?: ?기운| ?글자)?|${w.reading} ?(?:기운|글자)|${HANJA_EL[e]})(?=[이가은는을를의도과와로만에]|\\s|[,.]|$)`;
     if (p.surface > 0 && new RegExp(`(?<![가-힣])없는 (?:${name}|${w.native})|(?<![가-힣])${name}(?:이|가|은|는)? (?:하나도|전혀|아예) 없`).test(sentence)) return `${e}:없음≠${p.surface}`;
     if (p.surface < max && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:많|센|강하|두텁)|가장 많은 (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 많음≠${p.surface}/${max}`;
     if (p.surface > min && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:적|모자라|부족|약하)|가장 (?:적은|모자란|부족한|약한) (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 적음≠${p.surface}/${min}`;
+  }
+  return null;
+}
+
+/** 최종판 1-5 궁합: 두 사람 이름이 함께 나온 문장도 "○○님에게 없는 쇠"처럼 이름 바로 뒤 없음 꼴은 그 사람 값과 견준다(P6e "백은솔님에게 없는 쇠", 庚 1개). */
+export function elementOwnedClaims(sentence: string, people: readonly { readonly name: string; readonly presence: ElementPresence }[]): string | null {
+  for (const p of people) for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
+    const pr = p.presence[e]; if (!pr || pr.surface === 0) continue;
+    const re = new RegExp(`${p.name}님?(에게는|에게|은|는|의 사주에는|의 원국에는)\\s?(없는|하나도 없는|전혀 없는|빠진) (${w.native}|${w.reading} ?(기운|글자))`);
+    if (re.test(sentence)) return `${p.name}:${e}:없음≠${pr.surface}`;
   }
   return null;
 }

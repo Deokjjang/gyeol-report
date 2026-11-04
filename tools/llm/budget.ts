@@ -13,9 +13,11 @@ import { computeCostUsd, priceFor, streamCompletion, type StreamCompletionInput,
 import type { RawEntry, WriterCache } from "../../src/lib/writer/runner";
 import { ROOT } from "./env";
 
-export const LEDGER_FILE = join(ROOT, ".cache/llm-ledger.json");
-export const RAW_DIR = join(ROOT, ".cache/writer");
-export const COST_LOG = join(ROOT, "docs/v5/api-cost-log.md");
+/** 경로(시험은 LLM_CACHE_DIR·LLM_COST_LOG로 임시 폴더를 쓴다 — 실제 원장을 건드리지 않게). */
+const cacheDir = () => process.env.LLM_CACHE_DIR ?? join(ROOT, ".cache");
+const ledgerFile = () => join(cacheDir(), "llm-ledger.json");
+const rawDir = () => join(cacheDir(), "writer");
+const costLog = () => process.env.LLM_COST_LOG ?? join(ROOT, "docs/v5/api-cost-log.md");
 /** 권당 실측 최대(USD): P6e Sonnet 5.5 작가 + 수리 + 재작성 최대 $0.2560(권태오 r4). 시작 전 예상 = 이 값 × 1.3 × 권 수. */
 export const MEASURED_MAX_PER_BOOK = 0.256;
 /** 장 하나만 만들 때(시험 1장·장 단위 재생성) 예상: 권당 최대 ÷ 장 수(9) × 2(여유). */
@@ -26,10 +28,10 @@ export type LedgerCall = { readonly at: string; readonly scope: string; readonly
 export type Ledger = { version: 1; scopes: Record<string, { cap: number; createdAt: string; note: string }>; calls: LedgerCall[]; refusals: { at: string; scope: string; run: string; stage: string; reason: string; key: string | null }[] };
 
 export function readLedger(): Ledger {
-  if (!existsSync(LEDGER_FILE)) return { version: 1, scopes: {}, calls: [], refusals: [] };
-  return JSON.parse(readFileSync(LEDGER_FILE, "utf8")) as Ledger;
+  if (!existsSync(ledgerFile())) return { version: 1, scopes: {}, calls: [], refusals: [] };
+  return JSON.parse(readFileSync(ledgerFile(), "utf8")) as Ledger;
 }
-function writeLedger(l: Ledger) { mkdirSync(join(ROOT, ".cache"), { recursive: true }); writeFileSync(LEDGER_FILE, JSON.stringify(l, null, 1)); }
+function writeLedger(l: Ledger) { mkdirSync(cacheDir(), { recursive: true }); writeFileSync(ledgerFile(), JSON.stringify(l, null, 1)); }
 export const spent = (l: Ledger, scope: string, run?: string) => l.calls.filter(c => c.scope === scope && (!run || c.run === run)).reduce((a, c) => a + c.costUsd, 0);
 
 /** 범위를 만든다(이미 있으면 상한을 바꾸지 않는다: 상한 올리기는 승인 뒤 손으로). */
@@ -41,13 +43,13 @@ export function ensureScope(scope: string, cap: number, note: string): { cap: nu
 
 const kst = () => new Date(Date.now() + 9 * 3_600_000).toISOString().slice(0, 16).replace("T", " ");
 function appendCostRow(c: LedgerCall) {
-  let text = readFileSync(COST_LOG, "utf8");
+  let text = readFileSync(costLog(), "utf8");
   const tableEnd = text.indexOf("\n누적 합계");
   let cum = Number(text.match(/누적 합계: \*\*\$([\d.]+)\*\*/)?.[1] ?? 0);
   cum += c.costUsd;
   const row = `| ${kst()} | ${c.stage}${c.kind !== "first" ? ` ${c.kind}` : ""} | ${c.provider}/${c.model} | ${c.input} | ${c.cachedInput} | ${c.output} | ${c.costUsd.toFixed(8)} | ${c.finish} | ${c.requestId ?? "-"} | ${cum.toFixed(8)} |`;
   text = text.slice(0, tableEnd) + "\n" + row + text.slice(tableEnd);
-  writeFileSync(COST_LOG, text.replace(/누적 합계: \*\*\$[\d.]+\*\*/, `누적 합계: **$${cum.toFixed(8)}**`));
+  writeFileSync(costLog(), text.replace(/누적 합계: \*\*\$[\d.]+\*\*/, `누적 합계: **$${cum.toFixed(8)}**`));
 }
 
 /** 이 호출의 최악 비용(입력 전부 + 출력 상한, 캐시 할인 없음). 가격표에 없으면 Infinity(거절). */
@@ -74,15 +76,15 @@ export function budgetGate(o: GateOptions): Gate {
     return { text: "", finishReason: "error", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, error: { code: "budget_refused", message: reason } };
   };
   const cache: WriterCache = {
-    get(key) { const f = join(RAW_DIR, `${key}.json`); return existsSync(f) ? (JSON.parse(readFileSync(f, "utf8")) as { entry: RawEntry }).entry : null; },
-    put(entry, meta) { mkdirSync(RAW_DIR, { recursive: true }); writeFileSync(join(RAW_DIR, `${entry.key}.json`), JSON.stringify({ entry, at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, system: meta.system, user: meta.user }, null, 1)); },
+    get(key) { const f = join(rawDir(), `${key}.json`); return existsSync(f) ? (JSON.parse(readFileSync(f, "utf8")) as { entry: RawEntry }).entry : null; },
+    put(entry, meta) { mkdirSync(rawDir(), { recursive: true }); writeFileSync(join(rawDir(), `${entry.key}.json`), JSON.stringify({ entry, at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, system: meta.system, user: meta.user }, null, 1)); },
   };
   // runner는 get이 비면 곧바로 stream을 부른다: 그 키를 기억했다가 원장 중복 검사에 쓴다.
   const wrappedCache: WriterCache = { get: k => { pendingKey = k; return cache.get(k); }, put: (e, m) => cache.put(e, m) };
   const stream: typeof streamCompletion = async input => {
     const l = readLedger(), sc = l.scopes[o.scope];
     if (!sc) return refuse(`범위 없음: ${o.scope}`);
-    if (pendingKey && l.calls.some(c => c.key === pendingKey) && !existsSync(join(RAW_DIR, `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
+    if (pendingKey && l.calls.some(c => c.key === pendingKey) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
     const worst = worstCost(input), s = spent(l, o.scope), r = spent(l, o.scope, o.run);
     if (s + worst > sc.cap) return refuse(`범위 상한 초과 예상: 누적 $${s.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 상한 $${sc.cap}`);
     if (r + worst > o.runBudget) return refuse(`실행 예산 초과 예상: 이번 실행 $${r.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 예산 $${o.runBudget}`);
