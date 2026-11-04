@@ -138,6 +138,10 @@ export function pillarClaims(sentence: string, facts: PositionTenGods): string |
       const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!]|그리고|하고 /)[0].slice(0, 18);
       const tg = TEN_GODS.find(t => new RegExp(`^[^가-힣]{0,3}(의|에|에는|엔|은|는|이|가|에 있는|에 앉은|에 놓인|에 자리한)?\\s?(\\([^)]*\\)\\s?)?${t}`).test(tail.trim()));
       if (tg && !allowed.includes(tg)) return `${pos}:${tg}`;
+      // 최종판 5: 거꾸로 된 어순 "정재가 월간에 앉은"(장덕민 커리어 5장, 월간은 정관). 자리 앞 십성 + 이/가/은/는, 자리 뒤 "에 앉/있/자리/놓/들".
+      const head = sentence.slice(Math.max(0, (m.index ?? 0) - 10), m.index ?? 0);
+      const before = TEN_GODS.find(t => new RegExp(`${t}(\\([^)]*\\))?(이|가|은|는) ?$`).test(head));
+      if (before && /^(의 자리)?에 ?(앉|있|자리|놓|들)/.test(sentence.slice((m.index ?? 0) + m[0].length)) && !allowed.includes(before)) return `${pos}:${before}`;
     }
   }
   return null;

@@ -49,12 +49,12 @@
 
 | 책 | 수리 대상 수 | 규칙별 |
 |---|---|---|
-| p6d/sodam-full | 6 | seed_copy 4 · awkward 1 · notice_repeat 1 |
-| p6d/taeo-career | 24 | group_name 2 · pillar_claim 1 · orphan_start 1 · mbti_misattr 5 · notice_repeat 9 · guide_copy 1 · awkward 1 · seed_copy 1 · db_copy 1 · evidence_missing 2 |
+| p6d/sodam-full | 8 | element_count 2 · seed_copy 4 · awkward 1 · notice_repeat 1 |
+| p6d/taeo-career | 24 | pillar_claim 1 · orphan_start 1 · mbti_misattr 5 · notice_repeat 9 · group_name 1 · guide_copy 1 · awkward 1 · seed_copy 1 · db_copy 1 · evidence_missing 3 |
 | p6d/chaerin-love | 11 | orphan_start 1 · seed_copy 6 · group_claim 1 · notice_repeat 2 · safety:internal_term 1 |
 | p6d/pair-business | 2 | feature_owner 1 · safety:score_mismatch 1 |
-| p6e/sodam-full | 3 | nickname 1 · db_copy 1 · notice_repeat 1 |
-| p6e/taeo-career | 20 | group_name 8 · group_claim 3 · notice_repeat 5 · db_copy 2 · safety:internal_term 1 · seed_copy 1 |
-| p6e/chaerin-love | 7 | group_claim 1 · notice_repeat 3 · safety:internal_term 2 · safety:fact_children 1 |
+| p6e/sodam-full | 5 | nickname 1 · element_count 2 · db_copy 1 · notice_repeat 1 |
+| p6e/taeo-career | 16 | group_claim 3 · group_name 3 · notice_repeat 5 · db_copy 2 · safety:internal_term 1 · seed_copy 1 · evidence_missing 1 |
+| p6e/chaerin-love | 7 | group_claim 1 · notice_repeat 3 · safety:internal_term 1 · safety:fact_children 2 |
 | p6e/pair-business | 2 | element_count 1 · notice_repeat 1 |
 | p6e/seoha-love-single | 5 | farming 1 · notice_repeat 2 · safety:internal_term 1 · safety:fact_children 1 |
