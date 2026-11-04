@@ -238,7 +238,8 @@ export function careerGroupNames(text: string, defined: Set<string>, heading = f
 const VARIANT = /배움과 보호의 힘|배움의 힘|보호의 힘|돈을 (쫓|좇)는 힘|돈을 버는 힘|재물의 힘|표현(하는|의) 힘|혼자 서는 힘|규율의 힘/;
 export function groupNameVariant(sentence: string): string | null {
   const v = sentence.match(VARIANT)?.[0]; if (v) return v;
-  for (const m of sentence.matchAll(/([가-힣]+(?: [가-힣]+){0,2}) 힘\((비겁|식상|재성|관성|인성)\)/g)) if (`${m[1]} 힘` !== GROUP_EASY_NAME[m[2]] && !GROUP_EASY_NAME[m[2]].endsWith(`${m[1]} 힘`)) return `${m[1]} 힘(${m[2]})`;
+  // 앞 낱말까지 잡히므로("당신은 값을 받는 힘(재성)") 정한 이름으로 끝나면 맞는 이름이다(최종판 4: 장덕민 커리어 거짓 깃발 4건).
+  for (const m of sentence.matchAll(/([가-힣]+(?: [가-힣]+){0,2}) 힘\((비겁|식상|재성|관성|인성)\)/g)) { const said = `${m[1]} 힘`, name = GROUP_EASY_NAME[m[2]]; if (!said.endsWith(name) && !name.endsWith(said)) return `${said}(${m[2]})`; }
   return null;
 }
 

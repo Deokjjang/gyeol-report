@@ -185,6 +185,9 @@ describe("1-9·1-10·1-14·1-15", () => {
     expect(t.paragraphs[0]).toBe("내 방식의 힘(비겁)이 강하고 만드는 힘(식상)도 강해요. 내 방식의 힘은 앞장서게 해요.");
     expect(E.careerGroupNames("인성 면접을 준비해요.", new Set()).text).toBe("인성 면접을 준비해요.");
     expect(rulesOf(B.taeo, "배움과 보호의 힘(인성)이 받쳐 줘요.")).toContain("group_name");
+    // 정한 이름 앞에 다른 낱말이 붙어도 맞는 이름이다(장덕민 커리어 거짓 깃발).
+    expect(rulesOf(B.taeo, "당신은 값을 받는 힘(재성)이 강해서 거래를 잘 이끌어요.")).not.toContain("group_name");
+    expect(rulesOf(B.taeo, "규칙의 힘(관성)은 보통이고 배우는 힘(인성)은 약합니다.")).not.toContain("group_name");
   });
   it("표기 정리: 숫자·하이픈·되풀이·맞춤법·이중 표기·전문어", () => {
     const t = (x: string) => tidyBook([{ n: 2, id: "x", title: "x", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: [x] }] }], { mbtiPlain: { Fi: "가치 기준", Se: "지금 이 순간 감각", Si: "지난 경험 기억" }, monthChapters: new Set() }).chapters[0].sections[0].paragraphs[0];

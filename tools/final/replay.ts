@@ -1,5 +1,5 @@
 /**
- * pnpm book:replay <책> [--out <dir>]   (최종판 0-3, 호출 0)
+ * pnpm book:replay <책> [--out <dir>] [--flags]   (최종판 0-3, 호출 0. --flags = 발행 본문의 남은 깃발 문장)
  *  <책> = 스냅샷 파일(*.snapshot.json) 또는 로컬 DB reportId(report_…).
  *  - 원문이 있는 책(meta.raw, 제6판): 저장 원문으로 같은 발행 함수(buildV5Snapshot)를 replay 모드로 다시 돌린다 — 작가·수리 원문은 저장본에서만,
  *    저장본이 없는 호출은 부르지 않는다(거절 stream). 검사·표기·렌더가 바뀐 경우 이 경로만 쓴다. 결과: <out>/<id>.snapshot.json · .final.md · .replay.json
@@ -95,6 +95,8 @@ async function main() {
   const summary = { id, calls: built.meta.calls.length, cached: built.meta.calls.filter(c => c.cached || c.requestId === "replay").length, paidCalls: calls.length, refused: refused.length, costUsd: built.meta.costUsd, remaining: p6c?.remaining, droppedSections: p6c?.droppedSections?.length ?? 0, cover: p6c?.cover };
   writeFileSync(join(out, `${id}.replay.json`), JSON.stringify(summary, null, 1));
   console.log(JSON.stringify(summary));
+  // --flags: 발행된 본문(렌더 뒤)에 새 검사를 돌려 남은 깃발 문장을 보여 준다(판정용, 호출 0).
+  if (args.includes("--flags")) for (const f of lintStored(built.snapshot as never).flags) console.log(`  ${f.chapter}.${f.section}.${f.paragraph} ${f.rule}${f.detail ? `(${f.detail})` : ""}: ${f.sentence.slice(0, 160)}`);
   if (summary.paidCalls || summary.costUsd) { console.error("replay가 실호출을 했다(있으면 안 됨)"); process.exit(1); }
 }
 if (process.argv[1]?.endsWith("replay.ts")) void main().catch(e => { console.error(String(e instanceof Error ? e.message : e)); process.exit(1); });
