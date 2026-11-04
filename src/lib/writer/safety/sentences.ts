@@ -39,6 +39,8 @@ const CHILD = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|를|의|이|�
 const CHILD_TERM = /자녀 ?(자리|별|궁|성)|어린아이|아이처럼|아이 같은/g;
 /** 부모 역할 장(자녀 미입력·없음)에서도 잡는 꼴: 아이가 이미 있다고 단정하는 말(P6e — 그 장의 가정·명식 설명 문장은 통과). */
 const CHILD_EXIST = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은|도)? ?(있어|있고|있는|있습니다|있으니|있다|있지만|생겼|태어났)|(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은)? [^.?!]{0,12}(다니(는|고|며|니)|자라고 있)|우리 아이|(아이|자녀)를 (키우고 있|키우는 지금|두고 있|둔 지금)|아이 (둘|하나|셋)을? 키우/;
+/** 최종판 5: 자녀 미입력인데 "없다"고 단정(장덕민 연애 8장 "지금은 자녀가 없으니"). 입력이 없음(none)이면 쓸 수 있다. */
+const CHILD_ABSENT = /(?<![가-힣])(아이|자녀|아들|딸)(가|는|도)? ?(없으니|없어서|없지만|없는 지금|없습니다|없어요|없다)/;
 const JOB_EMPLOYED = /(당신의 회사|다니는 회사|직장 상사|팀장님|부장님|사무실에서|회사 동료)/;
 const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
@@ -65,6 +67,8 @@ const INTERNAL_LABEL = new RegExp([
   "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
   // 지침을 그대로 말하는 문장(P6b r1: "이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요").
   "필요할 때만 (짧게 |한 번씩 )?(되짚|꺼내|꺼낼|부르)", "(이|그) 그림은 (뒤에서|앞으로|이 책에서)", "뒤에서 (다시 )?(되짚|꺼내|꺼낼)겠?",
+  // 최종판 5: 조건형 규칙을 독자 안내로 옮김(장덕민 연애 8장 "아이를 키우게 된다면이라는 조건으로 읽어 주세요").
+  "(조건|가정)(형)?으로 (읽어|봐|들어) 주세요",
   `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
 ].join("|"));
 /** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */
@@ -107,6 +111,7 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (f.relationship !== "married" && SPOUSE.test(s.replace(SPOUSE_TERM, "")) && !conditional) return "fact_spouse";
   if ((f.relationship === "single" || f.relationship === "unknown") && PARTNER.test(s) && !conditional) return "fact_partner";
   if (f.children !== "has" && (inChildChapter ? CHILD_EXIST.test(s) : CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional)) return "fact_children";
+  if (f.children === "unknown" && CHILD_ABSENT.test(s)) return "fact_children";
   if (!conditional && ((f.job !== "employed" && JOB_EMPLOYED.test(s)) || (f.job !== "business" && JOB_BUSINESS.test(s)) || (f.job !== "student" && JOB_STUDENT.test(s)))) return "fact_job";
   if (!f.birthTimeKnown && HOUR.test(s)) return "hour_pillar";
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";

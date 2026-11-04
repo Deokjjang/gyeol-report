@@ -126,6 +126,16 @@ describe("0-5 예산 관문(tools/llm/budget.ts)", () => {
   });
 });
 
+describe("최종판 5 판정에서 찾은 것", () => {
+  it("자녀 미입력인데 '없다' 단정, 조건형 규칙을 독자 안내로 옮긴 문장(장덕민 연애 7·8장)", async () => {
+    const { sentenceViolation } = await import("@/lib/writer/safety/sentences");
+    const f = { relationship: "single", children: "unknown", job: "business", birthTimeKnown: true, mbti: "ENTJ" } as never;
+    expect(sentenceViolation("지금은 자녀가 없으니 아이를 키우게 된다면이라는 조건으로 읽어 주세요.", f, undefined, false, true)).toBe("fact_children");
+    expect(sentenceViolation("지금은 솔로이니 이 이야기는 함께 살게 된다면이라는 조건으로 읽어 주세요.", f, undefined, true)).toBe("internal_label");
+    expect(sentenceViolation("아이를 키우게 된다면 시간표가 먼저 보이는 사람이에요.", f, undefined, false, true)).toBeNull();
+  });
+});
+
 describe("1-5 사실 대조(새 검사)", () => {
   const presence = { WOOD: { surface: 2, hidden: true }, FIRE: { surface: 0, hidden: true }, EARTH: { surface: 3, hidden: true }, METAL: { surface: 1, hidden: false }, WATER: { surface: 0, hidden: false } };
   it("오행 개수: 없다·가장 많다·가장 적다", () => {

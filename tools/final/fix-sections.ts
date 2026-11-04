@@ -1,5 +1,5 @@
 /**
- * 최종판 4 실질 결함 고침: 발행된 궁합 책에서 "브리프가 틀린 장면 주인을 준 소제목"만 다시 쓴다(사유 기록).
+ * 최종판 4·5 실질 결함 고침: 발행된 책에서 결함 소제목만 다시 쓴다(사유 기록). 자동 대상 = 궁합 "브리프가 틀린 장면 주인을 준 소제목", 수동 대상 = --section <장>.<소제목> --reason <사유>.
  *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/final/fix-sections.ts <reportId> --list            (대상만, 호출 0)
  *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/final/fix-sections.ts <reportId> --budget <USD> [--publish]
  * - 대상: 발행 당시 작가에게 간 브리프(.cache/writer/<작가 호출 키>.json의 user)와 지금 브리프(최종판 1-5 주인 규칙 수정 뒤)의
@@ -16,6 +16,7 @@ import { orderCostCap } from "../../src/lib/ops/generation/policy";
 import { rawCache } from "../../src/lib/ops/generation/supervisor";
 import { renderWriterBrief } from "../../src/lib/writer/prompt";
 import { buildV5Snapshot, writerKnowledge } from "../../src/lib/writer/publish";
+import { HARD_RULES } from "../../src/lib/writer/safety/p6c";
 import { budgetArg, budgetGate, ensureScope } from "../llm/budget";
 import { loadDevEnv, ROOT } from "../llm/env";
 import { briefOfSnap, loadSnap, manuscript } from "./replay";
@@ -50,11 +51,22 @@ async function main() {
     targets.push({ chapter: ci + 1, section: si, reason });
     notes.push(`- ${ci + 1}.${si + 1} 「${sec.q ?? ""}」\n  - 예전: ${diffs.map(d => d.was).join(" / ")}\n  - 지금: ${diffs.map(d => d.now).join(" / ")}`);
   }));
+  // 수동 대상: --section <장>.<소제목(1부터)> --reason "<사유>"(판정에서 찾은 실질 결함, 사유를 기록한다).
+  argv.forEach((a, i) => {
+    if (a !== "--section") return;
+    const m = (argv[i + 1] ?? "").match(/^(\d+)\.(\d+)$/), r = argv[argv.indexOf("--reason", i)  + 1];
+    if (!m || !r) throw new Error("--section <장>.<소제목> --reason <사유>");
+    targets.push({ chapter: Number(m[1]), section: Number(m[2]) - 1, reason: r });
+    notes.push(`- ${m[1]}.${m[2]} (수동) 사유: ${r}`);
+  });
+  const kind = argv.includes("--section") ? "판정 실질 결함" : argv.includes("--relint") ? "새 검사(자녀 단정·조건 안내)" : "궁합 장면 주인 규칙 결함";
   console.log(`재작성 대상 소제목 ${targets.length}:\n${notes.join("\n")}`);
-  if (!targets.length || list) return;
+  // --relint: 강제 대상 없이 새 검사로만(걸린 문장 수리 → 남으면 그 소제목 재작성, 0-1 구조 그대로).
+  const relint = argv.includes("--relint");
+  if ((!targets.length && !relint) || list) return;
 
   ensureScope("final", 1.5, "최종판 명령 전체 합계 상한(덕짱님 지시 2026-11-04)");
-  const gate = budgetGate({ scope: "final", run: `fix-${reportId}`, runBudget: budget, stage: `최종판 4 궁합 장면 주인 고침 · 소제목 재작성 ${targets.length}` });
+  const gate = budgetGate({ scope: "final", run: `fix-${reportId}`, runBudget: budget, stage: `최종판 4·5 실질 결함 고침(${kind}) · 소제목 재작성 ${targets.length}` });
   const writerRaw = raw.filter(e => e.kind === "first");
   const zero = { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 };
   // 작가 호출은 저장 원문(브리프가 바뀌어 입력 해시가 달라도), 그 밖(수리·재작성·표지)은 관문을 지난다.
@@ -82,14 +94,16 @@ async function main() {
   const summary = { reportId, targets: targets.length, rewritten: p6c?.rewritten, rewriteTargets: p6c?.rewriteTargets, droppedSections: (p6c?.droppedSections as unknown[] | undefined)?.length ?? 0, remaining: p6c?.remaining, paidUsd: Number(paid.toFixed(6)), orderSpentBefore: spent, cap,
     calls: built.meta.calls.map(c => `${c.kind}${c.requestId === "stored" || c.cached ? "(저장본)" : ""}`) };
   console.log(JSON.stringify(summary));
-  writeFileSync(join(ROOT, "docs/v5/final", `fix-sections-${reportId}.md`), `# 궁합 장면 주인 고침 — ${reportId}\n\n사유: 최종판 1-5 장면 주인 규칙 결함(같은 쪽 두 사람 가운데 낮은 사람을 반대 끝으로 적음). 발행 당시 브리프와 지금 브리프의 rel.who가 다른 소제목만 재작성(작가 다시 부르지 않음).\n\n${notes.join("\n")}\n\n결과: ${JSON.stringify(summary)}\n`);
+  writeFileSync(join(ROOT, "docs/v5/final", `fix-sections-${reportId}.md`), `# 실질 결함 고침(${kind}) — ${reportId}\n\n작가는 다시 부르지 않고 아래 소제목만 같은 발행 함수로 재작성했다.\n\n${notes.join("\n")}\n\n결과: ${JSON.stringify(summary)}\n`);
   if (!publish) return;
-  if (!p6c?.rewritten) { console.error("재작성이 적용되지 않았다 — 발행본을 바꾸지 않는다"); process.exit(4); }
+  const hardLeft = Object.keys((p6c?.remaining as Record<string, number> | undefined) ?? {}).filter(r => HARD_RULES.has(r as never));
+  if (!p6c?.rewritten && !p6c?.repaired) { console.error("수리·재작성이 적용되지 않았다 — 발행본을 바꾸지 않는다"); process.exit(4); }
+  if (hardLeft.length) console.log(`남은 사실·금지 깃발 ${hardLeft.join(",")} — 그 소제목은 발행 함수가 뺐다(droppedSections)`);
   const snapJson = JSON.stringify(built.snapshot).replace(/\$snap\$/g, "");
   console.log(sql(`begin;
-insert into public.book_snapshot_versions(report_id,edition,snapshot_json,reason) select report_id,'previous',snapshot_json,'final:fix-owners 궁합 장면 주인 고침 전(소제목 ${targets.length}개 재작성)' from public.paid_report_snapshots where report_id='${reportId}';
+insert into public.book_snapshot_versions(report_id,edition,snapshot_json,reason) select report_id,'previous',snapshot_json,'final:fix 고침 전(${kind}, 소제목 ${targets.length || "검사"}개 재작성)' from public.paid_report_snapshots where report_id='${reportId}';
 update public.paid_report_snapshots set snapshot_json=jsonb_set($snap$${snapJson}$snap$::jsonb,'{createdAtIso}',coalesce(snapshot_json->'createdAtIso',to_jsonb(published_at))) where report_id='${reportId}';
-insert into public.book_generation_runs(report_id,lane,provider,model,edition,outcome,reason,cost_usd,duration_ms) values('${reportId}','regenerate','anthropic','${writer?.model ?? "claude-sonnet-5-5"}','official','replaced','final:fix-owners 소제목 ${targets.length}개 재작성(장면 주인 규칙 결함)',${paid.toFixed(8)},0);
+insert into public.book_generation_runs(report_id,lane,provider,model,edition,outcome,reason,cost_usd,duration_ms) values('${reportId}','regenerate','anthropic','${writer?.model ?? "claude-sonnet-5-5"}','official','replaced','final:fix 소제목 ${targets.length || "검사"}개 재작성(${kind})',${paid.toFixed(8)},0);
 commit;
 select 'published '||count(*) from public.book_snapshot_versions where report_id='${reportId}';`));
 }
