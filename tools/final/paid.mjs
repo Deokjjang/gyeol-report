@@ -18,7 +18,8 @@ mkdirSync(OUT, { recursive: true });
 const STATE = join(OUT, "paid-state.json");
 const state = existsSync(STATE) ? JSON.parse(readFileSync(STATE, "utf8")) : {};
 const save = () => writeFileSync(STATE, JSON.stringify(state, null, 1) + "\n");
-const CASES = JSON.parse(execFileSync("pnpm", ["exec", "tsx", "-e", "import { FINAL_CASES } from './tools/final/cases'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate)))"], { cwd: ROOT, encoding: "utf8" }).trim().split("\n").at(-1));
+// 사례마다 결제 준비 본문의 inputSnapshot을 화면과 같은 함수(bookCheckoutSnapshot)로 만든다(템플릿의 임시 인물 값을 쓰지 않는다).
+const CASES = JSON.parse(execFileSync("pnpm", ["exec", "tsx", "-e", "import { FINAL_CASES } from './tools/final/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))"], { cwd: ROOT, encoding: "utf8" }).trim().split("\n").at(-1));
 const envFile = () => Object.fromEntries(readFileSync(join(ROOT, ".env.development.local"), "utf8").split("\n").filter(l => /^[A-Z_]+=/.test(l)).map(l => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1).replace(/^"|"$/g, "")]));
 const sql = q => execFileSync("docker", ["exec", "supabase_db_gyeol-report", "psql", "-U", "postgres", "-At", "-c", q], { encoding: "utf8" }).trim();
 const phase = process.argv[2], arg = process.argv[3];
@@ -54,6 +55,13 @@ const page = await ctx.newPage();
 const login = async next => { await page.goto(`${BASE}/dev/v5-login?as=${AS}&next=${encodeURIComponent(next)}`, { waitUntil: "load" }); await ctx.storageState({ path: storage }); };
 try {
   if (!existsSync(storage)) await login("/account");
+  // 결제 전 가입 정보(이름·이메일)가 필요하다(BookCheckout profileRequired). 실제 계정 화면에서 한 번 채운다.
+  await page.goto(`${BASE}/account`, { waitUntil: "load" }); await page.waitForTimeout(1500);
+  const saveProfile = page.getByRole("button", { name: /저장하고 계속하기/ });
+  if (await saveProfile.count()) {
+    await page.getByLabel(/이름\(필수\)/).fill("최종 검수"); await saveProfile.click(); await page.waitForTimeout(2500);
+    log("가입 정보 저장:", (await saveProfile.count()) ? "다시 확인 필요" : "완료");
+  }
   if (phase === "template") {
     await page.route("**/api/payment-checkout/prepare", async route => { state.template = route.request().postDataJSON(); save(); log("잡음: 결제 준비 본문 키", Object.keys(state.template).join(","), "· inputSnapshot 키", Object.keys(state.template.inputSnapshot ?? {}).join(",")); await route.abort(); });
     await page.goto(`${BASE}/report/new?product=saju-mbti-full`, { waitUntil: "load" });
@@ -71,8 +79,9 @@ try {
   if (phase === "pay") {
     const c = CASES.find(x => x.id === arg); if (!c) throw new Error(`사례 없음: ${arg}`);
     const t = state.template; if (!t) throw new Error("template 먼저");
-    const p = c.payload, person = p.person ?? p.personA;
-    const inputSnapshot = { ...t.inputSnapshot, reportInputPayload: p, ...(t.inputSnapshot.birthDate !== undefined ? { birthDate: person.birthDate } : {}), ...(t.inputSnapshot.name !== undefined ? { name: person.name } : {}) };
+    const p = c.payload, inputSnapshot = c.snapshot;
+    const tk = Object.keys(t.inputSnapshot).sort().join(","), ck = Object.keys(inputSnapshot).sort().join(",");
+    if (tk !== ck) throw new Error(`inputSnapshot 키가 화면과 다르다: 화면 ${tk} · 사례 ${ck}`);
     const body = { ...t, productType: p.productKey, inputSnapshot };
     const r = await page.request.post(`${BASE}/api/payment-checkout/prepare`, { data: body });
     const prepared = await r.json();
