@@ -79,6 +79,11 @@
     "source": "local-db:report_484e84c797174a4eb3e704546ee27ce6"
    },
    {
+    "line": "빗속에서도 꺼지지 않는 카페 사장의 불",
+    "noun": "사장의 불",
+    "source": "local-db:report_0c7636d107c84b8baa997c7051fe5cea"
+   },
+   {
     "line": "꺼지지 않는 랜턴을 든 서비스 기획자",
     "noun": "기획자",
     "source": "local-db:report_003afdc447a84682900be3289d63dd93"
@@ -143,6 +148,16 @@
     "line": "흙 둘이 나란히 서 있는 사이",
     "noun": "사이",
     "source": "local-db:report_8b6eede649114e798692822514d16aa9"
+   },
+   {
+    "line": "단단한 뿌리와 고운 흙이 서로 놓지 않는 사이",
+    "noun": "사이",
+    "source": "local-db:report_c136f0c838d94fd0811717ca80883562"
+   },
+   {
+    "line": "큰 나무가 흙을 뿌리로 붙잡아 주는 사이",
+    "noun": "사이",
+    "source": "local-db:report_c136f0c838d94fd0811717ca80883562"
    }
   ],
   "己卯": [
@@ -235,6 +250,11 @@
     "source": "local-db:report_a5535cfb9dae4ac79fcd7d9d783a8b93"
    },
    {
+    "line": "서비스 로드맵을 쥔 스물일곱 대표의 엔진",
+    "noun": "엔진",
+    "source": "local-db:report_065b67917da04a3983333fa0bbfdb296"
+   },
+   {
     "line": "스물일곱에 사업을 굴리는 큰 나무의 여름",
     "noun": "여름",
     "source": "local-db:report_fd7e3babb03e4255996c82d4e62a5dbd"
@@ -243,6 +263,16 @@
     "line": "아스팔트 위에서 사업을 키우는 27세",
     "noun": "27세",
     "source": "local-db:report_3df306c7d2ac48c5be2571efcfba68fa"
+   },
+   {
+    "line": "단단한 뿌리와 고운 흙이 서로 놓지 않는 사이",
+    "noun": "사이",
+    "source": "local-db:report_c136f0c838d94fd0811717ca80883562"
+   },
+   {
+    "line": "큰 나무가 흙을 뿌리로 붙잡아 주는 사이",
+    "noun": "사이",
+    "source": "local-db:report_c136f0c838d94fd0811717ca80883562"
    }
   ],
   "甲辰": [
