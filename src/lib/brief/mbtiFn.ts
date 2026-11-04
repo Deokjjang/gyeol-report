@@ -136,7 +136,8 @@ export const POLE_CUES: Readonly<Record<string, RegExp>> = {
   "independence+": /일단 혼자 해 보|막히면 그때 묻/, "independence-": /처음부터 사람을 모아/,
   "empathyResponse+": /표정 변화를 먼저/, "empathyResponse-": /해결책부터 말/,
   "noveltySeeking+": /안 가 본|안 해 본 일/, "noveltySeeking-": /늘 가던 곳|늘 하던 방식/,
-  "planning+": /전날 (미리 )?정리|일정표와 준비물/, "planning-": /닥쳐서 정하|그때그때/,
+  // 최종판 5: "INTP는 기념일 달력에 날짜를 적어 두고 한 달 전부터 준비하는 유형"(장소담 종합 10장)을 놓쳤다.
+  "planning+": /전날 (미리 )?정리|일정표와 준비물|(며칠|일주일|보름|한 달|두 달) 전부터 (미리 )?준비|달력에 (날짜를|일정을) (미리 )?(적어|써) 두/, "planning-": /닥쳐서 정하|그때그때/,
   "competitiveness+": /등수와 순위|순위가 보이면/, "competitiveness-": /내 기준만 보고/,
   "trustThreshold+": /조건을 하나하나 따져/, "trustThreshold-": /그대로 믿고/,
   "verbalOutput+": /바로바로 말로/, "verbalOutput-": /필요한 말만 짧게|듣는 쪽에 서/,

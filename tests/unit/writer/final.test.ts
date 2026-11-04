@@ -134,6 +134,12 @@ describe("최종판 5 판정에서 찾은 것", () => {
     expect(sentenceViolation("지금은 솔로이니 이 이야기는 함께 살게 된다면이라는 조건으로 읽어 주세요.", f, undefined, true)).toBe("internal_label");
     expect(sentenceViolation("아이를 키우게 된다면 시간표가 먼저 보이는 사람이에요.", f, undefined, false, true)).toBeNull();
   });
+  it("MBTI 계획 단서: 'INTP는 … 한 달 전부터 준비하는 유형'(장소담 종합 10장)은 오귀속", async () => {
+    const { mbtiMisattr } = await import("@/lib/writer/safety/p6c");
+    const people = [{ type: "INTP", anchors: /INTP/, name: "장소담" }] as never;
+    expect(mbtiMisattr("INTP는 기념일 달력에 날짜를 적어 두고 한 달 전부터 준비하는 유형입니다.", people)).toBe("INTP:planning+");
+    expect(mbtiMisattr("INTP는 원리가 보이면 몰입하는 유형이에요.", people)).toBeNull();
+  });
   it("자리 십성 어순이 거꾸로여도 엔진 값과 대조한다(장덕민 커리어 5장 \"정재가 월간에 앉은\")", () => {
     const pos = { yearStem: ["정재"], monthStem: ["정관"], monthBranch: ["정재", "상관", "정관"], dayBranch: ["편관", "편인", "편재"], hourStem: ["편재"], hourBranch: ["편재", "정인", "정재"], yearBranch: ["겁재"] } as never;
     expect(E.pillarClaims("정재가 월간에 앉은 당신은 꾸준한 사람에게 이끌려요.", pos)).toBe("monthStem:정재");
