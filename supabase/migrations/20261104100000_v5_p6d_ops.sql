@@ -372,7 +372,7 @@ end $$;
 -- 주문·요청·환불.
 create function public.ops_order(p_action text,p_data jsonb default '{}') returns jsonb
 language plpgsql security invoker set search_path='' as $$
-declare o public.payment_orders%rowtype; r public.order_records%rowtype; f public.order_refunds%rowtype; n integer; result jsonb; v_user uuid;
+declare o public.payment_orders%rowtype; r public.order_records%rowtype; f public.order_refunds%rowtype; n integer; v_amount bigint; result jsonb; v_user uuid;
 begin
   if p_action='attach' then
     -- 결제 준비 직후(ready)만. 회원이면 계정을, 비회원이면 결제 화면에서 받은 구매자 정보를 붙인다.
@@ -425,6 +425,15 @@ begin
   elsif p_action='refund_request' then
     select * into o from public.payment_orders where payment_order_id=p_data->>'paymentOrderId' for update;
     if not found or o.status<>'paid' or o.provider_payment_id is null or o.provider<>'toss' then return jsonb_build_object('ok',false,'code','NOT_REFUNDABLE'); end if;
+    -- 관리자 환불 하루 상한(건수·금액): 전역 잠금 안에서 세어 동시 요청도 함께 막는다. 이미 있는 환불(재시도)은 새로 세지 않는다.
+    if p_data ? 'capCount' and not exists(select 1 from public.order_refunds where payment_order_id=o.payment_order_id) then
+      perform pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtextextended('ops_admin_refund_cap',0));
+      select count(*),coalesce(sum(amount),0) into n,v_amount from public.order_refunds where source='admin'
+        and created_at>=(p_data->>'dayStart')::timestamptz and created_at<(p_data->>'dayEnd')::timestamptz;
+      if n+1>(p_data->>'capCount')::integer or v_amount+o.amount>(p_data->>'capAmount')::integer then
+        return jsonb_build_object('ok',false,'code','REFUND_DAILY_CAP','todayCount',n,'todayAmount',v_amount);
+      end if;
+    end if;
     insert into public.order_refunds(payment_order_id,state,source,reason,actor_user_id,amount,idempotency_key)
       values(o.payment_order_id,'requested',p_data->>'source',p_data->>'reason',nullif(p_data->>'actorUserId','')::uuid,o.amount,'order-refund-'||gen_random_uuid())
       on conflict(payment_order_id) do nothing;

@@ -93,6 +93,11 @@ describe("결제 경로 생성 감독", () => {
     expect((await one<{ n: number }>("select count(*)::int n from ops_audit_log where target='po_paid_2'")).n).toBe(2);
     // 같은 키로 다시 돌려도 두 번 취소하지 않는다.
     expect(await processRefunds(ops, toss)).toEqual([]);
+    // 관리자 환불 하루 상한은 DB가 잠금 안에서 센다(건수 0 상한 → 바로 차단).
+    const reportId3 = await seedPaid(h.paid, "po_paid_3", payload);
+    expect(reportId3).toMatch(/^report_/);
+    const capped = await ops.order.call("refund_request", { paymentOrderId: "po_paid_3", source: "admin", reason: "시험", capCount: 0, capAmount: 50000, dayStart: "2026-01-01T00:00:00Z", dayEnd: "2027-01-01T00:00:00Z" });
+    expect(capped).toMatchObject({ ok: false, code: "REFUND_DAILY_CAP" });
   }, 180_000);
 });
 
