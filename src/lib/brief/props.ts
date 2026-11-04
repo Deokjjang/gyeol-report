@@ -6,7 +6,7 @@
  */
 import { z } from "zod";
 import data from "./data/props.json";
-import type { FactProfile } from "./facts";
+import { sceneTextFits, type FactProfile } from "./facts";
 
 const Prop = z.string().min(2).max(14);
 const Props = z.array(Prop).min(10).max(16);
@@ -30,11 +30,21 @@ export const PROPS: PropsData = PropsSchema.parse(data);
 
 const squash = (s: string) => s.replace(/\s+/g, "").toLowerCase();
 
-/** 입력 직업(자유 입력)에서 직업군을 찾는다. 없으면 null. */
+/** 상태를 말하는 직업군(구직·자영업·살림): 분야 낱말이 함께 있으면 분야 쪽을 고른다. */
+const STATUS_JOBS = new Set(["job-seeker", "self-employed", "homemaker"]);
+/** 입력 직업(자유 입력)에서 직업군을 찾는다. 없으면 null.
+ * P6e 판독: "마케팅 직무 재취업준비"가 구직(경영지원·인사 분야)으로 잡혀 커리어 직군 1순위에 "지금 목표 분야"로 붙었다 → 분야 낱말(마케팅)이 있으면 그쪽. */
 export function matchJob(detailJob: string, p: PropsData = PROPS): PropsData["jobs"][number] | null {
   const d = squash(detailJob);
   if (!d) return null;
-  return p.jobs.find(j => j.keywords.some(k => d.includes(squash(k)))) ?? null;
+  const hits = p.jobs.filter(j => j.keywords.some(k => d.includes(squash(k))));
+  // 상태 낱말 안에 든 분야 낱말("자영업" 안의 "영업")은 분야로 세지 않는다. 단 상태 낱말의 앞머리가 분야면("공무원준비"의 "공무원") 분야다(최종판 1-9).
+  const spans = (j: PropsData["jobs"][number]) => j.keywords.map(squash).filter(k => k && d.includes(k)).map(k => [d.indexOf(k), d.indexOf(k) + k.length] as const);
+  const statusSpans = hits.filter(j => STATUS_JOBS.has(j.id)).flatMap(spans);
+  // 분야가 여럿이면 가장 긴 낱말이 맞은 쪽("대학원" > "학원", 최종판 1-9).
+  const longest = (j: PropsData["jobs"][number]) => Math.max(0, ...j.keywords.map(squash).filter(k => k && d.includes(k)).map(k => k.length));
+  const field = hits.filter(j => !STATUS_JOBS.has(j.id) && spans(j).some(([a, b]) => !statusSpans.some(([x, y]) => x <= a && b <= y && a !== x))).sort((x, y) => longest(y) - longest(x))[0];
+  return field ?? hits[0] ?? null;
 }
 
 export type CustomerProps = { readonly job: { readonly group: string | null; readonly props: readonly string[] }; readonly relationship: readonly string[]; readonly stage: { readonly key: LifeStage; readonly props: readonly string[] } };
@@ -56,9 +66,11 @@ export function customerProps(f: { detailJob: string; jobStatus: string; age: nu
   const group = matchJob(f.detailJob, p);
   const status = (f.jobStatus && f.jobStatus in p.jobStatus ? f.jobStatus : "unknown") as keyof PropsData["jobStatus"];
   const stage = lifeStage(f, profile);
+  // P6e 16: 소품도 직업군·상태 태그로 거른다(물리치료사에게 "보고서 수정본·연차 눈치", 구직자에게 팀·사무 소품이 생활 단계 소품으로 갔다).
+  const fit = (xs: readonly string[]) => xs.filter(x => sceneTextFits(x, profile));
   return {
-    job: { group: group?.name ?? null, props: group?.props ?? p.jobStatus[status] },
+    job: { group: group?.name ?? null, props: fit(group?.props ?? p.jobStatus[status]) },
     relationship: p.relationship[profile.relationship],
-    stage: { key: stage, props: stage === "student" && f.age >= 19 ? p.lifeStage.college : p.lifeStage[stage] },
+    stage: { key: stage, props: fit(stage === "student" && f.age >= 19 ? p.lifeStage.college : p.lifeStage[stage]) },
   };
 }

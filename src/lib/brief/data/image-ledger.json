@@ -1,0 +1,275 @@
+{
+ "version": "image-ledger-1",
+ "built": "2026-11-04",
+ "byDayPillar": {
+  "丁丑": [
+   {
+    "line": "서비스 기획자의 꺼지지 않는 랜턴",
+    "noun": "랜턴",
+    "source": "docs/v5/baseline/p6d/haram-full-p6c.snapshot.json"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "docs/v5/baseline/p6d/haram-full-p6c.snapshot.json"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 카페 불빛",
+    "noun": "불빛",
+    "source": "docs/v5/baseline/p6d/sodam-full.snapshot.json"
+   },
+   {
+    "line": "겨울 오후 카페의 젖은 바람에도 버티는 불빛",
+    "noun": "불빛",
+    "source": "docs/v5/baseline/p6e/sodam-full.snapshot.json"
+   },
+   {
+    "line": "겨울 외양간 등불, 이렇게 씁니다",
+    "noun": "씁니다",
+    "source": "local-db:report_c92260bb4ae64470aeda5239a2464830"
+   },
+   {
+    "line": "겨울 외양간 등불 같은 힘",
+    "noun": "같은 힘",
+    "source": "local-db:report_10fa39106b3249cca7d9a495cacb1a20"
+   },
+   {
+    "line": "겨울 땅 위에 앉은 작은 불",
+    "noun": "작은 불",
+    "source": "local-db:report_c3374d6c33d34ecbbca7eac7714417bc"
+   },
+   {
+    "line": "눈 내린 새벽, 꺼지지 않고 버티는 등불",
+    "noun": "등불",
+    "source": "local-db:report_686778055d2945c2802316c089a19875"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_a223c8cf1fa1457883ccfae0e073eb94"
+   },
+   {
+    "line": "넓은 광장을 은은하게 밝히는 조명",
+    "noun": "조명",
+    "source": "local-db:report_ffac292c05da4c4eab47476c6b8ba78a"
+   },
+   {
+    "line": "끝까지 자리를 밝히는 사람",
+    "noun": "사람",
+    "source": "local-db:report_0cf46099c95847b8b1f3df869b591dbe"
+   },
+   {
+    "line": "늦겨울 땅 위에 앉은 정화",
+    "noun": "정화",
+    "source": "local-db:report_400deb1a454a4d938a5131324cb4f20e"
+   },
+   {
+    "line": "정축이 보이는 순간",
+    "noun": "순간",
+    "source": "local-db:report_dc2367253b254310a5dd9e0d95528185"
+   },
+   {
+    "line": "불빛 둘이 나란히 서 있는 사이",
+    "noun": "사이",
+    "source": "local-db:report_d5693d82e2a34b758215d82c1ba59350"
+   },
+   {
+    "line": "조용히 오래 타는 등불처럼, 한 번 정한 곳을 끝까지 비추는 사람",
+    "noun": "사람",
+    "source": "local-db:report_484e84c797174a4eb3e704546ee27ce6"
+   },
+   {
+    "line": "꺼지지 않는 랜턴을 든 서비스 기획자",
+    "noun": "기획자",
+    "source": "local-db:report_003afdc447a84682900be3289d63dd93"
+   },
+   {
+    "line": "서비스 기획자 4년 차, 꺼지지 않는 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_5a7b5da3529447518bf9e1dac3604141"
+   },
+   {
+    "line": "간호사 11년 차, 느리게 쌓아 단단해지는 불",
+    "noun": "단단해지는 불",
+    "source": "local-db:report_359f0337b75d4448ba13a62bc409adb0"
+   },
+   {
+    "line": "서비스 기획 7년 차, 꺼지지 않는 랜턴의 온도",
+    "noun": "온도",
+    "source": "local-db:report_889f4b80c4334bb98ba23730051463b0"
+   },
+   {
+    "line": "서비스 기획자 하람, 이름 걸고 서는 해",
+    "noun": "서는 해",
+    "source": "local-db:report_a37f608aae3945b7ba7204743acf6016"
+   }
+  ],
+  "丁未": [
+   {
+    "line": "큰 나무와 네온이 한 간판을 켜는 사업",
+    "noun": "사업",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json"
+   },
+   {
+    "line": "큰 나무가 불빛을 타오르게 돕는 사이",
+    "noun": "사이",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json"
+   },
+   {
+    "line": "불빛 둘이 나란히 서 있는 사이",
+    "noun": "사이",
+    "source": "local-db:report_d5693d82e2a34b758215d82c1ba59350"
+   }
+  ],
+  "壬辰": [
+   {
+    "line": "강변 숲을 적시는 물, 환자 곁의 다정한 손",
+    "noun": "다정한 손",
+    "source": "docs/v5/baseline/p6d/chaerin-love.snapshot.json"
+   },
+   {
+    "line": "강변 숲을 적시며 흐르는 큰 강",
+    "noun": "큰 강",
+    "source": "docs/v5/baseline/p6d/chaerin-love.snapshot.json"
+   },
+   {
+    "line": "봄밤 치료실 창밖 숲을 적시며 흐르는 큰 강",
+    "noun": "큰 강",
+    "source": "docs/v5/baseline/p6e/chaerin-love.snapshot.json"
+   }
+  ],
+  "己亥": [
+   {
+    "line": "흙 둘이 나란히 서 있는 사이",
+    "noun": "사이",
+    "source": "local-db:report_8b6eede649114e798692822514d16aa9"
+   }
+  ],
+  "己卯": [
+   {
+    "line": "나무뿌리가 촘촘히 박힌 숲속 흙",
+    "noun": "숲속 흙",
+    "source": "local-db:report_6412d806a9014c089e43873b58dc7e94"
+   },
+   {
+    "line": "숲속 흙처럼 사람을 키우는 스물둘의 사랑",
+    "noun": "사랑",
+    "source": "local-db:report_8a3d7eb705024e90a72b2ae787e4512a"
+   }
+  ],
+  "己巳": [
+   {
+    "line": "흙 둘이 나란히 서 있는 사이",
+    "noun": "사이",
+    "source": "local-db:report_8b6eede649114e798692822514d16aa9"
+   }
+  ],
+  "己酉": [
+   {
+    "line": "마케팅 재취업, 내 방식대로 올라가는 길",
+    "noun": "올라가는 길",
+    "source": "docs/v5/baseline/p6d/taeo-career.snapshot.json"
+   },
+   {
+    "line": "한여름 볕에 바짝 마른 화단 흙",
+    "noun": "화단 흙",
+    "source": "docs/v5/baseline/p6d/taeo-career.snapshot.json"
+   },
+   {
+    "line": "여름 늦은 오후 스터디 카페의 열기를 품은 흙",
+    "noun": "품은 흙",
+    "source": "docs/v5/baseline/p6e/taeo-career.snapshot.json"
+   },
+   {
+    "line": "마케팅 재취업, 내 방식으로 다듬는 길",
+    "noun": "다듬는 길",
+    "source": "local-db:report_2b4eac46d5a74c43b0f9d61289102dd2"
+   }
+  ],
+  "庚辰": [
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_a223c8cf1fa1457883ccfae0e073eb94"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_e5bc7088a38549af96b42a0404054e47"
+   },
+   {
+    "line": "연재 마감 사이로 불이 두 겹 드는 해",
+    "noun": "드는 해",
+    "source": "local-db:report_c796122ce38a44bdae0c2449e0aedeb8"
+   },
+   {
+    "line": "프리랜서 일러스트레이터의 불 두 겹 해",
+    "noun": "겹 해",
+    "source": "local-db:report_ebef1f15cf884714806f354e4b611f56"
+   }
+  ],
+  "甲申": [
+   {
+    "line": "큰 나무와 네온이 한 간판을 켜는 사업",
+    "noun": "사업",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json"
+   },
+   {
+    "line": "큰 나무가 불빛을 타오르게 돕는 사이",
+    "noun": "사이",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json"
+   },
+   {
+    "line": "한여름 도시 아스팔트 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_3526ac6d3181494b909d193e499dbf94"
+   },
+   {
+    "line": "가을 쇠 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_3526ac6d3181494b909d193e499dbf94"
+   },
+   {
+    "line": "갑신, 이렇게 씁니다",
+    "noun": "씁니다",
+    "source": "local-db:report_a5535cfb9dae4ac79fcd7d9d783a8b93"
+   },
+   {
+    "line": "스물일곱에 사업을 굴리는 큰 나무의 여름",
+    "noun": "여름",
+    "source": "local-db:report_fd7e3babb03e4255996c82d4e62a5dbd"
+   },
+   {
+    "line": "아스팔트 위에서 사업을 키우는 27세",
+    "noun": "27세",
+    "source": "local-db:report_3df306c7d2ac48c5be2571efcfba68fa"
+   }
+  ],
+  "甲辰": [
+   {
+    "line": "빽빽한 숲 한가운데 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_b606da8de879439b8c14d62b1b470482"
+   },
+   {
+    "line": "갑진의 단단함으로 삶을 넓히는 사람",
+    "noun": "사람",
+    "source": "local-db:report_2f5f579aa8334229b2e85a171cfbde28"
+   }
+  ],
+  "癸亥": [
+   {
+    "line": "가을 아침 작업실 창밖 둑에 막혀 깊어진 빗물",
+    "noun": "빗물",
+    "source": "docs/v5/baseline/p6e/seoha-love-single.snapshot.json"
+   }
+  ],
+  "癸卯": [
+   {
+    "line": "한여름 아스팔트에 닿자마자 마르는 소나기",
+    "noun": "소나기",
+    "source": "local-db:report_5cb4c1bb7f7c405cacc2624dff94e76f"
+   }
+  ]
+ }
+}

@@ -18,6 +18,7 @@ import { insertFixedLines, lintContext } from "@/lib/writer/publish";
 import { ledgerOf, newEvidenceShare, usedScenesOf } from "@/lib/writer/prior";
 import type { FinalChapter } from "@/lib/writer/safety";
 import * as L from "@/lib/writer/safety/lint";
+import * as E from "@/lib/writer/safety/p6e";
 import * as D from "@/lib/writer/safety/p6d";
 import { enforce, lintBook, lintCards, type LintFlag } from "@/lib/writer/safety/p6c";
 import { splitSentences } from "@/lib/writer/safety/patterns";
@@ -146,22 +147,23 @@ describe("P6d D 카드(대운·세운)", () => {
     const flags = lintCards([ch], { ...base, periods: { 2023: "past", 2033: "future" } });
     expect(flags.map(f => `${f.section}:${f.card}:${f.rule}`)).toEqual(expect.arrayContaining(["0:review:card_missing", "0:review:card_form", "1:caution:card_overlap"]));
   });
-  it("머리 문장(결정론)·1장 기준 날짜·투자 안내를 조립 직전에 넣고, 작가가 쓴 머리 문장은 뗀다", () => {
+  it("머리 문장(결정론)·책 한 줄 안내(마지막 장 끝, 책에 한 번)를 조립 직전에 넣고, 작가가 쓴 머리 문장은 뗀다 — P6e 12: 본문 기준일 줄은 넣지 않는다", () => {
     const b = brief("major_fortune", PEOPLE.x);
     const chs: FinalChapter[] = [{ n: 1, id: "a", title: "a", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["첫 문단이에요."] }] },
       { n: 5, id: "yearly", title: "y", source: "writer", chars: 0, keys: ["2028"], sections: [{ heading: "2028", paragraphs: ["2028년 무신(戊申)은 상관(傷官)이 하늘에, 정재(正財)가 땅에 들어오는 해예요. 말이 날카로워지는 해예요."] }] }];
     const out = insertFixedLines(chs, b);
-    expect(out[0].sections[0].paragraphs[0]).toBe("이 책은 2026년 11월 4일 기준으로 썼어요. 첫 문단이에요.");
+    expect(out[0].sections[0].paragraphs[0]).toBe("첫 문단이에요.");
+    expect(out.flatMap(c => c.sections.flatMap(s => s.paragraphs)).join(" ")).not.toMatch(/기준으로 썼어요/);
     expect(out[1].sections[0].paragraphs[0]).toBe(`${b.timeline!.entries.find(e => e.key === "2028")!.head} 말이 날카로워지는 해예요.`);
+    expect(out[1].sections[0].paragraphs.at(-1)).toBe(E.bookNotice("major_fortune"));
     const c = brief("career_money_study", PEOPLE.c1);
     const inv = insertFixedLines([{ n: 1, id: "engine", title: "e", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["엔진이에요."] }] }, { n: 8, id: "invest", title: "i", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["원칙이에요."] }] }], c);
-    expect(inv[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`);
-    expect(insertFixedLines(inv, c)[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`); // 한 번만
-    const own = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."] }] }], c);
-    expect(own[1].sections[0].paragraphs[0]).toBe("이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."); // 작가가 쓴 안내가 있으면 넣지 않는다
-    const own2 = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 권유가 아니라 성향 이야기예요."] }] }], c);
-    expect(own2[1].sections[0].paragraphs[0]).toBe("이 장은 권유가 아니라 성향 이야기예요."); // r2: "투자" 없이 쓴 안내도 같은 뜻
+    // 투자 장 안내는 따로 넣지 않고(P6e 15), 책 한 줄 안내(돈·투자 권유 아님 포함)를 마지막 장 끝에 한 번.
+    expect(inv[1].sections[0].paragraphs).toEqual(["원칙이에요.", E.bookNotice("career_money_study")]);
+    expect(insertFixedLines(inv, c)[1].sections[0].paragraphs).toEqual(["원칙이에요.", E.bookNotice("career_money_study")]); // 한 번만
+    expect(E.bookNotice("career_money_study")).toMatch(/권유가 아니라/);
   });
+
 });
 
 describe("P6d F 아이디어 원장(같은 고객의 다음 책은 쓴 각도·씨앗을 쓰지 않는다)", () => {
@@ -191,7 +193,7 @@ describe("P6d F 아이디어 원장(같은 고객의 다음 책은 쓴 각도·�
   });
   it("MBTI 씨앗은 유형 × 영역 30개 이상, 명리 근거·입력 맥락이 있는 절에만 놓인다", () => {
     for (const [type, seeds] of k.mbtiSeeds) for (const d of ["work", "money", "love", "relationships", "alone"]) expect(seeds[d]?.length ?? 0, `${type}.${d}`).toBeGreaterThanOrEqual(30);
-    for (const b of [full, career]) for (const c of b.chapters) for (const s of c.sections ?? []) if (s.materials.some(m => m.kind === "mbti" && m.seedId)) expect(s.materials.some(m => m.kind === "trait" || m.kind === "evidence" || m.kind === "ref" || m.kind === "rel"), `${c.id} ${s.q}`).toBe(true);
+    for (const b of [full, career]) for (const c of b.chapters) for (const s of c.sections ?? []) if (s.materials.some(m => m.kind === "mbti" && m.seedId && m.seedId !== "prop")) expect(s.materials.some(m => m.kind === "trait" || m.kind === "evidence" || m.kind === "ref" || m.kind === "rel"), `${c.id} ${s.q}`).toBe(true);
   });
   it("소품 원장: 같은 소품은 책당 1회(힌트 1장), 연애 책 전체·종합 연애·가족 장은 직업 소품 금지", () => {
     for (const b of [full, career]) for (const n of Object.values(b.usedProps ?? {})) expect(n).toBe(1);

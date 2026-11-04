@@ -1,6 +1,7 @@
 /**
  * 결제 경로 v5 작업(P6d-ops 7). claim은 기존 결제 워커(runPaidReportJob)가 하고, 여기서는 감독 결과를 큐 동작으로 옮긴다.
  * 발행 = 기존 finish_job(검증·발행 규칙 그대로), 보류 = paid_defer(시간표), 포기 = paid_give_up + 자동 환불 요청(관리자 확인 없이, 결정 2026-11-04).
+ * 비용 상한 보류(최종판 0-6) = paid_defer(30일, COST_CAP_HOLD) — 자동 환불 없음.
  */
 import type { ReliabilityResult } from "../../payment/paidReportReliabilityStore";
 import { PUBLISH_GATE_VERSION } from "../../report-generation/productPublishGate";
@@ -19,6 +20,8 @@ export async function runPaidV5Job(job: { payload: unknown; report_id: string; j
     sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}) }, { ...opts.env, store: ops.generation }, async d => {
     if (d.kind === "publish") last = await finish({ success: true, snapshot: d.snapshot, gateVersion: PUBLISH_GATE_VERSION });
     else if (d.kind === "defer") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: "V5_DEFERRED" }) as ReliabilityResult;
+    // 최종판 0-6: 주문당 비용 상한 — 자동으로 다시 돌리지 않게 길게 보류한다(관리자 지연 목록, 환불은 관리자가 정한다).
+    else if (d.kind === "hold") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: "COST_CAP_HOLD" }) as ReliabilityResult;
     else if (d.kind === "give_up") {
       last = await ops.generation.call("paid_give_up", { jobId: job.job_id, token: job.lease_token, code: "GENERATION_GAVE_UP" }) as ReliabilityResult;
       if (last.ok) {

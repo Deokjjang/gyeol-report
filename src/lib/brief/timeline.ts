@@ -12,7 +12,7 @@ import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
-import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, josa, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import { periodDomains } from "./productEvidence";
 import type { Rng } from "./seed";
@@ -236,7 +236,7 @@ export function buildMonthEntries(ctx: TimelineCtx, year: number, baseDate?: str
 /** 대운 안 위치 한 줄(P6d C): "2022~2031 대운 10년 가운데 10번째 해(마지막 해)". */
 export function dayunPositionLine(startYear: number, endYear: number, index: number, total: number): string {
   const where = index === 1 ? "첫해" : index === total ? "마지막 해" : index <= 3 ? "앞쪽" : index <= 7 ? "중간" : "끝 무렵";
-  return `${startYear}~${endYear} 대운 ${total}년 가운데 ${index}번째 해(${where}${index < total ? `, 뒤로 ${total - index}해 남음` : ""})`;
+  return `${startYear}~${endYear} 대운 ${total}년 가운데 ${index}번째 해(${where}${index < total ? `, 뒤로 ${koCount(total - index, "해")} 남음` : ""})`;
 }
 
 /**

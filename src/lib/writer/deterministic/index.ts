@@ -69,7 +69,9 @@ function traitSection(ctx: Ctx, m: Extract<Material, { kind: "trait" }>, chapter
 function mbtiSection(ctx: Ctx, m: Extract<Material, { kind: "mbti" }>, chapterId: string): BookSection | null {
   const p = ctx.brief.mbti; if (!p) return null;
   const heading = pick(ctx, `${chapterId}:mbti:${m.domain}`, [`${p.type}다운 장면`, `${DOMAIN_KO[m.domain] ?? ""}의 ${p.easyName}`.trim(), `${p.easyName}의 습관`]);
-  return { heading, paragraphs: [join(`${p.type}(${p.easyName})인 당신은 ${DOMAIN_KO[m.domain] ?? "이런 순간"} 티가 납니다`, m.scene, p.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
+  // 최종판 1-15: 맞는 씨앗이 없어 직업 소품으로 받은 장면(seedId prop)은 명사구라 문장으로 잇는다.
+  const scene = m.seedId === "prop" ? `${m.scene} 같은 자리에서도 그 결이 보입니다` : m.scene;
+  return { heading, paragraphs: [join(`${p.type}(${p.easyName})인 당신은 ${DOMAIN_KO[m.domain] ?? "이런 순간"} 티가 납니다`, scene, p.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
 }
 
 function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | null {

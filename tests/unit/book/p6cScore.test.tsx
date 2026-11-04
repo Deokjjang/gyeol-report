@@ -39,19 +39,32 @@ const html = (data: BookData, page: BookPage) => renderToStaticMarkup(<BookReade
 const pageOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pages.find((p): p is Extract<BookPage, { kind: K }> => p.kind === kind)!;
 const pagesOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pages.filter((p): p is Extract<BookPage, { kind: K }> => p.kind === kind);
 
-describe("궁합 점수 v2.1 점수 쪽", () => {
+describe("궁합 점수 v2.2 점수 쪽", () => {
   const data = read(snap("saju_mbti_compatibility"));
-  it("총점 = 40 + 항목 점수 합, 항목 막대는 점수/만점(연애 배점), 이유는 2~3문장, 버전 v2.1", () => {
+  it("총점 = 40 + 항목 점수 합, 항목 막대는 점수/만점(연애 배점), 이유는 2~3문장, 버전 v2.2", () => {
     const score = pageOf(data, "score"), out = html(data, score);
-    expect(score.scoreVersion).toBe("v2.1");
+    expect(score.scoreVersion).toBe("v2.2");
     expect(score.total).toBe(54); // 하람×서윤 연애(P4 49 → v2 62 → v2.1 54)
     expect(score.band).toBe("노력이 필요한 사이");
-    expect(out).toContain('data-score-version="v2"'); // v2·v2.1은 같은 화면(이유 keep-all)
+    expect(out).toContain('data-score-version="v2"'); // v2·v2.1·v2.2는 같은 화면(이유 keep-all)
+    // v2.2: MBTI 이유 첫 문장에 세 부분 점수(5점씩), 합 = MBTI 막대 점수.
+    const mbti = score.scores.find(s => s.label === "MBTI")!, parts = [...mbti.reason!.matchAll(/(대화의 결|마음의 기능|에너지·생활 리듬) (\d+)\/5/g)];
+    expect(parts.map(p => p[1])).toEqual(["대화의 결", "마음의 기능", "에너지·생활 리듬"]);
+    expect(parts.reduce((n, p) => n + Number(p[2]), 0)).toBe(mbti.value);
     expect(score.total).toBe(40 + score.scores.reduce((n, s) => n + s.value, 0));
     expect(score.scores.map(s => s.max)).toEqual(Object.values(ITEM_MAX.love));
     for (const s of score.scores) { expect(out).toContain(`${s.value} / ${s.max}`); const n = splitSentences(s.reason!).length; expect(n).toBeGreaterThanOrEqual(2); expect(n).toBeLessThanOrEqual(3); }
     expect(out).toContain("기본 40점에 일곱 항목");
     expect(out).not.toContain("3칸");
+  });
+  it("저장된 v2.1 Book은 저장된 점수·이유 그대로(다시 계산하지 않음), 같은 v2 화면", () => {
+    const stored = { total: 54, version: "v2.1" as const, band: "노력이 필요한 사이", verdict: "예전 판정", notice: "예전 안내", components: [{ name: "MBTI", points: 0, max: 15, reason: "예전 MBTI 이유. 두 사람 이야기." }] };
+    const old = read(snap("saju_mbti_compatibility", (d, e) => [d, { ...e, pair: { ...e.pair!, score: stored } }]));
+    const score = pageOf(old, "score"), out = html(old, score);
+    expect(score.scoreVersion).toBe("v2.1");
+    expect(score.total).toBe(54);
+    expect(score.scores).toEqual([{ label: "MBTI", value: 0, max: 15, reason: "예전 MBTI 이유. 두 사람 이야기." }]);
+    expect(out).toContain('data-score-version="v2"'); expect(out).toContain("0 / 15"); expect(out).toContain("예전 안내");
   });
   it("저장된 v5-1 Book(P4)은 예전 3칸 표시 그대로", () => {
     const old = read(snap("saju_mbti_compatibility", (d, e) => [d, { ...e, pair: { ...e.pair!, score: { total: 49, version: "compat-score-v5-1", band: "노력이 필요한", verdict: "예전 판정", components: [{ name: "오행 보완", level: "좋음", line: "예전 이유" }, { name: "MBTI", level: "조율", line: "예전 MBTI 이유" }] } } }]));

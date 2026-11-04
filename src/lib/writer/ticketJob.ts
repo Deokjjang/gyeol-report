@@ -48,14 +48,15 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
     { store: ops, deps: build, ...(openAiKey !== undefined ? { openAiKey } : {}), ...(opsNow ? { now: opsNow } : {}) }, async d => {
       try {
         if (d.kind === "publish") { published = await store.call("publish", user, { ...origin, snapshot: d.snapshot, gateVersion: GATE_VERSION }); return { ok: published.ok === true && published.state === "COMPLETED", code: published.code ? String(published.code) : undefined }; }
-        const r = d.kind === "defer" ? await store.call("defer", user, { ...origin, until: d.until, code: "V5_DEFERRED" })
+        // 최종판 0-6: 비용 상한 보류도 큐로 길게 미룬다(이용권 환급 없음, 관리자 지연 목록).
+        const r = d.kind === "defer" || d.kind === "hold" ? await store.call("defer", user, { ...origin, until: d.until, code: d.kind === "hold" ? "COST_CAP_HOLD" : "V5_DEFERRED" })
           : await store.call("reverse", user, { ...origin, reason: "GENERATION_GAVE_UP" });
         return { ok: r.ok === true, code: r.code ? String(r.code) : undefined };
       } catch { return { ok: false, code: "PERSISTENCE_INTERRUPTED" }; }
     });
   if (decision.kind === "publish" && settled.ok && published) return { ...(published as TicketResult), meta: decision.meta, edition: decision.edition };
   if (!settled.ok) return { ok: true, state: "RUNNING", code: settled.code ?? "STALE_LEASE", reportId };
-  return decision.kind === "defer" ? { ok: true, state: "QUEUED", code: "DEFERRED", reportId, notBefore: decision.until } : { ok: true, state: "REVERSED", code: "GENERATION_GAVE_UP", reportId };
+  return decision.kind === "defer" || decision.kind === "hold" ? { ok: true, state: "QUEUED", code: decision.kind === "hold" ? "COST_CAP_HOLD" : "DEFERRED", reportId, notBefore: decision.until } : { ok: true, state: "REVERSED", code: "GENERATION_GAVE_UP", reportId };
 }
 
 /** 회수 크론: 작가 lease가 끝난 v5 작업(워커가 죽음)을 큐로 되돌린다(P6d-ops: 결정론 완성 없음). 다음 claim이 저장된 장 다음부터 쓴다. */

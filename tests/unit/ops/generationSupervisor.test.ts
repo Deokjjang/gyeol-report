@@ -155,10 +155,12 @@ describe("OpenAI 잔액 부족", () => {
 });
 
 describe("판정", () => {
-  it("결정론 장이 있으면 incomplete, 짧은 장은 rejected(다음 시도에서 다시 쓴다)", () => {
-    const meta = { chapters: [{ n: 1, source: "writer" }, { n: 2, source: "deterministic", reason: "too_short:100<600" }, { n: 3, source: "deterministic", reason: "missing" }], calls: [{ chars: 10, error: undefined }] };
+  it("최종판 0-1: 결정론 장(빠진 장)이 있으면 incomplete — 짧은 작가 장은 버리지 않는다(rejected 늘 빈 배열), 상한에 걸리면 capped", () => {
+    const meta = { chapters: [{ n: 1, source: "writer" }, { n: 2, source: "writer", reason: "short:100<600" }, { n: 3, source: "deterministic", reason: "missing" }], calls: [{ chars: 10, error: undefined }] };
     const v = judgeBuild({ meta: meta as never, run: { stale: false, calls: meta.calls } as never });
-    expect(v).toMatchObject({ kind: "incomplete", rejected: [2], missing: [3], preOutput: false });
+    expect(v).toMatchObject({ kind: "incomplete", rejected: [], missing: [3], preOutput: false });
+    expect(judgeBuild({ meta: { chapters: [{ n: 1, source: "writer", reason: "short:100<600" }], calls: [] } as never, run: null })).toEqual({ kind: "complete", keysFilled: [] });
+    expect(judgeBuild({ meta: meta as never, run: { stale: false, capped: true, calls: meta.calls } as never })).toMatchObject({ kind: "incomplete", capped: true, reason: "partial:cost_cap" });
     expect(judgeBuild({ meta: { chapters: [{ n: 1, source: "writer", reason: "keys_filled:2026" }], calls: [] } as never, run: null })).toEqual({ kind: "complete", keysFilled: [1] });
   });
 });

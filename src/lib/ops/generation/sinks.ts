@@ -3,11 +3,7 @@ import type { ChapterSink, SavedChapter } from "../../writer/runner";
 
 export type OpsStore = { call(action: string, data: Record<string, unknown>): Promise<Record<string, unknown>> };
 
-/** 짧거나 비어 결정론이 된 장(rejected)은 저장본을 버린다: 다음 시도가 그 장만 다시 쓴다(이어쓰기). */
-export function filteredSink(base: ChapterSink, rejected: readonly number[]): ChapterSink {
-  const drop = new Set(rejected);
-  return { save: c => base.save(c), async load() { return (await base.load()).filter(c => !drop.has(c.n)); } };
-}
+/* 최종판 0-1: 짧거나 비어 결정론이 된 장의 저장본을 버리던 filteredSink는 없앴다(저장된 장은 버리지 않고 빠진 장만 이어 쓴다). */
 
 /** 임시본(OpenAI) 시도용: Sonnet 장 저장본과 섞지 않는다. */
 export function memorySink(): ChapterSink {

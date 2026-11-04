@@ -8,7 +8,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { DAYUN_PHASE_KO, dayunPhase } from "@/lib/writer/safety/lint";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, ganjiLabel, ganjiOf, josa, tenGodLabel } from "./labels";
+import { ELEMENT_KO, ganjiLabel, ganjiOf, GROUP_EASY, josa, TEN_GOD_KO, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
 import { dropSourceSentences, splitSentences } from "@/lib/writer/safety/patterns";
 import { coreImage } from "./coreImage";
@@ -121,15 +121,30 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
     groups: groupsFact(saju),
+    positions: positionsFact(saju, det),
     ...(opts.gender ? { stars: starFacts(saju, det, opts.gender) } : {}),
   };
+}
+
+/**
+ * 자리별 십성(P6e 5): 천간은 그 글자의 십성, 지지는 지장간 십성(본기 먼저). "월지의 비견"처럼 자리와 십성을 바꿔 쓰지 않게 작가·검사가 같은 값을 본다.
+ * 시간 미상이면 시주는 없다. line은 작가용 한 줄.
+ */
+export function positionsFact(saju: SajuCalcResult, det: ChartDetections): NonNullable<ChartBrief["positions"]> {
+  const ko = (t: TenGod | null | undefined) => (t ? TEN_GOD_KO[t] : "");
+  const branch = (p: "year" | "month" | "day" | "hour") => { const b = saju.pillars[p]?.branch; return b ? saju.tenGods.hiddenStems.filter(h => h.branch === b && h.tenGod).sort((x, y) => y.weight - x.weight).map(h => ko(h.tenGod)) : []; };
+  const hour = Boolean(saju.pillars.hour && det.hourIncluded);
+  const v = { yearStem: [ko(saju.tenGods.stems.year)], monthStem: [ko(saju.tenGods.stems.month)], ...(hour ? { hourStem: [ko(saju.tenGods.stems.hour)] } : {}), yearBranch: branch("year"), monthBranch: branch("month"), dayBranch: branch("day"), ...(hour ? { hourBranch: branch("hour") } : {}) };
+  const clean = Object.fromEntries(Object.entries(v).map(([k, xs]) => [k, [...new Set((xs as string[]).filter(Boolean))]])) as Record<string, string[]>;
+  const L: Record<string, string> = { yearStem: "태어난 해 하늘 글자(연간)", monthStem: "태어난 달 하늘 글자(월간)", hourStem: "태어난 시각 하늘 글자(시간)", yearBranch: "태어난 해 땅 글자(연지)", monthBranch: "태어난 달 땅 글자(월지)", dayBranch: "태어난 날 땅 글자(일지)", hourBranch: "태어난 시각 땅 글자(시지)" };
+  return { ...clean, line: Object.entries(clean).map(([k, xs]) => `${L[k]} ${xs[0]}${xs.length > 1 ? `(속에 ${xs.slice(1).join("·")})` : ""}`).join(" · ") + " — 자리와 십성은 이 값 그대로(하늘 글자와 땅 글자를 바꿔 쓰지 않는다)" } as NonNullable<ChartBrief["positions"]>;
 }
 
 /** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값 하나의 단계. */
 export function groupsFact(saju: SajuCalcResult): NonNullable<ChartBrief["groups"]> {
   const gs = groupStrength(saju);
   const levels = Object.fromEntries(TEN_GOD_GROUP_KEYS.map(g => [GROUP_NAME_KO[g], GROUP_LEVEL_KO[gs[g].level]])) as NonNullable<ChartBrief["groups"]>["levels"];
-  return { levels, line: `${TEN_GOD_GROUP_KEYS.map(g => `${GROUP_NAME_KO[g]} ${GROUP_LEVEL_KO[gs[g].level]}`).join(" · ")} — 만세력 오행 칸(겉 글자 + 지장간) 기준. 묶음 세기는 이 단계로만 쓰고 다른 말(옅다·보통 수준 등)로 바꾸지 않는다` };
+  return { levels, line: `${TEN_GOD_GROUP_KEYS.map(g => `${GROUP_EASY[g]}(${GROUP_NAME_KO[g]}) ${GROUP_LEVEL_KO[gs[g].level]}`).join(" · ")} — 만세력 오행 칸(겉 글자 + 지장간) 기준. 묶음 세기는 이 단계로만 쓰고 다른 말(옅다·보통 수준 등)로 바꾸지 않는다. 처음 나올 때 "내 방식의 힘(비겁)"처럼 쉬운 이름과 함께, 그 뒤로는 쉬운 이름만` };
 }
 
 /**

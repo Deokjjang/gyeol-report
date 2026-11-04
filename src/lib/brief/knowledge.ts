@@ -20,7 +20,9 @@ export type ProductNarrative = ProductNarratives["products"][number];
 const DeepFileSchema = z.object({ version: z.string(), topic: z.string(), note: z.string().optional(), entries: z.array(z.object({ key: z.string(), when: z.enum(["strong", "weak", "any"]).optional(), items: z.record(z.string(), z.array(z.string())) })) });
 export type DeepEntry = z.infer<typeof DeepFileSchema>["entries"][number];
 /** P6d F: MBTI 장면 씨앗(유형 × 영역 30개 이상, 6~24자 명사구). rel: partner = 연인·배우자 전제, job: 직업 형태 전제. */
-const SeedFileSchema = z.object({ version: z.string(), type: z.string(), seeds: z.record(z.string(), z.array(z.object({ id: z.string(), text: z.string(), rel: z.enum(["any", "partner"]).optional(), job: z.enum(["any", "employed", "business", "student"]).optional() }))) });
+const SeedFileSchema = z.object({ version: z.string(), type: z.string(), seeds: z.record(z.string(), z.array(z.object({ id: z.string(), text: z.string(), rel: z.enum(["any", "partner"]).optional(), job: z.enum(["any", "employed", "business", "student"]).optional(),
+  // P6e 16: 직업군·상태 태그(필수, 빈 배열 = 누구에게나). tools/p6e/tag-seeds.ts가 facts.SCENE_TAGS 규칙으로 단다.
+  ctx: z.array(z.enum(["office", "code", "team", "shop", "care", "freelance"])) }))) });
 export type MbtiSeed = z.infer<typeof SeedFileSchema>["seeds"][string][number];
 
 export type Knowledge = {

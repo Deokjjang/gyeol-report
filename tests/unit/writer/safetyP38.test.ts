@@ -101,12 +101,13 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
 
   it("2: 직무 = 명리 × MBTI × 인접성 × 생활 단계, 3단 출력, MBTI 핵심과 정면으로 어긋난 직무 제외", () => {
     const ev = (key: string) => c1Career.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] };
-    const adjacent = ev("jobAdjacent").facts.slice(1).map(f => f.split(" — ")[0]);
+    // P6e 13: 직군 3개(지금 일에서 넓힐 쪽), 예시 직업은 같은 점수(명리 × MBTI × 인접성 × 생활 단계)에서 고른다.
+    const lines = ev("jobGroups").facts.slice(1), titles = [...lines, ...ev("jobGroupsFar").facts.slice(1)].flatMap(p => p.split("예시 직업: ")[1].split(", "));
     const clusters = new Map(k.catalog.jobs.map(j => [j.title, j.cluster]));
     const near = new Set(["plan", ...k.catalog.clusters.find(c => c.id === "plan")!.near]);
-    for (const t of adjacent) expect(near.has(clusters.get(t)!), t).toBe(true);
+    expect(lines.filter(p => near.has(clusters.get(p.split("예시 직업: ")[1].split(", ")[0])!)).length).toBeGreaterThanOrEqual(1);
     const entj = k.mbti.get("ENTJ")!;
-    for (const t of [...adjacent, ...ev("jobLongterm").facts.slice(1).map(f => f.split(" — ")[0])]) {
+    for (const t of titles) {
       const job = k.catalog.jobs.find(j => j.title === t)!;
       for (const [d, v] of Object.entries(job.dims)) if (Math.abs(v) >= 0.5 && Math.abs(entj.dimensionTags[d] ?? 0) >= 0.6) expect(Math.sign(v), `${t} ${d}`).toBe(Math.sign(entj.dimensionTags[d]!));
     }

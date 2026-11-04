@@ -11,7 +11,7 @@ import { groupValues } from "@/lib/saju/groupStrength";
 import type { SajuCalcResult } from "@/lib/saju/types";
 import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
 import { conditionalFamily, planChapters, PRODUCT_CHARS, topDimension, type TraitSource } from "./chapters";
-import { buildCompatibility, type PairSide } from "./compatibility";
+import { buildCompatibility, dimensionVector, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
 import { ageAt, ageBand, forbiddenFacts, sceneCtxOf, sceneFits, toFactProfile, type CustomerFacts, type FactProfile } from "./facts";
 import { collectFeatureHits } from "./featureHits";
@@ -28,11 +28,12 @@ import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage, matchJob } from "./props";
+import { avoidImagesFor } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
 import { CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
-import { LOVE_STATUS_Q, loveDesign2, loveStatusOf } from "./design/love";
+import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -97,7 +98,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   };
   const base = { ...toFactProfile(facts), ...override };
   // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
-  const profile: FactProfile = { ...base, scene: sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false }) };
+  const profile: FactProfile = { ...base, scene: sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false, freelancer: !override && facts.jobStatus === "freelancer" }) };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
   const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
@@ -347,7 +348,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])), transitionTouched } : {}),
     ...(mbtiTop ? { mbtiAxes: [mbtiTop] } : {}),
     // 궁합 장면은 그 관계 유형의 생활 주제에서만(P3.8 3: 부모·자녀 책에 친구 보온병·동창 회비). 부모·자녀는 자녀 나이대로 거른다.
-    ...(relTopics && other ? { relScenes: { topics: relTopics, ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const, exclude: parentChildExclude(me.person.gender, other.person.gender, other.person.age >= 20 ? rng.fork("living").pick(["together", "apart"] as const) : "together") } : {}) } } : {}),
+    ...(relTopics && other ? { relScenes: { topics: relTopics, ...pairSides(me, other, k), ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const, exclude: parentChildExclude(me.person.gender, other.person.gender, other.person.age >= 20 ? rng.fork("living").pick(["together", "apart"] as const) : "together") } : {}) } } : {}),
   });
 
   // 항목의 touched는 그 장에 배정된 trait만 남긴다(P3.7 1-1: 원국 특성은 건드려진 것만, 배정된 것만 짧게 부른다).
@@ -363,6 +364,10 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const statusQ = input.product === "career_money_study" ? (key: string) => CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
     : input.product === "love_marriage_child" ? (key: string) => LOVE_STATUS_Q[key]?.[loveStatusOf(me.facts.relationshipStatus)] : null;
   if (statusQ) for (const c of chapters) for (const x of c.sections ?? []) { const m = x.q.match(/^\{status:(\w+)\}$/); if (m) x.q = statusQ(m[1]) ?? x.q; }
+  // P6e 8: 연애 4장 제목은 상태에 따라(연애 중·기혼 = 표현과 대화의 리듬).
+  if (input.product === "love_marriage_child") for (const c of chapters) { const t = LOVE_STATUS_TITLE[c.id]?.[loveStatusOf(me.facts.relationshipStatus)]; if (t) (c as { title: string }).title = t; }
+  // 최종판 1-7: 같은 일주의 다른 책이 쓴 핵심 이미지 명사(이미지 대장)를 피할 이미지로. 궁합은 두 사람 일주 모두.
+  { const avoid = avoidImagesFor([me.chart.pillars.day.hanja, ...(other ? [other.chart.pillars.day.hanja] : [])]); if (avoid.length) (me.chart as { avoidImages?: string[] }).avoidImages = avoid; }
   // 다음 대운이 1년 안에 시작하면 지금 대운 설명에 전환을 붙인다(P3.7 r1: 2026년에 끝나는 대운을 시기 장이 끝나는 줄 모르고 썼다).
   const cd = me.chart.currentDayun, ty = me.chart.thisYear.year;
   if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.startYear - 1}년에 끝나고 ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
@@ -428,6 +433,12 @@ function cautionOf(e: import("./schema").TimelineEntry, k: Knowledge, c: Caution
   return pick;
 }
 
+/** 최종판 1-5: 궁합 장면 주인을 정할 두 사람의 행동 차원 값과 차원 양끝 이름. */
+function pairSides(a: PersonPack, b: PersonPack, k: Knowledge) {
+  const short = (x: string) => x.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "").replace(/\.$/, "");
+  return { sides: [{ name: a.person.callName, vec: dimensionVector(side(a, k), k) }, { name: b.person.callName, vec: dimensionVector(side(b, k), k) }] as const,
+    poles: Object.fromEntries(k.ontology.dimensions.map(d => [d.id, { plus: short(d.poles.plus.description), minus: short(d.poles.minus.description) }])) };
+}
 function side(p: PersonPack, k: Knowledge): PairSide {
   return {
     saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName, gender: p.person.gender,

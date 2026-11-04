@@ -13,7 +13,7 @@ import type { ReportInputPayload } from "@/lib/report-generation/reportInputType
 import { productSlugByType, type ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
 import type { BookSection, ChapterSource, SectionCard } from "./format";
 import type { WriterChapter } from "./prompt";
-import type { CallLog, WriterFallback } from "./runner";
+import type { CallLog, RawEntry, WriterFallback } from "./runner";
 import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
 import { manAge } from "@/lib/brief/chart";
@@ -25,7 +25,8 @@ export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
 
 /** 판 정보(P6b A-4, p6b-fields.md 1). 원고 체계가 바뀌면 판 번호·개정일을 올린다(책마다 같은 값). */
-export const BOOK_EDITION = { number: 5, label: "제5판", revisedAt: "2026-11-03" } as const;
+/** 최종판(2026-11-04) 제6판: 원고 체계 개정(작가 1회·원문 보관, 지침 노출·고아 문장·사실 대조·한자 렌더·면책 1회·기준일은 판 표기에만). 이전 Book은 저장된 판 그대로. */
+export const BOOK_EDITION = { number: 6, label: "제6판", revisedAt: "2026-11-04" } as const;
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
@@ -46,6 +47,8 @@ export type V5BookDraft = {
   readonly appendix?: Brief["appendix"];
   /** 표지 한 줄(P6c-ui2 c 화면, P6c-content G 작가): 작가가 쓴 이 책의 상징 한 줄(16~26자). 검사에 걸리면 핵심 이미지. 있으면 핵심 이미지보다 먼저 쓴다. */
   readonly coverLine?: string;
+  /** 기준일(최종판 1-13): 책을 쓴 발행일(KST). 본문 첫 문장 대신 표지·마지막 쪽 판 표기에만 보인다. 제6판 이전 Book에는 없다. */
+  readonly baseDate?: string;
   /** 용어 뜻(P6c-ui2 g): 본문에 나온 십성·신살·귀인·십이운성과 지식 DB 뜻 한 줄. P6c-ui2 이전 Book에는 없다(용어 표시 없음). */
   readonly glossary?: Brief["glossary"];
 };
@@ -67,9 +70,11 @@ export type WriterMeta = {
   readonly priorBooks?: number;
   /** 고객 원장(P6d F): 이 책이 쓴 각도·MBTI 씨앗·근거 항목. newShare: 앞 책들과 겹치지 않는 근거 항목의 몫. */
   readonly ledger?: BookLedger & { readonly newShare?: number };
+  /** 작가·수리·재작성·표지 수리 원문(최종판 0-2, 입력 해시별). 같은 입력이면 다시 부르지 않고 이 원문을 쓴다(교체 레인·book:replay). 이전 Book에는 없다. */
+  readonly raw?: readonly RawEntry[];
 };
 type V5ScoreV51 = { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] };
-type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
+type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1" | "v2.2"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
 export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
   readonly input: ReportInputPayload; readonly people: readonly BookPerson[]; readonly names: string;
@@ -167,6 +172,8 @@ export function assembleV5Book(a: {
   briefHash: string; knowledgeVersion: string; promptVersion: string; recovered: boolean; priorBooks?: number;
   /** 표지 한 줄(P6c G, 검사 통과분 또는 핵심 이미지). badCards: 검사에 걸려 결정론 값으로 바꿀 카드 필드("장.소제목.필드"). */
   cover?: string; badCards?: ReadonlySet<string>;
+  /** 핵심 이미지 한 줄(최종판 1-7): 작가가 [표지]에서 지은 줄. 종합 1장 첫 소제목과 표지가 이 줄을 함께 쓴다. 없으면 엔진 핵심 이미지. */
+  image?: string; raw?: readonly RawEntry[];
   /** 같은 고객의 앞 책 원장(P6d F·G): 근거 항목 새 몫을 잰다. */
   priorLedger?: BookLedger;
 }): { draft: V5BookDraft; evidence: V5Evidence } {
@@ -176,19 +183,19 @@ export function assembleV5Book(a: {
   // 1장 첫 소제목은 핵심 이미지 그대로(P6c D2, 종합). 소제목마다 핵심 문장 위치(keySpan)를 남기고 기호는 지운다(H). 카드 줄은 카드로 옮긴다(F1).
   const cardOf = new Map<string, { card: SectionCard; bad: Set<string> }>();
   a.finals.forEach(f => f.keys && f.sections.forEach((s, si) => { if (s.card) cardOf.set(s.heading, { card: s.card, bad: new Set([...(a.badCards ?? [])].filter(x => x.startsWith(`${f.n}.${si}.`)).map(x => x.split(".")[2])) }); }));
-  const chapters: V5Chapter[] = a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, sections: f.sections.map((s, si) => withKeySpan(brief.product === "saju_mbti_full" && f.n === 1 && si === 0 ? { ...s, heading: brief.chart.coreImage.line } : s)), ...(f.keys ? { keys: f.keys } : {}) }));
+  const chapters: V5Chapter[] = a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, sections: f.sections.map((s, si) => withKeySpan(brief.product === "saju_mbti_full" && f.n === 1 && si === 0 ? { ...s, heading: a.image ?? brief.chart.coreImage.line } : s)), ...(f.keys ? { keys: f.keys } : {}) }));
   const byRule: Record<string, number> = {};
   for (const d of a.report.deletions) byRule[d.rule] = (byRule[d.rule] ?? 0) + 1;
   // 만 나이 기준 출생 연도(입력이 없으면 기준일 나이로 거꾸로 셈).
   const born = (a.payload as { person?: { birthDate?: string }; personA?: { birthDate?: string } } | undefined);
   const birthYear = Number((born?.person ?? born?.personA)?.birthDate?.slice(0, 4)) || brief.chart.thisYear.year - brief.person.age;
   const draft: V5BookDraft = {
-    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION,
+    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION, baseDate: brief.baseDate,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
       cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number); return { ganji: c.ganji, years: c.years, ages: [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current }; }) } } : {}),
-    ...(brief.compatibility ? { pairImage: brief.compatibility.pairImage } : { coreImage: brief.chart.coreImage }),
+    ...(brief.compatibility ? { pairImage: brief.compatibility.pairImage } : { coreImage: a.image ? { line: a.image, ruleId: `${brief.chart.coreImage.ruleId}:writer` } : brief.chart.coreImage }),
     ...(brief.appendix ? { appendix: brief.appendix } : {}),
     ...glossaryOf(brief, chapters),
     ...(a.cover ? { coverLine: a.cover } : {}),
@@ -215,6 +222,7 @@ export function assembleV5Book(a: {
       ledger: (() => { const l = ledgerOf(brief); return { ...l, newShare: newEvidenceShare(l, a.priorLedger) }; })(),
       chapters: a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, source: f.source, ...(f.reason ? { reason: f.reason } : {}), chars: f.chars, evidence: chapterEvidence(brief, a.plan.find(ch => ch.n === f.n)!) })),
       safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length, ...(a.report.metrics ? { metrics: a.report.metrics } : {}) },
+      ...(a.raw?.length ? { raw: a.raw } : {}),
     },
   };
   return { draft, evidence };
@@ -289,7 +297,8 @@ export const seasonTime = (m: { start: string; end: string }, today: string) => 
 export const seasonLabel = (m: { order: number; range: string }, hangul: string) => ({ title: `${m.order}번째 달 · ${hangul}월 · ${m.range}`, sub: `${hangul}월 · ${m.range}` });
 
 /** 판 표기(표지·마지막 쪽): "제5판 · 2026년 11월 3일 개정". P6b 이전 v5 Book은 없음. */
-export const v5EditionLabel = (draft: unknown) => { const e = (draft as V5BookDraft | null)?.edition; return e ? `${e.label} · ${koreanDate(e.revisedAt)} 개정` : undefined; };
+/** 최종판 1-13: 제6판부터 "제6판 · 2026년 11월 4일 기준"(기준일은 본문이 아니라 여기에만). 그 전 Book은 "제5판 · … 개정" 그대로. */
+export const v5EditionLabel = (draft: unknown) => { const d = draft as V5BookDraft | null, e = d?.edition; return e ? (d?.baseDate ? `${e.label} · ${koreanDate(d.baseDate)} 기준` : `${e.label} · ${koreanDate(e.revisedAt)} 개정`) : undefined; };
 
 /** 저장된 v5 스냅샷 → 기존 렌더러가 그대로 보여 주는 BookData.
  * today(KST 날짜): 표의 지금·돌아보기·앞으로 기준. 열람 화면은 읽는 날을 넘기고, 없으면 책을 만든 날. */

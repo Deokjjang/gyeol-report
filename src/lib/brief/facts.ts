@@ -12,7 +12,31 @@ export type JobFact = "employed" | "business" | "student" | "none";
  * scene(P6b B-6): 장면 글이 고객 사실과 맞는지 보는 생활 맥락. office = 사무직 소품(기획서·회의실…)이 맞는 직업,
  * school = 학생 소품(minor: 매점·담임까지, college: 강의실·학점까지), familyOk = 부모·형제 호칭이 입력 사실인 책(부모·자녀 궁합).
  */
-export type SceneCtx = { readonly office: boolean; readonly school: "minor" | "college" | null; readonly familyOk: boolean };
+export type SceneCtx = { readonly office: boolean; readonly school: "minor" | "college" | null; readonly familyOk: boolean;
+  /** P6e 16: 코드·팀·가게·돌봄 장면이 맞는 생활(개발 직군·직장 소속·가게/서비스·의료/돌봄 직군). 없으면(옛 시험) 보지 않는다. */
+  readonly code?: boolean; readonly team?: boolean; readonly shop?: boolean; readonly care?: boolean;
+  /** 최종판 1-15: 의뢰·외주·개인 프로젝트 장면이 맞는 생활(프리랜서·창작·개발 직군). 없으면 보지 않는다. */
+  readonly freelance?: boolean };
+/**
+ * 씨앗·장면의 직업군·상태 태그(P6e 16). 지식 DB 씨앗에 ctx로 적고(tools/p6e/tag-seeds.ts), 없으면 글에서 같은 규칙으로 읽는다.
+ * office = 사무 소품(보고서·업무 지시·연차·결재…), code = 코드·프로그램, team = 팀·동료·후배(직장 소속), shop = 손님·가게, care = 환자·치료.
+ */
+export const SCENE_TAGS: Readonly<Record<"office" | "code" | "team" | "shop" | "care" | "freelance", RegExp>> = {
+  office: /보고서(?!야)|업무 지시|연차 (눈치|쓰|내)|반차|수정본|결재|사내|부서|회의록|기획안|사원증|파티션|주간 회의|분기 목표|인사 평가|연봉 협상|발표 자료|엑셀|슬라이드|출장/,
+  code: /코드|코딩|(작은|새|직접 만든|짠|만든) 프로그램|스크립트|버그|깃허브|자동화 (툴|스크립트)/,
+  team: /팀에 (나눠|공유|제안)|팀원|팀 회의|팀장|동료(들)?(에게|의|와| 고민)|후배|선배|상사/,
+  shop: /손님|가게|매장|단골|진열대|오픈 준비|마감 정산|계산대/,
+  care: /환자|진료|간호|병동|처치/,
+  // 최종판 1-15: 장소담(카페 사장)에게 INTP 씨앗 「프리랜서 의뢰서」·「개인 프로젝트 폴더」가 갔다(P6e).
+  freelance: /프리랜서|의뢰서|의뢰인|외주|클라이언트|개인 프로젝트/,
+};
+export type SceneTag = keyof typeof SCENE_TAGS;
+export const sceneTagsOf = (text: string): SceneTag[] => (Object.keys(SCENE_TAGS) as SceneTag[]).filter(k => SCENE_TAGS[k].test(text));
+/** 태그(또는 글)가 이 고객의 생활에 맞는가. */
+export function sceneTagsFit(tags: readonly string[], p: FactProfile): boolean {
+  const c = p.scene; if (!c) return true;
+  return tags.every(t => t === "office" ? c.office : t === "code" ? c.code !== false : t === "team" ? c.team !== false : t === "shop" ? c.shop !== false : t === "care" ? c.care !== false : t === "freelance" ? c.freelance !== false : true);
+}
 export type FactProfile = { readonly relationship: RelationshipFact; readonly children: ChildrenFact; readonly job: JobFact; readonly scene?: SceneCtx };
 
 export type CustomerFacts = {
@@ -54,15 +78,22 @@ export function sceneTextFits(text: string, p: FactProfile): boolean {
   if (SCENE_CONTEXT.school_minor.test(text) && p.scene.school !== "minor") return false;
   if (SCENE_CONTEXT.school.test(text) && !p.scene.school) return false;
   if (SCENE_CONTEXT.office.test(text) && !p.scene.office) return false;
-  return true;
+  return sceneTagsFit(sceneTagsOf(text), p);
 }
 
 /** 사무직 소품이 맞는 직업군(props.json 직업군 id). 직업 입력이 없으면 직장·사업 상태로만 본다. */
 const OFFICE_GROUPS = new Set(["startup-founder", "ui-ux-designer", "graphic-designer", "marketer", "pm-planner", "data-ai", "researcher-professor", "real-estate", "hr-admin", "developer", "lawyer", "insurance", "finance", "sales", "accounting", "reporter", "writer-editor", "civil-servant", "manufacturing-engineer"]);
-export function sceneCtxOf(a: { jobGroupId: string | null; job: JobFact; age: number; familyOk?: boolean }): SceneCtx {
+const CODE_GROUPS = new Set(["developer", "data-ai", "startup-founder", "researcher-professor", "manufacturing-engineer"]);
+const SHOP_GROUPS = new Set(["self-employed", "cafe", "pastry", "chef", "store-staff", "beauty", "hotel-travel", "real-estate", "insurance", "sales", "call-center", "pharmacist"]);
+const CARE_GROUPS = new Set(["nurse", "doctor", "physio", "nursing-assistant", "vet", "dentist", "pharmacist", "counselor", "social-worker"]);
+/** 의뢰·외주·개인 프로젝트 장면이 맞는 직업군(창작·개발·글). */
+const FREELANCE_GROUPS = new Set(["developer", "data-ai", "ui-ux-designer", "graphic-designer", "illustrator-webtoon", "creator", "writer-editor", "music", "actor-model", "startup-founder"]);
+export function sceneCtxOf(a: { jobGroupId: string | null; job: JobFact; age: number; familyOk?: boolean; freelancer?: boolean }): SceneCtx {
   const office = a.jobGroupId ? OFFICE_GROUPS.has(a.jobGroupId) : a.job === "employed" || a.job === "business";
   const school = a.job !== "student" ? null : a.age < 20 || a.jobGroupId === "highschool-student" ? "minor" : "college";
-  return { office, school, familyOk: Boolean(a.familyOk) };
+  // P6e 16: 카페 사장에게 "작은 프로그램·보고서 서론·업무 지시", 물리치료사에게 "연차 눈치·보고서 수정본", 구직자에게 "팀에 나눠 주는"이 갔다.
+  return { office, school, familyOk: Boolean(a.familyOk),
+    code: a.jobGroupId ? CODE_GROUPS.has(a.jobGroupId) : false, team: a.job === "employed", shop: a.job === "business" || (a.jobGroupId ? SHOP_GROUPS.has(a.jobGroupId) : false), freelance: Boolean(a.freelancer) || (a.jobGroupId ? FREELANCE_GROUPS.has(a.jobGroupId) : false), care: a.jobGroupId ? CARE_GROUPS.has(a.jobGroupId) : false };
 }
 
 /** 작가가 단정하면 안 되는 사실(입력에 없거나 반대인 것). */

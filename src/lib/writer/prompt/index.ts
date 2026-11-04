@@ -65,9 +65,73 @@ export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters
 /** 원국 요약: 일간 그림 별명·비유는 빼고 핵심 이미지 한 줄만(P6b B-2·B-4). */
 const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage"), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.line });
 
+/**
+ * 앞 장 주장(P6e 10, 최종판 1-16): 장마다 앞 장들이 소개한 특성의 "이 사람 몫"(forYou 첫 마디)과 MBTI 주기능·열등 기능을 짧은 주장으로 다음 장에 before로 넘긴다(최근 4개).
+ * tension: 뒤 장 재료가 앞 장 주장과 반대로 들리는 짝 — ① 같은 행동 차원의 반대 끝, ② MBTI 열등 기능의 영역(늦게 오는 힘)을 특성이 "강하다"고 하는 경우
+ * (장소담 1장 INTP 열등 "주변 마음 살피기는 가장 늦게 옴" ↔ 2장 물 많음 "불편한 사람을 가장 먼저 눈치챔").
+ */
+const INFERIOR_DIMS: Readonly<Record<string, readonly [string, number][]>> = {
+  Fe: [["empathyResponse", 1], ["caretaking", 1], ["directness", -1]], Fi: [["introspection", 1], ["emotionalExpression", -1]], Te: [["planning", 1], ["decisionSpeed", 1], ["controlNeed", 1]], Ti: [["inquiry", 1], ["perfectionism", 1]],
+  Se: [["riskTaking", 1], ["mobility", 1]], Si: [["detailFocus", 1], ["ruleAdherence", 1]], Ne: [["noveltySeeking", 1], ["learningDrive", 1]], Ni: [["detailFocus", -1], ["persistence", 1]],
+};
+export function chapterClaims(brief: Brief, k: Knowledge): Map<number, { before: string[]; tension: string[] }> {
+  const chapters = writerChapters(brief);
+  const say = (d: string, v: number) => { const o = k.ontology.dimensions.find(x => x.id === d); return o ? (v > 0 ? o.poles.plus : o.poles.minus).description.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "") : d; };
+  const prof = brief.mbti ? k.mbti.get(brief.mbti.type) : undefined;
+  const inferior = prof?.cognitiveFunctions.find(f => f.role.includes("열등"));
+  const infText = inferior ? (inferior.easy.split(/(?<=[.!?])\s/)[0] ?? inferior.easy).replace(/[.!?]$/, "") : "";
+  type Claim = { n: number; text: string; dims: [string, number][]; inferior?: boolean };
+  const seen: Claim[] = [];
+  const res = new Map<number, { before: string[]; tension: string[] }>();
+  for (const c of chapters) {
+    const mats = [...c.materials, ...(c.sections ?? []).flatMap(x => x.materials)];
+    const mine: Claim[] = [];
+    for (const m of mats) {
+      if (m.kind === "trait" && m.angle === "first") {
+        const t = brief.traits.find(x => x.id === m.traitId), f = t ? k.features.get(t.featureId) : undefined;
+        if (t && f) { const top = Object.entries(f.dimensionTags).filter(([, v]) => Math.abs(v) >= 0.6).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 2) as [string, number][];
+          mine.push({ n: c.n, text: `${t.name.replace(/\(.*?\)/g, "").trim()}${top[0] ? `(${say(top[0][0], top[0][1])})` : ""}`, dims: top }); }
+      }
+      if ((m.kind === "mbti" || (m.kind === "ref" && m.ref.startsWith("mbti"))) && prof && inferior && !seen.concat(mine).some(x => x.inferior))
+        mine.push({ n: c.n, text: `${prof.type} 열등 기능(${infText})`, dims: (INFERIOR_DIMS[inferior.code] ?? []).map(([d, sgn]) => [d, -sgn * 0.8] as [string, number]), inferior: true });
+    }
+    const before = [...new Set(seen.slice(-4).map(x => `${x.n}장 ${x.text}`))];
+    const tension: string[] = [];
+    for (const m of mine) for (const x of seen) {
+      // 열등 기능 영역과 특성이 부딪치거나(① ↔ 특성), 강한 행동 차원(0.7 이상)이 서로 반대 끝일 때만.
+      const hit = m.dims.find(([d, v]) => x.dims.some(([d2, v2]) => d2 === d && Math.sign(v2) !== Math.sign(v) && (x.inferior || m.inferior || (Math.abs(v) >= 0.7 && Math.abs(v2) >= 0.7))));
+      if (hit && tension.length < 2) tension.push(`${x.n}장 "${x.text}" ↔ 이 장 "${m.text}" — 반대로 들리니 조건(겉과 속·상황·상대)을 밝혀 잇는다`);
+    }
+    if (before.length || tension.length) res.set(c.n, { before, ...{ tension: [...new Set(tension)] } });
+    for (const m of mine) if (!seen.some(x => x.text === m.text)) seen.push(m);
+  }
+  return res;
+}
+
+/** 한자 읽기(괄호 밖 천간·지지·오행 한자를 한글로). */
+const READING: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해", 木: "목", 火: "화", 土: "토", 金: "금", 水: "수" };
+const noHanja = (t: string) => t.replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (_a, inner: string) => { const kept = inner.replace(/[一-鿿]+\s?/g, "").replace(/^[\s·,]+|[\s·,]+$/g, ""); return kept ? `(${kept})` : ""; })
+  .replace(/[一-鿿]+/g, m => [...m].map(ch => READING[ch] ?? "").join("")).replace(/ {2,}/g, " ");
+/**
+ * 작가에게 보이는 글(P6e 1·7, 최종판 1-1·1-6): 한자는 빼고(렌더 단계가 붙인다), 재료의 note는 "rule"(작가에게 주는 쓰기 규칙)로 이름을 바꾼다.
+ * note라는 이름이 독자에게 하는 안내처럼 읽혀 "입력하지 않은 경력과 연차는 쓰지 마세요"로 본문에 옮겨졌다.
+ */
+function writerFacingText(x: unknown): unknown {
+  if (typeof x === "string") return noHanja(x);
+  if (Array.isArray(x)) return x.map(writerFacingText);
+  if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).filter(([k]) => k !== "hanja").map(([k, v]) => [k === "note" ? "rule" : k, writerFacingText(v)]));
+  return x;
+}
+
 export function renderWriterBrief(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
+  return writerFacingText(renderWriterBriefRaw(brief, opts)) as Record<string, unknown>;
+}
+function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
   const out = renderRaw(brief);
   if (!opts.knowledge) return out;
+  // 최종판 1-16: 장마다 앞 장 주장·반대로 들리는 짝(P6e chapterClaims).
+  const claims = chapterClaims(brief, opts.knowledge);
+  out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
   // 지식 DB 원문을 재료로(P6c A1). MBTI 기능은 쉬운 이름을 먼저(P6c C5): "일 되게 하는 판단(Te) · 주기능: 방향".
   const table = materialTable(opts.knowledge);
   const swapped = swapDeep(out, table);
@@ -88,7 +152,8 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     ...(brief.partner ? { partner: { ...brief.partner, chart: writerChart(brief.partner.chart), mbti: brief.partner.mbti ? omit(brief.partner.mbti, "image") : null } } : {}),
     // 좋은 기운이 trait와 같으면 뜻·나에게는 trait 쪽에만 둔다.
     fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "easyName", "image", "oneLiner", "meaning", "forYou") : omit(f, "featureId", "easyName", "image", "oneLiner")),
-    traits: traits.map(t => omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs")),
+    // 최종판 1-5(P6e 3): 궁합은 특성마다 주인(그 기운을 가진 사람 이름)을 붙인다.
+    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs"), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
     shadows,
     // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
     // "badges"라는 키 이름이 본문 낱말 "배지"로 새어 나갔다(P6b E-6): 작가에게는 marks로 준다.

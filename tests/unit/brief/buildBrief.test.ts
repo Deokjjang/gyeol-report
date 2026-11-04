@@ -28,7 +28,8 @@ for (const e of k.tenGodPeriod.values()) for (const s of [...e.year.scenes, ...e
 
 function scenesOf(b: Brief): string[] {
   return [
-    ...b.chapters.flatMap(c => c.materials.flatMap(m => ((m.kind === "trait" || m.kind === "mbti") && m.scene ? [m.scene] : []))),
+    // 최종판 1-15: 맞는 씨앗이 없어 고객 소품(props.json, 이미 고객 생활로 거른 것)으로 받은 장면(seedId prop)은 지식 DB 장면이 아니다.
+    ...b.chapters.flatMap(c => c.materials.flatMap(m => ((m.kind === "trait" || m.kind === "mbti") && m.scene && !(m.kind === "mbti" && m.seedId === "prop") ? [m.scene] : []))),
     ...b.traits.flatMap(t => (t.fusion?.scene ? [t.fusion.scene] : [])),
     ...(b.timeline?.entries.flatMap(e => (e.material.scene ? [e.material.scene] : [])) ?? []),
   ];
@@ -158,7 +159,7 @@ describe("brief builder — 성질", () => {
     for (const { brief } of samples) {
       for (const c of brief.chapters) {
         if (c.id.includes(":")) { expect(c.materials[0].kind).toBe("timeline"); continue; }
-        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(3);
+        expect(c.sections!.length, c.id).toBeGreaterThanOrEqual(1); expect(c.sections!.length).toBeLessThanOrEqual(4);
         for (const s of c.sections!) expect(s.materials.length).toBeGreaterThanOrEqual(1);
         expect(c.targetChars[1]).toBe(PRODUCT_CHARS[brief.product].section[1] * c.sections!.length);
       }

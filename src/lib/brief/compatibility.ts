@@ -2,6 +2,7 @@
  * 궁합 브리프: 두 사람 요약, 공통점·차이(행동 차원), 오행 보완, A→B·B→A 십성, 일주끼리 관계, MBTI 통념 궁합, 관계 유형 관점, v5 궁합 점수(P4: 구성요소·구간·방향).
  * 두 사람 기둥끼리 관계는 원국 감지와 같은 detectRelations를 쓴다(두 기둥을 년·월 자리 라벨로 넣는다 — 라벨은 계산에 쓰이지 않는다).
  */
+import { poleFits } from "./mbtiFn";
 import type { MbtiProfile } from "@/data/knowledge-v5/schema";
 import { computeCompatScore } from "@/lib/compat/score";
 import { compatibilityRoleLabels, type CompatibilityRelationshipType } from "@/lib/report-generation/reportInputTypes";
@@ -25,7 +26,7 @@ export type PairSide = {
   readonly mbti: MbtiProfile | null; readonly callName: string; readonly gender: "MALE" | "FEMALE" | null;
 };
 
-function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
+export function dimensionVector(side: PairSide, k: Knowledge): Map<string, number> {
   const v = new Map<string, number>();
   const add = (tags: Readonly<Record<string, number>>, w: number) => { for (const [d, x] of Object.entries(tags)) v.set(d, (v.get(d) ?? 0) + x * w); };
   for (const t of side.traits) { const f = k.features.get(t.featureId); if (f) add(f.dimensionTags, t.score); }
@@ -40,21 +41,35 @@ const PILLAR_KO = { year: "태어난 해", month: "태어난 달", day: "태어�
  */
 function pairRelations(a: PairSide, b: PairSide, k: Knowledge): string[] {
   const POS = ["day", "month", "year", "hour"] as const;
-  const rows: { rank: number; text: string }[] = [];
+  const ORDER: Readonly<Record<string, number>> = { year: 0, month: 1, day: 2, hour: 3 };
+  type Row = { pas: string[]; pbs: string[]; kind: string; key: string; sky: boolean; line: string; rank: number };
+  const raw: Row[] = [];
   for (const pa of POS) for (const pb of POS) {
     // 시각 기둥은 원국 요약에 있을 때(시간을 알 때)만.
     const x = pa === "hour" && !a.chart.pillars.hour ? undefined : a.saju.pillars[pa], y = pb === "hour" && !b.chart.pillars.hour ? undefined : b.saju.pillars[pb];
     if (!x || !y) continue;
     for (const r of detectRelations([{ position: "year", pillar: x }, { position: "month", pillar: y }])) {
       const sky = r.kind === "STEM_HAP";
-      const glyph = sky ? "하늘 글자" : "땅 글자";
       const line = k.badges.find(z => z.kind === r.kind && (z.pair === r.key || z.pair === [...r.key].reverse().join("")))?.line ?? "";
-      const rank = (pa === "day" ? 0 : 2) + (pb === "day" ? 0 : 2) + (sky ? 1 : 0);
-      // 쉬운 문장(P6b D 궁합 relationsPlain): 글자 표기 없이 자리와 관계 이름·뜻만(E-9: "(정축·정축(丁丑))" 같은 겹친 표기 방지).
-      rows.push({ rank, text: relationPlain(`${a.callName}의 ${PILLAR_KO[pa]} ${glyph}`, `${b.callName}의 ${PILLAR_KO[pb]} ${glyph}`, r.kind, r.kind === "SAMHAP", line) });
+      raw.push({ pas: [pa], pbs: [pb], kind: r.kind, key: [...r.key].sort().join(""), sky, line, rank: (pa === "day" ? 0 : 2) + (pb === "day" ? 0 : 2) + (sky ? 1 : 0) });
     }
   }
-  return rows.sort((p, q) => p.rank - q.rank).slice(0, 4).map(r => r.text);
+  // P6e 20: 같은 관계(같은 글자 짝·같은 관계 이름)가 한 사람의 여러 자리에 걸리면 한 줄로 합친다("태어난 해·달 땅 글자 모두와").
+  const merge = (rows: Row[], side: "pas" | "pbs"): Row[] => {
+    const other = side === "pas" ? "pbs" : "pas", by = new Map<string, Row>();
+    for (const r of rows) {
+      const g = `${r.kind}|${r.key}|${r.sky}|${r[other].join(",")}`;
+      const m = by.get(g);
+      if (!m) by.set(g, { ...r, pas: [...r.pas], pbs: [...r.pbs] });
+      else { m[side] = [...new Set([...m[side], ...r[side]])]; m.rank = Math.min(m.rank, r.rank); }
+    }
+    return [...by.values()];
+  };
+  const SHORT: Readonly<Record<string, string>> = { year: "해", month: "달", day: "날", hour: "시각" };
+  const where = (s: PairSide, ps: string[], glyph: string) => { const sorted = [...ps].sort((p, q) => ORDER[p] - ORDER[q]); return sorted.length === 1 ? `${s.callName}의 ${PILLAR_KO[sorted[0] as keyof typeof PILLAR_KO]} ${glyph}` : `${s.callName}의 태어난 ${sorted.map(p => SHORT[p]).join("·")} ${glyph} 모두`; };
+  // 쉬운 문장(P6b D 궁합 relationsPlain): 글자 표기 없이 자리와 관계 이름·뜻만(E-9: "(정축·정축(丁丑))" 같은 겹친 표기 방지).
+  return merge(merge(raw, "pbs"), "pas").sort((p, q) => p.rank - q.rank).slice(0, 4)
+    .map(r => { const glyph = r.sky ? "하늘 글자" : "땅 글자"; return relationPlain(where(a, r.pas, glyph), where(b, r.pbs, glyph), r.kind, r.kind === "SAMHAP", r.line); });
 }
 
 /**
@@ -93,6 +108,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const va = dimensionVector(a, k), vb = dimensionVector(b, k);
   const dims = k.ontology.dimensions.map(d => ({ d, x: va.get(d.id) ?? 0, y: vb.get(d.id) ?? 0 }))
     .filter(z => Math.sign(z.x) !== Math.sign(z.y) && Math.abs(z.x - z.y) > 0.3)
+    // P6e 4: 그 사람 MBTI의 기능·태도에 맞지 않는 끝은 그 사람의 차이로 쓰지 않는다.
+    .filter(z => poleFits(a.mbti?.type, z.d.id, z.x) && poleFits(b.mbti?.type, z.d.id, z.y))
     .sort((p, q) => Math.abs(q.x - q.y) - Math.abs(p.x - p.y) || p.d.id.localeCompare(q.d.id)).slice(0, 3);
   // 공통 기운이 두 사람 차이(같은 차원의 반대)와 부딪치면 뺀다(P3.7 r2: 공통점 역마살 ↔ 차이 '익숙한 것 유지').
   const clashesDiff = (id: string) => { const tags = k.features.get(id)?.dimensionTags ?? {}; return dims.some(z => Math.abs(tags[z.d.id] ?? 0) >= 0.5 && (Math.sign(tags[z.d.id]) !== Math.sign(z.x) || Math.sign(tags[z.d.id]) !== Math.sign(z.y))); };
@@ -114,6 +131,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     role, callName: s.callName, mbti: s.mbti?.type ?? null, dayPillar: ganjiLabel(s.saju.pillars.day),
     image: s.chart.coreImage.line,
     traitIds: s.traits.map(t => t.id), excess: s.st.excess, lacking: s.st.lacking,
+    // P6e 3: 신살·귀인은 사람별로(이 사람에게 있는 것만). 다른 사람 것을 이 사람 이름으로 쓰지 않는다.
+    shinsal: [...new Set(s.hitIds.filter(id => /^(shinsal|gwiin):/.test(id)).map(id => (k.features.get(id)?.name ?? "").replace(/\(.*?\)/g, "").replace(/·.*$/, "").trim()).filter(Boolean))],
   });
   return {
     relationshipType: category,
