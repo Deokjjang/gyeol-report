@@ -98,6 +98,11 @@ select pg_temp.p6e_patch('public.ops_gift(text,jsonb)'::regprocedure,
   $p$where recipient_user_id=x.user_id and status='claimed' and bonus_granted_at is null$p$,
   $p$where recipient_user_id=x.user_id and kind='event' and status='claimed' and bonus_granted_at is null$p$);
 
+-- 선물 링크 확인(peek): 이미 받은 선물을 "내가 받은 것"과 "다른 사람이 받은 것"으로 구분한다(제3자에게 받았다는 문구가 나가던 결함).
+select pg_temp.p6e_patch('public.ops_gift(text,jsonb)'::regprocedure,
+  $p$'expiresAt',w.expires_at,'mine',w.owner_user_id=v_user);$p$,
+  $p$'expiresAt',w.expires_at,'mine',w.owner_user_id=v_user,'received',coalesce(w.recipient_user_id=v_user,false));$p$);
+
 -- 보상 지정(A)과 지급 기록.
 create table public.comp_designations(
   user_id uuid primary key references auth.users(id) on delete cascade,

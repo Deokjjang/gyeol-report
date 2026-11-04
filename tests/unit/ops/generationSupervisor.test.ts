@@ -162,3 +162,14 @@ describe("판정", () => {
     expect(judgeBuild({ meta: { chapters: [{ n: 1, source: "writer", reason: "keys_filled:2026" }], calls: [] } as never, run: null })).toEqual({ kind: "complete", keysFilled: [1] });
   });
 });
+
+describe("OPS_FORCE_ANTHROPIC_DOWN (개발 전용 장애 강제, P6e-ops 8)", () => {
+  it("개발 모드에서만 켜지고, 운영·미설정이면 항상 꺼진다", async () => {
+    const { devForceAnthropicDown } = await import("@/lib/ops/generation/devMock");
+    expect(devForceAnthropicDown({ NODE_ENV: "development", OPS_FORCE_ANTHROPIC_DOWN: "1" })).toBe(true);
+    expect(devForceAnthropicDown({ NODE_ENV: "production", OPS_FORCE_ANTHROPIC_DOWN: "1" })).toBe(false);
+    expect(devForceAnthropicDown({ NODE_ENV: "test", OPS_FORCE_ANTHROPIC_DOWN: "1" })).toBe(false);
+    expect(devForceAnthropicDown({ NODE_ENV: "development" })).toBe(false);
+    expect(devForceAnthropicDown({ NODE_ENV: "development", OPS_FORCE_ANTHROPIC_DOWN: "0" })).toBe(false);
+  });
+});

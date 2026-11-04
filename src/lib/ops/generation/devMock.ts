@@ -2,6 +2,8 @@
  * 로컬 개발 전용 목업 작가(P6d-ops E2E, API 호출 0). next dev + OPS_MOCK_WRITER일 때만 켜진다.
  * OPS_MOCK_WRITER=ok: 결정론 장면 은행 글에 장마다 다른 문단을 덧붙여 "작가 원고"처럼 흘려보낸다(시험용, 고객 원고 아님).
  * OPS_MOCK_WRITER=fail: 출력 전 529(과부하)로 실패한다(제본 중·재시도 화면 확인용).
+ * OPS_FORCE_ANTHROPIC_DOWN=1 (P6e-ops 8): "Anthropic 장애"를 강제한다. 정식본(Anthropic) 시도만 출력 전 529로 실패시키고,
+ *   임시본(OpenAI) 시도는 그대로 실제 호출한다. 실호출로 "장애 → 임시본 → 정식본 교체" 경로를 한 번 돌려 볼 때만 쓴다. next dev에서만 켜진다.
  */
 import type { Brief } from "../../brief/schema";
 import type { ReportInputPayload } from "../../report-generation/reportInputTypes";
@@ -26,6 +28,11 @@ function mockText(brief: Brief): string {
       paragraphs: [`${ch.n}장에서 본 모습은 오래 다듬어진 결입니다(${i + 1}). 작은 습관 하나만 바꿔도 ${ch.n}장의 결과가 달라집니다(${i + 1}). 오늘 ${ch.n}장에서 한 가지를 골라 일주일만 지켜보세요(${i + 1}).`] }));
     return renderChapter({ ...c, sections: [...c.sections, ...extra] });
   }).join("\n\n");
+}
+
+/** 정식본 시도만 실패시키는 개발 전용 플래그. 운영(NODE_ENV=production)에서는 항상 false. */
+export function devForceAnthropicDown(env: Readonly<Record<string, string | undefined>> = process.env): boolean {
+  return env.NODE_ENV === "development" && env.OPS_FORCE_ANTHROPIC_DOWN === "1";
 }
 
 export function devMockStream(mode: "ok" | "fail", payload: ReportInputPayload, policyAt: string) {

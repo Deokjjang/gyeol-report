@@ -46,3 +46,6 @@ next-env.d.ts
 # local secrets
 .env.local
 .env*.local
+
+# P6e-ops E2E 로그인 상태(로컬 검수 계정 쿠키): 커밋하지 않는다
+docs/v5/ui-p6e/.storage-*.json

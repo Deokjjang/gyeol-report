@@ -187,6 +187,11 @@ describe("보상 이용권 A·B", () => {
     await contact(C, "friend@example.com");
     expect(await gift.call("claim", { userId: C, tokenHash: link.hash })).toMatchObject({ ok: true, status: "claimed" });
     expect(await one("select product_scopes scopes from report_ticket_grants where user_id=$1 and reason='EVENT_GIFT_RECEIVED'", [C])).toEqual({ scopes: cfg.products });
+    // 링크 확인(peek): 받은 사람에게만 received=true, 보낸 사람은 mine, 제3자는 둘 다 아님(이전엔 제3자에게도 "받았어요"가 나가던 결함).
+    expect(await gift.call("peek", { tokenHash: link.hash, userId: C })).toMatchObject({ status: "claimed", mine: false, received: true });
+    expect(await gift.call("peek", { tokenHash: link.hash, userId: B })).toMatchObject({ status: "claimed", mine: true, received: false });
+    expect(await gift.call("peek", { tokenHash: link.hash, userId: D })).toMatchObject({ status: "claimed", mine: false, received: false });
+    expect(await gift.call("peek", { tokenHash: link.hash, userId: "" })).toMatchObject({ received: false });
     // 목록: 주문 없는 보상도 보이고 kind·giftOnly가 내려간다.
     const list = await gift.call("list", { userId: B });
     expect((list.gifts as { kind: string; giftOnly: boolean; orderCode: string | null }[])[0]).toMatchObject({ kind: "comp", giftOnly: true, orderCode: null });

@@ -12,7 +12,7 @@ import type { buildV5Snapshot, V5BuildDeps } from "../../writer/publish";
 import type { ChapterSink } from "../../writer/runner";
 import { deferUntil, INTERIM_TARGET, interimDue, judgeBuild, nextRetryAt, OFFICIAL_TARGET, runSummary, type BuildVerdict } from "./policy";
 import { filteredSink, memorySink, opsChapterSink, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
-import { devMockMode, devMockStream } from "./devMock";
+import { devForceAnthropicDown, devMockMode, devMockStream } from "./devMock";
 
 export type GenerationEnv = {
   readonly store: OpsStore;
@@ -51,7 +51,8 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
   const injected = env.deps?.provider && env.deps?.model ? { provider: env.deps.provider, model: env.deps.model } : null;
   const target = lane === "interim" ? INTERIM_TARGET : injected ?? OFFICIAL_TARGET;
   const base = env.deps?.fetchImpl ?? ((...a: Parameters<typeof fetch>) => fetch(...a));
-  const mock = devMockMode();
+  // OPS_FORCE_ANTHROPIC_DOWN: 정식본(Anthropic) 시도만 출력 전 529로 실패시킨다(개발 전용). 임시본은 실제 호출.
+  const mock = devMockMode() ?? (lane === "official" && devForceAnthropicDown() ? "fail" as const : null);
   const deps: V5BuildDeps = { ...env.deps, provider: target.provider, model: target.model, fallback: null, fetchImpl: watchFetch(base, seen),
     ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(mock ? { stream: devMockStream(mock, job.payload, job.policyAt) } : {}) };
   const started = (env.now ?? Date.now)();
