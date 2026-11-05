@@ -247,7 +247,7 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
  * 최종판 1-14: 기능 둘을 하이픈으로 이은 꼴("가치 기준(Fi)-지금 이 순간 감각(Se)")은 "~와 ~"로, 바로 앞에 쉬운 이름의 말이 이미 있으면("지난 경험을 기준점으로 삼는 Si") 이름을 되풀이하지 않고 "성향(Si)"으로,
  * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해"). 본문 기준일 줄은 뗀다(1-13).
  */
-export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate">>): { chapters: FinalChapter[]; count: TidyCount } {
+export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime">>): { chapters: FinalChapter[]; count: TidyCount } {
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0, words = 0, groupNames = 0;
   const definedGroups = new Set<string>();
   const introduced = new Set<string>();
@@ -299,6 +299,9 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).
       if (ctx.baseDate && Number(ctx.baseDate.slice(5, 7)) >= 11) { const r = q.replace(/이번 (가을|겨울)(에)? 남은 (두|한) ?달/g, `${ctx.baseDate.slice(0, 4)}년 남은 $3 달`); if (r !== q) { words++; q = r; } }
+      // 최종판2 4: 대운·세운이 아닌 책의 「이번 달·이번 한 달」(시점 말 time_deictic)은 읽는 때 기준 「앞으로 한 달」로(따옴표 안 대사는 그대로).
+      // 장덕민 종합 13장 재작성본 「앞에서 본 관계의 결을 이번 달 행동 하나로 옮겨 볼게요」가 남아 그 소제목이 빠졌다.
+      if (ctx.monthChapters !== undefined && !ctx.strictTime && !ctx.monthChapters.size) { const r = nowMonth(q); if (r !== q) { words++; q = r; } }
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       return q;
     });
@@ -313,6 +316,15 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
 }
 
 const stripMarks = (s: string) => s.replace(L.KEY_MARK, "");
+/** 「이번 (한) 달」 → 「앞으로 한 달」(조사 맞춤). 따옴표 안(대사)은 그대로. */
+export function nowMonth(text: string): string {
+  return text.replace(/이번 (한 )?달(에는|에|은|는|의)?(?=[\s,.])/g, (m, _one: string | undefined, p: string | undefined, at: number) => {
+    const before = text.slice(0, at), open = (before.match(/[“"「‘']/g) ?? []).length - (before.match(/[”」’]/g) ?? []).length;
+    if (open > 0 || (before.match(/"/g) ?? []).length % 2 === 1) return m;
+    return `앞으로 한 달${p === "에는" || p === "은" || p === "는" ? "은" : p === "에" ? " 안에" : p === "의" ? "의" : ""}`;
+  });
+}
+
 /** 수리 패스로 보낼 목록(책 순서). */
 export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];

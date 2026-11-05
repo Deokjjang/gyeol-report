@@ -128,6 +128,12 @@ describe("최종판2 1-4·1-5·1-6·1-7·1-8", () => {
     expect(pillarClaims("태어난 날 땅 글자 신은 편관이에요.", { dayBranch: ["편관", "편인", "비견"] })).toBeNull();
     expect(mbtiMisattr("굳은 표정의 손님 곁에 가장 먼저 다가가 분위기를 풀어 주는 일이 잦지 않나요?", [{ type: "INTP", anchors: /INTP/ }] as never)).toBeTruthy();
   });
+  it("4 정리: 대운·세운이 아닌 책의 「이번 달」 → 「앞으로 한 달」(따옴표 대사는 그대로)", async () => {
+    const { nowMonth } = await import("@/lib/writer/safety/p6c");
+    expect(nowMonth("앞에서 본 관계의 결을 이번 달 행동 하나로 옮겨 볼게요.")).toBe("앞에서 본 관계의 결을 앞으로 한 달 행동 하나로 옮겨 볼게요.");
+    expect(nowMonth("이번 한 달은 한 줄로 말하는 것만 해 보세요.")).toBe("앞으로 한 달은 한 줄로 말하는 것만 해 보세요.");
+    expect(nowMonth("\"이번 달은 내가 못 내지만 다음 달에 살게\"라고 말해요.")).toBe("\"이번 달은 내가 못 내지만 다음 달에 살게\"라고 말해요.");
+  });
   it("역행 금지 1: 작가 시스템 지침은 그대로(시작 커밋과 같은 글)", () => {
     expect(WRITER_SYSTEM).toMatch(/핵심 이미지는 \[표지\] 줄에서 한 번 짓는다/);
   });
