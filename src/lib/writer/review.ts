@@ -19,8 +19,13 @@ export const REVIEW_CATS = ["F", "C", "I", "R", "L", "T", "A"] as const;
 export type ReviewCat = (typeof REVIEW_CATS)[number];
 /** 검수 모델 출력 상한(토큰, 고정). 지적 40개 × 약 90토큰 + 생각 몫. */
 export const REVIEW_MAX_TOKENS = 6000;
-/** 모델별 출력 상한: Haiku 5.5는 생각(effort low)을 켜 두므로 넉넉히. */
-export const reviewMaxTokens = (model: string) => (model === "claude-haiku-5-5" ? 16_000 : REVIEW_MAX_TOKENS);
+/**
+ * 모델별 출력 상한. Haiku 5.5는 생각이 adaptive 전용이라 예산(budget_tokens)을 고정할 수 없다(400). effort low로 생각을 줄이고,
+ * 상한은 "생각 최대 실측 × 2 + 지적 JSON 최대"로 둔다: 실측(최종판3 측정 35회) 출력 최대 11,173토큰 · 생각만 약 8.3천 · 지적 1개 약 145토큰
+ * → 9.5천 × 2 + 40개 × 145 × 1.5(상한 넘겨 쓰는 경우) ≈ 2.8만 → 32,000. 쓰지 않은 상한은 과금되지 않는다(최악 비용 +$0.008).
+ */
+export const HAIKU_REVIEW_MAX_TOKENS = 32_000;
+export const reviewMaxTokens = (model: string) => (model === "claude-haiku-5-5" ? HAIKU_REVIEW_MAX_TOKENS : REVIEW_MAX_TOKENS);
 /** 지적 상한(수리 비용 상한을 구조로 묶는다). */
 export const REVIEW_MAX_ISSUES = 40;
 /** 검수 입력 상한(글자). 넘으면 검수를 건너뛴다(책 본문은 자르지 않는다). */

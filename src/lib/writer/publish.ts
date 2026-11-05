@@ -420,7 +420,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
       const r = await completeText({ ...opts(), provider: "anthropic", model: reviewModel, fallback: null }, run!, rp.system, rp.user, reviewMaxTokens(reviewModel), "review", REVIEW_SCHEMA as unknown as Record<string, unknown>);
       run = { ...r.run, writer }; review.model = reviewModel; review.calls = run.calls.length - before;
       const g = r.text ? guardReview(r.text, rp.numbered, rp.ids, priorLines.lines.length, brief.product) : null;
-      if (!g) review.skipped = r.text ? "format_error" : "call_failed";
+      // 출력 상한에 닿아 끝났으면(생각이 상한을 다 쓴 경우 포함) 따로 적는다. length는 다시 부르지 않는다(같은 입력 재호출 금지).
+      const ended = run.calls.slice(before).at(-1)?.finish;
+      if (!g) review.skipped = ended === "length" ? "length" : r.text ? "format_error" : "call_failed";
       else { issues = [...g.kept]; review.kept = g.kept; review.direct = g.direct; review.dropped = g.dropped.slice(0, 80);
         // A(비문)는 수정 문장이 명리 용어·숫자를 새로 넣지 않았을 때만 그대로 바꾼다(호출 없음).
         const byN = new Map(rp.numbered.map(x => [x.n, x]));

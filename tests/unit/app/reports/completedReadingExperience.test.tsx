@@ -76,7 +76,8 @@ describe("validated completed report reading", () => {
     }
   });
 
-  it.each(["evidence", "longform"])("quarantines completed snapshots missing %s without filling gaps or offering share", async (missing) => {
+  // v5 최종3: 열람은 격리하지 않는다(저장본 그대로, 로그만). 빠진 내용을 채우거나 공유를 띄우지도 않는다.
+  it.each(["evidence", "longform"])("hides completed snapshots missing %s without quarantine, filling gaps or offering share", async (missing) => {
     const snapshot = structuredClone(fixtures["saju-mbti-full"]);
     if (missing === "evidence") Object.assign(snapshot, { evidencePacket: undefined });
     else Object.assign(snapshot.draft, { longformReadings: [] });
@@ -85,7 +86,7 @@ describe("validated completed report reading", () => {
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId: snapshot.reportId }) }));
     expect(html).not.toContain("리포트 공유하기");
     expect(html).not.toContain("김도윤");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId: snapshot.reportId }], ["quarantine", { reportId: snapshot.reportId, expectedSnapshot: snapshot }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId: snapshot.reportId }]]);
     expect(JSON.stringify(snapshot)).toBe(before);
   });
 });

@@ -14,15 +14,15 @@ const { chromium } = await import(process.env.PLAYWRIGHT ?? "playwright");
 const ROOT = resolve(import.meta.dirname, "../..");
 const BASE = process.env.BASE ?? "http://localhost:3800";
 const AS = process.env.AS ?? "final";
-const SET = process.env.CASESET === "final2" ? "final2" : "final";
-const OUT = join(ROOT, SET === "final2" ? "docs/v5/final2" : "docs/v5/final");
+const SET = process.env.CASESET === "final3" ? "final3" : process.env.CASESET === "final2" ? "final2" : "final";
+const OUT = join(ROOT, SET === "final3" ? "docs/v5/final3" : SET === "final2" ? "docs/v5/final2" : "docs/v5/final");
 mkdirSync(OUT, { recursive: true });
 const STATE = join(OUT, "paid-state.json");
 const state = existsSync(STATE) ? JSON.parse(readFileSync(STATE, "utf8")) : {};
-if (SET === "final2" && !state.template) { const prev = join(ROOT, "docs/v5/final/paid-state.json"); if (existsSync(prev)) state.template = JSON.parse(readFileSync(prev, "utf8")).template; }
+if (SET !== "final" && !state.template) { const prev = join(ROOT, "docs/v5/final/paid-state.json"); if (existsSync(prev)) state.template = JSON.parse(readFileSync(prev, "utf8")).template; }
 const save = () => writeFileSync(STATE, JSON.stringify(state, null, 1) + "\n");
 // 사례마다 결제 준비 본문의 inputSnapshot을 화면과 같은 함수(bookCheckoutSnapshot)로 만든다(템플릿의 임시 인물 값을 쓰지 않는다).
-const CASES = JSON.parse(execFileSync("pnpm", ["exec", "tsx", "-e", SET === "final2" ? "import { FINAL2_CASES as FINAL_CASES } from './tools/final2/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))" : "import { FINAL_CASES } from './tools/final/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))"], { cwd: ROOT, encoding: "utf8" }).trim().split("\n").at(-1));
+const CASES = JSON.parse(execFileSync("pnpm", ["exec", "tsx", "-e", SET === "final3" ? "import { FINAL3_CASES as FINAL_CASES } from './tools/final3/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))" : SET === "final2" ? "import { FINAL2_CASES as FINAL_CASES } from './tools/final2/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))" : "import { FINAL_CASES } from './tools/final/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))"], { cwd: ROOT, encoding: "utf8" }).trim().split("\n").at(-1));
 const envFile = () => Object.fromEntries(readFileSync(join(ROOT, ".env.development.local"), "utf8").split("\n").filter(l => /^[A-Z_]+=/.test(l)).map(l => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1).replace(/^"|"$/g, "")]));
 const sql = q => execFileSync("docker", ["exec", "supabase_db_gyeol-report", "psql", "-U", "postgres", "-At", "-c", q], { encoding: "utf8" }).trim();
 const phase = process.argv[2], arg = process.argv[3];

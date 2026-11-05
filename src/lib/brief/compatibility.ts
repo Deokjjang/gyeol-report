@@ -153,7 +153,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     common: common.length ? common : ["눈에 띄는 공통 기운이 적어 서로 다른 점이 이야기의 중심"],
     // 최종판3 2b: 두 사람이 모두 가진 특성 id 전부(자르지 않음). 작가 브리프에서 그 특성의 주인은 「두 사람 모두(공통)」이고 차이의 근거로 쓰지 않는다.
     commonIds: a.hitIds.filter(id => b.hitIds.includes(id) && !/^(stem|branch|tenGod|dayMaster|dayPillar|climate|yinYang):/.test(id)),
-    commonNames: [...new Set(a.hitIds.filter(id => b.hitIds.includes(id) && !/^(stem|branch|tenGod|dayMaster|dayPillar|climate|yinYang):/.test(id)).map(id => featureName(id)).filter(Boolean))],
+    commonNames: [...new Set(a.hitIds.filter(id => b.hitIds.includes(id) && !/^(stem|branch|tenGod|dayMaster|dayPillar|climate|yinYang):/.test(id)).map(id => featureName(id).replace(/·.*$/, "")).filter(Boolean))],
     differences: dims.map(z => ({ a: pole(z.d, z.x), b: pole(z.d, z.y) })),
     complement: [...fills(b, a, b.callName, a.callName), ...fills(a, b, a.callName, b.callName)],
     tenGodAB: { tenGod: tenGodLabel(ab), reading: meaningLine(k, ab) },

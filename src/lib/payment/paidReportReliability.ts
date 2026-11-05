@@ -8,11 +8,27 @@ import { deliveryIssueCodes } from "../report-generation/deliveryAudit";
 import { unknownCalculationVersions } from "../saju/calendarVersion";
 import type { ReliabilityResult, ReliabilityStore } from "./paidReportReliabilityStore";
 import type { TossConfirmClientResult, TossConfirmRequest } from "./tossConfirmTypes";
+import { productOnSale, SALES_CLOSED_CODE } from "../ops/config";
+
+/**
+ * v5 최종3: 판매를 닫은 상품(대운·세운, FORTUNE_SALES_OPEN)의 승인 전 주문인가. 결제 준비·주문 생성은 이미 막혀 있고(prepare·create-ready),
+ * 이것은 닫기 전에 만든 주문(배포 직전 결제창을 연 주문 등)이 승인 단계로 오는 경우만 막는다. 이미 승인된 주문(status≠ready)은 막지 않는다
+ * (돈이 움직인 주문은 기존대로 이어서 처리). 주문을 못 읽으면 막지 않는다(기존 승인 흐름 그대로).
+ */
+export async function closedProductOrder(store: ReliabilityStore, orderId: string): Promise<boolean> {
+  try {
+    const found = await store.call("find_order", { orderId });
+    const order = found.ok && isRecord(found.order) ? found.order : null;
+    return !!order && order.provider_order_id === orderId && order.status === "ready" && !productOnSale(order.product_type);
+  } catch { return false; }
+}
 
 // A crash after provider approval leaves the claimed payment key durable. The worker
 // reconciles it with the same provider idempotency key before claiming generation.
+// salesGate(선택): 승인 전에 판매 중지 상품 주문을 거른다(HTTP 승인 진입점만 넘긴다). 걸리면 토스 승인·주문 선점 없이 끝낸다.
 export async function confirmPaidReport(input: TossConfirmRequest, store: ReliabilityStore,
-  confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>) {
+  confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>, salesGate?: (orderId: string) => Promise<boolean>) {
+  if (salesGate && await salesGate(input.orderId)) return { ok: false, code: SALES_CLOSED_CODE };
   const claim = await store.call("confirm_claim", { ...input });
   if (!claim.ok || claim.reportId || claim.pending) return claim;
   let paidAt: string | undefined, receiptUrl: string | undefined;
@@ -111,22 +127,33 @@ export async function runPaidReportJob(store: ReliabilityStore, runtime: NoWrite
   }
 }
 
+/**
+ * 열람(읽기 전용). v5 최종3: 열람은 고객 Book을 바꾸지 않는다 — 검사가 실패해도 격리(quarantine)를 부르지 않고 로그만 남긴다.
+ * 예전에는 실패하면 quarantine을 불러 status가 바뀌고(기본 SQL은 snapshot_json까지 지움) 고객이 다시 열 수 없었다.
+ * 검사기는 호출하는 쪽이 저장된 판 계열로 고른다(validateBookPublication: v5→v5 계약, v4→v4 계약, 그 밖→기존 열람 검사).
+ * 새 발행 검사(정답지·렌더·시점·라벨·의미 검수)는 발행 경로에만 있고 여기서 부르지 않는다(tests/unit/book/readPathProtection.test.tsx).
+ * 검사에 걸린 이번 열람은 내용을 그리지 않고 안내만 한다(저장본은 그대로라 코드를 고치면 다음 열람에 다시 열린다).
+ */
 export async function readPublishedReport(store: ReliabilityStore, reportId: string, validatePublication = validateProductPublication) {
   const result = await store.call("read_report", { reportId });
   if (!result.ok || result.status !== "COMPLETED") return { ...result, snapshot: null };
   const snapshot = result.snapshot;
-  if (!isRecord(snapshot) || snapshot.reportId !== reportId || !validatePublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket).ok) {
-    // A calculation version this code does not know comes from a newer engine (e.g. after a
-    // rollback). Quarantine may clear snapshot_json, so keep the row as is and only hide it.
-    const unknownVersions = isRecord(snapshot) && snapshot.reportId === reportId ? unknownCalculationVersions(snapshot) : [];
-    if (unknownVersions.length) {
-      console.error(JSON.stringify({ event: "REPORT_READ_UNKNOWN_CALCULATION_VERSION", reportId, versions: unknownVersions }));
-      return { ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null };
-    }
-    // Compare the observed value under DB locks so a delayed read cannot
-    // quarantine a replacement published by an admin recovery run.
-    await store.call("quarantine", { reportId, expectedSnapshot: snapshot ?? null });
+  if (!isRecord(snapshot) || snapshot.reportId !== reportId) {
+    console.error(JSON.stringify({ event: "REPORT_READ_SNAPSHOT_MISMATCH", reportId }));
     return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null };
   }
-  return result;
+  let errors: string[] = [];
+  try {
+    const gate = validatePublication(String(snapshot.productType), snapshot.draft, snapshot.evidencePacket);
+    if (!gate.ok) errors = gate.errors.length ? gate.errors : ["READ_GATE_REJECTED"];
+  } catch { errors = ["READ_VALIDATOR_EXCEPTION"]; }
+  if (!errors.length) return result;
+  // A calculation version this code does not know comes from a newer engine (e.g. after a rollback).
+  const unknownVersions = unknownCalculationVersions(snapshot);
+  if (unknownVersions.length) {
+    console.error(JSON.stringify({ event: "REPORT_READ_UNKNOWN_CALCULATION_VERSION", reportId, versions: unknownVersions }));
+    return { ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null };
+  }
+  console.error(JSON.stringify({ event: "REPORT_READ_VALIDATION_FAILED", reportId, productType: String(snapshot.productType), productVersion: String(snapshot.productVersion), errors: errors.slice(0, 20) }));
+  return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null };
 }

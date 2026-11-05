@@ -127,12 +127,13 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(html).not.toContain('href="/report/new');
   });
 
-  it("retains the existing quarantine gate for corrupted completed data", async () => {
+  // v5 최종3: 열람 검사에 걸려도 격리하지 않는다(저장본 그대로, 로그만). 손상 내용은 그리지 않고 같은 안내를 보인다.
+  it("hides corrupted completed data without quarantining it", async () => {
     mocks.call.mockResolvedValueOnce({ ok: true, status: "COMPLETED", snapshot: { ...snapshot, evidencePacket: undefined } }).mockResolvedValue({ ok: true });
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
     expect(html).toContain("확인이 필요합니다");
     expect(html).not.toContain("리포트 공유하기");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId, expectedSnapshot: { ...snapshot, evidencePacket: undefined } }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
   });
 
   it.each(["FAILED_REQUIRES_ATTENTION", "QUEUED", "GENERATING", "RETRYING", "EXPIRED"])("never shares or renders retained forensic content in %s", async status => {
@@ -146,14 +147,14 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
   });
 
-  it("hides invalid content and internal errors when quarantine storage is unavailable", async () => {
+  it("hides invalid content and internal errors without any storage write", async () => {
     mocks.call.mockResolvedValueOnce({ ok: true, status: "COMPLETED", snapshot: null })
       .mockResolvedValueOnce({ ok: false, code: "DURABLE_STORAGE_FAILED" });
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
     expect(html).toContain("추가 결제는 필요하지 않습니다");
     expect(html).not.toContain("리포트 공유하기");
     expect(html).not.toContain("DURABLE_STORAGE_FAILED");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId, expectedSnapshot: null }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
   });
 
   it("redirects successful confirmation immediately without rendering provider data", async () => {

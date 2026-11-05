@@ -28,6 +28,18 @@ export function accountSession(identity: AccountIdentity | null, snapshot?: Acco
   return { status, displayName: snapshot?.profile?.displayName ?? identity.displayName,
     ...(status === "member" && contact !== undefined ? { profile: contact ? "complete" as const : "required" as const, ...(contact?.upgradeState ? { upgradeState: contact.upgradeState } : {}) } : {}) };
 }
+/**
+ * 산 책 열람(최종판3 1-7): 약관 문서 버전이 바뀌어 재동의가 필요해도, 예전에 필수 동의(약관·개인정보)를 마친 회원은
+ * 이미 산 책(결제 책·이용권 책)을 그대로 읽는다. 새 결제·이용권 사용·공유 링크 발급은 지금처럼 재동의 뒤에만 된다.
+ * 각 종류의 가장 최근 기록(최신순)이 동의(필수)여야 한다 — 동의를 거둔 회원은 읽지 못한다.
+ */
+export function mayReadOwnedBooks(identity: AccountIdentity | null, snapshot?: AccountSnapshot | null): boolean {
+  if (!identity || !snapshot?.profile) return false;
+  return (Object.keys(ACCOUNT_POLICY_VERSIONS) as Array<keyof typeof ACCOUNT_POLICY_VERSIONS>).every(type => {
+    const latest = snapshot.consents.find(r => r.consent_type === type);
+    return !!latest?.is_agreed && latest.required;
+  });
+}
 export function safeAccountNext(value: unknown, local = false): string {
   const fallback = local ? "/dev/account" : "/account";
   if (typeof value !== "string") return fallback;

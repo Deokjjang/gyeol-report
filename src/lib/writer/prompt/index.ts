@@ -122,8 +122,10 @@ const noHanja = (t: string) => t.replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (_a,
  * 작가에게 보이는 글(P6e 1·7, 최종판 1-1·1-6): 한자는 빼고(렌더 단계가 붙인다), 재료의 note는 "rule"(작가에게 주는 쓰기 규칙)로 이름을 바꾼다.
  * note라는 이름이 독자에게 하는 안내처럼 읽혀 "입력하지 않은 경력과 연차는 쓰지 마세요"로 본문에 옮겨졌다.
  */
+/** 최종판3 3: 지식 DB 이름에 붙은 분류 라벨(「망신살(亡身殺)·십이신살」)은 작가에게 보내지 않는다(본문 「망신살·십이신살」 노출 원인). */
+const noLabel = (t: string) => t.replace(/·십이신살/g, "");
 function writerFacingText(x: unknown): unknown {
-  if (typeof x === "string") return noHanja(x);
+  if (typeof x === "string") return noLabel(noHanja(x));
   if (Array.isArray(x)) return x.map(writerFacingText);
   if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).filter(([k]) => k !== "hanja").map(([k, v]) => [k === "note" ? "rule" : k, writerFacingText(v)]));
   return x;
@@ -179,23 +181,30 @@ export const ACTION_FAMILIES: readonly [RegExp, string][] = [
   [/쉬는 날|휴식|비워 두|충전/, "쉬는 시간"], [/거절|안 된다고/, "거절 연습"], [/고맙|감사/, "고마움 말하기"], [/목록|리스트|체크/, "목록 만들기"],
 ];
 export const actionFamily = (s: string): string => ACTION_FAMILIES.find(([re]) => re.test(s))?.[1] ?? s.replace(/[^가-힣]/g, "").slice(0, 8);
-const ARROW = /^(.*?)\s*→\s*(.+)$/;
+/** 영역별 처방 종류(절 영역에 맞는 것부터). 같은 종류는 책에 한 번, 같은 사람 이전 책이 쓴 종류도 뺀다. */
+const ACTIONS_BY_DOMAIN: Readonly<Record<string, readonly string[]>> = {
+  work: ["시간 정하기", "목록 만들기", "적어 두기", "먼저 묻기", "하루 두기", "쉬는 시간"], money: ["지출 한도", "통장 나누기", "견적 비교", "목록 만들기", "하루 두기"],
+  study: ["시간 정하기", "적어 두기", "목록 만들기", "먼저 묻기"], love: ["고마움 말하기", "먼저 묻기", "한 줄 말하기", "쉬는 시간", "걷기"],
+  marriage: ["목록 만들기", "고마움 말하기", "먼저 묻기", "지출 한도", "시간 정하기"], relationships: ["먼저 묻기", "고마움 말하기", "거절 연습", "한 줄 말하기", "시간 정하기"],
+  alone: ["쉬는 시간", "걷기", "적어 두기", "시간 정하기"],
+};
 function assignActions(out: Record<string, unknown>, brief: Brief): void {
   const used = new Set<string>((brief.ledgerNotes?.avoidActions ?? []).map(actionFamily));
+  const plan = writerChapters(brief);
   const chapters = out.chapters as { sections?: { q: string; materials: unknown[]; act?: string }[] }[] | undefined;
-  for (const c of chapters ?? []) for (const s of c.sections ?? []) {
-    const lines = s.materials.filter((m): m is string => typeof m === "string" && ARROW.test(m));
-    const pick = lines.map(m => m.match(ARROW)![2].trim()).find(x => !used.has(actionFamily(x)));
-    if (pick) { s.act = pick; used.add(actionFamily(pick)); }
-    // 이미 쓴 계열의 행동 꼬리는 떼고 앞부분(상황)만 남긴다.
-    s.materials = s.materials.map(m => { if (typeof m !== "string") return m; const x = m.match(ARROW); return x && x[2].trim() !== pick && used.has(actionFamily(x[2])) ? x[1].trim() : m; });
-  }
+  // 장마다 하나: 그 장의 마지막 절에 이 책·이전 책에서 안 쓴 종류를 준다(장 영역에 맞는 것부터).
+  (chapters ?? []).forEach((c, ci) => {
+    const ss = c.sections ?? []; if (!ss.length) return;
+    const si = ss.length - 1, domain = plan[ci]?.sections?.[si]?.domain ?? "alone";
+    const pick = (ACTIONS_BY_DOMAIN[domain] ?? ACTIONS_BY_DOMAIN.alone).find(f => !used.has(f)) ?? Object.values(ACTIONS_BY_DOMAIN).flat().find(f => !used.has(f));
+    if (pick) { ss[si].act = `처방 종류: ${pick} — 이 장의 행동 조언은 이 절에 이 종류로 하나만`; used.add(pick); }
+  });
 }
 
 /** 최종판3 2: 상품·입력별 책 규칙(작가에게 보이는 규칙 줄). 문체 지침은 그대로 두고 사실·구조 규칙만 더한다. */
 export function bookRules(brief: Brief): string[] {
   const p = brief.product, rel = brief.person.facts.relationship, year = brief.chart.thisYear;
-  const rules = ["처방(행동 조언)은 절마다 그 절의 act 하나만 쓴다. act가 없는 절은 그 절 재료에서 새 행동 하나를 만들고, 다른 절·avoidActions(이전 책 처방)와 같은 행동은 되풀이하지 않는다"];
+  const rules = ["처방(행동 조언)은 장마다 하나, act가 있는 절에 그 종류로만 쓴다(장마다 종류가 다르다). act가 없는 절은 새 처방을 만들지 않고 장면·이해로 마무리한다. avoidActions(같은 사람 이전 책 처방)와 같은 행동은 되풀이하지 않는다"];
   if (p === "saju_mbti_full") rules.push(
     "[표지]와 1장에는 직업 장면·직업 말(직함·업무·회사·가게)을 쓰지 않는다. 성향 장은 장마다 직업 장면 1개 이하, 일·돈 장만 예외",
     "입력에 없는 직업 상황(투자자·투자 유치·직원·팀원·면접·평가 시즌·실적표·'처음 만든 ~')은 쓰지 않는다",
