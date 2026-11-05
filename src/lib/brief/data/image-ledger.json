@@ -260,6 +260,17 @@
     "product": "career_money_study"
    },
    {
+    "line": "문 닫은 카페 창가에 남겨 둔 촛불 한 자루",
+    "noun": "자루",
+    "source": "local-db:report_a29459e21b9548e79d3e3a5cd33e118e",
+    "book": "report_a29459e21b9548e79d3e3a5cd33e118e",
+    "at": "2026-11-05T02:46:52.774Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
     "line": "빗속에서도 꺼지지 않는 카페 사장의 불",
     "noun": "사장의 불",
     "source": "local-db:report_0c7636d107c84b8baa997c7051fe5cea",
@@ -2609,6 +2620,15 @@
      "하람|1996-12-06|09:30"
     ],
     "product": "career_money_study"
+   },
+   {
+    "run": "친한친구에게도약속날짜를자주잊",
+    "book": "report_a29459e21b9548e79d3e3a5cd33e118e",
+    "at": "2026-11-05T02:46:52.774Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "love_marriage_child"
    },
    {
     "run": "통화보다문서로설명하는쪽을택",

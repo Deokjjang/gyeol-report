@@ -1,0 +1,102 @@
+{
+ "template": {
+  "provider": "toss",
+  "productType": "saju_mbti_full",
+  "inputSnapshot": {
+   "mbti": "",
+   "gender": "FEMALE",
+   "timezone": "Asia/Seoul",
+   "birthDate": "1995-03-14",
+   "birthTime": "08:30",
+   "calendarType": "SOLAR",
+   "birthTimeUnknown": false,
+   "displayName": "검수",
+   "reportInputPayload": {
+    "productKey": "saju_mbti_full",
+    "productSlug": "saju-mbti-full",
+    "person": {
+     "name": "검수",
+     "birthDate": "1995-03-14",
+     "birthTimePrecision": "exact",
+     "birthTime": "08:30",
+     "birthTimeUnknown": false,
+     "approximateBirthTimeSlot": "",
+     "gender": "FEMALE",
+     "mbtiType": ""
+    },
+    "userContext": {
+     "relationshipStatus": "",
+     "jobStatus": "",
+     "detailJob": "",
+     "focusAreas": []
+    },
+    "productOptions": {
+     "contentVersion": "v3"
+    }
+   }
+  },
+  "consent": {
+   "policyVersions": {
+    "terms": "2026-06-14.1",
+    "privacy": "2026-09-22.1",
+    "refund": "2026-09-22.1"
+   },
+   "assertions": {
+    "inputAccuracy": true,
+    "digitalReportStart": true,
+    "refundRestriction": true,
+    "termsAccepted": true,
+    "privacyAccepted": true,
+    "refundAccepted": true,
+    "age14OrOlder": true,
+    "minorLegalRepresentative": false
+   }
+  }
+ },
+ "orders": {
+  "deokmin-full": {
+   "orderCode": "GR-JUU4",
+   "providerOrderId": "provider_order_7272d6cd-1c0e-4b0f-bf33-17544a99577c",
+   "reportId": "report_ef42d66ffef340f0b9de46d2eb57af16",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_46d23d76bc6c42f88ff0842286a8a06e&orderId=provider_order_7272d6cd-1c0e-4b0f-bf33-17544a99577c&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T02:34:43.412Z"
+  },
+  "sodam-career": {
+   "orderCode": "GR-Y3GP",
+   "providerOrderId": "provider_order_ba49d7d7-fb20-4af0-8a85-7da6d988151b",
+   "reportId": "report_fe29cb0ed88a4a459c14f1b377a3a9bf",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_0b745e9218e443c8b56a474144d0e3c7&orderId=provider_order_ba49d7d7-fb20-4af0-8a85-7da6d988151b&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T02:42:52.925Z"
+  },
+  "sodam-love": {
+   "orderCode": "GR-QSG2",
+   "providerOrderId": "provider_order_372c1854-77b3-4da6-aa0a-fa066db40eab",
+   "reportId": "report_a29459e21b9548e79d3e3a5cd33e118e",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_0a44348064d744829b49f4f1bd423ac0&orderId=provider_order_372c1854-77b3-4da6-aa0a-fa066db40eab&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T02:46:56.998Z"
+  },
+  "sodam-seongmin": {
+   "orderCode": "GR-H7E2",
+   "providerOrderId": "provider_order_ddceafdc-7ab8-4bee-94bc-12da75f5ab0c",
+   "reportId": "report_4d95800013d242e48022248ca9394bf2",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_bcfce0aa1b53449ba91affa6a305de5f&orderId=provider_order_ddceafdc-7ab8-4bee-94bc-12da75f5ab0c&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T02:49:10.118Z"
+  }
+ }
+}
