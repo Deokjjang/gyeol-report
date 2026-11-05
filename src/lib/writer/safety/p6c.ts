@@ -14,7 +14,7 @@ import * as D from "./p6d";
 import * as E from "./p6e";
 import * as F from "./final2";
 import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
-import { factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
+import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -38,7 +38,7 @@ export type LintFlag = { readonly chapter: number; readonly section: number; rea
 export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
-  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside"]);
+  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -106,6 +106,7 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   fact_ganji: "간지·연도·대운·대운수가 정답지와 다르다 → detail의 값으로 고친다",
   fact_meaning: "오행의 뜻을 이 사람 일간 기준 십성과 다르게 풀었다 → detail의 십성 뜻으로 고치거나 뺀다",
   fact_mix: "오행 개수와 세기를 한 마디에 섞었다 → 개수면 개수만, 힘이면 힘만",
+  fact_dayun: "대운 기간을 정답지와 다르게 말했다(예: 「올해까지」) → 정답지의 시작·끝 해대로, 모르면 기간을 빼고 흐름만",
   common_split: "두 사람 모두 가진 특징을 한 사람만의 것·차이의 근거로 썼다 → '두 사람 모두'로 쓰거나 다른 근거로",
   render_dup: "같은 말을 두 번 이었다(「X, 곧 X」) → 한 번만",
   label_leak: "내부 분류 라벨·생성 규칙·면책 문구가 본문에 나왔다 → 그 말을 빼고 내용만",
@@ -316,6 +317,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       { const pp = fixParenParticles(q); words += pp.count; q = pp.text; }
       if (ctx.fact?.comprehensive) { const tf = tidyFixedTime(q); words += tf.count; q = tf.text; }
       if (ctx.careerGroups) { const g = E.careerGroupNames(q, definedGroups); groupNames += g.count; q = g.text; }
+      // 최종판3 12: 쉬운 이름 치환 겹침(「배우는 힘인 배우는 힘은」→「배우는 힘은」).
+      { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).

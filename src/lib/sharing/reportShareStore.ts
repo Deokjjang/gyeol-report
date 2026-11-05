@@ -7,7 +7,7 @@ import { validateProductPublication } from "../report-generation/productPublishG
 import { withDeadline } from "../network/withDeadline";
 import { describeReportShare, SHARE_TOKEN_PATTERN, shareUrl } from "./reportShareMetadata";
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
-import { reportAccessOpen } from "../library/model";
+import { reportAccessOpen } from "../book/accessWindow";
 
 // Storage injection for local SQL verification; token generation and validation stay here.
 export type ShareStorePort = {

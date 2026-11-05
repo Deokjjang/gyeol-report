@@ -35,7 +35,7 @@ import { buildWriterPrompt, renderWriterBrief, WRITER_PROMPT_VERSION, type Write
 import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
-import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, type AppliedRepair, type Deleted } from "./repair3";
+import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { priceFor } from "@/lib/llm/prices";
 import * as E from "./safety/p6e";
@@ -155,7 +155,7 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     ...p6dContext(brief, plan),
     ...p6eContext(brief, k),
     ...final2Context(brief),
-    ...(sheet ? { fact: factCtxOf(sheet, k, personNames(brief), { jobWords: compat ? [] : [...(job?.props ?? []), ...stages] }) } : {}),
+    ...(sheet ? { fact: factCtxOf(sheet, k, personNames(brief), { jobWords: compat ? [] : [...new Set([...(job?.props ?? []), ...stages, ...jobWordsOf(brief.person.facts.job.detail)])] }) } : {}),
   };
 }
 
@@ -322,17 +322,26 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
   // 최종판3 2g: 종합 표지는 직업·나이 금지, 연애 표지는 직업 장소 금지, 같은 사람 이전 책 표지와 같은 모티프 계열 금지.
   if (brief.product === "saju_mbti_full") {
-    const detail = brief.person.facts.job.detail, job = matchJob(detail);
-    const words = [...(job?.props ?? []), ...Object.values(job?.stages ?? {}).flat(), ...detail.split(/[^가-힣A-Za-z]+/).filter(w => w.length >= 2)];
+    const words = jobWordsOf(brief.person.facts.job.detail);
     const w = words.find(x => v.includes(x)) ?? v.match(/대표|사장|창업|직장인|개발자|회사원|사업가|스물|서른|마흔|쉰|\d+ ?(살|세)|\d0대/)?.[0];
     if (w) return { reason: `종합 표지에 직업·나이(${w})`, level: "hard" };
   }
-  if (brief.product === "love_marriage_child") { const w = v.match(/카페|가게|매장|사무실|회사|작업실|공방|점포|매대|주방|사업장/)?.[0]; if (w) return { reason: `연애 표지에 직업 장소(${w})`, level: "hard" }; }
+  // 최종판3 12: 「현장 공정표 위에서도…」(인테리어 시공 대표 연애 표지)를 못 잡았다 — 장소 낱말에 현장, 입력 직업의 소품·낱말도 본다.
+  if (brief.product === "love_marriage_child") { const w = v.match(/카페|가게|매장|사무실|회사|작업실|공방|점포|매대|주방|사업장|현장/)?.[0] ?? jobWordsOf(brief.person.facts.job.detail).find(x => x.length >= 2 && v.includes(x)); if (w) return { reason: `연애 표지에 직업 장소·소품(${w})`, level: "hard" }; }
   { const motifs = coverMotifs(v).filter(m => brief.ledgerNotes?.avoidCoverMotifs?.includes(m)); if (motifs.length) return { reason: `이전 책 표지와 같은 모티프(${motifs.map(m => `${m}: ${COVER_MOTIFS[m].source.replace(/\(\?<?[!=][^)]*\)/g, "").split("|").slice(0, 10).join("·")} 계열 낱말 금지`).join(" / ")}) — 다른 계열의 그림으로`, level: "avoid" }; }
   const hit = avoidOverlaps(v, avoid);
   if (hit.length) return { reason: `피할 이미지(${hit.slice(0, 2).join(" / ")})`, level: "avoid" };
   if (n < 16 || n > 26) return { reason: `길이 ${n}자(공백 뺌, 16~26자)`, level: "length" };
   return null;
+}
+/**
+ * 입력 직업의 낱말(DB 소품·업무 단계 + 입력 글의 낱말). 최종판3 12: 「꽃집」만 넣으면 종합 표지 「꽃 앞에서…」를 못 잡았다(판독) —
+ * 가게꼴 낱말(○○집·○○가게·○○샵·○○공방)은 앞 이름(꽃·빵·옷)도 넣는다.
+ */
+export function jobWordsOf(detail: string): string[] {
+  const job = matchJob(detail), raw = detail.split(/[^가-힣A-Za-z]+/).filter(w => w.length >= 2);
+  const roots = raw.flatMap(w => { const m = w.match(/^([가-힣]{1,4})(집|가게|샵|숍|공방)$/); return m ? [m[1]] : []; });
+  return [...new Set([...(job?.props ?? []), ...Object.values(job?.stages ?? {}).flat(), ...raw, ...roots])];
 }
 export const coverProblem = (raw: string | null, brief: Brief, avoid: readonly string[]): string | null => coverIssue(raw, brief, avoid)?.reason ?? null;
 /** 표지 고르기(최종판2 1-1): 작가가 고친 표지 → 작가 첫 표지 순으로, 걸린 정도가 가벼운 것. 엔진 기본 이미지는 작가 표지가 아예 없을 때(또는 모두 쓸 수 없을 때)만. */
@@ -445,6 +454,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // 재검사: 수리본도 같은 검사(3번)를 지난다. 남은 사실·금지 깃발 문장만 지운다(지우면 문단이 깨지면 원문을 두고 기록).
   let fixed = tidyBook(chapters, lctx).chapters;
   let remaining = lintBook(fixed, lctx);
+  // 최종판3 12: 수리가 정답지 검사에 새로 걸리게 만든 문장은 원문으로 되돌린다(검수 오탐 → 맞는 문장을 틀리게 고친 경우, 호출 0).
+  const rv = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
+  if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
   fixed = del.chapters;
   remaining = lintBook(fixed, lctx);
@@ -456,7 +468,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
-  const reviewMeta = { ...review, repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
+  const reviewMeta = { ...review, repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
   report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),

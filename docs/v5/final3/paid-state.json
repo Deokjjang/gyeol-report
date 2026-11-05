@@ -1,0 +1,102 @@
+{
+ "template": {
+  "provider": "toss",
+  "productType": "saju_mbti_full",
+  "inputSnapshot": {
+   "mbti": "",
+   "gender": "FEMALE",
+   "timezone": "Asia/Seoul",
+   "birthDate": "1995-03-14",
+   "birthTime": "08:30",
+   "calendarType": "SOLAR",
+   "birthTimeUnknown": false,
+   "displayName": "검수",
+   "reportInputPayload": {
+    "productKey": "saju_mbti_full",
+    "productSlug": "saju-mbti-full",
+    "person": {
+     "name": "검수",
+     "birthDate": "1995-03-14",
+     "birthTimePrecision": "exact",
+     "birthTime": "08:30",
+     "birthTimeUnknown": false,
+     "approximateBirthTimeSlot": "",
+     "gender": "FEMALE",
+     "mbtiType": ""
+    },
+    "userContext": {
+     "relationshipStatus": "",
+     "jobStatus": "",
+     "detailJob": "",
+     "focusAreas": []
+    },
+    "productOptions": {
+     "contentVersion": "v3"
+    }
+   }
+  },
+  "consent": {
+   "policyVersions": {
+    "terms": "2026-11-05.1",
+    "privacy": "2026-11-05.1",
+    "refund": "2026-11-05.1"
+   },
+   "assertions": {
+    "inputAccuracy": true,
+    "digitalReportStart": true,
+    "refundRestriction": true,
+    "termsAccepted": true,
+    "privacyAccepted": true,
+    "refundAccepted": true,
+    "age14OrOlder": true,
+    "minorLegalRepresentative": false
+   }
+  }
+ },
+ "orders": {
+  "f3-full": {
+   "orderCode": "GR-VSNY",
+   "providerOrderId": "provider_order_03f944e8-2772-4aa4-93d1-8a7b02edad81",
+   "reportId": "report_b743ac3a17da4f308867071b97a1e93b",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_645c108c5dd64411b0e480f0294246c8&orderId=provider_order_03f944e8-2772-4aa4-93d1-8a7b02edad81&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T07:59:59.091Z"
+  },
+  "f3-career": {
+   "orderCode": "GR-MX8P",
+   "providerOrderId": "provider_order_0317732f-b87f-4381-a6d9-6613c5b5a2e8",
+   "reportId": "report_2ed154e5008d4ccd91f131666071699c",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_0a07d24772124909a68cdc80e4560b7b&orderId=provider_order_0317732f-b87f-4381-a6d9-6613c5b5a2e8&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T08:02:10.780Z"
+  },
+  "f3-love": {
+   "orderCode": "GR-FFGK",
+   "providerOrderId": "provider_order_ef61ba26-f06a-417c-9a0a-cf1ca4cc294d",
+   "reportId": "report_67a9e52ce70148c59797afa008d85a0b",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_a62e660fa88342e6aa6cb0d631f4fdc2&orderId=provider_order_ef61ba26-f06a-417c-9a0a-cf1ca4cc294d&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T08:07:12.049Z"
+  },
+  "f3-pair": {
+   "orderCode": "GR-AZBD",
+   "providerOrderId": "provider_order_7035e7f4-41fd-4d28-a32a-97c6b3d55280",
+   "reportId": "report_165ef864ee85407fbcc87449f58d7be4",
+   "amount": {
+    "currency": "KRW",
+    "value": 1490
+   },
+   "afterPayUrl": "http://localhost:3800/payments/toss/success?paymentKey=tmock_b8647e4ef3da472eab7a8e7ca6e0387d&orderId=provider_order_7035e7f4-41fd-4d28-a32a-97c6b3d55280&amount=1490&paymentType=NORMAL",
+   "at": "2026-11-05T08:15:32.482Z"
+  }
+ }
+}

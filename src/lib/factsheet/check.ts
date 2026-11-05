@@ -7,7 +7,7 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import type { FactSheet, PersonFacts, RelationFact, Slot } from "./build";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
-export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
+export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
 export type FactHit = { readonly rule: FactRule; readonly detail: string };
 export type FactCtx = {
   readonly sheet: FactSheet; readonly aliases: readonly ShinsalAlias[];
@@ -235,9 +235,18 @@ function commonSplit(sen: string, ctx: FactCtx): FactHit | null {
 }
 
 /** 렌더 검사: 쉬운 이름 중복 치환(「X, 곧 X」) · 내부 분류 라벨(「·십이신살」). */
+/**
+ * 최종판3 12: 브리프의 처방 종류 이름만 말하는 문장 — 「처방은 지출 한도입니다.」(커리어 9번)·「이 장의 한 가지 행동은 고마움 말하기예요.」(연애 9번).
+ * 내부 라벨이라 지운다(바로 뒤 문장이 실제 행동을 말한다).
+ */
+export const PRESCRIPTION_LABEL = /^(처방은|이 장의 (한 가지 )?(행동|처방)은|오늘의 (행동|처방)은) [가-힣 ]{2,12}(이에요|예요|입니다)[.!]?$/;
+/** 최종판3 12: 쉬운 이름 치환이 앞의 풀이와 겹친 꼴(「배우는 힘인 배우는 힘은」)을 하나로 줄인다(호출 0). */
+const RENDER_DUP = /((?:[가-힣]+ ){0,2}[가-힣]+)인 \1(?=[은는이가을를의도과와로에 ,.]|$)/g;
+export const collapseRenderDup = (t: string): string => t.replace(RENDER_DUP, "$1");
 function renderCheck(sen: string): FactHit | null {
-  const dup = sen.match(/([가-힣][가-힣 ]{1,14}?)(\([^)]*\))?, 곧 \1/);
+  const dup = sen.match(/([가-힣][가-힣 ]{1,14}?)(\([^)]*\))?, 곧 \1/) ?? sen.match(new RegExp(RENDER_DUP.source));
   if (dup) return { rule: "render_dup", detail: `「${dup[0]}」 같은 말을 두 번(쉬운 이름 치환 겹침)` };
+  if (PRESCRIPTION_LABEL.test(sen.trim())) return { rule: "label_leak", detail: "처방 종류 이름만 말하는 문장(내부 라벨)" };
   const lab = sen.match(/[·(](십이신살|십이운성|신살·귀인|귀인·신살)(?=[\s,.)」이가은는을를의도과와에]|$)|(살|귀인|성)(\([一-鿿]+\))?·(십이신살|신살|귀인)(?=[\s,.)」이가은는을를의도과와에]|$)/);
   if (lab) return { rule: "label_leak", detail: `내부 분류 라벨 「${lab[0]}」` };
   return null;
@@ -256,9 +265,20 @@ const OUTSIDE_ALL = /투자자|투자 유치|평가 시즌|실적표|인사 평�
 /** 종합·연애: 직업 장면 자체가 입력 밖(직원·팀원·면접). 커리어·궁합(사업·동료 관계)은 직무 이야기라 뺀다. */
 const OUTSIDE_PERSONAL = /직원(을|이|들|에게|과|의|이랑| 면접)|팀원(을|이|들|에게|과|의)|면접관|부하 직원/;
 const HYPO_OK = /게 되면|한다면|하게 되면|생기면|생긴다면|할 때가 오면|라면|다면|떠올려 보세요|상상해 보세요/;
+/**
+ * 최종판3 12: 조직이 없는 입력(자영업·프리랜서·전업주부)에 조직 장면(회의·상사·팀장)을 붙인 꼴(판독: 동네 꽃집 운영 종합 「회의 뒤 동료에게」·「회의록」).
+ * 「동료」는 뺐다 — 자영업 저장본 2권에서 「손님이나 동료」「같은 업종 사람이나 동료」(같은 업종 사람)를 잘못 잡았다.
+ */
+const OUTSIDE_NO_ORG = /팀장|상사(가|를|에게|의|와)|회의(에서|가|를| 중| 뒤| 때|록)/;
+/** 최종판3 12: 재취업 준비 입력에 과거 근속·무사고를 단정한 꼴(판독: 「오래 맡아도 사고 없던 안정성」). 입력에는 경력 햇수·근속이 없다. */
+const OUTSIDE_TENURE = /오래 (맡아|맡은|다닌|다녀|일해|일한|근무)[^.]{0,20}(온|왔|던|없이)|사고 없(이|던)|근속/;
 function inputOutside(sen: string, ctx: FactCtx): FactHit | null {
   const personal = ctx.product === "saju_mbti_full" || ctx.product === "love_marriage_child";
-  const m = sen.match(OUTSIDE_ALL) ?? (personal ? sen.match(OUTSIDE_PERSONAL) : null); if (!m) return null;
+  const status = ctx.sheet.people[0]?.input?.job.status ?? "";
+  const m = sen.match(OUTSIDE_ALL) ?? (personal ? sen.match(OUTSIDE_PERSONAL) : null)
+    ?? (ctx.people.length < 2 && /^(self_employed|freelancer|homemaker)$/.test(status) ? sen.match(OUTSIDE_NO_ORG) : null)
+    ?? (ctx.people.length < 2 && status === "job_seeker" ? sen.match(OUTSIDE_TENURE) : null);
+  if (!m) return null;
   if (HYPO_OK.test(sen)) return null;
   const word = m[0].replace(/(을|이|들|에게|과|의|이랑| 면접)$/, "");
   if (ctx.jobText.includes(word)) return null;
@@ -283,10 +303,31 @@ function jobScene(sen: string, ctx: FactCtx, chapter?: number): FactHit | null {
   const w = ctx.jobWords.find(x => sen.includes(x)); return w ? { rule: "input_outside", detail: `종합 ${chapter ? "1장" : "표지"}에 직업 장면 「${w}」 → 직업과 무관한 보편 장면으로` } : null;
 }
 
+/**
+ * 최종판3 12: 음양 방향을 정답지와 반대로 말한 꼴(판독: 오지안 음 2·양 6인데 「오지안님은 반대로 음 글자가 많아서」 — 검수가 2:6을 거꾸로 읽어 수리가 틀리게 고침).
+ * 문장 주인(이름) 모두가 반대일 때만 잡는다.
+ */
+const YY_SIDE = /(?<![가-힣])(음|양)(?: 글자| 기운)?(?:이|가)? ?(?:더 )?(?:많|기울|센 편|강하)|(?<![가-힣])(음|양)(?: 글자| 기운)?(?:으로|로) 기울/;
+function yinYangSide(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  const m = sen.match(YY_SIDE); if (!m || !owners.length) return null;
+  const side = (m[1] ?? m[2]) as "음" | "양";
+  const bad = owners.filter(p => (side === "음" ? p.yinYang.yin < p.yinYang.yang : p.yinYang.yang < p.yinYang.yin));
+  if (bad.length < owners.length) return null;
+  return { rule: "fact_term", detail: `음양 방향: ${bad.map(p => `${p.name} 음 ${p.yinYang.yin}·양 ${p.yinYang.yang}`).join(", ")} — 「${side}」이 많다고 쓸 수 없다` };
+}
+/** 최종판3 12: 지금 대운의 끝을 정답지와 다르게 말한 꼴(판독: 신유 대운(2019~2028)을 「올해까지 이어지는 이 10년」 — 수리가 연도를 지우며 지어냄). */
+function dayunSpan(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+  if (!/대운|10년 흐름|이 10년/.test(sen) || !/올해까지|올해로 (끝|마무리)|올해 (끝나|마무리)/.test(sen)) return null;
+  for (const p of owners) {
+    const cur = [...p.dayun.cycles].reverse().find(c => c.startYear <= ctx.thisYear);
+    if (cur && cur.endYear !== ctx.thisYear) return { rule: "fact_dayun", detail: `지금 ${cur.ganjiKo} 대운은 ${cur.startYear}~${cur.endYear}년 — 「올해까지」가 아니다` };
+  }
+  return null;
+}
 /** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지). */
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return renderCheck(sen) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners) ?? inputOutside(sen, ctx);
 }
 

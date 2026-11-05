@@ -61,6 +61,9 @@ try {
   if (!existsSync(storage) || process.env.RELOGIN) await login("/account");
   // 결제 전 가입 정보(이름·이메일)가 필요하다(BookCheckout profileRequired). 실제 계정 화면에서 한 번 채운다.
   await page.goto(`${BASE}/account`, { waitUntil: "load" }); await page.waitForTimeout(1500);
+  // 최종판3: 문서 버전이 바뀌면(2026-11-05.1) 기존 회원은 재동의 화면을 본다 — 운영 배포 뒤 고객과 같은 화면에서 동의한다.
+  const reconsent = page.getByRole("button", { name: /동의하고 계속하기/ });
+  if (await reconsent.count()) { await page.getByLabel("전체 동의").check(); await reconsent.click(); await page.waitForTimeout(2500); log("재동의:", (await reconsent.count()) ? "다시 확인 필요" : "완료"); }
   const saveProfile = page.getByRole("button", { name: /저장하고 계속하기/ });
   if (await saveProfile.count()) {
     await page.getByLabel(/이름\(필수\)/).fill("최종 검수"); await saveProfile.click(); await page.waitForTimeout(2500);

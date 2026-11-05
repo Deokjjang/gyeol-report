@@ -197,7 +197,8 @@ function assignActions(out: Record<string, unknown>, brief: Brief): void {
     const ss = c.sections ?? []; if (!ss.length) return;
     const si = ss.length - 1, domain = plan[ci]?.sections?.[si]?.domain ?? "alone";
     const pick = (ACTIONS_BY_DOMAIN[domain] ?? ACTIONS_BY_DOMAIN.alone).find(f => !used.has(f)) ?? Object.values(ACTIONS_BY_DOMAIN).flat().find(f => !used.has(f));
-    if (pick) { ss[si].act = `처방 종류: ${pick} — 이 장의 행동 조언은 이 절에 이 종류로 하나만`; used.add(pick); }
+    // 최종판3 12: 종류 이름을 그대로 쓴 「처방은 지출 한도입니다.」가 나왔다(판독) — 이름은 작가용 표시일 뿐 글에 쓰지 않는다고 함께 적는다.
+    if (pick) { ss[si].act = `행동 조언 하나(${pick} 쪽) — 이 장의 행동 조언은 이 절에만. 「${pick}」·「처방」 같은 종류 이름은 글에 쓰지 않고 행동 자체를 쓴다`; used.add(pick); }
   });
 }
 

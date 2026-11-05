@@ -8,17 +8,9 @@ export function validLibraryReportId(value: unknown, local = false): value is st
   // Local review includes both preview IDs and real paid-worker IDs from coupon SQL.
   return typeof value === "string" && (/^report_[a-z0-9_-]{13,80}$/i.test(value) || (local && /^book-local-[a-f0-9-]{36}$/i.test(value)));
 }
-/**
- * 열람 기한(최종3): v5부터 발행한 Book은 기한 없음 — DB가 expires_at='infinity'로 준다(탈퇴·삭제 요청·서비스 종료 때만 닫힘).
- * v5 이전 Book은 처음 발행 + 90일 그대로. 버전 판단은 DB(스냅샷 productVersion)가 하고, 화면은 값만 읽는다.
- */
-export const isOpenEndedAccess = (expiresAt: unknown): boolean => expiresAt === "infinity";
-/** 아직 열람 가능한가: 기한 없음이거나 기한이 지금보다 뒤. 읽을 수 없는 값은 닫힘으로 본다. */
-export function reportAccessOpen(expiresAt: unknown, now = Date.now()): boolean {
-  if (isOpenEndedAccess(expiresAt)) return true;
-  const at = typeof expiresAt === "string" ? Date.parse(expiresAt) : NaN;
-  return Number.isFinite(at) && at > now;
-}
+// 열람 기한 판단은 서재·공유가 같이 쓰는 book/accessWindow(최종3, v5 기한 없음 = 'infinity').
+import { isOpenEndedAccess, reportAccessOpen } from "../book/accessWindow";
+export { isOpenEndedAccess, reportAccessOpen };
 export function libraryItem(row: LibraryRow, local = false, now = Date.now()): LibraryItem | null {
   const book = bookForProduct(row.productType);
   if (!book || !validLibraryReportId(row.reportId, local) || !Number.isFinite(Date.parse(row.publishedAt)) || !(isOpenEndedAccess(row.expiresAt) || Number.isFinite(Date.parse(row.expiresAt)))) return null;

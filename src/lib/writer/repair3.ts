@@ -15,7 +15,8 @@ export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [
 - 지적된 문장만 고친다. 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓰고 돌려주지 않는다. 문단 흐름이 이어지게 쓴다.
 - 정답지(facts)와 맞게 쓴다. 새 사실·새 사람·새 사건·입력에 없는 상황을 만들지 않는다. 같은 장면·같은 처방을 다른 말로 되풀이하지 않는다.
 - 고칠 수 없거나 빼는 게 맞으면 "[R번호] (삭제)"라고만 쓴다.
-- 쉬운 존댓말(~입니다/~예요), 원문과 비슷한 길이. 한자·"명리학에서"·그림 별명·안내·면책 문장 금지. 연·월 숫자 대신 "올해"·"앞으로 한 달".
+- 쉬운 존댓말(~입니다/~예요), 원문과 비슷한 길이. 한자·"명리학에서"·그림 별명·안내·면책 문장 금지. 행동 시점은 연·월 숫자 대신 "앞으로 한 달".
+- 대운·세운의 기간·해는 정답지(facts) 값만 쓴다. 연도를 지울 때 "올해까지"·"끝 무렵" 같은 기간을 새로 지어 넣지 않는다(모르면 기간을 빼고 흐름만 쓴다).
 - [표지] 항목은 공백 빼고 16~26자, 명사로 끝나는 그림 한 줄로(설명문·직업·나이 금지).
 - [추가] 항목은 그 문단 끝에 붙일 새 문장 하나를 쓴다.
 - 출력: 항목마다 "[R번호] 고친 문장". 앞뒤 설명 없이.`;
@@ -137,6 +138,28 @@ export const repair3MaxTokens = (chars: number, items: number, model: string) =>
 
 /** 다음 문장이 앞말에 기댄다(지우면 문단이 깨진다). */
 const LEANS = /^(그래서|그러니|그러면|이처럼|이렇게|이런|그런|그 덕분|그만큼|또한|또 |여기에|하지만|다만|반면|그래도|그 결과|그러다|그때|이때|이 |그 )/;
+/**
+ * 최종판3 12: 수리 문장이 재검사(정답지 대조 포함)에 새로 걸리면 그 문장을 수리 전 원문으로 되돌린다(호출 0).
+ * 판독: 검수가 음양 2:6을 거꾸로 읽고(오탐) 수리가 맞는 문장을 틀리게 고쳤다. 원문도 걸리는 경우(원래 검사 깃발)는 뒤의 지우기가 처리한다.
+ */
+export type Reverted = { readonly at: string; readonly after: string; readonly before: string; readonly rule: string };
+export function revertWorse(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], flags: readonly LintFlag[]): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  for (const f of flags) {
+    if (f.paragraph < 0 || f.card || !f.sentence) continue;
+    const fs = norm(f.sentence);
+    const a = applied.find(x => x.kind === "sentence" && x.before && x.after && (fs.includes(norm(x.after).slice(0, 24)) || norm(x.after).includes(fs.slice(0, 24))));
+    if (!a) continue;
+    const sec = out.find(c => c.n === f.chapter)?.sections[f.section]; const p = sec?.paragraphs[f.paragraph]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), i = ss.findIndex(s => norm(s) === fs || norm(s).includes(fs));
+    if (i < 0) continue;
+    ss[i] = a.before; (sec.paragraphs as string[])[f.paragraph] = ss.join(" ");
+    reverted.push({ at: `${f.chapter}.${f.section}.${f.paragraph}`, after: a.after, before: a.before, rule: f.rule });
+  }
+  return { chapters: out, reverted };
+}
 export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>): { chapters: FinalChapter[]; deleted: Deleted[] } {

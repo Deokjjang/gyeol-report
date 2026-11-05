@@ -199,9 +199,31 @@
 | 2026-11-05 15:58 | 검수 측정 review | anthropic/claude-haiku-5-5 | 20148 | 2207 | 8954 | 0.00651387 | complete | req_011CgjM3bhD2saBtzTWQgFXQ | 11.42718682 |
 | 2026-11-05 16:05 | 발행 흐름 재생 review | anthropic/claude-haiku-5-5 | 23575 | 0 | 4631 | 0.00467300 | complete | req_011CgjMeBfK79v9pbp4GMBbg | 11.43185982 |
 | 2026-11-05 16:06 | 발행 흐름 재생 repair | anthropic/claude-sonnet-5-5 | 8951 | 0 | 1752 | 0.03542200 | complete | req_011CgjMfwWL2K6wmybo8rn2u | 11.46728182 |
-누적 합계: **$11.46728182** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-05 17:02 | 최종판3 4권(결제 경로) · official report_b743ac3a17da4f308867071b97a1e93b | anthropic/claude-sonnet-5-5 | 26680 | 0 | 15802 | 0.21486450 | complete | req_011CgjRofcHuh9a5ufVX26cN | 11.68214632 |
+| 2026-11-05 17:02 | 최종판3 4권(결제 경로) · official report_b743ac3a17da4f308867071b97a1e93b review | anthropic/claude-haiku-5-5 | 23470 | 0 | 11066 | 0.00792935 | complete | req_011CgjRxXinMAXotjvrbkz2L | 11.69007567 |
+| 2026-11-05 17:03 | 최종판3 4권(결제 경로) · official report_b743ac3a17da4f308867071b97a1e93b repair | anthropic/claude-sonnet-5-5 | 7740 | 0 | 1699 | 0.03247000 | complete | req_011CgjS2RPtTvCbBdC2wFZbJ | 11.72254567 |
+| 2026-11-05 17:05 | 최종판3 4권(결제 경로) · official report_2ed154e5008d4ccd91f131666071699c | anthropic/claude-sonnet-5-5 | 17535 | 6969 | 13187 | 0.16833380 | complete | req_011CgjS4w3QLUG5aciLfpsLQ | 11.89087947 |
+| 2026-11-05 17:05 | 최종판3 4권(결제 경로) · official report_2ed154e5008d4ccd91f131666071699c review | anthropic/claude-haiku-5-5 | 18836 | 1974 | 8184 | 0.00599534 | complete | req_011CgjSC4z6146HCeh2wNxEu | 11.89687481 |
+| 2026-11-05 17:05 | 최종판3 4권(결제 경로) · official report_2ed154e5008d4ccd91f131666071699c repair | anthropic/claude-sonnet-5-5 | 9036 | 0 | 1698 | 0.03505200 | complete | req_011CgjSEeNLN5CkjUDbebW8q | 11.93192681 |
+| 2026-11-05 17:08 | 최종판3 4권(결제 경로) · official report_67a9e52ce70148c59797afa008d85a0b | anthropic/claude-sonnet-5-5 | 17084 | 6969 | 10757 | 0.14313180 | complete | req_011CgjSM5Kvs2eNxHyZvj6md | 12.07505861 |
+| 2026-11-05 17:09 | 최종판3 4권(결제 경로) · official report_67a9e52ce70148c59797afa008d85a0b review | anthropic/claude-haiku-5-5 | 16052 | 1974 | 6442 | 0.00484594 | complete | req_011CgjST3dtYqmpg7gE5UBWa | 12.07990455 |
+| 2026-11-05 17:09 | 최종판3 4권(결제 경로) · official report_67a9e52ce70148c59797afa008d85a0b repair | anthropic/claude-sonnet-5-5 | 5061 | 0 | 975 | 0.01987200 | complete | req_011CgjSVF9zieDAM4Ghbw87y | 12.09977655 |
+| 2026-11-05 17:17 | 최종판3 4권(결제 경로) · official report_165ef864ee85407fbcc87449f58d7be4 | anthropic/claude-sonnet-5-5 | 33543 | 0 | 12000 | 0.19057050 | complete | req_011CgjSzNyquoa42THYttunt | 12.29034705 |
+| 2026-11-05 17:17 | 최종판3 4권(결제 경로) · official report_165ef864ee85407fbcc87449f58d7be4 review | anthropic/claude-haiku-5-5 | 22970 | 0 | 8026 | 0.00635935 | complete | req_011CgjT7LZwEBd9Xjt1NKA24 | 12.29670640 |
+| 2026-11-05 17:17 | 최종판3 4권(결제 경로) · official report_165ef864ee85407fbcc87449f58d7be4 repair | anthropic/claude-sonnet-5-5 | 5803 | 0 | 932 | 0.02122500 | complete | req_011CgjT9s24dCPZToL7LHFjB | 12.31793140 |
+| 2026-11-05 17:27 | 최종판3 12 차단 문장 고침 · 문장 7 repair | anthropic/claude-sonnet-5-5 | 3115 | 0 | 377 | 0.01029900 | complete | req_011CgjTrWWfPfnPHeqCNRgbn | 12.32823040 |
+| 2026-11-05 17:27 | 최종판3 12 차단 문장 고침 · 문장 4 repair | anthropic/claude-sonnet-5-5 | 1953 | 598 | 251 | 0.00653560 | complete | req_011CgjTvJAd26ZCkUgUSPA3L | 12.33476600 |
+| 2026-11-05 17:27 | 최종판3 12 차단 문장 고침 · 문장 1 repair | anthropic/claude-sonnet-5-5 | 1020 | 598 | 43 | 0.00258960 | complete | req_011CgjTvc5eWaHHewfm843Xx | 12.33735560 |
+| 2026-11-05 17:28 | 최종판3 12 차단 문장 고침 · 문장 1 repair | anthropic/claude-sonnet-5-5 | 2165 | 598 | 70 | 0.00514960 | complete | req_011CgjTvrz5ic24WAW6KtN4P | 12.34250520 |
+| 2026-11-05 17:32 | 최종판3 13 운영 워커 경로 재생(작가 저장본) review | anthropic/claude-haiku-5-5 | 22961 | 0 | 6849 | 0.00572060 | complete | req_011CgjUDHQD9jmwmge2sHLii | 12.34822580 |
+| 2026-11-05 17:32 | 최종판3 13 운영 워커 경로 재생(작가 저장본) repair | anthropic/claude-sonnet-5-5 | 5715 | 0 | 1022 | 0.02165000 | complete | req_011CgjUFcave6Bra3WgxBpwC | 12.36987580 |
+| 2026-11-05 17:33 | 최종판3 13 운영 워커 경로 재생(작가 저장본) review | anthropic/claude-haiku-5-5 | 22961 | 0 | 3929 | 0.00426060 | complete | req_011CgjUK1sjXhCbk3MbakJBx | 12.37413640 |
+누적 합계: **$12.37413640** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - 2026-11-05 최종판3(출시 전 마지막) 시작: 콘솔 시작 잔액 **$94.33**(덕짱님 지시값). 범위 `final3` 상한 $4.00(측정·생성 포함), 이 표 누적 $9.82159355에서 시작.
+- 2026-11-05 최종판3 마감: 이 표 누적 $9.82159355 → **$12.37413640**, 범위 `final3` 실제 **$2.55254**(원장 $2.5632 = 실제 + 정산 안 된 pending 예약 1건 $0.0107). 잔액 예상 약 $91.78(콘솔 확인 전).
+  - 내역: 검수 측정 Haiku 4회분·Sonnet 2회분 $1.6056 · 발행 흐름 재생 $0.0401 · 결제 경로 4권 $0.85065(작가 4·검수 4·수리 4) · 판정 고침 4회 $0.02458 · 워커 경로 재생 $0.03163.
+  - 헛쓴 비용: ① Haiku 첫 측정 17회 $0.0863 — 생각(기본 effort medium)이 출력 상한 6,000을 다 써 글자 0(length). 이후 effort low + 상한 32,000, 44회 length 0. ② 워커 경로 재생 두 번째 실행 검수 $0.0043 — 도구가 관문 캐시를 안 물려 같은 입력을 다시 부름(고침).
 - `GET /v1/models`(무료)에 나오는 모델이라도 deprecated일 수 있다(gpt-4.1-nano는 목록에 있었지만 404). 새 모델은 호출 전에 최소 호출로 확인한다.
 - 추론 모델(gpt-5-nano 등)은 출력 상한 안에서 추론에 토큰을 쓸 수 있어 배관 검증에는 비추론 모델이 안전하다.
