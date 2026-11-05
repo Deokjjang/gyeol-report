@@ -24,7 +24,8 @@ const SOFT = new Set(["db_copy", "seed_copy", "job_prop", "prop_repeat"]);
 
 /** 객관 결함 패턴(발행 본문 기준). 걸리면 문장을 판정표에 싣는다. */
 const PATTERNS: readonly (readonly [string, RegExp])[] = [
-  ["내부 용어", /브리프|재료|프롬프트|지침|지식 ?DB|\bDB\b|\brule\b|\bnote\b|씨앗|chart\.|traits?\.|seed/],
+  // 최종판2: 「재료비·같은 재료로」(카페 재료)·「지침의 신호」(지침 = 지침, 피로)는 일상어라 재료·지침은 내부 쓰임 꼴만 본다.
+  ["내부 용어", /브리프|재료 ?(목록|씨앗)|재료(에|에는|로는) (있|없|나온|적힌)|프롬프트|지침(에 따라|대로|에 있|을 따라)|지식 ?DB|\bDB\b|\brule\b|\bnote\b|씨앗|chart\.|traits?\.|seed/],
   ["날짜 머리 문장", /기준으로 썼어요|이 책은 \d{4}년 \d+월 \d+일/],
   ["장 번호 참조", /\d+장에서|\d+장의|앞 장에서|다음 장에서/],
   ["명리학에서", /명리학에서/],
@@ -66,7 +67,9 @@ async function main() {
     const text = plain(d), hits: string[] = [];
     for (const [name, re] of PATTERNS) for (const p of text) for (const s of sentencesOf(p)) if (re.test(s)) hits.push(`${name}: ${s.slice(0, 140)}`);
     const sources = meta.chapters.map(x => x.source);
-    rows.push(`| ${c.label} | ${o.orderCode} | ${meta.chapters.length}장 · 작가 ${sources.filter(s => s === "writer").length} · 결정론 ${sources.filter(s => s !== "writer").length} | ${meta.chapters.reduce((a, x) => a + x.chars, 0).toLocaleString("ko-KR")}자 | ${calls} · 주문 기록 ${runs} | ${String(p6c?.cover ?? "-")} | 소제목 뺌 ${(p6c?.droppedSections as unknown[] | undefined)?.length ?? 0} · 문단 뺌 ${String(p6c?.droppedParagraphs ?? 0)} · 고지 문장 뺌 ${(p6c?.noticesRemoved as unknown[] | undefined)?.length ?? 0} | ${hard.length} | ${soft.length} | ${hits.length} |`);
+    // 최종판2: 빠진 소제목을 되살린 기록(tools/final2/restore-dropped.ts)은 뺀 수에서 뺀다.
+    const restoredN = (((meta as { fixes?: { kind?: string; sections?: unknown[] }[] }).fixes ?? []).filter(f => f.kind === "restore_dropped").flatMap(f => f.sections ?? [])).length;
+    rows.push(`| ${c.label} | ${o.orderCode} | ${meta.chapters.length}장 · 작가 ${sources.filter(s => s === "writer").length} · 결정론 ${sources.filter(s => s !== "writer").length} | ${meta.chapters.reduce((a, x) => a + x.chars, 0).toLocaleString("ko-KR")}자 | ${calls} · 주문 기록 ${runs} | ${String(p6c?.cover ?? "-")} | 소제목 뺌 ${Math.max(0, ((p6c?.droppedSections as unknown[] | undefined)?.length ?? 0) - restoredN)}${restoredN ? `(되살림 ${restoredN})` : ""} · 문단 뺌 ${String(p6c?.droppedParagraphs ?? 0)} · 고지 문장 뺌 ${(p6c?.noticesRemoved as unknown[] | undefined)?.length ?? 0} | ${hard.length} | ${soft.length} | ${hits.length} |`);
     detail.push(`## ${c.label}\n\n- 표지: ${d.coverLine ?? d.coreImage?.line ?? "-"} — 피할 이미지 대조: ${coverCheck ? `${coverCheck.level}: ${coverCheck.reason}` : "통과"}\n- 장별 글자: ${meta.chapters.map(x => `${x.n}장 ${x.chars}`).join(" · ")}\n- 수리 ${String(p6c?.repaired ?? 0)}문장 · 소제목 재작성 ${String(p6c?.rewritten ?? 0)} · 수리 전 깃발 ${JSON.stringify(p6c?.flags ?? {})}\n`
       + `\n### 남은 깃발(가벼운 것 제외) ${hard.length}\n${hard.map(f => `- ${f.chapter}.${f.section}.${f.paragraph} ${f.rule}${f.detail ? `(${f.detail})` : ""}: ${f.sentence.slice(0, 160)}`).join("\n") || "- 없음"}\n`
       + `\n### 가벼운 깃발 ${soft.length}(DB·씨앗 문구 겹침·직업 소품 반복: 참고)\n${Object.entries(soft.reduce<Record<string, number>>((a, f) => ({ ...a, [f.rule]: (a[f.rule] ?? 0) + 1 }), {})).map(([k, v]) => `${k} ${v}`).join(" · ") || "없음"}\n`

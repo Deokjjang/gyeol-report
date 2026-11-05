@@ -316,6 +316,17 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
 }
 
 const stripMarks = (s: string) => s.replace(L.KEY_MARK, "");
+/** 글에 든 쉬운 이름·십성 이름이 가리키는 묶음 이름을 덧붙인다(필수 근거 검사용). */
+export function groupAliases(text: string): string {
+  const add: string[] = [];
+  if (/만드는(?: [가-힣]{1,6}는)? 힘|만들(?:고 [가-힣]{1,6}는|어 내는) 힘|식신|상관/.test(text)) add.push("식상");
+  if (/값을 받(?:는|아 내는) 힘|편재|정재/.test(text)) add.push("재성");
+  if (/배우(?:는|고 [가-힣]{1,6}는) 힘|편인|정인/.test(text)) add.push("인성");
+  if (/규칙(?:의|을 [가-힣]{1,6}는) 힘|편관|정관/.test(text)) add.push("관성");
+  if (/내 방식(?:의|대로 [가-힣]{1,6}는) 힘|비견|겁재/.test(text)) add.push("비겁");
+  return add.length ? `${text} ${add.join(" ")}` : text;
+}
+
 /** 「이번 (한) 달」 → 「앞으로 한 달」(조사 맞춤). 따옴표 안(대사)은 그대로. */
 export function nowMonth(text: string): string {
   return text.replace(/이번 (한 )?달(에는|에|은|는|의)?(?=[\s,.])/g, (m, _one: string | undefined, p: string | undefined, at: number) => {
@@ -397,7 +408,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
   }
   // G 장마다 써야 하는 근거(문체 규칙: 문단은 빼지 않고 수리로 근거 한 문장을 더하게 한다).
   for (const c of chapters) { const terms = ctx.requiredTerms?.get(c.n); if (!terms || c.source === "deterministic") continue;
-    const text = c.sections.flatMap(s => s.paragraphs).join(" ");
+    // 최종판2 4: 쉬운 이름("만드는 힘")·십성 이름("식신·상관")도 그 묶음 근거로 읽는다(장소담 커리어 2·4장이 쉬운 이름으로 썼는데 남았다).
+    const text = groupAliases(c.sections.flatMap(s => s.paragraphs).join(" "));
     for (const re of terms) if (!re.test(text)) { const si = Math.max(0, c.sections.findIndex(s => s.paragraphs.length)); if (c.sections[si]?.paragraphs.length) flag({ chapter: c.n, section: si, paragraph: 0, rule: "evidence_missing", sentence: "", detail: re.source }); }
   }
   // E 마무리 문형: 달 장(세운 월)의 key마다 마지막 문장 끝 두 어절, 같은 꼴은 12달 가운데 3번까지.

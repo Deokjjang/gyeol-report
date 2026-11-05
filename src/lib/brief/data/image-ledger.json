@@ -249,6 +249,17 @@
     "product": "career_money_study"
    },
    {
+    "line": "마감한 카페 안에서 오래 식지 않는 난로",
+    "noun": "난로",
+    "source": "local-db:report_fe29cb0ed88a4a459c14f1b377a3a9bf",
+    "book": "report_fe29cb0ed88a4a459c14f1b377a3a9bf",
+    "at": "2026-11-05T02:42:48.695Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "career_money_study"
+   },
+   {
     "line": "빗속에서도 꺼지지 않는 카페 사장의 불",
     "noun": "사장의 불",
     "source": "local-db:report_0c7636d107c84b8baa997c7051fe5cea",
@@ -862,6 +873,17 @@
     "source": "local-db:report_1fe6bb3ef3244dedbf812348785dba15",
     "book": "report_1fe6bb3ef3244dedbf812348785dba15",
     "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "처음 만든 서비스 하나로 판을 짜는 스물일곱 대표",
+    "noun": "대표",
+    "source": "local-db:report_ef42d66ffef340f0b9de46d2eb57af16",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
     "people": [
      "장덕민|1999-07-31|08:27"
     ],
@@ -4899,6 +4921,78 @@
     "run": "현관잠금,가스밸브,지갑위치를한번씩확인하고나서야편히눕",
     "book": "report_1fe6bb3ef3244dedbf812348785dba15",
     "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "병목공정을찾아담당자를바꾸는결정",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "새분기목표를한장로드맵으로정리하",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구사이에도약속이행을기대하",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "직원면접에서장기목표를직접묻",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "작은할인에쓰는시간을손해로계산하",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "결제전에투자대비효과를따",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구단톡방에여행일정표부터올리",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "취미활동도단계별목표로쪼개",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
     "people": [
      "장덕민|1999-07-31|08:27"
     ],
