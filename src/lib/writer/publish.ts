@@ -41,7 +41,7 @@ import { WRITER_SYSTEM } from "./prompt/system";
 import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } from "./safety";
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
-import { avoidNounsIn } from "@/lib/brief/imageLedger";
+import { avoidOverlaps, iljuPhrasesFor } from "@/lib/brief/imageLedger";
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
 import { allowedWindows, writeKeyFill, type FinalChapter } from "./safety";
@@ -101,6 +101,8 @@ export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep"
   readonly replay?: boolean;
   /** 최종판 4 실질 결함 고침(tools/final/fix-sections.ts): 이 소제목들을 사유와 함께 재작성 대상에 더한다(검사 깃발과 같은 재작성 1회). 작가는 다시 부르지 않는다. */
   readonly rewriteSections?: readonly { readonly chapter: number; readonly section: number; readonly reason: string }[];
+  /** 최종판2 1-1: replay·고침 도구가 이미지 대장에서 그 책 자신과 뒤 책을 뺀다. */
+  readonly ledgerView?: import("@/lib/brief/imageLedger").LedgerView;
   readonly provider?: LlmProvider; readonly model?: string; readonly people?: (payload: ReportInputPayload, policyAt: string) => Promise<BookPerson[]>;
   /** 대체 모델(P6b A-2). undefined면 환경 설정(LLM_FALLBACK, 기본 openai/gpt-6.1-terra), null이면 대체 없음. 키를 넣으면 그 키로 부른다. */
   readonly fallback?: (LlmTarget & { readonly apiKey?: string }) | null;
@@ -135,6 +137,22 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     mbtiPlain: plain, periods: Object.fromEntries((brief.timeline?.entries ?? []).map(e => [e.key, e.period])),
     ...p6dContext(brief, plan),
     ...p6eContext(brief, k),
+    ...final2Context(brief),
+  };
+}
+
+/** 최종판2 검사 문맥: 궁합 사람별 성격표(1-3), 사람별 명식 글자(1-4), 같은 일주 이전 책 구절·피할 이미지 줄(1-1). */
+function final2Context(brief: Brief): Partial<LintCtx> {
+  const c = brief.compatibility, partner = brief.partner;
+  const glyphs = (ch: Brief["chart"]) => new Set(Object.values(ch.pillars).flatMap(p => (p ? [...p.hangul] : [])));
+  const names = (full: string, call: string) => [...new Set([full, call.replace(/님$/, ""), full.length >= 3 ? full.slice(1) : ""].filter(n => n.length >= 2))];
+  const pillars = [brief.chart.pillars.day.hanja, ...(partner ? [partner.chart.pillars.day.hanja] : [])];
+  return {
+    iljuPhrases: iljuPhrasesFor(pillars, brief.ledgerView), avoidLines: brief.chart.avoidImages ?? [], baseDate: brief.baseDate,
+    ...(c && partner ? {
+      glyphPeople: [{ names: names(brief.person.name, c.a.callName), glyphs: glyphs(brief.chart) }, { names: names(partner.person.name, c.b.callName), glyphs: glyphs(partner.chart) }],
+      ...(c.profiles?.length === 2 ? { profilePeople: c.profiles.map((p, i) => ({ names: i ? names(partner.person.name, c.b.callName) : names(brief.person.name, c.a.callName), codes: p, label: p.name.replace(/님$/, "") })) } : {}),
+    } : { glyphPeople: [{ names: [], glyphs: glyphs(brief.chart) }] }),
   };
 }
 
@@ -261,17 +279,32 @@ export function renderTerms(chapters: readonly FinalChapter[], brief: Brief, k: 
   return { chapters: out, count };
 }
 
-/** 표지 한 줄 검사(P6c G + 최종판 1-7): 16~26자, 설명문·"명리학에서"·연차 금지, 사실 규칙, 피할 이미지 명사와 겹치지 않게. 나쁘면 사유. */
-export function coverProblem(raw: string | null, brief: Brief, avoid: readonly string[]): string | null {
+/**
+ * 표지 한 줄 검사(P6c G + 최종판 1-7, 최종판2 1-1): 길이는 공백을 빼고 16~26자, 설명문·"명리학에서"·연차 금지, 사실 규칙, 피할 이미지(같은 일주 이전 책·같은 고객 다른 책의 이미지 줄)와 겹치지 않게.
+ * level: hard = 쓸 수 없음(없음·설명문·연차·사실 규칙·30자 초과), avoid = 피할 이미지와 겹침, length = 길이만 벗어남(30자 이내면 작가 표지를 쓴다).
+ */
+export function coverIssue(raw: string | null, brief: Brief, avoid: readonly string[]): { reason: string; level: "hard" | "avoid" | "length" } | null {
   const v = (raw ?? "").replace(/^\[표지\]\s*/, "").replace(/[*"“”]/g, "").trim();
-  if (!v) return "없음";
-  if (v.length < 16 || v.length > 26) return `길이 ${v.length}자(16~26자)`;
-  if (MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v)) return "설명문";
+  if (!v) return { reason: "없음", level: "hard" };
+  const n = v.replace(/\s/g, "").length;
+  if (n > 30) return { reason: `길이 ${n}자(공백 뺌, 30자 초과)`, level: "hard" };
+  if (MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v)) return { reason: "설명문", level: "hard" };
   // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
-  if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return "연차";
-  if (sentenceViolation(v, safetyFacts(brief)) !== null) return "사실 규칙";
-  const hit = avoidNounsIn(v, avoid);
-  return hit.length ? `피할 이미지 명사(${hit.join("·")})` : null;
+  if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return { reason: "연차", level: "hard" };
+  if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
+  const hit = avoidOverlaps(v, avoid);
+  if (hit.length) return { reason: `피할 이미지(${hit.slice(0, 2).join(" / ")})`, level: "avoid" };
+  if (n < 16 || n > 26) return { reason: `길이 ${n}자(공백 뺌, 16~26자)`, level: "length" };
+  return null;
+}
+export const coverProblem = (raw: string | null, brief: Brief, avoid: readonly string[]): string | null => coverIssue(raw, brief, avoid)?.reason ?? null;
+/** 표지 고르기(최종판2 1-1): 작가가 고친 표지 → 작가 첫 표지 순으로, 걸린 정도가 가벼운 것. 엔진 기본 이미지는 작가 표지가 아예 없을 때(또는 모두 쓸 수 없을 때)만. */
+export function chooseCover(candidates: readonly { line: string; source: "repaired" | "writer" }[], brief: Brief, avoid: readonly string[]): { line: string; source: "writer" | "repaired" | "fallback"; issue: string | null } {
+  const rank = { none: 0, length: 1, avoid: 2, hard: 3 } as const;
+  const scored = candidates.filter(c => c.line).map(c => ({ c, i: coverIssue(c.line, brief, avoid) })).sort((x, y) => rank[x.i?.level ?? "none"] - rank[y.i?.level ?? "none"]);
+  const best = scored[0];
+  if (best && best.i?.level !== "hard") return { line: best.c.line, source: best.c.source, issue: best.i?.reason ?? null };
+  return { line: brief.compatibility?.pairImage.line ?? brief.chart.coreImage.line, source: "fallback", issue: best?.i?.reason ?? "작가 표지 없음" };
 }
 const clean = (raw: string | null) => (raw ?? "").replace(/^\[표지\]\s*/, "").replace(/[*"“”]/g, "").trim();
 
@@ -282,7 +315,8 @@ export const COVER_SYSTEM = `너는 결리포트 원고의 교정 작가다. 책
 - 출력: "[표지] 새 줄" 한 줄만.`;
 function coverPrompt(brief: Brief, line: string, problem: string, avoid: readonly string[]) {
   const f = brief.person.facts;
-  return { system: COVER_SYSTEM, user: `핵심 뜻(chart.coreImage): ${brief.compatibility?.pairImage.line ?? brief.chart.coreImage.line}\n고객 입력: 직업 ${f.job.detail || "미입력"} · 관계 ${f.relationship} · 상품 ${brief.productTitle}\n피할 낱말: ${avoid.join(", ") || "없음"}\n지금 표지: ${line || "(없음)"}\n문제: ${problem}\n\n"[표지] 새 줄"로 돌려주세요.` };
+  // 최종판2 1-1: 핵심 뜻은 그림 없는 뜻(엔진 그림 줄을 주면 그 그림으로 돌아간다).
+  return { system: COVER_SYSTEM, user: `핵심 뜻(chart.coreImage): ${brief.compatibility ? brief.compatibility.pairImage.meaning ?? brief.compatibility.pairImage.line : brief.chart.coreImage.meaning ?? brief.chart.coreImage.line}\n고객 입력: 직업 ${f.job.detail || "미입력"} · 관계 ${f.relationship} · 상품 ${brief.productTitle}\n피할 낱말: ${avoid.join(", ") || "없음"}\n지금 표지: ${line || "(없음)"}\n문제: ${problem}\n\n"[표지] 새 줄"로 돌려주세요.` };
 }
 
 export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
@@ -293,7 +327,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // 고객 원장(P6d F): 앞 책이 쓴 각도(Fusion·팩폭)와 MBTI 씨앗은 빼고, 앞 책 근거 항목은 쓰지 않은 것을 먼저 고른다.
   const pl = a.prior?.ledger;
   const brief = buildBrief({ ...payloadToBriefInput(a.payload, kstDate(a.policyAt)), ...(a.prior?.scenes.length ? { excludeScenes: a.prior.scenes } : {}), ...(a.prior?.explained?.length ? { knownTraits: a.prior.explained } : {}),
-    ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}) } as never, k);
+    ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}),
+    ...(a.prior?.images?.length ? { priorImages: a.prior.images } : {}), ...(deps.ledgerView ? { ledgerView: deps.ledgerView } : {}) } as never, k);
   const plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
   const llm = resolveLlmConfig();
   const provider = deps.provider ?? llm.provider, model = deps.model ?? llm.model;
@@ -317,17 +352,18 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const live = Boolean(run?.writer && !run.stale);
   // (최종판 1-7) 핵심 이미지: 작가가 [표지]에서 한 번 지은 줄. 피할 이미지(같은 일주의 다른 책 명사)와 겹치거나 규칙에 걸리면 표지 줄만 수리(호출 1회 이하).
   const avoid = brief.chart.avoidImages ?? [];
-  let image = clean(run?.cover ?? null), imageSource: "writer" | "repaired" | "fallback" = "writer", coverCalls = 0;
+  const writerCover = clean(run?.cover ?? null);
+  let image = writerCover, imageSource: "writer" | "repaired" | "fallback" = "writer", coverCalls = 0, repairedCover = "";
   const firstProblem = coverProblem(image, brief, avoid);
-  if (firstProblem && live && !deps.replay || firstProblem && deps.replay && run?.writer) {
+  if (firstProblem && (live && !deps.replay || deps.replay && run?.writer)) {
     try {
       const before = run!.calls.length, cp = coverPrompt(brief, image, firstProblem, avoid);
       const r = await completeText(opts(), run!, cp.system, cp.user, 200, "cover"); run = r.run; coverCalls = run.calls.length - before;
-      const fixed = clean(r.text.split("\n").find(l => /\[표지\]/.test(l)) ?? r.text);
-      if (fixed && !coverProblem(fixed, brief, avoid)) { image = fixed; imageSource = "repaired"; }
-    } catch { /* 수리 실패: 아래 대체 */ }
+      repairedCover = clean(r.text.split("\n").find(l => /\[표지\]/.test(l)) ?? r.text);
+    } catch { /* 수리 실패: 작가 첫 표지로 */ }
   }
-  if (coverProblem(image, brief, avoid) && imageSource !== "repaired") { image = brief.compatibility?.pairImage.line ?? brief.chart.coreImage.line; imageSource = "fallback"; }
+  // 최종판2 1-1: 고친 표지 → 작가 첫 표지 순으로 덜 걸린 것(길이만 벗어나면 30자 이내 작가 표지를 쓴다). 엔진 기본 이미지는 작가 표지가 없을 때만.
+  { const c = chooseCover([{ line: repairedCover, source: "repaired" }, { line: writerCover, source: "writer" }], brief, avoid); image = c.line; imageSource = c.source; }
   // (P6c) 결정론 정리 → 검사 → 수리 1회(A5).
   const lctx = lintContext(brief, k, plan, a.prior?.sentences ?? [], brief.compatibility ? undefined : image);
   const tidy = tidyBook(finals, lctx);
@@ -365,7 +401,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: repair.targets, repaired: repair.applied, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),
     rewriteTargets: rewrite.targets, rewritten: rewrite.applied, rewriteCalls: rewrite.calls, droppedSections: dropped.dropped, hanjaStripped: tidy.count.hanja ?? 0, termsAnnotated: rendered.count,
-    noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidNounsIn(clean(run?.cover ?? null), avoid) : [], repairCalls: coverCalls } } } };
+    noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidOverlaps(writerCover, avoid) : [], repairCalls: coverCalls, ...(firstProblem ? { firstProblem } : {}) } } } };
   const people = await (deps.people ?? v4People)(a.payload, a.policyAt);
   const { draft, evidence } = assembleV5Book({
     brief, plan, finals: chapters, report, payload: a.payload, generatedAt: a.policyAt, people, cover: image, ...(brief.compatibility ? {} : { image }), raw: run?.raw ?? [], ...(pl ? { priorLedger: pl } : {}), badCards: new Set(remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}`)),

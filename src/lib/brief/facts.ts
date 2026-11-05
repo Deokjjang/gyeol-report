@@ -25,7 +25,8 @@ export const SCENE_TAGS: Readonly<Record<"office" | "code" | "team" | "shop" | "
   office: /보고서(?!야)|업무 지시|연차 (눈치|쓰|내)|반차|수정본|결재|사내|부서|회의록|기획안|사원증|파티션|주간 회의|분기 목표|인사 평가|연봉 협상|발표 자료|엑셀|슬라이드|출장/,
   code: /코드|코딩|(작은|새|직접 만든|짠|만든) 프로그램|스크립트|버그|깃허브|자동화 (툴|스크립트)/,
   team: /팀에 (나눠|공유|제안)|팀원|팀 회의|팀장|동료(들)?(에게|의|와| 고민)|후배|선배|상사/,
-  shop: /손님|가게|매장|단골|진열대|오픈 준비|마감 정산|계산대/,
+  // 최종판2 1-8: 「매출·재고 장부」(IT 서비스 창업 커리어 「매출과 재고 장부」)도 가게 장면.
+  shop: /손님|가게|매장|단골|진열대|오픈 준비|마감 정산|계산대|매출(·|과 |와 )재고|재고 장부|매출 장부/,
   care: /환자|진료|간호|병동|처치/,
   // 최종판 1-15: 장소담(카페 사장)에게 INTP 씨앗 「프리랜서 의뢰서」·「개인 프로젝트 폴더」가 갔다(P6e).
   freelance: /프리랜서|의뢰서|의뢰인|외주|클라이언트|개인 프로젝트/,
@@ -78,7 +79,8 @@ export function sceneTextFits(text: string, p: FactProfile): boolean {
   if (SCENE_CONTEXT.school_minor.test(text) && p.scene.school !== "minor") return false;
   if (SCENE_CONTEXT.school.test(text) && !p.scene.school) return false;
   if (SCENE_CONTEXT.office.test(text) && !p.scene.office) return false;
-  return sceneTagsFit(sceneTagsOf(text), p);
+  // 최종판2 1-2: 직업 꼬리표가 없는 장면 맥락(종합 — P6d d9985cda 방식)은 사무·학교·가족 소품만 본다.
+  return p.scene.team === undefined ? true : sceneTagsFit(sceneTagsOf(text), p);
 }
 
 /** 사무직 소품이 맞는 직업군(props.json 직업군 id). 직업 입력이 없으면 직장·사업 상태로만 본다. */

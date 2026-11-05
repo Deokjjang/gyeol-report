@@ -89,18 +89,34 @@ export type CoreImageInput = {
   readonly levels: Readonly<Record<FiveElement, ElementLevel>>;
   readonly strongest: { readonly element: FiveElement; readonly level: ElementLevel };
 };
-export type CoreImage = { readonly line: string; readonly ruleId: string };
+/**
+ * line = 엔진 기본 그림 한 줄(표지 대체용 — 작가 표지가 아예 없을 때만). meaning = 그림 없는 뜻(일간·계절·오행의 결, 작가 브리프 chart.coreImage),
+ * short = 뜻 짧은 꼴(궁합 첫 쪽 인물 줄). 최종판2 1-1: 작가가 엔진 그림 줄(「빗속에서도 꺼지지 않는 캠핑 랜턴」 등)을 본문에 그대로 옮겨 같은 일주 책마다 같은 그림이 나왔다.
+ */
+export type CoreImage = { readonly line: string; readonly ruleId: string; readonly meaning?: string; readonly short?: string };
+
+/** 일간 뜻(그림 없이 힘의 결만). */
+export const STEM_MEANING: Readonly<Record<HeavenlyStem, { readonly name: string; readonly force: string }>> = {
+  甲: { name: "갑목", force: "위로 곧게 뻗는 힘" }, 乙: { name: "을목", force: "휘어지며 넓게 뻗어 가는 힘" }, 丙: { name: "병화", force: "넓게 비추는 힘" }, 丁: { name: "정화", force: "작게 오래 타며 곁을 데우는 힘" },
+  戊: { name: "무토", force: "크게 버티는 힘" }, 己: { name: "기토", force: "품어 기르는 힘" }, 庚: { name: "경금", force: "단단히 끊고 세우는 힘" }, 辛: { name: "신금", force: "다듬어 빛내는 힘" },
+  壬: { name: "임수", force: "크게 흘러 넓히는 힘" }, 癸: { name: "계수", force: "스며들어 적시는 힘" },
+};
+const SEASON_KO: Readonly<Record<Season, string>> = { spring: "봄", summer: "여름", autumn: "가을", winter: "겨울" };
+const REL_MEANING: Readonly<Record<Relation, [string, string]>> = { resource: ["나를 돕는 기운(인성)이 가장 많은 결", "인성 많음"], output: ["내가 만들어 내는 기운(식상)이 가장 많은 결", "식상 많음"],
+  wealth: ["내가 다루는 기운(재성)이 가장 많은 결", "재성 많음"], officer: ["나를 다잡는 기운(관성)이 가장 많은 결", "관성 많음"] };
+const STRENGTH_MEANING: Readonly<Record<StrengthClass, [string, string]>> = { strong: ["타고난 힘이 센 편", "힘 센 편"], medium: ["타고난 힘이 가운데", "힘 가운데"], weak: ["타고난 힘이 여린 편", "힘 여린 편"] };
 
 export function coreImage(i: CoreImageInput): CoreImage {
-  const t = CORE_IMAGES[i.stem], day = STEM_ELEMENT[i.stem];
-  if (i.season === "summer" && LACK.includes(i.levels.WATER)) return { line: t.hot, ruleId: `R1:${i.stem}:hot` };
-  if (i.season === "winter" && LACK.includes(i.levels.FIRE)) return { line: t.cold, ruleId: `R2:${i.stem}:cold` };
+  const t = CORE_IMAGES[i.stem], day = STEM_ELEMENT[i.stem], m = STEM_MEANING[i.stem], season = SEASON_KO[i.season];
+  const mean = (rule: string, short: string) => ({ meaning: `${m.name}(${m.force}) · ${season} 태생 · ${rule}`, short: `${m.name} · ${season}생 · ${short}` });
+  if (i.season === "summer" && LACK.includes(i.levels.WATER)) return { line: t.hot, ruleId: `R1:${i.stem}:hot`, ...mean("물 기운이 부족해 열기를 식혀 줄 것이 필요한 결", "물 부족") };
+  if (i.season === "winter" && LACK.includes(i.levels.FIRE)) return { line: t.cold, ruleId: `R2:${i.stem}:cold`, ...mean("불 기운이 부족해 온기를 채워 줄 것이 필요한 결", "불 부족") };
   if (i.strongest.level === "많음") {
     const rel = relationOf(day, i.strongest.element);
-    return rel ? { line: t.excess[rel], ruleId: `R3:${i.stem}:${rel}` } : { line: t.peer, ruleId: `R4:${i.stem}:peer` };
+    return rel ? { line: t.excess[rel], ruleId: `R3:${i.stem}:${rel}`, ...mean(...REL_MEANING[rel]) } : { line: t.peer, ruleId: `R4:${i.stem}:peer`, ...mean("나와 같은 기운(비겁)이 가장 많은 결", "비겁 많음") };
   }
   const s = strengthClass(i.strength);
-  return { line: `${t.place[i.season]} ${t.subject[s]}`, ruleId: `R5:${i.stem}:${i.season}:${s}` };
+  return { line: `${t.place[i.season]} ${t.subject[s]}`, ruleId: `R5:${i.stem}:${i.season}:${s}`, ...mean(...STRENGTH_MEANING[s]) };
 }
 
 /** 받침이 있으면 앞, 없으면 뒤. */
@@ -112,8 +128,8 @@ const josa = (word: string, pair: "이가" | "을를" | "와과") => {
 const GEN_VERB: Readonly<Record<FiveElement, string>> = { WOOD: "타오르게 돕는", FIRE: "따뜻하게 데워 주는", EARTH: "품어 키우는", METAL: "맑게 흘려보내는", WATER: "적셔 키우는" };
 const CTRL_VERB: Readonly<Record<FiveElement, string>> = { WOOD: "뿌리로 붙잡아 주는", EARTH: "물길을 잡아 주는", WATER: "식혀 주는", FIRE: "달궈 다듬는", METAL: "다듬어 주는" };
 
-/** 궁합 관계 이미지(pairImage): 두 일간 오행의 생극을 한 줄로. a·b는 각자의 핵심 이미지 줄. */
-export function pairImage(a: { stem: HeavenlyStem; image: CoreImage }, b: { stem: HeavenlyStem; image: CoreImage }): { line: string; a: string; b: string; ruleId: string } {
+/** 궁합 관계 이미지(pairImage): 두 일간 오행의 생극을 한 줄로. a·b는 각자의 핵심 이미지 줄. meaning = 그림 없는 관계 뜻(작가 브리프, 최종판2 1-1). */
+export function pairImage(a: { stem: HeavenlyStem; image: CoreImage }, b: { stem: HeavenlyStem; image: CoreImage }): { line: string; a: string; b: string; ruleId: string; meaning: string } {
   const ea = STEM_ELEMENT[a.stem], eb = STEM_ELEMENT[b.stem];
   const na = CORE_IMAGES[a.stem].noun, nb = CORE_IMAGES[b.stem].noun;
   let line: string, rule: string;
@@ -122,5 +138,8 @@ export function pairImage(a: { stem: HeavenlyStem; image: CoreImage }, b: { stem
   else if (GENERATES[eb] === ea) { line = `${josa(nb, "이가")} ${josa(na, "을를")} ${GEN_VERB[eb]} 사이`; rule = "b-gen-a"; }
   else if (CONTROLS[ea] === eb) { line = `${josa(na, "이가")} ${josa(nb, "을를")} ${CTRL_VERB[ea]} 사이`; rule = "a-ctrl-b"; }
   else { line = `${josa(nb, "이가")} ${josa(na, "을를")} ${CTRL_VERB[eb]} 사이`; rule = "b-ctrl-a"; }
-  return { line, a: a.image.line, b: b.image.line, ruleId: `P:${a.stem}${b.stem}:${rule}` };
+  const ma = STEM_MEANING[a.stem], mb = STEM_MEANING[b.stem];
+  const REL: Readonly<Record<string, string>> = { same: `${josa(ma.name, "와과")} ${mb.name}, 같은 기운끼리 나란히 서는 관계`, "a-gen-b": `${ma.name}(${ma.force})이 ${mb.name}(${mb.force})을 살려 주는 관계`, "b-gen-a": `${mb.name}(${mb.force})이 ${ma.name}(${ma.force})을 살려 주는 관계`,
+    "a-ctrl-b": `${ma.name}(${ma.force})이 ${mb.name}(${mb.force})을 다잡아 주는 관계`, "b-ctrl-a": `${mb.name}(${mb.force})이 ${ma.name}(${ma.force})을 다잡아 주는 관계` };
+  return { line, a: a.image.line, b: b.image.line, ruleId: `P:${a.stem}${b.stem}:${rule}`, meaning: REL[rule] };
 }

@@ -62,8 +62,11 @@ export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters
   return { traits, shadows };
 }
 
-/** 원국 요약: 일간 그림 별명·비유는 빼고 핵심 이미지 한 줄만(P6b B-2·B-4). */
-const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage"), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.line });
+/** 원국 요약: 일간 그림 별명·비유는 빼고 핵심 이미지는 그림 없는 뜻만(P6b B-2·B-4, 최종판2 1-1: 엔진 그림 줄을 본문에 그대로 옮겨 같은 일주 책마다 같은 그림이 나왔다). */
+const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage"), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.meaning ?? c.coreImage.line });
+/** 궁합(최종판2 1-1·1-3): 관계 이미지·인물 줄은 그림 없는 뜻으로, 성격표는 브리프 맨 앞(profiles)에 따로. */
+const writerCompat = (c: NonNullable<Brief["compatibility"]>) => ({ ...omit(c, "profiles", "pairImage"), pairImage: c.pairImage.meaning ?? c.pairImage.line });
+const PROFILE_RULE = "두 사람의 바뀌지 않는 성향(에너지·앞에 나서는지·다툼 때 반응·표현 방식·결정 속도)이다. 모든 장의 장면과 설명은 이 줄을 따른다. 두 사람을 묶어 말할 때(두 사람은·둘 다)는 두 사람 칸이 같을 때만 묶는다";
 
 /**
  * 앞 장 주장(P6e 10, 최종판 1-16): 장마다 앞 장들이 소개한 특성의 "이 사람 몫"(forYou 첫 마디)과 MBTI 주기능·열등 기능을 짧은 주장으로 다음 장에 before로 넘긴다(최근 4개).
@@ -137,14 +140,38 @@ function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Reco
   const swapped = swapDeep(out, table);
   const fn = (b: Brief["mbti"]) => { const p = b && opts.knowledge!.mbti.get(b.type); return p && p.cognitiveFunctions.every(c => table.plain.has(c.easy)) ? p.cognitiveFunctions.map(c => `${table.plain.get(c.easy)}(${c.code}) · ${c.role}: ${table.exact.get(c.easy)}`) : null; };
   const withFn = (m: unknown, b: Brief["mbti"]) => { const f = fn(b); return m && f ? { ...(m as object), functions: f } : m; };
-  return { ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) };
+  return ownGlyphsOnly({ ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
+}
+
+/**
+ * 최종판2 1-4: 재료 글(지식 DB 원문·압축 재료)이 나열한 글자("갑·신·묘·오 글자 셋 이상 겹침")는 그 사람 명식에 있는 글자만 남긴다(장덕민 명식에 午 없음).
+ * 궁합은 특성 주인(owner)·팩폭의 특성으로 사람을 정하고, 정할 수 없으면 두 사람 글자 모두.
+ */
+const GLYPH_LIST = /([갑을병정무기경신임계자축인묘진사오미유술해](?:·[갑을병정무기경신임계자축인묘진사오미유술해]){1,7})(?= ?(글자|자리))/g;
+function ownGlyphsOnly(out: Record<string, unknown>, brief: Brief): Record<string, unknown> {
+  const set = (ch: Brief["chart"] | undefined) => new Set(ch ? Object.values(ch.pillars).flatMap(p => (p ? [...p.hangul] : [])) : []);
+  const ga = set(brief.chart), gb = set(brief.partner?.chart), both = new Set([...ga, ...gb]);
+  const c = brief.compatibility;
+  const fix = (x: unknown, g: ReadonlySet<string>): unknown => typeof x === "string" ? x.replace(GLYPH_LIST, m => { const kept = [...new Set(m.split("·").filter(y => g.has(y)))]; return kept.length ? kept.join("·") : m; })
+    : Array.isArray(x) ? x.map(y => fix(y, g)) : x && typeof x === "object" ? Object.fromEntries(Object.entries(x).map(([k2, v]) => [k2, fix(v, g)])) : x;
+  const ofTrait = (id: string | undefined) => !c ? ga : id?.startsWith("a") ? ga : id?.startsWith("b") ? gb : both;
+  const res: Record<string, unknown> = {};
+  for (const [key, v] of Object.entries(out)) {
+    if (key === "traits" && Array.isArray(v)) res[key] = v.map(t => fix(t, ofTrait((t as { id?: string }).id)));
+    else if (key === "shadows" && Array.isArray(v)) res[key] = v.map(s => fix(s, ofTrait((s as { traitId?: string }).traitId)));
+    else res[key] = fix(v, c ? both : ga);
+  }
+  return res;
 }
 
 function renderRaw(brief: Brief): Record<string, unknown> {
   const { style, timeline, fortunes } = brief;
   const { traits, shadows } = writerFacing(brief);
   return {
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary"),
+    // 최종판2 1-3: 궁합은 사람별 고정 성격표를 브리프 맨 앞에 한 줄씩.
+    ...(brief.compatibility?.profiles?.length ? { profiles: { rule: PROFILE_RULE, people: brief.compatibility.profiles.map(p => p.line) } } : {}),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView"),
+    ...(brief.compatibility ? { compatibility: writerCompat(brief.compatibility) } : {}),
     chart: writerChart(brief.chart),
     mbti: brief.mbti ? omit(brief.mbti, "image") : null,
     // 그림 별명·이미지·한 줄은 내부 별칭(P6b B-2): 작가는 이름(한자)·뜻(meaning)·나에게(forYou)만 받는다.

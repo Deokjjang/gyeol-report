@@ -124,7 +124,8 @@ describe("P3.7 원고 보강", () => {
       // P6e 20: 같은 관계가 한 사람의 여러 자리에 걸리면 한 줄("태어난 해·달 땅 글자 모두")로 합친다.
       const W = "태어난 ((해|달|날|시각)|(해|달|날|시각)(·(해|달|날|시각))+) (하늘|땅) 글자( 모두)?";
       for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 ${W}(와|과) ${c.b.callName}의 ${W}(이|가) .+ 관계예요\\.`));
-      expect(new Set(c.dayRelations.map(r => r.replace(/^.*?(?=[가-힣]+\()/, ""))).size, name).toBe(c.dayRelations.length);
+      // 최종판2 1-7: 감지한 관계를 모두 싣는다 — 같은 글자 짝이 다른 자리에 걸리면 관계 이름 꼬리는 같을 수 있어, 줄 전체가 겹치지 않는지 본다.
+      expect(new Set(c.dayRelations).size, name).toBe(c.dayRelations.length);
     }
   });
 

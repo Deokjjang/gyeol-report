@@ -153,6 +153,7 @@ export const POLE_CUES: Readonly<Record<string, RegExp>> = {
   "dutifulness+": /맡은 일은 힘들어도|남에게 넘기지 않/, "dutifulness-": /상황에 따라 내려놓/,
   "conflictApproach+": /그 자리에서 정리하/, "conflictApproach-": /자리를 피하고 시간을/,
   "learningDrive+": /강의와 책을 찾아/, "learningDrive-": /지금 쓰는 지식으로 충분/,
-  "intimacyPace+": /속 이야기를 꺼내/, "intimacyPace-": /오래 지켜본 뒤에야/,
+  // 최종판2 1-8: INTP 장소담 1장 「가장 먼저 다가가 분위기를 풀어 주는」(같은 장 「손님의 기분은 집에 와서야 알아챌」과 반대).
+  "intimacyPace+": /속 이야기를 꺼내|가장 먼저 다가가(?!지)/, "intimacyPace-": /오래 지켜본 뒤에야/,
   "boundarySetting+": /분명히 거절/, "boundarySetting-": /내 일을 미루고라도/,
 };

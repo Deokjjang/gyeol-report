@@ -46,7 +46,7 @@ const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
-const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\})/;
+const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표)/;
 
 /** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
 const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;

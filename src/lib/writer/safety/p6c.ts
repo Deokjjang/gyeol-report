@@ -12,6 +12,7 @@ import { isPastAssertion, splitSentences } from "./patterns";
 import { sentenceViolation, type SafetyFacts, type SentenceRule } from "./sentences";
 import * as D from "./p6d";
 import * as E from "./p6e";
+import * as F from "./final2";
 import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
@@ -21,7 +22,9 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   | "safety" | "group_claim" | "fragment" | "empty_preview" | "count_mismatch" | "dayun_year" | "pair_both" | "self_correction" | "chapter_ref"
   | "time_deictic" | "calendar_month" | "closing_repeat" | "negative_claim" | "prop_repeat" | "invest_directive" | "intensity_claim" | "evidence_missing"
   // P6e: 지침 노출 · 고아 문장 · 신살 주인 · MBTI 오귀속 · 기둥 자리 · 안내 중복 · 씨앗 원문 · 기능 이어 쓰기 · 비문 꼴
-  | "element_count" | "scene_owner" | "group_name" | "guide_copy" | "guide_echo" | "orphan_start" | "feature_owner" | "mbti_misattr" | "pillar_claim" | "notice_repeat" | "seed_copy" | "fn_join" | "awkward";
+  | "element_count" | "scene_owner" | "group_name" | "guide_copy" | "guide_echo" | "orphan_start" | "feature_owner" | "mbti_misattr" | "pillar_claim" | "notice_repeat" | "seed_copy" | "fn_join" | "awkward"
+  // 최종판2: 궁합 성격표 · 명식 글자 나열 · 같은 일주 구절 · 다른 책 이미지
+  | "pair_profile" | "glyph_list" | "ilju_phrase" | "avoid_image";
 export type CardField = "image" | "todo" | "review" | "caution";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -31,7 +34,7 @@ export type LintFlag = { readonly chapter: number; readonly section: number; rea
  */
 export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
-  "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner"]);
+  "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -72,6 +75,10 @@ export type LintCtx = {
   readonly careerGroups?: boolean;
   /** 최종판 1-5: 궁합 장면 씨앗의 차원 끝 주인(브리프 rel.who에서). */
   readonly sceneOwners?: readonly E.SceneOwner[];
+  /** 최종판2 1-3·1-4·1-1: 궁합 사람별 성격표, 사람별 명식 글자(한 사람 책은 하나), 같은 일주 이전 책 구절, 피할 이미지 줄. */
+  /** 최종판2 1-6: 책 기준일(KST YYYY-MM-DD, 날짜 맞춤 정리). */
+  readonly baseDate?: string;
+  readonly profilePeople?: readonly F.ProfilePerson[]; readonly glyphPeople?: readonly F.GlyphPerson[]; readonly iljuPhrases?: readonly string[]; readonly avoidLines?: readonly string[];
   readonly presenceBy?: readonly { readonly name: string; readonly presence: L.ElementPresence }[];
   /** P6e 4: 이 책 사람들의 MBTI(유형·그 유형을 말한 문장 단서). */
   readonly mbtiPeople?: readonly E.MbtiPerson[];
@@ -130,6 +137,10 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   group_name: "다섯 힘을 정한 쉬운 이름 말고 다른 이름으로 불렀다 → 내 방식의 힘·만드는 힘·값을 받는 힘·규칙의 힘·배우는 힘 가운데 그 이름 하나로",
   element_count: "오행 개수와 다른 말(없다·가장 많다·가장 적다) → facts의 오행 개수(elementCounts) 그대로, 그 사람 것만",
   scene_owner: "궁합 장면의 주인(그 성향을 가진 사람)을 바꿔 썼다 → 장면 씨앗의 who(그 사람 이름) 그대로",
+  pair_profile: "그 사람의 고정 성향(profiles 줄: 에너지·앞에 나서는지·다툼 때 반응·표현 방식·결정 속도)과 반대로 썼다 → 그 사람 줄대로 고쳐 쓴다. 두 사람을 묶은 문장은 두 사람 칸이 같을 때만 묶는다",
+  glyph_list: "그 사람 명식에 없는 글자를 나열했다 → 그 사람 명식에 있는 글자만 쓰거나 글자 나열을 뺀다",
+  ilju_phrase: "같은 일주의 다른 책에 이미 나온 구절이다 → 같은 뜻을 다른 장면·다른 말로 새로 쓴다",
+  avoid_image: "다른 책이 이미 쓴 그림(chart.avoidImages)이다 → 이 책 표지 그림으로 바꾸거나 그림 없이 쓴다",
   guide_copy: "작가에게 준 지침·규칙 문장을 독자에게 옮겼다('~쓰지 마세요' 등) → 그 문장을 빼고 이 사람 이야기만 쓴다",
   guide_echo: "작가 지침 문장과 같은 말을 옮겼다 → 이 사람 이야기로 새로 쓴다",
   orphan_start: "앞 문단이 없는 자리인데 '도·또한·여기에·이처럼·그래서·반대로'로 열었다 → 이 소제목만 읽어도 뜻이 서는 첫 문장으로",
@@ -194,13 +205,16 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (ctx.positionsBy) for (const p of ctx.positionsBy) if (s.includes(p.name) && !ctx.positionsBy.some(o => o !== p && s.includes(o.name)) && E.pillarClaims(s, p.positions)) return "pillar_claim";
   if (ctx.mbtiPeople && mbtiMisattr(s, ctx.mbtiPeople)) return "mbti_misattr";
   if (ctx.sceneOwners?.length && ctx.owners && E.sceneOwnerMismatch(s, ctx.sceneOwners, ctx.owners.names, POLE_CUES)) return "scene_owner";
+  if (ctx.profilePeople && F.pairProfileMismatch(s, ctx.profilePeople)) return "pair_profile";
+  if (ctx.glyphPeople && F.glyphListMismatch(s, ctx.glyphPeople)) return "glyph_list";
   return null;
 }
 
 /** P6e 4: 그 사람의 MBTI(유형 이름·기능 쉬운 이름)를 말한 문장의 성향 단서가 그 유형의 기능·태도와 맞지 않는다. 궁합은 한 사람만 말한 문장만. */
 export function mbtiMisattr(s: string, people: readonly E.MbtiPerson[]): string | null {
   // 한 사람 책은 성향을 말한 문장(유형·기능 이름·"성향·당신")이면 그 사람 이야기다. 궁합은 한 사람만 말한 문장만.
-  const single = people.length === 1 && /성향|당신|타고난|[EI][NS][TF][JP]/.test(s);
+  // 최종판2 1-8: 독자에게 묻는 꼴("~일이 잦지 않나요?", "~쪽이지 않나요?")도 한 사람 책에서는 그 사람 이야기다.
+  const single = people.length === 1 && /성향|당신|타고난|[EI][NS][TF][JP]|(잦지|쪽이지|편이지|사람이지) 않나요/.test(s);
   const who = people.filter(p => p.anchors.test(s) || (p.name ? s.includes(p.name) && /성격|성향|MBTI/.test(s) : false));
   const t = who.length === 1 ? who[0].type : single ? people[0].type : null;
   if (!t) return null;
@@ -233,7 +247,7 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
  * 최종판 1-14: 기능 둘을 하이픈으로 이은 꼴("가치 기준(Fi)-지금 이 순간 감각(Se)")은 "~와 ~"로, 바로 앞에 쉬운 이름의 말이 이미 있으면("지난 경험을 기준점으로 삼는 Si") 이름을 되풀이하지 않고 "성향(Si)"으로,
  * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해"). 본문 기준일 줄은 뗀다(1-13).
  */
-export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups">>): { chapters: FinalChapter[]; count: TidyCount } {
+export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate">>): { chapters: FinalChapter[]; count: TidyCount } {
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0, words = 0, groupNames = 0;
   const definedGroups = new Set<string>();
   const introduced = new Set<string>();
@@ -283,6 +297,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (ctx.careerGroups) { const g = E.careerGroupNames(q, definedGroups); groupNames += g.count; q = g.text; }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
+      // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).
+      if (ctx.baseDate && Number(ctx.baseDate.slice(5, 7)) >= 11) { const r = q.replace(/이번 (가을|겨울)(에)? 남은 (두|한) ?달/g, `${ctx.baseDate.slice(0, 4)}년 남은 $3 달`); if (r !== q) { words++; q = r; } }
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       return q;
     });
@@ -323,7 +339,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           const at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
           // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
-          const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r }); continue; }
+          const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
           // P6e 2: 앞 문단이 없는 자리(소제목 첫 문단의 첫 문장)가 앞말에 기대어 연다.
           if (pi === 0 && i === 0 && !keyed && E.orphanStart(sen)) { flag({ ...at, rule: "orphan_start", detail: E.orphanStart(sen)! }); continue; }
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
@@ -342,6 +358,9 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (E.AWKWARD.test(sen)) { flag({ ...at, rule: "awkward" }); continue; }
           if (ctx.careerGroups && E.groupNameVariant(sen)) { flag({ ...at, rule: "group_name", detail: E.groupNameVariant(sen)! }); continue; }
           if (writer && L.copiedWindow(sen, ctx.corpus)) { flag({ ...at, rule: "db_copy" }); continue; }
+          // 최종판2 1-1: 다른 책이 쓴 이미지 줄 · 같은 일주 이전 책과 공백 뺀 12자 이상 같은 구절.
+          { const img = writer && ctx.avoidLines?.length ? F.avoidImageHit(sen, ctx.avoidLines, c.n) : null; if (img) { flag({ ...at, rule: "avoid_image", detail: img }); continue; } }
+          { const ph = writer && ctx.iljuPhrases?.length ? F.iljuPhrase(sen, ctx.iljuPhrases) : null; if (ph) { flag({ ...at, rule: "ilju_phrase", detail: ph }); continue; } }
           if (writer && ctx.prior.length && L.overlapping(ctx.prior, [sen]).length) { flag({ ...at, rule: "prior_overlap" }); continue; }
           const plainFormula = ctx.termNames ? sen.match(ctx.termNames) : null;
           if (L.MEANING_FORMULA.test(sen) || plainFormula) {

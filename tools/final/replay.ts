@@ -20,11 +20,12 @@ import { renderChapter } from "../../src/lib/writer/format";
 import { buildWriterPrompt } from "../../src/lib/writer/prompt";
 import { buildV5Snapshot, kstDate, lintContext, writerKnowledge } from "../../src/lib/writer/publish";
 import type { RawEntry } from "../../src/lib/writer/runner";
+import { peopleOf } from "../../src/lib/writer/prior";
 import type { FinalChapter } from "../../src/lib/writer/safety";
 import { lintBook, tidyBook, type LintFlag } from "../../src/lib/writer/safety/p6c";
 import { loadDevEnv, ROOT } from "../llm/env";
 
-type Snap = { productVersion: string; draft: V5BookDraft; evidencePacket: { input: ReportInputPayload; generatedAt: string; meta?: WriterMeta & { raw?: RawEntry[] } } };
+type Snap = { reportId?: string; productVersion: string; draft: V5BookDraft; evidencePacket: { input: ReportInputPayload; generatedAt: string; meta?: WriterMeta & { raw?: RawEntry[] } } };
 
 export async function loadSnap(arg: string): Promise<{ id: string; snap: Snap }> {
   if (existsSync(arg)) return { id: basename(arg).replace(/\.snapshot\.json$/, ""), snap: JSON.parse(readFileSync(arg, "utf8")) as Snap };
@@ -39,7 +40,9 @@ export async function loadSnap(arg: string): Promise<{ id: string; snap: Snap }>
 export function briefOfSnap(s: Snap): Brief {
   const n = normalizeReportInputPayload(s.evidencePacket.input as never, { now: () => new Date(s.evidencePacket.generatedAt) });
   if (!n.ok) throw new Error(String(n.error));
-  return buildBrief(payloadToBriefInput(n.value as never, kstDate(s.evidencePacket.generatedAt)) as never, writerKnowledge().k);
+  // 최종판2 1-1: 이미지 대장에서 그 책 자신과 그 뒤에 만든 책은 뺀다(자기 표지가 피할 이미지가 되지 않게).
+  return buildBrief({ ...payloadToBriefInput(n.value as never, kstDate(s.evidencePacket.generatedAt)), ledgerView: { ...(s.reportId ? { exclude: s.reportId } : {}), before: s.evidencePacket.generatedAt,
+    self: { people: peopleOf(s.evidencePacket.input), product: s.draft.productType } } } as never, writerKnowledge().k);
 }
 
 /** 저장된 본문(옛 책)에 새 정리·검사: 수리 대상 깃발. */

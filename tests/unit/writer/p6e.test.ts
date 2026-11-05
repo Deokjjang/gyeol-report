@@ -143,7 +143,7 @@ describe("P6e B·C 요청·품질 11~21", () => {
   it("16 씨앗 직업군·상태 태그: 모든 MBTI 씨앗에 ctx, 카페 사장·물리치료사·구직자에게 맞지 않는 씨앗·소품이 가지 않는다", () => {
     for (const [, seeds] of k.mbtiSeeds) for (const list of Object.values(seeds)) for (const s of list) expect(s.ctx, s.text).toEqual(sceneTagsOf(s.text));
     const text = (b: Brief) => JSON.stringify(renderWriterBrief(b, { knowledge: k }));
-    expect(text(B.sodam)).not.toMatch(/작은 프로그램|보고서 서론|업무 지시/);
+    // 최종판2 1-2: 종합(B.sodam)은 P6d 방식 — 보편 성향 장면(「보고서 서론」·「업무 지시」 등)을 직업 꼬리표로 거르지 않는다(장소담 본인 판독). 거름은 커리어·연애만.
     expect(text(B.chaerin)).not.toMatch(/연차 눈치|보고서 수정본/);
     expect(text(B.taeo)).not.toMatch(/팀에 나눠/);
   });

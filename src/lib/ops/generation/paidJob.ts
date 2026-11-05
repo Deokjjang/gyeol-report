@@ -10,14 +10,18 @@ import { opsChapterSink, type OpsStore } from "./sinks";
 import { superviseQueueJob, type GenerationEnv } from "./supervisor";
 
 export const AUTO_REFUND_REASON = "24시간 안에 책을 완성하지 못해 자동 환불";
-export type PaidJobOps = { generation: OpsStore; order: OpsStore; audit(e: { actor: "system"; action: string; target: string; detail?: Record<string, unknown> }): Promise<boolean> };
+export type PaidJobOps = { generation: OpsStore; order: OpsStore; audit(e: { actor: "system"; action: string; target: string; detail?: Record<string, unknown> }): Promise<boolean>;
+  /** 최종판2 1-1: 같은 고객의 이전 Book을 읽는 DB(서비스 롤). 없으면(시험) 이전 책 없이 만든다. */
+  db?: import("@supabase/supabase-js").SupabaseClient | null };
 
 export async function runPaidV5Job(job: { payload: unknown; report_id: string; job_id: string; lease_token: string; order_id: string; policyAt: string; budgetMs?: number },
   finish: (data: Record<string, unknown>) => Promise<ReliabilityResult>, opts: { ops?: PaidJobOps; env?: Omit<GenerationEnv, "store"> } = {}): Promise<ReliabilityResult> {
   const ops = opts.ops ?? (await import("../store")).createOpsStores();
   let last: ReliabilityResult = { ok: false, code: "STALE_LEASE" };
+  // 최종판2 1-1: 결제 책도 같은 고객(구매자 계정)의 이전 책을 본다 — 이미지·각도·장면을 겹치지 않게(이용권 레인과 같은 규칙).
+  const prior = ops.db ? await (await import("./paidPrior")).paidPriorBooks(ops.db, job.order_id, job.report_id, job.payload) : undefined;
   const { decision } = await superviseQueueJob({ reportId: job.report_id, origin: "paid", originRef: job.order_id, payload: job.payload as ReportInputPayload, policyAt: job.policyAt,
-    sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}) }, { ...opts.env, store: ops.generation }, async d => {
+    sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(prior?.books ? { prior } : {}) }, { ...opts.env, store: ops.generation }, async d => {
     if (d.kind === "publish") last = await finish({ success: true, snapshot: d.snapshot, gateVersion: PUBLISH_GATE_VERSION });
     else if (d.kind === "defer") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: "V5_DEFERRED" }) as ReliabilityResult;
     // 최종판 0-6: 주문당 비용 상한 — 자동으로 다시 돌리지 않게 길게 보류한다(관리자 지연 목록, 환불은 관리자가 정한다).

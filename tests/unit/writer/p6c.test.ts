@@ -192,12 +192,14 @@ describe("P6c F·G·H 카드·표지·강조", () => {
   });
   it("G → 최종판 1-7 표지 한 줄 = 작가가 지은 핵심 이미지: 16~26자·설명문·명리학에서·연차·사실 규칙·피할 이미지 명사 금지", () => {
     const b = brief("saju_mbti_full", ME);
-    expect(coverProblem("물길을 여는 한여름 큰 나무의 사업", b, [])).toBeNull();
+    // 최종판2 1-1: 길이는 공백을 빼고 센다(16~26자). 벗어나도 30자 이내면 작가 표지를 쓴다(level "length").
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 작은 사업", b, [])).toBeNull();
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 사업", b, [])).toMatch(/공백 뺌/);
     expect(coverProblem("짧아요", b, [])).toMatch(/길이/);
     expect(coverProblem("스물일곱, 물길을 여는 큰 나무의 사업이에요.", b, [])).toMatch(/설명문/);
     expect(coverProblem("서비스 기획 7년 차, 물길을 여는 큰 나무", b, [])).toMatch(/연차/);
     expect(coverProblem("명리학에서 보면 물길을 여는 큰 나무", b, [])).toBeTruthy();
-    expect(coverProblem("빗속에서도 꺼지지 않는 캠핑 랜턴", b, ["랜턴"])).toMatch(/피할 이미지 명사\(랜턴\)/);
+    expect(coverProblem("빗속에서도 꺼지지 않는 캠핑 랜턴", b, ["랜턴"])).toMatch(/피할 이미지\(랜턴\)/);
     expect(coverProblem(null, b, [])).toBe("없음");
   });
   it("H 소제목마다 핵심 문장 하나: 위치를 남기고 기호는 지운다, 둘째 기호와 짝 없는 기호는 정리", () => {

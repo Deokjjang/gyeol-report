@@ -6,7 +6,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { buildBrief, loadKnowledge } from "@/lib/brief";
-import { avoidImagesFor, avoidNounsIn, imageNoun } from "@/lib/brief/imageLedger";
+import { avoidImagesFor, avoidOverlaps, imageNoun } from "@/lib/brief/imageLedger";
 import { matchJob } from "@/lib/brief/props";
 import type { Brief } from "@/lib/brief/schema";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
@@ -196,10 +196,14 @@ describe("1-5 사실 대조(새 검사)", () => {
 describe("1-7 핵심 이미지", () => {
   it("이미지 대장 명사·피할 이미지", () => {
     expect(imageNoun("빗속에서도 꺼지지 않는 캠핑 랜턴")).toBe("랜턴"); expect(imageNoun("큰 나무가 돕는 사이")).toBe("사이"); expect(imageNoun("강변 숲을 적시며 흐르는 큰 강")).toBe("큰 강");
-    const l = { version: "t", built: "", byDayPillar: { 丁丑: [{ line: "캠핑 랜턴", noun: "랜턴", source: "x" }, { line: "돕는 사이", noun: "사이", source: "x" }] } };
-    expect(avoidImagesFor(["丁丑"], l)).toEqual(["랜턴"]); expect(avoidNounsIn("카페 랜턴 불빛", ["랜턴"])).toEqual(["랜턴"]);
-    expect(B.sodam.chart.avoidImages).toEqual(expect.arrayContaining(["랜턴"]));
-    expect(coverProblem("빗속에서도 꺼지지 않는 캠핑 랜턴", B.sodam, B.sodam.chart.avoidImages ?? [])).toMatch(/랜턴/);
+    // 최종판2 1-1: 피할 이미지는 낱말이 아니라 이전 책의 이미지 줄(같은 그림 = 공백 뺀 8자 이상 같은 구간 또는 같은 머리 명사).
+    const l = { version: "t", built: "", byDayPillar: { 丁丑: [{ line: "빗속에서도 꺼지지 않는 캠핑 랜턴", noun: "랜턴", source: "x" }, { line: "겨울 외양간 등불, 이렇게 씁니다", noun: "씁니다", source: "x" }] } };
+    expect(avoidImagesFor(["丁丑"], undefined, l)).toEqual(["빗속에서도 꺼지지 않는 캠핑 랜턴"]);
+    expect(avoidOverlaps("빗속에서도 꺼지지 않는 카페 사장의 불", ["빗속에서도 꺼지지 않는 캠핑 랜턴"])).toHaveLength(1);
+    expect(avoidOverlaps("마감 뒤에도 켜 두는 작은 랜턴", ["빗속에서도 꺼지지 않는 캠핑 랜턴"])).toHaveLength(1);
+    expect(avoidOverlaps("한겨울 골목을 지키는 가로등", ["빗속에서도 꺼지지 않는 캠핑 랜턴"])).toHaveLength(0);
+    expect(B.sodam.chart.avoidImages).toEqual(expect.arrayContaining(["빗속에서도 꺼지지 않는 캠핑 랜턴"]));
+    expect(coverProblem("빗속에서도 꺼지지 않는 캠핑 랜턴", B.sodam, B.sodam.chart.avoidImages ?? [])).toMatch(/피할 이미지/);
   });
   it("작가 지침 v5-23은 P6d 지침에서 1-1·1-6·1-7 세 곳만 바꿨다", () => {
     expect(WRITER_SYSTEM).toContain("rule은 너에게 주는 쓰기 규칙이다"); expect(WRITER_SYSTEM).toContain("한자는 쓰지 않는다"); expect(WRITER_SYSTEM).toContain("chart.avoidImages");
@@ -240,11 +244,11 @@ describe("1-9·1-10·1-14·1-15", () => {
     expect(t("충 축미충이 있는 당신은 바빠요.")).toBe("축미충이 있는 당신은 바빠요.");
     expect(t("내 힘의 세기는 매우 신약이에요.")).toBe("혼자 버티는 힘이 아주 여린 편이에요.");
   });
-  it("장면: 카페 사장에게 프리랜서·개인 프로젝트 씨앗이 가지 않고, 맞는 씨앗이 없으면 공용 신호 대신 고객 소품", () => {
-    const txt = JSON.stringify(renderWriterBrief(B.sodam, { knowledge: k }));
-    expect(txt).not.toMatch(/프리랜서 의뢰서|개인 프로젝트 폴더|작은 프로그램|보고서 서론|업무 지시/);
+  it("장면(최종판2 1-2): 종합은 P6d 방식 — 직업 꼬리표로 거르지 않고 직업 소품으로 대체하지 않는다(보편 성향 장면)", () => {
+    // 장소담 본인 판독: P6d가 더 낫다(「보고서의 서론만 열 번 고쳐 쓰듯」, 「업무 지시를 받을 때 이유부터 묻는 습관」). 최종판은 카페 사장에 맞춰 해설됐다.
     const mbti = B.sodam.chapters.flatMap(c => (c.sections ?? []).flatMap(s => s.materials)).filter(m => m.kind === "mbti") as { scene: string; seedId?: string }[];
-    expect(mbti.every(m => m.seedId)).toBe(true); // 공용 신호 장면(씨앗 id 없음)은 없다
+    expect(mbti.some(m => m.seedId === "prop")).toBe(false); // 직업 소품 대체 없음
+    expect(mbti.some(m => /카페 사장의/.test(m.scene))).toBe(false);
   });
   it("장면: 가게형이 아닌 사업자(IT 서비스 창업)에게 가게 씨앗·질문이 가지 않고 그 직업 소품을 쓴다(카페 사장은 그대로)", () => {
     const career = (detailJob: string) => {

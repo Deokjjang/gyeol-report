@@ -34,6 +34,8 @@ const NOTICE = [
   /여기서 (말하지|다루지|정하지) 않/,
   /단정(해서|하여)? 말하지(는|도)? 않/,
   /(시기|여부)(를|나 여부를)? 정하는 (이야기|말)(가|는|은)? 아(니|닙|닌)/,
+  // 최종판2 1-6: 「자녀의 성별이나 수를 말하는 것이 아니라」·「결혼 여부를 정해 주는 것은 아닙니다」·「구체적인 일을 말하는 건 아닙니다」.
+  /(성별|수|일|시기|결과|사건|여부)(이나 [가-힣]+|나 [가-힣]+)?(을|를) (말하|정하|정해 주|알려 주)는 (건|것은|것이|게|이야기|말)(가|는|은)? ?아(니|닙|닌)/,
 ];
 export const isNoticeSentence = (s: string) => NOTICE.some(re => re.test(s));
 /** 책 한 줄 안내(상품별, 마지막 장 끝에 시스템이 넣는다). */
@@ -83,7 +85,8 @@ export function guideCopy(sentence: string, windows: ReadonlySet<string>, w = GU
   return null;
 }
 /** 독자에게 하는 금지 말투로 옮긴 작가 규칙("입력하지 않은 경력과 연차는 쓰지 마세요"): 책·글·문장을 쓰는 법을 독자에게 시킨다. */
-const META_INSTRUCTION = /(입력(하지 않은|에 없는|되지 않은)|브리프|재료|근거 없는)[^.?!]{0,30}(쓰지 마세요|적지 마세요|넣지 마세요|말하지 마세요)|(경력|연차)(과|와|는|을|를)? [^.?!]{0,12}(쓰지|적지) 마세요/;
+// 최종판2 1-6: 「지어낸 연차 없이」(작가 규칙 "지어낸 연차·경력 금지"를 독자 안내로 옮김).
+const META_INSTRUCTION = /(입력(하지 않은|에 없는|되지 않은)|브리프|재료|근거 없는)[^.?!]{0,30}(쓰지 마세요|적지 마세요|넣지 마세요|말하지 마세요)|(경력|연차)(과|와|는|을|를)? [^.?!]{0,12}(쓰지|적지) 마세요|지어낸 [가-힣]{1,6} 없이|(연차|경력)(을|를)? 지어내/;
 export const metaInstruction = (s: string) => META_INSTRUCTION.test(s);
 
 // ---------- 10 씨앗 원문(꼬리표·압축 구) ----------
@@ -138,6 +141,8 @@ export function pillarClaims(sentence: string, facts: PositionTenGods): string |
       const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!]|그리고|하고 /)[0].slice(0, 18);
       const tg = TEN_GODS.find(t => new RegExp(`^[^가-힣]{0,3}(의|에|에는|엔|은|는|이|가|에 있는|에 앉은|에 놓인|에 자리한)?\\s?(\\([^)]*\\)\\s?)?${t}`).test(tail.trim()));
       if (tg && !allowed.includes(tg)) return `${pos}:${tg}`;
+      // 최종판2 1-8: 한 자리에는 글자 하나다. "태어난 날 땅 글자의 갑신"처럼 자리 뒤에 간지 두 글자(기둥 전체)를 붙였다.
+      if (/^(의|은|는|이|가|에|인)?\s?[갑을병정무기경신임계][자축인묘진사오미신유술해](?=[이가은는을를의도과와]|\s|$|[,.(])/.test(sentence.slice((m.index ?? 0) + m[0].length))) return `${pos}:ganji`;
       // 최종판 5: 거꾸로 된 어순 "정재가 월간에 앉은"(장덕민 커리어 5장, 월간은 정관). 자리 앞 십성 + 이/가/은/는, 자리 뒤 "에 앉/있/자리/놓/들".
       const head = sentence.slice(Math.max(0, (m.index ?? 0) - 10), m.index ?? 0);
       const before = TEN_GODS.find(t => new RegExp(`${t}(\\([^)]*\\))?(이|가|은|는) ?$`).test(head));
@@ -204,6 +209,12 @@ export function plainWords(text: string): { text: string; count: number } {
   t = sub(t, /(?:내 힘의 세기는|일간의 힘이|일간의 힘은|내 힘은) (매우 |아주 |조금 )?신약(?=이|으로|인|,|\.)/g, (_a, deg: string | undefined) => `혼자 버티는 힘이 ${deg ? "아주 " : ""}여린 편`);
   t = sub(t, /(내 힘의 세기는|일간의 힘이|일간의 힘은|내 힘은) 중화(?=라서|라|예요|입니다|이고|,)/g, (_a, head: string) => `${head.startsWith("내 힘의 세기") ? "내 힘은" : head} 세지도 약하지도 않은 가운데`);
   t = t.replace(/가운데(,|라서) 세지도 여리지도 않은 가운데/g, "가운데");
+  // 최종판2 1-6: 오행 과다(내부 용어) → 쉬운 말("토 과다" → "흙 기운이 많아서"). 장덕민 연애 「여기에 토 과다가 겹칩니다」.
+  const EL: Readonly<Record<string, string>> = { 목: "나무", 화: "불", 토: "흙", 금: "쇠", 수: "물" };
+  t = sub(t, /(?<![가-힣])([목화토금수]) 과다(라서|여서|이라서|로|가|는|예요|입니다|이고|인)?(?![가-힣])/g, (_a, e: string, p: string | undefined) => {
+    const head = `${EL[e]} 기운이`;
+    return !p || p === "라서" || p === "여서" || p === "이라서" || p === "로" ? `${head} 많아서` : p === "가" ? `${head} 많은 점이` : p === "는" ? `${head} 많은 것은` : p === "예요" ? `${head} 많아요` : p === "입니다" ? `${head} 많습니다` : p === "이고" ? `${head} 많고` : `${head} 많은`;
+  });
   return { text: t, count };
 }
 

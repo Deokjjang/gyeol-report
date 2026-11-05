@@ -45,7 +45,9 @@ function factsOf(brief: Brief): Record<string, unknown> {
   return {
     person: { facts: brief.person.facts, forbiddenFacts: brief.person.forbiddenFacts, lifeStage: (brief.person as { lifeStage?: string }).lifeStage },
     yinYang: `${c.yinYang.yin}:${c.yinYang.yang}`, elementsPresence: c.elements.presence, currentDayun: c.currentDayun && { years: c.currentDayun.years, phase: c.currentDayun.phase },
-    stars: c.stars ? { spouse: c.stars.spouse.line, child: c.stars.child.line } : undefined, coreImage: brief.compatibility?.pairImage.line ?? c.coreImage.line,
+    // 최종판2 1-1·1-3: 핵심 이미지는 그림 없는 뜻(엔진 그림 줄을 옮기지 않게), 피할 이미지, 궁합 사람별 성격표.
+    stars: c.stars ? { spouse: c.stars.spouse.line, child: c.stars.child.line } : undefined, coreImage: brief.compatibility ? brief.compatibility.pairImage.meaning ?? brief.compatibility.pairImage.line : c.coreImage.meaning ?? c.coreImage.line,
+    ...(c.avoidImages?.length ? { avoidImages: c.avoidImages } : {}), ...(brief.compatibility?.profiles?.length ? { profiles: brief.compatibility.profiles.map(p => p.line) } : {}),
     // P6d: 묶음 세기(만세력 가중값 단계)·기준 날짜(시점 말 대신)·궁합 두 사람 값.
     groups: c.groups?.line, ...(brief.partner?.chart.groups ? { partnerGroups: brief.partner.chart.groups.line } : {}), baseDate: brief.baseDate,
     // 최종판 1-5: 사람별 신살(주인)·자리별 십성·오행 개수(엔진 값 그대로).

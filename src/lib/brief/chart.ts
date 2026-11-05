@@ -105,6 +105,9 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       reading: elementReading,
       // 오행 유무(P6c B2): 겉 글자 수와 땅속(지장간) 유무. 겉 0·땅속 있음은 "겉에는 없고 땅속에 조금"으로만 쓴다.
       presence: Object.fromEntries(ELEMENTS.map(e => [e, { surface: bal.parts[e].visible, hidden: bal.parts[e].hidden > 0 }])) as Record<FiveElement, { surface: number; hidden: boolean }>,
+      // 최종판2 1-8: 장소담 종합 3장 소제목 「불 3 · 흙 3 · 물 2가 자리 잡고…」 ↔ 본문 「가장 센 기운은 물」(겉 글자 수와 힘을 섞었다).
+      ...(() => { const maxSurface = Math.max(...ELEMENTS.map(e => bal.parts[e].visible)), topN = bal.parts[top.element].visible;
+        return topN < maxSurface ? { countVsStrength: `겉 글자 수(presence.surface)와 힘(strongest·weakest: 태어난 달 기운 두 배·땅속 글자 포함)은 다르다. ${ELEMENT_KO[top.element]}${ELEMENT_KO[top.element] === "나무" ? "는" : "은"} 겉 글자 ${topN}개지만 힘으로는 가장 세다. 개수를 말할 때는 개수, 힘을 말할 때는 힘이라고 밝히고, 한 소제목에서 섞으면 둘을 함께 쓴다` } : {}; })(),
     },
     climate: {
       season: SEASON_KO[det.climate.season],

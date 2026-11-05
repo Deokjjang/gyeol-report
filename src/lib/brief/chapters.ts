@@ -290,7 +290,8 @@ export function planChapters(input: PlanCtx): PlanResult {
     const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
       && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx))
       // P6e 16: 직업군·상태 태그(ctx, 없으면 글에서 읽음)가 이 고객 생활과 맞지 않으면 뽑지 않는다. 학교·가족 소품도 같은 규칙.
-      && sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f));
+      // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗).
+      && (ctx.product === "saju_mbti_full" || (sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f))));
     if (!ok.length) return null;
     const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
     return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
@@ -301,7 +302,8 @@ export function planChapters(input: PlanCtx): PlanResult {
     if (hasBasis(sec)) for (const d of domains) { const m = seedFor(p, d, label, owner); if (m) { mbtiTurn++; return m; } }
     // 최종판 1-15: 맞는 씨앗이 없으면 유형 공용 신호 장면으로 채우지 않는다 — 한 사람 책은 그 사람의 직업 장소·소품(생활 단계·관계 소품)으로 장면을 짓게 한다.
     // (P6e 장소담: 거른 뒤 남은 씨앗이 모자라 INTP 공용 장면 「버스 종점」·「프리랜서 의뢰서」·「개인 프로젝트 폴더」가 되풀이됐다.)
-    if (ctx.props) {
+    // 최종판2 1-2: 종합은 P6d처럼 직업 소품으로 대체하지 않고 유형 공용 신호 장면을 쓴다(커리어·연애는 그대로).
+    if (ctx.props && ctx.product !== "saju_mbti_full") {
       for (const d of domains) {
         const pool = (d === "work" || d === "money" || d === "study" ? ctx.props.job.props : d === "love" || d === "marriage" || d === "relationships" ? ctx.props.relationship : ctx.props.stage.props).filter(x => !ctx.usedScenes.has(x));
         if (!pool.length) continue;

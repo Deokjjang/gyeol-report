@@ -44,7 +44,7 @@ export const ChartBriefSchema = z.object({
   pillars: z.object({ year: Ganji, month: Ganji, day: Ganji, hour: Ganji.optional() }),
   dayMaster: z.object({ stem: z.string(), name: z.string(), easyName: z.string(), metaphor: z.string() }),
   /** 핵심 이미지(P6b B-4): 일간·계절·강약·오행 분포로 합성한 한 줄. 작가에게는 line만 간다. */
-  coreImage: z.object({ line: z.string(), ruleId: z.string() }),
+  coreImage: z.object({ line: z.string(), ruleId: z.string(), meaning: z.string().optional(), short: z.string().optional() }),
   /** note: 일간 강약과 오행 쏠림이 다른 이야기임을 푸는 한 문장(P3.7 1-2). */
   /** reading: 강약 한 줄 해석(P3.8 5: 해석이 비어 작가가 채웠다). */
   strength: z.object({ level: z.string(), label: z.string(), reading: z.string().optional(), note: z.string().optional() }),
@@ -56,6 +56,8 @@ export const ChartBriefSchema = z.object({
     reading: z.array(z.string()),
     /** 오행 유무(P6c B2): 겉 글자 수(천간 + 지지 본기)와 지장간에 있는지. 겉 0·hidden=true면 "겉에는 없고 땅속에 조금"만 허용. */
     presence: z.record(Element, z.object({ surface: z.number(), hidden: z.boolean() })).optional(),
+    /** 최종판2 1-8: 글자 수와 힘이 갈릴 때 한 줄(가장 센 기운의 겉 글자 수가 가장 많지 않을 때). 소제목·본문이 개수와 힘을 섞지 않게. */
+    countVsStrength: z.string().optional(),
   }),
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
   /** phase(P6c B5): 대운 안의 위치(엔진 연차: 1~3년 앞쪽, 4~7년 중간, 8~10년 끝 무렵), yearsLeft = 올해 뒤로 남은 해. */
@@ -179,7 +181,10 @@ export const CompatibilityBriefSchema = z.object({
   complement: z.array(z.string()),
   tenGodAB: z.object({ tenGod: z.string(), reading: z.string() }), tenGodBA: z.object({ tenGod: z.string(), reading: z.string() }),
   /** 두 사람 관계 이미지(P6b B-4 pairImage). */
-  pairImage: z.object({ line: z.string(), a: z.string(), b: z.string(), ruleId: z.string() }),
+  pairImage: z.object({ line: z.string(), a: z.string(), b: z.string(), ruleId: z.string(), meaning: z.string().optional() }),
+  /** 최종판2 1-3: 사람별 고정 성격표(브리프 맨 앞 한 줄, 모든 장이 따른다). */
+  profiles: z.array(z.object({ name: z.string(), line: z.string(), energy: z.enum(["E", "I"]).nullable(), lead: z.enum(["front", "back"]).nullable(), conflict: z.enum(["now", "later"]).nullable(),
+    express: z.enum(["말", "말·표정", "행동"]).nullable(), decide: z.enum(["fast", "mid", "slow"]).nullable() })).optional(),
   dayRelations: z.array(z.string()),
   /** 관계 쉬운 문장 목록(P6b D 궁합, 화면 evidence.pair.relationsPlain). */
   relationsPlain: z.array(z.string()),
@@ -199,6 +204,8 @@ export const CompatibilityBriefSchema = z.object({
 
 export const BriefSchema = z.object({
   version: z.literal(BRIEF_VERSION),
+  /** 최종판2 1-1: 이미지 대장에서 뺄 책(저장본 검사·replay). 작가에게 보내지 않는다. */
+  ledgerView: z.object({ exclude: z.string().optional(), before: z.string().optional(), self: z.object({ people: z.array(z.string()), product: z.string() }).optional() }).optional(),
   product: z.enum(PRODUCT_KEYS),
   productTitle: z.string(),
   seed: z.string(),

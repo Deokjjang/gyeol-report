@@ -10,7 +10,8 @@ import { splitSentences } from "./safety/patterns";
 
 /** explained(P6c A3): 앞 책들이 뜻을 푼 특성(feature id). 이번 책은 그 특성의 뜻을 다시 풀지 않고 이 상품에 맞는 쓰임만 쓴다. */
 /** ledger(P6d F 고객 원장): 앞 책들이 쓴 각도(feature:facet)·MBTI 씨앗 id·근거 항목(feature:id·근거 줄). 다음 책은 쓰지 않은 것을 먼저 고른다. */
-export type PriorBooks = { readonly scenes: readonly string[]; readonly sentences: readonly string[]; readonly books: number; readonly explained?: readonly string[]; readonly ledger?: BookLedger; readonly products?: readonly string[] };
+/** images(최종판2 1-1): 앞 책들의 이미지 줄(표지·핵심 이미지·종합 1장 첫 소제목). 이번 책의 피할 이미지에 더한다. */
+export type PriorBooks = { readonly scenes: readonly string[]; readonly sentences: readonly string[]; readonly books: number; readonly explained?: readonly string[]; readonly ledger?: BookLedger; readonly products?: readonly string[]; readonly images?: readonly string[] };
 export type BookLedger = { readonly angles: readonly string[]; readonly seeds: readonly string[]; readonly evidence: readonly string[] };
 export const NO_PRIOR: PriorBooks = { scenes: [], sentences: [], books: 0, explained: [] };
 
@@ -53,7 +54,7 @@ export async function priorBooks(store: TicketPublicationStore, user: string, in
     const lib = await store.call("library", user);
     if (!lib.ok || !Array.isArray(lib.items)) return NO_PRIOR;
     const ids = (lib.items as { reportId?: string; status?: string }[]).filter(x => x.status === "available" && x.reportId).slice(0, PRIOR_LIMIT).map(x => x.reportId!);
-    const scenes: string[] = [], sentences: string[] = [], explained: string[] = [], angles: string[] = [], seeds: string[] = [], evidence: string[] = [], products: string[] = []; let books = 0;
+    const scenes: string[] = [], sentences: string[] = [], explained: string[] = [], angles: string[] = [], seeds: string[] = [], evidence: string[] = [], products: string[] = [], images: string[] = []; let books = 0;
     for (const reportId of ids) {
       const r = await store.call("read", user, { reportId });
       const snap = r.ok ? r.snapshot as { productVersion?: string; draft?: V5BookDraft; evidencePacket?: V5Evidence } | null : null;
@@ -65,9 +66,16 @@ export async function priorBooks(store: TicketPublicationStore, user: string, in
       explained.push(...(snap.evidencePacket.meta.explained ?? []));
       const l = snap.evidencePacket.meta.ledger; if (l) { angles.push(...l.angles); seeds.push(...l.seeds); evidence.push(...l.evidence); }
       products.push(snap.evidencePacket.productType);
+      images.push(...imageLinesOf(snap.draft));
     }
-    return { scenes: [...new Set(scenes)], sentences, books, explained: [...new Set(explained)], ledger: { angles: [...new Set(angles)], seeds: [...new Set(seeds)], evidence: [...new Set(evidence)] }, products };
+    return { scenes: [...new Set(scenes)], sentences, books, explained: [...new Set(explained)], ledger: { angles: [...new Set(angles)], seeds: [...new Set(seeds)], evidence: [...new Set(evidence)] }, products, images: [...new Set(images)] };
   } catch { return NO_PRIOR; }
+}
+
+/** 책의 이미지 줄(최종판2 1-1): 표지·핵심 이미지·궁합 관계 이미지·종합 1장 첫 소제목. */
+export function imageLinesOf(d: V5BookDraft): string[] {
+  const x = d as unknown as { coverLine?: string; coreImage?: { line?: string }; pairImage?: { line?: string }; productType?: string; chapters?: { sections?: { heading?: string }[] }[] };
+  return [x.coverLine, x.coreImage?.line, x.pairImage?.line, x.productType === "saju_mbti_full" ? x.chapters?.[0]?.sections?.[0]?.heading : undefined].filter((v): v is string => Boolean(v && v.trim()));
 }
 
 /** 이 책이 뜻을 푼 특성(angle=first인 trait의 feature id, P6c A3). 다음 책이 뜻을 다시 풀지 않는다. */
