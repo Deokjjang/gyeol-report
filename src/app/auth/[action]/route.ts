@@ -16,6 +16,12 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     try { return await handleTicketPublication(request, action.slice(7), original, createTicketPublicationStore()); }
     catch { return original.finish(NextResponse.json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, { status: 503, headers: { "Cache-Control": "private, no-store" } })); }
   }
+  if (action === "event-popup") {
+    // 최종 A 14: 메인·상품 화면 팝업(읽기 전용, 보상 정보는 회원 본인에게만).
+    const { handleEventPopup, compCampaignStore } = await import("../../../lib/ops/comp/popup");
+    const { createOpsStores } = await import("../../../lib/ops/store");
+    return handleEventPopup(request, original, compCampaignStore(createOpsStores().db));
+  }
   if (action === "profile" || action === "withdraw" || action === "gift" || action === "orders" || action === "comp") return opsAccountAction(request, action, original);
   const { createReferralStore } = await import("../../../lib/referrals/supabase");
   const { withReferralTickets } = await import("../../../lib/referrals/service");

@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactElement } from "react";
 import { BOOKS, bookForProduct, readerTitle } from "../../lib/book/product";
 import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type BookFormState } from "../../lib/book/form";
 import type { PersonInputState } from "../../lib/report-generation/reportInputPresentation";
@@ -17,6 +17,7 @@ import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
 import { AccountChannelOnboarding } from "../account/AccountSession";
 import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
+import { EventPopupHost } from "../event/EventPopup";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
@@ -38,10 +39,13 @@ export function MbtiInput({ person, change, role }: { person: PersonInputState; 
 export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false, closed = [], v5Products = [] }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean; closed?: readonly string[]; v5Products?: readonly string[] }) {
   const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0];
   // P6d-ops 1: 판매를 잠시 닫은 책(대운·세운)은 입력·결제 대신 공개 안내. 서버(결제·이용권 API)도 같은 설정으로 거절한다.
-  if (closed.includes(book.productKey)) return <SalesClosedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />;
+  // 최종 A 14: 상품 화면 팝업(내부 검수 화면 제외).
+  const popup = internal ? null : <EventPopupHost />;
+  const withPopup = (page: ReactElement) => (popup ? <>{page}{popup}</> : page);
+  if (closed.includes(book.productKey)) return withPopup(<SalesClosedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />);
   // Product is the component key supplied by the wrapper below via navigation;
   // drafts are additionally namespaced per product and cannot activate routes.
-  return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} />;
+  return withPopup(<BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} />);
 }
 function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
