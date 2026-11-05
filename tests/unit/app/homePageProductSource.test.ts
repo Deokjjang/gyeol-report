@@ -161,7 +161,7 @@ describe("home page product source", () => {
       "isPurchasable: true",
       'href: "/report/new?product=annual-fortune"',
       'badgeKo: "구매 가능"',
-      "paymentAmount: PRODUCT_PRICE_AMOUNT",
+      "paymentAmount: REPORT_PRICE_TABLE_KRW.annual_fortune",
       'retentionKo: "생성일로부터 90일 열람"',
     ];
 

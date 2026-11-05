@@ -1,6 +1,7 @@
 /** 원국 요약(시간 미상이면 시주 제외), 오행·음양·조후 판단, 현재 대운, 올해 기운 한 줄. */
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
-import { calculateCustomerDayun, calculateTraditionalDaeunsu, type CustomerDayunCycle } from "@/lib/saju/customerDayun";
+import { calculateCustomerDayun, type CustomerDayunCycle } from "@/lib/saju/customerDayun";
+import { calculateTraditionalDaeunsu } from "@/lib/saju/traditionalDaeunsu";
 import { getAnnualPillar, judgeElementBalance, natalEntries, type ElementBalance } from "@/lib/saju/detections";
 import type { ChartDetections } from "@/lib/saju/detections/types";
 import { getYearPillarFromSolarDateTime } from "@/lib/saju/pillars";

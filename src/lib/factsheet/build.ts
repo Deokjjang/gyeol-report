@@ -4,7 +4,8 @@
  * 학파가 갈리는 항목은 엔진이 쓰는 기준을 standards에 적는다(docs/manseryeok-policy.md §5, docs/v5/shinsal-rules.md). 본문·부록·점수가 같은 기준을 쓴다.
  */
 import { calculateSaju } from "@/lib/saju/calculateSaju";
-import { calculateCustomerDayun, calculateTraditionalDaeunsu } from "@/lib/saju/customerDayun";
+import { calculateCustomerDayun } from "@/lib/saju/customerDayun";
+import { calculateTraditionalDaeunsu } from "@/lib/saju/traditionalDaeunsu";
 import { currentDayunAt } from "@/lib/brief/labels";
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
 import { analyzeChartDetections, analyzeIncoming, detectRelations, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";

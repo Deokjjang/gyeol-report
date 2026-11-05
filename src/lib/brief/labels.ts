@@ -66,7 +66,7 @@ export const relationPlain = (left: string, right: string, kind: string, half: b
  * 형식: "무진 대운: 2027년 5월 무렵부터 (대운수 8)". 교운 시각은 엔진 정밀 계산(customerDayun, lunar-javascript sect 2) 그대로 쓰고 다시 계산하지 않는다.
  * - 시작: 정확한 출생시간이면 교운 시각(startSolarKst)의 연·월, 대략·미상이면 가능한 범위의 연·월(같은 달이면 한 달, 다르면 "4~6월").
  * - 나이(만 나이): 그해 생일이 지난 뒤의 나이 = 연도 − 출생 연도(manAge와 같다). 엔진 cycle.startAge는 세는 나이(연도 − 출생 연도 + 1)라 1을 뺀다.
- * - 대운수(최종 A-3): 전통 셈법 — 출생~절입 날수 ÷ 3(나머지 0·1일 버림, 2일 올림, customerDayun.calculateTraditionalDaeunsu). base로 받는다.
+ * - 대운수(최종 A-3): 전통 셈법 — 출생~절입 날수 ÷ 3(나머지 0·1일 버림, 2일 올림, saju/traditionalDaeunsu.ts). base로 받는다.
  *   base가 없을 때만(옛 호출) 예전 값(첫 대운 시작 연도 − 출생 연도)을 쓴다. 한 사람의 대운수는 하나라 모든 대운 줄에 같은 값.
  * - 기간(최종 A-4): 끝은 다음 대운의 교운 연·월(「2029년 11월 무렵까지」) — 연도만으로 끊지 않는다(엔진 endYear는 표기에 쓰지 않음).
  */
