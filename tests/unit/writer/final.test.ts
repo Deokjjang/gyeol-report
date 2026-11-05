@@ -27,9 +27,9 @@ import * as E from "@/lib/writer/safety/p6e";
 import { RAW_FULL, mockTextFor } from "../../helpers/v5Scenarios";
 import { fakeClock, memoryOpsStore, mockAnthropic, mockOpenAiWithBody, routedFetch } from "../../helpers/opsMocks";
 import { P6D_CASES } from "../../../tools/p6d/cases";
-import { useFileLedger } from "../../../tools/final/fileLedger";
+import { applyFileLedger } from "../../../tools/final/fileLedger";
 // 최종 A-2: 이미지 대장 파일은 시험·도구 전용(운영 번들 밖) — 이 시험은 파일 대장을 넣고 본다.
-useFileLedger();
+applyFileLedger();
 
 const k = loadKnowledge();
 const brief = (id: string): Brief => {

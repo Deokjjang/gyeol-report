@@ -124,6 +124,8 @@
 .receipt dl div:last-child { padding-top: 18px; margin-top: 5px; border-top: 1px solid var(--rule); }
 .receipt dl div:last-child dd { font-size: 20px; }
 .receiptNote { font-size: 11px; line-height: 1.85; color: #555; margin: 13px 0 !important; }
+.exampleTag { font-size: 11px; color: #888; letter-spacing: .02em; white-space: nowrap; }
+.quietLink { color: inherit; text-decoration: underline; text-decoration-color: #aaa; text-underline-offset: 2px; }
 .consents { border: none; padding: 0; margin: 18px 0 6px; }
 .consents label { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 7px 0; font-size: 11px; line-height: 1.6; }
 .consents input { margin-top: 2px; }

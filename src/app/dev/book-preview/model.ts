@@ -25,7 +25,18 @@ export const CONSENT_SHORT_LABELS = {
   inputAccuracy: "입력 정보 확인", digitalReportStart: "디지털 리포트 생성 시작",
   refundRestriction: "청약철회 제한 · 계산 오류는 재생성·환불", policyAgreement: "이용약관·개인정보·환불정책 동의",
   age14OrOlder: "만 14세 이상", minorLegalRepresentative: "미성년자 법정대리인 동의",
+  orderAndRefund: "주문 내용과 환불 안내를 확인했어요",
 } as const;
+/**
+ * 최종 A 16: 발행 주문서의 동의 칸. 「주문 내용과 환불 안내를 확인했어요」 한 칸이 세 확인(입력 정보·생성 시작·청약철회 제한)을
+ * 함께 체크한다(상세 보기에 세 문장 원문). 약관·개인정보 동의, 만 14세, 미성년자 법정대리인은 따로 둔다.
+ */
+export const RECEIPT_CONSENTS = [
+  { id: "orderAndRefund", covers: ["inputAccuracy", "digitalReportStart", "refundRestriction"] },
+  { id: "policyAgreement", covers: ["policyAgreement"] },
+  { id: "age14OrOlder", covers: ["age14OrOlder"] },
+  { id: "minorLegalRepresentative", covers: ["minorLegalRepresentative"] },
+] as const;
 export function requiredConsents(member: boolean, birth: string) {
   // Fixed preview date; this is not a replacement checkout age policy.
   const date = new Date(birth + "T00:00:00Z");

@@ -8,7 +8,7 @@ mkdirSync(out, { recursive: true });
 const sizes = { desktop: { width: 1280, height: 860 }, mobile: { width: 390, height: 844 } };
 const browser = await chromium.launch();
 const seenMeta = () => { try { localStorage.setItem("gyeol-meta-card-seen:meta-20261020-v2", "1"); } catch { /* */ } };
-async function shot(name, size, { as = null, path = "/", popup = null, clip = false } = {}) {
+async function shot(name, size, { as = null, path = "/", popup = null } = {}) {
   const ctx = await browser.newContext({ viewport: sizes[size], deviceScaleFactor: 2, locale: "ko-KR", timezoneId: "Asia/Seoul" });
   // 광고 동의 카드는 이미 본 것으로(화면 맨 위 흐름 카드가 캡처를 가리지 않게).
   await ctx.addCookies([{ name: "gyeol_meta_card_seen", value: "1", url: base }]);

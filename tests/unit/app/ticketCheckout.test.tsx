@@ -45,7 +45,7 @@ describe("member-aware receipt SSR boundaries", () => {
     state.session = { status: "member" };
     vi.stubGlobal("window", new EventTarget()); vi.stubGlobal("document", { hidden: false });
     vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ ok: true, quantity }) } as Response);
-    render(); const stop = hooks.effects[1](); for (let i = 0; i < 8; i++) await Promise.resolve();
+    render(); const stop = hooks.effects[0](); for (let i = 0; i < 8; i++) await Promise.resolve();
     try {
       const html = render(); expect(html).toContain(`남은 이용권 ${quantity}장`);
       expect(html).toContain(quantity ? "이용권 1장으로 책 발행하기" : "결제하기");
@@ -54,7 +54,7 @@ describe("member-aware receipt SSR boundaries", () => {
   });
   it("failed balance callback is an error, not zero tickets or an enabled payment", async () => {
     state.session = { status: "member" }; vi.stubGlobal("window", new EventTarget()); vi.stubGlobal("document", { hidden: false });
-    vi.mocked(fetch).mockRejectedValue(Error("OFFLINE")); render(); const stop = hooks.effects[1](); for (let i = 0; i < 8; i++) await Promise.resolve();
+    vi.mocked(fetch).mockRejectedValue(Error("OFFLINE")); render(); const stop = hooks.effects[0](); for (let i = 0; i < 8; i++) await Promise.resolve();
     try { const html = render(); expect(html).toContain("이용권을 확인하지 못했습니다"); expect(html).not.toContain("남은 이용권 0장"); expect(html).toMatch(/disabled=""[^>]*>결제하기/); }
     finally { stop?.(); }
   });

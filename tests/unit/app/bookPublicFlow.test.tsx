@@ -145,10 +145,11 @@ describe("presentation contracts", () => {
     const payload = RUNTIME_FIXTURES[0].payload as ReportInputPayload;
     const v5 = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} v5Book onPublishing={() => {}} onError={() => {}} />);
     expect(v5).toContain("탈퇴 전까지 계속 열람"); expect(v5).not.toContain("생성일로부터 90일");
-    expect(v5).toContain("이 리포트는 명리 계산 결과와 MBTI 자료를 바탕으로 AI가 작성했어요.");
-    expect(v5).toContain("책 만들기가 시작되면 단순 변심으로는 환불되지 않아요.");
+    // 최종 A 16: 주문서 맨 아래 작은 회색 두 줄(환불 · 예시 보기 / AI 작성).
+    expect(v5).toContain("명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요");
+    expect(v5).toContain("결제하면 바로 생성이 시작돼 단순 변심 환불은 어려워요");
     const v4 = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} onPublishing={() => {}} onError={() => {}} />);
-    expect(v4).toContain("생성일로부터 90일"); expect(v4).not.toContain("AI가 작성했어요"); expect(v4).toContain("단순 변심으로는 환불되지 않아요");
+    expect(v4).toContain("생성일로부터 90일"); expect(v4).not.toContain("AI가 작성해요"); expect(v4).toContain("단순 변심 환불은 어려워요");
   });
   it("stored version is authoritative and V3/invalid snapshots cannot be regenerated", () => {
     expect(storedBook({ productVersion: "v3", reportVersion: "v4" })).toBeNull();

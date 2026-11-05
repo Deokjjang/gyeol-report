@@ -15,9 +15,9 @@ import { kstDate, writerKnowledge } from "../../src/lib/writer/publish";
 import { ROOT } from "../llm/env";
 import { FINAL_CASES, JOB_INPUTS, jobCase, type FinalCase } from "./cases";
 import { FINAL2_CASES } from "../final2/cases";
-import { useFileLedger } from "./fileLedger";
+import { applyFileLedger } from "./fileLedger";
 // 최종 A-2: 도구는 예전처럼 파일 이미지 대장(시험 책)을 본다(운영 코드는 빈 대장).
-useFileLedger();
+applyFileLedger();
 
 export const BASE_AT = "2026-11-04T05:00:00.000Z";
 export function briefOf(c: FinalCase, k: Knowledge = writerKnowledge().k, at = BASE_AT): Brief {
