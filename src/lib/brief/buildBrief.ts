@@ -20,7 +20,7 @@ import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
 import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type TimelineCtx } from "./timeline";
-import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, scoreHits, selectTraits, type ProductKey } from "./traits";
+import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
 import { dropSourceSentences } from "@/lib/writer/safety/patterns";
@@ -28,7 +28,7 @@ import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage, matchJob } from "./props";
-import { avoidImagesFor, type LedgerView } from "./imageLedger";
+import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
@@ -76,6 +76,9 @@ export type BriefInput = {
   readonly excludeSeeds?: readonly string[];
   /** 최종판2 1-1: 같은 고객 다른 상품 책의 이미지 줄(표지·핵심 이미지·종합 1장 첫 소제목) — 피할 이미지에 더한다. */
   readonly priorImages?: readonly string[];
+  /** 최종판3 2i: 고객 원장 — 같은 사주 주인의 이전 책 처방 문장·표지 줄(시험 책 제외). 처방 계열·표지 모티프 계열을 피한다. */
+  readonly priorActions?: readonly string[];
+  readonly priorCovers?: readonly string[];
   /** 최종판2 1-1: 이미지 대장에서 뺄 책(저장본 검사·replay: 그 책 자신과 그 뒤에 만든 책). */
   readonly ledgerView?: LedgerView;
 };
@@ -130,15 +133,26 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const imageOk = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc) && !(OTHER_GENDER?.test(im.metaphor) || OTHER_GENDER?.test(im.visual));
   const balanceImage = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc);
   // 앞 책이 쓴 특성은 점수를 낮춰 쓰지 않은 특성을 먼저 고른다(P6d G: 심화 상품 근거의 60% 이상은 종합에서 쓰지 않은 것). 일간·일주는 책의 뿌리라 그대로.
-  const scored = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(balanceImage))
-    .map(x => prior?.features.has(x.hit.id) && x.hit.family !== "dayMaster" && x.hit.family !== "dayPillar" ? { ...x, score: x.score * 0.45 } : x).sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id));
+  const scored0 = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(balanceImage));
+  // 최종판3 2d: 대표 신살(신살·귀인 중 강하고 두 자리 이상, 점수 최고 — 장덕민 현침살 甲·辛·卯·申)은 종합에서 앞 책 원장 감점을 받지 않고 반드시 고른다.
+  // 실제 결함(최종판2): 앞 책 2권이 현침살을 썼다는 원장(feature:shinsal:HYEONCHIMSAL) 때문에 ×0.45 감점으로 종합 12특성에서 빠졌다.
+  const repId = product === "saju_mbti_full" ? [...scored0].filter(x => (x.hit.family === "shinsal" || x.hit.family === "gwiin") && x.hit.strength === "strong" && x.hit.positions.length >= 2).sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id))[0]?.hit.id : undefined;
+  const scored = scored0
+    .map(x => prior?.features.has(x.hit.id) && x.hit.family !== "dayMaster" && x.hit.family !== "dayPillar" && x.hit.id !== repId ? { ...x, score: x.score * 0.45 } : x).sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id));
   // 같은 핵심 차원을 반대로 당기는 trait 둘은 긴장(MBTI와 반대로 당기는 Fusion) 표시가 없으면 점수 낮은 쪽을 빼고 다시 고른다(P3.7 1-2).
   const dropped = new Set<string>();
   let selected = selectTraits(scored, traitTarget);
   for (let guard = 0; guard < 6; guard++) {
-    const lose = oppositeToDrop(selected.map(s => ({ id: s.hit.id, score: s.score, tags: s.feature.dimensionTags, tension: s.fusion?.kind === "tension", keep: s.hit.family === "dayMaster" || s.hit.family === "dayPillar" })));
+    const lose = oppositeToDrop(selected.map(s => ({ id: s.hit.id, score: s.score, tags: s.feature.dimensionTags, tension: s.fusion?.kind === "tension", keep: s.hit.family === "dayMaster" || s.hit.family === "dayPillar" || s.hit.id === repId })));
     if (!lose) break;
     dropped.add(lose.id); selected = selectTraits(scored.filter(x => !dropped.has(x.hit.id)), traitTarget);
+  }
+  // 대표 신살이 자리 수 상한 등으로 빠졌으면 일간·일주가 아닌 가장 낮은 특성과 바꾼다.
+  if (repId && !selected.some(s => s.hit.id === repId)) {
+    // 신살·귀인 묶음 상한(GROUPS)을 넘기지 않게, 묶음이 차 있으면 그 묶음의 가장 낮은 것과 바꾼다.
+    const rep = scored.find(x => x.hit.id === repId)!, same = selected.filter(s => s.group === rep.group), cap = TRAIT_GROUPS.find(g => g.key === rep.group)?.max ?? Infinity;
+    const lowest = (same.length >= cap ? [...same] : [...selected]).reverse().find(s => s.hit.family !== "dayMaster" && s.hit.family !== "dayPillar");
+    if (lowest) selected = [...selected.filter(s => s !== lowest), rep].sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id));
   }
   const groups = groupValues(saju);
   const hitIdSet = new Set(hits.map(h => h.id));
@@ -165,7 +179,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts, fnUsed);
   for (const t of traits) if (t.fusion) { const why = clean(keepBalanced(t.fusion.why, bc, splitSentences), t.positions); if (why) t.fusion.why = why; else delete t.fusion; }
   // 앞 책이 쓴 Fusion 각도(같은 특성 × 같은 MBTI 연결)는 이번 책에 다시 주지 않는다(P6d F: 하람 "식신은 따라간다"·"서운함이 터진다"가 세 권에 반복).
-  for (const t of traits) if (t.fusion && prior?.angles.has(`${t.featureId}:fusion:${t.fusion.target}`)) delete t.fusion;
+  // 대표 신살의 명리×MBTI 연결은 종합에 꼭 한 번 있어야 하므로 앞 책이 썼어도 지우지 않는다(최종판3 2d).
+  for (const t of traits) if (t.fusion && t.featureId !== repId && prior?.angles.has(`${t.featureId}:fusion:${t.fusion.target}`)) delete t.fusion;
   chart.climate.reading = keepBalanced(chart.climate.reading, bc, splitSentences) ?? "";
   // 오행 읽기 문장도 trait와 같은 차원에서 반대면 뺀다(P3.7 r2: 오행 읽기 "거절하는 힘이 얇다·오래 잰다" ↔ trait "바로 정함").
   const readingIds = [
@@ -243,7 +258,7 @@ function mbtiBrief(k: Knowledge, type: MbtiType | null) {
 
 export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 시드는 이전 책 목록과 무관하게(같은 입력 = 같은 시드).
-  const { excludeScenes: _exclude, knownTraits: _known, priorEvidence: _pe, excludeAngles: _ea, excludeSeeds: _es, priorImages: _pi, ledgerView: _lv, ...seedInput } = input; void _exclude; void _known; void _pe; void _ea; void _es; void _pi; void _lv;
+  const { excludeScenes: _exclude, knownTraits: _known, priorEvidence: _pe, excludeAngles: _ea, excludeSeeds: _es, priorImages: _pi, ledgerView: _lv, priorActions: _pa, priorCovers: _pc, ...seedInput } = input; void _pa; void _pc; void _exclude; void _known; void _pe; void _ea; void _es; void _pi; void _lv;
   const seed = fnv1a(stableStringify(seedInput));
   const rng = createRng(seed);
   const usedScenes = new Set<string>(input.excludeScenes ?? []);
@@ -390,9 +405,10 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 최종판 1-7·최종판2 1-1: 같은 일주의 이전 책이 쓴 이미지 줄(이미지 대장) + 같은 고객 다른 상품 책의 이미지 줄을 피할 이미지로. 궁합은 두 사람 일주 모두.
   { const avoid = [...new Set([...avoidImagesFor([me.chart.pillars.day.hanja, ...(other ? [other.chart.pillars.day.hanja] : [])], input.ledgerView), ...(input.priorImages ?? []).map(x => x.trim()).filter(x => x.length >= 6)])];
     if (avoid.length) (me.chart as { avoidImages?: string[] }).avoidImages = avoid; }
+  const ledgerNotes = input.priorActions?.length || input.priorCovers?.length ? { ...(input.priorActions?.length ? { avoidActions: [...input.priorActions].slice(0, 30) } : {}), ...(input.priorCovers?.length ? { avoidCoverMotifs: [...new Set(input.priorCovers.flatMap(coverMotifs))] } : {}) } : undefined;
   // 다음 대운이 1년 안에 시작하면 지금 대운 설명에 전환을 붙인다(P3.7 r1: 2026년에 끝나는 대운을 시기 장이 끝나는 줄 모르고 썼다).
   const cd = me.chart.currentDayun, ty = me.chart.thisYear.year;
-  if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.startYear - 1}년에 끝나고 ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
+  if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.start ?? `${cd.next.startYear}년부터`} ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
   // 궁합 장 제목·질문의 "A·B" 기호(예 "A가 보는 B")는 두 사람 호칭으로 바꾼다(고객 본문에 기호가 나오지 않게, P3.5 A9).
   if (other) {
     const name: Record<string, string> = { A: me.person.callName, B: other.person.callName };
@@ -416,7 +432,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
   // usedProps는 안전망용, appendix·glossary는 부록·용어 표시용이라 작가 토큰 추정·작가 입력에서 뺀다.
   const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k));
-  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
+  return BriefSchema.parse({ ...draft, ...(ledgerNotes ? { ledgerNotes } : {}), ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
 }
 
 /**

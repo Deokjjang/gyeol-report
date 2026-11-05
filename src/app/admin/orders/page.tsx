@@ -6,7 +6,7 @@ import { compSummary, delayedOrders, legacyMembers, parseSearch, providerState, 
 import { compStateLabel, kst, maskEmail, paymentStatusLabel, productLabel, requestReasonLabel } from "../../../lib/ops/admin/format";
 import { ALL_PRODUCTS } from "../../../lib/ops/config";
 import { createOpsStores } from "../../../lib/ops/store";
-import { CompDesignate, ExportCsv, ProviderEnableButton, RequestDoneForm, TossBatchCheck } from "./AdminClient";
+import { CompDesignate, ExportCsv, ProviderEnableButton, RequestDoneForm, TicketBookRegenerate, TossBatchCheck } from "./AdminClient";
 import { AdminShell, Badge, Dl, ExpiredView, LoadError, OrderItem } from "./ui";
 
 export const dynamic = "force-dynamic";
@@ -99,6 +99,7 @@ async function DelayedTab() {
             </li>
           ))}</ul>
         )}
+        <TicketBookRegenerate />
       </section>
     </>
   );

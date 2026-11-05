@@ -1,5 +1,5 @@
 import type { BookChapter } from "../../writer/format";
-import type { ChapterSink, SavedChapter } from "../../writer/runner";
+import type { ChapterSink, RawEntry, SavedChapter, WriterCache } from "../../writer/runner";
 
 export type OpsStore = { call(action: string, data: Record<string, unknown>): Promise<Record<string, unknown>> };
 
@@ -20,6 +20,33 @@ export function opsChapterSink(store: OpsStore, reportId: string, token: string)
       if (!r.ok || !Array.isArray(r.chapters)) return [];
       return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: x.chapter }));
     },
+  };
+}
+
+/**
+ * 최종판3 6: 운영 워커의 호출 원문 저장소(ops_writer_raw, 주문 번호 키). 받는 즉시 저장하고(put), 재시도는 저장본을 쓴다(get → 호출 0).
+ * 현재 lease 토큰만 저장·조회된다. 저장 실패는 원고를 막지 않는다(그때는 Book meta.raw가 남는다).
+ */
+export function opsRawCache(store: OpsStore, reportId: string, token: string): WriterCache {
+  let loaded: Map<string, RawEntry> | null = null;
+  const load = async () => {
+    if (loaded) return loaded;
+    try { const r = await store.call("raw_load", { reportId, token }); loaded = new Map(r.ok && Array.isArray(r.entries) ? (r.entries as RawEntry[]).map(e => [e.key, e]) : []); }
+    catch { loaded = new Map(); }
+    return loaded;
+  };
+  return {
+    async get(key) { return (await load()).get(key) ?? null; },
+    async put(e) { (await load()).set(e.key, e); try { await store.call("raw_save", { reportId, token, entry: e }); } catch { /* Book meta.raw가 남는다 */ } },
+  };
+}
+/** 저장본 → 운영 원문 → 개발 관문 순으로 찾고, 새 원문은 운영 원문과 개발 관문 모두에 남긴다. */
+export function chainCache(...caches: readonly (WriterCache | null | undefined)[]): WriterCache | null {
+  const cs = caches.filter((c): c is WriterCache => Boolean(c));
+  if (!cs.length) return null;
+  return {
+    async get(key) { for (const c of cs) { const v = await c.get(key); if (v) return v; } return null; },
+    async put(e, m) { for (const c of cs) await c.put(e, m); },
   };
 }
 

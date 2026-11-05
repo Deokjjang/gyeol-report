@@ -72,21 +72,26 @@ describe("0-2 원문 저장소·0-6 상한(runner)", () => {
     const b = await Runner.runWriter({ ...o, sink: sink() });
     expect(calls).toBe(1); expect(b.calls[0].cached).toBe(true); expect(b.costUsd).toBe(0); expect(b.drafts.size).toBe(p.chapters.length);
   });
-  it("비용 상한을 넘으면 더 부르지 않는다(cost_cap)", async () => {
+  // 최종판3 6: 상한은 작가 뒤 호출(검수·수리)에만. 작가는 늘 부른다(결제 뒤 발행 실패 금지).
+  it("비용 상한: 작가는 부르고, 상한에 이른 작가 뒤 호출(수리)은 부르지 않는다(cost_cap)", async () => {
     let calls = 0;
     const stream: typeof import("@/lib/llm").streamCompletion = async () => { calls++; return { text: "", finishReason: "error", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, error: { code: "x", message: "x" } }; };
-    const r = await Runner.runWriter({ brief: B.sodam, provider: "anthropic", model: "claude-sonnet-5-5", sink: sink(), knowledge: k, stream, costCapUsd: 0 });
-    expect(calls).toBe(0); expect(r.capped).toBe(true); expect(r.calls[0].error).toBe("cost_cap");
+    const o = { brief: B.sodam, provider: "anthropic" as const, model: "claude-sonnet-5-5", sink: sink(), knowledge: k, stream, costCapUsd: 0 };
+    const r = await Runner.runWriter(o);
+    expect(calls).toBeGreaterThanOrEqual(1); expect(r.capped).toBe(false);
+    const before = calls, c = await Runner.completeText(o, { ...r, writer: { provider: "anthropic", model: "claude-sonnet-5-5" } }, "s", "u", 100, "repair");
+    expect(calls).toBe(before); expect(c.run.capped).toBe(true); expect(c.run.calls.at(-1)?.error).toBe("cost_cap");
   });
 });
 
 describe("0-6 주문당 상한(감독)", () => {
-  it("설정값 기본 $0.60, 지난 시도 비용 합", () => {
-    expect(orderCostCap({})).toBe(0.6); expect(orderCostCap({ ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap({ ORDER_COST_CAP_USD: "abc" })).toBe(0.6);
+  it("설정값 기본 $0.55(최종판3 최악 비용), 지난 시도 비용 합", () => {
+    expect(orderCostCap({})).toBe(0.55); expect(orderCostCap({ ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap({ ORDER_COST_CAP_USD: "abc" })).toBe(0.55);
     expect(spentOf([{ cost_usd: "0.2", created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }])).toBeCloseTo(0.65);
     expect(spentOf([{ cost_usd: 0.2, created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }], "2026-11-04T00:30:00Z")).toBeCloseTo(0.45);
   });
-  it("지난 시도 비용이 상한에 이르면 부르지 않고 보류(hold), 사유는 지연 목록에 남는다", async () => {
+  // 최종판3 6: 결제 주문은 누적 비용으로 보류하지 않는다 — 작가는 부르고(발행), 상한을 넘는 검수·수리만 건너뛴다.
+  it("지난 시도 비용이 상한에 이르러도 작가는 불러 발행하고, 검수·수리는 건너뛴다(보류 없음)", async () => {
     const policyAt = "2026-10-27T03:00:00.000Z", n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload");
     const { text } = mockTextFor(n.value, policyAt);
     const clock = fakeClock(), ops = memoryOpsStore(clock), a = mockAnthropic([{ text }]), o = mockOpenAiWithBody([]);
@@ -95,9 +100,9 @@ describe("0-6 주문당 상한(감독)", () => {
     await ops.store.call("record", { reportId: job.reportId, run: { lane: "queue", outcome: "deferred", reason: "x", costUsd: 0.61 }, state: {} });
     const decisions: Decision[] = [];
     const r = await superviseQueueJob(job, { store: ops.store, now: clock.now, openAiKey: null, deps: { fetchImpl: routedFetch(a, o), sleep: clock.sleep, now: clock.now, people: async () => [], apiKey: "k" } }, async d => { decisions.push(d); return { ok: true }; });
-    expect(r.decision.kind).toBe("hold"); expect(a.calls).toHaveLength(0);
-    expect(String((r.decision as { reason: string }).reason)).toMatch(/cost_cap 주문당 비용 상한 \$0\.6/);
-    expect(ops.states.get(job.reportId)!.last_reason).toMatch(/cost_cap/);
+    expect(r.decision.kind).toBe("publish"); expect(a.calls).toHaveLength(1); // 작가 1회, 검수·수리 0
+    const meta = r.decision.kind === "publish" ? r.decision.meta as unknown as { review?: { skipped?: string; repair?: { skipped?: string | null } } } : null;
+    expect(meta?.review?.skipped).toBe("budget");
   });
 });
 
@@ -259,7 +264,7 @@ describe("1-9·1-10·1-14·1-15", () => {
       return JSON.stringify(renderWriterBrief(buildBrief(payloadToBriefInput(n.value as never, "2026-11-04") as never, k), { knowledge: k }));
     };
     // 다른 직군 설명(예: 뷰티·패션 "손님 얼굴에 맞춰…")은 그 직업의 장면이라 뺀다 — 고객 자신의 분야 줄은 남긴다.
-    const startup = career("IT 서비스 창업(대표·개발)").replace(/"(?:\d순위 )?직군: [^"]*"/g, m => m.includes("지금 목표·직업 분야") ? m : "");
+    const startup = career("IT 서비스 창업(대표·개발)").replace(/"(?:\d순위 )?직군: [^"]*"/g, m => m.includes("지금 목표·직업 분야") ? m : "").replace(/부동산·땅: [^"]*/g, ""); // 투자 성향 줄(「작업실·매장처럼 쓰임이 있는 공간」)은 장면이 아니다
     expect(startup).toMatch(/출시 날짜와 첫 고객까지/);
     expect(startup).not.toMatch(/가게|단골|손님|매장|위생 점검|임대차|상권/);
     expect(startup).toMatch(/내 사업은 운영형일까 확장형일까/);

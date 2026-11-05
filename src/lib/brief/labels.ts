@@ -41,12 +41,47 @@ export const tenGodLabel = (t: TenGod) => `${TEN_GOD_KO[t]}(${t})`;
 export const REL_PLAIN: Readonly<Record<string, string>> = {
   STEM_HAP: "천간합(하늘 글자끼리 끌려 묶임)", YUKHAP: "육합(땅 글자끼리 맞물림)", SAMHAP: "삼합(세 글자가 한 기운으로 모임)", BANGHAP: "방합(한 계절 세 글자가 모임)",
   CHUNG: "충(마주 서서 부딪침)", HYEONG: "형(서로 깎고 다듬는 마찰)", PA: "파(맞춰 둔 것에 금이 감)", HAE: "해(가까운 사이의 작은 서운함)", WONJIN: "원진(이유 없이 거슬리는 엇박자)",
+  // 최종판3 7: 천간충(엔진 STEM_CHUNG_TABLE 甲庚·乙辛·丙壬·丁癸). 궁합 두 사람 관계 목록이 쓴다.
+  STEM_CHUNG: "천간충(하늘 글자끼리 마주 서서 부딪침)",
 };
-export const HALF_HAP_PLAIN = "반합(삼합 세 글자 중 두 글자가 만남)";
+/** 반합(최종판3 7): 삼합 세 글자 중 두 글자만 모인 것. "완성"이 아니라 반쯤 묶인 것이다. */
+export const HALF_HAP_PLAIN = "반합(세 글자 중 두 글자만 모여 반쯤 묶임)";
+/** 삼형 세 글자(寅巳申·丑戌未)가 두 사람 글자에 다 모였을 때(최종판3 7: 삼형은 한 줄로). 두 글자만이면 형(REL_PLAIN.HYEONG). */
+export const SAMHYEONG_PLAIN = "삼형(세 땅 글자가 서로 깎고 다듬는 마찰)";
+/**
+ * 반합 뜻 문장(최종판3 7): 지식 DB 삼합 배지 줄("물의 팀이 완성되어 … 크게 모이는 흐름")은 세 글자가 다 모였을 때의 말이라,
+ * 두 글자만 모인 반합에는 "반쯤 묶여 … 모이기 시작하는"으로 바꿔 쓴다("완성" 금지). 궁합 관계 목록·대운·세운 카드가 같이 쓴다.
+ */
+export const halfHapLine = (line: string) => line
+  .replace(/의 팀이 완성되어|의 기운이 절반쯤 모여/, "의 기운이 반쯤 묶여").replace(/팀이 완성되어|기운이 절반쯤 모여/, "기운이 반쯤 묶여")
+  .replace(/크게 모이는/, "모이기 시작하는").replace(/세 글자가 한 팀이 되어 한 가지 힘이 크게 뭉치는/, "세 글자 중 두 글자만 모여 한 가지 힘이 반쯤 뭉치는");
 /** 관계 쉬운 문장(relationsPlain): "왼쪽 글자와 오른쪽 글자가 {관계 이름(쉬운 뜻)} 관계예요. {뜻}이에요."
- * 궁합 관계 쪽(두 사람 자리끼리, P6b D)과 대운·세운 카드(들어오는 글자와 내 자리, P6c-ui2 i)가 같이 쓴다. half: 세 글자 중 두 글자만 만난 삼합. */
-export const relationPlain = (left: string, right: string, kind: string, half: boolean, line: string) =>
-  `${josa(left, "과와")} ${josa(right, "이가")} ${half ? HALF_HAP_PLAIN : REL_PLAIN[kind] ?? kind} 관계예요.${line ? ` ${line}이에요.` : ""}`;
+ * 궁합 관계 쪽(두 사람 자리끼리, P6b D)과 대운·세운 카드(들어오는 글자와 내 자리, P6c-ui2 i)가 같이 쓴다. half: 세 글자 중 두 글자만 만난 삼합.
+ * name: 관계 이름을 직접 줄 때(삼형 세 글자 등). */
+export const relationPlain = (left: string, right: string, kind: string, half: boolean, line: string, name?: string) =>
+  `${josa(left, "과와")} ${josa(right, "이가")} ${name ?? (half ? HALF_HAP_PLAIN : REL_PLAIN[kind] ?? kind)} 관계예요.${line ? ` ${line}이에요.` : ""}`;
+
+/**
+ * 대운 표기(최종판3 8): 6개 상품의 브리프(currentDayun·timeline.cycles·연도 카드 머리 문장)·Book(대운 표·부록)이 모두 이 함수 하나를 쓴다.
+ * 형식: "무진 대운: 2027년 5월 무렵부터 (대운수 8)". 교운 시각은 엔진 정밀 계산(customerDayun, lunar-javascript sect 2) 그대로 쓰고 다시 계산하지 않는다.
+ * - 시작: 정확한 출생시간이면 교운 시각(startSolarKst)의 연·월, 대략·미상이면 가능한 범위의 연·월(같은 달이면 한 달, 다르면 "4~6월").
+ * - 나이(만 나이): 그해 생일이 지난 뒤의 나이 = 연도 − 출생 연도(manAge와 같다). 엔진 cycle.startAge는 세는 나이(연도 − 출생 연도 + 1)라 1을 뺀다.
+ * - 대운수: 첫 대운이 시작되는 해의 만 나이(= 첫 대운 시작 연도 − 출생 연도). 대운마다 10년씩 더해지므로 어느 대운에서 셈해도 같다.
+ */
+export type DayunCycleLike = { readonly index: number; readonly stem: HeavenlyStem; readonly branch: EarthlyBranch; readonly startYear: number; readonly endYear: number; readonly startAge: number;
+  readonly startSolarKst: string | null; readonly startSolarRange: { readonly earliestKst: string; readonly latestKst: string } };
+export type DayunLabel = { readonly name: string; readonly start: string; readonly month: string; readonly daeunsu: number; readonly ages: string; readonly years: string; readonly line: string };
+export function dayunLabel(c: DayunCycleLike): DayunLabel {
+  const name = `${STEM_KO[c.stem]}${BRANCH_KO[c.branch]} 대운`;
+  const from = c.startSolarKst ?? c.startSolarRange.earliestKst, to = c.startSolarKst ?? c.startSolarRange.latestKst;
+  const m1 = Number(from.slice(5, 7)), m2 = Number(to.slice(5, 7)), year = Number(from.slice(0, 4));
+  const month = m1 === m2 || Number(to.slice(0, 4)) !== year ? `${m1}월` : `${m1}~${m2}월`;
+  const startMan = c.startAge - 1, daeunsu = startMan - 10 * (c.index - 1);
+  const start = `${year}년 ${month} 무렵부터`;
+  return { name, start, month, daeunsu, ages: `만 ${startMan}~${startMan + (c.endYear - c.startYear)}세`, years: `${c.startYear}~${c.endYear}`, line: `${name}: ${start} (대운수 ${daeunsu})` };
+}
+/** 부록 한 줄(최종판3 8): 다른 만세력과 대운수가 1 차이 날 때의 설명. */
+export const DAYUN_AGE_NOTE = "어떤 만세력은 대운수를 세는 나이에 붙여 1년 이르게 표시해요. 결리포트는 태어난 뒤 실제로 흐른 시간(만 나이)으로 계산해요.";
 /** 한 자리 수 + 고유어 단위(해·달·번·명·가지)는 고유어 수로(P6e 19: "남은 해는 1해" → "한 해"). 10 이상은 숫자. */
 const NATIVE_NUM = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉"];
 export const koCount = (n: number, unit: string) => (Number.isInteger(n) && n >= 1 && n <= 9 ? `${NATIVE_NUM[n]} ${unit}` : `${n}${unit}`);

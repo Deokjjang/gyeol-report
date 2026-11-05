@@ -46,7 +46,7 @@ export type ChapterSink = { save(c: SavedChapter): Promise<boolean>; load(): Pro
 export type WriterTarget = { readonly provider: LlmProvider; readonly model: string; readonly apiKey?: string };
 export type WriterFallback = { readonly from: { provider: string; model: string }; readonly to: { provider: string; model: string } | "deterministic"; readonly reason: string };
 /** "redo"는 옛 Book 메타에만 있다(최종판 0-1: 장 재요청 경로를 없앴다). "cover"는 표지 줄 수리(1-7). */
-export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair" | "rewrite" | "cover";
+export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair" | "rewrite" | "cover" | "review";
 /** cached: 저장된 원문을 썼다(호출 0). */
 export type CallLog = { readonly kind: CallKind; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number; readonly cached?: boolean; readonly key?: string };
 /**
@@ -96,6 +96,8 @@ export type WriterOptions = {
   readonly cache?: WriterCache | null;
   /** 이 실행이 더 쓸 수 있는 비용(USD, 최종판 0-6). 쓴 비용이 이 값 이상이면 더 부르지 않는다. 없으면 상한 없음. */
   readonly costCapUsd?: number;
+  /** 최종판3 6: 시스템 프롬프트 캐시(false면 붙이지 않는다). 기본은 LLM_PROMPT_CACHE 설정(promptCacheOn). */
+  readonly cacheSystem?: boolean;
 };
 
 const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
@@ -137,7 +139,7 @@ function session(o: WriterOptions, prev?: WriterRun): Session {
  * 한 번의 호출(재시도·대체 포함). want가 있으면 장 경계마다 저장한다(없으면 글만 돌려준다: 수리 패스).
  * 돌려주는 값: 받은 글(출력이 없으면 "").
  */
-async function call(s: Session, kind: "first" | "continuation" | "repair" | "rewrite" | "cover", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number): Promise<string> {
+async function call(s: Session, kind: "first" | "continuation" | "repair" | "rewrite" | "cover" | "review", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number, jsonSchema?: Readonly<Record<string, unknown>>): Promise<string> {
   const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms)));
   const wanted = new Set((want ?? []).map(c => c.n));
   let switched = false;
@@ -146,7 +148,8 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
     const key = rawKey(s.target.model, system, user);
     let hit: RawEntry | null = null;
     try { hit = o.cache ? await o.cache.get(key) : null; } catch { hit = null; }
-    if (!hit && o.costCapUsd !== undefined && s.cost >= o.costCapUsd) {
+    // 최종판3 6: 운영 주문은 예산으로 거절하지 않는다 — 비용 상한은 작가 뒤 호출(검수·수리·표지·재작성)에만 건다. 작가(첫 호출·이어쓰기)는 늘 부른다.
+    if (!hit && o.costCapUsd !== undefined && s.cost >= o.costCapUsd && kind !== "first" && kind !== "continuation") {
       s.capped = true;
       s.calls.push({ kind, provider: s.target.provider, model: s.target.model, finish: "error", error: "cost_cap", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, ms: 0, chars: 0, maxTokens: 0, key });
       return "";
@@ -167,6 +170,7 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
     };
     const t0 = now(o);
     const result = await stream({ provider: s.target.provider, model: s.target.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, leftOf(s) - 5_000), apiKey: s.target.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal,
+      ...(jsonSchema ? { jsonSchema } : {}), ...(o.cacheSystem === false ? { cacheSystem: false } : {}),
       onText: d => { text += d; if (d.includes("\n")) flush(false); } });
     text = result.text;
     // 완전히 끝났을 때만 마지막 장도 완성으로 친다(length·끊김이면 마지막 장은 잘렸을 수 있음).
@@ -190,6 +194,8 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
     }
     // 잘린 수리 응답도 돌려준다(수리 파서가 끝까지 온 문단만 쓴다).
     if (!isZeroOutputRetryable(result)) return result.text;
+    // 최종판3 6: 응답 없이 끊긴 경우(출력 0)만 1회 다시 부른다(호출 기록 kind "retry"로 원장에 남는다). 그 뒤는 부르지 않는다.
+    if (attempt >= 1) return "";
     const wait = Math.min(30_000, 2_000 * 2 ** attempt);
     if (leftOf(s) - wait < 30_000) return "";
     await sleep(wait);
@@ -214,15 +220,22 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
       const cont = buildContinuationPrompt(o.brief, written, rest, { knowledge: o.knowledge });
       await call(s, "continuation", cont.system, cont.user, rest);
     }
+  } else if (s.drafts.size) {
+    // 최종판3 6: 저장된 장만으로 다시 시작(워커가 발행 전에 끊긴 재시도). 첫 호출 원문이 저장돼 있으면 그 원문으로 표지·작가를 되살린다(호출 0).
+    // 원문이 없으면 저장된 장(작가 원고)의 작가 모델로 본다 — 검수·수리가 건너뛰지 않게(작가는 다시 부르지 않는다).
+    let hit: RawEntry | null = null;
+    try { hit = o.cache ? await o.cache.get(rawKey(s.target.model, prompt.system, prompt.user)) : null; } catch { hit = null; }
+    if (hit) await call(s, "first", prompt.system, prompt.user, prompt.chapters);
+    else if (!s.wrote) s.wrote = s.target;
   }
   // 대체 모델도 쓰지 못했으면 최후 대체는 결정론 작가(안전망이 채운다).
   return finish(s);
 }
 
 /** (P6c A5) 글만 받는 호출 1회(수리·소제목 재작성·표지 줄 수리). 같은 모델·대체 규칙·원문·상한, 장 저장 없음. */
-export async function completeText(o: WriterOptions, prev: WriterRun, system: string, user: string, maxTokens: number, kind: "repair" | "rewrite" | "cover" = "repair"): Promise<{ run: WriterRun; text: string }> {
+export async function completeText(o: WriterOptions, prev: WriterRun, system: string, user: string, maxTokens: number, kind: "repair" | "rewrite" | "cover" | "review" = "repair", jsonSchema?: Readonly<Record<string, unknown>>): Promise<{ run: WriterRun; text: string }> {
   const s = session(o, prev);
   if (!s.wrote || leftOf(s) < 60_000) return { run: finish(s), text: "" };
-  const text = await call(s, kind, system, user, null, Math.min(maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? maxTokens));
+  const text = await call(s, kind, system, user, null, Math.min(maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? maxTokens), jsonSchema);
   return { run: finish(s), text };
 }

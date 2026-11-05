@@ -8,7 +8,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { DAYUN_PHASE_KO, dayunPhase } from "@/lib/writer/safety/lint";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, ganjiLabel, ganjiOf, GROUP_EASY, josa, TEN_GOD_KO, tenGodLabel } from "./labels";
+import { dayunLabel, ELEMENT_KO, ganjiLabel, ganjiOf, GROUP_EASY, josa, TEN_GOD_KO, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
 import { dropSourceSentences, splitSentences } from "@/lib/writer/safety/patterns";
 import { coreImage } from "./coreImage";
@@ -114,13 +114,14 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       needs: det.climate.needs.filter(n => n.role !== "support").map(n => `${n.stem}(${ELEMENT_KO[STEM_ELEMENT[n.stem]]}) ${n.foundAt.length ? "있음" : "없음"}`),
       level: det.climate.level, lacking: [...det.climate.lackingElements], reading: climateItem?.forYou.base ?? "",
     },
+    // 최종판3 8: 나이·연도·표기 줄은 6개 상품 공통 대운 표기 함수(dayunLabel) 하나에서. label = "무진 대운: 2027년 5월 무렵부터 (대운수 8)", start = "2027년 5월 무렵부터".
     currentDayun: cur && curTenGod ? {
-      ganji: ganjiOf(cur), ages: `만 ${manAge(cur.startYear, opts.birthYear)}~${manAge(cur.endYear, opts.birthYear)}세`, years: `${cur.startYear}~${cur.endYear}`, tenGod: tenGodLabel(curTenGod),
+      ...(({ ages, years, line, start }) => ({ ganji: ganjiOf(cur), ages, years, label: line, start }))(dayunLabel(cur)), tenGod: tenGodLabel(curTenGod),
       // 위치 말(P6d C): 첫해·마지막 해는 이름 그대로, 그 밖은 앞쪽·중간·끝 무렵(대운 연도 카드와 같은 말).
       phase: { yearIndex: yearIndex + 1, label: yearIndex === 0 ? "첫해" : year === cur.endYear ? "마지막 해" : DAYUN_PHASE_KO[dayunPhase(yearIndex)], yearsLeft: cur.endYear - year },
       reading: dropSourceSentences(k.tenGodPeriod.get(curTenGod)?.year.meaning ?? ""),
       // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
-      ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),
+      ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, label: dayunLabel(next).line, start: dayunLabel(next).start, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),
     } : null,
     thisYear: { year, ganji: ganjiOf(yearPillar), tenGod: tenGodLabel(getTenGod(dayMaster, yearPillar.stem)), effect },
     groups: groupsFact(saju),

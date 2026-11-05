@@ -167,7 +167,7 @@ describe("보상 이용권 A·B", () => {
     expect(await afterPaidOrder(gift as never, "nonexistent", eventCfg)).toMatchObject({ issued: { issued: false } });
   });
 
-  it("A: 환불 완료 주문만(주문코드·토스 주문번호), 계정 연결 필요. 지정하면 정보 입력 뒤 2장(60일), 장마다 내가 쓰기 또는 선물 링크", async () => {
+  it("A: 환불 완료 주문만(주문코드·토스 주문번호), 계정 연결 필요. 지정하면 정보 입력 뒤 2장(30일, 최종3), 장마다 내가 쓰기 또는 선물 링크", async () => {
     await pay("ca1", B);
     expect(await comp.call("designate", { orderCode: await codeOf("ca1"), adminUserId: A })).toMatchObject({ ok: false, code: "NOT_REFUNDED", status: "paid" });
     await order.call("refund_request", { paymentOrderId: "ca1", source: "admin", reason: "계산 오류" });
@@ -187,7 +187,8 @@ describe("보상 이용권 A·B", () => {
     expect(await sync(B)).toMatchObject({ fresh: false });
     expect(await one("select count(*)::int n from report_ticket_grants where user_id=$1", [B])).toEqual({ n: 0 }); // 바로 넣지 않고 고르게 한다
     const [selfRow, giftRow] = await compGifts(B);
-    for (const row of [selfRow, giftRow]) expect(row).toMatchObject({ kind: "comp", gift_only: false, source_order_id: null, days: 60, scopes: cfg.products, status: "available" });
+    // 최종3: 설정 유효일(60)이 와도 SQL이 30일을 넘기지 않는다.
+    for (const row of [selfRow, giftRow]) expect(row).toMatchObject({ kind: "comp", gift_only: false, source_order_id: null, days: 30, scopes: cfg.products, status: "available" });
     // 한 장은 내가 쓰기 → 같은 4종 범위·같은 기한의 이용권 1장.
     expect(await gift.call("use_self", { userId: B, giftId: selfRow.id })).toMatchObject({ ok: true, status: "used_self" });
     expect(await one("select quantity,product_scopes scopes from report_ticket_grants where user_id=$1", [B])).toEqual({ quantity: 1, scopes: cfg.products });

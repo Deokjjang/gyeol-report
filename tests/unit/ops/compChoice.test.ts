@@ -4,12 +4,12 @@ import { compConfig, compSyncArgs } from "@/lib/ops/config";
 import { COMP_COPY, compNoticeText } from "@/lib/ops/compMessages";
 
 describe("보상 이용권 설정", () => {
-  it("기본: 꺼짐, A 2장(60일)·B 1장(30일), 4종 상품", () => {
+  it("기본: 꺼짐, A 2장·B 1장(모두 30일 고정, 최종3), 4종 상품", () => {
     const cfg = compConfig({});
-    expect(cfg).toMatchObject({ enabled: false, aQty: 2, aDays: 60, bQty: 1, bDays: 30, products: ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] });
+    expect(cfg).toMatchObject({ enabled: false, aQty: 2, aDays: 30, bQty: 1, bDays: 30, products: ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] });
     expect(compConfig({ COMP_ENABLED: "1" }).enabled).toBe(true);
     expect(compConfig({ COMP_ENABLED: "true" }).enabled).toBe(false);
-    expect(compSyncArgs(cfg)).toEqual({ enabled: false, aQty: 2, aDays: 60, bQty: 1, bDays: 30, products: cfg.products });
+    expect(compSyncArgs(cfg)).toEqual({ enabled: false, aQty: 2, aDays: 30, bQty: 1, bDays: 30, products: cfg.products });
     expect(compSyncArgs(cfg, true).enabled).toBe(true);
     // 예전 본인용·선물 전용 나눔 값은 더 이상 쓰지 않는다.
     expect(compSyncArgs(compConfig({ COMP_A_SELF_QTY: "1", COMP_A_GIFT_QTY: "1" }))).not.toHaveProperty("aSelf");

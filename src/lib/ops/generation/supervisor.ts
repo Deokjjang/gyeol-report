@@ -15,7 +15,7 @@ import type { buildV5Snapshot, V5BuildDeps } from "../../writer/publish";
 import type { ChapterSink } from "../../writer/runner";
 import type { RawEntry, WriterCache } from "../../writer/runner";
 import { COST_HOLD_MS, deferUntil, INTERIM_TARGET, interimDue, judgeBuild, nextRetryAt, OFFICIAL_TARGET, orderCostCap, runSummary, spentOf, type BuildVerdict } from "./policy";
-import { memorySink, opsChapterSink, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
+import { chainCache, memorySink, opsChapterSink, opsRawCache, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
 import { devForceAnthropicDown, devMockMode, devMockStream } from "./devMock";
 import { devBudget } from "./devBudget";
 
@@ -26,6 +26,8 @@ export type GenerationEnv = {
   readonly deps?: V5BuildDeps;
   readonly openAiKey?: string | null;
   readonly build?: typeof buildV5Snapshot;
+  /** 최종판3 6: 호출 원문 저장소(ops_writer_raw RPC). 교체 레인이 lease 토큰으로 쓴다. */
+  readonly raw?: OpsStore;
 };
 export type State = { phase: string; first_attempt_at: string; first_failure_at: string | null; failures: number; rejected_chapters: number[]; last_reason: string | null };
 export type Decision =
@@ -35,7 +37,7 @@ export type Decision =
   /** 최종판 0-6: 주문당 비용 상한 — 부르지 않고 보류(관리자 지연 목록, 자동 환불 없음). */
   | { readonly kind: "hold"; readonly until: string; readonly reason: string }
   | { readonly kind: "stale"; readonly reason: string };
-export type QueueJob = { readonly reportId: string; readonly origin: "paid" | "ticket"; readonly originRef: string; readonly payload: ReportInputPayload; readonly policyAt: string; readonly sink: ChapterSink; readonly prior?: PriorBooks; readonly budgetMs?: number };
+export type QueueJob = { readonly reportId: string; readonly origin: "paid" | "ticket"; readonly originRef: string; readonly payload: ReportInputPayload; readonly policyAt: string; readonly sink: ChapterSink; readonly prior?: PriorBooks; readonly budgetMs?: number ; readonly raw?: WriterCache | null };
 type Built = Awaited<ReturnType<typeof buildV5Snapshot>>;
 
 const ms = (iso: string | null | undefined) => (iso ? Date.parse(iso) : NaN);
@@ -64,7 +66,7 @@ async function spentSoFar(env: GenerationEnv, reportId: string, since?: string |
 }
 
 /** 한 번 만들어 판정한다(정식본=Sonnet, 임시본=terra). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
-async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[] }, lane: "official" | "interim") {
+async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null }, lane: "official" | "interim") {
   const seen: QuotaSeen = {};
   // 운영 경로는 모델을 넘기지 않는다 → 정식본은 항상 Sonnet. 시험·측정 도구가 모델을 명시하면 그 모델로(대체 모델은 어느 쪽이든 없음).
   const injected = env.deps?.provider && env.deps?.model ? { provider: env.deps.provider, model: env.deps.model } : null;
@@ -74,7 +76,8 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
   const mock = devMockMode() ?? (lane === "official" && devForceAnthropicDown() ? "fail" as const : null);
   // 개발 서버의 실제 호출은 예산 관문(tools/llm/budget.ts)을 지난다(최종판 0-5). 목업·시험 주입 stream이 있으면 그대로.
   const gate = mock || env.deps?.stream ? null : await devBudget(`${lane} ${job.reportId}`);
-  const cache = rawCache(job.stored, gate?.cache ?? env.deps?.cache ?? null);
+  // 최종판3 6: 저장된 Book 원문 → 이 주문의 운영 원문(받는 즉시 저장) → 개발 관문 순. 같은 입력이면 다시 부르지 않는다.
+  const cache = rawCache(job.stored, chainCache(lane === "official" ? job.raw : null, gate?.cache ?? env.deps?.cache ?? null));
   const deps: V5BuildDeps = { ...env.deps, provider: target.provider, model: target.model, fallback: null, fetchImpl: watchFetch(base, seen),
     ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(mock ? { stream: devMockStream(mock, job.payload, job.policyAt) } : gate ? { stream: gate.stream } : {}),
     ...(cache ? { cache } : {}), ...(job.costCapUsd !== undefined ? { costCapUsd: job.costCapUsd } : {}) };
@@ -109,9 +112,8 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const sink = interim ? memorySink() : job.sink;
   const cap = orderCostCap(), spentBefore = await spentSoFar(env, job.reportId);
   const lane = interim ? "interim" : "official";
-  const a = spentBefore >= cap
-    ? { built: null, verdict: { kind: "incomplete", reason: "cost_cap", rejected: [], missing: [], preOutput: true, capped: true } as BuildVerdict, summary: { provider: null, model: null, costUsd: 0, durationMs: 0, calls: [], chapters: [] }, reason: `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${spentBefore.toFixed(4)}) — 보류`, seen: {} as QuotaSeen }
-    : await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore) }, lane);
+  // 최종판3 6: 결제·이용권 주문은 누적 비용으로 보류하지 않는다(결제 뒤 발행 실패 금지). 상한은 이번 시도의 검수·수리에만 건다(작가는 늘 부른다).
+  const a = await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore) }, lane);
   let decision: Decision;
   if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
   else if (a.verdict.kind === "incomplete" && a.verdict.capped) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: a.reason.includes("cost_cap 주문당") ? a.reason : `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${(spentBefore + a.summary.costUsd).toFixed(4)}) — 보류` };
@@ -162,7 +164,7 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
     await env.store.call("record", { reportId: job.reportId, run: { lane, outcome: "error", reason: `${lane}:not_v5_book` }, state: {} });
     return { ok: true, reportId: job.reportId, outcome: "error" };
   }
-  const sink = opsChapterSink(env.store, job.reportId, job.token);
+  const sink = opsChapterSink(env.store, job.reportId, job.token), laneRaw = env.raw ? opsRawCache(env.raw, job.reportId, job.token) : null;
   // 최종판 0-6: 교체 레인도 주문당 상한(재생성은 재생성 요청 뒤 시도만 센다). 0-2: 저장된 Book 원문은 저장소로.
   const cap = orderCostCap(), spentBefore = await spentSoFar(env, job.reportId, lane === "regenerate" ? job.regenRequestedAt ?? null : null);
   if (spentBefore >= cap) {
@@ -171,7 +173,7 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
     return { ok: true, reportId: job.reportId, outcome: "held" };
   }
   const stored = (job.snapshot?.evidencePacket as { meta?: { raw?: RawEntry[] } } | undefined)?.meta?.raw;
-  const a = await attempt(env, { payload: evidence.input, reportId: job.reportId, policyAt: evidence.generatedAt, sink, costCapUsd: Math.max(0, cap - spentBefore), ...(stored?.length ? { stored } : {}) }, "official");
+  const a = await attempt(env, { payload: evidence.input, reportId: job.reportId, policyAt: evidence.generatedAt, sink, raw: laneRaw, costCapUsd: Math.max(0, cap - spentBefore), ...(stored?.length ? { stored } : {}) }, "official");
   const runBase = { lane, provider: a.summary.provider, model: a.summary.model, costUsd: a.summary.costUsd, calls: a.summary.calls, chapters: a.summary.chapters, durationMs: a.summary.durationMs };
   if (a.verdict.kind === "stale") return { ok: true, reportId: job.reportId, outcome: "stale" };
   if (a.verdict.kind === "complete") {

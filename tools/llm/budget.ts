@@ -74,7 +74,7 @@ export function budgetGate(o: GateOptions): Gate {
   const refused: string[] = [];
   let pendingKey: string | null = null;
   // 호출 종류는 지침 머리로 안다(작가·수리·소제목 재작성·표지 수리).
-  const kindOf = (i: StreamCompletionInput) => i.system.startsWith("너는 결리포트의 작가다") ? (/남은 장만 이어서/.test(i.user) ? "continuation" : "first") : i.system.includes("[S번호]") ? "rewrite" : i.system.includes("표지 한 줄") ? "cover" : "repair";
+  const kindOf = (i: StreamCompletionInput) => i.system.includes("원고의 검수자다") ? "review" : i.system.startsWith("너는 결리포트의 작가다") ? (/남은 장만 이어서/.test(i.user) ? "continuation" : "first") : i.system.includes("[S번호]") ? "rewrite" : i.system.includes("표지 한 줄") ? "cover" : "repair";
   const refuse = (reason: string): StreamCompletionResult => {
     const l = readLedger(); l.refusals.push({ at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, reason, key: pendingKey }); writeLedger(l);
     refused.push(reason);

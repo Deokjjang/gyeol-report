@@ -10,7 +10,9 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import { buildBrief } from "../../src/lib/brief";
+import type { BriefInput } from "../../src/lib/brief/buildBrief";
 import type { Brief } from "../../src/lib/brief/schema";
+import { buildFactSheet, type FactSheet } from "../../src/lib/factsheet/build";
 import type { streamCompletion } from "../../src/lib/llm";
 import { rawCache } from "../../src/lib/ops/generation/supervisor";
 import { normalizeReportInputPayload } from "../../src/lib/report-generation/reportInputAdapter";
@@ -37,19 +39,26 @@ export async function loadSnap(arg: string): Promise<{ id: string; snap: Snap }>
   return { id: arg, snap: r.data.snapshot_json as Snap };
 }
 
-export function briefOfSnap(s: Snap): Brief {
+/** 저장본 입력 → 브리프 입력(기준일 = 발행일 KST). */
+export function inputOfSnap(s: Snap): BriefInput {
   const n = normalizeReportInputPayload(s.evidencePacket.input as never, { now: () => new Date(s.evidencePacket.generatedAt) });
   if (!n.ok) throw new Error(String(n.error));
+  return payloadToBriefInput(n.value as never, kstDate(s.evidencePacket.generatedAt)) as unknown as BriefInput;
+}
+export function briefOfSnap(s: Snap): Brief {
   // 최종판2 1-1: 이미지 대장에서 그 책 자신과 그 뒤에 만든 책은 뺀다(자기 표지가 피할 이미지가 되지 않게).
-  return buildBrief({ ...payloadToBriefInput(n.value as never, kstDate(s.evidencePacket.generatedAt)), ledgerView: { ...(s.reportId ? { exclude: s.reportId } : {}), before: s.evidencePacket.generatedAt,
+  return buildBrief({ ...inputOfSnap(s), ledgerView: { ...(s.reportId ? { exclude: s.reportId } : {}), before: s.evidencePacket.generatedAt,
     self: { people: peopleOf(s.evidencePacket.input), product: s.draft.productType } } } as never, writerKnowledge().k);
 }
+/** 최종판3 1: 저장본 입력으로 만든 정답지(엔진 출력만, 호출 0). */
+export const factSheetOfSnap = (s: Snap, brief: Brief = briefOfSnap(s)): FactSheet => buildFactSheet(inputOfSnap(s), brief, writerKnowledge().k);
+export type { Snap };
 
 /** 저장된 본문(옛 책)에 새 정리·검사: 수리 대상 깃발. */
 export function lintStored(s: Snap): { flags: LintFlag[]; brief: Brief } {
   const brief = briefOfSnap(s), { k } = writerKnowledge(), plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
   const finals: FinalChapter[] = s.draft.chapters.map(c => ({ n: c.n, id: c.id, title: c.title, source: "writer", chars: 0, sections: c.sections.map(x => ({ heading: x.heading, paragraphs: [...x.paragraphs] })), ...(c.keys ? { keys: c.keys } : {}) }));
-  const ctx = lintContext(brief, k, plan, []);
+  const ctx = lintContext(brief, k, plan, [], undefined, factSheetOfSnap(s, brief));
   return { flags: lintBook(tidyBook(finals, ctx).chapters, ctx), brief };
 }
 

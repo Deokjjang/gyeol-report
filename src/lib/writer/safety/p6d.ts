@@ -111,7 +111,8 @@ const FUNCTION_NAME_NOW = /지금 이 순간(의)? 감각/g;
 export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s.replace(FUNCTION_NAME_NOW, ""));
 
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
-export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?![0-9가-힣]*(일 기준|일부터))/;
+/** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. */
+export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))/;
 export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s);
 
 /** E 마무리 문형(소제목 마지막 문장의 끝 두 어절). 12달 가운데 같은 문형은 3번까지. */

@@ -45,7 +45,7 @@ describe("legal document rendering", () => {
       expect(html).toContain(`<h2>${section.titleKo}</h2>`);
       for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
     }
-    for (const condition of ["상품별 1,490원", "최대 24시간 이내 제공", "생성일로부터 90일", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
+    for (const condition of ["상품 페이지와 결제 화면에 표시된 금액", "최대 24시간 이내 제공", "처음 발행일로부터 90일", "회원 탈퇴, 삭제 요청, 서비스 종료 시까지", "발급일로부터 30일", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
       expect(text(html)).toContain(condition);
     }
     expect(html).not.toContain(business.businessAddressKo);
@@ -68,26 +68,16 @@ describe("legal document rendering", () => {
   it("preserves all privacy items, retention exceptions, overseas scope and rights", () => {
     const html = renderToStaticMarkup(<Privacy />);
     const content = text(html);
-    for (const item of [...privacy.privacyPolicyCollectionItems, ...privacy.privacyPolicyPurposeItems,
-      privacy.privacyPolicyServiceRetentionKo, privacy.privacyPolicyLegalRetentionKo,
-      privacy.privacyPolicyOverseasProcessingKo, privacy.privacyPolicyUnder14Ko,
-      privacy.privacyPolicyMinorNoticeKo, privacy.privacyPolicySensitiveInfoLimitKo,
-      privacy.privacyPolicyNoResidentRegistrationNumberKo, privacy.privacyPolicyUserRightsKo,
-      privacy.privacyPolicyMetaNoticeKo, privacy.privacyPolicyMetaRetentionKo]) {
-      expect(content).toContain(item);
-    }
-    for (const row of privacy.privacyPolicyRetentionRows) {
-      expect(content).toContain(row.categoryKo);
-      expect(content).toContain(row.periodKo);
-    }
-    for (const row of privacy.privacyPolicyExternalServiceRows) {
-      expect(content).toContain(row.providerKo === "호스팅 제공자" ? business.hostingProvider : row.providerKo);
-      expect(content).toContain(row.purposeKo);
-    }
-    expect(content).toContain("카드번호 등 결제수단 상세 정보를 직접 저장하지 않습니다.");
-    expect(html.match(/<table\b/g)).toHaveLength(2);
-    expect(html.match(/<h2\b/g)).toHaveLength(12);
+    // 최종3: 원문 sections의 모든 글(문단·목록·표 칸)이 그대로 보인다.
+    for (const line of privacy.policyText(privacy.privacyPolicySections)) expect(content).toContain(line);
+    expect(content).toContain(privacy.privacyPolicyMetaNoticeKo);
+    expect(content).toContain(privacy.privacyPolicyMetaRetentionKo);
+    expect(content).toContain("결제수단 상세 정보를 저장하지 않습니다.");
+    expect(html.match(/<table\b/g)).toHaveLength(4); // 수집·보유·위탁·쿠키 표, 국외 이전은 업체별 목록(dl)
+    expect(html.match(/data-policy-rows/g)).toHaveLength(1);
+    expect(html.match(/<h2\b/g)).toHaveLength(privacy.privacyPolicySections.length + 1);
     expect(content).toContain("광고 성과 측정 (선택)");
+    expect(content).not.toMatch(/OpenAI/i);
     expect(html).not.toContain("deterministic");
   });
 
@@ -141,7 +131,7 @@ describe("current V4 legal presentation", () => {
     expect(panels.map(panel => panel[1].includes("open"))).toEqual([0, 1, 2, 3].map(i => i === index));
     for (const section of termsPolicySections) for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
     for (const row of refundPolicyStateRows) expect(text(html)).toContain(row.handlingKo);
-    for (const item of privacy.privacyPolicyCollectionItems) expect(text(html)).toContain(item);
+    for (const line of privacy.policyText(privacy.privacyPolicySections)) expect(text(html)).toContain(line);
     expect(text(html)).toContain("support@gyeolreport.com");
     expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
   });

@@ -8,7 +8,8 @@
  */
 import type { MbtiType } from "@/data/knowledge-v5/schema";
 import { elementState } from "@/lib/brief/chart";
-import { ELEMENT_KO, josa, REL_PLAIN, tenGodLabel } from "@/lib/brief/labels";
+import { ELEMENT_KO, HALF_HAP_PLAIN, josa, REL_PLAIN, tenGodLabel } from "@/lib/brief/labels";
+import { BASE_POINTS } from "./display";
 import { STEM_ELEMENT, STEM_YIN_YANG } from "@/lib/saju/constants";
 import { detectRelations } from "@/lib/saju/detections/relations";
 import { STEM_HAP_TABLE } from "@/lib/saju/detections/tables";
@@ -17,7 +18,8 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { EarthlyBranch, FiveElement, HeavenlyStem, SajuCalcResult, TenGod } from "@/lib/saju/types";
 
 export const COMPAT_SCORE_VERSION = "v2.2" as const;
-export const BASE_SCORE = 40;
+/** 기본점(표시: compat/display.ts의 기본점 줄 — 점수 쪽 줄 합 = 총점). */
+export const BASE_SCORE = BASE_POINTS;
 export type CompatCategory = "love" | "marriage" | "parentChild" | "coworker" | "managerReport" | "businessPartner" | "friendship";
 export type ItemKey = "element" | "dayMaster" | "dayBranch" | "yearMonth" | "role" | "yinYang" | "mbti";
 export const ITEM_NAMES: Record<ItemKey, string> = {
@@ -152,7 +154,8 @@ function dayMasterItem(a: CompatSide, b: CompatSide) {
 // ---------- 생활 자리(일지)·자란 환경·사회 자리(연지·월지) ----------
 export type BranchTier = "hap" | "hapMixed" | "none" | "friction" | "clash";
 const HAP: readonly RelationKind[] = ["YUKHAP", "SAMHAP"], CLASH: readonly RelationKind[] = ["CHUNG", "WONJIN"], FRICTION: readonly RelationKind[] = ["HYEONG", "PA", "HAE"];
-const relName = (k: RelationKind) => (k === "SAMHAP" ? "반합(세 글자 중 두 글자가 한 기운으로 모임)" : REL_PLAIN[k]);
+// 최종판3 7: 반합 이름은 궁합 관계 목록·대운·세운 카드와 같은 문구(labels.HALF_HAP_PLAIN — "완성" 아님). 점수 단계는 그대로(반합 = 합 단계).
+const relName = (k: RelationKind) => (k === "SAMHAP" ? HALF_HAP_PLAIN : REL_PLAIN[k]);
 /** 두 지지 한 쌍의 관계 단계. 합이 있으면 합이 앞선다(탐합망충, 형·파가 섞이면 한 단계 아래). 충·원진이 형·파·해보다 세다. 방합 두 글자와 같은 글자(자형 제외)는 관계 없음. */
 export function branchTier(x: EarthlyBranch, y: EarthlyBranch): { tier: BranchTier; kinds: RelationKind[] } {
   const found = new Set(detectRelations([{ position: "year", pillar: { stem: "甲", branch: x } }, { position: "month", pillar: { stem: "甲", branch: y } }]).map(h => h.kind));

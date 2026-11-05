@@ -293,7 +293,7 @@ function careerTiming(chart: ChartBrief): Record<"timingNow" | "timingShift" | "
       `지금 대운 ${cd.ganji.hanja}(${cd.ganji.hangul}) ${cd.tenGod}의 10년(${cd.years}): 10년 가운데 ${idx}번째 해(${cd.phase?.label ?? ""}), 올해 뒤로 ${left}년 남음`,
       ...(curTg ? [`이 대운에서 일은: ${shift(curTg)}`] : []), thisLine], note },
     timingShift: { kind: "evidence", key: "timingShift", facts: cd.next ? [
-      `전환 해: ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod}의 10년`,
+      `전환: ${cd.next.label ?? `${cd.next.startYear}년부터 ${cd.next.ganji.hangul} 대운`} — ${cd.next.ganji.hanja} ${cd.next.tenGod}의 10년`,
       ...(nextTg ? [`일에서 바뀌는 점: ${shift(curTg)} → ${shift(nextTg)}`] : []),
     ] : ["다음 대운은 계산 범위 밖이라 전환 해는 보지 않음"], note },
     timingPrep: { kind: "evidence", key: "timingPrep", facts: [

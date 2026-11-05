@@ -20,7 +20,10 @@ export const INTERIM_TARGET = { provider: "openai", model: "gpt-6.1-terra" } as 
  * 주문당 비용 상한(최종판 0-6, USD): 한 주문(Book)의 작가·수리·재작성·이어쓰기 비용 합(모든 시도)이 이 값에 이르면 더 부르지 않고 그 주문을 보류한다.
  * 설정값: ORDER_COST_CAP_USD(없거나 잘못되면 0.60). 관리자 재생성은 재생성 요청 뒤 시도만 센다.
  */
-export const ORDER_COST_CAP_USD = 0.6;
+/** 최종판3 6: 최악 비용(작가 입력 상한 4만 자·max_tokens 공식 + 검수 Haiku 입력 6만 자·출력 1.6만 + 수리 40항목·출력 8천, tools/final3/worst-cost.ts) = $0.55. 이 값을 넘는 검수·수리만 건너뛴다(작가는 늘 부른다). */
+export const ORDER_COST_CAP_USD = 0.55;
+/** 작가 입력 상한(글자): 최악 비용 계산의 전제. 넘으면 경고만 남긴다(작가는 부른다). */
+export const WRITER_INPUT_CAP_CHARS = 40_000;
 export function orderCostCap(env: Readonly<Record<string, string | undefined>> = process.env): number {
   const v = Number(env.ORDER_COST_CAP_USD);
   return Number.isFinite(v) && v > 0 && v <= 10 ? v : ORDER_COST_CAP_USD;

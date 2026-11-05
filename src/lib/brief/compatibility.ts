@@ -1,17 +1,20 @@
 /**
  * 궁합 브리프: 두 사람 요약, 공통점·차이(행동 차원), 오행 보완, A→B·B→A 십성, 일주끼리 관계, MBTI 통념 궁합, 관계 유형 관점, v5 궁합 점수(P4: 구성요소·구간·방향).
- * 두 사람 기둥끼리 관계는 원국 감지와 같은 detectRelations를 쓴다(두 기둥을 년·월 자리 라벨로 넣는다 — 라벨은 계산에 쓰이지 않는다).
+ * 두 사람 기둥끼리 관계는 원국 감지와 같은 detectRelations·detectStemClashes를 쓴다(compat/relations.pairRelations, 최종판3 7: 천간충 포함·삼형 한 줄·영향 큰 순).
  */
 import { poleFits } from "./mbtiFn";
 import type { MbtiProfile } from "@/data/knowledge-v5/schema";
+import { baseReason, BASE_POINTS, BASE_ROW_NAME } from "@/lib/compat/display";
+import { pairRelationCounts, pairRelations, type PairRelation } from "@/lib/compat/relations";
 import { computeCompatScore } from "@/lib/compat/score";
 import { compatibilityRoleLabels, type CompatibilityRelationshipType } from "@/lib/report-generation/reportInputTypes";
-import { detectRelations } from "@/lib/saju/detections";
+import { STEM_ELEMENT } from "@/lib/saju/constants";
+import type { ChartPosition } from "@/lib/saju/detections/types";
 import { getTenGod } from "@/lib/saju/tenGods";
-import type { FiveElement, SajuCalcResult } from "@/lib/saju/types";
+import type { FiveElement, HeavenlyStem, SajuCalcResult } from "@/lib/saju/types";
 import type { ElementState } from "./chart";
 import type { Knowledge } from "./knowledge";
-import { ELEMENT_KO, ganjiLabel, josa, relationPlain, tenGodLabel } from "./labels";
+import { ELEMENT_KO, ganjiLabel, halfHapLine, josa, relationPlain, SAMHYEONG_PLAIN, tenGodLabel } from "./labels";
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
 import { pairImage } from "./coreImage";
 import { applyProfile, profileCodes, profileLine, type PairProfile } from "./pairProfile";
@@ -44,42 +47,39 @@ export function dimensionVector(side: PairSide, k: Knowledge): Map<string, numbe
 }
 
 const PILLAR_KO = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
+const SHORT: Readonly<Record<string, string>> = { year: "해", month: "달", day: "날", hour: "시각" };
+/** 자리 말: "소담님의 태어난 날 땅 글자", 여러 자리면 "소담님의 태어난 날·시각 땅 글자 모두". */
+const whereOf = (s: PairSide, ps: readonly ChartPosition[], glyph: string) => ps.length === 1 ? `${s.callName}의 ${PILLAR_KO[ps[0]]} ${glyph}` : `${s.callName}의 태어난 ${ps.map(p => SHORT[p]).join("·")} ${glyph} 모두`;
+/** 천간충 뜻(지식 DB 배지가 없어 엔진 글자의 오행으로): 하늘 글자는 겉으로 드러나는 생각·의견의 자리. */
+const stemClashLine = (chars: readonly string[]) => { const [x, y] = chars.map(c => ELEMENT_KO[STEM_ELEMENT[c as HeavenlyStem]]); return `${x} 기운과 ${y} 기운이 하늘 글자에서 마주 서서, 겉으로 드러나는 생각과 의견이 부딪치기 쉬운 흐름`; };
 /**
- * 두 사람 사이 관계의 자리 문장(P3.7 1-5): "정희님의 태어난 날 땅 글자 亥와 지우님의 태어난 날 땅 글자 巳: 서로 부딪치는 기운(충)".
- * 날–날을 먼저, 그다음 날이 낀 짝, 그 밖 짝 순으로 모두(최종판2 1-7, 이전에는 4개까지). 시간 미상인 사람의 시각 기둥은 보지 않는다.
+ * 관계 뜻 한 문장(최종판3 7: 모든 줄에 뜻 문장 — 형식 통일). 지식 DB 배지(같은 글자 묶음) → 관계 종류 기본 배지 순.
+ * 반합은 "완성"이 아니라 반쯤 묶임(halfHapLine), 삼형은 세 글자가 다 모였을 때만 "세 땅", 두 글자면 두 글자 문장, 자형(같은 글자)은 배지 "自刑".
  */
-function pairRelations(a: PairSide, b: PairSide, k: Knowledge): string[] {
-  const POS = ["day", "month", "year", "hour"] as const;
-  const ORDER: Readonly<Record<string, number>> = { year: 0, month: 1, day: 2, hour: 3 };
-  type Row = { pas: string[]; pbs: string[]; kind: string; key: string; sky: boolean; line: string; rank: number };
-  const raw: Row[] = [];
-  for (const pa of POS) for (const pb of POS) {
-    // 시각 기둥은 원국 요약에 있을 때(시간을 알 때)만.
-    const x = pa === "hour" && !a.chart.pillars.hour ? undefined : a.saju.pillars[pa], y = pb === "hour" && !b.chart.pillars.hour ? undefined : b.saju.pillars[pb];
-    if (!x || !y) continue;
-    for (const r of detectRelations([{ position: "year", pillar: x }, { position: "month", pillar: y }])) {
-      const sky = r.kind === "STEM_HAP";
-      const line = k.badges.find(z => z.kind === r.kind && (z.pair === r.key || z.pair === [...r.key].reverse().join("")))?.line ?? "";
-      raw.push({ pas: [pa], pbs: [pb], kind: r.kind, key: [...r.key].sort().join(""), sky, line, rank: (pa === "day" ? 0 : 2) + (pb === "day" ? 0 : 2) + (sky ? 1 : 0) });
-    }
-  }
-  // P6e 20: 같은 관계(같은 글자 짝·같은 관계 이름)가 한 사람의 여러 자리에 걸리면 한 줄로 합친다("태어난 해·달 땅 글자 모두와").
-  const merge = (rows: Row[], side: "pas" | "pbs"): Row[] => {
-    const other = side === "pas" ? "pbs" : "pas", by = new Map<string, Row>();
-    for (const r of rows) {
-      const g = `${r.kind}|${r.key}|${r.sky}|${r[other].join(",")}`;
-      const m = by.get(g);
-      if (!m) by.set(g, { ...r, pas: [...r.pas], pbs: [...r.pbs] });
-      else { m[side] = [...new Set([...m[side], ...r[side]])]; m.rank = Math.min(m.rank, r.rank); }
-    }
-    return [...by.values()];
-  };
-  const SHORT: Readonly<Record<string, string>> = { year: "해", month: "달", day: "날", hour: "시각" };
-  const where = (s: PairSide, ps: string[], glyph: string) => { const sorted = [...ps].sort((p, q) => ORDER[p] - ORDER[q]); return sorted.length === 1 ? `${s.callName}의 ${PILLAR_KO[sorted[0] as keyof typeof PILLAR_KO]} ${glyph}` : `${s.callName}의 태어난 ${sorted.map(p => SHORT[p]).join("·")} ${glyph} 모두`; };
-  // 쉬운 문장(P6b D 궁합 relationsPlain): 글자 표기 없이 자리와 관계 이름·뜻만(E-9: "(정축·정축(丁丑))" 같은 겹친 표기 방지).
-  // 최종판2 1-7: 엔진이 감지한 두 사람 사이 관계는 모두 싣는다(같은 관계는 한 줄로 묶는 규칙은 그대로). 4줄 자르기 때문에 辛丙 천간합·卯戌 육합(점수 4번 항목)·辰戌 충·未戌 형·파가 첫 쪽에서 빠졌다.
-  return merge(merge(raw, "pbs"), "pas").sort((p, q) => p.rank - q.rank)
-    .map(r => { const glyph = r.sky ? "하늘 글자" : "땅 글자"; return relationPlain(where(a, r.pas, glyph), where(b, r.pbs, glyph), r.kind, r.kind === "SAMHAP", r.line); });
+function relationLine(r: PairRelation, k: Knowledge): string {
+  if (r.kind === "STEM_CHUNG") return stemClashLine(r.chars);
+  if (r.kind === "HYEONG" && r.subtype === "삼형" && r.completeness === "partial") return "삼형 세 글자 중 두 글자만 만나 서로를 깎고 다듬는 흐름";
+  const key = r.subtype === "자형" ? "自刑" : r.key;
+  const own = k.badges.find(z => z.kind === r.kind && z.pair !== undefined && (z.pair === key || [...z.pair].sort().join("") === key))?.line;
+  const line = own ?? k.badges.find(z => z.kind === r.kind && z.pair === undefined)?.line.replace(/ 해$/, " 흐름") ?? "";
+  if (r.kind === "SAMHAP" && r.completeness === "half") return halfHapLine(line);
+  return r.subtype === "자형" ? line.replace("스스로를", "서로를") : line;
+}
+/**
+ * 두 사람 사이의 관계 쉬운 문장(P3.7 1-5·P6b D, 최종판3 7): "정희님의 태어난 날 땅 글자와 지우님의 태어난 날 땅 글자가 충(마주 서서 부딪침) 관계예요. {뜻}이에요."
+ * 목록은 엔진이 감지한 관계 전부(compat/relations.pairRelations: 천간충 포함, 삼형 한 줄), 영향 큰 순. 글자 표기 없이 자리와 관계 이름·뜻만(E-9).
+ */
+export function pairRelationLines(a: PairSide, b: PairSide, k: Knowledge): { rows: PairRelation[]; lines: string[] } {
+  const rows = pairRelations(a.saju, b.saju);
+  return { rows, lines: rows.map(r => { const glyph = r.sky ? "하늘 글자" : "땅 글자";
+    return relationPlain(whereOf(a, r.a, glyph), whereOf(b, r.b, glyph), r.kind, r.completeness === "half", relationLine(r, k), r.kind === "HYEONG" && r.subtype === "삼형" && r.completeness === "full" ? SAMHYEONG_PLAIN : undefined); }) };
+}
+/** 첫 쪽 묶음 요약(최종판3 7): "합 6가지(천간합 3·육합 1·반합 2) · 형·충·파·해 6가지(…)"와 줄마다의 관계 이름. 영향 큰 3줄은 relationsPlain 앞 3줄. */
+function relationSummary(rows: readonly PairRelation[]): NonNullable<CompatibilityBrief["relationsSummary"]> {
+  if (!rows.length) return { line: "두 사람 글자 사이에 합이나 형·충·파·해로 엮인 관계가 따로 없어요.", names: [] };
+  const c = pairRelationCounts(rows), part = (g: "hap" | "friction") => c.byName.filter(([n]) => rows.some(r => r.name === n && r.group === g)).map(([n, x]) => `${n} ${x}`).join("·");
+  const hap = c.hap ? `합 ${c.hap}가지(${part("hap")})` : "합 0가지", fr = c.friction ? `형·충·파·해 ${c.friction}가지(${part("friction")})` : "형·충·파·해 0가지";
+  return { line: `두 사람 사이에서 찾은 관계는 모두 ${rows.length}가지예요. ${hap} · ${fr}.`, names: rows.map(r => r.name) };
 }
 
 /**
@@ -135,7 +135,7 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     .filter((e: FiveElement) => from.st.excess.includes(e) || (from.saju.elements.visible[e] ?? 0) >= 2)
     .map(e => `${fromName}의 ${ELEMENT_KO[e]} 기운이 ${toName}에게 부족한 ${josa(ELEMENT_KO[e], "을를")} 채워 줌`);
   const ab = getTenGod(a.saju.dayMaster, b.saju.dayMaster), ba = getTenGod(b.saju.dayMaster, a.saju.dayMaster);
-  const rel = pairRelations(a, b, k);
+  const { rows: relRows, lines: rel } = pairRelationLines(a, b, k);
   const conv = a.mbti && b.mbti ? a.mbti.conventionalCompat.find(c => c.type === b.mbti!.type) : undefined;
   const s = computeCompatScore(category, { saju: a.saju, name: a.callName, mbti: a.mbti?.type ?? null, gender: a.gender }, { saju: b.saju, name: b.callName, mbti: b.mbti?.type ?? null, gender: b.gender });
   const person = (s: PairSide, role: string) => ({
@@ -151,19 +151,24 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
     lens: { focus: LENS_FOCUS[category], roleLabels: [label(lensFromNarrative?.roleLabels[0] ?? roles.personA, a), label(lensFromNarrative?.roleLabels[1] ?? roles.personB, b)], tone: lensFromNarrative?.tone ?? "", forbidden: lensFromNarrative?.forbidden ?? [] },
     a: person(a, label(roles.personA, a)), b: person(b, label(roles.personB, b)),
     common: common.length ? common : ["눈에 띄는 공통 기운이 적어 서로 다른 점이 이야기의 중심"],
+    // 최종판3 2b: 두 사람이 모두 가진 특성 id 전부(자르지 않음). 작가 브리프에서 그 특성의 주인은 「두 사람 모두(공통)」이고 차이의 근거로 쓰지 않는다.
+    commonIds: a.hitIds.filter(id => b.hitIds.includes(id) && !/^(stem|branch|tenGod|dayMaster|dayPillar|climate|yinYang):/.test(id)),
+    commonNames: [...new Set(a.hitIds.filter(id => b.hitIds.includes(id) && !/^(stem|branch|tenGod|dayMaster|dayPillar|climate|yinYang):/.test(id)).map(id => featureName(id)).filter(Boolean))],
     differences: dims.map(z => ({ a: pole(z.d, z.x), b: pole(z.d, z.y) })),
     complement: [...fills(b, a, b.callName, a.callName), ...fills(a, b, a.callName, b.callName)],
     tenGodAB: { tenGod: tenGodLabel(ab), reading: meaningLine(k, ab) },
     pairImage: pairImage({ stem: a.saju.dayMaster, image: a.chart.coreImage }, { stem: b.saju.dayMaster, image: b.chart.coreImage }),
     // 두 방향이 같은 십성이면 같은 문장을 두 장에 주지 않는다(P3.7 r1: 3·4장이 같은 "나란히 걷는 같은 편").
     tenGodBA: { tenGod: tenGodLabel(ba), reading: ab === ba ? `서로를 같은 기운으로 본다. 앞 장과 겹치지 않게, 이 방향에서는 ${k.features.get(`tenGod:${ba}`)?.strengths[1] ?? k.features.get(`tenGod:${ba}`)?.strengths[0] ?? ""}` : meaningLine(k, ba) },
-    dayRelations: rel, relationsPlain: rel, roles: sceneRoles(a, b),
+    dayRelations: rel, relationsPlain: rel, relationsSummary: relationSummary(relRows), roles: sceneRoles(a, b),
     profiles: [sideProfile(a, k), sideProfile(b, k)],
     mbtiConvention: conv ? { fit: conv.fit, why: conv.why, note: "통념" } : null,
     // 점수 v2(P6c): 항목 점수·만점·이유. onScorePage = 점수 쪽에 이미 실린 문장(본문에서 되풀이하지 않고 더 깊게 푼다).
     score: {
       value: s.total, version: s.version, band: { label: s.band.label, tone: s.band.tone, verdict: s.band.verdict }, notice: s.notice,
-      components: s.items.map(c => ({ name: c.name, points: c.points, max: c.max, level: c.level, onScorePage: c.reason })),
+      // 최종판3 7: 맨 앞 기본점 줄(40/40)로 points 합 = value. 점수 쪽(Book)도 이 줄을 그대로 싣는다.
+      components: [{ name: BASE_ROW_NAME, points: BASE_POINTS, max: BASE_POINTS, level: "기본" as const, onScorePage: baseReason(s.items.length, s.total - BASE_POINTS, s.total) },
+        ...s.items.map(c => ({ name: c.name, points: c.points, max: c.max, level: c.level, onScorePage: c.reason }))],
       direction: s.direction,
       rules: [
         `점수 ${s.total}점은 '${s.band.label}' 구간이다. 결론과 분위기를 이 구간에 맞춘다(다른 구간 이름·다른 점수를 쓰지 않는다)`,

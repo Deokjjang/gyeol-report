@@ -15,6 +15,8 @@ import type { ChartBrief, Material } from "../schema";
 import type { FactProfile } from "../facts";
 
 type Evidence = Extract<Material, { kind: "evidence" }>;
+/** 처음 만남·초반 검증 신호(연애 중·기혼에게는 쓰지 않는다). */
+const FIRST_MEET = /초반|처음 만난|처음 만나|첫 만남|소개팅|만나자마자|캐묻|첫 데이트|알게 된 지/;
 export type LoveStatus = "single" | "some" | "dating" | "married" | "unknown";
 export const loveStatusOf = (relationshipStatus: string): LoveStatus => ({ single: "single", some: "some", dating: "dating", marriage_preparing: "dating", married: "married" } as Record<string, LoveStatus>)[relationshipStatus] ?? "unknown";
 export const LOVE_STATUS_KO: Readonly<Record<LoveStatus, string>> = { single: "솔로", some: "썸", dating: "연애 중", married: "기혼", unknown: "관계 미입력" };
@@ -75,10 +77,13 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
   const solitary = (["GOSINSAL", "GWASUKSAL", "WONJIN"] as const).filter(x => shin(x)).map(x => k.features.get(`shinsal:${x}`)?.name ?? x);
   // 피해야 할 신호: 강한·약한 오행과 묶음.
   const ranked = (Object.keys(gs) as TenGodGroupKey[]).sort((a, b) => gs[b].value - gs[a].value);
+  // 최종판3 2f: 연애 중·기혼은 처음 만남 검증 신호(「초반부터 …」「내 이야기만 캐묻나요?」)를 주지 않는다 → 지금 관계 점검 줄만.
+  const firstMeet = (x: string) => !(status === "dating" || status === "married") || !FIRST_MEET.test(x);
   const flags = [
-    ...pick(fresh(deepLines(k, "red-flags", `element:${elStrong}`, "flag", "strong")), seed, 1),
-    ...pick(fresh(deepLines(k, "red-flags", `group:${ranked[0]}`, "flag", gs[ranked[0]].level === "strong" ? "strong" : "weak")), seed, 1),
-    ...pick(fresh(deepLines(k, "red-flags", `element:${elWeak}`, "check", "weak")), seed, 1).map(x => `점검: ${x}`),
+    ...(status === "dating" || status === "married" ? [] : [
+      ...pick(fresh(deepLines(k, "red-flags", `element:${elStrong}`, "flag", "strong")), seed, 1),
+      ...pick(fresh(deepLines(k, "red-flags", `group:${ranked[0]}`, "flag", gs[ranked[0]].level === "strong" ? "strong" : "weak")), seed, 1)]),
+    ...pick(fresh(deepLines(k, "red-flags", `element:${elWeak}`, "check", "weak")).filter(firstMeet), seed, 1).map(x => `점검: ${x}`),
   ];
   // 통념 궁합(고친 표): 좋음 2~3, 노력 1~2.
   const good = mbti?.conventionalCompat.filter(x => x.fit === "좋음").slice(0, 3) ?? [];
@@ -107,7 +112,7 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
     firstMeet: together
       ? ev("firstMeet", [statusTag, ...la("date", 1), ...la("charm", 2).slice(1), ...seeds("l9", 1)], "처음 끌렸던 모습을 다시 보여 주는 행동 하나로 쓴다. 첫 만남·소개팅·고백 이야기는 쓰지 않는다")
       : ev("firstMeet", appeal("firstMeet")),
-    matchTypes: ev("matchTypes", baseFacts("matchTypes"), "유형마다 근거 하나와 장면 하나. 만남 시기는 쓰지 않는다"),
+    matchTypes: ev("matchTypes", baseFacts("matchTypes"), "유형마다 근거 하나와 장면 하나. 만남 시기 이야기는 꺼내지 않는다(안내 문장도 쓰지 않는다)"),
     combos: ev("combos", [...good.map(x => `통념상 잘 맞는 조합: ${x.type} — ${x.why}`), ...hard.map(x => `통념상 맞추는 데 노력이 드는 조합: ${x.type} — ${x.why}`)], "MBTI 조합은 흔히 도는 궁합표의 통념이다. 어려운 조합도 만나면 안 된다고 쓰지 않는다"),
     meetState: ev("meetState", [statusTag, ...(status === "single" || status === "unknown" ? baseFacts("meetingPlaces") : []), ...flags.map(x => x.startsWith("점검") ? x : `피해야 할 신호: ${x}`), ...seeds("l3", 2)], unknownNote ?? (status === "married" ? "배우자와 맞는 점·다른 점은 단정하지 않고 '이런 점이 맞는다면'으로" : status === "dating" ? "관계 점검 질문을 둘 셋, 상대를 평가하지 않는다" : "만남 경로·장소와 피해야 할 신호")),
     crush: together
@@ -117,10 +122,10 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
     express: ev("express", [...la("attachment", 2), ...la("date", 1)]),
     jealousy: ev("jealousy", [...(solitary.length ? [`관계 신살: ${solitary.join("·")} → 혼자 정리하는 시간이 필요한 쪽`] : []), ...la("conflict", 2)], "서운함은 한 문장만: 같은 말을 장마다 되풀이하지 않는다"),
     dayRelations: ev("dayRelations", dayRel.length ? dayRel.slice(0, 3).map(r => `태어난 날 땅 글자의 ${relName(r)}: ${k.features.get(`relation:${r.kind}`)?.name ?? r.kind}`) : ["태어난 날 땅 글자에 형·충·파·해가 없음 → 다툼은 밖에서 오는 일정·속도 차이에서"], "관계 이름은 엔진 값 그대로. 없으면 '없다'고만"),
-    dangerSigns: ev("dangerSigns", [...pick(fresh(deepLines(k, "red-flags", `group:${ranked[ranked.length - 1]}`, "flag", "weak")), seed, 1).map(x => `관계가 위험할 때의 신호: ${x}`), ...pick(deepLines(k, "red-flags", `group:${ranked[0]}`, "check", gs[ranked[0]].level === "strong" ? "strong" : "weak"), seed, 1).map(x => `점검: ${x}`)]),
-    marriageView: ev("marriageView", marriageView, "시기는 쓰지 않는다. 성향만"),
+    dangerSigns: ev("dangerSigns", [...pick(fresh(deepLines(k, "red-flags", `group:${ranked[ranked.length - 1]}`, "flag", "weak")).filter(firstMeet), seed, 1).map(x => `관계가 위험할 때의 신호: ${x}`), ...pick(deepLines(k, "red-flags", `group:${ranked[0]}`, "check", gs[ranked[0]].level === "strong" ? "strong" : "weak").filter(firstMeet), seed, 1).map(x => `점검: ${x}`)]),
+    marriageView: ev("marriageView", marriageView, "성향만 쓴다. 시기 이야기는 꺼내지 않는다('시기는 말하지 않아요' 같은 안내 문장도 쓰지 않는다)"),
     homeState: ev("homeState", [statusTag, ...seeds("l7", 2), status === "married" ? "기혼: 지금 생활 점검 — 돈·역할·양가·집 중 하나씩" : "조건형: '함께 살게 된다면'"], unknownNote),
-    childStar: ev("childStar", [...baseFacts("childStar").slice(0, 2), ...(childGroup ? [`자녀 별 묶음(${GROUP_NAME_KO[childGroup]}) 세기: ${GROUP_LEVEL_KO[gs[childGroup].level]}`] : []), ...(hourKnown ? baseFacts("childPalace").slice(0, 1) : ["출생 시각을 몰라 자녀 자리(태어난 시각의 땅 글자)는 보지 않는다(유보)"])], "자녀의 성별·수·시기는 단정하지 않는다"),
+    childStar: ev("childStar", [...baseFacts("childStar").slice(0, 2), ...(childGroup ? [`자녀 별 묶음(${GROUP_NAME_KO[childGroup]}) 세기: ${GROUP_LEVEL_KO[gs[childGroup].level]}`] : []), ...(hourKnown ? baseFacts("childPalace").slice(0, 1) : ["출생 시각을 몰라 자녀 자리(태어난 시각의 땅 글자)는 보지 않는다(유보)"])], "부모로서의 결만 쓴다. 자녀의 성별·수·시기 이야기는 꺼내지 않는다(그런 안내 문장도 쓰지 않는다)"),
     parentState: ev("parentState", [statusTag, `자녀: ${c.facts.children === "has" ? "있음(입력)" : c.facts.children === "none" ? "없음(입력) → 조건형으로" : "입력 없음 → '아이를 키우게 된다면'으로"}`, ...seeds("l8", 2)], unknownNote),
     loveTiming: ev("loveTiming", [...loveYears, ...(chart.currentDayun ? [`지금 대운: ${chart.currentDayun.tenGod}(${chart.currentDayun.years}) — 관계는 이 흐름의 경향으로만`] : [])], "경향만: 만남·결혼·이별의 시기를 단정하지 않는다"),
     loveRoadmap: ev("loveRoadmap", [statusTag, ...three, ...seeds("l9", 2), `첫 달(${by}년 ${bm}월) 행동 하나`], unknownNote ?? "해마다 행동 하나, 첫 달 행동 하나. '이번 달'이라 쓰지 않고 달 이름으로"),

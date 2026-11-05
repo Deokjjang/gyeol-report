@@ -218,8 +218,11 @@
 .pageScroll .pairRelations h2 { font-size: 15px; }
 .pairRelations ul { margin: 8px 0 0; padding-inline-start: 18px; font-size: 13px; line-height: 1.85; }
 .pairRelations li + li { margin-top: 6px; }
+.pairRelations h3 { margin: 12px 0 0; font-size: 13px; font-weight: 700; }
 .edition { display: block; margin-top: 16px !important; font-size: 11px; letter-spacing: .02em; opacity: .7; }
 .backContent > .edition { margin-top: 30px !important; }
+.backContent > .aiNotice { margin: 30px 0 0; font-size: 12px; line-height: 1.6; opacity: .75; }
+.backContent > .aiNotice + .edition { margin-top: 8px !important; }
 .backContent > .edition + .micro:last-child { margin-top: 6px; }
 @media (min-width: 1000px) {
   .bookShell:has([data-page=narrative]), .bookShell:has([data-page=timeline]), .bookShell:has([data-page=months]), .bookShell:has([data-page=appendix]), .bookShell:has([data-page=contents]) { max-width: 940px; }

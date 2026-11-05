@@ -33,10 +33,11 @@ describe("작가 실행기 — 실패 주입(목업, 비용 0)", () => {
     expect(r.calls[0].maxTokens).toBe(maxTokensFor(plan, "gpt-4o-mini"));
   });
 
-  it("출력 전 5xx·429: 시간 예산 안에서 재시도해 성공", async () => {
-    const { m, sources, r } = await run([{ status: 503 }, { status: 429 }, { text: full }]);
-    expect(m.calls).toHaveLength(3);
-    expect(r.calls.map(c => c.kind)).toEqual(["first", "retry", "retry"]);
+  // 최종판3 6: 응답 없이 끊긴 호출(출력 0)만 한 번 다시 부른다.
+  it("출력 전 5xx·429: 한 번만 다시 불러 성공", async () => {
+    const { m, sources, r } = await run([{ status: 503 }, { text: full }]);
+    expect(m.calls).toHaveLength(2);
+    expect(r.calls.map(c => c.kind)).toEqual(["first", "retry"]);
     expect(sources.every(s => s === "writer")).toBe(true);
   });
 

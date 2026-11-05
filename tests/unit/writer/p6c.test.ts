@@ -150,9 +150,9 @@ describe("P6c E 상품 구조", () => {
     const ev = (key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
     // 하람 2026 = 임인 대운(2017~2026)의 마지막 해, 다음 대운 2027 계묘.
     expect(ev("timingNow")!.facts.join(" ")).toMatch(/10번째 해\(마지막 해, 뒤로 0해\)/);
-    expect(ev("timingNow")!.facts.join(" ")).toMatch(/다음 대운: 2027년부터/);
+    expect(ev("timingNow")!.facts.join(" ")).toMatch(/다음 대운: [가-힣]{2} 대운: 2027년 \d{1,2}월 무렵부터/);
     // P6e 14: 다섯 힘은 쉬운 이름(묶음 이름)으로.
-    expect(ev("engineGroups")!.facts[0]).toBe("다섯 힘(만세력 가중값): 내 방식의 힘(비겁) 강 · 만드는 힘(식상) 보통 · 값을 받는 힘(재성) 약 · 규칙의 힘(관성) 강 · 배우는 힘(인성) 약");
+    expect(ev("engineGroups")!.facts[0]).toBe("다섯 힘(만세력 가중값): 내 방식의 힘(비겁) 보통 · 만드는 힘(식상) 보통 · 값을 받는 힘(재성) 약 · 규칙의 힘(관성) 강 · 배우는 힘(인성) 약"); // 최종판3 1: 비겁은 일간 자신을 뺀다
   });
   it("E2 종합 가족 장은 뿌리·부모 자리·인성·식상·비겁 근거, E3 자녀 장 장면에 결혼·양가 이야기 없음", () => {
     const full = brief("saju_mbti_full", PEOPLE.c1);
@@ -193,8 +193,10 @@ describe("P6c F·G·H 카드·표지·강조", () => {
   it("G → 최종판 1-7 표지 한 줄 = 작가가 지은 핵심 이미지: 16~26자·설명문·명리학에서·연차·사실 규칙·피할 이미지 명사 금지", () => {
     const b = brief("saju_mbti_full", ME);
     // 최종판2 1-1: 길이는 공백을 빼고 센다(16~26자). 벗어나도 30자 이내면 작가 표지를 쓴다(level "length").
-    expect(coverProblem("물길을 여는 한여름 큰 나무의 작은 사업", b, [])).toBeNull();
-    expect(coverProblem("물길을 여는 한여름 큰 나무의 사업", b, [])).toMatch(/공백 뺌/);
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 작은 등불", b, [])).toBeNull();
+    // 최종판3 2g: 종합 표지는 직업·나이 금지(입력 직업 낱말·직함·나이).
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 작은 사업", b, [])).toMatch(/직업·나이/);
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 등불", b, [])).toMatch(/공백 뺌/);
     expect(coverProblem("짧아요", b, [])).toMatch(/길이/);
     expect(coverProblem("스물일곱, 물길을 여는 큰 나무의 사업이에요.", b, [])).toMatch(/설명문/);
     expect(coverProblem("서비스 기획 7년 차, 물길을 여는 큰 나무", b, [])).toMatch(/연차/);

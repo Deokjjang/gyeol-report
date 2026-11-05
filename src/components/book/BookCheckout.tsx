@@ -7,6 +7,7 @@ import { CONSENTS, CONSENT_SHORT_LABELS } from "../../app/dev/book-preview/model
 import { DetailSheet, LegalDocument, LEGAL_TITLES } from "../../app/dev/book-preview/BookLegal";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
+import { AI_WRITTEN_NOTICE_KO } from "../../lib/legal/aiNotice";
 import type { ReportInputPayload } from "../../lib/report-generation/reportInputTypes";
 import { bookCheckoutSnapshot } from "../../lib/book/form";
 import { bookForProduct, readerTitle } from "../../lib/book/product";
@@ -21,7 +22,8 @@ import { recordBookReturn } from "../../lib/tickets/shopClient";
 import { receiptMethodKey } from "../../lib/tickets/shopContract";
 import { PROFILE_REQUIRED_MESSAGE, validateContact } from "../../lib/account/contact";
 
-type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; authEnabled?: boolean; ticketShopEnabled?: boolean; onPublishing: () => void; onError: (message: string) => void };
+/** v5Book: 이 상품이 v5(AI 작가)로 발행됨 — 열람 "탈퇴 전까지 계속"·AI 작성 고지. 아니면 v5 이전 규칙(생성일로부터 90일). */
+type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; authEnabled?: boolean; ticketShopEnabled?: boolean; v5Book?: boolean; onPublishing: () => void; onError: (message: string) => void };
 export function BookCheckout(props: CheckoutProps) {
   const authEnabled = props.authEnabled ?? props.internal;
   const { session, loaded, error, refresh } = useAccountSession(props.internal, authEnabled);
@@ -30,7 +32,7 @@ export function BookCheckout(props: CheckoutProps) {
   // A status change remounts the receipt; prior consent is never silently carried over.
   return <BookCheckoutReceipt key={session.status} {...props} authEnabled={authEnabled} session={session} />;
 }
-function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, session, authEnabled, ticketShopEnabled = false }: CheckoutProps & { session: AccountSession }) {
+function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, session, authEnabled, ticketShopEnabled = false, v5Book = false }: CheckoutProps & { session: AccountSession }) {
   useEffect(() => { interaction("checkout_started", payload.productKey); }, [payload.productKey]);
   const label = (id: keyof CheckoutLegalConfirmations) => id === "policyAgreement" && session.status === "member" ? purchasePolicyLabel(session) : CONSENT_SHORT_LABELS[id];
   const [consents, setConsents] = useState<CheckoutLegalConfirmations>(emptyDevTossCheckoutLegalConfirmations), [detail, setDetail] = useState<string | null>(null), [busy, setBusy] = useState(false);
@@ -192,7 +194,8 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     <dl>{[["TITLE", readerTitle(book, payload.productKey !== "saju_mbti_compatibility" && "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear : "")], ["ISSUED TO", snapshot.displayName ?? ""], ["PRICE", ticketSelected ? "리포트 이용권 1장" : `${(coupon.quote?.finalAmount??product.amount).toLocaleString("ko-KR")}원`]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
     {method==="payment"&&coupon.selection&&coupon.quote?<dl aria-label="쿠폰 적용 금액"><div><dt>상품 금액</dt><dd>₩{coupon.quote.originalAmount.toLocaleString("ko-KR")}</dd></div><div><dt>쿠폰 할인</dt><dd>−₩{coupon.quote.discountAmount.toLocaleString("ko-KR")}</dd></div><div><dt>결제 금액</dt><dd>₩{coupon.quote.finalAmount.toLocaleString("ko-KR")}</dd></div></dl>:null}
     <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${BIRTH_TIME_SLOT_DEFINITIONS.find(s => s.value === p.approximateBirthTimeSlot)?.labelKo ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
-    <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{ticketSelected ? "이용권 사용 후 즉시 생성" : "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"}<br />생성일로부터 90일 · {ticketSelected ? "온라인 열람" : "결제 후 온라인 열람"}</p>
+    <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{ticketSelected ? "이용권 사용 후 즉시 생성" : "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"}<br />{v5Book ? "탈퇴 전까지 계속 열람" : "생성일로부터 90일"} · {ticketSelected ? "온라인 열람" : "결제 후 온라인 열람"}</p>
+    <p className={s.receiptNote} data-refund-notice><b>{ticketSelected ? "이용권으로 만든 책은 환불되지 않아요. 오류가 있으면 다시 만들어 드려요." : "책 만들기가 시작되면 단순 변심으로는 환불되지 않아요."}</b>{v5Book ? <><br /><span data-ai-notice>{AI_WRITTEN_NOTICE_KO}</span></> : null}</p>
     {session.status === "member" ? <fieldset className={s.consents}><legend>발행 방법</legend>
       {accountChanged ? <p role="alert">계정이 변경되었습니다. <a href={`${internal ? "/dev/book-flow/input" : "/report/new"}?product=${payload.productKey}`}>입력부터 다시 확인해 주세요.</a></p> : null}
       {checkingBalance ? <p role={balanceError ? "alert" : "status"}>{balanceError ? "이용권을 확인하지 못했습니다." : "이용권을 확인하고 있습니다."}{balanceError ? <button onClick={() => setBalanceRetry(n => n + 1)}>다시 확인</button> : null}</p> : <>

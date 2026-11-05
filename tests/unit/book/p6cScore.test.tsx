@@ -41,7 +41,7 @@ const pagesOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pa
 
 describe("궁합 점수 v2.2 점수 쪽", () => {
   const data = read(snap("saju_mbti_compatibility"));
-  it("총점 = 40 + 항목 점수 합, 항목 막대는 점수/만점(연애 배점), 이유는 2~3문장, 버전 v2.2", () => {
+  it("총점 = 기본점 40 + 항목 점수 합(최종판3 7: 기본점 줄로 줄 합 = 총점), 항목 막대는 점수/만점(연애 배점), 이유는 2~3문장, 버전 v2.2", () => {
     const score = pageOf(data, "score"), out = html(data, score);
     expect(score.scoreVersion).toBe("v2.2");
     expect(score.total).toBe(54); // 하람×서윤 연애(P4 49 → v2 62 → v2.1 54)
@@ -51,8 +51,10 @@ describe("궁합 점수 v2.2 점수 쪽", () => {
     const mbti = score.scores.find(s => s.label === "MBTI")!, parts = [...mbti.reason!.matchAll(/(대화의 결|마음의 기능|에너지·생활 리듬) (\d+)\/5/g)];
     expect(parts.map(p => p[1])).toEqual(["대화의 결", "마음의 기능", "에너지·생활 리듬"]);
     expect(parts.reduce((n, p) => n + Number(p[2]), 0)).toBe(mbti.value);
-    expect(score.total).toBe(40 + score.scores.reduce((n, s) => n + s.value, 0));
-    expect(score.scores.map(s => s.max)).toEqual(Object.values(ITEM_MAX.love));
+    expect(score.scores[0]).toMatchObject({ label: "기본점", value: 40, max: 40 });
+    expect(score.total).toBe(score.scores.reduce((n, s) => n + s.value, 0));
+    expect(score.scores.map(s => s.max)).toEqual([40, ...Object.values(ITEM_MAX.love)]);
+    expect(score.scores[0].reason).toBe(`기본점은 두 사람 누구에게나 똑같이 주는 40점이에요. 여기에 아래 일곱 항목의 점수 ${score.total - 40}점(60점 만점)을 더해 총점 ${score.total}점이 돼요.`);
     for (const s of score.scores) { expect(out).toContain(`${s.value} / ${s.max}`); const n = splitSentences(s.reason!).length; expect(n).toBeGreaterThanOrEqual(2); expect(n).toBeLessThanOrEqual(3); }
     expect(out).toContain("기본 40점에 일곱 항목");
     expect(out).not.toContain("3칸");
@@ -66,6 +68,16 @@ describe("궁합 점수 v2.2 점수 쪽", () => {
     expect(score.scores).toEqual([{ label: "MBTI", value: 0, max: 15, reason: "예전 MBTI 이유. 두 사람 이야기." }]);
     expect(out).toContain('data-score-version="v2"'); expect(out).toContain("0 / 15"); expect(out).toContain("예전 안내");
   });
+  it("최종판3 7: 기본점 줄이 없는 저장 v2.x Book은 합이 맞을 때만 화면에서 기본점 줄을 붙인다(저장본 그대로)", () => {
+    const stored = { total: 79, version: "v2.2" as const, band: "끌림과 보완이 있는 사이", verdict: "판정", notice: "안내",
+      components: [{ name: "오행 보완", points: 12, max: 12, reason: "가. 나." }, { name: "타고난 중심 관계", points: 10, max: 10, reason: "가. 나." }, { name: "생활 자리", points: 7, max: 10, reason: "가. 나." }, { name: "자란 환경·사회 자리", points: 3, max: 6, reason: "가. 나." },
+        { name: "서로에게 주는 역할", points: 2, max: 4, reason: "가. 나." }, { name: "음양 균형", points: 1, max: 3, reason: "가. 나." }, { name: "MBTI", points: 4, max: 15, reason: "가. 나." }] };
+    const old = read(snap("saju_mbti_compatibility", (d, e) => [d, { ...e, pair: { ...e.pair!, score: stored } }]));
+    const score = pageOf(old, "score"), out = html(old, score);
+    expect(score.scores.map(s => `${s.label} ${s.value}/${s.max}`)).toEqual(["기본점 40/40", "오행 보완 12/12", "타고난 중심 관계 10/10", "생활 자리 7/10", "자란 환경·사회 자리 3/6", "서로에게 주는 역할 2/4", "음양 균형 1/3", "MBTI 4/15"]);
+    expect(score.scores.reduce((n, s) => n + s.value, 0)).toBe(79);
+    expect(out).toContain("40 / 40"); expect(out).toContain("일곱 항목의 점수 39점(60점 만점)을 더해 총점 79점");
+  });
   it("저장된 v5-1 Book(P4)은 예전 3칸 표시 그대로", () => {
     const old = read(snap("saju_mbti_compatibility", (d, e) => [d, { ...e, pair: { ...e.pair!, score: { total: 49, version: "compat-score-v5-1", band: "노력이 필요한", verdict: "예전 판정", components: [{ name: "오행 보완", level: "좋음", line: "예전 이유" }, { name: "MBTI", level: "조율", line: "예전 MBTI 이유" }] } } }]));
     const score = pageOf(old, "score"), out = html(old, score);
@@ -78,6 +90,9 @@ describe("궁합 점수 v2.2 점수 쪽", () => {
     const s = brief.compatibility!.score;
     expect(s.components.map(c => c.onScorePage)).toEqual(("notice" in evidence.pair!.score! ? evidence.pair!.score!.components : []).map(c => c.reason));
     expect(s.components.every(c => c.points <= c.max)).toBe(true);
+    // 최종판3 7: 작가에게 가는 요약도 줄 합 = 총점(맨 앞 기본점 40/40, level "기본").
+    expect(s.components[0]).toMatchObject({ name: "기본점", points: 40, max: 40, level: "기본" });
+    expect(s.components.reduce((n, c) => n + c.points, 0)).toBe(s.value);
     expect(s.rules.join(" ")).toContain("onScorePage는 점수 쪽에 이미 실린 문장");
     const w = JSON.stringify(renderWriterBrief(brief));
     expect(w).toContain("onScorePage"); expect(w).not.toContain("\"appendix\"");
@@ -111,7 +126,8 @@ describe("부록 내 모든 기운(v5)", () => {
   });
   it("궁합은 사람마다 한 쪽, 번호는 이어진다", () => {
     const pages = pagesOf(read(snap("saju_mbti_compatibility")), "appendix");
-    expect(pages.map(p => p.title)).toEqual(["하람의 모든 기운", "서윤의 모든 기운"]);
+    // 최종판3 7: 사람마다 한 쪽 뒤에 두 사람 사이 관계 전체 쪽.
+    expect(pages.map(p => p.title)).toEqual(["하람의 모든 기운", "서윤의 모든 기운", "두 사람 사이의 모든 기운"]);
     expect(pages[1].from).toBe(pages[0].from + pages[0].items.length);
     expect(pages[0].lead).toBe("하람님 사주에 있는 기운과 그 뜻이에요.");
   });

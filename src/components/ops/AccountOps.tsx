@@ -106,8 +106,10 @@ export function GiftPanel({ base = "/auth" }: { base?: string }) {
     const r = await fetch(`${base}/gift`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ op, giftId }) });
     const b = await r.json();
     if (!r.ok) { setMessage(b.message ?? "처리하지 못했어요."); return; }
-    if (op === "link") { const url = `${location.origin}${b.url}`; setLink(url); try { await navigator.clipboard.writeText(url); setMessage("선물 링크를 복사했어요. 친구에게 보내 주세요."); } catch { setMessage("아래 선물 링크를 복사해 친구에게 보내 주세요."); } }
-    else setMessage("이용권 1장을 넣었어요.");
+    // 선물해도 기한은 처음 받은 날 기준 그대로(최종3) — 고른 장의 기한을 함께 알린다.
+    const gift = state?.gifts.find(g => g.id === giftId), until = gift ? ` ${seoulDateTime(gift.expiresAt)}까지 쓸 수 있어요.` : "";
+    if (op === "link") { const url = `${location.origin}${b.url}`; setLink(url); try { await navigator.clipboard.writeText(url); setMessage(`선물 링크를 복사했어요. 친구에게 보내 주세요. 받은 친구도${until || " 같은 기한까지 쓸 수 있어요."}`); } catch { setMessage("아래 선물 링크를 복사해 친구에게 보내 주세요."); } }
+    else setMessage(`이용권 1장을 넣었어요.${until}`);
     load();
   }
   if (!state || (!state.active && !state.gifts.length)) return null;
@@ -115,11 +117,40 @@ export function GiftPanel({ base = "/auth" }: { base?: string }) {
   const onlyComp = !state.active && state.gifts.every(g => g.kind === "comp");
   return <section className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">{onlyComp ? "보상 이용권" : "이벤트 이용권"}</h2>
     {onlyComp ? <p>한 장마다 내가 쓰거나, 선물 링크를 만들어 친구에게 보낼 수 있어요.</p> : <p>결제 1건마다 이용권 1장(계정당 2회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>}
+    <p className={s.hint}>이용권은 받은 날부터 30일 동안 쓸 수 있어요. 선물해도 기한은 그대로예요. 현금으로 바꾸거나 환불할 수 없어요.</p>
     {state.gifts.length ? <ul className={s.list}>{state.gifts.map(g => <li key={g.id} className={s.order}><span className={s.badge}>{label[g.status] ?? g.status}</span> {g.kind === "comp" ? "보상 이용권" : `주문 ${g.orderCode}`} · {seoulDateTime(g.expiresAt)}까지{g.bonus ? " · 보너스 1장 받음" : ""}
       {g.status === "available" || g.status === "gifted" ? <div className={s.actions}>{g.status === "available" && !g.giftOnly ? <button type="button" className={s.button} onClick={() => void act("use_self", g.id)}>내가 쓰기</button> : null}<button type="button" className={s.button} onClick={() => void act("link", g.id)}>{g.status === "gifted" ? "새 선물 링크" : "선물 링크 만들기"}</button></div> : null}</li>)}</ul> : <p className={s.hint}>이벤트 기간에 결제하면 여기에 이용권이 생겨요.</p>}
     {link ? <p className={s.locked}>{link}</p> : null}
     {message ? <p className={s.message} role="status">{message}</p> : null}
   </section>;
+}
+
+/**
+ * 마이페이지 혜택 알림(선택, 최종3): 가입 정보 화면과 같은 동의를 켜고 끈다. 바꾸면 그 일시를 바로 보여 준다(동의·철회 기록은 서버에 남는다).
+ * 가입 정보를 아직 입력하지 않았으면 보이지 않는다(가입 정보 화면에서 같이 고른다).
+ */
+export function MarketingPanel({ base = "/auth" }: { base?: string }) {
+  const [state, setState] = useState<{ agreed: boolean; at: string | null } | null>(null), [busy, setBusy] = useState(false), [message, setMessage] = useState("");
+  useEffect(() => {
+    void fetch(`${base}/profile`, { cache: "no-store" }).then(async r => { const b = await r.json(); if (r.ok && b.contact && b.marketing) setState(b.marketing); }).catch(() => undefined);
+  }, [base]);
+  async function change(marketing: boolean) {
+    if (busy) return;
+    setBusy(true); setMessage("");
+    try {
+      const r = await fetch(`${base}/profile`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ op: "marketing", marketing, requestId: crypto.randomUUID() }) });
+      const b = await r.json();
+      if (!r.ok || !b.marketing) { setMessage(b.error ?? "저장하지 못했어요. 다시 시도해 주세요."); return; }
+      setState(b.marketing);
+      setMessage(marketing ? "혜택 알림을 켰어요." : "혜택 알림을 껐어요. 이제 혜택 소식을 보내지 않아요.");
+    } catch { setMessage("저장하지 못했어요. 다시 시도해 주세요."); } finally { setBusy(false); }
+  }
+  if (!state) return null;
+  return <div data-marketing-panel>
+    <label className={s.check}><input type="checkbox" checked={state.agreed} disabled={busy} onChange={e => void change(e.target.checked)} />{MARKETING_CONSENT_LABEL}</label>
+    <p className={s.hint}>{state.at ? `${seoulDateTime(state.at)}에 ${state.agreed ? "동의" : "동의를 거두었"}어요.` : state.agreed ? "동의한 상태예요." : "받지 않는 상태예요."} 서비스 공지(주문·환불·장애 안내)는 이 설정과 상관없이 보내요.</p>
+    {message ? <p className={s.message} role="status">{message}</p> : null}
+  </div>;
 }
 
 /** 회원 탈퇴: 먼저 "열람이 불가해진다"를 알리고, '탈퇴'를 입력해야 진행된다. */

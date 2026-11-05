@@ -2,7 +2,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { NextRequest } from "next/server";
-import { validateContact, normalizePhone } from "@/lib/account/contact";
+import { MARKETING_CONSENT_VERSION, validateContact, normalizePhone } from "@/lib/account/contact";
 import { kakaoFacts, kakaoUnlink, KAKAO_LOGIN_SCOPE } from "@/lib/account/kakaoLogin";
 import { handleAccount, type AccountPort } from "@/lib/account/handler";
 import { handleProfile } from "@/lib/account/profile";
@@ -100,7 +100,25 @@ describe("가입 정보 저장", () => {
     expect((await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", body, headers: { origin: "https://evil.example" } }), "profile", port({ contact: null }), deps(calls))).status).toBe(403);
     const ok = await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", body, headers: { origin: ORIGIN } }), "profile", port({ contact: null }), deps(calls));
     expect(ok.status).toBe(200);
-    expect(calls.find(c => (c as [string])[0] === "save")).toMatchObject(["save", { email: "k@kakao.com", emailSource: "provider", marketing: true, marketingVersion: "2026-11-04.1" }]);
+    expect(calls.find(c => (c as [string])[0] === "save")).toMatchObject(["save", { email: "k@kakao.com", emailSource: "provider", marketing: true, marketingVersion: MARKETING_CONSENT_VERSION }]);
+  });
+  it("마이페이지 혜택 알림(최종3): 저장된 가입 정보 그대로 동의만 바꾸고, 마지막 동의·철회 일시를 돌려준다", async () => {
+    const saved = { name: "하람", email: "h@b.co", emailSource: "typed", phone: null, marketing: false };
+    const calls: unknown[] = [];
+    const marketingOps = { call: async (action: string, _u: string, data?: Record<string, unknown>) => { calls.push([action, data]);
+      return action === "facts_read" ? { ok: true, facts: null } : action === "read" ? { ok: true, contact: saved } : { ok: true, contact: { ...saved, marketing: data?.marketing } }; } };
+    const consentsAfter = [{ consent_type: "marketing" as const, document_version: MARKETING_CONSENT_VERSION, is_agreed: true, required: false, recorded_at: "2026-11-05T06:00:00Z" }, ...consents];
+    const p = port({ contact: { name: "하람", email: "h@b.co" }, consents: consentsAfter });
+    const deps = { ops: marketingOps, audit: async () => true, unlinkKakao: async () => "skipped" as const, deleteUser: async () => true };
+    const body = JSON.stringify({ op: "marketing", marketing: true, requestId: crypto.randomUUID() });
+    const res = await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", body, headers: { origin: ORIGIN } }), "profile", p, deps);
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({ ok: true, marketing: { agreed: true, at: "2026-11-05T06:00:00Z" } });
+    expect(calls.find(c => (c as [string])[0] === "save")).toMatchObject(["save", { name: "하람", email: "h@b.co", emailSource: "typed", marketing: true, marketingVersion: MARKETING_CONSENT_VERSION }]);
+    const bad = await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", body: JSON.stringify({ op: "marketing", marketing: "yes", requestId: crypto.randomUUID() }), headers: { origin: ORIGIN } }), "profile", p, deps);
+    expect(bad.status).toBe(400);
+    const got = await (await handleProfile(new NextRequest(`${ORIGIN}/auth/profile`), "profile", p, deps)).json();
+    expect(got.marketing).toEqual({ agreed: false, at: null }); // 저장값(false)과 마지막 기록(true)이 다르면 일시를 붙이지 않는다
   });
   it("Google 확인 이메일: 미리 채운 값 그대로 저장되고(화면과 저장이 같은 기준), 확인 안 된 이메일은 직접 입력", async () => {
     const google = (emailVerified: boolean) => { const p = port({ contact: null }); const g = { ...user, provider: "google" as const, email: "G.User@Gmail.com", emailVerified }; return { ...p, currentUser: async () => g, read: async () => ({ profile: g, consents, contact: null }) }; };

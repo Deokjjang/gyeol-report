@@ -105,8 +105,8 @@ export function familyDesign(saju: SajuCalcResult, groups: Readonly<Record<strin
   const level = (g: string) => { const v = groups[g] ?? 0; return v >= GROUP_STRONG ? "strong" : v >= GROUP_WEAK ? "medium" : v > 0 ? "weak" : "none"; };
   const receive = { strong: "인성이 강해 돌봄과 배움을 잘 받아들이는 쪽: 기대는 법을 안다(과하면 결정을 남에게 미룸)", medium: "인성이 보통이라 필요할 때 도움을 청하고 혼자 할 일은 혼자 하는 쪽", weak: "인성이 약해 스스로 해결하는 쪽: 도움을 청하는 말이 늦음 → 한 줄 부탁 연습", none: "인성이 없어 받기보다 주는 쪽에 익숙함: 도움받는 것도 관계의 일로 연습" }[level("RESOURCE")];
   const give = { strong: "식상이 강해 먹이고 챙기는 손으로 마음을 표현하는 쪽(과하면 잔소리로 들림)", medium: "식상이 보통이라 말과 행동을 섞어 챙기는 쪽: 필요한 걸 먼저 묻고 해 준다", weak: "식상이 약해 말보다 한 번의 행동으로 챙기는 쪽", none: "식상이 없어 챙기는 마음이 겉으로 덜 보이는 쪽: 표현 한 줄을 정해 둔다" }[level("OUTPUT")];
-  const peer = { strong: "비겁이 강해 형제·또래와 대등하게 겨루며 크는 쪽(형제가 있다면 경쟁과 의리가 함께)", medium: "비겁이 보통이라 또래와 어울리되 내 몫은 따로 챙기는 쪽", weak: "비겁이 약해 또래와 거리를 두고 혼자 서는 쪽", none: "비겁이 없어 혼자 결정하는 데 익숙한 쪽" }[level("PEER")];
-  const note = "가족 구성원(부모·형제 등)은 지어내지 않는다. 쓴다면 '부모님이 계시다면'처럼 조건형으로만, 과거 사건 단정 금지. 친구·모임 이야기는 관계 장 몫";
+  const peer = { strong: "비겁이 강해 또래와 대등하게 겨루며 크는 쪽(경쟁과 의리가 함께)", medium: "비겁이 보통이라 또래와 어울리되 내 몫은 따로 챙기는 쪽", weak: "비겁이 약해 또래와 거리를 두고 혼자 서는 쪽", none: "비겁이 없어 혼자 결정하는 데 익숙한 쪽" }[level("PEER")];
+  const note = "가족 구성원(부모·형제 등)이 있다·없다를 쓰지 않는다. '부모님이 계시다면'·'형제가 있다면' 같은 가정 문장, '가정 아래에서만' 같은 작성 규칙 안내도 쓰지 않는다. 처음 자란 자리·가까운 사람에게서 익힌 방식(규칙·표현·책임)으로 이 사람의 성향만 쓴다. 과거 사건 단정 금지. 친구·모임 이야기는 관계 장 몫";
   return {
     familyRoots: { kind: "evidence", key: "familyRoots", facts: [seat("year", "뿌리 자리(태어난 해)"), seat("month", "부모·형제 자리(태어난 달)")].filter(Boolean).length ? [seat("year", "뿌리 자리(태어난 해)"), seat("month", "부모·형제 자리(태어난 달)")].filter(Boolean) : ["뿌리 자리의 기운이 뚜렷하지 않아 지금의 관계로 본다"], note },
     careReceive: { kind: "evidence", key: "careReceive", facts: [receive], note },

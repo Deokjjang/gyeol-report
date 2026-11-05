@@ -144,7 +144,7 @@ describe("P3.7 원고 보강", () => {
     if (pair.compatibility!.tenGodAB.tenGod === pair.compatibility!.tenGodBA.tenGod) expect(pair.compatibility!.tenGodBA.reading).not.toBe(pair.compatibility!.tenGodAB.reading);
     expect(pair.partner!.person.facts.job.detail).toBe("");
     const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
-    expect(career.chart.currentDayun?.reading).toMatch(/2027년부터 癸卯\(계묘\) 편관/);
+    expect(career.chart.currentDayun?.reading).toMatch(/2027년 \d{1,2}월 무렵부터 癸卯\(계묘\) 편관/);
     const x = briefs.find(([n]) => n === "major_fortune:x")![1];
     for (const e of x.timeline!.entries) for (const t of e.touched ?? []) {
       const trait = x.traits.find(y => y.id === t.traitId)!;

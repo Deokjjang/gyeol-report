@@ -42,12 +42,13 @@ describe("정책: 시간표·판정", () => {
 });
 
 describe("출력 전 실패·중간 끊김(같은 시도 안)", () => {
-  it("429 두 번 → 재시도 → Sonnet 정식본", async () => {
-    const h = harness([{ status: 429 }, { status: 429 }, { text }]);
+  // 최종판3 6: 출력 0 실패는 시도 안에서 1회만 다시 부른다(두 번째도 실패면 다음 시도로 미룬다 — final3RawRetry.test).
+  it("429 한 번 → 재시도 1회 → Sonnet 정식본", async () => {
+    const h = harness([{ status: 429 }, { text }]);
     const d = await h.run();
     expect(d.kind).toBe("publish"); expect(d.kind === "publish" && d.edition).toBe("official");
     expect(d.kind === "publish" && d.meta.writer).toEqual({ provider: "anthropic", model: "claude-sonnet-5-5" });
-    expect(h.a.calls.length).toBeGreaterThanOrEqual(3); expect(h.o.calls).toHaveLength(0); // terra 대체 없음(뒤 호출은 P6c 수리 1회)
+    expect(h.a.calls.length).toBeGreaterThanOrEqual(2); expect(h.o.calls).toHaveLength(0); // terra 대체 없음(뒤 호출은 P6c 수리 1회)
     expect(h.ops.states.get(h.job.reportId)!.phase).toBe("official");
   }, 60_000);
 

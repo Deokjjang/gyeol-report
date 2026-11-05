@@ -141,6 +141,15 @@ describe("presentation contracts", () => {
     expect(html).toContain("전체 동의"); expect(html).not.toContain("<dialog"); expect(html).not.toContain("마케팅"); expect(html).not.toContain("회원 미리보기");
     expect(src("src/components/book/BookCheckout.tsx")).toContain("indeterminate = some && !all");
   });
+  it("최종3: 결제 직전 — v5 책은 탈퇴 전까지 열람·AI 작성 고지, v5 이전은 90일, 둘 다 생성 시작 후 단순 변심 환불 불가", () => {
+    const payload = RUNTIME_FIXTURES[0].payload as ReportInputPayload;
+    const v5 = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} v5Book onPublishing={() => {}} onError={() => {}} />);
+    expect(v5).toContain("탈퇴 전까지 계속 열람"); expect(v5).not.toContain("생성일로부터 90일");
+    expect(v5).toContain("이 리포트는 명리 계산 결과와 MBTI 자료를 바탕으로 AI가 작성했어요.");
+    expect(v5).toContain("책 만들기가 시작되면 단순 변심으로는 환불되지 않아요.");
+    const v4 = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} onPublishing={() => {}} onError={() => {}} />);
+    expect(v4).toContain("생성일로부터 90일"); expect(v4).not.toContain("AI가 작성했어요"); expect(v4).toContain("단순 변심으로는 환불되지 않아요");
+  });
   it("stored version is authoritative and V3/invalid snapshots cannot be regenerated", () => {
     expect(storedBook({ productVersion: "v3", reportVersion: "v4" })).toBeNull();
     expect(storedBook({ productVersion: "v4" })).toBeNull();

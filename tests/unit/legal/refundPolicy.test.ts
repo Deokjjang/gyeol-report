@@ -21,6 +21,7 @@ describe("refund policy constants", () => {
       "wrong_input",
       "minor_cancellation",
       "company_fault",
+      "ticket_report",
     ]);
     expect(refundPolicyStateRows.map((row) => row.statusKo)).toEqual([
       "결제 전",
@@ -33,6 +34,7 @@ describe("refund policy constants", () => {
       "잘못된 입력값",
       "미성년자 법정 취소",
       "회사 귀책 오류",
+      "이용권으로 만든 리포트",
     ]);
   });
 
@@ -41,7 +43,7 @@ describe("refund policy constants", () => {
       "리포트 생성 전에는 결제일로부터 7일 이내 취소 및 환불을 요청할 수 있습니다.",
     );
     expect(refundPolicyRequiredNotices).toContain(
-      "리포트 생성이 시작되거나 결과가 제공된 이후에는 디지털 콘텐츠 특성상 단순 변심에 의한 환불이 제한될 수 있습니다.",
+      "리포트 생성이 시작되거나 결과가 제공된 이후에는 디지털 콘텐츠 특성상 단순 변심에 의한 청약철회(환불)를 할 수 없습니다.",
     );
     expect(refundPolicyRequiredNotices).toContain(
       "미제공, 중복결제, 시스템 오류, 회사 귀책 오류가 확인되는 경우 환불 또는 재제공을 진행합니다.",
@@ -52,11 +54,14 @@ describe("refund policy constants", () => {
     expect(refundPolicyRequiredNotices).toContain(
       "미성년자가 법정대리인 동의 없이 결제한 경우 본인 또는 법정대리인이 계약 취소를 요청할 수 있습니다.",
     );
+    expect(refundPolicyRequiredNotices).toContain(
+      "이용권으로 만든 리포트는 환불하지 않으며, 오류가 확인되면 다시 만들어 드립니다.",
+    );
     expect(refundPolicySupportRequestGuidanceKo).toBe(
-      "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요.",
+      "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요. 이용권으로 만든 리포트는 리포트 주소를 함께 보내주세요.",
     );
     expect(prePaymentRefundNoticeKo).toBe(
-      "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성 시작 또는 결과 제공 후에는 디지털 콘텐츠 특성상 환불이 제한될 수 있습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다.",
+      "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심으로는 환불할 수 없습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드립니다.",
     );
   });
 

@@ -7,6 +7,7 @@ import { validateProductPublication } from "../report-generation/productPublishG
 import { withDeadline } from "../network/withDeadline";
 import { describeReportShare, SHARE_TOKEN_PATTERN, shareUrl } from "./reportShareMetadata";
 import type { ReliabilityStore } from "../payment/paidReportReliabilityStore";
+import { reportAccessOpen } from "../library/model";
 
 // Storage injection for local SQL verification; token generation and validation stay here.
 export type ShareStorePort = {
@@ -62,7 +63,7 @@ export async function loadShareablePublication(reportId: string, validatePublica
   const result = await port.read("read_report", { reportId });
   const snapshot = result.snapshot;
   if (!result.ok || result.status !== "COMPLETED" ||
-      typeof result.expiresAt !== "string" || !(Date.parse(result.expiresAt) > Date.now()) ||
+      typeof result.expiresAt !== "string" || !reportAccessOpen(result.expiresAt) ||
       !isProductPreviewSnapshot(snapshot) || snapshot.reportId !== reportId ||
       snapshot.access.mode !== "paid" ||
       !validatePublication(snapshot.productType, snapshot.draft, snapshot.evidencePacket).ok) return null;

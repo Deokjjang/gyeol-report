@@ -1,6 +1,7 @@
 /** 가입 정보·결제 구매자 입력 검사(화면·서버 공통, 브라우저에서도 쓴다). P6d-ops 2·3. */
-export const MARKETING_CONSENT_VERSION = "2026-11-04.1";
-export const MARKETING_CONSENT_LABEL = "[선택] 새 책·이벤트·할인 소식 받기(이메일·문자·카카오톡). 언제든 끌 수 있어요.";
+/** 혜택 알림(마케팅) 수신 동의(선택). 문구를 바꾸면 버전을 올린다 — 동의·철회 기록(account_consent_events)에 그때 버전과 일시가 남는다. 2026-11-05.1: "혜택 알림 받기"(최종3). */
+export const MARKETING_CONSENT_VERSION = "2026-11-05.1";
+export const MARKETING_CONSENT_LABEL = "[선택] 혜택 알림 받기 — 새 책·이벤트·할인 소식을 이메일·문자·카카오톡으로 보내 드려요. 언제든 끌 수 있어요.";
 export const PROFILE_REQUIRED_CODE = "PROFILE_REQUIRED";
 export const PROFILE_REQUIRED_MESSAGE = "결제와 이용권 사용 전에 가입 정보(이름·이메일)를 입력해 주세요.";
 /** 법정 보관 기간: 전자상거래법(계약·청약철회, 대금 결제·재화 공급 기록 5년). */

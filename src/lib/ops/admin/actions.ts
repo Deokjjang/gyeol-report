@@ -19,7 +19,7 @@ import { lookupToss, lookupTossMany, TOSS_BATCH_LIMIT, TOSS_ERROR_LABEL, type To
  * 대상 주문의 결제·Book·계정 정보는 화면이 보낸 값이 아니라 서버가 주문코드로 다시 읽은 값만 쓴다.
  * 환불·이용권 지급·내보내기는 관리자 PIN(ADMIN_ACTION_PIN)을 다시 입력해야 한다(15분 안 5번 틀리면 15분 잠금).
  */
-export const ADMIN_ACTIONS = ["regenerate", "grant", "refund", "request-done", "provider-enable", "export", "reveal", "refund-warnings", "toss-check", "toss-check-batch", "external-refund", "comp-designate"] as const;
+export const ADMIN_ACTIONS = ["regenerate", "ticket-regenerate", "grant", "refund", "request-done", "provider-enable", "export", "reveal", "refund-warnings", "toss-check", "toss-check-batch", "external-refund", "comp-designate"] as const;
 export type AdminActionName = (typeof ADMIN_ACTIONS)[number];
 export const PIN_ACTIONS: readonly AdminActionName[] = ["refund", "grant", "export", "external-refund", "comp-designate"];
 export const ADMIN_BODY_LIMIT = 4096;
@@ -82,7 +82,7 @@ export async function handleAdminAction(request: NextRequest, action: string, de
   const ctx: Ctx = { action, body, adminId: session.userId, stores, deps };
   try {
     if (PIN_ACTIONS.includes(action)) { const blocked = await checkPin(ctx); if (blocked) return session.finish(blocked); }
-    const run = { regenerate, grant, refund, "request-done": requestDone, "provider-enable": providerEnable, export: exportOrders, reveal,
+    const run = { regenerate, "ticket-regenerate": ticketRegenerate, grant, refund, "request-done": requestDone, "provider-enable": providerEnable, export: exportOrders, reveal,
       "refund-warnings": refundWarnings, "toss-check": tossCheck, "toss-check-batch": tossCheckBatch, "external-refund": externalRefund, "comp-designate": compDesignate }[action];
     return session.finish(await run(ctx));
   } catch { return session.finish(no(500, "ACTION_FAILED", "처리하지 못했어요. 잠시 뒤 다시 시도해 주세요.")); }
@@ -172,6 +172,27 @@ async function grant(ctx: Ctx): Promise<NextResponse> {
   await audit(ctx, "grant_ticket", order.orderCode, { userId: order.userId, quantity, requestId: id, ok, ...(typeof r.grantId === "string" ? { grantId: r.grantId } : {}), ...(ok ? {} : { code: str(r.code) || "FAILED" }) });
   const closed = ok ? await autoClose(ctx, order.paymentOrderId, "이용권 지급") : 0;
   return ok ? reply({ ok: true, quantity, closedRequests: closed, message: `이용권 ${quantity}장을 지급했어요.${closedNote(closed)}` }) : no(409, str(r.code) || "GRANT_FAILED", "이용권을 지급하지 못했어요.");
+}
+
+/**
+ * 이용권 Book 다시 만들기(최종3): 이용권으로 만든 책은 환불하지 않고, 오류가 확인되면 다시 만든다(상품 가치는 결제한 책과 같다).
+ * 주문(주문코드)이 없어 Book 주소 또는 ID(report_…)로 찾는다. 공개된 이용권 Book만 — 결제 Book은 주문 화면의 재생성을 쓴다.
+ */
+export const TICKET_REPORT_ID_RE = /report_[a-z0-9_-]{13,80}/i;
+async function ticketRegenerate(ctx: Ctx): Promise<NextResponse> {
+  const reportId = str(ctx.body.reportId).match(TICKET_REPORT_ID_RE)?.[0] ?? "";
+  if (!reportId) return no(400, "REPORT_ID_INVALID", "Book 주소 또는 ID(report_…)를 확인해 주세요.");
+  const db = ctx.stores.db;
+  if (!db) return no(503, "STORAGE_UNAVAILABLE", "저장소에 연결하지 못했어요.");
+  const { data, error } = await db.from("paid_report_snapshots").select("status,ticket_redemption_id").eq("report_id", reportId).maybeSingle();
+  if (error) return no(503, "STORAGE_FAILED", "Book을 읽지 못했어요.");
+  if (!data || !data.ticket_redemption_id) return no(404, "TICKET_BOOK_NOT_FOUND", "이용권으로 만든 Book을 찾지 못했어요. 결제한 Book은 주문 화면에서 다시 만들어 주세요.");
+  if (data.status !== "COMPLETED") return no(409, "NOT_REGENERATABLE", "공개된 Book만 다시 만들 수 있어요(만드는 중이거나 실패한 이용권은 자동으로 복구돼요).");
+  const r = await ctx.stores.generation.call("regenerate", { reportId });
+  const ok = r.ok === true;
+  await audit(ctx, "admin_regenerate", reportId, { reportId, origin: "ticket", ok, ...(ok ? {} : { code: str(r.code) || "FAILED" }) });
+  return ok ? reply({ ok: true, mode: "replace", message: "이용권 Book 정식본 교체를 요청했어요. 다음 교체 레인에서 처리돼요." })
+    : no(409, str(r.code) || "REGENERATE_FAILED", "다시 만들기 요청이 거절됐어요.");
 }
 
 /** 환불(2단계 확인): 사유(1~200자) + 주문코드를 그대로 다시 입력해야 한다. 요청 저장 → 그 1건을 바로 처리. */

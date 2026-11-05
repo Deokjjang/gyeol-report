@@ -7,6 +7,7 @@ import type { Brief, ChapterBrief, Material } from "@/lib/brief/schema";
 import { STYLE_EXAMPLES } from "./examples";
 import { materialTable, swapDeep } from "./materials";
 import { WRITER_PROMPT_VERSION, WRITER_SYSTEM } from "./system";
+import { matchJob } from "@/lib/brief/props";
 
 /** 작가 입력 옵션(P6c A1): 지식 DB가 있으면 원문 문장을 재료(씨앗·방향·핵심 뜻)로 바꿔 보낸다. 없으면(단위 시험) 브리프 그대로. */
 export type WriterInputOptions = { readonly knowledge?: Knowledge };
@@ -65,7 +66,9 @@ export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters
 /** 원국 요약: 일간 그림 별명·비유는 빼고 핵심 이미지는 그림 없는 뜻만(P6b B-2·B-4, 최종판2 1-1: 엔진 그림 줄을 본문에 그대로 옮겨 같은 일주 책마다 같은 그림이 나왔다). */
 const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage"), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.meaning ?? c.coreImage.line });
 /** 궁합(최종판2 1-1·1-3): 관계 이미지·인물 줄은 그림 없는 뜻으로, 성격표는 브리프 맨 앞(profiles)에 따로. */
-const writerCompat = (c: NonNullable<Brief["compatibility"]>) => ({ ...omit(c, "profiles", "pairImage"), pairImage: c.pairImage.meaning ?? c.pairImage.line });
+/** 최종판3 2b: 공통 특징 규칙(두 사람 모두 가진 것은 「공통」으로만, 차이의 근거·한 사람만의 특징으로 쓰지 않는다). */
+export const COMMON_RULE = "commonTraits는 두 사람이 모두 가진 것이다. '두 사람 모두'로만 쓰고, 차이의 근거나 한 사람만의 특징('○○님의 반안살')으로 쓰지 않는다";
+const writerCompat = (c: NonNullable<Brief["compatibility"]>) => ({ ...omit(c, "profiles", "pairImage", "commonIds", "commonNames"), pairImage: c.pairImage.meaning ?? c.pairImage.line });
 const PROFILE_RULE = "두 사람의 바뀌지 않는 성향(에너지·앞에 나서는지·다툼 때 반응·표현 방식·결정 속도)이다. 모든 장의 장면과 설명은 이 줄을 따른다. 두 사람을 묶어 말할 때(두 사람은·둘 다)는 두 사람 칸이 같을 때만 묶는다";
 
 /**
@@ -140,6 +143,7 @@ function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Reco
   const swapped = swapDeep(out, table);
   const fn = (b: Brief["mbti"]) => { const p = b && opts.knowledge!.mbti.get(b.type); return p && p.cognitiveFunctions.every(c => table.plain.has(c.easy)) ? p.cognitiveFunctions.map(c => `${table.plain.get(c.easy)}(${c.code}) · ${c.role}: ${table.exact.get(c.easy)}`) : null; };
   const withFn = (m: unknown, b: Brief["mbti"]) => { const f = fn(b); return m && f ? { ...(m as object), functions: f } : m; };
+  assignActions(swapped, brief);
   return ownGlyphsOnly({ ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
 }
 
@@ -164,14 +168,68 @@ function ownGlyphsOnly(out: Record<string, unknown>, brief: Brief): Record<strin
   return res;
 }
 
+/**
+ * 최종판3 2a: 처방 슬롯. 절마다 행동 조언 하나(act)를 그 절 재료의 「… → 행동」 줄에서 고른다. 같은 처방 계열(하루 두기·한 줄 적기·월 한도 등)은 책에 한 번,
+ * 이전 책(원장 avoidActions) 계열도 쓰지 않는다. 이미 배정된 계열의 행동 꼬리는 다른 절 재료에서 뗀다(덜 만들기).
+ * 실제 결함(최종판2): 「서운함은 그날 한 줄」 4권 모두, 「하루 두고 답하기」 커리어 4번.
+ */
+export const ACTION_FAMILIES: readonly [RegExp, string][] = [
+  [/하루(만)? (두|묵|시간|미루|기다|지나)|하룻밤|24시간/, "하루 두기"], [/한 ?줄(로|만|씩)? ?(말|적|쓰|전|남기|정리)|한 문장으로/, "한 줄 말하기"], [/한도|상한/, "지출 한도"], [/견적|비교해 보|두 곳 이상/, "견적 비교"],
+  [/물어보|묻(는|기)|질문(을|하나)/, "먼저 묻기"], [/적어 두|기록|메모|노트|일기/, "적어 두기"], [/산책|걷기|걸어/, "걷기"], [/알람|타이머|마감 시각/, "시간 정하기"], [/통장|자동이체|적금/, "통장 나누기"],
+  [/쉬는 날|휴식|비워 두|충전/, "쉬는 시간"], [/거절|안 된다고/, "거절 연습"], [/고맙|감사/, "고마움 말하기"], [/목록|리스트|체크/, "목록 만들기"],
+];
+export const actionFamily = (s: string): string => ACTION_FAMILIES.find(([re]) => re.test(s))?.[1] ?? s.replace(/[^가-힣]/g, "").slice(0, 8);
+const ARROW = /^(.*?)\s*→\s*(.+)$/;
+function assignActions(out: Record<string, unknown>, brief: Brief): void {
+  const used = new Set<string>((brief.ledgerNotes?.avoidActions ?? []).map(actionFamily));
+  const chapters = out.chapters as { sections?: { q: string; materials: unknown[]; act?: string }[] }[] | undefined;
+  for (const c of chapters ?? []) for (const s of c.sections ?? []) {
+    const lines = s.materials.filter((m): m is string => typeof m === "string" && ARROW.test(m));
+    const pick = lines.map(m => m.match(ARROW)![2].trim()).find(x => !used.has(actionFamily(x)));
+    if (pick) { s.act = pick; used.add(actionFamily(pick)); }
+    // 이미 쓴 계열의 행동 꼬리는 떼고 앞부분(상황)만 남긴다.
+    s.materials = s.materials.map(m => { if (typeof m !== "string") return m; const x = m.match(ARROW); return x && x[2].trim() !== pick && used.has(actionFamily(x[2])) ? x[1].trim() : m; });
+  }
+}
+
+/** 최종판3 2: 상품·입력별 책 규칙(작가에게 보이는 규칙 줄). 문체 지침은 그대로 두고 사실·구조 규칙만 더한다. */
+export function bookRules(brief: Brief): string[] {
+  const p = brief.product, rel = brief.person.facts.relationship, year = brief.chart.thisYear;
+  const rules = ["처방(행동 조언)은 절마다 그 절의 act 하나만 쓴다. act가 없는 절은 그 절 재료에서 새 행동 하나를 만들고, 다른 절·avoidActions(이전 책 처방)와 같은 행동은 되풀이하지 않는다"];
+  if (p === "saju_mbti_full") rules.push(
+    "[표지]와 1장에는 직업 장면·직업 말(직함·업무·회사·가게)을 쓰지 않는다. 성향 장은 장마다 직업 장면 1개 이하, 일·돈 장만 예외",
+    "입력에 없는 직업 상황(투자자·투자 유치·직원·팀원·면접·평가 시즌·실적표·'처음 만든 ~')은 쓰지 않는다",
+    `본문에 연·월 숫자를 쓰지 않는다. 운 설명은 '올해(${year.ganji.hangul})'를 한 번만, 행동 제안은 '앞으로 한 달'로`,
+    "[표지]에는 직업·나이를 쓰지 않는다");
+  if (p === "love_marriage_child") rules.push("[표지]에 직업 장소(가게·카페·사무실·작업실 등)를 쓰지 않는다");
+  if (p === "love_marriage_child" || p === "saju_mbti_compatibility") {
+    if (rel === "dating" || rel === "married") rules.push("지금 만나는 사이다. 처음 만남을 검증하는 질문·'초반부터' 위험 신호 장면은 쓰지 않고, 지금 관계를 점검하는 말로 쓴다");
+    if (rel === "single") rules.push("솔로다. 지금 만나는 상대가 있다고 가정하지 않는다");
+  }
+  if (brief.ledgerNotes?.avoidCoverMotifs?.length) rules.push(`[표지]에 avoidCoverMotifs(같은 사람 이전 책 표지 모티프: ${brief.ledgerNotes.avoidCoverMotifs.join("·")})를 쓰지 않는다`);
+  return rules;
+}
+
+/** 최종판3 2c: 입력에 없는 직업 상황을 전제하는 소품·업무 씨앗(투자자·투자 유치·팀원·직원·채용·실적·평가). 입력 직업 글에 그 낱말이 있을 때만 쓴다. */
+export const JOB_ASSUME = /투자|팀원|팀 (회의|미팅)|주간 팀|직원|채용|면담|평가 시즌|실적|사업자 통장/;
+function jobFilter(brief: Brief): { hint: (h: string, chapterId: string) => boolean; scene: (s: string) => boolean } {
+  const detail = brief.person.facts.job.detail, job = matchJob(detail);
+  const jobWords = new Set([...(job?.props ?? []), ...Object.values(job?.stages ?? {}).flat()]);
+  const assumed = (s: string) => { const m = s.match(JOB_ASSUME); return Boolean(m) && !detail.includes(m![0]); };
+  const full = brief.product === "saju_mbti_full";
+  return { scene: s => !assumed(s), hint: (h, id) => !assumed(h) && !(full && !/^(work|money)$/.test(id) && jobWords.has(h)) };
+}
+
 function renderRaw(brief: Brief): Record<string, unknown> {
   const { style, timeline, fortunes } = brief;
+  const jf = jobFilter(brief);
   const { traits, shadows } = writerFacing(brief);
   return {
     // 최종판2 1-3: 궁합은 사람별 고정 성격표를 브리프 맨 앞에 한 줄씩.
     ...(brief.compatibility?.profiles?.length ? { profiles: { rule: PROFILE_RULE, people: brief.compatibility.profiles.map(p => p.line) } } : {}),
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView"),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView", "ledgerNotes"),
     ...(brief.compatibility ? { compatibility: writerCompat(brief.compatibility) } : {}),
+    ...(brief.compatibility?.commonIds?.length ? { commonTraits: { rule: COMMON_RULE, items: brief.compatibility.commonNames ?? [] } } : {}),
     chart: writerChart(brief.chart),
     mbti: brief.mbti ? omit(brief.mbti, "image") : null,
     // 그림 별명·이미지·한 줄은 내부 별칭(P6b B-2): 작가는 이름(한자)·뜻(meaning)·나에게(forYou)만 받는다.
@@ -180,15 +238,20 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     // 좋은 기운이 trait와 같으면 뜻·나에게는 trait 쪽에만 둔다.
     fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "easyName", "image", "oneLiner", "meaning", "forYou") : omit(f, "featureId", "easyName", "image", "oneLiner")),
     // 최종판 1-5(P6e 3): 궁합은 특성마다 주인(그 기운을 가진 사람 이름)을 붙인다.
-    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs"), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
+    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs"), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: brief.compatibility.commonIds?.includes(t.featureId) ? "두 사람 모두(공통)" : t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
     shadows,
     // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
     // "badges"라는 키 이름이 본문 낱말 "배지"로 새어 나갔다(P6b E-6): 작가에게는 marks로 준다.
     ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => ({ ...omit(e, "colors", "ganji", "imageLine", "period", "todo", "review", "badges", "head", "caution"), marks: e.badges })) } } : {}),
     // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).
     style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, forbidden: style.forbidden },
+    bookRules: bookRules(brief),
+    ...(brief.ledgerNotes?.avoidActions?.length ? { avoidActions: brief.ledgerNotes.avoidActions } : {}),
     // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).
-    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => ({ q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars) })),
+    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => ({ q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars),
+      ...(c.sceneHint ? { sceneHint: c.sceneHint.filter(h => jf.hint(h, c.id)) } : {}) })),
+    // 최종판3 2c: 종합은 업무 씨앗을 주지 않는다(직업 장면은 일·돈 장의 장면 힌트로만). 다른 상품은 입력 밖 가정 씨앗만 뺀다.
+    person: brief.product === "saju_mbti_full" ? omit(brief.person, "workScenes") : brief.person.workScenes ? { ...brief.person, workScenes: Object.fromEntries(Object.entries(brief.person.workScenes).map(([k2, v]) => [k2, v.filter(jf.scene)])) } : brief.person,
   };
 }
 

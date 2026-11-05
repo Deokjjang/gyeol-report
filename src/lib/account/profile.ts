@@ -4,14 +4,21 @@
  */
 import { NextResponse, type NextRequest } from "next/server";
 import type { AccountPort } from "./handler";
-import { accountSession, safeAccountNext, safeDisplayName } from "./policy";
+import { accountSession, safeAccountNext, safeDisplayName, type ConsentRecord } from "./policy";
 import { opsSameOrigin, opsOriginAllowed } from "../ops/origin";
 import type { AccountOpsStore, AuditEntry } from "../ops/store";
 
 export { MARKETING_CONSENT_VERSION, MARKETING_CONSENT_LABEL, PROFILE_REQUIRED_CODE, PROFILE_REQUIRED_MESSAGE, ORDER_RETENTION_YEARS, normalizePhone, normalizeEmail, validateContact } from "./contact";
 export type { ContactValue, ProviderFacts } from "./contact";
-import { MARKETING_CONSENT_VERSION, ORDER_RETENTION_YEARS, validateContact, type ContactValue, type ProviderFacts } from "./contact";
+import { MARKETING_CONSENT_VERSION, ORDER_RETENTION_YEARS, PROFILE_REQUIRED_CODE, validateContact, type ContactValue, type ProviderFacts } from "./contact";
 const RETURN_COOKIE = "gyeol-account-return";
+
+/** 혜택 알림 현재 상태와 마지막 동의·철회 일시(기록은 최신이 먼저). 화면이 "언제 동의했는지"를 보여 준다(정보통신망법 수신 동의 처리 결과 안내). */
+export function marketingState(contact: Pick<ContactValue, "marketing"> | null, consents: readonly ConsentRecord[]): { agreed: boolean; at: string | null } {
+  const latest = consents.find(r => r.consent_type === "marketing");
+  const agreed = contact?.marketing === true;
+  return { agreed, at: latest && latest.is_agreed === agreed ? latest.recorded_at : null };
+}
 
 export type ProfileDeps = {
   ops: AccountOpsStore;
@@ -41,7 +48,7 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
       const read = await deps.ops.call("read", user.id);
       if (!read.ok) return json({ code: "STORAGE_UNAVAILABLE" }, 503);
       const contact = read.contact as (ContactValue & { upgradeState?: string }) | null;
-      return json({ ok: true, contact, prefill: { name: contact?.name ?? safeDisplayName(user.displayName), email: contact?.email ?? trusted ?? facts?.email ?? "", emailLocked: Boolean(trusted) && !contact, emailFrom: trusted ? user.provider : null,
+      return json({ ok: true, contact, marketing: marketingState(contact, snapshot.consents), prefill: { name: contact?.name ?? safeDisplayName(user.displayName), email: contact?.email ?? trusted ?? facts?.email ?? "", emailLocked: Boolean(trusted) && !contact, emailFrom: trusted ? user.provider : null,
         emailNotice: !trusted && user.provider === "kakao" ? (facts?.emailDeclinedAt ? "카카오 이메일을 받지 못했어요. 직접 입력해 주세요." : "카카오 이메일이 확인되지 않았어요. 직접 입력해 주세요.") : null } });
     }
     if (action === "withdraw" && request.method === "GET") {
@@ -65,6 +72,18 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
       await deps.audit({ actor: "system", action: "account_withdrawn", target: user.id, detail: { provider: user.provider, kakaoUnlink: unlink, authDeleted: deleted, retainedOrders: done.retainedOrders ?? 0, closedBooks: done.closedBooks ?? 0 } });
       await port.logout();
       return json({ ok: true });
+    }
+    if (body.op === "marketing") {
+      // 마이페이지 혜택 알림 켜기/끄기(최종3): 저장된 가입 정보 그대로 + 동의 여부만 바꾼다. 동의·철회 일시는 account_consent_events에 남는다.
+      if (typeof body.marketing !== "boolean" || typeof body.requestId !== "string" || !/^[0-9a-f-]{36}$/i.test(body.requestId)) return json({ code: "PROFILE_INVALID", error: "다시 시도해 주세요." }, 400);
+      const read = await deps.ops.call("read", user.id);
+      const current = read.ok ? read.contact as ContactValue | null : undefined;
+      if (current === undefined) return json({ code: "STORAGE_UNAVAILABLE", error: "저장하지 못했습니다. 다시 시도해 주세요." }, 503);
+      if (current === null) return json({ code: PROFILE_REQUIRED_CODE, error: "가입 정보를 먼저 입력해 주세요." }, 409);
+      const saved = await deps.ops.call("save", user.id, { requestId: body.requestId, name: current.name, email: current.email, emailSource: current.emailSource, phone: current.phone ?? null, marketing: body.marketing, marketingVersion: MARKETING_CONSENT_VERSION });
+      if (!saved.ok) return json({ code: "STORAGE_UNAVAILABLE", error: "저장하지 못했습니다. 다시 시도해 주세요." }, 503);
+      const after = await port.read(user);
+      return json({ ok: true, marketing: marketingState(saved.contact as ContactValue | null, after?.consents ?? []) });
     }
     const checked = validateContact(body, trusted ? { ...(facts ?? {}), emailTrusted: true, email: trusted } as NonNullable<ProviderFacts> : facts);
     if (!checked.ok) return json({ code: "PROFILE_INVALID", field: checked.field, error: checked.message }, 400);

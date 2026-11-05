@@ -284,6 +284,25 @@ export function TossBatchCheck() {
   );
 }
 
+/** 이용권 Book 다시 만들기(최종3): 이용권 책은 환불 대신 재생성. 주문코드가 없어 Book 주소 또는 ID로 찾는다. */
+export function TicketBookRegenerate() {
+  const a = useAction();
+  const [q, setQ] = useState("");
+  return (
+    <section className={styles.panel} style={{ marginTop: 12 }} data-ticket-regenerate>
+      <h3>이용권 Book 다시 만들기</h3>
+      <p className={styles.note}>이용권으로 만든 책은 환불하지 않고, 오류가 확인되면 다시 만들어요. 고객이 보낸 책 주소(/reports/report_…) 또는 Book ID를 넣어 주세요.</p>
+      <label className={styles.note} htmlFor="ticket-regen-q">Book 주소 · ID</label>
+      <input id="ticket-regen-q" className={styles.input} autoComplete="off" spellCheck={false} maxLength={200} value={q} onChange={e => setQ(e.target.value)} />
+      <div className={styles.row}>
+        <button type="button" className={styles.primary} disabled={a.busy || !q.trim()}
+          onClick={async () => { if (!window.confirm("이 이용권 Book을 다시 만들까요?")) return; const r = await a.run("ticket-regenerate", { reportId: q.trim() }); if (r.ok) setQ(""); }}>{a.busy ? "요청 중…" : "다시 만들기"}</button>
+      </div>
+      {a.view}
+    </section>
+  );
+}
+
 /** 보상 A 지정(PIN). 환불 완료 주문의 주문코드 또는 토스 주문번호. */
 export function CompDesignate({ pinReady }: { pinReady: boolean }) {
   const a = useAction();

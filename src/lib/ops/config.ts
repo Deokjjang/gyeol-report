@@ -25,34 +25,39 @@ export function isAdminUser(id: unknown, env: Env = process.env): boolean { retu
 
 export type GiftEventConfig = { readonly active: boolean; readonly start: string; readonly end: string; readonly maxPerAccount: number; readonly bonusMax: number; readonly products: readonly string[]; readonly validDays: number };
 const int = (v: string | undefined, d: number, max: number) => { const n = Number(v); return Number.isInteger(n) && n >= 0 && n <= max ? n : d; };
-/** 켜짐(GIFT_EVENT_ENABLED=1)이고 기간(GIFT_EVENT_START·END, ISO)이 맞아야 active. 상한 기본 2장·보너스 2장·유효 30일, 대상 상품 기본 = 판매 중인 전부. */
+/**
+ * 이용권 유효기간(v5 최종3): 앞으로 발급하는 모든 이용권(이벤트 1+1·친구 보너스·보상 A·B·관리자 지급)은 발급일로부터 30일.
+ * 선물은 처음 발급 기한을 그대로 넘긴다. 이미 발급한 이용권은 발급 때 기한 그대로. SQL(20261105120000_v5_final3_tickets_reading.sql)도 30일을 넘기지 않는다.
+ */
+export const TICKET_VALID_DAYS = 30;
+/** 켜짐(GIFT_EVENT_ENABLED=1)이고 기간(GIFT_EVENT_START·END, ISO)이 맞아야 active. 상한 기본 2장·보너스 2장·유효 30일(고정), 대상 상품 기본 = 판매 중인 전부. */
 export function giftEventConfig(env: Env = process.env, now = Date.now()): GiftEventConfig {
   const start = env.GIFT_EVENT_START ?? "", end = env.GIFT_EVENT_END ?? "";
   const valid = Number.isFinite(Date.parse(start)) && Number.isFinite(Date.parse(end)) && Date.parse(start) < Date.parse(end);
   const listed = (env.GIFT_EVENT_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
   const products = (listed.length ? listed : [...ALL_PRODUCTS]).filter(p => productOnSale(p, env));
   return { active: env.GIFT_EVENT_ENABLED === "1" && valid && now >= Date.parse(start) && now < Date.parse(end), start: valid ? new Date(start).toISOString() : "", end: valid ? new Date(end).toISOString() : "",
-    maxPerAccount: int(env.GIFT_EVENT_MAX_PER_ACCOUNT, 2, 20), bonusMax: int(env.GIFT_EVENT_BONUS_MAX, 2, 20), products, validDays: int(env.GIFT_EVENT_VALID_DAYS, 30, 365) || 30 };
+    maxPerAccount: int(env.GIFT_EVENT_MAX_PER_ACCOUNT, 2, 20), bonusMax: int(env.GIFT_EVENT_BONUS_MAX, 2, 20), products, validDays: TICKET_VALID_DAYS };
 }
 
 export type CompConfig = {
   readonly enabled: boolean;
-  /** A: 총 장수(장마다 내가 쓰기/선물 선택) · 유효일. */
+  /** A: 총 장수(장마다 내가 쓰기/선물 선택) · 유효일(30일 고정, TICKET_VALID_DAYS). */
   readonly aQty: number; readonly aDays: number;
-  /** B: 장수(장마다 내가 쓰기/선물 선택) · 유효일. */
+  /** B: 장수(장마다 내가 쓰기/선물 선택) · 유효일(30일 고정). */
   readonly bQty: number; readonly bDays: number;
   /** 보상 이용권으로 만들 수 있는 상품(기본 4종: 종합·커리어·연애·궁합). 이용권 자체에 담겨 사용 때 서버가 다시 확인한다. */
   readonly products: readonly string[];
 };
 export const COMP_DEFAULT_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] as const;
 const compInt = (v: string | undefined, d: number, min: number, max: number) => { const n = Number(v); return v !== undefined && v.trim() !== "" && Number.isInteger(n) && n >= min && n <= max ? n : d; };
-/** COMP_ENABLED=1이어야 지급·안내가 켜진다(지정·집계는 꺼져 있어도 된다). 모든 장수·유효일·상품은 환경 설정값. */
+/** COMP_ENABLED=1이어야 지급·안내가 켜진다(지정·집계는 꺼져 있어도 된다). 장수·상품은 환경 설정값, 유효일은 30일 고정(최종3). */
 export function compConfig(env: Env = process.env): CompConfig {
   const listed = (env.COMP_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
   return {
     enabled: env.COMP_ENABLED === "1",
-    aQty: compInt(env.COMP_A_QTY, 2, 0, 5), aDays: compInt(env.COMP_A_VALID_DAYS, 60, 1, 365),
-    bQty: compInt(env.COMP_B_QTY, 1, 0, 5), bDays: compInt(env.COMP_B_VALID_DAYS, 30, 1, 365),
+    aQty: compInt(env.COMP_A_QTY, 2, 0, 5), aDays: TICKET_VALID_DAYS,
+    bQty: compInt(env.COMP_B_QTY, 1, 0, 5), bDays: TICKET_VALID_DAYS,
     products: listed.length ? [...new Set(listed)] : [...COMP_DEFAULT_PRODUCTS],
   };
 }

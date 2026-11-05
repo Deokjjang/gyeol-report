@@ -34,13 +34,14 @@ export function MbtiInput({ person, change, role }: { person: PersonInputState; 
   return <label>{role} MBTI<select value={person.mbtiType} onChange={e => change({ ...person, mbtiType: e.target.value })}>{MBTI_TYPES.map(v => <option key={v} value={v}>{v || "모름"}</option>)}</select></label>;
 }
 
-export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false, closed = [] }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean; closed?: readonly string[] }) {
+/** v5Products(서버 WRITER_V5_PRODUCTS): 이 상품이 v5(AI 작가)로 발행되는지 — 결제 직전 열람 기간(탈퇴 전까지 / 90일)과 AI 작성 고지를 고른다(최종3). */
+export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false, closed = [], v5Products = [] }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean; closed?: readonly string[]; v5Products?: readonly string[] }) {
   const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0];
   // P6d-ops 1: 판매를 잠시 닫은 책(대운·세운)은 입력·결제 대신 공개 안내. 서버(결제·이용권 API)도 같은 설정으로 거절한다.
   if (closed.includes(book.productKey)) return <SalesClosedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />;
   // Product is the component key supplied by the wrapper below via navigation;
   // drafts are additionally namespaced per product and cannot activate routes.
-  return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} />;
+  return <BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} />;
 }
 function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
@@ -55,7 +56,7 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
     </div></section>
   </main>;
 }
-function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean }) {
+function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled, v5Book }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean; v5Book: boolean }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(initial ?? emptyBookForm(policy.currentYear)), [step, setStep] = useState(0), [ready, setReady] = useState(false);
@@ -146,7 +147,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     {internal && publishing ? <div data-observed-status="REQUESTED" data-intermediate-states="decorative"><Publishing book={book} name={state.person.name} state={PUBLISHING_STATES[decoration]} notice="내부 검수 · 실제 결제 없음" /><p className={f.status} role="status">책을 생성하고 있습니다. 종이·제본 움직임은 연출이며 진행률이 아닙니다.</p></div> : null}
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">
-      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
+      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Book} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
         <p className={s.eyebrow}>{title} / {String(step + 1).padStart(2, "0")}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
         {step === 0 ? <>{pair ? <label>관계 유형<select value={state.category} onChange={e => update({ ...state, category: e.target.value as CompatibilityRelationshipType })}>{CATEGORIES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} errors={errors} now={now} requiredGender={false} /> : null}</> : null}
         {step === 1 ? <div className={s.fields}><MbtiInput person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} role={pair ? roles.personA : ""} />{pair ? <MbtiInput person={state.personB} change={p => update({ ...state, personB: p })} role={roles.personB} /> : <>

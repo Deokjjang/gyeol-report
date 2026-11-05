@@ -58,7 +58,7 @@ export default async function Page({ params }: { params: Promise<{ code: string 
       <InputSection input={d.input} />
       <Section title="Book">{!d.book ? <p className={styles.note}>Book 기록이 없어요.</p> : <Dl rows={[
         ["열기", o.reportId ? <Link key="b" href={`/reports/${encodeURIComponent(o.reportId)}`}>/reports/{o.reportId}</Link> : "-"],
-        ["상태", bookStatusLabel(d.book.status)], ["발행", kst(d.book.publishedAt)], ["열람 기한", kst(d.book.expiresAt)],
+        ["상태", bookStatusLabel(d.book.status)], ["발행", kst(d.book.publishedAt)], ["열람 기한", d.book.expiresAt === "infinity" ? "기한 없음(v5: 탈퇴·삭제 요청·서비스 종료까지)" : kst(d.book.expiresAt)],
         ["상품 버전", s(d.book.productVersion)], ["작가", writerLabel(d.book.meta)], ["생성 비용", usd(d.book.costUsd)],
       ]} />}</Section>
       <Section title="생성 상태">

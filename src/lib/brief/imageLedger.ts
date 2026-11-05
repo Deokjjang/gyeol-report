@@ -30,6 +30,12 @@ const NOT_LINE = /(다|요|죠)[.!]?$|이렇게|보이는 순간|^\d+|[?]/;
 const keep = (v: LedgerView | undefined) => (x: { book?: string; at?: string; people?: readonly string[]; product?: string }) => (!v?.exclude || x.book !== v.exclude) && (!v?.before || !x.at || x.at < v.before)
   && !(v?.self && x.product === v.self.product && (x.people ?? []).some(p => v.self!.people.includes(p)));
 /** 이 일주들(한자 간지)의 피할 이미지 줄(중복 없이). */
+/** 최종판3 2g: 표지 모티프 계열(같은 사람 이전 책 표지와 계열이 같으면 피한다 — 장소담 3권 모두 작은 불: 난로·촛불·숯불). */
+export const COVER_MOTIFS: Readonly<Record<string, RegExp>> = {
+  "작은 불": /촛불|숯불|불씨|난로|등불|랜턴|불빛|모닥불|촛대|화로|성냥|불꽃|횃불|캠프파이어/, "큰 나무": /나무|숲|가지|뿌리|새싹|줄기/, "물": /강물|강(?![가-힣])|빗물|샘|호수|바다|물결|시냇물|이슬/,
+  "흙": /흙|화분|들판|언덕|밭|대지|도자기/, "쇠": /칼|쇠|바늘|금속|열쇠|칼날|보석/, "빛": /햇살|햇빛|노을|별빛|달빛|등대/,
+};
+export const coverMotifs = (line: string): string[] => Object.entries(COVER_MOTIFS).filter(([, re]) => re.test(line)).map(([k]) => k);
 export function avoidImagesFor(dayPillars: readonly string[], v?: LedgerView, l: ImageLedger = IMAGE_LEDGER): string[] {
   return [...new Set(dayPillars.flatMap(d => (l.byDayPillar[d] ?? []).filter(keep(v)).map(x => x.line.trim())).filter(x => x.length >= 4 && !NOT_LINE.test(x)))];
 }

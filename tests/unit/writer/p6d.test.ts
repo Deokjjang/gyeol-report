@@ -42,12 +42,13 @@ const flagged = (flags: readonly LintFlag[], rule: string, part: string) => flag
 const lintStored = (file: string, b: Brief) => { const { chapters, plan } = stored(file, b); return { flags: lintBook(chapters, lintContext(b, k, plan, [])), chapters }; };
 
 describe("P6d A 십성 묶음 세기 = 만세력 오행 칸 가중값 하나", () => {
-  it("하람 회귀: 관성 강 · 비겁 강 · 식상 보통 · 인성 약 · 재성 약(브리프·커리어 근거·검사가 같은 값)", () => {
+  // 최종판3 1: 비겁은 일간 자신(1)을 뺀다 → 하람 비겁 강(3.6) → 보통(2.6).
+  it("하람 회귀: 관성 강 · 비겁 보통 · 식상 보통 · 인성 약 · 재성 약(브리프·커리어 근거·검사가 같은 값)", () => {
     const s = calculateSaju({ birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "" as never, calendarType: "SOLAR", gender: "MALE", timezone: "Asia/Seoul" });
     const g = groupStrength(s);
-    expect([g.OFFICER.level, g.PEER.level, g.OUTPUT.level, g.RESOURCE.level, g.WEALTH.level]).toEqual(["strong", "strong", "medium", "weak", "weak"]);
-    expect([g.OFFICER.value, g.PEER.value, g.OUTPUT.value]).toEqual([s.elements.weighted.WATER, s.elements.weighted.FIRE, s.elements.weighted.EARTH].map(v => Math.round(v * 100) / 100));
-    for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child"]) expect(brief(product, PEOPLE.c1).chart.groups!.levels).toEqual({ 비겁: "강", 식상: "보통", 재성: "약", 관성: "강", 인성: "약" });
+    expect([g.OFFICER.level, g.PEER.level, g.OUTPUT.level, g.RESOURCE.level, g.WEALTH.level]).toEqual(["strong", "medium", "medium", "weak", "weak"]);
+    expect([g.OFFICER.value, g.PEER.value, g.OUTPUT.value]).toEqual([s.elements.weighted.WATER, s.elements.weighted.FIRE - 1, s.elements.weighted.EARTH].map(v => Math.round(v * 100) / 100));
+    for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child"]) expect(brief(product, PEOPLE.c1).chart.groups!.levels).toEqual({ 비겁: "보통", 식상: "보통", 재성: "약", 관성: "강", 인성: "약" });
     // 진로 판정(직무·진로 다섯 갈래)도 같은 값: "관성 강함".
     const career = brief("career_money_study", PEOPLE.c1);
     const facts = career.chapters.flatMap(c => (c.sections ?? []).flatMap(x => x.materials)).flatMap(m => m.kind === "evidence" ? m.facts : []).join(" ");
@@ -97,7 +98,8 @@ describe("P6d C·E 사실·위치·시점", () => {
     expect(D.dayunYearClaim("대운의 마지막 해라 정리가 먼저예요.", 10)).toBeNull();
     expect(D.dayunYearClaim("이번 10년 흐름의 마지막 해예요.", 9)).toBe("last≠9/10");
     // 전환 해 머리 문장은 새 대운 이름과 십성.
-    expect(b.timeline!.entries.find(e => e.key === "2032")!.head).toBe("2032년 임자(壬子)는 정관(正官)이 하늘에, 편관(偏官)이 땅에 들어오는 해예요. 이 해부터 경신(庚申) 대운이 시작되고, 10년의 중심 기운은 정재(正財)예요.");
+    // 최종판3 8: 교운 달은 공통 대운 표기(labels.dayunLabel)의 달 그대로.
+    expect(b.timeline!.entries.find(e => e.key === "2032")!.head).toBe("2032년 임자(壬子)는 정관(正官)이 하늘에, 편관(偏官)이 땅에 들어오는 해예요. 이 해 12월 무렵부터 경신(庚申) 대운이 시작되고, 10년의 중심 기운은 정재(正財)예요.");
   });
   it("궁합 '둘 다 X'는 두 사람 엔진 값으로: 하람×서윤 '둘 다 재성이 부족'·'둘 다 태가 있고'·'둘 다 관살혼잡'", () => {
     const b = brief("saju_mbti_compatibility", PEOPLE.c1, { partner: PEOPLE.c2, relationshipType: "love" });
