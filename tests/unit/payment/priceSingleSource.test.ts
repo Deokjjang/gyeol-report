@@ -11,7 +11,7 @@ import { preparePaymentCheckoutSession } from "../../../src/lib/payment/paymentC
 import { confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliabilityStore";
 import { recoverPendingPayment } from "../../../src/lib/payment/paymentConfirmRecovery";
-import { getReportProduct, isDirectReportPaymentAmount, REPORT_PRICE_KRW, REPORT_PRICE_LABEL_KO } from "../../../src/lib/payment/reportProductCatalog";
+import { formatKrw, getReportProduct, isDirectReportPaymentAmount, REPORT_PRICE_KRW, REPORT_PRICE_LABEL_KO, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 import { reportProductTypes } from "../../../src/lib/payment/reportProductTypes";
 import type { TossConfirmRequest } from "../../../src/lib/payment/tossConfirmTypes";
 import { paidWorkerSql } from "../../helpers/paidWorkerSql";
@@ -19,22 +19,25 @@ import { paidWorkerSql } from "../../helpers/paidWorkerSql";
 const walk = (dir: string): string[] => readdirSync(dir).flatMap(n => { const p = join(dir, n); return statSync(p).isDirectory() ? walk(p) : /\.(ts|tsx)$/.test(n) ? [p] : []; });
 
 describe("가격 단일 출처", () => {
-  it("모든 상품의 금액·표시 가격이 REPORT_PRICE_KRW에서 나온다", () => {
+  it("모든 상품의 금액·표시 가격이 상품별 표(REPORT_PRICE_TABLE_KRW)에서 나온다", () => {
     for (const type of reportProductTypes) {
       const p = getReportProduct(type)!;
-      expect(p.amount).toBe(REPORT_PRICE_KRW);
-      expect(p.priceLabelKo).toBe(REPORT_PRICE_LABEL_KO);
+      expect(p.amount).toBe(REPORT_PRICE_TABLE_KRW[type]);
+      expect(p.priceLabelKo).toBe(formatKrw(REPORT_PRICE_TABLE_KRW[type]));
     }
-    expect(REPORT_PRICE_LABEL_KO).toBe(`${REPORT_PRICE_KRW.toLocaleString("ko-KR")}원`);
+    // 최종 A: 출시 4종 3,900원, 대운·세운 4,900원(판매 중지 유지, 값만).
+    expect(REPORT_PRICE_TABLE_KRW).toEqual({ saju_mbti_full: 3900, career_money_study: 3900, love_marriage_child: 3900, saju_mbti_compatibility: 3900, major_fortune: 4900, annual_fortune: 4900 });
+    expect(REPORT_PRICE_KRW).toBe(REPORT_PRICE_TABLE_KRW.saju_mbti_full);
+    expect(REPORT_PRICE_LABEL_KO).toBe("3,900원");
   });
 
-  it("소스에 가격 숫자(1,490 · 1,290)를 직접 적은 곳은 카탈로그 한 파일뿐이다", () => {
-    const hits = ["src/app", "src/components", "src/lib/payment", "src/lib/tickets", "src/lib/ops", "src/lib/account", "src/lib/legal"].flatMap(walk).filter(f => /(?<![\d{,])1,?[24]90(?![\d}])/.test(readFileSync(f, "utf8").replace(/\/\/.*$/gm, "")));
+  it("소스에 가격 숫자(1,490 · 1,290 · 3,900 · 4,900)를 직접 적은 곳은 카탈로그 한 파일뿐이다", () => {
+    const price = /(?<![\d{,])(?:1,?[24]90|[34],?900)(?![\d}])/g;
+    const hits = ["src/app", "src/components", "src/lib/payment", "src/lib/tickets", "src/lib/ops", "src/lib/account", "src/lib/legal", "src/lib/analytics", "src/lib/growth", "src/lib/coupons", "src/lib/product", "src/lib/book"].flatMap(walk).filter(f => new RegExp(price.source).test(readFileSync(f, "utf8").replace(/\/\/.*$/gm, "")));
     expect(hits.map(f => f.replaceAll("\\", "/"))).toEqual(["src/lib/payment/reportProductCatalog.ts"]);
-    // 카탈로그에서도 가격 숫자는 REPORT_PRICE_KRW 한 줄뿐이다(예전 1290 허용값 없음).
+    // 카탈로그에서도 가격 숫자는 상품별 표 6줄뿐이다(예전 1490·1290 없음).
     const catalog = readFileSync("src/lib/payment/reportProductCatalog.ts", "utf8").replace(/\/\/.*$/gm, "").replace(/\/\*[\s\S]*?\*\//g, "");
-    expect(catalog.match(/(?<![\d{,])1,?[24]90(?![\d}])/g)).toEqual(["1490"]);
-    expect(catalog).toMatch(/^export const REPORT_PRICE_KRW = \d+;$/m);
+    expect(catalog.match(price)).toEqual(["3900", "3900", "3900", "3900", "4900", "4900"]);
   });
 
   it("서버(결제 준비)는 화면이 보낸 금액을 카탈로그 금액과 대조한다 — 다르면 거절", () => {

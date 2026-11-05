@@ -1,5 +1,5 @@
 import "server-only";
-import { REPORT_PRICE_KRW } from "../payment/reportProductCatalog";
+import { getReportProduct, REPORT_PRICE_KRW } from "../payment/reportProductCatalog";
 import { readFile } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
@@ -64,14 +64,14 @@ export async function readOwnedLocalShareBook(request: NextRequest, reportId: st
 export async function createLocalShareFixture(request: NextRequest, payload: unknown) {
   const db = await localBookShareDatabase(), auth = createLocalAccountPort(request);
   if (!db || !auth || !validateLocalBookInput(payload).ok || (await db.query("select 1 from payment_orders limit 30")).rows.length >= 30) return NextResponse.json({}, { status: 400 });
-  const input = payload as { productKey: string; productOptions?: { selectedYear?: string } }, id = `share-review-${randomUUID()}`, port = sqlBookSharePort(db);
-  const created = await port.read("create_order", { paymentOrderId: id, providerOrderId: id, productType: input.productKey, provider: "toss", amount: REPORT_PRICE_KRW, inputSnapshot: { reportInputPayload: payload,
+  const input = payload as { productKey: string; productOptions?: { selectedYear?: string } }, id = `share-review-${randomUUID()}`, port = sqlBookSharePort(db), amount = getReportProduct(input.productKey)?.amount ?? REPORT_PRICE_KRW;
+  const created = await port.read("create_order", { paymentOrderId: id, providerOrderId: id, productType: input.productKey, provider: "toss", amount, inputSnapshot: { reportInputPayload: payload,
     ...(input.productKey === "annual_fortune" ? { annualCommerceAcceptance: createAnnualCommerceAcceptance(Number(input.productOptions?.selectedYear), new Date()) } : {}) } });
   if (!created.ok) return NextResponse.json({ error: "LOCAL_ORDER_FAILED" }, { status: 503 });
   const response = NextResponse.json({ ok: true }, { headers: BOOK_SHARE_HEADERS });
   const bound = await bindCheckout(request, response, id, payload, auth, sqlBookShareLibrary(db), true);
   if (!bound) return NextResponse.json({ error: "LOCAL_BIND_FAILED" }, { status: 503 });
-  const paid = await confirmPaidReport({ orderId: id, paymentKey: `LOCAL_ONLY_${id}`, amount: REPORT_PRICE_KRW }, { call: port.read }, async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId: id, amount: REPORT_PRICE_KRW, status: "DONE" } }));
+  const paid = await confirmPaidReport({ orderId: id, paymentKey: `LOCAL_ONLY_${id}`, amount }, { call: port.read }, async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId: id, amount, status: "DONE" } }));
   if (!paid.ok || typeof paid.reportId !== "string") return NextResponse.json({ error: "LOCAL_CONFIRM_FAILED" }, { status: 503 });
   const { localReferralStore } = await import("../referrals/localReview");
   const { withReferralPublication } = await import("../referrals/service");
