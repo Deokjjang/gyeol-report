@@ -3,26 +3,30 @@ import { describe, expect, it } from "vitest";
 
 import ProductTile from "../../../src/components/product/ProductTile";
 import { GYEOL_PRODUCTS } from "../../../src/lib/product/gyeolProducts";
+import { formatKrw, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
+
+const priceKo = (product: (typeof GYEOL_PRODUCTS)[number]) => formatKrw(REPORT_PRICE_TABLE_KRW[product.productType]);
+const count = (html: string, needle: string) => html.split(needle).length - 1;
 
 describe("ProductTile", () => {
   it.each(GYEOL_PRODUCTS)("keeps $slug price and destination in the home presentation", (product) => {
     const html = renderToStaticMarkup(<ProductTile product={product} presentation="editorial" />);
     expect(html).toContain(`href="${product.href}"`);
     expect(html).toContain(`aria-label="${product.nameKo} 시작하기"`);
-    expect(html.match(/1,490원/g)).toHaveLength(1);
+    expect(count(html, priceKo(product))).toBe(1);
     expect(html).toContain(`<h3>${product.nameKo.replace(/ 리포트$/u, "")}</h3>`);
     expect(html).not.toMatch(/구매 가능|판매 상품|90일|결제하고 리포트/);
   });
 
-  it("renders purchasable product state and 1490 won CTA", () => {
+  it("renders purchasable product state and catalog-price CTA", () => {
     const html = renderToStaticMarkup(
       <ProductTile product={GYEOL_PRODUCTS[0]} />,
     );
 
     expect(html).toContain("사주×MBTI 종합 리포트");
     expect(html).toContain("구매 가능");
-    expect(html).toContain("1,490원");
-    expect(html).toContain("1,490원 결제하고 리포트 생성하기");
+    expect(html).toContain(priceKo(GYEOL_PRODUCTS[0]));
+    expect(html).toContain(`${priceKo(GYEOL_PRODUCTS[0])} 결제하고 리포트 생성하기`);
     expect(html).toContain("생성일로부터 90일 열람");
     expect(html).toContain("결제 완료 후 즉시 생성, 최대 24시간 이내 제공");
     expect(html).toContain('href="/report/new?product=saju-mbti-full"');
@@ -50,7 +54,10 @@ describe("ProductTile", () => {
     }
 
     expect(GYEOL_PRODUCTS).toHaveLength(6);
-    expect((html.match(/1,490원 결제하고 리포트 생성하기/g) ?? [])).toHaveLength(6);
+    expect((html.match(/[\d,]+원 결제하고 리포트 생성하기/g) ?? [])).toHaveLength(6);
+    for (const product of GYEOL_PRODUCTS) {
+      expect(html).toContain(`${priceKo(product)} 결제하고 리포트 생성하기`);
+    }
     expect(html).not.toContain("다른 리포트 보기");
     expect(html).not.toContain("준비 중");
   });

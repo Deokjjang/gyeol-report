@@ -3,6 +3,9 @@ import { describe, expect, it } from "vitest";
 
 import ProductSummaryCard from "../../../src/components/product/ProductSummaryCard";
 import { GYEOL_PRODUCTS } from "../../../src/lib/product/gyeolProducts";
+import { formatKrw, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
+
+const priceKo = formatKrw(REPORT_PRICE_TABLE_KRW.saju_mbti_full);
 
 describe("ProductSummaryCard", () => {
   it("renders the active product summary", () => {
@@ -12,13 +15,13 @@ describe("ProductSummaryCard", () => {
     const visibleMarkers = [
       "사주×MBTI 종합 리포트",
       "판매가",
-      "1,490원",
+      priceKo,
       "생성일로부터 90일 열람",
       "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
       "자동 생성 디지털 리포트",
       "결제 후 온라인 리포트 생성/열람",
       "자세히 보기",
-      "1,490원 결제하고 리포트 생성하기",
+      `${priceKo} 결제하고 리포트 생성하기`,
     ];
 
     for (const marker of visibleMarkers) {

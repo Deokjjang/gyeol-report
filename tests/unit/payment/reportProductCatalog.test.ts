@@ -3,10 +3,12 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
+  formatKrw,
   getInactiveReportProductTypes,
   getReportProduct,
   getReportProductCatalog,
   isPurchasableReportProduct,
+  REPORT_PRICE_TABLE_KRW,
 } from "../../../src/lib/payment/reportProductCatalog";
 
 const source = readFileSync(
@@ -22,22 +24,22 @@ describe("report product catalog", () => {
       productType: "saju_mbti_full",
       labelKo: "사주×MBTI 종합 리포트",
       descriptionKo: "명리 구조와 MBTI 행동 패턴을 함께 읽는 종합 리포트입니다.",
-      amount: 1490,
+      amount: REPORT_PRICE_TABLE_KRW.saju_mbti_full,
       currency: "KRW",
-      priceLabelKo: "1,490원",
+      priceLabelKo: formatKrw(REPORT_PRICE_TABLE_KRW.saju_mbti_full),
       isPurchasable: true,
     });
     expect(isPurchasableReportProduct("saju_mbti_full")).toBe(true);
   });
 
-  it("keeps all launch products purchasable at the fixed amount", () => {
+  it("keeps all launch products purchasable at their own table price", () => {
     const launchProductTypes = [
       "career_money_study",
       "love_marriage_child",
       "saju_mbti_compatibility",
       "major_fortune",
       "annual_fortune",
-    ];
+    ] as const;
 
     expect(getInactiveReportProductTypes()).toEqual([]);
 
@@ -45,7 +47,8 @@ describe("report product catalog", () => {
       const product = getReportProduct(productType);
 
       expect(product?.isPurchasable).toBe(true);
-      expect(product?.amount).toBe(1490);
+      expect(product?.amount).toBe(REPORT_PRICE_TABLE_KRW[productType]);
+      expect(product?.priceLabelKo).toBe(formatKrw(REPORT_PRICE_TABLE_KRW[productType]));
       expect(product?.currency).toBe("KRW");
       expect(isPurchasableReportProduct(productType)).toBe(true);
     }

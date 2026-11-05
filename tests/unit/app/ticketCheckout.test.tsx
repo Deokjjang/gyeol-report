@@ -14,13 +14,15 @@ vi.mock("../../../src/components/book/useTicketPublication", () => ({ checkoutRe
 import { BookCheckout } from "../../../src/components/book/BookCheckout";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
+import { formatKrw, getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 const props = { payload: RUNTIME_FIXTURES[0].payload as ReportInputPayload, now: "2026-10-10T00:00:00Z", internal: false, authEnabled: true, onError() {}, onPublishing() {} };
+const priceKo = formatKrw(getReportProduct(props.payload.productKey)!.amount);
 const render = () => { hooks.index = 0; hooks.effects = []; return renderToStaticMarkup(<BookCheckout {...props} />); };
 beforeEach(() => { hooks.slots = []; state.session = { status: "guest" }; state.loaded = true; state.error = false; state.pending = false; });
 afterEach(() => { vi.unstubAllGlobals(); });
 describe("member-aware receipt SSR boundaries", () => {
-  it("guest keeps 1490/direct payment and product-only login return", () => {
-    const html = render(); expect(html).toContain("1,490원"); expect(html).toContain("결제하기"); expect(html).not.toContain("발행 방법");
+  it("guest keeps catalog-price direct payment and product-only login return", () => {
+    const html = render(); expect(html).toContain(priceKo); expect(html).toContain("결제하기"); expect(html).not.toContain("발행 방법");
     expect(html).toContain("/login?next=%2Freport%2Fnew%3Fproduct%3Dsaju_mbti_full"); expect(html).not.toContain("birthDate=");
   });
   it("session loading/error never silently becomes guest payment", () => {
@@ -33,7 +35,7 @@ describe("member-aware receipt SSR boundaries", () => {
   });
   it("restored pending reservation remains ticket-priced, blocked, never falls back to payment", () => {
     state.session = { status: "member" }; state.pending = true; const html = render();
-    expect(html).toContain("리포트 이용권 1장"); expect(html).toContain("책 발행 상태 확인 중"); expect(html).not.toContain("1,490원");
+    expect(html).toContain("리포트 이용권 1장"); expect(html).toContain("책 발행 상태 확인 중"); expect(html).not.toContain(priceKo);
   });
   it("required member reconsent is explicit and checkout remains disabled", () => {
     state.session = { status: "needs_consent" }; const html = render();

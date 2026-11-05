@@ -8,13 +8,14 @@ import {
   TOSS_CONFIRM_API_URL,
   TOSS_CONFIRM_REQUIRED_AMOUNT,
 } from "../../../src/lib/payment/tossConfirmClient";
+import { REPORT_PRICE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 
 const secretKey = "test_sk_toss_confirm_secret";
 const request = {
   secretKey,
   paymentKey: "pay_confirm_test_key",
   orderId: "provider_order_confirm_test",
-  amount: 1490,
+  amount: REPORT_PRICE_KRW,
 } as const;
 
 function createJsonResponse(body: unknown, status = 200): Response {
@@ -31,7 +32,7 @@ function createSuccessFetch(body?: Record<string, unknown>) {
     createJsonResponse(
       body ?? {
         orderId: request.orderId,
-        totalAmount: 1490,
+        totalAmount: request.amount,
         currency: "KRW",
         status: "DONE",
         method: "카드",
@@ -162,7 +163,7 @@ describe("Toss confirm client", () => {
   it("sanitizes success response", async () => {
     const fetchImpl = createSuccessFetch({
       orderId: request.orderId,
-      totalAmount: 1490,
+      totalAmount: request.amount,
       currency: "KRW",
       status: "DONE",
       method: "간편결제",
@@ -180,7 +181,7 @@ describe("Toss confirm client", () => {
         provider: "toss",
         paymentKeyReceived: true,
         orderId: request.orderId,
-        amount: 1490,
+        amount: request.amount,
         status: "DONE",
         method: "간편결제",
         approvedAt: "2026-06-11T12:00:00+09:00",
@@ -200,7 +201,7 @@ describe("Toss confirm client", () => {
     });
     const currencyFetch = createSuccessFetch({
       orderId: request.orderId,
-      totalAmount: 1490,
+      totalAmount: request.amount,
       currency: "USD",
       status: "DONE",
     });

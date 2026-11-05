@@ -7,6 +7,7 @@ import { confirmPaidReport, runPaidReportJob, type ProductGenerator } from "../.
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { getAnnualFortuneYearAccess, getAnnualFortuneCommerceYearPolicy } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
 import { createAnnualCommerceAcceptance, getAnnualPurchasePolicyDate } from "../../../src/lib/payment/annualPurchasePolicy";
+import { REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 
 const mocks = vi.hoisted(() => ({ runtime: vi.fn(), bind: vi.fn() }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: mocks.runtime }));
@@ -63,8 +64,8 @@ async function checkout(year: string, snapshotExtra: Record<string, unknown> = {
 async function purchase() {
   const { status, body } = await checkout("2021");
   expect(status).toBe(200);
-  const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-paid-only", amount: 1490 };
-  const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: 1490, status: "DONE", approvedAt: beforeRollover.toISOString() } }));
+  const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-paid-only", amount: REPORT_PRICE_TABLE_KRW.annual_fortune };
+  const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: payment.amount, status: "DONE", approvedAt: beforeRollover.toISOString() } }));
   const result = await confirmPaidReport(payment, store, provider);
   expect(result.ok).toBe(true);
   return { payment, provider, reportId: String(result.reportId), orderId: String(body.paymentOrder.paymentOrderId) };
@@ -159,13 +160,14 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     }));
     expect(response.status).toBe(200);
     const body = await response.json();
-    expect(body.paymentOrder).toMatchObject({ productType: productKey, amount: 1490 });
+    const amount = REPORT_PRICE_TABLE_KRW[productKey as keyof typeof REPORT_PRICE_TABLE_KRW];
+    expect(body.paymentOrder).toMatchObject({ productType: productKey, amount });
     expect(await inputSnapshot()).toEqual({ reportInputPayload: payload, bookGeneration: { version: "v4", evaluatedAt: beforeRollover.toISOString() } });
     expect(mocks.bind).toHaveBeenCalledTimes(1);
     expect(mocks.bind.mock.calls[0][0]).toMatchObject({ buyerId: null, claimHash: expect.stringMatching(/^[a-f0-9]{64}$/) });
     const orderId = body.paymentOrder.providerOrderId as string;
-    expect(await confirmPaidReport({ orderId, paymentKey: "mock", amount: 1490 }, store,
-      async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId, amount: 1490, status: "DONE" } }))).toMatchObject({ ok: true });
+    expect(await confirmPaidReport({ orderId, paymentKey: "mock", amount }, store,
+      async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId, amount, status: "DONE" } }))).toMatchObject({ ok: true });
     const generator = vi.fn(deterministic);
     expect(await runPaidReportJob(store, runtime, generator)).toMatchObject({ status: "COMPLETED" });
     expect(generator.mock.calls[0]).toHaveLength(3);
