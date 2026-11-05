@@ -154,7 +154,7 @@
   - 고친 뒤 관련 5파일 68개 통과.
 - 이번 작업 시험(새로 넣은 것): `final3ReviewLimit`(3) · `final3RawRetry`(2) · `final3Judge12`(6) · `priorConsentRead`(3) · `readPathProtection`·`final3DeployRisk`(에이전트) 모두 통과.
 - 운영 워커 경로 재생: 2절·3절(작가 0회, 발행 판정, 차단 0).
-- Git: 아래 커밋을 `v5/final`에 푸시(원격 SHA 일치 확인은 채팅 보고에).
+- Git `v5/final`(로컬 = 원격 확인): 1f268605(1~9) → 3bc75061(추가 지시) → **c0479957**(11~13, 4권·판정·보고). 이 SHA 줄을 넣은 문서 커밋은 그 뒤 하나 더(채팅 보고에 최종 SHA). v5/main·master 병합 없음.
 
 ---
 
