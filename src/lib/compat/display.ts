@@ -8,8 +8,11 @@ export const BASE_POINTS = 40;
 export const BASE_ROW_NAME = "기본점";
 export type BaseRow = { readonly name: typeof BASE_ROW_NAME; readonly points: number; readonly max: number; readonly reason: string };
 
-/** 기본점 줄의 이유(2문장): 누구에게나 같은 40점 + 항목 합 = 총점. */
+/** 기본점 줄의 이유(2문장, 최종 A-10): 시작 점수 40점 + 항목(60점) = 총점. 계산은 그대로. */
 export const baseReason = (itemCount: number, itemSum: number, total: number) =>
+  `시작 점수 ${BASE_POINTS}점에 아래 ${koCount(itemCount, "항목")}(60점)을 더해요. 이번 항목 점수는 ${itemSum}점이라 총점은 ${total}점이에요.`;
+/** 예전 문구(최종판3 7) — 기본점 줄 없이 저장된 옛 v2 Book을 화면에서 그릴 때만 쓴다(과거 Book 화면 변화 0). */
+export const legacyBaseReason = (itemCount: number, itemSum: number, total: number) =>
   `기본점은 두 사람 누구에게나 똑같이 주는 ${BASE_POINTS}점이에요. 여기에 아래 ${koCount(itemCount, "항목")}의 점수 ${itemSum}점(60점 만점)을 더해 총점 ${total}점이 돼요.`;
 
 /**
@@ -20,5 +23,5 @@ export function baseRowOf(total: number, rows: readonly { readonly name: string;
   if (rows.some(r => r.name === BASE_ROW_NAME)) return null;
   const sum = rows.reduce((n, r) => n + r.points, 0);
   if (sum + BASE_POINTS !== total) return null;
-  return { name: BASE_ROW_NAME, points: BASE_POINTS, max: BASE_POINTS, reason: baseReason(rows.length, sum, total) };
+  return { name: BASE_ROW_NAME, points: BASE_POINTS, max: BASE_POINTS, reason: legacyBaseReason(rows.length, sum, total) };
 }

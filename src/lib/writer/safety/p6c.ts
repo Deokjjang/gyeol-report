@@ -5,6 +5,7 @@
  *  - lintBook: 수리 패스(A5)로 보낼 문장·소제목·카드 줄 목록. 결정론 장은 수리하지 않고 지운다(DB 원문·이전 책 겹침은 보지 않는다).
  *  - enforce: 수리 뒤에도 걸리는 문장을 지운다(문단이 한 문장 아래로 줄면 문단을 뺀다). 빈자리를 DB 원문·안전망 문장으로 채우지 않는다.
  */
+import { removeSentenceAt, stripConnective } from "./orphan";
 import type { BookSection, SectionCard } from "../format";
 import type { FinalChapter } from "./index";
 import * as L from "./lint";
@@ -389,6 +390,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.
           { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
           const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
+          // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
+          if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
           // P6e 2: 앞 문단이 없는 자리(소제목 첫 문단의 첫 문장)가 앞말에 기대어 연다.
           if (pi === 0 && i === 0 && !keyed && E.orphanStart(sen)) { flag({ ...at, rule: "orphan_start", detail: E.orphanStart(sen)! }); continue; }
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
@@ -519,12 +522,14 @@ export function dropNoticeSentences(chapters: readonly FinalChapter[], flags: re
   const targets = new Set(flags.filter(f => f.rule === "notice_repeat").map(f => `${f.chapter}.${f.section}.${f.paragraph}|${f.sentence}`));
   const out = chapters.map(c => ({ ...c, sections: c.sections.map((s, si) => ({ ...s, paragraphs: s.paragraphs.map((p, pi) => {
     const sens = splitSentences(p);
-    const keep = sens.filter((x, i) => {
-      if (!targets.has(`${c.n}.${si}.${pi}|${stripMarks(x)}`)) return true;
-      const next = sens[i + 1];
-      if (sens.length - 1 >= 2 && !(next && E.orphanStart(next)) && !/[⟪⟫]/.test(x)) { removed.push(stripMarks(x)); return false; }
-      kept.push(stripMarks(x)); return true;
-    });
+    let keep = [...sens];
+    for (const x of sens) {
+      if (!targets.has(`${c.n}.${si}.${pi}|${stripMarks(x)}`)) continue;
+      const i = keep.indexOf(x), next = keep[i + 1];
+      // 최종 A-9: 다음 문장이 접속어로 시작하면 접속어만 떼고 지운다. 지시어(앞 내용을 가리킴)로 시작하면 그대로 둔다.
+      if (keep.length - 1 >= 2 && !(next && E.orphanStart(next) && !stripConnective(next)) && !/[⟪⟫]/.test(x)) { removed.push(stripMarks(x)); keep = removeSentenceAt(keep, i).sentences; continue; }
+      kept.push(stripMarks(x));
+    }
     return keep.length === sens.length ? p : keep.join(" ");
   }) })) }));
   return { chapters: out, removed, kept };

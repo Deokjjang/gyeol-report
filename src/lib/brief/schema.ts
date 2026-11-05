@@ -62,10 +62,10 @@ export const ChartBriefSchema = z.object({
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
   /** phase(P6c B5): 대운 안의 위치(엔진 연차: 1~3년 앞쪽, 4~7년 중간, 8~10년 끝 무렵), yearsLeft = 올해 뒤로 남은 해.
    * label·start(최종판3 8): 6개 상품 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 8)"와 그 시작 말 "2027년 5월 무렵부터"(labels.dayunLabel). ages는 만 나이. */
-  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), label: z.string().optional(), start: z.string().optional(), tenGod: z.string(), reading: z.string(), phase: z.object({ yearIndex: z.number().int(), label: z.string(), yearsLeft: z.number().int() }).optional(), next: z.object({ ganji: Ganji, startYear: z.number().int(), label: z.string().optional(), start: z.string().optional(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
+  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), label: z.string().optional(), start: z.string().optional(), until: z.string().optional(), period: z.string().optional(), tenGod: z.string(), reading: z.string(), phase: z.object({ yearIndex: z.number().int(), label: z.string(), yearsLeft: z.number().int(), remaining: z.string().optional() }).optional(), next: z.object({ ganji: Ganji, startYear: z.number().int(), label: z.string().optional(), start: z.string().optional(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
   thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
   /** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값의 단계(강·보통·약)만. 숫자는 주지 않는다. 작가는 묶음 세기를 이 단계로만 쓴다. */
-  groups: z.object({ levels: z.object({ 비겁: z.enum(["강", "보통", "약"]), 식상: z.enum(["강", "보통", "약"]), 재성: z.enum(["강", "보통", "약"]), 관성: z.enum(["강", "보통", "약"]), 인성: z.enum(["강", "보통", "약"]) }), line: z.string() }).optional(),
+  groups: z.object({ levels: z.object({ 비겁: z.enum(["강", "보통", "약", "있음"]), 식상: z.enum(["강", "보통", "약"]), 재성: z.enum(["강", "보통", "약"]), 관성: z.enum(["강", "보통", "약"]), 인성: z.enum(["강", "보통", "약", "있음"]) }), line: z.string() }).optional(),
   /** 배우자 별·자녀 별(P6c B4): 성별 기준 별, 자리(surface 드러남·hidden 지장간에만·none 없음), 사실 한 줄. 성별 미상이면 없음. */
   stars: z.object({ spouse: StarFact, child: StarFact }).optional(),
   /** 피할 이미지(최종판 1-7): 같은 일주의 다른 책이 쓴 핵심 이미지 명사. 작가는 [표지] 핵심 이미지에 이 낱말을 쓰지 않는다. */
@@ -230,7 +230,7 @@ export const BriefSchema = z.object({
   unused: z.array(UnusedSchema),
   chapters: z.array(ChapterBriefSchema).min(5),
   /** cycles[].label·ages(최종판3 8): 공통 대운 표기 줄과 만 나이(labels.dayunLabel). */
-  timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), tenGod: z.string(), current: z.boolean(), label: z.string().optional(), ages: z.string().optional() })) }).optional(),
+  timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), period: z.string().optional(), tenGod: z.string(), current: z.boolean(), label: z.string().optional(), ages: z.string().optional() })) }).optional(),
   partner: z.object({ person: PersonBriefSchema, mbti: MbtiBriefSchema.nullable(), chart: ChartBriefSchema }).optional(),
   compatibility: CompatibilityBriefSchema.optional(),
   /**

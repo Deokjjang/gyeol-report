@@ -1,6 +1,6 @@
 /**
  * 이미지 대장 만들기(최종판 1-7 ②, 호출 0): 지금까지 만든 책의 핵심 이미지(표지 줄·핵심 이미지·종합 1장 첫 소제목)를 일주별로 모아
- * src/lib/brief/data/image-ledger.json에 쓴다. 출처: 로컬 DB의 v5 Book 전부 + 저장소의 시험본 스냅샷(docs/v5/**\/*.snapshot.json — P6c·P6d·P6e 포함).
+ * tools/final/data/image-ledger.json에 쓴다(최종 A-2: 시험·도구 전용, 운영 번들 밖). 출처: 로컬 DB의 v5 Book 전부 + 저장소의 시험본 스냅샷(docs/v5/**\/*.snapshot.json — P6c·P6d·P6e 포함).
  * 최종판2 1-1: 실제 작가 원고 책만(작가 비용 > 0 — 목업·결정론 책은 고객 책이 아니다). 책 id·만든 시각을 함께 적고(저장본 검사가 그 책 자신과 뒤 책을 뺀다),
  * 본문이 그 책의 장면 재료(meta.scenes)·이미지 줄과 공백 뺀 12자 이상 같게 쓴 구절(phrasesByDayPillar)도 모은다.
  *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/final/image-ledger.ts [--no-db]
@@ -70,7 +70,7 @@ async function main() {
   }
   const sorted = Object.fromEntries(Object.entries(byDayPillar).sort(([a], [b]) => a.localeCompare(b)));
   const phr = Object.fromEntries(Object.entries(phrasesByDayPillar).sort(([a], [b]) => a.localeCompare(b)));
-  writeFileSync(join(ROOT, "src/lib/brief/data/image-ledger.json"), JSON.stringify({ version: "image-ledger-2", built: new Date().toISOString().slice(0, 10), byDayPillar: sorted, phrasesByDayPillar: phr }, null, 1) + "\n");
+  writeFileSync(join(ROOT, "tools/final/data/image-ledger.json"), JSON.stringify({ version: "image-ledger-2", built: new Date().toISOString().slice(0, 10), byDayPillar: sorted, phrasesByDayPillar: phr }, null, 1) + "\n");
   console.log(`이미지 대장: 시험본 ${files}권 · 로컬 DB ${db}권(작가 원고 책만) · 일주 ${Object.keys(sorted).length}개 · 줄 ${Object.values(sorted).reduce((a, l) => a + l.length, 0)}개 · 구절 ${Object.values(phr).reduce((a, l) => a + l.length, 0)}개`);
 }
 void main();

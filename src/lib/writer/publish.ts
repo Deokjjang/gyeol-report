@@ -6,6 +6,7 @@
  * recover=true면 작가를 부르지 않고 저장된 장 + 결정론 작가로만 완성한다(회수 크론).
  * 어떤 단계가 실패해도 결정론 작가로 Book을 만든다. 만세력·MBTI 표만 기존 v4 계산을 빌리고, 실패하면 표 페이지 없이 낸다.
  */
+import { thinSections } from "./safety/orphan";
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -141,7 +142,7 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     facts: f, jobDetail: brief.person.facts.job.detail, compat,
     schoolStage: brief.person.facts.job.class !== "student" ? "none" : brief.person.age < 19 ? "student" : "college",
     ...(compat ? {} : { yinYang: { yin: c.yinYang.yin, yang: c.yinYang.yang }, ...(c.elements.presence ? { presence: c.elements.presence as ElementPresence } : {}),
-      ...(cd ? { dayunPhase: dayunPhase(c.thisYear.year - Number(cd.years.slice(0, 4))) } : {}),
+      ...(cd ? { dayunPhase: dayunPhase(cd.phase ? cd.phase.yearIndex - 1 : c.thisYear.year - Number(cd.years.slice(0, 4))) } : {}),
       ...(c.stars ? { stars: { spouse: c.stars.spouse.where, child: c.stars.child.where } } : {}) }),
     coreImage: brief.compatibility?.pairImage.line ?? image ?? c.coreImage.line,
     nicknames: [...new Set([...[...k.features.values()].map(x => x.easyName), ...NICKNAME_KEYS])],
@@ -167,7 +168,7 @@ export function personNames(brief: Brief): string[][] {
 }
 
 /** 최종판3 1: 주문 입력으로 만든 정답지(엔진 출력만). 발행·검수·수리가 같은 정답지를 쓴다. */
-export const factSheetFor = (payload: ReportInputPayload, policyAt: string, brief: Brief, k: Knowledge): FactSheet => buildFactSheet(payloadToBriefInput(payload, kstDate(policyAt)) as never, brief, k);
+export const factSheetFor = (payload: ReportInputPayload, policyAt: string, brief: Brief, k: Knowledge): FactSheet => buildFactSheet(payloadToBriefInput(payload, kstDate(policyAt), policyAt) as never, brief, k);
 
 /** 최종판2 검사 문맥: 궁합 사람별 성격표(1-3), 사람별 명식 글자(1-4), 같은 일주 이전 책 구절·피할 이미지 줄(1-1). */
 function final2Context(brief: Brief): Partial<LintCtx> {
@@ -373,7 +374,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // 같은 고객의 이전 책이 쓴 장면은 고르지 않고, 이미 뜻을 푼 특성은 이 책에서 뜻을 다시 풀지 않는다(P6b E-1, P6c A3).
   // 고객 원장(P6d F): 앞 책이 쓴 각도(Fusion·팩폭)와 MBTI 씨앗은 빼고, 앞 책 근거 항목은 쓰지 않은 것을 먼저 고른다.
   const pl = a.prior?.ledger;
-  const brief = buildBrief({ ...payloadToBriefInput(a.payload, kstDate(a.policyAt)), ...(a.prior?.scenes.length ? { excludeScenes: a.prior.scenes } : {}), ...(a.prior?.explained?.length ? { knownTraits: a.prior.explained } : {}),
+  const brief = buildBrief({ ...payloadToBriefInput(a.payload, kstDate(a.policyAt), a.policyAt), ...(a.prior?.scenes.length ? { excludeScenes: a.prior.scenes } : {}), ...(a.prior?.explained?.length ? { knownTraits: a.prior.explained } : {}),
     ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}),
     ...(a.prior?.images?.length ? { priorImages: a.prior.images } : {}), ...(deps.ledgerView ? { ledgerView: deps.ledgerView } : {}),
     ...(a.prior?.actions?.length ? { priorActions: a.prior.actions } : {}), ...(a.prior?.covers?.length ? { priorCovers: a.prior.covers } : {}) } as never, k);
@@ -468,7 +469,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
-  const reviewMeta = { ...review, repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
+  // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
+  const thin = thinSections(chapters);
+  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
   report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),

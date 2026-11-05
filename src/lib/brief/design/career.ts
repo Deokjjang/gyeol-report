@@ -6,7 +6,7 @@
 import type { MbtiProfile } from "@/data/knowledge-v5/schema";
 import type { ChartDetections } from "@/lib/saju/detections/types";
 import { getAnnualPillar } from "@/lib/saju/detections";
-import { GROUP_LEVEL_KO, GROUP_NAME_KO, groupStrength, TEN_GOD_GROUP_KEYS, type TenGodGroupKey } from "@/lib/saju/groupStrength";
+import { GROUP_LEVEL_KO, GROUP_NAME_KO, groupLevelKoFor, groupStrength, TEN_GOD_GROUP_KEYS, type TenGodGroupKey } from "@/lib/saju/groupStrength";
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { deepLines, type Knowledge } from "../knowledge";
@@ -63,7 +63,9 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
   const lvl = (g: TenGodGroupKey) => gs[g].level === "strong" ? "strong" : "weak";
   const fresh = (lines: readonly string[]) => [...lines].sort((a, b) => Number(c.priorEvidence?.has(a) ?? false) - Number(c.priorEvidence?.has(b) ?? false));
   // P6e 14: 다섯 힘은 쉬운 이름으로(첫 등장에만 묶음 이름을 괄호로).
-  const line = (g: TenGodGroupKey) => `${GROUP_EASY[g]}(${GROUP_NAME_KO[g]}) ${GROUP_LEVEL_KO[gs[g].level]}`;
+  // 최종 A-6: 신약인데 비겁·인성 강이면 단계는 「있음」(chart.strength.label 한 문장 틀).
+  const lvKo = (g: TenGodGroupKey) => groupLevelKoFor(c.saju.structureAnalysis.dayMasterStrength.level, gs, g);
+  const line = (g: TenGodGroupKey) => `${GROUP_EASY[g]}(${GROUP_NAME_KO[g]}) ${lvKo(g)}`;
   const groupLine = TEN_GOD_GROUP_KEYS.map(line).join(" · ");
   const we = (g: TenGodGroupKey, facet: string, n = 1) => pick(fresh(deepLines(k, "work-engine", `group:${g}`, facet, lvl(g))), seed, n);
   // 최종판 1-15: 가게형이 아닌 사업자에게는 가게 장면(손님·단골·매장…)을 주지 않는다. 상황 씨앗은 그 직업의 소품에서 장마다 다른 것을 고른다.
@@ -123,14 +125,14 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
     rhythm: ev("rhythm", [...we(top, "decision", 1).map(x => `의사결정: ${x}`), ...we(top, "burnout", 1).map(x => `번아웃 신호: ${x}`), ...we(top, "flow", 1).map(x => `몰입 리듬: ${x}`), ...we(weak, "decision", 1).map(x => `약한 쪽 보완: ${x}`)]),
     nowFit: ev("nowFit", [statusTag, ...(c.base.currentJob?.kind === "evidence" ? c.base.currentJob.facts.filter(x => /판정|성격 근거|운의 근거|쓰이는 곳|목표 직무|이 분야의 일/.test(x)).map(x => x.replace(/이 사람의 강한 힘은 [^,]*/, `이 사람의 다섯 힘은 ${groupLine}`)) : []), `태어난 계절의 일 온도: ${chart.climate.season} — ${SEASON_WORK[chart.climate.season] ?? ""}`], unknownNote ?? "판정을 첫 문장에, 맞는 점·덜 맞는 점마다 근거 하나"),
     statusNow: ev("statusNow", [statusTag, ...statusSeeds("c2", 2), ...(status === "employee" ? [...we(top, "engine", 1).map(x => `버틸 이유: ${x}`), ...we(top, "burnout", 1).map(x => `옮길 신호: ${x}`)] : status === "business" ? [`운영형·확장형: ${gs.OFFICER.level === "strong" || gs.RESOURCE.level === "strong" ? "운영형 쪽(규칙·관리로 지키는 힘이 큼)" : gs.WEALTH.level === "strong" || gs.OUTPUT.level === "strong" ? "확장형 쪽(만들고 넓히는 힘이 큼)" : "운영과 확장을 번갈아 쓰는 쪽"}`, ...roleLines.slice(0, 1)] : status === "job_seeker" ? [...we(top, "decision", 1).map(x => `탐색 순서: ${x}`), ...we(weak, "flow", 1).map(x => `공백기 루틴: ${x}`)] : status === "student" ? [...we(top, "engine", 1).map(x => `전공과 첫 직장을 잇는 힘: ${x}`)] : [...we(top, "engine", 1)])], unknownNote ?? "상태에 맞는 장면 하나와 근거 둘. 다른 상태의 장면은 쓰지 않는다"),
-    sideBiz: ev("sideBiz", [statusTag, `부업·창업 적합 체크: 만드는 힘(식상) ${GROUP_LEVEL_KO[gs.OUTPUT.level]} · 값을 받는 힘(재성) ${GROUP_LEVEL_KO[gs.WEALTH.level]} · 내 방식의 힘(비겁) ${GROUP_LEVEL_KO[gs.PEER.level]}`, gs.OUTPUT.level !== "weak" && gs.WEALTH.level !== "weak" ? "맞는 쪽: 만든 것을 직접 파는 작은 일부터" : gs.OUTPUT.level !== "weak" ? "조건부: 만드는 힘은 있으니 값을 매기는 단계를 남에게 맡기거나 정해 두기" : "조건부: 혼자 시작하기보다 정해진 틀이 있는 일부터", ...statusSeeds("c3", 1)], unknownNote ?? "적합 체크는 세 줄 판정 + 맞는 조건 하나 + 안 맞는 조건 하나. 창업을 권하거나 말리지 않는다"),
+    sideBiz: ev("sideBiz", [statusTag, `부업·창업 적합 체크: 만드는 힘(식상) ${GROUP_LEVEL_KO[gs.OUTPUT.level]} · 값을 받는 힘(재성) ${GROUP_LEVEL_KO[gs.WEALTH.level]} · 내 방식의 힘(비겁) ${lvKo("PEER")}`, gs.OUTPUT.level !== "weak" && gs.WEALTH.level !== "weak" ? "맞는 쪽: 만든 것을 직접 파는 작은 일부터" : gs.OUTPUT.level !== "weak" ? "조건부: 만드는 힘은 있으니 값을 매기는 단계를 남에게 맡기거나 정해 두기" : "조건부: 혼자 시작하기보다 정해진 틀이 있는 일부터", ...statusSeeds("c3", 1)], unknownNote ?? "적합 체크는 세 줄 판정 + 맞는 조건 하나 + 안 맞는 조건 하나. 창업을 권하거나 말리지 않는다"),
     visiblePower: ev("visiblePower", [...appeal("power", 1).map(x => `보이는 힘: ${x}`), `만드는 힘(식상) ${GROUP_LEVEL_KO[gs.OUTPUT.level]}`, ...(c.hitIds.has("shinsal:TWELVE_JANGSEONGSAL") ? ["장성살: 앞에 서면 무게가 실리는 존재감"] : []), ...(c.hitIds.has("shinsal:DOHWASAL") ? ["도화: 사람의 눈길을 끄는 매력(일에서는 첫인상·발표)"] : [])]),
     pitch: ev("pitch", [statusTag, ...(status === "business" ? appeal("brand") : status === "freelancer" ? appeal("portfolio") : [...appeal("resume", 1), ...appeal("interview", 1)]).map(x => `방향: ${x}`), ...statusSeeds("c4", 2)], unknownNote ?? "문장 예시는 한두 개를 직접 지어 보여 준다(따옴표 안 한 줄). 입력에 없는 경력·연차는 쓰지 않는다"),
     payTalk: ev("payTalk", [statusTag, ...appeal("pay", 1).map(x => `내세울 근거: ${x}`), ...we(top, "decision", 1).map(x => `말할 때의 버릇: ${x}`)], "금액·퍼센트는 쓰지 않는다. 말의 순서와 근거만"),
     peopleTypes: ev("peopleTypes", people.length ? people : ["원국에 뚜렷한 십성이 적어 사람 유형은 한 갈래로만"], "십성을 사람으로: '이런 사람이 곁에 오면'으로 쓴다. 실제 동료·지인을 지어내지 않는다"),
     helpers: ev("helpers", [...(gwiin.length ? gwiin.slice(0, 3) : ["드러난 귀인 자리가 뚜렷하지 않음 → 돕는 사람은 아래 십성 쪽에서"]), ...helper]),
     roleMode: ev("roleMode", [statusTag, ...roleLines, ...partner], unknownNote ?? (status === "business" ? (noShop ? "사장일 때(팀원·고객) 쪽으로" : "사장일 때(직원·손님) 쪽으로") : status === "employee" ? "팀원일 때와 리더가 될 때를 나눠서" : "리더·팀원 어느 쪽이든 조건형으로")),
-    docsLevel: ev("docsLevel", [`규칙의 힘(관성) ${GROUP_LEVEL_KO[gs.OFFICER.level]} · 배우는 힘(인성) ${GROUP_LEVEL_KO[gs.RESOURCE.level]}(만세력 가중값)`, ...docs]),
+    docsLevel: ev("docsLevel", [`규칙의 힘(관성) ${GROUP_LEVEL_KO[gs.OFFICER.level]} · 배우는 힘(인성) ${lvKo("RESOURCE")}(만세력 가중값)`, ...docs]),
     docsTiming: ev("docsTiming", [...docYears, ...docsTrend], "해 이름은 경향으로만: 합격·승진·계약 성사를 단정하지 않는다"),
     docsStatus: ev("docsStatus", [statusTag, ...statusSeeds("c6", 2), ...(["OFFICER", "RESOURCE"] as const).flatMap(g => pick(deepLines(k, "documents", `group:${g}`, docFacet, lvl(g)), seed + 1, 1))], unknownNote),
     moneyStructure: ev("moneyStructure", [`값을 받는 힘(재성) ${GROUP_LEVEL_KO[gs.WEALTH.level]}: ${wealthKind}`, flowOW, flowPW, jaego].filter(Boolean)),
@@ -139,7 +141,7 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
     investStyle: ev("investStyle", [...inv("savings").map(x => `예적금: ${x}`), ...inv("realEstate").slice(0, 1).map(x => `부동산·땅: ${x}`), rotation, ...inv("business").slice(0, 1).map(x => `사업 재투자: ${x}`), ...inv("self").slice(0, 1).map(x => `자기 투자: ${x}`)], "투자 권유가 아니라 성향 해석이다. 종목·상품·매수 시점·수익률은 쓰지 않는다"),
     investMistakes: ev("investMistakes", inv("mistake")),
     investPrinciples: ev("investPrinciples", [...inv("principle"), ...we(top, "decision", 1).map(x => `결정 습관에서 나온 원칙: ${x}`)], "원칙은 정확히 세 개로(셋째는 결정 습관에서)"),
-    timingNow: ev("timingNow", cd ? [`지금 대운: ${cd.ganji.hangul}(${cd.ganji.hanja}) ${cd.tenGod}, ${cd.years}`, cd.phase ? `대운 안 위치: ${cd.phase.yearIndex}번째 해(${cd.phase.label}, 뒤로 ${koCount(cd.phase.yearsLeft, "해")})` : "", cd.next ? `다음 대운: ${cd.next.label ?? `${cd.next.startYear}년부터 ${cd.next.ganji.hangul} 대운`} — ${cd.next.ganji.hanja} ${cd.next.tenGod}` : ""] : ["대운 정보 없음"], "위치·남은 해는 이 값 그대로"),
+    timingNow: ev("timingNow", cd ? [`지금 대운: ${cd.ganji.hangul}(${cd.ganji.hanja}) ${cd.tenGod}, ${cd.period ?? cd.years}`, cd.phase ? `대운 안 위치: ${cd.phase.yearIndex}번째 해(${cd.phase.label}, 남은 기간 ${cd.phase.remaining ?? koCount(cd.phase.yearsLeft, "해")})` : "", cd.next ? `다음 대운: ${cd.next.label ?? `${cd.next.startYear}년부터 ${cd.next.ganji.hangul} 대운`} — ${cd.next.ganji.hanja} ${cd.next.tenGod}` : ""] : ["대운 정보 없음"], "위치·남은 해는 이 값 그대로"),
     threeYears: ev("threeYears", three, "해마다 경향 한 줄. 사건을 단정하지 않는다"),
     roadmap: ev("roadmap", [`분기 이름: ${nextMonths.join(" · ")}부터 석 달씩`, `첫 달(${nextMonths[0]})에 할 일 하나 — ${c.detailJob ? `${["job_seeker", "student"].includes(status) ? "목표" : "지금 일"}(${c.detailJob})와 바로 이어지는 행동` : "1순위 직군과 이어지는 행동"}`, ...we(top, "flow", 1).map(x => `행동의 바탕: ${x}`)], "분기마다 행동 하나, 첫 달 행동 하나. '이번 달'이라 쓰지 않고 달 이름으로"),
   };

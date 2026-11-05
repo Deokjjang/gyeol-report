@@ -3,6 +3,7 @@
  * 연애: 배우자성(남=재성, 여=관성)·배우자궁(일지), 자녀성(남=관성, 여=식상)·자녀궁(시지, 시간 미상이면 유보), 잘 맞는 상대(부족 오행 보완 + MBTI 통념), 만남 장소.
  * 커리어: 직업·역할 추천 근거(강한 십성 묶음 + MBTI 통념 직업 + 입력 직업), 올해 기운이 돈·재산 흐름에 주는 영향(투자 지시 아님).
  */
+import { jobEntryBlock, type JobEntryPerson } from "./jobEntry";
 import { matchJob, type LifeStage } from "./props";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import type { CareerJob, MbtiProfile, SceneItem } from "@/data/knowledge-v5/schema";
@@ -184,7 +185,7 @@ function mbtiFit(k: Knowledge, dims: Readonly<Record<string, number>>, mbti: Mbt
   return { fit: size ? dot / size : 0, clash, ...(best ? { reason: say(best[0]) } : {}), reasons };
 }
 
-type JobCtx = { readonly k: Knowledge; readonly traits: readonly Trait[]; readonly hitIds: ReadonlySet<string>; readonly scores: Record<string, number>; readonly mbti: MbtiProfile | null; readonly stage: LifeStage; readonly cluster?: string; readonly detailJob: string };
+type JobCtx = { readonly k: Knowledge; readonly traits: readonly Trait[]; readonly hitIds: ReadonlySet<string>; readonly scores: Record<string, number>; readonly mbti: MbtiProfile | null; readonly stage: LifeStage; readonly cluster?: string; readonly detailJob: string ; readonly entry?: JobEntryPerson };
 type Scored = { job: CareerJob; total: number; myeongri: number; fit: number; adjacency: number; basis: string; mbtiReason?: string; mbtiReasons?: readonly string[] };
 /**
  * 직무 점수(P3.8 2) = 명리 적성(십성 묶음 세기·특히 맞는 신살·귀인·십성·구조) × MBTI 적성(행동 차원) × 지금 직업과의 인접성(전환 비용) × 생활 단계.
@@ -196,6 +197,8 @@ function scoreJobs(c: JobCtx): Scored[] {
   const out: Scored[] = [];
   for (const job of c.k.catalog.jobs) {
     if (c.detailJob && (job.title.includes(c.detailJob) || c.detailJob.includes(job.title))) continue;
+    // 최종 A-7: 나이 제한·긴 훈련·운전 면허가 필요한 직업은 나이·상황으로 거른다(jobEntry.ts).
+    if (c.entry && jobEntryBlock(job.title, c.entry)) continue;
     const g = Math.max(...job.groups.map(x => Math.min(1, (c.scores[x] ?? 0) / 3)));
     const keyHit = (job.keys ?? []).find(x => traitByKey.has(x) || c.hitIds.has(x));
     const myeongri = Math.min(1, g + (keyHit ? 0.35 : 0));
@@ -285,12 +288,12 @@ function careerTiming(chart: ChartBrief): Record<"timingNow" | "timingShift" | "
     timingShift: { kind: "evidence", key: "timingShift", facts: ["출생 정보로 대운을 정하지 못해 전환 해는 보지 않음"], note },
     timingPrep: { kind: "evidence", key: "timingPrep", facts: [`올해 할 준비: ${yearTg ? PREP_BY_GROUP[TEN_GOD_GROUP[yearTg] as keyof typeof GROUP_KO] : "올해 결과물 하나를 기록으로 남긴다"}`], note },
   };
-  const [start, end] = cd.years.split("~").map(Number);
-  const idx = chart.thisYear.year - start + 1, left = end - chart.thisYear.year;
+  // 최종 A-4: 위치·남은 기간은 교운 시각 기준(chart.currentDayun.phase), 기간 표기는 교운 연·월(period).
+  const idx = cd.phase?.yearIndex ?? chart.thisYear.year - Number(cd.years.slice(0, 4)) + 1;
   const curTg = cd.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined, nextTg = cd.next?.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
   return {
     timingNow: { kind: "evidence", key: "timingNow", facts: [
-      `지금 대운 ${cd.ganji.hanja}(${cd.ganji.hangul}) ${cd.tenGod}의 10년(${cd.years}): 10년 가운데 ${idx}번째 해(${cd.phase?.label ?? ""}), 올해 뒤로 ${left}년 남음`,
+      `지금 대운 ${cd.ganji.hanja}(${cd.ganji.hangul}) ${cd.tenGod}의 10년(${cd.period ?? cd.years}): 10년 가운데 ${idx}번째 해(${cd.phase?.label ?? ""}), 남은 기간 ${cd.phase?.remaining ?? ""}`,
       ...(curTg ? [`이 대운에서 일은: ${shift(curTg)}`] : []), thisLine], note },
     timingShift: { kind: "evidence", key: "timingShift", facts: cd.next ? [
       `전환: ${cd.next.label ?? `${cd.next.startYear}년부터 ${cd.next.ganji.hangul} 대운`} — ${cd.next.ganji.hanja} ${cd.next.tenGod}의 10년`,
@@ -439,7 +442,7 @@ function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, n
   return { invest: [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...personal, ...(year && yearTg !== "劫財" ? [year] : [])], leak: habit };
 }
 
-export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = [], opts: { stage?: LifeStage; hitIds?: ReadonlySet<string>; work?: WorkScenes } = {}): Record<string, Evidence> {
+export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = [], opts: { stage?: LifeStage; hitIds?: ReadonlySet<string>; work?: WorkScenes; age?: number } = {}): Record<string, Evidence> {
   const scores = groupValues(saju);
   const top = (Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 2);
   const yearTg = chart.thisYear.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
@@ -452,7 +455,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   // 직무 3단(P3.8 2): 지금 자리에서 넓힐 역할 2~3 · 옮겨 갈 인접 직무 3~4 · 길게 보면 다른 길 2~3. 줄마다 명리 근거와 MBTI 근거를 함께.
   // 최종판 1-9: 구직·살림(상태 직업군)은 분야가 아니다 — 그 카탈로그 분야(경영지원·인사 등)를 목표·지금 분야로 두지 않는다(P6e r4 "1순위는 경영지원·인사 직군").
   const cluster = job && job.id !== "job-seeker" && job.id !== "homemaker" ? k.catalog.jobClusters[job.id] : undefined;
-  const scored = scoreJobs({ k, traits, hitIds: opts.hitIds ?? new Set(traits.map(t => t.featureId)), scores, mbti, stage: opts.stage ?? "unknown" as LifeStage, cluster, detailJob });
+  const scored = scoreJobs({ k, traits, hitIds: opts.hitIds ?? new Set(traits.map(t => t.featureId)), scores, mbti, stage: opts.stage ?? "unknown" as LifeStage, cluster, detailJob, entry: { age: opts.age, jobStatus, detailJob } });
   // 최종판 1-15: 가게형이 아닌 사업자(IT 서비스 창업 등)에게 창업·자영업 직군을 가게 말(가게·메뉴·손님 동선)로 설명하지 않는다.
   const noShopBiz = (jobStatus === "self_employed" || jobStatus === "business_owner") && Boolean(job) && !shopLife(job!.id, "business");
   const roleOf = (id: string) => id === "biz" && noShopBiz ? BIZ_NOSHOP_ROLE : CLUSTER_ROLE[id];

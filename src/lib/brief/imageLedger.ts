@@ -3,13 +3,18 @@
  *  - 피할 이미지(chart.avoidImages): 같은 일주 이전 책의 이미지 줄 + 같은 고객 다른 상품 책의 이미지 줄(PriorBooks.images). 표지와 1장 첫 이미지가 이 목록을 피한다.
  *  - 같은 일주 구절(phrases): 이전 책 본문이 그 책의 장면 재료(meta.scenes)·이미지 줄과 공백 뺀 12자 이상 같게 쓴 구절. 이번 책에 같은 구절이 나오면 그 문장만 수리한다.
  * 대장은 tools/final/image-ledger.ts가 만든다(호출 0). 운영에서 새로 나온 책은 대장에 자동으로 더해지지 않는다(같은 고객 책은 PriorBooks로 본다).
+ * 최종 A-2: 대장 파일(시험 책의 사람 키 — 이름·생일)은 운영 번들에 넣지 않는다. 파일은 tools/final/data/image-ledger.json(시험·도구 전용)이고,
+ * 운영 코드는 빈 대장으로 돈다 — 운영의 원장은 DB(같은 고객 이전 책: PriorBooks·priorLedger)뿐이다. 도구·시험은 useImageLedger(파일)로 넣는다.
  */
-import ledger from "./data/image-ledger.json";
 
 export type LedgerLine = { readonly line: string; readonly noun: string; readonly source: string; readonly book?: string; readonly at?: string; readonly people?: readonly string[]; readonly product?: string };
 export type LedgerPhrase = { readonly run: string; readonly book: string; readonly at: string; readonly people?: readonly string[]; readonly product?: string };
 export type ImageLedger = { readonly version: string; readonly built: string; readonly byDayPillar: Readonly<Record<string, readonly LedgerLine[]>>; readonly phrasesByDayPillar?: Readonly<Record<string, readonly LedgerPhrase[]>> };
-export const IMAGE_LEDGER = ledger as ImageLedger;
+export const EMPTY_IMAGE_LEDGER: ImageLedger = { version: "none", built: "", byDayPillar: {} };
+let current: ImageLedger = EMPTY_IMAGE_LEDGER;
+/** 시험·도구 전용: 파일 대장을 넣는다(운영 코드는 부르지 않는다). */
+export function useImageLedger(l: ImageLedger): void { current = l; }
+export const currentImageLedger = () => current;
 /** 저장본 검사·replay가 그 책 자신(과 그 뒤에 만든 책, 같은 사람·같은 상품을 다시 만든 판)을 대장에서 뺄 때. */
 export type LedgerView = { readonly exclude?: string; readonly before?: string; readonly self?: { readonly people: readonly string[]; readonly product: string } };
 
@@ -36,11 +41,11 @@ export const COVER_MOTIFS: Readonly<Record<string, RegExp>> = {
   "흙": /흙|화분|들판|언덕|밭|대지|도자기/, "쇠": /칼|쇠|바늘|금속|열쇠|칼날|보석/, "빛": /햇살|햇빛|노을|별빛|달빛|등대/,
 };
 export const coverMotifs = (line: string): string[] => Object.entries(COVER_MOTIFS).filter(([, re]) => re.test(line)).map(([k]) => k);
-export function avoidImagesFor(dayPillars: readonly string[], v?: LedgerView, l: ImageLedger = IMAGE_LEDGER): string[] {
+export function avoidImagesFor(dayPillars: readonly string[], v?: LedgerView, l: ImageLedger = current): string[] {
   return [...new Set(dayPillars.flatMap(d => (l.byDayPillar[d] ?? []).filter(keep(v)).map(x => x.line.trim())).filter(x => x.length >= 4 && !NOT_LINE.test(x)))];
 }
 /** 이 일주들의 이전 책 구절(공백 뺀 12자 이상). */
-export function iljuPhrasesFor(dayPillars: readonly string[], v?: LedgerView, l: ImageLedger = IMAGE_LEDGER): string[] {
+export function iljuPhrasesFor(dayPillars: readonly string[], v?: LedgerView, l: ImageLedger = current): string[] {
   return [...new Set(dayPillars.flatMap(d => (l.phrasesByDayPillar?.[d] ?? []).filter(keep(v)).map(x => x.run)))];
 }
 

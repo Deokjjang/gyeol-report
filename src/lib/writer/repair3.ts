@@ -3,6 +3,7 @@
  * 지적된 문장만 고친다(문단 전체를 다시 쓰지 않는다). 정답지(엔진 사실)를 함께 준다.
  * 수리본은 다시 검사하고, 실패한 문장만 지운다. 지우면 문단이 깨지는 경우(앞말에 기대는 다음 문장, 소제목의 마지막 문단)는 원문을 두고 기록한다.
  */
+import { removeSentenceAt } from "./safety/orphan";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
@@ -119,7 +120,9 @@ export function applyRepair3(chapters: readonly FinalChapter[], items: readonly 
     const p = sec.paragraphs[it.paragraph] ?? ""; if (!p.includes(it.original) && !p.replace(/[⟪⟫]/g, "").includes(it.original)) continue;
     const marked = p.includes(`⟪${it.original}⟫`);
     const after = DELETE.test(v) ? "" : v.replace(/[⟪⟫]/g, "");
-    sec.paragraphs[it.paragraph] = (marked ? p.replace(`⟪${it.original}⟫`, after ? `⟪${after}⟫` : "") : p.replace(it.original, after)).replace(/\s{2,}/g, " ").trim();
+    // 최종 A-9: (삭제)면 바로 뒤 문장이 접속어로 시작하는 고아 문장이 되지 않게 접속어를 뗀다.
+    const ss = after ? [] : splitSentences(p), di = ss.findIndex(x => x.replace(/[⟪⟫]/g, "") === it.original.replace(/[⟪⟫]/g, "") || x.replace(/[⟪⟫]/g, "").includes(it.original));
+    sec.paragraphs[it.paragraph] = (!after && di >= 0 ? removeSentenceAt(ss, di).sentences.join(" ") : (marked ? p.replace(`⟪${it.original}⟫`, after ? `⟪${after}⟫` : "") : p.replace(it.original, after))).replace(/\s{2,}/g, " ").trim();
     applied.push({ id: it.id, kind: it.kind, at, before: it.original, after, source: it.source });
   }
   return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), cover, applied };
@@ -136,8 +139,8 @@ export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactS
 }
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
-/** 다음 문장이 앞말에 기댄다(지우면 문단이 깨진다). */
-const LEANS = /^(그래서|그러니|그러면|이처럼|이렇게|이런|그런|그 덕분|그만큼|또한|또 |여기에|하지만|다만|반면|그래도|그 결과|그러다|그때|이때|이 |그 )/;
+/** 다음 문장이 앞말(내용)을 가리킨다(지우면 문단이 깨진다). 최종 A-9: 접속어(그래서·하지만 등)는 여기서 빼고, 지운 뒤 접속어만 뗀다(orphan.ts). */
+const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|이 |그 )/;
 /**
  * 최종판3 12: 수리 문장이 재검사(정답지 대조 포함)에 새로 걸리면 그 문장을 수리 전 원문으로 되돌린다(호출 0).
  * 판독: 검수가 음양 2:6을 거꾸로 읽고(오탐) 수리가 맞는 문장을 틀리게 고쳤다. 원문도 걸리는 경우(원래 검사 깃발)는 뒤의 지우기가 처리한다.
@@ -160,7 +163,7 @@ export function revertWorse(chapters: readonly FinalChapter[], applied: readonly
   }
   return { chapters: out, reverted };
 }
-export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" };
+export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>): { chapters: FinalChapter[]; deleted: Deleted[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
@@ -173,10 +176,10 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
     if (i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
-    const rest = ss.filter((_, j) => j !== i);
+    const { sentences: rest, stripped } = removeSentenceAt(ss, i);
     if (!rest.length && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "last_paragraph" }); continue; }
     sec.paragraphs[f.paragraph] = rest.join(" ");
-    deleted.push({ at, sentence: f.sentence, rule: f.rule });
+    deleted.push({ at, sentence: f.sentence, rule: f.rule, ...(stripped ? { connectiveStripped: true } : {}) });
   }
   return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(x => x.trim()) })) })), deleted };
 }

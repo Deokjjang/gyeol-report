@@ -127,7 +127,7 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
     homeState: ev("homeState", [statusTag, ...seeds("l7", 2), status === "married" ? "기혼: 지금 생활 점검 — 돈·역할·양가·집 중 하나씩" : "조건형: '함께 살게 된다면'"], unknownNote),
     childStar: ev("childStar", [...baseFacts("childStar").slice(0, 2), ...(childGroup ? [`자녀 별 묶음(${GROUP_NAME_KO[childGroup]}) 세기: ${GROUP_LEVEL_KO[gs[childGroup].level]}`] : []), ...(hourKnown ? baseFacts("childPalace").slice(0, 1) : ["출생 시각을 몰라 자녀 자리(태어난 시각의 땅 글자)는 보지 않는다(유보)"])], "부모로서의 결만 쓴다. 자녀의 성별·수·시기 이야기는 꺼내지 않는다(그런 안내 문장도 쓰지 않는다)"),
     parentState: ev("parentState", [statusTag, `자녀: ${c.facts.children === "has" ? "있음(입력)" : c.facts.children === "none" ? "없음(입력) → 조건형으로" : "입력 없음 → '아이를 키우게 된다면'으로"}`, ...seeds("l8", 2)], unknownNote),
-    loveTiming: ev("loveTiming", [...loveYears, ...(chart.currentDayun ? [`지금 대운: ${chart.currentDayun.tenGod}(${chart.currentDayun.years}) — 관계는 이 흐름의 경향으로만`] : [])], "경향만: 만남·결혼·이별의 시기를 단정하지 않는다"),
+    loveTiming: ev("loveTiming", [...loveYears, ...(chart.currentDayun ? [`지금 대운: ${chart.currentDayun.tenGod}(${chart.currentDayun.period ?? chart.currentDayun.years}) — 관계는 이 흐름의 경향으로만`] : [])], "경향만: 만남·결혼·이별의 시기를 단정하지 않는다"),
     loveRoadmap: ev("loveRoadmap", [statusTag, ...three, ...seeds("l9", 2), `첫 달(${by}년 ${bm}월) 행동 하나`], unknownNote ?? "해마다 행동 하나, 첫 달 행동 하나. '이번 달'이라 쓰지 않고 달 이름으로"),
   };
 }

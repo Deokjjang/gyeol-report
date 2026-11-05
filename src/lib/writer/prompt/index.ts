@@ -64,7 +64,9 @@ export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters
 }
 
 /** 원국 요약: 일간 그림 별명·비유는 빼고 핵심 이미지는 그림 없는 뜻만(P6b B-2·B-4, 최종판2 1-1: 엔진 그림 줄을 본문에 그대로 옮겨 같은 일주 책마다 같은 그림이 나왔다). */
-const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage"), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.meaning ?? c.coreImage.line });
+/** 최종 A-4: 지금 대운은 연도 구간(years: 엔진 endYear) 대신 교운 연·월 기간(period)만 준다 — 「2028년까지」처럼 연도로 끊지 않게. */
+const writerDayun = (d: Brief["chart"]["currentDayun"]) => d && (d.period ? omit(d, "years") : d);
+const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage", "currentDayun"), currentDayun: writerDayun(c.currentDayun), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.meaning ?? c.coreImage.line });
 /** 궁합(최종판2 1-1·1-3): 관계 이미지·인물 줄은 그림 없는 뜻으로, 성격표는 브리프 맨 앞(profiles)에 따로. */
 /** 최종판3 2b: 공통 특징 규칙(두 사람 모두 가진 것은 「공통」으로만, 차이의 근거·한 사람만의 특징으로 쓰지 않는다). */
 export const COMMON_RULE = "commonTraits는 두 사람이 모두 가진 것이다. '두 사람 모두'로만 쓰고, 차이의 근거나 한 사람만의 특징('○○님의 반안살')으로 쓰지 않는다";

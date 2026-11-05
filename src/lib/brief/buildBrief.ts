@@ -9,7 +9,7 @@ import { analyzeChartDetections } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
 import { groupValues } from "@/lib/saju/groupStrength";
 import type { SajuCalcResult } from "@/lib/saju/types";
-import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
+import { baseMsOf, buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
 import { conditionalFamily, planChapters, PRODUCT_CHARS, topDimension, type TraitSource } from "./chapters";
 import { buildCompatibility, profiledVector, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
@@ -62,8 +62,10 @@ export type BriefInput = {
   readonly person: BriefPersonInput;
   readonly partner?: BriefPersonInput;
   readonly relationshipType?: CompatibilityRelationshipType;
-  /** 기준 날짜(KST, YYYY-MM-DD). 올해·현재 대운·나이를 정한다. */
+  /** 기준 날짜(KST, YYYY-MM-DD). 올해·나이를 정한다. */
   readonly baseDate: string;
+  /** 기준 시각(발행 시각, ISO). 지금 대운·남은 기간을 교운 시각과 비교해 정한다(최종 A-5). 없으면 기준 날짜 KST 정오. */
+  readonly baseAt?: string;
   /** 세운 상품의 선택 연도(없으면 기준 날짜의 사주 해). */
   readonly selectedYear?: number;
   /** 같은 고객의 이전 Book이 쓴 지식 DB 장면(P6b E-1): 이번 책에서는 고르지 않는다. */
@@ -106,7 +108,7 @@ type PersonPack = {
 
 /** 고객 원장(P6d F): 앞 책이 쓴 특성(feature id)·각도(feature:facet). 이번 책은 쓰지 않은 특성을 먼저, 쓴 각도(Fusion 연결·팩폭)는 다시 주지 않는다. */
 export type PriorLedger = { readonly features: ReadonlySet<string>; readonly angles: ReadonlySet<string> };
-function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number, fnUsed?: Map<string, number>, prior?: PriorLedger): PersonPack {
+function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number, fnUsed?: Map<string, number>, prior?: PriorLedger, baseAt?: string): PersonPack {
   const gender = input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null;
   const saju = calculateSaju({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: (input.approximateBirthTimeSlot ?? "") as never, calendarType: "SOLAR", gender: gender ?? "OTHER_OR_UNSPECIFIED", timezone: "Asia/Seoul" });
   const det = analyzeChartDetections(saju);
@@ -121,7 +123,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   // 최종판2 1-2: 종합은 P6d(d9985cda) 장면 고르기 — 직업 꼬리표(코드·팀·가게·돌봄·외주)로 거르지 않는다(직업과 무관한 보편 성향 장면, 직업은 작가에게 맡김).
   const profile: FactProfile = { ...base, scene: product === "saju_mbti_full" ? { office: sceneCtx.office, school: sceneCtx.school, familyOk: sceneCtx.familyOk } : sceneCtx };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
-  const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
+  const chart = buildChartBrief(saju, det, k, { gender, baseDate, ...(baseAt ? { baseAt } : {}), dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
   // 강약·균형 단정은 엔진 단일 판단과 맞는 문장만(P3.7 1-2).
   const st0 = stateOf(det.elementBalance);
@@ -274,8 +276,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const fnUsed = new Map<string, number>();
   // 종합은 52절이라 trait 12개(소개 1 + 적용 2 × 12)까지: trait를 늘려 같은 trait 재사용 대신 새 정보로 채운다(P3.8 1).
   const priorLedger: PriorLedger = { features: new Set((input.priorEvidence ?? []).filter(x => x.startsWith("feature:")).map(x => x.slice(8))), angles: new Set(input.excludeAngles ?? []) };
-  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : input.product === "saju_mbti_full" ? 12 : undefined, fnUsed, priorLedger);
-  const otherRaw = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed) : null;
+  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : input.product === "saju_mbti_full" ? 12 : undefined, fnUsed, priorLedger, input.baseAt);
+  const otherRaw = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed, undefined, input.baseAt) : null;
 
   // 두 사람이 같은 요소를 가지면 같은 그림이 두 번 나온다: 뒤 사람은 다른 그림 변형으로(P3.8, 부모·자녀 둘 다 '교문 앞 우산').
   const other = otherRaw;
@@ -311,14 +313,14 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     if (input.product === "major_fortune") {
       const entries = buildYearEntries(tctx, thisYear, me.dayun.cycles);
       const transitions = entries.filter(e => e.dayun?.transition).map(e => e.key);
-      timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: transitions.length ? transitions : [...entries].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 2).map(e => e.key), cycles: cycleSummary(me.dayun.cycles, thisYear - 3, thisYear + 10, thisYear, tenGodOf) };
+      timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: transitions.length ? transitions : [...entries].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 2).map(e => e.key), cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)) };
       timelineKeys = entries.map(e => e.key);
     } else {
       const year = input.selectedYear ?? thisYear;
       const yp = getAnnualPillar(year);
       const yearEntry = buildEntry(tctx, "year", String(year), `${year}년 ${ganjiLabel(yp)}`, yp, "annual", 0);
       const months = buildMonthEntries(tctx, year, input.baseDate);
-      timeline = { entries: [yearEntry, ...months], tenGodNotes: { ...tenGodNotes(months, "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun.cycles, year, year, year, tenGodOf) };
+      timeline = { entries: [yearEntry, ...months], tenGodNotes: { ...tenGodNotes(months, "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun, year, year, year, tenGodOf) };
       timelineKeys = months.map(e => e.key);
     }
   }
@@ -344,7 +346,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     : input.product === "major_fortune" && timeline ? majorDesign(timeline.entries, timeline.cycles, me.chart.thisYear.year)
     : input.product === "annual_fortune" && timeline ? (() => { const months = timeline!.entries.filter(e => e.kind === "month"), link = keyMonthsLink(months, timeline!.keyEntries); return { ...annualDesign(timeline!.entries.find(e => e.kind === "year"), months), ...(link ? { keyMonthsLink: link } : {}) }; })()
     : input.product === "career_money_study" ? (() => {
-      const base = careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages });
+      const base = careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages, age: me.person.age });
       // 커리어 전용 설계기(P6d G): 장마다 정해진 근거·상태별 근거. 직무 3단·진로 다섯 갈래·돈 새는 곳은 base에서 재사용.
       return { ...base, ...careerDesign({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, jobStatus: me.facts.jobStatus, detailJob: me.facts.detailJob, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base, shop: me.profile.scene?.shop, jobProps: matchJob(me.facts.detailJob)?.props }) };
     })()

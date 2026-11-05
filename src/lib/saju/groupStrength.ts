@@ -47,3 +47,18 @@ export function groupStrength(saju: Pick<SajuCalcResult, "dayMaster" | "elements
   const el = groupElements(saju.dayMaster), v = groupValues(saju);
   return Object.fromEntries(TEN_GOD_GROUP_KEYS.map(g => [g, { element: el[g], value: v[g], level: groupLevel(v[g]) }])) as Record<TenGodGroupKey, GroupStrength>;
 }
+
+/**
+ * 최종 A-6: 신약·매우 신약인데 비겁·인성 묶음이 「강」이면(묶음 값은 월령 가중이 없고 강약은 월령 가중이라 잣대가 다르다)
+ * 브리프에 두 라벨(「신약」·「비겁 강」)을 따로 주지 않고 한 문장 틀로 준다. 계산은 그대로, 표시 단계만 「있음」.
+ * 돌려주는 값: 그 경우의 묶음(비겁·인성 중 강인 것), 아니면 빈 배열.
+ */
+export const SUPPORT_PRESENT_KO = "있음" as const;
+export function supportConflictGroups(strengthLevel: string, gs: Readonly<Record<TenGodGroupKey, GroupStrength>>): TenGodGroupKey[] {
+  if (strengthLevel !== "WEAK" && strengthLevel !== "VERY_WEAK") return [];
+  return (["PEER", "RESOURCE"] as const).filter(g => gs[g].level === "strong");
+}
+/** 브리프 표시용 단계: 충돌 묶음은 「있음」, 그 밖은 강·보통·약. */
+export function groupLevelKoFor(strengthLevel: string, gs: Readonly<Record<TenGodGroupKey, GroupStrength>>, g: TenGodGroupKey): "강" | "보통" | "약" | typeof SUPPORT_PRESENT_KO {
+  return supportConflictGroups(strengthLevel, gs).includes(g) ? SUPPORT_PRESENT_KO : GROUP_LEVEL_KO[gs[g].level] as "강" | "보통" | "약";
+}

@@ -2,7 +2,8 @@
  * 같은 일주 다른 고객 책과 공백 뺀 12자 이상 같은 구절(최종판2 5 판정, 호출 0, 글자 그대로 대조): 이미지 대장의 같은 일주 책(다른 사람, 이 책보다 앞)과 견준다.
  *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/final2/same-ilju-check.ts <reportId…>
  */
-import { IMAGE_LEDGER } from "../../src/lib/brief/imageLedger";
+import { loadFileLedger } from "../final/fileLedger";
+const IMAGE_LEDGER = loadFileLedger();
 import { splitSentences } from "../../src/lib/writer/safety/patterns";
 import { peopleOf } from "../../src/lib/writer/prior";
 import { briefOfSnap, loadSnap } from "../final/replay";

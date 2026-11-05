@@ -20,6 +20,9 @@ import { mbtiMisattr, tidyBook } from "@/lib/writer/safety/p6c";
 import { sentenceViolation } from "@/lib/writer/safety/sentences";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { DEOKMIN, JIWOO } from "../../../tools/final/cases";
+import { useFileLedger } from "../../../tools/final/fileLedger";
+// 최종 A-2: 이미지 대장 파일은 시험·도구 전용(운영 번들 밖) — 이 시험은 파일 대장을 넣고 본다.
+useFileLedger();
 
 const { k } = writerKnowledge();
 const compat = (a: unknown, b: unknown) => {

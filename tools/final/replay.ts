@@ -26,6 +26,9 @@ import { peopleOf } from "../../src/lib/writer/prior";
 import type { FinalChapter } from "../../src/lib/writer/safety";
 import { lintBook, tidyBook, type LintFlag } from "../../src/lib/writer/safety/p6c";
 import { loadDevEnv, ROOT } from "../llm/env";
+import { useFileLedger } from "./fileLedger";
+// 최종 A-2: 도구는 예전처럼 파일 이미지 대장(시험 책)을 본다(운영 코드는 빈 대장).
+useFileLedger();
 
 type Snap = { reportId?: string; productVersion: string; draft: V5BookDraft; evidencePacket: { input: ReportInputPayload; generatedAt: string; meta?: WriterMeta & { raw?: RawEntry[] } } };
 
@@ -43,7 +46,7 @@ export async function loadSnap(arg: string): Promise<{ id: string; snap: Snap }>
 export function inputOfSnap(s: Snap): BriefInput {
   const n = normalizeReportInputPayload(s.evidencePacket.input as never, { now: () => new Date(s.evidencePacket.generatedAt) });
   if (!n.ok) throw new Error(String(n.error));
-  return payloadToBriefInput(n.value as never, kstDate(s.evidencePacket.generatedAt)) as unknown as BriefInput;
+  return payloadToBriefInput(n.value as never, kstDate(s.evidencePacket.generatedAt), s.evidencePacket.generatedAt) as unknown as BriefInput;
 }
 export function briefOfSnap(s: Snap): Brief {
   // 최종판2 1-1: 이미지 대장에서 그 책 자신과 그 뒤에 만든 책은 뺀다(자기 표지가 피할 이미지가 되지 않게).

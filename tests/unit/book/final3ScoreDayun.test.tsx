@@ -55,7 +55,7 @@ describe("8 대운 표기 통일(dayunLabel)", () => {
     expect(r.ok && dayunLabel(r.value.cycles[2]).line).toMatch(/^무진 대운: 2027년 \d{1,2}(~\d{1,2})?월 무렵부터 \(대운수 8\)$/);
   });
   it("6개 상품의 브리프 currentDayun·next·timeline.cycles, 대운 전환 해 머리 문장, Book 부록이 같은 표기", () => {
-    const want = dayunCycles(DEOKMIN).map(dayunLabel);
+    const want = dayunCycles(DEOKMIN).map(c => dayunLabel(c));
     for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const) {
       const { brief, data } = book(product);
       const cd = brief.chart.currentDayun!;
@@ -66,7 +66,7 @@ describe("8 대운 표기 통일(dayunLabel)", () => {
       for (const c of brief.timeline?.cycles ?? []) expect(c.label, product).toBe(want.find(w => w.years === c.years)!.line);
       const appendix = pagesOf(data, "appendix")[0];
       expect(appendix.notes, product).toEqual(["기사 대운: 2017년 5월 무렵부터 (대운수 8)", "무진 대운: 2027년 5월 무렵부터 (대운수 8)", DAYUN_AGE_NOTE]);
-      expect(html(data, appendix), product).toContain("결리포트는 태어난 뒤 실제로 흐른 시간(만 나이)으로 계산해요.");
+      expect(html(data, appendix), product).toContain("날수를 3으로 나눠 적었어요.");
     }
   });
   it("대운 상품: 전환 해 카드·머리 문장·표 위 전환 줄", () => {
@@ -134,7 +134,9 @@ describe("7 궁합 관계 목록(장소담 × 전성민)", () => {
     expect(c.score.value).toBe(79);
     const score = pagesOf(data, "score")[0];
     expect(score.scores.reduce((n, s) => n + s.value, 0)).toBe(score.total);
-    expect(score.scores[0].reason).toBe("기본점은 두 사람 누구에게나 똑같이 주는 40점이에요. 여기에 아래 일곱 항목의 점수 39점(60점 만점)을 더해 총점 79점이 돼요.");
+    // 최종 A-10: 새 책은 「시작 점수 40점에 아래 일곱 항목(60점)을 더해요」(계산은 그대로).
+    expect(score.scores[0].reason).toBe("시작 점수 40점에 아래 일곱 항목(60점)을 더해요. 이번 항목 점수는 39점이라 총점은 79점이에요.");
+    expect(score.scores[0].reason).not.toContain("누구에게나");
     // 자란 환경 이유의 반합 이름도 같은 문구.
     expect(c.score.components.find(x => x.name === "자란 환경·사회 자리")!.onScorePage).toContain("반합(세 글자 중 두 글자만 모여 반쯤 묶임)");
   });

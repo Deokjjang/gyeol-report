@@ -54,7 +54,7 @@ describe("궁합 점수 v2.2 점수 쪽", () => {
     expect(score.scores[0]).toMatchObject({ label: "기본점", value: 40, max: 40 });
     expect(score.total).toBe(score.scores.reduce((n, s) => n + s.value, 0));
     expect(score.scores.map(s => s.max)).toEqual([40, ...Object.values(ITEM_MAX.love)]);
-    expect(score.scores[0].reason).toBe(`기본점은 두 사람 누구에게나 똑같이 주는 40점이에요. 여기에 아래 일곱 항목의 점수 ${score.total - 40}점(60점 만점)을 더해 총점 ${score.total}점이 돼요.`);
+    expect(score.scores[0].reason).toBe(`시작 점수 40점에 아래 일곱 항목(60점)을 더해요. 이번 항목 점수는 ${score.total - 40}점이라 총점은 ${score.total}점이에요.`); // 최종 A-10
     for (const s of score.scores) { expect(out).toContain(`${s.value} / ${s.max}`); const n = splitSentences(s.reason!).length; expect(n).toBeGreaterThanOrEqual(2); expect(n).toBeLessThanOrEqual(3); }
     expect(out).toContain("기본 40점에 일곱 항목");
     expect(out).not.toContain("3칸");

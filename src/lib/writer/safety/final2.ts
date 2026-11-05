@@ -44,6 +44,29 @@ export function pairProfileMismatch(s: string, people: readonly ProfilePerson[])
   return null;
 }
 
+/**
+ * 최종 A-8: 「X도 같은 편·마찬가지·똑같·비슷」이 앞 문장의 성향을 X에게 옮긴다(오지안 판독: 앞 문장 「백정우님은 불편한 건 참지 않고 바로 말하는 편」
+ * 다음 「오지안님도 같은 편이지만」 — 오지안 다툼 = 정리한 뒤). 앞 문장에서 다른 사람에게 붙은 단서가 X의 표와 맞지 않으면 잡는다.
+ */
+const SAME_SIDE = (name: string) => new RegExp(`${esc(name)}(?:님)?(?:도|역시) (?:[가-힣]+ )?(?:같은 편|같은 쪽|마찬가지|똑같|비슷한 편|그런 편|그렇)`);
+export function pairProfileSameSide(s: string, prev: string, people: readonly ProfilePerson[]): string | null {
+  if (people.length < 2 || !prev) return null;
+  for (const [i, p] of people.entries()) {
+    if (!p.names.some(n => SAME_SIDE(n).test(s))) continue;
+    for (const f of forbiddenCues(p.codes)) {
+      const re = new RegExp(PROFILE_CUES[f.cue].source, "g");
+      let m: RegExpExecArray | null;
+      while ((m = re.exec(prev))) {
+        const end = m.index + m[0].length;
+        if (negatedAfter(prev, end)) continue;
+        const who = ownersAt(prev, m.index, end, people);
+        if (who.length && !who.includes(i)) return `${p.label}:${f.slot}(앞 문장 성향을 「같은 편」으로 옮김)`;
+      }
+    }
+  }
+  return null;
+}
+
 /** 간지 한 글자(한글). 신(辛·申)은 한글로 같아 한글 집합으로 본다. */
 const GLYPH = "[갑을병정무기경신임계자축인묘진사오미유술해]";
 const LIST = new RegExp(`(${GLYPH}(?:·${GLYPH}){1,7})\\s?(글자|자리|가 |이 |처럼|를|을)`, "g");

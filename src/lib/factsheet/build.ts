@@ -4,7 +4,8 @@
  * 학파가 갈리는 항목은 엔진이 쓰는 기준을 standards에 적는다(docs/manseryeok-policy.md §5, docs/v5/shinsal-rules.md). 본문·부록·점수가 같은 기준을 쓴다.
  */
 import { calculateSaju } from "@/lib/saju/calculateSaju";
-import { calculateCustomerDayun } from "@/lib/saju/customerDayun";
+import { calculateCustomerDayun, calculateTraditionalDaeunsu } from "@/lib/saju/customerDayun";
+import { currentDayunAt } from "@/lib/brief/labels";
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
 import { analyzeChartDetections, analyzeIncoming, detectRelations, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";
 import type { ChartPosition, RelationHit, TemporalPosition } from "@/lib/saju/detections/types";
@@ -63,7 +64,8 @@ export type PersonFacts = {
   readonly stemClashes: readonly RelationFact[];
   readonly gongmang: readonly { readonly basis: string; readonly branches: readonly string[]; readonly positions: readonly Pos[] }[];
   readonly climate: { readonly season: string; readonly level: string; readonly lacking: readonly FiveElement[] };
-  readonly dayun: { readonly direction: string | null; readonly number: number | null; readonly cycles: readonly DayunFact[] };
+  /** number: 전통 대운수(최종 A-3, 날수 ÷ 3). current: 기준 시각(발행 시각)에 지나는 대운 index(최종 A-5, 교운 시각 비교). */
+  readonly dayun: { readonly direction: string | null; readonly number: number | null; readonly current?: number | null; readonly cycles: readonly DayunFact[] };
   readonly annual: readonly (IncomingFact & { readonly year: number })[];
   readonly monthly: readonly (IncomingFact & { readonly year: number; readonly index: number; readonly startKst: string })[];
   readonly mbti: { readonly type: string; readonly stack: readonly string[] } | null;
@@ -107,7 +109,7 @@ function slotsOf(code: string, positions: readonly Pos[], saju: SajuCalcResult, 
 }
 
 const PILLAR_BASED = new Set(["GOEGANG", "EUMCHAK_YANGCHA", "BAEKHODAESAL"]);
-function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, brief: Brief | null, side: "person" | "partner"): PersonFacts {
+function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, brief: Brief | null, side: "person" | "partner", baseAt?: string): PersonFacts {
   const gender = input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null;
   const saju = sajuOf(input, gender);
   const det = analyzeChartDetections(saju);
@@ -160,6 +162,7 @@ function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, br
   };
   const dr = calculateCustomerDayun({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: input.approximateBirthTimeSlot ?? "", gender: gender ?? "", name: input.name });
   const birthYear = Number(input.birthDate.slice(0, 4));
+  const traditional = calculateTraditionalDaeunsu({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: input.approximateBirthTimeSlot ?? "", gender: gender ?? "", name: input.name });
   const cycles: DayunFact[] = dr.ok ? dr.value.cycles.map(c => ({ ...incoming("dayun", { stem: c.stem, branch: c.branch }), index: c.index, startYear: c.startYear, endYear: c.endYear, startAge: c.startAge, manStartAge: c.startYear - birthYear, startSolarKst: c.startSolarKst })) : [];
   const baseYear = Number(baseDate.slice(0, 4));
   const annual = Array.from({ length: 14 }, (_, i) => baseYear - 1 + i).map(year => ({ year, ...incoming("annual", getAnnualPillar(year)) }));
@@ -178,7 +181,8 @@ function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, br
     shinsal, relations: natalRel, stemClashes: clashes,
     gongmang: det.gongmang.map(g => ({ basis: g.basis, branches: [...g.branches], positions: [...g.positions] })),
     climate: { season: det.climate.season, level: det.climate.level, lacking: [...det.climate.lackingElements] },
-    dayun: { direction: dr.ok ? dr.value.direction : null, number: cycles[0] ? cycles[0].manStartAge : null, cycles },
+    dayun: { direction: dr.ok ? dr.value.direction : null, number: cycles[0] ? (traditional.ok ? traditional.value.daeunsu : cycles[0].manStartAge) : null,
+      current: !dr.ok ? null : currentDayunAt(dr.value.cycles, baseAt && Number.isFinite(Date.parse(baseAt)) ? Date.parse(baseAt) : Date.parse(`${baseDate}T12:00:00+09:00`))?.index ?? null, cycles },
     annual, monthly,
     mbti: mb ? { type: mb.type, stack: [...mb.functions] } : input.mbtiType ? { type: input.mbtiType, stack: [] } : null,
     input: pb ? { relationship: pb.facts.relationship, children: pb.facts.children, job: { ...pb.facts.job } } : null,
@@ -199,11 +203,11 @@ function pairRelations(a: PersonFacts, b: PersonFacts): { relations: RelationFac
 }
 
 export function buildFactSheet(input: BriefInput, brief: Brief | null, k: Knowledge): FactSheet {
-  const a = personFacts(input.person, k, input.baseDate, brief, "person");
+  const a = personFacts(input.person, k, input.baseDate, brief, "person", input.baseAt);
   const people: PersonFacts[] = [a];
   let pair: PairFacts | undefined;
   if (input.partner) {
-    const b = personFacts(input.partner, k, input.baseDate, brief, "partner");
+    const b = personFacts(input.partner, k, input.baseDate, brief, "partner", input.baseAt);
     people.push(b);
     const rel = pairRelations(a, b);
     const bIds = new Set(b.shinsal.map(s => s.id));

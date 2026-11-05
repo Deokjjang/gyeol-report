@@ -46,7 +46,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2026-M11 庚子 정재(正財) f2 STEM_HAP+YUKHAP+BANGHAP act:正財:money:low",
     "2026-M12 辛丑 편재(偏財) f3 STEM_HAP+YUKHAP+SAMHAP+BANGHAP act:偏財:love:low",
   ],
-  "tokens": 12231,
+  "tokens": 12058,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [overview,month,key-months]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [current-dayun,month,key-months]",
@@ -94,7 +94,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 11390,
+  "tokens": 11201,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,why,tension]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [fact-bomb,fortune]",
@@ -164,7 +164,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 대운 1`] = `
     "2035 乙卯 정재(正財) f3 STEM_HAP+HAE act:正財:alone:low",
     "2036 丙辰 편관(偏官) f4 HAE+HYEONG act:偏官:money:high",
   ],
-  "tokens": 11219,
+  "tokens": 11167,
   "traits": [
     "t1 dayPillar:庚辰 medium day INFP/tension [overview,current-cycle,transition]",
     "t2 shinsal:GWASUKSAL strong day Fi/resonance [decade]",
@@ -208,7 +208,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 8671,
+  "tokens": 8619,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [contact,conflict,marriage]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-engine,in-love,conflict]",
@@ -251,7 +251,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8507,
+  "tokens": 8560,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [engine,now,people]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - []",
@@ -300,7 +300,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt6",
   ],
   "timeline": undefined,
-  "tokens": 14115,
+  "tokens": 13938,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,attraction,direction-ab]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [attraction,direction-ab,friction]",

@@ -15,12 +15,15 @@ import { kstDate, writerKnowledge } from "../../src/lib/writer/publish";
 import { ROOT } from "../llm/env";
 import { FINAL_CASES, JOB_INPUTS, jobCase, type FinalCase } from "./cases";
 import { FINAL2_CASES } from "../final2/cases";
+import { useFileLedger } from "./fileLedger";
+// 최종 A-2: 도구는 예전처럼 파일 이미지 대장(시험 책)을 본다(운영 코드는 빈 대장).
+useFileLedger();
 
 export const BASE_AT = "2026-11-04T05:00:00.000Z";
 export function briefOf(c: FinalCase, k: Knowledge = writerKnowledge().k, at = BASE_AT): Brief {
   const n = normalizeReportInputPayload(c.payload as never, { now: () => new Date(at) });
   if (!n.ok) throw new Error(`${c.id}: ${String(n.error)}`);
-  return buildBrief(payloadToBriefInput(n.value as never, kstDate(at)) as never, k);
+  return buildBrief(payloadToBriefInput(n.value as never, kstDate(at), at) as never, k);
 }
 
 /** 두 JSON의 바뀐 경로(값 앞 80자). */

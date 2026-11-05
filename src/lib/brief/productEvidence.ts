@@ -116,11 +116,11 @@ export function familyDesign(saju: SajuCalcResult, groups: Readonly<Record<strin
 
 export function majorDesign(entries: readonly TimelineEntry[], cycles: NonNullable<import("./schema").Brief["timeline"]>["cycles"], thisYear: number): Record<string, Evidence> {
   const past = entries.filter(e => e.period === "past");
-  const cur = cycles.find(c => c.current), next = cycles.find(c => !c.current && Number(c.years.slice(0, 4)) > thisYear);
+  const cur = cycles.find(c => c.current), next = cur ? cycles[cycles.indexOf(cur) + 1] : cycles.find(c => Number(c.years.slice(0, 4)) > thisYear);
   const g = cur ? GROUP_OF(cur.tenGod) : undefined, ng = next ? GROUP_OF(next.tenGod) : undefined;
   const decade = [
-    ...(cur && g ? [`지금 대운 ${cur.ganji}(${cur.years}): ${cur.tenGod}의 10년`, ...domainLines(g)] : []),
-    ...(next && ng ? [`다음 대운 ${next.ganji}(${next.years}): ${next.tenGod}의 10년 — 바뀌는 점: ${DOMAIN_BY_GROUP[ng][0]}`] : []),
+    ...(cur && g ? [`지금 대운 ${cur.ganji}(${cur.period ?? cur.years}): ${cur.tenGod}의 10년`, ...domainLines(g)] : []),
+    ...(next && ng ? [`다음 대운 ${next.ganji}(${next.period ?? next.years}): ${next.tenGod}의 10년 — 바뀌는 점: ${DOMAIN_BY_GROUP[ng][0]}`] : []),
   ];
   // 사실이 없으면 근거를 만들지 않는다(빈 근거는 그 절을 비운다).
   return {

@@ -6,6 +6,7 @@
  *       경험 단정 중 경향형·질문형으로 바꿀 수 없는 것(P3.6 A6, 바꿀 수 있으면 바꾸고 replacements에 기록) / 인연·결혼 시기 말(P3.7 1-5).
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
+import { ORPHAN_CONNECTIVE, stripConnective } from "./orphan";
 import { STYLE_EXAMPLES } from "../prompt/examples";
 import ontology from "@/data/knowledge-v5/behavior-ontology.json";
 import { AWKWARD_PHRASE, FAMILY_MEMBER, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences, tidyText } from "./patterns";
@@ -76,7 +77,8 @@ const DIM_WORDS = new Set([...DIM_NAMES, ...DIM_NAMES.map(n => n.split(" ")[0]).
 const axisList = (s: string) => [...s.matchAll(/(?:[가-힣]+(?: [가-힣]+)?·){1,}[가-힣]+(?: [가-힣]+)?/g)].some(m => m[0].split("·").filter(x => DIM_WORDS.has(x.trim().replace(/(이|가|은|는|을|를|와|과|도)$/, ""))).length >= 2);
 /** 지운 문장 바로 뒤에서 앞 문장을 가리키며 시작하는 문장(P6b E-8): 지시어는 지우고, 연결어는 떼어 낸다. */
 const ORPHAN_REF = /^(이것|이건|이게|그것|그건|그게|이런|그런|이렇게|그렇게|이 때문에|그 때문에|이 덕분에|그 덕분에|그 결과|이 점)(은|이|이란|을|도|만)?\s/;
-const ORPHAN_CONNECTOR = /^(그래서|그러니|그러니까|그래서인지|따라서|그렇기에|그렇다 보니|그러다 보니|그러면|게다가|또한),?\s+/;
+// 최종 A-9: 접속어 목록은 orphan.ts 하나(그런데·하지만·그러나·그리고 포함).
+const ORPHAN_CONNECTOR = ORPHAN_CONNECTIVE;
 
 export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
@@ -145,7 +147,7 @@ export function filterParagraph(p0: string, f: SafetyFacts, chapter: number, del
     let s = raw;
     // 앞 문장이 지워졌으면 그 문장을 가리키던 말을 정리한다(P6b E-8).
     if (prevDeleted && ORPHAN_REF.test(s)) { deletions.push({ chapter, rule: "orphan_ref", sentence: s }); out = out.replace(raw, ""); continue; }
-    if (prevDeleted && ORPHAN_CONNECTOR.test(s)) { const t = s.replace(ORPHAN_CONNECTOR, ""); out = out.replace(raw, t); s = t; }
+    if (prevDeleted && ORPHAN_CONNECTOR.test(s)) { const t = stripConnective(s)!; out = out.replace(raw, t); s = t; }
     prevDeleted = false;
     if (isPastAssertion(s)) {
       const soft = softenExperience(s);

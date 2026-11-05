@@ -69,7 +69,9 @@ describe("P6c B 사실 정합", () => {
   it("B5 수진 대운 2022~2031: 2026년은 5번째 해(중간), '마지막 해'는 잡는다", () => {
     const b = brief("major_fortune", PEOPLE.x);
     expect(b.chart.currentDayun?.years).toBe("2022~2031");
-    expect(b.chart.currentDayun?.phase).toEqual({ yearIndex: 5, label: "중간", yearsLeft: 5 });
+    // 최종 A-4: 남은 기간은 교운 시각 기준(다음 교운 2032년 겨울 → 2026-11-03에서 6년 남짓). 몇 번째 해는 연도 카드와 같은 달력 연차.
+    expect(b.chart.currentDayun?.phase).toMatchObject({ yearIndex: 5, label: "중간", yearsLeft: 6 });
+    expect(b.chart.currentDayun?.phase?.remaining).toMatch(/^약 6년/);
     expect(L.dayunPhaseClaim("지금 대운의 마지막 해이기도 합니다.", "middle")).toBe("late");
     expect(L.dayunPhaseClaim("이번 10년 흐름의 한가운데예요.", "middle")).toBeNull();
   });
@@ -149,7 +151,7 @@ describe("P6c E 상품 구조", () => {
     expect(b.person.workScenes?.plan).toEqual(["PRD 초안", "로드맵 우선순위"]);
     const ev = (key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
     // 하람 2026 = 임인 대운(2017~2026)의 마지막 해, 다음 대운 2027 계묘.
-    expect(ev("timingNow")!.facts.join(" ")).toMatch(/10번째 해\(마지막 해, 뒤로 0해\)/);
+    expect(ev("timingNow")!.facts.join(" ")).toMatch(/10번째 해\(마지막 해, 남은 기간 약 \d개월\(2027년 \d{1,2}월 무렵까지\)\)/); // 최종 A-4: 남은 기간은 교운 시각 기준
     expect(ev("timingNow")!.facts.join(" ")).toMatch(/다음 대운: [가-힣]{2} 대운: 2027년 \d{1,2}월 무렵부터/);
     // P6e 14: 다섯 힘은 쉬운 이름(묶음 이름)으로.
     expect(ev("engineGroups")!.facts[0]).toBe("다섯 힘(만세력 가중값): 내 방식의 힘(비겁) 보통 · 만드는 힘(식상) 보통 · 값을 받는 힘(재성) 약 · 규칙의 힘(관성) 강 · 배우는 힘(인성) 약"); // 최종판3 1: 비겁은 일간 자신을 뺀다

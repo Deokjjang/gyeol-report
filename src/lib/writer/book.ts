@@ -129,15 +129,17 @@ export function chapterEvidence(brief: Brief, ch: WriterChapter): string[] {
   return names.slice(0, 5);
 }
 
-export function payloadToBriefInput(payload: ReportInputPayload, baseDate: string) {
+/** baseAt: 기준 시각(발행 시각, ISO) — 지금 대운을 교운 시각과 비교해 고른다(최종 A-5). */
+export function payloadToBriefInput(payload: ReportInputPayload, baseDate: string, baseAt?: string) {
+  const at = baseAt ? { baseAt } : {};
   const person = (p: Extract<ReportInputPayload, { person: unknown }>["person"], ctx?: Extract<ReportInputPayload, { userContext: unknown }>["userContext"]) => ({
     name: p.name, gender: (p.gender === "MALE" || p.gender === "FEMALE" ? p.gender : "") as "MALE" | "FEMALE" | "", birthDate: p.birthDate, birthTime: p.birthTime, birthTimeUnknown: p.birthTimeUnknown,
     approximateBirthTimeSlot: p.approximateBirthTimeSlot, mbtiType: (p.mbtiType || "") as never,
     ...(ctx ? { context: { relationshipStatus: ctx.relationshipStatus, jobStatus: ctx.jobStatus, detailJob: ctx.detailJob } } : {}),
   });
-  if (payload.productKey === "saju_mbti_compatibility") return { product: payload.productKey, person: person(payload.personA), partner: person(payload.personB), relationshipType: payload.relationshipType, baseDate };
+  if (payload.productKey === "saju_mbti_compatibility") return { product: payload.productKey, person: person(payload.personA), partner: person(payload.personB), relationshipType: payload.relationshipType, baseDate, ...at };
   const year = "selectedYear" in payload.productOptions ? Number(payload.productOptions.selectedYear) : NaN;
-  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...(Number.isFinite(year) ? { selectedYear: year } : {}) };
+  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...at, ...(Number.isFinite(year) ? { selectedYear: year } : {}) };
 }
 
 const firstSentence = (sections: readonly BookSection[]) => splitSentences(sections.flatMap(s => s.paragraphs)[0] ?? "")[0] ?? "";

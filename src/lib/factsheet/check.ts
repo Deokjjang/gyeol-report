@@ -316,11 +316,19 @@ function yinYangSide(sen: string, owners: readonly PersonFacts[]): FactHit | nul
   return { rule: "fact_term", detail: `음양 방향: ${bad.map(p => `${p.name} 음 ${p.yinYang.yin}·양 ${p.yinYang.yang}`).join(", ")} — 「${side}」이 많다고 쓸 수 없다` };
 }
 /** 최종판3 12: 지금 대운의 끝을 정답지와 다르게 말한 꼴(판독: 신유 대운(2019~2028)을 「올해까지 이어지는 이 10년」 — 수리가 연도를 지우며 지어냄). */
+/** 최종 A-4·5: 대운의 끝은 다음 대운의 교운 연·월(「2029년 11월 무렵까지」)이고, 지금 대운은 교운 시각 기준(정답지 dayun.current).
+ * 「올해까지」 또는 「YYYY년(M월)까지」가 그 끝 해와 다르면 잡는다(엔진 endYear로 끊은 「2028년까지」 꼴). */
 function dayunSpan(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
-  if (!/대운|10년 흐름|이 10년/.test(sen) || !/올해까지|올해로 (끝|마무리)|올해 (끝나|마무리)/.test(sen)) return null;
+  if (!/대운|10년 흐름|이 10년/.test(sen)) return null;
+  const thisYearEnd = /올해까지|올해로 (끝|마무리)|올해 (끝나|마무리)/.test(sen), until = sen.match(/((?:19|20)\d{2})년(?: \d{1,2}(?:~\d{1,2})?월)?(?: 무렵)?까지/);
+  if (!thisYearEnd && !until) return null;
   for (const p of owners) {
-    const cur = [...p.dayun.cycles].reverse().find(c => c.startYear <= ctx.thisYear);
-    if (cur && cur.endYear !== ctx.thisYear) return { rule: "fact_dayun", detail: `지금 ${cur.ganjiKo} 대운은 ${cur.startYear}~${cur.endYear}년 — 「올해까지」가 아니다` };
+    const named = p.dayun.cycles.filter(c => sen.includes(`${c.ganjiKo} 대운`) || sen.includes(`${c.ganji} 대운`) || sen.includes(`${c.ganji}(${c.ganjiKo})`) || sen.includes(`${c.ganjiKo}(${c.ganji})`));
+    const cur = named.length === 1 ? named[0] : p.dayun.current != null ? p.dayun.cycles.find(c => c.index === p.dayun.current) : [...p.dayun.cycles].reverse().find(c => c.startYear <= ctx.thisYear);
+    if (!cur) continue;
+    const next = p.dayun.cycles.find(c => c.index === cur.index + 1), endYear = next ? Number((next.startSolarKst ?? String(next.startYear)).slice(0, 4)) : cur.endYear + 1;
+    const said = thisYearEnd ? ctx.thisYear : Number(until![1]);
+    if (said !== endYear) return { rule: "fact_dayun", detail: `${cur.ganjiKo} 대운은 ${endYear}년 교운 무렵까지 — 「${thisYearEnd ? "올해" : `${said}년`}까지」가 아니다` };
   }
   return null;
 }
