@@ -5,6 +5,7 @@
  * - pay <사례>: 그 본문에 사례 입력(tools/final/cases.ts의 payload, 같은 꼴)을 넣어 같은 로그인으로 결제 준비 → 토스 성공 주소로 이동(승인은 dev 서버의 토스 대역).
  * - work: 로컬 CRON_SECRET으로 결제 워커(/api/internal/report-jobs)를 돌린다(감독 → 발행). status: 사례별 주문·Book 상태.
  * 상태: docs/v5/final/paid-state.json(주문 코드·reportId). LLM 호출은 dev 서버 안에서 예산 관문(LLM_BUDGET_*)을 지난다.
+ * CASESET=final2: 최종판2 생성 4권(tools/final2/cases.ts), 상태는 docs/v5/final2/paid-state.json(결제 준비 본문 template은 최종판 상태에서 가져온다).
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -13,13 +14,15 @@ const { chromium } = await import(process.env.PLAYWRIGHT ?? "playwright");
 const ROOT = resolve(import.meta.dirname, "../..");
 const BASE = process.env.BASE ?? "http://localhost:3800";
 const AS = process.env.AS ?? "final";
-const OUT = join(ROOT, "docs/v5/final");
+const SET = process.env.CASESET === "final2" ? "final2" : "final";
+const OUT = join(ROOT, SET === "final2" ? "docs/v5/final2" : "docs/v5/final");
 mkdirSync(OUT, { recursive: true });
 const STATE = join(OUT, "paid-state.json");
 const state = existsSync(STATE) ? JSON.parse(readFileSync(STATE, "utf8")) : {};
+if (SET === "final2" && !state.template) { const prev = join(ROOT, "docs/v5/final/paid-state.json"); if (existsSync(prev)) state.template = JSON.parse(readFileSync(prev, "utf8")).template; }
 const save = () => writeFileSync(STATE, JSON.stringify(state, null, 1) + "\n");
 // 사례마다 결제 준비 본문의 inputSnapshot을 화면과 같은 함수(bookCheckoutSnapshot)로 만든다(템플릿의 임시 인물 값을 쓰지 않는다).
-const CASES = JSON.parse(execFileSync("pnpm", ["exec", "tsx", "-e", "import { FINAL_CASES } from './tools/final/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))"], { cwd: ROOT, encoding: "utf8" }).trim().split("\n").at(-1));
+const CASES = JSON.parse(execFileSync("pnpm", ["exec", "tsx", "-e", SET === "final2" ? "import { FINAL2_CASES as FINAL_CASES } from './tools/final2/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))" : "import { FINAL_CASES } from './tools/final/cases'; import { bookCheckoutSnapshot } from './src/lib/book/form'; console.log(JSON.stringify(FINAL_CASES.filter(c => c.generate).map(c => ({ ...c, snapshot: bookCheckoutSnapshot(c.payload as never) }))))"], { cwd: ROOT, encoding: "utf8" }).trim().split("\n").at(-1));
 const envFile = () => Object.fromEntries(readFileSync(join(ROOT, ".env.development.local"), "utf8").split("\n").filter(l => /^[A-Z_]+=/.test(l)).map(l => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1).replace(/^"|"$/g, "")]));
 const sql = q => execFileSync("docker", ["exec", "supabase_db_gyeol-report", "psql", "-U", "postgres", "-At", "-c", q], { encoding: "utf8" }).trim();
 const phase = process.argv[2], arg = process.argv[3];
@@ -48,13 +51,14 @@ if (phase === "status") {
 }
 
 const browser = await chromium.launch();
-const storage = join(OUT, `.storage-${AS}.json`);
+// 로그인 저장본은 같은 계정이면 최종판 것을 같이 쓴다(같은 고객 원장: 이 계정의 이전 책을 이전 책으로 본다).
+const storage = join(ROOT, "docs/v5/final", `.storage-${AS}.json`);
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, locale: "ko-KR", timezoneId: "Asia/Seoul", ...(existsSync(storage) ? { storageState: storage } : {}) });
 await ctx.addInitScript(() => { try { localStorage.setItem("gyeol-meta-card-seen:meta-20261020-v2", "1"); } catch { /* */ } });
 const page = await ctx.newPage();
 const login = async next => { await page.goto(`${BASE}/dev/v5-login?as=${AS}&next=${encodeURIComponent(next)}`, { waitUntil: "load" }); await ctx.storageState({ path: storage }); };
 try {
-  if (!existsSync(storage)) await login("/account");
+  if (!existsSync(storage) || process.env.RELOGIN) await login("/account");
   // 결제 전 가입 정보(이름·이메일)가 필요하다(BookCheckout profileRequired). 실제 계정 화면에서 한 번 채운다.
   await page.goto(`${BASE}/account`, { waitUntil: "load" }); await page.waitForTimeout(1500);
   const saveProfile = page.getByRole("button", { name: /저장하고 계속하기/ });

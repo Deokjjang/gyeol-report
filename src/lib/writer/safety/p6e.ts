@@ -142,7 +142,9 @@ export function pillarClaims(sentence: string, facts: PositionTenGods): string |
       const tg = TEN_GODS.find(t => new RegExp(`^[^가-힣]{0,3}(의|에|에는|엔|은|는|이|가|에 있는|에 앉은|에 놓인|에 자리한)?\\s?(\\([^)]*\\)\\s?)?${t}`).test(tail.trim()));
       if (tg && !allowed.includes(tg)) return `${pos}:${tg}`;
       // 최종판2 1-8: 한 자리에는 글자 하나다. "태어난 날 땅 글자의 갑신"처럼 자리 뒤에 간지 두 글자(기둥 전체)를 붙였다.
-      if (/^(의|은|는|이|가|에|인)?\s?[갑을병정무기경신임계][자축인묘진사오미신유술해](?=[이가은는을를의도과와]|\s|$|[,.(])/.test(sentence.slice((m.index ?? 0) + m[0].length))) return `${pos}:ganji`;
+      // 육십갑자에 있는 짝만(천간·지지 음양이 같음): "정인(正印)"을 丁寅으로 읽지 않는다.
+      const gj = sentence.slice((m.index ?? 0) + m[0].length).match(/^(의|은|는|이|가|에|인)?\s?([갑을병정무기경신임계])([자축인묘진사오미신유술해])(?=[이가은는을를의도과와]|\s|$|[,.(])/);
+      if (gj && "갑을병정무기경신임계".indexOf(gj[2]) % 2 === "자축인묘진사오미신유술해".indexOf(gj[3]) % 2) return `${pos}:ganji`;
       // 최종판 5: 거꾸로 된 어순 "정재가 월간에 앉은"(장덕민 커리어 5장, 월간은 정관). 자리 앞 십성 + 이/가/은/는, 자리 뒤 "에 앉/있/자리/놓/들".
       const head = sentence.slice(Math.max(0, (m.index ?? 0) - 10), m.index ?? 0);
       const before = TEN_GODS.find(t => new RegExp(`${t}(\\([^)]*\\))?(이|가|은|는) ?$`).test(head));

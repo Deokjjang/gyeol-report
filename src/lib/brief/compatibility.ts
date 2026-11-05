@@ -117,7 +117,8 @@ export function buildCompatibility(category: CompatibilityRelationshipType, a: P
   const featureName = (id: string) => { const f = k.features.get(id); if (!f) return id; const name = f.name.replace(/\(.*?\)/g, "").trim(); return /^(dayMaster|dayPillar):/.test(id) ? `태어난 날의 글자가 같음(${name})` : name; };
   const va = profiledVector(a, k), vb = profiledVector(b, k);
   const dims = k.ontology.dimensions.map(d => ({ d, x: va.get(d.id) ?? 0, y: vb.get(d.id) ?? 0 }))
-    .filter(z => Math.sign(z.x) !== Math.sign(z.y) && Math.abs(z.x - z.y) > 0.3)
+    // 최종판2 1-3: 성격표가 어느 끝도 아니라고 정한 값(0)은 차이로 쓰지 않는다(0을 + 끝 문장으로 적었다).
+    .filter(z => Math.sign(z.x) !== Math.sign(z.y) && Math.abs(z.x - z.y) > 0.3 && z.x !== 0 && z.y !== 0)
     // P6e 4: 그 사람 MBTI의 기능·태도에 맞지 않는 끝은 그 사람의 차이로 쓰지 않는다.
     .filter(z => poleFits(a.mbti?.type, z.d.id, z.x) && poleFits(b.mbti?.type, z.d.id, z.y))
     .sort((p, q) => Math.abs(q.x - q.y) - Math.abs(p.x - p.y) || p.d.id.localeCompare(q.d.id)).slice(0, 3);

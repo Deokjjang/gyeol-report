@@ -195,7 +195,8 @@ export function assembleV5Book(a: {
     chapters,
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
       cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number); return { ganji: c.ganji, years: c.years, ages: [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current }; }) } } : {}),
-    ...(brief.compatibility ? { pairImage: brief.compatibility.pairImage } : { coreImage: a.image ? { line: a.image, ruleId: `${brief.chart.coreImage.ruleId}:writer` } : brief.chart.coreImage }),
+    // 최종판2 1-1: 궁합 첫 쪽 관계 그림도 작가 표지 줄(엔진 기본 줄은 작가 표지가 없을 때만).
+    ...(brief.compatibility ? { pairImage: a.cover ? { ...brief.compatibility.pairImage, line: a.cover, ruleId: `${brief.compatibility.pairImage.ruleId}:writer` } : brief.compatibility.pairImage } : { coreImage: a.image ? { line: a.image, ruleId: `${brief.chart.coreImage.ruleId}:writer` } : brief.chart.coreImage }),
     ...(brief.appendix ? { appendix: brief.appendix } : {}),
     ...glossaryOf(brief, chapters),
     ...(a.cover ? { coverLine: a.cover } : {}),

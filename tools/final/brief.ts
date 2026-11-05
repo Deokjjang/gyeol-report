@@ -2,7 +2,7 @@
  * pnpm book:brief <사례|all> [--jobs] [--show]   (최종판 0-4, 호출 0)
  * 작가에게 갈 재료(렌더 브리프 = 작가 사용자 메시지의 JSON)를 .cache/brief/<사례>/<시각>.json에 남기고, 바로 앞 판과의 차이(바뀐 경로·값)를 보여 준다.
  * 재료·선택 로직 수정은 이 도구로만 확인한다(작가 호출 없이). --jobs: 직업 입력 10개의 직군 1~4순위 표. --show: 렌더 브리프 요약(장·절·재료 종류).
- * 사례: tools/final/cases.ts (P6d 4명 + 생성 4권).
+ * 사례: tools/final/cases.ts (P6d 4명 + 생성 4권), final2 = tools/final2/cases.ts(최종판2 생성 4권). --at <ISO>: 기준 시각(기본 2026-11-04T05:00Z).
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -14,6 +14,7 @@ import { buildWriterPrompt, renderWriterBrief } from "../../src/lib/writer/promp
 import { kstDate, writerKnowledge } from "../../src/lib/writer/publish";
 import { ROOT } from "../llm/env";
 import { FINAL_CASES, JOB_INPUTS, jobCase, type FinalCase } from "./cases";
+import { FINAL2_CASES } from "../final2/cases";
 
 export const BASE_AT = "2026-11-04T05:00:00.000Z";
 export function briefOf(c: FinalCase, k: Knowledge = writerKnowledge().k, at = BASE_AT): Brief {
@@ -47,11 +48,12 @@ function main() {
     for (const [job, status] of JOB_INPUTS) { const r = jobRanks(briefOf(jobCase(job, status), k)); console.log(`| ${job} | ${status} | ${[0, 1, 2, 3].map(i => r[i] ?? "—").join(" | ")} |`); }
     return;
   }
-  const which = args.find(a => !a.startsWith("--")) ?? "all";
-  const cases = which === "all" ? FINAL_CASES : FINAL_CASES.filter(c => c.id === which);
+  const ai = args.indexOf("--at"), at = ai >= 0 ? args[ai + 1] : BASE_AT;
+  const which = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--at") ?? "all";
+  const cases = which === "all" ? FINAL_CASES : which === "final2" ? FINAL2_CASES : [...FINAL_CASES, ...FINAL2_CASES].filter(c => c.id === which);
   if (!cases.length) { console.error(`사례 없음: ${which} (있는 것: ${FINAL_CASES.map(c => c.id).join(", ")})`); process.exit(2); }
   for (const c of cases) {
-    const b = briefOf(c, k), wb = renderWriterBrief(b, { knowledge: k });
+    const b = briefOf(c, k, at), wb = renderWriterBrief(b, { knowledge: k });
     const dir = join(ROOT, ".cache/brief", c.id); mkdirSync(dir, { recursive: true });
     const prev = existsSync(dir) ? readdirSync(dir).filter(f => f.endsWith(".json")).sort().at(-1) : undefined;
     const now = { at: new Date().toISOString(), writerBrief: wb, user: buildWriterPrompt(b, { knowledge: k }).user.length };
