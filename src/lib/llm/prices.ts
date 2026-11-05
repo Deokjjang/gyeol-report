@@ -19,7 +19,8 @@ const PRICES: Record<LlmProvider, Record<string, ModelPrice>> = {
   anthropic: {
     "claude-fable-5-1": { input: 10, cachedInput: 0.25, cacheWrite: 12.5, output: 50 },
     "claude-opus-5-5": { input: 4, cachedInput: 0.2, cacheWrite: 5, output: 20 },
-    "claude-sonnet-5-5": { input: 2, cachedInput: 0.1, cacheWrite: 2.5, output: 10 },
+    // 캐시 읽기 $0.20(최종판2 0: claude-api 문서 "Claude Sonnet 5.5 … $2 / $10 per MTok, cache reads $0.20"로 바로잡음, 이전 표 0.1은 과소 계산).
+    "claude-sonnet-5-5": { input: 2, cachedInput: 0.2, cacheWrite: 2.5, output: 10 },
     "claude-haiku-5-5": {
       input: 0.1, cachedInput: 0.01, cacheWrite: 0.125, output: 0.5,
       overPromptTokens: { threshold: 100_000, price: { input: 0.5, cachedInput: 0.05, cacheWrite: 0.625, output: 2.5 } },

@@ -23,8 +23,13 @@ export const MEASURED_MAX_PER_BOOK = 0.256;
 /** 장 하나만 만들 때(시험 1장·장 단위 재생성) 예상: 권당 최대 ÷ 장 수(9) × 2(여유). */
 export const MEASURED_MAX_PER_CHAPTER = 0.06;
 
+/**
+ * pending(최종판2 0): 부르기 직전에 최악 비용으로 먼저 적는 줄. 호출이 끝나면 실제 토큰·비용으로 바꾼다.
+ * 프로세스가 스트림 도중에 죽으면(서버 재시작·시간 초과) 이 줄이 남아 최악 비용으로 누적에 잡힌다(실제 과금은 콘솔과 대조, --audit).
+ */
 export type LedgerCall = { readonly at: string; readonly scope: string; readonly run: string; readonly stage: string; readonly kind: string; readonly provider: string; readonly model: string;
-  readonly input: number; readonly cachedInput: number; readonly output: number; readonly costUsd: number; readonly finish: string; readonly requestId: string | null; readonly key: string | null };
+  readonly input: number; readonly cachedInput: number; readonly output: number; readonly costUsd: number; readonly finish: string; readonly requestId: string | null; readonly key: string | null;
+  readonly id?: string; readonly pending?: boolean };
 export type Ledger = { version: 1; scopes: Record<string, { cap: number; createdAt: string; note: string }>; calls: LedgerCall[]; refusals: { at: string; scope: string; run: string; stage: string; reason: string; key: string | null }[] };
 
 export function readLedger(): Ledger {
@@ -85,15 +90,19 @@ export function budgetGate(o: GateOptions): Gate {
     const l = readLedger(), sc = l.scopes[o.scope];
     if (!sc) return refuse(`범위 없음: ${o.scope}`);
     // 같은 입력 해시 재생성 거절: 원고(출력)나 비용이 난 호출만 센다. 출력 0·비용 0인 실패(401 등 요청 거절)는 다시 불러도 재생성이 아니다.
-    if (pendingKey && l.calls.some(c => c.key === pendingKey && (c.output > 0 || c.costUsd > 0)) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
+    if (pendingKey && l.calls.some(c => c.key === pendingKey && !c.pending && (c.output > 0 || c.costUsd > 0)) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
     const worst = worstCost(input), s = spent(l, o.scope), r = spent(l, o.scope, o.run);
     if (s + worst > sc.cap) return refuse(`범위 상한 초과 예상: 누적 $${s.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 상한 $${sc.cap}`);
     if (r + worst > o.runBudget) return refuse(`실행 예산 초과 예상: 이번 실행 $${r.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 예산 $${o.runBudget}`);
+    // 부르기 전에 최악 비용으로 먼저 적는다(도중에 죽어도 원장에 남는다).
+    const id = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`, key = pendingKey;
+    const startedAt = new Date().toISOString();
+    { const lp = readLedger(); lp.calls.push({ at: startedAt, scope: o.scope, run: o.run, stage: o.stage, kind: kindOf(input), provider: input.provider, model: input.model, input: 0, cachedInput: 0, output: 0, costUsd: worst, finish: "pending", requestId: null, key, id, pending: true }); writeLedger(lp); }
     const res = await inner(input);
     const cost = res.costUsd ?? computeCostUsd(input.provider, input.model, res.usage) ?? 0;
-    const call: LedgerCall = { at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, kind: kindOf(input), provider: input.provider, model: input.model,
-      input: res.usage.inputTokens, cachedInput: res.usage.cachedInputTokens, output: res.usage.outputTokens, costUsd: cost, finish: res.error ? `${res.finishReason}:${res.error.code}` : res.finishReason, requestId: res.requestId, key: pendingKey };
-    const l2 = readLedger(); l2.calls.push(call); writeLedger(l2);
+    const call: LedgerCall = { at: startedAt, scope: o.scope, run: o.run, stage: o.stage, kind: kindOf(input), provider: input.provider, model: input.model,
+      input: res.usage.inputTokens, cachedInput: res.usage.cachedInputTokens, output: res.usage.outputTokens, costUsd: cost, finish: res.error ? `${res.finishReason}:${res.error.code}` : res.finishReason, requestId: res.requestId, key, id };
+    const l2 = readLedger(); const at = l2.calls.findIndex(c => c.id === id); if (at >= 0) l2.calls[at] = call; else l2.calls.push(call); writeLedger(l2);
     try { appendCostRow(call); } catch { /* 표 기록 실패는 원장이 남는다 */ }
     pendingKey = null;
     return res;
@@ -119,6 +128,8 @@ export function budgetArg(argv: readonly string[]): number {
 
 if (process.argv[1] && process.argv[1].endsWith("budget.ts")) {
   const l = readLedger();
-  for (const [name, sc] of Object.entries(l.scopes)) console.log(`${name}: 상한 $${sc.cap} · 누적 $${spent(l, name).toFixed(6)} · 호출 ${l.calls.filter(c => c.scope === name).length} · 거절 ${l.refusals.filter(r => r.scope === name).length}`);
+  for (const [name, sc] of Object.entries(l.scopes)) console.log(`${name}: 상한 $${sc.cap} · 누적 $${spent(l, name).toFixed(6)} · 호출 ${l.calls.filter(c => c.scope === name).length} · 끝나지 않은 호출 ${l.calls.filter(c => c.scope === name && c.pending).length} · 거절 ${l.refusals.filter(r => r.scope === name).length}`);
   if (!Object.keys(l.scopes).length) console.log("원장이 비어 있습니다.");
+  for (const c of l.calls.filter(x => x.pending)) console.log(`끝나지 않은 호출(최악 비용으로 셈): ${c.at} ${c.stage} ${c.kind} $${c.costUsd.toFixed(4)}`);
+  if (process.argv.includes("--audit")) void import("./audit").then(m => m.audit(l));
 }
