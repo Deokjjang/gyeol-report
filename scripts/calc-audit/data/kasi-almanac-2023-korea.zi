@@ -1,0 +1,45 @@
+# 한국천문연구원(KASI) 「2023 역서」(제48호) 기준 한국 표준시·서머타임 이력을 tzdata(zic) 문법으로 옮긴 것.
+# 원문: https://astro.kasi.re.kr/file/astro_almanac_pdf/20221209095149975.pdf
+#   p.211 「표준자오선과 한국표준시」 표: 127°30' 1908-04-01~1911-12-31, 135° 1912-01-01~1954-03-20,
+#         127°30' 1954-03-21~1961-08-09, 135° 1961-08-10~현재 (날짜만, 시각 없음)
+#   p.212 「일광절약시간제(서머타임제)」 표: 아래 Rule 줄의 날짜·시각을 그대로 옮김
+# 1954-03-21 전환 시각: 대통령령 제876호(1954-03-17) 「단기 4287년 3월 21일 오전 0시 30분부터 동경 127도 30분을
+#   표준자오선으로 한다」(ko.wikisource 「표준자오선변경에관한건」, 서울신문 2015-08-08 인용 기사
+#   「3월 21일(춘분) 상오 0시 30분을 기하여 … 상오 0시 30분이 새로운 한국시간으로 상오 0시 정각이 된다」).
+#   tzdata는 같은 날 0시(+9)로 둔다. 여기서는 0:30(+9)으로 둔다.
+#
+# 해석 가정(역서는 시각이 표준시인지 서머타임 시각인지 적지 않는다):
+#   시작·종료 시각을 「바뀌기 직전 시계」로 읽는다(zic의 w 접미사, tzdata와 같은 읽기).
+#   예) 1948 시작 「5월 31일 23시」 = 표준시 23:00에 시계를 24:00(6월 1일 0:00, 서머타임)으로 돌림.
+#       1955 종료 「9월 9일 1시」 = 서머타임 01:00에 시계를 00:00(표준시)으로 돌림.
+#   다른 읽기(전부 표준시로 읽기)는 report.md 2-2에 따로 적는다.
+# Rule	NAME	FROM	TO	-	IN	ON	AT	SAVE	LETTER/S
+Rule	KASI	1948	only	-	May	31	23:00	1:00	D
+Rule	KASI	1948	only	-	Sep	12	24:00	0	S
+Rule	KASI	1949	only	-	Apr	 2	23:00	1:00	D
+Rule	KASI	1949	only	-	Sep	10	24:00	0	S
+Rule	KASI	1950	only	-	Mar	31	23:00	1:00	D
+Rule	KASI	1950	only	-	Sep	 9	24:00	0	S
+Rule	KASI	1951	only	-	May	 6	23:00	1:00	D
+Rule	KASI	1951	only	-	Sep	 8	24:00	0	S
+Rule	KASI	1955	only	-	May	 5	 0:00	1:00	D
+Rule	KASI	1955	only	-	Sep	 9	 1:00	0	S
+Rule	KASI	1956	only	-	May	20	 0:00	1:00	D
+Rule	KASI	1956	only	-	Sep	30	 1:00	0	S
+Rule	KASI	1957	only	-	May	 5	 0:00	1:00	D
+Rule	KASI	1957	only	-	Sep	22	 1:00	0	S
+Rule	KASI	1958	only	-	May	 4	 0:00	1:00	D
+Rule	KASI	1958	only	-	Sep	21	 1:00	0	S
+Rule	KASI	1959	only	-	May	 3	 0:00	1:00	D
+Rule	KASI	1959	only	-	Sep	20	 1:00	0	S
+Rule	KASI	1960	only	-	May	 1	 0:00	1:00	D
+Rule	KASI	1960	only	-	Sep	18	 1:00	0	S
+Rule	KASI	1987	only	-	May	10	 2:00	1:00	D
+Rule	KASI	1987	only	-	Oct	11	 3:00	0	S
+Rule	KASI	1988	only	-	May	 8	 2:00	1:00	D
+Rule	KASI	1988	only	-	Oct	 9	 3:00	0	S
+Zone	Asia/Seoul	8:27:52	-	LMT	1908 Apr  1
+			8:30	-	KST	1912 Jan  1
+			9:00	KASI	K%sT	1954 Mar 21  0:30
+			8:30	KASI	K%sT	1961 Aug 10
+			9:00	KASI	K%sT

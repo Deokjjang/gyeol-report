@@ -1,0 +1,460 @@
+{
+  "sweptDays": 91,
+  "sweptMinutes": 262080,
+  "windows": [
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1948-06-01T00:00",
+      "to": "1948-06-01T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1948-06-01T00:00 엔진 戊子 丁巳 丁巳 庚子 / kasi-almanac-2023 戊子 丁巳 丙辰 己亥"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1949-04-03T00:00",
+      "to": "1949-04-03T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1949-04-03T00:00 엔진 己丑 丁卯 癸亥 壬子 / kasi-almanac-2023 己丑 丁卯 壬戌 辛亥"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1950-04-01T00:00",
+      "to": "1950-04-01T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1950-04-01T00:00 엔진 庚寅 己卯 丙寅 戊子 / kasi-almanac-2023 庚寅 己卯 乙丑 丁亥"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T01:30",
+      "to": "1951-05-06T02:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T01:30 엔진 辛卯 壬辰 丙午 戊子 / kasi-almanac-2023 辛卯 壬辰 丙午 己丑"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T03:30",
+      "to": "1951-05-06T04:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T03:30 엔진 辛卯 壬辰 丙午 己丑 / kasi-almanac-2023 辛卯 壬辰 丙午 庚寅"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T05:30",
+      "to": "1951-05-06T06:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T05:30 엔진 辛卯 壬辰 丙午 庚寅 / kasi-almanac-2023 辛卯 壬辰 丙午 辛卯"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T07:30",
+      "to": "1951-05-06T08:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T07:30 엔진 辛卯 壬辰 丙午 辛卯 / kasi-almanac-2023 辛卯 壬辰 丙午 壬辰"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T09:30",
+      "to": "1951-05-06T10:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T09:30 엔진 辛卯 壬辰 丙午 壬辰 / kasi-almanac-2023 辛卯 壬辰 丙午 癸巳"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T11:30",
+      "to": "1951-05-06T12:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T11:30 엔진 辛卯 壬辰 丙午 癸巳 / kasi-almanac-2023 辛卯 壬辰 丙午 甲午"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T13:30",
+      "to": "1951-05-06T14:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T13:30 엔진 辛卯 壬辰 丙午 甲午 / kasi-almanac-2023 辛卯 壬辰 丙午 乙未"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T15:30",
+      "to": "1951-05-06T16:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T15:30 엔진 辛卯 壬辰 丙午 乙未 / kasi-almanac-2023 辛卯 壬辰 丙午 丙申"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T17:10",
+      "to": "1951-05-06T18:29",
+      "minutes": 80,
+      "pillars": [
+        "month",
+        "hour"
+      ],
+      "example": "1951-05-06T17:10 엔진 辛卯 壬辰 丙午 丙申 / kasi-almanac-2023 辛卯 癸巳 丙午 丙申"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T19:30",
+      "to": "1951-05-06T20:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T19:30 엔진 辛卯 癸巳 丙午 丁酉 / kasi-almanac-2023 辛卯 癸巳 丙午 戊戌"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T21:30",
+      "to": "1951-05-06T22:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T21:30 엔진 辛卯 癸巳 丙午 戊戌 / kasi-almanac-2023 辛卯 癸巳 丙午 己亥"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1951-05-06T23:30",
+      "to": "1951-05-06T23:59",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1951-05-06T23:30 엔진 辛卯 癸巳 丙午 己亥 / kasi-almanac-2023 辛卯 癸巳 丁未 庚子"
+    },
+    {
+      "model": "kasi-almanac-2023",
+      "from": "1955-05-06T16:48",
+      "to": "1955-05-06T16:48",
+      "minutes": 1,
+      "pillars": [
+        "month"
+      ],
+      "example": "1955-05-06T16:48 엔진 乙未 辛巳 丁卯 戊申 / kasi-almanac-2023 乙未 庚辰 丁卯 戊申"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1948-06-01T00:00",
+      "to": "1948-06-01T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1948-06-01T00:00 엔진 戊子 丁巳 丁巳 庚子 / kasi-almanac-2023-standard-reading 戊子 丁巳 丙辰 己亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1948-09-13T00:00",
+      "to": "1948-09-13T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1948-09-13T00:00 엔진 戊子 辛酉 辛丑 戊子 / kasi-almanac-2023-standard-reading 戊子 辛酉 庚子 丁亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1949-04-03T00:00",
+      "to": "1949-04-03T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1949-04-03T00:00 엔진 己丑 丁卯 癸亥 壬子 / kasi-almanac-2023-standard-reading 己丑 丁卯 壬戌 辛亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1949-09-11T00:00",
+      "to": "1949-09-11T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1949-09-11T00:00 엔진 己丑 癸酉 甲辰 甲子 / kasi-almanac-2023-standard-reading 己丑 癸酉 癸卯 癸亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1950-04-01T00:00",
+      "to": "1950-04-01T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1950-04-01T00:00 엔진 庚寅 己卯 丙寅 戊子 / kasi-almanac-2023-standard-reading 庚寅 己卯 乙丑 丁亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1950-09-10T00:00",
+      "to": "1950-09-10T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1950-09-10T00:00 엔진 庚寅 乙酉 戊申 壬子 / kasi-almanac-2023-standard-reading 庚寅 乙酉 丁未 辛亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T01:30",
+      "to": "1951-05-06T02:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T01:30 엔진 辛卯 壬辰 丙午 戊子 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 己丑"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T03:30",
+      "to": "1951-05-06T04:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T03:30 엔진 辛卯 壬辰 丙午 己丑 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 庚寅"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T05:30",
+      "to": "1951-05-06T06:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T05:30 엔진 辛卯 壬辰 丙午 庚寅 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 辛卯"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T07:30",
+      "to": "1951-05-06T08:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T07:30 엔진 辛卯 壬辰 丙午 辛卯 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 壬辰"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T09:30",
+      "to": "1951-05-06T10:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T09:30 엔진 辛卯 壬辰 丙午 壬辰 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 癸巳"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T11:30",
+      "to": "1951-05-06T12:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T11:30 엔진 辛卯 壬辰 丙午 癸巳 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 甲午"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T13:30",
+      "to": "1951-05-06T14:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T13:30 엔진 辛卯 壬辰 丙午 甲午 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 乙未"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T15:30",
+      "to": "1951-05-06T16:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T15:30 엔진 辛卯 壬辰 丙午 乙未 / kasi-almanac-2023-standard-reading 辛卯 壬辰 丙午 丙申"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T17:10",
+      "to": "1951-05-06T18:29",
+      "minutes": 80,
+      "pillars": [
+        "month",
+        "hour"
+      ],
+      "example": "1951-05-06T17:10 엔진 辛卯 壬辰 丙午 丙申 / kasi-almanac-2023-standard-reading 辛卯 癸巳 丙午 丙申"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T19:30",
+      "to": "1951-05-06T20:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T19:30 엔진 辛卯 癸巳 丙午 丁酉 / kasi-almanac-2023-standard-reading 辛卯 癸巳 丙午 戊戌"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T21:30",
+      "to": "1951-05-06T22:29",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1951-05-06T21:30 엔진 辛卯 癸巳 丙午 戊戌 / kasi-almanac-2023-standard-reading 辛卯 癸巳 丙午 己亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-05-06T23:30",
+      "to": "1951-05-06T23:59",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1951-05-06T23:30 엔진 辛卯 癸巳 丙午 己亥 / kasi-almanac-2023-standard-reading 辛卯 癸巳 丁未 庚子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1951-09-09T00:00",
+      "to": "1951-09-09T00:29",
+      "minutes": 30,
+      "pillars": [
+        "day",
+        "hour"
+      ],
+      "example": "1951-09-09T00:00 엔진 辛卯 丁酉 壬子 庚子 / kasi-almanac-2023-standard-reading 辛卯 丁酉 辛亥 己亥"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1955-05-06T16:48",
+      "to": "1955-05-06T16:48",
+      "minutes": 1,
+      "pillars": [
+        "month"
+      ],
+      "example": "1955-05-06T16:48 엔진 乙未 辛巳 丁卯 戊申 / kasi-almanac-2023-standard-reading 乙未 庚辰 丁卯 戊申"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1955-09-09T01:00",
+      "to": "1955-09-09T01:59",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1955-09-09T01:00 엔진 乙未 乙酉 癸酉 癸丑 / kasi-almanac-2023-standard-reading 乙未 乙酉 癸酉 壬子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1956-09-30T01:00",
+      "to": "1956-09-30T01:59",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1956-09-30T01:00 엔진 丙申 丁酉 庚子 丁丑 / kasi-almanac-2023-standard-reading 丙申 丁酉 庚子 丙子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1957-09-22T01:00",
+      "to": "1957-09-22T01:59",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1957-09-22T01:00 엔진 丁酉 己酉 丁酉 辛丑 / kasi-almanac-2023-standard-reading 丁酉 己酉 丁酉 庚子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1958-09-21T01:00",
+      "to": "1958-09-21T01:59",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1958-09-21T01:00 엔진 戊戌 辛酉 辛丑 己丑 / kasi-almanac-2023-standard-reading 戊戌 辛酉 辛丑 戊子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1959-09-20T01:00",
+      "to": "1959-09-20T01:59",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1959-09-20T01:00 엔진 己亥 癸酉 乙巳 丁丑 / kasi-almanac-2023-standard-reading 己亥 癸酉 乙巳 丙子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1960-09-18T01:00",
+      "to": "1960-09-18T01:59",
+      "minutes": 60,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1960-09-18T01:00 엔진 庚子 乙酉 己酉 乙丑 / kasi-almanac-2023-standard-reading 庚子 乙酉 己酉 甲子"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1987-10-11T03:30",
+      "to": "1987-10-11T03:59",
+      "minutes": 30,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1987-10-11T03:30 엔진 丁卯 庚戌 癸巳 甲寅 / kasi-almanac-2023-standard-reading 丁卯 庚戌 癸巳 癸丑"
+    },
+    {
+      "model": "kasi-almanac-2023-standard-reading",
+      "from": "1988-10-09T03:30",
+      "to": "1988-10-09T03:59",
+      "minutes": 30,
+      "pillars": [
+        "hour"
+      ],
+      "example": "1988-10-09T03:30 엔진 戊辰 壬戌 丁酉 壬寅 / kasi-almanac-2023-standard-reading 戊辰 壬戌 丁酉 辛丑"
+    }
+  ]
+}
