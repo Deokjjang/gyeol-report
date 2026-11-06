@@ -1,5 +1,7 @@
 # P — 화면 속도 개선 + P 추가(로그인 결제·1+1·이용권 11-30·서재·선물·결제수단·문서) 보고
 
+> **단계 1(배포 전 보완 + 운영 배포, 2026-11-06) 결과는 맨 아래 「단계 1」 절.** 아래 1~9절은 배포 전(a58d3426) 보고 원문이다. 그중 G(결제위젯)는 단계 1에서 취소·제거했다.
+
 브랜치 `v5/perf-01`(기준 `origin/v5/main` 2ad0af3f — 배포 직후 고친 migration e95b1f54·2ad0af3f 포함). Anthropic 호출 0. 운영 쓰기 0(운영은 공개 페이지 측정만). 배포 안 함.
 판정 표기: PASS / PARTIAL / FAIL / UNVERIFIED.
 
@@ -144,3 +146,64 @@ P 본문 3
 - 캡처(휴대폰·데스크톱): `docs/v5/perf/captures/` — library(이용권 있음)·library-zero(0장)·gift-sheet·gift-new·gift-member·gift-gone·checkout-tickets·checkout-zero·checkout-guest·inapp-login·home(상품 카드)·popup-1/2/3·expired·reconsent. 토스 결제 화면 안 수단 선택 캡처는 위젯 키가 없어 없음(UNVERIFIED).
 - 측정 도구: `tools/perf/`(seed·cookies·env·serve.sh·sim.mjs·measure.mjs·capture.mjs·book-freeze.mjs).
 - 새 시험: `tests/unit/perf/eventTickets.test.ts`(PGlite: C·D·E·F·B·소유 확인), `tests/unit/perf/libraryShelf.test.ts`.
+
+---
+
+## 단계 1 — P 배포 전 보완 + 운영 배포(2026-11-06)
+
+판정 표기 PASS / PARTIAL / FAIL / UNVERIFIED. Anthropic·OpenAI 호출 0. 토스 API 호출 0. 결제·환불 0. 환경변수 변경 0.
+
+### 1-1. 이용권 기한(결정 반영)
+- migration `20261107090000` D 범위를 좁혔다.
+  - 당김: 보상 캠페인(`comp_campaign_grants`) 수령자의 보상 이용권(`gift_rewards.kind='comp'`, 누나 계정 제외) + `comp_campaign_grants`·`comp_grants`의 기한 → 2026-11-30 23:59:59 KST. 원래 기한은 `ticket_expiry_adjustments`에 남는다.
+  - 그대로: 누나 계정 `d0dd2e4e-…` 5장(캠페인 밖 개별 보상, 12-06 11:06 KST — 운영 확인 결과 `gift_rewards` comp 5장이었다. 예전 migration은 이것까지 당겼을 것), 관리자 수동 지급(오류 보상용 — 초안의 「기한 없이 들어온 지급도 11-30」 패치를 뺐다, 발급일 + 30일 유지), 원장 이용권(대상 0 → 원장 수정 막기 트리거를 끄는 단계도 없앰).
+  - 멈춤 장치: 대상 중 하나라도 쓰였거나(상태≠available·used·claimed) 링크가 생겼으면(token·gifted) `PERF_D_TARGET_CHANGED`로 아무것도 바꾸지 않는다. 바꾼 수가 센 수와 다르면 `PERF_D_COUNT_MISMATCH`.
+  - 새 발급: 1+1·보상은 코드가 넘기는 `ticketExpiresAt()` = 11-30 23:59:59 KST(그대로).
+- 화면 기한: 서재 한 줄 = 지갑의 가장 빠른 기한(`wallet.expiresAt`, 기존), 팝업 ②③ = 그 계정 보상 이용권의 실제 기한(`comp.expiresAt`, 기존), **결제 화면에 새로** 「남은 이용권 N장 · M월 D일까지」(먼저 쓰는 장의 기한 `usableExpiresAt`).
+- 시험(PGlite, 운영 모양 시드): 캠페인 이용권·기록 두 표만 11-30 / 누나 5장 12-06 11:06 그대로·지갑 5장·기한 12월 6일 / 관리자 지급·원장 그대로, 배포 뒤 관리자 지급 = 발급 + 30일 / 링크가 생긴 대상이 있으면 멈추고 아무것도 안 바뀜 — PASS.
+
+### 1-2. 환불 때 이용권 회수
+- 운영 함수 확인: 환불 경로는 둘(`ops_order('refund_finish')` 관리자·자동 환불, `ops_recon('external_refund')` 토스 상점관리자 환불 기록)이고 둘 다 이미 `status in ('available','gifted')`를 `revoked`·`token_hash=null`로 바꾼다. `gifted` = 링크를 만들었지만 아직 안 받은 이용권(token 있음·claimed 없음)이라 **추가 요구는 이미 동작 중**. 코드 변경 없음.
+- 받는 화면: token이 지워져 링크 확인(peek)·받기(claim)가 `GIFT_NOT_FOUND` → 「기한이 지났거나 이미 받은 선물이에요」 한 줄(기존 `GiftClaim`).
+- 새 시험 3건(PGlite): 관리자 환불 — 안 받은 선물 링크 회수·링크 무효·보낸 사람 지갑 0 / 관리자 환불 — 이미 받은 선물은 회수·차감 없이 `giftKept: "claimed"`만 / 외부 환불 기록 — 안 받은 선물 링크 회수 — PASS.
+
+### 1-3. 친구 첫 결제 보너스
+- 배포 직전 운영 선물 링크 수: ⟨배포 단계에서 채움⟩. 0이면 삭제 그대로(SQL 'bonus'는 아무것도 주지 않음, 결제 뒤 호출 없음).
+
+### 1-4. 약관·화면 「증정」
+- 약관 「이용권」: 결제에 따른 무상 증정·판매 상품 아님 / 무상 증정이므로 현금 교환·환불 불가 / 결제 환불 시 그 결제로 받은 미사용 이용권(받지 않은 선물 링크 포함) 회수·링크 무효, 쓴 것·받은 선물은 회수 안 함 / 이용권으로 만든 책 오류 → 다시 만들거나 이용권을 다시 드림. 환불정책·주문서 짧은 줄도 같게. 처리방침 「지급」 → 「증정」.
+- 약관 변경 이력 첫 줄이 「결제를 환불해도 이미 드린 이용권은 회수하지 않음」으로 조항과 어긋나 있던 것을 바로잡음.
+- 화면: 메인 배너·팝업 ①②③·주문서 영수증 줄에서 「1+1」「한 권을 펼치면, 한 권이 더」「한 장을 더 드려요」를 빼고 「이용권 증정 EVENT · 한 권을 펼치면, 이용권 한 장 · 리포트를 결제하면 1건마다 이용권 1장을 증정해요」「이벤트 · 결제 후 이용권 1장 증정」으로.
+- 문서 버전 `2026-11-06.1` 그대로(아직 배포 전 판), **시행일 2026-11-06(배포일)**. 불리한 변경 대상자 0명 근거: `docs/v5/final4/legal-review.md` 첫 절(39명 지급 뒤 로그인·세션·토큰 갱신 0, 사용 0, 링크 0, 이벤트 이용권 0, 선물 링크 0).
+
+### 1-5. 결제수단(정정 지시 반영 — 위젯 키 취소)
+- 결제 요청을 `method: "CARD"`(서버 어댑터 기존) + `card: { flowMode: "DEFAULT" }`(easyPay 없음)로. 토스 문서: DEFAULT = 카드·간편결제 통합결제창, DEFAULT에서는 easyPay를 넣어도 무시(https://docs.tosspayments.com/sdk/v2/js/payment). 키는 지금의 API 개별 연동 키 그대로, 새 환경변수 0.
+- P에서 넣은 위젯 분기(gck 판별·결제위젯 시트·`TOSS_CLIENT_CHECKOUT_CANCELED`·CSS·시험)를 모두 걷어냄. 승인·확정·환불 경로 diff 0.
+- **통합결제창에 계약한 수단만 보이는지는 토스 문서에 명시가 없다(UNVERIFIED)** — 덕짱님 실결제에서 카드 등 다른 수단이 보이면 보고만 하고 멈춘다.
+- git 기록(토스페이만 뜨게 된 경위):
+
+| 커밋 | 날짜(KST) | 결제 요청 |
+|---|---|---|
+| a6701673·047185f6·9a3bcf69 | 06-10~06-11 | 결제창 처음 연결. `method: "CARD"`, `flowMode: "DEFAULT"`를 넣었다가 바로 뺌(기본값 DEFAULT = 통합결제창) |
+| **9aef88ad** | **09-24 08:32** | 「feat: add direct easy pay checkout」 — 공개 주문 화면(`/report/new`, `TossPaymentWidgetLauncher`)에 버튼 두 개 「토스페이로 결제」「카카오페이로 결제」, 요청 `card: { flowMode: "DIRECT", easyPay }` |
+| 813cec8c | 10-02 02:36 | v4 책 주문서(`BookCheckout`) 추가, 미리보기 경로에 `easyPay: "TOSSPAY"` 고정 |
+| **86a21eca** | **10-08 16:01** | 「fix: prepare v4 public launch」 — 공개 결제가 `BookCheckout`(버튼 「결제하기」 하나)로 옮겨가며 `runDevTossCheckout(…, { easyPay: "TOSSPAY" })` 고정 → **이때부터 토스페이만** |
+| d770def4 | 10-10 19:22 | 가격 1,290원 → 1,490원(상품 표). **결제 요청(flowMode·easyPay)은 바꾸지 않음** |
+| 이후 ~ a58d3426 | ~11-06 | `easyPay: "TOSSPAY"` 고정 유지(P에서 위젯 분기만 추가 → 이번에 제거) |
+
+  1,290원 시기 카카오페이 3건(상점관리자)은 09-24~10-08의 두 버튼 화면에서 난 것으로 보인다(커밋 기준 — 각 커밋의 운영 배포 시각은 대조하지 않음).
+
+### 1-6. 지역 변경 사전 확인(외부 서비스 허용 IP)
+콘솔 화면은 열지 않고 공식 문서와 코드로만 확인(콘솔 실제 설정은 UNVERIFIED).
+
+| 서비스 | 허용 IP 기능 | icn1 이동 영향 |
+|---|---|---|
+| Vercel | 기본 함수의 나가는 IP는 공유·순환(고정 아님). 고정 IP는 유료 Static IPs(지역마다 IP 쌍) | 프로젝트 정보(Vercel API)·저장소에 Static IPs 흔적 없음(설정 화면 직접 확인은 UNVERIFIED) → 해당 없음 |
+| 토스페이먼츠 | 상점 → 토스 API를 상점 IP로 막는 기능은 문서에 없음(토스가 공개하는 IP 목록은 웹훅 발신용 = 반대 방향) | 없음 |
+| 카카오 | 키별 「호출 허용 IP 주소」(등록했을 때만 적용) | 카카오 로그인은 Supabase Auth가 카카오와 주고받음(콜백 `…supabase.co/auth/v1/callback`), 연결 끊기(`kapi.kakao.com/v1/user/unlink`)는 우리 함수가 부름 → 허용 IP를 켰다면 지금도 실패 중이어야 함(아래 논리) |
+| Meta | 앱 「Server IP Allowlist」(앱 시크릿으로 부르는 Graph API) | 같은 논리로 영향 없음 |
+| Anthropic | 조직 IP allowlisting(관리자가 켜야 함) | 같은 논리 |
+| OpenAI | 조직·프로젝트 IP allowlist(켜야 함) | 같은 논리 |
+| Supabase | Network Restrictions는 Postgres·풀러 직접 접속에만 적용, PostgREST·Auth·supabase-js(HTTPS)에는 미적용 | 함수는 supabase-js만 씀 → 영향 없음 |
+
+논리: 지금(iad1)도 함수의 나가는 IP가 계속 바뀌므로, 어느 서비스든 허용 IP가 켜져 있었다면 이미 간헐 실패가 났어야 한다. 정상으로 돌고 있으므로 icn1로 옮겨 IP 때문에 새로 깨질 곳은 없다(Static IPs를 쓰는 경우만 예외). 출처: vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option, vercel.com/docs/networking/static-ips, docs.tosspayments.com/reference/using-api/network-requirements, developers.kakao.com/docs/latest/ko/app-setting/app, developers.facebook.com/documentation/facebook-login/security, platform.claude.com/docs/en/manage-claude/ip-allowlist, developers.openai.com/api/docs/guides/ip-allowlist, supabase.com/docs/guides/platform/network-restrictions.
