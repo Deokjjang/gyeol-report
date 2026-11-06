@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { eventRangeLabel, eventStartLabel, timesLabel, type PopupEvent } from "../../lib/ops/comp/popupSelect";
+import { eventRangeLabel, eventStartLabel, type PopupEvent } from "../../lib/ops/comp/popupSelect";
+import { kstMonthDayLabel } from "../../lib/ops/config";
 import s from "./launchCountdown.module.css";
 
 /**
@@ -57,14 +58,14 @@ export function GiftEventCountdown() {
   const phase = giftEventPhaseAt(view, serverNow);
   if (!view || !phase) return null;
   const target = Date.parse(phase === "before" ? view.startsAt : view.endsAt), remaining = target - serverNow;
-  const range = eventRangeLabel(view), start = eventStartLabel(view.startsAt);
+  const range = eventRangeLabel(view), start = eventStartLabel(view.startsAt), ticketUntil = kstMonthDayLabel(view.ticketExpiresAt);
   const clockLabel = phase === "before" ? "시작까지" : "종료까지";
   return <section className={`${s.event} ${s.gift}`} aria-label="1+1 이벤트" data-gift-event={phase}>
     <div className={s.heading}>
       <p>1+1 EVENT<span>{range}</span></p>
       <h2>한 권을 펼치면, 한 권이 더</h2>
       <p className={s.benefit}>리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요.</p>
-      <small>{phase === "before" ? start : `한 계정에 ${timesLabel(view.maxPerAccount)}까지 · 이용권은 받은 날부터 ${view.validDays}일`}</small>
+      {phase === "before" ? <small>{start}</small> : ticketUntil ? <small>{`이용권은 ${ticketUntil}까지 쓸 수 있어요`}</small> : null}
     </div>
     <div className={s.clock}>
       <p>{clockLabel}</p>

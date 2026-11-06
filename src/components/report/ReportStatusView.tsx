@@ -49,9 +49,9 @@ const copy = {
     message: "리포트 준비가 예상보다 오래 걸리고 있습니다. 고객센터에 문의해 주시면 결제 내역과 제공 상태를 확인해 드리겠습니다.",
   },
   expired: {
-    title: "리포트 열람 기간이 종료되었습니다",
-    // 최종3: v5 리포트는 기한이 없어 탈퇴·삭제 요청으로만 닫힌다. v5 이전 리포트만 90일 기간이 있다.
-    message: "이 리포트는 열람이 끝났습니다. 90일의 온라인 열람 기간이 지났거나 탈퇴·삭제 요청으로 닫힌 리포트입니다. 리포트와 입력 정보는 보관 정책에 따라 삭제됩니다.",
+    // P 추가 B: 기한이 지난 책 링크는 한 줄만(v5 리포트는 기한이 없어 탈퇴·삭제 요청으로만 닫힌다).
+    title: "열람 기간이 끝난 리포트예요",
+    message: "",
   },
   "payment-check": {
     title: "결제 상태를 확인하고 있습니다",
@@ -72,7 +72,7 @@ export function ReportStatusView({ state, title, message, support = false, stage
           <div className={styles.body}>
             <div role="status" aria-live="polite" aria-atomic="true">
               <h1 id="report-status-title" className={styles.title}>{title ?? copy[state].title}</h1>
-              <p className={styles.message}>{message ?? copy[state].message}</p>
+              {(message ?? copy[state].message) ? <p className={styles.message}>{message ?? copy[state].message}</p> : null}
             </div>
             {waiting && stage !== undefined ? <PublicationStages stage={stage} /> : null}
             {waiting ? (
@@ -91,7 +91,7 @@ export function ReportStatusView({ state, title, message, support = false, stage
               </div>
             ) : null}
             {state === "refunded" ? <nav className={styles.links} aria-label="안내"><Link href="/account">내 서재 <span aria-hidden="true">↗</span></Link><a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer">문의하기 <span aria-hidden="true">↗</span></a></nav> : null}
-            {state === "expired" ? <nav className={styles.links} aria-label="리포트 탐색"><Link href="/">홈으로 돌아가기 <span aria-hidden="true">↗</span></Link></nav> : null}
+            {state === "expired" && (message ?? copy[state].message) ? <nav className={styles.links} aria-label="리포트 탐색"><Link href="/">홈으로 돌아가기 <span aria-hidden="true">↗</span></Link></nav> : null}
           </div>
         </section>
       </div>

@@ -11,7 +11,7 @@ export type AccountIdentity = { id: string; displayName: string; provider: Accou
 export type AccountContact = { name: string; email: string; upgradeState?: "none" | "eligible" | "granted" };
 export type AccountSnapshot = { profile: AccountIdentity | null; consents: ConsentRecord[]; contact?: AccountContact | null };
 /** profile: 회원의 가입 정보 상태(required면 결제·이용권 사용만 막는다). upgradeState: 업그레이드 이용권 자격(지급은 P6c). */
-export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string }; profile?: "complete" | "required"; upgradeState?: "none" | "eligible" | "granted" };
+export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string }; profile?: "complete" | "required"; upgradeState?: "none" | "eligible" | "granted"; compWaiting?: boolean };
 export const GUEST_SESSION: AccountSession = { status: "guest" };
 
 // Records arrive newest first (DB monotonic id, not a client timestamp).

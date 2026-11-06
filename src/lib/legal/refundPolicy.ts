@@ -1,3 +1,5 @@
+import { POLICY_EFFECTIVE_DATE_KO, POLICY_HISTORY } from "./policyVersions";
+
 export const refundPolicyStates = [
   "before_payment",
   "paid_before_generation",
@@ -101,3 +103,7 @@ export const refundPolicySupportRequestGuidanceKo =
 
 export const prePaymentRefundNoticeKo =
   "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드립니다.";
+
+/** 시행일·변경 이력(약관 「시행일」 절과 같은 모양). 환불정책 화면 두 곳(/refund 예전 화면, 책 화면의 정책 문서)이 그대로 그린다. */
+export const refundPolicyEffectiveDateKo = POLICY_EFFECTIVE_DATE_KO;
+export const refundPolicyHistoryLinesKo: readonly string[] = [`시행일: ${refundPolicyEffectiveDateKo}`, ...POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`)];

@@ -11,7 +11,7 @@ import { createSupabaseReportPersistenceSdkClient } from "../../../lib/persisten
 import type { ReportBlock, ReportOutput, ReportSection } from "../../../lib/report/types";
 import ReportResultPage from "../../reports/[reportId]/page";
 import { ReportShareProvider } from "../../../components/report/ReportShareProvider";
-import { loadSharedReport } from "../../../lib/sharing/reportShareStore";
+import { loadSharedReport, sharedReportExpired } from "../../../lib/sharing/reportShareStore";
 import { reportShareMetadata, SHARE_TOKEN_PATTERN } from "../../../lib/sharing/reportShareMetadata";
 import { ReportStatusView } from "../../../components/report/ReportStatusView";
 
@@ -349,7 +349,7 @@ export default async function PaidShareReportPage({
     const { bookExperiencePublicEnabled } = await import("../../../lib/book/publicGate");
     const validator = bookExperiencePublicEnabled() ? (await import("../../../lib/book/storedReport")).validateBookPublication : undefined;
     const shared = await loadSharedReport(token, validator);
-    if (!shared) return renderUnavailableState();
+    if (!shared) return await sharedReportExpired(token) ? <ReportStatusView state="expired" /> : renderUnavailableState();
     if (bookExperiencePublicEnabled() && shared.snapshot.productVersion === "v4") {
       const book = await (await import("../../../lib/book/shareServer")).loadBookShare(token);
       const { SharedBookEntry } = await import("../../../components/book/SharedBookEntry");

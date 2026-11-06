@@ -9,7 +9,7 @@ import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../lib/saju/birthTimePrecisionTy
 import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
 import { JOBS, RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
 import { Publishing } from "../../app/dev/book-preview/BookPages";
-import { BookCheckout } from "./BookCheckout";
+import { BookCheckout, CHECKOUT_RETURN_BACKUP_KEY } from "./BookCheckout";
 import s from "../../app/dev/book-preview/book.module.css";
 import f from "./flow.module.css";
 import { interaction } from "../../lib/analytics/client";
@@ -85,6 +85,16 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
           }
           draftWritable.current = true;
         }
+        // P 추가 A: 결제하기 → 로그인을 다른 탭·앱 전환으로 마치고 돌아온 경우 같은 기기에 30분 둔 사본에서 입력·상품을 복원한다(복원 뒤 지운다).
+        try {
+          const backup = JSON.parse(localStorage.getItem(CHECKOUT_RETURN_BACKUP_KEY) ?? "null") as { productKey?: string; draft?: string; at?: number } | null;
+          if (backup && (typeof backup.at !== "number" || Date.now() - backup.at > 30 * 60_000)) localStorage.removeItem(CHECKOUT_RETURN_BACKUP_KEY);
+          else if (backup?.productKey === book.productKey && typeof backup.draft === "string") {
+            if (!sessionStorage.getItem(key)) sessionStorage.setItem(key, backup.draft);
+            sessionStorage.setItem(checkoutReturnKey(book.productKey), "1");
+            localStorage.removeItem(CHECKOUT_RETURN_BACKUP_KEY);
+          }
+        } catch { /* 사본 복원은 선택 */ }
         const saved = restoreBookForm(JSON.parse(sessionStorage.getItem(key) ?? "null"), policy.currentYear);
         if (saved) {
           setState(saved);

@@ -7,10 +7,13 @@ import {
   prePaymentPrivacyNoticeKo,
   privacyPolicyCollectionItems,
   privacyPolicyCollectionRows,
+  privacyPolicyCookieRows,
+  privacyPolicyDestructionItems,
   privacyPolicyMinorNoticeKo,
   privacyPolicyNoResidentRegistrationNumberKo,
   privacyPolicyOverseasHead,
   privacyPolicyOverseasRows,
+  privacyPolicyPaymentNoticeKo,
   privacyPolicyProcessorRows,
   privacyPolicyPurposeItems,
   privacyPolicyRetentionRows,
@@ -52,6 +55,19 @@ describe("privacy policy (v5 최종3)", () => {
     expect(rows["리포트와 리포트 입력정보 — v5부터 발행한 리포트"]).toBe("회원 탈퇴, 삭제 요청, 서비스 종료 시까지");
     expect(rows["리포트와 리포트 입력정보 — v5 이전에 발행한 리포트"]).toBe("처음 발행일로부터 90일");
     expect(rows["회원 정보(로그인 식별자, 이름, 이메일, 휴대폰 번호, 카카오톡 채널 추가 상태, 혜택 알림 동의 여부)"]).toMatch(/^회원 탈퇴 시까지/);
+  });
+
+  it("P 추가(2026-11-06): 비회원 결제 항목·구매 연결 쿠키 없음, v5 이전 리포트 만료 뒤 법정 최소 기록 5년, 결제수단 토스페이·카카오페이", () => {
+    expect(copy).not.toContain("비회원");
+    expect(privacyPolicyCollectionRows.map(([source]) => source)).toContain("결제");
+    expect(privacyPolicyCookieRows.map(([kind]) => kind)).not.toContain("비회원 구매 연결");
+    const destruction = privacyPolicyDestructionItems.join("\n");
+    expect(destruction).toContain("v5 이전 리포트는 열람 기간(90일)이 끝나면 원고와 입력정보(주문할 때 적은 이름 또는 닉네임, 생년월일, 출생시간 등)를 자동으로 지웁니다.");
+    expect(destruction).toContain("주문번호·상품·결제 금액·결제 일시·처리 상태만 남겨 5년 동안 따로 보관하며, 이 기록은 서비스 화면에 보이지 않습니다.");
+    expect(privacyPolicyPaymentNoticeKo).toContain("토스페이먼츠의 결제창에서 토스페이(주식회사 비바리퍼블리카) 또는 카카오페이(주식회사 카카오페이)로 합니다.");
+    expect(privacyPolicyPaymentNoticeKo).toContain("회사는 결제수단 상세 정보를 저장하지 않습니다.");
+    expect(privacyPolicyPaymentNoticeKo).not.toContain("카드번호");
+    expect(copy).toContain("로그인하지 않고 예전에 산 리포트 포함");
   });
 
   it("외부 서비스는 실제 쓰는 것만(OpenAI는 임시본 레인 — 배포 명령 0-1), 국외 이전은 업체별 6칸", () => {

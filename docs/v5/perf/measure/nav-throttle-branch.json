@@ -1,0 +1,380 @@
+{
+ "nav": {
+  "median": {
+   "ttfb": 3,
+   "fcp": 192,
+   "lcp": 192,
+   "ready": 410,
+   "tickets": null,
+   "tti": 410
+  },
+  "samples": [
+   {
+    "ttfb": 3,
+    "fcp": 112,
+    "lcp": 112,
+    "load": 194,
+    "lastLongTask": 180,
+    "ready": 407,
+    "tickets": null,
+    "tti": 407,
+    "js": 18,
+    "jsKB": 182,
+    "reqs": [
+     {
+      "url": "/",
+      "type": "document",
+      "status": 200,
+      "start": 1,
+      "end": 5,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/report/new?product=saju-mbti-full&_rsc=1r34m",
+      "type": "fetch",
+      "status": 200,
+      "start": 285,
+      "end": 288,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/api/gift-event",
+      "type": "fetch",
+      "status": 200,
+      "start": 285,
+      "end": 303,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/auth/event-popup",
+      "type": "fetch",
+      "status": 200,
+      "start": 285,
+      "end": 302,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/?_rsc=1pn8p",
+      "type": "fetch",
+      "status": 200,
+      "start": 289,
+      "end": 296,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/?_rsc=nn07o",
+      "type": "fetch",
+      "status": 200,
+      "start": 289,
+      "end": 296,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/login?_rsc=1r34m",
+      "type": "fetch",
+      "status": 200,
+      "start": 289,
+      "end": 299,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/auth/session",
+      "type": "fetch",
+      "status": 200,
+      "start": 289,
+      "end": 302,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/?_rsc=ivliq",
+      "type": "fetch",
+      "status": 200,
+      "start": 300,
+      "end": 303,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/report/new?product=saju-mbti-full&_rsc=1pn8p",
+      "type": "fetch",
+      "status": 200,
+      "start": 303,
+      "end": 305,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/report/new?product=saju-mbti-full&_rsc=5x7ip",
+      "type": "fetch",
+      "status": 200,
+      "start": 304,
+      "end": 305,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/login?_rsc=p37cr",
+      "type": "fetch",
+      "status": 200,
+      "start": 311,
+      "end": 320,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/report/new?product=saju-mbti-full&_rsc=14zxk",
+      "type": "fetch",
+      "status": 200,
+      "start": 314,
+      "end": 319,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/report/new?product=saju-mbti-full&_rsc=mf98m",
+      "type": "fetch",
+      "status": 200,
+      "start": 315,
+      "end": 319,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/report/new?_rsc=1r34m",
+      "type": "fetch",
+      "status": 200,
+      "start": 316,
+      "end": 319,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/auth/event-popup",
+      "type": "fetch",
+      "status": 200,
+      "start": 1388,
+      "end": 1398,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/auth/session",
+      "type": "fetch",
+      "status": 200,
+      "start": 1425,
+      "end": 1433,
+      "sb": [
+       0,
+       0
+      ]
+     }
+    ],
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 3,
+    "fcp": 192,
+    "lcp": 192,
+    "load": 186,
+    "lastLongTask": 183,
+    "ready": 419,
+    "tickets": null,
+    "tti": 419,
+    "js": 18,
+    "jsKB": 153,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 3,
+    "fcp": 112,
+    "lcp": 112,
+    "load": 193,
+    "lastLongTask": 178,
+    "ready": 410,
+    "tickets": null,
+    "tti": 410,
+    "js": 18,
+    "jsKB": 145,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 3,
+    "fcp": 200,
+    "lcp": 200,
+    "load": 196,
+    "lastLongTask": 194,
+    "ready": 406,
+    "tickets": null,
+    "tti": 406,
+    "js": 18,
+    "jsKB": 143,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 3,
+    "fcp": 196,
+    "lcp": 196,
+    "load": 190,
+    "lastLongTask": 188,
+    "ready": 423,
+    "tickets": null,
+    "tti": 423,
+    "js": 18,
+    "jsKB": 157,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   }
+  ]
+ },
+ "input": {
+  "median": {
+   "ttfb": 2,
+   "fcp": 140,
+   "lcp": 368,
+   "ready": 412,
+   "tickets": null,
+   "tti": 412
+  },
+  "samples": [
+   {
+    "ttfb": 2,
+    "fcp": 144,
+    "lcp": 364,
+    "load": 269,
+    "lastLongTask": 260,
+    "ready": 407,
+    "tickets": null,
+    "tti": 407,
+    "js": 16,
+    "jsKB": 101,
+    "reqs": [
+     {
+      "url": "/report/new?product=saju-mbti-full",
+      "type": "document",
+      "status": 200,
+      "start": 1,
+      "end": 4,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/auth/event-popup",
+      "type": "fetch",
+      "status": 200,
+      "start": 367,
+      "end": 376,
+      "sb": [
+       0,
+       0
+      ]
+     },
+     {
+      "url": "/auth/session",
+      "type": "fetch",
+      "status": 200,
+      "start": 409,
+      "end": 417,
+      "sb": [
+       0,
+       0
+      ]
+     }
+    ],
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 3,
+    "fcp": 140,
+    "lcp": 372,
+    "load": 267,
+    "lastLongTask": 259,
+    "ready": 414,
+    "tickets": null,
+    "tti": 414,
+    "js": 16,
+    "jsKB": 111,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 2,
+    "fcp": 140,
+    "lcp": 388,
+    "load": 270,
+    "lastLongTask": 261,
+    "ready": 425,
+    "tickets": null,
+    "tti": 425,
+    "js": 16,
+    "jsKB": 91,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 2,
+    "fcp": 144,
+    "lcp": 332,
+    "load": 268,
+    "lastLongTask": 261,
+    "ready": 412,
+    "tickets": null,
+    "tti": 412,
+    "js": 16,
+    "jsKB": 68,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   },
+   {
+    "ttfb": 2,
+    "fcp": 140,
+    "lcp": 368,
+    "load": 265,
+    "lastLongTask": 258,
+    "ready": 405,
+    "tickets": null,
+    "tti": 405,
+    "js": 16,
+    "jsKB": 120,
+    "text": "결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗"
+   }
+  ]
+ }
+}

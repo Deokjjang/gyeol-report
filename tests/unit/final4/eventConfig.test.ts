@@ -2,7 +2,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { GIFT_EVENT_DEFAULT_END, GIFT_EVENT_DEFAULT_START, giftEventActive, giftEventConfig, giftEventPublicView, giftEventWindow, parseEventInstant } from "@/lib/ops/config";
-import { eventRangeLabel, eventStartLabel, expiryLabel, kstDay, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup, timesLabel, type PopupState } from "@/lib/ops/comp/popupSelect";
+import { eventRangeLabel, eventStartLabel, expiryLabel, kstDay, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup, type PopupState } from "@/lib/ops/comp/popupSelect";
 
 const T = (s: string) => Date.parse(s);
 const ON = { GIFT_EVENT_ENABLED: "1" } as const;
@@ -29,7 +29,9 @@ describe("1+1 기간(서버 시각, KST)", () => {
     expect(giftEventWindow(ON, T("2026-11-16T23:59:59.999+09:00")).phase).toBe("during");
     expect(giftEventWindow(ON, T("2026-11-17T00:00:00+09:00")).phase).toBe("after");
     const c = giftEventConfig(ON, T("2026-11-10T12:00:00+09:00"));
-    expect(c).toMatchObject({ active: true, start: "2026-11-06T00:00:00.000Z", end: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, bonusMax: 2, validDays: 30 });
+    // P 추가 C·D: 계정당 상한·친구 보너스 없음, 이용권 기한은 2026-11-30 23:59:59 KST(발급일과 상관없이 같은 날).
+    expect(c).toMatchObject({ active: true, start: "2026-11-06T00:00:00.000Z", end: "2026-11-16T15:00:00.000Z", ticketExpiresAt: "2026-11-30T14:59:59.000Z" });
+    expect(c).not.toHaveProperty("maxPerAccount"); expect(c).not.toHaveProperty("bonusMax");
     expect(giftEventActive(ON, T("2026-11-17T00:00:01+09:00"))).toBe(false);
   });
   it("코드와 SQL의 기간이 같다: SQL(ops_gift issue·pending_orders)은 기간을 갖지 않고 코드가 넘기는 start·end([시작, 끝))만 쓴다", () => {
@@ -53,13 +55,15 @@ describe("1+1 기간(서버 시각, KST)", () => {
   });
   it("공개 정보에는 보상 이야기가 없다", () => {
     const v = giftEventPublicView(ON, T("2026-11-10T00:00:00+09:00"));
-    expect(Object.keys(v).sort()).toEqual(["endsAt", "maxPerAccount", "phase", "serverNow", "startsAt", "validDays"]);
+    // P 추가 C·D: 계정당 상한·유효일 대신 이용권 기한(이번 이벤트 2026-11-30 23:59:59 KST).
+    expect(Object.keys(v).sort()).toEqual(["endsAt", "phase", "serverNow", "startsAt", "ticketExpiresAt"]);
+    expect(v.ticketExpiresAt).toBe(new Date(T("2026-11-30T23:59:59+09:00")).toISOString());
     expect(JSON.stringify(v)).not.toMatch(/comp|보상/);
   });
 });
 
 describe("팝업 고르기", () => {
-  const event = (phase: "off" | "before" | "during" | "after") => ({ phase, serverNow: "2026-11-10T00:00:00.000Z", startsAt: "2026-11-06T00:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, validDays: 30 });
+  const event = (phase: "off" | "before" | "during" | "after") => ({ phase, serverNow: "2026-11-10T00:00:00.000Z", startsAt: "2026-11-06T00:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", ticketExpiresAt: "2026-11-30T14:59:59.000Z" });
   const comp = (tier: "A" | "B", unused = tier === "A" ? 2 : 1, expiresAt = "2026-12-06T03:00:00.000Z") => ({ tier, quantity: unused, unused, expiresAt });
   const now = T("2026-11-10T00:00:00Z");
   const pick = (s: PopupState, path = "/") => selectPopup(s, path, now);
@@ -106,6 +110,5 @@ describe("팝업 고르기", () => {
     expect(eventStartLabel("2026-11-06T15:00:00.000Z")).toBe("11월 7일 00시 시작");
     expect(expiryLabel("2026-12-06T03:00:00.000Z")).toBe("12월 6일");
     expect(remainingLabel(6 * 86400_000 + 3 * 3600_000 + 4 * 60_000 + 5_000)).toBe("6일 03:04:05");
-    expect(timesLabel(2)).toBe("두 번");
   });
 });

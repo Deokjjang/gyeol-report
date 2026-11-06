@@ -17,7 +17,7 @@ import Footer from "../../../src/components/legal/BusinessFooter";
 import { GYEOL_BUSINESS_INFO as business } from "../../../src/lib/legal/businessInfo";
 import { termsPolicySections } from "../../../src/lib/legal/termsPolicy";
 import * as privacy from "../../../src/lib/legal/privacyPolicy";
-import { refundPolicyStateRows, refundPolicyRequiredNotices, refundPolicySupportRequestGuidanceKo } from "../../../src/lib/legal/refundPolicy";
+import { refundPolicyHistoryLinesKo, refundPolicyStateRows, refundPolicyRequiredNotices, refundPolicySupportRequestGuidanceKo } from "../../../src/lib/legal/refundPolicy";
 
 const pages = [["/terms", Terms, LegacyTerms], ["/privacy", Privacy, LegacyPrivacy],
   ["/refund", Refund, LegacyRefund], ["/business", Business, LegacyBusiness]] as const;
@@ -45,7 +45,7 @@ describe("legal document rendering", () => {
       expect(html).toContain(`<h2>${section.titleKo}</h2>`);
       for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
     }
-    for (const condition of ["상품 페이지와 결제 화면에 표시된 금액", "최대 24시간 이내 제공", "처음 발행일로부터 90일", "회원 탈퇴, 삭제 요청, 서비스 종료 시까지", "발급일로부터 30일", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
+    for (const condition of ["상품 페이지와 결제 화면에 표시된 금액", "최대 24시간 이내 제공", "처음 발행일로부터 90일", "회원 탈퇴, 삭제 요청, 서비스 종료 시까지", "2026년 11월 30일 23:59:59까지", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
       expect(text(html)).toContain(condition);
     }
     expect(html).not.toContain(business.businessAddressKo);
@@ -60,6 +60,9 @@ describe("legal document rendering", () => {
     }
     expect(text(html)).toContain(refundPolicyRequiredNotices[3]);
     expect(text(html)).toContain(refundPolicySupportRequestGuidanceKo);
+    // P 추가: 환불정책도 약관·방침처럼 시행일과 변경 이력을 보인다.
+    expect(html).toContain("<h2>시행일</h2>");
+    for (const line of refundPolicyHistoryLinesKo) expect(text(html)).toContain(line);
     expect(html).toContain('href="/terms"');
     expect(html).not.toContain("판매 상품");
     expect(html).toContain('<th scope="row">');
@@ -132,6 +135,7 @@ describe("current V4 legal presentation", () => {
     expect(panels.map(panel => panel[1].includes("open"))).toEqual([0, 1, 2, 3].map(i => i === index));
     for (const section of termsPolicySections) for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
     for (const row of refundPolicyStateRows) expect(text(html)).toContain(row.handlingKo);
+    for (const line of refundPolicyHistoryLinesKo) expect(text(html)).toContain(line);
     for (const line of privacy.policyText(privacy.privacyPolicySections)) expect(text(html)).toContain(line);
     expect(text(html)).toContain("support@gyeolreport.com");
     expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat"');

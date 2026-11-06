@@ -4,6 +4,7 @@ import LegalPageLayout from "../../components/legal/LegalPageLayout";
 import styles from "../../components/legal/legal.module.css";
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 import {
+  refundPolicyHistoryLinesKo,
   refundPolicyRequiredNotices,
   refundPolicyStateRows,
   refundPolicySupportRequestGuidanceKo,
@@ -56,6 +57,10 @@ export default function RefundPage() {
           <a href={`tel:${GYEOL_BUSINESS_INFO.customerServicePhone}`}>고객센터 {GYEOL_BUSINESS_INFO.customerServicePhone}</a>
           <a href={`mailto:${GYEOL_BUSINESS_INFO.supportContactEmail}`}>{GYEOL_BUSINESS_INFO.supportContactEmail}</a>
         </div>
+      </section>
+      <section>
+        <h2>시행일</h2>
+        {refundPolicyHistoryLinesKo.map((line) => <p key={line}>{line}</p>)}
       </section>
     </LegalPageLayout>
   );

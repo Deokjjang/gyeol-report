@@ -3,7 +3,7 @@ import { GYEOL_BUSINESS_INFO as business } from "../../../lib/legal/businessInfo
 import { termsPolicyDescriptionKo, termsPolicySections } from "../../../lib/legal/termsPolicy";
 import { privacyPolicyProcessingScopeKo, privacyPolicySections } from "../../../lib/legal/privacyPolicy";
 import { PolicyBlocks } from "../../../components/legal/PolicyBlocks";
-import { refundPolicyRequiredNotices, refundPolicyStateRows, refundPolicySupportRequestGuidanceKo } from "../../../lib/legal/refundPolicy";
+import { refundPolicyHistoryLinesKo, refundPolicyRequiredNotices, refundPolicyStateRows, refundPolicySupportRequestGuidanceKo } from "../../../lib/legal/refundPolicy";
 import s from "./book.module.css";
 
 // Presentation only. Policy data is imported unchanged; route-only passages below
@@ -47,6 +47,7 @@ export function LegalDocument({ index, onNavigate }: { index: number; onNavigate
     <PolicySection title="결과 미제공·중복결제·장애 및 회사 귀책"><RefundRows ids={["generation_failed", "duplicate_payment", "system_error", "company_fault"]} /><p>{refundPolicyRequiredNotices[3]}</p></PolicySection>
     {refundPolicyStateRows.filter(r => ["ticket_report", "wrong_input", "minor_cancellation"].includes(r.id)).map(r => <PolicySection title={r.statusKo} key={r.id}><p>{r.handlingKo}</p></PolicySection>)}
     <PolicySection title="문의 방법"><p>{refundPolicySupportRequestGuidanceKo}</p><Contacts /></PolicySection>
+    <PolicySection title="시행일">{refundPolicyHistoryLinesKo.map(line => <p key={line}>{line}</p>)}</PolicySection>
   </div>;
   return <div className={s.legalDocument}><p>결리포트를 운영하는 사업자 정보와 고객 문의 채널입니다.</p><BusinessDetails /></div>;
 }

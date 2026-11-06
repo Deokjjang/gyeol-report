@@ -1,7 +1,7 @@
 import { bookForProduct, readerTitle } from "../book/product";
 import { safeDisplayName } from "../account/policy";
 
-export type LibraryRow = { reportId: string; productType: string; displayName: string; selectedYear: string | null; publishedAt: string; expiresAt: string; reportVersion: string; status: "available" | "expired" | "unavailable" };
+export type LibraryRow = { reportId: string; productType: string; displayName: string; selectedYear: string | null; publishedAt: string; expiresAt: string; reportVersion: string; status: "available" | "expired" | "unavailable"; source?: "paid" | "ticket" };
 export type LibraryItem = LibraryRow & { title: string; coverColor: string; ink: string; accessURL: string | null };
 export type ClaimState = "owned" | "claimable" | "unavailable";
 export function validLibraryReportId(value: unknown, local = false): value is string {

@@ -11,7 +11,7 @@ import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import type { ReportProductType } from "../../lib/payment/reportProductTypes";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
 import { isSupportedEasyPay, launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
-import type { SupportedEasyPay, TossClientCheckoutLaunchResult, TossClientSdkLoader } from "../../lib/payment/tossClientCheckoutTypes";
+import type { SupportedEasyPay, TossClientCheckoutLaunchResult, TossClientSdkLoader, TossWidgetSheet } from "../../lib/payment/tossClientCheckoutTypes";
 
 const DEV_TOSS_CHECKOUT_CUSTOMER_KEY = "gyeol_local_test_customer";
 const DEV_TOSS_CHECKOUT_ERROR_MESSAGE =
@@ -78,9 +78,11 @@ type DevTossCheckoutRunOptions = {
   readonly onCheckoutWindow?: () => void;
   /** 최종 A 16: 합친 동의 칸 화면 정보(동의 기록 ui). */
   readonly consentUi?: CheckoutConsentUiClaim;
+  /** P 추가 G: 위젯 연동 키면 이 시트 안에 토스 결제위젯을 그린다. */
+  readonly widgetSheet?: TossWidgetSheet;
 };
 /** 서버가 고객에게 그대로 보여 줄 수 있는 안내(가입 정보·구매자 입력·판매 종료). */
-const PASS_THROUGH_CODES = ["PROFILE_REQUIRED", "BUYER_INFO_INVALID", "PRODUCT_SALES_CLOSED"];
+const PASS_THROUGH_CODES = ["PROFILE_REQUIRED", "BUYER_INFO_INVALID", "PRODUCT_SALES_CLOSED", "LOGIN_REQUIRED"];
 
 export type DevTossCheckoutLegalConfirmations = CheckoutLegalConfirmations;
 export type DevTossCheckoutAgeGateStatus = CheckoutAgeGateStatus;
@@ -259,13 +261,14 @@ export async function runDevTossCheckout(
       customerKey: DEV_TOSS_CHECKOUT_CUSTOMER_KEY,
       easyPay: options.easyPay,
       loadTossPayments: runtime.loadTossPayments,
+      ...(options.widgetSheet ? { widgetSheet: options.widgetSheet } : {}),
     });
   } catch {
     return createFailureResult();
   }
 
   if (!launchResult.ok) {
-    return createFailureResult();
+    return createFailureResult(launchResult.error.code === "TOSS_CLIENT_CHECKOUT_CANCELED" ? "결제를 취소했어요. 다시 결제하기를 누르면 이어서 할 수 있어요." : undefined);
   }
 
   return {

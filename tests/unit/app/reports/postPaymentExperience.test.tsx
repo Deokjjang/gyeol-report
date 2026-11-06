@@ -100,10 +100,10 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(attention).toContain("추가 결제는 필요하지 않습니다");
   });
 
-  it("explains expiry without requiring another purchase", async () => {
+  it("explains expiry in one line without requiring another purchase (P 추가 B)", async () => {
     const html = await renderState("EXPIRED");
-    expect(html).toContain("90일의 온라인 열람 기간");
-    expect(html).toContain("홈으로 돌아가기");
+    expect(html).toContain("열람 기간이 끝난 리포트예요");
+    expect(html).not.toContain("90일의 온라인 열람 기간");
     expect(html).not.toContain("결제가 정상적으로 완료되었습니다");
     expect(html).not.toContain("결제하기");
   });

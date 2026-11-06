@@ -1,0 +1,44 @@
+/* 서재(P 추가 F): 위는 얇은 티켓 한 줄(이용권), 아래는 「만든 리포트」 책장. 결리포트 여백 스타일(흰 바탕·검은 선·넓은 여백). */
+.ticketWrap{margin:8px 0 44px}
+.ticket{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:10px 18px;border:1px solid #111;font-size:14px}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:12px;height:12px;border:1px solid #111;border-radius:50%;background:#fff;transform:translateY(-50%)}
+.ticket::before{left:-7px;clip-path:inset(0 0 0 50%)}.ticket::after{right:-7px;clip-path:inset(0 50% 0 0)}
+.ticket p{margin:0;font-size:14px;line-height:1.5}.ticket b{font-weight:700;white-space:nowrap}.ticket span{color:#111}.until{white-space:nowrap}
+.ticket button{flex-shrink:0;border:0;border-left:1px dashed #111!important;padding:6px 0 6px 14px!important;background:none;font:inherit;font-size:13px!important;text-decoration:underline;text-underline-offset:3px;cursor:pointer;color:#111}
+.ticketNote{margin:8px 2px 0;font-size:12px!important;line-height:1.6;color:#777}
+.shelfSection{border-top:2px solid #111;padding-top:18px}
+.shelfTitle{font-size:13px;font-weight:700;letter-spacing:.2px;margin:0 0 4px;border-top:2px solid #111;padding-top:18px}
+.shelfSection .shelfTitle{border-top:0;padding-top:0}
+.shelf{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px;margin:24px 0 40px;padding:0}
+.shelf li{min-width:0}
+.card{display:block;text-decoration:none;color:inherit;border-radius:2px}
+.card:focus-visible{outline:2px solid #111;outline-offset:5px}
+.cover{aspect-ratio:3/4;padding:14px 12px;display:flex;flex-direction:column;border-left:3px solid #0002;box-shadow:3px 4px 0 #0001;overflow-wrap:anywhere}
+.cover small{font-size:10px;letter-spacing:.4px}
+.cover strong{font-size:clamp(20px,3.8vw,28px);line-height:1.2;letter-spacing:-1px;margin-top:24px;font-weight:800;word-break:keep-all;white-space:pre-line}
+.cover span{font-size:11px;margin:16px 0;line-height:1.5}.cover small:last-child{margin-top:auto;font-size:10px}
+.meta{display:grid;gap:1px;margin-top:12px;line-height:1.6;font-size:12px;color:#444;overflow-wrap:anywhere}
+.meta b{font-size:13px;color:#111}
+.meta [data-state=making],.meta [data-state=attention]{color:#111;font-weight:700}
+li[data-state=making] .cover,li[data-state=attention] .cover{opacity:.6}
+.small{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:6px;font-size:11px;color:#888;line-height:1.6}
+.textLink{border:0;background:none;padding:0;font:inherit;font-size:11px!important;color:#888!important;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.empty{padding:28px 0 60px;font-size:14px}.empty a{font-size:13px;border-bottom:1px solid #111;padding-bottom:4px}
+.error{font-size:13px;border-left:2px solid #111;padding-left:10px}
+.bone{background:#f1f1f1!important;border-color:#f1f1f1!important;box-shadow:none!important;color:transparent}
+.bone::before,.bone::after{display:none}
+.boneLine{display:block;height:12px;width:70%;margin-top:12px;background:#f1f1f1}
+.srOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.backdrop{position:fixed;inset:0;z-index:50;background:#0006;display:flex;align-items:flex-end;justify-content:center}
+.sheet{position:relative;width:100%;max-width:440px;background:#fff;color:#111;padding:28px 24px calc(28px + env(safe-area-inset-bottom));font-size:14px;line-height:1.65;outline:none}
+.sheet h2{font-size:20px;font-weight:750;letter-spacing:-.5px;margin:0 0 10px}
+.sheet p{margin:0 0 12px;font-size:14px}
+.close{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;background:none;font-size:22px;cursor:pointer;color:#111}
+.sheetActions{display:grid;gap:10px;margin:22px 0 14px}
+.sheetActions button{min-height:50px;border:1px solid #111!important;background:#fff;color:#111;font:inherit;font-size:15px!important;cursor:pointer}
+.sheetActions .dark{background:#111!important;color:#fff!important}
+.sheetActions button:disabled{opacity:.45;cursor:default}
+.manual{width:100%;font:inherit;font-size:13px;padding:10px;border:1px solid #bbb;margin-bottom:10px}
+.sheetMessage{font-size:13px!important;border-left:2px solid #111;padding-left:10px}
+.sheetStats{font-size:12px!important;color:#888;margin-top:6px!important}
+@media(min-width:768px){.shelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}.cover{padding:18px}.cover strong{font-size:29px}.backdrop{align-items:center}.sheet{padding:32px 28px}}

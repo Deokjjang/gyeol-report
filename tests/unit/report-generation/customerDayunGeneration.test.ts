@@ -13,7 +13,8 @@ import { TEST_BUYER } from "../../helpers/opsStoreStub";
 const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ ok: true, value: record })), bind: vi.fn(async () => true) }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
 // Real same-origin and binding logic; only external auth/library ports are local.
-vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => null, finish: (response: Response) => response }) }));
+// P 추가 A: 결제는 로그인한 회원만 — 가입 정보를 마친 회원 대역.
+vi.mock("../../../src/lib/account/supabase", async () => (await import("../../helpers/opsStoreStub")).memberAccountModule);
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: storage.bind }) }));
 vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 

@@ -432,3 +432,8 @@
 /* P6d-ops 1: 판매를 잠시 닫은 책(대운·세운) — 표지를 살짝 어둡게 하고 공개일 한 줄. 다른 표지는 그대로. */
 .bookSlot[data-closed=true] .cover { filter: brightness(.74) saturate(.9); }
 .coverNotice { position: absolute; left: 27px; right: 22px; bottom: 62px; z-index: 1; font-size: 12px; font-weight: 650; letter-spacing: -.02em; line-height: 1.35; color: #fff; background: #111111d9; padding: 7px 9px; text-align: left; pointer-events: none; }
+/* P 추가 G: 결제위젯 시트(위젯 연동 키일 때만). 수단 목록은 토스가 그린다. */
+.widgetBackdrop{position:fixed;inset:0;z-index:60;background:#0006;display:flex;align-items:flex-end;justify-content:center}
+.widgetSheet{position:relative;width:100%;max-width:480px;max-height:92svh;overflow:auto;background:#fff;color:#111;padding:44px 12px calc(16px + env(safe-area-inset-bottom))}
+.widgetClose{position:absolute;top:6px;right:8px;width:40px;height:40px;border:0;background:none;font-size:22px;cursor:pointer;color:#111}
+@media(min-width:768px){.widgetBackdrop{align-items:center}}

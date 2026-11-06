@@ -21,41 +21,46 @@ const render = () => { hooks.index = 0; hooks.effects = []; return renderToStati
 beforeEach(() => { hooks.slots = []; state.session = { status: "guest" }; state.loaded = true; state.error = false; state.pending = false; });
 afterEach(() => { vi.unstubAllGlobals(); });
 describe("member-aware receipt SSR boundaries", () => {
-  it("guest keeps catalog-price direct payment and product-only login return", () => {
+  it("guest sees catalog price and one 결제하기 that goes to login (P 추가 A: no guest checkout, no consent/buyer fields)", () => {
     const html = render(); expect(html).toContain(priceKo); expect(html).toContain("결제하기"); expect(html).not.toContain("발행 방법");
-    expect(html).toContain("/login?next=%2Freport%2Fnew%3Fproduct%3Dsaju_mbti_full"); expect(html).not.toContain("birthDate=");
+    expect(html).toContain("data-login-first"); expect(html).not.toContain("data-buyer-fields"); expect(html).not.toContain("birthDate=");
+    expect(html).not.toMatch(/disabled=""[^>]*>결제하기/);
   });
   it("session loading/error never silently becomes guest payment", () => {
-    state.loaded = false; expect(render()).toContain("로그인 상태를 확인하고 있습니다"); expect(render()).not.toContain("결제하기");
+    state.loaded = false; expect(render()).toContain("로그인 상태를 확인하고 있어요"); expect(render()).not.toContain("결제하기");
     state.loaded = true; state.error = true; expect(render()).toContain("다시 확인"); expect(render()).not.toContain("결제하기");
   });
   it("member waits for real balance, no assumed zero or fake store URL", () => {
-    state.session = { status: "member" }; const html = render(); expect(html).toContain("이용권을 확인하고 있습니다");
+    state.session = { status: "member" }; const html = render(); expect(html).toContain("이용권을 확인하고 있어요");
     expect(html).not.toContain("남은 이용권 0장"); expect(html).not.toContain("묶음 이용권 구매"); expect(html).toMatch(/disabled=""[^>]*>결제하기/);
   });
   it("restored pending reservation remains ticket-priced, blocked, never falls back to payment", () => {
     state.session = { status: "member" }; state.pending = true; const html = render();
     expect(html).toContain("리포트 이용권 1장"); expect(html).toContain("책 발행 상태 확인 중"); expect(html).not.toContain(priceKo);
   });
-  it("required member reconsent is explicit and checkout remains disabled", () => {
+  it("required member reconsent: 결제하기 goes to the consent screen first (no payment before reconsent)", () => {
     state.session = { status: "needs_consent" }; const html = render();
-    expect(html).toContain("회원 동의 확인 후 이어서 구매하기"); expect(html).toMatch(/disabled=""[^>]*>결제하기/);
+    expect(html).toContain("data-login-first"); expect(html).not.toContain("발행 방법"); expect(html).not.toContain("[필수]");
   });
   it.each([0, 1, 5])("real balance callback %s selects only the available method", async quantity => {
     state.session = { status: "member" };
     vi.stubGlobal("window", new EventTarget()); vi.stubGlobal("document", { hidden: false });
-    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ ok: true, quantity }) } as Response);
+    // P 추가 E: 결제 화면의 장수 = 지갑의 usable(일반 + 남은 이벤트·보상, 받은 것 포함). 0장이면 이용권 칸을 아예 숨긴다.
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ ok: true, wallet: { usable: quantity } }) } as Response);
     render(); const stop = hooks.effects[0](); for (let i = 0; i < 8; i++) await Promise.resolve();
     try {
-      const html = render(); expect(html).toContain(`남은 이용권 ${quantity}장`);
+      const html = render();
+      expect(vi.mocked(fetch).mock.calls[0]?.[0]).toBe("/auth/gift?view=wallet");
+      if (quantity) expect(html).toContain(`남은 이용권 ${quantity}장`);
+      else { expect(html).not.toContain("발행 방법"); expect(html).not.toContain("남은 이용권"); expect(html).not.toContain("이용권 1장 쓰기"); expect(html).not.toContain("보유한 이용권이 없습니다"); }
       expect(html).toContain(quantity ? "이용권 1장으로 책 발행하기" : "결제하기");
-      expect(html).not.toContain("이용권을 확인하고 있습니다");
+      expect(html).not.toContain("이용권을 확인하고 있어요");
     } finally { stop?.(); }
   });
   it("failed balance callback is an error, not zero tickets or an enabled payment", async () => {
     state.session = { status: "member" }; vi.stubGlobal("window", new EventTarget()); vi.stubGlobal("document", { hidden: false });
     vi.mocked(fetch).mockRejectedValue(Error("OFFLINE")); render(); const stop = hooks.effects[0](); for (let i = 0; i < 8; i++) await Promise.resolve();
-    try { const html = render(); expect(html).toContain("이용권을 확인하지 못했습니다"); expect(html).not.toContain("남은 이용권 0장"); expect(html).toMatch(/disabled=""[^>]*>결제하기/); }
+    try { const html = render(); expect(html).toContain("이용권을 확인하지 못했어요"); expect(html).not.toContain("남은 이용권 0장"); expect(html).toMatch(/disabled=""[^>]*>결제하기/); }
     finally { stop?.(); }
   });
 });

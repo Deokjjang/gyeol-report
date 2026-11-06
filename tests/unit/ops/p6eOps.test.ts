@@ -40,7 +40,7 @@ const cfg = { enabled: true, aQty: 2, aDays: 60, bQty: 1, bDays: 30, products: [
 const compGifts = async (u: string) => (await h.db.query<{ id: string; kind: string; gift_only: boolean; source_order_id: string | null; days: number; scopes: string[]; status: string }>(
   "select id,kind,gift_only,source_order_id,round(extract(epoch from expires_at-created_at)/86400)::int days,product_scopes scopes,status from gift_rewards where owner_user_id=$1 and kind='comp' order by created_at,id", [u])).rows;
 const sync = (userId: string, over: Record<string, unknown> = {}) => comp.call("sync", { userId, ...cfg, ...over });
-const eventCfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", maxPerAccount: 2, bonusMax: 2, products: ["saju_mbti_full"], validDays: 30 };
+const eventCfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", products: ["saju_mbti_full"], ticketExpiresAt: new Date(Date.now() + 20 * 86_400_000).toISOString() };
 
 beforeAll(async () => {
   h = await opsSql();
@@ -207,9 +207,9 @@ describe("보상 이용권 A·B", () => {
     // 목록: 주문 없는 보상도 보이고 kind·giftOnly가 내려간다.
     const list = await gift.call("list", { userId: B });
     expect(list.gifts as { kind: string; giftOnly: boolean; orderCode: string | null }[]).toEqual(expect.arrayContaining([expect.objectContaining({ kind: "comp", giftOnly: false, orderCode: null, status: "used_self" }), expect.objectContaining({ kind: "comp", giftOnly: false, status: "claimed" })]));
-    // 친구가 첫 결제를 해도 보상 선물에는 1+1 보너스가 없다.
+    // 친구가 첫 결제를 해도 보상 선물에는 1+1 보너스가 없다(P 추가 C: 보너스 자체가 없다 — 결제 뒤 처리는 발급만).
     await pay("cf1", C);
-    expect(await afterPaidOrder(gift as never, "cf1", eventCfg)).toMatchObject({ bonus: { granted: false } });
+    expect(await afterPaidOrder(gift as never, "cf1", eventCfg)).not.toHaveProperty("bonus");
     expect(await one("select bonus_granted_at from gift_rewards where id=$1", [giftRow.id])).toEqual({ bonus_granted_at: null });
   });
 

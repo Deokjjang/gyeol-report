@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+import { CHECKOUT_POLICY_VERSIONS, POLICY_EFFECTIVE_DATE, POLICY_HISTORY } from "../../../src/lib/legal/policyVersions";
 import {
   prePaymentRefundNoticeKo,
+  refundPolicyHistoryLinesKo,
   refundPolicyRequiredNotices,
   refundPolicyStateRows,
   refundPolicyStates,
@@ -63,6 +65,18 @@ describe("refund policy constants", () => {
     expect(prePaymentRefundNoticeKo).toBe(
       "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드립니다.",
     );
+  });
+
+  it("P 추가(2026-11-06): 세 문서 버전 2026-11-06.1, 앞 판(2026-11-05.1, 11월 6일 시행)이 변경 이력에 남고 환불정책도 시행일·이력을 보인다", () => {
+    expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-06.1", refund: "2026-11-06.1" });
+    expect(POLICY_EFFECTIVE_DATE).toBe("2026-11-07");
+    for (const kind of ["terms", "privacy", "refund"] as const) {
+      const lines = POLICY_HISTORY[kind];
+      expect(lines[0]).toContain("시행(현재, 문서 버전 2026-11-06.1)");
+      expect(lines[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+    }
+    expect(refundPolicyHistoryLinesKo[0]).toBe("시행일: 2026년 11월 7일");
+    expect(refundPolicyHistoryLinesKo.slice(1)).toEqual(POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`));
   });
 
   it("avoids unsafe absolute no-refund and risk copy", () => {
