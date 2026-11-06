@@ -15,7 +15,7 @@ import { assembleV5Book, createV5Snapshot, projectV5Book, type V5Evidence } from
 import { BookReader } from "@/app/dev/book-preview/BookReader";
 import type { BookData, BookPage } from "@/app/dev/book-preview/bookTypes";
 
-// 최종판3 7(궁합 점수 표기·관계 목록)·8(대운 표기 통일). 호출 0, 결정론.
+// 최종판3 7(궁합 점수 표기·관계 목록)·8(대운 표기 통일). 운영 Q 8-1: 대운수 = 그 대운이 시작될 때의 만 나이(「만 X~Y세」의 X와 같은 값). 호출 0, 결정론.
 const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
 const BASE = "2026-11-04";
 const DEOKMIN: BriefPersonInput = { name: "장덕민", gender: "MALE", birthDate: "1999-07-31", birthTime: "08:27", birthTimeUnknown: false, mbtiType: "ENTJ", context: { relationshipStatus: "single", jobStatus: "business_owner", detailJob: "IT 서비스 창업" } };
@@ -39,34 +39,34 @@ const html = (data: BookData, page: BookPage) => renderToStaticMarkup(<BookReade
 const pagesOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pages.filter((p): p is Extract<BookPage, { kind: K }> => p.kind === kind);
 
 describe("8 대운 표기 통일(dayunLabel)", () => {
-  it("장덕민 무진 대운: 2027년 5월 무렵부터 (대운수 8), 만 나이 28~37세 — 엔진 교운 시각 그대로", () => {
+  it("장덕민 무진 대운: 2027년 5월 무렵부터 (대운수 27), 만 27~36세(교운 2027-05-20은 7월 31일 생일 전) — 엔진 교운 시각 그대로", () => {
     const c = dayunCycles(DEOKMIN).find(x => x.ganji === "戊辰")!;
     expect(c.startSolarKst?.slice(0, 7)).toBe("2027-05");
-    expect(dayunLabel(c)).toMatchObject({ name: "무진 대운", start: "2027년 5월 무렵부터", daeunsu: 8, ages: "만 28~37세", years: "2027~2036", line: "무진 대운: 2027년 5월 무렵부터 (대운수 8)" });
-    // 대운수는 어느 대운에서 셈해도 같다(10년씩).
-    expect(new Set(dayunCycles(DEOKMIN).map(x => dayunLabel(x).daeunsu))).toEqual(new Set([8]));
-    expect(dayunLabel(dayunCycles(SODAM).find(x => x.ganji === "丙申")!).line).toBe("병신 대운: 2026년 8월 무렵부터 (대운수 10)");
-    expect(dayunLabel(dayunCycles(SEONGMIN).find(x => x.ganji === "甲寅")!).line).toBe("갑인 대운: 2021년 12월 무렵부터 (대운수 9)");
+    expect(dayunLabel(c, DEOKMIN.birthDate)).toMatchObject({ name: "무진 대운", start: "2027년 5월 무렵부터", daeunsu: 27, ages: "만 27~36세", years: "2027~2036", line: "무진 대운: 2027년 5월 무렵부터 (대운수 27)" });
+    // 대운수는 대운마다 그 대운이 시작될 때의 만 나이(10씩 커진다).
+    expect(dayunCycles(DEOKMIN).map(x => dayunLabel(x, DEOKMIN.birthDate).daeunsu)).toEqual([7, 17, 27, 37, 47, 57, 67, 77, 87, 97, 107, 117]);
+    expect(dayunLabel(dayunCycles(SODAM).find(x => x.ganji === "丙申")!, SODAM.birthDate).line).toBe("병신 대운: 2026년 8월 무렵부터 (대운수 29)");
+    expect(dayunLabel(dayunCycles(SEONGMIN).find(x => x.ganji === "甲寅")!, SEONGMIN.birthDate).line).toBe("갑인 대운: 2021년 12월 무렵부터 (대운수 29)");
   });
   it("출생시간이 대략·미상이면 교운 가능 범위의 달(같은 해, 다르면 '4~6월')", () => {
     const c = { ...dayunCycles(DEOKMIN)[2], startSolarKst: null, startSolarRange: { earliestKst: "2027-04-02T00:00:00+09:00", latestKst: "2027-06-20T00:00:00+09:00" } };
-    expect(dayunLabel(c).line).toBe("무진 대운: 2027년 4~6월 무렵부터 (대운수 8)");
+    expect(dayunLabel(c, DEOKMIN.birthDate).line).toBe("무진 대운: 2027년 4~6월 무렵부터 (대운수 27)");
     const r = calculateCustomerDayun({ name: "x", birthDate: "1999-07-31", birthTime: "", birthTimeUnknown: false, approximateBirthTimeSlot: "JINSI", gender: "MALE" });
-    expect(r.ok && dayunLabel(r.value.cycles[2]).line).toMatch(/^무진 대운: 2027년 \d{1,2}(~\d{1,2})?월 무렵부터 \(대운수 8\)$/);
+    expect(r.ok && dayunLabel(r.value.cycles[2], "1999-07-31").line).toMatch(/^무진 대운: 2027년 \d{1,2}(~\d{1,2})?월 무렵부터 \(대운수 27\)$/);
   });
   it("6개 상품의 브리프 currentDayun·next·timeline.cycles, 대운 전환 해 머리 문장, Book 부록이 같은 표기", () => {
-    const want = dayunCycles(DEOKMIN).map(c => dayunLabel(c));
+    const want = dayunCycles(DEOKMIN).map(c => dayunLabel(c, DEOKMIN.birthDate));
     for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const) {
       const { brief, data } = book(product);
       const cd = brief.chart.currentDayun!;
       expect(cd.label, product).toBe(want.find(w => w.years === cd.years)!.line);
-      expect(cd.ages, product).toBe("만 18~27세");
-      expect(cd.next?.label, product).toBe("무진 대운: 2027년 5월 무렵부터 (대운수 8)");
+      expect(cd.ages, product).toBe("만 17~26세");
+      expect(cd.next?.label, product).toBe("무진 대운: 2027년 5월 무렵부터 (대운수 27)");
       expect([cd.start, cd.next?.start], product).toEqual(["2017년 5월 무렵부터", "2027년 5월 무렵부터"]);
       for (const c of brief.timeline?.cycles ?? []) expect(c.label, product).toBe(want.find(w => w.years === c.years)!.line);
       const appendix = pagesOf(data, "appendix")[0];
-      expect(appendix.notes, product).toEqual(["기사 대운: 2017년 5월 무렵부터 (대운수 8)", "무진 대운: 2027년 5월 무렵부터 (대운수 8)", DAYUN_AGE_NOTE]);
-      expect(html(data, appendix), product).toContain("날수를 3으로 나눠 적었어요.");
+      expect(appendix.notes, product).toEqual(["기사 대운: 2017년 5월 무렵부터 (대운수 17)", "무진 대운: 2027년 5월 무렵부터 (대운수 27)", DAYUN_AGE_NOTE]);
+      expect(html(data, appendix), product).toContain("대운수는 그 대운이 시작될 때의 만 나이예요.");
     }
   });
   it("대운 상품: 전환 해 카드·머리 문장·표 위 전환 줄", () => {
@@ -75,7 +75,7 @@ describe("8 대운 표기 통일(dayunLabel)", () => {
     expect(card.dayun).toMatchObject({ transition: true, start: "2027년 5월 무렵부터" });
     expect(card.head).toBe("2027년 정미(丁未)는 상관(傷官)이 하늘에, 정재(正財)가 땅에 들어오는 해예요. 이 해 5월 무렵부터 무진(戊辰) 대운이 시작되고, 10년의 중심 기운은 편재(偏財)예요.");
     const tl = pagesOf(data, "timeline")[0];
-    expect(tl.transitions.map(t => `${t.before} → ${t.after} · ${t.date}`)).toEqual(["기사 대운 → 무진 대운 · 2027년 5월 무렵부터 (대운수 8)"]);
+    expect(tl.transitions.map(t => `${t.before} → ${t.after} · ${t.date}`)).toEqual(["기사 대운 → 무진 대운 · 2027년 5월 무렵부터 (대운수 27)"]);
     expect(tl.years.find(y => y.year === 2027)!.transition).toBe("2027년 5월 무렵부터");
     expect(html(data, tl)).toContain("2027년 5월 무렵부터 · 대운 전환");
   });

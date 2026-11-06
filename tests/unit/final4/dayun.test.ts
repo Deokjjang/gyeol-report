@@ -9,7 +9,8 @@ import { buildFactSheet } from "@/lib/factsheet/build";
 import { factCheck, factCtxOf } from "@/lib/factsheet/check";
 import { buildWriterPrompt } from "@/lib/writer/prompt";
 
-// 최종 A-3·4·5: 전통 대운수, 교운 연·월 기간, 교운 시각으로 고르는 지금 대운. 호출 0.
+// 최종 A-3·4·5: 전통 대운수(엔진 셈, 관리자 화면 참고값), 교운 연·월 기간, 교운 시각으로 고르는 지금 대운. 호출 0.
+// 운영 Q 8-1: 책에 보이는 대운수는 그 대운이 시작될 때의 만 나이(labels.dayunStartManAge)로 바뀌었다.
 const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
 const P = (name: string, birthDate: string, birthTime: string, gender: "MALE" | "FEMALE", mbtiType = "INFJ"): BriefPersonInput =>
   ({ name, gender, birthDate, birthTime, birthTimeUnknown: false, mbtiType: mbtiType as never, context: { relationshipStatus: "single", jobStatus: "employee", detailJob: "" } });
@@ -38,9 +39,10 @@ describe("A-3 전통 대운수(출생~절입 날수 ÷ 3, 나머지 2일 올림)
     const d = calculateCustomerDayun(inp(PEOPLE.서하은));
     expect(d.ok && d.value.cycles[0].startSolarKst).toBe("2010-06-08T23:05:00+09:00");
   });
-  it("브리프·부록 표기: 서하은 갑술 대운 대운수 5(모든 대운 줄 같은 값), 정답지 number 5", () => {
+  it("브리프·부록 표기: 서하은 갑술 대운 대운수 15(교운 2020-06-08 때 만 15세), 정답지 number 5(첫 대운 을해 2010-06-08 때 만 5세)", () => {
     const brief = buildBrief({ product: "saju_mbti_full", baseDate: "2026-11-05", baseAt: "2026-11-05T03:00:00.000Z", person: PEOPLE.서하은 }, k);
-    expect(brief.chart.currentDayun?.label).toBe("갑술 대운: 2020년 6월 무렵부터 (대운수 5)");
+    expect(brief.chart.currentDayun?.label).toBe("갑술 대운: 2020년 6월 무렵부터 (대운수 15)");
+    expect(brief.chart.currentDayun?.ages).toBe("만 15~24세");
     const sheet = buildFactSheet({ product: "saju_mbti_full", baseDate: "2026-11-05", baseAt: "2026-11-05T03:00:00.000Z", person: PEOPLE.서하은 } as never, brief, k);
     expect(sheet.people[0].dayun.number).toBe(5);
   });
@@ -50,7 +52,7 @@ describe("A-4 본문 대운 기간은 교운 연·월(부록과 같은 값)", ()
   const brief = buildBrief({ product: "career_money_study", baseDate: "2026-11-05", baseAt: "2026-11-05T03:00:00.000Z", person: { ...PEOPLE.윤도윤, context: { relationshipStatus: "single", jobStatus: "job_seeker", detailJob: "회계 사무직 재취업 준비" } } }, k);
   const cd = brief.chart.currentDayun!;
   it("윤도윤 신유 대운: 2019년 11월 무렵부터 2029년 11월 무렵까지, 남은 기간 교운 시각 기준", () => {
-    expect(cd.label).toBe("신유 대운: 2019년 11월 무렵부터 (대운수 6)");
+    expect(cd.label).toBe("신유 대운: 2019년 11월 무렵부터 (대운수 46)");
     expect(cd.period).toBe("2019년 11월 무렵부터 2029년 11월 무렵까지");
     expect(cd.until).toBe("2029년 11월 무렵까지");
     expect(cd.phase).toMatchObject({ yearIndex: 8, yearsLeft: 3, remaining: "약 3년(2029년 11월 무렵까지)" });
@@ -75,7 +77,7 @@ describe("A-5 지금 대운은 교운 시각과 기준 시각(발행 시각)을 
     const cd = at("2026-11-05T03:00:00.000Z");
     expect(cd.ganji.hangul).toBe("을미");
     expect(cd.phase).toMatchObject({ yearIndex: 10, label: "마지막 해", yearsLeft: 0, remaining: "한 달이 안 남음(2026년 11월 무렵까지)" });
-    expect(cd.next?.label).toBe("갑오 대운: 2026년 11월 무렵부터 (대운수 10)");
+    expect(cd.next?.label).toBe("갑오 대운: 2026년 11월 무렵부터 (대운수 20)");
   });
   it("교운 직전·직후(2026-11-26 20:29 / 20:31 KST)", () => {
     expect(at("2026-11-26T11:29:00.000Z").ganji.hangul).toBe("을미");
@@ -91,7 +93,7 @@ describe("A-5 지금 대운은 교운 시각과 기준 시각(발행 시각)을 
     const d = calculateCustomerDayun(inp(PEOPLE.최지우));
     if (!d.ok) throw new Error();
     expect(currentDayunAt(d.value.cycles, Date.parse("2010-01-01T00:00:00+09:00"))).toBeUndefined();
-    expect(dayunLabel(d.value.cycles[0], 10, d.value.cycles[1]).period).toBe("2016년 11월 무렵부터 2026년 11월 무렵까지");
+    expect(dayunLabel(d.value.cycles[0], PEOPLE.최지우.birthDate, d.value.cycles[1]).period).toBe("2016년 11월 무렵부터 2026년 11월 무렵까지");
     expect(remainingKo(Date.parse("2026-01-10T00:00:00+09:00"), Date.parse("2029-03-05T00:00:00+09:00"))).toBe("약 3년 1개월");
     expect(remainingKo(Date.parse("2026-01-10T00:00:00+09:00"), Date.parse("2026-06-15T00:00:00+09:00"))).toBe("약 5개월");
   });

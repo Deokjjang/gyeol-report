@@ -5,7 +5,7 @@ import { BOOKS, bookForProduct, readerTitle } from "../../lib/book/product";
 import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type BookFormState } from "../../lib/book/form";
 import type { PersonInputState } from "../../lib/report-generation/reportInputPresentation";
 import { MBTI_TYPES, compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
-import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../lib/saju/birthTimePrecisionTypes";
+import { birthTimeSlotOptions } from "../../lib/saju/birthTimePrecisionTypes";
 import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
 import { JOBS, RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
 import { Publishing } from "../../app/dev/book-preview/BookPages";
@@ -27,7 +27,7 @@ export function Fields({ person, change, prefix, role, errors, now, requiredGend
     <label>생년월일<input id={`${prefix}-birthDate`} type="date" min="1900-01-01" max={now.slice(0, 10)} value={person.birthDate} {...a11y("birthDate")} onChange={e => change({ ...person, birthDate: e.target.value })} />{error("birthDate")}</label>
     <label>성별{requiredGender ? " (필수)" : ""}<select id={`${prefix}-gender`} value={person.gender} {...a11y("gender")} onChange={e => change({ ...person, gender: e.target.value })}><option value="">미선택</option><option value="FEMALE">여성</option><option value="MALE">남성</option></select>{error("gender")}</label>
     <fieldset className={s.wide}><legend>출생시간</legend><div className={s.choices}>{[["exact", "정확"], ["approximate", "대략"], ["unknown", "모름"]].map(([value, label]) => <label key={value}><input type="radio" name={`${prefix}-precision`} checked={person.paidBirthTimeMode === value} onChange={() => change({ ...person, paidBirthTimeMode: value as PersonInputState["paidBirthTimeMode"], birthTime: "", timeBranch: "", birthTimeUnknown: value === "unknown" })} />{label}</label>)}</div></fieldset>
-    {person.paidBirthTimeMode === "exact" ? <label className={s.wide}>태어난 시각<input id={`${prefix}-birthTime`} type="time" value={person.birthTime} {...a11y("birthTime")} onChange={e => change({ ...person, birthTime: e.target.value })} />{error("birthTime")}</label> : person.paidBirthTimeMode === "approximate" ? <label className={s.wide}>대략적인 시간대<select id={`${prefix}-birthTime`} value={person.timeBranch} {...a11y("birthTime")} onChange={e => change({ ...person, timeBranch: e.target.value as PersonInputState["timeBranch"] })}><option value="">시간대 선택</option>{BIRTH_TIME_SLOT_DEFINITIONS.map(slot => <option key={slot.value} value={slot.value}>{slot.labelKo}</option>)}</select>{error("birthTime")}</label> : null}
+    {person.paidBirthTimeMode === "exact" ? <label className={s.wide}>태어난 시각<input id={`${prefix}-birthTime`} type="time" value={person.birthTime} {...a11y("birthTime")} onChange={e => change({ ...person, birthTime: e.target.value })} />{error("birthTime")}</label> : person.paidBirthTimeMode === "approximate" ? <label className={s.wide}>대략적인 시간대<select id={`${prefix}-birthTime`} value={person.timeBranch} {...a11y("birthTime")} onChange={e => change({ ...person, timeBranch: e.target.value as PersonInputState["timeBranch"] })}><option value="">시간대 선택</option>{/* 운영 Q 8-2: 시각은 입력한 생년월일의 당시 시계(서머타임·옛 표준시) 기준. 날짜 전에는 지금 시계 */}{birthTimeSlotOptions(person.birthDate).map(slot => <option key={slot.value} value={slot.value}>{slot.labelKo}</option>)}</select>{error("birthTime")}</label> : null}
   </fieldset>;
 }
 
