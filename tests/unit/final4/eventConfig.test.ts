@@ -1,8 +1,10 @@
 // 최종 A 11·14: 1+1 기간(env, 오프셋 없으면 KST·끝 23:59:59 포함) · 팝업 고르기(상황마다 하나, 화면 제한) · 오늘 하루 보지 않기.
 import { readdirSync, readFileSync } from "node:fs";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { GIFT_EVENT_DEFAULT_END, GIFT_EVENT_DEFAULT_START, giftEventActive, giftEventConfig, giftEventPublicView, giftEventWindow, parseEventInstant } from "@/lib/ops/config";
 import { eventRangeLabel, eventStartLabel, expiryLabel, kstDay, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup, type PopupState } from "@/lib/ops/comp/popupSelect";
+import { giftEventPhaseAt } from "@/components/growth/GiftEventCountdown";
+import { issueGiftForOrder } from "@/lib/ops/gift/service";
 
 const T = (s: string) => Date.parse(s);
 const ON = { GIFT_EVENT_ENABLED: "1" } as const;
@@ -110,5 +112,41 @@ describe("팝업 고르기", () => {
     expect(eventStartLabel("2026-11-06T15:00:00.000Z")).toBe("11월 7일 00시 시작");
     expect(expiryLabel("2026-12-06T03:00:00.000Z")).toBe("12월 6일");
     expect(remainingLabel(6 * 86400_000 + 3 * 3600_000 + 4 * 60_000 + 5_000)).toBe("6일 03:04:05");
+  });
+});
+
+// 운영 Q 10부: 시계만 옮긴다(now를 넘기지 않는 기본 경로 그대로) — 11-16 23:59:59 KST가 지나면 팝업 ①·배너 타이머·1+1 발급이 저절로 꺼진다.
+describe("운영 Q 10부: 1+1 끝(시간 이동, 운영 설정 GIFT_EVENT_ENABLED=1 · 기본 기간)", () => {
+  const ENV = { GIFT_EVENT_ENABLED: "1" } as const;
+  afterEach(() => { vi.useRealTimers(); });
+  const state = (member: boolean) => ({ member, comp: null, event: giftEventPublicView(ENV) });
+  it("11-16 23:59:59.999 KST: 진행 중 — 팝업 ①, 배너 「종료까지」, 발급 요청을 보낸다", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] }); vi.setSystemTime(new Date("2026-11-16T23:59:59.999+09:00"));
+    expect(giftEventPublicView(ENV).phase).toBe("during");
+    expect(selectPopup(state(false), "/", Date.now())).toBe("event-1plus1");
+    expect(giftEventPhaseAt(giftEventPublicView(ENV), Date.now())).toBe("during");
+    const store = { call: vi.fn(async () => ({ ok: true, issued: true })) };
+    expect(await issueGiftForOrder(store, "o-1", giftEventConfig(ENV))).toMatchObject({ issued: true });
+    expect(store.call).toHaveBeenCalledWith("issue", expect.objectContaining({ paymentOrderId: "o-1", end: "2026-11-16T15:00:00.000Z" }));
+  });
+  it.each(["2026-11-17T00:00:00+09:00", "2026-11-17T00:00:01+09:00", "2026-11-30T12:00:00+09:00"])("%s: 끝 — 팝업 ① 없음(손님·회원), 배너 없음, 발급하지 않는다(저장소를 부르지 않음)", async iso => {
+    vi.useFakeTimers({ toFake: ["Date"] }); vi.setSystemTime(new Date(iso));
+    const view = giftEventPublicView(ENV);
+    expect(view.phase).toBe("after");
+    expect(giftEventActive(ENV)).toBe(false);
+    for (const member of [false, true]) expect(selectPopup(state(member), "/", Date.now())).toBeNull();
+    expect(giftEventPhaseAt(view, Date.now())).toBeNull();
+    // 서버가 아직 during이라고 준 응답을 들고 있어도(화면을 켜 둔 채 자정이 지남) 서버 시각이 끝을 넘으면 배너는 사라진다.
+    expect(giftEventPhaseAt({ ...view, phase: "during" }, Date.parse(iso))).toBeNull();
+    const store = { call: vi.fn(async () => ({ ok: true, issued: true })) };
+    expect(await issueGiftForOrder(store, "o-2", giftEventConfig(ENV))).toEqual({ ok: true, issued: false, code: "EVENT_OFF" });
+    expect(store.call).not.toHaveBeenCalled();
+  });
+  it("끝난 뒤에도 안 쓴 보상 이용권(기한 전)은 팝업 ②·③이 그대로, 그 기한(예: 12-06 11:06:46 KST)이 지나면 없음", () => {
+    vi.useFakeTimers({ toFake: ["Date"] }); vi.setSystemTime(new Date("2026-12-01T00:00:00+09:00"));
+    const comp = { tier: "A" as const, quantity: 5, unused: 5, expiresAt: "2026-12-06T02:06:46.000Z" };
+    expect(selectPopup({ member: true, comp, event: giftEventPublicView(ENV) }, "/", Date.now())).toBe("comp-a");
+    vi.setSystemTime(new Date("2026-12-06T11:06:47+09:00"));
+    expect(selectPopup({ member: true, comp, event: giftEventPublicView(ENV) }, "/", Date.now())).toBeNull();
   });
 });

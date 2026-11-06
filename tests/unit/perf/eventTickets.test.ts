@@ -240,3 +240,55 @@ describe("P 책 열기 소유 확인(본문 없이)", () => {
     }
   });
 });
+
+// 운영 Q 10부: 시계를 옮겨(vi.setSystemTime — PGlite의 now()·clock_timestamp()도 같이 움직인다) 기한이 지나면 저절로 끝나는지 본다.
+// 이벤트 이용권(1+1·받은 선물)은 2026-11-30 23:59:59 KST까지, 누나 계정 보상 5장은 2026-12-06 11:06:46 KST까지.
+describe("운영 Q 10부: 이용권 기한이 지나면(시간 이동)", () => {
+  const EV = u(601), RCV = u(602);
+  const ticketStore = { call: (a: string, d: Record<string, unknown> = {}) => h.rpc("ops_gift", a, d) };
+  const at = (iso: string) => vi.setSystemTime(new Date(iso));
+  const statuses = async (user: string) => ((await ticketStore.call("list", { userId: user })).gifts as { status: string }[]).map(g => g.status).sort();
+  beforeAll(async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    at("2026-11-20T12:00:00+09:00");
+    for (const id of [EV, RCV]) await member(id);
+    const live = giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-06 09:00:00", GIFT_EVENT_END: "2030-12-31 23:59:59" }, Date.now());
+    expect(live.ticketExpiresAt).toBe(new Date(TARGET).toISOString());
+    for (const id of ["q10-1", "q10-2"]) { await paidOrder(id, EV); expect((await afterPaidOrder(gift, id, live))?.issued).toMatchObject({ issued: true }); }
+    // 1장은 선물 링크 → 받은 사람 원장으로(기한 그대로 11-30), 1장은 링크만 만들고 안 받음 → 다른 1장은 그대로.
+    expect(await gift.call("link_next", { userId: EV, tokenHash: hash(200) })).toMatchObject({ ok: true, status: "gifted" });
+    expect(await gift.call("claim", { userId: RCV, tokenHash: hash(200) })).toMatchObject({ ok: true, status: "claimed" });
+  }, 120_000);
+  afterAll(() => { vi.useRealTimers(); });
+
+  it("11-30 23:59:58 KST: 이벤트 이용권·받은 선물·누나 보상 5장 모두 쓸 수 있다", async () => {
+    at("2026-11-30T23:59:58+09:00");
+    expect(await readWallet(gift, EV)).toMatchObject({ usable: 1, giftable: 1, total: 1 });
+    expect(await readWallet(gift, RCV)).toMatchObject({ ledger: 1, usable: 1 });
+    expect(await readWallet(gift, SIS)).toMatchObject({ usable: 5, giftable: 5 });
+  });
+  it("12-01 00:00:00 KST: 이벤트 이용권은 만료로 보이고(서재 목록 expired) 쓰기·선물·받기가 모두 안 된다", async () => {
+    at("2026-12-01T00:00:00+09:00");
+    expect(await readWallet(gift, EV)).toMatchObject({ ledger: 0, usable: 0, giftable: 0, total: 0, expiresAt: null, usableExpiresAt: null });
+    expect(await statuses(EV)).toEqual(["claimed", "expired"]);
+    expect(await gift.call("spend", { userId: EV, requestId: "00000000-0000-4000-8000-00000000f601", productType: "saju_mbti_full" })).toMatchObject({ ok: true, moved: false });
+    expect(await gift.call("link_next", { userId: EV, tokenHash: hash(201) })).toMatchObject({ ok: false, code: "NO_GIFTABLE" });
+    // 받은 선물(원장, 기한 11-30)도 끝: 지갑 0장, 원장 묶음 없음.
+    expect(await readWallet(gift, RCV)).toMatchObject({ ledger: 0, usable: 0, total: 0 });
+    const summary = (await h.db.query<{ r: { quantity: number; lots: unknown[] } }>("select report_tickets('summary',$1,'{}'::jsonb) r", [RCV])).rows[0].r;
+    expect(summary).toMatchObject({ quantity: 0, lots: [] });
+  });
+  it("12-01 00:00:00 KST: 누나 계정 보상 5장(12-06 11:06 KST)은 그대로 쓸 수 있다", async () => {
+    at("2026-12-01T00:00:00+09:00");
+    expect(await readWallet(gift, SIS)).toMatchObject({ usable: 5, giftable: 5 });
+    expect(Date.parse((await readWallet(gift, SIS))!.usableExpiresAt!)).toBe(SIS_EXP);
+    expect(await gift.call("spend", { userId: SIS, requestId: "00000000-0000-4000-8000-00000000f602", productType: "saju_mbti_full" })).toMatchObject({ ok: true, moved: true });
+    expect(await readWallet(gift, SIS)).toMatchObject({ ledger: 1, giftable: 4, usable: 5 });
+  });
+  it("12-06 11:06:45 KST까지는 5장, 11:06:47 KST에는 누나 계정 보상도 끝난다(원장으로 옮긴 1장 포함)", async () => {
+    at("2026-12-06T11:06:45+09:00");
+    expect(await readWallet(gift, SIS)).toMatchObject({ usable: 5 });
+    at("2026-12-06T11:06:47+09:00");
+    expect(await readWallet(gift, SIS)).toMatchObject({ ledger: 0, usable: 0, giftable: 0, total: 0 });
+  });
+});
