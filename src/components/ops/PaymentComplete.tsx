@@ -4,7 +4,7 @@ import MetaPurchaseTracker from "../analytics/MetaPurchaseTracker";
 import { createOpsStores } from "../../lib/ops/store";
 import { giftEventConfig } from "../../lib/ops/config";
 import { afterPaidOrder } from "../../lib/ops/gift/service";
-import { publicSummary } from "../../lib/ops/orders/summary";
+import { orderStillMaking, publicSummary } from "../../lib/ops/orders/summary";
 import { OrderRequestForm, OrderSummaryCard } from "./OrderParts";
 import styles from "../report/reportStatus.module.css";
 import s from "./ops.module.css";
@@ -30,7 +30,8 @@ export async function PaymentCompleteView(a: { providerOrderId: string; paymentK
         <div className={styles.body}>
           <h1 id="payment-complete-title" className={styles.title}>결제가 완료됐어요</h1>
           <p className={styles.message}>책 제본을 시작했어요. 보통 몇 분 걸리고, 이 화면을 닫아도 계속 만들어져요.</p>
-          <OrderSummaryCard order={order} bookHref={`/reports/${a.reportId}`}><OrderRequestForm guest={{ providerOrderId: a.providerOrderId, paymentKey: a.paymentKey }} /></OrderSummaryCard>
+          <OrderSummaryCard order={order} bookHref={`/reports/${a.reportId}`}><OrderRequestForm guest={{ providerOrderId: a.providerOrderId, paymentKey: a.paymentKey }} submitted={order.openRequests > 0}
+            making={orderStillMaking(order)} /></OrderSummaryCard>
           <p className={s.hint}>내 서재에서 다시 볼 수 있어요.</p>
         </div>
       </section>

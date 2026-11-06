@@ -156,7 +156,7 @@ describe("문의 접수(서재)", () => {
   });
   it("계정당 하루 3건까지", async () => {
     for (const id of ["po-q-11", "po-q-12"]) {
-      await pay(id, B, { ...other, person: { ...other.person, name: id } });
+      await pay(id, B, { ...other, person: { ...(other as { person: Record<string, unknown> }).person, name: id } });
       await exec("update payment_orders set paid_at=now()-interval '2 hours' where payment_order_id=$1", [id]);
     }
     expect((await notify.call("submit", { userId: B, paymentOrderId: "po-q-11", reason: "not_open" })).ok).toBe(true);

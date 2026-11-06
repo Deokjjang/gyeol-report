@@ -23,6 +23,8 @@ describe("public ticket gates before dependency construction", () => {
       { path: "/api/internal/report-writer-recovery", schedule: "*/5 * * * *" },
       // P6d-ops: 정식본 교체 레인·환불 처리·이벤트 이용권 발급·보관본 정리(v5/main에만 — 운영 적용은 승인 후)
       { path: "/api/internal/ops-jobs", schedule: "*/5 * * * *" },
+      // 운영 Q: 알림 대기표 예비 크론(미발행 감지·재전송·처리 봇 정리·웹훅 설정)
+      { path: "/api/internal/ops-notify", schedule: "* * * * *" },
     ]);
   });
   it.each([[false,false],[true,false],[false,true]])("Book %s / Account %s rejects redeem/status before Auth/DB", async (book, account) => {

@@ -39,7 +39,9 @@ export const bookStatusLabel = label({ QUEUED: "대기", RUNNING: "생성 중", 
 export const jobStatusLabel = bookStatusLabel;
 export const phaseLabel = label({ pending: "대기", interim: "임시본", official: "정식본", gave_up: "포기" });
 export const refundStateLabel = label({ requested: "요청됨", processing: "처리 중", done: "환불 완료", failed: "실패(재시도)" });
-export const requestReasonLabel = label({ calc_error: "계산 오류", not_open: "열리지 않음", delayed: "지연", refund: "환불 요청", other: "기타" });
+// 운영 Q 2부: 지금 받는 사유는 not_open(안 나옴·안 열림)·double_paid(두 번 결제) 둘. 옛 사유(계산 오류·지연·환불 요청·기타)도 그대로 보인다.
+export const requestReasonLabel = label({ not_open: "안 나옴·안 열림", double_paid: "두 번 결제", calc_error: "계산 오류", delayed: "지연", refund: "환불 요청", other: "기타" });
+export const requestResolutionLabel = label({ refund: "환불", regenerate: "다시 만들기", ticket: "이용권 돌려주기", guide: "안내" });
 export const laneLabel = label({ queue: "결제 큐", interim: "임시본", upgrade: "정식본 교체", regenerate: "재생성", attempt: "결제 큐 시도" });
 export const outcomeLabel = label({ published: "발행", replaced: "교체", deferred: "보류", gave_up: "포기", stale: "만료된 작업", error: "오류" });
 export const genderLabel = label({ MALE: "남", FEMALE: "여" });
@@ -51,7 +53,8 @@ export const auditActionLabel = label({
   refund_blocked_cap: "환불 한도 차단", auto_refund_requested: "자동 환불 요청", request_done: "문의 처리", provider_enable: "OpenAI 다시 켬", admin_pin_failed: "PIN 오류",
   pii_view: "개인정보 보기", orders_export: "주문 내보내기",
   toss_check: "토스 상태 확인", toss_check_batch: "토스 상태 일괄 확인", external_refund: "외부 환불 기록", external_refund_blocked: "외부 환불 기록 막힘",
-  comp_designate: "보상 A 지정", request_auto_done: "고객 요청 자동 처리",
+  comp_designate: "보상 A 지정", request_auto_done: "고객 요청 자동 처리", request_created: "고객 문의 접수",
+  bot_button: "처리 봇 버튼", bot_refund: "처리 봇 환불", bot_regenerate: "처리 봇 다시 만들기", bot_guide: "처리 봇 안내", bot_pin_failed: "처리 봇 비밀번호 오류", bot_ignored: "처리 봇 무시(다른 사용자)",
 });
 export const refundSourceLabel = label({ admin: "관리자", auto: "자동(24시간 실패)", external: "외부(토스 상점관리자에서 직접)" });
 export const compStateLabel = label({ granted: "지급됨", ready: "지급 대기(가입 정보 완료)", waiting_profile: "가입 정보 입력 전" });
