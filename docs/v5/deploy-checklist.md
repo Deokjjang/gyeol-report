@@ -1,4 +1,4 @@
-# v5 운영 반영 점검표 (배포하지 않음 — 준비 문서)
+# v5 운영 반영 점검표 (2026-11-06 운영 배포 완료 — 결과는 docs/v5/deploy/report.md)
 
 작성 2026-11-05 · **최종 A로 갱신 2026-11-06(맨 위 「이번 배포 순서」가 최종본)** · 브랜치 `v5/final`(기준 origin/v5/main 2236557f) · 대상 Production = `origin/master`(d846c2ea, 2026-10-29).
 **이 문서는 순서와 확인 방법만 적는다. migration 적용·환경변수 입력·배포는 모두 덕짱님 승인 뒤에 한다(CLAUDE.md 권한).**
@@ -109,6 +109,7 @@ select pg_get_functiondef('public.paid_report_reliability(text,jsonb)'::regproce
 | 7 | `supabase/migrations/20261105160000_v5_final3_writer_raw.sql` | **(v5 최종3 6)** 운영 워커 호출 원문 저장소: 새 표 `ops_writer_raw`(report_id·raw_key·kind·entry, RLS 켬, anon·authenticated 권한 없음) + 함수 `ops_writer_raw(p_action, p_data)`(`raw_save`·`raw_load`·`raw_clear`, 현재 lease 토큰만 — 결제 큐·교체 레인·이용권 큐), service_role만 실행. 추가만 함(기존 표·함수 변경 없음). 되돌리기: `drop function public.ops_writer_raw(text,jsonb); drop table public.ops_writer_raw;`(코드는 저장 실패를 무시하고 Book meta.raw로 계속 동작) |
 | 8 | `supabase/migrations/20261106100000_v5_final4_event_comp.sql` | **(최종 A 11·12·14)** ① `ops_gift` issue의 계정 상한을 이벤트 이용권(`kind='event'`)만 세게 좁게 패치(보상 이용권이 1+1 상한을 먹던 결함, 이미 고친 본문이면 건너뜀) ② 새 표 `comp_campaign_grants`(캠페인 id + 계정 = 한 번) ③ 새 함수 `ops_comp_campaign('roster'·'run'·'popup')`(service_role만). 기존 행 변경 없음. 6번 뒤 | `drop function public.ops_comp_campaign(text,jsonb);`(지급 기록 표는 남김). ①은 `ops_gift` 본문의 `" and kind='event';"` → `";"` 같은 방식의 좁은 치환 |
 | 9 | `supabase/migrations/20261106180000_v5_final4_writer_raw_purge.sql` | **(최종 A 18)** `ops_writer_raw`에 `raw_purge` 동작 추가(함수 교체만): 작업용 원문 사본을 발행 완료 30일 뒤, 발행 실패는 처리 완료(포기·환불·취소·이용권 되돌림·마지막 저장 중 가장 늦은 때) 30일 뒤 삭제. 크론 `/api/internal/ops-jobs`가 5분마다 부른다. Book 스냅샷 안 `meta.raw`는 고객 Book이라 지우지 않음. 7번 뒤 | 7번 파일의 함수 정의를 다시 실행 |
+| 10 (배포 직후 고침, **운영 적용 완료 2026-11-06 10:33**) | `supabase/migrations/20261106200000_v5_deploy_gift_pending_alias.sql` | `ops_gift('pending_orders')`(1+1 보조 발급 크론)의 변수·별칭 충돌(o·x → `is ambiguous`)을 그 조회 한 곳의 별칭 po·q로 고침(좁은 치환, 다시 실행 안전). 2번 뒤 아무 때나 | 같은 방식 반대 치환 |
 
 - 0번 적용 전 점검(읽기 전용): 2-1절 [R1-b] → `true`. 적용 뒤 2-1절 [R1] → `read_quarantine_disabled = true`.
 - 6번은 5번 뒤, 코드(이용권 30일·`lots` 표시·열람 기한 없음 표시 `expiresAt==="infinity"`)와 **같은 배포에서** 적용한다. 코드만 먼저 나가면 이용권 기한은 코드 값(30일)대로지만 v5 Book은 90일로 남고, migration만 먼저 나가면 서재가 `infinity` 기한 Book을 목록에서 뺀다(옛 코드).
