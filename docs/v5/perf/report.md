@@ -168,7 +168,7 @@ P 본문 3
 - 새 시험 3건(PGlite): 관리자 환불 — 안 받은 선물 링크 회수·링크 무효·보낸 사람 지갑 0 / 관리자 환불 — 이미 받은 선물은 회수·차감 없이 `giftKept: "claimed"`만 / 외부 환불 기록 — 안 받은 선물 링크 회수 — PASS.
 
 ### 1-3. 친구 첫 결제 보너스
-- 배포 직전 운영 선물 링크 수: ⟨배포 단계에서 채움⟩. 0이면 삭제 그대로(SQL 'bonus'는 아무것도 주지 않음, 결제 뒤 호출 없음).
+- 배포 직전(18:21 KST) 운영 선물 링크 수 **0개**(token·보냄·받음 모두 0, 이벤트 이용권 0장) → 삭제 그대로(SQL 'bonus'는 아무것도 주지 않음, 결제 뒤 호출 없음).
 
 ### 1-4. 약관·화면 「증정」
 - 약관 「이용권」: 결제에 따른 무상 증정·판매 상품 아님 / 무상 증정이므로 현금 교환·환불 불가 / 결제 환불 시 그 결제로 받은 미사용 이용권(받지 않은 선물 링크 포함) 회수·링크 무효, 쓴 것·받은 선물은 회수 안 함 / 이용권으로 만든 책 오류 → 다시 만들거나 이용권을 다시 드림. 환불정책·주문서 짧은 줄도 같게. 처리방침 「지급」 → 「증정」.
@@ -207,3 +207,75 @@ P 본문 3
 | Supabase | Network Restrictions는 Postgres·풀러 직접 접속에만 적용, PostgREST·Auth·supabase-js(HTTPS)에는 미적용 | 함수는 supabase-js만 씀 → 영향 없음 |
 
 논리: 지금(iad1)도 함수의 나가는 IP가 계속 바뀌므로, 어느 서비스든 허용 IP가 켜져 있었다면 이미 간헐 실패가 났어야 한다. 정상으로 돌고 있으므로 icn1로 옮겨 IP 때문에 새로 깨질 곳은 없다(Static IPs를 쓰는 경우만 예외). 출처: vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option, vercel.com/docs/networking/static-ips, docs.tosspayments.com/reference/using-api/network-requirements, developers.kakao.com/docs/latest/ko/app-setting/app, developers.facebook.com/documentation/facebook-login/security, platform.claude.com/docs/en/manage-claude/ip-allowlist, developers.openai.com/api/docs/guides/ip-allowlist, supabase.com/docs/guides/platform/network-restrictions.
+
+### 1-7. 검증
+| 항목 | 결과 |
+|---|---|
+| tsc · eslint(전체) · next build | 0 · 0 · 0 |
+| Vercel 방식 빌드(Preview `dpl_2qtzrRYdemehPNJimYp1Nsi1vwFM`, 7d385267, dev 라우트·legacy 뺌) | READY, 지역 icn1 |
+| 전체 시험 | 브랜치 31,646개 중 실패 827 / 기준(2ad0af3f) 31,624개 중 실패 829. 이름 단위 대조 새 실패 후보 3개 → 단독 재실행: `protected-staging/isolation` 2개는 **기준 트리도 단독 실패**(전체 실행 땐 부하로 skipped), `account/library` 6상품 실제 생성은 단독 27/27 통과(부하 시간 초과, P 때와 같음). **새 실패 0** |
+| 바뀐 시험 | 결제 요청(DEFAULT·easyPay 없음) 4파일, 문구(증정·이용권 재지급·시행일) 7파일, PGlite D·환불 회수(eventTickets 19개), 위젯 시험 삭제 |
+| migration 앵커 | 적용 전 보관한 운영 본문에서 패치 앵커 8개 모두 정확히 1번(순서대로) |
+| 기존 오류 | `DevTossCheckoutLauncher`「1,290원」 기대 1건 — 기준 트리도 같은 실패(가격 변경 전 문구) |
+
+### 1-8. 배포
+| 단계 | 결과 |
+|---|---|
+| ① 대상 수(18:21 KST) | 보상 캠페인 이용권 **42장·39명·사용 0·링크 0**, `comp_campaign_grants` 39·`comp_grants` 39, 누나 5장(12-06 11:06·available), 이벤트 이용권 0, 선물 링크 0 — 기대값과 같음 |
+| ② 함수 본문 보관 | `docs/v5/perf/rollback/*.before-20261107090000.sql`(ops_gift·ops_comp·ops_comp_campaign·paid_report_reliability·report_tickets, md5 기록). 적용 직전 md5 재확인 같음 |
+| ③ migration | `20261107090000` CLI 임시 폴더 방식(dry-run 대기 1건 → 적용) **18:22:39~46 KST** |
+| ④ 적용 뒤 | `ticket_expiry_adjustments`: gift_rewards **42**·comp_campaign_grants **39**·comp_grants **39**(원래 12-06 10:34 → 11-30 23:59:59 KST). 남은 대상 0. 누나 5장 12-06 11:06 그대로. 원장 수정 막기 트리거 켜짐. 적용 뒤 운영 DB 오류 0, 만료 작업 RPC 200 |
+| ⑤ 병합 | `v5/perf-01` 756e0168 → `v5/main` merge **3f1915a7** → `master` merge **468f4b40**. 트리 셋 다 `316dec5c`(= 시험한 브랜치). 지난번 고친 migration 커밋(e95b1f54·2ad0af3f)·20261106200000 파일이 master에 함께 들어감 |
+| ⑥ Production | **`dpl_EGrjYckryQCDc5pSZP3rcgDF9Zg5`** · master 468f4b40 · READY 18:26:40 KST · 별칭 www.gyeolreport.com·gyeolreport.com · aliasError 없음 · 지역 icn1 |
+| 롤백 기준 | 오류 증가·결제 화면 깨짐이면 `dpl_BLd5WA6kzHXaWnPL8uti2sQYf7qj`로 즉시 되돌림(DB는 예전 코드와 호환 — 위 8절) |
+
+### 1-9. 배포 뒤 30분 확인(18:26:40 → 18:57 KST)
+| 항목 | 결과 | 판정 |
+|---|---|---|
+| 런타임 오류(Vercel) | 0건(배포 뒤·24시간 모두) | PASS |
+| 5xx(관측 쿼리, 08:00~10:00 UTC) | 0건 | PASS |
+| 운영 DB 오류(postgres_logs, migration 뒤) | 0건(`is ambiguous` 포함). Supabase 호출 196건 전부 200 | PASS |
+| `x-vercel-id` | 동적 경로 전부 `icn1::icn1`(배포 전 `icn1::iad1`) | PASS |
+| 크론 | report-jobs·report-ticket-jobs 매분 200, ops-jobs·meta-events·report-writer-recovery 5분마다 200. 만료 작업 `paid_report_reliability` 200(48회/20분), 이용권 보조 발급 `ops_gift` 200(ops-jobs마다) | PASS |
+| 결제 화면 진입(지금 키) | `/report/new?product=saju_mbti_full` 200. 운영 JS 묶음에 `flowMode:"DEFAULT"` 있음·`flowMode:"DIRECT"` 없음·위젯 코드 없음(배포 전은 반대). 토스 결제창 실제 화면은 실결제 때 | PASS(코드) / UNVERIFIED(결제창 화면) |
+| 팝업·배너 | `/auth/event-popup`: 진행 중, 이용권 기한 2026-11-30T14:59:59Z(= 11-30 23:59:59 KST). JS 묶음에 「이용권 증정 EVENT」「이벤트 · 결제 후 이용권 1장 증정」 있음, 「한 권이 더」「1+1 · 결제 후」 없음 | PASS |
+| 선물 받는 화면 | 없는 링크 → `GIFT_NOT_FOUND`(화면 「기한이 지났거나 이미 받은 선물이에요」) | PASS |
+| 누나 계정 5장 | DB: 보상 5장 available·기한 12-06 11:06·조정 기록 0 → 서재·결제 화면 값 「5장 · 12월 6일까지」. 화면 눈 확인은 로그인 필요 | PASS(값) / UNVERIFIED(화면) |
+
+운영 실측(Claude Code 회선, 비로그인, 첫 1회 버리고 3회 중앙값 TTFB ms):
+
+| 경로 | 배포 전(iad1, 1회) | 배포 뒤 3회 | 중앙값 | 경유 |
+|---|---|---|---|---|
+| `/`(엣지 캐시) | 54 | 152/154/125 | 152 | icn1 |
+| `/example`(책 화면, 엣지 캐시) | 46 | 145/153/127 | 145 | icn1 |
+| `/auth/session` | 278 | 154/140/140 | 140 | icn1::icn1 |
+| `/auth/event-popup` | 244 | 148/162/181 | 162 | icn1::icn1 |
+| `/api/gift-event` | 246 | 145/134/152 | 145 | icn1::icn1 |
+| `/auth/library-home`(서재 API, 비로그인 401) | 250(404, 예전 코드엔 없음) | 139/130/145 | 139 | icn1::icn1 |
+| `/login` | 263 | 178/230/142 | 178 | icn1::icn1 |
+
+- 배포 뒤 이 회선 자체가 흔들렸다(같은 때 google 첫 바이트 401ms, vercel.com 연결 101ms). 그래서 절대값보다 **같은 회차의 「함수 경로 − 엣지 캐시 경로」**를 본다: 배포 전 `/auth/session`이 엣지보다 **+224ms**(278−54, 미국 왕복), 배포 뒤 **약 −12ms**(140−152) → 함수 왕복이 사라짐.
+- 브라우저(헤드리스 크롬 390×844, 3회 중앙값): 책 화면 `/example` 첫 내용 287ms, 메인 143ms, 서재 비로그인 화면 478ms.
+- **로그인 서재 첫 표시·내 책 열기 운영 실측은 UNVERIFIED** — 운영 계정 세션이 없어 재지 못했다(로컬 모델 수치는 위 3절: 서재 1,684→145ms, 책 v5 1,582→84ms). 덕짱님이 로그인한 브라우저 개발자 도구에서 `/auth/library-home` 응답의 `x-vercel-id`(icn1::icn1)·`Server-Timing`(auth·data)을 보면 확인된다.
+
+### 1-10. 결제 준비 상태(ready)로 남은 주문(11-06 09:00 이후, 개인정보 없이)
+| 생성(KST) | 상품·금액 | 계정 | 결제키 | 결제창 복귀(/payments/*) |
+|---|---|---|---|---|
+| 11:10:52 | 종합 3,900원 | 덕짱님 계정 | 없음 | 없음 |
+| 11:16:38 | 종합 3,900원 | 덕짱님 계정 | 없음 | 없음 |
+| 17:27:12(추가로 생김) | 종합 3,900원 | 누나 계정 | 없음 | 없음 |
+
+- 세 건 모두 결제 준비(`/api/payment-checkout/prepare` 200, 관측 쿼리로 같은 분에 1건씩)까지 됐고, 그 뒤 성공·실패·취소 복귀 요청은 하루 내내 0건 → 토스 쪽으로 넘어간 뒤 결제 없이 창을 닫은 것으로 보인다.
+- 「결제수단 화면」 진입 여부는 우리 서버에 기록이 없어 **UNVERIFIED**: 그때 코드는 `flowMode: "DIRECT"` + `easyPay: "TOSSPAY"`라 결제수단 고르는 화면 없이 토스페이로 바로 갔다. 결제창이 열릴 때 보내는 InitiateCheckout은 브라우저 픽셀로만 가고 서버 대기열(`meta_conversion_outbox`)은 11-05 이후 0행. 토스 API 조회는 지시대로 하지 않음.
+
+### 1-11. 덕짱님이 하실 일
+1. **실결제 2건**(토스페이 1·카카오페이 1): 결제창에 **토스페이·카카오페이 두 수단만** 보이는지. 카드 등 다른 수단이 보이면 그 화면만 알려 주세요 — 보고만 하고 멈춥니다(통합결제창이 계약 수단만 보이는지는 토스 문서에 없음).
+2. 결제 뒤 Claude Code가 확인할 것: 승인 금액 = 3,900원(주문 저장 금액과 대조), 1+1 이용권 1장 발급(기한 11-30 23:59:59 KST), Meta Purchase(3,900 KRW).
+3. 누나 계정으로 서재·결제 화면에 「리포트 이용권 5장 · 12월 6일까지」가 보이는지(값은 DB로 확인함).
+4. 로그인한 상태에서 서재를 열고 `/auth/library-home` 응답 헤더(`x-vercel-id`·`Server-Timing`)를 한 번 봐 주시면 운영 실측 UNVERIFIED가 풀립니다.
+
+### 1-12. 남은 위험·참고
+- 이 단계 보고 커밋(마지막 문서)은 `v5/perf-01`·`v5/main`에만 있다(코드 변경 없음, master에 넣으면 운영이 다시 배포되므로 다음 master 병합 때 함께).
+- 예전 두 버튼 화면(`TossPaymentWidgetLauncher`, `/report/new` 옛 경로)의 「토스페이로 결제」「카카오페이로 결제」 문구는 그대로 남아 있다(공개 결제는 `BookCheckout`). 두 버튼 모두 같은 통합결제창을 연다.
+- `compMessages.ts`의 「11월 30일까지」 고정 문구는 화면에서 쓰지 않는 파일이라 두었다.
+- 선물 창(`GiftSheet`)의 「M월 D일까지」는 지갑 전체 가장 빠른 기한이라, 원장 이용권이 더 빨리 끝나면 선물하는 장의 기한과 다를 수 있다(이번 범위 밖, 지금 운영 데이터엔 해당 계정 없음).
