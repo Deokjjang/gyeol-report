@@ -6,8 +6,8 @@ import { adminPinConfigured, adminPinMatches } from "../admin/config";
 import { grantTickets } from "../admin/rpc";
 import type { AuditEntry } from "../store";
 import { EVENT_TICKET_EXPIRES_AT, giftEventConfig } from "../config";
-import { closeItem, editOps, itemFacts, kstDay, kstMonth, reconcileItem, stats, type NotifyDeps } from "./flush";
-import { duplicateToRefund, esc, eventText, hm, LINES, md, monthText, opsButtons, opsMessage, refundDoneLine, statsText, won, type EventStats, type ItemFacts, type OrderFacts } from "./render";
+import { closeItem, editOps, itemFacts, kstDay, kstMonth, reconcileItem, renderOps, stats, type NotifyDeps } from "./flush";
+import { duplicateToRefund, esc, eventText, hm, LINES, md, monthText, opsButtons, refundDoneLine, statsText, won, type EventStats, type ItemFacts, type OrderFacts } from "./render";
 import type { BotName } from "./telegram";
 
 /**
@@ -145,7 +145,7 @@ async function cancelPin(deps: BotDeps, f: ItemFacts): Promise<void> {
   await deps.notify.call("patch_state", { id: f.item.id, remove: ["pin"] });
   if (pin?.promptId) await deps.tg.call("ops", "deleteMessage", { chat_id: deps.tg.ownerId, message_id: pin.promptId });
   const g = await itemFacts(deps.notify, f.item.id);
-  if (g) await editOps(deps, g.item.messageId, opsMessage(g, null, deps.now()));
+  if (g) await editOps(deps, g.item.messageId, await renderOps(deps, g));
 }
 /** 최근 실패 시각(오름차순, 봇 전용 기록 bot_pin_failed). 기록을 못 읽으면 잠긴 것으로 본다. */
 async function pinFailureTimes(deps: BotDeps): Promise<number[] | null> {
@@ -209,7 +209,7 @@ function targetOrder(f: ItemFacts, target?: string): { orderCode: string | null;
 async function restore(deps: BotDeps, f: ItemFacts, note: string): Promise<void> {
   await deps.notify.call("patch_state", { id: f.item.id, remove: ["working", "workingAt"] });
   const g = await itemFacts(deps.notify, f.item.id);
-  if (g) { const m = opsMessage(g, null, deps.now()); await editOps(deps, g.item.messageId, { text: `⚠️ ${esc(note)}\n${m.text}`, buttons: m.buttons }); }
+  if (g) { const m = await renderOps(deps, g); await editOps(deps, g.item.messageId, { text: `⚠️ ${esc(note)}\n${m.text}`, buttons: m.buttons }); }
 }
 
 /** [환불]: 기존 관리자 환불 그대로(전액·토스 취소 중복 방지 키·증정 이용권 회수·책 열람 차단). 미발행 건이면 먼저 자동 재시도를 멈춘다. */

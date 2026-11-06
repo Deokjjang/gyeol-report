@@ -209,6 +209,14 @@ describe("처리 상태·카드 결과·관리자 요청함", () => {
     const done = await h.rpc("ops_admin", "requests", { status: "done" });
     expect((done.requests as { resolution: string }[]).map(x => x.resolution)).toEqual(expect.arrayContaining(["guide", "refund"]));
   });
+  it("크론 전용 동작도 SQL 오류 없이 돈다: 오래된 기록 정리(purge)·미발행 환불 때 자동 재시도 멈춤(hold_retry)", async () => {
+    expect(await notify.call("purge")).toEqual({ ok: true });
+    await pay("po-q-hold", A);
+    const held = await notify.call("hold_retry", { paymentOrderId: "po-q-hold" });
+    const jobs = await all<{ last_error_code: string | null }>("select last_error_code from report_generation_jobs where order_id='po-q-hold' and status in ('QUEUED','RETRYING')");
+    expect(held).toEqual({ ok: true, held: jobs.length });
+    expect(jobs.every(j => j.last_error_code === "REFUND_HOLD")).toBe(true);
+  });
   it("12시간 동안 손대지 않은 건은 1번만 다시 알린다", async () => {
     await exec("update ops_notifications set sent_at=now()-interval '13 hours',message_id=coalesce(message_id,9) where kind in ('request','unpublished') and closed_at is null");
     const r1 = await notify.call("remind");

@@ -206,6 +206,9 @@ describe("처리 봇: 비밀번호 잠금·만료", () => {
     await h.exec("update ops_notifications set state=jsonb_set(state,'{pin,until}',to_jsonb((now()-interval '1 second')::text)) where id=$1", [id]);
     expect(await handleUpdate("ops", msg(PIN), deps)).toBe("pin_expired");
     expect(admin.calls).toEqual([]);
+    // 원래 메시지로 돌아갈 때도 결제수단이 그대로(「확인 못 함」으로 바뀌지 않음).
+    const back = tg.calls.filter(c => c.method === "editMessageText").at(-1)!;
+    expect(String(back.body.text)).toContain("카카오페이");
     expect((await item(`req:${(await h.one<{ id: string }>("select id from order_requests where payment_order_id='po-b-4'")).id}`)).state.pin).toBeUndefined();
   });
   it("5번 틀리면 30분 잠금 — 맞는 비밀번호도 받지 않는다", async () => {

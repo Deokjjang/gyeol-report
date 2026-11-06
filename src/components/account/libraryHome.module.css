@@ -11,6 +11,8 @@
 .shelfSection .shelfTitle{border-top:0;padding-top:0}
 .shelf{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px;margin:24px 0 40px;padding:0}
 .shelf li{min-width:0}
+.shelf li[data-asking]{grid-column:1/-1}
+.shelf li[data-asking]>.card{max-width:calc(50% - 10px)}
 .card{display:block;text-decoration:none;color:inherit;border-radius:2px}
 .card:focus-visible{outline:2px solid #111;outline-offset:5px}
 .cover{aspect-ratio:3/4;padding:14px 12px;display:flex;flex-direction:column;border-left:3px solid #0002;box-shadow:3px 4px 0 #0001;overflow-wrap:anywhere}
@@ -45,4 +47,4 @@ li[data-state=refunded] .cover{opacity:.45}
 .manual{width:100%;font:inherit;font-size:13px;padding:10px;border:1px solid #bbb;margin-bottom:10px}
 .sheetMessage{font-size:13px!important;border-left:2px solid #111;padding-left:10px}
 .sheetStats{font-size:12px!important;color:#888;margin-top:6px!important}
-@media(min-width:768px){.shelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}.cover{padding:18px}.cover strong{font-size:29px}.backdrop{align-items:center}.sheet{padding:32px 28px}}
+@media(min-width:768px){.shelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}.shelf li[data-asking]>.card{max-width:calc((100% - 72px) / 3)}.cover{padding:18px}.cover strong{font-size:29px}.backdrop{align-items:center}.sheet{padding:32px 28px}}

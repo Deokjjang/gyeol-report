@@ -64,6 +64,10 @@ async function build(deps: NotifyDeps, x: Claimed): Promise<Message> {
   }
   const f = await itemFacts(deps.notify, x.id);
   if (!f) throw new Error("ITEM_MISSING");
+  return renderOps(deps, f);
+}
+/** 처리 봇 메시지(버튼 포함)를 지금 사실로 그린다. 결제수단은 그릴 때마다 토스 결제 조회로 읽고 DB에 저장하지 않는다(다시 그릴 때 「확인 못 함」으로 바뀌지 않게). */
+export async function renderOps(deps: NotifyDeps, f: ItemFacts): Promise<Message> {
   return opsMessage(f, f.order ? await deps.paymentMethod(f.order.paymentKey, f.order.providerOrderId) : null, deps.now());
 }
 export async function flushNotifications(deps: NotifyDeps, limit = 20): Promise<{ sent: number; failed: number; skipped?: string }> {
@@ -123,7 +127,7 @@ export async function reconcileItem(deps: NotifyDeps, f: ItemFacts): Promise<str
     await deps.notify.call("patch_state", { id: f.item.id, remove: ["pin"] });
     if (st.pin.promptId) await deps.tg.call("ops", "deleteMessage", { chat_id: deps.tg.ownerId, message_id: st.pin.promptId });
     const g = await itemFacts(deps.notify, f.item.id);
-    if (g) await editOps(deps, g.item.messageId, opsMessage(g, null, now));
+    if (g) await editOps(deps, g.item.messageId, await renderOps(deps, g));
     return "pin_expired";
   }
   if (f.request?.status === "done" && !st.working) {
@@ -143,7 +147,7 @@ export async function reconcileItem(deps: NotifyDeps, f: ItemFacts): Promise<str
     if (out === "failed") {
       await deps.notify.call("patch_state", { id: f.item.id, remove: ["working", "workingAt", "regenSawActive"], set: { regenFailed: true } });
       const g = await itemFacts(deps.notify, f.item.id);
-      if (g) await editOps(deps, g.item.messageId, opsMessage(g, null, now));
+      if (g) await editOps(deps, g.item.messageId, await renderOps(deps, g));
       return "regen_failed";
     }
     if (out === "active" && !st.regenSawActive) await deps.notify.call("patch_state", { id: f.item.id, set: { regenSawActive: true } });
