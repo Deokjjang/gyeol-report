@@ -63,11 +63,11 @@ export const relationPlain = (left: string, right: string, kind: string, half: b
 
 /**
  * 대운 표기(최종판3 8): 6개 상품의 브리프(currentDayun·timeline.cycles·연도 카드 머리 문장)·Book(대운 표·부록)이 모두 이 함수 하나를 쓴다.
- * 형식: "무진 대운: 2027년 5월 무렵부터 (대운수 8)". 교운 시각은 엔진 정밀 계산(customerDayun, lunar-javascript sect 2) 그대로 쓰고 다시 계산하지 않는다.
+ * 형식: "무진 대운: 2027년 5월 무렵부터 (대운수 27)". 교운 시각은 엔진 정밀 계산(customerDayun, lunar-javascript sect 2) 그대로 쓰고 다시 계산하지 않는다.
  * - 시작: 정확한 출생시간이면 교운 시각(startSolarKst)의 연·월, 대략·미상이면 가능한 범위의 연·월(같은 달이면 한 달, 다르면 "4~6월").
- * - 나이(만 나이): 그해 생일이 지난 뒤의 나이 = 연도 − 출생 연도(manAge와 같다). 엔진 cycle.startAge는 세는 나이(연도 − 출생 연도 + 1)라 1을 뺀다.
- * - 대운수(최종 A-3): 전통 셈법 — 출생~절입 날수 ÷ 3(나머지 0·1일 버림, 2일 올림, saju/traditionalDaeunsu.ts). base로 받는다.
- *   base가 없을 때만(옛 호출) 예전 값(첫 대운 시작 연도 − 출생 연도)을 쓴다. 한 사람의 대운수는 하나라 모든 대운 줄에 같은 값.
+ * - 대운수·나이(운영 Q 8-1, 덕짱님 결정 2026-11-06): 둘 다 dayunStartManAge 하나 — 그 대운이 시작되는 때의 실제 만 나이 X.
+ *   「(대운수 X)」와 「만 X~(X+9)세」가 대운마다 같은 값이다(대운마다 10씩 다르다). birthDate가 없을 때만(연·월만 쓰는 호출)
+ *   엔진 startAge로 센 X(교운 해 − 출생 해)를 두 곳에 같이 쓴다. 이 변경 전 책은 저장된 표기(전통 날수 ÷ 3) 그대로다.
  * - 기간(최종 A-4): 끝은 다음 대운의 교운 연·월(「2029년 11월 무렵까지」) — 연도만으로 끊지 않는다(엔진 endYear는 표기에 쓰지 않음).
  */
 export type DayunCycleLike = { readonly index: number; readonly stem: HeavenlyStem; readonly branch: EarthlyBranch; readonly startYear: number; readonly endYear: number; readonly startAge: number;
@@ -78,19 +78,28 @@ const dayunMonth = (c: Pick<DayunCycleLike, "startSolarKst" | "startSolarRange">
   const m1 = Number(from.slice(5, 7)), m2 = Number(to.slice(5, 7)), year = Number(from.slice(0, 4));
   return { year, month: m1 === m2 || Number(to.slice(0, 4)) !== year ? `${m1}월` : `${m1}~${m2}월` };
 };
-export function dayunLabel(c: DayunCycleLike, base?: number, next?: DayunCycleLike): DayunLabel {
+export function dayunLabel(c: DayunCycleLike, birthDate?: string, next?: DayunCycleLike): DayunLabel {
   const name = `${STEM_KO[c.stem]}${BRANCH_KO[c.branch]} 대운`;
   const { year, month } = dayunMonth(c);
-  const startMan = c.startAge - 1, daeunsu = base ?? startMan - 10 * (c.index - 1);
+  const daeunsu = birthDate ? dayunStartManAge(birthDate, c) : c.startAge - 1;
   const start = `${year}년 ${month} 무렵부터`;
   // 끝: 다음 대운 교운 연·월. 다음 대운이 계산 범위 밖이면 같은 달 10년 뒤.
   const end = next ? dayunMonth(next) : { year: year + 10, month };
   const until = `${end.year}년 ${end.month} 무렵까지`;
-  return { name, start, month, daeunsu, ages: `만 ${startMan}~${startMan + (c.endYear - c.startYear)}세`, years: `${c.startYear}~${c.endYear}`, line: `${name}: ${start} (대운수 ${daeunsu})`, until, period: `${start} ${until}` };
+  return { name, start, month, daeunsu, ages: `만 ${daeunsu}~${daeunsu + 9}세`, years: `${c.startYear}~${c.endYear}`, line: `${name}: ${start} (대운수 ${daeunsu})`, until, period: `${start} ${until}` };
 }
 /** 교운 시각(ms): 정확한 출생시간이면 그 시각, 대략·미상이면 가능한 범위의 가운데. */
 export const dayunStartMs = (c: Pick<DayunCycleLike, "startSolarKst" | "startSolarRange">) =>
   c.startSolarKst ? Date.parse(c.startSolarKst) : (Date.parse(c.startSolarRange.earliestKst) + Date.parse(c.startSolarRange.latestKst)) / 2;
+/**
+ * 대운수 = 그 대운이 시작되는 때의 실제 만 나이(운영 Q 8-1). 시작 때는 dayunStartMs(엔진 교운 시각, 대략·미상은 범위 가운데) 그대로,
+ * 생일이 지났는지는 한국 날짜(KST)로 본다(2월 29일생은 평년 3월 1일에 한 살). 대운 줄·나이 구간·정답지·관리자 화면이 모두 이 함수 하나를 쓴다.
+ */
+export function dayunStartManAge(birthDate: string, c: Pick<DayunCycleLike, "startSolarKst" | "startSolarRange">): number {
+  const at = new Date(dayunStartMs(c) + 9 * 3_600_000).toISOString().slice(0, 10);
+  const [by, bm, bd] = birthDate.slice(0, 10).split("-").map(Number), [y, m, d] = at.split("-").map(Number);
+  return y - by - (m < bm || (m === bm && d < bd) ? 1 : 0);
+}
 /** 지금 대운(최종 A-5): 기준 시각(발행 시각)과 교운 시각을 비교해 고른다(연도로 고르지 않는다). 첫 대운 전이면 undefined. */
 export function currentDayunAt<T extends Pick<DayunCycleLike, "index" | "startSolarKst" | "startSolarRange">>(cycles: readonly T[], atMs: number): T | undefined {
   let cur: T | undefined;
@@ -109,8 +118,8 @@ export function remainingKo(fromMs: number, toMs: number): string {
   const m = monthsBetween(fromMs, toMs), y = Math.floor(m / 12), r = m % 12;
   return m === 0 ? "한 달이 안 남음" : y === 0 ? `약 ${r}개월` : `약 ${y}년${r ? ` ${r}개월` : ""}`;
 }
-/** 부록 한 줄(최종 A-3): 대운수는 전통 셈법, 교운 달은 시각까지 따진 정밀 계산이라 한 해쯤 어긋나 보일 수 있다는 설명. */
-export const DAYUN_AGE_NOTE = "대운수는 옛 셈법대로 태어난 때부터 절기가 바뀌는 때까지의 날수를 3으로 나눠 적었어요. 대운이 바뀌는 달은 시각까지 따져 따로 계산해서, 대운수와 한 해쯤 어긋나 보일 수 있어요.";
+/** 부록 한 줄(운영 Q 8-1): 대운수는 그 대운이 시작되는 때의 만 나이(dayunStartManAge). 이 변경 전 책은 저장된 옛 문장(날수 ÷ 3) 그대로. */
+export const DAYUN_AGE_NOTE = "대운수는 그 대운이 시작될 때의 만 나이예요. 대운이 바뀌는 때는 태어난 시각부터 절기가 바뀌는 시각까지 따져서 계산했어요.";
 /** 한 자리 수 + 고유어 단위(해·달·번·명·가지)는 고유어 수로(P6e 19: "남은 해는 1해" → "한 해"). 10 이상은 숫자. */
 const NATIVE_NUM = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉"];
 export const koCount = (n: number, unit: string) => (Number.isInteger(n) && n >= 1 && n <= 9 ? `${NATIVE_NUM[n]} ${unit}` : `${n}${unit}`);

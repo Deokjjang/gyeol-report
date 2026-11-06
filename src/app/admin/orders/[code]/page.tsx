@@ -8,7 +8,7 @@ import {
   bookStatusLabel, duration, genderLabel, jobLabel, jobStatusLabel, kst, laneLabel, maskEmail, maskKey, maskPhone, ORDER_CODE_RE, outcomeLabel, paymentStatusLabel,
   phaseLabel, productLabel, refundSourceLabel, refundStateLabel, relationshipLabel, relationshipTypeLabel, requestReasonLabel, usd, won,
 } from "../../../../lib/ops/admin/format";
-import { manseSummary } from "../../../../lib/ops/admin/manse";
+import { calcBasisLink, calcCheck, legacyCalcBook, LEGACY_CALC_LAST_DAY_KST, manseSummary } from "../../../../lib/ops/admin/manse";
 import type { Json } from "../../../../lib/ops/admin/rpc";
 import { createOpsStores } from "../../../../lib/ops/store";
 import { birthTimeSlotLabel } from "../../../../lib/saju/birthTimePrecisionTypes";
@@ -55,7 +55,7 @@ export default async function Page({ params }: { params: Promise<{ code: string 
         ["영수증", s(o.receiptUrl).startsWith("https://") ? <a key="r" href={s(o.receiptUrl)} target="_blank" rel="noreferrer noopener">영수증 열기</a> : "-"],
         ["안내 버전", s(o.noticeVersion)], ["기존 주문", o.legacy === true ? "예(주문코드 나중에 부여)" : "아니요"],
       ]} /></Section>
-      <InputSection input={d.input} />
+      <InputSection input={d.input} book={d.book} />
       <Section title="Book">{!d.book ? <p className={styles.note}>Book 기록이 없어요.</p> : <Dl rows={[
         ["열기", o.reportId ? <Link key="b" href={`/reports/${encodeURIComponent(o.reportId)}`}>/reports/{o.reportId}</Link> : "-"],
         ["상태", bookStatusLabel(d.book.status)], ["발행", kst(d.book.publishedAt)], ["열람 기한", d.book.expiresAt === "infinity" ? "기한 없음(v5: 탈퇴·삭제 요청·서비스 종료까지)" : kst(d.book.expiresAt)],
@@ -138,11 +138,12 @@ function actionProps(d: OrderDetail): OrderActionsProps {
 
 function birthTime(p: Json): string {
   if (p.birthTimeUnknown === true || p.birthTimePrecision === "unknown") return "모름";
-  if (p.birthTimePrecision === "approximate") return `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION) ?? (s(p.approximateBirthTimeSlot) || "시간대")}`;
+  // 운영 Q 8-2: 대략 시간대 라벨은 생년월일의 당시 시계 기준(서머타임·옛 표준시).
+  if (p.birthTimePrecision === "approximate") return `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION, p.birthDate) ?? (s(p.approximateBirthTimeSlot) || "시간대")}`;
   return s(p.birthTime) ? `정확 · ${s(p.birthTime)}` : "-";
 }
 
-function InputSection({ input }: { input: Json | null }) {
+function InputSection({ input, book }: { input: Json | null; book: Json | null }) {
   if (!input) return <Section title="입력값"><p className={styles.note}>입력 기록이 없어요(탈퇴·만료로 지워졌거나 이전 경로).</p></Section>;
   const compat = input.productKey === "saju_mbti_compatibility";
   const people = (compat ? [["A", input.personA], ["B", input.personB]] : [["주인공", input.person]]) as [string, unknown][];
@@ -171,7 +172,27 @@ function InputSection({ input }: { input: Json | null }) {
           </div>
         ); })}
       </Section>
+      <CalcCheckSection people={people} book={book} />
     </>
+  );
+}
+
+/** 계산 검증(운영 Q 7): 엔진이 이 입력에 실제로 쓴 시간대·보정·절입·대운 계산을 그대로 보인다. 지금 엔진 기준이며 저장된 책 값과 다를 수 있다. */
+function CalcCheckSection({ people, book }: { people: [string, unknown][]; book: Json | null }) {
+  const legacy = legacyCalcBook(book?.publishedAt);
+  return (
+    <Section title="계산 검증">
+      <p className={styles.note}>지금 엔진으로 이 입력을 다시 셈한 값이에요. 저장된 책은 만든 때의 기준 그대로예요.</p>
+      {legacy ? <p style={{ margin: "0 0 8px" }}><Badge alert>이 책은 태양시 보정 전 계산판</Badge>{" "}
+        <span className={styles.note}>{LEGACY_CALC_LAST_DAY_KST}까지 만든 책(시계 시각 그대로 시주) · <a href={calcBasisLink("legacy")} target="_blank" rel="noreferrer noopener">설명서 1-1</a></span></p> : null}
+      {people.map(([role, raw]) => { const c = calcCheck(raw); return (
+        <div key={role} style={{ marginBottom: 12 }}>
+          <p className={styles.note} style={{ margin: "0 0 4px" }}>{role}</p>
+          {c.rows.length ? <Dl rows={c.rows.map(r => [r.label, <span key={r.label}><span className={styles.mono}>{r.value}</span>{r.topic ? <> · <a href={calcBasisLink(r.topic)} target="_blank" rel="noreferrer noopener">설명서</a></> : null}</span>] as const)} /> : null}
+          {!c.ok ? <p className={styles.note}>{c.reason}</p> : null}
+        </div>
+      ); })}
+    </Section>
   );
 }
 

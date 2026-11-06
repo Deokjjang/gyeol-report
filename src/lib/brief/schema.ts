@@ -61,7 +61,7 @@ export const ChartBriefSchema = z.object({
   }),
   climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
   /** phase(P6c B5): 대운 안의 위치(엔진 연차: 1~3년 앞쪽, 4~7년 중간, 8~10년 끝 무렵), yearsLeft = 올해 뒤로 남은 해.
-   * label·start(최종판3 8): 6개 상품 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 8)"와 그 시작 말 "2027년 5월 무렵부터"(labels.dayunLabel). ages는 만 나이. */
+   * label·start(최종판3 8): 6개 상품 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 27)"와 그 시작 말 "2027년 5월 무렵부터"(labels.dayunLabel). ages는 만 나이(운영 Q 8-1: 대운수와 같은 X, 「만 X~Y세」). */
   currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), label: z.string().optional(), start: z.string().optional(), until: z.string().optional(), period: z.string().optional(), tenGod: z.string(), reading: z.string(), phase: z.object({ yearIndex: z.number().int(), label: z.string(), yearsLeft: z.number().int(), remaining: z.string().optional() }).optional(), next: z.object({ ganji: Ganji, startYear: z.number().int(), label: z.string().optional(), start: z.string().optional(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
   thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
   /** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값의 단계(강·보통·약)만. 숫자는 주지 않는다. 작가는 묶음 세기를 이 단계로만 쓴다. */
