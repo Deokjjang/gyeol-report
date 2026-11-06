@@ -6,10 +6,19 @@ export type OrderSummary = {
   reportId: string | null; receiptUrl: string | null; bookStatus: string | null; edition: string | null; refundState: string | null; openRequests: number;
 };
 export type PendingBook = { reportId: string; productType: string; state: string; createdAt: string; notBefore: string | null; displayName: string };
-export const REQUEST_REASONS = [["calc_error", "계산이 이상해요"], ["not_open", "책이 열리지 않아요"], ["delayed", "제본이 너무 오래 걸려요"], ["refund", "환불을 원해요"], ["other", "기타 문의"]] as const;
-export type RequestReason = typeof REQUEST_REASONS[number][0];
-export const isRequestReason = (v: unknown): v is RequestReason => REQUEST_REASONS.some(([k]) => k === v);
+/**
+ * 서재 문의 사유(운영 Q 2부). 확인 없이 바로 처리할 수 있는 두 사유만 사이트에서 접수하고, 계산 문의는 접수하지 않고 카카오톡 채널로 보낸다.
+ * 옛 사유(calc_error·delayed·refund·other)로 이미 접수된 요청은 관리자 화면 라벨(format.ts)로 그대로 보인다.
+ */
+export const REQUEST_REASONS = ["not_open", "double_paid"] as const;
+export type RequestReason = typeof REQUEST_REASONS[number];
+export const isRequestReason = (v: unknown): v is RequestReason => REQUEST_REASONS.some(k => k === v);
 
+/** 결제 뒤 30분 안이고 책이 아직 만들어지는 중(운영 Q 2부: 「안 나와요」 대신 「지금 만드는 중이에요」). */
+export function orderStillMaking(o: Pick<OrderSummary, "bookStatus" | "paidAt" | "createdAt">, now = Date.now()): boolean {
+  const at = Date.parse(o.paidAt ?? o.createdAt);
+  return o.bookStatus !== "COMPLETED" && o.bookStatus !== "FAILED_REQUIRES_ATTENTION" && o.bookStatus !== "EXPIRED" && Number.isFinite(at) && now - at < 30 * 60_000;
+}
 export function productLabel(key: string) { return getReportProduct(key)?.labelKo ?? "결리포트"; }
 /** 결제·환불·Book 상태를 고객 말로. 정식본이 나오기 전 Book은 모두 "제본 중". */
 export function orderStatusLabel(o: Pick<OrderSummary, "paymentStatus" | "bookStatus" | "edition" | "refundState">): string {

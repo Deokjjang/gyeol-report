@@ -9,7 +9,8 @@ import { buildFactSheet } from "@/lib/factsheet/build";
 import { factCheck, factCtxOf } from "@/lib/factsheet/check";
 import { buildWriterPrompt } from "@/lib/writer/prompt";
 
-// 최종 A-3·4·5: 전통 대운수, 교운 연·월 기간, 교운 시각으로 고르는 지금 대운. 호출 0.
+// 최종 A-3·4·5: 전통 대운수(엔진 셈, 관리자 화면 참고값), 교운 연·월 기간, 교운 시각으로 고르는 지금 대운. 호출 0.
+// 운영 Q 8-1: 책에 보이는 대운수는 한 사람에 한 숫자 = 첫 대운이 시작될 때의 만 나이(labels.personDaeunsu)로 바뀌었다.
 const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
 const P = (name: string, birthDate: string, birthTime: string, gender: "MALE" | "FEMALE", mbtiType = "INFJ"): BriefPersonInput =>
   ({ name, gender, birthDate, birthTime, birthTimeUnknown: false, mbtiType: mbtiType as never, context: { relationshipStatus: "single", jobStatus: "employee", detailJob: "" } });
@@ -38,9 +39,10 @@ describe("A-3 전통 대운수(출생~절입 날수 ÷ 3, 나머지 2일 올림)
     const d = calculateCustomerDayun(inp(PEOPLE.서하은));
     expect(d.ok && d.value.cycles[0].startSolarKst).toBe("2010-06-08T23:05:00+09:00");
   });
-  it("브리프·부록 표기: 서하은 갑술 대운 대운수 5(모든 대운 줄 같은 값), 정답지 number 5", () => {
+  it("브리프·부록 표기: 서하은 갑술 대운 대운수 5(첫 대운 을해 2010-06-08 교운 때 만 5세, 모든 대운 줄 같은 값) · 만 15~24세, 정답지 number 5", () => {
     const brief = buildBrief({ product: "saju_mbti_full", baseDate: "2026-11-05", baseAt: "2026-11-05T03:00:00.000Z", person: PEOPLE.서하은 }, k);
     expect(brief.chart.currentDayun?.label).toBe("갑술 대운: 2020년 6월 무렵부터 (대운수 5)");
+    expect(brief.chart.currentDayun?.ages).toBe("만 15~24세");
     const sheet = buildFactSheet({ product: "saju_mbti_full", baseDate: "2026-11-05", baseAt: "2026-11-05T03:00:00.000Z", person: PEOPLE.서하은 } as never, brief, k);
     expect(sheet.people[0].dayun.number).toBe(5);
   });

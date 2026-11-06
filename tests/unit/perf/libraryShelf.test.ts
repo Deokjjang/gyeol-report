@@ -1,6 +1,7 @@
 // P 추가 F·B·A·D: 서재 책장(구매 내역 합침·만료 책 숨김) · 인앱 브라우저 판별 · 이용권 기한(순수 함수, 외부 호출 0).
 import { describe, expect, it } from "vitest";
-import { buildShelf, type ShelfOrder } from "@/lib/library/shelf";
+import { buildShelf, cardResult, stillMaking, type ShelfOrder, type ShelfRequest } from "@/lib/library/shelf";
+import { REQUEST_RESULT_COPY } from "@/lib/legal/socialLinks";
 import type { LibraryRow } from "@/lib/library/model";
 import { externalBrowserUrl, inAppBrowser } from "@/lib/account/inAppBrowser";
 import { EVENT_TICKET_EXPIRES_AT, kstMonthDayLabel, ticketExpiresAt } from "@/lib/ops/config";
@@ -34,7 +35,42 @@ describe("서재 책장(buildShelf)", () => {
   });
   it("책 본문은 들어 있지 않다(요약 칸만)", () => {
     const [b] = buildShelf([row(1)], [], [], NOW);
-    expect(Object.keys(b).sort()).toEqual(["coverColor", "displayName", "expiresAt", "href", "ink", "openEnded", "orderCode", "publishedAt", "reportId", "state", "title", "viaTicket"]);
+    // 운영 Q 2부: 문의 결과·환불 카드용 칸(madeAt·request·refundedAt)만 더해졌다 — 본문·입력값 없음.
+    expect(Object.keys(b).sort()).toEqual(["coverColor", "displayName", "expiresAt", "href", "ink", "madeAt", "openEnded", "orderCode", "publishedAt", "refundedAt", "reportId", "request", "state", "title", "viaTicket"]);
+  });
+});
+
+describe("서재 문의 결과·환불 카드(운영 Q 2부)", () => {
+  const req = (o: Partial<ShelfRequest>): ShelfRequest => ({ orderCode: "GR-1", reportId: id(1), reason: "not_open", status: "done", resolution: "guide", resolvedAt: "2026-11-06T02:00:00Z", createdAt: "2026-11-06T01:00:00Z", ...o });
+  it("처리 결과 4종 문구(7일 동안), 안내는 카카오톡 채널 버튼", () => {
+    const one = (r: Partial<ShelfRequest>) => cardResult(buildShelf([row(1)], [order(1)], [], NOW, [req(r)])[0], NOW);
+    expect(one({ resolution: "refund" })).toEqual({ kind: "refund", text: REQUEST_RESULT_COPY.refund, channel: false });
+    expect(one({ resolution: "regenerate" })).toEqual({ kind: "regenerate", text: "다시 만들어 드렸어요.", channel: false });
+    expect(one({ resolution: "ticket" })).toEqual({ kind: "ticket", text: "이용권을 다시 드렸어요. 서재에서 확인해 주세요.", channel: false });
+    expect(one({ resolution: "guide" })).toEqual({ kind: "guide", text: REQUEST_RESULT_COPY.guideNotOpen, channel: true });
+    expect(one({ resolution: "guide", reason: "double_paid" })?.text).toBe(REQUEST_RESULT_COPY.guideOther);
+    expect(one({ resolution: "guide", resolvedAt: "2026-10-30T02:00:00Z" })).toBeNull(); // 7일 지나면 사라진다
+  });
+  it("열린 요청은 결과 없이 「접수됨」 상태(request.status=open)", () => {
+    const [b] = buildShelf([row(1)], [order(1)], [], NOW, [req({ status: "open", resolution: null, resolvedAt: null })]);
+    expect(b.request).toMatchObject({ status: "open" });
+    expect(cardResult(b, NOW)).toBeNull();
+  });
+  it("이용권 책은 주문코드 없이 reportId로 결과를 찾는다", () => {
+    const [b] = buildShelf([row(2, { source: "ticket" })], [], [], NOW, [req({ orderCode: null, reportId: id(2), resolution: "ticket" })]);
+    expect(cardResult(b, NOW)?.kind).toBe("ticket");
+  });
+  it("환불된 주문 카드는 7일 동안만 「환불됐어요」, 그 뒤에는 서재에서 사라진다", () => {
+    const refunded = (at: string) => buildShelf([row(1, { status: "unavailable" })], [order(1, { paymentStatus: "refunded", refundedAt: at, refundState: "done" })], [], NOW);
+    const [b] = refunded("2026-11-05T00:00:00Z");
+    expect(b).toMatchObject({ state: "refunded", href: null, orderCode: "GR-1" });
+    expect(cardResult(b, NOW)).toEqual({ kind: "refund", text: "환불됐어요. 결제수단에 따라 바로 또는 영업일 3~5일 안에 돌아가요.", channel: false });
+    expect(refunded("2026-10-29T00:00:00Z")).toEqual([]);
+  });
+  it("결제 30분 안이고 만드는 중이면 「안 나와요」 대신 기다려 달라고 한다(stillMaking)", () => {
+    const at = (iso: string) => buildShelf([], [order(5, { bookStatus: "GENERATING", paidAt: iso })], [], NOW)[0];
+    expect(stillMaking(at(new Date(NOW - 10 * 60_000).toISOString()), NOW)).toBe(true);
+    expect(stillMaking(at(new Date(NOW - 40 * 60_000).toISOString()), NOW)).toBe(false);
   });
 });
 

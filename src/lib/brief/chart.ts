@@ -1,7 +1,6 @@
 /** 원국 요약(시간 미상이면 시주 제외), 오행·음양·조후 판단, 현재 대운, 올해 기운 한 줄. */
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
 import { calculateCustomerDayun, type CustomerDayunCycle } from "@/lib/saju/customerDayun";
-import { calculateTraditionalDaeunsu } from "@/lib/saju/traditionalDaeunsu";
 import { getAnnualPillar, judgeElementBalance, natalEntries, type ElementBalance } from "@/lib/saju/detections";
 import type { ChartDetections } from "@/lib/saju/detections/types";
 import { getYearPillarFromSolarDateTime } from "@/lib/saju/pillars";
@@ -9,7 +8,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { DAYUN_PHASE_KO, dayunPhase } from "@/lib/writer/safety/lint";
 import type { Knowledge } from "./knowledge";
-import { currentDayunAt, dayunLabel, dayunStartMs, monthsBetween, remainingKo, ELEMENT_KO, ganjiLabel, ganjiOf, GROUP_EASY, josa, TEN_GOD_KO, tenGodLabel } from "./labels";
+import { currentDayunAt, dayunLabel, dayunStartMs, monthsBetween, personDaeunsu, remainingKo, ELEMENT_KO, ganjiLabel, ganjiOf, GROUP_EASY, josa, TEN_GOD_KO, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
 import { dropSourceSentences, splitSentences } from "@/lib/writer/safety/patterns";
 import { coreImage } from "./coreImage";
@@ -64,13 +63,13 @@ export function sajuYearAt(baseDate: string): { year: number; pillar: Pillar } {
   return { year: same(getAnnualPillar(y)) ? y : y - 1, pillar };
 }
 
-/** daeunsu: 전통 대운수(최종 A-3, 출생~절입 날수 ÷ 3). 없으면 표기 함수가 예전 값으로 센다. */
+/** daeunsu: 그 사람의 대운수 = 첫 대운이 시작될 때의 실제 만 나이(운영 Q 8-1, labels.personDaeunsu). 없으면 표기 함수가 예전 값으로 센다. */
 export type DayunInfo = { readonly cycles: readonly CustomerDayunCycle[]; readonly daeunsu?: number; readonly error?: string };
 export function dayunOf(input: { birthDate: string; birthTime: string; birthTimeUnknown: boolean; approximateBirthTimeSlot?: string; gender: string | null; name: string }): DayunInfo {
   const r = calculateCustomerDayun({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: input.approximateBirthTimeSlot ?? "", gender: input.gender ?? "", name: input.name });
   if (!r.ok) return { cycles: [], error: r.error };
-  const t = calculateTraditionalDaeunsu({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: input.approximateBirthTimeSlot ?? "", gender: input.gender ?? "", name: input.name });
-  return { cycles: r.value.cycles, ...(t.ok ? { daeunsu: t.value.daeunsu } : {}) };
+  const daeunsu = personDaeunsu(input.birthDate, r.value.cycles);
+  return { cycles: r.value.cycles, ...(daeunsu !== undefined ? { daeunsu } : {}) };
 }
 /** 기준 시각(ms): 발행 시각(baseAt)이 있으면 그것, 없으면 기준 날짜 KST 정오. */
 export const baseMsOf = (baseDate: string, baseAt?: string) => (baseAt && Number.isFinite(Date.parse(baseAt)) ? Date.parse(baseAt) : Date.parse(`${baseDate}T12:00:00+09:00`));
@@ -135,7 +134,7 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       needs: det.climate.needs.filter(n => n.role !== "support").map(n => `${n.stem}(${ELEMENT_KO[STEM_ELEMENT[n.stem]]}) ${n.foundAt.length ? "있음" : "없음"}`),
       level: det.climate.level, lacking: [...det.climate.lackingElements], reading: climateItem?.forYou.base ?? "",
     },
-    // 최종판3 8: 나이·연도·표기 줄은 6개 상품 공통 대운 표기 함수(dayunLabel) 하나에서. label = "무진 대운: 2027년 5월 무렵부터 (대운수 8)", start = "2027년 5월 무렵부터".
+    // 최종판3 8: 나이·연도·표기 줄은 6개 상품 공통 대운 표기 함수(dayunLabel) 하나에서. label = "무진 대운: 2027년 5월 무렵부터 (대운수 7)", start = "2027년 5월 무렵부터".
     currentDayun: cur && curTenGod ? {
       // 최종 A-4: years(엔진 연도 구간)는 코드 안에서만 쓰고, 작가에게는 교운 연·월 기간(period·until)과 남은 기간(remaining)을 준다.
       ...(({ ages, years, line, start, until, period }) => ({ ganji: ganjiOf(cur), ages, years, label: line, start, until, period }))(labelOf(opts.dayun, cur)), tenGod: tenGodLabel(curTenGod),

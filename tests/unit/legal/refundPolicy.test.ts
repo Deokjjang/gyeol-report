@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { CHECKOUT_POLICY_VERSIONS, POLICY_EFFECTIVE_DATE, POLICY_HISTORY } from "../../../src/lib/legal/policyVersions";
+import { CHECKOUT_POLICY_VERSIONS, OPS_Q_POLICY_EFFECTIVE_DATE, POLICY_EFFECTIVE_DATE, POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "../../../src/lib/legal/policyVersions";
+import { termsPolicySections } from "../../../src/lib/legal/termsPolicy";
+import { privacyPolicySections } from "../../../src/lib/legal/privacyPolicy";
 import {
   prePaymentRefundNoticeKo,
   refundPolicyHistoryLinesKo,
@@ -67,15 +69,28 @@ describe("refund policy constants", () => {
     );
   });
 
-  it("P 추가(2026-11-06): 세 문서 버전 2026-11-06.1, 앞 판(2026-11-05.1, 11월 6일 시행)이 변경 이력에 남고 환불정책도 시행일·이력을 보인다", () => {
-    expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-06.1", refund: "2026-11-06.1" });
+  it("운영 Q(2026-11-07): 약관은 2026-11-06.1·11월 6일 시행 그대로, 개인정보처리방침·환불정책은 2026-11-07.1·11월 7일 시행(시행일 상수 하나), 변경 이력은 최신이 먼저", () => {
+    expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-07.1", refund: "2026-11-07.1" });
     expect(POLICY_EFFECTIVE_DATE).toBe("2026-11-06");
-    for (const kind of ["terms", "privacy", "refund"] as const) {
+    expect(OPS_Q_POLICY_EFFECTIVE_DATE).toBe("2026-11-07");
+    expect(POLICY_EFFECTIVE_DATES_KO).toEqual({ terms: "2026년 11월 6일", privacy: "2026년 11월 7일", refund: "2026년 11월 7일" });
+    // 약관: 첫 줄은 그대로 2026-11-06.1(현재), 둘째 줄 2026-11-05.1.
+    expect(POLICY_HISTORY.terms[0]).toMatch(/^2026년 11월 6일 시행\(현재, 문서 버전 2026-11-06\.1\)/);
+    expect(POLICY_HISTORY.terms[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+    expect(termsPolicySections.at(-1)!.bodyKo[0]).toBe("시행일: 2026년 11월 6일");
+    // 개인정보처리방침·환불정책: 2026-11-07.1(현재) → 2026-11-06.1 → 2026-11-05.1.
+    for (const kind of ["privacy", "refund"] as const) {
       const lines = POLICY_HISTORY[kind];
-      expect(lines[0]).toContain("시행(현재, 문서 버전 2026-11-06.1)");
-      expect(lines[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+      expect(lines[0]).toMatch(/^2026년 11월 7일 시행\(현재, 문서 버전 2026-11-07\.1\)/);
+      expect(lines[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-06\.1\)/);
+      expect(lines[2]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+      expect(lines.filter(line => line.includes("(현재,"))).toHaveLength(1);
     }
-    expect(refundPolicyHistoryLinesKo[0]).toBe("시행일: 2026년 11월 6일");
+    expect(POLICY_HISTORY.privacy[0]).toContain("Telegram Messenger Inc.");
+    expect(POLICY_HISTORY.refund[0]).toContain("맨 위에 요약 세 줄");
+    const privacyEnd = privacyPolicySections.at(-1)!.blocks[0];
+    expect(privacyEnd.kind === "p" && privacyEnd.text).toMatch(/^이 방침은 2026년 11월 7일부터 시행합니다\./);
+    expect(refundPolicyHistoryLinesKo[0]).toBe("시행일: 2026년 11월 7일");
     expect(refundPolicyHistoryLinesKo.slice(1)).toEqual(POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`));
   });
 

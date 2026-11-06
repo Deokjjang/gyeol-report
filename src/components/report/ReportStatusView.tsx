@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
+import { SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL, SUPPORT_PAGE_ADDRESS_HINT } from "../../lib/legal/socialLinks";
 import { BookPublishingVisual } from "./BookPublishingVisual";
-import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 import styles from "./reportStatus.module.css";
 
 type ReportStatusViewProps = {
@@ -34,7 +33,7 @@ function WritingPage() {
 
 const copy = {
   unavailable: { title: "책을 확인하지 못했습니다.", message: "잠시 후 다시 열어 주세요." },
-  refunded: { title: "환불된 주문의 책이라 열 수 없어요", message: "환불이 끝난 주문이라 이 책은 더 이상 열 수 없어요. 결제나 환불 내용이 궁금하면 문의해 주세요." },
+  refunded: { title: "환불된 주문의 책이라 열 수 없어요", message: "환불이 끝난 주문이라 이 책은 더 이상 열 수 없어요." },
   reading: { title: "책장을 펼치고 있습니다.", message: "잠시만 기다려 주세요." },
   preparing: {
     title: "책을 제본하고 있습니다",
@@ -46,7 +45,7 @@ const copy = {
   },
   attention: {
     title: "리포트 준비에 확인이 필요합니다",
-    message: "리포트 준비가 예상보다 오래 걸리고 있습니다. 고객센터에 문의해 주시면 결제 내역과 제공 상태를 확인해 드리겠습니다.",
+    message: "리포트 준비가 예상보다 오래 걸리고 있어요.",
   },
   expired: {
     // P 추가 B: 기한이 지난 책 링크는 한 줄만(v5 리포트는 기한이 없어 탈퇴·삭제 요청으로만 닫힌다).
@@ -81,16 +80,16 @@ export function ReportStatusView({ state, title, message, support = false, stage
                 <p>페이지를 닫아도 준비는 계속됩니다.<br />이 주소를 저장해 두시면 다시 확인하실 수 있습니다.</p>
               </div>
             ) : null}
+            {/* 운영 Q: 상담 창구는 카카오톡 채널 링크 하나(전화·이메일 링크 없음). */}
             {showSupport ? (
               <div className={styles.note}>
-                {state === "attention" ? <p>추가 결제는 필요하지 않습니다.<br />문의하실 때 이 페이지 주소를 함께 알려 주세요.</p> : null}
-                <nav className={styles.links} aria-label="고객센터">
-                  <a href={`tel:${GYEOL_BUSINESS_INFO.customerServicePhone}`}>{GYEOL_BUSINESS_INFO.customerServicePhone}</a>
-                  <a href={`mailto:${GYEOL_BUSINESS_INFO.supportContactEmail}`}>{GYEOL_BUSINESS_INFO.supportContactEmail}</a>
+                {state === "attention" ? <p>추가 결제는 필요 없어요.<br />{SUPPORT_PAGE_ADDRESS_HINT}</p> : null}
+                <nav className={styles.links} aria-label="문의">
+                  <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer">{SUPPORT_CHAT_LABEL} <span aria-hidden="true">↗</span></a>
                 </nav>
               </div>
             ) : null}
-            {state === "refunded" ? <nav className={styles.links} aria-label="안내"><Link href="/account">내 서재 <span aria-hidden="true">↗</span></Link><a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer">문의하기 <span aria-hidden="true">↗</span></a></nav> : null}
+            {state === "refunded" ? <nav className={styles.links} aria-label="안내"><Link href="/account">내 서재 <span aria-hidden="true">↗</span></Link><a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer">{SUPPORT_CHAT_LABEL} <span aria-hidden="true">↗</span></a></nav> : null}
             {state === "expired" && (message ?? copy[state].message) ? <nav className={styles.links} aria-label="리포트 탐색"><Link href="/">홈으로 돌아가기 <span aria-hidden="true">↗</span></Link></nav> : null}
           </div>
         </section>

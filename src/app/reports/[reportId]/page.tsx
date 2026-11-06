@@ -365,7 +365,7 @@ function renderUnavailableState() {
     <ReportStatusView
       state="unavailable"
       title="리포트 상태를 확인하지 못했습니다"
-      message="잠시 후 이 주소에서 다시 확인해 주세요. 계속 확인이 어려우시면 고객센터로 문의해 주세요."
+      message="잠시 후 이 주소에서 다시 확인해 주세요."
       support
     />
   );
@@ -1571,6 +1571,8 @@ export default async function ReportResultPage({
       const { StoredBookReport } = await import("../../../lib/book/storedReport");
       const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
       const interim = await isInterimEdition(ticket.snapshot.reportId);
+      // 운영 Q 3부: 책 본문을 내줄 때 열람 1번(응답 뒤 기록, 실패해도 열람은 그대로).
+      await (await import("../../../lib/ops/notify/views")).scheduleBookView(ticket.snapshot.reportId);
       return <><EditionNotice interim={interim} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} /></>;
     }
     if (ticket.kind === "storageError") return <ReportGenerationStatus retry />;
@@ -1622,6 +1624,7 @@ export default async function ReportResultPage({
     isPaid ? isInterimEdition(reportId) : Promise.resolve(false),
   ]);
   if (!owned) return await refundedBook(reportId) ? <ReportStatusView state="refunded" /> : renderUnavailableState();
+  if (isPaid) await (await import("../../../lib/ops/notify/views")).scheduleBookView(reportId);
 
   const product = isPaid
     ? getReportProduct(state.productPreview.productType)

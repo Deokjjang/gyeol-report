@@ -177,8 +177,10 @@ function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null
     const c = o.dayun.cycles.find(x => x.ganjiKo === m[1])!;
     if (y && /(부터|시작|들어서|바뀌)/.test(sen) && Number(y[1]) !== c.startYear && !(Number(y[1]) >= c.startYear && Number(y[1]) <= c.endYear && !/시작/.test(sen))) return { rule: "fact_ganji", detail: `${m[1]} 대운은 ${c.startYear}년 ${c.startSolarKst ? Number(c.startSolarKst.slice(5, 7)) + "월 무렵" : ""}부터다` };
   }
-  const n = sen.match(/대운수 ?(는 |가 )?(\d+)/);
-  if (n && o.dayun.number !== null && Number(n[2]) !== o.dayun.number) return { rule: "fact_ganji", detail: `대운수는 ${o.dayun.number}(만 나이)` };
+  // 운영 Q 8-1: 대운수는 한 사람에 한 숫자(정답지 dayun.number = 첫 대운이 시작될 때의 만 나이, 모든 대운 줄과 같은 값). 수리 힌트 이름도 그 뜻대로.
+  for (const n of sen.matchAll(/대운수 ?(는 |가 )?(\d+)/g)) {
+    if (o.dayun.number !== null && Number(n[2]) !== o.dayun.number) return { rule: "fact_ganji", detail: `대운수는 ${o.dayun.number}(첫 대운이 시작될 때의 만 나이)` };
+  }
   const d = sen.match(new RegExp(`${GANJI} ?일주`));
   if (d && isGanjiKo(d[1]) && o.pillars.day && d[1] !== o.pillars.day.ganjiKo && !/같은 일주|다른 일주/.test(sen)) return { rule: "fact_ganji", detail: `일주는 ${o.pillars.day.ganjiKo}(${d[1]} 아님)` };
   return null;

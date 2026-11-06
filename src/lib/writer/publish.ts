@@ -97,7 +97,8 @@ export async function v4People(payload: ReportInputPayload, policyAt: string): P
     const persons = payload.productKey === "saju_mbti_compatibility" ? [[payload.personA, "A", "personA"], [payload.personB, "B", "personB"]] as const : [[payload.person, "주인공", "person"]] as const;
     return persons.map(([p, role, slot], i) => ({ name: p.name, role, birth: p.birthDate, gender: p.gender, precision: p.birthTimeUnknown ? "unknown" : p.birthTimePrecision ?? "exact", time: p.birthTime ?? "", mbti: p.mbtiType ?? "",
       // 대략 시간대도 같은 줄 형식(P6: 대략 입력이 "정확 · "(빈 시각)으로 나왔다). 새 책은 현재 달력 기준 시간대 이름.
-      timeLabel: p.birthTimeUnknown ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION) ?? "입력 시간대"}` : `정확 · ${p.birthTime}`,
+      // 운영 Q 8-2: 시각은 생년월일의 당시 시계(서머타임·옛 표준시) 기준. 이미 발행한 책은 저장된 라벨 그대로.
+      timeLabel: p.birthTimeUnknown ? "출생시간 모름" : p.birthTimePrecision === "approximate" ? `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION, p.birthDate) ?? "입력 시간대"}` : `정확 · ${p.birthTime}`,
       table: withV5NatalRows(tables[i], analyzeChartDetections(evidence.calculations[slot])) }));
   } catch { return []; }
 }

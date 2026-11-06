@@ -12,7 +12,7 @@ export type OrderRow = {
   bookStatus: string | null; edition: string | null; failures: number | null; lastReason: string | null; jobStatus: string | null; refundState: string | null; openRequests: number;
 };
 export type TicketDelay = { redemptionId: string; reportId: string | null; productType: string; state: string; createdAt: string; notBefore: string | null; failures: number | null; lastReason: string | null };
-export type RequestRow = { id: string; orderCode: string; reason: string; memo: string; status: string; createdAt: string; productType: string; paymentStatus: string; buyerName: string | null; adminNote?: string | null; resolvedAt?: string | null; resolvedBy?: "admin" | "auto" | null };
+export type RequestRow = { id: string; orderCode: string | null; reportId?: string | null; device?: string | null; resolution?: string | null; reason: string; memo: string; status: string; createdAt: string; productType: string; paymentStatus: string; buyerName: string | null; adminNote?: string | null; resolvedAt?: string | null; resolvedBy?: "admin" | "auto" | null };
 export type MemberRow = { userId: string; joinedAt: string; lastLoginAt: string | null; emailSecured: boolean; orders: number; upgradeState: string | null };
 export type MemberSummary = { total: number; emailSecured: number; emailMissing: number; withOrders: number; profileDone: number; eligible: number; members: MemberRow[] };
 export type ProviderState = Record<string, { disabledAt: string | null; reason: string | null }>;

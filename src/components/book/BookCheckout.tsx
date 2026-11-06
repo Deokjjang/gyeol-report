@@ -10,8 +10,10 @@ import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { AI_WRITTEN_RECEIPT_LINE_KO, RECEIPT_REFUND_LINE_KO, RECEIPT_TICKET_REFUND_LINE_KO } from "../../lib/legal/aiNotice";
 import type { ReportInputPayload } from "../../lib/report-generation/reportInputTypes";
 import { bookCheckoutSnapshot } from "../../lib/book/form";
-import { bookForProduct, readerTitle } from "../../lib/book/product";
-import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../lib/saju/birthTimePrecisionTypes";
+import { BOOK_CHAPTER_TITLES, bookForProduct, readerTitle } from "../../lib/book/product";
+import { CONSENT_LINK_LABELS } from "../../lib/legal/socialLinks";
+import { birthTimeSlotLabel } from "../../lib/saju/birthTimePrecisionTypes";
+import { SAJU_CALENDAR_VERSION } from "../../lib/saju/calendarVersion";
 import s from "../../app/dev/book-preview/book.module.css";
 import { useAccountSession } from "../account/AccountSession";
 import type { AccountSession } from "../../lib/account/policy";
@@ -226,7 +228,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     <dl>{[["TITLE", readerTitle(book, payload.productKey !== "saju_mbti_compatibility" && "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear : "")], ["ISSUED TO", snapshot.displayName ?? ""], ["PRICE", ticketSelected ? "리포트 이용권 1장" : `${(coupon.quote?.finalAmount??product.amount).toLocaleString("ko-KR")}원`]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
     {giftEventLine && !ticketSelected ? <p className={s.receiptNote} data-gift-event-line>{giftEventLine}</p> : null}
     {method==="payment"&&coupon.selection&&coupon.quote?<dl aria-label="쿠폰 적용 금액"><div><dt>상품 금액</dt><dd>₩{coupon.quote.originalAmount.toLocaleString("ko-KR")}</dd></div><div><dt>쿠폰 할인</dt><dd>−₩{coupon.quote.discountAmount.toLocaleString("ko-KR")}</dd></div><div><dt>결제 금액</dt><dd>₩{coupon.quote.finalAmount.toLocaleString("ko-KR")}</dd></div></dl>:null}
-    <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${BIRTH_TIME_SLOT_DEFINITIONS.find(s => s.value === p.approximateBirthTimeSlot)?.labelKo ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
+    <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION, p.birthDate) ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
     <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{ticketSelected ? "이용권 사용 후 즉시 생성" : "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"}<br />{v5Book ? "탈퇴 전까지 계속 열람" : "생성일로부터 90일"} · {ticketSelected ? "온라인 열람" : "결제 후 온라인 열람"}</p>
     {/* P 추가 E: 이용권이 0장이면 이용권 칸 자체를 숨기고 결제만 보인다(묶음 판매가 켜졌을 때만 구매 버튼 때문에 남긴다). */}
     {session.status === "member" && (accountChanged || checkingBalance || ticketPending || (tickets ?? 0) > 0 || ticketShopEnabled) ? <fieldset className={s.consents} data-ticket-method><legend>발행 방법</legend>
@@ -247,10 +249,21 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     {loginFirst ? <p className={s.receiptNote} data-login-first>결제는 로그인한 뒤에 할 수 있어요. 결제하기를 누르면 카카오·Google 로그인으로 이어지고, 입력한 내용은 그대로 남아요.</p> : <fieldset className={s.consents}><legend className={s.srOnly}>구매 동의</legend><label className={s.allConsent}><input ref={allRef} type="checkbox" checked={all} disabled={!allowed || busy} onChange={e => check(items, e.target.checked)} />전체 동의</label>
       {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={isChecked(c)} disabled={!allowed || busy} onChange={e => check([c], e.target.checked)} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}
     </fieldset>}
+    {/* 운영 Q 1부 ④: 동의 칸 바로 옆 링크 둘(동의 문구는 그대로). 새 탭이라 주문서 입력이 남는다. */}
+    <p className={s.receiptNote} data-consent-links><a href="/refund" target="_blank" rel="noopener" className={s.quietLink}>{CONSENT_LINK_LABELS.refund}</a> · <a href="/example" target="_blank" rel="noopener" className={s.quietLink}>{CONSENT_LINK_LABELS.example}</a></p>
+    <BookChapterList payload={payload} />
     {!allowed ? <p role="alert">만 14세 이상만 이용할 수 있어요.</p> : null}
     <p className={s.receiptNote}><a href="/privacy" target="_blank" rel="noopener">개인정보처리방침 보기 ›</a></p>
     <button type="button" className={s.orderButton} disabled={loginFirst ? !allowed : !ready || blocked || (method === "ticket" && !tickets) || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)} onClick={submit}>{ticketPending ? "책 발행 상태 확인 중" : busy && method === "ticket" ? "이용권으로 책을 만드는 중" : method === "ticket" ? "이용권 1장으로 책 발행하기" : internal ? "모의 결제 · 책 발행" : "결제하기"} →</button>
-    <p className={s.receiptNote} data-refund-notice>{ticketSelected ? RECEIPT_TICKET_REFUND_LINE_KO : RECEIPT_REFUND_LINE_KO} · <a href="/example" className={s.quietLink}>예시 보기</a>{v5Book ? <><br /><span data-ai-notice>{AI_WRITTEN_RECEIPT_LINE_KO}</span></> : null}</p>
+    <p className={s.receiptNote} data-refund-notice>{ticketSelected ? RECEIPT_TICKET_REFUND_LINE_KO : RECEIPT_REFUND_LINE_KO}{v5Book ? <><br /><span data-ai-notice>{AI_WRITTEN_RECEIPT_LINE_KO}</span></> : null}</p>
     {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? selected.covers.map(id => <p key={id}>{RECEIPT_DETAIL_TEXTS[id] ?? CONSENTS.find(c => c.id === id)!.label}</p>) : null}{selected?.id === "orderAndRefund" && member ? <p>{MEMBER_SIGNUP_CONSENT_TEXT}은 가입할 때 따로 받았어요.</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;
+}
+
+/** 운영 Q 9부: 결제 전에 이 책의 장 목록을 볼 수 있게(접힘, 동의 칸 옆). 궁합의 A·B는 두 사람(책에서는 호칭으로 바뀐다). 판매하지 않는 상품은 목록 없음. */
+function BookChapterList({ payload }: { payload: ReportInputPayload }) {
+  const chapters = BOOK_CHAPTER_TITLES[payload.productKey];
+  if (!chapters) return null;
+  return <details className={`${s.receiptNote} ${s.receiptChapters}`} data-book-chapters><summary>이 책의 차례 · {chapters.length}장</summary><ol>{chapters.map(title => <li key={title}>{title}</li>)}</ol>
+    {payload.productKey === "saju_mbti_compatibility" ? <p>A: {payload.personA.name} · B: {payload.personB.name}</p> : null}</details>;
 }
