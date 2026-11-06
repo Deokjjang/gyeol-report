@@ -21,7 +21,7 @@ export type CampaignOptions = {
   exclude: readonly { userId: string; reason: "admin" | "test" | "owner" }[];
   expectB: number; expectList?: readonly string[] | null;
   execute: boolean; confirm?: string | null;
-  aQty: number; bQty: number; products: readonly string[]; days: number;
+  aQty: number; bQty: number; products: readonly string[]; days: number; /** P 추가 D: 지급 기한(ISO). 있으면 SQL이 days보다 먼저 쓴다. */ expiresAt?: string;
 };
 export type CampaignResult = { ok: boolean; code: string; granted?: number; already?: number; bCount?: number; lines: string[] };
 
@@ -76,7 +76,7 @@ export async function runCampaign(call: Call, input: CampaignOptions): Promise<C
   say(`새로 지급할 계정: A ${pendingA} · B ${pendingB} (이미 지급 ${A.length - pendingA + B.length - pendingB})`);
   if (!o.execute) { say(`dry-run: 지급하지 않았습니다. 실행하려면 --execute --confirm ${o.campaignId}`); return { ok: true, code: "DRY_RUN", bCount: B.length, granted: 0, already: A.length - pendingA + B.length - pendingB, lines }; }
   if (o.confirm !== o.campaignId) { say(`중단: --confirm 값이 캠페인 id(${o.campaignId})와 같아야 실행합니다.`); return { ok: false, code: "CONFIRM_MISMATCH", bCount: B.length, lines }; }
-  const run = await call("run", { ...base, expectB: o.expectB, confirm: true, aQty: o.aQty, bQty: o.bQty, products: o.products, days: o.days });
+  const run = await call("run", { ...base, expectB: o.expectB, confirm: true, aQty: o.aQty, bQty: o.bQty, products: o.products, days: o.days, ...(o.expiresAt ? { expiresAt: o.expiresAt } : {}) });
   if (run.ok !== true) { say(`중단: 지급하지 않았어요(${String(run.code ?? "STORAGE_FAILED")}${run.actual !== undefined ? `, 실제 B ${String(run.actual)}명` : ""})`); return { ok: false, code: String(run.code ?? "STORAGE_FAILED"), bCount: B.length, lines }; }
   say(`지급 완료: 새로 ${Number(run.granted)}명 · 이미 지급 ${Number(run.already)}명 · 기한 ${kst(String(run.expiresAt))} KST`);
   return { ok: true, code: "GRANTED", granted: Number(run.granted), already: Number(run.already), bCount: Number(run.bCount), lines };

@@ -1,6 +1,6 @@
 /**
  * 최종 A 15: 공개 예시 리포트(/example) — 가상의 인물 서하은 종합 책 저장본 앞 2장, 실제 사람 정보 0, 기존 책 화면 그대로.
- * 상품 카드(책장 표지) 분량 — 종합 13장, 나머지 9장, 「약 N천 자」(v5 저장본 평균 천 단위 내림).
+ * 상품 카드(책장 표지) — P 추가 H(2026-11-06): 분량(장 수·글자 수)을 보이지 않는다. bookLength.ts(저장본 평균 계산)는 남아 있다.
  */
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
@@ -48,7 +48,7 @@ describe("예시 리포트 데이터", () => {
 });
 
 describe("상품 카드 분량", () => {
-  it("종합 13장, 나머지 9장 · 글자 수는 저장본 평균의 천 단위 내림", () => {
+  it("(표지에는 안 씀) 분량 계산: 종합 13장, 나머지 9장 · 글자 수는 저장본 평균의 천 단위 내림", () => {
     expect(BOOK_CHAPTER_COUNT).toEqual({ saju_mbti_full: 13, career_money_study: 9, love_marriage_child: 9, saju_mbti_compatibility: 9 });
     for (const [k, v] of Object.entries(lengths.products)) {
       // 표시는 v5 저장본 전체 평균(allV5)의 천 단위 내림(최신판만의 평균보다 작거나 같다 — 과장 금지).
@@ -61,11 +61,17 @@ describe("상품 카드 분량", () => {
     expect(["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"].map(k => bookLengthParts(k)!.chars)).toEqual(["약 1만 자", "약 9천 자", "약 9천 자", "약 8천 자"]);
     expect(bookLengthParts("major_fortune")).toBeNull(); expect(bookLengthParts("annual_fortune")).toBeNull();
   });
-  it("책장 표지(이름 없음)에 분량, 독자 표지(이름 있음)는 그대로", () => {
-    const full = BOOKS.find(b => b.productKey === "saju_mbti_full")!, major = BOOKS.find(b => b.productKey === "major_fortune")!;
-    const shelf = renderToStaticMarkup(<Cover book={full} />).replace(/<[^>]+>/g, " ");
-    expect(shelf).toContain("13장"); expect(shelf).toContain(bookLengthParts("saju_mbti_full")!.chars);
+  it("P 추가 H: 책장 표지(이름 없음)에 장 수·글자 수가 없다 — 모든 책이 「한 사람, 한 권.」, 독자 표지(이름 있음)는 그대로", () => {
+    const full = BOOKS.find(b => b.productKey === "saju_mbti_full")!;
+    for (const book of BOOKS) {
+      const html = renderToStaticMarkup(<Cover book={book} />), shelf = html.replace(/<[^>]+>/g, " ");
+      expect(html).not.toContain("data-book-length");
+      expect(shelf).not.toMatch(/\d+장|약 [\d만천 ]+자/);
+      const parts = bookLengthParts(book.productKey);
+      if (parts) { expect(shelf).not.toContain(parts.chapters); expect(shelf).not.toContain(parts.chars); }
+      expect(shelf).toContain("한 사람, 한 권.");
+    }
+    expect(renderToStaticMarkup(<Cover book={full} />).replace(/<[^>]+>/g, " ")).not.toContain("13장");
     expect(renderToStaticMarkup(<Cover book={full} name="서하은" />)).toContain("서하은의 책");
-    expect(renderToStaticMarkup(<Cover book={major} />)).toContain("한 사람, 한 권.");
   });
 });

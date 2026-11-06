@@ -1,4 +1,4 @@
-// 최종 A 11·12·14(PGlite): 1+1 계정 상한은 이벤트 이용권만 센다 · 보상 캠페인 멱등 지급(dry-run·기대 인원·확인 플래그) · 팝업 읽기. 외부 호출 0.
+// 최종 A 11·12·14(PGlite) + P 추가 C: 1+1 상한 없음 · 보상 캠페인 멱등 지급(dry-run·기대 인원·확인 플래그) · 팝업 읽기. 외부 호출 0.
 // 배포 명령 0-4: B = 기준 시각 전에 로그인한 모든 계정(auth.users) — 가입 동의 미완료 계정 포함, 익명·삭제 계정·덕짱님 계정 제외.
 import { readFileSync } from "node:fs";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
@@ -35,6 +35,8 @@ const compCount = () => one<{ n: number }>("select count(*)::int n from gift_rew
 beforeAll(async () => {
   h = await opsSql();
   for (let i = 0; i < 2; i++) await h.db.exec(`reset role; ${readFileSync(MIGRATION, "utf8")} set role service_role;`); // 두 번째: 다시 실행해도 된다(패치 건너뜀·표·함수 그대로)
+  // 운영 순서 그대로 배포 직후 고침 + P 추가(상한 없음·보너스 없음·기한 11-30)까지.
+  await h.db.exec(`reset role; ${readFileSync("supabase/migrations/20261106200000_v5_deploy_gift_pending_alias.sql", "utf8")} ${readFileSync("supabase/migrations/20261107090000_v5_perf_event_tickets.sql", "utf8")} set role service_role;`);
   // 운영 auth.users에 있는 익명·삭제 표시 열(PGlite 바탕에는 없음).
   await exec("alter table auth.users add column if not exists is_anonymous boolean not null default false, add column if not exists deleted_at timestamptz");
   BASE = (await h.db.query<{ id: string }>("select id from auth.users where created_at < '2026-11-06T15:00:00Z'")).rows.map(r => r.id);
@@ -132,8 +134,8 @@ describe("보상 캠페인 지급 도구", () => {
   });
 });
 
-describe("1+1 계정 상한은 이벤트 이용권만 센다(보상 이용권은 상한에 안 들어감)", () => {
-  it("보상 2장을 가진 A 계정도 결제 2건이면 1+1 이용권 2장", async () => {
+describe("1+1은 결제 1건마다 1장 — 계정당 상한 없음(P 추가 C), 보상 이용권과 따로 센다", () => {
+  it("보상 2장을 가진 A 계정이 결제 3건이면 1+1 이용권 3장", async () => {
     const policyAt = "2026-11-08T03:00:00.000Z";
     const payload = (() => { const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload"); return n.value; })();
     const order = { call: (a: string, d: Record<string, unknown> = {}) => h.rpc("ops_order", a, d) };
@@ -148,7 +150,7 @@ describe("1+1 계정 상한은 이벤트 이용권만 센다(보상 이용권은
       await h.paid.call("confirm_finish", { orderId: id, paymentKey: `k-${id}`, token: claim.token });
       issued.push((await afterPaidOrder(gift, id, cfg))?.issued);
     }
-    expect(issued).toEqual([expect.objectContaining({ issued: true }), expect.objectContaining({ issued: true }), expect.objectContaining({ issued: false, code: "ACCOUNT_LIMIT" })]);
-    expect(await one("select count(*) filter (where kind='event')::int e, count(*) filter (where kind='comp')::int c from gift_rewards where owner_user_id=$1", [A2])).toEqual({ e: 2, c: 2 });
+    expect(issued).toEqual([expect.objectContaining({ issued: true }), expect.objectContaining({ issued: true }), expect.objectContaining({ issued: true })]);
+    expect(await one("select count(*) filter (where kind='event')::int e, count(*) filter (where kind='comp')::int c from gift_rewards where owner_user_id=$1", [A2])).toEqual({ e: 3, c: 2 });
   });
 });

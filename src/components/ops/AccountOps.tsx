@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MARKETING_CONSENT_LABEL, validateContact } from "../../lib/account/contact";
-import { productLabel, seoulDateTime, type OrderSummary, type PendingBook } from "../../lib/ops/orders/summary";
-import { OrderRequestForm, OrderSummaryCard } from "./OrderParts";
+import { seoulDateTime } from "../../lib/ops/orders/summary";
 import s from "./ops.module.css";
 
 type Prefill = { name: string; email: string; emailLocked: boolean; emailFrom?: string | null; emailNotice: string | null };
@@ -41,8 +40,8 @@ export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSave
     {prefill ? <div className={s.form}>
       <label>이름(필수)<input type="text" value={v.name} maxLength={40} autoComplete="name" onChange={e => setV({ ...v, name: e.target.value })} /></label>
       {useProvider ? <div><span className={s.hint}>이메일(필수) · {prefill.emailFrom === "google" ? "Google" : "카카오"} 계정에서 확인된 이메일</span><div className={s.locked}>{prefill.email}</div><button type="button" className={`${s.button} ${s.link}`} onClick={() => { setUseProvider(false); setV({ ...v, email: "", emailConfirm: "" }); }}>다른 이메일 쓰기</button></div> : <>
-        <label>이메일(필수)<input type="email" value={v.email} maxLength={254} autoComplete="email" onChange={e => setV({ ...v, email: e.target.value })} /></label>
-        <label>이메일 확인(필수)<input type="email" value={v.emailConfirm} maxLength={254} autoComplete="off" onChange={e => setV({ ...v, emailConfirm: e.target.value })} /></label>
+        <label>이메일(필수)<input type="email" inputMode="email" autoCapitalize="none" autoCorrect="off" spellCheck={false} enterKeyHint="next" value={v.email} maxLength={254} autoComplete="email" onChange={e => setV({ ...v, email: e.target.value.trim() })} /></label>
+        <label>이메일 확인(필수)<input type="email" inputMode="email" autoCapitalize="none" autoCorrect="off" spellCheck={false} enterKeyHint="next" value={v.emailConfirm} maxLength={254} autoComplete="off" onChange={e => setV({ ...v, emailConfirm: e.target.value.trim() })} /></label>
         {prefill.emailNotice ? <p className={s.hint}>{prefill.emailNotice}</p> : null}
       </>}
       <label>휴대폰(선택)<input type="tel" inputMode="numeric" value={v.phone} maxLength={13} placeholder="010-0000-0000" autoComplete="tel" onChange={e => setV({ ...v, phone: e.target.value })} /></label>
@@ -54,77 +53,7 @@ export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSave
   </section>;
 }
 
-/** 서재 구매 내역(P6d-ops 4) + 제본 중인 이용권 Book. */
-export function PurchaseHistory({ base = "/auth" }: { base?: string }) {
-  const [data, setData] = useState<{ orders: OrderSummary[]; pending: PendingBook[] } | null>(null), [error, setError] = useState(false);
-  useEffect(() => {
-    const load = () => void fetch(`${base}/orders`, { cache: "no-store" }).then(async r => { const b = await r.json(); if (!r.ok) { setError(true); return; } setData({ orders: b.orders ?? [], pending: b.pending ?? [] }); setError(false); }).catch(() => setError(true));
-    load(); const timer = setInterval(() => { if (!document.hidden) load(); }, 30_000);
-    return () => clearInterval(timer);
-  }, [base]);
-  if (error) return <section className={s.section}><h2>구매 내역</h2><p role="alert">구매 내역을 불러오지 못했어요. 새로고침해 주세요.</p></section>;
-  if (!data) return null;
-  return <>
-    {data.pending.length ? <section className={s.section} aria-labelledby="pending-title" data-pending-books><h2 id="pending-title">제본 중인 책</h2><p>책을 만들고 있어요. 이 화면을 나갔다 와도 계속 만들어지고, 완성되면 위 서재에 꽂혀요.</p>
-      <ul className={s.list}>{data.pending.map(b => <li key={b.reportId} className={s.order}><b>{productLabel(b.productType)}</b> · {b.displayName || "내 책"}<br /><span className={s.hint}>{seoulDateTime(b.createdAt)} 접수 · 제본 중</span></li>)}</ul></section> : null}
-    <section className={s.section} aria-labelledby="orders-title" data-purchase-history><h2 id="orders-title">구매 내역</h2>
-      {data.orders.length ? <ul className={s.list}>{data.orders.map(o => <li key={o.orderCode}><OrderSummaryCard order={o} bookHref={o.reportId && o.paymentStatus === "paid" && o.bookStatus !== "EXPIRED" ? `/reports/${o.reportId}` : null}><OrderRequestForm orderCode={o.orderCode} endpoint={`${base}/orders`} /></OrderSummaryCard></li>)}</ul> : <p>아직 결제한 주문이 없어요.</p>}
-    </section>
-  </>;
-}
-
-/**
- * 보상 이용권 안내 한 줄(P6e-ops 5): 서재 맨 위. A(결제 후 환불한 고객)는 사과·감사, B(기존 무료 이벤트 가입자)는 업그레이드 안내.
- * 문구는 서버가 src/lib/ops/compMessages.ts에서 만들어 준다. 켜져 있지 않거나 대상이 아니면 fallback(예: 기존 "업그레이드 대상" 한 줄)만 보인다.
- * 서재를 열 때마다 서버가 멱등으로 지급을 시도하므로(가입 정보를 마친 계정만), 가입 정보 저장 뒤 key를 바꿔 다시 마운트하면 바로 반영된다.
- */
-export function CompNotice({ base = "/auth", className, fallback = null }: { base?: string; className?: string; fallback?: ReactNode }) {
-  const [state, setState] = useState<{ show: true; tier: string; notice: string } | { show: false } | null>(null);
-  useEffect(() => {
-    let alive = true;
-    void fetch(`${base}/comp`, { cache: "no-store" }).then(async r => {
-      const b = await r.json().catch(() => null) as { show?: boolean; tier?: string; notice?: string } | null;
-      if (alive) setState(r.ok && b?.show === true && typeof b.notice === "string" ? { show: true, tier: String(b.tier), notice: b.notice } : { show: false });
-    }).catch(() => { if (alive) setState({ show: false }); });
-    return () => { alive = false; };
-  }, [base]);
-  if (!state) return null;
-  return state.show ? <p className={className} data-comp-notice={state.tier}>{state.notice}</p> : <>{fallback}</>;
-}
-
-type Gift = { id: string; status: string; expiresAt: string; orderCode: string | null; kind?: "event" | "comp"; giftOnly?: boolean; bonus: boolean };
-/**
- * 이벤트 이용권(P6d-ops 6): 결제 1건마다 1장. 내가 쓰거나 선물 링크로 보낸다. 이벤트가 꺼져 있고 받은 것도 없으면 안 보인다.
- * 보상 이용권(v5 최종 2-3)도 같은 목록·같은 버튼이다(장마다 내가 쓰기 / 선물 링크 만들기). 예전에 지급한 선물 링크 전용(giftOnly)만 내가 쓰기를 숨긴다.
- */
-export function GiftPanel({ base = "/auth" }: { base?: string }) {
-  const [state, setState] = useState<{ gifts: Gift[]; active: boolean; max: number } | null>(null), [message, setMessage] = useState(""), [link, setLink] = useState("");
-  const load = () => void fetch(`${base}/gift`, { cache: "no-store" }).then(async r => { const b = await r.json(); if (r.ok) setState({ gifts: b.gifts ?? [], active: Boolean(b.event?.active), max: Number.isInteger(b.event?.maxPerAccount) ? b.event.maxPerAccount : 2 }); }).catch(() => undefined);
-  useEffect(load, [base]);
-  async function act(op: "use_self" | "link", giftId: string) {
-    setMessage("");
-    const r = await fetch(`${base}/gift`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ op, giftId }) });
-    const b = await r.json();
-    if (!r.ok) { setMessage(b.message ?? "처리하지 못했어요."); return; }
-    // 선물해도 기한은 처음 받은 날 기준 그대로(최종3) — 고른 장의 기한을 함께 알린다.
-    const gift = state?.gifts.find(g => g.id === giftId), until = gift ? ` ${seoulDateTime(gift.expiresAt)}까지 쓸 수 있어요.` : "";
-    if (op === "link") { const url = `${location.origin}${b.url}`; setLink(url); try { await navigator.clipboard.writeText(url); setMessage(`선물 링크를 복사했어요. 친구에게 보내 주세요. 받은 친구도${until || " 같은 기한까지 쓸 수 있어요."}`); } catch { setMessage("아래 선물 링크를 복사해 친구에게 보내 주세요."); } }
-    else setMessage(`이용권 1장을 넣었어요.${until}`);
-    load();
-  }
-  if (!state || (!state.active && !state.gifts.length)) return null;
-  const label: Record<string, string> = { available: "사용 가능", used_self: "내가 사용", gifted: "선물 링크 보냄", claimed: "친구가 받음", expired: "기간 종료", revoked: "환불로 회수" };
-  const onlyComp = !state.active && state.gifts.every(g => g.kind === "comp");
-  return <section id="gifts" className={s.section} aria-labelledby="gift-title" data-gift-panel><h2 id="gift-title">{onlyComp ? "보상 이용권" : "이벤트 이용권"}</h2>
-    {onlyComp ? <p>한 장마다 내가 쓰거나, 선물 링크를 만들어 친구에게 보낼 수 있어요.</p> : <p>결제 1건마다 이용권 1장(계정당 {state.max}회). 내가 쓰거나 친구에게 선물할 수 있어요. 선물받은 친구가 첫 결제를 하면 1장을 더 드려요.</p>}
-    <p className={s.hint}>이용권은 받은 날부터 30일 동안 쓸 수 있어요. 선물해도 기한은 그대로예요. 현금으로 바꾸거나 환불할 수 없어요.</p>
-    {state.gifts.length ? <ul className={s.list}>{state.gifts.map(g => <li key={g.id} className={s.order}><span className={s.badge}>{label[g.status] ?? g.status}</span> {g.kind === "comp" ? "보상 이용권" : `주문 ${g.orderCode}`} · {seoulDateTime(g.expiresAt)}까지{g.bonus ? " · 보너스 1장 받음" : ""}
-      {g.status === "available" || g.status === "gifted" ? <div className={s.actions}>{g.status === "available" && !g.giftOnly ? <button type="button" className={s.button} onClick={() => void act("use_self", g.id)}>내가 쓰기</button> : null}<button type="button" className={s.button} onClick={() => void act("link", g.id)}>{g.status === "gifted" ? "새 선물 링크" : "선물 링크 만들기"}</button></div> : null}</li>)}</ul> : <p className={s.hint}>이벤트 기간에 결제하면 여기에 이용권이 생겨요.</p>}
-    {link ? <p className={s.locked}>{link}</p> : null}
-    {message ? <p className={s.message} role="status">{message}</p> : null}
-  </section>;
-}
-
+/** P 추가 F(2026-11-06): 예전 서재 칸(구매 내역·보상 안내 한 줄·이벤트 이용권 칸)은 서재 한 화면(components/account/LibraryHome.tsx)으로 합쳤다. */
 /**
  * 마이페이지 혜택 알림(선택, 최종3): 가입 정보 화면과 같은 동의를 켜고 끈다. 바꾸면 그 일시를 바로 보여 준다(동의·철회 기록은 서버에 남는다).
  * 가입 정보를 아직 입력하지 않았으면 보이지 않는다(가입 정보 화면에서 같이 고른다).

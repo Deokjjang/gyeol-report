@@ -49,7 +49,10 @@ afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 describe("release gate combinations and real checkout route", () => {
   it.each([[false,false],[true,false],[false,true],[true,true]])("Book %s / Account %s", async (book, account) => {
     state.book = book; state.account = account;
-    const response = await POST(request()); expect(response.status).toBe(200);
+    const response = await POST(request());
+    // P 추가 A: 결제는 로그인한 회원만 — 계정 기능이 꺼져 있으면(회원 확인 불가) 결제 준비를 받지 않는다(주문 쓰기 전).
+    if (!account) { expect(response.status).toBe(401); expect((await response.json()).error.code).toBe("LOGIN_REQUIRED"); expect(state.orders).toHaveLength(0); return; }
+    expect(response.status).toBe(200);
     const saved = state.orders[0].inputSnapshot as Record<string, unknown>;
     expect(saved.bookGeneration).toEqual(book ? { version: "v4", evaluatedAt: new Date(SHADOW_CLOCK.evaluatedAt).toISOString() } : undefined);
     expect(vi.mocked((state.library as LibraryPort).bind)).toHaveBeenCalledTimes(account ? 1 : 0);
@@ -76,25 +79,24 @@ describe("release gate combinations and real checkout route", () => {
   it.each([null,"https://evil.test","https://gyeolreport.com.evil.test","http://www.gyeolreport.com","https://www.gyeolreport.com/","https://www.gyeolreport.com:444","null","https://gyeolreport.com"])("rejects missing/malformed/cross-host origin %s before order", async value => {
     state.account = true; expect((await POST(request(undefined, value))).status).toBe(403); expect(state.orders).toHaveLength(0);
   });
-  it("guest checkout binds an HttpOnly purchase capability, never an invented account", async () => {
+  it("P 추가 A: guest checkout is refused before any order — no capability cookie, no invented account", async () => {
     state.account = true; state.auth = auth(false);
-    const response = await POST(request()); expect(response.status).toBe(200);
-    const binding = vi.mocked((state.library as LibraryPort).bind).mock.calls[0][0];
-    expect(binding.buyerId).toBeNull(); expect(binding.claimHash).toMatch(/^[a-f0-9]{64}$/);
-    expect(response.cookies.getAll()[0]).toMatchObject({ httpOnly: true, secure: true, sameSite: "lax" });
-    expect(JSON.stringify(await response.json())).not.toContain(binding.claimHash);
+    const response = await POST(request()); expect(response.status).toBe(401);
+    expect((await response.json()).error.code).toBe("LOGIN_REQUIRED");
+    expect(state.orders).toHaveLength(0); expect((state.library as LibraryPort).bind).not.toHaveBeenCalled(); expect(response.cookies.getAll()).toEqual([]);
   });
   it.each(["auth", "database"])("%s unavailable fails closed, no provider checkout", async failure => {
     state.account = true;
     if (failure === "auth") state.auth = null; else vi.mocked((state.library as LibraryPort).bind).mockResolvedValue(false);
-    const response = await POST(request()); expect(response.status).toBe(503); expect(await response.text()).not.toContain("tossCheckoutRequest");
+    // 로그인 확인 불가 = 회원 아님(401), 서재 연결 실패 = 503. 어느 쪽도 토스 결제창 요청을 내주지 않는다.
+    const response = await POST(request()); expect(response.status).toBe(failure === "auth" ? 401 : 503); expect(await response.text()).not.toContain("tossCheckoutRequest");
   });
   it("production checkout presentation uses public session and the existing launcher, not dev mocks", () => {
     const source = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
     expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, effective, undefined");
     const html = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled onPublishing={() => {}} onError={() => {}} />);
     // SSR cannot know the session yet: do not expose a checkout until verified.
-    expect(html).toContain("로그인 상태를 확인하고 있습니다."); expect(html).not.toContain("결제하기"); expect(html).not.toContain("모의 결제");
+    expect(html).toContain("로그인 상태를 확인하고 있어요."); expect(html).not.toContain("결제하기"); expect(html).not.toContain("모의 결제");
     const gated = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled={false} onPublishing={() => {}} onError={() => {}} />);
     expect(gated).toContain("결제하기"); expect(gated).not.toContain("로그인하고 이어서 구매하기");
   });

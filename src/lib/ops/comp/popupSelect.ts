@@ -8,7 +8,8 @@
  */
 export type PopupId = "event-1plus1" | "comp-b" | "comp-a";
 export type PopupEventPhase = "off" | "before" | "during" | "after";
-export type PopupEvent = { phase: PopupEventPhase; serverNow: string; startsAt: string; endsAt: string; maxPerAccount: number; validDays: number };
+/** ticketExpiresAt: 지금 받는 이용권의 기한(ISO, P 추가 D — 이번 이벤트는 2026-11-30 23:59:59 KST). 계정당 상한은 없다(P 추가 C). */
+export type PopupEvent = { phase: PopupEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string };
 export type PopupComp = { tier: "A" | "B"; quantity: number; unused: number; expiresAt: string };
 export type PopupState = { member: boolean; comp: PopupComp | null; event: PopupEvent | null };
 
@@ -65,9 +66,6 @@ export function remainingLabel(ms: number): string {
   const s = Math.max(0, Math.floor(ms / 1000)), p = (n: number) => String(n).padStart(2, "0");
   return `${Math.floor(s / 86400)}일 ${p(Math.floor(s % 86400 / 3600))}:${p(Math.floor(s % 3600 / 60))}:${p(s % 60)}`;
 }
-const NATIVE = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉"];
-/** 「두 번」(1~9는 고유어 수). */
-export const timesLabel = (n: number) => (Number.isInteger(n) && n >= 1 && n <= 9 ? `${NATIVE[n]} 번` : `${n}번`);
 
 export function isPopupState(v: unknown): v is PopupState {
   if (!v || typeof v !== "object") return false;

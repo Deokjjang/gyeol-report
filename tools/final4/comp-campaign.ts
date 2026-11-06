@@ -47,7 +47,7 @@ async function main() {
     exclude: [...DEFAULT_OWNER_EXCLUDE.map(userId => ({ userId, reason: "owner" as const })), ...adminUserIds().map(userId => ({ userId, reason: "admin" as const })), ...[...list(a.exclude), ...fileList(a["exclude-file"])].map(userId => ({ userId, reason: "test" as const }))],
     expectB: typeof a["expect-b"] === "string" ? Number(a["expect-b"]) : DEFAULT_EXPECT_B, expectList: a["expect-file"] ? fileList(a["expect-file"]) : null,
     execute: a.execute === true, confirm: typeof a.confirm === "string" ? a.confirm : null,
-    aQty: cfg.aQty, bQty: cfg.bQty, products: cfg.products, days: cfg.aDays,
+    aQty: cfg.aQty, bQty: cfg.bQty, products: cfg.products, days: cfg.aDays, expiresAt: cfg.expiresAt,
   });
   for (const l of r.lines) console.log(l);
   process.exit(r.ok ? 0 : 2);

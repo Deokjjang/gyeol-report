@@ -29,13 +29,11 @@ function port(): LibraryPort { return { bind: vi.fn(async () => true), orderForR
 function request(action: string, body?: unknown, cookie = "") { return new NextRequest(`${origin}/auth/library-${action}${body === undefined && action !== "list" ? `?reportId=${id}` : ""}`, { method: body === undefined ? "GET" : "POST", headers: { origin, cookie, "content-type": "application/json" }, ...(body === undefined ? {} : { body: JSON.stringify(body) }) }); }
 afterEach(() => { vi.unstubAllEnvs(); vi.restoreAllMocks(); });
 describe("server claim boundary", () => {
-  it("checkout uses getUser not payload authority; guest capability is 256-bit HttpOnly Secure and never JSON", async () => {
+  it("checkout uses getUser not payload authority; P 추가 A: no guest binding — a guest gets no checkout and no capability cookie", async () => {
     const p = port();
     const r = await bindCheckout(request("claim", {}), NextResponse.json({ ok: true }), "po-private", { person: { name: "서윤" }, userId: B.id }, auth(null), p);
-    const cookie = r!.cookies.get(claimCookieName("po-private", false))!;
-    expect(cookie).toMatchObject({ httpOnly: true, secure: true, sameSite: "lax", path: "/", maxAge: 604800 });
-    expect(cookie.value).toMatch(/^[a-f0-9]{64}$/); expect(await r!.json()).toEqual({ ok: true });
-    expect(p.bind).toHaveBeenCalledWith(expect.objectContaining({ buyerId: null, claimHash: claimHash(cookie.value), displayName: "서윤" }));
+    expect(r).toBeNull(); expect(p.bind).not.toHaveBeenCalled();
+    void claimCookieName; void claimHash;
     const logged = await bindCheckout(request("claim", {}), NextResponse.json({ ok: true }), "po-buyer", { userId: B.id }, auth(), p);
     expect(logged!.cookies.getAll()).toEqual([]); expect(p.bind).toHaveBeenLastCalledWith(expect.objectContaining({ buyerId: A.id, claimHash: null }));
   });
@@ -93,7 +91,7 @@ describe("safe OAuth report return including FIRST consent", () => {
   });
 });
 describe("real six-product local generation + ownership fixtures", () => {
-  it("A Full/Love/Annual; B Career; guest Major claims once; shared Compatibility read-only", async () => {
+  it("A Full/Love/Annual; B Career; guest Major/Compatibility cannot bind or claim (P 추가 A: no guest checkout); shared read-only", async () => {
     const p = createLocalLibraryPort(), ids: string[] = [];
     for (const f of RUNTIME_FIXTURES) {
       const payload = f.payload as ReportInputPayload;
@@ -103,6 +101,7 @@ describe("real six-product local generation + ownership fixtures", () => {
       expect(prepared.ok).toBe(true); if (!prepared.ok) continue;
       const user = ["comprehensive", "love", "annual"].includes(f.id) ? A : f.id === "career" ? B : null;
       const response = await bindCheckout(request("claim", {}), NextResponse.json({}), prepared.orderId, payload, auth(user), p, true);
+      if (!user) expect(response).toBeNull(); // 비회원 결제 없음 — 연결도, 구매 연결 쿠키도 없다
       const before = (await p.list(A.id))!.length;
       expect(await p.claim(prepared.orderId, A.id, null, true)).toBe("unavailable");
       expect(await publishLocalBook(prepared.orderId)).toMatchObject({ ok: true });
@@ -114,13 +113,13 @@ describe("real six-product local generation + ownership fixtures", () => {
       }
       expect(await p.claim(prepared.orderId, "share-reader", claimHash("gr_share"), true)).toBe("unavailable");
       if (f.id === "major") {
-        expect(await p.claim(prepared.orderId, null, claimHash(response!.cookies.get(claimCookieName(prepared.orderId, true))!.value), false)).toBe("claimable");
-        const proof = claimHash(response!.cookies.get(claimCookieName(prepared.orderId, true))!.value);
-        expect(await Promise.all([p.claim(prepared.orderId, A.id, proof, true), p.claim(prepared.orderId, B.id, proof, true), p.claim(prepared.orderId, A.id, proof, true)])).toEqual(["owned", "unavailable", "owned"]);
+        // 예전 비회원 구매 연결(claim)은 새로 생기지 않는다: 어떤 증명으로도 서재에 담을 수 없다.
+        expect(await p.claim(prepared.orderId, A.id, claimHash("guessed"), true)).toBe("unavailable");
+        void claimCookieName;
       }
       expect(await readLocalBook(prepared.orderId)).toEqual(stored); ids.push(prepared.orderId);
     }
-    expect(ids).toHaveLength(6); expect(await p.list(A.id)).toHaveLength(4); expect(await p.list(B.id)).toHaveLength(1);
+    expect(ids).toHaveLength(6); expect(await p.list(A.id)).toHaveLength(3); expect(await p.list(B.id)).toHaveLength(1);
     expect(JSON.stringify(await p.list(A.id))).not.toMatch(/evidencePacket|draft|claimHash|paymentKey/);
   }, 30000);
 });

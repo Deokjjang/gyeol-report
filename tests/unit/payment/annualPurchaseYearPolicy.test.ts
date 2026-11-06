@@ -12,11 +12,12 @@ import { REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCa
 const mocks = vi.hoisted(() => ({ runtime: vi.fn(), bind: vi.fn() }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: mocks.runtime }));
 // Keep the live same-origin and binding code; only external ports are synthetic.
-vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => null, finish: (response: Response) => response }) }));
+// P 추가 A: 결제는 로그인한 회원만 — 가입 정보를 마친 회원 대역.
+vi.mock("../../../src/lib/account/supabase", async () => (await import("../../helpers/opsStoreStub")).memberAccountModule);
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: mocks.bind }) }));
 vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
-import { TEST_BUYER } from "../../helpers/opsStoreStub";
+import { TEST_BUYER, TEST_MEMBER } from "../../helpers/opsStoreStub";
 
 const beforeRollover = new Date("2026-12-31T14:59:59.000Z");
 const afterRollover = new Date("2026-12-31T15:00:00.000Z");
@@ -164,7 +165,8 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     expect(body.paymentOrder).toMatchObject({ productType: productKey, amount });
     expect(await inputSnapshot()).toEqual({ reportInputPayload: payload, bookGeneration: { version: "v4", evaluatedAt: beforeRollover.toISOString() } });
     expect(mocks.bind).toHaveBeenCalledTimes(1);
-    expect(mocks.bind.mock.calls[0][0]).toMatchObject({ buyerId: null, claimHash: expect.stringMatching(/^[a-f0-9]{64}$/) });
+    // P 추가 A: 결제는 로그인한 회원만 — 서재 연결은 회원 id, 비회원 구매 연결(claim) 없음.
+    expect(mocks.bind.mock.calls[0][0]).toMatchObject({ buyerId: TEST_MEMBER.id, claimHash: null });
     const orderId = body.paymentOrder.providerOrderId as string;
     expect(await confirmPaidReport({ orderId, paymentKey: "mock", amount }, store,
       async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId, amount, status: "DONE" } }))).toMatchObject({ ok: true });

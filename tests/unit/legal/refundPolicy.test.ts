@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
+import { CHECKOUT_POLICY_VERSIONS, POLICY_EFFECTIVE_DATE, POLICY_HISTORY } from "../../../src/lib/legal/policyVersions";
 import {
   prePaymentRefundNoticeKo,
+  refundPolicyHistoryLinesKo,
   refundPolicyRequiredNotices,
   refundPolicyStateRows,
   refundPolicyStates,
@@ -55,14 +57,26 @@ describe("refund policy constants", () => {
       "미성년자가 법정대리인 동의 없이 결제한 경우 본인 또는 법정대리인이 계약 취소를 요청할 수 있습니다.",
     );
     expect(refundPolicyRequiredNotices).toContain(
-      "이용권으로 만든 리포트는 환불하지 않으며, 오류가 확인되면 다시 만들어 드립니다.",
+      "이용권으로 만든 리포트는 환불하지 않으며, 오류가 확인되면 다시 만들어 드리거나 이용권을 다시 드립니다.",
     );
     expect(refundPolicySupportRequestGuidanceKo).toBe(
       "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요. 이용권으로 만든 리포트는 리포트 주소를 함께 보내주세요.",
     );
     expect(prePaymentRefundNoticeKo).toBe(
-      "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드립니다.",
+      "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드리거나 이용권을 다시 드립니다.",
     );
+  });
+
+  it("P 추가(2026-11-06): 세 문서 버전 2026-11-06.1, 앞 판(2026-11-05.1, 11월 6일 시행)이 변경 이력에 남고 환불정책도 시행일·이력을 보인다", () => {
+    expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-06.1", refund: "2026-11-06.1" });
+    expect(POLICY_EFFECTIVE_DATE).toBe("2026-11-06");
+    for (const kind of ["terms", "privacy", "refund"] as const) {
+      const lines = POLICY_HISTORY[kind];
+      expect(lines[0]).toContain("시행(현재, 문서 버전 2026-11-06.1)");
+      expect(lines[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+    }
+    expect(refundPolicyHistoryLinesKo[0]).toBe("시행일: 2026년 11월 6일");
+    expect(refundPolicyHistoryLinesKo.slice(1)).toEqual(POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`));
   });
 
   it("avoids unsafe absolute no-refund and risk copy", () => {

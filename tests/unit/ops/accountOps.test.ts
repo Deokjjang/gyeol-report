@@ -150,17 +150,17 @@ describe("결제·이용권 게이트", () => {
     const res = await handleTicketPublication(r, "redeem", port({ contact: null }), { call: vi.fn() });
     expect(res.status).toBe(403); expect((await res.json()).code).toBe("PROFILE_REQUIRED");
   });
-  it("결제 구매자: 회원은 가입 정보, 없으면 PROFILE_REQUIRED, 비회원은 입력값 검사", async () => {
+  it("결제 구매자: 회원은 가입 정보, 없으면 PROFILE_REQUIRED, 비회원은 결제하지 않는다(P 추가 A: LOGIN_REQUIRED, 입력값을 받지 않음)", async () => {
     const account = { call: async () => ({ ok: true, contact: { name: "하람", email: "a@b.co", phone: "01012345678" } }) };
     expect(await resolveBuyer(new Request(ORIGIN), undefined, { port: port({ contact: null }), account })).toMatchObject({ ok: false, code: "PROFILE_REQUIRED", status: 403 });
     expect(await resolveBuyer(new Request(ORIGIN), undefined, { port: port({ contact: { name: "하람", email: "a@b.co" } }), account })).toEqual({ ok: true, buyer: { userId: user.id, name: "하람", email: "a@b.co", phone: "01012345678" } });
-    expect(await resolveBuyer(new Request(ORIGIN), { name: "손님", email: "g@b.co", emailConfirm: "x@b.co" }, { port: null, account })).toMatchObject({ ok: false, code: "BUYER_INFO_INVALID" });
-    expect(await resolveBuyer(new Request(ORIGIN), { name: "손님", email: "g@b.co", emailConfirm: "g@b.co", phone: "010 9999 8888" }, { port: null, account })).toEqual({ ok: true, buyer: { userId: null, name: "손님", email: "g@b.co", phone: "01099998888" } });
+    expect(await resolveBuyer(new Request(ORIGIN), { name: "손님", email: "g@b.co", emailConfirm: "x@b.co" }, { port: null, account })).toMatchObject({ ok: false, code: "LOGIN_REQUIRED", status: 401 });
+    expect(await resolveBuyer(new Request(ORIGIN), { name: "손님", email: "g@b.co", emailConfirm: "g@b.co", phone: "010 9999 8888" }, { port: null, account })).toMatchObject({ ok: false, code: "LOGIN_REQUIRED", status: 401 });
   });
-  it("이벤트 설정: 기본 꺼짐, 켜면 기간·상한·대상(판매 중인 상품만)", () => {
+  it("이벤트 설정: 기본 꺼짐, 켜면 기간·대상(판매 중인 상품만)·기한 11-30(상한 없음)", () => {
     expect(giftEventConfig({}).active).toBe(false);
     const c = giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-01T00:00:00+09:00", GIFT_EVENT_END: "2026-12-01T00:00:00+09:00" }, Date.parse("2026-11-04T00:00:00Z"));
-    expect(c).toMatchObject({ active: true, maxPerAccount: 2, bonusMax: 2, validDays: 30 });
+    expect(c).toMatchObject({ active: true, ticketExpiresAt: "2026-11-30T14:59:59.000Z" });
     expect(c.products).not.toContain("major_fortune");
   });
 });

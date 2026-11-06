@@ -168,7 +168,7 @@ function parseTossCheckoutRequest(
 export async function launchTossCheckout(
   input: unknown,
 ): Promise<TossClientCheckoutLaunchResult> {
-  if (!isRecord(input) || !isSupportedEasyPay(input.easyPay)) {
+  if (!isRecord(input)) {
     return failure(
       "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST",
       "Toss 결제 실행 요청이 올바르지 않습니다.",
@@ -213,7 +213,7 @@ export async function launchTossCheckout(
 
     await paymentWindow.requestPayment({
       ...parsedRequest.request.requestPayment,
-      card: { flowMode: "DIRECT", easyPay: input.easyPay },
+      card: { flowMode: "DEFAULT" },
     });
   } catch {
     return failure(

@@ -1,3 +1,4 @@
+import { ACCOUNT_POLICY_VERSIONS } from "../../src/lib/account/policy";
 /**
  * 결제 준비 경로 시험용 운영 저장소 대역(P6d-ops). 기존 결제 시험은 운영 DB 없이 돈다:
  *   vi.mock("<상대경로>/src/lib/ops/store", async () => (await import("<상대경로>/tests/helpers/opsStoreStub")).opsStoreModule);
@@ -19,3 +20,18 @@ export function createOpsStores() {
   };
 }
 export const opsStoreModule = { createOpsStores, OPS_RPC_TIMEOUT_MS: 10_000 };
+
+/**
+ * P 추가 A(2026-11-06): 결제는 로그인한 회원만. 결제 준비 경로 시험의 계정 대역 — 약관 동의(지금 문서 버전)와 가입 정보를 마친 회원.
+ *   vi.mock("<상대경로>/src/lib/account/supabase", async () => (await import("<상대경로>/tests/helpers/opsStoreStub")).memberAccountModule);
+ * 가입 정보(구매자 이름·이메일)는 위 opsStub.contact(ops account read)에서 온다.
+ */
+export const TEST_MEMBER = { id: "00000000-0000-4000-8000-0000000000b1", provider: "google" as const, displayName: "검수 회원" };
+const MEMBER_CONSENTS = Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type: consent_type as "terms" | "privacy", document_version, required: true, is_agreed: true, recorded_at: "2026-11-06T00:00:00.000Z" }));
+export const memberAccountPort = () => ({
+  authorizationOrigin: "https://test.supabase.co",
+  currentUser: async () => TEST_MEMBER,
+  read: async () => ({ profile: TEST_MEMBER, consents: MEMBER_CONSENTS, contact: { name: "검수 회원", email: "member@example.com" } }),
+  finish: (response: Response) => response,
+});
+export const memberAccountModule = { createAccountPort: memberAccountPort };

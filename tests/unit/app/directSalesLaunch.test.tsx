@@ -34,18 +34,20 @@ describe("approved direct-sales launch boundary", () => {
   it("member library retains ticket balance without paid-store links", () => {
     const html = renderToStaticMarkup(<AccountScreen ticketShopEnabled={ticketShopEnabled()} />);
     expect(html).toContain("내 서재");
-    expect(html).toContain("data-ticket-summary");
-    expect(html).toContain("리포트 이용권");
+    // P 속도·P 추가 F: 서재는 한 번에 받기 전까지 뼈대 화면(서버 렌더에는 수치 없음). 이용권 줄은 LibraryHome이 그린다.
+    expect(html).toContain("서재를 불러오는 중");
+    const home = readFileSync("src/components/account/LibraryHome.tsx", "utf8");
+    expect(home).toContain("data-ticket-summary"); expect(home).toContain("리포트 이용권 {wallet ?"); expect(home).toContain('"/auth/library-home"');
     expect(html).not.toContain('href="/account/tickets"');
     expect(html).not.toContain("묶음 이용권 구매");
     expect(fetch).not.toHaveBeenCalled();
   });
   it("free-ticket checkout uses summary/redeem independently of the paid-store gate", () => {
     const checkout = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
-    expect(checkout).toContain('"/auth"}/ticket-summary');
+    expect(checkout).toContain('"/auth/gift?view=wallet"'); // P 추가 E: 일반 + 남은 이벤트·보상 이용권
     expect(checkout).toContain('if (!internal && method === "ticket")');
     expect(checkout).toContain("await publication.submit(payload, effective"); // 배포 명령 0-3: 회원은 약관·개인정보를 가입 동의로 채운 값(effective)
-    expect(checkout).toContain("리포트 이용권 1장 사용");
+    expect(checkout).toContain("리포트 이용권 1장 쓰기");
     expect(checkout).toContain("ticketShopEnabled && !ticketPending ? <button");
   });
 });

@@ -22,9 +22,13 @@ export function createLibraryPort(): LibraryPort {
     },
     async list(user) {
       // SQL selects metadata only; never selects snapshot_json / input payloads.
-      const { data, error } = await db.rpc("list_account_reports", { p_user: user });
-      const tickets = await db.rpc("report_tickets", { p_action: "library", p_user: user, p_data: {} });
-      return !error && Array.isArray(data) && !tickets.error && tickets.data?.ok && Array.isArray(tickets.data.items) ? [...data, ...tickets.data.items] as LibraryRow[] : null;
+      // P 속도: 두 조회는 서로 기다릴 필요가 없어 동시에 부른다(예전에는 줄줄이).
+      const [{ data, error }, tickets] = await Promise.all([
+        db.rpc("list_account_reports", { p_user: user }),
+        db.rpc("report_tickets", { p_action: "library", p_user: user, p_data: {} }),
+      ]);
+      return !error && Array.isArray(data) && !tickets.error && tickets.data?.ok && Array.isArray(tickets.data.items)
+        ? [...(data as LibraryRow[]).map(r => ({ ...r, source: "paid" as const })), ...(tickets.data.items as LibraryRow[]).map(r => ({ ...r, source: "ticket" as const }))] : null;
     },
   };
 }
