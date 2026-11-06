@@ -7,11 +7,11 @@ import { prePaymentPrivacyNoticeKo } from "../../../lib/legal/privacyPolicy";
 import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTypes";
 import { V5_ROW_LABELS } from "../../../lib/report-tables/v5NatalRows";
 import { CONSENT_SHORT_LABELS, MBTI, requiredConsents, toggleAll, type Book, type Person, type PublishingState } from "./model";
-import { BusinessDetails, DetailSheet, LegalAccordion, SUPPORT_COPY } from "./BookLegal";
+import { BusinessDetails, DetailSheet, LegalAccordion } from "./BookLegal";
 import s from "./book.module.css";
 import MetaSettingsLink from "../../../components/analytics/MetaSettingsLink";
 import SocialIconLinks from "../../../components/legal/SocialIconLinks";
-import { SOCIAL_LINKS, SUPPORT_CHAT_URL } from "../../../lib/legal/socialLinks";
+import { SOCIAL_LINKS, SUPPORT_CHAT_URL, SUPPORT_FOOTER_LINE } from "../../../lib/legal/socialLinks";
 
 /** 이름이 없는 표지(책장의 상품 카드)는 아래 오른쪽에 「한 사람, 한 권.」. P 추가 H(2026-11-06): 분량(장 수·글자 수)은 상품 카드에 보이지 않는다. */
 export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
@@ -122,7 +122,7 @@ export function PreviewFooter({ publicPresentation = false }: { publicPresentati
     <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
     <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
     <SocialIconLinks />
-    </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
+    </nav></div><p data-support-line>{SUPPORT_FOOTER_LINE}</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
     <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>
     {legal ? <DetailSheet title="이용약관과 정책" onClose={() => setLegal(false)}><LegalAccordion publicPresentation={publicPresentation} /></DetailSheet> : null}

@@ -1,4 +1,5 @@
 import GyeolBrandHeader from "../../../../components/brand/GyeolBrandHeader";
+import { SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL } from "../../../../lib/legal/socialLinks";
 
 export const dynamic = "force-dynamic";
 
@@ -42,7 +43,11 @@ export default async function TossPaymentFailPage({
         <div className="space-y-5 rounded-xl border border-neutral-800 bg-neutral-900/80 p-6 shadow-2xl shadow-black/30">
           <p className="text-base leading-7 text-neutral-300">
             Toss 결제창에서 실패 또는 취소로 돌아온 상태입니다. 입력 화면에서
-            다시 시도하거나 고객센터로 문의해 주세요.
+            다시 시도해 주세요.
+          </p>
+          {/* 운영 Q: 상담 창구는 카카오톡 채널 링크 하나(전화 안내 없음). */}
+          <p className="text-sm">
+            <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center text-neutral-200 underline underline-offset-4">{SUPPORT_CHAT_LABEL} ↗</a>
           </p>
 
           <dl className="grid gap-3 rounded-lg border border-neutral-800 bg-neutral-950/60 p-4 text-sm">

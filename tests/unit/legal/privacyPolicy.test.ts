@@ -71,9 +71,10 @@ describe("privacy policy (v5 최종3)", () => {
   });
 
   it("외부 서비스는 실제 쓰는 것만(OpenAI는 임시본 레인 — 배포 명령 0-1), 국외 이전은 업체별 6칸", () => {
-    expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "OpenAI", "Vercel Inc."]);
+    // 운영 Q(2026-11-07.1): 운영자 주문 알림 봇 Telegram이 위탁·국외 이전 끝에 한 줄씩.
+    expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "OpenAI", "Vercel Inc.", "Telegram Messenger Inc."]);
     expect(privacyPolicyOverseasHead).toEqual(["이전받는 자 · 국가 · 연락처", "이전 항목", "이전 시기와 방법", "이용 목적", "보유·이용 기간", "거부 방법과 효과"]);
-    expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "OpenAI, LLC", "Supabase Pte. Ltd.", "Vercel Inc."]);
+    expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "OpenAI, LLC", "Supabase Pte. Ltd.", "Vercel Inc.", "Telegram Messenger Inc."]);
     for (const row of privacyPolicyOverseasRows) { expect(row).toHaveLength(6); for (const cell of row) expect(cell.length).toBeGreaterThan(5); }
     expect(privacyPolicyOverseasRows[2][0]).toContain("대한민국 서울");
     // OpenAI 행: 임시본 레인(코드가 실제로 OpenAI를 부르는 유일한 경로)·미국·입력 정보와 해석 근거·30일(남용 감시 기록, store: false).
@@ -85,6 +86,18 @@ describe("privacy policy (v5 최종3)", () => {
     // Meta 문구·버전은 승인 항목이라 그대로 싣는다.
     expect(copy).toContain(metaTrackingNotice);
     expect(copy).toContain(metaTransferNotice);
+  });
+
+  it("운영 Q(2026-11-07.1): Telegram 행 — 목적·항목·보유·이전받는 자·국가·이전 방법(공식 문서 telegram.org/privacy·faq만)", () => {
+    expect(privacyPolicyProcessorRows.at(-1)).toEqual(["Telegram Messenger Inc.", "운영자 주문 알림·문의 처리", "국외(아래 7번)"]);
+    const [who, items, how, purpose, keep] = privacyPolicyOverseasRows.at(-1)!;
+    expect(who).toMatch(/^Telegram Messenger Inc\. · 아랍에미리트\(두바이, 개발팀 소재\) 및 여러 나라의 데이터센터 · /);
+    expect(items).toBe("주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보");
+    expect(how).toBe("알림이 생길 때 텔레그램 봇 API(HTTPS)로 전송");
+    expect(purpose).toBe("운영자 주문 알림·문의 처리");
+    expect(keep).toBe("처리 후 메시지 정리");
+    // 리포트 입력정보(생년월일 등)·이름·연락처는 보내지 않는다(항목에 없음).
+    for (const absent of ["생년월일", "이름", "이메일", "휴대폰"]) expect(items).not.toContain(absent);
   });
 
   it("「현재 버전에서」 같은 임시 문구가 없고, 나이·민감정보 안내는 그대로", () => {

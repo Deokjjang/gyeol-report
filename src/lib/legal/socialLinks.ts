@@ -24,6 +24,8 @@ export const REQUEST_WINDOW_LINE = "디지털 콘텐츠라 단순 변심 환불�
 export const CONSENT_LINK_LABELS = { refund: "환불정책", example: "예시 리포트 보기" } as const;
 /** 기능 화면(결제 실패·책 상태 등)에서 상담 창구를 가리키는 짧은 말. 전화는 넣지 않는다. */
 export const SUPPORT_CHAT_LABEL = "카카오톡 채널로 문의하기";
+/** 확인이 필요한 책 화면(attention)에서 문의 링크 바로 위 한 줄. */
+export const SUPPORT_PAGE_ADDRESS_HINT = "문의할 때 이 페이지 주소를 함께 알려 주세요.";
 
 /** 서재 문의 창(2부). 사유는 셋만: 바로 처리할 수 있는 둘은 접수, 판단이 필요한 계산 문의는 카카오톡 채널로. */
 export const REQUEST_COPY = {

@@ -93,7 +93,7 @@ export function ReportGenerationStatus({ attention = false, delayed = false, ret
     return () => clearInterval(timer);
   }, [attention, retry]);
 
-  if (retry) return <ReportStatusView state="unavailable" title="리포트 상태를 확인하지 못했습니다" message="잠시 연결이 고르지 않습니다. 이 화면에서 자동으로 다시 확인하고 있습니다. 계속 확인이 어려우시면 고객센터로 문의해 주세요." support />;
+  if (retry) return <ReportStatusView state="unavailable" title="리포트 상태를 확인하지 못했습니다" message="잠시 연결이 고르지 않습니다. 이 화면에서 자동으로 다시 확인하고 있습니다." support />;
   if (attention || progress?.state === "attention") return <ReportStatusView state="attention" />;
   // 진행 상태를 알면 그 단계(감독 시작 전 0 · 시작 뒤 2)만 보인다. 모를 때만 예전처럼 경과 시간 기준.
   const stage = progress ? progress.stage : Math.max(Math.min(STAGE_AT_SECONDS.filter(s => elapsed >= s).length - 1, PUBLICATION_STAGES.length - 2), 0);

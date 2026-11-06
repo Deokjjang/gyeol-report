@@ -126,6 +126,10 @@
 .receiptNote { font-size: 11px; line-height: 1.85; color: #555; margin: 13px 0 !important; }
 .exampleTag { font-size: 11px; color: #888; letter-spacing: .02em; white-space: nowrap; }
 .quietLink { color: inherit; text-decoration: underline; text-decoration-color: #aaa; text-underline-offset: 2px; }
+/* 운영 Q 9부: 주문서 「이 책의 차례」(접힘). */
+.receiptChapters summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; }
+.receiptChapters ol { margin: 0; padding-left: 20px; }
+.receiptChapters p { margin: 4px 0 0; }
 .consents { border: none; padding: 0; margin: 18px 0 6px; }
 .consents label { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 7px 0; font-size: 11px; line-height: 1.6; }
 .consents input { margin-top: 2px; }
@@ -377,8 +381,6 @@
 .legalDocument dd { margin: 4px 0 14px; }
 .policyCrossLink { min-height: 44px; font-size: 12px !important; text-decoration: underline; text-underline-offset: 4px; }
 .legalDocument .businessRows dd { margin: 0; }
-.supportPresentation { font-size: 12px; line-height: 1.85; margin-bottom: 8px !important; }
-.supportPresentation a { display: block; width: fit-content; min-height: 44px; padding-top: 9px; text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 767px) {
   .header { height: 64px; padding: 10px 24px; }
   .wordmark b { font-size: 18px; }
