@@ -94,6 +94,7 @@ export const privacyPolicyProcessorRows = [
   ["토스페이먼츠(주)", "결제 승인·취소·환불, 결제 내역 확인, 영수증", "국내"],
   ["Supabase", "회원·주문·리포트·이용권 정보 저장, 로그인 처리", "저장 위치 국내(서울), 운영사 국외(아래 7번)"],
   ["Anthropic", "리포트 입력정보와 계산된 명리 해석 근거로 리포트 문장 작성(AI)", "국외(아래 7번)"],
+  ["OpenAI", "Anthropic이 오래 장애일 때 임시 리포트 문장 작성(AI)", "국외(아래 7번)"],
   ["Vercel Inc.", "웹 서비스 호스팅과 서버 실행", "국외(아래 7번)"],
 ] as const;
 export const privacyPolicyLoginProviderKo =
@@ -107,6 +108,14 @@ export const privacyPolicyOverseasRows = [
     "리포트를 만들 때마다 암호화된 통신(HTTPS)으로 전송",
     "리포트 문장 작성(학습에 쓰지 않는 API)",
     "Anthropic 정책에 따라 받은 날부터 30일 이내 삭제(이용 정책 위반으로 판정된 내용은 최대 2년)",
+    "이전을 원하지 않으면 리포트를 만들지 않으면 됩니다. 거부하면 리포트(책)를 만들 수 없습니다."],
+  // 임시본 레인(src/lib/ops/generation/supervisor.ts): Anthropic이 2시간 넘게 실패한 주문만, OpenAI Responses API(store: false)로 부른다.
+  // 보유 기간: OpenAI API 공식 문서 「Your data」(2026-11-06 확인) — 남용 감시 기록 최대 30일, 학습에 쓰지 않음, store: false라 응답 저장 없음.
+  ["OpenAI, LLC · 미국 · dsar@openai.com",
+    "리포트 입력정보(이름 또는 닉네임, 생년월일·출생시간, 성별, MBTI, 현재 하는 일·연애 상태·관심 분야, 궁합 상대의 같은 항목), 계산된 명리 해석 근거, 같은 사람의 이전 리포트에서 겹치지 않게 할 표현",
+    "Anthropic 장애가 오래 이어질 때(2시간 넘게 리포트를 만들지 못한 주문만) 임시 리포트를 만들 때마다 암호화된 통신(HTTPS)으로 전송",
+    "임시 리포트 문장 작성(학습에 쓰지 않는 API, 응답 저장 끔). 장애가 풀리면 Anthropic이 다시 쓴 리포트로 바꿉니다.",
+    "OpenAI 정책에 따라 남용 감시 기록으로 최대 30일 보관 후 삭제(법령상 더 오래 보관해야 하는 경우는 예외)",
     "이전을 원하지 않으면 리포트를 만들지 않으면 됩니다. 거부하면 리포트(책)를 만들 수 없습니다."],
   ["Supabase Pte. Ltd. · 싱가포르(운영사). 데이터 저장 위치: 대한민국 서울(AWS 아시아 태평양 서울 리전, ap-northeast-2) · 65 Chulia Street #38-02/03, OCBC Centre, Singapore 049513 · privacy@supabase.com",
     "위 2번의 회원·주문·결제·리포트·이용권·문의 정보",

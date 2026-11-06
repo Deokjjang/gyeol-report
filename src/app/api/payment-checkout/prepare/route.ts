@@ -1,4 +1,4 @@
-import { createCheckoutConsentEvidence } from "../../../../lib/payment/checkoutConsent";
+import { consentLayoutMatchesBuyer, createCheckoutConsentEvidence, type CheckoutConsentEvidence } from "../../../../lib/payment/checkoutConsent";
 import { createAnnualCommerceAcceptance } from "../../../../lib/payment/annualPurchasePolicy";
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { birthTimeUncertaintyNotice } from "../../../../lib/saju/birthTimeUncertaintyNotice";
@@ -434,6 +434,10 @@ export async function POST(request: Request): Promise<NextResponse> {
     const resolved = await resolveBuyer(request, json.buyer, { port: accountPublicEnabled() ? accountPortFor(request, createAccountPort) : null, account: ops.account });
     if (!resolved.ok) return createErrorResponse(resolved.code as CheckoutPrepareRouteErrorCode, resolved.message, resolved.status);
     buyer = resolved.buyer;
+  }
+  // 배포 명령 0-3: 회원 배치 주문서(약관·개인정보 = 가입 동의, 주문서 칸 없음)인데 서버가 본 구매자가 회원이 아니면 받지 않는다(주문 쓰기 전).
+  if (!consentLayoutMatchesBuyer(inputSnapshot.consentEvidence as CheckoutConsentEvidence, buyer.userId !== null)) {
+    return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", "필수 항목을 확인해 주세요.", 400);
   }
 
   const orderRuntime = createPaymentOrderPersistenceRuntime();

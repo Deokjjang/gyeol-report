@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
-import { CHECKOUT_CONSENT_UI_VERSION, createCheckoutConsentAssertion, getCheckoutAgeGateStatus, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
+import { CHECKOUT_CONSENT_UI_VERSION, createCheckoutConsentAssertion, getCheckoutAgeGateStatus, GUEST_POLICY_CONSENT_TEXT, MEMBER_SIGNUP_CONSENT_TEXT, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
 import { emptyDevTossCheckoutLegalConfirmations, isDevTossCheckoutLegalConfirmationComplete, runDevTossCheckout } from "../payment/DevTossCheckoutLauncher";
-import { CONSENTS, CONSENT_SHORT_LABELS, RECEIPT_CONSENTS } from "../../app/dev/book-preview/model";
+import { CONSENTS, CONSENT_SHORT_LABELS, RECEIPT_CONSENTS, RECEIPT_DETAIL_TEXTS } from "../../app/dev/book-preview/model";
 import { DetailSheet, LegalDocument, LEGAL_TITLES } from "../../app/dev/book-preview/BookLegal";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
@@ -14,7 +14,7 @@ import { bookForProduct, readerTitle } from "../../lib/book/product";
 import { BIRTH_TIME_SLOT_DEFINITIONS } from "../../lib/saju/birthTimePrecisionTypes";
 import s from "../../app/dev/book-preview/book.module.css";
 import { useAccountSession } from "../account/AccountSession";
-import { purchasePolicyLabel, type AccountSession } from "../../lib/account/policy";
+import type { AccountSession } from "../../lib/account/policy";
 import { CouponChooser, type CouponChoice } from "./CouponChooser";
 import { interaction, syncLocalFacts } from "../../lib/analytics/client";
 import { checkoutReturnKey, useTicketPublication } from "./useTicketPublication";
@@ -29,6 +29,8 @@ type ReceiptConsentId = typeof RECEIPT_CONSENTS[number]["id"];
 /** 최종 A 16: 1+1 영수증 줄. 이벤트 이용권은 회원 주문에만 나온다(ops_gift issue: 비회원 주문은 GUEST_ORDER) — 비회원에겐 로그인 조건을 붙인다. */
 export const GIFT_EVENT_RECEIPT_LINE = "1+1 · 결제 후 무료 이용권 1장";
 export const GIFT_EVENT_RECEIPT_GUEST_LINE = "1+1 · 로그인하고 결제하면 무료 이용권 1장";
+/** 주문서 처음 상태: 환불정책 동의 칸을 따로 둔다(예전 공용 빈 값에는 없다 — 옛 결제 화면은 policyAgreement가 덮음). */
+const EMPTY_RECEIPT_CONSENTS: CheckoutLegalConfirmations = { ...emptyDevTossCheckoutLegalConfirmations, refundPolicyAgreement: false };
 export function BookCheckout(props: CheckoutProps) {
   const authEnabled = props.authEnabled ?? props.internal;
   const { session, loaded, error, refresh } = useAccountSession(props.internal, authEnabled);
@@ -39,8 +41,10 @@ export function BookCheckout(props: CheckoutProps) {
 }
 function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, session, authEnabled, ticketShopEnabled = false, v5Book = false, giftEventProducts = [] }: CheckoutProps & { session: AccountSession }) {
   // 최종 A 20: InitiateCheckout은 주문서를 여는 때가 아니라 토스 결제창을 여는 순간에 한 번(아래 onCheckoutWindow).
-  const label = (id: ReceiptConsentId) => id === "policyAgreement" && session.status === "member" ? purchasePolicyLabel(session) : CONSENT_SHORT_LABELS[id];
-  const [consents, setConsents] = useState<CheckoutLegalConfirmations>(emptyDevTossCheckoutLegalConfirmations), [detail, setDetail] = useState<string | null>(null), [busy, setBusy] = useState(false);
+  // 배포 명령 0-3: 환불 칸은 「주문 내용과 환불정책을 확인하고 동의해요」 하나. 약관·개인정보 칸은 비회원만(회원은 가입 때 동의 — 재동의 전이면 주문서가 막힌다).
+  const member = session.status === "member";
+  const label = (id: ReceiptConsentId) => id === "policyAgreement" ? GUEST_POLICY_CONSENT_TEXT : CONSENT_SHORT_LABELS[id];
+  const [consents, setConsents] = useState<CheckoutLegalConfirmations>(EMPTY_RECEIPT_CONSENTS), [detail, setDetail] = useState<string | null>(null), [busy, setBusy] = useState(false);
   // 증명용: 「주문 내용과 환불 안내」 칸을 체크한 시각(동의 기록 ui.checkedAt). 해제하면 지운다.
   const [orderCheckedAt, setOrderCheckedAt] = useState<string | null>(null);
   const lock = useRef(false), allRef = useRef<HTMLInputElement>(null);
@@ -68,7 +72,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
         if (!r.ok || !Number.isInteger(b.quantity) || b.quantity < 0) { setBalanceError(true); return; }
         setBalanceError(false); setTickets(b.quantity);
         if (ticketShopEnabled) {
-          if (accountScope.current && accountScope.current !== b.scope) { setConsents(emptyDevTossCheckoutLegalConfirmations); setAccountChanged(true); setBalanceError(true); return; }
+          if (accountScope.current && accountScope.current !== b.scope) { setConsents(EMPTY_RECEIPT_CONSENTS); setAccountChanged(true); setBalanceError(true); return; }
           accountScope.current = b.scope;
           if (!chosenMethod.current) { try {
             const saved = JSON.parse(sessionStorage.getItem(receiptMethodKey(payload.productKey)) ?? "null");
@@ -100,17 +104,19 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   }
   const snapshot = bookCheckoutSnapshot(payload), book = bookForProduct(payload.productKey)!, product = getReportProduct(payload.productKey)!;
   const age = getCheckoutAgeGateStatus(snapshot.birthDate, new Date(now)), allowed = age === "adult" || age === "minor";
-  const items = RECEIPT_CONSENTS.filter(c => c.id !== "minorLegalRepresentative" || age === "minor");
+  const items = RECEIPT_CONSENTS.filter(c => (c.id !== "minorLegalRepresentative" || age === "minor") && (c.id !== "policyAgreement" || !member));
+  // 회원의 약관·개인정보 확인(policyAgreement)은 가입 동의에서 온다 — 기록(assertions)은 일곱 확인 그대로.
+  const effective: CheckoutLegalConfirmations = member ? { ...consents, policyAgreement: true } : consents;
   const isChecked = (c: typeof items[number]) => c.covers.every(id => consents[id]);
   const all = items.every(isChecked), some = items.some(c => c.covers.some(id => consents[id]));
   const check = (rows: readonly typeof items[number][], value: boolean) => {
     setConsents(prev => ({ ...prev, ...Object.fromEntries(rows.flatMap(c => c.covers.map(id => [id, value]))) }));
     if (rows.some(c => c.id === "orderAndRefund")) setOrderCheckedAt(value ? new Date().toISOString() : null);
   };
-  const consentUi: CheckoutConsentUiClaim = { version: CHECKOUT_CONSENT_UI_VERSION, policyText: label("policyAgreement"), ...(orderCheckedAt ? { checkedAt: orderCheckedAt } : {}) };
+  const consentUi: CheckoutConsentUiClaim = { version: CHECKOUT_CONSENT_UI_VERSION, layout: member ? "member" : "guest", ...(orderCheckedAt ? { checkedAt: orderCheckedAt } : {}) };
   const giftEventLine = giftEventProducts.includes(payload.productKey) ? (session.status === "member" || internal ? GIFT_EVENT_RECEIPT_LINE : GIFT_EVENT_RECEIPT_GUEST_LINE) : null;
   useEffect(() => { if (allRef.current) allRef.current.indeterminate = some && !all; }, [some, all]);
-  const ready = isDevTossCheckoutLegalConfirmationComplete(snapshot, consents, new Date(now));
+  const ready = isDevTossCheckoutLegalConfirmationComplete(snapshot, effective, new Date(now));
   const checkingBalance = session.status === "member" && (tickets === null || balanceError);
   const ticketPending = !internal && publication.pending;
   const ticketSelected = ticketPending || method === "ticket";
@@ -123,14 +129,14 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
       try {
         const r = await fetch(`${internal ? "/dev/account/tickets/api" : "/api/ticket-bundles"}/state`, { cache: "no-store", headers: { "x-ticket-account": accountScope.current }, signal: AbortSignal.timeout(15_000) });
         const current = await r.json();
-        if (!r.ok || current.scope !== accountScope.current) { setAccountChanged(true); setConsents(emptyDevTossCheckoutLegalConfirmations); return; }
+        if (!r.ok || current.scope !== accountScope.current) { setAccountChanged(true); setConsents(EMPTY_RECEIPT_CONSENTS); return; }
       } catch { setBalanceError(true); return; }
       finally { lock.current = false; setBusy(false); }
     }
     if (!internal && method === "ticket") {
       // Synchronous lock covers the async fingerprint before pending is set.
       lock.current = true; chosenMethod.current = true; setBusy(true); onError("");
-      try { await publication.submit(payload, consents, accountScope.current || undefined, consentUi); }
+      try { await publication.submit(payload, effective, accountScope.current || undefined, consentUi); }
       finally { lock.current = false; setBusy(false); }
       return;
     }
@@ -144,14 +150,14 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
         if (!checked.ok) { onError(checked.message); lock.current = false; setBusy(false); return; }
         buyerInfo = { name: checked.value.name, email: checked.value.email, emailConfirm: checked.value.email, ...(checked.value.phone ? { phone: checked.value.phone } : {}) };
       }
-      const result = await runDevTossCheckout(snapshot, consents, undefined, { productType: payload.productKey, easyPay: "TOSSPAY", consentUi, onCheckoutWindow: () => interaction("checkout_started", payload.productKey), ...(buyerInfo ? { buyer: buyerInfo } : {}) });
+      const result = await runDevTossCheckout(snapshot, effective, undefined, { productType: payload.productKey, easyPay: "TOSSPAY", consentUi, onCheckoutWindow: () => interaction("checkout_started", payload.productKey), ...(buyerInfo ? { buyer: buyerInfo } : {}) });
       if (!result.ok) { onError(result.messageKo); lock.current = false; setBusy(false); }
       return;
     }
     if (method === "ticket") {
       ticketRequest.current ??= crypto.randomUUID();
       try {
-        const response = await fetch("/dev/account/api/ticket-redeem", { method: "POST", headers: { "content-type": "application/json", ...(accountScope.current ? { "x-ticket-account": accountScope.current } : {}) }, body: JSON.stringify({ requestId: ticketRequest.current, payload, consent: createCheckoutConsentAssertion(consents, undefined, consentUi) }) });
+        const response = await fetch("/dev/account/api/ticket-redeem", { method: "POST", headers: { "content-type": "application/json", ...(accountScope.current ? { "x-ticket-account": accountScope.current } : {}) }, body: JSON.stringify({ requestId: ticketRequest.current, payload, consent: createCheckoutConsentAssertion(effective, undefined, consentUi) }) });
         const b = await response.json();
         if (response.ok && b.ok && typeof b.reportUrl === "string" && b.reportUrl.startsWith("/dev/book-flow/report/")) { window.location.assign(b.reportUrl); return; }
         onError(b.error ?? "이용권 상태를 다시 확인해 주세요.");
@@ -164,7 +170,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
       let orderId=couponOrder;
       try {
         if (!orderId) {
-          const r=await fetch("/dev/account/api/coupon-prepare",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({requestId:couponRequest.current,payload,consent:createCheckoutConsentAssertion(consents,undefined,consentUi),selection:coupon.selection})});
+          const r=await fetch("/dev/account/api/coupon-prepare",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({requestId:couponRequest.current,payload,consent:createCheckoutConsentAssertion(effective,undefined,consentUi),selection:coupon.selection})});
           const b=await r.json();
           if (!r.ok || !b.ok || typeof b.orderId!=="string") { onError(b.error??"쿠폰 상태를 확인해 주세요.");lock.current=false;setBusy(false);return; }
           if(b.finalAmount!==coupon.quote?.finalAmount){
@@ -186,7 +192,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     let orderId = "";
     // Mandatory local mock runtime. Never omit this third argument and never
     // call the provider/prepare endpoint from this integration phase.
-    const result = await runDevTossCheckout(snapshot, consents, {
+    const result = await runDevTossCheckout(snapshot, effective, {
       fetch: async (path, init) => {
         if (path !== "/api/payment-checkout/prepare") return { ok: false, json: async () => ({}) };
         const response = await fetch("/dev/book-flow/api", { ...init, body: JSON.stringify({ operation: "prepare", request: JSON.parse(String(init.body)), memberGeneralConsent: session.status === "member" }) });
@@ -228,7 +234,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
       <label>휴대폰(선택)<input type="tel" inputMode="numeric" value={buyer.phone} maxLength={13} placeholder="010-0000-0000" autoComplete="tel" disabled={busy} onChange={e => setBuyer({ ...buyer, phone: e.target.value })} /></label>
     </div><p className={s.receiptNote}>주문 확인·환불 안내에만 씁니다.</p></fieldset> : null}
     {!internal && publication.message ? <p role="status">{publication.message}</p> : null}
-    {ticketPending && publication.retryable ? <button disabled={!ready || publication.submitting || accountChanged} onClick={() => void publication.submit(payload, consents, accountScope.current || undefined)}>같은 발행 요청 다시 확인</button> : null}
+    {ticketPending && publication.retryable ? <button disabled={!ready || publication.submitting || accountChanged} onClick={() => void publication.submit(payload, effective, accountScope.current || undefined, consentUi)}>같은 발행 요청 다시 확인</button> : null}
     {!internal && publication.completedUrl ? <a href={publication.completedUrl}>완성된 책 펼쳐보기</a> : null}
     {internal?<CouponChooser productType={payload.productKey} disabled={busy||method==="ticket"||couponOrder!==null} ticketSelected={method==="ticket"} member={session.status==="member"} onChange={setCoupon} />:null}
     <fieldset className={s.consents}><legend className={s.srOnly}>구매 동의</legend><label className={s.allConsent}><input ref={allRef} type="checkbox" checked={all} disabled={!allowed || busy} onChange={e => check(items, e.target.checked)} />전체 동의</label>
@@ -239,6 +245,6 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     {!internal && authEnabled && session.status !== "member" ? <a onClick={() => { try { sessionStorage.setItem(checkoutReturnKey(payload.productKey), "1"); } catch { /* draft remains optional */ } }} href={`/login?next=${encodeURIComponent(`/report/new?product=${payload.productKey}`)}`}>{session.status === "needs_consent" ? "회원 동의 확인 후 이어서 구매하기" : "로그인하고 이어서 구매하기"}</a> : null}
     <button type="button" className={s.orderButton} disabled={!ready || blocked || (method === "ticket" && !tickets) || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)} onClick={submit}>{ticketPending ? "책 발행 상태 확인 중" : busy && method === "ticket" ? "이용권으로 책을 만드는 중" : method === "ticket" ? "이용권 1장으로 책 발행하기" : internal ? "모의 결제 · 책 발행" : "결제하기"} →</button>
     <p className={s.receiptNote} data-refund-notice>{ticketSelected ? RECEIPT_TICKET_REFUND_LINE_KO : RECEIPT_REFUND_LINE_KO} · <a href="/example" className={s.quietLink}>예시 보기</a>{v5Book ? <><br /><span data-ai-notice>{AI_WRITTEN_RECEIPT_LINE_KO}</span></> : null}</p>
-    {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? selected.covers.map(id => <p key={id}>{id === "policyAgreement" && session.status === "member" ? "환불정책을 확인하고 동의합니다." : CONSENTS.find(c => c.id === id)!.label}</p>) : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
+    {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? selected.covers.map(id => <p key={id}>{RECEIPT_DETAIL_TEXTS[id] ?? CONSENTS.find(c => c.id === id)!.label}</p>) : null}{selected?.id === "orderAndRefund" && member ? <p>{MEMBER_SIGNUP_CONSENT_TEXT}은 가입할 때 따로 받았어요.</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;
 }

@@ -1,4 +1,5 @@
 // 최종 A 11·14: 1+1 기간(env, 오프셋 없으면 KST·끝 23:59:59 포함) · 팝업 고르기(상황마다 하나, 화면 제한) · 오늘 하루 보지 않기.
+import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { GIFT_EVENT_DEFAULT_END, GIFT_EVENT_DEFAULT_START, giftEventActive, giftEventConfig, giftEventPublicView, giftEventWindow, parseEventInstant } from "@/lib/ops/config";
 import { eventRangeLabel, eventStartLabel, expiryLabel, kstDay, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup, timesLabel, type PopupState } from "@/lib/ops/comp/popupSelect";
@@ -20,16 +21,26 @@ describe("1+1 기간(서버 시각, KST)", () => {
     expect(parseEventInstant("2026-11-16", "end")).toBe(T("2026-11-17T00:00:00+09:00"));
     expect(parseEventInstant("2026-11-17T00:00:00+09:00", "end")).toBe(T("2026-11-17T00:00:00+09:00"));
   });
-  it("기본 기간 2026-11-07 00:00:00 ~ 11-16 23:59:59 KST, 켜짐(=1)일 때만", () => {
-    expect([GIFT_EVENT_DEFAULT_START, GIFT_EVENT_DEFAULT_END]).toEqual(["2026-11-07T00:00:00+09:00", "2026-11-16T23:59:59+09:00"]);
+  it("기본 기간 2026-11-06 09:00:00 ~ 11-16 23:59:59 KST(배포 명령 0-8에서 시작을 당김), 켜짐(=1)일 때만", () => {
+    expect([GIFT_EVENT_DEFAULT_START, GIFT_EVENT_DEFAULT_END]).toEqual(["2026-11-06T09:00:00+09:00", "2026-11-16T23:59:59+09:00"]);
     expect(giftEventWindow({}, T("2026-11-08T00:00:00+09:00")).phase).toBe("off");
-    expect(giftEventWindow(ON, T("2026-11-06T23:59:59+09:00")).phase).toBe("before");
-    expect(giftEventWindow(ON, T("2026-11-07T00:00:00+09:00")).phase).toBe("during");
+    expect(giftEventWindow(ON, T("2026-11-06T08:59:59.999+09:00")).phase).toBe("before");
+    expect(giftEventWindow(ON, T("2026-11-06T09:00:00+09:00")).phase).toBe("during");
     expect(giftEventWindow(ON, T("2026-11-16T23:59:59.999+09:00")).phase).toBe("during");
     expect(giftEventWindow(ON, T("2026-11-17T00:00:00+09:00")).phase).toBe("after");
     const c = giftEventConfig(ON, T("2026-11-10T12:00:00+09:00"));
-    expect(c).toMatchObject({ active: true, start: "2026-11-06T15:00:00.000Z", end: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, validDays: 30 });
+    expect(c).toMatchObject({ active: true, start: "2026-11-06T00:00:00.000Z", end: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, bonusMax: 2, validDays: 30 });
     expect(giftEventActive(ON, T("2026-11-17T00:00:01+09:00"))).toBe(false);
+  });
+  it("코드와 SQL의 기간이 같다: SQL(ops_gift issue·pending_orders)은 기간을 갖지 않고 코드가 넘기는 start·end([시작, 끝))만 쓴다", () => {
+    const sql = readdirSync("supabase/migrations").filter(f => f.endsWith(".sql") && f >= "20261104100000").map(f => readFileSync(`supabase/migrations/${f}`, "utf8")).join("\n");
+    // 이벤트 기간을 SQL에 박아 둔 곳이 없다(v5 migration 전부).
+    expect(sql).not.toMatch(/2026-11-0[67][ T]0?[09]:00|2026-11-1[67][ T](?:00|23):|GIFT_EVENT_START|gift_event_start/i);
+    // 발급·누락 주문 찾기는 둘 다 paid_at >= start and paid_at < end(코드 경계와 같은 반열린 구간).
+    expect(sql).toContain("o.paid_at<(p_data->>'start')::timestamptz or o.paid_at>=(p_data->>'end')::timestamptz");
+    expect(sql).toContain("o.paid_at>=(p_data->>'start')::timestamptz and o.paid_at<(p_data->>'end')::timestamptz");
+    // 코드가 넘기는 값: 시작 09:00 KST, 끝 = 11-17 00:00 KST(23:59:59 포함).
+    expect(giftEventConfig(ON, T("2026-11-06T09:00:00+09:00"))).toMatchObject({ active: true, start: new Date(T("2026-11-06T09:00:00+09:00")).toISOString(), end: new Date(T("2026-11-17T00:00:00+09:00")).toISOString() });
   });
   it("env로 시작·끝을 바꾼다(Vercel UTC 서버에서도 KST로)", () => {
     const env = { ...ON, GIFT_EVENT_START: "2026-11-08 10:00", GIFT_EVENT_END: "2026-11-09 23:59:59" };
@@ -46,7 +57,7 @@ describe("1+1 기간(서버 시각, KST)", () => {
 });
 
 describe("팝업 고르기", () => {
-  const event = (phase: "off" | "before" | "during" | "after") => ({ phase, serverNow: "2026-11-10T00:00:00.000Z", startsAt: "2026-11-06T15:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, validDays: 30 });
+  const event = (phase: "off" | "before" | "during" | "after") => ({ phase, serverNow: "2026-11-10T00:00:00.000Z", startsAt: "2026-11-06T00:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, validDays: 30 });
   const comp = (tier: "A" | "B", unused = tier === "A" ? 2 : 1, expiresAt = "2026-12-06T03:00:00.000Z") => ({ tier, quantity: unused, unused, expiresAt });
   const now = T("2026-11-10T00:00:00Z");
   const pick = (s: PopupState, path = "/") => selectPopup(s, path, now);
@@ -88,7 +99,8 @@ describe("팝업 고르기", () => {
     expect(kstDay(at)).toBe("2026-11-10");
   });
   it("표시 문구", () => {
-    expect(eventRangeLabel(event("during"))).toBe("11월 7일 – 11월 16일");
+    expect(eventRangeLabel(event("during"))).toBe("11월 6일 – 11월 16일");
+    expect(eventStartLabel("2026-11-06T00:00:00.000Z")).toBe("11월 6일 09시 시작");
     expect(eventStartLabel("2026-11-06T15:00:00.000Z")).toBe("11월 7일 00시 시작");
     expect(expiryLabel("2026-12-06T03:00:00.000Z")).toBe("12월 6일");
     expect(remainingLabel(6 * 86400_000 + 3 * 3600_000 + 4 * 60_000 + 5_000)).toBe("6일 03:04:05");

@@ -13,16 +13,16 @@ export const CHECKOUT_POLICY_VERSIONS = {
 export type CheckoutPolicyVersions = { readonly terms: string; readonly privacy: string; readonly refund: string };
 
 /**
- * 시행일 = 운영 배포일. 배포할 때 YYYY-MM-DD로 정한다(세 문서가 같은 날 시행).
- * 정하기 전에는 null → 문서에 "배포일(확정 전)"이 보인다. 배포 점검표에서 이 값을 먼저 채운다.
+ * 시행일 = 운영 배포일(KST). 세 문서가 같은 날 시행. v5 배포(2026-11-06)에서 채웠다.
+ * null이면 문서에 "배포일(확정 전)"이 보인다.
  */
-export const POLICY_EFFECTIVE_DATE: string | null = null;
+export const POLICY_EFFECTIVE_DATE: string | null = "2026-11-06";
 const koreanDate = (iso: string) => { const [y, m, d] = iso.split("-").map(Number); return `${y}년 ${m}월 ${d}일`; };
 export const POLICY_EFFECTIVE_DATE_KO = POLICY_EFFECTIVE_DATE ? koreanDate(POLICY_EFFECTIVE_DATE) : "배포일(확정 전)";
 
 /** 변경 이력(문서 끝에 그대로 보인다). 최신이 먼저. */
 export const POLICY_HISTORY = {
   terms: [`${POLICY_EFFECTIVE_DATE_KO} 시행(현재): 판매 상품 4종, 이용권 조항, AI 작성 고지, 리포트 버전별 열람 기간, 서비스 종료 안내(서비스 화면 공지 및 이메일 등)`, "이전 약관(2026년 9월 24일 시행, 문서 버전 2026-06-14.1)"],
-  privacy: [`${POLICY_EFFECTIVE_DATE_KO} 시행(현재): 수집 항목·목적 추가(로그인 식별자, 현재 하는 일·연애 상태, 궁합·선물 상대, 이용권, 혜택 알림), 국외 이전 업체별 안내(Anthropic·Supabase·Vercel), 보유 기간 구체화(AI 작성 원문 작업용 사본 30일 포함), 데이터 저장 위치(서울, ap-northeast-2), 쿠키·안전성 확보 조치·구제 기관 안내`, "이전 방침(문서 버전 2026-09-22.1)"],
+  privacy: [`${POLICY_EFFECTIVE_DATE_KO} 시행(현재): 수집 항목·목적 추가(로그인 식별자, 현재 하는 일·연애 상태, 궁합·선물 상대, 이용권, 혜택 알림), 국외 이전 업체별 안내(Anthropic·OpenAI·Supabase·Vercel), 보유 기간 구체화(AI 작성 원문 작업용 사본 30일 포함), 데이터 저장 위치(서울, ap-northeast-2), 쿠키·안전성 확보 조치·구제 기관 안내`, "이전 방침(문서 버전 2026-09-22.1)"],
   refund: [`${POLICY_EFFECTIVE_DATE_KO} 시행(현재): 이용권으로 만든 리포트는 환불 대신 재생성, 생성 시작 후 단순 변심 환불 불가 명시`, "이전 정책(문서 버전 2026-09-22.1)"],
 } as const;

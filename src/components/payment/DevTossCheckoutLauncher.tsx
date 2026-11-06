@@ -164,6 +164,8 @@ export function isDevTossCheckoutLegalConfirmationComplete(
     confirmations.digitalReportStart &&
     confirmations.refundRestriction &&
     confirmations.policyAgreement &&
+    // 환불정책 동의를 따로 받는 화면(주문서 0-3)은 그 칸도 참이어야 한다. 없으면 policyAgreement가 덮는다(예전 화면).
+    confirmations.refundPolicyAgreement !== false &&
     confirmations.age14OrOlder;
 
   if (!requiredBaseConfirmations) {

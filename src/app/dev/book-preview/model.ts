@@ -16,7 +16,7 @@ export const roleNames = (category: string) => category === "parentChild" ? ["�
 export const CONSENTS = [
   { id: "inputAccuracy", label: "[필수] 입력한 정보가 정확하며, 결제 후 입력값을 기준으로 리포트 생성이 진행되는 것을 확인했습니다." },
   { id: "digitalReportStart", label: "[필수] 결제 완료 후 온라인 열람형 디지털 리포트 생성 절차가 시작되는 것을 확인했습니다." },
-  { id: "refundRestriction", label: "[필수] 디지털 콘텐츠라 책 만들기가 시작되면 청약철회(단순 변심 환불)가 제한됩니다. 계산 오류가 확인되면 다시 만들어 드리거나 환불해 드리며, 장애·중복결제·결과 미제공·법령상 취소 사유도 예외임을 확인했습니다." },
+  { id: "refundRestriction", label: "[필수] 디지털 콘텐츠라 책 만들기가 시작되면 단순 변심 환불(청약철회)은 되지 않습니다. 계산 오류가 확인되면 다시 만들어 드리거나 환불해 드리며, 장애·중복결제·결과 미제공·법령상 취소 사유도 예외임을 확인했습니다." },
   { id: "policyAgreement", label: "[필수] 이용약관, 개인정보처리방침, 환불정책을 확인하고 동의합니다." },
   { id: "age14OrOlder", label: "[필수] 만 14세 이상입니다." },
   { id: "minorLegalRepresentative", label: "[필수] 미성년자는 법정대리인 동의가 필요하며, 동의가 없는 경우 본인 또는 법정대리인이 계약을 취소할 수 있음을 확인했습니다." },
@@ -25,18 +25,24 @@ export const CONSENT_SHORT_LABELS = {
   inputAccuracy: "입력 정보 확인", digitalReportStart: "디지털 리포트 생성 시작",
   refundRestriction: "청약철회 제한 · 계산 오류는 재생성·환불", policyAgreement: "이용약관·개인정보·환불정책 동의",
   age14OrOlder: "만 14세 이상", minorLegalRepresentative: "미성년자 법정대리인 동의",
-  orderAndRefund: "주문 내용과 환불 안내를 확인했어요",
+  orderAndRefund: "주문 내용과 환불정책을 확인하고 동의해요",
 } as const;
 /**
- * 최종 A 16: 발행 주문서의 동의 칸. 「주문 내용과 환불 안내를 확인했어요」 한 칸이 세 확인(입력 정보·생성 시작·청약철회 제한)을
- * 함께 체크한다(상세 보기에 세 문장 원문). 약관·개인정보 동의, 만 14세, 미성년자 법정대리인은 따로 둔다.
+ * 발행 주문서의 동의 칸(최종 A 16 → 배포 명령 0-3). 환불이 들어간 필수 칸은 「주문 내용과 환불정책을 확인하고 동의해요」 하나 —
+ * 입력 정보·생성 시작·청약철회 제한 확인과 환불정책 동의를 함께 체크한다(상세 보기에 네 문장 원문).
+ * 약관·개인정보 동의는 비회원만 주문서 칸(회원은 가입 때 동의), 만 14세, 미성년자 법정대리인은 따로 둔다.
  */
 export const RECEIPT_CONSENTS = [
-  { id: "orderAndRefund", covers: ["inputAccuracy", "digitalReportStart", "refundRestriction"] },
+  { id: "orderAndRefund", covers: ["inputAccuracy", "digitalReportStart", "refundRestriction", "refundPolicyAgreement"] },
   { id: "policyAgreement", covers: ["policyAgreement"] },
   { id: "age14OrOlder", covers: ["age14OrOlder"] },
   { id: "minorLegalRepresentative", covers: ["minorLegalRepresentative"] },
 ] as const;
+/** 주문서 상세 보기 원문 중 CONSENTS(미리보기 화면 문구)와 다른 것: 환불정책 동의를 따로 적고, 비회원 약관 칸에서는 환불정책을 뺐다. */
+export const RECEIPT_DETAIL_TEXTS: Readonly<Record<string, string>> = {
+  refundPolicyAgreement: "[필수] 환불정책을 확인하고 동의합니다.",
+  policyAgreement: "[필수] 이용약관, 개인정보처리방침을 확인하고 동의합니다.",
+};
 export function requiredConsents(member: boolean, birth: string) {
   // Fixed preview date; this is not a replacement checkout age policy.
   const date = new Date(birth + "T00:00:00Z");

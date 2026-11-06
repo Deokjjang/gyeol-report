@@ -44,7 +44,7 @@ describe("approved direct-sales launch boundary", () => {
     const checkout = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
     expect(checkout).toContain('"/auth"}/ticket-summary');
     expect(checkout).toContain('if (!internal && method === "ticket")');
-    expect(checkout).toContain("await publication.submit(payload, consents");
+    expect(checkout).toContain("await publication.submit(payload, effective"); // 배포 명령 0-3: 회원은 약관·개인정보를 가입 동의로 채운 값(effective)
     expect(checkout).toContain("리포트 이용권 1장 사용");
     expect(checkout).toContain("ticketShopEnabled && !ticketPending ? <button");
   });

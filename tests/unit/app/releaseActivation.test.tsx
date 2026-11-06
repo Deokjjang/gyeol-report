@@ -91,7 +91,7 @@ describe("release gate combinations and real checkout route", () => {
   });
   it("production checkout presentation uses public session and the existing launcher, not dev mocks", () => {
     const source = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
-    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, consents, undefined");
+    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, effective, undefined");
     const html = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled onPublishing={() => {}} onError={() => {}} />);
     // SSR cannot know the session yet: do not expose a checkout until verified.
     expect(html).toContain("로그인 상태를 확인하고 있습니다."); expect(html).not.toContain("결제하기"); expect(html).not.toContain("모의 결제");

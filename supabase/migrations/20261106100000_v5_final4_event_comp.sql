@@ -3,7 +3,8 @@
 -- 기존 행은 바꾸지 않는다(함수 본문 한 곳 패치 + 새 표 + 새 함수). 다시 실행해도 된다(패치는 이미 들어가 있으면 건너뛴다).
 --  1) 1+1 이벤트 계정 상한(maxPerAccount)은 이벤트 이용권(kind='event')만 센다. 보상 이용권(kind='comp')이 같은 표에 있어 상한을 먹던 결함.
 --  2) 보상 이용권 캠페인: 캠페인 id + 계정 기준 멱등 지급(같은 캠페인을 다시 실행해도 두 번 주지 않는다).
---     등급 A(지정 계정)·B(기준 시각 전에 가입한 계정 − A − 제외 목록). 장마다 내가 쓰기/선물 링크(이벤트 이용권과 같은 gift_rewards 행, kind='comp').
+--     등급 A(지정 계정)·B(기준 시각 전에 로그인한 모든 계정(auth.users, 익명·삭제 계정 제외) − A − 제외 목록. 가입 동의를 마치지 않은 계정도 포함 —
+--     배포 명령 0-4). 장마다 내가 쓰기/선물 링크(이벤트 이용권과 같은 gift_rewards 행, kind='comp'). 가입을 마치기 전에는 서재·팝업이 열리지 않고, 마치면 보인다.
 --     roster(명단만, 지급 없음) → run(명단을 다시 계산해 B 인원이 기대값과 같을 때만 한 트랜잭션으로 지급).
 --  3) 팝업 읽기(popup): 안 쓴 보상 이용권이 있는 회원의 등급·장수·만료일. 지급·만료 처리 같은 부수 효과 없음.
 -- 되돌리기: drop function public.ops_comp_campaign(text,jsonb); (표 comp_campaign_grants는 지급 기록이라 남긴다)
@@ -75,19 +76,23 @@ begin
   end if;
 
   if p_action = 'roster' then
-    -- 명단만(지급 없음). A: 지정 계정. B: 기준 시각 전에 가입(가입 동의 완료 = account_profiles)한 계정 − A − 제외 목록.
+    -- 명단만(지급 없음). A: 지정 계정. B: 기준 시각 전에 로그인한 계정(auth.users.created_at, 익명·삭제 계정 제외) − A − 제외 목록.
+    -- signedUp: 가입 동의를 마쳤는지(account_profiles) — 표시만, 대상 판단에는 쓰지 않는다.
     return jsonb_build_object('ok', true, 'campaignId', v_campaign, 'cutoff', v_cutoff,
-      'a', coalesce((select jsonb_agg(jsonb_build_object('userId', a.id, 'exists', u.id is not null, 'joinedAt', p.created_at,
+      'a', coalesce((select jsonb_agg(jsonb_build_object('userId', a.id, 'exists', u.id is not null, 'joinedAt', u.created_at, 'signedUp', p.user_id is not null,
           'email', coalesce(c.email, to_jsonb(u)->>'email'), 'granted', exists(select 1 from public.comp_campaign_grants g where g.campaign_id=v_campaign and g.user_id=a.id)) order by a.ord)
         from unnest(v_a) with ordinality a(id, ord) left join auth.users u on u.id=a.id left join public.account_profiles p on p.user_id=a.id left join public.account_contacts c on c.user_id=a.id), '[]'),
-      'b', coalesce((select jsonb_agg(jsonb_build_object('userId', p.user_id, 'joinedAt', p.created_at, 'email', coalesce(c.email, to_jsonb(u)->>'email'),
-          'granted', exists(select 1 from public.comp_campaign_grants g where g.campaign_id=v_campaign and g.user_id=p.user_id)) order by p.created_at, p.user_id)
-        from public.account_profiles p join auth.users u on u.id=p.user_id left join public.account_contacts c on c.user_id=p.user_id
-        where p.created_at < v_cutoff and not (p.user_id = any(v_a)) and not (p.user_id = any(v_ex))), '[]'),
-      'excluded', coalesce((select jsonb_agg(jsonb_build_object('userId', p.user_id, 'joinedAt', p.created_at, 'email', coalesce(c.email, to_jsonb(u)->>'email')) order by p.created_at)
-        from public.account_profiles p join auth.users u on u.id=p.user_id left join public.account_contacts c on c.user_id=p.user_id
-        where p.created_at < v_cutoff and p.user_id = any(v_ex) and not (p.user_id = any(v_a))), '[]'),
-      'joinedAfterCutoff', (select count(*) from public.account_profiles p where p.created_at >= v_cutoff));
+      'b', coalesce((select jsonb_agg(jsonb_build_object('userId', u.id, 'joinedAt', u.created_at, 'signedUp', p.user_id is not null, 'email', coalesce(c.email, to_jsonb(u)->>'email'),
+          'granted', exists(select 1 from public.comp_campaign_grants g where g.campaign_id=v_campaign and g.user_id=u.id)) order by u.created_at, u.id)
+        from auth.users u left join public.account_profiles p on p.user_id=u.id left join public.account_contacts c on c.user_id=u.id
+        where u.created_at < v_cutoff and coalesce((to_jsonb(u)->>'is_anonymous')::boolean, false) = false and (to_jsonb(u)->>'deleted_at') is null
+          and not (u.id = any(v_a)) and not (u.id = any(v_ex))), '[]'),
+      'excluded', coalesce((select jsonb_agg(jsonb_build_object('userId', u.id, 'joinedAt', u.created_at, 'signedUp', p.user_id is not null, 'email', coalesce(c.email, to_jsonb(u)->>'email')) order by u.created_at)
+        from auth.users u left join public.account_profiles p on p.user_id=u.id left join public.account_contacts c on c.user_id=u.id
+        where u.created_at < v_cutoff and u.id = any(v_ex) and not (u.id = any(v_a))), '[]'),
+      'skipped', (select count(*) from auth.users u where u.created_at < v_cutoff and not (u.id = any(v_a)) and not (u.id = any(v_ex))
+          and (coalesce((to_jsonb(u)->>'is_anonymous')::boolean, false) or (to_jsonb(u)->>'deleted_at') is not null)),
+      'joinedAfterCutoff', (select count(*) from auth.users u where u.created_at >= v_cutoff));
 
   elsif p_action = 'run' then
     -- 지급: 명단을 이 트랜잭션에서 다시 계산한다. A 계정이 모두 있고 B 인원이 기대값(expectB)과 같을 때만, 한 번에 지급한다.
@@ -99,7 +104,8 @@ begin
     if exists(select 1 from unnest(v_a) a(id) where not exists(select 1 from auth.users u where u.id=a.id)) then
       return jsonb_build_object('ok',false,'code','A_ACCOUNT_MISSING','missing',(select jsonb_agg(a.id) from unnest(v_a) a(id) where not exists(select 1 from auth.users u where u.id=a.id)));
     end if;
-    select count(*) into n_b from public.account_profiles p where p.created_at < v_cutoff and not (p.user_id = any(v_a)) and not (p.user_id = any(v_ex));
+    select count(*) into n_b from auth.users u where u.created_at < v_cutoff and coalesce((to_jsonb(u)->>'is_anonymous')::boolean, false) = false and (to_jsonb(u)->>'deleted_at') is null
+      and not (u.id = any(v_a)) and not (u.id = any(v_ex));
     if not (p_data ? 'expectB') then return jsonb_build_object('ok',false,'code','EXPECT_REQUIRED','actual',n_b); end if;
     if n_b <> (p_data->>'expectB')::integer then
       return jsonb_build_object('ok',false,'code','B_COUNT_MISMATCH','expected',(p_data->>'expectB')::integer,'actual',n_b);
@@ -108,7 +114,8 @@ begin
     for r in
       select a.id user_id, 'A'::text tier, a_qty qty from unnest(v_a) a(id)
       union all
-      select p.user_id, 'B', b_qty from public.account_profiles p where p.created_at < v_cutoff and not (p.user_id = any(v_a)) and not (p.user_id = any(v_ex))
+      select u.id, 'B', b_qty from auth.users u where u.created_at < v_cutoff and coalesce((to_jsonb(u)->>'is_anonymous')::boolean, false) = false and (to_jsonb(u)->>'deleted_at') is null
+        and not (u.id = any(v_a)) and not (u.id = any(v_ex))
     loop
       if exists(select 1 from public.comp_campaign_grants g where g.campaign_id=v_campaign and g.user_id=r.user_id) then n_old := n_old + 1; continue; end if;
       gids := '{}';

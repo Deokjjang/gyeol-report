@@ -1,4 +1,6 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { INTERIM_TARGET } from "../../../src/lib/ops/generation/policy";
 
 import {
   policyText,
@@ -52,13 +54,18 @@ describe("privacy policy (v5 최종3)", () => {
     expect(rows["회원 정보(로그인 식별자, 이름, 이메일, 휴대폰 번호, 카카오톡 채널 추가 상태, 혜택 알림 동의 여부)"]).toMatch(/^회원 탈퇴 시까지/);
   });
 
-  it("외부 서비스는 실제 쓰는 것만(OpenAI 없음), 국외 이전은 업체별 6칸", () => {
-    expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "Vercel Inc."]);
-    expect(copy).not.toMatch(/OpenAI/i);
+  it("외부 서비스는 실제 쓰는 것만(OpenAI는 임시본 레인 — 배포 명령 0-1), 국외 이전은 업체별 6칸", () => {
+    expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "OpenAI", "Vercel Inc."]);
     expect(privacyPolicyOverseasHead).toEqual(["이전받는 자 · 국가 · 연락처", "이전 항목", "이전 시기와 방법", "이용 목적", "보유·이용 기간", "거부 방법과 효과"]);
-    expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "Supabase Pte. Ltd.", "Vercel Inc."]);
+    expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "OpenAI, LLC", "Supabase Pte. Ltd.", "Vercel Inc."]);
     for (const row of privacyPolicyOverseasRows) { expect(row).toHaveLength(6); for (const cell of row) expect(cell.length).toBeGreaterThan(5); }
-    expect(privacyPolicyOverseasRows[1][0]).toContain("대한민국 서울");
+    expect(privacyPolicyOverseasRows[2][0]).toContain("대한민국 서울");
+    // OpenAI 행: 임시본 레인(코드가 실제로 OpenAI를 부르는 유일한 경로)·미국·입력 정보와 해석 근거·30일(남용 감시 기록, store: false).
+    const openai = privacyPolicyOverseasRows[1];
+    expect(INTERIM_TARGET.provider).toBe("openai");
+    expect(readFileSync("src/lib/llm/providers.ts", "utf8")).toMatch(/endpoint: "https:\/\/api\.openai\.com\/v1\/responses"[\s\S]{0,400}store: false/);
+    expect(openai[0]).toContain("미국"); expect(openai[1]).toContain("리포트 입력정보"); expect(openai[1]).toContain("계산된 명리 해석 근거");
+    expect(openai[2]).toContain("Anthropic 장애"); expect(openai[4]).toContain("최대 30일");
     // Meta 문구·버전은 승인 항목이라 그대로 싣는다.
     expect(copy).toContain(metaTrackingNotice);
     expect(copy).toContain(metaTransferNotice);

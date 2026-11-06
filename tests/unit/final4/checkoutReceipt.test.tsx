@@ -1,5 +1,5 @@
 /**
- * 최종 A 16: 발행 주문서 — 3,900원(가격 표), 이벤트 기간만 1+1 줄, 결제 동의 한 칸 「주문 내용과 환불 안내를 확인했어요」,
+ * 최종 A 16 → 배포 명령 0-3: 발행 주문서 — 3,900원(가격 표), 이벤트 기간만 1+1 줄, 환불 칸 하나 「주문 내용과 환불정책을 확인하고 동의해요」,
  * 맨 아래 작은 회색 두 줄(환불 · 예시 보기 / AI 작성), 동의 기록에 화면 판·문구·체크 시각.
  */
 import { renderToStaticMarkup } from "react-dom/server";
@@ -20,7 +20,7 @@ import { BookCheckout, GIFT_EVENT_RECEIPT_GUEST_LINE, GIFT_EVENT_RECEIPT_LINE } 
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { AI_WRITTEN_RECEIPT_LINE_KO, RECEIPT_REFUND_LINE_KO, RECEIPT_TICKET_REFUND_LINE_KO } from "../../../src/lib/legal/aiNotice";
-import { CHECKOUT_CONSENT_UI_VERSION, createCheckoutConsentAssertion, createCheckoutConsentEvidence, ORDER_REFUND_CONSENT_TEXT } from "../../../src/lib/payment/checkoutConsent";
+import { CHECKOUT_CONSENT_UI_VERSION, CHECKOUT_CONSENT_UI_VERSION_V1, consentLayoutMatchesBuyer, createCheckoutConsentAssertion, createCheckoutConsentEvidence, ORDER_REFUND_CONSENT_TEXT } from "../../../src/lib/payment/checkoutConsent";
 import { RECEIPT_CONSENTS } from "../../../src/app/dev/book-preview/model";
 import { isDevTossCheckoutLegalConfirmationComplete, emptyDevTossCheckoutLegalConfirmations } from "../../../src/components/payment/DevTossCheckoutLauncher";
 
@@ -47,20 +47,35 @@ describe("발행 주문서 (최종 A 16)", () => {
     expect(text(member)).toContain(GIFT_EVENT_RECEIPT_LINE);
     hooks.slots = []; expect(render({ giftEventProducts: ["career_money_study"] })).not.toContain("data-gift-event-line");
   });
-  it("결제 동의 칸 하나로 합침: 세 확인 칸이 사라지고 「주문 내용과 환불 안내를 확인했어요」 한 칸", () => {
+  it("비회원: 환불 칸 하나 「주문 내용과 환불정책을 확인하고 동의해요」 + 「이용약관·개인정보 동의」 + 만 14세", () => {
     const t = text(render());
+    expect(ORDER_REFUND_CONSENT_TEXT).toBe("주문 내용과 환불정책을 확인하고 동의해요");
     expect(t).toContain(`[필수] ${ORDER_REFUND_CONSENT_TEXT}`);
-    for (const gone of ["[필수] 입력 정보 확인", "[필수] 디지털 리포트 생성 시작", "[필수] 청약철회 제한"]) expect(t).not.toContain(gone);
-    expect(t).toContain("[필수] 이용약관·개인정보·환불정책 동의"); expect(t).toContain("[필수] 만 14세 이상");
+    for (const gone of ["[필수] 입력 정보 확인", "[필수] 디지털 리포트 생성 시작", "[필수] 청약철회 제한", "[필수] 환불정책 동의", "이용약관·개인정보·환불정책", "주문 내용과 환불 안내를 확인했어요"]) expect(t).not.toContain(gone);
+    expect(t).toContain("[필수] 이용약관·개인정보 동의"); expect(t).toContain("[필수] 만 14세 이상");
+    expect((render().match(/\[필수\][^<]*/g) ?? []).filter(l => l.includes("환불"))).toEqual([`[필수] ${ORDER_REFUND_CONSENT_TEXT}`]); // 환불이 들어간 필수 칸은 하나
     expect((render().match(/type="checkbox"/g) ?? []).length).toBe(4); // 전체 동의 + 3칸
   });
-  it("한 칸이 세 확인을 덮고, 세 칸 모두 체크해야 결제 가능", () => {
+  it("회원: 환불 칸 하나 + 만 14세(약관·개인정보는 가입 때 동의 — 주문서 칸 없음)", () => {
+    state.session = { status: "member", profile: "complete" } as AccountSession;
+    const html = render(), t = text(html);
+    expect(t).toContain(`[필수] ${ORDER_REFUND_CONSENT_TEXT}`); expect(t).toContain("[필수] 만 14세 이상");
+    for (const gone of ["[필수] 환불정책 동의", "[필수] 이용약관", "주문 내용과 환불 안내를 확인했어요"]) expect(t).not.toContain(gone);
+    expect((html.match(/\[필수\][^<]*/g) ?? []).filter(l => l.includes("환불"))).toEqual([`[필수] ${ORDER_REFUND_CONSENT_TEXT}`]);
+    expect((html.match(/type="checkbox"/g) ?? []).length).toBe(3); // 전체 동의 + 2칸
+  });
+  it("한 칸이 네 확인(입력·생성 시작·청약철회 제한·환불정책)을 덮고, 칸을 모두 체크해야 결제 가능", () => {
     const order = RECEIPT_CONSENTS.find(c => c.id === "orderAndRefund")!;
-    expect(order.covers).toEqual(["inputAccuracy", "digitalReportStart", "refundRestriction"]);
+    expect(order.covers).toEqual(["inputAccuracy", "digitalReportStart", "refundRestriction", "refundPolicyAgreement"]);
     const snap = { displayName: "가격검사", birthDate: "1990-01-01", calendarType: "SOLAR", timezone: "Asia/Seoul", birthTimeUnknown: true, birthTime: "", approximateBirthTimeSlot: "", gender: "FEMALE", mbtiType: "" } as never;
     const all = Object.fromEntries(RECEIPT_CONSENTS.filter(c => c.id !== "minorLegalRepresentative").flatMap(c => c.covers.map(id => [id, true])));
-    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { ...emptyDevTossCheckoutLegalConfirmations, ...all }, new Date("2026-11-08T00:00:00Z"))).toBe(true);
-    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { ...emptyDevTossCheckoutLegalConfirmations, ...all, refundRestriction: false }, new Date("2026-11-08T00:00:00Z"))).toBe(false);
+    const at = new Date("2026-11-08T00:00:00Z"), base = { ...emptyDevTossCheckoutLegalConfirmations, refundPolicyAgreement: false };
+    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { ...base, ...all }, at)).toBe(true);
+    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { ...base, ...all, refundRestriction: false }, at)).toBe(false);
+    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { ...base, ...all, refundPolicyAgreement: false }, at)).toBe(false);
+    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { ...base, ...all, policyAgreement: false }, at)).toBe(false); // 비회원 약관 칸
+    // 예전 화면(환불정책 칸 따로 없음)은 policyAgreement가 덮는다.
+    expect(isDevTossCheckoutLegalConfirmationComplete(snap, { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, policyAgreement: true, age14OrOlder: true, minorLegalRepresentative: false }, at)).toBe(true);
   });
   it("맨 아래 작은 회색 두 줄(굵은 글씨 없음), 예시 보기는 /example 텍스트 링크", () => {
     const html = render();
@@ -68,7 +83,7 @@ describe("발행 주문서 (최종 A 16)", () => {
     const tail = html.slice(html.indexOf("결제하기"));
     expect(text(tail)).toContain(`${RECEIPT_REFUND_LINE_KO} · 예시 보기`);
     expect(text(tail)).toContain(AI_WRITTEN_RECEIPT_LINE_KO);
-    expect(RECEIPT_REFUND_LINE_KO).toBe("결제하면 바로 생성이 시작돼 단순 변심 환불은 어려워요");
+    expect(RECEIPT_REFUND_LINE_KO).toBe("결제하면 바로 생성이 시작돼 단순 변심 환불은 되지 않아요");
     expect(AI_WRITTEN_RECEIPT_LINE_KO).toBe("명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요");
     expect(tail).toMatch(/<a href="\/example"[^>]*>예시 보기<\/a>/);
     hooks.slots = []; expect(render({ v5Book: false })).not.toContain(AI_WRITTEN_RECEIPT_LINE_KO);
@@ -85,25 +100,55 @@ describe("발행 주문서 (최종 A 16)", () => {
 });
 
 describe("동의 기록(증명용) ui", () => {
-  const confirmed = { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, policyAgreement: true, age14OrOlder: true, minorLegalRepresentative: false };
+  const confirmed = { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, policyAgreement: true, refundPolicyAgreement: true, age14OrOlder: true, minorLegalRepresentative: false };
   const at = new Date("2026-11-08T03:00:00Z");
-  it("화면 판·칸 문구(서버 상수)·덮는 확인·체크 시각을 남긴다", () => {
-    const sent = createCheckoutConsentAssertion(confirmed, undefined, { version: CHECKOUT_CONSENT_UI_VERSION, policyText: "환불정책 동의", checkedAt: "2026-11-08T02:59:10.000Z" });
+  const SEVEN = { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, termsAccepted: true, privacyAccepted: true, refundAccepted: true, age14OrOlder: true, minorLegalRepresentative: false };
+  it("비회원 배치: 일곱 확인 모두 기록 + 칸 문구(서버 상수)·덮는 확인·체크 시각", () => {
+    const sent = createCheckoutConsentAssertion(confirmed, undefined, { version: CHECKOUT_CONSENT_UI_VERSION, layout: "guest", checkedAt: "2026-11-08T02:59:10.000Z" });
     const ev = createCheckoutConsentEvidence(JSON.parse(JSON.stringify(sent)), "1990-01-01", at)!;
-    expect(ev.assertions).toMatchObject({ inputAccuracy: true, digitalReportStart: true, refundRestriction: true });
-    expect(ev.ui).toEqual({ version: "final4-order-refund-v1", checkedAt: "2026-11-08T02:59:10.000Z", boxes: [
+    expect(ev.assertions).toEqual(SEVEN);
+    expect(ev.ui).toEqual({ version: "final4-order-refund-v2", layout: "guest", checkedAt: "2026-11-08T02:59:10.000Z", boxes: [
+      { text: "주문 내용과 환불정책을 확인하고 동의해요", covers: ["inputAccuracy", "digitalReportStart", "refundRestriction", "refundAccepted"] },
+      { text: "이용약관·개인정보 동의", covers: ["termsAccepted", "privacyAccepted"] },
+      { text: "만 14세 이상", covers: ["age14OrOlder"] }] });
+    // 기록이 덮는 확인 = 일곱 확인 전부(빠진 것 없음).
+    expect(new Set(ev.ui!.boxes.flatMap(b => b.covers))).toEqual(new Set(Object.keys(SEVEN).filter(k => k !== "minorLegalRepresentative")));
+  });
+  it("회원 배치: 약관·개인정보는 가입 동의(via signup)로, 일곱 확인 그대로. 결제 준비는 실제 회원일 때만 받는다", () => {
+    const ev = createCheckoutConsentEvidence(createCheckoutConsentAssertion(confirmed, undefined, { version: CHECKOUT_CONSENT_UI_VERSION, layout: "member" }), "1990-01-01", at)!;
+    expect(ev.assertions).toEqual(SEVEN);
+    expect(ev.ui).toMatchObject({ layout: "member", checkedAt: null, boxes: [
+      { text: "주문 내용과 환불정책을 확인하고 동의해요", covers: ["inputAccuracy", "digitalReportStart", "refundRestriction", "refundAccepted"] },
+      { text: "회원 가입 때 동의한 이용약관·개인정보처리방침", covers: ["termsAccepted", "privacyAccepted"], via: "signup" },
+      { text: "만 14세 이상", covers: ["age14OrOlder"] }] });
+    expect(consentLayoutMatchesBuyer(ev, true)).toBe(true);
+    expect(consentLayoutMatchesBuyer(ev, false)).toBe(false);
+    const guest = createCheckoutConsentEvidence(createCheckoutConsentAssertion(confirmed, undefined, { version: CHECKOUT_CONSENT_UI_VERSION, layout: "guest" }), "1990-01-01", at)!;
+    expect([consentLayoutMatchesBuyer(guest, true), consentLayoutMatchesBuyer(guest, false)]).toEqual([true, true]);
+  });
+  it("미성년자는 법정대리인 칸까지 기록", () => {
+    const ev = createCheckoutConsentEvidence(createCheckoutConsentAssertion({ ...confirmed, minorLegalRepresentative: true }, undefined, { version: CHECKOUT_CONSENT_UI_VERSION, layout: "guest" }), "2010-01-01", at)!;
+    expect(ev.ageBand).toBe("minor"); expect(ev.assertions.minorLegalRepresentative).toBe(true);
+    expect(ev.ui!.boxes.at(-1)).toEqual({ text: "미성년자 법정대리인 동의", covers: ["minorLegalRepresentative"] });
+  });
+  it("배포 직전 판(v1) 화면에서 온 주문도 그 화면 그대로 기록, 모르는 판·배치는 ui 없이", () => {
+    const v1 = createCheckoutConsentEvidence({ ...createCheckoutConsentAssertion(confirmed), ui: { version: CHECKOUT_CONSENT_UI_VERSION_V1, policyText: "환불정책 동의", checkedAt: "2026-11-08T02:59:10.000Z" } }, "1990-01-01", at)!;
+    expect(v1.ui).toEqual({ version: "final4-order-refund-v1", checkedAt: "2026-11-08T02:59:10.000Z", boxes: [
       { text: "주문 내용과 환불 안내를 확인했어요", covers: ["inputAccuracy", "digitalReportStart", "refundRestriction"] },
       { text: "환불정책 동의", covers: ["termsAccepted", "privacyAccepted", "refundAccepted"] },
       { text: "만 14세 이상", covers: ["age14OrOlder"] }] });
-  });
-  it("모르는 판은 ui 없이(예전 화면), 이상한 문구·시각은 서버 값으로", () => {
     const old = createCheckoutConsentEvidence(createCheckoutConsentAssertion(confirmed), "1990-01-01", at)!;
     expect(old).not.toHaveProperty("ui");
     expect(createCheckoutConsentEvidence({ ...createCheckoutConsentAssertion(confirmed), ui: { version: "x" } }, "1990-01-01", at)).not.toHaveProperty("ui");
-    const odd = createCheckoutConsentEvidence({ ...createCheckoutConsentAssertion(confirmed), ui: { version: CHECKOUT_CONSENT_UI_VERSION, policyText: "<script>", checkedAt: "2026-11-01T00:00:00.000Z" } }, "1990-01-01", at)!;
-    expect(odd.ui!.boxes[1].text).toBe("이용약관·개인정보·환불정책 동의"); expect(odd.ui!.checkedAt).toBeNull();
+    expect(createCheckoutConsentEvidence({ ...createCheckoutConsentAssertion(confirmed), ui: { version: CHECKOUT_CONSENT_UI_VERSION, layout: "<script>" } }, "1990-01-01", at)).not.toHaveProperty("ui");
+    const odd = createCheckoutConsentEvidence({ ...createCheckoutConsentAssertion(confirmed), ui: { version: CHECKOUT_CONSENT_UI_VERSION, layout: "guest", checkedAt: "2026-11-01T00:00:00.000Z" } }, "1990-01-01", at)!;
+    expect(odd.ui!.checkedAt).toBeNull();
   });
-  it("한 칸 체크 = 세 확인 모두 참일 때만 기록(하나라도 빠지면 거절, 예전과 같다)", () => {
+  it("한 칸 체크 = 네 확인 모두 참일 때만 기록(하나라도 빠지면 거절)", () => {
     expect(createCheckoutConsentEvidence(createCheckoutConsentAssertion({ ...confirmed, refundRestriction: false }), "1990-01-01", at)).toBeNull();
+    expect(createCheckoutConsentEvidence(createCheckoutConsentAssertion({ ...confirmed, refundPolicyAgreement: false }), "1990-01-01", at)).toBeNull();
+    // 예전 화면 값(환불정책 칸 따로 없음)은 policyAgreement가 refundAccepted까지 덮는다.
+    const legacy = { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, policyAgreement: true, age14OrOlder: true, minorLegalRepresentative: false };
+    expect(createCheckoutConsentAssertion(legacy).assertions.refundAccepted).toBe(true);
   });
 });

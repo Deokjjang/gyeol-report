@@ -14,7 +14,7 @@
 2. **migration(1-1절 표 순서)**: **0번(열람 격리 무동작)을 가장 먼저** → [R1] 다시(`read_quarantine_disabled=true`) → 1 → 2 → 3 → 4(가격 변경으로 필수) → 5 → 6(고객 Book 기한 변경 — 대상 수 확인 후) → 7 → 8(최종 A 이벤트·보상) → 9(최종 A 원문 정리).
 3. **env(Production)** — 값은 이 문서에 적지 않는다.
    - `WRITER_V5_PRODUCTS` = `saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility`(공백 없이, 정확히 이 값).
-   - `GIFT_EVENT_ENABLED` = `1`. 기간은 코드 기본값(2026-11-07 00:00:00 ~ 11-16 23:59:59 KST). 바꿀 때만 `GIFT_EVENT_START`·`GIFT_EVENT_END`.
+   - `GIFT_EVENT_ENABLED` = `1`. 기간은 코드 기본값(**2026-11-06 09:00:00** ~ 11-16 23:59:59 KST, 배포 명령 0-8). 바꿀 때만 `GIFT_EVENT_START`·`GIFT_EVENT_END`.
    - 보상: `COMP_ENABLED`는 **넣지 않는다**(지급은 4번 도구로만). `ADMIN_USER_IDS`(관리자 화면·보상 명단 제외용)는 있어야 한다.
    - `POLICY_EFFECTIVE_DATE`: env가 아니라 코드 상수(`src/lib/legal/policyVersions.ts`) — **배포 커밋에서 배포일로 채운다**(문서 버전 `2026-11-05.1`은 그대로).
    - OpenAI env(`OPENAI_API_KEY`·`OPENAI_REPORT_*`)는 **그대로 둔다**(지시). 참고: `OPENAI_API_KEY`가 있으면 Sonnet이 2시간 넘게 실패한 주문에 OpenAI 임시본 레인이 돈다(처리방침 위탁 표에 OpenAI 없음 — legal-review 확인 항목).
@@ -27,10 +27,11 @@
 
 ```bash
 # A(2장): f6122631-f85f-4144-ba5a-53c9af251e92 · 35c222b2-8e88-45df-839b-581ab1340e13 · 67db6b1f-e633-4b47-bf14-1ceea9dba6e7 (도구 기본값)
-# B(1장): --cutoff(배포 시각, KST) 전에 가입한 계정 − A − ADMIN_USER_IDS − 시험 계정 목록(--exclude-file, 한 줄에 하나)
+# B(1장): --cutoff(배포 완료 시각, KST) 전에 로그인한 모든 계정(auth.users, 가입 동의 미완료 포함·익명/삭제 제외) − A − 덕짱님 계정(도구 기본값) − ADMIN_USER_IDS
+#        시험 계정 목록은 비워 둔다(운영에 시험 계정 없음, 배포 명령 0-4). 기대 36(이 중 dea018f8-…은 가입 동의 미완료).
 # 1) dry-run — 지급 0, 명단·개수만. B가 36이 아니면 멈추고 차이 명단 출력
 SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… ADMIN_USER_IDS=… \
-  pnpm exec tsx tools/final4/comp-campaign.ts --remote --campaign v5-relaunch-2026-11 --cutoff "<배포 시각 KST>" --exclude-file <시험 계정 목록> --expect-b 36
+  pnpm exec tsx tools/final4/comp-campaign.ts --remote --campaign v5-relaunch-2026-11 --cutoff "<배포 완료 시각 KST>" --expect-b 36
 # 2) 실행 — 같은 인자 + 확인 플래그. 같은 캠페인 id로 다시 실행해도 이미 받은 계정은 건너뛴다(멱등)
 …같은 명령… --execute --confirm v5-relaunch-2026-11
 ```
@@ -47,8 +48,8 @@ SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… ADMIN_USER_IDS=… \
 | 예시 페이지 | `/example` 로그인 없이 | 「예시 · 가상의 인물」, 표지·1·2장·끝 쪽 [내 리포트 만들기], og 제목·이미지(`/example/og`) |
 | 팝업 ① | 로그아웃 상태 메인·상품 화면(이벤트 기간) | ① 하나, 「오늘 하루 보지 않기」 동작, 읽는 화면(/reports, /r)에는 없음 |
 | 팝업 ②③ | B 시험 계정·A 계정(지급 뒤) 로그인 | ②(이벤트 기간이면 1+1 줄), ③(이용권 2장·만료일 = 발급일+30일) |
-| 이벤트 타이머 | 메인 | 시작 전 「11월 7일 00시 시작」+카운트다운, 기간 중 종료까지, 끝나면 사라짐 |
-| 주문서 | 상품 화면 → 주문서 | 3,900원, 기간 중 1+1 줄, 동의 「주문 내용과 환불 안내를 확인했어요」 한 칸, 아래 작은 회색 두 줄 |
+| 이벤트 타이머 | 메인 | 시작 전 「11월 6일 09시 시작」+카운트다운, 기간 중(11-06 09:00~) 종료까지, 끝나면 사라짐 |
+| 주문서 | 상품 화면 → 주문서 | 3,900원, 기간 중 1+1 줄, 환불 칸 「주문 내용과 환불정책을 확인하고 동의해요」 하나(회원: + 만 14세 / 비회원: + 이용약관·개인정보 동의 + 만 14세), 아래 작은 회색 두 줄(「… 단순 변심 환불은 되지 않아요 · 예시 보기」) |
 | 과거 Book 세 계열 | v1·1.0·v2 / v4 / v5 Book을 주인 계정으로 | 배포 전과 같은 화면(재동의 전에도 열림) |
 | `/dev` | `curl -sI https://www.gyeolreport.com/dev/v5-login` | 404 |
 | 아이폰 Safari 미리보기 | 카카오톡·메시지에 `https://gyeolreport.com/`, `/example` 붙여 넣기 | 새 og 이미지(1200×630) |
@@ -145,7 +146,7 @@ select pg_get_functiondef('public.paid_report_reliability(text,jsonb)'::regproce
 | `KAKAO_ADMIN_KEY` | 탈퇴 때 카카오 연결 끊기 | 카카오 디벨로퍼스 앱 어드민 키(덕짱님) | 필수(새로) |
 | `COMP_ENABLED` | 서재를 열 때 보상 이용권을 늦게 지급(`ops_comp sync`)하는 옛 방식. **최종 A: 넣지 않는다** — 보상은 캠페인 도구(`tools/final4/comp-campaign.ts`, 캠페인 id 멱등)로만 지급한다(4-A절) | — | **넣지 않음** |
 | `COMP_A_QTY` · `COMP_B_QTY` · `COMP_PRODUCTS` | 보상 장수·상품(기본 A 2장, B 1장, 종합·커리어·연애·궁합). 유효일은 30일 고정(최종3: `COMP_A_VALID_DAYS`·`COMP_B_VALID_DAYS`는 더 이상 읽지 않고, SQL도 30일을 넘기지 않는다). 예전 `COMP_A_SELF_QTY`·`COMP_A_GIFT_QTY`도 읽지 않는다 | 기본값이면 넣지 않음 | 선택(새로) |
-| `GIFT_EVENT_ENABLED` · `GIFT_EVENT_START` · `GIFT_EVENT_END` · `GIFT_EVENT_MAX_PER_ACCOUNT` · `GIFT_EVENT_BONUS_MAX` · `GIFT_EVENT_PRODUCTS` | 1+1 이벤트(결제 1건마다 이용권 1장, 계정당 2회, 30일, 선물 1회, 친구 첫 결제 보너스). **최종 A: 기간 기본값이 코드에 있다(2026-11-07 00:00:00 ~ 11-16 23:59:59 KST, 서버 시각)**. 시각에 오프셋이 없으면 KST로 읽고, 끝이 `:59`초면 그 초까지 포함. 메인 배너·타이머·팝업 ①·주문서 1+1 줄이 같은 설정을 읽는다 | `GIFT_EVENT_ENABLED=1`(필수). 기간을 바꿀 때만 `GIFT_EVENT_START`·`GIFT_EVENT_END`(예 `2026-11-16 23:59:59`) | **필수: `GIFT_EVENT_ENABLED=1`** |
+| `GIFT_EVENT_ENABLED` · `GIFT_EVENT_START` · `GIFT_EVENT_END` · `GIFT_EVENT_MAX_PER_ACCOUNT` · `GIFT_EVENT_BONUS_MAX` · `GIFT_EVENT_PRODUCTS` | 1+1 이벤트(결제 1건마다 이용권 1장, 계정당 2회, 30일, 선물 1회, 친구 첫 결제 보너스). **기간 기본값이 코드에 있다(2026-11-06 09:00:00 ~ 11-16 23:59:59 KST, 서버 시각 — 배포 명령 0-8에서 시작을 당김)**. 시각에 오프셋이 없으면 KST로 읽고, 끝이 `:59`초면 그 초까지 포함. 메인 배너·타이머·팝업 ①·주문서 1+1 줄이 같은 설정을 읽는다 | `GIFT_EVENT_ENABLED=1`(필수). 기간을 바꿀 때만 `GIFT_EVENT_START`·`GIFT_EVENT_END`(예 `2026-11-16 23:59:59`) | **필수: `GIFT_EVENT_ENABLED=1`** |
 | `FORTUNE_SALES_OPEN` | `1`이면 대운·세운 판매 재개(기본 닫힘). 12월 1일 | 덕짱님 결정 | 선택(새로) |
 | `NEXT_PUBLIC_META_PIXEL_ID` · `META_MEASUREMENT_APPROVED` · `META_CONVERSIONS_ACCESS_TOKEN` · `META_GRAPH_API_VERSION` | Meta 픽셀(켜져 있을 때만 푸터 '광고 설정') | 기존 값 그대로 | 기존 |
 | `OPS_MOCK_WRITER` · `OPS_FORCE_ANTHROPIC_DOWN` · `LLM_BUDGET_SCOPE` · `LLM_BUDGET_RUN` · `LLM_BUDGET_RUN_ID` · `LLM_BUDGET_STAGE` · `PAID_WORKER_MAX_RSS_MB` · `TICKET_WORKER_MAX_RSS_MB` | 로컬 개발 전용(코드가 `NODE_ENV=development`에서만 읽음) | — | **Production에 넣지 않음** |

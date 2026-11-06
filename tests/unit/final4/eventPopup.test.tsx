@@ -19,7 +19,7 @@ import { ACCOUNT_POLICY_VERSIONS } from "@/lib/account/policy";
 import type { AccountPort } from "@/lib/account/handler";
 import type { PopupState } from "@/lib/ops/comp/popupSelect";
 
-const event = (phase: "off" | "before" | "during" | "after", serverNow = "2026-11-10T00:00:00.000Z") => ({ phase, serverNow, startsAt: "2026-11-06T15:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, validDays: 30 });
+const event = (phase: "off" | "before" | "during" | "after", serverNow = "2026-11-10T00:00:00.000Z") => ({ phase, serverNow, startsAt: "2026-11-06T00:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", maxPerAccount: 2, validDays: 30 });
 const at = () => Date.parse("2026-11-10T00:00:00.000Z");
 const html = (id: "event-1plus1" | "comp-b" | "comp-a", state: PopupState) => renderToStaticMarkup(<EventPopup id={id} state={state} clock={at} onDone={() => undefined} />);
 const plain = (h: string) => h.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
@@ -27,7 +27,7 @@ const plain = (h: string) => h.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 describe("팝업 ①②③", () => {
   it("① 1+1: 문구 그대로, 남은 시간, 예시·리포트 고르기, 보상 이야기 없음", () => {
     const h = html("event-1plus1", { member: false, comp: null, event: event("during") }), t = plain(h);
-    for (const line of ["11월 7일 – 11월 16일", "한 권을 펼치면, 한 권이 더", "리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.",
+    for (const line of ["11월 6일 – 11월 16일", "한 권을 펼치면, 한 권이 더", "리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.",
       "남은 시간 6일 15:00:00", "한 계정에 두 번까지 · 이용권은 받은 날부터 30일", "예시 먼저 보기", "리포트 고르기", "오늘 하루 보지 않기"]) expect(t).toContain(line);
     expect(h).toContain('href="/example"');
     expect(t).not.toMatch(/보상|사과/);
@@ -80,6 +80,19 @@ describe("팝업 서버 GET /auth/event-popup", () => {
     expect((await expired.json()).comp).toBeNull();
     expect(calls).toEqual(["popup", "popup", "popup"]);
   });
+  it("배포 명령 0-4: 가입 동의를 마치지 않은 계정(B 지급 대상)은 팝업 ②가 안 뜨고, 가입을 마치면 같은 지급 기록으로 ②가 뜬다", async () => {
+    const calls: string[] = [];
+    const store = { call: async (a: string) => { calls.push(a); return { ok: true, tier: "B", quantity: 1, unused: 1, expiresAt: "2026-12-06T03:00:00Z" }; } };
+    const pending = { currentUser: async () => user, read: async () => ({ profile: null, consents: [] }), finish: (r: unknown) => r } as unknown as AccountPort;
+    expect(await (await handleEventPopup(req(), pending, store, env, now)).json()).toMatchObject({ ok: true, member: false, comp: null, event: { phase: "during" } });
+    expect(calls).toEqual([]); // 가입 전에는 보상 기록을 읽지도 않는다(팝업 ①만 — 기간 중)
+    const done = await handleEventPopup(req(), port(true), store, env, now);
+    expect(await done.json()).toMatchObject({ member: true, comp: { tier: "B", unused: 1, expiresAt: "2026-12-06T03:00:00.000Z" } });
+    expect(calls).toEqual(["popup"]);
+    const { selectPopup } = await import("@/lib/ops/comp/popupSelect");
+    expect(selectPopup({ member: true, comp: { tier: "B", quantity: 1, unused: 1, expiresAt: "2026-12-06T03:00:00.000Z" }, event: null }, "/", now)).toBe("comp-b");
+    expect(selectPopup({ member: false, comp: null, event: { phase: "during", serverNow: "", startsAt: "", endsAt: "", maxPerAccount: 2, validDays: 30 } }, "/", now)).toBe("event-1plus1");
+  });
   it("다른 출처는 403, GET만", async () => {
     expect((await handleEventPopup(req("https://evil.example"), port(true), { call: async () => ({ ok: true }) }, env, now)).status).toBe(403);
     expect((await handleEventPopup(new NextRequest("https://www.gyeolreport.com/auth/event-popup", { method: "POST" }), port(true), { call: async () => ({ ok: true }) }, env, now)).status).toBe(405);
@@ -98,13 +111,13 @@ describe("메인 배너·타이머(서버 시각)", () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(payload))));
   });
   afterEach(() => { cleanup?.(); cleanup = undefined; hooks.mock = false; vi.useRealTimers(); vi.unstubAllGlobals(); });
-  it("시작 전: 「11월 7일 00시 시작」 + 시작까지, 시작 시각이 지나면 종료까지로 바뀐다", async () => {
-    payload = event("before", "2026-11-06T14:59:58.000Z"); await mount();
+  it("시작 전: 「11월 6일 09시 시작」 + 시작까지, 시작 시각이 지나면 종료까지로 바뀐다", async () => {
+    payload = event("before", "2026-11-05T23:59:58.000Z"); await mount();
     const t = text(render());
-    expect(t).toContain("11월 7일 00시 시작"); expect(t).toContain("시작까지"); expect(t).toContain("0일00시간00분02초");
+    expect(t).toContain("11월 6일 09시 시작"); expect(t).toContain("시작까지"); expect(t).toContain("0일00시간00분02초");
     await vi.advanceTimersByTimeAsync(3000);
     const t2 = text(render());
-    expect(t2).toContain("종료까지"); expect(t2).toContain("9일23시간59분59초"); expect(t2).toContain("한 계정에 두 번까지");
+    expect(t2).toContain("종료까지"); expect(t2).toContain("10일14시간59분59초"); expect(t2).toContain("한 계정에 두 번까지");
   });
   it("진행 중 → 끝나면 자동으로 사라진다, 꺼짐·끝은 처음부터 없음", async () => {
     payload = event("during", "2026-11-16T14:59:59.000Z"); await mount();

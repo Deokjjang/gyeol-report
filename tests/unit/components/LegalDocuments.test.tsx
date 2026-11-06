@@ -77,7 +77,8 @@ describe("legal document rendering", () => {
     expect(html.match(/data-policy-rows/g)).toHaveLength(1);
     expect(html.match(/<h2\b/g)).toHaveLength(privacy.privacyPolicySections.length + 1);
     expect(content).toContain("광고 성과 측정 (선택)");
-    expect(content).not.toMatch(/OpenAI/i);
+    // 배포 명령 0-1: OpenAI는 임시본 레인(Anthropic 장기 장애)이라 위탁·국외 이전 표에만 나온다.
+    expect(content).toContain("OpenAI, LLC · 미국"); expect(content).toContain("Anthropic이 오래 장애일 때 임시 리포트 문장 작성(AI)");
     expect(html).not.toContain("deterministic");
   });
 

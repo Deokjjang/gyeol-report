@@ -30,8 +30,9 @@ const int = (v: string | undefined, d: number, max: number) => { const n = Numbe
  * 선물은 처음 발급 기한을 그대로 넘긴다. 이미 발급한 이용권은 발급 때 기한 그대로. SQL(20261105120000_v5_final3_tickets_reading.sql)도 30일을 넘기지 않는다.
  */
 export const TICKET_VALID_DAYS = 30;
-/** 1+1 이벤트 기본 기간(최종 A 11): 2026-11-07 00:00:00 ~ 2026-11-16 23:59:59 KST. GIFT_EVENT_START·END env로 바꾼다. */
-export const GIFT_EVENT_DEFAULT_START = "2026-11-07T00:00:00+09:00";
+/** 1+1 이벤트 기본 기간(최종 A 11, 배포 명령 0-8에서 시작을 당김): 2026-11-06 09:00:00 ~ 2026-11-16 23:59:59 KST. GIFT_EVENT_START·END env로 바꾼다.
+ * SQL(ops_gift issue·pending_orders)은 기간을 갖고 있지 않고 이 값(giftEventConfig의 start·end)을 받아 쓴다 — tests/unit/final4/eventConfig.test.ts가 고정. */
+export const GIFT_EVENT_DEFAULT_START = "2026-11-06T09:00:00+09:00";
 export const GIFT_EVENT_DEFAULT_END = "2026-11-16T23:59:59+09:00";
 const KST_TIME = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?(?:\.\d+)?)?\s*(Z|[+-]\d{2}:?\d{2})?$/;
 /**

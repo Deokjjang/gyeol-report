@@ -37,7 +37,7 @@ export function OrderRequestForm({ orderCode, guest, endpoint = "/auth/orders" }
     {open ? <div className={s.form} role="group" aria-label={`${orderCode ?? "이 주문"} 문의`}>
       <label>사유<select value={reason} onChange={e => setReason(e.target.value)}><option value="">고르기</option>{REQUEST_REASONS.map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select></label>
       <label>메모(선택)<textarea maxLength={1000} value={memo} onChange={e => setMemo(e.target.value)} placeholder="계산이 이상한 부분, 열리지 않는 화면 등을 적어 주세요." /></label>
-      <p className={s.hint}>디지털 콘텐츠라 단순 변심 환불은 제한돼요. 계산 오류가 확인되면 다시 만들어 드리거나 환불해 드려요.</p>
+      <p className={s.hint}>디지털 콘텐츠라 단순 변심 환불은 되지 않아요. 계산 오류가 확인되면 다시 만들어 드리거나 환불해 드려요.</p>
       <div className={s.actions}><button type="button" className={`${s.button} ${s.dark}`} disabled={!reason || busy} onClick={() => void submit()}>요청 보내기</button><button type="button" className={s.button} onClick={() => setOpen(false)}>닫기</button></div>
     </div> : null}
     {message ? <p className={s.message} role="status">{message}</p> : null}

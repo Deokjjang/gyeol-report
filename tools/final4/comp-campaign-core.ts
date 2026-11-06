@@ -1,6 +1,7 @@
 /**
  * 보상 이용권 캠페인(최종 A 12) — 명단 확인(dry-run)과 지급의 공용 부분. 저장소 호출(call)은 밖에서 넣는다(로컬 Supabase·PGlite 시험).
- * 규칙: A = 지정 계정(기본 3개, 2장씩), B = 기준 시각(cutoff, 배포 시각) 전에 가입한 계정 − A − 관리자(ADMIN_USER_IDS) − 시험 계정(목록) (1장씩).
+ * 규칙: A = 지정 계정(기본 3개, 2장씩), B = 기준 시각(cutoff, 배포 완료 시각) 전에 로그인한 모든 계정(auth.users, 가입 동의 미완료 포함·익명/삭제 제외)
+ *   − A − 덕짱님 계정 − 관리자(ADMIN_USER_IDS) − 시험 계정(목록) (1장씩). 배포 명령 0-4.
  * 캠페인 id + 계정 = 한 번(다시 실행해도 두 번 주지 않음). B 인원이 기대값과 다르면 지급하지 않는다. 실행은 --execute --confirm <캠페인 id>.
  * 이용권: 받은 날부터 30일, 장마다 내가 쓰기 또는 선물 1회(선물해도 기한 그대로), 이용권으로 만든 리포트는 환불 없음(오류 시 다시 만들어 드림).
  */
@@ -9,13 +10,15 @@ import { parseEventInstant } from "../../src/lib/ops/config";
 export const DEFAULT_CAMPAIGN = "v5-relaunch-2026-11";
 export const DEFAULT_A_USERS = ["f6122631-f85f-4144-ba5a-53c9af251e92", "35c222b2-8e88-45df-839b-581ab1340e13", "67db6b1f-e633-4b47-bf14-1ceea9dba6e7"] as const;
 export const DEFAULT_EXPECT_B = 36;
+/** 늘 빼는 계정: 덕짱님 계정(배포 명령 0-4). ADMIN_USER_IDS는 도구가 env에서 따로 뺀다. */
+export const DEFAULT_OWNER_EXCLUDE = ["3b35f970-2cfa-4520-b4fc-4b75c7aa69c6"] as const;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export type Call = (action: string, data: Record<string, unknown>) => Promise<Record<string, unknown>>;
-export type RosterRow = { userId: string; joinedAt: string | null; email: string | null; granted: boolean; exists?: boolean };
+export type RosterRow = { userId: string; joinedAt: string | null; email: string | null; granted: boolean; exists?: boolean; signedUp?: boolean };
 export type CampaignOptions = {
   campaignId: string; cutoff: string; a: readonly string[];
-  exclude: readonly { userId: string; reason: "admin" | "test" }[];
+  exclude: readonly { userId: string; reason: "admin" | "test" | "owner" }[];
   expectB: number; expectList?: readonly string[] | null;
   execute: boolean; confirm?: string | null;
   aQty: number; bQty: number; products: readonly string[]; days: number;
@@ -52,11 +55,12 @@ export async function runCampaign(call: Call, input: CampaignOptions): Promise<C
   say(`캠페인 ${o.campaignId} · 기준 시각(이 시각 전 가입) ${kst(o.cutoff)} KST · 이용권 A ${o.aQty}장 / B ${o.bQty}장 · ${o.days}일 · 상품 ${o.products.join(",")}`);
   say(`A ${A.length}명`);
   A.forEach((r, i) => say(`  A${String(i + 1).padStart(2, "0")} ${r.userId} ${maskEmail(r.email)} 가입 ${kst(r.joinedAt)}${r.exists === false ? " · 계정 없음" : ""}${r.granted ? " · 이미 지급" : ""}`));
-  say(`B ${B.length}명(기대 ${o.expectB}명)`);
-  B.forEach((r, i) => say(`  B${String(i + 1).padStart(2, "0")} ${r.userId} ${maskEmail(r.email)} 가입 ${kst(r.joinedAt)}${r.granted ? " · 이미 지급" : ""}`));
+  say(`B ${B.length}명(기대 ${o.expectB}명, 가입 동의 미완료 ${B.filter(r => r.signedUp === false).length}명 포함)`);
+  B.forEach((r, i) => say(`  B${String(i + 1).padStart(2, "0")} ${r.userId} ${maskEmail(r.email)} 첫 로그인 ${kst(r.joinedAt)}${r.signedUp === false ? " · 가입 동의 미완료" : ""}${r.granted ? " · 이미 지급" : ""}`));
   say(`제외 ${X.length}명(기준 시각 전 가입자 중)`);
-  X.forEach(r => say(`  - ${r.userId} ${maskEmail(r.email)} 가입 ${kst(r.joinedAt)} · ${reason.get(r.userId) === "admin" ? "관리자(ADMIN_USER_IDS)" : "시험 계정(목록)"}`));
-  say(`기준 시각 뒤 가입 ${Number(roster.joinedAfterCutoff ?? 0)}명(대상 아님)`);
+  X.forEach(r => say(`  - ${r.userId} ${maskEmail(r.email)} 첫 로그인 ${kst(r.joinedAt)} · ${reason.get(r.userId) === "admin" ? "관리자(ADMIN_USER_IDS)" : reason.get(r.userId) === "owner" ? "덕짱님 계정" : "시험 계정(목록)"}`));
+  if (Number(roster.skipped ?? 0) > 0) say(`익명·삭제 계정 ${Number(roster.skipped)}명(대상 아님)`);
+  say(`기준 시각 뒤 첫 로그인 ${Number(roster.joinedAfterCutoff ?? 0)}명(대상 아님)`);
   const missingA = A.filter(r => r.exists === false);
   if (missingA.length) { say(`중단: A 계정 ${missingA.length}개가 없어요 — ${missingA.map(r => r.userId).join(", ")}`); return { ok: false, code: "A_ACCOUNT_MISSING", bCount: B.length, lines }; }
   if (B.length !== o.expectB) {
