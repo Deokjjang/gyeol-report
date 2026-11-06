@@ -3,7 +3,7 @@ import styles from "../admin.module.css";
 import { adminPageGate } from "../../../lib/ops/admin/access";
 import { adminPinConfigured } from "../../../lib/ops/admin/config";
 import { compSummary, delayedOrders, legacyMembers, parseSearch, providerState, requestInbox, searchOrders, type SearchFilters } from "../../../lib/ops/admin/data";
-import { compStateLabel, kst, maskEmail, paymentStatusLabel, productLabel, requestReasonLabel } from "../../../lib/ops/admin/format";
+import { compStateLabel, kst, maskEmail, paymentStatusLabel, productLabel, requestReasonLabel, requestResolutionLabel } from "../../../lib/ops/admin/format";
 import { ALL_PRODUCTS } from "../../../lib/ops/config";
 import { createOpsStores } from "../../../lib/ops/store";
 import { CompDesignate, ExportCsv, ProviderEnableButton, RequestDoneForm, TicketBookRegenerate, TossBatchCheck } from "./AdminClient";
@@ -117,13 +117,14 @@ async function RequestsTab({ status }: { status: "open" | "done" }) {
         <ul className={styles.list}>{r.value.map(q => (
           <li key={q.id} className={styles.item}>
             <div className={styles.itemHead}>
-              <Link className={styles.mono} href={`/admin/orders/${encodeURIComponent(q.orderCode)}`}>{q.orderCode}</Link>
-              <Badge alert={q.reason === "refund"}>{requestReasonLabel(q.reason)}</Badge>
+              {q.orderCode ? <Link className={styles.mono} href={`/admin/orders/${encodeURIComponent(q.orderCode)}`}>{q.orderCode}</Link> : <span className={styles.mono}>이용권 책 · {q.reportId ?? "-"}</span>}
+              <Badge alert={q.reason === "refund" || q.reason === "double_paid"}>{requestReasonLabel(q.reason)}</Badge>
+              {q.resolution ? <Badge>{requestResolutionLabel(q.resolution)}</Badge> : null}
             </div>
-            <div className={styles.meta}><span>{kst(q.createdAt)}</span><span>{productLabel(q.productType)}</span><span>{paymentStatusLabel(q.paymentStatus)}</span><span>{q.buyerName ?? "이름 없음"}</span></div>
+            <div className={styles.meta}><span>{kst(q.createdAt)}</span>{q.productType ? <span>{productLabel(q.productType)}</span> : null}{q.paymentStatus ? <span>{paymentStatusLabel(q.paymentStatus)}</span> : null}<span>{q.buyerName ?? "이름 없음"}</span>{q.device ? <span>{q.device}</span> : null}</div>
             {q.memo ? <p className={styles.pre}>{q.memo}</p> : null}
             {q.status === "done" && q.adminNote ? <p className={styles.note}>{q.resolvedBy === "auto" ? <Badge>자동 처리</Badge> : null} {q.adminNote}</p> : null}
-            {q.status === "open" ? <RequestDoneForm id={q.id} orderCode={q.orderCode} /> : null}
+            {q.status === "open" ? <RequestDoneForm id={q.id} orderCode={q.orderCode ?? ""} /> : null}
           </li>
         ))}</ul>
       )}

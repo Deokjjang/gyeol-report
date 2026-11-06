@@ -95,9 +95,12 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(attention).not.toContain("결제가 정상적으로 완료되었습니다");
     expect(attention).toContain("확인이 필요합니다");
     expect(attention).not.toContain("준비는 계속됩니다");
-    expect(attention).toContain('href="tel:050-6664-8562"');
-    expect(attention).toContain('href="mailto:support@gyeolreport.com"');
-    expect(attention).toContain("추가 결제는 필요하지 않습니다");
+    // 운영 Q: 상담 창구는 카카오톡 채널 링크 하나(전화·메일 링크 없음).
+    expect(attention).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
+    expect(attention).toContain("카카오톡 채널로 문의하기");
+    expect(attention).not.toMatch(/href="(?:tel:|mailto:)|고객센터/);
+    expect(attention).toContain("추가 결제는 필요 없어요");
+    expect(attention).toContain("문의할 때 이 페이지 주소를 함께 알려 주세요.");
   });
 
   it("explains expiry in one line without requiring another purchase (P 추가 B)", async () => {
@@ -120,7 +123,8 @@ describe("post-payment canonical route, mock transport only", () => {
     mocks.call.mockResolvedValue({ ok: false, code: "DURABLE_STORAGE_FAILED" });
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
     expect(html).toContain("리포트 상태를 확인하지 못했습니다");
-    expect(html).toContain('href="tel:050-6664-8562"');
+    expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
+    expect(html).not.toMatch(/href="tel:|고객센터/);
     expect(html).not.toContain("리포트를 찾을 수 없습니다");
     expect(html).not.toContain("결제가 완료된 리포트만");
     expect(html).not.toContain("DURABLE_STORAGE_FAILED");
@@ -151,7 +155,7 @@ describe("post-payment canonical route, mock transport only", () => {
     mocks.call.mockResolvedValueOnce({ ok: true, status: "COMPLETED", snapshot: null })
       .mockResolvedValueOnce({ ok: false, code: "DURABLE_STORAGE_FAILED" });
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
-    expect(html).toContain("추가 결제는 필요하지 않습니다");
+    expect(html).toContain("추가 결제는 필요 없어요");
     expect(html).not.toContain("리포트 공유하기");
     expect(html).not.toContain("DURABLE_STORAGE_FAILED");
     expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
@@ -171,7 +175,7 @@ describe("post-payment canonical route, mock transport only", () => {
     mocks.call.mockResolvedValue({ ok: true, pending: true });
     const html = renderToStaticMarkup(await TossPaymentSuccessPage({ searchParams: Promise.resolve({ paymentKey: "mock-key", orderId: "mock-order", amount: "1290" }) }));
     for (const value of ["mock-key", "mock-order", "1290", "ready_to_confirm", "결제가 정상적으로 완료되었습니다"]) expect(html).not.toContain(value);
-    expect(html).toContain("고객센터");
+    expect(html).toContain("카카오톡 채널로 문의하기"); // 운영 Q: 예전 「고객센터」 전화·메일 링크 대신
     expect(mocks.effects).toHaveLength(0);
     const loading = renderToStaticMarkup(<TossPaymentSuccessLoading />);
     expect(loading).toContain("결제 상태를 확인하고 있습니다");
@@ -231,7 +235,8 @@ describe("status refresh lifecycle", () => {
     mocks.effects = [];
     const retry = renderToStaticMarkup(<ReportGenerationStatus retry />);
     expect(retry).toContain("자동으로 다시 확인");
-    expect(retry).toContain('href="tel:050-6664-8562"');
+    expect(retry).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
+    expect(retry).not.toMatch(/href="tel:|고객센터/);
   });
 
   it("keeps the book-making motion moving (also under reduced motion), visible focus and existing paper press without fake progress", () => {

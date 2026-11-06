@@ -5,7 +5,7 @@ import type { OpsStore } from "./generation/sinks";
 
 export type AccountOpsStore = { call(action: string, user: string, data?: Record<string, unknown>): Promise<Record<string, unknown>> };
 export type AuditEntry = { actor: "admin" | "system"; actorUserId?: string | null; action: string; target: string; detail?: Record<string, unknown> };
-export type OpsStores = { generation: OpsStore; raw: OpsStore; order: OpsStore; gift: OpsStore; comp: OpsStore; recon: OpsStore; account: AccountOpsStore; audit(entry: AuditEntry): Promise<boolean>; db: SupabaseClient | null };
+export type OpsStores = { generation: OpsStore; raw: OpsStore; order: OpsStore; gift: OpsStore; comp: OpsStore; recon: OpsStore; notify: OpsStore; account: AccountOpsStore; audit(entry: AuditEntry): Promise<boolean>; db: SupabaseClient | null };
 export const OPS_RPC_TIMEOUT_MS = 10_000;
 
 /** 운영 기반 저장소(서버 전용, service_role). 환경이 없으면 모든 호출이 STORAGE_UNAVAILABLE. */
@@ -21,7 +21,7 @@ export function createOpsStores(env: Readonly<Record<string, string | undefined>
   };
   const store = (fn: string): OpsStore => ({ call: (action, data = {}) => rpc(fn, { p_action: action, p_data: data }) });
   return {
-    generation: store("ops_generation"), raw: store("ops_writer_raw"), order: store("ops_order"), gift: store("ops_gift"), comp: store("ops_comp"), recon: store("ops_recon"),
+    generation: store("ops_generation"), raw: store("ops_writer_raw"), order: store("ops_order"), gift: store("ops_gift"), comp: store("ops_comp"), recon: store("ops_recon"), notify: store("ops_notify"),
     account: { call: (action, user, data = {}) => rpc("ops_account", { p_action: action, p_user: user, p_data: data }) },
     async audit(e) {
       if (!db) return false;

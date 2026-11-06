@@ -253,7 +253,7 @@ export function headLine(e: Pick<TimelineEntry, "kind" | "key" | "ganji" | "tenG
 }
 
 /** 대운 지도(timeline.cycles). 최종판3 8: label·ages(만 나이)는 공통 대운 표기 함수(dayunLabel) 그대로. */
-/** 최종 A-4·5: 대운수는 전통 셈법(daeunsu), 기간(period)은 다음 대운 교운 연·월까지. atMs가 있으면 지금 대운은 교운 시각으로 고른다(대운 상품). */
+/** 운영 Q 8-1: 대운수(daeunsu)는 한 사람에 한 숫자(첫 대운이 시작될 때의 만 나이), 「만 X~Y세」도 그 값에서. 최종 A-4·5: 기간(period)은 다음 대운 교운 연·월까지. atMs가 있으면 지금 대운은 교운 시각으로 고른다(대운 상품). */
 export function cycleSummary(dayun: { readonly cycles: readonly CustomerDayunCycle[]; readonly daeunsu?: number }, from: number, to: number, thisYear: number, getTenGodFn: (s: Pillar["stem"]) => TenGod, atMs?: number) {
   const cycles = dayun.cycles, now = atMs === undefined ? undefined : currentDayunAt(cycles, atMs);
   return cycles.filter(c => c.endYear >= from && c.startYear <= to).map(c => { const l = dayunLabel(c, dayun.daeunsu, cycles.find(x => x.index === c.index + 1));

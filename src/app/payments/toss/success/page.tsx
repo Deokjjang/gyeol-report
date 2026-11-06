@@ -30,7 +30,7 @@ type InitialSuccessState =
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
 const paidGenerationFailureMessage =
-  "결제 상태 확인이 더 필요합니다. 잠시 후 이 주소에서 다시 확인해 주세요. 확인이 어려우시면 고객센터로 문의해 주세요.";
+  "결제 상태 확인이 더 필요합니다. 잠시 후 이 주소에서 다시 확인해 주세요.";
 
 function readQueryValue(value: string | string[] | undefined): string {
   const firstValue = Array.isArray(value) ? value[0] : value;
@@ -83,7 +83,7 @@ function createInitialCopy(state: InitialSuccessState): {
   if (state === "order_not_found") {
     return {
       title: "주문 정보를 찾을 수 없습니다.",
-      message: "결제 주문 정보를 확인할 수 없습니다. 고객센터로 문의해 주세요.",
+      message: "결제 주문 정보를 확인할 수 없습니다.",
     };
   }
 
@@ -113,7 +113,7 @@ function createInitialCopy(state: InitialSuccessState): {
     return {
       title: "결제 상태를 확인해 주세요.",
       message:
-        "아직 결제 완료 여부를 확인하지 못했습니다. 고객센터로 문의해 주시면 확인해 드리겠습니다.",
+        "아직 결제 완료 여부를 확인하지 못했습니다.",
     };
   }
 

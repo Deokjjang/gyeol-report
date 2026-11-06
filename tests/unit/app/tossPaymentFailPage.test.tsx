@@ -36,6 +36,13 @@ describe("Toss payment fail page", () => {
     expect(html).toContain("provider_order_toss_fail_test");
   });
 
+  it("운영 Q: 상담 창구는 카카오톡 채널 링크 하나(새 탭)", async () => {
+    const html = await renderFailPage({});
+    expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat" target="_blank" rel="noopener noreferrer"');
+    expect(html).toContain("카카오톡 채널로 문의하기 ↗");
+    expect(html).not.toMatch(/고객센터|href="(?:tel:|mailto:)/);
+  });
+
   it("renders missing values safely", async () => {
     const html = await renderFailPage({});
 
@@ -47,12 +54,17 @@ describe("Toss payment fail page", () => {
     const requiredMarkers = [
       "결제 실패 또는 취소",
       "Toss 결제창에서 실패 또는 취소로 돌아온 상태입니다",
-      "다시 시도하거나 고객센터로 문의해 주세요",
+      // 운영 Q: 「고객센터로 문의」 대신 카카오톡 채널 링크 하나.
+      "다시 시도해 주세요.",
+      "SUPPORT_CHAT_URL",
+      "SUPPORT_CHAT_LABEL",
       "code",
       "message",
       "orderId",
     ];
     const blockedMarkers = [
+      "고객센터",
+      "tel:",
       "/v1/" + "payments/confirm",
       "TOSS" + "_SECRET" + "_KEY",
       "NEXT" + "_PUBLIC" + "_TOSS" + "_SECRET" + "_KEY",

@@ -13,6 +13,8 @@ import { loadBookLibrary } from "../../../../src/app/dev/book-preview/runtimeBoo
 import type { BookLibrary, BookPage } from "../../../../src/app/dev/book-preview/bookTypes";
 import { BOOKS, CONSENTS, CONSENT_SHORT_LABELS, INITIAL_PERSON, PUBLISHING_STATES, coverOffset, wrapBook, inputPageCount, readerTitle, requiredConsents, roleNames, toggleAll } from "../../../../src/app/dev/book-preview/model";
 import { LegalAccordion, LegalDocument, BUSINESS_ROWS } from "../../../../src/app/dev/book-preview/BookLegal";
+import { refundPolicySupportRequestGuidanceKo } from "../../../../src/lib/legal/refundPolicy";
+import { GYEOL_BUSINESS_INFO } from "../../../../src/lib/legal/businessInfo";
 import Terms from "../../../../src/app/terms/page";
 import Privacy from "../../../../src/app/privacy/page";
 import Refund from "../../../../src/app/refund/page";
@@ -147,7 +149,8 @@ describe("book preview: development-only presentation", () => {
   });
   it("footer reuses legal values and chat URL; existing paid route rule untouched", () => {
     const html = renderToStaticMarkup(<PreviewFooter />);
-    expect(html).toContain("고객 문의는 카카오톡 채널 채팅으로 받고 있습니다.");
+    // 운영 Q: 푸터 안내는 한 줄(SUPPORT_FOOTER_LINE).
+    expect(html).toContain("환불 신청과 책 문의는 내 서재에서 할 수 있어요. 상담원 문의는 카카오톡 채널 채팅으로 받고 있어요. 전화 상담은 제공하지 않아요.");
     expect(html).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
     expect(html).toContain("support@gyeolreport.com"); expect(html).toContain("050-6664-8562");
     expect(html).toContain("사업자 정보"); expect(html).not.toContain("채팅하기");
@@ -202,10 +205,14 @@ describe("book preview: development-only presentation", () => {
     const normalize = (html: string) => html.replace(/<[^>]*>/g, "").replace(/\s+/g, "");
     const old = renderToStaticMarkup(<PublicPage />).split('<nav')[0];
     const content = normalize(renderToStaticMarkup(<LegalDocument index={index} />));
+    // 운영 Q(2026-11-07.1)에서 책 화면만 일부러 뺀 것: 환불정책 설명 한 줄·「문의 방법」 절(맨 위 3줄로 대신), 개인정보처리방침 끝 「개인정보 문의처」(고객센터 전화·이메일).
+    const dropped = new Set(["디지털리포트의취소,환불및재제공기준입니다.", "문의방법", normalize(refundPolicySupportRequestGuidanceKo), "개인정보문의처",
+      normalize(`고객센터 ${GYEOL_BUSINESS_INFO.customerServicePhone}${GYEOL_BUSINESS_INFO.supportContactEmail}`)]);
     for (const match of old.matchAll(/<(?:p|li|td|th|dt|dd|h2|caption)\b[^>]*>([\s\S]*?)<\/(?:p|li|td|th|dt|dd|h2|caption)>/g)) {
       // Only the service-brand header precedes the actual document.
       const value = normalize(match[1]);
       if (["결리포트", "GyeolReport", "결리포트정책"].includes(value)) continue;
+      if ((index === 1 || index === 2) && dropped.has(value)) continue;
       expect(content, value).toContain(value);
     }
   });

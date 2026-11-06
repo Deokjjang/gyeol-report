@@ -82,10 +82,26 @@ export async function handleAdminAction(request: NextRequest, action: string, de
   const ctx: Ctx = { action, body, adminId: session.userId, stores, deps };
   try {
     if (PIN_ACTIONS.includes(action)) { const blocked = await checkPin(ctx); if (blocked) return session.finish(blocked); }
-    const run = { regenerate, "ticket-regenerate": ticketRegenerate, grant, refund, "request-done": requestDone, "provider-enable": providerEnable, export: exportOrders, reveal,
-      "refund-warnings": refundWarnings, "toss-check": tossCheck, "toss-check-batch": tossCheckBatch, "external-refund": externalRefund, "comp-designate": compDesignate }[action];
-    return session.finish(await run(ctx));
+    return session.finish(await RUNNERS[action](ctx));
   } catch { return session.finish(no(500, "ACTION_FAILED", "처리하지 못했어요. 잠시 뒤 다시 시도해 주세요.")); }
+}
+
+const RUNNERS: Record<AdminActionName, (ctx: Ctx) => Promise<NextResponse>> = { regenerate, "ticket-regenerate": ticketRegenerate, grant, refund, "request-done": requestDone,
+  "provider-enable": providerEnable, export: exportOrders, reveal, "refund-warnings": refundWarnings, "toss-check": tossCheck, "toss-check-batch": tossCheckBatch,
+  "external-refund": externalRefund, "comp-designate": compDesignate };
+/** 처리 봇이 부르는 같은 관리자 작업(운영 Q 6부: 새 환불·재생성 로직을 만들지 않는다). */
+export const BOT_ADMIN_ACTIONS = ["refund", "regenerate", "ticket-regenerate"] as const satisfies readonly AdminActionName[];
+/**
+ * 처리 봇(텔레그램)용 진입점. 화면 요청 검사(같은 출처·관리자 세션·화면 PIN)는 봇 쪽 검사가 대신한다:
+ * 덕짱님 텔레그램 id + 웹훅 비밀값 + (환불만) 같은 ADMIN_ACTION_PIN 대조·잠금. 작업 본문·하루 상한·감사 로그는 화면과 같다.
+ */
+export async function runAdminActionAs(action: (typeof BOT_ADMIN_ACTIONS)[number], body: Json, adminId: string, deps: AdminActionDeps): Promise<{ status: number; body: Json }> {
+  const stores = deps.stores();
+  if (!stores.db) return { status: 503, body: { ok: false, code: "STORAGE_UNAVAILABLE", message: "저장소에 연결하지 못했어요." } };
+  try {
+    const res = await RUNNERS[action]({ action, body, adminId, stores, deps });
+    return { status: res.status, body: await res.json() as Json };
+  } catch { return { status: 500, body: { ok: false, code: "ACTION_FAILED", message: "처리하지 못했어요. 잠시 뒤 다시 시도해 주세요." } }; }
 }
 
 /** PIN 확인: 설정 없음 → 꺼짐, 잠금 중 → 429, 틀림 → 403 + 감사 로그(admin_pin_failed). 기록을 못 읽으면 막는다. */

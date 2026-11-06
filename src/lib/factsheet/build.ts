@@ -5,8 +5,7 @@
  */
 import { calculateSaju } from "@/lib/saju/calculateSaju";
 import { calculateCustomerDayun } from "@/lib/saju/customerDayun";
-import { calculateTraditionalDaeunsu } from "@/lib/saju/traditionalDaeunsu";
-import { currentDayunAt } from "@/lib/brief/labels";
+import { currentDayunAt, personDaeunsu } from "@/lib/brief/labels";
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
 import { analyzeChartDetections, analyzeIncoming, detectRelations, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";
 import type { ChartPosition, RelationHit, TemporalPosition } from "@/lib/saju/detections/types";
@@ -42,12 +41,13 @@ export const STANDARDS = {
   peerGroup: "비겁 묶음 값 = 같은 오행 가중값 − 일간 자신(1). 일간은 비견·겁재가 아니다",
   groupLevel: `묶음 세기: 가중값 ${GROUP_STRONG} 이상 강, ${GROUP_WEAK} 미만 약, 그 밖 보통`,
   elementCount: "오행 개수 = 겉 글자(천간 + 지지 본기). 세기 = 월령 2배·지장간 포함 가중(judgeElementBalance). 개수와 세기는 다른 값",
-  age: "나이는 만 나이(그해 생일 지난 뒤 기준)",
+  age: "나이는 만 나이(그해 생일 지난 뒤 기준). 대운수는 한 사람에 한 숫자 = 첫 대운이 시작되는 때의 만 나이",
 } as const;
 
 export type ShinsalFact = { readonly id: string; readonly code: string; readonly family: "shinsal" | "gwiin"; readonly name: string; readonly positions: readonly Pos[]; readonly slots: readonly Slot[]; readonly glyphs: readonly string[]; readonly count: number; readonly twelve: boolean };
 export type RelationFact = { readonly kind: RelationHit["kind"]; readonly key: string; readonly keyKo: string; readonly members: readonly { readonly where: string; readonly char: string }[]; readonly completeness: RelationHit["completeness"]; readonly subtype?: string; readonly element?: FiveElement; readonly glyphCount: number };
 export type IncomingFact = { readonly ganji: string; readonly ganjiKo: string; readonly stemTenGod: string; readonly branchTenGod: string; readonly twelveStage: string; readonly gongmang: boolean; readonly relations: readonly RelationFact[]; readonly stemClashes: readonly RelationFact[] };
+/** manStartAge(운영 Q 8-1): 그 대운 줄 「만 X~Y세」의 X = 대운수 + 10 × (순서 − 1)(labels.dayunLabel과 같은 값). startAge는 엔진 값(세는 나이) 그대로. */
 export type DayunFact = IncomingFact & { readonly index: number; readonly startYear: number; readonly endYear: number; readonly startAge: number; readonly startSolarKst: string | null; readonly manStartAge: number };
 export type PersonFacts = {
   readonly name: string; readonly gender: "MALE" | "FEMALE" | null; readonly birthDate: string; readonly birthTime: string | null; readonly timeKnown: boolean;
@@ -65,7 +65,7 @@ export type PersonFacts = {
   readonly stemClashes: readonly RelationFact[];
   readonly gongmang: readonly { readonly basis: string; readonly branches: readonly string[]; readonly positions: readonly Pos[] }[];
   readonly climate: { readonly season: string; readonly level: string; readonly lacking: readonly FiveElement[] };
-  /** number: 전통 대운수(최종 A-3, 날수 ÷ 3). current: 기준 시각(발행 시각)에 지나는 대운 index(최종 A-5, 교운 시각 비교). */
+  /** number: 이 사람의 대운수(한 사람에 한 숫자 = 첫 대운이 시작되는 때의 만 나이, 운영 Q 8-1). 대운마다의 시작 나이는 cycles[].manStartAge. current: 기준 시각(발행 시각)에 지나는 대운 index(최종 A-5, 교운 시각 비교). */
   readonly dayun: { readonly direction: string | null; readonly number: number | null; readonly current?: number | null; readonly cycles: readonly DayunFact[] };
   readonly annual: readonly (IncomingFact & { readonly year: number })[];
   readonly monthly: readonly (IncomingFact & { readonly year: number; readonly index: number; readonly startKst: string })[];
@@ -162,9 +162,8 @@ function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, br
     return { ganji: pillar.stem + pillar.branch, ganjiKo: hangulOf(pillar.stem + pillar.branch), stemTenGod: TEN_GOD_KO[inc.stemTenGod], branchTenGod: TEN_GOD_KO[inc.branchTenGod], twelveStage: STAGE_KO[inc.twelveStage] ?? inc.twelveStage, gongmang: inc.gongmang, relations: inc.relations.map(r => relFact(r)), stemClashes: sc.map(r => relFact(r)) };
   };
   const dr = calculateCustomerDayun({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: input.approximateBirthTimeSlot ?? "", gender: gender ?? "", name: input.name });
-  const birthYear = Number(input.birthDate.slice(0, 4));
-  const traditional = calculateTraditionalDaeunsu({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: input.approximateBirthTimeSlot ?? "", gender: gender ?? "", name: input.name });
-  const cycles: DayunFact[] = dr.ok ? dr.value.cycles.map(c => ({ ...incoming("dayun", { stem: c.stem, branch: c.branch }), index: c.index, startYear: c.startYear, endYear: c.endYear, startAge: c.startAge, manStartAge: c.startYear - birthYear, startSolarKst: c.startSolarKst })) : [];
+  const daeunsu = dr.ok ? personDaeunsu(input.birthDate, dr.value.cycles) : undefined;
+  const cycles: DayunFact[] = dr.ok ? dr.value.cycles.map(c => ({ ...incoming("dayun", { stem: c.stem, branch: c.branch }), index: c.index, startYear: c.startYear, endYear: c.endYear, startAge: c.startAge, manStartAge: daeunsu !== undefined ? daeunsu + 10 * (c.index - 1) : c.startAge - 1, startSolarKst: c.startSolarKst })) : [];
   const baseYear = Number(baseDate.slice(0, 4));
   const annual = Array.from({ length: 14 }, (_, i) => baseYear - 1 + i).map(year => ({ year, ...incoming("annual", getAnnualPillar(year)) }));
   const monthly = [baseYear, baseYear + 1].flatMap(year => getMonthlyPillars(year).map(m => ({ year, index: m.index, startKst: m.startKst, ...incoming("monthly", m.pillar) })));
@@ -182,7 +181,7 @@ function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, br
     shinsal, relations: natalRel, stemClashes: clashes,
     gongmang: det.gongmang.map(g => ({ basis: g.basis, branches: [...g.branches], positions: [...g.positions] })),
     climate: { season: det.climate.season, level: det.climate.level, lacking: [...det.climate.lackingElements] },
-    dayun: { direction: dr.ok ? dr.value.direction : null, number: cycles[0] ? (traditional.ok ? traditional.value.daeunsu : cycles[0].manStartAge) : null,
+    dayun: { direction: dr.ok ? dr.value.direction : null, number: cycles[0] ? daeunsu ?? null : null,
       current: !dr.ok ? null : currentDayunAt(dr.value.cycles, baseAt && Number.isFinite(Date.parse(baseAt)) ? Date.parse(baseAt) : Date.parse(`${baseDate}T12:00:00+09:00`))?.index ?? null, cycles },
     annual, monthly,
     mbti: mb ? { type: mb.type, stack: [...mb.functions] } : input.mbtiType ? { type: input.mbtiType, stack: [] } : null,

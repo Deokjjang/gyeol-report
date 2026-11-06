@@ -4,7 +4,7 @@
  * 문구를 바꾸면 CHECKOUT_POLICY_VERSIONS.privacy를 올린다(회원 재동의). Meta 광고 측정 문구(analytics/metaConsent)는 여기서 바꾸지 않는다.
  */
 import { GYEOL_BUSINESS_INFO as business } from "./businessInfo";
-import { POLICY_EFFECTIVE_DATE_KO, POLICY_HISTORY } from "./policyVersions";
+import { POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "./policyVersions";
 import { metaTrackingNotice, metaTransferNotice } from "../analytics/metaConsent";
 
 export type PolicyTable = { readonly captionKo: string; readonly head: readonly string[]; readonly rows: readonly (readonly string[])[] };
@@ -45,7 +45,7 @@ export const privacyPolicyCollectionRows = [
   ["궁합 리포트 입력", "관계 종류, 상대방의 이름 또는 닉네임·생년월일·출생시간·성별·MBTI"],
   ["이용권·선물", "이용권 증정·사용·만료 기록(장수, 증정 사유, 만든 상품과 책), 선물을 보낸·받은 계정, 선물 링크(원문 대신 암호화한 값), 받은 일시"],
   ["결제", "주문코드·주문번호, 상품, 결제 금액, 결제 승인·취소·환불 기록, 결제 키, 영수증 주소, 구매자 이름·이메일·휴대폰 번호(선택), 결제 전 동의 기록(동의 항목·문서 버전·일시, 만 14세 이상·미성년 여부)"],
-  ["문의·요청", "요청 종류(환불·재생성 등)와 직접 쓴 내용, 처리 기록"],
+  ["문의·요청", "요청 종류(책이 안 나오거나 안 열림, 두 번 결제), 접수할 때의 기기·브라우저 종류(예: 아이폰 사파리), 처리 방법과 처리 기록"],
   ["자동 수집", "최근 로그인 일시, 리포트 생성·열람 기록, 쿠키·브라우저 저장소 값(아래 10번), 서비스 이용 중 서버가 받는 접속 정보(IP 주소, 브라우저 정보, 요청 주소)"],
 ] as const;
 /** 화면 요약·시험용: 항목 열만. */
@@ -96,6 +96,7 @@ export const privacyPolicyProcessorRows = [
   ["Anthropic", "리포트 입력정보와 계산된 명리 해석 근거로 리포트 문장 작성(AI)", "국외(아래 7번)"],
   ["OpenAI", "Anthropic이 오래 장애일 때 임시 리포트 문장 작성(AI)", "국외(아래 7번)"],
   ["Vercel Inc.", "웹 서비스 호스팅과 서버 실행", "국외(아래 7번)"],
+  ["Telegram Messenger Inc.", "운영자 주문 알림·문의 처리", "국외(아래 7번)"],
 ] as const;
 export const privacyPolicyLoginProviderKo =
   "카카오·Google 로그인을 고르면 해당 회사에서 위 2번 항목을 받아 로그인에 씁니다. 카카오로 가입한 회원이 탈퇴하면 카카오에 회원 식별자를 보내 연결을 끊습니다. 공유 기능(카카오톡 공유)은 이용자가 누를 때만 책 제목·주소가 카카오로 전달됩니다.";
@@ -129,6 +130,14 @@ export const privacyPolicyOverseasRows = [
     "웹 서비스 호스팅과 서버 실행",
     "요청을 처리하는 동안만 쓰며, 서버 실행 기록은 Vercel 요금제에 따라 최대 30일 보관 후 삭제",
     "웹 서비스 제공에 꼭 필요해 거부하면 서비스를 이용할 수 없습니다."],
+  // 운영 Q(2026-11-07.1): 운영자 주문 알림 봇. 이전받는 자·국가·연락처는 Telegram 공식 문서(2026-11-06 확인)만 옮긴다 —
+  // https://telegram.org/privacy (1번 「Telegram Messenger Inc.」, 1.4 EEA 밖에 있음, 12번 문의 창구) · https://telegram.org/faq (개발팀 두바이, 여러 데이터센터).
+  ["Telegram Messenger Inc. · 아랍에미리트(두바이, 개발팀 소재) 및 여러 나라의 데이터센터 · 텔레그램 앱 설정의 「Ask a Question」(Telegram 개인정보처리방침 12번)",
+    "주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보",
+    "알림이 생길 때 텔레그램 봇 API(HTTPS)로 전송",
+    "운영자 주문 알림·문의 처리",
+    "처리 후 메시지 정리",
+    "주문 처리에 쓰는 운영자 알림이라 따로 거부할 수 없습니다. 이전을 원하지 않으면 결제하지 않으면 됩니다."],
 ] as const;
 export const privacyPolicyOverseasNoteKo =
   "회사는 위 업체와의 계약에서 개인정보 보호 의무를 정하고, 위탁 업무 외 이용을 금지합니다. 광고 성과 측정(Meta)은 선택 동의한 경우에만 아래 13번처럼 이전합니다.";
@@ -205,5 +214,5 @@ export const privacyPolicySections: readonly PolicySection[] = [
   { titleKo: "13. 광고 성과 측정 (선택)", blocks: [p(metaTrackingNotice), p(metaTransferNotice)] },
   { titleKo: "14. 권익침해 구제 방법", blocks: [p("개인정보 침해로 상담이나 구제가 필요하면 아래 기관에 문의할 수 있습니다."), ul(...privacyPolicyRemedyItems)] },
   { titleKo: "15. 자동화된 결정", blocks: [p(privacyPolicyAutomatedKo)] },
-  { titleKo: "16. 방침의 변경과 시행일", blocks: [p(`이 방침은 ${POLICY_EFFECTIVE_DATE_KO}부터 시행합니다. 내용이 바뀌면 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 서비스 화면에 알립니다.`), ul(...POLICY_HISTORY.privacy)] },
+  { titleKo: "16. 방침의 변경과 시행일", blocks: [p(`이 방침은 ${POLICY_EFFECTIVE_DATES_KO.privacy}부터 시행합니다. 내용이 바뀌면 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 서비스 화면에 알립니다.`), ul(...POLICY_HISTORY.privacy)] },
 ];
