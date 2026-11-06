@@ -7,7 +7,7 @@
  * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + 그해·그달 글자가 건드리고 앞에서 소개된 trait 0~1개(P3.7 1-1, 적용 1회로 센다).
  */
 import type { CompatTopic, Domain, MbtiProfile, MyeongriFeature, SceneItem, SectionPlan } from "@/data/knowledge-v5/schema";
-import { sceneFits, type FactProfile } from "./facts";
+import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, type FactProfile } from "./facts";
 import { FAMILY_MEMBER } from "@/lib/writer/safety/patterns";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
@@ -54,7 +54,10 @@ export type PlanCtx = {
   /** 전환 해(keyEntries)가 건드리는 trait와 어떻게(전환 장 전용, P3.8 1). */
   readonly transitionTouched?: readonly { readonly traitId: string; readonly how: string; readonly key: string }[];
   /** 궁합 관계 장면(P3.8 3): 이 관계 유형의 주제들. childAge는 부모·자녀에서 자녀 나이대. */
-  readonly relScenes?: { readonly topics: readonly CompatTopic[]; readonly childAge?: "minor" | "adult"; readonly exclude?: RegExp };
+  readonly relScenes?: { readonly topics: readonly CompatTopic[]; readonly childAge?: "minor" | "adult"; readonly exclude?: RegExp;
+    /** 최종판 1-5 궁합 장면 주인: 두 사람의 행동 차원 값(명리 특성 + MBTI)과 차원 양끝 이름. 장면 차원마다 어느 쪽이 누구인지 붙인다. */
+    readonly sides?: readonly [{ readonly name: string; readonly vec: ReadonlyMap<string, number> }, { readonly name: string; readonly vec: ReadonlyMap<string, number> }];
+    readonly poles?: Readonly<Record<string, { readonly plus: string; readonly minus: string }>> };
   /** MBTI 그늘이 차지하는 축(가장 센 행동 차원). */
   readonly mbtiAxes?: readonly string[];
   /** 이미 장에 배정한 참조·근거. */
@@ -62,7 +65,7 @@ export type PlanCtx = {
   /** 같은 고객의 다른 책에서 이미 뜻을 푼 특성(feature id, P6c A3): 이 책에서는 처음 나와도 뜻을 다시 풀지 않는다(angle=known). */
   readonly known?: ReadonlySet<string>;
   /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
-  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string }[]>>>;
+  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
   readonly excludeSeeds?: ReadonlySet<string>;
 };
 const SEED_DOMAIN: Readonly<Record<string, string>> = { work: "work", study: "work", money: "money", love: "love", marriage: "love", relationships: "relationships", alone: "alone" };
@@ -142,13 +145,22 @@ export function directionClash(text: string, dims: Readonly<Record<string, numbe
 const dominantOf = (ctx: PlanCtx) => { let d = dominantCache.get(ctx); if (!d) { d = dominantDims(ctx); dominantCache.set(ctx, d); } return d; };
 /** 연애 자녀 장(P6c E3): 결혼·양가 어른 이야기는 쓰지 않는다. */
 const MARRIAGE_TALK = /결혼|시댁|처가|양가|시부모|시어머니|시아버지|장인|장모|상견례|신혼|혼수|예식|배우자|부부/;
+/** 최종판 4: 「{topic} 때」에 「다툰 뒤」가 들어가 「다툰 뒤 때」가 됐다 — 뒤·후·전으로 끝나는 주제는 「~에」로 잇는다. */
+export const fillTopic = (q: string, topic: string) => (/(뒤|후|전)$/.test(topic) ? q.replace("{topic} 때", `${topic}에`) : q).replace("{topic}", topic);
 const usable = (s: SceneItem, ctx: PlanCtx, chapterId: string) => sceneFits(s.requires, ctx.facts, s.text) && !directionClash(s.text, dominantOf(ctx)) && !ctx.usedScenes.has(s.text) && !EVENT_SCENE.test(s.text) && (familyChapter(ctx.product, chapterId) || !conditionalFamily(s))
   && !(chapterId === "parenting" && MARRIAGE_TALK.test(s.text));
 
-function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string): string | undefined {
+/** P6e 18: 장면을 돌릴 가까운 영역(같은 절 질문에 어울리는 영역). */
+const NEAR_DOMAINS: Readonly<Partial<Record<Domain, readonly Domain[]>>> = { love: ["marriage", "relationships"], marriage: ["love", "relationships"], relationships: ["love", "alone"], work: ["money", "study"], money: ["work"], study: ["work"], alone: ["relationships"] };
+function freshScene(list: readonly SceneItem[] | undefined, ctx: PlanCtx, label: string, chapterId: string, allowSkip = false): string | undefined {
   const ok = (list ?? []).filter(s => usable(s, ctx, chapterId));
   if (!ok.length) return undefined;
-  const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
+  // P6e 18: 고객 해시(이름·생일·시각이 든 rng)로 돌려 고른다. 고를 장면이 한두 개뿐이면 "다른 영역으로 돌림" 칸을 하나 더 둔다
+  // (같은 일주·같은 계절 고객이 모두 같은 장면을 받던 문제: 하람·장소담 "퇴근 시간에 맞춰 국물을 데워 두는"). 돌릴 곳이 없으면 부르는 쪽이 다시 고른다.
+  const r = ctx.rng.fork(label);
+  const i = r.int(allowSkip && ok.length <= 2 ? ok.length + 1 : ok.length);
+  if (i >= ok.length) return undefined;
+  const s = ok[i]; ctx.usedScenes.add(s.text); return s.text;
 }
 const hasFresh = (ctx: PlanCtx, list: readonly SceneItem[] | undefined, chapterId: string) => (list ?? []).some(s => usable(s, ctx, chapterId));
 const isCore = (t: Trait) => t.family === "dayPillar" || t.family === "dayMaster";
@@ -207,9 +219,17 @@ export function planChapters(input: PlanCtx): PlanResult {
   const mbtiOf = (turn: number) => ctx.mbtiPair?.length ? ctx.mbtiPair[turn % ctx.mbtiPair.length] : ctx.mbti ? { who: undefined, profile: ctx.mbti } : undefined;
   /** trait 하나를 이 절에 놓는다(장면은 needScene일 때만, 궁합은 관계 장면이 장면이라 trait 장면을 주지 않는다). */
   const place = (p: Plan, spec: SectionPlan, src: TraitSource, needScene: boolean): Material => {
-    const domains = [spec.domain, ...p.domains.filter(d => d !== spec.domain)];
-    const d = (needScene ? domains.find(x => hasFresh(ctx, src.feature.scenes[x], p.c.id)) : undefined) ?? spec.domain;
-    const scene = needScene ? freshScene(src.feature.scenes[d], ctx, `${p.id}:${src.trait.id}:${d}`, p.c.id) : undefined;
+    const domains = [...new Set([spec.domain, ...p.domains.filter(d => d !== spec.domain), ...(NEAR_DOMAINS[spec.domain] ?? [])])] as Domain[];
+    const fresh = needScene ? domains.filter(x => hasFresh(ctx, src.feature.scenes[x], p.c.id)) : [];
+    let d = fresh[0] ?? spec.domain;
+    let scene: string | undefined;
+    // P6e 18: 첫 영역에 맞는 장면이 셋 미만이면(같은 일주·같은 계절 고객이 모두 같은 장면을 받는다) 가까운 영역 장면까지 묶어 고객 해시로 고른다.
+    const pool = (x: Domain) => (src.feature.scenes[x] ?? []).filter(sc => usable(sc, ctx, p.c.id));
+    if (needScene && fresh.length && pool(fresh[0]).length < 3 && fresh.length > 1) {
+      const all = fresh.flatMap(x => pool(x).map(sc => ({ x, sc })));
+      const pick = all[ctx.rng.fork(`${p.id}:${src.trait.id}:rotate`).int(all.length)];
+      d = pick.x; scene = pick.sc.text; ctx.usedScenes.add(scene);
+    } else if (needScene) scene = freshScene(src.feature.scenes[d], ctx, `${p.id}:${src.trait.id}:${d}`, p.c.id);
     const angle = ledger.use(src, p.id);
     return { kind: "trait", traitId: src.trait.id, domain: d, ...(scene ? { scene } : {}), angle };
   };
@@ -243,7 +263,21 @@ export function planChapters(input: PlanCtx): PlanResult {
     const score = (x: (typeof cands)[number]) => dims.reduce((a, d) => a + Math.abs(x.s.dims[d] ?? 0), 0) * 2 - (topicUse.get(x.t.key) ?? 0) * 3 + jitter.get(x.s.text)!;
     const best = [...cands].sort((a, b) => score(b) - score(a))[0];
     usedRel.add(best.s.text); topicUse.set(best.t.key, (topicUse.get(best.t.key) ?? 0) + 1); ledger.useAxes(relAxis(best.s.dims), p.id);
-    return { m: { kind: "rel", topic: best.t.label, scene: best.s.text }, dims: Object.keys(best.s.dims) };
+    // 최종판 1-5: 장면 차원마다 그 끝에 선 사람. P6e 궁합 8장 '쉬는 날 메일'에서 두 사람 역할이 뒤바뀌었다.
+    // 장면의 가장 센 차원 하나로만 정한다(두 차원이 같은 사람을 가리키면 장면의 두 쪽을 나눌 수 없다).
+    // 끝은 값의 부호로 정한다(|값| 0.5 미만 = 어느 쪽도 아님). 최종판 4: 둘 다 계획형(6.33·5.65)인데 낮은 쪽을 "세부는 닥쳐서 정하는 편"으로 적었다.
+    //   반대쪽이면 양 끝에 한 사람씩, 같은 쪽이면 "두 사람 모두"(차이가 1 이상이면 누가 더), 한 사람만 뚜렷하면 그 사람만.
+    const topDim = Object.entries(best.s.dims).sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]))[0]?.[0];
+    const who = rs.sides && rs.poles && topDim ? [topDim].flatMap(d => {
+      const [a, b] = rs.sides!, va = a.vec.get(d) ?? 0, vb = b.vec.get(d) ?? 0, pole = rs.poles![d];
+      if (!pole) return [];
+      const sgn = (v: number) => Math.abs(v) < 0.5 ? 0 : Math.sign(v), sa = sgn(va), sb = sgn(vb), end = (s: number) => s > 0 ? pole.plus : pole.minus;
+      if (sa && sb && sa !== sb) { const [p, m] = sa > 0 ? [a, b] : [b, a]; return [`${pole.plus} 쪽 = ${p.name}, ${pole.minus} 쪽 = ${m.name}`]; }
+      if (sa && sa === sb) return [`${end(sa)} 쪽 = ${a.name}·${b.name}${Math.abs(va - vb) >= 1 ? `(${Math.abs(va) > Math.abs(vb) ? a.name : b.name}이 더)` : ""}`];
+      if (sa || sb) return [`${end(sa || sb)} 쪽 = ${(sa ? a : b).name}`];
+      return [];
+    }) : [];
+    return { m: { kind: "rel", topic: best.t.label, scene: best.s.text, ...(who.length ? { who } : {}) }, dims: Object.keys(best.s.dims) };
   };
   const takeAux = (key: string) => { if (ctx.usedAux!.has(key)) return false; ctx.usedAux!.add(key); return true; };
 
@@ -254,7 +288,10 @@ export function planChapters(input: PlanCtx): PlanResult {
     const pool = ctx.mbtiSeeds?.get(owner.profile.type)?.[SEED_DOMAIN[d] ?? d] ?? [];
     const f = ctx.facts;
     const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
-      && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx)));
+      && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx))
+      // P6e 16: 직업군·상태 태그(ctx, 없으면 글에서 읽음)가 이 고객 생활과 맞지 않으면 뽑지 않는다. 학교·가족 소품도 같은 규칙.
+      // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗).
+      && (ctx.product === "saju_mbti_full" || (sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f))));
     if (!ok.length) return null;
     const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
     return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
@@ -263,6 +300,18 @@ export function planChapters(input: PlanCtx): PlanResult {
   const mbtiScene = (p: Plan, domains: readonly Domain[], label: string, sec?: Section): Material | null => {
     const owner = mbtiOf(mbtiTurn); if (!owner) return null;
     if (hasBasis(sec)) for (const d of domains) { const m = seedFor(p, d, label, owner); if (m) { mbtiTurn++; return m; } }
+    // 최종판 1-15: 맞는 씨앗이 없으면 유형 공용 신호 장면으로 채우지 않는다 — 한 사람 책은 그 사람의 직업 장소·소품(생활 단계·관계 소품)으로 장면을 짓게 한다.
+    // (P6e 장소담: 거른 뒤 남은 씨앗이 모자라 INTP 공용 장면 「버스 종점」·「프리랜서 의뢰서」·「개인 프로젝트 폴더」가 되풀이됐다.)
+    // 최종판2 1-2: 종합은 P6d처럼 직업 소품으로 대체하지 않고 유형 공용 신호 장면을 쓴다(커리어·연애는 그대로).
+    if (ctx.props && ctx.product !== "saju_mbti_full") {
+      for (const d of domains) {
+        const pool = (d === "work" || d === "money" || d === "study" ? ctx.props.job.props : d === "love" || d === "marriage" || d === "relationships" ? ctx.props.relationship : ctx.props.stage.props).filter(x => !ctx.usedScenes.has(x));
+        if (!pool.length) continue;
+        const prop = ctx.rng.fork(`${p.id}:${label}:prop:${d}`).pick(pool); ctx.usedScenes.add(prop); mbtiTurn++;
+        return { kind: "mbti", domain: d, scene: (d === "work" || d === "money" || d === "study") && ctx.props.job.group ? `${ctx.props.job.group}의 ${prop}` : prop, seedId: "prop", ...(owner.who ? { who: owner.who } : {}) };
+      }
+      return null;
+    }
     for (const d of domains) {
       const scene = freshScene(owner.profile.signals[d], ctx, `${p.id}:${label}:${d}`, p.c.id);
       if (scene) { mbtiTurn++; return { kind: "mbti", domain: d, scene, ...(owner.who ? { who: owner.who } : {}) }; }
@@ -323,7 +372,7 @@ export function planChapters(input: PlanCtx): PlanResult {
       else if (use.startsWith("ev:")) { const e = ctx.evidence[use.slice(3)]; if (e && takeAux(use)) sec.materials.push(spec.note && e.kind === "evidence" ? { ...e, note: [e.note, spec.note].filter(Boolean).join(" / ") } : e); }
       else if (use.startsWith("recap:")) sec.materials.push({ kind: "ref", ref: `chapters.${use.slice(6)}`, note: spec.note ?? "앞 장을 종합한다: 새 특성·새 그림 없이 그 장의 근거로 이번 행동 하나" });
       else if (use === "mbti") { const m = mbtiScene(p, [spec.domain], "mbti", sec); if (m) sec.materials.push(m); }
-      else if (use === "rel") { const r = pickRel(p, spec); if (r) { sec.materials.push(r.m); sl.relDims.push(...r.dims); sec.q = sec.q.replace("{topic}", r.m.topic); } }
+      else if (use === "rel") { const r = pickRel(p, spec); if (r) { sec.materials.push(r.m); sl.relDims.push(...r.dims); sec.q = fillTopic(sec.q, r.m.topic); } }
     }
     // 1순위 재료가 참조·근거뿐인데 비었으면(덜 쓴 기운 없음·MBTI 없음 등) 이 절은 뺀다: 질문만 남으면 작가가 뜻을 지어낸다(P3.8 r1).
     if (spec.use.every(u => /^(ref|ev):/.test(u)) && !sec.materials.length) { sl.skip = true; continue; }
@@ -367,7 +416,7 @@ export function planChapters(input: PlanCtx): PlanResult {
     if (src) { sec.materials.push(place(p, spec, src, !ctx.relScenes)); continue; }
     if (p.index < plans.length - 1 && takeShadow(p, spec, sec)) continue;
     const m = ctx.relScenes ? pickRel(p, spec)?.m : mbtiScene(p, [spec.domain, ...ALL.filter(d => d !== spec.domain)], "fill");
-    if (m) { sec.materials.push(m); if (m.kind === "rel") sec.q = sec.q.replace("{topic}", m.topic); continue; }
+    if (m) { sec.materials.push(m); if (m.kind === "rel") sec.q = fillTopic(sec.q, m.topic); continue; }
     const ref = ["chart.elements", "chart.yinYang", "chart.climate", "fortunes", "unused", "chart.thisYear"].find(r => !reserved.has(`ref:${r}`) && ctx.has(r) && takeAux(`ref:${r}`));
     if (ref) { sec.materials.push({ kind: "ref", ref, note: "앞 장과 다른 각도로만 짧게" }); continue; }
     // 마지막 두 장은 같은 영역의 앞 장을 종합하고(새 재료 없이), 그 밖에는 MBTI 기능 설명을 한 번만.

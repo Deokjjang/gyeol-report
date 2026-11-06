@@ -91,6 +91,10 @@ let fallbackJourney: string | undefined;
 export function interaction(event: Interaction, productType?: string, campaign?: string) {
   if (manualReviewSilent()) return;
   if (typeof window === "undefined") return;
+  const mapped = event === "book_viewed" ? "ViewContent" : event === "checkout_started" ? "InitiateCheckout" : null;
+  // 최종 A 20: Meta로 가는 행동은 동의(또는 로컬 측정)일 때만 센다. 동의 전에 중복 방지 표시를 남기면
+  // 같은 탭에서 나중에 동의한 뒤 결제창을 열어도 한 번도 나가지 않는다.
+  if (mapped && !localMeasurement() && !publicMetaAllowed()) return;
   const eventId = `${journeyId()}:${event}${productType ? `:${productType}` : ""}`;
   const key = `gyeol:event:${eventId}:${campaign ?? ""}`;
   try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, "1"); } catch { if (delivered.has(key)) return; }
@@ -98,7 +102,6 @@ export function interaction(event: Interaction, productType?: string, campaign?:
   const data: FunnelEvent = { event, eventId, ...(productType ? { productType } : {}), ...(campaign ? { campaign } : {}) };
   capture("internal", data);
   if (localMeasurement()) void fetch("/dev/measurement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data), keepalive: true }).catch(() => {});
-  const mapped = event === "book_viewed" ? "ViewContent" : event === "checkout_started" ? "InitiateCheckout" : null;
   const message = mapped && productType ? metaProduct(mapped, productType) : null;
   if (message) sendMeta(message, eventId);
 }

@@ -15,7 +15,9 @@ describe("핵심 이미지(P6b B-4)", () => {
     expect(coreImage({ ...base, stem: "甲", season: "autumn", strength: "STRONG", levels: { ...base.levels, WATER: "많음" }, strongest: { element: "WATER", level: "많음" } }).line).toBe("넓은 대지에 뿌리 내린 오래된 고목");
   });
   it("기본 규칙은 계절 자리 + 강약 주인공", () => {
-    expect(coreImage({ ...base, stem: "癸", season: "autumn", strength: "VERY_WEAK" })).toEqual({ line: "가을 아침 창가에 살짝 맺힌 이슬", ruleId: "R5:癸:autumn:weak" });
+    expect(coreImage({ ...base, stem: "癸", season: "autumn", strength: "VERY_WEAK" })).toMatchObject({ line: "가을 아침 창가에 살짝 맺힌 이슬", ruleId: "R5:癸:autumn:weak" });
+    // 최종판2 1-1: 작가에게는 그림 없는 뜻만(엔진 그림 줄을 본문에 옮기지 않게).
+    expect(coreImage({ ...base, stem: "癸", season: "autumn", strength: "VERY_WEAK" }).meaning).toBe("계수(스며들어 적시는 힘) · 가을 태생 · 타고난 힘이 여린 편");
   });
   it("모든 줄: 한 줄(40자 이하)·그림 별명 없음·농촌 소품 없음·비유 표지 없음·서로 다름", () => {
     for (const l of lines) {

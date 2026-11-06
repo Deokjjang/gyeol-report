@@ -223,7 +223,7 @@ describe("보상 A 지정(PIN)", () => {
     const designate = h.rpc.find(x => x.fn === "ops_comp" && x.action === "designate")!;
     expect(designate.data).toEqual({ orderCode: "GR-ABCD", adminUserId: ADMIN });
     const sync = h.rpc.find(x => x.fn === "ops_comp" && x.action === "sync")!;
-    expect(sync.data).toMatchObject({ userId: BUYER, enabled: true, aSelf: 1, aGift: 1, aDays: 60, bQty: 1, bDays: 30, products: ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] });
+    expect(sync.data).toMatchObject({ userId: BUYER, enabled: true, aQty: 2, aDays: 30, bQty: 1, bDays: 30, products: ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] });
     expect(auditOf("comp_designate")[0]).toMatchObject({ actor: "admin", target: "GR-ABCD", detail: { ok: true, userId: BUYER, state: "granted" } });
   });
   it("토스 주문번호로도 지정, 꺼져 있으면 지급하지 않고(sync 호출 없음) 그렇게 안내", async () => {

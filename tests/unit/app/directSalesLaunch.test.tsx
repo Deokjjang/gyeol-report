@@ -12,7 +12,7 @@ import { ticketBundleCommerceEnabled, AUTOMATIC_BUNDLE_REFUND_ENABLED } from "..
 import { BUNDLE_PURCHASE_POLICY_VERSION } from "../../../src/lib/tickets/shopContract";
 import { BookHomeRoute, BookInputRoute } from "../../../src/components/book/BookRoutes";
 import { AccountScreen } from "../../../src/components/account/AccountScreen";
-import { getReportProductCatalog } from "../../../src/lib/payment/reportProductCatalog";
+import { getReportProductCatalog, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 
 describe("approved direct-sales launch boundary", () => {
   it("enables Book/account only; paid commerce and automatic refund stay closed", () => {
@@ -24,7 +24,7 @@ describe("approved direct-sales launch boundary", () => {
     expect(AUTOMATIC_BUNDLE_REFUND_ENABLED).toBe(false);
     const products = getReportProductCatalog().filter(p => p.isPurchasable);
     expect(products).toHaveLength(6);
-    expect(products.every(p => p.amount === 1490)).toBe(true);
+    expect(products.every(p => p.amount === REPORT_PRICE_TABLE_KRW[p.productType])).toBe(true);
   });
   it("public home/input pass account ON but paid-shop OFF", async () => {
     expect((await BookHomeRoute({})).props.authEnabled).toBe(true);
@@ -44,7 +44,7 @@ describe("approved direct-sales launch boundary", () => {
     const checkout = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
     expect(checkout).toContain('"/auth"}/ticket-summary');
     expect(checkout).toContain('if (!internal && method === "ticket")');
-    expect(checkout).toContain("await publication.submit(payload, consents");
+    expect(checkout).toContain("await publication.submit(payload, effective"); // 배포 명령 0-3: 회원은 약관·개인정보를 가입 동의로 채운 값(effective)
     expect(checkout).toContain("리포트 이용권 1장 사용");
     expect(checkout).toContain("ticketShopEnabled && !ticketPending ? <button");
   });

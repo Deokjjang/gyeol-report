@@ -18,6 +18,7 @@ import { insertFixedLines, lintContext } from "@/lib/writer/publish";
 import { ledgerOf, newEvidenceShare, usedScenesOf } from "@/lib/writer/prior";
 import type { FinalChapter } from "@/lib/writer/safety";
 import * as L from "@/lib/writer/safety/lint";
+import * as E from "@/lib/writer/safety/p6e";
 import * as D from "@/lib/writer/safety/p6d";
 import { enforce, lintBook, lintCards, type LintFlag } from "@/lib/writer/safety/p6c";
 import { splitSentences } from "@/lib/writer/safety/patterns";
@@ -41,12 +42,13 @@ const flagged = (flags: readonly LintFlag[], rule: string, part: string) => flag
 const lintStored = (file: string, b: Brief) => { const { chapters, plan } = stored(file, b); return { flags: lintBook(chapters, lintContext(b, k, plan, [])), chapters }; };
 
 describe("P6d A 십성 묶음 세기 = 만세력 오행 칸 가중값 하나", () => {
-  it("하람 회귀: 관성 강 · 비겁 강 · 식상 보통 · 인성 약 · 재성 약(브리프·커리어 근거·검사가 같은 값)", () => {
+  // 최종판3 1: 비겁은 일간 자신(1)을 뺀다 → 하람 비겁 강(3.6) → 보통(2.6).
+  it("하람 회귀: 관성 강 · 비겁 보통 · 식상 보통 · 인성 약 · 재성 약(브리프·커리어 근거·검사가 같은 값)", () => {
     const s = calculateSaju({ birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "" as never, calendarType: "SOLAR", gender: "MALE", timezone: "Asia/Seoul" });
     const g = groupStrength(s);
-    expect([g.OFFICER.level, g.PEER.level, g.OUTPUT.level, g.RESOURCE.level, g.WEALTH.level]).toEqual(["strong", "strong", "medium", "weak", "weak"]);
-    expect([g.OFFICER.value, g.PEER.value, g.OUTPUT.value]).toEqual([s.elements.weighted.WATER, s.elements.weighted.FIRE, s.elements.weighted.EARTH].map(v => Math.round(v * 100) / 100));
-    for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child"]) expect(brief(product, PEOPLE.c1).chart.groups!.levels).toEqual({ 비겁: "강", 식상: "보통", 재성: "약", 관성: "강", 인성: "약" });
+    expect([g.OFFICER.level, g.PEER.level, g.OUTPUT.level, g.RESOURCE.level, g.WEALTH.level]).toEqual(["strong", "medium", "medium", "weak", "weak"]);
+    expect([g.OFFICER.value, g.PEER.value, g.OUTPUT.value]).toEqual([s.elements.weighted.WATER, s.elements.weighted.FIRE - 1, s.elements.weighted.EARTH].map(v => Math.round(v * 100) / 100));
+    for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child"]) expect(brief(product, PEOPLE.c1).chart.groups!.levels).toEqual({ 비겁: "보통", 식상: "보통", 재성: "약", 관성: "강", 인성: "약" });
     // 진로 판정(직무·진로 다섯 갈래)도 같은 값: "관성 강함".
     const career = brief("career_money_study", PEOPLE.c1);
     const facts = career.chapters.flatMap(c => (c.sections ?? []).flatMap(x => x.materials)).flatMap(m => m.kind === "evidence" ? m.facts : []).join(" ");
@@ -96,7 +98,8 @@ describe("P6d C·E 사실·위치·시점", () => {
     expect(D.dayunYearClaim("대운의 마지막 해라 정리가 먼저예요.", 10)).toBeNull();
     expect(D.dayunYearClaim("이번 10년 흐름의 마지막 해예요.", 9)).toBe("last≠9/10");
     // 전환 해 머리 문장은 새 대운 이름과 십성.
-    expect(b.timeline!.entries.find(e => e.key === "2032")!.head).toBe("2032년 임자(壬子)는 정관(正官)이 하늘에, 편관(偏官)이 땅에 들어오는 해예요. 이 해부터 경신(庚申) 대운이 시작되고, 10년의 중심 기운은 정재(正財)예요.");
+    // 최종판3 8: 교운 달은 공통 대운 표기(labels.dayunLabel)의 달 그대로.
+    expect(b.timeline!.entries.find(e => e.key === "2032")!.head).toBe("2032년 임자(壬子)는 정관(正官)이 하늘에, 편관(偏官)이 땅에 들어오는 해예요. 이 해 12월 무렵부터 경신(庚申) 대운이 시작되고, 10년의 중심 기운은 정재(正財)예요.");
   });
   it("궁합 '둘 다 X'는 두 사람 엔진 값으로: 하람×서윤 '둘 다 재성이 부족'·'둘 다 태가 있고'·'둘 다 관살혼잡'", () => {
     const b = brief("saju_mbti_compatibility", PEOPLE.c1, { partner: PEOPLE.c2, relationshipType: "love" });
@@ -146,22 +149,23 @@ describe("P6d D 카드(대운·세운)", () => {
     const flags = lintCards([ch], { ...base, periods: { 2023: "past", 2033: "future" } });
     expect(flags.map(f => `${f.section}:${f.card}:${f.rule}`)).toEqual(expect.arrayContaining(["0:review:card_missing", "0:review:card_form", "1:caution:card_overlap"]));
   });
-  it("머리 문장(결정론)·1장 기준 날짜·투자 안내를 조립 직전에 넣고, 작가가 쓴 머리 문장은 뗀다", () => {
+  it("머리 문장(결정론)·책 한 줄 안내(마지막 장 끝, 책에 한 번)를 조립 직전에 넣고, 작가가 쓴 머리 문장은 뗀다 — P6e 12: 본문 기준일 줄은 넣지 않는다", () => {
     const b = brief("major_fortune", PEOPLE.x);
     const chs: FinalChapter[] = [{ n: 1, id: "a", title: "a", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["첫 문단이에요."] }] },
       { n: 5, id: "yearly", title: "y", source: "writer", chars: 0, keys: ["2028"], sections: [{ heading: "2028", paragraphs: ["2028년 무신(戊申)은 상관(傷官)이 하늘에, 정재(正財)가 땅에 들어오는 해예요. 말이 날카로워지는 해예요."] }] }];
     const out = insertFixedLines(chs, b);
-    expect(out[0].sections[0].paragraphs[0]).toBe("이 책은 2026년 11월 4일 기준으로 썼어요. 첫 문단이에요.");
+    expect(out[0].sections[0].paragraphs[0]).toBe("첫 문단이에요.");
+    expect(out.flatMap(c => c.sections.flatMap(s => s.paragraphs)).join(" ")).not.toMatch(/기준으로 썼어요/);
     expect(out[1].sections[0].paragraphs[0]).toBe(`${b.timeline!.entries.find(e => e.key === "2028")!.head} 말이 날카로워지는 해예요.`);
+    expect(out[1].sections[0].paragraphs.at(-1)).toBe(E.bookNotice("major_fortune"));
     const c = brief("career_money_study", PEOPLE.c1);
     const inv = insertFixedLines([{ n: 1, id: "engine", title: "e", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["엔진이에요."] }] }, { n: 8, id: "invest", title: "i", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["원칙이에요."] }] }], c);
-    expect(inv[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`);
-    expect(insertFixedLines(inv, c)[1].sections[0].paragraphs[0]).toBe(`${D.INVEST_NOTICE} 원칙이에요.`); // 한 번만
-    const own = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."] }] }], c);
-    expect(own[1].sections[0].paragraphs[0]).toBe("이 장은 투자 권유가 아니라 성향을 읽는 이야기예요. 원칙이에요."); // 작가가 쓴 안내가 있으면 넣지 않는다
-    const own2 = insertFixedLines([inv[0], { ...inv[1], sections: [{ heading: "h", paragraphs: ["이 장은 권유가 아니라 성향 이야기예요."] }] }], c);
-    expect(own2[1].sections[0].paragraphs[0]).toBe("이 장은 권유가 아니라 성향 이야기예요."); // r2: "투자" 없이 쓴 안내도 같은 뜻
+    // 투자 장 안내는 따로 넣지 않고(P6e 15), 책 한 줄 안내(돈·투자 권유 아님 포함)를 마지막 장 끝에 한 번.
+    expect(inv[1].sections[0].paragraphs).toEqual(["원칙이에요.", E.bookNotice("career_money_study")]);
+    expect(insertFixedLines(inv, c)[1].sections[0].paragraphs).toEqual(["원칙이에요.", E.bookNotice("career_money_study")]); // 한 번만
+    expect(E.bookNotice("career_money_study")).toMatch(/권유가 아니라/);
   });
+
 });
 
 describe("P6d F 아이디어 원장(같은 고객의 다음 책은 쓴 각도·씨앗을 쓰지 않는다)", () => {
@@ -191,7 +195,7 @@ describe("P6d F 아이디어 원장(같은 고객의 다음 책은 쓴 각도·�
   });
   it("MBTI 씨앗은 유형 × 영역 30개 이상, 명리 근거·입력 맥락이 있는 절에만 놓인다", () => {
     for (const [type, seeds] of k.mbtiSeeds) for (const d of ["work", "money", "love", "relationships", "alone"]) expect(seeds[d]?.length ?? 0, `${type}.${d}`).toBeGreaterThanOrEqual(30);
-    for (const b of [full, career]) for (const c of b.chapters) for (const s of c.sections ?? []) if (s.materials.some(m => m.kind === "mbti" && m.seedId)) expect(s.materials.some(m => m.kind === "trait" || m.kind === "evidence" || m.kind === "ref" || m.kind === "rel"), `${c.id} ${s.q}`).toBe(true);
+    for (const b of [full, career]) for (const c of b.chapters) for (const s of c.sections ?? []) if (s.materials.some(m => m.kind === "mbti" && m.seedId && m.seedId !== "prop")) expect(s.materials.some(m => m.kind === "trait" || m.kind === "evidence" || m.kind === "ref" || m.kind === "rel"), `${c.id} ${s.q}`).toBe(true);
   });
   it("소품 원장: 같은 소품은 책당 1회(힌트 1장), 연애 책 전체·종합 연애·가족 장은 직업 소품 금지", () => {
     for (const b of [full, career]) for (const n of Object.values(b.usedProps ?? {})) expect(n).toBe(1);

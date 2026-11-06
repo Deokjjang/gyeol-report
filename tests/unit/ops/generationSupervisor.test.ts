@@ -42,12 +42,13 @@ describe("정책: 시간표·판정", () => {
 });
 
 describe("출력 전 실패·중간 끊김(같은 시도 안)", () => {
-  it("429 두 번 → 재시도 → Sonnet 정식본", async () => {
-    const h = harness([{ status: 429 }, { status: 429 }, { text }]);
+  // 최종판3 6: 출력 0 실패는 시도 안에서 1회만 다시 부른다(두 번째도 실패면 다음 시도로 미룬다 — final3RawRetry.test).
+  it("429 한 번 → 재시도 1회 → Sonnet 정식본", async () => {
+    const h = harness([{ status: 429 }, { text }]);
     const d = await h.run();
     expect(d.kind).toBe("publish"); expect(d.kind === "publish" && d.edition).toBe("official");
     expect(d.kind === "publish" && d.meta.writer).toEqual({ provider: "anthropic", model: "claude-sonnet-5-5" });
-    expect(h.a.calls.length).toBeGreaterThanOrEqual(3); expect(h.o.calls).toHaveLength(0); // terra 대체 없음(뒤 호출은 P6c 수리 1회)
+    expect(h.a.calls.length).toBeGreaterThanOrEqual(2); expect(h.o.calls).toHaveLength(0); // terra 대체 없음(뒤 호출은 P6c 수리 1회)
     expect(h.ops.states.get(h.job.reportId)!.phase).toBe("official");
   }, 60_000);
 
@@ -155,10 +156,12 @@ describe("OpenAI 잔액 부족", () => {
 });
 
 describe("판정", () => {
-  it("결정론 장이 있으면 incomplete, 짧은 장은 rejected(다음 시도에서 다시 쓴다)", () => {
-    const meta = { chapters: [{ n: 1, source: "writer" }, { n: 2, source: "deterministic", reason: "too_short:100<600" }, { n: 3, source: "deterministic", reason: "missing" }], calls: [{ chars: 10, error: undefined }] };
+  it("최종판 0-1: 결정론 장(빠진 장)이 있으면 incomplete — 짧은 작가 장은 버리지 않는다(rejected 늘 빈 배열), 상한에 걸리면 capped", () => {
+    const meta = { chapters: [{ n: 1, source: "writer" }, { n: 2, source: "writer", reason: "short:100<600" }, { n: 3, source: "deterministic", reason: "missing" }], calls: [{ chars: 10, error: undefined }] };
     const v = judgeBuild({ meta: meta as never, run: { stale: false, calls: meta.calls } as never });
-    expect(v).toMatchObject({ kind: "incomplete", rejected: [2], missing: [3], preOutput: false });
+    expect(v).toMatchObject({ kind: "incomplete", rejected: [], missing: [3], preOutput: false });
+    expect(judgeBuild({ meta: { chapters: [{ n: 1, source: "writer", reason: "short:100<600" }], calls: [] } as never, run: null })).toEqual({ kind: "complete", keysFilled: [] });
+    expect(judgeBuild({ meta: meta as never, run: { stale: false, capped: true, calls: meta.calls } as never })).toMatchObject({ kind: "incomplete", capped: true, reason: "partial:cost_cap" });
     expect(judgeBuild({ meta: { chapters: [{ n: 1, source: "writer", reason: "keys_filled:2026" }], calls: [] } as never, run: null })).toEqual({ kind: "complete", keysFilled: [1] });
   });
 });

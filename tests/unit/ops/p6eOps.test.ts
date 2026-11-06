@@ -35,7 +35,10 @@ async function pay(id: string, user: string | null) {
 }
 const codeOf = async (id: string) => (await one<{ order_code: string }>("select order_code from order_records where payment_order_id=$1", [id])).order_code;
 const contact = (u: string, email = "c@example.com") => exec("insert into account_contacts(user_id,full_name,email,email_source) values($1,'회원',$2,'typed') on conflict do nothing", [u, email]);
-const cfg = { enabled: true, aSelf: 1, aGift: 1, aDays: 60, bQty: 1, bDays: 30, products: ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] };
+// v5 최종 2-3: A 2장·B 1장, 장마다 내가 쓰기/선물 링크를 고른다(이벤트 이용권과 같은 gift_rewards).
+const cfg = { enabled: true, aQty: 2, aDays: 60, bQty: 1, bDays: 30, products: ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] };
+const compGifts = async (u: string) => (await h.db.query<{ id: string; kind: string; gift_only: boolean; source_order_id: string | null; days: number; scopes: string[]; status: string }>(
+  "select id,kind,gift_only,source_order_id,round(extract(epoch from expires_at-created_at)/86400)::int days,product_scopes scopes,status from gift_rewards where owner_user_id=$1 and kind='comp' order by created_at,id", [u])).rows;
 const sync = (userId: string, over: Record<string, unknown> = {}) => comp.call("sync", { userId, ...cfg, ...over });
 const eventCfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", maxPerAccount: 2, bonusMax: 2, products: ["saju_mbti_full"], validDays: 30 };
 
@@ -134,7 +137,7 @@ describe("토스 상태 대조 · 외부 환불 기록", () => {
 });
 
 describe("보상 이용권 A·B", () => {
-  it("B(기존 무료 이벤트 가입자): 꺼짐이면 지급 없음 → 켜짐+정보 입력 전이면 대기 → 정보 입력 뒤 1장·30일·4종, 두 번 불러도 한 번만", async () => {
+  it("B(기존 무료 이벤트 가입자): 꺼짐이면 지급 없음 → 켜짐+정보 입력 전이면 대기 → 정보 입력 뒤 고를 수 있는 1장·30일·4종, 두 번 불러도 한 번만", async () => {
     await exec("insert into upgrade_roster(user_id,joined_at,cutoff) values($1,now()-interval '60 days','2026-10-31T15:00:00Z')", [D]);
     expect(await sync(D, { enabled: false })).toMatchObject({ ok: true, tier: "B", state: "off" });
     expect(await sync(D)).toMatchObject({ ok: true, tier: "B", state: "waiting_profile" });
@@ -143,9 +146,15 @@ describe("보상 이용권 A·B", () => {
     const first = await sync(D);
     expect(first).toMatchObject({ ok: true, tier: "B", state: "granted", quantity: 1, fresh: true });
     expect(await sync(D)).toMatchObject({ state: "granted", fresh: false });
-    const grant = await one<{ quantity: number; days: number; scopes: string[]; reason: string }>("select quantity,round(extract(epoch from expires_at-granted_at)/86400)::int days,product_scopes scopes,reason from report_ticket_grants where user_id=$1", [D]);
-    expect(grant).toEqual({ quantity: 1, days: 30, scopes: cfg.products, reason: "COMP_B" });
-    expect(await one("select count(*)::int n from gift_rewards where owner_user_id=$1", [D])).toEqual({ n: 0 });
+    // 이벤트 이용권과 같은 종류: 바로 이용권을 넣지 않고, 고객이 내가 쓰기/선물 링크를 고른다.
+    const gifts = await compGifts(D);
+    expect(gifts).toHaveLength(1);
+    expect(gifts[0]).toMatchObject({ kind: "comp", gift_only: false, source_order_id: null, days: 30, scopes: cfg.products, status: "available" });
+    expect(await one("select count(*)::int n from report_ticket_grants where user_id=$1", [D])).toEqual({ n: 0 });
+    expect(await gift.call("use_self", { userId: D, giftId: gifts[0].id })).toMatchObject({ ok: true, status: "used_self" });
+    const grant = await one<{ quantity: number; days: number; scopes: string[] }>("select quantity,round(extract(epoch from expires_at-granted_at)/86400)::int days,product_scopes scopes from report_ticket_grants where user_id=$1", [D]);
+    expect(grant).toEqual({ quantity: 1, days: 30, scopes: cfg.products });
+    expect(await gift.call("use_self", { userId: D, giftId: gifts[0].id })).toMatchObject({ ok: false, code: "GIFT_USED" });
   });
 
   it("보상 이용권은 설정한 4종 상품만 만들 수 있다(대운·세운은 거절) — 사용하면 1+1 이벤트 이용권은 생기지 않는다", async () => {
@@ -154,11 +163,11 @@ describe("보상 이용권 A·B", () => {
     expect(await redeem("annual_fortune")).toMatchObject({ ok: false, code: "NO_USABLE_TICKET" });
     expect(await redeem("career_money_study")).toMatchObject({ ok: true, fresh: true });
     expect(await redeem("saju_mbti_full")).toMatchObject({ ok: false, code: "NO_USABLE_TICKET" }); // 1장뿐
-    expect(await one("select count(*)::int n from gift_rewards where owner_user_id=$1", [D])).toEqual({ n: 0 }); // 사용해도 이벤트 이용권 없음
+    expect(await one("select count(*)::int n from gift_rewards where owner_user_id=$1 and kind='event'", [D])).toEqual({ n: 0 }); // 사용해도 이벤트 이용권 없음
     expect(await afterPaidOrder(gift as never, "nonexistent", eventCfg)).toMatchObject({ issued: { issued: false } });
   });
 
-  it("A: 환불 완료 주문만(주문코드·토스 주문번호), 계정 연결 필요. 지정하면 정보 입력 뒤 본인용 1장+선물 링크 1장(60일), 선물은 링크 전용", async () => {
+  it("A: 환불 완료 주문만(주문코드·토스 주문번호), 계정 연결 필요. 지정하면 정보 입력 뒤 2장(30일, 최종3), 장마다 내가 쓰기 또는 선물 링크", async () => {
     await pay("ca1", B);
     expect(await comp.call("designate", { orderCode: await codeOf("ca1"), adminUserId: A })).toMatchObject({ ok: false, code: "NOT_REFUNDED", status: "paid" });
     await order.call("refund_request", { paymentOrderId: "ca1", source: "admin", reason: "계산 오류" });
@@ -176,11 +185,14 @@ describe("보상 이용권 A·B", () => {
     await contact(B, "b@example.com");
     expect(await sync(B)).toMatchObject({ tier: "A", state: "granted", quantity: 2, fresh: true });
     expect(await sync(B)).toMatchObject({ fresh: false });
-    expect(await one("select quantity,round(extract(epoch from expires_at-granted_at)/86400)::int days,reason from report_ticket_grants where user_id=$1 and reason='COMP_A'", [B])).toEqual({ quantity: 1, days: 60, reason: "COMP_A" });
-    const giftRow = await one<{ id: string; kind: string; gift_only: boolean; source_order_id: string | null; days: number; scopes: string[] }>("select id,kind,gift_only,source_order_id,round(extract(epoch from expires_at-created_at)/86400)::int days,product_scopes scopes from gift_rewards where owner_user_id=$1", [B]);
-    expect(giftRow).toMatchObject({ kind: "comp", gift_only: true, source_order_id: null, days: 60, scopes: cfg.products });
-    // 선물은 링크 전용: 내가 쓰기는 거절, 링크 → 친구(C)가 받으면 친구에게도 같은 4종 범위 이용권.
-    expect(await gift.call("use_self", { userId: B, giftId: giftRow.id })).toMatchObject({ ok: false, code: "GIFT_LINK_ONLY" });
+    expect(await one("select count(*)::int n from report_ticket_grants where user_id=$1", [B])).toEqual({ n: 0 }); // 바로 넣지 않고 고르게 한다
+    const [selfRow, giftRow] = await compGifts(B);
+    // 최종3: 설정 유효일(60)이 와도 SQL이 30일을 넘기지 않는다.
+    for (const row of [selfRow, giftRow]) expect(row).toMatchObject({ kind: "comp", gift_only: false, source_order_id: null, days: 30, scopes: cfg.products, status: "available" });
+    // 한 장은 내가 쓰기 → 같은 4종 범위·같은 기한의 이용권 1장.
+    expect(await gift.call("use_self", { userId: B, giftId: selfRow.id })).toMatchObject({ ok: true, status: "used_self" });
+    expect(await one("select quantity,product_scopes scopes from report_ticket_grants where user_id=$1", [B])).toEqual({ quantity: 1, scopes: cfg.products });
+    // 다른 한 장은 선물 링크 → 친구(C)가 받으면 친구에게도 같은 4종 범위 이용권.
     const link = newGiftToken();
     expect(await gift.call("link", { userId: B, giftId: giftRow.id, tokenHash: link.hash })).toMatchObject({ ok: true, status: "gifted" });
     expect(await gift.call("claim", { userId: C, tokenHash: link.hash })).toMatchObject({ ok: false, code: "PROFILE_REQUIRED" });
@@ -194,14 +206,14 @@ describe("보상 이용권 A·B", () => {
     expect(await gift.call("peek", { tokenHash: link.hash, userId: "" })).toMatchObject({ received: false });
     // 목록: 주문 없는 보상도 보이고 kind·giftOnly가 내려간다.
     const list = await gift.call("list", { userId: B });
-    expect((list.gifts as { kind: string; giftOnly: boolean; orderCode: string | null }[])[0]).toMatchObject({ kind: "comp", giftOnly: true, orderCode: null });
+    expect(list.gifts as { kind: string; giftOnly: boolean; orderCode: string | null }[]).toEqual(expect.arrayContaining([expect.objectContaining({ kind: "comp", giftOnly: false, orderCode: null, status: "used_self" }), expect.objectContaining({ kind: "comp", giftOnly: false, status: "claimed" })]));
     // 친구가 첫 결제를 해도 보상 선물에는 1+1 보너스가 없다.
     await pay("cf1", C);
     expect(await afterPaidOrder(gift as never, "cf1", eventCfg)).toMatchObject({ bonus: { granted: false } });
     expect(await one("select bonus_granted_at from gift_rewards where id=$1", [giftRow.id])).toEqual({ bonus_granted_at: null });
   });
 
-  it("B로 받은 뒤 A로 지정되면 본인용은 B로 받은 1장으로 갈음하고 선물 링크 1장만 더 받는다(총 2장)", async () => {
+  it("B로 받은 뒤 A로 지정되면 B로 받은 1장을 빼고 1장만 더 받는다(총 2장) — A는 두 장 다 내가 써도 된다", async () => {
     await exec("insert into upgrade_roster(user_id,joined_at,cutoff) values($1,now()-interval '60 days','2026-10-31T15:00:00Z')", [E]);
     await contact(E, "e@example.com");
     expect(await sync(E)).toMatchObject({ tier: "B", state: "granted", quantity: 1 });
@@ -210,8 +222,10 @@ describe("보상 이용권 A·B", () => {
     await processRefunds(ops(), providerOf(), { paymentOrderId: "cu1" });
     await comp.call("designate", { orderCode: await codeOf("cu1") });
     expect(await sync(E)).toMatchObject({ tier: "A", state: "granted", quantity: 2, fresh: true });
-    expect(await one("select count(*)::int n from report_ticket_grants where user_id=$1", [E])).toEqual({ n: 1 }); // 본인용 추가 지급 없음
-    expect(await one("select count(*)::int n from gift_rewards where owner_user_id=$1 and kind='comp'", [E])).toEqual({ n: 1 });
+    const gifts = await compGifts(E);
+    expect(gifts).toHaveLength(2);
+    for (const g of gifts) expect(await gift.call("use_self", { userId: E, giftId: g.id })).toMatchObject({ ok: true, status: "used_self" });
+    expect(await one("select count(*)::int n, sum(quantity)::int q from report_ticket_grants where user_id=$1", [E])).toEqual({ n: 2, q: 2 });
   });
 
   it("설정이 잘못되면(상품 없음·유효일 0·장수 0) 지급하지 않는다", async () => {
@@ -232,9 +246,9 @@ describe("보상 이용권 A·B", () => {
     expect(counts.B.total).toBe(2);
     expect(counts.B).toMatchObject({ granted: 1, used: 1, ready: 1 });
     const members = r.members as { userId: string; tier: string; state: string; usedTickets: number; usedGifts: number; orderCode: string | null }[];
-    expect(members.find(m => m.userId === D)).toMatchObject({ tier: "B", state: "granted", usedTickets: 1 });
-    expect(members.find(m => m.userId === B)).toMatchObject({ tier: "A", state: "granted", usedGifts: 1 });
-    expect(members.find(m => m.userId === E)).toMatchObject({ tier: "A", state: "granted", usedGifts: 0 });
+    expect(members.find(m => m.userId === D)).toMatchObject({ tier: "B", state: "granted", usedGifts: 1 });
+    expect(members.find(m => m.userId === B)).toMatchObject({ tier: "A", state: "granted", usedGifts: 2 }); // 1장 내가 쓰기 + 1장 선물
+    expect(members.find(m => m.userId === E)).toMatchObject({ tier: "A", state: "granted", usedGifts: 2 });
     expect(members.find(m => m.userId === B)?.orderCode).toMatch(/^GR-/);
   });
 });

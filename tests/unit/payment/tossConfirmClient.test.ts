@@ -8,13 +8,14 @@ import {
   TOSS_CONFIRM_API_URL,
   TOSS_CONFIRM_REQUIRED_AMOUNT,
 } from "../../../src/lib/payment/tossConfirmClient";
+import { REPORT_PRICE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 
 const secretKey = "test_sk_toss_confirm_secret";
 const request = {
   secretKey,
   paymentKey: "pay_confirm_test_key",
   orderId: "provider_order_confirm_test",
-  amount: 1490,
+  amount: REPORT_PRICE_KRW,
 } as const;
 
 function createJsonResponse(body: unknown, status = 200): Response {
@@ -31,7 +32,7 @@ function createSuccessFetch(body?: Record<string, unknown>) {
     createJsonResponse(
       body ?? {
         orderId: request.orderId,
-        totalAmount: 1490,
+        totalAmount: request.amount,
         currency: "KRW",
         status: "DONE",
         method: "카드",
@@ -110,11 +111,12 @@ describe("Toss confirm client", () => {
     expectFetchNotCalled(fetchImpl);
   });
 
-  it("requires amount 1490", async () => {
+  // 가격 숫자는 고정하지 않는다(주문 저장 금액 대조는 confirm_claim). 여기서는 금액 모양만 거른다.
+  it.each([99, 0, -1490, 1490.5])("rejects a malformed amount %s before calling Toss", async (amount) => {
     const fetchImpl = createSuccessFetch();
     const result = await confirmTossPayment({
       ...request,
-      amount: 990,
+      amount,
       fetchImpl,
     });
 
@@ -125,6 +127,12 @@ describe("Toss confirm client", () => {
       },
     });
     expectFetchNotCalled(fetchImpl);
+  });
+
+  it("does not pin the catalog price: an order made at an earlier price is confirmed with its own amount", async () => {
+    const fetchImpl = createSuccessFetch({ orderId: request.orderId, totalAmount: 990, currency: "KRW", status: "DONE", approvedAt: "2026-06-11T12:00:00+09:00" });
+    const result = await confirmTossPayment({ ...request, amount: 990, fetchImpl });
+    expect(result).toMatchObject({ ok: true, confirm: { amount: 990, status: "DONE" } });
   });
 
   it("calls the Toss confirm API with POST Basic auth and request body", async () => {
@@ -155,7 +163,7 @@ describe("Toss confirm client", () => {
   it("sanitizes success response", async () => {
     const fetchImpl = createSuccessFetch({
       orderId: request.orderId,
-      totalAmount: 1490,
+      totalAmount: request.amount,
       currency: "KRW",
       status: "DONE",
       method: "간편결제",
@@ -173,7 +181,7 @@ describe("Toss confirm client", () => {
         provider: "toss",
         paymentKeyReceived: true,
         orderId: request.orderId,
-        amount: 1490,
+        amount: request.amount,
         status: "DONE",
         method: "간편결제",
         approvedAt: "2026-06-11T12:00:00+09:00",
@@ -193,7 +201,7 @@ describe("Toss confirm client", () => {
     });
     const currencyFetch = createSuccessFetch({
       orderId: request.orderId,
-      totalAmount: 1490,
+      totalAmount: request.amount,
       currency: "USD",
       status: "DONE",
     });

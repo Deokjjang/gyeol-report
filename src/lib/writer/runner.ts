@@ -5,9 +5,12 @@
  *  1-1) (P6b A-2) 대체 모델(fallback)이 있으면, 기본 모델이 출력 0으로 실패할 때(스트리밍 시작 전) 재시도 대신 대체 모델로 한 번 전환한다.
  *  3) 그래도 누락된 장은 안전망 단계에서 결정론 작가가 채운다(여기서는 비워 둔다).
  *  4) 장 경계마다 완성된 장을 저장소에 저장한다(워커가 죽어도 회수 크론이 저장된 장으로 Book을 완성).
- *  5) (P6c I) 안전망이 짧다·비었다고 판정한 장만 1회 다시 요청한다(redoChapters). (P6c A5) 검사에 걸린 문단 수리는 completeText 1회.
+ *  5) (최종판 0-1) 작가는 한 번만 부른다. 짧은 장도 작가 원고 그대로 둔다(장·책을 버리고 다시 쓰는 경로 없음). 검사에 걸린 문단 수리·소제목 재작성은 completeText 각 1회.
+ *  6) (최종판 0-2) 호출마다 원문을 입력 해시(모델 + 지침 + 브리프·장 목록이 든 사용자 메시지)로 남긴다(WriterRun.raw → Book meta). cache가 있으면 같은 입력은 다시 부르지 않고 저장본을 흘려보낸다.
+ *  7) (최종판 0-6) costCapUsd: 이 실행이 쓸 수 있는 비용. 넘었으면 더 부르지 않는다(cost_cap).
  * 저장소가 lease를 잃었다고 하면(save=false) 스트림을 끊고 stale로 끝낸다(회수 쪽이 이어받음).
  */
+import { createHash } from "node:crypto";
 import { streamCompletion, type LlmProvider, type LlmUsage, type StreamCompletionResult } from "@/lib/llm";
 import type { Knowledge } from "@/lib/brief/knowledge";
 import type { Brief } from "@/lib/brief/schema";
@@ -42,8 +45,18 @@ export type SavedChapter = { readonly n: number; readonly chapter: BookChapter; 
 export type ChapterSink = { save(c: SavedChapter): Promise<boolean>; load(): Promise<readonly SavedChapter[]> };
 export type WriterTarget = { readonly provider: LlmProvider; readonly model: string; readonly apiKey?: string };
 export type WriterFallback = { readonly from: { provider: string; model: string }; readonly to: { provider: string; model: string } | "deterministic"; readonly reason: string };
-export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair";
-export type CallLog = { readonly kind: CallKind; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number };
+/** "redo"는 옛 Book 메타에만 있다(최종판 0-1: 장 재요청 경로를 없앴다). "cover"는 표지 줄 수리(1-7). */
+export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair" | "rewrite" | "cover" | "review";
+/** cached: 저장된 원문을 썼다(호출 0). */
+export type CallLog = { readonly kind: CallKind; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number; readonly cached?: boolean; readonly key?: string };
+/**
+ * 작가·수리 원문(최종판 0-2). key = rawKey(모델, 지침, 사용자 메시지): 사용자 메시지에 브리프·장 목록(또는 수리 항목)이 들어 있어 입력 해시가 된다.
+ * Book meta(meta.raw)와 개발 저장소(.cache/writer/)에 같은 꼴로 남는다.
+ */
+export type RawEntry = { readonly key: string; readonly kind: CallKind; readonly provider: string; readonly model: string; readonly chapters?: readonly number[]; readonly finish: StreamCompletionResult["finishReason"]; readonly text: string; readonly costUsd: number };
+/** 원문 저장소: get이 값을 주면 호출하지 않고 그 원문을 쓴다. put은 새로 받은 원문을 남긴다. */
+export type WriterCache = { get(key: string): RawEntry | null | Promise<RawEntry | null>; put(e: RawEntry, meta: { readonly system: string; readonly user: string }): void | Promise<void> };
+export const rawKey = (model: string, system: string, user: string) => createHash("sha256").update(`${model}\n\u0000${system}\n\u0000${user}`).digest("hex").slice(0, 32);
 export type WriterRun = {
   readonly drafts: Map<number, DraftChapter>;
   readonly calls: readonly CallLog[];
@@ -57,6 +70,10 @@ export type WriterRun = {
   readonly fallback: WriterFallback | null;
   /** 첫 호출 원문의 표지 줄(P6c G). 장 머리글 앞이라 장 파서가 버린다. */
   readonly cover: string | null;
+  /** 받은 원문(저장본 포함, 최종판 0-2). */
+  readonly raw: readonly RawEntry[];
+  /** 비용 상한에 걸려 부르지 않은 호출이 있었다(최종판 0-6). */
+  readonly capped: boolean;
 };
 export type WriterOptions = {
   readonly brief: Brief;
@@ -75,6 +92,12 @@ export type WriterOptions = {
   readonly fallback?: WriterTarget | null;
   /** 지식 DB(P6c A1): 작가 입력의 원문 문장을 재료로 바꾼다. */
   readonly knowledge?: Knowledge;
+  /** 원문 저장소(최종판 0-2). 같은 입력 해시면 다시 부르지 않는다. */
+  readonly cache?: WriterCache | null;
+  /** 이 실행이 더 쓸 수 있는 비용(USD, 최종판 0-6). 쓴 비용이 이 값 이상이면 더 부르지 않는다. 없으면 상한 없음. */
+  readonly costCapUsd?: number;
+  /** 최종판3 6: 시스템 프롬프트 캐시(false면 붙이지 않는다). 기본은 LLM_PROMPT_CACHE 설정(promptCacheOn). */
+  readonly cacheSystem?: boolean;
 };
 
 const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
@@ -90,12 +113,12 @@ const summaryOf = (c: BookChapter) => `${c.sections.map(s => s.heading).filter(B
 /** 원문 맨 앞(첫 장 머리글 앞)의 "[표지] …" 한 줄(P6c G). */
 export const coverOf = (text: string) => text.split(/\n##\s/)[0].match(/^\s*\[표지\]\s*(.+?)\s*$/m)?.[1] ?? null;
 
-/** 작가 세션: 호출 기록·비용·장 원고를 모은다. runWriter·redoChapters·completeText가 같은 세션 규칙(재시도·대체·저장)을 쓴다. */
+/** 작가 세션: 호출 기록·비용·장 원고를 모은다. runWriter·completeText가 같은 세션 규칙(재시도·대체·저장·원문·상한)을 쓴다. */
 type Session = {
   readonly o: WriterOptions; readonly drafts: Map<number, DraftChapter>; readonly calls: CallLog[];
   readonly usage: { inputTokens: number; cachedInputTokens: number; outputTokens: number };
   cost: number; outputChars: number; stale: boolean; target: WriterTarget; fallback: WriterFallback | null; wrote: WriterTarget | null; cover: string | null;
-  readonly started: number; readonly plan: ReadonlyMap<number, WriterChapter>;
+  readonly started: number; readonly plan: ReadonlyMap<number, WriterChapter>; readonly raw: RawEntry[]; capped: boolean;
 };
 const now = (o: WriterOptions) => (o.now ?? (() => Date.now()))();
 const leftOf = (s: Session) => (s.o.budgetMs ?? WRITER_TIME_BUDGET_MS) - (now(s.o) - s.started);
@@ -108,7 +131,7 @@ function session(o: WriterOptions, prev?: WriterRun): Session {
   return {
     o, drafts: new Map(prev?.drafts ?? []), calls: [...(prev?.calls ?? [])], usage: { ...(prev?.usage ?? { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }) },
     cost: prev?.costUsd ?? 0, outputChars: prev?.outputChars ?? 0, stale: false, target: wrote ?? target, fallback: prev?.fallback ?? null, wrote, cover: prev?.cover ?? null,
-    started: now(o), plan,
+    started: now(o), plan, raw: [...(prev?.raw ?? [])], capped: prev?.capped ?? false,
   };
 }
 
@@ -116,19 +139,30 @@ function session(o: WriterOptions, prev?: WriterRun): Session {
  * 한 번의 호출(재시도·대체 포함). want가 있으면 장 경계마다 저장한다(없으면 글만 돌려준다: 수리 패스).
  * 돌려주는 값: 받은 글(출력이 없으면 "").
  */
-async function call(s: Session, kind: "first" | "continuation" | "redo" | "repair", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number): Promise<string> {
-  const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms))), stream = o.stream ?? streamCompletion;
+async function call(s: Session, kind: "first" | "continuation" | "repair" | "rewrite" | "cover" | "review", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number, jsonSchema?: Readonly<Record<string, unknown>>): Promise<string> {
+  const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms)));
   const wanted = new Set((want ?? []).map(c => c.n));
   let switched = false;
   for (let attempt = 0; ; attempt++) {
+    // 원문 저장소(0-2): 같은 입력이면 저장본을 흘려보낸다(호출 0). 상한(0-6): 넘었으면 부르지 않는다.
+    const key = rawKey(s.target.model, system, user);
+    let hit: RawEntry | null = null;
+    try { hit = o.cache ? await o.cache.get(key) : null; } catch { hit = null; }
+    // 최종판3 6: 운영 주문은 예산으로 거절하지 않는다 — 비용 상한은 작가 뒤 호출(검수·수리·표지·재작성)에만 건다. 작가(첫 호출·이어쓰기)는 늘 부른다.
+    if (!hit && o.costCapUsd !== undefined && s.cost >= o.costCapUsd && kind !== "first" && kind !== "continuation") {
+      s.capped = true;
+      s.calls.push({ kind, provider: s.target.provider, model: s.target.model, finish: "error", error: "cost_cap", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, ms: 0, chars: 0, maxTokens: 0, key });
+      return "";
+    }
+    const stream: typeof streamCompletion = hit ? (async input => { input.onText?.(hit!.text); return { text: hit!.text, finishReason: hit!.finish, usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: "cache" }; }) : o.stream ?? streamCompletion;
     const maxTokens = maxTokensOverride ?? maxTokensFor(want ?? [], s.target.model, o.maxOutputTokens);
     const controller = new AbortController();
     let text = "", saving = Promise.resolve();
     const flush = (finished: boolean) => {
       if (!want) return;
       for (const ch of completedChapters(text, finished)) {
-        // 다시 요청한 장(redo)은 이전 원고를 덮는다.
-        if (!wanted.has(ch.n) || (kind !== "redo" && s.drafts.has(ch.n))) continue;
+        // 문단이 하나도 없는 장은 받지 않은 장으로 본다(이어쓰기가 채운다). 이미 받은 장은 덮지 않는다.
+        if (!wanted.has(ch.n) || s.drafts.has(ch.n) || !ch.sections.some(x => x.paragraphs.length)) continue;
         const saved: DraftChapter = { chapter: { ...ch, title: s.plan.get(ch.n)!.title }, source: kind === "first" ? "writer" : "continuation" };
         s.drafts.set(ch.n, saved); wanted.delete(ch.n);
         saving = saving.then(async () => { if (s.stale) return; if (!(await o.sink.save({ n: ch.n, ...saved }))) { s.stale = true; controller.abort(); } });
@@ -136,6 +170,7 @@ async function call(s: Session, kind: "first" | "continuation" | "redo" | "repai
     };
     const t0 = now(o);
     const result = await stream({ provider: s.target.provider, model: s.target.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, leftOf(s) - 5_000), apiKey: s.target.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal,
+      ...(jsonSchema ? { jsonSchema } : {}), ...(o.cacheSystem === false ? { cacheSystem: false } : {}),
       onText: d => { text += d; if (d.includes("\n")) flush(false); } });
     text = result.text;
     // 완전히 끝났을 때만 마지막 장도 완성으로 친다(length·끊김이면 마지막 장은 잘렸을 수 있음).
@@ -143,7 +178,12 @@ async function call(s: Session, kind: "first" | "continuation" | "redo" | "repai
     await saving;
     for (const k of ["inputTokens", "cachedInputTokens", "outputTokens"] as const) s.usage[k] += result.usage[k];
     s.cost += result.costUsd ?? 0; s.outputChars += result.text.length;
-    s.calls.push({ kind: switched && attempt === 0 ? "fallback" : attempt ? "retry" : kind, provider: s.target.provider, model: s.target.model, finish: result.finishReason, ...(result.error ? { error: result.error.code } : {}), usage: result.usage, costUsd: result.costUsd, requestId: result.requestId, ms: now(o) - t0, chars: result.text.length, maxTokens });
+    s.calls.push({ kind: switched && attempt === 0 ? "fallback" : attempt ? "retry" : kind, provider: s.target.provider, model: s.target.model, finish: result.finishReason, ...(result.error ? { error: result.error.code } : {}), usage: result.usage, costUsd: result.costUsd, requestId: result.requestId, ms: now(o) - t0, chars: result.text.length, maxTokens, key, ...(hit ? { cached: true } : {}) });
+    if (result.text.length > 0) {
+      const entry: RawEntry = { key, kind, provider: s.target.provider, model: s.target.model, ...(want ? { chapters: want.map(c => c.n) } : {}), finish: result.finishReason, text: result.text, costUsd: hit ? hit.costUsd : result.costUsd ?? 0 };
+      s.raw.push(entry);
+      if (!hit && o.cache) { try { await o.cache.put(entry, { system, user }); } catch { /* 저장 실패는 원고를 막지 않는다 */ } }
+    }
     if (s.stale) return text;
     if (result.text.length > 0) { s.wrote = s.target; if (kind === "first" && !s.cover) s.cover = coverOf(result.text); }
     // 스트리밍 시작 전 실패: 대체 모델로 한 번 전환(재시도보다 먼저). 대체도 출력 0이면 아래 재시도 규칙 → 결정론.
@@ -154,6 +194,8 @@ async function call(s: Session, kind: "first" | "continuation" | "redo" | "repai
     }
     // 잘린 수리 응답도 돌려준다(수리 파서가 끝까지 온 문단만 쓴다).
     if (!isZeroOutputRetryable(result)) return result.text;
+    // 최종판3 6: 응답 없이 끊긴 경우(출력 0)만 1회 다시 부른다(호출 기록 kind "retry"로 원장에 남는다). 그 뒤는 부르지 않는다.
+    if (attempt >= 1) return "";
     const wait = Math.min(30_000, 2_000 * 2 ** attempt);
     if (leftOf(s) - wait < 30_000) return "";
     await sleep(wait);
@@ -162,7 +204,7 @@ async function call(s: Session, kind: "first" | "continuation" | "redo" | "repai
 
 function finish(s: Session): WriterRun {
   const w = s.wrote, f = s.fallback;
-  return { drafts: s.drafts, calls: s.calls, stale: s.stale, usage: s.usage, costUsd: Math.round(s.cost * 1e8) / 1e8, outputChars: s.outputChars, writer: w ? { provider: w.provider, model: w.model } : null, fallback: f && !w ? { ...f, to: "deterministic" } : f, cover: s.cover };
+  return { drafts: s.drafts, calls: s.calls, stale: s.stale, usage: s.usage, costUsd: Math.round(s.cost * 1e8) / 1e8, outputChars: s.outputChars, writer: w ? { provider: w.provider, model: w.model } : null, fallback: f && !w ? { ...f, to: "deterministic" } : f, cover: s.cover, raw: s.raw, capped: s.capped };
 }
 
 export async function runWriter(o: WriterOptions): Promise<WriterRun> {
@@ -178,27 +220,22 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
       const cont = buildContinuationPrompt(o.brief, written, rest, { knowledge: o.knowledge });
       await call(s, "continuation", cont.system, cont.user, rest);
     }
+  } else if (s.drafts.size) {
+    // 최종판3 6: 저장된 장만으로 다시 시작(워커가 발행 전에 끊긴 재시도). 첫 호출 원문이 저장돼 있으면 그 원문으로 표지·작가를 되살린다(호출 0).
+    // 원문이 없으면 저장된 장(작가 원고)의 작가 모델로 본다 — 검수·수리가 건너뛰지 않게(작가는 다시 부르지 않는다).
+    let hit: RawEntry | null = null;
+    try { hit = o.cache ? await o.cache.get(rawKey(s.target.model, prompt.system, prompt.user)) : null; } catch { hit = null; }
+    if (hit) await call(s, "first", prompt.system, prompt.user, prompt.chapters);
+    else if (!s.wrote) s.wrote = s.target;
   }
   // 대체 모델도 쓰지 못했으면 최후 대체는 결정론 작가(안전망이 채운다).
   return finish(s);
 }
 
-/** (P6c I) 안전망이 짧다·비었다고 본 장만 1회 다시 요청한다. 이미 쓴 장은 요약만 보여 주고, 다시 쓴 장은 이전 원고를 덮는다. */
-export async function redoChapters(o: WriterOptions, prev: WriterRun, targets: readonly WriterChapter[]): Promise<WriterRun> {
-  const s = session(o, prev);
-  if (!targets.length || !s.wrote || leftOf(s) < 90_000) return finish(s);
-  const all = buildWriterPrompt(o.brief, { knowledge: o.knowledge }).chapters;
-  const redo = new Set(targets.map(t => t.n));
-  const written = all.filter(c => s.drafts.has(c.n) && !redo.has(c.n)).map(c => ({ n: c.n, title: c.title, summary: summaryOf(s.drafts.get(c.n)!.chapter) }));
-  const p = buildContinuationPrompt(o.brief, written, targets, { knowledge: o.knowledge });
-  await call(s, "redo", p.system, `${p.user}\n\n(이 장들은 앞서 목표 분량의 절반도 안 되거나 비어 있었다. 절마다 근거 2개 이상으로 targetChars를 채운다.)`, targets);
-  return finish(s);
-}
-
-/** (P6c A5) 글만 받는 호출 1회(수리 패스). 같은 모델·대체 규칙, 장 저장 없음. */
-export async function completeText(o: WriterOptions, prev: WriterRun, system: string, user: string, maxTokens: number): Promise<{ run: WriterRun; text: string }> {
+/** (P6c A5) 글만 받는 호출 1회(수리·소제목 재작성·표지 줄 수리). 같은 모델·대체 규칙·원문·상한, 장 저장 없음. */
+export async function completeText(o: WriterOptions, prev: WriterRun, system: string, user: string, maxTokens: number, kind: "repair" | "rewrite" | "cover" | "review" = "repair", jsonSchema?: Readonly<Record<string, unknown>>): Promise<{ run: WriterRun; text: string }> {
   const s = session(o, prev);
   if (!s.wrote || leftOf(s) < 60_000) return { run: finish(s), text: "" };
-  const text = await call(s, "repair", system, user, null, Math.min(maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? maxTokens));
+  const text = await call(s, kind, system, user, null, Math.min(maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? maxTokens), jsonSchema);
   return { run: finish(s), text };
 }

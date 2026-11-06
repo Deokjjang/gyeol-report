@@ -12,7 +12,7 @@ import { handleBundleCommerce } from "../../../src/lib/tickets/bundleHandler";
 import type { BundleStore, BundleResult, BundleOrder } from "../../../src/lib/tickets/bundleTypes";
 import { sqlTicketStore } from "../../../src/lib/tickets/localDatabase";
 import { confirmTossBundlePayment } from "../../../src/lib/payment/tossConfirmClient";
-import { getReportProductCatalog, REPORT_PRICE_KRW } from "../../../src/lib/payment/reportProductCatalog";
+import { formatKrw, getReportProductCatalog, REPORT_PRICE_KRW, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 import { GYEOL_PRODUCTS } from "../../../src/lib/product/gyeolProducts";
 import { termsPolicySections } from "../../../src/lib/legal/termsPolicy";
 import { metaProduct, metaPurchase } from "../../../src/lib/analytics/events";
@@ -57,12 +57,13 @@ afterAll(async () => { await db?.close(); });
 
 describe("member bundle commerce: real isolated SQL + mock provider", () => {
   it("catalog, all six new prices and customer/analytics display SSOT; historical Purchase stays 1290", () => {
-    expect(TICKET_BUNDLES.map(b => [b.quantity, b.amount])).toEqual([[1,1490],[3,4290],[5,6890],[10,13400]]);
+    expect(TICKET_BUNDLES.map(b => [b.quantity, b.amount])).toEqual([[1,REPORT_PRICE_KRW],[3,4290],[5,6890],[10,13400]]);
     expect(getReportProductCatalog()).toHaveLength(6);
-    expect(GYEOL_PRODUCTS.every(p => p.priceAmount === REPORT_PRICE_KRW && p.priceKo === "1,490원")).toBe(true);
-    expect(getReportProductCatalog().every(p => p.amount === 1490 && p.priceLabelKo === "1,490원")).toBe(true);
-    expect(JSON.stringify(termsPolicySections)).toContain("1,490원");
-    expect(metaProduct("InitiateCheckout", "annual_fortune")?.params.value).toBe(1490);
+    expect(GYEOL_PRODUCTS.every(p => p.priceAmount === REPORT_PRICE_TABLE_KRW[p.productType] && p.priceKo === formatKrw(REPORT_PRICE_TABLE_KRW[p.productType]))).toBe(true);
+    expect(getReportProductCatalog().every(p => p.amount === REPORT_PRICE_TABLE_KRW[p.productType] && p.priceLabelKo === formatKrw(REPORT_PRICE_TABLE_KRW[p.productType]))).toBe(true);
+    // 최종3: 약관에는 가격 숫자를 적지 않는다(상품 페이지와 결제 화면에 표시된 금액).
+    expect(JSON.stringify(termsPolicySections)).toContain("상품 페이지와 결제 화면에 표시된 금액");
+    expect(metaProduct("InitiateCheckout", "annual_fortune")?.params.value).toBe(REPORT_PRICE_TABLE_KRW.annual_fortune);
     expect(metaPurchase({ eventId: `purchase_${"a".repeat(32)}`, productType: "saju_mbti_full", value: 1290, currency: "KRW" })?.params.value).toBe(1290);
   });
   it.each(TICKET_BUNDLES)("$id verifies then grants exactly $quantity, no worker/report/campaign", async bundle => {

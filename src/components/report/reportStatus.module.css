@@ -30,4 +30,3 @@
 .writing i:nth-child(6) { animation-delay: 3.5s; width: 88%; }
 .writing i:nth-child(7) { animation-delay: 4.2s; width: 54%; }
 @keyframes ink { 0% { transform: scaleX(0); } 12%, 100% { transform: scaleX(1); } }
-@media (prefers-reduced-motion: reduce) { .visual * { animation: none; transform: none; transition: none !important; } }

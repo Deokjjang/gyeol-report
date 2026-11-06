@@ -85,7 +85,8 @@ describe("P3.5 안전망·작가 보강", () => {
       // P6c I·J: 채우기 금지 + 반복 금지라 책 전체가 결정론일 때 뒤 장은 재료가 모자라 짧아진다. 절반 이상의 장이 목표, 모든 장 200자 이상, 반복 0.
       const rows = chapters.filter(c => !c.keys).map(c => ({ n: c.n, chars: chapterChars({ n: c.n, title: c.title, sections: c.sections }), floor: Math.min(DET_MIN_CHARS, plan.find(x => x.n === c.n)!.targetChars[0]) }));
       expect(rows.filter(r => r.chars >= r.floor).length, product).toBeGreaterThanOrEqual(Math.ceil(rows.length / 2));
-      for (const r of rows) expect(r.chars, `${product} ${r.n}`).toBeGreaterThanOrEqual(200);
+      // 최종판 0-1·1-15: 결정론 장은 이제 발행되지 않는다(감독이 빠진 장을 이어 쓴다). 맞는 씨앗이 없으면 공용 신호 장면 대신 고객 소품(짧은 명사구)을 받아 장이 짧아질 수 있다 → 하한 150자.
+      for (const r of rows) expect(r.chars, `${product} ${r.n}`).toBeGreaterThanOrEqual(150);
       const sents = chapters.flatMap(c => c.sections.flatMap(s => s.paragraphs.flatMap(p => splitSentences(p))));
       const idx = overlapIndex(); let repeats = 0;
       for (const x of sents) { if (idx.has(x)) repeats++; idx.add(x); }

@@ -8,6 +8,7 @@ import type {
   ReadyPaymentOrderSafeRow,
   SupabaseReadyPaymentOrderRpcClient,
 } from "../../../src/lib/payment/supabaseReadyPaymentOrderClient";
+import { REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 
 const createdAt = "2026-01-01T00:00:00.000Z";
 const updatedAt = "2026-01-01T00:00:01.000Z";
@@ -71,7 +72,7 @@ describe("supabase ready payment order adapter", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 1490,
+        amount: REPORT_PRICE_TABLE_KRW.saju_mbti_full,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_adapter_toss",
@@ -96,7 +97,7 @@ describe("supabase ready payment order adapter", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 1490,
+        amount: REPORT_PRICE_TABLE_KRW.saju_mbti_full,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_adapter_kakao",
@@ -104,7 +105,7 @@ describe("supabase ready payment order adapter", () => {
     });
     expect(fake.calls[0]).toMatchObject({
       provider: "kakao_pay",
-      amount: 1490,
+      amount: REPORT_PRICE_TABLE_KRW.saju_mbti_full,
       currency: "KRW",
     });
   });
@@ -120,7 +121,7 @@ describe("supabase ready payment order adapter", () => {
     });
 
     expect(fake.calls[0]).toMatchObject({
-      amount: 1490,
+      amount: REPORT_PRICE_TABLE_KRW.saju_mbti_full,
       currency: "KRW",
     });
   });
@@ -138,7 +139,7 @@ describe("supabase ready payment order adapter", () => {
       ok: true,
       order: {
         productType: "major_fortune",
-        amount: 1490,
+        amount: REPORT_PRICE_TABLE_KRW.major_fortune,
         currency: "KRW",
         status: "ready",
       },

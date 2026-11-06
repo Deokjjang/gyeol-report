@@ -9,9 +9,9 @@ import { analyzeChartDetections } from "@/lib/saju/detections";
 import { getTenGod } from "@/lib/saju/tenGods";
 import { groupValues } from "@/lib/saju/groupStrength";
 import type { SajuCalcResult } from "@/lib/saju/types";
-import { buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
+import { baseMsOf, buildChartBrief, dayunOf, stateOf, type ElementState } from "./chart";
 import { conditionalFamily, planChapters, PRODUCT_CHARS, topDimension, type TraitSource } from "./chapters";
-import { buildCompatibility, type PairSide } from "./compatibility";
+import { buildCompatibility, profiledVector, type PairSide } from "./compatibility";
 import { careerEvidence, loveEvidence } from "./evidence";
 import { ageAt, ageBand, forbiddenFacts, sceneCtxOf, sceneFits, toFactProfile, type CustomerFacts, type FactProfile } from "./facts";
 import { collectFeatureHits } from "./featureHits";
@@ -20,7 +20,7 @@ import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
 import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type TimelineCtx } from "./timeline";
-import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, scoreHits, selectTraits, type ProductKey } from "./traits";
+import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
 import { dropSourceSentences } from "@/lib/writer/safety/patterns";
@@ -28,11 +28,12 @@ import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage, matchJob } from "./props";
+import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
 import { conditionsHold } from "./conditions";
-import { CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
-import { LOVE_STATUS_Q, loveDesign2, loveStatusOf } from "./design/love";
+import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
+import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -44,13 +45,27 @@ export type BriefPersonInput = {
   readonly mbtiType: MbtiType | "";
   readonly context?: { readonly relationshipStatus: string; readonly jobStatus: string; readonly detailJob: string; readonly children?: "has" | "none" | "unknown" };
 };
+const HAN_GLYPH: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해" };
+/** 명식 여덟 글자(한글, 시간 미상이면 시각 기둥 없이). */
+export function ownGlyphs(saju: { pillars: Partial<Record<"year" | "month" | "day" | "hour", { stem: string; branch: string } | null>> }): Set<string> {
+  return new Set(Object.values(saju.pillars).flatMap(p => (p ? [HAN_GLYPH[p.stem], HAN_GLYPH[p.branch]] : [])).filter(Boolean));
+}
+const GLYPH_LIST = /([갑을병정무기경신임계자축인묘진사오미유술해](?:·[갑을병정무기경신임계자축인묘진사오미유술해]){1,7})(?= ?(글자|자리))/g;
+function onlyOwnGlyphs<T extends object>(t: T, own: ReadonlySet<string>): T {
+  const fix = (x: unknown): unknown => typeof x === "string" ? x.replace(GLYPH_LIST, m => { const kept = [...new Set(m.split("·").filter(g => own.has(g)))]; return kept.length ? kept.join("·") : m; })
+    : Array.isArray(x) ? x.map(fix) : x && typeof x === "object" ? Object.fromEntries(Object.entries(x).map(([k2, v]) => [k2, fix(v)])) : x;
+  return fix(t) as T;
+}
+
 export type BriefInput = {
   readonly product: ProductKey;
   readonly person: BriefPersonInput;
   readonly partner?: BriefPersonInput;
   readonly relationshipType?: CompatibilityRelationshipType;
-  /** 기준 날짜(KST, YYYY-MM-DD). 올해·현재 대운·나이를 정한다. */
+  /** 기준 날짜(KST, YYYY-MM-DD). 올해·나이를 정한다. */
   readonly baseDate: string;
+  /** 기준 시각(발행 시각, ISO). 지금 대운·남은 기간을 교운 시각과 비교해 정한다(최종 A-5). 없으면 기준 날짜 KST 정오. */
+  readonly baseAt?: string;
   /** 세운 상품의 선택 연도(없으면 기준 날짜의 사주 해). */
   readonly selectedYear?: number;
   /** 같은 고객의 이전 Book이 쓴 지식 DB 장면(P6b E-1): 이번 책에서는 고르지 않는다. */
@@ -61,6 +76,13 @@ export type BriefInput = {
   readonly priorEvidence?: readonly string[];
   readonly excludeAngles?: readonly string[];
   readonly excludeSeeds?: readonly string[];
+  /** 최종판2 1-1: 같은 고객 다른 상품 책의 이미지 줄(표지·핵심 이미지·종합 1장 첫 소제목) — 피할 이미지에 더한다. */
+  readonly priorImages?: readonly string[];
+  /** 최종판3 2i: 고객 원장 — 같은 사주 주인의 이전 책 처방 문장·표지 줄(시험 책 제외). 처방 계열·표지 모티프 계열을 피한다. */
+  readonly priorActions?: readonly string[];
+  readonly priorCovers?: readonly string[];
+  /** 최종판2 1-1: 이미지 대장에서 뺄 책(저장본 검사·replay: 그 책 자신과 그 뒤에 만든 책). */
+  readonly ledgerView?: LedgerView;
 };
 
 const STYLE_RULES = [
@@ -86,7 +108,7 @@ type PersonPack = {
 
 /** 고객 원장(P6d F): 앞 책이 쓴 특성(feature id)·각도(feature:facet). 이번 책은 쓰지 않은 특성을 먼저, 쓴 각도(Fusion 연결·팩폭)는 다시 주지 않는다. */
 export type PriorLedger = { readonly features: ReadonlySet<string>; readonly angles: ReadonlySet<string> };
-function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number, fnUsed?: Map<string, number>, prior?: PriorLedger): PersonPack {
+function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: string, k: Knowledge, rng: Rng, prefix: "" | "a" | "b", usedScenes: Set<string>, override?: Partial<FactProfile>, traitTarget?: number, fnUsed?: Map<string, number>, prior?: PriorLedger, baseAt?: string): PersonPack {
   const gender = input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null;
   const saju = calculateSaju({ birthDate: input.birthDate, birthTime: input.birthTime, birthTimeUnknown: input.birthTimeUnknown, approximateBirthTimeSlot: (input.approximateBirthTimeSlot ?? "") as never, calendarType: "SOLAR", gender: gender ?? "OTHER_OR_UNSPECIFIED", timezone: "Asia/Seoul" });
   const det = analyzeChartDetections(saju);
@@ -97,9 +119,11 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   };
   const base = { ...toFactProfile(facts), ...override };
   // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
-  const profile: FactProfile = { ...base, scene: sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false }) };
+  const sceneCtx = sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false, freelancer: !override && facts.jobStatus === "freelancer" });
+  // 최종판2 1-2: 종합은 P6d(d9985cda) 장면 고르기 — 직업 꼬리표(코드·팀·가게·돌봄·외주)로 거르지 않는다(직업과 무관한 보편 성향 장면, 직업은 작가에게 맡김).
+  const profile: FactProfile = { ...base, scene: product === "saju_mbti_full" ? { office: sceneCtx.office, school: sceneCtx.school, familyOk: sceneCtx.familyOk } : sceneCtx };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
-  const chart = buildChartBrief(saju, det, k, { gender, baseDate, dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
+  const chart = buildChartBrief(saju, det, k, { gender, baseDate, ...(baseAt ? { baseAt } : {}), dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };
   // 강약·균형 단정은 엔진 단일 판단과 맞는 문장만(P3.7 1-2).
   const st0 = stateOf(det.elementBalance);
@@ -111,19 +135,32 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const imageOk = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc) && !(OTHER_GENDER?.test(im.metaphor) || OTHER_GENDER?.test(im.visual));
   const balanceImage = (im: { metaphor: string; visual: string }) => balanceHolds(im.metaphor, bc) && balanceHolds(im.visual, bc);
   // 앞 책이 쓴 특성은 점수를 낮춰 쓰지 않은 특성을 먼저 고른다(P6d G: 심화 상품 근거의 60% 이상은 종합에서 쓰지 않은 것). 일간·일주는 책의 뿌리라 그대로.
-  const scored = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(balanceImage))
-    .map(x => prior?.features.has(x.hit.id) && x.hit.family !== "dayMaster" && x.hit.family !== "dayPillar" ? { ...x, score: x.score * 0.45 } : x).sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id));
+  const scored0 = scoreHits(hits, k, product, fusionFacts).filter(x => balanceHolds(x.feature.oneLiner, bc) && [x.feature.image, ...(x.feature.imageVariants ?? [])].some(balanceImage));
+  // 최종판3 2d: 대표 신살(신살·귀인 중 강하고 두 자리 이상, 점수 최고 — 장덕민 현침살 甲·辛·卯·申)은 종합에서 앞 책 원장 감점을 받지 않고 반드시 고른다.
+  // 실제 결함(최종판2): 앞 책 2권이 현침살을 썼다는 원장(feature:shinsal:HYEONCHIMSAL) 때문에 ×0.45 감점으로 종합 12특성에서 빠졌다.
+  const repId = product === "saju_mbti_full" ? [...scored0].filter(x => (x.hit.family === "shinsal" || x.hit.family === "gwiin") && x.hit.strength === "strong" && x.hit.positions.length >= 2).sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id))[0]?.hit.id : undefined;
+  const scored = scored0
+    .map(x => prior?.features.has(x.hit.id) && x.hit.family !== "dayMaster" && x.hit.family !== "dayPillar" && x.hit.id !== repId ? { ...x, score: x.score * 0.45 } : x).sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id));
   // 같은 핵심 차원을 반대로 당기는 trait 둘은 긴장(MBTI와 반대로 당기는 Fusion) 표시가 없으면 점수 낮은 쪽을 빼고 다시 고른다(P3.7 1-2).
   const dropped = new Set<string>();
   let selected = selectTraits(scored, traitTarget);
   for (let guard = 0; guard < 6; guard++) {
-    const lose = oppositeToDrop(selected.map(s => ({ id: s.hit.id, score: s.score, tags: s.feature.dimensionTags, tension: s.fusion?.kind === "tension", keep: s.hit.family === "dayMaster" || s.hit.family === "dayPillar" })));
+    const lose = oppositeToDrop(selected.map(s => ({ id: s.hit.id, score: s.score, tags: s.feature.dimensionTags, tension: s.fusion?.kind === "tension", keep: s.hit.family === "dayMaster" || s.hit.family === "dayPillar" || s.hit.id === repId })));
     if (!lose) break;
     dropped.add(lose.id); selected = selectTraits(scored.filter(x => !dropped.has(x.hit.id)), traitTarget);
   }
+  // 대표 신살이 자리 수 상한 등으로 빠졌으면 일간·일주가 아닌 가장 낮은 특성과 바꾼다.
+  if (repId && !selected.some(s => s.hit.id === repId)) {
+    // 신살·귀인 묶음 상한(GROUPS)을 넘기지 않게, 묶음이 차 있으면 그 묶음의 가장 낮은 것과 바꾼다.
+    const rep = scored.find(x => x.hit.id === repId)!, same = selected.filter(s => s.group === rep.group), cap = TRAIT_GROUPS.find(g => g.key === rep.group)?.max ?? Infinity;
+    const lowest = (same.length >= cap ? [...same] : [...selected]).reverse().find(s => s.hit.family !== "dayMaster" && s.hit.family !== "dayPillar");
+    if (lowest) selected = [...selected.filter(s => s !== lowest), rep].sort((a, b) => b.score - a.score || a.hit.id.localeCompare(b.hit.id));
+  }
   const groups = groupValues(saju);
   const hitIdSet = new Set(hits.map(h => h.id));
-  const traits = selected.map((s, i) => buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }, imageOk));
+  // 최종판2 1-4: 신살·오행 설명이 나열한 글자("갑·신·묘·오 글자 셋 이상 겹침")는 이 사람 명식에 있는 글자만 남긴다(DB 규칙 문구가 그대로 재료로 갔다).
+  const own = ownGlyphs(saju);
+  const traits = selected.map((s, i) => onlyOwnGlyphs(buildTrait(s, `${prefix}t${i + 1}`, rng.fork(`trait:${s.hit.id}`), saju.structureAnalysis.dayMasterStrength.level, groups, { saju, det, positions: s.hit.positions, hitIds: hitIdSet }, imageOk), own));
   const sources: TraitSource[] = selected.map((s, i) => ({ trait: traits[i], feature: s.feature }));
   // MBTI 연결 밀도(P3): 핵심 특성 정확 유형, 같은 글자·기능 최대 2, 계산 연결로 70% 이상.
   // 특성 설명 중 고객 사실과 어긋나는 문장(미혼에게 "배우자와 ~", 시간 미상에 시주 등)은 작가에게 넘기지 않는다(P3, 안전망과 같은 규칙).
@@ -144,7 +181,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   const replacedScenes = enforceMbtiLinks(traits, selected.map(s => s.feature), facts.mbti ? k.mbti.get(facts.mbti) ?? null : null, k, fusionFacts, fnUsed);
   for (const t of traits) if (t.fusion) { const why = clean(keepBalanced(t.fusion.why, bc, splitSentences), t.positions); if (why) t.fusion.why = why; else delete t.fusion; }
   // 앞 책이 쓴 Fusion 각도(같은 특성 × 같은 MBTI 연결)는 이번 책에 다시 주지 않는다(P6d F: 하람 "식신은 따라간다"·"서운함이 터진다"가 세 권에 반복).
-  for (const t of traits) if (t.fusion && prior?.angles.has(`${t.featureId}:fusion:${t.fusion.target}`)) delete t.fusion;
+  // 대표 신살의 명리×MBTI 연결은 종합에 꼭 한 번 있어야 하므로 앞 책이 썼어도 지우지 않는다(최종판3 2d).
+  for (const t of traits) if (t.fusion && t.featureId !== repId && prior?.angles.has(`${t.featureId}:fusion:${t.fusion.target}`)) delete t.fusion;
   chart.climate.reading = keepBalanced(chart.climate.reading, bc, splitSentences) ?? "";
   // 오행 읽기 문장도 trait와 같은 차원에서 반대면 뺀다(P3.7 r2: 오행 읽기 "거절하는 힘이 얇다·오래 잰다" ↔ trait "바로 정함").
   const readingIds = [
@@ -222,7 +260,7 @@ function mbtiBrief(k: Knowledge, type: MbtiType | null) {
 
 export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 시드는 이전 책 목록과 무관하게(같은 입력 = 같은 시드).
-  const { excludeScenes: _exclude, knownTraits: _known, priorEvidence: _pe, excludeAngles: _ea, excludeSeeds: _es, ...seedInput } = input; void _exclude; void _known; void _pe; void _ea; void _es;
+  const { excludeScenes: _exclude, knownTraits: _known, priorEvidence: _pe, excludeAngles: _ea, excludeSeeds: _es, priorImages: _pi, ledgerView: _lv, priorActions: _pa, priorCovers: _pc, ...seedInput } = input; void _pa; void _pc; void _exclude; void _known; void _pe; void _ea; void _es; void _pi; void _lv;
   const seed = fnv1a(stableStringify(seedInput));
   const rng = createRng(seed);
   const usedScenes = new Set<string>(input.excludeScenes ?? []);
@@ -238,8 +276,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const fnUsed = new Map<string, number>();
   // 종합은 52절이라 trait 12개(소개 1 + 적용 2 × 12)까지: trait를 늘려 같은 trait 재사용 대신 새 정보로 채운다(P3.8 1).
   const priorLedger: PriorLedger = { features: new Set((input.priorEvidence ?? []).filter(x => x.startsWith("feature:")).map(x => x.slice(8))), angles: new Set(input.excludeAngles ?? []) };
-  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : input.product === "saju_mbti_full" ? 12 : undefined, fnUsed, priorLedger);
-  const otherRaw = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed) : null;
+  const me = analyzePerson(input.person, input.product, input.baseDate, k, rng.fork("A"), isPair ? "a" : "", usedScenes, overrideA, isPair ? 6 : input.product === "saju_mbti_full" ? 12 : undefined, fnUsed, priorLedger, input.baseAt);
+  const otherRaw = isPair ? analyzePerson(input.partner!, input.product, input.baseDate, k, rng.fork("B"), "b", usedScenes, override, 6, fnUsed, undefined, input.baseAt) : null;
 
   // 두 사람이 같은 요소를 가지면 같은 그림이 두 번 나온다: 뒤 사람은 다른 그림 변형으로(P3.8, 부모·자녀 둘 다 '교문 앞 우산').
   const other = otherRaw;
@@ -275,14 +313,14 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     if (input.product === "major_fortune") {
       const entries = buildYearEntries(tctx, thisYear, me.dayun.cycles);
       const transitions = entries.filter(e => e.dayun?.transition).map(e => e.key);
-      timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: transitions.length ? transitions : [...entries].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 2).map(e => e.key), cycles: cycleSummary(me.dayun.cycles, thisYear - 3, thisYear + 10, thisYear, tenGodOf) };
+      timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: transitions.length ? transitions : [...entries].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 2).map(e => e.key), cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)) };
       timelineKeys = entries.map(e => e.key);
     } else {
       const year = input.selectedYear ?? thisYear;
       const yp = getAnnualPillar(year);
       const yearEntry = buildEntry(tctx, "year", String(year), `${year}년 ${ganjiLabel(yp)}`, yp, "annual", 0);
       const months = buildMonthEntries(tctx, year, input.baseDate);
-      timeline = { entries: [yearEntry, ...months], tenGodNotes: { ...tenGodNotes(months, "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun.cycles, year, year, year, tenGodOf) };
+      timeline = { entries: [yearEntry, ...months], tenGodNotes: { ...tenGodNotes(months, "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun, year, year, year, tenGodOf) };
       timelineKeys = months.map(e => e.key);
     }
   }
@@ -308,9 +346,9 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     : input.product === "major_fortune" && timeline ? majorDesign(timeline.entries, timeline.cycles, me.chart.thisYear.year)
     : input.product === "annual_fortune" && timeline ? (() => { const months = timeline!.entries.filter(e => e.kind === "month"), link = keyMonthsLink(months, timeline!.keyEntries); return { ...annualDesign(timeline!.entries.find(e => e.kind === "year"), months), ...(link ? { keyMonthsLink: link } : {}) }; })()
     : input.product === "career_money_study" ? (() => {
-      const base = careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages });
+      const base = careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages, age: me.person.age });
       // 커리어 전용 설계기(P6d G): 장마다 정해진 근거·상태별 근거. 직무 3단·진로 다섯 갈래·돈 새는 곳은 base에서 재사용.
-      return { ...base, ...careerDesign({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, jobStatus: me.facts.jobStatus, detailJob: me.facts.detailJob, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base }) };
+      return { ...base, ...careerDesign({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, jobStatus: me.facts.jobStatus, detailJob: me.facts.detailJob, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base, shop: me.profile.scene?.shop, jobProps: matchJob(me.facts.detailJob)?.props }) };
     })()
     : input.product === "saju_mbti_full" ? familyDesign(me.saju, groupValues(me.saju)) : {};
 
@@ -347,7 +385,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])), transitionTouched } : {}),
     ...(mbtiTop ? { mbtiAxes: [mbtiTop] } : {}),
     // 궁합 장면은 그 관계 유형의 생활 주제에서만(P3.8 3: 부모·자녀 책에 친구 보온병·동창 회비). 부모·자녀는 자녀 나이대로 거른다.
-    ...(relTopics && other ? { relScenes: { topics: relTopics, ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const, exclude: parentChildExclude(me.person.gender, other.person.gender, other.person.age >= 20 ? rng.fork("living").pick(["together", "apart"] as const) : "together") } : {}) } } : {}),
+    ...(relTopics && other ? { relScenes: { topics: relTopics, ...pairSides(me, other, k), ...(input.relationshipType === "parentChild" ? { childAge: other.person.age >= 20 ? "adult" as const : "minor" as const, exclude: parentChildExclude(me.person.gender, other.person.gender, other.person.age >= 20 ? rng.fork("living").pick(["together", "apart"] as const) : "together") } : {}) } } : {}),
   });
 
   // 항목의 touched는 그 장에 배정된 trait만 남긴다(P3.7 1-1: 원국 특성은 건드려진 것만, 배정된 것만 짧게 부른다).
@@ -360,12 +398,19 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 입력 직업이 없으면 '지금 일' 장은 원래 주제(장점이 부담이 되는 환경)로 둔다(P3.7 1-4).
   if (input.product === "career_money_study" && !me.facts.detailJob) for (const c of chapters) if (c.id === "current-fit") { c.title = "내 힘이 빛나는 일의 환경"; c.question = "내 힘은 어떤 일의 환경에서 가장 잘 쓰일까?"; }
   // 상태별 절 질문(P6d G): "{status:now}" → 입력 상태의 질문(미입력이면 단정하지 않는 질문).
-  const statusQ = input.product === "career_money_study" ? (key: string) => CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
+  const noShopBiz = careerStatusOf(me.facts.jobStatus) === "business" && me.profile.scene?.shop === false;
+  const statusQ = input.product === "career_money_study" ? (key: string) => (noShopBiz ? CAREER_BUSINESS_NOSHOP_Q[key] : undefined) ?? CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
     : input.product === "love_marriage_child" ? (key: string) => LOVE_STATUS_Q[key]?.[loveStatusOf(me.facts.relationshipStatus)] : null;
   if (statusQ) for (const c of chapters) for (const x of c.sections ?? []) { const m = x.q.match(/^\{status:(\w+)\}$/); if (m) x.q = statusQ(m[1]) ?? x.q; }
+  // P6e 8: 연애 4장 제목은 상태에 따라(연애 중·기혼 = 표현과 대화의 리듬).
+  if (input.product === "love_marriage_child") for (const c of chapters) { const t = LOVE_STATUS_TITLE[c.id]?.[loveStatusOf(me.facts.relationshipStatus)]; if (t) (c as { title: string }).title = t; }
+  // 최종판 1-7·최종판2 1-1: 같은 일주의 이전 책이 쓴 이미지 줄(이미지 대장) + 같은 고객 다른 상품 책의 이미지 줄을 피할 이미지로. 궁합은 두 사람 일주 모두.
+  { const avoid = [...new Set([...avoidImagesFor([me.chart.pillars.day.hanja, ...(other ? [other.chart.pillars.day.hanja] : [])], input.ledgerView), ...(input.priorImages ?? []).map(x => x.trim()).filter(x => x.length >= 6)])];
+    if (avoid.length) (me.chart as { avoidImages?: string[] }).avoidImages = avoid; }
+  const ledgerNotes = input.priorActions?.length || input.priorCovers?.length ? { ...(input.priorActions?.length ? { avoidActions: [...input.priorActions].slice(0, 30) } : {}), ...(input.priorCovers?.length ? { avoidCoverMotifs: [...new Set(input.priorCovers.flatMap(coverMotifs))] } : {}) } : undefined;
   // 다음 대운이 1년 안에 시작하면 지금 대운 설명에 전환을 붙인다(P3.7 r1: 2026년에 끝나는 대운을 시기 장이 끝나는 줄 모르고 썼다).
   const cd = me.chart.currentDayun, ty = me.chart.thisYear.year;
-  if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.startYear - 1}년에 끝나고 ${cd.next.startYear}년부터 ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
+  if (cd?.next && cd.next.startYear - ty <= 1) cd.reading = `${cd.reading} 이 흐름은 ${cd.next.start ?? `${cd.next.startYear}년부터`} ${cd.next.ganji.hanja}(${cd.next.ganji.hangul}) ${cd.next.tenGod} 쪽 10년으로 넘어갑니다(전환을 함께 씁니다).`;
   // 궁합 장 제목·질문의 "A·B" 기호(예 "A가 보는 B")는 두 사람 호칭으로 바꾼다(고객 본문에 기호가 나오지 않게, P3.5 A9).
   if (other) {
     const name: Record<string, string> = { A: me.person.callName, B: other.person.callName };
@@ -389,7 +434,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
   // usedProps는 안전망용, appendix·glossary는 부록·용어 표시용이라 작가 토큰 추정·작가 입력에서 뺀다.
   const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k));
-  return BriefSchema.parse({ ...draft, ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD } });
+  return BriefSchema.parse({ ...draft, ...(ledgerNotes ? { ledgerNotes } : {}), ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
 }
 
 /**
@@ -428,6 +473,13 @@ function cautionOf(e: import("./schema").TimelineEntry, k: Knowledge, c: Caution
   return pick;
 }
 
+/** 최종판 1-5: 궁합 장면 주인을 정할 두 사람의 행동 차원 값과 차원 양끝 이름. */
+function pairSides(a: PersonPack, b: PersonPack, k: Knowledge) {
+  const short = (x: string) => x.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "").replace(/\.$/, "");
+  // 최종판2 1-3: 장면 주인은 성격표를 반영한 값으로(표와 반대 끝에 그 사람을 세우지 않는다).
+  return { sides: [{ name: a.person.callName, vec: profiledVector(side(a, k), k) }, { name: b.person.callName, vec: profiledVector(side(b, k), k) }] as const,
+    poles: Object.fromEntries(k.ontology.dimensions.map(d => [d.id, { plus: short(d.poles.plus.description), minus: short(d.poles.minus.description) }])) };
+}
 function side(p: PersonPack, k: Knowledge): PairSide {
   return {
     saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName, gender: p.person.gender,

@@ -6,6 +6,7 @@
  *       경험 단정 중 경향형·질문형으로 바꿀 수 없는 것(P3.6 A6, 바꿀 수 있으면 바꾸고 replacements에 기록) / 인연·결혼 시기 말(P3.7 1-5).
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
+import { ORPHAN_CONNECTIVE, stripConnective } from "./orphan";
 import { STYLE_EXAMPLES } from "../prompt/examples";
 import ontology from "@/data/knowledge-v5/behavior-ontology.json";
 import { AWKWARD_PHRASE, FAMILY_MEMBER, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences, tidyText } from "./patterns";
@@ -37,12 +38,16 @@ const SPOUSE_TERM = /배우자 ?(자리|별|궁|성)|(남편|아내|배우자)�
 const PARTNER = /(?<![가-힣])(애인|연인|남자친구|여자친구|남친|여친)/;
 const CHILD = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|를|의|이|와|도|랑|한테|에게|는|은)\s/;
 const CHILD_TERM = /자녀 ?(자리|별|궁|성)|어린아이|아이처럼|아이 같은/g;
+/** 부모 역할 장(자녀 미입력·없음)에서도 잡는 꼴: 아이가 이미 있다고 단정하는 말(P6e — 그 장의 가정·명식 설명 문장은 통과). */
+const CHILD_EXIST = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은|도)? ?(있어|있고|있는|있습니다|있으니|있다|있지만|생겼|태어났)|(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은)? [^.?!]{0,12}(다니(는|고|며|니)|자라고 있)|우리 아이|(아이|자녀)를 (키우고 있|키우는 지금|두고 있|둔 지금)|아이 (둘|하나|셋)을? 키우/;
+/** 최종판 5: 자녀 미입력인데 "없다"고 단정(장덕민 연애 8장 "지금은 자녀가 없으니"). 입력이 없음(none)이면 쓸 수 있다. */
+const CHILD_ABSENT = /(?<![가-힣])(아이|자녀|아들|딸)(가|는|도)? ?(없으니|없어서|없지만|없는 지금|없습니다|없어요|없다)/;
 const JOB_EMPLOYED = /(당신의 회사|다니는 회사|직장 상사|팀장님|부장님|사무실에서|회사 동료)/;
 const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
-const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\})/;
+const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표)/;
 
 /** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
 const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
@@ -63,6 +68,8 @@ const INTERNAL_LABEL = new RegExp([
   "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
   // 지침을 그대로 말하는 문장(P6b r1: "이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요").
   "필요할 때만 (짧게 |한 번씩 )?(되짚|꺼내|꺼낼|부르)", "(이|그) 그림은 (뒤에서|앞으로|이 책에서)", "뒤에서 (다시 )?(되짚|꺼내|꺼낼)겠?",
+  // 최종판 5: 조건형 규칙을 독자 안내로 옮김(장덕민 연애 8장 "아이를 키우게 된다면이라는 조건으로 읽어 주세요").
+  "(조건|가정)(형)?으로 (읽어|봐|들어) 주세요",
   `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
 ].join("|"));
 /** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */
@@ -70,7 +77,8 @@ const DIM_WORDS = new Set([...DIM_NAMES, ...DIM_NAMES.map(n => n.split(" ")[0]).
 const axisList = (s: string) => [...s.matchAll(/(?:[가-힣]+(?: [가-힣]+)?·){1,}[가-힣]+(?: [가-힣]+)?/g)].some(m => m[0].split("·").filter(x => DIM_WORDS.has(x.trim().replace(/(이|가|은|는|을|를|와|과|도)$/, ""))).length >= 2);
 /** 지운 문장 바로 뒤에서 앞 문장을 가리키며 시작하는 문장(P6b E-8): 지시어는 지우고, 연결어는 떼어 낸다. */
 const ORPHAN_REF = /^(이것|이건|이게|그것|그건|그게|이런|그런|이렇게|그렇게|이 때문에|그 때문에|이 덕분에|그 덕분에|그 결과|이 점)(은|이|이란|을|도|만)?\s/;
-const ORPHAN_CONNECTOR = /^(그래서|그러니|그러니까|그래서인지|따라서|그렇기에|그렇다 보니|그러다 보니|그러면|게다가|또한),?\s+/;
+// 최종 A-9: 접속어 목록은 orphan.ts 하나(그런데·하지만·그러나·그리고 포함).
+const ORPHAN_CONNECTOR = ORPHAN_CONNECTIVE;
 
 export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
@@ -96,14 +104,16 @@ export function allowedWindows(briefText: string): Set<string> {
 }
 
 /** 문장 하나의 위반 규칙(없으면 null). */
-/** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다. */
-export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false): SentenceRule | null {
+/** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다.
+ * inChildChapter(P6e): 부모 역할 장은 장 전체가 "아이를 키우게 된다면"이다(브리프 parentState) — 자녀 문장은 이미 있다고 단정할 때만 잡는다. */
+export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false, inChildChapter = false): SentenceRule | null {
   if ((DATE.test(s) && EVENT_DEFINITE.test(s)) || ABSOLUTE.test(s)) return "date_event";
   if (LOVE_TIMING.test(s)) return "love_timing";
   const conditional = inConditionalChapter || CONDITIONAL.test(s);
   if (f.relationship !== "married" && SPOUSE.test(s.replace(SPOUSE_TERM, "")) && !conditional) return "fact_spouse";
   if ((f.relationship === "single" || f.relationship === "unknown") && PARTNER.test(s) && !conditional) return "fact_partner";
-  if (f.children !== "has" && CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional) return "fact_children";
+  if (f.children !== "has" && (inChildChapter ? CHILD_EXIST.test(s) : CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional)) return "fact_children";
+  if (f.children === "unknown" && CHILD_ABSENT.test(s)) return "fact_children";
   if (!conditional && ((f.job !== "employed" && JOB_EMPLOYED.test(s)) || (f.job !== "business" && JOB_BUSINESS.test(s)) || (f.job !== "student" && JOB_STUDENT.test(s)))) return "fact_job";
   if (!f.birthTimeKnown && HOUR.test(s)) return "hour_pillar";
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
@@ -137,7 +147,7 @@ export function filterParagraph(p0: string, f: SafetyFacts, chapter: number, del
     let s = raw;
     // 앞 문장이 지워졌으면 그 문장을 가리키던 말을 정리한다(P6b E-8).
     if (prevDeleted && ORPHAN_REF.test(s)) { deletions.push({ chapter, rule: "orphan_ref", sentence: s }); out = out.replace(raw, ""); continue; }
-    if (prevDeleted && ORPHAN_CONNECTOR.test(s)) { const t = s.replace(ORPHAN_CONNECTOR, ""); out = out.replace(raw, t); s = t; }
+    if (prevDeleted && ORPHAN_CONNECTOR.test(s)) { const t = stripConnective(s)!; out = out.replace(raw, t); s = t; }
     prevDeleted = false;
     if (isPastAssertion(s)) {
       const soft = softenExperience(s);

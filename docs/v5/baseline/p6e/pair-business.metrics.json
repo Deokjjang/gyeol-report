@@ -1,0 +1,342 @@
+{
+ "case": "pair-business",
+ "label": "궁합 사업 파트너 · 남궁현×백은솔",
+ "reportId": "report_b41e6a1204c74df0bf327e82f178d8f1",
+ "status": "COMPLETED",
+ "wallMs": 117263,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 9,
+ "coverLine": "큰 나무가 불빛을 타오르게 돕는 사이",
+ "keySpans": 27,
+ "sections": 27,
+ "chars": 12513,
+ "chapterChars": [
+  1480,
+  1495,
+  1356,
+  1374,
+  1300,
+  1404,
+  1285,
+  1380,
+  1439
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 2,
+ "warnings": 23,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 1,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "남궁현님은 속상해도 티를 내지 않고 혼자 정리하는 편이고, 백은솔님은 기분이 표정과 말에 바로 묻어납니다.",
+   "b": "반면 남궁현님은 속상해도 티를 내지 않고 혼자 정리해서, 백은솔님이 보기에는 \"아무렇지 않나 보다\" 싶을 수 있습니다.",
+   "at": [
+    "6.2",
+    "8.1"
+   ],
+   "kind": "scene"
+  }
+ ],
+ "briefCopy": 0.007,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 117161,
+ "tokens": {
+  "input": 26395,
+  "output": 15694,
+  "cachedInput": 7777
+ },
+ "costUsd": 0.2105077,
+ "costKrw": 305.2,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 108036,
+   "chars": 13193,
+   "maxTokens": 28194,
+   "usage": {
+    "inputTokens": 21702,
+    "outputTokens": 14325,
+    "cachedInputTokens": 7183
+   },
+   "costUsd": 0.1873723
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 8551,
+   "chars": 1248,
+   "maxTokens": 2363,
+   "usage": {
+    "inputTokens": 4693,
+    "outputTokens": 1369,
+    "cachedInputTokens": 594
+   },
+   "costUsd": 0.0231354
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-22",
+ "knowledgeVersion": "knowledge-v5:7f6cd7b5cb8e",
+ "p6b": {
+  "chars": 13057,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": true,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 4
+   },
+   {
+    "n": 6,
+    "count": 2
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 4,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 9,
+   "misses": [
+    "겁살",
+    "갑신",
+    "정관",
+    "현침살",
+    "편관",
+    "정미",
+    "비견",
+    "반안살",
+    "음착양차살"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     4
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 26,
+  "sectionsTotal": 27,
+  "byRule": {},
+  "coreImage": "큰 나무가 불빛을 타오르게 돕는 사이",
+  "edition": "제6판"
+ },
+ "p6c": {
+  "tidy": {
+   "hanja": 0,
+   "fnJoin": 0,
+   "prefix": 1,
+   "numbers": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "core",
+  "flags": {
+   "db_copy": 2,
+   "seed_copy": 2,
+   "chapter_ref": 2,
+   "notice_repeat": 1
+  },
+  "dropped": [],
+  "removed": 0,
+  "repaired": 7,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "rewritten": 0,
+  "noticesKept": [],
+  "repairCalls": 1,
+  "redoChapters": [],
+  "rewriteCalls": 0,
+  "hanjaStripped": 0,
+  "repairTargets": 7,
+  "noticesRemoved": [],
+  "rewriteTargets": 0,
+  "termsAnnotated": 36,
+  "droppedSections": [],
+  "droppedParagraphs": 0
+ },
+ "ledger": {
+  "seeds": [],
+  "angles": [
+   "shinsal:TWELVE_GEOPSAL:fusion:ESTJ",
+   "dayPillar:甲申:fusion:ESTJ",
+   "tenGod:正官:fusion:ESTJ",
+   "shinsal:HYEONCHIMSAL:fusion:ESTJ",
+   "dayPillar:丁未:fusion:ENFP",
+   "tenGod:比肩:fusion:ENFP",
+   "shinsal:TWELVE_BANANSAL:fusion:ENFP",
+   "shinsal:EUMCHAK_YANGCHA:fusion:ENFP",
+   "element:FIRE:STRONG:fusion:ENFP",
+   "shinsal:TWELVE_GEOPSAL:shadow",
+   "dayPillar:甲申:meaning",
+   "dayPillar:丁未:meaning",
+   "tenGod:比肩:meaning",
+   "shinsal:EUMCHAK_YANGCHA:meaning",
+   "shinsal:TWELVE_BANANSAL:meaning",
+   "shinsal:TWELVE_GEOPSAL:meaning",
+   "tenGod:正官:meaning",
+   "shinsal:HYEONCHIMSAL:meaning",
+   "element:FIRE:STRONG:meaning"
+  ],
+  "evidence": [
+   "feature:shinsal:TWELVE_GEOPSAL",
+   "feature:dayPillar:甲申",
+   "feature:tenGod:正官",
+   "feature:shinsal:HYEONCHIMSAL",
+   "feature:dayPillar:丁未",
+   "feature:tenGod:比肩",
+   "feature:shinsal:TWELVE_BANANSAL",
+   "feature:shinsal:EUMCHAK_YANGCHA",
+   "feature:element:FIRE:STRONG"
+  ],
+  "newShare": 1
+ }
+}

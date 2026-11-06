@@ -40,7 +40,7 @@ export function devMockStream(mode: "ok" | "fail", payload: ReportInputPayload, 
   return async (input: StreamCompletionInput): Promise<StreamCompletionResult> => {
     const usage = { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 };
     if (mode === "fail") return { text: "", finishReason: "error", usage, costUsd: 0, requestId: "dev-mock", error: { code: "http_529", message: "mock overloaded", status: 529 } };
-    text ??= mockText(buildBrief(payloadToBriefInput(payload as never, kstDate(policyAt)) as never, writerKnowledge().k));
+    text ??= mockText(buildBrief(payloadToBriefInput(payload as never, kstDate(policyAt), policyAt) as never, writerKnowledge().k));
     for (let i = 0; i < text.length; i += 400) input.onText?.(text.slice(i, i + 400));
     return { text, finishReason: "complete", usage: { ...usage, outputTokens: Math.ceil(text.length / 1.5) }, costUsd: 0, requestId: "dev-mock" };
   };

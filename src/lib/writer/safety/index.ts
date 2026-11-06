@@ -17,7 +17,7 @@ export { sentenceViolation, copiesExample, type SafetyFacts, type Deletion, type
 import { norm } from "./sentences";
 
 /**
- * 장 분량이 목표 하한의 이 비율 미만이면 결정론 작가로 교체한다.
+ * 장 분량이 목표 하한의 이 비율 미만이면 "short"로 기록한다(최종판 0-1: 교체하지 않는다, 기록만).
  * P6b: 60%에서 50%로. 절 단위 목표에서 실호출 4번이 60%를 1~7자 차이로 못 넘어 온전한 작가 원고가 결정론 장으로 바뀌었다(539<540, 731<738 등).
  */
 export const MIN_CHAPTER_RATIO = 0.5;
@@ -28,10 +28,20 @@ export type FinalChapter = { readonly n: number; readonly id: string; readonly t
 /** traitUse: 원고의 trait 언급(소개·적용)·장 안 중복·같은 축 중복(P3.8 1, 참고용). infoRepeats: 같은 정보(주장·장면·처방) 반복(P6 반복의 정의). */
 /** p6c(P6c): 결정론 정리 수, 수리 전 검사 결과(규칙별), 수리 대상·적용·호출 수, 재요청 장, 수리 뒤 남은 것(지운 문장·뺀 문단), 표지 출처, 대체한 카드 줄. */
 export type P6cMetric = { readonly tidy: { readonly prefix: number; readonly mbtiCode: number; readonly monthNow: number; readonly keyMarks: number }; readonly flags: Readonly<Record<string, number>>;
+  /** redoCalls·redoChapters: 옛 Book 메타에만 있다(최종판 0-1: 장 재요청 없음, 새 Book은 0·[]). */
   readonly repairTargets: number; readonly repaired: number; readonly repairCalls: number; readonly redoCalls: number; readonly redoChapters: readonly number[];
-  readonly remaining: Readonly<Record<string, number>>; readonly removed: number; readonly droppedParagraphs: number; readonly cover: "writer" | "fallback"; readonly cardFlags: readonly string[];
+  readonly remaining: Readonly<Record<string, number>>; readonly removed: number; readonly droppedParagraphs: number; readonly cover: "writer" | "fallback" | "repaired"; readonly cardFlags: readonly string[];
   /** P6d B: 수리 뒤에도 사실·금지 규칙에 걸려 문단째 뺀 자리와 규칙·문장(진단용). */
-  readonly dropped?: readonly { readonly at: string; readonly rule: string; readonly detail?: string; readonly sentence: string }[] };
+  readonly dropped?: readonly { readonly at: string; readonly rule: string; readonly detail?: string; readonly sentence: string }[];
+  /** P6e 2(최종판 1-3): 소제목 재작성(대상·적용·호출 수)과 재작성 뒤에도 걸려 통째로 뺀 소제목(자리·소제목·규칙·걸린 문장). */
+  readonly rewriteTargets?: number; readonly rewritten?: number; readonly rewriteCalls?: number;
+  readonly droppedSections?: readonly { readonly at: string; readonly heading: string; readonly rules: readonly string[]; readonly sentences: readonly string[] }[];
+  /** P6e 7(최종판 1-6): 작가 출력에서 지운 한자 수·렌더 단계가 붙인 용어 표기 수. */
+  readonly hanjaStripped?: number; readonly termsAnnotated?: number;
+  /** P6e 15(최종판 1-12): 수리 뒤에도 남아 뗀 작가 안내 문장·떼지 못한 것. */
+  readonly noticesRemoved?: readonly string[]; readonly noticesKept?: readonly string[];
+  /** 최종판 1-7: 핵심 이미지(표지 = 1장 첫 소제목)·피할 이미지와 겹친 명사·표지 수리 호출 수. */
+  readonly image?: { readonly line: string; readonly overlap: readonly string[]; readonly repairCalls: number } };
 export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric; readonly p6c?: P6cMetric };
 export type SafetyReport = { readonly deletions: readonly Deletion[]; readonly warnings: readonly StyleWarning[]; readonly replacements?: readonly Replacement[]; readonly metrics?: SafetyMetrics };
 /** 같은 소품이 본문에 나와도 되는 장 수(P3.6 A1). */
@@ -134,7 +144,8 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
     let reason: string | undefined = draft ? undefined : "missing";
     const min = Math.round(ch.targetChars[0] * MIN_CHAPTER_RATIO);
     const chars = chapterChars({ n: ch.n, title: "", sections });
-    if (draft && chars < min) { reason = `too_short:${chars}<${min}`; source = "deterministic"; sections = []; }
+    // 최종판 0-1: 짧은 작가 장도 버리지 않는다(작가 원고 그대로, 사유만 기록). 결정론 장은 작가가 그 장을 아예 쓰지 못했을 때(빠진 장)만.
+    if (draft && sections.length && chars < min) reason = `short:${chars}<${min}`;
     if (!sections.length) { sections = det(reason ?? "empty"); source = "deterministic"; reason ??= "empty"; }
     sections = tidy(sections);
     sections.forEach(s => { warnings.push(...styleWarnings(ch.n, s.paragraphs, terms, introduced)); warnings.push(...glossaryWarnings(ch.n, s.paragraphs, introduced)); });

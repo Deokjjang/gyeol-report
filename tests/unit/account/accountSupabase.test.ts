@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { NextRequest, NextResponse } from "next/server";
 import { createAccountPort } from "../../../src/lib/account/supabase";
+import { ACCOUNT_POLICY_VERSIONS } from "../../../src/lib/account/policy"; // 최종3: 문서 버전 2026-11-05.1(상수로 따라간다)
 
 afterEach(() => vi.unstubAllEnvs());
 const request = () => new NextRequest("https://gyeolreport.com/auth/start");
@@ -56,7 +57,7 @@ describe("official Supabase SSR SDK contract, network forbidden", () => {
     expect(u).toMatchObject({ id, provider: "google", displayName: "회원" }); // P6d-ops: identity에 email·emailVerified·kakaoId·lastSignInAt가 더해졌다
     expect(await p.consent({ ...u, id: "forged-client-id" }, "x", "first_login")).toBe(false);
     expect(await p.consent(u, "22222222-2222-4222-8222-222222222222", "first_login")).toBe(true);
-    expect(saved?.p_user_id).toBe(id); expect(saved?.p_records).toEqual(expect.arrayContaining([expect.objectContaining({ consent_type: "privacy", document_version: "2026-09-22.1", required: true })]));
+    expect(saved?.p_user_id).toBe(id); expect(saved?.p_records).toEqual(expect.arrayContaining([expect.objectContaining({ consent_type: "privacy", document_version: ACCOUNT_POLICY_VERSIONS.privacy, required: true })]));
     expect(fetch.mock.calls.some(([url]) => String(url).includes("grant_type=refresh_token"))).toBe(true);
     expect(p.finish(new NextResponse()).cookies.getAll().some(c => c.httpOnly && c.value)).toBe(true);
     expect(await p.logout()).toBe(true);

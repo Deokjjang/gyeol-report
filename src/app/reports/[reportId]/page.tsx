@@ -8,6 +8,7 @@ import { accountPublicEnabled } from "../../../lib/account/gate";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
+import { readGenerationProgress } from "../../../components/report/generationProgressServer";
 import { ReportStatusView } from "../../../components/report/ReportStatusView";
 import type { ReactNode } from "react";
 import MetaPurchaseTracker from "../../../components/analytics/MetaPurchaseTracker";
@@ -101,7 +102,7 @@ type ReportResultPageProps = {
 };
 
 type PageState =
-  | { readonly kind: "processing"; readonly attention: boolean; readonly delayed: boolean }
+  | { readonly kind: "processing"; readonly attention: boolean; readonly delayed: boolean; readonly status?: string }
   | {
       readonly kind: "invalid";
     }
@@ -157,7 +158,7 @@ async function loadPageState(reportId: string): Promise<PageState> {
     if (durable.ok) {
       if (durable.status === "EXPIRED") return { kind: "expired" };
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
-      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING" };
+      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING", status: typeof durable.status === "string" ? durable.status : undefined };
     }
     // 환불된 주문의 책이면 재확인 없이 안내한다. 기존 읽기 함수는 환불을 '없음'으로 돌려줘서 여기서 따로 확인한다.
     if (await refundedBook(reportId)) return { kind: "refunded" };
@@ -1578,7 +1579,12 @@ export default async function ReportResultPage({
   }
   const state = await loadPageState(routeParams.reportId ?? "");
 
-  if (state.kind === "processing") return <><MetaPurchaseTracker reportId={routeParams.reportId ?? ""} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} /></>;
+  if (state.kind === "processing") {
+    // ⑦ 생성 감독의 실제 상태(읽기 전용)로 단계·지연을 그리고, 화면은 그 상태를 계속 묻는다(v5 최종 2-1 #7).
+    const reportId = routeParams.reportId ?? "";
+    const progress = state.attention ? undefined : await readGenerationProgress(reportId, state.status);
+    return <><MetaPurchaseTracker reportId={reportId} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} reportId={state.attention ? undefined : reportId} progress={progress} /></>;
+  }
 
   if (state.kind === "invalid") {
     return renderInvalidState();

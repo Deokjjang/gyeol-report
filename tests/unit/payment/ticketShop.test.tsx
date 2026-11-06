@@ -14,6 +14,7 @@ import type { BundleOrder, BundleResult, BundleStore } from "../../../src/lib/ti
 import type { BundleProvider } from "../../../src/lib/tickets/bundleService";
 import { ticketShopEnabled } from "../../../src/lib/tickets/shopGate";
 import { loadTossPaymentsBrowserSdk } from "../../../src/lib/payment/tossBrowserSdkLoader";
+import { REPORT_PRICE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 vi.mock("../../../src/lib/payment/tossBrowserSdkLoader",()=>({loadTossPaymentsBrowserSdk:vi.fn()}));
 
 let sql: Awaited<ReturnType<typeof ticketPublicationSql>>, store: BundleStore;
@@ -30,7 +31,8 @@ beforeAll(async () => {
 afterAll(async () => { await sql.db.close(); });
 describe("COMMERCE-03 real order/ledger boundary", () => {
   it("catalog prices, unit prices and exact discounts derive from SSOT", () => {
-    expect(bundleEditions().map(b => [b.quantity, b.amount, b.saving, b.unit])).toEqual([[1,1490,0,1490],[3,4290,180,1430],[5,6890,560,1378],[10,13400,1500,1340]]);
+    const single = REPORT_PRICE_KRW;
+    expect(bundleEditions().map(b => [b.quantity, b.amount, b.saving, b.unit])).toEqual([[1,single,0,single],[3,4290,3*single-4290,1430],[5,6890,5*single-6890,1378],[10,13400,10*single-13400,1340]]);
   });
   it("production policy approval is absent, prepare cannot invent consent", async () => {
     expect(BUNDLE_PURCHASE_POLICY_VERSION).toBeNull(); expect(ticketShopEnabled()).toBe(false);

@@ -12,7 +12,7 @@ import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
-import { colorsOf, ELEMENT_KO, ganjiLabel, ganjiOf, josa, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { colorsOf, currentDayunAt, dayunLabel, ELEMENT_KO, ganjiLabel, ganjiOf, halfHapLine, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import { periodDomains } from "./productEvidence";
 import type { Rng } from "./seed";
@@ -145,9 +145,9 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     const b = badgeFor(r, k); if (!b) continue;
     const same = badges.find(x => x.kind === b.kind && x.pair === b.pair);
     if (same) { const w = [...new Set([...(same.with?.split("·") ?? []), ...natal])]; if (w.length) same.with = w.join("·"); continue; }
-    // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다).
+    // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다). 최종판3 7: 궁합 관계 목록과 같은 반합 문구(halfHapLine).
     const half = r.kind === "SAMHAP" && r.completeness !== "full";
-    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `반합(세 글자 중 두 글자만 만남): ${b.line.replace(/팀이 완성되어/g, "기운이 절반쯤 모여")}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
+    badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `${HALF_HAP_PLAIN}: ${halfHapLine(b.line)}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
   }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }
   const eff = inflowEffect(pillar, st);
@@ -207,8 +207,8 @@ export function buildYearEntries(ctx: TimelineCtx, thisYear: number, cycles: rea
     const yi = cyc ? year - cyc.startYear + 1 : 0, total = cyc ? cyc.endYear - cyc.startYear + 1 : 0;
     const dyTg = cyc ? tenGodLabel(getTenGod(ctx.saju.dayMaster, cyc.stem)) : "";
     const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (올해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
-      { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition, yearIndex: yi, total, position: dayunPositionLine(cyc.startYear, cyc.endYear, yi, total), tenGod: dyTg } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
-    e.head = headLine(e, cyc ? { ganji: `${ganjiOf(cyc).hangul}(${ganjiOf(cyc).hanja})`, tenGod: dyTg } : undefined);
+      { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition, yearIndex: yi, total, position: dayunPositionLine(cyc.startYear, cyc.endYear, yi, total), tenGod: dyTg, ...(transition ? { start: dayunLabel(cyc).start } : {}) } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
+    e.head = headLine(e, cyc ? { ganji: `${ganjiOf(cyc).hangul}(${ganjiOf(cyc).hanja})`, tenGod: dyTg, month: dayunLabel(cyc).month } : undefined);
     out.push({ ...e, ...changeOf(out.at(-1), "해", e.tenGod.stem, e.flow.score) });
   }
   return out;
@@ -236,20 +236,26 @@ export function buildMonthEntries(ctx: TimelineCtx, year: number, baseDate?: str
 /** 대운 안 위치 한 줄(P6d C): "2022~2031 대운 10년 가운데 10번째 해(마지막 해)". */
 export function dayunPositionLine(startYear: number, endYear: number, index: number, total: number): string {
   const where = index === 1 ? "첫해" : index === total ? "마지막 해" : index <= 3 ? "앞쪽" : index <= 7 ? "중간" : "끝 무렵";
-  return `${startYear}~${endYear} 대운 ${total}년 가운데 ${index}번째 해(${where}${index < total ? `, 뒤로 ${total - index}해 남음` : ""})`;
+  return `${startYear}~${endYear} 대운 ${total}년 가운데 ${index}번째 해(${where}${index < total ? `, 뒤로 ${koCount(total - index, "해")} 남음` : ""})`;
 }
 
 /**
  * 머리 문장(P6d D): 결정론 형식. 해 = "2028년 무신(戊申)은 상관(傷官)이 하늘에, 정재(正財)가 땅에 들어오는 해예요."
  * 달 = "경인월(庚寅月)은 …이 하늘에, …이 땅에 들어오는 달이에요." 대운 전환 해는 새 대운 이름과 십성을 잇는다.
  */
-export function headLine(e: Pick<TimelineEntry, "kind" | "key" | "ganji" | "tenGod" | "dayun">, cycle?: { ganji: string; tenGod: string }): string {
+export function headLine(e: Pick<TimelineEntry, "kind" | "key" | "ganji" | "tenGod" | "dayun">, cycle?: { ganji: string; tenGod: string; month?: string }): string {
   const sky = `${josa(e.tenGod.stem, "이가")} 하늘에, ${josa(e.tenGod.branch, "이가")} 땅에 들어오는`;
   if (e.kind === "month") return `${e.ganji.hangul}월(${e.ganji.hanja}月)은 ${sky} 달이에요.`;
   const base = `${e.key}년 ${josa(`${e.ganji.hangul}(${e.ganji.hanja})`, "은는")} ${sky} 해예요.`;
-  return e.dayun?.transition && cycle ? `${base} 이 해부터 ${cycle.ganji} 대운이 시작되고, 10년의 중심 기운은 ${cycle.tenGod}${josa(cycle.tenGod, "이가").endsWith("이") ? "이에요" : "예요"}.` : base;
+  // 최종판3 8: 교운 달은 공통 대운 표기(dayunLabel.month) 그대로 — "이 해 5월 무렵부터 무진(戊辰) 대운이 시작되고".
+  const from = cycle?.month ? `이 해 ${cycle.month} 무렵부터` : "이 해부터";
+  return e.dayun?.transition && cycle ? `${base} ${from} ${cycle.ganji} 대운이 시작되고, 10년의 중심 기운은 ${cycle.tenGod}${josa(cycle.tenGod, "이가").endsWith("이") ? "이에요" : "예요"}.` : base;
 }
 
-export function cycleSummary(cycles: readonly CustomerDayunCycle[], from: number, to: number, thisYear: number, getTenGodFn: (s: Pillar["stem"]) => TenGod) {
-  return cycles.filter(c => c.endYear >= from && c.startYear <= to).map(c => ({ ganji: ganjiLabel(c), years: `${c.startYear}~${c.endYear}`, tenGod: tenGodLabel(getTenGodFn(c.stem)), current: c.startYear <= thisYear && thisYear <= c.endYear }));
+/** 대운 지도(timeline.cycles). 최종판3 8: label·ages(만 나이)는 공통 대운 표기 함수(dayunLabel) 그대로. */
+/** 최종 A-4·5: 대운수는 전통 셈법(daeunsu), 기간(period)은 다음 대운 교운 연·월까지. atMs가 있으면 지금 대운은 교운 시각으로 고른다(대운 상품). */
+export function cycleSummary(dayun: { readonly cycles: readonly CustomerDayunCycle[]; readonly daeunsu?: number }, from: number, to: number, thisYear: number, getTenGodFn: (s: Pillar["stem"]) => TenGod, atMs?: number) {
+  const cycles = dayun.cycles, now = atMs === undefined ? undefined : currentDayunAt(cycles, atMs);
+  return cycles.filter(c => c.endYear >= from && c.startYear <= to).map(c => { const l = dayunLabel(c, dayun.daeunsu, cycles.find(x => x.index === c.index + 1));
+    return { ganji: ganjiLabel(c), years: l.years, period: l.period, tenGod: tenGodLabel(getTenGodFn(c.stem)), current: now ? now.index === c.index : c.startYear <= thisYear && thisYear <= c.endYear, label: l.line, ages: l.ages }; });
 }

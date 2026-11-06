@@ -709,15 +709,22 @@
               "trait": "none"
             },
             {
-              "q": "추천 직무 3단은?",
+              "q": "{status:jobs}",
               "domain": "work",
               "use": [
-                "ev:jobRoles",
-                "ev:jobAdjacent",
-                "ev:jobLongterm"
+                "ev:jobGroups"
               ],
               "trait": "none",
-              "note": "줄마다 직무 하나, 근거 둘, 맞는 조건·안 맞는 조건"
+              "note": "직군마다 한두 문단(직군 → 맞는 이유 → 예시 직업 3~5개 나열), 직업 하나에 문단을 따로 주지 않는다"
+            },
+            {
+              "q": "길게 보면 열려 있는 직군은?",
+              "domain": "work",
+              "use": [
+                "ev:jobGroupsFar"
+              ],
+              "trait": "none",
+              "note": "직군마다 한두 문단(직군 → 맞는 이유·준비할 것 → 예시 직업 3~5개 나열)"
             },
             {
               "q": "{status:side}",
@@ -1069,7 +1076,7 @@
               "trait": "intro"
             },
             {
-              "q": "프로필에는 무엇을 담을까?",
+              "q": "{status:profile}",
               "domain": "love",
               "use": [
                 "ev:profile"
@@ -1077,7 +1084,7 @@
               "trait": "none"
             },
             {
-              "q": "첫 만남 30분에는 무엇을 보여 줄까?",
+              "q": "{status:firstMeet}",
               "domain": "love",
               "use": [
                 "ev:firstMeet"
@@ -1143,7 +1150,7 @@
           },
           "sections": [
             {
-              "q": "호감이 생기면 나는 어떻게 움직일까?",
+              "q": "{status:crush}",
               "domain": "love",
               "use": [
                 "ev:crush"

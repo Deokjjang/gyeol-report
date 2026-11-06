@@ -8,193 +8,235 @@
         "id": "ESTJ-work-01",
         "text": "월요일 아침 단톡방에 할 일 표 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-02",
         "text": "후배에게 언제 줄 수 있냐고 날짜부터 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESTJ-work-03",
         "text": "회의 시작 시각에 맞춰 문 닫고 안건 읽기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-04",
         "text": "회의 끝에 담당자와 기한을 소리 내어 확인",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-05",
         "text": "못 미더운 몫을 남아서 직접 끝내 놓기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-06",
         "text": "금요일 오후 진행 상황 확인 전화 돌리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-07",
         "text": "업무 절차가 흐트러진 곳에 표준안 만들기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-08",
         "text": "보고서에 결론 한 줄을 맨 위에 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ESTJ-work-09",
         "text": "지각이 잦은 사람과 일대일 면담 잡기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-10",
         "text": "프로젝트 일정표에 책임자 이름 박아 넣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-11",
         "text": "애매한 지시를 숫자로 바꿔 다시 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-12",
         "text": "회식 장소 예약과 인원 확인 도맡기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-13",
         "text": "이슈 생기면 원인과 대책을 번호 매겨 정리",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-14",
         "text": "새 팀원 첫날 업무 규칙 문서부터 건네기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESTJ-work-15",
         "text": "협력사에 납기 지연 사유서를 요구하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-16",
         "text": "성과 지표를 주 단위 그래프로 붙여 놓기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-17",
         "text": "낭비되는 회의 시간을 줄여 보자고 제안",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-18",
         "text": "전화 대신 메신저로 요청 이력 남기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-19",
         "text": "프리랜서 작업 계약서에 수정 횟수 넣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
       },
       {
         "id": "ESTJ-work-20",
         "text": "사무실 비품 주문 절차를 한 장으로 정리",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-21",
         "text": "구직 중 지원 현황을 표로 관리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-22",
         "text": "집안 대청소 구역별 담당을 정해 붙이기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-23",
         "text": "마감 임박한 작업의 남은 시간 계산하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-24",
         "text": "개인 프로젝트에 중간 점검일 박아 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
       },
       {
         "id": "ESTJ-work-25",
         "text": "의견이 갈리면 기준표 점수로 정하자고 하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-26",
         "text": "마무리 전 내일 우선순위 세 가지 적기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-27",
         "text": "성과 평가 항목을 근거 자료로 채우기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-28",
         "text": "매출 일보를 마감 직후 직접 확인하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-29",
         "text": "직원 근무표를 한 달 앞서 짜서 공지",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-30",
         "text": "납품 업체 단가를 분기마다 다시 협상",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-31",
         "text": "반별 청소 당번표를 직접 만들어 붙이기",
         "rel": "any",
-        "job": "student"
+        "job": "student",
+        "ctx": []
       },
       {
         "id": "ESTJ-work-32",
         "text": "스터디 모임 진도 계획을 먼저 짜기",
         "rel": "any",
-        "job": "student"
+        "job": "student",
+        "ctx": []
       }
     ],
     "money": [
@@ -202,193 +244,229 @@
         "id": "ESTJ-money-01",
         "text": "월급날 오후 고정비 저축 카드값 칸 나누기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-02",
         "text": "커피값은 따져도 체면 지출은 시원하게",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-03",
         "text": "확신 서는 한 곳에 크게 넣고 싶은 마음",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-04",
         "text": "근거표를 내밀며 분산 투자 조언을 반박",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-05",
         "text": "수입 지출 보고서를 월말에 직접 작성하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ESTJ-money-06",
         "text": "가계부 항목별 예산을 연초에 못 박기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-07",
         "text": "카드 혜택 비교표로 주력 카드 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-08",
         "text": "계약서 위약금 조항부터 읽고 서명하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-09",
         "text": "정장 구두 명함에는 아끼지 않고 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-10",
         "text": "적금 만기일에 맞춰 다음 상품 비교하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-11",
         "text": "경조사비 기준 금액을 정해 두고 지키기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-12",
         "text": "중고차 시세를 연식별로 표로 뽑아 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-13",
         "text": "회식비 영수증 처리를 당일에 끝내기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-14",
         "text": "세금 신고 기간 전에 증빙 서류 모으기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-15",
         "text": "대출 상환 계획을 원금 기준으로 앞당기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-16",
         "text": "보험 증권을 한 파일로 모아 갱신일 표시",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-17",
         "text": "아낀 돈 목표 금액에 도달하면 바로 이체",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-18",
         "text": "공동 지출은 영수증 사진으로 즉시 정산",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-19",
         "text": "배달앱 쿠폰 앞에서도 건당 단가 계산",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-20",
         "text": "이사 견적을 세 업체에서 받아 비교하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-21",
         "text": "부동산 앱으로 지역별 시세 흐름 확인하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-22",
         "text": "투자 모임에서 근거 없는 추천은 거르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-23",
         "text": "쓸데없는 구독부터 한 번에 정리 해지",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-24",
         "text": "사업장 비용을 항목별 비율로 점검하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-25",
         "text": "직원 식대 지출 한도를 정해 공지하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-26",
         "text": "거래처 입금 지연 건을 매주 추적하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-27",
         "text": "대금 청구서를 발송 즉시 확인 연락하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-28",
         "text": "세일 문자를 보고 필요 목록과 대조하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-29",
         "text": "통장 잔액 알림을 매일 아침 확인하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-30",
         "text": "연봉 협상 전 시장 자료부터 모으기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ESTJ-money-31",
         "text": "지출 상위 세 항목만 골라 줄이기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-money-32",
         "text": "여행 경비를 인원수로 나눠 앱에 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "love": [
@@ -396,193 +474,227 @@
         "id": "ESTJ-love-01",
         "text": "소개팅 자리에서 직업과 계획부터 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-02",
         "text": "첫 연락에 약속 날짜 두 개를 제안하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-03",
         "text": "썸 타는 사람에게 주말 일정부터 확인",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-04",
         "text": "호감 가는 사람에게 식당 예약 선수 치기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-05",
         "text": "고백은 결심이 서면 바로 실행하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-06",
         "text": "애매한 사이를 길게 끌지 못하는 성격",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-07",
         "text": "상대의 답이 없으면 한 번 더 확인하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-08",
         "text": "연애 상대의 생활력을 가장 먼저 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-09",
         "text": "데이트 코스를 시간표로 미리 짜 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-10",
         "text": "첫 만남 장소를 상대 동선 기준으로 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-11",
         "text": "앱 프로필에서 목표가 같은지 먼저 읽기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-12",
         "text": "호감 표시로 맛집 정보를 정리해 보내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-13",
         "text": "메시지 답장 속도와 말투를 맞춰 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-14",
         "text": "사귀기 전 결혼 생각을 솔직하게 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-15",
         "text": "이상형 조건을 우선순위로 적어 본 적",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-16",
         "text": "마음이 안 맞으면 길게 고민 않고 정리",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-17",
         "text": "연락 없는 사람에게 아쉬움 없이 선 긋기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-18",
         "text": "상대 의견을 존중한다며 결정은 내가 하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-19",
         "text": "썸 단계에서 약속 장소를 내가 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-20",
         "text": "소개팅 후 만족도를 점수로 매겨 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-21",
         "text": "혼자 연애 계획을 연간 목표처럼 세우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-22",
         "text": "연애 중에도 일정표를 공유하자고 하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-23",
         "text": "연인 차량 정비 예약을 대신 잡아 주기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-24",
         "text": "다툼이 생기면 뭘 고치면 되는지부터 묻기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-25",
         "text": "사랑 표현을 서류 대행과 이동 지원으로",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-26",
         "text": "연인의 지각에 도착 시각을 재확인 요청",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-27",
         "text": "기념일 식당을 두 달 전에 예약하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-28",
         "text": "연인에게 운동 계획을 같이 짜자고 하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-29",
         "text": "연인 친구 모임에 동행 일정 먼저 맞추기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-30",
         "text": "함께하는 여행 경비를 엑셀로 정리하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ESTJ-love-31",
         "text": "연인의 고민에 해결책 세 가지 내밀기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-love-32",
         "text": "함께 쓸 생활 규칙을 서로 정해 보기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "relationships": [
@@ -590,193 +702,231 @@
         "id": "ESTJ-relationships-01",
         "text": "동창회 회비를 걷어 장부를 공개하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-02",
         "text": "약속에 두 번 늦은 친구는 시간 당겨 알림",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-03",
         "text": "고민 상담에 대사까지 짜 주는 조언",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-04",
         "text": "대화방에서 날짜와 장소를 정리해 고정",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-05",
         "text": "모임 총무 자리를 맡아 규칙부터 만들기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-06",
         "text": "등산 모임에서 집결 시각 엄수 요구",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-07",
         "text": "여행 가면 이동 동선과 시간표를 내가 짜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-08",
         "text": "식당 정할 때 후보 세 곳으로 압축하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-09",
         "text": "회의 같은 모임에 안건을 정해 오라는 한마디",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-10",
         "text": "갈등이 번지면 당사자를 불러 직접 정리",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-11",
         "text": "친구 사업 고민에 현실적 수치 짚어 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-12",
         "text": "모임 인원 늘리자면 운영 방식부터 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-13",
         "text": "송년회 장소 예약과 공지 일정 내가 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-14",
         "text": "팀 대항 체육대회 참가 명단 취합하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-15",
         "text": "동료와 갈등 생기면 메일로 사실만 정리",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESTJ-relationships-16",
         "text": "선후배 모임에서 연락망을 최신으로 갱신",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESTJ-relationships-17",
         "text": "모임에서 늦는 사람은 먼저 시작하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-18",
         "text": "아파트 입주민 모임 안건 번호 매기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-19",
         "text": "친구 이직 고민에 연봉 비교표 보여 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-20",
         "text": "의견 충돌 때 근거 자료부터 꺼내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-21",
         "text": "약속 시각 일 분 전 도착 알림 보내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-22",
         "text": "동호회 회칙 개정안을 직접 작성하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-23",
         "text": "정해진 규칙을 안 지키는 회원에게 경고",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-24",
         "text": "행사 당일 역할 분담표를 출력해 나누기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-25",
         "text": "소모임 장소 대관 시간을 앱으로 잡기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-26",
         "text": "친구 모임 투표를 직접 마감 짓기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-27",
         "text": "성격 급하다는 말을 들으면 시간 단축으로 답",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-28",
         "text": "상대 말이 길어지면 결론이 뭐냐고 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-29",
         "text": "오랜만의 모임에서도 시간표부터 확인",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-30",
         "text": "마을 반상회 안건을 짧게 요약해 읽기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-31",
         "text": "책임 안 지는 사람 앞에서 표정 굳히기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-relationships-32",
         "text": "후배 모임에서 밥값 계산을 먼저 하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       }
     ],
     "alone": [
@@ -784,193 +934,225 @@
         "id": "ESTJ-alone-01",
         "text": "쉬는 날 아침 할 일 목록부터 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-02",
         "text": "세탁 장보기 서류 정리에 줄 그어 지우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-03",
         "text": "힘든 일이 생기면 옷장 정리부터 시작",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-04",
         "text": "계획 없는 일요일 오후에 다음 주 일정 짜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-05",
         "text": "퇴근 후 헬스장 출석을 기록하며 마무리",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-06",
         "text": "러닝 앱에 주간 거리 목표 설정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-07",
         "text": "차 안에서 팟캐스트로 시사 소식 따라가기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-08",
         "text": "공구함을 규격별로 나눠 벽에 걸기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-09",
         "text": "서재 책 순서를 분야별로 고쳐 꽂기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-10",
         "text": "스마트폰 화면 시간을 주간 기록으로 확인",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-11",
         "text": "집 안 가전 점검일을 달력에 적어 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-12",
         "text": "새벽 운동 후 아침 식단을 계량해 먹기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-13",
         "text": "혼자 여행도 이동 시간표를 분 단위로 짜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-14",
         "text": "자격증 인강 진도를 날짜별로 체크하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-15",
         "text": "캠핑 장비를 장소별 가방에 나눠 담기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-16",
         "text": "집 청소 구역을 요일별로 돌려 하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-17",
         "text": "창고 정리를 하며 버릴 물건 기준 세우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-18",
         "text": "유튜브 보다가 실용 정보만 저장하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-19",
         "text": "경제 뉴스 요약 영상을 출근 전 챙겨 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-20",
         "text": "가만히 쉬는 대신 중고거래 물품 정리",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-21",
         "text": "종일 쉬어도 저녁엔 해낸 일을 헤아리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-22",
         "text": "혼자 먹는 점심도 정해진 시각에 먹기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-23",
         "text": "등산 코스를 거리와 소요 시간으로 비교",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-24",
         "text": "배드민턴 레슨 일정 끊기지 않게 예약",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-25",
         "text": "옷을 입기 전 내일 날씨 앱 먼저 확인",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-26",
         "text": "쉬면서 손에 쥔 걸 놓친 기분이 들어 일어남",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-27",
         "text": "전자책 독서량 목표를 달성 표시하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-28",
         "text": "운전 중 내비 말고 지름길 직접 판단하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-29",
         "text": "낚시 가기 전 장비 목록을 점검하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-30",
         "text": "이른 주말 아침 동네 한 바퀴 뛰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-31",
         "text": "집 비밀번호와 계정 정리 문서 갱신하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESTJ-alone-32",
         "text": "동네 공원에서 달리며 스톱워치 누르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ]
   }

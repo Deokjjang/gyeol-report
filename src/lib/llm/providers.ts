@@ -41,6 +41,10 @@ const num = (value: unknown): number => (typeof value === "number" && Number.isF
  */
 const MODEL_OPTIONS: Readonly<Record<string, Record<string, unknown>>> = {
   "claude-sonnet-5-5": { thinking: { type: "between_tools" } },
+  // 최종판3 4: Haiku 5.5는 생각이 기본(adaptive, effort medium)으로 켜져 출력 상한 6000을 생각에 다 썼다(검수 17권 전부 글자 0, length).
+  // budget_tokens는 400이라 예산 고정은 불가. 생각 끄기(disabled, low~high에서 허용)는 공식 안내가 effort를 권하고 채택 측정(재현율·오탐)을
+  // effort low로 했으므로 쓰지 않는다(바꾸면 재측정). 생각 몫은 effort low + 넉넉한 상한(review.ts HAIKU_REVIEW_MAX_TOKENS)으로 묶는다.
+  "claude-haiku-5-5": { output_config: { effort: "low" } },
   "gpt-6.1-terra": { reasoning: { effort: "none" } },
 };
 
@@ -56,6 +60,8 @@ export const anthropicDriver: ProviderDriver = {
     system: [{ type: "text", text: input.system, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) }],
     messages: [{ role: "user", content: input.user }],
     ...MODEL_OPTIONS[input.model],
+    // output_config는 모델 설정(effort)과 JSON 스키마를 합친다.
+    ...(input.jsonSchema ? { output_config: { ...((MODEL_OPTIONS[input.model]?.output_config as Record<string, unknown> | undefined) ?? {}), format: { type: "json_schema", schema: input.jsonSchema } } } : {}),
   }),
   handle(message, state, onText) {
     const type = message.event ?? "";

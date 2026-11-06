@@ -23,7 +23,7 @@ import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliab
 import { storedBook, validateBookPublication } from "../../../src/lib/book/storedReport";
 import { bookCheckoutSnapshot } from "../../../src/lib/book/form";
 import { BookCheckout } from "../../../src/components/book/BookCheckout";
-import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
+import { getReportProduct, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "../interpretation-v4/runtimeFixtures";
@@ -91,7 +91,7 @@ describe("release gate combinations and real checkout route", () => {
   });
   it("production checkout presentation uses public session and the existing launcher, not dev mocks", () => {
     const source = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
-    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, consents, undefined");
+    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, effective, undefined");
     const html = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled onPublishing={() => {}} onError={() => {}} />);
     // SSR cannot know the session yet: do not expose a checkout until verified.
     expect(html).toContain("로그인 상태를 확인하고 있습니다."); expect(html).not.toContain("결제하기"); expect(html).not.toContain("모의 결제");
@@ -144,8 +144,8 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
     state.book = state.account = true;
     const response = await POST(request(f.payload)); expect(response.status).toBe(200);
     const body = await response.json(), order = state.orders[0], input = order.inputSnapshot as Record<string, unknown>;
-    const amount = getReportProduct(f.payload.productKey)!.amount;
-    expect(amount).toBe(1490);
+    const product = getReportProduct(f.payload.productKey)!, amount = product.amount;
+    expect(amount).toBe(REPORT_PRICE_TABLE_KRW[product.productType]);
     expect(body.paymentOrder.amount).toBe(amount); expect(body.checkoutSession.amount).toBe(amount); expect(body.tossCheckoutRequest.requestPayment.amount.value).toBe(amount); expect(order.amount).toBe(amount);
     let snapshot: unknown;
     const store: ReliabilityStore = { call: vi.fn(async (action, data) => {

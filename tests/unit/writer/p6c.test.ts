@@ -7,9 +7,9 @@ import { buildBrief, loadKnowledge } from "@/lib/brief";
 import { starFacts } from "@/lib/brief/chart";
 import { customerProps } from "@/lib/brief/props";
 import { parseChapters, renderChapter } from "@/lib/writer/format";
-import { buildWriterPrompt, renderWriterBrief } from "@/lib/writer/prompt";
+import { buildWriterPrompt, chapterClaims, renderWriterBrief } from "@/lib/writer/prompt";
 import { WRITER_SYSTEM } from "@/lib/writer/prompt/system";
-import { coverLineOf } from "@/lib/writer/publish";
+import { coverProblem } from "@/lib/writer/publish";
 import { applyRepairs, parseRepair, repairTargets } from "@/lib/writer/repair";
 import { coverOf } from "@/lib/writer/runner";
 import { applySafetyNet, type FinalChapter } from "@/lib/writer/safety";
@@ -69,7 +69,9 @@ describe("P6c B 사실 정합", () => {
   it("B5 수진 대운 2022~2031: 2026년은 5번째 해(중간), '마지막 해'는 잡는다", () => {
     const b = brief("major_fortune", PEOPLE.x);
     expect(b.chart.currentDayun?.years).toBe("2022~2031");
-    expect(b.chart.currentDayun?.phase).toEqual({ yearIndex: 5, label: "중간", yearsLeft: 5 });
+    // 최종 A-4: 남은 기간은 교운 시각 기준(다음 교운 2032년 겨울 → 2026-11-03에서 6년 남짓). 몇 번째 해는 연도 카드와 같은 달력 연차.
+    expect(b.chart.currentDayun?.phase).toMatchObject({ yearIndex: 5, label: "중간", yearsLeft: 6 });
+    expect(b.chart.currentDayun?.phase?.remaining).toMatch(/^약 6년/);
     expect(L.dayunPhaseClaim("지금 대운의 마지막 해이기도 합니다.", "middle")).toBe("late");
     expect(L.dayunPhaseClaim("이번 10년 흐름의 한가운데예요.", "middle")).toBeNull();
   });
@@ -101,10 +103,12 @@ describe("P6c C 개인화", () => {
     expect(L.pastAssertion("그 말에 진로를 튼 친구도 있고요.")).toBeTruthy();
     expect(L.pastAssertion("막내 시절에 빠듯했던 적이 있지 않나요?")).toBeNull();
   });
-  it("C5 괄호 밖 MBTI 약어는 처음 '쉬운 이름(Te)', 그 뒤로는 쉬운 이름", () => {
+  it("C5 괄호 밖 MBTI 약어는 책에서 처음 한 번 쉬운 이름(약어), 그 뒤로는 쉬운 이름(P6d 그대로), 기능 이어 쓰기는 '~와 ~'(최종판 1-14)", () => {
     const { chapters } = tidyBook([fin(1, [{ heading: "h", paragraphs: ["주기능 Te는 효율을 봐요. 그리고 Te가 앞서면 Ni도 따라와요."] }])], ctx0());
-    // P6d: 바뀐 낱말의 받침으로 조사를 다시 고른다("판단(Te)는"·"판단가" → "판단(Te)은"·"판단이").
+    // P6d: 바뀐 낱말의 받침으로 조사를 다시 고른다("판단는"·"판단가" → "판단은"·"판단이").
     expect(chapters[0].sections[0].paragraphs[0]).toBe("주기능 일 되게 하는 판단(Te)은 효율을 봐요. 그리고 일 되게 하는 판단이 앞서면 멀리 보는 직관(Ni)도 따라와요.");
+    const j = tidyBook([fin(1, [{ heading: "h", paragraphs: ["이 솜씨는 Te-Ni 감각과 겹쳐요."] }])], ctx0()).chapters[0].sections[0].paragraphs[0];
+    expect(j).toBe("이 솜씨는 일 되게 하는 판단(Te)과 멀리 보는 직관(Ni) 감각과 겹쳐요.");
     expect(L.bareFunctionCodes(chapters[0].sections[0].paragraphs[0])).toEqual([]);
   });
 });
@@ -120,7 +124,7 @@ describe("P6c A·D 문형·별명·겹침", () => {
   });
   it("A1 브리프 글 20자 복사·A2 같은 특성 뜻 두 번·같은 장면 반복·A3 이전 책과 겹침", () => {
     const corpus = L.copyWindows(["차와 시계, 집 주소를 고를 때 남의 눈을 계산하고 돈을 씁니다"]);
-    const book = [fin(1, [{ heading: "a", paragraphs: ["그래서 집 주소를 고를 때 남의 눈을 계산하고 돈을 씁니다.", "편관(偏官)은 압박 속 결단을 뜻해요."] }, { heading: "b", paragraphs: ["편관(偏官)은 책임을 맡는 힘을 뜻해요.", "밤에 현관문을 잠그고 가스 밸브를 하나씩 짚어 확인해요."] }]),
+    const book = [fin(1, [{ heading: "a", paragraphs: ["당신은 집 주소를 고를 때 남의 눈을 계산하고 돈을 씁니다.", "편관(偏官)은 압박 속 결단을 뜻해요."] }, { heading: "b", paragraphs: ["편관(偏官)은 책임을 맡는 힘을 뜻해요.", "밤에 현관문을 잠그고 가스 밸브를 하나씩 짚어 확인해요."] }]),
       fin(2, [{ heading: "c", paragraphs: ["밤에 현관문을 잠그고 가스 밸브를 하나씩 짚어 확인해요!"] }])];
     const flags = lintBook(book, ctx0({ corpus, prior: ["회의가 끝나면 혼자 정리 메모를 남깁니다."] }));
     expect(flags.map(x => x.rule).sort()).toEqual(["db_copy", "meaning_repeat", "scene_repeat"]);
@@ -136,7 +140,7 @@ describe("P6c A·D 문형·별명·겹침", () => {
     expect(L.secondImage("한여름 도시 아스팔트 위에 선 큰 나무", "한여름 도시 아스팔트 위에 선 큰 나무")).toBe(false);
   });
   it("작가 지침: 명리학에서 금지·뜻 공식 4번·앞에서 본 2번·재료·카드·표지·⟪⟫를 담는다", () => {
-    for (const x of ["명리학에서·명리학적으로·명리에서는", "4번까지", "2번까지", "[표지]", "[그림]", "[해 볼 것]", "[돌아보기]", "[살필 점]", "⟪ ⟫", "chart.elements.presence", "chart.currentDayun.phase", "chart.stars"]) expect(WRITER_SYSTEM).toContain(x);
+    for (const x of ["명리학에서·명리학적으로·명리에서는", "4번까지", "2번까지", "[그림]", "[해 볼 것]", "[돌아보기]", "[살필 점]", "⟪ ⟫", "chart.elements.presence", "chart.currentDayun.phase", "chart.stars"]) expect(WRITER_SYSTEM).toContain(x);
   });
 });
 
@@ -147,9 +151,10 @@ describe("P6c E 상품 구조", () => {
     expect(b.person.workScenes?.plan).toEqual(["PRD 초안", "로드맵 우선순위"]);
     const ev = (key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
     // 하람 2026 = 임인 대운(2017~2026)의 마지막 해, 다음 대운 2027 계묘.
-    expect(ev("timingNow")!.facts.join(" ")).toMatch(/10번째 해\(마지막 해, 뒤로 0해\)/);
-    expect(ev("timingNow")!.facts.join(" ")).toMatch(/다음 대운: 2027년부터/);
-    expect(ev("engineGroups")!.facts[0]).toBe("다섯 힘(만세력 가중값): 비겁 강 · 식상 보통 · 재성 약 · 관성 강 · 인성 약");
+    expect(ev("timingNow")!.facts.join(" ")).toMatch(/10번째 해\(마지막 해, 남은 기간 약 \d개월\(2027년 \d{1,2}월 무렵까지\)\)/); // 최종 A-4: 남은 기간은 교운 시각 기준
+    expect(ev("timingNow")!.facts.join(" ")).toMatch(/다음 대운: [가-힣]{2} 대운: 2027년 \d{1,2}월 무렵부터/);
+    // P6e 14: 다섯 힘은 쉬운 이름(묶음 이름)으로.
+    expect(ev("engineGroups")!.facts[0]).toBe("다섯 힘(만세력 가중값): 내 방식의 힘(비겁) 보통 · 만드는 힘(식상) 보통 · 값을 받는 힘(재성) 약 · 규칙의 힘(관성) 강 · 배우는 힘(인성) 약"); // 최종판3 1: 비겁은 일간 자신을 뺀다
   });
   it("E2 종합 가족 장은 뿌리·부모 자리·인성·식상·비겁 근거, E3 자녀 장 장면에 결혼·양가 이야기 없음", () => {
     const full = brief("saju_mbti_full", PEOPLE.c1);
@@ -187,13 +192,19 @@ describe("P6c F·G·H 카드·표지·강조", () => {
     const flags = lintCards(keyed([{ image: "지난 계절의 창고를 정리하는 해", review: "그때 무엇을 정리했나요", caution: "정리한 것을 다시 쌓지 않게 살피기" }, { image: "새 노트 첫 장에 계획을 적는 해", todo: "계획 한 줄을 적어 두세요", caution: "계획만 세우고 시작을 미루지 않기" }, { image: "새 노트 첫 장에 계획을 적는 해!", todo: "운동 일정을 먼저 잡아 두세요" }]), ctx0({ periods }));
     expect(flags.map(f => `${f.section}:${f.card}:${f.rule}`).sort()).toEqual(["0:review:card_form", "2:caution:card_missing", "2:image:card_overlap"]);
   });
-  it("G 표지 한 줄: 16~26자·설명문·명리학에서·입력에 없는 연차 금지, 어기면 핵심 이미지", () => {
+  it("G → 최종판 1-7 표지 한 줄 = 작가가 지은 핵심 이미지: 16~26자·설명문·명리학에서·연차·사실 규칙·피할 이미지 명사 금지", () => {
     const b = brief("saju_mbti_full", ME);
-    expect(coverLineOf("스물일곱, 물길을 여는 큰 나무의 사업", b)).toEqual({ line: "스물일곱, 물길을 여는 큰 나무의 사업", source: "writer" });
-    expect(coverLineOf("사업 2년 차, 물길을 여는 큰 나무의 해", b).source).toBe("fallback");
-    expect(coverLineOf("당신은 갑신일주예요", b).source).toBe("fallback");
-    expect(coverLineOf("명리학에서 보는 당신의 큰 나무 같은 하루", b).source).toBe("fallback");
-    expect(coverLineOf(null, b)).toEqual({ line: b.chart.coreImage.line, source: "fallback" });
+    // 최종판2 1-1: 길이는 공백을 빼고 센다(16~26자). 벗어나도 30자 이내면 작가 표지를 쓴다(level "length").
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 작은 등불", b, [])).toBeNull();
+    // 최종판3 2g: 종합 표지는 직업·나이 금지(입력 직업 낱말·직함·나이).
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 작은 사업", b, [])).toMatch(/직업·나이/);
+    expect(coverProblem("물길을 여는 한여름 큰 나무의 등불", b, [])).toMatch(/공백 뺌/);
+    expect(coverProblem("짧아요", b, [])).toMatch(/길이/);
+    expect(coverProblem("스물일곱, 물길을 여는 큰 나무의 사업이에요.", b, [])).toMatch(/설명문/);
+    expect(coverProblem("서비스 기획 7년 차, 물길을 여는 큰 나무", b, [])).toMatch(/연차/);
+    expect(coverProblem("명리학에서 보면 물길을 여는 큰 나무", b, [])).toBeTruthy();
+    expect(coverProblem("빗속에서도 꺼지지 않는 캠핑 랜턴", b, ["랜턴"])).toMatch(/피할 이미지\(랜턴\)/);
+    expect(coverProblem(null, b, [])).toBe("없음");
   });
   it("H 소제목마다 핵심 문장 하나: 위치를 남기고 기호는 지운다, 둘째 기호와 짝 없는 기호는 정리", () => {
     const s = withKeySpan({ heading: "h", paragraphs: ["첫 문장이에요. ⟪핵심 문장이에요.⟫ 끝이에요.", "둘째 ⟪문단⟫이에요."] });
@@ -238,6 +249,8 @@ describe("P6c A5 수리 패스 · I 안전망", () => {
     const b = brief("saju_mbti_full", PEOPLE.c1);
     const raw = JSON.stringify(renderWriterBrief(b));
     const swapped = JSON.stringify(renderWriterBrief(b, { knowledge: k }));
-    expect(swapped.length).toBeLessThanOrEqual(raw.length);
+    // P6e 10: 지식 DB가 있으면 장마다 앞 장 주장(before·tension)이 더해진다. 그 몫을 빼고 견준다.
+    const claims = JSON.stringify([...chapterClaims(b, k).values()]).length;
+    expect(swapped.length).toBeLessThanOrEqual(raw.length + claims);
   });
 });

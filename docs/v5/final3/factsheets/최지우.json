@@ -1,0 +1,4756 @@
+{
+ "version": "factsheet-v1",
+ "product": "saju_mbti_compatibility",
+ "baseDate": "2026-11-05",
+ "standards": {
+  "twelveShinsalBasis": "연지 삼합 기준 한 가지(겁·재·천·지·년·월·망신·장성·반안·역마·육해·화개). 일지 기준 미채택",
+  "cheonmun": "亥·卯·未·戌(寅·酉 추가설 미채택)",
+  "hyeonchim": "甲·辛·卯·午·申 글자가 천간이든 지지든 있는 기둥",
+  "chukmiHyeong": "丑戌未 삼형은 세 글자 모두면 삼형, 두 글자(丑戌·戌未·丑未)면 partial 형. 丑未는 충이면서 partial 형",
+  "banhap": "삼합 세 글자 중 아무 두 글자 = 반합(두 글자만 모여 반쯤 묶임, 완성 아님). 세 글자 모두면 삼합(완성)",
+  "stemClash": "천간충 甲庚·乙辛·丙壬·丁癸 4쌍(戊甲·己乙 미채택). 원국 내부·원국×대운·세운·월운·궁합 두 사람 사이 모두 같은 표",
+  "peerGroup": "비겁 묶음 값 = 같은 오행 가중값 − 일간 자신(1). 일간은 비견·겁재가 아니다",
+  "groupLevel": "묶음 세기: 가중값 3 이상 강, 1.5 미만 약, 그 밖 보통",
+  "elementCount": "오행 개수 = 겉 글자(천간 + 지지 본기). 세기 = 월령 2배·지장간 포함 가중(judgeElementBalance). 개수와 세기는 다른 값",
+  "age": "나이는 만 나이(그해 생일 지난 뒤 기준)"
+ },
+ "people": [
+  {
+   "name": "최지우",
+   "gender": "FEMALE",
+   "birthDate": "2006-09-07",
+   "birthTime": "16:30",
+   "timeKnown": true,
+   "pillars": {
+    "year": {
+     "stem": "丙",
+     "branch": "戌",
+     "ganjiKo": "병술",
+     "hidden": [
+      {
+       "stem": "戊",
+       "weight": 0.6,
+       "tenGod": "겁재"
+      },
+      {
+       "stem": "辛",
+       "weight": 0.3,
+       "tenGod": "식신"
+      },
+      {
+       "stem": "丁",
+       "weight": 0.1,
+       "tenGod": "편인"
+      }
+     ]
+    },
+    "month": {
+     "stem": "丙",
+     "branch": "申",
+     "ganjiKo": "병신",
+     "hidden": [
+      {
+       "stem": "庚",
+       "weight": 0.6,
+       "tenGod": "상관"
+      },
+      {
+       "stem": "壬",
+       "weight": 0.3,
+       "tenGod": "정재"
+      },
+      {
+       "stem": "戊",
+       "weight": 0.1,
+       "tenGod": "겁재"
+      }
+     ]
+    },
+    "day": {
+     "stem": "己",
+     "branch": "亥",
+     "ganjiKo": "기해",
+     "hidden": [
+      {
+       "stem": "壬",
+       "weight": 0.6,
+       "tenGod": "정재"
+      },
+      {
+       "stem": "甲",
+       "weight": 0.3,
+       "tenGod": "정관"
+      }
+     ]
+    },
+    "hour": {
+     "stem": "壬",
+     "branch": "申",
+     "ganjiKo": "임신",
+     "hidden": [
+      {
+       "stem": "庚",
+       "weight": 0.6,
+       "tenGod": "상관"
+      },
+      {
+       "stem": "壬",
+       "weight": 0.3,
+       "tenGod": "정재"
+      },
+      {
+       "stem": "戊",
+       "weight": 0.1,
+       "tenGod": "겁재"
+      }
+     ]
+    }
+   },
+   "dayMaster": {
+    "stem": "己",
+    "ko": "기",
+    "element": "EARTH"
+   },
+   "tenGods": {
+    "yearStem": [
+     "정인"
+    ],
+    "yearBranch": [
+     "겁재",
+     "식신",
+     "편인"
+    ],
+    "monthStem": [
+     "정인"
+    ],
+    "monthBranch": [
+     "상관",
+     "정재",
+     "겁재"
+    ],
+    "dayBranch": [
+     "정재",
+     "정관"
+    ],
+    "hourStem": [
+     "정재"
+    ],
+    "hourBranch": [
+     "상관",
+     "정재",
+     "겁재"
+    ]
+   },
+   "elements": {
+    "count": {
+     "WOOD": 0,
+     "FIRE": 2,
+     "EARTH": 2,
+     "METAL": 2,
+     "WATER": 2
+    },
+    "weighted": {
+     "WOOD": 0.3,
+     "FIRE": 2.1,
+     "EARTH": 2.8000000000000003,
+     "METAL": 3.5,
+     "WATER": 3.1999999999999997
+    },
+    "strength": {
+     "WOOD": 0.3,
+     "FIRE": 2.1,
+     "EARTH": 2.9,
+     "METAL": 5.1,
+     "WATER": 3.5
+    },
+    "status": {
+     "WOOD": "부족",
+     "FIRE": "보통",
+     "EARTH": "보통",
+     "METAL": "많음",
+     "WATER": "보통"
+    },
+    "hidden": {
+     "WOOD": true,
+     "FIRE": true,
+     "EARTH": true,
+     "METAL": true,
+     "WATER": true
+    },
+    "strongest": "METAL",
+    "weakest": "WOOD",
+    "mostCounted": [
+     "FIRE",
+     "EARTH",
+     "METAL",
+     "WATER"
+    ]
+   },
+   "yinYang": {
+    "yin": 2,
+    "yang": 6,
+    "label": "YANG_HEAVY"
+   },
+   "strength": {
+    "level": "BALANCED",
+    "labelKo": "중화",
+    "score": 0.2
+   },
+   "groups": {
+    "PEER": {
+     "name": "비겁",
+     "element": "EARTH",
+     "value": 1.8,
+     "level": "보통"
+    },
+    "OUTPUT": {
+     "name": "식상",
+     "element": "METAL",
+     "value": 3.5,
+     "level": "강"
+    },
+    "WEALTH": {
+     "name": "재성",
+     "element": "WATER",
+     "value": 3.2,
+     "level": "강"
+    },
+    "OFFICER": {
+     "name": "관성",
+     "element": "WOOD",
+     "value": 0.3,
+     "level": "약"
+    },
+    "RESOURCE": {
+     "name": "인성",
+     "element": "FIRE",
+     "value": 2.1,
+     "level": "보통"
+    }
+   },
+   "twelveStages": [
+    {
+     "position": "year",
+     "branch": "戌",
+     "stage": "養",
+     "ko": "양"
+    },
+    {
+     "position": "month",
+     "branch": "申",
+     "stage": "沐浴",
+     "ko": "목욕"
+    },
+    {
+     "position": "day",
+     "branch": "亥",
+     "stage": "胎",
+     "ko": "태"
+    },
+    {
+     "position": "hour",
+     "branch": "申",
+     "stage": "沐浴",
+     "ko": "목욕"
+    }
+   ],
+   "twelveShinsalBasis": {
+    "basis": "yearBranch",
+    "branch": "戌"
+   },
+   "shinsal": [
+    {
+     "id": "shinsal:HYEONCHIMSAL",
+     "code": "HYEONCHIMSAL",
+     "family": "shinsal",
+     "name": "현침살",
+     "positions": [
+      "month",
+      "hour"
+     ],
+     "slots": [
+      "monthBranch",
+      "hourBranch"
+     ],
+     "glyphs": [
+      "申"
+     ],
+     "count": 2,
+     "twelve": false
+    },
+    {
+     "id": "shinsal:BAEKHODAESAL",
+     "code": "BAEKHODAESAL",
+     "family": "shinsal",
+     "name": "백호대살",
+     "positions": [
+      "year"
+     ],
+     "slots": [
+      "yearStem",
+      "yearBranch"
+     ],
+     "glyphs": [
+      "丙",
+      "戌"
+     ],
+     "count": 2,
+     "twelve": false
+    },
+    {
+     "id": "shinsal:YEOKMASAL",
+     "code": "YEOKMASAL",
+     "family": "shinsal",
+     "name": "역마살",
+     "positions": [
+      "month",
+      "hour"
+     ],
+     "slots": [
+      "monthBranch",
+      "hourBranch"
+     ],
+     "glyphs": [
+      "申"
+     ],
+     "count": 2,
+     "twelve": false
+    },
+    {
+     "id": "shinsal:HWAGAE",
+     "code": "HWAGAE",
+     "family": "shinsal",
+     "name": "화개",
+     "positions": [
+      "year"
+     ],
+     "slots": [
+      "yearBranch"
+     ],
+     "glyphs": [
+      "戌"
+     ],
+     "count": 1,
+     "twelve": false
+    },
+    {
+     "id": "shinsal:GOSINSAL",
+     "code": "GOSINSAL",
+     "family": "shinsal",
+     "name": "고신살",
+     "positions": [
+      "day"
+     ],
+     "slots": [
+      "dayBranch"
+     ],
+     "glyphs": [
+      "亥"
+     ],
+     "count": 1,
+     "twelve": false
+    },
+    {
+     "id": "gwiin:CHEON_EUL_GWIIN",
+     "code": "CHEON_EUL_GWIIN",
+     "family": "gwiin",
+     "name": "천을귀인",
+     "positions": [
+      "month",
+      "hour"
+     ],
+     "slots": [
+      "monthBranch",
+      "hourBranch"
+     ],
+     "glyphs": [
+      "申"
+     ],
+     "count": 2,
+     "twelve": false
+    },
+    {
+     "id": "gwiin:TAEGEUK_GWIIN",
+     "code": "TAEGEUK_GWIIN",
+     "family": "gwiin",
+     "name": "태극귀인",
+     "positions": [
+      "year"
+     ],
+     "slots": [
+      "yearBranch"
+     ],
+     "glyphs": [
+      "戌"
+     ],
+     "count": 1,
+     "twelve": false
+    },
+    {
+     "id": "gwiin:WOL_DEOK_GWIIN",
+     "code": "WOL_DEOK_GWIIN",
+     "family": "gwiin",
+     "name": "월덕귀인",
+     "positions": [
+      "hour"
+     ],
+     "slots": [
+      "hourStem"
+     ],
+     "glyphs": [
+      "壬"
+     ],
+     "count": 1,
+     "twelve": false
+    },
+    {
+     "id": "shinsal:TWELVE_GEOPSAL",
+     "code": "TWELVE_GEOPSAL",
+     "family": "shinsal",
+     "name": "겁살",
+     "positions": [
+      "day"
+     ],
+     "slots": [
+      "dayBranch"
+     ],
+     "glyphs": [
+      "亥"
+     ],
+     "count": 1,
+     "twelve": true
+    },
+    {
+     "id": "shinsal:TWELVE_YEOKMASAL",
+     "code": "TWELVE_YEOKMASAL",
+     "family": "shinsal",
+     "name": "역마살",
+     "positions": [
+      "month",
+      "hour"
+     ],
+     "slots": [
+      "monthBranch",
+      "hourBranch"
+     ],
+     "glyphs": [
+      "申"
+     ],
+     "count": 2,
+     "twelve": true
+    },
+    {
+     "id": "shinsal:TWELVE_HWAGAE",
+     "code": "TWELVE_HWAGAE",
+     "family": "shinsal",
+     "name": "화개",
+     "positions": [
+      "year"
+     ],
+     "slots": [
+      "yearBranch"
+     ],
+     "glyphs": [
+      "戌"
+     ],
+     "count": 1,
+     "twelve": true
+    },
+    {
+     "id": "shinsal:CHEONMUN",
+     "code": "CHEONMUN",
+     "family": "shinsal",
+     "name": "천문성",
+     "positions": [
+      "year",
+      "day"
+     ],
+     "slots": [
+      "yearBranch",
+      "dayBranch"
+     ],
+     "glyphs": [
+      "戌",
+      "亥"
+     ],
+     "count": 2,
+     "twelve": false
+    },
+    {
+     "id": "shinsal:CHEONRA_JIMANG",
+     "code": "CHEONRA_JIMANG",
+     "family": "shinsal",
+     "name": "천라지망",
+     "positions": [
+      "year",
+      "day"
+     ],
+     "slots": [
+      "yearBranch",
+      "dayBranch"
+     ],
+     "glyphs": [
+      "戌",
+      "亥"
+     ],
+     "count": 2,
+     "twelve": false
+    },
+    {
+     "id": "gwiin:GEUMYEO",
+     "code": "GEUMYEO",
+     "family": "gwiin",
+     "name": "금여록",
+     "positions": [
+      "month",
+      "hour"
+     ],
+     "slots": [
+      "monthBranch",
+      "hourBranch"
+     ],
+     "glyphs": [
+      "申"
+     ],
+     "count": 2,
+     "twelve": false
+    }
+   ],
+   "relations": [
+    {
+     "kind": "HAE",
+     "key": "申亥",
+     "keyKo": "신해",
+     "members": [
+      {
+       "where": "월",
+       "char": "申"
+      },
+      {
+       "where": "일",
+       "char": "亥"
+      }
+     ],
+     "completeness": "full",
+     "glyphCount": 2
+    },
+    {
+     "kind": "HAE",
+     "key": "申亥",
+     "keyKo": "신해",
+     "members": [
+      {
+       "where": "일",
+       "char": "亥"
+      },
+      {
+       "where": "시",
+       "char": "申"
+      }
+     ],
+     "completeness": "full",
+     "glyphCount": 2
+    }
+   ],
+   "stemClashes": [
+    {
+     "kind": "STEM_CHUNG",
+     "key": "丙壬",
+     "keyKo": "병임",
+     "members": [
+      {
+       "where": "연",
+       "char": "丙"
+      },
+      {
+       "where": "시",
+       "char": "壬"
+      }
+     ],
+     "completeness": "full",
+     "glyphCount": 2
+    },
+    {
+     "kind": "STEM_CHUNG",
+     "key": "丙壬",
+     "keyKo": "병임",
+     "members": [
+      {
+       "where": "월",
+       "char": "丙"
+      },
+      {
+       "where": "시",
+       "char": "壬"
+      }
+     ],
+     "completeness": "full",
+     "glyphCount": 2
+    }
+   ],
+   "gongmang": [
+    {
+     "basis": "day",
+     "branches": [
+      "辰",
+      "巳"
+     ],
+     "positions": []
+    }
+   ],
+   "climate": {
+    "season": "autumn",
+    "level": "strong",
+    "lacking": []
+   },
+   "dayun": {
+    "direction": "reverse",
+    "number": 10,
+    "cycles": [
+     {
+      "ganji": "乙未",
+      "ganjiKo": "을미",
+      "stemTenGod": "편관",
+      "branchTenGod": "비견",
+      "twelveStage": "관대",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "SAMHAP",
+        "key": "亥卯未",
+        "keyKo": "해묘미",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "未"
+         }
+        ],
+        "completeness": "half",
+        "element": "WOOD",
+        "glyphCount": 2
+       },
+       {
+        "kind": "PA",
+        "key": "戌未",
+        "keyKo": "술미",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "未"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HYEONG",
+        "key": "丑戌未",
+        "keyKo": "축술미",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "未"
+         }
+        ],
+        "completeness": "partial",
+        "subtype": "삼형",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 1,
+      "startYear": 2016,
+      "endYear": 2025,
+      "startAge": 11,
+      "manStartAge": 10,
+      "startSolarKst": "2016-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "甲午",
+      "ganjiKo": "갑오",
+      "stemTenGod": "정관",
+      "branchTenGod": "편인",
+      "twelveStage": "건록",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "STEM_HAP",
+        "key": "甲己",
+        "keyKo": "갑기",
+        "members": [
+         {
+          "where": "일",
+          "char": "己"
+         },
+         {
+          "where": "대운",
+          "char": "甲"
+         }
+        ],
+        "completeness": "full",
+        "element": "EARTH",
+        "glyphCount": 2
+       },
+       {
+        "kind": "SAMHAP",
+        "key": "寅午戌",
+        "keyKo": "인오술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "午"
+         }
+        ],
+        "completeness": "half",
+        "element": "FIRE",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 2,
+      "startYear": 2026,
+      "endYear": 2035,
+      "startAge": 21,
+      "manStartAge": 20,
+      "startSolarKst": "2026-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "癸巳",
+      "ganjiKo": "계사",
+      "stemTenGod": "편재",
+      "branchTenGod": "정인",
+      "twelveStage": "제왕",
+      "gongmang": true,
+      "relations": [
+       {
+        "kind": "YUKHAP",
+        "key": "巳申",
+        "keyKo": "사신",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "full",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "YUKHAP",
+        "key": "巳申",
+        "keyKo": "사신",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "full",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "CHUNG",
+        "key": "巳亥",
+        "keyKo": "사해",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "PA",
+        "key": "巳申",
+        "keyKo": "사신",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "PA",
+        "key": "巳申",
+        "keyKo": "사신",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "WONJIN",
+        "key": "巳戌",
+        "keyKo": "사술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HYEONG",
+        "key": "寅巳申",
+        "keyKo": "인사신",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "partial",
+        "subtype": "삼형",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HYEONG",
+        "key": "寅巳申",
+        "keyKo": "인사신",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "巳"
+         }
+        ],
+        "completeness": "partial",
+        "subtype": "삼형",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 3,
+      "startYear": 2036,
+      "endYear": 2045,
+      "startAge": 31,
+      "manStartAge": 30,
+      "startSolarKst": "2036-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "壬辰",
+      "ganjiKo": "임진",
+      "stemTenGod": "정재",
+      "branchTenGod": "겁재",
+      "twelveStage": "쇠",
+      "gongmang": true,
+      "relations": [
+       {
+        "kind": "SAMHAP",
+        "key": "申子辰",
+        "keyKo": "신자진",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "辰"
+         }
+        ],
+        "completeness": "half",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "SAMHAP",
+        "key": "申子辰",
+        "keyKo": "신자진",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "辰"
+         }
+        ],
+        "completeness": "half",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "CHUNG",
+        "key": "辰戌",
+        "keyKo": "진술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "辰"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "WONJIN",
+        "key": "辰亥",
+        "keyKo": "진해",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "辰"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [
+       {
+        "kind": "STEM_CHUNG",
+        "key": "丙壬",
+        "keyKo": "병임",
+        "members": [
+         {
+          "where": "연",
+          "char": "丙"
+         },
+         {
+          "where": "대운",
+          "char": "壬"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "STEM_CHUNG",
+        "key": "丙壬",
+        "keyKo": "병임",
+        "members": [
+         {
+          "where": "월",
+          "char": "丙"
+         },
+         {
+          "where": "대운",
+          "char": "壬"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       }
+      ],
+      "index": 4,
+      "startYear": 2046,
+      "endYear": 2055,
+      "startAge": 41,
+      "manStartAge": 40,
+      "startSolarKst": "2046-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "辛卯",
+      "ganjiKo": "신묘",
+      "stemTenGod": "식신",
+      "branchTenGod": "편관",
+      "twelveStage": "병",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "STEM_HAP",
+        "key": "丙辛",
+        "keyKo": "병신",
+        "members": [
+         {
+          "where": "연",
+          "char": "丙"
+         },
+         {
+          "where": "대운",
+          "char": "辛"
+         }
+        ],
+        "completeness": "full",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "STEM_HAP",
+        "key": "丙辛",
+        "keyKo": "병신",
+        "members": [
+         {
+          "where": "월",
+          "char": "丙"
+         },
+         {
+          "where": "대운",
+          "char": "辛"
+         }
+        ],
+        "completeness": "full",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "YUKHAP",
+        "key": "卯戌",
+        "keyKo": "묘술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "卯"
+         }
+        ],
+        "completeness": "full",
+        "element": "FIRE",
+        "glyphCount": 2
+       },
+       {
+        "kind": "SAMHAP",
+        "key": "亥卯未",
+        "keyKo": "해묘미",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "卯"
+         }
+        ],
+        "completeness": "half",
+        "element": "WOOD",
+        "glyphCount": 2
+       },
+       {
+        "kind": "WONJIN",
+        "key": "卯申",
+        "keyKo": "묘신",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "卯"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "WONJIN",
+        "key": "卯申",
+        "keyKo": "묘신",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "卯"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 5,
+      "startYear": 2056,
+      "endYear": 2065,
+      "startAge": 51,
+      "manStartAge": 50,
+      "startSolarKst": "2056-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "庚寅",
+      "ganjiKo": "경인",
+      "stemTenGod": "상관",
+      "branchTenGod": "정관",
+      "twelveStage": "사",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "YUKHAP",
+        "key": "寅亥",
+        "keyKo": "인해",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "full",
+        "element": "WOOD",
+        "glyphCount": 2
+       },
+       {
+        "kind": "SAMHAP",
+        "key": "寅午戌",
+        "keyKo": "인오술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "half",
+        "element": "FIRE",
+        "glyphCount": 2
+       },
+       {
+        "kind": "CHUNG",
+        "key": "寅申",
+        "keyKo": "인신",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "CHUNG",
+        "key": "寅申",
+        "keyKo": "인신",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "PA",
+        "key": "寅亥",
+        "keyKo": "인해",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HYEONG",
+        "key": "寅巳申",
+        "keyKo": "인사신",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "partial",
+        "subtype": "삼형",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HYEONG",
+        "key": "寅巳申",
+        "keyKo": "인사신",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "寅"
+         }
+        ],
+        "completeness": "partial",
+        "subtype": "삼형",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 6,
+      "startYear": 2066,
+      "endYear": 2075,
+      "startAge": 61,
+      "manStartAge": 60,
+      "startSolarKst": "2066-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "己丑",
+      "ganjiKo": "기축",
+      "stemTenGod": "비견",
+      "branchTenGod": "비견",
+      "twelveStage": "묘",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "HYEONG",
+        "key": "丑戌未",
+        "keyKo": "축술미",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "丑"
+         }
+        ],
+        "completeness": "partial",
+        "subtype": "삼형",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 7,
+      "startYear": 2076,
+      "endYear": 2085,
+      "startAge": 71,
+      "manStartAge": 70,
+      "startSolarKst": "2076-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "戊子",
+      "ganjiKo": "무자",
+      "stemTenGod": "겁재",
+      "branchTenGod": "편재",
+      "twelveStage": "절",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "SAMHAP",
+        "key": "申子辰",
+        "keyKo": "신자진",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "子"
+         }
+        ],
+        "completeness": "half",
+        "element": "WATER",
+        "glyphCount": 2
+       },
+       {
+        "kind": "SAMHAP",
+        "key": "申子辰",
+        "keyKo": "신자진",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "子"
+         }
+        ],
+        "completeness": "half",
+        "element": "WATER",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 8,
+      "startYear": 2086,
+      "endYear": 2095,
+      "startAge": 81,
+      "manStartAge": 80,
+      "startSolarKst": "2086-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "丁亥",
+      "ganjiKo": "정해",
+      "stemTenGod": "편인",
+      "branchTenGod": "정재",
+      "twelveStage": "태",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "STEM_HAP",
+        "key": "丁壬",
+        "keyKo": "정임",
+        "members": [
+         {
+          "where": "시",
+          "char": "壬"
+         },
+         {
+          "where": "대운",
+          "char": "丁"
+         }
+        ],
+        "completeness": "full",
+        "element": "WOOD",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HAE",
+        "key": "申亥",
+        "keyKo": "신해",
+        "members": [
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "亥"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HAE",
+        "key": "申亥",
+        "keyKo": "신해",
+        "members": [
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "亥"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HYEONG",
+        "key": "亥亥",
+        "keyKo": "해해",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "亥"
+         }
+        ],
+        "completeness": "full",
+        "subtype": "자형",
+        "glyphCount": 1
+       }
+      ],
+      "stemClashes": [],
+      "index": 9,
+      "startYear": 2096,
+      "endYear": 2105,
+      "startAge": 91,
+      "manStartAge": 90,
+      "startSolarKst": "2096-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "丙戌",
+      "ganjiKo": "병술",
+      "stemTenGod": "정인",
+      "branchTenGod": "겁재",
+      "twelveStage": "양",
+      "gongmang": false,
+      "relations": [],
+      "stemClashes": [
+       {
+        "kind": "STEM_CHUNG",
+        "key": "丙壬",
+        "keyKo": "병임",
+        "members": [
+         {
+          "where": "시",
+          "char": "壬"
+         },
+         {
+          "where": "대운",
+          "char": "丙"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       }
+      ],
+      "index": 10,
+      "startYear": 2106,
+      "endYear": 2115,
+      "startAge": 101,
+      "manStartAge": 100,
+      "startSolarKst": "2106-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "乙酉",
+      "ganjiKo": "을유",
+      "stemTenGod": "편관",
+      "branchTenGod": "식신",
+      "twelveStage": "장생",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "BANGHAP",
+        "key": "申酉戌",
+        "keyKo": "신유술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "월",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "酉"
+         }
+        ],
+        "completeness": "full",
+        "element": "METAL",
+        "glyphCount": 3
+       },
+       {
+        "kind": "BANGHAP",
+        "key": "申酉戌",
+        "keyKo": "신유술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "시",
+          "char": "申"
+         },
+         {
+          "where": "대운",
+          "char": "酉"
+         }
+        ],
+        "completeness": "full",
+        "element": "METAL",
+        "glyphCount": 3
+       },
+       {
+        "kind": "HAE",
+        "key": "酉戌",
+        "keyKo": "유술",
+        "members": [
+         {
+          "where": "연",
+          "char": "戌"
+         },
+         {
+          "where": "대운",
+          "char": "酉"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 11,
+      "startYear": 2116,
+      "endYear": 2125,
+      "startAge": 111,
+      "manStartAge": 110,
+      "startSolarKst": "2116-11-26T20:30:00+09:00"
+     },
+     {
+      "ganji": "甲申",
+      "ganjiKo": "갑신",
+      "stemTenGod": "정관",
+      "branchTenGod": "상관",
+      "twelveStage": "목욕",
+      "gongmang": false,
+      "relations": [
+       {
+        "kind": "STEM_HAP",
+        "key": "甲己",
+        "keyKo": "갑기",
+        "members": [
+         {
+          "where": "일",
+          "char": "己"
+         },
+         {
+          "where": "대운",
+          "char": "甲"
+         }
+        ],
+        "completeness": "full",
+        "element": "EARTH",
+        "glyphCount": 2
+       },
+       {
+        "kind": "HAE",
+        "key": "申亥",
+        "keyKo": "신해",
+        "members": [
+         {
+          "where": "일",
+          "char": "亥"
+         },
+         {
+          "where": "대운",
+          "char": "申"
+         }
+        ],
+        "completeness": "full",
+        "glyphCount": 2
+       }
+      ],
+      "stemClashes": [],
+      "index": 12,
+      "startYear": 2126,
+      "endYear": 2135,
+      "startAge": 121,
+      "manStartAge": 120,
+      "startSolarKst": "2126-11-26T20:30:00+09:00"
+     }
+    ]
+   },
+   "annual": [
+    {
+     "year": 2025,
+     "ganji": "乙巳",
+     "ganjiKo": "을사",
+     "stemTenGod": "편관",
+     "branchTenGod": "정인",
+     "twelveStage": "제왕",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "巳亥",
+       "keyKo": "사해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "巳戌",
+       "keyKo": "사술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "ganji": "丙午",
+     "ganjiKo": "병오",
+     "stemTenGod": "정인",
+     "branchTenGod": "편인",
+     "twelveStage": "건록",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "午"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "세운",
+         "char": "丙"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2027,
+     "ganji": "丁未",
+     "ganjiKo": "정미",
+     "stemTenGod": "편인",
+     "branchTenGod": "비견",
+     "twelveStage": "관대",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丁壬",
+       "keyKo": "정임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "세운",
+         "char": "丁"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "亥卯未",
+       "keyKo": "해묘미",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "未"
+        }
+       ],
+       "completeness": "half",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "戌未",
+       "keyKo": "술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "未"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "丑戌未",
+       "keyKo": "축술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "未"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2028,
+     "ganji": "戊申",
+     "ganjiKo": "무신",
+     "stemTenGod": "겁재",
+     "branchTenGod": "상관",
+     "twelveStage": "목욕",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "申"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2029,
+     "ganji": "己酉",
+     "ganjiKo": "기유",
+     "stemTenGod": "비견",
+     "branchTenGod": "식신",
+     "twelveStage": "장생",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "BANGHAP",
+       "key": "申酉戌",
+       "keyKo": "신유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "element": "METAL",
+       "glyphCount": 3
+      },
+      {
+       "kind": "BANGHAP",
+       "key": "申酉戌",
+       "keyKo": "신유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "element": "METAL",
+       "glyphCount": 3
+      },
+      {
+       "kind": "HAE",
+       "key": "酉戌",
+       "keyKo": "유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2030,
+     "ganji": "庚戌",
+     "ganjiKo": "경술",
+     "stemTenGod": "상관",
+     "branchTenGod": "겁재",
+     "twelveStage": "양",
+     "gongmang": false,
+     "relations": [],
+     "stemClashes": []
+    },
+    {
+     "year": 2031,
+     "ganji": "辛亥",
+     "ganjiKo": "신해",
+     "stemTenGod": "식신",
+     "branchTenGod": "정재",
+     "twelveStage": "태",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "세운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "세운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "亥亥",
+       "keyKo": "해해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "subtype": "자형",
+       "glyphCount": 1
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2032,
+     "ganji": "壬子",
+     "ganjiKo": "임자",
+     "stemTenGod": "정재",
+     "branchTenGod": "편재",
+     "twelveStage": "절",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "子"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "子"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "세운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "세운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2033,
+     "ganji": "癸丑",
+     "ganjiKo": "계축",
+     "stemTenGod": "편재",
+     "branchTenGod": "비견",
+     "twelveStage": "묘",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "HYEONG",
+       "key": "丑戌未",
+       "keyKo": "축술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "丑"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2034,
+     "ganji": "甲寅",
+     "ganjiKo": "갑인",
+     "stemTenGod": "정관",
+     "branchTenGod": "정관",
+     "twelveStage": "사",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "甲己",
+       "keyKo": "갑기",
+       "members": [
+        {
+         "where": "일",
+         "char": "己"
+        },
+        {
+         "where": "세운",
+         "char": "甲"
+        }
+       ],
+       "completeness": "full",
+       "element": "EARTH",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "寅亥",
+       "keyKo": "인해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "寅申",
+       "keyKo": "인신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "寅申",
+       "keyKo": "인신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "寅亥",
+       "keyKo": "인해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2035,
+     "ganji": "乙卯",
+     "ganjiKo": "을묘",
+     "stemTenGod": "편관",
+     "branchTenGod": "편관",
+     "twelveStage": "병",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "卯戌",
+       "keyKo": "묘술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "element": "FIRE",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "亥卯未",
+       "keyKo": "해묘미",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "half",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "卯申",
+       "keyKo": "묘신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "卯申",
+       "keyKo": "묘신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2036,
+     "ganji": "丙辰",
+     "ganjiKo": "병진",
+     "stemTenGod": "정인",
+     "branchTenGod": "겁재",
+     "twelveStage": "쇠",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "辰戌",
+       "keyKo": "진술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "辰亥",
+       "keyKo": "진해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "세운",
+         "char": "丙"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2037,
+     "ganji": "丁巳",
+     "ganjiKo": "정사",
+     "stemTenGod": "편인",
+     "branchTenGod": "정인",
+     "twelveStage": "제왕",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丁壬",
+       "keyKo": "정임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "세운",
+         "char": "丁"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "巳亥",
+       "keyKo": "사해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "巳戌",
+       "keyKo": "사술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "세운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2038,
+     "ganji": "戊午",
+     "ganjiKo": "무오",
+     "stemTenGod": "겁재",
+     "branchTenGod": "편인",
+     "twelveStage": "건록",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "세운",
+         "char": "午"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    }
+   ],
+   "monthly": [
+    {
+     "year": 2026,
+     "index": 1,
+     "startKst": "2026-02-04T05:02:08+09:00",
+     "ganji": "庚寅",
+     "ganjiKo": "경인",
+     "stemTenGod": "상관",
+     "branchTenGod": "정관",
+     "twelveStage": "사",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "寅亥",
+       "keyKo": "인해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "寅申",
+       "keyKo": "인신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "寅申",
+       "keyKo": "인신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "寅亥",
+       "keyKo": "인해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 2,
+     "startKst": "2026-03-05T22:59:00+09:00",
+     "ganji": "辛卯",
+     "ganjiKo": "신묘",
+     "stemTenGod": "식신",
+     "branchTenGod": "편관",
+     "twelveStage": "병",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "卯戌",
+       "keyKo": "묘술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "element": "FIRE",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "亥卯未",
+       "keyKo": "해묘미",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "half",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "卯申",
+       "keyKo": "묘신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "卯申",
+       "keyKo": "묘신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 3,
+     "startKst": "2026-04-05T03:40:00+09:00",
+     "ganji": "壬辰",
+     "ganjiKo": "임진",
+     "stemTenGod": "정재",
+     "branchTenGod": "겁재",
+     "twelveStage": "쇠",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "辰戌",
+       "keyKo": "진술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "辰亥",
+       "keyKo": "진해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2026,
+     "index": 4,
+     "startKst": "2026-05-05T20:48:44+09:00",
+     "ganji": "癸巳",
+     "ganjiKo": "계사",
+     "stemTenGod": "편재",
+     "branchTenGod": "정인",
+     "twelveStage": "제왕",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "巳亥",
+       "keyKo": "사해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "巳戌",
+       "keyKo": "사술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 5,
+     "startKst": "2026-06-06T00:48:21+09:00",
+     "ganji": "甲午",
+     "ganjiKo": "갑오",
+     "stemTenGod": "정관",
+     "branchTenGod": "편인",
+     "twelveStage": "건록",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "甲己",
+       "keyKo": "갑기",
+       "members": [
+        {
+         "where": "일",
+         "char": "己"
+        },
+        {
+         "where": "월운",
+         "char": "甲"
+        }
+       ],
+       "completeness": "full",
+       "element": "EARTH",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "午"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 6,
+     "startKst": "2026-07-07T10:56:57+09:00",
+     "ganji": "乙未",
+     "ganjiKo": "을미",
+     "stemTenGod": "편관",
+     "branchTenGod": "비견",
+     "twelveStage": "관대",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "亥卯未",
+       "keyKo": "해묘미",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "未"
+        }
+       ],
+       "completeness": "half",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "戌未",
+       "keyKo": "술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "未"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "丑戌未",
+       "keyKo": "축술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "未"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 7,
+     "startKst": "2026-08-07T20:42:43+09:00",
+     "ganji": "丙申",
+     "ganjiKo": "병신",
+     "stemTenGod": "정인",
+     "branchTenGod": "상관",
+     "twelveStage": "목욕",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "申"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "월운",
+         "char": "丙"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2026,
+     "index": 8,
+     "startKst": "2026-09-07T23:41:16+09:00",
+     "ganji": "丁酉",
+     "ganjiKo": "정유",
+     "stemTenGod": "편인",
+     "branchTenGod": "식신",
+     "twelveStage": "장생",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丁壬",
+       "keyKo": "정임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "월운",
+         "char": "丁"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "BANGHAP",
+       "key": "申酉戌",
+       "keyKo": "신유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "element": "METAL",
+       "glyphCount": 3
+      },
+      {
+       "kind": "BANGHAP",
+       "key": "申酉戌",
+       "keyKo": "신유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "element": "METAL",
+       "glyphCount": 3
+      },
+      {
+       "kind": "HAE",
+       "key": "酉戌",
+       "keyKo": "유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 9,
+     "startKst": "2026-10-08T15:29:17+09:00",
+     "ganji": "戊戌",
+     "ganjiKo": "무술",
+     "stemTenGod": "겁재",
+     "branchTenGod": "겁재",
+     "twelveStage": "양",
+     "gongmang": false,
+     "relations": [],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 10,
+     "startKst": "2026-11-07T18:52:05+09:00",
+     "ganji": "己亥",
+     "ganjiKo": "기해",
+     "stemTenGod": "비견",
+     "branchTenGod": "정재",
+     "twelveStage": "태",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "亥亥",
+       "keyKo": "해해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "subtype": "자형",
+       "glyphCount": 1
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 11,
+     "startKst": "2026-12-07T11:52:32+09:00",
+     "ganji": "庚子",
+     "ganjiKo": "경자",
+     "stemTenGod": "상관",
+     "branchTenGod": "편재",
+     "twelveStage": "절",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "子"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "子"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2026,
+     "index": 12,
+     "startKst": "2027-01-05T23:09:58+09:00",
+     "ganji": "辛丑",
+     "ganjiKo": "신축",
+     "stemTenGod": "식신",
+     "branchTenGod": "비견",
+     "twelveStage": "묘",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "丑戌未",
+       "keyKo": "축술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "丑"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 1,
+     "startKst": "2027-02-04T10:46:18+09:00",
+     "ganji": "壬寅",
+     "ganjiKo": "임인",
+     "stemTenGod": "정재",
+     "branchTenGod": "정관",
+     "twelveStage": "사",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "寅亥",
+       "keyKo": "인해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "寅申",
+       "keyKo": "인신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "寅申",
+       "keyKo": "인신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "寅亥",
+       "keyKo": "인해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "寅"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2027,
+     "index": 2,
+     "startKst": "2027-03-06T04:39:33+09:00",
+     "ganji": "癸卯",
+     "ganjiKo": "계묘",
+     "stemTenGod": "편재",
+     "branchTenGod": "편관",
+     "twelveStage": "병",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "卯戌",
+       "keyKo": "묘술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "element": "FIRE",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "亥卯未",
+       "keyKo": "해묘미",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "half",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "卯申",
+       "keyKo": "묘신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "卯申",
+       "keyKo": "묘신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "卯"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 3,
+     "startKst": "2027-04-05T09:17:31+09:00",
+     "ganji": "甲辰",
+     "ganjiKo": "갑진",
+     "stemTenGod": "정관",
+     "branchTenGod": "겁재",
+     "twelveStage": "쇠",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "甲己",
+       "keyKo": "갑기",
+       "members": [
+        {
+         "where": "일",
+         "char": "己"
+        },
+        {
+         "where": "월운",
+         "char": "甲"
+        }
+       ],
+       "completeness": "full",
+       "element": "EARTH",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "辰戌",
+       "keyKo": "진술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "辰亥",
+       "keyKo": "진해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "辰"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 4,
+     "startKst": "2027-05-06T02:25:12+09:00",
+     "ganji": "乙巳",
+     "ganjiKo": "을사",
+     "stemTenGod": "편관",
+     "branchTenGod": "정인",
+     "twelveStage": "제왕",
+     "gongmang": true,
+     "relations": [
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "YUKHAP",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "CHUNG",
+       "key": "巳亥",
+       "keyKo": "사해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "巳申",
+       "keyKo": "사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "WONJIN",
+       "key": "巳戌",
+       "keyKo": "사술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "寅巳申",
+       "keyKo": "인사신",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "巳"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 5,
+     "startKst": "2027-06-06T06:25:48+09:00",
+     "ganji": "丙午",
+     "ganjiKo": "병오",
+     "stemTenGod": "정인",
+     "branchTenGod": "편인",
+     "twelveStage": "건록",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "寅午戌",
+       "keyKo": "인오술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "午"
+        }
+       ],
+       "completeness": "half",
+       "element": "FIRE",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "월운",
+         "char": "丙"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2027,
+     "index": 6,
+     "startKst": "2027-07-07T16:37:03+09:00",
+     "ganji": "丁未",
+     "ganjiKo": "정미",
+     "stemTenGod": "편인",
+     "branchTenGod": "비견",
+     "twelveStage": "관대",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丁壬",
+       "keyKo": "정임",
+       "members": [
+        {
+         "where": "시",
+         "char": "壬"
+        },
+        {
+         "where": "월운",
+         "char": "丁"
+        }
+       ],
+       "completeness": "full",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "亥卯未",
+       "keyKo": "해묘미",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "未"
+        }
+       ],
+       "completeness": "half",
+       "element": "WOOD",
+       "glyphCount": 2
+      },
+      {
+       "kind": "PA",
+       "key": "戌未",
+       "keyKo": "술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "未"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "丑戌未",
+       "keyKo": "축술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "未"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 7,
+     "startKst": "2027-08-08T02:26:46+09:00",
+     "ganji": "戊申",
+     "ganjiKo": "무신",
+     "stemTenGod": "겁재",
+     "branchTenGod": "상관",
+     "twelveStage": "목욕",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "申"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 8,
+     "startKst": "2027-09-08T05:28:28+09:00",
+     "ganji": "己酉",
+     "ganjiKo": "기유",
+     "stemTenGod": "비견",
+     "branchTenGod": "식신",
+     "twelveStage": "장생",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "BANGHAP",
+       "key": "申酉戌",
+       "keyKo": "신유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "element": "METAL",
+       "glyphCount": 3
+      },
+      {
+       "kind": "BANGHAP",
+       "key": "申酉戌",
+       "keyKo": "신유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "element": "METAL",
+       "glyphCount": 3
+      },
+      {
+       "kind": "HAE",
+       "key": "酉戌",
+       "keyKo": "유술",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "酉"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 9,
+     "startKst": "2027-10-08T21:17:06+09:00",
+     "ganji": "庚戌",
+     "ganjiKo": "경술",
+     "stemTenGod": "상관",
+     "branchTenGod": "겁재",
+     "twelveStage": "양",
+     "gongmang": false,
+     "relations": [],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 10,
+     "startKst": "2027-11-08T00:38:35+09:00",
+     "ganji": "辛亥",
+     "ganjiKo": "신해",
+     "stemTenGod": "식신",
+     "branchTenGod": "정재",
+     "twelveStage": "태",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_HAP",
+       "key": "丙辛",
+       "keyKo": "병신",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "辛"
+        }
+       ],
+       "completeness": "full",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HAE",
+       "key": "申亥",
+       "keyKo": "신해",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "HYEONG",
+       "key": "亥亥",
+       "keyKo": "해해",
+       "members": [
+        {
+         "where": "일",
+         "char": "亥"
+        },
+        {
+         "where": "월운",
+         "char": "亥"
+        }
+       ],
+       "completeness": "full",
+       "subtype": "자형",
+       "glyphCount": 1
+      }
+     ],
+     "stemClashes": []
+    },
+    {
+     "year": 2027,
+     "index": 11,
+     "startKst": "2027-12-07T17:37:41+09:00",
+     "ganji": "壬子",
+     "ganjiKo": "임자",
+     "stemTenGod": "정재",
+     "branchTenGod": "편재",
+     "twelveStage": "절",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "월",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "子"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      },
+      {
+       "kind": "SAMHAP",
+       "key": "申子辰",
+       "keyKo": "신자진",
+       "members": [
+        {
+         "where": "시",
+         "char": "申"
+        },
+        {
+         "where": "월운",
+         "char": "子"
+        }
+       ],
+       "completeness": "half",
+       "element": "WATER",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": [
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "연",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      },
+      {
+       "kind": "STEM_CHUNG",
+       "key": "丙壬",
+       "keyKo": "병임",
+       "members": [
+        {
+         "where": "월",
+         "char": "丙"
+        },
+        {
+         "where": "월운",
+         "char": "壬"
+        }
+       ],
+       "completeness": "full",
+       "glyphCount": 2
+      }
+     ]
+    },
+    {
+     "year": 2027,
+     "index": 12,
+     "startKst": "2028-01-06T04:54:39+09:00",
+     "ganji": "癸丑",
+     "ganjiKo": "계축",
+     "stemTenGod": "편재",
+     "branchTenGod": "비견",
+     "twelveStage": "묘",
+     "gongmang": false,
+     "relations": [
+      {
+       "kind": "HYEONG",
+       "key": "丑戌未",
+       "keyKo": "축술미",
+       "members": [
+        {
+         "where": "연",
+         "char": "戌"
+        },
+        {
+         "where": "월운",
+         "char": "丑"
+        }
+       ],
+       "completeness": "partial",
+       "subtype": "삼형",
+       "glyphCount": 2
+      }
+     ],
+     "stemClashes": []
+    }
+   ],
+   "mbti": {
+    "type": "ISTJ",
+    "stack": [
+     "Si(주기능): 직접 확인한 것을 기준으로 삼습니다. 지난번에 통한 방법과 작년 이맘때 기록이 머릿속 서랍에 날짜별로 꽂혀 있습니다.",
+     "Te(부기능): 일을 순서와 숫자로 정리합니다. 할 일을 쪼개 체크리스트로 만들고, 틀린 숫자 하나도 그냥 넘기지 않습니다.",
+     "Fi(3차기능)",
+     "Ne(열등기능)"
+    ]
+   },
+   "input": {
+    "relationship": "dating",
+    "children": "unknown",
+    "job": {
+     "class": "none",
+     "status": "",
+     "detail": ""
+    }
+   }
+  }
+ ],
+ "mbtiIds": []
+}

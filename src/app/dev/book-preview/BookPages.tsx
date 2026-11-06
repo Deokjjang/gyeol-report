@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, Fragment, type CSSProperties } from "react";
 import { REPORT_PRICE_LABEL_KO } from "../../../lib/payment/reportProductCatalog";
+import { bookLengthParts } from "../../../lib/book/bookLength";
 import type { ReportTableElementColorToken } from "../../../lib/report-tables/types";
 import { prePaymentRefundNoticeKo } from "../../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../../lib/legal/privacyPolicy";
@@ -13,11 +14,13 @@ import MetaSettingsLink from "../../../components/analytics/MetaSettingsLink";
 import SocialIconLinks from "../../../components/legal/SocialIconLinks";
 import { SOCIAL_LINKS, SUPPORT_CHAT_URL } from "../../../lib/legal/socialLinks";
 
+/** 이름이 없는 표지(책장의 상품 카드)는 아래 오른쪽에 분량(최종 A 15: 「13장 / 약 1만 자」, v5 저장본 전체 평균), 판매 중지 책은 예전 한 줄. */
 export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
+  const length = bookLengthParts(book.productKey);
   return <div className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <div className={s.coverTop}><span>GYEOL<br />REPORT</span><span>ISSUE<br />{book.issue}</span></div>
     <div className={s.coverTitle}>{title ?? book.title}</div>
-    <div className={s.coverBottom}><span>PERSONAL<br />EDITION</span><span>{name ? `${name}의 책` : "한 사람, 한 권."}</span></div>
+    <div className={s.coverBottom}><span>PERSONAL<br />EDITION</span>{name ? <span>{`${name}의 책`}</span> : length ? <span data-book-length>{length.chapters}<br />{length.chars}</span> : <span>한 사람, 한 권.</span>}</div>
     <span className={s.spine} aria-hidden="true" />
   </div>;
 }
@@ -119,8 +122,8 @@ export function PreviewFooter({ publicPresentation = false }: { publicPresentati
   const [legal, setLegal] = useState(false);
   return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.micro}>GYEOL REPORT<br />PERSONAL PUBLISHING</span><nav aria-label="소셜과 고객 문의">
     <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
-    <SocialIconLinks />
     <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
+    <SocialIconLinks />
     </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
     <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>

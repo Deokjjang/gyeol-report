@@ -8,217 +8,274 @@
         "id": "ENTJ-work-01",
         "text": "회의 첫 5분에 결론부터 묻기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-02",
         "text": "팀 합류 일주일 만에 역할 분담 새로 짜기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-03",
         "text": "틀린 지시를 따르느니 그 자리에서 대안 내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-04",
         "text": "아침 출근길에 오늘 우선순위 세 개 정하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-05",
         "text": "마감 전 날짜별 책임자를 표에 박아 넣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-06",
         "text": "배경 설명이 길어지면 요점부터 재촉하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-07",
         "text": "킥오프에서 목표 수치부터 칠판에 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-08",
         "text": "애매한 업무를 맡아 담당자와 기한 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-09",
         "text": "구직 중 면접 질문을 역으로 던져 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-10",
         "text": "프리랜서 의뢰의 범위와 단가부터 못 박기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
       },
       {
         "id": "ENTJ-work-11",
         "text": "느린 결재 라인을 한 단계로 줄이기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ENTJ-work-12",
         "text": "후배 보고서에 결론이 없으면 돌려보내기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "office",
+          "team"
+        ]
       },
       {
         "id": "ENTJ-work-13",
         "text": "새 분기 목표를 한 장 로드맵으로 정리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ENTJ-work-14",
         "text": "회의가 길어지면 타이머를 직접 켜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-15",
         "text": "주간 보고를 불릿 세 줄로 압축하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-16",
         "text": "투자자 앞 발표에서 시장 규모부터 꺼내기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-17",
         "text": "가게 매출 표에서 취약한 시간대부터 손보기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ENTJ-work-18",
         "text": "직원 면접에서 장기 목표를 직접 묻기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-19",
         "text": "외주 업체에 일정 지연 사유 서면 요청하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
       },
       {
         "id": "ENTJ-work-20",
         "text": "병목 공정을 찾아 담당자를 바꾸는 결정",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-21",
         "text": "집안 살림 예산과 일정을 한 표로 통합하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-22",
         "text": "퇴근 직전 내일 회의 안건 미리 배포하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-23",
         "text": "단톡방에 마감일 공지부터 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-24",
         "text": "개인 프로젝트에 마일스톤 날짜 박기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
       },
       {
         "id": "ENTJ-work-25",
         "text": "일 못하는 팀원에게 기대치를 명확히 전하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ENTJ-work-26",
         "text": "이직 제안이 오면 연봉 협상 자료부터 만들기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ENTJ-work-27",
         "text": "경쟁사 자료를 분석해 약점부터 짚기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-28",
         "text": "성과 지표 대시보드를 직접 설계하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-29",
         "text": "대학 팀플에서 조장을 자청하고 일정 돌리기",
         "rel": "any",
-        "job": "student"
+        "job": "student",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-30",
         "text": "상사에게 안건 승인 기한을 먼저 확정받기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ENTJ-work-31",
         "text": "한 번에 세 가지 업무를 병행하는 일정표",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-32",
         "text": "프레젠테이션 마지막 장에 실행 일정 넣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-33",
         "text": "느슨한 모임을 프로젝트 방식으로 전환하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-34",
         "text": "토요일 오전에 다음 주 계획을 끝내 놓기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-35",
         "text": "업무용 노트에 이번 주 성과 지표 적기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-work-36",
         "text": "주말 공부 모임에서 진도표부터 짜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "money": [
@@ -226,199 +283,234 @@
         "id": "ENTJ-money-01",
         "text": "할인 문자 오면 연간 지출부터 계산하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-02",
         "text": "월급날 투자와 저축 비율 먼저 배분하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-03",
         "text": "돈을 쌓기보다 더 크게 굴릴 곳 찾기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-04",
         "text": "가계부 대신 오 년 뒤 자산 구조표 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-05",
         "text": "작은 할인에 쓰는 시간을 손해로 계산하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-06",
         "text": "결제 전에 투자 대비 효과를 따져 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-07",
         "text": "경제 뉴스 요약을 아침마다 훑어보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-08",
         "text": "고급 정장이나 시계를 자기 투자로 규정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-09",
         "text": "부동산 앱에서 지역별 시세 흐름 비교하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-10",
         "text": "인맥 모임 회비를 사업 비용처럼 처리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-11",
         "text": "수수료 비교표를 만들어 증권 계좌 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-12",
         "text": "소비를 생산적인 것과 아닌 것으로 나누기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-13",
         "text": "세무사에게 절세 계획을 미리 상담하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-14",
         "text": "사업 자금을 단계별로 쪼개 집행하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-15",
         "text": "직원 급여 인상 폭을 매출 기준으로 정하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-16",
         "text": "팀 회식비를 성과 보상 항목으로 편성하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-17",
         "text": "비싼 점심도 미팅 효과가 있으면 결제하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-18",
         "text": "월 고정비 목록을 분기마다 정리 감축하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-19",
         "text": "교육 과정 결제 전 졸업 후 수익을 가늠하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-20",
         "text": "카드 연회비를 혜택 사용 내역과 대조하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-21",
         "text": "충동구매를 막으려 구매 규칙 세 줄 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-22",
         "text": "신규 부업의 손익분기점을 먼저 계산하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-23",
         "text": "자산 현황 앱을 열어 순위별로 정렬하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-24",
         "text": "보너스가 들어오면 목표 계좌로 즉시 이체하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-25",
         "text": "거래처 대금 회수 일정을 직접 챙기기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-26",
         "text": "중고 판매 가격을 시세 평균에 맞추기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-27",
         "text": "선물 예산도 상대의 영향력에 맞춰 조정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-28",
         "text": "전세 계약 갱신 시점에 맞춰 자금 계획 짜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-29",
         "text": "저축 목표를 연도별 마일스톤으로 쪼개기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-30",
         "text": "낭비 항목에 빨간 표시를 해 두는 지출표",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-31",
         "text": "공동 구매 정산을 엑셀 한 장에 끝내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ENTJ-money-32",
         "text": "수입 다변화 구상으로 새 채널 검토하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-money-33",
         "text": "학자금 상환 일정을 우선순위로 밀어 넣기",
         "rel": "any",
-        "job": "student"
+        "job": "student",
+        "ctx": []
       }
     ],
     "love": [
@@ -426,205 +518,239 @@
         "id": "ENTJ-love-01",
         "text": "호감 가는 사람에게 먼저 연락하는 쪽 되기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-02",
         "text": "소개팅 첫 질문으로 삶의 목표 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-03",
         "text": "호감이 생기면 만남 일정부터 잡아 버리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-04",
         "text": "연애 앱 프로필에 직업과 비전을 선명히 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-05",
         "text": "고백을 미루지 않고 목요일로 날짜 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-06",
         "text": "썸 단계에서 관계 방향을 직접 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-07",
         "text": "데이트 코스를 동선 기준으로 예약해 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-08",
         "text": "상대의 야망이나 추진력에 끌리는 순간",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-09",
         "text": "감정 표현 대신 계획으로 마음 보여 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-10",
         "text": "호감 상대의 일정에 맞춰 약속 먼저 잡기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-11",
         "text": "애매한 관계를 오래 끄는 일은 못 참기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-12",
         "text": "연애에도 효율이 필요하다고 느끼는 순간",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-13",
         "text": "이상형 조건에 성장 의지를 맨 위에 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-14",
         "text": "소개팅 후 다음 약속을 그 자리에서 잡기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-15",
         "text": "카톡 답장이 늦으면 전화로 바로 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-16",
         "text": "연애관을 목표 달성 방식에 비유하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-17",
         "text": "호감 있는 사람의 능력을 먼저 눈여겨보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-18",
         "text": "함께 운동이나 자기계발을 데이트로 제안하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-19",
         "text": "서로 바쁜 시기에 만남 빈도 합의하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-20",
         "text": "감정 기복 큰 상대 앞에서 답답함 느끼기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-21",
         "text": "고백 거절당한 뒤 빠르게 관점 전환하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-22",
         "text": "마음에 든 사람 앞에서 말이 단호해질 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-23",
         "text": "호감을 느끼면 상대의 장기 계획부터 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-24",
         "text": "썸 상대에게 주도권을 쥐고 일정 이끌기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-25",
         "text": "프러포즈 장소를 미리 답사해 계획하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-26",
         "text": "첫 데이트 후 피드백을 솔직히 요청하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-27",
         "text": "소개팅 상대가 소극적일 때 대화를 이끌기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-28",
         "text": "사랑을 속도나 결단으로 표현하는 방식",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-29",
         "text": "상대의 약한 모습에 해결책이 먼저 나올 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-30",
         "text": "연애 중에도 개인 목표 시간을 사수하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-31",
         "text": "연인에게 연간 계획을 함께 짜자고 제안하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-32",
         "text": "연인의 고민에 해결 방안부터 정리해 주기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-33",
         "text": "기념일 이벤트를 일정표에 미리 박아 두기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-love-34",
         "text": "동거 비용과 역할을 표로 나누자 하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "relationships": [
@@ -632,199 +758,236 @@
         "id": "ENTJ-relationships-01",
         "text": "모임에서 어느새 진행을 맡고 있을 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-02",
         "text": "친구 단톡방에 여행 일정표부터 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-03",
         "text": "약속 시간에 늦는 사람에게 직설 전달하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-04",
         "text": "친구 고민을 듣고 실행 계획까지 짜 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-05",
         "text": "동호회 회장 자리를 자연스레 떠안기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-06",
         "text": "느슨한 모임에 규칙과 회비를 도입하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-07",
         "text": "모임 목적이 흐려지면 안건을 되짚기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-08",
         "text": "술자리에서 새로운 사업 이야기를 꺼내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-09",
         "text": "경조사 참석 여부를 우선순위로 판단하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-10",
         "text": "능력 있는 사람에게 먼저 다가가 말 걸기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-11",
         "text": "사람 모으는 일에 자신 있게 나서기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-12",
         "text": "직설적 조언을 했다가 분위기가 식을 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-13",
         "text": "인맥 정리를 연말에 한 번 하는 습관",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-14",
         "text": "후배에게 커리어 조언을 길게 해 줄 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ENTJ-relationships-15",
         "text": "오래된 친구에게도 현재 목표를 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-16",
         "text": "네트워킹 행사에서 명함을 먼저 건네기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-17",
         "text": "단체 채팅 결론이 안 나면 투표 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-18",
         "text": "동창회 장소 예약을 대신 맡아 처리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-19",
         "text": "무임승차하는 팀원에게 책임 묻기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ENTJ-relationships-20",
         "text": "스터디에서 목표 점수와 일정 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-21",
         "text": "동료 갈등을 중재 회의로 풀어 보기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-22",
         "text": "신입을 앞에서 이끌며 업무 설명하기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-23",
         "text": "이웃 모임 대표로 건의서를 대신 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-24",
         "text": "결혼식 하객 자리에서 인사 순서 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-25",
         "text": "송년회 기획을 시간표로 짜서 진행하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-26",
         "text": "친구 사이에도 약속 이행을 기대하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-27",
         "text": "회식 자리에서 건배사를 맡을 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-28",
         "text": "소모적인 말싸움은 결론으로 끊어 내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-29",
         "text": "서먹한 사람과 공통 목표로 풀어 가기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-30",
         "text": "카페 모임에서 주제를 던져 토론 이끌기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-31",
         "text": "거절은 짧고 명확하게 하는 문자",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-32",
         "text": "친구에게 단점을 짚어 주고 대안 제시하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-relationships-33",
         "text": "팀 워크숍에서 역할극을 이끄는 사회자",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "alone": [
@@ -832,199 +995,232 @@
         "id": "ENTJ-alone-01",
         "text": "퇴근 후 헬스장에서 목표 중량 기록하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-02",
         "text": "주말 아침 한 주의 성과를 복기하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-03",
         "text": "자기계발서 읽다 실행 항목만 추려 메모하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-04",
         "text": "빈 시간에 다음 분기 구상 적기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-05",
         "text": "혼자 달리며 오늘 일정 머릿속에 배열하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-06",
         "text": "혼자 여행에서도 시간표를 짜 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-07",
         "text": "쉬는 날에도 효율적인 휴식 방법 찾기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-08",
         "text": "경영 팟캐스트를 배속으로 듣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-09",
         "text": "책장에 읽은 책을 분야별로 정리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-10",
         "text": "쉬는 날 장기 목표 노트를 갱신하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-11",
         "text": "전략 보드게임에서 주도권 잡기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-12",
         "text": "운동 앱에 주간 달성률을 기록하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-13",
         "text": "카페에서 노트북 열고 사업 아이디어 정리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-14",
         "text": "드라마를 보며 인물 전략을 분석하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-15",
         "text": "아무 계획 없는 일요일이 불안해질 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-16",
         "text": "자기 전 내일의 우선순위 적기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-17",
         "text": "새로운 기술 강의를 퇴근 후 신청하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-18",
         "text": "캘린더 앱을 색깔별로 구조화하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-19",
         "text": "혼자 영화를 보고도 배울 점을 정리하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-20",
         "text": "휴가 계획서에 일정과 예산을 넣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-21",
         "text": "명상 앱 대신 계획 정리로 마음 비우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-22",
         "text": "아침 루틴을 분 단위로 설계하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-23",
         "text": "방을 정리하며 버릴 것과 둘 것 나누기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-24",
         "text": "집에서도 서류 정리함을 목적별로 분류하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-25",
         "text": "다음 해 목표를 연말에 시각화하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-26",
         "text": "혼자 드라이브하며 미래 구상에 잠기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-27",
         "text": "달력에 큰 목표 세 가지를 붙여 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-28",
         "text": "쉬면서도 생산성 지표를 신경 쓸 때",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-29",
         "text": "책을 읽고 한 줄 결론으로 요약하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-30",
         "text": "조용한 새벽에 하루 일정 점검하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-31",
         "text": "취미 활동도 단계별 목표로 쪼개기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-32",
         "text": "다큐를 보며 리더십 사례 분석하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ENTJ-alone-33",
         "text": "혼자 있는 시간에 협상 시나리오 연습하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ]
   }

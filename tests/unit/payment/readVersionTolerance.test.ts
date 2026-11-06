@@ -99,11 +99,13 @@ describe("unknown calculation version: kept, hidden and logged (actual SQL)", ()
     expect(await row(reportId)).toEqual({ status: "COMPLETED", snapshot_json: stored });
   });
 
-  it("a known version that fails the read gate is quarantined as before", async () => {
+  // v5 최종3: 알려진 판이 열람 검사에 걸려도 격리하지 않는다(기본 SQL에서도 snapshot_json이 남는다) — 이번 열람만 숨기고 로그를 남긴다.
+  it("a known version that fails the read gate is hidden and logged, never quarantined", async () => {
     const snapshot = load("v3-love-unknown");
-    const { reportId } = await published({ ...snapshot, draft: { ...(snapshot.draft as object), productType: "career_money_study" } });
+    const { reportId, stored } = await published({ ...snapshot, draft: { ...(snapshot.draft as object), productType: "career_money_study" } });
     expect(await readPublishedReport(store, reportId, validateBookPublication)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
-    expect(await row(reportId)).toEqual({ status: "FAILED_REQUIRES_ATTENTION", snapshot_json: null });
-    expect(log).not.toHaveBeenCalled();
+    expect(await row(reportId)).toEqual({ status: "COMPLETED", snapshot_json: stored });
+    expect(log).toHaveBeenCalledTimes(1);
+    expect(JSON.parse(String(log.mock.calls[0][0]))).toMatchObject({ event: "REPORT_READ_VALIDATION_FAILED", reportId, productVersion: "v3" });
   });
 });

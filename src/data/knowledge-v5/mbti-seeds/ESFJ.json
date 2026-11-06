@@ -8,193 +8,239 @@
         "id": "ESFJ-work-01",
         "text": "회의 분위기가 가라앉으면 맞장구로 띄우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-02",
         "text": "막내가 말할 틈을 만들어 주는 진행",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-03",
         "text": "새 업무를 받으면 해 본 사람부터 찾기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-04",
         "text": "부서 회식 예약과 생일 케이크 도맡기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "office"
+        ]
       },
       {
         "id": "ESFJ-work-05",
         "text": "퇴사자 선물 모금 봉투를 돌리기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-06",
         "text": "점심 메뉴를 다 같이 정해 단톡방에 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-07",
         "text": "환영 간식을 자리마다 올려 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-08",
         "text": "주변 사람 생일을 달력에 적어 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-09",
         "text": "의견이 갈리면 모두 만족할 절충안 찾기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-10",
         "text": "거래처 담당자에게 안부 문자 먼저 보내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-11",
         "text": "고객 불만에 공감 문장부터 건네기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-12",
         "text": "회의 끝나고 불편해 보인 사람 따로 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-13",
         "text": "행사 준비물 체크리스트를 인원 수대로 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-14",
         "text": "공지 메일에 따뜻한 인사말 한 줄 넣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-15",
         "text": "업무 인수인계에 직접 쓴 팁 메모 붙이기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-16",
         "text": "동료가 힘들어 보이면 커피 건네기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-17",
         "text": "새 프로젝트 킥오프에 분위기 푸는 말",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-18",
         "text": "다 같이 쓰는 휴게실 정리 당번 자청하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-19",
         "text": "구직 중 모의 면접을 친구와 주고받기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-20",
         "text": "프리랜서 고객에게 작업 후 감사 메일",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
       },
       {
         "id": "ESFJ-work-21",
         "text": "집안 행사 준비물 리스트 혼자 짜기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-22",
         "text": "자원봉사 모집 글을 단톡방에 정리해 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-23",
         "text": "동네 장터 행사 부스 일정 조율하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-24",
         "text": "선배에게 조언 구하는 식사 자리 만들기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESFJ-work-25",
         "text": "칭찬에 힘이 나서 야근도 가벼운 날",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-26",
         "text": "단골 손님과 근황을 나누며 계산하기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ESFJ-work-27",
         "text": "매장 직원 생일에 작은 케이크 챙기기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ESFJ-work-28",
         "text": "손님이 몰리는 시간 직원 사기 북돋기",
         "rel": "any",
-        "job": "business"
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ESFJ-work-29",
         "text": "상사 표정 읽고 보고 타이밍 고르기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESFJ-work-30",
         "text": "발표하는 사람에게 응원 메시지 보내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-31",
         "text": "조별 모임 간식과 장소를 먼저 챙기기",
         "rel": "any",
-        "job": "student"
+        "job": "student",
+        "ctx": []
       },
       {
         "id": "ESFJ-work-32",
         "text": "동아리 신입생 환영회 사회 맡기",
         "rel": "any",
-        "job": "student"
+        "job": "student",
+        "ctx": []
       }
     ],
     "money": [
@@ -202,193 +248,231 @@
         "id": "ESFJ-money-01",
         "text": "친구 축의금 동료 선물에 지출이 몰리는 달",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-02",
         "text": "지인이 권한 보험에 약관 읽기 전 서명",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-03",
         "text": "밥값을 낼 때 먼저 카드를 내밀기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-04",
         "text": "남 선물은 제때 사고 내 옷은 미루기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-05",
         "text": "모임 회비 걷어 영수증을 대화방에 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-06",
         "text": "기념일마다 선물 예산을 따로 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-07",
         "text": "생일 선물 고르며 상대 취향 검색하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-08",
         "text": "공동구매 모임에서 주문 취합 맡기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-09",
         "text": "호스트가 되는 날 장보기에 아낌없이 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-10",
         "text": "후배 밥 사 주느라 월말 잔액이 빠듯",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
       },
       {
         "id": "ESFJ-money-11",
         "text": "세일 때 내 것 말고 지인 것부터 담기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-12",
         "text": "홈파티용 식기와 소품 후기 비교하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-13",
         "text": "집들이 선물로 인기 상품 순위 찾아보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-14",
         "text": "카페에서 모임 전체 음료 값 한 번에 계산",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-15",
         "text": "어울리는 옷값은 아끼지 않는 모임 날",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-16",
         "text": "선물 포장 서비스 옵션을 꼭 추가하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-17",
         "text": "손님 맞이용 과일을 마트에서 넉넉히 사기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ESFJ-money-18",
         "text": "기부 플랫폼에 소액 정기 후원 걸어 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-19",
         "text": "연말 모임 회비 정산을 앱으로 공유하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-20",
         "text": "지인 가게 오픈 소식에 화환부터 주문",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ESFJ-money-21",
         "text": "쿠폰은 같이 쓰자며 채팅방에 나누기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-22",
         "text": "빌려 달라는 말에 거절 대신 일부만 빌려주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-23",
         "text": "카드 결제 문자를 보며 미안해질 때 있기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-24",
         "text": "가계부에 인간관계 비용 칸 따로 만들기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-25",
         "text": "중고거래 물건을 싸게 나눔하며 뿌듯함",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-26",
         "text": "여행 가면 주변 사람 기념품부터 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-27",
         "text": "가성비 대신 분위기 좋은 식당 예약하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-28",
         "text": "친구 이사 소식에 집들이 선물 장바구니",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-29",
         "text": "용돈 모아 모임 단체 티셔츠 맞추기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-30",
         "text": "회식비 선결제를 슬쩍 해 놓기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-31",
         "text": "택배 보내기 전 포장지와 카드 문구 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-money-32",
         "text": "월말 정산에서 내 몫보다 남 몫 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "love": [
@@ -396,199 +480,232 @@
         "id": "ESFJ-love-01",
         "text": "소개팅 자리에서 상대가 편하게 말하도록 돕기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-02",
         "text": "호감이 가면 안부 문자를 먼저 보내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-03",
         "text": "썸 상대의 취향을 물어 선물 고민하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-04",
         "text": "연락 뜸한 날 내가 뭘 잘못했나 되짚기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-05",
         "text": "답장 하나에 하루 기분이 오르내리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-06",
         "text": "상대의 친구 얘기까지 기억하며 대화하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-07",
         "text": "고백 전 주변 사람 의견부터 구하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-08",
         "text": "호감 있는 사람과 함께 가고 싶은 곳 모으기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-09",
         "text": "처음 만난 날 헤어질 때 문자 남기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-10",
         "text": "좋아하는 사람 생일을 몰래 알아내 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-11",
         "text": "썸 단계에서 정성 어린 손편지 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-12",
         "text": "소개팅 장소를 분위기 좋은 곳으로 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-13",
         "text": "상대가 말 없을 때 분위기 띄우려 애쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-14",
         "text": "호감 있는 사람 게시물에 댓글 고민하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-15",
         "text": "상대가 좋아할 선물 후보를 세 개 추리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-16",
         "text": "소개팅 전 친구들에게 옷 고르는 조언 구하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-17",
         "text": "연애하면 같이 해 볼 일 목록 적어 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-18",
         "text": "연애 상대와 친구들이 어울리는 상상",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-19",
         "text": "상대의 감정 변화를 표정에서 읽어 내기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-20",
         "text": "호감을 표현하는 데 쓰는 이모티콘 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-21",
         "text": "데이트 후 집에 잘 도착했냐고 먼저 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-22",
         "text": "커플 모임이나 단체 데이트 먼저 제안하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-23",
         "text": "연인의 아침밥과 감기약을 챙기기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-24",
         "text": "기념일에 손편지와 사진첩 준비하기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-25",
         "text": "연인의 서운한 한마디에 온종일 마음 쓰기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-26",
         "text": "연인 친구들 모임에 정성껏 간식 챙기기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-27",
         "text": "서로의 SNS에 커플 사진 올리기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-28",
         "text": "연인이 고맙다는 말을 안 하면 삭이기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-29",
         "text": "연인과 함께 쓸 홈 데이트 상차림 준비",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-30",
         "text": "커플 팔찌나 반지 기념품 알아보기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-31",
         "text": "연인이 바쁘다고 하면 응원 문자 보내기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-32",
         "text": "연인과 싸운 날 밤 먼저 화해 방법 찾기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-love-33",
         "text": "연인 생일 서프라이즈 파티 계획 짜기",
         "rel": "partner",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "relationships": [
@@ -596,193 +713,225 @@
         "id": "ESFJ-relationships-01",
         "text": "모임 구석의 혼자인 사람 대화에 끼워 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-02",
         "text": "메신저이 조용하면 다들 잘 지내냐고 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-03",
         "text": "친구가 상처받았다면 사실 확인 전에 편들기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-04",
         "text": "안 친한 사람 둘 사이에 공통 화제 던지기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-05",
         "text": "새 모임 첫날 이름과 취미를 먼저 외우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-06",
         "text": "모임 후 사진을 정리해 모임 채팅방에 공유",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-07",
         "text": "번개 모임을 즉석에서 꾸리고 장소 정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-08",
         "text": "친구 고민을 밤늦게까지 전화로 들어 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-09",
         "text": "경조사에 빠지지 않고 안부 인사까지 챙기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-10",
         "text": "오래된 친구들 대화방 분위기 메이커 역할",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-11",
         "text": "모임에서 음식이 부족한지 가장 먼저 살피기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-12",
         "text": "싸운 두 사람을 불러 같이 밥 먹이기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-13",
         "text": "회식 자리에서 건배사 한마디 준비해 오기",
         "rel": "any",
-        "job": "employed"
+        "job": "employed",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-14",
         "text": "처음 오는 친구를 입구에서 반갑게 맞이",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-15",
         "text": "서운한 말 한마디를 오래 되새기며 속상함",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-16",
         "text": "이웃과 엘리베이터에서 인사하고 근황 묻기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-17",
         "text": "동호회 뒤풀이 장소를 후기 보고 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-18",
         "text": "반가운 사람에게 먼저 다가가 끌어안기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-19",
         "text": "어색한 사이에 공통 지인 이야기로 풀기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-20",
         "text": "메신저 대화에 이모티콘으로 반응 가득",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-21",
         "text": "친구들을 집에 불러 한 상 차려 대접하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-22",
         "text": "행사에서 포토존 사진을 대신 찍어 주기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-23",
         "text": "다 같이 쓸 돗자리와 간식을 챙겨 오기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-24",
         "text": "모임 일정 조율을 투표로 모두 편하게",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-25",
         "text": "기쁜 소식엔 먼저 달려가 축하하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-26",
         "text": "모임에서 소외감 느낀 사람을 먼저 알아채기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-27",
         "text": "친구 선물 취향을 노트에 적어 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-28",
         "text": "반응이 없는 채팅방에서 혼자 걱정하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-29",
         "text": "모임에서 말다툼이 나면 화제 돌리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-30",
         "text": "번호를 저장하며 소개해 준 사람을 기억",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-31",
         "text": "이름 불러 주며 인사하는 습관",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-relationships-32",
         "text": "오랜 인연에게 계절마다 안부 전하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ],
     "alone": [
@@ -790,193 +939,227 @@
         "id": "ESFJ-alone-01",
         "text": "혼자 있는 저녁에도 안부 문자를 먼저 돌리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-02",
         "text": "주말에 약속이 없으면 밑반찬 만들기로 채우기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-03",
         "text": "잠들기 전 오늘 한 말을 되돌려 보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-04",
         "text": "사과 문자를 썼다 지웠다 반복하는 밤",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-05",
         "text": "혼자 영화관에 가서도 후기를 대화방에 남기기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-06",
         "text": "쉬는 날에도 휴대폰 알림을 계속 확인하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-07",
         "text": "홈카페를 차려 두고 누굴 부를지 생각하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-08",
         "text": "요리 영상을 보며 다음 모임 메뉴 고르기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-09",
         "text": "산책하다 마주친 사람과 짧게 인사 나누기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-10",
         "text": "혼자 밥을 먹으며 예능 틀어 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-11",
         "text": "집 안 인테리어를 손님 맞는 시선으로 바꾸기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
       },
       {
         "id": "ESFJ-alone-12",
         "text": "가까운 사람 생각하며 선물 목록 적기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-13",
         "text": "감정이 복잡한 날 일기 앱에 길게 쓰기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-14",
         "text": "혼자 있으면 조용한 집이 허전해지는 저녁",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-15",
         "text": "책을 읽다가 같이 보고 싶은 사람이 떠오름",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-16",
         "text": "냉동실에 나눠 줄 음식을 쌓아 두기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-17",
         "text": "취미 클래스 사진을 SNS에 올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-18",
         "text": "혼자 보는 드라마 속 인물에 깊이 공감",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-19",
         "text": "배달 음식 대신 직접 차린 식탁 사진 찍기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-20",
         "text": "빈 시간에 지인 소식 업데이트 구경하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-21",
         "text": "혼자 걷는 길에서 대화 연습하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-22",
         "text": "쉬는 날 방문할 맛집 후보를 모임용으로 저장",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-23",
         "text": "홀로 쉬어도 누군가에게 연락할 핑계 찾기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-24",
         "text": "향 좋은 입욕제로 욕조에서 하루 되돌아보기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-25",
         "text": "자기 전 메신저 읽씹한 메시지에 답하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-26",
         "text": "좋아하는 가수 라이브 영상으로 기분 풀기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-27",
         "text": "조용한 카페에서 사람 표정 구경하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-28",
         "text": "책상 위 사진 액자를 닦으며 추억 떠올리기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-29",
         "text": "스티커로 다이어리를 꾸미며 하루 정리",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-30",
         "text": "새로 산 앞치마를 입고 빵 반죽하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-31",
         "text": "혼자 있는 주말 아침 라디오 DJ 사연 듣기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       },
       {
         "id": "ESFJ-alone-32",
         "text": "주말 낮잠에서 깨어 시계부터 확인하기",
         "rel": "any",
-        "job": "any"
+        "job": "any",
+        "ctx": []
       }
     ]
   }

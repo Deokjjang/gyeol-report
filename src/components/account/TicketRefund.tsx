@@ -48,7 +48,7 @@ export function TicketRefund({ orderId, scope, request, changed }: { orderId: st
       {q && !active ? <>
         <label className={s.refundReason}>환불 사유<select value={reason} disabled={busy || submitted} onChange={e=>{ setReason(e.target.value as RefundReason); setConfirm(false); }}>{Object.entries(refundReasons).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>
         <p>{refundPolicyCopy}</p><p>{refundRightsCopy}</p>
-        <p>요청 접수 시 이 구매의 남은 이용권은 사용 보류되며, 환불이 확정되면 사용할 수 없습니다. 이미 완성된 책의 기존 90일 열람은 유지됩니다.</p>
+        <p>요청 접수 시 이 구매의 남은 이용권은 사용 보류되며, 환불이 확정되면 사용할 수 없습니다. 이미 완성된 책의 열람 기한은 그대로 유지됩니다.</p>
         <label className={s.consent}><input type="checkbox" checked={confirm} disabled={busy} onChange={e=>setConfirm(e.target.checked)} />예상 금액과 사용 보류를 확인하고 환불 검토를 요청합니다.</label>
         <button disabled={!confirm || busy} onClick={()=>void run("request")}>환불 요청 접수</button>
       </> : null}

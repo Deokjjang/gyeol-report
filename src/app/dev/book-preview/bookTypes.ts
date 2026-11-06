@@ -17,7 +17,7 @@ export type BookMonth = { month: number; title: string; theme: string; time: str
 export type BookPage = (
   | { kind: "cover"; title: string; names: string; headline: string }
   | { kind: "input"; title: string }
-  | { kind: "pair"; title: string; category: string; characters: { name: string; core: string; strength: string; relationship: string }[]; directions: { title: string; effect: string; term?: string; page: number }[]; relations: string[]; image?: string; relationsPlain?: string[] }
+  | { kind: "pair"; title: string; category: string; characters: { name: string; core: string; strength: string; relationship: string }[]; directions: { title: string; effect: string; term?: string; page: number }[]; relations: string[]; image?: string; relationsPlain?: string[]; relationsSummary?: string; relationsTotal?: number }
   | { kind: "manse"; title: string; person: number }
   | { kind: "mbti"; title: string; person: number }
   | { kind: "narrative"; title: string; paragraphs: BookParagraph[]; notes: BookNote[] }
@@ -25,9 +25,10 @@ export type BookPage = (
   | { kind: "score"; versionLabel?: string; scoreVersion?: string; explanations?: string[]; title: string; total: number; band?: string; scores: { label: string; value: number; max: number; reason?: string }[]; verdict: string; notice: string; limitations: string[] }
   | { kind: "timeline"; title: string; years: BookYear[]; transitions: { date: string; exact?: string; before: string; after: string; page: number }[] }
   | { kind: "months"; title: string; months: BookMonth[]; map?: { label: string; months: number[] }[] }
-  /** lead: 머리말 한 줄(v5 P6c). 있으면 V4의 지장간·십이운성 안내 대신 이것만 보인다. */
-  | { kind: "appendix"; title: string; items: BookFeature[]; from: number; total: number; lead?: string }
-  | { kind: "back"; title: string; finalLine: string }) & { id?: string; anchors?: string[] };
+  /** lead: 머리말 한 줄(v5 P6c). 있으면 V4의 지장간·십이운성 안내 대신 이것만 보인다. notes: 머리말 아래 안내 줄(최종판3 8: 대운 표기·만 나이 안내). */
+  | { kind: "appendix"; title: string; items: BookFeature[]; from: number; total: number; lead?: string; notes?: string[] }
+  /** aiNotice: 책 끝 AI 작성 고지(v5 최종3, v5 책만). */
+  | { kind: "back"; title: string; finalLine: string; aiNotice?: string }) & { id?: string; anchors?: string[] };
 export type BookData = {
   bookId: Book["id"]; title: string; names: string; people: BookPerson[];
   context: { label: string; value: string }[]; pages: BookPage[];

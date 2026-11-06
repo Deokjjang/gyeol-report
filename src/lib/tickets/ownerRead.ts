@@ -1,6 +1,6 @@
 import "server-only";
 import type { AccountPort } from "../account/handler";
-import { accountSession } from "../account/policy";
+import { mayReadOwnedBooks } from "../account/policy";
 import type { TicketStore } from "./service";
 import { isProductPreviewSnapshot, type ProductPreviewSnapshot } from "../report-generation/productPreviewSnapshot";
 import { projectV4Snapshot } from "../interpretation-v4/runtimeProjection";
@@ -13,7 +13,8 @@ export async function readOwnedTicketReport(reportId: string, auth: AccountPort,
     const user = await auth.currentUser(); if (!user) return { kind: "absent" };
     const account = await auth.read(user);
     if (account === null) return { kind: "storageError" };
-    if (account.profile?.id !== user.id || accountSession(user, account).status !== "member") return { kind: "absent" };
+    // 최종판3 1-7: 이미 받은 이용권 책은 예전 동의로도 읽는다(새 이용권 사용은 재동의 뒤).
+    if (account.profile?.id !== user.id || !mayReadOwnedBooks(user, account)) return { kind: "absent" };
     const result = await store.call("read", user.id, { reportId });
     if (!result.ok) return { kind: result.code === "REPORT_NOT_FOUND" ? "absent" : "storageError" };
     if ((await auth.currentUser())?.id !== user.id) return { kind: "absent" };

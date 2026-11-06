@@ -1,5 +1,6 @@
 /**
- * v5 궁합 점수 v2.1(P6c-ui2; v2는 P6c). 결정론·설명 가능. 규칙·출처·보정 내역: docs/v5/compat-score-v2.md.
+ * v5 궁합 점수 v2.2(P6e; v2.1은 P6c-ui2, v2는 P6c). 결정론·설명 가능. 규칙·출처·보정 내역: docs/v5/compat-score-v2.md.
+ * v2.2: MBTI 15점(친구 18)을 대화의 결·마음의 기능·에너지·생활 리듬 세 부분(5점씩, 친구 6점씩)으로 나눠 이유 문장에 보이고, 항목 점수 = 세 부분 합.
  * 총점 = 기본 40 + 항목 7개 합(만점 60, 관계 유형별 배점 ITEM_MAX). MBTI가 한쪽이라도 없으면 MBTI 항목을 빼고
  * 그 몫을 사주 항목 만점에 나눠(itemMax) 여섯 항목 만점 합을 60으로 둔다(MBTI 근거를 만들지 않는다). 화면 항목 합 = 총점 − 40.
  * 항목마다 2~3문장 이유(그 명리 개념의 뜻 + 두 사람에게 적용된 모습)를 엔진 값으로 만든다. 점수 쪽과 브리프가 같은 문장을 쓴다.
@@ -7,7 +8,8 @@
  */
 import type { MbtiType } from "@/data/knowledge-v5/schema";
 import { elementState } from "@/lib/brief/chart";
-import { ELEMENT_KO, josa, REL_PLAIN, tenGodLabel } from "@/lib/brief/labels";
+import { ELEMENT_KO, HALF_HAP_PLAIN, josa, REL_PLAIN, tenGodLabel } from "@/lib/brief/labels";
+import { BASE_POINTS } from "./display";
 import { STEM_ELEMENT, STEM_YIN_YANG } from "@/lib/saju/constants";
 import { detectRelations } from "@/lib/saju/detections/relations";
 import { STEM_HAP_TABLE } from "@/lib/saju/detections/tables";
@@ -15,8 +17,9 @@ import type { RelationKind } from "@/lib/saju/detections/types";
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { EarthlyBranch, FiveElement, HeavenlyStem, SajuCalcResult, TenGod } from "@/lib/saju/types";
 
-export const COMPAT_SCORE_VERSION = "v2.1" as const;
-export const BASE_SCORE = 40;
+export const COMPAT_SCORE_VERSION = "v2.2" as const;
+/** 기본점(표시: compat/display.ts의 기본점 줄 — 점수 쪽 줄 합 = 총점). */
+export const BASE_SCORE = BASE_POINTS;
 export type CompatCategory = "love" | "marriage" | "parentChild" | "coworker" | "managerReport" | "businessPartner" | "friendship";
 export type ItemKey = "element" | "dayMaster" | "dayBranch" | "yearMonth" | "role" | "yinYang" | "mbti";
 export const ITEM_NAMES: Record<ItemKey, string> = {
@@ -62,20 +65,22 @@ export function tiersFor(floor: number): typeof BASE_TIERS {
   return { element: map(BASE_TIERS.element), dayMaster: map(BASE_TIERS.dayMaster), dayBranch: map(BASE_TIERS.dayBranch), yearMonth: map(BASE_TIERS.yearMonth), role: map(BASE_TIERS.role), yinYang: BASE_TIERS.yinYang.map(x => lower(x, floor)), mbti: map(BASE_TIERS.mbti) };
 }
 /**
- * v2.1 세부 점수(P6c-ui2, 문서 §8). 목표: 7유형 × 무작위 1만 쌍에서 중앙값 70±3, 50 미만·90 이상 각 3~6%.
- * 방법: 단계 순서는 그대로, 가장 좋은 단계는 만점, 가장 낮은 단계(충·원진·상극·둘 다 못 채움 등)는 0. 단계 사이를 벌려 항목마다
+ * v2.2 세부 점수(P6e, 문서 §9; v2.1은 §8). 목표: 7유형 × 무작위 1만 쌍에서 중앙값 68~70, 50 미만·90 이상 각 3~6%.
+ * 방법(v2.1과 같음): 단계 순서는 그대로, 가장 좋은 단계는 만점, 가장 낮은 단계(충·원진·상극·둘 다 못 채움 등)는 0. 단계 사이를 벌려 항목마다
  * "맞으면 거의 만점, 아니면 거의 0"에 가깝게 했다(사후에 총점을 늘리거나 줄이지 않는다, 총점 = 40 + 항목 합 그대로).
- * 결정(2026-11-03): 7항목이 서로 거의 독립이라 단계를 모두 다르게 두면 꼬리가 1~3%에 그친다 → 목표 충족을 택해 아래 단계 일부가 0으로 합쳐진다.
- * 값은 tools/p6c-ui2/optimize.ts(0.01 단위, 시드 2개)로 찾고 표본 밖 시드로 확인했다. 바꾸면 COMPAT_SCORE_VERSION을 올린다.
+ * v2.2: MBTI '무난'(기능이 겹치지도 부딪치지도 않음)과 'E/I만 같음'(J/P 다름)이 0이라 이유 문장과 어긋났다 → 둘 다 2/5(친구 2/6).
+ * '대화 결 다름'은 0 그대로(결정: 이유 문장이 '가장 먼저 맞춰 갈 부분'으로 쓴다). 나머지 단계는 분포를 다시 맞추려고 옮겼다.
+ * 대가(문서 §9.4): MBTI 부분 점수가 바닥을 올려 분산이 줄어, 연애·결혼·상사의 50 미만과 동료·부모의 90 이상이 2.3~2.9%로 목표 3%에 조금 못 미친다.
+ * 값은 tools/p6c-ui2/optimize.ts(0.01 단위, 시드 2개, MBTI 범위 BOUNDS)로 찾고 표본 밖 시드로 확인했다. 바꾸면 COMPAT_SCORE_VERSION을 올린다.
  */
 export const TIERS: typeof BASE_TIERS = {
-  element: { "filled+filled": 1, "filled+free": 0.97, "filled+missed": 0.03, "free+free": 0.03, "free+missed": 0.01, "missed+missed": 0 },
-  dayMaster: { hap: 1, generate: 0.97, same: 0.02, control: 0 },
-  dayBranch: { hap: 1, hapMixed: 0.92, none: 0.78, friction: 0.03, clash: 0 },
-  yearMonth: { hap: 1, hapMixed: 0.9, none: 0.56, friction: 0.03, clash: 0 },
-  role: { exact: 1, near: 0.74, generate: 0.65, peer: 0.65, other: 0 },
-  yinYang: [1, 0.45, 0.16, 0],
-  mbti: { talkSame: 1, talkDiff: 0, golden: 1, shared: 0.91, plain: 0, mirror: 0, rhythm: [1, 0.99, 0.09, 0] },
+  element: { "filled+filled": 1, "filled+free": 0.97, "filled+missed": 0.02, "free+free": 0.02, "free+missed": 0.01, "missed+missed": 0 },
+  dayMaster: { hap: 1, generate: 0.97, same: 0.03, control: 0 },
+  dayBranch: { hap: 1, hapMixed: 0.94, none: 0.74, friction: 0.03, clash: 0 },
+  yearMonth: { hap: 1, hapMixed: 0.94, none: 0.56, friction: 0, clash: 0 },
+  role: { exact: 1, near: 0.58, generate: 0.5, peer: 0.5, other: 0 },
+  yinYang: [1, 0.33, 0.21, 0],
+  mbti: { talkSame: 1, talkDiff: 0, golden: 1, shared: 0.92, plain: 0.34, mirror: 0, rhythm: [1, 0.92, 0.37, 0] },
 };
 
 /** 점수 구간(합의 이름). 낮은 구간도 보완법을 반드시 쓰고, 이별을 권하지 않는다. */
@@ -149,7 +154,8 @@ function dayMasterItem(a: CompatSide, b: CompatSide) {
 // ---------- 생활 자리(일지)·자란 환경·사회 자리(연지·월지) ----------
 export type BranchTier = "hap" | "hapMixed" | "none" | "friction" | "clash";
 const HAP: readonly RelationKind[] = ["YUKHAP", "SAMHAP"], CLASH: readonly RelationKind[] = ["CHUNG", "WONJIN"], FRICTION: readonly RelationKind[] = ["HYEONG", "PA", "HAE"];
-const relName = (k: RelationKind) => (k === "SAMHAP" ? "반합(세 글자 중 두 글자가 한 기운으로 모임)" : REL_PLAIN[k]);
+// 최종판3 7: 반합 이름은 궁합 관계 목록·대운·세운 카드와 같은 문구(labels.HALF_HAP_PLAIN — "완성" 아님). 점수 단계는 그대로(반합 = 합 단계).
+const relName = (k: RelationKind) => (k === "SAMHAP" ? HALF_HAP_PLAIN : REL_PLAIN[k]);
 /** 두 지지 한 쌍의 관계 단계. 합이 있으면 합이 앞선다(탐합망충, 형·파가 섞이면 한 단계 아래). 충·원진이 형·파·해보다 세다. 방합 두 글자와 같은 글자(자형 제외)는 관계 없음. */
 export function branchTier(x: EarthlyBranch, y: EarthlyBranch): { tier: BranchTier; kinds: RelationKind[] } {
   const found = new Set(detectRelations([{ position: "year", pillar: { stem: "甲", branch: x } }, { position: "month", pillar: { stem: "甲", branch: y } }]).map(h => h.kind));
@@ -263,20 +269,90 @@ export const FUNCTION_STACK: Record<MbtiType, readonly [string, string, string, 
   ISTJ: ["Si", "Te", "Fi", "Ne"], ISFJ: ["Si", "Fe", "Ti", "Ne"], ESTJ: ["Te", "Si", "Ne", "Fi"], ESFJ: ["Fe", "Si", "Ne", "Ti"],
   ISTP: ["Ti", "Se", "Ni", "Fe"], ISFP: ["Fi", "Se", "Ni", "Te"], ESTP: ["Se", "Ti", "Fe", "Ni"], ESFP: ["Se", "Fi", "Te", "Ni"],
 };
-function mbtiItem(a: CompatSide, b: CompatSide, x: MbtiType, y: MbtiType) {
+/** MBTI 세 부분의 단계(문서 §2-7). 리듬 = (J/P 다름 ? 2 : 0) + (E/I 다름 ? 1 : 0). */
+function mbtiTier(x: MbtiType, y: MbtiType): MbtiTier {
   const fa = FUNCTION_STACK[x], fb = FUNCTION_STACK[y];
   const flipped = (p: string, q: string) => p[0] === q[0] && p[1] !== q[1];
   const golden = flipped(fa[0], fb[0]) && flipped(fa[1], fb[1]);
   const shared = [fa[0], fa[1]].some(f => f === fb[0] || f === fb[1]);
   const mirror = fa[0] === fb[3] || fb[0] === fa[3];
-  const fn = golden ? "golden" : shared ? "shared" : mirror ? "mirror" : "plain";
-  const talk = x[1] === y[1] ? "talkSame" : "talkDiff";
-  const rhythm = (x[3] === y[3] ? 0 : 2) + (x[0] === y[0] ? 0 : 1);
-  const [n, s] = x[1] === "N" ? [a.name, b.name] : [b.name, a.name];
-  const talkLine = x[1] === y[1] ? `둘 다 ${x[1] === "N" ? "N이라 대화가 생각과 가능성" : "S라 대화가 구체적인 사실과 경험"} 쪽으로 잘 흘러요` : `대화의 결이 달라 ${josa(n, "은는")} 큰 그림부터, ${josa(s, "은는")} 구체적인 사실부터 말해요`;
-  const fnLine = golden ? "생각의 축이 같고 방향만 반대라 서로의 빈칸을 채우고" : shared ? "가장 자주 쓰는 마음의 기능이 겹쳐 말이 빨리 통하고" : mirror ? "한 사람이 가장 잘 쓰는 기능이 다른 사람에게는 가장 낯설어 신기하면서도 답답할 수 있고" : "마음의 기능이 겹치지도 부딪치지도 않고";
-  const rhythmLine = x[3] === y[3] ? `${x[3] === "J" ? "계획을 세우는" : "그때그때 맞춰 가는"} 생활 리듬이 같아요` : "한 사람은 계획을, 한 사람은 즉흥을 좋아해 생활 리듬은 맞춰 갈 게 있어요";
-  return { tier: { talk, fn, rhythm } as const, reason: `MBTI는 대화의 결(N/S), 마음이 먼저 쓰는 기능, 에너지와 생활 리듬(E/I·J/P)을 보여 줘요. ${x}인 ${josa(a.name, "과와")} ${y}인 ${josa(b.name, "은는")} ${talkLine}. ${fnLine}, ${rhythmLine}.` };
+  return { talk: x[1] === y[1] ? "talkSame" : "talkDiff", fn: golden ? "golden" : shared ? "shared" : mirror ? "mirror" : "plain", rhythm: (x[3] === y[3] ? 0 : 2) + (x[0] === y[0] ? 0 : 1) };
+}
+/** MBTI 세 부분 이름(v2.2, 문서 §9). 화면 이유 첫 문장에 "대화의 결 0/5 · 마음의 기능 2/5 · 에너지·생활 리듬 2/5"처럼 보인다. */
+export const MBTI_PARTS = { talk: "대화의 결", fn: "마음의 기능", rhythm: "에너지·생활 리듬" } as const;
+export type MbtiPart = keyof typeof MBTI_PARTS;
+/**
+ * MBTI 세 부분 점수(v2.2). 부분 만점 = MBTI 배점 / 3(15 → 5, 친구 18 → 6), 부분 점수 = round(TIERS 비율 × 부분 만점).
+ * MBTI 항목 점수 = 세 부분 점수 합이라, 이유 문장에 보이는 부분 점수를 더하면 언제나 항목 점수가 된다.
+ */
+export function mbtiParts(t: MbtiTier, max: number, T: Tiers = TIERS): { readonly max: number; readonly points: Readonly<Record<MbtiPart, number>> } {
+  const m = max / 3;
+  return { max: m, points: { talk: Math.round(T.mbti[t.talk] * m), fn: Math.round(T.mbti[t.fn] * m), rhythm: Math.round(T.mbti.rhythm[t.rhythm] * m) } };
+}
+/** 부분 점수의 결: 만점 대비 0.7 이상 = 강점, 0.3 미만(0/5·1/5) = 먼저 맞춰 갈 부분, 그 사이 = 무난. 문장의 결은 단계가 아니라 이 점수로 고른다(점수와 말이 어긋나지 않게). */
+type PartLevel = "high" | "mid" | "low";
+const partLevel = (p: number, max: number): PartLevel => (p / max >= 0.7 ? "high" : p / max < 0.3 ? "low" : "mid");
+/** good: 강점·무난(이어지는 꼴 …하고 / 끝나는 꼴 …해요). low: 먼저 맞춰 갈 부분(…하고 / …하니 + 맞춰 갈 거리). */
+type PartText = { readonly kind: "good"; readonly and: string; readonly end: string } | { readonly kind: "low"; readonly and: string; readonly so: string; readonly task: string };
+const good = (and: string, end: string): PartText => ({ kind: "good", and, end });
+const low = (and: string, so: string, task: string): PartText => ({ kind: "low", and, so, task });
+function talkText(x: MbtiType, y: MbtiType, aName: string, bName: string, level: PartLevel): PartText {
+  if (x[1] === y[1]) {
+    const head = x[1] === "N" ? "둘 다 N이라 대화가 생각과 가능성 쪽으로" : "둘 다 S라 대화가 구체적인 사실과 경험 쪽으로";
+    if (level === "low") return low(`${head} 쏠려 이야기가 한쪽으로만 흐르기 쉽고`, `${head} 쏠려 이야기가 한쪽으로만 흐르기 쉬우니`, "이야기의 폭");
+    return level === "high" ? good(`${head} 잘 흐르고`, `${head} 잘 흘러요`) : good(`${head} 흐르는 편이고`, `${head} 흐르는 편이에요`);
+  }
+  const [n, s] = x[1] === "N" ? [aName, bName] : [bName, aName];
+  const head = `대화의 결이 달라 ${josa(n, "은는")} 큰 그림부터, ${josa(s, "은는")} 구체적인 사실부터 말하`;
+  if (level === "low") return low(`${head}고`, `${head}니`, "말의 순서");
+  const fill = `대화의 결은 달라도 ${josa(n, "은는")} 큰 그림을, ${josa(s, "은는")} 구체적인 사실을 보태`;
+  return good(`${fill} 주고`, `${fill} 줘요`);
+}
+function fnText(fn: MbtiTier["fn"], level: PartLevel): PartText {
+  if (level === "low") return fn === "mirror"
+    ? low("한 사람이 가장 잘 쓰는 마음의 기능이 다른 사람에게는 가장 낯설어 답답할 때가 있고", "한 사람이 가장 잘 쓰는 마음의 기능이 다른 사람에게는 가장 낯설어 답답할 때가 있으니", "서로의 생각 방식")
+    : low("마음의 기능이 서로 잘 맞물리지 않고", "마음의 기능이 서로 잘 맞물리지 않으니", "서로의 생각 방식");
+  const [and, end] = {
+    golden: ["주로 쓰는 마음의 기능이 같은 축에서 방향만 반대라 서로의 빈칸을 채워 주고", "주로 쓰는 마음의 기능이 같은 축에서 방향만 반대라 서로의 빈칸을 채워 줘요"],
+    shared: ["가장 자주 쓰는 마음의 기능이 겹쳐 말이 빨리 통하고", "가장 자주 쓰는 마음의 기능이 겹쳐 말이 빨리 통해요"],
+    plain: ["마음의 기능이 겹치지도 부딪치지도 않아 큰 걸림 없이 어울리고", "마음의 기능이 겹치지도 부딪치지도 않아 큰 걸림 없이 어울려요"],
+    mirror: ["한 사람이 가장 잘 쓰는 마음의 기능이 다른 사람에게는 가장 낯설어 서로 배울 게 많고", "한 사람이 가장 잘 쓰는 마음의 기능이 다른 사람에게는 가장 낯설어 서로 배울 게 많아요"],
+  }[fn];
+  return good(and, end);
+}
+function rhythmText(x: MbtiType, rhythm: number, level: PartLevel): PartText {
+  const plan = x[3] === "J" ? "계획을 세우는" : "그때그때 맞춰 가는";
+  if (level === "low") return [
+    low(`에너지를 쓰는 방향도 ${plan} 생활 리듬도 같아 같은 데서 함께 지치기 쉽고`, `에너지를 쓰는 방향도 ${plan} 생활 리듬도 같아 같은 데서 함께 지치기 쉬우니`, "쉬는 때를 나누는 일"),
+    low(`${plan} 생활 리듬은 같지만 에너지를 쓰는 방향이 달라 쉬는 방식이 엇갈리고`, `${plan} 생활 리듬은 같지만 에너지를 쓰는 방향이 달라 쉬는 방식이 엇갈리니`, "쉬는 방식"),
+    low(`둘 다 ${x[0]}라 에너지를 쓰는 방향은 같지만 한 사람은 계획을, 한 사람은 즉흥을 좋아하고`, `둘 다 ${x[0]}라 에너지를 쓰는 방향은 같지만 한 사람은 계획을, 한 사람은 즉흥을 좋아하니`, "일정을 짜는 방식"),
+    low("에너지를 쓰는 방향도 계획과 즉흥의 생활 리듬도 다르고", "에너지를 쓰는 방향도 계획과 즉흥의 생활 리듬도 다르니", "하루의 박자"),
+  ][rhythm];
+  return [
+    good(`에너지를 쓰는 방향도 ${plan} 생활 리듬도 같아 함께 움직이기 편하고`, `에너지를 쓰는 방향도 ${plan} 생활 리듬도 같아 함께 움직이기 편해요`),
+    good(`에너지를 쓰는 방향은 달라도 ${plan} 생활 리듬이 같아 하루의 박자가 잘 맞고`, `에너지를 쓰는 방향은 달라도 ${plan} 생활 리듬이 같아 하루의 박자가 잘 맞아요`),
+    good(`둘 다 ${x[0]}라 에너지를 쓰는 방향이 같아 계획과 즉흥의 차이만 맞추면 함께 지내기 편하고`, `둘 다 ${x[0]}라 에너지를 쓰는 방향이 같아 계획과 즉흥의 차이만 맞추면 함께 지내기 편해요`),
+    good("에너지를 쓰는 방향도 생활 리듬도 달라 서로에게 없는 박자를 보태 주고", "에너지를 쓰는 방향도 생활 리듬도 달라 서로에게 없는 박자를 보태 줘요"),
+  ][rhythm];
+}
+/**
+ * MBTI 이유(v2.2): ① 개념 + 부분 점수, ② 강점·무난한 부분(점수 높은 순), ③ 0/5·1/5 부분 = "가장 먼저 맞춰 갈 부분". 2~3문장.
+ * 문장의 결은 부분 점수로 고른다: 0점 부분을 강점처럼 쓰지 않고, 높은 부분을 맞춰 갈 거리로 쓰지 않는다.
+ */
+function mbtiReason(a: CompatSide, b: CompatSide, x: MbtiType, y: MbtiType, t: MbtiTier, parts: ReturnType<typeof mbtiParts>): string {
+  const order: readonly MbtiPart[] = ["talk", "fn", "rhythm"], p = parts.points;
+  const level = (k: MbtiPart) => partLevel(p[k], parts.max);
+  const text: Record<MbtiPart, PartText> = { talk: talkText(x, y, a.name, b.name, level("talk")), fn: fnText(t.fn, level("fn")), rhythm: rhythmText(x, t.rhythm, level("rhythm")) };
+  const goods = order.filter(k => text[k].kind === "good").sort((k, l) => p[l] - p[k]).map(k => text[k] as Extract<PartText, { kind: "good" }>);
+  const lows = order.filter(k => text[k].kind === "low").map(k => text[k] as Extract<PartText, { kind: "low" }>);
+  const lead = `${x}인 ${josa(a.name, "과와")} ${y}인 ${josa(b.name, "은는")}`;
+  const tasks = lows.map(l => l.task), taskLine = tasks.length === 1 ? tasks[0] : `${josa(tasks.slice(0, -1).join(", "), "과와")} ${tasks.at(-1)}`;
+  const breakdown = order.map(k => `${MBTI_PARTS[k]} ${p[k]}/${parts.max}`).join(" · ");
+  return [
+    `MBTI는 대화의 결(N/S), 마음이 먼저 쓰는 기능, 에너지와 생활 리듬(E/I·J/P)을 나눠 봐요(${breakdown}).`,
+    goods.length ? `${lead} ${goods.map((g, i) => (i < goods.length - 1 ? g.and : g.end)).join(", ")}.` : "",
+    lows.length ? `${goods.length ? "다만" : lead} ${lows.map((l, i) => (i < lows.length - 1 ? l.and : l.so)).join(", ")}, ${josa(taskLine, "이가")} ${tasks.length === 1 ? "가장 " : ""}먼저 맞춰 갈 부분이에요.` : "",
+  ].filter(Boolean).join(" ");
 }
 
 // ---------- 방향 지표(브리프·결정론 작가용) ----------
@@ -294,9 +370,10 @@ export type RoleTier = keyof Tiers["role"];
 export type CompatTiers = {
   readonly element: keyof Tiers["element"]; readonly dayMaster: keyof Tiers["dayMaster"]; readonly dayBranch: BranchTier;
   /** [연지, 월지] */ readonly yearMonth: readonly [BranchTier, BranchTier]; readonly role: RoleTier; readonly yinYang: number;
-  readonly mbti: { readonly talk: "talkSame" | "talkDiff"; readonly fn: "golden" | "shared" | "plain" | "mirror"; readonly rhythm: number } | null;
+  readonly mbti: MbtiTier | null;
 };
-/** 단계 → 만점 대비 비율. 연·월지는 YEAR_SHARE로 섞고, MBTI는 세 부분 평균. */
+export type MbtiTier = { readonly talk: "talkSame" | "talkDiff"; readonly fn: "golden" | "shared" | "plain" | "mirror"; readonly rhythm: number };
+/** 단계 → 만점 대비 비율. 연·월지는 YEAR_SHARE로 섞고, MBTI는 세 부분 평균(점수는 itemPoints: 세 부분 점수 합). */
 export function itemFractions(category: CompatCategory, t: CompatTiers, T: Tiers = TIERS): Partial<Record<ItemKey, number>> {
   const w = YEAR_SHARE[category];
   return { element: T.element[t.element], dayMaster: T.dayMaster[t.dayMaster], dayBranch: T.dayBranch[t.dayBranch], yearMonth: w * T.yearMonth[t.yearMonth[0]] + (1 - w) * T.yearMonth[t.yearMonth[1]],
@@ -314,14 +391,26 @@ export function itemMax(category: CompatCategory, withMbti: boolean): Partial<Re
   return Object.fromEntries(keys.map((k, i) => [k, out[i]]));
 }
 
+/** 항목 점수(화면 막대). 사주 항목 = round(비율 × 만점), MBTI = 세 부분 점수 합(mbtiParts). 총점 = 40 + 합. 보정 도구도 이 함수로 잰다. */
+export function itemPoints(category: CompatCategory, t: CompatTiers, T: Tiers = TIERS): Partial<Record<ItemKey, number>> {
+  const f = itemFractions(category, t, T), max = itemMax(category, !!t.mbti);
+  return Object.fromEntries((Object.keys(max) as ItemKey[]).map(k => {
+    if (k !== "mbti" || !t.mbti) return [k, Math.round(f[k]! * max[k]!)];
+    const p = mbtiParts(t.mbti, max.mbti!, T).points;
+    return [k, p.talk + p.fn + p.rhythm];
+  }));
+}
+
 export function computeCompatScore(category: CompatCategory, a: CompatSide, b: CompatSide): CompatScore {
   const el = elementItem(a, b), dm = dayMasterItem(a, b), db = dayBranchItem(a, b), ym = yearMonthItem(a, b), ro = roleItem(a, b, category), yy = yinYangItem(a, b);
-  const mb = a.mbti && b.mbti ? mbtiItem(a, b, a.mbti, b.mbti) : null;
-  const tiers: CompatTiers = { element: el.tier, dayMaster: dm.tier, dayBranch: db.tier, yearMonth: ym.tier, role: ro.tier, yinYang: yy.tier, mbti: mb?.tier ?? null };
-  const reasons: Partial<Record<ItemKey, string>> = { element: el.reason, dayMaster: dm.reason, dayBranch: db.reason, yearMonth: ym.reason, role: ro.reason, yinYang: yy.reason, ...(mb ? { mbti: mb.reason } : {}) };
-  const frac = itemFractions(category, tiers), max = itemMax(category, !!mb);
-  const items = (Object.keys(max) as ItemKey[]).map(key => ({ key, name: ITEM_NAMES[key], points: Math.round(frac[key]! * max[key]!), max: max[key]!, level: levelOf(frac[key]!), reason: reasons[key]! }));
-  const total = BASE_SCORE + items.reduce((n, i) => n + i.points, 0), scaled = !mb;
+  const mt = a.mbti && b.mbti ? mbtiTier(a.mbti, b.mbti) : null;
+  const tiers: CompatTiers = { element: el.tier, dayMaster: dm.tier, dayBranch: db.tier, yearMonth: ym.tier, role: ro.tier, yinYang: yy.tier, mbti: mt };
+  const frac = itemFractions(category, tiers), max = itemMax(category, !!mt), pts = itemPoints(category, tiers);
+  const reasons: Partial<Record<ItemKey, string>> = { element: el.reason, dayMaster: dm.reason, dayBranch: db.reason, yearMonth: ym.reason, role: ro.reason, yinYang: yy.reason,
+    ...(mt ? { mbti: mbtiReason(a, b, a.mbti!, b.mbti!, mt, mbtiParts(mt, max.mbti!)) } : {}) };
+  // 수준(좋음·보통·조율): MBTI는 화면 점수(세 부분 합) 기준, 사주 항목은 비율 기준.
+  const items = (Object.keys(max) as ItemKey[]).map(key => ({ key, name: ITEM_NAMES[key], points: pts[key]!, max: max[key]!, level: levelOf(key === "mbti" ? pts[key]! / max[key]! : frac[key]!), reason: reasons[key]! }));
+  const total = BASE_SCORE + items.reduce((n, i) => n + i.points, 0), scaled = !mt;
   const notice = scaled ? `두 사람의 명리를 정해진 규칙으로 계산했어요. MBTI를 다 알지 못해 MBTI 항목은 빼고, 그 ${ITEM_MAX[category].mbti}점을 사주 항목에 나눠 기본 40점에 여섯 항목(60점 만점)의 점수를 더했어요.`
     : "두 사람의 명리와 MBTI를 정해진 규칙으로 계산했어요. 기본 40점에 일곱 항목(60점 만점)의 점수를 더했어요.";
   return { version: COMPAT_SCORE_VERSION, category, total, band: bandOf(total), items, scaled, notice, direction: { aToB: direction(a, b, el.ab), bToA: direction(b, a, el.ba) } };
@@ -330,5 +419,5 @@ export function computeCompatScore(category: CompatCategory, a: CompatSide, b: C
 /** 보정 도구용: 점수 없이 단계만. */
 export function compatTiers(category: CompatCategory, a: CompatSide, b: CompatSide): CompatTiers {
   return { element: elementItem(a, b).tier, dayMaster: dayMasterItem(a, b).tier, dayBranch: dayBranchItem(a, b).tier, yearMonth: yearMonthItem(a, b).tier,
-    role: roleItem(a, b, category).tier, yinYang: yinYangItem(a, b).tier, mbti: a.mbti && b.mbti ? mbtiItem(a, b, a.mbti, b.mbti).tier : null };
+    role: roleItem(a, b, category).tier, yinYang: yinYangItem(a, b).tier, mbti: a.mbti && b.mbti ? mbtiTier(a.mbti, b.mbti) : null };
 }

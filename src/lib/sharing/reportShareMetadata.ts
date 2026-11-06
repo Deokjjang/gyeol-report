@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const SHARE_ORIGIN = "https://gyeolreport.com";
-export const SHARE_IMAGE = `${SHARE_ORIGIN}/brand/gyeol-report-og.png`;
+// Versioned file name: link-preview caches (iOS Safari, Kakao, iMessage) key on the URL, so a new image needs a new name.
+export const SHARE_IMAGE = `${SHARE_ORIGIN}/brand/gyeol-report-og-20261030.png`;
+export const SHARE_IMAGE_WIDTH = 1200, SHARE_IMAGE_HEIGHT = 630;
 export const SHARE_TOKEN_PATTERN = /^gr_[A-Za-z0-9_-]{32}$/;
 export const BRAND_DESCRIPTION = "타고난 성격과 삶의 흐름을 읽고, 나만의 결을 발견해 더 나은 선택과 미래를 설계합니다.";
 
@@ -55,7 +57,7 @@ export function reportShareMetadata(data?: ReportShareData | null): Metadata {
     openGraph: {
       title, description, ...(data ? { url: data.url } : {}), type: "website",
       siteName: "결리포트", locale: "ko_KR",
-      images: [{ url: SHARE_IMAGE, width: 1536, height: 1024, alt: "GYEOL REPORT" }],
+      images: [{ url: SHARE_IMAGE, width: SHARE_IMAGE_WIDTH, height: SHARE_IMAGE_HEIGHT, alt: "GYEOL REPORT" }],
     },
     twitter: { card: "summary_large_image", title, description, images: [SHARE_IMAGE] },
   };

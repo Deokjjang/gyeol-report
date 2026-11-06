@@ -106,8 +106,8 @@ const CAREER_MONEY_STUDY_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: REPORT_PRICE_LABEL_KO,
-  priceKo: REPORT_PRICE_LABEL_KO,
+  listPriceKo: getReportProduct(CAREER_MONEY_STUDY_PRODUCT_KEY)!.priceLabelKo!,
+  priceKo: getReportProduct(CAREER_MONEY_STUDY_PRODUCT_KEY)!.priceLabelKo!,
 } as const satisfies SelectedReportProduct;
 
 const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
@@ -121,8 +121,8 @@ const LOVE_MARRIAGE_CHILD_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: REPORT_PRICE_LABEL_KO,
-  priceKo: REPORT_PRICE_LABEL_KO,
+  listPriceKo: getReportProduct(LOVE_MARRIAGE_CHILD_PRODUCT_KEY)!.priceLabelKo!,
+  priceKo: getReportProduct(LOVE_MARRIAGE_CHILD_PRODUCT_KEY)!.priceLabelKo!,
 } as const satisfies SelectedReportProduct;
 
 const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
@@ -137,8 +137,8 @@ const COMPATIBILITY_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: REPORT_PRICE_LABEL_KO,
-  priceKo: REPORT_PRICE_LABEL_KO,
+  listPriceKo: getReportProduct(COMPATIBILITY_PRODUCT_KEY)!.priceLabelKo!,
+  priceKo: getReportProduct(COMPATIBILITY_PRODUCT_KEY)!.priceLabelKo!,
 } as const satisfies SelectedReportProduct;
 
 const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
@@ -153,8 +153,8 @@ const MAJOR_FORTUNE_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: REPORT_PRICE_LABEL_KO,
-  priceKo: REPORT_PRICE_LABEL_KO,
+  listPriceKo: getReportProduct(MAJOR_FORTUNE_PRODUCT_KEY)!.priceLabelKo!,
+  priceKo: getReportProduct(MAJOR_FORTUNE_PRODUCT_KEY)!.priceLabelKo!,
 } as const satisfies SelectedReportProduct;
 
 const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
@@ -169,8 +169,8 @@ const ANNUAL_FORTUNE_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: REPORT_PRICE_LABEL_KO,
-  priceKo: REPORT_PRICE_LABEL_KO,
+  listPriceKo: getReportProduct(ANNUAL_FORTUNE_PRODUCT_KEY)!.priceLabelKo!,
+  priceKo: getReportProduct(ANNUAL_FORTUNE_PRODUCT_KEY)!.priceLabelKo!,
 } as const satisfies SelectedReportProduct;
 
 const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
@@ -185,8 +185,8 @@ const SAJU_MBTI_FULL_SELECTED_REPORT_PRODUCT = {
   deliveryTypeKo: "온라인 리포트",
   statusLabelKo: "구매 가능",
   isPurchasable: true,
-  listPriceKo: REPORT_PRICE_LABEL_KO,
-  priceKo: REPORT_PRICE_LABEL_KO,
+  listPriceKo: getReportProduct(SAJU_MBTI_FULL_PRODUCT_KEY)!.priceLabelKo!,
+  priceKo: getReportProduct(SAJU_MBTI_FULL_PRODUCT_KEY)!.priceLabelKo!,
 } as const satisfies SelectedReportProduct;
 
 const mbtiTypes = MBTI_TYPES.filter((type) => type !== "");

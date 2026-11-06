@@ -69,7 +69,9 @@ function traitSection(ctx: Ctx, m: Extract<Material, { kind: "trait" }>, chapter
 function mbtiSection(ctx: Ctx, m: Extract<Material, { kind: "mbti" }>, chapterId: string): BookSection | null {
   const p = ctx.brief.mbti; if (!p) return null;
   const heading = pick(ctx, `${chapterId}:mbti:${m.domain}`, [`${p.type}다운 장면`, `${DOMAIN_KO[m.domain] ?? ""}의 ${p.easyName}`.trim(), `${p.easyName}의 습관`]);
-  return { heading, paragraphs: [join(`${p.type}(${p.easyName})인 당신은 ${DOMAIN_KO[m.domain] ?? "이런 순간"} 티가 납니다`, m.scene, p.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
+  // 최종판 1-15: 맞는 씨앗이 없어 직업 소품으로 받은 장면(seedId prop)은 명사구라 문장으로 잇는다.
+  const scene = m.seedId === "prop" ? `${m.scene} 같은 자리에서도 그 결이 보입니다` : m.scene;
+  return { heading, paragraphs: [join(`${p.type}(${p.easyName})인 당신은 ${DOMAIN_KO[m.domain] ?? "이런 순간"} 티가 납니다`, scene, p.functions[0]?.replace(/^\w+\([^)]*\):\s*/, ""))] };
 }
 
 function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | null {
@@ -82,7 +84,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
   if (ref === "chart.yinYang") return { heading: c.yinYang.yin === c.yinYang.yang ? "음과 양의 균형" : "음과 양의 비율", paragraphs: [join(`음의 글자 ${c.yinYang.yin}개, 양의 글자 ${c.yinYang.yang}개입니다`, c.yinYang.reading)] };
   if (ref === "chart.climate") return { heading: `${c.climate.season}에 태어난 사람`, paragraphs: [join(`당신은 ${c.climate.season}에 태어났습니다`, c.climate.reading)] };
   if (ref === "chart.thisYear") return { heading: `${c.thisYear.year}년의 기운`, paragraphs: [join(c.thisYear.effect, `올해 들어오는 힘은 ${noHan(c.thisYear.tenGod)} 쪽이에요`)] };
-  if (ref === "chart.currentDayun" && c.currentDayun) return { heading: "지금 지나는 큰 흐름", paragraphs: [join(`지금은 ${c.currentDayun.ages}에 걸친 ${noHan(c.currentDayun.tenGod)}의 큰 흐름(대운) 위에 있습니다`, c.currentDayun.reading, c.currentDayun.next && `${c.currentDayun.next.startYear}년부터는 ${noHan(c.currentDayun.next.tenGod)} 쪽 흐름으로 넘어갑니다`)] };
+  if (ref === "chart.currentDayun" && c.currentDayun) return { heading: "지금 지나는 큰 흐름", paragraphs: [join(`지금은 ${c.currentDayun.period ?? c.currentDayun.ages} 이어지는 ${noHan(c.currentDayun.tenGod)}의 큰 흐름(대운) 위에 있습니다`, c.currentDayun.reading, c.currentDayun.next && `${c.currentDayun.next.start ?? `${c.currentDayun.next.startYear}년부터`}는 ${noHan(c.currentDayun.next.tenGod)} 쪽 흐름으로 넘어갑니다`)] };
   if (ref === "chart.strength") return { heading: "타고난 힘의 세기", paragraphs: [join(`타고난 힘의 세기는 ${c.strength.label} 쪽입니다`, `그래서 기댈 곳과 쓸 곳을 함께 보는 게 중요해요`)] };
   if (ref === "fortunes" && b.fortunes.length) return { heading: "타고난 좋은 패", paragraphs: b.fortunes.slice(0, 2).map(f => join(`당신에게는 ${josa(noHan(f.name), "이가")} 있습니다`, f.meaning, f.direct)) };
   // 앞 장 종합(recap, P6c I): 그 장이 쓴 특성마다 이번 달 행동 한 줄. 뜻·장면은 다시 쓰지 않는다(결정론 마지막 장이 비었다).
@@ -106,7 +108,7 @@ function refSection(ctx: Ctx, ref: string, chapterId: string): BookSection | nul
     return { heading: "기운과 성격이 반대로 당기는 곳", paragraphs: [join(t.fusion.why, t.fusion.scene)] };
   }
   if (ref === "unused" && b.unused.length) return { heading: "아직 쓰지 못한 기운", paragraphs: b.unused.slice(0, 2).map(u => join(`당신에게 아직 덜 쓴 기운은 ${noHan(u.name)}입니다`, u.forYou, u.actions[0], u.places.length ? `${u.places.slice(0, 3).join(", ")} 같은 곳이 이 기운을 채워 줍니다` : undefined)) };
-  if (ref === "timeline.cycles" && b.timeline) return { heading: "큰 흐름의 지도", paragraphs: [join(...b.timeline.cycles.map(x => `${x.years}는 ${noHan(x.tenGod)}의 흐름${x.current ? "이고, 지금 여기에 있습니다" : "입니다"}`))] };
+  if (ref === "timeline.cycles" && b.timeline) return { heading: "큰 흐름의 지도", paragraphs: [join(...b.timeline.cycles.map(x => `${x.period ?? x.years}는 ${noHan(x.tenGod)}의 흐름${x.current ? "이고, 지금 여기에 있습니다" : "입니다"}`))] };
   if (ref === "timeline.keyEntries" && b.timeline) {
     const keys = b.timeline.keyEntries.map(k => b.timeline!.entries.find(e => e.key === k)).filter((e): e is NonNullable<typeof e> => Boolean(e));
     return { heading: "눈여겨볼 때", paragraphs: [join(...keys.map(e => `${noHan(e.label)}에는 ${e.keywords.join("·")}이 앞에 섭니다. ${e.action.text}`))] };

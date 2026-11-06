@@ -169,7 +169,6 @@
         "attentionSeeking": 0.8,
         "intimacyPace": 0.8,
         "noveltySeeking": 0.7,
-        "caretaking": 0.6,
         "empathyResponse": 0.5,
         "directness": -0.3,
         "conflictApproach": -0.5,

@@ -8,16 +8,18 @@ import { composeBookNavigation } from "@/app/dev/book-preview/bookNavigation";
 import { BOOKS, readerTitle } from "@/lib/book/product";
 import { koreanDate, kstDay } from "@/lib/book/readerCopy";
 import { termPattern } from "@/lib/book/terms";
+import { AI_WRITTEN_NOTICE_KO } from "@/lib/legal/aiNotice";
 import type { Brief, Material, TimelineEntry } from "@/lib/brief/schema";
 import type { ReportInputPayload } from "@/lib/report-generation/reportInputTypes";
 import { productSlugByType, type ProductPreviewSnapshot } from "@/lib/report-generation/productPreviewSnapshot";
 import type { BookSection, ChapterSource, SectionCard } from "./format";
 import type { WriterChapter } from "./prompt";
-import type { CallLog, WriterFallback } from "./runner";
+import type { CallLog, RawEntry, WriterFallback } from "./runner";
 import type { FinalChapter, SafetyMetrics, SafetyReport } from "./safety";
 import { splitSentences } from "./safety/patterns";
 import { manAge } from "@/lib/brief/chart";
-import { REL_PLAIN, relationPlain } from "@/lib/brief/labels";
+import { DAYUN_AGE_NOTE, halfHapLine, REL_PLAIN, relationPlain } from "@/lib/brief/labels";
+import { baseRowOf } from "@/lib/compat/display";
 import { getMonthlyPillars } from "@/lib/saju/detections";
 import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
 
@@ -25,12 +27,14 @@ export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
 
 /** 판 정보(P6b A-4, p6b-fields.md 1). 원고 체계가 바뀌면 판 번호·개정일을 올린다(책마다 같은 값). */
-export const BOOK_EDITION = { number: 5, label: "제5판", revisedAt: "2026-11-03" } as const;
+/** 최종판(2026-11-04) 제6판: 원고 체계 개정(작가 1회·원문 보관, 지침 노출·고아 문장·사실 대조·한자 렌더·면책 1회·기준일은 판 표기에만). 이전 Book은 저장된 판 그대로. */
+export const BOOK_EDITION = { number: 6, label: "제6판", revisedAt: "2026-11-04" } as const;
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
 export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number };
-export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean };
+/** label(최종판3 8): 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 8)"(labels.dayunLabel). 최종판3 이전 Book에는 없다. */
+export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean; readonly label?: string };
 export type V5Chapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly keys?: readonly string[] };
 export type V5BookDraft = {
   readonly version: typeof V5_DRAFT_VERSION; readonly productVersion: "v5"; readonly productType: Brief["product"];
@@ -46,8 +50,12 @@ export type V5BookDraft = {
   readonly appendix?: Brief["appendix"];
   /** 표지 한 줄(P6c-ui2 c 화면, P6c-content G 작가): 작가가 쓴 이 책의 상징 한 줄(16~26자). 검사에 걸리면 핵심 이미지. 있으면 핵심 이미지보다 먼저 쓴다. */
   readonly coverLine?: string;
+  /** 기준일(최종판 1-13): 책을 쓴 발행일(KST). 본문 첫 문장 대신 표지·마지막 쪽 판 표기에만 보인다. 제6판 이전 Book에는 없다. */
+  readonly baseDate?: string;
   /** 용어 뜻(P6c-ui2 g): 본문에 나온 십성·신살·귀인·십이운성과 지식 DB 뜻 한 줄. P6c-ui2 이전 Book에는 없다(용어 표시 없음). */
   readonly glossary?: Brief["glossary"];
+  /** 부록 대운 줄(최종판3 8): 사람마다(부록 순서) 기준일의 대운·다음 대운 표기(labels.dayunLabel)와 만 나이 안내 한 줄. 최종판3 이전 Book에는 없다. */
+  readonly dayun?: readonly { readonly name: string; readonly lines: readonly string[] }[];
 };
 export type ChapterMeta = { readonly n: number; readonly id: string; readonly title: string; readonly source: ChapterSource; readonly reason?: string; readonly chars: number; readonly evidence: readonly string[] };
 export type WriterMeta = {
@@ -67,16 +75,26 @@ export type WriterMeta = {
   readonly priorBooks?: number;
   /** 고객 원장(P6d F): 이 책이 쓴 각도·MBTI 씨앗·근거 항목. newShare: 앞 책들과 겹치지 않는 근거 항목의 몫. */
   readonly ledger?: BookLedger & { readonly newShare?: number };
+  /** 작가·수리·재작성·표지 수리 원문(최종판 0-2, 입력 해시별). 같은 입력이면 다시 부르지 않고 이 원문을 쓴다(교체 레인·book:replay). 이전 Book에는 없다. */
+  readonly raw?: readonly RawEntry[];
+  /** 최종판3 4: 검수·수리 기록(지적·버린 지적·수리 전후·지운 문장·남긴 문장). raw와 함께 재생 가능. */
+  readonly review?: Readonly<Record<string, unknown>>;
+  /** 최종판3 2i: 시험 생성 책(고객 원장에서 뺀다). */
+  readonly test?: boolean;
+  /** 최종판3 2i: 궁합 성격표 줄(같은 사람 다음 책의 원장). */
+  readonly profiles?: readonly string[];
 };
 type V5ScoreV51 = { readonly total: number; readonly version: string; readonly band: string; readonly verdict: string; readonly components: readonly { name: string; level: "좋음" | "보통" | "조율"; line: string }[] };
-type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
+type V5ScoreV2 = { readonly total: number; readonly version: "v2" | "v2.1" | "v2.2"; readonly band: string; readonly verdict: string; readonly notice: string; readonly components: readonly { name: string; points: number; max: number; reason: string }[] };
 export type V5Evidence = {
   readonly version: typeof V5_EVIDENCE_VERSION; readonly productType: Brief["product"]; readonly generatedAt: string;
   readonly input: ReportInputPayload; readonly people: readonly BookPerson[]; readonly names: string;
   readonly context: readonly { readonly label: string; readonly value: string }[];
   readonly pair?: { readonly category: string; readonly characters: readonly { name: string; core: string; strength: string; relationship: string }[]; readonly relations: readonly string[];
-    /** 관계 쉬운 문장(P6b D 궁합, p6b-fields.md 4). */
-    readonly relationsPlain?: readonly string[]; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[];
+    /** 관계 쉬운 문장(P6b D 궁합, p6b-fields.md 4). 최종판3 7부터 엔진이 찾은 관계 전체(영향 큰 순) — 화면은 부록에 전부. */
+    readonly relationsPlain?: readonly string[];
+    /** 최종판3 7: 첫 쪽 묶음 요약 한 줄과 relationsPlain 줄마다의 관계 이름. 있으면 첫 쪽은 요약 + 앞 3줄, 전체는 부록. 이전 Book에는 없다(첫 쪽에 전체 목록). */
+    readonly relationsSummary?: { readonly line: string; readonly names: readonly string[] }; readonly directions: readonly { title: string; effect: string; term?: string; chapterN: number }[];
     /** v5 궁합 점수. 없는 v5 Book(P3)은 점수 쪽 없이 연다. v5-1(P4): 구성요소 수준(좋음·보통·조율)을 3칸으로. v2(P6c): 항목 점수/만점·이유·계산 안내. */
     readonly score?: V5ScoreV51 | V5ScoreV2 };
   readonly meta: WriterMeta;
@@ -111,15 +129,17 @@ export function chapterEvidence(brief: Brief, ch: WriterChapter): string[] {
   return names.slice(0, 5);
 }
 
-export function payloadToBriefInput(payload: ReportInputPayload, baseDate: string) {
+/** baseAt: 기준 시각(발행 시각, ISO) — 지금 대운을 교운 시각과 비교해 고른다(최종 A-5). */
+export function payloadToBriefInput(payload: ReportInputPayload, baseDate: string, baseAt?: string) {
+  const at = baseAt ? { baseAt } : {};
   const person = (p: Extract<ReportInputPayload, { person: unknown }>["person"], ctx?: Extract<ReportInputPayload, { userContext: unknown }>["userContext"]) => ({
     name: p.name, gender: (p.gender === "MALE" || p.gender === "FEMALE" ? p.gender : "") as "MALE" | "FEMALE" | "", birthDate: p.birthDate, birthTime: p.birthTime, birthTimeUnknown: p.birthTimeUnknown,
     approximateBirthTimeSlot: p.approximateBirthTimeSlot, mbtiType: (p.mbtiType || "") as never,
     ...(ctx ? { context: { relationshipStatus: ctx.relationshipStatus, jobStatus: ctx.jobStatus, detailJob: ctx.detailJob } } : {}),
   });
-  if (payload.productKey === "saju_mbti_compatibility") return { product: payload.productKey, person: person(payload.personA), partner: person(payload.personB), relationshipType: payload.relationshipType, baseDate };
+  if (payload.productKey === "saju_mbti_compatibility") return { product: payload.productKey, person: person(payload.personA), partner: person(payload.personB), relationshipType: payload.relationshipType, baseDate, ...at };
   const year = "selectedYear" in payload.productOptions ? Number(payload.productOptions.selectedYear) : NaN;
-  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...(Number.isFinite(year) ? { selectedYear: year } : {}) };
+  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...at, ...(Number.isFinite(year) ? { selectedYear: year } : {}) };
 }
 
 const firstSentence = (sections: readonly BookSection[]) => splitSentences(sections.flatMap(s => s.paragraphs)[0] ?? "")[0] ?? "";
@@ -161,14 +181,25 @@ function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>
     caution, ...(card.kind === "year" ? { age: manAge(Number(card.key), birthYear) } : {}) };
 }
 
+/** 부록 대운 줄(최종판3 8): 사람마다 기준일의 대운과 다음 대운의 공통 표기(브리프 currentDayun.label = labels.dayunLabel) 그대로와 만 나이 안내.
+ * "지금" 같은 기준일 말은 붙이지 않는다(책은 발행일 기준이라 나중에 읽으면 어긋난다). 대운을 못 정한 사람은 뺀다. */
+function dayunOf(brief: Brief): { dayun?: V5BookDraft["dayun"] } {
+  const people = [{ name: brief.person.name, cd: brief.chart.currentDayun }, ...(brief.partner ? [{ name: brief.partner.person.name, cd: brief.partner.chart.currentDayun }] : [])];
+  const out = people.map(p => ({ name: p.name, lines: [p.cd?.label, p.cd?.next?.label].filter((x): x is string => Boolean(x)) }));
+  return out.some(p => p.lines.length) ? { dayun: out.map(p => (p.lines.length ? { ...p, lines: [...p.lines, DAYUN_AGE_NOTE] } : p)) } : {};
+}
+
 export function assembleV5Book(a: {
   brief: Brief; plan: readonly WriterChapter[]; finals: readonly FinalChapter[]; report: SafetyReport; payload: ReportInputPayload; generatedAt: string;
   people: readonly BookPerson[]; writer: WriterMeta["writer"]; fallback?: WriterFallback | null; calls: readonly CallLog[]; tokens: WriterMeta["tokens"]; costUsd: number; durationMs: number;
   briefHash: string; knowledgeVersion: string; promptVersion: string; recovered: boolean; priorBooks?: number;
   /** 표지 한 줄(P6c G, 검사 통과분 또는 핵심 이미지). badCards: 검사에 걸려 결정론 값으로 바꿀 카드 필드("장.소제목.필드"). */
   cover?: string; badCards?: ReadonlySet<string>;
+  /** 핵심 이미지 한 줄(최종판 1-7): 작가가 [표지]에서 지은 줄. 종합 1장 첫 소제목과 표지가 이 줄을 함께 쓴다. 없으면 엔진 핵심 이미지. */
+  image?: string; raw?: readonly RawEntry[];
   /** 같은 고객의 앞 책 원장(P6d F·G): 근거 항목 새 몫을 잰다. */
   priorLedger?: BookLedger;
+  review?: Readonly<Record<string, unknown>>; test?: boolean;
 }): { draft: V5BookDraft; evidence: V5Evidence } {
   const { brief } = a;
   const book = BOOKS.find(b => b.productKey === brief.product)!;
@@ -176,28 +207,30 @@ export function assembleV5Book(a: {
   // 1장 첫 소제목은 핵심 이미지 그대로(P6c D2, 종합). 소제목마다 핵심 문장 위치(keySpan)를 남기고 기호는 지운다(H). 카드 줄은 카드로 옮긴다(F1).
   const cardOf = new Map<string, { card: SectionCard; bad: Set<string> }>();
   a.finals.forEach(f => f.keys && f.sections.forEach((s, si) => { if (s.card) cardOf.set(s.heading, { card: s.card, bad: new Set([...(a.badCards ?? [])].filter(x => x.startsWith(`${f.n}.${si}.`)).map(x => x.split(".")[2])) }); }));
-  const chapters: V5Chapter[] = a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, sections: f.sections.map((s, si) => withKeySpan(brief.product === "saju_mbti_full" && f.n === 1 && si === 0 ? { ...s, heading: brief.chart.coreImage.line } : s)), ...(f.keys ? { keys: f.keys } : {}) }));
+  const chapters: V5Chapter[] = a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, sections: f.sections.map((s, si) => withKeySpan(brief.product === "saju_mbti_full" && f.n === 1 && si === 0 ? { ...s, heading: a.image ?? brief.chart.coreImage.line } : s)), ...(f.keys ? { keys: f.keys } : {}) }));
   const byRule: Record<string, number> = {};
   for (const d of a.report.deletions) byRule[d.rule] = (byRule[d.rule] ?? 0) + 1;
   // 만 나이 기준 출생 연도(입력이 없으면 기준일 나이로 거꾸로 셈).
   const born = (a.payload as { person?: { birthDate?: string }; personA?: { birthDate?: string } } | undefined);
   const birthYear = Number((born?.person ?? born?.personA)?.birthDate?.slice(0, 4)) || brief.chart.thisYear.year - brief.person.age;
   const draft: V5BookDraft = {
-    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION,
+    version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION, baseDate: brief.baseDate,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
-      cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number); return { ganji: c.ganji, years: c.years, ages: [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current }; }) } } : {}),
-    ...(brief.compatibility ? { pairImage: brief.compatibility.pairImage } : { coreImage: brief.chart.coreImage }),
+      cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number); return { ganji: c.ganji, years: c.years, ages: [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current, ...(c.label ? { label: c.label } : {}) }; }) } } : {}),
+    // 최종판2 1-1: 궁합 첫 쪽 관계 그림도 작가 표지 줄(엔진 기본 줄은 작가 표지가 없을 때만).
+    ...(brief.compatibility ? { pairImage: a.cover ? { ...brief.compatibility.pairImage, line: a.cover, ruleId: `${brief.compatibility.pairImage.ruleId}:writer` } : brief.compatibility.pairImage } : { coreImage: a.image ? { line: a.image, ruleId: `${brief.chart.coreImage.ruleId}:writer` } : brief.chart.coreImage }),
     ...(brief.appendix ? { appendix: brief.appendix } : {}),
     ...glossaryOf(brief, chapters),
     ...(a.cover ? { coverLine: a.cover } : {}),
+    ...dayunOf(brief),
   };
   const c = brief.compatibility;
   const pair = c ? {
     category: c.lens.focus,
     characters: [c.a, c.b].map(p => ({ name: p.callName.replace(/님$/, ""), core: p.image, strength: brief.traits.find(t => t.id === p.traitIds[0])?.easyName ?? "", relationship: p.role === p.callName ? "" : p.role.replace(/\(.*\)$/, "") })),
-    relations: c.dayRelations, relationsPlain: c.relationsPlain,
+    relations: c.dayRelations, relationsPlain: c.relationsPlain, ...(c.relationsSummary ? { relationsSummary: c.relationsSummary } : {}),
     score: { total: c.score.value, version: c.score.version as V5ScoreV2["version"], band: c.score.band.label, verdict: c.score.band.verdict, notice: c.score.notice, components: c.score.components.map(x => ({ name: x.name, points: x.points, max: x.max, reason: x.onScorePage })) },
     directions: (["direction-ab", "direction-ba"] as const).map((id, i) => ({ title: a.plan.find(ch => ch.id === id)?.title ?? "", effect: headSentence((i ? c.tenGodBA : c.tenGodAB).reading), term: noHan((i ? c.tenGodBA : c.tenGodAB).tenGod), chapterN: a.plan.find(ch => ch.id === id)?.n ?? 0 })),
   } : undefined;
@@ -215,6 +248,9 @@ export function assembleV5Book(a: {
       ledger: (() => { const l = ledgerOf(brief); return { ...l, newShare: newEvidenceShare(l, a.priorLedger) }; })(),
       chapters: a.finals.map(f => ({ n: f.n, id: f.id, title: f.title, source: f.source, ...(f.reason ? { reason: f.reason } : {}), chars: f.chars, evidence: chapterEvidence(brief, a.plan.find(ch => ch.n === f.n)!) })),
       safety: { deletions: a.report.deletions.length, byRule, warnings: a.report.warnings.length, ...(a.report.metrics ? { metrics: a.report.metrics } : {}) },
+      ...(a.raw?.length ? { raw: a.raw } : {}),
+      ...(a.review ? { review: a.review } : {}), ...(a.test ? { test: true } : {}),
+      ...(brief.compatibility?.profiles?.length ? { profiles: brief.compatibility.profiles.map(p => p.line) } : {}),
     },
   };
   return { draft, evidence };
@@ -259,12 +295,22 @@ export function cardRelationsPlain(c: Pick<V5TimelineCard, "kind" | "badges">): 
   const unit = c.kind === "month" ? "달" : "해";
   return c.badges.slice(0, 2).map(b => {
     const half = b.kind === "SAMHAP" && b.label.endsWith("(반쯤)");
-    const line = b.line.replace(/^반합\([^)]*\): /, "").replace(/ 해$/, ` ${unit}`).replace(/에 든 해,/, `에 든 ${unit},`);
+    // 최종판3 7: 반합 뜻은 "완성"이 아니라 반쯤 묶임(labels.halfHapLine, 저장된 카드 줄도 화면에서 같은 문구로).
+    const raw = b.line.replace(/^반합\([^)]*\): /, ""), line = (half ? halfHapLine(raw) : raw).replace(/ 해$/, ` ${unit}`).replace(/에 든 해,/, `에 든 ${unit},`);
     const glyph = b.kind === "STEM_HAP" ? "하늘 글자" : "땅 글자";
     return b.kind in REL_PLAIN && b.with ? relationPlain(`이 ${unit}의 ${glyph}`, `${b.with} ${glyph}`, b.kind, half, line) : `${line}이에요.`;
   });
 }
 const LEVEL_POINTS = { 좋음: 3, 보통: 2, 조율: 1 } as const;
+const HAP_NAMES = new Set(["천간합", "육합", "삼합", "방합", "반합"]);
+/** 대운 표 위 전환 줄(최종판3 8): 표에 보이는 해에 시작하는 대운만, 공통 표기(labels.dayunLabel) 그대로. "무진 대운: 2027년 5월 무렵부터 (대운수 8)" → 날짜 "2027년 5월 무렵부터 (대운수 8)", 앞뒤 "기사 대운 → 무진 대운". */
+function dayunTransitions(cycles: readonly V5Cycle[], years: readonly number[], keyPage: ReadonlyMap<string, number>) {
+  return cycles.flatMap((c, i) => {
+    const start = Number(c.years.slice(0, 4)), [name, date] = c.label?.split(": ") ?? [];
+    const before = cycles[i - 1]?.label?.split(": ")[0];
+    return c.label && date && before && years.includes(start) ? [{ date, before, after: name, page: keyPage.get(String(start)) ?? 0 }] : [];
+  });
+}
 const importance = (score: number) => (score >= 4 ? "HIGH" : score === 3 ? "MEDIUM" : "BACKGROUND") as "HIGH" | "MEDIUM" | "BACKGROUND";
 
 /** 세운 달 카드의 절기월 구간(P6b-ui): 시작은 라벨의 "(MM/DD 절입부터)", 끝은 다음 달 절입일(12번째는 이듬해 입춘일).
@@ -289,7 +335,8 @@ export const seasonTime = (m: { start: string; end: string }, today: string) => 
 export const seasonLabel = (m: { order: number; range: string }, hangul: string) => ({ title: `${m.order}번째 달 · ${hangul}월 · ${m.range}`, sub: `${hangul}월 · ${m.range}` });
 
 /** 판 표기(표지·마지막 쪽): "제5판 · 2026년 11월 3일 개정". P6b 이전 v5 Book은 없음. */
-export const v5EditionLabel = (draft: unknown) => { const e = (draft as V5BookDraft | null)?.edition; return e ? `${e.label} · ${koreanDate(e.revisedAt)} 개정` : undefined; };
+/** 최종판 1-13: 제6판부터 "제6판 · 2026년 11월 4일 기준"(기준일은 본문이 아니라 여기에만). 그 전 Book은 "제5판 · … 개정" 그대로. */
+export const v5EditionLabel = (draft: unknown) => { const d = draft as V5BookDraft | null, e = d?.edition; return e ? (d?.baseDate ? `${e.label} · ${koreanDate(d.baseDate)} 기준` : `${e.label} · ${koreanDate(e.revisedAt)} 개정`) : undefined; };
 
 /** 저장된 v5 스냅샷 → 기존 렌더러가 그대로 보여 주는 BookData.
  * today(KST 날짜): 표의 지금·돌아보기·앞으로 기준. 열람 화면은 읽는 날을 넘기고, 없으면 책을 만든 날. */
@@ -301,14 +348,18 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   // 표지 아래 한 줄: coverLine(P6c-ui2) → 핵심 이미지 한 줄(P6c) → 예전 첫 문장(P6b 이전, 궁합).
   const pages: BookPage[] = [{ kind: "cover", title: d.title, names: e.names, headline: (typeof d.coverLine === "string" && d.coverLine.trim()) || (d.coreImage?.line ?? d.headline) }];
   if (!e.pair && e.people.length) pages.push({ kind: "input", title: "이 책의 주인공" });
+  // 최종판3 7: 관계 요약이 있는 Book은 첫 쪽에 묶음 요약 + 영향 큰 3줄, 전체 목록은 부록. 없는 Book(이전)은 첫 쪽에 전체 목록 그대로.
+  const relSum = e.pair?.relationsSummary, relAll = e.pair?.relationsPlain ?? [];
   if (e.pair) pages.push({ kind: "pair", title: "우리라는 사이", category: e.pair.category, characters: [...e.pair.characters], directions: [], relations: [...e.pair.relations],
-    ...(d.pairImage ? { image: d.pairImage.line } : {}), ...(e.pair.relationsPlain ? { relationsPlain: [...e.pair.relationsPlain] } : {}) });
+    ...(d.pairImage ? { image: d.pairImage.line } : {}), ...(e.pair.relationsPlain ? (relSum ? { relationsPlain: relAll.slice(0, 3), relationsSummary: relSum.line, relationsTotal: relAll.length } : { relationsPlain: [...relAll] }) : {}) });
   const sc = e.pair?.score;
   // 점수 쪽: 총점·구간 이름·항목 막대·항목 이유. v2(P6c)는 항목 점수/만점, v5-1(P4·P6b-ui)은 수준 3칸 그대로.
   if (sc) {
     const v2 = "notice" in sc ? sc : null;
     pages.push({ kind: "score", scoreVersion: sc.version, title: "타고난 맞물림", total: sc.total, band: sc.band,
-      scores: v2 ? v2.components.map(x => ({ label: x.name, value: x.points, max: x.max, reason: x.reason })) : (sc as V5ScoreV51).components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3, reason: x.line })),
+      // 최종판3 7: 맨 앞 기본점 줄(40/40)로 줄 합 = 총점. 새 Book은 저장된 줄 그대로, 기본점 줄이 없는 v2 Book은 합이 맞을 때만 화면에서 붙인다(저장본은 바꾸지 않음).
+      scores: v2 ? [...(() => { const b = baseRowOf(v2.total, v2.components); return b ? [{ label: b.name, value: b.points, max: b.max, reason: b.reason }] : []; })(), ...v2.components.map(x => ({ label: x.name, value: x.points, max: x.max, reason: x.reason }))]
+        : (sc as V5ScoreV51).components.map(x => ({ label: x.name, value: LEVEL_POINTS[x.level], max: 3, reason: x.line })),
       verdict: sc.verdict, notice: v2 ? v2.notice : "두 사람의 명리와 MBTI가 맞물리는 정도를 정해진 규칙으로 계산했어요. 항목은 3칸 중 몇 칸이 맞물리는지로 보여 줍니다.", limitations: [] });
   }
   e.people.forEach((p, i) => pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }));
@@ -330,8 +381,10 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
     const tl = pages.find((p): p is Extract<BookPage, { kind: "timeline" }> => p.kind === "timeline");
     // P6b(p6b-fields.md 5): 그림 줄·할 일/돌아보기·살필 점·만 나이·기간 상태는 카드 필드에서. 없으면(P6b 이전 Book) 예전 방식.
     // P6b-ui: 표 한 줄 값(십성·흐름 세기·핵심어·관계 배지), 할 일/돌아보기 이름, 지금·돌아보기·앞으로는 기준일(today) 대비.
+    // 최종판3 8: 대운 전환 표시는 공통 대운 표기(카드 dayun.start, cycles[].label = labels.dayunLabel). 표기가 없는 이전 Book은 예전 말 그대로.
     if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, ...(c.age !== undefined ? { ageLabel: `만 ${c.age}세` } : {}), cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
-      caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? headSentence(text(c.key)) ?? c.label, time: TIME(Number(c.key), Number(day.slice(0, 4))), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? "큰 흐름이 바뀌는 해" : null, importance: importance(c.flow.score), ...rowExtras(c) }));
+      caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? headSentence(text(c.key)) ?? c.label, time: TIME(Number(c.key), Number(day.slice(0, 4))), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? (c.dayun.start ?? "큰 흐름이 바뀌는 해") : null, importance: importance(c.flow.score), ...rowExtras(c) }));
+    if (tl) tl.transitions = dayunTransitions(t.cycles ?? [], tl.years.map(y => y.year), keyPage);
     const ms = pages.find((p): p is Extract<BookPage, { kind: "months" }> => p.kind === "months");
     // 달은 절기월 순번·날짜 구간으로 보여 주고(달력 달 이름 없음), 지금은 기준일이 든 절기월(P6b-ui: 달력 달 번호를 붙여 엉뚱한 달로 보였다).
     if (ms) ms.months = monthCards.map((c, i) => ({ month: season[i].order, order: season[i].order, range: season[i].range, sub: monthLabel.get(c.key)!.sub, title: c.imageLine ?? headSentence(text(c.key)) ?? c.label, theme: c.keywords.join(" · "), time: seasonTime(season[i], day), ganji: c.ganji.hanja,
@@ -341,12 +394,15 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   // 부록(P6c): 사람마다 한 쪽, 번호는 이어서. 머리말은 "내 사주에 있는 기운과 그 뜻".
   const total = d.appendix?.reduce((n, p) => n + p.items.length, 0) ?? 0;
   let from = 1;
-  for (const p of d.appendix ?? []) {
-    const pair = d.appendix!.length > 1;
+  (d.appendix ?? []).forEach((p, i) => {
+    const pair = d.appendix!.length > 1, dayun = d.dayun?.[i]?.lines ?? [];
     pages.push({ kind: "appendix", title: pair ? `${p.name}의 모든 기운` : "내 모든 기운", lead: pair ? `${p.name}님 사주에 있는 기운과 그 뜻이에요.` : "내 사주에 있는 기운과 그 뜻이에요.", from, total,
-      items: p.items.map(x => ({ name: x.name, meaning: x.meaning, manifestation: "", person: p.name, group: x.group, core: x.core })) });
+      items: p.items.map(x => ({ name: x.name, meaning: x.meaning, manifestation: "", person: p.name, group: x.group, core: x.core })), ...(dayun.length ? { notes: [...dayun] } : {}) });
     from += p.items.length;
-  }
-  pages.push({ kind: "back", title: "이 책 공유하기", finalLine: d.finalLine });
+  });
+  // 최종판3 7: 두 사람 사이 관계 전체(영향 큰 순). 첫 쪽에는 요약과 앞 3줄만.
+  if (relSum && relAll.length) pages.push({ kind: "appendix", title: "두 사람 사이의 모든 기운", lead: "두 사람 글자 사이에서 찾은 관계 전부예요. 영향이 큰 것부터 적었어요.", from: 1, total: relAll.length,
+    items: relAll.map((line, i) => { const name = relSum.names[i] ?? ""; return { name: name || "관계", meaning: line, manifestation: "", person: e.names, group: HAP_NAMES.has(name) ? "합" : "형·충·파·해" }; }) });
+  pages.push({ kind: "back", title: "이 책 공유하기", finalLine: d.finalLine, aiNotice: AI_WRITTEN_NOTICE_KO }); // 최종3: 책 끝 AI 작성 고지(저장본은 그대로, 읽을 때만)
   return { bookId: book.id, title: d.title, names: e.names, people: [...e.people], context: [...e.context], pages: composeBookNavigation(pages), readingDate: e.generatedAt.slice(0, 10), ...(d.glossary?.length ? { glossary: d.glossary.map(t => ({ name: t.name, meaning: t.meaning })) } : {}), share: { title: `${e.names} · ${d.title}`, description: headSentence((typeof d.coverLine === "string" && d.coverLine.trim()) || d.headline) } };
 }

@@ -47,8 +47,9 @@ describe("P6b 핵심 이미지·판 정보·작가 입력", () => {
   it("본인(1999-07-31 08:27 남, 甲申·여름·신약·수 없음) → 과제 예시 그대로", () => {
     const me = { name: "장덕민", gender: "MALE" as const, birthDate: "1999-07-31", birthTime: "08:27", birthTimeUnknown: false, mbtiType: "ENTJ" as const, context: { relationshipStatus: "single", jobStatus: "business_owner", detailJob: "사업" } };
     const { draft } = book("saju_mbti_full", me);
+    // 최종판 1-7: 작가가 없으면(이 시험) 엔진 핵심 이미지 그대로. P6e의 결정론 조립(계절·시간대·장소)은 옮기지 않았다.
     expect(draft.coreImage?.line).toBe("한여름 도시 아스팔트 위에 선 큰 나무");
-    expect(draft.edition).toEqual({ number: 5, label: "제5판", revisedAt: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) });
+    expect(draft.edition).toEqual({ number: 6, label: "제6판", revisedAt: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) });
   });
   it("작가 입력에 그림 별명·이미지·한 줄이 없다(뜻·나에게만)", () => {
     for (const product of ["saju_mbti_full", "major_fortune"] as const) {

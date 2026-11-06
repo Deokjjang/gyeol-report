@@ -7,13 +7,16 @@ import {
   type PreparePaymentCheckoutSessionInput,
 } from "../../../src/lib/payment/paymentCheckoutSessionBoundary";
 import type { PaymentCheckoutSessionDraft } from "../../../src/lib/payment/paymentCheckoutSessionTypes";
+import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
+
+const catalogAmount = getReportProduct("saju_mbti_full")!.amount;
 
 const readyOrder = {
   paymentOrderId: "payment_order_checkout_test",
   providerOrderId: "provider_order_checkout_test",
   productType: "saju_mbti_full",
   provider: "toss",
-  amount: 1490,
+  amount: catalogAmount,
   currency: "KRW",
   status: "ready",
 } as const satisfies PreparePaymentCheckoutSessionInput;
@@ -59,7 +62,7 @@ describe("payment checkout session boundary", () => {
       productType: "saju_mbti_full",
       productLabelKo: "사주×MBTI 종합 리포트",
       provider: "toss",
-      amount: 1490,
+      amount: catalogAmount,
       currency: "KRW",
       status: "prepared",
       checkoutMode: "provider_redirect_pending",
@@ -67,7 +70,7 @@ describe("payment checkout session boundary", () => {
         provider: "toss",
         orderId: "provider_order_checkout_test",
         orderName: "사주×MBTI 종합 리포트",
-        amount: 1490,
+        amount: catalogAmount,
         currency: "KRW",
         customerNameLabel: "결리포트 고객",
       },
@@ -87,7 +90,7 @@ describe("payment checkout session boundary", () => {
       partnerOrderId: "provider_order_checkout_test",
       itemName: "사주×MBTI 종합 리포트",
       quantity: 1,
-      totalAmount: 1490,
+      totalAmount: catalogAmount,
       currency: "KRW",
     });
   });
@@ -166,7 +169,7 @@ describe("payment checkout session boundary", () => {
       {
         ...readyOrder,
         productType: "unknown_product",
-        amount: 1490,
+        amount: catalogAmount,
       },
       "PAYMENT_CHECKOUT_INVALID_ORDER",
     );

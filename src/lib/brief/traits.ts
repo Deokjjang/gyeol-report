@@ -3,6 +3,7 @@
  * 가족 다양성 제약(일간·일주 1, 오행·음양·조후 1~2, 십성 2~3, 신살·귀인 2~3, 운성·합충 1~2, 천간·지지 0~1) 안에서 10개(8~12)를 고른다.
  * Fusion은 정확한 유형 > 인지기능(주·부 > 3차·열등) > 선호 글자 순.
  */
+import { poleFits } from "./mbtiFn";
 import type { FeatureFamily, FusionRule, MbtiLink, MbtiProfile, MbtiType, MyeongriFeature } from "@/data/knowledge-v5/schema";
 import type { ChartPosition } from "@/lib/saju/detections/types";
 import type { TenGod, SajuCalcResult } from "@/lib/saju/types";
@@ -225,7 +226,8 @@ export const MBTI_LINK_DENSITY = 0.7;
 export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: Knowledge, min = COMPUTED_LINK_MIN): NonNullable<Trait["fusion"]> | null {
   const s = scorePair(feature.id, feature.dimensionTags, profile.type, profile.dimensionTags);
   if (!s || s.strength < min) return null;
-  const sentences = s.contributions.slice(0, 2).flatMap(c => {
+  // P6e 4: 그 유형의 기능·태도에 맞지 않는 끝은 연결 근거로 쓰지 않는다.
+  const sentences = s.contributions.filter(c => poleFits(profile.type, c.dimension, c.mbti)).slice(0, 2).flatMap(c => {
     const d = k.ontology.dimensions.find(x => x.id === c.dimension); if (!d) return [];
     const f = c.feature >= 0 ? d.poles.plus : d.poles.minus, m = c.mbti >= 0 ? d.poles.plus : d.poles.minus;
     // 축 이름·양끝 이름은 내부 라벨이라 쓰지 않는다(P6b E-6). 그림 별명 대신 용어 이름(B-2).

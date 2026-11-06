@@ -5,6 +5,9 @@ import {
   GYEOL_HOME_PRODUCT_GRID,
   GYEOL_PRODUCTS,
 } from "../../../src/lib/product/gyeolProducts";
+import { formatKrw, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
+
+const comprehensivePrice = REPORT_PRICE_TABLE_KRW.saju_mbti_full;
 
 describe("GYEOL_PRODUCTS", () => {
   it("defines all six public products as purchasable launch products", () => {
@@ -21,14 +24,14 @@ describe("GYEOL_PRODUCTS", () => {
       nameKo: "사주×MBTI 종합 리포트",
       fullNameKo: "사주×MBTI 종합 리포트",
       versionBadgeKo: "판매 상품",
-      priceAmount: 1490,
-      listPriceAmount: 1490,
-      salePriceAmount: 1490,
-      paymentAmount: 1490,
+      priceAmount: comprehensivePrice,
+      listPriceAmount: comprehensivePrice,
+      salePriceAmount: comprehensivePrice,
+      paymentAmount: comprehensivePrice,
       currency: "KRW",
-      priceKo: "1,490원",
-      listPriceKo: "1,490원",
-      salePriceKo: "판매가 1,490원",
+      priceKo: formatKrw(comprehensivePrice),
+      listPriceKo: formatKrw(comprehensivePrice),
+      salePriceKo: `판매가 ${formatKrw(comprehensivePrice)}`,
       status: "available",
       isPurchasable: true,
       href: "/report/new?product=saju-mbti-full",
@@ -37,6 +40,17 @@ describe("GYEOL_PRODUCTS", () => {
       deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
       retentionKo: "생성일로부터 90일 열람",
     });
+    for (const product of GYEOL_PRODUCTS) {
+      const price = REPORT_PRICE_TABLE_KRW[product.productType];
+      expect(product).toMatchObject({
+        priceAmount: price,
+        listPriceAmount: price,
+        salePriceAmount: price,
+        paymentAmount: price,
+        priceKo: formatKrw(price),
+        salePriceKo: `판매가 ${formatKrw(price)}`,
+      });
+    }
   });
 
   it("does not expose coming-soon products in the launch catalog", () => {

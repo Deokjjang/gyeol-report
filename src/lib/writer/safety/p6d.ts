@@ -99,9 +99,11 @@ export const SELF_CORRECTION = /\([^()]{0,24}(이|가)? ?아니(라|고)[^()]{0,
 export const selfCorrection = (s: string) => SELF_CORRECTION.test(s) && /[一-鿿]/.test(s.match(SELF_CORRECTION)![0]) || /[一-鿿]{1,4}(이|가) 아니라 [一-鿿]{1,4}/.test(s);
 
 /** C 장 번호 참조("7장에서 본 것처럼"). */
-export const CHAPTER_REF = /(?<![0-9가-힣])(제 ?)?\d{1,2} ?장(에서|의|에|과|부터|까지|을|를|처럼|에서처럼|에서 본|에서 말한)/;
+// 최종판3 12: 「앞 장에서 본 어긋남의 뿌리를…」(궁합)처럼 번호 없이 앞·다음 장을 가리키는 꼴도 장 참조다.
+export const CHAPTER_REF = /(?<![0-9가-힣])(제 ?)?\d{1,2} ?장(에서|의|에|과|부터|까지|을|를|처럼|에서처럼|에서 본|에서 말한)|(?<![가-힣])(앞|다음|이전|지난) 장(에서|의|에|처럼)/;
 /** 뜻을 바꾸지 않고 지울 수 있는 장 번호 참조 꼴(정리 단계). */
-export const dropChapterRef = (s: string) => s.replace(/(?<![0-9가-힣])\d{1,2} ?장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![0-9가-힣])\d{1,2} ?장에서처럼,? ?/g, "");
+export const dropChapterRef = (s: string) => s.replace(/(?<![0-9가-힣])\d{1,2} ?장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![0-9가-힣])\d{1,2} ?장에서처럼,? ?/g, "")
+  .replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (?=[가-힣])/g, "");
 
 /** E 시점 지시: 대운·세운(달력이 있는 책)은 "지금" 전부, 그 밖은 시점을 못 박는 말만. */
 const TIME_STRICT = /지금|이번 달|이번 한 달|올해 남은|요즘 들어/;
@@ -111,7 +113,8 @@ const FUNCTION_NAME_NOW = /지금 이 순간(의)? 감각/g;
 export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s.replace(FUNCTION_NAME_NOW, ""));
 
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
-export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?![0-9가-힣]*(일 기준|일부터))/;
+/** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. */
+export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))/;
 export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s);
 
 /** E 마무리 문형(소제목 마지막 문장의 끝 두 어절). 12달 가운데 같은 문형은 3번까지. */

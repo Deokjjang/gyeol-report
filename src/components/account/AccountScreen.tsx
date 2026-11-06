@@ -8,7 +8,7 @@ import s from "./account.module.css";
 import { Library } from "./Library";
 import { interaction } from "../../lib/analytics/client";
 import { KakaoChannelPrompt } from "./KakaoChannelPrompt";
-import { CompNotice, GiftPanel, ProfileForm, PurchaseHistory, WithdrawPanel } from "../ops/AccountOps";
+import { CompNotice, GiftPanel, MarketingPanel, ProfileForm, PurchaseHistory, WithdrawPanel } from "../ops/AccountOps";
 
 export function AccountScreen({ local = false, loginError = false, next, ticketShopEnabled = false }: { local?: boolean; loginError?: boolean; next?: string; ticketShopEnabled?: boolean }) {
   const { session, loaded, error, refresh, base, verifying } = useAccountSession(local);
@@ -56,7 +56,7 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
         {local || ticketShopEnabled ? <nav aria-label="내 계정"><Link href={local ? "/dev/account" : "/account"} aria-current="page">내 서재</Link> · <Link href={local ? "/dev/account/tickets" : "/account/tickets"}>내 이용권 →</Link></nav> : null}
         <Library local={local} />
         {!local ? <><PurchaseHistory /><GiftPanel /></> : null}
-        <details className={s.accountInfo}><summary>계정 정보</summary><p>{session.displayName}</p><p><a href="/privacy">개인정보처리방침</a></p>{!local ? <WithdrawPanel onDone={() => { announceAccountChange(); window.location.assign("/"); }} /> : null}</details>
+        <details className={s.accountInfo}><summary>계정 정보</summary><p>{session.displayName}</p>{!local && session.profile === "complete" ? <MarketingPanel /> : null}<p><a href="/privacy">개인정보처리방침</a></p>{!local ? <WithdrawPanel onDone={() => { announceAccountChange(); window.location.assign("/"); }} /> : null}</details>
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </>}
       {message || error ? <p className={s.error} role="alert">{message || "로그인 상태를 확인하지 못했습니다. 다시 시도해 주세요."}</p> : null}

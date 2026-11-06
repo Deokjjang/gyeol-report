@@ -1,0 +1,47 @@
+{
+ "computedAt": "2026-11-05",
+ "edition": "제6판",
+ "method": "v5 저장본(COMPLETED) 제6판 장 본문 글자 수 평균, 천 단위 내림",
+ "products": {
+  "saju_mbti_full": {
+   "books": 6,
+   "avgChars": 12557,
+   "thousands": 12,
+   "allV5": {
+    "books": 48,
+    "avgChars": 10850,
+    "thousands": 10
+   }
+  },
+  "career_money_study": {
+   "books": 11,
+   "avgChars": 10177,
+   "thousands": 10,
+   "allV5": {
+    "books": 31,
+    "avgChars": 9398,
+    "thousands": 9
+   }
+  },
+  "love_marriage_child": {
+   "books": 9,
+   "avgChars": 10370,
+   "thousands": 10,
+   "allV5": {
+    "books": 22,
+    "avgChars": 9205,
+    "thousands": 9
+   }
+  },
+  "saju_mbti_compatibility": {
+   "books": 6,
+   "avgChars": 10382,
+   "thousands": 10,
+   "allV5": {
+    "books": 36,
+    "avgChars": 8690,
+    "thousands": 8
+   }
+  }
+ }
+}

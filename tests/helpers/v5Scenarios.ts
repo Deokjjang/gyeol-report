@@ -17,11 +17,15 @@ export const V5_MIGRATION = "supabase/migrations/20261029130000_v5_writer_jobs.s
 /** P6d-ops: 생성 감독(보류·포기·기록)과 이용권 큐 보류(not_before). */
 export const OPS_MIGRATION = "supabase/migrations/20261104100000_v5_p6d_ops.sql";
 export const OPS_MIGRATION_P6E = "supabase/migrations/20261104180000_v5_p6e_ops.sql";
+/** v5 최종 2-3: 보상 이용권 A 2장·B 1장, 장마다 내가 쓰기/선물 선택(ops_comp 패치). */
+export const OPS_MIGRATION_COMP_CHOICE = "supabase/migrations/20261105091000_v5_final_comp_choice.sql";
+/** v5 최종3 9: 이용권 30일·선물 기한 승계·v5 Book 열람 기한 없음(버전 필드). */
+export const OPS_MIGRATION_FINAL3 = "supabase/migrations/20261105120000_v5_final3_tickets_reading.sql";
 export const RAW_FULL = { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: { name: "하람", birthDate: "1996-12-06", birthTime: "09:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" }, userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "서비스 기획자", focusAreas: [] }, productOptions: {} };
 
 export async function v5Queue() {
   const h = await ticketPublicationSql();
-  await h.db.exec(`reset role; ${readFileSync(V5_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION_P6E, "utf8")} set role service_role;`);
+  await h.db.exec(`reset role; ${readFileSync(V5_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION, "utf8")} ${readFileSync(OPS_MIGRATION_P6E, "utf8")} ${readFileSync(OPS_MIGRATION_COMP_CHOICE, "utf8")} ${readFileSync(OPS_MIGRATION_FINAL3, "utf8")} set role service_role;`);
   await h.db.query("select report_tickets('grant',$1,$2::jsonb)", [A, JSON.stringify({ quantity: 50, sourceType: "manual", sourceRef: "p3-v5", key: `p3:${randomUUID()}`, reason: "P3_TEST" })]);
   return h;
 }
@@ -90,7 +94,8 @@ export async function scenario(h: Queue, name: string, behaviors: (text: string,
 export const SCENARIOS: { name: string; behaviors: Parameters<typeof scenario>[2]; opts?: Parameters<typeof scenario>[3] }[] = [
   { name: "정상", behaviors: text => [{ text }] },
   { name: "출력 전 5xx → 재시도", behaviors: text => [{ status: 503 }, { text }] },
-  { name: "출력 전 429 → 재시도", behaviors: text => [{ status: 429 }, { status: 429 }, { text }] },
+  // 최종판3 6: 출력 0 실패는 1회만 다시 부른다.
+  { name: "출력 전 429 → 재시도", behaviors: text => [{ status: 429 }, { text }] },
   { name: "중간 끊김 → 이어쓰기", behaviors: text => [{ text, cutAt: text.indexOf("## 7. ") + 40 }, { text: text.slice(text.indexOf("## 6. ")) }] },
   { name: "length 종료 → 이어쓰기", behaviors: text => [{ text: text.slice(0, text.indexOf("## 9. ") + 40), finish: "incomplete" }, { text: text.slice(text.indexOf("## 8. ")) }] },
   { name: "타임아웃 → 보류(결정론 원고는 내보내지 않음)", behaviors: text => [{ text, cutAt: text.indexOf("## 5. ") + 40, hang: true }], opts: { budgetMs: 6_000 } },

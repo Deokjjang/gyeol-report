@@ -15,19 +15,14 @@ export function BookInputSummary({ data }: { data: BookData }) {
 }
 
 /** 주인공 쪽(궁합은 관계 쪽)에 합친 사람별 표: MBTI는 접고, 만세력·오행은 펼친다.
- * 오행 아래 "내 사주의 다른 기운들 보기"(P6c-ui2 f): 그 사람의 부록 쪽으로 간다. 부록 쪽이 없는 Book은 두지 않는다. */
-function PersonTables({ data, onPage }: { data: BookData; onPage: (page: number) => void }) {
+ * v5 최종 1-17: 만세력 아래 "내 사주의 다른 기운들 보기" 바로가기는 뺐다(책 끝의 부록 쪽과 목차의 부록 줄은 그대로). */
+function PersonTables({ data }: { data: BookData }) {
   const pair = data.people.length > 1;
-  // 그 사람의 부록 쪽: 이름으로 찾고, 없으면 사람 순서대로(부록은 사람 순서로 한 쪽씩).
-  const appendices = data.pages.flatMap((pg, i) => pg.kind === "appendix" ? [{ pg, i }] : []);
-  const appendixOf = (name: string, n: number) => !appendices.length ? -1 : !pair ? appendices[0].i
-    : (appendices.find(({ pg }) => pg.kind === "appendix" && (pg.title.startsWith(`${name}의 `) || pg.items.some(item => item.person === name))) ?? appendices[n] ?? appendices[0]).i;
-  return <>{data.people.map((p, n) => { const appendix = appendixOf(p.name, n); return <section key={p.role} className={s.personTables}>
+  return <>{data.people.map(p => <section key={p.role} className={s.personTables}>
     {p.table.mbti ? <details className={s.fold}><summary>{pair ? `${p.name}의 ` : ""}MBTI {p.table.mbti.type} · {p.table.mbti.titleKo} 자세히<span aria-hidden="true">+</span></summary><MbtiProfile data={p.table.mbti} /></details>
       : <p className={s.hint}>{pair ? `${p.name}님의 ` : ""}MBTI는 입력하지 않아 추정하지 않습니다.</p>}
     <h2 className={s.personTableTitle}>{p.name}의 만세력</h2><p className={s.hint}>{p.timeLabel}</p><NatalTable data={p.table} />
-    {appendix >= 0 ? <button type="button" className={s.toAppendix} onClick={() => onPage(appendix)}>{pair ? `${p.name}님 사주의` : "내 사주의"} 다른 기운들 보기 ↗</button> : null}
-  </section>; })}</>;
+  </section>)}</>;
 }
 
 /** 상세의 관계 줄(P6c-ui2 i): 쉬운 문장(relationsPlain)이 있으면 그 문장을, 배지 이름(원어)은 아래 작은 글씨로. 없으면 예전 배지 목록. */
@@ -96,14 +91,16 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
       <p className={s.hint}>{text(page.notice)}</p>{page.versionLabel || rest.length || page.limitations.length ? <details className={s.periodDetails}><summary>지수를 읽는 기준</summary>{page.versionLabel ? <p>{text(page.versionLabel)}</p> : null}{rest.map(line => <p key={line}>{text(line)}</p>)}{page.limitations.map(line => <p key={line}>{line}</p>)}</details> : null}</>;
   }
   if (page.kind === "cover") return <div className={s.readerCover}><Cover book={book} title={data.title} name={data.names} /><h1>{text(page.headline)}</h1>{data.edition ? <p className={s.edition}>{data.edition}</p> : null}</div>;
-  if (page.kind === "input") return <><p className={s.eyebrow}>PERSONAL EDITION</p><h1>{text(page.title)}</h1><BookInputSummary data={data} /><PersonTables data={data} onPage={onPage} /></>;
+  if (page.kind === "input") return <><p className={s.eyebrow}>PERSONAL EDITION</p><h1>{text(page.title)}</h1><BookInputSummary data={data} /><PersonTables data={data} /></>;
   if (page.kind === "manse") return <><p className={s.eyebrow}>{data.people[page.person].timeLabel}</p><h1 className={s.dataTitle}>{text(page.title)}</h1><NatalTable data={data.people[page.person].table} /></>;
   if (page.kind === "mbti") return <MbtiPage data={data.people[page.person].table.mbti} name={data.people[page.person].name} />;
   // 관계 이미지(pairImage)가 있으면 맨 위 한 줄 + 각자 이미지 두 줄(작게). 관계 기운은 쉬운 문장 목록만(없으면 숨김).
   if (page.kind === "pair") return <><p className={s.eyebrow}>{page.category} · {data.names}</p><h1>{text(page.image ?? page.title)}</h1>
     {page.image ? <ul className={s.pairImages}>{page.characters.map(p => <li key={p.name}><b>{p.name}</b>{text(p.core)}</li>)}</ul> : null}
     <BookInputSummary data={data} />{page.image ? null : <div className={s.pairPortraits}>{page.characters.map(p => <section key={p.name}><h2>{p.name}</h2><p>{text(p.core)}</p><p>{text(p.strength)}</p><p>{text(p.relationship)}</p></section>)}</div>}
-    {page.relationsPlain?.length ? <section className={s.pairRelations}><h2>두 사람 사이의 기운</h2><ul>{page.relationsPlain.map(line => <li key={line}>{text(line)}</li>)}</ul></section> : null}<PersonTables data={data} onPage={onPage} /></>;
+    {page.relationsSummary || page.relationsPlain?.length ? <section className={s.pairRelations}><h2>두 사람 사이의 기운</h2>{page.relationsSummary ? <p className={s.hint}>{text(page.relationsSummary)}</p> : null}
+      {page.relationsPlain?.length ? <>{page.relationsSummary ? <h3>영향이 큰 {page.relationsPlain.length === 3 ? "세" : page.relationsPlain.length === 2 ? "두" : "한"} 가지</h3> : null}<ul>{page.relationsPlain.map(line => <li key={line}>{text(line)}</li>)}</ul></> : null}
+      {page.relationsSummary && (page.relationsTotal ?? 0) > (page.relationsPlain?.length ?? 0) ? <p className={s.hint}>전체 {page.relationsTotal}가지는 책 끝 부록 「두 사람 사이의 모든 기운」에 있어요.</p> : null}</section> : null}<PersonTables data={data} /></>;
   if (page.kind === "timeline") return <><p className={s.eyebrow}>{page.years[0].year} — {page.years.at(-1)!.year}</p><h1>{text(page.title)}</h1><p className={s.hint}>최근 3년 · 지금 · 앞으로 10년</p>
     <ol className={s.transitions}>{page.transitions.map((t, i) => <li key={i}><button onClick={() => onPage(t.page)}><strong>{text(t.date)}</strong><span>{text(t.before)} → {text(t.after)} · 전환 이야기 ↗</span></button>{t.exact && t.exact !== t.date ? <details className={s.periodDetails}><summary>계산 구간 보기</summary><p>{text(t.exact)}</p></details> : null}</li>)}</ol>
     {page.years.some(y => y.flow) ? <p className={s.hint}>줄을 누르면 자세히 열려요. 막대는 흐름 세기(정해진 규칙으로 센 참고 값)예요.</p> : null}{legend(page.years, "해예요")}
@@ -123,9 +120,9 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
   if (page.kind === "appendix") {
     const stageMeanings = new Set(page.items.filter(item => item.group === "십이운성").map(item => item.meaning));
     const sharedStageMeaning = !page.lead && stageMeanings.size === 1 ? [...stageMeanings][0] : undefined;
-    return <><p className={s.eyebrow}>APPENDIX · {page.total}개 기운</p><h1>{text(page.title)}</h1>{page.lead ? <p className={s.hint}>{text(page.lead)}</p> : page.items.some(item => item.group === "지장간") ? <p className={s.hint}>지장간은 지지 안에 담긴 천간입니다. 아래는 각 천간이 내 일간에 대해 갖는 십성의 뜻이에요. 위치는 만세력표에서 볼 수 있습니다.</p> : null}{sharedStageMeaning ? <p className={s.hint}>십이운성 · {text(sharedStageMeaning)}</p> : null}<ol start={page.from} className={s.glossary}>{page.items.map((item, i) => <li key={i}><span className={s.micro}>{String(page.from + i).padStart(2, "0")}</span><div><small>{item.group ?? "명리 기운"}{item.core ? " · 본문 핵심" : ""}</small><h2>{text(item.name)}</h2>{item.group !== "십이운성" || item.meaning !== sharedStageMeaning ? <p>{text(item.meaning)}</p> : null}</div></li>)}</ol></>;
+    return <><p className={s.eyebrow}>APPENDIX · {page.total}개 기운</p><h1>{text(page.title)}</h1>{page.notes?.map(line => <p key={line} className={s.hint}>{text(line)}</p>)}{page.lead ? <p className={s.hint}>{text(page.lead)}</p> : page.items.some(item => item.group === "지장간") ? <p className={s.hint}>지장간은 지지 안에 담긴 천간입니다. 아래는 각 천간이 내 일간에 대해 갖는 십성의 뜻이에요. 위치는 만세력표에서 볼 수 있습니다.</p> : null}{sharedStageMeaning ? <p className={s.hint}>십이운성 · {text(sharedStageMeaning)}</p> : null}<ol start={page.from} className={s.glossary}>{page.items.map((item, i) => <li key={i}><span className={s.micro}>{String(page.from + i).padStart(2, "0")}</span><div><small>{item.group ?? "명리 기운"}{item.core ? " · 본문 핵심" : ""}</small><h2>{text(item.name)}</h2>{item.group !== "십이운성" || item.meaning !== sharedStageMeaning ? <p>{text(item.meaning)}</p> : null}</div></li>)}</ol></>;
   }
-  if (page.kind === "back") return <div className={s.backContent}><span className={s.micro}>PERSONAL EDITION / FIN</span><h1>{data.title}</h1><p data-final-line>{text(page.finalLine)}</p>{shareActions ?? <section className={s.sharePreview} aria-label="이 책 공유하기 미리보기"><h2>이 책 공유하기</h2><p className={s.shareTitle}>{data.share.title}</p><div>{["카카오톡", "공유", "링크 복사"].map((label, i) => <button type="button" key={label} onClick={() => onShare(`${data.share.title} · ${label} 미리보기입니다. 실제 공유나 복사는 실행하지 않습니다.`)}><ShareIcon kind={i} /><span>{label}</span></button>)}</div></section>}{backAction}{data.edition ? <span className={s.edition}>{data.edition}</span> : null}<span className={s.micro}>END OF BOOK</span></div>;
+  if (page.kind === "back") return <div className={s.backContent}><span className={s.micro}>PERSONAL EDITION / FIN</span><h1>{data.title}</h1><p data-final-line>{text(page.finalLine)}</p>{shareActions ?? <section className={s.sharePreview} aria-label="이 책 공유하기 미리보기"><h2>이 책 공유하기</h2><p className={s.shareTitle}>{data.share.title}</p><div>{["카카오톡", "공유", "링크 복사"].map((label, i) => <button type="button" key={label} onClick={() => onShare(`${data.share.title} · ${label} 미리보기입니다. 실제 공유나 복사는 실행하지 않습니다.`)}><ShareIcon kind={i} /><span>{label}</span></button>)}</div></section>}{backAction}{page.aiNotice ? <p className={s.aiNotice} data-ai-notice>{page.aiNotice}</p> : null}{data.edition ? <span className={s.edition}>{data.edition}</span> : null}<span className={s.micro}>END OF BOOK</span></div>;
   const titleLines = text(page.title).split("\n");
   return <><p className={s.eyebrow}>{titleLines.length > 1 ? titleLines[0] : `PERSONAL EDITION / ${data.names}`}</p><h1>{titleLines.length > 1 ? titleLines.slice(1).join("\n") : titleLines[0]}</h1><Prose key={page.id ?? page.title} data={data} page={page} text={text} onNote={onNote} />
     {page.notes.length ? <section className={s.chapterNotes} aria-label="이 장의 각주"><ol>{page.notes.map((note, i) => <li key={i} value={i + 1}><div><strong>{text(note.name)}</strong>{" "}<p>{text(note.text)}</p></div></li>)}</ol></section> : null}</>;

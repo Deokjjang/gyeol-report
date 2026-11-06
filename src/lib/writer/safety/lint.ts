@@ -153,6 +153,33 @@ export function elementAbsenceClaims(sentence: string, presence: ElementPresence
   return out;
 }
 
+/**
+ * 최종판 1-5 오행 개수: "없다·하나도 없다"(앞에 오는 꼴 "없는 쇠" 포함)·"가장 많다·가장 적다"를 원국 겉 글자 수(presence.surface)와 대조한다.
+ * 없다: 겉 1개 이상이면 위반(겉 0·땅속만 있음은 elementAbsenceClaims가 본다). 가장 많다/적다: 겉 수가 최댓값/최솟값이 아니면 위반(같은 수는 허용).
+ */
+export function elementCountClaims(sentence: string, presence: ElementPresence): string | null {
+  if (QUALIFIED.test(sentence)) return null;
+  const counts = Object.values(presence).map(p => p.surface), max = Math.max(...counts), min = Math.min(...counts);
+  for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
+    const p = presence[e]; if (!p) continue;
+    const name = `(?:${w.native}(?:\\(${w.reading}\\))?(?: ?기운| ?글자)?|${w.reading} ?(?:기운|글자)|${HANJA_EL[e]})(?=[이가은는을를의도과와로만에]|\\s|[,.]|$)`;
+    if (p.surface > 0 && new RegExp(`(?<![가-힣])없는 (?:${name}|${w.native})|(?<![가-힣])${name}(?:이|가|은|는)? (?:하나도|전혀|아예) 없`).test(sentence)) return `${e}:없음≠${p.surface}`;
+    if (p.surface < max && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:많|센|강하|두텁)|가장 많은 (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 많음≠${p.surface}/${max}`;
+    if (p.surface > min && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:적|모자라|부족|약하)|가장 (?:적은|모자란|부족한|약한) (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 적음≠${p.surface}/${min}`;
+  }
+  return null;
+}
+
+/** 최종판 1-5 궁합: 두 사람 이름이 함께 나온 문장도 "○○님에게 없는 쇠"처럼 이름 바로 뒤 없음 꼴은 그 사람 값과 견준다(P6e "백은솔님에게 없는 쇠", 庚 1개). */
+export function elementOwnedClaims(sentence: string, people: readonly { readonly name: string; readonly presence: ElementPresence }[]): string | null {
+  for (const p of people) for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
+    const pr = p.presence[e]; if (!pr || pr.surface === 0) continue;
+    const re = new RegExp(`${p.name}님?(에게는|에게|은|는|의 사주에는|의 원국에는)\\s?(없는|하나도 없는|전혀 없는|빠진) (${w.native}|${w.reading} ?(기운|글자))`);
+    if (re.test(sentence)) return `${p.name}:${e}:없음≠${pr.surface}`;
+  }
+  return null;
+}
+
 /** B1 음양: 같으면 균형, 차이 2 이상(5:3·6:2…)이면 치우침. 비율과 다른 말을 잡는다. */
 const YINYANG = /음(과|이|은|의)? ?양|음양|음 기운|양 기운|밀고 기다리는|음이 [0-9]|양이 [0-9]/;
 const BALANCED_WORD = /균형|반반|고르게|비슷하게|똑같|같은 비율|4대 ?4|3대 ?3|딱 맞/;
@@ -208,20 +235,28 @@ export const KEY_MARK = /[⟪⟫]/g;
  * 엔진 단계(만세력 오행 칸 가중값: 강·보통·약)와 다르면 실패. 부정("약하지 않")은 세지 않는다.
  */
 export type GroupLevelKo = "강" | "보통" | "약";
-export type GroupLevels = Readonly<Record<"비겁" | "식상" | "재성" | "관성" | "인성", GroupLevelKo>>;
-const GROUP_NAME_RE = /(?<![가-힣])(비겁|식상|재성|관성|관살|인성)(?=\)|[이가은는의도]|\s|$|[,.])/g;
+/** 최종 A-6: 「있음」 = 신약인데 비겁·인성이 강(한 문장 틀로만 씀) — 강·약 어느 세기 말도 맞지 않는다. */
+export type GroupLevels = Readonly<Record<"비겁" | "식상" | "재성" | "관성" | "인성", GroupLevelKo | "있음">>;
+// 최종판2 1-5: 쉬운 이름의 활용형("만들고 넓히는 힘", "값을 받아 내는 힘", "배우고 익히는 힘")도 그 묶음 이름으로 읽는다(장덕민 커리어 「만들고 넓히는 힘이 큰 확장형」, 식상 약).
+const EASY_FORMS = "내 방식(?:의|대로 [가-힣]{1,6}는) 힘|만들(?:고 [가-힣]{1,6}는|어 내는|어 [가-힣]{1,6}는) 힘|만드는(?: [가-힣]{1,6}는)? 힘|값을 받(?:는|아 내는|고 [가-힣]{1,6}는) 힘|규칙(?:의|을 [가-힣]{1,6}는) 힘|배우(?:는|고 [가-힣]{1,6}는) 힘";
+const GROUP_NAME_RE = new RegExp(`(?<![가-힣])(비겁|식상|재성|관성|관살|인성|${EASY_FORMS}|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?=\\)|\\(|[이가은는의도]|\\s|$|[,.])`, "g");
+/** 최종판 1-5 십성 세기: 십성 하나("정인이 강해")의 세기 말은 그 묶음 세기 하나(chart.groups)로만 쓴다 → 묶음 이름으로 읽어 엔진 단계와 대조한다. */
+const TEN_GOD_TO_GROUP: Readonly<Record<string, string>> = { 비견: "비겁", 겁재: "비겁", 식신: "식상", 상관: "식상", 편재: "재성", 정재: "재성", 편관: "관성", 정관: "관성", 편인: "인성", 정인: "인성" };
+/** P6e 14: 쉬운 이름 → 묶음 이름. */
+const EASY_GROUP: Readonly<Record<string, string>> = { "내 방식의 힘": "비겁", "만드는 힘": "식상", "값을 받는 힘": "재성", "규칙의 힘": "관성", "배우는 힘": "인성" };
+const easyGroupOf = (name: string): string | undefined => EASY_GROUP[name] ?? (/^내 방식/.test(name) ? "비겁" : /^만[들드]/.test(name) ? "식상" : /^값을 받/.test(name) ? "재성" : /^규칙/.test(name) ? "관성" : /^배우/.test(name) ? "인성" : undefined);
 // "많이 쓴다"는 쓰임(일이 그 힘을 많이 쓴다)이지 세기가 아니다(r2 커리어: 문단을 잘못 뺐다).
-const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리)/;
+const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리|큰 (편|쪽|확장형|사람|구조|사주)|크고|큽니|커서|커요|크다)/;
 const LV_MEDIUM = /^(보통|중간 정도|적당|평균)/;
 const LV_WEAK = /^(약하|약한|약해|약합|약함|옅|부족|모자라|모자란|적은 편|적어|적고|없어|없는|없고|없으|빈약|얇)/;
 export function groupClaims(sentence: string): { group: keyof GroupLevels; level: GroupLevelKo }[] {
   const out: { group: keyof GroupLevels; level: GroupLevelKo }[] = [];
   for (const m of sentence.matchAll(GROUP_NAME_RE)) {
-    const group = (m[1] === "관살" ? "관성" : m[1]) as keyof GroupLevels;
+    const group = (m[1] === "관살" ? "관성" : easyGroupOf(m[1]) ?? TEN_GOD_TO_GROUP[m[1]] ?? m[1]) as keyof GroupLevels;
     // 마디는 쉼표·마침표 또는 다음 묶음 이름 앞까지(r1: "식상은 있는데 재성이 약하다"의 "약하다"를 식상에 붙였다).
-    const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!·]|(?<![가-힣])(?:비겁|식상|재성|관성|관살|인성)(?=[)이가은는의도]|\s)/)[0].slice(0, 16);
+    const tail = sentence.slice((m.index ?? 0) + m[0].length).split(/[,.?!·]|(?<![가-힣])(?:비겁|식상|재성|관성|관살|인성|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?=[)이가은는의도]|\s)/)[0].slice(0, 16);
     // 괄호 닫힘·조사·"의 힘"·"기운"·"쪽" 다음, 이름 뒤 말을 한 낱말씩 본다.
-    const words = tail.replace(/^\)?(이|가|은|는|의|도)?\s?/, "").split(/\s+/);
+    const words = tail.replace(/^\([^)]*\)/, "").replace(/^\)?(이|가|은|는|의|도)?\s?/, "").split(/\s+/);
     for (let i = 0; i < Math.min(words.length, 5); i++) {
       const w = words.slice(i).join(" ");
       if (/^(지 않|지는 않|지 않은)/.test(words[i + 1] ?? "") || /지 ?않/.test(w.slice(0, 8))) break;
