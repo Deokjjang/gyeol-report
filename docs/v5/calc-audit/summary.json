@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-11-06T09:33:13.427Z",
+  "runtime": {
+    "node": "v25.9.0",
+    "icu": "78.3",
+    "icuTz": "2026a"
+  },
+  "tzdata": "2026f (Asia/Seoul identical since 2019c)",
+  "icuVsTzdata": {
+    "checks": 1246108,
+    "mismatches": 0,
+    "examples": []
+  },
+  "engineCivilToUtcVsReference": {
+    "checks": 10108,
+    "mismatches": 0,
+    "examples": []
+  },
+  "samples": 46997,
+  "engineErrors": 0,
+  "bySet": {
+    "A-boundary": {
+      "n": 9464,
+      "engineEqualsReference": 9464,
+      "fixed9Differs": 1998,
+      "kasiDiffers": 195
+    },
+    "A-boundary-day": {
+      "n": 560,
+      "engineEqualsReference": 560,
+      "fixed9Differs": 141,
+      "kasiDiffers": 3
+    },
+    "B-hour±40": {
+      "n": 9720,
+      "engineEqualsReference": 9720,
+      "fixed9Differs": 2520,
+      "kasiDiffers": 0
+    },
+    "C-birthplace": {
+      "n": 20412,
+      "engineEqualsReference": 20412,
+      "fixed9Differs": 2520,
+      "kasiDiffers": 0
+    },
+    "D-regression": {
+      "n": 1,
+      "engineEqualsReference": 1,
+      "fixed9Differs": 0,
+      "kasiDiffers": 0
+    },
+    "E-random": {
+      "n": 3000,
+      "engineEqualsReference": 2999,
+      "fixed9Differs": 106,
+      "kasiDiffers": 0
+    },
+    "G-jie±30": {
+      "n": 3840,
+      "engineEqualsReference": 3813,
+      "fixed9Differs": 753,
+      "kasiDiffers": 9
+    }
+  },
+  "fixed9DiffersByEra": {
+    "UTC+9": "0/2697",
+    "UTC+8:30": "51/165",
+    "서머타임": "55/138",
+    "기타": "0/0"
+  },
+  "mismatches": 28,
+  "mismatchCauses": {
+    "jie(절입 2분 안)": 28
+  },
+  "dayun": {
+    "n": 16305,
+    "mismatch": 29,
+    "mismatchNearJie2min": 28,
+    "startDiffHoursMaxAbs": 91862,
+    "startDiffHoursOver6": 33,
+    "awayFromJie": {
+      "n": 15136,
+      "startDiffHoursMaxAbs": 26,
+      "within2h": 15131,
+      "within4h": 15131
+    },
+    "traditionalVsStartYearMinusBirth": {
+      "n": 16305,
+      "differ": 6010
+    }
+  }
+}

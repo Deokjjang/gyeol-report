@@ -1,0 +1,35 @@
+{
+  "kasi": {
+    "terms": 360,
+    "years": 15,
+    "yearList": "2023 2000 2001 2002 2005 2010 2014 2019 2020 2021 2022 2024 2025 2026 2027",
+    "engineMinuteEqualsKasiMinute": 211,
+    "maxAbsMinuteDiff": 1,
+    "truncationFits": 211,
+    "roundingFits": 346,
+    "diffSecRange": [
+      -32,
+      34
+    ],
+    "jieOnly": {
+      "terms": 180,
+      "maxAbsMinuteDiff": 1
+    },
+    "engineOutsideRoundingSecMax": 4,
+    "astroRoundingFits": 282,
+    "astroOutsideRoundingSecMax": 40
+  },
+  "astronomyEngine": {
+    "terms": 3144,
+    "years": "1900-2030",
+    "maxAbsSec": 55.8,
+    "jieMaxAbsSec": 51.8,
+    "byEra": {
+      "1900-1929": 47.5,
+      "1930-1959": 46.7,
+      "1960-1989": 51.1,
+      "1990-2030": 55.8
+    },
+    "over60s": 0
+  }
+}
