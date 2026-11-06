@@ -54,3 +54,62 @@
 배포 직후로 옮길 것: 없음. 적용 순서 = 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9(점검표 1-1절과 같음).
 
 적용 방법: 운영 migration 기록 15건이 저장소 파일 버전과 다르게 적혀 있어(예전에 커넥터로 적용, 예 `20261011085143_v4_coupon_foundation` ↔ 저장소 `20261003123157`) `supabase db push`가 그대로는 쓸 수 없다(거절하거나 옛 migration 수십 개를 적용하려 함). 저장소 밖 임시 작업 폴더에 운영 기록 15건의 자리표 파일 + 적용할 파일 하나만 두고 `supabase db push --linked --include-all`(CLI, linked)을 파일마다 돌렸다 — CLI가 저장소 파일을 그대로 읽어 실행하고 기록에 **파일 버전·이름**을 남긴다. 저장소의 `supabase/config.toml`(`[db.migrations] enabled = false`)은 그대로 두고 임시 사본에서만 켰다.
+
+## 4. 운영 반영(2)
+
+### 2-1. migration(운영 `xscosaueqpatcqzbgkbl`, 09:44~09:51 KST)
+
+| 순서 | 버전 · 이름 | 적용 뒤 확인 SELECT |
+|---|---|---|
+| 0 | 20261105130000 v5_final3_read_no_quarantine | [R1] read_quarantine_disabled **true**, keeps_snapshot true · 책 41 · [R5] 0 |
+| 1 | 20261029130000 v5_writer_jobs | `report_writer_chapters` 있음 · 열 3개 · 큐 동작 claim·enqueue·publish·recover·status · 이용권 대기 0 |
+| 2 | 20261104100000 v5_p6d_ops | 새 표 15/15 · `order_records` 103 = legacy 103 = 주문 103 · `upgrade_roster` 39 · 트리거 `ops_order_record` 있음 |
+| 3 | 20261104180000 v5_p6e_ops | `report_ticket_grants.product_scopes` · `report_tickets_before_launch` 본문 패치 · 보상 표·`ops_comp`·`ops_recon` · 기존 지급 31건 그대로 |
+| 4 | 20261105090000 v5_final_payment_recovery_price_free | 가격 목록 없음 · `amount<100` 모양 검사 · 열람 격리 무동작 유지 |
+| 5 | 20261105091000 v5_final_comp_choice | — |
+| 6 | 20261105120000 v5_final3_tickets_reading | 적용 전 대상 **0권**(운영 v5 책 0) · 새 제약 위반 0 · 41권 열람 기한 지문 `65bd43ed…` 적용 전후 같음(고객 책 변경 0) · infinity 0 · 트리거 3 · 감싸기 `report_tickets_before_final3` |
+| 7 | 20261105160000 v5_final3_writer_raw | `ops_writer_raw` 있음, anon 실행 false |
+| 8 | 20261106100000 v5_final4_event_comp | `comp_campaign_grants` · `ops_comp_campaign`(B = auth.users) · 1+1 상한 kind='event' · anon 실행 false |
+| 9 | 20261106180000 v5_final4_writer_raw_purge | `raw_purge` 분기 |
+
+운영 migration 기록(v5 10건)이 저장소 파일 버전·이름과 그대로 같다. 마지막 확인: 책 41 COMPLETED, [R5] 0, 열람 격리 무동작 true.
+
+### 2-2. Vercel Production env
+
+- 넣음: `WRITER_V5_PRODUCTS`(출시 4종), `GIFT_EVENT_ENABLED=1` — Vercel 커넥터(vercel CLI 없음). 지금 v4 코드는 두 이름을 읽지 않음(master grep 0).
+- 확인: `ADMIN_USER_IDS` 있음(sensitive라 값은 못 읽음) · `COMP_ENABLED` 없음 · OpenAI env 3개(`OPENAI_API_KEY`·`OPENAI_REPORT_MODEL`·`OPENAI_REPORT_WRITER_ENABLED`) 그대로 · `ANTHROPIC_API_KEY` 있음.
+
+### 2-3. 병합
+
+- `v5/final` 20e5880e → `v5/main` merge commit **9e2324c8**(트리 = v5/final) push, 원격 SHA 같음.
+- `master`(release-master worktree): `v5/main` merge commit **e58fc21a**(부모 d846c2ea · 9e2324c8). 충돌 5개(BookPages·MetaPixel·metaConsent.module.css·BusinessFooter·metaConsentCard 시험)는 v5 쪽 — master 핫픽스 c5c11ca8·d846c2ea의 v5판(8086996f·63e7bab0)이 v5/main에 있음. **병합 트리 = v5/main 트리(95db4d48)**. push 09:54:58 KST, 원격 SHA 같음.
+- 태그 `v5.0.0` → e58fc21a push.
+
+### 2-4. Production 배포
+
+- `dpl_BLd5WA6kzHXaWnPL8uti2sQYf7qj` · SHA **e58fc21a** · READY(빌드 09:55:15 → 완료 **09:57:36 KST**) · 별칭 www.gyeolreport.com · gyeolreport.com(→ www 308) · aliasError 없음.
+- 롤백: `v4-last`(d846c2ea) 배포 `dpl_84CWqXBCu4UB6uNGmtmWt7Kh3o5P`로 Vercel Instant Rollback(대시보드 또는 커넥터 `request_rollback`). DB migration은 v4 코드와 호환이라 그대로 둬도 된다(1-3 표).
+
+## 5. 배포 직후 확인(3)
+
+| # | 확인 | 결과 | 판정 |
+|---|---|---|---|
+| 3-1 | 메인·상품(종합·궁합)·`/example`·`/example/og`·약관·처리방침·환불정책·`/products` | 전부 200. 처리방침: OpenAI 위탁·국외 이전 행, 「2026년 11월 6일부터 시행」. 약관·환불정책: 「단순 변심 환불(청약철회)은 되지 않습니다」 각 3곳, 「할 수 없습니다」·「어려워요」 0 | PASS |
+| 3-1 | 비회원 주문서(헤드리스, 결제 버튼 안 누름) | PRICE 3,900원 · 「1+1 · 로그인하고 결제하면 무료 이용권 1장」 · 동의 3칸(「주문 내용과 환불정책을 확인하고 동의해요」·「이용약관·개인정보 동의」·「만 14세 이상」)+전체 동의 · 맨 아래 「결제하면 바로 생성이 시작돼 단순 변심 환불은 되지 않아요 · 예시 보기」/「명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요」 | PASS |
+| 3-1 | 회원 주문서 | 운영 회원 로그인 없이 확인 못 함(시험 `checkoutReceipt.test.tsx`: 환불 칸 하나 + 만 14세) — 누나 시험에서 확인 | UNVERIFIED(운영 화면) |
+| 3-2 | `/api/gift-event` | `phase: during`, startsAt 2026-11-06T00:00Z(09:00 KST), endsAt 11-16T15:00Z(11-17 00:00 KST), 계정당 2, 30일 | PASS |
+| 3-2 | 손님 화면 팝업 ①·배너(크롬 390·웹킷 390·크롬 1280) | 메인: 팝업 ① + 「11월 6일 – 11월 16일」 + 배너 「종료까지」, 상품 화면: 팝업 ①, `/example`·`/reports/…`·`/r/…`: 팝업 없음, 페이지 오류 0 | PASS |
+| 3-2 | 회원 결제 1건 → 이용권 1장(운영 설정값 대조) | 운영 env 조합으로 계산한 설정 = 운영 응답(시작·끝·상한 2·보너스 2·30일·출시 4종). 운영 `ops_gift` 상한은 이벤트 이용권만 셈(패치 확인). PGlite: 결제 2건 → 2장, 3번째 `ACCOUNT_LIMIT`(보상 2장 보유 계정) | PASS(실결제 없이) |
+| 3-3 | `/dev/v5-login`·`/dev/book-flow`·`/dev/account`·`/dev/book-preview` | 404 | PASS |
+| 3-4 | 과거 Book 세 계열 | DB: v1 1·1.0 3·v2 4·v4 33 전부 COMPLETED, 내용 없음 0, [R5] 0, 열람 격리 무동작. 운영 v5 책은 아직 0권(누나 시험 책이 첫 v5). 고객 계정 로그인 화면 확인은 못 함 | PASS(DB) · UNVERIFIED(화면) |
+| 3-5 | 공유 미리보기 | 메인 og:image `/brand/gyeol-report-og-20261030.png`(v4는 `gyeol-report-og.png` — 이름이 바뀌어 미리보기 캐시도 새로), `/example` og:image `/example/og`, 둘 다 200 image/png 1200×630 | PASS(태그·이미지) |
+| 3-6 | 배포 뒤 30분(09:57:36~10:28 KST) | Vercel 런타임 오류 **0**(`get_runtime_errors`). Vercel 로그 API는 지난 24시간 전체가 0줄로 나와(옛 배포 포함) 쓸 수 없어 Supabase API 로그로 대신 확인: 크론·서버 RPC 정상 200(paid_report_reliability 98 · report_ticket_publication 37 · ops_generation 12 · meta 12 · ops_writer_raw 6 · ops_order 6 · ops_recon 6). **새 오류 1종: `ops_gift` 400 ×6(5분마다)** — `column reference "o.payment_order_id" is ambiguous`. PostgREST `Thread killed by timeout manager`는 배포 전에도 시간당 65~81건(기존) | **멈춤** |
+
+### 3-6 멈춤 — 원인
+
+- 어디: `ops_gift('pending_orders')` — 크론 `/api/internal/ops-jobs`(5분)의 「1+1 이벤트 이용권 보조 발급」(결제 완료 화면을 못 본 주문 찾기). P6d(20261104100000) 본문 그대로.
+- 왜: 함수에 PL/pgSQL 변수 `o`(payment_orders 행)·`x`(order_records 행)가 선언돼 있는데 이 조회가 같은 이름을 별칭으로 쓴다 → Postgres가 변수인지 열인지 못 정해 오류. 시험이 이 동작을 부른 적이 없어 놓쳤다(v5 migration 전체 함수 훑기: 같은 충돌은 이곳 하나).
+- 영향: 보조 발급만 멈춤. 기본 발급(결제 완료 화면 → `issue`)은 별칭 없는 구문이라 정상. 크론은 오류를 잡아 `gifts: 0`으로 넘기고 다른 단계(환불·정리·원문 정리·교체 레인)는 정상. 배포 뒤 결제 0건이라 빠진 이용권 0. 고치면 크론이 기간 안의 아직 따지지 않은 주문을 다시 찾아 채운다.
+- 결제·발행 경로 아님 → **롤백하지 않음**(지시: 결제·발행 경로 오류면 롤백).
+- 고침(준비만, 운영 미적용): `supabase/migrations/20261106200000_v5_deploy_gift_pending_alias.sql` — 이 조회 한 곳만 별칭 o→po, x→q(좁은 치환, 고칠 자리 1번 확인, 다시 실행 안전, 기존 행 변경 없음). 시험 `tests/unit/deploy/giftPending.test.ts`: 고치기 전 운영과 같은 `is ambiguous` 재현 → 고친 뒤 기간 안 회원 주문만·발급 뒤 다시 안 나옴. 코드 변경 없음(배포 불필요).
+- 4단계(보상 지급)는 이 멈춤에서 실행하지 않았다. dry-run만: A 3(모두 있음·가입 완료·미지급), **B 36**(가입 동의 미완료 1 = dea018f8), 제외 1(덕짱님 계정), 익명·삭제 0, 기준 시각(배포 완료 2026-11-06 09:57:36.853 KST) 뒤 가입 0.

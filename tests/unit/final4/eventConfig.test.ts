@@ -39,6 +39,8 @@ describe("1+1 기간(서버 시각, KST)", () => {
     // 발급·누락 주문 찾기는 둘 다 paid_at >= start and paid_at < end(코드 경계와 같은 반열린 구간).
     expect(sql).toContain("o.paid_at<(p_data->>'start')::timestamptz or o.paid_at>=(p_data->>'end')::timestamptz");
     expect(sql).toContain("o.paid_at>=(p_data->>'start')::timestamptz and o.paid_at<(p_data->>'end')::timestamptz");
+    // 배포 직후 고침(20261106200000): 누락 주문 찾기의 별칭만 po로(경계는 그대로 반열린 구간).
+    expect(sql).toContain("po.paid_at>=(p_data->>'start')::timestamptz and po.paid_at<(p_data->>'end')::timestamptz");
     // 코드가 넘기는 값: 시작 09:00 KST, 끝 = 11-17 00:00 KST(23:59:59 포함).
     expect(giftEventConfig(ON, T("2026-11-06T09:00:00+09:00"))).toMatchObject({ active: true, start: new Date(T("2026-11-06T09:00:00+09:00")).toISOString(), end: new Date(T("2026-11-17T00:00:00+09:00")).toISOString() });
   });
