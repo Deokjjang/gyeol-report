@@ -31,7 +31,7 @@ export async function PaymentCompleteView(a: { providerOrderId: string; paymentK
           <h1 id="payment-complete-title" className={styles.title}>결제가 완료됐어요</h1>
           <p className={styles.message}>책 제본을 시작했어요. 보통 몇 분 걸리고, 이 화면을 닫아도 계속 만들어져요.</p>
           <OrderSummaryCard order={order} bookHref={`/reports/${a.reportId}`}><OrderRequestForm guest={{ providerOrderId: a.providerOrderId, paymentKey: a.paymentKey }} /></OrderSummaryCard>
-          <p className={s.hint}>회원은 내 서재 → 구매 내역에서 다시 볼 수 있어요. 비회원은 주문코드와 이 주소를 보관해 주세요.</p>
+          <p className={s.hint}>내 서재에서 다시 볼 수 있어요.</p>
         </div>
       </section>
     </div>

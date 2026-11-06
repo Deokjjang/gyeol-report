@@ -16,7 +16,7 @@ vi.mock("../../../src/components/account/AccountSession", () => ({ useAccountSes
 vi.mock("../../../src/components/book/useTicketPublication", () => ({ checkoutReturnKey: () => "return", useTicketPublication: () => ({ pending: state.pending, loaded: true, message: "", retryable: false, revision: 0, submitting: false, completedUrl: null, submit: vi.fn() }) }));
 const interaction = vi.hoisted(() => vi.fn());
 vi.mock("../../../src/lib/analytics/client", () => ({ interaction, syncLocalFacts: vi.fn() }));
-import { BookCheckout, GIFT_EVENT_RECEIPT_GUEST_LINE, GIFT_EVENT_RECEIPT_LINE } from "../../../src/components/book/BookCheckout";
+import { BookCheckout, GIFT_EVENT_RECEIPT_LINE } from "../../../src/components/book/BookCheckout";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { AI_WRITTEN_RECEIPT_LINE_KO, RECEIPT_REFUND_LINE_KO, RECEIPT_TICKET_REFUND_LINE_KO } from "../../../src/lib/legal/aiNotice";
@@ -38,23 +38,22 @@ describe("발행 주문서 (최종 A 16)", () => {
     expect(text(html)).toContain("3,900원"); expect(html).not.toContain("1,490원");
     expect(html).not.toContain("data-gift-event-line"); expect(html).not.toContain("1+1");
   });
-  it("이벤트 기간만 한 줄: 회원은 「1+1 · 결제 후 무료 이용권 1장」, 비회원은 로그인 조건", () => {
-    expect(text(render({ giftEventProducts: ["saju_mbti_full"] }))).toContain(GIFT_EVENT_RECEIPT_GUEST_LINE);
+  it("이벤트 기간만 한 줄 「이벤트 · 결제 후 이용권 1장 증정」(2026-11-06 4번: 「증정」, 묶음 판매로 읽히는 「1+1」 없음)(P 추가 A: 비회원 결제가 없어 비회원 전용 줄도 없다)", () => {
+    expect(text(render({ giftEventProducts: ["saju_mbti_full"] }))).toContain(GIFT_EVENT_RECEIPT_LINE);
+    expect(text(render({ giftEventProducts: ["saju_mbti_full"] }))).not.toContain("로그인하고 결제하면");
     hooks.slots = []; state.session = { status: "member", profile: "complete" } as AccountSession;
     const member = render({ giftEventProducts: ["saju_mbti_full"] });
-    expect(GIFT_EVENT_RECEIPT_LINE).toBe("1+1 · 결제 후 무료 이용권 1장");
+    expect(GIFT_EVENT_RECEIPT_LINE).toBe("이벤트 · 결제 후 이용권 1장 증정");
     // 회원은 이용권 잔액 확인 전까지 결제 방법이 정해지지 않았어도 직접 결제 기본 → 줄이 보인다.
     expect(text(member)).toContain(GIFT_EVENT_RECEIPT_LINE);
     hooks.slots = []; expect(render({ giftEventProducts: ["career_money_study"] })).not.toContain("data-gift-event-line");
   });
-  it("비회원: 환불 칸 하나 「주문 내용과 환불정책을 확인하고 동의해요」 + 「이용약관·개인정보 동의」 + 만 14세", () => {
-    const t = text(render());
+  it("비회원(P 추가 A): 동의 칸·구매자 정보 칸 없이 주문 내용과 「결제하기」 하나 — 누르면 로그인으로(동의는 로그인 뒤 회원 주문서에서)", () => {
+    const html = render(), t = text(html);
     expect(ORDER_REFUND_CONSENT_TEXT).toBe("주문 내용과 환불정책을 확인하고 동의해요");
-    expect(t).toContain(`[필수] ${ORDER_REFUND_CONSENT_TEXT}`);
-    for (const gone of ["[필수] 입력 정보 확인", "[필수] 디지털 리포트 생성 시작", "[필수] 청약철회 제한", "[필수] 환불정책 동의", "이용약관·개인정보·환불정책", "주문 내용과 환불 안내를 확인했어요"]) expect(t).not.toContain(gone);
-    expect(t).toContain("[필수] 이용약관·개인정보 동의"); expect(t).toContain("[필수] 만 14세 이상");
-    expect((render().match(/\[필수\][^<]*/g) ?? []).filter(l => l.includes("환불"))).toEqual([`[필수] ${ORDER_REFUND_CONSENT_TEXT}`]); // 환불이 들어간 필수 칸은 하나
-    expect((render().match(/type="checkbox"/g) ?? []).length).toBe(4); // 전체 동의 + 3칸
+    expect(html).toContain("data-login-first"); expect(t).toContain("결제하기");
+    for (const gone of ["[필수]", "이용약관·개인정보 동의", "구매자 정보", "data-buyer-fields", "로그인하고 이어서 구매하기"]) expect(html).not.toContain(gone);
+    expect((html.match(/type="checkbox"/g) ?? []).length).toBe(0);
   });
   it("회원: 환불 칸 하나 + 만 14세(약관·개인정보는 가입 때 동의 — 주문서 칸 없음)", () => {
     state.session = { status: "member", profile: "complete" } as AccountSession;

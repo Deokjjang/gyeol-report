@@ -27,7 +27,7 @@ export const CHECKOUT_CONSENT_UI_VERSION_V1 = "final4-order-refund-v1";
 export const ORDER_REFUND_CONSENT_TEXT = "주문 내용과 환불정책을 확인하고 동의해요";
 /** 합친 칸이 체크하는 화면 확인 값(CheckoutLegalConfirmations 키). */
 export const ORDER_REFUND_CONSENT_COVERS = ["inputAccuracy", "digitalReportStart", "refundRestriction", "refundPolicyAgreement"] as const satisfies readonly (keyof CheckoutLegalConfirmations)[];
-/** 비회원 주문서의 약관·개인정보 칸(개인정보 보호법: 다른 동의와 구분). */
+/** 비회원 주문서의 약관·개인정보 칸(개인정보 보호법: 다른 동의와 구분). P 추가 A(2026-11-06): 비회원 결제는 없앴다. 예전 동의 기록(layout: guest)을 같은 문구로 다시 적기 위해 남긴다. */
 export const GUEST_POLICY_CONSENT_TEXT = "이용약관·개인정보 동의";
 /** 회원: 약관·개인정보는 가입 때 따로 동의했다(재동의 전이면 주문서가 막힌다) — 주문서 칸이 아니라 가입 동의로 기록한다. */
 export const MEMBER_SIGNUP_CONSENT_TEXT = "회원 가입 때 동의한 이용약관·개인정보처리방침";

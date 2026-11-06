@@ -35,7 +35,7 @@ type CheckoutPrepareRouteErrorCode =
   | "PAYMENT_CHECKOUT_UNAVAILABLE"
   | typeof SALES_CLOSED_CODE
   | "PROFILE_REQUIRED"
-  | "BUYER_INFO_INVALID";
+  | "LOGIN_REQUIRED";
 
 const tossClientKeyEnv = "NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
@@ -424,7 +424,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  // P6d-ops 2·3: 구매자. 입력 검증 뒤, 주문을 쓰기 전에 확인한다. 회원은 가입 정보가 있어야 하고(없으면 정보 화면), 비회원은 결제 화면 입력값.
+  // P6d-ops 2·3: 구매자. 입력 검증 뒤, 주문을 쓰기 전에 확인한다. 회원은 가입 정보가 있어야 한다(없으면 정보 화면). P 추가 A: 비회원 결제 없음(LOGIN_REQUIRED 401).
   const opsModule = await import("../../../../lib/ops/store");
   const ops = opsModule.createOpsStores();
   let buyer: import("../../../../lib/ops/orders/buyer").Buyer;

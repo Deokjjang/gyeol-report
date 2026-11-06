@@ -3,9 +3,10 @@ import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import {
-  eventRangeLabel, expiryLabel, isPopupState, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup, timesLabel,
+  eventRangeLabel, expiryLabel, isPopupState, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup,
   type PopupId, type PopupState,
 } from "../../lib/ops/comp/popupSelect";
+import { kstMonthDayLabel } from "../../lib/ops/config";
 import s from "./eventPopup.module.css";
 
 const storages = () => {
@@ -75,7 +76,8 @@ export function EventPopup({ id, state, clock = Date.now, onDone }: { id: PopupI
   // 기간이 끝나면 ①은 스스로 닫힌다(기억은 남기지 않음).
   useEffect(() => { if (id === "event-1plus1" && !eventOn) ref.current?.close?.(); }, [id, eventOn]);
   const done = (how: "close" | "today") => { if (ref.current?.open && typeof ref.current.close === "function") ref.current.close(); onDone(how); };
-  const comp = state.comp;
+  // P 추가 C·D: 계정당 상한 없음, 이용권 기한은 서버가 준 날짜(이번 이벤트 11월 30일).
+  const comp = state.comp, ticketUntil = kstMonthDayLabel(event?.ticketExpiresAt);
   return <dialog ref={ref} className={s.dialog} tabIndex={-1} aria-modal="true" aria-labelledby={titleId} aria-describedby={bodyId} data-event-popup={id}
     onCancel={e => { e.preventDefault(); done("close"); }}
     onClick={e => { if (e.target === e.currentTarget) done("close"); }}>
@@ -83,10 +85,10 @@ export function EventPopup({ id, state, clock = Date.now, onDone }: { id: PopupI
       <button type="button" className={s.close} aria-label="닫기" onClick={() => done("close")}><span aria-hidden="true">×</span></button>
       {id === "event-1plus1" && event ? <>
         <p className={s.eyebrow}>{eventRangeLabel(event)}</p>
-        <h2 id={titleId} className={s.title}>한 권을 펼치면, 한 권이 더</h2>
-        <p id={bodyId} className={s.body}>리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.</p>
+        <h2 id={titleId} className={s.title}>한 권을 펼치면, 이용권 한 장</h2>
+        <p id={bodyId} className={s.body}>리포트를 결제하면 1건마다 이용권 1장을 증정해요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.</p>
         <p className={s.timer}><span>남은 시간</span><b>{remainingLabel(Date.parse(event.endsAt) - now)}</b></p>
-        <p className={s.small}>한 계정에 {timesLabel(event.maxPerAccount)}까지 · 이용권은 받은 날부터 {event.validDays}일</p>
+        {ticketUntil ? <p className={s.small}>이용권은 {ticketUntil}까지 쓸 수 있어요</p> : null}
         <div className={s.actions}>
           <a className={s.secondary} href="/example" onClick={() => done("close")}>예시 먼저 보기</a>
           <Link className={s.primary} href="/" onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname)) e.preventDefault(); done("close"); }}>리포트 고르기</Link>
@@ -95,15 +97,15 @@ export function EventPopup({ id, state, clock = Date.now, onDone }: { id: PopupI
         <p className={s.eyebrow}>새로 쓴 결리포트</p>
         {id === "comp-a" ? <>
           <h2 id={titleId} className={s.title}>믿고 먼저 결제해 주셔서 고맙습니다</h2>
-          <p id={bodyId} className={s.body}>아직 부족했던 결리포트를 믿어 주신 덕분에 처음부터 다시 쓸 수 있었어요. 만세력은 더 정확하게, 해석은 더 깊게, 문장은 더 내 이야기처럼. 고마운 마음을 담아 이용권 두 장을 드려요.</p>
+          <p id={bodyId} className={s.body}>아직 부족했던 결리포트를 믿어 주신 덕분에 처음부터 다시 쓸 수 있었어요. 만세력은 더 정확하게, 해석은 더 깊게, 문장은 더 내 이야기처럼. 고마운 마음을 담아 이용권 두 장을 증정해요.</p>
         </> : <>
           <h2 id={titleId} className={s.title}>결리포트를 처음부터 다시 썼어요</h2>
-          <p id={bodyId} className={s.body}>만세력은 더 정확하게, 사주와 MBTI를 잇는 해석은 더 깊게, 문장은 더 내 이야기처럼. 먼저 찾아 주신 분께 새 결리포트를 읽어 볼 이용권을 드려요.</p>
+          <p id={bodyId} className={s.body}>만세력은 더 정확하게, 사주와 MBTI를 잇는 해석은 더 깊게, 문장은 더 내 이야기처럼. 먼저 찾아 주신 분께 새 결리포트를 읽어 볼 이용권을 증정해요.</p>
         </>}
-        <p className={s.ticket}><b>무료 이용권 {comp.unused}장</b><span>{expiryLabel(comp.expiresAt)}까지</span></p>
+        <p className={s.ticket}><b>증정 이용권 {comp.unused}장</b><span>{expiryLabel(comp.expiresAt)}까지</span></p>
         <p className={s.small}>{id === "comp-a" ? "한 장은 나에게, 한 장은 소중한 사람에게." : "직접 읽거나, 소중한 사람에게 선물할 수 있어요."}</p>
-        {id === "comp-b" && eventOn ? <p className={s.small}>지금은 1+1 기간이에요. 결제 1건마다 1장을 더 드려요.</p> : null}
-        <div className={s.actions}><a className={s.primary} href="/account#gifts" onClick={() => done("close")}>이용권으로 만들기</a></div>
+        {id === "comp-b" && eventOn ? <p className={s.small}>지금은 증정 이벤트 기간이에요. 결제 1건마다 이용권 1장을 증정해요.</p> : null}
+        <div className={s.actions}><a className={s.primary} href="/account" onClick={() => done("close")}>이용권으로 만들기</a></div>
       </> : null}
       <button type="button" className={s.today} onClick={() => done("today")}>오늘 하루 보지 않기</button>
     </div>

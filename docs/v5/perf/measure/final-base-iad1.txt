@@ -1,0 +1,24 @@
+home	TTFB 3	FCP 40	LCP 40	첫내용 53	TTI 54	JS 13/80KB	API 3개: /api/gift-event[76-282 sb0/0] /auth/event-popup[76-284 sb0/0] /auth/session[78-288 sb0/0]
+  text: 결리포트 GYEOL REPORT 로그인 1+1 EVENT11월 6일 – 11월 16일 한 권을 펼치면, 한 권이 더 리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요. 한 계정에 두 번까지 · 이용권은 받은 날부터 30일 종료까지 10 일 08 시간 54 분 55 초 
+input	TTFB 3	FCP 40	LCP 320	첫내용 329	TTI 329	JS 17/84KB	API 2개: /auth/event-popup[318-524 sb0/0] /auth/session[322-526 sb0/0]
+  text: 결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗
+nav	TTFB 4	FCP 36	LCP 328	첫내용 351	TTI 351	JS 30/152KB	API 5개: /api/gift-event[72-279 sb0/0] /auth/event-popup[72-281 sb0/0] /auth/session[75-283 sb0/0] /auth/event-popup[1190-1397 sb0/0] /auth/session[1204-1408 sb0/0]
+  text: 결리포트 GYEOL REPORT 닫기 × 나라는 사람 / 01 이 책의 주인공 주인공 주인공 이름 생년월일 성별 미선택 여성 남성 출생시간 정확 대략 모름 태어난 시각 다음 페이지 → ← 나라는 사람 1 / 3 책장 ↗
+library	TTFB 3	FCP 60	LCP 1492	첫내용 1684	이용권 2245	TTI 1684	JS 16/98KB	API 7개: /auth/session[100-687 sb4/2] /auth/comp[694-1475 sb5/3] /auth/gift[695-1475 sb5/3] /auth/orders[695-1478 sb6/3] /auth/profile[695-1661 sb6/4] /auth/library-list[695-1668 sb6/4] /auth/ticket-summary[695-2243 sb9/7]
+  text: 결리포트 내 서재 ACCOUNT 내 서재 성능 a님, 반갑습니다. 리포트 이용권 2장 2장 · 11월 30일까지 결리포트 나라는 사람 성능 a_v5_0 PERSONAL EDITION 나라는 사람 성능 a_v5_0 2026. 11. 06. 발행 탈퇴 전까지 계속 열람 결리포트 
+library-b	TTFB 3	FCP 60	LCP 1488	첫내용 1669	이용권 2247	TTI 1669	JS 16/46KB	API 7개: /auth/session[102-691 sb4/2] /auth/comp[698-1480 sb5/3] /auth/library-list[698-1672 sb6/4] /auth/gift[699-1478 sb5/3] /auth/orders[699-1482 sb6/3] /auth/profile[699-1666 sb6/4] /auth/ticket-summary[699-2232 sb9/7]
+  text: 결리포트 내 서재 ACCOUNT 내 서재 성능 b님, 반갑습니다. 리포트 이용권 0장 결리포트 나라는 사람 성능 b_v5_0 PERSONAL EDITION 나라는 사람 성능 b_v5_0 2026. 11. 05. 발행 탈퇴 전까지 계속 열람 결리포트 우리라는 사이 성능 b_v5_
+reconsent	TTFB 2	FCP 60	LCP 700	첫내용 696	TTI 696	JS 14/94KB	API 1개: /auth/session[99-680 sb4/2]
+  text: 결리포트 로그인 WELCOME 시작하기 전에 성능 re님, 현재 이용약관과 개인정보처리방침을 확인해 주세요. 가입 필수 동의 전체 동의 [필수] 이용약관 동의 보기 › [필수] 개인정보처리방침 동의 보기 › 동의하고 계속하기 → 로그아웃 로그인 없이도 책을 만들 수 있습니다. →
+book-v5	TTFB 213	FCP 272	LCP 1584	첫내용 1582	TTI 1582	JS 16/101KB	API 0개: 
+  text: 결리포트 GYEOL REPORT 목차 닫기 × GYEOL REPORT ISSUE 01 나라는 사람 PERSONAL EDITION 기존주문의 책 빽빽한 숲 한가운데 선 큰 나무 제6판 · 2026년 11월 5일 기준 ← 나라는 사람 01 / 17 →
+book-v4	TTFB 212	FCP 268	LCP 1664	첫내용 1659	TTI 1659	JS 16/104KB	API 0개: 
+  text: 결리포트 GYEOL REPORT 목차 닫기 × GYEOL REPORT ISSUE 06 나의 2026 PERSONAL EDITION 하람의 책 하람님의 2026년 — 함께 키울 판과 나눌 몫을 믿고 맡기는 일에 담는 해 제4판 · 2026년 10월 29일 발행 ← 나의 2026 01 
+book-v2	TTFB 212	FCP 272	LCP 1448	첫내용 1444	TTI 1444	JS 15/72KB	API 1개: /auth/session[1447-2031 sb4/2]
+  text: 결리포트 GYEOL REPORT 2026년 10월 29일 발행 사주×MBTI 종합 리포트 하람님의 사주×MBTI 종합 리포트 하람님의 원국은 「정축일주, 정화, 금 부족」 표식을 중심으로 읽습니다. MBTI는 원인이 아니라 이 구조가 생활에서 드러나는 행동 방식으로만 연결합니다.
+book-v1	TTFB 212	FCP 272	LCP 1456	첫내용 1454	TTI 1454	JS 15/90KB	API 2개: /auth/session[1406-1988 sb4/2] /auth/library-status[1992-2947 sb6/4]
+  text: 결리포트 GYEOL REPORT 2026년 10월 29일 발행 2026년 세운 리포트 하람님의 2026년 세운 리포트 2026년은 지금부터 남은 흐름을 어떻게 활용하고 조율할지 보는 현재 세운입니다. 상반기에 이미 체감된 신호와 남은 달의 운영 기준을 함께 읽습니다. 2026년
+book-expired	TTFB 210	FCP 268	LCP 968	첫내용 968	TTI 968	JS 15/90KB	API 0개: 
+  text: GYEOL REPORT 리포트 열람 기간이 종료되었습니다 이 리포트는 열람이 끝났습니다. 90일의 온라인 열람 기간이 지났거나 탈퇴·삭제 요청으로 닫힌 리포트입니다. 리포트와 입력 정보는 보관 정책에 따라 삭제됩니다. 홈으로 돌아가기 ↗
+waiting	TTFB 211	FCP 268	LCP 1184	첫내용 1177	TTI 1177	JS 15/72KB	API 0개: 
+  text: GYEOL REPORT 책을 제본하고 있습니다 입력하신 정보를 바탕으로 나를 이해하는 리포트를 구성하고 있습니다. 원국 분석 성향 연결 책 집필 검수 제본 완성되면 이 화면에서 자동으로 보여드립니다. 페이지를 닫아도 준비는 계속됩니다. 이 주소를 저장해 두시면 다시 확인하실 수

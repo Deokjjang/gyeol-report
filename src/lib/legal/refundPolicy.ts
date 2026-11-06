@@ -1,3 +1,5 @@
+import { POLICY_EFFECTIVE_DATE_KO, POLICY_HISTORY } from "./policyVersions";
+
 export const refundPolicyStates = [
   "before_payment",
   "paid_before_generation",
@@ -83,7 +85,7 @@ export const refundPolicyStateRows = [
     id: "ticket_report",
     statusKo: "이용권으로 만든 리포트",
     handlingKo:
-      "이용권으로 만든 리포트는 결제한 리포트와 같은 상품이지만 환불 대상이 아닙니다. 계산 오류·결과 미제공·시스템 장애 등 오류가 확인되면 다시 만들어 드립니다. 이용권은 현금으로 바꾸거나 환불할 수 없습니다.",
+      "이용권으로 만든 리포트는 결제한 리포트와 같은 상품이지만 환불 대상이 아닙니다. 계산 오류·결과 미제공·시스템 장애 등 오류가 확인되면 다시 만들어 드리거나 이용권을 다시 드립니다. 이용권은 무상 증정이므로 현금으로 바꾸거나 환불할 수 없습니다. 결제가 환불되면 그 결제로 받은 아직 쓰지 않은 이용권(받지 않은 선물 포함)은 회수됩니다.",
   },
 ] as const satisfies readonly RefundPolicyStateRow[];
 
@@ -93,11 +95,15 @@ export const refundPolicyRequiredNotices = [
   "미제공, 중복결제, 시스템 오류, 회사 귀책 오류가 확인되는 경우 환불 또는 재제공을 진행합니다.",
   "환불이 확정된 경우 관련 법령에 따라 환급 절차를 진행합니다.",
   "미성년자가 법정대리인 동의 없이 결제한 경우 본인 또는 법정대리인이 계약 취소를 요청할 수 있습니다.",
-  "이용권으로 만든 리포트는 환불하지 않으며, 오류가 확인되면 다시 만들어 드립니다.",
+  "이용권으로 만든 리포트는 환불하지 않으며, 오류가 확인되면 다시 만들어 드리거나 이용권을 다시 드립니다.",
 ] as const;
 
 export const refundPolicySupportRequestGuidanceKo =
   "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요. 이용권으로 만든 리포트는 리포트 주소를 함께 보내주세요.";
 
 export const prePaymentRefundNoticeKo =
-  "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드립니다.";
+  "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드리거나 이용권을 다시 드립니다.";
+
+/** 시행일·변경 이력(약관 「시행일」 절과 같은 모양). 환불정책 화면 두 곳(/refund 예전 화면, 책 화면의 정책 문서)이 그대로 그린다. */
+export const refundPolicyEffectiveDateKo = POLICY_EFFECTIVE_DATE_KO;
+export const refundPolicyHistoryLinesKo: readonly string[] = [`시행일: ${refundPolicyEffectiveDateKo}`, ...POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`)];

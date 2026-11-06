@@ -9,7 +9,7 @@ import { runPaidV5Job, type PaidJobOps } from "@/lib/ops/generation/paidJob";
 import { afterPaidOrder, newGiftToken } from "@/lib/ops/gift/service";
 import { processRefunds } from "@/lib/ops/orders/refund";
 import type { RefundProvider } from "@/lib/payment/tossRefundClient";
-import { compConfig, compSyncArgs, giftEventConfig, TICKET_VALID_DAYS } from "@/lib/ops/config";
+import { compConfig, compSyncArgs, giftEventConfig, TICKET_VALID_DAYS, ticketExpiresAt } from "@/lib/ops/config";
 import { libraryItem, reportAccessOpen } from "@/lib/library/model";
 import { projectV5Book } from "@/lib/writer/book";
 import { AI_WRITTEN_NOTICE_KO } from "@/lib/legal/aiNotice";
@@ -53,15 +53,16 @@ beforeAll(async () => {
 afterAll(async () => { await h?.db.close(); });
 
 describe("이용권 유효기간 30일(최종3)", () => {
-  it("서버 설정: 이벤트·보상 A·B 모두 30일 고정(예전 유효일 설정값은 무시)", () => {
+  it("서버 설정: P 추가 D — 이번 이벤트 이용권 기한은 11-30 23:59:59 KST 고정, 그 뒤 발급만 30일(예전 유효일 설정값은 무시)", () => {
     expect(TICKET_VALID_DAYS).toBe(30);
     const now = Date.parse("2026-11-10T00:00:00Z");
-    expect(giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-01T00:00:00Z", GIFT_EVENT_END: "2026-12-01T00:00:00Z", GIFT_EVENT_VALID_DAYS: "90" }, now).validDays).toBe(30);
-    expect(compSyncArgs(compConfig({ COMP_A_VALID_DAYS: "60", COMP_B_VALID_DAYS: "45" }))).toMatchObject({ aDays: 30, bDays: 30 });
+    expect(giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-01T00:00:00Z", GIFT_EVENT_END: "2026-12-01T00:00:00Z", GIFT_EVENT_VALID_DAYS: "90" }, now).ticketExpiresAt).toBe("2026-11-30T14:59:59.000Z");
+    expect(ticketExpiresAt(Date.parse("2026-12-01T00:00:00Z"))).toBe("2026-12-31T00:00:00.000Z");
+    expect(compSyncArgs(compConfig({ COMP_A_VALID_DAYS: "60", COMP_B_VALID_DAYS: "45" }, now))).toMatchObject({ aDays: 30, bDays: 30, expiresAt: "2026-11-30T14:59:59.000Z" });
   });
 
-  it("이벤트 이용권(1+1): 서버가 30일을 넘겨 보내도 30일, 선물하면 받은 친구 이용권은 처음 발급 기한 그대로", async () => {
-    const cfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", maxPerAccount: 2, bonusMax: 2, products: ["saju_mbti_full"], validDays: 90 };
+  it("이벤트 이용권(1+1): 서버가 30일을 넘겨 보내도 30일(안전장치), 선물하면 받은 친구 이용권은 처음 발급 기한 그대로", async () => {
+    const cfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", products: ["saju_mbti_full"], ticketExpiresAt: new Date(Date.now() + 90 * 86_400_000).toISOString() };
     await pay("f3g1", A);
     expect((await afterPaidOrder(gift as never, "f3g1", cfg))?.issued).toMatchObject({ issued: true });
     expect(await days("select expires_at-created_at from gift_rewards where source_order_id=$1", ["f3g1"])).toBe(30);
@@ -74,10 +75,10 @@ describe("이용권 유효기간 30일(최종3)", () => {
     await contact(B);
     expect(await gift.call("claim", { userId: B, tokenHash: link.hash })).toMatchObject({ ok: true, status: "claimed" });
     expect(await one("select expires_at::text e from report_ticket_grants where user_id=$1 and reason='EVENT_GIFT_RECEIVED'", [B])).toEqual({ e: w.e });
-    // 선물 받은 친구(B)의 첫 결제 → 보낸 사람 보너스 1장도 발급일로부터 30일.
+    // P 추가 C: 선물 받은 친구(B)의 첫 결제 보너스는 없앴다 — 결제 뒤 처리는 발급만 한다(보너스 이용권 0).
     await pay("f3g2", B);
-    expect((await afterPaidOrder(gift as never, "f3g2", cfg))?.bonus).toMatchObject({ granted: true });
-    expect(await days("select expires_at-granted_at from report_ticket_grants where user_id=$1 and reason='EVENT_GIFT_BONUS'", [A])).toBe(30);
+    expect(await afterPaidOrder(gift as never, "f3g2", cfg)).not.toHaveProperty("bonus");
+    expect(await one<{ n: number }>("select count(*)::int n from report_ticket_grants where user_id=$1 and reason='EVENT_GIFT_BONUS'", [A])).toEqual({ n: 0 });
   });
 
   it("보상 이용권 A: 설정 유효일이 60일이어도 30일", async () => {

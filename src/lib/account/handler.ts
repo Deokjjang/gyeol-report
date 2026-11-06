@@ -1,6 +1,6 @@
 import { randomBytes, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
-import { ACCOUNT_POLICY_VERSIONS, ACCOUNT_PROVIDERS, accountSession, safeAccountNext, validConsentSubmission, type AccountIdentity, type AccountProvider, type AccountSnapshot } from "./policy";
+import { ACCOUNT_POLICY_VERSIONS, ACCOUNT_PROVIDERS, accountSession, mayReadOwnedBooks, safeAccountNext, validConsentSubmission, type AccountIdentity, type AccountProvider, type AccountSnapshot } from "./policy";
 import { publicRequestOrigin } from "./origin";
 import { channelOnboarding } from "./channelOnboarding";
 
@@ -21,7 +21,9 @@ const COOKIE = "gyeol-auth-flow";
 const RETURN_COOKIE = "gyeol-account-return";
 const noStore = { "Cache-Control": "private, no-store, max-age=0", "Vary": "Cookie" };
 
-export async function handleAccount(request: NextRequest, action: string, port: AccountPort, local = false): Promise<NextResponse> {
+/** compWaiting: 재동의 화면 맨 위 한 줄(P 본문 3) — 안 쓴 보상 이용권이 있는지. 예전에 필수 동의를 마친 기존 회원(재동의 대상)에게만 묻는다(신규 가입자는 묻지도 않는다). */
+export type AccountDeps = { compWaiting?: (userId: string) => Promise<boolean> };
+export async function handleAccount(request: NextRequest, action: string, port: AccountPort, local = false, deps: AccountDeps = {}): Promise<NextResponse> {
   const url = new URL(request.url);
   if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
   const origin = local ? url.origin : publicRequestOrigin(request);
@@ -77,7 +79,9 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       if (snapshot === null) return json({ code: "ACCOUNT_SESSION_UNAVAILABLE", error: "로그인 상태를 확인하지 못했습니다." }, 503);
       const session = accountSession(user, snapshot);
       const channelPrompt = channelOnboarding(user, session);
-      return json({ ...session, ...(channelPrompt ? { channelPrompt } : {}) });
+      const compWaiting = session.status === "needs_consent" && user && snapshot && mayReadOwnedBooks(user, snapshot) && deps.compWaiting
+        ? await deps.compWaiting(user.id).catch(() => false) : false;
+      return json({ ...session, ...(channelPrompt ? { channelPrompt } : {}), ...(compWaiting ? { compWaiting: true } : {}) });
     }
     if (action === "logout") {
       const ok = await port.logout();
@@ -111,12 +115,14 @@ export async function handleAccount(request: NextRequest, action: string, port: 
     if (!snapshot) return json({ error: "동의를 저장하지 못했습니다. 다시 시도해 주세요." }, 503);
     const ok = await port.consent(user, body.requestId, snapshot.profile ? "reconsent" : "first_login");
     const next = request.cookies.get(RETURN_COOKIE)?.value;
-    const response = json(ok ? { ok: true, ...(next ? { next: safeAccountNext(next, local) } : {}) } : { error: "동의를 저장하지 못했습니다. 다시 시도해 주세요." }, ok ? 200 : 503);
-    if (ok) response.cookies.set(RETURN_COOKIE, "", { ...cookieOptions, maxAge: 0 });
+    // P 추가 A·F: 가입 정보(이름·이메일)가 아직 없으면(신규 가입) 돌아갈 곳(결제 화면·선물 링크)을 쥐고 있다가 정보 저장 뒤 보낸다(profile.ts).
+    const profilePending = snapshot.contact === null;
+    const response = json(ok ? { ok: true, ...(next && !profilePending ? { next: safeAccountNext(next, local) } : {}) } : { error: "동의를 저장하지 못했습니다. 다시 시도해 주세요." }, ok ? 200 : 503);
+    if (ok) response.cookies.set(RETURN_COOKIE, profilePending && next ? next : "", { ...cookieOptions, maxAge: profilePending && next ? 1800 : 0 });
     return response;
   } catch {
     // No provider text, codes, tokens, email, or DB diagnostics in public responses.
     if (action === "callback") { const response = failure(); response.cookies.set(COOKIE, "", { ...cookieOptions, maxAge: 0 }); return response; }
-    return json({ code: "ACCOUNT_REQUEST_FAILED", error: "요청을 완료하지 못했습니다. 다시 시도하거나 로그인 없이 계속해 주세요." }, 503);
+    return json({ code: "ACCOUNT_REQUEST_FAILED", error: "요청을 완료하지 못했어요. 다시 시도해 주세요." }, 503);
   }
 }

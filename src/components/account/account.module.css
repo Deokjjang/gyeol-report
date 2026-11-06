@@ -3,3 +3,6 @@
 .librarySheet{max-width:800px;margin-top:40px}.accountInfo{font-size:12px;border-top:1px solid #ddd;padding:12px 0}.accountInfo summary{cursor:pointer}
 /* Same isolated presentation rule as Book preview; public OFF routes unaffected. */
 :global(body):has(.root)>footer{display:none}
+/* P 본문 3: 재동의 화면 맨 위 한 줄(안 쓴 보상 이용권이 있는 기존 회원만). P 추가 A: 인앱 브라우저 Google 로그인 안내. */
+.compWaiting{margin:0 0 28px;padding:10px 14px;border:1px solid #111;font-size:13px;line-height:1.6}
+.inApp{margin:-12px 0 24px;padding:16px;border:1px solid #bbb;font-size:13px}.inApp b{display:block;font-size:14px;margin-bottom:6px}.inApp p{margin:0 0 6px}.inApp .primary{margin:14px 0 4px}

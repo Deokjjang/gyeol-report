@@ -6,5 +6,5 @@ export const AI_WRITTEN_NOTICE_KO = "이 리포트는 명리 계산 결과와 MB
  * 2줄: AI 작성 고지(v5 상품).
  */
 export const RECEIPT_REFUND_LINE_KO = "결제하면 바로 생성이 시작돼 단순 변심 환불은 되지 않아요";
-export const RECEIPT_TICKET_REFUND_LINE_KO = "이용권으로 만든 책은 환불되지 않고, 오류가 있으면 다시 만들어 드려요";
+export const RECEIPT_TICKET_REFUND_LINE_KO = "이용권으로 만든 책은 환불되지 않고, 오류가 있으면 다시 만들어 드리거나 이용권을 다시 드려요";
 export const AI_WRITTEN_RECEIPT_LINE_KO = "명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요";

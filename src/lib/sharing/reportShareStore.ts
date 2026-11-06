@@ -27,6 +27,9 @@ export function sharePort(): ShareStorePort {
     async owned(reportId,user){
       if(!(await import("../book/publicGate")).bookExperiencePublicEnabled())return false;
       const db=client();if(!db)return false;
+      // P 속도: 본문 없이 참·거짓만(book_share_owned). 함수가 아직 없는 DB(migration 전)면 예전 확인으로.
+      const light=await db.rpc("book_share_owned",{p_report:reportId,p_user:user});
+      if(!light.error)return light.data===true;
       const r=await db.rpc("book_share_publication",{p_report:reportId,p_user:user});return !r.error&&r.data?.ok===true;
     },
     async find(key, value) {
@@ -95,6 +98,17 @@ export async function issuePublishedReportShare(reportId: string, validatePublic
     const url = await existingReportShareUrl(reportId, port);
     return url ? { ok: true as const, data: { ...describeReportShare(snapshot), url } } : unavailable;
   } catch { return unavailable; }
+}
+
+/** P 추가 B: 공유 링크가 가리키는 책의 열람 기한이 지났는가(열 수 없을 때만 묻는다 — 본문은 받지 않는다). */
+export async function sharedReportExpired(token: string, port = sharePort()): Promise<boolean> {
+  if (!SHARE_TOKEN_PATTERN.test(token)) return false;
+  try {
+    const data = await port.find("token", token);
+    if (!data || data.revoked_at) return false;
+    const result = await port.read("read_report", { reportId: data.report_id });
+    return result.ok === true && (result.status === "EXPIRED" || (typeof result.expiresAt === "string" && !reportAccessOpen(result.expiresAt)));
+  } catch { return false; }
 }
 
 export const loadSharedReport = cache(async (token: string, validatePublication = validateProductPublication, port = sharePort()) => {

@@ -1613,21 +1613,20 @@ export default async function ReportResultPage({
   if (state.kind === "productPreview") {
   const reportId = routeParams.reportId ?? "";
   const isPaid = state.productPreview.access.mode === "paid";
-  if (isPaid && isBookSnapshotVersion(state.productPreview.productVersion) && accountPublicEnabled()) {
-    const { canReadPurchasedBook } = await import("../../../lib/book/ownerAccess");
-    if (!await canReadPurchasedBook(reportId)) return await refundedBook(reportId) ? <ReportStatusView state="refunded" /> : renderUnavailableState();
-  }
-
-  const url = isPaid
-    ? await existingReportShareUrl(reportId)
-    : null;
+  // P 속도: 소유 확인·공유 링크·임시본 여부는 서로 기다릴 필요가 없어 동시에 묻는다(예전에는 줄줄이 3번). 소유가 아니면 나머지 결과는 버린다.
+  const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
+  const mustOwn = isPaid && isBookSnapshotVersion(state.productPreview.productVersion) && accountPublicEnabled();
+  const [owned, url, interim] = await Promise.all([
+    mustOwn ? import("../../../lib/book/ownerAccess").then(m => m.canReadPurchasedBook(reportId)) : Promise.resolve(true),
+    isPaid ? existingReportShareUrl(reportId) : Promise.resolve(null),
+    isPaid ? isInterimEdition(reportId) : Promise.resolve(false),
+  ]);
+  if (!owned) return await refundedBook(reportId) ? <ReportStatusView state="refunded" /> : renderUnavailableState();
 
   const product = isPaid
     ? getReportProduct(state.productPreview.productType)
     : null;
   const SaveLibrary = isPaid && accountPublicEnabled() ? (await import("../../../components/account/SaveToLibrary")).SaveToLibrary : null;
-  const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
-  const interim = isPaid ? await isInterimEdition(reportId) : false;
 
   return (
     <>

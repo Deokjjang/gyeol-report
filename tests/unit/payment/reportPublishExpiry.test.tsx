@@ -138,7 +138,7 @@ describe("publication-based paid access and retention — real SQL", () => {
       await db.exec("update paid_report_snapshots set published_at=now()-interval '2160 hours',expires_at=now()");
       expect(await readPublishedReport(store, id)).toMatchObject({ status: "EXPIRED", snapshot: null });
       const expired = renderToStaticMarkup(await render());
-      expect(expired).toContain("90일");
+      expect(expired).toContain("열람 기간이 끝난 리포트예요"); // P 추가 B: 기한이 지난 책 링크는 한 줄만
       expect(expired).not.toContain("리포트 공유하기");
       await db.exec("update paid_report_snapshots set published_at=now()-interval '2160 hours'-interval '1 second',expires_at=now()-interval '1 second'");
       expect(await readPublishedReport(store, id)).toMatchObject({ status: "EXPIRED", snapshot: null });

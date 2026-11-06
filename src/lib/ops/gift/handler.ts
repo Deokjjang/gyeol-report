@@ -4,15 +4,19 @@ import { accountSession } from "../../account/policy";
 import { giftEventConfig } from "../config";
 import { opsOriginAllowed, opsSameOrigin } from "../origin";
 import type { OpsStores } from "../store";
-import { giftTokenHash, newGiftToken, validGiftToken } from "./service";
+import { giftTokenHash, newGiftToken, readWallet, validGiftToken } from "./service";
 
 const messages: Record<string, string> = {
   GIFT_NOT_FOUND: "선물 링크를 찾지 못했어요. 주소가 맞는지 확인해 주세요. 보낸 분의 주문이 환불되어 선물이 회수됐을 수도 있어요.", GIFT_USED: "이미 사용했거나 받은 선물이에요.", GIFT_EXPIRED: "선물 기간이 지났어요.",
   GIFT_SELF: "내가 보낸 선물은 받을 수 없어요. 링크를 친구에게 보내 주세요.", PROFILE_REQUIRED: "선물을 받으려면 가입 정보(이름·이메일)를 먼저 입력해 주세요.",
   MEMBER_REQUIRED: "로그인한 뒤 받을 수 있어요.", GIFT_LINK_ONLY: "이 이용권은 친구에게 선물하는 용도예요. 선물 링크를 만들어 보내 주세요.", GRANT_FAILED: "이용권을 넣지 못했어요. 잠시 후 다시 시도해 주세요.",
+  NO_GIFTABLE: "선물할 수 있는 이용권이 없어요.", INVALID: "링크를 만들지 못했어요. 다시 시도해 주세요.",
 };
 
-/** 이벤트 이용권(P6d-ops 6). GET: 내 이벤트 이용권 목록(+ ?token= 선물 확인), POST {op}: use_self·link·claim. */
+/**
+ * 이벤트 이용권(P6d-ops 6). GET: 내 이벤트 이용권 목록·지갑(+ ?token= 선물 확인), POST {op}: link_next·unlink·claim(+ 예전 use_self·link).
+ * P 추가 F: 선물하기 창은 토큰을 화면에서 만들고(공유 창을 사용자 동작 안에서 바로 열기 위해) 서버는 해시만 받는다 — 토큰 모양은 서버 발급과 같다(24바이트 base64url).
+ */
 export async function handleGift(request: NextRequest, port: AccountPort, ops: Pick<OpsStores, "gift">): Promise<NextResponse> {
   const json = (body: object, status = 200) => port.finish(NextResponse.json(body, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie", "Referrer-Policy": "no-referrer" } }));
   if (!["GET", "POST"].includes(request.method)) return json({}, 405);
@@ -30,8 +34,10 @@ export async function handleGift(request: NextRequest, port: AccountPort, ops: P
         return json(peek.ok ? { ok: true, status: peek.status, expiresAt: peek.expiresAt, mine: peek.mine === true, received: peek.received === true, member: Boolean(member), profile: snapshot?.contact ? "complete" : "required" } : { ok: false, code: peek.code, message: messages[String(peek.code)] ?? messages.GIFT_NOT_FOUND }, peek.ok ? 200 : 404);
       }
       if (!member) return json({ ok: false, code: "MEMBER_REQUIRED" }, 401);
-      const list = await ops.gift.call("list", { userId: member.id });
-      return json({ ok: list.ok === true, gifts: list.gifts ?? [], event: { active: cfg.active, end: cfg.end, maxPerAccount: cfg.maxPerAccount } });
+      // P 추가 E: 결제 화면은 지갑만(이용권 N장).
+      if (new URL(request.url).searchParams.get("view") === "wallet") { const wallet = await readWallet(ops.gift, member.id); return wallet ? json({ ok: true, wallet }) : json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503); }
+      const [list, wallet] = await Promise.all([ops.gift.call("list", { userId: member.id }), readWallet(ops.gift, member.id)]);
+      return json({ ok: list.ok === true, gifts: list.gifts ?? [], wallet, event: { active: cfg.active, end: cfg.end, ticketExpiresAt: cfg.ticketExpiresAt } });
     }
     const raw = await request.text();
     if (raw.length > 2048) return json({}, 413);
@@ -43,6 +49,11 @@ export async function handleGift(request: NextRequest, port: AccountPort, ops: P
       const t = newGiftToken();
       const r = await ops.gift.call("link", { userId: member.id, giftId: id, tokenHash: t.hash });
       return json(r.ok ? { ok: true, url: `/gift/${t.token}` } : { ok: false, code: r.code, message: messages[String(r.code)] ?? "처리하지 못했어요." }, r.ok ? 200 : 409);
+    }
+    if ((body.op === "link_next" || body.op === "unlink") && validGiftToken(body.token)) {
+      const r = await ops.gift.call(body.op, { userId: member.id, tokenHash: giftTokenHash(body.token) });
+      if (body.op === "unlink") return json({ ok: r.ok === true, reverted: r.reverted === true }, r.ok ? 200 : 409);
+      return json(r.ok ? { ok: true, url: `/gift/${body.token}`, expiresAt: r.expiresAt } : { ok: false, code: r.code, message: messages[String(r.code)] ?? "처리하지 못했어요." }, r.ok ? 200 : 409);
     }
     if (body.op === "claim" && validGiftToken(body.token)) {
       const r = await ops.gift.call("claim", { userId: member.id, tokenHash: giftTokenHash(body.token) });

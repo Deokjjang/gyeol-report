@@ -1,5 +1,5 @@
 import "server-only";
-import { createHash, randomBytes } from "node:crypto";
+import { createHash } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import type { AccountPort } from "../account/handler";
 import { accountSession } from "../account/policy";
@@ -23,7 +23,9 @@ export async function bindCheckout(request: NextRequest, response: NextResponse,
   const user = await auth.currentUser(), snapshot = user ? await auth.read(user) : undefined;
   if (snapshot === null) return null;
   const buyer = user && accountSession(user, snapshot).status === "member" ? user.id : null;
-  const secret = buyer ? null : randomBytes(32).toString("hex");
+  // P 추가 A: 비회원 결제가 없으므로 비회원 구매 연결 쿠키(claim)도 새로 만들지 않는다(이미 받은 쿠키는 7일 뒤 끝난다).
+  if (!buyer) return null;
+  const secret = null as string | null;
   if (!await port.bind({ orderId, buyerId: buyer, claimHash: secret ? claimHash(secret) : null, ...purchaseMetadata(payload) })) return null;
   response.headers.set("Cache-Control", "private, no-store"); response.headers.set("Vary", "Cookie");
   if (secret) response.cookies.set(claimCookieName(orderId, local), secret, { httpOnly: true, secure: !local, sameSite: "lax", path: "/", maxAge: CLAIM_COOKIE_SECONDS });

@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 // P6d-ops SQL(PGlite): 결제·이용권 큐 보류/포기·자동 환불·정식본 교체·주문코드·가입 정보·탈퇴·이벤트. 목업 LLM·목업 토스, 외부 호출 0.
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
@@ -140,14 +141,16 @@ describe("가입 정보·탈퇴", () => {
     expect((await h.rpc("ops_account", "facts_read", A, {})).facts).toMatchObject({ kakaoChannel: "added", channelReward: "none", emailTrusted: true });
   });
 
-  it("이벤트: 결제 1건 → 1장(상한 2), 본인 사용·선물 링크·받는 사람은 정보 화면 필요·첫 결제 보너스", async () => {
-    const cfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", maxPerAccount: 2, bonusMax: 2, products: ["saju_mbti_full"], validDays: 30 };
+  it("이벤트(P 추가 C 이후): 결제 1건 → 1장(상한 없음), 본인 사용·선물 링크·받는 사람은 정보 화면 필요·첫 결제 보너스 없음", async () => {
+    // 운영과 같은 최신 SQL(최종 A 이벤트·배포 직후 고침·P 추가)까지 올린다.
+    await h.db.exec(`reset role; ${["20261106100000_v5_final4_event_comp.sql", "20261106200000_v5_deploy_gift_pending_alias.sql", "20261107090000_v5_perf_event_tickets.sql"].map(f => readFileSync(`supabase/migrations/${f}`, "utf8")).join("\n")} set role service_role;`);
+    const cfg = { active: true, start: "2026-01-01T00:00:00.000Z", end: "2027-01-01T00:00:00.000Z", products: ["saju_mbti_full"], ticketExpiresAt: new Date(Date.now() + 20 * 86_400_000).toISOString() };
     const pay = async (id: string, user: string) => { await h.paid.call("create_order", { paymentOrderId: id, providerOrderId: id, productType: "saju_mbti_full", provider: "toss", amount: 1490, inputSnapshot: { reportInputPayload: payload } });
       await ops.order.call("attach", { paymentOrderId: id, userId: user, name: "회원", email: "m@example.com" });
       const claim = await h.paid.call("confirm_claim", { orderId: id, paymentKey: `k-${id}`, amount: 1490 }); await h.paid.call("confirm_finish", { orderId: id, paymentKey: `k-${id}`, token: claim.token }); };
     for (const id of ["g1", "g2", "g3"]) await pay(id, A);
     const issued = await Promise.all(["g1", "g2", "g3"].map(id => afterPaidOrder(ops.gift, id, cfg)));
-    expect(issued.map(r => r?.issued.issued)).toEqual([true, true, false]); // 계정당 2회
+    expect(issued.map(r => r?.issued.issued)).toEqual([true, true, true]); // P 추가 C: 계정당 상한 없음
     const gifts = ((await ops.gift.call("list", { userId: A })).gifts as { id: string }[]);
     expect((await ops.gift.call("use_self", { userId: A, giftId: gifts[0].id })).status).toBe("used_self");
     const link = newGiftToken();
@@ -159,13 +162,13 @@ describe("가입 정보·탈퇴", () => {
     const before = Number((await h.tickets.call("summary", A, {})).quantity);
     await pay("g4", B);
     const g4 = await afterPaidOrder(ops.gift, "g4", cfg);
-    expect(g4?.bonus).toMatchObject({ granted: true }); expect(g4?.issued.issued).toBe(true);
-    expect(Number((await h.tickets.call("summary", A, {})).quantity)).toBe(before + 1);
+    expect(g4).not.toHaveProperty("bonus"); expect(g4?.issued.issued).toBe(true);
+    expect(Number((await h.tickets.call("summary", A, {})).quantity)).toBe(before); // 친구 첫 결제 보너스 없음
     // 환불: 그 주문에서 나온 아직 안 쓴 이용권은 회수(revoked), 다른 주문의 쓴 이용권(본인 사용·친구가 받음)은 그대로.
     expect(await ops.order.call("refund_request", { paymentOrderId: "g4", source: "admin", reason: "시험" })).toMatchObject({ ok: true });
     expect(await processRefunds(ops, providerOf(), { paymentOrderId: "g4" })).toEqual([{ paymentOrderId: "g4", state: "done" }]);
     expect(await one("select status,token_hash from gift_rewards where source_order_id='g4'")).toEqual({ status: "revoked", token_hash: null });
-    expect((await h.db.query<{ status: string }>("select status from gift_rewards where source_order_id in ('g1','g2') order by status")).rows.map(r => r.status)).toEqual(["claimed", "used_self"]);
+    expect((await h.db.query<{ status: string }>("select status from gift_rewards where source_order_id in ('g1','g2','g3') order by status")).rows.map(r => r.status)).toEqual(["available", "claimed", "used_self"]);
   }, 120_000);
 
   it("탈퇴: 주문은 분리 보관, 연락처·프로필·출생 입력 삭제, Book은 열람 종료", async () => {
