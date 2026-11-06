@@ -52,6 +52,19 @@ describe("트리거: 결제·환불·문의는 대기표에 넣기만 한다", (
       expect((await one<{ status: string }>("select status from payment_orders where payment_order_id='po-q-4'")).status).toBe("paid");
       expect((await rows("payment")).map(x => x.dedupe_key)).not.toContain("pay:po-q-4");
     } finally { await exec("alter table ops_notifications drop constraint q_test_block"); }
+    // 1분 크론의 「누락 보충」이 다시 넣는다(같은 키는 한 번만).
+    expect((await notify.call("scan_unpublished")).swept).toBe(1);
+    expect((await notify.call("scan_unpublished")).swept).toBe(0);
+    expect((await rows("payment")).map(x => x.dedupe_key)).toContain("pay:po-q-4");
+  });
+  it("누락 보충은 환불·문의도 다시 넣고, 알림 시작 전 결제는 넣지 않는다(첫 배포 때 옛 주문 알림 0)", async () => {
+    await pay("po-q-4b", A);
+    await exec("delete from ops_notifications where dedupe_key='pay:po-q-4b' or dedupe_key='refund:po-q-3'");
+    await exec("update payment_orders set paid_at=(select (value->>'at')::timestamptz-interval '1 minute' from ops_settings where key='notify_since') where payment_order_id='po-q-4b'");
+    expect((await notify.call("scan_unpublished")).swept).toBe(1);
+    const keys = (await rows()).map(x => x.dedupe_key);
+    expect(keys).toContain("refund:po-q-3");
+    expect(keys).not.toContain("pay:po-q-4b");
   });
   it("ready → canceled(결제 전 취소)는 환불 알림이 아니다", async () => {
     await h.paid.call("create_order", { paymentOrderId: "po-q-5", providerOrderId: "po-q-5", productType: "saju_mbti_full", provider: "toss", amount: 3900, inputSnapshot: {} });

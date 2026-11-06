@@ -80,6 +80,8 @@ create table public.ops_notifications(
   closed_line text check(closed_line is null or length(closed_line) <= 400),
   state jsonb not null default '{}'::jsonb check(jsonb_typeof(state)='object'),
   reminded_at timestamptz);
+-- 알림 시작 시각: 1분 크론의 「누락 보충」은 이 뒤의 결제·환불·문의만 본다(첫 배포 때 옛 주문 알림이 쏟아지지 않게).
+insert into public.ops_settings(key,value) values('notify_since',jsonb_build_object('at',now())) on conflict (key) do nothing;
 create index ops_notifications_due_idx on public.ops_notifications(next_attempt_at) where sent_at is null and attempts < 10;
 create index ops_notifications_open_idx on public.ops_notifications(created_at) where bot='ops' and closed_at is null;
 create index ops_notifications_order_idx on public.ops_notifications((payload->>'paymentOrderId')) where payload ? 'paymentOrderId';
@@ -248,7 +250,7 @@ declare
   v_now timestamptz := now();
   v_lim integer := least(greatest(coalesce((p_data->>'limit')::integer, 10), 1), 50);
   v_day_start timestamptz := ((v_now at time zone 'Asia/Seoul')::date)::timestamp at time zone 'Asia/Seoul';
-  v_n integer; v_kind text; v_res jsonb; v_user uuid; v_order text; v_report text; v_reason text; v_dev text; v_id uuid; v_start timestamptz; v_end timestamptz;
+  v_n integer; v_kind text; v_res jsonb; v_user uuid; v_order text; v_report text; v_reason text; v_dev text; v_id uuid; v_start timestamptz; v_end timestamptz; v_swept integer;
   v_po public.payment_orders%rowtype;
 begin
   if p_action='claim' then
@@ -282,7 +284,21 @@ begin
         and not exists(select 1 from public.order_refunds rf where rf.payment_order_id=po.payment_order_id)
       on conflict (dedupe_key) do nothing;
     get diagnostics v_n = row_count;
-    return jsonb_build_object('ok',true,'added',v_n);
+    -- 누락 보충: 트리거가 대기표에 넣지 못한 결제·환불·문의(트리거는 예외를 삼켜 결제를 막지 않는다)를 다시 넣는다. 알림 시작 뒤·최근 3일, 같은 키는 한 번만.
+    select (value->>'at')::timestamptz into v_start from public.ops_settings where key='notify_since';
+    v_start := greatest(coalesce(v_start,v_now),v_now-interval '3 days');
+    insert into public.ops_notifications(kind,bot,dedupe_key,payload)
+      select 'payment','sales','pay:'||po.payment_order_id,jsonb_build_object('paymentOrderId',po.payment_order_id) from public.payment_orders po
+        where po.paid_at>=v_start and po.status in ('paid','refunded','canceled')
+      union all
+      select 'refund','sales','refund:'||po.payment_order_id,jsonb_build_object('paymentOrderId',po.payment_order_id) from public.payment_orders po
+        where po.status in ('refunded','canceled') and po.paid_at is not null and coalesce(po.refunded_at,po.updated_at)>=v_start
+      union all
+      select 'request','ops','req:'||q.id::text,jsonb_build_object('requestId',q.id,'paymentOrderId',q.payment_order_id,'reportId',q.report_id) from public.order_requests q
+        where q.created_at>=v_start
+      on conflict (dedupe_key) do nothing;
+    get diagnostics v_swept = row_count;
+    return jsonb_build_object('ok',true,'added',v_n,'swept',v_swept);
   elsif p_action='order' then
     return jsonb_build_object('ok',true,'order',public.ops_notify_order(p_data->>'paymentOrderId'));
   elsif p_action='item' then
