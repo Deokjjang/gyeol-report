@@ -40,7 +40,10 @@ export async function syncMetaFacts() {
   } catch { /* Durable server delivery remains independent of browser availability. */ }
 }
 export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaChoice;
-const publicPath = (path: string) => path === "/" || path === "/campaign/gyeol-opening-2026" || path === "/report/new" || path === "/checkout";
+// 운영 Q 추가(메타 복구, 덕짱님 2026-11-07): PageView는 전 페이지(동의한 경우만). 관리자·개발·로그인 콜백·API는 뺀다.
+// 주소는 보내지 않는다 — 서버 전송은 고정 주소(metaDelivery event_source_url), 픽셀은 referrer를 끈 별도 창(MetaPixel iframe)이라
+// 책 id(/reports/…)·공유 토큰(/r/…)·로그인 코드가 Meta로 가지 않는다(처리방침 13번 「원문 URL은 보내지 않습니다」).
+const publicPath = (path: string) => path.startsWith("/") && !/^\/(?:admin|dev|api|auth)(?:\/|$)/.test(path);
 
 function capture(channel: "internal" | "meta", event: FunnelEvent | MetaEvent) {
   if (localMeasurement()) {

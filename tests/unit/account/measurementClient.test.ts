@@ -44,19 +44,22 @@ describe("canonical browser adapter, no Meta network", () => {
     setMetaChoice(false);expect(publicMetaAllowed()).toBe(false);
     Object.assign(window,{location:{origin:"https://gyeolreport.com",pathname:"/",search:"",hash:""}});setMetaChoice(true);expect(publicMetaAllowed()).toBe(true);
   });
-  it("sensitive routes and browser business conversions stay blocked; campaign query never enters payload",async()=>{
+  // 운영 Q 추가(메타 복구): PageView는 전 페이지(책·공유 화면 포함)지만 주소·검색어·토큰은 보내지 않는다. 관리자·개발·로그인 콜백·API는 보내지 않는다.
+  it("PageView on every public page without the URL; admin/dev/auth/api and browser business conversions stay blocked",async()=>{
     vi.stubEnv("NODE_ENV","production");
     const client=await import("../../../src/lib/analytics/client");client.setMetaChoice(true);
-    for(const [pathname,search,hash] of [["/r/secret","",""],["/reports/report_secret","",""],["/auth/callback","?code=secret",""]]){
-      Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname,search,hash}});client.pageView(pathname);
-    }
+    const visit=(pathname:string,search="",hash="")=>{Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname,search,hash}});client.pageView(pathname);};
+    for(const [pathname,search] of [["/auth/callback","?code=secret"],["/admin/orders/GR-SECRET",""],["/dev/book-flow",""],["/api/book-share",""]]) visit(pathname,search);
     Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname:"/",search:"",hash:""}});
     client.sendMeta({event:"CompleteRegistration",params:{}},"fake-registration");client.sendMeta({event:"Purchase",params:{value:1}},"fake-purchase");
     expect(fetch).not.toHaveBeenCalled();expect(window.fbq).not.toHaveBeenCalled();
-    Object.assign(window,{location:{origin:"https://www.gyeolreport.com",pathname:"/campaign/gyeol-opening-2026",search:"?fbclid=private&email=private",hash:"#private"}});
-    client.pageView("/campaign/gyeol-opening-2026"); expect(fetch).toHaveBeenCalledTimes(1);
-    const body=JSON.parse(String(vi.mocked(fetch).mock.calls[0][1]?.body));
-    expect(body).toEqual({event:"PageView",requestId:expect.any(String)});expect(JSON.stringify(body)).not.toContain("private");
+    const pages=["/r/gr_secrettoken0000000000000000000000","/reports/report_secret0000000000","/account","/payments/toss/success","/campaign/gyeol-opening-2026","/privacy"];
+    for(const path of pages) visit(path,"?fbclid=private&email=private","#private");
+    expect(fetch).toHaveBeenCalledTimes(pages.length);
+    for(const [,init] of vi.mocked(fetch).mock.calls){
+      const body=JSON.parse(String(init?.body));
+      expect(body).toEqual({event:"PageView",requestId:expect.any(String)});expect(JSON.stringify(body)).not.toMatch(/private|secret|report_|gr_/);
+    }
   });
   it("server claim suppresses cross-tab/retry and storage loss; client supplies no amount",async()=>{
     let issued=false;vi.mocked(fetch).mockImplementation(async(_url,init)=>{
