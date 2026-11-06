@@ -26,8 +26,9 @@ export function isAdminUser(id: unknown, env: Env = process.env): boolean { retu
 export type GiftEventConfig = { readonly active: boolean; readonly start: string; readonly end: string; readonly products: readonly string[]; readonly ticketExpiresAt: string };
 /**
  * 이용권 유효기간.
- * - P 추가 D(2026-11-06): 이번 이벤트에서 나가는 이용권(1+1·보상 A·B·관리자 지급)은 모두 2026-11-30 23:59:59 KST에 끝난다(받은 날과 상관없이 같은 날).
- *   선물은 처음 기한을 그대로 넘긴다. 운영의 기존 행도 같은 시각으로 당겼다(migration 20261107090000).
+ * - P 추가 D(2026-11-06): 이번 이벤트에서 나가는 이용권(1+1·보상 A·B)은 모두 2026-11-30 23:59:59 KST에 끝난다(받은 날과 상관없이 같은 날).
+ *   선물은 처음 기한을 그대로 넘긴다. 운영의 기존 행은 업그레이드 보상 캠페인 42장만 같은 시각으로 당겼다(migration 20261107090000, 누나 계정 5장은 그대로).
+ *   관리자 수동 지급(오류 난 책 보상 등)은 이 값을 쓰지 않는다 — SQL 기본값 발급일 + 30일.
  * - 그 시각이 지난 뒤 새로 나가는 이용권만 예전처럼 발급일로부터 30일(TICKET_VALID_DAYS).
  */
 export const TICKET_VALID_DAYS = 30;

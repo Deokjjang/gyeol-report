@@ -1,5 +1,5 @@
 // P 추가(2026-11-06) C·D·E·F·B — migration 20261107090000(PGlite, 외부 호출 0).
-// C 상한 없음·보너스 없음 · D 기한 11-30 23:59:59 KST(새 발급·기존 행 당김·기록) · E 지갑·결제 화면에서 쓰기(기한 빠른 것부터)
+// C 상한 없음·보너스 없음 · D 기한 11-30 23:59:59 KST(새 발급, 기존 행은 보상 캠페인 이용권·기록 두 표만 당김, 누나 5장·관리자 지급 그대로) · E 지갑·결제 화면에서 쓰기(기한 빠른 것부터)
 // F 선물 링크(공유 순간 생성·공유 취소 되돌림·받은 이용권은 다시 선물 불가) · B 만료 작업이 옛 주문 입력·구매자 연락처도 지움 · P 소유 확인(본문 없이).
 import { readFileSync } from "node:fs";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
@@ -16,7 +16,10 @@ const PERF = "supabase/migrations/20261107090000_v5_perf_event_tickets.sql";
 const TARGET = Date.parse(EVENT_TICKET_EXPIRES_AT);
 let h: Awaited<ReturnType<typeof opsSql>>;
 const u = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, "0")}`;
-const BUYER = u(501), FRIEND = u(502), OLD = u(503), SIS = u(504), OTHER = u(505);
+// SIS = 운영 누나 계정 id(migration이 이름으로도 뺀다). OTHER = 관리자 수동 지급·원장 이용권을 가진 계정.
+const BUYER = u(501), FRIEND = u(502), OLD = u(503), SIS = "d0dd2e4e-38cf-49b5-8dea-7a35ee54dd55", OTHER = u(505);
+const REF = u(506);
+const SIS_EXP = Date.parse("2026-12-06T11:06:46+09:00");
 const exec = async (sql: string, params: unknown[] = []) => { await h.db.exec("reset role"); await h.db.query(sql, params); await h.db.exec("set role service_role"); };
 const one = async <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => { await h.db.exec("reset role"); const r = (await h.db.query(sql, params)).rows[0] as T; await h.db.exec("set role service_role"); return r; };
 const cfg = giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-06 09:00:00", GIFT_EVENT_END: "2030-12-31 23:59:59" });
@@ -40,37 +43,64 @@ beforeAll(async () => {
   h = await opsSql();
   await h.db.exec(`reset role; ${readFileSync(FINAL4, "utf8")} ${readFileSync(FIX, "utf8")} set role service_role;`);
   const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date() }); if (!n.ok) throw new Error("payload"); payload = n.value;
-  for (const id of [BUYER, FRIEND, OLD, SIS, OTHER]) await member(id);
-  // migration 전 운영과 같은 상태: 1+1·보상 이용권이 12-06(발급 + 30일) 기한, 수동 지급 5장(기한 없이 → 30일), 내가 쓰기로 옮긴 원장 이용권.
+  for (const id of [BUYER, FRIEND, OLD, SIS, OTHER, REF]) await member(id);
+  // migration 전 운영과 같은 상태(11-06 확인): 보상 캠페인 이용권이 12-06(발급 + 30일) 기한 + 캠페인 기록 두 표,
+  // 누나 계정은 캠페인 밖 보상 이용권 5장(12-06 11:06 KST), 관리자 수동 지급(기한 없이 → 30일)과 옮긴 원장 이용권은 다른 계정.
   await exec("insert into gift_rewards(owner_user_id,source_order_id,kind,expires_at) values($1,null,'comp','2026-12-06T12:00:00+09:00')", [OLD]);
   const comp = await one<{ id: string }>("select id from gift_rewards where owner_user_id=$1", [OLD]);
   await exec("insert into comp_campaign_grants(campaign_id,user_id,tier,quantity,gift_ids,expires_at) values('relaunch',$1,'B',1,array[$2::uuid],'2026-12-06T12:00:00+09:00')", [OLD, comp.id]);
   await exec("insert into comp_grants(user_id,tier,quantity,ticket_grant_ids,gift_ids,expires_at) values($1,'B',1,'{}',array[$2::uuid],'2026-12-06T12:00:00+09:00')", [OLD, comp.id]);
-  await h.db.query("select report_tickets('grant',$1,$2::jsonb)", [SIS, JSON.stringify({ quantity: 5, sourceType: "manual", sourceRef: "sister", key: "admin:sister", reason: "ADMIN_GRANT" })]);
+  for (let i = 0; i < 5; i++) await exec("insert into gift_rewards(owner_user_id,source_order_id,kind,expires_at,product_scopes) values($1,null,'comp','2026-12-06T11:06:46+09:00',array['saju_mbti_full','career_money_study','love_marriage_child','saju_mbti_compatibility'])", [SIS]);
+  await h.db.query("select report_tickets('grant',$1,$2::jsonb)", [OTHER, JSON.stringify({ quantity: 1, sourceType: "manual", sourceRef: "admin-before", key: "admin:before", reason: "ADMIN_GRANT" })]);
   await h.db.query("select report_tickets('grant',$1,$2::jsonb)", [OTHER, JSON.stringify({ quantity: 1, sourceType: "promotion", sourceRef: "gift-self:old", key: "gift-self:00000000-0000-4000-8000-0000000000aa", reason: "EVENT_PAYMENT_GIFT", expiresAt: "2026-12-06T12:00:00+09:00" })]);
   await h.db.exec(`reset role; ${readFileSync(PERF, "utf8")} set role service_role;`);
 }, 180_000);
 afterAll(async () => { await h?.db.close(); });
 
 describe("D 기존 행 기한 당기기(migration)", () => {
-  it("보상·수동 지급·옮긴 원장 이용권·보상 기록 두 표가 11-30 23:59:59 KST로, 원래 기한은 기록표에 남는다", async () => {
-    const at = async (sql: string, p: unknown[]) => Date.parse(String((await one<{ e: string }>(sql, p)).e));
+  const at = async (sql: string, p: unknown[]) => Date.parse(String((await one<{ e: string }>(sql, p)).e));
+  it("보상 캠페인 이용권과 캠페인 기록 두 표만 11-30 23:59:59 KST로, 원래 기한은 기록표에 남는다", async () => {
     expect(await at("select expires_at::text e from gift_rewards where owner_user_id=$1", [OLD])).toBe(TARGET);
     expect(await at("select expires_at::text e from comp_campaign_grants where user_id=$1", [OLD])).toBe(TARGET);
     expect(await at("select expires_at::text e from comp_grants where user_id=$1", [OLD])).toBe(TARGET);
-    expect(await at("select expires_at::text e from report_ticket_grants where user_id=$1", [SIS])).toBe(TARGET);
-    expect(await at("select expires_at::text e from report_ticket_grants where user_id=$1", [OTHER])).toBe(TARGET);
-    // 이 시험 계정 셋의 5행(보상 기록 2표 + 보상 1장 + 수동 지급 + 옮긴 원장). 시험 바탕의 수동 지급(출시 뒤 발급)도 같은 규칙으로 함께 당겨진다.
-    const log = await one<{ n: number; old: string }>("select count(*)::int n, min(old_expires_at)::text old from ticket_expiry_adjustments where user_id = any($1::uuid[])", [[OLD, SIS, OTHER]]);
-    expect(log.n).toBe(5);
+    const log = await one<{ n: number; old: string; targets: string }>("select count(*)::int n, min(old_expires_at)::text old, string_agg(distinct target, ',' order by target) targets from ticket_expiry_adjustments");
+    expect(log).toMatchObject({ n: 3, targets: "comp_campaign_grants,comp_grants,gift_rewards" });
     expect(Date.parse(log.old)).toBeGreaterThan(TARGET);
   });
-  it("원장 수정 막기(ticket_grants_immutable)는 다시 켜져 있다", async () => {
-    await expect(exec("update report_ticket_grants set expires_at=now() where user_id=$1", [SIS])).rejects.toThrow(/IMMUTABLE/);
+  it("누나 계정 5장은 그대로(12-06 11:06 KST) — 지갑 5장·결제 화면 5장·기한 12월 6일", async () => {
+    const r = await one<{ n: number; mn: string; mx: string }>("select count(*)::int n, min(expires_at)::text mn, max(expires_at)::text mx from gift_rewards where owner_user_id=$1", [SIS]);
+    expect(r.n).toBe(5);
+    expect(Date.parse(r.mn)).toBe(SIS_EXP);
+    expect(Date.parse(r.mx)).toBe(SIS_EXP);
+    const w = (await readWallet(gift, SIS))!;
+    expect(w).toMatchObject({ ledger: 0, usable: 5, total: 5, giftable: 5 });
+    expect(Date.parse(w.expiresAt!)).toBe(SIS_EXP);
+    expect(Date.parse(w.usableExpiresAt!)).toBe(SIS_EXP);
   });
-  it("누나 계정 수동 지급 5장: 지갑 5장 · 11월 30일까지 · 선물할 이용권 0", async () => {
-    expect(await readWallet(gift, SIS)).toMatchObject({ ledger: 5, usable: 5, total: 5, giftable: 0 });
-    expect(Date.parse((await readWallet(gift, SIS))!.expiresAt!)).toBe(TARGET);
+  it("관리자 수동 지급·원장 이용권은 건드리지 않고, 원장 수정 막기(ticket_grants_immutable)는 켜진 그대로", async () => {
+    const r = await one<{ n: number; mx: string }>("select count(*)::int n, max(expires_at)::text mx from report_ticket_grants where user_id=$1", [OTHER]);
+    expect(r.n).toBe(2);
+    expect(Date.parse(r.mx)).toBeGreaterThan(TARGET);
+    expect(await at("select expires_at::text e from report_ticket_grants where user_id=$1 and source_type='manual'", [OTHER])).toBeGreaterThan(TARGET);
+    await expect(exec("update report_ticket_grants set expires_at=now() where user_id=$1", [OTHER])).rejects.toThrow(/IMMUTABLE/);
+  });
+  it("배포 뒤 관리자 수동 지급(오류 보상)은 예전처럼 발급일 + 30일(11-30로 당기지 않는다)", async () => {
+    const before = Date.now();
+    await h.db.query("select report_tickets('grant',$1,$2::jsonb)", [OTHER, JSON.stringify({ quantity: 1, sourceType: "manual", sourceRef: "admin-after", key: "admin:after", reason: "ADMIN_GRANT" })]);
+    const e = await at("select expires_at::text e from report_ticket_grants where user_id=$1 and idempotency_key='admin:after'", [OTHER]);
+    expect(Math.abs(e - (before + 30 * 86_400_000))).toBeLessThan(5 * 60_000);
+  });
+  it("대상 중 하나라도 쓰였거나 선물 링크가 생겼으면 아무것도 바꾸지 않고 멈춘다(PERF_D_TARGET_CHANGED)", async () => {
+    // migration의 D 블록만 다시 돌린다(이미 당긴 행은 대상이 아니므로, 새 캠페인 이용권 2장 중 1장에 링크를 걸어 둔다).
+    const file = readFileSync(PERF, "utf8"), start = file.indexOf("do $$\ndeclare target timestamptz"), end = file.indexOf("end $$;", start) + "end $$;".length;
+    expect(start).toBeGreaterThan(0);
+    await exec("insert into gift_rewards(owner_user_id,source_order_id,kind,expires_at) values($1,null,'comp','2026-12-06T12:00:00+09:00'),($1,null,'comp','2026-12-06T12:00:00+09:00')", [OLD]);
+    await exec("update gift_rewards set status='gifted', token_hash=$2, gifted_at=now() where id=(select id from gift_rewards where owner_user_id=$1 and expires_at>$3::timestamptz order by id limit 1)", [OLD, hash(77), new Date(TARGET).toISOString()]);
+    await expect(exec(file.slice(start, end))).rejects.toThrow(/PERF_D_TARGET_CHANGED/);
+    const r = await one<{ n: number }>("select count(*)::int n from gift_rewards where owner_user_id=$1 and expires_at>$2::timestamptz", [OLD, new Date(TARGET).toISOString()]);
+    expect(r.n).toBe(2);
+    expect((await one<{ n: number }>("select count(*)::int n from ticket_expiry_adjustments")).n).toBe(3);
+    await exec("delete from gift_rewards where owner_user_id=$1 and expires_at>$2::timestamptz", [OLD, new Date(TARGET).toISOString()]);
   });
 });
 
@@ -134,6 +164,47 @@ describe("F 선물 링크", () => {
     expect(await gift.call("link_next", { userId: OLD, tokenHash: hash(3) })).toMatchObject({ ok: true }); // 보상 1장(내 것)은 선물할 수 있다
     expect(await readWallet(gift, OLD)).toMatchObject({ giftable: 0 });
     expect(await gift.call("link_next", { userId: OLD, tokenHash: hash(4) })).toMatchObject({ ok: false, code: "NO_GIFTABLE" }); // 받은 1장은 원장 → 선물 불가
+  });
+});
+
+describe("2 환불 때 이용권 회수: 안 쓴 것·받지 않은 선물 링크는 회수, 받은(쓴) 것은 기록만", () => {
+  const order = { call: (a: string, d: Record<string, unknown> = {}) => h.rpc("ops_order", a, d) };
+  const recon = { call: (a: string, d: Record<string, unknown> = {}) => h.rpc("ops_recon", a, d) };
+  const ticketOf = (id: string) => one<{ status: string; token_hash: string | null }>("select status, token_hash from gift_rewards where source_order_id=$1", [id]);
+  async function adminRefund(id: string) {
+    expect(await order.call("refund_request", { paymentOrderId: id, source: "admin", reason: "시험" })).toMatchObject({ ok: true });
+    expect(await order.call("refund_claim", { paymentOrderId: id })).toMatchObject({ ok: true });
+    return order.call("refund_finish", { paymentOrderId: id, ok: true, providerStatus: "CANCELED" });
+  }
+  it("관리자 환불: 링크를 만들었지만 안 받은 선물은 회수·링크 무효(받는 화면은 「기한이 지났거나 이미 받은 선물이에요」)", async () => {
+    await paidOrder("rf-1", REF);
+    expect((await afterPaidOrder(gift, "rf-1", cfg))?.issued).toMatchObject({ issued: true });
+    expect(await gift.call("link_next", { userId: REF, tokenHash: hash(90) })).toMatchObject({ ok: true, status: "gifted" });
+    expect(await ticketOf("rf-1")).toEqual({ status: "gifted", token_hash: hash(90) });
+    expect(await adminRefund("rf-1")).toMatchObject({ ok: true, state: "done", giftRevoked: true, giftKept: null });
+    expect(await ticketOf("rf-1")).toEqual({ status: "revoked", token_hash: null });
+    // 받는 화면: 링크 확인(peek)·받기(claim) 모두 「없음」 → GiftClaim이 GONE 한 줄을 보인다.
+    expect(await gift.call("peek", { tokenHash: hash(90), userId: FRIEND })).toMatchObject({ ok: false, code: "GIFT_NOT_FOUND" });
+    expect(await gift.call("claim", { userId: FRIEND, tokenHash: hash(90) })).toMatchObject({ ok: false, code: "GIFT_NOT_FOUND" });
+    expect(await readWallet(gift, REF)).toMatchObject({ giftable: 0, total: 0 });
+  });
+  it("관리자 환불: 이미 받은 선물(받은 사람 원장)은 회수·차감하지 않고 결과로만 남긴다", async () => {
+    await paidOrder("rf-2", REF);
+    await afterPaidOrder(gift, "rf-2", cfg);
+    expect(await gift.call("link_next", { userId: REF, tokenHash: hash(91) })).toMatchObject({ ok: true });
+    expect(await gift.call("claim", { userId: FRIEND, tokenHash: hash(91) })).toMatchObject({ ok: true, status: "claimed" });
+    const before = (await readWallet(gift, FRIEND))!.ledger;
+    expect(await adminRefund("rf-2")).toMatchObject({ ok: true, state: "done", giftRevoked: false, giftKept: "claimed" });
+    expect((await ticketOf("rf-2")).status).toBe("claimed");
+    expect((await readWallet(gift, FRIEND))!.ledger).toBe(before);
+  });
+  it("외부 환불 기록(토스 상점관리자): 안 받은 선물 링크도 같은 규칙으로 회수", async () => {
+    await paidOrder("rf-3", REF);
+    await afterPaidOrder(gift, "rf-3", cfg);
+    expect(await gift.call("link_next", { userId: REF, tokenHash: hash(92) })).toMatchObject({ ok: true, status: "gifted" });
+    expect(await recon.call("external_refund", { paymentOrderId: "rf-3", amount: 3900 })).toMatchObject({ ok: true, giftRevoked: true });
+    expect(await ticketOf("rf-3")).toEqual({ status: "revoked", token_hash: null });
+    expect(await gift.call("peek", { tokenHash: hash(92), userId: FRIEND })).toMatchObject({ ok: false, code: "GIFT_NOT_FOUND" });
   });
 });
 

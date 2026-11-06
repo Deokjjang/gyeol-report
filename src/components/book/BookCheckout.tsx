@@ -21,14 +21,14 @@ import { checkoutReturnKey, useTicketPublication } from "./useTicketPublication"
 import { recordBookReturn } from "../../lib/tickets/shopClient";
 import { receiptMethodKey } from "../../lib/tickets/shopContract";
 import { PROFILE_REQUIRED_MESSAGE } from "../../lib/account/contact";
-import type { TossWidgetSheet } from "../../lib/payment/tossClientCheckoutTypes";
+import { kstMonthDayLabel } from "../../lib/ops/config";
 
 /** v5Book: 이 상품이 v5(AI 작가)로 발행됨 — 열람 "탈퇴 전까지 계속"·AI 작성 고지. 아니면 v5 이전 규칙(생성일로부터 90일).
  * giftEventProducts: 지금(서버 시각) 1+1 이벤트가 걸린 상품 키 — 이벤트 기간이 아니면 빈 배열(giftEventConfig). */
 type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; authEnabled?: boolean; ticketShopEnabled?: boolean; v5Book?: boolean; giftEventProducts?: readonly string[]; onPublishing: () => void; onError: (message: string) => void };
 type ReceiptConsentId = typeof RECEIPT_CONSENTS[number]["id"];
 /** 최종 A 16: 1+1 영수증 줄. P 추가 A: 결제는 로그인한 회원만 하므로(비회원 결제 없음) 한 줄뿐이다. */
-export const GIFT_EVENT_RECEIPT_LINE = "1+1 · 결제 후 무료 이용권 1장";
+export const GIFT_EVENT_RECEIPT_LINE = "이벤트 · 결제 후 이용권 1장 증정";
 /** P 추가 A: 결제하기를 누른 비회원은 로그인(신규면 가입 동의·정보 입력)을 마치고 돌아오면 입력값과 상품이 그대로 복원된다.
  * 같은 탭은 sessionStorage(기존 복원 경로), 로그인이 다른 탭·앱 전환을 거쳐도 되도록 같은 기기 localStorage에 30분만 함께 둔다(복원하면 지운다). */
 export const CHECKOUT_RETURN_BACKUP_KEY = "gyeol-book-return-backup-v1";
@@ -68,16 +68,11 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const accountScope = useRef("");
   const [couponOrder,setCouponOrder] = useState<string | null>(null);
   const [coupon,setCoupon] = useState<CouponChoice>({quote:null});
-  const [tickets, setTickets] = useState<number | null>(null), [method, setMethod] = useState<"payment" | "ticket">("payment");
+  const [tickets, setTickets] = useState<number | null>(null), [ticketUntil, setTicketUntil] = useState(""), [method, setMethod] = useState<"payment" | "ticket">("payment");
   const [balanceError, setBalanceError] = useState(false), [balanceRetry, setBalanceRetry] = useState(0);
   const [accountChanged, setAccountChanged] = useState(false);
   // P 추가 G: 결제위젯 연동 키면 「결제하기」를 누른 뒤 이 시트 안에 토스 결제위젯(수단: 어드민 설정 = 토스페이·카카오페이)을 그린다.
-  const [widgetOpen, setWidgetOpen] = useState(false), payDecision = useRef<((go: boolean) => void) | null>(null);
-  const widgetSheet: TossWidgetSheet = {
-    open: () => new Promise(resolve => { setWidgetOpen(true); requestAnimationFrame(() => requestAnimationFrame(() => resolve({ methods: "#toss-widget-methods", agreement: "#toss-widget-agreement" }))); }),
-    waitForPay: () => new Promise(resolve => { payDecision.current = resolve; }),
-    close: () => { payDecision.current = null; setWidgetOpen(false); },
-  };
+
   const profileRequired = !internal && session.status === "member" && session.profile === "required";
   const publication = useTicketPublication(payload.productKey, !internal && session.status === "member");
   useEffect(() => {
@@ -90,7 +85,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
         const raw = await r.json(); if (abort.signal.aborted) return;
         const b = !ticketShopEnabled && !internal ? { ...raw, quantity: raw?.wallet?.usable } : raw;
         if (!r.ok || !Number.isInteger(b.quantity) || b.quantity < 0) { setBalanceError(true); return; }
-        setBalanceError(false); setTickets(b.quantity);
+        setBalanceError(false); setTickets(b.quantity); setTicketUntil(!ticketShopEnabled && !internal ? kstMonthDayLabel(raw?.wallet?.usableExpiresAt) : "");
         if (ticketShopEnabled) {
           if (accountScope.current && accountScope.current !== b.scope) { setConsents(EMPTY_RECEIPT_CONSENTS); setAccountChanged(true); setBalanceError(true); return; }
           accountScope.current = b.scope;
@@ -165,8 +160,8 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     if (!internal) {
       // Reuse the existing production prepare + validated Toss SDK launcher(회원만 — 구매자 정보는 서버가 가입 정보에서 쓴다).
       // Local preview below still requires its explicit mock runtime.
-      // 지금 키(API 개별 연동 ck)면 예전처럼 토스페이 결제창, 위젯 연동 키(gck)면 시트 안 결제위젯.
-      const result = await runDevTossCheckout(snapshot, effective, undefined, { productType: payload.productKey, easyPay: "TOSSPAY", consentUi, onCheckoutWindow: () => interaction("checkout_started", payload.productKey), widgetSheet });
+      // 2026-11-06: 결제창 기본 화면(method CARD·flowMode DEFAULT, easyPay 없음) — 토스 결제창 안에서 고객이 토스페이·카카오페이 중 고른다.
+      const result = await runDevTossCheckout(snapshot, effective, undefined, { productType: payload.productKey, consentUi, onCheckoutWindow: () => interaction("checkout_started", payload.productKey) });
       if (!result.ok) { onError(result.messageKo); lock.current = false; setBusy(false); }
       return;
     }
@@ -224,7 +219,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
         window.location.assign(body.reportUrl);
         return { ok: true, status: "redirect_requested" };
       },
-    }, { productType: payload.productKey, easyPay: "TOSSPAY", consentUi });
+    }, { productType: payload.productKey, consentUi });
     if (!result.ok) { onError("입력 또는 모의 발행 결과를 확인해 주세요. 실제 결제는 실행하지 않았습니다."); lock.current = false; setBusy(false); }
   };
   return <div className={s.receipt} data-book-checkout><p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER</p>
@@ -238,7 +233,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
       {accountChanged ? <p role="alert">계정이 바뀌었어요. <a href={`${internal ? "/dev/book-flow/input" : "/report/new"}?product=${payload.productKey}`}>입력부터 다시 확인해 주세요.</a></p> : null}
       {checkingBalance ? <p role={balanceError ? "alert" : "status"}>{balanceError ? "이용권을 확인하지 못했어요." : "이용권을 확인하고 있어요."}{balanceError ? <button onClick={() => setBalanceRetry(n => n + 1)}>다시 확인</button> : null}</p> : <>
         {(tickets ?? 0) > 0 || ticketPending ? <>
-          <label><input type="radio" name="method" checked={ticketSelected} disabled={blocked || !tickets || couponOrder !== null} onChange={() => { choose("ticket"); interaction("ticket_selected", payload.productKey); }} />리포트 이용권 1장 쓰기 · 남은 이용권 {tickets}장</label>
+          <label><input type="radio" name="method" checked={ticketSelected} disabled={blocked || !tickets || couponOrder !== null} onChange={() => { choose("ticket"); interaction("ticket_selected", payload.productKey); }} />리포트 이용권 1장 쓰기 · 남은 이용권 {tickets}장{ticketUntil ? ` · ${ticketUntil}까지` : ""}</label>
           <label><input type="radio" name="method" checked={!ticketSelected} disabled={blocked || couponOrder !== null} onChange={() => choose("payment")} />{product.amount.toLocaleString("ko-KR")}원 결제하기</label>
         </> : null}
         {ticketShopEnabled && !ticketPending ? <button type="button" disabled={blocked} onClick={() => void visitShop()}>묶음 이용권 구매하기 →</button> : null}
@@ -256,13 +251,6 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     <p className={s.receiptNote}><a href="/privacy" target="_blank" rel="noopener">개인정보처리방침 보기 ›</a></p>
     <button type="button" className={s.orderButton} disabled={loginFirst ? !allowed : !ready || blocked || (method === "ticket" && !tickets) || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)} onClick={submit}>{ticketPending ? "책 발행 상태 확인 중" : busy && method === "ticket" ? "이용권으로 책을 만드는 중" : method === "ticket" ? "이용권 1장으로 책 발행하기" : internal ? "모의 결제 · 책 발행" : "결제하기"} →</button>
     <p className={s.receiptNote} data-refund-notice>{ticketSelected ? RECEIPT_TICKET_REFUND_LINE_KO : RECEIPT_REFUND_LINE_KO} · <a href="/example" className={s.quietLink}>예시 보기</a>{v5Book ? <><br /><span data-ai-notice>{AI_WRITTEN_RECEIPT_LINE_KO}</span></> : null}</p>
-    {widgetOpen ? <div className={s.widgetBackdrop} data-toss-widget-sheet>
-      <div className={s.widgetSheet} role="dialog" aria-modal="true" aria-label="결제수단 고르기">
-        <button type="button" className={s.widgetClose} aria-label="닫기" onClick={() => payDecision.current?.(false)}>×</button>
-        <div id="toss-widget-methods" /><div id="toss-widget-agreement" />
-        <button type="button" className={s.orderButton} onClick={() => payDecision.current?.(true)}>{product.amount.toLocaleString("ko-KR")}원 결제하기 →</button>
-      </div>
-    </div> : null}
     {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? selected.covers.map(id => <p key={id}>{RECEIPT_DETAIL_TEXTS[id] ?? CONSENTS.find(c => c.id === id)!.label}</p>) : null}{selected?.id === "orderAndRefund" && member ? <p>{MEMBER_SIGNUP_CONSENT_TEXT}은 가입할 때 따로 받았어요.</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;
 }

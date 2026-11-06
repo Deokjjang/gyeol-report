@@ -72,12 +72,10 @@ function createLaunchInput(
 ): {
   readonly tossCheckoutRequest: TossCheckoutRequestDraft;
   readonly customerKey: string;
-  readonly easyPay: "TOSSPAY";
   readonly loadTossPayments: typeof harness.loadTossPayments;
 } {
   return {
     tossCheckoutRequest: requestDraft,
-    easyPay: "TOSSPAY",
     customerKey: "customer_key_launcher_test",
     loadTossPayments: harness.loadTossPayments,
   };
@@ -98,7 +96,8 @@ function expectError(
 }
 
 describe("Toss client checkout launcher", () => {
-  it.each(["TOSSPAY", "KAKAOPAY"] as const)("opens only %s DIRECT and preserves every prepared server field", async easyPay => {
+  // 2026-11-06: 결제창 기본 화면(통합결제창, flowMode DEFAULT). 고객이 토스 결제창 안에서 수단을 고른다 — easyPay는 넣지 않는다.
+  it.each([undefined, "TOSSPAY", "KAKAOPAY", "NAVERPAY"])("opens the DEFAULT window without easyPay (caller easyPay %j ignored) and preserves every prepared server field", async easyPay => {
     const harness = createLaunchHarness();
     const result = await launchTossCheckout({
       ...createLaunchInput(harness), easyPay,
@@ -111,16 +110,10 @@ describe("Toss client checkout launcher", () => {
     expect(result.ok).toBe(true);
     expect(harness.requestPayment).toHaveBeenCalledTimes(1);
     expect(harness.requestPayment).toHaveBeenCalledWith({
-      ...requestDraft.requestPayment, card: { flowMode: "DIRECT", easyPay },
+      ...requestDraft.requestPayment, card: { flowMode: "DEFAULT" },
     });
-  });
-
-  it.each([undefined, null, "", "NAVERPAY", "SAMSUNGPAY", "APPLEPAY", "CARD", "kakaopay", {}])("rejects unsupported easyPay %j before loading any SDK", async easyPay => {
-    const harness = createLaunchHarness();
-    expectError(await launchTossCheckout({ ...createLaunchInput(harness), easyPay }), "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST");
-    expect(harness.loadTossPayments).not.toHaveBeenCalled();
-    expect(harness.payment).not.toHaveBeenCalled();
-    expect(harness.requestPayment).not.toHaveBeenCalled();
+    expect(harness.requestPayment.mock.calls[0][0].method).toBe("CARD");
+    expect(JSON.stringify(harness.requestPayment.mock.calls[0][0])).not.toContain("easyPay");
   });
 
   it("loads the Toss SDK with client key and requests redirect checkout", async () => {
@@ -136,7 +129,7 @@ describe("Toss client checkout launcher", () => {
       customerKey: "customer_key_launcher_test",
     });
     expect(harness.requestPayment).toHaveBeenCalledWith(
-      { ...requestDraft.requestPayment, card: { flowMode: "DIRECT", easyPay: "TOSSPAY" } },
+      { ...requestDraft.requestPayment, card: { flowMode: "DEFAULT" } },
     );
   });
 

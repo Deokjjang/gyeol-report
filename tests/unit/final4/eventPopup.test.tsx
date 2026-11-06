@@ -27,10 +27,12 @@ const plain = (h: string) => h.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 describe("팝업 ①②③", () => {
   it("① 1+1: 문구 그대로, 남은 시간, 예시·리포트 고르기, 보상 이야기 없음", () => {
     const h = html("event-1plus1", { member: false, comp: null, event: event("during") }), t = plain(h);
-    for (const line of ["11월 6일 – 11월 16일", "한 권을 펼치면, 한 권이 더", "리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.",
+    for (const line of ["11월 6일 – 11월 16일", "한 권을 펼치면, 이용권 한 장", "리포트를 결제하면 1건마다 이용권 1장을 증정해요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.",
       "남은 시간 6일 15:00:00", "이용권은 11월 30일까지 쓸 수 있어요", "예시 먼저 보기", "리포트 고르기", "오늘 하루 보지 않기"]) expect(t).toContain(line);
     expect(h).toContain('href="/example"');
     expect(t).not.toMatch(/보상|사과/);
+    // 2026-11-06 4번: 「증정」으로 통일, 묶음 판매로 읽히는 표현 없음.
+    expect(t).not.toMatch(/1\+1|한 권이 더|더 드려요|값에/);
     // P 추가 C: 계정당 상한·받은 날부터 N일·친구 첫 결제 보너스 문구가 없다.
     expect(t).not.toMatch(/한 계정에|번까지|받은 날부터|첫 결제|보너스/);
     // 기한을 못 읽으면 그 줄은 숨긴다(옛 서버 응답 등).
@@ -39,17 +41,17 @@ describe("팝업 ①②③", () => {
   it("② B: 문구·이용권 카드·만료일, 1+1 줄은 이벤트 기간에만", () => {
     const comp = { tier: "B" as const, quantity: 1, unused: 1, expiresAt: "2026-12-06T03:00:00.000Z" };
     const during = plain(html("comp-b", { member: true, comp, event: event("during") }));
-    for (const line of ["새로 쓴 결리포트", "결리포트를 처음부터 다시 썼어요", "만세력은 더 정확하게, 사주와 MBTI를 잇는 해석은 더 깊게, 문장은 더 내 이야기처럼. 먼저 찾아 주신 분께 새 결리포트를 읽어 볼 이용권을 드려요.",
-      "무료 이용권 1장 12월 6일까지", "직접 읽거나, 소중한 사람에게 선물할 수 있어요.", "지금은 1+1 기간이에요. 결제 1건마다 1장을 더 드려요.", "이용권으로 만들기"]) expect(during).toContain(line);
-    expect(plain(html("comp-b", { member: true, comp, event: event("after") }))).not.toContain("1+1 기간");
+    for (const line of ["새로 쓴 결리포트", "결리포트를 처음부터 다시 썼어요", "만세력은 더 정확하게, 사주와 MBTI를 잇는 해석은 더 깊게, 문장은 더 내 이야기처럼. 먼저 찾아 주신 분께 새 결리포트를 읽어 볼 이용권을 증정해요.",
+      "증정 이용권 1장 12월 6일까지", "직접 읽거나, 소중한 사람에게 선물할 수 있어요.", "지금은 증정 이벤트 기간이에요. 결제 1건마다 이용권 1장을 증정해요.", "이용권으로 만들기"]) expect(during).toContain(line);
+    expect(plain(html("comp-b", { member: true, comp, event: event("after") }))).not.toContain("증정 이벤트 기간");
     expect(during).not.toMatch(/첫 결제|보너스|한 계정에/);
     expect(html("comp-b", { member: true, comp, event: event("during") })).toContain('href="/account"');
   });
   it("③ A: 문구·이용권 2장 카드, 1+1 줄 없음", () => {
     const t = plain(html("comp-a", { member: true, comp: { tier: "A", quantity: 2, unused: 2, expiresAt: "2026-12-06T03:00:00.000Z" }, event: event("during") }));
-    for (const line of ["새로 쓴 결리포트", "믿고 먼저 결제해 주셔서 고맙습니다", "아직 부족했던 결리포트를 믿어 주신 덕분에 처음부터 다시 쓸 수 있었어요. 만세력은 더 정확하게, 해석은 더 깊게, 문장은 더 내 이야기처럼. 고마운 마음을 담아 이용권 두 장을 드려요.",
-      "무료 이용권 2장 12월 6일까지", "한 장은 나에게, 한 장은 소중한 사람에게.", "이용권으로 만들기"]) expect(t).toContain(line);
-    expect(t).not.toContain("1+1 기간");
+    for (const line of ["새로 쓴 결리포트", "믿고 먼저 결제해 주셔서 고맙습니다", "아직 부족했던 결리포트를 믿어 주신 덕분에 처음부터 다시 쓸 수 있었어요. 만세력은 더 정확하게, 해석은 더 깊게, 문장은 더 내 이야기처럼. 고마운 마음을 담아 이용권 두 장을 증정해요.",
+      "증정 이용권 2장 12월 6일까지", "한 장은 나에게, 한 장은 소중한 사람에게.", "이용권으로 만들기"]) expect(t).toContain(line);
+    expect(t).not.toContain("증정 이벤트 기간");
     expect(t).not.toMatch(/첫 결제|보너스|한 계정에/);
   });
   it("접근성: 대화상자·제목·설명 연결, 닫기 라벨", () => {

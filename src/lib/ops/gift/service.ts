@@ -25,10 +25,11 @@ export async function afterPaidOrder(gift: OpsStore, paymentOrderId: string, cfg
 }
 
 /** 이용권 지갑(서재 이용권 줄·결제 화면). SQL ops_gift('wallet'). */
-export type TicketWallet = { ledger: number; giftable: number; usable: number; total: number; expiresAt: string | null; sent: number; recipients: number };
+/** expiresAt = 가장 빠른 기한(서재 한 줄) · usableExpiresAt = 결제 화면에서 쓸 수 있는 이용권 중 가장 빠른 기한(먼저 쓰는 장). */
+export type TicketWallet = { ledger: number; giftable: number; usable: number; total: number; expiresAt: string | null; usableExpiresAt: string | null; sent: number; recipients: number };
 export async function readWallet(gift: OpsStore, userId: string): Promise<TicketWallet | null> {
   const r = await gift.call("wallet", { userId });
   if (!r.ok) return null;
   const n = (v: unknown) => (Number.isInteger(v) && (v as number) >= 0 ? (v as number) : 0);
-  return { ledger: n(r.ledger), giftable: n(r.giftable), usable: n(r.usable), total: n(r.total), expiresAt: typeof r.expiresAt === "string" ? r.expiresAt : null, sent: n(r.sent), recipients: n(r.recipients) };
+  return { ledger: n(r.ledger), giftable: n(r.giftable), usable: n(r.usable), total: n(r.total), expiresAt: typeof r.expiresAt === "string" ? r.expiresAt : null, usableExpiresAt: typeof r.usableExpiresAt === "string" ? r.usableExpiresAt : null, sent: n(r.sent), recipients: n(r.recipients) };
 }

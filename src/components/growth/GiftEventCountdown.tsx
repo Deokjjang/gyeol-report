@@ -60,11 +60,12 @@ export function GiftEventCountdown() {
   const target = Date.parse(phase === "before" ? view.startsAt : view.endsAt), remaining = target - serverNow;
   const range = eventRangeLabel(view), start = eventStartLabel(view.startsAt), ticketUntil = kstMonthDayLabel(view.ticketExpiresAt);
   const clockLabel = phase === "before" ? "시작까지" : "종료까지";
-  return <section className={`${s.event} ${s.gift}`} aria-label="1+1 이벤트" data-gift-event={phase}>
+  return <section className={`${s.event} ${s.gift}`} aria-label="이용권 증정 이벤트" data-gift-event={phase}>
     <div className={s.heading}>
-      <p>1+1 EVENT<span>{range}</span></p>
-      <h2>한 권을 펼치면, 한 권이 더</h2>
-      <p className={s.benefit}>리포트를 한 권 결제하면 무료 이용권 한 장을 더 드려요.</p>
+      <p>이용권 증정 EVENT<span>{range}</span></p>
+      <h2>한 권을 펼치면, 이용권 한 장</h2>
+      {/* 2026-11-06: 이용권은 결제에 따른 무상 증정(약관). 「1+1」·「한 권이 더」처럼 묶음 판매로 읽히는 표현은 쓰지 않는다. */}
+      <p className={s.benefit}>리포트를 결제하면 1건마다 이용권 1장을 증정해요.</p>
       {phase === "before" ? <small>{start}</small> : ticketUntil ? <small>{`이용권은 ${ticketUntil}까지 쓸 수 있어요`}</small> : null}
     </div>
     <div className={s.clock}>

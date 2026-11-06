@@ -7,7 +7,6 @@ import type {
   TossClientCheckoutLaunchResult,
   TossClientSdk,
   TossClientSdkLoader,
-  TossWidgetSheet,
 } from "./tossClientCheckoutTypes";
 
 function failure(
@@ -34,16 +33,6 @@ function isNonEmptyString(value: unknown): value is string {
 
 function isTossSdkLoader(value: unknown): value is TossClientSdkLoader {
   return typeof value === "function";
-}
-
-/** P 추가 G: 결제위젯 연동 키(gck)인가. 이 키면 우리 화면 버튼은 「결제하기」 하나, 수단 고르기는 토스 위젯 안(어드민 설정: 토스페이·카카오페이). */
-export function isTossWidgetClientKey(clientKey: unknown): boolean {
-  return typeof clientKey === "string" && /^(test|live)_gck_/.test(clientKey);
-}
-/** 위젯의 비회원 고객 키(토스 v2 SDK ANONYMOUS). 결제수단 저장(브랜드페이)을 쓰지 않으므로 계정마다 키를 만들지 않는다. */
-export const TOSS_WIDGET_ANONYMOUS = "@@ANONYMOUS";
-function isWidgetSheet(value: unknown): value is TossWidgetSheet {
-  return isRecord(value) && typeof value.open === "function" && typeof value.waitForPay === "function" && typeof value.close === "function";
 }
 
 export function isSupportedEasyPay(value: unknown): value is SupportedEasyPay {
@@ -179,7 +168,7 @@ function parseTossCheckoutRequest(
 export async function launchTossCheckout(
   input: unknown,
 ): Promise<TossClientCheckoutLaunchResult> {
-  if (!isRecord(input) || !isSupportedEasyPay(input.easyPay)) {
+  if (!isRecord(input)) {
     return failure(
       "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST",
       "Toss 결제 실행 요청이 올바르지 않습니다.",
@@ -217,31 +206,6 @@ export async function launchTossCheckout(
     );
   }
 
-  if (isTossWidgetClientKey(parsedRequest.request.clientKey)) {
-    const sheet = isWidgetSheet(input.widgetSheet) ? input.widgetSheet : null;
-    if (typeof tossClient.widgets !== "function" || !sheet) {
-      return failure("TOSS_CLIENT_CHECKOUT_REQUEST_FAILED", "Toss 결제창을 열지 못했습니다.");
-    }
-    const request = parsedRequest.request.requestPayment;
-    try {
-      const widgets = tossClient.widgets({ customerKey: TOSS_WIDGET_ANONYMOUS });
-      // 금액은 결제수단을 그리기 전에(토스 문서). 금액·주문번호는 서버가 준비한 값 그대로 — 승인 때 서버가 저장 금액과 다시 맞춘다.
-      await widgets.setAmount({ currency: request.amount.currency, value: request.amount.value });
-      const slots = await sheet.open();
-      await Promise.all([
-        widgets.renderPaymentMethods({ selector: slots.methods, variantKey: "DEFAULT" }),
-        widgets.renderAgreement({ selector: slots.agreement, variantKey: "AGREEMENT" }),
-      ]);
-      if (!await sheet.waitForPay()) { sheet.close(); return failure("TOSS_CLIENT_CHECKOUT_CANCELED", "결제를 취소했어요."); }
-      await widgets.requestPayment({ orderId: request.orderId, orderName: request.orderName, successUrl: request.successUrl, failUrl: request.failUrl,
-        ...(request.customerEmail ? { customerEmail: request.customerEmail } : {}), ...(request.customerName ? { customerName: request.customerName } : {}) });
-    } catch {
-      sheet.close();
-      return failure("TOSS_CLIENT_CHECKOUT_REQUEST_FAILED", "Toss 결제창을 열지 못했습니다.");
-    }
-    return { ok: true, status: "redirect_requested" };
-  }
-
   try {
     const paymentWindow = tossClient.payment({
       customerKey: input.customerKey,
@@ -249,7 +213,7 @@ export async function launchTossCheckout(
 
     await paymentWindow.requestPayment({
       ...parsedRequest.request.requestPayment,
-      card: { flowMode: "DIRECT", easyPay: input.easyPay },
+      card: { flowMode: "DEFAULT" },
     });
   } catch {
     return failure(

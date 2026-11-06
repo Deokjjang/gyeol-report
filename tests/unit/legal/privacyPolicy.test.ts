@@ -41,7 +41,7 @@ describe("privacy policy (v5 최종3)", () => {
 
   it("수집 항목·목적: 이메일·로그인 식별자·현재 하는 일·연애 상태·궁합·선물·이용권·혜택 알림", () => {
     const items = privacyPolicyCollectionItems.join("\n");
-    for (const item of ["이메일(필수 동의)", "로그인 식별자", "현재 하는 일", "연애 상태", "상대방의 이름", "선물을 보낸·받은 계정", "이용권 지급·사용·만료 기록", "혜택 알림 동의 여부"]) expect(items).toContain(item);
+    for (const item of ["이메일(필수 동의)", "로그인 식별자", "현재 하는 일", "연애 상태", "상대방의 이름", "선물을 보낸·받은 계정", "이용권 증정·사용·만료 기록", "혜택 알림 동의 여부"]) expect(items).toContain(item);
     expect(privacyPolicyCollectionRows.map(([source]) => source)).toContain("궁합 리포트 입력");
     for (const purpose of ["이용권 관리", "서비스 공지와 긴급 안내", "같은 사람의 이전 리포트 참조", "혜택 알림 보내기(새 책·이벤트·할인 소식, 따로 동의한 회원만)"]) expect(privacyPolicyPurposeItems.join("\n")).toContain(purpose);
   });

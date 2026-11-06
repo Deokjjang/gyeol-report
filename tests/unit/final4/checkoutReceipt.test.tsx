@@ -38,12 +38,12 @@ describe("발행 주문서 (최종 A 16)", () => {
     expect(text(html)).toContain("3,900원"); expect(html).not.toContain("1,490원");
     expect(html).not.toContain("data-gift-event-line"); expect(html).not.toContain("1+1");
   });
-  it("이벤트 기간만 한 줄 「1+1 · 결제 후 무료 이용권 1장」(P 추가 A: 비회원 결제가 없어 비회원 전용 줄도 없다)", () => {
+  it("이벤트 기간만 한 줄 「이벤트 · 결제 후 이용권 1장 증정」(2026-11-06 4번: 「증정」, 묶음 판매로 읽히는 「1+1」 없음)(P 추가 A: 비회원 결제가 없어 비회원 전용 줄도 없다)", () => {
     expect(text(render({ giftEventProducts: ["saju_mbti_full"] }))).toContain(GIFT_EVENT_RECEIPT_LINE);
     expect(text(render({ giftEventProducts: ["saju_mbti_full"] }))).not.toContain("로그인하고 결제하면");
     hooks.slots = []; state.session = { status: "member", profile: "complete" } as AccountSession;
     const member = render({ giftEventProducts: ["saju_mbti_full"] });
-    expect(GIFT_EVENT_RECEIPT_LINE).toBe("1+1 · 결제 후 무료 이용권 1장");
+    expect(GIFT_EVENT_RECEIPT_LINE).toBe("이벤트 · 결제 후 이용권 1장 증정");
     // 회원은 이용권 잔액 확인 전까지 결제 방법이 정해지지 않았어도 직접 결제 기본 → 줄이 보인다.
     expect(text(member)).toContain(GIFT_EVENT_RECEIPT_LINE);
     hooks.slots = []; expect(render({ giftEventProducts: ["career_money_study"] })).not.toContain("data-gift-event-line");

@@ -47,7 +47,6 @@ describe("Toss client checkout types", () => {
     const input: TossClientCheckoutLaunchInput = {
       tossCheckoutRequest: requestDraft,
       customerKey: "customer_key_type_test",
-      easyPay: "TOSSPAY",
       loadTossPayments: async () => sdk,
     } satisfies TossClientCheckoutLaunchInput;
     const result = {
