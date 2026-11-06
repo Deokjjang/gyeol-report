@@ -9,7 +9,7 @@ import s from "./book.module.css";
 
 // Presentation only. Policy data is imported unchanged; route-only passages below
 // mirror the existing public documents and are covered by full-text parity tests.
-// 운영 Q(2026-11-07.1)에서 일부러 다르게 한 곳: 환불정책 맨 위 3줄(설명 한 줄·「문의 방법」 절 대신), 개인정보처리방침 끝 「개인정보 문의처」 줄 없음.
+// 운영 Q(2026-11-07)에서 일부러 다르게 한 곳: 환불정책 맨 위 3줄(설명 한 줄·「문의 방법」 절 대신), 개인정보처리방침 끝 「개인정보 문의처」 줄 없음.
 export const LEGAL_TITLES = ["이용약관", "개인정보처리방침", "환불정책", "사업자 정보"] as const;
 export const BUSINESS_ROWS = [
   ["상호명", business.businessName], ["서비스명", business.serviceNameKo], ["대표자명", business.representativeKo],

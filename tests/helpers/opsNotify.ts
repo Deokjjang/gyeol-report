@@ -8,6 +8,8 @@ import { RAW_FULL } from "./v5Scenarios";
 
 /** 운영 Q 시험 도우미: PGlite(운영 migration 적용) + 결제 심기 + 모의 텔레그램·토스. 외부 호출 0. */
 export const OPS_Q_MIGRATION = "supabase/migrations/20261107100000_v5_ops_notify.sql";
+/** 운영 Q 추가: 공유 실패 경보(표·함수·대기표 kind). */
+export const OPS_SHARE_ALERT_MIGRATION = "supabase/migrations/20261107110000_v5_ops_share_alert.sql";
 export type Call = { call(a: string, d?: Record<string, unknown>): Promise<Record<string, unknown>> };
 export const inputOf = (name = "하람") => {
   const n = normalizeReportInputPayload({ ...RAW_FULL, person: { ...RAW_FULL.person, name } }, { now: () => new Date("2026-10-27T03:00:00.000Z") });
@@ -23,7 +25,7 @@ export const refundProvider: RefundProvider = {
 export async function opsNotifySql() {
   const h = await opsSql();
   const asOwner = async <T>(f: () => Promise<T>) => { await h.db.exec("reset role"); try { return await f(); } finally { await h.db.exec("set role service_role"); } };
-  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); });
+  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_SHARE_ALERT_MIGRATION, "utf8")); });
   const one = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows[0] as T);
   const all = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows as T[]);
   const exec = (sql: string, params: unknown[] = []) => asOwner(async () => { await h.db.query(sql, params); });

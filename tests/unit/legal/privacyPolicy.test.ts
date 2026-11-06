@@ -71,7 +71,7 @@ describe("privacy policy (v5 최종3)", () => {
   });
 
   it("외부 서비스는 실제 쓰는 것만(OpenAI는 임시본 레인 — 배포 명령 0-1), 국외 이전은 업체별 6칸", () => {
-    // 운영 Q(2026-11-07.1): 운영자 주문 알림 봇 Telegram이 위탁·국외 이전 끝에 한 줄씩.
+    // 운영 Q(2026-11-07 개정): 운영자 주문 알림 봇 Telegram이 위탁·국외 이전 끝에 한 줄씩.
     expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "OpenAI", "Vercel Inc.", "Telegram Messenger Inc."]);
     expect(privacyPolicyOverseasHead).toEqual(["이전받는 자 · 국가 · 연락처", "이전 항목", "이전 시기와 방법", "이용 목적", "보유·이용 기간", "거부 방법과 효과"]);
     expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "OpenAI, LLC", "Supabase Pte. Ltd.", "Vercel Inc.", "Telegram Messenger Inc."]);
@@ -88,7 +88,7 @@ describe("privacy policy (v5 최종3)", () => {
     expect(copy).toContain(metaTransferNotice);
   });
 
-  it("운영 Q(2026-11-07.1): Telegram 행 — 목적·항목·보유·이전받는 자·국가·이전 방법(공식 문서 telegram.org/privacy·faq만)", () => {
+  it("운영 Q(2026-11-07 개정): Telegram 행 — 목적·항목·보유·이전받는 자·국가·이전 방법(공식 문서 telegram.org/privacy·faq만)", () => {
     expect(privacyPolicyProcessorRows.at(-1)).toEqual(["Telegram Messenger Inc.", "운영자 주문 알림·문의 처리", "국외(아래 7번)"]);
     const [who, items, how, purpose, keep] = privacyPolicyOverseasRows.at(-1)!;
     expect(who).toMatch(/^Telegram Messenger Inc\. · 아랍에미리트\(두바이, 개발팀 소재\) 및 여러 나라의 데이터센터 · /);

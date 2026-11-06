@@ -22,6 +22,6 @@ export async function canReadPurchasedBook(reportId: string): Promise<boolean> {
   try {
     const request = new NextRequest("https://www.gyeolreport.com/reports/", { headers: await headers() });
     const auth = createAccountPort(request);
-    return auth ? await mayShareBook(request, reportId, auth, createLibraryPort(), false, sharePort(), true) : false;
+    return auth ? await mayShareBook(request, reportId, auth, createLibraryPort(), false, sharePort()) : false;
   } catch { return false; }
 }
