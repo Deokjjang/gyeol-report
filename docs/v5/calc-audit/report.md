@@ -282,5 +282,6 @@
 
 ## 9. 원격 브랜치
 
-- 브랜치 `v5/calc-audit-01`(기준 a58d3426). 커밋·push 후 SHA는 아래에 적는다.
-- 원격 SHA: (커밋 후 기록)
+- 브랜치 `v5/calc-audit-01`(기준 a58d3426), Q에서 병합 예정.
+- 내용 커밋 `7bc8077e013fd35db10d00528edab61f165ded63` — push 직후 `git rev-parse HEAD` = `git rev-parse origin/v5/calc-audit-01` 확인.
+- 이 SHA 기록 커밋이 그 위에 하나 더 있다. 최종 HEAD는 `git log -1 origin/v5/calc-audit-01`로 확인.
