@@ -1,5 +1,5 @@
 import "server-only";
-import { dayunLabel, dayunStartManAge, dayunStartMs } from "../../brief/labels";
+import { dayunLabel, dayunStartMs, personDaeunsu } from "../../brief/labels";
 import { getAnnualJieBoundaries } from "../../report-knowledge/annualMonthJie";
 import { resolveBirthTimeCalculation } from "../../saju/birthTimePrecision";
 import { BIRTH_TIME_SLOT_DEFINITIONS, birthTimeSlotLabel, solarTimeCorrectionNote, type BirthTimeCalculationContext } from "../../saju/birthTimePrecisionTypes";
@@ -141,18 +141,18 @@ export function calcCheck(person: unknown): CalcCheck {
   const d = calculateCustomerDayun(input), t = calculateTraditionalDaeunsu(input);
   if (!d.ok) rows.push({ label: "대운", value: DAYUN_ERROR[d.error] ?? d.error });
   else {
-    const first = d.value.cycles[0], x = dayunStartManAge(birthDate, first);
+    const first = d.value.cycles[0], x = personDaeunsu(birthDate, d.value.cycles)!;
     const yearStem = ctx.confirmed.year?.stem ?? "", yang = "甲丙戊庚壬".includes(yearStem);
     rows.push({ label: "대운 방향", value: `${d.value.direction === "forward" ? "순행" : "역행"} (년간 ${yearStem}${KO[yearStem] ? `(${KO[yearStem]})` : ""} ${yang ? "양" : "음"} · ${p.gender === "MALE" ? "남" : "여"} — 양남·음녀 순행, 음남·양녀 역행)` });
     const jie = t.ok ? `${JIE_KO[t.value.jieName] ?? t.value.jieName} ${hm(t.value.jieKst)} KST` : "";
     const span = t.ok ? `${t.value.days}일 ${t.value.hours}시간` : "";
     const step = t.ok ? (t.value.direction === "forward" ? `출생 → 다음 절입 ${jie}까지 ${span}` : `직전 절입 ${jie} → 출생까지 ${span}`) : "";
     const startAt = first.startSolarKst ? `${hm(first.startSolarKst)} KST` : `${hm(first.startSolarRange.earliestKst)} ~ ${hm(first.startSolarRange.latestKst)} KST(가운데 ${hm(kstIso(dayunStartMs(first)))})`;
-    rows.push({ label: "대운 시작 계산", value: [step, `첫 대운 ${show(first)} 시작 ${startAt}(엔진 정밀 계산)`, `대운수 ${x} = 그때의 만 나이`].filter(Boolean).join(" → "), topic: "age" });
+    rows.push({ label: "대운 시작 계산", value: [step, `첫 대운 ${show(first)} 시작 ${startAt}(엔진 정밀 계산)`, `대운수 ${x} = 그때의 만 나이(한 사람에 한 숫자, 대운 줄마다 같은 값)`].filter(Boolean).join(" → "), topic: "age" });
     // 운영 Q 8-1 전에 만든 책의 대운수: 최종 A-3 뒤는 날수 ÷ 3, 그보다 앞선 책은 첫 대운 시작 해 − 출생 해. 저장된 책은 바뀌지 않는다.
     const oldYear = first.startYear - Number(birthDate.slice(0, 4));
     if (t.ok) rows.push({ label: "예전 책의 대운수", value: `${t.value.minMax[0] === t.value.minMax[1] ? t.value.daeunsu : `${t.value.daeunsu}(범위 ${t.value.minMax.join("~")})`} — 옛 셈법(날수 ÷ 3)${oldYear !== t.value.daeunsu ? ` · 더 앞선 책은 ${oldYear}(첫 대운 시작 해 − 출생 해)` : ""}. 이 변경 전 책에는 이 값이 모든 대운 줄에 같게 적혀 있다`, topic: "age" });
-    rows.push({ label: "대운 목록(새 책 표기)", value: d.value.cycles.slice(0, 9).map((c, i) => dayunLabel(c, birthDate, d.value.cycles[i + 1]).line).join(" / ") });
+    rows.push({ label: "대운 목록(새 책 표기)", value: d.value.cycles.slice(0, 9).map((c, i) => { const l = dayunLabel(c, x, d.value.cycles[i + 1]); return `${l.line} · ${l.ages}`; }).join(" / ") });
   }
   if (ctx.birthTimePrecision === "exact" && ctx.confirmed.hour) {
     try {

@@ -2,8 +2,8 @@ import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { buildBrief, loadKnowledge } from "@/lib/brief";
-import { labelOf } from "@/lib/brief/chart";
-import { dayunLabel, dayunStartManAge, dayunStartMs } from "@/lib/brief/labels";
+import { dayunOf, labelOf } from "@/lib/brief/chart";
+import { dayunLabel, dayunStartManAge, dayunStartMs, personDaeunsu } from "@/lib/brief/labels";
 import { cycleSummary } from "@/lib/brief/timeline";
 import { buildFactSheet } from "@/lib/factsheet/build";
 import { factCheck, factCtxOf } from "@/lib/factsheet/check";
@@ -12,7 +12,7 @@ import { BIRTH_TIME_SLOT_DEFINITIONS } from "@/lib/saju/birthTimePrecisionTypes"
 import { calculateCustomerDayun, type CustomerDayunCycle } from "@/lib/saju/customerDayun";
 import { calculateTraditionalDaeunsu } from "@/lib/saju/traditionalDaeunsu";
 
-// 운영 Q 8-1: 대운 나이 표기 통일(대운수 = 그 대운이 시작되는 때의 만 나이). 표기만 바꾸고 계산은 그대로인지 3,000명으로 본다.
+// 운영 Q 8-1: 대운 나이 표기 통일(덕짱님 결정 「한 사람에 한 숫자」: 대운수 = 첫 대운이 시작될 때의 실제 만 나이, 「만 X~Y세」도 그 값에서). 표기만 바꾸고 계산은 그대로인지 3,000명으로 본다.
 // 무작위 사람(씨앗 고정): 1930~2025년 생일, 정확 75% · 대략 20% · 모름 5%, 남녀 반반. 모름은 하루 1,440분을 모두 세서 느려 비율을 낮췄다.
 const DAY = 86_400_000;
 function mulberry32(seed: number) {
@@ -68,27 +68,35 @@ describe("8-1 계산 불변: 3,000명 엔진 출력 해시가 바꾸기 전과 �
   });
 });
 
-describe("8-1 대운수 = 「만 X~Y세」의 X = 그 대운이 시작되는 때의 실제 만 나이(3,000명, 대운마다)", () => {
-  it("표기 함수·브리프 경로(labelOf·cycleSummary) 모두 어긋남 0", { timeout: 300_000 }, () => {
+describe("8-1 대운수 = 한 사람에 한 숫자(첫 대운이 시작될 때의 실제 만 나이), 「만 X~Y세」도 그 값에서(3,000명, 대운마다)", () => {
+  it("표기 함수·브리프 경로(labelOf·cycleSummary) 모두 어긋남 0, X는 그 대운이 시작될 때의 실제 만 나이와도 같다", { timeout: 300_000 }, () => {
     const { people, dayun } = population();
     let cycles = 0, mismatches = 0;
     const examples: string[] = [];
     people.forEach((p, i) => {
       const d = dayun[i];
       if (!d.ok) return;
-      const info = { cycles: d.value.cycles, birthDate: p.birthDate };
+      const base = personDaeunsu(p.birthDate, d.value.cycles);
+      const info = { cycles: d.value.cycles, daeunsu: base };
       const summary = cycleSummary(info, 1900, 2200, 2026, () => "比肩");
       for (const c of d.value.cycles) {
         cycles++;
         const next = d.value.cycles.find(x => x.index === c.index + 1);
-        const want = trueManAge(p.birthDate, c), l = dayunLabel(c, p.birthDate, next), viaBrief = labelOf(info, c), row = summary.find(s => s.years === `${c.startYear}~${c.endYear}`);
-        const ok = l.daeunsu === want && l.ages === `만 ${want}~${want + 9}세` && l.line.endsWith(`(대운수 ${want})`) && dayunStartManAge(p.birthDate, c) === want
+        const x = base! + 10 * (c.index - 1), l = dayunLabel(c, base, next), viaBrief = labelOf(info, c), row = summary.find(s => s.years === `${c.startYear}~${c.endYear}`);
+        const ok = d.value.cycles[0].index === 1 && base === trueManAge(p.birthDate, d.value.cycles[0]) && x === trueManAge(p.birthDate, c)
+          && l.daeunsu === base && l.ages === `만 ${x}~${x + 9}세` && l.line.endsWith(`(대운수 ${base})`)
           && viaBrief.line === l.line && viaBrief.ages === l.ages && row?.label === l.line && row?.ages === l.ages;
-        if (!ok) { mismatches++; if (examples.length < 5) examples.push(`${JSON.stringify(p)} ${c.ganji} ${l.line} ${l.ages} want ${want}`); }
+        if (!ok) { mismatches++; if (examples.length < 5) examples.push(`${JSON.stringify(p)} ${c.ganji} ${l.line} ${l.ages} base ${base} 실제 ${trueManAge(p.birthDate, c)}`); }
       }
     });
     expect(examples).toEqual([]);
     expect({ cycles, mismatches }).toEqual({ cycles: BEFORE_COUNTS.dayunOk * 12, mismatches: 0 });
+  });
+  it("브리프의 dayunOf도 같은 대운수를 센다(100명마다 1명)", { timeout: 300_000 }, () => {
+    const { people, dayun } = population();
+    const sample = people.map((p, i) => ({ p, d: dayun[i] })).filter((x, i) => x.d.ok && i % 100 === 0);
+    expect(sample.length).toBeGreaterThan(20);
+    for (const { p, d } of sample) if (d.ok) expect(dayunOf(p).daeunsu, p.birthDate).toBe(personDaeunsu(p.birthDate, d.value.cycles));
   });
 
   it("생일 앞뒤·2월 29일생·대략 범위 가운데", () => {
@@ -117,22 +125,23 @@ describe("8-1 대운수 = 「만 X~Y세」의 X = 그 대운이 시작되는 때
       const brief = buildBrief(input, k), sheet = buildFactSheet(input as never, brief, k);
       const want = (c: CustomerDayunCycle) => trueManAge(p.birthDate, c);
       const byYears = (years: string) => d.value.cycles.find(c => `${c.startYear}~${c.endYear}` === years)!;
+      const base = want(d.value.cycles[0]);
       const cd = brief.chart.currentDayun;
       if (cd) {
         const c = byYears(cd.years);
-        expect([cd.label?.endsWith(`(대운수 ${want(c)})`), cd.ages], p.birthDate).toEqual([true, `만 ${want(c)}~${want(c) + 9}세`]);
-        if (cd.next) expect(cd.next.label?.endsWith(`(대운수 ${want(d.value.cycles.find(x => x.index === c.index + 1)!)})`), p.birthDate).toBe(true);
+        expect([cd.label?.endsWith(`(대운수 ${base})`), cd.ages], p.birthDate).toEqual([true, `만 ${want(c)}~${want(c) + 9}세`]);
+        if (cd.next) expect(cd.next.label?.endsWith(`(대운수 ${base})`), p.birthDate).toBe(true);
       }
-      for (const row of brief.timeline?.cycles ?? []) { const c = byYears(row.years); expect([row.label?.endsWith(`(대운수 ${want(c)})`), row.ages], p.birthDate).toEqual([true, `만 ${want(c)}~${want(c) + 9}세`]); }
+      for (const row of brief.timeline?.cycles ?? []) { const c = byYears(row.years); expect([row.label?.endsWith(`(대운수 ${base})`), row.ages], p.birthDate).toEqual([true, `만 ${want(c)}~${want(c) + 9}세`]); }
       const facts = sheet.people[0].dayun;
       expect(facts.cycles.map(c => c.manStartAge), p.birthDate).toEqual(d.value.cycles.map(want));
-      expect(facts.number).toBe(want(d.value.cycles[0]));
-      // 사실 검사: 대운 줄 그대로는 통과, 다른 대운의 값을 붙이면 걸린다.
+      expect(facts.number).toBe(base);
+      // 사실 검사: 대운 줄 그대로는 통과, 다른 숫자(옛 셈법 등)를 붙이면 걸린다. 힌트 이름은 「첫 대운이 시작될 때의 만 나이」.
       const ctx = factCtxOf(sheet, k, [["시험"]]);
       const [c1, c2] = d.value.cycles;
-      const line1 = dayunLabel(c1, p.birthDate, c2).line;
-      expect(factCheck(`${line1}로 첫 대운이 시작돼요.`, ctx), p.birthDate).toBeNull();
-      expect(factCheck(`${line1.replace(/\(대운수 \d+\)/, `(대운수 ${want(c2)})`)}로 첫 대운이 시작돼요.`, ctx)).toMatchObject({ rule: "fact_ganji", detail: `${dayunLabel(c1).name}의 대운수는 ${want(c1)}` });
+      const line2 = dayunLabel(c2, base, d.value.cycles[2]).line;
+      expect(factCheck(`${line2}로 두 번째 대운이 시작돼요.`, ctx), p.birthDate).toBeNull();
+      expect(factCheck(`${dayunLabel(c1, base, c2).line.replace(/\(대운수 \d+\)/, `(대운수 ${base + 1})`)}로 첫 대운이 시작돼요.`, ctx)).toMatchObject({ rule: "fact_ganji", detail: `대운수는 ${base}(첫 대운이 시작될 때의 만 나이)` });
     }
   });
 });

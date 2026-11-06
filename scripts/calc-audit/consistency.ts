@@ -45,7 +45,7 @@ for (let i = 0; i < 3000; i++) {
   if (!d.ok || !tr.ok) continue;
   tally.n++;
   const c = d.value.cycles[0];
-  // 운영 Q 8-1 뒤 dayunLabel 둘째 인자는 생일(대운수 = 교운 때 만 나이). 1-a 감사 당시 X(교운 해 − 출생 해)를 다시 재려고 생일 없이 부른다.
+  // 운영 Q 8-1 뒤 dayunLabel 둘째 인자는 그 사람의 대운수(첫 대운 교운 때 만 나이)라 넘기면 X가 그 값이 된다. 1-a 감사 당시 X(교운 해 − 출생 해)를 다시 재려고 넘기지 않는다.
   const label = dayunLabel(c, undefined, d.value.cycles[1]);
   const labelStart = Number(/^만 (\d+)~/.exec(label.ages)![1]);
   // 교운 순간(KST 날짜)의 실제 만 나이: 생일이 지났는지 본다.

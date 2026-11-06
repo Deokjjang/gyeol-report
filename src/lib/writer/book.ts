@@ -33,8 +33,8 @@ export type BookEdition = { readonly number: number; readonly label: string; rea
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
 export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number };
-/** label(최종판3 8): 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 27)"(labels.dayunLabel). 최종판3 이전 Book에는 없다.
- * ages(운영 Q 8-1): [X, X+9] — X = 그 대운이 시작되는 때의 만 나이(= 대운수, 브리프 cycles[].ages 그대로). 이 변경 전 Book은 [시작 해 − 출생 해, 끝 해 − 출생 해]. */
+/** label(최종판3 8): 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 7)"(labels.dayunLabel). 최종판3 이전 Book에는 없다.
+ * ages(운영 Q 8-1): [X, X+9] — X = 대운수(첫 대운이 시작될 때의 만 나이) + 10 × (순서 − 1)(브리프 cycles[].ages 그대로). 이 변경 전 Book은 [시작 해 − 출생 해, 끝 해 − 출생 해]. */
 export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean; readonly label?: string };
 export type V5Chapter = { readonly n: number; readonly id: string; readonly title: string; readonly sections: readonly BookSection[]; readonly keys?: readonly string[] };
 export type V5BookDraft = {
@@ -182,7 +182,7 @@ function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>
     caution, ...(card.kind === "year" ? { age: manAge(Number(card.key), birthYear) } : {}) };
 }
 
-/** 부록 대운 줄(최종판3 8): 사람마다 기준일의 대운과 다음 대운의 공통 표기(브리프 currentDayun.label = labels.dayunLabel) 그대로와 대운수 안내(대운수 = 그 대운이 시작될 때의 만 나이, 운영 Q 8-1).
+/** 부록 대운 줄(최종판3 8): 사람마다 기준일의 대운과 다음 대운의 공통 표기(브리프 currentDayun.label = labels.dayunLabel) 그대로와 대운수 안내(대운수 = 첫 대운이 시작될 때의 만 나이, 운영 Q 8-1).
  * "지금" 같은 기준일 말은 붙이지 않는다(책은 발행일 기준이라 나중에 읽으면 어긋난다). 대운을 못 정한 사람은 뺀다. */
 function dayunOf(brief: Brief): { dayun?: V5BookDraft["dayun"] } {
   const people = [{ name: brief.person.name, cd: brief.chart.currentDayun }, ...(brief.partner ? [{ name: brief.partner.person.name, cd: brief.partner.chart.currentDayun }] : [])];
@@ -304,7 +304,7 @@ export function cardRelationsPlain(c: Pick<V5TimelineCard, "kind" | "badges">): 
 }
 const LEVEL_POINTS = { 좋음: 3, 보통: 2, 조율: 1 } as const;
 const HAP_NAMES = new Set(["천간합", "육합", "삼합", "방합", "반합"]);
-/** 대운 표 위 전환 줄(최종판3 8): 표에 보이는 해에 시작하는 대운만, 공통 표기(labels.dayunLabel) 그대로. "무진 대운: 2027년 5월 무렵부터 (대운수 27)" → 날짜 "2027년 5월 무렵부터 (대운수 27)", 앞뒤 "기사 대운 → 무진 대운". */
+/** 대운 표 위 전환 줄(최종판3 8): 표에 보이는 해에 시작하는 대운만, 공통 표기(labels.dayunLabel) 그대로. "무진 대운: 2027년 5월 무렵부터 (대운수 7)" → 날짜 "2027년 5월 무렵부터 (대운수 7)", 앞뒤 "기사 대운 → 무진 대운". */
 function dayunTransitions(cycles: readonly V5Cycle[], years: readonly number[], keyPage: ReadonlyMap<string, number>) {
   return cycles.flatMap((c, i) => {
     const start = Number(c.years.slice(0, 4)), [name, date] = c.label?.split(": ") ?? [];
