@@ -1,0 +1,573 @@
+/**
+ * 상품별 필수 근거(SPEC §2).
+ * 연애: 배우자성(남=재성, 여=관성)·배우자궁(일지), 자녀성(남=관성, 여=식상)·자녀궁(시지, 시간 미상이면 유보), 잘 맞는 상대(부족 오행 보완 + MBTI 통념), 만남 장소.
+ * 커리어: 직업·역할 추천 근거(강한 십성 묶음 + MBTI 통념 직업 + 입력 직업), 올해 기운이 돈·재산 흐름에 주는 영향(투자 지시 아님).
+ */
+import { jobEntryBlock, type JobEntryPerson } from "./jobEntry";
+import { matchJob, type LifeStage } from "./props";
+import { splitSentences } from "@/lib/writer/safety/patterns";
+import type { CareerJob, MbtiProfile, SceneItem } from "@/data/knowledge-v5/schema";
+import { sceneFits, shopLife, type FactProfile } from "./facts";
+import { BRANCH_MAIN_ELEMENT } from "@/lib/saju/constants";
+import type { ChartDetections, ChartPosition } from "@/lib/saju/detections/types";
+import { GROUP_STRONG, GROUP_WEAK, groupValues } from "@/lib/saju/groupStrength";
+import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
+import type { ElementState } from "./chart";
+import type { Knowledge } from "./knowledge";
+import { ELEMENT_KO, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO } from "./labels";
+import { POLE_DEMAND, poleFits, poleKey } from "./mbtiFn";
+import { GROUP_EASY } from "./labels";
+const GROUP_NAME_BY_KEY: Readonly<Record<string, string>> = { PEER: "비겁", OUTPUT: "식상", WEALTH: "재성", OFFICER: "관성", RESOURCE: "인성" };
+import type { ChartBrief, Trait } from "./schema";
+
+type Evidence = { kind: "evidence"; key: string; facts: string[]; note?: string };
+const STARS = { WEALTH: ["偏財", "正財"], OFFICER: ["偏官", "正官"], OUTPUT: ["食神", "傷官"] } as const satisfies Record<string, readonly TenGod[]>;
+const GROUP_KO = { PEER: "비겁(나와 같은 기운)", OUTPUT: "식상(표현·생산)", WEALTH: "재성(재물·현실)", OFFICER: "관성(책임·규칙)", RESOURCE: "인성(배움·보호)" } as const;
+/** 강한 십성 묶음 → 맞는 공부 방식(P3.6 B 학업 방향). */
+const STUDY_BY_GROUP = {
+  PEER: "혼자 목표를 세우고 스스로 진도를 재는 공부(독학·실기 자격)",
+  OUTPUT: "직접 만들고 발표하며 익히는 공부(프로젝트·포트폴리오·실습)",
+  WEALTH: "숫자와 결과가 바로 보이는 실무 공부(실무 자격·데이터·회계)",
+  OFFICER: "범위와 기한이 정해진 공부(시험·공인 자격·학위 과정)",
+  RESOURCE: "깊이 파고 정리하는 공부(이론·연구·글쓰기)",
+} as const;
+/** 묶음별 구체 공부 예(P3.7 r1: "분야 하나를 짝지어 쓴다"만 주니 공부 이름이 비었다). */
+const STUDY_EXAMPLES = {
+  PEER: "실기형 자격과 독학 과정(예: 번역 자격, 코딩 부트캠프, 생활체육 지도자)",
+  OUTPUT: "포트폴리오를 남기는 실습 과정(예: UX 라이팅, 영상 편집, 콘텐츠 기획 과정)",
+  WEALTH: "숫자로 성과가 보이는 실무 자격(예: 전산회계, 데이터분석 준전문가, 물류관리사)",
+  OFFICER: "범위가 정해진 공인 자격(예: 정보처리기사, 품질경영기사, 행정사)",
+  RESOURCE: "깊이 파는 학위·연구형 과정(예: 대학원 강좌, 상담·교육 관련 자격)",
+} as const;
+/** 입력 상태 값(내부 영문 값을 본문에 옮기지 않게). */
+const JOB_STATUS_KO: Readonly<Record<string, string>> = { student: "학생", job_seeker: "구직 중", employee: "직장인", freelancer: "프리랜서", self_employed: "자영업", business_owner: "사업 운영", homemaker: "살림", unemployed: "쉬는 중" };
+/** 강한 묶음이 힘을 내는 판. 다른 직업 예시는 붙이지 않는다(P6: "공무, 법무, 품질, 회계 같은 일은"이 원고에 그대로 나열됐다). */
+const ROLE_BY_GROUP = {
+  PEER: "혼자 판을 짜고 내 이름으로 책임지는 일",
+  OUTPUT: "만들고 말해서 결과물을 내는 일",
+  WEALTH: "숫자와 결과를 다루며 자원을 굴리는 일",
+  OFFICER: "규칙과 책임이 분명한 조직의 일",
+  RESOURCE: "배우고 정리해서 남에게 전하는 일",
+} as const;
+
+/** 십성 위치: 드러난 천간(년·월·시) + 지지 본기(일지 포함). 시간 미상이면 시주 제외. */
+function starPositions(saju: SajuCalcResult, det: ChartDetections, stars: readonly TenGod[]): { tenGod: TenGod; where: string }[] {
+  const out: { tenGod: TenGod; where: string }[] = [];
+  for (const p of ["year", "month", "hour"] as const) { const t = saju.tenGods.stems[p]; if (t && stars.includes(t) && (p !== "hour" || det.hourIncluded)) out.push({ tenGod: t, where: `${POSITION_KO[p]} 하늘 글자` }); }
+  for (const p of ["year", "month", "day", "hour"] as const) {
+    const pillar = saju.pillars[p]; if (!pillar || (p === "hour" && !det.hourIncluded)) continue;
+    const main = saju.tenGods.hiddenStems.find(h => h.branch === pillar.branch && h.weight >= 0.5);
+    if (main?.tenGod && stars.includes(main.tenGod)) out.push({ tenGod: main.tenGod, where: `${POSITION_KO[p]} 땅 글자 속` });
+  }
+  return out;
+}
+
+function starEvidence(key: string, label: string, saju: SajuCalcResult, det: ChartDetections, k: Knowledge, stars: readonly TenGod[] | null): Evidence {
+  if (!stars) return { kind: "evidence", key, facts: [`성별 정보가 없어 ${label} 판단은 보류합니다.`], note: "본문에서 이 별을 말하지 않는다" };
+  const found = starPositions(saju, det, stars);
+  const names = stars.map(t => TEN_GOD_KO[t]).join("·");
+  if (!found.length) {
+    return { kind: "evidence", key, facts: [`${josa(`${label}(${names})`, "이가")} 드러난 자리에 없습니다. '정해진 틀보다 스스로 찾아 쓰는 인연'으로 읽습니다.`], note: "단정하지 않는다" };
+  }
+  // 자리마다 용어를 나열하지 않는다(P6b E-7): 어디에 몇 번 보이는지 + 대표 별 하나의 뜻을 문장으로.
+  const main = found[0].tenGod; const f = k.features.get(`tenGod:${main}`);
+  const places = [...new Set(found.map(x => x.where.replace(/ (하늘 글자|땅 글자 속)$/, "")))].join("·");
+  return { kind: "evidence", key, facts: [`${label}로 보는 기운(${names})이 ${places} 자리에 ${koCount(found.length, "번")} 보입니다.`, ...(f ? [`그중 ${josa(TEN_GOD_KO[main], "은는")} ${splitSentences(f.meaning)[1] ?? splitSentences(f.meaning)[0]}`] : [])], note: "용어를 자리마다 늘어놓지 말고 쉬운 문장으로 푼다" };
+}
+
+function palaceEvidence(key: string, label: string, position: ChartPosition, saju: SajuCalcResult, det: ChartDetections, k: Knowledge): Evidence {
+  const pillar = saju.pillars[position];
+  if (!pillar || (position === "hour" && !det.hourIncluded)) return { kind: "evidence", key, facts: [`출생시간을 몰라 ${label.replace(/\(.*\)$/, "")}는 보지 않습니다.`], note: "본문에서 이 자리를 말하지 않는다" };
+  const b = pillar.branch; const f = k.features.get(`branch:${b}`);
+  const stage = det.twelveStages.find(s => s.position === position);
+  const stageF = stage ? k.features.get(`twelveStage:${stage.stage}`) : undefined;
+  const main = saju.tenGods.hiddenStems.find(h => h.branch === b && h.weight >= 0.5)?.tenGod;
+  const mainF = main ? k.features.get(`tenGod:${main}`) : undefined;
+  // 자리는 땅 글자다: 천간합(하늘 글자끼리)은 이 자리의 관계가 아니다(P3.6 B).
+  const rel = det.relations.filter(r => r.kind !== "STEM_HAP" && r.members.some(m => m.position === position) && r.members.length >= 2)
+    .map(r => { const line = k.badges.find(b => b.kind === r.kind && (b.pair === r.key || b.pair === [...r.key].reverse().join("")))?.line; return `${josa(r.members.filter(m => m.position !== position).map(m => POSITION_KO[m.position as ChartPosition]).join("·"), "과와")} ${RELATION_KO[r.kind]}로 엮여 있습니다${line ? `(${line})` : ""}`; });
+  return { kind: "evidence", key, facts: [
+    `${label}에는 ${ELEMENT_KO[BRANCH_MAIN_ELEMENT[b]]} 기운의 글자가 앉아 있습니다.${main && mainF ? ` 그 속 기운은 ${TEN_GOD_KO[main]}이고, 이 기운은 ${splitSentences(mainF.meaning)[1] ?? ""}` : ""}`,
+    ...(f?.positionNuance ? [f.positionNuance[position]] : []),
+    ...(stageF ? [`그 자리 기운의 단계는 ${stageF.name.replace(/\(.*?\)/g, "")}입니다. ${splitSentences(stageF.meaning)[1] ?? ""}`] : []),
+    ...(rel.length ? [`그 자리는 ${rel.join(", ")}`] : []),
+  ], note: "용어를 나열하지 말고 쉬운 문장으로 푼다" };
+}
+
+/** 관계 코드는 작가에게 쉬운 이름으로 넘긴다(내부 코드 노출 방지). */
+const RELATION_KO: Record<string, string> = { STEM_HAP: "천간합", YUKHAP: "육합", SAMHAP: "삼합", BANGHAP: "방합", CHUNG: "충", HYEONG: "형", PA: "파", HAE: "해", WONJIN: "원진" };
+
+/**
+ * 추천 상대 초상(P3.5 A6): 부족한 기운을 채우는 오행 성향 + 잘 맞는 MBTI를 한 사람으로 합친 재료.
+ * 예) "물 기운이 넉넉한 INFJ 같은 사람: 말수가 적고 핵심을 한 마디로 짚는…". 오행은 가장 부족한 기운(없으면 가장 약한 기운),
+ * MBTI는 통념 궁합표의 첫 '좋음'. MBTI가 없으면 오행 초상만.
+ */
+export function partnerPortrait(k: Knowledge, st: ElementState, mbti: MbtiProfile | null): string[] {
+  const e = st.lacking[0] ?? st.missing[0];
+  if (!e) return [];
+  const bal = k.features.get(`element:${e}:BALANCED`), remedy = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy;
+  const fit = mbti?.conventionalCompat.find(c => c.fit === "좋음");
+  const other = fit ? k.mbti.get(fit.type) : undefined;
+  const who = `${ELEMENT_KO[e]} 기운이 넉넉한 ${other ? `${other.type} 같은 사람` : "사람"}`;
+  return [
+    `초상(한 사람으로 합쳐 쓴다): ${who}`,
+    ...(bal ? [`${ELEMENT_KO[e]} 기운이 넉넉한 사람: ${bal.forYou.base} ${bal.strengths[0]}`] : []),
+    ...(other ? [`${other.type}(${other.easyName}): ${other.oneLiner}`] : []),
+    `맞는 이유: 당신에게 부족한 ${josa(ELEMENT_KO[e], "을를")} 채워 줌${fit ? ` / ${fit.why}` : ""}`,
+    ...(remedy?.partner[1] ? [`곁에 있을 때 장면: ${remedy.partner[1]}`] : []),
+  ];
+}
+
+const ASPECT_KO = { crush: "호감 표현", contact: "연락 패턴", pushPull: "밀당" } as const;
+/**
+ * 연애 신호(P3.7 1-4): 도화·홍염(있으면) → 가장 센 십성 둘 → MBTI 순으로 근거를 모아, 측면마다 근거별 한 줄 + 고객 사실에 맞는 장면 하나.
+ * crush·contact는 '호감이 생기는 순간' 장, pushPull은 '표현하는 방식과 밀당' 장 재료다.
+ */
+function loveSignals(saju: SajuCalcResult, hitIds: ReadonlySet<string>, k: Knowledge, mbti: MbtiProfile | null, facts: FactProfile, usedScenes: Set<string>, aspects: readonly (keyof typeof ASPECT_KO)[], key: string, avoid?: (featureKey: string) => boolean): Evidence | null {
+  const d = saju.tenGods.distribution as Partial<Record<TenGod, number>>;
+  const tenGods = (Object.keys(TEN_GOD_KO) as TenGod[]).filter(t => (d[t] ?? 0) > 0).sort((a, b) => (d[b] ?? 0) - (d[a] ?? 0) || a.localeCompare(b)).slice(0, 2);
+  // 이 사람의 trait와 같은 차원에서 반대인 근거는 쓰지 않는다(P3.7 r2: 1장 "날카롭게" ↔ 밀당 "한참 지켜봄").
+  const keys = [...["shinsal:DOHWASAL", "shinsal:HONGYEOMSAL"].filter(x => hitIds.has(x)), ...tenGods.map(t => `tenGod:${t}`), ...(mbti ? [`mbti:${mbti.type}`] : [])].filter(x => !avoid?.(x));
+  // 근거는 명리 하나 + MBTI 하나까지(P3.7 r1: 세 갈래 나열이 장면 대신 목록 복사를 불렀다).
+  const all = keys.flatMap(x => { const e = k.loveSignals.get(x); if (!e) return []; const f = k.features.get(x); return [{ e, label: f ? f.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "") : e.name }]; });
+  const sources = [...all.filter(x => !x.e.key.startsWith("mbti:")).slice(0, 1), ...all.filter(x => x.e.key.startsWith("mbti:"))].slice(0, 2);
+  if (!sources.length) return null;
+  const facts_: string[] = [];
+  for (const a of aspects) {
+    facts_.push(`${ASPECT_KO[a]}: ${sources.map(x => `${x.label} 쪽은 ${x.e[a].line}`).join(" / ")}`);
+    const scene = sources.flatMap(x => x.e[a].scenes).find((sc: SceneItem) => sceneFits(sc.requires, facts, sc.text) && !usedScenes.has(sc.text));
+    if (scene) { usedScenes.add(scene.text); facts_.push(`${ASPECT_KO[a]} 장면: ${scene.text}`); }
+  }
+  return { kind: "evidence", key, facts: facts_ };
+}
+
+export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Knowledge, gender: "MALE" | "FEMALE" | null, st: ElementState, mbti: MbtiProfile | null, signals?: { hitIds: ReadonlySet<string>; facts: FactProfile; usedScenes: Set<string>; avoid?: (featureKey: string) => boolean }): Record<string, Evidence> {
+  // 호감 표현·연락 패턴·밀당은 절마다 따로(P3.8 1: 절 하나에 질문 하나).
+  const sig = signals ? Object.fromEntries((["crush", "contact", "pushPull"] as const).map(a => [a, loveSignals(saju, signals.hitIds, k, mbti, signals.facts, signals.usedScenes, [a], a, signals.avoid)])) : {};
+  const spouseStars = gender === "MALE" ? STARS.WEALTH : gender === "FEMALE" ? STARS.OFFICER : null;
+  const childStars = gender === "MALE" ? STARS.OFFICER : gender === "FEMALE" ? STARS.OUTPUT : null;
+  const lack = st.lacking;
+  const partnerLines = lack.flatMap(e => { const f = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`); return f?.remedy ? [`채워 줄 ${josa(ELEMENT_KO[e], "을를")} 가진 사람: ${f.remedy.partner[0]}`] : []; });
+  // 남녀가 나뉘는 곳(사우나·온천·찜질방)은 새 인연을 만나는 자리가 아니다(P3.7 r1).
+  const places = lack.flatMap(e => (k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places ?? []).filter(x => !/사우나|온천|찜질|목욕/.test(x)).slice(0, 3));
+  return {
+    spouseStar: starEvidence("spouseStar", "배우자 별", saju, det, k, spouseStars),
+    spousePalace: palaceEvidence("spousePalace", "배우자 자리(태어난 날의 땅 글자)", "day", saju, det, k),
+    childStar: starEvidence("childStar", "자녀 별", saju, det, k, childStars),
+    childPalace: palaceEvidence("childPalace", "자녀 자리(태어난 시각의 땅 글자)", "hour", saju, det, k),
+    partnerMatch: { kind: "evidence", key: "partnerMatch", facts: [...partnerPortrait(k, st, mbti), ...(partnerLines.length ? partnerLines : ["뚜렷하게 부족한 기운이 없어 '나와 속도가 비슷한 사람'이 편합니다."])] },
+    ...Object.fromEntries(Object.entries(sig).filter((x): x is [string, Evidence] => x[1] !== null)),
+    meetingPlaces: { kind: "evidence", key: "meetingPlaces", facts: places.length ? [`새 인연을 만나기 좋은 곳(부족한 기운을 채우는 곳): ${places.join(", ")}`] : ["부족한 기운이 뚜렷하지 않아 장소 추천은 일상 동선(늘 가는 곳에서 한 번 더 말 걸기)으로 둡니다."], note: "쉼터가 아니라 사람을 만나는 자리로 쓴다" },
+  };
+}
+
+/** 십성 묶음의 행동 차원: 두 십성 feature의 dimensionTags 평균(지금 자리 역할의 MBTI 근거를 찾는 데 쓴다). */
+function groupDims(k: Knowledge, g: keyof typeof GROUP_KO): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const t of (Object.keys(TEN_GOD_GROUP) as TenGod[]).filter(x => TEN_GOD_GROUP[x] === g)) for (const [d, v] of Object.entries(k.features.get(`tenGod:${t}`)?.dimensionTags ?? {})) out[d] = (out[d] ?? 0) + v / 2;
+  return out;
+}
+/** MBTI 적성(-1~1): 직무가 요구하는 행동 차원과 이 유형 차원의 내적 ÷ 직무 차원 크기. 가장 크게 맞는 차원을 근거로 돌려준다. */
+function mbtiFit(k: Knowledge, dims: Readonly<Record<string, number>>, mbti: MbtiProfile): { fit: number; clash: boolean; reason?: string; reasons: string[] } {
+  let dot = 0, size = 0, best: [string, number] | null = null, clash = false;
+  const pos: [string, number][] = [];
+  for (const [d, v] of Object.entries(dims)) {
+    const m = mbti.dimensionTags[d] ?? 0; dot += v * m; size += Math.abs(v);
+    // P6e 4: 그 유형의 기능·태도에 맞지 않는 끝은 그 유형의 근거로 쓰지 않는다(ISFP에게 "구체 사실부터 확인"(Si) 금지).
+    if (v * m > 0 && poleFits(mbti.type, d, m)) pos.push([d, v * m]);
+    if (v * m > (best?.[1] ?? 0) && poleFits(mbti.type, d, m)) best = [d, v * m];
+    // 직무의 핵심 요구(0.5 이상)가 유형의 핵심(0.6 이상)과 정면으로 반대면 뺀다(ENTJ에게 지시를 따르는 임원 비서).
+    if (Math.abs(v) >= 0.5 && Math.abs(m) >= 0.6 && Math.sign(v) !== Math.sign(m)) clash = true;
+  }
+  // 근거는 그 성향의 쉬운 설명 한 구절(P6: "ENTJ의 '말이 많음' 쪽(말수)"을 작가가 "말수가 많은 ENTJ의 쪽이"로 옮겼다).
+  const say = (id: string) => { const dim = k.ontology.dimensions.find(x => x.id === id)!; const pole = dims[id] > 0 ? dim.poles.plus : dim.poles.minus; return `${mbti.type}는 ${pole.description.replace(/입니다\.?$/, "")}`; };
+  const reasons = pos.sort((a, b) => b[1] - a[1]).map(([d]) => say(d));
+  return { fit: size ? dot / size : 0, clash, ...(best ? { reason: say(best[0]) } : {}), reasons };
+}
+
+type JobCtx = { readonly k: Knowledge; readonly traits: readonly Trait[]; readonly hitIds: ReadonlySet<string>; readonly scores: Record<string, number>; readonly mbti: MbtiProfile | null; readonly stage: LifeStage; readonly cluster?: string; readonly detailJob: string ; readonly entry?: JobEntryPerson };
+type Scored = { job: CareerJob; total: number; myeongri: number; fit: number; adjacency: number; basis: string; mbtiReason?: string; mbtiReasons?: readonly string[] };
+/**
+ * 직무 점수(P3.8 2) = 명리 적성(십성 묶음 세기·특히 맞는 신살·귀인·십성·구조) × MBTI 적성(행동 차원) × 지금 직업과의 인접성(전환 비용) × 생활 단계.
+ * 한쪽만 맞는 직무는 근거가 강할 때만, MBTI 핵심과 정면으로 어긋나는 직무는 뺀다.
+ */
+function scoreJobs(c: JobCtx): Scored[] {
+  const near = new Set(c.k.catalog.clusters.find(x => x.id === c.cluster)?.near ?? []);
+  const traitByKey = new Map(c.traits.map(t => [t.featureId, t]));
+  const out: Scored[] = [];
+  for (const job of c.k.catalog.jobs) {
+    if (c.detailJob && (job.title.includes(c.detailJob) || c.detailJob.includes(job.title))) continue;
+    // 최종 A-7: 나이 제한·긴 훈련·운전 면허가 필요한 직업은 나이·상황으로 거른다(jobEntry.ts).
+    if (c.entry && jobEntryBlock(job.title, c.entry)) continue;
+    const g = Math.max(...job.groups.map(x => Math.min(1, (c.scores[x] ?? 0) / 3)));
+    const keyHit = (job.keys ?? []).find(x => traitByKey.has(x) || c.hitIds.has(x));
+    const myeongri = Math.min(1, g + (keyHit ? 0.35 : 0));
+    const m = c.mbti ? mbtiFit(c.k, job.dims, c.mbti) : { fit: 0.3, clash: false, reasons: [] as string[] };
+    if (m.clash) continue;
+    // 한쪽만 맞는 직무: 명리가 약하면 MBTI가 아주 잘 맞을 때만, MBTI가 맞지 않으면 명리 근거(특히 맞는 기운)가 있을 때만.
+    if (myeongri < 0.4 && m.fit < 0.55) continue;
+    if (c.mbti && m.fit < 0.1 && !keyHit) continue;
+    const adjacency = !c.cluster ? 0.7 : job.cluster === c.cluster ? 1 : near.has(job.cluster) ? 0.75 : 0.4;
+    const stageOk = !job.stages || job.stages.includes(c.stage as never);
+    const entry = job.entry === "license" ? (c.stage === "student" || c.stage === "job_seeker" || job.cluster === c.cluster ? 0.8 : 0.3) : job.entry === "retrain" ? (c.stage === "mid_career" ? 0.7 : 0.85) : 1;
+    const total = myeongri * (0.5 + 0.5 * Math.max(0, m.fit)) * adjacency * (stageOk ? 1 : 0.5) * entry;
+    const t = keyHit ? traitByKey.get(keyHit) : undefined;
+    const top = job.groups.slice().sort((a, b) => (c.scores[b] ?? 0) - (c.scores[a] ?? 0))[0];
+    const basis = t ? t.name.replace(/\(.*?\)/g, "").replace(/·.*$/, "").trim() : `강한 ${GROUP_KO[top as keyof typeof GROUP_KO]}`;
+    out.push({ job, total, myeongri, fit: m.fit, adjacency, basis, ...("reason" in m && m.reason ? { mbtiReason: m.reason, mbtiReasons: m.reasons } : {}) });
+    // 특히 맞는 기운이 있어도 같은 근거가 이미 쓰였으면 십성 묶음 근거로도 고를 수 있게 한 번 더 둔다(점수는 그대로).
+    if (t) out.push({ job, total: total * 0.98, myeongri, fit: m.fit, adjacency, basis: `강한 ${GROUP_KO[top as keyof typeof GROUP_KO]}`, ...("reason" in m && m.reason ? { mbtiReason: m.reason, mbtiReasons: m.reasons } : {}) });
+  }
+  return out.sort((a, b) => b.total - a.total || a.job.title.localeCompare(b.job.title));
+}
+/**
+ * 직무 줄(P6c E1 커리어 5): 직무마다 근거 둘(명리·MBTI) + 맞는 조건·안 맞는 조건. 조건은 그 직무가 요구하는 행동 차원 가운데
+ * 이 사람과 가장 잘 맞는 것(맞는 조건)과 가장 어긋나는 것(안 맞는 조건)의 양끝 이름으로 쓴다. MBTI가 없으면 십성 묶음으로.
+ */
+function conditions(x: Scored, k: Knowledge, mbti: MbtiProfile | null, scores: Record<string, number>): string {
+  // 양끝 이름(라벨)은 내부 축 이름이라 쓰지 않고, 그 끝의 쉬운 설명("~하는 편")으로 조건을 쓴다(P6b E-6 내부 라벨 규칙).
+  const pole = (id: string, plus: boolean) => { const d = k.ontology.dimensions.find(o => o.id === id); return d ? (plus ? d.poles.plus : d.poles.minus).description.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "") : id; };
+  if (mbti) {
+    // P6e 4: 맞는 조건은 그 유형에 맞는 끝(이 사람의 성향)으로, 안 맞는 조건은 직무가 요구하는 일(POLE_DEMAND)과 이 사람의 맞는 끝으로 쓴다.
+    // 사람 성향 설명을 반대 끝으로 빌리지 않는다(ISFP 조건에 "모임이 끝나면 오히려 기운이 나는 사람의 역할"이 붙었다).
+    const rows = Object.entries(x.job.dims).map(([d, v]) => ({ d, v, m: mbti.dimensionTags[d] ?? 0, fit: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => b.fit - a.fit);
+    const good = rows.find(r => r.fit > 0 && poleFits(mbti.type, r.d, r.m)) ?? rows.find(r => poleFits(mbti.type, r.d, r.v));
+    const bad = [...rows].reverse().find(r => r.fit < 0 && poleFits(mbti.type, r.d, r.m));
+    const demand = (r: { d: string; v: number }) => POLE_DEMAND[poleKey(r.d, r.v)] ?? `${pole(r.d, r.v > 0)} 일`;
+    const goodText = good ? `${pole(good.d, (good.m || good.v) > 0)}이 통하는 자리` : "이 직무의 핵심 일을 내 속도로 할 수 있는 자리";
+    const badText = bad ? `${demand(bad)}을 오래 요구받을 때(${mbti.type}는 ${pole(bad.d, bad.m > 0)})` : `${demand(rows.at(-1)!)}만 이어질 때`;
+    return ` / 맞는 조건: ${goodText} / 안 맞는 조건: ${badText}`;
+  }
+  const weak = (Object.keys(GROUP_KO) as (keyof typeof GROUP_KO)[]).sort((a, b) => (scores[a] ?? 0) - (scores[b] ?? 0))[0];
+  return ` / 맞는 조건: ${ROLE_BY_GROUP[x.job.groups[0] as keyof typeof ROLE_BY_GROUP]}이 중심일 때 / 안 맞는 조건: ${GROUP_KO[weak]} 쪽 일이 중심이 될 때`;
+}
+const jobLine = (x: Scored, cond = "") => `${x.job.title} — 근거1(명리): ${x.basis}, ${x.job.why}${x.mbtiReason ? ` / 근거2(MBTI): ${x.mbtiReason}` : ""}${cond}`;
+
+/** 일의 단계별 강점(P6c E1 커리어 2): 기획·실행·운영·협상. 명리(십성 묶음 세기) + MBTI(행동 차원) + 입력 직업의 업무 단위 장면 씨앗. */
+const WORK_STAGES: readonly { key: "plan" | "execute" | "operate" | "negotiate"; name: string; groups: Partial<Record<keyof typeof GROUP_KO, number>>; dims: Record<string, number>; why: string }[] = [
+  { key: "plan", name: "기획", groups: { RESOURCE: 1, OUTPUT: 0.6 }, dims: { planning: 0.6, inquiry: 0.5, noveltySeeking: 0.3 }, why: "무엇을 왜 할지 구상하고 설계하는 단계" },
+  { key: "execute", name: "실행", groups: { OUTPUT: 1, PEER: 0.6 }, dims: { decisionSpeed: 0.5, persistence: 0.5, riskTaking: 0.3 }, why: "만들고 밀어붙여 결과물로 내는 단계" },
+  { key: "operate", name: "운영", groups: { OFFICER: 1, WEALTH: 0.6 }, dims: { ruleAdherence: 0.5, detailFocus: 0.5, dutifulness: 0.5 }, why: "정해진 것을 지키고 관리해 굴러가게 하는 단계" },
+  { key: "negotiate", name: "협상", groups: { WEALTH: 1, OUTPUT: 0.5, PEER: 0.3 }, dims: { directness: 0.5, socialEnergy: 0.4, controlNeed: 0.4 }, why: "사람을 설득하고 조건을 맞추는 단계" },
+];
+export type WorkScenes = Partial<Record<(typeof WORK_STAGES)[number]["key"], readonly string[]>>;
+function workStages(k: Knowledge, scores: Record<string, number>, mbti: MbtiProfile | null, work: WorkScenes | undefined): { a: Evidence; b: Evidence } {
+  const rows = WORK_STAGES.map(st => {
+    const ws = Object.entries(st.groups) as [keyof typeof GROUP_KO, number][];
+    const myeongri = ws.reduce((a, [g, w]) => a + w * Math.min(1, (scores[g] ?? 0) / 3), 0) / ws.reduce((a, [, w]) => a + w, 0);
+    const m = mbti ? mbtiFit(k, st.dims, mbti) : null;
+    const lead = ws.sort((a, b) => b[1] * (scores[b[0]] ?? 0) - a[1] * (scores[a[0]] ?? 0))[0][0];
+    return { st, total: m ? 0.6 * myeongri + 0.4 * ((m.fit + 1) / 2) : myeongri, lead, reason: m?.reason };
+  });
+  const sorted = [...rows].sort((a, b) => b.total - a.total);
+  const level = (r: (typeof rows)[number]) => (r === sorted[0] ? "가장 강함" : r.total >= sorted[0].total * 0.85 ? "강함" : r.total >= sorted[0].total * 0.65 ? "보통" : "보완이 필요한 단계");
+  const line = (r: (typeof rows)[number]) => `${r.st.name}(${r.st.why}): ${level(r)} — 명리: ${GROUP_KO[r.lead]} ${LEVEL_WORD(scores[r.lead] ?? 0)}${r.reason ? ` / MBTI: ${r.reason}` : ""}${work?.[r.st.key]?.[0] ? ` / 이 직업의 장면 씨앗: ${work[r.st.key]!.slice(0, 2).join(", ")}` : ""}`;
+  const note = "단계마다 판정과 근거 하나, 그 직업의 실제 업무 단위로 장면 하나. 직업 소품은 이 장에서 한 번만 쓴다";
+  return { a: { kind: "evidence", key: "workStagesA", facts: rows.slice(0, 2).map(line), note }, b: { kind: "evidence", key: "workStagesB", facts: rows.slice(2).map(line), note } };
+}
+
+/** 커리어 타이밍(P6c E1 커리어 3, 필수): 지금 대운의 남은 기간·대운 안의 위치·전환 해·그 해의 준비. 대운이 없으면 올해 기운만. */
+const PREP_BY_GROUP: Readonly<Record<keyof typeof GROUP_KO, string>> = {
+  PEER: "내 이름으로 할 일의 목록과 혼자 설 때 드는 비용을 미리 적어 둔다",
+  OUTPUT: "보여 줄 결과물(포트폴리오·사례)을 한곳에 정리해 둔다",
+  WEALTH: "숫자로 말할 성과 기록과 돈 관리 규칙을 먼저 세운다",
+  OFFICER: "자격·경력 서류를 정리하고 맡을 책임의 범위를 정해 둔다",
+  RESOURCE: "배울 과정 하나를 골라 일정부터 잡아 둔다",
+};
+const WORK_SHIFT: Readonly<Record<keyof typeof GROUP_KO, string>> = {
+  PEER: "내 이름을 걸고 혼자 서는 일이 늘어남", OUTPUT: "만들고 보여 주는 일이 중심이 됨", WEALTH: "결과와 숫자를 책임지는 일이 늘어남",
+  OFFICER: "책임·직급·평가가 또렷해짐", RESOURCE: "배우고 자격을 갖추는 일이 힘이 됨",
+};
+function careerTiming(chart: ChartBrief): Record<"timingNow" | "timingShift" | "timingPrep", Evidence> {
+  const cd = chart.currentDayun, yearTg = chart.thisYear.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
+  const shift = (tg?: TenGod) => (tg ? WORK_SHIFT[TEN_GOD_GROUP[tg] as keyof typeof GROUP_KO] : "");
+  const thisLine = `올해 ${chart.thisYear.year}년: ${chart.thisYear.tenGod}의 해${yearTg ? ` — 일에서는 ${shift(yearTg)}` : ""}`;
+  const note = "남은 기간·전환 해·준비는 근거 그대로 쓴다. 이직·승진·합격을 단정하지 않는다";
+  if (!cd) return {
+    timingNow: { kind: "evidence", key: "timingNow", facts: [thisLine, "대운은 출생 정보로 정하지 못해 올해 흐름으로만 본다"], note },
+    timingShift: { kind: "evidence", key: "timingShift", facts: ["출생 정보로 대운을 정하지 못해 전환 해는 보지 않음"], note },
+    timingPrep: { kind: "evidence", key: "timingPrep", facts: [`올해 할 준비: ${yearTg ? PREP_BY_GROUP[TEN_GOD_GROUP[yearTg] as keyof typeof GROUP_KO] : "올해 결과물 하나를 기록으로 남긴다"}`], note },
+  };
+  // 최종 A-4: 위치·남은 기간은 교운 시각 기준(chart.currentDayun.phase), 기간 표기는 교운 연·월(period).
+  const idx = cd.phase?.yearIndex ?? chart.thisYear.year - Number(cd.years.slice(0, 4)) + 1;
+  const curTg = cd.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined, nextTg = cd.next?.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
+  return {
+    timingNow: { kind: "evidence", key: "timingNow", facts: [
+      `지금 대운 ${cd.ganji.hanja}(${cd.ganji.hangul}) ${cd.tenGod}의 10년(${cd.period ?? cd.years}): 10년 가운데 ${idx}번째 해(${cd.phase?.label ?? ""}), 남은 기간 ${cd.phase?.remaining ?? ""}`,
+      ...(curTg ? [`이 대운에서 일은: ${shift(curTg)}`] : []), thisLine], note },
+    timingShift: { kind: "evidence", key: "timingShift", facts: cd.next ? [
+      `전환: ${cd.next.label ?? `${cd.next.startYear}년부터 ${cd.next.ganji.hangul} 대운`} — ${cd.next.ganji.hanja} ${cd.next.tenGod}의 10년`,
+      ...(nextTg ? [`일에서 바뀌는 점: ${shift(curTg)} → ${shift(nextTg)}`] : []),
+    ] : ["다음 대운은 계산 범위 밖이라 전환 해는 보지 않음"], note },
+    timingPrep: { kind: "evidence", key: "timingPrep", facts: [
+      ...(nextTg ? [`${cd.next!.startYear}년을 위한 준비: ${PREP_BY_GROUP[TEN_GOD_GROUP[nextTg] as keyof typeof GROUP_KO]}`] : []),
+      `올해부터 시작할 한 가지: ${yearTg ? PREP_BY_GROUP[TEN_GOD_GROUP[yearTg] as keyof typeof GROUP_KO] : "올해 결과물 하나를 기록으로 남긴다"}`,
+    ], note },
+  };
+}
+
+/** 재물 구조의 '쌓는 방식'(P6c E1 커리어 6): 재성의 결 + 강한 묶음의 버릇에서 돈이 남는 구조. */
+function accumulate(d: Partial<Record<TenGod, number>>, scores: Record<string, number>, strength: string): Evidence {
+  const jung = d.正財 ?? 0, pyeon = d.偏財 ?? 0, weak = strength === "WEAK" || strength === "VERY_WEAK";
+  const base = Math.max(jung, pyeon) < 0.5 ? "재성이 옅어 쌓는 구조를 밖에 맡기는 쪽: 받은 날 먼저 떼는 자동 적립"
+    : jung >= pyeon ? "정재 쪽: 같은 날 같은 금액을 꾸준히 쌓을 때 돈이 남는 구조" : "편재 쪽: 기회 몫과 저축 몫을 통장부터 나눠 둘 때 돈이 남는 구조";
+  return { kind: "evidence", key: "accumulate", facts: [base,
+    ...(scores.RESOURCE >= GROUP_STRONG ? ["인성이 강해 자격·지식이 자산이 되는 쪽: 배움에 쓰는 돈은 쌓는 돈으로 본다"] : []),
+    ...(scores.OFFICER >= GROUP_STRONG ? ["관성이 강해 규칙이 돈을 지키는 쪽: 자동이체·연금처럼 바꾸기 어려운 장치가 맞다"] : []),
+    ...(scores.OUTPUT >= GROUP_STRONG ? ["식상이 강해 버는 힘이 지키는 힘보다 큰 쪽: 들어온 날 일부를 떼어 두는 순서가 쌓는 법"] : []),
+    ...(weak && Math.max(jung, pyeon) >= 0.5 ? ["재물 기운에 비해 내 힘이 약한 편: 감당할 만큼만 굴리고 현금 비율을 넉넉히"] : []),
+  ].slice(0, 3), note: "쌓는 방식만 쓴다. 액수·수익률·종목은 쓰지 않는다" };
+}
+/**
+ * 같은 묶음은 한 단에서 2개까지(목록이 한 분야로 쏠리지 않게). 같은 명리 근거(trait·십성 묶음 이름)가 이미 쓰였으면 점수를 깎아 다른 근거를 먼저 고른다
+ * (P3.8 r1: 직무 줄마다 "바른 관리자(정관)"를 근거로 붙여 한 장에 세 번 나왔다). 점수가 min 아래면 넣지 않는다.
+ */
+/**
+ * 직군(P6e 13): 직무 카탈로그 20개 분야를 "무엇을 하는 사람들인지"(직군 설명)와 누구나 떠올릴 수 있는 일 장면으로 묶는다.
+ * 커리어 3장은 직업을 하나씩 따로 풀지 않고 직군 → 맞는 이유(명리·MBTI·일 장면) → 예시 직업 3~5개로 쓴다.
+ */
+export const CLUSTER_ROLE: Readonly<Record<string, { desc: string; scene: string }>> = {
+  plan: { desc: "흩어진 일을 한 방향으로 묶고 순서를 정하는", scene: "회의에서 나온 의견 열 개를 한 장으로 정리해 다음 할 일을 정하는 장면" },
+  it: { desc: "반복되는 일을 줄이는 방법을 만들고 숫자로 확인하는", scene: "매일 손으로 하던 일을 한 번에 끝나게 바꿔 두는 장면" },
+  design: { desc: "보기 좋고 쓰기 편한 모양을 만드는", scene: "같은 내용을 색과 배치만 바꿔 한눈에 들어오게 다듬는 장면" },
+  content: { desc: "말과 글로 생각을 정리해 내놓는", scene: "긴 이야기를 읽는 사람이 끝까지 따라오게 문장을 고르는 장면" },
+  marketing: { desc: "사람들의 마음을 읽고 알리는 방법을 찾는", scene: "같은 상품을 누구에게 어떤 말로 보여 줄지 골라 반응을 보는 장면" },
+  sales: { desc: "사람을 만나 필요를 듣고 조건을 맞추는", scene: "처음 만난 사람의 고민을 듣고 맞는 선택지를 함께 고르는 장면" },
+  finance: { desc: "돈의 흐름을 숫자로 따지고 지키는", scene: "들어오고 나가는 돈을 표로 맞춰 새는 곳을 찾는 장면" },
+  admin: { desc: "사람과 일정을 꼼꼼히 챙겨 조직이 굴러가게 하는 지원·관리", scene: "여러 사람의 일정과 서류를 미리 챙겨 일이 막히지 않게 하는 장면" },
+  legal: { desc: "규칙과 문서를 따져 권리를 지키는", scene: "계약서 한 줄 한 줄을 읽고 빠진 조건을 짚는 장면" },
+  public: { desc: "정해진 규칙 안에서 여러 사람의 안전과 질서를 맡는", scene: "급한 상황에서도 절차대로 차분히 처리하는 장면" },
+  edu: { desc: "아는 것을 쉬운 순서로 풀어 남이 배우게 돕는", scene: "어려워하는 사람에게 같은 내용을 다른 예로 다시 설명하는 장면" },
+  care: { desc: "사람의 몸과 마음을 가까이서 살피고 돌보는", scene: "말하지 않은 불편을 표정에서 먼저 읽고 손을 쓰는 장면" },
+  research: { desc: "한 가지를 깊이 파고들어 원리를 밝히는", scene: "남들이 지나친 작은 차이를 붙잡고 끝까지 이유를 찾는 장면" },
+  biz: { desc: "내 이름을 걸고 가게나 판을 직접 꾸리는", scene: "메뉴와 가격, 손님 동선까지 내 손으로 정해 문을 여는 장면" },
+  craft: { desc: "손과 도구로 현장에서 직접 만들고 고치는", scene: "도면대로 안 맞는 부분을 그 자리에서 손봐 맞추는 장면" },
+  logistics: { desc: "물건과 일정이 제때 오가게 흐름을 짜는", scene: "늦어질 것 같은 배송을 미리 알아채 길을 바꿔 두는 장면" },
+  food: { desc: "맛과 손맛으로 사람을 대접하는", scene: "같은 재료로 맛을 조금씩 바꿔 가며 가장 좋은 한 접시를 찾는 장면" },
+  beauty: { desc: "사람의 모습을 가꾸고 어울리게 꾸미는", scene: "손님 얼굴에 맞춰 한 끗을 더해 분위기를 바꾸는 장면" },
+  arts: { desc: "내 감각을 작품과 무대로 보여 주는", scene: "머릿속 장면을 소리나 그림으로 꺼내 남 앞에 내놓는 장면" },
+  hospitality: { desc: "낯선 사람을 편하게 맞이하고 일정을 챙기는", scene: "처음 온 손님이 헤매지 않게 동선과 시간을 미리 짜 두는 장면" },
+};
+const BIZ_NOSHOP_ROLE = { desc: "내 이름을 걸고 서비스나 판을 직접 꾸리는", scene: "출시 날짜와 첫 고객까지 내 손으로 정해 문을 여는 장면" };
+
+function takeSpread(list: readonly Scored[], n: number, used: Set<string>, basisUse: Map<string, number>, min = 0, perCluster = 2): Scored[] {
+  const out: Scored[] = [], per = new Map<string, number>();
+  // MBTI 근거도 같은 축이 이미 쓰였으면 다음 근거로(P3.8 r1: 직무 7개 중 5개가 '미리 짬').
+  const reasonOf = (x: Scored) => x.mbtiReasons?.find(r => !basisUse.has(r)) ?? x.mbtiReason;
+  const eff = (x: Scored) => x.total * 0.8 ** (basisUse.get(x.basis) ?? 0) * 0.85 ** (basisUse.get(reasonOf(x) ?? "") ?? 0);
+  while (out.length < n) {
+    const best = list.filter(x => !used.has(x.job.title) && (per.get(x.job.cluster) ?? 0) < perCluster && x.total >= min).sort((a, b) => eff(b) - eff(a) || a.job.title.localeCompare(b.job.title))[0];
+    if (!best) break;
+    const reason = reasonOf(best);
+    out.push({ ...best, ...(reason ? { mbtiReason: reason } : {}) }); used.add(best.job.title); per.set(best.job.cluster, (per.get(best.job.cluster) ?? 0) + 1);
+    basisUse.set(best.basis, (basisUse.get(best.basis) ?? 0) + 1); if (reason) basisUse.set(reason, (basisUse.get(reason) ?? 0) + 1);
+  }
+  return out;
+}
+
+/** 진로 유형별 적합(P6b D 커리어 2): 십성 묶음 세기(명리) + 행동 차원(MBTI). 판정은 잘 맞음·보통·덜 맞음 셋. */
+const CAREER_PATHS: readonly { name: string; groups: Partial<Record<keyof typeof GROUP_KO, number>>; dims: Record<string, number>; why: string; risky?: boolean }[] = [
+  { name: "직장(조직)", groups: { OFFICER: 1, RESOURCE: 0.6, WEALTH: 0.3 }, dims: { ruleAdherence: 0.5, planning: 0.4, dutifulness: 0.4 }, why: "정해진 틀 안에서 책임과 평가를 받으며 크는 길" },
+  { name: "공무원·공기업", groups: { OFFICER: 1, RESOURCE: 0.8 }, dims: { ruleAdherence: 0.7, riskTaking: -0.5, dutifulness: 0.5 }, why: "규칙·절차·안정이 보상이 되는 길" },
+  { name: "전문직", groups: { RESOURCE: 1, OUTPUT: 0.8 }, dims: { learningDrive: 0.6, detailFocus: 0.5, inquiry: 0.4 }, why: "자격과 기술을 쌓아 이름으로 일하는 길" },
+  { name: "사업", groups: { WEALTH: 1, PEER: 0.7, OUTPUT: 0.4 }, dims: { riskTaking: 0.6, controlNeed: 0.5, decisionSpeed: 0.4 }, why: "판을 벌이고 사람과 돈을 굴리는 길", risky: true },
+  { name: "프리랜서", groups: { OUTPUT: 1, PEER: 0.6 }, dims: { independence: 0.7, noveltySeeking: 0.4, ruleAdherence: -0.4 }, why: "내 솜씨를 내 일정으로 파는 길" },
+];
+/** 묶음 세기 낱말(P6d A): 만세력 가중값 단계 그대로(강 3 이상 · 약 1.5 미만, 0은 없음). */
+export const LEVEL_WORD = (s: number) => (s >= GROUP_STRONG ? "강함" : s >= GROUP_WEAK ? "보통" : s > 0 ? "약함" : "없음");
+function careerPaths(k: Knowledge, scores: Record<string, number>, mbti: MbtiProfile | null, strength: string, part?: "good" | "less"): Evidence {
+  const strong = strength === "STRONG" || strength === "VERY_STRONG", weak = strength === "WEAK" || strength === "VERY_WEAK";
+  const rows = CAREER_PATHS.map(p => {
+    const ws = Object.entries(p.groups) as [keyof typeof GROUP_KO, number][];
+    let myeongri = ws.reduce((s, [g, w]) => s + w * Math.min(1, (scores[g] ?? 0) / 3), 0) / ws.reduce((s, [, w]) => s + w, 0);
+    // 판을 벌이는 길은 일간이 감당할 힘이 있어야 한다(재다신약).
+    if (p.risky) myeongri += strong ? 0.1 : weak ? -0.15 : 0;
+    const m = mbti ? mbtiFit(k, p.dims, mbti) : null;
+    const total = m ? 0.6 * myeongri + 0.4 * ((m.fit + 1) / 2) : myeongri;
+    const lead = ws.sort((a, b) => b[1] * (scores[b[0]] ?? 0) - a[1] * (scores[a[0]] ?? 0))[0][0];
+    return { p, total, lead, mbtiReason: m?.reason, weakNote: p.risky && weak ? "일간이 약한 편이라 혼자 다 떠안는 구조는 부담" : "" };
+  });
+  const max = Math.max(...rows.map(r => r.total));
+  const level = (t: number) => (t >= max * 0.85 ? "잘 맞음" : t >= max * 0.65 ? "보통" : "덜 맞음");
+  // 다섯 길을 잘 맞는 쪽(위 셋)과 덜 맞는 쪽(아래 둘)으로 나눠 절마다 다른 근거로 쓴다(P6c E1 커리어 4, 소제목마다 새 근거 2개 이상).
+  const ranked = [...rows].sort((a, b) => b.total - a.total), pick = part === "good" ? ranked.slice(0, 3) : part === "less" ? ranked.slice(3) : rows;
+  return { kind: "evidence", key: part === "less" ? "pathsLess" : part === "good" ? "pathsGood" : "careerPaths", facts: pick.map(r => `${r.p.name}: ${level(r.total)} — ${r.p.why}. 명리: ${GROUP_KO[r.lead]} ${LEVEL_WORD(scores[r.lead] ?? 0)}${r.weakNote ? `, ${r.weakNote}` : ""}${r.mbtiReason ? ` / MBTI: ${r.mbtiReason}` : ""}`),
+    note: "길마다 판정과 근거 하나씩. 지금 직업을 바꾸라고 단정하지 않는다" };
+}
+
+/** 명예·이름을 얻는 길(P6b D 커리어 5): 관성(자리·신뢰)·식상(만든 것)·인성(자격) + 이름과 관련된 신살·귀인. 승진·수상은 단정하지 않는다. */
+const HONOR_HITS: Readonly<Record<string, string>> = {
+  "shinsal:TWELVE_JANGSEONGSAL": "장성살: 앞에 서서 이끌 때 이름이 남는 자리", "shinsal:HWAGAE": "화개살: 한 분야를 오래 파서 알려지는 쪽",
+  "gwiin:MUN_CHANG_GWIIN": "문창귀인: 글과 정리로 인정받는 쪽", "gwiin:CHEON_EUL_GWIIN": "천을귀인: 끌어 주는 사람을 통해 자리가 열리는 쪽",
+  "shinsal:TWELVE_BANANSAL": "반안살: 쌓아 온 이력과 소속이 이름이 되는 쪽", "gwiin:HAK_DANG_GWIIN": "학당귀인: 배우고 가르치는 자리에서 이름이 나는 쪽",
+};
+function honorEvidence(d: Partial<Record<TenGod, number>>, scores: Record<string, number>, hitIds: ReadonlySet<string>): Evidence {
+  const jg = d.正官 ?? 0, pg = d.偏官 ?? 0;
+  const officer = jg + pg < 0.5 ? "관성(자리·직함의 기운)이 옅어, 직함보다 결과물과 실력으로 이름을 얻는 쪽"
+    : jg >= pg ? "정관이 있어, 정해진 자리에서 약속을 지키며 신뢰로 이름을 쌓는 길" : "편관이 있어, 남들이 피하는 어려운 일을 맡아 해결하며 이름이 나는 길";
+  return { kind: "evidence", key: "honor", facts: [officer,
+    ...(scores.OUTPUT >= GROUP_STRONG ? ["식상이 강해, 만든 것과 말이 곧 이름표가 되는 길"] : []),
+    ...(scores.RESOURCE >= GROUP_STRONG ? ["인성이 강해, 자격·전문성·기록으로 인정받는 길"] : []),
+    ...Object.entries(HONOR_HITS).filter(([id]) => hitIds.has(id)).slice(0, 2).map(([, line]) => line),
+  ], note: "명예를 얻는 '방식'만 쓴다. 승진·수상·유명해짐을 단정하지 않는다" };
+}
+
+/** 돈 굴리는 성향·원칙(P3.7 1-4): 재성의 결(정재·편재·옅음) × 강한 묶음의 버릇 × 올해 십성. 방식 수준만(종목·시점·액수 금지). */
+function investment(d: Partial<Record<TenGod, number>>, scores: Record<string, number>, strength: string, yearTg: TenGod | undefined, natal: { banghap?: boolean } = {}): { invest: string[]; leak: string[] } {
+  const jung = d.正財 ?? 0, pyeon = d.偏財 ?? 0;
+  const style = Math.max(jung, pyeon) < 0.5 ? { name: "지키는 쪽부터(돈 기운이 옅은 편)", rules: ["비상금을 먼저 채우고, 그다음에 적립을 시작한다", "잘 아는 것에만 넣고 남이 권하는 것은 한 번 미룬다"] }
+    : Math.abs(jung - pyeon) < 0.3 ? { name: "고정 수입과 성과 수입을 나눠 굴리는 쪽", rules: ["고정 수입은 자동 적립, 성과로 들어온 돈은 나눠서 일부만 도전 몫으로", "도전 몫의 크기를 처음에 정해 두고 넘기지 않는다"] }
+    : jung > pyeon ? { name: "정해진 금액을 꾸준히 모으는 안정형(정재 쪽)", rules: ["매달 같은 날 같은 금액을 자동으로 적립한다", "한곳에 몰지 않고 여러 갈래로 나눠 둔다"] }
+    : { name: "기회를 보고 크게 움직이는 기회형(편재 쪽)", rules: ["대부분은 적립으로 묶어 두고 기회 몫은 작게 따로 둔다", "들어가기 전에 '여기까지 잃으면 멈춘다'를 적어 둔다"] };
+  const habit = [
+    ...(scores.PEER >= GROUP_STRONG ? ["나와 같은 기운(비겁)이 강해 빌려주기·공동 투자·보증에서 돈이 새기 쉽다: 이런 제안은 하루 미루고 답한다"] : []),
+    ...(scores.OUTPUT >= GROUP_STRONG ? ["버는 힘이 지키는 힘보다 크다: 들어온 날 먼저 떼어 두는 규칙이 맞다"] : []),
+    ...(scores.RESOURCE >= GROUP_STRONG ? ["생각이 길어 시점을 놓치기 쉽다: 날짜와 금액을 자동이체로 정해 두면 편하다"] : []),
+    ...(scores.OFFICER >= GROUP_STRONG ? ["정한 규칙은 잘 지킨다: 원칙을 한 장에 적어 두면 흔들림이 적다"] : []),
+    ...((strength === "WEAK" || strength === "VERY_WEAK") && scores.WEALTH >= GROUP_STRONG ? ["재물 기운에 비해 내 힘이 약한 편: 감당할 만큼만 굴리고 현금 비율을 넉넉히 둔다"] : []),
+  ].slice(0, 2);
+  const group = yearTg ? TEN_GOD_GROUP[yearTg] : undefined;
+  // 올해 십성이 '새는 곳' 버릇과 같은 묶음이면 올해 줄은 뺀다(같은 주의를 두 장에서 하지 않게, P3.8 r1).
+  const sameAsHabit = group !== undefined && scores[group] >= GROUP_STRONG && ["PEER", "OUTPUT", "RESOURCE", "OFFICER"].includes(group);
+  const year = sameAsHabit ? "" : group === "WEALTH" ? "올해는 재물 기운이 들어와 기회가 많아 보이는 해: 한도를 먼저 정하고 움직인다"
+    : group === "PEER" ? "올해는 같은 기운이 들어와 돈이 나가기 쉬운 해: 빌려주기·동업 제안은 천천히"
+    : group === "OUTPUT" ? "올해는 버는 길이 늘어나는 해: 새로 생긴 수입은 들어온 날 일부를 적립으로 돌린다"
+    : group === "OFFICER" ? "올해는 책임과 고정 지출이 붙기 쉬운 해: 고정 지출부터 한 번 점검한다"
+    : group === "RESOURCE" ? "올해는 공부·준비의 해: 큰 결정보다 공부와 기록을 먼저 한다" : "";
+  // 원국·운으로 개인화한 원칙(P6b D 커리어): 겁재 해는 지인 권유 거절, 방합(같은 계절 세 글자)은 가족 공동 자금 규칙.
+  const personal = [
+    ...(yearTg === "劫財" ? ["겁재가 들어오는 올해의 원칙: 지인이 권하는 투자·동업·빌려주기는 거절을 기본값으로 둔다"] : []),
+    ...(natal.banghap ? ["원국에 방합(한 계절 세 글자가 모인 구조)이 있어 가족·가까운 사람과 돈이 한데 묶이기 쉽다: 가족 공동 자금은 누가·얼마·언제 돌려받는지 글로 정한다"] : []),
+  ];
+  return { invest: [`돈 굴리는 성향: ${style.name}`, `운영 원칙: ${[...style.rules, "생활비 몇 달 치는 현금으로 따로 둔다"].join(" / ")}`, ...personal, ...(year && yearTg !== "劫財" ? [year] : [])], leak: habit };
+}
+
+export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartBrief, mbti: MbtiProfile | null, detailJob: string, jobStatus: string, traits: readonly Trait[] = [], opts: { stage?: LifeStage; hitIds?: ReadonlySet<string>; work?: WorkScenes; age?: number } = {}): Record<string, Evidence> {
+  const scores = groupValues(saju);
+  const top = (Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 2);
+  const yearTg = chart.thisYear.tenGod.match(/\((.+)\)/)?.[1] as TenGod | undefined;
+  const period = yearTg ? k.tenGodPeriod.get(yearTg) : undefined;
+  const d = saju.tenGods.distribution as Partial<Record<TenGod, number>>;
+  const job = matchJob(detailJob);
+  const topG = top.map(([g]) => g);
+  const fit = job ? k.career.fits.find(f => f.jobId === job.id) : undefined;
+  const fitLevel = fit ? (fit.groups.includes(topG[0]) ? "잘 맞는 편" : fit.groups.some(g => topG.includes(g)) ? "절반쯤 맞는 편" : "다른 힘으로 하는 일(맞지 않는다는 뜻이 아니라 쓰는 근육이 다르다)") : null;
+  // 직무 3단(P3.8 2): 지금 자리에서 넓힐 역할 2~3 · 옮겨 갈 인접 직무 3~4 · 길게 보면 다른 길 2~3. 줄마다 명리 근거와 MBTI 근거를 함께.
+  // 최종판 1-9: 구직·살림(상태 직업군)은 분야가 아니다 — 그 카탈로그 분야(경영지원·인사 등)를 목표·지금 분야로 두지 않는다(P6e r4 "1순위는 경영지원·인사 직군").
+  const cluster = job && job.id !== "job-seeker" && job.id !== "homemaker" ? k.catalog.jobClusters[job.id] : undefined;
+  const scored = scoreJobs({ k, traits, hitIds: opts.hitIds ?? new Set(traits.map(t => t.featureId)), scores, mbti, stage: opts.stage ?? "unknown" as LifeStage, cluster, detailJob, entry: { age: opts.age, jobStatus, detailJob } });
+  // 최종판 1-15: 가게형이 아닌 사업자(IT 서비스 창업 등)에게 창업·자영업 직군을 가게 말(가게·메뉴·손님 동선)로 설명하지 않는다.
+  const noShopBiz = (jobStatus === "self_employed" || jobStatus === "business_owner") && Boolean(job) && !shopLife(job!.id, "business");
+  const roleOf = (id: string) => id === "biz" && noShopBiz ? BIZ_NOSHOP_ROLE : CLUSTER_ROLE[id];
+  const used = new Set<string>(), basisUse = new Map<string, number>();
+  // 인접 직무는 지금 일과 같은 분야에서(P6b D 커리어 3: ENTJ 서비스 기획자 → 전략기획·사업개발·PM 계열). 같은 분야가 모자라면 가까운 분야로.
+  const adjacent = cluster ? takeSpread(scored.filter(x => x.adjacency === 1 && (!mbti || x.mbtiReason)), 4, used, basisUse, 0, 4) : [];
+  if (adjacent.length < 2) adjacent.push(...takeSpread(scored.filter(x => x.adjacency >= 0.75), 4 - adjacent.length, used, basisUse));
+  // 다른 길(가까운 분야·먼 분야)은 인접 직무 점수의 절반 이상인 것만(억지로 세 개를 채우지 않는다, 최소 2개).
+  const farList = scored.filter(x => (cluster ? x.adjacency < 1 : x.adjacency < 0.75) && x.myeongri >= 0.5 && (!mbti || x.fit >= 0.3));
+  const longterm = takeSpread(farList, 3, used, basisUse, (adjacent[0]?.total ?? 0) * 0.5);
+  if (longterm.length < 2) longterm.push(...takeSpread(farList, 2 - longterm.length, used, basisUse));
+  // P6e 13 직군: 점수 매긴 직무를 분야로 묶어 분야 점수(상위 3개 평균) 순으로 3개. 구직이면 지원할 순서, 재직이면 지금 일에서 넓힐 쪽(가까운 분야 먼저).
+  const byCluster = new Map<string, Scored[]>();
+  for (const x of scored) { if (!CLUSTER_ROLE[x.job.cluster]) continue; const l = byCluster.get(x.job.cluster) ?? []; if (!l.some(y => y.job.title === x.job.title)) l.push(x); byCluster.set(x.job.cluster, l); }
+  const clusterScore = (l: Scored[]) => { const t = l.slice(0, 3); return t.reduce((a, x) => a + x.total, 0) / Math.max(3, t.length); };
+  const ranked = [...byCluster.entries()].filter(([, l]) => l.length >= 3).sort((a, b) => clusterScore(b[1]) - clusterScore(a[1]) || a[0].localeCompare(b[0]));
+  // 지금 직업(구직이면 목표 직무)의 분야는 순위 안에 꼭 넣는다(맞는 정도는 근거 그대로).
+  // 앞 두 직군(지원 순서·넓힐 쪽) + 길게 보면 열려 있는 두 직군(준비 기간이 필요한 쪽). 지금 분야는 앞 두 직군 안에 꼭 둔다.
+  // 최종판 1-9: 구직·학생은 목표 분야가 1순위, 2순위는 목표와 가까운 분야(가까운 분야 점수 순) — 차트 점수만으로 먼 분야(물류·운송 등)가 지원 순서 2순위에 오지 않게.
+  const seekingTarget = (jobStatus === "job_seeker" || jobStatus === "unemployed" || jobStatus === "student") && cluster && byCluster.has(cluster);
+  const nearOf = (id: string) => (byCluster.get(id) ?? []).some(x => x.adjacency >= 0.75 && x.adjacency < 1);
+  const nearTwo = seekingTarget ? [...ranked.filter(([id]) => id === cluster), ...(ranked.filter(([id]) => id !== cluster && nearOf(id)).slice(0, 1).length ? ranked.filter(([id]) => id !== cluster && nearOf(id)).slice(0, 1) : ranked.filter(([id]) => id !== cluster).slice(0, 1))]
+    : cluster && byCluster.has(cluster) && !ranked.slice(0, 2).some(([id]) => id === cluster) ? [...ranked.slice(0, 1), ...ranked.filter(([id]) => id === cluster)] : ranked.slice(0, 2);
+  const clusterRank = [...nearTwo, ...ranked.filter(r => !nearTwo.includes(r)).slice(0, 2)];
+  const groupReasons = new Set<string>();
+  // 묶음 세기는 만세력 가중값 단계 하나(chart.groups)로만 적는다(P6d A). 묶음 이름은 쉬운 이름(P6e 14).
+  const levelOf = (g: string) => chart.groups?.levels[GROUP_NAME_BY_KEY[g] as keyof NonNullable<ChartBrief["groups"]>["levels"]] ?? "";
+  const jobGroupLines = clusterRank.map(([id, l], i) => {
+    const r = roleOf(id), name = k.catalog.clusters.find(c => c.id === id)?.name ?? id;
+    const why = l.slice(0, 5).find(x => x.mbtiReason && !groupReasons.has(x.mbtiReason))?.mbtiReason ?? l[0].mbtiReason;
+    if (why) groupReasons.add(why);
+    const feature = l.slice(0, 5).map(x => x.basis).find(b => !/^강한 /.test(b));
+    const groups = [...new Set(l.slice(0, 5).flatMap(x => x.job.groups))].slice(0, 2).map(g => `${GROUP_EASY[g as keyof typeof GROUP_EASY]}(${GROUP_NAME_BY_KEY[g]}) ${levelOf(g)}`).join(" · ");
+    return `${i + 1}순위 직군: ${r.desc} ${name} 직군${id === cluster ? "(지금 목표·직업 분야)" : ""} — 이 직군이 쓰는 힘: ${groups}${feature ? ` · 맞는 기운: ${feature}` : ""} / ${why ? `MBTI: ${why} / ` : ""}누구나 떠올릴 일 장면: ${r.scene} / 예시 직업: ${l.slice(0, 5).map(x => x.job.title).join(", ")}`;
+  });
+  const roleReasons = new Set<string>();
+  const roleMbti = (g: keyof typeof GROUP_KO) => { if (!mbti) return ""; const rs = mbtiFit(k, groupDims(k, g), mbti).reasons; const r = rs.find(x => !roleReasons.has(x)) ?? rs[0]; if (r) roleReasons.add(r); return r ? ` / MBTI: ${r}` : ""; };
+  // 명리 근거와 MBTI 근거가 함께 있는 묶음만(MBTI가 있으면): 강한 묶음 → 그다음 묶음 순(P3.8 2).
+  const groupsForRoles = [...new Set([...topG, ...(Object.entries(scores) as [keyof typeof GROUP_KO, number][]).sort((a, b) => b[1] - a[1]).filter(([, v]) => v >= GROUP_WEAK).map(([g]) => g)])]
+    .filter(g => !mbti || mbtiFit(k, groupDims(k, g), mbti).reasons.length).slice(0, 3);
+  const roles = fit
+    ? [...new Map(groupsForRoles.map(g => [fit.grow[g], g])).entries()].slice(0, 3).map(([role, g]) => `${role} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`)
+    : groupsForRoles.slice(0, 2).map(g => `${ROLE_BY_GROUP[g]} — 명리: 강한 ${GROUP_KO[g]}${roleMbti(g)}`);
+  const inv = investment(d, scores, saju.structureAnalysis.dayMasterStrength.level, yearTg, { banghap: opts.hitIds?.has("relation:BANGHAP") });
+  // 지금 직업 판정(P6b D 커리어 1): 잘 맞음·보통·덜 맞음 + 성향(십성 묶음)·성격(MBTI)·운(대운·올해) 근거.
+  const verdict = fitLevel ? (fitLevel.startsWith("잘") ? "잘 맞음" : fitLevel.startsWith("절반") ? "보통" : "덜 맞음") : null;
+  const jobMbti = fit && mbti ? mbtiFit(k, groupDims(k, fit.groups[0] as keyof typeof GROUP_KO), mbti).reason : undefined;
+  const luck = [chart.currentDayun ? `지금 10년 흐름(대운)은 ${chart.currentDayun.tenGod}` : "", `올해는 ${chart.thisYear.tenGod}`].filter(Boolean).join(", ");
+  // 줄마다 같은 틀("A는 ~과 ~이 함께 쓰이는 일이에요")이 9번 되풀이됐다(P6): 문장 모양을 줄마다 바꾸게 한다.
+  const lineNote = "줄마다 직무 하나, 근거 둘(명리·MBTI)과 맞는 조건·안 맞는 조건을 함께 쓰되 문장 모양은 줄마다 다르게(그 일의 한 장면으로·지금 일과 견주어·근거부터). 지금 직업을 바꾸라고 단정하지 않는다";
+  const cond = (x: Scored) => conditions(x, k, mbti, scores);
+  const stages = workStages(k, scores, mbti, opts.work);
+  // 지금 일에서 덜 맞는 점(P6c E1 커리어 1): 이 일이 쓰는 힘 가운데 이 사람에게 옅은 묶음, 또는 이 일의 행동 차원과 MBTI가 어긋나는 쪽.
+  const lessGroup = fit?.groups.find(g => !topG.includes(g)) ?? (Object.keys(GROUP_KO) as (keyof typeof GROUP_KO)[]).sort((a, b) => (scores[a] ?? 0) - (scores[b] ?? 0))[0];
+  const lessMbti = fit && mbti ? (() => { const dims = groupDims(k, fit.groups[0] as keyof typeof GROUP_KO); const worst = Object.entries(dims).map(([d, v]) => ({ d, v, f: v * (mbti.dimensionTags[d] ?? 0) })).sort((a, b) => a.f - b.f)[0]; const dim = worst && worst.f < 0 && poleFits(mbti.type, worst.d, -worst.v) ? k.ontology.dimensions.find(o => o.id === worst.d) : undefined; return dim ? `${mbti.type}는 ${(worst.v > 0 ? dim.poles.minus : dim.poles.plus).description.replace(/입니다\.?$/, "")}` : undefined; })() : undefined;
+  // 최종판 1-9: 구직·학생의 입력 직업은 "지금 자리"가 아니라 목표다. 목표 직무의 성격은 분야(직군 설명) 기준으로 쓰고, 목표를 부정하는 판정(덜 맞음)은 주지 않는다.
+  const seeking = jobStatus === "job_seeker" || jobStatus === "unemployed" || jobStatus === "student";
+  const targetField = cluster && CLUSTER_ROLE[cluster] ? `${roleOf(cluster).desc} ${k.catalog.clusters.find(c => c.id === cluster)?.name ?? cluster} 직군 — 일 장면: ${roleOf(cluster).scene}` : null;
+  // 직업 소품은 목록이 아니라 장면 하나(P6: "하루는 A, B, C, D, E로 채워져요"가 그대로 나왔다). 같은 직업군이어도 고객마다 다르게.
+  const prop = job ? job.props[[...detailJob].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7) % Math.min(5, job.props.length)] : undefined;
+  return {
+    jobFit: { kind: "evidence", key: "jobFit", facts: [
+      // 숫자는 주지 않는다(작가가 그대로 옮기고, 문장 나누기에서 "1.9"가 "1. 9"로 쪼개졌다).
+      `강한 십성 묶음: ${top.map(([g]) => GROUP_KO[g]).join(" · ")}`,
+      ...top.map(([g]) => `어울리는 판: ${ROLE_BY_GROUP[g]}`),
+      `입력 직업: ${detailJob || "없음"}${JOB_STATUS_KO[jobStatus] ? ` (${JOB_STATUS_KO[jobStatus]})` : ""}`,
+    ], note: "위 판과 입력 직업이 겹치는 지점을 짚는다" },
+    jobRoles: { kind: "evidence", key: "jobRoles", facts: [`${detailJob ? `지금 자리(${detailJob})` : "지금 하는 일"}에서 넓힐 역할`, ...roles], note: lineNote },
+    ...(adjacent.length ? { jobAdjacent: { kind: "evidence" as const, key: "jobAdjacent", facts: ["옮겨 갈 만한 가까운 직무(지금 일에서 쓰던 힘을 그대로 가져가는 쪽)", ...adjacent.map(x => jobLine(x, cond(x)))], note: lineNote } } : {}),
+    ...(longterm.length ? { jobLongterm: { kind: "evidence" as const, key: "jobLongterm", facts: ["길게 보면 열려 있는 다른 길(준비 기간이 필요한 쪽)", ...longterm.map(x => jobLine(x, cond(x)))], note: lineNote } } : {}),
+    jobGroups: { kind: "evidence", key: "jobGroups", facts: jobGroupLines.length ? [jobStatus === "job_seeker" || jobStatus === "unemployed" ? "지원할 직군 순서(1순위부터)" : detailJob ? `지금 일(${detailJob})에서 넓혀 갈 직군` : "맞는 직군", ...jobGroupLines.slice(0, 2)] : ["직군 근거 없음: 다섯 힘이 쓰이는 판으로만 짧게"],
+      note: "직군마다 한두 문단: 직군 이름과 맞는 이유(명리 근거·MBTI 근거·누구나 겪어 봤을 일 장면)를 먼저 쓰고, 예시 직업은 3~5개를 한 문장 안에 나열한다. 직업 하나에 문단을 따로 주지 않는다. 지금 직업을 바꾸라고 단정하지 않는다" },
+    ...(jobGroupLines.length > 2 ? { jobGroupsFar: { kind: "evidence" as const, key: "jobGroupsFar", facts: ["길게 보면 열려 있는 직군(준비 기간이 필요한 쪽)", ...jobGroupLines.slice(2).map(x => x.replace(/^\d순위 직군: /, "직군: "))],
+      note: "직군마다 한두 문단: 맞는 이유(명리·MBTI·일 장면)와 준비할 것 하나, 예시 직업은 3~5개를 한 문장 안에 나열한다. 직업 하나에 문단을 따로 주지 않는다. 지금 바꾸라는 말이 아니라 선택지를 넓히는 이야기로" } } : {}),
+    workStagesA: stages.a, workStagesB: stages.b,
+    ...careerTiming(chart),
+    accumulate: accumulate(d, scores, saju.structureAnalysis.dayMasterStrength.level),
+    jobLess: seeking && detailJob ? { kind: "evidence", key: "jobLess", facts: [
+      `목표(${detailJob})를 준비하며 채울 점: 이 사람에게 ${LEVEL_WORD(scores[lessGroup] ?? 0)} ${GROUP_KO[lessGroup]} 쪽${fit ? ` — 목표 일에서 그 힘이 필요한 자리: ${fit.grow[lessGroup]}` : ""}`,
+    ], note: "목표를 부정하지 않는다(맞지 않는다·덜 맞는다고 쓰지 않는다). 준비할 것 하나와 보완 행동 하나로" } : { kind: "evidence", key: "jobLess", facts: detailJob ? [
+      `덜 맞는 점: 이 일이 쓰는 힘 가운데 ${GROUP_KO[lessGroup]} 쪽은 이 사람에게 ${LEVEL_WORD(scores[lessGroup] ?? 0)}${fit ? ` — 이 일에서 그 힘이 필요한 자리: ${fit.grow[lessGroup]}` : ""}`,
+      ...(lessMbti ? [`성격 쪽 덜 맞는 점: ${lessMbti}`] : []),
+    ] : ["입력 직업 없음"], note: detailJob ? "덜 맞는 점은 근거와 함께 하나씩, 보완 행동 하나로 끝낸다. 바꾸라고 단정하지 않는다" : "지금 직업을 지어내지 않는다" },
+    // 지금 직업 해설(P3.6 B): 입력 직업이 있으면 그 직업의 일상 소품과 강한 판을 함께 준다. 키울 역할은 jobRoles에만(같은 말 반복 방지).
+    currentJob: seeking && detailJob ? { kind: "evidence", key: "currentJob", facts: [
+      `목표 직무: ${detailJob}`,
+      ...(targetField ? [`이 분야의 일: ${targetField}`] : []),
+      `이 사람의 힘이 이 목표에서 쓰이는 곳: ${ROLE_BY_GROUP[top[0][0]]}`, ...(jobMbti ? [`성격 근거: ${jobMbti}`] : []), `운의 근거: ${luck}`,
+    ], note: "목표 직무의 성격은 분야 설명으로 쓴다(십성 이름으로 그 일을 설명하지 않는다). 목표를 부정하지 않고, 이 사람의 힘이 그 목표에서 빛나는 장면 하나와 준비할 것 하나" } : { kind: "evidence", key: "currentJob", facts: detailJob ? [
+      `지금 직업: ${detailJob}`,
+      ...(prop ? [`이 직업의 장면 소품: ${prop}`] : []),
+      // 강한 십성 묶음은 jobFit 한 곳에서만 말한다(P3.8 r1: 근거 다섯 곳이 '식상·비겁이 강하다'를 되풀이).
+      ...(fit && fitLevel ? [`판정: ${verdict} — 이 일이 주로 쓰는 힘은 ${fit.groups.map(g => GROUP_KO[g]).join("·")}, 이 사람의 강한 힘은 ${top.map(([g]) => GROUP_KO[g]).join("·")}`, ...(jobMbti ? [`성격 근거: ${jobMbti}`] : []), `운의 근거: ${luck}`] : [`이 사주가 지금 일에서 쓰이는 곳: ${ROLE_BY_GROUP[top[0][0]]}`]),
+    ] : ["입력 직업 없음"], note: detailJob ? "적합도와 이유, 이 일에서 타고난 힘이 빛나는 장면 하나(소품은 그 장면에만), 덜 맞는 지점 하나. 직업 분류 이름·하루 일과 목록은 쓰지 않는다" : "지금 직업을 지어내지 않는다. 강한 판에서 어울리는 일만 쓴다" },
+    studyFit: { kind: "evidence", key: "studyFit", facts: top.map(([g]) => `맞는 공부 방식: ${STUDY_BY_GROUP[g]}`), note: "합격·성적은 단정하지 않는다. 강한 힘의 설명은 다시 하지 않는다" },
+    studyPick: { kind: "evidence", key: "studyPick", facts: [...new Set([
+      ...(fit && detailJob ? [`지금 일(${detailJob})과 이어지는 공부: ${STUDY_EXAMPLES[fit.groups[0]]}`] : []),
+      ...(!fit || fit.groups[0] !== topG[0] ? [`더 넓혀 볼 공부: ${STUDY_EXAMPLES[topG[0]]}`] : topG[1] ? [`더 넓혀 볼 공부: ${STUDY_EXAMPLES[topG[1]]}`] : []),
+    ])], note: "합격·성적은 단정하지 않는다. 괄호 속 예는 하나만 골라 쓴다(나열하지 않는다)" },
+    earnStyle: { kind: "evidence", key: "earnStyle", facts: [
+      // 숫자는 주지 않는다(작가가 그대로 옮김). 둘 다 옅거나 비슷하면 유형을 붙이지 않는다(P3.6 B).
+      `돈 버는 방식: ${Math.max(d.正財 ?? 0, d.偏財 ?? 0) < 0.5 ? "돈 기운(재성)이 옅어, 큰 판을 굴리기보다 일한 만큼 받는 구조에서 돈이 남는 쪽" : Math.abs((d.正財 ?? 0) - (d.偏財 ?? 0)) < 0.3 ? "고정 수입과 성과형 수입을 함께 굴리는 쪽(어느 한쪽으로 기울지 않음)" : (d.正財 ?? 0) > (d.偏財 ?? 0) ? "고정 수입을 차곡차곡 쌓을 때 돈이 남는 쪽(정재형)" : "성과·부업·기회를 크게 굴릴 때 돈이 붙는 쪽(편재형)"}`,
+    ] },
+    moneyLeak: { kind: "evidence", key: "moneyLeak", facts: inv.leak.length ? inv.leak : [`올해 ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해의 돈 주의: ${(period?.year.caution.find(c => !c.when)?.text) ?? "큰 지출은 하루 미뤄 다시 본다"}`] },
+    careerPaths: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level),
+    pathsGood: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, "good"),
+    pathsLess: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, "less"),
+    honor: honorEvidence(d, scores, opts.hitIds ?? new Set(traits.map(t => t.featureId))),
+    investment: { kind: "evidence", key: "investment", facts: [
+      `올해 ${chart.thisYear.ganji.hanja}(${chart.thisYear.ganji.hangul}): ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해(돈의 주의는 '새는 곳'에서 한 번만)`,
+      // '새는 곳'이 올해 주의 문장을 쓰면(버릇 줄이 없으면) 올해 줄을 여기서 다시 쓰지 않는다.
+      ...inv.invest.filter(x => inv.leak.length || !x.startsWith("올해는")),
+    ], note: "방식 수준으로만 쓴다: 특정 종목·시점·액수·수익률은 말하지 않는다" },
+  };
+}

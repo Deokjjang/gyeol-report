@@ -1,0 +1,28 @@
+/* P6d-ops 고객 화면(가입 정보·구매 내역·문의·선물·탈퇴). 기존 계정 화면(account.module.css)과 같은 흑백·12~14px·1px 선. */
+.section{border-top:1px solid #111;margin:36px 0 0;padding-top:16px}
+.section h2{font-size:16px;font-weight:750;letter-spacing:-.4px;margin:0 0 6px}
+.section > p{font-size:12px;color:#555;margin:0 0 12px}
+.form{display:grid;gap:14px;margin:18px 0}
+.form label{display:grid;gap:6px;font-size:12px;font-weight:600}
+.form input[type=text],.form input[type=email],.form input[type=tel],.form select,.form textarea{font:inherit;font-size:15px;font-weight:400;border:0;border-bottom:1px solid #999;border-radius:0;padding:8px 0;background:transparent;color:#111;width:100%}
+.form textarea{border:1px solid #bbb;padding:8px;min-height:84px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:0;border-color:#111}
+.check{display:flex!important;grid-template-columns:none!important;gap:8px!important;align-items:flex-start;font-weight:400!important}
+.check input{width:16px;height:16px;accent-color:#111;flex-shrink:0;margin-top:2px}
+.hint{font-size:11px;color:#666;font-weight:400}
+.locked{font-size:15px;padding:8px 0;border-bottom:1px solid #ddd;overflow-wrap:anywhere}
+.badge{display:inline-block;font-size:11px;border:1px solid #111;padding:2px 8px;margin:4px 0}
+.list{list-style:none;padding:0;margin:0}
+.order{border-bottom:1px solid #ddd;padding:14px 0}
+.order dl{display:grid;grid-template-columns:72px 1fr;gap:4px 12px;margin:0;font-size:13px}
+.order dt{color:#666;font-size:11px;padding-top:2px}
+.order dd{margin:0;overflow-wrap:anywhere}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.button{font:inherit;font-size:12px!important;border:1px solid #111!important;padding:9px 12px!important;min-height:40px;background:#fff;color:#111}
+.dark{background:#111!important;color:#fff!important}
+.link{text-decoration:underline!important}
+.message{font-size:12px;border-left:2px solid #111;padding-left:10px;margin:8px 0}
+.danger{border-top:1px solid #ddd;margin-top:16px;padding-top:12px;font-size:12px}
+.danger ul{padding-left:18px;margin:8px 0;color:#333}
+.status{margin:0 auto;max-width:410px;padding:24px}
+.interim{position:sticky;top:0;z-index:50;margin:0;padding:8px 16px;background:#111;color:#fff;font-size:12px;line-height:1.5;text-align:center}

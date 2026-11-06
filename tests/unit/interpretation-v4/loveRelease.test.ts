@@ -117,7 +117,9 @@ describe("Love reader edition", () => {
       // checked separately; the saved edition above retains its original copy.
       const inventory = (pages: typeof book.pages) => pages.flatMap(p => p.kind === "appendix" ? p.items.map(item => { const copy = { ...item }; delete copy.core; if (copy.group === "십이운성") copy.meaning = "<edition-stage-definition>"; return copy; }) : []);
       expect(inventory(book.pages)).toEqual(inventory(old.book.pages));
-      for (const key of ["bookId", "title", "names", "people", "context", "share", "readingDate"] as const) expect(book[key]).toEqual(old.book[key]);
+      // P3.8: MBTI source names (titleKo, archetype) were replaced with our own; the saved edition keeps the old names.
+      const mbtiName = (v: unknown) => JSON.parse(JSON.stringify(v, (k, x) => k === "titleKo" || k === "archetype" ? "<mbti-name>" : x));
+      for (const key of ["bookId", "title", "names", "people", "context", "share", "readingDate"] as const) expect(mbtiName(book[key])).toEqual(mbtiName(old.book[key]));
       return;
     }
     // Major/Annual were released after these original boundary locks. Their

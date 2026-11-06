@@ -16,7 +16,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "468d4c25327ff26e8b1a40c0af400a305a9eed5c3ce9e8c124bcb5af8c9ea55d",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "popular_helper_child",
@@ -64,7 +64,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "2ac7943c2c20bd102d42bb993f91ec98d6db7eecbe2c1a4ea40f2d78762cd771",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "encouraging_speaker_child",
@@ -111,7 +111,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "a014bc9f7fec9febaedb2259f1a47611a2852af3e60defca65a03e7eee8de2bf",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "tearful_empath_child",
@@ -158,7 +158,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "99a96095188f2ecf7e9b24a47095bd438e09b4bd2c799bd926ec19feb868ae75",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "playful_social_child",
@@ -206,7 +206,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "83fd0d140dac476afeecbc7ed6eb2c459715d67557e143890ee8ecfc2341d6f1",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "all_or_nothing_study_child",
@@ -254,7 +254,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "53525dd8a02e2c724f7e9431b5f8de022499ebb31b4927cd4af0093fa742e157",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensitive_emotional_child",
@@ -301,7 +301,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "raw": {
       "id": "anti_conservative_child",
@@ -348,7 +348,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "70880143a75fc92edbcaf056e4c176643d0d3bfbca6cad7a6e308a783a409954",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "knowledge_rich_child",
@@ -396,7 +396,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "1596abb52067c60ebe493112cb6bdaa2f219d8782f83f73fa99112755e56e01a",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "respect_independent_thinking_child",
@@ -444,7 +444,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "051d2694a9f0cc0a2615a3e51eef5aa95a1dfc01c7883bf5a5e5ad47ac44b21c",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "high_score_competitor_child",
@@ -492,7 +492,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/traits/child/3",
     "recordSha256": "7f67d01f669ae065df7a55555b08c451464240ab8ea90561877e64347b0ac808",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "raw": {
       "id": "athletic_te_se_child",
@@ -540,7 +540,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "721ee892031fe553c5f6d2c41dad537a5fc7cf0a8ab4aa0ca180719515157194",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rule_testing_child",
@@ -587,7 +587,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "e53faa5f4755342605bde45824befe8aeb1beca2cd0d229b97dfaa207e0e698f",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "curious_knowledge_child",
@@ -633,7 +633,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "aef7ea386213ca42c37fcf30ecf882dfa3855315021b6bdfdb6a423ecf330127",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "social_but_independent_child",
@@ -679,7 +679,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "c1c92490d780d29aec480d0610a8223aa31a4c153fc19614da30c3ca4ea203e6",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "risk_play_child",
@@ -726,7 +726,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "d0768d8556c41b20ee9172eec38300b5dae08536e233b938485981973d321ee2",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "harmony_sensitive_child",
@@ -774,7 +774,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "9df2baf5a30e45df53bda05967a6cdb9875b8e3d2bba5e493426fadc65093001",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "predictable_sequence_child",
@@ -822,7 +822,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "3b4be6a077852ec5dfd45b7cfe95bc99cab4a7e3571f54c7ffac863071ada7b5",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "helpful_friend_child",
@@ -870,7 +870,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/traits/child/3",
     "recordSha256": "b40fcf62b82dfe5390d5b0d1a62e5a6310e27c01e73c95367da853ddb93af5ed",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "raw": {
       "id": "high_standard_child",
@@ -918,7 +918,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "595f626c373bb22ae357d5f404ab5a2ad763da4e2166b7016d1331ea6d51a709",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "active_outdoor_child",
@@ -966,7 +966,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "df9fe15fb469647a148715b7eee99d0ff7bd9ffd577ffd9f234f7f2bc560277b",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "popular_class_energy",
@@ -1014,7 +1014,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "fb9a116fa418aa2e3e1051bccfc6239a33f494464f98a8483b753efece03b357",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "style_sensitive_child",
@@ -1062,7 +1062,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "8f49179970fa54c9f63e82ae43318b18420beb5f1072ada37c9ed285018bf4f4",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "raw": {
       "id": "arts_sports_child",
@@ -1110,7 +1110,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "f819edbe16ca483c553ab2211bb82989da6379531946c064a454def61b0fa5f5",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "leader_child",
@@ -1158,7 +1158,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "855b28fd97ceca1deea8263bc7d49694d35a4c2af403c067560c34c87025a180",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fair_rule_child",
@@ -1205,7 +1205,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "mature_hardworking_child",
@@ -1252,7 +1252,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/traits/child/3",
     "recordSha256": "a6ece0eba0a5edf9e5f1e481de26340352d080b528d90b3701aa0fdb17314c36",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sports_and_competition",
@@ -1300,7 +1300,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "84cfb0d78158bc3f835f4bd1fb0b22038540741edac5f14a672b531c81f5519c",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "bet_and_play_child",
@@ -1347,7 +1347,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "3178111e477ac826bcaa27d71a8f628c698766128ef3321bca190ebf5f55ddd4",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "easygoing_friend_child",
@@ -1394,7 +1394,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "d5c0bb91253140189d8928aefecd562c772595735f3deed7ff5493262a945569",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "serious_talk_avoidance_child",
@@ -1442,7 +1442,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "8e6050d2bd7999b9a798002999558b546cbf7053e0a2cf2a89c765370217a980",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "happy_active_child",
@@ -1489,7 +1489,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "ab8065e35bc597b4a9542fb6c65f8cf6d6efa5506951d8e770210c2213194684",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "written_expression_child",
@@ -1537,7 +1537,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "7f8dfb9c32c79ae8afe14576aefe2d94253bc44750a4ebb293064487247df83f",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensitive_emotion_sponge_child",
@@ -1585,7 +1585,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "3cb518e50b65bdc06d8a0e7382261e7450f9888f79985fa6a04e13d8ccf49e55",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "indoor_dream_child",
@@ -1632,7 +1632,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/child/3",
     "recordSha256": "f86de17a40ca04fc84224bf49dc909c3fd863e4605fbcd883dbe7369cabeceb6",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "quiet_helper_child",
@@ -1680,7 +1680,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/traits/child/4",
     "recordSha256": "d06b0760af82d0aa0fbd1ced2071bee774c66c2a3f7a7899435ecd027edc8494",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "raw": {
       "id": "generation_conflict_child",
@@ -1728,7 +1728,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "97852a9eb329f338e7b82ac7a5cd554973f5c59824fc16a819108792babbfb64",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "creative_child",
@@ -1775,7 +1775,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "62a1820483be8f5fca2600c7ac673d07d451df1a19e37aa3d861db03bec7918a",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensitive_to_harshness_child",
@@ -1822,7 +1822,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "870aa2d528ccbc53f257ab5774222927e63e397895fd38a879f5726a9dc77190",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "authority_conflict_child",
@@ -1870,7 +1870,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "3ab801b655d24dfa3d836f10738092a04cb89985c380cb5c4e5175eae5264e93",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "socially_different_child",
@@ -1917,7 +1917,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/traits/child/4",
     "recordSha256": "8720a58a997e9cc7957b7054eff37609f65336fbbdae0d51b16cd497e873773e",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "raw": {
       "id": "presentation_emotion_child",
@@ -1964,7 +1964,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "9dae122f6205ff81bd577e6b390787200964bd965427a4851fb4b094b7f457ec",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "knowledge_rich_child",
@@ -2011,7 +2011,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "f5e37b3c25eca3280098727d50e2e59280ec42ac596b5b0eb75bc9f0744e7afc",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rule_questioning_child",
@@ -2059,7 +2059,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "0a234a142a0980368754418ab4aad704a507b301e60617030993c2c0619d54c7",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "intellectual_respect_need",
@@ -2106,7 +2106,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/traits/child/3",
     "recordSha256": "0cdce5983a4642732d6c2b2cbbf635fd0620fdcf112d51721741c2fcf84b406b",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "raw": {
       "id": "single_field_mastery",
@@ -2154,7 +2154,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "a70e69a3a5a0e388c9ae199a8f7992a00ee3e353962d99bdde8b29b7327fe928",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "knowledge_rich_but_uneven_child",
@@ -2201,7 +2201,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "bdf0dd336a7a8345a93cf81b56c9fab562e693593d6d64c1d6d1d6c7a3c23bbb",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "socially_detached_child",
@@ -2248,7 +2248,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "bb99638ad99ff4561b752109fab7f6fa36e63b28edb3eb41af1231021f11e331",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "authority_conflict_child",
@@ -2296,7 +2296,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "d237d41997b1ac9e641cf400b9d223c59b36e2053bb9e73f1b35cf7ec9e0616b",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "math_programming_child",
@@ -2344,7 +2344,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/traits/child/4",
     "recordSha256": "89af67b3659ba194689ed5667a40784a1394a3c488f62dc334dd495bc67cb98d",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "raw": {
       "id": "misread_as_disorder_risk",
@@ -2391,7 +2391,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "model_student_child",
@@ -2438,7 +2438,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "07c4038c3b1b8f1ef1a73ade65e5f50e89067c1afe5722f02cace05215656966",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "sensitive_child",
@@ -2485,7 +2485,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/child/2",
     "recordSha256": "94f9ff64abe5fe3eb441493fab2c1192726f5656bf2624aefc9f3e44fa775e5f",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "stable_friendship_child",
@@ -2532,7 +2532,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/traits/child/3",
     "recordSha256": "122ec8c4fdfca890b11a9c883a6920abe8cd15df34cbe5310d86b3ccbfdb1c68",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "raw": {
       "id": "practical_imagination_child",
@@ -2579,7 +2579,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "a35737b507b0e9c5990830e72732cf7f8d21a404389542089ce68ccc5fc0cc24",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "fun_first_child",
@@ -2626,7 +2626,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "5103f1907ee95b31a9828d58ee0cc106a795759e6952009ec52c4c77a1df4fa3",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "visual_art_child",
@@ -2674,7 +2674,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "2ba497c67a7642a78a9d398f5f9dfe59229b42dc3b8a32d749f2611c68bc39fd",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "peaceful_peer_child",
@@ -2722,7 +2722,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/traits/child/3",
     "recordSha256": "e59f90b2471fc4b07cd7fc15c0f1a50c3548fe484c8d83ea5bdd941f7b4101b6",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "raw": {
       "id": "nature_animals_child",
@@ -2769,7 +2769,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/child/0",
     "recordSha256": "ac0257a3067daa68cb93aa2065b75d2ae650804555bd03e808e69cc480d31a47",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "responsible_child",
@@ -2816,7 +2816,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/traits/child/1",
     "recordSha256": "5e784ea52f3f9cfe009005d26066231e7bc80ab3535f0821068cc8d5dd1b5178",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "raw": {
       "id": "small_circle_child",
@@ -2863,7 +2863,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/child/0",
     "recordSha256": "e34e7880ff364ca6b1acdbdac88646e731000dd3df4b84860eef9aeec413f264",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "rule_resistant_child",
@@ -2910,7 +2910,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/child/1",
     "recordSha256": "b181a835aa1a66cba1437cf9d82bf756b6dbc98d3db91d2cd5458893eeb87b1f",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "solo_play_precision_child",
@@ -2957,7 +2957,7 @@ export const PC_CHILD_MBTI_SOURCES: readonly SourceRoleReview[] = [
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/traits/child/2",
     "recordSha256": "e37b2e715db59e31a1674355630fa246ca429c125c2a380cd58b80c355bf4c11",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "raw": {
       "id": "brief_answer_child",

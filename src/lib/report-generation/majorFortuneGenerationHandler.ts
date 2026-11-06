@@ -34,11 +34,6 @@ import {
 import {
   validateMajorFortuneReportDraft,
 } from "./majorFortuneReportDraftValidator";
-import {
-  generateMajorFortuneReportDraft,
-  type MajorFortuneReportWriterConfig,
-  type MajorFortuneReportWriterResult,
-} from "./openaiMajorFortuneReportWriter";
 import type { SinglePersonGenerationInput } from "./reportInputAdapter";
 import type { JobStatus } from "./reportInputTypes";
 
@@ -65,10 +60,6 @@ export type MajorFortuneGenerationResult =
 
 export type MajorFortuneGenerationHandlerOptions = {
   readonly now?: () => Date;
-  readonly writer?: {
-    readonly enabled: boolean;
-    readonly config?: MajorFortuneReportWriterConfig;
-  };
 };
 
 const tenGodKoByHanja = {
@@ -150,18 +141,9 @@ export async function generateMajorFortuneProductDraft(
     });
   }
 
-  let draftResult: MajorFortuneReportWriterResult;
+  let draft: MajorFortuneReportDraft;
   try {
-    draftResult =
-      options.writer?.enabled === true && options.writer.config !== undefined
-        ? await generateMajorFortuneReportDraft({
-            evidencePacket,
-            config: options.writer.config,
-          })
-        : {
-            draft: buildMajorFortuneFallbackDraft(evidencePacket),
-            model: "local-major-fortune-fallback",
-          };
+    draft = buildMajorFortuneFallbackDraft(evidencePacket);
   } catch (error) {
     return majorFortuneFailure({
       code: "MAJOR_FORTUNE_GENERATION_FAILED",
@@ -169,7 +151,7 @@ export async function generateMajorFortuneProductDraft(
     });
   }
 
-  const validation = validateMajorFortuneReportDraft(draftResult.draft);
+  const validation = validateMajorFortuneReportDraft(draft);
 
   if (!validation.ok || validation.value === undefined) {
     return majorFortuneFailure({

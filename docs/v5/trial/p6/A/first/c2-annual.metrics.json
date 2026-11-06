@@ -1,0 +1,134 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_aaae1f7c1bb64352b7f638872272c967",
+ "status": "COMPLETED",
+ "wallMs": 73869,
+ "chars": 8596,
+ "chapterChars": [
+  1371,
+  1337,
+  4014,
+  981,
+  893
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 7,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 6,
+ "infoByKind": {
+  "claim": 6,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "바꿀 수 없는 것과 바꿀 수 있는 것을 가려서 헛심을 쓰지 않는 힘이에요.",
+   "b": "당신에게는 바꿀 수 없는 것과 바꿀 수 있는 것을 가려내는 농부의 눈이 있으니까요.",
+   "at": [
+    "2.3",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 시각과는 열만 있고 결실이 빈 흐름이 있었고, 태어난 날 글자와는 서로 서운해지기 쉬운 기운이 닿았습니다.",
+   "b": "태어난 달 글자와는 서로 서운해지기 쉬운 기운이 있었지만 큰 흔들림은 아니었어요.",
+   "at": [
+    "3.2",
+    "3.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 날과 풀과 쇠가 손잡는 흐름이 있고, 태어난 달과는 나무의 팀이 반쯤 맺히는 흐름도 있어서 흐름은 활발한 편이었습니다.",
+   "b": "6번째 달에는 태어난 날과 손잡는 글자가 들어오고 태어난 달과는 나무의 팀이 반쯤 맺힙니다.",
+   "at": [
+    "3.6",
+    "4.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "젖은 땅과 쇠가 만나 틀이 잡히고 쇠의 팀이 반쯤 맺히는 좋은 흐름이 있었지만, 태어난 달의 꽃과 칼이 부딪쳐 말과 관계가 날카로워지는 면도 있",
+   "b": "나무의 팀이 반쯤 맺히는 좋은 흐름이 있고, 태어난 해와는 먼 이동이나 생각의 전환이 오는 흐름도 있어요.",
+   "at": [
+    "3.8",
+    "3.10"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "비 온 뒤 흙을 털어 낸 무쇠 칼 같은 당신은 묵직하게 가만히 서 있는 것만으로 힘이 되는 사람이라, 이달엔 더 급하게 움직이기보다 한발 물러서",
+   "b": "비 온 뒤 흙을 털어 낸 무쇠 칼 같은 당신은 올해 날을 세우는 해가 아니라 단단히 다져지는 해를 지나고 있어요.",
+   "at": [
+    "3.9",
+    "5.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "8번째 달은 규칙과 평가가 오는 달이라, 해낼 수 있는 범위를 미리 말해 두는 것이 가장 큰 준비입니다.",
+   "b": "해낼 수 있는 범위를 미리 말해 두는 것입니다.",
+   "at": [
+    "4.3",
+    "5.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.194,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 73832,
+ "tokens": {
+  "input": 20855,
+  "output": 9692,
+  "cachedInput": 5258
+ },
+ "costUsd": 0.1391558,
+ "costKrw": 201.8,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 68327,
+   "chars": 8937,
+   "maxTokens": 17412,
+   "usage": {
+    "inputTokens": 20855,
+    "outputTokens": 9692,
+    "cachedInputTokens": 5258
+   },
+   "costUsd": 0.1391558
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:aa3e77f9f529"
+}

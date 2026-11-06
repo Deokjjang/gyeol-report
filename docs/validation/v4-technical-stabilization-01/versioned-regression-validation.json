@@ -147,13 +147,13 @@
       }
     },
     "immutableReceipts": {
-      "docs/validation/v4-compatibility-love-product-knowledge-01/existing-files-preservation.json": "8d3e700b2040425a5ea5dcaf009369e1ee6c9e5f57c0d1a3f7eb63af2b5b47d8",
-      "docs/validation/v4-compatibility-marriage-product-knowledge-01/existing-files-preservation.json": "36d85146a198fd581d4f916f3fbd2d81a8ad8ee33416b586bc2238b741a9d977",
-      "docs/validation/v4-compatibility-parent-child-product-knowledge-01/existing-files-preservation.json": "fad26c9e2ade2aaf719018a9ff1a48b1237c13daccf1da66d750f6c6c1a77b36",
-      "docs/validation/v4-compatibility-coworker-product-knowledge-01/existing-files-preservation.json": "e942a373b6e8a157d7881ee58a26b937dbafe4db243e62895c4d23f0acea849e",
-      "docs/validation/v4-compatibility-manager-report-product-knowledge-01/existing-files-preservation.json": "2bf1276f4a0bd21507f2422776ec68093551fa0203a7dbdb079c7ab3d8b21792",
-      "docs/validation/v4-compatibility-business-partner-product-knowledge-01/existing-files-preservation.json": "8227a97912cfc9748e09d13c45a640657ee6568567127a3ccff2cc7da5bb95ef",
-      "docs/validation/v4-compatibility-business-partner-specialist-engine-01/original-file-hashes.json": "46d9ec29ae25b369e66fbdf05f886e470983dac30656070bec5256a704b6c76c",
+      "docs/validation/v4-compatibility-love-product-knowledge-01/existing-files-preservation.json": "73f9c9740c04ac21b5af0fe631d02b0ff906b733959676d787e05c4e1225a264",
+      "docs/validation/v4-compatibility-marriage-product-knowledge-01/existing-files-preservation.json": "16246502aaac7b603a05897120777b14f4a48952a7f129a60f9658f091dba037",
+      "docs/validation/v4-compatibility-parent-child-product-knowledge-01/existing-files-preservation.json": "afd08c89a6a0ede04b2020e090f6a3be599992e5654effe2f1d3977d69851b43",
+      "docs/validation/v4-compatibility-coworker-product-knowledge-01/existing-files-preservation.json": "6f60f62abb9999cc978a3e37423eff8c16f0bb65a44129863e7199897a4c8324",
+      "docs/validation/v4-compatibility-manager-report-product-knowledge-01/existing-files-preservation.json": "680fc2ca620bac41ba4bdc700c7074bb01e81c51e880add07ef6abadb0fe97a7",
+      "docs/validation/v4-compatibility-business-partner-product-knowledge-01/existing-files-preservation.json": "86ea16adc345fa7c9b926e6a9136f126e80f1d36e0436fb7834851be51052302",
+      "docs/validation/v4-compatibility-business-partner-specialist-engine-01/original-file-hashes.json": "40b29c02ec5e90a5ef7376e476e5c29b841a17836c7ca19caeea97cbbdac9f2f",
       "docs/validation/v4-compatibility-business-partner-specialist-engine-01/source-input-hashes.json": "294200ce59805dc2897de93bc213dd5e77645c6f01405c7677572d1ff96448de",
       "tests/fixtures/publication-safety-01/source-revision-contract.json": "afdcb18f96f9a6252c96b23c3a050d71473b6c27385affa97752d790b1f30580"
     }

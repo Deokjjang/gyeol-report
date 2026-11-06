@@ -1,0 +1,98 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_686778055d2945c2802316c089a19875",
+ "status": "COMPLETED",
+ "wallMs": 110999,
+ "chars": 10100,
+ "chapterChars": [
+  936,
+  782,
+  778,
+  825,
+  749,
+  762,
+  746,
+  736,
+  914,
+  725,
+  764,
+  763,
+  620
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 13,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "왜 배우는지 모르면 시작이 안 되는 유형이라, 시험 범위를 받으면 출제 의도부터 역산해 보세요.",
+   "b": "왜 배우는지 모르면 시작이 안 되는 것처럼, 왜 쉬는지가 납득돼야 몸이 풀려요.",
+   "at": [
+    "10.4",
+    "12.4"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.136,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 110946,
+ "tokens": {
+  "input": 24001,
+  "output": 11418,
+  "cachedInput": 0
+ },
+ "costUsd": 0.164811,
+ "costKrw": 239,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 78646,
+   "chars": 10637,
+   "maxTokens": 22792,
+   "usage": {
+    "inputTokens": 24001,
+    "outputTokens": 11418,
+    "cacheWriteTokens": 5258,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.164811
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:aa3e77f9f529"
+}

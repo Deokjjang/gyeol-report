@@ -39,12 +39,7 @@ describe("canonical calendar through six deterministic product pipelines", () =>
       productOptions: productKey === "annual_fortune" ? { selectedYear: "2035" } : {},
     };
     const result = await prepareProductGenerationFromPayload(payload, {
-      careerMoneyStudy: { writer: { enabled: false } },
-      loveMarriageChild: { writer: { enabled: false } },
-      compatibility: { writer: { enabled: false } },
-      comprehensiveV2: { writer: { enabled: false } },
-      majorFortune: { writer: { enabled: false } },
-      annualFortune: { writer: { enabled: false }, now: () => new Date("2035-09-21T00:00:00Z") },
+      annualFortune: { now: () => new Date("2035-09-21T00:00:00Z") },
     });
     expect(result.ok).toBe(true);
     if (!result.ok) throw new Error("Expected deterministic generation success");

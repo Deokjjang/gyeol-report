@@ -6,6 +6,9 @@ import {
   createPaymentOrderDraft,
   parseReportProductType,
 } from "../../../src/lib/payment/paymentOrderBoundary";
+import { REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
+
+const fullAmount = REPORT_PRICE_TABLE_KRW.saju_mbti_full;
 
 const boundarySource = readFileSync(
   join(process.cwd(), "src/lib/payment/paymentOrderBoundary.ts"),
@@ -47,7 +50,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 1490,
+        amount: fullAmount,
         currency: "KRW",
         status: "ready",
         inputSnapshot,
@@ -72,7 +75,7 @@ describe("payment order boundary", () => {
       order: {
         productType: "saju_mbti_full",
         provider: "kakao_pay",
-        amount: 1490,
+        amount: fullAmount,
         currency: "KRW",
         status: "ready",
       },
@@ -89,7 +92,7 @@ describe("payment order boundary", () => {
       ok: true,
       order: {
         productType: "saju_mbti_full",
-        amount: 1490,
+        amount: fullAmount,
         currency: "KRW",
       },
     });
@@ -108,7 +111,7 @@ describe("payment order boundary", () => {
     expect(result).toMatchObject({
       ok: true,
       order: {
-        amount: 1490,
+        amount: fullAmount,
         currency: "KRW",
         status: "ready",
       },
@@ -138,7 +141,7 @@ describe("payment order boundary", () => {
       "saju_mbti_compatibility",
       "major_fortune",
       "annual_fortune",
-    ];
+    ] as const;
 
     for (const productType of launchProductTypes) {
       expect(
@@ -151,7 +154,7 @@ describe("payment order boundary", () => {
         ok: true,
         order: {
           productType,
-          amount: 1490,
+          amount: REPORT_PRICE_TABLE_KRW[productType],
           currency: "KRW",
           status: "ready",
         },

@@ -37,12 +37,12 @@
       },
       {
         "file": "existing-review-deduplication.json",
-        "sha256": "6e6a14df8c35a39825cae84464d7ff8725ba5e587b1b937c7431160ad9f257fa",
+        "sha256": "650fa9a70d4ad07bf196d61300c61163d80a03f430ca985660488f391a95dfe2",
         "bytes": 16424
       },
       {
         "file": "first-review-wave.json",
-        "sha256": "0a17fe406c58ea18d87409b3c3737f35176f3a05c64aba32cc73ab836011a474",
+        "sha256": "6fff29d9049a918cdcef71605ff64f71c536be2f97aeae3560a972f08bed217a",
         "bytes": 17700
       },
       {
@@ -52,7 +52,7 @@
       },
       {
         "file": "inherited-model-relationship-proposals.json",
-        "sha256": "3b2e19f35f00d6738fe621b54b9d1a0ce99ca6cdbf07f9e3ae734f28ba01828f",
+        "sha256": "5e231b61f84b8471ab2802967bedb501f72dfe930f0ad8db42d33ad41dd45560",
         "bytes": 4965
       },
       {
@@ -92,7 +92,7 @@
       },
       {
         "file": "original-source-proofs.json",
-        "sha256": "2ee938b9c8dbcaa931d83d893b1bd0f808d4952af03c292046423f4f6874d021",
+        "sha256": "d16c7d9fa363c565232cbe76145972c56a8b386e3ed845be66dc46dd4a9a5ae4",
         "bytes": 408640
       },
       {
@@ -157,7 +157,7 @@
       },
       {
         "file": "review-draft-example.json",
-        "sha256": "ddf72378f4d65ded5fc69ac934640c41c45fbdb127dbc21967197292ef39605c",
+        "sha256": "39ba58f34a5ab8b3524a267f5f452bcf5826787eeebe99da4bf34f709151420d",
         "bytes": 32861
       },
       {
@@ -262,7 +262,7 @@
       },
       {
         "file": "review-workbench.html",
-        "sha256": "f3605462b55ac14b6e10cc4d814cd394abda08aeab41fd586ba0de255f9b9d9d",
+        "sha256": "4f1c2d8f6ac303318544c5763b8de7fa91779bd93180f112e310f95368693684",
         "bytes": 6380363
       },
       {
@@ -272,7 +272,7 @@
       },
       {
         "file": "semantic-identity-proposals.json",
-        "sha256": "f1983d26f9ddce6ea9e8df40f7ecb0f03971b127a4188165eb42cc361f8ca900",
+        "sha256": "f5d076c755c37f25ef7cecd2b4c801053dd1cd356b4f3ad64cd477c109689d5e",
         "bytes": 57519
       },
       {
@@ -282,12 +282,12 @@
       },
       {
         "file": "source-proof-eligibility.json",
-        "sha256": "d5239e42465c87b40458cab06e4c66b95d01ce11c5c29b58b58d14c54b64cc8d",
+        "sha256": "492313d1571f9f1132f95e0da3142ff07d717b7566306b30f4b54dab602788c0",
         "bytes": 62861
       },
       {
         "file": "specialist-scope-review.json",
-        "sha256": "1eac00a11f5f9cc083727b3bc39d5360b8aef420dc8abe4064f1093e95451754",
+        "sha256": "b6c1baf8f7f4ba6d3478e0f0bde3edc2c73c0c3352eb121bcaaee58d1cafb41c",
         "bytes": 677796
       },
       {
@@ -310,11 +310,11 @@
   "handoffFiles": [
     {
       "file": "operator-review-pilot-manifest.json",
-      "sha256": "43cab91bc8564bc695249ff7d747f9cbf5c545bd5fe175aa915d7a646ee2157d"
+      "sha256": "4e913fad83f6b45b04908303531f76f793de1bc093a3c7de34cb1db22ca8c22e"
     },
     {
       "file": "first-wave-review-summary.json",
-      "sha256": "89130ca48a04ac07789f85ad134704ae1b1907aa1904ee1cb676eb9971e83dd0"
+      "sha256": "fc387b29ab808f557d21fbd5a6a99a0bbbb422cb30afb90eb2ffe1e516945708"
     },
     {
       "file": "first-wave-review-summary.md",
@@ -334,7 +334,7 @@
     },
     {
       "file": "review-workbench.html",
-      "sha256": "f3605462b55ac14b6e10cc4d814cd394abda08aeab41fd586ba0de255f9b9d9d"
+      "sha256": "4f1c2d8f6ac303318544c5763b8de7fa91779bd93180f112e310f95368693684"
     }
   ],
   "measurementsScreenshotsAndLogsExcludedFromDeterministicCore": true

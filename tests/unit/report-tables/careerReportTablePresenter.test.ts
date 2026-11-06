@@ -60,7 +60,7 @@ describe("career report table presenter", () => {
 
     expect(data).not.toBeNull();
     expect(data?.type).toBe("ENTJ");
-    expect(data?.titleKo).toBe("대담한 통솔자");
+    expect(data?.titleKo).toBe("지휘관");
     expect(data?.preferenceRows).toHaveLength(4);
     expect(data?.functionRows.map((row) => row.code)).toEqual([
       "Te",

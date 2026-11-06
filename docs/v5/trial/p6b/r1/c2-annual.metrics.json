@@ -1,0 +1,200 @@
+{
+ "case": "c2-annual",
+ "label": "세운 2026 · 서윤(c2, 대략 오시)",
+ "reportId": "report_e5bc7088a38549af96b42a0404054e47",
+ "status": "COMPLETED",
+ "wallMs": 53358,
+ "fallback": null,
+ "priorBooks": 1,
+ "chars": 6541,
+ "chapterChars": [
+  802,
+  1335,
+  3051,
+  728,
+  625
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 21,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 4,
+ "infoByKind": {
+  "claim": 4,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "내 힘이 여린 신약이라 받쳐 주는 틀이 있을 때 오래 가는 사주입니다.",
+   "b": "내 힘이 여린 신약이라 받쳐 주는 틀이 있을 때 오래 가요.",
+   "at": [
+    "2.1",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 날의 글자와 하늘 글자끼리 합이 되어 흐름이 활발해지는 달이라, 차곡차곡 쌓는 일이 힘을 받습니다.",
+   "b": "을미월은 정재가 들어오는 달이고, 태어난 날의 글자와 하늘 글자끼리 합이 되어 흐름이 활발했습니다.",
+   "at": [
+    "3.6",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "올해와 같은 편관(偏官)의 기운이 월로 들어와 버티는 힘이 필요했던 달입니다.",
+   "b": "병신월은 올해와 같은 편관의 기운이 월로 들어와 버티는 힘이 필요했고, 부족한 기운이 채워지는 대신 빈칸에 드는 흐름도 겹쳤습니다.",
+   "at": [
+    "3.7",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "마감이 겹칠 때는 일마다 포기할 수 없는 것 하나만 표시하고 나머지 분량은 줄이는 방식이 맞았습니다.",
+   "b": "정유월에는 맡은 일의 조건을 표로 정리해서 결정했고, 병신월에는 일마다 포기할 수 없는 것 하나만 표시했습니다.",
+   "at": [
+    "3.7",
+    "5.2"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.093,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 53324,
+ "tokens": {
+  "input": 18438,
+  "output": 7353,
+  "cachedInput": 3907
+ },
+ "costUsd": 0.1107967,
+ "costKrw": 160.7,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 51434,
+   "chars": 6902,
+   "maxTokens": 20936,
+   "usage": {
+    "inputTokens": 18438,
+    "outputTokens": 7353,
+    "cachedInputTokens": 3907
+   },
+   "costUsd": 0.1107967
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 6680,
+  "target": [
+   12000,
+   15000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 3,
+   "rate": 0.6,
+   "terms": 5,
+   "misses": [
+    "정재",
+    "편인"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     5,
+     2,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 8,
+  "sectionsTotal": 9,
+  "byRule": {},
+  "coreImage": "용광로 불 속에서 달궈지는 쇳덩이",
+  "edition": "제5판"
+ }
+}

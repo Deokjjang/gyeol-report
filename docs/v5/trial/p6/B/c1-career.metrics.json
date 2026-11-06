@@ -1,0 +1,93 @@
+{
+ "case": "c1-career",
+ "label": "커리어 · 하람(c1)",
+ "which": "B",
+ "provider": "openai",
+ "model": "gpt-6.1-terra",
+ "reportId": "report_4b31b5b5e5954b778bcb54cefef698b4",
+ "status": "COMPLETED",
+ "wallMs": 83398,
+ "chars": 8296,
+ "chapterChars": [
+  906,
+  949,
+  943,
+  982,
+  954,
+  907,
+  887,
+  897,
+  871
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 13,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "사용자에게 보일 화면 흐름과 문구를 직접 만드는 역할이 어울립니다.",
+   "b": "앞에서 살핀 일 가운데 화면 흐름과 문구를 직접 만드는 역할이 한 가지 선택입니다.",
+   "at": [
+    "4.2",
+    "9.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 83386,
+ "tokens": {
+  "input": 9974,
+  "output": 4972,
+  "cachedInput": 3099
+ },
+ "costUsd": 0.03498895,
+ "costKrw": 50.7,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 78090,
+   "chars": 8758,
+   "maxTokens": 14625,
+   "usage": {
+    "inputTokens": 9974,
+    "outputTokens": 4972,
+    "cachedInputTokens": 3099
+   },
+   "costUsd": 0.03498895
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

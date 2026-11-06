@@ -9,9 +9,11 @@ import { redeemReportTicket } from "../../../src/lib/tickets/service";
 import { createCheckoutConsentEvidence } from "../../../src/lib/payment/checkoutConsent";
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { singleRuntimeInput } from "../interpretation-v4/runtimeFixtures";
+import { TEST_BUYER } from "../../helpers/opsStoreStub";
 
 const storage = vi.hoisted(() => ({ create: vi.fn() }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 const payload = { ...singleRuntimeInput("annual_fortune", "annual-fortune", {
   id: "uncertain", name: "출시검수6", date: "1998-08-29", gender: "MALE", mbti: "",
   context: { jobStatus: "", detailJob: "", relationshipStatus: "married" },
@@ -19,13 +21,13 @@ const payload = { ...singleRuntimeInput("annual_fortune", "annual-fortune", {
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 
 it("uncertain Annual fails before order, local redeem or production queue; exact correction can retry", async () => {
-  vi.useFakeTimers(); const now = new Date("2026-10-11T03:00:00Z"); vi.setSystemTime(now);
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.useFakeTimers(); const now = new Date("2026-10-11T03:00:00Z"); vi.setSystemTime(now);
   const check = (p: unknown) => preflight(new Request("http://localhost/api/reports/validate-input", { method: "POST", body: JSON.stringify(p) }));
   const failed = await check(payload);
   expect(failed.status).toBe(400);
   expect(await failed.json()).toEqual({ ok: false, message: DAYUN_UNCERTAIN_MESSAGE });
   const order = await prepare(new Request("https://gyeolreport.com/api/payment-checkout/prepare", { method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({
-    provider: "toss", productType: payload.productKey, consent: adultCheckoutConsent(),
+    provider: "toss", productType: payload.productKey, consent: adultCheckoutConsent(), buyer: TEST_BUYER,
     inputSnapshot: { displayName: payload.person.name, birthDate: payload.person.birthDate, reportInputPayload: payload },
   }) }));
   expect(order.status).toBe(400); expect(storage.create).not.toHaveBeenCalled();

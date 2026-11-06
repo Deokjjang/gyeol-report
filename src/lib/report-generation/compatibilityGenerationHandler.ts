@@ -33,17 +33,10 @@ import {
   type CompatibilityReportDraft,
 } from "./compatibilityReportDraftTypes";
 import {
-  validateCompatibilityReportDraft,
-} from "./compatibilityReportDraftValidator";
-import {
-  generateCompatibilityReportDraft,
-  type CompatibilityReportWriterResult,
-} from "./openaiCompatibilityReportWriter";
-import {
   deriveAllowedCompatibilityMbtiTerms,
   deriveAllowedCompatibilitySajuTerms,
-} from "./openaiCompatibilityReportWriterPrompt";
-import type { OpenAIReportWriterClientConfig } from "./openaiReportWriterClient";
+  validateCompatibilityReportDraft,
+} from "./compatibilityReportDraftValidator";
 import type { CompatibilityGenerationInput } from "./reportInputAdapter";
 
 export type CompatibilityGenerationErrorCode =
@@ -66,13 +59,6 @@ export type CompatibilityGenerationResult =
         readonly message: string;
       };
     };
-
-export type CompatibilityGenerationHandlerOptions = {
-  readonly writer?: {
-    readonly enabled: boolean;
-    readonly config?: OpenAIReportWriterClientConfig;
-  };
-};
 
 const stemKoByHanja = {
   甲: "갑",
@@ -153,7 +139,6 @@ const sinsalByCode: Partial<Record<string, ComputedSinsalId>> = {
 
 export async function generateCompatibilityProductDraft(
   input: CompatibilityGenerationInput,
-  options: CompatibilityGenerationHandlerOptions = {},
 ): Promise<CompatibilityGenerationResult> {
   if (input.kind !== "compatibility") {
     return compatibilityFailure({
@@ -172,19 +157,9 @@ export async function generateCompatibilityProductDraft(
     });
   }
 
-  let draftResult: CompatibilityReportWriterResult;
+  let draft: CompatibilityReportDraft;
   try {
-    draftResult =
-      options.writer?.enabled === true && options.writer.config !== undefined
-        ? await generateCompatibilityReportDraft({
-            evidencePacket,
-            config: options.writer.config,
-          })
-        : {
-            draft: buildCompatibilityFallbackDraft(evidencePacket),
-            model: "local-compatibility-fallback",
-            repaired: false,
-          };
+    draft = buildCompatibilityFallbackDraft(evidencePacket);
   } catch (error) {
     return compatibilityFailure({
       code: "COMPATIBILITY_GENERATION_FAILED",
@@ -192,7 +167,7 @@ export async function generateCompatibilityProductDraft(
     });
   }
 
-  const validation = validateCompatibilityReportDraft(draftResult.draft, {
+  const validation = validateCompatibilityReportDraft(draft, {
     evidencePacket,
     allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(evidencePacket),
     allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(evidencePacket),

@@ -1,0 +1,183 @@
+/**
+ * 안전망 문장 검사(P3 D, 결정론·호출 0). 위반 문장은 지우고 기록한다.
+ * 삭제: 날짜·시기 + 사건 확정 / 입력에 없는 사실(연인·배우자·자녀·직업 형태) / 시간 미상인데 시주·자녀 자리 / MBTI 없음인데 MBTI /
+ *       내부 용어 / 옛 부정 낱말(A-3) / 문체 예시와 15자 이상 일치 / 책 안에서 이미 나온 같은 문장(20자 이상, 뒤의 것) /
+ *       스스로 김빼는 말·이별 권유(P3.5 A6) / 궁합 점수·구간과 어긋나는 말(P4 C3) /
+ *       경험 단정 중 경향형·질문형으로 바꿀 수 없는 것(P3.6 A6, 바꿀 수 있으면 바꾸고 replacements에 기록) / 인연·결혼 시기 말(P3.7 1-5).
+ * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
+ */
+import { ORPHAN_CONNECTIVE, stripConnective } from "./orphan";
+import { STYLE_EXAMPLES } from "../prompt/examples";
+import ontology from "@/data/knowledge-v5/behavior-ontology.json";
+import { AWKWARD_PHRASE, FAMILY_MEMBER, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences, tidyText } from "./patterns";
+
+export type SafetyFacts = {
+  readonly birthTimeKnown: boolean;
+  readonly mbti: string | null;
+  readonly relationship: "single" | "dating" | "married" | "unknown";
+  readonly children: "has" | "none" | "unknown";
+  readonly job: "employed" | "business" | "student" | "none";
+  /** 궁합 상품: v5 점수와 구간 이름(본문이 점수와 맞는지 본다). */
+  readonly compat?: { readonly score: number; readonly band: string };
+  /** 부모·자녀 궁합처럼 가족 호칭이 입력 사실인 책(P6b B-6 예외). */
+  readonly familyOk?: boolean;
+  /** 이 책 내부 별칭(그림 별명) 중 띄어쓰기가 있는 것: 본문에 나오면 지운다(P6b B-2). */
+  readonly nicknames?: readonly string[];
+};
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement" | "source_mention" | "rural_prop" | "nickname" | "family_member" | "internal_label" | "orphan_ref" | "intensity_mismatch";
+export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
+/** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
+export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
+
+const CONDITIONAL = /(되면|된다면|생기면|생긴다면|만나면|만난다면|라면|이라면|할 때|하게 될|언젠가|훗날|앞으로|미래의|만약|혹시|키우게|키운다면|함께 살게|함께 산다면|결혼한다면|결혼하면|할수록|마음에 둔|좋아하는 사람)/;
+const DATE = /(\d{4}년|\d{1,2}월|올해|내년|내후년|이번 달|다음 달|\d+살|\d+세|\d+대 ?(초|중|후)반|\d+년 ?(안|내|뒤|후)|(봄|여름|가을|겨울)에)/;
+const EVENT_DEFINITE = /(결혼|혼인|이혼|이별|헤어지|합격|승진|임신|출산|사고|질병|수술|이사|퇴사|이직|취업|창업|당첨|큰돈)[^.?!]{0,12}(합니다|됩니다|하게 됩니다|할 것입니다|할 겁니다|생깁니다|옵니다|찾아옵니다|일어납니다|있을 것입니다|있습니다)/;
+const ABSOLUTE = /(반드시|틀림없이|무조건|100%)[^.?!]{0,20}(결혼|이혼|이별|합격|승진|임신|출산|사고|질병|이직|취업|부자)/;
+const SPOUSE = /(?<![가-힣])(남편|아내|와이프|배우자)/;
+const SPOUSE_TERM = /배우자 ?(자리|별|궁|성)|(남편|아내|배우자)감|배우자를 (보는|고르는)/g;
+const PARTNER = /(?<![가-힣])(애인|연인|남자친구|여자친구|남친|여친)/;
+const CHILD = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|를|의|이|와|도|랑|한테|에게|는|은)\s/;
+const CHILD_TERM = /자녀 ?(자리|별|궁|성)|어린아이|아이처럼|아이 같은/g;
+/** 부모 역할 장(자녀 미입력·없음)에서도 잡는 꼴: 아이가 이미 있다고 단정하는 말(P6e — 그 장의 가정·명식 설명 문장은 통과). */
+const CHILD_EXIST = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은|도)? ?(있어|있고|있는|있습니다|있으니|있다|있지만|생겼|태어났)|(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은)? [^.?!]{0,12}(다니(는|고|며|니)|자라고 있)|우리 아이|(아이|자녀)를 (키우고 있|키우는 지금|두고 있|둔 지금)|아이 (둘|하나|셋)을? 키우/;
+/** 최종판 5: 자녀 미입력인데 "없다"고 단정(장덕민 연애 8장 "지금은 자녀가 없으니"). 입력이 없음(none)이면 쓸 수 있다. */
+const CHILD_ABSENT = /(?<![가-힣])(아이|자녀|아들|딸)(가|는|도)? ?(없으니|없어서|없지만|없는 지금|없습니다|없어요|없다)/;
+const JOB_EMPLOYED = /(당신의 회사|다니는 회사|직장 상사|팀장님|부장님|사무실에서|회사 동료)/;
+const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
+const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
+const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
+const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
+const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표)/;
+
+/** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
+const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
+/** 이별·단절 권유(P3.5 A6·P4): 낮은 점수에도 쓰지 않는다. */
+const BREAKUP = /헤어지(는 게|는 편이|길|세요|시길|기를 권)|그만 만나(세요|는 게|는 편)|인연이 아니(에요|니|라서|ㅂ니다|다)|맞지 않는 사이(니|라서|예요|입니다)|멀어지는 (게|편이) (낫|좋)|이별을 (권|추천|생각해 보)|관계를 (끊|끝내|정리하)(는 게|는 편이|세요|기를)/;
+const BAND_HIGH = /타고난 짝|천생연분|찰떡궁합|완벽한 궁합|최고의 궁합/;
+const BAND_LOW = /서로 다른 세계/;
+const BAND_NEVER = /최악의 궁합|안 맞는 사이|상극인 사이|궁합이 (나쁜|안 좋은|나쁩|안 좋)/;
+const SCORE_NUM = /(\d{2,3}) ?점/;
+/** 궁합에서 한쪽을 평가·훈계하는 말(P3.7 r2: 부모 쪽 소제목 끝 "정확함이 마음의 넉넉함을 대신하지는 않아요"). */
+const JUDGE = /(부모|자녀|상사|팀장|팀원|부하|동료|배우자|친구|연인|동업자)(로서)?의? ?(자격|실격)|좋은 (부모|자녀|상사|팀장|팀원|배우자|친구|연인)(가|이)? (아니|못 되|되려면|되기 어렵)|[을를] 대신하지는 (않아요|않습니다|못해요|못합니다)[.!]?$|(이|가) (모자란|부족한) (부모|자녀|상사|팀장|팀원|배우자)/;
+
+/** 내부 라벨(P6b E-6): 행동 축 이름 목록·양끝 이름 인용, 편집 낱말 "배지", 안내문 "제시되지 않습니다". */
+const DIM_NAMES = ontology.dimensions.map(d => d.name).filter(n => n.length >= 2);
+const POLE_LABELS = ontology.dimensions.flatMap(d => [d.poles.plus.label, d.poles.minus.label]);
+const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const INTERNAL_LABEL = new RegExp([
+  "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
+  // 지침을 그대로 말하는 문장(P6b r1: "이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요").
+  "필요할 때만 (짧게 |한 번씩 )?(되짚|꺼내|꺼낼|부르)", "(이|그) 그림은 (뒤에서|앞으로|이 책에서)", "뒤에서 (다시 )?(되짚|꺼내|꺼낼)겠?",
+  // 최종판 5: 조건형 규칙을 독자 안내로 옮김(장덕민 연애 8장 "아이를 키우게 된다면이라는 조건으로 읽어 주세요").
+  "(조건|가정)(형)?으로 (읽어|봐|들어) 주세요",
+  `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
+].join("|"));
+/** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */
+const DIM_WORDS = new Set([...DIM_NAMES, ...DIM_NAMES.map(n => n.split(" ")[0]).filter(w => w.length >= 2)]);
+const axisList = (s: string) => [...s.matchAll(/(?:[가-힣]+(?: [가-힣]+)?·){1,}[가-힣]+(?: [가-힣]+)?/g)].some(m => m[0].split("·").filter(x => DIM_WORDS.has(x.trim().replace(/(이|가|은|는|을|를|와|과|도)$/, ""))).length >= 2);
+/** 지운 문장 바로 뒤에서 앞 문장을 가리키며 시작하는 문장(P6b E-8): 지시어는 지우고, 연결어는 떼어 낸다. */
+const ORPHAN_REF = /^(이것|이건|이게|그것|그건|그게|이런|그런|이렇게|그렇게|이 때문에|그 때문에|이 덕분에|그 덕분에|그 결과|이 점)(은|이|이란|을|도|만)?\s/;
+// 최종 A-9: 접속어 목록은 orphan.ts 하나(그런데·하지만·그러나·그리고 포함).
+const ORPHAN_CONNECTOR = ORPHAN_CONNECTIVE;
+
+export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
+const EXAMPLE_WINDOW = 15;
+const exampleWindows = (() => {
+  const set = new Set<string>();
+  for (const e of STYLE_EXAMPLES) for (const line of e.text.split("\n")) {
+    if (line.startsWith("#")) continue;
+    const n = norm(line); for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) set.add(n.slice(i, i + EXAMPLE_WINDOW));
+  }
+  return set;
+})();
+/** 예시와 15자 이상 같은가. 그 고객 브리프에도 있는 구절(지식 DB 재료)은 예시 복사가 아니다. */
+export function copiesExample(sentence: string, allowed?: ReadonlySet<string>): boolean {
+  const n = norm(sentence);
+  for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) { const w = n.slice(i, i + EXAMPLE_WINDOW); if (exampleWindows.has(w) && !allowed?.has(w)) return true; }
+  return false;
+}
+/** 브리프 글에서 예시와 겹치는 15자 창만 모은다(예외 목록). */
+export function allowedWindows(briefText: string): Set<string> {
+  const out = new Set<string>(); const n = norm(briefText);
+  for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) { const w = n.slice(i, i + EXAMPLE_WINDOW); if (exampleWindows.has(w)) out.add(w); }
+  return out;
+}
+
+/** 문장 하나의 위반 규칙(없으면 null). */
+/** inConditionalChapter: 장 제목이 "부모가 된다면", "함께 살게 된다면"처럼 조건형이면 그 장의 배우자·자녀 문장은 조건문으로 본다.
+ * inChildChapter(P6e): 부모 역할 장은 장 전체가 "아이를 키우게 된다면"이다(브리프 parentState) — 자녀 문장은 이미 있다고 단정할 때만 잡는다. */
+export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlySet<string>, inConditionalChapter = false, inChildChapter = false): SentenceRule | null {
+  if ((DATE.test(s) && EVENT_DEFINITE.test(s)) || ABSOLUTE.test(s)) return "date_event";
+  if (LOVE_TIMING.test(s)) return "love_timing";
+  const conditional = inConditionalChapter || CONDITIONAL.test(s);
+  if (f.relationship !== "married" && SPOUSE.test(s.replace(SPOUSE_TERM, "")) && !conditional) return "fact_spouse";
+  if ((f.relationship === "single" || f.relationship === "unknown") && PARTNER.test(s) && !conditional) return "fact_partner";
+  if (f.children !== "has" && (inChildChapter ? CHILD_EXIST.test(s) : CHILD.test(s.replace(CHILD_TERM, "") + " ") && !conditional)) return "fact_children";
+  if (f.children === "unknown" && CHILD_ABSENT.test(s)) return "fact_children";
+  if (!conditional && ((f.job !== "employed" && JOB_EMPLOYED.test(s)) || (f.job !== "business" && JOB_BUSINESS.test(s)) || (f.job !== "student" && JOB_STUDENT.test(s)))) return "fact_job";
+  if (!f.birthTimeKnown && HOUR.test(s)) return "hour_pillar";
+  if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
+  if (INTERNAL.test(s)) return "internal_term";
+  if (INTERNAL_LABEL.test(s) || axisList(s)) return "internal_label";
+  if (RURAL_PROP.test(s)) return "rural_prop";
+  if (f.nicknames?.some(n => s.includes(n))) return "nickname";
+  // 가족 구성원은 조건형으로만(P6c E2: "부모님이 계시다면", "형제가 있다면"). 단정·과거 장면은 지운다.
+  // 명리 자리 이름("부모·형제 자리" = 월주)은 가족 구성원 전제가 아니다(P6c E2).
+  if (!f.familyOk && FAMILY_MEMBER.test(s.replace(/부모·?형제 ?(자리|궁)|부모 ?(자리|궁)|형제 ?(자리|궁)/g, "")) && !/(계시다면|계신다면|있다면|있으면|이라면|라면)/.test(s)) return "family_member";
+  if (OLD_NEGATIVE.test(s)) return "old_negative";
+  if (SOURCE_MENTION.test(s)) return "source_mention";
+  if (copiesExample(s, allowed)) return "example_copy";
+  if (DEFLATING.test(s)) return "self_deflating";
+  if (BREAKUP.test(s)) return "breakup_advice";
+  if (f.compat) {
+    if (JUDGE.test(s)) return "compat_judgement";
+    if (BAND_NEVER.test(s) || (BAND_HIGH.test(s) && f.compat.score < 90) || (BAND_LOW.test(s) && f.compat.band !== "서로 다른 세계")) return "band_mismatch";
+    const m = s.match(SCORE_NUM);
+    if (m && Number(m[1]) !== f.compat.score && /맞물림|궁합|점수|두 사람/.test(s)) return "score_mismatch";
+  }
+  return null;
+}
+
+/** 문단에서 위반 문장을 지운다. */
+export function filterParagraph(p0: string, f: SafetyFacts, chapter: number, deletions: Deletion[], allowed?: ReadonlySet<string>, seen?: Set<string>, inConditionalChapter = false, replacements?: Replacement[]): string {
+  // 바뀐 문장만 원문에서 고친다. 문단을 쪼갰다 다시 잇지 않는다(P3.7: "0.1"이 "0. 1"로, '?" 를'처럼 공백이 끼었다).
+  const p = tidyText(p0);
+  let out = p, prevDeleted = false;
+  for (const raw of splitSentences(p)) {
+    let s = raw;
+    // 앞 문장이 지워졌으면 그 문장을 가리키던 말을 정리한다(P6b E-8).
+    if (prevDeleted && ORPHAN_REF.test(s)) { deletions.push({ chapter, rule: "orphan_ref", sentence: s }); out = out.replace(raw, ""); continue; }
+    if (prevDeleted && ORPHAN_CONNECTOR.test(s)) { const t = stripConnective(s)!; out = out.replace(raw, t); s = t; }
+    prevDeleted = false;
+    if (isPastAssertion(s)) {
+      const soft = softenExperience(s);
+      if (!soft) { deletions.push({ chapter, rule: "experience_assert", sentence: s }); out = out.replace(raw, ""); prevDeleted = true; continue; }
+      replacements?.push({ chapter, rule: "experience_assert", from: s, to: soft }); s = soft; out = out.replace(raw, soft);
+    }
+    const key = norm(s);
+    const rule = sentenceViolation(s, f, allowed, inConditionalChapter) ?? (seen && key.length >= 20 && seen.has(key) ? "duplicate_sentence" : null);
+    if (rule) { deletions.push({ chapter, rule, sentence: s }); out = out.replace(s, ""); prevDeleted = true; } else if (key.length >= 20) seen?.add(key);
+  }
+  return out === p0 ? p0 : out.replace(/ {2,}/g, " ").trim();
+}
+
+export type StyleWarning = { readonly chapter: number; readonly kind: "past_assertion" | "term_first" | "prop_overuse" | "image_unnamed" | "trait_repeat" | "awkward_phrase" | "info_repeat"; readonly text: string };
+/** "풍경 같은 기운"처럼 그림만 있고 정체(쉬운 말(용어))가 없는 기운 이름(P3.7 1-5). 같은 문단에 괄호 용어가 있으면 정체를 밝힌 것으로 본다. */
+const IMAGE_ONLY = /[가-힣]+ 같은 (기운|힘)(?![가-힣]*\()/;
+/** 경고: 과거 단정 문장, 용어가 괄호 밖에서 먼저 나온 경우(용어 목록은 호출하는 쪽이 준다). */
+export function styleWarnings(chapter: number, paragraphs: readonly string[], terms: readonly string[], introduced: Set<string>): StyleWarning[] {
+  const out: StyleWarning[] = [];
+  for (const p of paragraphs) {
+    for (const s of splitSentences(p)) if (isPastAssertion(s)) out.push({ chapter, kind: "past_assertion", text: s });
+    for (const s of splitSentences(p)) if (AWKWARD_PHRASE.test(s)) out.push({ chapter, kind: "awkward_phrase", text: s });
+    if (!/\([가-힣·]{1,8}\)/.test(p)) for (const s of splitSentences(p)) if (IMAGE_ONLY.test(s) && !/앞에서|앞서|그|이 /.test(s.slice(0, s.search(IMAGE_ONLY)))) out.push({ chapter, kind: "image_unnamed", text: s });
+    for (const t of terms) {
+      if (introduced.has(t)) continue;
+      const i = p.indexOf(t); if (i < 0) continue;
+      introduced.add(t);
+      const open = p.lastIndexOf("(", i), close = p.lastIndexOf(")", i);
+      if (!(open > close)) out.push({ chapter, kind: "term_first", text: t });
+    }
+  }
+  return out;
+}

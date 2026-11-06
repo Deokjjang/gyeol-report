@@ -39,7 +39,7 @@
     {
       "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
-      "recordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "recordHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "contentHash": "076416ee7eeef41267c9b980e102ebcb60afb193452ea1fe30ff52320d692cbd",
       "reviewUnits": [
         "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9"
@@ -148,7 +148,7 @@
     {
       "catalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
       "originalId": "cpr:material:CH04.P2:private-criteria",
-      "recordHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "recordHash": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
       "contentHash": "e93d91997862d48d4bcafef22c56b6a9c5e7492d77c767454ab7b5576e2ca2e6",
       "reviewUnits": [
         "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856"
@@ -157,7 +157,7 @@
     {
       "catalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
       "originalId": "cpr:material:CH04.P3:firm-boundary-close",
-      "recordHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "recordHash": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
       "contentHash": "ce83cc04061513fea0c07fece310fb9235104814556651e7b143d89d89f3e0ac",
       "reviewUnits": [
         "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa"

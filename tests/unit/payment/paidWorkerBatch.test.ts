@@ -25,10 +25,10 @@ describe("bounded paid worker admission (no new job state machine)", () => {
     expect(await runPaidReportBatch(store, runtime, { ...dependencies, startedAt: 0, now: () => time, runJob })).toMatchObject({ processed: 1, stop: "time_budget" });
     expect(runJob).toHaveBeenCalledTimes(1);
   });
-  it("lets a slow legacy writer finish, then admits no further work", async () => {
+  it("lets a slow job finish, then admits no further work", async () => {
     let time = 0;
     const runJob = vi.fn(async () => { time += 120_000; return { ok: true, status: "COMPLETED" }; });
-    expect(await runPaidReportBatch(store, { enabled: true, config: { enabled: true, apiKey: "mock", model: "mock" } }, { ...dependencies, now: () => time, runJob })).toMatchObject({ completed: 1, stop: "time_budget" });
+    expect(await runPaidReportBatch(store, runtime, { ...dependencies, now: () => time, runJob })).toMatchObject({ completed: 1, stop: "time_budget" });
     expect(runJob).toHaveBeenCalledTimes(1);
   });
   it("does not claim at high process RSS; rechecks between every job", async () => {

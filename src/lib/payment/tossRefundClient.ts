@@ -41,7 +41,7 @@ export function createTossRefundProvider(secretKey: string, fetchImpl: typeof fe
   const request = async (intent: RefundIntent, cancel: boolean): Promise<RefundProviderResult> => {
     if (cancel && (!intent.canPost || !Number.isFinite(Date.parse(intent.firstAttemptAt)) || Date.now()>=Date.parse(intent.firstAttemptAt)+15*24*60*60*1000)) return { ok:false,code:"PROVIDER_MISMATCH" };
     if (!secretKey || !intent.paymentKey || intent.paymentKey.length>200 || !Number.isSafeInteger(intent.amount) || intent.amount<=0 || intent.amount>intent.originalAmount
-      || !/^ticket-refund-[a-f0-9-]{36}$/.test(intent.idempotencyKey) || !intent.cancelReason || intent.cancelReason.length>200) return { ok:false,code:"PROVIDER_MISMATCH" };
+      || !/^(ticket|order)-refund-[a-f0-9-]{36}$/.test(intent.idempotencyKey) || !intent.cancelReason || intent.cancelReason.length>200) return { ok:false,code:"PROVIDER_MISMATCH" };
     const abort=new AbortController(), timer=setTimeout(()=>abort.abort(),15000);
     try {
       const response=await fetchImpl(`https://api.tosspayments.com/v1/payments/${encodeURIComponent(intent.paymentKey)}${cancel ? "/cancel" : ""}`, {

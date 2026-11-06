@@ -6,7 +6,6 @@ import { validateProductPublication } from "../../../src/lib/report-generation/p
 import type { ComprehensiveReportV2Draft } from "../../../src/lib/report-generation/comprehensiveReportDraftTypes";
 import type { ComprehensiveReportEvidencePacket } from "../../../src/lib/report-knowledge/comprehensiveReportEvidenceTypes";
 import { ComprehensiveReportV2View } from "../../../src/app/reports/[reportId]/ComprehensiveReportV2View";
-import { buildOpenAIComprehensiveReportWriterMessages } from "../../../src/lib/report-generation/openaiReportWriterPrompt";
 import { comprehensiveFeaturePerspectives } from "../../../src/lib/report-generation/comprehensiveFeaturePerspectives";
 const customers = [
     { name: "가람", birthDate: "1996-12-06", birthTime: "14:15", gender: "MALE", mbtiType: "INTP", beforeChars: 17223 },
@@ -122,24 +121,5 @@ describe("comprehensive personal narrative", () => {
         expect(r.evidence.bridgeFactIds).not.toContain("ten_god_zheng_yin");
         expect(r.evidence.bridgeFactIds).not.toContain("structure_no_resource");
         expect(r.text).not.toContain("무인성");
-    });
-    it("writer receives the same selected theme/section basis as fallback; valid prose is not replaced", async () => {
-        const r = await report();
-        const { productVersion, ...draft } = r.draft as ComprehensiveReportV2Draft & {
-            productVersion: string;
-        };
-        expect(productVersion).toBe("v2");
-        const spy = vi.fn<typeof fetch>(async () => Response.json({ output_text: JSON.stringify(draft) }));
-        const result = await generateProductReport(payload(), { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock", fetchImpl: spy } }, "normal_writer");
-        expect(result.ok, result.ok ? "" : result.error.message).toBe(true);
-        expect(spy).toHaveBeenCalledOnce();
-        const request = JSON.parse(String(spy.mock.calls[0][1]?.body));
-        expect(JSON.stringify(request.input)).toContain("sectionSelectedEvidence");
-        expect(result.delivery).toMatchObject({ writerValidation: "pass", fallbackUsed: false });
-        if (result.ok)
-            expect((result.draft as ComprehensiveReportV2Draft).longformReadings).toEqual(r.draft.longformReadings);
-        const prompt = buildOpenAIComprehensiveReportWriterMessages({ mbtiType: "INTP", evidencePacket: r.evidence });
-        expect(JSON.stringify(prompt)).toContain("sectionSelectedEvidence");
-        expect(JSON.stringify(prompt)).not.toContain("이런 연결 문장을 최소 4개 이상");
     });
 });

@@ -208,7 +208,7 @@
           "originalId": "cpr:material:CH01.P4:precision-has-a-stop",
           "recordSha256": "2c41ca876dd134946b7f3507a41c22753707d8384e456dbaa9ceeb3d4de6bf96",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "65997032e9eb3e8034579fe57d86808c572772a38ad0de48e4728809dfef1c5b"
+          "fileSha256": "ddd4c4a0412caca935ab3fc3efeccb00a5db0b8f5c335bbabfb6081ab7cacc69"
         },
         "matchedCatalogKey": "kc:v1:f76d43ee03478befba1763f0b4b67636864f5a29f0825f1589f582e1f796b918",
         "originalId": "cpr:material:CH01.P4:precision-has-a-stop",
@@ -448,7 +448,7 @@
             "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
             "sourceKind": "mbti_trait",
             "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "identity",
@@ -559,15 +559,15 @@
           "exportName": "CH05_MATERIALS",
           "index": 8,
           "originalId": "cpr:material:CH05.P3:boundaries-enable-support",
-          "recordSha256": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+          "recordSha256": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6"
+          "fileSha256": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd"
         },
         "matchedCatalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
         "originalId": "cpr:material:CH05.P3:boundaries-enable-support",
         "role": "ORIGINAL_RECORD",
-        "expectedHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
-        "actualHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+        "expectedHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
+        "actualHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
         "hashAlgorithm": "SHA256_JSON_INSERTION",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
         "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -763,7 +763,7 @@
             "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
             "sourceKind": "mbti_trait",
             "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "identity",
@@ -838,15 +838,15 @@
           "exportName": "CH06_MATERIALS",
           "index": 2,
           "originalId": "cpr:material:CH06.P1:help-with-hidden-expectation",
-          "recordSha256": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+          "recordSha256": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321"
+          "fileSha256": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c"
         },
         "matchedCatalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
         "originalId": "cpr:material:CH06.P1:help-with-hidden-expectation",
         "role": "ORIGINAL_RECORD",
-        "expectedHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
-        "actualHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+        "expectedHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
+        "actualHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
         "hashAlgorithm": "SHA256_JSON_INSERTION",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
         "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -1042,7 +1042,7 @@
             "auditRef": "source-catalog.json#1ad06916b42f0eb3ee39",
             "sourceKind": "mbti_trait",
             "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "workplace",
@@ -1117,15 +1117,15 @@
           "exportName": "CH08_MATERIALS",
           "index": 2,
           "originalId": "cpr:material:CH08.P1:work-through-shared-purpose",
-          "recordSha256": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+          "recordSha256": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "0af6d347e9607d08ca3a806878db5da989415ceb40fdde81d9ce44c20d4d9dd4"
+          "fileSha256": "7b5931870ee2b50b33bcee2b6ecd0dc1b67d3e34f263f4143926da8c80bb4710"
         },
         "matchedCatalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
         "originalId": "cpr:material:CH08.P1:work-through-shared-purpose",
         "role": "ORIGINAL_RECORD",
-        "expectedHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
-        "actualHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+        "expectedHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
+        "actualHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
         "hashAlgorithm": "SHA256_JSON_INSERTION",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
         "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -1505,7 +1505,7 @@
           "originalId": "cpr:material:CH05.P1:learn-and-transfer",
           "recordSha256": "3f6132c94c1f8b8d2b2fd77b2563ad002c114a884da97f071db10d66960a3f73",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6"
+          "fileSha256": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd"
         },
         "matchedCatalogKey": "kc:v1:48d3944d4d436dc54d747dc7f8c3dc2ff0e5ca70f22d61d3e1d65e4a1efd9d3d",
         "originalId": "cpr:material:CH05.P1:learn-and-transfer",
@@ -1864,7 +1864,7 @@
           "originalId": "cpr:material:CH06.P1:overused-output-standard",
           "recordSha256": "0bb67d1bb71c90842a6a4a0015c763312029708c03de7d9b3eca82ba562dc09a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321"
+          "fileSha256": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c"
         },
         "matchedCatalogKey": "kc:v1:a41dc0936b1ca8a6830cf06a89e0a3e97a4bb534a5b13a648082f91704e46cdc",
         "originalId": "cpr:material:CH06.P1:overused-output-standard",
@@ -2245,7 +2245,7 @@
           "originalId": "cpr:material:CH12.P3:critique-without-invitation",
           "recordSha256": "2d66d7b4baeb916db336a8630c11b97a57c54b51ccf67f2cc749aae377e1a8e5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "146a4a684281cb220563662c33618678cac8bac901170664d82761d0161f4a77"
+          "fileSha256": "814c5d3293f7b464b8864f0297f386b6b7ba61007e90352e15622dffba61d5f7"
         },
         "matchedCatalogKey": "kc:v1:2da9f41d78d62f49d322fba48250334945ad0a2d87322462cf6c8fb70a230b3e",
         "originalId": "cpr:material:CH12.P3:critique-without-invitation",
@@ -4444,7 +4444,7 @@
           "originalId": "cpr:material:CH01.P4:precision-has-a-stop",
           "recordSha256": "2c41ca876dd134946b7f3507a41c22753707d8384e456dbaa9ceeb3d4de6bf96",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "65997032e9eb3e8034579fe57d86808c572772a38ad0de48e4728809dfef1c5b"
+          "fileSha256": "ddd4c4a0412caca935ab3fc3efeccb00a5db0b8f5c335bbabfb6081ab7cacc69"
         },
         "matchedCatalogKey": "kc:v1:f76d43ee03478befba1763f0b4b67636864f5a29f0825f1589f582e1f796b918",
         "originalId": "cpr:material:CH01.P4:precision-has-a-stop",
@@ -5301,7 +5301,7 @@
           "originalId": "compassionate_facilitator",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+          "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
         },
         "matchedCatalogKey": "kc:v1:50b2c4840898a225b7fb1e7fdb5e29e2c55e9a15f086dbca5a1edac5c2f851ad",
         "originalId": "compassionate_facilitator",
@@ -6349,7 +6349,7 @@
             "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
             "sourceKind": "mbti_trait",
             "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "identity",
@@ -6460,15 +6460,15 @@
           "exportName": "CH05_MATERIALS",
           "index": 8,
           "originalId": "cpr:material:CH05.P3:boundaries-enable-support",
-          "recordSha256": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+          "recordSha256": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6"
+          "fileSha256": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd"
         },
         "matchedCatalogKey": "kc:v1:e03f48d0f56e2e9300f11cadd1ee3c25eae0f14b1bd6d83c3fa697ba2a7ca9e3",
         "originalId": "cpr:material:CH05.P3:boundaries-enable-support",
         "role": "ORIGINAL_RECORD",
-        "expectedHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
-        "actualHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+        "expectedHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
+        "actualHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
         "hashAlgorithm": "SHA256_JSON_INSERTION",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
         "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -7023,7 +7023,7 @@
             "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
             "sourceKind": "mbti_trait",
             "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "identity",
@@ -7098,15 +7098,15 @@
           "exportName": "CH06_MATERIALS",
           "index": 2,
           "originalId": "cpr:material:CH06.P1:help-with-hidden-expectation",
-          "recordSha256": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+          "recordSha256": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321"
+          "fileSha256": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c"
         },
         "matchedCatalogKey": "kc:v1:39c2a3c22b2223353604f3da25c33788ed5f0016313e34b50223aeb36d8097b1",
         "originalId": "cpr:material:CH06.P1:help-with-hidden-expectation",
         "role": "ORIGINAL_RECORD",
-        "expectedHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
-        "actualHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+        "expectedHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
+        "actualHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
         "hashAlgorithm": "SHA256_JSON_INSERTION",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
         "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -7138,7 +7138,7 @@
           "originalId": "collaborative_environment",
           "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+          "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
         },
         "matchedCatalogKey": "kc:v1:1f5f6f3c964b3e86f13af856e4a71cc3035953508238ce7129956743e1cc452b",
         "originalId": "collaborative_environment",
@@ -7199,7 +7199,7 @@
             "auditRef": "source-catalog.json#1ad06916b42f0eb3ee39",
             "sourceKind": "mbti_trait",
             "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-            "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "originalState": {
               "type": "ENFJ",
               "area": "workplace",
@@ -7274,15 +7274,15 @@
           "exportName": "CH08_MATERIALS",
           "index": 2,
           "originalId": "cpr:material:CH08.P1:work-through-shared-purpose",
-          "recordSha256": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+          "recordSha256": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "0af6d347e9607d08ca3a806878db5da989415ceb40fdde81d9ce44c20d4d9dd4"
+          "fileSha256": "7b5931870ee2b50b33bcee2b6ecd0dc1b67d3e34f263f4143926da8c80bb4710"
         },
         "matchedCatalogKey": "kc:v1:74d8608023d4d4a47657eb8bff050687adc19a59945318cdd94a91849cd1ddc2",
         "originalId": "cpr:material:CH08.P1:work-through-shared-purpose",
         "role": "ORIGINAL_RECORD",
-        "expectedHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
-        "actualHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+        "expectedHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
+        "actualHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
         "hashAlgorithm": "SHA256_JSON_INSERTION",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
         "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -7944,7 +7944,7 @@
           "originalId": "cpr:material:CH05.P1:learn-and-transfer",
           "recordSha256": "3f6132c94c1f8b8d2b2fd77b2563ad002c114a884da97f071db10d66960a3f73",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6"
+          "fileSha256": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd"
         },
         "matchedCatalogKey": "kc:v1:48d3944d4d436dc54d747dc7f8c3dc2ff0e5ca70f22d61d3e1d65e4a1efd9d3d",
         "originalId": "cpr:material:CH05.P1:learn-and-transfer",
@@ -9740,7 +9740,7 @@
           "originalId": "cpr:material:CH06.P1:overused-output-standard",
           "recordSha256": "0bb67d1bb71c90842a6a4a0015c763312029708c03de7d9b3eca82ba562dc09a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321"
+          "fileSha256": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c"
         },
         "matchedCatalogKey": "kc:v1:a41dc0936b1ca8a6830cf06a89e0a3e97a4bb534a5b13a648082f91704e46cdc",
         "originalId": "cpr:material:CH06.P1:overused-output-standard",
@@ -10166,7 +10166,7 @@
           "originalId": "cpr:material:CH12.P3:critique-without-invitation",
           "recordSha256": "2d66d7b4baeb916db336a8630c11b97a57c54b51ccf67f2cc749aae377e1a8e5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-          "fileSha256": "146a4a684281cb220563662c33618678cac8bac901170664d82761d0161f4a77"
+          "fileSha256": "814c5d3293f7b464b8864f0297f386b6b7ba61007e90352e15622dffba61d5f7"
         },
         "matchedCatalogKey": "kc:v1:2da9f41d78d62f49d322fba48250334945ad0a2d87322462cf6c8fb70a230b3e",
         "originalId": "cpr:material:CH12.P3:critique-without-invitation",

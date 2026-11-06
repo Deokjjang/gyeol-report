@@ -1,20 +1,26 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, Fragment, type CSSProperties } from "react";
 import { REPORT_PRICE_LABEL_KO } from "../../../lib/payment/reportProductCatalog";
+import { bookLengthParts } from "../../../lib/book/bookLength";
 import type { ReportTableElementColorToken } from "../../../lib/report-tables/types";
 import { prePaymentRefundNoticeKo } from "../../../lib/legal/refundPolicy";
 import { prePaymentPrivacyNoticeKo } from "../../../lib/legal/privacyPolicy";
 import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTypes";
+import { V5_ROW_LABELS } from "../../../lib/report-tables/v5NatalRows";
 import { CONSENT_SHORT_LABELS, MBTI, requiredConsents, toggleAll, type Book, type Person, type PublishingState } from "./model";
 import { BusinessDetails, DetailSheet, LegalAccordion, SUPPORT_COPY } from "./BookLegal";
 import s from "./book.module.css";
 import MetaSettingsLink from "../../../components/analytics/MetaSettingsLink";
+import SocialIconLinks from "../../../components/legal/SocialIconLinks";
+import { SOCIAL_LINKS, SUPPORT_CHAT_URL } from "../../../lib/legal/socialLinks";
 
+/** 이름이 없는 표지(책장의 상품 카드)는 아래 오른쪽에 분량(최종 A 15: 「13장 / 약 1만 자」, v5 저장본 전체 평균), 판매 중지 책은 예전 한 줄. */
 export function Cover({ book, name, title, back = false }: { book: Book; name?: string; title?: string; back?: boolean }) {
+  const length = bookLengthParts(book.productKey);
   return <div className={`${s.cover} ${back ? s.backCover : ""}`} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <div className={s.coverTop}><span>GYEOL<br />REPORT</span><span>ISSUE<br />{book.issue}</span></div>
     <div className={s.coverTitle}>{title ?? book.title}</div>
-    <div className={s.coverBottom}><span>PERSONAL<br />EDITION</span><span>{name ? `${name}의 책` : "한 사람, 한 권."}</span></div>
+    <div className={s.coverBottom}><span>PERSONAL<br />EDITION</span>{name ? <span>{`${name}의 책`}</span> : length ? <span data-book-length>{length.chapters}<br />{length.chars}</span> : <span>한 사람, 한 권.</span>}</div>
     <span className={s.spine} aria-hidden="true" />
   </div>;
 }
@@ -95,12 +101,16 @@ export function NatalTable({ data }: { data: V4CustomerTables[number] }) {
   const yin = characters.filter(c => c.yinYang === "yin").length;
   return <div className={s.tables}><table><caption>{data.name}의 만세력</caption><thead><tr><th scope="col">구분</th>{t.columns.map(c => <th scope="col" key={c.key}>{c.label}</th>)}</tr></thead><tbody>
     {[["천간", t.stemRow], ["지지", t.branchRow]].map(([label, row]) => <Fragment key={String(label)}><tr><th scope="row">{String(label)}</th>{keys.map(key => { const cell = (row as typeof t.stemRow)[key]; return <td key={key} data-element-cell={cell?.colorToken}>{cell ? <><strong data-element={cell.colorToken}>{cell.hanja}</strong><span>{cell.ko} · {cell.yinYang === "yin" ? "음" : "양"}</span><span>{ELEMENT_LABELS[cell.colorToken]}</span></> : <span>미확인</span>}</td>; })}</tr><tr><th scope="row">십성</th>{keys.map(key => <td key={key}>{(row as typeof t.stemRow)[key]?.tenGod ?? "—"}</td>)}</tr></Fragment>)}
-    {t.detailRows.map(row => <tr key={row.key}><th scope="row">{row.key === "interactions" ? <abbr title={row.label}>합·충</abbr> : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{text}</span>) : "—"}</td>)}</tr>)}
+    {t.detailRows.map(row => <tr key={row.key}><th scope="row">{row.key === "interactions" && row.label !== V5_ROW_LABELS.interactions ? <abbr title={row.label}>합·충</abbr> : row.label}</th>{keys.map(key => <td key={key}>{row.cells[key].length ? row.cells[key].map((text, i) => <span key={i}>{text}</span>) : "—"}</td>)}</tr>)}
     </tbody></table><p className={s.hint}>음 {yin} · 양 {characters.length - yin} — {characters.length === 8 ? "네 기둥" : "확인된 기둥"}의 천간·지지 기준</p>{t.timeCorrectionNote ? <p className={s.hint}>{t.timeCorrectionNote}</p> : null}<h2>오행의 구성</h2><p className={s.hint}>{t.fiveElementDistribution.basisLabel} / 지장간 포함 가중</p><div className={s.elements}>{data.elements.map((e, i) => <div key={e.label} data-element-cell={t.fiveElementDistribution.items[i].colorToken}><b data-element={t.fiveElementDistribution.items[i].colorToken}>{ELEMENT_LABELS[t.fiveElementDistribution.items[i].colorToken]}</b><span>원국 {e.visible}</span><span>가중 {Number(e.weighted.toFixed(2))}</span>{e.state ? <span>{e.state}</span> : null}</div>)}</div></div>;
 }
 export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mbti"]; name: string }) {
   if (!m) return <><p className={s.eyebrow}>{name}의 MBTI</p><h1>MBTI 모름</h1><p className={s.profileLead}>입력하지 않은 유형은 추정하지 않습니다. 이 책은 확인된 명리 데이터를 기준으로 읽을 수 있습니다.</p></>;
-  return <><p className={s.eyebrow}>WAYS OF BEING / {name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
+  return <><p className={s.eyebrow}>WAYS OF BEING / {name}의 MBTI</p><h1 className={s.mbtiTitle}>{m.type}<span>{m.titleKo}</span></h1><MbtiProfile data={m} /></>;
+}
+/** MBTI 쪽 본문(유형 제목 아래). 주인공 쪽에서는 접어서 보여 준다. */
+export function MbtiProfile({ data: m }: { data: NonNullable<V4CustomerTables[number]["mbti"]> }) {
+  return <><p className={s.archetype}>{m.archetype}</p><p className={s.profileLead}>{m.oneLine}</p><div className={s.profile}>
     <h2>선호지표</h2><div className={s.axes}>{m.preferenceRows.map(r => <section key={r.axisKey} aria-label={r.label}><h3>{r.label}</h3><div>{[r.left, r.right].map(v => <div key={v.code} data-selected={v.selected}><b>{v.code}</b><span><strong>{v.nameKo}{v.selected ? " ✓" : ""}</strong><small>{v.nameEn}</small><span>{v.description}</span></span></div>)}</div></section>)}</div>
     <h2>기능서열</h2><table className={s.functions}><caption className={s.srOnly}>기능서열</caption><colgroup><col style={{ width: 56 }} /><col style={{ width: 38 }} /><col /></colgroup><thead className={s.srOnly}><tr><th scope="col">순서</th><th scope="col">기능</th><th scope="col">설명</th></tr></thead><tbody>{m.functionRows.map(r => <tr key={r.code}><th scope="row">{r.label}</th><td>{r.code}</td><td><strong>{r.nameKo}</strong><small>{r.attitude} · {r.domain}</small><p>{r.description}</p></td></tr>)}</tbody></table>
     <h2>핵심 요약</h2><dl className={s.coreSummary}>{m.coreSummary.map(r => <div key={r.key}><dt>{r.label}</dt><dd>{r.text}</dd></div>)}</dl>
@@ -111,9 +121,9 @@ export function MbtiPage({ data: m, name }: { data: V4CustomerTables[number]["mb
 export function PreviewFooter({ publicPresentation = false }: { publicPresentation?: boolean }) {
   const [legal, setLegal] = useState(false);
   return <footer className={s.siteFooter}><div className={s.footerTop}><span className={s.micro}>GYEOL REPORT<br />PERSONAL PUBLISHING</span><nav aria-label="소셜과 고객 문의">
-    <a href="https://www.instagram.com/gyeolreport/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
-    <a href="http://pf.kakao.com/_sbHaX/chat" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
-    <a href="http://pf.kakao.com/_sbHaX" target="_blank" rel="noopener noreferrer">채널 보기</a>
+    <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" /></svg></a>
+    <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer" aria-label="카카오톡 고객 문의"><ShareIcon kind={0} /></a>
+    <SocialIconLinks />
     </nav></div><p>{SUPPORT_COPY}</p><p>전화 상담은 제공하지 않습니다.</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
     <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>

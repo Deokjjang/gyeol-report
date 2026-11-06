@@ -1,0 +1,1184 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "ESTP",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "ESTP-work-01",
+        "text": "기계가 멈추면 매뉴얼보다 덮개부터 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-02",
+        "text": "거래처 할인 요구에 그 자리에서 맞받기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-03",
+        "text": "결재가 세 단계인 회사에서 표정 굳기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ESTP-work-04",
+        "text": "현장에서 바로 정할 권한을 받고 눈빛 바뀌기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-05",
+        "text": "영업 전화 첫 문장으로 상대 웃게 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-06",
+        "text": "회의 중 시계 보다가 결론부터 던지기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-07",
+        "text": "보고서 쓰는 일이 협상보다 힘들 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ESTP-work-08",
+        "text": "급한 장애 연락에 헬멧 쓰고 바로 출동",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-09",
+        "text": "전시회 부스에서 행인 붙잡고 시연하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-10",
+        "text": "마감 하루 전 일정표를 몸으로 뒤집기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-11",
+        "text": "창고에서 재고를 직접 세며 흐름 파악하기",
+        "rel": "any",
+        "job": "business",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-12",
+        "text": "가게 문 열자마자 오늘 매출 감 잡기",
+        "rel": "any",
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ESTP-work-13",
+        "text": "손님의 망설임을 보고 한 번 더 제안하기",
+        "rel": "any",
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ESTP-work-14",
+        "text": "위기 상황 회의에서 제일 먼저 손 들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-15",
+        "text": "앉아 있는 회의 대신 현장 걸으며 점검하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-16",
+        "text": "계약 직전 상대 표정 변화 놓치지 않기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-17",
+        "text": "새 업무가 떨어지면 일단 해 보고 고치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-18",
+        "text": "휴대폰 두 대로 통화를 돌려막는 바쁜 하루",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-19",
+        "text": "탕비실 농담으로 팀 분위기 풀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-20",
+        "text": "의뢰를 전화 한 통으로 확정 짓기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-21",
+        "text": "즉흥 질문에 더 빛나는 면접장",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-22",
+        "text": "공사 현장에서 도면 대신 눈대중으로 판단하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-23",
+        "text": "하루 배송 동선을 머릿속으로 최적화하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-24",
+        "text": "시간 안에 끝내라는 말에 속도 붙기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-25",
+        "text": "경쟁사 소식에 바로 맞불 전략 짜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-26",
+        "text": "세부 서류는 마지막 날 한꺼번에 처리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-27",
+        "text": "영상 편집 마감 전날 밤샘 막판 스퍼트",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-28",
+        "text": "팀 채팅에 글 대신 음성 메시지 남기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-29",
+        "text": "막힌 동료 자리로 와서 손부터 대기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-30",
+        "text": "행사 중 돌발 상황을 즉흥으로 막기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-31",
+        "text": "수강생 앞에서 직접 시범부터 보이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-32",
+        "text": "퇴근 전 못 끝낸 일 몰아서 해치우기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-33",
+        "text": "신입 교육에서 이론은 줄이고 실습부터 시키기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-work-34",
+        "text": "부동산 현장에서 바로 흥정 시작하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "money": [
+      {
+        "id": "ESTP-money-01",
+        "text": "성과급 들어온 주말에 장비부터 결제하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-02",
+        "text": "중고 거래 흥정에서 만 원 깎고 기뻐하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-03",
+        "text": "주식이 떨어진 날 추가 매수 버튼 누르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-04",
+        "text": "손실 선을 미리 적어 두고 손 멈추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-05",
+        "text": "친구들과 내기 한 판으로 저녁값 정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-06",
+        "text": "고급 시계 쇼윈도 앞에서 발길 멈추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-07",
+        "text": "카드값 문자를 보고서야 계산기 켜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-08",
+        "text": "캠핑 장비 세일 알림에 바로 결제하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-09",
+        "text": "오토바이 튜닝 부품 장바구니 채우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-10",
+        "text": "렌터카 즉흥 여행에서 비용 한 번에 지르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-11",
+        "text": "쓸 때 쓰고 벌 때 번다는 소비 감각",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-12",
+        "text": "현금 들고 가서 현장에서 흥정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-13",
+        "text": "게임 아이템 결제 앞에서 한 번 더 고민하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-14",
+        "text": "부업 아이디어에 계산 전에 시작부터 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-15",
+        "text": "술자리 계산을 먼저 일어나 해 버리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-16",
+        "text": "보험 상담 전화를 길게 못 듣고 끊기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-17",
+        "text": "불어난 수익을 보고 바로 인출하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-18",
+        "text": "월말에 통장이 비어도 크게 걱정 않기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-19",
+        "text": "중고차 매물 보러 새벽에 달려가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-20",
+        "text": "헬스장 장기 결제를 즉석 할인에 지르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-21",
+        "text": "신상 운동화 발매일에 앱 켜 놓고 대기하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-22",
+        "text": "최소 주문 금액 맞추려고 하나 더 담기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-23",
+        "text": "소액 투자 앱을 하루 몇 번씩 확인하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-24",
+        "text": "경품 이벤트 응모에 승부욕 올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-25",
+        "text": "식당에서 현금 할인부터 먼저 제안하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-26",
+        "text": "월급 받자마자 선물부터 사 들고 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-27",
+        "text": "지인의 사업 제안에 일단 만나 보자고 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-28",
+        "text": "적금 해지 버튼 앞에서 마음 흔들리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-29",
+        "text": "고가 장비 중고 시세를 한눈에 꿰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-30",
+        "text": "빌려 달라는 말에 한 번에 승낙하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-31",
+        "text": "항공권 특가 알림에 바로 예약하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-32",
+        "text": "영수증을 모아 두었다 한 번에 몰아서 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-money-33",
+        "text": "편의점 행사 상품 두 개 묶음에 손 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "love": [
+      {
+        "id": "ESTP-love-01",
+        "text": "썸 상대에게 지금 바다 보러 가자고 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-02",
+        "text": "소개팅 첫 만남에서 바로 편하게 말 놓기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-03",
+        "text": "첫 데이트를 드라이브나 액티비티로 정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-04",
+        "text": "호감 가는 사람 앞에서 장난으로 간 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-05",
+        "text": "고백 타이밍을 오래 재지 않고 질러 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-06",
+        "text": "답장은 빠르고 감정 표현은 가볍게",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-07",
+        "text": "연락이 뜸해진 상대에게 불쑥 전화 걸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-08",
+        "text": "같이 번지점프 해 보자고 제안하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-09",
+        "text": "상대 취향 조사 없이 즉흥 코스로 데려가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-10",
+        "text": "호감 있는 이성 친구와도 스스럼없이 어울리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-11",
+        "text": "호감 가는 사람 앞에서 운동 실력 보이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-12",
+        "text": "깊은 대화보다 같이 노는 시간에서 마음 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-13",
+        "text": "거절당하면 한 번 웃고 금방 털어 내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-14",
+        "text": "썸이 길어지면 답답해서 결론부터 묻기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-15",
+        "text": "연애 앱 매칭이 되면 바로 약속 잡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-16",
+        "text": "술집보다 스포츠 관람으로 만남 잡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-17",
+        "text": "진지한 질문에 농담으로 넘기려 할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-18",
+        "text": "계획 없이 기차표부터 끊자고 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-19",
+        "text": "내 감정을 말로 정리하는 데 시간이 걸릴 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-20",
+        "text": "오래 사귀면 지루해질까 걱정하는 연애관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-21",
+        "text": "이전 연애를 가볍게 얘기하다 분위기 식히기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-22",
+        "text": "상대 친구 모임에 첫 만남부터 섞이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-23",
+        "text": "매력은 박력이라고 믿는 연애관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-24",
+        "text": "호감 상대에게 체험 이용권을 선물하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-25",
+        "text": "연인이 서운해 울 때 농담부터 던지기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-26",
+        "text": "연인의 동선 질문에 짜증이 올라오기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-27",
+        "text": "연인과 주말마다 새로운 장소 찾아 나서기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-28",
+        "text": "연인이 이성 친구 관계를 물어볼 때",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-29",
+        "text": "기념일을 깜빡하고 즉석 이벤트로 만회하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-30",
+        "text": "연인과 속도 내기 게임에 승부욕 부리기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-31",
+        "text": "연인의 진지한 대화 요청에 시선 피하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-love-32",
+        "text": "다툰 날 풀자며 드라이브부터 가자는 연인",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ESTP-relationships-01",
+        "text": "처음 만난 자리에서 십 분 만에 말 놓기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-02",
+        "text": "처음 보는 사람에게 별명 붙여 웃기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-03",
+        "text": "친구 하소연을 듣다 해결 버튼부터 누르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-04",
+        "text": "말이 안 통하면 두 번 설명 않고 거리 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-05",
+        "text": "단톡방에서 번개 모임을 즉석에서 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-06",
+        "text": "술자리에서 분위기 띄우는 건배사 맡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-07",
+        "text": "운동 동호회 경기 후 뒤풀이 이끌기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-08",
+        "text": "친구의 소개 자리에 같이 가 주겠다고 나서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-09",
+        "text": "당구장에서 내기 한 판으로 어색함 풀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-10",
+        "text": "곤란해 보이는 사람에게 먼저 나서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-11",
+        "text": "조용한 사람 옆에 앉아 농담으로 말 시키기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-12",
+        "text": "게임 길드에서 무리한 계획에 앞장서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-13",
+        "text": "친구 다툰 상대에게 직접 전화 걸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-14",
+        "text": "소개받은 사람과 바로 놀러 가자고 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-15",
+        "text": "무례한 말에 그 자리에서 짧게 받아치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-16",
+        "text": "뒤풀이에서 마이크 잡고 분위기 끌기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-17",
+        "text": "오래 본 친구와 새로운 놀이 시도하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-18",
+        "text": "낯선 모임에서 연락처부터 교환하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-19",
+        "text": "분위기 흐름 읽고 말투를 바로 바꾸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-20",
+        "text": "후배 밥 사 주며 한마디 던지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ESTP-relationships-21",
+        "text": "회식 자리에서 상사에게도 농담 던지기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ESTP-relationships-22",
+        "text": "뒷담화가 시작되면 화제 돌리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-23",
+        "text": "친구 이사 날 트럭 몰고 제일 먼저 도착하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-24",
+        "text": "SNS 라이브 댓글을 실시간으로 받아 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-25",
+        "text": "약속 장소에 일찍 도착해 주변 구경하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-26",
+        "text": "어색한 침묵을 장난으로 깨기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-27",
+        "text": "모임 투표에서 가장 모험적인 안 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-28",
+        "text": "다툰 사람과도 다음 날 평소처럼 인사",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-29",
+        "text": "험담보다 직접 말하자는 쪽에 서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-30",
+        "text": "새 친구를 바로 다른 모임에 데려가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-31",
+        "text": "친구 차 뒷좌석에서 목적지 변경 외치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-32",
+        "text": "방탈출 카페에서 팀을 이끌고 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-relationships-33",
+        "text": "술자리 게임 규칙을 즉석에서 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "alone": [
+      {
+        "id": "ESTP-alone-01",
+        "text": "휴일에 집에 못 붙어 있고 오전부터 나가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-02",
+        "text": "새벽 불안한 생각에 샤워부터 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-03",
+        "text": "일요일 소파에 눕다 이십 분 만에 일어나기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-04",
+        "text": "세차장에서 차 구석구석 닦으며 머리 비우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-05",
+        "text": "헬스장에서 최고 중량 기록 깨 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-06",
+        "text": "스키장 슬로프를 가장 빠른 길로 내려오기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-07",
+        "text": "모르는 동네 골목을 지도 없이 걷기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-08",
+        "text": "랭킹 올리려고 게임하며 밤새우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-09",
+        "text": "새벽 바다로 혼자 서핑하러 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-10",
+        "text": "산길 코너를 오토바이로 연습하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-11",
+        "text": "러닝 앱으로 오늘 페이스 기록 갱신하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-12",
+        "text": "복싱장 샌드백 앞에서 땀 흘리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-13",
+        "text": "격투기 경기 영상 보며 기술 따라 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-14",
+        "text": "혼자 방탈출 카페 가서 퍼즐 도전하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-15",
+        "text": "장비 리뷰 영상을 줄줄이 몰아 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-16",
+        "text": "한강 자전거 도로를 전속력으로 달리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-17",
+        "text": "새 취미 장비의 상자부터 뜯기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-18",
+        "text": "당구장에서 혼자 배치 연습하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-19",
+        "text": "즉흥으로 근교 드라이브 떠나기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-20",
+        "text": "쉬는 날 낮잠 대신 클라이밍장 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-21",
+        "text": "오래 앉아 있으면 다리 떨며 폰 만지작거리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-22",
+        "text": "스포츠 중계에 소리 지르며 몰입하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-23",
+        "text": "혼밥 하며 숏폼 영상 빠르게 넘기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-24",
+        "text": "퇴근 후 집 가기 전 포장마차 들르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-25",
+        "text": "기차표를 무작정 끊고 해 지기 전 출발하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-26",
+        "text": "쉬는 날에도 가구 위치를 바꾸며 움직이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-27",
+        "text": "러닝 후 편의점 음료 한 캔으로 마무리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-28",
+        "text": "예능 보다 따라 해 보고 싶어 일어나기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-29",
+        "text": "쉬는 법이 어색해 일정 하나 더 넣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-30",
+        "text": "번쩍 떠오른 아이디어를 바로 시도하러 나가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-31",
+        "text": "혼자 드라이브 중 노래를 크게 따라 부르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-32",
+        "text": "스포츠 게임 한 판 뒤 바로 재시작",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ESTP-alone-33",
+        "text": "조용한 밤 갑자기 친구들에게 연락 돌리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ]
+  }
+}

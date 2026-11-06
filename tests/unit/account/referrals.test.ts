@@ -39,6 +39,9 @@ async function user(secret:string,existing=false) {
 }
 const attribute=(b:{id:string;contextHash:string})=>attributeReferral(store,b.id,b.contextHash);
 const balance=async(id:string)=>(await sqlTicketStore(db).call("summary",id)).quantity;
+// P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
 beforeAll(async()=>{
   db=(await localReferralDatabase())!; store=sqlReferralStore(db);
   const f=RUNTIME_FIXTURES[0], made=await createLocalShareFixture(request({}),f.payload);

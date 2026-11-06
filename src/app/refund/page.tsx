@@ -16,7 +16,7 @@ const recoveryRows = refundPolicyStateRows.filter((row) =>
   ["generation_failed", "duplicate_payment", "system_error", "company_fault"].includes(row.id),
 );
 const individualRows = refundPolicyStateRows.filter((row) =>
-  ["wrong_input", "minor_cancellation"].includes(row.id),
+  ["ticket_report", "wrong_input", "minor_cancellation"].includes(row.id),
 );
 
 export default function RefundPage() {

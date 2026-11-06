@@ -4,10 +4,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "",
-      "recordSha256": "3999004dd8e4fa1ebb8769a44b21be928d9d7f755d02eb03adbfaf4cf22184f3",
+      "recordSha256": "0665624c3bf429bd8dd24dc85c89e236b0a5b8fdf994d1762c84c0b073775df2",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceNodeCount": 1486,
     "classifications": {
       "METADATA": 340,
@@ -32,10 +32,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "",
-      "recordSha256": "b6b18cbce59634a34ffd9ad24e038f858482a22588162c0713c4d91653c05ccc",
+      "recordSha256": "c0f519db9a31d4f013b195c9ac7e520728b8a69d26a913c2861be681789eedd2",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceNodeCount": 1474,
     "classifications": {
       "METADATA": 344,
@@ -60,10 +60,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "",
-      "recordSha256": "3a0e26f7fedbe601daa1e9314bc6830e6f90c9faa0fe02587aaca3f33de16a21",
+      "recordSha256": "1b3c48fede5e98cea0daa3899786a28f89dfedc168c0da48847049e6c2ecc255",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceNodeCount": 1810,
     "classifications": {
       "METADATA": 422,
@@ -88,10 +88,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "",
-      "recordSha256": "cbbbb92087fd1091bfdc48c8c6340fa006194185062ebdb393045b8c31c590f3",
+      "recordSha256": "f77af73637b85e4dbd135b4771d87d7147a473296d7b8cedff1cd2c1b7c415e8",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceNodeCount": 1602,
     "classifications": {
       "METADATA": 376,
@@ -116,10 +116,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "",
-      "recordSha256": "444d3b110d0c3cf66c1efbe6250794fd6a5c53906d559a4c3c0e56b7440e905d",
+      "recordSha256": "e24bb2412af791402d019b287c5eb91abc5193381702f298f2388b7700295dd7",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceNodeCount": 1763,
     "classifications": {
       "METADATA": 416,
@@ -144,10 +144,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "",
-      "recordSha256": "e2af75a04ede806db10395935dede7267e1389df0555123ebed98c7bb96f10d4",
+      "recordSha256": "756eff8b6c9f68fd61511fc82c5772cd26c30e549f54473852a0592653e0035b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceNodeCount": 1622,
     "classifications": {
       "METADATA": 401,
@@ -172,10 +172,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "",
-      "recordSha256": "4bcdfdecd00321cdb5dc08a52f7d209acd1eb1df73deea377e04cbab51d8155d",
+      "recordSha256": "d4d9282175920edfa0473eb6d503fe21778e3ab0b8b92ef8249705cfcb66a454",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceNodeCount": 1671,
     "classifications": {
       "METADATA": 388,
@@ -200,10 +200,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "",
-      "recordSha256": "529c1196858319fa2cb3a67c6f3e26b5514f28fcdd949cd15d37970fc470d5e9",
+      "recordSha256": "05a99893738203a7a8214da020c51d7334bdad83b2f395de4e84584ee5de2c38",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceNodeCount": 1572,
     "classifications": {
       "METADATA": 376,
@@ -228,10 +228,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "",
-      "recordSha256": "91e4072564e05290c0ba999dcc7f0d812a08435a50175688cb0d6c889bfdd868",
+      "recordSha256": "39c1f7dfd612e4e68fd4a7d418727cf03c281d31774a5122b96d71a06421dfa8",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceNodeCount": 1665,
     "classifications": {
       "METADATA": 384,
@@ -256,10 +256,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "",
-      "recordSha256": "f811dfe42205d849d8bb4b25c9c9e9bca1a6a764390360a7a02767218ecf9565",
+      "recordSha256": "e1d186fe60673b82e365ba9337e50846c6d5e677544e9971750f11296991e233",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceNodeCount": 1676,
     "classifications": {
       "METADATA": 384,
@@ -284,10 +284,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "",
-      "recordSha256": "d60fbe307a928ed48914c203826b99192e667b91cff26dfc0da1f571b1b29370",
+      "recordSha256": "d292f2efe850b8c88a1d775a94b8c0bf6625866e6cefdf3c03130c852aaab0ba",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceNodeCount": 1683,
     "classifications": {
       "METADATA": 398,
@@ -312,10 +312,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "",
-      "recordSha256": "0a35053147229af9b1c1f162d5a0544a8f732c7c6497e9a98ad70526f711204a",
+      "recordSha256": "bb2253a9a7a01c91947726f0b99161c3810cd31068a092f78a74ddbe97eef077",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceNodeCount": 1636,
     "classifications": {
       "METADATA": 399,
@@ -340,10 +340,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "",
-      "recordSha256": "58804e597c71672887f6527727632dd2ab14cc934ac3280e748386037e438c0b",
+      "recordSha256": "7325e3aefd5a9b2bd6c98f4e32bba7cb7aebbb7b9354456b4d050efec5769a6d",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceNodeCount": 1575,
     "classifications": {
       "METADATA": 360,
@@ -368,10 +368,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "",
-      "recordSha256": "69157c1272b2d9340f4a33f5925ef9b8fca719663cae1676203a15bf752420d5",
+      "recordSha256": "d50f3535644e8ffe2951a519ca0a78fc1dc0ae12cc9d4bafdd95e9c0942fa17a",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceNodeCount": 1613,
     "classifications": {
       "METADATA": 371,
@@ -396,10 +396,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "",
-      "recordSha256": "69e89b6fa3ae7e4eae4803f7cc8f4dff2e0cbbd75a93cd25e42883e2ff0f4675",
+      "recordSha256": "ffb4199710593db4a13894a4d008a32f322e197cc4324e8b2e57d8b4d7d1a8c6",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceNodeCount": 1429,
     "classifications": {
       "METADATA": 323,
@@ -424,10 +424,10 @@
     "sourceLocator": {
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "",
-      "recordSha256": "b4942f046b8166a9d9f371a7b798a6c6f421d0b10f4463578a4bd949a0136868",
+      "recordSha256": "1612d99b3dd1a4eac1e469d939fec9ffb36f01f0157a218419a54c0cf247df46",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
-    "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceNodeCount": 1473,
     "classifications": {
       "METADATA": 327,

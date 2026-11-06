@@ -22,7 +22,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "fileHash": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "fieldHash": "96e3ad90cf483e1647fea0a3f11b3eba5844d5e89258629627cd5a32c611390c",
           "sourceNode": {
             "id": "mbti:INTJ:traits:parenting:teach_how_to_think:plainKo",
@@ -65,7 +65,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "fileHash": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "fieldHash": "8afb142bde95a6dbfc76c39667764216c6b2f2c89d65cd2bf5e7741531cc0337",
           "sourceNode": {
             "id": "mbti:INTJ:traits:parenting:independence_with_responsibility:positiveUse",
@@ -108,7 +108,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "fileHash": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "fieldHash": "835f907483147e3c05979536ee2f5b45b5e6b93bcd3812a7e813d404226301e9",
           "sourceNode": {
             "id": "mbti:INTJ:traits:parenting:teach_how_to_think:risk",
@@ -165,7 +165,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "fieldHash": "3e2afd6fc7c70d879ad460e27e3006f5e96d68265f2efd22115e28194c89a5fd",
           "sourceNode": {
             "id": "mbti:INTP:traits:parenting:open_patient_parent:plainKo",
@@ -208,7 +208,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "fieldHash": "b5073d98e9826685c1607bb6868778a7f2a54e9509af721f976539a5763db760",
           "sourceNode": {
             "id": "mbti:INTP:traits:parenting:answering_child_questions:positiveUse",
@@ -251,7 +251,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "fileHash": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "fieldHash": "710cff078bc86888f911cc9d38b6475121bf6760361714b098cd0530de0bd42d",
           "sourceNode": {
             "id": "mbti:INTP:traits:parenting:open_patient_parent:risk",
@@ -308,7 +308,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "fileHash": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "fieldHash": "01f6452796358b1f86ec95e2c65c3d0f46d9cb38523b4c2e832c98421b7cc13b",
           "sourceNode": {
             "id": "mbti:ENTJ:traits:parenting:serious_responsible_parent:plainKo",
@@ -351,7 +351,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "fileHash": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "fieldHash": "dbaed86c6d80cc2359f66cf1d4ff1f5048246c0684240eb25f8ad11f1bc51b4c",
           "sourceNode": {
             "id": "mbti:ENTJ:traits:parenting:child_success_projection:positiveUse",
@@ -394,7 +394,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "fileHash": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "fieldHash": "260c8bd84d6f9954ae790031f052afeeef1110a1eb83aa16d20c1b8c0d9e82bd",
           "sourceNode": {
             "id": "mbti:ENTJ:traits:parenting:serious_responsible_parent:risk",
@@ -451,7 +451,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "fileHash": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "fieldHash": "5201ba5207fb786b60f373a8bc55e6e191ee0972b801b6d48e9814c5a515e311",
           "sourceNode": {
             "id": "mbti:ENTP:traits:parenting:free_range_parenting:plainKo",
@@ -494,7 +494,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "fileHash": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "fieldHash": "e9fd6bc3a1b77791889abf84d1137425da12dd1599b46fd2fe3f92b34aee9982",
           "sourceNode": {
             "id": "mbti:ENTP:traits:parenting:intellectual_parent:positiveUse",
@@ -537,7 +537,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "fileHash": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "fieldHash": "ee9acee0b0a4668e68e8ede7c66a97e745edca1a1193e4ea27a25e282e16d44b",
           "sourceNode": {
             "id": "mbti:ENTP:traits:parenting:free_range_parenting:risk",
@@ -594,7 +594,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "fileHash": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "fieldHash": "55c2df65fa724aea32d5b45866674d07d7764fa528065ccdc8d9c0f546ae03e0",
           "sourceNode": {
             "id": "mbti:INFJ:traits:parenting:free_thinking_home:plainKo",
@@ -637,7 +637,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "fileHash": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "fieldHash": "59365524ec9950bbf7061e94899db98d478a447be8c8ac9bd9d90794d856b48f",
           "sourceNode": {
             "id": "mbti:INFJ:traits:parenting:values_and_manners_parent:positiveUse",
@@ -680,7 +680,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "fileHash": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "fieldHash": "6a87919dc2aa5a32bcd20578217d1e3d7730dbac8e642b914c3be4582affbf38",
           "sourceNode": {
             "id": "mbti:INFJ:traits:parenting:free_thinking_home:risk",
@@ -737,7 +737,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "fileHash": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "fieldHash": "f3212cf84616273c3a88abb6f42c03ce921b91bfb565a478a5cea83093588423",
           "sourceNode": {
             "id": "mbti:INFP:traits:parenting:autonomy_parent:plainKo",
@@ -780,7 +780,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "fileHash": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "fieldHash": "9eaf77f122b9bfbf6895ee888e2f7949df48262792d7c9c5827895767c8f7b20",
           "sourceNode": {
             "id": "mbti:INFP:traits:parenting:moral_parent:positiveUse",
@@ -823,7 +823,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "fileHash": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "fieldHash": "6045aba6ea30200453a6660a680596657184f55f3eb9792beaabd244d8f4decc",
           "sourceNode": {
             "id": "mbti:INFP:traits:parenting:autonomy_parent:risk",
@@ -880,7 +880,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "fieldHash": "affef32b33b524ea665f8407889df9f7e45076e6d9c2bf048313e7e3d9de1bbd",
           "sourceNode": {
             "id": "mbti:ENFJ:traits:parenting:free_but_guiding_parent:plainKo",
@@ -923,7 +923,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "fieldHash": "17acf9df97a8cd487a09c23316b4df9a60e9d1db5a1a668692b16e930c5849c6",
           "sourceNode": {
             "id": "mbti:ENFJ:traits:parenting:emotional_anchor_parent:positiveUse",
@@ -966,7 +966,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "fileHash": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "fieldHash": "78e7c08ffc51481a646b9d6a4e527e86f6ae92f80da8b234cb13b7ab5673e120",
           "sourceNode": {
             "id": "mbti:ENFJ:traits:parenting:free_but_guiding_parent:risk",
@@ -1023,7 +1023,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "fileHash": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "fieldHash": "dcb2a9eab9a69921970ab093187ffbb8c7cbc955c0cfabb64a8c53bad3915efe",
           "sourceNode": {
             "id": "mbti:ENFP:traits:parenting:understanding_parent:plainKo",
@@ -1066,7 +1066,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "fileHash": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "fieldHash": "ff5bf28f37d872364e0307cb72c3cee279edcdbbf765322d0489d7803a788215",
           "sourceNode": {
             "id": "mbti:ENFP:traits:parenting:affectionate_support_parent:positiveUse",
@@ -1109,7 +1109,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "fileHash": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "fieldHash": "b492c0ed9643c874f294b6b89b3910a44c35bcb813af7756bd6e300859f4824c",
           "sourceNode": {
             "id": "mbti:ENFP:traits:parenting:understanding_parent:risk",
@@ -1166,7 +1166,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "fieldHash": "54104d304b51de8071ece2b8209db283bf00f1ecdb2733df4442be397bd05fb2",
           "sourceNode": {
             "id": "mbti:ISTJ:traits:parenting:diligent_responsible_parent:plainKo",
@@ -1209,7 +1209,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "fieldHash": "2c972851159dfc5381b8e9b3d94c920a1c4756d7ff27f65c1e4113ca6611cc50",
           "sourceNode": {
             "id": "mbti:ISTJ:traits:parenting:practical_success_parenting:positiveUse",
@@ -1252,7 +1252,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "fileHash": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "fieldHash": "4b28090061251b9a59697f0852696d0ac541a0f8ce10555b12869e8e3bab2f78",
           "sourceNode": {
             "id": "mbti:ISTJ:traits:parenting:diligent_responsible_parent:risk",
@@ -1309,7 +1309,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "fieldHash": "74dccb5574c1795a457b1f6edf39f3a26ddb93705d2ed598ebb3e4e7f8b828e2",
           "sourceNode": {
             "id": "mbti:ISFJ:traits:parenting:structured_home_parent:plainKo",
@@ -1352,7 +1352,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "fieldHash": "27cd578e6ad13ef3a78bec33e7237b6615a03c87c406531c28440560cf583b26",
           "sourceNode": {
             "id": "mbti:ISFJ:traits:parenting:protective_overinvolvement:positiveUse",
@@ -1395,7 +1395,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "fileHash": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "fieldHash": "a8917d5c8046943c49552ab0db0e3994e015825f162dfab1620bd4b8e19b5b03",
           "sourceNode": {
             "id": "mbti:ISFJ:traits:parenting:structured_home_parent:risk",
@@ -1452,7 +1452,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "fileHash": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "fieldHash": "ce63bfe41e2e9dec6a48e9b70e8e72c9925ea6f8b8027c35b11500cb0e9178b3",
           "sourceNode": {
             "id": "mbti:ESTJ:traits:parenting:traditional_parenting:plainKo",
@@ -1495,7 +1495,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "fileHash": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "fieldHash": "b7081a367e328d82a8db8eaf3d2eebb77033c4ea417c913418628789c34acd15",
           "sourceNode": {
             "id": "mbti:ESTJ:traits:parenting:clear_rules_parent:positiveUse",
@@ -1538,7 +1538,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "fileHash": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "fieldHash": "b5462ce71c94beb62ae4f11320220ad7fe133c43ad2851d5e534434d630cc3c2",
           "sourceNode": {
             "id": "mbti:ESTJ:traits:parenting:traditional_parenting:risk",
@@ -1595,7 +1595,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "fieldHash": "8f946706be96cfaa01574364a3d41a057e63cd620b4025d37e017e6375112380",
           "sourceNode": {
             "id": "mbti:ESFJ:traits:parenting:protective_parenting:plainKo",
@@ -1638,7 +1638,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "fieldHash": "d0ee1662643a405a9708cadbda93066bc6c1483b4df511b1215d6626ee895e10",
           "sourceNode": {
             "id": "mbti:ESFJ:traits:parenting:authority_obedience_pressure:positiveUse",
@@ -1681,7 +1681,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "fileHash": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "fieldHash": "295173ccbf1eeff5f25a19b82ebb9d76d7762a5dd5be4aae348015a78bd56f19",
           "sourceNode": {
             "id": "mbti:ESFJ:traits:parenting:protective_parenting:risk",
@@ -1738,7 +1738,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "fileHash": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "fieldHash": "aee753c75dabb9ed55187aadc98d9ab14935e603cabc3ad5bde8f69a31216de1",
           "sourceNode": {
             "id": "mbti:ISTP:traits:parenting:open_non_controlling_parent:plainKo",
@@ -1781,7 +1781,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "fileHash": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "fieldHash": "466cc7eda3fc953d6331f4332ca409a5db322acd817baa775c53cbec2fdf7bef",
           "sourceNode": {
             "id": "mbti:ISTP:traits:parenting:privacy_respecting_parent:positiveUse",
@@ -1824,7 +1824,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "fileHash": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "fieldHash": "045baa15ac717bba6dc2947e1dc60302cbe94954c014d5b35c2e041a3935a104",
           "sourceNode": {
             "id": "mbti:ISTP:traits:parenting:open_non_controlling_parent:risk",
@@ -1881,7 +1881,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fileHash": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "fieldHash": "b1134bf9f7183fa82f99506d256fe8904be9bef4d911c6b7652f5a64a7c376ed",
           "sourceNode": {
             "id": "mbti:ISFP:traits:parenting:free_respecting_parent:plainKo",
@@ -1924,7 +1924,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fileHash": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "fieldHash": "e1c3f4250ed61833a6fd5324e03de13d897f3a6cad9b2d7d6b4d4195bf8b8b83",
           "sourceNode": {
             "id": "mbti:ISFP:traits:parenting:friend_like_parent:positiveUse",
@@ -1967,7 +1967,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "fileHash": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "fieldHash": "e27de9a67e4d27399b055d3468ec15f0d080aea3bbd0969cce2ac82254859490",
           "sourceNode": {
             "id": "mbti:ISFP:traits:parenting:free_respecting_parent:risk",
@@ -2024,7 +2024,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "fileHash": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "fieldHash": "1c8efdd608fe2eea289a6beadc7ee8e7c0020890cd1f0c05af94666e57de0082",
           "sourceNode": {
             "id": "mbti:ESTP:traits:parenting:free_parenting:plainKo",
@@ -2067,7 +2067,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "fileHash": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "fieldHash": "8451c482592090ac9bcf2072639240ceee0eed6d8449a24dc54ece569cab18e4",
           "sourceNode": {
             "id": "mbti:ESTP:traits:parenting:adventure_parent:positiveUse",
@@ -2110,7 +2110,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "fileHash": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "fieldHash": "94253ad151ed739bd803195a8859759ce38f3cc7fdd000278c2c97c73035d235",
           "sourceNode": {
             "id": "mbti:ESTP:traits:parenting:free_parenting:risk",
@@ -2167,7 +2167,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/plainKo",
-          "fileHash": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "fileHash": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "fieldHash": "9bbea911326cc3c866dc37e71ed4ce6d5881cf00b77bfbf58622d949af7b9922",
           "sourceNode": {
             "id": "mbti:ESFP:traits:parenting:open_parenting:plainKo",
@@ -2210,7 +2210,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/1/positiveUse",
-          "fileHash": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "fileHash": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "fieldHash": "5b84aac4c287392e70217742ee87115f9bb702dedadf13c2d759dd9cbd9e0d62",
           "sourceNode": {
             "id": "mbti:ESFP:traits:parenting:travel_parenting:positiveUse",
@@ -2253,7 +2253,7 @@
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
           },
           "fieldPointer": "/traits/parenting/0/risk",
-          "fileHash": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "fileHash": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "fieldHash": "eb95cd805842e919497bc1643f302a2d073e3797e1d50b103f44c0e52f3e4563",
           "sourceNode": {
             "id": "mbti:ESFP:traits:parenting:open_parenting:risk",

@@ -8,28 +8,37 @@ import { BOOKS, readerTitle } from "../../lib/book/product";
 import s from "../../app/dev/book-preview/book.module.css";
 import { AccountEntry } from "../account/AccountSession";
 import { interaction } from "../../lib/analytics/client";
-import { LaunchCountdown } from "../growth/LaunchCountdown";
+import { GiftEventCountdown } from "../growth/GiftEventCountdown";
+import { EventPopupHost } from "../event/EventPopup";
+import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
 
-export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath: string; year: number; authEnabled?: boolean }) {
+export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }: { inputPath: string; year: number; authEnabled?: boolean; closed?: readonly string[] }) {
   const [current, setCurrent] = useState(0);
   const auto = useRef<ReturnType<typeof createCoverflowAuto> | null>(null);
   const hovering = useRef(false), dragged = useRef(false), gesture = useRef<{ x: number; y: number; pointerId: number; vertical: boolean } | null>(null);
   const refresh = useRef<() => void>(() => {});
   useEffect(() => {
-    const motion = matchMedia("(prefers-reduced-motion: reduce)"), hover = matchMedia("(hover: hover) and (pointer: fine)");
+    // The rotating shelf is the home presentation itself: it is not gated on prefers-reduced-motion (manual arrows/swipe/keys stay).
+    const hover = matchMedia("(hover: hover) and (pointer: fine)");
     auto.current = createCoverflowAuto(() => setCurrent(c => wrapBook(c + 1)));
     refresh.current = () => {
       if (document.hidden || !hover.matches) hovering.current = false;
       if (document.hidden) gesture.current = null;
-      auto.current?.setActive(!motion.matches && !document.hidden && !(hover.matches && hovering.current) && !gesture.current);
+      auto.current?.setActive(!document.hidden && !(hover.matches && hovering.current) && !gesture.current);
     };
-    refresh.current(); document.addEventListener("visibilitychange", refresh.current); motion.addEventListener("change", refresh.current); hover.addEventListener("change", refresh.current);
+    // A touch that ends outside this section (or is taken over by the browser) must never leave the auto-rotation paused.
+    const release = () => { if (gesture.current) { gesture.current = null; refresh.current(); } };
+    const events = ["pointerup", "pointercancel", "touchend", "touchcancel", "blur", "pagehide"] as const;
+    refresh.current(); document.addEventListener("visibilitychange", refresh.current); hover.addEventListener("change", refresh.current);
+    events.forEach(name => window.addEventListener(name, release));
+    window.addEventListener("pageshow", refresh.current);
     const update = refresh.current;
-    return () => { auto.current?.dispose(); document.removeEventListener("visibilitychange", update); motion.removeEventListener("change", update); hover.removeEventListener("change", update); auto.current = null; };
+    return () => { auto.current?.dispose(); document.removeEventListener("visibilitychange", update); hover.removeEventListener("change", update); events.forEach(name => window.removeEventListener(name, release)); window.removeEventListener("pageshow", update); auto.current = null; };
   }, []);
   const select = (n: number) => { auto.current?.interact(); setCurrent(wrapBook(n)); interaction("book_selected", BOOKS[wrapBook(n)].productKey); };
   return <main className={s.root} data-book-home><header className={s.header}><Link href="/" className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></Link>{authEnabled ? <AccountEntry local={inputPath === "/dev/book-flow/input"} /> : <span className={s.login} aria-label="로그인 준비 중">로그인</span>}</header>
-    <LaunchCountdown local={inputPath === "/dev/book-flow/input"} />
+    <GiftEventCountdown />
+    {inputPath === "/dev/book-flow/input" ? null : <EventPopupHost />}
     <section className={s.home} aria-label="여섯 권의 책 고르기" tabIndex={0}
       onKeyDown={e => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); select(current + (e.key === "ArrowRight" ? 1 : -1)); } }}
       onPointerEnter={e => { if (e.pointerType === "mouse" && matchMedia("(hover: hover) and (pointer: fine)").matches) { hovering.current = true; refresh.current(); } }} onPointerLeave={e => { hovering.current = false; if (e.pointerType === "mouse") { gesture.current = null; dragged.current = true; } refresh.current(); }}
@@ -51,7 +60,7 @@ export function BookShelf({ inputPath, year, authEnabled = false }: { inputPath:
         refresh.current();
       }} onClickCapture={e => { if (e.detail && dragged.current) { e.preventDefault(); e.stopPropagation(); } }}>
       <h1 className={s.srOnly}>나에 관한 한 권을 고르세요</h1><div className={s.coverflow} role="group" aria-label="책 표지" aria-roledescription="회전 책장">
-        {BOOKS.map((book, i) => { const offset = coverOffset(i, current), title = readerTitle(book, String(year)); return <button key={book.id} className={s.bookSlot} style={{ "--offset": offset, "--distance": Math.abs(offset), zIndex: 10 - Math.abs(offset) } as CSSProperties} data-center={current === i} aria-current={current === i ? "true" : undefined} aria-label={`${title} ${current === i ? "펼치기" : "선택"}`} tabIndex={Math.abs(offset) < 3 ? 0 : -1} onClick={() => { if (dragged.current) return; if (i !== current) select(i); else { auto.current?.interact(); window.location.assign(`${inputPath}?product=${book.slug}`); } }}><Cover book={book} title={book.id === "annual" ? `나의\n${year}` : undefined} /></button>; })}
+        {BOOKS.map((book, i) => { const offset = coverOffset(i, current), title = readerTitle(book, String(year)); return <button key={book.id} className={s.bookSlot} style={{ "--offset": offset, "--distance": Math.abs(offset), zIndex: 10 - Math.abs(offset) } as CSSProperties} data-center={current === i} data-closed={closed.includes(book.productKey) ? "true" : undefined} aria-current={current === i ? "true" : undefined} aria-label={`${title}${closed.includes(book.productKey) ? ` · ${FORTUNE_REOPEN_LINE}` : ""} ${current === i ? "펼치기" : "선택"}`} tabIndex={Math.abs(offset) < 3 ? 0 : -1} onClick={() => { if (dragged.current) return; if (i !== current) select(i); else { auto.current?.interact(); window.location.assign(`${inputPath}?product=${book.slug}`); } }}><Cover book={book} title={book.id === "annual" ? `나의\n${year}` : undefined} />{closed.includes(book.productKey) ? <span className={s.coverNotice} aria-hidden="true">{FORTUNE_REOPEN_LINE}</span> : null}</button>; })}
       </div><div className={s.carouselControls}><button aria-label="이전 책" onClick={() => select(current - 1)}>←</button><span className={s.micro} aria-live="polite">{BOOKS[current].issue} / 06</span><button aria-label="다음 책" onClick={() => select(current + 1)}>→</button></div>
     </section></main>;
 }

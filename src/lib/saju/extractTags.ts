@@ -19,7 +19,7 @@ type ElementTagMeta = TagMeta & {
   element: FiveElement;
 };
 
-type TenGodGroupScore = Record<TenGodGroup, number>;
+export type TenGodGroupScore = Record<TenGodGroup, number>;
 
 type AdvancedPatternConfig = {
   code: SajuTagCode;
@@ -308,7 +308,8 @@ function formatScore(value: number): string {
   return Number.isInteger(value) ? String(value) : String(Math.round(value * 100) / 100);
 }
 
-function getTenGodGroupScores(
+/** v5 감지(structureFlows·tenGodBalance)도 같은 점수를 쓴다. */
+export function getTenGodGroupScores(
   distribution: SajuCalcResult["tenGods"]["distribution"],
 ): TenGodGroupScore {
   const scores: TenGodGroupScore = {

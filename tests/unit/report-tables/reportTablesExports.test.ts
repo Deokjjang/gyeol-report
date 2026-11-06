@@ -47,7 +47,7 @@ describe("report table lib exports", () => {
     const mbtiData: MbtiCommonProfileTableData =
       buildMbtiCommonProfileTableData({
         type: "ENTJ",
-        titleKo: "대담한 통솔자",
+        titleKo: "지휘관",
         archetype: "목표를 현실화하는 전략 지휘관",
         oneLine: "목표를 구조화해 실행하는 사람",
         preferenceAxes: {

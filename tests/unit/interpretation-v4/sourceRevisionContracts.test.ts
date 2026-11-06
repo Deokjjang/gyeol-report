@@ -10,7 +10,7 @@ import { type ProtectionContract, sourceRevisionContract, validateSourceRevision
 
 it("pins exact revisions without replacing historical hash receipts", () => {
   expect(createHash("sha256").update(readFileSync("tests/fixtures/technical-stabilization-01/source-revision-contract.json")).digest("hex"))
-    .toBe("1c2495895978aeccdfd43f30b84e474d7fbc7c5b7b45b616b1c63c5edc8ae9b1");
+    .toBe("9ca5f4e57ce09eda79e613b338c62c0438206cbd4c3ee0a49d2a5e4196662323");
   validateProtectionContract();
   expect(Object.keys(protectionContract.currentDeltas)).toHaveLength(19);
   for (const [file, hash] of Object.entries(protectionContract.immutableReceipts)) {

@@ -1,0 +1,1175 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "ISFP",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "ISFP-work-01",
+        "text": "작업물 색감 하나에 한 시간 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-02",
+        "text": "옆에서 계속 지시하면 손이 굳는 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-03",
+        "text": "혼자 맡겨 두면 마감까지 조용히 다듬기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-04",
+        "text": "공개적인 지적 뒤 말없이 일만 하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-05",
+        "text": "꽂힌 날 며칠을 몰아서 작업하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-06",
+        "text": "책상 위에 작은 화분과 향초 올려 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-07",
+        "text": "폰트 간격이 어긋난 걸 못 넘기는 눈",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-08",
+        "text": "회의에서 의견 대신 시안 한 장으로 답하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-09",
+        "text": "알아서 해 달라는 의뢰 앞에서 가격 고민하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-10",
+        "text": "추가 수정 요청을 거절 못 하고 받아 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-11",
+        "text": "이어폰 끼고 잔잔한 플레이리스트 틀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-12",
+        "text": "포트폴리오 첫 장 이미지 고르다 하루 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-13",
+        "text": "촬영 현장에서 빛 들어오는 시간 기다리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-14",
+        "text": "꽃 포장 리본 매듭을 몇 번씩 다시 묶기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-15",
+        "text": "손님이 고른 색에 조용히 한 끗 더하기",
+        "rel": "any",
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ISFP-work-16",
+        "text": "가게 진열대 조명을 계속 다시 맞추기",
+        "rel": "any",
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ISFP-work-17",
+        "text": "팀 단톡방에서 이모티콘 하나로 동의하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-18",
+        "text": "갈등 있는 회의 분위기에 슬쩍 자리 비우기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-19",
+        "text": "퇴근 후 혼자 지적받은 장면 되짚기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-20",
+        "text": "시간표보다 영감 오는 시간에 일하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-21",
+        "text": "창가 자리에서 햇빛 따라 노트북 옮기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-22",
+        "text": "핸드메이드 마켓 부스를 감성으로 꾸미기",
+        "rel": "any",
+        "job": "business",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-23",
+        "text": "일러스트 한 컷을 몇 번씩 지우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-24",
+        "text": "단가 협상 전화를 문자로 바꿔 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-25",
+        "text": "카페 구석에서 혼자 작업 모드 켜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-26",
+        "text": "마감 직전 작업물 색을 한 번 더 바꾸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-27",
+        "text": "정리하며 수납함 라벨을 예쁘게 붙이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-28",
+        "text": "마음에 드는 공방부터 먼저 찾아보는 구직",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-29",
+        "text": "직접 만든 샘플을 손에 쥐여 주며 설명하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-30",
+        "text": "면접장 대기 의자에서 손끝만 만지작거리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-31",
+        "text": "발표 자료를 글보다 사진 위주로 채우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ISFP-work-32",
+        "text": "북적이는 사무실에서 귀마개 꺼내기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-33",
+        "text": "조 모임에서 자료 디자인을 도맡기",
+        "rel": "any",
+        "job": "student",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-work-34",
+        "text": "마감 전날 밤 작업실에 조명 하나만 켜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "money": [
+      {
+        "id": "ISFP-money-01",
+        "text": "퇴근길에 향초 하나씩 사 들고 오기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-02",
+        "text": "이미 있는데도 예쁜 컵을 장바구니에 담기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-03",
+        "text": "세일 코너 대신 마음에 드는 하나 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-04",
+        "text": "디저트 가게 신메뉴 알림에 지갑 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ISFP-money-05",
+        "text": "감성 문구점에서 노트 앞에 오래 서 있기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-06",
+        "text": "소소한 결제가 쌓인 명세서에 놀라기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-07",
+        "text": "작업비 얘기를 꺼내기 어려워 대충 받기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-08",
+        "text": "친구 선물 고르느라 가격 비교를 잊기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-09",
+        "text": "벼룩시장에서 오래된 접시를 건져 오기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-10",
+        "text": "질감 좋은 옷 하나만 골라 오래 입기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-11",
+        "text": "꽃 구독 서비스를 월 단위로 신청하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-12",
+        "text": "빈티지 숍 구석에서 마음에 든 가방 만나기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-13",
+        "text": "편한 신발 대신 색 예쁜 걸 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-14",
+        "text": "택배를 열 때 포장지 색부터 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-15",
+        "text": "무료 배송 맞추려고 소품 하나 추가하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-16",
+        "text": "식비를 아끼려다 좋아하는 카페에서 풀어 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-17",
+        "text": "적금 앱 대신 저금통에 동전 모으기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-18",
+        "text": "공연 티켓 예매창에서 좌석 오래 고민하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-19",
+        "text": "식물 가게에서 화분 하나 더 데려오기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ISFP-money-20",
+        "text": "부탁받은 소액 송금을 거절 못 하고 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-21",
+        "text": "가격표 대신 손에 쥔 느낌으로 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-22",
+        "text": "줄여야지 다짐하고 서점에서 책 사기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-23",
+        "text": "오래 쓸 가죽 지갑에 큰돈 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-24",
+        "text": "공구한 소품이 도착하자 식어 버린 마음",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-25",
+        "text": "쿠폰 앱 알림은 켜 놓고 쓰지 않는 습관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-26",
+        "text": "미술 재료 쇼핑몰에서 물감 색 구경하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-27",
+        "text": "마음에 안 들면 할인 마감 문자도 닫기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-28",
+        "text": "작업 대금 입금이 늦어도 재촉 못 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-29",
+        "text": "예쁜 다이어리 가계부 두 주 만에 멈추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-30",
+        "text": "월세 이체일 알림 앞에서 한숨 쉬기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-31",
+        "text": "음악 구독료를 몇 달째 그냥 내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-32",
+        "text": "식물 영양제는 비싸도 좋은 걸로 사기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-money-33",
+        "text": "선물을 직접 만들어 지출 줄이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "love": [
+      {
+        "id": "ISFP-love-01",
+        "text": "좋아하는 사람 앞에서 먼저 말 못 걸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-02",
+        "text": "그 사람이 좋아한다는 노래를 몰래 찾아 듣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-03",
+        "text": "고백 대신 손글씨 카드를 건네기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-04",
+        "text": "집에서 구운 쿠키를 정성껏 포장하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-05",
+        "text": "소개팅 자리에서 웃으며 상대 이야기 듣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-06",
+        "text": "메시지 보내기 전 문장을 몇 번씩 고치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-07",
+        "text": "상대 인스타 사진 분위기에 호감 쌓기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-08",
+        "text": "첫 데이트를 전시회나 산책길로 잡고 싶을 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-09",
+        "text": "상대가 좋아할 카페를 미리 찾아 저장하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-10",
+        "text": "마음 들킬까 봐 일부러 늦게 답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-11",
+        "text": "썸 상대 앞에서 눈빛이 먼저 흔들릴 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-12",
+        "text": "거절이 어려워 애매한 답으로 호감 흐리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-13",
+        "text": "짝사랑 상대를 위해 플레이리스트 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-14",
+        "text": "고백하면 사이가 깨질까 망설이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-15",
+        "text": "사랑은 천천히 스며든다는 연애관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-16",
+        "text": "상대의 작은 습관 하나에 마음 기우는 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-17",
+        "text": "꽃 한 송이를 사 놓고 줄 타이밍 놓치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-18",
+        "text": "연애 앱에서 사진보다 소개 문장에 끌리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-19",
+        "text": "상대 취향에 맞추다 내 취향을 잊는 연애",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-20",
+        "text": "이별 후 방 정리하며 혼자 음악 틀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-21",
+        "text": "눈이 마주치면 먼저 고개 숙이는 호감 단계",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-22",
+        "text": "처음 손잡기 전 분위기부터 살피기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-23",
+        "text": "불편한 얘기 대신 거리를 두는 선택",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-24",
+        "text": "데이트 장소를 상대 의견에 먼저 맞추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-25",
+        "text": "선 넘은 말에도 그 자리에선 웃는 연인",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-26",
+        "text": "서운함이 쌓이면 연락을 줄이는 연인",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-27",
+        "text": "연인 생일에 직접 그린 그림 포장하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-28",
+        "text": "연인과 걷는 골목에서 사진 몇 장 남기기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-29",
+        "text": "다툰 뒤 사과 대신 좋아하는 음료 사 가기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-30",
+        "text": "연인이 세운 계획에 말없이 따라가기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-31",
+        "text": "연인 눈치를 보다 할 말을 삼키기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-love-32",
+        "text": "연인과 보내는 조용한 영화 한 편의 저녁",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ISFP-relationships-01",
+        "text": "처음 만난 자리에서 조용히 웃기만 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-02",
+        "text": "편한 친구 앞에서만 엉뚱한 농담 쏟아내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-03",
+        "text": "힘든 친구에게 좋아하는 음료 사 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-04",
+        "text": "싫은 부탁도 일단 알겠다고 받아 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-05",
+        "text": "약속 전날 몸이 안 좋다는 핑계 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-06",
+        "text": "날 선 단톡방 분위기에 읽기만 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-07",
+        "text": "친구 생일 카드를 손글씨로 한 장씩 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-08",
+        "text": "모임에서 사진 찍어 주는 역할 맡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-09",
+        "text": "말다툼이 시작되면 화제를 슬쩍 바꾸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-10",
+        "text": "소수의 가까운 친구와 오래 만나는 관계",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-11",
+        "text": "동호회 첫 모임에서 구석 자리 앉기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-12",
+        "text": "술자리 대신 조용한 이차 카페 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-13",
+        "text": "친구 고민을 들으며 말없이 어깨 기대 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-14",
+        "text": "식당에서 메뉴를 상대에게 먼저 양보하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-15",
+        "text": "마음에 안 드는 말을 듣고도 웃어넘기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-16",
+        "text": "전시회에서 각자 보다 출구에서 만나기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-17",
+        "text": "이웃 강아지를 마주쳐 쪼그려 앉아 인사하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-18",
+        "text": "새 모임에서 같은 취향 한 명 찾기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-19",
+        "text": "친구 얼굴 떠올리며 선물 리본 색 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-20",
+        "text": "연락 없이 지내다 사진 한 장 불쑥 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-21",
+        "text": "소모임 총무 제안을 웃으며 거절 못 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-22",
+        "text": "갈등이 싫어 모임 일정에 먼저 맞춰 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-23",
+        "text": "서툰 표현 대신 좋아하는 노래를 보내 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-24",
+        "text": "정해진 장소가 싫어도 말없이 따르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-25",
+        "text": "오랜 친구와 아무 말 없이 같이 걷기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-26",
+        "text": "동네 사진 모임에서 풍경 얘기만 나누기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-27",
+        "text": "SNS에 일상 대신 하늘 사진만 올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-28",
+        "text": "회식 자리에서 옆 사람 컵을 챙겨 주기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-29",
+        "text": "마음 닫은 사람과 조용히 연락 끊기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-30",
+        "text": "낯선 사람의 말에 어색하지만 다정히 답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-31",
+        "text": "친구의 새 헤어스타일을 먼저 알아채기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-relationships-32",
+        "text": "엘리베이터에서 작게 목례하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "alone": [
+      {
+        "id": "ISFP-alone-01",
+        "text": "오후에 음악 틀고 스케치북 펼치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-02",
+        "text": "화분 잎을 닦으며 하루 숨 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-03",
+        "text": "산책 중 마음에 드는 빛에 걸음 멈추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-04",
+        "text": "하늘과 고양이 사진이 쌓이는 주말",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-05",
+        "text": "이불 속에서 속상한 일 혼자 삭이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-06",
+        "text": "비 오는 날 창가에서 빗소리 듣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-07",
+        "text": "동네 길고양이 밥 자리 챙기러 나가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-08",
+        "text": "향초 켜고 조용히 책 몇 장 넘기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-09",
+        "text": "빈티지 숍 골목을 목적 없이 걷기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-10",
+        "text": "혼자 간 전시회에서 한 작품 앞에 오래 서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-11",
+        "text": "새 플레이리스트에 제목을 붙이는 밤",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-12",
+        "text": "자수 키트로 한 땀씩 바늘 놓기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-13",
+        "text": "주방에서 커피 내리며 향 맡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-14",
+        "text": "바다가 보이는 버스 창가 자리에 앉기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-15",
+        "text": "필름 카메라에 필름 감아 넣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-16",
+        "text": "휴일 오전 침대에서 늦도록 뒹굴기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-17",
+        "text": "도자기 공방에서 물레에 손 얹고 집중하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-18",
+        "text": "노을 시간에 맞춰 옥상에 올라가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-19",
+        "text": "캘리그래피 연습장에 좋아하는 문장 적기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-20",
+        "text": "지하철 창밖만 바라보며 이어폰 끼기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-21",
+        "text": "좋아하는 영화의 같은 장면 돌려 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-22",
+        "text": "일기장에 오늘 본 색깔만 적어 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-23",
+        "text": "뜨개질 바늘 잡고 드라마 틀어 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-24",
+        "text": "꽃집에서 산 한 송이를 작은 화병에 꽂기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-25",
+        "text": "도서관 구석에서 사진집 넘겨 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-26",
+        "text": "혼자 먹는 저녁도 접시에 예쁘게 담기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-27",
+        "text": "계절마다 달력 속 사진 바꿔 끼우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-28",
+        "text": "낮잠 전 커튼 틈 빛 모양 바라보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-29",
+        "text": "창문 열고 먼 소음 들으며 멍하니 있기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-30",
+        "text": "벤치에 앉아 지나가는 강아지 구경하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-31",
+        "text": "잠들기 전 조명을 낮추고 잔잔한 곡 틀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-32",
+        "text": "새로 산 향수를 손목에 뿌리고 기분 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ISFP-alone-33",
+        "text": "수채화 물감이 번지는 모양 지켜보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ]
+  }
+}

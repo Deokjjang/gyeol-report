@@ -91,7 +91,7 @@
 
 대표 실제 미해결 사례:
 
-- `TARGET_ID_NOT_INDEXED`: `kc:v1:000b2208f7a735c45581c4771733ed863d0142f0fe58f01b9e6ad0c8f630a6fe` / `/sourceId` / `{"sourceId": "mbti:ISTJ:traits:money:family_responsibility_spending", "passage": {"file": "docs/product/mbti/source/ISTJ.json", "pointer": "/traits/money/4", "recordSha256": "45766cb7118d5a18e0478635473b9262c80d4c64efc6998f5935f24065d7a38c", "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"}}`
+- `TARGET_ID_NOT_INDEXED`: `kc:v1:000b2208f7a735c45581c4771733ed863d0142f0fe58f01b9e6ad0c8f630a6fe` / `/sourceId` / `{"sourceId": "mbti:ISTJ:traits:money:family_responsibility_spending", "passage": {"file": "docs/product/mbti/source/ISTJ.json", "pointer": "/traits/money/4", "recordSha256": "45766cb7118d5a18e0478635473b9262c80d4c64efc6998f5935f24065d7a38c", "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"}}`
 - `AMBIGUOUS_ID_OR_ALIAS`: `kc:v1:007628b9906bf0b50586802b14566340ede534641ef3bc11ff1ede85bf4f7218` / `/traditional/sourceRefs/0/sourceId` / `{"sourceId": "sm2", "passage": "論三刑"}`
 - `REFERENCE_FRAGMENT_MISSING`: `kc:v1:02ef00d3007195030a31e2a7d46c7fa088e80bef933daced2304300e9ebf13ed` / `/inheritedMeaningRef/0` / `"completion:day_pillar:丙午#core,positive,risk"`
 - `AUDIT_WITHOUT_ORIGINAL_LOCATOR`: `kc:v1:0755df84fca1e96c84eef8f5160223846b3263f94e9be482f55bbc25f2fa40be` / `/auditRef` / `{"sourceId": "external:parent-child:teen", "auditRef": "source-locator-audit.json#ee509907f7d870f38308", "recordSha256": "ef24c8f6fd282e18ca51a255f239d9e2f4f02ec7902ce4b89a8a495d4650dbd1"}`

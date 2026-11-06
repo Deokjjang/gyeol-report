@@ -6,7 +6,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "e658451deddb7541da663737c48952ed54b89271dfdb6b712e36f051d5d6ea76",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "system_first_thinking",
@@ -39,7 +39,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "5dadd42aba355bfd745a421b36f99a3df69e800248f963a3871b1d6a5e734ab0",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "elegant_solution_drive",
@@ -72,7 +72,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "3750cfbb452b34de588be75e7ccb8742df81594448a8baec056e2807e55b2768",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "life_as_strategy_board",
@@ -105,7 +105,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "df3054835533115c0a5b19fbf8fefbb38e58760ec503320d6c8129dfb230e3e9",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "evidence_based_vision",
@@ -138,7 +138,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "d51fcbdccdb723ebc9f74a278e57de1f0bfdd5d360e76d7ef4f3c3d24dfeb6c4",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "hard_discipline_affinity",
@@ -171,7 +171,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "26457f134f36ca42b8e839cae79abf6def79e07e3946b8c42c6bbf50d99c88ad",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "definition_precision",
@@ -204,7 +204,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "5d2bd7032666dae56f94162834a066315b6ca564b7fbf4a6bf567da0f5870c82",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "science_tech_law_fit",
@@ -237,7 +237,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "6376114133cc6abe121c42f8e1c91d60045c37c1c6c05ea276189558acd0f123",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "life_as_strategy_board",
@@ -270,7 +270,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "411032dd958b0fd2306140726534628cf92ca36c26d1b4595cb236127c6b0573",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "innovation_over_convention",
@@ -303,7 +303,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "b10593969f987987df13fc88acbbdf9ff1fa3936ffc7066e8ea46c6144f56583",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "hidden_inconsistency_detector",
@@ -336,7 +336,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "4954c452738545d4b31e18389270a0519748a5978b1448a85d0c515d1d9452a4",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "autonomy_required_role",
@@ -369,7 +369,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "c5eac60be4ccc5683c3572135eca35fb996c59e0790589f2f90f332df80a1341",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "deep_project_learning",
@@ -402,7 +402,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "3e77ac64813cb96161ebc6a78e0166d7bffafc89979995340dfa58cb19b5f8a7",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "private_chatter_drain",
@@ -428,7 +428,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "3796771b5c2e502b7f1960fc026ad2dde88900fb9b1eef85d270856ad8071cbd",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_praise_style",
@@ -454,7 +454,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "65be54d24ea951285ac2194bde6832f154db96b17adfa78134c23ecc18dea94d",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "autonomy_required_role",
@@ -480,7 +480,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "f1f6d26fc8b4fc1a69d5022a02f1b97c1bf82e948076306aa7c414e18a37bc03",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_sociability_risk",
@@ -506,7 +506,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "ea1a801fa7ee32d5a956690f12460ca3a9a411271e65010c3100c0c243a28e42",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "abstract_conversation_preference",
@@ -532,7 +532,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "314e370788be5f65c8243a8ea9d82441c29f2ae22d58b3c9e732069f4a96b70b",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "emotional_child_challenge",
@@ -558,7 +558,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "d5ae5a5d18f5329d25a733941dc68025fe815c38fba8e2ac2ea99ec4b468c1bb",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_sociability_risk",
@@ -584,7 +584,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "bf426ba9226cbb4891d905d1c1939ad114c9aae65c80cb6001cf15e82ff70ce7",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "autonomy_required_role",
@@ -610,7 +610,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/8",
     "recordSha256": "5fdb1b2c8455c5d708f4dad1455c170fa797a39f7a49b27463758b5b4fb455b4",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_politics_work_style",
@@ -636,7 +636,7 @@
     "file": "docs/product/mbti/source/INTJ.json",
     "pointer": "/avoidJobsOrEnvironments/9",
     "recordSha256": "d918b93ea11789bb94cdb831ac039dd54ce083f047a56738fa1b7981ff34a06a",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "blunt_fact_delivery",
@@ -662,7 +662,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "5a5d1e67594622254ca7f649ff47fbbf89806bd5337d40556c7a34ee073c85e2",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "research_field_fit",
@@ -695,7 +695,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "4e7435db610d97920a4243147e117e0e57664219a8becab396ae821aa8fcac6b",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "why_question_loop",
@@ -730,7 +730,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "9ff3c5b4f88f447a2f7d111c553c3d9685284bde449dc68e73c9cd67442d8dca",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "education_for_adults_fit",
@@ -765,7 +765,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "7a5e586f248552a17e065d22a7ba6c7c9b3563d83d46c7f26656402976767f06",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "programming_engineering_fit",
@@ -798,7 +798,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "e35d8b3b9fe88187df654653a8cd88eee59a8aa269cbed0bd46c908090155697",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "esports_and_online_skill",
@@ -831,7 +831,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "df7eb1b80615eb503a7c05c67a06dd38b8985afec87c40b5def2f806268da491",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "programming_engineering_fit",
@@ -864,7 +864,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "680509ce15a76b4e8a3333968667e1e73e618d3cbc7c43d1cfa49e99823c546e",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "lie_and_trick_detection",
@@ -897,7 +897,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "ca8c2962731209b5d5daca392562005ef4a4bf439fbe67cabbdec4477aac702a",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "research_field_fit",
@@ -930,7 +930,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "3132fdab9db41ce1943b36d25fd1b2e7a346002e06369ce686e73afae671bcaf",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_bureaucracy_work",
@@ -956,7 +956,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "2e98d821975fee86d6ccf610ece5ff439de974371443e62c6857a1651724337f",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "low_reaction_meeting_drain",
@@ -982,7 +982,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "30a060c83dcbb44f19d80625d9e024d183dca458849a518c4274e1004c05c70c",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "research_field_fit",
@@ -1008,7 +1008,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "d1e323f87daca1f650c23a7aaffd99cd2c733015ebc2a2377f2a9b97843b39b5",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_need_for_human_ties",
@@ -1034,7 +1034,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "eb9397fd22f1b5acd2c5468a593cdd2318a702d45ece529d4ab303105e004134",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "social_blindness",
@@ -1060,7 +1060,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "b1dda61f0c0bd67d1b99c4b85b97be8f51b939c883108692b7b7982a6d47bbcf",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "last_minute_execution",
@@ -1086,7 +1086,7 @@
     "file": "docs/product/mbti/source/INTP.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "83f3a70cc09ee261d26e4b913d50d1005eb2d2e5c3ceee793fc8c7cb57087bf6",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "emotion_after_thought",
@@ -1112,7 +1112,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "0f70fa6fcb3a0e4a901b498b52a3f42b94564e26ce204d148b300fa98cb26dd4",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "commanding_goal_builder",
@@ -1145,7 +1145,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "02e24ac2f3b969ba396212b557cf101c2aa823030f0fc9a283ead49f10dbe5e7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_presence_private_distance",
@@ -1178,7 +1178,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "71cf61c9c735316403cc30c9bd4a6941616c36627307afc281607ddc0f2bf191",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "challenge_communication",
@@ -1211,7 +1211,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "cd534c6c877e05b9505cb4619ac23e422f6735b6551619451f355147102e34b2",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "challenge_communication",
@@ -1244,7 +1244,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "e80c99a78d3a739837523b67421d3b39caec4f0c8c2336a0688777d915d6cbef",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "objective_performance_environment",
@@ -1277,7 +1277,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "a23a88948851cb37057353828d86f22dfc6d589e15b83161c49c796dc32eb4cb",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficiency_order_maker",
@@ -1310,7 +1310,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "f9e4d898e74c78dd8e617787bce5f2062071041689e06f2278e0ac2b13759abd",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "large_team_manager",
@@ -1343,7 +1343,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "0817ab4ab07c2caf086fddde782340471b5ce75fdb0832f7f2203b8a2997b0cb",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "objective_metric_investing",
@@ -1376,7 +1376,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "d1d2c55f2ffc7080e52c60a3ff97cc27bbb3928cf3bddc1317c78c6ae7cbda5d",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "objective_performance_environment",
@@ -1409,7 +1409,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "eab3bc80a76b14c2b04de2848dd1640efbd3d0647dc999e1f7c77a2526102427",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficiency_order_maker",
@@ -1442,7 +1442,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "624912625f165710dfa1c13fdfc4f12e9db15edbec42ac71c95ba2b148fe379e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "future_change_leader",
@@ -1475,7 +1475,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "96b513721010c8c6d0a5f7539ae26082ba75089f8700093252e914f150411b61",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "large_team_manager",
@@ -1508,7 +1508,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/12",
     "recordSha256": "95435c3a122479e2330ce0950100986b4edf97223ef6ea2c4166dc44f196014c",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "critique_and_debate_learning",
@@ -1541,7 +1541,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/13",
     "recordSha256": "54b56c248f98f37e0f334b0feaba833e2876098d6381e62ffc9a7681c27e728b",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "clear_assertive_language",
@@ -1574,7 +1574,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/14",
     "recordSha256": "64b3d33ab7e6d0b8164add126919efb1f26f96ab3d2ce76c7b5bab9215a1b91b",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "talent_diagnosis",
@@ -1607,7 +1607,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/15",
     "recordSha256": "1b98ec4561b49f9947060704416ccd42a6d2a0fadde2a52660ca36f612a1ab5a",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficiency_order_maker",
@@ -1640,7 +1640,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/16",
     "recordSha256": "1850acaadbc413748e4765d8108e754901a2f9fba2875f7170129a662c243a66",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "execution_after_planning",
@@ -1673,7 +1673,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/17",
     "recordSha256": "a8ddff0144e02e99624532a0988fcbca215966408effd5fd38c230e16854022a",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "authority_through_competence",
@@ -1706,7 +1706,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/18",
     "recordSha256": "101f4d2914233c25e12f99ce50b8414fbd967025c0241e377cd5559fd69ad7a4",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "authority_through_competence",
@@ -1739,7 +1739,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/19",
     "recordSha256": "9e38e50452cb36a12cb48380bdc98bcd0e1372e9f1cfe265293dcf921131ed9f",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "clear_assertive_language",
@@ -1772,7 +1772,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/20",
     "recordSha256": "cec98c53d79613123f8ba3d21f0e1cba1a4bf4aac242bb8cdb6c13decc3e7748",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "crisis_momentum",
@@ -1805,7 +1805,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/recommendedJobs/21",
     "recordSha256": "1a70003bbbff9186be515e273caca53e847941fe98bc30945aa53fd963431b75",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "challenge_communication",
@@ -1838,7 +1838,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "661b8d088007bc8e784fa5fdb373c2f628fa415d29af47adfc8cfa6815b1d7ae",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "ownership_priority",
@@ -1864,7 +1864,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "f02a3c88aa2a9dc8fe0166ce36cb5821d3f7331c7188ac390e5d3a7108c92a5e",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "ownership_priority",
@@ -1890,7 +1890,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "3772714cdc7555c230b11ce6c0bd087adc8d30854e9d50e955eae12e6fdc7ff7",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_presence_private_distance",
@@ -1916,7 +1916,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "eda281d3666952fe2dfe8d0667473665462f59bef977acd081bc9201ebf3e152",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficiency_order_maker",
@@ -1942,7 +1942,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "1b018cae9c93d6d5a59f8130f47fd94979efcd9a20019813758a4eb6cb66a141",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_empathy_execution",
@@ -1968,7 +1968,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "c82f8c61ca2b71adfc9079d8b341edf9f04bd0f451ebf0e20a4a32743d81b3a9",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "ownership_priority",
@@ -1994,7 +1994,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "0b2945447038a194a81c470263ad8cffa4e40b1a49fa056619262db21d356b2c",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "authority_through_competence",
@@ -2020,7 +2020,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "2d7999c88b4792c244bd4bdcfa468bd7ef586839386842ce43362ffab12cd17c",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "ownership_priority",
@@ -2046,7 +2046,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/8",
     "recordSha256": "40d8718c25d8c76da425bed7a2c1820023cb889ed21a68707eb65cdc3f6d5953",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "future_change_leader",
@@ -2072,7 +2072,7 @@
     "file": "docs/product/mbti/source/ENTJ.json",
     "pointer": "/avoidJobsOrEnvironments/9",
     "recordSha256": "6cc1cc11b9a8e01c06448982e708a6045faa8cfee3d5223494337d9cb6b83a6c",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "ruthless_rationality",
@@ -2098,7 +2098,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "09f0c3bad1b5f5219132b2c45aa543aab11219113791a48eb706848c1d9415bf",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "verbal_profession_fit",
@@ -2130,7 +2130,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "eb35730b19a83e0f020aff88851f544cf6e7b4be89541eb22ec5d0994a591ba7",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "entrepreneurial_drive",
@@ -2162,7 +2162,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "6ed9f099e63e3c03994463b31292cef18ffbebc0fe1f2e67afe84b7b318b28e3",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "debate_as_processing",
@@ -2194,7 +2194,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "f8e063ee8e1cbabdaa8c2197b0a253de7aeab78522526ea42f3fca0b82e4d952",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_authoritarian_spirit",
@@ -2227,7 +2227,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "b85063ae98905a6e7531e279892198f325d819f898dd68b1ca012fadbb8c3315",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "people_potential_reader",
@@ -2260,7 +2260,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "6887226f639d1c6463b1cb81b5021be91e0e0a390fa3ba3880297b0ccb1eab4f",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "tech_problem_solver",
@@ -2293,7 +2293,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "e9f6f739446a7e5a43fe3a37b76ad1ffcedc4c18228869d64d2c22c6845a7856",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "tech_problem_solver",
@@ -2325,7 +2325,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "0c36f2883a1daaa36f4b33f4480b5f7757c392daa4b77d1583350612aec1a843",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "challenge_seeking_confidence",
@@ -2358,7 +2358,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "5c971938bd18f816569856c0bc28fa82ce311821c292e2b406e834fd69f15b33",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "performance_and_entertainment",
@@ -2391,7 +2391,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "e92f36b6b622dc3af15f29aaf8dfcbeceeb3155d01aaa98e047c4f2e88d765be",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "performance_and_entertainment",
@@ -2424,7 +2424,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "05bb6a844412114835229b01458c5f8752ac74c6bf4fb08eba2d073a1d2c35e8",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "brainstorming_leader",
@@ -2457,7 +2457,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "023dea8d05ee5bdd2f6f90df461ad39d32737c238b3d246ede70e3f1c82bd9a0",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "quick_connection",
@@ -2490,7 +2490,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "f51e214bede089bace4370638fa9dfcaf0cc9deb701dd822d457dd7a1f0afe86",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_routine_tolerance",
@@ -2516,7 +2516,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "7e28430d3401d104ca535de3653a02ab9ef0ec4eebb1ea0895324ec55e288729",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "direct_speech",
@@ -2542,7 +2542,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "190d7fb2ab27449b770bd662fa8f0f0c3c7e516f57c2b34697302ad134da1fa4",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_routine_tolerance",
@@ -2568,7 +2568,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "e5c70d98c8ca8cfc7a7d6b231c4aad06ae456e7a435ebe1cc7bf2cb3d710a5d7",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_authoritarian_spirit",
@@ -2594,7 +2594,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "5c7d3bd8d31a46eaf73ecf218cc7b0f76f0ecd22a7db391ec2711513f2466ed2",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_authoritarian_spirit",
@@ -2620,7 +2620,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "248b0ab35e4036c34d0c99c205adc640d4cfc54d6d1c4206cebf26a8b5338bd0",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_routine_tolerance",
@@ -2646,7 +2646,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "8d357f52ae862ea6f61a6f25159f619e2a1be46c74d19e2ac006c6d3fceba4f0",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "autonomy_required",
@@ -2672,7 +2672,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "4ec0ff9d293fea962e59fb0d8b053d7eb0a10133a8a066f41a3b79955b321e4c",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_routine_tolerance",
@@ -2698,7 +2698,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/8",
     "recordSha256": "947caf1c2b5c9d4bd299641055db073b3e0435cc9098b69da1587746f6be5666",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_routine_tolerance",
@@ -2724,7 +2724,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/9",
     "recordSha256": "97c85680023e66607f8820ea86273a8ddbf25871c2d61691bc4ed702dbc22918",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_authoritarian_spirit",
@@ -2750,7 +2750,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/10",
     "recordSha256": "2f50625689a75a72d2770c929352840bf9870a3d98297d265045d9630a7134d8",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_authoritarian_spirit",
@@ -2778,7 +2778,7 @@
     "file": "docs/product/mbti/source/ENTP.json",
     "pointer": "/avoidJobsOrEnvironments/11",
     "recordSha256": "f171eb665eed8ab6272be0308811392420c4458733dbb3a75f6fce8362a9c08d",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "direct_speech",
@@ -2804,7 +2804,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "550d514b146f64775225aa46c120cf1b40e4f1def264fcf756fe5b8b8a55b3bf",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "helping_profession_fit",
@@ -2837,7 +2837,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "32433b4698e43bdf83f82180b1aa0da8ff799f95354c6f415d281a86dd92fbc6",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "private_analysis_loop",
@@ -2870,7 +2870,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "5965fed1b7212a1d75a1c65ee2320a2a3482c1e742795ab9e51c2add81e6ba9a",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "compassion",
@@ -2903,7 +2903,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "73ca7c774a04496b56dff0fb09dc8e499df9634bf7ba60488afcd5d67d6846d1",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "values_and_manners_parent",
@@ -2936,7 +2936,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "414e01f3bbf94ecfe5167150d077792b198c7ed7f8a132d3a43a00ae4f506c48",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sensitive_emotion_sponge_child",
@@ -2969,7 +2969,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "15862523e6d6a4aaeb655b978707b2879e36f02c06454a1b44fa64931aa71a6b",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_language_arts",
@@ -3002,7 +3002,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "1e15d67fdff45655491e5d4599fcebaa0acf13605de2dc66a71cd0be135c350d",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_language_arts",
@@ -3035,7 +3035,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "383404d9bd8c09c7c27d5fd68e3582ff87b63ef45bce4d9b7947c25912f32c48",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "symbolic_imagination",
@@ -3068,7 +3068,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "205335284dd2365d11d0a17714e748c1c2e277da7bdd28e14ec5e940c90329bc",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "people_centered_value",
@@ -3101,7 +3101,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "b866481417844c7ad4611287b29d48063aa314eda961cee1cc88bccf8f452497",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "research_academic_track",
@@ -3134,7 +3134,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "e24607c1944352d940039d12311779f18da217932631f52bf67a9dab0f3f4b37",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_language_arts",
@@ -3167,7 +3167,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "a13832024668e1056f0008bde8be7805e098e2a96d4307acd6ba5333b4813a85",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "helping_profession_fit",
@@ -3200,7 +3200,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "78272f0a1cbeb35989af415d1a73b8855cd09acbdaeb567b30858ffe6604da6a",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_fit_fieldwork",
@@ -3228,7 +3228,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "0a7be93c10c24ac508a9b30709061ac7bf7471f566e33c79ad8b3dee77ba07c2",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_smalltalk_energy",
@@ -3256,7 +3256,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "d707fd015a4625f14339fe1e4abbbab490347a4f9d8c259d90d1dae753d010d3",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "horizontal_structure_fit",
@@ -3284,7 +3284,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "69e42e3d53b5f8f8a5c7c4d1a9a92dac716484fd53cde768dc577f01893600d2",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "empathy_burnout",
@@ -3312,7 +3312,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "ee5b8e3446b55451de9c1d5784030e639a1bd8172d766bb014ab6519eeafbb5d",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "calm_deep_work",
@@ -3340,7 +3340,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "d3ad127ff22f4cacee0c15d9e6812c6ce3df43b8c8f46c116bd8f4277d8719a9",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "horizontal_structure_fit",
@@ -3368,7 +3368,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "26259ee5d9f0c446ad5ba5422ab593e70418c9442acf9deea8f95fca9a2153f6",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_fit_fieldwork",
@@ -3396,7 +3396,7 @@
     "file": "docs/product/mbti/source/INFJ.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "460dda9e4c53579d48f5abc2ce33ab1df0da83c521aaca4bd71fbf28c793ab05",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "horizontal_structure_fit",
@@ -3424,7 +3424,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "43ca9021d51ee4614c26c6a29475a5dc3da31b56eddc54d876e1e6e030e9cf5f",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_arts_fit",
@@ -3457,7 +3457,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "25b2f45b39fa7a2474a1e57e74a8b76970cb00dc27a53f10c278b4fa65e6307b",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_arts_fit",
@@ -3490,7 +3490,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "f28a85dd60a257201dc52d74472d1c3ce70539a5deee7ce0a93f50525b9f93bf",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_emotional_processing",
@@ -3523,7 +3523,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "1000e71849de8630af39df7734f21bda52dc90f2bf31202f3e321758d363ebfc",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "creative_arts_fit",
@@ -3556,7 +3556,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "5498ddee9328c0d0d02c717278c629f3a1d4a1bdfd7089c522ff09f2de0b81c1",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "counseling_healing_fit",
@@ -3589,7 +3589,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "371d5f02b5d36b1da42afb4da98eef271e577a8afe571fc9239892622d518fc5",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "gentle_joan_of_arc",
@@ -3622,7 +3622,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "4b62b31978ac7e6af9cf97786d9be8451ad24937c128850734df34783f5aaf1d",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "education_gentle_teacher",
@@ -3655,7 +3655,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "c5174a38f584e82f07d142121033b6c03a94e10f33afe096c51c73cef6f2fec4",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "media_community_fit",
@@ -3688,7 +3688,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "87abaa02125868efde1319e175113fa5028008e9b7680c74436426ea9e399280",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "media_community_fit",
@@ -3721,7 +3721,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "4e879a2f8eb1919b8bb2d28197514af434bc2781bf1d1de0dcfd13d58352c64d",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "gentle_joan_of_arc",
@@ -3754,7 +3754,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "0ccb2a838b3f732e9e906dd583ee9f8a5be4e28991d92b2463fd05fdc3a442fc",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "small_independent_business",
@@ -3787,7 +3787,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "79820ffd3067e8497603495b5729c5e2c2e9be92c9c67e51a2fb4c600c395d44",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "media_community_fit",
@@ -3820,7 +3820,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "0a84aece551c26beb5b9c1589f3332066b7b8d8c22e29899da5bb608f1119e2c",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "bureaucracy_low_fit",
@@ -3848,7 +3848,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "b34d0c768a0da2a92a34d26e82b5b2702a5531328b00973bb0e884addd2da218",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "authority_conflict_child",
@@ -3876,7 +3876,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "31e1398a4683917c8dafcccf3fcc989a13f22cc716bfafcac2aca11876425c7c",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "soft_conflict_style",
@@ -3904,7 +3904,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "95980c4a3a9d2962d617d3f3afac23bc4bb3013aa345e651a315106aa9b94676",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_material_drive",
@@ -3932,7 +3932,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "c46f238e1deb88851c70526db16c69e9d7af2559a4e11e294ea408318a1422f7",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "storytelling_learning",
@@ -3960,7 +3960,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "ba6365d044f17b2ac2e9aa010bf7b8dda506e1979f9480c1370bf92ef0a6760b",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_competition_environment",
@@ -3988,7 +3988,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "3affc07908c39de4af9cade828d108ceb7e6bc8a92c8343cb0359c69e63d1232",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "meaning_over_status",
@@ -4016,7 +4016,7 @@
     "file": "docs/product/mbti/source/INFP.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "6c281a0e0621390f52b1432a7e82393aae8a93a426e05bafcd1d0800f374074f",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "criticism_fragility",
@@ -4044,7 +4044,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "c054c7e5c16474aa51be8ca216dea5057d56e601dbbc8a5fa4c92c06c2bf894a",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "teacher_facilitator_fit",
@@ -4077,7 +4077,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "da174e07faf263b86bf4284ee22a05a46bb6415cedebfad9f04890205cf8ee86",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "counseling_and_welfare",
@@ -4110,7 +4110,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "f6ec4c5c95d8e31e91542765cc5dd0e852a2f86b9011efba28d3b3ec59c4efc0",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "counseling_and_welfare",
@@ -4143,7 +4143,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "e687efac7fcc5feeffb7b6465779c49abc6974edb0d7d1757ca319e51e1daa1e",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "teacher_facilitator_fit",
@@ -4175,7 +4175,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "73eec05b7e1c6b8d46a2e55305229067856c51eabbe2151ad63d4e6a3982a7db",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "diplomatic_bridge",
@@ -4208,7 +4208,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "291fd701be1424f11869ee5accaa20b948c2f4f420620e9641cdbfaab98ea8c6",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_communication_fit",
@@ -4240,7 +4240,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "a861f4c9ec69f0d19bcb92e008445272a48ee8aaa67d071df55eaae74a17053b",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_communication_fit",
@@ -4273,7 +4273,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "9f7f51bedf649322d6ffa95a257a2c0ed3e7f4fd78ff727ff317f2c8b9f7dd24",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_communication_fit",
@@ -4306,7 +4306,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "20411a2574798db6e2da6dd35f7a7c60229ce19dd253348948c200cf3b7c5e47",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_communication_fit",
@@ -4338,7 +4338,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "a2c2e303b83cbd7fc8666df98fa058e33f135d8f9c058a891bebfa6b967608bd",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "activist_leadership",
@@ -4371,7 +4371,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "156eafbc11dcb581585ddbd721fbf40d37aac3e26747cca314eebba6ec2c3bfb",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "collaborative_environment",
@@ -4397,7 +4397,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "8748ca5dd79dbaad9e35147764c62c3ca68b358a86b650cb7e3ed8d3866fa002",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "fe_first_judgment",
@@ -4423,7 +4423,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "f38a5bb169915ccdd9f832aa77c0e1ca999328b59ebce7a98fc2338672ca4f2c",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "tension_sensitive_work",
@@ -4449,7 +4449,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "ac572fdbf274cacb5233b694545e0134ac23aac32e7896024f29b7215459ee68",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "meaning_based_study",
@@ -4475,7 +4475,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "2ce9abff73e1e56854833ab30713ab22acf18624934587a6d697cbea7ff4537a",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "collaborative_environment",
@@ -4501,7 +4501,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "d05e9b21d87386b53a1603d7a1ddbfff97848b75aa59d9a8ee39fa4b91537637",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "over_involvement",
@@ -4527,7 +4527,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "bf44fb4330308c1ec8449409ddb8edd3973a37c2b808df5d3d2daa293fdff210",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "gentle_feedback",
@@ -4553,7 +4553,7 @@
     "file": "docs/product/mbti/source/ENFJ.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "43f036cf4f5d71f605f8d18cb139631b7613e8a4f8520090b39fdedda8811967",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "value_driven_conviction",
@@ -4579,7 +4579,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "6e5d20b4af4d1067b671adf1ba0e8892485c100f6dbddeff9189c63576ada6df",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "counseling_fit",
@@ -4612,7 +4612,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "6a37dc69b388d21e55120f1e14de7b5a72201ed1d51394c971a639b6d416575e",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "education_motivator",
@@ -4645,7 +4645,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "4a238ca942bcda64a8399a423f4b10a688d35ea7a8c4ac6b034c489d3d8f9414",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "arts_and_creative_field",
@@ -4678,7 +4678,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "3c5933d3f0f5fb64f41e887c820ffce5ea392de45474fa28cdc7c0c5a6ca7927",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "imaginative_storytelling",
@@ -4711,7 +4711,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "11522ca9c3d6f0c9488d08444612e8b91298c6b5c1c53c63c29cf31b9def0087",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "community_event_starter",
@@ -4744,7 +4744,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "c3ad7edd3d1c8a184fbc2a2f9c66b01915733e24e52fceaf9c7f127cdbc79b4a",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "wide_light_network",
@@ -4777,7 +4777,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "a02d9d96e751b84116908a4d97809d69322cb07d4b8f7572e18c910bbeea03bb",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "language_conversation_strength",
@@ -4810,7 +4810,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "2160c79897c89f9183baf924f34adc29a1b2f4e8162ffa5d44ef00bc0b1e9937",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "meaning_before_fact",
@@ -4843,7 +4843,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "9098a4eefd866fdf08450f319f0a55e338090f6bde0a1a4d0b12327470926d80",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "detail_boredom",
@@ -4869,7 +4869,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "026ef21472945529462006dda38d2f47e0826aa1c79d00472b86e6bf9225527f",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "autonomy_over_control",
@@ -4895,7 +4895,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "5035f9ccc55ed6cba1f332d7fa0996929d2ff3efd2f853c78cdd2c91d4e2d941",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "autonomy_over_control",
@@ -4921,7 +4921,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "c5d05da1df2456af91b49ede50843d81a890f6f38370e5e8986af6843220ceb4",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "meaning_based_study",
@@ -4949,7 +4949,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "884695299cb9bc45ac3da7306808099da936ac96f85f2af88a7a2d44811817af",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "detail_boredom",
@@ -4975,7 +4975,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "886e9eaae0aef8df5cb82707cb04e91ab51aef153f7a699959bb6b847db2278c",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "unfinished_many_starts",
@@ -5001,7 +5001,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "373f81b2663a104b86760caa03cf9a8f6275681278883de89779a401f6c3fdd5",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "criticism_sensitivity",
@@ -5027,7 +5027,7 @@
     "file": "docs/product/mbti/source/ENFP.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "3498094c5491ca242c0254b11617c03b91044f365864750798b9d72341636ad1",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "expressive_authenticity",
@@ -5053,7 +5053,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "e319e8e68d23493aa75bd8a64e7467cd4398140482dbef7b963cb31deb180622",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_institution_fit",
@@ -5084,7 +5084,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "cf66d8b7b5043f81d1af4e3776d6ad782f1e53eb27eaae5863e0c2a78503bea5",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_profession_fit",
@@ -5115,7 +5115,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "91733b9aca71aa20e36ae2c6b10336ca91dec103733e666771afff17e61a5f16",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_profession_fit",
@@ -5146,7 +5146,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "b0cc1d66a41dc0271e2a57b4274b8ab66ef701372d9ba227b8648e8b76ab7f88",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "past_data_decision",
@@ -5177,7 +5177,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "abc89ee8bce1f178b60ac7a7d0c21f72ddb74d4ec7dcbb2dccff310145dd379b",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_institution_fit",
@@ -5207,7 +5207,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "0595f2ab88bcbe8dc24339193d04b876bbd7a6cb9eab2cadfec80b8da46a4c79",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "cost_and_contract_mind",
@@ -5238,7 +5238,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "723fd9919a3c49ca95ac5c5e4abc8b015f6d4e094bc58e3f1b54130929b135f4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "stable_income_preference",
@@ -5269,7 +5269,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "e0e76a108e63a0e464642db065f3306abd4bc6733a4cc69648f0c950cddddac4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "teacher_favored_student",
@@ -5299,7 +5299,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "204041c7d3b00f59f767cbbc644687d50c41a18e43e487dfd8554850d01f2879",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_institution_fit",
@@ -5330,7 +5330,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "10a91b1a0e8578c0b9654bf9f6f7a539e92673ab572de5cf50a5c4ec993d5173",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_profession_fit",
@@ -5361,7 +5361,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "31fdc833ecd5a625650df7979e095234acedacfd9efcebec30e75fe746c65d1a",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficient_error_detection",
@@ -5392,7 +5392,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "446696c4004484f90a1bcefd32bca27da87e03e85d472e5fd00e3ea7fb64d502",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "routine_sensitive",
@@ -5418,7 +5418,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "f062abcefc97c7d82ce1dd62f4d165addc5d446fcdec543ac10301dc4bce3428",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "quiet_stability",
@@ -5444,7 +5444,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "909db382544eac4eface3622af5fdba70147198b585c69b5cc35c2f96e0bdcea",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "emotional_blind_spot",
@@ -5470,7 +5470,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "bff790269dd246fc7f0cd0e1650866f25c5e67e43c6071b3d30e7104df7475b7",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "avoid_chaotic_creative_work",
@@ -5496,7 +5496,7 @@
     "file": "docs/product/mbti/source/ISTJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "10ffea1964ddf8774646e217d04b5f196263a5b7dbd6de767ad062af4c71167f",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "conservative_filter",
@@ -5522,7 +5522,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "b262bd9657933fb483f28b1ba6d0bc880a1279abed7c2bc48511b1f36bfcd791",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "structured_care_profession",
@@ -5553,7 +5553,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "fda6da6afd0457bbbea7fe72a9c159eae54b6dfc6a4e1b311ab1541a8e0b0cf5",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "behind_the_scenes_worker",
@@ -5584,7 +5584,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "75b07e62d3fe11a3dea7447980af1875624ef0d9e8779d9af3b3b4ce2f279f6f",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "service_stability_career",
@@ -5615,7 +5615,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "21b468369c4f2b7a624116620d4679e5217a2a39891cf42dd585123522573113",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "structured_care_profession",
@@ -5646,7 +5646,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "6f7d2272909e17d2c7fcefd70ac2c6257e290bc01f824c0118a2ce8cdb5e8b60",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "practical_helper_work",
@@ -5677,7 +5677,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "c454ff66fe3988ddbbc81f271d3ca041ad4209bcde54fc592d61cbbfc0f3605c",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "practical_helper_work",
@@ -5708,7 +5708,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "9a7ea922ba782b2f9ef4b0bb3767d176d633689edad4c5e497fb509ed4c86e1f",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "stable_org_fit",
@@ -5739,7 +5739,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "532b80d70a5f3677b3972ae59a79e811e8d32010d79d415423d0971e7e5f55db",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "behind_the_scenes_worker",
@@ -5770,7 +5770,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "9da2fb46342f478e2ca1c74c48f069489935a260b11e451d12439723b916d07c",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "social_feeling_scanner",
@@ -5801,7 +5801,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "e7dc5a68ed95dc205284a6fefb047af64ddd13c1e4b64c08351669eac89df19b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "memory_based_affection",
@@ -5832,7 +5832,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "8f336237ccef5e1c0a9a422ec06161aa1fcb992d892720c89e1060c69e169f71",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "detail_first_attention",
@@ -5863,7 +5863,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "a0556686ab6e0380a57988dbceb00e329db102660169629e6eebac1744fce76f",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "quiet_reputation_worker",
@@ -5894,7 +5894,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "cf3c7c39e0d6636a96803a13089515a8058aaedbc6f471a3be5b3abdc33d2942",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "stable_org_fit",
@@ -5920,7 +5920,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "244aaa7f45416b46d614e9d446049476f41593e7d2202bc4396b52cf75bc48b6",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "conflict_avoidance_at_work",
@@ -5946,7 +5946,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "1fff2d08bb5fa1d9d2cbea9a7076b2cd3aec4fa80a4addc2879b46dd19febda9",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "personalized_criticism",
@@ -5972,7 +5972,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "b1c08daf511237b88e0ba441495965d45cfe08cd95c44246b106228d83299f1b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "service_stability_career",
@@ -5998,7 +5998,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "88062174f578962ef3ee26e8f042605fa07a95fd98be346ad9590e6cd096817b",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "burnout_from_helping",
@@ -6024,7 +6024,7 @@
     "file": "docs/product/mbti/source/ISFJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "29e9c190cbb9d98c89e505dc7c730fd2f061851f8ea00ec8e6abafabbeabec2a",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "guideline_micro_manager",
@@ -6050,7 +6050,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "763eac4d39d03782eef82bf9fef15c1b262cfab68aeb28f4ab673d95816e0ebf",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "management_leadership_fit",
@@ -6083,7 +6083,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "ae57f25c46850adf09a5f504bfd279976c6f44467f58dd2a3129453ab3fa1fe4",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_order_career",
@@ -6116,7 +6116,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "7684602acb87348c6626580b116934db19d7ab729bba03c4c5fb3f61693db5e7",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "hierarchy_comfort",
@@ -6149,7 +6149,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "0897db7c899a2fb4d32bd7c573ba785917662f5dbc53964c1382b5115073d940",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "clear_expectations",
@@ -6182,7 +6182,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "c44106f9098f5f427f6ea78828b5f9119e45ad26007ef66b2dcec982b855a92f",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "education_with_structure",
@@ -6215,7 +6215,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "1fd4c267bbeb018a86b692a9e24321821bf9843861d4d1b048700ca0d022c70e",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "law_finance_fit",
@@ -6248,7 +6248,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "74f4cecc6e7dee74809dcd3d8eba88a10e3829913957a32406889f95ce2449ed",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "law_finance_fit",
@@ -6281,7 +6281,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "faaf2692604240ee8e422c4aada5051f6c18327329872b97c6a4332c92cc74ba",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "economic_stability_drive",
@@ -6314,7 +6314,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "da3a0ce44fc39b842d3d7b3898104fabf41b0796c7752114ad3a1c87f78a5f09",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_order_career",
@@ -6347,7 +6347,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "eddee8c9812260ff996f605b153acc06eb8047791ca33d0dd14775dbd881dacf",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_order_career",
@@ -6380,7 +6380,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "a1fe9a983abd053e039ee2084ddf6f1f585917972e7b05f9e03c5aaaaa7eff88",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_order_career",
@@ -6413,7 +6413,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "d0b0f00d3f8b05e88df51b756a4869b7538105b35fc467b20f604a1c168322bf",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "healthcare_authority_fit",
@@ -6446,7 +6446,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "40932f2273d19693e795da544fa9ca2c0c789135287473cbccc81cedd79a0d6b",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "order_and_standard",
@@ -6474,7 +6474,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "830de224dc3e89ffc2d3d54ce0b8ee9b416c3846d16a20ce623cda0c1e397e72",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficiency_filter",
@@ -6502,7 +6502,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "56944ec443ef0b1014ecb6ccf2328ac1fc97a53c984f9a09f93e66b96c6fab4a",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "si_verified_process",
@@ -6530,7 +6530,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "ae5dbab51f5ef1f66246ec4657d530f8e4b51438e63c64099ab4e3b900fbc45b",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "hierarchy_comfort",
@@ -6558,7 +6558,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "1cf8320ed6a836176d4c0153bc58a952703ed9faca8037d1a413c16f511d051a",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "practical_realist",
@@ -6586,7 +6586,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "7d57a507f4c061e4ce40beb1c65059e93f7529feb230060286d08a085ffd71f5",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "efficiency_filter",
@@ -6614,7 +6614,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "e8b0e86f91a1fbf05069cffb57d3d50c6b07d10f494ccbb0e0dc26d9861a389a",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "weak_fi_emotional_blindspot",
@@ -6642,7 +6642,7 @@
     "file": "docs/product/mbti/source/ESTJ.json",
     "pointer": "/avoidJobsOrEnvironments/7",
     "recordSha256": "ef369154003ce4f08c4fa36ef2ad6526bb7893c50cf35bf7a345733b344a9f31",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "responsible_operator",
@@ -6670,7 +6670,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "694e0a9b6fa16effa71c62c059331f936b59636a87f135fc6aecdd9226d0a4e7",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "service_helping_fit",
@@ -6703,7 +6703,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "bf81468783ecd16e86eccffb166873a25115bec9df24248d896af46b6526788a",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "warm_provider_identity",
@@ -6736,7 +6736,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "a509eb778cc094da50df1de612d60135d0f9b416eca691f5713eca6302c196c7",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "policy_alignment_need",
@@ -6769,7 +6769,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "cac25336c9b25cca4ec9089349c58ccd8ed8b3c041395c8ce8b6c51182e79b61",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "organizational_relationship_advantage",
@@ -6802,7 +6802,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "9ae71d2070d38982a6ec47483dba5dd9aa882e084dd89617399cc2248c551c04",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "service_helping_fit",
@@ -6835,7 +6835,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "dff6f4e41449da3d4c624ede389988097d34aff77bbae36c44621c208055a7f2",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "structured_future_career",
@@ -6868,7 +6868,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "250f5afd1398561be5d5005ceec6ce5f3ee0d737b908891f17e3581aa55575f5",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_recognition_motivation",
@@ -6901,7 +6901,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "5f82050bbc8e1950c131366f91b2281b1eb8852a95f1e310ec7b4064bcdafbf7",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "service_helping_fit",
@@ -6934,7 +6934,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "83eef010681def901dc74b443604ea92cde42e73669cf137e2207b961b176ff0",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "repeat_process_strength",
@@ -6967,7 +6967,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "e0e13f7e2197ad965c4ca9deccdb7936ebdce4341aebb3c8dc4c1b103e1e8f83",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "warm_provider_identity",
@@ -7000,7 +7000,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "472002ddc79e07a90f1dc8f8df3d9e25cbd6714001bd99d504b476af8e2319f5",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "inclusion_drive",
@@ -7033,7 +7033,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "b71cfecfb993735edb847f48230e33141f04e389a94974aba5addcaad02cc7d1",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "warm_positive_communication",
@@ -7066,7 +7066,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/12",
     "recordSha256": "e3cf9eac4ec905475ba21e654b814358224c55c9172b69c1dedc1afbc6b4e2a1",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "routine_loyalist",
@@ -7099,7 +7099,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/13",
     "recordSha256": "7e9de1e82a2888eb846f402a21f2b7e3077f3d03a706f9203e160da34c80512f",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "social_adaptation_engine",
@@ -7132,7 +7132,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/14",
     "recordSha256": "8349a0a72e838275f4daf45cd4685cf2f1205291a3328df055a22c257866b27d",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "public_recognition_motivation",
@@ -7165,7 +7165,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/15",
     "recordSha256": "5b1ae4a0228a68bd8006ced736cfbb72be5a33d1d74d953bb8e00b5f20ac765d",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "routine_loyalist",
@@ -7198,7 +7198,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/16",
     "recordSha256": "f0e5d13b3a89c187969ada5a02739da35d8966ed249773e69553c0b5f8311fa3",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "active_expression",
@@ -7231,7 +7231,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/recommendedJobs/17",
     "recordSha256": "f84755a3227f3e1f02024eb65b2c300725d4d38887d9d81f740dcf08eb68a0c8",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "visible_leadership",
@@ -7264,7 +7264,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "6b52ddc586f04eda685d9c2dda27a77111febef092e829a7dbe379b32852a640",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "stress_relief_social",
@@ -7290,7 +7290,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "295e3352996a58bb4d27bf5d53188f7636d08e7c733e7988d9b3c36acebfb7a4",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "weak_abstract_analysis",
@@ -7316,7 +7316,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "345adf7362481b23c7615adcc984afa2ce9c5ea17620f55bf02ddbddd3040854",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "change_adaptation_limit",
@@ -7342,7 +7342,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "b195bcae80e27169dfa82a631a986ca1fdde975323e5d9491ea5229df3e24f43",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "rejection_sensitivity",
@@ -7368,7 +7368,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "4ac9fe2956d3459c9e5af4a47e7ea8d1901d21673c023643961e940ca9ba5c49",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "need_for_gratitude",
@@ -7394,7 +7394,7 @@
     "file": "docs/product/mbti/source/ESFJ.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "dab647f0abc0a8b8faf2daadf15bd1237fbf991ea210ef7f6732476c68d40061",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "goal_process_instruction",
@@ -7420,7 +7420,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "a6c6a0b943e4b21f46df6a9b1493ce8a63b04389cb89e4d8017cff05d2919866",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "causal_principle_focus",
@@ -7451,7 +7451,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "7c2ae66b9fc7d4e9e8ef6cec08480bf6ecbc557e67f3c5ae4db9f48c80201860",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "internal_logic_frame",
@@ -7482,7 +7482,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "8b8c6ca28455af5060a4640b5a6328cf1919812e843990f6a705ebf6d28bf889",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "crisis_response_work",
@@ -7513,7 +7513,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "928032c1d1e3889f65a4e3553a1e123e4992252ea4781bd3437cd1c2446d125d",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "quiet_tool_mind",
@@ -7544,7 +7544,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "b5d76aa9212030046bbd2881232e98ca730138025ab1915588c7fbb18032bb23",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "contradiction_intolerance",
@@ -7575,7 +7575,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "86e0313429f828d87327fbdeb2382041db9e85dc690f81d74183cbdd41af2f56",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "crisis_response_work",
@@ -7606,7 +7606,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "cd98c56d67deba6b79dd8af18ec3e81a26440c5f96285edbbb4c128b984ee262",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "crisis_response_work",
@@ -7637,7 +7637,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "96fd9cab916ca7b8018491eb4ef066d8496471252e29c9de79fc54dd6a60dd2a",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_sensory_work",
@@ -7668,7 +7668,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "bf448b5f7dedf27bed4f7cddc36d213879317271fe462b6b60afea80d101149d",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "practical_insight",
@@ -7699,7 +7699,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "7df90659ce8bd30f120090ef53b920a38aad86fb8fc718ad9e82d696c019a6fb",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "hands_on_technical_fit",
@@ -7730,7 +7730,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "f460dfe5fddecdeb29b26e8c4661cdb48fe0ae8e205812c913d00284de9af4d4",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_sensory_work",
@@ -7761,7 +7761,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "b9b6495d27126f60527ca64a42236ffad7a1446a7ebd786e3b1b6f8d686644a9",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_sensory_work",
@@ -7792,7 +7792,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/recommendedJobs/12",
     "recordSha256": "df0588731087745c578c15e0243d28b1855906407fabfef471958c2bf40f17df",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "precision_sensory_work",
@@ -7823,7 +7823,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "e059d703a4ce5007d8cf517ed3a3624e7adaaceb3f70c9beba6bff4f074568b3",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "emotional_blind_spot",
@@ -7849,7 +7849,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "70cbbc1c47a268b6c9cc221021a53b721ac8cadfb8ed84f407c3fc5aa1482801",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_micromanagement",
@@ -7875,7 +7875,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "bb9dcda8ff330644d93bcbf80239c6d7ed8980fccd32086e25c4d97574b69deb",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "action_over_meeting",
@@ -7901,7 +7901,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "c595a95286b9fbe20c60e380329596d7c6bc805e95380e430e9c513a3e33f848",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "present_moment_operator",
@@ -7927,7 +7927,7 @@
     "file": "docs/product/mbti/source/ISTP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "d8793d9a77cba040b850311c5e4a363a88d4d374befdccbc6ae109e01c1222c2",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "few_words_direct",
@@ -7953,7 +7953,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "7f519f8b1190e68d02f75485778d19cdcb08e7d72b654a10a6e62cfd8436a8ca",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "embodied_expression",
@@ -7984,7 +7984,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "cfca2a964d93088229307b26e5d7104854761996e026a276380f45b5accb8dd4",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "artistic_expression_fit",
@@ -8015,7 +8015,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "388b3d2f23f79d1699425dbfb2a98f841230bad8b22ef25d5f9b4acd24ae7800",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "aesthetic_sense",
@@ -8046,7 +8046,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "00c1e7188989f488b0c801f06dd4ae3658f9381736c02436750ad5c1f58d34d4",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "aesthetic_sense",
@@ -8077,7 +8077,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "1d4b68f196e031b444496268f460f56519ea18e6c6b998141cf433824dbb4105",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "artistic_expression_fit",
@@ -8108,7 +8108,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "9d92e3ce6c17378ecb44cbbe19a019cf95b4dc822b57b30024867f93cb750724",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sensory_truth_detector",
@@ -8139,7 +8139,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "6d7ff14c131213f34df7f197f30a4471b86d838d6903b0b3d3d403c581516bc9",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sensory_truth_detector",
@@ -8170,7 +8170,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "ba38d77d4a0d3be23cdd296f23c07251ec35b6fe66c541403eb62f80c4cc0d80",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "artistic_expression_fit",
@@ -8201,7 +8201,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "ead769658bdd79f373216a18d0d19f695fffbb1cfa636339f004d5feb5476621",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "embodied_expression",
@@ -8232,7 +8232,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/9",
     "recordSha256": "e80fd0f6925c9921c2677cab81f20ce6d0437b374ea60ed5b23de3528e828b8a",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "field_service_mission",
@@ -8263,7 +8263,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/10",
     "recordSha256": "31679d4cefec91dd60b965af090bccf1053d34bad461dfb491769eea96507dd0",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "field_service_mission",
@@ -8294,7 +8294,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/recommendedJobs/11",
     "recordSha256": "e49f001f6e697b697f1bd9fad27b3e1b7730aa863c3597e6b5145067b0cabc65",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "field_service_mission",
@@ -8325,7 +8325,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "53ad4e213db8ef25834389869df3a50182e32003209bfe7e370501cd4b86a839",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_authority_control",
@@ -8351,7 +8351,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "6dae721845a2d01936183d0f5e9ac4fba1481d9645d689cddcc75d0ed70c1464",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sensory_truth_detector",
@@ -8377,7 +8377,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "6c638b7eaad9c3a6305ea7e1077bdabb1096b7172a19717d8178e7f5e1a190e4",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "low_competition_best",
@@ -8403,7 +8403,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "5a1f2d61aa8523c977eb3c1542bb7aa136f10104aed273d630b2df21ef33167a",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "hands_on_learning",
@@ -8429,7 +8429,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "1846726d608a67d632220c9bc6c48b46f9a9ad6b242252a436299264c909ca3e",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "structure_for_talent",
@@ -8455,7 +8455,7 @@
     "file": "docs/product/mbti/source/ISFP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "39ec7e5c67d1a4e3520d40ef6de3c369277c10f6b2d77dbfe98e586429bce406",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "low_self_esteem_from_acceptance",
@@ -8481,7 +8481,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "266b30dfa5795065236e04d4b99dd54e85e5b8afd17f6ea2d7a9cff4de21dd9f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "live_content_fit",
@@ -8514,7 +8514,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "0b84bc85ce354b8bf9275360e33d4848c7897f29bc3151348bee2f8d1171b345",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "fitness_sports_fit",
@@ -8547,7 +8547,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "b978fa35098d063ccc6ce2193207821270364ca37afb25851b948de6a46355aa",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "teacher_activity_fit",
@@ -8580,7 +8580,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "53b6059e4bbeb35f749ffcd5952fcd7f4f0893770cba7303d24c0b1e6f5e18c4",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "travel_game_handson_fit",
@@ -8613,7 +8613,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "8034ae5bca95cf9d034637d5cc49e767a4a8d0fe6a34f6e1935f679c68bbc5c9",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "field_emergency_fit",
@@ -8646,7 +8646,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "06ad71d18a4d1d3e2a1218484c8af0ccfadb9f2aa85697dd9a57f0f105bd4fcd",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "field_emergency_fit",
@@ -8679,7 +8679,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "c64f910ae3c799db29b7e988e377c7bb62b5735a07e1d96d93d4234a5060082e",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "fitness_sports_fit",
@@ -8712,7 +8712,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/7",
     "recordSha256": "f6b3c3c96df1a8df0e2a3d0bdb057c5426478f82c6e179fefd3d0a090a2fddc3",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "travel_game_handson_fit",
@@ -8745,7 +8745,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/recommendedJobs/8",
     "recordSha256": "bdaeb988a75a2a8880d3c1b664212a668c37376cfa3598c771e9080dc71fde04",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "travel_game_handson_fit",
@@ -8778,7 +8778,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "573961f9615f58f0bb6bfcd887a5660f3dfc75c6002e6e043081e0e07f2844d2",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "short_explanation_preference",
@@ -8806,7 +8806,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "6b32e8fa02c0027f40cf5fb809205090fe5f57a6f822c419e85385a4c8ff7e58",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "freedom_over_control",
@@ -8834,7 +8834,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "dee3d22f77c4921b4bcc50ea550fa8512f0cb3f75ce5258a80824f0b3b9724f1",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "weak_ni_long_term_gap",
@@ -8862,7 +8862,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "bd26bc14a147511d3b1379889ae32ed0b324b0666b84ebf696ab9e36411590db",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "emotion_impatience",
@@ -8890,7 +8890,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "fc6a6153248b1399d31b27e224b648cccc7f111dae2fe8ddd9c31055f2160da3",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "weak_ni_long_term_gap",
@@ -8918,7 +8918,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "2778687ed25800f7a5ba4c1b66799a15b3af60d7a7f42739793357c54c3c9499",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "sensory_thrill_seeker",
@@ -8946,7 +8946,7 @@
     "file": "docs/product/mbti/source/ESTP.json",
     "pointer": "/avoidJobsOrEnvironments/6",
     "recordSha256": "a3d93f0400280463fd3a32b7eaf41d772ea7964bc85292e6f86a71793e402f22",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "no_poker_face",
@@ -8974,7 +8974,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/0",
     "recordSha256": "ef980d99a73a7d05fbd3e34ea51ab113a397b9ad0c6b282b8fad44a52aeb09ec",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "entertainment_fit",
@@ -9007,7 +9007,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/1",
     "recordSha256": "83d7ddc13ec2ee9f34e7243e2938ac4a38a498a824741605de8678c87dc4f193",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sales_service_fit",
@@ -9040,7 +9040,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/2",
     "recordSha256": "f1895663b03668ada2d90cfdd5ad70915cba1f2bf0539d346133f6aa1ef1a369",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sales_service_fit",
@@ -9073,7 +9073,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/3",
     "recordSha256": "58ac796aa904d3b17907cb99893fd1e4b5cf8623d98d9a527ec86b113741504b",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "sales_service_fit",
@@ -9106,7 +9106,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/4",
     "recordSha256": "11ab28db56f926dc5f56912cd56feff28144b2a5288a5445c0806a4073eb0376",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "atmosphere_role",
@@ -9139,7 +9139,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/5",
     "recordSha256": "dd302f7c6cfa6f0217d131819bd75e72a677c1febdfc92d8210573a1fd974683",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "free_environment_performance",
@@ -9172,7 +9172,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/recommendedJobs/6",
     "recordSha256": "1d82c37fe12f38bea40a6727c0ae741601a2d1d7506721cf34317a6a997f7c20",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "arts_sports_child",
@@ -9205,7 +9205,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/avoidJobsOrEnvironments/0",
     "recordSha256": "b4eae78a9fcb0b832b0fda1a5503da233455eea9398c15428ab8cd6f35ee47ca",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "people_nearby_energy",
@@ -9231,7 +9231,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/avoidJobsOrEnvironments/1",
     "recordSha256": "326c50cf069b7820d500f90aa2e3b0a572168005522d4efc0094618b753c358e",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_bureaucracy_work",
@@ -9257,7 +9257,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/avoidJobsOrEnvironments/2",
     "recordSha256": "2b881866bb77fdebfe683b11e382d218dee58eb8704d1aa501b87be463ee8d13",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "study_sitting_dislike",
@@ -9283,7 +9283,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/avoidJobsOrEnvironments/3",
     "recordSha256": "c3d93b3e1a48227b7589df07583628138a1c365520c461d07018a504028e57e2",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "direct",
     "referencedTraits": [
       "anti_theory_bias",
@@ -9309,7 +9309,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/avoidJobsOrEnvironments/4",
     "recordSha256": "0f7c2a31d568b8a162d38b7d3e73d5f8698fda3929f45ee208fa18fd02d6a5b1",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "finish_line_weakness",
@@ -9335,7 +9335,7 @@
     "file": "docs/product/mbti/source/ESFP.json",
     "pointer": "/avoidJobsOrEnvironments/5",
     "recordSha256": "492b70be56bd59e88de4322d37bdf4abca2003ae7c96e02590629db92c9a7a51",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "sourceCoverage": "inferred",
     "referencedTraits": [
       "late_start_pressure",

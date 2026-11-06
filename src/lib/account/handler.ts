@@ -6,7 +6,10 @@ import { channelOnboarding } from "./channelOnboarding";
 
 export type AccountPort = {
   currentUser(): Promise<AccountIdentity | null>;
-  start(provider: AccountProvider, callback: string): Promise<string | null>;
+  /** scope: 카카오 추가 동의(account_email)처럼 이번 인가에만 다른 동의 항목을 요청할 때. */
+  start(provider: AccountProvider, callback: string, scope?: string): Promise<string | null>;
+  /** 로그인 콜백 뒤(P6d-ops): 공급자 사실(이메일 확정·채널 관계)을 저장하고, 카카오 이메일 추가 동의가 필요하면 askEmail. */
+  afterLogin?(user: AccountIdentity, opts: { emailRetry: boolean; contact: boolean }): Promise<{ askEmail: boolean }>;
   exchange(code: string): Promise<boolean>;
   logout(): Promise<boolean>;
   read(user: AccountIdentity): Promise<AccountSnapshot | null>;
@@ -49,8 +52,23 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       if (!snapshot) return clear(failure());
       const session = accountSession(user, snapshot);
       const next = safeAccountNext(flow?.next, local);
-      const response = clear(redirect(session.status === "member" ? next : home));
-      response.cookies.set(RETURN_COOKIE, session.status === "member" ? "" : next, { ...cookieOptions, maxAge: session.status === "member" ? 0 : 600 });
+      // P6d-ops 2: 카카오 identity에 이메일이 없으면 account_email만 한 번 더 인가(이미 동의한 항목은 생략). 거부·무효면 다시 묻지 않는다.
+      const emailRetry = Boolean((flow as { emailRetry?: boolean } | null)?.emailRetry);
+      let askEmail = false;
+      try { askEmail = (await port.afterLogin?.(user, { emailRetry, contact: Boolean(snapshot.contact) }))?.askEmail === true; } catch { /* 사실 확인 실패는 로그인을 막지 않는다 */ }
+      if (askEmail && !emailRetry && user.provider === "kakao") {
+        const state2 = randomBytes(32).toString("hex");
+        const destination = await port.start("kakao", `${origin}${api}/callback?flow=${state2}`, "account_email");
+        if (destination && new URL(destination).origin === port.authorizationOrigin) {
+          const response = finish(NextResponse.redirect(destination, 303));
+          response.cookies.set(COOKIE, JSON.stringify({ state: state2, next, expires: Date.now() + 600_000, emailRetry: true }), cookieOptions);
+          return response;
+        }
+      }
+      // 회원이어도 가입 정보가 없으면 정보 화면(/account)으로 보낸다. 로그인·열람은 막지 않는다(결제·이용권만 서버에서 막는다).
+      const ready = session.status === "member" && session.profile !== "required";
+      const response = clear(redirect(ready ? next : home));
+      response.cookies.set(RETURN_COOKIE, ready ? "" : next, { ...cookieOptions, maxAge: ready ? 0 : 600 });
       return response;
     }
     if (action === "session") {

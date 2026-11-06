@@ -1,0 +1,91 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_dd43fb7fdc8d4655ad891366a43a8657",
+ "status": "COMPLETED",
+ "wallMs": 72402,
+ "chars": 8633,
+ "chapterChars": [
+  1164,
+  1266,
+  4489,
+  838,
+  876
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 12,
+ "forbiddenResidual": 1,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 1
+ },
+ "awkward": 1,
+ "awkwardSamples": [
+  "그해 태어난 해 글자와는 서로 끌려 붙는 손잡음(무계합)이 있어, 부담 속에서도 메마른 곳이 조금 적셔지는 면이 있었어요."
+ ],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "옆길로 끌어당기는 기운(편인)이 들어와 혼자 파고들고 방향을 고민하게 됩니다.",
+   "b": "2025년처럼 옆길로 끌어당기는 기운(편인)이 들어와 다른 공부와 낯선 시선이 열려요.",
+   "at": [
+    "3.3",
+    "3.13"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.205,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 72292,
+ "tokens": {
+  "input": 21730,
+  "output": 9585,
+  "cachedInput": 5258
+ },
+ "costUsd": 0.1398358,
+ "costKrw": 202.8,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 66895,
+   "chars": 8944,
+   "maxTokens": 18270,
+   "usage": {
+    "inputTokens": 21730,
+    "outputTokens": 9585,
+    "cachedInputTokens": 5258
+   },
+   "costUsd": 0.1398358
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:aa3e77f9f529"
+}

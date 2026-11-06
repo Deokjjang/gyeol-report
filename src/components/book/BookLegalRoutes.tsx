@@ -10,6 +10,8 @@ import f from "./flow.module.css";
 export function BookFooter() {
   const path = usePathname();
   if (/^\/(?:reports|r)\//.test(path)) return null;
+  // 관리자 화면에는 고객용 푸터를 붙이지 않는다(P6e-ops 9).
+  if (/^\/admin(?:\/|$)/.test(path)) return null;
   return <div className={s.root} style={{ minHeight: 0 }} data-book-footer><PreviewFooter publicPresentation /></div>;
 }
 export function BookLegalPage({ index }: { index: number }) {

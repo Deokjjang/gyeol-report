@@ -36,7 +36,7 @@ const personBManseRyeok = buildManseRyeokCommonTableData({
 
 const personAMbti = buildMbtiCommonProfileTableData({
   type: "ENTJ",
-  titleKo: "대담한 통솔자",
+  titleKo: "지휘관",
   archetype: "목표를 현실화하는 전략 지휘관",
   oneLine: "목표를 구조화해 실행하는 사람",
   summary: {
@@ -61,7 +61,7 @@ const personAMbti = buildMbtiCommonProfileTableData({
 
 const personBMbti = buildMbtiCommonProfileTableData({
   type: "ISFP",
-  titleKo: "호기심 많은 예술가",
+  titleKo: "조용한 감각파",
   archetype: "감각과 가치로 현재를 조율하는 사람",
   oneLine: "자기 기준과 현실 감각을 함께 쓰는 사람",
   summary: {
@@ -137,12 +137,12 @@ describe("CompatibilityTable", () => {
       "정A",
       "A님의 만세력",
       "ENTJ",
-      "대담한 통솔자",
+      "지휘관",
       "B 사람 요약",
       "정B",
       "B님의 만세력",
       "ISFP",
-      "호기심 많은 예술가",
+      "조용한 감각파",
     ]) {
       expect(html).toContain(marker);
     }

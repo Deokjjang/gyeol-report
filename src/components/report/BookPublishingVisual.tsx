@@ -11,18 +11,18 @@ export function BookPublishingVisual({ animate }: { readonly animate: boolean })
 function AnimatedPublishing() {
   const [step, setStep] = useState(0);
   useEffect(() => {
-    const motion = matchMedia("(prefers-reduced-motion: reduce)");
     let timer: ReturnType<typeof setInterval> | undefined;
+    // The book-making motion is the progress indicator itself, so it is not gated on prefers-reduced-motion.
     const sync = () => {
       clearInterval(timer); timer = undefined;
-      if (!document.hidden && !motion.matches) {
+      if (!document.hidden) {
         // Decorative only: complete is deliberately excluded. The server owns completion.
         timer = setInterval(() => setStep(value => (value + 1) % (PUBLISHING_STATES.length - 1)), 1400);
       }
     };
     sync();
-    document.addEventListener("visibilitychange", sync); motion.addEventListener("change", sync);
-    return () => { clearInterval(timer); document.removeEventListener("visibilitychange", sync); motion.removeEventListener("change", sync); };
+    document.addEventListener("visibilitychange", sync);
+    return () => { clearInterval(timer); document.removeEventListener("visibilitychange", sync); };
   }, []);
   return <div className={styles.visual} aria-hidden="true"><Publishing state={PUBLISHING_STATES[step]} notice="" visualOnly /></div>;
 }

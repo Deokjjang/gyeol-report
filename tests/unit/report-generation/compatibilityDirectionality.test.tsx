@@ -1,10 +1,9 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { generateCompatibilityProductDraft } from "../../../src/lib/report-generation/compatibilityGenerationHandler";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { generateCompatibilityReportDraft } from "../../../src/lib/report-generation/openaiCompatibilityReportWriter";
-import { sanitizeCompatibilityVisibleText } from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
+import { deriveAllowedCompatibilityMbtiTerms, deriveAllowedCompatibilitySajuTerms, sanitizeCompatibilityVisibleText, validateCompatibilityReportDraft } from "../../../src/lib/report-generation/compatibilityReportDraftValidator";
 import { CompatibilityReportView } from "../../../src/app/reports/[reportId]/CompatibilityReportView";
 import type { CompatibilityGenerationInput } from "../../../src/lib/report-generation/reportInputAdapter";
 import { compatibilityRelationshipTypes } from "../../../src/lib/report-knowledge/compatibilityTypes";
@@ -135,29 +134,19 @@ describe("compatibility person, direction and unassigned domain roles", () => {
     }
   });
 
-  it("writer and repair retain both direction sources and never silently rewrite reversed fatigue", async () => {
+  it("validation keeps both direction sources and rejects reversed fatigue", async () => {
     const result = await generate(input("friendship", ["ISFJ", "ENFP"], true));
     const draft = structuredClone(result.draft);
     Object.assign(draft, { openingSummary: "함께 보내는 시간과 혼자 쉬는 시간을 합의하면 약속을 지키는 방식도 더 선명해집니다." });
     const bad = structuredClone(draft);
     Object.assign(bad.relationshipAnalysis, { aToBFatigue: draft.relationshipAnalysis.bToAFatigue, bToAFatigue: draft.relationshipAnalysis.aToBFatigue });
-    const requests: string[] = [];
-    const fetchImpl = vi.fn<typeof fetch>(async (_url, init) => {
-      requests.push(String(init?.body));
-      return new Response(JSON.stringify({ output_text: JSON.stringify(requests.length === 1 ? bad : draft) }), { status: 200 });
-    });
-    const written = await generateCompatibilityReportDraft({ evidencePacket: result.evidencePacket,
-      config: { enabled: true, apiKey: "sk-test", model: "test-model", fetchImpl } });
-    expect(written.repaired).toBe(true); expect(fetchImpl).toHaveBeenCalledTimes(2);
-    expect(written.draft.openingSummary).toBe(draft.openingSummary);
-    expect(written.draft.relationshipAnalysis.aToBFatigue).toBe(draft.relationshipAnalysis.aToBFatigue);
-    for (const request of requests) {
-      expect(request).toContain(result.evidencePacket.directionEvidence.persons.personA.personId);
-      expect(request).toContain(result.evidencePacket.directionEvidence.persons.personB.personId);
-      expect(request).toContain("categoryRole");
-    }
-    expect(requests[1]).toContain("COMPATIBILITY_DIRECTION_TEXT_MISMATCH");
-    const plain = sanitizeCompatibilityVisibleText(result.evidencePacket.directionEvidence.aToB.fatigue, written.draft.relationshipType);
-    expect(written.draft.relationshipAnalysis.aToBFatigue).toBe(plain);
+    const options = { evidencePacket: result.evidencePacket, allowedSajuTerms: deriveAllowedCompatibilitySajuTerms(result.evidencePacket), allowedMbtiTerms: deriveAllowedCompatibilityMbtiTerms(result.evidencePacket) };
+    const checked = validateCompatibilityReportDraft(draft, options);
+    expect(checked.ok, checked.errors.join("; ")).toBe(true);
+    expect(checked.value?.openingSummary).toBe(draft.openingSummary);
+    expect(checked.value?.relationshipAnalysis.aToBFatigue).toBe(draft.relationshipAnalysis.aToBFatigue);
+    expect(validateCompatibilityReportDraft(bad, options).errors.some((error) => error.startsWith("COMPATIBILITY_DIRECTION_TEXT_MISMATCH"))).toBe(true);
+    const plain = sanitizeCompatibilityVisibleText(result.evidencePacket.directionEvidence.aToB.fatigue, draft.relationshipType);
+    expect(checked.value?.relationshipAnalysis.aToBFatigue).toBe(plain);
   });
 });

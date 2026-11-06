@@ -1,0 +1,209 @@
+{
+ "case": "pair-parent",
+ "product": "saju_mbti_compatibility",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1303,
+  1353,
+  1288,
+  1323,
+  1272,
+  1361,
+  1144,
+  1346,
+  1269
+ ],
+ "total": 11659,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [
+  "9 term_first: 오행",
+  "0 trait_repeat: at4 교문 앞 우산 소제목 4개",
+  "0 trait_repeat: at4 교문 앞 우산 한 장 2개",
+  "0 trait_repeat: bt2 교문 앞 우산 소제목 4개",
+  "0 trait_repeat: bt2 교문 앞 우산 한 장 2개",
+  "0 trait_repeat: 축 atg:RESOURCE 소제목 4개",
+  "0 trait_repeat: 축 atg:RESOURCE 한 장 2개",
+  "0 trait_repeat: 축 adim:learningDrive+ 소제목 4개",
+  "0 trait_repeat: 축 adim:learningDrive+ 한 장 2개",
+  "0 trait_repeat: 축 btg:RESOURCE 소제목 4개",
+  "0 trait_repeat: 축 btg:RESOURCE 한 장 2개",
+  "0 trait_repeat: 축 bdim:learningDrive+ 소제목 4개",
+  "0 trait_repeat: 축 bdim:learningDrive+ 한 장 2개",
+  "0 trait_repeat: '한 줄·한마디' 처방 10회"
+ ],
+ "briefCopy": {
+  "sentences": 202,
+  "matched": 12,
+  "ratio": 0.059,
+  "writerSentences": 202,
+  "writerMatched": 12,
+  "writerRatio": 0.059
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {},
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "imageUnnamed": 0,
+ "loveTiming": 0,
+ "jobMentions": 0,
+ "sceneHintsUsed": "0/0",
+ "score": 45,
+ "band": "노력이 필요한",
+ "traitUse": {
+  "traits": [
+   {
+    "id": "at1",
+    "name": "먼저 우는 풍경",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "at2",
+    "name": "강 가운데 모래톱",
+    "sections": 3,
+    "chapters": 3,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "at4",
+    "name": "교문 앞 우산",
+    "sections": 4,
+    "chapters": 3,
+    "maxInChapter": 2,
+    "planned": 2
+   },
+   {
+    "id": "at5",
+    "name": "가계부 지갑",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "at6",
+    "name": "초음파 속 작은 점",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 0
+   },
+   {
+    "id": "at7",
+    "name": "속이 깊은 여자",
+    "sections": 0,
+    "chapters": 0,
+    "maxInChapter": 0,
+    "planned": 1
+   },
+   {
+    "id": "bt1",
+    "name": "불 땐 구들장",
+    "sections": 3,
+    "chapters": 3,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "bt2",
+    "name": "교문 앞 우산",
+    "sections": 4,
+    "chapters": 3,
+    "maxInChapter": 2,
+    "planned": 2
+   },
+   {
+    "id": "bt4",
+    "name": "틀 깨는 말솜씨",
+    "sections": 3,
+    "chapters": 3,
+    "maxInChapter": 1,
+    "planned": 3
+   },
+   {
+    "id": "bt5",
+    "name": "맞부딪침",
+    "sections": 0,
+    "chapters": 0,
+    "maxInChapter": 0,
+    "planned": 1
+   },
+   {
+    "id": "bt6",
+    "name": "켜진 조명",
+    "sections": 3,
+    "chapters": 3,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "bt7",
+    "name": "추수 끝난 늦가을 밭",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 0
+   }
+  ],
+  "axes": {
+   "ashinsal:GWIMUN": 1,
+   "adim:introspection+": 1,
+   "acore": 3,
+   "adim:caretaking+": 3,
+   "atg:RESOURCE": 4,
+   "adim:learningDrive+": 4,
+   "atg:WEALTH": 1,
+   "adim:spendingControl+": 1,
+   "ayinYang:YIN_HEAVY": 0,
+   "bcore": 3,
+   "bdim:caretaking+": 3,
+   "btg:RESOURCE": 4,
+   "bdim:learningDrive+": 4,
+   "btg:OUTPUT": 3,
+   "bdim:directness+": 3,
+   "brelation:CHUNG": 0,
+   "bdim:mobility+": 0,
+   "bshinsal:MANGSINSAL": 3,
+   "bdim:emotionalExpression+": 3
+  },
+  "mbti": {
+   "챙김": 1,
+   "직설성": 1
+  },
+  "advice": 10,
+  "warnings": [
+   "at4 교문 앞 우산 소제목 4개",
+   "at4 교문 앞 우산 한 장 2개",
+   "bt2 교문 앞 우산 소제목 4개",
+   "bt2 교문 앞 우산 한 장 2개",
+   "축 atg:RESOURCE 소제목 4개",
+   "축 atg:RESOURCE 한 장 2개",
+   "축 adim:learningDrive+ 소제목 4개",
+   "축 adim:learningDrive+ 한 장 2개",
+   "축 btg:RESOURCE 소제목 4개",
+   "축 btg:RESOURCE 한 장 2개",
+   "축 bdim:learningDrive+ 소제목 4개",
+   "축 bdim:learningDrive+ 한 장 2개",
+   "'한 줄·한마디' 처방 10회"
+  ]
+ },
+ "planWarnings": []
+}

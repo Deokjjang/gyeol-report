@@ -1,0 +1,255 @@
+{
+ "case": "pair-love",
+ "label": "궁합 연애 · 하람×서윤",
+ "reportId": "report_6260426984a748c9a9575c784e5d2853",
+ "status": "COMPLETED",
+ "wallMs": 84542,
+ "fallback": null,
+ "priorBooks": 1,
+ "chars": 10703,
+ "chapterChars": [
+  1211,
+  1357,
+  1160,
+  1176,
+  1170,
+  1396,
+  1048,
+  1148,
+  1037
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 20,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 2,
+ "infoByKind": {
+  "claim": 2,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "정재는 명리학에서 정해진 수입을 성실하게 모으고 지키는 힘과 현실 감각을 뜻해요.",
+   "b": "정재는 명리학에서 정해진 수입을 성실하게 모으고 지키는 힘과 현실 감각을 뜻하고, 서윤님이 보기에 하람님은 차곡차곡 아끼고 지키고 싶은 사람이에",
+   "at": [
+    "2.2",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "과숙살은 명리학에서 한 걸음 물러나 자기 자리를 지키는 신중한 거리감을 뜻해요.",
+   "b": "서윤님의 과숙살은 한 걸음 물러나 자기 자리를 지키는 신중한 거리감이에요.",
+   "at": [
+    "4.1",
+    "7.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.136,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 84507,
+ "tokens": {
+  "input": 18063,
+  "output": 11960,
+  "cachedInput": 4057
+ },
+ "costUsd": 0.1561317,
+ "costKrw": 226.4,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 83834,
+   "chars": 11133,
+   "maxTokens": 25097,
+   "usage": {
+    "inputTokens": 18063,
+    "outputTokens": 11960,
+    "cachedInputTokens": 4057
+   },
+   "costUsd": 0.1561317
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:291b1115d654",
+ "p6b": {
+  "chars": 10770,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 1
+   },
+   {
+    "n": 7,
+    "count": 2
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 1
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 7,
+   "rate": 0.78,
+   "terms": 9,
+   "misses": [
+    "정관",
+    "수 부족"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 26,
+  "sectionsTotal": 27,
+  "byRule": {},
+  "coreImage": "불빛이 강철을 달궈 다듬는 사이",
+  "edition": "제5판"
+ }
+}

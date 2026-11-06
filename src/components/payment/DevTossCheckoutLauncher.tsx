@@ -1,8 +1,8 @@
 "use client";
 import { interaction } from "../../lib/analytics/client";
 
-import { useEffect, useId, useRef, useState } from "react";
-import { createCheckoutConsentAssertion, calculateCheckoutAge, getCheckoutAgeGateStatus, type CheckoutLegalConfirmations, type CheckoutAgeGateStatus } from "../../lib/payment/checkoutConsent";
+import { useId, useRef, useState } from "react";
+import { createCheckoutConsentAssertion, calculateCheckoutAge, getCheckoutAgeGateStatus, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations, type CheckoutAgeGateStatus } from "../../lib/payment/checkoutConsent";
 import styles from "./paidFunnel.module.css";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
 
@@ -72,7 +72,15 @@ export type DevTossCheckoutLauncherRuntime = {
 type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
   readonly easyPay: SupportedEasyPay;
+  /** P6d-ops: 비회원 구매자 정보(회원은 서버가 가입 정보를 쓴다). */
+  readonly buyer?: { readonly name: string; readonly email: string; readonly emailConfirm: string; readonly phone?: string };
+  /** 최종 A 20: 결제 준비가 끝나 토스 결제창을 여는 바로 그 순간에 한 번(Meta InitiateCheckout). 준비 실패·입력 오류면 부르지 않는다. */
+  readonly onCheckoutWindow?: () => void;
+  /** 최종 A 16: 합친 동의 칸 화면 정보(동의 기록 ui). */
+  readonly consentUi?: CheckoutConsentUiClaim;
 };
+/** 서버가 고객에게 그대로 보여 줄 수 있는 안내(가입 정보·구매자 입력·판매 종료). */
+const PASS_THROUGH_CODES = ["PROFILE_REQUIRED", "BUYER_INFO_INVALID", "PRODUCT_SALES_CLOSED"];
 
 export type DevTossCheckoutLegalConfirmations = CheckoutLegalConfirmations;
 export type DevTossCheckoutAgeGateStatus = CheckoutAgeGateStatus;
@@ -156,6 +164,8 @@ export function isDevTossCheckoutLegalConfirmationComplete(
     confirmations.digitalReportStart &&
     confirmations.refundRestriction &&
     confirmations.policyAgreement &&
+    // 환불정책 동의를 따로 받는 화면(주문서 0-3)은 그 칸도 참이어야 한다. 없으면 policyAgreement가 덮는다(예전 화면).
+    confirmations.refundPolicyAgreement !== false &&
     confirmations.age14OrOlder;
 
   if (!requiredBaseConfirmations) {
@@ -213,7 +223,8 @@ export async function runDevTossCheckout(
         provider: "toss",
         productType: options.productType ?? "saju_mbti_full",
         inputSnapshot,
-        consent: createCheckoutConsentAssertion(legalConfirmations),
+        consent: createCheckoutConsentAssertion(legalConfirmations, undefined, options.consentUi),
+        ...(options.buyer ? { buyer: options.buyer } : {}),
       }),
     });
   } catch {
@@ -234,12 +245,13 @@ export async function runDevTossCheckout(
     body.ok !== true ||
     !isRecord(body.tossCheckoutRequest)
   ) {
-    return createFailureResult(isRecord(body) && isRecord(body.error) && body.error.message === "필수 항목을 확인해 주세요."
-      ? "필수 항목을 확인해 주세요." : DEV_TOSS_CHECKOUT_ERROR_MESSAGE);
+    return createFailureResult(isRecord(body) && isRecord(body.error) && (body.error.message === "필수 항목을 확인해 주세요." || (PASS_THROUGH_CODES.includes(String(body.error.code)) && typeof body.error.message === "string"))
+      ? String(body.error.message) : DEV_TOSS_CHECKOUT_ERROR_MESSAGE);
   }
 
   let launchResult: TossClientCheckoutLaunchResult;
 
+  try { options.onCheckoutWindow?.(); } catch { /* 측정은 결제를 막지 않는다 */ }
   try {
     launchResult = await runtime.launchTossCheckout({
       tossCheckoutRequest: body.tossCheckoutRequest,
@@ -274,7 +286,6 @@ export default function DevTossCheckoutLauncher({
   const noticeId = useId();
   const product = getReportProduct(productType);
 const priceLabel = product?.priceLabelKo ?? "";
-useEffect(() => { if (!disabled && isDevTossCheckoutInputComplete(inputSnapshot)) interaction("checkout_started", productType); }, [disabled, inputSnapshot, productType]);
   const [isLaunching, setIsLaunching] = useState(false);
   const launchInFlight = useRef(false);
   const [legalConfirmations, setLegalConfirmations] =
@@ -320,7 +331,7 @@ const result = await runDevTossCheckout(
       inputSnapshot,
       legalConfirmations,
       defaultRuntime,
-      { productType, easyPay },
+      { productType, easyPay, onCheckoutWindow: () => interaction("checkout_started", productType) },
     );
 
     if (!result.ok) {

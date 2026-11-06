@@ -107,19 +107,6 @@ describe("ten-year major fortune evidence and density",()=>{
     expect(validateProductPublication("major_fortune",r.draft,packet).ok).toBe(false);
   });
 
-  it("keeps writer and fallback on identical validated timeline and Bridge evidence",async()=>{
-    const fallback=await generate();let request="";
-    const response=structuredClone(fallback.draft);
-    const mock:typeof fetch=async(_url,init)=>{request=String(init?.body);return Response.json({output_text:JSON.stringify(response)});};
-    const result=await generateMajorFortuneProductDraft(inputFor(customers[0]),{now:()=>new Date("2026-09-21T03:00:00Z"),writer:{enabled:true,config:{enabled:true,apiKey:"mock-only",model:"mock",fetchImpl:mock}}});
-    expect(result.ok,JSON.stringify(result.ok?null:result)).toBe(true);if(!result.ok)return;
-    const normalized = (rows: typeof result.draft.majorFortuneTimelineRows) => rows.map(row=>Object.fromEntries(Object.entries(row.yearDetail).map(([key,value])=>[key,value.replace(/\s+/gu," ").trim()])));
-    expect(normalized(result.draft.majorFortuneTimelineRows)).toEqual(normalized(fallback.draft.majorFortuneTimelineRows));
-    expect(result.evidencePacket.bridgeEvidence).toEqual(fallback.evidencePacket.bridgeEvidence);
-    expect(request).toContain("major-decade-v2");expect(request).toContain("evidenceIds");
-    expect(validateProductPublication("major_fortune",result.draft,result.evidencePacket).ok).toBe(true);
-  });
-
   it("continues to read older snapshots without the optional editorial plan",async()=>{
     const r=await generate();const legacy={...r.evidencePacket};delete legacy.decadeReading;
     expect(validateProductPublication("major_fortune",r.draft,legacy).ok).toBe(true);

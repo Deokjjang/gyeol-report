@@ -10,11 +10,7 @@ const viewSource = readFileSync(
   join(process.cwd(), "src/app/reports/[reportId]/CompatibilityReportView.tsx"),
   "utf8",
 );
-const writerSource = readFileSync(
-  join(process.cwd(), "src/lib/report-generation/openaiCompatibilityReportWriter.ts"),
-  "utf8",
-);
-const combinedSource = `${pageSource}\n${viewSource}\n${writerSource}`;
+const combinedSource = `${pageSource}\n${viewSource}`;
 
 describe("compatibility preview page source", () => {
   it("adds a gated dev preview route with fixture query support", () => {
@@ -26,23 +22,14 @@ describe("compatibility preview page source", () => {
     expect(pageSource).toContain('process.env.NODE_ENV !== "production"');
     expect(pageSource).toContain("COMPATIBILITY_DEV_PREVIEW_ENABLED");
     expect(pageSource).toContain("notFound()");
-    expect(pageSource).toContain("buildCompatibilityEvidencePacketFromFixture");
     expect(pageSource).toContain("readCompatibilityPreviewSnapshot");
-    expect(pageSource).toContain("generateCompatibilityReportDraft");
+    expect(pageSource).not.toContain("generateCompatibilityReportDraft");
     expect(pageSource).toContain("CompatibilityReportView");
-    expect(pageSource).toContain("Preview snapshot not found. Run:");
-    expect(pageSource).toContain("--write-preview");
+    expect(pageSource).toContain("Preview snapshot not found");
     expect(pageSource).toContain("preview snapshot");
     expect(pageSource).toContain("dev-only metadata");
     expect(pageSource).toContain('devStatus="preview snapshot"');
-    expect(pageSource.indexOf('if (snapshotMode === "latest")')).toBeLessThan(
-      pageSource.indexOf("const packet = buildCompatibilityEvidencePacketFromFixture"),
-    );
-    expect(pageSource).toContain("redactPreviewDiagnosticLine");
-    expect(pageSource).toContain("sk-[redacted]");
-    expect(pageSource).toContain(
-      "OpenAI writer is disabled. Enable OPENAI_REPORT_WRITER_ENABLED=1",
-    );
+    expect(pageSource).toContain("Live generation was removed with the OpenAI writer");
   });
 
   it("renders the compatibility report sections needed for browser review", () => {

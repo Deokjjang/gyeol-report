@@ -5,7 +5,6 @@ import { beforeAll, afterAll, describe, expect, it, vi } from "vitest";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import type { ProductGenerationSuccessResult } from "../../../src/lib/report-generation/productGenerationDispatcher";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { buildPaidWriterRequest } from "../../../src/lib/report-generation/paidWriterRequest";
 import { getCanonicalNatalTable, validateNatalFeatureProvenance, validateNatalTableEvidence } from "../../../src/lib/report-knowledge/natalTableEvidence";
 import { buildCanonicalManseRyeokTableData } from "../../../src/lib/report-tables/manseRyeokTableData";
 import { buildCareerReportManseRyeokTableData } from "../../../src/lib/report-tables/careerReportTablePresenter";
@@ -155,12 +154,6 @@ describe("canonical natal evidence across the six paid products", () => {
     expect(validateProductPublication("saju_mbti_full", r.draft, legacy).ok).toBe(true);
     expect(buildCanonicalManseRyeokTableData(legacy)).toBeUndefined();
     expect(JSON.stringify(legacy)).toBe(before);
-  });
-
-  it.each(products)("%s keeps writer transport unchanged by display-only metadata", key => {
-    const r = prepared.get(key)!;
-    const legacy = { ...r.evidencePacket as Record<string, unknown> }; delete legacy.natalTableEvidence;
-    expect(buildPaidWriterRequest(r, person.name)).toEqual(buildPaidWriterRequest({ ...r, evidencePacket: legacy }, person.name));
   });
 
   it("expanded details retain keyboard access and distinguish natal from fortune facts", () => {

@@ -3357,7 +3357,7 @@ const forbiddenAssembledLongformPatterns = [
   },
   {
     label: "bold-commander-scaffold",
-    pattern: /대담한 통솔자 성향은/u,
+    pattern: /지휘관 성향은/u,
   },
   {
     label: "flow-created-scaffold",

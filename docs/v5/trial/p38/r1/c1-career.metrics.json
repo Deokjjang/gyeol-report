@@ -1,0 +1,219 @@
+{
+ "case": "c1-career",
+ "product": "career_money_study",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1354,
+  1404,
+  1395,
+  1402,
+  1223,
+  1202,
+  1177,
+  1243,
+  1023
+ ],
+ "total": 11423,
+ "deletions": 1,
+ "byRule": {
+  "source_mention": 1
+ },
+ "deleted": [
+  "6 source_mention: 올해 2026년 병오는 겁재가 들어오는 해인데, 겁재는 돈 기운을 깎는 자리라 고전에서도 형제와 동료가 재물을 나눠 간다고 봤어요."
+ ],
+ "replacements": [],
+ "warnings": [
+  "4 term_first: 식상",
+  "4 image_unnamed: 작은 기능 하나를 혼자 맡아 끝까지 책임지는 역할에는 나와 같은 기운인 비겁의 힘과, 지기 싫어하는 ENTJ의 승부욕이 쓰여요.",
+  "4 term_first: 관성",
+  "7 image_unnamed: 다른 하나는 나와 같은 기운인 비겁에 맞는, 혼자 목표를 세우고 스스로 진도를 재는 공부입니다.",
+  "8 image_unnamed: 태어난 날의 기운과 같은 기운이라 내 힘이 보태져요.",
+  "8 term_first: 편관",
+  "8 image_unnamed: 올해는 같은 기운이 들어와 돈이 나가기 쉬운 해라 빌려주기나 동업 제안도 천천히 보는 편이 좋아요.",
+  "0 prop_overuse: 기획 회의×3",
+  "0 prop_overuse: 출시 일정×3",
+  "0 prop_overuse: 사용자 피드백×3",
+  "0 trait_repeat: t2 바른 관리자 소제목 6개",
+  "0 trait_repeat: t2 바른 관리자 한 장 3개",
+  "0 trait_repeat: t3 손맛 요리사 소제목 5개",
+  "0 trait_repeat: t3 손맛 요리사 한 장 2개",
+  "0 trait_repeat: 축 tg:OFFICER 소제목 6개",
+  "0 trait_repeat: 축 tg:OFFICER 한 장 3개",
+  "0 trait_repeat: 축 dim:dutifulness+ 소제목 6개",
+  "0 trait_repeat: 축 dim:dutifulness+ 한 장 3개",
+  "0 trait_repeat: 축 tg:OUTPUT 소제목 5개",
+  "0 trait_repeat: 축 tg:OUTPUT 한 장 2개",
+  "0 trait_repeat: 축 dim:caretaking+ 소제목 5개",
+  "0 trait_repeat: 축 dim:caretaking+ 한 장 2개",
+  "0 trait_repeat: MBTI 근거 계획성 3회",
+  "0 trait_repeat: '한 줄·한마디' 처방 3회"
+ ],
+ "briefCopy": {
+  "sentences": 209,
+  "matched": 8,
+  "ratio": 0.038,
+  "writerSentences": 209,
+  "writerMatched": 8,
+  "writerRatio": 0.038
+ },
+ "connectors": [
+  {
+   "phrase": "여기에",
+   "count": 4
+  },
+  {
+   "phrase": "그래서",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {
+  "기획 회의": 3,
+  "출시 일정": 3,
+  "사용자 피드백": 3,
+  "화면 설계안": 2,
+  "회의록": 2,
+  "요구사항 정리": 1,
+  "우선순위 표": 1,
+  "개발팀 협의": 1,
+  "경쟁 서비스 조사": 1,
+  "로드맵 문서": 1,
+  "베타 테스트": 1,
+  "선배 피드백": 1,
+  "기능 명세서": 1,
+  "점심 메뉴 투표": 1,
+  "출시 후 지표": 1
+ },
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "imageUnnamed": 4,
+ "loveTiming": 0,
+ "jobMentions": 3,
+ "sceneHintsUsed": "15/15",
+ "traitUse": {
+  "traits": [
+   {
+    "id": "t1",
+    "name": "겨울 외양간 등불",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t2",
+    "name": "바른 관리자",
+    "sections": 6,
+    "chapters": 4,
+    "maxInChapter": 3,
+    "planned": 3
+   },
+   {
+    "id": "t3",
+    "name": "손맛 요리사",
+    "sections": 5,
+    "chapters": 4,
+    "maxInChapter": 2,
+    "planned": 3
+   },
+   {
+    "id": "t4",
+    "name": "한 칸 밀린 단추",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t5",
+    "name": "말 안장",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t6",
+    "name": "같은 계절 모임",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t7",
+    "name": "흰 호랑이",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t8",
+    "name": "땅속 김장독",
+    "sections": 0,
+    "chapters": 0,
+    "maxInChapter": 0,
+    "planned": 1
+   },
+   {
+    "id": "t9",
+    "name": "옆 레인 승부사",
+    "sections": 3,
+    "chapters": 3,
+    "maxInChapter": 1,
+    "planned": 2
+   }
+  ],
+  "axes": {
+   "core": 2,
+   "dim:persistence+": 3,
+   "tg:OFFICER": 6,
+   "dim:dutifulness+": 6,
+   "tg:OUTPUT": 5,
+   "dim:caretaking+": 5,
+   "shinsal:EUMCHAK_YANGCHA": 2,
+   "shinsal:TWELVE_BANANSAL": 2,
+   "dim:statusDrive+": 2,
+   "relation:BANGHAP": 1,
+   "dim:boundarySetting+": 1,
+   "shinsal:BAEKHODAESAL": 1,
+   "twelveStage:墓": 0,
+   "dim:possessiveness+": 0,
+   "tg:PEER": 3,
+   "dim:competitiveness+": 3
+  },
+  "mbti": {
+   "Te": 1,
+   "승부욕": 2,
+   "직설성": 1,
+   "통제 욕구": 2,
+   "계획성": 3,
+   "말수": 1
+  },
+  "advice": 3,
+  "warnings": [
+   "t2 바른 관리자 소제목 6개",
+   "t2 바른 관리자 한 장 3개",
+   "t3 손맛 요리사 소제목 5개",
+   "t3 손맛 요리사 한 장 2개",
+   "축 tg:OFFICER 소제목 6개",
+   "축 tg:OFFICER 한 장 3개",
+   "축 dim:dutifulness+ 소제목 6개",
+   "축 dim:dutifulness+ 한 장 3개",
+   "축 tg:OUTPUT 소제목 5개",
+   "축 tg:OUTPUT 한 장 2개",
+   "축 dim:caretaking+ 소제목 5개",
+   "축 dim:caretaking+ 한 장 2개",
+   "MBTI 근거 계획성 3회",
+   "'한 줄·한마디' 처방 3회"
+  ]
+ },
+ "planWarnings": []
+}

@@ -1,0 +1,107 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "which": "B",
+ "provider": "openai",
+ "model": "gpt-6.1-terra",
+ "reportId": "report_6e00dd09a40a4f6aa5999db0b4397e5c",
+ "status": "COMPLETED",
+ "wallMs": 90920,
+ "chars": 9636,
+ "chapterChars": [
+  969,
+  1080,
+  6231,
+  690,
+  666
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 1,
+ "warnings": 24,
+ "forbiddenResidual": 1,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 1
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 3,
+ "infoByKind": {
+  "claim": 3,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "이 흐름의 편재(偏財)는 사람과 거래를 통해 움직이는 돈, 그리고 여러 갈래로 펼쳐지는 기회를 뜻해요.",
+   "b": "편재는 사람과 거래를 통해 움직이는 돈, 월급 바깥에서 보이는 여러 기회를 뜻해요.",
+   "at": [
+    "2.1",
+    "3.9"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 해의 글자와는 메마른 곳을 적시는 만남이 있지만, 가까운 사이에서 서운함을 느끼기 쉬운 관계도 겹칩니다.",
+   "b": "태어난 해의 글자에는 가까운 사이에서 서운함을 느끼기 쉬운 관계도 들어와요.",
+   "at": [
+    "3.1",
+    "3.13"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 달과 날의 글자가 어긋나 묵은 일을 다시 살피게 하는 관계가 들어옵니다.",
+   "b": "태어난 달과 날의 글자에는 젖은 땅이 어긋나 묵은 일을 다시 보게 하는 관계가 들어옵니다.",
+   "at": [
+    "3.2",
+    "3.14"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 90907,
+ "tokens": {
+  "input": 13370,
+  "output": 5968,
+  "cachedInput": 3099
+ },
+ "costUsd": 0.04336495,
+ "costKrw": 62.9,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 88742,
+   "chars": 10059,
+   "maxTokens": 16609,
+   "usage": {
+    "inputTokens": 13370,
+    "outputTokens": 5968,
+    "cachedInputTokens": 3099
+   },
+   "costUsd": 0.04336495
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:8a111389fcf3"
+}

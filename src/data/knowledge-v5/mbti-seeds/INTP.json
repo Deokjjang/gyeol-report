@@ -1,0 +1,1227 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "INTP",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "INTP-work-01",
+        "text": "왜 이렇게 하냐는 질문부터 던지는 업무 지시",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "INTP-work-02",
+        "text": "이상한 숫자 하나에 새벽까지 매달리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-03",
+        "text": "반복 작업 세 번째에 자동화 도구 짜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-04",
+        "text": "마감 전날 본론 대신 부수 문제에 빠질 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-05",
+        "text": "다른 사람 코드의 논리 오류가 눈에 걸릴 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "code"
+        ]
+      },
+      {
+        "id": "INTP-work-06",
+        "text": "회의 중 전제가 틀렸다는 걸 뒤늦게 짚기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-07",
+        "text": "정해진 양식보다 내 방식으로 정리한 파일",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-08",
+        "text": "혼자 몰입해야 풀리는 문제 붙잡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-09",
+        "text": "보고서 서론만 열 번 고쳐 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "INTP-work-10",
+        "text": "업무 규칙의 예외 조항부터 찾아보기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-11",
+        "text": "출근 시간보다 퇴근 후에 일이 잘될 때",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-12",
+        "text": "프리랜서 의뢰서의 모호한 문장 되묻기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
+      },
+      {
+        "id": "INTP-work-13",
+        "text": "개인 프로젝트 폴더가 미완성 파일투성이일 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
+      },
+      {
+        "id": "INTP-work-14",
+        "text": "새 도구를 배우다 본래 일을 잊을 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-15",
+        "text": "논리가 안 맞는 지시에 질문 메일 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-16",
+        "text": "세부 사항 파다가 전체 일정을 놓칠 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-17",
+        "text": "복잡한 시스템 구조도를 손으로 그려 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-18",
+        "text": "업무 매뉴얼의 모순을 찾고 혼자 흡족하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-19",
+        "text": "발표 자료보다 질의응답 준비가 더 즐거울 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "INTP-work-20",
+        "text": "구직 공고 요건을 분해해 따져 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-21",
+        "text": "집안일 순서를 최적화하려다 시작이 늦어질 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-22",
+        "text": "통화보다 문서로 설명하는 쪽을 택하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-23",
+        "text": "회의 중 긴 침묵 뒤 한 문장 반박",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-24",
+        "text": "버그 원인을 가설 세 개로 나눠 검증하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "code"
+        ]
+      },
+      {
+        "id": "INTP-work-25",
+        "text": "작업 로그를 남기며 사고 과정을 되짚기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-26",
+        "text": "새로운 방법이 떠올라 완성 직전 갈아엎기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-27",
+        "text": "일정 관리 앱을 만들다 정작 일은 미룰 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-28",
+        "text": "프로젝트 이름 정하는 데 한참 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-29",
+        "text": "상사의 감정적 지시를 논리로 번역해 보기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "INTP-work-30",
+        "text": "알림이 쏟아지는 날 집중이 끊기는 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-31",
+        "text": "쓸모 불분명한 회의에 속으로 계산기 두드리기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-32",
+        "text": "가게 시스템의 비효율 구조를 혼자 파헤치기",
+        "rel": "any",
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "INTP-work-33",
+        "text": "발표 질문에 답을 몰라 모른다고 말하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-34",
+        "text": "연구 모임 발표에서 가설부터 세우기",
+        "rel": "any",
+        "job": "student",
+        "ctx": []
+      },
+      {
+        "id": "INTP-work-35",
+        "text": "수치가 맞아도 원리가 안 풀려 찜찜한 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "money": [
+      {
+        "id": "INTP-money-01",
+        "text": "호기심 가는 장비에만 큰돈 쓰는 습관",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-02",
+        "text": "몇 년째 같은 후드티를 돌려 입는 옷장",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-03",
+        "text": "고지서 확인을 깜빡해 납부일을 놓칠 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-04",
+        "text": "금융 상품의 수익 구조가 궁금해 약관 읽기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-05",
+        "text": "가계부 앱 설계에 빠져 기록은 뒤로 미루기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-06",
+        "text": "결제 전에 가격 구조의 원가를 추정해 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-07",
+        "text": "자동이체 규칙을 한 번 짜고 잊어버리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-08",
+        "text": "책과 강의 구독에는 지갑이 쉽게 열릴 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-09",
+        "text": "사은품보다 제품 스펙의 허점을 찾아보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-10",
+        "text": "카드 포인트 제도의 계산식을 역으로 풀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-11",
+        "text": "무료 앱 수익 모델이 궁금해 따져 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-12",
+        "text": "정기 결제 목록 정리하다 딴길로 샐 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-13",
+        "text": "통장 잔액보다 지출의 패턴이 궁금한 밤",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-14",
+        "text": "부수입 아이디어를 노트에 적어 놓고 방치하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-15",
+        "text": "할인 행사 대신 필요한 때에 필요한 만큼",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-16",
+        "text": "중고 거래 설명글의 모순을 읽어 내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-17",
+        "text": "월세와 대출 이자를 수식으로 비교하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-18",
+        "text": "수수료 구조가 불투명한 서비스는 외면하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-19",
+        "text": "가격 비교 사이트에서 끝없이 탭 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-20",
+        "text": "새로 나온 기기의 작동 원리부터 살펴보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-21",
+        "text": "소액 후원에 즐거운 이유를 분석해 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-22",
+        "text": "쇼핑 후기를 분석해 거짓 후기 가려내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-23",
+        "text": "돈 얘기 나오면 대충 넘기다 나중에 후회하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-24",
+        "text": "통신 약정을 풀어 읽고 조건 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-25",
+        "text": "세금 신고 안내문을 꼼꼼히 읽고 질문 만들기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-26",
+        "text": "비상금이 얼마인지 모르고 지내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-27",
+        "text": "친구에게 빌려준 돈을 기억하지 못할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-28",
+        "text": "세일 마지막 날 장바구니만 채우다 닫기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-29",
+        "text": "재테크 책에서 논리의 허점부터 발견하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-30",
+        "text": "구독 서비스 해지 버튼을 한참 찾아 헤매기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-31",
+        "text": "가성비 계산이 끝나지 않아 결제 보류하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-32",
+        "text": "소득이 불규칙한 달 지출을 모델링해 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-33",
+        "text": "재고 관리 앱을 직접 만들어 비용 줄이기",
+        "rel": "any",
+        "job": "business",
+        "ctx": []
+      },
+      {
+        "id": "INTP-money-34",
+        "text": "학교 앞 복사비와 교재비 최소화 연구",
+        "rel": "any",
+        "job": "student",
+        "ctx": []
+      }
+    ],
+    "love": [
+      {
+        "id": "INTP-love-01",
+        "text": "호감 가는 사람이 좋아하는 주제 파고들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-02",
+        "text": "소개팅에서 질문을 너무 많이 던질 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-03",
+        "text": "상대의 독특한 취향에 호기심이 생길 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-04",
+        "text": "좋아하는 마음을 논리로 설명하려 애쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-05",
+        "text": "메시지 한 줄에 답장 문구를 몇 번 고칠 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-06",
+        "text": "첫 만남 후 대화 내용을 곱씹으며 복기하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-07",
+        "text": "고백 문장을 쓰다 지우다 밤새우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-08",
+        "text": "연락 타이밍 계산하다 놓쳐 버린 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-09",
+        "text": "감정 표현이 서툴러 농담으로 넘기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-10",
+        "text": "호감 상대와 취향이 겹칠 때 말이 빨라지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-11",
+        "text": "연애 앱 프로필 문장이 안 떠오를 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-12",
+        "text": "마음이 있어도 확신이 설 때까지 기다리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-13",
+        "text": "썸 단계에서 상대 속마음을 분석하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-14",
+        "text": "이상형 질문에 조건 대신 대화 방식 답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-15",
+        "text": "데이트 장소를 분위기 대신 호기심으로 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-16",
+        "text": "감정이 복잡해 혼자 사색에 잠기는 시간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-17",
+        "text": "카톡 읽씹 앞에서 가능한 이유를 나열하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-18",
+        "text": "호감 신호를 해석하는 데 오래 걸릴 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-19",
+        "text": "좋아한다는 말을 꺼내기 전 가설 세우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-20",
+        "text": "소개팅 후 애프터 연락을 미루다 놓치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-21",
+        "text": "연애관을 정리하다 모순을 발견하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-22",
+        "text": "이별 후 관계의 구조를 혼자 복기하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-23",
+        "text": "상대의 말 속 논리 허점을 무심코 지적할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-24",
+        "text": "호감 있는 사람과 어색한 침묵을 견디기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-25",
+        "text": "기념일을 달력에 넣어 두고도 놓치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-26",
+        "text": "좋아하는 사람의 관심사 책을 몰래 읽기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-27",
+        "text": "흥미로운 주제에 빠져 연락이 뜸할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-28",
+        "text": "데이트 코스를 지도 앱으로 최적화하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-29",
+        "text": "짝사랑 상대의 말투를 혼자 분석하는 밤",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-30",
+        "text": "함께 있어도 각자 책을 읽는 관계가 편할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-31",
+        "text": "상대가 서운해하는 이유를 한참 뒤에 이해하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-32",
+        "text": "기념일 챙기기를 매번 달력 알림에 의존하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-33",
+        "text": "연인과 사소한 논쟁이 토론으로 번질 때",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-34",
+        "text": "연인에게 혼자만의 시간을 솔직히 요청하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-love-35",
+        "text": "같이 사는 집의 규칙을 논리로 정하려 할 때",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "relationships": [
+      {
+        "id": "INTP-relationships-01",
+        "text": "모임에서 가만히 듣다가 핵심 한마디 던지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-02",
+        "text": "친구와 이론 논쟁하다 시간 가는 줄 모를 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-03",
+        "text": "단톡방 메시지에 늦게 답하고 미안해하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-04",
+        "text": "친한 친구에게도 약속 날짜를 자주 잊을 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-05",
+        "text": "낯선 사람 앞에서 입이 안 떨어지는 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-06",
+        "text": "관심사가 통하는 사람과 밤새 대화하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-07",
+        "text": "회식 자리에서 구석에 앉아 관찰하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-08",
+        "text": "말 한마디의 정확한 뜻을 따져 되묻기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-09",
+        "text": "인사치레를 생략해 무뚝뚝하다고 오해받기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-10",
+        "text": "농담 속 논리 비약을 지적하다 분위기 깨기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-11",
+        "text": "동호회에서 규칙 설계에 열정을 쏟기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-12",
+        "text": "뜸한 친구에게 불쑥 흥미로운 링크 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-13",
+        "text": "모임 장소 정하는 일을 후보 비교로 끌 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-14",
+        "text": "친구 고민을 듣고 원인 분석부터 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-15",
+        "text": "작은 모임에서 갑자기 말이 많아질 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-16",
+        "text": "이웃과 마주치면 눈인사만 하고 지나치기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-17",
+        "text": "스터디 모임 자료를 혼자 정리해 공유하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-18",
+        "text": "논쟁 상대가 감정적이면 말을 멈추는 순간",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-19",
+        "text": "오랜 친구와 끝없는 잡담 속 가설 놀이",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-20",
+        "text": "사람 많은 자리에서 배터리가 방전될 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-21",
+        "text": "소규모 독서 모임에서 반론 제기하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-22",
+        "text": "처음 만난 사람의 직업 원리를 캐묻기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-23",
+        "text": "공감을 바라는 친구 앞에서 해결책을 내밀 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-24",
+        "text": "오프라인 모임보다 온라인 커뮤니티가 편할 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-25",
+        "text": "새 친구와 호기심이 맞아 급속히 가까워질 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-26",
+        "text": "단체 사진 찍을 때 어색하게 끝줄 서기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-27",
+        "text": "선물 고르기 어려워 상대 관심사부터 조사하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-28",
+        "text": "모임 총무가 아닌데 회계 오류를 찾아낼 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-29",
+        "text": "SNS 대신 관심 분야 커뮤니티에 글 남기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-30",
+        "text": "길게 쓴 답장을 보내고 후회하는 밤",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-31",
+        "text": "동료와 점심 메뉴를 고를 때 소극적일 때",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "INTP-relationships-32",
+        "text": "의견 충돌 후 조용히 거리를 두는 방식",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-relationships-33",
+        "text": "친구의 투정을 들으며 속으로 구조를 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "alone": [
+      {
+        "id": "INTP-alone-01",
+        "text": "주말 내내 위키 문서를 타고 다니기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-02",
+        "text": "새벽 세 시까지 영상으로 이론 파고들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-03",
+        "text": "작은 장치를 분해하고 원리 알아내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-04",
+        "text": "머릿속에서 가상 대화를 몇 번이고 돌릴 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-05",
+        "text": "퍼즐 게임에서 규칙 허점을 찾아내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-06",
+        "text": "프로그래밍 취미 프로젝트를 새로 시작하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-07",
+        "text": "책상 위 읽다 만 책 열 권 쌓아 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-08",
+        "text": "수학 문제 하나에 하루를 쓰는 주말",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-09",
+        "text": "카페에서 생각을 노트에 낙서처럼 풀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-10",
+        "text": "샤워 중에 해법이 떠올라 서둘러 메모하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-11",
+        "text": "논문 요약 사이트에서 새 분야 훑어보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-12",
+        "text": "게임 시스템의 수치를 분석해 공략 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-13",
+        "text": "방 정리 대신 정리법 연구에 빠지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-14",
+        "text": "혼자 하는 산책에서 이론 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-15",
+        "text": "SF 영화를 보며 설정의 모순 따지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-16",
+        "text": "컴퓨터 자작 부품 사양 비교로 밤 새우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-17",
+        "text": "사소한 의문을 검색하다 세 시간이 지날 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-18",
+        "text": "재미있는 사실을 혼자 알고 있기 아쉬울 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-19",
+        "text": "머릿속 아이디어를 메모앱에 흘려 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-20",
+        "text": "창가에 앉아 멍하니 구조를 상상하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-21",
+        "text": "한 번 빠지면 식사를 건너뛰는 몰입",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-22",
+        "text": "유튜브 알고리즘을 따라 엉뚱한 분야까지 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-23",
+        "text": "음악 이론이나 화성 원리를 독학하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-24",
+        "text": "직접 만든 도구를 써 보며 흐뭇해하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-25",
+        "text": "혼자 영화관에서 어려운 영화 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-26",
+        "text": "공상 속에서 가상의 시스템 설계하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-27",
+        "text": "잠들기 전 풀리지 않는 문제가 떠오를 때",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-28",
+        "text": "정리하지 않은 책상에서 물건 위치는 기억하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-29",
+        "text": "주말 약속을 취소하고 취미 연구에 몰두하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-30",
+        "text": "일기 대신 논리 구조로 하루를 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-31",
+        "text": "커뮤니티 토론글을 읽고 답글만 구상하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-32",
+        "text": "새로운 언어의 문법 구조에 푹 빠지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "INTP-alone-33",
+        "text": "어떤 주제든 일단 반대 입장에서 생각해 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ]
+  }
+}

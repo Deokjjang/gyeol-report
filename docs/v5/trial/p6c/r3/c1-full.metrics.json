@@ -1,0 +1,408 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "reportId": "report_8323084eccbe4533af02cf6fd8418c45",
+ "status": "COMPLETED",
+ "wallMs": 159967,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 12,
+ "coverLine": "서비스 기획자의 꺼지지 않는 랜턴",
+ "keySpans": 36,
+ "sections": 36,
+ "chars": 14644,
+ "chapterChars": [
+  1206,
+  1323,
+  1246,
+  1236,
+  811,
+  1209,
+  895,
+  1251,
+  1128,
+  1195,
+  1227,
+  1179,
+  738
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 43,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 7,
+ "infoByKind": {
+  "claim": 7,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "물은 선택지를 다 늘어놓고 비교하는 쪽인데, ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않아요.",
+   "b": "축토는 선택지를 비교하느라 결정을 미루는 쪽인데, ENTJ는 두세 가지만 보고 정하는 쪽이에요.",
+   "at": [
+    "2.1",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그런데 ENTJ는 역할과 순서를 내가 정해야 안심하는 유형이에요.",
+   "b": "반면 ENTJ는 역할과 순서를 내가 정해야 안심하는 유형입니다.",
+   "at": [
+    "2.2",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "⟪편안하게 두고 싶은 마음과 판을 정해야 하는 마음이 같이 사는 거예요.⟫",
+   "b": "⟪편한 사람이고 싶은 마음과 판을 정해야 하는 마음이 한 몸에서 줄다리기를 합니다.⟫",
+   "at": [
+    "2.2",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "모임이 끝나면 오히려 기운이 나는 사람이라서, 혼자의 밤에는 비교보다 정리로 마무리하는 편이 잘 맞습니다.",
+   "b": "모임이 끝나면 오히려 기운이 나는 유형이기도 해요.",
+   "at": [
+    "2.3",
+    "12.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "같은 뿌리를 가진 사람들을 묶는 힘도 있어서, 업계 안에서 든든한 편이 생기기도 합니다.",
+   "b": "같은 뿌리를 가진 사람들을 묶는 힘이 있어서, 가족과 동문 같은 같은 뿌리의 사람들 안에서 든든한 편이 생기는 구조예요.",
+   "at": [
+    "4.2",
+    "11.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "화끈하게 말하고 빨리 풀어 오래 가는 앙금이 적습니다.",
+   "b": "화끈하게 말하고 빨리 풀어 오래가는 앙금이 적은 건 당신의 장점이니, 그 장점이 온기와 함께 갈 때 관계가 더 단단해집니다.",
+   "at": [
+    "6.2",
+    "12.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "직함과 소속부터 갖추려는 마음이 커서, 정해진 자리에서 신뢰를 쌓는 힘이 뚜렷해요.",
+   "b": "정해진 자리에서 신뢰를 쌓는 힘이라, 모임에서도 당신은 눈에 띄게 나서지 않아도 자리를 지키는 사람으로 기억됩니다.",
+   "at": [
+    "7.2",
+    "12.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.022,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 159941,
+ "tokens": {
+  "input": 28341,
+  "output": 19599,
+  "cachedInput": 0
+ },
+ "costUsd": 0.255766,
+ "costKrw": 370.9,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 133952,
+   "chars": 15831,
+   "maxTokens": 28722,
+   "usage": {
+    "inputTokens": 22843,
+    "outputTokens": 17220,
+    "cacheWriteTokens": 6188,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.22098
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 15569,
+   "chars": 2197,
+   "maxTokens": 3820,
+   "usage": {
+    "inputTokens": 5498,
+    "outputTokens": 2379,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.034786
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-20",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 15348,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": true,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 1
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 1
+   },
+   {
+    "n": 10,
+    "count": 0
+   },
+   {
+    "n": 11,
+    "count": 3
+   },
+   {
+    "n": 12,
+    "count": 0
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 3,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 2,
+   "internal": 0
+  },
+  "bannedSamples": [
+   "부모님이나 형제가 계시다면, 그 사이에서 당신은 책임과 규칙을 일찍 몸에 익힌 쪽으로 읽혀요.",
+   "부모님이 계신다면 \"이것 좀 도와주세요\" 같은 짧은 한 줄을 이번 달에 한 번만 말해 보는 거예요."
+  ],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 11,
+   "misses": [
+    "정축",
+    "음착양차살",
+    "반안살",
+    "방합",
+    "정관",
+    "식신",
+    "백호대살",
+    "축토",
+    "겁재",
+    "겨울의 정화",
+    "수 과다"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 36,
+  "sectionsTotal": 36,
+  "byRule": {},
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 10,
+   "job_prop": 1,
+   "scene_repeat": 1,
+   "past_assertion": 1
+  },
+  "removed": 1,
+  "repaired": 13,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "past_assertion": 1
+  },
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 13,
+  "droppedParagraphs": 0
+ }
+}

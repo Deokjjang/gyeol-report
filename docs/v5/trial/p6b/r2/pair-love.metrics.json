@@ -1,0 +1,231 @@
+{
+ "case": "pair-love",
+ "label": "궁합 연애 · 하람×서윤",
+ "reportId": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+ "status": "COMPLETED",
+ "wallMs": 67526,
+ "fallback": null,
+ "priorBooks": 2,
+ "chars": 8626,
+ "chapterChars": [
+  925,
+  976,
+  1297,
+  742,
+  773,
+  1188,
+  836,
+  902,
+  987
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 3,
+ "byRule": {
+  "duplicate_sentence": 3
+ },
+ "replacements": 0,
+ "warnings": 20,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.133,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 67459,
+ "tokens": {
+  "input": 17976,
+  "output": 9789,
+  "cachedInput": 4017
+ },
+ "costUsd": 0.1342437,
+ "costKrw": 194.7,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 66976,
+   "chars": 9111,
+   "maxTokens": 24963,
+   "usage": {
+    "inputTokens": 17976,
+    "outputTokens": 9789,
+    "cachedInputTokens": 4017
+   },
+   "costUsd": 0.1342437
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 8675,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 10,
+   "rate": 1,
+   "terms": 10,
+   "misses": []
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 21,
+  "sectionsTotal": 21,
+  "byRule": {
+   "duplicate_sentence": 3
+  },
+  "coreImage": "불빛이 강철을 달궈 다듬는 사이",
+  "edition": "제5판"
+ }
+}

@@ -96,16 +96,17 @@ describe("stored annual month calendars re-validate under the new engine", () =>
 
 describe("customer note", () => {
   it.each([
-    ["2000-05-11", "17:05", "기준 경도 동경 127.5°로 시간 보정 -30분 적용"],
-    ["1987-07-15", "12:00", "기준 경도 동경 127.5°로 시간 보정 -90분 적용 (당시 서머타임 반영)"],
-    ["1955-01-15", "12:00", "기준 경도 동경 127.5°로 시간 보정 없음 (당시 표준시 UTC+8:30 반영)"],
+    ["2000-05-11", "17:05", "태양시 기준 · 30분 보정 (17:05 → 16:35)"],
+    ["1987-07-15", "12:00", "태양시 기준 · 90분 보정 (12:00 → 10:30) · 당시 서머타임 반영"],
+    ["2000-05-11", "00:10", "태양시 기준 · 30분 보정 (00:10 → 전날 23:40)"],
+    ["1955-01-15", "12:00", "태양시 기준 · 보정 없음 (12:00) · 당시 표준시 UTC+8:30 반영"],
   ])("%s %s", (birthDate, birthTime, note) => {
     expect(solarTimeCorrectionNote(resolveBirthTimeCalculation({ birthDate, birthTime }))).toBe(note);
   });
   it("names the birthplace longitude when one is supplied", () => {
     const context = resolveBirthTimeCalculation({ birthDate: "2000-05-11", birthTime: "17:05", birthLongitude: 126.98 });
     expect(context.timeBasis).toMatchObject({ longitude: 126.98, longitudeSource: "birthplace" });
-    expect(solarTimeCorrectionNote(context)).toBe("출생지 경도 동경 126.98°로 시간 보정 -32분 적용");
+    expect(solarTimeCorrectionNote(context)).toBe("태양시 기준(출생지 동경 126.98°) · 32분 보정 (17:05 → 16:33)");
   });
   it("is omitted when the birth time is unknown", () => {
     expect(solarTimeCorrectionNote(resolveBirthTimeCalculation({ birthDate: "2000-05-11", birthTimeUnknown: true }))).toBeUndefined();
@@ -118,8 +119,8 @@ describe("manse table data carries the note for new reports only", () => {
     const natalTableEvidence = { person: buildCanonicalNatalTable(context) };
     const v3 = buildCanonicalManseRyeokTableData({ natalTableEvidence, birthTimeContexts: { person: context } }, "고객");
     const v4 = buildCanonicalManseRyeokTableData({ natalTableEvidence, calculations: { person: { birthTimeContext: context } } }, "고객");
-    expect(v3?.timeCorrectionNote).toBe("기준 경도 동경 127.5°로 시간 보정 -30분 적용");
-    expect(v4?.timeCorrectionNote).toBe("기준 경도 동경 127.5°로 시간 보정 -30분 적용");
+    expect(v3?.timeCorrectionNote).toBe("태양시 기준 · 30분 보정 (17:05 → 16:35)");
+    expect(v4?.timeCorrectionNote).toBe("태양시 기준 · 30분 보정 (17:05 → 16:35)");
     expect(v3?.stemRow.hour?.hanja).toBe("壬");
     expect(v3?.branchRow.hour?.hanja).toBe("申");
   });

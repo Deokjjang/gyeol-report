@@ -57,7 +57,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTJ.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "sha256": "c51c73b93437abd92c1ce601ccccb2c0901ccc340293c88eeb5135863c42f718",
           "plainKoSha256": "2cd4a099223cd20b305ce9054b48bdfb6b498f80b12c21d7984bbad52054a38d"
         }
@@ -186,7 +186,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "inferred",
-          "sourceVersion": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceVersion": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "sha256": "4569fdbe0d5b6a99c0549d11711247006acae08b139954dd89ac15eb9502d63d",
           "plainKoSha256": "5d947010755f3c193bd910b8a9370317d026c329b971ec1e89333a8fff262b3e"
         }
@@ -333,7 +333,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INTP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceVersion": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "sha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
           "plainKoSha256": "0744f9e46934b3bbe67347f67d651f543e9c3fff29270f033ae5b79e6da8aef8"
         }
@@ -468,7 +468,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/money/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
           "plainKoSha256": "c975c69eca24f1a3b2dd58ea6902108c6bc9b83ce8f4b7f1fcbd7341f83cd11d"
         }
@@ -609,7 +609,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTJ.json",
           "pointer": "/traits/study/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceVersion": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "sha256": "defc9bb0e8d8708a67d624bc1aeaa9923d950ae0f5de20a552dc3cdea22fedb5",
           "plainKoSha256": "3aa6af125f50c78b37670cce2eece4965095c90d3daa2ca35534ac7107a972b3"
         }
@@ -732,7 +732,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENTP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceVersion": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "sha256": "7ecd06a09dcb82d85dc0371268f747e382c6dc1cd809e46c5075150631715b7e",
           "plainKoSha256": "3f3a7056b94a574fd3b2182b4ffb6bd1a73c3c4b8b840f93061bb269f47b0e5d"
         }
@@ -861,7 +861,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFJ.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "sha256": "4d939ac685a6d57573fe725bbd12b75047e381dee843cda1c6c111cf70855a5d",
           "plainKoSha256": "7920656d5923663f214c95918124951f6ad41a598843fa163a57bcb474339669"
         }
@@ -990,7 +990,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceVersion": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "sha256": "d54edd48cfecad7db67483bf4045854efb59a433ae9eca6de6fca2c31d8ba9ce",
           "plainKoSha256": "60413848d9799e814ce856a65e9ff4d764cdea4080d9d3bfee7bbd494e537bac"
         }
@@ -1119,7 +1119,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFP.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "sha256": "08406615ad1ee236e78f7a2c4e1359668e46f6f3ec2b88aba29dfec4555014bb",
           "plainKoSha256": "ef67a563f6fe5b179c27d4901570680ecb8500be3c77edf77489b09c26967384"
         }
@@ -1260,7 +1260,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/INFP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceVersion": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "sha256": "8fdf31b355c616feb78bc871e91b6c2ddd7f11563eeb9b648d90d67ad26f9f96",
           "plainKoSha256": "74580027ae5ad27e773634ec2a08d5d721bdfcf9645f255fcbf4bc8eb869d876"
         }
@@ -1389,7 +1389,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "sha256": "a3a45a773d25b99dba2a1200ab9dd00190606201ad57b8d7bac6e23688baacbb",
           "plainKoSha256": "6dd02b6720d006de9ef834a8f5bea1fb730a37440e6dba3548539347b649e798"
         }
@@ -1530,7 +1530,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFJ.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceVersion": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "sha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
           "plainKoSha256": "8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e"
         }
@@ -1671,7 +1671,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "sha256": "d8685fab29595435c32cde027da986ad4900e5734c7bad26d143b5c28057a482",
           "plainKoSha256": "3e6855d9cb854cbe5a02bfaa327200e5b63faa9f913e8754b8c498cb117ef0e8"
         }
@@ -1806,7 +1806,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ENFP.json",
           "pointer": "/traits/study/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceVersion": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "sha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
           "plainKoSha256": "16a1c664ddeda9a85aa4a61b42fb2ae24be2709805953bf3a2e0288eec17c448"
         }
@@ -1941,7 +1941,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTJ.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceVersion": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "sha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
           "plainKoSha256": "718254e25a4059b2ee415f8c20895622eb30fde5652862527de34c9fa2821cee"
         }
@@ -2088,7 +2088,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFJ.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "sha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
           "plainKoSha256": "16250fc8cd51bb8bad1e1448b928cd5a60a9ebc6396843bb70b81ea28923343e"
         }
@@ -2223,7 +2223,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceVersion": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "sha256": "d7de4e18454c3b221b1d336262189ed6caa5ee72d82231fe228d59797e5ccb86",
           "plainKoSha256": "7cb622594dff6a2b55db5f37e0d6148646a89bbce04de0d7b5f82293e4ece585"
         }
@@ -2364,7 +2364,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTJ.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceVersion": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "sha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
           "plainKoSha256": "843cb5aa623a28a56fb9e8d5504b18e374a6511bdc96ea59aa9ca7e1a09128e8"
         }
@@ -2499,7 +2499,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESFJ.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceVersion": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "sha256": "8f59c3cd894c88b237bf44fa5fe37eca8b8b0643202a3d1d5a5acc80b8118e60",
           "plainKoSha256": "13e5f1acbde258cdf66bc4e3f96ceae2b7017b53209c7c3c1f14b5cb338f9196"
         }
@@ -2652,7 +2652,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISTP.json",
           "pointer": "/traits/money/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceVersion": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "sha256": "1bfac198a56ea421abc1b83499b78c5f0069628275e36b57fc48ef7b889efcd2",
           "plainKoSha256": "84b89c64b12be8f6d6c99835b8e743440dfd2e68da8124270d65a17d9cc5aa03"
         }
@@ -2799,7 +2799,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ISFP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceVersion": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "sha256": "3b2933a71c929755e951eee60da9b89acb5fd344f90cc1f8a5370158426fee2b",
           "plainKoSha256": "ad65d328a8cc03ad0072b3c4850876529e51edd57a958309cdd4875fb30a8378"
         }
@@ -2946,7 +2946,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTP.json",
           "pointer": "/traits/study/1",
           "sourceCoverage": "direct",
-          "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "sha256": "e157227a7a65402aad995c3e0c5b0a3fca0836265e6c194cc0bd96455f8b396b",
           "plainKoSha256": "fb19c5794274fb0d7f9e851476c7dee64ff437e5bbd2d37dbdec4398e2c18201"
         }
@@ -3069,7 +3069,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESTP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceVersion": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "sha256": "249425dac315323aad0301a098a9db041b6b0e33a7c16272fedcf115d4049a55",
           "plainKoSha256": "a920fe885ef9bdc8676d8393ec9222b8a1bed20c6a1599becad19041f8ae07b3"
         }
@@ -3192,7 +3192,7 @@ export const NEW_FUSION_CANDIDATES: readonly FusionMaterial[] = [
           "file": "docs/product/mbti/source/ESFP.json",
           "pointer": "/traits/workplace/0",
           "sourceCoverage": "direct",
-          "sourceVersion": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceVersion": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "sha256": "d98fbc035ba01882f404c6e6afd2172039165ad9d98e66f3682212b421e71bd5",
           "plainKoSha256": "c100494a64248c4982419afa4b99705dae0e4b588d4f938ba55c7769de064f19"
         }

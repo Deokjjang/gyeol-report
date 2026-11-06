@@ -1,0 +1,8 @@
+{
+ "orderCode": "GR-Y5PH",
+ "providerOrderId": "provider_order_9e8a374b-4e95-4433-9e69-85be1d1d3744",
+ "afterPayUrl": "http://localhost:3300/payments/toss/success?paymentKey=tmock_1147ce4cf0cf4d7d84163860b787fb40&orderId=provider_order_9e8a374b-4e95-4433-9e69-85be1d1d3744&amount=1490&paymentType=NORMAL",
+ "successPath": "/payments/toss/success",
+ "reportId": "report_3b5a689a423a485f97e408d6a2c36bde",
+ "paymentOrderId": "payment_order_932f6bcf-620c-454f-9f2c-b39ee13930bd"
+}

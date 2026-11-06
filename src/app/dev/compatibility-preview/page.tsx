@@ -1,15 +1,7 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
-import {
-  buildCompatibilityEvidencePacketFromFixture,
-  requireCompatibilityFixture,
-} from "../../../lib/report-knowledge";
-import {
-  CompatibilityReportWriterFailure,
-  formatCompatibilityOpenAIRequestDiagnostics,
-  generateCompatibilityReportDraft,
-} from "../../../lib/report-generation";
+import { requireCompatibilityFixture } from "../../../lib/report-knowledge";
 import {
   readCompatibilityPreviewSnapshot,
 } from "../../../lib/report-generation/compatibilityPreviewSnapshot";
@@ -24,24 +16,11 @@ type CompatibilityPreviewPageProps = {
   }>;
 };
 
-const openAIKeyEnvName = ["OPENAI", "API", "KEY"].join("_");
-const authorizationHeaderName = ["Author", "ization"].join("");
-
 function isPreviewEnabled(): boolean {
   return (
     process.env.NODE_ENV !== "production" ||
     process.env.COMPATIBILITY_DEV_PREVIEW_ENABLED === "1"
   );
-}
-
-function getEnvValue(name: string): string | undefined {
-  const value = process.env[name];
-
-  return value === undefined || value.trim().length === 0 ? undefined : value;
-}
-
-function isWriterEnabled(): boolean {
-  return getEnvValue("OPENAI_REPORT_WRITER_ENABLED") === "1";
 }
 
 function getFixtureId(searchParams: Awaited<CompatibilityPreviewPageProps["searchParams"]>): string {
@@ -121,54 +100,7 @@ function renderDisabledState(message: string) {
 }
 
 function renderMissingSnapshotState(fixtureId: string) {
-  return renderDisabledState(
-    [
-      "Preview snapshot not found. Run:",
-      `pnpm dlx tsx scripts/smoke_generate_compatibility_report_draft.ts --fixture ${fixtureId} --write-preview`,
-    ].join("\n"),
-  );
-}
-
-function renderFailureState(error: unknown) {
-  const lines =
-    error instanceof CompatibilityReportWriterFailure &&
-    error.diagnostics !== undefined
-      ? formatCompatibilityOpenAIRequestDiagnostics(error.diagnostics).map(
-          redactPreviewDiagnosticLine,
-        )
-      : [error instanceof Error ? error.message : String(error)];
-
-  return (
-    <PreviewShell>
-      <section className="space-y-4 rounded-xl border border-red-900/70 bg-red-950/30 p-6">
-        <p className="text-sm font-semibold text-red-200">
-          사주×MBTI 궁합 리포트
-        </p>
-        <h1 className="text-2xl font-bold text-neutral-50">
-          궁합 리포트 생성에 실패했습니다.
-        </h1>
-        <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-red-100/80">
-          {lines.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-        </ul>
-      </section>
-    </PreviewShell>
-  );
-}
-
-function redactPreviewDiagnosticLine(line: string): string {
-  return line
-    .replace(/sk-\[[^\s"]+/g, "sk-[redacted]")
-    .replace(/sk-[A-Za-z0-9][A-Za-z0-9_-]{5,}/g, "sk-[redacted]")
-    .replace(
-      new RegExp(`${authorizationHeaderName}:\\s*Bearer\\s+\\S+`, "giu"),
-      `${authorizationHeaderName}: Bearer [redacted]`,
-    )
-    .replace(
-      new RegExp(`${openAIKeyEnvName}\\s*=\\s*\\S+`, "gu"),
-      `${openAIKeyEnvName}=[redacted]`,
-    );
+  return renderDisabledState(`Preview snapshot not found for fixture ${fixtureId}.`);
 }
 
 export default async function CompatibilityPreviewPage({
@@ -203,41 +135,8 @@ export default async function CompatibilityPreviewPage({
     );
   }
 
-  const packet = buildCompatibilityEvidencePacketFromFixture(fixture);
-
-  if (!isWriterEnabled()) {
-    return renderDisabledState(
-      "OpenAI writer is disabled. Enable OPENAI_REPORT_WRITER_ENABLED=1 to preview generated compatibility report.",
-    );
-  }
-
-  const apiKey = getEnvValue(openAIKeyEnvName);
-  const model = getEnvValue("OPENAI_REPORT_MODEL");
-
-  if (apiKey === undefined || model === undefined) {
-    return renderDisabledState(
-      "OpenAI writer config is incomplete. Set the OpenAI key and OPENAI_REPORT_MODEL to preview generated compatibility report.",
-    );
-  }
-
-  let result: Awaited<ReturnType<typeof generateCompatibilityReportDraft>>;
-
-  try {
-    result = await generateCompatibilityReportDraft({
-      evidencePacket: packet,
-      config: {
-        enabled: true,
-        apiKey,
-        model,
-      },
-    });
-  } catch (error) {
-    return renderFailureState(error);
-  }
-
-  return (
-    <PreviewShell devStatus="dev preview">
-      <CompatibilityReportView draft={result.draft} />
-    </PreviewShell>
+  // The OpenAI writer was removed; only stored preview snapshots are rendered here.
+  return renderDisabledState(
+    "Live generation was removed with the OpenAI writer. Open this page with ?snapshot=latest to view a stored preview snapshot.",
   );
 }

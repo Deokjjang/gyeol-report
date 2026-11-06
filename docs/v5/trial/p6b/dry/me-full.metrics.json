@@ -1,0 +1,396 @@
+{
+ "case": "me-full",
+ "label": "종합 · 장덕민(본인)",
+ "reportId": "report_a5535cfb9dae4ac79fcd7d9d783a8b93",
+ "status": "COMPLETED",
+ "wallMs": 8366,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 13634,
+ "chapterChars": [
+  1211,
+  1258,
+  1333,
+  946,
+  1306,
+  901,
+  1102,
+  905,
+  935,
+  969,
+  918,
+  904,
+  946
+ ],
+ "chapters": 13,
+ "deterministicChapters": [
+  "1:missing",
+  "2:missing",
+  "3:missing",
+  "4:missing",
+  "5:missing",
+  "6:missing",
+  "7:missing",
+  "8:missing",
+  "9:missing",
+  "10:missing",
+  "11:missing",
+  "12:missing",
+  "13:missing"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 330,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 281,
+ "infoByKind": {
+  "claim": 270,
+  "scene": 11,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "여름의 갑목(甲木 夏生)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "1.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "묘(墓)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "2.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "편관(偏官)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "2.4"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "토 과다(土 過多)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "3.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "절(絶)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "4.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "현침살(懸針殺)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "정재(正財)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "5.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "갑신(甲申)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "겁살(劫煞)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "6.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.347,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 8349,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cachedInput": 0
+ },
+ "costUsd": 0,
+ "costKrw": 0,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "error",
+   "error": "dry",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 22273,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  }
+ ],
+ "writer": null,
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 13762,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": true,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 1
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 1
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 2
+   },
+   {
+    "n": 8,
+    "count": 2
+   },
+   {
+    "n": 9,
+    "count": 1
+   },
+   {
+    "n": 10,
+    "count": 0
+   },
+   {
+    "n": 11,
+    "count": 0
+   },
+   {
+    "n": 12,
+    "count": 0
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 6,
+   "rate": 0.6,
+   "terms": 10,
+   "misses": [
+    "천덕귀인",
+    "편관",
+    "정관",
+    "신금"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 5,
+    "paragraphs": [
+     2,
+     1,
+     2,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 4,
+    "paragraphs": [
+     2,
+     1,
+     1,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     3,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 4,
+    "paragraphs": [
+     4,
+     2,
+     2,
+     1
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     1,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 4,
+    "paragraphs": [
+     3,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 5,
+    "paragraphs": [
+     2,
+     4,
+     1,
+     1,
+     6
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     3,
+     2,
+     1,
+     6
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 5,
+    "paragraphs": [
+     4,
+     4,
+     2,
+     1,
+     7
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 4,
+    "paragraphs": [
+     4,
+     4,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     1,
+     2
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 5,
+    "paragraphs": [
+     5,
+     4,
+     2,
+     4,
+     6
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     10
+    ]
+   }
+  ],
+  "subheadingsOk": 2,
+  "paragraphsOk": 19,
+  "sectionsTotal": 57,
+  "byRule": {},
+  "coreImage": "한여름 도시 아스팔트 위에 선 큰 나무",
+  "edition": "제5판"
+ }
+}

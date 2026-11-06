@@ -1,0 +1,289 @@
+{
+ "case": "x-major",
+ "product": "major_fortune",
+ "chapters": 5,
+ "sources": {
+  "writer": 5
+ },
+ "chars": [
+  1383,
+  1279,
+  6843,
+  1262,
+  1255
+ ],
+ "total": 12022,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [],
+ "warnings": [],
+ "briefCopy": {
+  "sentences": 217,
+  "matched": 24,
+  "ratio": 0.111,
+  "writerSentences": 217,
+  "writerMatched": 24,
+  "writerRatio": 0.111
+ },
+ "connectors": [
+  {
+   "phrase": "그래도",
+   "count": 4
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "props": {
+  "인수인계 메모": 1,
+  "야간 근무표": 1,
+  "투약 기록": 1,
+  "바이탈 체크": 1,
+  "환자 차트": 1,
+  "근무 교대": 1,
+  "간호 기록지": 1,
+  "병동 회의": 1
+ },
+ "experience": {
+  "replaced": 0,
+  "deleted": 0
+ },
+ "jobMentions": 0,
+ "sceneHintsUsed": "8/8",
+ "keyMatch": {
+  "total": 14,
+  "exact": 14,
+  "ratio": 1,
+  "missing": [],
+  "filled": []
+ },
+ "flow": [
+  {
+   "key": "2023",
+   "label": "2023년 癸卯(계묘)",
+   "ganji": "癸卯(계묘)",
+   "tenGod": "편관(偏官)/편인(偏印)",
+   "score": 4,
+   "flowLabel": "활발함",
+   "basis": [
+    "책임·압박의 기운이 들어옴 +1"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "무계합",
+    "목국(반쯤)",
+    "묘진해"
+   ]
+  },
+  {
+   "key": "2024",
+   "label": "2024년 甲辰(갑진)",
+   "ganji": "甲辰(갑진)",
+   "tenGod": "정인(正印)/상관(傷官)",
+   "score": 2,
+   "flowLabel": "느림",
+   "basis": [
+    "이미 많은 기운이 더 들어옴 -1"
+   ],
+   "fillsLack": false,
+   "badges": [
+    "축진파",
+    "지지형"
+   ]
+  },
+  {
+   "key": "2025",
+   "label": "2025년 乙巳(을사)",
+   "ganji": "乙巳(을사)",
+   "tenGod": "편인(偏印)/겁재(劫財)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [],
+   "fillsLack": false,
+   "badges": []
+  },
+  {
+   "key": "2026",
+   "label": "2026년 丙午(병오) (올해)",
+   "ganji": "丙午(병오)",
+   "tenGod": "겁재(劫財)/비견(比肩)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [],
+   "fillsLack": false,
+   "badges": [
+    "오미합",
+    "축오해",
+    "원진"
+   ]
+  },
+  {
+   "key": "2027",
+   "label": "2027년 丁未(정미)",
+   "ganji": "丁未(정미)",
+   "tenGod": "비견(比肩)/식신(食神)",
+   "score": 4,
+   "flowLabel": "활발함",
+   "basis": [
+    "이미 많은 기운이 더 들어옴 -1",
+    "태어난 날 글자와 부딪힘 +1",
+    "태어난 달 글자와 부딪힘 +1"
+   ],
+   "fillsLack": false,
+   "badges": [
+    "축미충",
+    "축술미형"
+   ]
+  },
+  {
+   "key": "2028",
+   "label": "2028년 戊申(무신)",
+   "ganji": "戊申(무신)",
+   "tenGod": "상관(傷官)/정재(正財)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [
+    "부족한 기운을 채움 +1",
+    "빈칸(공망)에 듦 -1"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "공망"
+   ]
+  },
+  {
+   "key": "2029",
+   "label": "2029년 己酉(기유)",
+   "ganji": "己酉(기유)",
+   "tenGod": "식신(食神)/편재(偏財)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [
+    "부족한 기운을 채움 +1",
+    "빈칸(공망)에 듦 -1"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "진유합",
+    "금국(반쯤)",
+    "공망"
+   ]
+  },
+  {
+   "key": "2030",
+   "label": "2030년 庚戌(경술)",
+   "ganji": "庚戌(경술)",
+   "tenGod": "정재(正財)/상관(傷官)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [
+    "이미 많은 기운이 더 들어옴 -1",
+    "태어난 해 글자와 부딪힘 +0.5"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "을경합",
+    "진술충",
+    "술미파",
+    "축술미형"
+   ]
+  },
+  {
+   "key": "2031",
+   "label": "2031년 辛亥(신해)",
+   "ganji": "辛亥(신해)",
+   "tenGod": "편재(偏財)/정관(正官)",
+   "score": 4,
+   "flowLabel": "활발함",
+   "basis": [
+    "부족한 기운을 채움 +1"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "원진"
+   ]
+  },
+  {
+   "key": "2032",
+   "label": "2032년 壬子(임자) · 새 대운 시작",
+   "ganji": "壬子(임자)",
+   "tenGod": "정관(正官)/편관(偏官)",
+   "score": 5,
+   "flowLabel": "거셈",
+   "basis": [
+    "부족한 기운을 채움 +1",
+    "태어난 날 기둥과 합 +0.5",
+    "책임·압박의 기운이 들어옴 +1"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "정임합",
+    "자축합",
+    "수국(반쯤)",
+    "자미해",
+    "원진"
+   ]
+  },
+  {
+   "key": "2033",
+   "label": "2033년 癸丑(계축)",
+   "ganji": "癸丑(계축)",
+   "tenGod": "편관(偏官)/식신(食神)",
+   "score": 4,
+   "flowLabel": "활발함",
+   "basis": [
+    "이미 많은 기운이 더 들어옴 -1",
+    "태어난 시각 글자와 부딪힘 +0.5",
+    "책임·압박의 기운이 들어옴 +1"
+   ],
+   "fillsLack": true,
+   "badges": [
+    "무계합",
+    "축미충",
+    "축진파",
+    "축술미형"
+   ]
+  },
+  {
+   "key": "2034",
+   "label": "2034년 甲寅(갑인)",
+   "ganji": "甲寅(갑인)",
+   "tenGod": "정인(正印)/정인(正印)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [],
+   "fillsLack": false,
+   "badges": []
+  },
+  {
+   "key": "2035",
+   "label": "2035년 乙卯(을묘)",
+   "ganji": "乙卯(을묘)",
+   "tenGod": "편인(偏印)/편인(偏印)",
+   "score": 3,
+   "flowLabel": "보통",
+   "basis": [],
+   "fillsLack": false,
+   "badges": [
+    "목국(반쯤)",
+    "묘진해"
+   ]
+  },
+  {
+   "key": "2036",
+   "label": "2036년 丙辰(병진)",
+   "ganji": "丙辰(병진)",
+   "tenGod": "겁재(劫財)/상관(傷官)",
+   "score": 2,
+   "flowLabel": "느림",
+   "basis": [
+    "이미 많은 기운이 더 들어옴 -1"
+   ],
+   "fillsLack": false,
+   "badges": [
+    "축진파",
+    "지지형"
+   ]
+  }
+ ]
+}

@@ -322,7 +322,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 10,
       "originalId": "cpr:material:CH04.P4:soft-precise-request",
-      "recordSha256": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "recordSha256": "abc3dbdb5339074769c857120f722be8591c8607c299852f22057024b65c9e61",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -419,7 +419,7 @@
           "auditRef": "source-catalog.json#fd4fdd85f3ca3bb2693d",
           "sourceKind": "mbti_trait",
           "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "type": "INFJ",
             "area": "communication",
@@ -433,7 +433,7 @@
           "auditRef": "source-catalog.json#11b0af8d9f1811491bfc",
           "sourceKind": "mbti_trait",
           "recordSha256": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "type": "INFJ",
             "area": "communication",
@@ -560,7 +560,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH04.P1:invite-into-conversation",
-      "recordSha256": "763a54f0a27068be2e03261a429e2681dc80e3ac6296541f321a8da60ccf0e93",
+      "recordSha256": "056fb4dc92941081b5480134ec41b74afbf31776b248dc52a58a7a9fd59ef88f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -657,7 +657,7 @@
           "auditRef": "source-catalog.json#f996cad5c3d54e4a5215",
           "sourceKind": "mbti_trait",
           "recordSha256": "17f63b45b9c2eca5df78e08ed7eabc50a23f48d5541a265d613dfe1a8a08e354",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "relationships",
@@ -880,7 +880,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH10.P3:space-without-signal",
-      "recordSha256": "4ddcce00e1e870342e94d5e4bd2309818a1c3d46f918559e5324cd8d62150d13",
+      "recordSha256": "327011615280324b62621184cf26250eddda77edf116247b9aad97c07fcf2571",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -977,7 +977,7 @@
           "auditRef": "source-catalog.json#04d364954a00555e56e1",
           "sourceKind": "mbti_trait",
           "recordSha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "love",
@@ -1538,7 +1538,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH06.P2:wealth-and-load",
-      "recordSha256": "f8433d2f99afe8f2ebe0e295be7444003fe591e8bdd9d4e4c01bba1afbaac8dd",
+      "recordSha256": "7d0b78749a9245b7011f72da6f1413ab600fb0949f1e47915eb0aa5e77ffc8fe",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -1671,7 +1671,7 @@
           "auditRef": "source-catalog.json#c6e503b19c659758ddbf",
           "sourceKind": "mbti_trait",
           "recordSha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "money",
@@ -1684,8 +1684,8 @@
           "sourceId": "fkr:legacy:entj-wealth-pressure-structure",
           "auditRef": "source-catalog.json#dd54e52cdafb7cd80b11",
           "sourceKind": "fusion_research",
-          "recordSha256": "3e8193928fd06df225500bf8e3549d0d611aa70c6ea1f71bcbe4e907cdb2ce61",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "c7935534efacef8815083bd59cf848857796785914f0eaa636a173a24a8f152a",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -2386,7 +2386,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH03.P2:support-received-and-given",
-      "recordSha256": "08036fe933edad03d99cef2f545dac1c66f835de42cc11a1c438f366c170c30a",
+      "recordSha256": "9db6092244856b534a9a2e712e297876d27a596d8dacd779d7f69251f8485978",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -2520,7 +2520,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -2533,8 +2533,8 @@
           "sourceId": "fkr:legacy:enfj-help",
           "auditRef": "source-catalog.json#e4aee758d586cfbd2004",
           "sourceKind": "fusion_research",
-          "recordSha256": "2c1295e1a1c9902e0c19515ce77514704358d1d7ef8980b98d71080c0909d632",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "90b1b4e7948feff6dae7c97d41d00c2489419a656d6a8eb176acdc8f193af206",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -2583,7 +2583,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH05.P2:translate-for-learner",
-      "recordSha256": "21590951f3f97e045d0e085a8c52fdff42b858cb8c3f65348e67a19cb5365dfc",
+      "recordSha256": "3e74153d6ebab21179ab505586b61c12654f559410ed2c6b1c59a203444f734f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -2719,7 +2719,7 @@
           "auditRef": "source-catalog.json#7c44661a1400737a0782",
           "sourceKind": "mbti_trait",
           "recordSha256": "8354d4d6b0c2252ab7a9040915dc2d7dc2f0ff1969b5ebc43736b0d279531c9e",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "strengths",
@@ -2802,7 +2802,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH10.P2:curiosity-as-intimacy",
-      "recordSha256": "814d182382984074264fbc2fddab6f657a0c8cd611f1f441eee3b1fd24dfe21c",
+      "recordSha256": "78d22b4e590f8bb0c0a2a11287ccffbb033334be7d501fc7eaebca2ced8e0b9e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -2899,7 +2899,7 @@
           "auditRef": "source-catalog.json#9001b550f225e0c6153d",
           "sourceKind": "mbti_trait",
           "recordSha256": "8161fb47b480bdf5d0a9aaf78fb46975955dfdb75c808fc6e0ba6b5560ae5ea3",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "love",
@@ -3412,7 +3412,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH01.P3:values-and-expression",
-      "recordSha256": "a711b93af187321d18c6fa5a935432b9a7952ad4ff212ba95d19c8c081efd9f6",
+      "recordSha256": "c5347cc666ecf92d2b2c9e1ca45c151028dc815c2f577ea72f37beb2c88f4488",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -3547,7 +3547,7 @@
           "auditRef": "source-catalog.json#a0d821cb22f763b8b860",
           "sourceKind": "mbti_trait",
           "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "type": "INFP",
             "area": "thinkingStyle",
@@ -3882,7 +3882,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH10.P2:respond-with-room",
-      "recordSha256": "65a43d04351d3b10367e345da8ec8e04d357916ff40eeb617bee0986133c35a1",
+      "recordSha256": "e2b083144d3f5ef14ddf143e7512cc3fa7fd2e2111b594be4376504ffa5bdbde",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -3979,7 +3979,7 @@
           "auditRef": "source-catalog.json#cfc4d324191f14d671cd",
           "sourceKind": "mbti_trait",
           "recordSha256": "3d5dc96e8a36559dfdca6761f16b1fe50fc1ccfe7ca804be0abbfd0f3a2481a9",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "love",
@@ -4028,7 +4028,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
-      "recordSha256": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "recordSha256": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -4125,7 +4125,7 @@
           "auditRef": "source-catalog.json#2fbbbcbec9365163bb46",
           "sourceKind": "mbti_trait",
           "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "love",
@@ -4174,7 +4174,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH12.P2:shared-making-not-performance",
-      "recordSha256": "46d59aa1b7ba83aa83bdbe8410597737e904c528689b8146dca01790e7f0ff96",
+      "recordSha256": "19ba511933ddc8f50461656a4bea28f5558ad8d0db922368509cd049f39edf74",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -4271,7 +4271,7 @@
           "auditRef": "source-catalog.json#2efaea4433078768f5d3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ac2c18ba7af5e3f23b6dcada7caffa63681564bfbed45585ed13822e71747bdd",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "strengths",
@@ -4285,7 +4285,7 @@
           "auditRef": "source-catalog.json#9a67a19dffd6030af049",
           "sourceKind": "mbti_trait",
           "recordSha256": "fa39ae35ddbdee96ce319bf0cb4337333ffc550b993921e8cd4b724ea3cb1d88",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "relationships",
@@ -5142,7 +5142,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH06.P1:correction-before-request",
-      "recordSha256": "3dc3ff7143f2b3f7da3def8a6c6ebfbbefa38b597b90fffb7ff6555991d12126",
+      "recordSha256": "a7605b65864e7aaadeb6c6392df5b1d6d410c3e96c03519e6df3d7db1ef251d4",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -5239,7 +5239,7 @@
           "auditRef": "source-catalog.json#9c42149062cec1cf15f3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "type": "ESTJ",
             "area": "communication",
@@ -5419,7 +5419,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH05.P1:analysis-that-decides",
-      "recordSha256": "d94fd3e369d0f0daa28b3cd38a38fab8282754393b2344c3081e496733bc6df8",
+      "recordSha256": "2a00061aa182356897ea5e32e05a74788278ba9db18bd2a69a78760e76c4f38b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -5555,7 +5555,7 @@
           "auditRef": "source-catalog.json#71d069a8af17db632a8b",
           "sourceKind": "mbti_trait",
           "recordSha256": "35c386e460217df0e2ff1d3c9c3357030f1ef3f380ae21b6136f451cb9cf82a4",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "strengths",
@@ -7711,7 +7711,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH12.P3:quiet-without-disappearance",
-      "recordSha256": "a3e61ba80b17b292fb8d661aac0f4c5c4aee1f3b008e4c5cbc4575f2c4fa75ac",
+      "recordSha256": "ac26426eac2d63fcae2e8313d33732af834dc299345dc7612a6abfb283f45114",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -7808,7 +7808,7 @@
           "auditRef": "source-catalog.json#0711f7a4ebe38057e4e1",
           "sourceKind": "mbti_trait",
           "recordSha256": "6486a235e1eec8a9ea0973db228a8f96b07296f6acce030ad39323c4ce035be2",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "relationships",
@@ -8246,7 +8246,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH12.P2:remember-and-check",
-      "recordSha256": "5d61c8a497e4a0cf3f6d79fbb515bf881206ddcc35207ddf17db441afecdb395",
+      "recordSha256": "ea24e9ecda41740cb81ab4d2e8979aa8a13395378d1f7a4ac54e8d61454c6f6b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -8343,7 +8343,7 @@
           "auditRef": "source-catalog.json#8ea0c96ce718cdbee685",
           "sourceKind": "mbti_trait",
           "recordSha256": "2d56cfbede1a040db6c45c75d5f7c6803dbe9547d1b171de97cba18323627792",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "relationships",
@@ -10326,7 +10326,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH06.P3:care-without-request",
-      "recordSha256": "95af7d67de36d0e7253698a466285e4ebd97fb913c3395ce755ffa92eb745776",
+      "recordSha256": "4688b2896e76c1fad5c7f2cf42fabaf3bdc61f87f2fce99d5df794d78872bf19",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -10423,7 +10423,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -11011,7 +11011,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH05.P3:standards-open-way",
-      "recordSha256": "cec6f4cd1c50d13b1bcf0ba549fe8ffb3ca78efe3e353dd965043a44d4db5152",
+      "recordSha256": "4d801ed115ddaddcf1d8d7dc3b6d408c46177017ae7ec57153c37b9cd67ac097",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -11146,7 +11146,7 @@
           "auditRef": "source-catalog.json#611b24073281ed349665",
           "sourceKind": "mbti_trait",
           "recordSha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
-          "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "originalState": {
             "type": "ENTP",
             "area": "thinkingStyle",
@@ -11307,7 +11307,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH04.P3:playful-after-trust",
-      "recordSha256": "76d4ca10a8182530f40e252522e01def8c0cc2bc6739792421ced4156815504a",
+      "recordSha256": "a818839aacfdd8073bbca1ba21725160bf16fef699f69ad6f9deae09b360bcdd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -11404,7 +11404,7 @@
           "auditRef": "source-catalog.json#9001b550f225e0c6153d",
           "sourceKind": "mbti_trait",
           "recordSha256": "8161fb47b480bdf5d0a9aaf78fb46975955dfdb75c808fc6e0ba6b5560ae5ea3",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "love",
@@ -12051,7 +12051,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH06.P1:help-with-hidden-expectation",
-      "recordSha256": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+      "recordSha256": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -12148,7 +12148,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -13606,7 +13606,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH04.P2:inner-values-not-secret",
-      "recordSha256": "462ab8d2d85a51265e4f67cf8f4586f6d404aa505c1a6526bc69dac69af646ac",
+      "recordSha256": "7b4763a9455d8f015293fc7ef73f93ef9b61e8e0712adf4f1f3df702250caf2b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -13703,7 +13703,7 @@
           "auditRef": "source-catalog.json#a0d821cb22f763b8b860",
           "sourceKind": "mbti_trait",
           "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "type": "INFP",
             "area": "thinkingStyle",
@@ -14580,7 +14580,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH05.P3:quiet-lead",
-      "recordSha256": "7d60977901e0d777a3746a4992675f884914e46288316302e5ff69411fbe597e",
+      "recordSha256": "0978ab4b7433acb000c09d077bcde193a8809e4a33b12ff316bd64795723d623",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -14715,7 +14715,7 @@
           "auditRef": "source-catalog.json#18fb1909ee68e78603a1",
           "sourceKind": "mbti_trait",
           "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "identity",
@@ -14798,7 +14798,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH11.P2:practical-care-with-agreement",
-      "recordSha256": "88106d0a9dabf4dcdd976c2d01c91f89854bf75f0846fc8a2d55d3c1d0a3c801",
+      "recordSha256": "a6585ad0bc10fb4a5d7cab14a7e640817e151626a879c387ad776b925194d8d3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -14895,7 +14895,7 @@
           "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
           "sourceKind": "mbti_trait",
           "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "identity",
@@ -17802,7 +17802,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH11.P1:protect-with-permission",
-      "recordSha256": "003b31a1fc678fde7532ad1322821e2a0a29ebd1083ae2971294f7b02ea92597",
+      "recordSha256": "70bfe60e9c1727b6ebce24546b9a8af5c2ab6fd909eeb7377de6596fe42beae9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -17899,7 +17899,7 @@
           "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
           "sourceKind": "mbti_trait",
           "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "identity",
@@ -18638,7 +18638,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH03.P3:save-and-experience",
-      "recordSha256": "06aaa720b3f29bf8288d2dd075764fd1e53dfaee8d0078241c6d46bff47f1767",
+      "recordSha256": "bc3ff6c75ca9eb809589521efdf9b9e3ca70f6862be077366ed7ff6f67942495",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -18773,7 +18773,7 @@
           "auditRef": "source-catalog.json#8ffef9419a4d9763d49f",
           "sourceKind": "mbti_trait",
           "recordSha256": "a039fb5ebbd332c4df2c1933f7bbb17e7c7681f9e2e96bf771dcd5a6c181b2ae",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "money",
@@ -18786,8 +18786,8 @@
           "sourceId": "fkr:legacy:enfp-budget",
           "auditRef": "source-catalog.json#d3af1b1f332cbccacc06",
           "sourceKind": "fusion_research",
-          "recordSha256": "4cc534d57d289ef27c8d1bebb4317dd0e0e1f81cb4c87486819cbf45e1c735fb",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "6da442bba6caa77eab3689cff9afdb0111d1e3c020fadd00d12a970f51f529c8",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -19012,7 +19012,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 9,
       "originalId": "cpr:material:CH03.P4:from-question-to-small-proof",
-      "recordSha256": "e7b65a8092fcf637ed0b23b675c8dc9b422bdab1b722cda5354c8453e3fdfe01",
+      "recordSha256": "5ee454fb1ba3a8b905207e7e7587e49bd3c92c06589a1dd5bd8ca96add6723a3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -19148,7 +19148,7 @@
           "auditRef": "source-catalog.json#c51bdfb609a17396351d",
           "sourceKind": "mbti_trait",
           "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -19563,7 +19563,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH05.P2:resource-route",
-      "recordSha256": "c2526a49b878a5b26738036aef7e2f0aaf134554256d791bd707b249cf8afa32",
+      "recordSha256": "33d75581ed9ba7c7a226f2f18bb54b2b6bb15e24aa10845b56d3008609b47cbf",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -19699,7 +19699,7 @@
           "auditRef": "source-catalog.json#1ab2480dc05b0f303177",
           "sourceKind": "mbti_trait",
           "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "money",
@@ -20105,7 +20105,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH12.P3:invite-without-oversubscription",
-      "recordSha256": "b7f053e1ce75dfd2f862bd8d522cef004cca893434a3fc1adf329ca6ef7df3df",
+      "recordSha256": "bbf819ea3bb3beb91868f4a093e5ad771920d197b878b06f6440ca173759ba96",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -20202,7 +20202,7 @@
           "auditRef": "source-catalog.json#580e60e5a7233997dbbb",
           "sourceKind": "mbti_trait",
           "recordSha256": "c06ad27341da69b15a2107b24f3f392afef635ad6aeca6f7966479442e5d1cbc",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "relationships",
@@ -20329,7 +20329,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 11,
       "originalId": "cpr:material:CH03.P4:keep-joy-and-reserve",
-      "recordSha256": "a2ebfef35942ffd16c1fafb4b55d60c8a7428e7a49771da4f038229d993924a6",
+      "recordSha256": "18f50d286a9d3a4341adbed434e23fc58978cbce3cd1af01967458d968628e5c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -20464,7 +20464,7 @@
           "auditRef": "source-catalog.json#8ffef9419a4d9763d49f",
           "sourceKind": "mbti_trait",
           "recordSha256": "a039fb5ebbd332c4df2c1933f7bbb17e7c7681f9e2e96bf771dcd5a6c181b2ae",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "money",
@@ -20625,7 +20625,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH12.P2:space-with-respect",
-      "recordSha256": "1c6a48ba4bcb42fee0d93d0e9adb57edbe0ac200f0ed3642b429df9222c5ad55",
+      "recordSha256": "d568f42b5900add591c2c5dc3e043e04d68f6511955d16239049603913fc90b6",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -20722,7 +20722,7 @@
           "auditRef": "source-catalog.json#05f2d1edfe1991f60079",
           "sourceKind": "mbti_trait",
           "recordSha256": "0a113bb165fb54de1ea72840bd81387563f77c529e2d198e5e3ceb2c0fe1363a",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "relationships",
@@ -20850,7 +20850,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH10.P1:ask-about-direction",
-      "recordSha256": "c168a8a77232b17f13d66513036ae550a3835d4722284becf969fe3e89f64716",
+      "recordSha256": "3ee7608500e9a475ff6771fd254acef72cc1dc93f88232490aa8b1cf2a9030b9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -20947,7 +20947,7 @@
           "auditRef": "source-catalog.json#962137f48456cc9e196d",
           "sourceKind": "mbti_trait",
           "recordSha256": "7798937240c84e59f327be4628eacc7e608ee4c5d7af70a662f0a8838b500ef8",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "love",
@@ -21073,7 +21073,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH12.P3:repair-not-correct-person",
-      "recordSha256": "c4ca93a7bc6fd09fb03589073ed9c2728a82ded5bab28c8722071994cadb5d8e",
+      "recordSha256": "0e735568d14a128bb300061031003047bcd66810748af25e94aaa5304d2285b7",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -21170,7 +21170,7 @@
           "auditRef": "source-catalog.json#9c42149062cec1cf15f3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "type": "ESTJ",
             "area": "communication",
@@ -21525,7 +21525,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH08.P3:feedback-never-reaches-work",
-      "recordSha256": "2303748d358b0cc0b86e9f6b4ab823459b08aee733bd42d9b8a27bd0830d68d8",
+      "recordSha256": "ba7b08cb3b49c7a96972ae8ac047ff0b7fe460428f95889bf84ba92746e2e2eb",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -21622,7 +21622,7 @@
           "auditRef": "source-catalog.json#af11cbc3b971aff61984",
           "sourceKind": "mbti_trait",
           "recordSha256": "d98fbc035ba01882f404c6e6afd2172039165ad9d98e66f3682212b421e71bd5",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "type": "ESFP",
             "area": "workplace",
@@ -22060,7 +22060,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH04.P1:clear-request-first",
-      "recordSha256": "0b3dc5c1ef0bccc4c795f46a137786f5b6899a48ee228bb0d2f5c64f7a134201",
+      "recordSha256": "2693075d5f6c9678e132667ee1096568a6287bd2d283815caf43464631c0bc99",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -22157,7 +22157,7 @@
           "auditRef": "source-catalog.json#9c42149062cec1cf15f3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "type": "ESTJ",
             "area": "communication",
@@ -22702,7 +22702,7 @@
       "exportName": "CH09_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH09.P1:money-as-meaning",
-      "recordSha256": "a5da05dbca4710bcb49490d0cf1e7c6ce48b6aa4ca1bf1f81f76f01e748d735c",
+      "recordSha256": "77cf2364dd8dd3da6ff9c70a6324018300685f6358d85ca59d44c00febd7b295",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -22799,7 +22799,7 @@
           "auditRef": "source-catalog.json#5aa3def40f487ada68fe",
           "sourceKind": "mbti_trait",
           "recordSha256": "08406615ad1ee236e78f7a2c4e1359668e46f6f3ec2b88aba29dfec4555014bb",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "type": "INFP",
             "area": "money",
@@ -23004,7 +23004,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH05.P2:make-visible",
-      "recordSha256": "2251f1465c170a351b693746b0fa8f2b294fb3c2ecf90dbc17a2a99903ccbeab",
+      "recordSha256": "9ecf9c9d568223ca23a103a2ca3523f8850fb1a6fcd64305248c8cb2f1e548f1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -23139,7 +23139,7 @@
           "auditRef": "source-catalog.json#2efaea4433078768f5d3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ac2c18ba7af5e3f23b6dcada7caffa63681564bfbed45585ed13822e71747bdd",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "strengths",
@@ -23912,7 +23912,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH06.P2:output-authority-collision",
-      "recordSha256": "04a6febd29f30ef515f4b4c866b51c5d202871afb39f89cf482af33903b80abe",
+      "recordSha256": "b265014e1d59c2b25b44dede422cb4be42c06b827375b67703dd0d585bb8146f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -24043,7 +24043,7 @@
           "auditRef": "source-catalog.json#611b24073281ed349665",
           "sourceKind": "mbti_trait",
           "recordSha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
-          "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "originalState": {
             "type": "ENTP",
             "area": "thinkingStyle",
@@ -24056,8 +24056,8 @@
           "sourceId": "fkr:legacy:entp-question-authority-structure",
           "auditRef": "source-catalog.json#fca68d9638a654ea08b2",
           "sourceKind": "fusion_research",
-          "recordSha256": "de317a726e6e9b18de0e40f759308255db7b1f21921b8fe375ae689776311d7c",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "d5a2ddc1f0b44b9191253241acbbb23a1502ae8cb3bfa60ab6138bd7a7ab8c8b",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -24106,7 +24106,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH11.P2:clear-shared-logistics",
-      "recordSha256": "abdd9184b4e8be9dbd5c0ebb7de31ef95f62de9659b34759facf0fbf156f0bd7",
+      "recordSha256": "740b55f028c5fb7fd21bde88456fcf4ff679212c4e15164dba25aaa9d591cccd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -24203,7 +24203,7 @@
           "auditRef": "source-catalog.json#9c42149062cec1cf15f3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "type": "ESTJ",
             "area": "communication",
@@ -24330,7 +24330,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH03.P2:resource-versus-goal",
-      "recordSha256": "dcb544932b98444ed4d5d2a8c292be0334aeaf66bf990f9685fc3065c363fc02",
+      "recordSha256": "eec193f587bd365dacb4b30ff28b6ee6807c42199d080a5d944b91d310aa121a",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -24466,7 +24466,7 @@
           "auditRef": "source-catalog.json#c6e503b19c659758ddbf",
           "sourceKind": "mbti_trait",
           "recordSha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "money",
@@ -24479,8 +24479,8 @@
           "sourceId": "fkr:legacy:entj-wealth",
           "auditRef": "source-catalog.json#9854f8b4cdd00c332c03",
           "sourceKind": "fusion_research",
-          "recordSha256": "5fb087bc99fa425485abaa21df8820fbc0f9e56b2bc63f6114a93fb0c4a500a0",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "0e546bce64df83fb904123590133c9b8567f71ed7fec98f9cf5af10fd22028d7",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -25084,7 +25084,7 @@
       "exportName": "CH09_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH09.P1:money-as-experience",
-      "recordSha256": "82a6e30085227fbbbedfcddf2dbd61bd5f11926c8a1308810c29bfd3afc199e1",
+      "recordSha256": "922fe6892ae75a362844e5f49a5c8deaf40ca6cf52139dbb9a786ecb0b3cada4",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -25181,7 +25181,7 @@
           "auditRef": "source-catalog.json#412220bcf92a4c16363f",
           "sourceKind": "mbti_trait",
           "recordSha256": "bd3500b042d52f5e794eae3e4fc4a726647ae1e6dd646ebed97b14ddaaecd37a",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "type": "ESFP",
             "area": "money",
@@ -25308,7 +25308,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH08.P1:work-through-shared-purpose",
-      "recordSha256": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+      "recordSha256": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -25405,7 +25405,7 @@
           "auditRef": "source-catalog.json#1ad06916b42f0eb3ee39",
           "sourceKind": "mbti_trait",
           "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "workplace",
@@ -25585,7 +25585,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 11,
       "originalId": "cpr:material:CH01.P4:change-keeps-purpose",
-      "recordSha256": "70d61b1ad12f45bcece4fa141e327d1ea2e07397b0faf8f2d569aa58be42ed74",
+      "recordSha256": "c794ec5bf2c9d1bcfe87d9bdd6c376fb0e1ef01df5d6652cdb2a089398528760",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -25721,7 +25721,7 @@
           "auditRef": "source-catalog.json#ed517424138830a947a6",
           "sourceKind": "mbti_trait",
           "recordSha256": "91c2a87868904e37d1c0877aa232459c74eade0bd5649ebdaffb3feb31acfe18",
-          "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+          "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
           "originalState": {
             "type": "ENTP",
             "area": "identity",
@@ -27350,7 +27350,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH04.P2:after-help-load",
-      "recordSha256": "2a1b4f25c53ca5000752bf4e9373c6455fcc0ad891f6c4ec36cf2d9ddc95b4ff",
+      "recordSha256": "5562b8c12f059e24389f39a377e63de14f22ab16e4f6005b0a1b93ec1e73dad6",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -27486,7 +27486,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -27778,7 +27778,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH10.P2:warmth-in-chosen-details",
-      "recordSha256": "a4b775eaa5040f7b05ada9ecb2c6f966a9419d82664e5d6af27db2ab3d387618",
+      "recordSha256": "f108dc0ff36f3c44ff9caef61e7d8af0d66e201cea2674470fbe5317df135f5c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -27875,7 +27875,7 @@
           "auditRef": "source-catalog.json#efd2df690e448ae25f53",
           "sourceKind": "mbti_trait",
           "recordSha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "love",
@@ -28595,7 +28595,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH06.P3:feedback-as-evaluation",
-      "recordSha256": "20da119835c898f75446bcb32801915287ececa4bded6adc10d3d14b95c45a21",
+      "recordSha256": "219c5857e8845937911e365aac08e52bd393ecbd9b46c31ce6ac37fbe05c75cc",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -28692,7 +28692,7 @@
           "auditRef": "source-catalog.json#9c42149062cec1cf15f3",
           "sourceKind": "mbti_trait",
           "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "type": "ESTJ",
             "area": "communication",
@@ -29124,7 +29124,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH03.P1:learn-with-practice",
-      "recordSha256": "7e1fd57af639dfcd412b4ad6394657609fea24c70e66bc41cae94451147dd2bc",
+      "recordSha256": "cc75e4c918ac4b13deb9e6c2d73deff6ba919bbc87285651572e28931841aff0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -29259,7 +29259,7 @@
           "auditRef": "source-catalog.json#d7919e26a177ef70aa67",
           "sourceKind": "mbti_trait",
           "recordSha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "study",
@@ -29272,8 +29272,8 @@
           "sourceId": "fkr:legacy:istp-study",
           "auditRef": "source-catalog.json#fe2706c113dbf5f98506",
           "sourceKind": "fusion_research",
-          "recordSha256": "be22d063b285a41a288fb787c53b100953218042b5f72ae5bde154fc1b513429",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "2f9ad989e1a508c8a6a028b54fceafb18355e73969017c5b709aef6c4478f67e",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -29724,7 +29724,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 4,
       "originalId": "cpr:material:CH08.P2:handoff-continuity",
-      "recordSha256": "14c8752b7ddfdbc06821ee20989e3a7b35f14322025d8ff6a59428f8792a3c41",
+      "recordSha256": "6d086ccfd2d8d586544be4ae117bf0080cf1a034c0d9b5eb8093654259f86597",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -29821,7 +29821,7 @@
           "auditRef": "source-catalog.json#b54b44778d3ddfda8eae",
           "sourceKind": "mbti_trait",
           "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "workplace",
@@ -29949,7 +29949,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH11.P1:own-choice-near-family",
-      "recordSha256": "79ceabf190fa14ee1154b47f2dc1ec245d4d976601a686e4519e8643e4880bfc",
+      "recordSha256": "bceb9959e735aa996b08819c20098e63e2e37d55e466512aaa5cb5e2e2eef0ef",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -30046,7 +30046,7 @@
           "auditRef": "source-catalog.json#18fb1909ee68e78603a1",
           "sourceKind": "mbti_trait",
           "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "identity",
@@ -30191,7 +30191,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH01.P3:criteria-and-questions",
-      "recordSha256": "8228f80e35531b447f061d71d27b338f7dcf7abd5e66b342ad34823fbc89c73d",
+      "recordSha256": "44df32a33c0779b8edfc02fe35298f085bfc38a6323dff1c8917673247888372",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -30327,7 +30327,7 @@
           "auditRef": "source-catalog.json#48b443bb748ac81f2a3d",
           "sourceKind": "mbti_trait",
           "recordSha256": "1f2cc74c199ce626b165ed088618573659162aca303a2cbfee9c19d0e91a03e0",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "identity",
@@ -30341,7 +30341,7 @@
           "auditRef": "source-catalog.json#88a8ae8e5733c323bd3a",
           "sourceKind": "mbti_trait",
           "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "thinkingStyle",
@@ -30354,8 +30354,8 @@
           "sourceId": "fkr:legacy:intj-inquiry",
           "auditRef": "source-catalog.json#25701865c30fc283e43f",
           "sourceKind": "fusion_research",
-          "recordSha256": "a14d80c742f58029ef2790ef1329cbbe03ab06b5639d1217c878625f2c7dfb1e",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "e3bcb2d1754d5e2a645eda6a18e59d32717669813cad54ab3c2fe4a8bbd67d06",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -30580,7 +30580,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH10.P3:confirmation-pressure",
-      "recordSha256": "d0b666b36513f46bb4e0d86fd3f4142e26e162c25433bb9d4e2b74f17f44b444",
+      "recordSha256": "b34ff010eeceede77bc3750b3eb3ad493942043ddba75539ae3aa5f3a1d09ec0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -30677,7 +30677,7 @@
           "auditRef": "source-catalog.json#962137f48456cc9e196d",
           "sourceKind": "mbti_trait",
           "recordSha256": "7798937240c84e59f327be4628eacc7e608ee4c5d7af70a662f0a8838b500ef8",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "love",
@@ -31130,7 +31130,7 @@
       "exportName": "CH09_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH09.P3:expertise-price-silence",
-      "recordSha256": "d09afc4a9efbeb2e3a41359c42b3d9ca0b6b1a4dc829292f96dfe6aae477e82b",
+      "recordSha256": "b1884263d74f2ca49909d188982c8046361ccbb9e8ed3e1213bcce0561598bbe",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -31227,7 +31227,7 @@
           "auditRef": "source-catalog.json#ee27329e2a832f94c820",
           "sourceKind": "mbti_trait",
           "recordSha256": "ebb134b9b6b52ca1dd8fd188862589414ea377529ca7bd0fa0a87c244c299e48",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "money",
@@ -31432,7 +31432,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH11.P3:care-load-becomes-default",
-      "recordSha256": "2281f1e85a43a8c64ff7147ab42f57fbe2c87761a6a0eb8e8d495c9ca0f7fc2f",
+      "recordSha256": "6ed260125e54545f5e94580ebc948a53c4281683ce2952f4540a2fecced3a55e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -31529,7 +31529,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -32153,7 +32153,7 @@
       "exportName": "CH09_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH09.P1:money-as-project-resource",
-      "recordSha256": "8ea3d6c73a4355d81e2e3c6219cf08e48d5770fd25c6b6329e4340a94283b833",
+      "recordSha256": "3c7926a5b480d3ea23670554274fe2845c6a2f84457a1b5bf94a903a3f92bb1c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -32250,7 +32250,7 @@
           "auditRef": "source-catalog.json#1ab2480dc05b0f303177",
           "sourceKind": "mbti_trait",
           "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "money",
@@ -32430,7 +32430,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH08.P2:explain-use-for-people",
-      "recordSha256": "390f6125c0112a348bc5a7a3ada1f3751d4503dcc874fb265244911a06156882",
+      "recordSha256": "f2f283e2593b0586930badcdff3b167750248af995061694b08da436a6fba81e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -32527,7 +32527,7 @@
           "auditRef": "source-catalog.json#0041c8de2fd1fe3af227",
           "sourceKind": "mbti_trait",
           "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "career",
@@ -32576,7 +32576,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH04.P3:firm-boundary-close",
-      "recordSha256": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "recordSha256": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -32673,7 +32673,7 @@
           "auditRef": "source-catalog.json#f5f18f53fded536d5453",
           "sourceKind": "mbti_trait",
           "recordSha256": "18c723e122ea6f08084a0a002c61b2ef92a36d4ac4fb53f186d625f50dd088f4",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "relationships",
@@ -32800,7 +32800,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH03.P2:output-and-meaning",
-      "recordSha256": "d760008b46b7db3f183d7d0f1a65b5047e59bcdb561ae42b03c24bb1216c1b02",
+      "recordSha256": "07ab5bf03dd5568f8b34be445b2645e30d218b5b7d60d596fc4d578e12650a2a",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -32935,7 +32935,7 @@
           "auditRef": "source-catalog.json#a0d821cb22f763b8b860",
           "sourceKind": "mbti_trait",
           "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "type": "INFP",
             "area": "thinkingStyle",
@@ -33782,7 +33782,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH08.P2:diagnose-assumptions",
-      "recordSha256": "55bcc37067661ce0964ba7c453c896a3672cb1815bacde9f9c4e5db2338bcf51",
+      "recordSha256": "9a5f77394c5d42232676a6c079a6df6fc4cca5e4c11ddb46ba0bc4b9f7b83b77",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -33918,7 +33918,7 @@
           "auditRef": "source-catalog.json#7c9e075f5b0a5dcf9ca2",
           "sourceKind": "mbti_trait",
           "recordSha256": "e7d3ccc3ff0c555085ebf85eab220b86aa3b93055878cf19345158e5baa10fb5",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "career",
@@ -34001,7 +34001,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 10,
       "originalId": "cpr:material:CH03.P4:choose-support-mode",
-      "recordSha256": "9efe8ab13e8ddd96d98ce656656632792810cabee223300c5dfe4c3f190fa5a8",
+      "recordSha256": "40810203b2c54bb802153f0f42ec2c663e2df20ea69501f36046f4bced902167",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -34135,7 +34135,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -34276,7 +34276,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH12.P1:open-a-voluntary-meeting",
-      "recordSha256": "706c54fc4ff183a736b8007d6227f662461e1e83629d31fdf2c72c0b9ac6b329",
+      "recordSha256": "9b17751a01b06aeffb3e53bd98cf42d38990222bed2b6b604fb794f9d1199389",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -34373,7 +34373,7 @@
           "auditRef": "source-catalog.json#580e60e5a7233997dbbb",
           "sourceKind": "mbti_trait",
           "recordSha256": "c06ad27341da69b15a2107b24f3f392afef635ad6aeca6f7966479442e5d1cbc",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "relationships",
@@ -34684,7 +34684,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH03.P1:promise-and-regularity",
-      "recordSha256": "e97bf57d170ac85571c5067e8a973a7a6062e9d3ce95acff72d3b097e11af1e2",
+      "recordSha256": "a88c4283aeaebcb45e20250296d10048ab8f3f4d285e5a08cd886e9839ad9c59",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -34819,7 +34819,7 @@
           "auditRef": "source-catalog.json#f728f5dc57175a43afd6",
           "sourceKind": "mbti_trait",
           "recordSha256": "cf342a791bcdb1515b83c8fd88c4eb8f2d94ee89a11dc1bd9f02f9afbb763c7e",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "marriage",
@@ -34832,8 +34832,8 @@
           "sourceId": "fkr:legacy:istj-marriage",
           "auditRef": "source-catalog.json#05ab0d2c6c7faa658dc4",
           "sourceKind": "fusion_research",
-          "recordSha256": "cc95bfaac8d5a98fcdb071600729099a83aaa7b66993a3d066772a2d06dda01f",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "e30083e5641ec68255fb790b4e8dd9bb10dee7594620035793c816881d5d0f46",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -34902,7 +34902,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH08.P3:control-without-method-space",
-      "recordSha256": "248f3be6a99bf00b5a28e7435153eac6323e291b56e8478afd655926be0b7494",
+      "recordSha256": "c8251612812a92f040dae96773914877302b1dd08fa6bf45ae52213680f9ada3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -34999,7 +34999,7 @@
           "auditRef": "source-catalog.json#c4c9446c351f8635705c",
           "sourceKind": "mbti_trait",
           "recordSha256": "cf77535e83aaeeb8f03e95e64f3c70a24a4cf2f9ad3ce9025ccf5f6341e661f9",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "workplace",
@@ -36844,7 +36844,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH08.P3:changing-standard-without-log",
-      "recordSha256": "52bab841ff6babe8fd1d40586ae6fdb0fe253439af7162644a51eb5d2f87edd3",
+      "recordSha256": "a0f8dc758b63175854aac42763419523e0292e4e059e7d8683f4d664c1124875",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -36941,7 +36941,7 @@
           "auditRef": "source-catalog.json#b2d8c079b6947d1e86cc",
           "sourceKind": "mbti_trait",
           "recordSha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "workplace",
@@ -36990,7 +36990,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 5,
       "originalId": "cpr:material:CH06.P2:support-versus-obligation",
-      "recordSha256": "19f75fa79ccd940de1e26498dadcca9b56cb11311960c709ec08fb4ac7409c60",
+      "recordSha256": "3df3eea88a7f6895bbcb641d2a6350b05e74d455619c3703d34a1eb5b7b26ff0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -37126,7 +37126,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -37721,7 +37721,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH10.P1:space-and-return",
-      "recordSha256": "4a6f84d055d29f700fac0bececf4cc71c9f39af9a5a31ead6400d7f24ddb7c09",
+      "recordSha256": "a3a7dfc8f0af1196e16578eb401334299eaedf5f68e53f3d8d76bfe5cac2d4a0",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -37818,7 +37818,7 @@
           "auditRef": "source-catalog.json#04d364954a00555e56e1",
           "sourceKind": "mbti_trait",
           "recordSha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "love",
@@ -38190,7 +38190,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH12.P1:curious-listener",
-      "recordSha256": "34a029dca1a603a0ff67a7b9d90974111b24cb029a923ed6b4225f8d74bad085",
+      "recordSha256": "7e8263ae372124a5fba91e2ca149d910a23cd53e79230a1d01b90adf6177b254",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -38287,7 +38287,7 @@
           "auditRef": "source-catalog.json#9a67a19dffd6030af049",
           "sourceKind": "mbti_trait",
           "recordSha256": "fa39ae35ddbdee96ce319bf0cb4337333ffc550b993921e8cd4b724ea3cb1d88",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "relationships",
@@ -38434,7 +38434,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 10,
       "originalId": "cpr:material:CH01.P4:care-with-choice",
-      "recordSha256": "ca76572e210e650e29166db0eeb76b8f688603c9b9912643b0a4ecff8121b899",
+      "recordSha256": "f4d68c9acfc0c47850aea29b78354dc8134fe7bce53e7891e2b7db3d5291b496",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -38570,7 +38570,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -38653,7 +38653,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 11,
       "originalId": "cpr:material:CH04.P4:useful-small-making",
-      "recordSha256": "d68fb2783d5adf1d2592afa68d86125d8bfcb42af3d8186d43ac7b3441c44736",
+      "recordSha256": "7aee8332b74db089b1a8c621f1da5da3078c802facb30d85df6c19d890708483",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -38750,7 +38750,7 @@
           "auditRef": "source-catalog.json#d7919e26a177ef70aa67",
           "sourceKind": "mbti_trait",
           "recordSha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "type": "ISTP",
             "area": "study",
@@ -38799,7 +38799,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH05.P1:support-need-not-guess",
-      "recordSha256": "fb2ff6532be44360c1ee588d87fcd15a6cf92bbe847b3280ea301cfdcad69f4e",
+      "recordSha256": "8d10669302559f2fb2704eb6d003ec280da6763a0151c236dd8ff55d68b309c9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -38935,7 +38935,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -39248,7 +39248,7 @@
       "exportName": "CH12_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH12.P1:reliable-invitation",
-      "recordSha256": "810125d67afa4134a97da84c37f3a35bafcdf6a94ed63cb86582e4b7db87f5ee",
+      "recordSha256": "0b93d5d7ec582536b1f7b7c842f396275ed50882627740dccad1e3135db033d1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -39345,7 +39345,7 @@
           "auditRef": "source-catalog.json#3fafff5e693a2a83dddb",
           "sourceKind": "mbti_trait",
           "recordSha256": "f73eb6b94f509aa6a07aa3d1ec9dc857e5248faba005205e54d863f066e968f1",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "relationships",
@@ -41387,7 +41387,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH11.P3:privacy-and-coordination",
-      "recordSha256": "db295746473ba7fb92228f52325a73887ce696bf232d4cda8eec3867a10e4b72",
+      "recordSha256": "514389ce587d167dd0ca046689f0286ce430dd478270045fc5b03745c3a9317e",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -41484,7 +41484,7 @@
           "auditRef": "source-catalog.json#18fb1909ee68e78603a1",
           "sourceKind": "mbti_trait",
           "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "identity",
@@ -42539,7 +42539,7 @@
       "exportName": "CH11_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH11.P3:protection-becomes-decision",
-      "recordSha256": "5bbcfaf270f04ea75b10404b8db20b0d246ad4db7b1e3674f927f048981bcc1c",
+      "recordSha256": "12bd400fb879878ce44ee8ae05d61a5634061e0397badac08d597681f70623c3",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -42636,7 +42636,7 @@
           "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
           "sourceKind": "mbti_trait",
           "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "identity",
@@ -42816,7 +42816,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH01.P3:lead-and-listen",
-      "recordSha256": "a2e5abb560b4f9393af354cd60c553d9c877a6d155afd5f93b41393ce8644c45",
+      "recordSha256": "9c2b7fe1572d0afcee2ca72a46b2cd28e9988c86c4bdb539cce1da8e58b6f101",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -42951,7 +42951,7 @@
           "auditRef": "source-catalog.json#654b835ccd167ecab80a",
           "sourceKind": "mbti_trait",
           "recordSha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "identity",
@@ -42964,8 +42964,8 @@
           "sourceId": "fkr:legacy:entj-pressure",
           "auditRef": "source-catalog.json#945007633c5d9d749423",
           "sourceKind": "fusion_research",
-          "recordSha256": "6ec9023ba18ac6a1bfd31a0c46dfad2f7bbb758c89fd443325fb42d2bcacbf79",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "8fdde932c65156b84187712d2f9dbb20c7fd1fbbd3ee1c822819df1a6bd1875b",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -46985,7 +46985,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH06.P1:goal-eats-capacity",
-      "recordSha256": "39ba9db67d5b02e8896c4c29b199611f15f4e67fbfe31c79f39cf83752884951",
+      "recordSha256": "18d131bc911aae998ed56b70505635bd1a9f76a18390d5d4a78883bdc0fa3ec9",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -47082,7 +47082,7 @@
           "auditRef": "source-catalog.json#654b835ccd167ecab80a",
           "sourceKind": "mbti_trait",
           "recordSha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "identity",
@@ -47096,7 +47096,7 @@
           "auditRef": "source-catalog.json#c6e503b19c659758ddbf",
           "sourceKind": "mbti_trait",
           "recordSha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "money",
@@ -48139,7 +48139,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH03.P3:learn-before-try",
-      "recordSha256": "d3fd1eb4669aea3f96e253363ea061ae3cc1fecbab5af3ee4f547040fd439abf",
+      "recordSha256": "8222dde51c9d80469cb62b439a077a6691eb791e459b1f39d158a9ee42ec5b87",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -48275,7 +48275,7 @@
           "auditRef": "source-catalog.json#961ea1c739908fff88dd",
           "sourceKind": "mbti_trait",
           "recordSha256": "d74635abd854a1f57c2957d408fe15960e1f805ff3206e56ea49c8efa41216ed",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "type": "ESTP",
             "area": "study",
@@ -48288,8 +48288,8 @@
           "sourceId": "fkr:legacy:estp-study",
           "auditRef": "source-catalog.json#e9b8f6fbd26c687ee9db",
           "sourceKind": "fusion_research",
-          "recordSha256": "dea405009a563ee88fe280b177b6bc7085cfdebb885d34527e3b44053b12f8b3",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "5b223d5a3f2209d7d08debbea08df9f6e9601ed49bacbfce4a5262a627f0ae11",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -49630,7 +49630,7 @@
       "exportName": "CH09_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH09.P3:generosity-has-a-budget",
-      "recordSha256": "d2e4d33d5d37c86ab52ed06bb58d5cf8f63755e1d35baa61cce10c44fe578cb7",
+      "recordSha256": "fc570732ab669c9396b40138ca7a6867e6457849d121e59fd7b7e1515595b8dd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -49727,7 +49727,7 @@
           "auditRef": "source-catalog.json#aab403f317e44128dd16",
           "sourceKind": "mbti_trait",
           "recordSha256": "a3a45a773d25b99dba2a1200ab9dd00190606201ad57b8d7bac6e23688baacbb",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "money",
@@ -50448,7 +50448,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH03.P3:private-social-channel",
-      "recordSha256": "2c7edb91a631c79eee322745851de2134fa86c6a76a12341b6906262dda5a697",
+      "recordSha256": "450454060e60290f122c9523a2d79aff53c78ebc7b69b2e9d05e88658b866cb1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -50584,7 +50584,7 @@
           "auditRef": "source-catalog.json#ce91678d7e3e04f71d90",
           "sourceKind": "mbti_trait",
           "recordSha256": "ec8e811aecd95c0e4a11af7b4c24e24b53e345f1c2c615abf578e657b6a3f912",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "type": "ESFJ",
             "area": "identity",
@@ -50597,8 +50597,8 @@
           "sourceId": "fkr:legacy:esfj-alone",
           "auditRef": "source-catalog.json#bfab3261b5c5ddc01a03",
           "sourceKind": "fusion_research",
-          "recordSha256": "4bea4ab9f3de1c3467454a993b35ff8e6f145241884cb0e9b9b352c5744c0f32",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "0aae89fd87f08ca08b0aca325c9d3393c925361f22b9018cb975ba61278134d9",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -50900,7 +50900,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 8,
       "originalId": "cpr:material:CH05.P3:boundaries-enable-support",
-      "recordSha256": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+      "recordSha256": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -51035,7 +51035,7 @@
           "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
           "sourceKind": "mbti_trait",
           "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "type": "ENFJ",
             "area": "identity",
@@ -51983,7 +51983,7 @@
       "exportName": "CH10_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH10.P1:affection-through-small-actions",
-      "recordSha256": "0b57082b3801beb3524fb65caff97c28595b7b72eb0870aea9b82a1be03d3aab",
+      "recordSha256": "efbdedf32b7006d9a64abc2adaf6d67d2eaa5009843b035ceb4fd3782c7b5e9f",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -52080,7 +52080,7 @@
           "auditRef": "source-catalog.json#01e7c19fe260d7d8dd0d",
           "sourceKind": "mbti_trait",
           "recordSha256": "e106fb929accb6d10551347630c458bb31cfc5f336eb14d7a4a2a9d890bbf5de",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "love",
@@ -52539,7 +52539,7 @@
       "exportName": "CH03_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH03.P1:question-roots",
-      "recordSha256": "e645098c2d950c29d2a2b3057a4d7ec21197eb6208fb362fc235ea0871acc4f9",
+      "recordSha256": "8c244ae639e6806e18622fff0cdc92c3d77806ed36982903d8ab53f2394a2d06",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -52675,7 +52675,7 @@
           "auditRef": "source-catalog.json#c51bdfb609a17396351d",
           "sourceKind": "mbti_trait",
           "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "thinkingStyle",
@@ -52688,8 +52688,8 @@
           "sourceId": "fkr:legacy:intp-inquiry",
           "auditRef": "source-catalog.json#af39b884c2b1f1d16a4c",
           "sourceKind": "fusion_research",
-          "recordSha256": "df1b7cdc18daae5966078af5bd068df2d489dcfa12c5a8aeae7b0a174ff2cac7",
-          "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+          "recordSha256": "965f049dc309d8b7e27e0613703053ebd74e93abf10a97d82f36592d737a2a99",
+          "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
           "originalState": {
             "review": "conditional_editorial_not_empirical",
             "connectedToRuntime": false,
@@ -52834,7 +52834,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH04.P1:quiet-first-contact",
-      "recordSha256": "f61f5c0432c2282a0e58c885991cd4b7b584a694635dfb59584fa9e708129172",
+      "recordSha256": "6fed93607f23f89271c272015a76f57240dcf7aba25ab9571249297199794349",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -52931,7 +52931,7 @@
           "auditRef": "source-catalog.json#ebb1b71f08b57dd89d16",
           "sourceKind": "mbti_trait",
           "recordSha256": "36206c8ee6b1e65e0dc761fda2909e3ff558a2ab2336aa149b221fcc215bb415",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "type": "INTP",
             "area": "identity",
@@ -54549,7 +54549,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 9,
       "originalId": "cpr:material:CH04.P4:invisible-maintenance",
-      "recordSha256": "2d1db0a7e4a9ba8ddbcdd1b61318b72eebff8b3b2ba2abcc085a2feb4d1ffb2c",
+      "recordSha256": "c8e9c5f5ea9a2fc1cb4036b90d9b87cfbb1fd8a7bba3cbf00aec3019f9d255fd",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -54646,7 +54646,7 @@
           "auditRef": "source-catalog.json#751ae493400a7e8be818",
           "sourceKind": "mbti_trait",
           "recordSha256": "a92a78cfc6aaf5a88f64cb4ccbcb385a328142ba15e7d08f5e30f9214687e93d",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "type": "ISTJ",
             "area": "identity",
@@ -55027,7 +55027,7 @@
       "exportName": "CH05_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH05.P1:start-with-consent",
-      "recordSha256": "9144007ec04c4322107a0d0cd816d0def6f2c0be1c15486180415bd32fc76acb",
+      "recordSha256": "30a6fd1117fa2364f5228f17bdcac06baf3a37ffca1d5afd5626e7008eb18b93",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -55162,7 +55162,7 @@
           "auditRef": "source-catalog.json#654b835ccd167ecab80a",
           "sourceKind": "mbti_trait",
           "recordSha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "identity",
@@ -55530,7 +55530,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 3,
       "originalId": "cpr:material:CH04.P2:private-criteria",
-      "recordSha256": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "recordSha256": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -55627,7 +55627,7 @@
           "auditRef": "source-catalog.json#18fb1909ee68e78603a1",
           "sourceKind": "mbti_trait",
           "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "identity",
@@ -55754,7 +55754,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 0,
       "originalId": "cpr:material:CH08.P1:criteria-before-delivery",
-      "recordSha256": "0256c4c50d805ba04aa54ce80f690e39a7779b1ca86a9e194e083b60f5d6e070",
+      "recordSha256": "aef66176c6c6aaa94eb7abdd01b284ae3c84ae41012c4a66ee8e20d1b0b45153",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -55851,7 +55851,7 @@
           "auditRef": "source-catalog.json#57df72fa18aaa83db72e",
           "sourceKind": "mbti_trait",
           "recordSha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
-          "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+          "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
           "originalState": {
             "type": "ESTJ",
             "area": "workplace",
@@ -56576,7 +56576,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 2,
       "originalId": "cpr:material:CH01.P1:keep-room-for-others",
-      "recordSha256": "f525f368cec3dae56559a4bb598cb3d057678e3b70ab3143bb5c86431769d3b7",
+      "recordSha256": "68035ffaac36cd95bd253905bc1b0568000d208cfcc86513522d92280e1e987c",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -56711,7 +56711,7 @@
           "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
           "sourceKind": "mbti_trait",
           "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "identity",
@@ -57174,7 +57174,7 @@
       "exportName": "CH06_MATERIALS",
       "index": 7,
       "originalId": "cpr:material:CH06.P3:decide-for-everyone",
-      "recordSha256": "85d755250747d19483fb0e5b2fb6cf84973a67a340ccd3f51a50c4168f360389",
+      "recordSha256": "8e70657ad97b8c15d486381e60ea08eb8c5d7955000ce51b7539ae4407eff1e1",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -57271,7 +57271,7 @@
           "auditRef": "source-catalog.json#654b835ccd167ecab80a",
           "sourceKind": "mbti_trait",
           "recordSha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
-          "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+          "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
           "originalState": {
             "type": "ENTJ",
             "area": "identity",
@@ -58189,7 +58189,7 @@
       "exportName": "CH04_MATERIALS",
       "index": 6,
       "originalId": "cpr:material:CH04.P3:selective-warmth",
-      "recordSha256": "214ff147a615edb08753a7919c6880734148db3288a83613a4ef7d69066e8cf8",
+      "recordSha256": "800588c77eb3e91c8aec3180489f2a23df51c8cf199181817c8ff77597153118",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -58286,7 +58286,7 @@
           "auditRef": "source-catalog.json#efd2df690e448ae25f53",
           "sourceKind": "mbti_trait",
           "recordSha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "type": "ISFP",
             "area": "love",
@@ -59042,7 +59042,7 @@
       "exportName": "CH01_MATERIALS",
       "index": 1,
       "originalId": "cpr:material:CH01.P1:open-small-door",
-      "recordSha256": "da566c8fd9ef8c705d6f067717f4e158cf74c59254f7fbe0e1df3779791083e2",
+      "recordSha256": "82f68381b40421a9f2da86b440036f04400212ec08c2c1cd8ed6906c56db7a83",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -59177,7 +59177,7 @@
           "auditRef": "source-catalog.json#16876d687153c7f4f805",
           "sourceKind": "mbti_trait",
           "recordSha256": "45d03a7544d3f39fbf66c5ede9c5ce66c31bec2c9647ab4bf0accf11223dfa18",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "type": "ENFP",
             "area": "identity",
@@ -59416,7 +59416,7 @@
       "exportName": "CH08_MATERIALS",
       "index": 9,
       "originalId": "cpr:material:CH08.P4:learn-with-feedback",
-      "recordSha256": "28c6ffad818395dcb826c4f076248bb8b0a18f6f03ad3e1ba5b1c0369007b249",
+      "recordSha256": "27ca367fc6b47824a434fb9aa6325c03f367d98cd015ebf15413faf70697aa86",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -59513,7 +59513,7 @@
           "auditRef": "source-catalog.json#518e597eb9bf5d2febcc",
           "sourceKind": "mbti_trait",
           "recordSha256": "07729ac8cc8c59714e2f703657166b994c1c19462fcd0df01b887ffc30b981d8",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "study",

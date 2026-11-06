@@ -1,0 +1,299 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "reportId": "report_c3374d6c33d34ecbbca7eac7714417bc",
+ "status": "COMPLETED",
+ "wallMs": 93974,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 10563,
+ "chapterChars": [
+  973,
+  896,
+  846,
+  887,
+  592,
+  944,
+  864,
+  961,
+  780,
+  845,
+  584,
+  799,
+  592
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 34,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "같은 뿌리를 가진 사람들을 묶는 힘도 있어서 업계와 동문 안에서 든든한 편이 생겨요.",
+   "b": "방합의 구조는 같은 뿌리를 가진 사람들을 묶는 힘이에요.",
+   "at": [
+    "4.2",
+    "11.2"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.138,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 93954,
+ "tokens": {
+  "input": 22167,
+  "output": 11940,
+  "cachedInput": 0
+ },
+ "costUsd": 0.1656875,
+ "costKrw": 240.2,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 83632,
+   "chars": 11062,
+   "maxTokens": 22273,
+   "usage": {
+    "inputTokens": 22167,
+    "outputTokens": 11940,
+    "cacheWriteTokens": 3907,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.1656875
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 10622,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 4
+   },
+   {
+    "n": 9,
+    "count": 1
+   },
+   {
+    "n": 10,
+    "count": 0
+   },
+   {
+    "n": 11,
+    "count": 0
+   },
+   {
+    "n": 12,
+    "count": 0
+   },
+   {
+    "n": 13,
+    "count": 2
+   }
+  ],
+  "maxSimile": 4,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 8,
+   "rate": 0.73,
+   "terms": 11,
+   "misses": [
+    "정축",
+    "음착양차살",
+    "겨울의 정화"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     3,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 35,
+  "sectionsTotal": 35,
+  "byRule": {},
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ }
+}

@@ -285,7 +285,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#16876d687153c7f4f805",
         "sourceKind": "mbti_trait",
         "recordSha256": "45d03a7544d3f39fbf66c5ede9c5ce66c31bec2c9647ab4bf0accf11223dfa18",
-        "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+        "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
         "originalState": {
           "type": "ENFP",
           "area": "identity",
@@ -472,7 +472,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
         "sourceKind": "mbti_trait",
         "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "identity",
@@ -1348,7 +1348,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#48b443bb748ac81f2a3d",
         "sourceKind": "mbti_trait",
         "recordSha256": "1f2cc74c199ce626b165ed088618573659162aca303a2cbfee9c19d0e91a03e0",
-        "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+        "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
         "originalState": {
           "type": "INTJ",
           "area": "identity",
@@ -1362,7 +1362,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#88a8ae8e5733c323bd3a",
         "sourceKind": "mbti_trait",
         "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
-        "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+        "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
         "originalState": {
           "type": "INTJ",
           "area": "thinkingStyle",
@@ -1375,8 +1375,8 @@ export const CH01_MATERIALS: readonly Material[] = [
         "sourceId": "fkr:legacy:intj-inquiry",
         "auditRef": "source-catalog.json#25701865c30fc283e43f",
         "sourceKind": "fusion_research",
-        "recordSha256": "a14d80c742f58029ef2790ef1329cbbe03ab06b5639d1217c878625f2c7dfb1e",
-        "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+        "recordSha256": "e3bcb2d1754d5e2a645eda6a18e59d32717669813cad54ab3c2fe4a8bbd67d06",
+        "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
         "originalState": {
           "review": "conditional_editorial_not_empirical",
           "connectedToRuntime": false,
@@ -1551,7 +1551,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#654b835ccd167ecab80a",
         "sourceKind": "mbti_trait",
         "recordSha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
-        "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+        "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
         "originalState": {
           "type": "ENTJ",
           "area": "identity",
@@ -1564,8 +1564,8 @@ export const CH01_MATERIALS: readonly Material[] = [
         "sourceId": "fkr:legacy:entj-pressure",
         "auditRef": "source-catalog.json#945007633c5d9d749423",
         "sourceKind": "fusion_research",
-        "recordSha256": "6ec9023ba18ac6a1bfd31a0c46dfad2f7bbb758c89fd443325fb42d2bcacbf79",
-        "sourceFileSha256": "fd5d3b30d17358c4500739ceed9407ea194e7ffffff4af906af64550a1afc318",
+        "recordSha256": "8fdde932c65156b84187712d2f9dbb20c7fd1fbbd3ee1c822819df1a6bd1875b",
+        "sourceFileSha256": "92240ecb930bf39b1f09696526c092a03c7ef0e6b02db066a58fb912ff8254c4",
         "originalState": {
           "review": "conditional_editorial_not_empirical",
           "connectedToRuntime": false,
@@ -1738,7 +1738,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#a0d821cb22f763b8b860",
         "sourceKind": "mbti_trait",
         "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-        "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+        "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
         "originalState": {
           "type": "INFP",
           "area": "thinkingStyle",
@@ -2123,7 +2123,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
         "sourceKind": "mbti_trait",
         "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "identity",
@@ -2313,7 +2313,7 @@ export const CH01_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#ed517424138830a947a6",
         "sourceKind": "mbti_trait",
         "recordSha256": "91c2a87868904e37d1c0877aa232459c74eade0bd5649ebdaffb3feb31acfe18",
-        "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+        "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
         "originalState": {
           "type": "ENTP",
           "area": "identity",

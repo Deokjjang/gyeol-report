@@ -43,7 +43,7 @@ export async function annualNarrativeEvidence(payload: unknown, clock: AnnualClo
   const normalized = normalizeReportInputPayload(payload, { now: policyNow });
   if (!normalized.ok || normalized.value.kind !== "annualFortune")
     return { ok: false as const, errors: [normalized.ok ? "ANNUAL_INPUT_REQUIRED" : normalized.error] };
-  const generated = await generateAnnualFortuneProductDraft(normalized.value, { now: policyNow, writer: { enabled: false } });
+  const generated = await generateAnnualFortuneProductDraft(normalized.value, { now: policyNow });
   if (!generated.ok) return { ok: false as const, errors: ["CANONICAL_ANNUAL_GENERATION_UNAVAILABLE"] };
   const raw = generated.evidencePacket as AnnualFortuneEvidencePacket;
   if (!raw.calendarMonths || raw.monthlyCalculationVersion !== "annual-month-jie-kst-v2")

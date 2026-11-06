@@ -1,12 +1,14 @@
-import { createCheckoutConsentEvidence } from "../../../../lib/payment/checkoutConsent";
+import { consentLayoutMatchesBuyer, createCheckoutConsentEvidence, type CheckoutConsentEvidence } from "../../../../lib/payment/checkoutConsent";
 import { createAnnualCommerceAcceptance } from "../../../../lib/payment/annualPurchasePolicy";
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
+import { birthTimeUncertaintyNotice } from "../../../../lib/saju/birthTimeUncertaintyNotice";
 import { randomUUID } from "node:crypto";
 
 import { NextRequest, NextResponse } from "next/server";
 import { accountPublicEnabled } from "../../../../lib/account/gate";
 import { isPublicSameOrigin } from "../../../../lib/account/origin";
 import { bookExperiencePublicEnabled } from "../../../../lib/book/publicGate";
+import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../../../../lib/ops/config";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
 import { preparePaymentCheckoutSession } from "../../../../lib/payment/paymentCheckoutSessionBoundary";
@@ -30,7 +32,10 @@ type ReadyPaymentOrderView = {
 
 type CheckoutPrepareRouteErrorCode =
   | "PAYMENT_CHECKOUT_INVALID_REQUEST"
-  | "PAYMENT_CHECKOUT_UNAVAILABLE";
+  | "PAYMENT_CHECKOUT_UNAVAILABLE"
+  | typeof SALES_CLOSED_CODE
+  | "PROFILE_REQUIRED"
+  | "BUYER_INFO_INVALID";
 
 const tossClientKeyEnv = "NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
@@ -356,6 +361,11 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
+  // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 결제를 시작하지 않는다(FORTUNE_SALES_OPEN=1이면 다시 연다).
+  if (!productOnSale(json.productType ?? defaultProductType)) {
+    return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
+  }
+
   if (!isJsonObject(json.inputSnapshot)) {
     return createErrorResponse(
       "PAYMENT_CHECKOUT_INVALID_REQUEST",
@@ -378,7 +388,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     const normalized = normalizeReportInputPayload(inputSnapshot.reportInputPayload, { now: () => acceptedAt });
     if (!normalized.ok || normalized.value.productKey !== (json.productType ?? defaultProductType)) {
       const message = !normalized.ok && normalized.birthTimeContext
-        ? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
+        ? birthTimeUncertaintyNotice(normalized.birthTimeContext)?.message ?? "출생시간 범위에 따라 원국이 달라집니다. 시간을 더 구체적으로 확인해 주세요."
         : "출생시간을 포함한 리포트 입력 정보를 확인해 주세요.";
       return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", message, 400);
     }
@@ -414,6 +424,22 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
+  // P6d-ops 2·3: 구매자. 입력 검증 뒤, 주문을 쓰기 전에 확인한다. 회원은 가입 정보가 있어야 하고(없으면 정보 화면), 비회원은 결제 화면 입력값.
+  const opsModule = await import("../../../../lib/ops/store");
+  const ops = opsModule.createOpsStores();
+  let buyer: import("../../../../lib/ops/orders/buyer").Buyer;
+  {
+    const { resolveBuyer, accountPortFor } = await import("../../../../lib/ops/orders/buyer");
+    const { createAccountPort } = await import("../../../../lib/account/supabase");
+    const resolved = await resolveBuyer(request, json.buyer, { port: accountPublicEnabled() ? accountPortFor(request, createAccountPort) : null, account: ops.account });
+    if (!resolved.ok) return createErrorResponse(resolved.code as CheckoutPrepareRouteErrorCode, resolved.message, resolved.status);
+    buyer = resolved.buyer;
+  }
+  // 배포 명령 0-3: 회원 배치 주문서(약관·개인정보 = 가입 동의, 주문서 칸 없음)인데 서버가 본 구매자가 회원이 아니면 받지 않는다(주문 쓰기 전).
+  if (!consentLayoutMatchesBuyer(inputSnapshot.consentEvidence as CheckoutConsentEvidence, buyer.userId !== null)) {
+    return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", "필수 항목을 확인해 주세요.", 400);
+  }
+
   const orderRuntime = createPaymentOrderPersistenceRuntime();
   const createOrderResult = await orderRuntime.create(
     readyOrderRecordResult.record,
@@ -447,12 +473,23 @@ export async function POST(request: Request): Promise<NextResponse> {
     return tossCheckoutRequestResult.response;
   }
 
+  // P6d-ops 3: 주문 기록(계정·구매자·결제 전 고지 버전)과 짧은 주문코드. 토스 요청에 구매자·주문코드를 싣는다.
+  const { CHECKOUT_NOTICE_VERSION } = await import("../../../../lib/ops/orders/buyer");
+  const attached = await ops.order.call("attach", { paymentOrderId: readyOrder.paymentOrderId, userId: buyer.userId, name: buyer.name, email: buyer.email, phone: buyer.phone, noticeVersion: CHECKOUT_NOTICE_VERSION });
+  if (!attached.ok || typeof attached.orderCode !== "string") {
+    return createErrorResponse("PAYMENT_CHECKOUT_UNAVAILABLE", createFailedMessage, 503);
+  }
+  const orderCode = attached.orderCode;
+  const draft = tossCheckoutRequestResult.draft ? { ...tossCheckoutRequestResult.draft, requestPayment: { ...tossCheckoutRequestResult.draft.requestPayment,
+    orderName: `${tossCheckoutRequestResult.draft.requestPayment.orderName} ${orderCode}`, customerName: buyer.name, customerEmail: buyer.email,
+    ...(buyer.phone ? { customerMobilePhone: buyer.phone } : {}) } } : undefined;
+
   const response = NextResponse.json(
-    createSuccessBody(
+    { ...createSuccessBody(
       readyOrder,
       checkoutResult.session,
-      tossCheckoutRequestResult.draft,
-    ),
+      draft,
+    ), orderCode },
     {
       status: 200,
       headers: jsonResponseHeaders,

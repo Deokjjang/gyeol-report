@@ -1,4 +1,6 @@
 import "server-only";
+import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../ops/config";
+import { PROFILE_REQUIRED_CODE, PROFILE_REQUIRED_MESSAGE } from "../account/profile";
 import { NextRequest, NextResponse } from "next/server";
 import { accountSession } from "../account/policy";
 import type { AccountPort } from "../account/handler";
@@ -10,9 +12,10 @@ import type { TicketResult } from "./service";
 import { createHash } from "node:crypto";
 
 const messages: Record<string, string> = {
-  QUEUED: "책 발행을 준비하고 있습니다.", RUNNING: "책을 만들고 있습니다.", COMPLETED: "책이 완성되었습니다.",
+  QUEUED: "책을 제본하고 있습니다. 나갔다 와도 내 서재에서 이어서 볼 수 있어요.", RUNNING: "책을 제본하고 있습니다.", COMPLETED: "책이 완성되었습니다.",
   REVERSED: "책을 완성하지 못했습니다. 사용한 이용권은 복구되었습니다.",
   NO_USABLE_TICKET: "사용 가능한 이용권이 없습니다. 보유 내역을 다시 확인해 주세요.", REFUND_HOLD: "이용권 확인이 필요합니다.",
+  [SALES_CLOSED_CODE]: SALES_CLOSED_MESSAGE,
 };
 // Only mounted after BOTH server gates. The injectable ports are tests, not an
 // HTTP/env/cookie bypass. No provider, promotion or generation runs in this API.
@@ -29,6 +32,8 @@ export async function handleTicketPublication(request: NextRequest, action: stri
     const account = await auth.read(user);
     if (account === null) return json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);
     if (account.profile?.id !== user.id || accountSession(user, account).status !== "member") return json({ ok: false, code: "MEMBER_CONSENT_REQUIRED" }, 401);
+    // P6d-ops 2: 가입 정보(이름·이메일)를 마치기 전에는 이용권을 쓸 수 없다(상태 확인은 된다).
+    if (action === "redeem" && account.contact === null) return json({ ok: false, code: PROFILE_REQUIRED_CODE, message: PROFILE_REQUIRED_MESSAGE }, 403);
     let result: TicketResult;
     if (action === "status") {
       const params = new URL(request.url).searchParams;
@@ -50,7 +55,7 @@ export async function handleTicketPublication(request: NextRequest, action: stri
     }
     if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
     if (!result.ok) {
-      const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD"].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
+      const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD", SALES_CLOSED_CODE].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
       return json({ ok: false, code, message: messages[code] ?? "발행 상태를 확인 중입니다." }, code === "STORAGE_UNAVAILABLE" ? 503 : code === "NOT_FOUND" ? 404 : 409);
     }
     const state = result.state;

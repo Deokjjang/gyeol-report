@@ -7,6 +7,8 @@ import BusinessFooter from "../components/legal/BusinessFooter";
 import {
   BRAND_DESCRIPTION,
   SHARE_IMAGE,
+  SHARE_IMAGE_HEIGHT,
+  SHARE_IMAGE_WIDTH,
 } from "../lib/sharing/reportShareMetadata";
 import "./globals.css";
 
@@ -42,8 +44,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: SHARE_IMAGE,
-        width: 1536,
-        height: 1024,
+        width: SHARE_IMAGE_WIDTH,
+        height: SHARE_IMAGE_HEIGHT,
         alt: "GYEOL REPORT",
       },
     ],

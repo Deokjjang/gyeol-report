@@ -1,7 +1,7 @@
 import "server-only";
 import { NextRequest, NextResponse } from "next/server";
 import type { AccountPort } from "../account/handler";
-import { accountSession } from "../account/policy";
+import { accountSession, mayReadOwnedBooks } from "../account/policy";
 import { isPublicSameOrigin } from "../account/origin";
 import { claimCookieName, claimHash, type LibraryPort } from "../library/server";
 import { issuePublishedReportShare, loadSharedReport, validShareReportId, sharePort, type ShareStorePort } from "../sharing/reportShareStore";
@@ -27,13 +27,14 @@ export async function loadSharedBookData(token: string, port?: ShareStorePort) {
   const shared = await loadBookShare(token, port);
   if (!shared) return null;
   const book = storedBook(shared.snapshot);
-  return book ? { data: book.data, share: shared.model } : null;
+  return book ? { data: book.data, share: shared.model, ...(book.edition ? { edition: book.edition } : {}) } : null;
 }
 // Read-only reuse of 9C purchase authority. A share credential never proves ownership.
-export async function mayShareBook(request: NextRequest, reportId: string, auth: AccountPort, library: LibraryPort, local: boolean, port?: ShareStorePort) {
+// readOnly(최종판3 1-7): 산 책 열람만 할 때는 예전 동의로도 소유를 확인한다(공유 링크 발급은 현재 약관 동의 회원만).
+export async function mayShareBook(request: NextRequest, reportId: string, auth: AccountPort, library: LibraryPort, local: boolean, port?: ShareStorePort, readOnly = false) {
   const user = await auth.currentUser(), account = user ? await auth.read(user) : undefined;
   if (account === null) return false;
-  const member = user && accountSession(user, account).status === "member" ? user : null;
+  const member = user && (readOnly ? mayReadOwnedBooks(user, account) : accountSession(user, account).status === "member") ? user : null;
   if(member&&port?.owned&&await port.owned(reportId,member.id))return true;
   const order = await library.orderForReport(reportId);
   const secret = order ? request.cookies.get(claimCookieName(order, local))?.value : undefined;

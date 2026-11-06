@@ -39,7 +39,7 @@ describe("CareerReportCommonTables", () => {
     expect(html).toContain("십이신살");
     expect(html).toContain("신살/귀인");
     expect(html).toContain("합충형파해");
-    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("ENTJ 지휘관");
     expect(html).toContain("가까운 키워드");
     expect(html).toContain("먼 키워드");
     expect(html).toContain("선호 지표와 기능 서열 자세히 보기");
@@ -63,7 +63,7 @@ describe("CareerReportCommonTables", () => {
     );
 
     expect(manseHtml).toContain("덕민님의 만세력");
-    expect(mbtiHtml).toContain("ENTJ 대담한 통솔자");
+    expect(mbtiHtml).toContain("ENTJ 지휘관");
   });
 
   it("renders no MBTI slot when evidence has no known MBTI type", () => {

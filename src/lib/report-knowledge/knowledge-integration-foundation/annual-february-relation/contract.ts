@@ -25,7 +25,7 @@ export const FEBRUARY_CONTRACT = freeze({ version: "annual-february-effective-ye
   requires: ["selectedYear + actual civil month bounds", "every canonical segment", "effective annual before/after + annualStemRelations validity"] } as const);
 // Content-addressed versions authenticate original code, not traditional meaning approval.
 export const FEBRUARY_SOURCE_FILES = freeze({
-  "src/lib/interpretation-v4/annualEvidence.ts": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+  "src/lib/interpretation-v4/annualEvidence.ts": "11a74bd10e28546653725c59af931f7a18c1e67a218d1b0824b97f292c9513f1",
   "src/lib/saju/constants.ts": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa",
   "src/lib/report-knowledge/annualMonthJie.ts": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
   "src/lib/report-knowledge/annualFortuneYearRules.ts": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",

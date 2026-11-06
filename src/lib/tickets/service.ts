@@ -1,4 +1,5 @@
 import "server-only";
+import { productOnSale, SALES_CLOSED_CODE } from "../ops/config";
 import { createHash, randomUUID } from "node:crypto";
 import { generateReportSnapshot, type ProductGenerator } from "../payment/paidReportReliability";
 import { generateV4ShadowReport } from "../interpretation-v4/runtimeShadow";
@@ -21,6 +22,7 @@ export async function redeemReportTicket(store: TicketStore, user: string, reque
   if (!["test", "development"].includes(process.env.NODE_ENV)) return ticketFailure("NOT_FOUND");
   const now = options.now ?? new Date();
   if (!/^[a-zA-Z0-9_-]{16,100}$/.test(requestId) || !isRecord(payload) || !getReportProduct(payload.productKey)?.isPurchasable) return ticketFailure("INVALID_INPUT");
+  if (!productOnSale(payload.productKey)) return ticketFailure(SALES_CLOSED_CODE);
   const normalized = normalizeReportInputPayload(payload, { now: () => now });
   if (!normalized.ok) return ticketFailure("INVALID_INPUT");
   const hash = createHash("sha256").update(JSON.stringify(payload)).digest("hex");

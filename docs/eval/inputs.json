@@ -1,0 +1,34 @@
+{
+  "note": "v5 quality-q0 고정 입력. 이름은 가명. evaluatedAt은 생성 시계(연운 선택 연도·대운 기준)를 고정한다.",
+  "evaluatedAt": "2026-10-27T09:00:00+09:00",
+  "persons": {
+    "haram": { "name": "하람", "birthDate": "1996-12-06", "birthTime": "09:30", "birthTimeUnknown": false, "approximateBirthTimeSlot": "", "gender": "MALE", "mbtiType": "ENTJ" },
+    "seoyun": { "name": "서윤", "birthDate": "1989-03-21", "birthTime": "", "birthTimeUnknown": true, "approximateBirthTimeSlot": "", "gender": "FEMALE", "mbtiType": "INFP" },
+    "minjun": { "name": "민준", "birthDate": "1978-07-15", "birthTime": "22:10", "birthTimeUnknown": false, "approximateBirthTimeSlot": "", "gender": "MALE", "mbtiType": "" },
+    "jiwoo": { "name": "지우", "birthDate": "1997-05-02", "birthTime": "14:20", "birthTimeUnknown": false, "approximateBirthTimeSlot": "", "gender": "FEMALE", "mbtiType": "ISFJ" },
+    "doyun": { "name": "도윤", "birthDate": "1992-11-11", "birthTime": "07:45", "birthTimeUnknown": false, "approximateBirthTimeSlot": "", "gender": "MALE", "mbtiType": "ESTP" },
+    "haeun": { "name": "하은", "birthDate": "2008-01-30", "birthTime": "16:05", "birthTimeUnknown": false, "approximateBirthTimeSlot": "", "gender": "FEMALE", "mbtiType": "ENFP" }
+  },
+  "contexts": {
+    "c1": { "relationshipStatus": "single", "jobStatus": "employee", "detailJob": "서비스 기획자", "focusAreas": ["직업", "돈"] },
+    "c2": { "relationshipStatus": "dating", "jobStatus": "freelancer", "detailJob": "일러스트레이터", "focusAreas": ["연애", "생활 리듬"] },
+    "c3": { "relationshipStatus": "married", "jobStatus": "self_employed", "detailJob": "식당 운영", "focusAreas": ["돈", "가족"] }
+  },
+  "cases": [
+    { "id": "c1-exact-entj", "tag": "정시·MBTI 있음", "person": "haram", "context": "c1" },
+    { "id": "c2-unknown-time-infp", "tag": "시간 미상·MBTI 있음", "person": "seoyun", "context": "c2" },
+    { "id": "c3-no-mbti", "tag": "정시·MBTI 없음", "person": "minjun", "context": "c3" }
+  ],
+  "singleProducts": [
+    { "productKey": "saju_mbti_full", "productSlug": "saju-mbti-full", "productOptions": {} },
+    { "productKey": "career_money_study", "productSlug": "career-money-study", "productOptions": {} },
+    { "productKey": "love_marriage_child", "productSlug": "love-marriage-child", "productOptions": {} },
+    { "productKey": "major_fortune", "productSlug": "major-fortune", "productOptions": {} },
+    { "productKey": "annual_fortune", "productSlug": "annual-fortune", "productOptions": { "selectedYear": "2026" } }
+  ],
+  "compatibilityCases": [
+    { "id": "c1-love", "tag": "연인·정시·MBTI 둘 다 있음", "relationshipType": "love", "personA": "haram", "personB": "jiwoo" },
+    { "id": "c2-coworker-unknown-time", "tag": "동료·B 시간 미상", "relationshipType": "coworker", "personA": "doyun", "personB": "seoyun" },
+    { "id": "c3-parentChild-no-mbti", "tag": "부모자녀·부모 MBTI 없음", "relationshipType": "parentChild", "personA": "minjun", "personB": "haeun" }
+  ]
+}

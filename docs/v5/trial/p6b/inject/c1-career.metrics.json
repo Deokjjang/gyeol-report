@@ -1,0 +1,274 @@
+{
+ "case": "c1-career",
+ "label": "커리어 · 하람(c1)",
+ "reportId": "report_8b5e8413d9f7452898882be0509724f4",
+ "status": "COMPLETED",
+ "wallMs": 82014,
+ "fallback": {
+  "to": {
+   "model": "gpt-6.1-terra",
+   "provider": "openai"
+  },
+  "from": {
+   "model": "claude-sonnet-5-5",
+   "provider": "anthropic"
+  },
+  "reason": "http_401"
+ },
+ "priorBooks": 0,
+ "chars": 11095,
+ "chapterChars": [
+  1305,
+  1368,
+  1380,
+  1159,
+  1262,
+  1325,
+  1176,
+  1111,
+  1009
+ ],
+ "chapters": 9,
+ "deterministicChapters": [
+  "9:too_short:731<738"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 29,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 1,
+ "infoByKind": {
+  "claim": 1,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "반안살(攀鞍殺)은 명리학에서 이끌던 힘을 정돈해 자리를 잡고 안정과 격식을 챙기는 기운을 뜻해요.",
+   "b": "앞에서 이끌던 힘을 정돈해 자리를 잡고, 체면과 안정과 격식을 챙기는 쪽을 뜻합니다.",
+   "at": [
+    "6.1",
+    "9.5"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.067,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 81991,
+ "tokens": {
+  "input": 11789,
+  "output": 6310,
+  "cachedInput": 0
+ },
+ "costUsd": 0.043339,
+ "costKrw": 62.8,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "error",
+   "error": "http_401",
+   "ms": 409,
+   "chars": 0,
+   "maxTokens": 25097,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  },
+  {
+   "kind": "fallback",
+   "finish": "complete",
+   "ms": 77318,
+   "chars": 11289,
+   "maxTokens": 22815,
+   "usage": {
+    "inputTokens": 11789,
+    "outputTokens": 6310,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.043339
+  }
+ ],
+ "writer": {
+  "model": "gpt-6.1-terra",
+  "provider": "openai"
+ },
+ "promptVersion": "writer-prompt-v5-16",
+ "knowledgeVersion": "knowledge-v5:291b1115d654",
+ "p6b": {
+  "chars": 11167,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": true,
+  "similes": [
+   {
+    "n": 1,
+    "count": 2
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 1
+   },
+   {
+    "n": 6,
+    "count": 1
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 1
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 1,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 4,
+   "rate": 0.57,
+   "terms": 7,
+   "misses": [
+    "정관",
+    "방합",
+    "겁재"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     4,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   }
+  ],
+  "subheadingsOk": 8,
+  "paragraphsOk": 20,
+  "sectionsTotal": 29,
+  "byRule": {},
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ }
+}

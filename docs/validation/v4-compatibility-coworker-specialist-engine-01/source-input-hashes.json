@@ -15,6 +15,6 @@
   "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workDomainBoundary.ts": "793ceb4f3c91f841aa8aa31aab97c8cba83a69b3bf0628363d8b13d4d560c80a",
   "tools/compatibility-coworker-specialist-engine/verify.mjs": "3e305fa3efe9f3a812702afbf6c28fec34cae319705e138cdc8e771fc14552c1",
   "tests/fixtures/compatibility-coworker-specialist-engine-01/synthetic-knowledge.json": "b3ceed8b92a3a30be26787ffe6126a0c25c6eb1cd7c36710c3cc99def54a0fd6",
-  "docs/validation/v4-compatibility-coworker-specialist-engine-01/original-file-hashes.json": "7e7c4f695a36f7778feebe5f45f3e2262fc85c4c031ff546f31e3c2828771947",
+  "docs/validation/v4-compatibility-coworker-specialist-engine-01/original-file-hashes.json": "7fc3c801dbcf3266b05fabf25b80adb393d7a6b6220e87fdc04e6abfd7a60def",
   "docs/validation/v4-compatibility-coworker-specialist-engine-01/pair-baseline-digests.json": "45dc5818f2d8d3ee14ae0bf5e9db0eb66472f52542037224f9959ae4ea35e9dd"
 }

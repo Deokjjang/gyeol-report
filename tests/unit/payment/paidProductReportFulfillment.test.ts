@@ -4,11 +4,11 @@ import { createInMemoryReportPersistenceAdapter } from "../../../src/lib/persist
 import { fulfillPaidProductReport } from "../../../src/lib/payment/paidProductReportFulfillment";
 import type { PaymentOrderRecord } from "../../../src/lib/payment/paymentOrderPersistenceTypes";
 import type { SinglePersonReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
-import type { ReportWriterRuntime } from "../../../src/lib/report-generation/reportWriterRuntime";
+import type { NoWriterRuntime } from "../../../src/lib/report-generation/writerDisabled";
 
 const createdAt = "2099-01-01T00:00:00.000Z";
 const paidAt = "2099-01-01T00:10:00.000Z";
-const writerRuntimeDisabled: ReportWriterRuntime = {
+const writerRuntimeDisabled: NoWriterRuntime = {
   enabled: false,
   reason: "flag_disabled",
 };

@@ -13,8 +13,6 @@ import { generateAnnualFortuneProductDraft } from "../../../src/lib/report-gener
 import { annualMonthlyEvidenceMatches } from "../../../src/lib/report-generation/annualMonthlyPublication";
 import { validateNewProductPublication, validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
 import { validateAnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
-import { generateAnnualFortuneReportDraft } from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriter";
-import { buildOpenAIAnnualFortuneReportWriterMessages } from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriterPrompt";
 import { readPublishedReport } from "../../../src/lib/payment/paidReportReliability";
 import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliabilityStore";
 import type { AnnualFortuneEvidencePacket } from "../../../src/lib/report-knowledge/annualFortuneEvidence";
@@ -34,7 +32,7 @@ function inputFor(index = 0, year = 2026): SinglePersonGenerationInput {
 async function generate(index = 0, year = 2026, person?: Partial<SinglePersonGenerationInput["person"]>) {
   const input = inputFor(index, year);
   const r = await generateAnnualFortuneProductDraft({ ...input, person: { ...input.person, ...person } }, {
-    writer: { enabled: false }, now: () => new Date(`${year}-09-23T00:00:00+09:00`),
+    now: () => new Date(`${year}-09-23T00:00:00+09:00`),
   });
   expect(r.ok, JSON.stringify(r)).toBe(true);
   if (!r.ok) throw new Error("local annual fixture failed");
@@ -234,16 +232,11 @@ describe("V2 tamper gate, writer and immutable legacy read", () => {
     expect(result.status).toBe("COMPLETED"); expect(JSON.stringify(snapshot)).toBe(frozen);
     expect(call.mock.calls).toEqual([["read_report", { reportId: "v2-report" }]]);
   });
-  it("uses the same exact publication in a mock writer and rejects a representative month pillar", async () => {
+  it("validates the exact monthly publication and rejects a representative month pillar", async () => {
     const r = await generate();
-    const request = (draft: unknown) => generateAnnualFortuneReportDraft({ evidencePacket: r.evidencePacket,
-      config: { enabled: true, apiKey: "test-only", model: "mock", fetchImpl: vi.fn(async () => new Response(JSON.stringify({ output_text: JSON.stringify(draft) }), { status: 200 })) } });
-    expect((await request(r.draft)).draft.monthlyFlow).toEqual(r.draft.monthlyFlow);
+    expect(validateAnnualFortuneReportDraft(r.draft, r.evidencePacket).ok).toBe(true);
     const copy = structuredClone(r.draft); (copy.monthlyFlow[1] as { monthGanji: string | null }).monthGanji = "庚寅";
-    await expect(request(copy)).rejects.toMatchObject({ code: "OPENAI_ANNUAL_FORTUNE_REPORT_WRITER_VALIDATION_FAILED" });
-    const prompt = buildOpenAIAnnualFortuneReportWriterMessages({ evidencePacket: r.evidencePacket });
-    expect(prompt.user).toContain("calendarMonths"); expect(prompt.developer).toContain("Conditional Dayun facts");
-    expect(JSON.stringify(prompt)).not.toContain("calendar_month_approximation");
+    expect(validateAnnualFortuneReportDraft(copy, r.evidencePacket).ok).toBe(false);
     expect(vi.mocked(fetch)).not.toHaveBeenCalled();
   });
   it("reads frozen V1 without backfill/quarantine, but cannot newly publish it", async () => {

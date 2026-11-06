@@ -1,20 +1,13 @@
 import { buildProductNatalTables } from "../report-knowledge/natalTableEvidence";
-import type { WriterCallAudit } from "./reportWriterCallGuard";
-import type { DeliveryAudit } from "./paidWriterRescue";
+import type { DeliveryAudit, ExternalCallAudit } from "./deliveryAudit";
 import type { BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
 import { SAJU_CALENDAR_VERSION } from "../saju/calendarVersion";
 import {
   generateCareerMoneyStudyProductDraft,
   type CareerMoneyStudyGenerationHandlerOptions,
 } from "./careerMoneyStudyGenerationHandler";
-import {
-  generateCompatibilityProductDraft,
-  type CompatibilityGenerationHandlerOptions,
-} from "./compatibilityGenerationHandler";
-import {
-  generateLoveMarriageChildProductDraft,
-  type LoveMarriageChildGenerationHandlerOptions,
-} from "./loveMarriageChildGenerationHandler";
+import { generateCompatibilityProductDraft } from "./compatibilityGenerationHandler";
+import { generateLoveMarriageChildProductDraft } from "./loveMarriageChildGenerationHandler";
 import {
   generateMajorFortuneProductDraft,
   type MajorFortuneGenerationHandlerOptions,
@@ -23,10 +16,7 @@ import {
   generateAnnualFortuneProductDraft,
   type AnnualFortuneGenerationHandlerOptions,
 } from "./annualFortuneGenerationHandler";
-import {
-  generateComprehensiveV2ProductDraft,
-  type ComprehensiveV2GenerationHandlerOptions,
-} from "./comprehensiveV2GenerationHandler";
+import { generateComprehensiveV2ProductDraft } from "./comprehensiveV2GenerationHandler";
 import {
   normalizeReportInputPayload,
   type CompatibilityGenerationInput,
@@ -34,7 +24,6 @@ import {
   type ReportInputPayload,
   type ReportProductKind,
 } from "./reportInputAdapter";
-import type { ReportWriterRuntime } from "./reportWriterRuntime";
 
 export type ProductGenerationErrorCode =
   | "PRODUCT_GENERATION_NOT_IMPLEMENTED"
@@ -71,7 +60,7 @@ export type ProductGenerationInvalidInputResult = {
 export type ProductGenerationResult = (
   | ProductGenerationSuccessResult
   | ProductGenerationNotImplementedResult
-  | ProductGenerationInvalidInputResult) & { readonly externalCalls?: readonly WriterCallAudit[]; readonly externalFailure?: string; readonly delivery?: DeliveryAudit };
+  | ProductGenerationInvalidInputResult) & { readonly externalCalls?: readonly ExternalCallAudit[]; readonly externalFailure?: string; readonly delivery?: DeliveryAudit };
 
 export type ProductGenerationHandler = (
   input: ReportGenerationInput,
@@ -79,13 +68,9 @@ export type ProductGenerationHandler = (
 ) => Promise<ProductGenerationResult>;
 
 export type ProductGenerationDispatcherOptions = {
-  readonly automaticFallback?: boolean;
   readonly careerMoneyStudy?: CareerMoneyStudyGenerationHandlerOptions;
-  readonly compatibility?: CompatibilityGenerationHandlerOptions;
-  readonly loveMarriageChild?: LoveMarriageChildGenerationHandlerOptions;
   readonly majorFortune?: MajorFortuneGenerationHandlerOptions;
   readonly annualFortune?: AnnualFortuneGenerationHandlerOptions;
-  readonly comprehensiveV2?: ComprehensiveV2GenerationHandlerOptions;
 };
 
 const PRODUCT_GENERATION_HANDLERS = {
@@ -96,28 +81,6 @@ const PRODUCT_GENERATION_HANDLERS = {
   annualFortune: handleAnnualFortuneGeneration,
   comprehensiveV2: handleComprehensiveV2Generation,
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
-
-export function createProductGenerationDispatcherOptionsFromWriterRuntime(
-  runtime: ReportWriterRuntime,
-): ProductGenerationDispatcherOptions {
-  const writer = runtime.enabled
-    ? {
-        enabled: true,
-        config: runtime.config,
-      }
-    : {
-        enabled: false,
-      };
-
-  return {
-    careerMoneyStudy: { writer },
-    compatibility: { writer },
-    loveMarriageChild: { writer },
-    majorFortune: { writer },
-    annualFortune: { writer },
-    comprehensiveV2: { writer },
-  };
-}
 
 export function getProductGenerationHandler(
   kind: ReportProductKind,
@@ -133,14 +96,7 @@ export function dispatchProductGenerationInput(
 
   return handler(input, options)
     .then((result) => {
-      if (result.ok || options.automaticFallback === false || !isWriterEnabledForKind(input.kind, options)) {
-        return result;
-      }
-
-      return handler(input, disableWriterForKind(input.kind, options));
-    })
-    .then((result) => {
-      // Stamp only newly generated evidence, after the writer has completed.
+      // Stamp only newly generated evidence.
       if (!result.ok || typeof result.evidencePacket !== "object" || result.evidencePacket === null) {
         return result;
       }
@@ -177,7 +133,6 @@ export function prepareProductGenerationFromPayload(
 
 async function handleCompatibilityGeneration(
   input: ReportGenerationInput,
-  options: ProductGenerationDispatcherOptions = {},
 ): Promise<ProductGenerationResult> {
   if (input.kind !== "compatibility") {
     return invalidInputResult(
@@ -185,15 +140,11 @@ async function handleCompatibilityGeneration(
     );
   }
 
-  return generateCompatibilityProductDraft(
-    input as CompatibilityGenerationInput,
-    options.compatibility,
-  );
+  return generateCompatibilityProductDraft(input as CompatibilityGenerationInput);
 }
 
 async function handleLoveMarriageChildGeneration(
   input: ReportGenerationInput,
-  options: ProductGenerationDispatcherOptions = {},
 ): Promise<ProductGenerationResult> {
   if (input.kind !== "loveMarriageChild") {
     return invalidInputResult(
@@ -201,10 +152,7 @@ async function handleLoveMarriageChildGeneration(
     );
   }
 
-  const result = await generateLoveMarriageChildProductDraft(
-    input,
-    options.loveMarriageChild,
-  );
+  const result = await generateLoveMarriageChildProductDraft(input);
 
   if (result.ok) {
     return result;
@@ -309,7 +257,6 @@ async function handleAnnualFortuneGeneration(
 
 async function handleComprehensiveV2Generation(
   input: ReportGenerationInput,
-  options: ProductGenerationDispatcherOptions = {},
 ): Promise<ProductGenerationResult> {
   if (input.kind !== "comprehensiveV2") {
     return invalidInputResult(
@@ -317,10 +264,7 @@ async function handleComprehensiveV2Generation(
     );
   }
 
-  const result = await generateComprehensiveV2ProductDraft(
-    input,
-    options.comprehensiveV2,
-  );
+  const result = await generateComprehensiveV2ProductDraft(input);
 
   if (result.ok) {
     return result;
@@ -345,58 +289,4 @@ function invalidInputResult(message: string, birthTimeContext?: BirthTimeCalcula
       ...(birthTimeContext ? { birthTimeContext } : {}),
     },
   };
-}
-
-function isWriterEnabledForKind(
-  kind: ReportProductKind,
-  options: ProductGenerationDispatcherOptions,
-): boolean {
-  return getOptionsForKind(kind, options)?.writer?.enabled === true;
-}
-
-function disableWriterForKind(
-  kind: ReportProductKind,
-  options: ProductGenerationDispatcherOptions,
-): ProductGenerationDispatcherOptions {
-  switch (kind) {
-    case "careerMoneyStudy":
-      return { ...options, careerMoneyStudy: { writer: { enabled: false } } };
-    case "loveMarriageChild":
-      return { ...options, loveMarriageChild: { writer: { enabled: false } } };
-    case "compatibility":
-      return { ...options, compatibility: { writer: { enabled: false } } };
-    case "majorFortune":
-      return { ...options, majorFortune: { writer: { enabled: false } } };
-    case "annualFortune":
-      return { ...options, annualFortune: { writer: { enabled: false } } };
-    case "comprehensiveV2":
-      return { ...options, comprehensiveV2: { writer: { enabled: false } } };
-  }
-}
-
-function getOptionsForKind(
-  kind: ReportProductKind,
-  options: ProductGenerationDispatcherOptions,
-):
-  | CareerMoneyStudyGenerationHandlerOptions
-  | LoveMarriageChildGenerationHandlerOptions
-  | CompatibilityGenerationHandlerOptions
-  | MajorFortuneGenerationHandlerOptions
-  | AnnualFortuneGenerationHandlerOptions
-  | ComprehensiveV2GenerationHandlerOptions
-  | undefined {
-  switch (kind) {
-    case "careerMoneyStudy":
-      return options.careerMoneyStudy;
-    case "loveMarriageChild":
-      return options.loveMarriageChild;
-    case "compatibility":
-      return options.compatibility;
-    case "majorFortune":
-      return options.majorFortune;
-    case "annualFortune":
-      return options.annualFortune;
-    case "comprehensiveV2":
-      return options.comprehensiveV2;
-  }
 }

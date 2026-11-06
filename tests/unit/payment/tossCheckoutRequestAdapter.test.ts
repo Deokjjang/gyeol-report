@@ -8,6 +8,9 @@ import {
   prepareTossCheckoutRequest,
   type TossCheckoutRequestResult,
 } from "../../../src/lib/payment/tossCheckoutRequestAdapter";
+import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
+
+const catalogAmount = getReportProduct("saju_mbti_full")!.amount;
 
 const successUrl = "https://gyeol.example/payments/toss/success";
 const failUrl = "https://gyeol.example/payments/toss/fail";
@@ -17,7 +20,7 @@ const readyOrder = {
   providerOrderId: "provider_order_toss_checkout_test",
   productType: "saju_mbti_full",
   provider: "toss",
-  amount: 1490,
+  amount: catalogAmount,
   currency: "KRW",
   status: "ready",
 } as const;
@@ -98,7 +101,7 @@ describe("Toss checkout request adapter", () => {
         orderName: "사주×MBTI 종합 리포트",
         amount: {
           currency: "KRW",
-          value: 1490,
+          value: catalogAmount,
         },
         successUrl,
         failUrl,

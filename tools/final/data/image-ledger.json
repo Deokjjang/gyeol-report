@@ -1,0 +1,5088 @@
+{
+ "version": "image-ledger-2",
+ "built": "2026-11-05",
+ "byDayPillar": {
+  "丁丑": [
+   {
+    "line": "서비스 기획자의 꺼지지 않는 랜턴",
+    "noun": "랜턴",
+    "source": "docs/v5/baseline/p6d/haram-full-p6c.snapshot.json",
+    "book": "report_8323084eccbe4533af02cf6fd8418c45",
+    "at": "2026-11-04T00:02:36.568Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "docs/v5/baseline/p6d/haram-full-p6c.snapshot.json",
+    "book": "report_8323084eccbe4533af02cf6fd8418c45",
+    "at": "2026-11-04T00:02:36.568Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 카페 불빛",
+    "noun": "불빛",
+    "source": "docs/v5/baseline/p6d/sodam-full.snapshot.json",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "docs/v5/baseline/p6d/sodam-full.snapshot.json",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "겨울 오후 카페의 젖은 바람에도 버티는 불빛",
+    "noun": "불빛",
+    "source": "docs/v5/baseline/p6e/sodam-full.snapshot.json",
+    "book": "report_82cb9a802ad34a02ae24d834361e5625",
+    "at": "2026-11-04T09:27:35.260Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "겨울 외양간 등불, 이렇게 씁니다",
+    "noun": "씁니다",
+    "source": "local-db:report_a097f5cd6df34347a8815c8366109b16",
+    "book": "report_a097f5cd6df34347a8815c8366109b16",
+    "at": "2026-10-29T04:44:07.639Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "겨울 외양간 등불, 이렇게 씁니다",
+    "noun": "씁니다",
+    "source": "local-db:report_9d25497e3cc1443081690f36ad9fd44e",
+    "book": "report_9d25497e3cc1443081690f36ad9fd44e",
+    "at": "2026-10-29T04:50:38.082Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_c3374d6c33d34ecbbca7eac7714417bc",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "겨울 땅 위에 앉은 작은 불",
+    "noun": "작은 불",
+    "source": "local-db:report_c3374d6c33d34ecbbca7eac7714417bc",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "눈 내린 새벽, 꺼지지 않고 버티는 등불",
+    "noun": "등불",
+    "source": "local-db:report_686778055d2945c2802316c089a19875",
+    "book": "report_686778055d2945c2802316c089a19875",
+    "at": "2026-10-30T11:11:20.734Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_fcab67ed79234ed8ab1971f2ba364efc",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_a223c8cf1fa1457883ccfae0e073eb94",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "넓은 광장을 은은하게 밝히는 조명",
+    "noun": "조명",
+    "source": "local-db:report_ffac292c05da4c4eab47476c6b8ba78a",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "line": "끝까지 자리를 밝히는 사람",
+    "noun": "사람",
+    "source": "local-db:report_0cf46099c95847b8b1f3df869b591dbe",
+    "book": "report_0cf46099c95847b8b1f3df869b591dbe",
+    "at": "2026-10-30T11:24:51.888Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_400deb1a454a4d938a5131324cb4f20e",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "늦겨울 땅 위에 앉은 정화",
+    "noun": "정화",
+    "source": "local-db:report_400deb1a454a4d938a5131324cb4f20e",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_afdb9563fe6e4400a8222203161ff0cb",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "넓은 광장을 은은하게 밝히는 조명",
+    "noun": "조명",
+    "source": "local-db:report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_542619738f9e4f8696559cb88553df7a",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_6260426984a748c9a9575c784e5d2853",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_8b5e8413d9f7452898882be0509724f4",
+    "book": "report_8b5e8413d9f7452898882be0509724f4",
+    "at": "2026-11-03T03:23:20.099Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "마감한 카페 안에서 오래 식지 않는 난로",
+    "noun": "난로",
+    "source": "local-db:report_fe29cb0ed88a4a459c14f1b377a3a9bf",
+    "book": "report_fe29cb0ed88a4a459c14f1b377a3a9bf",
+    "at": "2026-11-05T02:42:48.695Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "문 닫은 카페 창가에 남겨 둔 촛불 한 자루",
+    "noun": "자루",
+    "source": "local-db:report_a29459e21b9548e79d3e3a5cd33e118e",
+    "book": "report_a29459e21b9548e79d3e3a5cd33e118e",
+    "at": "2026-11-05T02:46:52.774Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 카페 사장의 불",
+    "noun": "사장의 불",
+    "source": "local-db:report_0c7636d107c84b8baa997c7051fe5cea",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "꺼지지 않는 랜턴을 든 서비스 기획자",
+    "noun": "기획자",
+    "source": "local-db:report_003afdc447a84682900be3289d63dd93",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_003afdc447a84682900be3289d63dd93",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "서비스 기획자 4년 차, 꺼지지 않는 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_5a7b5da3529447518bf9e1dac3604141",
+    "book": "report_5a7b5da3529447518bf9e1dac3604141",
+    "at": "2026-11-03T23:31:24.640Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_5a7b5da3529447518bf9e1dac3604141",
+    "book": "report_5a7b5da3529447518bf9e1dac3604141",
+    "at": "2026-11-03T23:31:24.640Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_8c4ac089b8b94d47a906b97da96b8b3c",
+    "book": "report_8c4ac089b8b94d47a906b97da96b8b3c",
+    "at": "2026-11-03T23:34:31.172Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "간호사 11년 차, 느리게 쌓아 단단해지는 불",
+    "noun": "단단해지는 불",
+    "source": "local-db:report_359f0337b75d4448ba13a62bc409adb0",
+    "book": "report_359f0337b75d4448ba13a62bc409adb0",
+    "at": "2026-11-03T23:35:50.620Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "line": "넓은 광장을 은은하게 밝히는 조명",
+    "noun": "조명",
+    "source": "local-db:report_359f0337b75d4448ba13a62bc409adb0",
+    "book": "report_359f0337b75d4448ba13a62bc409adb0",
+    "at": "2026-11-03T23:35:50.620Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "line": "서비스 기획 7년 차, 꺼지지 않는 랜턴의 온도",
+    "noun": "온도",
+    "source": "local-db:report_889f4b80c4334bb98ba23730051463b0",
+    "book": "report_889f4b80c4334bb98ba23730051463b0",
+    "at": "2026-11-03T23:46:12.826Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_889f4b80c4334bb98ba23730051463b0",
+    "book": "report_889f4b80c4334bb98ba23730051463b0",
+    "at": "2026-11-03T23:46:12.826Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "서비스 기획자 하람, 이름 걸고 서는 해",
+    "noun": "서는 해",
+    "source": "local-db:report_a37f608aae3945b7ba7204743acf6016",
+    "book": "report_a37f608aae3945b7ba7204743acf6016",
+    "at": "2026-11-03T23:49:00.210Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+    "noun": "랜턴",
+    "source": "local-db:report_a37f608aae3945b7ba7204743acf6016",
+    "book": "report_a37f608aae3945b7ba7204743acf6016",
+    "at": "2026-11-03T23:49:00.210Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_2a0fdb2edcda403c95f0f2fedddcce21",
+    "book": "report_2a0fdb2edcda403c95f0f2fedddcce21",
+    "at": "2026-11-03T23:50:52.442Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "넓은 광장을 은은하게 밝히는 조명",
+    "noun": "조명",
+    "source": "local-db:report_a3f66262d9994051aef2a8e5c1bc919c",
+    "book": "report_a3f66262d9994051aef2a8e5c1bc919c",
+    "at": "2026-11-03T23:52:21.676Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   }
+  ],
+  "丁未": [
+   {
+    "line": "큰 나무와 네온이 한 간판을 켜는 사업",
+    "noun": "사업",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json",
+    "book": "report_7097ef942e504964b8149fbb9c6b81db",
+    "at": "2026-11-04T04:29:54.099Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "큰 나무가 불빛을 타오르게 돕는 사이",
+    "noun": "사이",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json",
+    "book": "report_7097ef942e504964b8149fbb9c6b81db",
+    "at": "2026-11-04T04:29:54.099Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "큰 나무가 불빛을 타오르게 돕는 사이",
+    "noun": "사이",
+    "source": "docs/v5/baseline/p6e/pair-business.snapshot.json",
+    "book": "report_b41e6a1204c74df0bf327e82f178d8f1",
+    "at": "2026-11-04T09:31:58.360Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   }
+  ],
+  "壬辰": [
+   {
+    "line": "강변 숲을 적시는 물, 환자 곁의 다정한 손",
+    "noun": "다정한 손",
+    "source": "docs/v5/baseline/p6d/chaerin-love.snapshot.json",
+    "book": "report_79bddc2009454193b286906927b461a5",
+    "at": "2026-11-04T04:28:00.105Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "강변 숲을 적시며 흐르는 큰 강",
+    "noun": "큰 강",
+    "source": "docs/v5/baseline/p6d/chaerin-love.snapshot.json",
+    "book": "report_79bddc2009454193b286906927b461a5",
+    "at": "2026-11-04T04:28:00.105Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "봄밤 치료실 창밖 숲을 적시며 흐르는 큰 강",
+    "noun": "큰 강",
+    "source": "docs/v5/baseline/p6e/chaerin-love.snapshot.json",
+    "book": "report_586fbf1314df4addb4085160248e64b3",
+    "at": "2026-11-04T09:44:16.795Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "봄밤 치료실 창밖 숲을 적시며 흐르는 큰 강",
+    "noun": "큰 강",
+    "source": "local-db:report_debde95540164bf2a1feedb756cfa7f8",
+    "book": "report_debde95540164bf2a1feedb756cfa7f8",
+    "at": "2026-11-04T09:30:02.786Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   }
+  ],
+  "己卯": [
+   {
+    "line": "나무뿌리가 촘촘히 박힌 숲속 흙",
+    "noun": "숲속 흙",
+    "source": "local-db:report_6412d806a9014c089e43873b58dc7e94",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "나무뿌리가 촘촘히 박힌 숲속 흙",
+    "noun": "숲속 흙",
+    "source": "local-db:report_989486ff45734e9db2879192e943240f",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "나무뿌리가 촘촘히 박힌 숲속 흙",
+    "noun": "숲속 흙",
+    "source": "local-db:report_191c7392d56145b4aaa2cf193a1359da",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "숲속 흙처럼 사람을 키우는 스물둘의 사랑",
+    "noun": "사랑",
+    "source": "local-db:report_8a3d7eb705024e90a72b2ae787e4512a",
+    "book": "report_8a3d7eb705024e90a72b2ae787e4512a",
+    "at": "2026-11-03T23:32:51.691Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "나무뿌리가 촘촘히 박힌 숲속 흙",
+    "noun": "숲속 흙",
+    "source": "local-db:report_8a3d7eb705024e90a72b2ae787e4512a",
+    "book": "report_8a3d7eb705024e90a72b2ae787e4512a",
+    "at": "2026-11-03T23:32:51.691Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   }
+  ],
+  "己酉": [
+   {
+    "line": "마케팅 재취업, 내 방식대로 올라가는 길",
+    "noun": "올라가는 길",
+    "source": "docs/v5/baseline/p6d/taeo-career.snapshot.json",
+    "book": "report_101e2c2cbc934f06bcaf2fa5c93a5f58",
+    "at": "2026-11-04T04:36:11.617Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "한여름 볕에 바짝 마른 화단 흙",
+    "noun": "화단 흙",
+    "source": "docs/v5/baseline/p6d/taeo-career.snapshot.json",
+    "book": "report_101e2c2cbc934f06bcaf2fa5c93a5f58",
+    "at": "2026-11-04T04:36:11.617Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "여름 늦은 오후 스터디 카페의 열기를 품은 흙",
+    "noun": "품은 흙",
+    "source": "docs/v5/baseline/p6e/taeo-career.snapshot.json",
+    "book": "report_78351ea1fccf4aacb9111d29fdeae73d",
+    "at": "2026-11-04T09:24:55.528Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "여름 늦은 오후 스터디 카페의 열기를 품은 흙",
+    "noun": "품은 흙",
+    "source": "local-db:report_401f7cff0b03452c85c13b58d368dc5f",
+    "book": "report_401f7cff0b03452c85c13b58d368dc5f",
+    "at": "2026-11-04T09:09:19.015Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "여름 늦은 오후 스터디 카페의 열기를 품은 흙",
+    "noun": "품은 흙",
+    "source": "local-db:report_c1bc4e4b08e941a3b25c20e9ec6ee57e",
+    "book": "report_c1bc4e4b08e941a3b25c20e9ec6ee57e",
+    "at": "2026-11-04T09:13:59.782Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "여름 늦은 오후 스터디 카페의 열기를 품은 흙",
+    "noun": "품은 흙",
+    "source": "local-db:report_543880ac336f4a9c9f030ab19511734b",
+    "book": "report_543880ac336f4a9c9f030ab19511734b",
+    "at": "2026-11-04T09:04:11.381Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "마케팅 재취업, 내 방식으로 다듬는 길",
+    "noun": "다듬는 길",
+    "source": "local-db:report_2b4eac46d5a74c43b0f9d61289102dd2",
+    "book": "report_2b4eac46d5a74c43b0f9d61289102dd2",
+    "at": "2026-11-04T04:25:58.927Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "한여름 볕에 바짝 마른 화단 흙",
+    "noun": "화단 흙",
+    "source": "local-db:report_2b4eac46d5a74c43b0f9d61289102dd2",
+    "book": "report_2b4eac46d5a74c43b0f9d61289102dd2",
+    "at": "2026-11-04T04:25:58.927Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   }
+  ],
+  "庚辰": [
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_a223c8cf1fa1457883ccfae0e073eb94",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_e5bc7088a38549af96b42a0404054e47",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_6260426984a748c9a9575c784e5d2853",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_952482e58d954ce4b5499cca1251ae97",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_8c4ac089b8b94d47a906b97da96b8b3c",
+    "book": "report_8c4ac089b8b94d47a906b97da96b8b3c",
+    "at": "2026-11-03T23:34:31.172Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "연재 마감 사이로 불이 두 겹 드는 해",
+    "noun": "드는 해",
+    "source": "local-db:report_c796122ce38a44bdae0c2449e0aedeb8",
+    "book": "report_c796122ce38a44bdae0c2449e0aedeb8",
+    "at": "2026-11-03T23:37:09.491Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_c796122ce38a44bdae0c2449e0aedeb8",
+    "book": "report_c796122ce38a44bdae0c2449e0aedeb8",
+    "at": "2026-11-03T23:37:09.491Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "불빛이 강철을 달궈 다듬는 사이",
+    "noun": "사이",
+    "source": "local-db:report_2a0fdb2edcda403c95f0f2fedddcce21",
+    "book": "report_2a0fdb2edcda403c95f0f2fedddcce21",
+    "at": "2026-11-03T23:50:52.442Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "프리랜서 일러스트레이터의 불 두 겹 해",
+    "noun": "겹 해",
+    "source": "local-db:report_ebef1f15cf884714806f354e4b611f56",
+    "book": "report_ebef1f15cf884714806f354e4b611f56",
+    "at": "2026-11-03T23:54:23.783Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "line": "용광로 불 속에서 달궈지는 쇳덩이",
+    "noun": "쇳덩이",
+    "source": "local-db:report_ebef1f15cf884714806f354e4b611f56",
+    "book": "report_ebef1f15cf884714806f354e4b611f56",
+    "at": "2026-11-03T23:54:23.783Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   }
+  ],
+  "甲申": [
+   {
+    "line": "큰 나무와 네온이 한 간판을 켜는 사업",
+    "noun": "사업",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json",
+    "book": "report_7097ef942e504964b8149fbb9c6b81db",
+    "at": "2026-11-04T04:29:54.099Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "큰 나무가 불빛을 타오르게 돕는 사이",
+    "noun": "사이",
+    "source": "docs/v5/baseline/p6d/pair-business.snapshot.json",
+    "book": "report_7097ef942e504964b8149fbb9c6b81db",
+    "at": "2026-11-04T04:29:54.099Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "큰 나무가 불빛을 타오르게 돕는 사이",
+    "noun": "사이",
+    "source": "docs/v5/baseline/p6e/pair-business.snapshot.json",
+    "book": "report_b41e6a1204c74df0bf327e82f178d8f1",
+    "at": "2026-11-04T09:31:58.360Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "line": "한여름 도시 아스팔트 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_3526ac6d3181494b909d193e499dbf94",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "가을 쇠 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_3526ac6d3181494b909d193e499dbf94",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "한여름 도시 아스팔트 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_1fe6bb3ef3244dedbf812348785dba15",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "가을 쇠 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_1fe6bb3ef3244dedbf812348785dba15",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "처음 만든 서비스 하나로 판을 짜는 스물일곱 대표",
+    "noun": "대표",
+    "source": "local-db:report_ef42d66ffef340f0b9de46d2eb57af16",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "서비스 로드맵을 쥔 스물일곱 대표의 엔진",
+    "noun": "엔진",
+    "source": "local-db:report_065b67917da04a3983333fa0bbfdb296",
+    "book": "report_065b67917da04a3983333fa0bbfdb296",
+    "at": "2026-11-04T15:16:43.379Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "line": "스물일곱에 사업을 굴리는 큰 나무의 여름",
+    "noun": "여름",
+    "source": "local-db:report_fd7e3babb03e4255996c82d4e62a5dbd",
+    "book": "report_fd7e3babb03e4255996c82d4e62a5dbd",
+    "at": "2026-11-03T23:38:34.026Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "한여름 도시 아스팔트 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_fd7e3babb03e4255996c82d4e62a5dbd",
+    "book": "report_fd7e3babb03e4255996c82d4e62a5dbd",
+    "at": "2026-11-03T23:38:34.026Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "아스팔트 위에서 사업을 키우는 27세",
+    "noun": "27세",
+    "source": "local-db:report_3df306c7d2ac48c5be2571efcfba68fa",
+    "book": "report_3df306c7d2ac48c5be2571efcfba68fa",
+    "at": "2026-11-03T23:56:04.534Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "한여름 도시 아스팔트 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_3df306c7d2ac48c5be2571efcfba68fa",
+    "book": "report_3df306c7d2ac48c5be2571efcfba68fa",
+    "at": "2026-11-03T23:56:04.534Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "한여름 도시 아스팔트 위에 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_8dbe7218366449868ff33aaf364f1a58",
+    "book": "report_8dbe7218366449868ff33aaf364f1a58",
+    "at": "2026-11-04T15:24:08.816Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "love_marriage_child"
+   }
+  ],
+  "甲辰": [
+   {
+    "line": "갑진의 단단함으로 삶을 넓히는 사람",
+    "noun": "사람",
+    "source": "local-db:report_2f5f579aa8334229b2e85a171cfbde28",
+    "book": "report_2f5f579aa8334229b2e85a171cfbde28",
+    "at": "2026-11-04T09:07:48.921Z",
+    "people": [
+     "검수friend|1995-03-14|08:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "line": "빽빽한 숲 한가운데 선 큰 나무",
+    "noun": "나무",
+    "source": "local-db:report_2f5f579aa8334229b2e85a171cfbde28",
+    "book": "report_2f5f579aa8334229b2e85a171cfbde28",
+    "at": "2026-11-04T09:07:48.921Z",
+    "people": [
+     "검수friend|1995-03-14|08:30"
+    ],
+    "product": "saju_mbti_full"
+   }
+  ],
+  "癸亥": [
+   {
+    "line": "가을 아침 작업실 창밖 둑에 막혀 깊어진 빗물",
+    "noun": "빗물",
+    "source": "docs/v5/baseline/p6e/seoha-love-single.snapshot.json",
+    "book": "report_56cd726f36b245fbb31718490e3055fe",
+    "at": "2026-11-04T09:46:18.131Z",
+    "people": [
+     "윤서하|1997-09-18|07:40"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "line": "가을 아침 작업실 창밖 둑에 막혀 깊어진 빗물",
+    "noun": "빗물",
+    "source": "local-db:report_198b89ca16864739bb7ac6ae5dbacf94",
+    "book": "report_198b89ca16864739bb7ac6ae5dbacf94",
+    "at": "2026-11-04T09:33:55.716Z",
+    "people": [
+     "윤서하|1997-09-18|07:40"
+    ],
+    "product": "love_marriage_child"
+   }
+  ]
+ },
+ "phrasesByDayPillar": {
+  "丁丑": [
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_8323084eccbe4533af02cf6fd8418c45",
+    "at": "2026-11-04T00:02:36.568Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "차와시계,집주소를고를때남",
+    "book": "report_8323084eccbe4533af02cf6fd8418c45",
+    "at": "2026-11-04T00:02:36.568Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "먼저연락하지않아멀어진친구",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "집안가구배치를바꾸거나짐을쌌다풀",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "머릿속에서가상대화를몇번이고돌",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "집안일순서를최적화하려다시작이늦어",
+    "book": "report_45b64494ee9542cea0b97db5971a8e22",
+    "at": "2026-11-04T04:23:36.559Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "먼저연락하지않아멀어진친구가",
+    "book": "report_82cb9a802ad34a02ae24d834361e5625",
+    "at": "2026-11-04T09:27:35.260Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "머릿속에서가상대화를몇번이고돌",
+    "book": "report_82cb9a802ad34a02ae24d834361e5625",
+    "at": "2026-11-04T09:27:35.260Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "통화보다문서로설명하는쪽을택하",
+    "book": "report_82cb9a802ad34a02ae24d834361e5625",
+    "at": "2026-11-04T09:27:35.260Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "동료가내아이디어를자기것처럼말해도웃어넘기고,집에와서설거지를하다접시를유난히세게내려놓",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "바로말하는사람을신뢰하고,그런사람에게는끝까지갑니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "남들근황을넘겨보다가괜히자극받아,새벽에다음달계획표를처음부터다시",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "새로온팀장이일하는방식을바꾸자고하면첫주엔고개만끄덕이고,석달쯤지켜본뒤에야따라갑니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한분야를고르면관련책을시리즈째삽니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "옆분야는쳐다보지않고한곳만깊게팝니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "팀에들어가면일주일안에누가뭘잘하는지파악하고역할을다시짭니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "이게정말지금해야하는일인",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약속장소를정해도한쪽은정문,한쪽은후문에서있는일이잦아이제는지도핀을꼭보냅니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "상사가없어도같은시간에출근하고같은품질로일",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "남들이당신뒤를안봐도됩니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "회의시작5분만에그래서결론이뭐죠?를묻",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "배경설명이길어지면손가락으로책상을두드",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구들앞에서지갑이쉽게열립니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "생일모임밥값을혼자내고집에와서카드앱을열어보고잠깐조용해",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "차와시계,집주소를고를때남의눈을계산",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "지출보다5년뒤어디에있을건가가기준",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "2년알고지낸친구에게어느날사실처음부터좋았어라고말",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "몇번만나서언제사귀고어떻게될지머릿속에로드맵이그려집니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "마음을쉽게열지않아처음엔차가워보",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": ",한번열면상대의퇴근시간에맞춰따뜻한국물을데워",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "아는사람은많지않아도,힘든겨울을같이버틴친구와는십년이지나도연락이끊기지않",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구모임에서일정과장소를정하는사람",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "안정해지면못참아서결국자기가정합니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구가잘되면진심으로축하하면서도속으로자기자리를한번점검합니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책을주다넌공감을못해라는말을듣",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "주말이틀을집에만있으면기운이빠",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "월요일아침엔누구라도붙잡고수다를떨어야몸이풀립니다.",
+    "book": "report_c3374d6c33d34ecbbca7eac7714417bc",
+    "at": "2026-11-03T02:48:26.691Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "마감전날에도점심은꼭나가서먹고,돌아오는길에팀원들커피",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "쟁반에받쳐들고와자,이제하자고",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "무능한상사밑에서가장괴롭습니다.",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "틀린지시를그대로따르느니그자리에서대안을꺼",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "화려한기획보다매주같은보고서를5년째빠짐없이내는사람",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "팀장은그꾸준함을믿고일을맡깁니다.",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_fcab67ed79234ed8ab1971f2ba364efc",
+    "at": "2026-11-03T02:50:00.742Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "점심시간에연인이사진한장과함께뭐먹었",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은일이끝나면한꺼번에답하",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한쪽은한달전부터편지문구를고민하고,다른쪽은전날밤에야꽃집영업시간을검색",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "다른사람은그래도나가고싶다며편의점간식을고",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "여행사진을올리기전연인이어떤사진이괜찮은지묻자,다른사람은올려도된다며얼굴이가장잘나온컷을고릅니다.",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서로의친구모임에번갈아가는주에,",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서운한일이생기면한쪽은그날안에말로꺼내고다른쪽은며칠정리한뒤꺼내서",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은한판더하자고하고,다른사람은이미즐거웠",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고싶은일이바뀔수있다는연인의말에",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "바뀌면바뀐대로같이정리해보자고답",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은미안하다는말을바로하고,다른사람은좋아하는간식을사와서말없이건넵니다.",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "넓은광장을은은하게밝히는조명",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "좋은거있는데같이하자며투자나장사얘기를꺼",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "회사일과별개로내이름을건글이나",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "모임마다계산을먼저하는사람이되고",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "그덕에새로운사람을소개받는일",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "작은팀이라도정리는당신이해줘요라는말과함께",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "고말해줘서야쉬는날을달력에적어넣",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "부모님이나집안어른이필요한거있으면말해",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "노트에그림까지그려가며정리",
+    "book": "report_ffac292c05da4c4eab47476c6b8ba78a",
+    "at": "2026-11-03T02:53:12.925Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "바로말하는사람을신뢰하고,그런사람에게는끝까지갑니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "남들근황을넘겨보다가괜히자극받",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "새벽에다음달계획표를처음부터다시",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "동료가내아이디어를자기것처럼말해도웃어넘기고,집에와서설거지를하다접시를유난히세게내려놓",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "새로온팀장이일하는방식을바꾸자고하면첫주",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "고개만끄덕이고,석달쯤지켜본뒤에야따라",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한분야를고르면관련책을시리즈째삽니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "옆분야는쳐다보지않고한곳만깊게",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "팀에들어가면일주일안에누가뭘잘하는지파악하고역할을다시짭니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "이게정말지금해야하는일인가를끝까지따집니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약속장소를정해도한쪽은정문,한쪽은후문에서있는일이잦아",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "이제는지도핀을꼭보냅니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "상사가없어도같은시간에출근하고같은품질로일합니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "회의시작5분만에그래서결론이뭐죠?를묻습니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "배경설명이길어지면손가락으로책상을두드",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "생일모임밥값을혼자내고집에와서카드앱을열어보고잠깐조용해",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "차와시계,집주소를고를때남의눈을계산",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "가계부보다자산구조표를봅니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "지출보다5년뒤어디에있을건가가기준",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "2년알고지낸친구에게어느날사실처음부터좋았어라고말",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "몇번만나서언제사귀고어떻게될지머릿속에로드맵이그려집니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한번열면상대의퇴근시간에맞춰따뜻한국물을데워",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "많지않아도,힘든겨울을같이버틴",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "는십년이지나도연락이끊기지않습니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "안정해지면못참아서결국자기가정합니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구가잘되면진심으로축하하면서도속으로자기자리를한번점검합니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책을주다넌공감을못해라는말을듣습니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "주말이틀을집에만있으면기운이빠",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "누구라도붙잡고수다를떨어야몸이풀립니다.",
+    "book": "report_400deb1a454a4d938a5131324cb4f20e",
+    "at": "2026-11-03T02:57:38.176Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "은꼭나가서먹고,돌아오는길에팀원들커피까지쟁반에받쳐들고와",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "무능한상사밑에서가장괴롭습니다.",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "틀린지시를그대로따르느니그자리에서대안을꺼",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "화려한기획보다매주같은보고서를5년째빠짐없이내는사람",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "팀장은그꾸준함을믿고일을맡깁니다.",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_afdb9563fe6e4400a8222203161ff0cb",
+    "at": "2026-11-03T02:59:54.157Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "새해첫날예쁜가계부앱을깔고항목을열두개로나",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한달전부터편지문구를고민하",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은전날밤에야꽃집영업시간을검색",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고,다른사람은그래도나가고싶",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서로의친구모임에번갈아가는주",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "볼링장점수판앞에서연인한사람은한판더하자",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고,다른사람은이미즐거웠",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고싶은일이바뀔수있다는연인의말에",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "바뀌면바뀐대로같이정리해보자고답",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "고,다른사람은좋아하는간식을사와서말없이건넵니다.",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "정말맞나?하며자료를찾다",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "넓은광장을은은하게밝히는조명",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "아무도시키지않은팬케이크를구워",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "어깨와목이뻐근한날이늘어,퇴근길에마사지숍앞을",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "같은자리를두고은근한신경전이",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "오래연락없던친구가좋은거있는데같이하자며투자나장사",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "헬스장옆자리사람이나보다무",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "회사일과별개로내이름을건글이나디자인을올",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "기시작하고,반응이생각보다빨리",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "아이나후배를가르치는자리가생기고,설명하다보니내머릿속이더깔끔하게정리",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "새로들고,매달25일자동이체알림을보며통장숫자가느는재미를",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "모임마다계산을먼저하는사람이되고,그덕에새로운사람을소개받는일이늘어",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "작은팀이라도정리는당신이해줘요라는말과함께처음으로이름붙은역할이주어",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "친구가너요즘얼굴이굳었어라고말해",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "서야쉬는날을달력에적어넣",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "부모님이나집안어른이필요한거있으면말해라며먼저손을내",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "퇴근후전혀다른분야의온라인강의를결제하고,밤마다노트에그림까지그려가며정리",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "비슷한경력의사람이들어와같은자리를두고은근한신경전이시작",
+    "book": "report_e65d7e4b9bef44c393dadc429c8e35d2",
+    "at": "2026-11-03T03:03:28.710Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "마감전날에도점심은꼭나가서먹고,돌아오는길에팀원들커피",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "쟁반에받쳐들고와자,이제하자고",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "팀에들어가면일주일안에누가뭘잘하는지파악하고",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "규칙이틀렸다고느껴도일단지키고,바꿀때는절차를밟아",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "편법으로빨리가는걸가장싫어",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "사려고마음먹은날품절되고,포기하고나면재입고알림이옵니다.",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "그래서장바구니에언제살지메모를붙입니다.",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "가계부보다자산구조표를봅니다.",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "지출보다5년뒤어디에있을건가가기준",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "기획서열장보다시제품하나를먼저만들어책상위에올려놓",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "일단써보세요가당신의설득법입니다.",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "동료가내아이디어를자기것처럼말해도웃어넘기고,집에와서설거지를하다접시를유난히세게내려놓",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "한분야를고르면관련책을시리즈째삽니다.",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "옆분야는쳐다보지않고한곳만깊게",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "책임이분명한일에서평판이쌓",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "속도는빠르지않아도믿음은꾸준히쌓입니다.",
+    "book": "report_542619738f9e4f8696559cb88553df7a",
+    "at": "2026-11-03T03:11:37.455Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은처음같이먹은식당으로가자고하고,다른",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은새로생긴곳을예약해둡니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "연인이어떤사진이괜찮은지",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은올려도된다며얼굴이가장잘나온컷을",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "새해첫날예쁜가계부앱을깔고",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은이미즐거웠다며신발을벗",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "식당세곳의예약가능시간을적어오",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": ",다른쪽은만나서걸으며정하자고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은미안하다는말을바로하고,다른사람은좋아하는간식을사와서말없이건넵니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "기념일선물로함께들을수업을고",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은처음배우는분야를고르고,다른사람은이미아는분야를더깊게익히자고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은한번더놀고싶어하고,다른사람은먼저들어간다는문자를보내며자리를정리합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "몇년뒤에어디서살고싶은지",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "이유는나중에설명하겠다고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은비밀번호를바로알려주고,다른사람은천천히정하고싶다고말합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "연인이고급식당을예약했다고하자",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "가격표를보고기쁘다는말과부담된다는말을함께꺼",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": ",한사람은누구냐고바로묻고다른사람은궁금하면말해달라고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "점심시간에연인이사진한장과함께뭐먹었냐고묻",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은일이끝나면한꺼번에답하겠다고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서운한일이생기면한쪽은그날안에말로꺼내고",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한쪽은먼저안부문자를보내고,다른쪽은저녁에얼굴보고이야기하자고답합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_8b5e8413d9f7452898882be0509724f4",
+    "at": "2026-11-03T03:23:20.099Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "친한친구에게도약속날짜를자주잊",
+    "book": "report_a29459e21b9548e79d3e3a5cd33e118e",
+    "at": "2026-11-05T02:46:52.774Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "통화보다문서로설명하는쪽을택",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "음악이론이나화성원리를독학",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "새도구를배우다본래일을잊",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "상대의퇴근시간에맞춰따뜻한국물을데워",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "농담속논리비약을지적하다분위기",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "혼자영화관에서어려운영화",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "이상한숫자하나에새벽까지매달리",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "많은자리에서배터리가방전",
+    "book": "report_0c7636d107c84b8baa997c7051fe5cea",
+    "at": "2026-11-04T15:16:30.111Z",
+    "people": [
+     "장소담|1996-12-06|14:15"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구모임에서일정과장소를정하는사람",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "진심으로축하하면서도속으로",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "시간에맞춰따뜻한국물을데워",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "휴가첫날아침에휴가일정표",
+    "book": "report_003afdc447a84682900be3289d63dd93",
+    "at": "2026-11-03T23:29:35.412Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_8c4ac089b8b94d47a906b97da96b8b3c",
+    "at": "2026-11-03T23:34:31.172Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "넓은광장을은은하게밝히는조명",
+    "book": "report_359f0337b75d4448ba13a62bc409adb0",
+    "at": "2026-11-03T23:35:50.620Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "지시를받으면밤에혼자예시문서",
+    "book": "report_359f0337b75d4448ba13a62bc409adb0",
+    "at": "2026-11-03T23:35:50.620Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_889f4b80c4334bb98ba23730051463b0",
+    "at": "2026-11-03T23:46:12.826Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "진심으로축하하면서도속으로",
+    "book": "report_889f4b80c4334bb98ba23730051463b0",
+    "at": "2026-11-03T23:46:12.826Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "휴가첫날아침에휴가일정표",
+    "book": "report_889f4b80c4334bb98ba23730051463b0",
+    "at": "2026-11-03T23:46:12.826Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "빗속에서도꺼지지않는캠핑랜턴",
+    "book": "report_a37f608aae3945b7ba7204743acf6016",
+    "at": "2026-11-03T23:49:00.210Z",
+    "people": [
+     "하람|1996-12-06|09:30"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_2a0fdb2edcda403c95f0f2fedddcce21",
+    "at": "2026-11-03T23:50:52.442Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "넓은광장을은은하게밝히는조명",
+    "book": "report_a3f66262d9994051aef2a8e5c1bc919c",
+    "at": "2026-11-03T23:52:21.676Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "비슷한경력의사람이들어와",
+    "book": "report_a3f66262d9994051aef2a8e5c1bc919c",
+    "at": "2026-11-03T23:52:21.676Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   },
+   {
+    "run": "내이름을건글이나디자인을올",
+    "book": "report_a3f66262d9994051aef2a8e5c1bc919c",
+    "at": "2026-11-03T23:52:21.676Z",
+    "people": [
+     "수진|1989-01-17|14:20"
+    ],
+    "product": "major_fortune"
+   }
+  ],
+  "丁未": [
+   {
+    "run": "큰나무가불빛을타오르게돕는사이",
+    "book": "report_7097ef942e504964b8149fbb9c6b81db",
+    "at": "2026-11-04T04:29:54.099Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "큰나무가불빛을타오르게돕는사이",
+    "book": "report_b41e6a1204c74df0bf327e82f178d8f1",
+    "at": "2026-11-04T09:31:58.360Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   }
+  ],
+  "壬辰": [
+   {
+    "run": "강변숲을적시며흐르는큰강",
+    "book": "report_79bddc2009454193b286906927b461a5",
+    "at": "2026-11-04T04:28:00.105Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "낯선사람두명을소개해주고인연",
+    "book": "report_79bddc2009454193b286906927b461a5",
+    "at": "2026-11-04T04:28:00.105Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "봄밤치료실창밖숲을적시며흐르는큰강",
+    "book": "report_586fbf1314df4addb4085160248e64b3",
+    "at": "2026-11-04T09:44:16.795Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "봄밤치료실창밖숲을적시며흐르는큰강",
+    "book": "report_debde95540164bf2a1feedb756cfa7f8",
+    "at": "2026-11-04T09:30:02.786Z",
+    "people": [
+     "문채린|1998-02-14|21:30"
+    ],
+    "product": "love_marriage_child"
+   }
+  ],
+  "己卯": [
+   {
+    "run": "나무뿌리가촘촘히박힌숲속흙",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "처음엔귀여웠던상대의말버릇이석달쯤지나면똑같은이유로거슬리기시작",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "장점을본인보다먼저발견해너이거해봐,진짜어울려하고부추",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "힘든일일수록값을분명히부",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "이정도일이면이만큼은받아야죠를망설이지않고말합니다.",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "힘든시기에도떠나기보다역할을지키는쪽을고릅니다.",
+    "book": "report_6412d806a9014c089e43873b58dc7e94",
+    "at": "2026-11-03T02:51:04.049Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "나무뿌리가촘촘히박힌숲속흙",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "새학원의규정안내를듣다가왜이시간에만들어올수있어요?",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "처음엔귀여웠던상대의말버릇이석달쯤지나면똑같은이유로거슬리기시작",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "친구장점을본인보다먼저발견해",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "너이거해봐,진짜어울려하고부추",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "힘든일일수록값을분명히부",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "이정도일이면이만큼은받아야죠를망설이지않고말",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "힘든시기에도떠나기보다역할을지키는쪽을고",
+    "book": "report_989486ff45734e9db2879192e943240f",
+    "at": "2026-11-03T03:01:05.605Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "나무뿌리가촘촘히박힌숲속흙",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "새학원의규정안내를듣다가왜이시간에만들어올수있어요?",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "좋아하는사람이생기면하루에몇번씩이거보니까네생각났어하고사진을보",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "처음엔귀여웠던상대의말버릇이석달쯤지나면똑같은이유로거슬리기시작",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "친구의말에서앞뒤가안맞는부분을그자리에서짚어,맞는말인데분위기가싸해지는경험이많",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "내아이디어를그게되겠어?로받으면크게상처받",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "재밌겠다한마디면금세다시살아납니다.",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "장점을본인보다먼저발견해너이거해봐,진짜어울려하고",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "좋아하는사람이우산이없다고하면말없이편의점에서작은우산을사뒀다가",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "힘든일일수록값을분명히부",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "이정도일이면이만큼은받아야죠를망설이지않고말",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "신혼집을고르게되면집보러다니는날근처카페세곳과산책로를먼저지도에찍어",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "관리비와대출이자칸은한참비어있",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "힘든시기에도떠나기보다역할을지키는쪽을고릅니다.",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "처음양가어른을뵙게되면말씀을끝까지듣고수첩에적어",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "어른들사이에서참배운사람이다라는말을듣는쪽",
+    "book": "report_191c7392d56145b4aaa2cf193a1359da",
+    "at": "2026-11-03T03:13:04.227Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   },
+   {
+    "run": "나무뿌리가촘촘히박힌숲속흙",
+    "book": "report_8a3d7eb705024e90a72b2ae787e4512a",
+    "at": "2026-11-03T23:32:51.691Z",
+    "people": [
+     "도현|2004-03-01|11:10"
+    ],
+    "product": "love_marriage_child"
+   }
+  ],
+  "己酉": [
+   {
+    "run": "혼자맡겨두면마감까지조용히다듬",
+    "book": "report_101e2c2cbc934f06bcaf2fa5c93a5f58",
+    "at": "2026-11-04T04:36:11.617Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "혼자맡겨두면마감까지조용히다듬",
+    "book": "report_78351ea1fccf4aacb9111d29fdeae73d",
+    "at": "2026-11-04T09:24:55.528Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "혼자맡겨두면마감까지조용히다듬",
+    "book": "report_401f7cff0b03452c85c13b58d368dc5f",
+    "at": "2026-11-04T09:09:19.015Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "혼자맡겨두면마감까지조용히다듬",
+    "book": "report_c1bc4e4b08e941a3b25c20e9ec6ee57e",
+    "at": "2026-11-04T09:13:59.782Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "여름늦은오후스터디카페의열기를품은흙",
+    "book": "report_543880ac336f4a9c9f030ab19511734b",
+    "at": "2026-11-04T09:04:11.381Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "혼자맡겨두면마감까지조용히다듬",
+    "book": "report_543880ac336f4a9c9f030ab19511734b",
+    "at": "2026-11-04T09:04:11.381Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   },
+   {
+    "run": "맡겨두면마감까지조용히다듬",
+    "book": "report_2b4eac46d5a74c43b0f9d61289102dd2",
+    "at": "2026-11-04T04:25:58.927Z",
+    "people": [
+     "권태오|1994-05-23|16:05"
+    ],
+    "product": "career_money_study"
+   }
+  ],
+  "庚辰": [
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "점심시간에연인이사진한장과함께뭐먹었",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은일이끝나면한꺼번에답하",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한쪽은한달전부터편지문구를고민하고,다른쪽은전날밤에야꽃집영업시간을검색",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "다른사람은그래도나가고싶다며편의점간식을고",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "여행사진을올리기전연인이어떤사진이괜찮은지묻자,다른사람은올려도된다며얼굴이가장잘나온컷을고릅니다.",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서로의친구모임에번갈아가는주에,",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서운한일이생기면한쪽은그날안에말로꺼내고다른쪽은며칠정리한뒤꺼내서",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은한판더하자고하고,다른사람은이미즐거웠",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고싶은일이바뀔수있다는연인의말에",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "바뀌면바뀐대로같이정리해보자고답",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은미안하다는말을바로하고,다른사람은좋아하는간식을사와서말없이건넵니다.",
+    "book": "report_a223c8cf1fa1457883ccfae0e073eb94",
+    "at": "2026-11-03T02:52:03.316Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "용광로불속에서달궈지는쇳덩이",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심메뉴하나도내가고를게하고정",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "남의안보다내안을먼저밀어",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "중고거래에서조금만깎아주세요에밀려생각보다싸게넘기고",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "달린댓글몇개에하루가기분좋게",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "샤워하다떠오른아이디어를메모앱에적다보니",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구의친구까지섞인모임에",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마트에서하나더주는행사를보고도냉장고속을떠올리며하나만담",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마감두개와갑작스러운점검이같은주에겹쳐",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심을책상에서김밥으로때",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "단톡방공지에내이름이올라",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "답해야할메일을열어둔채조금만더알아보고를세번말",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "몇달째미뤄둔온라인강의수료증을",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "하다가내가더낸것같아영수증사진을",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구생일,동창모임,경조사가한달에몰려이체내역에사람이름이줄줄이찍",
+    "book": "report_e5bc7088a38549af96b42a0404054e47",
+    "at": "2026-11-03T02:54:08.729Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "새해첫날예쁜가계부앱을깔고항목을열두개로나",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한달전부터편지문구를고민하",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은전날밤에야꽃집영업시간을검색",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고,다른사람은그래도나가고싶",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서로의친구모임에번갈아가는주",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "볼링장점수판앞에서연인한사람은한판더하자",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고,다른사람은이미즐거웠",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "하고싶은일이바뀔수있다는연인의말에",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "바뀌면바뀐대로같이정리해보자고답",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "고,다른사람은좋아하는간식을사와서말없이건넵니다.",
+    "book": "report_4b20d0c0373e4479843c17ff9e78dcd9",
+    "at": "2026-11-03T03:02:20.665Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "용광로불속에서달궈지는쇳덩이",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "회의에서는남의안보다내안을먼저밀",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "글이나짧은영상을하나끝내올리",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구의친구까지섞인모임에나갔다가일얘기가오가고",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마트에서하나더주는행사를보고도냉장고속을떠올리며하나만담",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마감두개와갑작스러운점검이같은주에겹쳐",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심을책상에서김밥으로때",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "모임에서회칙이나당번표를새로짜는일이맡겨지고,단톡방공지에내이름이올라",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "답해야할메일을열어둔채조금만더알아보고를세번말",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "몇달째미뤄둔온라인강의수료증을드디어받아프로필에올",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "하다가내가더낸것같아영수증사진을다시확대해",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구생일,동창모임,경조사가한달에몰려이체내역에사람이름이줄줄이찍",
+    "book": "report_f3ca25712b0d4fd0a49f83333d38ebc0",
+    "at": "2026-11-03T03:05:12.638Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은처음같이먹은식당으로가자고하고,다른",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은새로생긴곳을예약해둡니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "연인이어떤사진이괜찮은지",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은올려도된다며얼굴이가장잘나온컷을",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "새해첫날예쁜가계부앱을깔고",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은이미즐거웠다며신발을벗",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "식당세곳의예약가능시간을적어오",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": ",다른쪽은만나서걸으며정하자고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은미안하다는말을바로하고,다른사람은좋아하는간식을사와서말없이건넵니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "기념일선물로함께들을수업을고",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은처음배우는분야를고르고,다른사람은이미아는분야를더깊게익히자고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은한번더놀고싶어하고,다른사람은먼저들어간다는문자를보내며자리를정리합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "몇년뒤에어디서살고싶은지",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "이유는나중에설명하겠다고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한사람은비밀번호를바로알려주고,다른사람은천천히정하고싶다고말합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "연인이고급식당을예약했다고하자",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "가격표를보고기쁘다는말과부담된다는말을함께꺼",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": ",한사람은누구냐고바로묻고다른사람은궁금하면말해달라고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "점심시간에연인이사진한장과함께뭐먹었냐고묻",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "은일이끝나면한꺼번에답하겠다고합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "서운한일이생기면한쪽은그날안에말로꺼내고",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한쪽은먼저안부문자를보내고,다른쪽은저녁에얼굴보고이야기하자고답합니다.",
+    "book": "report_6260426984a748c9a9575c784e5d2853",
+    "at": "2026-11-03T03:14:18.471Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "용광로불속에서달궈지는쇳덩이",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구들계모임통장을맡으면입금일마다표에완료",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심메뉴하나도내가고를게하고정해버",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "중고거래에서조금만깎아주세요에밀려",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "미뤄둔블로그글이나짧은영상을하나끝내올리고,달린댓글몇개에하루가기분좋게",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "샤워하다떠오른아이디어를메모앱에적다보니한달동안스무개가넘게쌓",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구의친구까지섞인모임에나갔다가일얘기가오가고",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마트에서하나더주는행사를보고도냉장고속을떠올리며하나만담",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마감두개와갑작스러운점검이같은주에겹쳐",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심을책상에서김밥으로때",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "모임에서회칙이나당번표를새로짜는일이맡겨지고,단톡방공지에내이름이올라",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "답해야할메일을열어둔채조금만더알아보고를세번말",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "몇달째미뤄둔온라인강의수료증을드디어받아프로필에올",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구들과더치페이계산을하다",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "내가더낸것같아영수증사진을다시확대해",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구생일,동창모임,경조사가한달에몰려이체내역에사람이름이줄줄이찍",
+    "book": "report_952482e58d954ce4b5499cca1251ae97",
+    "at": "2026-11-03T03:15:43.556Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "용광로불속에서달궈지는쇳덩이",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구들계모임통장을맡으면입금일마다표에완료표시를해둡니다.",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "늦는친구에게도화내지않고이번주안에만넣어줘라고웃으며말",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "오래알던친구에게도힘든이야기",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심메뉴하나도내가고를게하고정해버",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "중고거래에서조금만깎아주세요에밀려생각보다싸게넘기고,집에와서혼자아쉬워",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "미뤄둔블로그글이나짧은영상을하나끝내올리고,달린댓글몇개에하루가기분좋게",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "샤워하다떠오른아이디어를메모앱에적다보니한달동안스무개가넘게쌓",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구의친구까지섞인모임에나갔다가일얘기가오가고,명함을두장받아",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마트에서하나더주는행사를보고도냉장고속을떠올리며하나만담",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "마감두개와갑작스러운점검이같은주에겹쳐",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "점심을책상에서김밥으로때",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "모임에서회칙이나당번표를새로짜는일이맡겨지고,단톡방공지에내이름이올라",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "답해야할메일을열어둔채조금만더알아보고를세번말",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "몇달째미뤄둔온라인강의수료증을드디어받아프로필에올",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구들과더치페이계산을하다가내가더낸것같아영수증사진을다시확대해",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "친구생일,동창모임,경조사가한달에몰려이체내역에사람이름이줄줄이찍",
+    "book": "report_27068bca2f4544c1a0d150b93ba7c8f3",
+    "at": "2026-11-03T03:17:34.088Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_8c4ac089b8b94d47a906b97da96b8b3c",
+    "at": "2026-11-03T23:34:31.172Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "용광로불속에서달궈지는쇳덩이",
+    "book": "report_c796122ce38a44bdae0c2449e0aedeb8",
+    "at": "2026-11-03T23:37:09.491Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   },
+   {
+    "run": "불빛이강철을달궈다듬는사이",
+    "book": "report_2a0fdb2edcda403c95f0f2fedddcce21",
+    "at": "2026-11-03T23:50:52.442Z",
+    "people": [
+     "하람|1996-12-06|09:30",
+     "서윤|1989-03-21|"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "용광로불속에서달궈지는쇳덩이",
+    "book": "report_ebef1f15cf884714806f354e4b611f56",
+    "at": "2026-11-03T23:54:23.783Z",
+    "people": [
+     "서윤|1989-03-21|"
+    ],
+    "product": "annual_fortune"
+   }
+  ],
+  "甲申": [
+   {
+    "run": "큰나무가불빛을타오르게돕는사이",
+    "book": "report_7097ef942e504964b8149fbb9c6b81db",
+    "at": "2026-11-04T04:29:54.099Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "큰나무가불빛을타오르게돕는사이",
+    "book": "report_b41e6a1204c74df0bf327e82f178d8f1",
+    "at": "2026-11-04T09:31:58.360Z",
+    "people": [
+     "남궁현|1987-10-02|10:10",
+     "백은솔|1990-06-11|13:50"
+    ],
+    "product": "saju_mbti_compatibility"
+   },
+   {
+    "run": "한여름도시아스팔트위에선큰나무",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구들이너한테말하면땅에묻는거랑같다고",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "그런사람에게는끝까지갑니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "현관문을잠그고가스밸브,창문,콘센트를한번씩손으로짚어확인합니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "위험할만한곳을하나씩지우고나서야눈을감",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "아무도맡기싫어하는프로젝트가돌고돌다결국당신책상에",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "모의고사점수가오르면기뻐하기보다다음목표점수를바로포스트잇에적어붙",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "팀에들어가면일주일안에누가뭘잘하는지파악하고역할을다시짭니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "발표가끝나고박수가나올때3쪽숫자틀렸는데그거누가확인했죠?라고먼저묻",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "맞는말이고,그래서더무섭습니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "예산이얼마고기한이언제죠?를묻습니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "정작가고싶은지는마지막에야자문",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "주다넌공감을못해라는말을듣",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구발표를듣고두번째예시가제일좋았어처럼어디가좋았는지콕집어말",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": ",듣는사람이오래기억하는칭찬",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "숫자를다시확인해줄차분한동료가옆에있어야실수가줄어듭니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "회의시작5분만에그래서결론이뭐죠?를묻",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "배경설명이길어지면손가락으로책상을두드립니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "집에서내린커피를텀블러에담아나가고,사먹지않은날마다달력에별표를",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한달별표수에커피값을곱해보는게소소한낙입니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "옛날동전,기념우표,한정판운동화처럼모아둔것이있",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "상자를열면가격보다사연이먼저나옵니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "가계부보다자산구조표를봅니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "수입·지출보다5년뒤어디에있을건가가기준",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "처음만나는사람과는사람많은카페에서낮에보고",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "집에가는길을미리정해둡니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "조심이지나쳐보여도마음편히웃을수있는쪽을고",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "몇번만나서언제사귀고어떻게될지머릿속에로드맵이그려",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "마음에드는사람이생기면다른사람이다가가기전에먼저약속을잡습니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "모임에서총무나간사를맡으면회비내역을1원단위로공유합니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "술자리에서만난사람에게고민을털어놓고다음날아침조금후회",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구모임에서일정과장소를정하는사람입니다.",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "안정해지면못참아서결국자기가정",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "현관잠금,가스밸브,지갑위치를한번씩확인하고나서야편히눕",
+    "book": "report_3526ac6d3181494b909d193e499dbf94",
+    "at": "2026-11-03T02:55:02.143Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한여름도시아스팔트위에선큰나무",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구들이너한테말하면땅에묻는거랑같다고",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": ",그런사람에게는끝까지갑니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "현관문을잠그고가스밸브,창문,콘센트를한번씩손으로짚어확인",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "위험할만한곳을하나씩지우고나서야눈을감습니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "아무도맡기싫어하는프로젝트가돌고돌다결국당신책상에",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "투덜대면서도끝까지끌고갑니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "모의고사점수가오르면기뻐하기보다다음목표점수를바로포스트잇에적어붙",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "팀에들어가면일주일안에누가뭘잘하는지파악하고역할을다시짭니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "발표가끝나고박수가나올때3쪽숫자틀렸는데그거누가확인했죠?라고먼저묻",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "일을맡으면먼저이거예산이얼마고기한이언제죠?를묻습니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책을주다",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구발표를듣고두번째예시가제일좋았어처럼어디가좋았는지콕집어말",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "회의자료는화려하게꽉채우는데,숫자를다시확인해줄차분한동료가옆에있어야실수가줄어",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "회의시작5분만에그래서결론이뭐죠?를묻습니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "배경설명이길어지면손가락으로책상을두드",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "집에서내린커피를텀블러에담아나가고,사먹지않은날마다달력에별표를",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한달별표수에커피값을곱해보는게소소한낙",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "옛날동전,기념우표,한정판운동화처럼모아둔것이있",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "상자를열면가격보다사연이먼저나",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "가계부보다자산구조표를봅니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "수입·지출보다5년뒤어디에있을건가가기준",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "여행견적을받고비용대비효과를표로정리하다",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "정작가고싶은지는마지막에야자문",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "처음만나는사람과는사람많은카페에서낮에보고집에가는길을미리정해",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "조심이지나쳐보여도마음편히웃을수있는쪽을고",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "몇번만나서언제사귀고어떻게될지머릿속에로드맵이그려",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "마음에드는사람이생기면다른사람이다가가기전에먼저약속을잡습니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "모임에서총무나간사를맡으면회비내역을1원단위로공유",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "그래서사람들이믿고맡깁니다.",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책을주다넌공감을못해라는말을듣",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "술자리에서만난사람에게고민을털어놓고다음날아침조금후회",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "모임에서일정과장소를정하는사람",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "안정해지면못참아서결국자기가정",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "현관잠금,가스밸브,지갑위치를한번씩확인하고나서야편히눕",
+    "book": "report_1fe6bb3ef3244dedbf812348785dba15",
+    "at": "2026-11-03T03:06:20.789Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "병목공정을찾아담당자를바꾸는결정",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "새분기목표를한장로드맵으로정리하",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구사이에도약속이행을기대하",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "직원면접에서장기목표를직접묻",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "작은할인에쓰는시간을손해로계산하",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "결제전에투자대비효과를따",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구단톡방에여행일정표부터올리",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "취미활동도단계별목표로쪼개",
+    "book": "report_ef42d66ffef340f0b9de46d2eb57af16",
+    "at": "2026-11-05T02:34:39.039Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "친구모임에서일정과장소를정하는사람",
+    "book": "report_fd7e3babb03e4255996c82d4e62a5dbd",
+    "at": "2026-11-03T23:38:34.026Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책",
+    "book": "report_fd7e3babb03e4255996c82d4e62a5dbd",
+    "at": "2026-11-03T23:38:34.026Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "한여름도시아스팔트위에선큰나무",
+    "book": "report_3df306c7d2ac48c5be2571efcfba68fa",
+    "at": "2026-11-03T23:56:04.534Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "휴가첫날아침에휴가일정표",
+    "book": "report_3df306c7d2ac48c5be2571efcfba68fa",
+    "at": "2026-11-03T23:56:04.534Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "약한소리를하는친구에게해결책",
+    "book": "report_3df306c7d2ac48c5be2571efcfba68fa",
+    "at": "2026-11-03T23:56:04.534Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "saju_mbti_full"
+   },
+   {
+    "run": "팀워크숍에서역할극을이끄는사회자",
+    "book": "report_8dbe7218366449868ff33aaf364f1a58",
+    "at": "2026-11-04T15:24:08.816Z",
+    "people": [
+     "장덕민|1999-07-31|08:27"
+    ],
+    "product": "love_marriage_child"
+   }
+  ],
+  "癸亥": [
+   {
+    "run": "고백타이밍을놓치고집에서이불",
+    "book": "report_198b89ca16864739bb7ac6ae5dbacf94",
+    "at": "2026-11-04T09:33:55.716Z",
+    "people": [
+     "윤서하|1997-09-18|07:40"
+    ],
+    "product": "love_marriage_child"
+   }
+  ]
+ }
+}

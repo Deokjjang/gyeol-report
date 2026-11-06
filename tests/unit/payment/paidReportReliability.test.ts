@@ -68,18 +68,6 @@ describe("paid report reliability — actual SQL, mock providers", () => {
       expect(permission.rows[0].allowed).toBe(role === "service_role");
     }
   });
-  it("100 repeated worker executions cannot exceed one paid writer HTTP call", async () => {
-    await paid();
-    const transport = vi.fn<typeof fetch>(async () => Response.json({ output_text: "{malformed", usage: { input_tokens: 22, output_tokens: 1, total_tokens: 23 } }));
-    const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
-    for (let i=0; i<100; i++) { await due(); await runPaidReportJob(store, writerRuntime); }
-    expect(transport).toHaveBeenCalledTimes(1);
-    const attempts = await rows("report_generation_attempts");
-    expect(attempts).toHaveLength(1);
-    expect(attempts[0]).toMatchObject({ external_calls: [{ inputTokens: 22, outputTokens: 1, totalTokens: 23, outcome: "malformed" }] });
-    expect((await rows("payment_orders"))[0].status).toBe("paid");
-  });
-
   it("a failed payment recovery and an existing generation job make independent durable progress", async () => {
     const id = await paid();
     await store.call("create_order", { paymentOrderId: "recover-other", providerOrderId: "recover-order", productType: payload.productKey, provider: "toss", amount: 1290, inputSnapshot: { reportInputPayload: payload } });
@@ -94,15 +82,10 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
     expect((await rows("payment_orders")).find(o => o.payment_order_id==='recover-other')).toMatchObject({ status: "ready", recovery_attempt_count: 1 });
   });
-  it.each(["timeout", "malformed", "empty", "invalid"])("writer %s → same-attempt canonical fallback publication", async failure => {
+  it("first attempt publishes the canonical deterministic draft with no external call", async () => {
     const id = await paid();
-    const transport = vi.fn<typeof fetch>(async () => {
-      if (failure === "timeout") throw new DOMException("mock timeout", "AbortError");
-      return Response.json({ output_text: failure === "malformed" ? "{broken" : failure === "empty" ? "" : "{}" });
-    });
-    const writerRuntime = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock", fetchImpl: transport } };
-    expect(await runPaidReportJob(store, writerRuntime)).toMatchObject({ status: "COMPLETED" });
-    expect(transport).toHaveBeenCalledTimes(1);
+    expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "COMPLETED" });
+    expect((await rows("report_generation_attempts"))[0]).toMatchObject({ attempt: 1, external_calls: [] });
     const result = await readPublishedReport(store, id);
     expect(result.snapshot).toMatchObject({ evidencePacket: valid.evidencePacket });
     expect((await rows("payment_orders"))[0].status).toBe("paid");
@@ -284,44 +267,19 @@ describe("paid report reliability — actual SQL, mock providers", () => {
     const tables = await db.query<{ allowed: boolean }>("select has_table_privilege('anon', 'public.paid_report_snapshots', 'SELECT') as allowed");
     expect(tables.rows[0].allowed).toBe(false);
   });
-  it("read gate quarantines corrupted completed snapshots for admin recovery", async () => {
+  // v5 최종3: 열람 검사는 손상본을 숨기기만 하고 격리하지 않는다(행 그대로). 관리자 재생성은 기존 SQL 격리 뒤에만 열린다.
+  it("read gate hides corrupted completed snapshots without quarantining them", async () => {
     const id = await paid();
     await runPaidReportJob(store, runtime, async () => valid);
     await db.exec("update paid_report_snapshots set snapshot_json=snapshot_json-'evidencePacket'");
-    const original = (await rows("paid_report_snapshots"))[0].snapshot_json;
+    const report = await rows("paid_report_snapshots"), jobs = await rows("report_generation_jobs");
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
-    expect((await rows("paid_report_snapshots"))[0].snapshot_json).toEqual(original);
-    expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
+    expect(await rows("paid_report_snapshots")).toEqual(report);
+    expect(await rows("report_generation_jobs")).toEqual(jobs);
+    expect(report[0].status).toBe("COMPLETED");
+    expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: false, code: "NOT_RETRYABLE" });
   });
 
-  it("mock OpenAI transport exercises the shared normal writer and required longform schema", async () => {
-    const narrative = JSON.parse(JSON.stringify(valid.draft)
-      .replaceAll("토 과다", "현실 감각").replaceAll("수 부족", "회복 통로").replaceAll("화 부족", "표현 통로").replaceAll("현침살", "날카로운 판단")) as Record<string, unknown>;
-    for (const key of ["profileTable", "productVersion", "sajuFeatureSpotlight", "sajuSignatureScenes", "reportDifferentiationModules", "sajuSymbolicNickname", "sajuFeatureChapter"]) delete narrative[key];
-    const fetchMock = vi.fn(async () => Response.json({ output_text: JSON.stringify(narrative) }));
-    vi.stubGlobal("fetch", fetchMock);
-    const writer = { enabled: true as const, config: { enabled: true as const, apiKey: "mock-only", model: "mock-writer" } };
-    const result = await generateProductReport(payload, writer, "normal_writer");
-    expect(result, JSON.stringify(result.ok ? {} : result)).toMatchObject({ ok: true });
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-    const call = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
-    const request = JSON.parse(String(call[1].body));
-    expect(request.text.format.schema.required).toContain("longformReadings");
-    await paid();
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "COMPLETED" });
-  });
-  it("a schema-era writer result lacking longform is discarded and a complete fallback is delivered", async () => {
-    const narrative = JSON.parse(JSON.stringify(valid.draft)
-      .replaceAll("토 과다", "현실 감각").replaceAll("수 부족", "회복 통로").replaceAll("화 부족", "표현 통로").replaceAll("현침살", "날카로운 판단")) as Record<string, unknown>;
-    for (const key of ["profileTable", "productVersion", "longformReadings", "sajuFeatureSpotlight", "sajuSignatureScenes", "reportDifferentiationModules", "sajuSymbolicNickname", "sajuFeatureChapter"]) delete narrative[key];
-    const fetchMock = vi.fn(async () => Response.json({ output_text: JSON.stringify(narrative) }));
-    vi.stubGlobal("fetch", fetchMock);
-    const result = await generateProductReport(payload, { enabled: true, config: { enabled: true, apiKey: "mock-only", model: "mock-writer" } }, "normal_writer");
-    expect(result.ok).toBe(true);
-    expect(result.delivery).toMatchObject({ fallbackUsed: true, publish: "pass" });
-    if (result.ok) expect(result.draft).toEqual(valid.draft);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-  });
 
 });
 
@@ -339,11 +297,18 @@ describe("quarantined snapshot preservation and recovery", () => {
   async function storedText() {
     return (await db.query<{ content: string | null }>("select snapshot_json::text as content from paid_report_snapshots")).rows[0].content;
   }
+  // v5 최종3: 앱 열람은 더는 quarantine을 부르지 않는다. 이 묶음은 R1 패치 SQL의 격리·복구 동작(옛 앱·운영 SQL)을 직접 부른다.
+  async function isolate(id: string) {
+    const observed = (await db.query<{ snapshot_json: unknown }>("select snapshot_json from paid_report_snapshots where report_id=$1", [id])).rows[0].snapshot_json;
+    return store.call("quarantine", { reportId: id, expectedSnapshot: observed });
+  }
 
   it("retains identical JSON, input, order and attempts while recording attention on report + job", async () => {
     const { id, original, before } = await corruptCompleted();
     const orders = await rows("payment_orders"), inputs = await rows("report_input_snapshots"), attempts = await rows("report_generation_attempts");
     expect(await readPublishedReport(store, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect((await rows("paid_report_snapshots"))[0]).toEqual(original);
+    expect(await isolate(id)).toEqual({ ok: true, quarantined: true });
     expect(await storedText()).toBe(before);
     expect((await rows("paid_report_snapshots"))[0]).toEqual({ ...original, status: "FAILED_REQUIRES_ATTENTION" });
     expect((await rows("report_generation_jobs"))[0]).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", last_error_code: "PUBLISHED_SNAPSHOT_VALIDATION_FAILED" });
@@ -372,7 +337,7 @@ describe("quarantined snapshot preservation and recovery", () => {
 
   it("admin recovery uses durable input and replaces the forensic snapshot only on successful publication", async () => {
     const { id, before } = await corruptCompleted();
-    await readPublishedReport(store, id);
+    await isolate(id);
     expect(await store.call("admin_retry", { reportId: id })).toMatchObject({ ok: true });
     expect((await rows("report_generation_jobs"))[0]).toMatchObject({ status: "QUEUED", run_number: 2, attempt_count: 0 });
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "QUEUED", snapshot: null });
@@ -394,7 +359,7 @@ describe("quarantined snapshot preservation and recovery", () => {
   it("all failed recovery attempts retain the old snapshot and finish in attention with PAID/input intact", async () => {
     const { id, before } = await corruptCompleted();
     const inputs = await rows("report_input_snapshots");
-    await readPublishedReport(store, id);
+    await isolate(id);
     await store.call("admin_retry", { reportId: id });
     const generate = vi.fn(async () => ({ ...valid, evidencePacket: undefined }));
     for (let i = 0; i < 3; i++) {
@@ -413,7 +378,7 @@ describe("quarantined snapshot preservation and recovery", () => {
 
   it("worker lease exhaustion during recovery also retains the forensic snapshot", async () => {
     const { id, before } = await corruptCompleted();
-    await readPublishedReport(store, id);
+    await isolate(id);
     await store.call("admin_retry", { reportId: id });
     for (let i = 0; i < 3; i++) {
       expect((await store.call("claim_job")).job).not.toBeNull();
@@ -426,8 +391,8 @@ describe("quarantined snapshot preservation and recovery", () => {
 
   it.each(["QUEUED", "RUNNING", "COMPLETED"])("a delayed quarantine cannot disturb a recovery in %s", async state => {
     const { id, original, before } = await corruptCompleted();
-    // Reader one has observed the invalid snapshot; reader two isolates it.
-    await readPublishedReport(store, id);
+    // Reader one has observed the invalid snapshot; reader two (an old app / SQL caller) isolates it.
+    await isolate(id);
     await store.call("admin_retry", { reportId: id });
     if (state === "RUNNING") await store.call("claim_job");
     if (state === "COMPLETED") await runPaidReportJob(store, runtime, async () => structuredClone(valid));
@@ -442,35 +407,40 @@ describe("quarantined snapshot preservation and recovery", () => {
     else expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
   });
 
-  it("interleaves an actual stale read with quarantine, admin retry and republish without returning invalid content", async () => {
+  it("interleaves an actual stale read with SQL isolation, admin retry and republish without writing or returning invalid content", async () => {
     const { id } = await corruptCompleted();
     let release!: () => void;
     let observed!: () => void;
     const suspended = new Promise<void>(resolve => { release = resolve; });
     const observation = new Promise<void>(resolve => { observed = resolve; });
+    const actions: string[] = [];
     const slowReader: ReliabilityStore = { async call(action, data) {
-      if (action === "quarantine") { observed(); await suspended; }
-      return store.call(action, data);
+      actions.push(action);
+      const result = await store.call(action, data);
+      if (action === "read_report") { observed(); await suspended; }
+      return result;
     } };
     const pendingRead = readPublishedReport(slowReader, id);
     await observation;
-    await readPublishedReport(store, id);
+    await isolate(id);
     await store.call("admin_retry", { reportId: id });
     await runPaidReportJob(store, runtime, async () => structuredClone(valid));
     const report = await rows("paid_report_snapshots");
     release();
     expect(await pendingRead).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(actions).toEqual(["read_report"]);
     expect(await rows("paid_report_snapshots")).toEqual(report);
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "COMPLETED" });
   });
 
-  it("isolates a corrupt COMPLETED JSON null without weakening the SQL NOT NULL publication check", async () => {
+  it("hides a corrupt COMPLETED JSON null without weakening the SQL NOT NULL publication check or writing", async () => {
     const id = await paid();
     await runPaidReportJob(store, runtime, async () => valid);
     await expect(db.exec("update paid_report_snapshots set snapshot_json=null")).rejects.toThrow(/check constraint/);
     await db.exec("update paid_report_snapshots set snapshot_json='null'::jsonb");
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
-    expect((await rows("report_generation_jobs"))[0].status).toBe("FAILED_REQUIRES_ATTENTION");
+    expect((await rows("report_generation_jobs"))[0].status).toBe("COMPLETED");
+    expect((await rows("paid_report_snapshots"))[0].status).toBe("COMPLETED");
   });
 
   it("fails closed when the attention write is unavailable without leaking any snapshot", async () => {
@@ -484,7 +454,7 @@ describe("quarantined snapshot preservation and recovery", () => {
 
   it("expiry hides and then clears quarantined content on the existing 90-day cleanup path", async () => {
     const { id, original, before } = await corruptCompleted();
-    await readPublishedReport(store, id);
+    await isolate(id);
     await db.exec("update paid_report_snapshots set published_at=now()-interval '2160 hours'-interval '1 second',expires_at=now()-interval '1 second'; update report_input_snapshots set expires_at=now()-interval '1 second'");
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "EXPIRED", snapshot: null });
     expect(await storedText()).toBe(before);

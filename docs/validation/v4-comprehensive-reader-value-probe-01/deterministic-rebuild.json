@@ -5,7 +5,7 @@
   "files": [
     {
       "file": "actual-graph-witness-ledger.json",
-      "sha256": "aa5dd8aa67dae1996ad2aa21130e84696d000ce0db6782e87cd7788256be64cb",
+      "sha256": "ff1fbc1cfef81e2c43a1f8255753224f554a6717d88f128971c984ede6643852",
       "bytes": 38133
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "file": "global-deterministic-validation.json",
-      "sha256": "48cd18643f895dd44a18f576bd25765224d47083a40a6dafcf53bbc2ff16fe43",
+      "sha256": "df00563205dd4db1196e549eebb8b37602a9544ac76af8d0b4b024ece7383f37",
       "bytes": 2319
     },
     {
@@ -90,12 +90,12 @@
     },
     {
       "file": "research-inventory.json",
-      "sha256": "e874e2b757c51dcfc1e83e76f8b43c8e350823f0ca08ac3a290147c69f9bdb47",
+      "sha256": "95ffb3c10f2219e32fc5e0014cac30cf9356729666124cb4696d9aabcbf950a5",
       "bytes": 114165
     },
     {
       "file": "research-source-ledger.json",
-      "sha256": "48a457043f5320cde86d2969c722fc4f9ba99df6813b69c5b15f1e808a9be3ca",
+      "sha256": "0d41d6ca19ae5fbcd1834c6b747abc505160a1b55bfa41baf53cd5c7ea15af36",
       "bytes": 550240
     },
     {
@@ -115,7 +115,7 @@
     },
     {
       "file": "sentence-claim-ledger.json",
-      "sha256": "f6330ae68997df12c74dca3317c691abe0af5670252891fe903d740f4965cc0e",
+      "sha256": "4583d24948e72752b58d873f8e4405d831efe025b612bf1ca57af3c2df1d4eab",
       "bytes": 348258
     }
   ],

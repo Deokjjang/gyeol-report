@@ -79,7 +79,7 @@ describe("canonical browser adapter, no Meta network", () => {
     const read=(p:string)=>readFileSync(`src/${p}`,"utf8");
     const shelf=read("components/book/BookShelf.tsx"),form=read("components/book/BookInput.tsx"),checkout=read("components/book/BookCheckout.tsx");
     expect(shelf).toContain('createCoverflowAuto(() => setCurrent'); expect(shelf).not.toContain('"book_viewed"');
-    expect(form).toContain('useEffect(() => { interaction("book_viewed"');expect(checkout).toContain('useEffect(() => { interaction("checkout_started"');
+    expect(form).toContain('useEffect(() => { interaction("book_viewed"');expect(checkout).toContain('onCheckoutWindow: () => interaction("checkout_started"'); /* 최종 A 20: 결제창을 열 때 */
     for(const p of ["components/book/BookCheckout.tsx","app/report/new/page.tsx","components/payment/DevTossCheckoutLauncher.tsx"])expect(read(p)).not.toContain('window.fbq');
     expect(read("components/analytics/MetaPixel.tsx")).not.toContain("fbq('track', 'PageView')");
     expect(read("lib/book/publicGate.ts")).toContain("return true");expect(read("lib/account/gate.ts")).toContain("return true");

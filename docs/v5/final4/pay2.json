@@ -1,0 +1,88 @@
+{
+ "at": "2026-11-05T13:44:24.013Z",
+ "base": "http://localhost:3800",
+ "orders": [
+  {
+   "case": "new-3900",
+   "receiptHasPrice": true,
+   "receiptLines": [
+    "3,900원",
+    "3,900원 직접 결제",
+    "[필수] 주문 내용과 환불 안내를 확인했어요",
+    "[필수] 환불정책 동의",
+    "결제하면 바로 생성이 시작돼 단순 변심 환불은 어려워요 · 예시 보기",
+    "명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요"
+   ],
+   "prepareAmount": 3900,
+   "orderCode": "GR-YAFQ",
+   "providerOrderId": "provider_order_c24a56ef-9bc7-4d6e-b0b0-6ab912933c07",
+   "after": "http://localhost:3800/payments/toss/success?paymentKey=tmock_690307e75b064958aaded4f618071456&orderId=provider_order_c24a56ef-9bc7-4d6e-b0b0-6ab912933c07&amount=3900&paymentType=NORMAL",
+   "db": "3900|paid|2026-11-05 13:44:30.095+00|report_83011bfb816c4eeebecade6136ec55ba|QUEUED",
+   "consentEvidence": {
+    "ui": {
+     "boxes": [
+      {
+       "text": "주문 내용과 환불 안내를 확인했어요",
+       "covers": [
+        "inputAccuracy",
+        "digitalReportStart",
+        "refundRestriction"
+       ]
+      },
+      {
+       "text": "환불정책 동의",
+       "covers": [
+        "termsAccepted",
+        "privacyAccepted",
+        "refundAccepted"
+       ]
+      },
+      {
+       "text": "만 14세 이상",
+       "covers": [
+        "age14OrOlder"
+       ]
+      }
+     ],
+     "version": "final4-order-refund-v1",
+     "checkedAt": "2026-11-05T13:44:26.415Z"
+    },
+    "ageBand": "adult",
+    "version": "checkout-consent-v1",
+    "acceptedAt": "2026-11-05T13:44:26.612Z",
+    "assertions": {
+     "age14OrOlder": true,
+     "inputAccuracy": true,
+     "termsAccepted": true,
+     "refundAccepted": true,
+     "privacyAccepted": true,
+     "refundRestriction": true,
+     "digitalReportStart": true,
+     "minorLegalRepresentative": false
+    },
+    "policyVersions": {
+     "terms": "2026-11-05.1",
+     "refund": "2026-11-05.1",
+     "privacy": "2026-11-05.1"
+    }
+   },
+   "afterWorker": "3900|paid|COMPLETED|v5|infinity"
+  },
+  {
+   "case": "legacy-1490",
+   "storedAmountBeforeConfirm": 1490,
+   "providerOrderId": "provider_order_1241859e-2e25-4765-b549-96bcbdbb1e28",
+   "after": "http://localhost:3800/payments/toss/success?paymentKey=tmock_dfd37454057242e887f3828209f8c3e4&orderId=provider_order_1241859e-2e25-4765-b549-96bcbdbb1e28&amount=1490&paymentType=NORMAL",
+   "db": "1490|paid|2026-11-05 13:44:36.081+00|report_ebe8fccb513047488b340bb159215524|QUEUED",
+   "afterWorker": "1490|paid|COMPLETED|v5|infinity"
+  },
+  {
+   "case": "mismatch-1490-vs-3900",
+   "providerOrderId": "provider_order_be51938e-6941-4573-bfae-a6499eb3e4af",
+   "after": "http://localhost:3800/payments/toss/success?paymentKey=tmock_7d80d84ae0fb4e02b38f6ce587f4417f&orderId=provider_order_be51938e-6941-4573-bfae-a6499eb3e4af&amount=3900&paymentType=NORMAL",
+   "db": "1490|ready|||",
+   "afterWorker": "1490|ready|-|-|-"
+  }
+ ],
+ "worker": "node tools/final/paid.mjs work(ROUNDS=4, OPS_MOCK_WRITER=ok, 호출 0) → ops: rawPurge 0, error 없음"
+}

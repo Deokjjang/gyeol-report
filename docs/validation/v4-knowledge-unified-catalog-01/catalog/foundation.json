@@ -44538,7 +44538,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "",
-      "recordSha256": "69157c1272b2d9340f4a33f5925ef9b8fca719663cae1676203a15bf752420d5",
+      "recordSha256": "d50f3535644e8ffe2951a519ca0a78fc1dc0ae12cc9d4bafdd95e9c0942fa17a",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -54224,7 +54224,7 @@
     "locator": {
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "",
-      "recordSha256": "d60fbe307a928ed48914c203826b99192e667b91cff26dfc0da1f571b1b29370",
+      "recordSha256": "d292f2efe850b8c88a1d775a94b8c0bf6625866e6cefdf3c03130c852aaab0ba",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -73659,7 +73659,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "",
-      "recordSha256": "58804e597c71672887f6527727632dd2ab14cc934ac3280e748386037e438c0b",
+      "recordSha256": "7325e3aefd5a9b2bd6c98f4e32bba7cb7aebbb7b9354456b4d050efec5769a6d",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -86928,7 +86928,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "",
-      "recordSha256": "b4942f046b8166a9d9f371a7b798a6c6f421d0b10f4463578a4bd949a0136868",
+      "recordSha256": "1612d99b3dd1a4eac1e469d939fec9ffb36f01f0157a218419a54c0cf247df46",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -124511,7 +124511,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "",
-      "recordSha256": "3999004dd8e4fa1ebb8769a44b21be928d9d7f755d02eb03adbfaf4cf22184f3",
+      "recordSha256": "0665624c3bf429bd8dd24dc85c89e236b0a5b8fdf994d1762c84c0b073775df2",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -130548,7 +130548,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "",
-      "recordSha256": "e2af75a04ede806db10395935dede7267e1389df0555123ebed98c7bb96f10d4",
+      "recordSha256": "756eff8b6c9f68fd61511fc82c5772cd26c30e549f54473852a0592653e0035b",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -193781,7 +193781,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "",
-      "recordSha256": "3a0e26f7fedbe601daa1e9314bc6830e6f90c9faa0fe02587aaca3f33de16a21",
+      "recordSha256": "1b3c48fede5e98cea0daa3899786a28f89dfedc168c0da48847049e6c2ecc255",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -266550,7 +266550,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "",
-      "recordSha256": "69e89b6fa3ae7e4eae4803f7cc8f4dff2e0cbbd75a93cd25e42883e2ff0f4675",
+      "recordSha256": "ffb4199710593db4a13894a4d008a32f322e197cc4324e8b2e57d8b4d7d1a8c6",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -269621,7 +269621,7 @@
     "locator": {
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "",
-      "recordSha256": "f811dfe42205d849d8bb4b25c9c9e9bca1a6a764390360a7a02767218ecf9565",
+      "recordSha256": "e1d186fe60673b82e365ba9337e50846c6d5e677544e9971750f11296991e233",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -278837,7 +278837,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "",
-      "recordSha256": "4bcdfdecd00321cdb5dc08a52f7d209acd1eb1df73deea377e04cbab51d8155d",
+      "recordSha256": "d4d9282175920edfa0473eb6d503fe21778e3ab0b8b92ef8249705cfcb66a454",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -301226,7 +301226,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "",
-      "recordSha256": "cbbbb92087fd1091bfdc48c8c6340fa006194185062ebdb393045b8c31c590f3",
+      "recordSha256": "f77af73637b85e4dbd135b4771d87d7147a473296d7b8cedff1cd2c1b7c415e8",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -302096,7 +302096,7 @@
     "locator": {
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "",
-      "recordSha256": "0a35053147229af9b1c1f162d5a0544a8f732c7c6497e9a98ad70526f711204a",
+      "recordSha256": "bb2253a9a7a01c91947726f0b99161c3810cd31068a092f78a74ddbe97eef077",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -312052,7 +312052,7 @@
     "locator": {
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "",
-      "recordSha256": "91e4072564e05290c0ba999dcc7f0d812a08435a50175688cb0d6c889bfdd868",
+      "recordSha256": "39c1f7dfd612e4e68fd4a7d418727cf03c281d31774a5122b96d71a06421dfa8",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -334224,7 +334224,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "",
-      "recordSha256": "b6b18cbce59634a34ffd9ad24e038f858482a22588162c0713c4d91653c05ccc",
+      "recordSha256": "c0f519db9a31d4f013b195c9ac7e520728b8a69d26a913c2861be681789eedd2",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -366822,7 +366822,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "",
-      "recordSha256": "444d3b110d0c3cf66c1efbe6250794fd6a5c53906d559a4c3c0e56b7440e905d",
+      "recordSha256": "e24bb2412af791402d019b287c5eb91abc5193381702f298f2388b7700295dd7",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {
@@ -367715,7 +367715,7 @@
     "locator": {
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "",
-      "recordSha256": "529c1196858319fa2cb3a67c6f3e26b5514f28fcdd949cd15d37970fc470d5e9",
+      "recordSha256": "05a99893738203a7a8214da020c51d7334bdad83b2f395de4e84584ee5de2c38",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
     },
     "review": {

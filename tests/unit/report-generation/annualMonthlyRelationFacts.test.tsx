@@ -10,8 +10,6 @@ import { generateAnnualFortuneProductDraft } from "../../../src/lib/report-gener
 import { buildAnnualMonthlyPublication, annualMonthlyEvidenceMatches } from "../../../src/lib/report-generation/annualMonthlyPublication";
 import { validateAnnualFortuneReportDraft } from "../../../src/lib/report-generation/annualFortuneReportDraftValidator";
 import { validateProductPublication } from "../../../src/lib/report-generation/productPublishGate";
-import { generateAnnualFortuneReportDraft } from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriter";
-import { buildOpenAIAnnualFortuneReportWriterMessages } from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriterPrompt";
 import type { SinglePersonGenerationInput } from "../../../src/lib/report-generation/reportInputAdapter";
 
 const customers = [
@@ -30,7 +28,7 @@ function inputFor(index = 0, mbti?: SinglePersonGenerationInput["person"]["mbtiT
 }
 async function generate(index = 0, mbti?: SinglePersonGenerationInput["person"]["mbtiType"], year?: string) {
   const result = await generateAnnualFortuneProductDraft(inputFor(index, mbti, year), {
-    writer: { enabled: false }, now: () => new Date("2026-09-23T00:00:00+09:00"),
+    now: () => new Date("2026-09-23T00:00:00+09:00"),
   });
   expect(result.ok).toBe(true);
   if (!result.ok) throw new Error("local annual fixture failed");
@@ -205,35 +203,22 @@ describe("legacy annual monthly publication and read regression", () => {
     }
   });
 
-  it("sends facts and fact references, with one object per fact, rather than duplicate support/friction prose", async () => {
+  it("accepts the deterministic draft but rejects hallucinated, reversed and neutral-to-collision monthly copy", async () => {
     const r = await generate();
-    const messages = buildOpenAIAnnualFortuneReportWriterMessages({ evidencePacket: r.evidencePacket });
-    const prompt = JSON.stringify(messages);
-    expect(prompt).toContain("supportFactIds"); expect(prompt).toContain("neutralObservations");
-    expect(prompt).toContain("monthlyPublication");
-    const id = r.evidencePacket.monthlyFortunes[0].relationFacts[0].id;
-    expect(prompt.split(`\\"id\\": \\"${id}\\"`).length - 1).toBe(1);
-  });
-
-  it("accepts a valid mock writer but rejects hallucinated, reversed and neutral-to-collision monthly copy", async () => {
-    const r = await generate();
-    const request = (draft: unknown, evidencePacket = r.evidencePacket) => generateAnnualFortuneReportDraft({
-      evidencePacket, config: { enabled: true, apiKey: "test-only", model: "mock-model", fetchImpl: vi.fn(async () => new Response(JSON.stringify({ output_text: JSON.stringify(draft) }), { status: 200 })) },
-    });
-    const good = await request(r.draft);
-    expect(good.draft.monthlyFlow).toEqual(r.draft.monthlyFlow);
+    const accepted = (draft: unknown, evidencePacket = r.evidencePacket) => validateAnnualFortuneReportDraft(draft, evidencePacket).ok;
+    expect(accepted(r.draft)).toBe(true);
     const invented = { ...r.draft, monthlyFlow: r.draft.monthlyFlow.map((m, i) => i ? m : { ...m, natalInteractionSummary: "없는 子午 충이 강하게 작용합니다." }) };
-    await expect(request(invented)).rejects.toMatchObject({ code: "OPENAI_ANNUAL_FORTUNE_REPORT_WRITER_VALIDATION_FAILED" });
+    expect(accepted(invented)).toBe(false);
     const reverse = { ...r.draft, monthlyFlow: r.draft.monthlyFlow.map((m, i) => i ? m : { ...m, body: "마찰 작용은 전부 도움이며, 연결 작용은 강한 충돌입니다." }) };
-    await expect(request(reverse)).rejects.toMatchObject({ code: "OPENAI_ANNUAL_FORTUNE_REPORT_WRITER_VALIDATION_FAILED" });
+    expect(accepted(reverse)).toBe(false);
     // Diagnostic neutral fixture: no uncalculated branch/element relation is supplied.
     const baseSaju = { ...r.evidencePacket.baseSaju, pillars: { year: "乙巳", month: "丁巳", day: "丁巳" }, natalLabels: [] };
     const packet = { ...r.evidencePacket, baseSaju, monthlyFortunes: buildAnnualMonthlyFortunes({ targetYear: 2026, dayMaster: "丁", missingElements: [], heavyElements: [], natalBranches: ["巳", "巳", "巳"] }) };
     const neutralDraft = { ...r.draft, ...buildAnnualMonthlyPublication(packet) };
     expect(validateAnnualFortuneReportDraft(neutralDraft, packet).ok).toBe(true);
     const neutralCollision = { ...neutralDraft, monthlyFlow: neutralDraft.monthlyFlow.map((m, i) => i !== 10 ? m : { ...m, advice: "강한 충돌이 확실히 발생합니다." }) };
-    await expect(request(neutralCollision, packet)).rejects.toMatchObject({ code: "OPENAI_ANNUAL_FORTUNE_REPORT_WRITER_VALIDATION_FAILED" });
-    await expect(request({ ...r.draft, targetYear: 2025 })).rejects.toMatchObject({ code: "OPENAI_ANNUAL_FORTUNE_REPORT_WRITER_VALIDATION_FAILED" });
+    expect(accepted(neutralCollision, packet)).toBe(false);
+    expect(accepted({ ...r.draft, targetYear: 2025 })).toBe(false);
     expect(vi.mocked(fetch)).not.toHaveBeenCalled();
   });
 });

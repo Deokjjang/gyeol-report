@@ -1,0 +1,336 @@
+{
+ "dir": "docs/v5/trial/p6c/final",
+ "books": [
+  {
+   "id": "c1-full",
+   "chars": 15325,
+   "units": 402,
+   "sentences": 366,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 0,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "c1-career",
+   "chars": 10297,
+   "units": 259,
+   "sentences": 232,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 1,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "9: 하람님은 앞에서 본 것처럼 구상과 실행에서 가장 강하고, 운영과 협상에서는 한 겹 더 신경 쓰는 사람입니다."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "y-love",
+   "chars": 10059,
+   "units": 251,
+   "sentences": 224,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 1,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "9: 오래 좋은 관계를 위해 앞에서 본 것 중 하나만 고르면 서운함은 쌓기 전에 말하기예요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "pair-love",
+   "chars": 9333,
+   "units": 243,
+   "sentences": 216,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 0,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "x-major",
+   "chars": 12281,
+   "units": 277,
+   "sentences": 268,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 2,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "5: 앞에서 본 정축(丁丑)일주의 마음 자리에 새 기운이 손을 내미는 구조라, 마음이 먼저 움직이는 해가 될 수 있어요.",
+     "5: 앞에서 본 식신(食神)의 자리에 들어오는 합이라, 꾸준히 만드는 솜씨가 새 대운의 규칙과 만나요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "c2-annual",
+   "chars": 9634,
+   "units": 234,
+   "sentences": 223,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 2,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "4: 앞에서 본 경진일주의 결이 건드려진 거예요.",
+     "4: 앞에서 본 정재의 자리입니다."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  },
+  {
+   "id": "me-full",
+   "chars": 12646,
+   "units": 352,
+   "sentences": 316,
+   "dbCopy": 0,
+   "dbCopyWide": 0,
+   "formula": 0,
+   "fullFormula": 0,
+   "myeongriPrefix": 0,
+   "backref": 1,
+   "nickname": 0,
+   "school": 0,
+   "pastOrPresume": 0,
+   "extra": {
+    "farming": 0,
+    "bareMbtiCode": 0,
+    "yinYang": 0,
+    "elementAbsent": 0,
+    "dayunPhase": 0,
+    "secondImage": 0,
+    "presume": 0,
+    "past": 0
+   },
+   "samples": {
+    "dbCopy": [],
+    "formula": [],
+    "prefix": [],
+    "backref": [
+     "13: 앞에서 본 힘을 한 줄로 모으면 이래요."
+    ],
+    "nickname": [],
+    "school": [],
+    "past": [],
+    "presume": [],
+    "bareFn": [],
+    "yinYang": [],
+    "element": [],
+    "dayun": [],
+    "second": [],
+    "farming": []
+   }
+  }
+ ],
+ "cross": [
+  {
+   "a": "c1-full",
+   "b": "c1-career",
+   "overlap": 1,
+   "of": 232,
+   "samples": [
+    "1: 공적인 자리일수록 평소보다 크게 힘을 내요. ⇐ 공적인 자리일수록 평소보다 크게 힘을 내요."
+   ]
+  },
+  {
+   "a": "c1-full",
+   "b": "pair-love",
+   "overlap": 0,
+   "of": 216,
+   "samples": []
+  },
+  {
+   "a": "c1-career",
+   "b": "pair-love",
+   "overlap": 0,
+   "of": 216,
+   "samples": []
+  },
+  {
+   "a": "pair-love",
+   "b": "c2-annual",
+   "overlap": 0,
+   "of": 223,
+   "samples": []
+  }
+ ]
+}

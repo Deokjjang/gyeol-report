@@ -47,7 +47,7 @@
     },
     {
       "file": "docs/validation/v4-official-approval-contract-01/deterministic-rebuild.json",
-      "sha256": "179a78c30bf8a4591b81ff7cfe9b56d4b6c0ecb00f746d1a02498fd4e7115064"
+      "sha256": "0c5c319458a15b847ce7e633648a8612a1eb3a0725f0af8ffb83034ce729aae0"
     },
     {
       "file": "docs/validation/v4-official-approval-contract-01/evidence-scope-binding.json",
@@ -63,7 +63,7 @@
     },
     {
       "file": "docs/validation/v4-official-approval-contract-01/independent-rebuild-validation.json",
-      "sha256": "db35b0e7790d5b601db23b12fea2d50cd25c5278b43fb0b159cf62a6b1bd7567"
+      "sha256": "c3d1fb022e931d5a64858189eb58cd2d3701ba8bf5ce4d0d71cd62bda27183cd"
     },
     {
       "file": "docs/validation/v4-official-approval-contract-01/known-failure-comparison.json",
@@ -91,7 +91,7 @@
     },
     {
       "file": "docs/validation/v4-official-approval-contract-01/review-draft-boundary.json",
-      "sha256": "bd20081fbad311cfa46774dc211622ecb90eb57d71a7dca808bd608af4928208"
+      "sha256": "8b5c742b1062d9f3b708c22c39a920fc16f21a39e3dddda4d626a107e14da07c"
     },
     {
       "file": "docs/validation/v4-official-approval-contract-01/revocation-tests.json",

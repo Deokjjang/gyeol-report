@@ -1,0 +1,32 @@
+/* 최종 A 14: 메인·상품 화면 팝업. 사이트 책 화면과 같은 산세리프(Geist + 시스템 한글 고딕), 얇은 선, 여백 위주. 새 웹폰트 없음. */
+.dialog { width: min(460px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); margin: auto; padding: 0; border: 1px solid #161616; border-radius: 0; background: #fff; color: #161616; overflow-y: auto; box-sizing: border-box;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+.dialog::backdrop { background: rgb(0 0 0 / 32%); }
+.dialog *, .dialog *::before, .dialog *::after { box-sizing: border-box; }
+.dialog .card { position: relative; padding: 40px 36px 20px; }
+.dialog .close { position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; display: grid; place-items: center; border: 0; background: none; color: #161616; font: inherit; font-size: 24px; font-weight: 300; line-height: 1; cursor: pointer; padding: 0; }
+.dialog .eyebrow { margin: 0 0 22px; font-size: 12px; letter-spacing: .02em; font-weight: 600; color: #161616; }
+.dialog .title { margin: 0; font-family: inherit; font-size: 26px; line-height: 1.4; letter-spacing: -.05em; font-weight: 700; word-break: keep-all; overflow-wrap: anywhere; }
+.dialog .body { margin: 18px 0 0; color: #4a4a4a; font-size: 14px; line-height: 1.8; word-break: keep-all; overflow-wrap: anywhere; }
+.dialog .timer { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 26px 0 0; padding: 16px 0; border-block: 1px solid #dedede; }
+.dialog .timer span { font-size: 12px; color: #555; letter-spacing: .02em; }
+.dialog .timer b { font-size: 24px; font-weight: 600; letter-spacing: .01em; font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; white-space: nowrap; }
+.dialog .ticket { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 26px 0 0; padding: 16px 0; border-block: 1px solid #dedede; }
+.dialog .ticket b { font-size: 17px; font-weight: 650; letter-spacing: -.02em; }
+.dialog .ticket span { font-size: 13px; color: #555; }
+.dialog .small { margin: 12px 0 0; font-size: 12px; line-height: 1.7; color: #666; word-break: keep-all; }
+.dialog .actions { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; margin-top: 28px; }
+.dialog .primary, .dialog .secondary { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px; font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid #161616; border-radius: 0; }
+.dialog .primary { background: #161616; color: #fff; }
+.dialog .secondary { background: #fff; color: #161616; }
+.dialog .today { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; padding: 0; border: 0; background: none; color: #666; font: inherit; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.dialog:focus { outline: none; }
+.dialog :focus-visible { outline: 2px solid #737373; outline-offset: 3px; }
+/* 모바일: 위쪽에 붙여 아래 쪽 넘김·결제 버튼 줄(약 96px)을 가리지 않는다. */
+@media (max-width: 600px) {
+  .dialog { margin: 16px auto auto; max-height: calc(100dvh - 112px); }
+  .dialog .card { padding: 36px 24px 12px; }
+  .dialog .title { font-size: 22px; }
+  .dialog .timer b { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) { .dialog, .dialog * { animation: none; transition: none; } }

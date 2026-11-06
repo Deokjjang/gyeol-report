@@ -1,0 +1,284 @@
+{
+ "case": "y-love",
+ "label": "연애 · 도현(Y)",
+ "reportId": "report_191c7392d56145b4aaa2cf193a1359da",
+ "status": "COMPLETED",
+ "wallMs": 74075,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 8705,
+ "chapterChars": [
+  1169,
+  970,
+  1024,
+  912,
+  1051,
+  973,
+  988,
+  1070,
+  548
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 2,
+ "byRule": {
+  "rural_prop": 2
+ },
+ "replacements": 0,
+ "warnings": 29,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 5,
+ "infoByKind": {
+  "claim": 5,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "그래서 당신에게는 좋아하는 사람이 생기면 사람마다 다른 필요를 알아채고 맞춰 주는 손이 나옵니다.",
+   "b": "사람마다 다른 필요를 알아채고 맞춰 주는 손이 있어서, 좋아하는 사람 앞에서는 그 손이 유난히 바빠지기 때문이에요.",
+   "at": [
+    "1.1",
+    "2.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "정관은 명리학에서 질서와 규칙을 지키며 신뢰를 쌓는 힘, 정해진 길과 책임을 뜻해요.",
+   "b": "그중 정관은 질서와 규칙을 지키며 신뢰를 쌓는 힘, 정해진 길과 책임, 명예를 뜻해요.",
+   "at": [
+    "1.2",
+    "8.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "당신은 묘신 원진이 태어난 해와 날 사이에 있어서, 가까울수록 작은 일에 신경이 쓰이는 감각이 있어요.",
+   "b": "다만 이 자리는 태어난 해와 원진으로 엮여 있어서 가까울수록 작은 일에 신경이 쓰여요.",
+   "at": [
+    "3.1",
+    "7.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "당신은 이 기운이 태어난 날 자리에 있어서, 함께 사는 생활의 작은 습관이 관계를 좌우해요.",
+   "b": "일지의 육해살은 함께 사는 생활의 작은 습관이 관계를 좌우한다는 뜻이에요.",
+   "at": [
+    "6.1",
+    "7.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "작은 어긋남은 작을 때 말하면 다툼이 크게 줄어듭니다.",
+   "b": "불편을 작을 때 말하면 다툼이 크게 줄어듭니다.",
+   "at": [
+    "6.1",
+    "7.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.171,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 74006,
+ "tokens": {
+  "input": 16452,
+  "output": 9874,
+  "cachedInput": 4057
+ },
+ "costUsd": 0.1320497,
+ "costKrw": 191.5,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 67156,
+   "chars": 9141,
+   "maxTokens": 24167,
+   "usage": {
+    "inputTokens": 16452,
+    "outputTokens": 9874,
+    "cachedInputTokens": 4057
+   },
+   "costUsd": 0.1320497
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-15",
+ "knowledgeVersion": "knowledge-v5:291b1115d654",
+ "p6b": {
+  "chars": 8750,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 7,
+   "rate": 0.78,
+   "terms": 9,
+   "misses": [
+    "편관",
+    "정인"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 26,
+  "sectionsTotal": 26,
+  "byRule": {
+   "rural_prop": 2
+  },
+  "coreImage": "나무뿌리가 촘촘히 박힌 숲속 흙",
+  "edition": "제5판"
+ }
+}

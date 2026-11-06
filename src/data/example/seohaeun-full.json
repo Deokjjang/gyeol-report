@@ -1,0 +1,786 @@
+{
+ "source": {
+  "productType": "saju_mbti_full",
+  "chapters": 2,
+  "of": 13,
+  "note": "가상의 인물 서하은 종합 책(v5 저장본) 앞 2장. 문장은 저장본 그대로."
+ },
+ "today": "2026-11-05",
+ "edition": "제6판 · 2026년 11월 5일 기준",
+ "data": {
+  "bookId": "full",
+  "title": "나라는 사람",
+  "names": "서하은",
+  "people": [
+   {
+    "mbti": "INFJ",
+    "name": "서하은",
+    "role": "주인공",
+    "time": "13:05",
+    "birth": "2004-12-23",
+    "table": {
+     "mbti": {
+      "type": "INFJ",
+      "oneLine": "사람과 세상의 흐름을 깊이 읽고 의미 있는 방향으로 이끌려는 조용한 비전가",
+      "titleKo": "속을 읽는 상담가",
+      "archetype": "사람의 속을 먼저 읽는 조용한 안내자",
+      "coreSummary": [
+       {
+        "key": "identity",
+        "text": "INFJ는 조용하지만 사람과 사회의 흐름을 깊게 읽고, 자기 안의 비전과 신념을 오래 붙들고 가는 유형이다. 겉으로는 온화하고 신중하지만 내면에는 강한 기준과 방향성이 있다.",
+        "label": "정체성"
+       },
+       {
+        "key": "strength",
+        "text": "복잡한 감정과 상황의 패턴을 읽고, 사람의 성장과 회복을 돕는 데 강하다. 상담, 교육, 예술, 연구, 사회적 가치가 있는 일에서 통찰과 헌신을 결합할 수 있다.",
+        "label": "강점"
+       },
+       {
+        "key": "risk",
+        "text": "타인의 감정을 지나치게 흡수하면 공감 번아웃이 오고, 자신의 직관을 절대화하면 사람을 조용히 판단하거나 통제하려는 쪽으로 흐를 수 있다.",
+        "label": "주의점"
+       },
+       {
+        "key": "growthStrategy",
+        "text": "직관을 검증하는 습관, 감정 경계선, 갈등을 피하지 않는 대화, 세부 실행 계획이 핵심 성장축이다. 깊이를 잃지 않되 현실의 작은 단계로 내려와야 한다.",
+        "label": "성장 전략"
+       }
+      ],
+      "farKeywords": [
+       "게으름",
+       "기계적 공정성",
+       "과시적 태도",
+       "근시안",
+       "나태함",
+       "넓고 얕은 교류",
+       "단순함",
+       "도박",
+       "과한 붙임성",
+       "사실주의",
+       "스몰토크",
+       "신속함",
+       "유행 추종",
+       "익스트림 스포츠",
+       "자기애",
+       "자본주의적 계산",
+       "직설적 공격",
+       "쾌락주의",
+       "폭력",
+       "현실주의",
+       "현재지향성",
+       "과도한 활동성"
+      ],
+      "functionRows": [
+       {
+        "code": "Ni",
+        "label": "주 기능",
+        "domain": "직관",
+        "nameKo": "내향 직관",
+        "attitude": "내향",
+        "position": "dominant",
+        "description": "패턴의 핵심을 압축해 장기 방향과 의미를 읽는다.",
+        "reportUsageNote": ""
+       },
+       {
+        "code": "Fe",
+        "label": "부 기능",
+        "domain": "감정",
+        "nameKo": "외향 감정",
+        "attitude": "외향",
+        "position": "auxiliary",
+        "description": "관계 분위기와 집단 정서를 읽고 조율한다.",
+        "reportUsageNote": ""
+       },
+       {
+        "code": "Ti",
+        "label": "3차 기능",
+        "domain": "사고",
+        "nameKo": "내향 사고",
+        "attitude": "내향",
+        "position": "tertiary",
+        "description": "원리와 논리의 정합성을 내부 기준으로 검증한다.",
+        "reportUsageNote": ""
+       },
+       {
+        "code": "Se",
+        "label": "열등 기능",
+        "domain": "감각",
+        "nameKo": "외향 감각",
+        "attitude": "외향",
+        "position": "inferior",
+        "description": "현재의 감각 정보와 현실적 기회를 즉각적으로 다룬다.",
+        "reportUsageNote": ""
+       }
+      ],
+      "closeKeywords": [
+       "감성적",
+       "개방적",
+       "개성적",
+       "거시적 안목",
+       "장기적 안목",
+       "깊은 공감",
+       "공화주의",
+       "과정 지향",
+       "메타인지",
+       "느긋함",
+       "보편적 복지",
+       "사회자유주의",
+       "상상력",
+       "신비주의",
+       "토론",
+       "예측",
+       "우회적 표현",
+       "이상주의",
+       "인내심",
+       "평등 지향",
+       "정열적인 신념",
+       "조화",
+       "종교적 감수성",
+       "진보성",
+       "창의성",
+       "선악 감각",
+       "추상적 사고",
+       "PC 감수성"
+      ],
+      "preferenceRows": [
+       {
+        "left": {
+         "code": "E",
+         "nameEn": "Extravert",
+         "nameKo": "외향",
+         "selected": false,
+         "description": "외부 자극과 표현을 통해 에너지가 활성화된다."
+        },
+        "label": "에너지 방향",
+        "right": {
+         "code": "I",
+         "nameEn": "Introvert",
+         "nameKo": "내향",
+         "selected": true,
+         "description": "내면의 생각과 정리를 통해 에너지가 회복된다."
+        },
+        "axisKey": "energy",
+        "selectedCode": "I"
+       },
+       {
+        "left": {
+         "code": "S",
+         "nameEn": "Sensing",
+         "nameKo": "감각",
+         "selected": false,
+         "description": "현실, 경험, 실용 정보에 먼저 주의를 둔다."
+        },
+        "label": "인식 방식",
+        "right": {
+         "code": "N",
+         "nameEn": "iNtuition",
+         "nameKo": "직관",
+         "selected": true,
+         "description": "가능성, 의미, 패턴과 예측에 먼저 주의를 둔다."
+        },
+        "axisKey": "perception",
+        "selectedCode": "N"
+       },
+       {
+        "left": {
+         "code": "T",
+         "nameEn": "Thinking",
+         "nameKo": "사고",
+         "selected": false,
+         "description": "논리, 사실, 원칙을 기준으로 판단한다."
+        },
+        "label": "판단 방식",
+        "right": {
+         "code": "F",
+         "nameEn": "Feeling",
+         "nameKo": "감정",
+         "selected": true,
+         "description": "관계, 가치, 사람에게 미치는 영향을 기준으로 판단한다."
+        },
+        "axisKey": "judgment",
+        "selectedCode": "F"
+       },
+       {
+        "left": {
+         "code": "J",
+         "nameEn": "Judging",
+         "nameKo": "판단",
+         "selected": true,
+         "description": "목표, 계획, 절차를 정리해 안정감을 만든다."
+        },
+        "label": "생활 양식",
+        "right": {
+         "code": "P",
+         "nameEn": "Perceiving",
+         "nameKo": "인식",
+         "selected": false,
+         "description": "자율성, 변화, 유동적인 선택지를 열어 둔다."
+        },
+        "axisKey": "lifestyle",
+        "selectedCode": "J"
+       }
+      ],
+      "reportUsageNotes": []
+     },
+     "name": "서하은",
+     "manse": {
+      "title": "서하은님의 만세력",
+      "columns": [
+       {
+        "key": "hour",
+        "label": "시주"
+       },
+       {
+        "key": "day",
+        "label": "일주"
+       },
+       {
+        "key": "month",
+        "label": "월주"
+       },
+       {
+        "key": "year",
+        "label": "연주"
+       }
+      ],
+      "stemRow": {
+       "day": {
+        "ko": "병",
+        "hanja": "丙",
+        "tenGod": "비견",
+        "element": "fire",
+        "yinYang": "yang",
+        "colorToken": "fire-red"
+       },
+       "hour": {
+        "ko": "갑",
+        "hanja": "甲",
+        "tenGod": "편인",
+        "element": "wood",
+        "yinYang": "yang",
+        "colorToken": "wood-green"
+       },
+       "year": {
+        "ko": "갑",
+        "hanja": "甲",
+        "tenGod": "편인",
+        "element": "wood",
+        "yinYang": "yang",
+        "colorToken": "wood-green"
+       },
+       "month": {
+        "ko": "병",
+        "hanja": "丙",
+        "tenGod": "비견",
+        "element": "fire",
+        "yinYang": "yang",
+        "colorToken": "fire-red"
+       }
+      },
+      "branchRow": {
+       "day": {
+        "ko": "자",
+        "hanja": "子",
+        "tenGod": "정관",
+        "element": "water",
+        "yinYang": "yang",
+        "colorToken": "water-sky"
+       },
+       "hour": {
+        "ko": "오",
+        "hanja": "午",
+        "tenGod": "겁재",
+        "element": "fire",
+        "yinYang": "yang",
+        "colorToken": "fire-red"
+       },
+       "year": {
+        "ko": "신",
+        "hanja": "申",
+        "tenGod": "편재",
+        "element": "metal",
+        "yinYang": "yang",
+        "colorToken": "metal-gold"
+       },
+       "month": {
+        "ko": "자",
+        "hanja": "子",
+        "tenGod": "정관",
+        "element": "water",
+        "yinYang": "yang",
+        "colorToken": "water-sky"
+       }
+      },
+      "detailRows": [
+       {
+        "key": "hiddenStems",
+        "cells": {
+         "day": [
+          "癸 정관"
+         ],
+         "hour": [
+          "丁 겁재",
+          "己 상관"
+         ],
+         "year": [
+          "庚 편재",
+          "壬 편관",
+          "戊 식신"
+         ],
+         "month": [
+          "癸 정관"
+         ]
+        },
+        "label": "지장간"
+       },
+       {
+        "key": "twelveLifeStage",
+        "cells": {
+         "day": [
+          "태"
+         ],
+         "hour": [
+          "제왕"
+         ],
+         "year": [
+          "병"
+         ],
+         "month": [
+          "태"
+         ]
+        },
+        "label": "십이운성"
+       },
+       {
+        "key": "twelveSinsal",
+        "cells": {
+         "day": [
+          "장성살"
+         ],
+         "hour": [
+          "재살"
+         ],
+         "year": [
+          "지살"
+         ],
+         "month": [
+          "장성살"
+         ]
+        },
+        "label": "십이신살 · 연지 기준"
+       },
+       {
+        "key": "sinsalAndGwiin",
+        "cells": {
+         "day": [
+          "음착양차살",
+          "복성귀인"
+         ],
+         "hour": [
+          "현침살",
+          "양인살"
+         ],
+         "year": [
+          "현침살",
+          "공망",
+          "문창귀인",
+          "암록"
+         ],
+         "month": [
+          "복성귀인"
+         ]
+        },
+        "label": "신살/귀인"
+       },
+       {
+        "key": "interactions",
+        "cells": {
+         "day": [
+          "申子 반합 · 연지",
+          "子午 충 · 시지"
+         ],
+         "hour": [
+          "子午 충 · 월지·일지"
+         ],
+         "year": [
+          "申子 반합 · 월지·일지"
+         ],
+         "month": [
+          "申子 반합 · 연지",
+          "子午 충 · 시지"
+         ]
+        },
+        "label": "합·충·형·파·해"
+       }
+      ],
+      "timeCorrectionNote": "태양시 기준 · 30분 보정 (13:05 → 12:35)",
+      "fiveElementDistribution": {
+       "items": [
+        {
+         "count": 2,
+         "label": "목",
+         "element": "wood",
+         "colorToken": "wood-green"
+        },
+        {
+         "count": 3,
+         "label": "화",
+         "element": "fire",
+         "colorToken": "fire-red"
+        },
+        {
+         "count": 0,
+         "label": "토",
+         "element": "earth",
+         "colorToken": "earth-soil"
+        },
+        {
+         "count": 1,
+         "label": "금",
+         "element": "metal",
+         "colorToken": "metal-gold"
+        },
+        {
+         "count": 2,
+         "label": "수",
+         "element": "water",
+         "colorToken": "water-sky"
+        }
+       ],
+       "basisLabel": "천간·지지 8글자 기준"
+      }
+     },
+     "elements": [
+      {
+       "label": "목",
+       "state": "균형",
+       "visible": 2,
+       "weighted": 2
+      },
+      {
+       "label": "화",
+       "state": "강함",
+       "visible": 3,
+       "weighted": 3.6
+      },
+      {
+       "label": "토",
+       "state": "약함",
+       "visible": 0,
+       "weighted": 0.4
+      },
+      {
+       "label": "금",
+       "state": "균형",
+       "visible": 1,
+       "weighted": 1.6
+      },
+      {
+       "label": "수",
+       "state": "강함",
+       "visible": 2,
+       "weighted": 3.5
+      }
+     ]
+    },
+    "gender": "FEMALE",
+    "precision": "exact",
+    "timeLabel": "정확 · 13:05"
+   }
+  ],
+  "context": [
+   {
+    "label": "현재 직업",
+    "value": "동네 꽃집 운영"
+   },
+   {
+    "label": "현재 관계",
+    "value": "솔로"
+   }
+  ],
+  "pages": [
+   {
+    "kind": "cover",
+    "title": "나라는 사람",
+    "names": "서하은",
+    "headline": "겨울 밤 물 위에 오래 떠 있는 따뜻한 해",
+    "id": "cover",
+    "anchors": [
+     "cover"
+    ]
+   },
+   {
+    "kind": "contents",
+    "id": "contents",
+    "title": "이 책에서 만나게 될 이야기",
+    "entries": [
+     {
+      "title": "이 책의 주인공",
+      "targetId": "input",
+      "page": 2
+     },
+     {
+      "title": "서하은의 만세력",
+      "targetId": "manse-0",
+      "page": 3
+     },
+     {
+      "title": "서하은의 MBTI",
+      "targetId": "mbti-0",
+      "page": 4
+     },
+     {
+      "title": "나를 한 줄로",
+      "targetId": "core",
+      "page": 5
+     },
+     {
+      "title": "성격: 겉과 속",
+      "targetId": "chapter-portrait",
+      "page": 6
+     }
+    ]
+   },
+   {
+    "kind": "input",
+    "title": "이 책의 주인공",
+    "id": "input",
+    "anchors": [
+     "input"
+    ]
+   },
+   {
+    "kind": "manse",
+    "title": "서하은의 만세력",
+    "person": 0,
+    "id": "manse-0",
+    "anchors": [
+     "manse-0"
+    ]
+   },
+   {
+    "kind": "mbti",
+    "title": "서하은의 MBTI",
+    "person": 0,
+    "id": "mbti-0",
+    "anchors": [
+     "mbti-0"
+    ]
+   },
+   {
+    "kind": "narrative",
+    "id": "core",
+    "title": "나를 한 줄로",
+    "paragraphs": [
+     {
+      "text": "서하은님의 태어난 날은 병자일이에요. 병화는 하늘 높이 떠서 넓게 비추는 태양 같은 기운이고, 그 아래 땅 글자인 자수가 차가운 물을 깔고 있습니다. 태어난 계절도 겨울이라, 밝은 빛이 차가운 물 위에 놓인 모양이에요. 당신은 환하게 웃으면서도 속에는 차분한 물을 품고 있는 사람입니다.",
+      "notes": [],
+      "heading": "겨울 밤 물 위에 오래 떠 있는 따뜻한 해"
+     },
+     {
+      "text": "이 땅 글자의 물은 정관이라고 부르는 기운으로, 질서와 신뢰를 지키려는 마음을 뜻해요. 그래서 밝지만 가볍지 않고, 웃으면서도 선을 지킵니다. 혼자 먹는 점심 메뉴를 고를 때도 기분보다 늘 먹던 곳의 믿음직함을 먼저 따지지 않나요? 그런 안정감이 당신 속에 깔려 있어요.",
+      "notes": []
+     },
+     {
+      "text": "다만 속의 물이 깊다 보니, 왜 이런 기분이 드는지를 혼자 오래 생각하는 시간이 자주 생깁니다. 겉의 환함 때문에 주변은 모르지만, 그 시간이 당신을 단단하게 만드는 쪽이에요.",
+      "notes": []
+     },
+     {
+      "text": "병화가 겨울에 태어나면 물이 많아 해가 눌리기 쉬워서, 나무 기운과 큰 물이 함께 있어야 빛이 멀리 가요. 당신의 여덟 글자에는 불과 나무, 물이 함께 있고 땅 기운은 하나도 없어서, 속에서는 늘 물과 불이 서로 맞서고 있습니다. 그래서 책임이 주어질 때 오히려 환해지는 힘이 있어요.",
+      "notes": [],
+      "heading": "추운 계절의 태양은 따뜻함의 값이 달라요"
+     },
+     {
+      "text": "내 힘의 세기는 신강이에요. 나를 받쳐 주는 힘이 커서 맡은 일을 밀고 나가는 쪽에서 힘이 잘 쓰입니다. 여기에 규칙의 힘(관성)이 강해서, 밀고 나가되 늘 선 안에서 움직여요. 한가한 날보다 맡을 일이 분명한 날에 얼굴이 더 밝아지는 이유입니다.",
+      "notes": []
+     },
+     {
+      "text": "기댈 사람이나 배울 거리가 하나만 있어도 당신은 오래 버텨요. 반대로 차가운 반응을 만나면 남보다 크게 식는 편이라, 상대의 무뚝뚝함을 평가로 받아들이지 않도록 \"저 사람 오늘 기분이 그런가 보다\" 하고 한 번 넘겨 보세요.",
+      "notes": [],
+      "keySpan": [
+       0,
+       34
+      ]
+     },
+     {
+      "text": "MBTI는 INFJ, 속을 읽는 상담가예요. 말은 적어도 사람 속을 먼저 읽고, 그 사람이 갈 방향까지 내다봅니다. 앞날 내다보는 감(Ni)이 주기능이라 근거를 말하기 전에 결론이 감으로 먼저 와요. 병자일의 속 깊은 물과 닮은 데가 많습니다.",
+      "notes": [],
+      "heading": "속을 읽는 상담가가 얹는 한 겹"
+     },
+     {
+      "text": "여기에 주변 마음 살피기(Fe)가 붙어 있어서, 남의 감정이 자기 일처럼 느껴집니다. 정관의 책임감과 만나면 \"내가 챙겨야지\" 하는 마음이 두 겹이 되어요. 모두를 살피다 보면 자기 몫은 늘 뒤로 밀리고, 그러다 어느 날 갑자기 바닥이 나기도 합니다.",
+      "notes": []
+     },
+     {
+      "text": "그래서 당신에게 필요한 첫걸음은 작아요. 누군가의 기분이 신경 쓰일 때 혼자 짐작하지 말고 \"지금 괜찮아?\" 하고 먼저 물어보세요. 감으로 읽은 답을 확인받으면 속으로 쌓는 시간이 줄고, 물어본 한마디가 혼자 쓰는 에너지를 크게 아껴 줍니다.",
+      "notes": [],
+      "keySpan": [
+       105,
+       135
+      ]
+     }
+    ],
+    "notes": [],
+    "anchors": [
+     "core"
+    ]
+   },
+   {
+    "kind": "narrative",
+    "id": "chapter-portrait",
+    "title": "성격: 겉과 속",
+    "paragraphs": [
+     {
+      "text": "처음 만난 사람들 틈에서 당신은 말을 많이 하기보다 분위기부터 읽습니다. 비 오는 날 물가 카페에 앉은 것처럼 마음이 차분히 가라앉는 쪽이에요. 사주에서 물 기운이 센 편이라, 생각이 깊고 감정을 속에 오래 담아 두는 사람입니다. 첫 자리의 당신은 조용한 게 아니라 깊이 듣는 중이에요.",
+      "notes": [],
+      "heading": "처음 만난 자리에서는 조용히 가라앉아 있는 사람",
+      "keySpan": [
+       129,
+       160
+      ]
+     },
+     {
+      "text": "이 물 기운은 사람 속을 읽는 INFJ의 감과 맞물려요. 상대가 한 말보다 말하지 않은 표정이 먼저 눈에 들어오고, 그래서 첫인상은 차분하지만 상대는 이상하게 편하다고 느낍니다. 물이 모양을 가리지 않고 스며드는 것처럼 상대 결에 맞춰 앉아 있기 때문이에요.",
+      "notes": []
+     },
+     {
+      "text": "다만 이 조용함이 오래 가면 상대는 \"나한테 관심이 없나?\" 하고 오해할 수 있어요. 헤어질 때 \"오늘 얘기 재미있었어요\" 한마디만 붙여도 읽은 마음이 상대에게 닿습니다.",
+      "notes": []
+     },
+     {
+      "text": "아는 사이가 깊어지면 숨어 있던 얼굴이 나옵니다. 장성살이 태어난 달과 날 두 군데에 있는데, 중심에 서서 방향을 정하고 책임지는 힘이에요. 한번 방향을 정하면 사람들이 자연스레 그 주위로 모이고, 그 자리에서 책임을 맡을 때 오히려 마음이 가장 놓입니다.",
+      "notes": [],
+      "heading": "가까워지면 드러나는 앞장서는 얼굴"
+     },
+     {
+      "text": "그런데 이 힘은 중심이 두 군데라서 여러 모임에서 동시에 앞장서기 쉬워요. 속 얘기를 나누는 몇 안 되는 친구 앞에서는 \"내가 정리할게\" 하고 나서다가도, 약속이 이어지면 INFJ의 기운이 먼저 바닥을 보입니다. 앞에 서는 힘이 있어도 사람들 속에서 쓴 기운은 쉽게 닳아서, 약속이 이어진 뒤에는 혼자 있는 시간으로 속을 채워야 합니다.",
+      "notes": []
+     },
+     {
+      "text": "앞에 서는 마음과 쉬고 싶은 마음이 둘 다 진짜입니다. 그러니 이끄는 자리는 믿는 사람 두셋 앞에서만 펴 보세요. 힘을 쓰는 자리를 줄이면 오히려 오래 갑니다.",
+      "notes": [],
+      "keySpan": [
+       0,
+       30
+      ]
+     },
+     {
+      "text": "혼자 빨래를 개다가 문득 어젯밤 꿈속 사람이 떠올라 손이 멈춘 적 있지 않나요? 태어난 해와 시각에 있는 편인은 비주류 탐구와 직관, 혼자 익히는 힘이에요. 남이 못 보는 각도를 보고, 한 분야를 파고들면 깊이가 남다릅니다.",
+      "notes": [],
+      "heading": "혼자 있을 때는 사람 꿈을 되감는 사람"
+     },
+     {
+      "text": "INFJ도 되감아서 의미를 길어 올리는 유형이라 둘이 같은 방향으로 가요. 도서관 폐관 무렵까지 꿈 해석 책을 뒤적이는 것 같은 시간이 당신에게는 쉼이면서 연구예요. 남이 못 보는 뜻을 찾아내는 힘이 여기서 자랍니다.",
+      "notes": []
+     },
+     {
+      "text": "다만 혼자가 편해지면 연락이 뜸해져서 가까운 사람은 침묵을 거절로 읽을 수 있어요. 쉬는 시간의 규칙을 하나 정해 보세요. 하루에 한 시간은 알림을 끄되 끝나면 한 사람에게 안부를 보내는 식으로요. 쉬는 시간이 있어야 다음 사람에게 웃을 힘이 생깁니다.",
+      "notes": [],
+      "keySpan": [
+       111,
+       141
+      ]
+     }
+    ],
+    "notes": [],
+    "anchors": [
+     "chapter-portrait"
+    ]
+   },
+   {
+    "kind": "contents",
+    "id": "read-again",
+    "title": "다시 펼쳐보기",
+    "entries": [
+     {
+      "title": "처음으로",
+      "targetId": "cover",
+      "page": 0
+     },
+     {
+      "title": "이 책의 주인공",
+      "targetId": "input",
+      "page": 2
+     },
+     {
+      "title": "서하은의 만세력",
+      "targetId": "manse-0",
+      "page": 3
+     },
+     {
+      "title": "서하은의 MBTI",
+      "targetId": "mbti-0",
+      "page": 4
+     },
+     {
+      "title": "나를 한 줄로",
+      "targetId": "core",
+      "page": 5
+     },
+     {
+      "title": "성격: 겉과 속",
+      "targetId": "chapter-portrait",
+      "page": 6
+     }
+    ]
+   },
+   {
+    "kind": "back",
+    "title": "이 책 공유하기",
+    "finalLine": "이 책은 타고난 성향을 풀이한 것이라 앞으로의 일을 단정하지 않아요.",
+    "aiNotice": "이 리포트는 명리 계산 결과와 MBTI 자료를 바탕으로 AI가 작성했어요.",
+    "id": "back",
+    "anchors": [
+     "back"
+    ]
+   }
+  ],
+  "readingDate": "2026-11-05",
+  "glossary": [
+   {
+    "name": "편인",
+    "meaning": "남들이 가지 않는 분야를 파고드는 탐구심과 직관, 혼자 배우는 힘을 뜻합니다."
+   },
+   {
+    "name": "편관",
+    "meaning": "압박 속에서도 결단하고 돌파하는 힘, 위기와 무거운 책임을 맡는 힘을 뜻합니다."
+   },
+   {
+    "name": "편재",
+    "meaning": "한곳에 고정되지 않고 움직이는 돈과 큰 판을 읽는 사업 감각, 넓은 인맥을 뜻합니다."
+   },
+   {
+    "name": "정관",
+    "meaning": "질서와 규칙을 지키며 신뢰를 쌓는 힘, 정해진 길과 책임, 명예를 뜻합니다."
+   },
+   {
+    "name": "비견",
+    "meaning": "자기 힘으로 서려는 자립심과 어깨를 나란히 하는 동료 관계를 뜻합니다."
+   },
+   {
+    "name": "식신",
+    "meaning": "좋아하는 일을 온화하게 꾸준히 만들어 내는 힘과 먹고사는 솜씨, 여유를 뜻합니다."
+   },
+   {
+    "name": "음착양차살",
+    "meaning": "마음과 타이밍이 한 칸씩 어긋나는 감각을 뜻하며, 그래서 확인하고 맞춰 가는 습관이 힘이 됩니다."
+   },
+   {
+    "name": "장성살",
+    "meaning": "십이신살의 여덟 번째 자리로, 힘이 가장 크게 차오른 단계를 뜻합니다."
+   },
+   {
+    "name": "복성귀인",
+    "meaning": "먹고 자고 쉬는 생활이 고르게 안정되고, 큰 기복 뒤에도 평소 리듬으로 돌아오는 힘을 뜻합니다."
+   },
+   {
+    "name": "문창귀인",
+    "meaning": "글공부와 문서, 말과 글을 다루는 일을 돕는 별로, 배운 것을 정리해 표현하는 힘을 뜻합니다."
+   }
+  ],
+  "share": {
+   "title": "서하은 · 나라는 사람",
+   "description": "겨울 밤 물 위에 오래 떠 있는 따뜻한 해"
+  }
+ }
+}

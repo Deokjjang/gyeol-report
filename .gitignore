@@ -45,3 +45,12 @@ next-env.d.ts
 
 # local secrets
 .env.local
+.env*.local
+
+# P6e-ops E2E 로그인 상태(로컬 검수 계정 쿠키): 커밋하지 않는다
+docs/v5/ui-p6e/.storage-*.json
+
+# 최종판 0-2·0-5: 개발 원문 저장소·예산 원장·브리프 기록(로컬 전용)
+/.cache/
+# 최종판 결제 도구의 로그인 저장본(세션 쿠키) — 커밋하지 않는다
+/docs/v5/final/.storage-*.json

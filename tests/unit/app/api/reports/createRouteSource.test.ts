@@ -25,7 +25,7 @@ describe("create report route product preview source", () => {
     const source = readRouteSource();
     const expectedMarkers = [
       "generateProductReport",
-      "resolveReportWriterRuntime",
+      "WRITER_DISABLED_RUNTIME",
       "createProductPreviewSnapshot",
       'snapshotKind: "product_preview"',
       "productPreview",

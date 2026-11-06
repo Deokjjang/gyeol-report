@@ -1,0 +1,57 @@
+/* 관리자 화면(P6d-ops). 계정 화면(account.module.css)과 같은 색·글꼴. 390px에서 가로 스크롤 없음. */
+.root{background:#fff;color:#111;min-height:100svh;font-family:Arial,"Noto Sans KR",sans-serif;font-size:14px;line-height:1.6;isolation:isolate;overflow-x:hidden}
+.root *{box-sizing:border-box;min-width:0}
+.root a{color:inherit}
+.root button,.root input,.root select,.root textarea{font:inherit;color:#111}
+.root :focus-visible{outline:2px solid #111;outline-offset:3px}
+.header{height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #ddd;padding:0 16px;font-size:12px}
+.header>a:first-child{font-weight:800;font-size:16px;text-decoration:none}
+.wrap{max-width:960px;margin:0 auto;padding:20px 16px 64px}
+.wrap h1{font-size:22px;letter-spacing:-.5px;font-weight:750;margin:4px 0 16px}
+.eyebrow{font-size:10px;letter-spacing:2px;color:#666}
+.note{font-size:12px;color:#666;overflow-wrap:anywhere}
+.error{font-size:12px;border-left:2px solid #111;padding-left:10px;margin:12px 0;overflow-wrap:anywhere}
+.ok{font-size:12px;border-left:2px solid #2f8f5b;padding-left:10px;margin:12px 0}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 16px;border-bottom:1px solid #ddd;margin:0 0 16px}
+.tabs a{display:inline-block;padding:10px 0;font-size:13px;text-decoration:none;color:#666;border-bottom:2px solid transparent}
+.tabs a[aria-current="page"]{color:#111;font-weight:700;border-bottom-color:#111}
+.search{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 16px}
+.search label{display:grid;gap:2px;font-size:11px;color:#666}
+.search .wide{grid-column:1/-1}
+.input,.root select,.root textarea{width:100%;border:1px solid #bbb;background:#fff;padding:9px 10px;border-radius:0;min-height:40px}
+.root textarea{resize:vertical;min-height:64px}
+.button{border:1px solid #111;background:#fff;padding:9px 14px;min-height:40px;cursor:pointer;white-space:nowrap}
+.primary{background:#111;color:#fff!important;border:1px solid #111;padding:9px 14px;min-height:40px;cursor:pointer}
+.danger{background:#b3261e;color:#fff!important;border:1px solid #b3261e;padding:9px 14px;min-height:40px;cursor:pointer}
+.root button:disabled{opacity:.4;cursor:default}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.item{border:1px solid #ddd;padding:12px}
+.item>a{text-decoration:none;display:block}
+.itemHead{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:12px;color:#555;overflow-wrap:anywhere}
+.badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.badge{display:inline-block;font-size:11px;border:1px solid #bbb;padding:0 6px;line-height:20px;white-space:nowrap}
+.alert{border-color:#b3261e;color:#b3261e}
+.section{border-top:1px solid #111;padding:14px 0 18px}
+.section h2{font-size:15px;margin:0 0 10px}
+.dl{display:grid;grid-template-columns:minmax(84px,32%) 1fr;gap:4px 12px;margin:0;font-size:13px}
+.dl dt{color:#666}
+.dl dd{margin:0;overflow-wrap:anywhere}
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin:0 0 16px}
+.count{border:1px solid #ddd;padding:10px}
+.count strong{display:block;font-size:20px}
+.count span{font-size:11px;color:#666}
+.actions{display:grid;gap:12px}
+.panel{border:1px solid #ddd;padding:12px;display:grid;gap:8px}
+.panel h3{font-size:13px;margin:0}
+.activity{border:1px solid #ddd;padding:10px 12px;margin:0 0 16px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.confirm{border:2px solid #b3261e;padding:12px;display:grid;gap:8px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;overflow-wrap:anywhere}
+.pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.srOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media (max-width:520px){.search{grid-template-columns:1fr}}
+/* 계정 화면과 같은 규칙: 이 화면에서는 사이트 하단 정보를 숨긴다. */
+:global(body):has(.root)>footer{display:none}
+
+.warn{border:1px solid #b3261e;background:#fff5f4;padding:10px 12px;display:grid;gap:6px;font-size:13px}.warn ul{margin:0;padding-left:18px}

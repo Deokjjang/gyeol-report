@@ -1,4 +1,5 @@
 import "server-only";
+import { PROFILE_REQUIRED_CODE, PROFILE_REQUIRED_MESSAGE } from "../account/profile";
 import { NextRequest, NextResponse } from "next/server";
 import { accountSession } from "../account/policy";
 import type { AccountPort } from "../account/handler";
@@ -16,11 +17,12 @@ export async function handleTickets(request: NextRequest, action: string, auth: 
   try {
     const user = await auth.currentUser(), snapshot = user ? await auth.read(user) : null;
     if (!user || !snapshot || accountSession(user, snapshot).status !== "member") return json({}, 401);
+    if (action === "redeem" && snapshot.contact === null) return json({ code: PROFILE_REQUIRED_CODE, error: PROFILE_REQUIRED_MESSAGE }, 403);
     const expected = request.headers.get("x-ticket-account");
     if (expected && expected !== createHash("sha256").update(`bundle-ui-v1:${user.id}`).digest("hex")) return json({ code: "ACCOUNT_CHANGED" }, 409);
     if (action !== "redeem") {
       const result = await store.call(action, user.id);
-      return result.ok ? json({ quantity: result.quantity, ...(result.referralNotice ? { referralNotice: result.referralNotice } : {}), ...(result.campaignNotice ? { campaignNotice: result.campaignNotice } : {}), ...(action === "history" ? { history: result.history } : {}) }) : json({}, 503);
+      return result.ok ? json({ quantity: result.quantity, ...(Array.isArray(result.lots) ? { lots: result.lots } : {}), ...(result.referralNotice ? { referralNotice: result.referralNotice } : {}), ...(result.campaignNotice ? { campaignNotice: result.campaignNotice } : {}), ...(action === "history" ? { history: result.history } : {}) }) : json({}, 503);
     }
     const raw = await request.text(); if (raw.length > 16384) return json({}, 413);
     let b: unknown; try { b = JSON.parse(raw); } catch { return json({}, 400); }

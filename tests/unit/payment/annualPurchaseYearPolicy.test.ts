@@ -7,13 +7,16 @@ import { confirmPaidReport, runPaidReportJob, type ProductGenerator } from "../.
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
 import { getAnnualFortuneYearAccess, getAnnualFortuneCommerceYearPolicy } from "../../../src/lib/report-knowledge/annualFortuneYearRules";
 import { createAnnualCommerceAcceptance, getAnnualPurchasePolicyDate } from "../../../src/lib/payment/annualPurchasePolicy";
+import { REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 
 const mocks = vi.hoisted(() => ({ runtime: vi.fn(), bind: vi.fn() }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: mocks.runtime }));
 // Keep the live same-origin and binding code; only external ports are synthetic.
 vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => null, finish: (response: Response) => response }) }));
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: mocks.bind }) }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
+import { TEST_BUYER } from "../../helpers/opsStoreStub";
 
 const beforeRollover = new Date("2026-12-31T14:59:59.000Z");
 const afterRollover = new Date("2026-12-31T15:00:00.000Z");
@@ -43,6 +46,7 @@ beforeEach(async () => {
   mocks.bind.mockReset().mockResolvedValue(true);
   mocks.runtime.mockReset().mockReturnValue(createDurablePaymentOrderAdapter(store));
   vi.stubEnv("NODE_ENV", "test");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
   vi.useFakeTimers({ toFake: ["Date"] });
@@ -53,15 +57,15 @@ afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 async function checkout(year: string, snapshotExtra: Record<string, unknown> = {}, payloadExtra: Record<string, unknown> = {}) {
   const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
     method: "POST", headers: { "content-type": "application/json", origin: "https://gyeolreport.com" },
-    body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
+    body: JSON.stringify({ consent: adultCheckoutConsent(), buyer: TEST_BUYER, provider: "toss", productType: "annual_fortune", inputSnapshot: { ...snapshotExtra, reportInputPayload: { ...payloadFor(year), ...payloadExtra } } }),
   }));
   return { status: response.status, body: await response.json() };
 }
 async function purchase() {
   const { status, body } = await checkout("2021");
   expect(status).toBe(200);
-  const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-paid-only", amount: 1490 };
-  const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: 1490, status: "DONE", approvedAt: beforeRollover.toISOString() } }));
+  const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-paid-only", amount: REPORT_PRICE_TABLE_KRW.annual_fortune };
+  const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: payment.amount, status: "DONE", approvedAt: beforeRollover.toISOString() } }));
   const result = await confirmPaidReport(payment, store, provider);
   expect(result.ok).toBe(true);
   return { payment, provider, reportId: String(result.reportId), orderId: String(body.paymentOrder.paymentOrderId) };
@@ -134,20 +138,12 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     expect(await inputSnapshot()).toEqual(original);
   });
 
-  it("writer outage in 2027 immediately delivers fallback using the accepted 2026 policy", async () => {
+  it("in 2027 the first attempt delivers using the accepted 2026 policy", async () => {
     const { reportId } = await purchase();
-    const fixture = await generateProductReport(payloadFor("2021"), runtime, "deterministic_fallback");
-    expect(fixture.ok).toBe(true);
-    if (!fixture.ok) return;
     vi.setSystemTime(afterRollover);
-    const transport = vi.fn<typeof fetch>()
-      .mockRejectedValueOnce(new Error("mock outage"))
-      .mockResolvedValueOnce(Response.json({ output_text: JSON.stringify(fixture.draft) }));
-    const writer = { enabled: true as const, config: { enabled: true as const, apiKey: "mock", model: "mock", fetchImpl: transport } };
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ status: "COMPLETED" });
+    expect(await runPaidReportJob(store, runtime)).toMatchObject({ status: "COMPLETED" });
     await due();
-    expect(await runPaidReportJob(store, writer)).toMatchObject({ ok: true, job: null });
-    expect(transport).toHaveBeenCalledTimes(1);
+    expect(await runPaidReportJob(store, runtime)).toMatchObject({ ok: true, job: null });
     await expectCompleted(reportId);
   });
 
@@ -160,17 +156,18 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
       ? { productKey, productSlug, relationshipType: "love", personA: person, personB: { ...person, name: "상대", mbtiType: "INTP" } }
       : { ...payloadFor("2021"), productKey, productSlug, productOptions: {} };
     const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
-      method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
+      method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({ consent: adultCheckoutConsent(), buyer: TEST_BUYER, provider: "toss", productType: productKey, inputSnapshot: { reportInputPayload: payload } }),
     }));
     expect(response.status).toBe(200);
     const body = await response.json();
-    expect(body.paymentOrder).toMatchObject({ productType: productKey, amount: 1490 });
+    const amount = REPORT_PRICE_TABLE_KRW[productKey as keyof typeof REPORT_PRICE_TABLE_KRW];
+    expect(body.paymentOrder).toMatchObject({ productType: productKey, amount });
     expect(await inputSnapshot()).toEqual({ reportInputPayload: payload, bookGeneration: { version: "v4", evaluatedAt: beforeRollover.toISOString() } });
     expect(mocks.bind).toHaveBeenCalledTimes(1);
     expect(mocks.bind.mock.calls[0][0]).toMatchObject({ buyerId: null, claimHash: expect.stringMatching(/^[a-f0-9]{64}$/) });
     const orderId = body.paymentOrder.providerOrderId as string;
-    expect(await confirmPaidReport({ orderId, paymentKey: "mock", amount: 1490 }, store,
-      async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId, amount: 1490, status: "DONE" } }))).toMatchObject({ ok: true });
+    expect(await confirmPaidReport({ orderId, paymentKey: "mock", amount }, store,
+      async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId, amount, status: "DONE" } }))).toMatchObject({ ok: true });
     const generator = vi.fn(deterministic);
     expect(await runPaidReportJob(store, runtime, generator)).toMatchObject({ status: "COMPLETED" });
     expect(generator.mock.calls[0]).toHaveLength(3);

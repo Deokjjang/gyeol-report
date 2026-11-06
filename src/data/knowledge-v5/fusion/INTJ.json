@@ -1,0 +1,983 @@
+{
+  "version": "fusion-v5-2",
+  "method": "cross-score 상위 후보(배치 X1~X6, docs/v5/p1-fusion-candidates.json) → 유형별 파일로 재편, 작성자 판단으로 kind 조정",
+  "rules": [
+    {
+      "id": "fusion:tenGod:偏印:INTJ",
+      "myeongriId": "tenGod:偏印",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 2.49,
+      "why": "편인은 교과서 대신 옆길에서 혼자 배우며 기존 답부터 의심합니다. INTJ는 설명의 앞뒤가 어긋나는 대목을 그냥 넘기지 못하고, 따로 찾아가서라도 끝내 확인합니다. 이 조합은 남들이 못 본 각도를 깊이 파는 대신, 검토가 길어 시작이 늦고 침묵이 거절로 읽힙니다.",
+      "scene": { "text": "팀이 다 동의한 안을 들고 와도 밤새 원자료를 다시 뽑아 봅니다. 다음 날 '가정 하나가 틀렸어요'라는 말과 표 세 장을 내밉니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "tenGod:偏印",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚子:INTJ",
+      "myeongriId": "dayPillar:庚子",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 2.26,
+      "why": "경자 일주는 쇠에서 맑은 물이 곧게 쏟아지듯 생각이 말로 정리돼 나오고, 앉은자리 상관이 그 말에 날을 세웁니다. INTJ는 평소 말이 적은 대신, 한번 입을 열면 근거를 붙인 한 줄로 끝내는 쪽입니다. 엉킨 문제를 몇 줄로 자르는 데는 따라올 사람이 드물지만, 그 정리가 맥락을 지우면 상대는 채점당한 기분이 듭니다.",
+      "scene": { "text": "모두 지친 밤 열한 시 회의에서 노트북을 돌려 화면을 보여 줍니다. '원인은 이 한 칸이고, 나머지는 소음이에요.' 회의는 거기서 끝납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚子",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:climate:庚:winter:INTJ",
+      "myeongriId": "climate:庚:winter",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 2.17,
+      "why": "겨울에 난 경금은 차가운 물을 내는 쇠라 머리는 맑고 말은 정확한데, 불이 없으면 하고 싶은 일이 잘 안 보입니다. INTJ는 몸의 신호를 가장 늦게 알아채서, 한참 몰입한 뒤에야 손이 차고 배가 고팠다는 걸 압니다. 혼자 끝까지 파고드는 집중이 길어지는 대신, 몸을 데우는 일정이 없으면 의욕이 먼저 식습니다.",
+      "scene": { "text": "도서관 열람실에서 자료를 정리하다 고개를 들면 네 시간이 지나 있고 손끝이 얼음처럼 차갑습니다. 그제야 점심을 걸렀다는 걸 압니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "climate:庚:winter",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:甲申:INTJ",
+      "myeongriId": "dayPillar:甲申",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 2.09,
+      "why": "갑신은 쇠줄에 팽팽히 묶인 돛대라, 바람이 셀수록 곧아지고 스스로 기준을 올립니다. INTJ의 Te는 압박이 오면 남은 일을 날짜별 칸으로 다시 쪼개면서 평정을 찾습니다. 압박이 계획을 날카롭게 만드는 조합인데, 절지에 앉은 나무처럼 기댈 곳을 잘 만들지 않아 혼자 다 지고 갑니다.",
+      "scene": { "text": "마감이 일주일 당겨졌다는 공지를 받으면 한숨 대신 달력 앱을 열고, 남은 일을 날짜별 칸에 다시 배치한 다음 팀에는 결과만 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:甲申",
+        "mbti:INTJ:functionStack",
+        "mbti:INTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:HYEONCHIMSAL:INTJ",
+      "myeongriId": "shinsal:HYEONCHIMSAL",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.81,
+      "why": "현침의 바늘은 남이 못 보는 작은 틈을 정확히 찌릅니다. INTJ는 다들 찬성할 때 '이건 어느 지점에서 막힌다'를 시기까지 짚어 내는 사람입니다. 큰 그림과 바늘 끝이 함께 있어 계획의 구멍을 가장 먼저 찾지만, 70점짜리 안으로 먼저 가야 할 때도 100점을 기다리다 때를 놓칩니다.",
+      "scene": { "text": "친구가 들뜬 얼굴로 창업 계획을 설명하자 끝까지 듣고 나서 '석 달째 고정비는 어디서 나와?' 하나만 묻습니다. 친구의 대답이 한참 늦게 나옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:HYEONCHIMSAL",
+        "mbti:INTJ:functionStack",
+        "mbti:INTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:辛丑:INTJ",
+      "myeongriId": "dayPillar:辛丑",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "perfectionism",
+      "score": 1.71,
+      "why": "신축은 수장고 서랍에서 전시 날을 기다리는 은 장신구처럼 오래 다듬고 늦게 꺼냅니다. INTJ의 Fi는 남에게 말하지 않는 자기만의 합격선이 있어서, 그 선을 넘기 전엔 결과물을 밖에 내놓지 않습니다. 꺼내는 순간 진짜라는 말을 듣지만, 좋은 결과물이 창고에서 늙는 일도 잦습니다.",
+      "scene": { "text": "1년 동안 혼자 만든 포트폴리오 사이트를 '아직 덜 됐어'라며 친구에게도 안 보여 주다가, 마감 하루 전에야 링크를 보내며 '세 군데만 봐 줘'라고 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:辛丑",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬午:INTJ",
+      "myeongriId": "dayPillar:壬午",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.58,
+      "why": "임오는 한낮 광장의 바닥분수처럼 솟았다 멈췄다 하며 사람을 모으고, 물과 불이 한 기둥에 있어 기분의 온도 차가 큽니다. INTJ는 원래 약속이 취소되면 서운함보다 안도가 먼저 옵니다. 계획은 차갑고 순간의 열기는 뜨거워서, 신나서 한 약속을 다음 날 계획표에 끼워 넣느라 애를 씁니다.",
+      "scene": { "text": "모임 분위기에 취해 '다음 달에 다 같이 제주 가자'고 먼저 말해 놓고, 다음 날 아침 달력을 펴서 그 주말 일정을 하나씩 옮깁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재물 손익 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬午",
+        "mbti:INTJ:functionStack",
+        "mbti:INTJ:signals",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WATER:STRONG:INTJ",
+      "myeongriId": "element:WATER:STRONG",
+      "mbtiTarget": "INTJ",
+      "kind": "conditional",
+      "dimension": "inquiry",
+      "score": 1.58,
+      "why": "수 과다는 장마철 불어난 강처럼 생각이 바닥까지 내려가 사람과 상황을 깊이 읽습니다. INTJ는 몇 주씩 붙들던 문제의 답이 샤워하다 불쑥 떠오르는 사람인데, Te가 그 답을 기한 붙은 계획으로 옮겨 물길을 내 줍니다. 깊이는 같이 가고 결정은 Te가 끊어 주니, 계획표를 쓰는 날은 맑고 생각만 굴리는 날은 잠깁니다.",
+      "scene": { "text": "주말 오후 카페 구석에서 진로 시나리오를 여섯 개 써 내려가다, 노트 맨 아래에 '금요일까지 결정'이라고 적고 나서야 자리에서 일어납니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "우울 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:WATER:STRONG",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:子:INTJ",
+      "myeongriId": "branch:子",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.54,
+      "why": "모두 잠든 자정에 얼음 밑으로 흐르는 시냇물이 자수의 모습입니다. INTJ는 듣는 동안 표정이 거의 없어서, 집중하고 있을 뿐인데 화났냐는 질문을 받곤 하죠. 밤에 혼자 판을 다 읽어 두는 사람이지만, 속을 너무 감춰 가까운 사람이 계산적이라고 오해합니다.",
+      "scene": { "text": "다들 잠든 새벽 한 시, 낮 회의에서 오간 말을 휴대폰 메모장에 다시 적다가 누가 어느 편인지 화살표로 그려 둡니다. 다음 날 회의는 그 화살표대로 흘러갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "branch:子",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:戊子:INTJ",
+      "myeongriId": "dayPillar:戊子",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 1.54,
+      "why": "무자는 깊은 물을 품고도 겉은 조용하고, 속으로는 이미 최악의 경우까지 셈해 둡니다. INTJ는 돈이 들어오고 나가는 길을 처음에 한 번 설계해 두면 몇 년이고 그대로 굴립니다. 큰일 앞에서 가장 미더운 설계자가 되지만, 속마음까지 꼭 닫아 두어 가까운 사람이 어렵다고 느낍니다.",
+      "scene": { "text": "이사 날짜가 잡히면 그날 밤 이삿짐 업체 세 곳 견적과 비 올 때의 대안 일정을 표 하나로 만들어 둡니다. 가족에게는 '대충 알아봤어'라고만 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정",
+          "배우자 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:戊子",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:死:INTJ",
+      "myeongriId": "twelveStage:死",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "score": 1.52,
+      "why": "십이운성의 사는 막이 내려온 무대처럼 움직임이 멈춰서 전체가 보이는 자리입니다. INTJ는 사람에 대한 기대를 빨리 접는 편이라, 서운한 일이 생겨도 따지기보다 조용히 거리를 조정합니다. 끝을 보는 눈은 깊은데, 그 정리가 설명 없이 이뤄져 상대는 언제 멀어졌는지도 모릅니다.",
+      "scene": { "text": "몇 번 약속을 미룬 친구에게 따지는 메시지 대신, 연락처의 즐겨찾기 별표만 조용히 지웁니다. 친구는 그 변화를 한참 뒤에야 알아챕니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "고독 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:死",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:branch:巳:INTJ",
+      "myeongriId": "branch:巳",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.5,
+      "why": "사화는 겉은 잔잔하지만 안에서 열이 천천히 올라, 조용히 지켜보다 정확한 순간에 움직입니다. INTJ도 새 일을 받으면 손보다 전체 흐름도를 먼저 그려서, 첫날은 겉으로 한가해 보이지요. 구조와 의도를 먼저 보는 눈이 겹쳐 핵심을 잘 찌르지만, 물 글자가 약하면 작은 신호도 크게 해석해 의심이 길어집니다.",
+      "scene": { "text": "새 팀에 온 첫 주엔 거의 말이 없다가, 둘째 주 월요일에 업무 흐름을 한 장으로 그린 도면을 팀장에게 내밀며 '병목은 여기 두 군데예요'라고 짚습니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "branch:巳",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:TWELVE_JAESAL:INTJ",
+      "myeongriId": "shinsal:TWELVE_JAESAL",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 1.47,
+      "why": "재살은 철문 앞에서 열쇠 꾸러미를 하나씩 맞춰 보는 사람처럼 좁은 틀 안에서 빠져나갈 길을 계산합니다. INTJ는 막히는 일이 되풀이되면 누구 탓인지보다 어디 구조가 새는지를 먼저 찾습니다. 제약이 클수록 머리가 맑아지는 사람이라, 모든 규칙을 감옥으로 보지 않는 여유만 챙기면 됩니다.",
+      "scene": { "text": "계약서 초안을 받으면 첫 장부터 읽지 않고 해지 조항부터 찾아 형광펜을 칩니다. 빠져나갈 문이 어디 있는지 알아야 나머지를 차분히 읽습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "사고 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:TWELVE_JAESAL",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:庚辰:INTJ",
+      "myeongriId": "dayPillar:庚辰",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.44,
+      "why": "경진의 칼은 날을 세우기 전부터 무게로 묵직하고, 땅속 편인 덕에 말없이 읽고 익힙니다. INTJ에겐 여럿이 맞춰 가는 속도보다 혼자 짠 계획표의 속도가 훨씬 잘 맞습니다. 혼자 다듬은 결론을 한 번에 꺼내는 사람이 되지만, 가까운 사람일수록 속을 모르겠다고 합니다.",
+      "scene": { "text": "혼자 준비하던 자격증 시험을 아무에게도 말하지 않다가, 시험 날 아침에야 친구에게 '오늘 그거 보러 가'라고 문자를 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "주거 이동 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:庚辰",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:壬子:INTJ",
+      "myeongriId": "dayPillar:壬子",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.43,
+      "why": "물 위에 물이 겹친 임자는 겉은 고요해도 속에 큰 물살을 품어, 남들이 한 장면을 볼 때 전체 흐름을 읽습니다. INTJ의 Ni도 여기저기 흩어진 조각을 한 장의 그림으로 맞춰서, 이유를 말하기 전에 결론부터 압니다. 간섭 없이 혼자 판을 읽는 힘은 두 배가 되지만, 몰아서 쏟는 물과 미리 짜 두는 계획표가 마감 앞에서 서로 다툽니다.",
+      "scene": { "text": "친구들 단톡방에서 커피 논쟁이 사흘째 이어지는 동안 한마디도 없다가, 마지막 날 밤 원문 연구 링크와 '표본이 열두 명이에요' 한 줄을 올립니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:壬子",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:shinsal:HWAGAE:INTJ",
+      "myeongriId": "shinsal:HWAGAE",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.41,
+      "why": "화개는 덮개 아래 혼자 고요해지는 저장의 별이라, 모아 둔 경험을 오래 묵혔다가 꺼내 씁니다. INTJ는 북적이는 자리보다 혼자 구석에서 다음 계획을 고칠 때 가장 개운해집니다. 혼자 만든 세계가 단단해지는 만큼, '그건 내 스타일이 아니야'가 남의 의견을 닫는 문이 되기도 합니다.",
+      "scene": { "text": "점심시간마다 회사 옥상 벤치에 노트를 펴고 개인 프로젝트 설계도를 그립니다. 반년 뒤 완성본을 보여 주기 전까지 동료들은 그런 게 있는 줄도 모릅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "고독 확정 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "shinsal:HWAGAE",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayPillar:丙午:INTJ",
+      "myeongriId": "dayPillar:丙午",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.59,
+      "why": "병오 일주는 불 위에 불이 얹혀서, 들어서기만 해도 자리 온도가 오르고 사람들이 판의 가운데로 끌어당깁니다. 그런데 INTJ는 사람 사이에서 기운이 닳고, 혼자 있는 시간에 다시 채우는 쪽이에요. 분위기는 내가 데우고 충전은 혼자 해야 해서, 신나게 논 다음 날은 아무도 안 만나는 날로 비워 둡니다.",
+      "scene": { "text": "회사 워크숍 저녁, 레크리에이션 진행을 맡아 다들 배를 잡고 웃게 만듭니다. 아홉 시가 되자 '내일 자료 좀 볼게요' 하고 숙소 방으로 올라가 불을 끕니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "dayPillar:丙午",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:FIRE:STRONG:INTJ",
+      "myeongriId": "element:FIRE:STRONG",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.27,
+      "why": "화 기운이 넘치는 구성은 기쁨과 고마움을 그 자리에서 크게 터뜨리게 밀어붙입니다. INTJ는 감정을 말로 꺼내기보다, 상대의 막힌 문제를 대신 풀어 주는 것으로 마음을 전하는 쪽이지요. 속은 뜨겁게 끓는데 표현은 일로 바뀌어 나가서, '고마워' 한마디보다 손봐 준 결과물이 먼저 도착합니다.",
+      "scene": { "text": "이사를 도와준 친구에게 고맙다는 말은 짧게 하고, 그 주말 친구의 고장 난 노트북을 가져와 부품까지 갈아 돌려줍니다. 건네는 날엔 귀까지 빨개져 '별거 아냐'만 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "연애 사건 단정"
+        ]
+      },
+      "sources": [
+        "element:FIRE:STRONG",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:stem:乙:INTJ",
+      "myeongriId": "stem:乙",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.25,
+      "why": "을목은 정면으로 부딪히는 대신 틈을 찾아 휘어 돌아가며, 끝내 원하는 자리까지 닿게 합니다. INTJ의 Te는 원래 결론과 근거를 한 번에 내밀어 정면에서 끝내는 쪽이고요. 답을 통보할지 돌아서 갈지 매번 저울질하다가, 결론 대신 상대가 스스로 떠올리게 질문을 깔아 두곤 합니다.",
+      "scene": { "text": "가족 여행지를 바꾸자고 하는 대신, 저녁 식탁에서 '거기 그 주에 비 온다던데?' 한마디와 다른 바닷가 사진 두 장을 슬쩍 보여 줍니다. 다음 날 행선지가 바뀌어 있습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "stem:乙",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:twelveStage:長生:INTJ",
+      "myeongriId": "twelveStage:長生",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.18,
+      "why": "장생은 막 태어나 배우는 힘이 가장 맑은 자리라, 묻고 따르면서 앞선 사람의 손길을 잘 받습니다. INTJ는 남이 알려 준 방법도 직접 확인하기 전엔 고개를 끄덕이지 않는 독학파예요. 배우는 속도는 빠른데 들은 말을 그대로 믿지 않아서, 한 번 묻고 세 번 검증한 뒤에야 다음 걸음을 뗍니다.",
+      "scene": { "text": "새로 시작한 수영 강습에서 코치가 고쳐 준 팔 동작을 그 자리에선 그대로 따라 합니다. 집에 와서 선수 영상 세 개를 느리게 돌려 보고서야 '아, 이래서구나' 하고 노트를 덮습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정"
+        ]
+      },
+      "sources": [
+        "twelveStage:長生",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:METAL:MISSING:INTJ",
+      "myeongriId": "element:METAL:MISSING",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "directness",
+      "score": 1.08,
+      "why": "금이 비어 있으면 거절하는 칼이 무뎌서, 부탁이 오면 '응'부터 나가기 쉽습니다. 반면 INTJ는 사람을 믿기까지 오래 지켜보고, 속으로는 넘지 않는 기준이 또렷한 사람이지요. 마음의 문은 잠겨 있는데 대문은 열려 있는 셈이라, 들어준 부탁을 끼워 넣느라 내 계획표가 자꾸 다시 짜입니다.",
+      "scene": { "text": "토요일 하루에 이력서 봐 주기, 짐 옮기기, 사진 골라 주기 부탁을 전부 '그래'로 받습니다. 정작 몇 달째 붙든 내 고민은 그중 누구에게도 꺼내지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "대인 갈등 사건 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:METAL:MISSING",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:element:WOOD:MISSING:INTJ",
+      "myeongriId": "element:WOOD:MISSING",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.11,
+      "why": "목이 전혀 없으면 스스로 새 판을 열어 본 경험이 적어서, 누가 정해 준 길 위에 있을 때 가장 편합니다. 그런데 INTJ의 Ni는 남이 정한 길보다 내가 그린 먼 노선을 먼저 봅니다. 노선도는 해마다 선명해지는데 갈아탈 레버 앞에서 손이 무거워, 지금 자리를 지키며 계획서만 고쳐 씁니다.",
+      "scene": { "text": "독립해서 해 보고 싶은 일을 정리한 문서가 일곱 번째 버전까지 쌓였습니다. 오늘도 버스 안에서 그 문서를 열어, 시작 날짜만 한 달 뒤로 고쳐 저장합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직·창업 단정",
+          "직업 단정"
+        ]
+      },
+      "sources": [
+        "element:WOOD:MISSING",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丁:INTJ",
+      "myeongriId": "dayMaster:丁",
+      "mbtiTarget": "INTJ",
+      "kind": "conditional",
+      "dimension": "introspection",
+      "score": 0.63,
+      "why": "정화인 사람은 쉽게 꺼지지 않는 속불을 안쪽에서 오래 지킵니다. INTJ의 Fi는 말하지 않는 기준을 품고, Ni는 그 기준을 몇 년 뒤 그림에 얹어 둡니다. 조용히 깊어지는 대신 서운함도 말 없이 쌓여, 어느 날 관계를 정리하는 쪽으로 터집니다.",
+      "scene": { "text": "생일에 받은 선물이 영 취향이 아니어도 웃으며 고맙다고 하고, 그날 밤 방에서 혼자 서운함을 오래 곱씹습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丁",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:丙:INTJ",
+      "myeongriId": "dayMaster:丙",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 1.27,
+      "why": "병화인 사람은 불이 켜지면 사람이 몰려드는 조명탑처럼 판 한가운데서 가장 환해집니다. INTJ는 사람 속에서 에너지가 닳고 혼자 있어야 충전되는 쪽입니다. 환하게 나서고 싶은 마음과 빨리 숨고 싶은 마음이 번갈아 당겨, 크게 웃고 돌아선 날은 방전됩니다.",
+      "scene": { "text": "송년회에서 건배사를 맡아 분위기를 확 띄워 놓고, 집에 오는 길엔 이어폰을 끼고 아무 말도 하기 싫어집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:丙",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:乙:INTJ",
+      "myeongriId": "dayMaster:乙",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "score": 1.19,
+      "why": "을목인 사람은 덩굴처럼 담장이든 나무든 기댈 곳을 타고 올라갑니다. INTJ는 Ni가 그린 길을 혼자서 끝까지 해내고 싶어 하는 쪽입니다. 기대면 편한 몸과 혼자 해내려는 머리가 엇갈려, 도움을 받을 수 있는 순간에도 먼저 손 내밀기를 미룹니다.",
+      "scene": { "text": "이삿짐을 혼자 나르다 허리가 아픈데도, 도와주겠다는 이웃에게 '괜찮아요' 하고 박스 하나를 더 듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:乙",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:壬:INTJ",
+      "myeongriId": "dayMaster:壬",
+      "mbtiTarget": "INTJ",
+      "kind": "conditional",
+      "dimension": "planning",
+      "score": 0.73,
+      "why": "임수인 사람은 흩어진 것들을 하나로 잇는 기운이라 정보가 들어올수록 판이 커집니다. INTJ의 Te는 그 판을 순서와 기한이 있는 계획표로 굳힙니다. 정보가 계속 밀려올 때는 계획이 자꾸 고쳐지고, 흐름이 잡히면 한 번에 확정됩니다.",
+      "scene": { "text": "여행 계획을 짜다 새 후기를 읽을 때마다 일정표를 갈아엎고, 출발 사흘 전 밤에 표 한 장으로 확정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:壬",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:己:INTJ",
+      "myeongriId": "dayMaster:己",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.69,
+      "why": "기토인 사람은 날마다 들여다봐야 작은 싹이 크는 흙의 기운입니다. INTJ의 Te는 하루 단위로 쪼갠 일정을 지킬 때 마음이 놓입니다. 꾸준히 돌보는 힘이 붙는 대신 남의 걱정까지 일정에 끼워 넣어, 쉬는 칸이 점점 사라집니다.",
+      "scene": { "text": "베란다 화분에 물 주는 시간을 알람으로 맞춰 놓고, 친구의 이직 고민 통화까지 저녁 일정에 슬쩍 끼워 넣습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:己",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:庚:INTJ",
+      "myeongriId": "dayMaster:庚",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "score": 1.18,
+      "why": "경금인 사람은 막힌 일을 한 번에 여는 단단한 기운이라 돌려 말하는 법이 서툽니다. INTJ의 Te는 결론부터 말하고 근거를 뒤에 붙입니다. 아니라는 말이 빨라 일이 빨리 풀리지만, 듣는 사람은 이유를 듣기 전에 이미 혼난 얼굴이 됩니다.",
+      "scene": { "text": "동생이 내민 자기소개서를 읽고 '2번 문단은 지워'라고 한마디 한 뒤에야 이유를 말하려고 입을 엽니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:庚",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:戊:INTJ",
+      "myeongriId": "dayMaster:戊",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "trustThreshold",
+      "score": 0.39,
+      "why": "무토인 사람은 물살 앞에서 꿈쩍 않는 기운이라 쉽게 움직이지 않고 오래 지켜봅니다. INTJ는 믿을 만한지 확인한 뒤에야 문을 여는 경계심이 강한 쪽입니다. 한번 믿으면 끝까지 뒤를 지켜 주지만, 그 문턱 앞에서 기다리다 지치는 사람이 생깁니다.",
+      "scene": { "text": "새로 사귄 친구가 비밀 얘기를 먼저 꺼내도 석 달은 가볍게만 대하다가, 어느 날 먼저 속사정 하나를 털어놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:戊",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:甲:INTJ",
+      "myeongriId": "dayMaster:甲",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.14,
+      "why": "갑목인 사람은 아무도 안 간 언덕에 먼저 서는 큰 나무라 남의 길을 따라가는 데 흥미가 없습니다. INTJ의 Ni는 아직 없는 길의 끝 그림부터 봅니다. 길을 여는 힘이 센 대신 같이 걸을 사람에게 이유를 설명하는 일은 건너뜁니다.",
+      "scene": { "text": "동호회 규칙을 혼자 새로 정리해 놓고 '이대로 가자'고만 하니, 다들 왜 바뀌는지 몰라 서로 눈치만 봅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:甲",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:癸:INTJ",
+      "myeongriId": "dayMaster:癸",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "score": 0.84,
+      "why": "계수인 사람은 눈에 안 보이는 물안개처럼 닿는 곳을 조용히 살립니다. INTJ는 사실을 먼저 보지만 Fi로 상대의 분위기는 깊이 느낍니다. 말보다 기척으로 챙기는 힘이 있는 대신, 확인 없이 속뜻을 짐작해 없는 서운함까지 만듭니다.",
+      "scene": { "text": "친구 답장이 평소보다 짧자 '화났나?' 하고 하루를 보내다가, 그냥 바빴다는 말에 맥이 빠집니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:癸",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:dayMaster:辛:INTJ",
+      "myeongriId": "dayMaster:辛",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "perfectionism",
+      "score": 0.66,
+      "why": "신금인 사람은 하나만 어긋나도 시계가 서는 작은 톱니라 흠을 먼저 봅니다. INTJ의 Fi는 입 밖에 내지 않는 합격선을 속에 두고 있습니다. 마무리가 칼같이 정확해지는 대신, 그 선이 나뿐 아니라 곁사람에게도 똑같이 들이밀어집니다.",
+      "scene": { "text": "친구 결혼식 축사 원고를 봐 주다가 쉼표 위치와 맞춤법부터 고쳐 주고, 내용 칭찬은 맨 끝에야 꺼냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "dayMaster:辛",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏官:INTJ",
+      "myeongriId": "tenGod:偏官",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 0.48,
+      "why": "편관이 두드러지면 태풍 속 갑판에 먼저 오르는 선장처럼 압박이 셀수록 눈이 또렷해집니다. INTJ는 힘들수록 표정은 그대로고 계획 칸만 늘리는 쪽입니다. 버티는 마음과 몸이 보내는 신호가 엇갈려, 한참 뒤에야 지쳤다는 걸 알아챕니다.",
+      "scene": { "text": "시험 직전 주 내내 멀쩡한 얼굴로 지내다가, 끝나는 날 저녁 몸살이 와서 이틀을 누워 있기도 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏官",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:偏財:INTJ",
+      "myeongriId": "tenGod:偏財",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.83,
+      "why": "편재가 두드러지면 장날 골목을 먼저 도는 상인처럼 사람과 돈이 지나는 길목을 읽습니다. INTJ는 사람이 많은 자리가 길어지면 에너지가 새고, 혼자 계산할 때 머리가 맑아집니다. 인맥에서 기회가 보이는 눈과 만나러 나가기 싫은 몸이 서로 당깁니다.",
+      "scene": { "text": "소개받은 사람과 점심 약속이 잡히자 득이 될 걸 알면서도, 전날까지 취소할 핑계를 머릿속으로 세 개쯤 만듭니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:偏財",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:傷官:INTJ",
+      "myeongriId": "tenGod:傷官",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "score": 1.22,
+      "why": "상관이 두드러지면 굳은 악보에 연필로 자기 식 꾸밈음을 적는 연주자처럼 규칙의 빈틈이 먼저 보입니다. INTJ는 앞뒤가 안 맞는 설명을 그냥 못 넘기고 이유를 끝까지 묻습니다. 개선안이 나오는 대신, 윗사람 앞에서 던진 한마디가 지적으로 들려 분위기가 얼어붙습니다.",
+      "scene": { "text": "수업 중 선생님 설명에 예외가 하나 안 맞자 손을 들고 '그럼 이 경우는요?' 하고 묻는데, 교실이 조용해집니다.", "requires": { "relationship": "any", "children": "any", "job": "student" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:傷官",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:劫財:INTJ",
+      "myeongriId": "tenGod:劫財",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "socialEnergy",
+      "score": 0.42,
+      "why": "겁재가 두드러지면 옆 레인이 앞서 나갈 때 팔을 더 세게 젓는 수영 선수처럼 경쟁에서 속도가 붙습니다. INTJ는 사람 속에서 닳고 혼자 계획할 때 가장 정확해지는 쪽입니다. 나란히 달려야 힘이 나는 마음과 혼자이고 싶은 마음이 당겨, 같이 뛰다 말없이 빠집니다.",
+      "scene": { "text": "친구들과 달리기 모임에서 기록이 뒤처지면 이를 악물고 뛰고, 끝나면 뒤풀이는 빠지고 혼자 집으로 갑니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:劫財",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正印:INTJ",
+      "myeongriId": "tenGod:正印",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.69,
+      "why": "정인이 두드러지면 비 오는 날 우산 두 개를 들고 교문 앞에 선 어머니처럼 배운 것을 차곡차곡 쌓습니다. INTJ의 Te는 배운 내용을 순서표로 바꿔야 직성이 풀립니다. 준비가 단단해지는 대신, 7할만 알면 시작해도 될 때 9할을 채우느라 출발이 늦어집니다.",
+      "scene": { "text": "새 자격증 교재를 사서 목차를 표로 옮기고 공부 달력까지 만든 뒤, 첫 장을 펴기 전에 한 주를 더 씁니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正印",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正官:INTJ",
+      "myeongriId": "tenGod:正官",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "planning",
+      "score": 0.78,
+      "why": "정관이 두드러지면 정시에 출근해 당직 일지를 빠짐없이 쓰는 사람처럼 약속과 자리를 지켜 믿음을 쌓습니다. INTJ의 Ni는 규칙이 비효율이면 이유부터 따지고 다른 길을 그립니다. 지켜야 한다는 마음과 더 나은 길이 보이는 눈이 당겨, 따르면서 속으로 수정안을 씁니다.",
+      "scene": { "text": "출석을 부르는 방식이 비효율인 걸 알면서도 규칙대로 따르고, 집에 와 개선안을 몇 줄 적어 놓고 아무에게도 안 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正官",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:正財:INTJ",
+      "myeongriId": "tenGod:正財",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "score": 0.63,
+      "why": "정재가 두드러지면 매달 같은 날 적금을 넣고 통장을 쓰다듬는 사람처럼 돈을 꼼꼼히 지킵니다. INTJ의 Te는 수입과 지출을 항목별로 쪼개 봐야 마음이 편합니다. 새는 돈 없이 탄탄해지는 대신, 배움이나 관계에 써야 할 돈 앞에서도 계산기부터 두드립니다.",
+      "scene": { "text": "월급날 가계부 앱에 항목을 하나씩 채워 넣고, 친구 생일 선물 예산은 천 원 단위까지 따져 정합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:正財",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:比肩:INTJ",
+      "myeongriId": "tenGod:比肩",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "independence",
+      "score": 1.05,
+      "why": "비견이 두드러지면 어깨를 나란히 하되 기대지는 않고, 내 몫의 짐은 끝까지 내가 집니다. INTJ는 Ni로 그린 계획을 혼자 끝내야 믿음이 가는 쪽입니다. 남에게 폐 안 끼치고 해내는 대신, 도움이 필요한 때를 놓치고 일이 커진 뒤에야 알립니다.",
+      "scene": { "text": "발표 자료가 밤새 안 끝나는데도 팀원에게 부탁하지 않다가, 발표 한 시간 전에야 '파일 좀 봐 줄래?' 하고 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "employed" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:比肩",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "fusion:tenGod:食神:INTJ",
+      "myeongriId": "tenGod:食神",
+      "mbtiTarget": "INTJ",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "score": 0.76,
+      "why": "식신이 두드러지면 주말 아침 냄비 하나로 한 상을 차려 식구를 깨우는 사람처럼 만들어 나눌 때 마음이 풀립니다. INTJ는 속마음을 안에 담아 두고 꼭 필요할 때만 말로 꺼냅니다. 나누고 싶은 마음과 표현을 아끼는 습관이 당겨, 음식으로는 챙기고 말로는 끝내 안 합니다.",
+      "scene": { "text": "가족 생일에 새벽부터 미역국을 끓여 상에 올려 놓고, 정작 축하한다는 말은 식사가 끝날 때 짧게 합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "확정 예언"
+        ]
+      },
+      "sources": [
+        "tenGod:食神",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

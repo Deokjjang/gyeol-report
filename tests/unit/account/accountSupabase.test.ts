@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { NextRequest, NextResponse } from "next/server";
 import { createAccountPort } from "../../../src/lib/account/supabase";
+import { ACCOUNT_POLICY_VERSIONS } from "../../../src/lib/account/policy"; // 최종3: 문서 버전 2026-11-05.1(상수로 따라간다)
 
 afterEach(() => vi.unstubAllEnvs());
 const request = () => new NextRequest("https://gyeolreport.com/auth/start");
@@ -18,8 +19,8 @@ describe("official Supabase SSR SDK contract, network forbidden", () => {
     expect(url.searchParams.get("code_challenge")?.length).toBeGreaterThan(30);
     expect(url.searchParams.get("redirect_to")).toContain("/auth/callback");
     expect(url.searchParams.has("scopes")).toBe(false);
-    expect(url.searchParams.get("scope")).toBe(provider === "kakao" ? "profile_nickname" : null);
-    expect(url.href).not.toMatch(/friends|contacts|offline_access/);
+    expect(url.searchParams.get("scope")).toBe(provider === "kakao" ? "account_email,profile_nickname,plusfriends" : null); // P6d-ops: 콘솔에 설정된 세 항목만
+    expect(url.href).not.toMatch(/(?<!plus)friends|contacts|offline_access/);
     const cookies = p.finish(new NextResponse()).cookies.getAll();
     expect(cookies.some(c => c.name.endsWith("code-verifier") && c.httpOnly && c.secure && c.sameSite === "lax")).toBe(true);
     expect(global.fetch).not.toHaveBeenCalled();
@@ -53,10 +54,10 @@ describe("official Supabase SSR SDK contract, network forbidden", () => {
     });
     vi.stubGlobal("fetch", fetch);
     const p = createAccountPort(r)!, u = (await p.currentUser())!;
-    expect(u).toEqual({ id, provider: "google", displayName: "회원" });
+    expect(u).toMatchObject({ id, provider: "google", displayName: "회원" }); // P6d-ops: identity에 email·emailVerified·kakaoId·lastSignInAt가 더해졌다
     expect(await p.consent({ ...u, id: "forged-client-id" }, "x", "first_login")).toBe(false);
     expect(await p.consent(u, "22222222-2222-4222-8222-222222222222", "first_login")).toBe(true);
-    expect(saved?.p_user_id).toBe(id); expect(saved?.p_records).toEqual(expect.arrayContaining([expect.objectContaining({ consent_type: "privacy", document_version: "2026-09-22.1", required: true })]));
+    expect(saved?.p_user_id).toBe(id); expect(saved?.p_records).toEqual(expect.arrayContaining([expect.objectContaining({ consent_type: "privacy", document_version: ACCOUNT_POLICY_VERSIONS.privacy, required: true })]));
     expect(fetch.mock.calls.some(([url]) => String(url).includes("grant_type=refresh_token"))).toBe(true);
     expect(p.finish(new NextResponse()).cookies.getAll().some(c => c.httpOnly && c.value)).toBe(true);
     expect(await p.logout()).toBe(true);

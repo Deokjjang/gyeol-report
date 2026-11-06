@@ -1,0 +1,329 @@
+{
+ "case": "y-love",
+ "label": "연애 · 도현(Y)",
+ "reportId": "report_416ef58d19db4b7ca5a33164f2f2dc22",
+ "status": "COMPLETED",
+ "wallMs": 2302,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 9279,
+ "chapterChars": [
+  1517,
+  954,
+  923,
+  904,
+  939,
+  988,
+  993,
+  916,
+  1145
+ ],
+ "chapters": 9,
+ "deterministicChapters": [
+  "1:missing",
+  "2:missing",
+  "3:missing",
+  "4:missing",
+  "5:missing",
+  "6:missing",
+  "7:missing",
+  "8:missing",
+  "9:missing"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 107,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 69,
+ "infoByKind": {
+  "claim": 69,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "기묘(己卯)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "정관(正官)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "1.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "기묘(己卯)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "천간합(天干合) 갑기합은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "2.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "기묘(己卯)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "원진살(怨嗔殺) 묘신 원진은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "3.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "기묘(己卯)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "육해살(六害煞)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "6.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "기묘(己卯)는 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "편관(偏官)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.1",
+    "7.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "1.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "2.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.1",
+    "3.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.488,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 2285,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cachedInput": 0
+ },
+ "costUsd": 0,
+ "costKrw": 0,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "error",
+   "error": "dry",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 19020,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  }
+ ],
+ "writer": null,
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 9343,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 1
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 5,
+   "rate": 0.56,
+   "terms": 9,
+   "misses": [
+    "현침살",
+    "편관",
+    "묘목",
+    "정인"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 5,
+    "paragraphs": [
+     2,
+     1,
+     2,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     4,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     2,
+     1,
+     1,
+     6
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 4,
+    "paragraphs": [
+     3,
+     1,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     1,
+     4,
+     1
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     4,
+     1,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     9
+    ]
+   }
+  ],
+  "subheadingsOk": 3,
+  "paragraphsOk": 9,
+  "sectionsTotal": 38,
+  "byRule": {},
+  "coreImage": "나무뿌리가 촘촘히 박힌 숲속 흙",
+  "edition": "제5판"
+ }
+}

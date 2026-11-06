@@ -51,7 +51,7 @@
               {
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/identity/0/plainKo",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                 "catalogKeys": [
                   "kc:v1:50b2c4840898a225b7fb1e7fdb5e29e2c55e9a15f086dbca5a1edac5c2f851ad"
                 ],
@@ -537,7 +537,7 @@
               {
                 "file": "docs/product/mbti/source/ISTJ.json",
                 "pointer": "/traits/career/6/plainKo",
-                "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+                "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
                 "catalogKeys": [
                   "kc:v1:be60e1d0803a968a993fc5477e533672f1e795ca6c203dff9c5cc7470695fcf7"
                 ],
@@ -5634,7 +5634,7 @@
               {
                 "file": "docs/product/mbti/source/INTJ.json",
                 "pointer": "/traits/love/1/plainKo",
-                "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+                "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
                 "catalogKeys": [
                   "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781"
                 ],
@@ -5914,7 +5914,7 @@
               {
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/identity/0/plainKo",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                 "catalogKeys": [
                   "kc:v1:50b2c4840898a225b7fb1e7fdb5e29e2c55e9a15f086dbca5a1edac5c2f851ad"
                 ],
@@ -6195,7 +6195,7 @@
               {
                 "file": "docs/product/mbti/source/ENFJ.json",
                 "pointer": "/traits/workplace/0/plainKo",
-                "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+                "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
                 "catalogKeys": [
                   "kc:v1:1f5f6f3c964b3e86f13af856e4a71cc3035953508238ce7129956743e1cc452b"
                 ],

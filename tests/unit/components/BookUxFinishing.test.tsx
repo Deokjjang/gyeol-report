@@ -73,7 +73,8 @@ describe("server event copy and closed policy", () => {
   });
 });
 describe("decorative publishing lifecycle", () => {
-  it("loops only four non-complete stages, pauses hidden/reduced motion, cleans timers", () => {
+  // v5 최종 2-1 #7(34f65006 이식): 책 만드는 동작은 진행 표시 자체라 동작 줄이기 설정에서도 멈추지 않는다. 숨은 탭에서만 멈춘다.
+  it("loops only four non-complete stages, pauses only while hidden (not under reduced motion), cleans timers", () => {
     vi.useFakeTimers(); const doc = Object.assign(new EventTarget(), { hidden: false }); const motion = Object.assign(new EventTarget(), { matches: false }); vi.stubGlobal("document", doc); vi.stubGlobal("matchMedia", () => motion);
     const component = BookPublishingVisual({ animate: true }).type as () => ReactElement;
     const renderAnimation = () => { hooks.index = 0; hooks.effects = []; return renderToStaticMarkup(component()); };
@@ -81,7 +82,7 @@ describe("decorative publishing lifecycle", () => {
     for (const state of ["composing", "binding", "covering", "preparing", "composing"]) { vi.advanceTimersByTime(1400); expect(renderAnimation()).toContain(`data-publishing="${state}"`); }
     doc.hidden = true; doc.dispatchEvent(new Event("visibilitychange")); expect(vi.getTimerCount()).toBe(0);
     doc.hidden = false; doc.dispatchEvent(new Event("visibilitychange")); expect(vi.getTimerCount()).toBe(1);
-    motion.matches = true; motion.dispatchEvent(new Event("change")); expect(vi.getTimerCount()).toBe(0); cleanup?.(); expect(vi.getTimerCount()).toBe(0);
+    motion.matches = true; motion.dispatchEvent(new Event("change")); expect(vi.getTimerCount()).toBe(1); cleanup?.(); expect(vi.getTimerCount()).toBe(0);
   });
   it("reopening uses static paper without payment or generation claims or personal data", () => {
     const html = renderToStaticMarkup(<ReportLoading />); expect(html).toContain("책장을 펼치고 있습니다."); expect(html).toContain("잠시만 기다려 주세요."); expect(html).toContain("GYEOL REPORT"); expect(html).not.toMatch(/결제|생성|미리보기|님의|ISSUE|<svg/); expect(hooks.effects).toHaveLength(0);

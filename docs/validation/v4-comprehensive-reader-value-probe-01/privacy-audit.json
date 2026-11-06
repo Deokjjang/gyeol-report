@@ -18,7 +18,7 @@
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/actual-graph-witness-ledger.json",
-      "sha256": "aa5dd8aa67dae1996ad2aa21130e84696d000ce0db6782e87cd7788256be64cb"
+      "sha256": "ff1fbc1cfef81e2c43a1f8255753224f554a6717d88f128971c984ede6643852"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/baseline-failure-comparison.json",
@@ -54,7 +54,7 @@
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/deterministic-rebuild.json",
-      "sha256": "5a69462e5e20df99ef3b5cbdbedeb6874f0ff6dd61c1c6466b229f215351caef"
+      "sha256": "e01ca0acecb953367ee66506dde59c612109f8dd808f8ce46ffa8b50d2c1fbbc"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/experiment-manifest.json",
@@ -62,7 +62,7 @@
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/experiment-source-hashes.json",
-      "sha256": "fd76ca1385c4a361b2696059cf778d0ebe4cf3d874b660d5beca499e10bcb96b"
+      "sha256": "76ae2e3ac1a8253f037cce287d3dd70dac6c6f69adb4041f57ae0624ae1073ad"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/experimental-prose.json",
@@ -74,7 +74,7 @@
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/global-deterministic-validation.json",
-      "sha256": "48cd18643f895dd44a18f576bd25765224d47083a40a6dafcf53bbc2ff16fe43"
+      "sha256": "df00563205dd4db1196e549eebb8b37602a9544ac76af8d0b4b024ece7383f37"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/grounding-violation-audit.json",
@@ -122,11 +122,11 @@
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/research-inventory.json",
-      "sha256": "e874e2b757c51dcfc1e83e76f8b43c8e350823f0ca08ac3a290147c69f9bdb47"
+      "sha256": "95ffb3c10f2219e32fc5e0014cac30cf9356729666124cb4696d9aabcbf950a5"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/research-source-ledger.json",
-      "sha256": "48a457043f5320cde86d2969c722fc4f9ba99df6813b69c5b15f1e808a9be3ca"
+      "sha256": "0d41d6ca19ae5fbcd1834c6b747abc505160a1b55bfa41baf53cd5c7ea15af36"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/research-value-assessment.json",
@@ -142,7 +142,7 @@
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/sentence-claim-ledger.json",
-      "sha256": "f6330ae68997df12c74dca3317c691abe0af5670252891fe903d740f4965cc0e"
+      "sha256": "4583d24948e72752b58d873f8e4405d831efe025b612bf1ca57af3c2df1d4eab"
     },
     {
       "file": "docs/validation/v4-comprehensive-reader-value-probe-01/technical-validation.json",
@@ -178,7 +178,7 @@
     },
     {
       "file": "tools/comprehensive-reader-value-probe/prototypes.json",
-      "sha256": "ccd479efebdd459866639786e20ebce47ce719f6c60d1a2deb1d38d9c58cf97c"
+      "sha256": "dc8f59267fe7c48fed68468904aa27931a87cdf0cd098fa5e8a89fae4dae3e56"
     },
     {
       "file": "tools/comprehensive-reader-value-probe/run.mjs",

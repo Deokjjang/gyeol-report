@@ -1,0 +1,263 @@
+/**
+ * 작가용 브리프(결정론 취재 노트) 스키마. 작가는 이 JSON에 있는 사실만 쓴다(SPEC §3).
+ * 압축 원칙: 장면은 장에 배정된 것만 담는다. trait 본문(이미지·좋은 면·Fusion)은 한 번만 두고 장은 id로 가리킨다.
+ */
+import { z } from "zod";
+import { COMPATIBILITY_CATEGORIES, DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, PRODUCT_KEYS } from "@/data/knowledge-v5/schema";
+
+export const BRIEF_VERSION = "brief-v5-1" as const;
+const Position = z.enum(["year", "month", "day", "hour"]);
+const Element = z.enum(["WOOD", "FIRE", "EARTH", "METAL", "WATER"]);
+const Image = z.object({ metaphor: z.string(), visual: z.string() });
+const Ganji = z.object({ hanja: z.string().regex(/^[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]$/), hangul: z.string().length(2) });
+const ElementColor = z.object({ element: Element, hex: z.string().regex(/^#[0-9A-F]{6}$/) });
+
+export const PersonBriefSchema = z.object({
+  name: z.string(),
+  callName: z.string(),
+  nameUse: z.array(z.string()).min(1),
+  gender: z.enum(["MALE", "FEMALE"]).nullable(),
+  age: z.number().int(),
+  ageBand: z.string(),
+  facts: z.object({
+    birthTimeKnown: z.boolean(),
+    mbti: z.enum(MBTI_TYPES).nullable(),
+    relationship: z.enum(["single", "dating", "married", "unknown"]),
+    children: z.enum(["has", "none", "unknown"]),
+    job: z.object({ class: z.enum(["employed", "business", "student", "none"]), status: z.string(), detail: z.string() }),
+  }),
+  forbiddenFacts: z.array(z.string()).min(1),
+  /** 생활 단계(P6c C1): 장면이 맞아야 하는 삶의 자리(학생이 아니면 학교 장면 금지 등). 궁합은 없음. */
+  lifeStage: z.string().optional(),
+  /** 입력 직업의 실제 업무 단위(P6c E1): 기획·실행·운영·협상마다 장면 씨앗 2개. 직업군을 모르면 없음. */
+  workScenes: z.object({ plan: z.array(z.string()), execute: z.array(z.string()), operate: z.array(z.string()), negotiate: z.array(z.string()) }).optional(),
+});
+
+export const MbtiBriefSchema = z.object({
+  type: z.enum(MBTI_TYPES), easyName: z.string(), oneLiner: z.string(), image: Image,
+  functions: z.array(z.string()).length(4),
+  shadows: z.array(z.string()),
+});
+
+const StarFact = z.object({ star: z.string(), where: z.enum(["surface", "hidden", "none"]), places: z.array(z.string()), line: z.string() });
+export const ChartBriefSchema = z.object({
+  pillars: z.object({ year: Ganji, month: Ganji, day: Ganji, hour: Ganji.optional() }),
+  dayMaster: z.object({ stem: z.string(), name: z.string(), easyName: z.string(), metaphor: z.string() }),
+  /** 핵심 이미지(P6b B-4): 일간·계절·강약·오행 분포로 합성한 한 줄. 작가에게는 line만 간다. */
+  coreImage: z.object({ line: z.string(), ruleId: z.string(), meaning: z.string().optional(), short: z.string().optional() }),
+  /** note: 일간 강약과 오행 쏠림이 다른 이야기임을 푸는 한 문장(P3.7 1-2). */
+  /** reading: 강약 한 줄 해석(P3.8 5: 해석이 비어 작가가 채웠다). */
+  strength: z.object({ level: z.string(), label: z.string(), reading: z.string().optional(), note: z.string().optional() }),
+  yinYang: z.object({ yin: z.number(), yang: z.number(), label: z.string(), reading: z.string() }),
+  /** 오행 단일 판단의 결론 하나(가장 강한·가장 약한 기운)와 쉬운 이유. 겉 글자 수만 보고 판단하지 않도록 숫자는 주지 않는다. */
+  elements: z.object({
+    strongest: z.object({ element: Element, name: z.string(), level: z.string(), reason: z.string() }),
+    weakest: z.object({ element: Element, name: z.string(), level: z.string(), reason: z.string() }),
+    reading: z.array(z.string()),
+    /** 오행 유무(P6c B2): 겉 글자 수(천간 + 지지 본기)와 지장간에 있는지. 겉 0·hidden=true면 "겉에는 없고 땅속에 조금"만 허용. */
+    presence: z.record(Element, z.object({ surface: z.number(), hidden: z.boolean() })).optional(),
+    /** 최종판2 1-8: 글자 수와 힘이 갈릴 때 한 줄(가장 센 기운의 겉 글자 수가 가장 많지 않을 때). 소제목·본문이 개수와 힘을 섞지 않게. */
+    countVsStrength: z.string().optional(),
+  }),
+  climate: z.object({ season: z.string(), needs: z.array(z.string()), level: z.enum(["strong", "medium", "weak"]), lacking: z.array(Element), reading: z.string() }),
+  /** phase(P6c B5): 대운 안의 위치(엔진 연차: 1~3년 앞쪽, 4~7년 중간, 8~10년 끝 무렵), yearsLeft = 올해 뒤로 남은 해.
+   * label·start(최종판3 8): 6개 상품 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 8)"와 그 시작 말 "2027년 5월 무렵부터"(labels.dayunLabel). ages는 만 나이. */
+  currentDayun: z.object({ ganji: Ganji, ages: z.string(), years: z.string(), label: z.string().optional(), start: z.string().optional(), until: z.string().optional(), period: z.string().optional(), tenGod: z.string(), reading: z.string(), phase: z.object({ yearIndex: z.number().int(), label: z.string(), yearsLeft: z.number().int(), remaining: z.string().optional() }).optional(), next: z.object({ ganji: Ganji, startYear: z.number().int(), label: z.string().optional(), start: z.string().optional(), tenGod: z.string(), easyName: z.string().optional(), reading: z.string().optional() }).optional() }).nullable(),
+  thisYear: z.object({ year: z.number().int(), ganji: Ganji, tenGod: z.string(), effect: z.string() }),
+  /** 십성 묶음 세기(P6d A): 만세력 오행 칸 가중값의 단계(강·보통·약)만. 숫자는 주지 않는다. 작가는 묶음 세기를 이 단계로만 쓴다. */
+  groups: z.object({ levels: z.object({ 비겁: z.enum(["강", "보통", "약", "있음"]), 식상: z.enum(["강", "보통", "약"]), 재성: z.enum(["강", "보통", "약"]), 관성: z.enum(["강", "보통", "약"]), 인성: z.enum(["강", "보통", "약", "있음"]) }), line: z.string() }).optional(),
+  /** 배우자 별·자녀 별(P6c B4): 성별 기준 별, 자리(surface 드러남·hidden 지장간에만·none 없음), 사실 한 줄. 성별 미상이면 없음. */
+  stars: z.object({ spouse: StarFact, child: StarFact }).optional(),
+  /** 피할 이미지(최종판 1-7): 같은 일주의 다른 책이 쓴 핵심 이미지 명사. 작가는 [표지] 핵심 이미지에 이 낱말을 쓰지 않는다. */
+  avoidImages: z.array(z.string()).optional(),
+  /** 자리별 십성(P6e 5): 천간 = 그 글자, 지지 = 지장간 십성(본기 먼저). 시간 미상이면 시주 없음. */
+  positions: z.object({ yearStem: z.array(z.string()), monthStem: z.array(z.string()), hourStem: z.array(z.string()).optional(), yearBranch: z.array(z.string()), monthBranch: z.array(z.string()), dayBranch: z.array(z.string()), hourBranch: z.array(z.string()).optional(), line: z.string() }).optional(),
+});
+
+export const FusionBriefSchema = z.object({ target: z.string(), kind: z.enum(["resonance", "tension", "conditional"]), why: z.string(), scene: z.string().optional(), source: z.enum(["fusion", "mbtiLink", "computed"]) });
+
+export const TraitSchema = z.object({
+  id: z.string().regex(/^[ab]?t\d+$/),
+  featureId: z.string(),
+  family: z.enum(FEATURE_FAMILIES),
+  name: z.string(),
+  easyName: z.string(),
+  positions: z.array(Position),
+  strength: z.enum(["strong", "medium", "weak"]),
+  score: z.number(),
+  /** 그림 별명·이미지·한 줄(easyName·image·oneLiner)은 내부 별칭(P6b B-2): 작가에게 보내지 않는다. */
+  image: Image,
+  oneLiner: z.string(),
+  /** 명리학에서 이 용어가 뜻하는 바(P6b B-1). 첫 등장은 "이름(한자)은 명리학에서 ~를 뜻해요. 그래서 당신에게는 ~(forYou)". */
+  meaning: z.string(),
+  /** 이 사람에게 주는 힘: 개수·자리·강약 조건으로 고른 한 문단. */
+  forYou: z.string(),
+  positionNote: z.string().optional(),
+  /** 합충형해의 자리 문장(P3.6 A4). 작가는 자리를 이 문장과 같은 의미로만 쓴다. */
+  where: z.string().optional(),
+  strengthNote: z.string().optional(),
+  good: z.array(z.string()).min(1).max(2),
+  overuse: z.string().optional(),
+  fusion: FusionBriefSchema.optional(),
+  /** 같은 대상을 그린 이미지 계열의 대표 trait id(P3.7 1-3). 있으면 그 그림이 주제이고, 이 trait는 "같은 불의 다른 얼굴"로 한 구절만 잇는다. */
+  sameImageAs: z.string().optional(),
+  chapters: z.array(z.string()),
+});
+
+export const FortuneSchema = z.object({ featureId: z.string(), name: z.string(), easyName: z.string(), image: Image, oneLiner: z.string(), meaning: z.string(), forYou: z.string(), direct: z.string(), traitId: z.string().optional() });
+export const ShadowSchema = z.object({ id: z.string(), traitId: z.string(), text: z.string(), basis: z.string(), warmTurn: z.string() });
+export const UnusedSchema = z.object({ kind: z.enum(["element", "tenGod"]), key: z.string(), name: z.string(), easyName: z.string(), oneLiner: z.string(), meaning: z.string(), forYou: z.string(), actions: z.array(z.string()), places: z.array(z.string()) });
+
+export const MaterialSchema = z.discriminatedUnion("kind", [
+  /** angle: first = 이 trait를 책에서 처음 소개(그림 + 쉬운 말(용어)), new-domain = 앞에서 소개된 trait를 "앞에서 본 ○○" 한 문장으로만 부르고 이 절의 새 정보를 붙인다(P3.8 1). */
+  /** known(P6c A3): 같은 고객의 다른 책에서 이미 뜻을 푼 특성 — 이름만 부르고 이 상품에 맞는 쓰임만. */
+  z.object({ kind: z.literal("trait"), traitId: z.string(), domain: z.enum(DOMAINS), scene: z.string().optional(), angle: z.enum(["first", "new-domain", "known"]) }),
+  /** seedId(P6d F): MBTI 장면 씨앗(유형 × 영역 30개 이상)에서 고른 것. 명리 근거·입력 맥락이 있는 절에만 놓는다. */
+  z.object({ kind: z.literal("mbti"), domain: z.enum(DOMAINS), scene: z.string(), who: z.string().optional(), seedId: z.string().optional() }),
+  z.object({ kind: z.literal("ref"), ref: z.string(), note: z.string().optional() }),
+  /** note: 쓰는 법(작가 지시). 본문에 옮기지 않는다(P3.7 r1: 지시문이 독자용 면책 문구로 옮겨졌다). */
+  z.object({ kind: z.literal("evidence"), key: z.string(), facts: z.array(z.string()).min(1), note: z.string().optional() }),
+  z.object({ kind: z.literal("timeline"), entryKey: z.string() }),
+  /** 궁합 관계 장면(P3.8 3): 이 관계 유형의 생활 주제와 장면. 다른 관계 유형 장면은 쓰지 않는다. */
+  z.object({ kind: z.literal("rel"), topic: z.string(), scene: z.string(), who: z.array(z.string()).optional() }),
+]);
+export type Material = z.infer<typeof MaterialSchema>;
+
+export const ChapterBriefSchema = z.object({
+  id: z.string(), index: z.number().int(), title: z.string(), question: z.string(), role: z.string(),
+  targetChars: z.tuple([z.number().int(), z.number().int()]),
+  subheadings: z.tuple([z.number().int(), z.number().int()]),
+  paragraphs: z.tuple([z.number().int(), z.number().int()]),
+  useName: z.boolean(),
+  /** 장 재료 전체(절 재료를 모은 것). 반복 장은 타임라인 항목 + 짧은 참조. */
+  materials: z.array(MaterialSchema).min(1).max(12),
+  /** 절 계획(P3.8 1): 절마다 질문과 그 절 전용 재료. 작가는 절 하나를 소제목 하나로 쓴다. */
+  sections: z.array(z.object({ q: z.string(), domain: z.enum(DOMAINS), materials: z.array(MaterialSchema).min(1).max(4) })).min(1).max(5).optional(),
+  note: z.string().optional(),
+  /** 장면 변주 힌트(P3.5 A1): 이 고객의 생활 소품 2개. 재료 장면을 이 소품으로 다시 짠다(문장 복사 방지). */
+  sceneHint: z.array(z.string()).min(1).max(3).optional(),
+});
+
+export const TimelineEntrySchema = z.object({
+  key: z.string(), label: z.string(), kind: z.enum(["year", "month"]),
+  ganji: Ganji, colors: z.object({ stem: ElementColor, branch: ElementColor }),
+  tenGod: z.object({ stem: z.string(), branch: z.string() }),
+  /** with: 그해·그달 글자와 엮인 원국 자리("태어난 달·태어난 날"), P3.7 1-1. */
+  badges: z.array(z.object({ kind: z.string(), pair: z.string().optional(), label: z.string(), line: z.string(), tone: z.string(), with: z.string().optional() })),
+  fillsLack: z.object({ fills: z.boolean(), elements: z.array(Element), feedsExcess: z.array(Element) }),
+  flow: z.object({ score: z.number().int().min(1).max(5), label: z.string(), basis: z.array(z.string()), note: z.literal("참고") }),
+  keywords: z.array(z.string()).min(2).max(3),
+  action: z.object({ templateId: z.string(), text: z.string() }),
+  /** 카드 필드(P6b, p6b-fields.md 5): 기간 상태·그림 줄·할 일(앞으로)·돌아보기(지난 기간). */
+  period: z.enum(["past", "current", "future"]),
+  imageLine: z.string(),
+  todo: z.string().optional(),
+  review: z.string().optional(),
+  /** 대운(P6d C): 이 해가 대운 안 몇 번째 해인지(엔진 연차, 1~total)와 위치 말(앞쪽·중간·끝 무렵·마지막 해). 작가는 위치를 이 값으로만 쓴다. tenGod: 대운 천간 십성. */
+  /** start(최종판3 8): 대운 전환 해의 교운 표기 "2027년 5월 무렵부터"(labels.dayunLabel). */
+  dayun: z.object({ ganji: z.string(), transition: z.boolean(), yearIndex: z.number().int().optional(), total: z.number().int().optional(), position: z.string().optional(), tenGod: z.string().optional(), start: z.string().optional() }).optional(),
+  /** 머리 문장(P6d D): 결정론 형식 "YYYY년 간지(한자)는 천간 십성이 하늘에, 지지 십성이 땅에 들어오는 해예요." 대운 전환 해는 새 대운 이름과 십성. 작가는 쓰지 않고 조립 때 넣는다. */
+  head: z.string().optional(),
+  /** 살필 점 결정론 값(P6d D): 그 해·달의 실제 조합(관계 표시 → 천간 십성 → 지지 십성)에서 고르고, 앞 항목과 같은 문장은 쓰지 않는다. 작가 줄이 없거나 걸리면 쓴다. */
+  caution: z.string().optional(),
+  change: z.object({ tenGodFrom: z.string(), flowFrom: z.number(), line: z.string().optional() }).optional(),
+  /** 기준일 대비: past(돌아보는 말), now, future(경향). P3.6 B. */
+  when: z.enum(["past", "now", "future"]).optional(),
+  /** 그림은 간지(image), 뜻은 일간 기준 십성(tenGodNotes·keywords)으로 나눈다(P3.8 1: 간지 기준 mood가 십성과 어긋났다). */
+  /** stage: 같은 십이운성 단계가 앞 항목에 이미 나왔으면 뺀다(같은 문구 반복 방지). */
+  /** domains: 그 시기 십성의 영역별 한 줄(일·돈·관계·컨디션, P6b D). */
+  material: z.object({ image: z.string(), scene: z.string().optional(), stage: z.string().optional(), domains: z.array(z.string()).optional() }),
+  /** 앞 항목과 같은 십성이 다시 들어오면 그 항목 key(P3.8 r1). 작가는 뜻을 다시 풀지 않고 이번에 달라진 것만 쓴다. */
+  repeatOf: z.string().optional(),
+  /** 그해·그달 글자가 실제로 건드리는 원국 trait와 어떻게 건드리는지(P3.7 1-1). 장에 배정된 것만 남긴다. 없으면 원국 특성을 쓰지 않는다. */
+  touched: z.array(z.object({ traitId: z.string(), how: z.string() })).optional(),
+});
+export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
+
+export const PairPersonSchema = z.object({ role: z.string(), callName: z.string(), mbti: z.string().nullable(), dayPillar: z.string(), image: z.string(), traitIds: z.array(z.string()), excess: z.array(Element), lacking: z.array(Element), shinsal: z.array(z.string()).optional() });
+export const CompatibilityBriefSchema = z.object({
+  relationshipType: z.enum(COMPATIBILITY_CATEGORIES),
+  lens: z.object({ focus: z.string(), roleLabels: z.tuple([z.string(), z.string()]), tone: z.string(), forbidden: z.array(z.string()) }),
+  a: PairPersonSchema, b: PairPersonSchema,
+  common: z.array(z.string()), differences: z.array(z.object({ a: z.string(), b: z.string() })),
+  /** 최종판3 2b: 두 사람이 모두 가진 특성 id(신살·운성·묶음 등). 작가에게는 공통 표시로만 간다. */
+  commonIds: z.array(z.string()).optional(), commonNames: z.array(z.string()).optional(),
+  complement: z.array(z.string()),
+  tenGodAB: z.object({ tenGod: z.string(), reading: z.string() }), tenGodBA: z.object({ tenGod: z.string(), reading: z.string() }),
+  /** 두 사람 관계 이미지(P6b B-4 pairImage). */
+  pairImage: z.object({ line: z.string(), a: z.string(), b: z.string(), ruleId: z.string(), meaning: z.string().optional() }),
+  /** 최종판2 1-3: 사람별 고정 성격표(브리프 맨 앞 한 줄, 모든 장이 따른다). */
+  profiles: z.array(z.object({ name: z.string(), line: z.string(), energy: z.enum(["E", "I"]).nullable(), lead: z.enum(["front", "back"]).nullable(), conflict: z.enum(["now", "later"]).nullable(),
+    express: z.enum(["말", "말·표정", "행동"]).nullable(), decide: z.enum(["fast", "mid", "slow"]).nullable(),
+    offer: z.enum(["hold", "open"]).nullable().optional(), money: z.enum(["plan", "goal", "now", "interest"]).nullable().optional() })).optional(),
+  dayRelations: z.array(z.string()),
+  /** 관계 쉬운 문장 목록(P6b D 궁합, 화면 evidence.pair.relationsPlain). 최종판3 7: 엔진이 찾은 두 사람 사이 관계 전체(천간충 포함, 삼형은 한 줄), 영향 큰 순. 화면은 부록에 전부. */
+  relationsPlain: z.array(z.string()),
+  /** 최종판3 7: 첫 쪽 묶음 요약 한 줄("합 n가지(…) · 형·충·파·해 n가지(…)")과 relationsPlain 줄마다의 짧은 관계 이름(육합·반합·천간충·삼형…).
+   * 첫 쪽은 요약 + 영향 큰 3개(relationsPlain 앞 3줄), 전체는 부록. */
+  relationsSummary: z.object({ line: z.string(), names: z.array(z.string()) }).optional(),
+  /** 장면 역할(P6b D 궁합): 누가 먼저 무엇을 하는지와 근거(E/I·J/P·십성). */
+  roles: z.array(z.string()).min(1),
+  mbtiConvention: z.object({ fit: z.string(), why: z.string(), note: z.literal("통념") }).nullable(),
+  /** v5 궁합 점수 v2(P6c, src/lib/compat/score.ts): 기본 40 + 항목 합. 본문은 band 톤과 맞아야 하고(안전망), 낮은 점수에도 보완법을 쓴다.
+   * components[].onScorePage: 점수 쪽에 이미 실린 이유 문장(작가는 되풀이하지 않고 본문에서 더 깊게 푼다). */
+  score: z.object({
+    value: z.number().int().min(40).max(100), version: z.string(),
+    band: z.object({ label: z.string(), tone: z.string(), verdict: z.string() }), notice: z.string(),
+    // 최종판3 7: 맨 앞 줄은 기본점(40/40, level "기본")이라 points 합 = value(총점). 그 뒤가 항목 6~7개.
+    components: z.array(z.object({ name: z.string(), points: z.number().int().min(0), max: z.number().int().min(1), level: z.enum(["기본", "좋음", "보통", "조율"]), onScorePage: z.string() })).min(7).max(8),
+    direction: z.object({ aToB: z.object({ tenGod: z.string(), role: z.string(), gives: z.string().nullable() }), bToA: z.object({ tenGod: z.string(), role: z.string(), gives: z.string().nullable() }) }),
+    rules: z.array(z.string()),
+  }),
+});
+
+export const BriefSchema = z.object({
+  version: z.literal(BRIEF_VERSION),
+  /** 최종판2 1-1: 이미지 대장에서 뺄 책(저장본 검사·replay). 작가에게 보내지 않는다. */
+  ledgerView: z.object({ exclude: z.string().optional(), before: z.string().optional(), self: z.object({ people: z.array(z.string()), product: z.string() }).optional() }).optional(),
+  /** 최종판3 2i: 고객 원장(같은 계정·같은 사주 주인의 이전 책): 이전 책 처방·표지 모티프. 작가에게는 피할 목록으로만 간다. */
+  ledgerNotes: z.object({ avoidActions: z.array(z.string()).optional(), avoidCoverMotifs: z.array(z.string()).optional() }).optional(),
+  product: z.enum(PRODUCT_KEYS),
+  productTitle: z.string(),
+  seed: z.string(),
+  baseDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  person: PersonBriefSchema,
+  mbti: MbtiBriefSchema.nullable(),
+  chart: ChartBriefSchema,
+  traits: z.array(TraitSchema).min(1),
+  fortunes: z.array(FortuneSchema),
+  shadows: z.array(ShadowSchema),
+  unused: z.array(UnusedSchema),
+  chapters: z.array(ChapterBriefSchema).min(5),
+  /** cycles[].label·ages(최종판3 8): 공통 대운 표기 줄과 만 나이(labels.dayunLabel). */
+  timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), period: z.string().optional(), tenGod: z.string(), current: z.boolean(), label: z.string().optional(), ages: z.string().optional() })) }).optional(),
+  partner: z.object({ person: PersonBriefSchema, mbti: MbtiBriefSchema.nullable(), chart: ChartBriefSchema }).optional(),
+  compatibility: CompatibilityBriefSchema.optional(),
+  /**
+   * 배정 기록(P3.8 1, 작가에게는 안 감): trait별 소개 장·적용 장, 축별 사용 수. 안전망이 원고의 실제 언급과 비교한다.
+   * axis = 의미 그룹 또는 가장 센 행동 차원(+/-). 상한: trait 소개 1 + 적용 2, 축 3, 한 장에 같은 trait·같은 축 1.
+   */
+  plan: z.object({
+    traits: z.record(z.string(), z.object({ intro: z.string().nullable(), applies: z.array(z.string()), axes: z.array(z.string()) })),
+    axes: z.record(z.string(), z.number().int()),
+    warnings: z.array(z.string()),
+  }).optional(),
+  /** 책 단위 소품 사용 기록(P3.6 A1): 소품 → 힌트로 준 장 수(최대 2). */
+  usedProps: z.record(z.string(), z.number().int().min(1).max(2)).optional(),
+  /** 부록 "내 모든 기운"(P6c): 사람마다 내 사주에 있는 기운(지식 DB 이름)과 뜻 한 줄. 작가 입력에서 뺀다. core: 본문 trait로 쓴 기운. */
+  appendix: z.array(z.object({ name: z.string(), items: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string(), core: z.boolean() })) })).optional(),
+  /** 용어 뜻(P6c-ui2 g): 십성·신살·귀인·십이운성 이름(한글)과 지식 DB 뜻 한 줄. 작가 입력에서 빼고, Book에는 본문에 나온 것만 남긴다. */
+  glossary: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string() })).optional(),
+  style: z.object({
+    version: z.string(), register: z.string(), readingLevel: z.string(),
+    totalChars: z.tuple([z.number().int(), z.number().int()]),
+    rules: z.array(z.string()), forbidden: z.array(z.string()),
+  }),
+  budget: z.object({ estimatedTokens: z.number().int(), bySection: z.record(z.string(), z.number().int()), method: z.string() }),
+});
+export type Brief = z.infer<typeof BriefSchema>;
+export type Trait = z.infer<typeof TraitSchema>;
+export type ChapterBrief = z.infer<typeof ChapterBriefSchema>;
+export type ChartBrief = z.infer<typeof ChartBriefSchema>;
+export type PersonBrief = z.infer<typeof PersonBriefSchema>;
+export type CompatibilityBrief = z.infer<typeof CompatibilityBriefSchema>;

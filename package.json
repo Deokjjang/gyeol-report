@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:v5": "tsx scripts/dev/v5-dev.ts",
+    "db:v5": "tsx scripts/dev/v5-db.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "release:check": "pnpm test && pnpm lint && pnpm build"
+    "release:check": "pnpm test && pnpm lint && pnpm build",
+    "book:brief": "NODE_PATH=tools/llm/shim tsx tools/final/brief.ts",
+    "book:replay": "NODE_PATH=tools/llm/shim tsx tools/final/replay.ts",
+    "book:budget": "NODE_PATH=tools/llm/shim tsx tools/llm/budget.ts"
   },
   "dependencies": {
     "@supabase/ssr": "0.9.0",
@@ -17,7 +22,8 @@
     "lunar-javascript": "^1.7.7",
     "next": "16.2.4",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zod": "^4.4.1"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.8",
@@ -29,6 +35,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^4.1.5"
   }

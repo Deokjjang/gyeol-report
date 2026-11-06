@@ -6,7 +6,7 @@ import type { MbtiCommonProfileTableData } from "../../../../src/lib/report-tabl
 
 const tableData: MbtiCommonProfileTableData = {
   type: "ENTJ",
-  titleKo: "대담한 통솔자",
+  titleKo: "지휘관",
   archetype: "목표를 현실화하는 전략 지휘관",
   oneLine:
     "비효율을 발견하면 구조를 새로 짜고 목표를 현실로 밀어붙이는 사람",
@@ -166,7 +166,7 @@ describe("MbtiCommonProfileTable", () => {
 
     for (const marker of [
       "ENTJ",
-      "대담한 통솔자",
+      "지휘관",
       "목표를 현실화하는 전략 지휘관",
       "비효율을 발견하면 구조를 새로 짜고 목표를 현실로 밀어붙이는 사람",
     ]) {
@@ -258,7 +258,7 @@ describe("MbtiCommonProfileTable", () => {
 
     for (const marker of [
       "ENTJ",
-      "대담한 통솔자",
+      "지휘관",
       "목표를 현실화하는 전략 지휘관",
       "비효율을 발견하면 구조를 새로 짜고 목표를 현실로 밀어붙이는 사람",
       "핵심 요약",
@@ -286,7 +286,7 @@ describe("MbtiCommonProfileTable", () => {
       <MbtiCommonProfileTable data={tableData} defaultOpen={false} />,
     );
 
-    expect(html).toContain("ENTJ 대담한 통솔자");
+    expect(html).toContain("ENTJ 지휘관");
     expect(html).toContain('aria-expanded="false"');
     expect(html).toContain("펼치기");
     expect(html).not.toContain("선호 지표 비교");

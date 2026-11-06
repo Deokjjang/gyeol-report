@@ -8,7 +8,7 @@
   "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/semanticReviewPackets.ts": "0efae4af9d26e2279823833f14b2f8d7d11917e953e83c5271619204d561d5ed",
   "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/types.ts": "4f962a00d5098100aa2bfbafa64472f75fa2609ddef0838d140d63211835b164",
   "tests/unit/report-knowledge/globalSourceDomainResolution.test.ts": "fd09e707764685a6cbe700c45d1d07f801bb96d06734afd062b61dd4cc4ad955",
-  "tools/global-source-domain-resolution/meaning-reviews.json": "62217c1caba48fa6d7413fca328c1f3dd527454451dd4cf8f87802bbfa583f07",
+  "tools/global-source-domain-resolution/meaning-reviews.json": "d14b2f09552099a8bfea470b6b7fd5766a515b0103af7d82759ec754208c9060",
   "tools/global-source-domain-resolution/reevaluation.ts": "959548bab5b63bca0750679acae8a5a74ef5cbe0970812d34742931c843d261b",
   "tools/global-source-domain-resolution/verify.mjs": "d0d42d8c3c0cde395ccbe52d5f88f89f9094302db2c8a3588ad5dae10a429615"
 }

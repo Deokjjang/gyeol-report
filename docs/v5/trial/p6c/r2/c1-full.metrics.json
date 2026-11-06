@@ -1,0 +1,419 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "reportId": "report_889f4b80c4334bb98ba23730051463b0",
+ "status": "COMPLETED",
+ "wallMs": 167250,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 12,
+ "coverLine": "서비스 기획 7년 차, 꺼지지 않는 랜턴의 온도",
+ "keySpans": 35,
+ "sections": 36,
+ "chars": 13458,
+ "chapterChars": [
+  1235,
+  1252,
+  1174,
+  1117,
+  715,
+  1070,
+  781,
+  1106,
+  1076,
+  1033,
+  1029,
+  1079,
+  791
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 3,
+ "byRule": {
+  "love_timing": 2,
+  "family_member": 1
+ },
+ "replacements": 0,
+ "warnings": 54,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 9,
+ "infoByKind": {
+  "claim": 8,
+  "scene": 0,
+  "advice": 1
+ },
+ "infoPairs": [
+  {
+   "a": "ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이에요.",
+   "b": "여기에 ENTJ는 두세 가지만 보고 정하고 뒤돌아보지 않는 편이에요.",
+   "at": [
+    "2.1",
+    "4.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "속상해도 티를 내지 않고 혼자 정리하는 점은 두 쪽이 똑같고요.",
+   "b": "ENTJ는 역할과 순서를 내가 정해야 안심하고, 속상해도 티를 내지 않고 혼자 정리하죠.",
+   "at": [
+    "2.1",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "가까운 사람 곁에서는 표정과 말에 기분이 바로 묻어나요.",
+   "b": "식신은 정해진 흐름에 맞춰 편안하게 따라가는 기운이고, 표정과 말에 기분이 바로 묻어나요.",
+   "at": [
+    "2.2",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그런데 ENTJ는 역할과 순서를 내가 정해야 안심하는 유형이에요.",
+   "b": "ENTJ는 역할과 순서를 내가 정해야 안심하고, 속상해도 티를 내지 않고 혼자 정리하죠.",
+   "at": [
+    "2.2",
+    "5.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "ENTJ도 등수와 순위가 보이면 힘이 더 나는 편이고, 모임이 끝나면 오히려 기운이 나는 쪽입니다.",
+   "b": "겁재(劫財)는 사람을 모으는 힘이 있어서, 모임이 끝나면 오히려 기운이 나는 편이에요.",
+   "at": [
+    "2.3",
+    "12.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "ENTJ는 내 감정을 알아채는 기능(Fi)이 가장 늦게 열려서, 지치고 상처받은 걸 몸이 아프고 나서야 알아요.",
+   "b": "지치고 상처받은 걸 몸이 아프고 나서야 알죠.",
+   "at": [
+    "3.3",
+    "6.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "날짜·금액·역할을 문서로 남기고 \"제가 이해한 건 이거예요\"로 한 번 되돌려 확인하세요.",
+   "b": "요구사항을 문서로 남기고 \"제가 이해한 건 이거예요\"로 되돌려 확인하세요.",
+   "at": [
+    "6.1",
+    "13.1"
+   ],
+   "kind": "advice"
+  },
+  {
+   "a": "반안살(攀鞍殺)은 안정과 격식을 아는 기운이라 조직에서 믿고 자리를 맡길 만한 사람으로 보여요.",
+   "b": "여기에 반안살(攀鞍殺)이 더해지면 조직과 모임에서 믿고 자리를 맡길 만한 사람으로 보여요.",
+   "at": [
+    "7.1",
+    "12.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.014,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 167156,
+ "tokens": {
+  "input": 26956,
+  "output": 17720,
+  "cachedInput": 0
+ },
+ "costUsd": 0.234196,
+ "costKrw": 339.6,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 120124,
+   "chars": 14745,
+   "maxTokens": 28722,
+   "usage": {
+    "inputTokens": 22823,
+    "outputTokens": 16045,
+    "cacheWriteTokens": 6168,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.20918
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 12273,
+   "chars": 1538,
+   "maxTokens": 2748,
+   "usage": {
+    "inputTokens": 4133,
+    "outputTokens": 1675,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.025016
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-19",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 14153,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": true,
+  "similes": [
+   {
+    "n": 1,
+    "count": 1
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 2
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 1
+   },
+   {
+    "n": 10,
+    "count": 2
+   },
+   {
+    "n": 11,
+    "count": 0
+   },
+   {
+    "n": 12,
+    "count": 1
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 2,
+   "internal": 0
+  },
+  "bannedSamples": [
+   "부모·형제 자리인 태어난 달은 정관(正官) 쪽이에요.",
+   "부모님이 계시다면 이런 모습이 가장 걱정스러울 수 있어요."
+  ],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 10,
+   "misses": [
+    "정축",
+    "음착양차살",
+    "반안살",
+    "방합",
+    "정관",
+    "식신",
+    "백호대살",
+    "축토",
+    "겁재",
+    "겨울의 정화"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 36,
+  "sectionsTotal": 36,
+  "byRule": {
+   "love_timing": 2,
+   "family_member": 1
+  },
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 7,
+   "job_prop": 1,
+   "past_assertion": 1
+  },
+  "removed": 0,
+  "repaired": 9,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 9,
+  "droppedParagraphs": 0
+ }
+}

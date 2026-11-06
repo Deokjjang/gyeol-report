@@ -1,0 +1,2377 @@
+{
+  "version": "product-narratives-v5-1",
+  "note": "6상품의 재미 유형·챕터 질문·장 역할(HOOK 질문으로 열기 / WHY 근거 설명 / SCENE 생활 장면 / TWIST 근거 있는 반전·팩폭 / PAYOFF 발견의 보상)·금지·중복 금지 규칙. 역할 배치는 상품마다 다르다. 근거는 docs/design/knowledge-v5-style.md, 프로젝트 PDF 5장(여섯 상품의 재미는 서로 달라야 한다).",
+  "products": [
+    {
+      "productKey": "saju_mbti_full",
+      "title": "나라는 사람",
+      "funType": "자기 발견형",
+      "narrativeMode": "핵심 성향을 먼저 제시하고, 근거로 뒷받침되는 강점·모순처럼 보이는 양면성·관계·돈·일의 모습을 하나의 연결된 자기 이야기로 잇는다. 후반부는 앞에서 찾은 특징이 새 영역에서 어떻게 작용하는지 보여 준다.",
+      "chapters": [
+        {
+          "id": "core",
+          "title": "나를 한 줄로",
+          "question": "나를 한 줄로 말하면 어떤 사람일까?",
+          "role": "HOOK",
+          "domains": [
+            "relationships",
+            "work"
+          ],
+          "evidenceFamilies": [
+            "dayMaster",
+            "dayPillar",
+            "climate"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "타고난 바탕은 어떤 모습일까?",
+              "domain": "relationships",
+              "use": [
+                "ref:chart.dayMaster"
+              ],
+              "trait": "core",
+              "note": "핵심 이미지(chart.coreImage)를 여기서 한 번 소개한다"
+            },
+            {
+              "q": "태어난 계절과 힘의 세기는 무엇을 더할까?",
+              "domain": "work",
+              "use": [
+                "ref:chart.climate",
+                "ref:chart.strength"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "MBTI는 그 바탕 위에서 어떻게 움직일까?",
+              "domain": "relationships",
+              "use": [
+                "ref:mbti"
+              ],
+              "trait": "intro"
+            }
+          ]
+        },
+        {
+          "id": "portrait",
+          "title": "성격: 겉과 속",
+          "question": "겉으로 보이는 나와 속의 나는 어디서 같고 어디서 다를까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships",
+            "alone"
+          ],
+          "dimensionFocus": [
+            "emotionalExpression",
+            "socialEnergy",
+            "verbalOutput"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "처음 만난 자리에서 나는 어떻게 보일까?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro",
+              "dims": [
+                "socialEnergy",
+                "verbalOutput"
+              ]
+            },
+            {
+              "q": "가까워지면 드러나는 속모습은?",
+              "domain": "relationships",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply",
+              "dims": [
+                "emotionalExpression"
+              ]
+            },
+            {
+              "q": "혼자 있을 때의 나는 어떤 사람일까?",
+              "domain": "alone",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro",
+              "dims": [
+                "introspection"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "why",
+          "title": "기질의 뿌리",
+          "question": "왜 나는 그렇게 움직일까?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "evidenceFamilies": [
+            "element",
+            "yinYang",
+            "tenGod"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "가장 센 기운과 가장 약한 기운은?",
+              "domain": "work",
+              "use": [
+                "ref:chart.elements"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "음과 양의 비율은 내 속도를 어떻게 정할까?",
+              "domain": "relationships",
+              "use": [
+                "ref:chart.yinYang"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "일을 고르는 기준은 어디서 왔을까?",
+              "domain": "work",
+              "use": [
+                "fusion"
+              ],
+              "trait": "intro"
+            }
+          ]
+        },
+        {
+          "id": "strengths",
+          "title": "재능: 결과가 되는 힘",
+          "question": "내 강점은 어떤 상황에서 눈에 보이는 결과로 바뀔까?",
+          "role": "SCENE",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "dimensionFocus": [
+            "persistence",
+            "decisionSpeed",
+            "perfectionism"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "내 강점이 결과로 바뀌는 순간은?",
+              "domain": "work",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "배울 때 강점이 붙는 방식은?",
+              "domain": "study",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "강점이 가장 잘 보이는 자리는?",
+              "domain": "work",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
+            }
+          ]
+        },
+        {
+          "id": "tension",
+          "title": "내 안의 두 방향",
+          "question": "내 안에서 서로 다른 쪽으로 당기는 두 성향은 무엇일까?",
+          "role": "TWIST",
+          "domains": [
+            "work",
+            "love"
+          ],
+          "requires": [
+            "mbtiKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "명리와 MBTI가 반대로 당기는 곳은?",
+              "domain": "work",
+              "use": [
+                "fusion"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "두 방향을 함께 쓰는 순간은?",
+              "domain": "work",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
+            }
+          ]
+        },
+        {
+          "id": "fact-bomb",
+          "title": "단점: 알면서 또 하는 실수",
+          "question": "나도 알면서 또 하는 실수는 무엇일까?",
+          "role": "TWIST",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "알면서도 또 하는 실수 하나는?",
+              "domain": "work",
+              "use": [
+                "shadow"
+              ]
+            },
+            {
+              "q": "사람 사이에서 되풀이되는 실수는?",
+              "domain": "relationships",
+              "use": [
+                "shadow"
+              ]
+            },
+            {
+              "q": "실수를 줄이는 작은 장치는?",
+              "domain": "alone",
+              "use": [
+                "mbtiShadow"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fortune",
+          "title": "좋은 기운과 귀인",
+          "question": "나를 돕는 좋은 기운은 무엇이고 어떻게 올까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "evidenceFamilies": [
+            "gwiin",
+            "shinsal",
+            "structure"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "나를 돕는 좋은 기운의 이름과 뜻은?",
+              "domain": "work",
+              "use": [
+                "ref:fortunes"
+              ],
+              "trait": "none",
+              "note": "귀인·신살 이름을 직설로 밝히고 명리 뜻과 이 사람에게 주는 힘으로 푼다"
+            },
+            {
+              "q": "그 기운은 어떤 사람과 자리로 올까?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
+            }
+          ]
+        },
+        {
+          "id": "work",
+          "title": "일과 성과",
+          "question": "일을 맡으면 나는 어떤 선택을 할까?",
+          "role": "SCENE",
+          "domains": [
+            "work"
+          ],
+          "dimensionFocus": [
+            "controlNeed",
+            "planning",
+            "decisionSpeed"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "일을 맡으면 어떤 순서로 움직일까?",
+              "domain": "work",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "잘 맞는 일의 판은?",
+              "domain": "work",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "올해와 지금 10년 흐름은 일에 무엇을 줄까?",
+              "domain": "work",
+              "use": [
+                "ref:chart.thisYear",
+                "ref:chart.currentDayun"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "money",
+          "title": "돈의 흐름",
+          "question": "돈이 들어오고 나갈 때 나는 어떻게 움직일까?",
+          "role": "SCENE",
+          "domains": [
+            "money"
+          ],
+          "dimensionFocus": [
+            "spendingControl",
+            "riskTaking"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "돈이 들어오면 먼저 하는 일은?",
+              "domain": "money",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "돈이 새는 곳은 어디일까?",
+              "domain": "money",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "모험할 때와 지킬 때를 가르는 기준은?",
+              "domain": "money",
+              "use": [
+                "mbti"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "love",
+          "title": "연애",
+          "question": "좋아하는 사람이 생기면 나는 어떻게 달라질까?",
+          "role": "SCENE",
+          "domains": [
+            "love"
+          ],
+          "dimensionFocus": [
+            "intimacyPace",
+            "possessiveness",
+            "emotionalExpression"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "좋아하는 마음이 생기면 무엇이 달라질까?",
+              "domain": "love",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "마음을 보여 주는 방식은?",
+              "domain": "love",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "오래가는 관계를 위해 내가 가진 것은?",
+              "domain": "love",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
+            }
+          ]
+        },
+        {
+          "id": "family",
+          "title": "가족",
+          "question": "가족 사이에서 나는 어떤 자리에 서고, 어떻게 챙기고 챙김받을까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships"
+          ],
+          "dimensionFocus": [
+            "caretaking",
+            "boundarySetting",
+            "dutifulness"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "내 뿌리 자리(태어난 해·달)는 무엇을 말할까?",
+              "domain": "relationships",
+              "use": [
+                "ev:familyRoots"
+              ],
+              "trait": "none",
+              "note": "가족 구성원은 '~이 계시다면·있다면' 조건형으로만"
+            },
+            {
+              "q": "가족에게 돌봄을 받는 방식은?",
+              "domain": "relationships",
+              "use": [
+                "ev:careReceive"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "가족을 챙기는 방식은?",
+              "domain": "relationships",
+              "use": [
+                "ev:careGive"
+              ],
+              "trait": "apply"
+            }
+          ]
+        },
+        {
+          "id": "relationships",
+          "title": "관계",
+          "question": "친구와 사람 사이에서 내가 맡는 자리는 무엇일까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships"
+          ],
+          "dimensionFocus": [
+            "caretaking",
+            "conflictApproach"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "모임에서 내가 맡는 자리는?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "다툼이 생기면 나는 어떻게 움직일까?",
+              "domain": "relationships",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply",
+              "dims": [
+                "conflictApproach"
+              ]
+            },
+            {
+              "q": "지쳤을 때 다시 힘을 채우는 법은?",
+              "domain": "alone",
+              "use": [
+                "scene"
+              ],
+              "trait": "any",
+              "dims": [
+                "socialEnergy",
+                "introspection"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "direction",
+          "title": "실행 전략",
+          "question": "앞에서 찾은 나를 어디에 먼저 써 볼까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "아직 덜 쓴 기운은 무엇일까?",
+              "domain": "work",
+              "use": [
+                "ref:unused"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "강점을 일과 돈에 먼저 쓴다면?",
+              "domain": "work",
+              "use": [
+                "recap:strengths"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "한 달 뒤 무엇이 달라져 있을까?",
+              "domain": "relationships",
+              "use": [
+                "recap:relationships"
+              ],
+              "trait": "none"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        "결혼·이별·사고·질병·합격·승진 같은 사건을 일어난다고 말하기",
+        "근거 없는 '겉과 속이 다른 사람' 해석",
+        "같은 비유를 두 장에서 다시 쓰기",
+        "남다른 잠재력·숨겨진 매력 같은 정보량 0 표현",
+        "MBTI가 없을 때 유형 코드나 MBTI 성향을 언급하기",
+        "시간 미상일 때 시주(태어난 시각 기둥)를 근거로 말하기"
+      ],
+      "noRepeatRules": [
+        "한 feature는 한 장에서만 주 근거(PRIMARY)로 쓰고 다른 장에서는 다른 쓰임(SUPPORT/RECALL)으로만 다시 부른다.",
+        "장마다 앞 장에 없던 새 근거 1개 이상이 들어가야 한다. 마지막 장(direction)만 예외로 앞 장의 핵심을 다시 부른다.",
+        "TWIST 장은 2개(tension, fact-bomb)뿐이며 둘은 서로 다른 feature를 쓴다.",
+        "조언 문장(~해 보세요)은 PAYOFF 장에만 둔다.",
+        "같은 차원(dimension)을 세 장 이상에서 중심으로 쓰지 않는다."
+      ]
+    },
+    {
+      "productKey": "career_money_study",
+      "title": "내가 잘되는 방식",
+      "funType": "현실 선택 시뮬레이션",
+      "narrativeMode": "직업·재물·학업에서 판단이 갈리는 상황을 보여 주고, 같은 장점이 환경에 따라 성과가 되기도 부담이 되기도 하는 구조를 생활 장면으로 해석한다. 추상적 성공 조언이 아니라 '내가 이런 상황에서 왜 이렇게 고르는지'를 발견하게 한다.",
+      "chapters": [
+        {
+          "id": "engine",
+          "title": "일의 엔진",
+          "question": "나는 무엇으로 일하고, 어디서 멈출까?",
+          "role": "HOOK",
+          "domains": [
+            "work"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "다섯 힘으로 보면 나는 무엇으로 일할까?",
+              "domain": "work",
+              "use": [
+                "ev:engineGroups"
+              ],
+              "trait": "core",
+              "note": "다섯 힘의 단계(강·보통·약)는 chart.groups 그대로"
+            },
+            {
+              "q": "태어난 달 기둥과 MBTI는 일하는 방식을 어떻게 정할까?",
+              "domain": "work",
+              "use": [
+                "ev:monthPillar",
+                "mbti"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "결정·지침·몰입은 어떤 리듬일까?",
+              "domain": "work",
+              "use": [
+                "ev:rhythm"
+              ],
+              "trait": "apply"
+            }
+          ],
+          "evidenceFamilies": [
+            "tenGod",
+            "tenGodBalance",
+            "dayMaster"
+          ]
+        },
+        {
+          "id": "now",
+          "title": "지금 자리 진단",
+          "question": "지금 하는 일, 지금 자리는 나에게 맞을까?",
+          "role": "WHY",
+          "domains": [
+            "work"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "지금 자리는 나에게 맞을까?",
+              "domain": "work",
+              "use": [
+                "ev:nowFit"
+              ],
+              "trait": "none",
+              "note": "판정(잘 맞음·보통·덜 맞음)을 첫 문장에"
+            },
+            {
+              "q": "{status:now}",
+              "domain": "work",
+              "use": [
+                "ev:statusNow"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "내 힘이 빛나는 장면은?",
+              "domain": "work",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
+            }
+          ]
+        },
+        {
+          "id": "paths",
+          "title": "맞는 일과 길",
+          "question": "어떤 길과 직무가 왜 맞을까?",
+          "role": "WHY",
+          "domains": [
+            "work"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "직장·공무원·전문직·사업·프리랜서 가운데 어디가 맞을까?",
+              "domain": "work",
+              "use": [
+                "ev:pathsGood",
+                "ev:pathsLess"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "{status:jobs}",
+              "domain": "work",
+              "use": [
+                "ev:jobGroups"
+              ],
+              "trait": "none",
+              "note": "직군마다 한두 문단(직군 → 맞는 이유 → 예시 직업 3~5개 나열), 직업 하나에 문단을 따로 주지 않는다"
+            },
+            {
+              "q": "길게 보면 열려 있는 직군은?",
+              "domain": "work",
+              "use": [
+                "ev:jobGroupsFar"
+              ],
+              "trait": "none",
+              "note": "직군마다 한두 문단(직군 → 맞는 이유·준비할 것 → 예시 직업 3~5개 나열)"
+            },
+            {
+              "q": "{status:side}",
+              "domain": "work",
+              "use": [
+                "ev:sideBiz"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "show",
+          "title": "나를 보여 주는 법",
+          "question": "남이 먼저 알아보는 내 힘은 무엇이고, 어떻게 보여 줄까?",
+          "role": "SCENE",
+          "domains": [
+            "work"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "남이 먼저 알아보는 내 힘은?",
+              "domain": "work",
+              "use": [
+                "ev:visiblePower"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "{status:pitch}",
+              "domain": "work",
+              "use": [
+                "ev:pitch"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "{status:pay}",
+              "domain": "money",
+              "use": [
+                "ev:payTalk"
+              ],
+              "trait": "none"
+            }
+          ],
+          "dimensionFocus": [
+            "statusDrive",
+            "directness"
+          ]
+        },
+        {
+          "id": "people",
+          "title": "일터의 사람들",
+          "question": "일터에서 나는 어떤 사람을 만나고, 누가 나를 도울까?",
+          "role": "SCENE",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "내 십성은 일터에서 어떤 사람으로 나타날까?",
+              "domain": "relationships",
+              "use": [
+                "ev:peopleTypes"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "나를 돕는 사람은 어디에 있을까?",
+              "domain": "relationships",
+              "use": [
+                "ev:helpers"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "리더·팀원·사장일 때, 그리고 동업은?",
+              "domain": "work",
+              "use": [
+                "ev:roleMode"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "docs",
+          "title": "평가·승진·문서·자격",
+          "question": "평가와 문서 앞에서 나는 어떻고, 언제 그 일이 앞에 올까?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "평가와 문서 앞에서 나는 어떤 사람일까?",
+              "domain": "work",
+              "use": [
+                "ev:docsLevel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "관성·인성이 들어오는 해는 언제일까?",
+              "domain": "work",
+              "use": [
+                "ev:docsTiming"
+              ],
+              "trait": "none",
+              "note": "경향만, 결과 단정 금지"
+            },
+            {
+              "q": "{status:docs}",
+              "domain": "study",
+              "use": [
+                "ev:docsStatus"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "money",
+          "title": "돈의 길",
+          "question": "돈은 어떻게 벌리고, 어디로 새고, 어떻게 남을까?",
+          "role": "WHY",
+          "domains": [
+            "money"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "나는 어떤 돈의 길을 가졌을까?",
+              "domain": "money",
+              "use": [
+                "ev:moneyStructure"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "{status:money}",
+              "domain": "money",
+              "use": [
+                "ev:moneyStatus"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "돈이 새는 위험 신호는?",
+              "domain": "money",
+              "use": [
+                "ev:moneyRisk"
+              ],
+              "trait": "apply"
+            }
+          ],
+          "dimensionFocus": [
+            "spendingControl",
+            "possessiveness",
+            "riskTaking"
+          ]
+        },
+        {
+          "id": "invest",
+          "title": "투자와 자산 성향",
+          "question": "내 원국은 어떤 자산과 투자 방식에 맞을까?",
+          "role": "PAYOFF",
+          "domains": [
+            "money"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "예적금·부동산·주식·사업·자기 투자 가운데 내 성향은?",
+              "domain": "money",
+              "use": [
+                "ev:investStyle"
+              ],
+              "trait": "none",
+              "note": "성향 해석만: 종목·상품·매수 시점·수익률 금지"
+            },
+            {
+              "q": "돈 실수는 어떤 꼴로 올까?",
+              "domain": "money",
+              "use": [
+                "ev:investMistakes"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "지킬 원칙 세 가지는?",
+              "domain": "money",
+              "use": [
+                "ev:investPrinciples"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "title": "타이밍과 3년 로드맵",
+          "question": "대운은 어디쯤이고, 앞으로 3년 무엇을 할까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "지금 대운은 어디쯤이고 다음은?",
+              "domain": "work",
+              "use": [
+                "ev:timingNow"
+              ],
+              "trait": "none",
+              "note": "대운 안 위치·남은 해는 근거 그대로"
+            },
+            {
+              "q": "앞으로 3년은 어떻게 흐를까?",
+              "domain": "work",
+              "use": [
+                "ev:threeYears"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "분기마다, 그리고 첫 달에 할 일은?",
+              "domain": "work",
+              "use": [
+                "ev:roadmap"
+              ],
+              "trait": "none",
+              "note": "앞 장을 종합한다: 새 특성·새 그림 없이"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        "MBTI가 없을 때 MBTI 근거 언급",
+        "수익률·투자 시점 단정",
+        "시간 미상일 때 시주 근거 언급",
+        "연도·시기를 못 박은 예언",
+        "특정 종목·상품의 매수·매도 지시",
+        "합격·승진·수익을 일어난다고 말하기",
+        "현재 직업에 갇힌 해석(타고난 적성 중심으로 읽는다)"
+      ],
+      "noRepeatRules": [
+        "커리어는 종합과 다른 근거(다섯 힘의 단계·월주·일터의 사람·문서·돈의 구조·자산 성향·3년 로드맵)로 쓴다(P6d G).",
+        "장마다 정해진 근거 종류를 쓰고, 상태(직장·사업·프리랜서·학생·구직·육아/주부)에 맞는 장면만 쓴다. 상태 미입력이면 단정하지 않는다.",
+        "추천 직무는 구체 직무명을 포함하고 마무리에서 같은 직무명을 다시 나열하지 않는다.",
+        "투자 장은 성향 해석만: 특정 종목·상품·매수 시점·수익률을 쓰지 않는다."
+      ]
+    },
+    {
+      "productKey": "love_marriage_child",
+      "title": "내 사랑 이야기",
+      "funType": "감정과 관계의 서사",
+      "narrativeMode": "호감, 표현, 갈등, 회복, 관계의 깊이를 서로 다른 장면으로 보여 준다. 겉으로 드러나는 모습과 속의 기대가 다를 수 있는 조건을 살핀다. 실제로 존재하지 않는 연인·배우자·자녀를 사실처럼 쓰지 않는다.",
+      "chapters": [
+        {
+          "id": "love-engine",
+          "title": "사랑의 엔진",
+          "question": "좋아하는 마음이 생기면 나는 어떤 사람이 되고, 왜 같은 패턴이 반복될까?",
+          "role": "HOOK",
+          "domains": [
+            "love"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "배우자 자리와 별은 무엇을 말할까?",
+              "domain": "love",
+              "use": [
+                "ev:loveEngine"
+              ],
+              "trait": "none",
+              "note": "배우자 자리·별은 엔진 값 그대로"
+            },
+            {
+              "q": "사랑할 때 나의 십이운성과 MBTI는?",
+              "domain": "love",
+              "use": [
+                "ev:dayStage",
+                "mbti"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "반복되는 연애 패턴의 이유는?",
+              "domain": "love",
+              "use": [
+                "fusion"
+              ],
+              "trait": "core"
+            }
+          ],
+          "evidenceFamilies": [
+            "dayPillar",
+            "tenGod",
+            "shinsal"
+          ]
+        },
+        {
+          "id": "charm",
+          "title": "내 매력 사용설명서",
+          "question": "나는 어떤 매력으로 사람을 끌고, 그걸 어떻게 보여 줄까?",
+          "role": "SCENE",
+          "domains": [
+            "love"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "사람을 끄는 내 매력은?",
+              "domain": "love",
+              "use": [
+                "ev:charm"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "{status:profile}",
+              "domain": "love",
+              "use": [
+                "ev:profile"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "{status:firstMeet}",
+              "domain": "love",
+              "use": [
+                "ev:firstMeet"
+              ],
+              "trait": "none"
+            }
+          ],
+          "dimensionFocus": [
+            "attentionSeeking",
+            "socialEnergy"
+          ]
+        },
+        {
+          "id": "match",
+          "title": "맞는 사람과 끌리는 사람",
+          "question": "나는 누구와 잘 맞고, 누구에게 끌리며, 무엇을 피할까?",
+          "role": "WHY",
+          "domains": [
+            "love"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "명리로 보면 나와 맞는 사람은?",
+              "domain": "love",
+              "use": [
+                "ev:matchTypes"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "MBTI 통념으로 보면 누구와 잘 맞을까?",
+              "domain": "love",
+              "use": [
+                "ev:combos"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "{status:meet}",
+              "domain": "relationships",
+              "use": [
+                "ev:meetState"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "호감·연락·고백",
+          "question": "호감이 생기면 나는 어떻게 다가가고 연락할까?",
+          "role": "SCENE",
+          "domains": [
+            "love"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "{status:crush}",
+              "domain": "love",
+              "use": [
+                "ev:crush"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "{status:talk}",
+              "domain": "love",
+              "use": [
+                "ev:talkRhythm"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "마음을 숨길 때와 드러낼 때는?",
+              "domain": "love",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
+            }
+          ],
+          "dimensionFocus": [
+            "intimacyPace",
+            "emotionalExpression"
+          ]
+        },
+        {
+          "id": "in-love",
+          "title": "연애할 때의 나",
+          "question": "연애 중의 나는 어떻게 표현하고, 무엇에 흔들릴까?",
+          "role": "SCENE",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "연애할 때 나는 어떻게 표현할까?",
+              "domain": "love",
+              "use": [
+                "ev:express"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "질투와 서운함은 어떻게 올라올까?",
+              "domain": "love",
+              "use": [
+                "ev:jealousy"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "나의 데이트 스타일은?",
+              "domain": "love",
+              "use": [
+                "mbti"
+              ],
+              "trait": "any"
+            }
+          ],
+          "dimensionFocus": [
+            "emotionalExpression",
+            "caretaking"
+          ]
+        },
+        {
+          "id": "conflict",
+          "title": "갈등과 회복",
+          "question": "다툼은 어디서 시작되고, 어떻게 다시 가까워질까?",
+          "role": "TWIST",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "다툼은 어디서 시작될까?",
+              "domain": "love",
+              "use": [
+                "ev:dayRelations",
+                "shadow"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "되풀이를 끊는 법은?",
+              "domain": "relationships",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "관계가 위험할 때의 신호는?",
+              "domain": "love",
+              "use": [
+                "ev:dangerSigns"
+              ],
+              "trait": "none"
+            }
+          ],
+          "dimensionFocus": [
+            "conflictApproach",
+            "reactivity"
+          ]
+        },
+        {
+          "id": "marriage",
+          "title": "결혼관과 함께 살기",
+          "question": "나는 어떤 결혼관을 가졌고, 함께 살면 무엇을 나눌까?",
+          "role": "SCENE",
+          "domains": [
+            "marriage",
+            "money"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "나의 결혼관은?",
+              "domain": "marriage",
+              "use": [
+                "ev:marriageView"
+              ],
+              "trait": "none",
+              "note": "시기는 쓰지 않는다. 성향만"
+            },
+            {
+              "q": "{status:home}",
+              "domain": "money",
+              "use": [
+                "ev:homeState"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "함께 사는 리듬에서 지킬 것은?",
+              "domain": "marriage",
+              "use": [
+                "mbti"
+              ],
+              "trait": "apply"
+            }
+          ],
+          "dimensionFocus": [
+            "possessiveness",
+            "dutifulness"
+          ]
+        },
+        {
+          "id": "parenting",
+          "title": "부모 역할",
+          "question": "아이를 키운다면 나는 무엇을 주고 무엇을 힘들어할까?",
+          "role": "SCENE",
+          "domains": [
+            "marriage",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "자녀 별과 자녀 자리는 무엇을 말할까?",
+              "domain": "relationships",
+              "use": [
+                "ev:childStar"
+              ],
+              "trait": "none",
+              "note": "부부·집안 어른 이야기는 넣지 않는다"
+            },
+            {
+              "q": "{status:parent}",
+              "domain": "marriage",
+              "use": [
+                "ev:parentState"
+              ],
+              "trait": "none",
+              "note": "아이를 키울 때의 모습만 쓴다. 부부·집안 어른 이야기는 넣지 않는다"
+            },
+            {
+              "q": "아이를 키울 때 힘든 지점은?",
+              "domain": "marriage",
+              "use": [
+                "scene"
+              ],
+              "trait": "any",
+              "note": "아이를 키울 때의 모습만 쓴다. 부부·집안 어른 이야기는 넣지 않는다"
+            }
+          ],
+          "dimensionFocus": [
+            "controlNeed",
+            "caretaking"
+          ]
+        },
+        {
+          "id": "flow",
+          "title": "인연의 흐름과 로드맵",
+          "question": "앞으로 인연은 어떻게 흐르고, 무엇을 하면 될까?",
+          "role": "PAYOFF",
+          "domains": [
+            "love"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "대운·세운으로 본 인연의 흐름은?",
+              "domain": "love",
+              "use": [
+                "ev:loveTiming"
+              ],
+              "trait": "none",
+              "note": "경향만, 시기 단정 금지"
+            },
+            {
+              "q": "{status:road}",
+              "domain": "love",
+              "use": [
+                "ev:loveRoadmap"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "오래 좋은 관계를 위한 습관은?",
+              "domain": "relationships",
+              "use": [
+                "recap:in-love"
+              ],
+              "trait": "none"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        "실제 연인·배우자·자녀가 있다고 가정하기(입력 관계 상태가 없으면 '만약'으로만 쓴다)",
+        "결혼·이별·이혼 시기나 여부를 말하기",
+        "자녀의 성별·수·성격을 단정하기",
+        "상대 유형을 비난하기",
+        "MBTI가 없을 때 '잘 맞는 MBTI' 장면 만들기",
+        "시간 미상일 때 시주 근거 언급"
+      ],
+      "noRepeatRules": [
+        "연애는 종합과 다른 근거(배우자 자리·별의 세기·십이운성·도화·홍염·장성·일지 관계·결혼관·자녀 별·인연의 흐름)로 쓴다(P6d G).",
+        "관계 상태(솔로·썸·연애 중·기혼)에 맞는 장면만 쓴다. 상태 미입력이면 단정하지 않는다.",
+        "서운함 같은 같은 감정 낱말을 장마다 되풀이하지 않는다.",
+        "결혼·자녀는 '만약'·조건형으로만, 시기는 쓰지 않는다."
+      ]
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "title": "우리라는 사이",
+      "funType": "두 관점의 교차 이야기",
+      "narrativeMode": "A→B와 B→A를 구분하고, 하나의 가상 장면을 두 사람이 다르게 겪을 가능성을 대조한다. 관계 유형(7)마다 장면의 영역과 말투가 다르다. 점수보다 관계를 새롭게 이해하는 재미가 목표다.",
+      "chapters": [
+        {
+          "id": "pair-core",
+          "title": "한 줄 판정",
+          "question": "두 사람은 잘 맞을까?",
+          "role": "HOOK",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "두 사람은 얼마나 잘 맞을까?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.score"
+              ],
+              "trait": "none",
+              "note": "판정을 첫 문장에. 점수 항목마다 이유를 쉬운 말로"
+            },
+            {
+              "q": "두 사람을 한 그림에 담으면?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.a",
+                "ref:compatibility.b"
+              ],
+              "trait": "core",
+              "note": "관계 이미지(compatibility.pairImage)로 그린다"
+            },
+            {
+              "q": "함께 있으면 가장 먼저 보이는 장면은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "bases",
+          "title": "각자의 바탕",
+          "question": "두 사람은 각각 어떤 바탕을 가진 사람일까?",
+          "role": "WHY",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "A는 어떤 바탕을 가진 사람일까?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "intro",
+              "side": "a"
+            },
+            {
+              "q": "B는 어떤 바탕을 가진 사람일까?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "intro",
+              "side": "b"
+            },
+            {
+              "q": "둘이 닮은 곳은 어디일까?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.common"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "attraction",
+          "title": "잘 맞는 부분",
+          "question": "두 사람이 서로 편하고 잘 맞는 곳은 어디일까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "서로 채워 주는 기운은?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.complement"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "MBTI 통념으로 본 두 사람은?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.mbtiConvention"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "함께 있으면 편해지는 장면은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "apply"
+            }
+          ]
+        },
+        {
+          "id": "direction-ab",
+          "title": "A가 보는 B",
+          "question": "A의 눈에 B는 어떤 사람으로 보일까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "A의 눈에 B는 어떤 기운일까?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.tenGodAB"
+              ],
+              "trait": "any",
+              "side": "b"
+            },
+            {
+              "q": "A가 B에게 기대게 되는 순간은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "A가 B를 오해하기 쉬운 지점은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "direction-ba",
+          "title": "B가 보는 A",
+          "question": "B의 눈에 A는 어떤 사람으로 보일까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "B의 눈에 A는 어떤 기운일까?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.tenGodBA"
+              ],
+              "trait": "any",
+              "side": "a"
+            },
+            {
+              "q": "B가 A에게 기대게 되는 순간은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "B가 A를 오해하기 쉬운 지점은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "friction",
+          "title": "안 맞는 부분",
+          "question": "두 사람이 자주 어긋나는 자리는 어디일까?",
+          "role": "TWIST",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "dimensionFocus": [
+            "controlNeed",
+            "ruleAdherence",
+            "boundarySetting"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "두 사람의 기둥이 부딪히는 자리는?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.dayRelations"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "같은 일을 다르게 받아들이는 순간은?",
+              "domain": "relationships",
+              "use": [
+                "ref:compatibility.differences"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "각자 조심할 버릇은?",
+              "domain": "relationships",
+              "use": [
+                "shadow"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "domain-scene",
+          "title": "관계의 현장에서",
+          "question": "이 관계의 실제 현장에서 두 사람은 어떻게 움직일까?",
+          "role": "SCENE",
+          "domains": [
+            "relationships",
+            "work",
+            "money",
+            "love"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "{topic} 앞에서 두 사람은 어떻게 움직일까?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "{topic} 때 두 사람이 맡는 몫은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "{topic} 장면에서 서로에게 필요한 것은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "felt-differently",
+          "title": "보완할 부분",
+          "question": "한 사람은 괜찮은데 다른 사람은 서운한 순간은 언제일까?",
+          "role": "TWIST",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "dimensionFocus": [
+            "empathyResponse",
+            "reactivity",
+            "caretaking"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "한 사람은 괜찮은데 다른 사람은 서운한 순간은?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "챙김을 다르게 받아들일 때는?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "반응하는 속도가 다를 때는?",
+              "domain": "relationships",
+              "use": [
+                "rel"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "one-thing",
+          "title": "조화를 위한 방법",
+          "question": "두 사람이 더 잘 지내려면 무엇부터 맞출까?",
+          "role": "PAYOFF",
+          "domains": [
+            "relationships"
+          ],
+          "requires": [
+            "pair"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "먼저 맞출 한 가지는 무엇일까?",
+              "domain": "relationships",
+              "use": [
+                "recap:friction"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "잘 맞는 판을 더 키우는 법은?",
+              "domain": "relationships",
+              "use": [
+                "recap:attraction"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "서운함을 줄이는 둘만의 규칙은?",
+              "domain": "relationships",
+              "use": [
+                "recap:felt-differently"
+              ],
+              "trait": "none"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        "연애·결혼이 아닌 관계에 애정 표현(설렘·스킨십·사랑) 쓰기",
+        "관계가 깨진다·이어진다를 단정하기",
+        "한쪽을 가해자나 피해자로 만들기",
+        "두 사람 중 한쪽만의 입장으로 장면을 쓰기(항상 두 시선)",
+        "MBTI가 없는 사람에게 MBTI 근거 쓰기",
+        "시간 미상인 사람에게 시주 근거 쓰기"
+      ],
+      "noRepeatRules": [
+        "direction-ab와 direction-ba는 서로 다른 feature를 주 근거로 쓴다.",
+        "same-scene·domain-scene·felt-differently의 장면은 서로 다른 영역·상황이어야 한다.",
+        "friction의 반전은 두 사람의 차원 값이 실제로 반대일 때만 쓴다.",
+        "조언은 one-thing 장에만 둔다."
+      ],
+      "compatibility": {
+        "love": {
+          "sceneDomains": [
+            "love",
+            "relationships"
+          ],
+          "roleLabels": [
+            "A",
+            "B"
+          ],
+          "forbidden": [
+            "결혼 시기·여부 단정",
+            "이별 단정",
+            "상대 집안·조건 언급"
+          ],
+          "tone": "설레는 장면과 서운한 장면을 함께, 둘 다 조건부"
+        },
+        "marriage": {
+          "sceneDomains": [
+            "love",
+            "money",
+            "relationships"
+          ],
+          "roleLabels": [
+            "A",
+            "B"
+          ],
+          "forbidden": [
+            "이혼 단정",
+            "자녀 유무·수 가정",
+            "경제력 비교 단정"
+          ],
+          "tone": "생활·돈·가족을 나누는 장면 중심, 애정 표현은 절제"
+        },
+        "parentChild": {
+          "sceneDomains": [
+            "relationships",
+            "study"
+          ],
+          "roleLabels": [
+            "부모",
+            "자녀"
+          ],
+          "forbidden": [
+            "연인형 애정 표현",
+            "자녀의 성적·진로 단정",
+            "부모 자격을 평가하는 말",
+            "체벌·훈육 방법 지시"
+          ],
+          "tone": "명절·용돈·안부 전화·식탁 장면, 자녀 시선을 부모 시선과 같은 무게로"
+        },
+        "coworker": {
+          "sceneDomains": [
+            "work",
+            "relationships"
+          ],
+          "roleLabels": [
+            "A",
+            "B"
+          ],
+          "forbidden": [
+            "연인형 애정 표현",
+            "상하 관계 가정",
+            "평가·승진 단정"
+          ],
+          "tone": "회의·마감·협업 장면, 역할은 대등"
+        },
+        "managerReport": {
+          "sceneDomains": [
+            "work"
+          ],
+          "roleLabels": [
+            "상사",
+            "부하·팀원"
+          ],
+          "forbidden": [
+            "연인형 애정 표현",
+            "승진·평가 결과 단정",
+            "한쪽을 무능하게 묘사"
+          ],
+          "tone": "지시·보고·피드백 장면, 권한 차이를 전제로 두 시선"
+        },
+        "businessPartner": {
+          "sceneDomains": [
+            "work",
+            "money"
+          ],
+          "roleLabels": [
+            "A",
+            "B"
+          ],
+          "forbidden": [
+            "연인형 애정 표현",
+            "수익·투자 성과 단정",
+            "동업 결렬 단정"
+          ],
+          "tone": "돈 결정·역할 분담·위험 감수 장면"
+        },
+        "friendship": {
+          "sceneDomains": [
+            "relationships"
+          ],
+          "roleLabels": [
+            "A",
+            "B"
+          ],
+          "forbidden": [
+            "연인형 애정 표현",
+            "우정이 깨진다·오래간다 단정"
+          ],
+          "tone": "약속·여행·단톡방 장면, 가벼운 톤"
+        }
+      }
+    },
+    {
+      "productKey": "major_fortune",
+      "title": "앞으로의 나",
+      "funType": "장기 변화의 연속 서사",
+      "narrativeMode": "14개 연도를 독립된 운세로 쓰지 않고, 계산된 시간 근거를 따라 이전 흐름과 다음 흐름의 차이를 연결한다. 근거가 허용하는 범위에서 삶의 흐름을 하나의 이야기처럼 읽게 하되, 구체적 미래 사건은 확정하지 않는다.",
+      "chapters": [
+        {
+          "id": "overview",
+          "title": "지난 3년 돌아보기",
+          "question": "지난 3년은 어떤 흐름이었고 나는 그 흐름을 어떻게 탔을까?",
+          "role": "HOOK",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "지난 3년은 어떤 흐름이었을까?",
+              "domain": "work",
+              "use": [
+                "ev:pastSummary"
+              ],
+              "trait": "none",
+              "note": "세 해를 하나의 흐름으로 요약한다. 해마다 따로 풀지 않는다(연도 장에서 그 해만의 장면으로)"
+            },
+            {
+              "q": "타고난 바탕은 그 흐름을 어떻게 탔을까?",
+              "domain": "relationships",
+              "use": [
+                "ref:chart.dayMaster"
+              ],
+              "trait": "core",
+              "note": "핵심 이미지(chart.coreImage)를 여기서 한 번 소개한다"
+            }
+          ]
+        },
+        {
+          "id": "current-cycle",
+          "title": "지금 대운",
+          "question": "지금 10년 흐름은 나에게 무엇을 쉽게 하고 무엇을 어렵게 할까?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "money",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "지금 10년 흐름이 주는 조건은?",
+              "domain": "work",
+              "use": [
+                "ref:chart.currentDayun"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "많은 기운과 모자란 기운은 어떻게 움직일까?",
+              "domain": "money",
+              "use": [
+                "ref:chart.elements"
+              ],
+              "trait": "intro"
+            },
+            {
+              "q": "흐름 속에서 조심할 버릇은?",
+              "domain": "relationships",
+              "use": [
+                "shadow"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "decade",
+          "title": "앞으로 10년의 설계",
+          "question": "앞으로 10년을 일·돈·관계·생활로 나누면 어떻게 설계할까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "money",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "일과 돈은 어떻게 설계할까?",
+              "domain": "work",
+              "use": [
+                "ev:decade"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "관계와 생활은 어떻게 설계할까?",
+              "domain": "relationships",
+              "use": [
+                "ref:timeline.cycles"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "year",
+          "title": "연도별 지침",
+          "question": "이 해는 지난해와 무엇이 달라질까?",
+          "role": "SCENE",
+          "domains": [
+            "work",
+            "money",
+            "love",
+            "relationships",
+            "study"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "evidenceFamilies": [
+            "tenGod",
+            "relation",
+            "twelveStage",
+            "shinsal"
+          ],
+          "repeat": 14,
+          "paragraphs": {
+            "min": 2,
+            "max": 3
+          }
+        },
+        {
+          "id": "transition",
+          "title": "전환 대비",
+          "question": "흐름이 바뀌는 해를 어떻게 맞을까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "흐름이 바뀌는 해에는 무엇이 바뀔까?",
+              "domain": "work",
+              "use": [
+                "ref:timeline.keyEntries"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "바뀌는 해가 건드리는 타고난 자리는?",
+              "domain": "work",
+              "use": [
+                "touched"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "전환을 맞을 때 지킬 것은?",
+              "domain": "relationships",
+              "use": [
+                "ref:unused"
+              ],
+              "trait": "none"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        "특정 연도에 사건(결혼·이직·사고·질병·합격)이 일어난다고 말하기",
+        "대운 경계가 불확실한 입력(시간 미상·경계 근처)에서 경계 연도를 단정하기",
+        "연도마다 같은 조언 순서 반복",
+        "MBTI가 없을 때 MBTI 근거 언급"
+      ],
+      "noRepeatRules": [
+        "연도 장은 앞 연도와 다른 차원 또는 다른 feature 상호작용을 중심으로 쓴다(같은 십성 2년 연속이면 적용 영역을 바꾼다).",
+        "transition은 연도 장에 이미 쓴 문장을 다시 쓰지 않는다.",
+        "조언은 closing과 transition에만 둔다.",
+        "현재 연도(세운)는 current-cycle에서 한 번만 자세히 다룬다."
+      ]
+    },
+    {
+      "productKey": "annual_fortune",
+      "title": "나의 한 해",
+      "funType": "매월 펼쳐 보는 연재형",
+      "narrativeMode": "월별 특징과 중요도를 구별하고 앞달과 뒷달의 흐름을 연결한다. 매달 같은 순서로 조언을 반복하지 않고, 달마다 새로 이해할 핵심 관점을 하나씩 만든다. 1월부터 12월까지 서로 다른 읽을거리가 있어야 한다.",
+      "chapters": [
+        {
+          "id": "overview",
+          "title": "올해 전체 설계도",
+          "question": "올해는 어떤 결의 한 해가 될까?",
+          "role": "HOOK",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "올해를 한 줄로 말하면?",
+              "domain": "work",
+              "use": [
+                "ref:chart.thisYear"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "타고난 바탕은 올해를 어떻게 탈까?",
+              "domain": "relationships",
+              "use": [
+                "ref:chart.dayMaster"
+              ],
+              "trait": "core",
+              "note": "핵심 이미지(chart.coreImage)를 여기서 한 번 소개한다"
+            },
+            {
+              "q": "올해 사람 사이에서는 무엇이 달라질까?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "any"
+            }
+          ]
+        },
+        {
+          "id": "current-dayun",
+          "title": "영역별 설계",
+          "question": "올해 일·돈·관계·컨디션은 어떻게 설계할까?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "money",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "올해 일과 돈, 관계와 컨디션은?",
+              "domain": "work",
+              "use": [
+                "ev:yearPlan"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "올해는 지금 10년 흐름의 어디에 놓일까?",
+              "domain": "money",
+              "use": [
+                "ref:chart.currentDayun"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "올해 조심할 버릇은?",
+              "domain": "relationships",
+              "use": [
+                "shadow"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "month",
+          "title": "월별 흐름",
+          "question": "이번 달은 지난달과 무엇이 다를까?",
+          "role": "SCENE",
+          "domains": [
+            "work",
+            "money",
+            "love",
+            "relationships",
+            "study"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "evidenceFamilies": [
+            "tenGod",
+            "relation",
+            "shinsal"
+          ],
+          "repeat": 12,
+          "paragraphs": {
+            "min": 2,
+            "max": 3
+          }
+        },
+        {
+          "id": "key-months",
+          "title": "눈여겨볼 달",
+          "question": "올해 흐름이 크게 움직이는 세 달은 어떻게 이어질까?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "money",
+            "relationships"
+          ],
+          "requires": [
+            "genderKnown"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "세 달은 어떻게 이어질까?",
+              "domain": "work",
+              "use": [
+                "ev:keyMonthsLink"
+              ],
+              "trait": "none",
+              "note": "월별 장의 설명을 되풀이하지 않는다. 앞 달이 무엇을 열고 뒤 달이 무엇을 받는지만"
+            },
+            {
+              "q": "그 달들이 건드리는 타고난 자리는?",
+              "domain": "work",
+              "use": [
+                "touched"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "세 달을 잇는 준비는?",
+              "domain": "relationships",
+              "use": [
+                "scene"
+              ],
+              "trait": "apply"
+            }
+          ]
+        },
+        {
+          "id": "closing",
+          "title": "올해 지침",
+          "question": "올해를 내 방식으로 잘 보내려면 어디에 힘을 둘까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 5,
+            "max": 8
+          },
+          "sections": [
+            {
+              "q": "아직 덜 쓴 기운은 올해 무엇을 도울까?",
+              "domain": "work",
+              "use": [
+                "ref:unused"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "올해 지킬 나의 속도는?",
+              "domain": "work",
+              "use": [
+                "recap:current-dayun"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "크게 움직이는 달에 붙잡을 한 가지는?",
+              "domain": "relationships",
+              "use": [
+                "recap:key-months"
+              ],
+              "trait": "none"
+            }
+          ]
+        }
+      ],
+      "forbidden": [
+        "특정 달에 사건(결혼·이별·사고·질병·합격·승진)이 일어난다고 말하기",
+        "매달 같은 조언 문장 반복",
+        "중요도가 낮은 달을 억지로 부풀리기",
+        "MBTI가 없을 때 MBTI 근거 언급",
+        "절입(달이 바뀌는 날) 경계를 넘어 한 달의 특징을 다른 달에 쓰기"
+      ],
+      "noRepeatRules": [
+        "월 장은 앞달과 다른 핵심 관점(차원 또는 feature 상호작용) 하나를 세운다.",
+        "key-months는 월 장의 문장을 다시 쓰지 않고 왜 중요한지만 쓴다.",
+        "조언은 closing에만 두고 월 장에는 관찰과 장면만 둔다.",
+        "같은 십성이 두 달 연속이면 적용 영역을 바꾼다."
+      ]
+    }
+  ]
+}

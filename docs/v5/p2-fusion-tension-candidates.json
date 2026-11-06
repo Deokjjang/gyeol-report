@@ -1,0 +1,2078 @@
+{
+ "version": "p2-fusion-tension-candidates-v1",
+ "method": "rankPairs → kind=tension, 기존 쌍 제외, tension ↓, 유형당 10·feature당 2·유형×가족 4",
+ "perType": {
+  "ENFJ": 10,
+  "ENFP": 10,
+  "ENTJ": 10,
+  "ENTP": 10,
+  "ESFJ": 10,
+  "ESFP": 10,
+  "ESTJ": 10,
+  "ESTP": 10,
+  "INFJ": 10,
+  "INFP": 10,
+  "INTJ": 10,
+  "INTP": 10,
+  "ISFJ": 10,
+  "ISFP": 10,
+  "ISTJ": 10,
+  "ISTP": 10
+ },
+ "candidates": {
+  "ENFJ": [
+   {
+    "myeongriId": "dayPillar:庚戌",
+    "family": "dayPillar",
+    "tension": 1.57,
+    "resonance": 0,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.9×-0.7",
+     "empathyResponse -0.4×0.9",
+     "conflictApproach 0.6×-0.5",
+     "directness 0.7×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:庚子",
+    "family": "dayPillar",
+    "tension": 1.52,
+    "resonance": 0.35,
+    "dimension": "empathyResponse",
+    "opposite": [
+     "empathyResponse -0.6×0.9",
+     "independence 0.6×-0.6",
+     "directness 0.8×-0.4",
+     "emotionalExpression -0.5×0.6"
+    ]
+   },
+   {
+    "myeongriId": "element:METAL:STRONG",
+    "family": "element",
+    "tension": 1.51,
+    "resonance": 0,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.8×-0.7",
+     "empathyResponse -0.5×0.9",
+     "directness 0.8×-0.4",
+     "emotionalExpression -0.3×0.6"
+    ]
+   },
+   {
+    "myeongriId": "climate:庚:winter",
+    "family": "climate",
+    "tension": 1.5,
+    "resonance": 0,
+    "dimension": "empathyResponse",
+    "opposite": [
+     "empathyResponse -0.6×0.9",
+     "socialEnergy -0.5×0.8",
+     "emotionalExpression -0.6×0.6",
+     "directness 0.5×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:庚辰",
+    "family": "dayPillar",
+    "tension": 1.4,
+    "resonance": 0.49,
+    "dimension": "dutifulness",
+    "opposite": [
+     "emotionalExpression -0.7×0.6",
+     "independence 0.6×-0.6",
+     "directness 0.8×-0.4",
+     "conflictApproach 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:庚",
+    "family": "dayMaster",
+    "tension": 1.37,
+    "resonance": 0,
+    "dimension": "empathyResponse",
+    "opposite": [
+     "empathyResponse -0.5×0.9",
+     "directness 0.8×-0.4",
+     "conflictApproach 0.6×-0.5",
+     "independence 0.5×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:庚申",
+    "family": "dayPillar",
+    "tension": 1.24,
+    "resonance": 0.3,
+    "dimension": "empathyResponse",
+    "opposite": [
+     "empathyResponse -0.6×0.9",
+     "independence 0.7×-0.6",
+     "directness 0.7×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:GWASUKSAL",
+    "family": "shinsal",
+    "tension": 1.2,
+    "resonance": 0.35,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.6×-0.7",
+     "intimacyPace -0.7×0.6",
+     "emotionalExpression -0.6×0.6"
+    ]
+   },
+   {
+    "myeongriId": "climate:壬:winter",
+    "family": "climate",
+    "tension": 1.2,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence 0.8×-0.6",
+     "emotionalExpression -0.6×0.6",
+     "intimacyPace -0.6×0.6"
+    ]
+   },
+   {
+    "myeongriId": "twelveStage:死",
+    "family": "twelveStage",
+    "tension": 1.2,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy -0.6×0.8",
+     "boundarySetting 0.6×-0.7",
+     "emotionalExpression -0.5×0.6"
+    ]
+   }
+  ],
+  "ENFP": [
+   {
+    "myeongriId": "dayPillar:己酉",
+    "family": "dayPillar",
+    "tension": 1.67,
+    "resonance": 0,
+    "dimension": "detailFocus",
+    "opposite": [
+     "detailFocus 0.9×-0.7",
+     "planning 0.6×-0.7",
+     "verbalOutput -0.4×0.8",
+     "spendingControl 0.5×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:戊辰",
+    "family": "dayPillar",
+    "tension": 1.63,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking -0.5×0.9",
+     "persistence 0.7×-0.6",
+     "emotionalExpression -0.5×0.8",
+     "spendingControl 0.6×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:辛丑",
+    "family": "dayPillar",
+    "tension": 1.59,
+    "resonance": 0,
+    "dimension": "intimacyPace",
+    "opposite": [
+     "intimacyPace -0.6×0.7",
+     "persistence 0.7×-0.6",
+     "emotionalExpression -0.5×0.8",
+     "planning 0.5×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "tenGodBalance:OUTPUT:WEAK",
+    "family": "tenGodBalance",
+    "tension": 1.54,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression -0.7×0.8",
+     "verbalOutput -0.7×0.8",
+     "persistence 0.4×-0.6",
+     "ruleAdherence 0.3×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "twelveStage:衰",
+    "family": "twelveStage",
+    "tension": 1.47,
+    "resonance": 0.24,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking -0.5×0.9",
+     "planning 0.6×-0.7",
+     "riskTaking -0.6×0.6",
+     "persistence 0.4×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "element:EARTH:STRONG",
+    "family": "element",
+    "tension": 1.47,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking -0.7×0.9",
+     "persistence 0.8×-0.6",
+     "spendingControl 0.6×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "climate:丁:autumn",
+    "family": "climate",
+    "tension": 1.44,
+    "resonance": 0,
+    "dimension": "spendingControl",
+    "opposite": [
+     "spendingControl 0.7×-0.6",
+     "detailFocus 0.5×-0.7",
+     "planning 0.5×-0.7",
+     "emotionalExpression -0.4×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:己",
+    "family": "dayMaster",
+    "tension": 1.39,
+    "resonance": 0,
+    "dimension": "detailFocus",
+    "opposite": [
+     "detailFocus 0.6×-0.7",
+     "planning 0.5×-0.7",
+     "emotionalExpression -0.4×0.8",
+     "spendingControl 0.5×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "stem:丁",
+    "family": "stem",
+    "tension": 1.37,
+    "resonance": 0,
+    "dimension": "detailFocus",
+    "opposite": [
+     "detailFocus 0.7×-0.7",
+     "persistence 0.6×-0.6",
+     "socialEnergy -0.4×0.7",
+     "verbalOutput -0.3×0.8"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:CHEONRA_JIMANG",
+    "family": "shinsal",
+    "tension": 1.35,
+    "resonance": 0,
+    "dimension": "persistence",
+    "opposite": [
+     "persistence 0.7×-0.6",
+     "planning 0.5×-0.7",
+     "riskTaking -0.5×0.6",
+     "detailFocus 0.4×-0.7"
+    ]
+   }
+  ],
+  "ENTJ": [
+   {
+    "myeongriId": "tenGodBalance:PEER:WEAK",
+    "family": "tenGodBalance",
+    "tension": 1.33,
+    "resonance": 0,
+    "dimension": "competitiveness",
+    "opposite": [
+     "competitiveness -0.7×0.7",
+     "independence -0.6×0.6",
+     "decisionSpeed -0.3×0.8",
+     "empathyResponse 0.6×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:癸亥",
+    "family": "dayPillar",
+    "tension": 1.26,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.8",
+     "empathyResponse 0.7×-0.4",
+     "socialEnergy -0.5×0.5",
+     "verbalOutput -0.5×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:乙亥",
+    "family": "dayPillar",
+    "tension": 1.1,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.8",
+     "empathyResponse 0.8×-0.4",
+     "independence -0.5×0.6"
+    ]
+   },
+   {
+    "myeongriId": "element:WOOD:MISSING",
+    "family": "element",
+    "tension": 1.02,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning -0.5×0.8",
+     "decisionSpeed -0.4×0.8",
+     "independence -0.5×0.6"
+    ]
+   },
+   {
+    "myeongriId": "stem:乙",
+    "family": "stem",
+    "tension": 0.98,
+    "resonance": 0.2,
+    "dimension": "directness",
+    "opposite": [
+     "directness -0.6×0.9",
+     "independence -0.4×0.6",
+     "empathyResponse 0.5×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "tenGodBalance:RESOURCE:STRONG",
+    "family": "tenGodBalance",
+    "tension": 0.98,
+    "resonance": 0.4,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.7×0.8",
+     "riskTaking -0.6×0.4",
+     "independence -0.3×0.6"
+    ]
+   },
+   {
+    "myeongriId": "yinYang:YIN_HEAVY",
+    "family": "yinYang",
+    "tension": 0.93,
+    "resonance": 0.4,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.8",
+     "verbalOutput -0.5×0.5",
+     "riskTaking -0.5×0.4"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:正印",
+    "family": "tenGod",
+    "tension": 0.92,
+    "resonance": 0.4,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.8",
+     "independence -0.4×0.6",
+     "riskTaking -0.5×0.4"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:乙",
+    "family": "dayMaster",
+    "tension": 0.89,
+    "resonance": 0.2,
+    "dimension": "directness",
+    "opposite": [
+     "directness -0.5×0.9",
+     "independence -0.4×0.6",
+     "empathyResponse 0.5×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:辛亥",
+    "family": "dayPillar",
+    "tension": 0.88,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.8",
+     "empathyResponse 0.5×-0.4",
+     "socialEnergy -0.4×0.5"
+    ]
+   }
+  ],
+  "ENTP": [
+   {
+    "myeongriId": "tenGod:正財",
+    "family": "tenGod",
+    "tension": 1.9,
+    "resonance": 0,
+    "dimension": "riskTaking",
+    "opposite": [
+     "riskTaking -0.7×0.7",
+     "ruleAdherence 0.5×-0.8",
+     "noveltySeeking -0.4×0.9",
+     "planning 0.7×-0.5",
+     "detailFocus 0.5×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲戌",
+    "family": "dayPillar",
+    "tension": 1.7,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence 0.8×-0.8",
+     "persistence 0.8×-0.5",
+     "noveltySeeking -0.4×0.9",
+     "planning 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:戊戌",
+    "family": "dayPillar",
+    "tension": 1.64,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking -0.7×0.9",
+     "ruleAdherence 0.7×-0.8",
+     "persistence 0.9×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:正官",
+    "family": "tenGod",
+    "tension": 1.56,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence 0.9×-0.8",
+     "riskTaking -0.6×0.7",
+     "planning 0.6×-0.5",
+     "directness -0.2×0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:癸丑",
+    "family": "dayPillar",
+    "tension": 1.52,
+    "resonance": 0,
+    "dimension": "riskTaking",
+    "opposite": [
+     "riskTaking -0.6×0.7",
+     "persistence 0.8×-0.5",
+     "planning 0.8×-0.5",
+     "detailFocus 0.5×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丁丑",
+    "family": "dayPillar",
+    "tension": 1.38,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence 0.6×-0.8",
+     "noveltySeeking -0.5×0.9",
+     "persistence 0.9×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "yinYang:YIN_HEAVY:FEMALE",
+    "family": "yinYang",
+    "tension": 1.36,
+    "resonance": 0,
+    "dimension": "verbalOutput",
+    "opposite": [
+     "verbalOutput -0.5×0.8",
+     "conflictApproach -0.6×0.6",
+     "detailFocus 0.5×-0.6",
+     "persistence 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "element:WOOD:WEAK",
+    "family": "element",
+    "tension": 1.3,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking -0.5×0.9",
+     "ruleAdherence 0.4×-0.8",
+     "riskTaking -0.4×0.7",
+     "persistence 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "stem:丁",
+    "family": "stem",
+    "tension": 1.2,
+    "resonance": 0,
+    "dimension": "detailFocus",
+    "opposite": [
+     "detailFocus 0.7×-0.6",
+     "persistence 0.6×-0.5",
+     "socialEnergy -0.4×0.6",
+     "verbalOutput -0.3×0.8"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:CHEONRA_JIMANG",
+    "family": "shinsal",
+    "tension": 1.19,
+    "resonance": 0,
+    "dimension": "persistence",
+    "opposite": [
+     "persistence 0.7×-0.5",
+     "riskTaking -0.5×0.7",
+     "planning 0.5×-0.5",
+     "detailFocus 0.4×-0.6"
+    ]
+   }
+  ],
+  "ESFJ": [
+   {
+    "myeongriId": "tenGodBalance:OFFICER:WEAK",
+    "family": "tenGodBalance",
+    "tension": 1.62,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence -0.8×0.6",
+     "independence 0.6×-0.6",
+     "dutifulness -0.4×0.7",
+     "noveltySeeking 0.5×-0.5",
+     "planning -0.5×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:壬子",
+    "family": "dayPillar",
+    "tension": 1.46,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence 0.8×-0.6",
+     "emotionalExpression -0.6×0.7",
+     "ruleAdherence -0.6×0.6",
+     "planning -0.4×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:庚子",
+    "family": "dayPillar",
+    "tension": 1.45,
+    "resonance": 0.3,
+    "dimension": "empathyResponse",
+    "opposite": [
+     "empathyResponse -0.6×0.7",
+     "independence 0.6×-0.6",
+     "emotionalExpression -0.5×0.7",
+     "inquiry 0.8×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:偏印",
+    "family": "tenGod",
+    "tension": 1.37,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy -0.5×0.9",
+     "independence 0.6×-0.6",
+     "inquiry 0.9×-0.4",
+     "noveltySeeking 0.4×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "element:FIRE:MISSING",
+    "family": "element",
+    "tension": 1.29,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression -0.8×0.7",
+     "socialEnergy -0.5×0.9",
+     "empathyResponse -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲寅",
+    "family": "dayPillar",
+    "tension": 1.25,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence 0.9×-0.6",
+     "ruleAdherence -0.6×0.6",
+     "noveltySeeking 0.7×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:比肩",
+    "family": "tenGod",
+    "tension": 1.21,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence 0.9×-0.6",
+     "boundarySetting 0.7×-0.7",
+     "ruleAdherence -0.3×0.6"
+    ]
+   },
+   {
+    "myeongriId": "stem:壬",
+    "family": "stem",
+    "tension": 1.2,
+    "resonance": 0.36,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "noveltySeeking 0.7×-0.5",
+     "independence 0.5×-0.6",
+     "ruleAdherence -0.5×0.6",
+     "planning -0.5×0.5"
+    ]
+   },
+   {
+    "myeongriId": "climate:辛:autumn",
+    "family": "climate",
+    "tension": 1.15,
+    "resonance": 0,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.8×-0.7",
+     "emotionalExpression -0.5×0.7",
+     "verbalOutput -0.4×0.6"
+    ]
+   },
+   {
+    "myeongriId": "tenGodBalance:PEER:STRONG",
+    "family": "tenGodBalance",
+    "tension": 1.11,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence 0.8×-0.6",
+     "boundarySetting 0.6×-0.7",
+     "empathyResponse -0.3×0.7"
+    ]
+   }
+  ],
+  "ESFP": [
+   {
+    "myeongriId": "dayPillar:癸丑",
+    "family": "dayPillar",
+    "tension": 2.15,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning 0.8×-0.8",
+     "emotionalExpression -0.7×0.9",
+     "intimacyPace -0.6×0.8",
+     "persistence 0.8×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲戌",
+    "family": "dayPillar",
+    "tension": 1.94,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning 0.6×-0.8",
+     "spendingControl 0.6×-0.7",
+     "persistence 0.8×-0.5",
+     "emotionalExpression -0.4×0.9",
+     "noveltySeeking -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丁丑",
+    "family": "dayPillar",
+    "tension": 1.9,
+    "resonance": 0.3,
+    "dimension": "spendingControl",
+    "opposite": [
+     "spendingControl 0.8×-0.7",
+     "emotionalExpression -0.6×0.9",
+     "persistence 0.9×-0.5",
+     "noveltySeeking -0.5×0.7"
+    ]
+   },
+   {
+    "myeongriId": "branch:丑",
+    "family": "branch",
+    "tension": 1.88,
+    "resonance": 0,
+    "dimension": "spendingControl",
+    "opposite": [
+     "spendingControl 0.8×-0.7",
+     "emotionalExpression -0.5×0.9",
+     "persistence 0.9×-0.5",
+     "noveltySeeking -0.6×0.7"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:GOSINSAL",
+    "family": "shinsal",
+    "tension": 1.84,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy -0.6×0.9",
+     "emotionalExpression -0.5×0.9",
+     "independence 0.9×-0.5",
+     "intimacyPace -0.5×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:戊辰",
+    "family": "dayPillar",
+    "tension": 1.82,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression -0.5×0.9",
+     "spendingControl 0.6×-0.7",
+     "noveltySeeking -0.5×0.7",
+     "persistence 0.7×-0.5",
+     "independence 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "climate:己:winter",
+    "family": "climate",
+    "tension": 1.56,
+    "resonance": 0,
+    "dimension": "spendingControl",
+    "opposite": [
+     "spendingControl 0.8×-0.7",
+     "intimacyPace -0.5×0.8",
+     "planning 0.5×-0.8",
+     "persistence 0.4×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:正財",
+    "family": "tenGod",
+    "tension": 1.47,
+    "resonance": 0,
+    "dimension": "spendingControl",
+    "opposite": [
+     "spendingControl 0.9×-0.7",
+     "planning 0.7×-0.8",
+     "noveltySeeking -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "climate:庚:winter",
+    "family": "climate",
+    "tension": 1.44,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression -0.6×0.9",
+     "socialEnergy -0.5×0.9",
+     "empathyResponse -0.6×0.5",
+     "directness 0.5×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "climate:癸:winter",
+    "family": "climate",
+    "tension": 1.34,
+    "resonance": 0,
+    "dimension": "intimacyPace",
+    "opposite": [
+     "intimacyPace -0.8×0.8",
+     "emotionalExpression -0.5×0.9",
+     "persistence 0.5×-0.5"
+    ]
+   }
+  ],
+  "ESTJ": [
+   {
+    "myeongriId": "tenGodBalance:OUTPUT:STRONG",
+    "family": "tenGodBalance",
+    "tension": 1.46,
+    "resonance": 0.48,
+    "dimension": "directness",
+    "opposite": [
+     "ruleAdherence -0.6×0.8",
+     "emotionalExpression 0.7×-0.5",
+     "noveltySeeking 0.7×-0.5",
+     "persistence -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "element:EARTH:WEAK",
+    "family": "element",
+    "tension": 1.26,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning -0.6×0.8",
+     "persistence -0.4×0.7",
+     "noveltySeeking 0.5×-0.5",
+     "spendingControl -0.5×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:壬",
+    "family": "dayMaster",
+    "tension": 1.25,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.7×-0.5",
+     "planning -0.4×0.8",
+     "detailFocus -0.5×0.6",
+     "decisionSpeed -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "stem:壬",
+    "family": "stem",
+    "tension": 1.15,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning -0.5×0.8",
+     "ruleAdherence -0.5×0.8",
+     "noveltySeeking 0.7×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:壬寅",
+    "family": "dayPillar",
+    "tension": 1.1,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.9×-0.5",
+     "persistence -0.5×0.7",
+     "detailFocus -0.5×0.6"
+    ]
+   },
+   {
+    "myeongriId": "tenGodBalance:WEALTH:WEAK",
+    "family": "tenGodBalance",
+    "tension": 0.91,
+    "resonance": 0,
+    "dimension": "spendingControl",
+    "opposite": [
+     "spendingControl -0.7×0.5",
+     "planning -0.4×0.8",
+     "statusDrive -0.4×0.6"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:食神",
+    "family": "tenGod",
+    "tension": 0.88,
+    "resonance": 0.42,
+    "dimension": "persistence",
+    "opposite": [
+     "controlNeed -0.4×0.8",
+     "emotionalExpression 0.5×-0.5",
+     "planning -0.2×0.8",
+     "spendingControl -0.3×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丁卯",
+    "family": "dayPillar",
+    "tension": 0.88,
+    "resonance": 0.24,
+    "dimension": "directness",
+    "opposite": [
+     "directness -0.6×0.8",
+     "empathyResponse 0.8×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "twelveStage:沐浴",
+    "family": "twelveStage",
+    "tension": 0.88,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.7×-0.5",
+     "persistence -0.4×0.7",
+     "emotionalExpression 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "structure:WEAK_DAYMASTER_WITH_STRONG_OUTPUT",
+    "family": "structure",
+    "tension": 0.85,
+    "resonance": 0,
+    "dimension": "persistence",
+    "opposite": [
+     "persistence -0.5×0.7",
+     "emotionalExpression 0.5×-0.5",
+     "noveltySeeking 0.5×-0.5"
+    ]
+   }
+  ],
+  "ESTP": [
+   {
+    "myeongriId": "dayPillar:癸亥",
+    "family": "dayPillar",
+    "tension": 1.8,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection 0.9×-0.7",
+     "decisionSpeed -0.6×0.9",
+     "socialEnergy -0.5×0.7",
+     "empathyResponse 0.7×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "branch:丑",
+    "family": "branch",
+    "tension": 1.75,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.9",
+     "noveltySeeking -0.6×0.8",
+     "spendingControl 0.8×-0.6",
+     "possessiveness 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "structure:RESOURCE_HEAVY",
+    "family": "structure",
+    "tension": 1.67,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.5×0.9",
+     "riskTaking -0.5×0.9",
+     "introspection 0.6×-0.7",
+     "planning 0.5×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:正官",
+    "family": "tenGod",
+    "tension": 1.66,
+    "resonance": 0,
+    "dimension": "riskTaking",
+    "opposite": [
+     "riskTaking -0.6×0.9",
+     "ruleAdherence 0.9×-0.6",
+     "planning 0.6×-0.7",
+     "directness -0.2×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:辛亥",
+    "family": "dayPillar",
+    "tension": 1.65,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection 0.9×-0.7",
+     "decisionSpeed -0.6×0.9",
+     "socialEnergy -0.4×0.7",
+     "empathyResponse 0.5×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:己亥",
+    "family": "dayPillar",
+    "tension": 1.64,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection 0.7×-0.7",
+     "directness -0.4×0.8",
+     "spendingControl 0.5×-0.6",
+     "empathyResponse 0.7×-0.4",
+     "conflictApproach -0.5×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:戊子",
+    "family": "dayPillar",
+    "tension": 1.63,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning 0.7×-0.7",
+     "spendingControl 0.8×-0.6",
+     "decisionSpeed -0.4×0.9",
+     "possessiveness 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "element:WATER:STRONG",
+    "family": "element",
+    "tension": 1.61,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.7×0.9",
+     "introspection 0.9×-0.7",
+     "socialEnergy -0.5×0.7"
+    ]
+   },
+   {
+    "myeongriId": "climate:壬:autumn",
+    "family": "climate",
+    "tension": 1.6,
+    "resonance": 0,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed -0.6×0.9",
+     "introspection 0.6×-0.7",
+     "riskTaking -0.4×0.9",
+     "planning 0.4×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_HWAGAE",
+    "family": "shinsal",
+    "tension": 1.58,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection 0.7×-0.7",
+     "noveltySeeking -0.6×0.8",
+     "mobility -0.4×0.9",
+     "possessiveness 0.5×-0.5"
+    ]
+   }
+  ],
+  "INFJ": [
+   {
+    "myeongriId": "stem:丙",
+    "family": "stem",
+    "tension": 1.69,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.8×-0.6",
+     "emotionalExpression 0.8×-0.5",
+     "introspection -0.4×0.9",
+     "directness 0.6×-0.4",
+     "verbalOutput 0.7×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "stem:庚",
+    "family": "stem",
+    "tension": 1.41,
+    "resonance": 0.45,
+    "dimension": "conflictApproach",
+    "opposite": [
+     "conflictApproach 0.7×-0.6",
+     "empathyResponse -0.5×0.8",
+     "directness 0.8×-0.4",
+     "introspection -0.3×0.9"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:丙",
+    "family": "dayMaster",
+    "tension": 1.35,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.7×-0.6",
+     "emotionalExpression 0.8×-0.5",
+     "intimacyPace 0.5×-0.7",
+     "verbalOutput 0.6×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:乙巳",
+    "family": "dayPillar",
+    "tension": 1.17,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.9×-0.6",
+     "intimacyPace 0.6×-0.7",
+     "verbalOutput 0.7×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "climate:丙:summer",
+    "family": "climate",
+    "tension": 1.08,
+    "resonance": 0,
+    "dimension": "conflictApproach",
+    "opposite": [
+     "conflictApproach 0.5×-0.6",
+     "emotionalExpression 0.6×-0.5",
+     "directness 0.7×-0.4",
+     "planning -0.4×0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙申",
+    "family": "dayPillar",
+    "tension": 0.93,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.6×-0.6",
+     "empathyResponse -0.3×0.8",
+     "verbalOutput 0.6×-0.3",
+     "planning -0.3×0.5"
+    ]
+   },
+   {
+    "myeongriId": "structure:FIRE_METAL_TENSION",
+    "family": "structure",
+    "tension": 0.93,
+    "resonance": 0,
+    "dimension": "conflictApproach",
+    "opposite": [
+     "conflictApproach 0.6×-0.6",
+     "directness 0.8×-0.4",
+     "emotionalExpression 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙戌",
+    "family": "dayPillar",
+    "tension": 0.89,
+    "resonance": 0.58,
+    "dimension": "conflictApproach",
+    "opposite": [
+     "conflictApproach 0.7×-0.6",
+     "directness 0.8×-0.4",
+     "emotionalExpression 0.3×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_MANGSINSAL",
+    "family": "shinsal",
+    "tension": 0.88,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression 0.8×-0.5",
+     "conflictApproach 0.4×-0.6",
+     "directness 0.6×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "element:WATER:WEAK",
+    "family": "element",
+    "tension": 0.87,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection -0.8×0.9",
+     "emotionalExpression 0.3×-0.5"
+    ]
+   }
+  ],
+  "INFP": [
+   {
+    "myeongriId": "dayPillar:庚戌",
+    "family": "dayPillar",
+    "tension": 1.83,
+    "resonance": 0,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.9×-0.6",
+     "directness 0.7×-0.7",
+     "empathyResponse -0.4×0.8",
+     "ruleAdherence 0.7×-0.4",
+     "noveltySeeking -0.5×0.4"
+    ]
+   },
+   {
+    "myeongriId": "stem:丙",
+    "family": "stem",
+    "tension": 1.8,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.8×-0.6",
+     "directness 0.6×-0.7",
+     "introspection -0.4×0.9",
+     "decisionSpeed 0.5×-0.6",
+     "emotionalExpression 0.8×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "stem:庚",
+    "family": "stem",
+    "tension": 1.65,
+    "resonance": 0.12,
+    "dimension": "directness",
+    "opposite": [
+     "directness 0.8×-0.7",
+     "decisionSpeed 0.7×-0.6",
+     "empathyResponse -0.5×0.8",
+     "introspection -0.3×0.9"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲申",
+    "family": "dayPillar",
+    "tension": 1.51,
+    "resonance": 0.3,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed 0.7×-0.6",
+     "directness 0.6×-0.7",
+     "planning 0.7×-0.5",
+     "empathyResponse -0.4×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:庚申",
+    "family": "dayPillar",
+    "tension": 1.51,
+    "resonance": 0.35,
+    "dimension": "decisionSpeed",
+    "opposite": [
+     "decisionSpeed 0.9×-0.6",
+     "directness 0.7×-0.7",
+     "empathyResponse -0.6×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:庚",
+    "family": "dayMaster",
+    "tension": 1.44,
+    "resonance": 0.25,
+    "dimension": "directness",
+    "opposite": [
+     "directness 0.8×-0.7",
+     "decisionSpeed 0.8×-0.6",
+     "empathyResponse -0.5×0.8"
+    ]
+   },
+   {
+    "myeongriId": "climate:辛:autumn",
+    "family": "climate",
+    "tension": 1.32,
+    "resonance": 0.15,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.8×-0.6",
+     "decisionSpeed 0.7×-0.6",
+     "directness 0.6×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "element:WATER:WEAK",
+    "family": "element",
+    "tension": 1.29,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection -0.8×0.9",
+     "decisionSpeed 0.8×-0.6",
+     "emotionalExpression 0.3×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "element:WATER:MISSING",
+    "family": "element",
+    "tension": 1.29,
+    "resonance": 0,
+    "dimension": "introspection",
+    "opposite": [
+     "introspection -0.9×0.9",
+     "decisionSpeed 0.8×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "branch:酉",
+    "family": "branch",
+    "tension": 1.24,
+    "resonance": 0,
+    "dimension": "directness",
+    "opposite": [
+     "directness 0.6×-0.7",
+     "empathyResponse -0.4×0.8",
+     "boundarySetting 0.5×-0.6",
+     "ruleAdherence 0.5×-0.4"
+    ]
+   }
+  ],
+  "INTJ": [
+   {
+    "myeongriId": "dayPillar:丙午",
+    "family": "dayPillar",
+    "tension": 1.59,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.8×-0.7",
+     "emotionalExpression 0.8×-0.6",
+     "verbalOutput 0.7×-0.5",
+     "introspection -0.4×0.5"
+    ]
+   },
+   {
+    "myeongriId": "branch:午",
+    "family": "branch",
+    "tension": 1.33,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.7×-0.7",
+     "emotionalExpression 0.8×-0.6",
+     "planning -0.4×0.9"
+    ]
+   },
+   {
+    "myeongriId": "element:FIRE:STRONG",
+    "family": "element",
+    "tension": 1.27,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.7×-0.7",
+     "emotionalExpression 0.8×-0.6",
+     "verbalOutput 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "stem:乙",
+    "family": "stem",
+    "tension": 1.25,
+    "resonance": 0,
+    "dimension": "directness",
+    "opposite": [
+     "directness -0.6×0.6",
+     "independence -0.4×0.9",
+     "socialEnergy 0.4×-0.7",
+     "empathyResponse 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "climate:丙:spring",
+    "family": "climate",
+    "tension": 1.21,
+    "resonance": 0.15,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.7×-0.7",
+     "emotionalExpression 0.6×-0.6",
+     "planning -0.4×0.9"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:乙",
+    "family": "dayMaster",
+    "tension": 1.19,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence -0.4×0.9",
+     "directness -0.5×0.6",
+     "socialEnergy 0.4×-0.7",
+     "empathyResponse 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "twelveStage:長生",
+    "family": "twelveStage",
+    "tension": 1.18,
+    "resonance": 0.15,
+    "dimension": "independence",
+    "opposite": [
+     "independence -0.4×0.9",
+     "trustThreshold -0.5×0.6",
+     "socialEnergy 0.4×-0.7",
+     "emotionalExpression 0.4×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "branch:卯",
+    "family": "branch",
+    "tension": 1.12,
+    "resonance": 0,
+    "dimension": "directness",
+    "opposite": [
+     "directness -0.6×0.6",
+     "empathyResponse 0.7×-0.5",
+     "socialEnergy 0.3×-0.7",
+     "detailFocus 0.5×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "element:WOOD:MISSING",
+    "family": "element",
+    "tension": 1.11,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence -0.5×0.9",
+     "planning -0.5×0.9",
+     "noveltySeeking -0.7×0.3"
+    ]
+   },
+   {
+    "myeongriId": "element:METAL:MISSING",
+    "family": "element",
+    "tension": 1.08,
+    "resonance": 0,
+    "dimension": "directness",
+    "opposite": [
+     "directness -0.6×0.6",
+     "planning -0.4×0.9",
+     "trustThreshold -0.6×0.6"
+    ]
+   }
+  ],
+  "INTP": [
+   {
+    "myeongriId": "element:FIRE:STRONG",
+    "family": "element",
+    "tension": 1.45,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.7×-0.7",
+     "emotionalExpression 0.8×-0.6",
+     "decisionSpeed 0.6×-0.5",
+     "verbalOutput 0.6×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
+    "family": "yinYang",
+    "tension": 1.25,
+    "resonance": 0.56,
+    "dimension": "independence",
+    "opposite": [
+     "socialEnergy 0.6×-0.7",
+     "decisionSpeed 0.7×-0.5",
+     "controlNeed 0.6×-0.4",
+     "emotionalExpression 0.4×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "structure:OFFICER_HEAVY",
+    "family": "structure",
+    "tension": 1.23,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence 0.7×-0.6",
+     "dutifulness 0.8×-0.4",
+     "planning 0.5×-0.5",
+     "noveltySeeking -0.4×0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙寅",
+    "family": "dayPillar",
+    "tension": 1.15,
+    "resonance": 0.48,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.7×-0.7",
+     "emotionalExpression 0.6×-0.6",
+     "decisionSpeed 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "tenGodBalance:OFFICER:STRONG",
+    "family": "tenGodBalance",
+    "tension": 1.08,
+    "resonance": 0.3,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence 0.8×-0.6",
+     "dutifulness 0.9×-0.4",
+     "independence -0.3×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙申",
+    "family": "dayPillar",
+    "tension": 1,
+    "resonance": 0.3,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.6×-0.7",
+     "decisionSpeed 0.8×-0.5",
+     "verbalOutput 0.6×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙子",
+    "family": "dayPillar",
+    "tension": 0.93,
+    "resonance": 0,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.6×-0.7",
+     "ruleAdherence 0.6×-0.6",
+     "verbalOutput 0.5×-0.3"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:戊寅",
+    "family": "dayPillar",
+    "tension": 0.87,
+    "resonance": 0.56,
+    "dimension": "planning",
+    "opposite": [
+     "planning 0.7×-0.5",
+     "dutifulness 0.8×-0.4",
+     "controlNeed 0.5×-0.4"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:偏財",
+    "family": "tenGod",
+    "tension": 0.86,
+    "resonance": 0.45,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.8×-0.7",
+     "decisionSpeed 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "branch:戌",
+    "family": "branch",
+    "tension": 0.86,
+    "resonance": 0,
+    "dimension": "dutifulness",
+    "opposite": [
+     "dutifulness 0.8×-0.4",
+     "ruleAdherence 0.5×-0.6",
+     "noveltySeeking -0.4×0.6"
+    ]
+   }
+  ],
+  "ISFJ": [
+   {
+    "myeongriId": "tenGodBalance:OFFICER:WEAK",
+    "family": "tenGodBalance",
+    "tension": 1.44,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence -0.8×0.6",
+     "dutifulness -0.4×0.9",
+     "noveltySeeking 0.5×-0.6",
+     "planning -0.5×0.6"
+    ]
+   },
+   {
+    "myeongriId": "structure:OUTPUT_HEAVY",
+    "family": "structure",
+    "tension": 1.39,
+    "resonance": 0,
+    "dimension": "attentionSeeking",
+    "opposite": [
+     "attentionSeeking 0.5×-0.7",
+     "emotionalExpression 0.6×-0.5",
+     "noveltySeeking 0.5×-0.6",
+     "ruleAdherence -0.4×0.6",
+     "spendingControl -0.4×0.5"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_NYEONSAL",
+    "family": "shinsal",
+    "tension": 1.29,
+    "resonance": 0,
+    "dimension": "attentionSeeking",
+    "opposite": [
+     "attentionSeeking 0.6×-0.7",
+     "noveltySeeking 0.7×-0.6",
+     "emotionalExpression 0.5×-0.5",
+     "spendingControl -0.4×0.5"
+    ]
+   },
+   {
+    "myeongriId": "element:EARTH:MISSING",
+    "family": "element",
+    "tension": 1.14,
+    "resonance": 0.56,
+    "dimension": "planning",
+    "opposite": [
+     "planning -0.7×0.6",
+     "dutifulness -0.4×0.9",
+     "noveltySeeking 0.6×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:傷官",
+    "family": "tenGod",
+    "tension": 1.12,
+    "resonance": 0,
+    "dimension": "ruleAdherence",
+    "opposite": [
+     "ruleAdherence -0.8×0.6",
+     "noveltySeeking 0.6×-0.6",
+     "attentionSeeking 0.4×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:YANGIN",
+    "family": "shinsal",
+    "tension": 1.12,
+    "resonance": 0,
+    "dimension": "boundarySetting",
+    "opposite": [
+     "boundarySetting 0.8×-0.8",
+     "conflictApproach 0.6×-0.8"
+    ]
+   },
+   {
+    "myeongriId": "twelveStage:沐浴",
+    "family": "twelveStage",
+    "tension": 1.09,
+    "resonance": 0,
+    "dimension": "attentionSeeking",
+    "opposite": [
+     "attentionSeeking 0.6×-0.7",
+     "noveltySeeking 0.7×-0.6",
+     "emotionalExpression 0.5×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_MANGSINSAL",
+    "family": "shinsal",
+    "tension": 1.07,
+    "resonance": 0.32,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression 0.8×-0.5",
+     "attentionSeeking 0.5×-0.7",
+     "conflictApproach 0.4×-0.8"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:DOHWASAL",
+    "family": "shinsal",
+    "tension": 1.05,
+    "resonance": 0,
+    "dimension": "attentionSeeking",
+    "opposite": [
+     "attentionSeeking 0.8×-0.7",
+     "emotionalExpression 0.5×-0.5",
+     "noveltySeeking 0.4×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "climate:乙:summer",
+    "family": "climate",
+    "tension": 1.02,
+    "resonance": 0,
+    "dimension": "attentionSeeking",
+    "opposite": [
+     "attentionSeeking 0.6×-0.7",
+     "emotionalExpression 0.7×-0.5",
+     "spendingControl -0.5×0.5"
+    ]
+   }
+  ],
+  "ISFP": [
+   {
+    "myeongriId": "dayPillar:壬辰",
+    "family": "dayPillar",
+    "tension": 1.67,
+    "resonance": 0,
+    "dimension": "controlNeed",
+    "opposite": [
+     "controlNeed 0.7×-0.7",
+     "planning 0.7×-0.6",
+     "conflictApproach 0.5×-0.8",
+     "statusDrive 0.6×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:庚辰",
+    "family": "dayPillar",
+    "tension": 1.6,
+    "resonance": 0,
+    "dimension": "controlNeed",
+    "opposite": [
+     "controlNeed 0.8×-0.7",
+     "directness 0.8×-0.7",
+     "conflictApproach 0.6×-0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲申",
+    "family": "dayPillar",
+    "tension": 1.54,
+    "resonance": 0,
+    "dimension": "competitiveness",
+    "opposite": [
+     "competitiveness 0.7×-0.6",
+     "directness 0.6×-0.7",
+     "planning 0.7×-0.6",
+     "empathyResponse -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙午",
+    "family": "dayPillar",
+    "tension": 1.46,
+    "resonance": 0.25,
+    "dimension": "verbalOutput",
+    "opposite": [
+     "verbalOutput 0.7×-0.6",
+     "socialEnergy 0.8×-0.5",
+     "competitiveness 0.6×-0.6",
+     "introspection -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "element:METAL:STRONG",
+    "family": "element",
+    "tension": 1.39,
+    "resonance": 0,
+    "dimension": "directness",
+    "opposite": [
+     "directness 0.8×-0.7",
+     "boundarySetting 0.8×-0.6",
+     "empathyResponse -0.5×0.7"
+    ]
+   },
+   {
+    "myeongriId": "structure:PEER_HEAVY",
+    "family": "structure",
+    "tension": 1.36,
+    "resonance": 0,
+    "dimension": "competitiveness",
+    "opposite": [
+     "competitiveness 0.7×-0.6",
+     "controlNeed 0.5×-0.7",
+     "directness 0.5×-0.7",
+     "boundarySetting 0.4×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "structure:WEALTH_HEAVY",
+    "family": "structure",
+    "tension": 1.33,
+    "resonance": 0.16,
+    "dimension": "planning",
+    "opposite": [
+     "planning 0.6×-0.6",
+     "spendingControl 0.6×-0.5",
+     "empathyResponse -0.4×0.7",
+     "introspection -0.3×0.7",
+     "statusDrive 0.3×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "yinYang:YANG_HEAVY:FEMALE",
+    "family": "yinYang",
+    "tension": 1.28,
+    "resonance": 0,
+    "dimension": "directness",
+    "opposite": [
+     "directness 0.8×-0.7",
+     "controlNeed 0.6×-0.7",
+     "socialEnergy 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:劫財",
+    "family": "tenGod",
+    "tension": 1.24,
+    "resonance": 0.3,
+    "dimension": "competitiveness",
+    "opposite": [
+     "competitiveness 0.9×-0.6",
+     "conflictApproach 0.5×-0.8",
+     "socialEnergy 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "relation:HYEONG",
+    "family": "relation",
+    "tension": 1.2,
+    "resonance": 0.35,
+    "dimension": "conflictApproach",
+    "opposite": [
+     "conflictApproach 0.5×-0.8",
+     "directness 0.5×-0.7",
+     "boundarySetting 0.4×-0.6",
+     "empathyResponse -0.3×0.7"
+    ]
+   }
+  ],
+  "ISTJ": [
+   {
+    "myeongriId": "dayPillar:壬寅",
+    "family": "dayPillar",
+    "tension": 2.03,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.9×-0.7",
+     "detailFocus -0.5×0.8",
+     "persistence -0.5×0.7",
+     "riskTaking 0.5×-0.7",
+     "socialEnergy 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙寅",
+    "family": "dayPillar",
+    "tension": 1.9,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.8×-0.7",
+     "emotionalExpression 0.6×-0.6",
+     "persistence -0.5×0.7",
+     "socialEnergy 0.7×-0.5",
+     "riskTaking 0.4×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:壬午",
+    "family": "dayPillar",
+    "tension": 1.78,
+    "resonance": 0,
+    "dimension": "riskTaking",
+    "opposite": [
+     "riskTaking 0.6×-0.7",
+     "socialEnergy 0.8×-0.5",
+     "emotionalExpression 0.6×-0.6",
+     "planning -0.4×0.8",
+     "persistence -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:丙",
+    "family": "dayMaster",
+    "tension": 1.73,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression 0.8×-0.6",
+     "socialEnergy 0.7×-0.5",
+     "detailFocus -0.4×0.8",
+     "intimacyPace 0.5×-0.6",
+     "spendingControl -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "twelveStage:絶",
+    "family": "twelveStage",
+    "tension": 1.55,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.7×-0.7",
+     "trustThreshold -0.6×0.6",
+     "persistence -0.5×0.7",
+     "riskTaking 0.5×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_NYEONSAL",
+    "family": "shinsal",
+    "tension": 1.53,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.7×-0.7",
+     "emotionalExpression 0.5×-0.6",
+     "spendingControl -0.4×0.7",
+     "socialEnergy 0.5×-0.5",
+     "persistence -0.3×0.7"
+    ]
+   },
+   {
+    "myeongriId": "branch:午",
+    "family": "branch",
+    "tension": 1.43,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression 0.8×-0.6",
+     "socialEnergy 0.7×-0.5",
+     "planning -0.4×0.8",
+     "persistence -0.4×0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayMaster:壬",
+    "family": "dayMaster",
+    "tension": 1.41,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.7×-0.7",
+     "detailFocus -0.5×0.8",
+     "planning -0.4×0.8",
+     "socialEnergy 0.4×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "climate:丙:spring",
+    "family": "climate",
+    "tension": 1.38,
+    "resonance": 0,
+    "dimension": "emotionalExpression",
+    "opposite": [
+     "emotionalExpression 0.6×-0.6",
+     "noveltySeeking 0.5×-0.7",
+     "socialEnergy 0.7×-0.5",
+     "planning -0.4×0.8"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲午",
+    "family": "dayPillar",
+    "tension": 1.35,
+    "resonance": 0,
+    "dimension": "noveltySeeking",
+    "opposite": [
+     "noveltySeeking 0.7×-0.7",
+     "socialEnergy 0.6×-0.5",
+     "persistence -0.4×0.7",
+     "spendingControl -0.4×0.7"
+    ]
+   }
+  ],
+  "ISTP": [
+   {
+    "myeongriId": "tenGodBalance:OUTPUT:STRONG",
+    "family": "tenGodBalance",
+    "tension": 1.45,
+    "resonance": 0.3,
+    "dimension": "verbalOutput",
+    "opposite": [
+     "verbalOutput 0.9×-0.8",
+     "emotionalExpression 0.7×-0.7",
+     "attentionSeeking 0.4×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:甲午",
+    "family": "dayPillar",
+    "tension": 1.42,
+    "resonance": 0.3,
+    "dimension": "verbalOutput",
+    "opposite": [
+     "verbalOutput 0.8×-0.8",
+     "attentionSeeking 0.7×-0.6",
+     "socialEnergy 0.6×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:壬午",
+    "family": "dayPillar",
+    "tension": 1.38,
+    "resonance": 0.6,
+    "dimension": "socialEnergy",
+    "opposite": [
+     "socialEnergy 0.8×-0.6",
+     "verbalOutput 0.6×-0.8",
+     "emotionalExpression 0.6×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "dayPillar:丙子",
+    "family": "dayPillar",
+    "tension": 1.36,
+    "resonance": 0,
+    "dimension": "verbalOutput",
+    "opposite": [
+     "verbalOutput 0.5×-0.8",
+     "socialEnergy 0.6×-0.6",
+     "attentionSeeking 0.5×-0.6",
+     "ruleAdherence 0.6×-0.5"
+    ]
+   },
+   {
+    "myeongriId": "tenGodBalance:RESOURCE:STRONG",
+    "family": "tenGodBalance",
+    "tension": 1.28,
+    "resonance": 0,
+    "dimension": "riskTaking",
+    "opposite": [
+     "riskTaking -0.6×0.6",
+     "decisionSpeed -0.7×0.5",
+     "planning 0.5×-0.6",
+     "independence -0.3×0.9"
+    ]
+   },
+   {
+    "myeongriId": "tenGod:正印",
+    "family": "tenGod",
+    "tension": 1.26,
+    "resonance": 0,
+    "dimension": "independence",
+    "opposite": [
+     "independence -0.4×0.9",
+     "decisionSpeed -0.6×0.5",
+     "planning 0.5×-0.6",
+     "riskTaking -0.5×0.6"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_JANGSEONGSAL",
+    "family": "shinsal",
+    "tension": 1.2,
+    "resonance": 0.45,
+    "dimension": "independence",
+    "opposite": [
+     "attentionSeeking 0.7×-0.6",
+     "controlNeed 0.7×-0.6",
+     "socialEnergy 0.6×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "structure:OUTPUT_HEAVY",
+    "family": "structure",
+    "tension": 1.2,
+    "resonance": 0.2,
+    "dimension": "verbalOutput",
+    "opposite": [
+     "verbalOutput 0.6×-0.8",
+     "emotionalExpression 0.6×-0.7",
+     "attentionSeeking 0.5×-0.6"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:DOHWASAL",
+    "family": "shinsal",
+    "tension": 1.19,
+    "resonance": 0,
+    "dimension": "attentionSeeking",
+    "opposite": [
+     "attentionSeeking 0.8×-0.6",
+     "socialEnergy 0.6×-0.6",
+     "emotionalExpression 0.5×-0.7"
+    ]
+   },
+   {
+    "myeongriId": "shinsal:TWELVE_BANANSAL",
+    "family": "shinsal",
+    "tension": 1.14,
+    "resonance": 0,
+    "dimension": "planning",
+    "opposite": [
+     "planning 0.5×-0.6",
+     "riskTaking -0.5×0.6",
+     "ruleAdherence 0.6×-0.5",
+     "attentionSeeking 0.4×-0.6"
+    ]
+   }
+  ]
+ }
+}

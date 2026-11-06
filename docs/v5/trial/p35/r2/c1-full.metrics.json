@@ -1,0 +1,45 @@
+{
+ "case": "c1-full",
+ "chapters": 13,
+ "sources": {
+  "writer": 13
+ },
+ "chars": [
+  1112,
+  1074,
+  1024,
+  1295,
+  1225,
+  1117,
+  1166,
+  1136,
+  1185,
+  1074,
+  1173,
+  1126,
+  1231
+ ],
+ "total": 14938,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "warnings": [],
+ "briefCopy": {
+  "sentences": 309,
+  "matched": 4,
+  "ratio": 0.013,
+  "writerSentences": 309,
+  "writerMatched": 4,
+  "writerRatio": 0.013
+ },
+ "connectors": [
+  {
+   "phrase": "그런데",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 0,
+ "jobMentions": 0,
+ "sceneHintsUsed": "15/15"
+}

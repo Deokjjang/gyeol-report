@@ -1,0 +1,214 @@
+{
+ "case": "c1-career",
+ "product": "career_money_study",
+ "chapters": 9,
+ "sources": {
+  "writer": 9
+ },
+ "chars": [
+  1272,
+  1169,
+  1147,
+  1444,
+  1094,
+  935,
+  891,
+  1046,
+  840
+ ],
+ "total": 9838,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "replacements": [
+  "2 직접 써 본 사람 입에서 나온 사용자 피드백은 어떤 설명보다 힘이 세다는 걸 아는 사람이니까요. → 직접 써 보는 사람 입에서 나온 사용자 피드백은 어떤 설명보다 힘이 세다는 걸 아는 사람이니까요."
+ ],
+ "warnings": [
+  "0 prop_overuse: 기획 회의×3",
+  "0 prop_overuse: 출시 일정×3",
+  "0 prop_overuse: 사용자 피드백×3",
+  "0 trait_repeat: t2 바른 관리자 소제목 5개",
+  "0 trait_repeat: t2 바른 관리자 한 장 2개",
+  "0 trait_repeat: t3 손맛 요리사 소제목 5개",
+  "0 trait_repeat: t3 손맛 요리사 한 장 2개",
+  "0 trait_repeat: t9 옆 레인 승부사 소제목 4개",
+  "0 trait_repeat: 축 tg:OFFICER 소제목 5개",
+  "0 trait_repeat: 축 tg:OFFICER 한 장 2개",
+  "0 trait_repeat: 축 dim:dutifulness+ 소제목 5개",
+  "0 trait_repeat: 축 dim:dutifulness+ 한 장 2개",
+  "0 trait_repeat: 축 tg:OUTPUT 소제목 5개",
+  "0 trait_repeat: 축 tg:OUTPUT 한 장 2개",
+  "0 trait_repeat: 축 dim:caretaking+ 소제목 5개",
+  "0 trait_repeat: 축 dim:caretaking+ 한 장 2개",
+  "0 trait_repeat: 축 tg:PEER 소제목 4개",
+  "0 trait_repeat: 축 dim:competitiveness+ 소제목 4개"
+ ],
+ "briefCopy": {
+  "sentences": 187,
+  "matched": 1,
+  "ratio": 0.005,
+  "writerSentences": 187,
+  "writerMatched": 1,
+  "writerRatio": 0.005
+ },
+ "connectors": [
+  {
+   "phrase": "그래서",
+   "count": 4
+  },
+  {
+   "phrase": "여기에",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 1,
+ "props": {
+  "기획 회의": 3,
+  "출시 일정": 3,
+  "사용자 피드백": 3,
+  "화면 설계안": 2,
+  "회의록": 2,
+  "요구사항 정리": 1,
+  "우선순위 표": 1,
+  "개발팀 협의": 1,
+  "경쟁 서비스 조사": 1,
+  "로드맵 문서": 1,
+  "베타 테스트": 1,
+  "선배 피드백": 1,
+  "기능 명세서": 1,
+  "점심 메뉴 투표": 1,
+  "출시 후 지표": 1
+ },
+ "experience": {
+  "replaced": 1,
+  "deleted": 0
+ },
+ "imageUnnamed": 0,
+ "loveTiming": 0,
+ "jobMentions": 2,
+ "sceneHintsUsed": "15/15",
+ "traitUse": {
+  "traits": [
+   {
+    "id": "t1",
+    "name": "겨울 외양간 등불",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t2",
+    "name": "바른 관리자",
+    "sections": 5,
+    "chapters": 4,
+    "maxInChapter": 2,
+    "planned": 3
+   },
+   {
+    "id": "t3",
+    "name": "손맛 요리사",
+    "sections": 5,
+    "chapters": 4,
+    "maxInChapter": 2,
+    "planned": 3
+   },
+   {
+    "id": "t4",
+    "name": "한 칸 밀린 단추",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t5",
+    "name": "말 안장",
+    "sections": 2,
+    "chapters": 2,
+    "maxInChapter": 1,
+    "planned": 2
+   },
+   {
+    "id": "t6",
+    "name": "같은 계절 모임",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t7",
+    "name": "흰 호랑이",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t8",
+    "name": "땅속 김장독",
+    "sections": 1,
+    "chapters": 1,
+    "maxInChapter": 1,
+    "planned": 1
+   },
+   {
+    "id": "t9",
+    "name": "옆 레인 승부사",
+    "sections": 4,
+    "chapters": 4,
+    "maxInChapter": 1,
+    "planned": 2
+   }
+  ],
+  "axes": {
+   "core": 2,
+   "dim:persistence+": 3,
+   "tg:OFFICER": 5,
+   "dim:dutifulness+": 5,
+   "tg:OUTPUT": 5,
+   "dim:caretaking+": 5,
+   "shinsal:EUMCHAK_YANGCHA": 2,
+   "shinsal:TWELVE_BANANSAL": 2,
+   "dim:statusDrive+": 2,
+   "relation:BANGHAP": 1,
+   "dim:boundarySetting+": 1,
+   "shinsal:BAEKHODAESAL": 1,
+   "twelveStage:墓": 1,
+   "dim:possessiveness+": 1,
+   "tg:PEER": 4,
+   "dim:competitiveness+": 4
+  },
+  "mbti": {
+   "Te": 1,
+   "Fi": 1,
+   "승부욕": 1,
+   "통제 욕구": 2,
+   "계획성": 1,
+   "결정 속도": 1,
+   "말수": 2,
+   "사교 에너지": 1
+  },
+  "advice": 0,
+  "warnings": [
+   "t2 바른 관리자 소제목 5개",
+   "t2 바른 관리자 한 장 2개",
+   "t3 손맛 요리사 소제목 5개",
+   "t3 손맛 요리사 한 장 2개",
+   "t9 옆 레인 승부사 소제목 4개",
+   "축 tg:OFFICER 소제목 5개",
+   "축 tg:OFFICER 한 장 2개",
+   "축 dim:dutifulness+ 소제목 5개",
+   "축 dim:dutifulness+ 한 장 2개",
+   "축 tg:OUTPUT 소제목 5개",
+   "축 tg:OUTPUT 한 장 2개",
+   "축 dim:caretaking+ 소제목 5개",
+   "축 dim:caretaking+ 한 장 2개",
+   "축 tg:PEER 소제목 4개",
+   "축 dim:competitiveness+ 소제목 4개"
+  ]
+ },
+ "planWarnings": []
+}

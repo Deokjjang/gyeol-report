@@ -5,7 +5,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   confirmPaidReport: vi.fn(),
   createStore: vi.fn(),
-  resolveWriter: vi.fn(),
   runJob: vi.fn(),
   storeCall: vi.fn(),
   confirmProvider: vi.fn(),
@@ -17,9 +16,6 @@ vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({
 vi.mock("../../../src/lib/payment/paidReportReliability", () => ({
   confirmPaidReport: mocks.confirmPaidReport,
   runPaidReportJob: mocks.runJob,
-}));
-vi.mock("../../../src/lib/report-generation/reportWriterRuntime", () => ({
-  resolveReportWriterRuntime: mocks.resolveWriter,
 }));
 vi.mock("../../../src/lib/payment/tossConfirmClient", () => ({
   confirmTossPayment: mocks.confirmProvider,
@@ -45,7 +41,6 @@ beforeEach(() => {
   vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "0");
   mocks.storeCall.mockReset();
   mocks.createStore.mockReset().mockReturnValue({ call: mocks.storeCall });
-  mocks.resolveWriter.mockReset().mockReturnValue({ enabled: false, reason: "flag_disabled" });
   mocks.runJob.mockReset().mockResolvedValue({ ok: true });
   mocks.confirmPaidReport.mockReset();
   mocks.confirmProvider.mockReset();

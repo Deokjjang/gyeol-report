@@ -1,0 +1,250 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "reportId": "report_24a3a3d9bdd24010b03103c9be5de424",
+ "status": "COMPLETED",
+ "wallMs": 1855,
+ "fallback": null,
+ "priorBooks": 0,
+ "chars": 8544,
+ "chapterChars": [
+  1107,
+  1351,
+  1032,
+  3996,
+  1058
+ ],
+ "chapters": 5,
+ "deterministicChapters": [
+  "1:missing",
+  "2:missing",
+  "3:missing",
+  "4:missing",
+  "5:missing"
+ ],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 54,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 25,
+ "infoByKind": {
+  "claim": 25,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "2024년: 정인의 해(배움과 도움·준비의 해·받쳐 주는 손).",
+   "b": "이 해의 열쇠말은 배움과 도움·준비의 해·받쳐 주는 손입니다.",
+   "at": [
+    "1.1",
+    "4.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "정축(丁丑)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "식신(食神)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.2",
+    "2.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "정축(丁丑)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "b": "백호대살(白虎大殺)은 명리학에서 이런 뜻을 가진 기운이에요.",
+   "at": [
+    "1.2",
+    "2.4"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.2",
+    "2.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "그래서 당신에게는 이런 힘이 있습니다.",
+   "b": "그래서 당신에게는 이런 힘이 있습니다.",
+   "at": [
+    "1.2",
+    "2.4"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "추운 환경에서 더 밝아지는 사람입니다.",
+   "b": "추운 환경에서 더 밝아지는 사람입니다.",
+   "at": [
+    "1.2",
+    "5.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "알고 있으면 충분히 조절할 수 있는 결이에요.",
+   "b": "알고 있으면 충분히 조절할 수 있는 결이에요.",
+   "at": [
+    "1.2",
+    "5.5"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "다섯 기운 가운데 흙(토)이 가장 셉니다.",
+   "b": "다섯 기운 가운데 흙(토)이 가장 셉니다.",
+   "at": [
+    "1.4",
+    "2.3"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.512,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 1836,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cachedInput": 0
+ },
+ "costUsd": 0,
+ "costKrw": 0,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "error",
+   "error": "dry",
+   "ms": 0,
+   "chars": 0,
+   "maxTokens": 25025,
+   "usage": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0
+  }
+ ],
+ "writer": null,
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 8641,
+  "target": [
+   14000,
+   18000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 2,
+   "rate": 0.5,
+   "terms": 4,
+   "misses": [
+    "식신",
+    "반안살"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 4,
+    "paragraphs": [
+     1,
+     4,
+     1,
+     1
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     2,
+     1,
+     2,
+     1
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 5,
+    "paragraphs": [
+     1,
+     1,
+     1,
+     1,
+     8
+    ]
+   }
+  ],
+  "subheadingsOk": 0,
+  "paragraphsOk": 3,
+  "sectionsTotal": 19,
+  "byRule": {},
+  "coreImage": "넓은 광장을 은은하게 밝히는 조명",
+  "edition": "제5판"
+ }
+}

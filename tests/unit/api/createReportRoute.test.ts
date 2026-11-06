@@ -6,12 +6,6 @@ import { POST } from "@/app/api/reports/create/route";
 import { createReportPersistenceRuntime } from "@/lib/persistence/reportPersistenceRuntime";
 import type { ReportRequestRawInput } from "@/lib/validation/types";
 import * as generator from "../../../src/lib/report-generation/generateProductReport";
-import * as writerRuntime from "../../../src/lib/report-generation/reportWriterRuntime";
-import * as writer from "../../../src/lib/report-generation/openaiReportWriterClient";
-import * as careerWriter from "../../../src/lib/report-generation/openaiCareerReportWriter";
-import * as loveWriter from "../../../src/lib/report-generation/openaiLoveMarriageChildReportWriter";
-import * as majorWriter from "../../../src/lib/report-generation/openaiMajorFortuneReportWriter";
-import * as annualWriter from "../../../src/lib/report-generation/openaiAnnualFortuneReportWriter";
 import * as legacyGenerator from "../../../src/lib/api/createReport";
 import * as persistence from "../../../src/lib/persistence/reportPersistenceRuntime";
 
@@ -787,20 +781,9 @@ describe("public direct report generation production boundary", () => {
 
   beforeEach(() => {
     vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("OPENAI_REPORT_WRITER_ENABLED", "1");
-    vi.stubEnv("OPENAI_API_KEY", "mock-key-not-a-credential");
-    vi.stubEnv("OPENAI_REPORT_MODEL", "mock-model");
     vi.spyOn(generator, "generateProductReport").mockResolvedValue({
       ok: false, error: { code: "INVALID_REPORT_INPUT", message: "mock generation boundary" },
     });
-    vi.spyOn(writerRuntime, "resolveReportWriterRuntime").mockReturnValue({
-      enabled: true, config: { enabled: true, apiKey: "mock-key", model: "mock-model" },
-    });
-    vi.spyOn(writer, "callOpenAIReportWriter").mockRejectedValue(new Error("Unexpected writer invocation"));
-    vi.spyOn(careerWriter, "generateCareerReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
-    vi.spyOn(loveWriter, "generateLoveMarriageChildReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
-    vi.spyOn(majorWriter, "generateMajorFortuneReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
-    vi.spyOn(annualWriter, "generateAnnualFortuneReportDraft").mockRejectedValue(new Error("Unexpected writer invocation"));
     vi.spyOn(legacyGenerator, "createReportApiEnvelopeFromJson").mockImplementation(() => {
       throw new Error("Unexpected legacy generation");
     });
@@ -816,12 +799,6 @@ describe("public direct report generation production boundary", () => {
 
   function expectNoGeneration() {
     expect(generator.generateProductReport).not.toHaveBeenCalled();
-    expect(writerRuntime.resolveReportWriterRuntime).not.toHaveBeenCalled();
-    expect(writer.callOpenAIReportWriter).not.toHaveBeenCalled();
-    expect(careerWriter.generateCareerReportDraft).not.toHaveBeenCalled();
-    expect(loveWriter.generateLoveMarriageChildReportDraft).not.toHaveBeenCalled();
-    expect(majorWriter.generateMajorFortuneReportDraft).not.toHaveBeenCalled();
-    expect(annualWriter.generateAnnualFortuneReportDraft).not.toHaveBeenCalled();
     expect(legacyGenerator.createReportApiEnvelopeFromJson).not.toHaveBeenCalled();
     expect(persistence.createReportPersistenceRuntime).not.toHaveBeenCalled();
     expect(fetch).not.toHaveBeenCalled();
@@ -878,12 +855,7 @@ describe("public direct report generation production boundary", () => {
       await expectBlocked(request());
     });
 
-    it("also blocks deterministic fallback when the writer is disabled", async () => {
-      vi.stubEnv("OPENAI_REPORT_WRITER_ENABLED", "0");
-      await expectBlocked(request());
-    });
-
-    it("keeps generator, all writer entry points, storage and network at zero for 100 concurrent POSTs", async () => {
+    it("keeps generator, storage and network at zero for 100 concurrent POSTs", async () => {
       await Promise.all(Array.from({ length: 100 }, () => expectBlocked(request())));
       expectNoGeneration();
     });
@@ -901,12 +873,12 @@ describe("public direct report generation production boundary", () => {
       expect(response.status).toBe(400); // The mock generator's existing invalid-input response.
       expect(parse).toHaveBeenCalledTimes(1);
       expect(generator.generateProductReport).toHaveBeenCalledExactlyOnceWith(
-        payload(), expect.objectContaining({ enabled: true }), "normal_writer",
+        payload(), expect.objectContaining({ enabled: false }), "deterministic_fallback",
       );
       expect(fetch).not.toHaveBeenCalled();
     });
 
-    it("returns only allowlisted local diagnostics for a writer validation failure", async () => {
+    it("returns only allowlisted local diagnostics for a recorded external-call failure", async () => {
       vi.stubEnv("NODE_ENV", "development");
       vi.mocked(generator.generateProductReport).mockResolvedValueOnce({
         ok: false,
@@ -950,7 +922,7 @@ describe("public direct report generation production boundary", () => {
         totalTokens: 6912,
         providerDurationMs: 74_000,
         retryAttempted: false,
-        fallbackUsed: false,
+        fallbackUsed: true,
       });
       expect(body.diagnostic.durationMs).toEqual(expect.any(Number));
 

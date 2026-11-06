@@ -60,7 +60,8 @@ afterAll(async () => { await db?.close(); });
 
 describe("publication-based paid access and retention — real SQL", () => {
   it("a 24-hour generation delay costs no access time, matching input/result privacy SSOT", async () => {
-    expect(privacyPolicyRetentionRows.slice(0, 2).map(row => row.periodKo)).toEqual(["리포트 생성일로부터 90일", "리포트 생성일로부터 90일"]);
+    // 최종3: v5 이전 리포트(이 시험의 v4 발행)는 처음 발행일로부터 90일. v5 리포트는 기한 없음(final3TicketsReading.test.ts).
+    expect(privacyPolicyRetentionRows.find(([category]) => category.includes("v5 이전"))?.[1]).toBe("처음 발행일로부터 90일");
     await db.exec("update payment_orders set paid_at=now()-interval '1 day'; update paid_report_snapshots set created_at=now()-interval '1 day'; update report_input_snapshots set expires_at=now()+interval '89 days'");
     const provisionalInput = (await rows("report_input_snapshots"))[0];
     expect(await report()).toMatchObject({ published_at: null, expires_at: null });

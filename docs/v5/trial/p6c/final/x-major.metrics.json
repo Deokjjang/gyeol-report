@@ -1,0 +1,280 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "reportId": "report_a3f66262d9994051aef2a8e5c1bc919c",
+ "status": "COMPLETED",
+ "wallMs": 121980,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 3,
+ "coverLine": "넓은 광장을 은은하게 밝히는 조명",
+ "keySpans": 23,
+ "sections": 23,
+ "chars": 12057,
+ "chapterChars": [
+  974,
+  1516,
+  986,
+  7490,
+  1091
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 51,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 16,
+ "infoByKind": {
+  "claim": 16,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "일에서는 결과와 숫자를 책임지는 일이 늘어나고, 돈에서는 들어오는 돈과 나가는 돈이 함께 커집니다.",
+   "b": "돈은 들어오는 돈과 나가는 돈이 함께 커져서, 크게 쓰고 싶은 날에는 지갑에 정해 둔 현금만 넣고 나가는 방법이 도움이 돼요.",
+   "at": [
+    "3.1",
+    "4.9"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 해의 글자와는 합이 걸려 산과 이슬비가 어울리듯 메마른 곳이 조금 적셔지는 면도 있었고, 태어난 시각과는 목의 기운이 반쯤 모였어요.",
+   "b": "쇠와 물이 함께 들어와 모자란 기운을 채워 주고, 태어난 시각과는 목의 기운이 반쯤 모여 시작의 힘도 붙어요.",
+   "at": [
+    "4.1",
+    "4.9"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "태어난 해의 글자와는 합이 걸려 산과 이슬비가 어울리듯 메마른 곳이 조금 적셔지는 면도 있었고, 태어난 시각과는 목의 기운이 반쯤 모였어요.",
+   "b": "태어난 시각과는 목의 기운이 반쯤 모이고 태어난 해와는 묘진해(卯辰害)가 걸려 가까운 사이가 서운해지는 면도 있어요.",
+   "at": [
+    "4.1",
+    "4.13"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "관계에서는 윗사람이나 규칙과 부딪친 기억이 있는지 떠올려 보세요.",
+   "b": "관계에서는 윗사람이나 규칙과 부딪치기 쉬운 해예요.",
+   "at": [
+    "4.1",
+    "4.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "컨디션은 압박이 쌓여 회복 시간이 필요했던 해로 보여요.",
+   "b": "컨디션은 압박이 쌓여 회복 시간이 필요하고, 쉬는 날을 친구의 말에 달력에 적어 넣게 되는 해일 수도 있어요.",
+   "at": [
+    "4.1",
+    "4.11"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "일에서는 배우고 준비한 것이 결과로 이어지기 좋았고, 돈은 큰 결정보다 계획과 기록을 먼저 챙기는 쪽이 맞았어요.",
+   "b": "일에서는 배우고 준비한 것이 결과로 이어지기 좋아요.",
+   "at": [
+    "4.2",
+    "4.12"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "일에서는 배우고 준비한 것이 결과로 이어지기 좋았고, 돈은 큰 결정보다 계획과 기록을 먼저 챙기는 쪽이 맞았어요.",
+   "b": "돈은 큰 결정보다 계획과 기록을 먼저 챙기세요.",
+   "at": [
+    "4.2",
+    "4.12"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "관계에서는 도와주는 사람이 곁에 생겼는지 떠올려 보세요.",
+   "b": "관계에서는 도와주는 사람이 곁에 생기고, 컨디션은 쉬는 만큼 회복이 잘 돼요.",
+   "at": [
+    "4.2",
+    "4.12"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.011,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 121869,
+ "tokens": {
+  "input": 24639,
+  "output": 16771,
+  "cachedInput": 6168
+ },
+ "costUsd": 0.2176048,
+ "costKrw": 315.5,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 106753,
+   "chars": 14057,
+   "maxTokens": 34170,
+   "usage": {
+    "inputTokens": 21084,
+    "outputTokens": 15272,
+    "cachedInputTokens": 6168
+   },
+   "costUsd": 0.1955048
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 9363,
+   "chars": 1376,
+   "maxTokens": 2599,
+   "usage": {
+    "inputTokens": 3555,
+    "outputTokens": 1499,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.0221
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-19",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 12299,
+  "target": [
+   14000,
+   18000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 3,
+   "misses": [
+    "식신",
+    "정축",
+    "백호대살"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 9,
+  "sectionsTotal": 9,
+  "byRule": {},
+  "coreImage": "넓은 광장을 은은하게 밝히는 조명",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "fallback",
+  "flags": {
+   "db_copy": 3,
+   "job_prop": 1,
+   "dayun_claim": 2,
+   "scene_repeat": 1
+  },
+  "removed": 1,
+  "repaired": 7,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "db_copy": 1
+  },
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 7,
+  "droppedParagraphs": 0
+ }
+}

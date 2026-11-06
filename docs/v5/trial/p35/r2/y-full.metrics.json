@@ -1,0 +1,45 @@
+{
+ "case": "y-full",
+ "chapters": 13,
+ "sources": {
+  "writer": 13
+ },
+ "chars": [
+  1177,
+  1185,
+  1185,
+  1149,
+  1165,
+  1132,
+  1135,
+  1101,
+  1160,
+  1121,
+  1152,
+  1109,
+  1128
+ ],
+ "total": 14899,
+ "deletions": 0,
+ "byRule": {},
+ "deleted": [],
+ "warnings": [],
+ "briefCopy": {
+  "sentences": 287,
+  "matched": 12,
+  "ratio": 0.042,
+  "writerSentences": 287,
+  "writerMatched": 12,
+  "writerRatio": 0.042
+ },
+ "connectors": [
+  {
+   "phrase": "반대로",
+   "count": 3
+  }
+ ],
+ "merged": 0,
+ "backrefFixed": 2,
+ "jobMentions": 0,
+ "sceneHintsUsed": "13/16"
+}

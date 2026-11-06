@@ -110,7 +110,7 @@ export type ManseRyeokCommonTableData = {
   >;
   readonly fiveElementDistribution: ManseRyeokFiveElementDistribution;
   readonly detailRows: readonly ManseRyeokDetailRow[];
-  // v5-lmt reports only: "출생지 경도 기준 시간 보정 -N분 적용".
+  // v5-lmt reports only: "태양시 기준 · 30분 보정 (09:30 → 09:00)".
   readonly timeCorrectionNote?: string;
 };
 

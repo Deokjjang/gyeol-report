@@ -1,0 +1,2378 @@
+{
+  "findings": [
+    {
+      "id": "cross:element-FIRE-high:ESFP",
+      "featureId": "element:FIRE:high",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.77,
+      "insight": "집에 가자는 말이 나와도 한 곡만 더 하자며 자리를 이어 가는 편입니다. 타고난 불은 빨리 타고, ESFP 성격은 반응에서 힘을 얻어 둘이 같은 쪽으로 밉니다.",
+      "scene": "노래방 종료 알림이 떠도 한 곡 더 넣는 편입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정",
+          "사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:element:FIRE:high:scene",
+        "taxonomy:element_fire_excess",
+        "mbti:ESFP:people_nearby_energy",
+        "mbti:ESFP:boredom_intolerance"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongo:ESFP",
+      "featureId": "day_pillar_byeongo",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.69,
+      "insight": "친구 생일 이벤트를 준비하면 옆 테이블까지 박수 치게 만드는 편입니다. 타고난 한낮의 해에 웃는 장면을 만들고 싶은 성격이 겹칩니다.",
+      "scene": "촛불을 끄기도 전에 먼저 노래를 부르고 있곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongo:scene",
+        "taxonomy:day_pillar_byeongo",
+        "mbti:ESFP:romantic_surprise",
+        "mbti:ESFP:spotlight_identity"
+      ]
+    },
+    {
+      "id": "cross:day_master_byeonghwa:ESFP",
+      "featureId": "day_master_byeonghwa",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.67,
+      "insight": "기분 좋은 날 친구들과 밥을 먹으면 계산대에서 먼저 카드를 내밀곤 합니다. 타고난 햇빛은 기분이 바로 드러나고, 성격은 즐거움에 돈을 쓰는 쪽입니다.",
+      "scene": "월급날 저녁 모임에서 디저트까지 한 번에 쏘는 편입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정",
+          "재산 규모 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_byeonghwa:money",
+        "mbti:ESFP:experience_spending",
+        "mbti:ESFP:surprise_generosity"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeonghae:INFJ",
+      "featureId": "day_pillar_jeonghae",
+      "mbti": "INFJ",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 2.52,
+      "insight": "영화를 보고 며칠 동안 한 장면이 떠올라 메모장에 긴 글을 남기는 편입니다. 타고난 등불은 표정을 오래 품고, INFJ 성격은 글로 써야 또렷해집니다.",
+      "scene": "버스 안에서 아까 그 말투의 뜻을 곱씹곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이별 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeonghae:scene",
+        "taxonomy:day_pillar_jeonghae",
+        "mbti:INFJ:writing_over_speaking",
+        "mbti:INFJ:private_analysis_loop"
+      ]
+    },
+    {
+      "id": "cross:element-FIRE-high:ENFP",
+      "featureId": "element:FIRE:high",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.46,
+      "insight": "단체 대화방이 조용해지면 사진과 느낌표 가득한 글을 먼저 올리는 편입니다. 타고난 불은 반응이 오면 더 타오르고, 성격은 사람에게 불이 붙는 쪽입니다.",
+      "scene": "여행 대화방에 혼자 열 개를 올리고 답이 없으면 또 올리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "taxonomy:element_fire_excess",
+        "v4:depth:element:FIRE:high:inside",
+        "mbti:ENFP:social_mood_maker",
+        "mbti:ENFP:people_centered_energy"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongo:ENFP",
+      "featureId": "day_pillar_byeongo",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.42,
+      "insight": "회의 분위기가 처지면 먼저 큰 소리로 제안을 던져 사람들을 움직이는 편입니다. 타고난 해는 앞에서 이끌 때 살아나고, 성격은 아무도 안 나서면 먼저 시작합니다.",
+      "scene": "동아리 첫 모임에서 아무도 안 하려는 사회를 맡곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongo:work",
+        "taxonomy:day_pillar_byeongo",
+        "mbti:ENFP:community_event_starter",
+        "mbti:ENFP:friendly_leadership"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongchuk:ENFP",
+      "featureId": "day_pillar_jeongchuk",
+      "mbti": "ENFP",
+      "dimension": "persistence",
+      "kind": "tension",
+      "score": 2.42,
+      "insight": "겉으로는 새 아이디어에 금방 불이 붙는데, 속으로는 한번 붙든 일을 몇 달씩 이어 갑니다. 타고난 불씨는 조용히 반복을 쌓고, ENFP 성격은 시작은 많고 마무리가 약합니다.",
+      "scene": "새 취미를 시작하면서도 작년에 시작한 일기는 계속 쓰곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongchuk:work",
+        "taxonomy:day_pillar_jeongchuk",
+        "mbti:ENFP:unfinished_many_starts"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_musul:ESTJ",
+      "featureId": "day_pillar_musul",
+      "mbti": "ESTJ",
+      "dimension": "dutifulness",
+      "kind": "resonance",
+      "score": 2.42,
+      "insight": "행사가 끝나고 다들 가도 마지막까지 남아 의자를 정리하고 열쇠를 반납합니다. 타고난 산맥은 맡은 일을 놓지 않고, 성격은 역할을 세워 끝까지 끌고 갑니다.",
+      "scene": "남에게 맡긴 정리가 성에 안 차 퇴근 전에 다시 손보곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_musul:scene",
+        "taxonomy:day_pillar_musul",
+        "mbti:ESTJ:responsible_operator",
+        "mbti:ESTJ:delegation_difficulty"
+      ]
+    },
+    {
+      "id": "cross:element-FIRE-high:INFJ",
+      "featureId": "element:FIRE:high",
+      "mbti": "INFJ",
+      "dimension": "socialEnergy",
+      "kind": "tension",
+      "score": 2.41,
+      "insight": "겉으로는 모임에서 먼저 말을 걸어 띄우는데, 집에 오면 기운이 바닥나 며칠 연락을 끊습니다. 타고난 불은 밖으로 빨리 타고, INFJ 성격은 혼자 있어야 충전됩니다.",
+      "scene": "회식에서 제일 크게 웃은 다음 날 휴대폰을 뒤집어 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:element:FIRE:high:strength",
+        "v4:depth:element:FIRE:high:punch",
+        "mbti:INFJ:isolation_from_world",
+        "mbti:INFJ:social_chameleon"
+      ]
+    },
+    {
+      "id": "cross:day_master_byeonghwa:ENFP",
+      "featureId": "day_master_byeonghwa",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.38,
+      "insight": "좋아하는 사람이 생기면 표정부터 밝아지고 하루에도 몇 번씩 먼저 연락하는 편입니다. 타고난 햇빛은 마음이 얼굴에 드러나고, 성격은 호감을 못 숨기고 다가갑니다.",
+      "scene": "관심 없는 척하자고 다짐하고도 그 사람 톡에 제일 먼저 답합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_byeonghwa:love",
+        "mbti:ENFP:passionate_romance",
+        "mbti:ENFP:likes_and_dislikes_visible"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongo:ENFJ",
+      "featureId": "day_pillar_byeongo",
+      "mbti": "ENFJ",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.38,
+      "insight": "발표를 맡으면 목소리와 표정으로 듣는 사람들을 같은 방향으로 모으는 편입니다. 타고난 해는 들어서면 눈에 띄고, ENFJ 성격은 방향을 말로 세웁니다.",
+      "scene": "조별 발표에서 마지막 한마디로 박수를 끌어내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongo:character",
+        "taxonomy:day_pillar_byeongo",
+        "mbti:ENFJ:persuasive_presenter",
+        "mbti:ENFJ:expressive_face"
+      ]
+    },
+    {
+      "id": "cross:element-FIRE-high:ENFJ",
+      "featureId": "element:FIRE:high",
+      "mbti": "ENFJ",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.37,
+      "insight": "동창회 공지에 답이 없으면 한 명씩 전화를 돌려 결국 자리를 채우는 편입니다. 타고난 불은 조용한 자리에 먼저 말을 걸고, 성격은 모임의 총무를 맡습니다.",
+      "scene": "모임 전날 밤까지 참석 여부를 묻는 톡을 돌리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:element:FIRE:high:strength",
+        "mbti:ENFJ:wide_social_bonding",
+        "mbti:ENFJ:mobilizing_people"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_imo:ESFP",
+      "featureId": "day_pillar_imo",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.36,
+      "insight": "휴가 이야기를 꺼내면 어느새 옆 사람 비행기표까지 같이 알아보고 있는 편입니다. 타고난 바다 위 햇빛은 사람을 끌어당기고, ESFP 성격은 장면을 바로 만듭니다.",
+      "scene": "주말 계획을 말하다 그 자리에서 숙소를 결제해 버리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_imo:scene",
+        "taxonomy:day_pillar_imo",
+        "mbti:ESFP:present_moment_star",
+        "mbti:ESFP:experience_spending"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_sinchuk:ENFP",
+      "featureId": "day_pillar_sinchuk",
+      "mbti": "ENFP",
+      "dimension": "perfectionism",
+      "kind": "tension",
+      "score": 2.36,
+      "insight": "겉으로는 일단 해 보자고 나서는데, 속으로는 완성도가 성에 안 차 공개를 자꾸 미룹니다. 타고난 보석은 준비 기준이 높고, ENFP 성격은 시작이 빠릅니다.",
+      "scene": "내일 올리겠다던 글의 제목만 열 번째 고치고 있곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_sinchuk:shadow",
+        "v4:material:day_pillar_sinchuk",
+        "mbti:ENFP:detail_boredom",
+        "mbti:ENFP:unfinished_many_starts"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_eulchuk:ENFP",
+      "featureId": "day_pillar_eulchuk",
+      "mbti": "ENFP",
+      "dimension": "persistence",
+      "kind": "tension",
+      "score": 2.3,
+      "insight": "겉으로는 새 사람과 새 모임에 금방 끌리는데, 속으로는 몇 달째 같은 가계부를 이어 씁니다. 타고난 풀뿌리는 천천히 반복을 쌓고, ENFP 성격은 자극을 따라 움직입니다.",
+      "scene": "새 강의를 결제하면서도 적금 자동이체는 끊지 않는 편입니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_eulchuk:scene",
+        "taxonomy:day_pillar_eulchuk",
+        "mbti:ENFP:interest_switch_learning"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_eulsa:ENFP",
+      "featureId": "day_pillar_eulsa",
+      "mbti": "ENFP",
+      "dimension": "intimacyPace",
+      "kind": "resonance",
+      "score": 2.3,
+      "insight": "처음 만난 사람과 취향이 맞으면 그 자리에서 다음 주 약속까지 잡는 편입니다. 타고난 덩굴은 따뜻한 벽을 빨리 타고, ENFP 성격은 연결이 바로 번집니다.",
+      "scene": "한 번 본 사람과 그 주말에 벌써 전시를 보러 가곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_eulsa:scene",
+        "taxonomy:day_pillar_eulsa",
+        "mbti:ENFP:easy_conversation",
+        "mbti:ENFP:wide_light_network"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyehae:INFJ",
+      "featureId": "day_pillar_gyehae",
+      "mbti": "INFJ",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 2.3,
+      "insight": "친구가 지나가듯 던진 질문에 며칠 뒤 긴 답장을 보내 놀라게 하는 편입니다. 타고난 깊은 물은 생각을 오래 품고, INFJ 성격은 글로 정리해야 또렷해집니다.",
+      "scene": "별 뜻 없는 질문에 사흘 뒤 정리된 글을 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyehae:scene",
+        "taxonomy:day_pillar_gyehae",
+        "mbti:INFJ:writing_over_speaking",
+        "mbti:INFJ:ni_pattern_prediction"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongchuk:ESFP",
+      "featureId": "day_pillar_jeongchuk",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "tension",
+      "score": 2.29,
+      "insight": "겉으로는 기분이 얼굴에 다 드러나는데, 좋아하는 사람에게는 말 대신 시간을 비워 둡니다. 타고난 불씨는 표현을 아끼고, ESFP 성격은 감정이 바로 보여 겉과 속이 다릅니다.",
+      "scene": "친구들 앞에선 크게 웃고 떠들다 고백은 몇 주째 미루곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongchuk:scene",
+        "taxonomy:day_pillar_jeongchuk",
+        "mbti:ESFP:emotion_visible_relation",
+        "mbti:ESFP:not_saying_real_point"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyechuk:ESFP",
+      "featureId": "day_pillar_gyechuk",
+      "mbti": "ESFP",
+      "dimension": "planning",
+      "kind": "tension",
+      "score": 2.28,
+      "insight": "겉으로는 마감이 코앞에 와야 움직이는데, 낯선 곳에 갈 땐 돌아올 교통편까지 저장해 둡니다. 타고난 스미는 물은 걱정을 미리 챙기고, ESFP 성격은 그때그때 움직입니다.",
+      "scene": "과제는 전날 밤에 시작하면서 여행 짐은 한 주 전에 싸 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyechuk:scene",
+        "taxonomy:day_pillar_gyechuk",
+        "mbti:ESFP:late_start_pressure",
+        "mbti:ESFP:improvised_action"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_imo:ENFP",
+      "featureId": "day_pillar_imo",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.27,
+      "insight": "새 기회가 보이면 강의와 장비에 바로 결제하고 사람들에게 같이 하자고 말합니다. 타고난 바다 위 햇빛은 가능성을 펼치고, ENFP 성격은 분위기 타면 바로 결제합니다.",
+      "scene": "설명회에서 들은 수업을 그날 밤 친구 몫까지 등록하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_imo:money",
+        "taxonomy:day_pillar_imo",
+        "mbti:ENFP:emotion_purchase_pause",
+        "mbti:ENFP:possibility_spending_spread"
+      ]
+    },
+    {
+      "id": "cross:day_master_byeonghwa:ENFJ",
+      "featureId": "day_master_byeonghwa",
+      "mbti": "ENFJ",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.25,
+      "insight": "좋은 생각이 떠오르면 혼자 품지 않고 팀원 앞에 꺼내 같은 방향을 보게 만듭니다. 타고난 햇빛은 생각이 바로 밖으로 나오고, ENFJ 성격은 사람을 모아 방향을 세웁니다.",
+      "scene": "점심에 떠오른 생각을 오후 회의 전에 팀 대화방에 올려 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_byeonghwa:work",
+        "mbti:ENFJ:mobilizing_people",
+        "mbti:ENFJ:visionary_group_leader"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_sinhae:INFJ",
+      "featureId": "day_pillar_sinhae",
+      "mbti": "INFJ",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 2.25,
+      "insight": "책 한 권이 마음에 걸리면 작가의 다른 작품까지 찾아 읽고 긴 감상을 적는 편입니다. 타고난 물속 보석은 숨은 뜻을 파고들고, INFJ 성격은 끝까지 이해하려 합니다.",
+      "scene": "전시를 보고 와서 밤늦게까지 작가 인터뷰를 찾아 읽곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "진로 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_sinhae:scene",
+        "taxonomy:day_pillar_sinhae",
+        "mbti:INFJ:graduate_depth_study",
+        "mbti:INFJ:symbolic_imagination"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_sinhae:INTP",
+      "featureId": "day_pillar_sinhae",
+      "mbti": "INTP",
+      "dimension": "inquiry",
+      "kind": "resonance",
+      "score": 2.25,
+      "insight": "문장 하나의 뜻이 궁금해지면 논문과 원문까지 열어 놓고 밤을 넘기는 편입니다. 타고난 물속 보석은 작은 의문을 붙들고, INTP 성격은 끝까지 파고듭니다.",
+      "scene": "각주 하나를 확인하려다 새벽까지 다른 책을 읽고 있곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_sinhae:study",
+        "taxonomy:day_pillar_sinhae",
+        "mbti:INTP:why_question_loop",
+        "mbti:INTP:proof_before_agreement"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeonghae:INFP",
+      "featureId": "day_pillar_jeonghae",
+      "mbti": "INFP",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 2.24,
+      "insight": "같이 본 영화의 감상을 나누다 한 사람의 표정 이야기로 한 시간을 보내는 편입니다. 타고난 등불은 줄거리보다 표정이 남고, INFP 성격은 감상 나누기가 데이트의 핵심입니다.",
+      "scene": "영화관을 나와 카페에 앉으면 조연의 눈빛부터 이야기하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeonghae:scene",
+        "taxonomy:day_pillar_jeonghae",
+        "mbti:INFP:artistic_dates",
+        "mbti:INFP:si_story_memory"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongo:ISTP",
+      "featureId": "day_pillar_byeongo",
+      "mbti": "ISTP",
+      "dimension": "emotionalExpression",
+      "kind": "tension",
+      "score": 2.21,
+      "insight": "겉으로는 말보다 손이 먼저 움직이는 해결사인데, 응원 자리에선 목소리가 제일 커집니다. 타고난 해는 열이 오르면 몸이 먼저 나가고, ISTP 성격은 평소 말을 아낍니다.",
+      "scene": "회의에선 말이 없다가 경기장에선 맨 앞에서 소리를 지르곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongo:punch",
+        "v4:material:day_pillar_byeongo",
+        "mbti:ISTP:few_words_direct",
+        "mbti:ISTP:cool_surface_warm_core"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_imin:ENTP",
+      "featureId": "day_pillar_imin",
+      "mbti": "ENTP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 2.21,
+      "insight": "산책 나갔다가 새 가게와 수업 정보를 들고 와서 바로 다음 모임을 제안하는 편입니다. 타고난 물길은 새 숲을 깨우고, ENTP 성격은 막힌 판에 새 길을 엽니다.",
+      "scene": "동네 한 바퀴 돌고 와서 새 공방 수업을 친구들에게 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_imin:scene",
+        "taxonomy:day_pillar_imin",
+        "mbti:ENTP:multi_task_starter",
+        "mbti:ENTP:spending_on_experience"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_muja:ENFP",
+      "featureId": "day_pillar_muja",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "tension",
+      "score": 2.21,
+      "insight": "겉으로는 좋고 싫음이 표정에 다 드러나는데, 가장 가고 싶은 여행지는 끝까지 말하지 않습니다. 타고난 큰 둑은 깊은 물을 붙잡고, ENFP 성격은 감정이 밖으로 번집니다.",
+      "scene": "여행 예산표는 먼저 보내고 가고 싶은 곳은 묻기 전엔 꺼내지 않습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_muja:scene",
+        "taxonomy:day_pillar_muja",
+        "mbti:ENFP:likes_and_dislikes_visible",
+        "mbti:ENFP:outer_bright_inner_quiet"
+      ]
+    },
+    {
+      "id": "cross:ten_god_qi_sha:ENTJ",
+      "featureId": "ten_god_qi_sha",
+      "mbti": "ENTJ",
+      "dimension": "conflictApproach",
+      "kind": "resonance",
+      "score": 2.2,
+      "insight": "일이 터지면 당황하기보다 역할을 바로 나누고 제일 어려운 몫을 자기가 잡는 편입니다. 타고난 힘은 압박을 맞받아 기준을 세우고, ENTJ 성격은 문제가 생기면 힘이 납니다.",
+      "scene": "서버가 멈춘 밤에 제일 먼저 전화를 돌리고 역할표를 만들곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_qi_sha:scene",
+        "mbti:ENTJ:crisis_momentum",
+        "mbti:ENTJ:problem_solver_energy"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_musul:ISTJ",
+      "featureId": "day_pillar_musul",
+      "mbti": "ISTJ",
+      "dimension": "dutifulness",
+      "kind": "resonance",
+      "score": 2.19,
+      "insight": "책임 범위가 정해지면 아무도 안 봐도 남은 서류를 끝까지 닫고 퇴근하는 편입니다. 타고난 산맥은 마지막 책임자로 남고, ISTJ 성격은 맡은 일을 끝까지 닫습니다.",
+      "scene": "회식 날에도 보고서 마지막 장을 확인하고서야 일어나곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_musul:work",
+        "taxonomy:day_pillar_musul",
+        "mbti:ISTJ:stable_independent_worker"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_eulchuk:ESFP",
+      "featureId": "day_pillar_eulchuk",
+      "mbti": "ESFP",
+      "dimension": "persistence",
+      "kind": "tension",
+      "score": 2.18,
+      "insight": "겉으로는 재미있는 일정이 먼저고 저축은 다음 달로 미루는데, 작은 금액은 몇 년째 모읍니다. 타고난 풀뿌리는 작은 몫을 꾸준히 쌓고, ESFP 성격은 지금 즐거움이 먼저입니다.",
+      "scene": "맛집 투어로 카드값은 커져도 동전 저금통은 꾸준히 채우곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_eulchuk:money",
+        "taxonomy:day_pillar_eulchuk",
+        "mbti:ESFP:auto_saving_before_fun",
+        "mbti:ESFP:short_term_reward_bias"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_musul:ENFP",
+      "featureId": "day_pillar_musul",
+      "mbti": "ENFP",
+      "dimension": "persistence",
+      "kind": "tension",
+      "score": 2.16,
+      "insight": "겉으로는 새 프로젝트를 먼저 벌이는데, 한번 맡은 일은 남들이 떠나도 끝까지 붙듭니다. 타고난 산맥은 약속의 무게를 오래 품고, ENFP 성격은 시작이 많습니다.",
+      "scene": "동아리를 또 만들면서도 작년 동아리 회계는 혼자 챙기곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_musul:inside",
+        "taxonomy:day_pillar_musul",
+        "mbti:ENFP:unfinished_many_starts",
+        "mbti:ENFP:community_event_starter"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyechuk:ENFP",
+      "featureId": "day_pillar_gyechuk",
+      "mbti": "ENFP",
+      "dimension": "planning",
+      "kind": "tension",
+      "score": 2.15,
+      "insight": "겉으로는 일단 해 보자며 나서는데, 낯선 자리를 앞두고는 혼자 오래 되짚으며 준비합니다. 타고난 물은 천천히 스며들며 준비하고, ENFP 성격은 일단 움직입니다.",
+      "scene": "먼저 가자고 해 놓고 당일 아침 노선과 날씨를 세 번씩 확인합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyechuk:study",
+        "taxonomy:day_pillar_gyechuk",
+        "mbti:ENFP:spark_of_possibility",
+        "mbti:ENFP:deadline_sprint_style"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_imin:ENFP",
+      "featureId": "day_pillar_imin",
+      "mbti": "ENFP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 2.15,
+      "insight": "낯선 도시에 가면 숙소에 짐만 두고 나와 새 사람과 새 수업을 찾아다니는 편입니다. 타고난 물길은 머릿속에 다음 길이 열려 있고, ENFP 성격은 새 사람에게 불이 붙습니다.",
+      "scene": "여행 둘째 날 벌써 현지 모임에 가입해 저녁 약속을 잡곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_imin:inside",
+        "taxonomy:day_pillar_imin",
+        "mbti:ENFP:spark_of_possibility",
+        "mbti:ENFP:wide_light_network"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_sinchuk:ENTP",
+      "featureId": "day_pillar_sinchuk",
+      "mbti": "ENTP",
+      "dimension": "detailFocus",
+      "kind": "tension",
+      "score": 2.15,
+      "insight": "겉으로는 회의에서 다른 방향의 아이디어를 던지는데, 몇 년 전 자료까지 날짜별로 정리해 둡니다. 타고난 보석은 기록을 지키고, ENTP 성격은 발상이 먼저라 머리는 넓고 손은 꼼꼼합니다.",
+      "scene": "새 기획을 떠들다가 삼 년 전 회의록을 바로 꺼내 보여 주곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_sinchuk:scene",
+        "taxonomy:day_pillar_sinchuk",
+        "mbti:ENTP:brainstorming_leader"
+      ]
+    },
+    {
+      "id": "cross:day_master_byeonghwa:ESFJ",
+      "featureId": "day_master_byeonghwa",
+      "mbti": "ESFJ",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.14,
+      "insight": "팀 분위기가 처지면 사진 한 장과 칭찬 한마디를 올려 대화방을 다시 살리는 편입니다. 타고난 햇빛은 기분이 바로 나오고, ESFJ 성격은 사람 사이 온도를 맞춥니다.",
+      "scene": "조용해진 단체방에 먼저 안부 톡과 이모티콘을 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_byeonghwa:scene",
+        "mbti:ESFJ:team_morale_builder",
+        "mbti:ESFJ:small_talk_bonding"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongmyo:ENFJ",
+      "featureId": "day_pillar_jeongmyo",
+      "mbti": "ENFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.14,
+      "insight": "친구가 지나가듯 예쁘다고 한 물건을 기억해 두었다가 생일에 꺼내 주는 편입니다. 타고난 등불은 은근한 온기를 퍼뜨리고, ENFJ 성격은 사람 마음을 먼저 읽습니다.",
+      "scene": "선물을 고를 때 석 달 전 친구의 한마디를 먼저 떠올리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongmyo:scene",
+        "taxonomy:day_pillar_jeongmyo",
+        "mbti:ENFJ:fast_people_reading",
+        "mbti:ENFJ:generous_spending"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gihae:INFJ",
+      "featureId": "day_pillar_gihae",
+      "mbti": "INFJ",
+      "dimension": "caretaking",
+      "kind": "resonance",
+      "score": 2.12,
+      "insight": "고민을 털어놓은 친구에게 다음 날 필요한 연락처를 보내고 생색은 내지 않는 편입니다. 타고난 물길은 흙 아래서 조용히 돕고, INFJ 성격은 티 내지 않고 사람을 돕습니다.",
+      "scene": "친구가 힘들다던 밤에 병원 목록을 찾아 아침에 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gihae:scene",
+        "taxonomy:day_pillar_gihae",
+        "mbti:INFJ:quiet_visionary",
+        "mbti:INFJ:helping_boundary_spending"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongmyo:INFJ",
+      "featureId": "day_pillar_jeongmyo",
+      "mbti": "INFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.11,
+      "insight": "거친 소식을 전해야 할 때 듣는 사람이 받아들일 온도로 말을 바꿔 전하는 편입니다. 타고난 등불은 말을 부드럽게 데우고, INFJ 성격은 돌려 말합니다.",
+      "scene": "팀원에게 나쁜 소식을 전할 때 문장을 몇 번이나 고쳐 쓰곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongmyo:strength",
+        "taxonomy:day_pillar_jeongmyo",
+        "mbti:INFJ:gentle_language",
+        "mbti:INFJ:indirect_expression"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongin:ENFP",
+      "featureId": "day_pillar_byeongin",
+      "mbti": "ENFP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 2.1,
+      "insight": "새 전시 소식을 듣자마자 친구들에게 일정을 보내고 그 주에 바로 다녀오는 편입니다. 타고난 해는 새벽 숲에 길을 밝히고, ENFP 성격은 가능성에 불이 붙습니다.",
+      "scene": "오픈 소식을 본 지 십 분 만에 친구 셋에게 같이 가자고 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongin:scene",
+        "taxonomy:day_pillar_byeongin",
+        "mbti:ENFP:spark_of_possibility",
+        "mbti:ENFP:community_event_starter"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongchuk:ISTJ",
+      "featureId": "day_pillar_jeongchuk",
+      "mbti": "ISTJ",
+      "dimension": "persistence",
+      "kind": "resonance",
+      "score": 2.1,
+      "insight": "티 나지 않는 준비를 꾸준히 쌓아 어느 날 믿고 맡길 사람이 되어 있는 편입니다. 타고난 불씨는 꺼트리지 않고 지키고, ISTJ 성격은 절차를 끝까지 닫습니다.",
+      "scene": "아무도 안 시킨 자료 정리를 매주 같은 요일에 해 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongchuk:work",
+        "taxonomy:day_pillar_jeongchuk",
+        "mbti:ISTJ:stable_independent_worker",
+        "mbti:ISTJ:reserved_affection"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongin:ESFP",
+      "featureId": "day_pillar_byeongin",
+      "mbti": "ESFP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 2.09,
+      "insight": "모임에서 처음 보는 사람에게 먼저 말을 붙이고 새 놀거리를 바로 제안하는 편입니다. 타고난 새벽의 해는 먼저 말을 붙이고, ESFP 성격은 지금 이 순간을 즐깁니다.",
+      "scene": "낯선 모임에서도 십 분 안에 다음 주 볼링 약속을 만들곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongin:character",
+        "taxonomy:day_pillar_byeongin",
+        "mbti:ESFP:social_easy_openness",
+        "mbti:ESFP:present_moment_star"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeonghae:ISFP",
+      "featureId": "day_pillar_jeonghae",
+      "mbti": "ISFP",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 2.09,
+      "insight": "마음이 쉬는 작업실과 오래 몰입할 취미 도구에는 값을 묻지 않고 쓰는 편입니다. 타고난 등불은 조용한 공간에 돈을 아끼지 않고, ISFP 성격은 취향을 조용히 지킵니다.",
+      "scene": "월급을 받으면 모임비보다 그림 도구와 작업 공간부터 챙기곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "재산 규모 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeonghae:money",
+        "taxonomy:day_pillar_jeonghae",
+        "mbti:ISFP:comfort_spending_limit",
+        "mbti:ISFP:aesthetic_attachment_risk"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongmyo:ISFP",
+      "featureId": "day_pillar_jeongmyo",
+      "mbti": "ISFP",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.09,
+      "insight": "분위기를 깨기 싫어 부탁을 거절하지 못하다 더 큰 부탁까지 조용히 떠안는 편입니다. 타고난 등불은 온기를 지키려 하고, ISFP 성격은 싫다는 말을 미룹니다.",
+      "scene": "주말 약속이 있는데도 친구의 이사 도움 요청에 그러겠다고 답합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongmyo:shadow",
+        "v4:material:day_pillar_jeongmyo",
+        "mbti:ISFP:devoted_to_partner_wishes",
+        "mbti:ISFP:silent_when_angry"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_sinchuk:ISFJ",
+      "featureId": "day_pillar_sinchuk",
+      "mbti": "ISFJ",
+      "dimension": "detailFocus",
+      "kind": "resonance",
+      "score": 2.09,
+      "insight": "틀렸던 문제만 따로 모아 다시 보고 회독 수를 늘리며 시험을 준비하는 편입니다. 타고난 보석은 기록을 조용히 보관하고, ISFJ 성격은 빠진 게 없는지 챙깁니다.",
+      "scene": "시험 전날 오답 노트를 처음부터 다시 넘기다 잠이 늦어지곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_sinchuk:study",
+        "taxonomy:day_pillar_sinchuk",
+        "mbti:ISFJ:exam_anxiety_scope_lock",
+        "mbti:ISFJ:dutiful_study_rhythm"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyemyo:ENFJ",
+      "featureId": "day_pillar_gyemyo",
+      "mbti": "ENFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.08,
+      "insight": "친구 사이가 어색해지면 둘 다 편하게 답할 화제를 꺼내 공기를 다시 푸는 편입니다. 타고난 비는 봄풀을 적시듯 분위기를 살리고, ENFJ 성격은 공기 변화를 먼저 알아챕니다.",
+      "scene": "싸운 두 친구를 한 자리에 불러 음식 이야기부터 꺼내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyemyo:scene",
+        "taxonomy:day_pillar_gyemyo",
+        "mbti:ENFJ:diplomatic_bridge",
+        "mbti:ENFJ:fast_people_reading"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongsa:ENFP",
+      "featureId": "day_pillar_jeongsa",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.08,
+      "insight": "새로 빠진 취미가 생기면 밥때를 넘기며 고치고 그 열기를 주변에 그대로 말하는 편입니다. 타고난 불씨는 불길 속에서 선명해지고, ENFP 성격은 관심이 표정에 번집니다.",
+      "scene": "주말에 시작한 공예 이야기를 월요일 회의 전에 다 풀어놓곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "진로 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongsa:scene",
+        "taxonomy:day_pillar_jeongsa",
+        "mbti:ENFP:expressive_authenticity",
+        "mbti:ENFP:interest_switch_learning"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gichuk:ESTP",
+      "featureId": "day_pillar_gichuk",
+      "mbti": "ESTP",
+      "dimension": "spendingControl",
+      "kind": "tension",
+      "score": 2.07,
+      "insight": "겉으로는 수입이 좋은 달에 바로 지출을 키우는데, 영수증과 설명서는 몇 년 치를 모아 둡니다. 타고난 찬 밭은 씨앗을 오래 저장하고, ESTP 성격은 지금 감각으로 씁니다.",
+      "scene": "큰 거래를 마친 날 저녁을 쏘고 그 영수증은 파일에 꽂아 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gichuk:scene",
+        "taxonomy:day_pillar_gichuk",
+        "mbti:ESTP:quick_cashflow_volatility"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyemi:ENFJ",
+      "featureId": "day_pillar_gyemi",
+      "mbti": "ENFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.07,
+      "insight": "친구의 이사 소식에 집들이 선물보다 첫날 저녁을 뭘 먹을지부터 챙기는 편입니다. 타고난 비는 따뜻한 흙에 스며 돌보고, ENFJ 성격은 사람 마음을 먼저 읽습니다.",
+      "scene": "동료가 야근한다면 묻지도 않고 간식을 책상에 두고 가곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyemi:scene",
+        "taxonomy:day_pillar_gyemi",
+        "mbti:ENFJ:care_overload_at_work",
+        "mbti:ENFJ:compassionate_facilitator"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongmyo:INFP",
+      "featureId": "day_pillar_jeongmyo",
+      "mbti": "INFP",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.07,
+      "insight": "다정한 말 한마디와 사소한 취향을 기억해 주는 태도에 마음이 크게 움직이는 편입니다. 타고난 등불은 작은 온기에 반응하고, INFP 성격은 마음의 언어가 통하는 사람과 이어집니다.",
+      "scene": "지난주에 흘린 말을 기억해 준 사람을 그날 밤 일기에 적곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongmyo:love",
+        "taxonomy:day_pillar_jeongmyo",
+        "mbti:INFP:deep_value_based_bonds",
+        "mbti:INFP:deep_emotional_bond"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyemi:ISFJ",
+      "featureId": "day_pillar_gyemi",
+      "mbti": "ISFJ",
+      "dimension": "caretaking",
+      "kind": "resonance",
+      "score": 2.06,
+      "insight": "사람이 지치기 전에 필요한 돌봄을 알아차리고 생일과 경조사를 빠짐없이 챙기는 편입니다. 타고난 비는 조용히 스며 돌보고, ISFJ 성격은 사람의 필요와 날짜를 기억합니다.",
+      "scene": "달력에 친구 부모님 생신까지 적어 두고 전날 미리 연락하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyemi:strength",
+        "taxonomy:day_pillar_gyemi",
+        "mbti:ISFJ:memory_based_affection",
+        "mbti:ISFJ:overgiving_money_leak"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gapsin:ESTJ",
+      "featureId": "day_pillar_gapsin",
+      "mbti": "ESTJ",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 2.05,
+      "insight": "일정이 갑자기 당겨지면 해야 할 것과 버릴 것을 먼저 적고 바로 지시를 내립니다. 타고난 나무는 눌려도 방향을 잡고, ESTJ 성격은 기준을 먼저 정해 줍니다.",
+      "scene": "마감이 당겨진 아침에 팀 대화방에 우선순위 표부터 올리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gapsin:scene",
+        "taxonomy:day_pillar_gapsin",
+        "mbti:ESTJ:clear_expectations",
+        "mbti:ESTJ:crisis_rationality"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyeongo:ESTP",
+      "featureId": "day_pillar_gyeongo",
+      "mbti": "ESTP",
+      "dimension": "competitiveness",
+      "kind": "resonance",
+      "score": 2.05,
+      "insight": "가볍게 시작한 게임에서도 규칙은 제일 진지하게 읽고 지면 표정이 바뀌는 편입니다. 타고난 달궈진 쇠는 승부에 뜨거워지고, ESTP 성격은 현장에서 바로 붙습니다.",
+      "scene": "친구들과 보드게임을 하다 재대결을 세 번째 요구하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyeongo:scene",
+        "v4:depth:day_pillar_gyeongo:punch",
+        "taxonomy:day_pillar_gyeongo",
+        "mbti:ESTP:fun_active_love",
+        "mbti:ESTP:loss_revenge_control"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeongsa:ESFP",
+      "featureId": "day_pillar_jeongsa",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 2.05,
+      "insight": "좋아지면 눈치와 반응이 빨라지고 깜짝 이벤트까지 준비해 마음을 바로 보이는 편입니다. 타고난 불씨는 몰입이 뜨겁고, ESFP 성격은 웃는 장면을 직접 만듭니다.",
+      "scene": "사귄 지 한 달에 벌써 손편지와 깜짝 케이크를 준비하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeongsa:love",
+        "taxonomy:day_pillar_jeongsa",
+        "mbti:ESFP:romantic_surprise",
+        "mbti:ESFP:expressive_love_style"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_muja:ESTJ",
+      "featureId": "day_pillar_muja",
+      "mbti": "ESTJ",
+      "dimension": "controlNeed",
+      "kind": "resonance",
+      "score": 2.05,
+      "insight": "사람과 돈이 어디로 움직이는지 살피며 예산표를 만들어 일이 새지 않게 붙드는 편입니다. 타고난 큰 둑은 물길을 붙잡고, ESTJ 성격은 예산을 표로 정리합니다.",
+      "scene": "여행 가기 전 경비 표를 만들어 각자 낼 몫까지 정해 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_muja:work",
+        "taxonomy:day_pillar_muja",
+        "mbti:ESTJ:asset_control_strength"
+      ]
+    },
+    {
+      "id": "cross:ten_god_qi_sha:ESTJ",
+      "featureId": "ten_god_qi_sha",
+      "mbti": "ESTJ",
+      "dimension": "controlNeed",
+      "kind": "resonance",
+      "score": 2.05,
+      "insight": "아무도 맡기 어려운 일을 받아 기준과 마감을 정해 주고 끝까지 끌고 가는 편입니다. 타고난 힘은 어려운 일을 받아 끝을 보고, ESTJ 성격은 기준을 세워 굴립니다.",
+      "scene": "다들 피하는 민원 업무를 맡고 처리 순서표부터 붙여 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_qi_sha:work",
+        "mbti:ESTJ:responsible_operator",
+        "mbti:ESTJ:clear_expectations"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_eulsa:ESFP",
+      "featureId": "day_pillar_eulsa",
+      "mbti": "ESFP",
+      "dimension": "socialEnergy",
+      "kind": "resonance",
+      "score": 2.05,
+      "insight": "약속이 겹쳐도 아쉬워서 거절을 못 해 하루에 모임을 두세 개씩 넣는 편입니다. 타고난 덩굴은 사람 쪽으로 빨리 뻗고, ESFP 성격은 사람 곁에서 충전됩니다.",
+      "scene": "점심 약속에서 바로 저녁 모임으로 이동하며 집엔 늦게 들어가곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_eulsa:shadow",
+        "v4:material:day_pillar_eulsa",
+        "mbti:ESFP:people_nearby_energy",
+        "mbti:ESFP:social_easy_openness"
+      ]
+    },
+    {
+      "id": "cross:day_master_gyeonggeum:ESTJ",
+      "featureId": "day_master_gyeonggeum",
+      "mbti": "ESTJ",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 2.04,
+      "insight": "복잡하게 늘어진 일은 무엇부터 버릴지 정하고 팀원에게 기준을 바로 말하는 편입니다. 타고난 큰 도구는 맞다 아니다를 가르고, ESTJ 성격은 돌리지 않고 말합니다.",
+      "scene": "회의 십 분 만에 안건 셋을 지우고 하나만 남기자고 말하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_gyeonggeum:work",
+        "mbti:ESTJ:direct_speech",
+        "mbti:ESTJ:efficiency_filter"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyechuk:ESTP",
+      "featureId": "day_pillar_gyechuk",
+      "mbti": "ESTP",
+      "dimension": "planning",
+      "kind": "tension",
+      "score": 2.04,
+      "insight": "겉으로는 현장을 보고 바로 다음 수를 찾는데, 뜻밖의 지출에 대비한 여유는 늘 남겨 둡니다. 타고난 스미는 물은 미리 대비하고, ESTP 성격은 지금 판단해 움직입니다.",
+      "scene": "즉흥 여행을 떠나면서도 비상금 봉투는 따로 챙기곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyechuk:money",
+        "taxonomy:day_pillar_gyechuk",
+        "mbti:ESTP:crisis_solver",
+        "mbti:ESTP:quick_cashflow_volatility"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyehae:INTP",
+      "featureId": "day_pillar_gyehae",
+      "mbti": "INTP",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 2.04,
+      "insight": "혼자 충분히 읽은 뒤 떠오른 질문을 따라가느라 답장이 며칠씩 늦어지는 편입니다. 타고난 깊은 물은 생각을 멈추는 때를 놓치고, INTP 성격은 혼자 정리한 뒤 말합니다.",
+      "scene": "회의에서 받은 질문에 사흘 뒤 문서로 답을 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyehae:study",
+        "v4:depth:day_pillar_gyehae:shadow",
+        "taxonomy:day_pillar_gyehae",
+        "mbti:INTP:needs_thinking_time"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gabo:INFJ",
+      "featureId": "day_pillar_gabo",
+      "mbti": "INFJ",
+      "dimension": "verbalOutput",
+      "kind": "tension",
+      "score": 2.03,
+      "insight": "겉으로는 세 명 넘는 자리에서 말수가 줄어드는데, 좋아하는 취미 앞에선 입문 계획까지 세워 줍니다. 타고난 나무는 빛을 받으면 보여 주고 싶어 하고, INFJ 성격은 평소 말을 아낍니다.",
+      "scene": "모임 내내 조용하다가 등산 이야기가 나오자 장비 목록을 읊곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gabo:scene",
+        "taxonomy:day_pillar_gabo",
+        "mbti:INFJ:low_smalltalk_energy",
+        "mbti:INFJ:curiosity_and_many_questions"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_imo:ESTP",
+      "featureId": "day_pillar_imo",
+      "mbti": "ESTP",
+      "dimension": "socialEnergy",
+      "kind": "resonance",
+      "score": 2.03,
+      "insight": "여러 가능성을 사람들 앞에 펼쳐 보이고 그 자리에서 같이 움직일 이유를 만드는 편입니다. 타고난 바다 위 햇빛은 사람을 끌어모으고, ESTP 성격은 말보다 행동으로 엽니다.",
+      "scene": "주말 번개 공지를 올리고 한 시간 안에 차까지 배정해 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_imo:work",
+        "taxonomy:day_pillar_imo",
+        "mbti:ESTP:fast_approval_lane",
+        "mbti:ESTP:crisis_solver"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyemi:INFJ",
+      "featureId": "day_pillar_gyemi",
+      "mbti": "INFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 2.02,
+      "insight": "남의 불편까지 내 책임처럼 느껴 사과할 일이 아닌데도 먼저 미안하다고 하는 편입니다. 타고난 비는 남의 걱정을 먼저 적시고, INFJ 성격은 남의 감정을 스펀지처럼 흡수합니다.",
+      "scene": "친구가 지각했는데도 자리를 잘못 잡았다며 먼저 사과하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyemi:shadow",
+        "v4:material:day_pillar_gyemi",
+        "mbti:INFJ:empathy_burnout",
+        "mbti:INFJ:moral_sensitivity"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyeongo:INFP",
+      "featureId": "day_pillar_gyeongo",
+      "mbti": "INFP",
+      "dimension": "competitiveness",
+      "kind": "tension",
+      "score": 2.02,
+      "insight": "겉으로는 비교에 무심하고 조용히 내 길을 가는데, 나를 증명해야 하는 자리에선 유난히 뜨거워집니다. 타고난 달궈진 쇠는 승부에 달아오르고, INFP 성격은 경쟁 자리를 피합니다.",
+      "scene": "평소엔 순위에 관심 없다더니 공모전 결과 날엔 새벽부터 깨어 있곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정",
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyeongo:inside",
+        "taxonomy:day_pillar_gyeongo",
+        "mbti:INFP:low_competition_environment",
+        "mbti:INFP:meaning_over_status"
+      ]
+    },
+    {
+      "id": "cross:ten_god_pian_cai:ESTP",
+      "featureId": "ten_god_pian_cai",
+      "mbti": "ESTP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 2.02,
+      "insight": "사람들이 불편하다고 말하는 걸 듣다가 바로 해결책을 팔아 보자며 현장에서 움직이는 편입니다. 타고난 눈은 기회의 길목을 보고, ESTP 성격은 말보다 행동으로 잡습니다.",
+      "scene": "동네 가게 사장의 푸념을 듣고 다음 주에 샘플을 들고 찾아가곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_pian_cai:scene",
+        "mbti:ESTP:deal_and_sales_income",
+        "mbti:ESTP:crisis_solver"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_gyeongin:ESTP",
+      "featureId": "day_pillar_gyeongin",
+      "mbti": "ESTP",
+      "dimension": "decisionSpeed",
+      "kind": "resonance",
+      "score": 2.02,
+      "insight": "처음 가는 등산로에서도 표지판만 보고 앞장서며 다음 길을 바로 정하는 편입니다. 타고난 도끼는 새 길을 열고, ESTP 성격은 현장을 읽고 바로 움직입니다.",
+      "scene": "갈림길에서 지도를 오래 보지 않고 한쪽으로 먼저 걸어가곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "사고 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_gyeongin:scene",
+        "taxonomy:day_pillar_gyeongin",
+        "mbti:ESTP:crisis_solver",
+        "mbti:ESTP:fast_approval_lane"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_musul:ENTP",
+      "featureId": "day_pillar_musul",
+      "mbti": "ENTP",
+      "dimension": "persistence",
+      "kind": "tension",
+      "score": 2.02,
+      "insight": "겉으로는 새 아이디어가 들어오면 하던 일을 두고 옮겨 가는데, 맡은 책임만은 끝까지 지킵니다. 타고난 산맥은 약속의 무게를 품고, ENTP 성격은 다음 자극으로 옮겨 갑니다.",
+      "scene": "새 사업 구상을 떠들면서도 맡은 월간 보고서는 한 번도 빼먹지 않습니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_musul:inside",
+        "taxonomy:day_pillar_musul",
+        "mbti:ENTP:unfinished_projects",
+        "mbti:ENTP:multi_task_starter"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_sinmi:ENFP",
+      "featureId": "day_pillar_sinmi",
+      "mbti": "ENFP",
+      "dimension": "detailFocus",
+      "kind": "tension",
+      "score": 2.01,
+      "insight": "겉으로는 기분 따라 바로 결제하는데, 오래 쓸 컵 하나는 손잡이 감촉까지 확인하고 삽니다. 타고난 흙 속 보석은 손에 닿는 감촉을 따지고, ENFP 성격은 분위기에 결제합니다.",
+      "scene": "충동구매를 해 놓고 정작 머그컵은 세 군데를 돌아 고르곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_sinmi:scene",
+        "taxonomy:day_pillar_sinmi",
+        "mbti:ENFP:emotion_purchase_pause",
+        "mbti:ENFP:detail_boredom"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_giyu:ENFP",
+      "featureId": "day_pillar_giyu",
+      "mbti": "ENFP",
+      "dimension": "detailFocus",
+      "kind": "tension",
+      "score": 2,
+      "insight": "겉으로는 작은 반복 일정을 자주 놓치는데, 서랍 속 물건 순서는 손에 바로 닿게 고쳐 둡니다. 타고난 보석은 작은 어긋남을 못 두고, ENFP 성격은 반복 일정에 지루해합니다.",
+      "scene": "주간 보고는 잊어도 책상 서랍 칸은 매주 다시 맞춰 놓곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_giyu:scene",
+        "taxonomy:day_pillar_giyu",
+        "mbti:ENFP:deadline_sprint_style",
+        "mbti:ENFP:detail_boredom"
+      ]
+    },
+    {
+      "id": "cross:ten_god_shang_guan:ENTP",
+      "featureId": "ten_god_shang_guan",
+      "mbti": "ENTP",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 2,
+      "insight": "다들 익숙하게 쓰는 안내문에서 헷갈릴 문장을 찾아 회의에서 먼저 짚는 편입니다. 타고난 펜은 틀을 깨고 더 말이 되는 답을 찾고, ENTP 성격은 왜냐고 먼저 묻습니다.",
+      "scene": "회의 자료의 어색한 문구를 발표 중간에 끊고 바로 지적하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_shang_guan:scene",
+        "mbti:ENTP:constructive_critic",
+        "mbti:ENTP:anti_authoritarian_spirit"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongin:ESTP",
+      "featureId": "day_pillar_byeongin",
+      "mbti": "ESTP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 1.99,
+      "insight": "배워 보고 가 보고 해 보는 경험에 돈을 쓰고 계획이 무너져도 바로 다음 수를 찾는 편입니다. 타고난 해는 새벽 숲의 길을 밝히고, ESTP 성격은 현장에서 바로 움직입니다.",
+      "scene": "예약이 취소된 날 그 자리에서 새 체험을 찾아 결제하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongin:money",
+        "taxonomy:day_pillar_byeongin",
+        "mbti:ESTP:crisis_solver",
+        "mbti:ESTP:quick_cashflow_volatility"
+      ]
+    },
+    {
+      "id": "cross:element_fire:ESFP",
+      "featureId": "element_fire",
+      "mbti": "ESFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 1.99,
+      "insight": "가족 모임에서 분위기를 띄우는 역할을 맡고 처음 보는 친척에게도 먼저 말을 거는 편입니다. 타고난 불은 밖으로 밝게 드러나고, ESFP 성격은 자기 이야기를 먼저 털어놓습니다.",
+      "scene": "명절 식탁에서 어색한 사촌에게 먼저 근황을 묻고 웃음을 만들곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:element:fire#applications.family",
+        "foundation:element:fire#applications.relationships",
+        "mbti:ESFP:honest_self_disclosure",
+        "mbti:ESFP:atmosphere_role"
+      ]
+    },
+    {
+      "id": "cross:element-WATER-high:INFJ",
+      "featureId": "element:WATER:high",
+      "mbti": "INFJ",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 1.99,
+      "insight": "짧은 대화를 마친 뒤에도 상대가 말하지 않은 배경을 한참 생각하며 글로 정리하는 편입니다. 타고난 물은 깊은 곳으로 모여 생각이 길어지고, INFJ 성격은 흐름의 다음을 먼저 읽습니다.",
+      "scene": "짧은 통화 뒤 상대의 말 사이 침묵을 밤까지 곱씹곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:element:WATER:high:scene",
+        "taxonomy:element_water_excess",
+        "mbti:INFJ:private_analysis_loop",
+        "mbti:INFJ:ni_pattern_prediction"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_jeonghae:ESTP",
+      "featureId": "day_pillar_jeonghae",
+      "mbti": "ESTP",
+      "dimension": "introspection",
+      "kind": "tension",
+      "score": 1.98,
+      "insight": "겉으로는 깊은 대화보다 운동과 맛집으로 마음이 뜨거워지는데, 영화 속 표정은 며칠씩 남습니다. 타고난 등불은 장면을 오래 품고, ESTP 성격은 곱씹지 않고 움직입니다.",
+      "scene": "농구 뒤 바로 털어 내던 사람이 영화 장면 하나는 사흘째 말하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_jeonghae:scene",
+        "taxonomy:day_pillar_jeonghae",
+        "mbti:ESTP:fun_active_love",
+        "mbti:ESTP:low_grudge_high_motion"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_imin:ESTP",
+      "featureId": "day_pillar_imin",
+      "mbti": "ESTP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 1.98,
+      "insight": "바깥에서 발견한 것을 가져와 새 일의 첫 삽을 뜨고 승인 기다리는 자리는 금방 떠나는 편입니다. 타고난 물길은 새 숲을 깨우고, ESTP 성격은 바로 판단해도 되는 자리에서 삽니다.",
+      "scene": "출장지에서 본 아이템으로 돌아오자마자 시범 판매를 열곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_imin:work",
+        "taxonomy:day_pillar_imin",
+        "mbti:ESTP:fast_approval_lane",
+        "mbti:ESTP:low_tolerance_for_boredom"
+      ]
+    },
+    {
+      "id": "cross:day_pillar_byeongsul:ESTJ",
+      "featureId": "day_pillar_byeongsul",
+      "mbti": "ESTJ",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 1.97,
+      "insight": "농담으로 넘기는 자리에서도 누가 곤란해 보이면 말을 끊고 원칙을 분명히 말하는 편입니다. 타고난 햇빛은 마른 언덕을 똑바로 비추고, ESTJ 성격은 돌리지 않고 말합니다.",
+      "scene": "회식 자리에서 선 넘는 농담이 나오면 그 자리에서 그만하자고 말합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_pillar_byeongsul:scene",
+        "taxonomy:day_pillar_byeongsul",
+        "mbti:ESTJ:direct_speech",
+        "mbti:ESTJ:boundary_by_standard"
+      ]
+    },
+    {
+      "id": "cross:day_master_gyeonggeum:INFP",
+      "featureId": "day_master_gyeonggeum",
+      "mbti": "INFP",
+      "dimension": "directness",
+      "kind": "tension",
+      "score": 1.94,
+      "insight": "겉으로는 싫은 동료에게 조용히 거리를 두는데, 내 편을 위해선 불편한 자리에 대신 나섭니다. 타고난 큰 도구는 맞다 아니다를 바로 가르고, INFP 성격은 돌려 말합니다.",
+      "scene": "평소엔 말을 아끼다 친구가 부당하게 당하면 먼저 따지곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_gyeonggeum:relationships",
+        "mbti:INFP:soft_conflict_style",
+        "mbti:INFP:boundary_against_cruelty"
+      ]
+    },
+    {
+      "id": "cross:ten_god_pian_yin:INTP",
+      "featureId": "ten_god_pian_yin",
+      "mbti": "INTP",
+      "dimension": "inquiry",
+      "kind": "resonance",
+      "score": 1.94,
+      "insight": "검색 하나로 시작해 관련 문서 열 개를 띄워 놓고 밤을 새우는 편입니다. 타고난 탐구심은 옆길까지 파고들고, INTP 성격은 왜 그런지 끝까지 묻습니다.",
+      "scene": "공식을 외우라는 말에 유도 과정부터 찾다 새벽을 맞곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_pian_yin:scene",
+        "mbti:INTP:why_question_loop",
+        "mbti:INTP:math_science_affinity"
+      ]
+    },
+    {
+      "id": "cross:day_master_gyeonggeum:ISFP",
+      "featureId": "day_master_gyeonggeum",
+      "mbti": "ISFP",
+      "dimension": "decisionSpeed",
+      "kind": "tension",
+      "score": 1.91,
+      "insight": "겉으로는 선택지를 오래 열어 두는데, 메뉴 앞에서 십 분이 지나면 몇 개를 지워 줄입니다. 타고난 큰 도구는 선택지를 잘라 내고, ISFP 성격은 결정을 미룹니다.",
+      "scene": "쇼핑몰에서 한참 고르다 갑자기 둘만 남기고 바로 결제하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_gyeonggeum:scene",
+        "mbti:ISFP:decision_delay",
+        "mbti:ISFP:open_but_undecided"
+      ]
+    },
+    {
+      "id": "cross:day_master_gyeonggeum:ENTJ",
+      "featureId": "day_master_gyeonggeum",
+      "mbti": "ENTJ",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 1.87,
+      "insight": "동료의 실수를 보면 그 자리에서 결론만 짧게 말해 옆 사람이 혼난 표정이 되는 편입니다. 타고난 큰 도구는 결론을 바로 자르고, ENTJ 성격은 놀랄 만큼 직설적입니다.",
+      "scene": "보고서를 받자마자 세 줄로 문제만 적어 돌려보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_gyeonggeum:punch",
+        "mbti:ENTJ:direct_feedback_leader"
+      ]
+    },
+    {
+      "id": "cross:v4_structure-hurtingOfficerMeetsOfficer:ENTP",
+      "featureId": "v4_structure:hurtingOfficerMeetsOfficer",
+      "mbti": "ENTP",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 1.83,
+      "insight": "늘 하던 방식이라는 답을 들으면 왜 그래야 하는지 묻고 회의에서 먼저 꺼내는 편입니다. 타고난 긴장은 틀린 규칙을 못 넘기고, ENTP 성격은 막힌 판에 왜냐고 묻습니다.",
+      "scene": "사무실 동선 문제를 몇 년 만에 처음으로 회의 안건에 올리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정",
+          "이직 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:v4_structure:hurtingOfficerMeetsOfficer:scene",
+        "v4:depth:v4_structure:hurtingOfficerMeetsOfficer:fortune",
+        "mbti:ENTP:constructive_critic",
+        "mbti:ENTP:anti_authoritarian_spirit"
+      ]
+    },
+    {
+      "id": "cross:day_master_jeonghwa:INFJ",
+      "featureId": "day_master_jeonghwa",
+      "mbti": "INFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 1.82,
+      "insight": "친구가 춥다고 했던 말을 기억했다가 다음 만남엔 따뜻한 자리를 먼저 고르는 편입니다. 타고난 등불은 내 사람에게 오래 따뜻하고, INFJ 성격은 조용히 돕습니다.",
+      "scene": "약속 장소를 정할 때 친구가 싫어하던 소음까지 먼저 거르곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_jeonghwa:scene",
+        "mbti:INFJ:quiet_care_partner",
+        "mbti:INFJ:compassion"
+      ]
+    },
+    {
+      "id": "cross:day_master_imsu:INTP",
+      "featureId": "day_master_imsu",
+      "mbti": "INTP",
+      "dimension": "learningDrive",
+      "kind": "resonance",
+      "score": 1.82,
+      "insight": "영상 하나를 보다가 관련 역사와 원리까지 찾아보며 결론은 뒤로 미루는 편입니다. 타고난 큰 물길은 가능성을 넓히고, INTP 성격은 원리를 끝까지 파고듭니다.",
+      "scene": "다큐 한 편 뒤에 관련 논문 세 편을 열어 두고 잠들곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_imsu:scene",
+        "v4:depth:day_master_imsu:shadow",
+        "mbti:INTP:ne_possibility_storm",
+        "mbti:INTP:why_question_loop"
+      ]
+    },
+    {
+      "id": "cross:element-METAL-high:ESTJ",
+      "featureId": "element:METAL:high",
+      "mbti": "ESTJ",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 1.82,
+      "insight": "후배가 가져온 결과가 기준에 못 미치면 친해도 그대로 받지 않고 다시 돌려보내는 편입니다. 타고난 쇠는 기준이 선명하고, ESTJ 성격은 기준으로 선을 긋습니다.",
+      "scene": "후배의 보고서를 양식부터 고쳐 오라며 그날 두 번 돌려보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "taxonomy:element_metal_excess",
+        "mbti:ESTJ:boundary_by_standard",
+        "mbti:ESTJ:corrective_feedback"
+      ]
+    },
+    {
+      "id": "cross:element_fire:ENFP",
+      "featureId": "element_fire",
+      "mbti": "ENFP",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 1.81,
+      "insight": "발표를 맡으면 첫 문장부터 눈길을 끄는 말로 시작하고 엉뚱한 농담으로 웃음을 만드는 편입니다. 타고난 불은 밖으로 밝게 퍼지고, ENFP 성격은 분위기를 띄우는 말이 먼저 나옵니다.",
+      "scene": "발표 첫 줄을 질문으로 던져 강의실을 웃게 만들곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:element:fire#applications.career",
+        "mbti:ENFP:social_mood_maker",
+        "mbti:ENFP:random_but_charming_speech"
+      ]
+    },
+    {
+      "id": "cross:ten_god_pian_cai:ESFP",
+      "featureId": "ten_god_pian_cai",
+      "mbti": "ESFP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 1.81,
+      "insight": "새로운 경험을 같이 만들며 모임비와 맛집 지출이 반복되어 고정비처럼 쌓이는 편입니다. 타고난 눈은 기회와 사람이 움직이는 곳을 보고, ESFP 성격은 경험에 돈을 씁니다.",
+      "scene": "새로 생긴 팝업 매장 소식마다 친구를 불러 같이 가곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_pian_cai:love",
+        "v4:depth:ten_god_pian_cai:money",
+        "mbti:ESFP:experience_spending",
+        "mbti:ESFP:beauty_social_spending"
+      ]
+    },
+    {
+      "id": "cross:ten_god_pian_yin:INFJ",
+      "featureId": "ten_god_pian_yin",
+      "mbti": "INFJ",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 1.79,
+      "insight": "궁금한 주제는 교재 범위를 넘어 혼자 자료를 찾아 읽고 글로 정리하는 편입니다. 타고난 탐구심은 남들이 지나친 점을 붙들고, INFJ 성격은 글로 써야 또렷해집니다.",
+      "scene": "시험 범위 밖 책을 읽다 정작 범위 정리는 밤에 하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_pian_yin:study",
+        "mbti:INFJ:writing_over_speaking",
+        "mbti:INFJ:graduate_depth_study"
+      ]
+    },
+    {
+      "id": "cross:element-METAL-high:INTJ",
+      "featureId": "element:METAL:high",
+      "mbti": "INTJ",
+      "dimension": "boundarySetting",
+      "kind": "resonance",
+      "score": 1.78,
+      "insight": "관계가 흐릿하면 그냥 두지 못하고 친구인지 아닌지 선을 긋고 되돌리지 않는 편입니다. 타고난 쇠는 경계를 선명히 자르고, INTJ 성격은 선 넘은 사람을 기억합니다.",
+      "scene": "한 번 약속을 어긴 사람은 모임에서 조용히 빼 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "kb:element_metal_strong",
+        "mbti:INTJ:line_crossing_memory",
+        "mbti:INTJ:selective_friendship"
+      ]
+    },
+    {
+      "id": "cross:element-WATER-high:INFP",
+      "featureId": "element:WATER:high",
+      "mbti": "INFP",
+      "dimension": "introspection",
+      "kind": "resonance",
+      "score": 1.78,
+      "insight": "친구가 울먹이면 이유를 묻기 전에 감정을 먼저 알아채고 그날 밤까지 혼자 곱씹는 편입니다. 타고난 물은 감정을 오래 붙들고, INFP 성격은 상처를 조용히 삭입니다.",
+      "scene": "친구 눈가가 붉어진 걸 보고 집에 와서도 몇 시간 생각하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "taxonomy:element_water_excess",
+        "mbti:INFP:empathic_projection",
+        "mbti:INFP:anger_private_processing"
+      ]
+    },
+    {
+      "id": "cross:element_fire:ENFJ",
+      "featureId": "element_fire",
+      "mbti": "ENFJ",
+      "dimension": "emotionalExpression",
+      "kind": "resonance",
+      "score": 1.77,
+      "insight": "호감이 생기면 숨기지 않고 표정과 말로 드러내며 몇 달 안에 함께할 미래를 그리는 편입니다. 타고난 불은 위로 밝게 향하고, ENFJ 성격은 마음을 크게 쏟습니다.",
+      "scene": "사귄 지 두 달에 내년 여행 계획을 이미 짜 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정",
+          "결혼 시기 단정"
+        ]
+      },
+      "sourceRefs": [
+        "foundation:element:fire#applications.love",
+        "kb:element_fire",
+        "mbti:ENFJ:full_hearted_love",
+        "mbti:ENFJ:expressive_face"
+      ]
+    },
+    {
+      "id": "cross:sinsal_goegang:ENTJ",
+      "featureId": "sinsal_goegang",
+      "mbti": "ENTJ",
+      "dimension": "persistence",
+      "kind": "resonance",
+      "score": 1.74,
+      "insight": "거절을 여러 번 들어도 다른 방법을 찾아 다시 제안하고 결과로 증명하는 편입니다. 타고난 기둥은 무거운 문도 어깨로 밀고, ENTJ 성격은 개편안을 떠올립니다.",
+      "scene": "세 번 반려된 기획안을 숫자만 바꿔 네 번째로 올리곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:sinsal_goegang:scene",
+        "mbti:ENTJ:problem_solver_energy",
+        "mbti:ENTJ:crisis_momentum"
+      ]
+    },
+    {
+      "id": "cross:ten_god_qi_sha:ISFP",
+      "featureId": "ten_god_qi_sha",
+      "mbti": "ISFP",
+      "dimension": "conflictApproach",
+      "kind": "tension",
+      "score": 1.74,
+      "insight": "겉으로는 갈등이 깊어지면 조용히 물러나는데, 소중한 사람이 위기에 놓이면 먼저 나서서 막습니다. 타고난 힘은 압박을 맞받아치고, ISFP 성격은 다툼을 피합니다.",
+      "scene": "자기 일엔 입을 닫다가 동생이 곤란해지면 먼저 전화를 걸곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_qi_sha:love",
+        "mbti:ISFP:conflict_silent_exit",
+        "mbti:ISFP:direct_with_close_people"
+      ]
+    },
+    {
+      "id": "cross:ten_god_pian_cai:ENTP",
+      "featureId": "ten_god_pian_cai",
+      "mbti": "ENTP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 1.72,
+      "insight": "바깥 사람을 만나 새 제안을 가져오고 새 도구와 강의에 조금씩 쓰다 돈이 흩어지는 편입니다. 타고난 눈은 기회의 길목을 보고, ENTP 성격은 새 아이템마다 지갑을 엽니다.",
+      "scene": "한 달 안에 새 모임 셋과 새 구독 둘을 동시에 시작하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "수익 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_pian_cai:work",
+        "v4:depth:ten_god_pian_cai:shadow",
+        "mbti:ENTP:project_cost_sprawl",
+        "mbti:ENTP:spending_on_experience"
+      ]
+    },
+    {
+      "id": "cross:element-WOOD-high:ESTP",
+      "featureId": "element:WOOD:high",
+      "mbti": "ESTP",
+      "dimension": "noveltySeeking",
+      "kind": "resonance",
+      "score": 1.72,
+      "insight": "강좌가 끝나기 전에 다음 강좌를 담아 두고 계획이 무너져도 바로 다음 수를 찾는 편입니다. 타고난 나무는 시작과 확장이 앞서고, ESTP 성격은 현장에서 바로 움직입니다.",
+      "scene": "수업 마지막 주에 벌써 다른 과정 결제 화면을 열어 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "이직 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:element:WOOD:high:scene",
+        "mbti:ESTP:crisis_solver",
+        "mbti:ESTP:low_tolerance_for_boredom"
+      ]
+    },
+    {
+      "id": "cross:ten_god_qi_sha:INFP",
+      "featureId": "ten_god_qi_sha",
+      "mbti": "INFP",
+      "dimension": "conflictApproach",
+      "kind": "tension",
+      "score": 1.7,
+      "insight": "겉으로는 싫은 사람에게 조용히 거리를 두는데, 어려운 시험이 생기면 집중할 이유가 선명해집니다. 타고난 힘은 높은 목표 앞에서 또렷해지고, INFP 성격은 맞서기를 피합니다.",
+      "scene": "평소엔 경쟁을 피하다 큰 시험이 잡히면 책상에 제일 오래 앉곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "성격 고정 단정",
+          "합격 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:ten_god_qi_sha:study",
+        "mbti:INFP:soft_conflict_style",
+        "mbti:INFP:meaning_driven_diligence"
+      ]
+    },
+    {
+      "id": "cross:sinsal_goegang:ESTJ",
+      "featureId": "sinsal_goegang",
+      "mbti": "ESTJ",
+      "dimension": "persistence",
+      "kind": "resonance",
+      "score": 1.69,
+      "insight": "다들 포기하려는 일을 붙들고 마지막까지 해내며 못 믿을 사람에겐 맡기지 않는 편입니다. 타고난 기둥은 끝까지 버티고, ESTJ 성격은 직접 해 버리는 쪽을 고릅니다.",
+      "scene": "프로젝트가 접힐 분위기에도 혼자 남아 마지막 장을 채우곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "승진 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:sinsal_goegang:work",
+        "taxonomy:sinsal_goegang",
+        "mbti:ESTJ:delegation_difficulty",
+        "mbti:ESTJ:execution_power"
+      ]
+    },
+    {
+      "id": "cross:day_master_eulmok:INFJ",
+      "featureId": "day_master_eulmok",
+      "mbti": "INFJ",
+      "dimension": "conflictApproach",
+      "kind": "resonance",
+      "score": 1.68,
+      "insight": "관계를 끊기 전에 한 번 더 접점을 찾아보고 싫다는 말은 빙빙 돌려 하는 편입니다. 타고난 덩굴은 부딪히지 않고 휘어 가고, INFJ 성격은 서운함을 돌려 말합니다.",
+      "scene": "서운한 일이 있어도 농담처럼 흘려 말하고 상대가 못 알아채곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_eulmok:relationships",
+        "v4:depth:day_master_eulmok:shadow",
+        "mbti:INFJ:indirect_conflict_expression",
+        "mbti:INFJ:peace_keeping"
+      ]
+    },
+    {
+      "id": "cross:day_master_gyesu:INFJ",
+      "featureId": "day_master_gyesu",
+      "mbti": "INFJ",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 1.68,
+      "insight": "다들 웃고 있을 때 한 사람의 웃음이 짧아진 걸 알아채고 나중에 조용히 묻는 편입니다. 타고난 비는 작은 변화를 먼저 느끼고, INFJ 성격은 장면이 갈 곳을 먼저 읽습니다.",
+      "scene": "모임이 끝난 뒤 유독 말이 적던 친구에게 따로 톡을 보내곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_gyesu:scene",
+        "mbti:INFJ:quiet_visionary",
+        "mbti:INFJ:infj_stare_analysis"
+      ]
+    },
+    {
+      "id": "cross:element-EARTH-high:ESTJ",
+      "featureId": "element:EARTH:high",
+      "mbti": "ESTJ",
+      "dimension": "dutifulness",
+      "kind": "resonance",
+      "score": 1.68,
+      "insight": "내 손에 두어야 안심이 되는 일이 늘어나 맡은 목록이 길어지고 결국 다 떠안는 편입니다. 타고난 땅은 책임을 두껍게 쌓고, ESTJ 성격은 남에게 맡기기를 어려워합니다.",
+      "scene": "분담표를 만들어 놓고 결국 절반은 자기 이름으로 적어 두곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "건강 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:element:EARTH:high:inside",
+        "v4:depth:element:EARTH:high:punch",
+        "mbti:ESTJ:delegation_difficulty",
+        "mbti:ESTJ:workaholic_burnout"
+      ]
+    },
+    {
+      "id": "cross:sinsal_yangin:ESTJ",
+      "featureId": "sinsal_yangin",
+      "mbti": "ESTJ",
+      "dimension": "directness",
+      "kind": "resonance",
+      "score": 1.66,
+      "insight": "부당하게 떠넘겨진 일에는 그 자리에서 아니라고 말하고 분명한 선을 긋는 편입니다. 타고난 칼날은 선을 분명히 긋고, ESTJ 성격은 돌리지 않고 바로 말합니다.",
+      "scene": "퇴근 직전 떠넘겨진 일에 내 몫이 아니라고 바로 답하곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "관계 단절 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:sinsal_yangin:work",
+        "taxonomy:sinsal_yangin",
+        "mbti:ESTJ:direct_speech",
+        "mbti:ESTJ:boundary_by_standard"
+      ]
+    },
+    {
+      "id": "cross:day_master_jeonghwa:ISFP",
+      "featureId": "day_master_jeonghwa",
+      "mbti": "ISFP",
+      "dimension": "empathyResponse",
+      "kind": "resonance",
+      "score": 1.65,
+      "insight": "긴 말 대신 상대가 흘린 작은 바람을 기억해 두고 먼저 다가가진 못하는 편입니다. 타고난 등불은 내 사람을 오래 비추고, ISFP 성격은 마음을 혼자 품습니다.",
+      "scene": "좋아하는 사람이 말한 빵집을 기억해 두고 혼자만 가 보곤 합니다.",
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "연애 사건 단정"
+        ]
+      },
+      "sourceRefs": [
+        "v4:depth:day_master_jeonghwa:love",
+        "mbti:ISFP:unspoken_crush_pattern",
+        "mbti:ISFP:quiet_social_acceptance"
+      ]
+    }
+  ]
+}

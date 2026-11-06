@@ -1,0 +1,341 @@
+{
+ "case": "c1-full",
+ "label": "종합 · 하람(c1)",
+ "reportId": "report_003afdc447a84682900be3289d63dd93",
+ "status": "COMPLETED",
+ "wallMs": 109103,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 12,
+ "coverLine": "꺼지지 않는 랜턴을 든 서비스 기획자",
+ "keySpans": 36,
+ "sections": 36,
+ "chars": 10226,
+ "chapterChars": [
+  954,
+  905,
+  877,
+  796,
+  523,
+  828,
+  707,
+  789,
+  770,
+  765,
+  830,
+  828,
+  654
+ ],
+ "chapters": 13,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 1,
+ "byRule": {
+  "example_copy": 1
+ },
+ "replacements": 2,
+ "warnings": 32,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.012,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 109074,
+ "tokens": {
+  "input": 24682,
+  "output": 13190,
+  "cachedInput": 0
+ },
+ "costUsd": 0.183917,
+ "costKrw": 266.7,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 91125,
+   "chars": 11252,
+   "maxTokens": 28722,
+   "usage": {
+    "inputTokens": 21961,
+    "outputTokens": 12268,
+    "cacheWriteTokens": 5306,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.169255
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 7654,
+   "chars": 843,
+   "maxTokens": 1578,
+   "usage": {
+    "inputTokens": 2721,
+    "outputTokens": 922,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.014662
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-18",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 10810,
+  "target": [
+   13000,
+   16000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 0
+   },
+   {
+    "n": 8,
+    "count": 2
+   },
+   {
+    "n": 9,
+    "count": 1
+   },
+   {
+    "n": 10,
+    "count": 0
+   },
+   {
+    "n": 11,
+    "count": 2
+   },
+   {
+    "n": 12,
+    "count": 1
+   },
+   {
+    "n": 13,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 1,
+   "internal": 0
+  },
+  "bannedSamples": [
+   "부모님이 계시다면 안부를 묻는 일도 일정처럼 챙기는 편일 거예요."
+  ],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 9,
+   "misses": [
+    "정축",
+    "음착양차살",
+    "반안살",
+    "방합",
+    "정관",
+    "식신",
+    "백호대살",
+    "축토",
+    "겁재"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 10,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 11,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 12,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 13,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 13,
+  "paragraphsOk": 36,
+  "sectionsTotal": 36,
+  "byRule": {
+   "example_copy": 1
+  },
+  "coreImage": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 4,
+   "past_assertion": 1
+  },
+  "removed": 0,
+  "repaired": 5,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 5,
+  "droppedParagraphs": 0
+ }
+}

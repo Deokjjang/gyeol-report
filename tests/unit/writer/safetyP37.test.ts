@@ -1,0 +1,157 @@
+import { describe, expect, it } from "vitest";
+import { buildBrief, loadKnowledge, type BriefInput } from "@/lib/brief";
+import { balanceHolds } from "@/lib/brief/balance";
+import { MAX_AXIS_USES } from "@/lib/brief/chapters";
+import type { Brief } from "@/lib/brief/schema";
+import { LOVE_TIMING } from "@/lib/writer/safety/patterns";
+import { filterParagraph, sentenceViolation, styleWarnings, type Deletion } from "@/lib/writer/safety/sentences";
+import { PEOPLE } from "../../../tools/p35/people";
+import { P36_PEOPLE as P36 } from "../../../tools/p36/people";
+
+const k = loadKnowledge();
+const base = "2026-10-29";
+const facts = { birthTimeKnown: true, mbti: "ENTJ", relationship: "single", children: "none", job: "employed" } as const;
+const PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "major_fortune", "annual_fortune"] as const;
+const briefs: [string, Brief][] = [
+  ...PRODUCTS.flatMap(product => Object.entries(PEOPLE).map(([n, person]) => [`${product}:${n}`, buildBrief({ product, person, baseDate: base } as BriefInput, k)] as [string, Brief])),
+  ["pair-parent", buildBrief({ product: "saju_mbti_compatibility", baseDate: base, person: P36.parent, partner: P36.child, relationshipType: "parentChild" }, k)],
+  ["pair-boss", buildBrief({ product: "saju_mbti_compatibility", baseDate: base, person: P36.boss, partner: PEOPLE.c1, relationshipType: "managerReport" }, k)],
+];
+
+describe("P3.7 원고 보강", () => {
+  it("1-1: 연·월 항목은 그해·그달 글자가 건드리고 앞 장에서 소개된 trait만 짧은 참조로, 없으면 넣지 않는다(배지에 원국 자리)", () => {
+    for (const [name, b] of briefs.filter(([n]) => /major|annual/.test(n))) {
+      for (const c of b.chapters.filter(c => c.id.includes(":"))) {
+        const key = c.id.split(":")[1], e = b.timeline!.entries.find(x => x.key === key)!;
+        expect(c.materials.some(m => m.kind === "trait"), `${name} ${key}`).toBe(false);
+        const traits = c.materials.flatMap(m => m.kind === "ref" && /^traits\.t\d+$/.test(m.ref) ? [m.ref.slice(7)] : []);
+        expect(traits.length, `${name} ${key}`).toBeLessThanOrEqual(1);
+        for (const id of traits) expect(b.chapters.findIndex(x => !x.id.includes(":") && x.materials.some(m => m.kind === "trait" && m.traitId === id)), `${name} ${key} ${id}`).toBeLessThan(b.chapters.indexOf(c));
+        expect((e.touched ?? []).map(t => t.traitId).sort(), `${name} ${key}`).toEqual([...traits].sort());
+      }
+      const relBadges = b.timeline!.entries.flatMap(e => e.badges.filter(x => x.kind !== "GONGMANG"));
+      expect(relBadges.length && relBadges.every(x => /태어난 (해|달|날|시각)/.test(x.with ?? "")), name).toBeTruthy();
+    }
+    const x = briefs.find(([n]) => n === "major_fortune:x")![1];
+    const y2027 = x.timeline!.entries.find(e => e.key === "2027")!;
+    expect(y2027.badges.find(b => b.label === "축미충")?.with).toBe("태어난 달·태어난 날");
+    // r2: 천간합은 천간 쪽 trait만 건드린다(월간 乙의 을경합 → 월지 丑의 묘 trait로 잇던 오류).
+    for (const [name, b] of briefs) for (const e of b.timeline?.entries ?? []) for (const t of e.touched ?? []) {
+      if (!t.how.includes("천간합")) continue;
+      const fam = b.traits.find(x => x.id === t.traitId)!.featureId.split(":")[0];
+      expect(["twelveStage", "shinsal", "gwiin", "branch"], `${name} ${e.key} ${t.traitId}`).not.toContain(fam);
+    }
+    expect(x.timeline!.entries.find(e => e.key === "2030")!.touched?.some(t => t.how.includes("천간합")) ?? false).toBe(false);
+  });
+
+  it("1-2: 강약·균형 단정은 엔진 판단과 맞는 문장만, 일간 강약과 오행 쏠림은 note로 구분", () => {
+    const weak = { strength: "WEAK", excess: ["WATER"], lacking: ["METAL"] } as const;
+    expect(balanceHolds("신약한 구성에서 쉬는 날이 사라지면 체력이 먼저 바닥납니다.", weak)).toBe(true);
+    expect(balanceHolds("신강한데 괴강까지 겹치면 세게 나갑니다.", weak)).toBe(false);
+    expect(balanceHolds("물이 많아 땅이 식으면 온기가 흩어집니다.", weak)).toBe(true);
+    expect(balanceHolds("불이 많아 마음이 뜨겁습니다.", weak)).toBe(false);
+    expect(balanceHolds("쇠 기운이 부족하면 맺고 끊기가 어렵습니다.", weak)).toBe(true);
+    expect(balanceHolds("기운이 어느 쪽으로도 기울지 않았습니다.", weak)).toBe(false);
+    expect(balanceHolds("목 중화", weak)).toBe(true);
+    expect(balanceHolds("수 중화", weak)).toBe(false);
+    for (const [name, b] of briefs.filter(([n]) => !n.startsWith("pair"))) {
+      const level = b.chart.strength.level, ctx = { strength: /WEAK/.test(level) ? "WEAK" : /STRONG/.test(level) ? "STRONG" : "BALANCED", excess: b.chart.elements.strongest.level === "많음" ? [b.chart.elements.strongest.element] : [], lacking: [] } as const;
+      for (const t of b.traits) for (const text of [t.positionNote, t.strengthNote, ...t.good]) if (text && /신강|신약/.test(text)) expect(balanceHolds(text, ctx), `${name} ${t.featureId}: ${text}`).toBe(true);
+      if (b.chart.elements.strongest.level === "많음") expect(b.chart.strength.note, name).toMatch(/다른 저울/);
+    }
+  });
+
+  it("1-3(P3.8·P6): trait·팩폭·Fusion·전환 참조를 합쳐 같은 trait와 같은 축은 한 장에 한 번, 축 책 3회 초과는 경고, 이미지 계열은 대표 하나", () => {
+    for (const [name, b] of briefs) {
+      const axisUse = new Map<string, number>();
+      for (const c of b.chapters) {
+        const ids = [...new Set(c.materials.flatMap(m => m.kind === "trait" ? [m.traitId] : m.kind === "ref" && /^shadows\./.test(m.ref) ? [b.shadows.find(s => `shadows.${s.id}` === m.ref)!.traitId] : m.kind === "ref" && /^traits\./.test(m.ref) ? [m.ref.split(".")[1]] : []))];
+        const axes = ids.flatMap(id => b.plan!.traits[id]?.axes ?? []);
+        expect(new Set(axes).size, `${name} ${c.id}`).toBe(axes.length);
+        for (const a of axes) axisUse.set(a, (axisUse.get(a) ?? 0) + 1);
+      }
+      // P6: 축 책 3회는 배정 제약이 아니라 경고(plan.warnings)로 남는다.
+      for (const [a, n] of axisUse) if (n > MAX_AXIS_USES) expect(b.plan!.warnings, `${name} ${a}`).toContain(`축 ${a} ${b.plan!.axes[a]}회`);
+      for (const t of b.traits.filter(t => t.sameImageAs)) expect(b.traits.find(x => x.id === t.sameImageAs)?.chapters.length, name).toBeGreaterThan(0);
+    }
+    const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
+    const climate = career.traits.find(t => t.family === "climate"), core = career.traits.find(t => t.family === "dayPillar" || t.family === "dayMaster")!;
+    if (climate?.chapters.length) { expect(climate.sameImageAs).toBe(core.id); expect(career.chart.dayMaster.metaphor).toBe(core.image.metaphor); }
+  });
+
+  it("1-4: 커리어 직무 8~12개(근거 한 줄)·지금 직업 적합도·키울 역할·투자 원칙, 연애 호감·연락·밀당 재료", () => {
+    const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
+    const ev = (b: Brief, key: string) => b.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === key) as { facts: string[] } | undefined;
+    // P6e 13: 직무 하나씩이 아니라 직군 → 맞는 이유(명리·MBTI·일 장면) → 예시 직업 3~5개.
+    const near = ev(career, "jobGroups")!.facts.slice(1), far = ev(career, "jobGroupsFar")!.facts.slice(1), groups = [...near, ...far];
+    expect(near).toHaveLength(2); expect(far.length).toBeGreaterThanOrEqual(1); expect(far.length).toBeLessThanOrEqual(2);
+    for (const p of groups) expect(p).toMatch(/^(\d순위 )?직군: .+ 직군(\(지금 목표·직업 분야\))? — 이 직군이 쓰는 힘: .+ \/ (MBTI: ENTJ는 .+ 편 \/ )?누구나 떠올릴 일 장면: .+ \/ 예시 직업: [^,]+(, [^,]+){2,4}$/);
+    const titles = groups.flatMap(p => p.split("예시 직업: ")[1].split(", "));
+    expect(new Set(titles).size).toBe(titles.length);
+    for (const bad of ["임원 비서", "파티시에", "자동차 영업 컨설턴트"]) expect(groups.join(" "), bad).not.toContain(bad);
+    expect(career.chapters.flatMap(c => c.materials).some(m => m.kind === "evidence" && m.key === "jobRoles")).toBe(false);
+    const current = ev(career, "nowFit")!.facts.join(" ");
+    expect(current).toMatch(/판정: (잘 맞음|보통|덜 맞음) — /); // P6b D 커리어 1 → P6d G 지금 자리 진단
+    const inv = ["investStyle", "investMistakes", "investPrinciples"].map(x => ev(career, x)!.facts.join(" ")).join(" ");
+    expect(inv).toMatch(/예적금: /); expect(inv).toMatch(/주식이라면 (회전형|장기 분산형)/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사|매수|매도/);
+    expect(career.chapters.find(c => c.id === "paths")!.sections![1].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobGroups"]); // P6b D 커리어 3 → P6d 맞는 일과 길 둘째 절 → P6e 13 직군(셋째 절 = 길게 보면 열려 있는 직군)
+    expect(career.chapters.find(c => c.id === "paths")!.sections![2].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobGroupsFar"]);
+    expect(career.chapters.find(c => c.id === "invest")!.materials.some(m => m.kind === "evidence" && m.key === "investStyle")).toBe(true);
+    for (const n of ["c1", "y", "c2"]) {
+      const love = briefs.find(([x]) => x === `love_marriage_child:${n}`)![1];
+      // P6d G: 연애 9장(사랑의 엔진·매력·맞는 사람·호감과 연락·연애할 때·갈등·결혼관·부모 역할·흐름). 호감은 crush, 연락 리듬은 talkRhythm(상태별).
+      const crush = ev(love, "crush")!.facts.join(" "), talk = ev(love, "talkRhythm")!.facts.join(" ");
+      // P6e 8: 연애 중·기혼은 고백·첫 연락 대신 지금 관계의 표현 리듬(4장 제목도 "표현과 대화의 리듬").
+      const together = /^관계 상태: (연애 중|기혼)/.test(talk);
+      if (together) { expect(crush).toMatch(/^관계 상태: (연애 중|기혼)/); expect(crush).not.toMatch(/고백/); expect(love.chapters.find(c => c.id === "contact")!.title).toBe("표현과 대화의 리듬"); }
+      else { expect(crush).toMatch(/호감 표현: .* 쪽은/); expect(love.chapters.find(c => c.id === "contact")!.title).toBe("호감·연락·고백"); }
+      expect(talk).toMatch(/^관계 상태: /);
+    }
+  });
+
+  it("1-5: 인연 시기 말 금지·첫 그림 정체 경고·궁합 두 사람 자리 문장", () => {
+    for (const t of ["인연이 일찍 열리는 편입니다.", "늦게 만나는 인연이 깊습니다.", "서른쯤 결혼하기 좋습니다.", "20대 후반에 좋은 인연이 옵니다."]) {
+      expect(LOVE_TIMING.test(t), t).toBe(true); expect(sentenceViolation(t, facts)).toBe("love_timing");
+    }
+    for (const t of ["배우자가 늦게 들어오는 날 불을 켜 둡니다.", "밤늦게 같은 영화를 봅니다.", "늦게까지 일하는 편입니다."]) expect(LOVE_TIMING.test(t), t).toBe(false);
+    for (const [name, b] of briefs) expect(JSON.stringify(b), name).not.toMatch(/늦게·스스로|인연이 일찍/);
+    expect(styleWarnings(1, ["당신에게는 풍경 같은 기운이 있습니다."], [], new Set()).some(w => w.kind === "image_unnamed")).toBe(true);
+    expect(styleWarnings(1, ["당신에게는 촛불 같은 섬세한 불(정화)이 있습니다."], [], new Set()).some(w => w.kind === "image_unnamed")).toBe(false);
+    for (const [name, b] of briefs.filter(([n]) => n.startsWith("pair"))) {
+      const c = b.compatibility!;
+      expect(c.dayRelations.length, name).toBeGreaterThan(0);
+      // P6b D 궁합: 글자 표기 없는 쉬운 문장(자리·관계 이름·뜻).
+      // P6e 20: 같은 관계가 한 사람의 여러 자리에 걸리면 한 줄("태어난 해·달 땅 글자 모두")로 합친다.
+      const W = "태어난 ((해|달|날|시각)|(해|달|날|시각)(·(해|달|날|시각))+) (하늘|땅) 글자( 모두)?";
+      for (const r of c.dayRelations) expect(r, name).toMatch(new RegExp(`^${c.a.callName}의 ${W}(와|과) ${c.b.callName}의 ${W}(이|가) .+ 관계예요\\.`));
+      // 최종판2 1-7: 감지한 관계를 모두 싣는다 — 같은 글자 짝이 다른 자리에 걸리면 관계 이름 꼬리는 같을 수 있어, 줄 전체가 겹치지 않는지 본다.
+      expect(new Set(c.dayRelations).size, name).toBe(c.dayRelations.length);
+    }
+  });
+
+  it("r1 채점 원인: 성향 키 2장·기능 코드 2번·참조 한 장·궁합 두 방향·대운 전환·관계 trait·근거 지시문 분리·문단 원문 보존", () => {
+    for (const [name, b] of briefs) {
+      const codes = new Map<string, number>();
+      for (const t of b.traits.filter(t => t.chapters.length)) for (const c of new Set(t.fusion?.why.match(/\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/g) ?? [])) codes.set(c, (codes.get(c) ?? 0) + 1);
+      for (const [c, n] of codes) expect(n, `${name} ${c}`).toBeLessThanOrEqual(2);
+      const auxUse = new Map<string, number>();
+      for (const c of b.chapters) for (const m of c.materials) if ((m.kind === "ref" && !m.note) || m.kind === "evidence") { const key = m.kind === "ref" ? m.ref : m.key; auxUse.set(key, (auxUse.get(key) ?? 0) + 1); }
+      for (const [key, n] of auxUse) if (!/^shadows\.|^traits\./.test(key)) expect(n, `${name} ${key}`).toBe(1);
+      for (const c of b.chapters) for (const m of c.materials) if (m.kind === "evidence") for (const f of m.facts) expect(f, `${name} ${m.key}`).not.toMatch(/(단정하지 않는다|말하지 않는다|쓰지 않는다|짝지어 쓴다)$/);
+      expect(b.mbti?.shadows.length ?? 0, name).toBeLessThanOrEqual(1);
+    }
+    const pair = briefs.find(([n]) => n === "pair-parent")![1];
+    if (pair.compatibility!.tenGodAB.tenGod === pair.compatibility!.tenGodBA.tenGod) expect(pair.compatibility!.tenGodBA.reading).not.toBe(pair.compatibility!.tenGodAB.reading);
+    expect(pair.partner!.person.facts.job.detail).toBe("");
+    const career = briefs.find(([n]) => n === "career_money_study:c1")![1];
+    expect(career.chart.currentDayun?.reading).toMatch(/2027년 \d{1,2}월 무렵부터 癸卯\(계묘\) 편관/);
+    const x = briefs.find(([n]) => n === "major_fortune:x")![1];
+    for (const e of x.timeline!.entries) for (const t of e.touched ?? []) {
+      const trait = x.traits.find(y => y.id === t.traitId)!;
+      if (trait.family === "relation") expect(t.how, `${e.key} ${trait.featureId}`).toContain({ CHUNG: "(충)", PA: "(파)", HYEONG: "(형)", HAE: "(해)", YUKHAP: "(육합)", SAMHAP: "합)", BANGHAP: "(방합)", STEM_HAP: "(천간합)" }[trait.featureId.split(":")[1]] ?? "@@");
+    }
+    const del: Deletion[] = [];
+    expect(filterParagraph(`성장률이 0.1배 늘어도 "정말?" 를 묻는 사람입니다.`, facts, 1, del)).toBe(`성장률이 0.1배 늘어도 "정말?" 를 묻는 사람입니다.`);
+    expect(filterParagraph("좋은 문장입니다. 인연이 일찍 열리는 편입니다. 다음 문장입니다.", facts, 1, del)).toBe("좋은 문장입니다. 다음 문장입니다.");
+  });
+});

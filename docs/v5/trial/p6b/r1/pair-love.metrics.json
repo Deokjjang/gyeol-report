@@ -1,0 +1,317 @@
+{
+ "case": "pair-love",
+ "label": "궁합 연애 · 하람×서윤",
+ "reportId": "report_a223c8cf1fa1457883ccfae0e073eb94",
+ "status": "COMPLETED",
+ "wallMs": 69447,
+ "fallback": null,
+ "priorBooks": 2,
+ "chars": 8732,
+ "chapterChars": [
+  817,
+  1044,
+  1245,
+  916,
+  722,
+  1345,
+  819,
+  829,
+  995
+ ],
+ "chapters": 9,
+ "deterministicChapters": [
+  "4:too_short:626<630"
+ ],
+ "partialKeys": [],
+ "deletions": 3,
+ "byRule": {
+  "duplicate_sentence": 3
+ },
+ "replacements": 0,
+ "warnings": 25,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 10,
+ "infoByKind": {
+  "claim": 10,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "정재는 명리학에서 정해진 수입을 성실하게 모으고 지키는 힘과 현실 감각을 뜻합니다.",
+   "b": "정해진 수입을 성실하게 모으고 지키는 힘과 현실 감각을 뜻합니다.",
+   "at": [
+    "2.2",
+    "4.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "둘 다 속상해도 티를 내지 않고 혼자 정리하는 편입니다.",
+   "b": "서윤님은 서운해도 티를 내지 않고 혼자 정리하는 편이에요.",
+   "at": [
+    "4.1",
+    "6.3"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "둘 다 속상해도 티를 내지 않고 혼자 정리하는 편입니다.",
+   "b": "그런데 ENTJ인 하람님은 속상해도 티를 내지 않고 혼자 정리하는 편이라, 편한 얼굴 뒤에 서운함이 숨을 수 있어요.",
+   "at": [
+    "4.1",
+    "8.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "둘 다 속상해도 티를 내지 않고 혼자 정리하는 편입니다.",
+   "b": "두 사람은 둘 다 서운해도 티를 내지 않고 혼자 정리하는 쪽이라 마음이 마주 보지 못한 채 쌓이기 쉽습니다.",
+   "at": [
+    "4.1",
+    "9.1"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "하람님은 모임이 끝나면 오히려 기운이 나는 편입니다.",
+   "b": "하람님은 모임이 끝나면 오히려 기운이 나는 편이고, 서윤님은 약속이 이어지면 지쳐서 혼자 있는 시간이 꼭 필요해요.",
+   "at": [
+    "4.5",
+    "6.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "서윤님은 약속이 이어지면 지쳐서 혼자 있는 시간이 꼭 필요한 편입니다.",
+   "b": "하람님은 모임이 끝나면 오히려 기운이 나는 편이고, 서윤님은 약속이 이어지면 지쳐서 혼자 있는 시간이 꼭 필요해요.",
+   "at": [
+    "4.5",
+    "6.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "서윤님은 규칙보다 더 나은 길이 보이면 그쪽으로 가는 편입니다.",
+   "b": "하람님은 절차와 기한을 그대로 지키는 편이고, 서윤님은 규칙보다 더 나은 길이 보이면 그쪽으로 가요.",
+   "at": [
+    "4.5",
+    "6.2"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "서윤님은 서운해도 티를 내지 않고 혼자 정리하는 편이에요.",
+   "b": "그런데 ENTJ인 하람님은 속상해도 티를 내지 않고 혼자 정리하는 편이라, 편한 얼굴 뒤에 서운함이 숨을 수 있어요.",
+   "at": [
+    "6.3",
+    "8.1"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.181,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 69411,
+ "tokens": {
+  "input": 17976,
+  "output": 9691,
+  "cachedInput": 3907
+ },
+ "costUsd": 0.1332527,
+ "costKrw": 193.2,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 69234,
+   "chars": 8935,
+   "maxTokens": 19970,
+   "usage": {
+    "inputTokens": 17976,
+    "outputTokens": 9691,
+    "cachedInputTokens": 3907
+   },
+   "costUsd": 0.1332527
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-14",
+ "knowledgeVersion": "knowledge-v5:ca2fed8f03c6",
+ "p6b": {
+  "chars": 8775,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 1
+   },
+   {
+    "n": 6,
+    "count": 0
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 1,
+   "rate": 0.13,
+   "terms": 8,
+   "misses": [
+    "정축",
+    "음착양차살",
+    "방합",
+    "정관",
+    "식신",
+    "정재",
+    "수 부족"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 5,
+    "paragraphs": [
+     3,
+     1,
+     1,
+     1,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     2,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 2,
+    "paragraphs": [
+     3,
+     2
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   }
+  ],
+  "subheadingsOk": 8,
+  "paragraphsOk": 21,
+  "sectionsTotal": 24,
+  "byRule": {
+   "duplicate_sentence": 3
+  },
+  "coreImage": "불빛이 강철을 달궈 다듬는 사이",
+  "edition": "제5판"
+ }
+}

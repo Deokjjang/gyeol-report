@@ -14,7 +14,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#3e5a71d4f1d3543288c0",
     "recordSha256": "cf342a791bcdb1515b83c8fd88c4eb8f2d94ee89a11dc1bd9f02f9afbb763c7e",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "marriage",
@@ -38,7 +38,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#0f0d27792b96a8ad87ad",
     "recordSha256": "a1f8f566f746bc66220229bdf608b0a718b00a666822b41d38c55dab1e041b85",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "marriage",
@@ -62,7 +62,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#5b05125a1c9e81d25d44",
     "recordSha256": "c686a3d0ed295a9b9f9f8c2cbf1a1aa87da2605b2f8c257ffe7d44847020c417",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "sourceType": "ISTJ",
       "targetType": "ENFP",
@@ -87,7 +87,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#bb5cae1a58466e6ff51a",
     "recordSha256": "8ea03cac8228b15a453591ff5d293066ae1f239f7263ad93d06ffeee97c968fd",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "marriage",
@@ -111,7 +111,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#04bdba29a1fd1c319537",
     "recordSha256": "c2b3fa8995fd97c1f07ebe066228f207c995f951049dee20c063308346ff51cf",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "marriage",
@@ -135,7 +135,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#a1a68eaef14705c10a5a",
     "recordSha256": "acb781ad7d08d4619019ec0329ccd1116427128b8d21c85df782d03ba444368b",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "sourceType": "ENTJ",
       "targetType": "INFP",
@@ -203,7 +203,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f3c3648ae7632ade1bdb",
     "recordSha256": "74f2d43e7103b436809d5e0d0ae2bb424b7fe42ad9c0efd463f86d87d14abbb5",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "marriage",
@@ -227,7 +227,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e79993a436c219093ea5",
     "recordSha256": "693787a8394b7d5bbbd290176b712bc259785aec77600cd7ade1b97d09bee411",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "marriage",
@@ -294,7 +294,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ab15fd60b429d7c073a5",
     "recordSha256": "b397131de4de278f264cb27ad007acb5ff3916c2f13ee2fd5be99df2b2ae57e5",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "marriage",
@@ -318,7 +318,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b42d6c513c37bfd7f4ee",
     "recordSha256": "eb112b9170ce7c200e7f54a1f774a34ba65746dee3a5756408b4820486609cfe",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "marriage",
@@ -342,7 +342,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#048c520649d4c0b898cb",
     "recordSha256": "8fa915357cd26e76fde0e4f1eb2712a3c3fa610f68c2f7160e26c901d77265f5",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "marriage",
@@ -366,7 +366,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#005c28927dc7664b56c9",
     "recordSha256": "4964ab41559728d701342d2f8e679a6c4d525f32cf78710acc06387195e5575e",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "marriage",
@@ -390,7 +390,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#ee40bc5fe87bf352f4b2",
     "recordSha256": "a8b677e84ed7fb52810a8bdcba694864f0d834fe6235240e4c4bae3444bdd95c",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "sourceType": "INTJ",
       "targetType": "ESFP",
@@ -415,7 +415,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#2126ddb8abe0645647b0",
     "recordSha256": "35a8458b8ea38e6a45401fc1618b7041accd0700035fee3779bbc15e55d99a4f",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "sourceType": "ESFP",
       "targetType": "INTJ",
@@ -440,7 +440,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#4438f18bddb2caa9cb2c",
     "recordSha256": "37b8cc7d7de2adf0f17088e80efc2d4d80a26378d477e56f285cb55aed2c3a0e",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "marriage",
@@ -464,7 +464,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#eb40d39f2065a867ad79",
     "recordSha256": "91bb027f959e53a6247fd2cc87107dc9298146f762e076b054b34f4af28b9ac5",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "sourceType": "ISFJ",
       "targetType": "ISFJ",
@@ -489,7 +489,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#793ccb7ecbcc8f1751b7",
     "recordSha256": "749cef6e591cb7486bb0afdba27be82e6e5c19f877468400ddaa064d7b4361b6",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "marriage",
@@ -513,7 +513,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#30b373f5892dd5de9b47",
     "recordSha256": "9c87a39b77f3a980c984cccbcdc66a691a808b41e0b7326d3d2e0893a3a6729f",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "marriage",
@@ -561,7 +561,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#4b07fe3f9004cfc8a777",
     "recordSha256": "a0659c73fc2615a3acdc6938acbd1cc6bd555c623826e7883b03cdf2e1ad081c",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "marriage",
@@ -585,7 +585,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d8ee6a6775c1d5a71420",
     "recordSha256": "461895020e434455c214e8e225844d78376e184abdcde3ba5fba64cc25f2d6f7",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "marriage",
@@ -715,7 +715,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ca7a14f7190d5daca6c5",
     "recordSha256": "493f6b153836895a93b31a45d9eb562ead0baa483ad647f13485ef02b6ca0586",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "marriage",
@@ -772,7 +772,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#657f0a60c702c59fd825",
     "recordSha256": "4581d1cf51b6c1ecd50a9c18e75e34cc32dc273e0ec1ee6bb9abd1d4e4c85c2d",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "marriage",
@@ -829,7 +829,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#3ec17287e2091c585ba3",
     "recordSha256": "ad4b2daca513ce6e62d2136898373f5d9efff855882fb4aaa34b613f7683ecc0",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "marriage",
@@ -853,7 +853,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#76e292b7c203da2c2773",
     "recordSha256": "20e474d0108c64a0f188fdd56f1f94d113a37a48092fc316903faed3520f5d42",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "marriage",
@@ -877,7 +877,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1a999512214f329e5c2f",
     "recordSha256": "ef16d6731766ebafd4b91c8ac19041135b98ce876aee4f98583cc78f06297e8f",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "marriage",
@@ -901,7 +901,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b12fea8ea813649979b7",
     "recordSha256": "13be088f77ac9e168e0f2b5410cf0dc9c4e2519bfe83bce9e4ee7b0b72911c45",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "marriage",
@@ -968,7 +968,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#65948269d71f3a38b299",
     "recordSha256": "68ceb82ef3cf8e10d7dfe76853d081e3b8dbac4d7d9a3bfb38c2a28bb5146e6a",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "type": "INTJ",
       "area": "marriage",
@@ -992,7 +992,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8670a7cd306dd817250d",
     "recordSha256": "d51a239f640da3e63334b31ff75a0fa672b59ef5927d7a66ab24e7062d652444",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "marriage",
@@ -1016,7 +1016,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#784d30632e34635a9483",
     "recordSha256": "ffd9f7afe4fc9afb7372c56e57c4f65b47fe4a3edd853166bb4b4f3d8c924dbf",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "marriage",
@@ -1064,7 +1064,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#1b7aeda1752892b8905a",
     "recordSha256": "371287ea2a795fe82ed89d1b7f3ba80ab423476e8036c23d31ccb9c4a51478f4",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "marriage",
@@ -1088,7 +1088,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ede67b716c40fbe4b6c4",
     "recordSha256": "df80bed4392e9dc5f4e9eef96bea628acfbfe743d1f9929edbb241d2fd87a506",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "marriage",
@@ -1145,7 +1145,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#aee3349d23ea4285cd4f",
     "recordSha256": "eac89e0f5338931695e4ef3df99ab9d5778fa458e156f70f4d86d3ddca5f0246",
-    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
     "originalState": {
       "type": "ISTP",
       "area": "marriage",
@@ -1169,7 +1169,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#0c283e400d1572c869f6",
     "recordSha256": "7cbff3be2c620c74087012f1835da9587f771f1856f11612df418fa615caa2c1",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "marriage",
@@ -1193,7 +1193,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#40735f88ad4496657858",
     "recordSha256": "42327aa9091efb00d83331e9daf695afd9a6455de14b8fafec607f08b27e2abe",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "marriage",
@@ -1217,7 +1217,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#24baf614208a551324d1",
     "recordSha256": "f84ec5149b65bf26cde8ecaf6caaf60b6752f4eb7ae1887b906fcbf97474d095",
-    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
     "originalState": {
       "type": "ENFJ",
       "area": "marriage",
@@ -1282,7 +1282,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#be9cb942010f0a199f50",
     "recordSha256": "d6ccc25156c6f099ee93604627f54b170bfe623e35be2798a99f673424ea6c4f",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "marriage",
@@ -1306,7 +1306,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#eca31a528cf641ff4613",
     "recordSha256": "8ae046d580bbb23c2fa7dbbbec36def568d9caa3ce6d899a554d8adcf598e719",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "marriage",
@@ -1330,7 +1330,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#ded637f612adcf59fb9e",
     "recordSha256": "8ce615a5706c602069d84e8f77ac4ed5c1526a75ce2da70288c115f67a9407c6",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "sourceType": "ISTJ",
       "targetType": "ESTJ",
@@ -1355,7 +1355,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#89937d49f294229349a1",
     "recordSha256": "98ca6088764f954649f35743594f3d46d2f3540095d95426b70100669d0e5c0c",
-    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
     "originalState": {
       "sourceType": "INTJ",
       "targetType": "ISTP",
@@ -1380,7 +1380,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#0f0ff8ddade0c147030c",
     "recordSha256": "ff2e4ab5f440297fd90c80b830687833eacfc3dbbb3a8c2deda4cb2b567750fc",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "type": "ENTP",
       "area": "marriage",
@@ -1404,7 +1404,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#68c947ef938994a1820b",
     "recordSha256": "5d97ac2459c4f4d2771cc501644ae139ca09f0d79b6539c023b8ca29ba789373",
-    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceFileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb",
     "originalState": {
       "sourceType": "ENTP",
       "targetType": "ISTJ",
@@ -1429,7 +1429,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#330a2038a4ac4d374d63",
     "recordSha256": "ebc37779643f0ad8c33793430db6209e44e8b84cd08ed13904381fd16604953d",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "type": "ESTJ",
       "area": "marriage",
@@ -1453,7 +1453,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f540c2b9bd61b95e125b",
     "recordSha256": "becb48f11e253f9d61f34f2ce800f6830481c7c41e48608fb6cd5872fc49c200",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "marriage",
@@ -1477,7 +1477,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#1dedd598164db82d6c12",
     "recordSha256": "1fb240d786005e4b9560b68f83fa3e616d9c77252538f0882b8bb8e2c5db307e",
-    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
     "originalState": {
       "sourceType": "ESTJ",
       "targetType": "INFJ",
@@ -1502,7 +1502,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#f0b80324251c43d5445c",
     "recordSha256": "18a8e017e672f182b9e13de8db1c677202085b016c2b2e4ff2f97b77b0596cd4",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "type": "INFP",
       "area": "marriage",
@@ -1526,7 +1526,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "mbti_pair_reference",
     "auditRef": "source-locator-audit.json#62346120b3910d5c9a8d",
     "recordSha256": "f2face37a889e91eadb8ce0b1e15c09d29c3cca31a58d1a0841e92d5fc0e404c",
-    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
     "originalState": {
       "sourceType": "INFP",
       "targetType": "INTJ",
@@ -1551,7 +1551,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#11b961b29814398740e5",
     "recordSha256": "0c8d2331162ffcae7502ee7fe2e00d904c4443cc59f7340d2258281c0eb6dc07",
-    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
     "originalState": {
       "type": "INFJ",
       "area": "marriage",
@@ -1575,7 +1575,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#ddc9ce0a084b0b51c3bf",
     "recordSha256": "0ef263c7cde1d15382f8cfbea0802ff93146b2731f8a0bde50f88da80b7afeca",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "marriage",
@@ -1642,7 +1642,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#c72ad7e4dbeab2b8b75f",
     "recordSha256": "bb2be1262557b0fef7b79cf90b22c16bd0a6d8ce28501d2a493c149e39ab68e9",
-    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
     "originalState": {
       "type": "ENFP",
       "area": "marriage",
@@ -1709,7 +1709,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d4a61263d8611202dcef",
     "recordSha256": "87cbf9a0cbf1a7548a41f5edf13e88e675ba3975661c454e36536fa049fceec6",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "marriage",
@@ -1766,7 +1766,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#b64fa2920704301bf622",
     "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
-    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
     "originalState": {
       "type": "ISTJ",
       "area": "money",
@@ -1790,7 +1790,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#7c9abcce396427f7c18f",
     "recordSha256": "0308fd2a0b97d336ac6eaceda0aeeac1269035d5e5657269b1dafbc702344fdd",
-    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
     "originalState": {
       "type": "ESTP",
       "area": "marriage",
@@ -1847,7 +1847,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#422820469afcb4fa68c4",
     "recordSha256": "fe5b69c754e660b449a888c37e15e06836f9d5113361a6dc70b391d996135a08",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "marriage",
@@ -1937,7 +1937,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#e880c2158a048d04ef23",
     "recordSha256": "a3c7f92d63b2581e183adba10d7adcaa384f5c30a832182dda2d062e963a9fd7",
-    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
     "originalState": {
       "type": "ESFP",
       "area": "marriage",
@@ -2123,7 +2123,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#bedf4254e50989e1a90e",
     "recordSha256": "54f2dd4eee0d92fddf167fe7e03f81999295b1f0423390070ba4074fd8e00d3b",
-    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
     "originalState": {
       "type": "INTP",
       "area": "marriage",
@@ -2147,7 +2147,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cd4db85b9a6b894d203d",
     "recordSha256": "adc316d67e25b86c76ec06283827ce8632265110b04626ac27f5098331820de5",
-    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
     "originalState": {
       "type": "ISFP",
       "area": "marriage",
@@ -2171,7 +2171,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#cb3b6a470f6c19c51cb3",
     "recordSha256": "0f1b4edf4a832a4f90749d5c9753e741c93cc24bfffe7a7395b7b38c09a45c4d",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "marriage",
@@ -2195,7 +2195,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#d153ad3866c0e6be677b",
     "recordSha256": "7cbd5556dc84cb2eadf7382fb519f26664630932ec8dedf429e121c1290c85aa",
-    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceFileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c",
     "originalState": {
       "type": "ENTJ",
       "area": "marriage",
@@ -2219,7 +2219,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#8656e8de7c812f74bbfc",
     "recordSha256": "2dbf9d37b4e78e09dfcb47c8da055c26029bddc7c9a1f3f7625c0e1ec7778773",
-    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
     "originalState": {
       "type": "ESFJ",
       "area": "marriage",
@@ -2243,7 +2243,7 @@ export const MARRIAGE_SOURCES: readonly ResearchSource[] = [
     "sourceKind": "individual_mbti",
     "auditRef": "source-locator-audit.json#23f1f8d8786e6f2f0de2",
     "recordSha256": "ab56f57b2d3d8f976609f721930f8a585a550841c575c3416c1a2644e96d49ca",
-    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
     "originalState": {
       "type": "ISFJ",
       "area": "marriage",

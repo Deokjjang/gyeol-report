@@ -24,7 +24,7 @@ export const AUGUST_CONTRACT = freeze({ version: "annual-august-conditional-dayu
   recordSha256: "b20fb8c21347dccfe1e0dfc36b1d2dc989fba861c548d70b22aa91d569128945",
   requires: ["selectedYear + actual civil month bounds", "every canonical segment", "actual uncertainty range if present + conditional counterpart cycle"] } as const);
 export const AUGUST_SOURCE_FILES = freeze({
-  "src/lib/interpretation-v4/annualEvidence.ts": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+  "src/lib/interpretation-v4/annualEvidence.ts": "11a74bd10e28546653725c59af931f7a18c1e67a218d1b0824b97f292c9513f1",
   "src/lib/saju/customerDayun.ts": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
   "src/lib/saju/calendarVersion.ts": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
   "src/lib/report-knowledge/annualMonthJie.ts": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",

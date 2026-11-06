@@ -1,0 +1,385 @@
+{
+ "case": "chaerin-love",
+ "label": "연애 · 문채린(연애 중)",
+ "reportId": "report_79bddc2009454193b286906927b461a5",
+ "status": "COMPLETED",
+ "wallMs": 113908,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 7,
+ "coverLine": "강변 숲을 적시는 물, 환자 곁의 다정한 손",
+ "keySpans": 25,
+ "sections": 27,
+ "chars": 10228,
+ "chapterChars": [
+  1474,
+  1001,
+  1132,
+  1170,
+  1158,
+  1111,
+  1097,
+  947,
+  1138
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 1,
+ "warnings": 31,
+ "forbiddenResidual": 1,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 1
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.004,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 113834,
+ "tokens": {
+  "input": 20107,
+  "output": 14127,
+  "cachedInput": 6800
+ },
+ "costUsd": 0.182164,
+ "costKrw": 264.1,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 94234,
+   "chars": 11312,
+   "maxTokens": 25183,
+   "usage": {
+    "inputTokens": 14954,
+    "outputTokens": 12149,
+    "cachedInputTokens": 6800
+   },
+   "costUsd": 0.152078
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 11492,
+   "chars": 1835,
+   "maxTokens": 3118,
+   "usage": {
+    "inputTokens": 5153,
+    "outputTokens": 1978,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.030086
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-21",
+ "knowledgeVersion": "knowledge-v5:567c4a02b174",
+ "p6b": {
+  "chars": 10667,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 2
+   },
+   {
+    "n": 2,
+    "count": 1
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 2
+   },
+   {
+    "n": 6,
+    "count": 1
+   },
+   {
+    "n": 7,
+    "count": 1
+   },
+   {
+    "n": 8,
+    "count": 1
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 2,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 8,
+   "misses": [
+    "음착양차살",
+    "귀문관살",
+    "원진살",
+    "식신",
+    "편관",
+    "봄의 임수",
+    "진토",
+    "임진"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 27,
+  "sectionsTotal": 27,
+  "byRule": {},
+  "coreImage": "강변 숲을 적시며 흐르는 큰 강",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "safety": 4,
+   "db_copy": 2,
+   "farming": 1,
+   "fragment": 3,
+   "time_deictic": 1,
+   "past_assertion": 2
+  },
+  "removed": 0,
+  "repaired": 12,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "safety": 1,
+   "past_assertion": 2
+  },
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 12,
+  "droppedParagraphs": 3
+ },
+ "ledger": {
+  "seeds": [
+   "ENFJ-love-30",
+   "ENFJ-relationships-03"
+  ],
+  "angles": [
+   "shinsal:EUMCHAK_YANGCHA:fusion:J",
+   "shinsal:GWIMUN:fusion:Ni",
+   "shinsal:WONJIN:fusion:ENFJ",
+   "tenGod:食神:fusion:ENFJ",
+   "climate:壬:spring:fusion:ENFJ",
+   "branch:辰:fusion:Fe",
+   "dayPillar:壬辰:fusion:ENFJ",
+   "shinsal:EUMCHAK_YANGCHA:shadow",
+   "dayPillar:壬辰:meaning",
+   "shinsal:WONJIN:meaning",
+   "shinsal:GWIMUN:meaning",
+   "branch:辰:meaning",
+   "tenGod:食神:meaning",
+   "shinsal:EUMCHAK_YANGCHA:meaning",
+   "climate:壬:spring:meaning"
+  ],
+  "evidence": [
+   "feature:shinsal:EUMCHAK_YANGCHA",
+   "feature:shinsal:GWIMUN",
+   "feature:shinsal:WONJIN",
+   "feature:tenGod:食神",
+   "feature:climate:壬:spring",
+   "feature:branch:辰",
+   "feature:dayPillar:壬辰",
+   "배우자 자리(태어난 날의 땅 글자)에는 흙(토) 기운의 글자가 앉아 있습니다. 그 속 기운은 편관이고, 이 기운은 압박 속에서도 결단하고 돌파하는 힘, 위기와 무거운 책임을 맡는 힘을 뜻합니다.",
+   "일지에 오면 본인과 배우자 자리에 젖은 땅이 놓입니다.",
+   "배우자 별 묶음(관성) 세기: 보통",
+   "배우자 별로 보는 기운(편관·정관)이 태어난 해·태어난 날 자리에 2번 보입니다.",
+   "자리: 배우자 별(편관·정관)이 태어난 해 하늘 글자·태어난 날 땅 글자에 드러나 있음",
+   "태어난 날 땅 글자의 십이운성: 묘(墓) — 모으고 지키고 오래 묵히는 성질을 뜻합니다.",
+   "연애 기능: 방 안의 기분을 온도계처럼 읽습니다. 누가 말을 삼켰는지, 누가 겉돌고 있는지 먼저 보이고 그 사람을 대화 안으로 데려옵니다. / 사람의 내일을 봅니다. 지금은 서툰 후배가 2년 뒤 어떤 모습일지 그려지고, 그 그림을 본인에게 직접 말해 줍니다.",
+   "나무(목)가 강한 쪽: 다정하게 챙기면서 함께할 앞날 이야기를 먼저 꺼내는 첫인상",
+   "불(화)이 약한 쪽: 처음엔 조용하지만 알수록 따뜻함이 드러나는 첫인상",
+   "식신(食神): 맛있는 걸 먹이고 챙기는 다정함 → 같이 있으면 편해지는 사람",
+   "식상(표현하는 힘) 강",
+   "나무(목)가 강한 쪽: 요즘 배우는 것·새로 시작한 일로 자라는 중인 모습 드러내기",
+   "불(화)이 약한 쪽: 밝은 표정 사진 한 장으로 차분한 글의 온도를 보완",
+   "나무(목)가 강한 쪽: 상대 관심사를 넓혀 주는 질문으로 대화를 이끄는 30분",
+   "불(화)이 약한 쪽: 말수가 적을 때 → 상대 말을 이어 받는 질문으로 온기 전하기",
+   "추진력이 있고 결단이 빠른 사람(편관) — 명리: 배우자 별로 보는 기운 가운데 이 사람에게 가장 뚜렷한 쪽",
+   "추진력이 있고 결단이 빠른 사람(편관) — 명리: 배우자 자리(태어난 날의 땅 글자) 속 기운",
+   "통념상 잘 맞는 조합: INTJ — 멀리 내다보는 상대와 함께 있으면 당신의 이상이 현실의 계획이 됩니다",
+   "통념상 잘 맞는 조합: INTP — 깊이 파고드는 상대의 질문이 당신의 생각을 더 넓혀 줍니다",
+   "통념상 잘 맞는 조합: ENTJ — 목표를 향해 같이 달리면 당신의 공감과 상대의 추진력이 서로를 키웁니다",
+   "통념상 맞추는 데 노력이 드는 조합: ISTJ — 말보다 행동으로 답하는 상대라 당신의 마음 표현이 닿기까지 시간이 걸립니다",
+   "통념상 맞추는 데 노력이 드는 조합: ISFJ — 서로 맞춰 주려다 정작 속마음은 아끼게 되는 조합입니다",
+   "관계 상태: 연애 중",
+   "피해야 할 신호: 늘 위기 상황이라 내가 끌어 주길 기대하는 흐름",
+   "피해야 할 신호: 고민 상담만 받고 내 조언은 흘려들음",
+   "점검: 내 이야기에 후속 질문이 돌아오는지 보기",
+   "상황 씨앗: 서로 다른 점 목록",
+   "상황 씨앗: 맞는 점 고마운 점 말하기",
+   "호감 표현: 식신 쪽은 좋아하는 사람에게는 맛있는 것부터 먹이고 싶어지는 편입니다. / ENFJ 쪽은 좋아하면 상대의 마음을 먼저 읽고, 필요한 말을 따뜻하게 건네며 다가갑니다.",
+   "호감 표현 장면: 마음에 든 사람이 생기면 맛집부터 검색합니다. 같이 먹으며 웃는 얼굴을 보는 것이 가장 큰 기쁨입니다.",
+   "식신(食神): 직접 만든 음식이나 작은 선물로 마음 먼저 전함 → 말은 그다음",
+   "식신(食神): 밥은 먹었는지 묻는 일상 체크 메시지 → 생활 리듬을 맞춰 주는 연락",
+   "편관(偏官): 짧고 굵은 용건 중심 연락 → 무심해 보일 수 있어 한마디 안부 추가",
+   "상황 씨앗: 굿나잇 메시지 습관",
+   "상황 씨앗: 다툰 뒤 첫 메시지",
+   "식신(食神): 돌봐 주며 애정을 확인하는 애착 → 챙김이 당연해지면 지치는 지점",
+   "편관(偏官): 끌림과 긴장이 함께 오는 애착 → 롤러코스터 같은 관계에 익숙해지기 쉬움",
+   "식신(食神): 동네 맛집 탐방·홈쿡·한강 피크닉처럼 먹고 쉬는 데이트",
+   "관계 신살: 원진살(怨嗔殺) → 혼자 정리하는 시간이 필요한 쪽",
+   "식신(食神): 갈등을 맛있는 걸로 넘기려는 경향 → 할 말은 식사 뒤 따로 꺼내기",
+   "편관(偏官): 압박감 느끼면 말수가 줄고 표정이 굳는 모습 → 혼자 정리할 시간 요청",
+   "태어난 날 땅 글자의 辰亥원진(태어난 시각과): WONJIN",
+   "관계가 위험할 때의 신호: 초반부터 같이 사업하거나 돈을 묶자는 제안",
+   "점검: 내가 해 준 만큼 작은 것이라도 돌아오는지 보기",
+   "정관 약함: 형식보다 둘만의 방식으로",
+   "재성 약: 돈 이야기를 미루기 쉬움 → 처음부터 규칙으로",
+   "상황 씨앗: 함께 모을 돈 이야기",
+   "상황 씨앗: 같이 살 동네 후보",
+   "조건형: '함께 살게 된다면'",
+   "자녀 별로 보는 기운(식신·상관)이 태어난 달·태어난 해 자리에 3번 보입니다.",
+   "그중 식신은 좋아하는 일을 온화하게 꾸준히 만들어 내는 힘과 먹고사는 솜씨, 여유를 뜻합니다.",
+   "자녀 별 묶음(식상) 세기: 강",
+   "자녀 자리(태어난 시각의 땅 글자)에는 물(수) 기운의 글자가 앉아 있습니다. 그 속 기운은 비견이고, 이 기운은 자기 힘으로 서려는 자립심과 어깨를 나란히 하는 동료 관계를 뜻합니다.",
+   "자녀: 입력 없음 → '아이를 키우게 된다면'으로",
+   "상황 씨앗: 원하는 양육 분위기",
+   "상황 씨앗: 맞벌이 육아 상상",
+   "2028년 무신 편관(偏官): 배우자 별 쪽 기운이 들어오는 해(만남·관계의 일이 앞에 오는 경향, 시기 단정 금지)",
+   "2029년 기유 정관(正官): 배우자 별 쪽 기운이 들어오는 해(만남·관계의 일이 앞에 오는 경향, 시기 단정 금지)",
+   "지금 대운: 정인(正印)(2021~2030) — 관계는 이 흐름의 경향으로만",
+   "2026년 편재(偏財): 현실 일이 늘어나는 해",
+   "2027년 정재(正財): 현실 일이 늘어나는 해",
+   "2028년 편관(偏官): 관계 쪽 기운",
+   "상황 씨앗: 서로 친구 소개 자리",
+   "상황 씨앗: 관계 목표 한 가지 정하기",
+   "첫 달(2026년 11월) 행동 하나"
+  ],
+  "newShare": 1
+ }
+}

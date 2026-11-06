@@ -26,7 +26,7 @@ export async function createAnnualV3(payload: unknown, options: { now?: () => Da
   const now = options.now?.() ?? new Date();
   // Commerce acceptance date continues to control allowed years. Reading time
   // comes from the server separately; no payload field controls the clock.
-  const generated = await generateAnnualFortuneProductDraft(input.value, { now: () => options.policyDate ?? now, writer: { enabled: false } });
+  const generated = await generateAnnualFortuneProductDraft(input.value, { now: () => options.policyDate ?? now });
   if (!generated.ok) return null;
   const calculation = calculateAnnualFortuneSaju(input.value.person), base = generated.evidencePacket as AnnualFortuneEvidencePacket;
   const packet = { ...base, calendarCalculationVersion: SAJU_CALENDAR_VERSION, natalTableEvidence: buildProductNatalTables(base) };

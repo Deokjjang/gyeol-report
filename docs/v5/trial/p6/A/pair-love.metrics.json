@@ -1,0 +1,84 @@
+{
+ "case": "pair-love",
+ "label": "궁합 연애 · 하람×서윤",
+ "which": "A",
+ "provider": "anthropic",
+ "model": "claude-sonnet-5-5",
+ "reportId": "report_1e499d2fe41a41b98f7d6cd8fcabf767",
+ "status": "COMPLETED",
+ "wallMs": 77080,
+ "chars": 9612,
+ "chapterChars": [
+  1125,
+  1068,
+  1043,
+  1064,
+  1029,
+  1106,
+  995,
+  1042,
+  1140
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 14,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.093,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 77050,
+ "tokens": {
+  "input": 18864,
+  "output": 10830,
+  "cachedInput": 5258
+ },
+ "costUsd": 0.1465538,
+ "costKrw": 212.5,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 76538,
+   "chars": 9995,
+   "maxTokens": 16088,
+   "usage": {
+    "inputTokens": 18864,
+    "outputTokens": 10830,
+    "cachedInputTokens": 5258
+   },
+   "costUsd": 0.1465538
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-13",
+ "knowledgeVersion": "knowledge-v5:aa3e77f9f529"
+}

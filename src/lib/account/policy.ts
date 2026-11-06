@@ -5,9 +5,13 @@ export const ACCOUNT_POLICY_VERSIONS = { terms: CHECKOUT_POLICY_VERSIONS.terms, 
 export const ACCOUNT_PROVIDERS = ["kakao", "google"] as const;
 export type AccountProvider = typeof ACCOUNT_PROVIDERS[number];
 export type ConsentRecord = { consent_type: "terms" | "privacy" | "marketing"; document_version: string; is_agreed: boolean; required: boolean; recorded_at: string };
-export type AccountIdentity = { id: string; displayName: string; provider: AccountProvider; createdAt?: string };
-export type AccountSnapshot = { profile: AccountIdentity | null; consents: ConsentRecord[] };
-export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string } };
+/** email·emailVerified·kakaoId: 로그인 공급자가 준 값(P6d-ops). Supabase auth의 email은 읽기만 한다. */
+export type AccountIdentity = { id: string; displayName: string; provider: AccountProvider; createdAt?: string; email?: string | null; emailVerified?: boolean; kakaoId?: string | null; lastSignInAt?: string | null };
+/** contact: 가입 정보(P6d-ops 2). undefined = 저장소가 모름(로컬 검수 포트), null = 아직 입력 안 함. */
+export type AccountContact = { name: string; email: string; upgradeState?: "none" | "eligible" | "granted" };
+export type AccountSnapshot = { profile: AccountIdentity | null; consents: ConsentRecord[]; contact?: AccountContact | null };
+/** profile: 회원의 가입 정보 상태(required면 결제·이용권 사용만 막는다). upgradeState: 업그레이드 이용권 자격(지급은 P6c). */
+export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string }; profile?: "complete" | "required"; upgradeState?: "none" | "eligible" | "granted" };
 export const GUEST_SESSION: AccountSession = { status: "guest" };
 
 // Records arrive newest first (DB monotonic id, not a client timestamp).
@@ -19,7 +23,22 @@ export function needsRequiredReconsent(records: readonly ConsentRecord[]): boole
 }
 export function accountSession(identity: AccountIdentity | null, snapshot?: AccountSnapshot): AccountSession {
   if (!identity) return GUEST_SESSION;
-  return { status: !snapshot?.profile || needsRequiredReconsent(snapshot.consents) ? "needs_consent" : "member", displayName: snapshot?.profile?.displayName ?? identity.displayName };
+  const status = !snapshot?.profile || needsRequiredReconsent(snapshot.consents) ? "needs_consent" : "member";
+  const contact = snapshot?.contact;
+  return { status, displayName: snapshot?.profile?.displayName ?? identity.displayName,
+    ...(status === "member" && contact !== undefined ? { profile: contact ? "complete" as const : "required" as const, ...(contact?.upgradeState ? { upgradeState: contact.upgradeState } : {}) } : {}) };
+}
+/**
+ * 산 책 열람(최종판3 1-7): 약관 문서 버전이 바뀌어 재동의가 필요해도, 예전에 필수 동의(약관·개인정보)를 마친 회원은
+ * 이미 산 책(결제 책·이용권 책)을 그대로 읽는다. 새 결제·이용권 사용·공유 링크 발급은 지금처럼 재동의 뒤에만 된다.
+ * 각 종류의 가장 최근 기록(최신순)이 동의(필수)여야 한다 — 동의를 거둔 회원은 읽지 못한다.
+ */
+export function mayReadOwnedBooks(identity: AccountIdentity | null, snapshot?: AccountSnapshot | null): boolean {
+  if (!identity || !snapshot?.profile) return false;
+  return (Object.keys(ACCOUNT_POLICY_VERSIONS) as Array<keyof typeof ACCOUNT_POLICY_VERSIONS>).every(type => {
+    const latest = snapshot.consents.find(r => r.consent_type === type);
+    return !!latest?.is_agreed && latest.required;
+  });
 }
 export function safeAccountNext(value: unknown, local = false): string {
   const fallback = local ? "/dev/account" : "/account";
@@ -32,6 +51,8 @@ export function safeAccountNext(value: unknown, local = false): string {
   const allowed = local ? ["/dev/account", "/dev/account/tickets", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/account/tickets", "/", "/report/new"];
   const report = local ? /^\/dev\/book-flow\/report\/(?:book-local-[a-f0-9-]{36}|report_[a-z0-9_-]{13,80})$/i : /^\/reports\/report_[a-z0-9_-]{13,80}$/i;
   if (report.test(value)) return value;
+  // P6d-ops 6: 선물 링크(로그인 뒤 돌아와 받기).
+  if (!local && /^\/gift\/[A-Za-z0-9_-]{32}$/.test(value)) return value;
   return allowed.includes(value) ? value : fallback;
 }
 export function safeDisplayName(value: unknown): string {

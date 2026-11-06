@@ -7,15 +7,15 @@
         "exportName": "CH10_MATERIALS",
         "index": 6,
         "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
-        "recordSha256": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+        "recordSha256": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-        "fileSha256": "b773c3b26896810f5f9a39c5da22415dbfe23607e063d1a1c2cc262e0c1c3e5f"
+        "fileSha256": "6126c5c9266437b45c072c218cb0e3b6139ff99aa452e4927655db2430ace329"
       },
       "matchedCatalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
       "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
       "role": "ORIGINAL_RECORD",
-      "expectedHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
-      "actualHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "expectedHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
+      "actualHash": "421ed9939234e76cb74b32bcafd2605036f508376f4d00a9c973937e2ab7bf4c",
       "hashAlgorithm": "SHA256_JSON_INSERTION",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -57,7 +57,7 @@
             "originalId": "strategic_romance_awkwardness",
             "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+            "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
           },
           "matchedCatalogKey": "kc:v1:7e8530e30ab5068dd8dd67613a5202c31ccdf81c7516772493f4c885b09f0781",
           "originalId": "strategic_romance_awkwardness",
@@ -157,7 +157,7 @@
             "originalId": "ckr:source:47fcf46be449c285af54",
             "recordSha256": "d20db3c1d96e7a19c8ad8491041663f62eaa1db401649d3bfd1a0b99bfc2c265",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:8a5586196e0e5b92b3b1fcb540833b19cd5a3bd26c10dd211b7c5be0377c52f1",
           "originalId": "ckr:source:47fcf46be449c285af54",
@@ -202,7 +202,7 @@
           "exportName": "LOVE_SOURCE_REGISTRY",
           "index": 103,
           "originalId": "lkr:source:10d4177606458102491b",
-          "recordSha256": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
+          "recordSha256": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -219,7 +219,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#10d4177606458102491b",
           "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -232,15 +232,15 @@
             "exportName": "LOVE_SOURCE_REGISTRY",
             "index": 103,
             "originalId": "lkr:source:10d4177606458102491b",
-            "recordSha256": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
+            "recordSha256": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "7dad6d648f063e5f27625564138740e516e0e345f753acd8c0190398faea5a24"
+            "fileSha256": "6399fba910f66edd4af95ba589a489f1b94029f8be9e949c70aaaf049a4e089e"
           },
           "matchedCatalogKey": "kc:v1:0776560f3d9f9fc18cf5c2ea81745264e2e5a69f4aa7e0a2d8fad70d43e63ce4",
           "originalId": "lkr:source:10d4177606458102491b",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
-          "actualHash": "8cafe1f1b30a8afcb7bc2909489c8bd009ea6498a27545d7d833f4866930768a",
+          "expectedHash": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
+          "actualHash": "66f90447ff0651685af42e8758b37ecf7f8316ef79492dd50a6444c46f737dd5",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -281,7 +281,7 @@
             "originalId": "autonomy_parent",
             "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed",
           "originalId": "autonomy_parent",
@@ -353,7 +353,7 @@
             "originalId": "slow_trust_love",
             "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+            "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
           },
           "matchedCatalogKey": "kc:v1:1e8ae08e6aaae15b139acb3765f1cc1097148868213f7dc4bbf3efbd0746951c",
           "originalId": "slow_trust_love",
@@ -399,7 +399,7 @@
             "originalId": "active_affection",
             "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+            "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
           },
           "matchedCatalogKey": "kc:v1:8a8a92ae489394fb8551f54e4bc8d1e53d671dce7b285130f8e097f6a62be105",
           "originalId": "active_affection",
@@ -419,7 +419,7 @@
           "exportName": "LOVE_PAIR_SOURCES",
           "index": 22,
           "originalId": "clr:source:d048a1db929d8e81a67f",
-          "recordSha256": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
+          "recordSha256": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -435,7 +435,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#d048a1db929d8e81a67f",
           "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "love",
@@ -450,15 +450,15 @@
             "exportName": "LOVE_PAIR_SOURCES",
             "index": 22,
             "originalId": "clr:source:d048a1db929d8e81a67f",
-            "recordSha256": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
+            "recordSha256": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c0f13c42e8553ec7df28b1c60ddd307d92f87cec9324b144394e2371f19116a1"
+            "fileSha256": "3970ee8cb73e5889e6fa791a26fa568de3ce9c4797dd5e2a6717c3fe6a1076e1"
           },
           "matchedCatalogKey": "kc:v1:93b2c7c8ea249d16855919bfc114efb690c83735666230ab9538c9d1fac0bf31",
           "originalId": "clr:source:d048a1db929d8e81a67f",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
-          "actualHash": "bc9b3cb7bcdcea27bb3df4e25fee4ff931ed72341cd1f5a041de028bf02d177b",
+          "expectedHash": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
+          "actualHash": "ec64dbc87dbd6ca35d335d342067818b18a7203142e0e90ec1d60c1a41f8e4d0",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -472,7 +472,7 @@
           "exportName": "LOVE_PAIR_SOURCES",
           "index": 62,
           "originalId": "clr:source:d88467512c1c5489e7d0",
-          "recordSha256": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
+          "recordSha256": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -488,7 +488,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#d88467512c1c5489e7d0",
           "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "type": "ESTP",
             "area": "love",
@@ -503,15 +503,15 @@
             "exportName": "LOVE_PAIR_SOURCES",
             "index": 62,
             "originalId": "clr:source:d88467512c1c5489e7d0",
-            "recordSha256": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
+            "recordSha256": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c0f13c42e8553ec7df28b1c60ddd307d92f87cec9324b144394e2371f19116a1"
+            "fileSha256": "3970ee8cb73e5889e6fa791a26fa568de3ce9c4797dd5e2a6717c3fe6a1076e1"
           },
           "matchedCatalogKey": "kc:v1:aba606af9baa9a3d6251e069fbfb1c9d5bc891c732be67c2d5db63e69b7b459f",
           "originalId": "clr:source:d88467512c1c5489e7d0",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
-          "actualHash": "5c051550b90f08cfdda24d4d3971dcad60a40455f406912991856f6169db653e",
+          "expectedHash": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
+          "actualHash": "3f38f892d444d27cae9e7943e5ea6f149279a17d76d968a5fa73fb77f8788b67",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -615,7 +615,7 @@
             "originalId": "pcpr:source:58ee6bd5417794df4aec",
             "recordSha256": "6519746e5b04383b8c3fc482c7e8536c576b1a89e4627e2f937b2fcdca105c09",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+            "fileSha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
           },
           "matchedCatalogKey": "kc:v1:1d4ef10327198fbdcd1af46226fcca027b34ef6fec69931f416515bef5f62c78",
           "originalId": "pcpr:source:58ee6bd5417794df4aec",
@@ -702,7 +702,7 @@
             "originalId": "cwpr:source:607d86e676269d444952",
             "recordSha256": "0f21b5af66900ac040b9b90b57b646d77be8cd2521efe4e57a964278057cdc4e",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:7120d4667501cab0b7ae638d0fb9b4a50168ccefc7ba454253738c3dcbb524e4",
           "originalId": "cwpr:source:607d86e676269d444952",
@@ -764,7 +764,7 @@
             "originalId": "cwpr:source:0388561cdeef5da930d4",
             "recordSha256": "133a1b6c41cb3d7c22a77dcd3e7a94d29430630a986a82dcdb2a1edae7b727bb",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:efbaf37ccfa9fcaabada049cb484a9472a3c9e97d4bbe9b13a22e6b1c6a896e6",
           "originalId": "cwpr:source:0388561cdeef5da930d4",
@@ -1459,15 +1459,15 @@
         "exportName": "CH04_MATERIALS",
         "index": 3,
         "originalId": "cpr:material:CH04.P2:private-criteria",
-        "recordSha256": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+        "recordSha256": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-        "fileSha256": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096"
+        "fileSha256": "491dcd1c28db6ac860646e9b24bec01a2a53b89767e303502c33076578df0b02"
       },
       "matchedCatalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
       "originalId": "cpr:material:CH04.P2:private-criteria",
       "role": "ORIGINAL_RECORD",
-      "expectedHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
-      "actualHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "expectedHash": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
+      "actualHash": "1e1afa82cd69ede499f81c0e65c88c67183dc64e27a27f7be5f9ea0412f067da",
       "hashAlgorithm": "SHA256_JSON_INSERTION",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -1510,7 +1510,7 @@
             "originalId": "independent_decision_maker",
             "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+            "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
           },
           "matchedCatalogKey": "kc:v1:33d2e49de60964d28129175a8d9e5910c9c920f910bbd0bcfae358db65d6c6c4",
           "originalId": "independent_decision_maker",
@@ -1532,15 +1532,15 @@
         "exportName": "CH04_MATERIALS",
         "index": 8,
         "originalId": "cpr:material:CH04.P3:firm-boundary-close",
-        "recordSha256": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+        "recordSha256": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
         "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-        "fileSha256": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096"
+        "fileSha256": "491dcd1c28db6ac860646e9b24bec01a2a53b89767e303502c33076578df0b02"
       },
       "matchedCatalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
       "originalId": "cpr:material:CH04.P3:firm-boundary-close",
       "role": "ORIGINAL_RECORD",
-      "expectedHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
-      "actualHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "expectedHash": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
+      "actualHash": "6ebdc82f0ff47bbb0446fe9ab46dd4f38792b130f8c2b03ada6d9df54464543f",
       "hashAlgorithm": "SHA256_JSON_INSERTION",
       "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
       "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -1583,7 +1583,7 @@
             "originalId": "warm_but_selective_cutoff",
             "recordSha256": "18c723e122ea6f08084a0a002c61b2ef92a36d4ac4fb53f186d625f50dd088f4",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+            "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
           },
           "matchedCatalogKey": "kc:v1:16bd3948022615e9dcae69f4d966712da3919ad48eff578603dae41868eca3b4",
           "originalId": "warm_but_selective_cutoff",
@@ -1658,7 +1658,7 @@
             "originalId": "ckr:source:079248d9db39848db6cd",
             "recordSha256": "d7b66f296d4b01775e28100716692a35b20be0b8e8558b5d1dbb889fcac714d2",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:0050ba87b4af2f3a4549fea9e9d9d8ef28358cd28672fcdea646ad75f9bd922b",
           "originalId": "ckr:source:079248d9db39848db6cd",
@@ -1812,7 +1812,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 52,
           "originalId": "ckr:source:9c00dd07d98a425ce1c5",
-          "recordSha256": "d8f55562e51c95f96266cfaf2d3ea5aa314f1ebc1e58700ddbba965a1180aae4",
+          "recordSha256": "573f81dde428e6d8be7e9464ec746920af5ec2af6ef88efc55b2031da8a8dda5",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -1829,7 +1829,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#9c00dd07d98a425ce1c5",
           "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
-          "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+          "sourceFileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFJ",
@@ -1842,15 +1842,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 52,
             "originalId": "ckr:source:9c00dd07d98a425ce1c5",
-            "recordSha256": "d8f55562e51c95f96266cfaf2d3ea5aa314f1ebc1e58700ddbba965a1180aae4",
+            "recordSha256": "573f81dde428e6d8be7e9464ec746920af5ec2af6ef88efc55b2031da8a8dda5",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:3c0b7f3ad4a3f443082dac8ef8e4016a71a46df219829bb2c3be69daa5687469",
           "originalId": "ckr:source:9c00dd07d98a425ce1c5",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "d8f55562e51c95f96266cfaf2d3ea5aa314f1ebc1e58700ddbba965a1180aae4",
-          "actualHash": "d8f55562e51c95f96266cfaf2d3ea5aa314f1ebc1e58700ddbba965a1180aae4",
+          "expectedHash": "573f81dde428e6d8be7e9464ec746920af5ec2af6ef88efc55b2031da8a8dda5",
+          "actualHash": "573f81dde428e6d8be7e9464ec746920af5ec2af6ef88efc55b2031da8a8dda5",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -1961,7 +1961,7 @@
             "originalId": "relationship_service_revenue",
             "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+            "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
           },
           "matchedCatalogKey": "kc:v1:71b1e0fe3420c4fec6add10e780c4ff2aed870675b430c6e526c6a96f4f62b8a",
           "originalId": "relationship_service_revenue",
@@ -2008,7 +2008,7 @@
             "originalId": "responsive_team_needed",
             "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+            "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
           },
           "matchedCatalogKey": "kc:v1:7df45e45f87711c5b23f7bfde4216e363d7ebadd41a13fac2bf08ebe91d74228",
           "originalId": "responsive_team_needed",
@@ -2028,7 +2028,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 20,
           "originalId": "ckr:source:0b4c5f82e25554523be7",
-          "recordSha256": "e8086ac69adc4f25d787caed39e87c61cc2458441ad5addce1846d52ff082e4d",
+          "recordSha256": "f853908047b1cf29ece034819345f849fb3790f7a300b18f7716a477010f3667",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2045,7 +2045,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#0b4c5f82e25554523be7",
           "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFP",
@@ -2058,15 +2058,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 20,
             "originalId": "ckr:source:0b4c5f82e25554523be7",
-            "recordSha256": "e8086ac69adc4f25d787caed39e87c61cc2458441ad5addce1846d52ff082e4d",
+            "recordSha256": "f853908047b1cf29ece034819345f849fb3790f7a300b18f7716a477010f3667",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:b17fed561d2d9f9ae9e7f7a07b670755aed953d8676e0c12d8d6caae0e77e0c5",
           "originalId": "ckr:source:0b4c5f82e25554523be7",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "e8086ac69adc4f25d787caed39e87c61cc2458441ad5addce1846d52ff082e4d",
-          "actualHash": "e8086ac69adc4f25d787caed39e87c61cc2458441ad5addce1846d52ff082e4d",
+          "expectedHash": "f853908047b1cf29ece034819345f849fb3790f7a300b18f7716a477010f3667",
+          "actualHash": "f853908047b1cf29ece034819345f849fb3790f7a300b18f7716a477010f3667",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2115,7 +2115,7 @@
             "originalId": "ckr:source:e2ed5b09b1f8185708cd",
             "recordSha256": "f4c951e22b882c24983c81ad97a0bea5698f6b262e589a44db075fcf57a98c89",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:f6ca029c2f90148c0a2ac9bb2777ddb0d45cebaa554227f3c3d7475d60f09a8e",
           "originalId": "ckr:source:e2ed5b09b1f8185708cd",
@@ -2190,7 +2190,7 @@
             "originalId": "ckr:source:079248d9db39848db6cd",
             "recordSha256": "d7b66f296d4b01775e28100716692a35b20be0b8e8558b5d1dbb889fcac714d2",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:0050ba87b4af2f3a4549fea9e9d9d8ef28358cd28672fcdea646ad75f9bd922b",
           "originalId": "ckr:source:079248d9db39848db6cd",
@@ -2344,7 +2344,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 29,
           "originalId": "ckr:source:53113e9ff18319b22c8a",
-          "recordSha256": "9a530b0d2a5f30dde8e531f90e0c89fdb1f5046e10ff5e6567b3742f99b376d0",
+          "recordSha256": "b21e75e2bcc6389b32c34ed1fc3aa6f5f205747332d0b9426e273b2af257e90a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2361,7 +2361,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#53113e9ff18319b22c8a",
           "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
-          "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+          "sourceFileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISTJ",
@@ -2374,15 +2374,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 29,
             "originalId": "ckr:source:53113e9ff18319b22c8a",
-            "recordSha256": "9a530b0d2a5f30dde8e531f90e0c89fdb1f5046e10ff5e6567b3742f99b376d0",
+            "recordSha256": "b21e75e2bcc6389b32c34ed1fc3aa6f5f205747332d0b9426e273b2af257e90a",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:0750f2d42b4e49665bd9b52b06d0e06eff5f83361bdcfbb602c0f5b8300da9de",
           "originalId": "ckr:source:53113e9ff18319b22c8a",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "9a530b0d2a5f30dde8e531f90e0c89fdb1f5046e10ff5e6567b3742f99b376d0",
-          "actualHash": "9a530b0d2a5f30dde8e531f90e0c89fdb1f5046e10ff5e6567b3742f99b376d0",
+          "expectedHash": "b21e75e2bcc6389b32c34ed1fc3aa6f5f205747332d0b9426e273b2af257e90a",
+          "actualHash": "b21e75e2bcc6389b32c34ed1fc3aa6f5f205747332d0b9426e273b2af257e90a",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2396,7 +2396,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 87,
           "originalId": "ckr:source:2f83590d0543224f2684",
-          "recordSha256": "97a1ffe554251e705c8e2ac2e5289929f9a34f96f65a30225eebda11a664c9db",
+          "recordSha256": "0fef9bd57e6471894db29663f940d61476fefa8ac2ab834116d99189149611a9",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2413,7 +2413,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#2f83590d0543224f2684",
           "recordSha256": "d530f80264012752e9baf5dd721d4f5ffad37adb069b34fdc8b1fd757a671620",
-          "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+          "sourceFileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTP",
@@ -2426,15 +2426,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 87,
             "originalId": "ckr:source:2f83590d0543224f2684",
-            "recordSha256": "97a1ffe554251e705c8e2ac2e5289929f9a34f96f65a30225eebda11a664c9db",
+            "recordSha256": "0fef9bd57e6471894db29663f940d61476fefa8ac2ab834116d99189149611a9",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:123c7b8d687d8fe2d5cc23a22e5df80b36d3445c230f924c9c46503a6768bb2b",
           "originalId": "ckr:source:2f83590d0543224f2684",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "97a1ffe554251e705c8e2ac2e5289929f9a34f96f65a30225eebda11a664c9db",
-          "actualHash": "97a1ffe554251e705c8e2ac2e5289929f9a34f96f65a30225eebda11a664c9db",
+          "expectedHash": "0fef9bd57e6471894db29663f940d61476fefa8ac2ab834116d99189149611a9",
+          "actualHash": "0fef9bd57e6471894db29663f940d61476fefa8ac2ab834116d99189149611a9",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2448,7 +2448,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 104,
           "originalId": "ckr:source:331d66e109fedda15aa9",
-          "recordSha256": "5c251eb67a5bd3bbe8a9daf8715bb5d2a0d126398a35c66c0c79f5ae69bd988d",
+          "recordSha256": "0c1647f03b59d7945939249522a494eda47664d09a43df0ff60a90c04a17ca08",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2465,7 +2465,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#331d66e109fedda15aa9",
           "recordSha256": "c0cdf4b5e294a122133295ae3fbf0b7502d6ed3b1c5e463241d24a9730b77bb8",
-          "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+          "sourceFileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESTP",
@@ -2478,15 +2478,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 104,
             "originalId": "ckr:source:331d66e109fedda15aa9",
-            "recordSha256": "5c251eb67a5bd3bbe8a9daf8715bb5d2a0d126398a35c66c0c79f5ae69bd988d",
+            "recordSha256": "0c1647f03b59d7945939249522a494eda47664d09a43df0ff60a90c04a17ca08",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:1290346b625cc82aa7475305bcd6d6f996d821741afcf1b023d67f3d5f93fa07",
           "originalId": "ckr:source:331d66e109fedda15aa9",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "5c251eb67a5bd3bbe8a9daf8715bb5d2a0d126398a35c66c0c79f5ae69bd988d",
-          "actualHash": "5c251eb67a5bd3bbe8a9daf8715bb5d2a0d126398a35c66c0c79f5ae69bd988d",
+          "expectedHash": "0c1647f03b59d7945939249522a494eda47664d09a43df0ff60a90c04a17ca08",
+          "actualHash": "0c1647f03b59d7945939249522a494eda47664d09a43df0ff60a90c04a17ca08",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2527,7 +2527,7 @@
             "originalId": "interest_switch_learning",
             "recordSha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+            "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
           },
           "matchedCatalogKey": "kc:v1:15f59247ac362c9ba7865709a49c46c009a99e07a9c09a21a5dbec3b8e1b8722",
           "originalId": "interest_switch_learning",
@@ -2575,7 +2575,7 @@
             "originalId": "tool_hobby_budget_limit",
             "recordSha256": "9bfabd9a26bb34191d2fd8b66e3d342bc5c819f198348582b906763a720cfa3d",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+            "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
           },
           "matchedCatalogKey": "kc:v1:1a850398ee1580ad69a51d1d9992ac8eaacde13888c0c2859a53d22c3397a7c7",
           "originalId": "tool_hobby_budget_limit",
@@ -2620,7 +2620,7 @@
             "originalId": "collaborative_environment",
             "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+            "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
           },
           "matchedCatalogKey": "kc:v1:1f5f6f3c964b3e86f13af856e4a71cc3035953508238ce7129956743e1cc452b",
           "originalId": "collaborative_environment",
@@ -2667,7 +2667,7 @@
             "originalId": "calm_deep_work",
             "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+            "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
           },
           "matchedCatalogKey": "kc:v1:2441d036892996e6bf4044987c7fcd2b5952be245cce0561deb0fa46be1eff1b",
           "originalId": "calm_deep_work",
@@ -2714,7 +2714,7 @@
             "originalId": "storytelling_learning",
             "recordSha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:2af2ab3622905708f78f1d5bd94a921267e4cd9bfce2ccb2a70a6870f56afaca",
           "originalId": "storytelling_learning",
@@ -2762,7 +2762,7 @@
             "originalId": "care_labor_underpricing",
             "recordSha256": "ed71f81eba2119ae610e819c57b964d7b5186fe47e107072a5fbeb8010246d1d",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+            "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
           },
           "matchedCatalogKey": "kc:v1:2c5581195a8d5255f6543f73f9e0d6ca3f86c97a2f09808ba608e3740c633fba",
           "originalId": "care_labor_underpricing",
@@ -2782,7 +2782,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 48,
           "originalId": "ckr:source:428155544a315487e6a6",
-          "recordSha256": "50e69e978939a5b75e55d31fd25d864d36671dd430ffe936c4c386e938e2aedc",
+          "recordSha256": "d64fe4f200012dccfe3b1c798e9e18252094dab6540ba2837a51da8f548dc375",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2799,7 +2799,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#428155544a315487e6a6",
           "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -2812,15 +2812,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 48,
             "originalId": "ckr:source:428155544a315487e6a6",
-            "recordSha256": "50e69e978939a5b75e55d31fd25d864d36671dd430ffe936c4c386e938e2aedc",
+            "recordSha256": "d64fe4f200012dccfe3b1c798e9e18252094dab6540ba2837a51da8f548dc375",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:3a38045ebfd238ef564b68779527cedb0dcbcd6a364e3772486d4ea3b9f410f1",
           "originalId": "ckr:source:428155544a315487e6a6",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "50e69e978939a5b75e55d31fd25d864d36671dd430ffe936c4c386e938e2aedc",
-          "actualHash": "50e69e978939a5b75e55d31fd25d864d36671dd430ffe936c4c386e938e2aedc",
+          "expectedHash": "d64fe4f200012dccfe3b1c798e9e18252094dab6540ba2837a51da8f548dc375",
+          "actualHash": "d64fe4f200012dccfe3b1c798e9e18252094dab6540ba2837a51da8f548dc375",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2834,7 +2834,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 83,
           "originalId": "ckr:source:8c7eb0318961ed4e1cce",
-          "recordSha256": "b1a1779106c0b0d8989faa72c5b4209e47b9d4b0971686b05af9e1afeaaecc0d",
+          "recordSha256": "8060667dc7a2fdf5032d307820820c2c2e66dc20fce1155bc865e55ddf6fd7c1",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2851,7 +2851,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#8c7eb0318961ed4e1cce",
           "recordSha256": "9bfabd9a26bb34191d2fd8b66e3d342bc5c819f198348582b906763a720cfa3d",
-          "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+          "sourceFileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISTP",
@@ -2864,15 +2864,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 83,
             "originalId": "ckr:source:8c7eb0318961ed4e1cce",
-            "recordSha256": "b1a1779106c0b0d8989faa72c5b4209e47b9d4b0971686b05af9e1afeaaecc0d",
+            "recordSha256": "8060667dc7a2fdf5032d307820820c2c2e66dc20fce1155bc865e55ddf6fd7c1",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:4a916c065d1d2c120beeb3507dd3f84baa5459a36b0a0335e03b9b2026c76a3c",
           "originalId": "ckr:source:8c7eb0318961ed4e1cce",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "b1a1779106c0b0d8989faa72c5b4209e47b9d4b0971686b05af9e1afeaaecc0d",
-          "actualHash": "b1a1779106c0b0d8989faa72c5b4209e47b9d4b0971686b05af9e1afeaaecc0d",
+          "expectedHash": "8060667dc7a2fdf5032d307820820c2c2e66dc20fce1155bc865e55ddf6fd7c1",
+          "actualHash": "8060667dc7a2fdf5032d307820820c2c2e66dc20fce1155bc865e55ddf6fd7c1",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2913,7 +2913,7 @@
             "originalId": "arts_and_creative_field",
             "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+            "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
           },
           "matchedCatalogKey": "kc:v1:4c81dc75addfa41f054927e1ee7083f6041057f7b87975ca936b071b064cd70e",
           "originalId": "arts_and_creative_field",
@@ -2933,7 +2933,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 113,
           "originalId": "ckr:source:1949199fcd8a2e08e71e",
-          "recordSha256": "f09a6405a3ed795428e0129ac72898a023251d2e2ae57013ef832bc1c12ee0b2",
+          "recordSha256": "c113ab0c57f9262cc9ea9a6c314395761a7991808a9698dc7ed5e851ff2724ae",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -2950,7 +2950,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1949199fcd8a2e08e71e",
           "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
-          "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+          "sourceFileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ESFP",
@@ -2963,15 +2963,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 113,
             "originalId": "ckr:source:1949199fcd8a2e08e71e",
-            "recordSha256": "f09a6405a3ed795428e0129ac72898a023251d2e2ae57013ef832bc1c12ee0b2",
+            "recordSha256": "c113ab0c57f9262cc9ea9a6c314395761a7991808a9698dc7ed5e851ff2724ae",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:516dad8276c678978af2d39a428ff3acd7def97ece13cd5c3d95fb5d8dea6053",
           "originalId": "ckr:source:1949199fcd8a2e08e71e",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "f09a6405a3ed795428e0129ac72898a023251d2e2ae57013ef832bc1c12ee0b2",
-          "actualHash": "f09a6405a3ed795428e0129ac72898a023251d2e2ae57013ef832bc1c12ee0b2",
+          "expectedHash": "c113ab0c57f9262cc9ea9a6c314395761a7991808a9698dc7ed5e851ff2724ae",
+          "actualHash": "c113ab0c57f9262cc9ea9a6c314395761a7991808a9698dc7ed5e851ff2724ae",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -2985,7 +2985,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 17,
           "originalId": "ckr:source:cd19631fd0781dd2ef4c",
-          "recordSha256": "08696cac96ac2f74fad1cf0eb7e75ca4882f152a036e46a68d8d3f4875354b11",
+          "recordSha256": "5bdc43abbcaa135340821c25d36a624f5bef0e8c4475587a0e71ab9dfb1ddd28",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3002,7 +3002,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cd19631fd0781dd2ef4c",
           "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFP",
@@ -3015,15 +3015,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 17,
             "originalId": "ckr:source:cd19631fd0781dd2ef4c",
-            "recordSha256": "08696cac96ac2f74fad1cf0eb7e75ca4882f152a036e46a68d8d3f4875354b11",
+            "recordSha256": "5bdc43abbcaa135340821c25d36a624f5bef0e8c4475587a0e71ab9dfb1ddd28",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:52856334d3c5c3cc4ef9089f502ef7189e3ecd0aa748c749c2cd098e17962878",
           "originalId": "ckr:source:cd19631fd0781dd2ef4c",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "08696cac96ac2f74fad1cf0eb7e75ca4882f152a036e46a68d8d3f4875354b11",
-          "actualHash": "08696cac96ac2f74fad1cf0eb7e75ca4882f152a036e46a68d8d3f4875354b11",
+          "expectedHash": "5bdc43abbcaa135340821c25d36a624f5bef0e8c4475587a0e71ab9dfb1ddd28",
+          "actualHash": "5bdc43abbcaa135340821c25d36a624f5bef0e8c4475587a0e71ab9dfb1ddd28",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3037,7 +3037,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 9,
           "originalId": "ckr:source:cf6e4b6c104165d3fff3",
-          "recordSha256": "0483639ef24b0d0b813667e2dca17b853f7d6ae40507ab837e73a09e11f90433",
+          "recordSha256": "d47d9652197d9796c8153088b14f1fb43b2e1d171c68364f1ee456b79b3e71c8",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3054,7 +3054,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cf6e4b6c104165d3fff3",
           "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFP",
@@ -3067,15 +3067,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 9,
             "originalId": "ckr:source:cf6e4b6c104165d3fff3",
-            "recordSha256": "0483639ef24b0d0b813667e2dca17b853f7d6ae40507ab837e73a09e11f90433",
+            "recordSha256": "d47d9652197d9796c8153088b14f1fb43b2e1d171c68364f1ee456b79b3e71c8",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:5a67adaefe9e919d1db11cba6c1626ca39c34ef82c988bebbeb5e3e1156c7031",
           "originalId": "ckr:source:cf6e4b6c104165d3fff3",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "0483639ef24b0d0b813667e2dca17b853f7d6ae40507ab837e73a09e11f90433",
-          "actualHash": "0483639ef24b0d0b813667e2dca17b853f7d6ae40507ab837e73a09e11f90433",
+          "expectedHash": "d47d9652197d9796c8153088b14f1fb43b2e1d171c68364f1ee456b79b3e71c8",
+          "actualHash": "d47d9652197d9796c8153088b14f1fb43b2e1d171c68364f1ee456b79b3e71c8",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3089,7 +3089,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 3,
           "originalId": "ckr:source:cdc60c6b316ee8a858c1",
-          "recordSha256": "bfcbfd4d132ac61f51502794ec87d3e8d34d4449539b7e771c5d3448eb6945dc",
+          "recordSha256": "239108eaacb5d3a69e040f13437751bf11dd9add0331e32ca806cb7c11452832",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3106,7 +3106,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cdc60c6b316ee8a858c1",
           "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-          "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+          "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFJ",
@@ -3119,15 +3119,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 3,
             "originalId": "ckr:source:cdc60c6b316ee8a858c1",
-            "recordSha256": "bfcbfd4d132ac61f51502794ec87d3e8d34d4449539b7e771c5d3448eb6945dc",
+            "recordSha256": "239108eaacb5d3a69e040f13437751bf11dd9add0331e32ca806cb7c11452832",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:5c9bdf253ba030d861c8e21864c246156001f6f5ba508d8b382c441c76b1220d",
           "originalId": "ckr:source:cdc60c6b316ee8a858c1",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "bfcbfd4d132ac61f51502794ec87d3e8d34d4449539b7e771c5d3448eb6945dc",
-          "actualHash": "bfcbfd4d132ac61f51502794ec87d3e8d34d4449539b7e771c5d3448eb6945dc",
+          "expectedHash": "239108eaacb5d3a69e040f13437751bf11dd9add0331e32ca806cb7c11452832",
+          "actualHash": "239108eaacb5d3a69e040f13437751bf11dd9add0331e32ca806cb7c11452832",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3176,7 +3176,7 @@
             "originalId": "ckr:source:6047f491aa9082328a86",
             "recordSha256": "4db224690cbcb304f49349658b93b86b370846fda54ecce3f84d9a117c6267a5",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:5e72743f59182b3138a8f48a4f05a18a4a339ff4a213990f4347219b4f048846",
           "originalId": "ckr:source:6047f491aa9082328a86",
@@ -3293,7 +3293,7 @@
             "originalId": "error_record_short_loop",
             "recordSha256": "c0cdf4b5e294a122133295ae3fbf0b7502d6ed3b1c5e463241d24a9730b77bb8",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+            "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
           },
           "matchedCatalogKey": "kc:v1:717dce058ee215bc7a04c9b0711a5d016d430d9a53dec7df8b2f03d75bb38730",
           "originalId": "error_record_short_loop",
@@ -3313,7 +3313,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 70,
           "originalId": "ckr:source:a78eebeaa12bff33d79b",
-          "recordSha256": "d2779f5f100f8ad1f0dc1dc83f5e23184475fda80f0babc40239e116de6d3854",
+          "recordSha256": "0a351db97c080c3af8ed5c9e1f8fa16e493127c6b435eeafb0eaafaea8a12d27",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3330,7 +3330,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#a78eebeaa12bff33d79b",
           "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -3343,15 +3343,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 70,
             "originalId": "ckr:source:a78eebeaa12bff33d79b",
-            "recordSha256": "d2779f5f100f8ad1f0dc1dc83f5e23184475fda80f0babc40239e116de6d3854",
+            "recordSha256": "0a351db97c080c3af8ed5c9e1f8fa16e493127c6b435eeafb0eaafaea8a12d27",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:71987ed9a23aea9433a3735f27244d310cddae8b5e399096ab3568d51335cdce",
           "originalId": "ckr:source:a78eebeaa12bff33d79b",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "d2779f5f100f8ad1f0dc1dc83f5e23184475fda80f0babc40239e116de6d3854",
-          "actualHash": "d2779f5f100f8ad1f0dc1dc83f5e23184475fda80f0babc40239e116de6d3854",
+          "expectedHash": "0a351db97c080c3af8ed5c9e1f8fa16e493127c6b435eeafb0eaafaea8a12d27",
+          "actualHash": "0a351db97c080c3af8ed5c9e1f8fa16e493127c6b435eeafb0eaafaea8a12d27",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3392,7 +3392,7 @@
             "originalId": "feedback_safety_contract",
             "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:7a95f7689b9ff6da03fc0743320d147fa743579b5eafa406c3fed54d80a1e8c8",
           "originalId": "feedback_safety_contract",
@@ -3441,7 +3441,7 @@
             "originalId": "precision_profession_fit",
             "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+            "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
           },
           "matchedCatalogKey": "kc:v1:7b9f1073ee987f53695c231f3eecffb22cb7494c59e0ec3aa2794bc7596cec46",
           "originalId": "precision_profession_fit",
@@ -3489,7 +3489,7 @@
             "originalId": "irregular_income_buffer",
             "recordSha256": "d530f80264012752e9baf5dd721d4f5ffad37adb069b34fdc8b1fd757a671620",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+            "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
           },
           "matchedCatalogKey": "kc:v1:7e9133362beb9319734d48facead4306b0eacc07abe4907d4ae08c28c5a37aab",
           "originalId": "irregular_income_buffer",
@@ -3606,7 +3606,7 @@
             "originalId": "media_community_fit",
             "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:8d68243221fa719153e1972de525695983d35fb0d22d85dd457a0da28e3abe5b",
           "originalId": "media_community_fit",
@@ -3626,7 +3626,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 82,
           "originalId": "ckr:source:5697e5371d9b4b34d523",
-          "recordSha256": "e1a61a8a1b4b0a340b950c53b08b3c9e4fe694bcb6231da8b98bc774fdb412e5",
+          "recordSha256": "f4f3555a9b5c4efc35dd5222100ce00b925422136bb6df41b154617886ce397b",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3643,7 +3643,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#5697e5371d9b4b34d523",
           "recordSha256": "ed71f81eba2119ae610e819c57b964d7b5186fe47e107072a5fbeb8010246d1d",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISFJ",
@@ -3656,15 +3656,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 82,
             "originalId": "ckr:source:5697e5371d9b4b34d523",
-            "recordSha256": "e1a61a8a1b4b0a340b950c53b08b3c9e4fe694bcb6231da8b98bc774fdb412e5",
+            "recordSha256": "f4f3555a9b5c4efc35dd5222100ce00b925422136bb6df41b154617886ce397b",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:8f9838a9a0c0d251d27f4100a373c8b38cc42491dc5cbf475f0b43ee5894240a",
           "originalId": "ckr:source:5697e5371d9b4b34d523",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "e1a61a8a1b4b0a340b950c53b08b3c9e4fe694bcb6231da8b98bc774fdb412e5",
-          "actualHash": "e1a61a8a1b4b0a340b950c53b08b3c9e4fe694bcb6231da8b98bc774fdb412e5",
+          "expectedHash": "f4f3555a9b5c4efc35dd5222100ce00b925422136bb6df41b154617886ce397b",
+          "actualHash": "f4f3555a9b5c4efc35dd5222100ce00b925422136bb6df41b154617886ce397b",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3713,7 +3713,7 @@
             "originalId": "ckr:source:90e77590d3ea07930ba1",
             "recordSha256": "60331bd4cf3e27962ff3dd3f0f00f51757340f46b1ab6b406165332f5571e11d",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:9242f80cd0d656c08a1c15fc5fbff5a670fe979edeba2293d81e30512b5257fc",
           "originalId": "ckr:source:90e77590d3ea07930ba1",
@@ -3760,7 +3760,7 @@
             "originalId": "strategy_to_asset_work",
             "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+            "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
           },
           "matchedCatalogKey": "kc:v1:97ec64a622d7f4b801a116c0a01ea71c0591fea54e5bbd282faaa902baace678",
           "originalId": "strategy_to_asset_work",
@@ -3914,7 +3914,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 101,
           "originalId": "ckr:source:cca22a892a0cdcc5f2e8",
-          "recordSha256": "7c88aee6b64225650d6041178db4a0005fc5833273117dfbb0e625890f8d4429",
+          "recordSha256": "d5462665097984509271e4e790d9d5f32ea6e9ef4a1be8d1a7f0bcdfc374fd8e",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3931,7 +3931,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#cca22a892a0cdcc5f2e8",
           "recordSha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ENFP",
@@ -3944,15 +3944,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 101,
             "originalId": "ckr:source:cca22a892a0cdcc5f2e8",
-            "recordSha256": "7c88aee6b64225650d6041178db4a0005fc5833273117dfbb0e625890f8d4429",
+            "recordSha256": "d5462665097984509271e4e790d9d5f32ea6e9ef4a1be8d1a7f0bcdfc374fd8e",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:a1e3ce9f23194ba1a384645d47f90eb5435bb6ce6b23fcec7740a8e83f55ecaa",
           "originalId": "ckr:source:cca22a892a0cdcc5f2e8",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "7c88aee6b64225650d6041178db4a0005fc5833273117dfbb0e625890f8d4429",
-          "actualHash": "7c88aee6b64225650d6041178db4a0005fc5833273117dfbb0e625890f8d4429",
+          "expectedHash": "d5462665097984509271e4e790d9d5f32ea6e9ef4a1be8d1a7f0bcdfc374fd8e",
+          "actualHash": "d5462665097984509271e4e790d9d5f32ea6e9ef4a1be8d1a7f0bcdfc374fd8e",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -3966,7 +3966,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 41,
           "originalId": "ckr:source:ba9c4a59def3be6ff655",
-          "recordSha256": "eb9a8fb29f08ee8b44e571bc800d97e0441d5e1219debe5197a2fc413e73d6ff",
+          "recordSha256": "4856ad4b6d4efef92b5b5f543c07a1a4ef4d38e20938faab27819310346c8c75",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -3983,7 +3983,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ba9c4a59def3be6ff655",
           "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -3996,15 +3996,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 41,
             "originalId": "ckr:source:ba9c4a59def3be6ff655",
-            "recordSha256": "eb9a8fb29f08ee8b44e571bc800d97e0441d5e1219debe5197a2fc413e73d6ff",
+            "recordSha256": "4856ad4b6d4efef92b5b5f543c07a1a4ef4d38e20938faab27819310346c8c75",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:a3abbb1404fde2695b30d33da063d048f6f21b9ab5beaeafe1e8e8c839e8800c",
           "originalId": "ckr:source:ba9c4a59def3be6ff655",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "eb9a8fb29f08ee8b44e571bc800d97e0441d5e1219debe5197a2fc413e73d6ff",
-          "actualHash": "eb9a8fb29f08ee8b44e571bc800d97e0441d5e1219debe5197a2fc413e73d6ff",
+          "expectedHash": "4856ad4b6d4efef92b5b5f543c07a1a4ef4d38e20938faab27819310346c8c75",
+          "actualHash": "4856ad4b6d4efef92b5b5f543c07a1a4ef4d38e20938faab27819310346c8c75",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4045,7 +4045,7 @@
             "originalId": "arts_literature_preference",
             "recordSha256": "9ded9785447853619b133e93f96f0037ec00efdea474b3d05e5de02a1fe78256",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+            "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
           },
           "matchedCatalogKey": "kc:v1:a7eee5a1adf17dc8e336fee48973105580ad6f5f357e526123266b969a6851ae",
           "originalId": "arts_literature_preference",
@@ -4100,7 +4100,7 @@
             "originalId": "ckr:source:ce1defc1af72408fec4a",
             "recordSha256": "ea815855ff5ccc630b75cb9700120d13fc8ee7a23ed999ef282ef785403ec0ba",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:aca28c49e781aea2b64d77c2492b89a552ce2175c72d87f26969dc1582e3b821",
           "originalId": "ckr:source:ce1defc1af72408fec4a",
@@ -4120,7 +4120,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 55,
           "originalId": "ckr:source:1668268fb9233e277c7b",
-          "recordSha256": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
+          "recordSha256": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4137,7 +4137,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1668268fb9233e277c7b",
           "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INFP",
@@ -4150,15 +4150,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 55,
             "originalId": "ckr:source:1668268fb9233e277c7b",
-            "recordSha256": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
+            "recordSha256": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:b017563aa883f26d4dee627ee3e95941d9d780fe9fc8c3d70e76d5558b156ab0",
           "originalId": "ckr:source:1668268fb9233e277c7b",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
-          "actualHash": "86769a18cea04db97b6874595633b5b4fdd49936f6763d9e33339a6b9481bd27",
+          "expectedHash": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
+          "actualHash": "c5eaa4294bf0d550d56c056646f7597752bba68eaaaf007383eeb0770a0b00ac",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4199,7 +4199,7 @@
             "originalId": "experience_content_revenue",
             "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+            "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
           },
           "matchedCatalogKey": "kc:v1:b09581b217915d9ba0a957830b882e0bbe57940d924dbe7d0918e6ca14dd3479",
           "originalId": "experience_content_revenue",
@@ -4219,7 +4219,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 39,
           "originalId": "ckr:source:d3f1d896063ae672f97b",
-          "recordSha256": "f27ca4d201fdacf2b72db90f648ee4ac13e8ab59f28528dabffe916601ab4095",
+          "recordSha256": "e5f28fe5a9040d101fcd6242ba699a3595b5a13945dec56c63615568c2fc0ace",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4236,7 +4236,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d3f1d896063ae672f97b",
           "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -4249,15 +4249,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 39,
             "originalId": "ckr:source:d3f1d896063ae672f97b",
-            "recordSha256": "f27ca4d201fdacf2b72db90f648ee4ac13e8ab59f28528dabffe916601ab4095",
+            "recordSha256": "e5f28fe5a9040d101fcd6242ba699a3595b5a13945dec56c63615568c2fc0ace",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:c8874a620abc0937e2ff9463a964ee6b733b19ceb0f47006ed8bf23f7f29a700",
           "originalId": "ckr:source:d3f1d896063ae672f97b",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "f27ca4d201fdacf2b72db90f648ee4ac13e8ab59f28528dabffe916601ab4095",
-          "actualHash": "f27ca4d201fdacf2b72db90f648ee4ac13e8ab59f28528dabffe916601ab4095",
+          "expectedHash": "e5f28fe5a9040d101fcd6242ba699a3595b5a13945dec56c63615568c2fc0ace",
+          "actualHash": "e5f28fe5a9040d101fcd6242ba699a3595b5a13945dec56c63615568c2fc0ace",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4299,7 +4299,7 @@
             "originalId": "concrete_praise_learning",
             "recordSha256": "d07b97834e43016a7378a78bca60d07781ce3334dcf74df998eb4184cd4b2b1c",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+            "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
           },
           "matchedCatalogKey": "kc:v1:c9235ff8dc46def0061f06f94181b9fff544f22a5773b3331c9718a605ab78c1",
           "originalId": "concrete_praise_learning",
@@ -4319,7 +4319,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 37,
           "originalId": "ckr:source:1d7da5209fe3284e2d3e",
-          "recordSha256": "ed16abff1eefb2a771bdf2db39a91e8364454957804bd0555671bc7e49fa3afd",
+          "recordSha256": "2f33b5e093206cbe7fb54ecb752706fd6f7f9f6aa9fe4d7be674e37b9f8d0919",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4336,7 +4336,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1d7da5209fe3284e2d3e",
           "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "INTJ",
@@ -4349,15 +4349,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 37,
             "originalId": "ckr:source:1d7da5209fe3284e2d3e",
-            "recordSha256": "ed16abff1eefb2a771bdf2db39a91e8364454957804bd0555671bc7e49fa3afd",
+            "recordSha256": "2f33b5e093206cbe7fb54ecb752706fd6f7f9f6aa9fe4d7be674e37b9f8d0919",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:cc5cf4b9a8a5fe62ed843cbfb69640ab882c9e119e1674fb0bb13c9a56c7ebf7",
           "originalId": "ckr:source:1d7da5209fe3284e2d3e",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "ed16abff1eefb2a771bdf2db39a91e8364454957804bd0555671bc7e49fa3afd",
-          "actualHash": "ed16abff1eefb2a771bdf2db39a91e8364454957804bd0555671bc7e49fa3afd",
+          "expectedHash": "2f33b5e093206cbe7fb54ecb752706fd6f7f9f6aa9fe4d7be674e37b9f8d0919",
+          "actualHash": "2f33b5e093206cbe7fb54ecb752706fd6f7f9f6aa9fe4d7be674e37b9f8d0919",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4398,7 +4398,7 @@
             "originalId": "creative_arts_fit",
             "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:cc85100f6fd8018e9d53b07132ea9b48e7418a6d82e16b72e6d651c167b67c4f",
           "originalId": "creative_arts_fit",
@@ -4418,7 +4418,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 95,
           "originalId": "ckr:source:d5a3f16c5cef50521cd4",
-          "recordSha256": "0e6492ac7a4853d8f20fb344bb554f3584c8e97414d5cacc4fc7a0c9c8ab5a75",
+          "recordSha256": "9959e136a019a47c12312e1d73cfccb40387477170209ea52d9420844821f66d",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4435,7 +4435,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#d5a3f16c5cef50521cd4",
           "recordSha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -4448,15 +4448,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 95,
             "originalId": "ckr:source:d5a3f16c5cef50521cd4",
-            "recordSha256": "0e6492ac7a4853d8f20fb344bb554f3584c8e97414d5cacc4fc7a0c9c8ab5a75",
+            "recordSha256": "9959e136a019a47c12312e1d73cfccb40387477170209ea52d9420844821f66d",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:d4f3bf6b3e86e63d8f258ace861d7cfba06b19cb7b9b3285dd5fa14951704c3f",
           "originalId": "ckr:source:d5a3f16c5cef50521cd4",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "0e6492ac7a4853d8f20fb344bb554f3584c8e97414d5cacc4fc7a0c9c8ab5a75",
-          "actualHash": "0e6492ac7a4853d8f20fb344bb554f3584c8e97414d5cacc4fc7a0c9c8ab5a75",
+          "expectedHash": "9959e136a019a47c12312e1d73cfccb40387477170209ea52d9420844821f66d",
+          "actualHash": "9959e136a019a47c12312e1d73cfccb40387477170209ea52d9420844821f66d",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4470,7 +4470,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 71,
           "originalId": "ckr:source:f23be8c338fde8896938",
-          "recordSha256": "b8dc6f3fcff348613d6f311871e29b217e98a8f426b39dfde840d5c0f4636a00",
+          "recordSha256": "539b69caaeec68abc5dbd4bd7164ae91ed73814c24825112cad0f607fed1c3b6",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4487,7 +4487,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#f23be8c338fde8896938",
           "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ISFP",
@@ -4500,15 +4500,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 71,
             "originalId": "ckr:source:f23be8c338fde8896938",
-            "recordSha256": "b8dc6f3fcff348613d6f311871e29b217e98a8f426b39dfde840d5c0f4636a00",
+            "recordSha256": "539b69caaeec68abc5dbd4bd7164ae91ed73814c24825112cad0f607fed1c3b6",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:d698dd5b328bf4a40a7935655861bfd12187a568869ba1efbb8cf5e1f4002592",
           "originalId": "ckr:source:f23be8c338fde8896938",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "b8dc6f3fcff348613d6f311871e29b217e98a8f426b39dfde840d5c0f4636a00",
-          "actualHash": "b8dc6f3fcff348613d6f311871e29b217e98a8f426b39dfde840d5c0f4636a00",
+          "expectedHash": "539b69caaeec68abc5dbd4bd7164ae91ed73814c24825112cad0f607fed1c3b6",
+          "actualHash": "539b69caaeec68abc5dbd4bd7164ae91ed73814c24825112cad0f607fed1c3b6",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4656,7 +4656,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 22,
           "originalId": "ckr:source:248692af90259c9eebe4",
-          "recordSha256": "dd97ccb76b109494239dd79173124b33bfbaf6cb352bab40f08b516341a24b85",
+          "recordSha256": "98a07d8e222b78a06c45e8d4af355a00c29465653c12e232c23e33296abf6e83",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4673,7 +4673,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#248692af90259c9eebe4",
           "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
-          "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+          "sourceFileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFJ",
@@ -4686,15 +4686,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 22,
             "originalId": "ckr:source:248692af90259c9eebe4",
-            "recordSha256": "dd97ccb76b109494239dd79173124b33bfbaf6cb352bab40f08b516341a24b85",
+            "recordSha256": "98a07d8e222b78a06c45e8d4af355a00c29465653c12e232c23e33296abf6e83",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:de738274cb4c127d321aa494c41d315cdbf57a5c047d54c29c04524fc42b7014",
           "originalId": "ckr:source:248692af90259c9eebe4",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "dd97ccb76b109494239dd79173124b33bfbaf6cb352bab40f08b516341a24b85",
-          "actualHash": "dd97ccb76b109494239dd79173124b33bfbaf6cb352bab40f08b516341a24b85",
+          "expectedHash": "98a07d8e222b78a06c45e8d4af355a00c29465653c12e232c23e33296abf6e83",
+          "actualHash": "98a07d8e222b78a06c45e8d4af355a00c29465653c12e232c23e33296abf6e83",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4708,7 +4708,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 35,
           "originalId": "ckr:source:1288e7c671389c17eb7d",
-          "recordSha256": "4d9cbfe9f2344bb851d21c5c3977d674d5d18b3fa174a25ce4c0d5b9567d4449",
+          "recordSha256": "3d7d84e15a4160af396501dedda4c8906179956a10ba33683c6e2252490a35d0",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -4725,7 +4725,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1288e7c671389c17eb7d",
           "recordSha256": "d07b97834e43016a7378a78bca60d07781ce3334dcf74df998eb4184cd4b2b1c",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -4738,15 +4738,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 35,
             "originalId": "ckr:source:1288e7c671389c17eb7d",
-            "recordSha256": "4d9cbfe9f2344bb851d21c5c3977d674d5d18b3fa174a25ce4c0d5b9567d4449",
+            "recordSha256": "3d7d84e15a4160af396501dedda4c8906179956a10ba33683c6e2252490a35d0",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:df58aa47fd66a21a418713c315ef338aceda849b3864040cd65c7eedf7996fa8",
           "originalId": "ckr:source:1288e7c671389c17eb7d",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "4d9cbfe9f2344bb851d21c5c3977d674d5d18b3fa174a25ce4c0d5b9567d4449",
-          "actualHash": "4d9cbfe9f2344bb851d21c5c3977d674d5d18b3fa174a25ce4c0d5b9567d4449",
+          "expectedHash": "3d7d84e15a4160af396501dedda4c8906179956a10ba33683c6e2252490a35d0",
+          "actualHash": "3d7d84e15a4160af396501dedda4c8906179956a10ba33683c6e2252490a35d0",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -4787,7 +4787,7 @@
             "originalId": "follow_through_system",
             "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+            "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
           },
           "matchedCatalogKey": "kc:v1:e4bd97cd0ff38bf5fb3477c0fd1973efc8f9acc86db0ccd996438c6199cfcd51",
           "originalId": "follow_through_system",
@@ -4904,7 +4904,7 @@
             "originalId": "hands_on_learning",
             "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+            "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
           },
           "matchedCatalogKey": "kc:v1:e9241c415b09fd6c56d66122081c99217bd0fbee750bc86402f35c93dfdad0a9",
           "originalId": "hands_on_learning",
@@ -4950,7 +4950,7 @@
             "originalId": "artistic_expression_fit",
             "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+            "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
           },
           "matchedCatalogKey": "kc:v1:eb31ae0ec3c63f1ae8de7cd12897d0e47e19d72f28278748b5210466e3914c0c",
           "originalId": "artistic_expression_fit",
@@ -4998,7 +4998,7 @@
             "originalId": "possibility_spending_spread",
             "recordSha256": "c0b961d8ed074bed2c0b0f406afd78c973a971efdc71fd7968399755a7d31fd2",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+            "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
           },
           "matchedCatalogKey": "kc:v1:ed52ac83d4d6572664eb0d6770480d78dedf9249b42895cc17730ea261982164",
           "originalId": "possibility_spending_spread",
@@ -5018,7 +5018,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 89,
           "originalId": "ckr:source:53f96587bbaa900e8b0e",
-          "recordSha256": "ccd4529f7e8ed8b876eb0fded9ced0381b02e35395e1f7add16dd2961df32b2a",
+          "recordSha256": "3d9502f29f9bf82f754a47baeb8e28b02fbf933883c2ac2d73cda0b8b97a765a",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -5035,7 +5035,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#53f96587bbaa900e8b0e",
           "recordSha256": "c0b961d8ed074bed2c0b0f406afd78c973a971efdc71fd7968399755a7d31fd2",
-          "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+          "sourceFileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801",
           "originalState": {
             "sourceCoverage": "inferred",
             "type": "ENFP",
@@ -5048,15 +5048,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 89,
             "originalId": "ckr:source:53f96587bbaa900e8b0e",
-            "recordSha256": "ccd4529f7e8ed8b876eb0fded9ced0381b02e35395e1f7add16dd2961df32b2a",
+            "recordSha256": "3d9502f29f9bf82f754a47baeb8e28b02fbf933883c2ac2d73cda0b8b97a765a",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:f489983ca43607a861597c975c75cef01d91768790c62be7af6e955db459a7d3",
           "originalId": "ckr:source:53f96587bbaa900e8b0e",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "ccd4529f7e8ed8b876eb0fded9ced0381b02e35395e1f7add16dd2961df32b2a",
-          "actualHash": "ccd4529f7e8ed8b876eb0fded9ced0381b02e35395e1f7add16dd2961df32b2a",
+          "expectedHash": "3d9502f29f9bf82f754a47baeb8e28b02fbf933883c2ac2d73cda0b8b97a765a",
+          "actualHash": "3d9502f29f9bf82f754a47baeb8e28b02fbf933883c2ac2d73cda0b8b97a765a",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -5097,7 +5097,7 @@
             "originalId": "taste_to_service_value",
             "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+            "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
           },
           "matchedCatalogKey": "kc:v1:f70702c052d032793bf5b3dac39e820f89ee350d9df079eadd87c842ac23acea",
           "originalId": "taste_to_service_value",
@@ -5117,7 +5117,7 @@
           "exportName": "CAREER_SOURCE_REGISTRY",
           "index": 98,
           "originalId": "ckr:source:76c5466694297d1a36cf",
-          "recordSha256": "7b15c4d0f731974f4ca0454702e9cb57aa8614f7cb891596f2fd5a9a6e73220a",
+          "recordSha256": "389a203d7d537bd595b0c5d5f8d85ed0c5f2fee189c61d3bc963ee82511e5251",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -5134,7 +5134,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#76c5466694297d1a36cf",
           "recordSha256": "9ded9785447853619b133e93f96f0037ec00efdea474b3d05e5de02a1fe78256",
-          "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+          "sourceFileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "ISFP",
@@ -5147,15 +5147,15 @@
             "exportName": "CAREER_SOURCE_REGISTRY",
             "index": 98,
             "originalId": "ckr:source:76c5466694297d1a36cf",
-            "recordSha256": "7b15c4d0f731974f4ca0454702e9cb57aa8614f7cb891596f2fd5a9a6e73220a",
+            "recordSha256": "389a203d7d537bd595b0c5d5f8d85ed0c5f2fee189c61d3bc963ee82511e5251",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "957384a966e2afbbc4e77614eebd81cb95689720b66fb50a33d90394ea080116"
+            "fileSha256": "d25a7c1d1f0fa02d422f12445d1a35f6ae2d1d31fc3958b897de49facc14d664"
           },
           "matchedCatalogKey": "kc:v1:fb854fac747ec78639179223ed928c606c530d501994c9ce285fb45788cd5eb4",
           "originalId": "ckr:source:76c5466694297d1a36cf",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "7b15c4d0f731974f4ca0454702e9cb57aa8614f7cb891596f2fd5a9a6e73220a",
-          "actualHash": "7b15c4d0f731974f4ca0454702e9cb57aa8614f7cb891596f2fd5a9a6e73220a",
+          "expectedHash": "389a203d7d537bd595b0c5d5f8d85ed0c5f2fee189c61d3bc963ee82511e5251",
+          "actualHash": "389a203d7d537bd595b0c5d5f8d85ed0c5f2fee189c61d3bc963ee82511e5251",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -5194,7 +5194,7 @@
           "exportName": "LOVE_SOURCE_REGISTRY",
           "index": 3,
           "originalId": "lkr:source:1ad75d65f36179f32968",
-          "recordSha256": "9fc646b0cc2a5802f03faf9052a328e4f38a3e6d20457bf2cf327e70451346b2",
+          "recordSha256": "028b6e4ca83235a1ce927cb0367d3386fa109c682386c180edd230593a75d788",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -5211,7 +5211,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#1ad75d65f36179f32968",
           "recordSha256": "6f1967dae9a1f0c3c53563ea39076f7aa21f1184dbac71032fbe19cef74e3fab",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -5224,15 +5224,15 @@
             "exportName": "LOVE_SOURCE_REGISTRY",
             "index": 3,
             "originalId": "lkr:source:1ad75d65f36179f32968",
-            "recordSha256": "9fc646b0cc2a5802f03faf9052a328e4f38a3e6d20457bf2cf327e70451346b2",
+            "recordSha256": "028b6e4ca83235a1ce927cb0367d3386fa109c682386c180edd230593a75d788",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "7dad6d648f063e5f27625564138740e516e0e345f753acd8c0190398faea5a24"
+            "fileSha256": "6399fba910f66edd4af95ba589a489f1b94029f8be9e949c70aaaf049a4e089e"
           },
           "matchedCatalogKey": "kc:v1:420114590c868052150618168c6828e61d6459acf07d9381ef8229b299b9668c",
           "originalId": "lkr:source:1ad75d65f36179f32968",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "9fc646b0cc2a5802f03faf9052a328e4f38a3e6d20457bf2cf327e70451346b2",
-          "actualHash": "9fc646b0cc2a5802f03faf9052a328e4f38a3e6d20457bf2cf327e70451346b2",
+          "expectedHash": "028b6e4ca83235a1ce927cb0367d3386fa109c682386c180edd230593a75d788",
+          "actualHash": "028b6e4ca83235a1ce927cb0367d3386fa109c682386c180edd230593a75d788",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -5273,7 +5273,7 @@
             "originalId": "deep_emotional_bond",
             "recordSha256": "6f1967dae9a1f0c3c53563ea39076f7aa21f1184dbac71032fbe19cef74e3fab",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:f0af2ad6111728f04b5a5912f2687505549afcea628a88e0d29fdc42505debbd",
           "originalId": "deep_emotional_bond",
@@ -5318,7 +5318,7 @@
           "exportName": "LOVE_SOURCE_REGISTRY",
           "index": 26,
           "originalId": "lkr:source:ba4aed5f58e7de310848",
-          "recordSha256": "8e66bfd4080767351db6ad9b23a717cbad656f504acb2a5e18f77b6464227955",
+          "recordSha256": "2c18872490182ad2f835dee5dcd83b048abc9c30d02d356de4c9e4f241179a62",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -5335,7 +5335,7 @@
           "sourceKind": "mbti_trait",
           "auditRef": "source-catalog.json#ba4aed5f58e7de310848",
           "recordSha256": "814540157d57cd6ebd42a2e9a7011d25724c847217defacde8632caeb848b7ff",
-          "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+          "sourceFileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2",
           "originalState": {
             "sourceCoverage": "direct",
             "type": "INFP",
@@ -5348,15 +5348,15 @@
             "exportName": "LOVE_SOURCE_REGISTRY",
             "index": 26,
             "originalId": "lkr:source:ba4aed5f58e7de310848",
-            "recordSha256": "8e66bfd4080767351db6ad9b23a717cbad656f504acb2a5e18f77b6464227955",
+            "recordSha256": "2c18872490182ad2f835dee5dcd83b048abc9c30d02d356de4c9e4f241179a62",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "7dad6d648f063e5f27625564138740e516e0e345f753acd8c0190398faea5a24"
+            "fileSha256": "6399fba910f66edd4af95ba589a489f1b94029f8be9e949c70aaaf049a4e089e"
           },
           "matchedCatalogKey": "kc:v1:05d8584255a6a892929acc4e2948c2d4d58cb89729daa0436062cef2d101bc72",
           "originalId": "lkr:source:ba4aed5f58e7de310848",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "8e66bfd4080767351db6ad9b23a717cbad656f504acb2a5e18f77b6464227955",
-          "actualHash": "8e66bfd4080767351db6ad9b23a717cbad656f504acb2a5e18f77b6464227955",
+          "expectedHash": "2c18872490182ad2f835dee5dcd83b048abc9c30d02d356de4c9e4f241179a62",
+          "actualHash": "2c18872490182ad2f835dee5dcd83b048abc9c30d02d356de4c9e4f241179a62",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -5397,7 +5397,7 @@
             "originalId": "artistic_dates",
             "recordSha256": "814540157d57cd6ebd42a2e9a7011d25724c847217defacde8632caeb848b7ff",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+            "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
           },
           "matchedCatalogKey": "kc:v1:f0e37451868138a2c70d09b52a14b28bbc59413856da4457c50874af3952034b",
           "originalId": "artistic_dates",
@@ -5579,7 +5579,7 @@
             "originalId": "pcpr:source:ee509907f7d870f38308",
             "recordSha256": "d5ab9a2c1a4389fd16572e95385f0f5315a479019d8bd274c3488fdd44443fb7",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+            "fileSha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
           },
           "matchedCatalogKey": "kc:v1:0755df84fca1e96c84eef8f5160223846b3263f94e9be482f55bbc25f2fa40be",
           "originalId": "pcpr:source:ee509907f7d870f38308",
@@ -5642,7 +5642,7 @@
             "originalId": "pcpr:source:4d0792e403615a91db52",
             "recordSha256": "009870c1f8f8d25e0e32786d0b29cbfde5d8a450e8ab56b941eb64535d246ce2",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+            "fileSha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
           },
           "matchedCatalogKey": "kc:v1:485cb4507e3d267e75082cc7dc20512e03fa8df7bb261acbd5d52860fe8e86cb",
           "originalId": "pcpr:source:4d0792e403615a91db52",
@@ -5689,7 +5689,7 @@
             "originalId": "model_student_child",
             "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+            "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
           },
           "matchedCatalogKey": "kc:v1:ab458d841fa3de8996bed9663cafb290bb89c1761ce08a990177e71636da1386",
           "originalId": "model_student_child",
@@ -5750,7 +5750,7 @@
             "originalId": "pcpr:source:aaac0cf1c3f696a21cc6",
             "recordSha256": "1a48d07868da966d14e0ed7570677a0718661af98c518e1d16eb657aed3e607b",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+            "fileSha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
           },
           "matchedCatalogKey": "kc:v1:c253d420475dafb622bfe6c0aabf0a2f969b9216e2dafef7f0b5d47bc3e35696",
           "originalId": "pcpr:source:aaac0cf1c3f696a21cc6",
@@ -5770,7 +5770,7 @@
           "exportName": "PC_SOURCES",
           "index": 13,
           "originalId": "pcpr:source:a98212d9a6491c70cd80",
-          "recordSha256": "3e708a1fb3f172bbb0ed574644a4859e1015411f15ce152f3b229c47ca3fefa7",
+          "recordSha256": "12e85e4352a3b3cfd96ea950c3d1fd11cc3faa92b19cba841d6b24e3d2dfa6b7",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -5786,7 +5786,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#a98212d9a6491c70cd80",
           "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "child",
@@ -5806,15 +5806,15 @@
             "exportName": "PC_SOURCES",
             "index": 13,
             "originalId": "pcpr:source:a98212d9a6491c70cd80",
-            "recordSha256": "3e708a1fb3f172bbb0ed574644a4859e1015411f15ce152f3b229c47ca3fefa7",
+            "recordSha256": "12e85e4352a3b3cfd96ea950c3d1fd11cc3faa92b19cba841d6b24e3d2dfa6b7",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "83ac6e03e955a6bbd23457e598b11b2ff2280cb81f0ba6a7a9cce394262fbfbc"
+            "fileSha256": "626f5bfa33c0ecafccde66ca0000721eec363563abd87647547e26324199299f"
           },
           "matchedCatalogKey": "kc:v1:d24c696ac9fc2358b0e188e51d89dd08073908926c2deaddf4ff776686018b8b",
           "originalId": "pcpr:source:a98212d9a6491c70cd80",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "3e708a1fb3f172bbb0ed574644a4859e1015411f15ce152f3b229c47ca3fefa7",
-          "actualHash": "3e708a1fb3f172bbb0ed574644a4859e1015411f15ce152f3b229c47ca3fefa7",
+          "expectedHash": "12e85e4352a3b3cfd96ea950c3d1fd11cc3faa92b19cba841d6b24e3d2dfa6b7",
+          "actualHash": "12e85e4352a3b3cfd96ea950c3d1fd11cc3faa92b19cba841d6b24e3d2dfa6b7",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -5919,7 +5919,7 @@
             "originalId": "cwpr:source:8166189640ff584ab6f6",
             "recordSha256": "da3446cbd6d1a34acb85bc19cfa177d0c0eaa16204cbf68c15878e0e06fa523d",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:0904d82e969b16efaaacf08923046d4ceca29c00117a5fb6c8c29052bf90812a",
           "originalId": "cwpr:source:8166189640ff584ab6f6",
@@ -5981,7 +5981,7 @@
             "originalId": "cwpr:source:607d86e676269d444952",
             "recordSha256": "0f21b5af66900ac040b9b90b57b646d77be8cd2521efe4e57a964278057cdc4e",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:7120d4667501cab0b7ae638d0fb9b4a50168ccefc7ba454253738c3dcbb524e4",
           "originalId": "cwpr:source:607d86e676269d444952",
@@ -6043,7 +6043,7 @@
             "originalId": "cwpr:source:0388561cdeef5da930d4",
             "recordSha256": "133a1b6c41cb3d7c22a77dcd3e7a94d29430630a986a82dcdb2a1edae7b727bb",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:efbaf37ccfa9fcaabada049cb484a9472a3c9e97d4bbe9b13a22e6b1c6a896e6",
           "originalId": "cwpr:source:0388561cdeef5da930d4",
@@ -6130,7 +6130,7 @@
             "originalId": "cwpr:source:7fdeffb028558576a2a5",
             "recordSha256": "b93cd0001b33f7744aebfe3574f429a2560420542d7920ea067956aa2df79a4b",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:1ddfd1c3baf80e57e42ea4d0336da96676b1099af2711a44204322a50e7740b1",
           "originalId": "cwpr:source:7fdeffb028558576a2a5",
@@ -6192,7 +6192,7 @@
             "originalId": "cwpr:source:7bdcdc1310dd783e91f2",
             "recordSha256": "40ddbeb318bd425119f6278b7dbaf5c4f2c71252c672400820cbb188a9de91c3",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:50c9dafc5f428d8d51171bb40c899609c0b639bbe615fd9e1ac9d32fd1e5fe93",
           "originalId": "cwpr:source:7bdcdc1310dd783e91f2",
@@ -6239,7 +6239,7 @@
             "originalId": "recognition_and_boundary",
             "recordSha256": "99ed9bc67643d3617dd626e8771fca98d8de0cb2486a5e7f37cc51218a6403b3",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+            "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
           },
           "matchedCatalogKey": "kc:v1:5e009788253c06c4dca5e839960a0cd2c55c0d22eb6435af99cd55ccfe1df029",
           "originalId": "recognition_and_boundary",
@@ -6259,7 +6259,7 @@
           "exportName": "CW_SOURCES",
           "index": 9,
           "originalId": "cwpr:source:c537d089d3ff0412ed96",
-          "recordSha256": "02773cdbf191fce48c6b335c34b620b976d704973696f4d7db0569c95aced0c5",
+          "recordSha256": "a3e1923d4747553f0450d4d26c03680ce120112b5cc4b01e229aa2818cf01868",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -6275,7 +6275,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c537d089d3ff0412ed96",
           "recordSha256": "99ed9bc67643d3617dd626e8771fca98d8de0cb2486a5e7f37cc51218a6403b3",
-          "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+          "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
           "originalState": {
             "type": "ISFJ",
             "area": "workplace",
@@ -6294,15 +6294,15 @@
             "exportName": "CW_SOURCES",
             "index": 9,
             "originalId": "cwpr:source:c537d089d3ff0412ed96",
-            "recordSha256": "02773cdbf191fce48c6b335c34b620b976d704973696f4d7db0569c95aced0c5",
+            "recordSha256": "a3e1923d4747553f0450d4d26c03680ce120112b5cc4b01e229aa2818cf01868",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:8cca2c01030836a5cc36a168c0f746b1055b9641a482e9cb81de4fb5d3203c26",
           "originalId": "cwpr:source:c537d089d3ff0412ed96",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "02773cdbf191fce48c6b335c34b620b976d704973696f4d7db0569c95aced0c5",
-          "actualHash": "02773cdbf191fce48c6b335c34b620b976d704973696f4d7db0569c95aced0c5",
+          "expectedHash": "a3e1923d4747553f0450d4d26c03680ce120112b5cc4b01e229aa2818cf01868",
+          "actualHash": "a3e1923d4747553f0450d4d26c03680ce120112b5cc4b01e229aa2818cf01868",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -6316,7 +6316,7 @@
           "exportName": "CW_SOURCES",
           "index": 8,
           "originalId": "cwpr:source:c782e08817e7f4ae8cd7",
-          "recordSha256": "dc40f2365e22d72d748c7fbbc8fae3eafb48517180637fea1072ce62496256c1",
+          "recordSha256": "cba57af7e823125221ae0e4cf54d588a6d38a6c403428195b22acab040f47c26",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
         },
         "original": {
@@ -6332,7 +6332,7 @@
           "sourceKind": "individual_mbti",
           "auditRef": "source-locator-audit.json#c782e08817e7f4ae8cd7",
           "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
-          "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+          "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
           "originalState": {
             "type": "INTJ",
             "area": "workplace",
@@ -6351,15 +6351,15 @@
             "exportName": "CW_SOURCES",
             "index": 8,
             "originalId": "cwpr:source:c782e08817e7f4ae8cd7",
-            "recordSha256": "dc40f2365e22d72d748c7fbbc8fae3eafb48517180637fea1072ce62496256c1",
+            "recordSha256": "cba57af7e823125221ae0e4cf54d588a6d38a6c403428195b22acab040f47c26",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:8fa382456cd32544a3ac3bd0d4152db93261fc0f024287afd9ae2a5e0f6304c8",
           "originalId": "cwpr:source:c782e08817e7f4ae8cd7",
           "role": "ORIGINAL_RECORD",
-          "expectedHash": "dc40f2365e22d72d748c7fbbc8fae3eafb48517180637fea1072ce62496256c1",
-          "actualHash": "dc40f2365e22d72d748c7fbbc8fae3eafb48517180637fea1072ce62496256c1",
+          "expectedHash": "cba57af7e823125221ae0e4cf54d588a6d38a6c403428195b22acab040f47c26",
+          "actualHash": "cba57af7e823125221ae0e4cf54d588a6d38a6c403428195b22acab040f47c26",
           "hashAlgorithm": "SHA256_JSON_INSERTION",
           "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
           "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
@@ -6415,7 +6415,7 @@
             "originalId": "cwpr:source:99abb271c1ef0a874619",
             "recordSha256": "f7b3791f38ebf2cf98d4c1ade23257a4a7d649d7ad2ad554eeb200e3063546d6",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:a56c0b24fc4e09b7e9371eb111f2e35281c04f506213c07045a811f907bb375e",
           "originalId": "cwpr:source:99abb271c1ef0a874619",
@@ -6477,7 +6477,7 @@
             "originalId": "cwpr:source:1b369a62ec425b1ebbe5",
             "recordSha256": "8bc0b00a81ff6819676b4927b4f46a4d8b0f6eef7f3442ec2b62a16eb1ae60eb",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "65571e418ce3c510346c8292b89152a6f95cae323c1e81e7fac60607db87bf0d"
+            "fileSha256": "b0bc53c6198f23508a9ac8d43ffc0de1ad38bcf69f990a3d74d6734bc282efa0"
           },
           "matchedCatalogKey": "kc:v1:a91156e60b7fb5571c1c1b134b9739b5105037ada609605c45ce227cc6f0b5f8",
           "originalId": "cwpr:source:1b369a62ec425b1ebbe5",
@@ -6524,7 +6524,7 @@
             "originalId": "authority_scope_alignment",
             "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
             "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-            "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+            "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
           },
           "matchedCatalogKey": "kc:v1:c066f461a912bf851601ccbe740191986e107ade0cf40bae7f2470b6f09fa451",
           "originalId": "authority_scope_alignment",

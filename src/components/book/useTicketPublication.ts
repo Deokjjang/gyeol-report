@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReportInputPayload } from "../../lib/report-generation/reportInputTypes";
-import { createCheckoutConsentAssertion, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
+import { createCheckoutConsentAssertion, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
 
 type Pending = { requestId: string; fingerprint: string; scope?: string };
 const validPending = (v: unknown): v is Pending => !!v && typeof v === "object" && "requestId" in v && "fingerprint" in v && typeof v.requestId === "string" && /^[a-f0-9-]{36}$/i.test(v.requestId) && typeof v.fingerprint === "string" && /^[a-f0-9]{64}$/.test(v.fingerprint) && (!("scope" in v) || (typeof v.scope === "string" && /^[a-f0-9]{64}$/.test(v.scope)));
@@ -67,7 +67,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
     window.addEventListener("focus", focus); document.addEventListener("visibilitychange", focus);
     return () => { stopped = true; clearInterval(timer); clearTimeout(deadline); controller?.abort(); window.removeEventListener("focus", focus); document.removeEventListener("visibilitychange", focus); };
   }, [enabled, pending, completedUrl, accept]);
-  const submit = async (payload: ReportInputPayload, consents: CheckoutLegalConfirmations, scope?: string) => {
+  const submit = async (payload: ReportInputPayload, consents: CheckoutLegalConfirmations, scope?: string, ui?: CheckoutConsentUiClaim) => {
     if (!enabled || !loaded || sending.current || completedUrl) return;
     sending.current = true; setSubmitting(true); setRetryable(false);
     const controller = new AbortController();
@@ -81,7 +81,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
       sessionStorage.setItem(key, JSON.stringify(value));
       sessionStorage.setItem(checkoutReturnKey(product), "1");
       current.current = value; setPending(value); setMessage("책 발행을 준비하고 있습니다.");
-      const response = await fetch("/auth/ticket-redeem", { method: "POST", signal: controller.signal, headers: { "content-type": "application/json", ...(scope ? { "x-ticket-account": scope } : {}) }, body: JSON.stringify({ requestId: value.requestId, payload, consent: createCheckoutConsentAssertion(consents) }) });
+      const response = await fetch("/auth/ticket-redeem", { method: "POST", signal: controller.signal, headers: { "content-type": "application/json", ...(scope ? { "x-ticket-account": scope } : {}) }, body: JSON.stringify({ requestId: value.requestId, payload, consent: createCheckoutConsentAssertion(consents, undefined, ui) }) });
       const body = await response.json();
       if (!mounted.current) return;
       // Only definitive pre-reservation rejections release the method lock.

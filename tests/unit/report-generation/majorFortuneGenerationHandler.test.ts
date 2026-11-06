@@ -204,7 +204,7 @@ describe("major fortune generation handler", () => {
     expect(visibleText).not.toMatch(/반복\s*압박\s*\d+번째|\d+번째\s*점검/u);
   });
 
-  it("does not connect API, persistence, payment, or unconditional writer execution", () => {
+  it("does not connect API, persistence, payment, or a writer", () => {
     const forbiddenMarkers = [
       "api/reports",
       "persistence",
@@ -218,7 +218,8 @@ describe("major fortune generation handler", () => {
       expect(dispatcherSource).not.toContain(marker);
     }
 
-    expect(source).toContain("options.writer?.enabled === true");
+    expect(source).not.toContain("openai");
+    expect(source).not.toContain("options.writer");
     expect(dispatcherSource).toContain("majorFortune: handleMajorFortuneGeneration");
   });
 });

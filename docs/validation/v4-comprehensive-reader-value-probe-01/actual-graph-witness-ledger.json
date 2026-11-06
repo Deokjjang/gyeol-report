@@ -611,7 +611,7 @@
           {
             "file": "docs/product/mbti/source/ENFJ.json",
             "pointer": "/traits/identity/0/plainKo",
-            "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "catalogKeys": [
               "kc:v1:50b2c4840898a225b7fb1e7fdb5e29e2c55e9a15f086dbca5a1edac5c2f851ad"
             ],
@@ -764,7 +764,7 @@
           {
             "file": "docs/product/mbti/source/ENFJ.json",
             "pointer": "/traits/workplace/0/plainKo",
-            "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
             "catalogKeys": [
               "kc:v1:1f5f6f3c964b3e86f13af856e4a71cc3035953508238ce7129956743e1cc452b"
             ],
@@ -1228,7 +1228,7 @@
       "fixture": "fixture-comprehensive-A",
       "file": "docs/validation/v4-actual-evidence-graph-01/shards/fixture-comprehensive-A-nodes.json",
       "allNodesMatched": 3628,
-      "originalHash": "271e1764c89e36e2d4230b77b7d1d084b0c6fcb1f7de930f1c0bba8fb9a13dad"
+      "originalHash": "b852683b92311551b2fc5121abc8de664c094295843afc33e43257d3ee5a6d58"
     },
     {
       "fixture": "fixture-comprehensive-F",

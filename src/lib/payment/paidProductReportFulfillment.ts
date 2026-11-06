@@ -9,7 +9,7 @@ import {
   type ReportProductSlug,
 } from "../report-generation/productPreviewSnapshot";
 import type { ReportInputPayload } from "../report-generation/reportInputTypes";
-import type { ReportWriterRuntime } from "../report-generation/reportWriterRuntime";
+import type { NoWriterRuntime } from "../report-generation/writerDisabled";
 import { buildReportPersistencePayload } from "../report/reportPersistencePayload";
 import type { ReportOutput } from "../report/types";
 import { getReportProduct, isDirectReportPaymentAmount } from "./reportProductCatalog";
@@ -42,7 +42,7 @@ export type PaidProductReportFulfillmentResult =
 export type FulfillPaidProductReportInput = {
   readonly order: PaymentOrderRecord;
   readonly reportAdapter: Pick<ReportPersistenceAdapter, "create">;
-  readonly writerRuntime: ReportWriterRuntime;
+  readonly writerRuntime: NoWriterRuntime;
   readonly nowIso?: string;
 };
 
@@ -197,7 +197,7 @@ export async function fulfillPaidProductReport(
     );
   }
 
-  const generationResult = await generateProductReport(payload, input.writerRuntime, input.writerRuntime.enabled ? "normal_writer" : "deterministic_fallback");
+  const generationResult = await generateProductReport(payload, input.writerRuntime, "deterministic_fallback");
 
   if (!generationResult.ok) {
     return failure(

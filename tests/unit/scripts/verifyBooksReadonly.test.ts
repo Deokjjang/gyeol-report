@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { classify, DEFAULT_TARGETS, parseArgs, visibleText } from "../../../scripts/verify-books-readonly";
+import { classify, DEFAULT_TARGETS, isSameSite, parseArgs, visibleText } from "../../../scripts/verify-books-readonly";
 
 const page = (body: string) => `<!DOCTYPE html><html><head><title>결리포트</title><script>self.__next_f.push([1,"x"])</script></head><body>${body}</body></html>`;
 const longText = "사주와 MBTI로 보는 나의 이야기. ".repeat(6);
@@ -7,6 +7,15 @@ const home = DEFAULT_TARGETS[0];
 const robots = DEFAULT_TARGETS.find((t) => t.path === "/robots.txt")!;
 
 describe("verify-books-readonly public page check (no network)", () => {
+  it("treats apex ↔ www redirect as the same site, other hosts as different", () => {
+    expect(isSameSite("gyeolreport.com", "www.gyeolreport.com")).toBe(true);
+    expect(isSameSite("www.gyeolreport.com", "gyeolreport.com")).toBe(true);
+    expect(isSameSite("example.test", "example.test")).toBe(true);
+    expect(isSameSite("gyeolreport.com", "vercel.com")).toBe(false);
+    expect(isSameSite("example.test", "www.example.test")).toBe(false);
+    expect(isSameSite("evil.gyeolreport.com.example", "gyeolreport.com")).toBe(false);
+  });
+
   it("uses public pages only, no share token", () => {
     expect(DEFAULT_TARGETS.map((t) => t.path)).toEqual(["/", "/products", "/products/saju-mbti-full", "/campaign/gyeol-opening-2026", "/sitemap.xml", "/robots.txt"]);
     expect(DEFAULT_TARGETS.some((t) => t.path.startsWith("/r/"))).toBe(false);

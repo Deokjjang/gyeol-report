@@ -47,7 +47,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
         "sourceKind": "mbti_trait",
         "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "identity",
@@ -162,7 +162,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#18fb1909ee68e78603a1",
         "sourceKind": "mbti_trait",
         "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-        "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+        "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
         "originalState": {
           "type": "INTJ",
           "area": "identity",
@@ -469,7 +469,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
         "sourceKind": "mbti_trait",
         "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "identity",
@@ -584,7 +584,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#9c42149062cec1cf15f3",
         "sourceKind": "mbti_trait",
         "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-        "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+        "sourceFileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407",
         "originalState": {
           "type": "ESTJ",
           "area": "communication",
@@ -896,7 +896,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#a9b5f2a55f489ecc8df6",
         "sourceKind": "mbti_trait",
         "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-        "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+        "sourceFileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c",
         "originalState": {
           "type": "ENFJ",
           "area": "identity",
@@ -1011,7 +1011,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#1fc7b68ee38cbe25ca6d",
         "sourceKind": "mbti_trait",
         "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-        "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+        "sourceFileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9",
         "originalState": {
           "type": "ISFJ",
           "area": "identity",
@@ -1126,7 +1126,7 @@ export const CH11_MATERIALS: readonly Material[] = [
         "auditRef": "source-catalog.json#18fb1909ee68e78603a1",
         "sourceKind": "mbti_trait",
         "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-        "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+        "sourceFileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a",
         "originalState": {
           "type": "INTJ",
           "area": "identity",

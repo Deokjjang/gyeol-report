@@ -1,0 +1,1170 @@
+{
+  "version": "mbti-seeds-v1",
+  "type": "ENFJ",
+  "note": "P6d F: 유형 × 영역 장면 씨앗(작가 재료, 6~24자 명사구). 고객 해시로 고르고 명리 근거·입력 맥락이 있는 문단에서만 쓴다.",
+  "seeds": {
+    "work": [
+      {
+        "id": "ENFJ-work-01",
+        "text": "회의에서 말 없는 막내에게 먼저 의견 묻기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-02",
+        "text": "신입 첫 주 실수에 나도 그랬다며 말 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-03",
+        "text": "동료 고민 듣고 내 보고서는 밤에 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office",
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-04",
+        "text": "팀 분위기 처질 때 간식 사 들고 돌기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-05",
+        "text": "킥오프에서 각자 역할의 이유 설명하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-06",
+        "text": "발표 전 후배 대본을 같이 고쳐 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-07",
+        "text": "스터디 모집 글에 응원 문구 가득 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-08",
+        "text": "일정 틀어진 팀원에게 괜찮다며 일 나눠 받기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-09",
+        "text": "회의 끝에 고생한 점 한 명씩 짚기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-10",
+        "text": "워크숍 진행을 맡아 참석자 이름 외우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-11",
+        "text": "갈등 중인 두 사람을 불러 따로 얘기 듣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-12",
+        "text": "성과 발표 자리에서 팀원 공로 먼저 말하기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-13",
+        "text": "도움 요청에 내 일정 미루고 수락하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-14",
+        "text": "수강생 이름 불러 주며 댓글 달기",
+        "rel": "any",
+        "job": "business",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-15",
+        "text": "거래처 담당자 생일을 달력에 적어 두기",
+        "rel": "any",
+        "job": "business",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-16",
+        "text": "가게 직원 컨디션부터 살피고 매장 열기",
+        "rel": "any",
+        "job": "business",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ENFJ-work-17",
+        "text": "후배 이직 상담에 밤늦게 통화로 응해 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-18",
+        "text": "면접 보는 친구에게 예상 질문 정리해 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-19",
+        "text": "기획 회의에서 반대 의견 먼저 인정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-20",
+        "text": "공동 작업 일정표에 모두의 사정 반영하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-21",
+        "text": "퇴근 직전 던져진 일을 웃으며 받아 안기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-22",
+        "text": "자원봉사 모임 운영진 맡아 공지 올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-23",
+        "text": "프로젝트 끝나고 감사 카드 돌리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-24",
+        "text": "혼자 일하는 프리랜서 지인에게 일감 연결하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "freelance"
+        ]
+      },
+      {
+        "id": "ENFJ-work-25",
+        "text": "워크샵 조 편성할 때 어울리는 사람끼리 묶기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-26",
+        "text": "회의록에 결정과 담당자 꼼꼼히 적기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "office"
+        ]
+      },
+      {
+        "id": "ENFJ-work-27",
+        "text": "팀원 표정이 어두우면 점심 약속 잡기",
+        "rel": "any",
+        "job": "employed",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-28",
+        "text": "이직 준비하는 동료에게 이력서 첨삭해 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-work-29",
+        "text": "자기소개서 첨삭 모임에서 장점 찾아 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-30",
+        "text": "리더 없는 모임에서 어느새 사회자 되기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-31",
+        "text": "조별 활동 때 안 하는 조원도 다독이기",
+        "rel": "any",
+        "job": "student",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-work-32",
+        "text": "동아리 신입 환영회 순서를 직접 짜기",
+        "rel": "any",
+        "job": "student",
+        "ctx": []
+      }
+    ],
+    "money": [
+      {
+        "id": "ENFJ-money-01",
+        "text": "후배 생일에 케이크와 손편지 챙기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-money-02",
+        "text": "지인이 연 가게에 일단 결제하고 홍보하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ENFJ-money-03",
+        "text": "빌려준 돈 돌려 달라는 말 못 꺼내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-04",
+        "text": "단체 선물 모금 총대를 자진해서 메기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-05",
+        "text": "회식비 계산대 앞에서 자연스럽게 카드 내밀기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "shop"
+        ]
+      },
+      {
+        "id": "ENFJ-money-06",
+        "text": "월말 명세서에 남 챙긴 항목 가득",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-07",
+        "text": "친구 결혼식 축의금 봉투를 일찌감치 준비하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-08",
+        "text": "팀원 간식비를 내 지갑에서 먼저 쓰기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-money-09",
+        "text": "공동 구매 모집 글을 올리고 정산까지 맡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-10",
+        "text": "기부 참여를 주변에 권하는 메시지 돌리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-11",
+        "text": "나를 위한 옷 대신 상대에게 줄 선물 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-12",
+        "text": "돈 얘기 나오면 분위기부터 살피기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-13",
+        "text": "모임 회비 걷기 전 사정 살펴 배려하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-14",
+        "text": "후원 팝업 스토어를 친구들과 함께 방문하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-15",
+        "text": "생활비 계획에 챙길 사람 몫을 먼저 적기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-16",
+        "text": "쇼핑 앱 장바구니에 선물용만 가득 담기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-17",
+        "text": "적금 만기에 내 것보다 해 줄 일 떠올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-18",
+        "text": "연말 모임 장소를 예약하고 선결제하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-19",
+        "text": "부담 줄까 봐 선물 가격 낮춰 말하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-20",
+        "text": "지출 앱에서 인간관계 비용이 제일 큰 달",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-21",
+        "text": "싸게 산 물건을 지인에게 나눠 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-22",
+        "text": "용돈 고민 상담에 내 경험을 풀어 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-23",
+        "text": "팀 사기 올리려고 점심을 쏘기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-24",
+        "text": "같이 일한 사람에게 작은 선물 챙기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-25",
+        "text": "배달 앱으로 야근하는 동료에게 음료 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-money-26",
+        "text": "좋은 일 생기면 한턱 내며 분위기 띄우기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-27",
+        "text": "기념일 케이크를 미리 예약해 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-28",
+        "text": "내 월급 쓰임새를 정리하다 한숨 쉬기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-29",
+        "text": "무료 나눔 글을 보고 필요한 이웃 연결하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-30",
+        "text": "비싼 장비보다 사람들이 모일 공간에 투자하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-31",
+        "text": "돈 문제로 힘든 지인에게 송금해 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-money-32",
+        "text": "내 몫 저축은 늘 마지막 순서로 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "love": [
+      {
+        "id": "ENFJ-love-01",
+        "text": "호감 가는 사람의 꿈을 먼저 믿어 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-02",
+        "text": "소개팅에서 이야기 끌어내는 질문 던지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-03",
+        "text": "마음이 생기면 말투와 이모티콘부터 다정해지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-04",
+        "text": "썸 단계에서 상대의 하루 안부를 챙기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-05",
+        "text": "고백 전에 상대의 분위기를 한참 살피기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-06",
+        "text": "호감 가는 사람 고민의 해결책 찾아 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-07",
+        "text": "힘들다는 말에 하던 일 멈추고 통화",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-08",
+        "text": "첫 만남 장소를 상대 취향에 맞춰 알아보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-09",
+        "text": "연락이 뜸해도 일단 웃으며 기다리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-10",
+        "text": "연애를 시작하면 미래 계획을 함께 그려 보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-11",
+        "text": "상대 생일을 몇 주 전부터 기획하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-12",
+        "text": "소개팅 후 정중한 인사 메시지를 꼭 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-13",
+        "text": "상대의 장점을 발견하면 바로 말로 칭찬하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-14",
+        "text": "호감 있는 사람의 친구들에게도 먼저 인사하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-15",
+        "text": "거절당한 뒤 고마웠다는 정리 메시지",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-16",
+        "text": "상대에게 맞추다 내 취향을 잊어버리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-17",
+        "text": "연애 상담해 주다 내 고민은 미루기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-18",
+        "text": "좋아하는 마음을 감추지 않고 표현하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-19",
+        "text": "이상형 질문에 사람 됨됨이부터 대답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-20",
+        "text": "짝사랑하면서 도움 될 정보 챙겨 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-21",
+        "text": "마음 정리한 뒤에도 안부 정도는 이어 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-22",
+        "text": "데이트 코스를 지도 앱에 미리 저장해 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-23",
+        "text": "연인 기념일 이벤트를 몇 주 전부터 기획하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-24",
+        "text": "연인이 서운한 날에도 먼저 너 힘들지 묻기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-25",
+        "text": "연인의 이직 고민에 계획표까지 짜 주기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-26",
+        "text": "연인의 친구 모임에 먼저 인사하며 어울리기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-27",
+        "text": "미지근한 반응에 웃고 혼자 곱씹기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-28",
+        "text": "싸운 날에도 저녁엔 먼저 연락해 풀어 주기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-29",
+        "text": "연인에게 내 속마음 말하기 직전 망설이기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-30",
+        "text": "지친 연인 집 앞에 음식 걸어 두기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-31",
+        "text": "연인의 꿈을 위해 내 일정을 조정하기",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-love-32",
+        "text": "연인 직장 일정까지 먼저 챙기려다 멈칫",
+        "rel": "partner",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ENFJ-relationships-01",
+        "text": "모임에 처음 온 사람 옆자리로 가서 말 걸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-02",
+        "text": "친구 둘 다투면 화해 자리 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-03",
+        "text": "낯선 사람 두 명을 소개해 주고 인연 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-04",
+        "text": "단체 채팅방 가라앉을 때 농담 던지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-05",
+        "text": "모임 총무를 맡아 일정과 장소 챙기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-06",
+        "text": "오래 못 만난 친구들 단톡방을 새로 파기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-07",
+        "text": "갈등이 생기면 직접 만나 풀자고 제안하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-08",
+        "text": "친구 생일을 달력 앱에 전부 등록해 두기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-09",
+        "text": "가치관 다른 사람 앞에서 웃으며 선 긋기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-10",
+        "text": "동창회 준비위원을 자진해서 맡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-11",
+        "text": "이웃 모임에서 어색한 사이를 이어 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-12",
+        "text": "힘든 친구에게 먼저 전화해 약속 잡기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-13",
+        "text": "회식에서 혼자 앉은 사람 곁에 앉기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-14",
+        "text": "대화에서 소외된 사람 한 번씩 호명",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-15",
+        "text": "이사 간 지인 집들이에 선물 챙겨 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-16",
+        "text": "친구 고민 듣고 조언 메시지 보내기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-17",
+        "text": "모임 끝나고 집에 와서 녹초가 되기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-18",
+        "text": "관계 정리 앞에서 마음이 약해져 미루기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-19",
+        "text": "응원이 필요한 사람에게 격려 카드 건네기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-20",
+        "text": "동호회 신입에게 분위기 설명해 주기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-21",
+        "text": "친구의 새 도전 소식에 가장 크게 반응하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-22",
+        "text": "커뮤니티 초보 질문에 정성껏 답하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-23",
+        "text": "누가 서먹해 보이면 먼저 대화에 끌어들이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-24",
+        "text": "친구들 오해 풀어 주려 뛰어다니기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-25",
+        "text": "모임 사진을 정리해 단체로 공유하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-26",
+        "text": "여럿 모인 자리서 모두 말하게 판 짜기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-27",
+        "text": "마음에 담아 둔 말을 웃음으로 넘기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-28",
+        "text": "신경 쓰다 지쳐서 연락 횟수가 줄어들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-29",
+        "text": "오랜 친구의 속사정을 눈치채고 조용히 챙기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-30",
+        "text": "소개팅 주선하며 두 사람 성향 맞추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-31",
+        "text": "송년회 장소를 투표로 정하자고 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-relationships-32",
+        "text": "모임 분위기 띄우려 게임을 준비해 가기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ],
+    "alone": [
+      {
+        "id": "ENFJ-alone-01",
+        "text": "약속 없는 토요일 힘든 사람 찾아 폰 열기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-02",
+        "text": "잠들기 전 오늘 한 말 되감으며 사과 다듬기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-03",
+        "text": "혼자 쓰는 일기장에도 남 얘기만 적기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-04",
+        "text": "휴일 아침 혼자 있다가 금세 허전해지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-05",
+        "text": "내 기분 쓰려다 첫 줄에서 펜 멈추기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-06",
+        "text": "샤워하면서 누군가 떠올리며 걱정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-07",
+        "text": "혼자 카페에서 주변 사람 관찰하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-08",
+        "text": "혼자 영화 보다 주인공 대사에 울컥하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-09",
+        "text": "퇴근 후 집에서 불 끄고 가만히 앉아 있기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-10",
+        "text": "다음 주 모임 일정을 머릿속으로 정리하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-11",
+        "text": "혼자 있는 시간에 자기계발 강의 틀어 놓기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-12",
+        "text": "운동하며 이어폰으로 팟캐스트 듣기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-13",
+        "text": "달력 앱에 지인들 기념일 하나하나 입력하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-14",
+        "text": "책을 읽다가 팀원에게 해 줄 말 메모하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": [
+          "team"
+        ]
+      },
+      {
+        "id": "ENFJ-alone-15",
+        "text": "혼자 요리해 놓고 누구랑 먹을까 생각하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-16",
+        "text": "산책하며 오늘 만난 사람들의 표정 떠올리기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-17",
+        "text": "휴대폰 없는 하루를 시도했다가 불안해지기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-18",
+        "text": "혼자 여행 계획 짜다 동행 찾기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-19",
+        "text": "일요일 밤 내일 만날 사람들 걱정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-20",
+        "text": "조용한 도서관에서 리더십 책 읽다 졸기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-21",
+        "text": "방 청소하며 오늘의 대화 복기하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-22",
+        "text": "혼자 마시는 커피 한 잔에 마음이 놓이기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-23",
+        "text": "집에서 글쓰기를 하며 나를 되돌아보려 하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-24",
+        "text": "쉬는 날 뭔가 도움 될 일이 없나 찾아보기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-25",
+        "text": "저녁 산책길에서 하늘 보며 숨 고르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-26",
+        "text": "편지 쓰기 앱으로 오래된 친구에게 글 남기기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-27",
+        "text": "혼자 요가하며 몸 상태 점검하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-28",
+        "text": "스트레스 풀려고 노래방 앱 켜고 혼자 부르기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-29",
+        "text": "쌓인 메시지 훑고 답할 순서 정하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-30",
+        "text": "혼자 영상 편집하며 모임 하이라이트 만들기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-31",
+        "text": "고요한 새벽에 내 마음 상태 체크하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      },
+      {
+        "id": "ENFJ-alone-32",
+        "text": "혼자 보는 예능에서 웃다가 남에게 공유하기",
+        "rel": "any",
+        "job": "any",
+        "ctx": []
+      }
+    ]
+  }
+}

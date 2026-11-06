@@ -13,19 +13,19 @@
         "file": "docs/product/mbti/source/ENFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "2be2bea9e1f5a45dee2e354a5f805a3518e8144592b130f5940444f9781a36de",
-        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+        "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
       },
       {
         "file": "docs/product/mbti/source/ENFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "3d962b24e96da939dec02304178a8678858f19f3054ead5086cb30e849c81a21",
-        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+        "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
       },
       {
         "file": "docs/product/mbti/source/ENFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "74f77a2aa78df34d68f40f3e320ee78e8a61bd884b7e2f2c0d5a9c637ef98534",
-        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+        "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
       }
     ],
     "questions": [
@@ -68,19 +68,19 @@
         "file": "docs/product/mbti/source/ENFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "2be2bea9e1f5a45dee2e354a5f805a3518e8144592b130f5940444f9781a36de",
-        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+        "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
       },
       {
         "file": "docs/product/mbti/source/ENFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "3d962b24e96da939dec02304178a8678858f19f3054ead5086cb30e849c81a21",
-        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+        "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
       },
       {
         "file": "docs/product/mbti/source/ENFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "74f77a2aa78df34d68f40f3e320ee78e8a61bd884b7e2f2c0d5a9c637ef98534",
-        "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+        "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
       }
     ],
     "questions": [
@@ -123,19 +123,19 @@
         "file": "docs/product/mbti/source/ENFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "c06ad27341da69b15a2107b24f3f392afef635ad6aeca6f7966479442e5d1cbc",
-        "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+        "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
       },
       {
         "file": "docs/product/mbti/source/ENFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "248a769ed031c22c8f5f04d81c483daf3860668a2ab29783a7a9f62e17f9ea82",
-        "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+        "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
       },
       {
         "file": "docs/product/mbti/source/ENFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "047005e020505690ed344b88711f383d70ae077710729c3762d358223d7dd16f",
-        "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+        "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
       }
     ],
     "questions": [
@@ -178,19 +178,19 @@
         "file": "docs/product/mbti/source/ENFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "c06ad27341da69b15a2107b24f3f392afef635ad6aeca6f7966479442e5d1cbc",
-        "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+        "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
       },
       {
         "file": "docs/product/mbti/source/ENFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "248a769ed031c22c8f5f04d81c483daf3860668a2ab29783a7a9f62e17f9ea82",
-        "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+        "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
       },
       {
         "file": "docs/product/mbti/source/ENFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "047005e020505690ed344b88711f383d70ae077710729c3762d358223d7dd16f",
-        "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+        "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
       }
     ],
     "questions": [
@@ -233,19 +233,19 @@
         "file": "docs/product/mbti/source/ENTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "af63824d2e44e7414eebdfa760cc6f311910d493746249d65b75df990591a641",
-        "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+        "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
       },
       {
         "file": "docs/product/mbti/source/ENTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-        "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+        "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
       },
       {
         "file": "docs/product/mbti/source/ENTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "3f17f40d4c05f3df57d2b4b837346a721527cfa6578eae816f1b178f4c918f40",
-        "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+        "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
       }
     ],
     "questions": [
@@ -288,19 +288,19 @@
         "file": "docs/product/mbti/source/ENTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "af63824d2e44e7414eebdfa760cc6f311910d493746249d65b75df990591a641",
-        "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+        "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
       },
       {
         "file": "docs/product/mbti/source/ENTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-        "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+        "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
       },
       {
         "file": "docs/product/mbti/source/ENTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "3f17f40d4c05f3df57d2b4b837346a721527cfa6578eae816f1b178f4c918f40",
-        "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+        "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
       }
     ],
     "questions": [
@@ -343,19 +343,19 @@
         "file": "docs/product/mbti/source/ENTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "d920745c8fc4e3cfe32719e74579b6eed6f73b7621afa6a0e8d878eb2c4dafa7",
-        "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+        "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
       },
       {
         "file": "docs/product/mbti/source/ENTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "0ab8e8d97a4797efc462340f2a9a260f7a48a2293845f06cb5f5fac04f196ca6",
-        "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+        "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
       },
       {
         "file": "docs/product/mbti/source/ENTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "8519cce6df59cc43e1d51b69b431bc160e75dfa86485e72a45e0faf40728dbf1",
-        "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+        "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
       }
     ],
     "questions": [
@@ -398,19 +398,19 @@
         "file": "docs/product/mbti/source/ENTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "d920745c8fc4e3cfe32719e74579b6eed6f73b7621afa6a0e8d878eb2c4dafa7",
-        "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+        "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
       },
       {
         "file": "docs/product/mbti/source/ENTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "0ab8e8d97a4797efc462340f2a9a260f7a48a2293845f06cb5f5fac04f196ca6",
-        "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+        "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
       },
       {
         "file": "docs/product/mbti/source/ENTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "8519cce6df59cc43e1d51b69b431bc160e75dfa86485e72a45e0faf40728dbf1",
-        "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+        "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
       }
     ],
     "questions": [
@@ -453,19 +453,19 @@
         "file": "docs/product/mbti/source/ESFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "e1d403262ae3f2dd124ffc9c260916ac6de94ee74cb041dd9402716032de16d8",
-        "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+        "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
       },
       {
         "file": "docs/product/mbti/source/ESFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "c4796ca08aa9def8be551c002396db24c78f476f09e22e8dcc8154381d63bdcd",
-        "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+        "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
       },
       {
         "file": "docs/product/mbti/source/ESFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "5d9f23fc477cf287665813aeaddaca4de80ca4a4f26433157a7c31cd82b2fe1e",
-        "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+        "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
       }
     ],
     "questions": [
@@ -508,19 +508,19 @@
         "file": "docs/product/mbti/source/ESFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "e1d403262ae3f2dd124ffc9c260916ac6de94ee74cb041dd9402716032de16d8",
-        "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+        "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
       },
       {
         "file": "docs/product/mbti/source/ESFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "c4796ca08aa9def8be551c002396db24c78f476f09e22e8dcc8154381d63bdcd",
-        "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+        "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
       },
       {
         "file": "docs/product/mbti/source/ESFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "5d9f23fc477cf287665813aeaddaca4de80ca4a4f26433157a7c31cd82b2fe1e",
-        "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+        "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
       }
     ],
     "questions": [
@@ -563,19 +563,19 @@
         "file": "docs/product/mbti/source/ESFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "997b1edd30ef8d1d17f07cd0527af6187c699b32bd00b036541e66dcccf357f9",
-        "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+        "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
       },
       {
         "file": "docs/product/mbti/source/ESFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "88e603e0b43570f9790e874e20ef59c138648ff3ee68bee2146c9657dedd5b24",
-        "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+        "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
       },
       {
         "file": "docs/product/mbti/source/ESFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "1383807dfd043320f9a7e767dba4572c7ee94a847c44c8304586653cedf6c47a",
-        "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+        "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
       }
     ],
     "questions": [
@@ -618,19 +618,19 @@
         "file": "docs/product/mbti/source/ESFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "997b1edd30ef8d1d17f07cd0527af6187c699b32bd00b036541e66dcccf357f9",
-        "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+        "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
       },
       {
         "file": "docs/product/mbti/source/ESFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "88e603e0b43570f9790e874e20ef59c138648ff3ee68bee2146c9657dedd5b24",
-        "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+        "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
       },
       {
         "file": "docs/product/mbti/source/ESFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "1383807dfd043320f9a7e767dba4572c7ee94a847c44c8304586653cedf6c47a",
-        "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+        "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
       }
     ],
     "questions": [
@@ -673,19 +673,19 @@
         "file": "docs/product/mbti/source/ESTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "176b38d4428ed652bb680d4446d7da57ed37ce0d9823b9888c506902510c4aaf",
-        "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+        "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
       },
       {
         "file": "docs/product/mbti/source/ESTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-        "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+        "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
       },
       {
         "file": "docs/product/mbti/source/ESTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "2775bdd4707d40af9a088e60f0e8c1abf9ea8a4495ed1ff05762b8af6acba10d",
-        "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+        "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
       }
     ],
     "questions": [
@@ -728,19 +728,19 @@
         "file": "docs/product/mbti/source/ESTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "176b38d4428ed652bb680d4446d7da57ed37ce0d9823b9888c506902510c4aaf",
-        "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+        "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
       },
       {
         "file": "docs/product/mbti/source/ESTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-        "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+        "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
       },
       {
         "file": "docs/product/mbti/source/ESTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "2775bdd4707d40af9a088e60f0e8c1abf9ea8a4495ed1ff05762b8af6acba10d",
-        "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+        "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
       }
     ],
     "questions": [
@@ -783,19 +783,19 @@
         "file": "docs/product/mbti/source/ESTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "4d4b3e723671bfe763a5d3ab28c099bdec707125b229052c203877b7a433c552",
-        "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+        "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
       },
       {
         "file": "docs/product/mbti/source/ESTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "f41f2724524fce8f5a17a4bdd31363250fec9d52698401b4e24a6a1572e7bbe4",
-        "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+        "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
       },
       {
         "file": "docs/product/mbti/source/ESTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "8d45c326703fbb911b68ff9cce9439e8ea6726c8b500ca1a6edf39b55b915c36",
-        "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+        "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
       }
     ],
     "questions": [
@@ -838,19 +838,19 @@
         "file": "docs/product/mbti/source/ESTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "4d4b3e723671bfe763a5d3ab28c099bdec707125b229052c203877b7a433c552",
-        "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+        "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
       },
       {
         "file": "docs/product/mbti/source/ESTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "f41f2724524fce8f5a17a4bdd31363250fec9d52698401b4e24a6a1572e7bbe4",
-        "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+        "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
       },
       {
         "file": "docs/product/mbti/source/ESTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "8d45c326703fbb911b68ff9cce9439e8ea6726c8b500ca1a6edf39b55b915c36",
-        "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+        "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
       }
     ],
     "questions": [
@@ -893,19 +893,19 @@
         "file": "docs/product/mbti/source/INFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "24d3e4a213be148ff1409b7beb37a39ddfddd8d265e2ea63f950b4f5974b2720",
-        "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+        "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
       },
       {
         "file": "docs/product/mbti/source/INFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "a0b6ec1ef19bedca75dfa8f19e1c49093d63aa6e119533b56d86f37d00155818",
-        "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+        "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
       },
       {
         "file": "docs/product/mbti/source/INFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "b48d861cb7570deb946a7406461dcf69ddcd2b319133d6130ba4d05217f76459",
-        "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+        "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
       }
     ],
     "questions": [
@@ -948,19 +948,19 @@
         "file": "docs/product/mbti/source/INFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "24d3e4a213be148ff1409b7beb37a39ddfddd8d265e2ea63f950b4f5974b2720",
-        "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+        "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
       },
       {
         "file": "docs/product/mbti/source/INFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "a0b6ec1ef19bedca75dfa8f19e1c49093d63aa6e119533b56d86f37d00155818",
-        "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+        "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
       },
       {
         "file": "docs/product/mbti/source/INFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "b48d861cb7570deb946a7406461dcf69ddcd2b319133d6130ba4d05217f76459",
-        "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+        "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
       }
     ],
     "questions": [
@@ -1003,19 +1003,19 @@
         "file": "docs/product/mbti/source/INFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "d0e53407328238f1b1932bca059a3021d2dae3c1ff971ca2445785b30fe5e85f",
-        "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+        "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
       },
       {
         "file": "docs/product/mbti/source/INFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "482049047490d1ebd61c9b658e2dba9125c92e9c423b57cef3d757627b81166b",
-        "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+        "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
       },
       {
         "file": "docs/product/mbti/source/INFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "3b3cf3ff5626d1a58ebb5e3362f1025bffebae69380b1d2b726de9a826ae9ab1",
-        "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+        "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
       }
     ],
     "questions": [
@@ -1058,19 +1058,19 @@
         "file": "docs/product/mbti/source/INFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "d0e53407328238f1b1932bca059a3021d2dae3c1ff971ca2445785b30fe5e85f",
-        "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+        "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
       },
       {
         "file": "docs/product/mbti/source/INFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "482049047490d1ebd61c9b658e2dba9125c92e9c423b57cef3d757627b81166b",
-        "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+        "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
       },
       {
         "file": "docs/product/mbti/source/INFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "3b3cf3ff5626d1a58ebb5e3362f1025bffebae69380b1d2b726de9a826ae9ab1",
-        "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+        "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
       }
     ],
     "questions": [
@@ -1113,19 +1113,19 @@
         "file": "docs/product/mbti/source/INTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "0a113bb165fb54de1ea72840bd81387563f77c529e2d198e5e3ceb2c0fe1363a",
-        "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+        "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
       },
       {
         "file": "docs/product/mbti/source/INTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "3863957658b32ead1194c028ad3bfdc871854d1e424b2d743d464fb3ede00ba1",
-        "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+        "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
       },
       {
         "file": "docs/product/mbti/source/INTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "202c6ddd6ac21119d9f0d9cbb502432f996a97bacf8df25408d09215c616dbaa",
-        "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+        "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
       }
     ],
     "questions": [
@@ -1168,19 +1168,19 @@
         "file": "docs/product/mbti/source/INTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "0a113bb165fb54de1ea72840bd81387563f77c529e2d198e5e3ceb2c0fe1363a",
-        "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+        "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
       },
       {
         "file": "docs/product/mbti/source/INTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "3863957658b32ead1194c028ad3bfdc871854d1e424b2d743d464fb3ede00ba1",
-        "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+        "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
       },
       {
         "file": "docs/product/mbti/source/INTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "202c6ddd6ac21119d9f0d9cbb502432f996a97bacf8df25408d09215c616dbaa",
-        "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+        "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
       }
     ],
     "questions": [
@@ -1223,19 +1223,19 @@
         "file": "docs/product/mbti/source/INTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "6486a235e1eec8a9ea0973db228a8f96b07296f6acce030ad39323c4ce035be2",
-        "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+        "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
       },
       {
         "file": "docs/product/mbti/source/INTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
-        "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+        "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
       },
       {
         "file": "docs/product/mbti/source/INTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "c8b1b2dab171c450b2914c9949aa60f51cf4737302025c0ebf6962307bf6adaa",
-        "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+        "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
       }
     ],
     "questions": [
@@ -1278,19 +1278,19 @@
         "file": "docs/product/mbti/source/INTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "6486a235e1eec8a9ea0973db228a8f96b07296f6acce030ad39323c4ce035be2",
-        "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+        "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
       },
       {
         "file": "docs/product/mbti/source/INTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
-        "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+        "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
       },
       {
         "file": "docs/product/mbti/source/INTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "c8b1b2dab171c450b2914c9949aa60f51cf4737302025c0ebf6962307bf6adaa",
-        "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+        "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
       }
     ],
     "questions": [
@@ -1333,19 +1333,19 @@
         "file": "docs/product/mbti/source/ISFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "2d56cfbede1a040db6c45c75d5f7c6803dbe9547d1b171de97cba18323627792",
-        "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+        "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
       },
       {
         "file": "docs/product/mbti/source/ISFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "1e16feda2f8ddda324f8736bb85bd7a71ec5c6a305e1cd6608806e4c50a9ac3e",
-        "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+        "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
       },
       {
         "file": "docs/product/mbti/source/ISFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "ed24a315d098e0edf57a29c7e2ff1bb0915f428cb44afcc10d49a13eb61a7f1e",
-        "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+        "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
       }
     ],
     "questions": [
@@ -1388,19 +1388,19 @@
         "file": "docs/product/mbti/source/ISFJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "2d56cfbede1a040db6c45c75d5f7c6803dbe9547d1b171de97cba18323627792",
-        "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+        "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
       },
       {
         "file": "docs/product/mbti/source/ISFJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "1e16feda2f8ddda324f8736bb85bd7a71ec5c6a305e1cd6608806e4c50a9ac3e",
-        "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+        "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
       },
       {
         "file": "docs/product/mbti/source/ISFJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "ed24a315d098e0edf57a29c7e2ff1bb0915f428cb44afcc10d49a13eb61a7f1e",
-        "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+        "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
       }
     ],
     "questions": [
@@ -1443,19 +1443,19 @@
         "file": "docs/product/mbti/source/ISFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "110a040afc0cc0697447bda53e60663fe58d9b5b7d4d40a0fd98f7311dd198e2",
-        "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+        "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
       },
       {
         "file": "docs/product/mbti/source/ISFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "7b725d5a619245716d2d89eee1baae81f48f24c70d1fc98265e374fcbc1995e8",
-        "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+        "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
       },
       {
         "file": "docs/product/mbti/source/ISFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "831f3ee04bed1c2ce8baf917ea6740ccba9d52158dcf04fce3831428506fbf1e",
-        "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+        "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
       }
     ],
     "questions": [
@@ -1498,19 +1498,19 @@
         "file": "docs/product/mbti/source/ISFP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "110a040afc0cc0697447bda53e60663fe58d9b5b7d4d40a0fd98f7311dd198e2",
-        "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+        "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
       },
       {
         "file": "docs/product/mbti/source/ISFP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "7b725d5a619245716d2d89eee1baae81f48f24c70d1fc98265e374fcbc1995e8",
-        "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+        "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
       },
       {
         "file": "docs/product/mbti/source/ISFP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "831f3ee04bed1c2ce8baf917ea6740ccba9d52158dcf04fce3831428506fbf1e",
-        "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+        "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
       }
     ],
     "questions": [
@@ -1553,19 +1553,19 @@
         "file": "docs/product/mbti/source/ISTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "56f972c3824c62245947783c1de3b24414225ac8ee5fdbaad1cd2078b666871c",
-        "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+        "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
       },
       {
         "file": "docs/product/mbti/source/ISTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "2a80bce83ed91c247cbc435aaf922b3da8cf1c388269136107881ca05c920c0a",
-        "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+        "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
       },
       {
         "file": "docs/product/mbti/source/ISTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "06c2f4b8291413681236e659ed143db62da15cc43adbb090164d66694584f5a0",
-        "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+        "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
       }
     ],
     "questions": [
@@ -1608,19 +1608,19 @@
         "file": "docs/product/mbti/source/ISTJ.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "56f972c3824c62245947783c1de3b24414225ac8ee5fdbaad1cd2078b666871c",
-        "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+        "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
       },
       {
         "file": "docs/product/mbti/source/ISTJ.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "2a80bce83ed91c247cbc435aaf922b3da8cf1c388269136107881ca05c920c0a",
-        "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+        "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
       },
       {
         "file": "docs/product/mbti/source/ISTJ.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "06c2f4b8291413681236e659ed143db62da15cc43adbb090164d66694584f5a0",
-        "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+        "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
       }
     ],
     "questions": [
@@ -1663,19 +1663,19 @@
         "file": "docs/product/mbti/source/ISTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "2f7025bfbb77d5a0df49b074ffe4ff502a0d61b19274eb4f5f569fe7775b1095",
-        "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+        "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
       },
       {
         "file": "docs/product/mbti/source/ISTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
-        "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+        "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
       },
       {
         "file": "docs/product/mbti/source/ISTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "984225e504cd1048fc81c80443bea6769f0f1ae94b99a8a08a989d180b1c03bb",
-        "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+        "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
       }
     ],
     "questions": [
@@ -1718,19 +1718,19 @@
         "file": "docs/product/mbti/source/ISTP.json",
         "pointer": "/traits/relationships/0",
         "recordSha256": "2f7025bfbb77d5a0df49b074ffe4ff502a0d61b19274eb4f5f569fe7775b1095",
-        "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+        "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
       },
       {
         "file": "docs/product/mbti/source/ISTP.json",
         "pointer": "/traits/communication/0",
         "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
-        "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+        "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
       },
       {
         "file": "docs/product/mbti/source/ISTP.json",
         "pointer": "/traits/growth/0",
         "recordSha256": "984225e504cd1048fc81c80443bea6769f0f1ae94b99a8a08a989d180b1c03bb",
-        "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+        "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
       }
     ],
     "questions": [

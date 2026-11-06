@@ -15,7 +15,7 @@ export const ANNUAL_RESEARCH_SOURCES: readonly Source[] = [
     "limitation": "원고 focus, 전체 segment, effectiveAnnualPillar, 실제 transit accepted/held를 구별한다.",
     "verification": "repository_contract_checked",
     "sourceVersion": "efe32658f8c0b0defa07601e64b49d6329665634",
-    "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533"
+    "fileSha256": "11a74bd10e28546653725c59af931f7a18c1e67a218d1b0824b97f292c9513f1"
   },
   {
     "id": "afpr:source:annual-reading",

@@ -14,7 +14,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "050c9065f29693df0df7d183fd4144b35cd18f08bd92fed358d575ba06761127",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -89,7 +89,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "33a82dbac9d7f8d7361deddfcea01fc86ef4cf005e4aae4b88282d26020492d1",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -165,7 +165,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "9b9923b5aa96c8dde60b555a1b78b46514bc1f28143cf7aced2c565a5905ecc3",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -239,7 +239,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "3e3ce18a4a696f786bd3034a0bdef1006bfa585a21fa1e1ee80905a1c8ecd68a",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -313,7 +313,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "894cad9665961bc8ebeda5ba602131d62869963f6f0d73812936c10334bf3eb9",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -388,7 +388,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "1e0ff2118c8a1b2e158d02be5bd4f8ff99adb352800d83112e3d8072c44368d7",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -463,7 +463,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "22543ef515c4f77d5cc8e7c254250307f783c18a4509723b2bdec9281af33ce2",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -538,7 +538,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "388ad399bd89165f1417ecc7be7e213c746be192f09aae41e360a3d47a96493f",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -613,7 +613,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "d7a3309e43209218d94dd4a04786046c7eac8a0a2a7f4bcfc9c8c85e30b6b29b",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -687,7 +687,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "b83d338588a0cba437b54a2044b8c459e36d7c098195b54551bb92a6d764d388",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -761,7 +761,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "bbec68b70ad35e7e0f016e664a3491709df63d29634c024203d15cdafb6d08b4",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -834,7 +834,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "1559f225082f600de30b38f79937a5f91116b856b0ae8a8f55b7c63601b59138",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -908,7 +908,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "a9056c19e20871916b00ef061e9798a61993521eae3c447cf2cd2dedb8c4c749",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -981,7 +981,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "b6be3faedbc88050d4b490b326faca6ed5695aba5b590efa68a5a23953a0ed93",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1054,7 +1054,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "74b14b54ecf3d2b4e1f44fd0aafb3f062d21a0e2db8a6820f484d102c3dd70ab",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1129,7 +1129,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "37675ac7b537d062b70f22a6d779123281bcf25dbe7f0bdc4663daef4a75eb7f",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1202,7 +1202,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1273,7 +1273,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "7131317a8cc2955b06aee4c7c11babdd33787abbf37b1d10d9e414f2ec69bfb6",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1345,7 +1345,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "d82d54b196675db626684fcd5eb5be6d6f5c41947773faa6dde25d12b034f6c3",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1418,7 +1418,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "c3cee00b0e1cda46a3c178b3cd347f019ad302f32eb0749dc7f6e0969153055d",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1489,7 +1489,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "dfef2f66eafb938ec5bf921ffacc78d29c02ea1558f7154fd5ffe8e75d22dc74",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1560,7 +1560,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "36f98f2971674b16f478f5346936e9c788c06a682136e219e29b2a161d25a590",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1633,7 +1633,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "a3a45a773d25b99dba2a1200ab9dd00190606201ad57b8d7bac6e23688baacbb",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1706,7 +1706,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "f487ef3e6aad27c82dd38e2511cfe59bd9606ff7828af079da67d196d80fb6e1",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1779,7 +1779,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "4d0c9450481f970a446685e0a3f89d93838a464f1d83129e379bc61a52f4df13",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1853,7 +1853,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "2bc04332c1dd5c09e24206e612c1b8d48f3051a26b1dee46f8384df7761bd806",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -1927,7 +1927,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "3c4ed23f1cb92438b6f8e2185c86f0c9a8233e13400c1c614d9b5fa8049917b4",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2001,7 +2001,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "f29fd57342f7940da0cc1970fee57c214399d317366d28869a332091a0fc22e4",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2074,7 +2074,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "ed773dad37290a57552dd29881cabb70eeb36a37ce762ba2ad7c5f17b12746a2",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2147,7 +2147,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "c706fbb0ffa0188357362f321d7d530bbeb984e72922c354d83a2aa3fc2a76cc",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2218,7 +2218,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "682f7031cddd237fa755c49412391f100dd7e04d13710970168f8af2f16529d7",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2291,7 +2291,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "e3a496c868a147b1d3f52dda066ff757f2e7cdcf4b3f77183c37c2fc505ddf6d",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2365,7 +2365,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "d56468a9295046ccc11cab623a8445fe6367c7345d13ec21a86e89b77b10d1cf",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2439,7 +2439,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "bc4df3c57ecca5479bb535593f9ed8b37813034f36adf801d5ca9f1a0d5750f4",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2513,7 +2513,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "d6c90cd341b877789359177cf39d2cf8cff159a0182517e5652bf8ebef66a962",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2585,7 +2585,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "fc23b92f55d06bf5bdaa58589220367c8205bbdc6c9f78720191a114a74d4f88",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2659,7 +2659,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "efa2dea48c269ab7697aa28f92cd22639f0f5cefeede9dc91e5b04fd0858fde4",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2731,7 +2731,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "3625f5e18bf49f3d0890c1ac2d7359b92d60382cddf32c4881a76065ff7d0933",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2802,7 +2802,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "893b41e78c0b7f04008a26fe1807564f4a9083e5a644faffaa5d40e4da45bb36",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2875,7 +2875,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "7798937240c84e59f327be4628eacc7e608ee4c5d7af70a662f0a8838b500ef8",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -2948,7 +2948,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "79af7c97d79a4ede31a94b9413b867ec41189013925984c22f386f8ef2b4ba60",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3021,7 +3021,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "01fc6321ae0ec24d452b055da89fe27fb7e2c2f3f4c69cc6669e7570ea74be69",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3093,7 +3093,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "749cef6e591cb7486bb0afdba27be82e6e5c19f877468400ddaa064d7b4361b6",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3167,7 +3167,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "38b8d51d7aa057554c9be12f71148327145170a2cc2c4ffe95e61b1159a54f53",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3240,7 +3240,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "b37ac7f5a42a6a9f9239f1c576a43ebd339521ad9d5efb6acb4ffbad50656dd7",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3313,7 +3313,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "a0659c73fc2615a3acdc6938acbd1cc6bd555c623826e7883b03cdf2e1ad081c",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3387,7 +3387,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "f84ec5149b65bf26cde8ecaf6caaf60b6752f4eb7ae1887b906fcbf97474d095",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3462,7 +3462,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "666711bd854c3435018452e50916eac3b93c19d1dfbee264731380e79377759b",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3536,7 +3536,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "843672eaa659db97651c14c919387fc3c45aca0f296be526fa29f0e802da1af3",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3609,7 +3609,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "f270175ebee0b6fea22ef02fdeffc77ebec0a69f601d2b9de53eb0a191da8ffd",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3683,7 +3683,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "468d4c25327ff26e8b1a40c0af400a305a9eed5c3ce9e8c124bcb5af8c9ea55d",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3757,7 +3757,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "2ac7943c2c20bd102d42bb993f91ec98d6db7eecbe2c1a4ea40f2d78762cd771",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3830,7 +3830,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "a014bc9f7fec9febaedb2259f1a47611a2852af3e60defca65a03e7eee8de2bf",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3902,7 +3902,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "2be2bea9e1f5a45dee2e354a5f805a3518e8144592b130f5940444f9781a36de",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -3976,7 +3976,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "18c723e122ea6f08084a0a002c61b2ef92a36d4ac4fb53f186d625f50dd088f4",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4050,7 +4050,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "64bda34f1af07fa8a6ed4349231958632ed3ab815f7877ce91829b18d2c377e8",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4123,7 +4123,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "3d962b24e96da939dec02304178a8678858f19f3054ead5086cb30e849c81a21",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4197,7 +4197,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "e6db8e150866428384f5e24ea9c6c6700cd2f36e7aed239b7ea12731102d4207",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4270,7 +4270,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "d7fb0e8bcdb779325be7ed389c80e89affe3e0a18c7828337ee5c7a32a349ed9",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4344,7 +4344,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "3714d7b5df1b81fc63030b98900e3f177b0dbf40abd6780a15e9103e4d25c1ab",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4418,7 +4418,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "8354d4d6b0c2252ab7a9040915dc2d7dc2f0ff1969b5ebc43736b0d279531c9e",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4491,7 +4491,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "e86729dad4dfcf85ad7e95ae8e57afeda244f4af027ce60c694221f71d23013b",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4564,7 +4564,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "815b40faa58f716cfaa3a11c126061d8afff1f894f898b6c7c3598da62cf5254",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4637,7 +4637,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "31a3c64b6258f488d92e7b2935c014f40a39dd06f0e44a52bcfac1df694d4e24",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4708,7 +4708,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "3c5edf3a39c031a6bc3a473c50c3f3f870fcd0f9d509749b2f01f52dc5601694",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4780,7 +4780,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "50af9ab6552725acaa9a5ad527bf7b2253f0ae9d6fa5f62e35212ecf714c840b",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4848,7 +4848,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "74f77a2aa78df34d68f40f3e320ee78e8a61bd884b7e2f2c0d5a9c637ef98534",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4915,7 +4915,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "6ecf91570c35700d899efe9d9f123b08f15625036123c1d59c16e8565382740d",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -4990,7 +4990,7 @@ const ENFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "bffc5c9dda52f92637969de2d7a426f53b3356195bb4f2f3bb230d79ffb7505d",
-      "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8"
+      "fileSha256": "c9055cddb9d2d0c159aac0dd8afb54fb218237786ec06ea339b97d29d3147f0c"
     },
     "originalState": {
       "type": "ENFJ",
@@ -5066,7 +5066,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "45d03a7544d3f39fbf66c5ede9c5ce66c31bec2c9647ab4bf0accf11223dfa18",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5141,7 +5141,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "d5ee57333a4e56a077112db8baf7a9b84ee5878e7195fef1344042ffa83c3f5e",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5215,7 +5215,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "5893c919e909453bf2362800803608ed0f59df9c2ae732c76374065499e8c9d7",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5290,7 +5290,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "7cc03d8d37dbec0c99385f0472d23a018eb0401b4a35bfb39021d6f5c8250c56",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5363,7 +5363,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "e2669fb6d01c0e27adf72dc2df6c4fb08f1340e179f9d49f6d69d11987425e28",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5436,7 +5436,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "a7901c07e7ef80a12b76c53d0b81f3b1abf2abd6954749e9fcd97b6a27bb265f",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5511,7 +5511,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "6eaee42c7d380c6589f47703577fbc06cb309eb39ffbcf0b9e2304ecc1f1b422",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5586,7 +5586,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "f38da8479159d770996d88212a814b46b18803ec357b0dc62888065838b09140",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5660,7 +5660,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "122c029a4d6173d6849000e6fb82fb11593cd50bc8ccfaf18b27dbb896c6682d",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5734,7 +5734,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "e16fc78b862293813a91da0f9dc3c0815e3da4416bbdf72e39c3b1adfde0d633",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5801,7 +5801,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "556956e102163dcce3fd751fccb5ddc733ea3d2d3cc50fe57dc84265630ab24d",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5875,7 +5875,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "feff669ff1790d226ae8032dedf96313660d8bf375ff8f4ec76ccf14f5058a6f",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -5950,7 +5950,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6023,7 +6023,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "5f466d2b651240d9ef803e33d8eb7388c8ee251b1913d3a0778d6982c618969d",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6096,7 +6096,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "42ed7b7dea12e563ec6f966ec1fde45659048a97b3ff8afe8caf361fd148a7d4",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6169,7 +6169,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "fc6d66dbc4b453310c462c3b18c6a5d749c6fd661cc54bd26c770496baa9a81b",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6236,7 +6236,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "d8685fab29595435c32cde027da986ad4900e5734c7bad26d143b5c28057a482",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6309,7 +6309,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "0afca097c5a24d357f0b929466917dc999deefaf2c357997a8a88acd83ca8b28",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6382,7 +6382,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "c39ed98c94e2381d51d34410b8ee7d1ba4f31c588fb66fed9a9ba41babf90473",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6455,7 +6455,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "56b17a827b1cc029da44621c5cc130807c14e474ddc33e3e08d551ba9c111806",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6526,7 +6526,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6599,7 +6599,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "0b021e39254372891d285daef48feb8313bf295e971e543398b03b9d162ceb57",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6673,7 +6673,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "a039fb5ebbd332c4df2c1933f7bbb17e7c7681f9e2e96bf771dcd5a6c181b2ae",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6747,7 +6747,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "4c06233392c69e2fd413102e9e5f3af574af3f2c0173151895518f11b500c9e3",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6820,7 +6820,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "85ff4ee2b27ffbcf981efd0de22aba66c23cf0a2b5ceddea3271de58a2d550fa",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6894,7 +6894,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "c0b961d8ed074bed2c0b0f406afd78c973a971efdc71fd7968399755a7d31fd2",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -6969,7 +6969,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "e680ea6d1049452dbf29c70c3bea5512ef71ac66f141a98c341765891994ebef",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7037,7 +7037,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "79bef7c9504074899486da426252b2d8e602d85621712e248d812abb1480c41d",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7111,7 +7111,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "a50dba23cc63c1ad54b4ab91308be3785cf611e286233c92d04afc8b414ee11a",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7184,7 +7184,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "1e2441aa10590c448eafb3232919eb5df3f7672e44a18a46997e66e45c60682e",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7256,7 +7256,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "f544cbabc4cf86a74cd4563374c4afcd6d9a300c5a6b972644dd7489e92ec89e",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7331,7 +7331,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "cb62552fb18584229165fd2c770dfaa870138dd6289e3bfacf61df1181394f6b",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7399,7 +7399,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "3e65917c3c9bafc3069b4e0e7ee2add35761288516c72d1a0a5a9d39da4b4ab9",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7473,7 +7473,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7546,7 +7546,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "d78c3009897c2c220b801d33f4f92866aa92588cbc103bf3647e353a1ed099e0",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7617,7 +7617,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "dcc2e745969a28f555b44ab6c4bf2bc7f8d34dcad8d4de418bc219152cdc4316",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7691,7 +7691,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "89192d478b81ec78da8683d9c0466eb855a0cf43c3c5bef846d69a91dcc19ba3",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7764,7 +7764,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "deeb9d7f50eeb741858a16e1c7ea0a76ac7daede92af06763da358330dc822cd",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7836,7 +7836,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "230ab008bf8b2c783b38446c0c0a064a46e70395e344720d51330eaf32e07c2a",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7909,7 +7909,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "3d5dc96e8a36559dfdca6761f16b1fe50fc1ccfe7ca804be0abbfd0f3a2481a9",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -7982,7 +7982,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "9f4fddea629440871fbe6c3971735850db9644ec492bb89a804833ad92036584",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8055,7 +8055,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "7ed891954add7d6756848cd1ef4417891851f7ec1bc57768f98b6652c86256da",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8127,7 +8127,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "f78b718ddeca4c503ebd81b64fe4030fe14527ec43016dfad388f6108e281bdd",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8199,7 +8199,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "4be6fddd847311aead8fd8ed559d7f67d4bf54b70b75e20e61022192c4a1b814",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8272,7 +8272,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "bb2be1262557b0fef7b79cf90b22c16bd0a6d8ce28501d2a493c149e39ab68e9",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8338,7 +8338,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "a1f8f566f746bc66220229bdf608b0a718b00a666822b41d38c55dab1e041b85",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8412,7 +8412,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "1405a5840760b05127702c2770de08c6504e82d4ac9e6d120b560f13034248f7",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8485,7 +8485,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "7f3f82485314ac22c0b3ad9fa7cb5ac83b5def4ec94e78548dadefdd854972d7",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8558,7 +8558,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "612e523625d11d7bb0db34baaa4e23c93d680c27f9c5a7df2bc58f4f1e8c2c5f",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8632,7 +8632,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "46692e37d3817333c502410b8b50e123c732d40cb0b85d4dffac628cd18dd75b",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8706,7 +8706,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "99a96095188f2ecf7e9b24a47095bd438e09b4bd2c799bd926ec19feb868ae75",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8780,7 +8780,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "83fd0d140dac476afeecbc7ed6eb2c459715d67557e143890ee8ecfc2341d6f1",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8853,7 +8853,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "53525dd8a02e2c724f7e9431b5f8de022499ebb31b4927cd4af0093fa742e157",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8926,7 +8926,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -8998,7 +8998,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "c06ad27341da69b15a2107b24f3f392afef635ad6aeca6f7966479442e5d1cbc",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9072,7 +9072,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "17f63b45b9c2eca5df78e08ed7eabc50a23f48d5541a265d613dfe1a8a08e354",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9147,7 +9147,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "27b34a6ed3eda971fbb531b4b85b981cffbfea8867f9afbd9694fdef2580aaa5",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9219,7 +9219,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "248a769ed031c22c8f5f04d81c483daf3860668a2ab29783a7a9f62e17f9ea82",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9293,7 +9293,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "6c9fb483fb816e769f60d5f7253aa34906a0809a169e77e49e641776772742f1",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9366,7 +9366,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "01bda98d8b575181c70868ffef98c38ccb88bf779d7b2274a0fa72358c353762",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9438,7 +9438,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "5530a0e3f2eae0b625d4fb668aff40fe4857cd043a8d997b7231cf3ceee09e92",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9512,7 +9512,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "4f336437e7c645b4256a7950b82d785a1eba57ac120dc196545f38c5020e9279",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9586,7 +9586,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "866403e31193db02950da1a050bd48f9f8ac6bed9e6608f1fd58442968a3ddf3",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9658,7 +9658,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "78b6a479e1c826d1d5cfef8fe944298acff0c0f82520e2a14b9a31c692dbf6dc",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9731,7 +9731,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "ea6a6a6eb2469d9fac5ad35b50447fbf6ff5e56198fa998a6488c36735fdbc68",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9803,7 +9803,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "3cd2e5897792460ea894efa9a779271971d41487b0b229f17fc52f4dd74670c3",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9870,7 +9870,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "fd942402b17086913ad84a7355fa57e8f17b7b121439f4e908cb19a8bf126f0b",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -9943,7 +9943,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "047005e020505690ed344b88711f383d70ae077710729c3762d358223d7dd16f",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -10010,7 +10010,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "ef31be814ee25ddfa1c5c5b29cfbd97fde27c3767d83db0fcf6ea5608091c649",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -10085,7 +10085,7 @@ const ENFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENFP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "349a80eb1c1b45acb41a27b925e508319de3b7f3313bf39910707c8f1ed09b30",
-      "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648"
+      "fileSha256": "552bfacdcd738eadf3685881993df971fe1734ad08d070a9220b70a7f4c3c801"
     },
     "originalState": {
       "type": "ENFP",
@@ -10160,7 +10160,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "8a331415bd007f180e6e2b9a20a3f32dfa1a5279d868b58073e91b4304626543",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10237,7 +10237,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "5fe46ed30769911938d50e4ded893343868cd2941efcaf8d69612c549ec9fb9a",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10312,7 +10312,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "b282f1d13a91e1fefc3e8f32eef02c9e94cc8c614fdc4a62cbb17484f5c9fc85",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10388,7 +10388,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "f9374aab371873d98b8afd31cb4ea8c36f186cc27f1f1fea00581c1422d56f7d",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10463,7 +10463,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "b304a20b6dc45d6479ccfac3daf7043848162f299799e2e787f4834d4a85a131",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10539,7 +10539,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "3ad793ff8c90ea9b82b2c6a28fe13d37ad2c61d1f3252579dc31d74af2dd3917",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10615,7 +10615,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "ff9002bafb78de0dcf7541c09b8c6dfa124676a4ca41032bef5e0b050630aba7",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10692,7 +10692,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "e2db910f89b51e4f32b0c2bd581c3456433fc00a041388728baed46cf05f4887",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10767,7 +10767,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "ec60da6592e87ba0bba8fadc332b6defbd4d93ec155f8548c05142a52f5f2e75",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10842,7 +10842,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "407577b6e7f3bd039cc07f0a7698f8c1953d947840b24fbd44a345e2c93d7187",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10918,7 +10918,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "e0e5de6d105b530ace470e4bb67c692e92f0106a8b2557434b98ae00eeff2f05",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -10995,7 +10995,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "4f1e0ed66f3d3897018963f63cb6ab79c59c851c08fca41d1ab8ab77b796eb8a",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11071,7 +11071,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "1e17d7ec4a825edad887c7884174efcd956da1bdac07f9b0438d795a512bd27e",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11145,7 +11145,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "aaaea44e246acfc5a7944d0beffc3fb5b9e1f4aedae19dbd4235b8a704944e87",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11220,7 +11220,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "44573956e7a52e8e40a8935d277f5a99f0add875b43830fd9a3cc1e466d83a82",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11294,7 +11294,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "905af1748e735d1cdd5b1902751be69f80fef8aadac7180f3d0d3cbb9355c191",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11370,7 +11370,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "ea70a10cfdd0d66d7beaae6aedd44cc4659e3e1ecba466e165bf5e4417334401",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11445,7 +11445,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/career/6",
       "recordSha256": "cfc584991999e6aee6e6bc824c149b74156038a94cf8332eeb596d81f2f831d3",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11519,7 +11519,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "e1cfdae0aec0f7ce594fbab4f80a484dd0a2c494e36134f9be0c341cb04ba662",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11594,7 +11594,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "d756495d716d5e38df050b4efaa0359d33450112241810decc3471f2f16b7e8e",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11669,7 +11669,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "1b9a082f16d65f46dba03589765673237c2222526d0c876a49ba4e5fc1894578",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11743,7 +11743,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "4eca9c36502f573914dc23c6d237b914584c5f91c2bb526804c28922025156b7",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11818,7 +11818,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "d4026842668d76783bc941547d0c1c24f868cb219ff92614ed299089f4410b33",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11892,7 +11892,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "e73ef44f894fd11d5700cd35afdcd435ba17c625cf4226e2fb31c3ec95b2c219",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -11965,7 +11965,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "8d25e8024b2b4a93eb5117d5f62a609e45e8188aef99eea80e1386d8ca85b4bf",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12039,7 +12039,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12113,7 +12113,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "4e1b03f0de1e9e202ef790c9a289423e8656109fe077626a646eb477ae058905",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12188,7 +12188,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "4b44ef8bad63105f5f41b4e7347a88235fe8e111e2bcec6fca8a66ecc6dd1e05",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12262,7 +12262,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "ca619a246fc5fde25d13bdf54121ba32e017173c7655c5afd6803e27c0848915",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12336,7 +12336,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "18a23c1a26e01639c9da53201687bfe51c1eb4badf739cda1f5b725dfc644fd3",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12411,7 +12411,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "9223e540ece25525f623b571911bf788b1cb29ad65a8dd6011a89aefa714bd00",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12488,7 +12488,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "ffa28b3995b509db61a1ed494d31fc9ac403142198b428b234d901379b5321e5",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12563,7 +12563,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "e18c1a829efaefbb3c41375d87b24ec39b07f0874b651a170816689f54dbf912",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12637,7 +12637,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "cc9341df353c7aa616c8b0eb55d4e506365555b931167d6fa5786190c498f135",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12713,7 +12713,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "e681f776e06d07da5c568db529ee8321f1383b42fc7d4a408b0003063986c9f6",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12789,7 +12789,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "defc9bb0e8d8708a67d624bc1aeaa9923d950ae0f5de20a552dc3cdea22fedb5",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12864,7 +12864,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "c7fa6ffce96616f7fc0bf0f49b88c84b3ecb07a2865a3c7b590759ca90114d98",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -12937,7 +12937,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "a8516da21b6427ce26827604cee727f87fa39eed6fcd55764473a07964b8cad3",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13012,7 +13012,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "ce205c6391583d7d9bb3d70fe19aa066969c7b4a20dba683e859bc736e2c214a",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13085,7 +13085,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "6dc58275625ae965962993e99e1656f08876302a8baed14280a22873e3771ae4",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13157,7 +13157,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "f92b01decf1d1872edfa31371d6c710bf868277c25843bfde5fc537974f9e3fc",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13232,7 +13232,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "de7ca947bb1e64bd084b200a7c393af9624bab3fce7c634d13b20b2e91237179",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13307,7 +13307,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "a69083dde951a66106e8dab5f7534b45f8d95b12f25e80794cf37a62d52a669b",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13380,7 +13380,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "60c6eb5b67930dc876377a226f0724e27de1b880cad8bc0d91a4e116e506842f",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13454,7 +13454,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "23337f6297964aaa166e2f23adecf21c7bbb109dc33c95c95b22ae12770d72eb",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13529,7 +13529,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "7cbd5556dc84cb2eadf7382fb519f26664630932ec8dedf429e121c1290c85aa",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13604,7 +13604,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "5caebe9786d374ea8f91656e1f7730cf35838fba5b9eaaea84c705f7ed4bd29b",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13677,7 +13677,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "8ea03cac8228b15a453591ff5d293066ae1f239f7263ad93d06ffeee97c968fd",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13752,7 +13752,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "fe5b69c754e660b449a888c37e15e06836f9d5113361a6dc70b391d996135a08",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13826,7 +13826,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "5a6586ae3f0af76c131020c9d76d8bd1939dfa46b0eb25c8ba6c8ab4c3042044",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13900,7 +13900,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "a6723c12f1459badd486df675e9d47dfcbb66582711f720f36530285756c47cc",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -13974,7 +13974,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "347126ecb6c63612bd23fe5d485df834dd9571a0a21bca33f9b8525a61cb7b12",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14042,7 +14042,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "6309ac96c84ae858417f7f1d317428f057dfb0566680a033b202a86c1fd14a77",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14116,7 +14116,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "70880143a75fc92edbcaf056e4c176643d0d3bfbca6cad7a6e308a783a409954",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14190,7 +14190,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "1596abb52067c60ebe493112cb6bdaa2f219d8782f83f73fa99112755e56e01a",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14264,7 +14264,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "051d2694a9f0cc0a2615a3e51eef5aa95a1dfc01c7883bf5a5e5ad47ac44b21c",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14338,7 +14338,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "7f67d01f669ae065df7a55555b08c451464240ab8ea90561877e64347b0ac808",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14406,7 +14406,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "af63824d2e44e7414eebdfa760cc6f311910d493746249d65b75df990591a641",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14481,7 +14481,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "e46e2bad62e563cb119f04c51cc58523120a8383206cdea74e303f52e2ccfa25",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14555,7 +14555,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "da49157ebfff83ceb2b1ced2015da34e1fe8fd81aae6d5b98760b296338c023e",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14629,7 +14629,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "35194aa3edd6c89b83d5ef68efacdad752284bfc27c46341a5b2c5378b9f2dfa",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14697,7 +14697,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "006916969d27190bc88930bdbb6c33dcddccf9bd7bc846635f47d66a713df8b0",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14771,7 +14771,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "a0f766ff3a81b676773ad95c9240adc01a4507f01e29b69b13328977c71bd7ff",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14844,7 +14844,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "1a01fb76d4861495576360fff8b2b5da6eb48ee6b5190956eceff1e35ec7805e",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14917,7 +14917,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "fdcac2dd345ce6447db0ce601ea21d1dd9a0d25360f40a11e24d43ea208cb4e7",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -14992,7 +14992,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "af7e2673c032c7031d3c6366ca40de8896198b81a26297ad3ff2423566790e05",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15066,7 +15066,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "78428c8e86686f45ad93f81588ec5a303ed48fa025170d1d25bf1007bc6e16ad",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15140,7 +15140,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "687ebbaeafc515835d36c13dde0a73932dc745a5e56a702e6138f61733517d14",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15215,7 +15215,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "b257eac1c6b5b3869730b47aa6b894018a13e335a79a9c6cbedadd14c4e60f2c",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15289,7 +15289,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "626a0eadea68ab7161fe9b7487ea1d4f2aefec395a6e191792a56e96d89c459d",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15364,7 +15364,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "c9a02dce92f6680255242855cb15de09f12026576543eb38b52d21b5f5c7c442",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15439,7 +15439,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "aa6c12455c2f8b42a985966fb23c4ba9987399d6a2cce03db951f5bafa8ee2b2",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15508,7 +15508,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "af0534c3c86edc92e018805410c3e382af2e325d092403c5f59583aa29864fe5",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15581,7 +15581,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "4cfa5e42fb3cf3833f86b7ebb1701473bd34dbaeb21d5a7ae2a0458ee7f459ad",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15655,7 +15655,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "3f17f40d4c05f3df57d2b4b837346a721527cfa6578eae816f1b178f4c918f40",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15724,7 +15724,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "2e198401149424e9f4d2faf8479962546fb3a6d02eb5a984db19408a0559cd2a",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15793,7 +15793,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "132cee3610524a0a9084ba1e704e9016b9393775eacdaa2afd9e8b73d62c7a10",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15862,7 +15862,7 @@ const ENTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTJ.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "42aad4dcff108e8e0151749a4f506eef769b524ed1d9f4b664b8874476828f6d",
-      "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e"
+      "fileSha256": "93f94a0956a804629bdcb386dcd7938fbe8b8f029daed06cb9140692dd185b4c"
     },
     "originalState": {
       "type": "ENTJ",
@@ -15933,7 +15933,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "91c2a87868904e37d1c0877aa232459c74eade0bd5649ebdaffb3feb31acfe18",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16008,7 +16008,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "b810ab074d81933161bf422a552a1c95f04fce5a573b4bcdcca7660d9dc95d6b",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16082,7 +16082,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "2d3e8b4f8f9f10e28a2c6665a3610e85da51080965d3d8dfaf82fc942eab1bae",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16157,7 +16157,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "f5a1ae53d73f882b200d6b1bda3480dcab4c5e1fee5cc6b4cbefca9a6962e662",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16229,7 +16229,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "5ad0c8d6fec71581d26ff5f0a8ce15462c5a8bd06ef1ba50c79bd4bae3f5d96c",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16301,7 +16301,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "d55fc60cf3e88875a52ec296a83b2bdc3626eb82f83f49309d2a4676ae8882cd",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16376,7 +16376,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "022a47d4dd2f078284c0817cc681f94eaa2b7415509a6b77ff2281a8b0ab5b46",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16452,7 +16452,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "2b292a3ec7ff689ec6cdc8ee3844636f7333a03b78a47c45401db436ba1bdb6d",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16527,7 +16527,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "4b6ad4d5744833e82403b106634c6e5d17f5dc1285eaab4f945bdf53b2a3439d",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16603,7 +16603,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "1fe4ab6f44647a9fc5aef8319681a868cd1ec346e0d21c6719f0b938f94bab59",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16677,7 +16677,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "1dba8b2921149e0ba4f92f0bb267fdaf15b3bb7d96a159e11da85b900132a42b",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16752,7 +16752,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/thinkingStyle/5",
       "recordSha256": "c40141502ad847a82c7439943684db1b477bcacfdb79cc7f721a1b52060031e2",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16826,7 +16826,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "2063622d8439bb11a4aea8816a7d443b64726c29801945770c1b00e6c0be5751",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16899,7 +16899,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "60ec87aef05ea294cc0224dbbec7837d0f3e1ebb58fc942243437fab61ddb082",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -16972,7 +16972,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "6c6b692865e2df705718db49baf96354a6a43f6cac019b47d83ef26426841fc2",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17047,7 +17047,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "4502f86be269e02c287c900524facf656c105792900d4fcbbec355819c1dbf01",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17120,7 +17120,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "1ceadb0f4174fbc6a744bf8350dee39a7c0a66d9cafb8974f08152722e2aed6a",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17194,7 +17194,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "49ad364068ab431ef65856e61bbb0298a2cf8931eaef123127d84b66b9029fe1",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17267,7 +17267,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "7ecd06a09dcb82d85dc0371268f747e382c6dc1cd809e46c5075150631715b7e",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17338,7 +17338,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "c06eb2a4558a9b3cfe5ced1d10e581c7f3d1c68d1bcce2dac22007c8f8beb47d",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17410,7 +17410,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "b3247a082d7c9fac9657d91a940aa8cddc3c5cb46c79045a2ec4ffe51fb86ba8",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17482,7 +17482,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "d2d82b782f29ed049f3fad1cb5e5266c733aa6743c40046893d3a7c65960819e",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17554,7 +17554,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "85f265b95948daa274a10f4b4ec8216c930bdd8917534896d23b068384ab22ae",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17626,7 +17626,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "d41bc09c022e19f8dccd5beca429151aac94202711eabec8f986eabb41fb8387",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17693,7 +17693,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "c5ef5bc3ef3170e34e928f07fd83386e1eb57c517277b46d8205420f4713d711",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17765,7 +17765,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "1891bb1efe63133f7fd45ea2a5e77619086f4c81a41af22573a87437d0f62ce2",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17832,7 +17832,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "9fda03bd6e2b16ef15a8c6c7bca66ba72b8160eafc371db742b43adde33f090a",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17905,7 +17905,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "ec0b27603fe5a4d01d04384bf43ca93a50e45f6df471c037b6710e95b6855545",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -17979,7 +17979,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "63cdc79124a12f3c5a015790f9f2feaac526c94ded1a259405dd2297e2433072",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18053,7 +18053,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "904dddeec5e317e2d560bd04c9187b784de8a02fe5928ed85060a8e258b2d6a4",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18121,7 +18121,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "625c7d64eedfc4e1aa58edaa42b223a67773499ed27007214474a1ca07a4ee43",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18194,7 +18194,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "eef60194d0a5f22176e31a0eb850c400365ee8d9f4666f70d0d5e7d151315acb",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18266,7 +18266,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "159af888f5a474c5652078055a53d61a508d95a8ba6a78ad877a4e14373a2415",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18340,7 +18340,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "d6f062a8d95b16fffae5a93a1642d63579302cab97c06541f36f390387177d3c",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18414,7 +18414,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "fee256d5dbda4998ead49262380dd707f287d822cf19ca061977519542cfa0c6",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18487,7 +18487,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "db60c5e4647d16a3b3fff175f00368b0b259047e24a1fbd919feaa4514ae26c4",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18559,7 +18559,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "2ee8508cb7fcf943eec649186fcaa312f9ed678c39e711de03097344550e1ef0",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18624,7 +18624,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "faa74ebfee339169e03e211d1a93b3c7bbcb3c7180848a2359c7028f0f0ca34f",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18698,7 +18698,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "82ab086c3a58482bf8aa24339b0ea2687c3b8b2388af0d45d10d5af61d61c1a5",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18770,7 +18770,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "5cb4765654fe6a00c283e79808ac9fc3da276d76419804319d3ec3a546a70ded",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18841,7 +18841,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "0cbd14dd6cce5df616846ea5b27dead0e6ddc791782ed611ea33e32aa5b647f1",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18915,7 +18915,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "0e5825a134e07afeb6f6441b0e40a9fdce6c13cfac80a40ef3f23d1d98e86a26",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -18987,7 +18987,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "68b48a561ccc33a6937068e5bbd16ebea97781be372af30432158a25ec3f6558",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19057,7 +19057,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "a364b7fc18b85948bd53c0782bfba523400e5cac58e9f65e76a51c5dc5b3597c",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19130,7 +19130,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "e7f481700903c30211593aef61f9649f2482ce15109d8213263c953f6cc5ecb8",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19201,7 +19201,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "4e4265b0cb313884d11c18cc1b49ae59f173cb1391de63cfbbef347ff9d75a9e",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19275,7 +19275,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "13be088f77ac9e168e0f2b5410cf0dc9c4e2519bfe83bce9e4ee7b0b72911c45",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19346,7 +19346,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "693787a8394b7d5bbbd290176b712bc259785aec77600cd7ade1b97d09bee411",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19420,7 +19420,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "ff2e4ab5f440297fd90c80b830687833eacfc3dbbb3a8c2deda4cb2b567750fc",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19494,7 +19494,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "1cdcbb33a8ff4573dbf1ea3ebe2c8b7a0f3d0b9b1b9a00626e648a01707507b6",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19567,7 +19567,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "215767da3c83401d59252c25f97afec5b4fa69aee4afd24398b2c24ce7ad5997",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19641,7 +19641,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "03fe43b2988a0e7e16727a5de62d970a7fd0145e8f5f702632355993167727d7",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19715,7 +19715,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "17af9cf87e8943b111c88723181a0bc56fc9b994519f78e0094b91471d2cd83a",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19789,7 +19789,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "721ee892031fe553c5f6d2c41dad537a5fc7cf0a8ab4aa0ca180719515157194",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19862,7 +19862,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "e53faa5f4755342605bde45824befe8aeb1beca2cd0d229b97dfaa207e0e698f",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -19934,7 +19934,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "aef7ea386213ca42c37fcf30ecf882dfa3855315021b6bdfdb6a423ecf330127",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20006,7 +20006,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "c1c92490d780d29aec480d0610a8223aa31a4c153fc19614da30c3ca4ea203e6",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20078,7 +20078,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "d920745c8fc4e3cfe32719e74579b6eed6f73b7621afa6a0e8d878eb2c4dafa7",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20151,7 +20151,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "02aa1d50f13ebd4c8d0122762b820aa79d3dd84bbf045393075d40030d050099",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20224,7 +20224,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "34930bb8779108295af2101c69e88afc2d1a35822403f2701f2897ffefc4cbbe",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20296,7 +20296,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "f84709cc6aa2d77eda9fccc32c4ab7e505f18052aefd576fdea7527939b3ceed",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20369,7 +20369,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "0ab8e8d97a4797efc462340f2a9a260f7a48a2293845f06cb5f5fac04f196ca6",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20441,7 +20441,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "bb3a1df7f020bf8f7a23f7ee9e7c98dfc68bdb074f1d21583ae98eb66da8afe8",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20514,7 +20514,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "979f769b04b3ccf05e5a5764f10d77840c57502d37ae15ab671f06514dddad87",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20586,7 +20586,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "d05bb3949c2928ec4e5a8ee906be5f40f95e4b306f0b54eb519abaa1e882b2cb",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20659,7 +20659,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "0b7d2bad82a7eb5147dd7a5430f8f26d3cf92d096f5ac6181ce633f72821467f",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20732,7 +20732,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "b4a8b59225d75ec97be12d38f75e4d1eb8ac803581b1b4787df13200fc16833f",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20806,7 +20806,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "161825bacdc832120ddab6257f958dd0440b098842f6c86da77ab7d9e65deac8",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20880,7 +20880,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "64c07df333486b15ab7b18359063b14d45d3d73eec91b2f2ca5cf0cd9e0e7567",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -20952,7 +20952,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "091111b77d107921f86e595e2125332edf8312262f6c87251054e74f287d94e6",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21025,7 +21025,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "4703478a81f26188e745c69692ededbef97e69bf2a9978370dae70836c14be3b",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21097,7 +21097,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "1f4ca57eb58cd3ebe7400f2f0723183ab5cce02d0ad2e6c2076053664aa378f1",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21171,7 +21171,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "b68cd8c2340af39e59d9ed8b4e51bef45b493faaa163d67e52c580cc6a1b8477",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21244,7 +21244,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "d5693cd8309418c7a21f9db4891d10f6e722e88b21fb79deb931fdd7d5eb656b",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21317,7 +21317,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "8519cce6df59cc43e1d51b69b431bc160e75dfa86485e72a45e0faf40728dbf1",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21384,7 +21384,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "ca7966ddadc0f61c376edc696a128813571d139bb6f18436d909e082a892f797",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21452,7 +21452,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "68a0950ded747048d1f4179fbf9b6c8ee6eb6bcf881eb278ed225fb7d02286ac",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21520,7 +21520,7 @@ const ENTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ENTP.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "26cd37d16147605acd405725261674516ead5a4f4fdf2fff97024bd1574bc9c2",
-      "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab"
+      "fileSha256": "0301fc16e45e3dd73ee114821e56b1798fa0d35c25d4fd6a9ecda31a581aefbb"
     },
     "originalState": {
       "type": "ENTP",
@@ -21589,7 +21589,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "ec8e811aecd95c0e4a11af7b4c24e24b53e345f1c2c615abf578e657b6a3f912",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -21666,7 +21666,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "ec99220bf92305dd5aa42a031b2546557b46c1e4df10dd0b29733db37353813a",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -21743,7 +21743,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "7e847f54bf06a84a238d42ae6e9066c768dcb7e7831446e3d5a81f4ac596662d",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -21819,7 +21819,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "9a27a8138c35f1f104272bf49ca4970cd5b0221999b6ce18a7a0da5e2474faaa",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -21892,7 +21892,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "132879bb1430cc726d195f209b4401b90ed70c13d140c24c5e591ec1f4b3d6da",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -21969,7 +21969,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "1ebf81c7cc36581eebe2895f85a080a371277050fa90da514e2e257149533771",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22045,7 +22045,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22121,7 +22121,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "2213fb829517f8926ed309f947b65bf15c5821c9693b0fc08d9cb5f2ebc836f5",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22196,7 +22196,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "3ceadbd470f17b0809174714b203585b7d195aaaca517baa6f3952b4357a7d86",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22273,7 +22273,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "848bbb3244e50b2be6789d8cf87a9bed6394a75d694fba10bd13e05dc80c5369",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22347,7 +22347,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "73d8483a62094f125795b6a2a3d28274ae185bf1f986bd71a6d98393b9071fcd",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22422,7 +22422,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "b7e8ada7c1bc7556d262b7c83ab99773f4d5f499b9ff4e698befaa55f665329b",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22496,7 +22496,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "c24a6eac6c5804518411ff65037506e17517849e63b55a3d0210071b4b1bee10",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22573,7 +22573,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "a3e01e2ced97dcb9133e5aa28e8bb9467d632e250edbbbe8d9f1978457cb3bb7",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22647,7 +22647,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "2e5d3171b8117db082e62b85fb7ebaf0227cd6aa64e02ffee508de20ec17085c",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22722,7 +22722,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "f669d2f02f5655c614808bb78ca2314d65226ad89aabefbdd362c9fbfadb15e0",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22796,7 +22796,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22869,7 +22869,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "19fefb12072b733d8482b14fac1b560356d0c82f36617c220ab4568a7a97780e",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -22945,7 +22945,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "179378693d1a83243bbc8e83b30d5f8f8e4af3092c8ff157bf4481b7555a48e1",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23019,7 +23019,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "9d002288fc4a4a954ae536acea83a3f02f2ad85f8152623554bdfaba9db9c967",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23094,7 +23094,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "3dc003d6531f4aa23670fb36ae67910c6e1eb31f9f507b66a5f12cbda5ecab2c",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23169,7 +23169,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23244,7 +23244,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "2da8173c2d39ceccddfc1a9e17832ab1e28e7defe35da75a9079406c7504e49c",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23318,7 +23318,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/workplace/6",
       "recordSha256": "3ad4dd2eea9b33e29123c99d7a86159ad9fbcba92d643deed987d1c2c4b02856",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23391,7 +23391,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "8f59c3cd894c88b237bf44fa5fe37eca8b8b0643202a3d1d5a5acc80b8118e60",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23467,7 +23467,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "76c8c1228e2568d163622db0186bb1aebc1efaf576c84c2c74f44475242b7a5a",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23541,7 +23541,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "665fbf386dca796ddc5058b30e5a4e27628b58d73c052391a78dbd0ae1bd395b",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23616,7 +23616,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "c99b0142fac9fbcaec06af31e8646849a5b1c3d84dea74fcf7fbabc0970c69c9",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23690,7 +23690,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "267720af8d9b352fbf3e60e3085035ecb910348663cd5283659e9dfeff51d72f",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23764,7 +23764,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "b5ac4f863419669cc31d172807ddf867d75b0bf4bb6d0408069b7561ec7b4ba3",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23838,7 +23838,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "00d50ab2c80659f5c26dfce52c300ade115eb9976581c32406d3957edc56d1af",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23913,7 +23913,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "1544c556e5bd55f99d65014d5bbb46eab707eea8fffc15d5ff8f3856249b3499",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -23986,7 +23986,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "c65204510b430dce4f0d9d135896431b7523a31cee3d44df9fefe722a2e8b743",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24060,7 +24060,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "03e0b9e2be8e6a64d6f07b6ff239e7a2a5c12257ad67d356ffe72037b6d18f7a",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24133,7 +24133,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "8e77c7046ec3cfc6b508deb21057e7e5c82fc444ae80bce45d95da0a83d9fc70",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24207,7 +24207,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "12a301e2ae0c83a51025108a151473a807a52f07bd49f79094cf9a60d49d063e",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24280,7 +24280,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "fb33c2a6e57b98f4d55fe340eb615597f752e60499ccc1033b9f19df7b943081",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24353,7 +24353,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "190056394fb8dc89c103244037a3378fe33696232e0acf058484c42d0055406c",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24420,7 +24420,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "3e18294cc74af7f5ed6bf18184dc38c0c91e985c40ba16086d679a0fd7501124",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24493,7 +24493,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "66c03e9258a3f098a4563f7c66fb5f9672686c6e1469f8ca92760884ad432891",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24565,7 +24565,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "60d964cc7e0100be88118d591ed40f8b23e06e67d075217a5ba8f63e5275ddb6",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24639,7 +24639,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "9815d6041c569c4d52d18f62f0beb6e2ba16aa3c8367d4000dee2d4c15e5d6b2",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24712,7 +24712,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "de8d53096994f8d593a20c2aa61e257c22acbe76a76a1aee701c17fa8e3c7829",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24786,7 +24786,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "1f6bc8cd8c855fc794627350b59edc7eb8913822719240c1fa561e32b20ff1bc",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24860,7 +24860,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "4581d1cf51b6c1ecd50a9c18e75e34cc32dc273e0ec1ee6bb9abd1d4e4c85c2d",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -24935,7 +24935,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "2dbf9d37b4e78e09dfcb47c8da055c26029bddc7c9a1f3f7625c0e1ec7778773",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25009,7 +25009,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "7cbff3be2c620c74087012f1835da9587f771f1856f11612df418fa615caa2c1",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25083,7 +25083,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "8ae046d580bbb23c2fa7dbbbec36def568d9caa3ce6d899a554d8adcf598e719",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25157,7 +25157,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "06a32a70b65fb3f32c21ca2c463a0a2d2fe7123fd4d7e96593c413bf2760a81c",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25230,7 +25230,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "f4e45f288abfdba67cffe04425089fa89c2c39b5e4d2d2c4fbf1d75a2d3575f7",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25304,7 +25304,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "40eb2e3e7cd8aa05d91320e90da21ce77f353068660901459636ebea529dda29",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25378,7 +25378,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "6f0127c8257ca6df00c3aaa206f1593843268b1c77a8181584da107600cd19df",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25452,7 +25452,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "2e8f6c27bf56f9fbccf616990afbf601a7d3a1dc25518513c089790f844f2ef4",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25525,7 +25525,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "d0768d8556c41b20ee9172eec38300b5dae08536e233b938485981973d321ee2",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25599,7 +25599,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "9df2baf5a30e45df53bda05967a6cdb9875b8e3d2bba5e493426fadc65093001",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25673,7 +25673,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "3b4be6a077852ec5dfd45b7cfe95bc99cab4a7e3571f54c7ffac863071ada7b5",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25746,7 +25746,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "b40fcf62b82dfe5390d5b0d1a62e5a6310e27c01e73c95367da853ddb93af5ed",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25820,7 +25820,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "e1d403262ae3f2dd124ffc9c260916ac6de94ee74cb041dd9402716032de16d8",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25892,7 +25892,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "69ab438697a7008913eae7eb36f1bb29e2c8e28d76f430009e44718ae8801414",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -25965,7 +25965,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "78b1af0d58561789081e6bd6e27bf35776d7bd42211be43fc44c0952c9698dbe",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26039,7 +26039,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "ccde32f00215e131bce94969ce2e02eedbb93177f84a7c72e3aeced70f95d2dc",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26113,7 +26113,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/relationships/4",
       "recordSha256": "0474569e3025c606d0ec6e37f0a131aba44f259fdd001c62db0ff2b82fdcb417",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26185,7 +26185,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "c4796ca08aa9def8be551c002396db24c78f476f09e22e8dcc8154381d63bdcd",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26252,7 +26252,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "8cb4c0ce15856bcd6e0ddb4bf07f72847f1caaa502810bf24200ef36958eace0",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26325,7 +26325,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "0cd60b3652ba1c482721d18904760de17872cc5f7d37477b63c1116623c3a413",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26397,7 +26397,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "a9030fcac3b0c8b5c352635745023c59784dac304ecfea9835943d7ba4ccf1bf",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26470,7 +26470,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "2a6d83a2a3ffb44abc2532e8741bb8c7a7fe5dbe9700323263ae2a57a7d0132b",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26542,7 +26542,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "df8878cc91c6c16e90a9df3f4252cb64d51b6787c5cf5e7176a88439b015e949",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26617,7 +26617,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "1313fc07bbf41a5cace0e4a7df59a9fa0008d107b6501172f5675e6e6e8bbc2e",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26692,7 +26692,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "d185d959808a9b5d33f2eb74d520a49fc3d48503b67b841448d993f8a2699efa",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26766,7 +26766,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "9b059e2c6ae98cf7deca3cec5f4cd0304cfa3d23647bb63f1ce34730327fa5c8",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26834,7 +26834,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "94a353fb11fe71c679cf8c953f71447716abfafb7d35eefdbcf3ff2c5aaaf78a",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26908,7 +26908,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "fbba159062561fa857ddbd8b41b12d8041033208e21b4e30b5be37184e31f68b",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -26983,7 +26983,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "61648d7ff5197e5ad6db9ee6f658df74a7c1c0ed04936b13f7e06e3ebaf04557",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -27056,7 +27056,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "28daaf95a3c1271e2076fc6de6e2d10a9d7a56ab84fbe7f1d931b96d83f2c1cd",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -27124,7 +27124,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "5d9f23fc477cf287665813aeaddaca4de80ca4a4f26433157a7c31cd82b2fe1e",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -27193,7 +27193,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "968f58fcd004ee7ff7ad0e70644dafc3f087770a7265b7bfa9a2b3da1c1e3cee",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -27261,7 +27261,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "d2d0fb061d2c23d77f69f67299258c6ea16b59356c9a8ce51a6fa8d4276ea020",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -27330,7 +27330,7 @@ const ESFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFJ.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "cf5513d6e899ca699a83c30376a52e54879fcd5035e0b3e1c57de5a3bd458d99",
-      "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8"
+      "fileSha256": "896a8bff5171a9cc8146694cbfe6d8b9596b61f99b5ce6826de186d85f29dceb"
     },
     "originalState": {
       "type": "ESFJ",
@@ -27401,7 +27401,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "7d0d28cd4ab8a0d7fa2f300b37e194fc5cc83a70cd0f045f5c220f9e193b4ec9",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27477,7 +27477,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "4397998b4e1274a22dced6caa50cdb91125af3ad10a5a620ea0f8c385ff48593",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27552,7 +27552,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "e4b528934a38882afa9820ef0f9d821a029ee610279c0f72530e02bbe23b71b9",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27626,7 +27626,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "5fb625711579f2cdaa45e10fa64066a8f737138dcc25ff7f152eea35980b2409",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27702,7 +27702,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "38180440633ff4d5b262e55d596bafdb49ff98af308fe4aeda3a6e84545613f4",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27775,7 +27775,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "0cf17a07ef58030fde017c017741eb3a1836d2d3de2ef4020d20f1257b3b26be",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27850,7 +27850,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "091482385d1a47948a96eebd365e4084c746231019e1eb1b61821bf75b595507",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -27925,7 +27925,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "b023995b28071496ca86caf6543964a6eaba2043d392e93018ac90a48a9b40e5",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28000,7 +28000,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "11084459adc3b67309fdc9a546a1e58e37fe4a82af39a3fb4e9861f614543921",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28074,7 +28074,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "e4961b53e8f6d2526a12f3af20f2a1d1f90c9602f46a01fd1e1ec60482288be9",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28149,7 +28149,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "bf60b44ac43ef746589cfc02bcf2bcd03e91724ddeb917178ec1e6c487ccd3ef",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28224,7 +28224,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "82f8c47b02fb267e775c08ab7ed0a7b94fa98e31f599c45476876bcb24595430",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28299,7 +28299,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "d5998323ab9b63185da77f635e70377dc416e9a82d2ce08b2fc8a25544f297e6",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28373,7 +28373,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "0185e1e4764c465607caf66972c330a9357b051d514fbedad0aa956b139f9888",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28446,7 +28446,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "0e7506aa6eee94f92c42334e17f35ae44e5275fc67527740f576f3f578801ccf",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28520,7 +28520,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "46283a06c8348270c4fd3fd49ae39eef47c2065de0a51abab6a14e681bbec6bc",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28587,7 +28587,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28660,7 +28660,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "d98fbc035ba01882f404c6e6afd2172039165ad9d98e66f3682212b421e71bd5",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28732,7 +28732,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "4ff6e93042fd35a0f07bf9a8169ff4506a518275c594e740f54d6db74476ce06",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28806,7 +28806,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "82b47839c3325bfb438c68fc61f6de81fd260c466e334e97827838c25d248ec3",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28880,7 +28880,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "6e615862b0670086e0c36b6374009de0c656a7bd87b4a0008609d00099cd742f",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -28953,7 +28953,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "7b3e5016f2286d02c9f4d693771c032219da9777b5dbe3088f0c9482843db03f",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29026,7 +29026,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29099,7 +29099,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "bd3500b042d52f5e794eae3e4fc4a726647ae1e6dd646ebed97b14ddaaecd37a",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29173,7 +29173,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "a4a17e2f7ea462b049d19c2b31373454c9fda8f27c1c3d19fd79aff4a2344462",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29241,7 +29241,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "4b008d5caa6d0b51a3895f78b4693669944b3dba958734b8f5485d0bb4cba85c",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29314,7 +29314,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "5f8f632c840d22a9dcc6a59702a2cb9988fe3e529766996e484b66d8572400a8",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29388,7 +29388,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "1f04ac5704017afe32711ccba8e459a02787358d73ada762dbf33842a1328d27",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29462,7 +29462,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "0478c0b3a34c59ef23e8eb2971fc9c43961386508f1b284939bc5a9fd9459e25",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29530,7 +29530,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "d69f76ef1059c163b1b279461de45c72d183080e0abde1398e2e6fc49fff14bf",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29604,7 +29604,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "25520a860431e7e08a55485c9abb18b1659c3315bc9eb49106132005153aa91d",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29677,7 +29677,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "b25e10f8494f85d50eb626d8d92863e523c2b7ef1b012620f06ed735b185ad54",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29750,7 +29750,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "1b82f94b68354259724194248225250971636dad4b55dbd70beafe08cd4574b9",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29823,7 +29823,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "69e150827b508ac47e70f08bc00a28e89ff100e7eaee0eddf9ea82eafaa474fa",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29891,7 +29891,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "13586d6369938087d7cfbfb6657c06c0c26c4eb9e0f418d4a3cc831b27cc15f0",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -29964,7 +29964,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "2a308d83d938219613c8da8dfe9ecabc8cdbc1b743fc20e90c1931d9971f69dd",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30031,7 +30031,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "a4b161f7b0d2a845b06eee854f32348ae02d4f4cd5df58ac59d6944a94cf2b59",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30098,7 +30098,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "b87988564b7461337e61e50572a393589d68224563f978d6234e263a8b11b4a7",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30171,7 +30171,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "0bd33c38ca63b877b73eed0bcff3c3e3cf1a5859a24a6fab8a1b6132b8c3f2fa",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30243,7 +30243,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "4e1dc511906a93a05438d88ff0602b05cf3be29db7f8e035e9e49e1d004c14b7",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30317,7 +30317,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "f304b221e4fcdd8c3d9f68bc1c59cf6eb267eb73bc660757c193c58e44c54be4",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30390,7 +30390,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "a809a5c64a35106711b6df0ae58be8add0331c7cf7499db5e953c307492803f2",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30463,7 +30463,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "d10a4e1693d0a5f5845fd84fd866985032ef22604796e494b0eef1f8fb8be37a",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30536,7 +30536,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "a3c7f92d63b2581e183adba10d7adcaa384f5c30a832182dda2d062e963a9fd7",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30610,7 +30610,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "bcbf3ba8af99a7173696f8530d445ac4da7987bd6e92f8d25e338e0f653c48eb",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30684,7 +30684,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "316ecb1a57c08b3e92d60f21dd75340007f4ac1d4ad0a65c1b3fd622911f03c8",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30752,7 +30752,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "4964ab41559728d701342d2f8e679a6c4d525f32cf78710acc06387195e5575e",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30826,7 +30826,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "fe17ebe62878e91662d5de9129d5c4b98df1eb900d2af31112ae310793ce8eef",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30899,7 +30899,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "9c56581269d9cf16517f1ce34b62485058c0b3024a78e41d8307afcad1d8e688",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -30973,7 +30973,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "fc7321ad97f99612022ae91476ae6982c00b995291b8cb862452f025797c06ab",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31047,7 +31047,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "ad12e2126273860a4145025f6dd3134d975757b807e24db08f6913aec90124fa",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31120,7 +31120,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "ac3753ee996eeeb98dfda9167477f70f4ff5a70cdeb093419f45dc55c4be91b5",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31193,7 +31193,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "595f626c373bb22ae357d5f404ab5a2ad763da4e2166b7016d1331ea6d51a709",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31267,7 +31267,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "df9fe15fb469647a148715b7eee99d0ff7bd9ffd577ffd9f234f7f2bc560277b",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31341,7 +31341,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "fb9a116fa418aa2e3e1051bccfc6239a33f494464f98a8483b753efece03b357",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31414,7 +31414,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "8f49179970fa54c9f63e82ae43318b18420beb5f1072ada37c9ed285018bf4f4",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31487,7 +31487,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "997b1edd30ef8d1d17f07cd0527af6187c699b32bd00b036541e66dcccf357f9",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31561,7 +31561,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "ac70058de1245b35aace49398843fb890e339bae7abc8393390b9dd247d5834d",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31634,7 +31634,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "cc8a12a15ab773276ef70a0423bec6da4d94adffe0d7520071740448f169a69c",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31707,7 +31707,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "7024e1972048decf4c461f9b0084002db860ab50dc466c7b40d0b9a9d27e94a6",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31781,7 +31781,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "88e603e0b43570f9790e874e20ef59c138648ff3ee68bee2146c9657dedd5b24",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31856,7 +31856,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "5d309999ace192324d0bef627ae27e0eada1be4453aacb3900ed5896ed389a90",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -31929,7 +31929,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "8712f49355736039f04d9c1fe6f7ae2ed727c82a0ed8e3a9478b12493cb4c57a",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32003,7 +32003,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "7dcc72df565dfd37aa3c66dfe9dde62343032b928b2fb5c1e35168b8bd7053a4",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32077,7 +32077,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "e7ad5196056f6996d61d68f4519be5a0a1df60817526c464066beab98f1f775c",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32151,7 +32151,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "e2c4828c7d5ab1ab4c812cdeabc7ada85b1571e22c4ae7b15a2cec5e5b42fae5",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32224,7 +32224,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "d07d5725906b28f0c36fc9ef75a3f8087a5e61b95a6b9e7d3c85901d6aa81750",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32297,7 +32297,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "3083a5af4aa3ae55fdc49d37fcf5bea0bd9901c7089156943d071350acbc3f84",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32371,7 +32371,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "f976713c86c4094e5b485712d2ea0115a2889addec5f59e98956380f73a6d1e0",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32444,7 +32444,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "54558ef16736ad8281287e387c38770aa9e9a4562317d27efefb12b158987d0b",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32518,7 +32518,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "c678d5a95962818c1f22ebdf4ff0f6f6c9a541f1a24c18c8aeb1dc2f835b37aa",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32586,7 +32586,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "dabd957aed9d9ab2de0da6f5c0ea1906db16b559816f197c1d591923e6b33e7f",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32659,7 +32659,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "3d9fcebe283a933ed59c12e9ec4423c4142825760f5417d42ed1d8e3a7fcd768",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32732,7 +32732,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "1383807dfd043320f9a7e767dba4572c7ee94a847c44c8304586653cedf6c47a",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32800,7 +32800,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "8d0aa2c1c8ad12b39bbee25a8b3ce4911662d2e874c39cae72381db7e2a3208c",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32874,7 +32874,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "8dfae579f37740751d2899c40379f21d4ef0e121c35693d6293312c72145a036",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -32942,7 +32942,7 @@ const ESFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESFP.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "1db4ee356f91010d4194a6aa91ffad16484532433f4cf19598406ba5f8ede410",
-      "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248"
+      "fileSha256": "5ace36b3856786cc4e19a9956b6fea8eef303ae951bbc5b05c84eba62741c15b"
     },
     "originalState": {
       "type": "ESFP",
@@ -33013,7 +33013,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "cc90d5ce07e2707070dff522f22e3db8afb0f43ea520b755b986df0ad3c78833",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33087,7 +33087,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "326a9253cf8f4d68c860c06d7adc104ca5f181726ffde77ce524bbe6d59ccd84",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33161,7 +33161,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "19552d2b3152300cc0bf47b9e1da91397092608a367278153533c3c8f6f65409",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33234,7 +33234,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "d4e5ca79637a72ff762da724f442469c1687ee027581f73113aa20f72fbb085a",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33308,7 +33308,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "fc216142770c726df299ebe2ae71ee453cbfcd87968ee738eca11b99cd674b36",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33382,7 +33382,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "dce48ea4059f5a97e0b6b4bbb05dadf1b2b5879bc67f07c9373d94fa05032c41",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33456,7 +33456,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "e10d70926043670273b44683625c1115300541bfd97f7b1a8db557085a8741d0",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33532,7 +33532,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "32bde5ce93d902fe5654839c8cb40a36fab14f3313fceb0e3af59ea3934d93b9",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33607,7 +33607,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "1d2a4f9d8aeae6dc682ad257ffb7910cb4025a66b23a898709d02609e9e2da5e",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33682,7 +33682,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "574fa64e874a6b1bef2a9f3d464e1a7c8fdbb42620072358b946348b3250c000",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33757,7 +33757,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "1d391a3c02ce9ae743b9642ab2883273e1187e0515eaf2b7cb650f72661d8590",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33832,7 +33832,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "514fc7bfedad77785168833ca442a7180347d88ddca46220a0da0a1ce1df6f56",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33906,7 +33906,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "4f73c3bc45515f576d25f010b8f97501e27fab962725710aa20c92603aafb72b",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -33979,7 +33979,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "5f52974f0c6f8de5bad6d5dc8040fb27a3d520859244219d702103ef20cb0838",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34053,7 +34053,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "b06d3ab672efcfda5f282f3730e2ec64462591b1336e89d675246cf1b7138831",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34127,7 +34127,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "95f2397e4e4ac1c08686f58a7537759929aef4add3e24bfec26a901e92d67ad5",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34194,7 +34194,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "d85ddc2dcdab38a57f580d7ee2972b39c3c15e2824f9d969763f54ca206bce58",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34268,7 +34268,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "2640939c58d4d5990b690232e366f519cf2ea7b5ac01717cca9e808f9111b274",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34339,7 +34339,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "69b56a359f88090d6f539ffffb5b78c94a990d78b33b72c7f7b491de316de3e0",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34412,7 +34412,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "08586c8e9d144086759d92994fa80d0b2492709a2b8ed34e5cba8a93d78c55d0",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34485,7 +34485,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "47e9b3c4710b733538d06fe8e90e28a8225aa803c1ba0b7dd757120b0fc8de57",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34558,7 +34558,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "ae3b016cc9e6695ce01938644e77d5bfd57700dde498540dfedecc4db5ea3d4d",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34631,7 +34631,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "5bf022de603a61855d7ac011e3db0ebd9a822cca2a6e7af1aa3eda47feba7493",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34704,7 +34704,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/workplace/6",
       "recordSha256": "505c0e99063d3e3ebe5a165084f5c27ec6941fbb4e836f2f599d39faadcd3687",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34777,7 +34777,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "8ed275728511a8bd351ae9873bcfbb7683dbccae5d4a3c9bc54cd2a997649d3a",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34851,7 +34851,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "03d2e86d626dca90ca76e8cc9c72e2fc5a7b852cec597f62b6a10f8a07376250",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34925,7 +34925,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "51d029c5fbc58f80d6f3c631142b5702ea2a720b87d876034357bd989cc10fcc",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -34999,7 +34999,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "d7a51b98eda0aa44ddcc20d467869aa76357441c69e6a4d9d3d760ff0a3a3cc5",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35074,7 +35074,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "2245a3e717cbc9b27bc4c73ebd66091294a1ea47ad744dcdbf0bf994e8d408a5",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35148,7 +35148,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "3ebddcc63b53d1d92f6d95b9920b8c5cd6c9af0b0fc46ab3aa49f622fca5998f",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35222,7 +35222,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "50d182b08be6cfb178bba58bcbe6e46395ff42bb5bc5d81b69d07bc3bb90cdee",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35296,7 +35296,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "c0d91390dcc71c2ba6fb4e468790ee8f1a9b100dfb7e94c7dfb43d4a1713db2a",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35370,7 +35370,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "55f3fe26a89fe2e6c0ca88a31b49bbe2e4a2b68f624c9d7e668c0a37998c4c4b",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35444,7 +35444,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "01a9c816fb24b1a43bd40b08e597625610a6c21b754df70f1c520a90ee985c5c",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35518,7 +35518,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "7c513fdc79eb50105d5a7f50b56317a0975294e3e777c82c1ef7cbd50a58cea0",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35592,7 +35592,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "e2698c74a1aa2beebe1e488e708f10e45c6dd230e3335e6d392a28bcec688adc",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35665,7 +35665,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "ed1042b2e39f219e99668b1bc9150dcff240841606091de41830616dd3b06120",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35737,7 +35737,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "4ff14c45855f92a97d2770f49ff2dc462969b56334f9e48f2fffa4313379269b",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35810,7 +35810,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "c71efcdd6350daf85b58ac960dc5ca1b945ea7cc1a8cb561528c971983173bd0",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35883,7 +35883,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "a0cc325678c35081fb9f21c841b6cbbcc26d8a4ec04bfda9fb600e9ccec96aa6",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -35956,7 +35956,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "b8d59cf0ad12a827ac72af6448abb95f6a65bae66afcf4a271b681ab705d2a7c",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36029,7 +36029,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "3e6d8164d5b6bfbcb0c08b214f4cf3d189ce9ef6cd64b814377ffdb69390ae04",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36102,7 +36102,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "dbbc7469109e06b3e69456086de5fa4b3995eb1a7a565c5281f4315a97ae5a95",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36174,7 +36174,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "6522b56c5b1d7f9f19e87d96b397515de16aa168a77b72ba52035fd91646be6b",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36248,7 +36248,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "b397131de4de278f264cb27ad007acb5ff3916c2f13ee2fd5be99df2b2ae57e5",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36322,7 +36322,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "4f4b0f6d9e6959acbcbe85a11a97cdef84b89a5b9c4d8ccf44f9c7fb08670ec9",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36395,7 +36395,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "895bf907ccea7ba725c51515c67e5e4820f291be939f62514d9f3e08355411cd",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36469,7 +36469,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "d51a239f640da3e63334b31ff75a0fa672b59ef5927d7a66ab24e7062d652444",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36543,7 +36543,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "ebc37779643f0ad8c33793430db6209e44e8b84cd08ed13904381fd16604953d",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36616,7 +36616,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "35a59020e3618b6618785b36990a9a1fe79d46f57b09e764e1532c7abcaaf7d4",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36690,7 +36690,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "0fd85f2e003f987d3f0f47a0d036981e2a9ebfb4ffb9a6f8d091c46899616fb8",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36763,7 +36763,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "93d038c785ce1a6be5f15663ceecb24a1c27ccd9eb96a9759a80accd71bc3339",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36837,7 +36837,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "25d7b27bcef140f067caac55c8e98a825cfeacc503525d9fc1b0a240c36d2d26",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36905,7 +36905,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "f819edbe16ca483c553ab2211bb82989da6379531946c064a454def61b0fa5f5",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -36979,7 +36979,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "855b28fd97ceca1deea8263bc7d49694d35a4c2af403c067560c34c87025a180",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37052,7 +37052,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37124,7 +37124,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "a6ece0eba0a5edf9e5f1e481de26340352d080b528d90b3701aa0fdb17314c36",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37197,7 +37197,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "176b38d4428ed652bb680d4446d7da57ed37ce0d9823b9888c506902510c4aaf",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37270,7 +37270,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "8b750a7435d2750c5941b645324cdd4bf77c1939fcf81d92da365c02985833e4",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37344,7 +37344,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "7e94d99330243389ca92f3d7129efd3c5a4b51a04b714d35bf251ddcefc5d531",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37417,7 +37417,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "c47d0ff1b076a64ebcd17a80386b15546a97b14bf9cb75740202e0e44e63ff10",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37491,7 +37491,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/relationships/4",
       "recordSha256": "06e0bae52b40fb9d56c5489f671482ac7b7d9d54abbc28f9566082cfec077e54",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37564,7 +37564,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "ccfc61666f671ec70b040af4db983ed883009d70f70b1fe056694b8b755d383a",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37637,7 +37637,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "4ef9edc04b4c3f1ba00d89d5e4a5cff76c71adad971e82774843f467c791f540",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37711,7 +37711,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "f257c3a956697751e8d8dccc1846fd61fbc277d0a57eb7ebe3ab165d821c484e",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37785,7 +37785,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "00c3fd5619f1c714a812ef2f31c4ce43b8867d3db7cf78ac6443d950f54fbd7a",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37859,7 +37859,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "77194ad4ae9fe511f550c5c7b6067717b4289215ecbd8802e26207eba1ff4a49",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -37933,7 +37933,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "1b4b017adc8061f9d8aa35663b0b4238a93e04b5b74df8ad3a51ec369ce46d91",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38007,7 +38007,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "9544256d56ce0b69961c0b964e53a199e4b1dc9217bda69a4397d1e946904008",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38081,7 +38081,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "fd14bad390ba04502863f79b1cbc6b22fd2be7a59405ab147e6763015d00728d",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38155,7 +38155,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "32efb86354ff55b880c4267eaa64010345d64f424b32242eac7638928f76b770",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38228,7 +38228,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "ffe85678c05c01b87f7e63f9e8887a81677cd2bea43ae7d72644352f5cbe8c46",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38303,7 +38303,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "c0390ecada88be9fcf54357a0b23fad7bd605376d45700082639135226102cdb",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38376,7 +38376,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "daae111fa706a91042aa0dbc7670de651dea3418713447570bdf7e365b5ae74f",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38450,7 +38450,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "ced3159a58e9061f1bae5615cbd28eed247e2e0f53e723866ab584e00f38dc29",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38524,7 +38524,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "2775bdd4707d40af9a088e60f0e8c1abf9ea8a4495ed1ff05762b8af6acba10d",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38599,7 +38599,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "fd1dcba95b40172e37dc1d08a63e62fe2db9585a145d3754996070b243c741b2",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38668,7 +38668,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "18b8a82297773b4daab139383c99d09b97735f68fe9213f94daff57df0f04be4",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38736,7 +38736,7 @@ const ESTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTJ.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "dd2bb7d2efdc9b223c220543c9c13121b7379309053e924e293acee0a1786535",
-      "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6"
+      "fileSha256": "aa1ceaa51bdbcd8766a2e6d09ac92e025a7c21a5638f8d373b060da02c97c407"
     },
     "originalState": {
       "type": "ESTJ",
@@ -38805,7 +38805,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "286e958253eb37b50e423df27e770e502c0d7c85fc6b6f8be710c063e837bf6e",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -38879,7 +38879,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "5463aef1113a5093287146d062e73e069a094140937336f6ecd56e5248cbe360",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -38953,7 +38953,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "a29cc60ef336cfb0deab3fd7c33a30a77de7b7e8332664d4b2ab16e0b8c0b642",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39026,7 +39026,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "780113c0a4b2921b68700b9965bde1a019464385f0645c7dd4c517f5ff59159d",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39101,7 +39101,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "c3a182a3ec4554dd569b1c71b666db566c456269debbf17b7e8117890bb654f7",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39174,7 +39174,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "23bb5e720da26185ca8a54a233086539ab25053c5358700580ead06a5a107dee",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39248,7 +39248,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "7b714a4789afdae5915c4e27fae3baf7e7684c091792eb841f8fadd3b1cd9526",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39324,7 +39324,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "0b8a1e5dd626d6ca6b2787646a40bb3bc3b68a7edc5097ae8a439eca45a5cbbf",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39398,7 +39398,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "363744364e96425d515dd8bf0175b0d4d18d5b8ac81b03447d6496ac051043ec",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39474,7 +39474,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "c1db33b510b4d632fa3797c64926095cec6e8ee8bfb665922cd5baafdaf5772f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39549,7 +39549,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "664a901c7274a8bd44d7bf73ade10f53af463e76713afe951c18a2ce9ccf120f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39624,7 +39624,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "697390e0d9eb7046603150f3253eaa89c2fd4e9d9aff8a4ada3cba0a83442d3f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39697,7 +39697,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "01bcce8dccc579b2a5656130e74f2c42c2513d4c5b54954b19629cdc2b803404",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39769,7 +39769,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "9a539a6c7287ca1197b080e8d8248de13dd650b96e6532db674e064cf6be3350",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39842,7 +39842,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "5dfebcad3a406dc90324481eafd0cd7a4b1d50b118020ef36a28eda63f574050",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39916,7 +39916,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "b854b0cb2eb1190943eacc48f4a85c1755c2cf64e9483aa5f889032bc47f0059",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -39988,7 +39988,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "65ae4fcd2629536412f100a00b8a9766ab839e1307a1817e108e0f37ed0ae49a",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40061,7 +40061,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "249425dac315323aad0301a098a9db041b6b0e33a7c16272fedcf115d4049a55",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40134,7 +40134,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "0b62fca8b2c4527f947468cdfd3c0626c1c60b350f8f664df19c62b67398bf5f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40207,7 +40207,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "c521c829d045c2753a6b60ca37b87338bf2dde3f7b869ee05199efa6b578ce74",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40281,7 +40281,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "7ca603cf98e91730024a76688efd28e64d1dd2b205cf4dc5e572f8bdee9b7596",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40355,7 +40355,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "ea72d02009ad14675c3d2b697bfaabd443131864711c0a704c73ace424205e07",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40428,7 +40428,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "9833ff0c69935747186a4ce97fc7a7ae56cda3eda76449d8e03ce6925c8d91e5",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40501,7 +40501,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "c99f284ecd06abf8f3e412e94c90dc892d09a3bf89623c4ce16fdab8ee88c0fa",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40574,7 +40574,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "66f7aa2eb0dc7d8187e2206da59355cdbb6182008d26c01619255393e0d2b7e3",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40648,7 +40648,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "488b68153c43ee144bc6e61a1bfc1caf2e0aec9f6c6e0cdbd4b281d45b5002c8",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40722,7 +40722,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "24639de340ba1331a5704f1afb8b9feae36fd8aca734fb79f2099bb263f46e3d",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40796,7 +40796,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "13b7c9c26055bca7921068deb0d2b8a3746121f684e9015f7921def946b7ad99",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40870,7 +40870,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "00901ac1787c34a95629c719a289bd6724624d1ddba95ef313833a73930e274d",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -40943,7 +40943,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "51f695208eb68270e40b964967c28da8c53f8a41539108eaaf81cb9531979d5f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41017,7 +41017,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "2719ffbcb87fdab1bb5f269e12f74287cef64b8ce143b3d615767f2153dcf85a",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41091,7 +41091,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "c2f49f6fc808cbcd0aceb0dec963985df0adc5a6230ed4aa6c3645c992fbacb0",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41165,7 +41165,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "1718359feb0ff96c2f61d29c25e35ac291040cc3dedf4fcb1631bcd75e3cada6",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41239,7 +41239,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "d74635abd854a1f57c2957d408fe15960e1f805ff3206e56ea49c8efa41216ed",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41312,7 +41312,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "e157227a7a65402aad995c3e0c5b0a3fca0836265e6c194cc0bd96455f8b396b",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41379,7 +41379,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "6ba4b24a13e317e5bf61edd062bb1ec2093afe414b6c880339d9432438d5ecf9",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41446,7 +41446,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "c0cdf4b5e294a122133295ae3fbf0b7502d6ed3b1c5e463241d24a9730b77bb8",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41519,7 +41519,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "33efd111f65a3186c8b68db51d00a19bb0d14860ad48e4b41c9985ceddecc5b2",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41592,7 +41592,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "e1f3b0ca16f8d907a0a83a6b17df11dabc63be38d4b636b4575e0abb8c019723",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41665,7 +41665,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "4bfff86411ffdf9fa8ea99a2cc43625a1ba8f4fb2645c1724b0d235a68014c0e",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41738,7 +41738,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41810,7 +41810,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "837b0149c58bfdd87671e621877fcfb9740a6e00ce6ff5dd49079b6f7f00dbd7",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41882,7 +41882,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "67176dab23a74ec2cedb7394a1453a64714e254f2effe2cc7e1046f2726e1d7d",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -41955,7 +41955,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "ef16d6731766ebafd4b91c8ac19041135b98ce876aee4f98583cc78f06297e8f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42028,7 +42028,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "0308fd2a0b97d336ac6eaceda0aeeac1269035d5e5657269b1dafbc702344fdd",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42102,7 +42102,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "0ef263c7cde1d15382f8cfbea0802ff93146b2731f8a0bde50f88da80b7afeca",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42176,7 +42176,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "cc08d6ba30f1c7a8d1b3c2c1bc2e0a7c6d400453f940743a1b2cc76e1cca5999",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42250,7 +42250,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "8d507aa490a7b71702efd8015efedcfad9e1a54b1f88d9be9e4f3ad3daa81e28",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42322,7 +42322,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "4394cb48040649dfcf8e2247c0c50374a747511b9d485e702b65c38f3be815d8",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42396,7 +42396,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "48ca428383c9a0fa9259b1aa038a3e75c11a98da45f513b4c53a9b8dbd14a3d3",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42470,7 +42470,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "84cfb0d78158bc3f835f4bd1fb0b22038540741edac5f14a672b531c81f5519c",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42543,7 +42543,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "3178111e477ac826bcaa27d71a8f628c698766128ef3321bca190ebf5f55ddd4",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42615,7 +42615,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "d5c0bb91253140189d8928aefecd562c772595735f3deed7ff5493262a945569",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42689,7 +42689,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "8e6050d2bd7999b9a798002999558b546cbf7053e0a2cf2a89c765370217a980",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42761,7 +42761,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "4d4b3e723671bfe763a5d3ab28c099bdec707125b229052c203877b7a433c552",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42835,7 +42835,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "296282c871c4863515117db3b63421d1105ea3f34c4de4c0781710780ebd2411",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42909,7 +42909,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "c11143ca79e2ea2c99786f5eb3949146ef7941b2084f8ce8d03089c113c7dd98",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -42984,7 +42984,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "3872b4853cee3b7c6b662266ea739f982bbec843494779a3d8ac4ccd6d5c32fb",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43058,7 +43058,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "f41f2724524fce8f5a17a4bdd31363250fec9d52698401b4e24a6a1572e7bbe4",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43132,7 +43132,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "92bf7e499845fe670b9b4a145658581cacf21948f2c2958d593068905b447adb",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43206,7 +43206,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "3b7b41a2fbf87fdc2b692b379fc6099a674ac0e3dc754f507cf01e26d6e439ee",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43279,7 +43279,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "38f3d4836b1416a763ac51f74f5336dc2a8ede729ac0b32a8b55c33d839b3896",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43353,7 +43353,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "edb50ee814b323ea5e9fa04fa06bd906b9df505684bba647bd18ddb30fbb1b55",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43425,7 +43425,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "8abd3342643234d29cb041ea52539eee2ca3978eb07b6a8463e5d41fe9efc511",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43499,7 +43499,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "e1db335bbd4e4b61bae4c1b3197614f961860581a0a9f4ee49f1f64d90414174",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43574,7 +43574,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "3b9df9e1411c2c7094bda7e34fc0a25f828452789137e9cf390f4ca8638625b6",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43648,7 +43648,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "d26028e11339d837af9a8f4afeec97f10fcbbd797025de0013ef6ded77664db5",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43723,7 +43723,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "2baffff5394dc6a7fb969e8793f8e738580cb7405e36cad35de171ef75e79e83",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43792,7 +43792,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "3c8156d3055fafe4c429321d3af9758e5d8ccafa6ebb0bde7a4778f207853b0f",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43860,7 +43860,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "7b5d5b49d0b5fb28c39dfbe9acef3427a4f425806d1a2b16ff3e01d739f3f7e4",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -43934,7 +43934,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "475ece10666fb6e52a04f6690f5d44a2c4881bd20823db409d2df62de7cfa383",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -44002,7 +44002,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "8d45c326703fbb911b68ff9cce9439e8ea6726c8b500ca1a6edf39b55b915c36",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -44070,7 +44070,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "21da0d19d3109c2228590a95ef1569c12ab848f67a34181d7935a6af6734b821",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -44138,7 +44138,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "c5e3b01a5c413c09ee3b6cf91f99f076354bfb1a2aa7c6fa46f98664fd7bdb5c",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -44213,7 +44213,7 @@ const ESTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ESTP.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "795f14301b3e69e23790a744ea82857f86d67a2ca94471658bc8e05d0f074957",
-      "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec"
+      "fileSha256": "11ff701c4e93b3d5829d06907c4909651c44681d3713a46bf1202b40c23d27e2"
     },
     "originalState": {
       "type": "ESTP",
@@ -44289,7 +44289,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "ad929e91c79172338b0d99a90af1a2f874aec1553092b034d83d0180daba291e",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44364,7 +44364,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "cf3b9b7e89399f4cf7160e3378d8249769bc7bdc3e383bbd9a677d369c9e6125",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44438,7 +44438,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "1c77c5294bf2fd5af58fe017b31a1f8d2a52190f15993519728127acdb9089b9",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44512,7 +44512,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "55fa1037b5f8a2a4eb6f435770f315b2f2434d30461c391eb4031984399ba185",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44587,7 +44587,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "71ab6299ff47c8c05646d6baa0a3e7008a933c3e18d71d3e72db5d3be59980ce",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44661,7 +44661,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "5ae1163e552ecb494a15d5e872fefeb8c3f95408433f29332d7f00202d935027",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44734,7 +44734,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "6aceff748015655ffdc57b68bf3db577ef84afcd031855f6dbad51f1712d04d1",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44809,7 +44809,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "5411c3cb9de564e78e11d2fd24d1e5c8ba861cab348a2362ce7dd50a280f3293",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44884,7 +44884,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "fca63b19382c8b9d4109d9b41c210013f0a8a734ea7cbb3b0633a507ad799585",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -44959,7 +44959,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "c9909ae65ad1011f1acf72c9a85f4dcd9708f221290a57aa52b973fa73cad265",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45034,7 +45034,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "b76fd2d74f67eec6c97b925450c2d7e0620ff73000c5610f000590ca7f8e427e",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45109,7 +45109,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/thinkingStyle/5",
       "recordSha256": "2cc4a3aadb2adef95d1fe0d0ba0eac5ee0cb39cf61b4daa326c6e382c4a44896",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45182,7 +45182,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "ac1e04ef773d1303b0a3f0524db442b234795a48e698d2033c38b5ef2761828d",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45254,7 +45254,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "1e0f88d42d9d01359c10d98f512f38d935d527db705ec7f10af09fc20267575e",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45328,7 +45328,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "cb6809f4645d7ae9f1945d02a2dc4c1fc03c2a8ff2de8e124fa536b9ae2a6833",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45395,7 +45395,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "6a1fa45a2365dc4f38d742cc168a385ec627bf0e9aff5dff15c646ab01bc1b85",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45462,7 +45462,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "91abe64b4ab1081a025920ba5c84da78e8e6f1c2bccdc1e722dcb044f44be874",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45528,7 +45528,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "c9c04304465e2cde4597aca0ba4c5a70c1e60818b7d78fbc3cafd48a441621be",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45600,7 +45600,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/career/6",
       "recordSha256": "07cff2e577212ffa6c5078d0605ec79310e1097b7f4963eed4bbf2021e783a8f",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45673,7 +45673,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "4d939ac685a6d57573fe725bbd12b75047e381dee843cda1c6c111cf70855a5d",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45744,7 +45744,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45817,7 +45817,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "4dcfc1e9716eed6516b6df3aa956406b1034c2810ddb73f7882fdb89f774f8f0",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45890,7 +45890,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "0a316f6b3e7086e19c8858e3657786b20cd2305b9536a6a21dba6f7c4b046b31",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -45963,7 +45963,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "83e4bf7c1e15bb0449ff1890fec3bdfc86701728a6b333cc4e9334e62597912a",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46036,7 +46036,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "4261450c0a40e4bcd6cedcb465574872dc4b0055e65291bb034607349167f4ad",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46109,7 +46109,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "d54edd48cfecad7db67483bf4045854efb59a433ae9eca6de6fca2c31d8ba9ce",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46181,7 +46181,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "ccbd18d20c47152619f088696777e8236cf19a0f3bcaffda235788c939d413d2",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46249,7 +46249,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "3d4779fba99971d1aa35357d769590a040bae7cc63f638d38a99eaa50506b1a9",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46321,7 +46321,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "92bb4640dad90c9d1b0f6ecccf8913a9b55677c7f2cea314db368f544f26672b",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46395,7 +46395,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "007eea614354b2765f5953421404216f5a9df562f0d7b245f6caa4159ebc7998",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46469,7 +46469,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "3ba2f7b9203cbf04d5a8a8096d9faced3eaf2654381f5dd5219271d84779f0a8",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46544,7 +46544,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "103d41c7b0a2150de5357af62f5e91b7f1cd812cd6c6309b0ef76d99a5874dad",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46617,7 +46617,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "3e6ba9b7fba205da21b169845fc9d254223d6aa3af1c0934bfbeb050e8177f3c",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46690,7 +46690,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "401541f688ffb82ba9dcc58db22df77aeb771de420df3f59ba3e7fe40b5c6447",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46763,7 +46763,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "20f5bc23a9869eb3edf24d9c28e6a5226b1235fe9a7126c64637cc0b0bc0a04a",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46837,7 +46837,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "b2ea7a7b1e0423581171bacddc87369cad2a6bfff5e19905844d5741a1558c5e",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46910,7 +46910,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "181f802b3e59ff9568c22c35b91aef3570d8315b315e89802f3972ca50acc2f7",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -46984,7 +46984,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "99e8e235efeb49814310df882e2b92b9ad1a89be5398248d50adaa33e3901dc5",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47056,7 +47056,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "7a882134f5396bd04386054ed5b727aedce4c8935d6f8aeea497f3f9fbfa4188",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47130,7 +47130,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "ad03c6bfd7a7a66cb0e84dda4ead32cf487b490cfa814482b48c2f7bc8ee5358",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47203,7 +47203,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "36cffee0c3bc82ab68813f7685208006c52e4aba65b801dd742307afb59a54a3",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47276,7 +47276,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "24b05c9fb97883d4405f2da495462d694be33bd49bb4adef6b31e22875ee2110",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47350,7 +47350,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "c113469886636f74f2a2b7180483e52de4f76e4720c2da99209c35d27d089480",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47422,7 +47422,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "658918804fbb8696ab340dead4395d7cdd2cb8351bfa5a55b4277b5b825a0337",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47495,7 +47495,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "616c294357bed10bd6b0f099aa443279ed633af2f07cc86a5b4e5babf15f3567",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47568,7 +47568,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "7d64613076f4fa7689a0b7610cbc3382bbd6b75247274af2b9ab42ebb76b938e",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47641,7 +47641,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "0c8d2331162ffcae7502ee7fe2e00d904c4443cc59f7340d2258281c0eb6dc07",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47714,7 +47714,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "becb48f11e253f9d61f34f2ce800f6830481c7c41e48608fb6cd5872fc49c200",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47786,7 +47786,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "a0b16aa7b81597e40854f628cb5fb2c83ab1f07eeedbab1afac33048722878b8",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47861,7 +47861,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "20e474d0108c64a0f188fdd56f1f94d113a37a48092fc316903faed3520f5d42",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -47934,7 +47934,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "61881e1f59fc615449cf7b9559ae0c343d983a010a8f922dcce9926ad677efb4",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48007,7 +48007,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "c275e3e3e37868e1bb3c1ecda03ce96f2e21b26182a5d242109404180aac5c26",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48081,7 +48081,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "92b847f9cfdb7127c1100c9d8bd7c45b224d4dca064bf0015e280104532787db",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48154,7 +48154,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "ab8065e35bc597b4a9542fb6c65f8cf6d6efa5506951d8e770210c2213194684",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48228,7 +48228,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "7f8dfb9c32c79ae8afe14576aefe2d94253bc44750a4ebb293064487247df83f",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48302,7 +48302,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "3cb518e50b65bdc06d8a0e7382261e7450f9888f79985fa6a04e13d8ccf49e55",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48375,7 +48375,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "f86de17a40ca04fc84224bf49dc909c3fd863e4605fbcd883dbe7369cabeceb6",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48448,7 +48448,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/child/4",
       "recordSha256": "d06b0760af82d0aa0fbd1ced2071bee774c66c2a3f7a7899435ecd027edc8494",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48522,7 +48522,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "24d3e4a213be148ff1409b7beb37a39ddfddd8d265e2ea63f950b4f5974b2720",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48596,7 +48596,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "afb13a83c632c6eae4ec1b8311e2f2f98f90186c62db1f2b22c07c40fe8473ed",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48669,7 +48669,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "7c22ddaaf149b53c94a6f43d333147a5034196e0ac495fb579140b283ed7cc24",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48743,7 +48743,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "9d4e979d2b9b24494652a99c0919e3ebb1acb7ebdfca9dbebc075ab479748fab",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48816,7 +48816,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "a0b6ec1ef19bedca75dfa8f19e1c49093d63aa6e119533b56d86f37d00155818",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48890,7 +48890,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -48964,7 +48964,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "2bf705286b98047b314f1606738eb23de5347769e39b88a3c113f790125f571a",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49038,7 +49038,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "fd107e4bf544da95518616de0c6c61b798f2d9c2586ed113ee8cd7f20b909f81",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49111,7 +49111,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/communication/4",
       "recordSha256": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49184,7 +49184,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "a8450fb5b6dad2665627ce832de40b1ef5878dd94706ec234508e3d701de7028",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49258,7 +49258,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "2c07590971ab63f49df1866af3719fccc1c37d58465350f1a38d16167db363c2",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49332,7 +49332,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "20af02512cb16d677c0e00b156e496dbd8d7c53c75c706370b73eb9a8c36d201",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49406,7 +49406,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "c6fc52e2930206ac1a113e472668e22c134317463f3a454a263b099414a9c278",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49480,7 +49480,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "b5fea6b656effdf87c60c232431f9cce031f11daf1fc9f7ee72be2427b817e76",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49554,7 +49554,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "53990406993a09c610aa4bab53f0663dad66207f5b8757f6eab9141ca6fbb1f9",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49627,7 +49627,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "19973c8e6215e847b10003621d1929952b2ffcef83e4fe2487fd76329f0a3f74",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49695,7 +49695,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "25f0fbc2481470a2385786c5c540035499d1ca0b6277ae669909407659b5f058",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49769,7 +49769,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "6cbfdff48696d7ec216c96617a33cbeb5fc760c87acd18adc494671d34c736f0",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49843,7 +49843,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/risks/5",
       "recordSha256": "513d4b1cf2014fb85479cbf502d7facedd1ba035592c7c2c945c4186be70a897",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49916,7 +49916,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "b48d861cb7570deb946a7406461dcf69ddcd2b319133d6130ba4d05217f76459",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -49983,7 +49983,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "93d76db20a066b222770f888143ec3dd4f24e3272e0db4459bfd6f1afd905328",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -50051,7 +50051,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "58820dd2887a50229d8132abbd6bd77825a5edab77bbb739ab80c76b7f2079e1",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -50119,7 +50119,7 @@ const INFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFJ.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "7bcc9236ee4cdaa9a21e6902101dc43bfb4d762e0068a970058194fbb8561e3f",
-      "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500"
+      "fileSha256": "598a4ad1d36e3884a7a2db1a56b003cd4553a077f6fae69b0d6037ff8dac1d76"
     },
     "originalState": {
       "type": "INFJ",
@@ -50195,7 +50195,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "a3cc973b66effeba2794c96ad7afe47d0894d002902e890317ef1b26416de31c",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50269,7 +50269,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "bd24f0cc9a6245ac7c5c826d837bec2cdb7133b4e83ed7f2cfc46b37114fdbf4",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50344,7 +50344,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "93016d5c8bf6d2fb29629e0503eb2e7af8869dc5bb75c5825eeacd736f718e39",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50418,7 +50418,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "838eecef172b0c76e0cdfa61f84250b60c4cfea08d5ffb91816cda508c697f51",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50491,7 +50491,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "82cc9255711eb51956b7ea105f2a9b240c148c726665973e26641f2351851067",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50565,7 +50565,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "225df3a8fb0f33bb3fbc99d512a703486231a25a7d70a9489506850d85939e7c",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50639,7 +50639,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "d6d7e369b1cc77beb6bb9509399ca1c6e83d536c845f899a53e5d279bd9afaaf",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50714,7 +50714,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "be7d45e0280d72ec356da7dad2d8bcaeb0889de1a7500c6e1f4e8267ddad3e73",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50789,7 +50789,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "cfe08f39fc302aad1decd20cbd0745705ce30ada76c4003b2a26f141fdd17257",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50864,7 +50864,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "42183a3928c266aa5a29517338148a577fd02833647688c887b34f08ce48641e",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -50939,7 +50939,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "3b4e51668ec5215568de2511fc364903d12e79c0fe749fcc434519259190feef",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51013,7 +51013,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/thinkingStyle/5",
       "recordSha256": "274398cf9e120d6cd633dff6e484b3051ee56ff0ec71c9444cd8de9af769ebf4",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51088,7 +51088,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51161,7 +51161,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "056f2d4078f4ebd3fadfff7ad240c40616c352b9605d499a0eacad85b8b5c38b",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51234,7 +51234,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "49e891b033c91adf1231c366c939ef1f556c71d18ee24b73fa689b25b2ed4523",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51308,7 +51308,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "63a73a402986012fb8173208daa415cb6e745ed9c716cbd48f81a938c3f3fe86",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51375,7 +51375,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51442,7 +51442,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "383989fc739d880f5351b7f454aeb200dfc27a19e740b6592721d947ba10ff28",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51513,7 +51513,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/career/6",
       "recordSha256": "5efbf1c735eea46590a62df382c44498d3765d1413604279a2e570710a6055f4",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51580,7 +51580,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "8fdf31b355c616feb78bc871e91b6c2ddd7f11563eeb9b648d90d67ad26f9f96",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51652,7 +51652,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "fbf9817f01bbcf5a1065fba7362c48bc6c06b242d6be587b36dd6c979102016e",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51719,7 +51719,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "9de63eec6f85666cde1c4bd59c4121df6aabdb186d00bb087141d93c7e2e7223",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51793,7 +51793,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "44c3b57100ecb50822205e3cc36bbb65482a9ae4e11f7bc1d10984af84c491cb",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51866,7 +51866,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "a655cae43b122bc3fe4a2df183eeb3fa78967a2c42eebf86478574d6c49fdcfa",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -51933,7 +51933,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52005,7 +52005,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "08406615ad1ee236e78f7a2c4e1359668e46f6f3ec2b88aba29dfec4555014bb",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52077,7 +52077,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "4cdfda7f69a02b1aca8528edab5b80637a2355d43c6d835c97b718e6e30cd502",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52144,7 +52144,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "9b3d836cc973018ae0d4f2848aa9610d055bb88f907217e07d31677ffbbda4a4",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52218,7 +52218,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "ff48cb90af05a1501e96ffda2317dd86e8813db58aa5f0f36ed85eb275ac30b9",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52293,7 +52293,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "472a846e23c65cf01c7a128f379b68e1c2e9c93f6cc925b0fe68719679d67eb1",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52366,7 +52366,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "3edf9ea131042702ec11d6f62d3297ab1609706a9bb612e9e73e4b2fe99d8d92",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52439,7 +52439,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "a62966039710c5373f19bc8f0570fac08afe27d814136ba660c0a6071ef49dc8",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52511,7 +52511,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "64ee7711350da9f0e2d297374329c1c172941cd6e41ef6fc495f1dac88cb567a",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52585,7 +52585,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "3e1e248e61b2ba4ff7df5e995c860d6f31da9089656a5c6adb1202fef2c0a5f7",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52652,7 +52652,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "69d004956bf15b22c72cc27453ed8e584a69d2a5719dfb5c4b34668bcaf71a37",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52726,7 +52726,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "406ef0ee2339f999651f35a40922c974b736768a0fb717c5c5d3e261e2939fac",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52794,7 +52794,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52868,7 +52868,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "702e3f3d6920776e79a0dd11f3765c943a98f67c6758730420fb929a4bdf61d6",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -52934,7 +52934,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "57a1a05b24a101d20a8450a2dc150f9922b0e8fdf7ce519f56d45704be6bacb5",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53007,7 +53007,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "07f77973d866d575d80ad4ce0d932470152addf1a1b13004127712d5fc2a590e",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53079,7 +53079,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "844df5b96631ece035b8f15f9b8ba68118810116483a79cedf2222fc296fd04f",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53152,7 +53152,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "6f1967dae9a1f0c3c53563ea39076f7aa21f1184dbac71032fbe19cef74e3fab",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53226,7 +53226,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "814540157d57cd6ebd42a2e9a7011d25724c847217defacde8632caeb848b7ff",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53299,7 +53299,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "bf6789553336686423fbf238d69bd6fad4f4d62f2aca6d34a3cdacfc43fd4f45",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53366,7 +53366,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "a8192ce4147b38f641dc0d4d6f142dc9b9f2a1d0ae839c59a722c26cb6f67340",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53433,7 +53433,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "ca55440f395b2ff6889856b47e5e333551bf3e2e8bd9dbe10011ed6b798937d1",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53507,7 +53507,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "faf6a8d0f34aa93cd10d04b7887053380e5eb94c36e6ce4f0ded8fe8282f3a65",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53581,7 +53581,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "d6ccc25156c6f099ee93604627f54b170bfe623e35be2798a99f673424ea6c4f",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53653,7 +53653,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "18a8e017e672f182b9e13de8db1c677202085b016c2b2e4ff2f97b77b0596cd4",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53726,7 +53726,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "c2b3fa8995fd97c1f07ebe066228f207c995f951049dee20c063308346ff51cf",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53800,7 +53800,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53872,7 +53872,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "4fbc70750d4ef8b61d61afef6585b4c4aee919fc4d20795b2e0fb8a794675959",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -53946,7 +53946,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "acd8c8b14f96c11f1b3e5c916100ff310b608f7f0ff132aafc7775d0be44a2c4",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54018,7 +54018,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "97852a9eb329f338e7b82ac7a5cd554973f5c59824fc16a819108792babbfb64",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54091,7 +54091,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "62a1820483be8f5fca2600c7ac673d07d451df1a19e37aa3d861db03bec7918a",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54158,7 +54158,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "870aa2d528ccbc53f257ab5774222927e63e397895fd38a879f5726a9dc77190",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54231,7 +54231,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "3ab801b655d24dfa3d836f10738092a04cb89985c380cb5c4e5175eae5264e93",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54298,7 +54298,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/child/4",
       "recordSha256": "8720a58a997e9cc7957b7054eff37609f65336fbbdae0d51b16cd497e873773e",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54365,7 +54365,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "d0e53407328238f1b1932bca059a3021d2dae3c1ff971ca2445785b30fe5e85f",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54439,7 +54439,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "810c8bcf6d33607f2eb536148ea99d4e71c0746a48237598ea45dcc45e800426",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54512,7 +54512,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "7947be1cb027adfda72de01605e4547763a648553f057459223b47b424edbd55",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54587,7 +54587,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "626d0e7dc2aba3b0106ac17004a86488df225ade9f13a3e908585bb5cdf865f3",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54661,7 +54661,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "482049047490d1ebd61c9b658e2dba9125c92e9c423b57cef3d757627b81166b",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54735,7 +54735,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "3e45295193309706218115f7b1d0c3fb3264cd150ddd149d50cbc9ed0863f28f",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54808,7 +54808,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "1f15f8110d2c67584490ec0e59dfc9925211c431e6536790c63094813e2cff84",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54882,7 +54882,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "b573aec58d177a8db57620ac7f470d1f666dac87667f79cc03f74fb088e0fa9d",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -54954,7 +54954,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/communication/4",
       "recordSha256": "f1ae2bb1c81e77cd5b4249bfa3d1a0426b3593caf63ea4cdcf9d842bcbaa859a",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55022,7 +55022,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "54bdd9f03cf1147569c34bfbcf0f7d6b0dece8d78056f4968d1204723d1d7df7",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55096,7 +55096,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "ac1bdce416361b83a327a21dde02c2e7f216d184de9d6df2bfde9ff371cd0ea1",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55170,7 +55170,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "1b12320168d53e9f28d2535bbb267bbbb2d84506bcf6b854ed84bf53d4c25c00",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55244,7 +55244,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "a9ed68e63fcb12a8152e8d100427290a3d1f8c91b1f83a5aa2c0cc50cae455f2",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55318,7 +55318,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "ee4455eb9dcbb0eca1447d43480e97a353dce9393c0177de08f6a276fc7d59f5",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55391,7 +55391,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "ed8319bae00884ec9c29c6faf15bd14c6f7969d3722047588bd9a4addf41d7b7",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55464,7 +55464,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "92948fdcf8434f7ee015b04ff8083d1b09eed644434ad391179e62ed26c38e8b",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55532,7 +55532,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "44fa75c0f5a843c0bfb4df05f970d7778bc3fa7a001ad88f4a17a8a2fd2a1e24",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55606,7 +55606,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "bc23caa8f41276faf6c7036d8429f81bb415f379f4c17b315045beed705d7e83",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55678,7 +55678,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/risks/5",
       "recordSha256": "7e6414883ade37f0003f0965dbccadbae93ca95dfe4222e16d28a9ae6c55ca57",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55751,7 +55751,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "3b3cf3ff5626d1a58ebb5e3362f1025bffebae69380b1d2b726de9a826ae9ab1",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55819,7 +55819,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "5aefe5a32109bbcd85a7fa810eccdc3b741512514673dae0e363777b08415557",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55887,7 +55887,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "b663d0979c458dad8bcd225f45daa9da457cd4fe29dd7aa1e90a44177399851b",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -55954,7 +55954,7 @@ const INFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INFP.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "7ca8cf754c3d7e0d8cd91b88a0de605db4ad6c87089f09d6d7a955dad5488eea",
-      "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a"
+      "fileSha256": "b2f149534b4c4bcd8b8d7d776a0d84f4dc06811d213e919dde1214d9d7613ab2"
     },
     "originalState": {
       "type": "INFP",
@@ -56024,7 +56024,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "1f2cc74c199ce626b165ed088618573659162aca303a2cbfee9c19d0e91a03e0",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56101,7 +56101,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56176,7 +56176,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "3f79f49096ebe619bcb1626c05f6536611509f143423d29c25a183309d412101",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56250,7 +56250,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "d4d5b8548a21476e09961be416c53791259059d24c3dfb1f7a4a79dad38da16f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56325,7 +56325,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "3c5688bd214a753c50ce8e7b05430eca725f08badbee9d683e9aeebea750e49d",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56398,7 +56398,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "857dce2d858df7580a41f6c2ca8abbbf9f12690f765d2592da127a61ceb8cd39",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56474,7 +56474,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "41d3a67731d994d294cf37f81479c67138a353fdb0c5daa9c7a89242a0ed12a9",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56549,7 +56549,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "ddf7f2eba206d54f33cf4cecd1dd451eab68197b731f9db34a24fe50c67923b2",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56625,7 +56625,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "ec9e84e7375669b87e4859e47d4786267726c00f2f26f1b88ab6365076b4549b",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56700,7 +56700,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "7676722361fc8f7c6bfcc1eab2427d1d8c773e51b63116da017f01712fd7a359",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56774,7 +56774,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "d89d1b020b258173af64aca1b5869553725f09bb71419524fd6e34cf58686f0f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56849,7 +56849,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/thinkingStyle/5",
       "recordSha256": "afb87bef40a6aa95b648c651e798f73043af31ce7de654ffc68d229fa2e58a7f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56924,7 +56924,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "e7d3ccc3ff0c555085ebf85eab220b86aa3b93055878cf19345158e5baa10fb5",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -56998,7 +56998,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "1ce70bbcd5e2860ef1811690d9f5bd74737a3ab9cc6f699c8652a90ef89620bd",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57071,7 +57071,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "1c43049625a5e1766ed30ae0f1577dc543c6e8bc6aa8ec1ecd0d48c944dd9bc4",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57143,7 +57143,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "671cbab5669228f26038118ba3c6a2639c483e76419740c50487c25f16acc5cd",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57216,7 +57216,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "58ec4d1f7d5d6485a3288df74a18349bd415b1a6cefe498868ead72deed72f13",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57288,7 +57288,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "21160c05e131d68c602615babcf34f11e32c261cfb076fa4877a3bfac274d959",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57361,7 +57361,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/6",
       "recordSha256": "568c68310514d56d94cec7a9d6a0059a8293141fb6bf6fbdcc2562e3657380d0",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57435,7 +57435,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/career/7",
       "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57508,7 +57508,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "c51c73b93437abd92c1ce601ccccb2c0901ccc340293c88eeb5135863c42f718",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57579,7 +57579,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "0f66f85ecca0cfbc68b82e75e43f6bb80a675995f13945efb1a6d1d102a470f3",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57652,7 +57652,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "eab3c5e64d469e29bf5286a91745fdce1c3021c5de0432e9e972cd7ef838cb11",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57724,7 +57724,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "b09f8133b7f5655879789d5c4c4cc27de50c96ad559803b70ee3ce7216c1ce38",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57797,7 +57797,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "d49bb3c9b9d3897249781647e202104d76f512e53b3b807cbd90b4c9d03bbc07",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57869,7 +57869,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "96c9b5a595fa11402a714ddc14ccb6480ece92cd14d7835cb7a8123bf7eb0ce3",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -57943,7 +57943,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/workplace/6",
       "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58016,7 +58016,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "4569fdbe0d5b6a99c0549d11711247006acae08b139954dd89ac15eb9502d63d",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58089,7 +58089,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "d6e1fc7432ba6229246ac76b1e0cf23ea16204e206936f7f5f6b8bb21697472d",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58163,7 +58163,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "c5ab9969c0e7d3456b6b784e829a2d5b04f7cb41fbc0fdd71c0fbe599ad9f649",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58237,7 +58237,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "593dab331795ea2eb3b71adc106c582b81ebd9313941afe64d416eb4cd69f8e0",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58311,7 +58311,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "04354c9bd809be4054bd742cff16e39d52c9e9b1ab5ca2d00b707babcb154754",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58385,7 +58385,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "2b82b137f1a22788484ad4ffa30a21cb3b32b93022aff06d71b301a7c721d12f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58459,7 +58459,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "72917cd3f1561cf615ec3ba7af4ab9bed13a6004950673af5f650afc6b8d4bb5",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58533,7 +58533,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "6e76d55b266c0a1fced27d5093a3df17c646aef76eb8cf508edf67fdea209a29",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58608,7 +58608,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "d171107f60d305e44bd901078463a1521d1e96b8b0e27e3e73a2e4b0b03128cb",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58683,7 +58683,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "2b8373192d1819fa9365324a90ac9835698eff18b9a8ad99cfffc7486105a048",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58757,7 +58757,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "cfc0adbbd1079010ef35480974616ec9084699bb30fc3c3d1315fe69838642fe",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58825,7 +58825,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "c25a9485b058ec541594f6862c9c64ae6e8dff3114c72cdb46b5937b74fae648",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58898,7 +58898,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "a962ef34a78ea2b8ba0c784c6ea77eca814662297bc7048553410e5267d7996a",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -58971,7 +58971,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "58932abda7a61851261c86c8ad6e0cba407180473ff1f5168f7ffd6dfae11735",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59037,7 +59037,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "4da1cacce67767694970f6f88bac127fdd7c235fe99ce40e4b21f4985a81ce2a",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59111,7 +59111,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "968203bbceb977f9ed5f45f1c2e137d462df641f98ff52f187f4e0b1194287f0",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59185,7 +59185,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "2f8fc9cceba32de6e199c6220fab7d9fef1dada30e4cba75293e5e88718b7d3d",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59260,7 +59260,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59333,7 +59333,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "671a130725a307f72ae75ffd00479bf7de6ee30b406ea151ee7d1a7cfa77ff70",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59407,7 +59407,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "7e5d8656a598f71cd4dc328295aee4f14c6e149656fada1004de7bf19008dd10",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59480,7 +59480,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "0338ca1e783241ed201fd2def9946897df3174d43528869f8cd87cb1a4ed4f9d",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59554,7 +59554,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "68ceb82ef3cf8e10d7dfe76853d081e3b8dbac4d7d9a3bfb38c2a28bb5146e6a",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59627,7 +59627,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "c9389f560342570e283970388c2e540de817aad0539b0611b744b4e3b3bd3149",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59701,7 +59701,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "8fa915357cd26e76fde0e4f1eb2712a3c3fa610f68c2f7160e26c901d77265f5",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59776,7 +59776,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "8adc775e3e4d9b3ea4993d9e31d9a180f34195b6422a26d5f7446cc9c55bae72",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59849,7 +59849,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "7a2ac8f68f5c4ec00e92e7ea96198596d17698ff5b4918ca4f4b39c0a4dc314a",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59923,7 +59923,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "23d64080cf001c4668b45eeb6c07ed320a3083e2dbbeae82a13581689f4adc84",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -59996,7 +59996,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "a5c8a5fe013a4f3cbf7006ed15a5d13059b5854d9650e7a1b59aacce0a486fb5",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60063,7 +60063,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "92dfa9123694cda58c4375827fa6d93dcd25addc6c64da64b69097fad3ec602f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60137,7 +60137,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "9dae122f6205ff81bd577e6b390787200964bd965427a4851fb4b094b7f457ec",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60211,7 +60211,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "f5e37b3c25eca3280098727d50e2e59280ec42ac596b5b0eb75bc9f0744e7afc",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60285,7 +60285,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "0a234a142a0980368754418ab4aad704a507b301e60617030993c2c0619d54c7",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60358,7 +60358,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "0cdce5983a4642732d6c2b2cbbf635fd0620fdcf112d51721741c2fcf84b406b",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60432,7 +60432,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "0a113bb165fb54de1ea72840bd81387563f77c529e2d198e5e3ceb2c0fe1363a",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60506,7 +60506,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "6eb7fb4a058bcd1cc948025d173b19eebd86e306722a02c2b314ddc01e9cedc4",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60580,7 +60580,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "77fd7039c90d1a57bec7c598989112eb5cffdb8ba8d03b87b1ad0bd9275779ca",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60655,7 +60655,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "72ef5ee36a2f5ecbbd72f24eebf4b4e870136519e978ffaf96ef61f6fe7fb85d",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60728,7 +60728,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "3863957658b32ead1194c028ad3bfdc871854d1e424b2d743d464fb3ede00ba1",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60802,7 +60802,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "f3c295610db3fc3704b0db9d189712a938c0f6c4960b5b198bd5295bc4b12ffe",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60875,7 +60875,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "e6f00752a11c3e4db5d708beb5c44bf7f9f05c0c8db71fe848b71e9fdfb047e5",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -60948,7 +60948,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "1aeb156ead2dbcbb29e864bd5f59523dbe4c84c549fa1572680f149d34563fca",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61022,7 +61022,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "44abc7b57c30361bc25c33101e28e81ce61e9f14fba21057d446f2ea2c063ef2",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61095,7 +61095,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "35c386e460217df0e2ff1d3c9c3357030f1ef3f380ae21b6136f451cb9cf82a4",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61169,7 +61169,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "3596507fb05c9e8c2205785d909f357f555d45c787f649e8c891e5b69b559cb6",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61243,7 +61243,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "8126bb4e0f5859b9fffb3eb10946f8cc782cdd32f63303ac528f748378f78b4f",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61317,7 +61317,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "8f3a9c0f3b941ef1899a90847deaf2e0f568d7aa16859e48bf90aaaad3aceba9",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61391,7 +61391,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "3dc3448c28cc430810437266b21b195d9d418bf6be425c06960257fdd601a2df",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61465,7 +61465,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "c6778e41a1d19794bdefe6853390dc15141d0bc40b9d4c6a048e72d86ec71376",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61539,7 +61539,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "cffa97281a74c495b9b660c4580dad1bf0340fe00edd234980da267ec5d16900",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61607,7 +61607,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "1d4838974fc061be2f8ed7603d5602b123d98b6209011ce2fea2844b41d0d7e2",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61681,7 +61681,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "202c6ddd6ac21119d9f0d9cbb502432f996a97bacf8df25408d09215c616dbaa",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61749,7 +61749,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "0a0279f88ffbaa07707abf7f4fadd77970c691f16c2c59a4c8e2039aa7f7a945",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61817,7 +61817,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "955fc6683c1a0978b7332f3d31ea3e32178e2ec56cad7063c6a59516742cdc1a",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61885,7 +61885,7 @@ const INTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTJ.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "57742f72832486f6606c75894aba15a7462b5a5497cab9004ee09b1a7deb0e14",
-      "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83"
+      "fileSha256": "f5a9b70f194d7ea3de825ba3c7aab2e1f8837b92a92b1dee4a92e8f3a6a5216a"
     },
     "originalState": {
       "type": "INTJ",
@@ -61956,7 +61956,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "36206c8ee6b1e65e0dc761fda2909e3ff558a2ab2336aa149b221fcc215bb415",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62030,7 +62030,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "5b720df0a95dacb58754d6d0ed9a13d3d8e7b12687c126da88dc1c29e51cd70a",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62105,7 +62105,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "069c73872d791bb76811b716b61d8498f8ba84f3ddea67ae927e0e71733d7d5e",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62180,7 +62180,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "ae4f8a5a9b87461905e4c9f2ea9d896a113c4bba7f3f74a4fc93dfeec0645bb5",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62254,7 +62254,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "4bed90689b7acccd9551e1eb483d65e198aac584dd95c987d334f2c2bf6b2d2b",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62328,7 +62328,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "5c592e58348e1966b28d5c8bcb1f07be31c8ad98dea45cc54a09c7f4bec2dacf",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62401,7 +62401,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "faa7efdfc185dff4a7b34613861d2ac332abb49cec4a6654dd5477bf6f865cf0",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62476,7 +62476,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62552,7 +62552,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62627,7 +62627,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "8f9715698fd681bcc3f8d36694f0567f35a7e0530e5a5edd4f77d0314412b180",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62702,7 +62702,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "13349dc90bebfdd83a40183fff32d671467bf1d5373537896dd2af13723f9203",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62777,7 +62777,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/thinkingStyle/5",
       "recordSha256": "64e6eb454b95b12a0f298595c325d8d27087019e3152ae9bd866e68e9ce9f691",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62852,7 +62852,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "35bc899e4b1cfd5fffb4f6b0722b05e1ea713fc8cae0d32e088b7b805dc8215c",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62925,7 +62925,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "072e2275a09e000777abb395adf02619ee3944fa837cce16686f48aff00a18c2",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -62999,7 +62999,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "ab2f61f3cbfc868883220876e2454b3381c72b124d73a7f9b8933e35c5e6ce6d",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63067,7 +63067,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "409528503fe897eeac28cbba9e411e8bd87b9b9a346b119e8fc10d228383cf95",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63139,7 +63139,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "ca5b50142d59751c70d9e68787adb45bf4c18f9a4addd5f7a2bc4fd4fc31e75b",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63212,7 +63212,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "96779cccadadd54bf0dcbcb08c01e11091fbd9e6a48ea83c65c43d8f8abf3f59",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63280,7 +63280,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/career/6",
       "recordSha256": "68472788cbec737f9dde506809696f440cc3950c1b5415090a7d71abffe0214a",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63352,7 +63352,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "c0baa7582e9c48cf7f3680769b4282242a46d2952bbc8832acd1811bd3a48ced",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63426,7 +63426,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "d96777ab6bf534320352780a6c262710853fdaf3752029fe096a32ce6f2cce72",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63497,7 +63497,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "2fee39e4af6a18791cd9709e89f43075de26cef9d2852963b1025a11b7376386",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63569,7 +63569,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "300a5b7b5f9222f1ad5f5fe12579e3f19d7b7b4abd5a25403a1f051f072056c5",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63642,7 +63642,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "22449b13abb80270f95c24821c1dd6ab942f74abd6d8fd44b98acbdafffdb87c",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63715,7 +63715,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "f351c34c857d67e28014075f4c7670a84179bfd9fa8785fa2ffacc381dec27dc",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63788,7 +63788,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "ca23ae0aea5d2b2d227a4e4070471efc167c38ee87c72543c0238fe41ec8ad7f",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63861,7 +63861,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "2f36a3897febe8f7161ca633387a5d2b2ed498d9906b22a20a8c543d73413808",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -63929,7 +63929,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "9bbd6fd42fdea6fa867d681b5254b0d0daf55b0013e732709c15e4d35b51e7f6",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64003,7 +64003,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "8c2aad26e18ec8744beac12526a57fbdac9c4f8443e4da12b17230057c24f45b",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64075,7 +64075,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "d530f80264012752e9baf5dd721d4f5ffad37adb069b34fdc8b1fd757a671620",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64148,7 +64148,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "786fa85d437584b869fac4f63ca4b7647be8599e958cd79beeb8db76b9d4b417",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64222,7 +64222,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "0b36377882681054411ab41b5b5171d9ff85196aedbb3d7c9431c5c31cc8d07e",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64295,7 +64295,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "b0796281333056b877c169b0c58f2b6901f6b5a6ac6b7286cbe31f66087caea0",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64369,7 +64369,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "604c710157278ade2a6ec04c45dc63c0efb67d4c9622949dca9ba3283d9fbd42",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64443,7 +64443,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "36d746a608f52e15e2dc57880c3503c9948ff467e430c57afd08660ddc00ad86",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64515,7 +64515,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "7cdeb05a69dad1e33c64e7c80971e06c202ab3442059c1ca0288f0152dcd3bf3",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64589,7 +64589,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "2b52176f0629bcdf00b3eb4bdadf169967ed4f99f6ec5b04f6d96d0a4ec66b1c",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64662,7 +64662,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "727568d8c242eb2501566bdab5bc618813a83b1a47394aaa281fe4736a9dace9",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64729,7 +64729,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "7070b8cdbc2201edd351886b10f3f6bd71c1b227ef31c328698eec1927e0d569",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64795,7 +64795,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "ae9163689fd752a8912976fed9ba01ad5edd5e04fe907a8f91c628c432be75df",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64867,7 +64867,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "857e1e02f7ad670a100bc64ef06f1b5a82d5d7d814c43171f48f090f7f7a4b93",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -64934,7 +64934,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "c103bc826f0160cc8ac0b292362b0d61368b3f56ee55705c233f136cebd234a4",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65008,7 +65008,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "8161fb47b480bdf5d0a9aaf78fb46975955dfdb75c808fc6e0ba6b5560ae5ea3",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65080,7 +65080,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "8f2765c5cc5f506951f7683c50016f766c4bfb2745e69f01e491f5c5bff8bbc9",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65153,7 +65153,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "e0c6e86484eb4e18ed09f552d844eed205d79e57d932f9361fb576e95f73fa40",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65228,7 +65228,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "3643282f468a59507675957b6964219ad3c6154984ed4e005bfaebeafd381743",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65301,7 +65301,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "42327aa9091efb00d83331e9daf695afd9a6455de14b8fafec607f08b27e2abe",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65375,7 +65375,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "6b3588acef43d4a993b7c41e100aaf32c82a9a4c1e074e1d75934fb5f4bc360e",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65448,7 +65448,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "461895020e434455c214e8e225844d78376e184abdcde3ba5fba64cc25f2d6f7",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65521,7 +65521,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "54f2dd4eee0d92fddf167fe7e03f81999295b1f0423390070ba4074fd8e00d3b",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65595,7 +65595,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "de18c5915be64f1d9b48976ae5fb00843278653b2b6215fe1ea505901b53710e",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65669,7 +65669,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "eea208b46302133eb6f69e9ddf59fbe92a2c13fc19b466c375b4c557bd2e3c8e",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65742,7 +65742,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "a41d287eb62159ec396fba5ab216f7e7512ab2dc3530059720b0236b001a3208",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65815,7 +65815,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "a70e69a3a5a0e388c9ae199a8f7992a00ee3e353962d99bdde8b29b7327fe928",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65887,7 +65887,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "bdf0dd336a7a8345a93cf81b56c9fab562e693593d6d64c1d6d1d6c7a3c23bbb",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -65959,7 +65959,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "bb99638ad99ff4561b752109fab7f6fa36e63b28edb3eb41af1231021f11e331",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66033,7 +66033,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "d237d41997b1ac9e641cf400b9d223c59b36e2053bb9e73f1b35cf7ec9e0616b",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66106,7 +66106,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/child/4",
       "recordSha256": "89af67b3659ba194689ed5667a40784a1394a3c488f62dc334dd495bc67cb98d",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66173,7 +66173,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "6486a235e1eec8a9ea0973db228a8f96b07296f6acce030ad39323c4ce035be2",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66247,7 +66247,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "fa39ae35ddbdee96ce319bf0cb4337333ffc550b993921e8cd4b724ea3cb1d88",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66315,7 +66315,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "1c443cea80ebd18c2e5999901cec3a13c6119e7ca1f02166c428025b436fc097",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66388,7 +66388,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "92f2e5e50a8be25fb1f030e90e3e509a851304dafe2e956fc8066a3fa1b53b66",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66462,7 +66462,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "36d7a9849872909b8b7ee70cfe8497ebd15ac81104f3785e30df9b67167b04cf",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66535,7 +66535,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "b6b5ccd1a13e01c4acb38a1b8dad090aeee8a4c1f6cab3ddfb3ea239089ef3cb",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66609,7 +66609,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "b9c76e2190a8602b5d357d59aef83f2a85001f9c602d39344f9140f50514e553",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66682,7 +66682,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/communication/3",
       "recordSha256": "96112e32ee358f2a0bb5443e36f29bfddb4209949f3b106a0ebb258753316ed2",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66755,7 +66755,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/communication/4",
       "recordSha256": "b80ee9ec7e231d030fddb5a5ce2ec3877a8e3dbe789d1ba843cf1199fb2ce5b0",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66829,7 +66829,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "ac2c18ba7af5e3f23b6dcada7caffa63681564bfbed45585ed13822e71747bdd",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66903,7 +66903,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "7b3dd44bf1d15593e79b8b9ff4042321ebb112436c5d7812e315795955b26bc0",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -66977,7 +66977,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "b40b0ae2c4775850eb43f6dbfb061c55acd42624b2140204773387f377c1fe24",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67051,7 +67051,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "a31d5318807d5c167df3b80458e97dbb3efb3d1f4abf4a109728003a17a35090",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67126,7 +67126,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "fc0e2862be3f7acbc4b70e23ac1519d5bc15c80ba157fea47d93b615d11670a0",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67200,7 +67200,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "ad68cf5a8e5c97913e948424a563fe0296369a84ca316a1f5b24e3c1125bcb0b",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67268,7 +67268,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "2731ae7236b72b9e74b176f832e9541cc12fb26dc0482148b6b6183ad65f506d",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67341,7 +67341,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "f74a7bf49eec69ae78f6b6600dca5f1dc8d9dfceb8520cecbe0e67d50d2dd9f9",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67414,7 +67414,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "4e56cc031431668b41f21d928cb9faa43d601ccb6fc4e7a63f6eb55cd3e71b85",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67482,7 +67482,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/risks/5",
       "recordSha256": "545cfe5f94379d32e44bd8e7c3f92d708a76f98b0028ee57e9f08df50ec0be8f",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67549,7 +67549,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "c8b1b2dab171c450b2914c9949aa60f51cf4737302025c0ebf6962307bf6adaa",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67617,7 +67617,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "c38517fd1a808f40b9e322957cac750490da952db442ec4494d277af17e25110",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67685,7 +67685,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "56aaec3c6729b7176417126e7145a28aa0d8238cd40a0a55e6e6aa67e8dd05d8",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67753,7 +67753,7 @@ const INTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/INTP.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "ab35bd6d1b8c16f645554523b5c7cf0e9bb714f9390113bf7ced731a077a0489",
-      "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e"
+      "fileSha256": "8270ca89c4d2c216b82099b796ecee0b88139ad23d0b1bc0949517be9dc4da99"
     },
     "originalState": {
       "type": "INTP",
@@ -67823,7 +67823,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "9aca940dac86537535c10c128ba0d929dbc8c29b83e08e1a86ea9de906242718",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -67898,7 +67898,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "7a1de6ca7ea650ba4c13f95cf21a168e19212d83c140010afb39151fe99c61ab",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -67972,7 +67972,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "1a414f739cfe6004c35a4566cb90d80afa5a69146e2e8b51124192cafd7819e4",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68046,7 +68046,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "55f83bd95449392d72417567fd0b898be62f1c47b1e962001a057501b6311171",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68120,7 +68120,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "b328465e490e8077359af46f3632cf575c2cdceeb160c228806cccf766a90818",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68193,7 +68193,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "654972cea0c0f1c4ccd3ace0237c85aa16087530bfda08cbd13f7a1436b00bf5",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68267,7 +68267,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "9312705ee838258bd8e6de956a289c6457ff46dbb6ef35b1a90b23fcf7e5fbd8",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68342,7 +68342,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "8646bc3f85bee87eee40948f05a655d1886df7a743ca6cb3ee6a97e8f8fbc74b",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68417,7 +68417,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "296ff055b7bf860bfbe556e5f196e1d669b1afff4b8a3a4ff3f13a630e3a6449",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68491,7 +68491,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "470e2a7c6caad1c5922f727a86d53b4ffb0f72ea6cbbaae1bce0444173fbc795",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68567,7 +68567,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "1d0c01746496721b92ae5be2cf506c3a12cabf3c375dfea59d1b91b525ed6a1b",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68640,7 +68640,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "33b82f6459ca4a940abf0af14f5a158de033f4130db7221a830f34b98fe3b902",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68714,7 +68714,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "bf87ff4de53b38f474ff8eeabcd5bddf361aa9e9ca5bf030d774e8f50925501a",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68786,7 +68786,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "67f7d235d3623bb5de58b653cac9e6ddd86892b8c51f18df5c8b1d959eedb96c",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68859,7 +68859,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "91667e3dde77bb536c90be02ff02276e4fd147de91e8855ce5668b5ea1b30144",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -68933,7 +68933,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "3181712b65c0d3e74e299f7b3d404ad2bb14fcf5dabf2b5f96b81fd218f024a3",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69006,7 +69006,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/career/6",
       "recordSha256": "cb814819768adcdd908e40ee898ca2dbdb43822959269275fa2874a071bc5c97",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69079,7 +69079,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "4cd49117c76236fde2a61e0bbc7f2fe289e1b99ba1ad3699443b644628f66352",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69151,7 +69151,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "f0d99d785c86be30c60799eef1f2308deb47e6ecd56041f6bb2ff31f49de4eb5",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69224,7 +69224,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "7152c5d39c9694e3b7631185403068268eaa599cdef538773f60d79bae8e799b",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69298,7 +69298,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "753da8a1074f6e91c303f45cfc6715428cb7f2f077fa5d5b6580b27967392ddb",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69371,7 +69371,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "87bc7b78d233623ece8c3d82406e949fb6711eef329bb7a08db3c573a168f39a",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69444,7 +69444,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "99ed9bc67643d3617dd626e8771fca98d8de0cb2486a5e7f37cc51218a6403b3",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69518,7 +69518,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "d7de4e18454c3b221b1d336262189ed6caa5ee72d82231fe228d59797e5ccb86",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69591,7 +69591,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "a489423ec4ea0ee4a1f1af28a995730d7b8735761b10e38e257fbc30421784e7",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69658,7 +69658,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "216eaa70c4bc76b96e8abc30b64a4147b1589e5b0e8b595d6296263bcfd1213f",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69731,7 +69731,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "3f4603a9cb1838f978ac42341c8e44ddf4e65c0b7b2608b9f48341d4fc33979c",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69806,7 +69806,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "ed71f81eba2119ae610e819c57b964d7b5186fe47e107072a5fbeb8010246d1d",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69879,7 +69879,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "4a4153f1cba600063f0b701e613ce8f53cbee4cafacd8b8bdcd3694c3991c358",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -69953,7 +69953,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "cf8a0dfa0395e92c59a70114bbeaf1fdbc2644c4a4a6bc7f0c22ae99514fceeb",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70026,7 +70026,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "537c79de8144ee662bc38dd841e51dd042e79f96acbc8ace72d10235a5ff3ff4",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70099,7 +70099,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "4d8c8a98dee7ef872114607dc3c582cf4908c56fbebd91ef807571a4d6b7c85c",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70173,7 +70173,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "18154c3130a159ef2e905f855f1cc0fd6020a0b8aea85d5849a04814cd6688e7",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70241,7 +70241,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "def2ef1c5cb73b42913b12516ec18eab3a5286898715045f2a82d69f2c6aba52",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70315,7 +70315,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "07729ac8cc8c59714e2f703657166b994c1c19462fcd0df01b887ffc30b981d8",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70388,7 +70388,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "4b70086e13539b52704d18dc9a96babc57040ad528de17028b440322ad7178de",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70459,7 +70459,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "1feacbf82c454570f719b68b4a2bc553012f185f58ba4f1bb96456305687a8ed",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70532,7 +70532,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "228f39310ab81d2e6d792a6a23b9c30a7db51b7e79c3b359e48d4b427e960f8c",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70605,7 +70605,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "62c5ca09a698fa73bf8c8a652037b13c22f3a88cc1b56bfcee633c9179a40aa4",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70678,7 +70678,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70752,7 +70752,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "e106fb929accb6d10551347630c458bb31cfc5f336eb14d7a4a2a9d890bbf5de",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70825,7 +70825,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "2801f90240fd789686f0770b9cb3c1745d45e77ee5c6a4fe05585c5f79eb8f00",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70899,7 +70899,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/love/3",
       "recordSha256": "4121ccf1ab531911c2e31931a425e4452af84d5ff29d541a5a1e339d425579d8",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -70972,7 +70972,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "37b8cc7d7de2adf0f17088e80efc2d4d80a26378d477e56f285cb55aed2c3a0e",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71046,7 +71046,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "ab56f57b2d3d8f976609f721930f8a585a550841c575c3416c1a2644e96d49ca",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71120,7 +71120,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "0f1b4edf4a832a4f90749d5c9753e741c93cc24bfffe7a7395b7b38c09a45c4d",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71194,7 +71194,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "74f2d43e7103b436809d5e0d0ae2bb424b7fe42ad9c0efd463f86d87d14abbb5",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71267,7 +71267,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "87cbf9a0cbf1a7548a41f5edf13e88e675ba3975661c454e36536fa049fceec6",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71340,7 +71340,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "f08a47b00493ddeb285c15b56a323222609b741a86e2db581f17385d9ad62aee",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71413,7 +71413,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "dc0c1e013a05e5c0e40733001cce34939a4b20d9d1103fb5b2a86ebd5964dbfe",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71486,7 +71486,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "cd7371eecefd4e1c8fa9645dee2068831d794f998e815e88b8af396b8d283921",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71558,7 +71558,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/parenting/3",
       "recordSha256": "c2e82d0f132277e60df054592d574ec269164a648bb2fd7ca2070843e08bffee",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71631,7 +71631,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71704,7 +71704,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "07c4038c3b1b8f1ef1a73ade65e5f50e89067c1afe5722f02cace05215656966",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71771,7 +71771,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/2",
       "recordSha256": "94f9ff64abe5fe3eb441493fab2c1192726f5656bf2624aefc9f3e44fa775e5f",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71844,7 +71844,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/child/3",
       "recordSha256": "122ec8c4fdfca890b11a9c883a6920abe8cd15df34cbe5310d86b3ccbfdb1c68",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71917,7 +71917,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "2d56cfbede1a040db6c45c75d5f7c6803dbe9547d1b171de97cba18323627792",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -71990,7 +71990,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "efb3024caab1a5b8715d58dbbe704bb89df96e9d50bc395afb73fd42095be5fb",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72063,7 +72063,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "cb9f1f850dfd924437edd37d861856bbc8d8e5a9361974d2e6c0db34018e8b6f",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72137,7 +72137,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "d0baa9f07a50e0c97a2baff543c386a4d67faf056047197f765f0b450e8b61e6",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72211,7 +72211,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "1e16feda2f8ddda324f8736bb85bd7a71ec5c6a305e1cd6608806e4c50a9ac3e",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72285,7 +72285,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "69353cca61d7833d4be82b5d22c2be57caf2b225522590342eabd255c550ea1a",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72357,7 +72357,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "7502f705fb668fcadca5b2792acc7d3f509abcb6b58027108b21ee61e809e146",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72430,7 +72430,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "bb8c029909c8bf77bff750bf5577a45e3fad28c9eb04ec874fd2de6a3c9821da",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72504,7 +72504,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "57a44007f9c9fa99d1af311d55dfe7e13a5129a0b00c457506329d540f8f9695",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72578,7 +72578,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "c7bd7d69cbe588a26c022e4683fe99480e1f45b68e3f83751d3365ba14857d1d",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72652,7 +72652,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "45aae8d0702efd468ca65967b21a1a73a4386840e49a951484635e6784390aa0",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72726,7 +72726,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "914d209924e7a8f621020765d96a36ae974aea1cdf7ede5fcc4ed17a8efd1b18",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72800,7 +72800,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "1fb2cfacdbab5f782d53b21492b7058f34a196cea05c11cfd10e7c770ff44645",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72868,7 +72868,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "619c1345482dbb698ff425c88227d55d9aa5159ceed44eb13745d9d1c6dfefa7",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -72941,7 +72941,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "a7d092fa4ef50691fe2fc813598e8aacc4e8cdc98e1b9beb9ea8006856f6557b",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -73013,7 +73013,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "8b8d378bfb869a0bad79c590cc1a3adc11c3d89ea4a6efe9ae098523fa423237",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -73087,7 +73087,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "ed24a315d098e0edf57a29c7e2ff1bb0915f428cb44afcc10d49a13eb61a7f1e",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -73155,7 +73155,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "84a8a9e7576afc7a2379169a7467c29407b5ed17e79ba572e06e469c0ebc29ee",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -73229,7 +73229,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "5fc1f705f9c975a079c3a2411333d4c87c83bd59d9e584961bcf5749cfb7f278",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -73297,7 +73297,7 @@ const ISFJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFJ.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "0caf4edb9b72718f56538feae03db372c5d85967623962c7a5ff0a229e5e55be",
-      "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2"
+      "fileSha256": "a9bc9fc83017d0b624f896f3765574c6758819fa5b499e257cf67f8f76b2f6e9"
     },
     "originalState": {
       "type": "ISFJ",
@@ -73367,7 +73367,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "a6a08cc5ba1583473e0c8a8b60ccac226f181d7131398b3b71d88247c44274e3",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73442,7 +73442,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "daabdf465cd673211916e9380bf67687677a45b610b246e3912a92c092ae9ce6",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73516,7 +73516,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "79f374fa7e28f5568dc381ae5ba28d6a5165379795191ef4c6ea60e0bd2bf164",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73590,7 +73590,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "775e50e4d66d09b7be8298cbc32795721f31900fad72b9eb0b517de926ca0b4d",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73664,7 +73664,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "72ff1381b7f584a3867e3a30d936903b20f33a16ad7b933d291c4bb66d6206b0",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73737,7 +73737,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "9cd8072365b8a9520c82d0aabefedd4a16771db5b42b661188b564372959d483",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73805,7 +73805,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "4caa36e09c4ac6b75f03896f15cd9c7281a14fc92428f244a4630ec2d12d137d",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73880,7 +73880,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "571de81aac5352f2bf331f6fb87ce131f94cffd56c037250363329aef29ceb93",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -73956,7 +73956,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "b7b8d9f2439cf5c73461e04a99920df04b457979e17af9985eb99901e719d3fc",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74031,7 +74031,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "4251b70bfcefbe354873d3ad9a2191748d3627ed31f0afcaf4a7f10e80839d72",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74106,7 +74106,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "42d2275633a4d21ce955c9facb5278a9a0248100b35e3b14a92e99b6fd457fbe",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74182,7 +74182,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74254,7 +74254,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "106e9914c9186aaea22243cce24f702697255c00acbf2cc6895a974bd07107d6",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74328,7 +74328,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "d0c069b9716336d3a45d5ee492d54d259f1bc582f1f3a4b40f6d5df8b0b70ebf",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74400,7 +74400,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "f3f86e54aa17d6df6d1145862d82ab7a3314667efc096caf0b201acb635e10a8",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74472,7 +74472,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "8455dd0210bc99e8848c70d7b2d36f982180fdc297820213cfe01f2cd26cad45",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74544,7 +74544,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "f3e0b6734614824e4421ef6c4108590fde9df77d82435280931679665ac9325b",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74618,7 +74618,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/career/6",
       "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74691,7 +74691,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "3b2933a71c929755e951eee60da9b89acb5fd344f90cc1f8a5370158426fee2b",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74765,7 +74765,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "ba222c7e7ef8e2c3f6c9f9a4696fe79081bc28ba469b409ff2e1ee15f65c984b",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74838,7 +74838,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "fe25e629b443a330a469d118765c2dcc2ec3dc773b59eef1620f58008a5ec468",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74909,7 +74909,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "88bb0ffa0dabdd09bffa8f561c4667749f9433d88d9346dcca221c5577ff9744",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -74982,7 +74982,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "47a4677fafbea82e38a7c89b920a1326788dfad347fb4c5cbc62f72251085708",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75055,7 +75055,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "afa2230cfe91994f1fe26ba9b87dd3f2b395a0a37b51812fed830286d3a21f5e",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75128,7 +75128,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "ebb134b9b6b52ca1dd8fd188862589414ea377529ca7bd0fa0a87c244c299e48",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75195,7 +75195,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "f9ffe97092d23ee8761b7cdc0f14001e90ab6ac17d9e2b762f354ef6ac0a4d0c",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75268,7 +75268,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "dc7011e02e050bc277a4015059be0aab804f316b00b735763df91e0748c155e5",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75335,7 +75335,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "e988a5156627e1101125e63f5c751891026665f93823da02e786a092d2b8e720",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75409,7 +75409,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "599d23a4b51fd734e2d74aa44df9f89dd2675d7b456fac1e55456c87d0d72f92",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75482,7 +75482,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "49db188de9af8a7e9c7a4b3a692d9f70d4024641977bcfea280b8af0b5051548",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75555,7 +75555,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "0d4d63b44292c4e9b174bafa5eaff57de9ac26a4557903934fdddd9c310936e9",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75622,7 +75622,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "6ee9105f2f6fceb5194550e9bd71e140358d27844f947db2186f4d1182f569e5",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75689,7 +75689,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "83bb8861067db880326bf2bd486e1b458d47005ba85b3fcd73f97213a37ec886",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75762,7 +75762,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "8bd5d3ce6ead07ed69f90b3437508724266d25b1cc46fa86747327bb2e8727ca",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75835,7 +75835,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "58869560f036c907f18b43e369ebcbb46b8cdbe9e09fcf54a4fe55fac4811ceb",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75903,7 +75903,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -75976,7 +75976,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "27cf5a81ea9259f8de13bddff3af9394d8cfd7395b4717f5817d8135f791ea8c",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76047,7 +76047,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "d07b97834e43016a7378a78bca60d07781ce3334dcf74df998eb4184cd4b2b1c",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76120,7 +76120,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "9ded9785447853619b133e93f96f0037ec00efdea474b3d05e5de02a1fe78256",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76187,7 +76187,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "6fff21272192b8710fd29e96dc3fd83562144b8575ef01d3a96bb53af44e7da1",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76259,7 +76259,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "d554fd46f3f0bf957c55df99dac6e23c7d428afdab7d49043f550be66c8b6baa",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76332,7 +76332,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "02599eba04f78f22d6a3cb301ffb4ee6a3b59f4a5a04908e805c145301b42c72",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76404,7 +76404,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "71bb06cad5e4e4a88eecf07b717ac8afbaaa5ccb5f4de1874193177be2305ba3",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76478,7 +76478,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/love/3",
       "recordSha256": "82f8eb4cb608f2ba65855c1fb1d71e6f80524773ee6a2e44e744cc2ee04a0f5e",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76545,7 +76545,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "ffd9f7afe4fc9afb7372c56e57c4f65b47fe4a3edd853166bb4b4f3d8c924dbf",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76617,7 +76617,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "7f59201f3f5c2b8c9ff0ed7df6193e3b71b911dcebf8fc500a7e2efff8f15534",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76690,7 +76690,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "adc316d67e25b86c76ec06283827ce8632265110b04626ac27f5098331820de5",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76762,7 +76762,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "eb112b9170ce7c200e7f54a1f774a34ba65746dee3a5756408b4820486609cfe",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76836,7 +76836,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "493f6b153836895a93b31a45d9eb562ead0baa483ad647f13485ef02b6ca0586",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76909,7 +76909,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "57de886d1b9fc0a76308e8486cc34512d5e67f380a2b8eb69ec86e634e19deb9",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -76982,7 +76982,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "2efe0693680cab479cc0de55c7192d32e6e45500ffc02dcee4831ff35faa198e",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77055,7 +77055,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "b80b9c0997a084b19fc1d0f3b498d79090ede973cca78a6849203becd1784f17",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77128,7 +77128,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "a35737b507b0e9c5990830e72732cf7f8d21a404389542089ce68ccc5fc0cc24",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77201,7 +77201,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "5103f1907ee95b31a9828d58ee0cc106a795759e6952009ec52c4c77a1df4fa3",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77275,7 +77275,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "2ba497c67a7642a78a9d398f5f9dfe59229b42dc3b8a32d749f2611c68bc39fd",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77349,7 +77349,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/child/3",
       "recordSha256": "e59f90b2471fc4b07cd7fc15c0f1a50c3548fe484c8d83ea5bdd941f7b4101b6",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77416,7 +77416,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "110a040afc0cc0697447bda53e60663fe58d9b5b7d4d40a0fd98f7311dd198e2",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77490,7 +77490,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "16e419dd6a72a7dac24dc380dc32707ee5d0dcb93a116984b29d3f8bf91979f8",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77563,7 +77563,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "960e3000a38d81f84dd45311dd5274b96c881d6c8b0d3ef0ea57eafbbd262776",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77636,7 +77636,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/relationships/3",
       "recordSha256": "9258bbe398f3379a3f5c4b20c7beae68f9281cfaf7ffe5d1cd9c02bb37c9187a",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77710,7 +77710,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "7b725d5a619245716d2d89eee1baae81f48f24c70d1fc98265e374fcbc1995e8",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77784,7 +77784,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "937db43b8dba23524d5128e558e20783f5f5bb8f09659d3140e1b43dafbdc398",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77857,7 +77857,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/communication/2",
       "recordSha256": "2a98570ebbb4bae6dd811dda21a8fcc26582e98386d54d88d567c61b878d38ad",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -77930,7 +77930,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "ebde6bbeaca6edf964667150e6c6efaae52e172f38dc703ace0251e9352f4058",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78003,7 +78003,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "e8f9b1e958c666c5d9189ed8815ec93cfcedff0d6dd68aea8cf435de605f7cbb",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78077,7 +78077,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "649e355aff715a26de583905c61535f7ec416d98fa8604b28667e40605a246b8",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78150,7 +78150,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/strengths/3",
       "recordSha256": "a5d342ccb447555856c3b09520ae241bf3ff45e61925a75f4053b58aeda93ca8",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78224,7 +78224,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "d108017297b75e80de61b7b7847faadb89a7641bfb1320a77af80556a76b58d9",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78297,7 +78297,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "eff5137932f89b05ed80274fe4011283ecd51ef91f1c169bcddf801c7dbfbb64",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78370,7 +78370,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "6a90ba16e66662786c3ac987753b1220299de38a08ece877545f8c5ac21a466b",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78443,7 +78443,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/risks/3",
       "recordSha256": "757934db7eea9211a231b18b1bb002240c9a725a2e04f4904600b1e6f83bfa17",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78511,7 +78511,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/risks/4",
       "recordSha256": "dab0b7ffa8afc426f00b886a9113d91eeca49143af54df2b7fde100b40c9834d",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78579,7 +78579,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "831f3ee04bed1c2ce8baf917ea6740ccba9d52158dcf04fce3831428506fbf1e",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78647,7 +78647,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "4a310d7434164ebf463846217b676946c48528e97c39fa14e25cf03ccfbdacc0",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78721,7 +78721,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/growth/2",
       "recordSha256": "2029386181e945a02931f082bf0368bbc626b417e49c7a6ce9532c8eb914e1d9",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78789,7 +78789,7 @@ const ISFP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISFP.json",
       "pointer": "/traits/growth/3",
       "recordSha256": "e85a01748dfffbc52a3833cd50a9b09ffaf79addc55e4eda1b794afadd2d43fe",
-      "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8"
+      "fileSha256": "c5f3b4d9b7751e66db91891d896dbaf68452abe2df80e6668b204bcbf2302e51"
     },
     "originalState": {
       "type": "ISFP",
@@ -78859,7 +78859,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "a92a78cfc6aaf5a88f64cb4ccbcb385a328142ba15e7d08f5e30f9214687e93d",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -78935,7 +78935,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "9cedf4554dd917cc7c8ef6c3b817195641edbc6c277a7340e6a2934d3c0848c5",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79010,7 +79010,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "b3419892fc0f7e5490bef5accee5c654dc7dc481d2dcdc0423f4bb0676c73a8c",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79084,7 +79084,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "00119733772fb4087463f22e3cc26f356282d45e7448c61c85dede82b5638f65",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79159,7 +79159,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "a30ee221ec04add62a6172146401cdc9d06dc211ddf0ffc060d68340f98c4f94",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79232,7 +79232,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "abc3535625e1db01efd188c8a82b500170df2951a939a4d4c74e4d920a4fbbf6",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79306,7 +79306,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "8f90ed35b3b36c301365ed7d2aa0d215292707253abd0351f5b6d869a524adfc",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79381,7 +79381,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79456,7 +79456,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "4603cebb992cd8cdf0389ce6beb4a96af2fda562cec3c2dc481c4ab5ed90e1bd",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79530,7 +79530,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "4de90af117b730604820bc3b37812656d365af43166ba68c4028c5a0938e9283",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79604,7 +79604,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "44cde147899bb64d2338ebcbd15be7806d413afba0affd4e5956f1effee20685",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79679,7 +79679,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/0",
       "recordSha256": "f7ad7437e121f449b5498e1673b585536746a47e1934c8ded8b08b6bbf7ac5ef",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79752,7 +79752,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/1",
       "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79821,7 +79821,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/2",
       "recordSha256": "8cd97df0600ff1446d9790bc77fb5f33ec25ea6807dc6b3ac3dd99ff823256ae",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79894,7 +79894,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/3",
       "recordSha256": "aec9ba21c4e198010438947882261b3f39899a2a6e2b5e670de8a596a83d6693",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -79962,7 +79962,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/4",
       "recordSha256": "4113f7a4b980c17a0ff2f2227a0b4b9dbbf780492105b9cac8801edf39867487",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80035,7 +80035,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/5",
       "recordSha256": "5dd42c010927ed8435a15484c2c5189853a0c3e84118f351c782b0e54d3f20a4",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80108,7 +80108,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/career/6",
       "recordSha256": "c5281f27002c3179f4753a8bb951681d822a7c587b614b6ae5c81f738bab7a76",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80181,7 +80181,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "dc2a76ff9861115a8f5deec7caced0c891029bfdcdb3b3e72f48f7f84b4043fe",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80253,7 +80253,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "03658b00bf4ae588d7e28191aaa3a40770278f8897c62a5eebfd165012533f09",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80326,7 +80326,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "783ce7104ae399e1572ecee672d3efe89dbdc594939ca547072435067bb30819",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80400,7 +80400,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "b198333f868394e7ea56a20e051363ba02228b5ee347e9448f36d067f2657af9",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80473,7 +80473,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80546,7 +80546,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "dcb0852a7bbc8f82ebbc86a703d6fb3cdb5ccc85778ce54ce0f62c316e848055",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80619,7 +80619,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/money/0",
       "recordSha256": "cb0c31fbb917ca5746cf8c34dd29c18f3ade254996f05ee64c99c9ce3503f74b",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80693,7 +80693,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/money/1",
       "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80768,7 +80768,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/money/2",
       "recordSha256": "83095a9235c79215da2db59574930c17d78a62ebb1c2eeca5b8d4ffd4f9a1ce8",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80843,7 +80843,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/money/3",
       "recordSha256": "95f6d44059b3ab93cb201a67eb8231f6d795c1e8176b2651e5c2add7378d50a0",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80918,7 +80918,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/money/4",
       "recordSha256": "45766cb7118d5a18e0478635473b9262c80d4c64efc6998f5935f24065d7a38c",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -80992,7 +80992,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/money/5",
       "recordSha256": "417063b9865e146c0262684a512888e221870222677e50eee5e1a8b397ac6c91",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81066,7 +81066,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "852fd153ec1aa891ae48781a18f042ed0cf6537f496e3ce3d7169910e424eb87",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81139,7 +81139,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "31b5dc133b829c84f79fd29d85e8944e2d7d57ff0051f0bdcdaf910c1b3b525d",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81206,7 +81206,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "9563bc15e11bbd9aafc59d063ddef323ecf144550154d7564aa6e2850ab1d52a",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81280,7 +81280,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "73c9eb64a8d98bbe9a591732486a744745f043675b07987b5f833c5b347a93e6",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81348,7 +81348,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "c5395a22b3aab5bdc07ee581ed4ca4668483ce92acb43aaec5c898ee38f7bb67",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81422,7 +81422,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/study/0",
       "recordSha256": "2b891b4134debb34b27254223026ad3840059b50870b5aca6dacae6663137c8c",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81495,7 +81495,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/study/1",
       "recordSha256": "1ce27828b7e20f211f37302a6f09e795bdb8623827ee4f1a0ec8ac4749a8ca18",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81566,7 +81566,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/study/2",
       "recordSha256": "0c48739ba667f672241a18ff6d3af3307d49ef84fc0e32470589b286ff285a67",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81638,7 +81638,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/study/3",
       "recordSha256": "d11e0266d97950f7b83d87cce12061fc0d1275c372bc6ef3f4929d0b21c69fdb",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81711,7 +81711,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/study/4",
       "recordSha256": "5fa0a324a0bbc2b9ec67f6a9f310ece01ec29e48cc7fa0fdb02432d9fb8bdf85",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81784,7 +81784,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/love/0",
       "recordSha256": "17eec3bac834387f9c208dd6a2bc5ca527d14720aa113c4bcd13b59e507e05a0",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81857,7 +81857,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/love/1",
       "recordSha256": "5fc039227f3dc245b1f209764f3698d89cbf70682e002f6c7efeb46d9b038e31",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -81930,7 +81930,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/love/2",
       "recordSha256": "eb60f2c3975f3c025bdc81aa262867bf9ee916260fe25174fe218df50cc1ad23",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82001,7 +82001,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "7aae279b93c64ab02ec74b75404a441fea1f68e414ea1e95a0d5940c7052c8e8",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82075,7 +82075,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "371287ea2a795fe82ed89d1b7f3ba80ab423476e8036c23d31ccb9c4a51478f4",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82148,7 +82148,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "cf342a791bcdb1515b83c8fd88c4eb8f2d94ee89a11dc1bd9f02f9afbb763c7e",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82222,7 +82222,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "aa0cf50547b135f28289435a6b992e0f82546bbb554fb4e84f68eb32f045deb4",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82295,7 +82295,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "df80bed4392e9dc5f4e9eef96bea628acfbfe743d1f9929edbb241d2fd87a506",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82369,7 +82369,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "76a18fecdcb889f6e5fabbc60000b7094aa7f6ad88134c0b1cee465d072f2186",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82442,7 +82442,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "d6bb019d1160d32132fc5f2dfffc625f72da5ed40d19465185daaa561de7f126",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82516,7 +82516,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "efbd8ac7efc82c09efd42bc1b1aadb5c6f694b1640872eb7458a4623fa8e1aeb",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82583,7 +82583,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/child/0",
       "recordSha256": "ac0257a3067daa68cb93aa2065b75d2ae650804555bd03e808e69cc480d31a47",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82656,7 +82656,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/child/1",
       "recordSha256": "5e784ea52f3f9cfe009005d26066231e7bc80ab3535f0821068cc8d5dd1b5178",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82729,7 +82729,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "56f972c3824c62245947783c1de3b24414225ac8ee5fdbaad1cd2078b666871c",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82802,7 +82802,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "f73eb6b94f509aa6a07aa3d1ec9dc857e5248faba005205e54d863f066e968f1",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82875,7 +82875,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "3c5489cc15ebe46c38c2ef9b9c278ba709abe435276afcf678f096bc5a3cda1f",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -82948,7 +82948,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "2a80bce83ed91c247cbc435aaf922b3da8cf1c388269136107881ca05c920c0a",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83021,7 +83021,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "b6d82c7330c576ea3aede8875dc6ccf55b9cb77ea152f84dc435a502a9bf8188",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83089,7 +83089,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "930180041d19fececa769aeb2711d6afb6b4b9014585f276085d61ac86b7bea4",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83162,7 +83162,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "31e5dd09d543d3a34e9b02d8915116f34197e26b80650a5f7e5948c77e1c65c4",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83235,7 +83235,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "2a7d850d3f813c0a5b5dd6bdde60ba8b830fe7aa70b2f6ad059f0437f71ee444",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83308,7 +83308,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "49609347f266217cd86372be760e5a8716f6c420612bcba7417e76d10dd9bcc0",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83376,7 +83376,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "d6d14271522e478e991a916e51a44c62442cb9587181269090bf40a6dc2be59b",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83449,7 +83449,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "06c2f4b8291413681236e659ed143db62da15cc43adbb090164d66694584f5a0",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83517,7 +83517,7 @@ const ISTJ_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTJ.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "647836a01ee692022cbc9cd71a5c52d59ee3eb5fe928188804b6520583dd0370",
-      "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a"
+      "fileSha256": "7265a4245d939ec8b8152c95928c1f21260f7074f6e39468b923e3e1dd01181e"
     },
     "originalState": {
       "type": "ISTJ",
@@ -83588,7 +83588,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/identity/0",
       "recordSha256": "559e57f26af17bca95d81ecda8212c3ee9a14c3f0b3919b24b4c82470c7735cc",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -83661,7 +83661,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/identity/1",
       "recordSha256": "5ab4b38aa2659e6b645bacbf553ebfe935ce86cc2e278be528d2cedf8657b666",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -83734,7 +83734,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/identity/2",
       "recordSha256": "f6db1df34c43a0ac9f72985eb16b60f512f1928005fd9fdf75255fcef30a5a97",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -83809,7 +83809,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/identity/3",
       "recordSha256": "ff2b9ee3573e4c359df1e9df51b3295a0a69d39352cb69138bea69e8abf7f780",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -83883,7 +83883,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/identity/4",
       "recordSha256": "2f81690f9af7439b572ee0b367ae9ad6a3ce7a7fea86346aba038ebef960f0dd",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -83959,7 +83959,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/identity/5",
       "recordSha256": "8c03fa097e82fe8f8fb72e2c789cbfc1006a3c33a85ea1d3c24be7798941e77d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84033,7 +84033,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/thinkingStyle/0",
       "recordSha256": "338eed22757b31b46acff7c65bbe1d2f4cab066451eaead1db698cc8d08d82e0",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84108,7 +84108,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/thinkingStyle/1",
       "recordSha256": "495b835a1a5271d3d23e3e4bef5852f17ccc5399658591fcf4e3617c968b4f7d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84182,7 +84182,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/thinkingStyle/2",
       "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84257,7 +84257,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/thinkingStyle/3",
       "recordSha256": "82a7b529ccf46af64a7e191979143ec8caf4ce33267388e879187907d7229b65",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84332,7 +84332,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/thinkingStyle/4",
       "recordSha256": "7493b1c7c47fd56c4ac4a9837087f9c7036678fd9b512152043d09c339487806",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84406,7 +84406,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/0",
       "recordSha256": "d0ea1fa645cfdcb3b2843d65bcec0dc92d37ae501dc7a8da7f622a87e96d17f5",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84477,7 +84477,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/1",
       "recordSha256": "ff6bed5f556c3f26a2e9974ce3fb5a64372d6e5ea21938fa9f0ace5720e22589",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84552,7 +84552,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/2",
       "recordSha256": "8d11ace9dd27a911bb942bb28747fd82a95da0a872405a2b2a26067585dffd38",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84625,7 +84625,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/3",
       "recordSha256": "43e233c7217268000a222a54c0678720cdbc0a11118d5acb55bbc0ccb1ebf637",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84697,7 +84697,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/4",
       "recordSha256": "d09d065556c3ea17b8757af6fd2861a9957c493a34400698192fb16aa5cdd06a",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84770,7 +84770,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/5",
       "recordSha256": "e9bbdbb4bb90e28befbcd6866d3a0a088ca27d40b03019e73d4cdfe3953e62e5",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84843,7 +84843,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/career/6",
       "recordSha256": "7bb9a53cbad6eabc17361c6979b43140494ea4cbdfc4c6d0111f6bceb1b55667",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84916,7 +84916,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/workplace/0",
       "recordSha256": "cf77535e83aaeeb8f03e95e64f3c70a24a4cf2f9ad3ce9025ccf5f6341e661f9",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -84988,7 +84988,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/workplace/1",
       "recordSha256": "3311741928b386bd1a69912f722095ed516bfc038baaab33b02478c7686c31de",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85061,7 +85061,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/workplace/2",
       "recordSha256": "5e525b5452b88e7b86b4c025c35e459ff366c42d1d82de69ff81603aeb073f13",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85132,7 +85132,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/workplace/3",
       "recordSha256": "4ad29ccb342224f51c644a1cafcc32c7f5dc6668b4188733623d4e1eed2663da",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85205,7 +85205,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/workplace/4",
       "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85278,7 +85278,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/workplace/5",
       "recordSha256": "0b77e86601d2cc3857964c8d05d0d609d69e40157b57360057690ff3517824ce",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85351,7 +85351,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/money/0",
       "recordSha256": "1bfac198a56ea421abc1b83499b78c5f0069628275e36b57fc48ef7b889efcd2",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85424,7 +85424,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/money/1",
       "recordSha256": "b27e3ddbf9f11be41e6a6dfc2dc4073e31ba56e9cb9cc2ad32aebbdf4097d661",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85497,7 +85497,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/money/2",
       "recordSha256": "afb08581f3e11af458282bb7ad7d591f0d8487935ec1f105d5afe5e5caa51c22",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85570,7 +85570,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/money/3",
       "recordSha256": "a2b86b22d997e0d6bbf82a7ffef33a7dcaf203c1a006a65f1a659f6838aed475",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85643,7 +85643,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/money/4",
       "recordSha256": "9bfabd9a26bb34191d2fd8b66e3d342bc5c819f198348582b906763a720cfa3d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85717,7 +85717,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/money/5",
       "recordSha256": "a81926303e73750636e12551acb142be29de307f107c7cc8b1303673cfc836ca",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85785,7 +85785,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/investment/0",
       "recordSha256": "d86b324eef75021eae104ddf9f4db68f3b4ea201664838403f0ace5d41a35b9d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85858,7 +85858,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/investment/1",
       "recordSha256": "f479b92dbe1761a67117c0a17d12f89e94e4acff065bbdce3c3e786b5789b8a3",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -85931,7 +85931,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/investment/2",
       "recordSha256": "aed0be23727bb54c14687a4946c61f6ce99f5af39fffe7764cfe805325753102",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86005,7 +86005,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/investment/3",
       "recordSha256": "a030c5a3bd1c576d2f744fcbdba5f72e86176ccc0c7af93c5046185cb83ca42c",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86073,7 +86073,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/investment/4",
       "recordSha256": "b66395fa3b18d800715066c27f3d5e8053d22e9551021dd070ca2302c8cb0352",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86146,7 +86146,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/study/0",
       "recordSha256": "e0447b375086c01b1bf46ec0e5539289e4495aa5e4c7929fd2aba12657060697",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86219,7 +86219,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/study/1",
       "recordSha256": "cf02ec620e622cdf1f9b550b1221d36694b3737bbc4c38a63f2666fb34b9319b",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86292,7 +86292,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/study/2",
       "recordSha256": "266d63ca4737f0ef17f0bc421f2cd04fd2b55554936b54fe982359a363aa122e",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86358,7 +86358,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/study/3",
       "recordSha256": "4af9a7b97ea903a16cec0560938059db88ffcf7c8c0b9b9f4214a5bfe8a99835",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86431,7 +86431,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/study/4",
       "recordSha256": "f0acf37f350ba7627c15d04ba89bc4e0e9d05529dd8d205fd895592f2d6bdb8f",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86504,7 +86504,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/love/0",
       "recordSha256": "0d7c4e17ce8e31aa432757a8784a892f852c30422cd96a2472202c012dda8a96",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86578,7 +86578,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/love/1",
       "recordSha256": "7a87fc57a4badcaa78a31b9be57dc6b3190740bc99a8f5eed2c4eadd51694f9d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86651,7 +86651,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/love/2",
       "recordSha256": "a72c230d6b67647aaabe37f7787ac13e28dce517897b20642540ccf1f826fc41",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86724,7 +86724,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/marriage/0",
       "recordSha256": "9c87a39b77f3a980c984cccbcdc66a691a808b41e0b7326d3d2e0893a3a6729f",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86798,7 +86798,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/marriage/1",
       "recordSha256": "a8617dcdd8b67be42c09d2c40da3d351f423ae2315084e1fd8eda4330133a168",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86871,7 +86871,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/marriage/2",
       "recordSha256": "eac89e0f5338931695e4ef3df99ab9d5778fa458e156f70f4d86d3ddca5f0246",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -86945,7 +86945,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/marriage/3",
       "recordSha256": "ad4b2daca513ce6e62d2136898373f5d9efff855882fb4aaa34b613f7683ecc0",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87019,7 +87019,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/marriage/4",
       "recordSha256": "3e522b9f4787ed274f60102d516511001bfc5a9cf6fe97d964e5cbc0acce82a0",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87092,7 +87092,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/parenting/0",
       "recordSha256": "d50bc653976cb3ffdfdb1da30979d209e4ad8642f909fe0c1c3a43a17b58de7c",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87165,7 +87165,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/parenting/1",
       "recordSha256": "79177137d218c02d0ef93abd0bd143d2d1244f8ec61d59632c1400e1acd484fe",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87238,7 +87238,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/parenting/2",
       "recordSha256": "af459fe0fd73b5d79a293b7c30f30e18cddde55819f3f56551ad5e392bba0d3d",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87310,7 +87310,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/child/0",
       "recordSha256": "e34e7880ff364ca6b1acdbdac88646e731000dd3df4b84860eef9aeec413f264",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87383,7 +87383,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/child/1",
       "recordSha256": "b181a835aa1a66cba1437cf9d82bf756b6dbc98d3db91d2cd5458893eeb87b1f",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87456,7 +87456,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/child/2",
       "recordSha256": "e37b2e715db59e31a1674355630fa246ca429c125c2a380cd58b80c355bf4c11",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87528,7 +87528,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/relationships/0",
       "recordSha256": "2f7025bfbb77d5a0df49b074ffe4ff502a0d61b19274eb4f5f569fe7775b1095",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87602,7 +87602,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/relationships/1",
       "recordSha256": "b2056a3cd8fc13a84efca6755469dc9f916efea838f98de9d8e8ddd65dc4a70c",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87676,7 +87676,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/relationships/2",
       "recordSha256": "7900d6d557f10202afa6c6ba283636db9fa4592c3278374a792e3274c5d95802",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87750,7 +87750,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/communication/0",
       "recordSha256": "335525799cabd441579541f8f4d65ebaad696a3eebfae45e51d58d9d3a61b511",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87823,7 +87823,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/communication/1",
       "recordSha256": "a9eb456deefbd12260f6edf18ee2d6c1eebfa95294415e4f8d2f0074f38c22e1",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87897,7 +87897,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/strengths/0",
       "recordSha256": "2be8b562b33f115ec74731348fb1eb8c7d6bcca28632b375b1e36ad5126be1eb",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -87972,7 +87972,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/strengths/1",
       "recordSha256": "ddf5f940486c2aee8bdcf23e37b6cf156fd7488ae423878b869352793cf0537f",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -88045,7 +88045,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/strengths/2",
       "recordSha256": "57a2b941836221266d87cba0523f2cd30ab723fc4a8c72738e7d6c962f78a68b",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -88118,7 +88118,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/risks/0",
       "recordSha256": "aee326262a4f6e23dc20a604f087b0b6cd00c2fcaec85cd7342eee146616064f",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -88186,7 +88186,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/risks/1",
       "recordSha256": "e17e8fc9c828beb6009b97156ab1bb358750caaf7dd74d760bd5b9f081834afc",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -88260,7 +88260,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/risks/2",
       "recordSha256": "8dc06b34a91d50fcdc595e6036b65bae8b46c1e7274d5a6f82932b469d481c15",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -88333,7 +88333,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/growth/0",
       "recordSha256": "984225e504cd1048fc81c80443bea6769f0f1ae94b99a8a08a989d180b1c03bb",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",
@@ -88401,7 +88401,7 @@ const ISTP_TRAITS: readonly Crosswalk[] = [
       "file": "docs/product/mbti/source/ISTP.json",
       "pointer": "/traits/growth/1",
       "recordSha256": "c9c02cbf32f75efe5cd04f66444edc51a53f8f305037143cb28ed02084144183",
-      "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57"
+      "fileSha256": "cd4d9a334a2498ff6ecda1a8e71f36fd57daf948a3b669e0441c9014547d9568"
     },
     "originalState": {
       "type": "ISTP",

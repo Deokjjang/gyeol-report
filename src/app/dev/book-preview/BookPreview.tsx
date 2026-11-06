@@ -7,13 +7,15 @@ import { DetailSheet } from "./BookLegal";
 import { BOOKS, PUBLISHING_STATES, coverOffset, wrapBook, requiredConsents } from "./model";
 import { createCoverflowAuto } from "./coverflowAuto";
 import type { BookLibrary, BookNote } from "./bookTypes";
+import { readerBook } from "./readerLayout";
+import { koreanDate } from "../../../lib/book/readerCopy";
 import s from "./book.module.css";
 import { canStartReadingGesture, hasReadingSelection, readingGestureDirection } from "../../../components/book/readingGesture";
 
 type Stage = "home" | "opening-input" | "input" | "receipt" | "publishing" | "complete" | "opening-reader" | "reader";
 const isField = (target: EventTarget) => target instanceof Element && Boolean(target.closest("input,select,textarea,a,button"));
 
-export default function BookPreview({ library, initialBook, initialRead = false }: { library: BookLibrary; initialBook?: string; initialRead?: boolean }) {
+export default function BookPreview({ library, initialBook, initialRead = false, today }: { library: BookLibrary; initialBook?: string; initialRead?: boolean; today?: string }) {
   const [stage, setStage] = useState<Stage>(initialRead ? "reader" : "home");
   const [current, setCurrent] = useState(Math.max(0, BOOKS.findIndex(b => b.id === initialBook)));
   const [hovered, setHovered] = useState(false);
@@ -33,7 +35,8 @@ export default function BookPreview({ library, initialBook, initialRead = false 
   const dragged = useRef(false);
   const turnTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const book = BOOKS[current];
-  const data = library.books[current], person = data.people[0], pages = data.pages;
+  // 열람 화면과 같은 쪽 구성(목차 쪽 없음, 주인공·만세력·MBTI 한 쪽). 이 미리보기는 V4 런타임 픽스처뿐이라 제4판.
+  const data = readerBook({ ...library.books[current], edition: `제4판 · ${koreanDate(library.books[current].readingDate)} 발행` }, today), person = data.people[0], pages = data.pages;
   const opening = stage === "opening-input" || stage === "opening-reader";
 
   useEffect(() => {

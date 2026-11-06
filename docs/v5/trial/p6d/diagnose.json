@@ -1,0 +1,110 @@
+{
+ "chaerin-love": [
+  {
+   "at": "5.2.0",
+   "rule": "fragment",
+   "hard": true,
+   "sentence": "'너 그 자격증 따면 진짜 잘할 거야' 하며 원서 마감일까지 챙깁니다."
+  },
+  {
+   "at": "8.2.0",
+   "rule": "farming",
+   "hard": false,
+   "sentence": "당신에게는 싹을 틔우는 봄 기운이 있어서 사람과 아이디어를 키우는 힘이 큽니다."
+  },
+  {
+   "at": "9.1.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 사랑할 때 진토를 한 번 의식해서 써 보세요."
+  },
+  {
+   "at": "9.1.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 사랑할 때 식신을 한 번 의식해서 써 보세요."
+  }
+ ],
+ "taeo-career": [
+  {
+   "at": "1.0.1",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "손으로 보기 좋게 다듬는 속마음의 가치 기준(Fi)-지금 이 순간 감각(Se)의 감각과 겹칩니다."
+  },
+  {
+   "at": "6.2.3",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "손과 감각으로 표현하는 속마음의 가치 기준-지금 이 순간 감각이 글 중심 방식에 답답함을 느낍니다."
+  },
+  {
+   "at": "7.1.0",
+   "rule": "group_claim",
+   "hard": true,
+   "sentence": "식상은 있는데 재성이 약하다: 만든 것을 값으로 바꾸는 단계(가격표·견적)를 따로 챙겨야 남는다."
+  },
+  {
+   "at": "7.2.1",
+   "rule": "presumed_partner",
+   "hard": true,
+   "sentence": "배우자궁에 식신이 앉아 부부 사이가 편하고 생활의 즐거움을 함께 나누려 합니다."
+  }
+ ],
+ "sodam-full": [
+  {
+   "at": "2.1.0",
+   "rule": "presumed_partner",
+   "hard": true,
+   "sentence": "배우자궁에 식신이 앉아 부부 사이가 편하고 생활의 즐거움을 함께 나누려 합니다."
+  },
+  {
+   "at": "3.3.1",
+   "rule": "fragment",
+   "hard": true,
+   "sentence": "'이것도 되고 저것도 되네' 하며 가설이 계속 가지를 칩니다."
+  },
+  {
+   "at": "10.1.0",
+   "rule": "fragment",
+   "hard": true,
+   "sentence": "'이게 호감인가, 그냥 흥미인가'를 며칠 따지다 고백할 때를 놓칩니다."
+  },
+  {
+   "at": "10.2.1",
+   "rule": "fragment",
+   "hard": true,
+   "sentence": "'괜찮아'를 진짜 괜찮다로 들었다가 사흘 뒤 서운함을 들은 뒤로, 중요한 대답은 한 번 더 되묻습니다."
+  },
+  {
+   "at": "13.0.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 일할 때 축토를 한 번 의식해서 써 보세요."
+  },
+  {
+   "at": "13.0.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 배울 때 편관을 한 번 의식해서 써 보세요."
+  },
+  {
+   "at": "13.0.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 일할 때 방합 해자축 수방을 한 번 의식해서 써 보세요."
+  },
+  {
+   "at": "13.2.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 사람들 사이에서 백호대살을 한 번 의식해서 써 보세요."
+  },
+  {
+   "at": "13.2.0",
+   "rule": "time_deictic",
+   "hard": true,
+   "sentence": "이번 달에는 혼자 있을 때 충 축미충을 한 번 의식해서 써 보세요."
+  }
+ ]
+}

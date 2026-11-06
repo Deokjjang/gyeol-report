@@ -14,7 +14,7 @@ import { sqlTicketStore } from "../../../src/lib/tickets/localDatabase";
 import { redeemReportTicket } from "../../../src/lib/tickets/service";
 import { sqlCouponStore, sqlCouponReliability } from "../../../src/lib/coupons/localDatabase";
 import { quoteCoupon, reserveCouponOrder, confirmCouponOrder } from "../../../src/lib/coupons/service";
-import { getReportProductCatalog } from "../../../src/lib/payment/reportProductCatalog";
+import { getReportProductCatalog, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 import { createCheckoutConsentAssertion } from "../../../src/lib/payment/checkoutConsent";
 import { confirmedAdultDevTossCheckoutLegalConfirmations } from "../../../src/components/payment/DevTossCheckoutLauncher";
 import { storedBook, validateBookPublication } from "../../../src/lib/book/storedReport";
@@ -31,6 +31,8 @@ const auth=(id:string):AccountPort=>({...anonymous,currentUser:async()=>identity
 const req=(body:unknown,cookie="",source=origin)=>new NextRequest(`${origin}/dev/campaign/entry`,{method:"POST",headers:{host:"127.0.0.1:3192",origin:source,cookie},body:JSON.stringify(body)});
 let db:PGlite,c:CampaignStore,r:ReferralStore;
 const products=getReportProductCatalog().filter(p=>p.isPurchasable).map(p=>({productType:p.productType,originalAmount:p.amount}));
+// A campaign coupon is usable when any purchasable product quotes, so "unusable" must hold at the highest catalog price.
+const maxPrice=Math.max(...products.map(p=>p.originalAmount));
 const consentRows=Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type,document_version])=>({consent_type,document_version,is_agreed:true,required:true}));
 async function consent(id:string){await db.query("select record_account_consent($1,$2,'회원','kakao','first_login',$3::jsonb)",[id,randomUUID(),JSON.stringify(consentRows)]);}
 async function newUser(old=false,agreed=true){const id=randomUUID();await db.query("insert into auth.users(id,created_at) values($1,clock_timestamp()+($2||' seconds')::interval)",[id,old?-3600:0]);if(agreed)await consent(id);return id;}
@@ -40,6 +42,9 @@ const settle=(id:string,secret:string)=>settleAcquisition(c,r,id,hashes(secret),
 const balance=async(id:string)=>(await sqlTicketStore(db).call("summary",id)).quantity;
 const attr=async(id:string)=>(await db.query<Record<string,unknown>>("select * from campaign_attributions where user_id=$1",[id])).rows[0];
 const payload=(index:number)=>{const p=structuredClone(RUNTIME_FIXTURES[index].payload);return p.productKey==="annual_fortune"?{...p,productOptions:{selectedYear:String(new Date().getFullYear())}}:p;};
+// P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
 beforeAll(async()=>{db=(await localCampaignDatabase())!;await seedCampaignFixtures(db);c=sqlCampaignStore(db);r=sqlReferralStore(db);
   if(process.env.CAMPAIGN_REVIEW_EXPORT){mkdirSync(process.env.CAMPAIGN_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.CAMPAIGN_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(RUNTIME_FIXTURES));}
 },30000);
@@ -101,7 +106,8 @@ describe("12A actual SQL acquisition authority",()=>{
     const a=await attr(id);expect(a.status).toBe("BENEFIT_GRANTED");expect(await balance(id)).toBe(0);
     expect((await db.query("select 1 from coupon_grants where user_id=$1",[id])).rows).toHaveLength(1);
     const coupons=sqlCouponStore(db),who={user:id,actor:`user:${id}`},selection={grantId:String(a.coupon_grant_id)};
-    expect(await quoteCoupon(coupons,who,"saju_mbti_full",selection)).toMatchObject({ok:true,originalAmount:1490,discountAmount:300,finalAmount:1190});
+    const price=REPORT_PRICE_TABLE_KRW.saju_mbti_full;
+    expect(await quoteCoupon(coupons,who,"saju_mbti_full",selection)).toMatchObject({ok:true,originalAmount:price,discountAmount:300,finalAmount:price-300});
     expect((await quoteCoupon(coupons,{user:await newUser(),actor:"other"},"saju_mbti_full",selection)).ok).toBe(false);
     const order=await reserveCouponOrder(coupons,who,{requestId:randomUUID(),payload:payload(0),consent:createCheckoutConsentAssertion(confirmedAdultDevTossCheckoutLegalConfirmations),selection,claimHash:null});expect(order.ok).toBe(true);
     const result=await confirmCouponOrder(coupons,who,order.orderId!,"LOCAL_MOCK",async p=>({ok:true,confirm:{provider:"toss",paymentKeyReceived:true,orderId:p.orderId,amount:p.amount,status:"DONE"}}));expect(result.ok).toBe(true);
@@ -109,7 +115,7 @@ describe("12A actual SQL acquisition authority",()=>{
   });
   it("invalid/exhausted coupon cannot leave grant or acquisition; original quote checks reused",async()=>{
     await expect(db.exec("update coupon_definitions set product_ids=ARRAY['missing_product'] where campaign_ref='LOCAL_ACQUISITION_TEST'")).rejects.toThrow();
-    for(const clause of ["is_active=false","discount_value=1490","min_order_amount=2000"]){
+    for(const clause of ["is_active=false",`discount_value=${maxPrice}`,`min_order_amount=${maxPrice+1}`]){
       const s=await capture("book-coupon"),id=await newUser();await db.exec(`update coupon_definitions set ${clause} where campaign_ref='LOCAL_ACQUISITION_TEST'`);
       expect((await settle(id,s)).ok).toBe(false);expect((await db.query("select 1 from coupon_grants where user_id=$1",[id])).rows).toHaveLength(0);
       expect((await db.query("select 1 from new_user_acquisitions where user_id=$1",[id])).rows).toHaveLength(0);

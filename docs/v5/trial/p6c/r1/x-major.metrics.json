@@ -1,0 +1,243 @@
+{
+ "case": "x-major",
+ "label": "대운 · 수진(X)",
+ "reportId": "report_359f0337b75d4448ba13a62bc409adb0",
+ "status": "COMPLETED",
+ "wallMs": 78836,
+ "fallback": null,
+ "priorBooks": 0,
+ "explainedFromPrior": 3,
+ "coverLine": "간호사 11년 차, 느리게 쌓아 단단해지는 불",
+ "keySpans": 23,
+ "sections": 23,
+ "chars": 7549,
+ "chapterChars": [
+  643,
+  1066,
+  612,
+  4457,
+  771
+ ],
+ "chapters": 5,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 0,
+ "byRule": {},
+ "replacements": 0,
+ "warnings": 40,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 4,
+ "infoByKind": {
+  "claim": 4,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [
+  {
+   "a": "결과와 숫자를 책임지는 일이 늘어나고, 들어오는 돈과 나가는 돈이 함께 커집니다.",
+   "b": "돈은 들어오는 돈과 나가는 돈이 함께 커지고, 관계는 새 인연이 생겨요.",
+   "at": [
+    "3.1",
+    "4.9"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "정해진 수입을 꾸준히 모으고 지키는 구조가 단단해집니다.",
+   "b": "정해진 수입을 꾸준히 모으고 지키는 기운이라, 살림과 약속을 다지기 좋아요.",
+   "at": [
+    "3.1",
+    "4.8"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "돈은 지인을 통한 지출이나 빌려주기가 늘기 쉬우니 보증, 동업, 큰돈 빌려주기는 거절하는 편이 안전합니다.",
+   "b": "돈은 지인을 통한 지출이나 빌려주기가 늘기 쉽고, 관계는 비교가 따라와요.",
+   "at": [
+    "4.4",
+    "4.14"
+   ],
+   "kind": "claim"
+  },
+  {
+   "a": "쇠 기운이 들어와 모자란 곳을 채워 주지만, 공망에 들어 기대를 낮추는 게 맞아요.",
+   "b": "쇠와 물 기운이 들어와 모자란 곳을 채워 주고, 흐름도 활발합니다.",
+   "at": [
+    "4.6",
+    "4.9"
+   ],
+   "kind": "claim"
+  }
+ ],
+ "briefCopy": 0.02,
+ "manseTables": [
+  true
+ ],
+ "durationMs": 78803,
+ "tokens": {
+  "input": 24433,
+  "output": 11116,
+  "cachedInput": 5306
+ },
+ "costUsd": 0.1605566,
+ "costKrw": 232.8,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 68721,
+   "chars": 9301,
+   "maxTokens": 34170,
+   "usage": {
+    "inputTokens": 21084,
+    "outputTokens": 10103,
+    "cachedInputTokens": 5306
+   },
+   "costUsd": 0.1437286
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 8187,
+   "chars": 908,
+   "maxTokens": 1703,
+   "usage": {
+    "inputTokens": 3349,
+    "outputTokens": 1013,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.016828
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-18",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 7747,
+  "target": [
+   14000,
+   18000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 0
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 5,
+    "count": 1
+   }
+  ],
+  "maxSimile": 1,
+  "chaptersOverSimile": 0,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 3,
+   "misses": [
+    "식신",
+    "정축",
+    "백호대살"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     2
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 2,
+    "paragraphs": [
+     2,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 4,
+  "paragraphsOk": 9,
+  "sectionsTotal": 9,
+  "byRule": {},
+  "coreImage": "넓은 광장을 은은하게 밝히는 조명",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 6,
+   "card_form": 2,
+   "dayun_claim": 1
+  },
+  "removed": 1,
+  "repaired": 9,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {
+   "dayun_claim": 1
+  },
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 9,
+  "droppedParagraphs": 0
+ }
+}

@@ -1,0 +1,443 @@
+[
+ {
+  "src": "final",
+  "item": "1-1",
+  "book": "p6d-taeo-career",
+  "quote": "입력하지 않은 경력과 연차는 쓰지 마세요",
+  "how": "lint",
+  "rule": "guide_copy",
+  "label": "입력하지 않은 경력과 연차는 쓰지 마세요."
+ },
+ {
+  "src": "final",
+  "item": "1-2",
+  "book": "p6e-taeo-career",
+  "quote": "조건형",
+  "how": "lint",
+  "rule": "safety:internal_term",
+  "label": "조건형"
+ },
+ {
+  "src": "final",
+  "item": "1-2",
+  "book": "p6e-chaerin-love",
+  "quote": "상황 씨앗",
+  "how": "lint",
+  "rule": "safety:internal_term",
+  "label": "상황 씨앗"
+ },
+ {
+  "src": "final",
+  "item": "1-2",
+  "book": "p6e-seoha-love-single",
+  "quote": "입력에 없",
+  "how": "lint",
+  "rule": "safety:internal_term",
+  "label": "입력에 없…"
+ },
+ {
+  "src": "final",
+  "item": "1-3",
+  "book": "p6d-taeo-career",
+  "quote": "성격도 같은 쪽을 가리킵니다",
+  "how": "lint",
+  "rule": "orphan_start",
+  "label": "성격도 같은 쪽을 가리킵니다."
+ },
+ {
+  "src": "final",
+  "item": "1-3",
+  "book": "p6d-chaerin-love",
+  "quote": "여기에 식신.{0,8}의 다정함이 더해집니다",
+  "how": "lint",
+  "rule": "orphan_start",
+  "label": "여기에 식신(食神)의 다정함이 더해집니다."
+ },
+ {
+  "src": "final",
+  "item": "1-4",
+  "book": "p6d-taeo-career",
+  "quote": "구체 사실을 하나씩 확인하는",
+  "how": "lint",
+  "rule": "mbti_misattr",
+  "label": "구체 사실을 하나씩 확인하는"
+ },
+ {
+  "src": "final",
+  "item": "1-4",
+  "book": "p6d-taeo-career",
+  "quote": "말하지 않아도 필요한 것을 미리 챙겨 두는",
+  "how": "lint",
+  "rule": "mbti_misattr",
+  "label": "말하지 않아도 필요한 것을 미리 챙겨 두는"
+ },
+ {
+  "src": "final",
+  "item": "1-4",
+  "book": "p6d-taeo-career",
+  "quote": "모임이 끝나면 오히려 기운이 나는",
+  "how": "lint",
+  "rule": "mbti_misattr",
+  "label": "모임이 끝나면 오히려 기운이 나는"
+ },
+ {
+  "src": "final",
+  "item": "1-5",
+  "book": "p6d-taeo-career",
+  "quote": "월지의 비견은",
+  "how": "lint",
+  "rule": "pillar_claim",
+  "label": "월지의 비견은…"
+ },
+ {
+  "src": "final",
+  "item": "1-5",
+  "book": "p6d-pair-business",
+  "quote": "백은솔님에게는 겁살.{0,6}에 해당하는 경계심이 일지에",
+  "how": "lint",
+  "rule": "feature_owner",
+  "label": "백은솔님에게는 겁살에 해당하는 경계심이 일지에"
+ },
+ {
+  "src": "final",
+  "item": "1-5",
+  "book": "p6e-taeo-career",
+  "quote": "정인.{0,6}이 강해",
+  "how": "lint",
+  "rule": "group_claim",
+  "label": "정인이 강해(인성 보통)"
+ },
+ {
+  "src": "final",
+  "item": "1-5",
+  "book": "p6e-pair-business",
+  "quote": "백은솔님에게 없는 쇠",
+  "how": "lint",
+  "rule": "element_count",
+  "label": "백은솔님에게 없는 쇠(庚 1개)"
+ },
+ {
+  "src": "final",
+  "item": "1-6",
+  "book": "p6d-sodam-full",
+  "quote": "편인\\(偏人\\)",
+  "how": "render",
+  "rule": "",
+  "label": "편인(偏人) → 렌더 사전 표기"
+ },
+ {
+  "src": "final",
+  "item": "1-10",
+  "book": "p6e-taeo-career",
+  "quote": "배움과 보호의 힘",
+  "how": "lint",
+  "rule": "group_name",
+  "label": "배움과 보호의 힘"
+ },
+ {
+  "src": "final",
+  "item": "1-10",
+  "book": "p6e-taeo-career",
+  "quote": "돈을 쫓는 힘",
+  "how": "lint",
+  "rule": "group_name",
+  "label": "돈을 쫓는 힘"
+ },
+ {
+  "src": "final",
+  "item": "1-12",
+  "book": "p6d-taeo-career",
+  "quote": "실제 누군가를 지목하는 말은 아니에요",
+  "how": "lint",
+  "rule": "notice_repeat",
+  "label": "실제 누군가를 지목하는 말은 아니에요"
+ },
+ {
+  "src": "final",
+  "item": "1-12",
+  "book": "p6d-taeo-career",
+  "quote": "이 장은 투자 권유가 아니라",
+  "how": "lint",
+  "rule": "notice_repeat",
+  "label": "이 장은 투자 권유가 아니라 …"
+ },
+ {
+  "src": "final",
+  "item": "1-12",
+  "book": "p6d-taeo-career",
+  "quote": "이 장은 권유가 아니라 성향 이야기예요",
+  "how": "lint",
+  "rule": "notice_repeat",
+  "label": "이 장은 권유가 아니라 성향 이야기예요"
+ },
+ {
+  "src": "final",
+  "item": "1-12",
+  "book": "p6e-chaerin-love",
+  "quote": "결혼의 시기나 여부는 여기서 말하지 않아요",
+  "how": "lint",
+  "rule": "notice_repeat",
+  "label": "결혼의 시기나 여부는 여기서 말하지 않아요"
+ },
+ {
+  "src": "final",
+  "item": "1-13",
+  "book": "p6d-sodam-full",
+  "quote": "이 책은 2026년 11월 4일 기준으로 썼어요",
+  "how": "tidy",
+  "rule": "",
+  "label": "이 책은 2026년 11월 4일 기준으로 썼어요"
+ },
+ {
+  "src": "final",
+  "item": "1-14",
+  "book": "p6d-sodam-full",
+  "quote": "지난 경험을 기준점으로 삼는 지난 경험 기억",
+  "how": "tidy",
+  "rule": "",
+  "label": "지난 경험을 기준점으로 삼는 지난 경험 기억(Si) — 저장본은 이미 바뀐 꼴이라 작가 원문 'Si'로 다시 봄"
+ },
+ {
+  "src": "final",
+  "item": "1-14",
+  "book": "p6e-sodam-full",
+  "quote": "충 축미충",
+  "how": "tidy",
+  "rule": "",
+  "label": "충 축미충(P6e)"
+ },
+ {
+  "src": "final",
+  "item": "1-14",
+  "book": "p6e-seoha-love-single",
+  "quote": "되려 낯설게",
+  "how": "tidy",
+  "rule": "",
+  "label": "되려 → 되레"
+ },
+ {
+  "src": "final",
+  "item": "1-14",
+  "book": "p6d-pair-business",
+  "quote": "매우 신약",
+  "how": "tidy",
+  "rule": "",
+  "label": "매우 신약 → 혼자 버티는 힘이 아주 여린"
+ },
+ {
+  "src": "final",
+  "item": "1-14",
+  "book": "p6d-taeo-career",
+  "quote": "어차피 비겁이 강한 당신은",
+  "how": "lint",
+  "rule": "awkward",
+  "label": "어차피 비겁이 강한 당신은"
+ },
+ {
+  "src": "final2",
+  "item": "1-1",
+  "book": "final-deokmin-career",
+  "quote": "한여름 도시 아스팔트 위에 선 큰 나무",
+  "how": "lint",
+  "rule": "",
+  "label": "커리어 1장 「한여름 도시 아스팔트 위에 선 큰 나무」"
+ },
+ {
+  "src": "final2",
+  "item": "1-1",
+  "book": "final-deokmin-love",
+  "quote": "한여름 도시 아스팔트 위에 선 큰 나무",
+  "how": "cover",
+  "rule": "",
+  "label": "연애 표지 「한여름 도시 아스팔트 위에 선 큰 나무」"
+ },
+ {
+  "src": "final2",
+  "item": "1-1",
+  "book": "final-deokmin-jiwoo",
+  "quote": "도시 아스팔트 위에서도 쭉 뻗어 오르는 큰 나무",
+  "how": "lint",
+  "rule": "",
+  "label": "궁합 「도시 아스팔트 위에서도 쭉 뻗어 오르는 큰 나무」"
+ },
+ {
+  "src": "final2",
+  "item": "1-1",
+  "book": "final-sodam-full-dating",
+  "quote": "빗속에서도 꺼지지 않는 캠핑 랜턴",
+  "how": "lint",
+  "rule": "",
+  "label": "종합 1장 「빗속에서도 꺼지지 않는 캠핑 랜턴」(하람과 같음)"
+ },
+ {
+  "src": "final2",
+  "item": "1-1",
+  "book": "final-sodam-full-dating",
+  "quote": "카페 사장의 불",
+  "how": "cover",
+  "rule": "",
+  "label": "종합 표지 「빗속에서도 꺼지지 않는 카페 사장의 불」(이전 책 그림과 겹침)"
+ },
+ {
+  "src": "final2",
+  "item": "1-1",
+  "book": "final-sodam-full-dating",
+  "quote": "퇴근 시간에 맞춰 따뜻한 국물을 데워 두는",
+  "how": "lint",
+  "rule": "",
+  "label": "「상대의 퇴근 시간에 맞춰 따뜻한 국물을 데워 두는」"
+ },
+ {
+  "src": "final2",
+  "item": "1-3",
+  "book": "final-deokmin-jiwoo",
+  "quote": "가운데에 서고 발표를 자원하는 쪽은 최지우님",
+  "how": "lint",
+  "rule": "",
+  "label": "역할 뒤바뀜 「사진을 찍을 때 가운데에 서고 발표를 자원하는 쪽은 최지우님」"
+ },
+ {
+  "src": "final2",
+  "item": "1-3",
+  "book": "final-deokmin-jiwoo",
+  "quote": "최지우님은 거슬리는 말에 그 자리에서 바로 받아치는",
+  "how": "lint",
+  "rule": "",
+  "label": "최지우 8장 「거슬리는 말에 그 자리에서 바로 받아치는」"
+ },
+ {
+  "src": "final2",
+  "item": "1-3",
+  "book": "final-deokmin-jiwoo",
+  "quote": "거슬리는 말에 그 자리에서 받아치는 쪽은 최지우님",
+  "how": "lint",
+  "rule": "",
+  "label": "최지우 7장 「거슬리는 말에 그 자리에서 받아치는 쪽은」"
+ },
+ {
+  "src": "final2",
+  "item": "1-3",
+  "book": "final-deokmin-jiwoo",
+  "quote": "장덕민님은 다툰 직후에 곧바로 맞서기보다 한 박자 두고",
+  "how": "lint",
+  "rule": "",
+  "label": "장덕민 7장 「한 박자 두고」"
+ },
+ {
+  "src": "final2",
+  "item": "1-3",
+  "book": "final-deokmin-jiwoo",
+  "quote": "곱씹는 시간이 필요한 장덕민님",
+  "how": "lint",
+  "rule": "",
+  "label": "장덕민 9장 「곱씹는 시간이 필요한 장덕민님」"
+ },
+ {
+  "src": "final2",
+  "item": "1-3",
+  "book": "final-deokmin-jiwoo",
+  "quote": "두 사람은 하고 싶은 일이 떠오르면 바로 말로 풀어내는",
+  "how": "lint",
+  "rule": "",
+  "label": "두 사람 묶음 「두 사람은 하고 싶은 일이 떠오르면 바로 말로 풀어내는 편」"
+ },
+ {
+  "src": "final2",
+  "item": "1-4",
+  "book": "final-deokmin-jiwoo",
+  "quote": "갑·신·묘·오 글자",
+  "how": "lint",
+  "rule": "",
+  "label": "「현침살이 있어서 갑·신·묘·오 글자가 겹친 만큼」(午 없음)"
+ },
+ {
+  "src": "final2",
+  "item": "1-5",
+  "book": "final-deokmin-career",
+  "quote": "만들고 넓히는 힘이 큰 확장형",
+  "how": "lint",
+  "rule": "",
+  "label": "「당신의 사업은 만들고 넓히는 힘이 큰 확장형」(식상 약)"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-deokmin-love",
+  "quote": "자녀의 성별이나 수를 말하는 것이 아니라",
+  "how": "lint",
+  "rule": "",
+  "label": "「자녀의 성별이나 수를 말하는 것이 아니라」"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-deokmin-love",
+  "quote": "결혼 여부를 정해 주는 것은 아닙니다",
+  "how": "lint",
+  "rule": "",
+  "label": "「결혼 여부를 정해 주는 것은 아닙니다」"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-sodam-full-dating",
+  "quote": "구체적인 일을 말하는 건 아닙니다",
+  "how": "lint",
+  "rule": "",
+  "label": "「구체적인 일을 말하는 건 아닙니다」"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-deokmin-career",
+  "quote": "지어낸 연차 없이",
+  "how": "lint",
+  "rule": "",
+  "label": "「지어낸 연차 없이」"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-deokmin-career",
+  "quote": "상태가 대표라면",
+  "how": "lint",
+  "rule": "",
+  "label": "「상태가 대표라면」"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-deokmin-love",
+  "quote": "토 과다",
+  "how": "tidy",
+  "rule": "",
+  "label": "「토 과다」 → 흙 기운이 많아서"
+ },
+ {
+  "src": "final2",
+  "item": "1-6",
+  "book": "final-deokmin-love",
+  "quote": "이번 가을 남은 두 달",
+  "how": "tidy",
+  "rule": "",
+  "label": "11월 「이번 가을 남은 두 달」 → 2026년 남은 두 달"
+ },
+ {
+  "src": "final2",
+  "item": "1-8",
+  "book": "final-deokmin-career",
+  "quote": "태어난 날 땅 글자의 갑신",
+  "how": "lint",
+  "rule": "",
+  "label": "「태어난 날 땅 글자의 갑신」(갑신은 일주)"
+ },
+ {
+  "src": "final2",
+  "item": "1-8",
+  "book": "final-sodam-full-dating",
+  "quote": "가장 먼저 다가가 분위기를 풀어 주는",
+  "how": "lint",
+  "rule": "",
+  "label": "종합 1장 「가장 먼저 다가가 분위기를 풀어 주는」(INTP)"
+ }
+]

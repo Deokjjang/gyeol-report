@@ -8,7 +8,9 @@ import {
   type ReadyPaymentOrderRpcInput,
   type ReadyPaymentOrderRpcResultRow,
 } from "../../../src/lib/payment/supabaseReadyPaymentOrderClient";
+import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 
+const catalogAmount = getReportProduct("saju_mbti_full")!.amount;
 const createdAt = "2026-01-01T00:00:00.000Z";
 const updatedAt = "2026-01-01T00:00:01.000Z";
 
@@ -19,7 +21,7 @@ function createInput(
     paymentOrderId: "payment_order_ready_client_test",
     productType: "saju_mbti_full",
     provider: "toss",
-    amount: 1490,
+    amount: catalogAmount,
     currency: "KRW",
     inputSnapshot: {
       displayName: "READY_CLIENT_TEST",
@@ -37,7 +39,7 @@ function createRow(
     payment_order_id: "payment_order_ready_client_test",
     product_type: "saju_mbti_full",
     provider: "toss",
-    amount: 1490,
+    amount: catalogAmount,
     currency: "KRW",
     status: "ready",
     provider_order_id: "provider_order_ready_client_test",
@@ -79,7 +81,7 @@ describe("supabase ready payment order client", () => {
           p_payment_order_id: "payment_order_ready_client_test",
           p_product_type: "saju_mbti_full",
           p_provider: "toss",
-          p_amount: 1490,
+          p_amount: catalogAmount,
           p_currency: "KRW",
           p_input_snapshot: {
             displayName: "READY_CLIENT_TEST",
@@ -103,7 +105,7 @@ describe("supabase ready payment order client", () => {
         paymentOrderId: "payment_order_ready_client_test",
         productType: "saju_mbti_full",
         provider: "toss",
-        amount: 1490,
+        amount: catalogAmount,
         currency: "KRW",
         status: "ready",
         providerOrderId: "provider_order_ready_client_test",

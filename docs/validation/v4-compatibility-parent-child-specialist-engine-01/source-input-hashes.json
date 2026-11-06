@@ -15,6 +15,6 @@
   "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/synthetic.ts": "0c21e0240ac28f0e04f7aea4010479ef8b3a6a190693cb2454ccf6d560b9d1f4",
   "tools/compatibility-parent-child-specialist-engine/verify.mjs": "0296ca4a78a138059a07d021137e1dce3d8727b90b39bab3028f592d17054669",
   "tests/fixtures/compatibility-parent-child-specialist-engine-01/synthetic-knowledge.json": "7462bf06411b962cc791cd8784d5b6578599f9ba0aa2d91909bf87337196ed8b",
-  "docs/validation/v4-compatibility-parent-child-specialist-engine-01/original-file-hashes.json": "356d3d445ad69d11d645ea2e5fd8bfdd611284cf11220e62668d53c1b86b4cbf",
+  "docs/validation/v4-compatibility-parent-child-specialist-engine-01/original-file-hashes.json": "b663a79d16e0f4a9d5aaa6dc2b0ba955a11acf4c3433c247f4163a902834db43",
   "docs/validation/v4-compatibility-parent-child-specialist-engine-01/pair-baseline-digests.json": "8c2d4bc1a8d6c9698589fe3ee901cedb9c61e3ded3388390c98a058a6ed12858"
 }

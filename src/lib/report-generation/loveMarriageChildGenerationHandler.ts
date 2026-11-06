@@ -31,11 +31,6 @@ import {
 import type {
   LoveMarriageChildReportDraft,
 } from "./loveMarriageChildReportDraftTypes";
-import {
-  generateLoveMarriageChildReportDraft,
-  type LoveMarriageChildReportWriterConfig,
-  type LoveMarriageChildReportWriterResult,
-} from "./openaiLoveMarriageChildReportWriter";
 import type { SinglePersonGenerationInput } from "./reportInputAdapter";
 
 export type LoveMarriageChildGenerationErrorCode =
@@ -59,13 +54,6 @@ export type LoveMarriageChildGenerationResult =
       };
     };
 
-export type LoveMarriageChildGenerationHandlerOptions = {
-  readonly writer?: {
-    readonly enabled: boolean;
-    readonly config?: LoveMarriageChildReportWriterConfig;
-  };
-};
-
 const tenGodKoByHanja = {
   比肩: "비견",
   劫財: "겁재",
@@ -81,7 +69,6 @@ const tenGodKoByHanja = {
 
 export async function generateLoveMarriageChildProductDraft(
   input: SinglePersonGenerationInput,
-  options: LoveMarriageChildGenerationHandlerOptions = {},
 ): Promise<LoveMarriageChildGenerationResult> {
   if (input.kind !== "loveMarriageChild") {
     return loveMarriageChildFailure({
@@ -100,21 +87,12 @@ export async function generateLoveMarriageChildProductDraft(
     });
   }
 
-  let draftResult: LoveMarriageChildReportWriterResult;
+  let draft: LoveMarriageChildReportDraft;
   try {
-    draftResult =
-      options.writer?.enabled === true && options.writer.config !== undefined
-        ? await generateLoveMarriageChildReportDraft({
-            evidencePacket,
-            config: options.writer.config,
-          })
-        : {
-            draft: buildLoveMarriageChildFallbackDraft({
-              evidencePacket,
-              userContext: input.userContext,
-            }),
-            model: "local-love-marriage-child-fallback",
-          };
+    draft = buildLoveMarriageChildFallbackDraft({
+      evidencePacket,
+      userContext: input.userContext,
+    });
   } catch (error) {
     return loveMarriageChildFailure({
       code: "LOVE_MARRIAGE_CHILD_GENERATION_FAILED",
@@ -122,7 +100,7 @@ export async function generateLoveMarriageChildProductDraft(
     });
   }
 
-  const validation = validateLoveMarriageChildReportDraft(draftResult.draft, evidencePacket);
+  const validation = validateLoveMarriageChildReportDraft(draft, evidencePacket);
 
   if (!validation.ok || validation.value === undefined) {
     return loveMarriageChildFailure({

@@ -1,0 +1,286 @@
+{
+ "case": "pair-love",
+ "label": "궁합 연애 · 하람×서윤",
+ "reportId": "report_8c4ac089b8b94d47a906b97da96b8b3c",
+ "status": "COMPLETED",
+ "wallMs": 79281,
+ "fallback": null,
+ "priorBooks": 2,
+ "explainedFromPrior": 5,
+ "coverLine": "불빛이 강철을 달궈 다듬는 사이",
+ "keySpans": 27,
+ "sections": 27,
+ "chars": 8029,
+ "chapterChars": [
+  867,
+  940,
+  884,
+  826,
+  785,
+  1080,
+  875,
+  863,
+  909
+ ],
+ "chapters": 9,
+ "deterministicChapters": [],
+ "partialKeys": [],
+ "deletions": 1,
+ "byRule": {
+  "example_copy": 1
+ },
+ "replacements": 0,
+ "warnings": 34,
+ "forbiddenResidual": 0,
+ "forbidden": {
+  "oldNegative": 0,
+  "loveTiming": 0,
+  "source": 0,
+  "pastAssert": 0,
+  "sickDeath": 0
+ },
+ "awkward": 0,
+ "awkwardSamples": [],
+ "dbLeak": 0,
+ "dbLeakSamples": [],
+ "gender": 0,
+ "genderSamples": [],
+ "infoRepeats": 0,
+ "infoByKind": {
+  "claim": 0,
+  "scene": 0,
+  "advice": 0
+ },
+ "infoPairs": [],
+ "briefCopy": 0.005,
+ "manseTables": [
+  true,
+  true
+ ],
+ "durationMs": 79253,
+ "tokens": {
+  "input": 20482,
+  "output": 10187,
+  "cachedInput": 5306
+ },
+ "costUsd": 0.1433646,
+ "costKrw": 207.9,
+ "calls": [
+  {
+   "kind": "first",
+   "finish": "complete",
+   "ms": 72333,
+   "chars": 8829,
+   "maxTokens": 25183,
+   "usage": {
+    "inputTokens": 18441,
+    "outputTokens": 9617,
+    "cachedInputTokens": 5306
+   },
+   "costUsd": 0.1335826
+  },
+  {
+   "kind": "repair",
+   "finish": "complete",
+   "ms": 5723,
+   "chars": 522,
+   "maxTokens": 1055,
+   "usage": {
+    "inputTokens": 2041,
+    "outputTokens": 570,
+    "cachedInputTokens": 0
+   },
+   "costUsd": 0.009782
+  }
+ ],
+ "writer": {
+  "model": "claude-sonnet-5-5",
+  "provider": "anthropic"
+ },
+ "promptVersion": "writer-prompt-v5-18",
+ "knowledgeVersion": "knowledge-v5:8b19a9229b4a",
+ "p6b": {
+  "chars": 8490,
+  "target": [
+   11000,
+   14000
+  ],
+  "inTarget": false,
+  "similes": [
+   {
+    "n": 1,
+    "count": 2
+   },
+   {
+    "n": 2,
+    "count": 0
+   },
+   {
+    "n": 3,
+    "count": 0
+   },
+   {
+    "n": 4,
+    "count": 1
+   },
+   {
+    "n": 5,
+    "count": 0
+   },
+   {
+    "n": 6,
+    "count": 2
+   },
+   {
+    "n": 7,
+    "count": 2
+   },
+   {
+    "n": 8,
+    "count": 0
+   },
+   {
+    "n": 9,
+    "count": 0
+   }
+  ],
+  "maxSimile": 2,
+  "chaptersOverSimile": 3,
+  "banned": {
+   "rural": 0,
+   "nickname": 0,
+   "family": 0,
+   "internal": 0
+  },
+  "bannedSamples": [],
+  "termFirst": {
+   "ok": 0,
+   "rate": 0,
+   "terms": 9,
+   "misses": [
+    "정축",
+    "음착양차살",
+    "반안살",
+    "정관",
+    "식신",
+    "경진",
+    "과숙살",
+    "정재",
+    "편인"
+   ]
+  },
+  "structure": [
+   {
+    "n": 1,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "n": 2,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 3,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 4,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 5,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 6,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 7,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 8,
+    "subheadings": 3,
+    "paragraphs": [
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "n": 9,
+    "subheadings": 3,
+    "paragraphs": [
+     2,
+     3,
+     3
+    ]
+   }
+  ],
+  "subheadingsOk": 9,
+  "paragraphsOk": 27,
+  "sectionsTotal": 27,
+  "byRule": {
+   "example_copy": 1
+  },
+  "coreImage": "불빛이 강철을 달궈 다듬는 사이",
+  "edition": "제5판"
+ },
+ "p6c": {
+  "tidy": {
+   "prefix": 0,
+   "keyMarks": 0,
+   "mbtiCode": 0,
+   "monthNow": 0
+  },
+  "cover": "writer",
+  "flags": {
+   "db_copy": 2,
+   "prior_overlap": 2
+  },
+  "removed": 0,
+  "repaired": 3,
+  "cardFlags": [],
+  "redoCalls": 0,
+  "remaining": {},
+  "repairCalls": 1,
+  "redoChapters": [],
+  "repairTargets": 3,
+  "droppedParagraphs": 0
+ }
+}

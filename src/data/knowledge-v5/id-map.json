@@ -1,0 +1,1530 @@
+{
+ "version": "id-map-v5-2",
+ "entries": [
+  {
+   "oldId": "ten_god_bijian",
+   "newId": "tenGod:比肩",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_jie_cai",
+   "newId": "tenGod:劫財",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_pian_cai",
+   "newId": "tenGod:偏財",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_pian_yin",
+   "newId": "tenGod:偏印",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_qi_sha",
+   "newId": "tenGod:偏官",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_shang_guan",
+   "newId": "tenGod:傷官",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_shi_shen",
+   "newId": "tenGod:食神",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_zheng_cai",
+   "newId": "tenGod:正財",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_zheng_guan",
+   "newId": "tenGod:正官",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_zheng_yin",
+   "newId": "tenGod:正印",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "ten_god_family:OFFICER",
+   "newId": "tenGodBalance:OFFICER:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "가족 단위 → 과다 항목으로 대표. 부족은 :WEAK"
+  },
+  {
+   "oldId": "ten_god_family:OUTPUT",
+   "newId": "tenGodBalance:OUTPUT:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "가족 단위 → 과다 항목으로 대표. 부족은 :WEAK"
+  },
+  {
+   "oldId": "ten_god_family:PEER",
+   "newId": "tenGodBalance:PEER:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "가족 단위 → 과다 항목으로 대표. 부족은 :WEAK"
+  },
+  {
+   "oldId": "ten_god_family:RESOURCE",
+   "newId": "tenGodBalance:RESOURCE:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "가족 단위 → 과다 항목으로 대표. 부족은 :WEAK"
+  },
+  {
+   "oldId": "ten_god_family:WEALTH",
+   "newId": "tenGodBalance:WEALTH:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "가족 단위 → 과다 항목으로 대표. 부족은 :WEAK"
+  },
+  {
+   "oldId": "shinsal:GOSINSAL",
+   "newId": "shinsal:GOSINSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "shinsal:GWASUKSAL",
+   "newId": "shinsal:GWASUKSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_baekho",
+   "newId": "shinsal:BAEKHODAESAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_cheonmunseong",
+   "newId": "shinsal:CHEONMUN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_dohwa",
+   "newId": "shinsal:DOHWASAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_goegang",
+   "newId": "shinsal:GOEGANG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_gongmang",
+   "newId": "shinsal:GONGMANG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_gwimun",
+   "newId": "shinsal:GWIMUN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_hongyeom",
+   "newId": "shinsal:HONGYEOMSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_hyeonchim",
+   "newId": "shinsal:HYEONCHIMSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_wonjin",
+   "newId": "shinsal:WONJIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_yangin",
+   "newId": "shinsal:YANGIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_banan",
+   "newId": "shinsal:TWELVE_BANANSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_cheonsal",
+   "newId": "shinsal:TWELVE_CHEONSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_geopsal",
+   "newId": "shinsal:TWELVE_GEOPSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_hwagae",
+   "newId": "shinsal:TWELVE_HWAGAE",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_jaesal",
+   "newId": "shinsal:TWELVE_JAESAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_jangseong",
+   "newId": "shinsal:TWELVE_JANGSEONGSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_jisal",
+   "newId": "shinsal:TWELVE_JISAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_mangsin",
+   "newId": "shinsal:TWELVE_MANGSINSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_nyeonsal",
+   "newId": "shinsal:TWELVE_NYEONSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_wolsal",
+   "newId": "shinsal:TWELVE_WOLSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_yeokma",
+   "newId": "shinsal:TWELVE_YEOKMASAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_sinsal_yukhae",
+   "newId": "shinsal:TWELVE_YUKHAESAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_amrok",
+   "newId": "gwiin:AMROK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_bokseong",
+   "newId": "gwiin:BOKSEONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_cheondeok",
+   "newId": "gwiin:CHEON_DEOK_GWIIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_cheoneuiseong",
+   "newId": "gwiin:CHEON_EUI",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_cheoneul",
+   "newId": "gwiin:CHEON_EUL_GWIIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_geumyeorok",
+   "newId": "gwiin:GEUMYEO",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_hakdang",
+   "newId": "gwiin:HAK_DANG_GWIIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_jaego",
+   "newId": "gwiin:JAEGO",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_munchang",
+   "newId": "gwiin:MUN_CHANG_GWIIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_mungok",
+   "newId": "gwiin:MUNGOK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_taegeuk",
+   "newId": "gwiin:TAEGEUK_GWIIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "gwiin_woldeok",
+   "newId": "gwiin:WOL_DEOK_GWIIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:건록",
+   "newId": "twelveStage:建祿",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:관대",
+   "newId": "twelveStage:冠帶",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:목욕",
+   "newId": "twelveStage:沐浴",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:묘",
+   "newId": "twelveStage:墓",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:병",
+   "newId": "twelveStage:病",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:사",
+   "newId": "twelveStage:死",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:쇠",
+   "newId": "twelveStage:衰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:양",
+   "newId": "twelveStage:養",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:장생",
+   "newId": "twelveStage:長生",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:절",
+   "newId": "twelveStage:絶",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:제왕",
+   "newId": "twelveStage:帝旺",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "twelve_stage:태",
+   "newId": "twelveStage:胎",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:BANHAP",
+   "newId": "relation:SAMHAP",
+   "source": "knowledge-v5-v1",
+   "note": "반합은 삼합 variants nuance"
+  },
+  {
+   "oldId": "relation:CHUNG",
+   "newId": "relation:CHUNG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:HAE",
+   "newId": "relation:HAE",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:HYEONG",
+   "newId": "relation:HYEONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:PA",
+   "newId": "relation:PA",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:SAMHAP",
+   "newId": "relation:SAMHAP",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:STEM_HAP",
+   "newId": "relation:STEM_HAP",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:WONJIN",
+   "newId": "shinsal:WONJIN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "relation:YUKHAP",
+   "newId": "relation:YUKHAP",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_earth",
+   "newId": "element:EARTH:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_fire",
+   "newId": "element:FIRE:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_metal",
+   "newId": "element:METAL:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_water",
+   "newId": "element:WATER:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_wood",
+   "newId": "element:WOOD:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:EARTH:balanced",
+   "newId": "element:EARTH:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:EARTH:high",
+   "newId": "element:EARTH:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:EARTH:low",
+   "newId": "element:EARTH:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:FIRE:balanced",
+   "newId": "element:FIRE:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:FIRE:high",
+   "newId": "element:FIRE:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:FIRE:low",
+   "newId": "element:FIRE:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:METAL:balanced",
+   "newId": "element:METAL:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:METAL:high",
+   "newId": "element:METAL:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:METAL:low",
+   "newId": "element:METAL:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:WATER:balanced",
+   "newId": "element:WATER:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:WATER:high",
+   "newId": "element:WATER:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:WATER:low",
+   "newId": "element:WATER:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:WOOD:balanced",
+   "newId": "element:WOOD:BALANCED",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:WOOD:high",
+   "newId": "element:WOOD:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:WOOD:low",
+   "newId": "element:WOOD:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_byeongin",
+   "newId": "dayPillar:丙寅",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_byeongja",
+   "newId": "dayPillar:丙子",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_byeongjin",
+   "newId": "dayPillar:丙辰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_byeongo",
+   "newId": "dayPillar:丙午",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_byeongsin",
+   "newId": "dayPillar:丙申",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_byeongsul",
+   "newId": "dayPillar:丙戌",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_eulchuk",
+   "newId": "dayPillar:乙丑",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_eulhae",
+   "newId": "dayPillar:乙亥",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_eulmi",
+   "newId": "dayPillar:乙未",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_eulmyo",
+   "newId": "dayPillar:乙卯",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_eulsa",
+   "newId": "dayPillar:乙巳",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_eulyu",
+   "newId": "dayPillar:乙酉",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gabin",
+   "newId": "dayPillar:甲寅",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gabo",
+   "newId": "dayPillar:甲午",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gapja",
+   "newId": "dayPillar:甲子",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gapjin",
+   "newId": "dayPillar:甲辰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gapsin",
+   "newId": "dayPillar:甲申",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gapsul",
+   "newId": "dayPillar:甲戌",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gichuk",
+   "newId": "dayPillar:己丑",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gihae",
+   "newId": "dayPillar:己亥",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gimi",
+   "newId": "dayPillar:己未",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gimyo",
+   "newId": "dayPillar:己卯",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gisa",
+   "newId": "dayPillar:己巳",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_giyu",
+   "newId": "dayPillar:己酉",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyechuk",
+   "newId": "dayPillar:癸丑",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyehae",
+   "newId": "dayPillar:癸亥",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyemi",
+   "newId": "dayPillar:癸未",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyemyo",
+   "newId": "dayPillar:癸卯",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeongin",
+   "newId": "dayPillar:庚寅",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeongja",
+   "newId": "dayPillar:庚子",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeongjin",
+   "newId": "dayPillar:庚辰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeongo",
+   "newId": "dayPillar:庚午",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeongsin",
+   "newId": "dayPillar:庚申",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeongsul",
+   "newId": "dayPillar:庚戌",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyesa",
+   "newId": "dayPillar:癸巳",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gyeyu",
+   "newId": "dayPillar:癸酉",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_imin",
+   "newId": "dayPillar:壬寅",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_imja",
+   "newId": "dayPillar:壬子",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_imjin",
+   "newId": "dayPillar:壬辰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_imo",
+   "newId": "dayPillar:壬午",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_imsin",
+   "newId": "dayPillar:壬申",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_imsul",
+   "newId": "dayPillar:壬戌",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_jeongchuk",
+   "newId": "dayPillar:丁丑",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_jeonghae",
+   "newId": "dayPillar:丁亥",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_jeongmi",
+   "newId": "dayPillar:丁未",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_jeongmyo",
+   "newId": "dayPillar:丁卯",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_jeongsa",
+   "newId": "dayPillar:丁巳",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_jeongyu",
+   "newId": "dayPillar:丁酉",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_muin",
+   "newId": "dayPillar:戊寅",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_muja",
+   "newId": "dayPillar:戊子",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_mujin",
+   "newId": "dayPillar:戊辰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_muo",
+   "newId": "dayPillar:戊午",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_musin",
+   "newId": "dayPillar:戊申",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_musul",
+   "newId": "dayPillar:戊戌",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_sinchuk",
+   "newId": "dayPillar:辛丑",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_sinhae",
+   "newId": "dayPillar:辛亥",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_sinmi",
+   "newId": "dayPillar:辛未",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_sinmyo",
+   "newId": "dayPillar:辛卯",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_sinsa",
+   "newId": "dayPillar:辛巳",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_sinyu",
+   "newId": "dayPillar:辛酉",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_byeonghwa",
+   "newId": "dayMaster:丙",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_eulmok",
+   "newId": "dayMaster:乙",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_gabmok",
+   "newId": "dayMaster:甲",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_gito",
+   "newId": "dayMaster:己",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_gyeonggeum",
+   "newId": "dayMaster:庚",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_gyesu",
+   "newId": "dayMaster:癸",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_imsu",
+   "newId": "dayMaster:壬",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_jeonghwa",
+   "newId": "dayMaster:丁",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_muto",
+   "newId": "dayMaster:戊",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_master_singeum",
+   "newId": "dayMaster:辛",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "pattern_geumda_mokjeol",
+   "newId": "element:METAL:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "금다목절: 금 과다가 목을 꺾는 구성 → 금 과다 항목 + element:WOOD:WEAK 병용"
+  },
+  {
+   "oldId": "pattern_mokda_hwasik",
+   "newId": "element:WOOD:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "목다화식: 목 과다가 불을 덮는 구성 → 목 과다 + element:FIRE:WEAK 병용"
+  },
+  {
+   "oldId": "pattern_singang",
+   "newId": "structure:PEER_HEAVY",
+   "source": "knowledge-v5-v1",
+   "note": "신강·신약은 엔진 dayMasterStrength로 대체, 가장 가까운 구조로 매핑"
+  },
+  {
+   "oldId": "pattern_sinyak",
+   "newId": "structure:RESOURCE_SUPPORTS_DAYMASTER",
+   "source": "knowledge-v5-v1",
+   "note": "신강·신약은 엔진 dayMasterStrength로 대체, 가장 가까운 구조로 매핑"
+  },
+  {
+   "oldId": "pattern_suda_mokbu",
+   "newId": "element:WATER:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "수다목부: 수 과다에 목이 뜨는 구성 → 수 과다 + element:WOOD:WEAK 병용"
+  },
+  {
+   "oldId": "pattern_toda_maegeum",
+   "newId": "element:EARTH:STRONG",
+   "source": "knowledge-v5-v1",
+   "note": "토다매금: 토 과다가 금을 묻는 구성 → 토 과다 + element:METAL:WEAK 병용"
+  },
+  {
+   "oldId": "v4_structure:hurtingOfficerMeetsOfficer",
+   "newId": "structure:MIXED_OFFICER_KILLING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:killingResourceFlow",
+   "newId": "structure:RESOURCE_SUPPORTS_DAYMASTER",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:mixedOfficers",
+   "newId": "structure:MIXED_OFFICER_KILLING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:noOutput",
+   "newId": "tenGodBalance:OUTPUT:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:noResource",
+   "newId": "tenGodBalance:RESOURCE:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:officerHeavy",
+   "newId": "structure:OFFICER_HEAVY",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:officerResourceFlow",
+   "newId": "structure:RESOURCE_SUPPORTS_DAYMASTER",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:outputCreatesWealth",
+   "newId": "structure:OUTPUT_GENERATES_WEALTH",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:outputHeavy",
+   "newId": "structure:OUTPUT_HEAVY",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:peerHeavy",
+   "newId": "structure:PEER_HEAVY",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:resourceHeavy",
+   "newId": "structure:RESOURCE_HEAVY",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:wealthCreatesOfficer",
+   "newId": "structure:WEALTH_GENERATES_OFFICER",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:wealthHeavy",
+   "newId": "structure:WEALTH_HEAVY",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "v4_structure:wealthHeavyWeakDaymaster",
+   "newId": "structure:WEAK_DAYMASTER_WITH_STRONG_WEALTH",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:丁",
+   "newId": "stem:丁",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:丙",
+   "newId": "stem:丙",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:乙",
+   "newId": "stem:乙",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:壬",
+   "newId": "stem:壬",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:己",
+   "newId": "stem:己",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:庚",
+   "newId": "stem:庚",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:戊",
+   "newId": "stem:戊",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:甲",
+   "newId": "stem:甲",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:癸",
+   "newId": "stem:癸",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "stem:辛",
+   "newId": "stem:辛",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:丑",
+   "newId": "branch:丑",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:亥",
+   "newId": "branch:亥",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:午",
+   "newId": "branch:午",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:卯",
+   "newId": "branch:卯",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:子",
+   "newId": "branch:子",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:寅",
+   "newId": "branch:寅",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:巳",
+   "newId": "branch:巳",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:戌",
+   "newId": "branch:戌",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:未",
+   "newId": "branch:未",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:申",
+   "newId": "branch:申",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:辰",
+   "newId": "branch:辰",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "branch:酉",
+   "newId": "branch:酉",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "distribution:output-low",
+   "newId": "tenGodBalance:OUTPUT:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_earth_excess",
+   "newId": "element:EARTH:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_earth_missing",
+   "newId": "element:EARTH:MISSING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_fire_excess",
+   "newId": "element:FIRE:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_fire_missing",
+   "newId": "element:FIRE:MISSING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_metal_excess",
+   "newId": "element:METAL:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_metal_missing",
+   "newId": "element:METAL:MISSING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_metal_strong",
+   "newId": "element:METAL:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_water_excess",
+   "newId": "element:WATER:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_water_missing",
+   "newId": "element:WATER:MISSING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_wood_excess",
+   "newId": "element:WOOD:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element_wood_missing",
+   "newId": "element:WOOD:MISSING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "element:earth",
+   "newId": "element:EARTH:BALANCED",
+   "source": "knowledge-v5-v1",
+   "note": "오행 기본 항목 → 균형 항목"
+  },
+  {
+   "oldId": "element:fire",
+   "newId": "element:FIRE:BALANCED",
+   "source": "knowledge-v5-v1",
+   "note": "오행 기본 항목 → 균형 항목"
+  },
+  {
+   "oldId": "element:metal",
+   "newId": "element:METAL:BALANCED",
+   "source": "knowledge-v5-v1",
+   "note": "오행 기본 항목 → 균형 항목"
+  },
+  {
+   "oldId": "element:water",
+   "newId": "element:WATER:BALANCED",
+   "source": "knowledge-v5-v1",
+   "note": "오행 기본 항목 → 균형 항목"
+  },
+  {
+   "oldId": "element:wood",
+   "newId": "element:WOOD:BALANCED",
+   "source": "knowledge-v5-v1",
+   "note": "오행 기본 항목 → 균형 항목"
+  },
+  {
+   "oldId": "pattern_gwansal_honjob",
+   "newId": "structure:MIXED_OFFICER_KILLING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "pattern_jaeda_sinyak",
+   "newId": "structure:WEAK_DAYMASTER_WITH_STRONG_WEALTH",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "pattern_jaesaenggwan",
+   "newId": "structure:WEALTH_GENERATES_OFFICER",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "pattern_no_output",
+   "newId": "tenGodBalance:OUTPUT:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "pattern_no_resource",
+   "newId": "tenGodBalance:RESOURCE:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "pattern_salin_sangsaeng",
+   "newId": "structure:RESOURCE_SUPPORTS_DAYMASTER",
+   "source": "knowledge-v5-v1",
+   "note": "살인상생 → 인성이 일간을 받치는 구조"
+  },
+  {
+   "oldId": "pattern_siksang_saengjae",
+   "newId": "structure:OUTPUT_GENERATES_WEALTH",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_banan",
+   "newId": "shinsal:TWELVE_BANANSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_cheonmun",
+   "newId": "shinsal:CHEONMUN",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "sinsal_wolsal",
+   "newId": "shinsal:TWELVE_WOLSAL",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_bigeop_many",
+   "newId": "tenGodBalance:PEER:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_gwansal_mixed",
+   "newId": "structure:MIXED_OFFICER_KILLING",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_jaeda_sinyak",
+   "newId": "structure:WEAK_DAYMASTER_WITH_STRONG_WEALTH",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_jaesaenggwan",
+   "newId": "structure:WEALTH_GENERATES_OFFICER",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_no_output",
+   "newId": "tenGodBalance:OUTPUT:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_no_resource",
+   "newId": "tenGodBalance:RESOURCE:WEAK",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_resource_many",
+   "newId": "tenGodBalance:RESOURCE:STRONG",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "structure_salin_sangsaeng",
+   "newId": "structure:RESOURCE_SUPPORTS_DAYMASTER",
+   "source": "knowledge-v5-v1",
+   "note": "살인상생 → 인성이 일간을 받치는 구조"
+  },
+  {
+   "oldId": "structure_sanggwan_gyeongwan",
+   "newId": "tenGod:傷官",
+   "source": "knowledge-v5-v1",
+   "note": "상관견관 → 상관 항목 strengthRules.clash"
+  },
+  {
+   "oldId": "structure_siksang_saengjae",
+   "newId": "structure:OUTPUT_GENERATES_WEALTH",
+   "source": "knowledge-v5-v1"
+  },
+  {
+   "oldId": "day_pillar_gapja",
+   "newId": "dayPillar:甲子",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_eulchuk",
+   "newId": "dayPillar:乙丑",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_byeongin",
+   "newId": "dayPillar:丙寅",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_jeongmyo",
+   "newId": "dayPillar:丁卯",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_mujin",
+   "newId": "dayPillar:戊辰",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gisa",
+   "newId": "dayPillar:己巳",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeongo",
+   "newId": "dayPillar:庚午",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_sinmi",
+   "newId": "dayPillar:辛未",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_imsin",
+   "newId": "dayPillar:壬申",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeyu",
+   "newId": "dayPillar:癸酉",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gapsul",
+   "newId": "dayPillar:甲戌",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_eulhae",
+   "newId": "dayPillar:乙亥",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_byeongja",
+   "newId": "dayPillar:丙子",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_jeongchuk",
+   "newId": "dayPillar:丁丑",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_muin",
+   "newId": "dayPillar:戊寅",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gimyo",
+   "newId": "dayPillar:己卯",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeongjin",
+   "newId": "dayPillar:庚辰",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_sinsa",
+   "newId": "dayPillar:辛巳",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_imo",
+   "newId": "dayPillar:壬午",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyemi",
+   "newId": "dayPillar:癸未",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gapsin",
+   "newId": "dayPillar:甲申",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_eulyu",
+   "newId": "dayPillar:乙酉",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_byeongsul",
+   "newId": "dayPillar:丙戌",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_jeonghae",
+   "newId": "dayPillar:丁亥",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_muja",
+   "newId": "dayPillar:戊子",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gichuk",
+   "newId": "dayPillar:己丑",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeongin",
+   "newId": "dayPillar:庚寅",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_sinmyo",
+   "newId": "dayPillar:辛卯",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_imjin",
+   "newId": "dayPillar:壬辰",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyesa",
+   "newId": "dayPillar:癸巳",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gabo",
+   "newId": "dayPillar:甲午",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_eulmi",
+   "newId": "dayPillar:乙未",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_byeongsin",
+   "newId": "dayPillar:丙申",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_jeongyu",
+   "newId": "dayPillar:丁酉",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_musul",
+   "newId": "dayPillar:戊戌",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gihae",
+   "newId": "dayPillar:己亥",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeongja",
+   "newId": "dayPillar:庚子",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_sinchuk",
+   "newId": "dayPillar:辛丑",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_imin",
+   "newId": "dayPillar:壬寅",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyemyo",
+   "newId": "dayPillar:癸卯",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gapjin",
+   "newId": "dayPillar:甲辰",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_eulsa",
+   "newId": "dayPillar:乙巳",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_byeongo",
+   "newId": "dayPillar:丙午",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_jeongmi",
+   "newId": "dayPillar:丁未",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_musin",
+   "newId": "dayPillar:戊申",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_giyu",
+   "newId": "dayPillar:己酉",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeongsul",
+   "newId": "dayPillar:庚戌",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_sinhae",
+   "newId": "dayPillar:辛亥",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_imja",
+   "newId": "dayPillar:壬子",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyechuk",
+   "newId": "dayPillar:癸丑",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gabin",
+   "newId": "dayPillar:甲寅",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_eulmyo",
+   "newId": "dayPillar:乙卯",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_byeongjin",
+   "newId": "dayPillar:丙辰",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_jeongsa",
+   "newId": "dayPillar:丁巳",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_muo",
+   "newId": "dayPillar:戊午",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gimi",
+   "newId": "dayPillar:己未",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyeongsin",
+   "newId": "dayPillar:庚申",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_sinyu",
+   "newId": "dayPillar:辛酉",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_imsul",
+   "newId": "dayPillar:壬戌",
+   "source": "v4"
+  },
+  {
+   "oldId": "day_pillar_gyehae",
+   "newId": "dayPillar:癸亥",
+   "source": "v4"
+  }
+ ]
+}

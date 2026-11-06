@@ -8,6 +8,7 @@ import { accountPublicEnabled } from "../../../lib/account/gate";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
+import { readGenerationProgress } from "../../../components/report/generationProgressServer";
 import { ReportStatusView } from "../../../components/report/ReportStatusView";
 import type { ReactNode } from "react";
 import MetaPurchaseTracker from "../../../components/analytics/MetaPurchaseTracker";
@@ -101,7 +102,7 @@ type ReportResultPageProps = {
 };
 
 type PageState =
-  | { readonly kind: "processing"; readonly attention: boolean; readonly delayed: boolean }
+  | { readonly kind: "processing"; readonly attention: boolean; readonly delayed: boolean; readonly status?: string }
   | {
       readonly kind: "invalid";
     }
@@ -110,9 +111,14 @@ type PageState =
     }
   | {
       readonly kind: "unavailable";
+      readonly retry?: boolean;
     }
   | {
       readonly kind: "expired";
+    }
+  | {
+      /** 환불된 주문의 책(P6e-ops): 다시 확인하지 않고 안내만 한다. */
+      readonly kind: "refunded";
     }
   | {
       readonly kind: "unsupportedProductPreview";
@@ -135,6 +141,15 @@ function createResultClient() {
   });
 }
 
+/** 이 Book의 주문이 환불됐는지(내용은 읽지 않는다). 확인 실패는 false — 기존 안내(재확인)로 간다. */
+async function refundedBook(reportId: string): Promise<boolean> {
+  try {
+    const { createOpsStores } = await import("../../../lib/ops/store");
+    const r = await createOpsStores().recon.call("report_refunded", { reportId });
+    return r.ok === true && r.refunded === true;
+  } catch { return false; }
+}
+
 async function loadPageState(reportId: string): Promise<PageState> {
   const localPreview = process.env.NODE_ENV !== "production" && process.env.REPORT_PERSISTENCE_MODE === "preview_memory";
   if (process.env.NODE_ENV !== "test" && !localPreview) {
@@ -143,9 +158,12 @@ async function loadPageState(reportId: string): Promise<PageState> {
     if (durable.ok) {
       if (durable.status === "EXPIRED") return { kind: "expired" };
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
-      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING" };
+      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING", status: typeof durable.status === "string" ? durable.status : undefined };
     }
-    if (process.env.NODE_ENV === "production") return { kind: "unavailable" };
+    // 환불된 주문의 책이면 재확인 없이 안내한다. 기존 읽기 함수는 환불을 '없음'으로 돌려줘서 여기서 따로 확인한다.
+    if (await refundedBook(reportId)) return { kind: "refunded" };
+    // 저장소 일시 장애는 자동으로 다시 확인한다(정적 화면에 멈추지 않게).
+    if (process.env.NODE_ENV === "production") return { kind: "unavailable", retry: true };
   }
   const previewResult = await loadProductPreviewPageState(reportId);
 
@@ -207,7 +225,7 @@ async function loadProductPreviewPageState(
   }
 
   const productPreview = record.productPreview;
-  if (bookExperiencePublicEnabled() && productPreview.productVersion === "v4") {
+  if (bookExperiencePublicEnabled() && isBookSnapshotVersion(productPreview.productVersion)) {
     const { storedBook } = await import("../../../lib/book/storedReport");
     return storedBook(productPreview) ? { kind: "productPreview", productPreview } : { kind: "invalidSnapshot" };
   }
@@ -1537,6 +1555,9 @@ function renderPlaceholderState(result: PaidReportResult) {
   );
 }
 
+/** Book 열람 화면(StoredBookReport)으로 그리는 저장본: V4와 v5(작가 원고). v5 유료본도 같은 구매자 확인·열람 경로를 탄다(P6d-ops). */
+function isBookSnapshotVersion(version: unknown): boolean { return version === "v4" || version === "v5"; }
+
 export default async function ReportResultPage({
   params,
 }: ReportResultPageProps) {
@@ -1548,26 +1569,37 @@ export default async function ReportResultPage({
     const ticket = await loadOwnedTicketBook(routeParams.reportId ?? "");
     if (ticket.kind === "ticketBook") {
       const { StoredBookReport } = await import("../../../lib/book/storedReport");
-      return <StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} />;
+      const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
+      const interim = await isInterimEdition(ticket.snapshot.reportId);
+      return <><EditionNotice interim={interim} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} /></>;
     }
-    if (ticket.kind === "storageError") return <ReportStatusView state="unavailable" title="책의 열람 정보를 확인하지 못했습니다." message="잠시 후 다시 열어 주세요." support />;
+    if (ticket.kind === "storageError") return <ReportGenerationStatus retry />;
     if (ticket.kind === "expired") return renderExpiredState();
     if (ticket.kind === "invalidSnapshot") return renderInvalidSnapshotState();
   }
   const state = await loadPageState(routeParams.reportId ?? "");
 
-  if (state.kind === "processing") return <><MetaPurchaseTracker reportId={routeParams.reportId ?? ""} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} /></>;
+  if (state.kind === "processing") {
+    // ⑦ 생성 감독의 실제 상태(읽기 전용)로 단계·지연을 그리고, 화면은 그 상태를 계속 묻는다(v5 최종 2-1 #7).
+    const reportId = routeParams.reportId ?? "";
+    const progress = state.attention ? undefined : await readGenerationProgress(reportId, state.status);
+    return <><MetaPurchaseTracker reportId={reportId} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} reportId={state.attention ? undefined : reportId} progress={progress} /></>;
+  }
 
   if (state.kind === "invalid") {
     return renderInvalidState();
   }
 
   if (state.kind === "unavailable") {
-    return renderUnavailableState();
+    return state.retry ? <ReportGenerationStatus retry /> : renderUnavailableState();
   }
 
   if (state.kind === "expired") {
     return renderExpiredState();
+  }
+
+  if (state.kind === "refunded") {
+    return <ReportStatusView state="refunded" />;
   }
 
   if (state.kind === "invalidSnapshot") {
@@ -1581,9 +1613,9 @@ export default async function ReportResultPage({
   if (state.kind === "productPreview") {
   const reportId = routeParams.reportId ?? "";
   const isPaid = state.productPreview.access.mode === "paid";
-  if (isPaid && state.productPreview.productVersion === "v4" && accountPublicEnabled()) {
+  if (isPaid && isBookSnapshotVersion(state.productPreview.productVersion) && accountPublicEnabled()) {
     const { canReadPurchasedBook } = await import("../../../lib/book/ownerAccess");
-    if (!await canReadPurchasedBook(reportId)) return renderUnavailableState();
+    if (!await canReadPurchasedBook(reportId)) return await refundedBook(reportId) ? <ReportStatusView state="refunded" /> : renderUnavailableState();
   }
 
   const url = isPaid
@@ -1594,9 +1626,12 @@ export default async function ReportResultPage({
     ? getReportProduct(state.productPreview.productType)
     : null;
   const SaveLibrary = isPaid && accountPublicEnabled() ? (await import("../../../components/account/SaveToLibrary")).SaveToLibrary : null;
+  const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
+  const interim = isPaid ? await isInterimEdition(reportId) : false;
 
   return (
     <>
+      <EditionNotice interim={interim} />
       {product ? (
         <MetaPurchaseTracker
           reportId={reportId}
@@ -1612,11 +1647,11 @@ export default async function ReportResultPage({
             : undefined
         }
       >
-        {bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4"
+        {bookExperiencePublicEnabled() && isBookSnapshotVersion(state.productPreview.productVersion)
           ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, shareOwner: isPaid ? { reportId } : undefined, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined })
           : renderProductPreviewState(state.productPreview)}
       </ReportShareProvider>
-      {SaveLibrary && !(bookExperiencePublicEnabled() && state.productPreview.productVersion === "v4") ? <SaveLibrary reportId={reportId} /> : null}
+      {SaveLibrary && !(bookExperiencePublicEnabled() && isBookSnapshotVersion(state.productPreview.productVersion)) ? <SaveLibrary reportId={reportId} /> : null}
     </>
   );
 }

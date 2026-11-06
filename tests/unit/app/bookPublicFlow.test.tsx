@@ -141,6 +141,16 @@ describe("presentation contracts", () => {
     expect(html).toContain("전체 동의"); expect(html).not.toContain("<dialog"); expect(html).not.toContain("마케팅"); expect(html).not.toContain("회원 미리보기");
     expect(src("src/components/book/BookCheckout.tsx")).toContain("indeterminate = some && !all");
   });
+  it("최종3: 결제 직전 — v5 책은 탈퇴 전까지 열람·AI 작성 고지, v5 이전은 90일, 둘 다 생성 시작 후 단순 변심 환불 불가", () => {
+    const payload = RUNTIME_FIXTURES[0].payload as ReportInputPayload;
+    const v5 = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} v5Book onPublishing={() => {}} onError={() => {}} />);
+    expect(v5).toContain("탈퇴 전까지 계속 열람"); expect(v5).not.toContain("생성일로부터 90일");
+    // 최종 A 16: 주문서 맨 아래 작은 회색 두 줄(환불 · 예시 보기 / AI 작성).
+    expect(v5).toContain("명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요");
+    expect(v5).toContain("결제하면 바로 생성이 시작돼 단순 변심 환불은 되지 않아요");
+    const v4 = renderToStaticMarkup(<BookCheckout payload={payload} now={now.toISOString()} internal authEnabled={false} onPublishing={() => {}} onError={() => {}} />);
+    expect(v4).toContain("생성일로부터 90일"); expect(v4).not.toContain("AI가 작성해요"); expect(v4).toContain("단순 변심 환불은 되지 않아요");
+  });
   it("stored version is authoritative and V3/invalid snapshots cannot be regenerated", () => {
     expect(storedBook({ productVersion: "v3", reportVersion: "v4" })).toBeNull();
     expect(storedBook({ productVersion: "v4" })).toBeNull();

@@ -9,6 +9,7 @@ vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => s
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => state.library }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => ({ create: async (order: Record<string, unknown>) => { state.orders.push(order); return { ok: true, value: order }; } }) }));
 vi.mock("../../../src/lib/sharing/reportShareStore", async original => ({ ...await original<object>(), sharePort: () => ({ owned: async () => state.owned }) }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 vi.mock("next/headers", () => ({ headers: async () => new Headers({ cookie: state.cookie }) }));
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
 import { handleAccount, type AccountPort } from "../../../src/lib/account/handler";
@@ -22,10 +23,11 @@ import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliab
 import { storedBook, validateBookPublication } from "../../../src/lib/book/storedReport";
 import { bookCheckoutSnapshot } from "../../../src/lib/book/form";
 import { BookCheckout } from "../../../src/components/book/BookCheckout";
-import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
+import { getReportProduct, REPORT_PRICE_TABLE_KRW } from "../../../src/lib/payment/reportProductCatalog";
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "../interpretation-v4/runtimeFixtures";
+import { TEST_BUYER } from "../../helpers/opsStoreStub";
 const origin = "https://www.gyeolreport.com", reportId = "report_release_12345678901234567890";
 const consents = Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type: consent_type as "terms" | "privacy", document_version, required: true, is_agreed: true, recorded_at: SHADOW_CLOCK.evaluatedAt }));
 function auth(member = true): AccountPort {
@@ -35,12 +37,12 @@ function auth(member = true): AccountPort {
 function library(): LibraryPort { return { bind: vi.fn(async () => true), claim: vi.fn(async () => "unavailable" as const), orderForReport: vi.fn(async () => "order-release"), list: vi.fn(async () => []) }; }
 function request(payload: unknown = RUNTIME_FIXTURES[0].payload, requestOrigin: string | null = origin, host = origin) {
   const p = payload as ReportInputPayload;
-  return new NextRequest(`${host}/api/payment-checkout/prepare`, { method: "POST", headers: { "content-type": "application/json", ...(requestOrigin === null ? {} : { origin: requestOrigin }), cookie: "test-session=forwarded" }, body: JSON.stringify({ provider: "toss", productType: p.productKey, inputSnapshot: { ...bookCheckoutSnapshot(p), bookGeneration: { version: "v4", evaluatedAt: "forged" } }, consent: adultCheckoutConsent() }) });
+  return new NextRequest(`${host}/api/payment-checkout/prepare`, { method: "POST", headers: { "content-type": "application/json", ...(requestOrigin === null ? {} : { origin: requestOrigin }), cookie: "test-session=forwarded" }, body: JSON.stringify({ provider: "toss", productType: p.productKey, inputSnapshot: { ...bookCheckoutSnapshot(p), bookGeneration: { version: "v4", evaluatedAt: "forged" } }, consent: adultCheckoutConsent(), buyer: TEST_BUYER }) });
 }
 beforeEach(() => {
   state.book = state.account = false; state.orders = []; state.auth = auth(); state.library = library(); state.cookie = ""; state.owned = false;
   vi.useFakeTimers(); vi.setSystemTime(new Date(SHADOW_CLOCK.evaluatedAt));
-  vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
 });
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 
@@ -89,7 +91,7 @@ describe("release gate combinations and real checkout route", () => {
   });
   it("production checkout presentation uses public session and the existing launcher, not dev mocks", () => {
     const source = readFileSync("src/components/book/BookCheckout.tsx", "utf8");
-    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, consents, undefined");
+    expect(source).toContain("useAccountSession(props.internal, authEnabled)"); expect(source).toContain("runDevTossCheckout(snapshot, effective, undefined");
     const html = renderToStaticMarkup(<BookCheckout payload={RUNTIME_FIXTURES[0].payload as ReportInputPayload} now={SHADOW_CLOCK.evaluatedAt} internal={false} authEnabled onPublishing={() => {}} onError={() => {}} />);
     // SSR cannot know the session yet: do not expose a checkout until verified.
     expect(html).toContain("로그인 상태를 확인하고 있습니다."); expect(html).not.toContain("결제하기"); expect(html).not.toContain("모의 결제");
@@ -142,8 +144,8 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
     state.book = state.account = true;
     const response = await POST(request(f.payload)); expect(response.status).toBe(200);
     const body = await response.json(), order = state.orders[0], input = order.inputSnapshot as Record<string, unknown>;
-    const amount = getReportProduct(f.payload.productKey)!.amount;
-    expect(amount).toBe(1490);
+    const product = getReportProduct(f.payload.productKey)!, amount = product.amount;
+    expect(amount).toBe(REPORT_PRICE_TABLE_KRW[product.productType]);
     expect(body.paymentOrder.amount).toBe(amount); expect(body.checkoutSession.amount).toBe(amount); expect(body.tossCheckoutRequest.requestPayment.amount.value).toBe(amount); expect(order.amount).toBe(amount);
     let snapshot: unknown;
     const store: ReliabilityStore = { call: vi.fn(async (action, data) => {

@@ -109,10 +109,10 @@ describe("post-payment canonical route, mock transport only", () => {
   });
 
   it("refresh reaches the existing completed report at the same canonical address", async () => {
-    expect(await renderState("GENERATING")).toContain("리포트를 준비하고 있습니다");
+    expect(await renderState("GENERATING")).toContain("책을 제본하고 있습니다");
     const completed = await renderState("COMPLETED");
     expect(completed).toContain("리포트 공유하기");
-    expect(completed).not.toContain("리포트를 준비하고 있습니다");
+    expect(completed).not.toContain("책을 제본하고 있습니다");
     expect(mocks.redirect).not.toHaveBeenCalled();
   });
 
@@ -127,12 +127,13 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(html).not.toContain('href="/report/new');
   });
 
-  it("retains the existing quarantine gate for corrupted completed data", async () => {
+  // v5 최종3: 열람 검사에 걸려도 격리하지 않는다(저장본 그대로, 로그만). 손상 내용은 그리지 않고 같은 안내를 보인다.
+  it("hides corrupted completed data without quarantining it", async () => {
     mocks.call.mockResolvedValueOnce({ ok: true, status: "COMPLETED", snapshot: { ...snapshot, evidencePacket: undefined } }).mockResolvedValue({ ok: true });
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
     expect(html).toContain("확인이 필요합니다");
     expect(html).not.toContain("리포트 공유하기");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId, expectedSnapshot: { ...snapshot, evidencePacket: undefined } }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
   });
 
   it.each(["FAILED_REQUIRES_ATTENTION", "QUEUED", "GENERATING", "RETRYING", "EXPIRED"])("never shares or renders retained forensic content in %s", async status => {
@@ -146,14 +147,14 @@ describe("post-payment canonical route, mock transport only", () => {
     expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
   });
 
-  it("hides invalid content and internal errors when quarantine storage is unavailable", async () => {
+  it("hides invalid content and internal errors without any storage write", async () => {
     mocks.call.mockResolvedValueOnce({ ok: true, status: "COMPLETED", snapshot: null })
       .mockResolvedValueOnce({ ok: false, code: "DURABLE_STORAGE_FAILED" });
     const html = renderToStaticMarkup(await ReportResultPage({ params: Promise.resolve({ reportId }) }));
     expect(html).toContain("추가 결제는 필요하지 않습니다");
     expect(html).not.toContain("리포트 공유하기");
     expect(html).not.toContain("DURABLE_STORAGE_FAILED");
-    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }], ["quarantine", { reportId, expectedSnapshot: null }]]);
+    expect(mocks.call.mock.calls).toEqual([["read_report", { reportId }]]);
   });
 
   it("redirects successful confirmation immediately without rendering provider data", async () => {
@@ -197,23 +198,46 @@ describe("status refresh lifecycle", () => {
     expect(mocks.confirm).not.toHaveBeenCalled();
   });
 
-  it("stops scheduling at attention, expiry, completion/unmount and in-flight refresh", () => {
+  it("stops scheduling at attention, expiry and completion/unmount", () => {
     vi.useFakeTimers();
     renderToStaticMarkup(<ReportGenerationStatus attention />);
     mocks.effects[0]();
-    expect(vi.getTimerCount()).toBe(0);
-    mocks.effects = []; mocks.refreshing = true;
-    renderToStaticMarkup(<ReportGenerationStatus />); mocks.effects[0]();
     expect(vi.getTimerCount()).toBe(0);
     mocks.effects = [];
     renderToStaticMarkup(<ReportStatusView state="expired" />);
     expect(mocks.effects).toHaveLength(0);
   });
 
-  it("uses reduced motion, visible focus and existing paper press without fake progress", () => {
+  // 고정 화면 버그(Q2): 끝나지 않는 refresh가 타이머를 영영 없애던 동작을 고쳤다. 진행 중에도 타이머는 하나 유지되고,
+  // 30초 안에는 중복 요청하지 않으며, 그 뒤에는 멈춘 것으로 보고 다시 요청한다.
+  it("keeps one poller during an in-flight refresh and re-requests only after it is stuck", () => {
+    vi.useFakeTimers();
+    vi.stubGlobal("document", { visibilityState: "visible" });
+    mocks.effects = []; mocks.refreshing = true;
+    renderToStaticMarkup(<ReportGenerationStatus />);
+    const cleanup = mocks.effects[0]();
+    expect(vi.getTimerCount()).toBe(1);
+    vi.advanceTimersByTime(10000); expect(mocks.refresh).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(20000); expect(mocks.refresh).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(10000); expect(mocks.refresh).toHaveBeenCalledTimes(2);
+    cleanup?.(); expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it("shows the five publication stages without percentages, and a storage outage keeps retrying", () => {
+    const html = renderToStaticMarkup(<ReportStatusView state="preparing" stage={2} />);
+    for (const label of ["원국 분석", "성향 연결", "책 집필", "검수", "제본"]) expect(html).toContain(label);
+    expect(html).toContain('aria-current="step"');
+    expect(html).not.toMatch(/\d+%/u);
+    mocks.effects = [];
+    const retry = renderToStaticMarkup(<ReportGenerationStatus retry />);
+    expect(retry).toContain("자동으로 다시 확인");
+    expect(retry).toContain('href="tel:050-6664-8562"');
+  });
+
+  it("keeps the book-making motion moving (also under reduced motion), visible focus and existing paper press without fake progress", () => {
     const css = readFileSync("src/components/report/reportStatus.module.css", "utf8");
-    expect(css).toContain("prefers-reduced-motion: reduce");
-    expect(css).toContain("animation: none; transform: none");
+    expect(css).not.toContain("prefers-reduced-motion");
+    expect(readFileSync("src/components/report/BookPublishingVisual.tsx", "utf8")).not.toContain("matchMedia");
     expect(css).toContain(":focus-visible");
     const html = renderToStaticMarkup(<ReportStatusView state="preparing" />);
     expect(html).toContain('aria-hidden="true"');

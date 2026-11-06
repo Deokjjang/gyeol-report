@@ -57,7 +57,7 @@
     ],
     "expectedRecordHash": "2c41ca876dd134946b7f3507a41c22753707d8384e456dbaa9ceeb3d4de6bf96",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "65997032e9eb3e8034579fe57d86808c572772a38ad0de48e4728809dfef1c5b",
+    "expectedSourceFileHash": "ddd4c4a0412caca935ab3fc3efeccb00a5db0b8f5c335bbabfb6081ab7cacc69",
     "expectedInputHash": "fc17b4b2b0e144c1f91d095810968743238a00750a919e9fa53c64ec925bac17",
     "expectedCalculationHash": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
     "expectedBookHash": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
@@ -120,9 +120,9 @@
         "meaning": "의존·감사 추론 차단"
       }
     ],
-    "expectedRecordHash": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "expectedRecordHash": "23a39d8cc2cab02b7d7210b61640b4ee2f28edfaa2bf658a9dfe7aa511e1d60c",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6",
+    "expectedSourceFileHash": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd",
     "expectedInputHash": "fc17b4b2b0e144c1f91d095810968743238a00750a919e9fa53c64ec925bac17",
     "expectedCalculationHash": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
     "expectedBookHash": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
@@ -182,9 +182,9 @@
         "meaning": "미공개 기대·계약 구분"
       }
     ],
-    "expectedRecordHash": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "expectedRecordHash": "5327cab758c8809a339f36dff7b92d1e28f5a0407b17483cff972ca46fda948e",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321",
+    "expectedSourceFileHash": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c",
     "expectedInputHash": "fc17b4b2b0e144c1f91d095810968743238a00750a919e9fa53c64ec925bac17",
     "expectedCalculationHash": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
     "expectedBookHash": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
@@ -243,9 +243,9 @@
         "meaning": "역할·동의의 적용 한계"
       }
     ],
-    "expectedRecordHash": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "expectedRecordHash": "a57e01d8e5c520441d972703629a24f5928c8ccb1390818682c6f2ce216ed00d",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "0af6d347e9607d08ca3a806878db5da989415ceb40fdde81d9ce44c20d4d9dd4",
+    "expectedSourceFileHash": "7b5931870ee2b50b33bcee2b6ecd0dc1b67d3e34f263f4143926da8c80bb4710",
     "expectedInputHash": "fc17b4b2b0e144c1f91d095810968743238a00750a919e9fa53c64ec925bac17",
     "expectedCalculationHash": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
     "expectedBookHash": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
@@ -309,7 +309,7 @@
     ],
     "expectedRecordHash": "2c41ca876dd134946b7f3507a41c22753707d8384e456dbaa9ceeb3d4de6bf96",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "65997032e9eb3e8034579fe57d86808c572772a38ad0de48e4728809dfef1c5b",
+    "expectedSourceFileHash": "ddd4c4a0412caca935ab3fc3efeccb00a5db0b8f5c335bbabfb6081ab7cacc69",
     "expectedInputHash": "ee56f4ed124d7e74bdf95786d90e13a8c77455a8d41155b70af90f33062cfc42",
     "expectedCalculationHash": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
     "expectedBookHash": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
@@ -373,7 +373,7 @@
     ],
     "expectedRecordHash": "3f6132c94c1f8b8d2b2fd77b2563ad002c114a884da97f071db10d66960a3f73",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "6b50f7a283b6f24d47dac5dca3c8807e1cb8da42c53f31954d4da3a92a79f7e6",
+    "expectedSourceFileHash": "8d12b77a3db279c9a9d71839705c08be7e27e2757a01183b6825ad49b97089cd",
     "expectedInputHash": "ee56f4ed124d7e74bdf95786d90e13a8c77455a8d41155b70af90f33062cfc42",
     "expectedCalculationHash": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
     "expectedBookHash": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
@@ -433,7 +433,7 @@
     ],
     "expectedRecordHash": "0bb67d1bb71c90842a6a4a0015c763312029708c03de7d9b3eca82ba562dc09a",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "94503cd1f6064b17f3dbcaa1c3e40f255aa01762bbb81071d10100ff8e5c2321",
+    "expectedSourceFileHash": "a492ae7c0b0dd30146238d0717979f53939759201d3db7748c0d03df93e6026c",
     "expectedInputHash": "ee56f4ed124d7e74bdf95786d90e13a8c77455a8d41155b70af90f33062cfc42",
     "expectedCalculationHash": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
     "expectedBookHash": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
@@ -493,7 +493,7 @@
     ],
     "expectedRecordHash": "2d66d7b4baeb916db336a8630c11b97a57c54b51ccf67f2cc749aae377e1a8e5",
     "expectedSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
-    "expectedSourceFileHash": "146a4a684281cb220563662c33618678cac8bac901170664d82761d0161f4a77",
+    "expectedSourceFileHash": "814c5d3293f7b464b8864f0297f386b6b7ba61007e90352e15622dffba61d5f7",
     "expectedInputHash": "ee56f4ed124d7e74bdf95786d90e13a8c77455a8d41155b70af90f33062cfc42",
     "expectedCalculationHash": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
     "expectedBookHash": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
