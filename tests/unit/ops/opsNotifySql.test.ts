@@ -1,48 +1,24 @@
 // 운영 Q(PGlite): 알림 대기표·트리거 5종(결제·환불 경로별·문의·미발행)·재전송·10회 실패·문의 접수 규칙·두 번 결제 판정·열람 기록·카드 결과. 외부 호출 0.
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
-import { readFileSync } from "node:fs";
-import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { processRefunds } from "@/lib/ops/orders/refund";
-import type { RefundProvider } from "@/lib/payment/tossRefundClient";
-import { opsSql } from "../../helpers/opsSql";
-import { RAW_FULL } from "../../helpers/v5Scenarios";
+import { inputOf, opsNotifySql, refundProvider as provider, type Call } from "../../helpers/opsNotify";
 import { TICKET_A as A, TICKET_B as B } from "../../helpers/ticketPublicationSql";
 
-export const OPS_Q_MIGRATION = "supabase/migrations/20261107100000_v5_ops_notify.sql";
-type H = Awaited<ReturnType<typeof opsSql>>;
-type Call = { call(a: string, d?: Record<string, unknown>): Promise<Record<string, unknown>> };
+type H = Awaited<ReturnType<typeof opsNotifySql>>;
 let h: H, order: Call, recon: Call, notify: Call;
-const payload = (() => { const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date("2026-10-27T03:00:00.000Z") }); if (!n.ok) throw new Error("payload"); return n.value; })();
-const other = (() => { const n = normalizeReportInputPayload({ ...RAW_FULL, person: { ...RAW_FULL.person, name: "다른이" } }, { now: () => new Date("2026-10-27T03:00:00.000Z") }); if (!n.ok) throw new Error("payload"); return n.value; })();
-const asOwner = async <T>(f: () => Promise<T>) => { await h.db.exec("reset role"); try { return await f(); } finally { await h.db.exec("set role service_role"); } };
-const one = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows[0] as T);
-const all = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows as T[]);
-const exec = (sql: string, params: unknown[] = []) => asOwner(async () => { await h.db.query(sql, params); });
-const rpcOf = (fn: string): Call => ({ call: (a, d = {}) => h.rpc(fn, a, d) });
-const provider: RefundProvider = {
-  lookup: async i => ({ ok: true as const, payment: { paymentKey: i.paymentKey, orderId: i.providerOrderId, currency: "KRW" as const, totalAmount: i.originalAmount, balanceAmount: i.originalAmount, status: "DONE", method: "카드", isPartialCancelable: true, cancels: [] } }),
-  cancel: async i => ({ ok: true as const, payment: { paymentKey: i.paymentKey, orderId: i.providerOrderId, currency: "KRW" as const, totalAmount: i.originalAmount, balanceAmount: 0, status: "CANCELED", method: "카드", isPartialCancelable: true,
-    cancels: [{ transactionKey: "tx", cancelAmount: i.amount, cancelReason: i.cancelReason, cancelStatus: "DONE", canceledAt: new Date().toISOString() }] } }),
-};
-const audit = async (e: { actor: "admin" | "system"; action: string; target: string; detail?: Record<string, unknown> }) => { await exec("insert into ops_audit_log(actor,action,target,detail) values($1,$2,$3,$4::jsonb)", [e.actor, e.action, e.target, JSON.stringify(e.detail ?? {})]); return true; };
-/** 결제 완료 주문 1건(회원). 입력 기록(report_input_snapshots)도 운영과 같은 모양으로 둔다. */
-async function pay(id: string, user: string | null, input: unknown = payload, amount = 3900) {
-  await h.paid.call("create_order", { paymentOrderId: id, providerOrderId: id, productType: "saju_mbti_full", provider: "toss", amount, inputSnapshot: { reportInputPayload: input } });
-  await order.call("attach", { paymentOrderId: id, ...(user ? { userId: user } : {}), name: "회원", email: `${id}@example.com` });
-  await exec("insert into report_input_snapshots(order_id,payload_json,expires_at) values($1,$2::jsonb,now()+interval '30 days') on conflict (order_id) do update set payload_json=excluded.payload_json",
-    [id, JSON.stringify({ reportInputPayload: input })]);
-  const claim = await h.paid.call("confirm_claim", { orderId: id, paymentKey: `k-${id}`, amount });
-  const done = await h.paid.call("confirm_finish", { orderId: id, paymentKey: `k-${id}`, token: claim.token });
-  if (done.ok !== true) throw new Error(`confirm_finish ${JSON.stringify(done)}`);
-}
+const other = inputOf("다른이");
+const one = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => h.one<T>(sql, params);
+const all = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => h.all<T>(sql, params);
+const exec = (sql: string, params: unknown[] = []) => h.exec(sql, params);
+const audit = (e: Parameters<H["audit"]>[0]) => h.audit(e);
+const pay = (id: string, user: string | null, input: unknown = inputOf(), amount = 3900) => h.pay(id, user, input, amount);
 const rows = (kind?: string) => all<{ id: number; kind: string; bot: string; dedupe_key: string; payload: Record<string, unknown> }>(
   `select id,kind,bot,dedupe_key,payload from ops_notifications ${kind ? "where kind=$1" : ""} order by id`, kind ? [kind] : []);
 
 beforeAll(async () => {
-  h = await opsSql();
-  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); });
-  order = rpcOf("ops_order"); recon = rpcOf("ops_recon"); notify = rpcOf("ops_notify");
+  h = await opsNotifySql();
+  order = h.order; recon = h.recon; notify = h.notify;
 }, 120_000);
 afterAll(async () => { await h?.db.close(); });
 
@@ -156,7 +132,7 @@ describe("문의 접수(서재)", () => {
   });
   it("계정당 하루 3건까지", async () => {
     for (const id of ["po-q-11", "po-q-12"]) {
-      await pay(id, B, { ...other, person: { ...(other as { person: Record<string, unknown> }).person, name: id } });
+      await pay(id, B, inputOf(id));
       await exec("update payment_orders set paid_at=now()-interval '2 hours' where payment_order_id=$1", [id]);
     }
     expect((await notify.call("submit", { userId: B, paymentOrderId: "po-q-11", reason: "not_open" })).ok).toBe(true);
