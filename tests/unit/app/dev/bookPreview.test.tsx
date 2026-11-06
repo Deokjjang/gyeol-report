@@ -205,7 +205,7 @@ describe("book preview: development-only presentation", () => {
     const normalize = (html: string) => html.replace(/<[^>]*>/g, "").replace(/\s+/g, "");
     const old = renderToStaticMarkup(<PublicPage />).split('<nav')[0];
     const content = normalize(renderToStaticMarkup(<LegalDocument index={index} />));
-    // 운영 Q(2026-11-07.1)에서 책 화면만 일부러 뺀 것: 환불정책 설명 한 줄·「문의 방법」 절(맨 위 3줄로 대신), 개인정보처리방침 끝 「개인정보 문의처」(고객센터 전화·이메일).
+    // 운영 Q(2026-11-07)에서 책 화면만 일부러 뺀 것: 환불정책 설명 한 줄·「문의 방법」 절(맨 위 3줄로 대신), 개인정보처리방침 끝 「개인정보 문의처」(고객센터 전화·이메일).
     const dropped = new Set(["디지털리포트의취소,환불및재제공기준입니다.", "문의방법", normalize(refundPolicySupportRequestGuidanceKo), "개인정보문의처",
       normalize(`고객센터 ${GYEOL_BUSINESS_INFO.customerServicePhone}${GYEOL_BUSINESS_INFO.supportContactEmail}`)]);
     for (const match of old.matchAll(/<(?:p|li|td|th|dt|dd|h2|caption)\b[^>]*>([\s\S]*?)<\/(?:p|li|td|th|dt|dd|h2|caption)>/g)) {

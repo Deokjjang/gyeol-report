@@ -1,7 +1,7 @@
 import "server-only";
 import { NextRequest, NextResponse } from "next/server";
 import type { AccountPort } from "../account/handler";
-import { accountSession, mayReadOwnedBooks } from "../account/policy";
+import { mayReadOwnedBooks } from "../account/policy";
 import { isPublicSameOrigin } from "../account/origin";
 import { claimCookieName, claimHash, type LibraryPort } from "../library/server";
 import { issuePublishedReportShare, loadSharedReport, validShareReportId, sharePort, type ShareStorePort } from "../sharing/reportShareStore";
@@ -41,11 +41,12 @@ export async function loadSharedBookData(token: string, port?: ShareStorePort) {
   return book ? { data: book.data, share: shared.model, ...(book.edition ? { edition: book.edition } : {}) } : null;
 }
 // Read-only reuse of 9C purchase authority. A share credential never proves ownership.
-// readOnly(최종판3 1-7): 산 책 열람만 할 때는 예전 동의로도 소유를 확인한다(공유 링크 발급은 현재 약관 동의 회원만).
-export async function mayShareBook(request: NextRequest, reportId: string, auth: AccountPort, library: LibraryPort, local: boolean, port?: ShareStorePort, readOnly = false) {
+// 산 책 열람(최종판3 1-7)과 공유 링크 발급(운영 Q 추가, 덕짱님 결정 2026-11-07)은 같은 조건: 로그인한 책 주인 + 가입 동의 완료(문서 버전 무관).
+// 문서 동의 버전이 올라가 재동의가 필요한 회원도 자기 책을 공유한다. 결제·이용권 사용의 재동의(accountSession)는 그대로.
+export async function mayShareBook(request: NextRequest, reportId: string, auth: AccountPort, library: LibraryPort, local: boolean, port?: ShareStorePort) {
   const user = await auth.currentUser(), account = user ? await auth.read(user) : undefined;
   if (account === null) return false;
-  const member = user && (readOnly ? mayReadOwnedBooks(user, account) : accountSession(user, account).status === "member") ? user : null;
+  const member = user && mayReadOwnedBooks(user, account) ? user : null;
   if(member&&port?.owned&&await port.owned(reportId,member.id))return true;
   const order = await library.orderForReport(reportId);
   const secret = order ? request.cookies.get(claimCookieName(order, local))?.value : undefined;
@@ -55,8 +56,14 @@ export async function mayShareBook(request: NextRequest, reportId: string, auth:
 }
 // 책 주인에게만, 같은 책은 같은 링크(report_share_links report_id 하나). 추천(referral) 초대 토큰은 붙이지 않는다 —
 // 친구 보너스는 삭제됐고(P 추가 C), 공유는 추천 저장소가 실패해도 끊기지 않아야 한다(hotfix-share).
-export async function prepareBookShare(request: NextRequest, auth: AccountPort, library: LibraryPort, port: ShareStorePort = sharePort(), local = false) {
-  const json = (body: object, status: number) => auth.finish(NextResponse.json(body, { status, headers: BOOK_SHARE_HEADERS }));
+/** 공유 API가 4xx·5xx를 낼 때 부른다(운영 Q 추가 경보 — 상태 코드와 책 id만 넘기고, 책 id는 버전을 읽는 데만 쓴다). */
+export type ShareFailureAlarm = (status: number, reportId: string | null) => void;
+export async function prepareBookShare(request: NextRequest, auth: AccountPort, library: LibraryPort, port: ShareStorePort = sharePort(), local = false, alarm?: ShareFailureAlarm) {
+  let reportId: string | null = null;
+  const json = (body: object, status: number) => {
+    if (status >= 400) { try { alarm?.(status, reportId); } catch { /* 경보 실패가 응답을 바꾸지 않는다 */ } }
+    return auth.finish(NextResponse.json(body, { status, headers: BOOK_SHARE_HEADERS }));
+  };
   const url = new URL(request.url); if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
   if (request.method !== "POST") return json({}, 405);
   if (!(local ? request.headers.get("origin") === url.origin : isPublicSameOrigin(request))) return json({}, 403);
@@ -65,6 +72,7 @@ export async function prepareBookShare(request: NextRequest, auth: AccountPort, 
     const raw = await request.text(); if (raw.length > 1024) return json({}, 413);
     const body = JSON.parse(raw);
     if (!body || typeof body !== "object" || Array.isArray(body) || Object.keys(body).some(k => k !== "reportId") || !validShareReportId(body.reportId)) return json({}, 400);
+    reportId = body.reportId;
     if (!await mayShareBook(request, body.reportId, auth, library, local, port)) return json({}, 403);
     const result = await issuePublishedReportShare(body.reportId, validateShareableBook, port);
     if (!result.ok) return json({}, 404);

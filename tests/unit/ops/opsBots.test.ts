@@ -125,6 +125,15 @@ describe("매출 봇: 결제·환불 알림", () => {
     await flushNotifications(deps);
     expect(tg.sent("sales").at(-1)!.text).toContain("재구매");
   });
+  it("공유 실패 경보 → 처리 봇 「🚨 공유 실패 N건」(상태 코드·책 버전, 버튼 없음, 보내면 바로 닫힘)", async () => {
+    await h.exec("insert into ops_notifications(kind,bot,dedupe_key,payload) values('share_failed','ops','sharefail:test',$1::jsonb)",
+      [JSON.stringify({ count: 3, windowMinutes: 10, keys: ["404:v5", "503:unknown"], causes: [{ status: 404, version: "v5", count: 2 }, { status: 503, version: "unknown", count: 1 }] })]);
+    expect((await flushNotifications(deps)).failed).toBe(0);
+    const sent = tg.calls.filter(c => c.method === "sendMessage" && String(c.body.text).includes("공유 실패")).at(-1)!;
+    expect(sent.body.text).toBe("🚨 <b>공유 실패 3건</b> · 최근 10분\n404 · v5 · 2건\n503 · 버전 모름 · 1건");
+    expect(sent.body.reply_markup).toBeUndefined();
+    expect(await h.one("select sent_at is not null s, closed_at is not null c from ops_notifications where dedupe_key='sharefail:test'")).toEqual({ s: true, c: true });
+  });
   it("토큰·덕짱님 id가 없으면 보내지 않고 대기표에 남긴다", async () => {
     const r = await flushNotifications({ ...deps, tg: { ...tg, ownerId: null, configured: () => false } });
     expect(r.skipped).toBe("TELEGRAM_UNSET");
