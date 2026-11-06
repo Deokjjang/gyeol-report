@@ -8,17 +8,28 @@ import { issuePublishedReportShare, loadSharedReport, validShareReportId, shareP
 import type { ReportGenerationInput } from "../report-generation/reportInputAdapter";
 import { validateBookPublication, storedBook } from "./storedReport";
 import { projectBookShare } from "./shareModel";
-import type { ReferralStore } from "../referrals/service";
+import type { V5BookDraft, V5Evidence } from "../writer/book";
 
 export const BOOK_SHARE_HEADERS = { "Cache-Control": "private, no-store, max-age=0", "Referrer-Policy": "no-referrer", "X-Robots-Tag": "noindex, nofollow, noarchive", "Vary": "Cookie" };
+/** 공유 링크로 여는 책: V4 Book과 v5(작가 원고) Book. 그 밖의 저장본(V3 등)은 책 공유가 아니다. */
+export const isShareableBookVersion = (version: unknown): version is "v4" | "v5" => version === "v4" || version === "v5";
+// hotfix-share: 예전에는 "v4"만 받아 v5 책(2026-11-06 출시)의 링크 발급이 V4_REQUIRED → 404로 막혔다.
+const validateShareableBook: typeof validateBookPublication = (product, draft, evidence) =>
+  typeof draft === "object" && draft !== null && "productVersion" in draft && isShareableBookVersion(draft.productVersion)
+    ? validateBookPublication(product, draft, evidence) : { ok: false, errors: ["BOOK_VERSION_REQUIRED"] };
 export async function loadBookShare(token: string, port?: ShareStorePort) {
   const shared = await loadSharedReport(token, validateBookPublication, port);
-  if (!shared || shared.snapshot.productVersion !== "v4") return null;
+  if (!shared || !isShareableBookVersion(shared.snapshot.productVersion)) return null;
   // The stored-version validator above already verified the complete sealed packet.
-  const { input } = shared.snapshot.evidencePacket as { input: ReportGenerationInput };
-  // Compatibility external preview follows the existing A-only name policy.
-  const names = input.kind === "compatibility" ? input.personA.name : input.person.name;
-  const selectedYear = input.productOptions.selectedYear;
+  // Compatibility external preview follows the existing A-only name policy(v5도 열람 화면 storedBook과 같은 첫 사람·제목 연도).
+  let names: string, selectedYear: string | undefined;
+  if (shared.snapshot.productVersion === "v5") {
+    const e = shared.snapshot.evidencePacket as V5Evidence, d = shared.snapshot.draft as unknown as V5BookDraft;
+    names = e.people[0]?.name ?? e.names; selectedYear = d.title.match(/\d{4}/)?.[0];
+  } else {
+    const { input } = shared.snapshot.evidencePacket as { input: ReportGenerationInput };
+    names = input.kind === "compatibility" ? input.personA.name : input.person.name; selectedYear = input.productOptions.selectedYear;
+  }
   const model = projectBookShare({ productType: shared.snapshot.productType, names, selectedYear,
     shareUrl: shared.share.url, publishedAt: shared.snapshot.createdAtIso, expiresAt: shared.expiresAt });
   return model?.isShareable ? { snapshot: shared.snapshot, model } : null;
@@ -42,7 +53,9 @@ export async function mayShareBook(request: NextRequest, reportId: string, auth:
   const state = await library.claim(reportId, member?.id ?? null, hash, false);
   return state === "owned" || state === "claimable";
 }
-export async function prepareBookShare(request: NextRequest, auth: AccountPort, library: LibraryPort, port: ShareStorePort = sharePort(), local = false, referrals?: ReferralStore) {
+// 책 주인에게만, 같은 책은 같은 링크(report_share_links report_id 하나). 추천(referral) 초대 토큰은 붙이지 않는다 —
+// 친구 보너스는 삭제됐고(P 추가 C), 공유는 추천 저장소가 실패해도 끊기지 않아야 한다(hotfix-share).
+export async function prepareBookShare(request: NextRequest, auth: AccountPort, library: LibraryPort, port: ShareStorePort = sharePort(), local = false) {
   const json = (body: object, status: number) => auth.finish(NextResponse.json(body, { status, headers: BOOK_SHARE_HEADERS }));
   const url = new URL(request.url); if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
   if (request.method !== "POST") return json({}, 405);
@@ -53,12 +66,10 @@ export async function prepareBookShare(request: NextRequest, auth: AccountPort, 
     const body = JSON.parse(raw);
     if (!body || typeof body !== "object" || Array.isArray(body) || Object.keys(body).some(k => k !== "reportId") || !validShareReportId(body.reportId)) return json({}, 400);
     if (!await mayShareBook(request, body.reportId, auth, library, local, port)) return json({}, 403);
-    const result = await issuePublishedReportShare(body.reportId, (p, d, e) =>
-      typeof d === "object" && d !== null && "productVersion" in d && d.productVersion === "v4" ? validateBookPublication(p, d, e) : { ok: false, errors: ["V4_REQUIRED"] }, port);
+    const result = await issuePublishedReportShare(body.reportId, validateShareableBook, port);
     if (!result.ok) return json({}, 404);
     const token = new URL(result.data.url).pathname.slice(3), shared = await loadBookShare(token, port);
     if (!shared || !await mayShareBook(request, body.reportId, auth, library, local, port)) return json({}, 403);
-    const model = referrals ? await (await import("../referrals/service")).attachReferral(shared.model, body.reportId, shared.snapshot, auth, referrals) : shared.model;
-    return json({ model }, 200);
+    return json({ model: shared.model }, 200);
   } catch { return json({ error: "공유 링크를 준비하지 못했습니다. 다시 시도해 주세요." }, 503); }
 }

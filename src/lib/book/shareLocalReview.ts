@@ -61,7 +61,8 @@ export async function readOwnedLocalShareBook(request: NextRequest, reportId: st
 }
 // Explicit developer fixture only. Normal ready → bound purchase → mock confirm → paid worker.
 // No coupons, grants, tickets or referrals are issued here.
-export async function createLocalShareFixture(request: NextRequest, payload: unknown) {
+// version "v5"(hotfix-share 브라우저 검수): 같은 결제 경로로 v5 Book을 발행한다. 작가 모델 없이 결정론 원고(외부 호출 0).
+export async function createLocalShareFixture(request: NextRequest, payload: unknown, version: "v4" | "v5" = "v4") {
   const db = await localBookShareDatabase(), auth = createLocalAccountPort(request);
   if (!db || !auth || !validateLocalBookInput(payload).ok || (await db.query("select 1 from payment_orders limit 30")).rows.length >= 30) return NextResponse.json({}, { status: 400 });
   const input = payload as { productKey: string; productOptions?: { selectedYear?: string } }, id = `share-review-${randomUUID()}`, port = sqlBookSharePort(db), amount = getReportProduct(input.productKey)?.amount ?? REPORT_PRICE_KRW;
@@ -76,7 +77,12 @@ export async function createLocalShareFixture(request: NextRequest, payload: unk
   const { localReferralStore } = await import("../referrals/localReview");
   const { withReferralPublication } = await import("../referrals/service");
   const referrals = await localReferralStore();
-  await runLocalBookJob(referrals ? withReferralPublication({ call: port.read }, referrals) : { call: port.read });
+  const jobStore = referrals ? withReferralPublication({ call: port.read }, referrals) : { call: port.read };
+  if (version === "v5") {
+    const [{ runPaidReportJob }, { buildV5Snapshot }, { WRITER_DISABLED_RUNTIME }] = await Promise.all([import("../payment/paidReportReliability"), import("../writer/publish"), import("../report-generation/writerDisabled")]);
+    await runPaidReportJob(jobStore, WRITER_DISABLED_RUNTIME, undefined, undefined, async job => ({ snapshot: (await buildV5Snapshot({ payload: job.payload as never, reportId: job.report_id, policyAt: new Date(job.created_at).toISOString(),
+      sink: { save: async () => true, load: async () => [] }, recover: false, deps: { provider: "openai", model: "", people: async () => [] } })).snapshot as unknown as Record<string, unknown> }));
+  } else await runLocalBookJob(jobStore);
   const published = await loadShareablePublication(paid.reportId, validateBookPublication, port);
   if (!published) return NextResponse.json({ error: "LOCAL_PUBLICATION_FAILED" }, { status: 503 });
   const result = NextResponse.json({ reportId: paid.reportId, reportUrl: `/dev/book-flow/report/${paid.reportId}` }, { headers: BOOK_SHARE_HEADERS });

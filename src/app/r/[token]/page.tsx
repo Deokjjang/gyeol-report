@@ -350,8 +350,10 @@ export default async function PaidShareReportPage({
     const validator = bookExperiencePublicEnabled() ? (await import("../../../lib/book/storedReport")).validateBookPublication : undefined;
     const shared = await loadSharedReport(token, validator);
     if (!shared) return await sharedReportExpired(token) ? <ReportStatusView state="expired" /> : renderUnavailableState();
-    if (bookExperiencePublicEnabled() && shared.snapshot.productVersion === "v4") {
-      const book = await (await import("../../../lib/book/shareServer")).loadBookShare(token);
+    // V4·v5 Book은 로그인 없이 표지 → 책 펼치기(book-data)로 연다. 예전에는 v4만 여기로 와서 v5 링크가 구매자 확인 화면으로 갔다(hotfix-share).
+    const { isShareableBookVersion, loadBookShare } = await import("../../../lib/book/shareServer");
+    if (bookExperiencePublicEnabled() && isShareableBookVersion(shared.snapshot.productVersion)) {
+      const book = await loadBookShare(token);
       const { SharedBookEntry } = await import("../../../components/book/SharedBookEntry");
       if (!book) return renderUnavailableState();
       const ref = (await searchParams)?.ref;
@@ -362,7 +364,8 @@ export default async function PaidShareReportPage({
         const { createReferralStore } = await import("../../../lib/referrals/supabase");
         const { referralPresentation } = await import("../../../lib/referrals/service");
         const auth = createAccountPort(new NextRequest("https://gyeolreport.com/r",{headers:await headers()}));
-        if (auth) return <SharedBookEntry model={await referralPresentation(book.model,ref,auth,createReferralStore())} />;
+        // 예전 초대 링크(?ref=)도 책은 열린다: 추천 확인이 실패하면 초대 표시 없이 같은 책(hotfix-share).
+        if (auth) return <SharedBookEntry model={await referralPresentation(book.model,ref,auth,createReferralStore()).catch(() => book.model)} />;
       }
       return <SharedBookEntry model={book.model} />;
     }

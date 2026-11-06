@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   const { createAccountPort } = await import("../../../lib/account/supabase");
   const { createLibraryPort } = await import("../../../lib/library/supabase");
   const { prepareBookShare } = await import("../../../lib/book/shareServer");
-  const { createReferralStore } = await import("../../../lib/referrals/supabase");
   const auth = createAccountPort(request);
-  return auth ? prepareBookShare(request, auth, createLibraryPort(), undefined, false, createReferralStore()) : new Response(null, { status: 503 });
+  // hotfix-share: 추천(referral) 저장소를 넘기지 않는다 — 공유 링크는 책 주인 확인 + report_share_links만으로 만든다.
+  return auth ? prepareBookShare(request, auth, createLibraryPort()) : new Response(null, { status: 503 });
 }
