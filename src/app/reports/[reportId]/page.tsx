@@ -365,7 +365,7 @@ function renderUnavailableState() {
     <ReportStatusView
       state="unavailable"
       title="리포트 상태를 확인하지 못했습니다"
-      message="잠시 후 이 주소에서 다시 확인해 주세요. 계속 확인이 어려우시면 고객센터로 문의해 주세요."
+      message="잠시 후 이 주소에서 다시 확인해 주세요."
       support
     />
   );

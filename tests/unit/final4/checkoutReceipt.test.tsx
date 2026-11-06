@@ -1,6 +1,7 @@
 /**
  * 최종 A 16 → 배포 명령 0-3: 발행 주문서 — 3,900원(가격 표), 이벤트 기간만 1+1 줄, 환불 칸 하나 「주문 내용과 환불정책을 확인하고 동의해요」,
- * 맨 아래 작은 회색 두 줄(환불 · 예시 보기 / AI 작성), 동의 기록에 화면 판·문구·체크 시각.
+ * 맨 아래 작은 회색 두 줄(환불 / AI 작성), 동의 기록에 화면 판·문구·체크 시각.
+ * 운영 Q: 「예시 보기」는 동의 칸 바로 옆 링크 둘(환불정책 · 예시 리포트 보기)로 옮겼고, 「이 책의 차례」(접힘)를 보인다.
  */
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -22,6 +23,8 @@ import type { ReportInputPayload } from "../../../src/lib/report-generation/repo
 import { AI_WRITTEN_RECEIPT_LINE_KO, RECEIPT_REFUND_LINE_KO, RECEIPT_TICKET_REFUND_LINE_KO } from "../../../src/lib/legal/aiNotice";
 import { CHECKOUT_CONSENT_UI_VERSION, CHECKOUT_CONSENT_UI_VERSION_V1, consentLayoutMatchesBuyer, createCheckoutConsentAssertion, createCheckoutConsentEvidence, ORDER_REFUND_CONSENT_TEXT } from "../../../src/lib/payment/checkoutConsent";
 import { RECEIPT_CONSENTS } from "../../../src/app/dev/book-preview/model";
+import { BOOK_CHAPTER_TITLES } from "../../../src/lib/book/product";
+import { CONSENT_LINK_LABELS } from "../../../src/lib/legal/socialLinks";
 import { isDevTossCheckoutLegalConfirmationComplete, emptyDevTossCheckoutLegalConfirmations } from "../../../src/components/payment/DevTossCheckoutLauncher";
 
 const payload = RUNTIME_FIXTURES[0].payload as ReportInputPayload;
@@ -76,16 +79,48 @@ describe("발행 주문서 (최종 A 16)", () => {
     // 예전 화면(환불정책 칸 따로 없음)은 policyAgreement가 덮는다.
     expect(isDevTossCheckoutLegalConfirmationComplete(snap, { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, policyAgreement: true, age14OrOlder: true, minorLegalRepresentative: false }, at)).toBe(true);
   });
-  it("맨 아래 작은 회색 두 줄(굵은 글씨 없음), 예시 보기는 /example 텍스트 링크", () => {
+  it("맨 아래 작은 회색 두 줄(굵은 글씨 없음): 환불 한 줄 / AI 작성 — 예시 링크는 동의 칸 옆으로 옮겨 여기엔 없다(운영 Q)", () => {
     const html = render();
     expect(html).not.toMatch(/<b>[^<]*환불/);
-    const tail = html.slice(html.indexOf("결제하기"));
-    expect(text(tail)).toContain(`${RECEIPT_REFUND_LINE_KO} · 예시 보기`);
+    const tail = html.slice(html.indexOf("data-refund-notice"));
+    expect(text(tail)).toContain(RECEIPT_REFUND_LINE_KO);
+    expect(text(tail)).not.toContain("예시 보기");
     expect(text(tail)).toContain(AI_WRITTEN_RECEIPT_LINE_KO);
     expect(RECEIPT_REFUND_LINE_KO).toBe("결제하면 바로 생성이 시작돼 단순 변심 환불은 되지 않아요");
     expect(AI_WRITTEN_RECEIPT_LINE_KO).toBe("명리 계산과 MBTI 자료를 바탕으로 AI가 작성해요");
-    expect(tail).toMatch(/<a href="\/example"[^>]*>예시 보기<\/a>/);
+    expect(tail).not.toContain('href="/example"');
     hooks.slots = []; expect(render({ v5Book: false })).not.toContain(AI_WRITTEN_RECEIPT_LINE_KO);
+  });
+  it("운영 Q ④: 동의 문구는 그대로, 바로 옆에 「환불정책」(/refund)·「예시 리포트 보기」(/example) 링크 — 예시 링크는 주문서에 한 번만", () => {
+    expect(CONSENT_LINK_LABELS).toEqual({ refund: "환불정책", example: "예시 리포트 보기" });
+    state.session = { status: "member", profile: "complete" } as AccountSession;
+    for (const html of [render(), (hooks.slots = [], state.session = { status: "guest" }, render())]) {
+      const links = html.match(/<p[^>]*data-consent-links[^>]*>[\s\S]*?<\/p>/)![0];
+      expect(links).toMatch(/<a href="\/refund" target="_blank" rel="noopener"[^>]*>환불정책<\/a>/);
+      expect(links).toMatch(/<a href="\/example" target="_blank" rel="noopener"[^>]*>예시 리포트 보기<\/a>/);
+      expect(html.match(/href="\/example"/g)).toHaveLength(1);
+    }
+    // 회원 주문서: 동의 칸(fieldset) 바로 다음이 링크 줄이고, 동의 문구는 바뀌지 않았다.
+    hooks.slots = []; state.session = { status: "member", profile: "complete" } as AccountSession;
+    const member = render();
+    expect(text(member)).toContain(`[필수] ${ORDER_REFUND_CONSENT_TEXT}`);
+    expect(member.indexOf("data-consent-links")).toBeGreaterThan(member.lastIndexOf("</fieldset>"));
+    expect(member.slice(member.lastIndexOf("</fieldset>"), member.indexOf("data-consent-links"))).toMatch(/^<\/fieldset><p[^>]*$/);
+  });
+  it("운영 Q 9부: 「이 책의 차례 · N장」(접힘) — 판매 중인 4종 모두, 궁합은 A·B가 누구인지", () => {
+    for (const fixture of RUNTIME_FIXTURES.slice(0, 4)) {
+      hooks.slots = [];
+      const p = fixture.payload as ReportInputPayload, titles = BOOK_CHAPTER_TITLES[p.productKey]!;
+      const html = render({ payload: p }), block = html.match(/<details[^>]*data-book-chapters[^>]*>[\s\S]*?<\/details>/)![0];
+      expect(block).not.toMatch(/<details[^>]*open/);
+      expect(text(block)).toContain(`이 책의 차례 · ${titles.length}장`);
+      expect(block.match(/<li>/g)).toHaveLength(titles.length);
+      for (const title of titles) expect(block).toContain(`<li>${title}</li>`);
+      if (p.productKey === "saju_mbti_compatibility") expect(text(block)).toContain(`A: ${p.personA.name} · B: ${p.personB.name}`);
+      else expect(text(block)).not.toContain("A: ");
+    }
+    // 판매하지 않는 대운·세운은 목록이 없다(상수에 없음).
+    hooks.slots = []; expect(render({ payload: RUNTIME_FIXTURES[4].payload })).not.toContain("data-book-chapters");
   });
   it("이용권 결제 줄은 환불 대신 재생성 안내", () => {
     state.session = { status: "member", profile: "complete" } as AccountSession; state.pending = true;

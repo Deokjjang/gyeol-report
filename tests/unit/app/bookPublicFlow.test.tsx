@@ -167,7 +167,8 @@ describe("presentation contracts", () => {
   });
   it("footer contact values preserved, primary support is Kakao, business collapsed", () => {
     const html = renderToStaticMarkup(<BookFooter />);
-    expect(html).toContain("고객 문의는 카카오톡 채널 채팅으로 받고 있습니다."); expect(html).toContain("http://pf.kakao.com/_sbHaX/chat"); expect(html).toContain("support@gyeolreport.com"); expect(html).not.toMatch(/mailto:|tel:|<details[^>]*open/);
+    // 운영 Q: 푸터 안내는 한 줄(내 서재·카카오톡 채널 채팅·전화 상담 없음).
+    expect(html).toContain("환불 신청과 책 문의는 내 서재에서 할 수 있어요. 상담원 문의는 카카오톡 채널 채팅으로 받고 있어요. 전화 상담은 제공하지 않아요."); expect(html).toContain("http://pf.kakao.com/_sbHaX/chat"); expect(html).toContain("support@gyeolreport.com"); expect(html).not.toMatch(/mailto:|tel:|<details[^>]*open/);
     expect(renderToStaticMarkup(<BookLegalPage index={0} />)).toContain("이용약관");
   });
 });

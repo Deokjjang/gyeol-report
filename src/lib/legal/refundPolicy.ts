@@ -1,4 +1,4 @@
-import { POLICY_EFFECTIVE_DATE_KO, POLICY_HISTORY } from "./policyVersions";
+import { POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "./policyVersions";
 
 export const refundPolicyStates = [
   "before_payment",
@@ -98,6 +98,7 @@ export const refundPolicyRequiredNotices = [
   "이용권으로 만든 리포트는 환불하지 않으며, 오류가 확인되면 다시 만들어 드리거나 이용권을 다시 드립니다.",
 ] as const;
 
+/** 예전 /refund 화면(bookExperiencePublicEnabled가 꺼졌을 때만, 지금은 화면에 안 나옴)만 쓴다. 책 화면의 환불정책은 맨 위 3줄(socialLinks REFUND_POLICY_TOP_LINES)로 대신한다(운영 Q, 2026-11-07.1). */
 export const refundPolicySupportRequestGuidanceKo =
   "환불 또는 재생성 요청 시 결제일시, 결제금액, 입력한 이름 또는 닉네임, 오류 내용을 함께 보내주세요. 이용권으로 만든 리포트는 리포트 주소를 함께 보내주세요.";
 
@@ -105,5 +106,5 @@ export const prePaymentRefundNoticeKo =
   "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성이 시작되면 디지털 콘텐츠 특성상 단순 변심 환불은 되지 않습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다. 이용권으로 만든 리포트는 환불 대신 다시 만들어 드리거나 이용권을 다시 드립니다.";
 
 /** 시행일·변경 이력(약관 「시행일」 절과 같은 모양). 환불정책 화면 두 곳(/refund 예전 화면, 책 화면의 정책 문서)이 그대로 그린다. */
-export const refundPolicyEffectiveDateKo = POLICY_EFFECTIVE_DATE_KO;
+export const refundPolicyEffectiveDateKo = POLICY_EFFECTIVE_DATES_KO.refund;
 export const refundPolicyHistoryLinesKo: readonly string[] = [`시행일: ${refundPolicyEffectiveDateKo}`, ...POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`)];
