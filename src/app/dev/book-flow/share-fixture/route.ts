@@ -8,5 +8,5 @@ export async function POST(request: NextRequest) {
   const text = await request.text(); if (text.length > 16384) return new Response(null, { status: 413 });
   let payload: unknown; try { payload = JSON.parse(text); } catch { return new Response(null, { status: 400 }); }
   const { createLocalShareFixture } = await import("../../../../lib/book/shareLocalReview");
-  return createLocalShareFixture(request, payload);
+  return createLocalShareFixture(request, payload, url.searchParams.get("version") === "v5" ? "v5" : "v4");
 }

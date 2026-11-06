@@ -8,6 +8,8 @@
 .status{font-size:12px;min-height:18px;margin:14px 0 0}
 .notice{font-size:11px;opacity:.7;margin:18px 0 0}
 .actions input{width:100%;padding:10px;background:transparent;border:1px solid #888;color:inherit;font-size:12px;box-sizing:border-box}
+/* 수동 복사 칸(hotfix-share): 16px 미만이면 아이폰 사파리가 확대한다. 길게 눌러 선택할 수 있게. */
+.actions .manual{font-size:16px;-webkit-user-select:text;user-select:text;margin-top:8px}
 .review{display:block;color:inherit;font-size:11px;margin:14px 0}
 .cta{display:block;width:fit-content;max-width:100%;margin:28px auto;color:inherit;text-decoration:none;font-size:16px;border-bottom:1px solid;padding:12px 0}
 .entry{background:#f8f8f6;color:#111;min-height:100dvh;font-family:var(--font-geist-sans),-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;padding:22px 24px 48px;box-sizing:border-box}
