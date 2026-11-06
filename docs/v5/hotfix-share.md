@@ -18,6 +18,8 @@
 고친 내용: 서버는 V4·v5 책 모두 주인에게만 링크를 만든다. 같은 책은 같은 링크이고, 추천(referral) 저장소와는 끊었다. 받는 사람은 v5도 로그인 없이 연다.
 화면은 공유 칸이 열릴 때 링크를 미리 받아 두고, 버튼을 누른 순간 클릭 안에서 바로 복사·카카오·공유하기를 부른다. 어떤 실패에도 버튼은 남고, 실제로 된 경우에만 된 것처럼 말한다.
 
+배포: master **6a7f1044** → Production **dpl_2A4wUnQv74faFTQTbiC4ZQH89aeR**(22:57:15 KST READY). 롤백 대상 dpl_EGrjYckryQCDc5pSZP3rcgDF9Zg5. 15분 확인(23:13) 런타임 오류 0·5xx 0·공유 API 404 0 — PASS. 운영에서 새 링크가 실제로 생기는지는 덕짱님이 §7대로 눌러 본 뒤 확인 — UNVERIFIED(§6).
+
 ## 1. 원인 (증거)
 
 ### 1-1. 호출 경로 (옛 코드 468f4b40 기준 파일:줄)
@@ -207,7 +209,30 @@ API 시험 요구 항목 대응: V4·v5 책 링크 생성 PASS, 주인 아닌 �
 
 ## 6. 배포
 
-(배포 뒤 채움)
+| 항목 | 값 |
+|---|---|
+| 브랜치 | `v5/hotfix-share-01` 917791de(코드) + bd0ca9a8(보고서 초판). 로컬 = 원격 bd0ca9a8 확인 |
+| master 병합 | **6a7f1044** `merge: v5/hotfix-share-01 → master`(부모 468f4b40 + bd0ca9a8, 트리 = 브랜치 트리). `git commit-tree`로 만들어 푸시. master를 체크아웃한 다른 worktree는 건드리지 않음. 원격 master = 6a7f1044 확인 |
+| Production 배포 | **dpl_2A4wUnQv74faFTQTbiC4ZQH89aeR**(git 자동, icn1). 빌드 22:54:04 → READY 22:57:15 KST. 별칭 www.gyeolreport.com·gyeolreport.com 연결 |
+| 롤백 | `dpl_EGrjYckryQCDc5pSZP3rcgDF9Zg5`(직전 운영, 468f4b40)로 즉시 롤백 가능. DB·환경변수 변경이 없어서 코드만 되돌리면 된다 |
+
+배포 뒤 확인(22:57~)
+| 시각(KST) | 확인 | 결과 |
+|---|---|---|
+| 22:58 | 공개 `/`·`/products`·`/example` | 200·200·200 |
+| 22:58 | `/r/<없는 토큰>` | 200(「리포트를 열 수 없습니다」 화면) |
+| 22:58 | `POST /api/book-share` 형식 오류 / 로그인 없음 / 다른 출처 | 400 / 403 / 403(주인 확인 동작) |
+| 22:58 | Vercel 런타임 오류(22:57 이후) | 0건 |
+| 22:58 | 운영 DB `report_share_links` 13:00Z 이후 | 0행(아직 아무도 공유 칸을 열지 않음) |
+| 23:05 | Vercel 런타임 오류(22:57 이후) | 0건 |
+| 23:05 | `/api/book-share` 응답(새 배포) | 400×1·403×2 = 22:58 내 확인 3건뿐. 실제 사용자 요청 0 |
+| 23:05 | 운영 DB `report_share_links` 13:00Z 이후 | 0행 |
+| 23:13 | Vercel 런타임 오류(22:57 이후, 15분 경과) | 0건 |
+| 23:13 | 프로젝트 전체 5xx 응답(22:57 이후, 경로 무관) | 0건 |
+| 23:13 | `/api/book-share` 응답(새 배포) | 23:05와 같음(400×1·403×2, 내 확인만). 404 0건 |
+| 23:13 | 운영 DB `report_share_links` 13:00Z 이후 | 0행 |
+
+15분 확인 결론: 새 배포에서 오류·5xx·404가 없다. 다만 배포 뒤 실제 사용자가 공유 칸을 연 적이 아직 없어서, **운영에서 링크가 새로 만들어지는 것은 아직 못 봤다(UNVERIFIED)**. 운영 DB 쓰기는 앱 경로로만 허용되어 있어서 시험 링크를 직접 넣지 않았다. 덕짱님이 §7 순서대로 한 번 눌러 주시면 그때 `report_share_links`에 새 행이 생겼는지(읽기 전용) 확인한다. 확인할 쿼리: `select report_id, created_at from report_share_links where created_at >= '2026-11-06T13:57:00Z' order by created_at desc;`
 
 ## 7. 덕짱님 확인 순서 (배포 뒤)
 
