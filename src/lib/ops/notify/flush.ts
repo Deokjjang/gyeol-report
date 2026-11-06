@@ -1,7 +1,7 @@
 import "server-only";
 import type { OpsStore } from "../generation/sinks";
 import { BOTS, messageIdOf, OPS_PUBLIC_ORIGIN, WAKE_PATH, webhookPath, webhookSecret, type BotName, type Telegram, type TelegramConfig } from "./telegram";
-import { bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
+import { bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, shareFailedText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
 
 /**
  * 알림 통로(운영 Q 4부). 대기표(ops_notifications)를 비우고, 처리 봇 메시지를 그때의 상태로 정리한다.
@@ -62,6 +62,8 @@ async function build(deps: NotifyDeps, x: Claimed): Promise<Message> {
     const today = await stats(deps.notify, kstDay(deps.now()));
     return x.kind === "payment" ? { text: salesPaymentText(o, await deps.paymentMethod(o.paymentKey, o.providerOrderId), today), buttons: [] } : { text: salesRefundText(o, today), buttons: [] };
   }
+  // 공유 실패 경보: 대기표 줄의 숫자만으로 그린다(버튼 없음 → 보내면 바로 닫힘).
+  if (x.kind === "share_failed") return { text: shareFailedText(x.payload), buttons: [] };
   const f = await itemFacts(deps.notify, x.id);
   if (!f) throw new Error("ITEM_MISSING");
   return renderOps(deps, f);

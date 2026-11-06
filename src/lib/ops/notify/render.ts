@@ -188,7 +188,14 @@ export function opsMessage(f: ItemFacts, method: string | null, now = Date.now()
   const line3 = `${bookStateLabel(book, f.order?.job ?? null)} · 열람 ${f.order?.views ?? f.ticket?.views ?? 0}회 · ${esc(f.request?.device ?? "기기 정보 없음")}`;
   return { text: [`${title} · ${esc(codeOf(f))}`, line2, line3, accountLine(f)].filter(Boolean).join("\n"), buttons };
 }
-const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고" };
+const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고", share_failed: "처리 공유 실패 경보" };
+/** 공유 실패 경보(운영 Q 추가, 버튼 없음). 상태 코드와 책 버전만 보인다(주문·책·회원 정보 없음 — DB에도 없다). */
+export function shareFailedText(p: Record<string, unknown>): string {
+  const causes = Array.isArray(p.causes) ? (p.causes as { status?: unknown; version?: unknown; count?: unknown }[]) : [];
+  const version = (v: unknown) => (v === "v4" || v === "v5" ? v : "버전 모름");
+  return [`🚨 <b>공유 실패 ${Number(p.count) || 0}건</b> · 최근 ${Number(p.windowMinutes) || 10}분`,
+    ...causes.map(c => `${Number(c.status) || "-"} · ${version(c.version)} · ${Number(c.count) || 0}건`)].join("\n");
+}
 
 // ── 처리 뒤 한 줄(버튼 없음) ─────────────────────────────────────
 export function refundDoneLine(o: OrderFacts, at: string | null): string {

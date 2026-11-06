@@ -69,8 +69,8 @@ describe("refund policy constants", () => {
     );
   });
 
-  it("운영 Q(2026-11-07): 약관은 2026-11-06.1·11월 6일 시행 그대로, 개인정보처리방침·환불정책은 2026-11-07.1·11월 7일 시행(시행일 상수 하나), 변경 이력은 최신이 먼저", () => {
-    expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-07.1", refund: "2026-11-07.1" });
+  it("운영 Q(2026-11-07): 약관은 2026-11-06.1·11월 6일 시행 그대로, 환불정책은 2026-11-07.1, 개인정보처리방침은 문서만 개정(동의 버전 2026-11-06.1 그대로 — 9부 정정), 두 문서 11월 7일 시행(시행일 상수 하나), 변경 이력은 최신이 먼저", () => {
+    expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-06.1", refund: "2026-11-07.1" });
     expect(POLICY_EFFECTIVE_DATE).toBe("2026-11-06");
     expect(OPS_Q_POLICY_EFFECTIVE_DATE).toBe("2026-11-07");
     expect(POLICY_EFFECTIVE_DATES_KO).toEqual({ terms: "2026년 11월 6일", privacy: "2026년 11월 7일", refund: "2026년 11월 7일" });
@@ -78,10 +78,12 @@ describe("refund policy constants", () => {
     expect(POLICY_HISTORY.terms[0]).toMatch(/^2026년 11월 6일 시행\(현재, 문서 버전 2026-11-06\.1\)/);
     expect(POLICY_HISTORY.terms[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
     expect(termsPolicySections.at(-1)!.bodyKo[0]).toBe("시행일: 2026년 11월 6일");
-    // 개인정보처리방침·환불정책: 2026-11-07.1(현재) → 2026-11-06.1 → 2026-11-05.1.
+    // 환불정책: 2026-11-07.1(현재) → 2026-11-06.1 → 2026-11-05.1. 개인정보처리방침: 11월 7일 문서 개정(현재, 동의 버전 그대로) → 2026-11-06.1 → 2026-11-05.1.
+    expect(POLICY_HISTORY.refund[0]).toMatch(/^2026년 11월 7일 시행\(현재, 문서 버전 2026-11-07\.1\)/);
+    expect(POLICY_HISTORY.privacy[0]).toMatch(/^2026년 11월 7일 시행\(현재, 문서 개정 — 동의 버전 2026-11-06\.1 그대로라 다시 동의하지 않아도 됩니다\)/);
+    expect(POLICY_HISTORY.privacy.join("\n")).not.toContain("2026-11-07.1");
     for (const kind of ["privacy", "refund"] as const) {
       const lines = POLICY_HISTORY[kind];
-      expect(lines[0]).toMatch(/^2026년 11월 7일 시행\(현재, 문서 버전 2026-11-07\.1\)/);
       expect(lines[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-06\.1\)/);
       expect(lines[2]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
       expect(lines.filter(line => line.includes("(현재,"))).toHaveLength(1);

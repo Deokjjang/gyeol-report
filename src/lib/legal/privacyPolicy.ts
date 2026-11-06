@@ -1,7 +1,7 @@
 /**
  * 개인정보처리방침 원문(v5 최종3). 화면 두 곳(/privacy 예전 문서 화면, 책 화면의 정책 문서)이 이 sections를 그대로 그린다.
  * 항목·위탁·국외 이전·보관 기간은 코드에서 실제로 쓰는 것만 적는다(추출 표: docs/v5/final3/legal-ops-report.md).
- * 문구를 바꾸면 CHECKOUT_POLICY_VERSIONS.privacy를 올린다(회원 재동의). Meta 광고 측정 문구(analytics/metaConsent)는 여기서 바꾸지 않는다.
+ * 문구를 바꾸면 CHECKOUT_POLICY_VERSIONS.privacy를 올린다(회원 재동의). 예외: 운영 Q(2026-11-07) 개정은 덕짱님 정정으로 문서 개정 공지만(동의 버전 그대로, policyVersions.ts). Meta 광고 측정 문구(analytics/metaConsent)는 여기서 바꾸지 않는다.
  */
 import { GYEOL_BUSINESS_INFO as business } from "./businessInfo";
 import { POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "./policyVersions";
@@ -130,7 +130,7 @@ export const privacyPolicyOverseasRows = [
     "웹 서비스 호스팅과 서버 실행",
     "요청을 처리하는 동안만 쓰며, 서버 실행 기록은 Vercel 요금제에 따라 최대 30일 보관 후 삭제",
     "웹 서비스 제공에 꼭 필요해 거부하면 서비스를 이용할 수 없습니다."],
-  // 운영 Q(2026-11-07.1): 운영자 주문 알림 봇. 이전받는 자·국가·연락처는 Telegram 공식 문서(2026-11-06 확인)만 옮긴다 —
+  // 운영 Q(2026-11-07 개정, 동의 버전 그대로): 운영자 주문 알림 봇. 이전받는 자·국가·연락처는 Telegram 공식 문서(2026-11-06 확인)만 옮긴다 —
   // https://telegram.org/privacy (1번 「Telegram Messenger Inc.」, 1.4 EEA 밖에 있음, 12번 문의 창구) · https://telegram.org/faq (개발팀 두바이, 여러 데이터센터).
   ["Telegram Messenger Inc. · 아랍에미리트(두바이, 개발팀 소재) 및 여러 나라의 데이터센터 · 텔레그램 앱 설정의 「Ask a Question」(Telegram 개인정보처리방침 12번)",
     "주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보",

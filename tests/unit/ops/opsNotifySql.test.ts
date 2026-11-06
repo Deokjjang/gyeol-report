@@ -1,4 +1,4 @@
-// 운영 Q(PGlite): 알림 대기표·트리거 5종(결제·환불 경로별·문의·미발행)·재전송·10회 실패·문의 접수 규칙·두 번 결제 판정·열람 기록·카드 결과. 외부 호출 0.
+// 운영 Q(PGlite): 알림 대기표·트리거 5종(결제·환불 경로별·문의·미발행)·재전송·10회 실패·문의 접수 규칙·두 번 결제 판정·열람 기록·카드 결과·공유 실패 경보. 외부 호출 0.
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { processRefunds } from "@/lib/ops/orders/refund";
@@ -240,5 +240,47 @@ describe("처리 상태·카드 결과·관리자 요청함", () => {
     let last: Record<string, unknown> = {};
     for (let i = 0; i < 4; i++) last = await notify.call("wake", { max: 3 });
     expect(last).toMatchObject({ allowed: false, calls: 4 });
+  });
+});
+
+// 운영 Q 추가(공유 재발 방지): 공유 API 4xx·5xx가 10분 안에 3번 이상이면 처리 봇 「🚨 공유 실패 N건」 1줄. 같은 원인(상태 코드 + 책 버전)은 1시간에 1번.
+describe("공유 실패 경보", () => {
+  // 서버(service_role)가 부르는 그대로 — 권한(표·순서·함수 실행)까지 본다.
+  const fail = async (status: number, report: string | null = null) => (await h.db.query<{ r: Record<string, unknown> }>("select public.ops_share_failure($1::integer,$2::text) r", [status, report])).rows[0].r;
+  const alerts = () => rows("share_failed");
+  it("3번째 실패에서 1줄(상태 코드·책 버전만, 책 id 없음), 같은 원인은 1시간 안에 다시 보내지 않고 새 원인은 보낸다", async () => {
+    const { report_id: v5 } = await pay("po-share-alert", A);
+    await h.publish(v5);
+    expect(await fail(403, v5)).toEqual({ ok: true, alerted: false, count: 1 });
+    expect(await fail(404, v5)).toEqual({ ok: true, alerted: false, count: 2 });
+    expect(await fail(503)).toEqual({ ok: true, alerted: true, count: 3 });
+    const [a] = await alerts();
+    expect(a).toMatchObject({ bot: "ops", payload: { count: 3, windowMinutes: 10, keys: ["403:v5", "404:v5", "503:unknown"],
+      causes: [{ status: 403, version: "v5", count: 1 }, { status: 404, version: "v5", count: 1 }, { status: 503, version: "unknown", count: 1 }] } });
+    expect(JSON.stringify(a.payload)).not.toContain(v5);
+    expect((await all<{ column_name: string }>("select column_name from information_schema.columns where table_name='ops_share_failures' order by ordinal_position")).map(c => c.column_name)).toEqual(["id", "at", "status", "version"]);
+    // 같은 원인만 또 → 보내지 않음. 새 원인(500) → 1줄 더.
+    expect(await fail(403, v5)).toMatchObject({ alerted: false, count: 4 });
+    expect(await fail(500)).toMatchObject({ alerted: true, count: 5 });
+    expect(await alerts()).toHaveLength(2);
+    // 1시간 뒤(경보는 61분 전, 실패는 11분 전으로 옮김): 10분 창에 다시 3번이 모여야 같은 원인도 다시 보낸다.
+    await exec("update ops_notifications set created_at=created_at-interval '61 minutes' where kind='share_failed'");
+    await exec("update ops_share_failures set at=at-interval '11 minutes'");
+    expect(await fail(403, v5)).toMatchObject({ alerted: false, count: 1 });
+    expect(await fail(403, v5)).toMatchObject({ alerted: false, count: 2 });
+    expect(await fail(403, v5)).toMatchObject({ alerted: true, count: 3 });
+    expect((await alerts()).at(-1)!.payload).toMatchObject({ count: 3, keys: ["403:v5"] });
+  });
+  it("상태 코드 400~599만, 하루 지난 기록은 지운다, 없는 책·이상한 id는 버전 모름", async () => {
+    expect(await fail(200)).toEqual({ ok: false, code: "STATUS" });
+    expect(await fail(399)).toEqual({ ok: false, code: "STATUS" });
+    await exec("update ops_share_failures set at=now()-interval '25 hours'");
+    await fail(404, "report_not_a_real_book_000000");
+    await fail(404, "x");
+    expect(await all("select status,version from ops_share_failures order by id")).toEqual([{ status: 404, version: "unknown" }, { status: 404, version: "unknown" }]);
+  });
+  it("익명·로그인 사용자는 기록 함수를 부를 수 없다(서버 service_role만)", async () => {
+    const grants = await all<{ grantee: string }>("select grantee from information_schema.routine_privileges where routine_name='ops_share_failure' order by grantee");
+    expect(grants.map(g => g.grantee).filter(g => ["anon", "authenticated", "PUBLIC"].includes(g))).toEqual([]);
   });
 });
