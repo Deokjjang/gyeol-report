@@ -7,6 +7,9 @@
 -- - CompleteRegistration(가입 완료)은 그대로 선택 동의한 회원만(queue_meta_registration 바꾸지 않음).
 -- - 기본 허용 회원의 Purchase: 그 브라우저에는 광고 설정 기록이 없으므로 대기표 줄에 browser_key 없이 회원(user_id)으로만 묶는다.
 --   IP·브라우저 정보는 결제 완료 화면 요청(queue_meta_purchase, 구매 회원 본인만)이 채운다 — 없으면 서버 전송은 건너뛰고 브라우저 픽셀만.
+-- 시행일(덕짱님 결정 2026-11-09, consent-01 배포): 처리방침 16번 「불리한 변경은 30일 전 공지」대로 2026-11-09부터 알리고 2026-12-10 00:00 KST에 켠다.
+--   그 전에는 지금 동작 그대로(동의한 사람만): 기본 줄을 만들지 않고(결제 트리거·결제 완료 화면), 일치 키(이메일·휴대폰 해시)도 붙이지 않는다.
+--   시각은 meta_optout_effective() 한 곳 — 코드 META_DEFAULT_FROM(analytics/metaConsent)과 같아야 한다(시험이 대조).
 -- 배포 순서: 이 migration → 코드. 예전 코드도 그대로 돈다(queue_meta_purchase 4개 인자 호출 = p_user 기본값 null, 대기표 결과에 더한 em·ph는 예전 코드가 무시).
 begin;
 set local lock_timeout='5s';
@@ -14,6 +17,10 @@ set local lock_timeout='5s';
 alter table public.meta_conversion_outbox alter column browser_key drop not null;
 alter table public.meta_conversion_outbox add constraint meta_outbox_owner
   check(browser_key is not null or (event_name='Purchase' and user_id is not null));
+
+-- 기본 측정 시행 여부(2026-12-10 00:00 KST부터). p_at은 시험용(기본 = 지금).
+create function public.meta_optout_effective(p_at timestamptz default clock_timestamp()) returns boolean
+language sql stable security invoker set search_path='' as $$ select p_at >= timestamptz '2026-12-10 00:00:00+09' $$;
 
 -- 회원의 광고 설정: true 선택 동의 · false 거부 · null 기록 없음(기본 허용).
 create function public.meta_user_choice(p_user uuid) returns boolean
@@ -26,12 +33,12 @@ begin
   return v;
 end $$;
 
--- 선택 동의 회원의 일치 키(Meta 전환 API 정규화: 이메일 소문자·앞뒤 공백 제거, 휴대폰 국가번호 82 + 앞 0 뺀 숫자). 동의가 아니면 빈 값.
+-- 선택 동의 회원의 일치 키(Meta 전환 API 정규화: 이메일 소문자·앞뒤 공백 제거, 휴대폰 국가번호 82 + 앞 0 뺀 숫자). 동의가 아니거나 시행일 전이면 빈 값.
 create function public.meta_user_match(p_user uuid) returns jsonb
 language plpgsql stable security invoker set search_path='' as $$
 declare c record;
 begin
-  if public.meta_user_choice(p_user) is not true then return '{}'::jsonb; end if;
+  if not public.meta_optout_effective() or public.meta_user_choice(p_user) is not true then return '{}'::jsonb; end if;
   select a.email,a.phone into c from public.account_contacts a where a.user_id=p_user;
   if not found then return '{}'::jsonb; end if;
   return jsonb_strip_nulls(jsonb_build_object(
@@ -52,7 +59,7 @@ begin
   return v_user;
 end $$;
 
--- 결제 완료 트리거: 거부한 회원만 뺀다. 선택 동의 회원은 예전과 같이 그 동의 기록의 브라우저·IP·브라우저 정보, 기본 허용 회원은 회원으로만(IP는 결제 완료 화면이 채움).
+-- 결제 완료 트리거: 시행일 전에는 예전처럼 동의한 회원만, 시행일부터는 거부한 회원만 뺀다. 선택 동의 회원은 예전과 같이 그 동의 기록의 브라우저·IP·브라우저 정보, 기본 허용 회원은 회원으로만(IP는 결제 완료 화면이 채움).
 create or replace function public.meta_purchase_on_paid() returns trigger
 language plpgsql security definer set search_path='' as $$
 declare v_user uuid; v_choice boolean; c public.meta_tracking_consents%rowtype; v_event text;
@@ -63,7 +70,7 @@ begin
   v_user := public.meta_order_buyer(new.payment_order_id,new.report_id);
   if v_user is null then return null; end if;
   v_choice := public.meta_user_choice(v_user);
-  if v_choice is false then return null; end if;
+  if v_choice is false or (v_choice is null and not public.meta_optout_effective()) then return null; end if;
   if v_choice then select * into c from public.meta_tracking_consents t where t.user_id=v_user order by t.recorded_at desc limit 1; end if;
   v_event := 'purchase_'||md5('gyeol:paid-order:'||new.payment_order_id);
   if exists(select 1 from public.meta_purchase_dispatches where order_id=new.payment_order_id)
@@ -80,7 +87,7 @@ exception when others then
 end $$;
 
 -- 결제 완료 화면 경로. 이 브라우저가 거부했으면 안 넣는다. 선택 동의 브라우저는 예전 그대로.
--- 기본 허용은 로그인한 구매 회원 본인만(p_user = 구매 회원, 그 회원이 거부하지 않음): 줄이 없으면 만들고, 트리거가 만든 기본 줄에 IP·브라우저 정보가 없으면 채운다.
+-- 기본 허용은 시행일부터, 로그인한 구매 회원 본인만(p_user = 구매 회원, 그 회원이 거부하지 않음): 줄이 없으면 만들고, 트리거가 만든 기본 줄에 IP·브라우저 정보가 없으면 채운다.
 drop function public.queue_meta_purchase(text,text,text,text);
 create function public.queue_meta_purchase(p_report text,p_browser text,p_ip text,p_agent text,p_user uuid default null) returns boolean
 language plpgsql security invoker set search_path='' as $$
@@ -97,7 +104,7 @@ begin
   if not found then return false; end if;
   if v_explicit then v_owner := consent.user_id;
   else
-    if p_user is null or public.meta_order_buyer(o.payment_order_id,o.report_id) is distinct from p_user or public.meta_user_choice(p_user) is false then return false; end if;
+    if not public.meta_optout_effective() or p_user is null or public.meta_order_buyer(o.payment_order_id,o.report_id) is distinct from p_user or public.meta_user_choice(p_user) is false then return false; end if;
     v_owner := p_user;
   end if;
   event_key:='purchase_'||md5('gyeol:paid-order:'||o.payment_order_id);
@@ -178,6 +185,6 @@ begin
   return result;
 end $$;
 
-revoke all on function public.meta_user_choice(uuid),public.meta_user_match(uuid),public.meta_order_buyer(text,text),public.queue_meta_purchase(text,text,text,text,uuid) from public,anon,authenticated;
-grant execute on function public.meta_user_choice(uuid),public.meta_user_match(uuid),public.meta_order_buyer(text,text),public.queue_meta_purchase(text,text,text,text,uuid) to service_role;
+revoke all on function public.meta_optout_effective(timestamptz),public.meta_user_choice(uuid),public.meta_user_match(uuid),public.meta_order_buyer(text,text),public.queue_meta_purchase(text,text,text,text,uuid) from public,anon,authenticated;
+grant execute on function public.meta_optout_effective(timestamptz),public.meta_user_choice(uuid),public.meta_user_match(uuid),public.meta_order_buyer(text,text),public.queue_meta_purchase(text,text,text,text,uuid) to service_role;
 commit;

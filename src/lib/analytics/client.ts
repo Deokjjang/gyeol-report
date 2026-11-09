@@ -1,5 +1,5 @@
 "use client";
-import { metaOrigin } from "./metaConsent";
+import { metaMaySend, metaOrigin } from "./metaConsent";
 import { metaProduct, metaPurchase, type FunnelEvent, type Interaction, type MetaEvent, type PurchaseFact } from "./events";
 
 declare global { interface Window { fbq?: (...args: unknown[]) => void; _fbq?: unknown } }
@@ -10,11 +10,12 @@ let retry: ReturnType<typeof setTimeout> | undefined;
 export const manualReviewSilent = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" &&
   (/^\/dev\/content-review(?:\/|$)/.test(window.location.pathname ?? "") || process.env.NEXT_PUBLIC_LOCAL_REVIEW_SILENT === "1");
 export const localMeasurement = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
-// 광고 설정(덕짱님 결정 A, 2026-11-09): true 선택 동의 · null 기본 허용(행태정보만) · false 거부. 서버 답을 받기 전에는 보내지 않는다.
-let metaAllowed = false;
+// 광고 설정(덕짱님 결정 A, 2026-11-09): true 동의 · null 기록 없음 · false 거부. 서버 답을 받기 전에는 보내지 않는다.
+// 기록 없음은 시행일(서버가 GET 응답 optout으로 알려 줌)부터만 보낸다 — 그 전에는 예전 그대로 동의한 사람만.
+let metaAllowed = false, metaPurchaseAllowed = false;
 let pixelFrame: Window | null = null;
 const pixelPending = new Map<string, MetaEvent>();
-export function setMetaChoice(choice: boolean | null) { metaAllowed = choice !== false; lastPage = undefined; if (!metaAllowed) { pending.clear(); pixelPending.clear(); pixelFrame = null; if (retry) clearTimeout(retry); retry = undefined; } }
+export function setMetaChoice(choice: boolean | null, optout = false) { metaAllowed = metaMaySend(choice, optout); metaPurchaseAllowed = metaMaySend(choice, optout, "Purchase"); lastPage = undefined; if (!metaAllowed) { pending.clear(); pixelPending.clear(); pixelFrame = null; if (retry) clearTimeout(retry); retry = undefined; } }
 export function setMetaFrame(frame: Window | null) {
   pixelFrame = frame;
   if (frame && metaAllowed) for (const [id, event] of pixelPending) { frame.postMessage({ type: "gyeol:pixel", ...event }, "*"); pixelPending.delete(id); }
@@ -45,7 +46,7 @@ function mirrorFacts(events: unknown) {
   }
 }
 export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaAllowed;
-// 운영 Q 추가(메타 복구, 덕짱님 2026-11-07): PageView는 전 페이지. 결정 A(11-09)부터 거부하지 않은 사람 모두(기본 허용). 관리자·개발·로그인 콜백·API는 뺀다.
+// 운영 Q 추가(메타 복구, 덕짱님 2026-11-07): PageView는 전 페이지. 시행일 전에는 동의한 사람만, 시행일 뒤(결정 A)에는 거부하지 않은 사람 모두(기본 허용). 관리자·개발·로그인 콜백·API는 뺀다.
 // 주소는 보내지 않는다 — 서버 전송은 고정 주소(metaDelivery event_source_url), 픽셀은 referrer를 끈 별도 창(MetaPixel iframe)이라
 // 책 id(/reports/…)·공유 토큰(/r/…)·로그인 코드가 Meta로 가지 않는다(처리방침 13번 「원문 URL은 보내지 않습니다」).
 const publicPath = (path: string) => path.startsWith("/") && !/^\/(?:admin|dev|api|auth)(?:\/|$)/.test(path);
@@ -132,7 +133,7 @@ export async function syncLocalFacts() {
 }
 export async function dispatchPurchase(reportId: string, local = false) {
   if (manualReviewSilent()) return;
-  if (!(local ? localMeasurement() : publicMetaAllowed())) return;
+  if (!(local ? localMeasurement() : publicMetaAllowed() && metaPurchaseAllowed)) return;
   try {
     // Claim only when the transport is ready. The SQL unique order wins across tabs.
     const response = await fetch(local ? "/dev/measurement" : "/api/analytics/purchase", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reportId, ...(!local ? { requestId: crypto.randomUUID() } : {}) }), keepalive: true });

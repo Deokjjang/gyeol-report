@@ -21,7 +21,7 @@ import {
   privacyPolicySensitiveInfoLimitKo,
   privacyPolicyUnder14Ko,
 } from "../../../src/lib/legal/privacyPolicy";
-import { metaTrackingNotice, metaTransferNotice } from "../../../src/lib/analytics/metaConsent";
+import { META_DEFAULT_FROM, metaChangeRows, metaOptInNotice, metaOptInTransferNotice, metaTrackingNotice, metaTransferNotice } from "../../../src/lib/analytics/metaConsent";
 
 const copy = policyText(privacyPolicySections).join("\n");
 
@@ -86,6 +86,24 @@ describe("privacy policy (v5 최종3)", () => {
     // Meta 문구·버전은 승인 항목이라 그대로 싣는다.
     expect(copy).toContain(metaTrackingNotice);
     expect(copy).toContain(metaTransferNotice);
+  });
+
+  it("시행일(덕짱님 결정 2026-11-09): 13번은 「12월 9일까지(지금 문구 그대로)」와 「12월 10일부터」 두 판 + 변경 안내 표(시행일·바뀌는 점·보내는 항목·목적·받는 자·거부 방법), 그리는 시각과 무관", () => {
+    expect(META_DEFAULT_FROM).toBe("2026-12-10T00:00:00+09:00");
+    const s13 = privacyPolicySections.find(s => s.titleKo.startsWith("13. "))!;
+    const texts = s13.blocks.map(b => b.kind === "p" ? b.text : b.kind === "table" ? b.table.captionKo : "");
+    expect(texts[0]).toMatch(/^광고 성과 측정 방식이 2026년 12월 10일 0시\(한국 시간\)부터 바뀝니다\. 2026년 12월 9일까지는 아래 「2026년 12월 9일까지」대로 동의한 경우에만 보내고, 2026년 12월 10일부터는 「2026년 12월 10일부터」대로 거부하지 않으면 기본으로 보냅니다\. 2026년 11월 9일부터 서비스 화면/);
+    expect(texts.slice(1)).toEqual(["광고 성과 측정 변경 안내(2026년 12월 10일 시행)", `[2026년 12월 9일까지] ${metaOptInNotice}`, `[2026년 12월 9일까지 · Meta 제공·국외 이전] ${metaOptInTransferNotice}`,
+      `[2026년 12월 10일부터] ${metaTrackingNotice}`, "2026년 12월 10일부터 광고 성과 측정으로 보내는 행태정보", `[2026년 12월 10일부터 · Meta 제공·국외 이전] ${metaTransferNotice}`]);
+    expect(metaChangeRows.map(([k]) => k)).toEqual(["시행일", "바뀌는 점", "보내는 항목", "목적", "받는 자", "거부 방법"]);
+    expect(metaChangeRows[0][1]).toBe("2026년 12월 10일(목) 0시(한국 시간)부터. 2026년 11월 9일부터 미리 알립니다.");
+    expect(metaChangeRows[5][1]).toContain("지금 거부해 두면 12월 10일(목) 뒤에도 보내지 않습니다.");
+    // 「12월 9일까지」 문구는 지금 운영 문구 그대로(v5/main dc5dc158) — 동의한 경우에만.
+    expect(metaOptInNotice.startsWith("광고 성과 측정은 선택 사항입니다. 허용하면 ")).toBe(true);
+    expect(metaOptInTransferNotice).toContain("위 측정 항목은 동의 후 이벤트 발생 시");
+    // 정적으로 만든 화면이 시행일 앞뒤에 틀리지 않게: 「(현재」「예정」「지금은」처럼 시각에 따라 틀려지는 말을 13·16번에 쓰지 않는다(「현재 하는 일」 같은 항목 이름은 괜찮음).
+    const s16 = privacyPolicySections.find(s => s.titleKo.startsWith("16. "))!;
+    for (const block of [...s13.blocks, ...s16.blocks]) expect(JSON.stringify(block)).not.toMatch(/\(현재|확정 전|시행 예정|변경 예정|지금은/);
   });
 
   it("운영 Q(2026-11-07 개정): Telegram 행 — 목적·항목·보유·이전받는 자·국가·이전 방법(공식 문서 telegram.org/privacy·faq만)", () => {

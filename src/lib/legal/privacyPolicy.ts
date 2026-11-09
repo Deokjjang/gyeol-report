@@ -6,7 +6,8 @@
  */
 import { GYEOL_BUSINESS_INFO as business } from "./businessInfo";
 import { POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "./policyVersions";
-import { metaBehaviorRows, metaTrackingNotice, metaTransferNotice } from "../analytics/metaConsent";
+import { META_DEFAULT_FROM_KO, META_NOTICE_FROM_KO, META_OPTIN_UNTIL_KO, metaBehaviorRows, metaChangeRows, metaOptInNotice, metaOptInTransferNotice, metaTrackingNotice, metaTransferNotice } from "../analytics/metaConsent";
+import { META_OPTOUT_POLICY_EFFECTIVE_DATE_KO } from "./policyVersions";
 
 export type PolicyTable = { readonly captionKo: string; readonly head: readonly string[]; readonly rows: readonly (readonly string[])[] };
 export type PolicyBlock =
@@ -164,8 +165,8 @@ export const privacyPolicyCookieRows = [
   ["로그인 유지(Supabase 로그인 쿠키)", "로그인 상태 유지", "로그아웃하거나 로그인 기한이 끝날 때까지"],
   ["로그인 진행·돌아갈 주소", "소셜 로그인 확인과 로그인 뒤 원래 화면으로 돌아가기", "10분"],
   ["친구 초대·캠페인 연결", "초대·캠페인으로 들어온 경우 혜택 연결", "10분"],
-  ["광고 설정 기록", "광고 성과 측정 거부·선택 동의 기록, 광고 측정 안내를 봤는지", "1년"],
-  ["브라우저 저장소(세션)", "입력 중인 리포트 정보 임시 저장, 결제·이용권 진행 상태 확인", "브라우저 창을 닫을 때까지"],
+  ["광고 설정 기록", "광고 성과 측정 동의·거부 기록, 광고 측정 안내를 봤는지", "1년"],
+  ["브라우저 저장소(세션)", "입력 중인 리포트 정보 임시 저장, 결제·이용권 진행 상태 확인, 광고 측정 변경 안내를 이번 방문에 미뤘는지", "브라우저 창을 닫을 때까지"],
   ["브라우저 저장소(로컬)", "안내 창을 이미 봤는지 기억", "이용자가 지울 때까지"],
 ] as const;
 export const privacyPolicyCookieRefuseKo =
@@ -197,6 +198,9 @@ export const prePaymentPrivacyNoticeKo =
   "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.";
 
 // 광고 성과 측정(Meta) 문구는 광고 설정 창과 같은 문장(metaConsent)을 가져온다.
+// 13번은 시행일 전후 두 판을 날짜를 박아 함께 싣는다(덕짱님 결정 2026-11-09: 30일 공지 뒤 시행) — 그리는 시각에 따라 바뀌지 않아
+// 정적으로 만든 화면도 시행일 앞뒤 모두 맞다. 시행일이 지나 「12월 9일까지」 판을 뺄 때는 변경 이력에 남긴다.
+export const privacyPolicyMetaChangeKo = `광고 성과 측정 방식이 ${META_DEFAULT_FROM_KO} 0시(한국 시간)부터 바뀝니다. ${META_OPTIN_UNTIL_KO}까지는 아래 「${META_OPTIN_UNTIL_KO}까지」대로 동의한 경우에만 보내고, ${META_DEFAULT_FROM_KO}부터는 「${META_DEFAULT_FROM_KO}부터」대로 거부하지 않으면 기본으로 보냅니다. ${META_NOTICE_FROM_KO}부터 서비스 화면(첫 방문 안내·사이트 맨 아래 「광고 설정」)과 이 방침에 알립니다.`;
 export { metaTrackingNotice as privacyPolicyMetaNoticeKo, metaTransferNotice as privacyPolicyMetaRetentionKo } from "../analytics/metaConsent";
 
 /** 화면 두 곳이 그대로 그리는 순서(법정 필수 항목 전부). */
@@ -213,8 +217,12 @@ export const privacyPolicySections: readonly PolicySection[] = [
   { titleKo: "10. 자동 수집 장치(쿠키 등)의 설치·운영과 거부", blocks: [table("쿠키·브라우저 저장소", ["종류", "목적", "보관 기간"], privacyPolicyCookieRows), p(privacyPolicyCookieRefuseKo)] },
   { titleKo: "11. 개인정보의 안전성 확보 조치", blocks: [ul(...privacyPolicySecurityItems)] },
   { titleKo: "12. 개인정보 보호책임자", blocks: [p(privacyPolicyOfficerKo), p(privacyPolicyOfficerNoteKo)] },
-  { titleKo: "13. 행태정보와 광고 성과 측정(Meta)", blocks: [p(metaTrackingNotice), table("광고 성과 측정으로 보내는 행태정보", ["구분", "내용"], metaBehaviorRows), p(metaTransferNotice)] },
+  { titleKo: "13. 행태정보와 광고 성과 측정(Meta)", blocks: [
+    p(privacyPolicyMetaChangeKo), table(`광고 성과 측정 변경 안내(${META_DEFAULT_FROM_KO} 시행)`, ["구분", "내용"], metaChangeRows),
+    p(`[${META_OPTIN_UNTIL_KO}까지] ${metaOptInNotice}`), p(`[${META_OPTIN_UNTIL_KO}까지 · Meta 제공·국외 이전] ${metaOptInTransferNotice}`),
+    p(`[${META_DEFAULT_FROM_KO}부터] ${metaTrackingNotice}`), table(`${META_DEFAULT_FROM_KO}부터 광고 성과 측정으로 보내는 행태정보`, ["구분", "내용"], metaBehaviorRows),
+    p(`[${META_DEFAULT_FROM_KO}부터 · Meta 제공·국외 이전] ${metaTransferNotice}`)] },
   { titleKo: "14. 권익침해 구제 방법", blocks: [p("개인정보 침해로 상담이나 구제가 필요하면 아래 기관에 문의할 수 있습니다."), ul(...privacyPolicyRemedyItems)] },
   { titleKo: "15. 자동화된 결정", blocks: [p(privacyPolicyAutomatedKo)] },
-  { titleKo: "16. 방침의 변경과 시행일", blocks: [p(`이 방침은 ${POLICY_EFFECTIVE_DATES_KO.privacy}부터 시행합니다. 내용이 바뀌면 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 서비스 화면에 알립니다.`), ul(...POLICY_HISTORY.privacy)] },
+  { titleKo: "16. 방침의 변경과 시행일", blocks: [p(`이 방침은 ${POLICY_EFFECTIVE_DATES_KO.privacy}부터 시행합니다. 다만 13번 광고 성과 측정의 변경(아래 변경 이력 첫 줄)은 ${META_OPTOUT_POLICY_EFFECTIVE_DATE_KO}부터 시행합니다. 내용이 바뀌면 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 서비스 화면에 알립니다.`), ul(...POLICY_HISTORY.privacy)] },
 ];

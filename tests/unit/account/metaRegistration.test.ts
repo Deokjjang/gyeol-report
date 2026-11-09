@@ -6,6 +6,9 @@ import { sqlCouponReliability } from "../../../src/lib/coupons/localDatabase";
 import { confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { launchSql, launchHelpers, START, END, versions } from "../../helpers/launchEventSql";
+import { META_DEFAULT_FROM } from "../../../src/lib/analytics/metaConsent";
+// 시행일(덕짱님 결정 2026-11-09): 2026-12-10 00:00 KST부터 기본 측정. 시험 시계(launch_test_now)를 시행 직전·직후로 옮겨 두 동작을 본다.
+const AFTER = "2026-12-09T15:00:00Z", BEFORE = "2026-12-09T14:59:59.999Z";
 let db: PGlite, h: ReturnType<typeof launchHelpers>;
 const browser = () => randomBytes(32).toString("hex");
 const sql = readFileSync("supabase/migrations/20261020062611_v4_meta_registration_delivery.sql", "utf8");
@@ -130,8 +133,8 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
     await db.query("update payment_orders set updated_at=public.launch_test_now() where payment_order_id=$1",[order]);
     expect(await purchaseRows(order)).toHaveLength(1);
   });
-  it("결제 완료 트리거는 가장 최근 기록이 거부인 회원·연결 없는 주문·미결제 주문에는 넣지 않는다(기록 없는 회원은 결정 A부터 기본 줄 — 아래)",async()=>{
-    const none=await h.user(); expect((await purchaseRows((await paidOrder(none)).order)).map(r=>[r.browser_key,r.user_id,r.ip])).toEqual([[null,none,null]]);
+  it("결제 완료 트리거는 시행일 전(예전 그대로) 동의 안 한 회원·가장 최근 기록이 거부인 회원·연결 없는 주문·미결제 주문에는 넣지 않는다(기록 없는 회원은 시행일부터 기본 줄 — 아래)",async()=>{
+    const none=await h.user(); expect(await purchaseRows((await paidOrder(none)).order)).toEqual([]);
     const refused=await h.user(); await consent(refused,true); await h.clock("2026-10-11T00:00:00Z"); await consent(refused,false);
     expect(await purchaseRows((await paidOrder(refused)).order)).toEqual([]);
     const agreed=await h.user(); await consent(agreed);
@@ -152,6 +155,7 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
   const sha=(value:string)=>createHash("sha256").update(value).digest("hex");
   const contact=(user:string,email:string,phone:string|null=null)=>db.query("insert into account_contacts(user_id,email,phone) values($1,$2,$3)",[user,email,phone]);
   it("결정 A 기본 허용: 기록 없는 구매 회원의 결제 → 기본 줄(브라우저 키·IP 없음) → 결제 완료 화면(구매 회원 본인만)이 IP를 채움 → 서버 전송(일치 키 없음)·브라우저 거울 1번, 같은 event id",async()=>{
+    await h.clock(AFTER); // 시행일 뒤
     const user=await h.user(), other=await h.user(); await contact(user,"buyer@example.com","01012345678");
     const {order,report}=await paidOrder(user), event=`purchase_${createHash("md5").update(`gyeol:paid-order:${order}`).digest("hex")}`;
     expect(await purchaseRows(order)).toEqual([{event_id:event,browser_key:null,user_id:user,custom_data:{value:3900,currency:"KRW",content_ids:["saju_mbti_full"],content_type:"product",num_items:1},ip:null,agent:null}]);
@@ -174,6 +178,7 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
     await expect(db.query("insert into meta_conversion_outbox(event_name,acquisition_id,user_id,occurred_at) values('CompleteRegistration',null,$1,public.launch_test_now())",[user])).rejects.toThrow();
   });
   it("결정 A 거부 뒤 미전송: 결제 뒤 거부하면 기본 줄 취소(서버 전송·거울·allowed 없음), 거부한 회원의 결제는 줄 없음, 거부한 브라우저의 결제 완료 화면은 false",async()=>{
+    await h.clock(AFTER); // 시행일 뒤
     const user=await h.user(), {order,report}=await paidOrder(user);
     expect(await queueAs(report,null,user)).toBe(true);
     const leased=await batch() as Array<{event_id:string;lease:string}>; expect(leased).toHaveLength(1);
@@ -187,6 +192,7 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
     expect(await purchaseRows(next.order)).toEqual([]);
   });
   it("결정 A 선택 동의에만 개인 식별 정보: 로그인한 채 동의한 회원만 em·ph(SHA-256, 이메일 소문자·앞뒤 공백 제거, 휴대폰 82+앞 0 뺀 번호), 기본 회원·로그인 없이 동의한 브라우저·거부 뒤에는 없음",async()=>{
+    await h.clock(AFTER); // 시행일 뒤
     const agreed=await h.user(), plain=await h.user();
     await contact(agreed,"  Buyer.One@Example.COM ","01012345678"); await contact(plain,"plain@example.com","01099998888");
     const key=await consent(agreed,true), match={em:[sha("buyer.one@example.com")],ph:[sha("821012345678")]};
@@ -209,6 +215,27 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
     await consent(agreed,false,key); expect(await r(agreed)).toEqual({});
     for (const role of ["anon","authenticated"]) for (const query of [`select meta_user_match('${agreed}')`,`select meta_user_choice('${agreed}')`,`select queue_meta_purchase('x',null,'192.0.2.1','a','${agreed}')`])
       await expect(db.transaction(async tx=>{await tx.exec(`set local role ${role}`);await tx.query(query);})).rejects.toThrow(/permission denied/);
+  });
+  it("시행 시각 한 곳: meta_optout_effective()는 2026-12-10 00:00 KST부터 참 — 코드 META_DEFAULT_FROM과 같은 시각(migration 글자 대조)",async()=>{
+    const literal=defaultMeasurement.match(/select p_at >= timestamptz '([^']+)'/)![1];
+    expect(META_DEFAULT_FROM).not.toBeNull(); expect(Date.parse(literal.replace(" ","T").replace(/\+09$/,"+09:00"))).toBe(Date.parse(META_DEFAULT_FROM!));
+    const at=async(iso?:string)=>(await db.query<{r:boolean}>(iso?"select meta_optout_effective($1) r":"select meta_optout_effective() r",iso?[iso]:[])).rows[0].r;
+    expect(await at(BEFORE)).toBe(false); expect(await at(AFTER)).toBe(true);
+    await h.clock(BEFORE); expect(await at()).toBe(false); await h.clock(AFTER); expect(await at()).toBe(true);
+  });
+  it("시행일 전(시계 2026-12-09 23:59:59.999 KST): 지금 동작 그대로 — 기록 없는 회원 결제는 줄 없음·결제 완료 화면도 못 넣음, 동의 회원은 예전처럼 줄(이메일·휴대폰 해시 없음)",async()=>{
+    await h.clock(BEFORE);
+    const plain=await h.user(), agreed=await h.user(); await contact(plain,"plain@example.com","01099998888"); await contact(agreed,"buyer@example.com","01012345678");
+    const p=await paidOrder(plain); expect(await purchaseRows(p.order)).toEqual([]);
+    expect(await queueAs(p.report,null,plain)).toBe(false); expect(await purchaseRows(p.order)).toEqual([]);
+    expect(await claimAs(null,plain)).toEqual([]);
+    const key=await consent(agreed,true), a=await paidOrder(agreed);
+    expect((await purchaseRows(a.order)).map(r=>[r.browser_key,r.user_id,r.ip])).toEqual([[key,agreed,"192.0.2.1"]]);
+    expect((await db.query<{r:unknown}>("select meta_user_match($1) r",[agreed])).rows[0].r).toEqual({});
+    const items=await batch() as Array<{user_data:Record<string,unknown>}>;
+    expect(items.map(i=>i.user_data)).toEqual([{client_ip_address:"192.0.2.1",client_user_agent:"isolated-test"}]);
+    // 같은 동의가 시행 시각을 넘으면 선택 동의로 읽혀 해시가 붙는다(시행일 전 동의 칸이 이를 알리고 받는다 — metaOptInMeasurementLabel).
+    await h.clock(AFTER); expect((await db.query<{r:unknown}>("select meta_user_match($1) r",[agreed])).rows[0].r).toEqual({em:[sha("buyer@example.com")],ph:[sha("821012345678")]});
   });
   it("uncertain acknowledgement never retries beyond the 24-hour dedup safety window",async()=>{
     await acquire(); const first=await batch() as Array<{event_id:string;lease:string}>;
