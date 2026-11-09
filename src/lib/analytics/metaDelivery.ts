@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { isIP } from "node:net";
 import type { NextRequest } from "next/server";
 import { createSupabaseServerClient } from "../db/supabaseServer";
-import { META_CONSENT_COOKIE, META_CONSENT_VERSION, metaConsentValue, metaOrigin } from "./metaConsent";
+import { META_CONSENT_COOKIE, META_CONSENT_VERSION, metaConsentValue, metaDefaultOn, metaOrigin } from "./metaConsent";
 import { metaProduct, metaPurchase, type MetaEvent } from "./events";
 
 export function metaDeliveryReady() {
@@ -108,7 +108,8 @@ export async function transmitMeta(event: MetaDelivery, transport: typeof fetch 
         event_name: event.event_name, event_id: event.event_id, event_time: event.event_time, action_source: "website",
         event_source_url: "https://www.gyeolreport.com/", // Constant, never request URL/referrer.
         // em·ph는 선택 동의 회원의 해시만(metaUserMatch·대기표 meta_user_match). 그 밖의 칸은 넣지 않는다.
-        user_data: { client_ip_address: event.user_data.client_ip_address, client_user_agent: event.user_data.client_user_agent, ...metaMatchKeys(event.user_data) },
+        // 해시는 시행일(META_DEFAULT_FROM)부터만 — DB meta_user_match도 시행 전 빈 값이지만, 법률 검토로 코드 스위치만 바꿔도(null·연기) 여기서 같이 멈춘다.
+        user_data: { client_ip_address: event.user_data.client_ip_address, client_user_agent: event.user_data.client_user_agent, ...(metaDefaultOn() ? metaMatchKeys(event.user_data) : {}) },
         ...(customData ? { custom_data: customData } : {}),
       }], ...metaTestEventCode() }),
     });

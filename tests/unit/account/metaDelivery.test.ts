@@ -197,6 +197,14 @@ decisionA("시행일 전(시계 2026-12-09 23:59:59.999 KST): 지금 동작 그�
     expect(await (await GET(req("/api/analytics/meta",{method:"GET",cookie:YES}))).json()).toEqual({choice:true,ready:true,optout:false});
   });
 
+  it("이메일·휴대폰 해시는 시행일 전 마지막 전송 함수에서도 버린다(DB가 잘못 줘도, 코드 스위치만 바꿔도 멈춤) — 시행 시각부터 붙음",async()=>{
+    setup(); const transport=vi.fn(async()=>({ok:true,json:async()=>({events_received:1})})) as unknown as typeof fetch;
+    const event={event_name:"PageView" as const,event_id:RID,event_time:1,user_data:{client_ip_address:"192.0.2.1",client_user_agent:"isolated",em:["a".repeat(64)],ph:["b".repeat(64)]}};
+    await transmitMeta(event,transport); vi.setSystemTime(new Date(AFTER)); await transmitMeta(event,transport);
+    const users=vi.mocked(transport).mock.calls.map(([,init])=>JSON.parse(String(init?.body)).data[0].user_data);
+    expect(users).toEqual([{client_ip_address:"192.0.2.1",client_user_agent:"isolated"},{client_ip_address:"192.0.2.1",client_user_agent:"isolated",em:["a".repeat(64)],ph:["b".repeat(64)]}]);
+  });
+
   it("같은 브라우저·같은 요청이 시행 시각(2026-12-10 00:00 KST)을 넘으면 기본 측정으로 바뀐다(배포 없이 자동)",async()=>{
     setup();
     expect((await POST(req("/api/analytics/meta",{body:{event:"PageView",requestId:RID}}))).status).toBe(202);

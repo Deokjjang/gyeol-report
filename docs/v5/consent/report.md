@@ -1,91 +1,105 @@
 # 광고 측정 동의 방식 변경(결정 A) — 보고
 
-작성 2026-11-09 · 브랜치 `v5/consent-01`(기준 v5/main `dc5dc158` = master `05f7f592` + 문서 정정) · worktree `~/Developer/gyeol-worktrees/v5-consent` · **운영 반영 안 함**(migration·push·배포 모두 승인 대기)
+작성 2026-11-09 · 브랜치 `v5/consent-01`(기준 v5/main `dc5dc158` = master `05f7f592` + 문서 정정) · worktree `~/Developer/gyeol-worktrees/v5-consent`
 
-## 1. 결정과 동작
+## 1. 덕짱님 결정(2026-11-09, consent-01 배포)과 반영
 
-덕짱님 결정 A: 개인 식별 정보 없는 행태정보 이벤트(PageView·ViewContent·InitiateCheckout·Purchase)는 **기본으로 보내고**, 「광고 설정」에서 **거부한 사람에게는 보내지 않는다**. 이메일·전화 해시 등 개인 식별 정보는 **명시적으로 동의한 사람만**. 처리방침 행태정보 항목을 고치고 동의 버전은 올리지 않는다(문서 개정 공지).
-
-| 이벤트 | 기본(설정 기록 없음) | 거부 | 선택 동의(로그인한 채 동의) |
-|---|---|---|---|
-| PageView·ViewContent·InitiateCheckout | 픽셀 + 서버 전송(event id·IP·브라우저 정보) | 안 보냄 | 기본 + 서버 전송에 `em`·`ph`(SHA-256) |
-| Purchase | 구매 회원 결제 → 대기표(회원으로 묶음) → 결제 완료 화면(구매 회원 본인)이 IP·브라우저 정보 채움 → 서버 전송 + 같은 응답으로 픽셀 거울 | 안 보냄 · 결제 뒤 거부하면 대기 중 전송 취소 | 기본 + `em`·`ph` |
-| CompleteRegistration | 안 보냄 | 안 보냄 | 보냄(예전 그대로) |
-
-- 「거부」 범위: 그 브라우저(쿠키 1년) + 로그인한 채 거부하면 그 계정(그 계정으로 로그인한 다른 브라우저도 처음 열 때 거부 쿠키를 받음, 그 계정 결제 Purchase 안 보냄).
-- 픽셀에는 개인 식별 정보를 넣지 않는다(Advanced Matching 안 씀 — `init`에 사용자 값 없음, 자동 설정 끔). 해시는 서버 전송에만, DB 함수가 동의를 다시 확인하고 해시로만 준다(원문 이메일·번호는 DB 밖으로 안 나감).
-- 첫 방문 카드는 안내로 바뀜: 「거부 / 자세히 / 확인」, **닫기·확인은 거부가 아니다**(예전 「닫기 = 거부」 없앰). 안내 판을 새로 둬서 예전 카드를 본 사람도 새 안내를 한 번 본다.
-- 판 그대로: 처리방침 동의 버전 `2026-11-06.1`, 광고 설정 판 `meta-20261020-v2`(올리면 지금의 거부 기록·쿠키가 풀린다).
-- 기본 허용 브라우저는 5초 주기 서버 확인을 하지 않는다(방문자 전원이 5초마다 서버를 부르지 않게). 주기 확인은 선택 동의 브라우저만(가입 완료 거울용).
-
-현재 그대로인 것(바꾸지 않음): 서버 전송 user_data는 IP·브라우저 정보뿐이고 `fbp`·`fbc`는 보내지 않는다(픽셀이 격리 창이라 1st-party `_fbp` 쿠키·`fbclid`를 못 읽음). 페이지 첫 로드 때 서버 설정 답이 오기 전에 생긴 상품 조회는 예전처럼 빠진다.
-
-## 2. 바꾼 파일
-
-| 파일 | 내용 |
+| 결정 | 반영 |
 |---|---|
-| `supabase/migrations/20261110100000_v5_meta_default_measurement.sql`(새) | 대기표 `browser_key` not null 풀기 + 검사(`browser_key` 있거나 회원 Purchase), `meta_user_choice`(회원의 가장 최근 기록: 동의/거부/없음), `meta_user_match`(선택 동의 회원의 이메일·휴대폰 SHA-256), `meta_order_buyer`, 결제 트리거·`queue_meta_purchase`(인자 `p_user` 추가, 예전 4개 인자 호출 그대로 동작)·`meta_delivery_batch`·`claim_meta_browser_events` 교체. 데이터 삭제·변경 없음 |
-| `src/lib/analytics/metaConsent.ts` | 안내 문구(기본·선택 동의·이전), 방침 13번 표 행, 안내 판 키 |
-| `src/lib/analytics/metaDelivery.ts` | 설정 3가지(동의 `true`·기본 `null`·거부 `false`, 동의 쿠키인데 DB 기록이 없으면 기본), 계정 거부 확인, 해시 통과(64자 하나씩만) |
-| `src/app/api/analytics/meta/route.ts` · `meta/pixel/route.ts` · `purchase/route.ts` | 거부만 막음, 해시는 선택 동의 + 로그인 회원만, 계정 거부를 이 브라우저 쿠키로, 결제 완료 응답에 픽셀 거울 |
-| `src/lib/analytics/client.ts` · `src/components/analytics/MetaPixel.tsx` | 서버 답 뒤 거부가 아니면 보냄, 안내 카드·설정 창 |
-| `src/lib/legal/privacyPolicy.ts` · `policyVersions.ts` | 1·2·5·7·10·13·16번(문장 전후: [legal-review 첫 절](../final4/legal-review.md)), 시행일 상수 `META_OPTOUT_POLICY_EFFECTIVE_DATE = null` |
-| `docs/v5/final4/legal-review.md` | 첫 절: 동작·운영 기록·바뀐 문장·근거 4개·확인 질문 10개 |
-| 시험 7개 파일 | 아래 3절 |
+| 1. 시행일 2026-12-10 00:00 KST(방침 16번 「불리한 변경 30일 전 공지」). 지금 배포, 기본 전송은 시행일 상수로 그 시각에 저절로 켬, 그 전엔 지금 동작(동의한 사람만). 오늘부터 공지, 처리방침은 변경 예정 판 + 변경 이력 | 시각 한 곳: 코드 `META_DEFAULT_FROM`(src/lib/analytics/metaConsent.ts — 서버 시계로만 판단, GET 응답 `optout`) + SQL `meta_optout_effective()`(migration 20261110100000). 시험이 두 값을 글자로 대조. 공지 = 첫 방문 카드·「광고 설정」 창(변경 안내 표)·처리방침 13번(두 판 + 변경 안내 표)·16번·변경 이력 첫 줄 |
+| 2. 법률 검토는 시행일 전, 질문 10개 그대로. 바꿀 것이 나오면 설정으로 끌 수 있는지 보고 | 5절. 질문 10개는 그대로(legal-review 첫 절 (e)), 결정 문단과 (f) 설정 표를 더함 |
+| 3. 공지 기간 카드 「동의 / 거부 / 자세히」, 닫기 = 결정 보류(다음 방문에 다시). 시행일 뒤 「거부 / 자세히 / 확인」 | 2절. 보류 = 세션 저장소(같은 탭 새로고침엔 숨고 새 탭·다음 방문엔 다시), 쿠키·DB에 아무것도 안 남김 |
+| 4. 기존 거부 21건 그대로 | 데이터 변경 없음(migration은 함수·검사만). 판 `meta-20261020-v2` 그대로라 거부 쿠키·기록이 그대로 읽힌다 |
+| 5. 배포 순서·롤백은 보고서대로, 배포 뒤 공지 노출·시행일 전 동작·시간을 바꾼 시험, 시행일 다음 날 서버 호출 수 | 7·8·9절 |
 
-## 3. 시험
+## 2. 동작
+
+| | 시행일 전(~2026-12-09 23:59:59) | 시행일부터(2026-12-10 00:00 KST~) |
+|---|---|---|
+| 설정 기록 없음 | **보내지 않음**(지금과 같음): 픽셀 창 404, 행동·결제 완료 화면 202, DB·로그인 확인 0, 결제 트리거·결제 완료 화면이 기본 줄을 만들지 않음 | 기본 측정: PageView·ViewContent·InitiateCheckout·Purchase(행태정보 + IP·브라우저 정보), 해시 없음 |
+| 동의(쿠키 + DB 동의) | 지금처럼 보냄(가입 완료 포함), **이메일·휴대폰 해시 없음** | 「선택 동의」: 위 + 로그인한 채 동의한 회원은 해시(서버 전송에만) |
+| 거부 | 안 보냄 | 안 보냄(로그인한 채 거부하면 그 계정의 다른 브라우저·결제도) |
+| 첫 방문 카드 | 「광고 성과 측정 변경 안내」 동의·거부·자세히·×(보류). 정할 때까지 방문마다 | 「광고 성과 측정 안내」 거부·자세히·확인, 안내 판마다 한 번 |
+| 「광고 설정」 창 | 지금 설정 + 변경 안내 표(시행일·바뀌는 점·보내는 항목·목적·받는 자·거부 방법) + 지금 문구 + 따로 동의 세 칸 → 「동의하고 허용」 | 결정 A 창(기본 안내·선택 동의 안내·세 칸 → 「선택 동의」) |
+
+- 카드의 「동의」는 바로 저장하지 않고 창을 열어 첫 동의 칸으로 간다(국외 이전 별도 동의 — 서버도 세 칸이 없으면 `SEPARATE_CONSENTS_REQUIRED`).
+- 공지 기간 동의 칸 첫 줄에 「12월 10일(목)부터는 로그인한 채 동의한 회원의 이메일·휴대폰 번호 해시값도 함께」를 적어 받는다. 시행일 뒤 이 동의가 선택 동의로 읽혀 해시가 붙기 때문이다.
+- 처리방침은 그리는 시각에 따라 바뀌지 않는다: 13번에 「[2026년 12월 9일까지] 지금 문구」와 「[2026년 12월 10일부터] 새 문구 + 표」를 날짜를 박아 함께 싣는다(정적으로 만든 화면도 시행일 앞뒤 모두 맞음, 「(현재」「예정」 같은 말 안 씀 — 시험). 방침 시행일은 11월 7일 그대로, 16번 「다만 13번 광고 성과 측정의 변경은 2026년 12월 10일부터 시행」. 변경 이력 첫 줄 「2026년 12월 10일 시행(2026년 11월 9일부터 공지, …)」.
+- 결정 A 자체(앞 커밋 `abf54724`): 시행일 뒤 동작은 그대로 — 기본 = 행태정보만(픽셀 Advanced Matching 안 씀, `init`에 사용자 값 없음), 해시는 DB `meta_user_match`가 동의를 다시 확인해 서버 전송에만, 기본 회원 Purchase는 대기표 `browser_key` 없음 + 회원 + 결제 완료 화면(구매 회원 본인)이 IP를 채우고 같은 응답으로 픽셀 거울, 기본 브라우저는 5초 주기 확인 안 함, CompleteRegistration은 선택 동의만.
+
+## 3. 바꾼 파일(이번 커밋 `53f35037` · 앞의 결정 A 구현 `abf54724`)
+
+| 파일 | 이번에 바꾼 것 |
+|---|---|
+| `src/lib/analytics/metaConsent.ts` | `META_DEFAULT_FROM`·`META_DEFAULT_PURCHASE`·`metaDefaultOn`·`metaMaySend`(보낼지 판단은 모두 이 둘), 날짜 문구, 지금 문구(v5/main 그대로 — 시험 대조)·변경 안내 표·카드 문구·공지 기간 동의 칸 문구 |
+| `src/app/api/analytics/meta/route.ts` · `meta/pixel/route.ts` · `purchase/route.ts` | 「거부만 막음」 → `metaMaySend(설정, 시행 여부)`. GET이 `optout`을 알려 줌, 시행 전엔 계정 거부 확인(DB)도 안 함(지금과 같은 호출 수) |
+| `src/lib/analytics/client.ts` · `src/components/analytics/MetaPixel.tsx`(+css) | 서버 `optout`으로 전송 여부·카드 판 결정, 공지 기간 카드·창, 보류 |
+| `src/lib/legal/privacyPolicy.ts` · `policyVersions.ts` | 13번 두 판 + 변경 안내 표, 16번, 변경 이력, `META_OPTOUT_POLICY_EFFECTIVE_DATE = "2026-12-10"`, 10번 세션 저장소 줄에 「광고 측정 변경 안내를 이번 방문에 미뤘는지」 |
+| `supabase/migrations/20261110100000_v5_meta_default_measurement.sql` | `meta_optout_effective(p_at)` 추가, 결제 트리거(기록 없음 → 시행 전 줄 없음)·`queue_meta_purchase`(기본 경로 시행 전 false)·`meta_user_match`(시행 전 빈 값) |
+| 시험 8개 파일 | 4절 |
+| `docs/v5/final4/legal-review.md` 첫 절 | 결정 문단, 카드·동의 칸, 배포본 13·16번 설명, (f) 설정 표 |
+
+## 4. 시험
 
 | 지시 | 시험 | 판정 |
 |---|---|---|
-| 기본 상태에서 4개 이벤트 전송 | `metaDelivery.test.ts` 「기본 상태」: 설정 쿠키 없이 PageView·ViewContent·InitiateCheckout → 실제 Meta 전송 본문 3건(user_data = IP·브라우저 정보만, 로그인·DB 안 봄), 픽셀 창 200, GET `choice:null`. 「기본 상태 Purchase」: 결제 완료 화면 → `queue_meta_purchase(p_browser null, p_user 구매 회원)` + 같은 응답에 픽셀 거울 → 크론 전송 본문 Purchase(같은 id·3,900 KRW, 해시 없음). `metaRegistration.test.ts`(PGlite, 실제 SQL) 「기본 허용」: 기록 없는 구매 회원 결제 → 기본 줄 → 다른 회원·비로그인은 못 채움 → 본인이 IP 채움 → 거울 1번·서버 전송 1번 같은 id. `metaCheckout.test.ts`: `setMetaChoice(null)`이면 InitiateCheckout·ViewContent 나감, 결제 완료 응답의 사실만 픽셀로(위조 id 버림) | PASS |
-| 거부 뒤 미전송 | 거부 쿠키 → 행동 3종·서버 사실 확인 202, 결제 완료 화면 202, 픽셀 창 404, Meta·DB 호출 0. 동의 쿠키라도 DB 기록이 거부면 거부. 계정이 거부했으면 다른 브라우저 GET이 `choice:false` + 거부 쿠키. SQL: 결제 뒤 거부 → 대기 줄 CANCELED(IP 지움)·allowed false·거울 없음·크론 없음, 거부 회원의 다음 결제는 줄 없음, 거부 브라우저의 결제 완료 화면 false. 클라이언트: `setMetaChoice(false)`면 요청 0 | PASS |
-| 동의 시에만 PII 포함 | 라우트: 동의 쿠키 + DB 동의 + 로그인 회원 → `em`·`ph`, 로그인 안 함·DB 기록 없음 → 없음, 해시 모양 아닌 값·여러 개는 버림. SQL: 로그인한 채 동의한 회원만 `em`=sha256(소문자·공백 제거 이메일)·`ph`=sha256(82+앞 0 뺀 번호), 기본 회원·로그인 없이 동의한 브라우저·거부 뒤 → `{}`, 대기표 결과에 이메일 원문·회원 id 없음, anon·authenticated 역할은 새 함수 못 부름. 픽셀 `init`에 사용자 값 없음 | PASS |
-| 처리방침·카드 | `privacyPolicy`·`refundPolicy`·`LegalDocuments`·`metaConsentCard` 시험을 새 문장·제목·시행일 상수·변경 이력 순서·「확인 ≠ 거부」로 고침 | PASS |
-| 관련 9개 파일 | 81개 통과 | PASS |
+| 시행일 전 = 지금 동작(미동의자 미전송) | `metaDelivery.test.ts` 「시행일 전(시계 12-09 23:59:59.999)」: 기록 없음 → 행동 3종·주기 확인 202 `{choice:null}`, 픽셀 창 404, 결제 완료 화면 202, Meta 0·DB 0·로그인 확인 0, GET `{choice:null,ready:true,optout:false}`. 동의 브라우저 → 전송·픽셀 200·대기표 넣기. `metaRegistration.test.ts`(PGlite, 실제 SQL, 시험 시계 12-09 23:59:59.999): 기록 없는 회원 결제 → 줄 없음·결제 완료 화면 false·거울 없음, 동의 회원 → 예전 줄·해시 `{}`. `metaCheckout.test.ts`: `setMetaChoice(null,false)` → 요청 0·중복 표시 0 | PASS |
+| 시간을 바꾼 시험(시행일 뒤) | 같은 파일들을 시계 2026-12-10 00:00 KST로: 결정 A 시험 전부(기본 4종 전송·해시 없음, 기본 Purchase 줄·IP 채움·거울 1번, 거부 뒤 미전송, 계정 거부 전파, 선택 동의만 해시). 「같은 요청이 시행 시각을 넘으면 기본 측정으로 바뀐다(배포 없이)」. SQL `meta_optout_effective`: 12-09 23:59:59.999 false / 12-10 00:00 true, 같은 동의가 시각을 넘으면 해시가 붙음. 픽셀 창: 기록 없음 시행 전 404 → 뒤 200 | PASS |
+| 시각 한 곳 | migration 글자 `timestamptz '2026-12-10 00:00:00+09'` = `META_DEFAULT_FROM` = 정책 날짜 `2026-12-10`(시험 대조) | PASS |
+| 설정 스위치 | `metaDefaultOn(…, null)` = 계속 꺼짐, `metaMaySend(null,true,"Purchase",false)` = false·나머지 기본 그대로 | PASS |
+| 공지·카드 | `metaConsentCard.test.tsx`(공지 기간 버튼 동의·거부·자세히·×, 동의는 저장 안 하고 창, 닫기 = 보류, 시행일 뒤 거부·자세히·확인), `privacyPolicy`·`refundPolicy`·`LegalDocuments`(13번 두 판·변경 안내 표 6행·16번 문장·이력 첫 줄·「(현재/예정」 없음) | PASS |
+| 로컬 화면(WebKit, 아이폰 UA, 390px, `next dev` 로컬 검토 모드) | 시행 전: GET `optout:false` → 변경 안내 카드, 버튼 「동의·거부·자세히·×」, 픽셀 창 0. × → 같은 탭 새로고침 0·쿠키 없음·새 탭에 다시. 자세히 → 표 6행·「지금 설정: 정하지 않음(보내지 않음)」·「거부/동의하고 허용/닫기」. 동의 → 첫 칸에 초점·쿠키 없음. 거부 → 거부 쿠키, 새로고침 카드 0. 시행 뒤(GET 응답을 `optout:true`로 바꿔 끼움): 「거부·자세히·확인」, 확인 뒤 새로고침·새 탭 0. 처리방침 13·16번 문장 보임 | PASS |
+| 관련 20개 파일(메타·정책·법률 문서를 읽는 시험) | 실패 34건 = `checkoutConsentEvidence`(31)·`bookPreview`(3) — 기준 트리(v5/main dc5dc158)에서 같은 34건 실패(기존) | PASS(새 실패 0) |
 | 타입·린트 | `tsc --noEmit` 0, 바꾼 파일 eslint 0 | PASS |
-| 전체 시험 | (아래 4절) | |
-| 운영 화면 실측 | 배포 전이라 안 함(배포 뒤 WebKit + 아이폰 UA로 — 헤드리스 Chromium은 픽셀이 안 보냄) | UNVERIFIED |
-| 판매 품질 | 이 변경은 광고 측정만 — 리포트 원고·결제 경로 영향 없음(결제 트리거는 예외를 삼켜 결제 상태 변경을 막지 않음, 시험 「트리거가 실패해도 결제 승인은 그대로」 통과) | — |
+| 전체 시험 | 6절 | |
+| 판매 품질 | 광고 측정만 — 리포트 원고·결제 경로 영향 없음(결제 트리거는 예외를 삼켜 결제 상태 변경을 막지 않음, 시험 「트리거가 실패해도 결제 승인은 그대로」) | — |
 
-## 4. 전체 시험(기준 트리와 동시 실행)
+## 5. 법률 검토 결과를 시행일 전에 반영하는 설정 — 보고(결정 2)
 
-기준 = v5/main `dc5dc158`(scratchpad 분리 worktree), 브랜치 = `abf54724`. 두 트리를 같은 시각에 `vitest run --reporter=json`으로 돌려 시험 이름 단위로 비교.
+**끌 수 있다(코드 한 줄 + 배포, migration 없음).** 보낼지 판단은 모두 `metaMaySend(설정, 시행 여부, 이벤트)`·`metaDefaultOn()`을 거친다(서버 행동 전송·픽셀 창·결제 완료 화면·화면 쪽 전송 — 경로마다 시험).
+
+| 검토 결과 | 바꿀 곳 | 효과 | 같이 고칠 것 |
+|---|---|---|---|
+| 시행을 미룸 / 기본 측정을 하지 않음 | `META_DEFAULT_FROM` = 다른 시각 / `null` | 지금 동작(동의한 사람만) 그대로. 이메일·휴대폰 해시도 마지막 전송 함수(`transmitMeta`)가 같은 스위치로 막는다. DB 시각(12-10)이 그대로여도 기본 결제 줄은 IP가 안 채워져 보내지 않고 7일 뒤 만료 | 처리방침 13·16번·카드(날짜 문구는 같은 상수를 읽어 저절로 바뀜, `null`이면 문구를 손으로). 줄 생성까지 막으려면 SQL `meta_optout_effective()` 한 줄 migration |
+| 결제만 선택 동의로 | `META_DEFAULT_PURCHASE = false` | 기록 없는 브라우저의 결제 완료 화면 202·거울·서버 전송 0, 나머지 3종은 기본 그대로 | 13번 「보내는 행태정보」에서 유료 결제를 빼고 「선택 동의」 줄에 더함 |
+| 기본 단계에서 IP 제외 | 따로 스위치 없음 → `META_DEFAULT_FROM = null`이 바로 쓸 수 있는 선택 | 픽셀은 브라우저가 Meta에 직접 접속해 IP가 늘 드러난다. 서버 전송에서 IP만 빼면 Meta 웹 이벤트 요건(브라우저 정보 필수, IP 권장 — 브라우저 정보만 있는 조합은 무효로 볼 수 있음, Meta 문서 기준이며 실제 수신은 확인 안 함)에 걸릴 수 있다 | 「픽셀 없이 서버 전송만·IP 없이」가 필요하면 새 작업(코드 반나절 + Meta 테스트 이벤트로 받는지 확인) |
+
+## 6. 전체 시험(기준 트리와 동시 실행)
+
+기준 = v5/main `dc5dc158`(scratchpad 분리 worktree, node_modules 공유), 브랜치 = `53f35037`. 두 트리를 같은 시각에 `vitest run --reporter=json`(20:23~21:00 KST)으로 돌려 시험 이름 단위로 비교.
 
 | | 전체 | 통과 | 실패 | 건너뜀 |
 |---|---|---|---|---|
-| 기준 | 31,818 | 27,428 | 851 | 3,539 |
-| 브랜치 | 31,829(+11 = 새 시험) | 27,438 | 852 | 3,539 |
+| 기준 | 31,818 | 27,433 | 853 | 3,532 |
+| 브랜치 | 31,839(+21 = 새 시험) | 27,454 | 853 | 3,532 |
 
-- 브랜치에서만 실패 3개 → 두 트리에서 파일 하나씩 따로 다시 돌리면 결과가 같다: `temporalTenGodSourceContract`(둘 다 11 실패 / 38 통과 — 기존 실패, 전체 실행의 12번째는 STACK_TRACE_ERROR 시간 초과), `v5ManseTableConsistency`(둘 다 27 통과), `productionTestDataCleanupMigration`(둘 다 4 통과). 기준에서만 실패 2개(`ticketPublication`·`customerDayunGeneration`)도 단독으로는 둘 다 통과. → 동시 실행 부하 시간 초과이며 **새 실패 0**(이 변경이 건드린 파일과 무관한 영역).
-- 판정: **PASS**(기존 실패 851개는 그대로 — 이 작업 범위 밖).
+- 브랜치에서만 실패 0, 기준에서만 실패 0 → **새 실패 0**. 기존 실패 853개는 그대로(이 작업 범위 밖).
+- 그 뒤 보강 커밋(해시도 코드 스위치로 막음 — `transmitMeta`): 관련 16개 파일 다시 실행, 실패는 기존 `checkoutConsentEvidence` 31건뿐(기준도 같음), tsc·eslint 0.
 
-## 5. 운영 동의 기록 수(배포 전, 읽기만)
+## 7. 배포
 
-2026-11-09 19:38 KST 다시 셈(18:3x와 같음). `meta_tracking_consents`(브라우저별 1줄):
+(아래에 적음)
 
-| | 동의 | 거부 | 계 |
-|---|---|---|---|
-| 익명(로그인 없이 기록) | 3 | 10 | 13 |
-| 회원 연결 | 0 | 11 | 11(회원 9명, 9명 모두 가장 최근 기록이 거부) |
-| 계 | 3 | 21 | 24 |
+## 8. 배포 뒤 확인
 
-- 대기표(`meta_conversion_outbox`) 0줄. 다른 판 기록 0. 기록 기간 2026-10-20 ~ 11-09.
-- 동의 3건은 모두 오늘 16:25~16:32 KST(메타 복구 배포 확인 시간대, 16:17 적용)에 남은 기록이라 배포 확인용 브라우저로 보인다(추정 — 확인하지 않음). IP·브라우저 정보가 아직 있지만 7일 안이다.
-- 배포 뒤 이 24개 브라우저·9명은: 거부 21건(회원 9명 포함)은 계속 안 보냄, 동의 3건은 선택 동의로 읽힘(계정 연결이 없어 해시 없음). 그 밖의 모든 방문자는 기본 허용.
-- 예전 카드의 「닫기」도 거부로 저장돼 「거부」 버튼과 구분할 수 없다. 거부로 둔다(legal-review 확인 질문 5).
+(아래에 적음)
 
-## 6. 배포 전에 정할 것 · 배포 순서
+## 9. 시행일 뒤 확인(할 일)
 
-**정할 것(덕짱님)**
-1. **시행일·공지 기간** — 처리방침 16번이 「불리한 변경은 30일 전 공지」를 약속한다. 「동의해야만 보냄 → 기본으로 보냄」은 불리한 변경으로 볼 소지가 크다(legal-review 확인 질문 2). (가) 지금까지처럼 배포일 시행(운영 Q·P 모두 공지 없이 배포일 시행) (나) 공지를 먼저 띄우고 30일 뒤 배포. 코드는 (가) 기준(시행일 상수 한 줄)이다.
-2. 법률 검토 전 배포 여부 — 확인 질문 1(IP·Meta 쿠키·회원과 이어지는 Purchase가 개인정보인지)의 답에 따라 기본 단계에서 IP를 빼거나 Purchase를 선택 동의로 되돌려야 할 수 있다.
+- **2026-12-10 00:00 직후**: WebKit + 아이폰 Safari UA(헤드리스 Chromium은 픽셀이 안 보냄)로 운영에서 ① 설정 없음 → GET `optout:true`, 「광고 성과 측정 안내」 카드(거부·자세히·확인), `facebook.com/tr` PageView, ② 「거부」 → 그 뒤 0건·픽셀 창 404.
+- **2026-12-11(시행일 다음 날) 서버 호출 수 확인**: 방문자 전원이 행동마다 `/api/analytics/meta`를 부르게 된다. Vercel `create_observability_query`(metric `vercel.request.count`, `request_path` = `/api/analytics/meta`·`/api/analytics/meta/pixel`·`/api/analytics/purchase`, groupBy `http_status`, 12-09와 12-10 하루씩)로 200·202 수를 비교하고, 함수 호출·실행 시간 증가가 요금 단계에 닿는지 본다. 대기표 `meta_conversion_outbox`의 `browser_key` 없는 Purchase 줄 수·SENT 비율도 같이(`supabase db query`).
+- 법률 검토 결과로 바꿀 것이 있으면 12-09까지 5절 설정으로 배포.
 
-**배포 순서(승인 뒤)**
-1. `git fetch` → origin/master가 `05f7f592`에서 움직였는지, Vercel 지금 운영 배포(롤백 기준) 확인.
-2. 운영 함수 본문 md5가 그대로인지 다시 확인 — 2026-11-09 읽기: `meta_purchase_on_paid` 160405b8…, `queue_meta_purchase`(4인자) a56496ec…, `meta_delivery_batch` 5faf0033…, `claim_meta_browser_events` 609278f5…, `record_meta_consent` 6ea6e104… (다섯 개 모두 저장소 원본과 같음). 새 함수 이름 3개·검사 `meta_outbox_owner`는 운영에 없음. `account_contacts.email`·`phone` 있음.
-3. **migration `20261110100000` 먼저**(저장소 밖 임시 폴더 CLI 방법, dry-run → `--yes`). 먼저 넣어도 예전 코드는 그대로 돈다(기본 줄은 IP가 안 채워져 서버 전송 0, 거울은 동의 브라우저만 폴링).
-   - 코드가 먼저 나가도 깨지지 않게 했다: 계정 설정을 못 읽으면 그 화면만 안 보내고 거부 쿠키를 남기지 않음(시험 있음), 결제 완료 화면은 `p_user` 인자 오류로 0건.
-4. `META_OPTOUT_POLICY_EFFECTIVE_DATE` = 배포일(KST) 한 줄 → 관련 시험(`refundPolicy` 등은 상수를 따라감) → v5/main → master push → Production.
-5. 배포 뒤 확인: WebKit + 아이폰 Safari UA(헤드리스 Chromium은 픽셀이 안 보냄)로 ① 설정 없음 → 안내 카드 + `facebook.com/tr` PageView, ② 「거부」 → 그 뒤 0건·픽셀 창 404, ③ 시험 결제 1건 → 대기표 기본 줄(`browser_key` 없음, IP 채워짐) → 5분 크론 `sent_at` + `browser_dispatched_at`, ④ Vercel 관측 쿼리로 `/api/analytics/meta` 200·202 수. 방문자 전원이 행동마다 서버를 부르게 되므로 함수 호출 수 증가를 하루 뒤 한 번 본다.
+## 10. 운영 기록 · 남은 위험
 
-**되돌리기**: 이전 배포 승격 + 함수 4개를 저장소 원본(`20261020062611`·`20261107120000`)대로 다시 넣고(`queue_meta_purchase` 5인자 drop → 4인자 create), 새 함수 3개·검사 drop. `browser_key` not null을 되살리려면 기본 줄(browser_key 없음 — 측정 대기 줄, 고객 데이터 아님)을 먼저 지워야 한다(삭제라 승인 필요). 처리방침 문구는 코드 롤백으로 함께 돌아간다.
+- 운영 광고 설정 기록(2026-11-09, 읽기만): 24건 = 익명 13(동의 3·거부 10) + 회원 연결 11(회원 9명, 모두 거부). 대기표 0줄. 예전 카드의 「닫기」도 거부로 저장돼 「거부」와 구분할 수 없다 → 거부로 둔다(결정 4).
+- 예전 문구로 받은 동의 3건(익명, 11-09 16:25~16:32 — 메타 복구 배포 확인 시간대라 확인용 브라우저로 추정, 확인 안 함)은 시행일 뒤 선택 동의로 읽힌다. 계정 연결이 없어 해시는 붙지 않지만, 그 브라우저가 나중에 초대·캠페인 쿠키를 가진 채 로그인하면 계정에 이어져 해시가 붙을 수 있다(예전 문구엔 해시 안내가 없음). 덕짱님 기기면 「광고 설정」에서 다시 정하면 된다.
+- 공지 기간 동의 칸이 시행일 뒤의 해시까지 함께 받는다(한 동의로 두 시기) — legal-review 확인 질문 7과 같이 볼 것.
+- 카드 보류는 세션 저장소라, 저장소를 막은 브라우저에선 그 페이지에서만 숨는다(새로고침하면 다시 보임).
+- 공지는 방침 16번이 정한 서비스 화면(카드·광고 설정·처리방침)으로만 한다. 이미 동의·거부를 정한 사람에게는 카드가 안 뜬다(거부한 사람은 바뀌는 것이 없고, 동의한 사람은 시행일 뒤 로그인한 채 동의했을 때만 해시가 더해진다).
+
+## 11. 되돌리기
+
+- 코드: 이전 배포 `dpl_BKPM5pAsX6R4U6N7gfaExiQPcAdj`(master `05f7f592`) 승격. 처리방침 문구도 함께 돌아간다.
+- DB: 함수 4개(`meta_purchase_on_paid`·`queue_meta_purchase`·`meta_delivery_batch`·`claim_meta_browser_events`)를 저장소 원본(`20261020062611`·`20261107120000`)대로 다시 넣고(`queue_meta_purchase` 5인자 drop → 4인자 create), 새 함수 4개(`meta_optout_effective`·`meta_user_choice`·`meta_user_match`·`meta_order_buyer`)·검사 `meta_outbox_owner` drop. 배포 전 운영 본문 md5가 저장소 원본과 같다(7절). `browser_key` not null을 되살리려면 기본 줄(시행일 뒤에만 생김)을 먼저 지워야 한다(삭제라 승인 필요). 시행일 전에 되돌리면 기본 줄이 없어 바로 된다.
+- 코드만 되돌리고 migration은 둬도 시행일 전에는 동작이 같다(예전 코드는 4인자 호출 = 기본 경로 안 씀, 시행 전 SQL은 기본 줄을 만들지 않음).
