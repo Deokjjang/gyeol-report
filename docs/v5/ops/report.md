@@ -270,9 +270,35 @@ order_requests 새 줄 ───────┼→ 트리거(넣기만) → ops_
 | 관리자 요청함(`ops_admin('requests')`) | — | ok |
 | migration 기록 최신 | 20261107090000 | 20261107100000 |
 
+### 운영 migration `20261107110000_v5_ops_share_alert.sql`(2026-11-07 00:23:54 KST 적용, 추가 지시 공유 경보)
+
+같은 임시 폴더 방법(dry-run → 대기 1건 확인 → 적용). 파일은 커밋 5565a385와 바이트까지 같음(cmp).
+
+| 확인(읽기 전용 SELECT) | 적용 전 | 적용 뒤 |
+|---|---|---|
+| 대기표 kind 제약 | payment·refund·request·unpublished·notify_failed·reminder | + share_failed(기존 값 그대로) |
+| `ops_notifications` | 0행 | 0행 |
+| `ops_share_failures` | 없음 | 있음(0행) |
+| `ops_share_failure` 실행 권한 | 없음 | postgres · service_role만 |
+| `payment_orders` paid | 59 | 59 |
+| `report_share_links` | 10 | 10 |
+| migration 기록 최신 | 20261107100000 | 20261107110000 |
+
+되돌리기: 예전 코드는 이 표·함수를 부르지 않으므로 남겨 둬도 된다. 경보만 끄려면 `revoke execute on function public.ops_share_failure(integer,text) from service_role;`(공유 응답에는 영향 없음 — 기록 실패는 조용히 넘어간다).
+
 ### 배포
 
-(배포 뒤 기록)
+- 병합: `v5/ops-01` 3e68e366 → `v5/main` 46f16e68 → `master` cac002f1. 세 트리가 같다(`3b7d8d52d46a85ba13017d43875f8e0b75373a99`). push 직전 `origin/master` = 6a7f1044(공유 긴급 수정) 그대로 확인.
+- 원격 SHA = 로컬: master `cac002f10a68ce4e2c563ac7044701884dddff71`, v5/main `46f16e685475b1bad66ba286f2e80c2bb58f6318`, v5/ops-01 `3e68e366`.
+- **운영 배포 `dpl_B2RRhX6wQuuv66JTDBpw8kuoNkA1`**: push 2026-11-07 00:24:48 KST → READY 약 00:27 KST(빌드 150초), 지역 icn1, 별칭 www.gyeolreport.com·gyeolreport.com. 시행일 상수 2026-11-07과 배포일(KST)이 같다.
+- 직후 확인: `/`·`/privacy`·`/refund`·`/terms` 200. 처리방침 이력 첫 줄 「2026년 11월 7일 시행(현재, 문서 개정 — 동의 버전 2026-11-06.1 그대로…)」·Telegram 줄·「이 방침은 2026년 11월 7일부터」, 환불정책 「문서 버전 2026-11-07.1」 확인. 공유 API는 직접 부르지 않았다(403이 경보 기록에 남으므로).
+- 첫 크론(00:31 읽기): `ops_settings.telegram_webhook` = 두 봇 모두 `dpl_B2RRhX6wQuuv66JTDBpw8kuoNkA1`(웹훅·명령 메뉴 설정 완료 기록), `notify_wake_url` = `https://www.gyeolreport.com/api/ops/notify-wake`. 런타임 오류 0(최근 15분).
+- **30분 확인(00:57 KST) — PASS**
+  - Vercel 런타임 오류: 0(배포 뒤 35분).
+  - Supabase postgres 로그(15:20~16:00 UTC): ERROR·FATAL 0, 트리거 경고(`OPS_NOTIFY_*`) 0 — migration 문장만 있음.
+  - 크론: 1분 예비 크론이 30분 동안 매분 돌았다(깨우기 기록 30분·60번 = 분당 2번, 남은 위험의 「빈 insert 깨우기」). 웹훅 기록은 두 봇 모두 새 배포 id 그대로(10분마다 다시 맞추는 크론이 바꾸지 않음 = getWebhookInfo가 맞다는 뜻. 토큰을 쓰지 않으므로 Claude Code가 getWebhookInfo를 직접 부르지는 않았다).
+  - 웹훅 수신: 매출 봇 00:39:09·처리 봇 00:39:22에 업데이트 1건씩(덕짱님 「시작」) — 텔레그램 → 운영 서버 경로 동작.
+  - 결제·문의·열람·공유 실패: 배포 뒤 0건(새벽). `/today`는 덕짱님 확인(7절 4번).
 
 - **롤백 기준이 바뀌었다**: 작업 지시의 직전 배포 `dpl_EGrjYckryQCDc5pSZP3rcgDF9Zg5`(master 468f4b40) 뒤에 공유 긴급 수정(`v5/hotfix-share-01`, master 6a7f1044)이 `dpl_2A4wUnQv74faFTQTbiC4ZQH89aeR`로 먼저 나갔다. 이 작업은 그 수정을 병합(30c4ed83, 겹친 파일 없음)해서 함께 나가므로, 즉시 롤백 기준은 **`dpl_2A4wUnQv74faFTQTbiC4ZQH89aeR`**이다(EGrj로 되돌리면 공유 수정까지 빠진다).
 
@@ -331,6 +357,7 @@ alter table public.ops_notifications disable trigger ops_notify_wake;
 
 - 텔레그램 실제 발송·웹훅·`/today`는 배포 뒤에만 확인할 수 있다(지금은 모의 서버 시험). 7절 30분 확인.
 - pg_net 깨우기는 운영 서버가 깨우기 주소를 DB에 적은 뒤부터 동작한다(배포 뒤 첫 크론). 그 전·실패 때는 1분 크론이 보낸다(최대 1분 늦음).
+- 깨우기 트리거(`ops_notify_wake`)가 문장 단위라 1분 크론의 「미발행·누락 보충」 insert가 0줄이어도 분당 2번 깨우기를 부른다(배포 뒤 3분 6번 확인). 대기표가 비어 있어 보내는 것은 없고 분당 제한(30) 안이라 해는 없지만 함수 호출이 낭비된다. 고치기: 트리거를 `referencing new table as n` + `if not exists(select 1 from n) then return null` 로(다음 배포 migration에 넣기 제안).
 - 결제수단은 알림 때 토스 결제 조회로 읽는다(승인 경로 무변경). 조회가 실패하면 「결제수단 확인 못 함」으로 보낸다.
 - 브라우저의 시간대 자료(tzdata)가 오래되면 입력 화면의 「대략」 라벨이 서버와 다를 수 있다(계산은 서버 엔진이라 영향 없음, 라벨만).
 - 1+1 이벤트가 끝나면(11-16 23:59:59 뒤) 운영 크론은 끝나기 직전 결제의 아직 안 나간 증정 이용권을 다시 발급하지 않는다(기존 동작, 이번에 안 바꿈).
