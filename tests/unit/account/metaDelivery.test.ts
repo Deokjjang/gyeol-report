@@ -33,6 +33,15 @@ describe("private Meta transport boundary",()=>{
     expect((await POST(request("https://evil.com"))).status).toBe(403);
     vi.stubEnv("NODE_ENV","production");expect((await POST(request("http://127.0.0.1:3198"))).status).toBe(403);
   });
+  it("테스트 이벤트 코드(META_TEST_EVENT_CODE)가 있을 때만 test_event_code를 붙인다(모양이 틀리면 무시)",async()=>{
+    ready();const transport=vi.fn(async()=>({ok:true,json:async()=>({events_received:1})})) as unknown as typeof fetch;
+    const event={event_name:"PageView" as const,event_id:"11111111-1111-4111-8111-111111111111",event_time:1,user_data:{client_ip_address:"192.0.2.1",client_user_agent:"isolated"}};
+    const sent=async(code?:string)=>{ if(code===undefined) vi.stubEnv("META_TEST_EVENT_CODE",""); else vi.stubEnv("META_TEST_EVENT_CODE",code); await transmitMeta(event,transport); return JSON.parse(String(vi.mocked(transport).mock.calls.at(-1)![1]?.body)); };
+    expect((await sent()).test_event_code).toBeUndefined();
+    expect((await sent("TEST12345")).test_event_code).toBe("TEST12345");
+    expect((await sent("not a code")).test_event_code).toBeUndefined();
+    expect((await sent("TEST12345")).data[0].event_source_url).toBe("https://www.gyeolreport.com/");
+  });
   it("constant URL, exact payload and provider acknowledgement; retry preserves id and time",async()=>{
     ready();const transport=vi.fn(async()=>({ok:true,json:async()=>({events_received:1})})) as unknown as typeof fetch;
     const event={event_name:"CompleteRegistration" as const,event_id:"registration_"+"a".repeat(32),event_time:1,user_data:{client_ip_address:"192.0.2.1",client_user_agent:"isolated"}};

@@ -50,6 +50,14 @@ export function browserMetaEvent(value: unknown): MetaEvent | null {
 }
 export type MetaDelivery = { event_name: MetaEvent["event"]; event_id: string; event_time: number;
   user_data: { client_ip_address: string; client_user_agent: string }; custom_data?: Record<string, unknown> };
+/**
+ * 이벤트 관리자 「테스트 이벤트」 확인용(운영 Q 추가). META_TEST_EVENT_CODE(예: TEST12345, 덕짱님이 넣고 확인 뒤 지움)가 있으면
+ * 서버 전송에 test_event_code를 붙인다 — 붙은 이벤트도 Meta는 일반 이벤트처럼 처리하므로 확인이 끝나면 지운다.
+ */
+export function metaTestEventCode(env: Readonly<Record<string, string | undefined>> = process.env): { test_event_code?: string } {
+  const code = env.META_TEST_EVENT_CODE?.trim();
+  return code && /^TEST[A-Z0-9]{2,20}$/.test(code) ? { test_event_code: code } : {};
+}
 export async function transmitMeta(event: MetaDelivery, transport: typeof fetch = fetch): Promise<boolean> {
   if (!metaDeliveryReady() || !Number.isSafeInteger(event.event_time) || event.event_time <= 0 || !isIP(event.user_data.client_ip_address)) return false;
   let customData: Record<string, unknown> | undefined;
@@ -70,7 +78,7 @@ export async function transmitMeta(event: MetaDelivery, transport: typeof fetch 
         event_source_url: "https://www.gyeolreport.com/", // Constant, never request URL/referrer.
         user_data: { client_ip_address: event.user_data.client_ip_address, client_user_agent: event.user_data.client_user_agent },
         ...(customData ? { custom_data: customData } : {}),
-      }] }),
+      }], ...metaTestEventCode() }),
     });
     const result = await response.json();
     return response.ok && result.events_received === 1;
