@@ -2,13 +2,23 @@ import { randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { createAccountPort } from "../../../../lib/account/supabase";
 import { META_CONSENT_COOKIE, META_CONSENT_VERSION, metaConsentValue, metaOrigin, metaLocalReview, metaCookieName } from "../../../../lib/analytics/metaConsent";
-import { browserMetaEvent, claimMetaBrowserEvents, metaDeliveryReady, metaPublicRequest, metaRequestConsent, metaRequestData, recordMetaConsent, transmitMeta } from "../../../../lib/analytics/metaDelivery";
+import { browserMetaEvent, claimMetaBrowserEvents, metaAccountChoice, metaDeliveryReady, metaPublicRequest, metaRequestConsent, metaRequestData, metaUserMatch, recordMetaConsent, transmitMeta } from "../../../../lib/analytics/metaDelivery";
 const json = (body: object, status = 200) => NextResponse.json(body, { status, headers: { "cache-control": "private, no-store", "referrer-policy": "no-referrer" } });
 export async function GET(request: NextRequest) {
   const local = metaLocalReview(new URL(request.url));
   if (!local && !metaOrigin(new URL(request.url).origin)) return json({}, 404);
   if (!request.headers.get("x-request-id")) return json({ ok: false, error: "REQUEST_ID_REQUIRED" }, 400);
-  return json({ choice: local ? metaConsentValue(request.cookies.get(metaCookieName(true))?.value) : await metaRequestConsent(request), ready: local || metaDeliveryReady() });
+  if (local) return json({ choice: metaConsentValue(request.cookies.get(metaCookieName(true))?.value), ready: true });
+  const ready = metaDeliveryReady(), choice = await metaRequestConsent(request);
+  // 설정 쿠키 없는 브라우저(기본 허용)에 로그인 세션이 있으면, 그 계정이 다른 곳에서 거부했는지 본다. 거부면 이 브라우저에도 거부 쿠키를 남긴다(DB 기록은 이미 있음).
+  if (!ready || choice !== null || request.cookies.get(META_CONSENT_COOKIE) || !request.cookies.getAll().some(c => c.name.startsWith("sb-"))) return json({ choice, ready });
+  const auth = createAccountPort(request), user = await auth?.currentUser();
+  const account = auth && user ? await metaAccountChoice(user.id) : null;
+  // 계정 설정을 못 읽으면 이번 화면에서는 보내지 않는다(쿠키는 남기지 않음 — 다음 화면에서 다시 확인).
+  if (account !== false) return auth?.finish(json({ choice: account === undefined ? false : choice, ready })) ?? json({ choice, ready });
+  const response = auth!.finish(json({ choice: false, ready }));
+  response.cookies.set(META_CONSENT_COOKIE, `${META_CONSENT_VERSION}:no:${randomUUID()}`, { secure: true, httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 365 });
+  return response;
 }
 export async function POST(request: NextRequest) {
   const local = metaLocalReview(new URL(request.url));
@@ -37,7 +47,9 @@ export async function POST(request: NextRequest) {
       response.cookies.set(META_CONSENT_COOKIE, value, { secure: true, httpOnly: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 365 });
       return response;
     }
-    if (!metaDeliveryReady() || await metaRequestConsent(request) !== true) return json({ ok: false, ready: false, choice: false }, 202);
+    // 기본 허용(덕짱님 결정 A): 거부한 브라우저만 막는다. 개인 식별 정보는 선택 동의(choice === true)한 로그인 회원에게만 붙인다.
+    const choice = metaDeliveryReady() ? await metaRequestConsent(request) : false;
+    if (choice === false) return json({ ok: false, ready: false, choice: false }, 202);
     if (body.poll === true && Object.keys(body).every(k => ["poll", "requestId"].includes(k))) {
       const auth = createAccountPort(request), user = await auth?.currentUser();
       return auth?.finish(json({ ok: true, events: await claimMetaBrowserEvents(request, user?.id ?? null) })) ?? json({ ok: true, events: [] });
@@ -46,7 +58,9 @@ export async function POST(request: NextRequest) {
     if (!event) return json({}, 400);
     if (!userData) return json({ ok: false }, 202);
     const eventId = body.requestId;
-    const ok = await transmitMeta({ event_name: event.event, event_id: eventId, event_time: Math.floor(Date.now() / 1000), user_data: userData, custom_data: event.params });
-    return json({ ok, pixel: { ...event, eventId } });
+    const auth = choice === true ? createAccountPort(request) : null, user = await auth?.currentUser();
+    const match = user ? await metaUserMatch(user.id) : {};
+    const ok = await transmitMeta({ event_name: event.event, event_id: eventId, event_time: Math.floor(Date.now() / 1000), user_data: { ...userData, ...match }, custom_data: event.params });
+    return auth?.finish(json({ ok, pixel: { ...event, eventId } })) ?? json({ ok, pixel: { ...event, eventId } });
   } catch { return json({ ok: false }, 503); }
 }

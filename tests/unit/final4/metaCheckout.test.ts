@@ -29,6 +29,15 @@ describe("InitiateCheckout", () => {
     client.interaction("checkout_started", "saju_mbti_full");
     expect(metaCalls()).toEqual([{ event: "InitiateCheckout", productType: "saju_mbti_full", requestId: expect.any(String) }]);
   });
+  it("결정 A: 기본 허용(설정 기록 없음 = null)이면 나가고, 거부(false)면 나가지 않는다", async () => {
+    const client = await import("../../../src/lib/analytics/client");
+    client.setMetaChoice(null); expect(client.publicMetaAllowed()).toBe(true);
+    client.interaction("checkout_started", "saju_mbti_full"); client.interaction("book_viewed", "career_money_study");
+    expect(metaCalls().map(c => c.event)).toEqual(["InitiateCheckout", "ViewContent"]);
+    client.setMetaChoice(false); expect(client.publicMetaAllowed()).toBe(false);
+    client.interaction("checkout_started", "love_marriage_child"); client.pageView("/report/new");
+    expect(metaCalls()).toHaveLength(2);
+  });
   it("값은 상품 표 가격(출시 4종 3,900 KRW, num_items 1)", () => {
     expect(metaProduct("InitiateCheckout", "career_money_study")).toEqual({ event: "InitiateCheckout", params: { content_ids: ["career_money_study"], content_type: "product", value: 3900, currency: "KRW", num_items: 1 } });
   });
@@ -63,6 +72,17 @@ describe("Purchase", () => {
     expect(metaPurchase({ eventId: `purchase_${"a".repeat(32)}`, productType: "saju_mbti_full", value: 3900, currency: "KRW" })!.params).toMatchObject({ value: 3900, currency: "KRW", num_items: 1 });
     expect(metaPurchase({ eventId: `purchase_${"b".repeat(32)}`, productType: "saju_mbti_full", value: 1490, currency: "KRW" })!.params.value).toBe(1490);
     expect(metaPurchase({ eventId: "ticket_x", productType: "saju_mbti_full", value: 3900, currency: "KRW" })).toBeNull();
+  });
+  it("결정 A: 기본 허용 결제 완료 화면은 응답에 온 서버 사실을 픽셀로 비춘다(같은 event id, 주기 확인 없음). 거부면 결제 완료 화면 요청도 없다", async () => {
+    const id = `purchase_${"e".repeat(32)}`, params = { value: 3900, currency: "KRW", content_ids: ["saju_mbti_full"], content_type: "product", num_items: 1 };
+    vi.mocked(fetch).mockImplementation(async () => ({ ok: true, json: async () => ({ ok: true, events: [{ event: "Purchase", eventId: id, params }, { event: "Purchase", eventId: "forged", params }] }) }) as never);
+    const client = await import("../../../src/lib/analytics/client"); client.setMetaChoice(null);
+    const frame = { postMessage: vi.fn() }; client.setMetaFrame(frame as unknown as Window);
+    await client.dispatchPurchase("report_abcdefghijklmnop");
+    expect(vi.mocked(fetch).mock.calls.map(([url]) => url)).toEqual(["/api/analytics/purchase"]);
+    expect(frame.postMessage.mock.calls).toEqual([[{ type: "gyeol:pixel", event: "Purchase", eventId: id, params }, "*"]]);
+    vi.mocked(fetch).mockClear(); client.setMetaChoice(false); await client.dispatchPurchase("report_abcdefghijklmnop");
+    expect(fetch).not.toHaveBeenCalled();
   });
   it("브라우저가 직접 보내는 Purchase는 막힌다(서버 확인 사실만)", async () => {
     const client = await import("../../../src/lib/analytics/client"); client.setMetaChoice(true);

@@ -11,6 +11,8 @@ const browser = () => randomBytes(32).toString("hex");
 const sql = readFileSync("supabase/migrations/20261020062611_v4_meta_registration_delivery.sql", "utf8");
 // 운영 Q 추가(메타 복구): 결제 완료 트리거 → 대기표(동의한 구매 회원만, 승인 코드 무변경).
 const paidTrigger = readFileSync("supabase/migrations/20261107120000_v5_meta_purchase_paid.sql", "utf8");
+// 결정 A(2026-11-09): 기본 허용(거부한 사람만 뺌) + 개인 식별 정보는 로그인한 채 선택 동의한 회원만.
+const defaultMeasurement = readFileSync("supabase/migrations/20261110100000_v5_meta_default_measurement.sql", "utf8");
 async function consent(id: string | null, agreed = true, key = browser()) {
   await db.query("select record_meta_consent($1,$2,$3,'meta-20261020-v2','192.0.2.1','isolated-test')", [id, key, agreed]); return key;
 }
@@ -21,9 +23,14 @@ async function acquire(optIn = true, id?: string) {
 }
 const count = async () => (await db.query<{n:number}>("select count(*)::int n from meta_conversion_outbox")).rows[0].n;
 const batch = async (action = "claim", event: string | null = null, lease: string | null = null) => (await db.query<{r: unknown}>("select meta_delivery_batch($1,$2,$3) r", [action,event,lease])).rows[0].r;
-beforeAll(async () => { ({db,h}=await launchSql()); await db.exec(sql.replaceAll("clock_timestamp()", "public.launch_test_now()")); await db.exec(paidTrigger); }, 30000);
+beforeAll(async () => {
+  ({db,h}=await launchSql()); await db.exec(sql.replaceAll("clock_timestamp()", "public.launch_test_now()")); await db.exec(paidTrigger);
+  // 가입 정보 표(운영 20261104100000과 같은 칸만) — 일치 키(이메일·휴대폰 해시)의 원천.
+  await db.exec("create table if not exists public.account_contacts(user_id uuid primary key references auth.users(id), email text not null, phone text)");
+  await db.exec(defaultMeasurement.replaceAll("clock_timestamp()", "public.launch_test_now()"));
+}, 30000);
 beforeEach(async () => {
-  await db.exec("truncate meta_conversion_outbox,meta_tracking_consents,launch_event_policy,growth_campaigns,report_ticket_grants,referral_invites,campaign_attributions,new_user_acquisitions cascade");
+  await db.exec("truncate meta_conversion_outbox,meta_tracking_consents,account_contacts,launch_event_policy,growth_campaigns,report_ticket_grants,referral_invites,campaign_attributions,new_user_acquisitions cascade");
   await h.clock(START); await h.policy(); await db.exec("update growth_campaigns set public_slug='gyeol-opening-2026'");
 });
 afterAll(async () => { await db?.close(); });
@@ -123,8 +130,8 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
     await db.query("update payment_orders set updated_at=public.launch_test_now() where payment_order_id=$1",[order]);
     expect(await purchaseRows(order)).toHaveLength(1);
   });
-  it("결제 완료 트리거는 동의 안 한 회원·가장 최근 기록이 거부인 회원·연결 없는 주문·미결제 주문에는 넣지 않는다",async()=>{
-    const none=await h.user(); expect(await purchaseRows((await paidOrder(none)).order)).toEqual([]);
+  it("결제 완료 트리거는 가장 최근 기록이 거부인 회원·연결 없는 주문·미결제 주문에는 넣지 않는다(기록 없는 회원은 결정 A부터 기본 줄 — 아래)",async()=>{
+    const none=await h.user(); expect((await purchaseRows((await paidOrder(none)).order)).map(r=>[r.browser_key,r.user_id,r.ip])).toEqual([[null,none,null]]);
     const refused=await h.user(); await consent(refused,true); await h.clock("2026-10-11T00:00:00Z"); await consent(refused,false);
     expect(await purchaseRows((await paidOrder(refused)).order)).toEqual([]);
     const agreed=await h.user(); await consent(agreed);
@@ -138,6 +145,70 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
       expect((await db.query<{status:string}>("select status from payment_orders where payment_order_id=$1",[order])).rows[0].status).toBe("paid");
       expect(await purchaseRows(order)).toEqual([]);
     } finally { await db.exec("drop trigger fail_meta_paid on meta_conversion_outbox; drop function fail_meta_paid()"); }
+  });
+  // ── 결정 A(2026-11-09): 기본 허용 · 거부 뒤 미전송 · 선택 동의에만 개인 식별 정보 ──
+  const queueAs=async(report:string,key:string|null,user:string|null,ip="192.0.2.7",agent="default-agent")=>(await db.query<{r:boolean}>("select queue_meta_purchase($1,$2,$3,$4,$5) r",[report,key,ip,agent,user])).rows[0].r;
+  const claimAs=async(key:string|null,user:string|null)=>(await db.query<{r:unknown[]}>("select claim_meta_browser_events($1,$2) r",[key,user])).rows[0].r;
+  const sha=(value:string)=>createHash("sha256").update(value).digest("hex");
+  const contact=(user:string,email:string,phone:string|null=null)=>db.query("insert into account_contacts(user_id,email,phone) values($1,$2,$3)",[user,email,phone]);
+  it("결정 A 기본 허용: 기록 없는 구매 회원의 결제 → 기본 줄(브라우저 키·IP 없음) → 결제 완료 화면(구매 회원 본인만)이 IP를 채움 → 서버 전송(일치 키 없음)·브라우저 거울 1번, 같은 event id",async()=>{
+    const user=await h.user(), other=await h.user(); await contact(user,"buyer@example.com","01012345678");
+    const {order,report}=await paidOrder(user), event=`purchase_${createHash("md5").update(`gyeol:paid-order:${order}`).digest("hex")}`;
+    expect(await purchaseRows(order)).toEqual([{event_id:event,browser_key:null,user_id:user,custom_data:{value:3900,currency:"KRW",content_ids:["saju_mbti_full"],content_type:"product",num_items:1},ip:null,agent:null}]);
+    expect(await batch()).toEqual([]); // IP·브라우저 정보가 없으면 서버 전송은 아직 없다.
+    // 다른 회원·로그인 없는 요청은 채우지 못한다.
+    expect(await queueAs(report,null,other)).toBe(false); expect(await queueAs(report,null,null)).toBe(false);
+    expect((await purchaseRows(order))[0].ip).toBeNull();
+    expect(await queueAs(report,null,user)).toBe(true); expect(await queueAs(report,null,user,"192.0.2.99","late")).toBe(true);
+    expect((await purchaseRows(order)).map(r=>[r.ip,r.agent])).toEqual([["192.0.2.7","default-agent"]]);
+    // 브라우저 거울: 로그인한 그 회원만, 한 번.
+    expect(await claimAs(null,other)).toEqual([]);
+    expect(await claimAs(null,user)).toEqual([{event:"Purchase",eventId:event,params:{value:3900,currency:"KRW",content_ids:["saju_mbti_full"],content_type:"product",num_items:1}}]);
+    expect(await claimAs(null,user)).toEqual([]);
+    // 서버 전송: 같은 id, 행태정보만(가입 정보가 있어도 이메일·휴대폰 해시 없음).
+    const items=await batch() as Array<{event_id:string;event_name:string;user_data:Record<string,unknown>;lease:string}>;
+    expect(items).toHaveLength(1); expect(items[0]).toMatchObject({event_id:event,event_name:"Purchase"});
+    expect(items[0].user_data).toEqual({client_ip_address:"192.0.2.7",client_user_agent:"default-agent"});
+    expect(await batch("allowed",event,items[0].lease)).toBe(true);
+    // 주문 없는 기본 줄은 만들 수 없다(가입 완료는 선택 동의만).
+    await expect(db.query("insert into meta_conversion_outbox(event_name,acquisition_id,user_id,occurred_at) values('CompleteRegistration',null,$1,public.launch_test_now())",[user])).rejects.toThrow();
+  });
+  it("결정 A 거부 뒤 미전송: 결제 뒤 거부하면 기본 줄 취소(서버 전송·거울·allowed 없음), 거부한 회원의 결제는 줄 없음, 거부한 브라우저의 결제 완료 화면은 false",async()=>{
+    const user=await h.user(), {order,report}=await paidOrder(user);
+    expect(await queueAs(report,null,user)).toBe(true);
+    const leased=await batch() as Array<{event_id:string;lease:string}>; expect(leased).toHaveLength(1);
+    const refusedKey=await consent(user,false); // 로그인한 채 「거부」
+    expect(await batch("allowed",leased[0].event_id,leased[0].lease)).toBe(false);
+    expect((await db.query("select state,ip,agent from meta_conversion_outbox where order_id=$1",[order])).rows).toEqual([{state:"CANCELED",ip:null,agent:null}]);
+    expect(await claimAs(null,user)).toEqual([]); expect(await claimAs(refusedKey,user)).toEqual([]);
+    await db.exec("update meta_conversion_outbox set lease_until=null,next_at=public.launch_test_now()-interval '1 second'"); expect(await batch()).toEqual([]);
+    const next=await paidOrder(user); expect(await purchaseRows(next.order)).toEqual([]);
+    expect(await queueAs(next.report,null,user)).toBe(false); expect(await queueAs(next.report,refusedKey,user)).toBe(false);
+    expect(await purchaseRows(next.order)).toEqual([]);
+  });
+  it("결정 A 선택 동의에만 개인 식별 정보: 로그인한 채 동의한 회원만 em·ph(SHA-256, 이메일 소문자·앞뒤 공백 제거, 휴대폰 82+앞 0 뺀 번호), 기본 회원·로그인 없이 동의한 브라우저·거부 뒤에는 없음",async()=>{
+    const agreed=await h.user(), plain=await h.user();
+    await contact(agreed,"  Buyer.One@Example.COM ","01012345678"); await contact(plain,"plain@example.com","01099998888");
+    const key=await consent(agreed,true), match={em:[sha("buyer.one@example.com")],ph:[sha("821012345678")]};
+    const r=async(user:string)=>(await db.query<{r:unknown}>("select meta_user_match($1) r",[user])).rows[0].r;
+    expect(await r(agreed)).toEqual(match); expect(await r(plain)).toEqual({});
+    const a=await paidOrder(agreed), p=await paidOrder(plain); expect(await queueAs(p.report,null,plain)).toBe(true);
+    const items=await batch() as Array<{event_id:string;user_data:Record<string,unknown>}>;
+    const byOrder=async(order:string)=>items.find(i=>i.event_id===`purchase_${createHash("md5").update(`gyeol:paid-order:${order}`).digest("hex")}`)!.user_data;
+    expect(await byOrder(a.order)).toEqual({client_ip_address:"192.0.2.1",client_user_agent:"isolated-test",...match});
+    expect(await byOrder(p.order)).toEqual({client_ip_address:"192.0.2.7",client_user_agent:"default-agent"});
+    expect(JSON.stringify(items)).not.toMatch(/example\.com|0101234|user_id|browser_key/);
+    // 로그인 없이 동의한 브라우저(계정 없음)는 일치 키가 없다. 휴대폰이 없으면 em만.
+    const guestKey=await consent(null,true), solo=await h.user(); await contact(solo,"solo@example.com"); await consent(solo,true);
+    expect(await r(solo)).toEqual({em:[sha("solo@example.com")]});
+    const g=await paidOrder(null); expect(await queueAs(g.report,guestKey,null)).toBe(true);
+    await db.exec("update meta_conversion_outbox set lease_until=null,next_at=public.launch_test_now()-interval '1 second'");
+    const again=await batch() as Array<{event_id:string;user_data:Record<string,unknown>}>;
+    expect(again.find(i=>i.event_id===`purchase_${createHash("md5").update(`gyeol:paid-order:${g.order}`).digest("hex")}`)!.user_data).toEqual({client_ip_address:"192.0.2.7",client_user_agent:"default-agent"});
+    // 거부하면 그 회원의 일치 키도 끝.
+    await consent(agreed,false,key); expect(await r(agreed)).toEqual({});
+    for (const role of ["anon","authenticated"]) for (const query of [`select meta_user_match('${agreed}')`,`select meta_user_choice('${agreed}')`,`select queue_meta_purchase('x',null,'192.0.2.1','a','${agreed}')`])
+      await expect(db.transaction(async tx=>{await tx.exec(`set local role ${role}`);await tx.query(query);})).rejects.toThrow(/permission denied/);
   });
   it("uncertain acknowledgement never retries beyond the 24-hour dedup safety window",async()=>{
     await acquire(); const first=await batch() as Array<{event_id:string;lease:string}>;

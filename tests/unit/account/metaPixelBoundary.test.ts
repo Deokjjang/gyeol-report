@@ -1,16 +1,23 @@
 import { runInNewContext } from "node:vm";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
-const state=vi.hoisted(()=>({ready:true,consent:true}));
+const state=vi.hoisted(()=>({ready:true,consent:true as boolean|null}));
 vi.mock("../../../src/lib/analytics/metaDelivery",()=>({metaDeliveryReady:()=>state.ready,metaRequestConsent:async()=>state.consent}));
 import { GET } from "../../../src/app/api/analytics/meta/pixel/route";
 afterEach(()=>{state.ready=true;state.consent=true;});
 describe("opaque Pixel privacy boundary (no vendor network)",()=>{
-  it("fails closed for previews, missing consent, disabled delivery and URL queries",async()=>{
+  it("fails closed for previews, refusal, disabled delivery and URL queries; 결정 A: 기본 허용(설정 기록 없음)은 연다",async()=>{
     const request=(url="https://www.gyeolreport.com/api/analytics/meta/pixel")=>new NextRequest(url);
     expect((await GET(request("https://preview.vercel.app/api/analytics/meta/pixel"))).status).toBe(404);
     expect((await GET(request("https://www.gyeolreport.com/api/analytics/meta/pixel?email=private"))).status).toBe(404);
-    state.consent=false;expect((await GET(request())).status).toBe(404);state.consent=true;state.ready=false;expect((await GET(request())).status).toBe(404);
+    state.consent=false;expect((await GET(request())).status).toBe(404);
+    state.consent=null;expect((await GET(request())).status).toBe(200);
+    state.consent=true;state.ready=false;expect((await GET(request())).status).toBe(404);
+  });
+  it("결정 A: 픽셀에는 개인 식별 정보(Advanced Matching)를 넣지 않는다 — init에 사용자 값 없음, 자동 설정 끔",async()=>{
+    const html=await (await GET(new NextRequest("https://www.gyeolreport.com/api/analytics/meta/pixel"))).text();
+    expect(html).toContain("fbq('set','autoConfig',false,pixel);fbq('consent','grant');fbq('init',pixel);");
+    expect(html).not.toMatch(/fbq\('init',pixel,|\b(em|ph|external_id)\s*:/);
   });
   it("sandbox forbids parent access, suppresses referrers and admits only a bounded allowlist",async()=>{
     const response=await GET(new NextRequest("https://www.gyeolreport.com/api/analytics/meta/pixel"));

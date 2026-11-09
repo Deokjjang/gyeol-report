@@ -5,9 +5,10 @@ import { metaDeliveryReady, metaRequestConsent } from "../../../../../lib/analyt
 
 // The SDK can only see this constant, empty document. Opaque sandbox origin
 // prevents it from reading the parent's URL, DOM, auth cookies or report inputs.
+// 기본 허용(덕짱님 결정 A): 거부한 브라우저에만 안 연다. 픽셀에는 개인 식별 정보(Advanced Matching)를 넣지 않는다 — init에 사용자 값 없음.
 export async function GET(request: NextRequest) {
   if (!metaOrigin(new URL(request.url).origin) || !metaDeliveryReady() ||
-    await metaRequestConsent(request) !== true || new URL(request.url).search) return new Response(null, { status: 404 });
+    await metaRequestConsent(request) === false || new URL(request.url).search) return new Response(null, { status: 404 });
   const nonce = randomBytes(16).toString("base64");
   return new Response(`<!doctype html><html><head><meta name="referrer" content="no-referrer"><title>광고 성과 측정</title></head><body><script nonce="${nonce}">
   (() => {

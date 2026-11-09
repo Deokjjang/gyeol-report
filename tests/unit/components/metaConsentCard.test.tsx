@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import MetaSettingsLink from "../../../src/components/analytics/MetaSettingsLink";
-import { META_CARD_SEEN_KEY, META_CONSENT_VERSION } from "../../../src/lib/analytics/metaConsent";
+import { META_CARD_SEEN_KEY, META_NOTICE_VERSION } from "../../../src/lib/analytics/metaConsent";
 
 const read = (path: string) => readFileSync(path, "utf8");
 
@@ -17,23 +17,32 @@ describe("Meta consent card (mobile visible, once, footer settings)", () => {
     expect(read("src/app/dev/book-preview/book.module.css")).toContain("var(--meta-card-h, 0px)");
   });
 
-  it("shows the first-visit card once per consent version and drops the floating settings button", () => {
+  it("결정 A: 첫 방문 안내 카드는 안내 판마다 한 번 — 거부·자세히·확인, 확인(닫기)은 거부가 아니다", () => {
     const source = read("src/components/analytics/MetaPixel.tsx");
-    expect(META_CARD_SEEN_KEY).toContain(META_CONSENT_VERSION);
+    // 판이 바뀌어 예전 「동의 요청」 카드를 본 사람도 새 안내(기본 허용·거부 방법)를 한 번 본다.
+    expect(META_CARD_SEEN_KEY).toBe(`gyeol-meta-card-seen:${META_NOTICE_VERSION}`);
+    expect(source).toContain("${SEEN_COOKIE}=${META_NOTICE_VERSION}");
     expect(source).toContain("result.choice === null && result.ready === true && !cardSeen()");
     expect(source).toContain("if (firstVisit || result.choice !== null) markCardSeen();");
-    // Closing counts as declining and is remembered in localStorage and a 1-year cookie.
-    expect(source).toContain("const dismiss = (withChoice: boolean) => { markCardSeen(); setCard(false); setOpen(false); if (withChoice) void choose(false); };");
-    expect(source).toContain("onClick={() => dismiss(true)}>닫기");
+    expect(source).toContain("const dismiss = () => { markCardSeen(); setCard(false); setOpen(false); };");
+    expect(source).not.toContain("choose(false); };");
+    expect(source).toContain("onClick={dismiss}>확인</button>");
+    expect(source).toContain("onClick={() => void choose(false)}>거부</button>");
+    expect(source).toContain("이름·이메일·전화번호는 보내지 않습니다. 원하지 않으면 거부를 누르세요.");
     expect(source).toContain("SEEN_MAX_AGE = 60 * 60 * 24 * 365");
-    expect(source).not.toContain("광고 측정 설정{choice");
     expect(source).not.toContain("styles.settings");
   });
 
-  it("loads the Pixel only after consent", () => {
+  it("결정 A: 픽셀은 서버 답을 받은 뒤 거부하지 않은 브라우저에만(기본 허용·선택 동의), 서버 사실 주기 확인은 선택 동의만", () => {
     const source = read("src/components/analytics/MetaPixel.tsx");
-    expect(source).toContain('{!bundleCallback && choice === true && ready && <iframe ref={frame} src="/api/analytics/meta/pixel"');
+    expect(source).toContain("const allowed = choice !== undefined && choice !== false;");
+    expect(source).toContain("useState<boolean | null | undefined>(undefined)");
+    expect(source).toContain('{!bundleCallback && allowed && ready && <iframe ref={frame} src="/api/analytics/meta/pixel"');
     expect(source.match(/\/api\/analytics\/meta\/pixel/g)).toHaveLength(1);
+    expect(source).toContain("setMetaChoice(result.ready === true ? known : false)");
+    expect(source).toContain("const timer = explicit ? setInterval(");
+    // 선택 동의 버튼은 세 칸 모두 체크해야 눌린다(개인 식별 정보).
+    expect(source).toContain("disabled={busy || !Object.values(consents).every(Boolean)} onClick={() => void choose(true)}>선택 동의");
   });
 
   it("offers a footer '광고 설정' link in both footers, rendered only where the panel can open", () => {

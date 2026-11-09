@@ -12,6 +12,7 @@
 // 덕짱님 정정(운영 Q 9부): 회원 재동의를 요구하지 않는다(문서 개정 공지만). privacy를 올리면 어제 동의한 회원 전원이 다시 동의해야 하고
 // 그 전까지 결제·이용권·공유 링크 발급이 막힌다(공유는 「현재 동의 회원만」 규칙 그대로 — tests/unit/sharing/bookShareV5.test.tsx).
 // 약관도 그대로(약관을 올리면 회원 전원이 다시 동의해야 한다 — 바꾸지 않음).
+// 결정 A(2026-11-09): 광고 측정 기본 허용(거부할 수 있음)·개인 식별 정보는 선택 동의만 — 처리방침 13번 등 문서 개정 공지만, 동의 버전 그대로.
 export const CHECKOUT_POLICY_VERSIONS = {
   terms: "2026-11-06.1",
   privacy: "2026-11-06.1",
@@ -25,15 +26,20 @@ export type CheckoutPolicyVersions = { readonly terms: string; readonly privacy:
  */
 // 이용약관 시행일(2026-11-06.1, 2026-11-06 P 배포). 불리한 변경 대상자 0명 근거: docs/v5/final4/legal-review.md 「P 배포 전 보완」.
 export const POLICY_EFFECTIVE_DATE: string | null = "2026-11-06";
-/** 운영 Q 배포일 = 개인정보처리방침 개정(동의 버전 그대로)·환불정책 2026-11-07.1 시행일. 배포일이 바뀌면 이 한 줄만 고친다. */
+/** 운영 Q 배포일 = 개인정보처리방침 개정(동의 버전 그대로)·환불정책 2026-11-07.1 시행일. */
 export const OPS_Q_POLICY_EFFECTIVE_DATE: string | null = "2026-11-07";
+/**
+ * 광고 측정 기본 허용(덕짱님 결정 A, 2026-11-09) 처리방침 개정 시행일 = 운영 배포일(KST). 동의 버전 2026-11-06.1 그대로(문서 개정 공지).
+ * null이면 문서에 「배포일(확정 전)」이 보인다 — 배포 때 이 한 줄만 고친다. 방침 16번 「불리한 변경 30일 전 공지」 검토: docs/v5/final4/legal-review.md 첫 절.
+ */
+export const META_OPTOUT_POLICY_EFFECTIVE_DATE: string | null = null;
 const koreanDate = (iso: string | null) => { if (!iso) return "배포일(확정 전)"; const [y, m, d] = iso.split("-").map(Number); return `${y}년 ${m}월 ${d}일`; };
 /** 이용약관 시행일(한국어). */
 export const POLICY_EFFECTIVE_DATE_KO = koreanDate(POLICY_EFFECTIVE_DATE);
 /** 문서별 시행일(한국어). 세 문서의 「시행일」·변경 이력 첫 줄이 이 값을 쓴다. */
 export const POLICY_EFFECTIVE_DATES_KO = {
   terms: POLICY_EFFECTIVE_DATE_KO,
-  privacy: koreanDate(OPS_Q_POLICY_EFFECTIVE_DATE),
+  privacy: koreanDate(META_OPTOUT_POLICY_EFFECTIVE_DATE),
   refund: koreanDate(OPS_Q_POLICY_EFFECTIVE_DATE),
 } as const;
 
@@ -45,7 +51,8 @@ export const POLICY_HISTORY = {
     "이전 약관(2026년 9월 24일 시행, 문서 버전 2026-06-14.1)",
   ],
   privacy: [
-    `${POLICY_EFFECTIVE_DATES_KO.privacy} 시행(현재, 문서 개정 — 동의 버전 2026-11-06.1 그대로라 다시 동의하지 않아도 됩니다): 처리 위탁과 국외 이전에 Telegram Messenger Inc.를 더함(운영자 주문 알림·문의 처리 — 주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보를 알림이 생길 때 텔레그램 봇 API(HTTPS)로 보내고, 처리 후 메시지를 정리), 문의·요청 항목을 요청 종류와 접수 기기·브라우저 종류로 고침(직접 쓰는 칸 없앰)`,
+    `${POLICY_EFFECTIVE_DATES_KO.privacy} 시행(현재, 문서 개정 — 동의 버전 2026-11-06.1 그대로라 다시 동의하지 않아도 됩니다): 광고 성과 측정을 「동의한 경우에만」에서 「기본으로 보내고 「광고 설정」에서 거부할 수 있음」으로 바꿈(이름·이메일·전화번호 없는 행태정보 — 방문·상품 조회·결제 시작·유료 결제 여부와 시각, 무작위 전환 식별자, 상품·금액, IP 주소·브라우저 정보), 이메일·휴대폰 번호 해시값과 가입 완료 여부는 로그인한 채 따로 동의한 회원만, 13번에 보내는 항목·목적·거부 방법을 표로 정리`,
+    `${koreanDate(OPS_Q_POLICY_EFFECTIVE_DATE)} 시행(문서 개정 — 동의 버전 2026-11-06.1 그대로): 처리 위탁과 국외 이전에 Telegram Messenger Inc.를 더함(운영자 주문 알림·문의 처리 — 주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보를 알림이 생길 때 텔레그램 봇 API(HTTPS)로 보내고, 처리 후 메시지를 정리), 문의·요청 항목을 요청 종류와 접수 기기·브라우저 종류로 고침(직접 쓰는 칸 없앰)`,
     "2026년 11월 6일 시행(문서 버전 2026-11-06.1): 결제는 회원만 하므로 로그인 없이 결제할 때의 항목과 쿠키를 뺌, v5 이전 리포트의 열람 기간이 끝나면 원고와 입력정보를 지우고 법정 최소 기록(주문번호·상품·금액·일시·상태)만 5년 보관, 결제수단(토스페이·카카오페이) 안내",
     "2026년 11월 6일 시행(문서 버전 2026-11-05.1): 수집 항목·목적 추가(로그인 식별자, 현재 하는 일·연애 상태, 궁합·선물 상대, 이용권, 혜택 알림), 국외 이전 업체별 안내(Anthropic·OpenAI·Supabase·Vercel), 보유 기간 구체화(AI 작성 원문 작업용 사본 30일 포함), 데이터 저장 위치(서울, ap-northeast-2), 쿠키·안전성 확보 조치·구제 기관 안내",
     "이전 방침(문서 버전 2026-09-22.1)",
