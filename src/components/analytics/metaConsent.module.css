@@ -12,3 +12,7 @@
 .card div { display: flex; flex-wrap: wrap; gap: 8px; }
 @media (min-width: 768px) { .card { display: flex; align-items: center; justify-content: center; gap: 24px; padding-block: 8px; } .card p { margin: 0; max-width: 640px; } }
 .card button { min-height: 36px; padding: 6px 12px; font-size: 12px; }
+/* 시행일 전 변경 안내(광고 설정 창 안) — 바뀌는 점·항목·목적·거부 방법·시행일. */
+.change { margin: 10px 0; padding: 10px 12px; border: 1px solid #d4c9bd; border-radius: 8px; background: #faf5ee; }
+.change dl { margin: 6px 0 0; } .change dl div { margin: 6px 0; } .change dt { font-weight: 600; } .change dd { margin: 0; }
+.card button.later { min-width: 36px; padding-inline: 10px; }

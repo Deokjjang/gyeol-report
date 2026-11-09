@@ -325,7 +325,7 @@ alter table public.ops_notifications disable trigger ops_notify_wake;
 1. **결제 2건** — 덕짱님 계정으로 「나라는 사람」 3,900원을 토스페이로 1건, 카카오페이로 1건 결제한다(책 2권은 열지 말고 둔다 — 열람 0회여야 ★환불이 나온다).
    - 매출 봇: 건마다 「💳 3,900원 · 나라는 사람 / 토스페이(또는 카카오페이) · 신규 또는 재구매(이 계정의 첫 유료 결제만 신규) · 시각 / 오늘 N건 · 금액」.
    - 서재: 증정 이용권이 결제마다 1장(이벤트 기간). 증정 이용권은 쓰지 말고 둔다(환불 때 회수 확인용).
-   - 메타 구매 이벤트는 Events Manager에서 덕짱님이 확인.
+   - 메타 구매 이벤트(브라우저·서버 같은 event_id): 결제 **전에** 10-6절 준비(로그인한 채 「광고 설정」 동의)를 하고, 확인도 10-6절대로.
 2. **처리 봇 환불(A건)** — 서재에서 A건 「문의·환불 요청」 → 「책이 안 나오거나 안 열려요」 → [접수].
    - 서재: 「접수됐어요. 확인 후 이 책 카드에서 결과를 알려 드릴게요.」, 버튼이 「접수됨」.
    - 처리 봇: 「📮 책이 안 열려요 · GR-○○○○ / 나라는 사람 · 3,900원 · 결제수단 · 시각 / 책 완성 · 열람 0회 · 기기 / 이 계정 결제 N · 환불 N · 이 결제 증정 이용권 미사용」 + [★환불] [다시 만들기] [안내].
@@ -350,8 +350,8 @@ alter table public.ops_notifications disable trigger ops_notify_wake;
 7. **서머타임 시작으로 없는 시각의 표 아래 문구**(해당 고객 0명, 기존 표시 문제) — 예: 1987-05-10 02:30 입력이면 표 아래에 「90분 보정 (02:30 → 01:00)」이 나오지만 실제 계산은 태양시 02:00. 관리자 칸에는 실제 값을 함께 적었다. 문구 함수(`solarTimeCorrectionNote`)를 고칠지.
 8. **관리자 「태양시 보정 전 계산판」 배지** — 주문 상세 자료에 계산판 버전이 없어 발행 시각(2026-10-27 KST까지)으로 판단한다. 정확히 하려면 관리자 상세 RPC에 버전 칸 추가(이번엔 안 바꿈).
 9. ~~재동의 전 회원의 공유 링크~~ — **해결**(덕짱님 추가 지시 2026-11-06): 공유 링크 발급 조건을 「로그인한 책 주인 + 가입 동의 완료(버전 무관)」로 바꿨다(9-2절). 결제·이용권의 재동의 흐름은 그대로.
-10. **메타 데이터 세트 ↔ 광고 계정 연결** — 데이터 세트 1912751453433745가 광고 계정 1415517229908344(결리포트)에 연결돼 있는지는 Claude Code가 확인할 수 없다(Meta 비즈니스 접근 없음). 덕짱님·Cowork 확인(비즈니스 설정 → 데이터 세트 → 연결된 자산). 메타 배포 전에 확인하면 좋다.
-11. **메타 복구 배포** — 덕짱님 결정대로 공유·봇 배포 뒤 다음 배포로 한다(`v5/meta-01` 90b2fa93 + migration `20261107120000_v5_meta_purchase_paid.sql`). 테스트 이벤트를 서버 쪽까지 보려면 그 배포 전에 `META_TEST_EVENT_CODE`를 Production env에 넣어 둔다(9-3절 확인 방법).
+10. ~~**메타 데이터 세트 ↔ 광고 계정 연결**~~ — **해결**(덕짱님 확인 2026-11-09): 데이터 세트 1912751453433745 ↔ 광고 계정 1415517229908344 연결 완료.
+11. ~~**메타 복구 배포**~~ — **배포 완료**(2026-11-09 16:22 KST, `dpl_BKPM5pAsX6R4U6N7gfaExiQPcAdj`, 10절). `META_TEST_EVENT_CODE`는 넣지 않았다(덕짱님 결정).
 
 남은 위험
 
@@ -419,3 +419,110 @@ alter table public.ops_notifications disable trigger ops_notify_wake;
 3. 테스트 이벤트 목록에서 네 이벤트마다 「브라우저」·「서버」 두 줄이 **같은 이벤트 ID**로 보이고 「중복 제거됨」 표시가 있는지 본다. Purchase 서버 줄은 5분 크론이라 최대 5분 늦다. 대기표 확인(읽기 전용): `select event_name,state,sent_at,browser_dispatched_at from meta_conversion_outbox order by occurred_at desc limit 5`.
 4. 확인이 끝나면 `META_TEST_EVENT_CODE`를 지운다(붙은 이벤트도 Meta는 일반 이벤트로 처리한다).
 - 주의(UNVERIFIED): 픽셀이 sandbox 창 안에서 돌아서 브라우저 테스트 도구가 픽셀 이벤트를 못 잡을 수 있다. 그때는 Meta Pixel Helper(크롬 확장)로 창 안 이벤트를 보거나, 이벤트 관리자 「개요」에서 브라우저·서버 수와 중복 제거 수를 본다(20분 안팎 늦음).
+
+## 10. 메타 복구 배포(2026-11-09)
+
+지시(2026-11-09): 데이터 세트 1912751453433745 ↔ 광고 계정 1415517229908344 연결 확인 완료(덕짱님) → `v5/meta-01` 배포, `META_TEST_EVENT_CODE`는 넣지 않음. 토스 웹훅 확인 결과 고칠 것이 있으면 함께, 깨우기 트리거 빈 호출 수정 포함. 배포 뒤 운영에서 fbq 로드와 PageView·ViewContent·InitiateCheckout 전송 확인, 실전 시험 결제 때 Purchase가 브라우저·서버 같은 event_id로 들어가는지 확인 방법 보고.
+
+### 10-1 판정
+
+| 항목 | 판정 | 근거 |
+|---|---|---|
+| 배포(`dpl_BKPM5pAsX6R4U6N7gfaExiQPcAdj`) | PASS | tsc·eslint·build 0, 전체 시험 새 실패 0, 운영 migration 2건, 배포 뒤 오류 0(10-4) |
+| fbq 로드 | PASS | 동의 뒤 픽셀 창에서 fbevents.js·설정 200, fbq 2.9.438(메인·상품·처리방침 모두) |
+| PageView·ViewContent 전송 | PASS | 운영에서 브라우저(facebook.com/tr 200)·서버(CAPI `ok:true`) 둘 다, **같은 event_id**(10-5) |
+| InitiateCheckout 전송 | UNVERIFIED(운영) | 로그인해야 결제창이 열린다. 경로는 ViewContent와 같고 이번 배포에서 안 바뀜. 실전 시험 때 확인(10-6) |
+| Purchase 브라우저·서버 같은 id | 실전 시험 때 | 결제가 있어야 생긴다. 확인 방법 10-6 |
+| 깨우기 빈 호출 | PASS | 운영 분당 2번 → 적용 뒤 0번(10-3) |
+| 토스 웹훅 | 고칠 것 없음 | 웹훅 주소 호출 0건(10-2) |
+
+### 10-2 토스 웹훅 확인
+
+- Vercel 요청 기록(관측 쿼리, 2026-10-12 ~ 11-09): `/api/payments/toss/webhook` **0건**. 같은 쿼리에서 `/api/payment-checkout/prepare`는 잡혀 쿼리 자체는 정상이다.
+- 다른 주소로 등록됐을 가능성: 같은 기간 POST 307·308·401·404·405·503을 경로별로 보면 웹훅으로 볼 만한 경로가 없다. `gyeolreport.com/`(apex) POST 308 10건은 11-06 12시·11-07 17시·11-08 03시(UTC)에 몰려 있는데, 그 사이 결제는 11-06 11:20 UTC 1건뿐이라 토스 재시도 간격(1·4·16·64분…)과 맞지 않는다.
+- 판단: 토스 개발자센터에 웹훅이 등록되지 않은 상태로 보인다. 503 뼈대 때문에 토스가 재시도하는 일이 없으므로 **이번 배포에 넣을 수정은 없다**. 콘솔에서 직접 취소한 건을 자동으로 잡을지는 8절 결정 1 그대로(덕짱님 결정 대기). 토스 콘솔 화면은 열지 않았다(AGENTS.md).
+
+### 10-3 깨우기 트리거 빈 호출 수정(`20261109100000_v5_ops_wake_nonempty.sql`)
+
+- 원인: `ops_notify_wake`는 문장 단위 트리거라 0줄 insert에도 발동한다. 1분 크론의 미발행 감지·누락 보충(`insert … select … on conflict do nothing` 두 문장)이 넣을 것이 없을 때마다 서버 깨우기 주소를 불렀다.
+- 수정: 전이 표(`referencing new table as new_rows`)로 새 줄이 있을 때만 부른다. 트리거 이름·발동 시점·주소 규칙·실패 처리는 그대로라 6절 롤백의 disable/enable 문장도 그대로 쓴다.
+- 시험(`ops/opsNotifySql` 28건 통과): 가짜 `net.http_post`로 호출 수를 센다. 1줄 넣기 1번, `on conflict` 0줄 0번, 넣을 것 없는 크론 0번, 여러 줄 한 문장 1번. **수정 전 트리거로 돌리면 이 시험이 실패**한다(0줄에도 호출).
+- 운영 전후: 적용 전 60분 동안 대기표 새 줄 0인데 깨우기 120번(16:12~16:16 매분 2번) → 적용(16:17:08) 뒤 0번. Vercel 요청 기록에서도 `/api/ops/notify-wake`가 07:00~07:10 UTC 20번 → 07:20 이후 0번, 1분 크론(`/api/internal/ops-notify`)은 계속 매분 200.
+- 실제 알림은 아직 없어서 「새 줄 → 바로 깨우기」는 운영에서 실전 시험 결제 때 확인한다. 결제 직후 몇 초 안에 매출 봇 알림이 오면 정상이고, 1분쯤 늦게 오면 깨우기가 안 된 것이다(1분 크론이 대신 보냄 — 보고해 주세요).
+
+### 10-4 migration · 배포 · 시험
+
+운영 migration(2026-11-09 16:17:08 KST 적용, 승인 범위): 저장소 밖 임시 폴더(운영 기록 자리표 + 두 파일, 커밋 586f9dc4의 파일과 `cmp`로 같음)에서 `supabase db push --linked` dry-run → 대기 2건 확인 → 적용.
+
+| 확인(읽기 전용 SELECT) | 적용 전 | 적용 뒤 |
+|---|---|---|
+| migration 기록 최신 | 20261107110000 | 20261109100000 · 20261107120000 |
+| `payment_orders` 트리거 | coupon_order_guard · direct_bundle_payment_identity · ops_notify_payment · ops_order_record | + **meta_purchase_paid**(after insert or update of status, 행 단위), 모두 켜짐 |
+| `meta_purchase_on_paid` | 없음 | security definer, 실행 권한 postgres만 |
+| `ops_notifications` 트리거 | `… FOR EACH STATEMENT …` | `… REFERENCING NEW TABLE AS new_rows FOR EACH STATEMENT …` |
+| `ops_notify_wake` md5 | 5776877f…(보관 파일) | 7d44f9ca… |
+| `payment_orders` 상태별 | paid 59 · ready 48 | paid 59 · ready 48 |
+| `meta_conversion_outbox` | 0행 | 0행 |
+
+- 병합: `v5/meta-01`(master·v5/main 병합 + 깨우기 수정 586f9dc4 + 되돌리기 파일 75e53173) → `v5/main` 8519ff0d → `master` 05f7f592. master 트리 = v5/meta-01 트리(시험한 트리 + 되돌리기 문서 1개).
+- **운영 배포 `dpl_BKPM5pAsX6R4U6N7gfaExiQPcAdj`**: push 16:18:23 KST → READY 약 16:22, `www.gyeolreport.com` 응답이 이 배포 id를 내보냄(74곳).
+- 시험: 전체 시험을 기준(master cac002f1)과 같은 부하로 나란히 — 기준 실패 861/31,801, 브랜치 858/31,818. 브랜치에서만 실패한 2건(`temporalTenGodSourceContract` 「repeated verification…」, `productionTestDataCleanupMigration`)은 둘 다 5.9초 시간 초과였고, 두 트리에서 단독으로 다시 돌리면 결과가 같다(2건 모두 통과, 같은 파일의 기존 실패 11건은 기준도 실패) → **새 실패 0**. tsc·eslint·build 0.
+- 배포 뒤(16:33 KST): Vercel 런타임 오류 0, Supabase postgres ERROR·WARNING 0, 1분 크론·5분 메타 크론 200, 대기표 미발송 0.
+
+### 10-5 운영 확인 — fbq 로드와 PageView·ViewContent
+
+방법: 새 브라우저(WebKit, 아이폰 사파리 UA, 390px)로 운영 사이트를 열고 → 1+1 이벤트 팝업 닫기 → 첫 방문 카드 「자세히 보고 선택」에서 세 항목 동의 → 메인 → 「나라는 사람」 상품 화면(`/report/new?product=saju_mbti_full`) → 처리방침. 서버 응답(`/api/analytics/meta`)과 픽셀 창이 보낸 요청을 함께 기록했다(16:32 KST).
+
+| 화면 | 이벤트 | 서버(CAPI) | 브라우저(facebook.com/tr) | event_id |
+|---|---|---|---|---|
+| 메인 | PageView | 200 `ok:true` | 200 | f7ff1e07-… 같음 |
+| 상품 | PageView | 200 `ok:true` | 200 | e60a2f28-… 같음 |
+| 상품 | ViewContent(saju_mbti_full · 3,900 KRW) | 200 `ok:true` | 200(cd 값 같음) | 458f38e3-… 같음 |
+| 처리방침(예전엔 PageView 없던 경로) | PageView | 200 `ok:true` | 200 | b8cd6f94-… 같음 |
+
+- 서버 `ok:true`는 Meta Graph가 `events_received: 1`을 돌려줬다는 뜻이다(`transmitMeta`).
+- 픽셀 창: `fbevents.js`·`signals/config/1912751453433745` 200, `fbq` 2.9.438, 창 주소 = `/api/analytics/meta/pixel`, referrer 빈칸. 브라우저 요청의 페이지 주소(`dl`)도 이 고정 주소이고 `rl`은 없다 → 책 id·공유 토큰 같은 원문 주소는 나가지 않는다(처리방침 13번과 맞음).
+- **정정(9-3 추정)**
+  - 처음 헤드리스 Chromium으로 확인했을 때는 브라우저 전송이 0건이었다. 로컬 하네스로 원인을 찾았다. 운영 주소를 Playwright로 가로채 같은 픽셀 창 HTML과 진짜 `fbevents.js`를 돌리고, facebook.com 요청은 가로채서 Meta로 보내지 않았다.
+  - 결과: Meta SDK가 UA의 「HeadlessChrome」을 걸러 보내지 않은 것이다. 일반 UA로는 Chromium·WebKit 모두 지금 코드 그대로 PageView·Purchase를 보낸다(eid 같음). **코드 문제 아님, 수정 없음.**
+  - 출처 없는 sandbox 창이라 SDK가 `document.cookie`를 읽다 오류를 남긴다(그 오류 신고는 CSP가 막음). 그래도 전송은 되고 `fbp`도 붙는다. 다만 창이 열릴 때마다 새로 만들어져 페이지 사이에 이어지지 않는다(추정 — 9-3의 「_fbp 없음」을 「_fbp가 페이지마다 새것」으로 고침).
+- 확인이 남긴 것: 운영 `meta_tracking_consents`에 익명 동의 3줄(회원 없음, 시험 브라우저). Meta에는 서버 PageView 8·ViewContent 3, 브라우저 PageView 3·ViewContent 1이 실제 방문처럼 들어갔다(같은 id는 Meta가 합침).
+
+### 10-6 실전 시험 결제 때 Purchase 확인 방법(덕짱님)
+
+Purchase는 두 갈래가 **한 줄의 대기표**(`meta_conversion_outbox`, 주문당 1줄)를 같이 쓴다. 그래서 event_id가 처음부터 하나다(`purchase_` + md5(`gyeol:paid-order:` + 주문번호)).
+- 서버: 결제 완료 트리거가 그 줄을 넣고, 5분 크론이 CAPI로 보낸다 → `sent_at`.
+- 브라우저: 결제한 그 브라우저가 5초마다 서버에 물어 같은 줄을 받아 픽셀로 보낸다 → `browser_dispatched_at`.
+
+**준비(결제 전에, 결제할 아이폰 사파리에서)**
+1. 로그인한 상태로 화면 맨 아래 「광고 설정」 → 세 항목 체크 → 「동의하고 허용」.
+   - 로그인한 채 동의해야 동의 기록에 회원이 붙고, 결제 트리거가 서버 Purchase를 넣는다.
+   - 예전에 거부·닫기를 했어도, 이번 동의가 가장 최근 기록이면 된다. 다른 기기에서 나중에 거부하면 넣지 않는다.
+2. 그 브라우저에서 결제한다(7절 1번). 결제 완료 화면이나 서재를 **1분쯤 열어 둔 뒤** 다음 단계(환불)로 간다.
+   - 브라우저 쪽은 결제 10분 안, 환불 전에만 받는다. 바로 환불하면 서버만 남는다.
+
+**확인(결제 5분 뒤, 읽기 전용 — Claude Code에 요청하시거나 Supabase SQL 편집기에서)**
+
+```sql
+select order_id, event_id, state, sent_at, browser_dispatched_at,
+       event_id = 'purchase_' || md5('gyeol:paid-order:' || order_id) as id_rule
+from meta_conversion_outbox where event_name = 'Purchase'
+order by occurred_at desc limit 5;
+```
+
+- 결제마다 1줄, `id_rule` = true.
+- `sent_at`가 있으면 서버 전송 성공(Meta가 받았다고 답함). `browser_dispatched_at`가 있으면 그 브라우저가 **같은 event_id**로 픽셀을 보냈다.
+- 줄이 없으면 그 브라우저·회원에 현재 판 동의가 없는 것이다 → 준비 1을 로그인한 채 다시 한다.
+- `browser_dispatched_at`만 비면 결제 완료 화면을 너무 빨리 닫았거나 환불이 먼저 된 것이다.
+
+**Meta 쪽(덕짱님, 이벤트 관리자)**: 데이터 세트 1912751453433745 → 개요 → Purchase를 연다. 「브라우저」·「서버」 둘 다 잡히고 「중복 제거됨」이 있는지 본다. 반영은 20분~몇 시간 늦다. 테스트 이벤트 코드를 넣지 않아서 「테스트 이벤트」 탭에는 서버 줄이 안 보인다. InitiateCheckout도 같은 화면에서 브라우저·서버 둘 다 잡히는지 본다(결제창을 열 때 1번).
+
+**알아 둘 점**
+- 시험 결제 2건(7,800원)은 Meta에 실제 구매로 들어간다. 환불해도 Meta에서 빠지지 않는다.
+- 1건만 넣으려면 B건 결제 직전에 「광고 설정」에서 거부한다. 그러면 B건은 줄이 0이어야 하므로 「가장 최근이 거부면 안 넣음」도 함께 확인된다.
+
+### 10-7 롤백
+
+- 코드: 직전 배포 `dpl_B2RRhX6wQuuv66JTDBpw8kuoNkA1`(master cac002f1)로 즉시 되돌린다(Vercel 「Instant Rollback」). 두 migration은 코드와 따로 돌아서 남겨도 된다. 예전 코드의 5분 메타 크론도 대기표 줄을 그대로 보낸다.
+- Purchase 트리거만 끄기(운영 SQL): `alter table public.payment_orders disable trigger meta_purchase_paid;`(다시 켜기 `enable`). 결제 승인에는 영향이 없다.
+- 깨우기 되돌리기: `docs/v5/ops/rollback/ops_notify_wake.before-20261109100000.sql`(적용 전 운영 본문 그대로 + 트리거 다시 만들기).
