@@ -241,6 +241,32 @@ describe("처리 상태·카드 결과·관리자 요청함", () => {
     for (let i = 0; i < 4; i++) last = await notify.call("wake", { max: 3 });
     expect(last).toMatchObject({ allowed: false, calls: 4 });
   });
+  it("깨우기 트리거는 새 줄이 들어온 문장에서만 서버를 부른다(0줄 넣기·크론의 빈 보충은 안 부름)", async () => {
+    // pg_net 대신 같은 이름의 가짜 함수(부른 주소를 표에 남김). 이 시험 안에서만 둔다.
+    await exec("create schema net");
+    await exec("create table net.calls(id serial primary key, url text)");
+    await exec(`create function net.http_post(url text, body jsonb default '{}', params jsonb default '{}', headers jsonb default '{}', timeout_milliseconds integer default 5000)
+        returns bigint language sql as $$ insert into net.calls(url) values(url) returning id::bigint $$`);
+    try {
+      await exec("select ops_notify_put_setting('notify_wake_url','{\"url\":\"https://www.gyeolreport.com/api/ops/notify-wake\"}'::jsonb)");
+      const calls = async () => (await one<{ n: number }>("select count(*)::int n from net.calls")).n;
+      await exec("insert into ops_notifications(kind,bot,dedupe_key) values('reminder','ops','remind:wake-1')");
+      expect(await calls()).toBe(1);
+      // 같은 키(on conflict do nothing → 0줄)
+      await exec("insert into ops_notifications(kind,bot,dedupe_key) values('reminder','ops','remind:wake-1') on conflict (dedupe_key) do nothing");
+      expect(await calls()).toBe(1);
+      // 1분 크론: 앞 시험이 남긴 미발행 주문은 첫 번에 넣고(새 줄 → 1번), 넣을 것이 없는 두 번째는 0번(예전엔 두 문장 = 2번)
+      const first = await notify.call("scan_unpublished");
+      const afterFirst = await calls();
+      expect(afterFirst).toBe(1 + (Number(first.added) > 0 ? 1 : 0) + (Number(first.swept) > 0 ? 1 : 0));
+      expect(await notify.call("scan_unpublished")).toMatchObject({ added: 0, swept: 0 });
+      expect(await calls()).toBe(afterFirst);
+      // 여러 줄을 한 문장에 넣으면 1번
+      await exec("insert into ops_notifications(kind,bot,dedupe_key) values('reminder','ops','remind:wake-2'),('reminder','ops','remind:wake-3')");
+      expect(await calls()).toBe(afterFirst + 1);
+      expect((await one<{ url: string }>("select url from net.calls order by id desc limit 1")).url).toBe("https://www.gyeolreport.com/api/ops/notify-wake");
+    } finally { await exec("drop schema net cascade"); }
+  });
 });
 
 // 운영 Q 추가(공유 재발 방지): 공유 API 4xx·5xx가 10분 안에 3번 이상이면 처리 봇 「🚨 공유 실패 N건」 1줄. 같은 원인(상태 코드 + 책 버전)은 1시간에 1번.
