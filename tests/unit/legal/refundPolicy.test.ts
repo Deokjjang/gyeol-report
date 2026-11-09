@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { CHECKOUT_POLICY_VERSIONS, OPS_Q_POLICY_EFFECTIVE_DATE, POLICY_EFFECTIVE_DATE, POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "../../../src/lib/legal/policyVersions";
+import { CHECKOUT_POLICY_VERSIONS, META_OPTOUT_POLICY_EFFECTIVE_DATE, OPS_Q_POLICY_EFFECTIVE_DATE, POLICY_EFFECTIVE_DATE, POLICY_EFFECTIVE_DATES_KO, POLICY_HISTORY } from "../../../src/lib/legal/policyVersions";
 import { termsPolicySections } from "../../../src/lib/legal/termsPolicy";
+import { META_DEFAULT_FROM } from "../../../src/lib/analytics/metaConsent";
 import { privacyPolicySections } from "../../../src/lib/legal/privacyPolicy";
 import {
   prePaymentRefundNoticeKo,
@@ -69,29 +70,36 @@ describe("refund policy constants", () => {
     );
   });
 
-  it("운영 Q(2026-11-07): 약관은 2026-11-06.1·11월 6일 시행 그대로, 환불정책은 2026-11-07.1, 개인정보처리방침은 문서만 개정(동의 버전 2026-11-06.1 그대로 — 9부 정정), 두 문서 11월 7일 시행(시행일 상수 하나), 변경 이력은 최신이 먼저", () => {
+  it("운영 Q(2026-11-07)·결정 A(광고 측정 기본 허용): 약관 2026-11-06.1·환불정책 2026-11-07.1 그대로, 개인정보처리방침은 문서만 두 번 개정(동의 버전 2026-11-06.1 그대로), 방침 시행일은 결정 A 배포일 상수 하나, 변경 이력은 최신이 먼저", () => {
     expect(CHECKOUT_POLICY_VERSIONS).toEqual({ terms: "2026-11-06.1", privacy: "2026-11-06.1", refund: "2026-11-07.1" });
     expect(POLICY_EFFECTIVE_DATE).toBe("2026-11-06");
     expect(OPS_Q_POLICY_EFFECTIVE_DATE).toBe("2026-11-07");
+    // 결정 A 13번 시행일 = 2026-12-10(덕짱님 결정: 30일 공지 뒤, 코드 동작 시각 META_DEFAULT_FROM과 같은 날). 방침 자체 시행일은 11월 7일 그대로.
+    expect(META_OPTOUT_POLICY_EFFECTIVE_DATE).toBe("2026-12-10"); expect(META_DEFAULT_FROM!.slice(0, 10)).toBe(META_OPTOUT_POLICY_EFFECTIVE_DATE);
+    const optOut = "2026년 12월 10일";
     expect(POLICY_EFFECTIVE_DATES_KO).toEqual({ terms: "2026년 11월 6일", privacy: "2026년 11월 7일", refund: "2026년 11월 7일" });
     // 약관: 첫 줄은 그대로 2026-11-06.1(현재), 둘째 줄 2026-11-05.1.
     expect(POLICY_HISTORY.terms[0]).toMatch(/^2026년 11월 6일 시행\(현재, 문서 버전 2026-11-06\.1\)/);
     expect(POLICY_HISTORY.terms[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
     expect(termsPolicySections.at(-1)!.bodyKo[0]).toBe("시행일: 2026년 11월 6일");
-    // 환불정책: 2026-11-07.1(현재) → 2026-11-06.1 → 2026-11-05.1. 개인정보처리방침: 11월 7일 문서 개정(현재, 동의 버전 그대로) → 2026-11-06.1 → 2026-11-05.1.
+    // 환불정책: 2026-11-07.1(현재) → 2026-11-06.1 → 2026-11-05.1.
+    // 개인정보처리방침: 결정 A 문서 개정(현재) → 11월 7일 문서 개정(Telegram) → 2026-11-06.1 → 2026-11-05.1. 동의 버전은 모두 그대로.
     expect(POLICY_HISTORY.refund[0]).toMatch(/^2026년 11월 7일 시행\(현재, 문서 버전 2026-11-07\.1\)/);
-    expect(POLICY_HISTORY.privacy[0]).toMatch(/^2026년 11월 7일 시행\(현재, 문서 개정 — 동의 버전 2026-11-06\.1 그대로라 다시 동의하지 않아도 됩니다\)/);
+    expect(POLICY_HISTORY.privacy[0].startsWith(`${optOut} 시행(2026년 11월 9일부터 공지, 문서 개정 — 동의 버전 2026-11-06.1 그대로라 다시 동의하지 않아도 됩니다)`)).toBe(true);
+    expect(POLICY_HISTORY.privacy[0]).toContain("「광고 설정」에서 거부할 수 있음");
+    expect(POLICY_HISTORY.privacy[1]).toMatch(/^2026년 11월 7일 시행\(문서 개정 — 동의 버전 2026-11-06\.1 그대로\)/);
+    expect(POLICY_HISTORY.privacy[1]).toContain("Telegram Messenger Inc.");
     expect(POLICY_HISTORY.privacy.join("\n")).not.toContain("2026-11-07.1");
-    for (const kind of ["privacy", "refund"] as const) {
+    for (const [kind, from] of [["privacy", 2], ["refund", 1]] as const) {
       const lines = POLICY_HISTORY[kind];
-      expect(lines[1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-06\.1\)/);
-      expect(lines[2]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
-      expect(lines.filter(line => line.includes("(현재,"))).toHaveLength(1);
+      expect(lines[from]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-06\.1\)/);
+      expect(lines[from + 1]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+      // 처리방침은 시행일 앞뒤에 모두 맞게 「현재」를 붙이지 않는다(13번 변경이 12월 10일 시행 — 시각에 따라 틀려짐).
+      expect(lines.filter(line => line.includes("(현재,"))).toHaveLength(kind === "privacy" ? 0 : 1);
     }
-    expect(POLICY_HISTORY.privacy[0]).toContain("Telegram Messenger Inc.");
     expect(POLICY_HISTORY.refund[0]).toContain("맨 위에 요약 세 줄");
     const privacyEnd = privacyPolicySections.at(-1)!.blocks[0];
-    expect(privacyEnd.kind === "p" && privacyEnd.text).toMatch(/^이 방침은 2026년 11월 7일부터 시행합니다\./);
+    expect(privacyEnd.kind === "p" && privacyEnd.text).toBe(`이 방침은 2026년 11월 7일부터 시행합니다. 다만 13번 광고 성과 측정의 변경(아래 변경 이력 첫 줄)은 ${optOut}부터 시행합니다. 내용이 바뀌면 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 서비스 화면에 알립니다.`);
     expect(refundPolicyHistoryLinesKo[0]).toBe("시행일: 2026년 11월 7일");
     expect(refundPolicyHistoryLinesKo.slice(1)).toEqual(POLICY_HISTORY.refund.map(line => `변경 이력: ${line}`));
   });

@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { isIP } from "node:net";
 import type { NextRequest } from "next/server";
 import { createSupabaseServerClient } from "../db/supabaseServer";
-import { META_CONSENT_COOKIE, META_CONSENT_VERSION, metaConsentValue, metaOrigin } from "./metaConsent";
+import { META_CONSENT_COOKIE, META_CONSENT_VERSION, metaConsentValue, metaDefaultOn, metaOrigin } from "./metaConsent";
 import { metaProduct, metaPurchase, type MetaEvent } from "./events";
 
 export function metaDeliveryReady() {
@@ -21,13 +21,44 @@ export function metaBrowserKey(request: NextRequest) {
   const value = request.cookies.get(META_CONSENT_COOKIE)?.value;
   return metaConsentValue(value) === null ? null : createHash("sha256").update(value!.split(":")[2]).digest("hex");
 }
-export async function metaRequestConsent(request: NextRequest) {
+/**
+ * 이 브라우저의 광고 설정(덕짱님 결정 A, 2026-11-09): true = 선택 동의(개인 식별 정보 포함), false = 거부, null = 기본 허용(행태정보만).
+ * 거부 쿠키는 DB를 보지 않고 바로 거부. 동의 쿠키는 DB 기록이 동의일 때만 true, 기록이 거부면 false(다른 브라우저에서 로그인한 채 거부),
+ * 기록이 없으면(180일 정리) 기본 허용. DB를 못 읽으면 보내지 않는다(false).
+ */
+export async function metaRequestConsent(request: NextRequest): Promise<boolean | null> {
   const choice = metaConsentValue(request.cookies.get(META_CONSENT_COOKIE)?.value);
   if (choice !== true) return choice;
   try {
     const { data, error } = await createSupabaseServerClient().from("meta_tracking_consents").select("agreed,version").eq("browser_key", metaBrowserKey(request)).maybeSingle();
-    return !error && data?.agreed === true && data.version === META_CONSENT_VERSION;
+    if (error) return false;
+    return !data ? null : data.agreed === true && data.version === META_CONSENT_VERSION ? true : data.agreed === false ? false : null;
   } catch { return false; }
+}
+/**
+ * 회원의 광고 설정(가장 최근 기록). 거부한 회원이 다른 브라우저(설정 쿠키 없음)로 로그인해도 보내지 않으려고 쓴다.
+ * 못 읽으면 undefined — 부르는 쪽은 이번에는 보내지 않되 거부 쿠키를 남기지 않는다(DB 장애·migration 전 배포가 1년짜리 거부가 되지 않게).
+ */
+export async function metaAccountChoice(user: string): Promise<boolean | null | undefined> {
+  try {
+    const { data, error } = await createSupabaseServerClient().rpc("meta_user_choice", { p_user: user });
+    return error ? undefined : data === true ? true : data === false ? false : null;
+  } catch { return undefined; }
+}
+type MetaMatch = { em?: string[]; ph?: string[] };
+const hashList = (value: unknown) => Array.isArray(value) && value.length === 1 && typeof value[0] === "string" && /^[a-f0-9]{64}$/.test(value[0]) ? [value[0]] : undefined;
+/** 개인 식별 정보: 해시 64자 하나씩만 통과(원문·다른 칸은 버린다). */
+export function metaMatchKeys(value: unknown): MetaMatch {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const v = value as Record<string, unknown>, em = hashList(v.em), ph = hashList(v.ph);
+  return { ...(em ? { em } : {}), ...(ph ? { ph } : {}) };
+}
+/** 선택 동의 회원의 이메일·휴대폰 해시(DB가 동의를 다시 확인하고 해시로만 준다). 못 읽으면 붙이지 않는다. */
+export async function metaUserMatch(user: string): Promise<MetaMatch> {
+  try {
+    const { data, error } = await createSupabaseServerClient().rpc("meta_user_match", { p_user: user });
+    return error ? {} : metaMatchKeys(data);
+  } catch { return {}; }
 }
 export async function recordMetaConsent(request: NextRequest, user: string | null) {
   const agreed = metaConsentValue(request.cookies.get(META_CONSENT_COOKIE)?.value);
@@ -49,7 +80,7 @@ export function browserMetaEvent(value: unknown): MetaEvent | null {
   return null;
 }
 export type MetaDelivery = { event_name: MetaEvent["event"]; event_id: string; event_time: number;
-  user_data: { client_ip_address: string; client_user_agent: string }; custom_data?: Record<string, unknown> };
+  user_data: { client_ip_address: string; client_user_agent: string } & MetaMatch; custom_data?: Record<string, unknown> };
 /**
  * 이벤트 관리자 「테스트 이벤트」 확인용(운영 Q 추가). META_TEST_EVENT_CODE(예: TEST12345, 덕짱님이 넣고 확인 뒤 지움)가 있으면
  * 서버 전송에 test_event_code를 붙인다 — 붙은 이벤트도 Meta는 일반 이벤트처럼 처리하므로 확인이 끝나면 지운다.
@@ -76,7 +107,9 @@ export async function transmitMeta(event: MetaDelivery, transport: typeof fetch 
       body: JSON.stringify({ access_token: process.env.META_CONVERSIONS_ACCESS_TOKEN, data: [{
         event_name: event.event_name, event_id: event.event_id, event_time: event.event_time, action_source: "website",
         event_source_url: "https://www.gyeolreport.com/", // Constant, never request URL/referrer.
-        user_data: { client_ip_address: event.user_data.client_ip_address, client_user_agent: event.user_data.client_user_agent },
+        // em·ph는 선택 동의 회원의 해시만(metaUserMatch·대기표 meta_user_match). 그 밖의 칸은 넣지 않는다.
+        // 해시는 시행일(META_DEFAULT_FROM)부터만 — DB meta_user_match도 시행 전 빈 값이지만, 법률 검토로 코드 스위치만 바꿔도(null·연기) 여기서 같이 멈춘다.
+        user_data: { client_ip_address: event.user_data.client_ip_address, client_user_agent: event.user_data.client_user_agent, ...(metaDefaultOn() ? metaMatchKeys(event.user_data) : {}) },
         ...(customData ? { custom_data: customData } : {}),
       }], ...metaTestEventCode() }),
     });
@@ -84,6 +117,7 @@ export async function transmitMeta(event: MetaDelivery, transport: typeof fetch 
     return response.ok && result.events_received === 1;
   } catch { return false; } // No token, provider response, URL or user data in logs.
 }
+// 설정 쿠키가 없는 기본 허용 브라우저는 p_browser 없이 로그인한 회원으로만 받는다(기본 줄).
 export async function claimMetaBrowserEvents(request: NextRequest, user: string | null) {
   const result = await createSupabaseServerClient().rpc("claim_meta_browser_events", { p_browser: metaBrowserKey(request), p_user: user });
   return !result.error && Array.isArray(result.data) ? result.data : [];

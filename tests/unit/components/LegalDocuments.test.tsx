@@ -79,10 +79,10 @@ describe("legal document rendering", () => {
     expect(content).toContain(privacy.privacyPolicyMetaNoticeKo);
     expect(content).toContain(privacy.privacyPolicyMetaRetentionKo);
     expect(content).toContain("결제수단 상세 정보를 저장하지 않습니다.");
-    expect(html.match(/<table\b/g)).toHaveLength(4); // 수집·보유·위탁·쿠키 표, 국외 이전은 업체별 목록(dl)
+    expect(html.match(/<table\b/g)).toHaveLength(6); // 수집·보유·위탁·쿠키·광고 측정 변경 안내·12월 10일부터 행태정보(13번) 표, 국외 이전은 업체별 목록(dl)
     expect(html.match(/data-policy-rows/g)).toHaveLength(1);
     expect(html.match(/<h2\b/g)).toHaveLength(privacy.privacyPolicySections.length + 1);
-    expect(content).toContain("광고 성과 측정 (선택)");
+    expect(content).toContain("행태정보와 광고 성과 측정(Meta)");
     // 배포 명령 0-1: OpenAI는 임시본 레인(Anthropic 장기 장애)이라 위탁·국외 이전 표에만 나온다.
     expect(content).toContain("OpenAI, LLC · 미국"); expect(content).toContain("Anthropic이 오래 장애일 때 임시 리포트 문장 작성(AI)");
     expect(html).not.toContain("deterministic");

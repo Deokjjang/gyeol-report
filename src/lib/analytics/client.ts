@@ -1,5 +1,5 @@
 "use client";
-import { metaOrigin } from "./metaConsent";
+import { metaMaySend, metaOrigin } from "./metaConsent";
 import { metaProduct, metaPurchase, type FunnelEvent, type Interaction, type MetaEvent, type PurchaseFact } from "./events";
 
 declare global { interface Window { fbq?: (...args: unknown[]) => void; _fbq?: unknown } }
@@ -10,13 +10,15 @@ let retry: ReturnType<typeof setTimeout> | undefined;
 export const manualReviewSilent = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" &&
   (/^\/dev\/content-review(?:\/|$)/.test(window.location.pathname ?? "") || process.env.NEXT_PUBLIC_LOCAL_REVIEW_SILENT === "1");
 export const localMeasurement = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
-let metaChoice = false;
+// 광고 설정(덕짱님 결정 A, 2026-11-09): true 동의 · null 기록 없음 · false 거부. 서버 답을 받기 전에는 보내지 않는다.
+// 기록 없음은 시행일(서버가 GET 응답 optout으로 알려 줌)부터만 보낸다 — 그 전에는 예전 그대로 동의한 사람만.
+let metaAllowed = false, metaPurchaseAllowed = false;
 let pixelFrame: Window | null = null;
 const pixelPending = new Map<string, MetaEvent>();
-export function setMetaChoice(agreed: boolean) { metaChoice = agreed; lastPage = undefined; if (!agreed) { pending.clear(); pixelPending.clear(); pixelFrame = null; if (retry) clearTimeout(retry); retry = undefined; } }
+export function setMetaChoice(choice: boolean | null, optout = false) { metaAllowed = metaMaySend(choice, optout); metaPurchaseAllowed = metaMaySend(choice, optout, "Purchase"); lastPage = undefined; if (!metaAllowed) { pending.clear(); pixelPending.clear(); pixelFrame = null; if (retry) clearTimeout(retry); retry = undefined; } }
 export function setMetaFrame(frame: Window | null) {
   pixelFrame = frame;
-  if (frame && metaChoice) for (const [id, event] of pixelPending) { frame.postMessage({ type: "gyeol:pixel", ...event }, "*"); pixelPending.delete(id); }
+  if (frame && metaAllowed) for (const [id, event] of pixelPending) { frame.postMessage({ type: "gyeol:pixel", ...event }, "*"); pixelPending.delete(id); }
 }
 function mirrorMetaEvent(event: MetaEvent) {
   if (!publicMetaAllowed() || !event.eventId) return;
@@ -29,18 +31,22 @@ export async function syncMetaFacts() {
     const response = await fetch("/api/analytics/meta", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ poll: true, requestId: crypto.randomUUID() }), cache: "no-store" });
     const body = await response.json();
     if (body.choice === false) { setMetaChoice(false); window.dispatchEvent(new Event("gyeol:meta-withdrawn")); return; }
-    if (!response.ok || !Array.isArray(body.events)) return;
-    for (const fact of body.events) {
-      if (fact.event === "CompleteRegistration" && /^registration_[a-f0-9]{32}$/.test(fact.eventId)) mirrorMetaEvent({ event: "CompleteRegistration", params: {}, eventId: fact.eventId });
-      if (fact.event === "Purchase" && /^purchase_[a-f0-9]{32}$/.test(fact.eventId)) {
-        const event = metaPurchase({ eventId: fact.eventId, productType: fact.params?.content_ids?.[0], value: fact.params?.value, currency: fact.params?.currency });
-        if (event) mirrorMetaEvent(event);
-      }
-    }
+    if (response.ok) mirrorFacts(body.events);
   } catch { /* Durable server delivery remains independent of browser availability. */ }
 }
-export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaChoice;
-// 운영 Q 추가(메타 복구, 덕짱님 2026-11-07): PageView는 전 페이지(동의한 경우만). 관리자·개발·로그인 콜백·API는 뺀다.
+// 서버가 확인한 사실(가입 완료·유료 결제)만 픽셀로 비춘다. 같은 event id라 Meta가 서버 전송과 하나로 합친다.
+function mirrorFacts(events: unknown) {
+  if (!Array.isArray(events)) return;
+  for (const fact of events) {
+    if (fact?.event === "CompleteRegistration" && /^registration_[a-f0-9]{32}$/.test(fact.eventId)) mirrorMetaEvent({ event: "CompleteRegistration", params: {}, eventId: fact.eventId });
+    if (fact?.event === "Purchase" && /^purchase_[a-f0-9]{32}$/.test(fact.eventId)) {
+      const event = metaPurchase({ eventId: fact.eventId, productType: fact.params?.content_ids?.[0], value: fact.params?.value, currency: fact.params?.currency });
+      if (event) mirrorMetaEvent(event);
+    }
+  }
+}
+export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaAllowed;
+// 운영 Q 추가(메타 복구, 덕짱님 2026-11-07): PageView는 전 페이지. 시행일 전에는 동의한 사람만, 시행일 뒤(결정 A)에는 거부하지 않은 사람 모두(기본 허용). 관리자·개발·로그인 콜백·API는 뺀다.
 // 주소는 보내지 않는다 — 서버 전송은 고정 주소(metaDelivery event_source_url), 픽셀은 referrer를 끈 별도 창(MetaPixel iframe)이라
 // 책 id(/reports/…)·공유 토큰(/r/…)·로그인 코드가 Meta로 가지 않는다(처리방침 13번 「원문 URL은 보내지 않습니다」).
 const publicPath = (path: string) => path.startsWith("/") && !/^\/(?:admin|dev|api|auth)(?:\/|$)/.test(path);
@@ -95,8 +101,8 @@ export function interaction(event: Interaction, productType?: string, campaign?:
   if (manualReviewSilent()) return;
   if (typeof window === "undefined") return;
   const mapped = event === "book_viewed" ? "ViewContent" : event === "checkout_started" ? "InitiateCheckout" : null;
-  // 최종 A 20: Meta로 가는 행동은 동의(또는 로컬 측정)일 때만 센다. 동의 전에 중복 방지 표시를 남기면
-  // 같은 탭에서 나중에 동의한 뒤 결제창을 열어도 한 번도 나가지 않는다.
+  // 최종 A 20: Meta로 가는 행동은 보낼 수 있을 때(거부 안 함·서버 설정 확인 뒤, 또는 로컬 측정)만 센다. 그 전에 중복 방지 표시를 남기면
+  // 같은 탭에서 설정을 확인한 뒤 결제창을 열어도 한 번도 나가지 않는다.
   if (mapped && !localMeasurement() && !publicMetaAllowed()) return;
   const eventId = `${journeyId()}:${event}${productType ? `:${productType}` : ""}`;
   const key = `gyeol:event:${eventId}:${campaign ?? ""}`;
@@ -127,13 +133,14 @@ export async function syncLocalFacts() {
 }
 export async function dispatchPurchase(reportId: string, local = false) {
   if (manualReviewSilent()) return;
-  if (!(local ? localMeasurement() : publicMetaAllowed())) return;
+  if (!(local ? localMeasurement() : publicMetaAllowed() && metaPurchaseAllowed)) return;
   try {
     // Claim only when the transport is ready. The SQL unique order wins across tabs.
     const response = await fetch(local ? "/dev/measurement" : "/api/analytics/purchase", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reportId, ...(!local ? { requestId: crypto.randomUUID() } : {}) }), keepalive: true });
-    const result = await response.json() as { purchase?: PurchaseFact };
+    const result = await response.json() as { purchase?: PurchaseFact; events?: unknown };
     const event = response.ok && result.purchase ? metaPurchase(result.purchase) : null;
     if (event) sendMeta(event, event.eventId!);
-    if (!local && response.ok) void syncMetaFacts();
+    // 결제 완료 화면 응답이 픽셀 거울 사실을 바로 준다(기본 허용 브라우저는 주기 확인을 하지 않음). 픽셀 창이 아직이면 대기했다가 열릴 때 보낸다.
+    if (!local && response.ok) mirrorFacts(result.events);
   } catch { /* No mutation to financial or publication state. */ }
 }
