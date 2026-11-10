@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ACCOUNT_POLICY_VERSIONS, ACCOUNT_PROVIDERS, accountSession, mayReadOwnedBooks, safeAccountNext, validConsentSubmission, type AccountIdentity, type AccountProvider, type AccountSnapshot } from "./policy";
 import { publicRequestOrigin } from "./origin";
 import { channelOnboarding } from "./channelOnboarding";
+import { FUNNEL_LOGIN_COOKIE, TEST_BROWSER_COOKIE } from "../analytics/funnelModel";
 
 export type AccountPort = {
   currentUser(): Promise<AccountIdentity | null>;
@@ -22,7 +23,9 @@ const RETURN_COOKIE = "gyeol-account-return";
 const noStore = { "Cache-Control": "private, no-store, max-age=0", "Vary": "Cookie" };
 
 /** compWaiting: 재동의 화면 맨 위 한 줄(P 본문 3) — 안 쓴 보상 이용권이 있는지. 예전에 필수 동의를 마친 기존 회원(재동의 대상)에게만 묻는다(신규 가입자는 묻지도 않는다). */
-export type AccountDeps = { compWaiting?: (userId: string) => Promise<boolean> };
+/** isTester(F): 시험 계정(관리자·누나 계정)인가 — 세션 응답에 tester:true와 「시험」 브라우저 표시(쿠키 값 "1")를 남긴다. */
+export type AccountDeps = { compWaiting?: (userId: string) => Promise<boolean>; isTester?: (userId: string) => boolean };
+const TEST_COOKIE_AGE = 365 * 86_400;
 export async function handleAccount(request: NextRequest, action: string, port: AccountPort, local = false, deps: AccountDeps = {}): Promise<NextResponse> {
   const url = new URL(request.url);
   if (local && request.headers.get("host")) url.host = request.headers.get("host")!;
@@ -71,6 +74,9 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       const ready = session.status === "member" && session.profile !== "required";
       const response = clear(redirect(ready ? next : home));
       response.cookies.set(RETURN_COOKIE, ready ? "" : next, { ...cookieOptions, maxAge: ready ? 0 : 600 });
+      // F 퍼널: 기존 회원 로그인 완료 신호(화면이 1번 세고 지운다, 식별자 없음). 시험 계정은 신호 대신 「시험」 브라우저 표시.
+      if (deps.isTester?.(user.id)) response.cookies.set(TEST_BROWSER_COOKIE, "1", { ...cookieOptions, maxAge: TEST_COOKIE_AGE });
+      else if (ready) response.cookies.set(FUNNEL_LOGIN_COOKIE, "member", { ...cookieOptions, httpOnly: false, maxAge: 120 });
       return response;
     }
     if (action === "session") {
@@ -81,7 +87,10 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       const channelPrompt = channelOnboarding(user, session);
       const compWaiting = session.status === "needs_consent" && user && snapshot && mayReadOwnedBooks(user, snapshot) && deps.compWaiting
         ? await deps.compWaiting(user.id).catch(() => false) : false;
-      return json({ ...session, ...(channelPrompt ? { channelPrompt } : {}), ...(compWaiting ? { compWaiting: true } : {}) });
+      const tester = Boolean(user && deps.isTester?.(user.id));
+      const response = json({ ...session, ...(channelPrompt ? { channelPrompt } : {}), ...(compWaiting ? { compWaiting: true } : {}), ...(tester ? { tester: true } : {}) });
+      if (tester) response.cookies.set(TEST_BROWSER_COOKIE, "1", { ...cookieOptions, maxAge: TEST_COOKIE_AGE });
+      return response;
     }
     if (action === "logout") {
       const ok = await port.logout();

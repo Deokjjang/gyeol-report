@@ -1,4 +1,4 @@
-// 운영 Q 10부: 끝난 오픈 이벤트 주소(/campaign/gyeol-opening-2026)는 메인(/)으로 보낸다 — 라우트 안에서 redirect(307).
+// 운영 Q 10부 → F(2026-11-11): 끝난 오픈 이벤트 주소(/campaign/gyeol-opening-2026)는 캠페인 랜딩(/free)으로 보낸다 — 라우트 안에서 redirect(307).
 // next.config.ts는 v4 검증 기록이 바이트를 고정해 손대지 않는다. 옛 「오픈 이벤트 이용권」 문구가 보이는 화면이 남지 않았는지도 함께 본다.
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync, statSync } from "node:fs";
@@ -15,13 +15,13 @@ const visit = async (slug: string, query: Record<string, string | string[] | und
   throw new Error("redirect expected");
 };
 
-describe("옛 오픈 이벤트 주소 → 메인", () => {
-  it("공식 주소와 다른 slug 모두 메인으로 307(임시) — 이벤트 화면을 그리지 않는다", async () => {
-    for (const slug of ["gyeol-opening-2026", "other-slug"]) expect((await visit(slug)).digest).toBe("NEXT_REDIRECT;replace;/;307;");
+describe("옛 오픈 이벤트 주소 → /free", () => {
+  it("공식 주소와 다른 slug 모두 /free로 307(임시) — 옛 이벤트 화면을 그리지 않는다", async () => {
+    for (const slug of ["gyeol-opening-2026", "other-slug"]) expect((await visit(slug)).digest).toBe("NEXT_REDIRECT;replace;/free;307;");
   });
   it("허용된 utm_* 값만 넘기고, 그 밖의 값(이메일·fbclid·생일 같은 숫자)은 버린다", async () => {
     const { digest } = await visit("gyeol-opening-2026", { utm_source: "instagram", utm_campaign: "book-launch", fbclid: "secret", email: "a@b.c", utm_term: "19901118", utm_medium: ["a", "b"] });
-    expect(digest).toBe("NEXT_REDIRECT;replace;/?utm_source=instagram&utm_campaign=book-launch;307;");
+    expect(digest).toBe("NEXT_REDIRECT;replace;/free?utm_source=instagram&utm_campaign=book-launch;307;");
   });
   it("상태 JSON(/campaign/[slug]/state)·이벤트 API는 그대로 남고, next.config.ts는 바뀌지 않았다(검증 기록 바이트 고정)", () => {
     expect(SRC).toContain(join("src", "app", "campaign", "[slug]", "state", "route.ts"));

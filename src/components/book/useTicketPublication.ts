@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ReportInputPayload } from "../../lib/report-generation/reportInputTypes";
+import { funnel } from "../../lib/analytics/funnel";
 import { createCheckoutConsentAssertion, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
 
 type Pending = { requestId: string; fingerprint: string; scope?: string };
@@ -31,6 +32,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
         try { sessionStorage.removeItem(key); sessionStorage.removeItem(checkoutReturnKey(product)); }
         catch { /* storage becoming unavailable must not hide a completed book */ }
         setCompletedUrl(body.reportUrl);
+        funnel("book_published"); // F 퍼널: 이용권 책 발행 완료(세션당 1번)
         window.location.assign(body.reportUrl);
       } else if (body.state === "REVERSED") { forget(); setRevision(n => n + 1); }
       return;
@@ -86,6 +88,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
       if (!mounted.current) return;
       // Only definitive pre-reservation rejections release the method lock.
       if (!body.ok && ["NO_USABLE_TICKET", "REFUND_HOLD", "INVALID_INPUT", "CONSENT_REQUIRED"].includes(body.code)) { forget(); setRevision(n => n + 1); }
+      else if (body.ok === true) funnel("book_start"); // F 퍼널: 이용권으로 책 생성 시작
       accept(body);
     } catch { if (mounted.current) setMessage("발행 상태를 확인 중입니다. 같은 요청으로 다시 확인합니다."); }
     finally { clearTimeout(deadline); sending.current = false; if (mounted.current) setSubmitting(false); }

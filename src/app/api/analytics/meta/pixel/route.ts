@@ -2,11 +2,14 @@ import { randomBytes } from "node:crypto";
 import { NextRequest } from "next/server";
 import { metaDefaultOn, metaMaySend, metaOrigin } from "../../../../../lib/analytics/metaConsent";
 import { metaDeliveryReady, metaRequestConsent } from "../../../../../lib/analytics/metaDelivery";
+import { TEST_BROWSER_COOKIE } from "../../../../../lib/analytics/funnelModel";
 
 // The SDK can only see this constant, empty document. Opaque sandbox origin
 // prevents it from reading the parent's URL, DOM, auth cookies or report inputs.
 // 시행일 전에는 동의한 브라우저에만, 시행일 뒤(덕짱님 결정 A)에는 거부하지 않은 브라우저에 연다. 픽셀에는 개인 식별 정보(Advanced Matching)를 넣지 않는다 — init에 사용자 값 없음.
 export async function GET(request: NextRequest) {
+  // F 추가 3: 「시험」 브라우저에는 픽셀을 열지 않는다.
+  if (request.cookies.get(TEST_BROWSER_COOKIE)?.value === "1") return new Response(null, { status: 404 });
   if (!metaOrigin(new URL(request.url).origin) || !metaDeliveryReady() ||
     !metaMaySend(await metaRequestConsent(request), metaDefaultOn()) || new URL(request.url).search) return new Response(null, { status: 404 });
   const nonce = randomBytes(16).toString("base64");

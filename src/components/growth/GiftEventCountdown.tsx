@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { eventRangeLabel, eventStartLabel, type PopupEvent } from "../../lib/ops/comp/popupSelect";
 import { kstMonthDayLabel } from "../../lib/ops/config";
+import { useAccountSession } from "../account/AccountSession";
 import s from "./launchCountdown.module.css";
 
 /**
@@ -52,15 +53,31 @@ function parts(ms: number) {
   return [[String(Math.floor(t / 86400)), "일"], [pad(Math.floor(t % 86400 / 3600)), "시간"], [pad(Math.floor(t % 3600 / 60)), "분"], [pad(t % 60), "초"]] as const;
 }
 
-/** 메인 화면 1+1 배너 + 타이머(최종 A 13). 지난 오픈 이벤트 블록(LaunchCountdown)과 같은 구조·같은 CSS. 끝나면 자동으로 사라진다. */
-export function GiftEventCountdown() {
+/** F 메인 띠 문구: 로그인하지 않은 방문자에게만, 가입 캠페인이 켜져 있을 때(1+1 기간이면 뒤에 「· 1+1 진행 중」). */
+export const SIGNUP_STRIP_TEXT = "지금 가입하면 내 책 한 권 무료";
+export const SIGNUP_STRIP_EVENT = "1+1 진행 중";
+export function signupStripVisible(view: PopupEvent | null, serverNow: number, guest: boolean): boolean {
+  const end = Date.parse(view?.signup?.endsAt ?? "");
+  return guest && view?.signup?.active === true && Number.isFinite(end) && Number.isFinite(serverNow) && serverNow < end;
+}
+function SignupStrip({ view, serverNow }: { view: PopupEvent | null; serverNow: number }) {
+  const { session, loaded, error } = useAccountSession(false);
+  if (!signupStripVisible(view, serverNow, loaded && !error && session.status === "guest")) return null;
+  const during = giftEventPhaseAt(view, serverNow) === "during";
+  return <a className={s.signupStrip} href="/free" data-signup-strip>{SIGNUP_STRIP_TEXT}{during ? <span> · {SIGNUP_STRIP_EVENT}</span> : null}<b aria-hidden="true">→</b></a>;
+}
+
+/** 메인 화면 1+1 배너 + 타이머(최종 A 13). 지난 오픈 이벤트 블록(LaunchCountdown)과 같은 구조·같은 CSS. 끝나면 자동으로 사라진다.
+ * signupStrip(F): 위에 가입 캠페인 띠 한 줄(로그인하지 않은 방문자에게만, 회원에게는 안 보임). */
+export function GiftEventCountdown({ signupStrip = false }: { signupStrip?: boolean } = {}) {
   const { view, serverNow } = useGiftEvent();
   const phase = giftEventPhaseAt(view, serverNow);
-  if (!view || !phase) return null;
+  const strip = signupStrip ? <SignupStrip view={view} serverNow={serverNow} /> : null;
+  if (!view || !phase) return strip;
   const target = Date.parse(phase === "before" ? view.startsAt : view.endsAt), remaining = target - serverNow;
   const range = eventRangeLabel(view), start = eventStartLabel(view.startsAt), ticketUntil = kstMonthDayLabel(view.ticketExpiresAt);
   const clockLabel = phase === "before" ? "시작까지" : "종료까지";
-  return <section className={`${s.event} ${s.gift}`} aria-label="이용권 증정 이벤트" data-gift-event={phase}>
+  return <>{strip}<section className={`${s.event} ${s.gift}`} aria-label="이용권 증정 이벤트" data-gift-event={phase}>
     <div className={s.heading}>
       <p>이용권 증정 EVENT<span>{range}</span></p>
       <h2>한 권을 펼치면, 이용권 한 장</h2>
@@ -73,5 +90,5 @@ export function GiftEventCountdown() {
       <time aria-hidden="true" dateTime={new Date(target).toISOString()}>{parts(remaining).map(([v, u]) => <span key={u}><b>{v}</b>{u}</span>)}</time>
       <span className={s.srOnly}>{phase === "before" ? start : endLabel(view.endsAt)}</span>
     </div>
-  </section>;
+  </section></>;
 }

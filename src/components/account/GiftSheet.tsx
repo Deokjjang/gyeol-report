@@ -65,7 +65,7 @@ export function GiftSheet({ wallet, onClose, onChanged }: { wallet: TicketWallet
     <div className={s.sheet} role="dialog" aria-modal="true" aria-labelledby="gift-sheet-title" tabIndex={-1} ref={dialog} data-gift-sheet>
       <button type="button" className={s.close} aria-label="닫기" onClick={onClose}>×</button>
       <h2 id="gift-sheet-title">이용권 1장을 선물해요</h2>
-      <p>링크를 받은 분이 로그인하면 이용권이 그분 서재로 옮겨가요. {kstDay(wallet.expiresAt) || "기한"}까지 쓸 수 있어요.</p>
+      <p>링크를 받은 분이 로그인하면 이용권이 그분 서재로 옮겨가요. {kstDay(wallet.giftExpiresAt ?? wallet.expiresAt) || "기한"}까지 쓸 수 있어요.</p>
       <div className={s.sheetActions}>
         {canShare ? <button type="button" className={s.dark} disabled={busy || counts.giftable < 1} onClick={() => void share()}>공유하기</button> : null}
         <button type="button" className={canShare ? undefined : s.dark} disabled={busy || counts.giftable < 1} onClick={() => void copy()}>링크 복사</button>

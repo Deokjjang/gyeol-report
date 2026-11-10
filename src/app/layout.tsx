@@ -3,6 +3,7 @@ import { bookExperiencePublicEnabled } from "../lib/book/publicGate";
 import { BookFooterRoute } from "../components/book/BookRoutes";
 import { Geist, Geist_Mono } from "next/font/google";
 import MetaPixel from "../components/analytics/MetaPixel";
+import { FunnelTracker } from "../components/analytics/FunnelTracker";
 import BusinessFooter from "../components/legal/BusinessFooter";
 import {
   BRAND_DESCRIPTION,
@@ -76,6 +77,7 @@ export default function RootLayout({
         {children}
         {bookExperiencePublicEnabled() ? <BookFooterRoute /> : <BusinessFooter />}
         <MetaPixel />
+        <FunnelTracker />
       </body>
     </html>
   );

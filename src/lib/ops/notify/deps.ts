@@ -31,6 +31,7 @@ export function defaultBotDeps(env: Env = process.env): BotDeps {
       try { const { data, error } = await db.rpc("ops_notify_put_setting", { p_key: key, p_value: value }); return !error && data === true; } catch { return false; }
     },
     testAccounts: testAccountIds(env),
+    signup: stores.signup, funnel: stores.funnel,
   };
   return { ...notify, admin: defaultAdminDeps(env), adminId: adminUserIds(env)[0] ?? null, audit: e => stores.audit(e), db, env };
 }

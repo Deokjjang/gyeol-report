@@ -7,6 +7,21 @@ import { projectBookShare } from "./shareModel";
 import { BookReadingPresentation } from "../../components/book/BookEntry";
 import { projectV5Book, v5EditionLabel, validateV5Publication } from "../writer/book";
 import { koreanDate, kstDay } from "./readerCopy";
+import type { BookEndNoticeView } from "../../components/book/BookReading";
+import { giftEventActive } from "../ops/config";
+
+/**
+ * F 책 끝 연결(주인 화면): 1+1 기간이면 1+1 한 줄, 가입 이용권으로 만든 책이면 그 위에 한 줄 더(ops_signup 'book_kind'). 못 읽으면 가입 줄만 뺀다.
+ */
+export async function bookEndNotice(reportId: string, ticketBook: boolean, now = Date.now()): Promise<BookEndNoticeView> {
+  const event = giftEventActive(process.env, now);
+  if (!ticketBook) return { event, signup: false };
+  try {
+    const { createOpsStores } = await import("../ops/store");
+    const r = await createOpsStores().signup.call("book_kind", { reportId });
+    return { event, signup: r.ok === true && r.signup === true };
+  } catch { return { event, signup: false }; }
+}
 
 // Called only behind the server gate (or an explicit local test store).
 // Stored version, not request input, selects the validator. No regeneration.
@@ -28,7 +43,7 @@ export function storedBook(snapshot: unknown, shareUrl?: string | null, today = 
   // today는 열람 화면(readerBook)이 V4 세운 표의 지금을 다시 정할 때 쓴다(저장된 data는 그대로).
   return share ? { data, share, today, ...(edition ? { edition } : {}) } : null;
 }
-export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary, shareOwner }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean } }) {
+export function StoredBookReport({ snapshot, shareUrl, home, saveToLibrary, shareOwner, endNotice }: { snapshot: unknown; shareUrl?: string | null; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; endNotice?: BookEndNoticeView }) {
   const result = storedBook(snapshot, shareUrl);
-  return result ? <BookReadingPresentation {...result} home={home} saveToLibrary={saveToLibrary} shareOwner={shareOwner} /> : <p role="alert">저장된 책 정보를 확인할 수 없습니다.</p>;
+  return result ? <BookReadingPresentation {...result} home={home} saveToLibrary={saveToLibrary} shareOwner={shareOwner} endNotice={endNotice} /> : <p role="alert">저장된 책 정보를 확인할 수 없습니다.</p>;
 }

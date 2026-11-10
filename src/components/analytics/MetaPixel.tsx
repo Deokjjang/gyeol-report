@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { pageView, syncLocalFacts, setMetaChoice, setMetaFrame, syncMetaFacts } from "../../lib/analytics/client";
+import { markTesterBrowser } from "../../lib/analytics/funnel";
 import { META_NOTICE_VERSION, metaOrigin, metaPiiNotice, metaTrackingNotice, metaTransferNotice, metaLocalReview, META_AVAILABLE_EVENT, META_CARD_SEEN_KEY, META_SETTINGS_EVENT,
   META_CARD_LATER_KEY, META_DEFAULT_FROM_SHORT_KO, metaChangeCardNotice, metaChangeRows, metaMaySend, metaOptInMeasurementLabel, metaOptInNotice, metaOptInTransferNotice } from "../../lib/analytics/metaConsent";
 import styles from "./metaConsent.module.css";
@@ -48,6 +49,7 @@ export default function MetaPixel() {
     let current = true;
     void fetch("/api/analytics/meta", { cache: "no-store", headers: { "x-request-id": crypto.randomUUID() } }).then(r => r.ok ? r.json() : null).then(result => {
       if (!current || !result) return;
+      if (result.tester === true) markTesterBrowser(); // F 추가 3: 서버가 본 「시험」 브라우저 — 퍼널·메타 모두 이 브라우저를 뺀다.
       const known = result.choice === true ? true : result.choice === false ? false : null, effective = result.optout === true;
       setMetaChoice(result.ready === true ? known : false, effective); setChoice(known); setOptout(effective); setReady(result.ready === true); setAvailable(true);
       if (!effective) {

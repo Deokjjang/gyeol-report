@@ -293,7 +293,7 @@ describe("매출 봇 명령·웹훅", () => {
     expect(await handleUpdate("sales", msg("/month"), deps)).toBe("month");
     expect(tg.sent("sales").at(-1)!.text).toContain("지난달 같은 날짜까지");
     expect(await handleUpdate("sales", msg("/event"), { ...deps, now: () => Date.parse("2026-11-10T12:00:00+09:00") })).toBe("event");
-    expect(tg.sent("sales").at(-1)!.text).toMatch(/^🎁 <b>1\+1 증정 이용권<\/b> · 이벤트 11\/06~11\/16 · 이용권 11\/30까지\n발급 /);
+    expect(tg.sent("sales").at(-1)!.text).toMatch(/^🎁 <b>1\+1 증정 이용권<\/b> · 이벤트 11\/06~11\/30 · 이용권 11\/30까지\n발급 /);
     expect(await handleUpdate("sales", msg("/event"), { ...deps, now: () => Date.parse("2026-12-01T00:00:00+09:00") })).toBe("event_over");
     expect(tg.sent("sales").at(-1)!.text).toBe("이벤트가 끝났어요");
   });

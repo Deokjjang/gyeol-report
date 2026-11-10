@@ -57,7 +57,27 @@ export function EventPopupHost() {
   }} />, document.body);
 }
 
-export function EventPopup({ id, state, clock = Date.now, onDone }: { id: PopupId; state: PopupState; clock?: () => number; onDone: (how: "close" | "today") => void }) {
+/**
+ * F 가입 팝업 본문(가입 완료 직후 1개). 신규 가입자에게는 ①(1+1)을 대신한다. 아래 작은 줄은 1+1 기간에만.
+ * [책 고르기] → 책장(메인). 이미 메인이면 닫기만.
+ */
+export const SIGNUP_POPUP_TITLE = "가입을 환영해요.";
+export const SIGNUP_POPUP_BODY = "내 책 한 권을 무료로 만들 수 있는 이용권 1장을 서재에 넣어 드렸어요(7일 안에 사용).";
+export const SIGNUP_POPUP_EVENT_LINE = "지금 1+1 진행 중 — 한 권 결제하면 이용권 1장을 더 드려요";
+export function SignupPopupBody({ titleId, bodyId, eventOn, onPick, custom = false }: { titleId: string; bodyId: string; eventOn: boolean; onPick: () => void; custom?: boolean }) {
+  return <>
+    <p className={s.eyebrow}>WELCOME</p>
+    <h2 id={titleId} className={s.title}>{SIGNUP_POPUP_TITLE}</h2>
+    <p id={bodyId} className={s.body}>{SIGNUP_POPUP_BODY}</p>
+    <div className={s.actions}>
+      <Link className={s.primary} href="/" data-signup-pick onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname) || custom) e.preventDefault(); onPick(); }}>책 고르기</Link>
+    </div>
+    {eventOn ? <p className={s.small} data-signup-event-line>{SIGNUP_POPUP_EVENT_LINE}</p> : null}
+  </>;
+}
+
+/** onPick(F): 가입 팝업 [책 고르기]를 따로 처리할 때(가입 직후 서재 화면 — 결제하려던 상품으로 돌아가기). 없으면 닫고 책장으로. */
+export function EventPopup({ id, state, clock = Date.now, onDone, onPick }: { id: PopupId; state: PopupState; clock?: () => number; onDone: (how: "close" | "today") => void; onPick?: () => void }) {
   const ref = useRef<HTMLDialogElement>(null), titleId = useId(), bodyId = useId();
   const [now, setNow] = useState(clock);
   useEffect(() => {
@@ -83,7 +103,7 @@ export function EventPopup({ id, state, clock = Date.now, onDone }: { id: PopupI
     onClick={e => { if (e.target === e.currentTarget) done("close"); }}>
     <div className={s.card}>
       <button type="button" className={s.close} aria-label="닫기" onClick={() => done("close")}><span aria-hidden="true">×</span></button>
-      {id === "event-1plus1" && event ? <>
+      {id === "signup" ? <SignupPopupBody titleId={titleId} bodyId={bodyId} eventOn={eventOn} custom={Boolean(onPick)} onPick={() => { if (onPick) { if (ref.current?.open && typeof ref.current.close === "function") ref.current.close(); onPick(); } else done("close"); }} /> : id === "event-1plus1" && event ? <>
         <p className={s.eyebrow}>{eventRangeLabel(event)}</p>
         <h2 id={titleId} className={s.title}>한 권을 펼치면, 이용권 한 장</h2>
         <p id={bodyId} className={s.body}>리포트를 결제하면 1건마다 이용권 1장을 증정해요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.</p>

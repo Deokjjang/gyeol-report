@@ -26,9 +26,12 @@ export function createAccountPort(request: NextRequest): AccountPort | null {
       const provider = data.user.app_metadata.provider;
       if (provider !== "kakao" && provider !== "google") { verified = null; return null; }
       const kakao = data.user.identities?.find(i => i.provider === "kakao");
+      // F: 지금 로그인한 제공자의 사용자 id(가입 이용권 지급 기록 해시용, 서버 메모리에만).
+      const own = data.user.identities?.find(i => i.provider === provider);
+      const providerUserId = own ? String(own.identity_data?.provider_id ?? own.identity_data?.sub ?? own.id ?? "") || null : null;
       verified = { id: data.user.id, provider: provider as AccountProvider, displayName: safeDisplayName(data.user.user_metadata.name ?? data.user.user_metadata.full_name ?? data.user.user_metadata.preferred_username),
         email: data.user.email ?? null, emailVerified: data.user.user_metadata.email_verified === true || Boolean(data.user.email_confirmed_at),
-        kakaoId: kakao ? String(kakao.identity_data?.provider_id ?? kakao.identity_data?.sub ?? kakao.id ?? "") || null : null, lastSignInAt: data.user.last_sign_in_at ?? null };
+        kakaoId: kakao ? String(kakao.identity_data?.provider_id ?? kakao.identity_data?.sub ?? kakao.id ?? "") || null : null, lastSignInAt: data.user.last_sign_in_at ?? null, providerUserId };
       return verified;
     },
     async start(provider, callback, scope) {

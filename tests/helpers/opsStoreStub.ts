@@ -12,7 +12,7 @@ export const TEST_BUYER = { name: "검수 구매자", email: "buyer@example.com"
 const none = { call: async () => ({ ok: false, code: "STORAGE_UNAVAILABLE" }) };
 export function createOpsStores() {
   return {
-    generation: none, gift: none, comp: none, recon: none, notify: none, raw: none,
+    generation: none, gift: none, comp: none, recon: none, notify: none, raw: none, signup: none, funnel: none,
     order: { call: async (action: string, data: Record<string, unknown> = {}) => action === "attach" ? (opsStub.attach.push(data), { ok: true, orderCode: `GR-T${String(opsStub.attach.length).padStart(3, "0")}` }) : { ok: false, code: "STORAGE_UNAVAILABLE" } },
     account: { call: async (action: string) => action === "read" ? { ok: true, contact: opsStub.contact } : { ok: false, code: "STORAGE_UNAVAILABLE" } },
     audit: async () => true,

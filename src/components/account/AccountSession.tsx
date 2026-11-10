@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GUEST_SESSION, type AccountSession } from "../../lib/account/policy";
+import { markTesterBrowser } from "../../lib/analytics/funnel";
+import { setMetaChoice } from "../../lib/analytics/client";
 import { KakaoChannelPrompt } from "./KakaoChannelPrompt";
 
 export function announceAccountChange() {
@@ -20,7 +22,7 @@ export function useAccountSession(local: boolean, enabled = true) {
       const data = await response.json();
       if (controller.signal.aborted) return;
       if (!response.ok || !["guest", "needs_consent", "member"].includes(data.status)) { setSession(GUEST_SESSION); setError(true); }
-      else { setSession(data); setError(false); }
+      else { setSession(data); setError(false); if (data.tester === true) { markTesterBrowser(); setMetaChoice(false); } }
       setLoaded(true);
     }).catch(() => { if (!controller.signal.aborted) { setSession(GUEST_SESSION); setError(true); setLoaded(true); } })
       .finally(() => { if (!controller.signal.aborted) setVerifying(false); });
