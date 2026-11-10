@@ -195,7 +195,7 @@ end $$;
 -- ── 퍼널 집계 함수 ───────────────────────────────────────────────
 -- hit: 서버 /api/funnel이 부른다(브라우저 세션 저장소로 단계마다 1번만 보낸다). 단계는 아래 목록만, 유입 값은 소문자·숫자·_·-만(아니면 '-').
 --   하루 행이 3,000개를 넘으면 새 유입 조합은 'other'로 모은다(아무 값이나 보내 표를 키우는 것을 막는다).
--- report: 매출 봇 /funnel. 최근 N일(KST) 행 + 서버 기록(주문 생성·결제 완료·신규 가입·가입 이용권 지급, 시험 계정 제외).
+-- report: 매출 봇 /funnel. 최근 N일(KST) 행 + 서버 기록(주문 생성·결제 완료·신규 가입·가입 이용권 지급·책 발행, 시험 계정 제외).
 create function public.ops_funnel(p_action text, p_data jsonb default '{}') returns jsonb
 language plpgsql security invoker set search_path='' as $$
 declare v_step text; v_src text; v_cmp text; v_today date := (now() at time zone 'Asia/Seoul')::date; v_days integer; v_from date; v_from_ts timestamptz; v_today_ts timestamptz;
@@ -226,7 +226,10 @@ begin
           from public.account_contacts c0 join public.account_profiles p0 on p0.user_id=c0.user_id
           where c0.completed_at>=v_from_ts and p0.created_at>=v_from_ts and not public.ops_test_user(c0.user_id))
         || (select jsonb_build_object('grantsToday',count(*) filter (where g.created_at>=v_today_ts),'grants',count(*))
-          from public.gift_rewards g where g.kind='signup' and g.created_at>=v_from_ts and not public.ops_test_user(g.owner_user_id)));
+          from public.gift_rewards g where g.kind='signup' and g.created_at>=v_from_ts and not public.ops_test_user(g.owner_user_id))
+        || (select jsonb_build_object('publishedToday',count(*) filter (where s0.published_at>=v_today_ts),'published',count(*))
+          from public.paid_report_snapshots s0 left join public.report_ticket_redemptions r0 on r0.id=s0.ticket_redemption_id
+          where s0.published_at>=v_from_ts and not public.ops_test_user(coalesce(r0.user_id, public.ops_order_user(s0.order_id)))));
   end if;
   return jsonb_build_object('ok',false,'code','UNKNOWN_ACTION');
 end $$;

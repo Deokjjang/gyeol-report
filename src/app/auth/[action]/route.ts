@@ -20,7 +20,8 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     // 최종 A 14: 메인·상품 화면 팝업(읽기 전용, 보상 정보는 회원 본인에게만).
     const { handleEventPopup, compCampaignStore } = await import("../../../lib/ops/comp/popup");
     const { createOpsStores } = await import("../../../lib/ops/store");
-    return handleEventPopup(request, original, compCampaignStore(createOpsStores().db));
+    const stores = createOpsStores();
+    return handleEventPopup(request, original, compCampaignStore(stores.db), process.env, Date.now(), stores.signup);
   }
   if (action === "library-home") {
     // P 속도: 서재 한 번에 받기(로그인 확인 1번 + 조회 4개 동시).
@@ -47,11 +48,14 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     return handleLibrary(request, action.slice(8), port, createLibraryPort());
   }
   const { handleAccount } = await import("../../../lib/account/handler");
-  if (action !== "session") return handleAccount(request, action, port);
+  // F: 시험 계정(관리자·누나 계정) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
+  const { testAccountIds } = await import("../../../lib/ops/notify/deps");
+  const testers = new Set(testAccountIds()), isTester = (id: string) => testers.has(id.toLowerCase());
+  if (action !== "session") return handleAccount(request, action, port, false, { isTester });
   // 재동의 화면 맨 위 한 줄(P 본문 3): 안 쓴 보상 이용권이 있는 기존 회원에게만(읽기 전용 ops_comp_campaign 'popup').
   const { compCampaignStore } = await import("../../../lib/ops/comp/popup");
   const { createOpsStores } = await import("../../../lib/ops/store");
-  return handleAccount(request, action, port, false, { compWaiting: async userId => {
+  return handleAccount(request, action, port, false, { isTester, compWaiting: async userId => {
     const r = await compCampaignStore(createOpsStores().db).call("popup", { userId });
     return r.ok === true && typeof r.unused === "number" && r.unused > 0 && typeof r.expiresAt === "string" && Date.parse(r.expiresAt) > Date.now();
   } });
@@ -70,8 +74,11 @@ async function opsAccountAction(request: NextRequest, action: "profile" | "withd
   }
   const { handleProfile } = await import("../../../lib/account/profile");
   const { kakaoUnlink } = await import("../../../lib/account/kakaoLogin");
+  const { grantSignupTicket } = await import("../../../lib/ops/gift/service");
   return handleProfile(request, action, port, {
     ops: ops.account, audit: e => ops.audit(e),
+    // F: 가입 완료 직후 가입 이용권(기간·켜짐·기존 회원·재가입은 SQL이 확인).
+    signupGrant: user => grantSignupTicket(ops.signup, user),
     unlinkKakao: id => kakaoUnlink(id, process.env.KAKAO_ADMIN_KEY),
     deleteUser: async id => { if (!ops.db) return false; const { error } = await ops.db.auth.admin.deleteUser(id, true); return !error; },
   });

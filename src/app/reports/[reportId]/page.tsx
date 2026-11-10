@@ -78,6 +78,9 @@ import { AnnualFortuneReportV3View } from "./AnnualFortuneReportV3View";
 import { isAnnualV3Draft, type AnnualV3Draft } from "../../../lib/interpretation-v3/annualEditorial";
 import type { AnnualV3Evidence } from "../../../lib/report-generation/annualV3Generation";
 import { CareerReportView } from "./CareerReportView";
+import { FunnelPing as FunnelPingPaid } from "../../../components/analytics/FunnelTracker";
+/** F 퍼널: 주인이 완성된 책을 연 것 = 책 발행(세션당 1번). */
+const BOOK_OPEN_STEPS = ["book_published"] as const;
 import { CareerReportV3View } from "./CareerReportV3View";
 import { LoveReportV3View } from "./LoveReportV3View";
 import { isLoveV3Draft } from "../../../lib/interpretation-v3/loveEditorial";
@@ -1573,7 +1576,9 @@ export default async function ReportResultPage({
       const interim = await isInterimEdition(ticket.snapshot.reportId);
       // 운영 Q 3부: 책 본문을 내줄 때 열람 1번(응답 뒤 기록, 실패해도 열람은 그대로).
       await (await import("../../../lib/ops/notify/views")).scheduleBookView(ticket.snapshot.reportId);
-      return <><EditionNotice interim={interim} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} /></>;
+      const { bookEndNotice } = await import("../../../lib/book/storedReport");
+      const endNotice = await bookEndNotice(ticket.snapshot.reportId, true);
+      return <><EditionNotice interim={interim} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} endNotice={endNotice} /><FunnelPingPaid steps={BOOK_OPEN_STEPS} /></>;
     }
     if (ticket.kind === "storageError") return <ReportGenerationStatus retry />;
     if (ticket.kind === "expired") return renderExpiredState();
@@ -1650,10 +1655,12 @@ export default async function ReportResultPage({
         }
       >
         {bookExperiencePublicEnabled() && isBookSnapshotVersion(state.productPreview.productVersion)
-          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, shareOwner: isPaid ? { reportId } : undefined, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined })
+          ? (await import("../../../lib/book/storedReport")).StoredBookReport({ snapshot: state.productPreview, shareUrl: url, shareOwner: isPaid ? { reportId } : undefined, saveToLibrary: isPaid && accountPublicEnabled() ? { reportId } : undefined,
+              endNotice: isPaid ? await (await import("../../../lib/book/storedReport")).bookEndNotice(reportId, false) : undefined })
           : renderProductPreviewState(state.productPreview)}
       </ReportShareProvider>
       {SaveLibrary && !(bookExperiencePublicEnabled() && isBookSnapshotVersion(state.productPreview.productVersion)) ? <SaveLibrary reportId={reportId} /> : null}
+      {isPaid ? <FunnelPingPaid steps={BOOK_OPEN_STEPS} /> : null}
     </>
   );
 }

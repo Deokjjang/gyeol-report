@@ -29,3 +29,21 @@ export function campaignOffer(c: CampaignPresentation) {
   }
   return "나에게 궁금한 이야기를 한 권의 책으로 만나보세요.";
 }
+
+/** F /free 문구(한 곳). 날짜는 설정값(1+1 끝)에서 만든다. */
+export const FREE_COPY = {
+  question: "명리 특징과 MBTI 성향, 비슷하다고 느낀 적 없나요?",
+  lead: "결리포트는 타고난 사주와 MBTI가 왜 닮았는지 한 권의 책으로 풀어 드려요.",
+  examplesTitle: "책 속 「한 페이지」",
+  benefit: "가입하면 내 책 한 권 무료",
+  benefitNote: (days: number) => `(이용권 1장, ${days}일)`,
+  cta: "가입하고 무료로 받기",
+  memberTitle: "이미 회원이시네요.",
+  memberBody: "서재에서 이용권을 확인해 주세요",
+  memberCta: "서재로 가기",
+  ticketTitle: "무료 이용권 1장이 서재에 있어요.",
+  ticketCta: "책 고르기",
+  generalCta: "상품 보기",
+  eventLine: (until: string) => `지금 1+1 진행 중 — 한 권 결제하면 이용권 1장 증정${until ? `(${until}까지)` : ""}`,
+  follow: "카카오톡 채널을 추가하면 새 소식을, 인스타·스레드·X를 팔로우하면 매일 「한 페이지」를 받아 볼 수 있어요",
+} as const;

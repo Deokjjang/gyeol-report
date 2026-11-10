@@ -10,7 +10,10 @@ import { Library } from "./Library";
 import { LibraryHome, startLibraryHome } from "./LibraryHome";
 import { interaction } from "../../lib/analytics/client";
 import { KakaoChannelPrompt } from "./KakaoChannelPrompt";
-import { MarketingPanel, ProfileForm, WithdrawPanel } from "../ops/AccountOps";
+import { MarketingPanel, ProfileForm, WithdrawPanel, type ProfileSaved } from "../ops/AccountOps";
+import { EventPopup } from "../event/EventPopup";
+import { rememberPopup } from "../../lib/ops/comp/popupSelect";
+import { funnel } from "../../lib/analytics/funnel";
 
 /** 선물 링크로 로그인·가입을 시작한 경우(P 추가 F): 가입 정보까지 마치면 그 선물 화면으로 돌아가 자동으로 받는다(10분 돌아오기 쿠키가 지나도). */
 export const GIFT_PENDING_KEY = "gyeol-gift-pending-v1";
@@ -31,12 +34,29 @@ function pendingCheckoutPath(): string | null {
   } catch { return null; }
 }
 
+/** F: 로그인 화면 한 줄(카카오 동의 화면의 채널 추가 선택). 조건이 아니라 권유. */
+export const LOGIN_CHANNEL_NOTE = "카카오로 가입할 때 「결리포트 채널 추가」에 체크하면 새 소식을 받아 볼 수 있어요";
 export function AccountScreen({ local = false, loginError = false, next, ticketShopEnabled = false, prefetchLibrary = false }: { local?: boolean; loginError?: boolean; next?: string; ticketShopEnabled?: boolean; prefetchLibrary?: boolean }) {
   // P 속도: 서재 화면(/account)에서는 서재 묶음 조회를 로그인 상태 확인과 동시에 출발시킨다(회원이 아니면 401로 끝나고 버린다). 로그인 화면(/login)은 하지 않는다.
   useEffect(() => { if (!local && prefetchLibrary) void startLibraryHome(); }, [local, prefetchLibrary]);
   const { session, loaded, error, refresh, base, verifying } = useAccountSession(local);
   const [checked, setChecked] = useState({ terms: false, privacy: false }), [detail, setDetail] = useState<number | null>(null), [message, setMessage] = useState(loginError ? "로그인을 완료하지 못했어요. 다시 시도해 주세요." : ""), [busy, setBusy] = useState(false);
   const [inApp, setInApp] = useState<{ kind: InAppKind; ua: string; href: string } | null>(null), [googleHelp, setGoogleHelp] = useState(false), [infoOpen, setInfoOpen] = useState(false);
+  // F: 가입 완료 직후 가입 이용권 팝업(1개). to = 닫은 뒤 갈 곳(돌아가기·선물·결제하려던 상품), pick = [책 고르기](결제하려던 상품이 있으면 그 화면, 없으면 책장).
+  const [welcome, setWelcome] = useState<{ gift: NonNullable<ProfileSaved["signupGift"]>; to: string | null; pick: string } | null>(null);
+  const saved = (next?: string, joined?: ProfileSaved) => {
+    const to = next ?? pendingGiftPath() ?? pendingCheckoutPath();
+    if (joined?.joined) funnel("login_new");
+    if (joined?.signupGift) { funnel("signup_grant"); setWelcome({ gift: joined.signupGift, to: to ?? null, pick: pendingCheckoutPath() ?? "/" }); return; }
+    if (to) { window.location.assign(to); return; }
+    announceAccountChange(); void refresh();
+  };
+  const leaveWelcome = (target: string | null) => {
+    try { rememberPopup("signup", "close", Date.now(), window.localStorage, window.sessionStorage); } catch { /* 기억 못 해도 */ }
+    setWelcome(null);
+    if (target) { window.location.assign(target); return; }
+    announceAccountChange(); void refresh();
+  };
   const all = checked.terms && checked.privacy, some = checked.terms || checked.privacy, allRef = useRef<HTMLInputElement>(null), lock = useRef(false), requestId = useRef("");
   useEffect(() => { if (allRef.current) allRef.current.indeterminate = some && !all; }, [all, some, session.status]);
   const guest = local ? "/dev/book-flow" : "/";
@@ -73,6 +93,7 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
         <p className={s.eyebrow}>GYEOL REPORT</p><h1>내 이야기를 이어서</h1><p>카카오 또는 Google 계정으로 로그인하세요.</p>
         <div className={s.providers}><button disabled={busy} onClick={() => run("start", "kakao")}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.7 1.8 5 4.5 6.5L5.4 21l4.4-2.5c.7.1 1.4.2 2.2.2 5.5 0 10-3.5 10-7.9S17.5 3 12 3Z" /></svg>카카오로 계속하기</button>
           <button disabled={busy} onClick={() => run("start", "google")}><span className={s.google} aria-hidden="true">G</span>Google로 계속하기</button></div>
+        {local ? null : <p className={s.channelNote} data-login-channel-note>{LOGIN_CHANNEL_NOTE}</p>}
         {googleHelp && inApp ? <div className={s.inApp} role="alert" data-in-app-help={inApp.kind}>
           <b>이 앱 안에서는 Google 로그인이 안 돼요</b>
           <p>카카오로 계속하거나, 기본 브라우저(사파리·크롬)로 열어 Google로 로그인해 주세요.{external ? "" : ` ${IN_APP_MENU_HINT[inApp.kind]}`}</p>
@@ -88,7 +109,7 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </> : <>
         <p className={s.eyebrow}>ACCOUNT</p><h1>내 서재</h1>
-        {!local && session.profile === "required" ? <ProfileForm onSaved={next => { const to = next ?? pendingGiftPath() ?? pendingCheckoutPath(); if (to) { window.location.assign(to); return; } announceAccountChange(); void refresh(); }} /> : null}
+        {!local && session.profile === "required" ? <ProfileForm onSaved={saved} /> : null}
         {local || ticketShopEnabled ? <nav aria-label="내 계정"><Link href={local ? "/dev/account" : "/account"} aria-current="page">내 서재</Link> · <Link href={local ? "/dev/account/tickets" : "/account/tickets"}>내 이용권 →</Link></nav> : null}
         {local ? <Library local /> : <LibraryHome />}
         <details className={s.accountInfo} onToggle={e => setInfoOpen(e.currentTarget.open)}><summary>계정 정보</summary><p>{session.displayName}</p>{!local && infoOpen && session.profile === "complete" ? <MarketingPanel /> : null}<p><a href="/privacy">개인정보처리방침</a></p>{!local ? <WithdrawPanel onDone={() => { announceAccountChange(); window.location.assign("/"); }} /> : null}</details>
@@ -97,6 +118,8 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
       {message || error ? <p className={s.error} role="alert">{message || "로그인 상태를 확인하지 못했어요. 다시 시도해 주세요."}</p> : null}
       {session.status !== "member" ? <Link className={s.guest} href={guest}>로그인 없이 둘러보기 →</Link> : null}
     </section>
+    {welcome ? <EventPopup id="signup" state={{ member: true, comp: null, event: welcome.gift.event, signup: { active: true, mine: { status: "available", expiresAt: welcome.gift.expiresAt } } }}
+      onDone={() => leaveWelcome(welcome.to)} onPick={() => leaveWelcome(welcome.pick)} /> : null}
     {detail !== null ? <DetailSheet title={LEGAL_TITLES[detail]} onClose={() => setDetail(null)}><LegalDocument index={detail} onNavigate={setDetail} /></DetailSheet> : null}
     <KakaoChannelPrompt session={session} local={local} enabled={loaded && !verifying && !error && !busy && detail === null} />
   </main>;

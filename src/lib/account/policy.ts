@@ -6,12 +6,14 @@ export const ACCOUNT_PROVIDERS = ["kakao", "google"] as const;
 export type AccountProvider = typeof ACCOUNT_PROVIDERS[number];
 export type ConsentRecord = { consent_type: "terms" | "privacy" | "marketing"; document_version: string; is_agreed: boolean; required: boolean; recorded_at: string };
 /** email·emailVerified·kakaoId: 로그인 공급자가 준 값(P6d-ops). Supabase auth의 email은 읽기만 한다. */
-export type AccountIdentity = { id: string; displayName: string; provider: AccountProvider; createdAt?: string; email?: string | null; emailVerified?: boolean; kakaoId?: string | null; lastSignInAt?: string | null };
+/** providerUserId(F): 로그인 제공자의 사용자 id(카카오 회원번호·Google sub) — 서버에서 가입 이용권 지급 기록 해시를 만들 때만 쓴다(저장·화면 전송 없음). */
+export type AccountIdentity = { id: string; displayName: string; provider: AccountProvider; createdAt?: string; email?: string | null; emailVerified?: boolean; kakaoId?: string | null; lastSignInAt?: string | null; providerUserId?: string | null };
 /** contact: 가입 정보(P6d-ops 2). undefined = 저장소가 모름(로컬 검수 포트), null = 아직 입력 안 함. */
 export type AccountContact = { name: string; email: string; upgradeState?: "none" | "eligible" | "granted" };
 export type AccountSnapshot = { profile: AccountIdentity | null; consents: ConsentRecord[]; contact?: AccountContact | null };
 /** profile: 회원의 가입 정보 상태(required면 결제·이용권 사용만 막는다). upgradeState: 업그레이드 이용권 자격(지급은 P6c). */
-export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string }; profile?: "complete" | "required"; upgradeState?: "none" | "eligible" | "granted"; compWaiting?: boolean };
+/** tester(F): 시험 계정(관리자·누나 계정)이면 true — 브라우저가 「시험」 표시를 남겨 퍼널 집계·메타 전송에서 빠진다(계정 id는 보내지 않는다). */
+export type AccountSession = { status: "guest" | "needs_consent" | "member"; displayName?: string; channelPrompt?: { scope: string; channelPublicId: string }; profile?: "complete" | "required"; upgradeState?: "none" | "eligible" | "granted"; compWaiting?: boolean; tester?: boolean };
 export const GUEST_SESSION: AccountSession = { status: "guest" };
 
 // Records arrive newest first (DB monotonic id, not a client timestamp).
@@ -48,7 +50,7 @@ export function safeAccountNext(value: unknown, local = false): string {
     const product = value.slice(`${inputPath}?product=`.length);
     if (bookForProduct(product)) return `${inputPath}?product=${product}`;
   }
-  const allowed = local ? ["/dev/account", "/dev/account/tickets", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/account/tickets", "/", "/report/new"];
+  const allowed = local ? ["/dev/account", "/dev/account/tickets", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/account/tickets", "/", "/report/new", "/free"];
   const report = local ? /^\/dev\/book-flow\/report\/(?:book-local-[a-f0-9-]{36}|report_[a-z0-9_-]{13,80})$/i : /^\/reports\/report_[a-z0-9_-]{13,80}$/i;
   if (report.test(value)) return value;
   // P6d-ops 6: 선물 링크(로그인 뒤 돌아와 받기).

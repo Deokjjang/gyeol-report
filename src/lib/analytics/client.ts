@@ -1,5 +1,7 @@
 "use client";
 import { metaMaySend, metaOrigin } from "./metaConsent";
+import { funnel, testerBrowser } from "./funnel";
+import type { FunnelStep } from "./funnelModel";
 import { metaProduct, metaPurchase, type FunnelEvent, type Interaction, type MetaEvent, type PurchaseFact } from "./events";
 
 declare global { interface Window { fbq?: (...args: unknown[]) => void; _fbq?: unknown } }
@@ -45,7 +47,8 @@ function mirrorFacts(events: unknown) {
     }
   }
 }
-export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaAllowed;
+// F 추가 3: 「시험」 브라우저(시험 계정으로 로그인한 적이 있음)는 보내지 않는다.
+export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaAllowed && !testerBrowser();
 // 운영 Q 추가(메타 복구, 덕짱님 2026-11-07): PageView는 전 페이지. 시행일 전에는 동의한 사람만, 시행일 뒤(결정 A)에는 거부하지 않은 사람 모두(기본 허용). 관리자·개발·로그인 콜백·API는 뺀다.
 // 주소는 보내지 않는다 — 서버 전송은 고정 주소(metaDelivery event_source_url), 픽셀은 referrer를 끈 별도 창(MetaPixel iframe)이라
 // 책 id(/reports/…)·공유 토큰(/r/…)·로그인 코드가 Meta로 가지 않는다(처리방침 13번 「원문 URL은 보내지 않습니다」).
@@ -97,9 +100,12 @@ export function journeyId() {
   } catch { return fallbackJourney ??= crypto.randomUUID(); }
 }
 let fallbackJourney: string | undefined;
+/** F 퍼널: 이미 있는 행동 기록 지점을 퍼널 단계로도 센다(상품 화면·입력 시작·입력 완료·결제창 열림). */
+const FUNNEL_OF: Partial<Record<Interaction, FunnelStep>> = { book_viewed: "product_view", input_started: "input_start", input_completed: "input_done", checkout_started: "pay_open" };
 export function interaction(event: Interaction, productType?: string, campaign?: string) {
   if (manualReviewSilent()) return;
   if (typeof window === "undefined") return;
+  const step = FUNNEL_OF[event]; if (step) funnel(step);
   const mapped = event === "book_viewed" ? "ViewContent" : event === "checkout_started" ? "InitiateCheckout" : null;
   // 최종 A 20: Meta로 가는 행동은 보낼 수 있을 때(거부 안 함·서버 설정 확인 뒤, 또는 로컬 측정)만 센다. 그 전에 중복 방지 표시를 남기면
   // 같은 탭에서 설정을 확인한 뒤 결제창을 열어도 한 번도 나가지 않는다.

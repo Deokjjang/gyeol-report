@@ -19,6 +19,7 @@ import { useAccountSession } from "../account/AccountSession";
 import type { AccountSession } from "../../lib/account/policy";
 import { CouponChooser, type CouponChoice } from "./CouponChooser";
 import { interaction, syncLocalFacts } from "../../lib/analytics/client";
+import { funnel } from "../../lib/analytics/funnel";
 import { checkoutReturnKey, useTicketPublication } from "./useTicketPublication";
 import { recordBookReturn } from "../../lib/tickets/shopClient";
 import { receiptMethodKey } from "../../lib/tickets/shopContract";
@@ -143,6 +144,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const blocked = busy || publication.submitting || ticketPending || checkingBalance || accountChanged || (!internal && !publication.loaded) || session.status === "needs_consent" || profileRequired;
   const selected = items.find(c => c.id === detail);
   const submit = async () => {
+    if (!internal && ready) funnel(method === "ticket" ? "ticket_click" : "pay_click"); // F 퍼널: 결제하기·이용권 사용 클릭(세션당 1번)
     if (loginFirst) { loginToCheckout(payload.productKey, internal); return; }
     if (lock.current || blocked || !ready || (method === "ticket" && !tickets) || (internal&&method==="payment"&&!coupon.quote&&!couponOrder)) return;
     if (ticketShopEnabled && session.status === "member") {
