@@ -1,12 +1,12 @@
 import "server-only";
-import { describeGeneration, UNKNOWN_PROGRESS, type GenerationProgress, type SupervisorStateRow } from "./generationProgress";
+import { describeGeneration, etaOf, UNKNOWN_PROGRESS, type GenerationProgress, type SupervisorStateRow } from "./generationProgress";
 
 /** 결제·이용권 Book 주소 형식(report_ + 영숫자). 다른 값은 저장소를 읽지 않는다. */
 export const PROGRESS_REPORT_ID = /^report_[a-z0-9]{13,64}$/;
 
 type Store = { call(action: string, data: Record<string, unknown>): Promise<Record<string, unknown>> };
 /** 시험 주입용(PGlite 실제 SQL). 운영은 비워 두면 기존 저장소를 만든다. */
-export type ProgressStores = { readonly reliability?: Store; readonly generation?: Store };
+export type ProgressStores = { readonly reliability?: Store; readonly generation?: Store; readonly progress?: Store };
 
 /**
  * 생성 대기 화면용 진행 상태를 읽는다(읽기 전용, v5 최종 2-1 #7).
@@ -31,7 +31,15 @@ export async function readGenerationProgress(reportId: string, knownStatus?: str
       const r = await generation.call("state", { reportId });
       if (r.ok === true && r.state && typeof r.state === "object") supervisor = r.state as SupervisorStateRow;
     } catch { /* 감독 상태를 못 읽으면 Book 상태만으로 정한다 */ }
-    return describeGeneration(status, supervisor);
+    const base = describeGeneration(status, supervisor);
+    // AM 4부: 진짜 진행률·남은 시간(읽기 전용 am_writer_progress, 원고 본문은 여기서 내보내지 않는다).
+    try {
+      const progress = stores.progress ?? (await import("../../lib/ops/store")).createOpsStores().progress;
+      const p = await progress.call("read", { reportId });
+      if (p.ok === true) { const done = Number(p.done) || 0, total = typeof p.total === "number" ? p.total : null;
+        return { ...base, chapters: { done, total }, etaMs: etaOf(typeof p.medianMs === "number" ? p.medianMs : null, done, total) }; }
+    } catch { /* 진행률을 못 읽으면 단계만 */ }
+    return base;
   } catch {
     return UNKNOWN_PROGRESS;
   }

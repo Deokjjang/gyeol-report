@@ -6,7 +6,7 @@ import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type Bo
 import { ANNUAL_WISH_MAX, type PersonInputState } from "../../lib/report-generation/reportInputPresentation";
 import { MBTI_TYPES, compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
 import { birthTimeSlotOptions } from "../../lib/saju/birthTimePrecisionTypes";
-import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
+import { annualEditionYear, getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
 import { JOBS, RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
 import { Publishing } from "../../app/dev/book-preview/BookPages";
 import { BookCheckout, CHECKOUT_RETURN_BACKUP_KEY, type MajorDiscountView } from "./BookCheckout";
@@ -64,27 +64,10 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(initial ?? emptyBookForm(policy.currentYear)), [step, setStep] = useState(0), [ready, setReady] = useState(false);
-  // AM 3부: 세운 책의 「대운으로 이어 보기」(?from=세운 책 id) — 세운 입력(같은 사람)을 채우고 바로 주문서로, 할인 금액은 서버 판정.
-  const [discount, setDiscount] = useState<MajorDiscountView | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({}), [message, setMessage] = useState(""), [checking, setChecking] = useState(false), [publishing, setPublishing] = useState(false), [decoration, setDecoration] = useState(0);
   const scroll = useRef<HTMLDivElement>(null), validationId = useRef(0), reachedStep = useRef(0);
   const draftWritable = useRef(true);
   const total = ["love", "annual"].includes(book.id) ? 3 : 2, receipt = step === total;
-  useEffect(() => {
-    if (book.productKey !== "major_fortune" || typeof window === "undefined") return;
-    const from = new URLSearchParams(window.location.search).get("from"); if (!from) return;
-    let live = true;
-    void fetch(`/api/major-discount/quote?from=${encodeURIComponent(from)}`, { cache: "no-store" }).then(r => r.json()).then((r: { ok?: boolean; message?: string; amount?: number; original?: number; until?: string; person?: Record<string, unknown> | null; userContext?: Record<string, unknown> | null }) => {
-      if (!live) return;
-      if (!r.ok || !r.person) { if (r.message) setMessage(r.message); return; }
-      const p = r.person, c = r.userContext ?? {};
-      const mode = p.birthTimeUnknown === true ? "unknown" : p.birthTime ? "exact" : p.approximateBirthTimeSlot ? "approximate" : "unknown";
-      setState(st => ({ ...st, person: { ...st.person, name: String(p.name ?? ""), birthDate: String(p.birthDate ?? ""), birthTime: String(p.birthTime ?? ""), birthTimeUnknown: p.birthTimeUnknown === true, paidBirthTimeMode: mode, timeBranch: (p.approximateBirthTimeSlot ?? "") as never,
-        gender: String(p.gender ?? ""), mbtiType: String(p.mbtiType ?? ""), relationshipStatus: String(c.relationshipStatus ?? ""), jobStatus: String(c.jobStatus ?? ""), detailedJob: String(c.detailJob ?? "") } }));
-      setDiscount({ from, amount: Number(r.amount), original: Number(r.original), until: String(r.until ?? "") }); setStep(total);
-    }).catch(() => undefined);
-    return () => { live = false; };
-  }, [book.productKey, total]);
   const pair = book.id === "compatibility", roles = compatibilityRoleLabels(state.category), requiredGender = ["major", "annual"].includes(book.id);
   const payload = bookInputPayload(book, state), title = readerTitle(book, state.person.selectedYear);
   useEffect(() => {
@@ -139,6 +122,23 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   useEffect(() => { if (ready && draftWritable.current) { try { sessionStorage.setItem(key, JSON.stringify({ version: 1, state })); } catch { /* optional local draft */ } } }, [state, ready, key]);
   useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
+  // AM 3부: 세운 책의 「대운으로 이어 보기」(?from=세운 책 id) — 세운 입력(같은 사람)을 채우고 바로 주문서로, 할인 금액은 서버 판정.
+  const [discount, setDiscount] = useState<MajorDiscountView | null>(null);
+  useEffect(() => {
+    if (book.productKey !== "major_fortune" || typeof window === "undefined") return;
+    const from = new URLSearchParams(window.location.search).get("from"); if (!from) return;
+    let live = true;
+    void fetch(`/api/major-discount/quote?from=${encodeURIComponent(from)}`, { cache: "no-store" }).then(r => r.json()).then((r: { ok?: boolean; message?: string; amount?: number; original?: number; until?: string; person?: Record<string, unknown> | null; userContext?: Record<string, unknown> | null }) => {
+      if (!live) return;
+      if (!r.ok || !r.person) { if (r.message) setMessage(r.message); return; }
+      const p = r.person, c = r.userContext ?? {};
+      const mode = p.birthTimeUnknown === true ? "unknown" : p.birthTime ? "exact" : p.approximateBirthTimeSlot ? "approximate" : "unknown";
+      setState(st => ({ ...st, person: { ...st.person, name: String(p.name ?? ""), birthDate: String(p.birthDate ?? ""), birthTime: String(p.birthTime ?? ""), birthTimeUnknown: p.birthTimeUnknown === true, paidBirthTimeMode: mode, timeBranch: (p.approximateBirthTimeSlot ?? "") as never,
+        gender: String(p.gender ?? ""), mbtiType: String(p.mbtiType ?? ""), relationshipStatus: String(c.relationshipStatus ?? ""), jobStatus: String(c.jobStatus ?? ""), detailedJob: String(c.detailJob ?? "") } }));
+      setDiscount({ from, amount: Number(r.amount), original: Number(r.original), until: String(r.until ?? "") }); setStep(total);
+    }).catch(() => undefined);
+    return () => { live = false; };
+  }, [book.productKey, total]);
   const update = (next: BookFormState) => {
     if (!draftWritable.current) {
       // Only an explicit new edit may replace a draft whose owner was not verified.
@@ -187,8 +187,8 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         </>}</div> : null}
         {step === 2 ? book.id === "love" ? relation : book.id === "annual" ? <div className={s.fields}>
           {/* AM 2부: 신년판은 한 해(설정값)만. 소망은 선택, 200자, 자료로만 쓰인다. */}
-          <p className={s.wide}><b>{policy.selectableYears[0]}년 신년판</b> · 입춘부터 다음 입춘까지 열두 절기월과 1월 다리를 담아요.</p>
-          <label className={s.wide}>{policy.selectableYears[0]}년에 이루고 싶은 것이나 요즘 고민(선택)<textarea value={state.person.wish ?? ""} maxLength={ANNUAL_WISH_MAX} rows={4} data-annual-wish onChange={e => update({ ...state, person: { ...state.person, wish: e.target.value.slice(0, ANNUAL_WISH_MAX) } })} />
+          <p className={s.wide}><b>{annualEditionYear()}년 신년판</b> · 입춘부터 다음 입춘까지 열두 절기월과 1월 다리를 담아요.</p>
+          <label className={s.wide}>{annualEditionYear()}년에 이루고 싶은 것이나 요즘 고민(선택)<textarea value={state.person.wish ?? ""} maxLength={ANNUAL_WISH_MAX} rows={4} data-annual-wish onChange={e => update({ ...state, person: { ...state.person, wish: e.target.value.slice(0, ANNUAL_WISH_MAX) } })} />
             <small>건강·금융처럼 민감한 내용은 적지 않아도 돼요. {(state.person.wish ?? "").length}/{ANNUAL_WISH_MAX}</small></label>
         </div> : <label>선택 연도<select value={state.person.selectedYear} onChange={e => update({ ...state, person: { ...state.person, selectedYear: e.target.value } })}>{policy.selectableYears.map(year => <option key={year}>{year}</option>)}</select></label> : null}
         <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>

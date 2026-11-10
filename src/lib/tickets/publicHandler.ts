@@ -62,6 +62,13 @@ export async function handleTicketPublication(request: NextRequest, action: stri
     const state = result.state;
     if (!state || !messages[state] || !validTicketRequestId(result.redemptionId)) return json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);
     const completed = state === "COMPLETED" && typeof result.reportId === "string" && /^report_[a-f0-9]{32}$/.test(result.reportId);
-    return json({ ok: true, state, redemptionId: result.redemptionId, message: messages[state], ...(completed ? { reportUrl: `/reports/${result.reportId}` } : {}) }, ["QUEUED", "RUNNING"].includes(state) ? 202 : 200);
+    // AM 4부: 만드는 중이면 진짜 진행률·남은 시간·1장 미리보기(이 상태 조회는 로그인한 본인 이용권만 답한다 — 주인 확인).
+    let progress: Record<string, unknown> | undefined;
+    if (state === "RUNNING" && action === "status") try {
+      const { createOpsStores } = await import("../ops/store"), { etaOf } = await import("../../components/report/generationProgress");
+      const p = await createOpsStores().progress.call("read", { redemptionId: result.redemptionId });
+      if (p.ok === true) { const done = Number(p.done) || 0, total = typeof p.total === "number" ? p.total : null; progress = { done, total, etaMs: etaOf(typeof p.medianMs === "number" ? p.medianMs : null, done, total), ...(p.first ? { first: p.first } : {}) }; }
+    } catch { progress = undefined; }
+    return json({ ok: true, state, redemptionId: result.redemptionId, message: messages[state], ...(progress ? { progress } : {}), ...(completed ? { reportUrl: `/reports/${result.reportId}` } : {}) }, ["QUEUED", "RUNNING"].includes(state) ? 202 : 200);
   } catch { return json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, 503); }
 }

@@ -53,7 +53,7 @@ export function getAnnualFortuneCurrentYear(
 }
 
 /**
- * AM 2부(2026-11-11): 세운은 신년판 한 해(상품 설정 연도)만 판다 — 12월에 「나의 2027」을 사야 하므로 달력 해 기준 범위를 쓰지 않는다.
+ * AM 2부(2026-11-11): 세운 새 주문은 신년판 한 해(상품 설정 연도) — 12월에 「나의 2027」을 사야 하므로 달력 해 범위에 신년판 연도를 더한다.
  * 설정값은 서버 ANNUAL_PRODUCT_YEAR, 화면 NEXT_PUBLIC_ANNUAL_PRODUCT_YEAR(둘 다 없으면 2027).
  */
 export function annualEditionYear(env: Readonly<Record<string, string | undefined>> = process.env): number {
@@ -64,9 +64,10 @@ export function getAnnualFortuneCommerceYearPolicy(
   referenceDate = new Date(),
 ): AnnualFortuneCommerceYearPolicy {
   const currentYear = getAnnualFortuneCurrentYear(referenceDate);
-  void ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT;
-  const edition = annualEditionYear();
-  return { currentYear, firstYear: edition, lastYear: edition, selectableYears: [edition] };
+  const firstYear = currentYear - (ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT - 1);
+  // 예전 범위(지난 해들, v4 저장 입력·미리보기)는 그대로 두고 신년판 연도만 더한다 — 새 주문은 입력 화면·payload가 신년판 연도로 고정한다.
+  const range = Array.from({ length: ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT }, (_, index) => firstYear + index), edition = annualEditionYear();
+  return { currentYear, firstYear, lastYear: Math.max(currentYear, edition), selectableYears: range.includes(edition) ? range : [...range, edition] };
 }
 
 export function isAnnualFortuneCommerceYearSelectable(

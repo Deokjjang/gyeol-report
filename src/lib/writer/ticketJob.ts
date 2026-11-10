@@ -11,6 +11,7 @@ import type { OpsStore } from "../ops/generation/sinks";
 import { superviseQueueJob } from "../ops/generation/supervisor";
 import { priorBooks } from "./prior";
 import type { ChapterSink, SavedChapter } from "./runner";
+import { chapterForStore, chapterFromStore } from "./runner";
 
 /** priorReader: 이전 Book을 읽는 저장소(이용권 report_tickets의 library·read, P6b E-1). 없으면 발행 저장소로 시도한다.
  * ops: 생성 감독 저장소(P6d-ops, 시험 주입). 없으면 운영 저장소(Supabase). openAiKey·opsNow: 시험 주입. */
@@ -20,13 +21,13 @@ const GATE_VERSION = "paid-report-v1";
 export function ticketChapterSink(store: TicketPublicationStore, user: string, origin: { redemptionId: string; token: string }): ChapterSink {
   return {
     async save(c: SavedChapter) {
-      const r = await store.call("save-chapter", user, { ...origin, n: c.n, source: c.source, chapter: c.chapter });
+      const r = await store.call("save-chapter", user, { ...origin, n: c.n, source: c.source, chapter: chapterForStore(c) });
       return r.ok === true;
     },
     async load() {
       const r = await store.call("chapters", user, origin);
       if (!r.ok || !Array.isArray(r.chapters)) return [];
-      return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: x.chapter }));
+      return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: chapterFromStore(x.chapter) }));
     },
   };
 }

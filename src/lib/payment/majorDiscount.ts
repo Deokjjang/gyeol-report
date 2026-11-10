@@ -12,7 +12,7 @@ export function majorDiscountRate(env: Readonly<Record<string, string | undefine
 /** 할인 금액: 10원 단위 내림, 토스 최소 100원. */
 export const discountedAmount = (price: number, rate: number) => Math.max(100, Math.floor((price * (1 - rate)) / 10) * 10);
 
-type PersonLike = { name?: unknown; birthDate?: unknown; birthTime?: unknown; birthTimeUnknown?: unknown; gender?: unknown };
+type PersonLike = { name?: unknown; birthDate?: unknown; birthTime?: unknown; birthTimeUnknown?: unknown; gender?: unknown; mbtiType?: unknown };
 const key = (p: PersonLike | undefined) => p ? [String(p.name ?? "").replace(/\s+/g, ""), String(p.birthDate ?? ""), p.birthTimeUnknown === true || !p.birthTime ? "" : String(p.birthTime).slice(0, 5), String(p.gender ?? "")].join("|") : "";
 /** 같은 사람 입력: 이름(공백 무시)·생년월일·출생 시각(HH:MM, 미상은 빈 값)·성별이 모두 같다. MBTI는 보지 않는다. */
 export function samePerson(a: PersonLike | undefined, b: PersonLike | undefined): boolean { const x = key(a), y = key(b); return x !== "" && x === y && !x.startsWith("|"); }

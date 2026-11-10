@@ -266,14 +266,16 @@ describe("paid funnel contracts and progressive review", () => {
     change("jobStatus", "student"); change("relationshipStatus", "single"); change("detailedJob", "대학생");
     await settleReadiness();
     const snapshot = checkout().entry.props.inputSnapshot as { reportInputPayload: unknown };
-    expect(snapshot.reportInputPayload).toMatchObject({ productOptions: { selectedYear: String(currentYear) }, userContext: { jobStatus: "student", relationshipStatus: "single", detailJob: "대학생", focusAreas: [] } });
+    // AM 2부: 세운 새 주문의 해는 신년판 연도로 고정된다(예전 초안의 다른 해가 남아 있어도).
+    expect(snapshot.reportInputPayload).toMatchObject({ productOptions: { selectedYear: "2027" }, userContext: { jobStatus: "student", relationshipStatus: "single", detailJob: "대학생", focusAreas: [] } });
     expect(JSON.stringify(checkout().entry.props.reviewGroups)).toContain(String(currentYear));
     expect(paymentButton()?.props.disabled).toBe(false);
   });
 
   it("uses the Asia/Seoul year and exposes only the existing six-year annual range", () => {
-    expect(getAnnualFortuneYearOptions(new Date("2026-06-18T00:00:00+09:00"))).toEqual([2021, 2022, 2023, 2024, 2025, 2026]);
-    expect(getAnnualFortuneYearOptions(new Date("2026-12-01T00:00:00+09:00"))).toEqual([2021, 2022, 2023, 2024, 2025, 2026]);
+    // AM 2부: 예전 여섯 해 범위에 신년판 연도(설정값, 기본 2027)를 더한다(12월에 「나의 2027」).
+    expect(getAnnualFortuneYearOptions(new Date("2026-06-18T00:00:00+09:00"))).toEqual([2021, 2022, 2023, 2024, 2025, 2026, 2027]);
+    expect(getAnnualFortuneYearOptions(new Date("2026-12-01T00:00:00+09:00"))).toEqual([2021, 2022, 2023, 2024, 2025, 2026, 2027]);
     expect(getAsiaSeoulCurrentYear(new Date("2026-12-31T15:30:00.000Z"))).toBe(2027);
     expect(getAnnualFortuneYearOptions(new Date("2026-12-31T15:30:00.000Z"))).toEqual([2022, 2023, 2024, 2025, 2026, 2027]);
     hooks.product = "annual-fortune";

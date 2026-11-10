@@ -13,7 +13,24 @@ export type GenerationProgress = {
   readonly stage: 0 | 2;
   /** 감독이 미뤄 둔 다음 시도 시각(ISO). 평소보다 오래 걸릴 때만. */
   readonly nextAt: string | null;
+  /** AM 4부: 진짜 진행률(저장된 장 수 / 전체 장 수). 전체를 모르면 total null. 가짜 퍼센트 막대는 쓰지 않는다. */
+  readonly chapters?: { readonly done: number; readonly total: number | null };
+  /** AM 4부: 남은 시간(밀리초) = 같은 상품 최근 실측 중앙값 × 남은 장 몫. 실측이 없으면 null(화면이 숨긴다). */
+  readonly etaMs?: number | null;
 };
+/** 남은 시간 문구(분 단위 올림, 1분 미만은 「곧」). */
+export function etaLabel(ms: number | null | undefined): string | null {
+  if (ms === null || ms === undefined || !Number.isFinite(ms) || ms < 0) return null;
+  return ms < 60_000 ? "곧 완성돼요" : `남은 시간 약 ${Math.ceil(ms / 60_000)}분`;
+}
+/** 실측 중앙값과 진행 장 수로 남은 시간(밀리초). */
+export function etaOf(medianMs: number | null | undefined, done: number, total: number | null): number | null {
+  if (!medianMs || medianMs <= 0) return null;
+  return total && total > 0 ? Math.round(medianMs * Math.max(0, 1 - done / total)) : medianMs;
+}
+/** AM 4부 조회 주기: 3초에서 시작해 점점 길게(최대 20초). 탭이 다시 보이면 처음부터. */
+export const POLL_STEPS_MS = [3_000, 3_000, 4_000, 5_000, 7_000, 10_000, 15_000, 20_000] as const;
+export const pollDelay = (n: number) => POLL_STEPS_MS[Math.min(n, POLL_STEPS_MS.length - 1)];
 
 export const GENERATION_STAGE_QUEUED = 0;
 export const GENERATION_STAGE_WRITING = 2;

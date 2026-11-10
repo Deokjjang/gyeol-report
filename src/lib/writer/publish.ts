@@ -396,7 +396,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // AM 4부 먼저 읽기: 장이 저장될 때 결정론 정리·검사(호출 0)로 사실·금지 규칙 문장을 가린 미리보기를 함께 넘긴다. 미리보기가 실패해도 저장은 그대로.
   const previewSheet = factSheetFor(a.payload, a.policyAt, brief, k);
   const previewCtx = lintContext(brief, k, plan, a.prior?.sentences ?? [], undefined, previewSheet);
-  const sink: ChapterSink = { save: c => { let preview: ChapterPreview | undefined; try { preview = chapterPreview(c, previewCtx, plan.find(p => p.n === c.n)); } catch { preview = undefined; } return a.sink.save(preview ? { ...c, preview } : c); }, load: () => a.sink.load() };
+  const sink: ChapterSink = { save: c => { let preview: ChapterPreview | undefined; try { preview = chapterPreview(c, previewCtx, plan.find(p => p.n === c.n)); } catch { preview = undefined; } return a.sink.save({ ...c, total: plan.length, ...(preview ? { preview } : {}) }); }, load: () => a.sink.load() };
   const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...deps, budgetMs: budget - (now() - started), fallback: fb });
   if (!a.recover && model) {
     try { run = await runWriter(opts()); drafts = run.drafts; }

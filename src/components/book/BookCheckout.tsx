@@ -1,4 +1,5 @@
 "use client";
+import { etaLabel } from "../report/generationProgress";
 import { useEffect, useRef, useState } from "react";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
 import { CHECKOUT_CONSENT_UI_VERSION, createCheckoutConsentAssertion, getCheckoutAgeGateStatus, MEMBER_SIGNUP_CONSENT_TEXT, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
@@ -253,6 +254,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     </fieldset> : null}
     {profileRequired ? <p role="alert">{PROFILE_REQUIRED_MESSAGE} <a href="/account">가입 정보 입력하기 →</a></p> : null}
     {!internal && publication.message ? <p role="status">{publication.message}</p> : null}
+    {!internal && publication.progress ? <TicketProgress progress={publication.progress} /> : null}
     {ticketPending && publication.retryable ? <button disabled={!ready || publication.submitting || accountChanged} onClick={() => void publication.submit(payload, effective, accountScope.current || undefined, consentUi)}>같은 발행 요청 다시 확인</button> : null}
     {!internal && publication.completedUrl ? <a href={publication.completedUrl}>완성된 책 펼쳐보기</a> : null}
     {internal?<CouponChooser productType={payload.productKey} disabled={busy||method==="ticket"||couponOrder!==null} ticketSelected={method==="ticket"} member={session.status==="member"} onChange={setCoupon} />:null}
@@ -280,4 +282,16 @@ function BookChapterList({ payload }: { payload: ReportInputPayload }) {
   if (!chapters) return null;
   return <details className={`${s.receiptNote} ${s.receiptChapters}`} data-book-chapters><summary>이 책의 차례 · {chapters.length}장</summary><ol>{chapters.map(title => <li key={title}>{title}</li>)}</ol>
     {payload.productKey === "saju_mbti_compatibility" ? <p>A: {payload.personA.name} · B: {payload.personB.name}</p> : null}</details>;
+}
+
+/** AM 4부 이용권 책 대기: 진짜 진행률(「13장 중 5장 완성」)·남은 시간(실측 중앙값, 없으면 숨김)·「1장 먼저 읽기」(결정론 검사 뒤)·서재 안내. */
+function TicketProgress({ progress }: { progress: { done: number; total: number | null; etaMs: number | null; first?: { title: string; sections: { heading: string; paragraphs: string[] }[] } } }) {
+  const [open, setOpen] = useState(false);
+  const eta = etaLabel(progress.etaMs);
+  return <section className={s.receiptNote} data-ticket-progress>
+    {progress.total ? <p data-chapter-progress>{progress.total}장 중 {Math.min(progress.done, progress.total)}장 완성{eta ? ` · ${eta}` : ""}</p> : eta ? <p>{eta}</p> : null}
+    {progress.first ? open ? <div data-first-chapter-preview><h2>1. {progress.first.title}</h2>{progress.first.sections.map((x, i) => <div key={i}>{x.heading ? <h3>{x.heading}</h3> : null}{x.paragraphs.map((p, j) => <p key={j}>{p}</p>)}</div>)}<p>남은 장은 제본 중이에요. 완성되면 책으로 바로 이어져요.</p></div>
+      : <button type="button" onClick={() => setOpen(true)} data-first-chapter>1장 먼저 읽기</button> : null}
+    <p>창을 닫아도 서재에 저장돼요. 완성되면 서재에서 바로 열 수 있어요.</p>
+  </section>;
 }
