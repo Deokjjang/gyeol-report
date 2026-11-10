@@ -1,6 +1,7 @@
 import "server-only";
 import { defaultAdminDeps } from "../admin/actions";
 import { adminUserIds } from "../config";
+import { withDeadline } from "../../network/withDeadline";
 import { createOpsStores } from "../store";
 import type { BotDeps } from "./bots";
 import { tossPaymentMethodReader, type NotifyDeps } from "./flush";
@@ -14,6 +15,27 @@ export const SISTER_TEST_USER_ID = "d0dd2e4e-38cf-49b5-8dea-7a35ee54dd55";
  * 1분 크론이 DB(ops_settings 'test_accounts')에 맞추고, SQL 집계는 public.ops_test_user(uuid)로 뺀다(migration 20261110200000).
  */
 export function testAccountIds(env: Env = process.env): string[] { return [...new Set([...adminUserIds(env), SISTER_TEST_USER_ID].map(s => s.toLowerCase()))].sort(); }
+/**
+ * F 후속 「시험 계정 표」(DB public.ops_test_accounts — 관리자 권한과 별개, 집계·메타 전송에서만 뺌)까지 더한 목록.
+ * 세션의 「시험」 브라우저 표시와 /api/funnel 회원 단계가 쓴다(SQL 집계는 ops_test_user()가 같은 표를 본다). 60초 캐시, 못 읽으면 직전 값(처음이면 env 목록만).
+ */
+export const TEST_TABLE_TTL_MS = 60_000;
+let testTable: { at: number; ids: readonly string[] } | null = null;
+/** DB 표 읽기(service_role, 3초). 못 읽으면 null. */
+async function readTestTable(env: Env): Promise<string[] | null> {
+  const db = createOpsStores(env).db;
+  if (!db) return null;
+  try {
+    const { data, error } = await withDeadline(async signal => await db.from("ops_test_accounts").select("user_id").limit(200).abortSignal(signal), 3_000);
+    return !error && Array.isArray(data) ? data.map(r => String((r as { user_id: unknown }).user_id).toLowerCase()) : null;
+  } catch { return null; }
+}
+export async function liveTestAccountIds(env: Env = process.env, now = Date.now(), read: () => Promise<string[] | null> = () => readTestTable(env)): Promise<Set<string>> {
+  if (!testTable || now - testTable.at >= TEST_TABLE_TTL_MS || now < testTable.at) testTable = { at: now, ids: (await read()) ?? testTable?.ids ?? [] };
+  return new Set([...testAccountIds(env), ...testTable.ids]);
+}
+/** 시험용: 캐시 비우기. */
+export function resetLiveTestAccounts() { testTable = null; }
 /** 운영 기본 의존성(service_role 저장소 + 텔레그램 + 토스 결제 조회). 시험은 각 함수에 대역을 넘긴다. */
 export function defaultBotDeps(env: Env = process.env): BotDeps {
   const stores = createOpsStores(env), db = stores.db;

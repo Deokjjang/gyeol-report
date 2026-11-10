@@ -91,7 +91,8 @@ describe("선물·양도 불가와 사용 범위", () => {
   it("대운·세운에는 쓸 수 없고(옮기지 않음), 출시 4종에는 쓴다 — 원장 이유 SIGNUP_FREE·범위 4종", async () => {
     expect(await gift.call("spend", { userId: D, productType: "major_fortune", requestId: "r-major" })).toMatchObject({ ok: true, moved: false });
     expect(await gift.call("spend", { userId: D, productType: "annual_fortune", requestId: "r-annual" })).toMatchObject({ ok: true, moved: false });
-    expect(await gift.call("spend", { userId: D, productType: "love_marriage_child", requestId: "r-love" })).toMatchObject({ ok: true, moved: true });
+    // F 후속: spend 응답에 옮긴 이용권 종류(서버가 「무료 책」을 센다).
+    expect(await gift.call("spend", { userId: D, productType: "love_marriage_child", requestId: "r-love" })).toEqual({ ok: true, moved: true, kind: "signup" });
     const g = await h.one<{ reason: string; product_scopes: string[]; days: number }>("select reason,product_scopes,round(extract(epoch from expires_at-now())/86400)::int days from report_ticket_grants where user_id=$1", [D]);
     expect(g).toMatchObject({ reason: "SIGNUP_FREE", product_scopes: FOUR, days: 7 });
   });
@@ -146,10 +147,20 @@ describe("퍼널 익명 집계", () => {
     expect(await funnel.call("hit", { step: "free_view", source: "META", campaign: "free_book_1111" })).toEqual({ ok: true });
     expect(await funnel.call("hit", { step: "free_view", source: "x<script>", campaign: "" })).toEqual({ ok: true });
     expect(await funnel.call("hit", { step: "drop_table", source: "meta" })).toMatchObject({ ok: false, code: "STEP" });
-    const rows = await h.all<{ step: string; source: string; campaign: string; n: number }>("select step,source,campaign,n from funnel_daily order by source");
-    expect(rows).toEqual([{ step: "free_view", source: "-", campaign: "-", n: 1 }, { step: "free_view", source: "meta", campaign: "free_book_1111", n: 2 }]);
+    const rows = await h.all<{ step: string; source: string; campaign: string; content: string; n: number }>("select step,source,campaign,content,n from funnel_daily order by source");
+    expect(rows).toEqual([{ step: "free_view", source: "-", campaign: "-", content: "-", n: 1 }, { step: "free_view", source: "meta", campaign: "free_book_1111", content: "-", n: 2 }]);
     const cols = await h.all<{ column_name: string }>("select column_name from information_schema.columns where table_schema='public' and table_name='funnel_daily' order by ordinal_position");
-    expect(cols.map(c => c.column_name)).toEqual(["day", "step", "source", "campaign", "n"]);
+    expect(cols.map(c => c.column_name)).toEqual(["day", "step", "source", "campaign", "n", "content"]);
+  });
+  it("F 후속: 유입 세부(utm_content)도 칸이 따로, 새 단계 land·free_book을 받는다. 기본 키에 content", async () => {
+    for (const content of ["card_a", "card_a", "card_b", "<bad>"]) await funnel.call("hit", { step: "land", source: "meta", campaign: "free_book_1111", content });
+    expect(await funnel.call("hit", { step: "free_book", source: "x", campaign: "free_book_1111" })).toEqual({ ok: true });
+    const rows = await h.all<{ step: string; content: string; n: number }>("select step,content,n from funnel_daily where step in ('land','free_book') order by step,content");
+    expect(rows).toEqual([{ step: "free_book", content: "-", n: 1 }, { step: "land", content: "-", n: 1 }, { step: "land", content: "card_a", n: 2 }, { step: "land", content: "card_b", n: 1 }]);
+    expect((await h.one<{ d: string }>("select pg_get_constraintdef(oid) d from pg_constraint where conname='funnel_daily_pkey'")).d).toBe("PRIMARY KEY (day, step, source, campaign, content)");
+    const r = await funnel.call("report", { days: 1 });
+    expect((r.rows as { content?: string }[]).some(x => x.content === "card_a")).toBe(true);
+    expect(r.server).toMatchObject({ freeBooks: expect.any(Number), freeBooksToday: expect.any(Number) });
   });
   it("report: 최근 7일 행 + 서버 기록(시험 계정 제외)", async () => {
     const r = await funnel.call("report", { days: 7 });
@@ -166,5 +177,44 @@ describe("매출 봇 /event: 시험 계정 이용권을 뺀다", () => {
     await h.exec("insert into gift_rewards(owner_user_id,kind,expires_at) values($1,'event',now()+interval '10 days'),($2,'event',now()+interval '10 days')", [u(800), u(711)]);
     const after = await h.notify.call("event_stats", {});
     expect(Number(after.issued) - Number(before.issued)).toBe(1);
+  });
+});
+
+describe("F 후속 「시험 계정 표」(ops_test_accounts, migration 20261111100000)", () => {
+  it("표에 넣으면 ops_test_user가 참(설정값 목록과 별개) → /campaign·/funnel 서버 기록·/event에서 빠지고, 빼면 바로 돌아온다", async () => {
+    const id = u(900); await joined(id);
+    expect(await signup.call("grant", { userId: id, providerHash: hash(900), ...win() })).toMatchObject({ ok: true, issued: true });
+    const stats = async () => signup.call("stats", { start: iso(Date.now() - 3_600_000) });
+    const server = async () => (await funnel.call("report", { days: 7 })).server as Record<string, number>;
+    const before = await stats(), beforeServer = await server();
+    expect((await h.one<{ r: boolean }>("select ops_test_user($1) r", [id])).r).toBe(false);
+    await h.exec("insert into public.ops_test_accounts(user_id,note) values($1,'덕짱님 시험')", [id]);
+    expect((await h.one<{ r: boolean }>("select ops_test_user($1) r", [id])).r).toBe(true);
+    const after = await stats(), afterServer = await server();
+    expect(Number(before.granted) - Number(after.granted)).toBe(1); expect(Number(before.signups) - Number(after.signups)).toBe(1);
+    expect(beforeServer.signups - afterServer.signups).toBe(1); expect(beforeServer.grants - afterServer.grants).toBe(1);
+    // 설정값(크론이 env로 덮어쓰는 목록)을 바꿔도 표의 계정은 그대로 시험 계정이다.
+    const saved = (await h.one<{ v: { ids: string[] } | null }>("select value v from ops_settings where key='test_accounts'")).v ?? { ids: [] };
+    await h.rpc("ops_notify_put_setting", "test_accounts", { ids: [] });
+    expect((await h.one<{ r: boolean }>("select ops_test_user($1) r", [id])).r).toBe(true);
+    await h.rpc("ops_notify_put_setting", "test_accounts", saved);
+    await h.exec("delete from public.ops_test_accounts where user_id=$1", [id]);
+    expect((await h.one<{ r: boolean }>("select ops_test_user($1) r", [id])).r).toBe(false);
+    expect(Number((await stats()).granted)).toBe(Number(before.granted));
+  });
+  it("서버(service_role)는 읽기만, 화면 역할(anon·authenticated)은 읽지도 못한다. 없는 계정 id는 넣을 수 없다(auth.users 참조)", async () => {
+    const grants = await h.all<{ grantee: string; privilege_type: string }>("select grantee,privilege_type from information_schema.role_table_grants where table_schema='public' and table_name='ops_test_accounts' and grantee in ('anon','authenticated','service_role') order by 1,2");
+    expect(grants).toEqual([{ grantee: "service_role", privilege_type: "SELECT" }]);
+    await expect(h.exec("insert into public.ops_test_accounts(user_id) values($1)", [u(901)])).rejects.toThrow(/foreign key|violates/);
+    expect((await h.one<{ rls: boolean }>("select relrowsecurity rls from pg_class where oid='public.ops_test_accounts'::regclass")).rls).toBe(true);
+  });
+  it("배포 확인값(funnel_daily source 'deploycheck')은 이 migration이 지운다 — 다른 행은 그대로", async () => {
+    await funnel.call("hit", { step: "free_view", source: "deploycheck", campaign: "f_deploy_check" });
+    await funnel.call("hit", { step: "free_view", source: "meta", campaign: "free_book_1111" });
+    const sql = (await import("node:fs")).readFileSync("supabase/migrations/20261111100000_v5_test_account_table.sql", "utf8");
+    const cleanup = sql.slice(sql.lastIndexOf("do $$ begin"), sql.lastIndexOf("commit;"));
+    await h.exec(cleanup);
+    expect((await h.one<{ n: number }>("select count(*)::int n from funnel_daily where source='deploycheck'")).n).toBe(0);
+    expect((await h.one<{ n: number }>("select count(*)::int n from funnel_daily where source='meta' and campaign='free_book_1111'")).n).toBeGreaterThan(0);
   });
 });

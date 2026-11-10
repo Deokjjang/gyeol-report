@@ -3,6 +3,7 @@
  * 입력 전에는 결제·이용권 사용만 막는다(로그인·열람은 열려 있다). 카카오 확정 이메일(is_email_valid·is_email_verified 모두 참)은 미리 채우고 다시 묻지 않는다.
  */
 import { NextResponse, type NextRequest } from "next/server";
+import type { FunnelStep } from "../analytics/funnelModel";
 import type { AccountPort } from "./handler";
 import { accountSession, safeAccountNext, safeDisplayName, type AccountIdentity, type ConsentRecord } from "./policy";
 import type { SignupGrant } from "../ops/gift/service";
@@ -31,6 +32,8 @@ export type ProfileDeps = {
   deleteUser(userId: string): Promise<boolean>;
   /** F: 가입 완료(가입 정보 첫 저장) 직후 가입 이용권 지급. 없으면 지급하지 않는다(로컬 검수 포트 등). */
   signupGrant?(user: AccountIdentity): Promise<SignupGrant | null>;
+  /** F 후속 퍼널: 신규 가입(가입 정보 첫 저장)·가입 이용권 지급을 서버가 처음 유입 값으로 센다(응답 뒤, 사용자 id 저장 없음). */
+  funnel?(user: AccountIdentity, steps: FunnelStep[]): void;
   now?: () => Date;
 };
 
@@ -97,6 +100,8 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
     const saved = await deps.ops.call("save", user.id, { requestId: body.requestId, ...checked.value, marketingVersion: MARKETING_CONSENT_VERSION });
     if (!saved.ok) return json({ code: "STORAGE_UNAVAILABLE", error: "저장하지 못했습니다. 다시 시도해 주세요." }, 503);
     const grant = firstCompletion && deps.signupGrant ? await deps.signupGrant(user).catch(() => null) : null;
+    // 퍼널(서버): 신규 가입 1번 + 지급했으면 가입 이용권 1번. ALREADY_ISSUED = 같은 계정의 겹친 첫 저장(재시도·동시 요청) → 다시 세지 않는다.
+    if (firstCompletion && grant?.code !== "ALREADY_ISSUED") deps.funnel?.(user, grant?.issued ? ["login_new", "signup_grant"] : ["login_new"]);
     // 같은 요청이 다시 와도(첫 응답을 못 받은 경우) 이미 받은 안 쓴 장이면 팝업을 띄울 수 있게 같은 모양으로 알린다.
     const signupGift = grant && grant.expiresAt && (grant.issued || (grant.code === "ALREADY_ISSUED" && grant.status === "available")) ? { expiresAt: grant.expiresAt, event: giftEventPublicView() } : null;
     const next = request.cookies.get(RETURN_COOKIE)?.value;

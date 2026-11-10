@@ -8,19 +8,19 @@ import { BookReadingPresentation } from "../../components/book/BookEntry";
 import { projectV5Book, v5EditionLabel, validateV5Publication } from "../writer/book";
 import { koreanDate, kstDay } from "./readerCopy";
 import type { BookEndNoticeView } from "../../components/book/BookReading";
-import { giftEventActive } from "../ops/config";
+import { eventEndDayLabel, giftEventActive, giftEventPublicView } from "../ops/config";
 
 /**
- * F 책 끝 연결(주인 화면): 1+1 기간이면 1+1 한 줄, 가입 이용권으로 만든 책이면 그 위에 한 줄 더(ops_signup 'book_kind'). 못 읽으면 가입 줄만 뺀다.
+ * F 책 끝 연결(주인 화면): 1+1 기간이면 「○월 ○일까지 한 권 결제하면 이용권 1장을 증정해요」 한 줄(날짜 = 설정값), 가입 이용권으로 만든 책이면 그 위에 한 줄 더(ops_signup 'book_kind'). 못 읽으면 가입 줄만 뺀다.
  */
 export async function bookEndNotice(reportId: string, ticketBook: boolean, now = Date.now()): Promise<BookEndNoticeView> {
-  const event = giftEventActive(process.env, now);
-  if (!ticketBook) return { event, signup: false };
+  const event = giftEventActive(process.env, now), eventUntil = event ? eventEndDayLabel(giftEventPublicView(process.env, now).endsAt) : "";
+  if (!ticketBook) return { event, eventUntil, signup: false };
   try {
     const { createOpsStores } = await import("../ops/store");
     const r = await createOpsStores().signup.call("book_kind", { reportId });
-    return { event, signup: r.ok === true && r.signup === true };
-  } catch { return { event, signup: false }; }
+    return { event, eventUntil, signup: r.ok === true && r.signup === true };
+  } catch { return { event, eventUntil, signup: false }; }
 }
 
 // Called only behind the server gate (or an explicit local test store).

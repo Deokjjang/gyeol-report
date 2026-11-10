@@ -6,6 +6,7 @@ import { handleUpdate, type BotDeps } from "@/lib/ops/notify/bots";
 import { BOT_COMMANDS, flushNotifications, runNotifyCycle, SIGNUP_SURGE_THRESHOLD } from "@/lib/ops/notify/flush";
 import { apiCreditText, campaignText, funnelText, signupSurgeText } from "@/lib/ops/notify/render";
 import { grantSignupTicket } from "@/lib/ops/gift/service";
+import { liveTestAccountIds, resetLiveTestAccounts, SISTER_TEST_USER_ID, TEST_TABLE_TTL_MS } from "@/lib/ops/notify/deps";
 import { fakeTelegram, opsNotifySql } from "../../helpers/opsNotify";
 import { TICKET_A as A } from "../../helpers/ticketPublicationSql";
 
@@ -93,15 +94,19 @@ describe("/campaign · /funnel · API 잔액 경보", () => {
     expect(m.markup).toEqual({ inline_keyboard: [[{ text: "지급 멈춤", callback_data: "sg:pause" }]] });
     expect(BOT_COMMANDS.ops.map(c => c.command)).toEqual(["pending", "campaign"]);
   });
-  it("/funnel: 오늘·7일 단계별 숫자와 전환율, 유입별, 서버 기록(명령 응답 — 알림 아님)", async () => {
-    for (const [step, source, n] of [["free_view", "meta", 10], ["login_new", "meta", 4], ["signup_grant", "meta", 4], ["free_view", "x", 5], ["login_new", "x", 1], ["home_view", "direct", 3]] as const)
-      for (let i = 0; i < n; i++) await h.rpc("ops_funnel", "hit", { step, source, campaign: "free_book_1111" });
+  it("/funnel: 오늘·7일 단계별 숫자와 전환율, 유입별 「랜딩 → 가입 → 무료 책 → 결제」 한 줄(메타·X), 서버 기록(명령 응답 — 알림 아님)", async () => {
+    for (const [step, source, n] of [["land", "meta", 10], ["free_view", "meta", 10], ["login_new", "meta", 4], ["signup_grant", "meta", 4], ["free_book", "meta", 2], ["paid", "meta", 1],
+      ["land", "x", 5], ["free_view", "x", 5], ["login_new", "x", 1], ["land", "direct", 3], ["home_view", "direct", 3]] as const)
+      for (let i = 0; i < n; i++) await h.rpc("ops_funnel", "hit", { step, source, campaign: "free_book_1111", content: "card_a" });
     expect(await handleUpdate("sales", msg("/funnel"), deps)).toBe("funnel");
     const t = lastSent("sales").text;
     expect(t).toContain("/free 조회 15");
     expect(t).toContain("신규 가입 5 (33%)");
-    expect(t).toContain("메타 · /free 10 → 가입 4 (40%)");
-    expect(t).toContain("X · /free 5 → 가입 1 (20%)");
+    expect(t).toContain("메타 · 랜딩 10 → 가입 4 (40%) → 무료 책 2 (50%) → 결제 1 (50%)");
+    expect(t).toContain("X · 랜딩 5 → 가입 1 (20%) → 무료 책 0 (0%) → 결제 0");
+    expect(t).toContain("직접 · 랜딩 3 → 가입 0 (0%) → 무료 책 0 → 결제 0");
+    expect(t.indexOf("메타 · 랜딩")).toBeLessThan(t.indexOf("X · 랜딩"));
+    expect(t).toMatch(/7일 신규 가입 \d+ · 가입 이용권 \d+ · 무료 책 \d+ · 주문/);
     expect(t).toMatch(/서버 기록\(시험 계정 제외\)/);
     expect(BOT_COMMANDS.sales.map(c => c.command)).toContain("funnel");
   });
@@ -120,5 +125,24 @@ describe("/campaign · /funnel · API 잔액 경보", () => {
     expect(campaignText({ on: false, at: "2026-11-11T05:00:00Z", signupsToday: 1, signups: 2, grantedToday: 1, granted: 2, used: 1, available: 1, expired: 0, booksStarted: 1, booksPublished: 1, avgCostUsd: null, costSample: 0 }, "11/11~11/30"))
       .toMatch(/^🎟 <b>가입 이용권<\/b> · ⏸ 지급 멈춤\(11\/11 14:00\)/);
     expect(funnelText({ today: "2026-11-11", from: "2026-11-05", rows: [], server: {} })).toContain("아직 기록이 없어요");
+  });
+});
+
+describe("F 후속: 서버의 시험 계정 목록 = env(관리자·누나 계정) + DB 「시험 계정 표」(60초 캐시)", () => {
+  it("표의 계정을 더하고, 60초 안에는 다시 읽지 않으며, 읽기 실패면 직전 값을 쓴다(처음이면 env 목록만)", async () => {
+    resetLiveTestAccounts();
+    const ADMIN = "00000000-0000-4000-8000-00000000a0a0", T1 = "00000000-0000-4000-8000-000000000071", T2 = "00000000-0000-4000-8000-000000000072";
+    const e = { ADMIN_USER_IDS: ADMIN };
+    let reads = 0; const read = (ids: string[] | null) => async () => { reads++; return ids; };
+    const first = await liveTestAccountIds(e, 1_000, read([T1.toUpperCase()]));
+    expect([...first].sort()).toEqual([ADMIN, SISTER_TEST_USER_ID, T1].sort());
+    expect([...await liveTestAccountIds(e, 1_000 + TEST_TABLE_TTL_MS - 1, read([T2]))]).not.toContain(T2);
+    expect(reads).toBe(1);
+    const fresh = await liveTestAccountIds(e, 1_000 + TEST_TABLE_TTL_MS, read([T2]));
+    expect(fresh.has(T2)).toBe(true); expect(fresh.has(T1)).toBe(false);
+    expect((await liveTestAccountIds(e, 1_000 + 2 * TEST_TABLE_TTL_MS, read(null))).has(T2)).toBe(true);
+    resetLiveTestAccounts();
+    expect([...await liveTestAccountIds(e, 5_000, read(null))].sort()).toEqual([ADMIN, SISTER_TEST_USER_ID].sort());
+    resetLiveTestAccounts();
   });
 });

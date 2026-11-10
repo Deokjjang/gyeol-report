@@ -53,9 +53,9 @@ function parts(ms: number) {
   return [[String(Math.floor(t / 86400)), "일"], [pad(Math.floor(t % 86400 / 3600)), "시간"], [pad(Math.floor(t % 3600 / 60)), "분"], [pad(t % 60), "초"]] as const;
 }
 
-/** F 메인 띠 문구: 로그인하지 않은 방문자에게만, 가입 캠페인이 켜져 있을 때(1+1 기간이면 뒤에 「· 1+1 진행 중」). */
+/** F 메인 띠 문구: 로그인하지 않은 방문자에게만, 가입 캠페인이 켜져 있을 때(1+1 기간이면 뒤에 「· 결제 시 이용권 증정」 — 2026-11-10 정정, 「1+1」 표현 금지). */
 export const SIGNUP_STRIP_TEXT = "지금 가입하면 내 책 한 권 무료";
-export const SIGNUP_STRIP_EVENT = "1+1 진행 중";
+export const SIGNUP_STRIP_EVENT = "결제 시 이용권 증정";
 export function signupStripVisible(view: PopupEvent | null, serverNow: number, guest: boolean): boolean {
   const end = Date.parse(view?.signup?.endsAt ?? "");
   return guest && view?.signup?.active === true && Number.isFinite(end) && Number.isFinite(serverNow) && serverNow < end;

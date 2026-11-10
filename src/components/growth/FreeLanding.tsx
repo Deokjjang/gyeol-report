@@ -5,6 +5,7 @@ import { eventEndDayLabel, type GiftEventPublicView, type SignupPublicView } fro
 import { KAKAO_CHANNEL_URL, SOCIAL_LINKS } from "../../lib/legal/socialLinks";
 import { AccountEntry, useAccountSession } from "../account/AccountSession";
 import { FREE_COPY } from "../../lib/growth/model";
+import { captureUtm, utmQuery } from "../../lib/analytics/funnel";
 import type { FreeExample } from "../../lib/book/example";
 import s from "./freeLanding.module.css";
 
@@ -22,6 +23,9 @@ function useMySignupTicket(member: boolean) {
   }, [member]);
   return mine;
 }
+/** [가입하고 무료로 받기] 주소: 처음 유입(utm)을 로그인 화면 주소에 싣는다 — 인앱 브라우저가 로그인 화면을 외부 브라우저로 열어도 유입이 이어진다(F 후속). */
+export const FREE_LOGIN_PATH = "/login?next=/free";
+export function freeLoginHref(): string { captureUtm(); const q = utmQuery(); return q ? `${FREE_LOGIN_PATH}&${q}` : FREE_LOGIN_PATH; }
 const md = (iso: string) => { const d = new Date(Date.parse(iso) + 9 * 3_600_000); return `${d.getUTCMonth() + 1}월 ${d.getUTCDate()}일`; };
 
 export function FreeLanding({ signup, event, examples }: { signup: SignupPublicView; event: GiftEventPublicView; examples: FreeExample[] }) {
@@ -60,7 +64,10 @@ export function FreeLanding({ signup, event, examples }: { signup: SignupPublicV
       </> : signup.active ? <>
         <p className={s.benefit} data-free-state="guest">{FREE_COPY.benefit}</p>
         <p className={s.benefitNote}>{FREE_COPY.benefitNote(signup.days)}</p>
-        <Link className={s.cta} href={loaded && session.status === "needs_consent" ? "/account" : "/login?next=/free"} data-free-cta>{FREE_COPY.cta}</Link>
+        {loaded && session.status === "needs_consent"
+          ? <Link className={s.cta} href="/account" data-free-cta>{FREE_COPY.cta}</Link>
+          // 로그인 화면은 새로 연다(일반 링크). 누르는 순간 처음 유입(utm)을 주소에 싣는다 — 인앱이 외부 브라우저로 열어도 이어진다.
+          : <a className={s.cta} href={FREE_LOGIN_PATH} data-free-cta onClick={e => { e.currentTarget.href = freeLoginHref(); }}>{FREE_COPY.cta}</a>}
       </> : <>
         <p className={s.benefit} data-free-state="general">나를 한 권의 책으로 만나 보세요</p>
         <Link className={s.cta} href="/" data-free-cta-general>{FREE_COPY.generalCta}</Link>
