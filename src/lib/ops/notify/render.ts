@@ -115,8 +115,9 @@ export function monthText(label: string, s: Stats, days: number, prevLabel: stri
     `순매출 <b>${won(net)}</b> · 일평균 ${won(days > 0 ? net / days : 0)}`, `신규 ${s.newCount} · 재구매 ${s.repeatCount}`,
     `${esc(prevLabel)}: 순매출 ${won(prevNet)} (${diff >= 0 ? "+" : "−"}${won(Math.abs(diff))}${pct})`].join("\n");
 }
-export function eventText(e: EventStats, period: string, expiry: string): string {
-  return [`🎁 <b>1+1 증정 이용권</b> · ${esc(period)} · 이용권 ${esc(expiry)}까지`,
+/** validity: 이용권 기한 설명(「받은 날부터 30일」). */
+export function eventText(e: EventStats, period: string, validity: string): string {
+  return [`🎁 <b>1+1 증정 이용권</b> · ${esc(period)} · 이용권 ${esc(validity)}`,
     `발급 ${e.issued} · 내가 씀 ${e.usedSelf} · 선물 ${e.gifted + e.claimed}(받음 ${e.claimed})`,
     `남음 ${e.available} · 회수 ${e.revoked} · 만료 ${e.expired}`, ...(e.nextExpiry ? [`남은 이용권 만료 ${mdhm(e.nextExpiry)}`] : [])].join("\n");
 }

@@ -5,7 +5,7 @@ import { runAdminActionAs, type AdminActionDeps } from "../admin/actions";
 import { adminPinConfigured, adminPinMatches } from "../admin/config";
 import { grantTickets } from "../admin/rpc";
 import type { AuditEntry } from "../store";
-import { EVENT_TICKET_EXPIRES_AT, giftEventConfig, signupCampaignConfig } from "../config";
+import { EVENT_TICKET_DAYS, giftEventConfig, signupCampaignConfig } from "../config";
 import { closeItem, editOps, itemFacts, kstDay, kstMonth, reconcileItem, renderOps, stats, type NotifyDeps } from "./flush";
 import { campaignText, duplicateToRefund, esc, eventText, funnelText, hm, LINES, md, monthText, opsButtons, refundDoneLine, SIGNUP_PAUSE_DATA, SIGNUP_RESUME_DATA, signupButtons, signupSwitchText, statsText, won, type CampaignStats, type EventStats, type FunnelRow, type ItemFacts, type OrderFacts } from "./render";
 import type { BotName } from "./telegram";
@@ -69,12 +69,13 @@ async function salesCommand(deps: BotDeps, text: string): Promise<string> {
     return "month";
   }
   if (cmd === "/event") {
-    // 이벤트 기간과 이용권 만료일(11/30 23:59:59 KST)까지만 답한다.
-    if (now > Date.parse(EVENT_TICKET_EXPIRES_AT)) { await send(deps, "sales", "이벤트가 끝났어요"); return "event_over"; }
-    const cfg = giftEventConfig(deps.env), r = await deps.notify.call("event_stats", {});
+    // 이벤트 기간과, 마지막 날 받은 이용권이 끝날 때(이벤트 끝 + 30일 — 2026-11-10 정정: 받은 날부터 30일)까지만 답한다.
+    const cfg = giftEventConfig(deps.env), lastExpiry = Date.parse(cfg.end) + EVENT_TICKET_DAYS * 86_400_000;
+    if (!(now < lastExpiry)) { await send(deps, "sales", "이벤트가 끝났어요"); return "event_over"; }
+    const r = await deps.notify.call("event_stats", {});
     const e: EventStats = { issued: Number(r.issued) || 0, usedSelf: Number(r.usedSelf) || 0, gifted: Number(r.gifted) || 0, claimed: Number(r.claimed) || 0, available: Number(r.available) || 0,
       revoked: Number(r.revoked) || 0, expired: Number(r.expired) || 0, nextExpiry: typeof r.nextExpiry === "string" ? r.nextExpiry : null };
-    await send(deps, "sales", eventText(e, `이벤트 ${md(cfg.start)}~${md(new Date(Date.parse(cfg.end) - 1000).toISOString())}`, md(EVENT_TICKET_EXPIRES_AT)));
+    await send(deps, "sales", eventText(e, `이벤트 ${md(cfg.start)}~${md(new Date(Date.parse(cfg.end) - 1000).toISOString())}`, `받은 날부터 ${EVENT_TICKET_DAYS}일`));
     return "event";
   }
   if (cmd === "/funnel") {
