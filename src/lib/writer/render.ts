@@ -16,8 +16,8 @@ export const HANJA_READING: Readonly<Record<string, string>> = {
 };
 /** 용어 사전에 넣는 지식 DB 특성 갈래(그 사람 원고에 나오는 명리 용어). 오행 과다·조후·구조 같은 설명 이름은 넣지 않는다. */
 const DICT_FAMILIES = new Set(["tenGod", "twelveStage", "shinsal", "gwiin", "relation", "dayPillar", "stem", "dayMaster", "branch"]);
-/** 사전 밖에서 더하는 용어(지식 DB 이름에 없는 표기). */
-const EXTRA: Readonly<Record<string, string>> = { 비겁: "比劫", 식상: "食傷", 재성: "財星", 관성: "官星", 인성: "印星", 관살: "官殺", 칠살: "七殺", 반합: "半合", 원진: "怨嗔", 화개살: "華蓋殺", 양인: "羊刃", 대운: "大運", 세운: "歲運", 일주: "日柱", 일간: "日干", 지장간: "支藏干" };
+/** 사전 밖에서 더하는 용어(지식 DB 이름에 없는 표기). AM 1부: 「세운」은 뺐다 — 동사 「세운(세우다)」에 歲運이 붙었다(「처음 세운(歲運) 기준」, 운영 판독). */
+const EXTRA: Readonly<Record<string, string>> = { 비겁: "比劫", 식상: "食傷", 재성: "財星", 관성: "官星", 인성: "印星", 관살: "官殺", 칠살: "七殺", 반합: "半合", 원진: "怨嗔", 화개살: "華蓋殺", 양인: "羊刃", 대운: "大運", 일주: "日柱", 일간: "日干", 지장간: "支藏干" };
 
 /** 한글 이름 → 한자(사전). 지식 DB 특성 이름 "식신(食神)" 꼴에서 만든다. "망신살(亡身殺)·십이신살"처럼 꼬리가 붙은 이름은 앞만. */
 export function termDictionary(k: Pick<Knowledge, "features">): Map<string, string> {

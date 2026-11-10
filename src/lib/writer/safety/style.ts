@@ -9,7 +9,7 @@ import { ORPHAN_CONNECTIVE } from "./orphan";
 import { splitSentences } from "./patterns";
 import { TERMS } from "./terms";
 
-export type StyleRule = "chapter_phrase_repeat" | "start_repeat" | "connective_excess";
+export type StyleRule = "chapter_phrase_repeat" | "start_repeat" | "connective_excess" | "advice_repeat" | "stage_bare";
 export type StyleFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: StyleRule; readonly sentence: string; readonly detail?: string };
 
 const stripMarks = (s: string) => s.replace(/[⟪⟫]/g, "");
@@ -56,17 +56,39 @@ export function styleFlags(chapters: readonly FinalChapter[]): StyleFlag[] {
       const k = startKey(c.text);
       if (k.length >= 1 && startKey(a.text) === k && startKey(b.text) === k) out.push({ chapter: c.c, section: c.s, paragraph: c.p, rule: "start_repeat", sentence: c.text, detail: k });
     }
+    // ④ 십이운성 한 글자 이름 맨몸(AM 1부 판독: 「십이운성의 사가 있어서」·「명리의 양 단계」 — 음양의 양·일상어와 헷갈림).
+    for (const x of sens) { const m = x.text.match(STAGE_BARE); if (m) out.push({ chapter: x.c, section: x.s, paragraph: x.p, rule: "stage_bare", sentence: x.text, detail: m[0] }); }
     // ③ 같은 연결어로 여는 문장이 한 장에 셋 이상이면 셋째부터.
     const conn = new Map<string, number>();
     for (const x of sens) { const w = connectiveOf(x.text); if (!w) continue; const k = (conn.get(w) ?? 0) + 1; conn.set(w, k); if (k > CONNECTIVE_MAX) out.push({ chapter: x.c, section: x.s, paragraph: x.p, rule: "connective_excess", sentence: x.text, detail: w }); }
   }
+  // ⑤ 같은 행동 조언 계열이 책에서 세 번째부터(AM 1부 판독: 「한 줄 말해 보세요」 6개 장, 「달력에 막아 두기」 3개 장).
+  const fam = new Map<string, number>();
+  for (const x of all) {
+    if (!ADVICE_END.test(x.text)) continue;
+    const f = ADVICE_FAMILY.find(([re]) => re.test(x.text))?.[1]; if (!f) continue;
+    const k = (fam.get(f) ?? 0) + 1; fam.set(f, k);
+    if (k > ADVICE_MAX) out.push({ chapter: x.c, section: x.s, paragraph: x.p, rule: "advice_repeat", sentence: x.text, detail: f });
+  }
   return out;
 }
+
+/** 십이운성 한 글자 이름이 한자·뜻 없이 「단계」·「십이운성의」와 함께 나온 꼴. 두 글자 이름(장생·건록 등)은 헷갈리지 않아 보지 않는다. */
+const STAGE_BARE = /십이운성(의|은|이|에서|으로)? (쇠|병|사|묘|절|태|양)(?!\()(?=[이가은는을를의도]|\s)|(?<![가-힣])(쇠|병|사|묘|절|태|양)(?!\()(이라는|라는|의)? ?단계/;
+/** 행동 조언 문장(끝맺음)과 계열(prompt ACTION_FAMILIES와 같은 낱말). */
+const ADVICE_END = /(보세요|하세요|두세요|정하세요|세우세요|남기세요|적으세요|물어보세요|건네세요|챙기세요|나누세요|막아 두세요|비워 두세요)[.!]?$/;
+const ADVICE_FAMILY: readonly [RegExp, string][] = [
+  [/한 ?줄(로|만|씩)? ?(말|적|쓰|전|남기|정리|건네)|한 문장으로/, "한 줄 말하기"], [/하루(만)? (두|묵|미루|기다)|하룻밤/, "하루 두기"], [/(달력|캘린더|일정표)[^.]{0,12}(막아|적어|넣어|표시)/, "달력에 막기"],
+  [/한도|상한/, "지출 한도"], [/견적|비교해 보|두 곳 이상/, "견적 비교"], [/고맙|감사/, "고마움 말하기"], [/거절|안 된다고/, "거절 연습"], [/산책|걷기|걸어/, "걷기"], [/통장/, "통장 나누기"],
+];
+export const ADVICE_MAX = 2;
 
 export const STYLE_HINT: Readonly<Record<StyleRule, string>> = {
   chapter_phrase_repeat: "같은 장 안에서 같은 구절을 세 번째로 썼다 → 이번 문장은 다른 말로, 새 정보(장면·근거)를 붙여 다시 쓴다",
   start_repeat: "같은 말로 시작하는 문장이 세 번 이어졌다 → 이 문장의 첫머리를 다른 말로 바꾼다(뜻은 그대로)",
   connective_excess: "같은 연결어(그래서·하지만 등)로 여는 문장이 이 장에 너무 많다 → 연결어를 빼거나 다른 이음으로 바꾼다",
+  advice_repeat: "같은 계열의 행동 조언을 책에서 세 번째로 썼다 → 이 장 재료에 맞는 다른 행동으로 바꾸거나, 조언 없이 장면·이해로 마무리한다",
+  stage_bare: "십이운성 한 글자 이름을 맨몸으로 썼다 → 「사(死) 단계」처럼 한자와 '단계'를 붙이고 쉬운 뜻을 바로 붙인다(땅 글자 자체가 단계인 것처럼 쓰지 않는다)",
 };
 
 export type StyleScore = {
@@ -121,4 +143,29 @@ export function styleScore(chapters: readonly FinalChapter[], banned = 0): Style
     rhythm: { meanLen: Math.round(mean), cv: Math.round((sd / Math.max(1, mean)) * 100), short: pct(lens.filter(n => n <= 25).length, lens.length), long: pct(lens.filter(n => n >= 60).length, lens.length), firstLen: Math.round(firsts.reduce((a, b) => a + b, 0) / Math.max(1, firsts.length)) },
     sentences: sens.length,
   };
+}
+
+/** MBTI 기능 순서(주기능 → 부기능 → 3차 → 열등)를 유형 글자에서 계산한다(유형론 표준 규칙, 지식 DB와 같은 값). */
+export function fnStack(type: string): [string, string, string, string] | null {
+  if (!/^[EI][NS][TF][JP]$/.test(type)) return null;
+  const [ei, p, j, jp] = type.split("") as [string, string, string, string];
+  const flip = (c: string) => ({ S: "N", N: "S", T: "F", F: "T" })[c]!, att = (e: boolean) => (e ? "e" : "i");
+  const extravertedJudge = jp === "J"; // 바깥으로 쓰는 기능: J면 판단, P면 인식
+  const outer = extravertedJudge ? j : p, inner = extravertedJudge ? p : j;
+  const [dom, aux] = ei === "E" ? [`${outer}e`, `${inner}i`] : [`${inner}i`, `${outer}e`];
+  const tert = `${flip(aux[0])}${dom[1]}`, inf = `${flip(dom[0])}${att(dom[1] === "i")}`;
+  return [dom, aux, tert, inf];
+}
+/** 「주기능·부기능(보조 기능)」 주장이 유형의 실제 순서와 다른가(AM 1부 판독: 「ISFJ는 마음 살피기가 주기능이라」 — ISFJ 주기능은 Si). plain: 기능 → 쉬운 이름. */
+export function fnRoleMismatch(sentence: string, type: string | null | undefined, plain: Readonly<Record<string, string>>): string | null {
+  const stack = type ? fnStack(type) : null; if (!stack) return null;
+  const roles: [RegExp, number][] = [[/주기능|주 기능|으뜸 기능/, 0], [/부기능|보조 ?기능/, 1]];
+  for (const [re, idx] of roles) {
+    const at = sentence.search(re); if (at < 0) continue;
+    const before = sentence.slice(Math.max(0, at - 24), at);
+    const named = Object.entries(plain).filter(([code, name]) => before.includes(`(${code})`) || before.includes(code) || (name && name.length >= 3 && before.includes(name)));
+    const wrong = named.find(([code]) => code !== stack[idx]);
+    if (named.length === 1 && wrong) return `${type}의 ${idx ? "부기능" : "주기능"}은 ${stack[idx]}(${plain[stack[idx]] ?? ""})`;
+  }
+  return null;
 }

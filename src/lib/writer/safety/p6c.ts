@@ -16,7 +16,7 @@ import * as E from "./p6e";
 import * as F from "./final2";
 import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
-import { STYLE_HINT, styleFlags, type StyleRule } from "./style";
+import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -31,7 +31,7 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   // 최종판3 3: 정답지 대조(사실·뜻·관계·강약·간지·개수와 세기·공통 특징) · 렌더(중복 치환·내부 라벨) · 종합 시점 · 입력 밖 직업 상황
   | FactRule | "phrase_repeat"
   // AM 1-1 ②·1-4: 장 안 같은 구절 · 같은 문장 시작 3연속 · 같은 연결어 과다(문체 규칙, style.ts)
-  | StyleRule;
+  | StyleRule | "fn_role";
 export type CardField = "image" | "todo" | "review" | "caution";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -42,7 +42,7 @@ export type LintFlag = { readonly chapter: number; readonly section: number; rea
 export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
-  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside"]);
+  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -104,6 +104,7 @@ const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [�
 
 const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
+  fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
   fact_term: "정답지와 다른 신살·귀인·운성(이름·자리·주인) → detail의 맞는 사실로 고치거나 그 주장을 뺀다",
   fact_relation: "정답지와 다른 관계(없는 글자·글자 수·완성도·건드리지 않는 해) → detail의 맞는 관계로 고친다",
@@ -324,6 +325,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (ctx.careerGroups) { const g = E.careerGroupNames(q, definedGroups); groupNames += g.count; q = g.text; }
       // 최종판3 12: 쉬운 이름 치환 겹침(「배우는 힘인 배우는 힘은」→「배우는 힘은」).
       { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
+      // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
+      { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || x.replace(/[^가-힣A-Za-z0-9]/g, "") !== ss[i - 1].replace(/[^가-힣A-Za-z0-9]/g, "")); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).
@@ -396,6 +399,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
+          // AM 1부 판독: 주기능·부기능 오기(「ISFJ는 마음 살피기가 주기능이라」).
+          { const fr = ctx.compat ? null : fnRoleMismatch(sen, ctx.facts.mbti, ctx.mbtiPlain); if (fr) { flag({ ...at, rule: "fn_role", detail: fr }); continue; } }
           // P6e 2: 앞 문단이 없는 자리(소제목 첫 문단의 첫 문장)가 앞말에 기대어 연다.
           if (pi === 0 && i === 0 && !keyed && E.orphanStart(sen)) { flag({ ...at, rule: "orphan_start", detail: E.orphanStart(sen)! }); continue; }
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).

@@ -2,6 +2,7 @@
  * 작가 프롬프트 조립(P3 B). 접두부(시스템 지침 + 문체 예시)는 고객과 무관해 캐시 대상이고, 브리프는 사용자 메시지로 보낸다.
  * 작가에게는 내부 값(seed·budget·score·family·featureId·간지 색)을 빼고, 대운 연도·세운 월처럼 반복 장은 한 장으로 묶어 keys를 준다.
  */
+import { fnv1a } from "@/lib/brief/seed";
 import type { Knowledge } from "@/lib/brief/knowledge";
 import type { Brief, ChapterBrief, Material } from "@/lib/brief/schema";
 import { STYLE_EXAMPLES } from "./examples";
@@ -195,10 +196,13 @@ function assignActions(out: Record<string, unknown>, brief: Brief): void {
   const plan = writerChapters(brief);
   const chapters = out.chapters as { sections?: { q: string; materials: unknown[]; act?: string }[] }[] | undefined;
   // 장마다 하나: 그 장의 마지막 절에 이 책·이전 책에서 안 쓴 종류를 준다(장 영역에 맞는 것부터).
+  // AM 1부 판독: 고정 순서라 고객이 달라도 같은 장에 같은 조언(6장 걷기·7장 고마움·8장 하루 비우기·11장 거절·13장 견적 비교, 종합 4권 모두) → 고객 해시 + 상품 id로 시작 자리를 돌린다.
+  const spread = fnv1a(`${brief.person.name}|${brief.chart.pillars.year.hanja}${brief.chart.pillars.month.hanja}${brief.chart.pillars.day.hanja}${brief.chart.pillars.hour?.hanja ?? ""}|${brief.person.gender ?? ""}|${brief.product}`);
   (chapters ?? []).forEach((c, ci) => {
     const ss = c.sections ?? []; if (!ss.length) return;
     const si = ss.length - 1, domain = plan[ci]?.sections?.[si]?.domain ?? "alone";
-    const pick = (ACTIONS_BY_DOMAIN[domain] ?? ACTIONS_BY_DOMAIN.alone).find(f => !used.has(f)) ?? Object.values(ACTIONS_BY_DOMAIN).flat().find(f => !used.has(f));
+    const list = ACTIONS_BY_DOMAIN[domain] ?? ACTIONS_BY_DOMAIN.alone, off = (spread + ci * 7) % list.length;
+    const pick = [...list.slice(off), ...list.slice(0, off)].find(f => !used.has(f)) ?? Object.values(ACTIONS_BY_DOMAIN).flat().find(f => !used.has(f));
     // 최종판3 12: 종류 이름을 그대로 쓴 「처방은 지출 한도입니다.」가 나왔다(판독) — 이름은 작가용 표시일 뿐 글에 쓰지 않는다고 함께 적는다.
     if (pick) { ss[si].act = `행동 조언 하나(${pick} 쪽) — 이 장의 행동 조언은 이 절에만. 「${pick}」 같은 종류 이름은 글에 쓰지 않고 행동 자체를 쓴다`; used.add(pick); }
   });
