@@ -4,11 +4,12 @@ import { usePathname } from "next/navigation";
 import { captureUtm, consumeLoginSignal, funnel, viewStep } from "../../lib/analytics/funnel";
 import type { FunnelStep } from "../../lib/analytics/funnelModel";
 
-/** F 퍼널: 주소마다 유입 기억·조회 단계(/free·메인·상품 화면)·기존 회원 로그인 신호. 루트 레이아웃에 1번. */
+/** F 퍼널: 주소마다 유입 기억·랜딩(이번 방문 첫 화면 1번)·조회 단계(/free·메인·상품 화면)·기존 회원 로그인 신호. 루트 레이아웃에 1번. */
 export function FunnelTracker() {
   const pathname = usePathname();
   useEffect(() => {
     captureUtm();
+    funnel("land");
     const step = viewStep(pathname ?? "/");
     if (step) funnel(step);
     consumeLoginSignal();

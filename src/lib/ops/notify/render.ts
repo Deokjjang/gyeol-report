@@ -230,11 +230,11 @@ export function campaignText(c: CampaignStats, period: string): string {
     `누적 신규 가입 ${c.signups} · 지급 ${c.granted} · 사용 ${c.used} · 남음 ${c.available} · 만료 ${c.expired}`,
     `무료로 만든 책 ${c.booksStarted}권(발행 ${c.booksPublished})`, cost, "시험 계정 제외"].join("\n");
 }
-export type FunnelRow = { day: string; step: string; source: string; campaign: string; n: number };
+export type FunnelRow = { day: string; step: string; source: string; campaign: string; content?: string; n: number };
 export type FunnelServer = Record<string, number>;
 /** /funnel 단계 순서와 전환율의 기준 단계(null = 전환율 없음). */
 export const FUNNEL_LINES: ReadonlyArray<readonly [step: string, label: string, base: string | null]> = [
-  ["free_view", "/free 조회", null], ["login_new", "신규 가입", "free_view"], ["signup_grant", "가입 이용권 지급", "login_new"],
+  ["land", "랜딩(첫 화면)", null], ["free_view", "/free 조회", null], ["login_new", "신규 가입", "free_view"], ["signup_grant", "가입 이용권 지급", "login_new"], ["free_book", "무료 책", "signup_grant"],
   ["home_view", "메인 조회", null], ["product_view", "상품 화면", "home_view"], ["input_start", "입력 시작", "product_view"], ["input_done", "입력 완료", "input_start"],
   ["ticket_click", "이용권 사용", "input_done"], ["pay_click", "결제하기", "input_done"], ["pay_open", "결제창 열림", "pay_click"], ["paid", "결제 완료", "pay_open"],
   ["login_member", "기존 회원 로그인", null], ["book_start", "책 생성 시작", null], ["book_published", "책 발행", "book_start"],
@@ -242,26 +242,33 @@ export const FUNNEL_LINES: ReadonlyArray<readonly [step: string, label: string, 
 const pct = (n: number, d: number) => d > 0 ? ` (${Math.round(n / d * 100)}%)` : "";
 const SOURCE_LABEL: Record<string, string> = { direct: "직접", "-": "모름", meta: "메타", facebook: "메타", fb: "메타", x: "X", twitter: "X", instagram: "인스타", ig: "인스타", threads: "스레드", kakao: "카카오", naver: "네이버", google: "구글", other: "기타" };
 function funnelBlock(sum: Map<string, number>): string[] {
-  return FUNNEL_LINES.filter(([step]) => (sum.get(step) ?? 0) > 0 || ["free_view", "home_view", "paid"].includes(step))
+  return FUNNEL_LINES.filter(([step]) => (sum.get(step) ?? 0) > 0 || ["land", "free_view", "home_view", "paid"].includes(step))
     .map(([step, label, base]) => `${label} ${sum.get(step) ?? 0}${base ? pct(sum.get(step) ?? 0, sum.get(base) ?? 0) : ""}`);
 }
-/** /funnel: 오늘·최근 7일 단계별 숫자·전환율(괄호 = 기준 단계 대비), 유입별(최근 7일), 서버 기록(시험 계정 제외). 익명 집계. */
+/** 유입 한 줄: 「메타 · 랜딩 120 → 가입 30 (25%) → 무료 책 12 (40%) → 결제 2 (17%)」(괄호 = 앞 단계 대비). 가입·무료 책은 서버가 처음 유입 값으로 센 숫자. */
+export function conversionLine(label: string, m: ReadonlyMap<string, number>): string {
+  const g = (k: string) => m.get(k) ?? 0, land = g("land"), join = g("login_new"), free = g("free_book"), paid = g("paid");
+  return `${esc(label)} · 랜딩 ${land} → 가입 ${join}${pct(join, land)} → 무료 책 ${free}${pct(free, join)} → 결제 ${paid}${pct(paid, free)}`;
+}
+/** /funnel: 오늘·최근 7일 단계별 숫자·전환율(괄호 = 기준 단계 대비), 유입별 전환(최근 7일), 서버 기록(시험 계정 제외). 익명 집계. */
 export function funnelText(r: { today: string; from: string; rows: FunnelRow[]; server: FunnelServer }): string {
   const sumOf = (rows: FunnelRow[]) => rows.reduce((m, x) => m.set(x.step, (m.get(x.step) ?? 0) + (Number(x.n) || 0)), new Map<string, number>());
   const today = r.rows.filter(x => String(x.day).slice(0, 10) === String(r.today).slice(0, 10));
-  const bySource = new Map<string, FunnelRow[]>();
+  // 유입별 전환(F 후속): 메타·X는 늘, 그 밖은 랜딩이 있는 유입만(많은 순 6개). 같은 이름표(예: facebook → 메타)는 합친다.
+  const bySource = new Map<string, FunnelRow[]>([["메타", []], ["X", []]]);
   for (const x of r.rows) { const k = SOURCE_LABEL[x.source] ?? x.source; bySource.set(k, [...(bySource.get(k) ?? []), x]); }
-  const sources = [...bySource.entries()].map(([k, rows]) => [k, sumOf(rows)] as const)
-    .sort((a, b) => ((b[1].get("free_view") ?? 0) + (b[1].get("home_view") ?? 0)) - ((a[1].get("free_view") ?? 0) + (a[1].get("home_view") ?? 0))).slice(0, 8);
+  const sums = [...bySource.entries()].map(([k, rows]) => [k, sumOf(rows)] as const);
+  const sources = [...sums.filter(([k]) => k === "메타" || k === "X"),
+    ...sums.filter(([k, m]) => k !== "메타" && k !== "X" && (m.get("land") ?? 0) > 0).sort((a, b) => (b[1].get("land") ?? 0) - (a[1].get("land") ?? 0)).slice(0, 6)];
   const s = r.server, n = (k: string) => Number(s[k]) || 0;
   const md2 = (d: string) => { const [, m, dd] = String(d).slice(0, 10).split("-"); return `${m}/${dd}`; };
   return [`📈 <b>퍼널</b> · 익명 집계(시험 브라우저·시험 계정 제외)`,
     `<b>오늘(${md2(r.today)})</b>`, ...funnelBlock(sumOf(today)),
     `<b>최근 7일(${md2(r.from)}~${md2(r.today)})</b>`, ...funnelBlock(sumOf(r.rows)),
-    `<b>유입별 · 최근 7일</b>`, ...(sources.length ? sources.map(([k, m]) => `${esc(k)} · /free ${m.get("free_view") ?? 0} → 가입 ${m.get("login_new") ?? 0}${pct(m.get("login_new") ?? 0, m.get("free_view") ?? 0)} · 메인 ${m.get("home_view") ?? 0} · 결제 ${m.get("paid") ?? 0} · 이용권 사용 ${m.get("ticket_click") ?? 0}`) : ["아직 기록이 없어요"]),
+    `<b>유입별 전환 · 최근 7일</b>(괄호 = 앞 단계 대비)`, ...(r.rows.length ? sources.map(([k, m]) => conversionLine(k, m)) : ["아직 기록이 없어요"]),
     `<b>서버 기록(시험 계정 제외)</b>`,
-    `오늘 신규 가입 ${n("signupsToday")} · 가입 이용권 ${n("grantsToday")} · 주문 ${n("ordersToday")} · 결제 ${n("paidToday")} · 발행 ${n("publishedToday")}`,
-    `7일 신규 가입 ${n("signups")} · 가입 이용권 ${n("grants")} · 주문 ${n("orders")} · 결제 ${n("paid")} · 발행 ${n("published")}`].join("\n");
+    `오늘 신규 가입 ${n("signupsToday")} · 가입 이용권 ${n("grantsToday")} · 무료 책 ${n("freeBooksToday")} · 주문 ${n("ordersToday")} · 결제 ${n("paidToday")} · 발행 ${n("publishedToday")}`,
+    `7일 신규 가입 ${n("signups")} · 가입 이용권 ${n("grants")} · 무료 책 ${n("freeBooks")} · 주문 ${n("orders")} · 결제 ${n("paid")} · 발행 ${n("published")}`].join("\n");
 }
 /** 공유 실패 경보(운영 Q 추가, 버튼 없음). 상태 코드와 책 버전만 보인다(주문·책·회원 정보 없음 — DB에도 없다). */
 export function shareFailedText(p: Record<string, unknown>): string {

@@ -13,7 +13,7 @@ import { GET as pixelGet } from "@/app/api/analytics/meta/pixel/route";
 import { GET as metaGet } from "@/app/api/analytics/meta/route";
 import { handleAccount, type AccountPort } from "@/lib/account/handler";
 import { ACCOUNT_POLICY_VERSIONS } from "@/lib/account/policy";
-import { FUNNEL_STEPS, TEST_BROWSER_COOKIE, FUNNEL_LOGIN_COOKIE } from "@/lib/analytics/funnelModel";
+import { FUNNEL_STEPS, TEST_BROWSER_COOKIE, FUNNEL_LOGIN_COOKIE, FUNNEL_SOURCE_COOKIE, SERVER_FUNNEL_STEPS } from "@/lib/analytics/funnelModel";
 import { FREE_COPY } from "@/lib/growth/model";
 import { freeExamples, FREE_EXAMPLE_PICKS } from "@/lib/book/example";
 import { signupPublicView, giftEventPublicView } from "@/lib/ops/config";
@@ -27,11 +27,11 @@ describe("퍼널 API(/api/funnel)", () => {
   it("단계 목록만 받고 유입 값은 정리해서 「단계 × 유입」만 넘긴다(사용자 id·IP·쿠키 식별자 없음). 응답은 늘 204", async () => {
     const r = await post({ step: "free_view", source: "META", campaign: "free_book_1111", userId: "u-1", ip: "1.2.3.4", email: "a@b.c" }, "sb-x-auth-token=abc; other=1");
     expect(r.status).toBe(204);
-    expect(hits.calls).toEqual([{ a: "hit", step: "free_view", source: "meta", campaign: "free_book_1111" }]);
-    expect(Object.keys(hits.calls[0]).sort()).toEqual(["a", "campaign", "source", "step"]);
+    expect(hits.calls).toEqual([{ a: "hit", step: "free_view", source: "meta", campaign: "free_book_1111", content: "-" }]);
+    expect(Object.keys(hits.calls[0]).sort()).toEqual(["a", "campaign", "content", "source", "step"]);
     expect((await post({ step: "drop_table" })).status).toBe(204);
     expect((await post({ step: "free_view", source: "<script>" })).status).toBe(204);
-    expect(hits.calls.slice(1)).toEqual([{ a: "hit", step: "free_view", source: "-", campaign: "-" }]);
+    expect(hits.calls.slice(1)).toEqual([{ a: "hit", step: "free_view", source: "-", campaign: "-", content: "-" }]);
     expect((await post({ step: "free_view" }, "", "https://evil.example")).status).toBe(403);
   });
   it("「시험」 브라우저 표시가 있으면 세지 않는다", async () => {
@@ -45,37 +45,83 @@ describe("퍼널 API(/api/funnel)", () => {
     expect(r.headers.get("set-cookie")).toMatch(new RegExp(`^${TEST_BROWSER_COOKIE}=1;`));
     hits.user = { id: "00000000-0000-4000-8000-00000000b002" };
     await post({ step: "paid", source: "meta" }, "sb-x-auth-token=abc");
-    expect(hits.calls).toEqual([{ a: "hit", step: "paid", source: "meta", campaign: "-" }]);
+    expect(hits.calls).toEqual([{ a: "hit", step: "paid", source: "meta", campaign: "-", content: "-" }]);
   });
-  it("단계 목록이 SQL 목록과 같다", () => {
-    const sql = readFileSync("supabase/migrations/20261111090000_v5_free_book.sql", "utf8");
-    for (const step of FUNNEL_STEPS) expect(sql).toContain(`'${step}'`);
+  it("F 후속: 「유입 표시」 쿠키(처음 유입)가 있으면 화면이 보낸 값보다 그 값을 쓴다. 서버만 세는 단계(신규 가입·가입 이용권·무료 책)는 받지 않는다", async () => {
+    await post({ step: "paid", source: "direct", campaign: "-" }, `${FUNNEL_SOURCE_COOKIE}=meta.free_book_1111.card_a`);
+    expect(hits.calls).toEqual([{ a: "hit", step: "paid", source: "meta", campaign: "free_book_1111", content: "card_a" }]);
+    for (const step of SERVER_FUNNEL_STEPS) expect((await post({ step, source: "meta" })).status).toBe(204);
+    expect(hits.calls).toHaveLength(1);
+    await post({ step: "land", source: "x" }, `${FUNNEL_SOURCE_COOKIE}=%3Cscript%3E`);
+    expect(hits.calls.at(-1)).toEqual({ a: "hit", step: "land", source: "x", campaign: "-", content: "-" });
+  });
+  it("단계 목록이 SQL 목록(최신 ops_funnel)과 같다", () => {
+    const sql = readFileSync("supabase/migrations/20261111101000_v5_funnel_source.sql", "utf8");
+    const listed = /array\[([^\]]+)\]\) then return jsonb_build_object\('ok',false,'code','STEP'\)/.exec(sql)![1].match(/'([a-z_]+)'/g)!.map(s => s.slice(1, -1));
+    expect(listed).toEqual([...FUNNEL_STEPS]);
   });
 });
 
 describe("브라우저 퍼널(1회 처리·유입·시험)", () => {
   const storage = () => { const m = new Map<string, string>(); return { getItem: (k: string) => m.get(k) ?? null, setItem: (k: string, v: string) => void m.set(k, v), removeItem: (k: string) => void m.delete(k), m }; };
-  const setup = (search = "") => {
-    const session = storage(), local = storage(), fetches: { url: string; body: Record<string, unknown> }[] = [];
+  /** 쿠키 저장소 흉내(이름=값, Max-Age=0이면 지움). 같은 브라우저 = 같은 jar. */
+  const cookieJar = () => { const jar = new Map<string, string>(); return { jar, doc: {
+    get cookie() { return [...jar].map(([k, v]) => `${k}=${v}`).join("; "); },
+    set cookie(s: string) { const [kv, ...attrs] = s.split(";"); const [k, ...v] = kv.split("="); if (/max-age=0\b/i.test(attrs.join(";"))) jar.delete(k.trim()); else jar.set(k.trim(), v.join("=")); },
+  } }; };
+  const setup = (search = "", browser = cookieJar(), session = storage()) => {
+    const local = storage(), fetches: { url: string; body: Record<string, unknown> }[] = [];
     vi.stubGlobal("window", { location: { search, pathname: "/free", protocol: "https:" }, sessionStorage: session, localStorage: local });
+    vi.stubGlobal("document", browser.doc);
     vi.stubGlobal("fetch", vi.fn(async (url: string, init: RequestInit) => { fetches.push({ url, body: JSON.parse(String(init.body)) }); return new Response(null, { status: 204 }); }));
     vi.stubEnv("NODE_ENV", "production");
-    return { session, local, fetches };
+    return { session, local, fetches, browser };
   };
   it("같은 단계는 세션에 1번, 유입(utm_source·utm_campaign)만 붙인다", async () => {
     const { fetches } = setup("?utm_source=meta&utm_medium=paid&utm_campaign=free_book_1111&fbclid=secret");
     const f = await import("@/lib/analytics/funnel");
     f.captureUtm();
     expect(f.funnel("free_view")).toBe(true); expect(f.funnel("free_view")).toBe(false);
-    expect(fetches).toEqual([{ url: "/api/funnel", body: { step: "free_view", source: "meta", campaign: "free_book_1111" } }]);
+    expect(fetches).toEqual([{ url: "/api/funnel", body: { step: "free_view", source: "meta", campaign: "free_book_1111", content: "-" } }]);
   });
   it("유입이 없으면 direct, 「시험」 브라우저면 보내지 않는다", async () => {
     const { fetches, local } = setup();
     const f = await import("@/lib/analytics/funnel");
     f.funnel("home_view");
-    expect(fetches.at(-1)!.body).toEqual({ step: "home_view", source: "direct", campaign: "-" });
+    expect(fetches.at(-1)!.body).toEqual({ step: "home_view", source: "direct", campaign: "-", content: "-" });
     f.markTesterBrowser(); expect(local.m.get("gyeol-test-browser-v1")).toBe("1");
     expect(f.funnel("product_view")).toBe(false); expect(fetches).toHaveLength(1);
+  });
+  it("F 후속: 처음 유입(utm_source·campaign·content)을 「유입 표시」 쿠키 30일에 두고, 나중 광고 주소로 덮지 않는다(식별 값 없음)", async () => {
+    const { browser } = setup("?utm_source=meta&utm_medium=paid&utm_campaign=free_book_1111&utm_content=card_a&fbclid=secret&email=a@b.c");
+    const f = await import("@/lib/analytics/funnel");
+    f.captureUtm();
+    expect([...browser.jar]).toEqual([[FUNNEL_SOURCE_COOKIE, "meta.free_book_1111.card_a"]]);
+    f.captureUtm("?utm_source=x&utm_campaign=other");
+    expect(f.currentUtm()).toEqual({ source: "meta", campaign: "free_book_1111", content: "card_a" });
+    expect(f.utmQuery()).toBe("utm_source=meta&utm_campaign=free_book_1111&utm_content=card_a");
+  });
+  it("F 후속: 로그인 왕복·새 탭·다음 방문(세션 저장소가 비어도) 같은 브라우저면 같은 유입으로 가입 뒤 단계(책 시작·결제)를 센다", async () => {
+    const same = cookieJar();
+    { setup("?utm_source=x&utm_campaign=free_book_1111", same); const f = await import("@/lib/analytics/funnel"); f.captureUtm(); expect(f.funnel("land")).toBe(true); expect(f.funnel("land")).toBe(false); }
+    vi.resetModules();
+    // 카카오·구글 로그인 왕복 뒤 새 탭(세션 저장소 새것, 주소에 utm 없음).
+    const { fetches } = setup("?code=oauth-code&next=/free", same, storage());
+    const f = await import("@/lib/analytics/funnel"); f.captureUtm();
+    f.funnel("book_start"); f.funnel("paid");
+    expect(fetches.map(x => x.body)).toEqual([{ step: "book_start", source: "x", campaign: "free_book_1111", content: "-" }, { step: "paid", source: "x", campaign: "free_book_1111", content: "-" }]);
+    // 서버만 세는 단계는 화면이 보내지 않는다.
+    for (const step of SERVER_FUNNEL_STEPS) expect(f.funnel(step)).toBe(false);
+    expect(fetches).toHaveLength(2);
+  });
+  it("F 후속: 인앱 → 외부 브라우저로 로그인 화면이 열려도(쿠키·세션 없음) /free가 로그인 주소에 실은 utm으로 이어진다", async () => {
+    { setup("?utm_source=instagram&utm_medium=social&utm_campaign=bio"); const { freeLoginHref } = await import("@/components/growth/FreeLanding"); expect(freeLoginHref()).toBe("/login?next=/free&utm_source=instagram&utm_campaign=bio"); }
+    vi.resetModules();
+    const other = setup("?next=/free&utm_source=instagram&utm_campaign=bio");
+    const f = await import("@/lib/analytics/funnel"); f.captureUtm();
+    expect([...other.browser.jar]).toEqual([[FUNNEL_SOURCE_COOKIE, "instagram.bio.-"]]);
+    expect(readFileSync("src/components/growth/FreeLanding.tsx", "utf8")).toContain("onClick={e => { e.currentTarget.href = freeLoginHref(); }}");
+    expect(f.utmQuery({ source: "direct", campaign: "-", content: "-" })).toBe("");
   });
   it("주소별 조회 단계", async () => {
     setup(); const f = await import("@/lib/analytics/funnel");
@@ -194,5 +240,37 @@ describe("2026-11-10 정정: 고객 화면 4곳은 「증정」 표현(「1+1」
     vi.stubEnv("GIFT_EVENT_END", "2026-12-15");
     expect((await bookEndNotice("report_x", false, NOW)).eventUntil).toBe("12월 15일");
     expect(await bookEndNotice("report_x", false, Date.parse("2026-12-20T00:00:00+09:00"))).toEqual({ event: false, eventUntil: "", signup: false });
+  });
+});
+
+describe("F 후속: 서버가 세는 단계(신규 가입·가입 이용권·무료 책) — 요청의 「유입 표시」 쿠키로, 사용자 id 저장 없음", () => {
+  const jar = (m: Record<string, string>) => ({ get: (k: string) => (k in m ? { value: m[k] } : undefined) });
+  it("쿠키의 처음 유입으로 단계마다 +1(사용자 id는 넘기지 않음), 쿠키가 없으면 직접 유입", async () => {
+    const { countServerFunnel } = await import("@/lib/analytics/funnelServer");
+    const got: Record<string, unknown>[] = [];
+    const deps = { tester: async () => false, hit: async (d: Record<string, unknown>) => { got.push(d); } };
+    expect(await countServerFunnel(jar({ [FUNNEL_SOURCE_COOKIE]: "meta.free_book_1111.card_a" }), "00000000-0000-4000-8000-00000000c003", ["login_new", "signup_grant"], deps)).toBe(2);
+    expect(got).toEqual([{ step: "login_new", source: "meta", campaign: "free_book_1111", content: "card_a" }, { step: "signup_grant", source: "meta", campaign: "free_book_1111", content: "card_a" }]);
+    expect(JSON.stringify(got)).not.toContain("c003");
+    await countServerFunnel(jar({}), null, ["free_book"], deps);
+    expect(got.at(-1)).toEqual({ step: "free_book", source: "direct", campaign: "-", content: "-" });
+  });
+  it("시험 계정이거나 「시험」 브라우저면 세지 않는다", async () => {
+    const { countServerFunnel } = await import("@/lib/analytics/funnelServer");
+    const got: unknown[] = [];
+    expect(await countServerFunnel(jar({ [FUNNEL_SOURCE_COOKIE]: "meta.a.b" }), "u-test", ["login_new"], { tester: async () => true, hit: async d => { got.push(d); } })).toBe(0);
+    expect(await countServerFunnel(jar({ [TEST_BROWSER_COOKIE]: "1" }), "u-1", ["login_new"], { tester: async () => false, hit: async d => { got.push(d); } })).toBe(0);
+    expect(got).toEqual([]);
+  });
+  it("이용권 접수: spend가 가입 이용권을 옮겼을 때만 「무료 책」 알림(다른 이용권·옮길 것 없음은 아님)", async () => {
+    const spendResults = [{ ok: true, moved: true, kind: "signup" }, { ok: true, moved: true, kind: "event" }, { ok: true, moved: false }];
+    vi.doMock("@/lib/db/supabaseServer", () => ({ createSupabaseServerClient: () => ({ rpc: (fn: string) => ({ abortSignal: async () => fn === "ops_gift" ? { data: spendResults.shift(), error: null } : { data: { ok: true }, error: null } }) }) }));
+    const { createTicketPublicationStore } = await import("@/lib/tickets/supabase");
+    const free: string[] = [];
+    const store = createTicketPublicationStore({ onFreeBook: u => { free.push(u); } });
+    for (let i = 0; i < 3; i++) await store.call("enqueue", `user-${i}`, { requestId: `r-${i}`, productType: "love_marriage_child" });
+    expect(free).toEqual(["user-0"]);
+    expect(readFileSync("src/app/auth/[action]/route.ts", "utf8")).toContain('createTicketPublicationStore({ onFreeBook: user => scheduleServerFunnel(request.cookies, user, ["free_book"]) })');
+    expect(readFileSync("src/app/auth/[action]/route.ts", "utf8")).toContain("funnel: (user, steps) => scheduleServerFunnel(request.cookies, user.id, steps)");
   });
 });

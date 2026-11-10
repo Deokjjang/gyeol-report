@@ -13,7 +13,10 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   if (ticketPublication) {
     const { handleTicketPublication } = await import("../../../lib/tickets/publicHandler");
     const { createTicketPublicationStore } = await import("../../../lib/tickets/supabase");
-    try { return await handleTicketPublication(request, action.slice(7), original, createTicketPublicationStore()); }
+    const { scheduleServerFunnel } = await import("../../../lib/analytics/funnelServer");
+    // F 후속 퍼널: 가입 이용권으로 책을 시작하면(spend가 가입 이용권을 옮김) 「무료 책」을 서버가 처음 유입 값으로 센다.
+    const store = createTicketPublicationStore({ onFreeBook: user => scheduleServerFunnel(request.cookies, user, ["free_book"]) });
+    try { return await handleTicketPublication(request, action.slice(7), original, store); }
     catch { return original.finish(NextResponse.json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, { status: 503, headers: { "Cache-Control": "private, no-store" } })); }
   }
   if (action === "event-popup") {
@@ -75,10 +78,13 @@ async function opsAccountAction(request: NextRequest, action: "profile" | "withd
   const { handleProfile } = await import("../../../lib/account/profile");
   const { kakaoUnlink } = await import("../../../lib/account/kakaoLogin");
   const { grantSignupTicket } = await import("../../../lib/ops/gift/service");
+  const { scheduleServerFunnel } = await import("../../../lib/analytics/funnelServer");
   return handleProfile(request, action, port, {
     ops: ops.account, audit: e => ops.audit(e),
     // F: 가입 완료 직후 가입 이용권(기간·켜짐·기존 회원·재가입은 SQL이 확인).
     signupGrant: user => grantSignupTicket(ops.signup, user),
+    // F 후속 퍼널: 신규 가입·가입 이용권 지급은 이 요청의 「유입 표시」 쿠키(처음 유입)로 서버가 센다.
+    funnel: (user, steps) => scheduleServerFunnel(request.cookies, user.id, steps),
     unlinkKakao: id => kakaoUnlink(id, process.env.KAKAO_ADMIN_KEY),
     deleteUser: async id => { if (!ops.db) return false; const { error } = await ops.db.auth.admin.deleteUser(id, true); return !error; },
   });

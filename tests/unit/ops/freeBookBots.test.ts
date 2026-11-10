@@ -94,15 +94,19 @@ describe("/campaign · /funnel · API 잔액 경보", () => {
     expect(m.markup).toEqual({ inline_keyboard: [[{ text: "지급 멈춤", callback_data: "sg:pause" }]] });
     expect(BOT_COMMANDS.ops.map(c => c.command)).toEqual(["pending", "campaign"]);
   });
-  it("/funnel: 오늘·7일 단계별 숫자와 전환율, 유입별, 서버 기록(명령 응답 — 알림 아님)", async () => {
-    for (const [step, source, n] of [["free_view", "meta", 10], ["login_new", "meta", 4], ["signup_grant", "meta", 4], ["free_view", "x", 5], ["login_new", "x", 1], ["home_view", "direct", 3]] as const)
-      for (let i = 0; i < n; i++) await h.rpc("ops_funnel", "hit", { step, source, campaign: "free_book_1111" });
+  it("/funnel: 오늘·7일 단계별 숫자와 전환율, 유입별 「랜딩 → 가입 → 무료 책 → 결제」 한 줄(메타·X), 서버 기록(명령 응답 — 알림 아님)", async () => {
+    for (const [step, source, n] of [["land", "meta", 10], ["free_view", "meta", 10], ["login_new", "meta", 4], ["signup_grant", "meta", 4], ["free_book", "meta", 2], ["paid", "meta", 1],
+      ["land", "x", 5], ["free_view", "x", 5], ["login_new", "x", 1], ["land", "direct", 3], ["home_view", "direct", 3]] as const)
+      for (let i = 0; i < n; i++) await h.rpc("ops_funnel", "hit", { step, source, campaign: "free_book_1111", content: "card_a" });
     expect(await handleUpdate("sales", msg("/funnel"), deps)).toBe("funnel");
     const t = lastSent("sales").text;
     expect(t).toContain("/free 조회 15");
     expect(t).toContain("신규 가입 5 (33%)");
-    expect(t).toContain("메타 · /free 10 → 가입 4 (40%)");
-    expect(t).toContain("X · /free 5 → 가입 1 (20%)");
+    expect(t).toContain("메타 · 랜딩 10 → 가입 4 (40%) → 무료 책 2 (50%) → 결제 1 (50%)");
+    expect(t).toContain("X · 랜딩 5 → 가입 1 (20%) → 무료 책 0 (0%) → 결제 0");
+    expect(t).toContain("직접 · 랜딩 3 → 가입 0 (0%) → 무료 책 0 → 결제 0");
+    expect(t.indexOf("메타 · 랜딩")).toBeLessThan(t.indexOf("X · 랜딩"));
+    expect(t).toMatch(/7일 신규 가입 \d+ · 가입 이용권 \d+ · 무료 책 \d+ · 주문/);
     expect(t).toMatch(/서버 기록\(시험 계정 제외\)/);
     expect(BOT_COMMANDS.sales.map(c => c.command)).toContain("funnel");
   });

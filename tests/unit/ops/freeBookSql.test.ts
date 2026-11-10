@@ -91,7 +91,8 @@ describe("선물·양도 불가와 사용 범위", () => {
   it("대운·세운에는 쓸 수 없고(옮기지 않음), 출시 4종에는 쓴다 — 원장 이유 SIGNUP_FREE·범위 4종", async () => {
     expect(await gift.call("spend", { userId: D, productType: "major_fortune", requestId: "r-major" })).toMatchObject({ ok: true, moved: false });
     expect(await gift.call("spend", { userId: D, productType: "annual_fortune", requestId: "r-annual" })).toMatchObject({ ok: true, moved: false });
-    expect(await gift.call("spend", { userId: D, productType: "love_marriage_child", requestId: "r-love" })).toMatchObject({ ok: true, moved: true });
+    // F 후속: spend 응답에 옮긴 이용권 종류(서버가 「무료 책」을 센다).
+    expect(await gift.call("spend", { userId: D, productType: "love_marriage_child", requestId: "r-love" })).toEqual({ ok: true, moved: true, kind: "signup" });
     const g = await h.one<{ reason: string; product_scopes: string[]; days: number }>("select reason,product_scopes,round(extract(epoch from expires_at-now())/86400)::int days from report_ticket_grants where user_id=$1", [D]);
     expect(g).toMatchObject({ reason: "SIGNUP_FREE", product_scopes: FOUR, days: 7 });
   });
@@ -146,10 +147,20 @@ describe("퍼널 익명 집계", () => {
     expect(await funnel.call("hit", { step: "free_view", source: "META", campaign: "free_book_1111" })).toEqual({ ok: true });
     expect(await funnel.call("hit", { step: "free_view", source: "x<script>", campaign: "" })).toEqual({ ok: true });
     expect(await funnel.call("hit", { step: "drop_table", source: "meta" })).toMatchObject({ ok: false, code: "STEP" });
-    const rows = await h.all<{ step: string; source: string; campaign: string; n: number }>("select step,source,campaign,n from funnel_daily order by source");
-    expect(rows).toEqual([{ step: "free_view", source: "-", campaign: "-", n: 1 }, { step: "free_view", source: "meta", campaign: "free_book_1111", n: 2 }]);
+    const rows = await h.all<{ step: string; source: string; campaign: string; content: string; n: number }>("select step,source,campaign,content,n from funnel_daily order by source");
+    expect(rows).toEqual([{ step: "free_view", source: "-", campaign: "-", content: "-", n: 1 }, { step: "free_view", source: "meta", campaign: "free_book_1111", content: "-", n: 2 }]);
     const cols = await h.all<{ column_name: string }>("select column_name from information_schema.columns where table_schema='public' and table_name='funnel_daily' order by ordinal_position");
-    expect(cols.map(c => c.column_name)).toEqual(["day", "step", "source", "campaign", "n"]);
+    expect(cols.map(c => c.column_name)).toEqual(["day", "step", "source", "campaign", "n", "content"]);
+  });
+  it("F 후속: 유입 세부(utm_content)도 칸이 따로, 새 단계 land·free_book을 받는다. 기본 키에 content", async () => {
+    for (const content of ["card_a", "card_a", "card_b", "<bad>"]) await funnel.call("hit", { step: "land", source: "meta", campaign: "free_book_1111", content });
+    expect(await funnel.call("hit", { step: "free_book", source: "x", campaign: "free_book_1111" })).toEqual({ ok: true });
+    const rows = await h.all<{ step: string; content: string; n: number }>("select step,content,n from funnel_daily where step in ('land','free_book') order by step,content");
+    expect(rows).toEqual([{ step: "free_book", content: "-", n: 1 }, { step: "land", content: "-", n: 1 }, { step: "land", content: "card_a", n: 2 }, { step: "land", content: "card_b", n: 1 }]);
+    expect((await h.one<{ d: string }>("select pg_get_constraintdef(oid) d from pg_constraint where conname='funnel_daily_pkey'")).d).toBe("PRIMARY KEY (day, step, source, campaign, content)");
+    const r = await funnel.call("report", { days: 1 });
+    expect((r.rows as { content?: string }[]).some(x => x.content === "card_a")).toBe(true);
+    expect(r.server).toMatchObject({ freeBooks: expect.any(Number), freeBooksToday: expect.any(Number) });
   });
   it("report: 최근 7일 행 + 서버 기록(시험 계정 제외)", async () => {
     const r = await funnel.call("report", { days: 7 });

@@ -40,8 +40,10 @@ async function consented(user: AccountIdentity) {
 }
 const profilePost = (user: AccountIdentity, deps: Parameters<typeof handleProfile>[3]) => handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", headers: { origin: ORIGIN },
   body: JSON.stringify({ requestId: randomUUID(), name: "가입자", email: `${user.id.slice(-6)}@example.com`, emailConfirm: `${user.id.slice(-6)}@example.com` }) }), "profile", dbPort(user), deps);
+/** 서버가 센 퍼널 단계(F 후속): 가입 정보 첫 저장 → 신규 가입·가입 이용권. */
+const counted: string[][] = [];
 const depsFor = (e = env()) => ({ ops: accountStore(), audit: async () => true, unlinkKakao: async () => "skipped" as const, deleteUser: async () => true,
-  signupGrant: (u: AccountIdentity) => grantSignupTicket(signup(), u, e) });
+  signupGrant: (u: AccountIdentity) => grantSignupTicket(signup(), u, e), funnel: (_u: AccountIdentity, steps: string[]) => { counted.push(steps); } });
 const uid = () => randomUUID();
 
 beforeAll(async () => { h = await opsNotifySql({ freeBook: true }); }, 240_000);
@@ -62,7 +64,10 @@ describe("신규 가입 → 이용권 1장 → 책 생성 → 책 끝 줄", () =
     const exp = Date.parse(bodies[0].signupGift.expiresAt);
     expect(Math.round((exp - Date.now()) / 86_400_000)).toBe(SIGNUP_TICKET_DAYS);
     // 다시 저장(가입 정보 수정)은 가입 완료가 아니다 → 지급 요청도 없다.
+    // 퍼널(서버): 겹친 첫 저장 두 번 중 지급한 쪽만 「신규 가입 + 가입 이용권」 1번(다른 쪽은 ALREADY_ISSUED라 세지 않음).
+    expect(counted).toEqual([["login_new", "signup_grant"]]);
     const again = await (await profilePost(user, depsFor())).json();
+    expect(counted).toHaveLength(1);
     expect(again).toMatchObject({ ok: true }); expect(again.joined).toBeUndefined(); expect(again.signupGift).toBeUndefined();
     expect(await readWallet(h.rpcOf("ops_gift"), user.id)).toMatchObject({ total: 1, usable: 1, giftable: 0 });
   });
@@ -80,6 +85,8 @@ describe("신규 가입 → 이용권 1장 → 책 생성 → 책 끝 줄", () =
     const snap = await h.one<{ status: string; ticket_redemption_id: string | null }>("select status,ticket_redemption_id from paid_report_snapshots where report_id=$1", [reportId]);
     expect(snap).toMatchObject({ status: "COMPLETED" }); expect(snap.ticket_redemption_id).toBeTruthy();
     expect(await h.rpc("ops_signup", "book_kind", { reportId })).toEqual({ ok: true, signup: true });
+    // F 후속: /funnel 서버 기록의 「무료 책」(가입 이용권으로 시작한 책, 시험 계정 제외).
+    expect(Number((await h.rpc("ops_funnel", "report", { days: 1 }) as { server: Record<string, number> }).server.freeBooksToday)).toBeGreaterThanOrEqual(1);
     expect((await h.one<{ status: string }>("select status from gift_rewards where owner_user_id=$1", [user.id])).status).toBe("used_self");
     expect(bookEndEventLine("11월 30일")).toBe(BOOK_END_EVENT_LINE);
     const html = renderToStaticMarkup(<BookEndNotice view={{ event: true, signup: true, eventUntil: "11월 30일" }} />);
