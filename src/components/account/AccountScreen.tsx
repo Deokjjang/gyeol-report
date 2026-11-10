@@ -13,7 +13,6 @@ import { KakaoChannelPrompt } from "./KakaoChannelPrompt";
 import { MarketingPanel, ProfileForm, WithdrawPanel, type ProfileSaved } from "../ops/AccountOps";
 import { EventPopup } from "../event/EventPopup";
 import { rememberPopup } from "../../lib/ops/comp/popupSelect";
-import { funnel } from "../../lib/analytics/funnel";
 
 /** 선물 링크로 로그인·가입을 시작한 경우(P 추가 F): 가입 정보까지 마치면 그 선물 화면으로 돌아가 자동으로 받는다(10분 돌아오기 쿠키가 지나도). */
 export const GIFT_PENDING_KEY = "gyeol-gift-pending-v1";
@@ -46,8 +45,8 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
   const [welcome, setWelcome] = useState<{ gift: NonNullable<ProfileSaved["signupGift"]>; to: string | null; pick: string } | null>(null);
   const saved = (next?: string, joined?: ProfileSaved) => {
     const to = next ?? pendingGiftPath() ?? pendingCheckoutPath();
-    if (joined?.joined) funnel("login_new");
-    if (joined?.signupGift) { funnel("signup_grant"); setWelcome({ gift: joined.signupGift, to: to ?? null, pick: pendingCheckoutPath() ?? "/" }); return; }
+    // F 퍼널: 신규 가입·가입 이용권 지급은 서버(/auth/profile)가 처음 유입 값으로 센다.
+    if (joined?.signupGift) { setWelcome({ gift: joined.signupGift, to: to ?? null, pick: pendingCheckoutPath() ?? "/" }); return; }
     if (to) { window.location.assign(to); return; }
     announceAccountChange(); void refresh();
   };

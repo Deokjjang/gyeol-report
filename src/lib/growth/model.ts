@@ -44,6 +44,7 @@ export const FREE_COPY = {
   ticketTitle: "무료 이용권 1장이 서재에 있어요.",
   ticketCta: "책 고르기",
   generalCta: "상품 보기",
-  eventLine: (until: string) => `지금 1+1 진행 중 — 한 권 결제하면 이용권 1장 증정${until ? `(${until}까지)` : ""}`,
+  // 2026-11-10 정정: 11-06 법률 검토 원칙(무상 증정 — 「1+1」·「더 드려요」처럼 묶음 판매로 읽히는 표현 금지). 날짜는 설정값(1+1 끝)에서.
+  eventLine: (until: string) => `${until ? `${until}까지 ` : ""}한 권 결제하면 이용권 1장 증정`,
   follow: "카카오톡 채널을 추가하면 새 소식을, 인스타·스레드·X를 팔로우하면 매일 「한 페이지」를 받아 볼 수 있어요",
 } as const;

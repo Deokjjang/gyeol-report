@@ -13,7 +13,12 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   if (ticketPublication) {
     const { handleTicketPublication } = await import("../../../lib/tickets/publicHandler");
     const { createTicketPublicationStore } = await import("../../../lib/tickets/supabase");
-    try { return await handleTicketPublication(request, action.slice(7), original, createTicketPublicationStore()); }
+    const { scheduleServerFunnel } = await import("../../../lib/analytics/funnelServer");
+    // F 후속 퍼널: 가입 이용권으로 책을 시작하면(spend가 가입 이용권을 옮김) 「무료 책」을 서버가 처음 유입 값으로 센다.
+    try {
+      const store = createTicketPublicationStore({ onFreeBook: user => scheduleServerFunnel(request.cookies, user, ["free_book"]) });
+      return await handleTicketPublication(request, action.slice(7), original, store);
+    }
     catch { return original.finish(NextResponse.json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, { status: 503, headers: { "Cache-Control": "private, no-store" } })); }
   }
   if (action === "event-popup") {
@@ -48,9 +53,9 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     return handleLibrary(request, action.slice(8), port, createLibraryPort());
   }
   const { handleAccount } = await import("../../../lib/account/handler");
-  // F: 시험 계정(관리자·누나 계정) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
-  const { testAccountIds } = await import("../../../lib/ops/notify/deps");
-  const testers = new Set(testAccountIds()), isTester = (id: string) => testers.has(id.toLowerCase());
+  // F: 시험 계정(관리자·누나 계정 + DB 「시험 계정 표」) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
+  const { liveTestAccountIds } = await import("../../../lib/ops/notify/deps");
+  const testers = await liveTestAccountIds(), isTester = (id: string) => testers.has(id.toLowerCase());
   if (action !== "session") return handleAccount(request, action, port, false, { isTester });
   // 재동의 화면 맨 위 한 줄(P 본문 3): 안 쓴 보상 이용권이 있는 기존 회원에게만(읽기 전용 ops_comp_campaign 'popup').
   const { compCampaignStore } = await import("../../../lib/ops/comp/popup");
@@ -75,10 +80,13 @@ async function opsAccountAction(request: NextRequest, action: "profile" | "withd
   const { handleProfile } = await import("../../../lib/account/profile");
   const { kakaoUnlink } = await import("../../../lib/account/kakaoLogin");
   const { grantSignupTicket } = await import("../../../lib/ops/gift/service");
+  const { scheduleServerFunnel } = await import("../../../lib/analytics/funnelServer");
   return handleProfile(request, action, port, {
     ops: ops.account, audit: e => ops.audit(e),
     // F: 가입 완료 직후 가입 이용권(기간·켜짐·기존 회원·재가입은 SQL이 확인).
     signupGrant: user => grantSignupTicket(ops.signup, user),
+    // F 후속 퍼널: 신규 가입·가입 이용권 지급은 이 요청의 「유입 표시」 쿠키(처음 유입)로 서버가 센다.
+    funnel: (user, steps) => scheduleServerFunnel(request.cookies, user.id, steps),
     unlinkKakao: id => kakaoUnlink(id, process.env.KAKAO_ADMIN_KEY),
     deleteUser: async id => { if (!ops.db) return false; const { error } = await ops.db.auth.admin.deleteUser(id, true); return !error; },
   });

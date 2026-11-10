@@ -12,7 +12,9 @@ import { grantSignupTicket, readWallet, signupProviderHash, SIGNUP_HASH_LABEL } 
 import { giftEventConfig, giftEventPublicView, signupCampaignConfig, signupPublicView, SIGNUP_TICKET_DAYS } from "@/lib/ops/config";
 import { selectPopup, signupPopupDue, type PopupState } from "@/lib/ops/comp/popupSelect";
 import { signupStripVisible } from "@/components/growth/GiftEventCountdown";
-import { BookEndNotice, BOOK_END_EVENT_LINE, BOOK_END_SIGNUP_LINE, BOOK_END_CTA } from "@/components/book/BookReading";
+import { BookEndNotice, bookEndEventLine, BOOK_END_SIGNUP_LINE, BOOK_END_CTA } from "@/components/book/BookReading";
+/** 2026-11-10 정정 문구(「증정」, 날짜 = 설정값). */
+const BOOK_END_EVENT_LINE = "11월 30일까지 한 권 결제하면 이용권 1장을 증정해요. 친구에게 선물할 수도 있어요.";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { runTicketPublicationJob } from "@/lib/tickets/publicationWorker";
 import { llmDeps, mockTextFor, opsStoreOf, RAW_FULL } from "../../helpers/v5Scenarios";
@@ -38,8 +40,10 @@ async function consented(user: AccountIdentity) {
 }
 const profilePost = (user: AccountIdentity, deps: Parameters<typeof handleProfile>[3]) => handleProfile(new NextRequest(`${ORIGIN}/auth/profile`, { method: "POST", headers: { origin: ORIGIN },
   body: JSON.stringify({ requestId: randomUUID(), name: "가입자", email: `${user.id.slice(-6)}@example.com`, emailConfirm: `${user.id.slice(-6)}@example.com` }) }), "profile", dbPort(user), deps);
+/** 서버가 센 퍼널 단계(F 후속): 가입 정보 첫 저장 → 신규 가입·가입 이용권. */
+const counted: string[][] = [];
 const depsFor = (e = env()) => ({ ops: accountStore(), audit: async () => true, unlinkKakao: async () => "skipped" as const, deleteUser: async () => true,
-  signupGrant: (u: AccountIdentity) => grantSignupTicket(signup(), u, e) });
+  signupGrant: (u: AccountIdentity) => grantSignupTicket(signup(), u, e), funnel: (_u: AccountIdentity, steps: string[]) => { counted.push(steps); } });
 const uid = () => randomUUID();
 
 beforeAll(async () => { h = await opsNotifySql({ freeBook: true }); }, 240_000);
@@ -60,11 +64,14 @@ describe("신규 가입 → 이용권 1장 → 책 생성 → 책 끝 줄", () =
     const exp = Date.parse(bodies[0].signupGift.expiresAt);
     expect(Math.round((exp - Date.now()) / 86_400_000)).toBe(SIGNUP_TICKET_DAYS);
     // 다시 저장(가입 정보 수정)은 가입 완료가 아니다 → 지급 요청도 없다.
+    // 퍼널(서버): 겹친 첫 저장 두 번 중 지급한 쪽만 「신규 가입 + 가입 이용권」 1번(다른 쪽은 ALREADY_ISSUED라 세지 않음).
+    expect(counted).toEqual([["login_new", "signup_grant"]]);
     const again = await (await profilePost(user, depsFor())).json();
+    expect(counted).toHaveLength(1);
     expect(again).toMatchObject({ ok: true }); expect(again.joined).toBeUndefined(); expect(again.signupGift).toBeUndefined();
     expect(await readWallet(h.rpcOf("ops_gift"), user.id)).toMatchObject({ total: 1, usable: 1, giftable: 0 });
   });
-  it("그 이용권으로 책 생성(실제 발행 경로) → 발행 → 책 끝 판정 signup:true, 1+1 기간이면 1+1 줄도", async () => {
+  it("그 이용권으로 책 생성(실제 발행 경로) → 발행 → 책 끝 판정 signup:true, 1+1 기간이면 증정 줄도", async () => {
     const payload = (() => { const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date("2026-10-27T03:00:00.000Z") }); if (!n.ok) throw new Error("payload"); return n.value; })();
     const requestId = randomUUID();
     expect(await h.rpc("ops_gift", "spend", { userId: user.id, productType: payload.productKey, requestId })).toMatchObject({ ok: true, moved: true });
@@ -78,14 +85,17 @@ describe("신규 가입 → 이용권 1장 → 책 생성 → 책 끝 줄", () =
     const snap = await h.one<{ status: string; ticket_redemption_id: string | null }>("select status,ticket_redemption_id from paid_report_snapshots where report_id=$1", [reportId]);
     expect(snap).toMatchObject({ status: "COMPLETED" }); expect(snap.ticket_redemption_id).toBeTruthy();
     expect(await h.rpc("ops_signup", "book_kind", { reportId })).toEqual({ ok: true, signup: true });
+    // F 후속: /funnel 서버 기록의 「무료 책」(가입 이용권으로 시작한 책, 시험 계정 제외).
+    expect(Number((await h.rpc("ops_funnel", "report", { days: 1 }) as { server: Record<string, number> }).server.freeBooksToday)).toBeGreaterThanOrEqual(1);
     expect((await h.one<{ status: string }>("select status from gift_rewards where owner_user_id=$1", [user.id])).status).toBe("used_self");
-    const html = renderToStaticMarkup(<BookEndNotice view={{ event: true, signup: true }} />);
+    expect(bookEndEventLine("11월 30일")).toBe(BOOK_END_EVENT_LINE);
+    const html = renderToStaticMarkup(<BookEndNotice view={{ event: true, signup: true, eventUntil: "11월 30일" }} />);
     expect(html.indexOf(BOOK_END_SIGNUP_LINE)).toBeGreaterThanOrEqual(0);
     expect(html.indexOf(BOOK_END_SIGNUP_LINE)).toBeLessThan(html.indexOf(BOOK_END_EVENT_LINE));
     expect(html).toContain(`>${BOOK_END_CTA}</a>`);
   }, 60_000);
-  it("결제 책은 1+1 줄만, 1+1 기간이 아니면 결제 책엔 아무것도 없다(가입 이용권 책은 가입 줄만)", () => {
-    const paid = renderToStaticMarkup(<BookEndNotice view={{ event: true, signup: false }} />);
+  it("결제 책은 증정 줄만, 1+1 기간이 아니면 결제 책엔 아무것도 없다(가입 이용권 책은 가입 줄만)", () => {
+    const paid = renderToStaticMarkup(<BookEndNotice view={{ event: true, signup: false, eventUntil: "11월 30일" }} />);
     expect(paid).toContain(BOOK_END_EVENT_LINE); expect(paid).not.toContain(BOOK_END_SIGNUP_LINE);
     expect(renderToStaticMarkup(<BookEndNotice view={{ event: false, signup: false }} />)).toBe("");
     const after = renderToStaticMarkup(<BookEndNotice view={{ event: false, signup: true }} />);

@@ -18,14 +18,15 @@ import { readableBookText } from "../../lib/book/readerCopy";
 
 /** F 책 끝 연결(주인 화면만 — 받은 사람의 공유 화면·예시에는 없다). 공유 버튼(링크 복사·카카오톡·공유하기)은 그대로 두고 그 아래에 둔다. */
 export const BOOK_END_SIGNUP_LINE = "무료로 받은 책은 어떠셨나요? 마음에 드셨다면 다른 이야기도 만나 보세요.";
-export const BOOK_END_EVENT_LINE = "1+1 진행 중: 한 권 결제하면 이용권 1장을 더 드려요. 친구에게 선물할 수도 있어요.";
+/** 1+1 기간 줄(2026-11-10 정정: 「증정」 표현, 날짜는 서버 설정값 — 1+1 끝). */
+export const bookEndEventLine = (until: string) => `${until ? `${until}까지 ` : ""}한 권 결제하면 이용권 1장을 증정해요. 친구에게 선물할 수도 있어요.`;
 export const BOOK_END_CTA = "다른 책 고르기";
-export type BookEndNoticeView = { event: boolean; signup: boolean };
+export type BookEndNoticeView = { event: boolean; signup: boolean; eventUntil?: string };
 export function BookEndNotice({ view, home = "/" }: { view: BookEndNoticeView; home?: string }) {
   if (!view.event && !view.signup) return null;
   return <section className={shareStyle.endNotice} aria-label="다른 책 고르기" data-book-end-notice={view.signup ? "signup" : "paid"}>
     {view.signup ? <p data-book-end-signup>{BOOK_END_SIGNUP_LINE}</p> : null}
-    {view.event ? <p data-book-end-event>{BOOK_END_EVENT_LINE}</p> : null}
+    {view.event ? <p data-book-end-event>{bookEndEventLine(view.eventUntil ?? "")}</p> : null}
     <a className={shareStyle.endCta} href={home} data-book-end-cta>{BOOK_END_CTA}</a>
   </section>;
 }
