@@ -15,8 +15,10 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     const { createTicketPublicationStore } = await import("../../../lib/tickets/supabase");
     const { scheduleServerFunnel } = await import("../../../lib/analytics/funnelServer");
     // F 후속 퍼널: 가입 이용권으로 책을 시작하면(spend가 가입 이용권을 옮김) 「무료 책」을 서버가 처음 유입 값으로 센다.
-    const store = createTicketPublicationStore({ onFreeBook: user => scheduleServerFunnel(request.cookies, user, ["free_book"]) });
-    try { return await handleTicketPublication(request, action.slice(7), original, store); }
+    try {
+      const store = createTicketPublicationStore({ onFreeBook: user => scheduleServerFunnel(request.cookies, user, ["free_book"]) });
+      return await handleTicketPublication(request, action.slice(7), original, store);
+    }
     catch { return original.finish(NextResponse.json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, { status: 503, headers: { "Cache-Control": "private, no-store" } })); }
   }
   if (action === "event-popup") {
