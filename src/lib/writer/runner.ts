@@ -40,7 +40,8 @@ export function maxTokensFor(chapters: readonly WriterChapter[], model?: string,
   return Math.min(cap, tokens);
 }
 
-export type SavedChapter = { readonly n: number; readonly chapter: BookChapter; readonly source: DraftChapter["source"] };
+/** preview(AM 4부): 먼저 읽기용 결정론 미리보기(사실·금지 규칙 문장을 가림). 저장소는 함께 저장하고 화면만 쓴다(발행 원고가 아니다). */
+export type SavedChapter = { readonly n: number; readonly chapter: BookChapter; readonly source: DraftChapter["source"]; readonly preview?: import("./preview").ChapterPreview };
 /** 장 저장소. save가 false면 lease를 잃은 것(다른 워커·회수 크론이 이어받음). */
 export type ChapterSink = { save(c: SavedChapter): Promise<boolean>; load(): Promise<readonly SavedChapter[]> };
 export type WriterTarget = { readonly provider: LlmProvider; readonly model: string; readonly apiKey?: string };

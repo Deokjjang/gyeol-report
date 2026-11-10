@@ -270,8 +270,8 @@ describe("1-9·1-10·1-14·1-15", () => {
     const startup = career("IT 서비스 창업(대표·개발)").replace(/"(?:\d순위 )?직군: [^"]*"/g, m => m.includes("지금 목표·직업 분야") ? m : "").replace(/부동산·땅: [^"]*/g, ""); // 투자 성향 줄(「작업실·매장처럼 쓰임이 있는 공간」)은 장면이 아니다
     expect(startup).toMatch(/출시 날짜와 첫 고객까지/);
     expect(startup).not.toMatch(/가게|단골|손님|매장|위생 점검|임대차|상권/);
-    expect(startup).toMatch(/내 사업은 운영형일까 확장형일까/);
+    expect(startup).toMatch(/내 사업은 지키며 키울까 넓혀 갈까/);
     expect(startup).toMatch(/상황 씨앗: (투자 유치 자료|출시 일정|월간 지표|팀원 채용|고객 인터뷰|서비스 로드맵|사무실 계약|지원사업 신청서|데모 시연|주간 팀 미팅)/);
-    expect(career("카페 사장")).toMatch(/내 가게는 운영형일까 확장형일까/);
+    expect(career("카페 사장")).toMatch(/내 가게는 지키며 키울까 넓혀 갈까/);
   });
 });

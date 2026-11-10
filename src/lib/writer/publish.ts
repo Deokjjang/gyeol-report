@@ -35,6 +35,7 @@ import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta 
 import { buildWriterPrompt, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
 import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
+import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
@@ -392,7 +393,11 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const envCap = Number(process.env.LLM_MAX_OUTPUT_TOKENS);
   const fb = fallbackTarget && (fallbackTarget.provider !== provider || fallbackTarget.model !== model) ? fallbackTarget : null;
   // 뒤 호출(재요청·수리)은 남은 시간 예산 안에서만.
-  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink: a.sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...deps, budgetMs: budget - (now() - started), fallback: fb });
+  // AM 4부 먼저 읽기: 장이 저장될 때 결정론 정리·검사(호출 0)로 사실·금지 규칙 문장을 가린 미리보기를 함께 넘긴다. 미리보기가 실패해도 저장은 그대로.
+  const previewSheet = factSheetFor(a.payload, a.policyAt, brief, k);
+  const previewCtx = lintContext(brief, k, plan, a.prior?.sentences ?? [], undefined, previewSheet);
+  const sink: ChapterSink = { save: c => { let preview: ChapterPreview | undefined; try { preview = chapterPreview(c, previewCtx, plan.find(p => p.n === c.n)); } catch { preview = undefined; } return a.sink.save(preview ? { ...c, preview } : c); }, load: () => a.sink.load() };
+  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...deps, budgetMs: budget - (now() - started), fallback: fb });
   if (!a.recover && model) {
     try { run = await runWriter(opts()); drafts = run.drafts; }
     catch { drafts = new Map(); }

@@ -97,20 +97,20 @@ export function yearRelationCard(saju: SajuCalcResult, k: Knowledge, year: numbe
 }
 
 /** 관계 한 줄(작가 근거·카드 공용): "2026년 병오년의 오(午)가 태어난 달 땅 글자 자(子)와 충(마주 서서 부딪침) — 일터·사회생활 자리. 그림: … · 쓸 거리: … · 살필 거리: …". */
-export function relationLine(card: Pick<YearRelationCard, "name">, r: YearRelationItem): string {
+export function relationLine(card: Pick<YearRelationCard, "name">, r: YearRelationItem, opts: { picture?: boolean } = {}): string {
   const where = r.seats.map(s => `${SEAT_AREA[s.seat].name} ${isStem(s.char) ? "하늘" : "땅"} 글자 ${glyph(s.char)}`).join("·");
   const areas = [...new Set(r.seats.map(s => s.area))].join("·");
-  return `${card.name}의 ${r.incoming}${josa(r.incoming, "이가").slice(-1)} ${where}${josa(where, "과와").slice(-1)} ${r.name} — ${areas} 자리. ${r.picture ? `그림: ${r.picture} · ` : ""}쓸 거리: ${r.use} · 살필 거리: ${r.watch}`;
+  return `${card.name}의 ${r.incoming}${josa(r.incoming, "이가").slice(-1)} ${where}${josa(where, "과와").slice(-1)} ${r.name} — ${areas} 자리. ${opts.picture !== false && r.picture ? `그림: ${r.picture} · ` : ""}쓸 거리: ${r.use} · 살필 거리: ${r.watch}`;
 }
 
-const NOTE = "관계가 있는 해·자리만 쓴다(없는 관계를 만들지 않는다). 해는 「2026년 병오년」처럼 연도와 이름으로 부르고 「올해·지금」으로 묶지 않는다. 충은 나쁨, 합은 좋음으로 단정하지 않고 쓸 거리와 살필 거리를 함께 쓴다. 사건(이직·합격·이별·결혼)을 단정하지 않는다. 한 해에 관계 하나만 골라 그 자리의 장면 하나로 푼다";
+const NOTE = "해는 「2026년 병오년」처럼 연도와 이름으로(「올해·지금」 금지). 충=나쁨·합=좋음 단정 없이 쓸 거리·살필 거리를 함께, 그 자리의 장면 하나로. 사건 단정 금지";
 
-/** 4종 근거(AM 1-1 ①): 관계가 있는 해만, 해마다 무게 큰 관계 2개까지. who: 궁합에서 사람 이름. */
+/** 4종 근거(AM 1-1 ①): 관계가 있는 해만, 해마다 무게 가장 큰 관계 하나(토큰 상한 — 세운 상품은 전체 관계를 쓴다). who: 궁합에서 사람 이름. */
 export function yearRelationEvidence(saju: SajuCalcResult, k: Knowledge, baseDate: string, who?: string): Evidence | null {
   const facts = relationYears(baseDate).flatMap(y => {
     const card = yearRelationCard(saju, k, y);
-    const top = card.relations.slice(0, 2);
-    return top.length ? [`${who ? `${who}: ` : ""}${card.name}(${card.tenGod.stem.replace(/\(.*\)/, "")}의 해) — ${top.map(r => relationLine(card, r)).join(" / ")}`] : [];
+    const top = card.relations.slice(0, 1);
+    return top.length ? [`${who ? `${who}: ` : ""}${top.map(r => relationLine(card, r, { picture: false })).join(" / ")}`] : [];
   });
   return facts.length ? { kind: "evidence", key: "yearRelation", facts, note: NOTE } : null;
 }
