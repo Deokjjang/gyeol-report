@@ -71,6 +71,8 @@ export type DevTossCheckoutLauncherRuntime = {
 
 type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
+  /** AM 3부: 세운 → 대운 연결 할인의 세운 책 id. 금액은 서버가 정한다(화면은 금액을 보내지 않는다). */
+  readonly discountFrom?: string;
   /** 2026-11-10: 고객이 고른 간편결제(카카오페이·토스페이). 결제창은 이 수단으로 바로 열린다(DIRECT). 없거나 다른 값이면 결제 준비도 하지 않는다. */
   readonly easyPay: SupportedEasyPay;
   /** P6d-ops: 비회원 구매자 정보(회원은 서버가 가입 정보를 쓴다). */
@@ -226,6 +228,7 @@ export async function runDevTossCheckout(
         inputSnapshot,
         consent: createCheckoutConsentAssertion(legalConfirmations, undefined, options.consentUi),
         ...(options.buyer ? { buyer: options.buyer } : {}),
+        ...(options.discountFrom ? { discountFrom: options.discountFrom } : {}),
       }),
     });
   } catch {

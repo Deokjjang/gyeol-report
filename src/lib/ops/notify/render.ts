@@ -3,6 +3,8 @@
  * 시간은 모두 KST, 금액은 쉼표 표기, HTML 모드라 값은 escape한다. 이름·이메일·생년월일·사주 입력값은 넣지 않는다.
  */
 import { bookForProduct, readerTitle } from "../../book/product";
+import { annualProductYear } from "../config";
+import { reportPriceKrw } from "../../payment/reportProductCatalog";
 
 export type BookFacts = { status: string | null; publishedAt: string | null } | null;
 export type OrderFacts = {
@@ -39,7 +41,10 @@ export const hm = (iso: string | null | undefined) => { const d = valid(iso); re
 /** 11/06 */
 export const md = (iso: string | null | undefined) => { const d = valid(iso); if (!d) return "-"; const [dd, mm] = KST_MD.format(d).split("/"); return `${mm}/${dd}`; };
 export const mdhm = (iso: string | null | undefined) => `${md(iso)} ${hm(iso)}`;
-export const productTitle = (key: string) => { const b = bookForProduct(key); return b ? readerTitle(b, "") : "결리포트"; };
+/** AM 2·3부: 세운은 신년판 연도를 붙인다(「나의 2027」), 대운은 「앞으로의 나」. */
+export const productTitle = (key: string) => { const b = bookForProduct(key); return b ? readerTitle(b, key === "annual_fortune" ? String(annualProductYear()) : "") : "결리포트"; };
+/** AM 3부 매출 봇: 대운 결제가 카탈로그 가격보다 낮으면 세운 → 대운 연결 할인(공개 할인은 이것 하나). */
+export const discountLabel = (o: Pick<OrderFacts, "productType" | "amount">) => (o.productType === "major_fortune" && o.amount < reportPriceKrw("major_fortune") ? "대운 · 세운 연결 할인" : null);
 
 /** 결제수단: 간편결제면 제공사(카카오페이·토스페이…), 아니면 토스 method(카드 등). */
 export function methodLabel(p: { method?: unknown; easyPay?: unknown } | null): string | null {
@@ -95,7 +100,8 @@ export const TEST_TAG = "🧪 시험(집계 제외)";
 const tagged = (test: boolean | undefined, line: string) => (test ? `${TEST_TAG} · ${line}` : line);
 export function salesPaymentText(o: OrderFacts, method: string | null, today: Stats): string {
   const src = sourceWord(o.source);
-  return [tagged(o.test, `💳 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))}`),
+  const dl = discountLabel(o);
+  return [tagged(o.test, `💳 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))}${dl ? ` · ${esc(dl)}` : ""}`),
     [method ?? "결제수단 확인 못 함", o.firstPaid ? "신규" : "재구매", hm(o.paidAt), ...(src ? [src] : [])].map(esc).join(" · "),
     `오늘 ${today.payCount}건 · ${won(today.paySum)}`].join("\n");
 }

@@ -60,7 +60,7 @@ describe("대운·세운 판매 중지: 승인 전 주문은 토스 승인을 �
     ["major_fortune", "ready", undefined, true], ["annual_fortune", "ready", undefined, true],
     ["saju_mbti_full", "ready", undefined, false], ["major_fortune", "paid", undefined, false], ["annual_fortune", "ready", "1", false],
   ] as const)("%s(%s, FORTUNE_SALES_OPEN=%s) → 막음 %s", async (product, status, open, blocked) => {
-    if (open) vi.stubEnv("FORTUNE_SALES_OPEN", open);
+    if (open) { vi.stubEnv("FORTUNE_SALES_OPEN", open); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "5900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "3900"); }
     const store = storeWith(order(product, status)), confirm = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: "o-1", amount: 1490, status: "DONE" } }));
     expect(await closedProductOrder(store, "o-1")).toBe(blocked);
     store.call.mockClear();

@@ -9,7 +9,7 @@ import { birthTimeSlotOptions } from "../../lib/saju/birthTimePrecisionTypes";
 import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
 import { JOBS, RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
 import { Publishing } from "../../app/dev/book-preview/BookPages";
-import { BookCheckout, CHECKOUT_RETURN_BACKUP_KEY } from "./BookCheckout";
+import { BookCheckout, CHECKOUT_RETURN_BACKUP_KEY, type MajorDiscountView } from "./BookCheckout";
 import s from "../../app/dev/book-preview/book.module.css";
 import f from "./flow.module.css";
 import { interaction } from "../../lib/analytics/client";
@@ -64,10 +64,27 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(initial ?? emptyBookForm(policy.currentYear)), [step, setStep] = useState(0), [ready, setReady] = useState(false);
+  // AM 3부: 세운 책의 「대운으로 이어 보기」(?from=세운 책 id) — 세운 입력(같은 사람)을 채우고 바로 주문서로, 할인 금액은 서버 판정.
+  const [discount, setDiscount] = useState<MajorDiscountView | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({}), [message, setMessage] = useState(""), [checking, setChecking] = useState(false), [publishing, setPublishing] = useState(false), [decoration, setDecoration] = useState(0);
   const scroll = useRef<HTMLDivElement>(null), validationId = useRef(0), reachedStep = useRef(0);
   const draftWritable = useRef(true);
   const total = ["love", "annual"].includes(book.id) ? 3 : 2, receipt = step === total;
+  useEffect(() => {
+    if (book.productKey !== "major_fortune" || typeof window === "undefined") return;
+    const from = new URLSearchParams(window.location.search).get("from"); if (!from) return;
+    let live = true;
+    void fetch(`/api/major-discount/quote?from=${encodeURIComponent(from)}`, { cache: "no-store" }).then(r => r.json()).then((r: { ok?: boolean; message?: string; amount?: number; original?: number; until?: string; person?: Record<string, unknown> | null; userContext?: Record<string, unknown> | null }) => {
+      if (!live) return;
+      if (!r.ok || !r.person) { if (r.message) setMessage(r.message); return; }
+      const p = r.person, c = r.userContext ?? {};
+      const mode = p.birthTimeUnknown === true ? "unknown" : p.birthTime ? "exact" : p.approximateBirthTimeSlot ? "approximate" : "unknown";
+      setState(st => ({ ...st, person: { ...st.person, name: String(p.name ?? ""), birthDate: String(p.birthDate ?? ""), birthTime: String(p.birthTime ?? ""), birthTimeUnknown: p.birthTimeUnknown === true, paidBirthTimeMode: mode, timeBranch: (p.approximateBirthTimeSlot ?? "") as never,
+        gender: String(p.gender ?? ""), mbtiType: String(p.mbtiType ?? ""), relationshipStatus: String(c.relationshipStatus ?? ""), jobStatus: String(c.jobStatus ?? ""), detailedJob: String(c.detailJob ?? "") } }));
+      setDiscount({ from, amount: Number(r.amount), original: Number(r.original), until: String(r.until ?? "") }); setStep(total);
+    }).catch(() => undefined);
+    return () => { live = false; };
+  }, [book.productKey, total]);
   const pair = book.id === "compatibility", roles = compatibilityRoleLabels(state.category), requiredGender = ["major", "annual"].includes(book.id);
   const payload = bookInputPayload(book, state), title = readerTitle(book, state.person.selectedYear);
   useEffect(() => {
@@ -161,7 +178,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     {internal && publishing ? <div data-observed-status="REQUESTED" data-intermediate-states="decorative"><Publishing book={book} name={state.person.name} state={PUBLISHING_STATES[decoration]} notice="내부 검수 · 실제 결제 없음" /><p className={f.status} role="status">책을 생성하고 있습니다. 종이·제본 움직임은 연출이며 진행률이 아닙니다.</p></div> : null}
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">
-      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Book} giftEventProducts={giftEventProducts} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
+      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} {...(discount ? { discount } : {})} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Book} giftEventProducts={giftEventProducts} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
         <p className={s.eyebrow}>{title} / {String(step + 1).padStart(2, "0")}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
         {step === 0 ? <>{pair ? <label>관계 유형<select value={state.category} onChange={e => update({ ...state, category: e.target.value as CompatibilityRelationshipType })}>{CATEGORIES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} errors={errors} now={now} requiredGender={false} /> : null}</> : null}
         {step === 1 ? <div className={s.fields}><MbtiInput person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} role={pair ? roles.personA : ""} />{pair ? <MbtiInput person={state.personB} change={p => update({ ...state, personB: p })} role={roles.personB} /> : <>
