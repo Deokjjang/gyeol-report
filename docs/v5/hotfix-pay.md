@@ -56,6 +56,11 @@
 - migration `20261110200000` 운영 적용 **2026-11-10 17:50 KST**(CLI 임시 폴더). 적용 뒤: 기록 마지막 20261110200000, `ops_test_user` 있음, 누나 계정 = 시험, 네 함수 패치 확인, 목록 1개(관리자 id는 새 코드의 1분 크론이 더한다).
 - master 병합·배포: 아래 「배포 기록」(v5/main에 적는다 — master에 문서만 올리면 운영 배포가 한 번 더 돈다).
 
+### 배포 기록
+- master `95c59368`(트리 = 시험한 브랜치 `f163390f`) push 17:51:45 KST → `dpl_5SRpJYdhTxcLBLFHugSWGFrmdUSr` READY 17:53:50 KST(icn1, www.gyeolreport.com). 롤백 기준 `dpl_EduYZoGyjsVtcM7yCELEUnVLSsAr` / `36d08bf4`.
+- 배포 뒤 확인: 운영 /report/new 화면 묶음 15개에 「결제수단 선택」 1곳·`flowMode:"DIRECT"` 2곳·`"DEFAULT"` 0곳·누나 계정 id 0곳. 1분 크론이 시험 계정 목록을 맞춤(17:55:14 KST, 2개 = 관리자 1 + 누나, 누나 포함 확인 — id는 기록하지 않음). 최근 30분 실패 알림 0, Vercel 실행 오류 0(배포 뒤 15분).
+- 운영 결제창을 실제로 연 확인은 하지 않았다(운영 계정 로그인·주문 생성 필요) → 「남은 일」 실기기 확인.
+
 ## 5. 롤백
 
 - 화면·결제: Vercel 운영 배포를 `dpl_EduYZoGyjsVtcM7yCELEUnVLSsAr`(master `36d08bf4`)로 되돌린다.
