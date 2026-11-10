@@ -4,7 +4,7 @@
 
 ## 1. 결론과 항목별 판정
 
-**배포 완료(1차).** 정정 배포는 9절. 운영 migration 2개 적용(2026-11-10 20:03 KST) → `v5/free-book-01 → v5/main → master` → Production `dpl_3DxC9hK59ECghAV3wp8ZgL8eTkab`(READY 20:07 KST, www.gyeolreport.com). 캠페인 시작 `SIGNUP_CAMPAIGN_START = 2026-11-10 20:00 KST`(배포보다 앞 — 배포 뒤 가입자는 모두 대상), 끝 = 1+1 끝 2026-11-30 23:59:59 KST. 운영 실가입 1건 흐름(카카오·구글 실제 로그인 → 이용권 → 책)은 덕짱님 실전 확인이 남았다(8절).
+**배포 완료(1차).** 정정 배포는 9절(9-4 증정 문구·시험 계정 표·퍼널 유입, 9-5 결제 증정 이용권 기한 = 받은 날부터 30일). 운영 migration 2개 적용(2026-11-10 20:03 KST) → `v5/free-book-01 → v5/main → master` → Production `dpl_3DxC9hK59ECghAV3wp8ZgL8eTkab`(READY 20:07 KST, www.gyeolreport.com). 캠페인 시작 `SIGNUP_CAMPAIGN_START = 2026-11-10 20:00 KST`(배포보다 앞 — 배포 뒤 가입자는 모두 대상), 끝 = 1+1 끝 2026-11-30 23:59:59 KST. 운영 실가입 1건 흐름(카카오·구글 실제 로그인 → 이용권 → 책)은 덕짱님 실전 확인이 남았다(8절).
 
 | 항목 | 판정 | 근거(명령·수치) |
 |---|---|---|
@@ -393,4 +393,53 @@ returning user_id;
 - 바꾼 시험: `eventTickets`(시간 이동: 11-20 12:00에 받은 이용권·받은 선물이 **12-01 0시에도 쓸 수 있고** 12-20 11:59:59까지, 12:00:00에 끝남. 누나 계정 보상 5장은 12-06 11:06:46 그대로), `libraryShelf`(보상 11-30 그대로·결제 증정 +30일·서재 안내 문구), `eventConfig`·`eventPopup`(「받은 날부터 30일 동안」, 「11월 30일까지 쓸」 없음), `accountOps`·`final3TicketsReading`(+30일, 보상 11-30), `termsPolicy`·`refundPolicy`(새 문장·변경 이력 첫 줄), `opsBots`(12-30 23:59:59 `event` · 12-31 0시 `event_over`), `checkoutReceipt`.
 - 바꾼 시험 + F·공유 회귀(`bookShareV5`·`bookShareWebkit`) 24파일 **304개 통과**. `pnpm exec tsc --noEmit` 0 · `pnpm lint` 0 · `pnpm build` 0. 화면 묶음: 새 문구 있음, 약관 옛 문장(「날짜까지입니다(이번 이벤트 이용권은」) 0건(남은 「이번 이벤트 이용권은」은 변경 이력 옛 줄), `REPORT_ADMIN_SECRET`·`service_role` 0건.
 - `pnpm test` 전체(브랜치 vs 기준 HEAD `2ea6bb13`, 같은 기계에서 나란히): 브랜치 31,937개 중 실패 855 · 기준 31,928개 중 실패 856(모두 기존 실패). 브랜치에만 있던 실패 5개를 단독 재실행 → `ticketPublication`·`customerDayunGeneration`·`productionTestDataCleanupMigration` 통과(전체 실행 중 시간 초과), `publicationSafety` 2개(love·parent-child)·`knowledgeSourceVerification` 2개(12·21)는 기준에서도 단독 실행에서 똑같이 실패(기존). **신규 실패 0.**
+
+#### 병합·배포
+
+| 단계 | SHA(로컬 = 원격 확인) |
+|---|---|
+| `v5/free-book-01` push | `2ceee54d0932acc6dce1e3eb4c5cf58f2783f1ee` |
+| `v5/free-book-01 → v5/main`(release-v5-main, 트리 = 브랜치) | `59b11913a033be8e79815bcdada49927e69bdcfe` |
+| `v5/main → master`(release-master, 트리 = v5/main) push 00:11:36 KST | `b4805806e7cd8d1e51c7eb96111d4a3b7b689a77` — **9-4 기록도 이번에 master로 들어감**(그 전 master는 9-4가 `TODO_FIX_VERIFY` 한 줄, 기록 커밋 `2ea6bb13`이 v5/main까지만 병합돼 있었다) |
+| Production 배포(Git 연동) | **`dpl_76V2a59DjJbWdi4cpXHiFcZ9Ravh`** 만든 시각 00:11:38 → READY 00:13:47 KST(production, icn1), 별칭 www.gyeolreport.com · gyeolreport.com, 커밋 `b4805806`. 되돌리기 후보: 직전 `dpl_AfCqoJ8ucUBZtynsSYxLuBM8Zoto` |
+
+#### 운영 migration(배포 READY 뒤, CLI 임시 폴더: 적용된 37개 이름의 빈 파일 + 새 1개 `cmp` 일치 → dry-run이 새 1개만 → 00:14:50~00:15:05 KST 적용)
+
+| 확인 | 전(00:14:31 KST) | 후(00:15:19 KST) |
+|---|---|---|
+| migration 수 · 마지막 | 37 · 20261111101000 | **38 · 20261111110000** |
+| 대상(event, 기한 < 발급 + 30일 − 1분) | **2장** | **0장** |
+| event 이용권 | `22e5beb2…` 선물 받음(11-06 20:20 발급) 11-30 23:59:59 · `f8f7e791…` 내가 씀(11-10 18:29 발급) 11-30 23:59:59 | `22e5beb2…` **12-06 20:20:45** · `f8f7e791…` **12-10 18:29:14**(상태 그대로) |
+| 멈춤 조건 | expired event 0 · 원장에 남은 event 장 0 | — |
+| `ticket_expiry_adjustments` | 120줄 | 122줄(+2, reason `F_EVENT_TICKET_30D`, old 11-30 23:59:59 → new 위 값) |
+| 보상(comp) | 47장, 기한 11-30 23:59 ~ 12-06 11:06(누나 계정 5장) | 그대로 |
+| 가입(signup) | 0장 | 0장 |
+| 원장 이용권(그 2장이 옮겨 간 `gift-claim:22e5…`·`gift-self:f8f7…`) | 11-30 23:59:59, 둘 다 이미 책을 만듦(남은 장 0) | 그대로(바꿀 수 없는 기록, 남은 장이 없어 고객 영향 0) |
+| 선물 전체 · 원장 지급 · 주문 | 49 · 37 · 110 | 49 · 37 · 110 |
+| 함수 md5 | ops_gift `5ad6599c` · ops_signup `c1ef795f` · ops_funnel `1c9db3c9` · ops_test_user `64118b32` | 같음(함수 변경 0) |
+
+- **대상 수 정리: 늘린 event 이용권 2장(적용 전 2 → 적용 후 남은 대상 0).** 두 장 모두 이미 쓴 이용권이라 고객이 쓸 수 있는 장수·기한 변화는 없다(기록만 맞춤). 이제부터 나가는 이용권은 받은 날부터 30일.
+- 되돌리기: `update public.gift_rewards g set expires_at=a.old_expires_at from public.ticket_expiry_adjustments a where a.reason='F_EVENT_TICKET_30D' and a.target='gift_rewards' and g.id::text=a.row_key;` + 코드는 직전 배포로.
+
+#### 배포 직후 확인(00:14~00:17 KST, 운영 주소 `www.gyeolreport.com`)
+
+- `/api/gift-event`: `phase:during`, 끝 11-30(경계 12-01 00:00 KST), **`ticketDays:30`**(옛 `ticketExpiresAt` 없음), `signup.active:true`·7일.
+- `/terms` HTML: 「결제 1건마다 증정하는 이용권은 받은 날부터 30일, 이번 보상 이용권은 2026년 11월 30일 23:59:59까지, 가입 이용권은 받은 날부터 7일」 1 · 변경 이력 「2026년 11월 11일 개정(문서 개정 …」 1 · 옛 문장 「날짜까지입니다(이번 이벤트 이용권은」 0. apex는 308 → www.
+- 실제 브라우저(iPhone 13 WebKit, 손님, **「시험」 브라우저 표시(쿠키·저장소)를 먼저 넣어 기록을 남기지 않음**): 메인 팝업 ①(`event-1plus1`) 「이용권은 받은 날부터 30일 동안 쓸 수 있어요」 있음 · 메인 배너 같은 문장 있음 · 화면 글에 「11월 30일까지 쓸 수 있어요」·「1+1」 0 · 화면 오류 0 · 나간 요청은 `GET /api/analytics/meta`(시험 표시 → 픽셀 안 엶)뿐, 퍼널 전송 0. 캡처 `captures/prod-main-popup-30d.png`·`prod-main-banner-30d.png`.
+- 회원 화면(서재 「리포트 이용권 N장 · ○월 ○일까지」·결제 화면 「남은 이용권 N장 · ○월 ○일까지」·영수증 줄)은 운영 로그인 없이 볼 수 없어 **운영 화면은 UNVERIFIED** — 시험(`libraryShelf`·`checkoutReceipt`·`eventTicket30d` 지갑 값)과 DB 기한 값으로 확인. 지금 운영에 남은(쓸 수 있는) event 이용권이 0장이라 그 줄에 event 날짜가 보일 고객도 0명.
+- 봇: `ops_settings.telegram_webhook` ops·sales 둘 다 `dpl_76V2a59DjJbWdi4cpXHiFcZ9Ravh`(00:15:16 KST) → 1분 크론이 새 배포에서 두 봇을 다시 등록. 가입 지급 `signup_grant` `on:true` 그대로.
+- Vercel 런타임 오류(최근 15분) 0.
+
+#### 배포 30분 뒤 확인
+
+| 확인(00:44 KST) | 결과 |
+|---|---|
+| Vercel 런타임 오류(최근 35분) | **0건** |
+| `/api/gift-event` · `/terms` | `ticketDays:30` 그대로 · 약관 새 문장 1 |
+| 크론·봇 | `telegram_webhook` ops·sales = `dpl_76V2a59DjJbWdi4cpXHiFcZ9Ravh` 그대로. `ops_notifications` 최근 35분 0(경보 조건 없음) |
+| 이용권 | migration 38 그대로, 대상(옛 기한 event) 0, 기록표 122. 최근 35분 주문 0·결제 0 → **새 event 이용권 0장**(운영에서 「발급 = 받은 시각 + 30일」은 아직 실제 발급으로 보지 못함 — 시험 `eventTicket30d`·`eventTickets`로 확인, 다음 결제 1건에서 `expires_at − created_at = 30일`을 보면 된다: `select created_at, expires_at, expires_at-created_at from gift_rewards where kind='event' order by created_at desc limit 3;`) |
+| 가입 이용권 | `signup_grant` `on:true` 그대로, 가입 이용권 0장(같은 시간 신규 가입 없음) |
+| 메타 대기열 | `meta_conversion_outbox` 0 |
+
+- 이 기록 커밋도 `v5/main`·`master`까지 병합한다(9-4가 master에 빠졌던 것과 같은 일이 없게). master push는 배포를 하나 더 만든다(문서만 바뀜, 코드 같음).
 
