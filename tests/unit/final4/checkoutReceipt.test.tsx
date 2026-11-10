@@ -3,6 +3,7 @@
  * 맨 아래 작은 회색 두 줄(환불 / AI 작성), 동의 기록에 화면 판·문구·체크 시각.
  * 운영 Q: 「예시 보기」는 동의 칸 바로 옆 링크 둘(환불정책 · 예시 리포트 보기)로 옮겼고, 「이 책의 차례」(접힘)를 보인다.
  */
+import { isValidElement, type ReactElement, type ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { AccountSession } from "../../../src/lib/account/policy";
@@ -17,7 +18,10 @@ vi.mock("../../../src/components/account/AccountSession", () => ({ useAccountSes
 vi.mock("../../../src/components/book/useTicketPublication", () => ({ checkoutReturnKey: () => "return", useTicketPublication: () => ({ pending: state.pending, loaded: true, message: "", retryable: false, revision: 0, submitting: false, completedUrl: null, submit: vi.fn() }) }));
 const interaction = vi.hoisted(() => vi.fn());
 vi.mock("../../../src/lib/analytics/client", () => ({ interaction, syncLocalFacts: vi.fn() }));
-import { BookCheckout, GIFT_EVENT_RECEIPT_LINE } from "../../../src/components/book/BookCheckout";
+const launch = vi.hoisted(() => vi.fn(async () => ({ ok: true as const, status: "redirect_requested" as const })));
+vi.mock("../../../src/components/payment/DevTossCheckoutLauncher", async original => ({ ...await original<typeof import("../../../src/components/payment/DevTossCheckoutLauncher")>(), runDevTossCheckout: launch }));
+import { BookCheckout, GIFT_EVENT_RECEIPT_LINE, PAY_METHODS } from "../../../src/components/book/BookCheckout";
+import { DetailSheet } from "../../../src/app/dev/book-preview/BookLegal";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import type { ReportInputPayload } from "../../../src/lib/report-generation/reportInputTypes";
 import { AI_WRITTEN_RECEIPT_LINE_KO, RECEIPT_REFUND_LINE_KO, RECEIPT_TICKET_REFUND_LINE_KO } from "../../../src/lib/legal/aiNotice";
@@ -31,7 +35,7 @@ const payload = RUNTIME_FIXTURES[0].payload as ReportInputPayload;
 const base = { payload, now: "2026-11-08T00:00:00Z", internal: false, authEnabled: true, v5Book: true, onError() {}, onPublishing() {} };
 const render = (extra: Record<string, unknown> = {}) => { hooks.index = 0; hooks.effects = []; return renderToStaticMarkup(<BookCheckout {...base} {...extra} />); };
 const text = (html: string) => html.replace(/<[^>]+>/g, "");
-beforeEach(() => { hooks.slots = []; state.session = { status: "guest" }; state.pending = false; interaction.mockClear(); });
+beforeEach(() => { hooks.slots = []; state.session = { status: "guest" }; state.pending = false; interaction.mockClear(); launch.mockClear(); });
 afterEach(() => { vi.unstubAllGlobals(); });
 
 describe("발행 주문서 (최종 A 16)", () => {
@@ -184,5 +188,48 @@ describe("동의 기록(증명용) ui", () => {
     // 예전 화면 값(환불정책 칸 따로 없음)은 policyAgreement가 refundAccepted까지 덮는다.
     const legacy = { inputAccuracy: true, digitalReportStart: true, refundRestriction: true, policyAgreement: true, age14OrOlder: true, minorLegalRepresentative: false };
     expect(createCheckoutConsentAssertion(legacy).assertions.refundAccepted).toBe(true);
+  });
+});
+
+// 2026-11-10 결제수단 긴급 수정: 통합결제창(DEFAULT)에 계약하지 않은 카드·페이코·삼성페이가 보였다 → 우리 하단 시트의 두 버튼 → DIRECT.
+type P = Record<string, unknown> & { children?: ReactNode };
+const els = (n: ReactNode): ReactElement<P>[] => Array.isArray(n) ? n.flatMap(els) : isValidElement<P>(n) ? [n, ...els(n.props.children)] : [];
+const label = (el: ReactElement<P>) => ([] as unknown[]).concat(el.props.children).join("");
+function receipt() {
+  hooks.index = 0;
+  const outer = BookCheckout(base) as ReactElement<P>;
+  return els((outer.type as (p: P) => ReactNode)(outer.props));
+}
+describe("결제하기 → 결제수단 시트(카카오페이·토스페이) → 고른 수단으로 바로", () => {
+  it("결제하기는 결제 준비 없이 시트만 열고, 시트에는 두 버튼(카카오페이 → 토스페이)만 — 누른 수단으로 한 번만 결제창을 연다", async () => {
+    state.session = { status: "member", profile: "complete" } as AccountSession;
+    vi.stubGlobal("document", { hidden: false });
+    vi.stubGlobal("window", { addEventListener() {}, removeEventListener() {} });
+    vi.stubGlobal("fetch", vi.fn(async () => Response.json({ wallet: { usable: 0, usableExpiresAt: null } })));
+    receipt();
+    const cleanups = hooks.effects.map(fx => fx());
+    await new Promise(r => setTimeout(r, 0));
+    try {
+      const box = receipt().find(el => el.type === "label" && label(el).endsWith("전체 동의"))!;
+      const all = els(box.props.children).find(el => el.type === "input");
+      expect(all).toBeTruthy();
+      (all!.props.onChange as (e: unknown) => void)({ target: { checked: true } });
+      const order = receipt().find(el => el.type === "button" && label(el).startsWith("결제하기"))!;
+      expect(order.props.disabled).toBe(false);
+      expect(receipt().some(el => el.type === DetailSheet && el.props.title === "결제수단 선택")).toBe(false);
+      await (order.props.onClick as () => Promise<void>)();
+      expect(launch).not.toHaveBeenCalled();
+      const sheet = receipt().find(el => el.type === DetailSheet && el.props.title === "결제수단 선택")!;
+      const buttons = els(sheet.props.children).filter(el => el.type === "button");
+      expect(PAY_METHODS).toEqual([{ easyPay: "KAKAOPAY", label: "카카오페이" }, { easyPay: "TOSSPAY", label: "토스페이" }]);
+      expect(buttons.map(b => [b.props["data-easy-pay"], label(b)])).toEqual([["KAKAOPAY", "카카오페이"], ["TOSSPAY", "토스페이"]]);
+      expect(buttons.every(b => b.props.disabled === false)).toBe(true);
+      await (buttons[0].props.onClick as () => Promise<void>)();
+      await (buttons[1].props.onClick as () => Promise<void>)(); // 이미 잠김 — 두 번째 결제창 없음
+      expect(launch).toHaveBeenCalledTimes(1);
+      expect(launch.mock.calls[0]).toEqual([expect.anything(), expect.anything(), undefined, expect.objectContaining({ productType: "saju_mbti_full", easyPay: "KAKAOPAY" })]);
+      // 결제창을 열기 전에 시트를 닫는다(PC 토스 결제창이 모달 아래에 깔리지 않게).
+      expect(receipt().some(el => el.type === DetailSheet && el.props.title === "결제수단 선택")).toBe(false);
+    } finally { for (const c of cleanups) if (typeof c === "function") c(); }
   });
 });

@@ -18,6 +18,8 @@ export type NotifyDeps = {
   /** 운영 설정 읽기(ops_settings, 웹훅 기록). */
   setting(key: string): Promise<Record<string, unknown> | null>;
   putSetting(key: string, value: Record<string, unknown>): Promise<boolean>;
+  /** 시험 계정 id(testAccountIds). 있으면 1분 크론이 DB 목록(ops_settings 'test_accounts')을 이 값으로 맞춘다. */
+  testAccounts?: readonly string[];
 };
 
 // ── 한국 날짜 구간 ───────────────────────────────────────────────
@@ -207,6 +209,8 @@ export async function runNotifyCycle(deps: NotifyDeps, opts: { webhooks?: { conf
   const out: Record<string, unknown> = {};
   const step = async (name: string, f: () => Promise<unknown>) => { try { out[name] = await f(); } catch { out[name] = "error"; } };
   if (opts.webhooks) await step("webhooks", () => ensureWebhooks(deps, opts.webhooks!.config, opts.webhooks!.deploymentId, opts.webhooks!.full));
+  // 집계(ops_notify 'stats')와 「시험」 표시가 읽는 시험 계정 목록. 같은 값이면 DB가 고치지 않는다.
+  if (deps.testAccounts?.length) await step("testAccounts", () => deps.putSetting("test_accounts", { ids: [...deps.testAccounts!] }));
   await step("unpublished", async () => (await deps.notify.call("scan_unpublished", {})).added ?? 0);
   await step("flush", () => flushNotifications(deps));
   await step("reconcile", () => reconcileOpen(deps));

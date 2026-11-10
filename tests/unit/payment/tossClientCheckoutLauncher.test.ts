@@ -72,11 +72,13 @@ function createLaunchInput(
 ): {
   readonly tossCheckoutRequest: TossCheckoutRequestDraft;
   readonly customerKey: string;
+  readonly easyPay: "TOSSPAY" | "KAKAOPAY";
   readonly loadTossPayments: typeof harness.loadTossPayments;
 } {
   return {
     tossCheckoutRequest: requestDraft,
     customerKey: "customer_key_launcher_test",
+    easyPay: "TOSSPAY",
     loadTossPayments: harness.loadTossPayments,
   };
 }
@@ -96,8 +98,8 @@ function expectError(
 }
 
 describe("Toss client checkout launcher", () => {
-  // 2026-11-06: 결제창 기본 화면(통합결제창, flowMode DEFAULT). 고객이 토스 결제창 안에서 수단을 고른다 — easyPay는 넣지 않는다.
-  it.each([undefined, "TOSSPAY", "KAKAOPAY", "NAVERPAY"])("opens the DEFAULT window without easyPay (caller easyPay %j ignored) and preserves every prepared server field", async easyPay => {
+  // 2026-11-10: 통합결제창(DEFAULT)은 계약하지 않은 카드·페이코·삼성페이까지 보인다 → 고객이 우리 화면에서 고른 간편결제로 바로(DIRECT).
+  it.each(["KAKAOPAY", "TOSSPAY"] as const)("opens %s directly (method CARD + DIRECT) and preserves every prepared server field", async easyPay => {
     const harness = createLaunchHarness();
     const result = await launchTossCheckout({
       ...createLaunchInput(harness), easyPay,
@@ -108,12 +110,17 @@ describe("Toss client checkout launcher", () => {
       },
     });
     expect(result.ok).toBe(true);
-    expect(harness.requestPayment).toHaveBeenCalledTimes(1);
-    expect(harness.requestPayment).toHaveBeenCalledWith({
-      ...requestDraft.requestPayment, card: { flowMode: "DEFAULT" },
+    expect(harness.requestPayment).toHaveBeenCalledExactlyOnceWith({
+      ...requestDraft.requestPayment, card: { flowMode: "DIRECT", easyPay },
     });
     expect(harness.requestPayment.mock.calls[0][0].method).toBe("CARD");
-    expect(JSON.stringify(harness.requestPayment.mock.calls[0][0])).not.toContain("easyPay");
+    expect(JSON.stringify(harness.requestPayment.mock.calls[0][0])).not.toContain("DEFAULT");
+  });
+  it.each([undefined, "NAVERPAY", "PAYCO", "SAMSUNGPAY", "kakaopay"])("refuses easyPay %j before loading the SDK (no window with uncontracted methods)", async easyPay => {
+    const harness = createLaunchHarness();
+    expectError(await launchTossCheckout({ ...createLaunchInput(harness), easyPay }), "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST");
+    expect(harness.loadTossPayments).not.toHaveBeenCalled();
+    expect(harness.requestPayment).not.toHaveBeenCalled();
   });
 
   it("loads the Toss SDK with client key and requests redirect checkout", async () => {
@@ -129,7 +136,7 @@ describe("Toss client checkout launcher", () => {
       customerKey: "customer_key_launcher_test",
     });
     expect(harness.requestPayment).toHaveBeenCalledWith(
-      { ...requestDraft.requestPayment, card: { flowMode: "DEFAULT" } },
+      { ...requestDraft.requestPayment, card: { flowMode: "DIRECT", easyPay: "TOSSPAY" } },
     );
   });
 

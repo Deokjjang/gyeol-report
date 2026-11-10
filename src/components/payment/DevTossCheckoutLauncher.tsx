@@ -10,7 +10,7 @@ import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { prePaymentRefundNoticeKo } from "../../lib/legal/refundPolicy";
 import type { ReportProductType } from "../../lib/payment/reportProductTypes";
 import { loadTossPaymentsBrowserSdk } from "../../lib/payment/tossBrowserSdkLoader";
-import { launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
+import { isSupportedEasyPay, launchTossCheckout } from "../../lib/payment/tossClientCheckoutLauncher";
 import type { SupportedEasyPay, TossClientCheckoutLaunchResult, TossClientSdkLoader } from "../../lib/payment/tossClientCheckoutTypes";
 
 const DEV_TOSS_CHECKOUT_CUSTOMER_KEY = "gyeol_local_test_customer";
@@ -71,8 +71,8 @@ export type DevTossCheckoutLauncherRuntime = {
 
 type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
-  /** 예전 두 버튼 화면(토스페이·카카오페이)의 표시용. 2026-11-06부터 결제 요청에는 넣지 않는다 — 결제창 기본 화면에서 고객이 고른다. */
-  readonly easyPay?: SupportedEasyPay;
+  /** 2026-11-10: 고객이 고른 간편결제(카카오페이·토스페이). 결제창은 이 수단으로 바로 열린다(DIRECT). 없거나 다른 값이면 결제 준비도 하지 않는다. */
+  readonly easyPay: SupportedEasyPay;
   /** P6d-ops: 비회원 구매자 정보(회원은 서버가 가입 정보를 쓴다). */
   readonly buyer?: { readonly name: string; readonly email: string; readonly emailConfirm: string; readonly phone?: string };
   /** 최종 A 20: 결제 준비가 끝나 토스 결제창을 여는 바로 그 순간에 한 번(Meta InitiateCheckout). 준비 실패·입력 오류면 부르지 않는다. */
@@ -190,7 +190,7 @@ export async function runDevTossCheckout(
   runtime: DevTossCheckoutLauncherRuntime = defaultRuntime,
   options: DevTossCheckoutRunOptions,
 ): Promise<DevTossCheckoutLauncherResult> {
-  if (!options) {
+  if (!options || !isSupportedEasyPay(options.easyPay)) {
     return createFailureResult();
   }
   if (!isDevTossCheckoutInputComplete(inputSnapshot)) {
@@ -258,6 +258,7 @@ export async function runDevTossCheckout(
       tossCheckoutRequest: body.tossCheckoutRequest,
       // TODO: production customerKey must be stable and non-guessable.
       customerKey: DEV_TOSS_CHECKOUT_CUSTOMER_KEY,
+      easyPay: options.easyPay,
       loadTossPayments: runtime.loadTossPayments,
     });
   } catch {
