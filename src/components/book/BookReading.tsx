@@ -16,8 +16,23 @@ import { ReferralBookCta } from "./ReferralBookCta";
 import { interaction } from "../../lib/analytics/client";
 import { readableBookText } from "../../lib/book/readerCopy";
 
-/** example(최종 A 15, /example): 맨 위 작은 회색 표시(tag)와 끝 쪽 버튼(cta)만 바꾼다 — 공유·서재 저장은 없음. */
-export function BookReading({ data: stored, edition, today, share, home = "/", saveToLibrary, shareOwner, shared = false, local = false, example }: { data: BookData; edition?: string; today?: string; share: BookShareModel; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; shared?: boolean; local?: boolean; example?: { tag: string; cta: { label: string; href: string } } }) {
+/** F 책 끝 연결(주인 화면만 — 받은 사람의 공유 화면·예시에는 없다). 공유 버튼(링크 복사·카카오톡·공유하기)은 그대로 두고 그 아래에 둔다. */
+export const BOOK_END_SIGNUP_LINE = "무료로 받은 책은 어떠셨나요? 마음에 드셨다면 다른 이야기도 만나 보세요.";
+export const BOOK_END_EVENT_LINE = "1+1 진행 중: 한 권 결제하면 이용권 1장을 더 드려요. 친구에게 선물할 수도 있어요.";
+export const BOOK_END_CTA = "다른 책 고르기";
+export type BookEndNoticeView = { event: boolean; signup: boolean };
+export function BookEndNotice({ view, home = "/" }: { view: BookEndNoticeView; home?: string }) {
+  if (!view.event && !view.signup) return null;
+  return <section className={shareStyle.endNotice} aria-label="다른 책 고르기" data-book-end-notice={view.signup ? "signup" : "paid"}>
+    {view.signup ? <p data-book-end-signup>{BOOK_END_SIGNUP_LINE}</p> : null}
+    {view.event ? <p data-book-end-event>{BOOK_END_EVENT_LINE}</p> : null}
+    <a className={shareStyle.endCta} href={home} data-book-end-cta>{BOOK_END_CTA}</a>
+  </section>;
+}
+
+/** example(최종 A 15, /example): 맨 위 작은 회색 표시(tag)와 끝 쪽 버튼(cta)만 바꾼다 — 공유·서재 저장은 없음.
+ * endNotice(F): 주인 화면 마지막 쪽의 1+1·가입 이용권 책 안내(서버가 지금 이벤트 기간·이 책이 가입 이용권 책인지 정해 넘긴다). */
+export function BookReading({ data: stored, edition, today, share, home = "/", saveToLibrary, shareOwner, shared = false, local = false, example, endNotice }: { data: BookData; edition?: string; today?: string; share: BookShareModel; home?: string; saveToLibrary?: { reportId: string; local?: boolean }; shareOwner?: { reportId: string; local?: boolean }; shared?: boolean; local?: boolean; example?: { tag: string; cta: { label: string; href: string } }; endNotice?: BookEndNoticeView }) {
   useEffect(() => { interaction(shared && share.referral ? "referral_landing_opened" : "report_opened", share.productType); }, [shared, share.referral, share.productType]);
   const data = readerBook(edition ? { ...stored, edition } : stored, today);
   const [page, setPage] = useState(0), [note, setNote] = useState<BookNote | null>(null), [message, setMessage] = useState(""), [toc, setToc] = useState(false);
@@ -83,7 +98,8 @@ export function BookReading({ data: stored, edition, today, share, home = "/", s
         <BookReader data={data} page={data.pages[page]} onNote={setNote} onPage={jump} onShare={() => { if (local) setMessage("미리보기입니다. 실제 공유나 복사는 실행하지 않습니다."); }}
           shareActions={example ? <a className={shareStyle.cta} href={example.cta.href} data-example-end>{example.cta.label}</a> : shared || shareOwner ? <BookShareActions owner={shared ? undefined : shareOwner} model={shared ? share : undefined} local={local || shareOwner?.local} /> : local ? undefined : <p className={shareStyle.notice}>이 책은 공유할 수 없습니다.</p>}
           backAction={example ? undefined : shared && share.referral ? <ReferralBookCta share={share} local={local} home={home} /> : shared ? <a className={shareStyle.cta} href={home} onClick={() => bookShareEvent("shared_cta_clicked", share.productType, local)}>나도 내 책 만들기 ↗</a>
-            : data.pages[page].kind === "back" && saveToLibrary ? <SaveToLibrary {...saveToLibrary} /> : undefined} />
+            : data.pages[page].kind === "back" && saveToLibrary ? <SaveToLibrary {...saveToLibrary} /> : undefined}
+          endNotice={!example && !shared && shareOwner && endNotice ? <BookEndNotice view={endNotice} home={home} /> : undefined} />
       </div>
       <nav className={s.pageNav} aria-label="책 읽기 위치"><button aria-label="이전 페이지" disabled={!page} onClick={() => turn(page - 1)}>←</button><span><strong>{data.title}</strong><span>{String(page + 1).padStart(2, "0")} / {data.pages.length}</span></span><button aria-label="다음 페이지" disabled={page === data.pages.length - 1} onClick={() => turn(page + 1)}>→</button></nav>
       {turning ? <div className={s.turnLeaf} data-direction={turning} aria-hidden="true"><span>GYEOL REPORT / PERSONAL EDITION</span><div className={s.turnLines}><i /><i /><i /><i /></div></div> : null}

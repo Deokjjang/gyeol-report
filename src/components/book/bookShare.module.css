@@ -45,3 +45,6 @@
 
 .event { max-width:440px; margin-inline:auto; }
 .event .notice,.conditions { font-size:12px; }
+
+/* F 책 끝 연결(주인 화면): 공유 버튼 아래 얇은 선 + 한두 줄 + [다른 책 고르기]. */
+.endNotice{margin:26px auto 0;max-width:420px;border-top:1px solid #d6d6d6;padding-top:18px;text-align:center}.endNotice p{margin:0 0 6px;font-size:13px;line-height:1.7;word-break:keep-all;overflow-wrap:anywhere}.endCta{display:inline-block;margin-top:10px;color:inherit;text-decoration:none;font-size:14px;border-bottom:1px solid;padding:8px 0}

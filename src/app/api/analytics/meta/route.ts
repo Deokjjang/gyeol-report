@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { createAccountPort } from "../../../../lib/account/supabase";
 import { META_CONSENT_COOKIE, META_CONSENT_VERSION, metaConsentValue, metaDefaultOn, metaMaySend, metaOrigin, metaLocalReview, metaCookieName } from "../../../../lib/analytics/metaConsent";
+import { TEST_BROWSER_COOKIE } from "../../../../lib/analytics/funnelModel";
 import { browserMetaEvent, claimMetaBrowserEvents, metaAccountChoice, metaDeliveryReady, metaPublicRequest, metaRequestConsent, metaRequestData, metaUserMatch, recordMetaConsent, transmitMeta } from "../../../../lib/analytics/metaDelivery";
 const json = (body: object, status = 200) => NextResponse.json(body, { status, headers: { "cache-control": "private, no-store", "referrer-policy": "no-referrer" } });
 export async function GET(request: NextRequest) {
@@ -11,6 +12,8 @@ export async function GET(request: NextRequest) {
   // optout = 기본 측정 시행 여부(서버 시계, 덕짱님 결정 2026-11-09). 화면은 이 값으로 카드 판(시행일 전: 동의·거부·자세히 / 뒤: 거부·자세히·확인)과 전송 여부를 정한다.
   const optout = metaDefaultOn();
   if (local) return json({ choice: metaConsentValue(request.cookies.get(metaCookieName(true))?.value), ready: true, optout });
+  // F 추가 3: 「시험」 브라우저(시험 계정으로 로그인한 적이 있는 브라우저)에는 픽셀을 열지 않고 아무것도 보내지 않는다.
+  if (request.cookies.get(TEST_BROWSER_COOKIE)?.value === "1") return json({ choice: null, ready: false, optout, tester: true });
   const ready = metaDeliveryReady(), choice = await metaRequestConsent(request);
   // 시행일 뒤, 설정 쿠키 없는 브라우저(기본 허용)에 로그인 세션이 있으면 그 계정이 다른 곳에서 거부했는지 본다. 거부면 이 브라우저에도 거부 쿠키를 남긴다(DB 기록은 이미 있음).
   // 시행일 전에는 기록 없음 = 보내지 않음이라 볼 필요가 없다(예전 그대로 — DB 호출도 예전과 같음).
@@ -54,6 +57,8 @@ export async function POST(request: NextRequest) {
     // 개인 식별 정보는 선택 동의(choice === true)한 로그인 회원에게만 붙인다(시행일 전에는 DB meta_user_match가 빈 값).
     const choice = metaDeliveryReady() ? await metaRequestConsent(request) : false;
     if (!metaMaySend(choice, metaDefaultOn())) return json({ ok: false, ready: false, choice: choice === false ? false : null }, 202);
+    // F 추가 3: 시험 브라우저의 직접 전송(PageView·ViewContent·InitiateCheckout)·픽셀 거울은 보내지 않는다(DB 대기표는 SQL이 따로 막는다).
+    if (request.cookies.get(TEST_BROWSER_COOKIE)?.value === "1") return json({ ok: false, ready: false, choice: null, tester: true }, 202);
     if (body.poll === true && Object.keys(body).every(k => ["poll", "requestId"].includes(k))) {
       const auth = createAccountPort(request), user = await auth?.currentUser();
       return auth?.finish(json({ ok: true, events: await claimMetaBrowserEvents(request, user?.id ?? null) })) ?? json({ ok: true, events: [] });

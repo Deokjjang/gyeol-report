@@ -10,7 +10,8 @@ const messages: Record<string, string> = {
   GIFT_NOT_FOUND: "선물 링크를 찾지 못했어요. 주소가 맞는지 확인해 주세요. 보낸 분의 주문이 환불되어 선물이 회수됐을 수도 있어요.", GIFT_USED: "이미 사용했거나 받은 선물이에요.", GIFT_EXPIRED: "선물 기간이 지났어요.",
   GIFT_SELF: "내가 보낸 선물은 받을 수 없어요. 링크를 친구에게 보내 주세요.", PROFILE_REQUIRED: "선물을 받으려면 가입 정보(이름·이메일)를 먼저 입력해 주세요.",
   MEMBER_REQUIRED: "로그인한 뒤 받을 수 있어요.", GIFT_LINK_ONLY: "이 이용권은 친구에게 선물하는 용도예요. 선물 링크를 만들어 보내 주세요.", GRANT_FAILED: "이용권을 넣지 못했어요. 잠시 후 다시 시도해 주세요.",
-  NO_GIFTABLE: "선물할 수 있는 이용권이 없어요.", INVALID: "링크를 만들지 못했어요. 다시 시도해 주세요.",
+  NO_GIFTABLE: "선물할 수 있는 이용권이 없어요. 가입 이용권은 선물할 수 없어요.", INVALID: "링크를 만들지 못했어요. 다시 시도해 주세요.",
+  GIFT_NOT_GIFTABLE: "가입 이용권은 선물할 수 없어요.",
 };
 
 /**

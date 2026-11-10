@@ -3,11 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import { MARKETING_CONSENT_LABEL, validateContact } from "../../lib/account/contact";
 import { seoulDateTime } from "../../lib/ops/orders/summary";
 import s from "./ops.module.css";
+import type { PopupEvent } from "../../lib/ops/comp/popupSelect";
 
 type Prefill = { name: string; email: string; emailLocked: boolean; emailFrom?: string | null; emailNotice: string | null };
 
 /** 가입 정보 화면(P6d-ops 2). 로그인 직후 서재 위에 보인다. 마치기 전에도 서재·책 열람은 된다(결제·이용권 사용만 막힘). */
-export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSaved: (next?: string) => void }) {
+/** onSaved(next, joined): joined(F) = 이번 저장이 가입 완료였는지 + 가입 이용권(signupGift: 기한·1+1 공개 정보)을 받았는지. */
+export type ProfileSaved = { joined: boolean; signupGift: { expiresAt: string; event: PopupEvent | null } | null };
+export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSaved: (next?: string, joined?: ProfileSaved) => void }) {
   const [prefill, setPrefill] = useState<Prefill | null>(null), [error, setError] = useState("");
   const [v, setV] = useState({ name: "", email: "", emailConfirm: "", phone: "", marketing: false }), [useProvider, setUseProvider] = useState(false), [busy, setBusy] = useState(false);
   const requestId = useRef("");
@@ -29,7 +32,7 @@ export function ProfileForm({ base = "/auth", onSaved }: { base?: string; onSave
       const r = await fetch(`${base}/profile`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...body, requestId: requestId.current }) });
       const b = await r.json();
       if (!r.ok) { setError(b.error ?? "저장하지 못했어요."); return; }
-      onSaved(typeof b.next === "string" ? b.next : undefined);
+      onSaved(typeof b.next === "string" ? b.next : undefined, { joined: b.joined === true, signupGift: b.signupGift && typeof b.signupGift.expiresAt === "string" ? { expiresAt: b.signupGift.expiresAt, event: b.signupGift.event && typeof b.signupGift.event.phase === "string" ? b.signupGift.event : null } : null });
     } catch { setError("저장하지 못했어요. 다시 시도해 주세요."); }
     finally { setBusy(false); }
   }

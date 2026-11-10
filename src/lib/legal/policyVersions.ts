@@ -35,12 +35,19 @@ export const OPS_Q_POLICY_EFFECTIVE_DATE: string | null = "2026-11-07";
  * 동작 시각은 analytics/metaConsent META_DEFAULT_FROM(2026-12-10 00:00 KST) — 날짜가 같아야 한다(시험이 대조).
  */
 export const META_OPTOUT_POLICY_EFFECTIVE_DATE: string | null = "2026-12-10";
+/**
+ * F(가입하면 내 책 한 권 무료) 문서 개정일 = 이 배포일(KST). 약관 이용권 조항에 가입 이용권·1+1 기간 표시, 처리방침에 가입 이용권 지급 기록(해시)·방문 통계.
+ * 이용자에게 유리하거나(무상 증정 추가·이벤트 연장) 이미 적힌 목적 안의 설명이라 동의 버전은 올리지 않는다(문서 개정 공지 — docs/v5/final4/legal-review.md 「F」 절).
+ */
+export const FREE_BOOK_POLICY_DATE: string | null = "2026-11-10";
 const koreanDate = (iso: string | null) => { if (!iso) return "배포일(확정 전)"; const [y, m, d] = iso.split("-").map(Number); return `${y}년 ${m}월 ${d}일`; };
 /** 이용약관 시행일(한국어). */
 export const POLICY_EFFECTIVE_DATE_KO = koreanDate(POLICY_EFFECTIVE_DATE);
 /** 문서별 시행일(한국어). 세 문서의 「시행일」·변경 이력 첫 줄이 이 값을 쓴다. */
 /** 처리방침 13번(광고 측정 기본 허용) 시행일(한국어). 방침 본문은 2026-11-07 판 + 13번 변경 예정을 함께 싣는다. */
 export const META_OPTOUT_POLICY_EFFECTIVE_DATE_KO = koreanDate(META_OPTOUT_POLICY_EFFECTIVE_DATE);
+/** F 문서 개정일(한국어). */
+export const FREE_BOOK_POLICY_DATE_KO = koreanDate(FREE_BOOK_POLICY_DATE);
 export const POLICY_EFFECTIVE_DATES_KO = {
   terms: POLICY_EFFECTIVE_DATE_KO,
   privacy: koreanDate(OPS_Q_POLICY_EFFECTIVE_DATE),
@@ -50,11 +57,13 @@ export const POLICY_EFFECTIVE_DATES_KO = {
 /** 변경 이력(문서 끝에 그대로 보인다). 최신이 먼저. */
 export const POLICY_HISTORY = {
   terms: [
+    `${FREE_BOOK_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다): 이용권 조항에 「가입 이용권」을 더함(무상 증정, 캠페인 기간에 새로 가입한 회원 1인 1회, 받은 날부터 7일, 4종, 선물·양도 불가, 운영상 지급을 멈출 수 있음, 부정한 방법으로 받으면 회수), 결제 1건마다 이용권 1장 증정 이벤트 기간을 적고 2026년 11월 30일까지로 늘림`,
     `${POLICY_EFFECTIVE_DATE_KO} 시행(현재, 문서 버전 2026-11-06.1): 결제는 로그인한 회원만, 이용권은 결제에 따른 무상 증정(현금 교환·환불 불가), 이용권 기한은 이용권에 표시된 날짜까지(이번 이벤트 이용권은 2026년 11월 30일 23:59:59까지), 이용권으로 만들 수 있는 리포트(4종, 대운·세운 제외), 결제가 환불되면 그 결제로 받은 미사용 이용권(받지 않은 선물 포함) 회수, 이용권으로 만든 책에 오류가 있으면 다시 만들거나 이용권을 다시 드림`,
     "2026년 11월 6일 시행(문서 버전 2026-11-05.1): 판매 상품 4종, 이용권 조항, AI 작성 고지, 리포트 버전별 열람 기간, 서비스 종료 안내(서비스 화면 공지 및 이메일 등)",
     "이전 약관(2026년 9월 24일 시행, 문서 버전 2026-06-14.1)",
   ],
   privacy: [
+    `${FREE_BOOK_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로): 가입 이용권 중복 지급을 막는 기록(로그인 제공자와 회원번호를 되돌릴 수 없게 바꾼 값, 이용권·선물 기록과 같은 기간 보관), 개인을 알아볼 수 없는 방문 통계(날짜·방문 단계·광고 주소의 유입 표시별 횟수만, 회원 식별자·IP 주소·쿠키 식별자 저장 없음)와 브라우저 저장소 항목을 적음`,
     `${META_OPTOUT_POLICY_EFFECTIVE_DATE_KO} 시행(${META_NOTICE_FROM_KO}부터 공지, 문서 개정 — 동의 버전 2026-11-06.1 그대로라 다시 동의하지 않아도 됩니다): 광고 성과 측정을 「동의한 경우에만」에서 「기본으로 보내고 「광고 설정」에서 거부할 수 있음」으로 바꿈(이름·이메일·전화번호 없는 행태정보 — 방문·상품 조회·결제 시작·유료 결제 여부와 시각, 무작위 전환 식별자, 상품·금액, IP 주소·브라우저 정보), 이메일·휴대폰 번호 해시값과 가입 완료 여부는 로그인한 채 따로 동의한 회원만, 13번에 보내는 항목·목적·거부 방법을 표로 정리`,
     `${POLICY_EFFECTIVE_DATES_KO.privacy} 시행(문서 개정 — 동의 버전 2026-11-06.1 그대로): 처리 위탁과 국외 이전에 Telegram Messenger Inc.를 더함(운영자 주문 알림·문의 처리 — 주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보를 알림이 생길 때 텔레그램 봇 API(HTTPS)로 보내고, 처리 후 메시지를 정리), 문의·요청 항목을 요청 종류와 접수 기기·브라우저 종류로 고침(직접 쓰는 칸 없앰)`,
     "2026년 11월 6일 시행(문서 버전 2026-11-06.1): 결제는 회원만 하므로 로그인 없이 결제할 때의 항목과 쿠키를 뺌, v5 이전 리포트의 열람 기간이 끝나면 원고와 입력정보를 지우고 법정 최소 기록(주문번호·상품·금액·일시·상태)만 5년 보관, 결제수단(토스페이·카카오페이) 안내",

@@ -8,7 +8,7 @@ vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: ports
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => ({ call: ports.paid }) }));
 // The real six-product renderer is covered by ticketPublication.test. Here test
 // routing authority and absence of paid/Meta behavior, without a second fixture.
-vi.mock("../../../src/lib/book/storedReport", () => ({ validateBookPublication: vi.fn(), StoredBookReport: ({ shareOwner }: { shareOwner: { reportId: string } }) => <article data-ticket-book>{shareOwner.reportId}</article> }));
+vi.mock("../../../src/lib/book/storedReport", () => ({ validateBookPublication: vi.fn(), bookEndNotice: vi.fn(async () => ({ event: false, signup: false })), StoredBookReport: ({ shareOwner }: { shareOwner: { reportId: string } }) => <article data-ticket-book>{shareOwner.reportId}</article> }));
 vi.mock("../../../src/components/analytics/MetaPurchaseTracker", () => ({ default: () => <div data-meta-purchase /> }));
 import ReportPage from "../../../src/app/reports/[reportId]/page";
 const id = `report_${"a".repeat(32)}`;

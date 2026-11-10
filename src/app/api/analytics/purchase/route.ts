@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createAccountPort } from "../../../../lib/account/supabase";
 import { createSupabaseServerClient } from "../../../../lib/db/supabaseServer";
 import { metaDefaultOn, metaMaySend } from "../../../../lib/analytics/metaConsent";
+import { TEST_BROWSER_COOKIE } from "../../../../lib/analytics/funnelModel";
 import { claimMetaBrowserEvents, metaBrowserKey, metaDeliveryReady, metaPublicRequest, metaRequestConsent, metaRequestData } from "../../../../lib/analytics/metaDelivery";
 export async function POST(request: NextRequest) {
   const json = (body: unknown, status = 200) => NextResponse.json(body, { status, headers: { "cache-control": "no-store", "referrer-policy": "no-referrer" } });
@@ -15,6 +16,8 @@ export async function POST(request: NextRequest) {
     // 시행일 전: 동의한 브라우저만(예전 그대로). 시행일 뒤(덕짱님 결정 A): 거부한 브라우저만 막는다(META_DEFAULT_PURCHASE = false면 결제는 동의한 브라우저만).
     // 설정 기록이 없는 브라우저는 SQL이 「시행일 뒤·로그인한 구매 회원 본인·그 회원이 거부 안 함」을 다시 본다.
     if (!metaDeliveryReady() || !metaMaySend(await metaRequestConsent(request), metaDefaultOn(), "Purchase")) return json({ ok: false }, 202);
+    // F 추가 3: 시험 브라우저는 결제 완료 화면 경로도 넣지 않는다(시험 계정 결제는 SQL queue_meta_purchase도 거절).
+    if (request.cookies.get(TEST_BROWSER_COOKIE)?.value === "1") return json({ ok: false }, 202);
     const data = metaRequestData(request); if (!data) return json({ ok: false }, 202);
     const auth = createAccountPort(request), user = await auth?.currentUser();
     // The existing guest report bearer capability is accepted for an opted-in browser; never a share token.

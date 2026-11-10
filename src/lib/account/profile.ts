@@ -4,7 +4,9 @@
  */
 import { NextResponse, type NextRequest } from "next/server";
 import type { AccountPort } from "./handler";
-import { accountSession, safeAccountNext, safeDisplayName, type ConsentRecord } from "./policy";
+import { accountSession, safeAccountNext, safeDisplayName, type AccountIdentity, type ConsentRecord } from "./policy";
+import type { SignupGrant } from "../ops/gift/service";
+import { giftEventPublicView } from "../ops/config";
 import { opsSameOrigin, opsOriginAllowed } from "../ops/origin";
 import type { AccountOpsStore, AuditEntry } from "../ops/store";
 
@@ -27,6 +29,8 @@ export type ProfileDeps = {
   unlinkKakao(kakaoId: string | null): Promise<"done" | "skipped" | "failed">;
   /** 탈퇴: Supabase auth 사용자 소프트 삭제(로그인 불가, 다시 가입하면 새 계정). */
   deleteUser(userId: string): Promise<boolean>;
+  /** F: 가입 완료(가입 정보 첫 저장) 직후 가입 이용권 지급. 없으면 지급하지 않는다(로컬 검수 포트 등). */
+  signupGrant?(user: AccountIdentity): Promise<SignupGrant | null>;
   now?: () => Date;
 };
 
@@ -88,10 +92,15 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
     const checked = validateContact(body, trusted ? { ...(facts ?? {}), emailTrusted: true, email: trusted } as NonNullable<ProviderFacts> : facts);
     if (!checked.ok) return json({ code: "PROFILE_INVALID", field: checked.field, error: checked.message }, 400);
     if (typeof body.requestId !== "string" || !/^[0-9a-f-]{36}$/i.test(body.requestId)) return json({ code: "PROFILE_INVALID", error: "다시 시도해 주세요." }, 400);
+    // F: 가입 정보가 없던 회원의 첫 저장 = 가입 완료(필수 동의 + 가입 정보). 그 직후 가입 이용권을 자동 지급한다(SQL이 기간·기존 회원·재가입·꺼짐을 다시 확인).
+    const firstCompletion = snapshot.contact === null;
     const saved = await deps.ops.call("save", user.id, { requestId: body.requestId, ...checked.value, marketingVersion: MARKETING_CONSENT_VERSION });
     if (!saved.ok) return json({ code: "STORAGE_UNAVAILABLE", error: "저장하지 못했습니다. 다시 시도해 주세요." }, 503);
+    const grant = firstCompletion && deps.signupGrant ? await deps.signupGrant(user).catch(() => null) : null;
+    // 같은 요청이 다시 와도(첫 응답을 못 받은 경우) 이미 받은 안 쓴 장이면 팝업을 띄울 수 있게 같은 모양으로 알린다.
+    const signupGift = grant && grant.expiresAt && (grant.issued || (grant.code === "ALREADY_ISSUED" && grant.status === "available")) ? { expiresAt: grant.expiresAt, event: giftEventPublicView() } : null;
     const next = request.cookies.get(RETURN_COOKIE)?.value;
-    const response = json({ ok: true, contact: saved.contact, ...(next ? { next: safeAccountNext(next) } : {}) });
+    const response = json({ ok: true, contact: saved.contact, ...(firstCompletion ? { joined: true } : {}), ...(signupGift ? { signupGift } : {}), ...(next ? { next: safeAccountNext(next) } : {}) });
     if (next) response.cookies.set(RETURN_COOKIE, "", { httpOnly: true, sameSite: "lax", secure: true, path: "/", maxAge: 0 });
     return response;
   } catch { return json({ code: "ACCOUNT_REQUEST_FAILED", error: "요청을 완료하지 못했습니다. 다시 시도해 주세요." }, 503); }

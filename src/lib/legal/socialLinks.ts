@@ -8,6 +8,8 @@ export const SOCIAL_LINKS = {
   threads: "https://www.threads.com/@gyeolreport",
 } as const;
 export const SUPPORT_CHAT_URL = "http://pf.kakao.com/_sbHaX/chat";
+/** F: 카카오톡 채널 홈(채널 추가). /free 권유 줄. */
+export const KAKAO_CHANNEL_URL = "https://pf.kakao.com/_sbHaX";
 
 /**
  * 문의·환불·카카오·전화 문구(운영 Q 1부, 2026-11-06). 고객에게 보이는 안내는 이 네 곳만 남긴다:

@@ -4,20 +4,25 @@
  *   ③ comp-a: 안 쓴 보상 이용권이 있는 A 계정(서버 지급 기록 기준)
  *   ② comp-b: 안 쓴 보상 이용권이 있는 B 계정
  *   ① event-1plus1: 그 밖의 방문자(로그인 안 함·신규 가입·이용권을 다 쓴 회원) — 1+1 기간에만
+ *   F signup: 가입 이용권을 받고 아직 안 쓴 회원(가입 캠페인이 켜져 있을 때만) — 신규 가입자에게는 ①을 대신한다(맨 앞)
  * 보상 이용권을 다 쓰거나 만료되면 ②·③은 없다. 리포트 읽는 화면(/reports/*, /r/*)·그 밖의 화면에는 띄우지 않는다.
  */
-export type PopupId = "event-1plus1" | "comp-b" | "comp-a";
+export type PopupId = "event-1plus1" | "comp-b" | "comp-a" | "signup";
 export type PopupEventPhase = "off" | "before" | "during" | "after";
 /** ticketExpiresAt: 지금 받는 이용권의 기한(ISO, P 추가 D — 이번 이벤트는 2026-11-30 23:59:59 KST). 계정당 상한은 없다(P 추가 C). */
-export type PopupEvent = { phase: PopupEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string };
+/** signup(F): 가입 이용권 캠페인 공개 상태(메인 띠·/free) — 서버가 DB 켜짐/꺼짐을 읽어 채운다. */
+export type PopupEvent = { phase: PopupEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string; signup?: { active: boolean; endsAt: string; days: number } };
 export type PopupComp = { tier: "A" | "B"; quantity: number; unused: number; expiresAt: string };
-export type PopupState = { member: boolean; comp: PopupComp | null; event: PopupEvent | null };
+/** signup(F): active = 가입 캠페인 켜짐(기간 + DB) · mine = 그 회원의 가입 이용권(status·기한). */
+export type PopupSignup = { active: boolean; mine: { status: string; expiresAt: string } | null };
+export type PopupState = { member: boolean; comp: PopupComp | null; event: PopupEvent | null; signup?: PopupSignup | null };
 
 /** 「오늘 하루 보지 않기」·닫기 기억은 팝업 id(이번 행사판)마다 따로. */
 export const POPUP_STORAGE_KEY: Readonly<Record<PopupId, string>> = {
   "event-1plus1": "gyeol-popup:event-1plus1-202611",
   "comp-b": "gyeol-popup:comp-b-202611",
   "comp-a": "gyeol-popup:comp-a-202611",
+  signup: "gyeol-popup:signup-202611",
 };
 
 /** 메인(/, /products — 같은 책장 화면)과 상품 화면(/report/new)만. */
@@ -28,9 +33,16 @@ export function popupAllowedPath(pathname: string): boolean {
 
 export function selectPopup(state: PopupState, pathname: string, now = Date.now()): PopupId | null {
   if (!popupAllowedPath(pathname)) return null;
+  if (signupPopupDue(state, now)) return "signup";
   const c = state.comp;
   if (state.member && c && (c.tier === "A" || c.tier === "B") && c.unused > 0 && Date.parse(c.expiresAt) > now) return c.tier === "A" ? "comp-a" : "comp-b";
   return state.event?.phase === "during" ? "event-1plus1" : null;
+}
+
+/** F: 가입 이용권 팝업을 띄울 때인가 — 회원 + 캠페인 켜짐 + 안 쓴 가입 이용권(기한 전). */
+export function signupPopupDue(state: Pick<PopupState, "member" | "signup">, now = Date.now()): boolean {
+  const m = state.signup?.mine;
+  return state.member && state.signup?.active === true && !!m && m.status === "available" && Date.parse(m.expiresAt) > now;
 }
 
 /** KST 날짜(YYYY-MM-DD) — 「오늘 하루」 기준. */
@@ -71,5 +83,6 @@ export function isPopupState(v: unknown): v is PopupState {
   if (!v || typeof v !== "object") return false;
   const x = v as PopupState;
   return typeof x.member === "boolean" && (x.comp === null || (typeof x.comp === "object" && (x.comp.tier === "A" || x.comp.tier === "B") && Number.isInteger(x.comp.unused) && typeof x.comp.expiresAt === "string"))
-    && (x.event === null || (typeof x.event === "object" && ["off", "before", "during", "after"].includes(x.event.phase) && typeof x.event.endsAt === "string"));
+    && (x.event === null || (typeof x.event === "object" && ["off", "before", "during", "after"].includes(x.event.phase) && typeof x.event.endsAt === "string"))
+    && (x.signup === undefined || x.signup === null || (typeof x.signup === "object" && typeof x.signup.active === "boolean" && (x.signup.mine === null || (typeof x.signup.mine === "object" && typeof x.signup.mine.status === "string" && typeof x.signup.mine.expiresAt === "string"))));
 }

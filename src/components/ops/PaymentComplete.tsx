@@ -1,6 +1,7 @@
 import "server-only";
 import Link from "next/link";
 import MetaPurchaseTracker from "../analytics/MetaPurchaseTracker";
+import { FunnelPing } from "../analytics/FunnelTracker";
 import { createOpsStores } from "../../lib/ops/store";
 import { giftEventConfig } from "../../lib/ops/config";
 import { afterPaidOrder } from "../../lib/ops/gift/service";
@@ -13,6 +14,8 @@ import s from "./ops.module.css";
  * 결제 완료 화면(P6d-ops 4). 결제한 사람만 아는 토스 orderId + paymentKey로 주문을 찾는다.
  * 영수증 주소 저장·이벤트 이용권 발급(설정값으로 켬)도 여기서 한 번(실패해도 화면은 그대로, 크론이 다시 한다).
  */
+/** F 퍼널: 결제 완료 = 결제 완료 + 책 생성 시작(세션당 1번). */
+const PAID_STEPS = ["paid", "book_start"] as const;
 export async function PaymentCompleteView(a: { providerOrderId: string; paymentKey: string; reportId: string; receiptUrl?: string }) {
   const ops = createOpsStores();
   const found = await ops.order.call("find_paid", { providerOrderId: a.providerOrderId, paymentKey: a.paymentKey });
@@ -37,5 +40,6 @@ export async function PaymentCompleteView(a: { providerOrderId: string; paymentK
       </section>
     </div>
     <MetaPurchaseTracker reportId={a.reportId} />
+    <FunnelPing steps={PAID_STEPS} />
   </main>;
 }
