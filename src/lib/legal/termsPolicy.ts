@@ -2,6 +2,21 @@ import { GYEOL_BUSINESS_INFO } from "./businessInfo";
 import { refundPolicyRequiredNotices } from "./refundPolicy";
 import { AI_WRITTEN_NOTICE_KO } from "./aiNotice";
 import { POLICY_EFFECTIVE_DATE_KO, POLICY_HISTORY } from "./policyVersions";
+import { EVENT_TICKET_EXPIRES_AT, GIFT_EVENT_DEFAULT_END, GIFT_EVENT_DEFAULT_START, parseEventInstant, SIGNUP_CAMPAIGN_START, SIGNUP_TICKET_DAYS } from "../ops/config";
+
+/**
+ * F: 이벤트 기간 문구는 설정값(src/lib/ops/config.ts 기본 기간 상수)에서 만든다 — 1+1을 연장할 때 GIFT_EVENT_DEFAULT_END 하나만 바꾸면
+ * 1+1 발급·팝업·배너·가입 이용권 캠페인 끝·/free·이 약관 문구가 함께 바뀐다(약관은 화면 묶음에도 실리므로 env가 아니라 상수를 읽는다).
+ */
+const kstParts = (ms: number) => { const d = new Date(ms + 9 * 3_600_000); return { y: d.getUTCFullYear(), m: d.getUTCMonth() + 1, d: d.getUTCDate(), h: d.getUTCHours(), mi: d.getUTCMinutes(), s: d.getUTCSeconds() }; };
+const kstDayKo = (ms: number) => { const p = kstParts(ms); return `${p.y}년 ${p.m}월 ${p.d}일`; };
+const kstEndKo = (endMs: number) => { const p = kstParts(endMs - 1000); return `${p.y}년 ${p.m}월 ${p.d}일 ${String(p.h).padStart(2, "0")}:${String(p.mi).padStart(2, "0")}:${String(p.s).padStart(2, "0")}`; };
+const GIFT_START_MS = parseEventInstant(GIFT_EVENT_DEFAULT_START, "start"), GIFT_END_MS = parseEventInstant(GIFT_EVENT_DEFAULT_END, "end");
+/** 「2026년 11월 6일 ~ 2026년 11월 30일 23:59:59」 */
+export const GIFT_EVENT_PERIOD_KO = `${kstDayKo(GIFT_START_MS)} ~ ${kstEndKo(GIFT_END_MS)}`;
+/** 「2026년 11월 10일 ~ 2026년 11월 30일 23:59:59」(끝 = 1+1 끝) */
+export const SIGNUP_CAMPAIGN_PERIOD_KO = `${kstDayKo(parseEventInstant(SIGNUP_CAMPAIGN_START, "start"))} ~ ${kstEndKo(GIFT_END_MS)}`;
+const EVENT_TICKET_UNTIL_KO = kstEndKo(Date.parse(EVENT_TICKET_EXPIRES_AT) + 1000);
 
 export type TermsPolicySection = {
   readonly titleKo: string;
@@ -72,13 +87,15 @@ export const termsPolicySections = [
   {
     titleKo: "이용권",
     bodyKo: [
-      "이용권은 리포트 한 권을 결제 없이 만들 수 있는 권리입니다. 이용권은 회사가 결제에 따른 이벤트(결제 1건마다 1장 등), 보상, 고객 응대로 무상 증정하는 것이며 판매하는 상품이 아닙니다. 이용권마다 쓸 수 있는 상품이 정해질 수 있습니다.",
+      "이용권은 리포트 한 권을 결제 없이 만들 수 있는 권리입니다. 이용권은 회사가 결제에 따른 이벤트(결제 1건마다 1장 등), 신규 가입, 보상, 고객 응대로 무상 증정하는 것이며 판매하는 상품이 아닙니다. 이용권마다 쓸 수 있는 상품이 정해질 수 있습니다.",
+      `결제 1건마다 이용권 1장 증정 이벤트 기간: ${GIFT_EVENT_PERIOD_KO}(KST). 기간을 늘리거나 줄이면 서비스 화면과 이 약관에 함께 표시합니다.`,
+      `가입 이용권: 회사는 ${SIGNUP_CAMPAIGN_PERIOD_KO}(KST)에 새로 가입(필수 동의와 가입 정보 입력)을 마친 회원에게 리포트 이용권 1장을 무상으로 증정합니다. 한 사람당 1번이며, 이미 가입한 회원과 탈퇴한 뒤 같은 로그인 계정으로 다시 가입한 경우는 받을 수 없습니다. 가입 이용권은 받은 날부터 ${SIGNUP_TICKET_DAYS}일 동안 쓸 수 있고, 아래 4종 리포트에만 쓸 수 있으며, 선물하거나 다른 사람에게 넘길 수 없습니다. 회사는 부정 가입이 늘어나는 등 운영상 필요하면 가입 이용권 지급을 멈출 수 있습니다(이미 받은 이용권은 그대로 쓸 수 있습니다).`,
       "쓸 수 있는 상품: 이용권으로 만들 수 있는 리포트는 사주×MBTI 종합, 직업·커리어·돈·학업, 연애·결혼·자녀, 궁합 리포트 4종입니다. 대운 리포트와 세운 리포트는 이용권으로 만들 수 없습니다.",
-      "유효기간: 이용권의 기한은 이용권에 표시된 날짜까지입니다(이번 이벤트 이용권은 2026년 11월 30일 23:59:59까지). 기한이 지나면 쓸 수 없습니다.",
-      "선물: 이용권은 선물 링크로 다른 회원에게 한 번 보낼 수 있으며, 받은 이용권의 기한은 처음 이용권에 표시된 날짜 그대로입니다. 받은 이용권은 다시 선물할 수 없습니다.",
+      `유효기간: 이용권의 기한은 이용권에 표시된 날짜까지입니다(이번 이벤트 이용권은 ${EVENT_TICKET_UNTIL_KO}까지, 가입 이용권은 받은 날부터 ${SIGNUP_TICKET_DAYS}일). 기한이 지나면 쓸 수 없습니다.`,
+      "선물: 이용권은 선물 링크로 다른 회원에게 한 번 보낼 수 있으며, 받은 이용권의 기한은 처음 이용권에 표시된 날짜 그대로입니다. 받은 이용권은 다시 선물할 수 없고, 가입 이용권은 선물할 수 없습니다.",
       "이용권으로 만든 리포트도 결제한 리포트와 같은 상품입니다. 이용권으로 만든 리포트는 환불하지 않으며, 계산 오류·결과 미제공 등 오류가 확인되면 다시 만들어 드리거나 이용권을 다시 드립니다.",
       "이용권은 무상 증정이므로 현금이나 다른 상품으로 바꿀 수 없고 환불되지 않습니다. 회원 탈퇴 시 남은 이용권은 사라집니다.",
-      "부정한 방법(중복 가입, 결제 취소를 되풀이하는 방식, 타인 정보 도용 등)으로 받은 이용권은 회수하고, 그 이용권으로 만든 리포트의 열람을 막을 수 있습니다.",
+      "부정한 방법(중복 가입, 탈퇴 뒤 다시 가입해 가입 이용권을 또 받는 방식, 결제 취소를 되풀이하는 방식, 타인 정보 도용 등)으로 받은 이용권은 회수하고, 그 이용권으로 만든 리포트의 열람을 막을 수 있습니다.",
       "결제가 환불되면 그 결제로 받은 아직 쓰지 않은 이용권(선물 링크를 만들었지만 아직 받지 않은 이용권 포함)은 회수하고, 그 선물 링크는 더 쓸 수 없습니다. 이미 쓴 이용권(그 이용권으로 만든 리포트, 다른 회원이 받은 선물)은 회수하지 않습니다.",
     ],
   },

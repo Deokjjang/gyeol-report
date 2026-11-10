@@ -34,7 +34,8 @@ describe("InitiateCheckout", () => {
     client.setMetaChoice(null); expect(client.publicMetaAllowed()).toBe(false);
     client.setMetaChoice(null, false); client.interaction("checkout_started", "saju_mbti_full"); client.pageView("/report/new");
     await client.dispatchPurchase("report_abcdefghijklmnop");
-    expect(vi.mocked(fetch)).not.toHaveBeenCalled();
+    // F: 자체 익명 퍼널 집계(/api/funnel, 메타 아님)는 별도 — 메타 쪽 호출은 하나도 없어야 한다.
+    expect(vi.mocked(fetch).mock.calls.filter(([url]) => url !== "/api/funnel")).toEqual([]);
     expect((sessionStorage as unknown as { keys(): string[] }).keys().filter(k => k.startsWith("gyeol:event:"))).toEqual([]);
   });
   it("결정 A(시행일 뒤, 서버 optout:true): 기본 허용(설정 기록 없음 = null)이면 나가고, 거부(false)면 나가지 않는다", async () => {

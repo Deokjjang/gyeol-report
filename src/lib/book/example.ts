@@ -17,10 +17,13 @@ export type FreeExample = { chapter: string; heading: string; text: string };
 export const FREE_EXAMPLE_PICKS: ReadonlyArray<readonly [page: number, paragraph: number]> = [[5, 6], [5, 7], [6, 1]];
 export function freeExamples(): FreeExample[] {
   const pages = EXAMPLE_BOOK.data.pages as unknown as Array<{ title?: string; paragraphs?: Array<{ text: string; heading?: string }> }>;
+  let last = "";
   return FREE_EXAMPLE_PICKS.flatMap(([pi, i]) => {
     const page = pages[pi], para = page?.paragraphs?.[i];
     if (!page || !para) return [];
-    const heading = para.heading || [...(page.paragraphs ?? []).slice(0, i)].reverse().find(p => p.heading)?.heading || "";
+    // 소제목은 그 문단이 속한 소제목(앞 문단에서 이어짐). 바로 앞 카드와 같으면 다시 쓰지 않는다.
+    const section = para.heading || [...(page.paragraphs ?? []).slice(0, i)].reverse().find(p => p.heading)?.heading || "";
+    const heading = section === last ? "" : section; last = section;
     return [{ chapter: page.title ?? "", heading, text: para.text }];
   });
 }
