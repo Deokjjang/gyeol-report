@@ -30,7 +30,8 @@ export function FreeLanding({ signup, event, examples }: { signup: SignupPublicV
   const mine = useMySignupTicket(member);
   const eventOn = event.phase === "during" && Date.parse(event.endsAt) > Date.parse(event.serverNow);
   const until = eventEndDayLabel(event.endsAt);
-  const ticket = mine && mine.status === "available" && Date.parse(mine.expiresAt) > Date.now() ? mine : null;
+  // 서버가 기한 지난 장을 expired로 바꿔 준다(signupState). 화면은 서버 시각으로 한 번 더 본다.
+  const ticket = mine && mine.status === "available" && Date.parse(mine.expiresAt) > Date.parse(event.serverNow) ? mine : null;
   return <main className={s.root} data-free-landing={signup.active ? "on" : "off"}>
     <header className={s.header}><Link href="/" className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></Link><AccountEntry /></header>
     <section className={s.hero}>

@@ -114,7 +114,7 @@ const compInt = (v: string | undefined, d: number, min: number, max: number) => 
  * - 기한 = 받은 시각 + 7일 · 사용 범위 = 출시 4종(대운·세운 제외).
  * - 켜짐/꺼짐은 DB(ops_settings 'signup_grant', 처리 봇 [지급 멈춤]·[다시 켜기])가 정한다. 하루 상한은 없다.
  */
-export const SIGNUP_CAMPAIGN_START = "2026-11-10T23:00:00+09:00";
+export const SIGNUP_CAMPAIGN_START = "2026-11-10T20:00:00+09:00";
 export const SIGNUP_TICKET_DAYS = 7;
 export const SIGNUP_PRODUCTS = COMP_DEFAULT_PRODUCTS;
 export type SignupCampaignConfig = { readonly valid: boolean; readonly inWindow: boolean; readonly start: string; readonly end: string; readonly startMs: number; readonly endMs: number; readonly days: number; readonly products: readonly string[] };
