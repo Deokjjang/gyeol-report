@@ -440,3 +440,8 @@
 /* P6d-ops 1: 판매를 잠시 닫은 책(대운·세운) — 표지를 살짝 어둡게 하고 공개일 한 줄. 다른 표지는 그대로. */
 .bookSlot[data-closed=true] .cover { filter: brightness(.74) saturate(.9); }
 .coverNotice { position: absolute; left: 27px; right: 22px; bottom: 62px; z-index: 1; font-size: 12px; font-weight: 650; letter-spacing: -.02em; line-height: 1.35; color: #fff; background: #111111d9; padding: 7px 9px; text-align: left; pointer-events: none; }
+
+/* AM 2부 세운 키워드 카드·대운 이어 보기(390px 안에서 줄바꿈). */
+.keywordCard { list-style: none; margin: 18px 0 10px; padding: 0; display: grid; gap: 6px; }
+.keywordCard li { font-size: 34px; font-weight: 700; letter-spacing: -0.04em; line-height: 1.15; word-break: keep-all; }
+.continueLink { display: inline-block; margin-top: 8px; padding: 12px 16px; border: 1px solid currentColor; border-radius: 999px; text-decoration: none; font-weight: 700; }

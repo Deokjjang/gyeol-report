@@ -259,3 +259,34 @@ export function cycleSummary(dayun: { readonly cycles: readonly CustomerDayunCyc
   return cycles.filter(c => c.endYear >= from && c.startYear <= to).map(c => { const l = dayunLabel(c, dayun.daeunsu, cycles.find(x => x.index === c.index + 1));
     return { ganji: ganjiLabel(c), years: l.years, period: l.period, tenGod: tenGodLabel(getTenGodFn(c.stem)), current: now ? now.index === c.index : c.startYear <= thisYear && thisYear <= c.endYear, label: l.line, ages: l.ages }; });
 }
+
+/**
+ * AM 2부 세운 신년판(「나의 2027」): 해 카드 + 1월 다리(지난 해 12번째 절기월 = 소한~입춘) + 그해 12 절기월(입춘~다음 해 입춘).
+ * 달 이름(덕짱님 지시 2026-11-11): 표와 본문이 한 체계 — 「2월 · 임인월 (2/4~3/6)」(절입 날짜는 엔진 값, 끝은 다음 달 절입일), 마지막 축월은 「2028년 1월 · 계축월」.
+ * 영역 신호(signals)는 design/annual.domainSignals(결정론, 참고).
+ */
+export function buildAnnualEntries(ctx: TimelineCtx, year: number, baseDate: string, gender: "MALE" | "FEMALE" | null,
+  signalsOf: (pillar: Pillar, position: "annual" | "monthly", eff: { fillsLack: boolean; feedsExcess: boolean }) => NonNullable<TimelineEntry["signals"]>): { yearEntry: TimelineEntry; bridge: TimelineEntry; months: TimelineEntry[] } {
+  void gender;
+  const yp = getAnnualPillar(year);
+  const yearEntry0 = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(yp)}`, yp, "annual", 0);
+  const yearEntry: TimelineEntry = { ...yearEntry0, signals: signalsOf(yp, "annual", { fillsLack: yearEntry0.fillsLack.fills, feedsExcess: yearEntry0.fillsLack.feedsExcess.length > 0 }) };
+  const prev = getMonthlyPillars(year - 1), cur = getMonthlyPillars(year), next = getMonthlyPillars(year + 1);
+  const md = (iso: string) => `${Number(iso.slice(5, 7))}/${Number(iso.slice(8, 10))}`;
+  const start = ctx.rng.fork("slot").int(6);
+  const make = (m: (typeof cur)[number], endIso: string, key: string, bridge: boolean, slot: number): TimelineEntry => {
+    const calY = Number(m.startKst.slice(0, 4)), calM = Number(m.startKst.slice(5, 7));
+    const name = `${calY > year && !bridge ? `${calY}년 ` : ""}${calM}월 · ${ganjiOf(m.pillar).hangul}월`;
+    const label = `${name} (${md(m.startKst)}~${md(endIso)})${bridge ? ` · ${year - 1}년 ${ganjiOf(getAnnualPillar(year - 1)).hangul}년 마지막 달` : ""}`;
+    const s = m.startKst.slice(0, 10), e = endIso.slice(0, 10);
+    const when = e <= baseDate ? "past" : s <= baseDate ? "now" : "future";
+    const e0 = buildEntry(ctx, "month", key, label, m.pillar, "monthly", slot, { when });
+    const out: TimelineEntry = { ...e0, head: headLine(e0), span: { start: m.startKst, end: endIso }, ...(bridge ? { bridge: true } : {}),
+      signals: signalsOf(m.pillar, "monthly", { fillsLack: e0.fillsLack.fills, feedsExcess: e0.fillsLack.feedsExcess.length > 0 }) };
+    return out;
+  };
+  const bridge = make(prev[11], cur[0].startKst, `${year - 1}-M12`, true, start);
+  const months: TimelineEntry[] = [];
+  cur.forEach((m, i) => { const e = make(m, cur[i + 1]?.startKst ?? next[0].startKst, `${year}-M${String(m.index).padStart(2, "0")}`, false, start + m.index); months.push({ ...e, ...changeOf(months.at(-1) ?? bridge, "달", e.tenGod.stem, e.flow.score) }); });
+  return { yearEntry, bridge, months };
+}

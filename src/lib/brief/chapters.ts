@@ -25,8 +25,10 @@ export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; sectio
   career_money_study: { total: [11000, 14000], section: [410, 520] },
   love_marriage_child: { total: [11000, 14000], section: [410, 520] },
   saju_mbti_compatibility: { total: [11000, 14000], section: [410, 520] },
-  major_fortune: { total: [14000, 18000], section: [450, 560], repeat: [680, 890] },
-  annual_fortune: { total: [12000, 15000], section: [450, 560], repeat: [630, 800] },
+  // AM 3부: 대운 16~20천(부드러운 목표) — 절 17개 + 앞으로 10년(핵심 해 셋은 깊게, 나머지는 짧게: key 근거 depth가 정한다).
+  major_fortune: { total: [16000, 20000], section: [450, 560], repeat: [500, 700] },
+  // AM 2부: 세운 신년판 약 13천부터 — 절 20개 + 1월 다리·12달(13 key). 작가 한 번 호출 시간(결제 예산 8분) 안에 들게 절·key를 줄였다.
+  annual_fortune: { total: [13000, 17000], section: [380, 480], repeat: [450, 600] },
 };
 
 /** trait 적용(소개 뒤 다시 부르기)은 책 전체에서 이 횟수까지. */
@@ -67,6 +69,8 @@ export type PlanCtx = {
   /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
   readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
   readonly excludeSeeds?: ReadonlySet<string>;
+  /** AM 2·3부: 반복 장 key마다 붙는 근거(세운 달 영역 신호·1월 다리, 대운 핵심 해 깊이). */
+  readonly keyMaterials?: ReadonlyMap<string, readonly Material[]>;
   /** AM 1-1 ③: 장면 분산 값(고객 해시 + 상품 id). 소품 힌트 시작 자리와 씨앗 고르기에 섞는다. */
   readonly spread?: number;
 };
@@ -462,7 +466,7 @@ export function planChapters(input: PlanCtx): PlanResult {
   const hints = ctx.props ? sceneHints(ctx.props, plans, ctx.spread ?? 0).hints : [];
   const chapters = plans.map((p): ChapterBrief => {
     const repeat = Boolean(p.repeatKey);
-    const flat = repeat ? [{ kind: "timeline" as const, entryKey: p.repeatKey! }, ...p.aux] : p.sections.flatMap(s => s.materials).slice(0, 12);
+    const flat = repeat ? [{ kind: "timeline" as const, entryKey: p.repeatKey! }, ...(ctx.keyMaterials?.get(p.repeatKey!) ?? []), ...p.aux].slice(0, 12) : p.sections.flatMap(s => s.materials).slice(0, 12);
     return {
       id: p.id, index: p.index + 1, title: p.c.title, question: p.c.question, role: p.c.role,
       // 절이 4개보다 적으면(재료가 적은 고객) 목표 분량도 절 수만큼만: 같은 말로 채우지 않게(길이는 정보량의 결과).

@@ -34,7 +34,7 @@ const SAFETY_DETAIL: Readonly<Record<string, string>> = {
   experience_assert: "입력에 없는 경험 단정 → 질문형·경향형",
 };
 type Target = { readonly key: string; readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly flags: LintFlag[] };
-const CARD_LABEL: Readonly<Record<CardField, string>> = { image: "그림", todo: "해 볼 것", review: "돌아보기", caution: "살필 점" };
+const CARD_LABEL: Readonly<Record<CardField, string>> = { image: "그림", todo: "해 볼 것", review: "돌아보기", caution: "살필 점", good: "좋은 것" };
 
 /** 오행 겉 글자 수 한 줄(최종판 1-5: "나무 2 · 불 0(땅속에 있음) · …"). */
 const EL_KO: Readonly<Record<string, string>> = { WOOD: "나무", FIRE: "불", EARTH: "흙", METAL: "쇠", WATER: "물" };

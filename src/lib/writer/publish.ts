@@ -51,7 +51,7 @@ import { avoidOverlaps, COVER_MOTIFS, coverMotifs, iljuPhrasesFor } from "@/lib/
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
 import { allowedWindows, writeKeyFill, type FinalChapter } from "./safety";
-import type { BookSection } from "./format";
+import { keywordsOf, type BookSection } from "./format";
 import { buildFactSheet, type FactSheet } from "@/lib/factsheet/build";
 import { factCtxOf } from "@/lib/factsheet/check";
 import { matchJob, PROPS } from "@/lib/brief/props";
@@ -258,7 +258,7 @@ function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintC
       pairRelations: c.dayRelations.length,
     } : {}),
     yearIndex: Object.fromEntries(entries.filter(e => e.kind === "year" && e.dayun?.yearIndex).map(e => [e.key, { index: e.dayun!.yearIndex!, total: e.dayun!.total ?? 10 }])),
-    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)) } : {}),
+    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)), goodCards: true } : {}),
     relationCount: Object.fromEntries(entries.map(e => [e.key, e.badges.filter(b => b.kind !== "GONGMANG").length])),
     props: Object.keys(brief.usedProps ?? {}), investChapters: ids(/^invest/),
     allowed: allowedWindows(JSON.stringify(brief)), conditionalChapters: new Set(plan.filter(ch => CONDITIONAL_TITLE.test(ch.title.trim())).map(ch => ch.n)),
@@ -487,8 +487,11 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     rewriteTargets: 0, rewritten: 0, rewriteCalls: 0, droppedSections: dropped.dropped, hanjaStripped: tidy.count.hanja ?? 0, termsAnnotated: rendered.count,
     noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidOverlaps(writerCover, avoid) : [], repairCalls: 0, ...(firstProblem ? { firstProblem } : {}) } } } };
   const people = await (deps.people ?? v4People)(a.payload, a.policyAt);
+  // AM 2부: 세운 키워드 카드 줄(작가 첫 원문의 [키워드]). 사실·금지 규칙에 걸리면 엔진 열쇠말.
+  const kwRaw = keywordsOf(run?.raw?.find(e => e.kind === "first")?.text ?? "");
+  const keywords = kwRaw && kwRaw.every(w => !sentenceViolation(w, safetyFacts(brief)) && !/(합격|결혼|이별|승진|이직|대박|부자|성공)/.test(w)) ? kwRaw : null;
   const { draft, evidence } = assembleV5Book({
-    brief, plan, finals: chapters, report, payload: a.payload, generatedAt: a.policyAt, people, cover: image, ...(brief.compatibility ? {} : { image }), raw: run?.raw ?? [], ...(pl ? { priorLedger: pl } : {}), badCards: new Set(remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}`)),
+    brief, plan, finals: chapters, report, payload: a.payload, generatedAt: a.policyAt, people, cover: image, ...(brief.product === "annual_fortune" ? { keywords } : {}), ...(brief.compatibility ? {} : { image }), raw: run?.raw ?? [], ...(pl ? { priorLedger: pl } : {}), badCards: new Set(remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}`)),
     review: reviewMeta, ...(deps.testRun || process.env.LLM_TEST_RUN === "1" ? { test: true } : {}),
     writer: run?.writer ?? null, fallback: run?.fallback ?? null, calls: run?.calls ?? [],
     tokens: { input: run?.usage.inputTokens ?? 0, cachedInput: run?.usage.cachedInputTokens ?? 0, output: run?.usage.outputTokens ?? 0 },

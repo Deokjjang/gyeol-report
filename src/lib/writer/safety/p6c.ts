@@ -32,7 +32,7 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   | FactRule | "phrase_repeat"
   // AM 1-1 ②·1-4: 장 안 같은 구절 · 같은 문장 시작 3연속 · 같은 연결어 과다(문체 규칙, style.ts)
   | StyleRule | "fn_role";
-export type CardField = "image" | "todo" | "review" | "caution";
+export type CardField = "image" | "todo" | "review" | "caution" | "good";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
 /**
@@ -62,6 +62,8 @@ export type LintCtx = {
   readonly yearIndex?: Readonly<Record<string, { readonly index: number; readonly total: number }>>;
   /** P6d E: 달력이 있는 책(대운·세운)은 "지금" 전부 금지. calendarChapters: 달력월 이름 금지 장(세운 전체). */
   readonly strictTime?: boolean; readonly calendarChapters?: ReadonlySet<number>;
+  /** AM 2부: 세운 신년판 달 카드에 「좋은 것」 칸이 있다. */
+  readonly goodCards?: boolean;
   /** P6d F: key → 엔진 관계 표시 수(0이면 "건드리지 않는다" 허용). 궁합은 두 사람 날 관계 수. */
   readonly relationCount?: Readonly<Record<string, number>>; readonly pairRelations?: number;
   /** P6d F: 책당 1회만 쓰는 소품 명사. G: 투자 장. 안전망 규칙 문맥(예시 창·조건형 장). */
@@ -483,17 +485,18 @@ export const PHRASE_WINDOW = 14;
 export const SAME_TEN_GOD_JACCARD = 0.3;
 export function lintCards(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];
-  const seen: Record<CardField, { v: string; tg?: string }[]> = { image: [], todo: [], review: [], caution: [] };
+  const seen: Record<CardField, { v: string; tg?: string }[]> = { image: [], todo: [], review: [], caution: [], good: [] };
   for (const c of chapters) if (c.keys) c.sections.forEach((s, si) => {
     const period = ctx.periods?.[s.heading] ?? "current";
     const card: SectionCard = s.card ?? {};
     const tg = ctx.cardTenGod?.[s.heading];
     // 살필 점도 작가가 그 시기의 실제 십성·관계 조합으로 쓴다(P6d D): "없음"은 받지 않는다.
-    const want: CardField[] = ["image", period === "past" ? "review" : "todo", "caution"];
+    // AM 2부 세운 신년판 달 카드: 「좋은 것」도 필수(한 줄·좋은 것·주의할 것·이달의 한 가지).
+    const want: CardField[] = ["image", ...(ctx.goodCards ? ["good" as const] : []), period === "past" ? "review" : "todo", "caution"];
     const f = (field: CardField, rule: P6cRule, sentence: string) => out.push({ chapter: c.n, section: si, paragraph: -1, card: field, rule, sentence, hint: HINT[rule] });
     for (const field of want) if (!card[field]) f(field, "card_missing", "");
     if (period === "past" && card.todo && !card.review) f("review", "card_form", card.todo);
-    for (const field of ["image", "todo", "review", "caution"] as CardField[]) {
+    for (const field of ["image", "good", "todo", "review", "caution"] as CardField[]) {
       const v = card[field]; if (!v) continue;
       if (field === "todo" && period === "past") continue;
       const len = v.length;

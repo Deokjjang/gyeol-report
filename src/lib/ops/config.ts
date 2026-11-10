@@ -14,6 +14,8 @@ export const FORTUNE_REOPEN_LINE = "12월 1일 · 2027 신년판 공개";
 export const ALL_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 
 export function fortuneSalesOpen(env: Env = process.env) { return env.FORTUNE_SALES_OPEN === "1"; }
+/** AM 2부: 세운 신년판 연도(설정값, 기본 2027 정미년). 연 1회 재구매 상품이라 해마다 이 값만 바꾼다. */
+export function annualProductYear(env: Env = process.env): number { const y = Number(env.ANNUAL_PRODUCT_YEAR); return Number.isInteger(y) && y >= 2026 && y <= 2100 ? y : 2027; }
 export function closedSaleProducts(env: Env = process.env): string[] { return fortuneSalesOpen(env) ? [] : [...CLOSED_FORTUNE_PRODUCTS]; }
 /** 결제·이용권 사용 진입점 전용(읽기·분석 경로는 isPurchasable 그대로). */
 export function productOnSale(product: unknown, env: Env = process.env): boolean { return typeof product === "string" && !closedSaleProducts(env).includes(product); }

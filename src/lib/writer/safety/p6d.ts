@@ -115,7 +115,9 @@ export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
 /** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. */
 export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))/;
-export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s);
+/** AM 2부(덕짱님 지시 2026-11-11): 세운 달 이름은 표와 본문이 한 체계 「2월 · 임인월」 — 달력 숫자가 그 달 간지월 이름과 짝이면 허용한다. */
+const MONTH_NAME_PAIR = /(20\d\d년 )?(1[0-2]|[1-9]) ?월 ?(·|\(|,)? ?[갑을병정무기경신임계][자축인묘진사오미신유술해]월\)?/g;
+export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s.replace(MONTH_NAME_PAIR, ""));
 
 /** E 마무리 문형(소제목 마지막 문장의 끝 두 어절). 12달 가운데 같은 문형은 3번까지. */
 export const closingFrame = (lastSentence: string) => lastSentence.replace(/[⟪⟫"'“”‘’]/g, "").trim().split(/\s+/).slice(-2).join(" ").replace(/[.!?…]+$/, "");

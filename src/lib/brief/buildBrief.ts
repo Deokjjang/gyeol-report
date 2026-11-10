@@ -19,7 +19,7 @@ import type { Knowledge } from "./knowledge";
 import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
-import { buildYearEntries, buildMonthEntries, buildEntry, cycleSummary, type TimelineCtx } from "./timeline";
+import { buildAnnualEntries, buildYearEntries, cycleSummary, type TimelineCtx } from "./timeline";
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
 import { sentenceViolation, splitSentences, type SafetyFacts } from "@/lib/writer/safety";
@@ -30,7 +30,10 @@ import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type
 import { customerProps, lifeStage, matchJob } from "./props";
 import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
-import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } from "./productEvidence";
+import { familyDesign, loveDesign, periodDomains } from "./productEvidence";
+import { annualEvidence, annualStatusQ, bridgeEvidence, domainSignals, monthEvidence, readWish, yearVerdict } from "./design/annual";
+import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
+import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
 import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
@@ -70,8 +73,10 @@ export type BriefInput = {
   readonly baseDate: string;
   /** 기준 시각(발행 시각, ISO). 지금 대운·남은 기간을 교운 시각과 비교해 정한다(최종 A-5). 없으면 기준 날짜 KST 정오. */
   readonly baseAt?: string;
-  /** 세운 상품의 선택 연도(없으면 기준 날짜의 사주 해). */
+  /** 세운 상품의 선택 연도(옛 입력, AM 2부부터는 쓰지 않고 상품 설정 연도 annualProductYear를 쓴다). */
   readonly selectedYear?: number;
+  /** AM 2부 세운 소망(선택, 200자). 자료일 뿐 지시가 아니다 — design/annual.readWish로 정리·위험 표현·지시 꼴을 거른 뒤 근거로만. */
+  readonly wish?: string;
   /** 같은 고객의 이전 Book이 쓴 지식 DB 장면(P6b E-1): 이번 책에서는 고르지 않는다. */
   readonly excludeScenes?: readonly string[];
   /** 같은 고객의 이전 Book이 뜻을 푼 특성(P6c A3): 이번 책에서는 처음 나와도 뜻을 다시 풀지 않는다(angle=known). */
@@ -311,6 +316,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 타임라인(대운 14년·세운 12개월)
   let timeline: Brief["timeline"];
   let timelineKeys: string[] = [];
+  const keyMaterials = new Map<string, Material[]>();
+  let display: Brief["display"];
   if (input.product === "major_fortune" || input.product === "annual_fortune") {
     const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set(), traits: me.traits, seenTenGod: new Map(), seenStage: new Set() };
     const thisYear = me.chart.thisYear.year;
@@ -318,17 +325,30 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     // 십성 주의 문장의 조건("원국에 편관까지 있으면")은 이 원국에서 성립할 때만(P3.8 r1, P6b E-2 구조화).
     const tenGodNotes = tenGodNotesOf(k, { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) });
     if (input.product === "major_fortune") {
-      const entries = buildYearEntries(tctx, thisYear, me.dayun.cycles);
-      const transitions = entries.filter(e => e.dayun?.transition).map(e => e.key);
-      timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: transitions.length ? transitions : [...entries].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 2).map(e => e.key), cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)) };
-      timelineKeys = entries.map(e => e.key);
+      // AM 3부: 14년 카드 계약은 그대로(지난 3년 + 올해 + 앞으로 10년). 작가 key 장은 앞으로 10년, 핵심 해 3개(결정론)는 깊게.
+      const entries0 = buildYearEntries(tctx, thisYear, me.dayun.cycles);
+      const future = entries0.filter(e => Number(e.key) > thisYear);
+      const keys = keyYears(me.saju, future, me.dayun.cycles);
+      const entries = entries0.map(e => (keys.has(e.key) ? { ...e, keyYear: keys.get(e.key)! } : e));
+      timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: [...keys.keys()], cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)),
+        lifetime: lifetimeMap(me.saju, me.dayun, thisYear) };
+      timelineKeys = future.map(e => e.key);
+      for (const e of entries.filter(x => Number(x.key) > thisYear)) keyMaterials.set(e.key, [decadeKeyEvidence(e, keys.get(e.key))]);
     } else {
-      const year = input.selectedYear ?? thisYear;
-      const yp = getAnnualPillar(year);
-      const yearEntry = buildEntry(tctx, "year", String(year), `${year}년 ${ganjiLabel(yp)}`, yp, "annual", 0);
-      const months = buildMonthEntries(tctx, year, input.baseDate);
-      timeline = { entries: [yearEntry, ...months], tenGodNotes: { ...tenGodNotes(months, "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun, year, year, year, tenGodOf) };
-      timelineKeys = months.map(e => e.key);
+      // AM 2부: 신년판 연도는 설정값(입력의 선택 연도가 아니라 상품의 해). 해 카드 + 1월 다리 + 12 절기월.
+      const year = annualProductYear();
+      const signalsOf = (pillar: Parameters<typeof domainSignals>[2], position: "annual" | "monthly", eff: { fillsLack: boolean; feedsExcess: boolean }) => domainSignals(me.saju, me.person.gender, pillar, position, eff).signals;
+      const { yearEntry, bridge, months } = buildAnnualEntries(tctx, year, input.baseDate, me.person.gender, signalsOf);
+      timeline = { entries: [yearEntry, bridge, ...months], tenGodNotes: { ...tenGodNotes([bridge, ...months], "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun, year, year, year, tenGodOf) };
+      timelineKeys = [bridge.key, ...months.map(e => e.key)];
+      const mrng = rng.fork("monthEvidence");
+      const py = getAnnualPillar(year - 1), cy = getAnnualPillar(year);
+      keyMaterials.set(bridge.key, [bridgeEvidence(bridge, `${year - 1}년 ${ganjiLabel(py).replace(/\(.*\)/, "")}년`, `${year}년 ${ganjiLabel(cy).replace(/\(.*\)/, "")}년`)]);
+      for (const m of months) { const e = monthEvidence({ k, rng: mrng }, m); if (e) keyMaterials.set(m.key, [e]); }
+      // 「좋은 것」 결정론 값: 오르는 영역(없으면 보통 영역)의 그달 십성 영역 줄(periodDomains: 일·돈·관계·컨디션).
+      for (const m of [bridge, ...months]) { const tg = m.tenGod.stem.match(/\((.+)\)/)?.[1] as Parameters<typeof periodDomains>[0] | undefined; if (!tg || !m.signals) continue;
+        const lines = periodDomains(tg), up = (["work", "money", "people", "mind", "love"] as const).find(d => m.signals![d] === "↑");
+        const idx = up === "money" ? 1 : up === "people" || up === "love" ? 2 : up === "mind" ? 3 : 0; m.good = lines[idx].replace(/^[^:]+: /, ""); }
     }
   }
 
@@ -350,8 +370,15 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       // 연애 전용 설계기(P6d G): 장마다 정해진 근거·관계 상태별 근거. 기존 근거(배우자·자녀 별·자리, 맞는 유형)는 base로 넘겨 재사용.
       return { ...base, ...loveDesign2({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, gender: me.person.gender, relationshipStatus: me.facts.relationshipStatus, facts: profile, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base }) };
     })()
-    : input.product === "major_fortune" && timeline ? majorDesign(timeline.entries, timeline.cycles, me.chart.thisYear.year)
-    : input.product === "annual_fortune" && timeline ? (() => { const months = timeline!.entries.filter(e => e.kind === "month"), link = keyMonthsLink(months, timeline!.keyEntries); return { ...annualDesign(timeline!.entries.find(e => e.kind === "year"), months), ...(link ? { keyMonthsLink: link } : {}) }; })()
+    : input.product === "major_fortune" && timeline ? majorEvidence({ saju: me.saju, k, dayun: me.dayun, thisYear: me.chart.thisYear.year, age: me.person.age, birthYear: Number(input.person.birthDate.slice(0, 4)), entries: timeline.entries, mbti: me.facts.mbti, rng: rng.fork("major") })
+    : input.product === "annual_fortune" && timeline ? (() => {
+      const year = annualProductYear(), yp = getAnnualPillar(year), cyc = me.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
+      const all = timeline!.entries, yearEntry = all.find(e => e.kind === "year")!, bridge = all.find(e => e.bridge), months = all.filter(e => e.kind === "month" && !e.bridge);
+      const r = annualEvidence({ saju: me.saju, k, chart: me.chart, st: me.st, gender: me.person.gender, mbti: me.facts.mbti, year, yearPillar: yp, ...(cyc ? { dayunPillar: { stem: cyc.stem, branch: cyc.branch } } : {}),
+        yearEntry, months, ...(bridge ? { bridge } : {}), jobStatus: me.facts.jobStatus, relationshipStatus: me.facts.relationshipStatus, wish: readWish(input.wish), rng: rng.fork("annual") });
+      display = { year, keywords: [...yearEntry.keywords].slice(0, 3), verdict: yearVerdict(yearEntry.flow.score), lucky: { name: r.lucky.name, colors: [...r.lucky.colors], direction: r.lucky.direction, numbers: [...r.lucky.numbers], why: r.lucky.why }, ...(r.samjae ? { samjae: { zodiac: r.samjae.zodiac, phase: r.samjae.phase, line: r.samjae.line } } : {}) };
+      return r.evidence;
+    })()
     : input.product === "career_money_study" ? (() => {
       const base = careerEvidence(me.saju, k, me.chart, mbti ? k.mbti.get(mbti.type)! : null, me.facts.detailJob, me.facts.jobStatus, me.traits, { stage: lifeStage({ jobStatus: me.facts.jobStatus, age: me.person.age }, profile), hitIds: new Set(me.hitIds), work: matchJob(me.facts.detailJob)?.stages, age: me.person.age });
       // 커리어 전용 설계기(P6d G): 장마다 정해진 근거·상태별 근거. 직무 3단·진로 다섯 갈래·돈 새는 곳은 base에서 재사용.
@@ -386,9 +413,13 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 전환 해(대운 전환·세운 핵심 달)가 건드리는 trait: 전환 장은 원국 특성을 다시 소개하지 않고 이것만 짧게 부른다(P3.8 1).
   const transitionTouched = timeline ? timeline.entries.filter(e => timeline!.keyEntries.includes(e.key)).flatMap(e => (e.touched ?? []).map(t => ({ traitId: t.traitId, how: `${e.label}: ${t.how}`, key: e.key }))) : [];
   const mbtiTop = mbti ? topDimension(k.mbti.get(mbti.type)!.dimensionTags) : null;
+  // AM 2부: 소망 장은 소망을 적었고(정리 뒤 위험·지시 꼴이 아닌) 때만. 장 제목·질문의 해는 상품 설정 연도.
+  const yearStr = String(annualProductYear()), wishOk = input.product === "annual_fortune" && readWish(input.wish).kind === "ok";
+  const narrativeUsed = input.product === "annual_fortune" ? { ...narrative, chapters: narrative.chapters.filter(c => !c.requires?.includes("wish") || wishOk).map(c => ({ ...c, title: c.title.replace(/2027/g, yearStr), question: c.question.replace(/2027/g, yearStr), ...(c.sections ? { sections: c.sections.map(s => ({ ...s, q: s.q.replace(/2027/g, yearStr) })) } : {}) })) } : narrative;
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
   const { chapters, plan } = planChapters({
-    product: input.product, narrative, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
+    product: input.product, narrative: narrativeUsed, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
+    ...(keyMaterials.size ? { keyMaterials } : {}),
     ...(input.knownTraits?.length ? { known: new Set(input.knownTraits) } : {}),
     mbtiSeeds: k.mbtiSeeds, ...(input.excludeSeeds?.length ? { excludeSeeds: new Set(input.excludeSeeds) } : {}),
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
@@ -414,7 +445,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 상태별 절 질문(P6d G): "{status:now}" → 입력 상태의 질문(미입력이면 단정하지 않는 질문).
   const noShopBiz = careerStatusOf(me.facts.jobStatus) === "business" && me.profile.scene?.shop === false;
   const statusQ = input.product === "career_money_study" ? (key: string) => (noShopBiz ? CAREER_BUSINESS_NOSHOP_Q[key] : undefined) ?? CAREER_STATUS_Q[key]?.[careerStatusOf(me.facts.jobStatus)]
-    : input.product === "love_marriage_child" ? (key: string) => LOVE_STATUS_Q[key]?.[loveStatusOf(me.facts.relationshipStatus)] : null;
+    : input.product === "love_marriage_child" ? (key: string) => LOVE_STATUS_Q[key]?.[loveStatusOf(me.facts.relationshipStatus)]
+    : input.product === "annual_fortune" ? (key: string) => annualStatusQ(key, me.facts.jobStatus, me.facts.relationshipStatus, yearStr) : null;
   if (statusQ) for (const c of chapters) for (const x of c.sections ?? []) { const m = x.q.match(/^\{status:(\w+)\}$/); if (m) x.q = statusQ(m[1]) ?? x.q; }
   // P6e 8: 연애 4장 제목은 상태에 따라(연애 중·기혼 = 표현과 대화의 리듬).
   if (input.product === "love_marriage_child") for (const c of chapters) { const t = LOVE_STATUS_TITLE[c.id]?.[loveStatusOf(me.facts.relationshipStatus)]; if (t) (c as { title: string }).title = t; }
@@ -448,7 +480,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
   // usedProps는 안전망용, appendix·glossary는 부록·용어 표시용이라 작가 토큰 추정·작가 입력에서 뺀다.
   const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k));
-  return BriefSchema.parse({ ...draft, ...(ledgerNotes ? { ledgerNotes } : {}), ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
+  return BriefSchema.parse({ ...draft, ...(display ? { display } : {}), ...(ledgerNotes ? { ledgerNotes } : {}), ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
 }
 
 /**
