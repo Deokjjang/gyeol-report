@@ -150,6 +150,8 @@ export type SinglePersonReportInputPayload = {
   readonly productOptions: Record<string, never> | {
     readonly selectedYear: string;
     readonly contentVersion?: "v3";
+    /** AM 2부 세운 신년판 소망(선택, 200자). 자료일 뿐 지시가 아니다. */
+    readonly wish?: string;
   } | {
     readonly contentVersion: "v3";
   };

@@ -360,10 +360,14 @@ function normalizeSingleProductOptions(
     return { ok: false, error: "SELECTED_YEAR_INVALID" };
   }
 
+  // AM 2부: 소망(선택, 200자) — 제어문자·링크를 지우고 자른다. 위험 표현·지시 꼴은 브리프(design/annual.readWish)가 다시 거른다.
+  const wishRaw = typeof value.wish === "string" ? value.wish : "";
+  const wish = wishRaw.normalize("NFC").replace(new RegExp("[\\u0000-\\u001f\\u007f-\\u009f\\u200b-\\u200f\\u2028-\\u202e\\ufeff]", "g"), " ").replace(/https?:\/\/\S+|www\.\S+/gi, " ").replace(/\s+/g, " ").trim().slice(0, 200);
   return {
     ok: true,
     value: {
       selectedYear,
+      ...(wish ? { wish } : {}),
     },
   };
 }

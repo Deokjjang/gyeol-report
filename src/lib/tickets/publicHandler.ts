@@ -1,5 +1,5 @@
 import "server-only";
-import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../ops/config";
+import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, TICKET_PRODUCT_CODE, TICKET_PRODUCT_MESSAGE } from "../ops/config";
 import { PROFILE_REQUIRED_CODE, PROFILE_REQUIRED_MESSAGE } from "../account/profile";
 import { NextRequest, NextResponse } from "next/server";
 import { accountSession } from "../account/policy";
@@ -16,6 +16,7 @@ const messages: Record<string, string> = {
   REVERSED: "책을 완성하지 못했습니다. 사용한 이용권은 복구되었습니다.",
   NO_USABLE_TICKET: "사용 가능한 이용권이 없습니다. 보유 내역을 다시 확인해 주세요.", REFUND_HOLD: "이용권 확인이 필요합니다.",
   [SALES_CLOSED_CODE]: SALES_CLOSED_MESSAGE,
+  [TICKET_PRODUCT_CODE]: TICKET_PRODUCT_MESSAGE,
 };
 // Only mounted after BOTH server gates. The injectable ports are tests, not an
 // HTTP/env/cookie bypass. No provider, promotion or generation runs in this API.
@@ -55,7 +56,7 @@ export async function handleTicketPublication(request: NextRequest, action: stri
     }
     if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
     if (!result.ok) {
-      const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD", SALES_CLOSED_CODE].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
+      const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD", SALES_CLOSED_CODE, TICKET_PRODUCT_CODE].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
       return json({ ok: false, code, message: messages[code] ?? "발행 상태를 확인 중입니다." }, code === "STORAGE_UNAVAILABLE" ? 503 : code === "NOT_FOUND" ? 404 : 409);
     }
     const state = result.state;

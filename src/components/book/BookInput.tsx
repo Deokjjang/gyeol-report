@@ -3,7 +3,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties, type ReactElement } from "react";
 import { BOOKS, bookForProduct, readerTitle } from "../../lib/book/product";
 import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type BookFormState } from "../../lib/book/form";
-import type { PersonInputState } from "../../lib/report-generation/reportInputPresentation";
+import { ANNUAL_WISH_MAX, type PersonInputState } from "../../lib/report-generation/reportInputPresentation";
 import { MBTI_TYPES, compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
 import { birthTimeSlotOptions } from "../../lib/saju/birthTimePrecisionTypes";
 import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
@@ -168,7 +168,12 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
           <label>현재 상태<select value={state.person.jobStatus} onChange={e => update({ ...state, person: { ...state.person, jobStatus: e.target.value } })}><option value="">미선택</option>{JOBS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}<option value="other">기타</option></select></label>
           <label className={s.wide}>현재 직업<input value={state.person.detailedJob} maxLength={200} onChange={e => update({ ...state, person: { ...state.person, detailedJob: e.target.value } })} /></label>{book.id !== "love" ? relation : null}
         </>}</div> : null}
-        {step === 2 ? book.id === "love" ? relation : <label>선택 연도<select value={state.person.selectedYear} onChange={e => update({ ...state, person: { ...state.person, selectedYear: e.target.value } })}>{policy.selectableYears.map(year => <option key={year}>{year}</option>)}</select></label> : null}
+        {step === 2 ? book.id === "love" ? relation : book.id === "annual" ? <div className={s.fields}>
+          {/* AM 2부: 신년판은 한 해(설정값)만. 소망은 선택, 200자, 자료로만 쓰인다. */}
+          <p className={s.wide}><b>{policy.selectableYears[0]}년 신년판</b> · 입춘부터 다음 입춘까지 열두 절기월과 1월 다리를 담아요.</p>
+          <label className={s.wide}>{policy.selectableYears[0]}년에 이루고 싶은 것이나 요즘 고민(선택)<textarea value={state.person.wish ?? ""} maxLength={ANNUAL_WISH_MAX} rows={4} data-annual-wish onChange={e => update({ ...state, person: { ...state.person, wish: e.target.value.slice(0, ANNUAL_WISH_MAX) } })} />
+            <small>건강·금융처럼 민감한 내용은 적지 않아도 돼요. {(state.person.wish ?? "").length}/{ANNUAL_WISH_MAX}</small></label>
+        </div> : <label>선택 연도<select value={state.person.selectedYear} onChange={e => update({ ...state, person: { ...state.person, selectedYear: e.target.value } })}>{policy.selectableYears.map(year => <option key={year}>{year}</option>)}</select></label> : null}
         <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>
       </form>}
       {message ? <p className={f.error} role="alert">{message}</p> : null}

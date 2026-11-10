@@ -15,11 +15,24 @@ export const ALL_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marri
 
 export function fortuneSalesOpen(env: Env = process.env) { return env.FORTUNE_SALES_OPEN === "1"; }
 /** AM 2부: 세운 신년판 연도(설정값, 기본 2027 정미년). 연 1회 재구매 상품이라 해마다 이 값만 바꾼다. */
-export function annualProductYear(env: Env = process.env): number { const y = Number(env.ANNUAL_PRODUCT_YEAR); return Number.isInteger(y) && y >= 2026 && y <= 2100 ? y : 2027; }
-export function closedSaleProducts(env: Env = process.env): string[] { return fortuneSalesOpen(env) ? [] : [...CLOSED_FORTUNE_PRODUCTS]; }
+export function annualProductYear(env: Env = process.env): number { const y = Number(env.ANNUAL_PRODUCT_YEAR ?? env.NEXT_PUBLIC_ANNUAL_PRODUCT_YEAR); return Number.isInteger(y) && y >= 2026 && y <= 2100 ? y : 2027; }
+/** AM 6부: 대운·세운 가격 설정값이 비어 있으면 판매를 열어도 팔지 않는다(가격은 덕짱님 결정). */
+export function fortunePriceSet(product: string, env: Env = process.env): boolean {
+  const v = Number(product === "major_fortune" ? env.FORTUNE_PRICE_MAJOR_KRW ?? env.NEXT_PUBLIC_FORTUNE_PRICE_MAJOR_KRW : product === "annual_fortune" ? env.FORTUNE_PRICE_ANNUAL_KRW ?? env.NEXT_PUBLIC_FORTUNE_PRICE_ANNUAL_KRW : undefined);
+  return Number.isSafeInteger(v) && v >= 100;
+}
+export function closedSaleProducts(env: Env = process.env): string[] { return fortuneSalesOpen(env) ? CLOSED_FORTUNE_PRODUCTS.filter(p => !fortunePriceSet(p, env)) : [...CLOSED_FORTUNE_PRODUCTS]; }
 /** 결제·이용권 사용 진입점 전용(읽기·분석 경로는 isPurchasable 그대로). */
 export function productOnSale(product: unknown, env: Env = process.env): boolean { return typeof product === "string" && !closedSaleProducts(env).includes(product); }
 export const SALES_CLOSED_CODE = "PRODUCT_SALES_CLOSED";
+/**
+ * AM 3부(약관 termsPolicy 「이용권으로 만들 수 있는 리포트는 … 4종」 유지): 이용권(보상·증정·가입·추천·묶음·관리자 지급 모두)은 출시 4종에만 쓴다.
+ * 이용권마다 상품 범위가 비어 있어도(증정·관리자 지급) 대운·세운은 결제로만 — 판매를 열어도 이 관문이 막는다.
+ */
+export const TICKET_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] as const;
+export const TICKET_PRODUCT_CODE = "TICKET_PRODUCT_EXCLUDED";
+export const TICKET_PRODUCT_MESSAGE = "대운·세운은 이용권으로 만들 수 없어요. 결제로 만들 수 있어요.";
+export function ticketProductAllowed(product: unknown): boolean { return typeof product === "string" && (TICKET_PRODUCTS as readonly string[]).includes(product); }
 export const SALES_CLOSED_MESSAGE = "대운·세운은 2027 신년판으로 새로 단장하고 있어요. 12월 1일에 다시 만나요.";
 
 export function adminUserIds(env: Env = process.env): string[] { return (env.ADMIN_USER_IDS ?? "").split(",").map(s => s.trim()).filter(s => UUID.test(s)); }

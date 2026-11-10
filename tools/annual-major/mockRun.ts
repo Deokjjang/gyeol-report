@@ -6,7 +6,7 @@ import { devMockStream } from "../../src/lib/ops/generation/devMock";
 import { memorySink } from "../../src/lib/ops/generation/sinks";
 import { buildV5Snapshot } from "../../src/lib/writer/publish";
 import { projectV5Book, validateV5Publication } from "../../src/lib/writer/book";
-import type { ReportInputPayload } from "../../src/lib/report-generation/reportInputTypes";
+import type { SinglePersonReportInputPayload as ReportInputPayload } from "../../src/lib/report-generation/reportInputTypes";
 
 export function payloadOf(productKey: "annual_fortune" | "major_fortune", p: { name: string; birthDate: string; birthTime: string; gender: "MALE" | "FEMALE"; mbti: string; job: string; rel: string; wish?: string; unknown?: boolean }): ReportInputPayload {
   return { productKey, productSlug: productKey === "annual_fortune" ? "annual-fortune" : "major-fortune",
