@@ -359,6 +359,12 @@
 .detailSheet > header h2 { font-size: 15px; font-weight: 600; }
 .detailSheet > header button { width: 44px; height: 44px; font-size: 24px; }
 .detailBody { padding: 22px 24px 36px; }
+/* 2026-11-10: 「결제하기」 뒤 결제수단 시트 — 계약한 간편결제 두 개만. */
+.payMethods { display: grid; gap: 10px; }
+.payMethods button { min-height: 54px; padding: 0 20px; border-radius: 6px; font-size: 16px; font-weight: 700; text-align: left; }
+.payMethods button[data-easy-pay=KAKAOPAY] { background: #fee500; color: #191919; }
+.payMethods button[data-easy-pay=TOSSPAY] { background: #0064ff; color: #fff; }
+.payMethods button:disabled { opacity: .5; cursor: not-allowed; }
 .consentFull { font-size: 13px; line-height: 1.9; margin-bottom: 24px !important; }
 .legalAccordion { margin-top: 18px; font-size: 12px; line-height: 1.8; }
 .legalAccordion > details { border-bottom: 1px solid var(--rule); margin: 0; scroll-margin-top: 68px; }

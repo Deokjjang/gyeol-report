@@ -11,10 +11,11 @@ vi.mock("@/lib/ops/admin/rpc", () => ({ grantTickets: async () => ({ ok: true, g
 import { processRefunds } from "@/lib/ops/orders/refund";
 import { handleUpdate, botPinLockedUntil, BOT_PIN_LOCK_MS, type BotDeps } from "@/lib/ops/notify/bots";
 import { ensureWebhooks, flushNotifications, kstMonth, reconcileOpen, runNotifyCycle } from "@/lib/ops/notify/flush";
-import { duplicateToRefund, methodLabel, opsButtons, salesPaymentText, sourceWord, uaSummary, type ItemFacts, type OrderFacts } from "@/lib/ops/notify/render";
+import { duplicateToRefund, methodLabel, opsButtons, opsMessage, salesPaymentText, salesRefundText, sourceWord, TEST_TAG, uaSummary, type ItemFacts, type OrderFacts } from "@/lib/ops/notify/render";
+import { SISTER_TEST_USER_ID, testAccountIds } from "@/lib/ops/notify/deps";
 import { webhookSecret, webhookSecretMatches, telegramConfig } from "@/lib/ops/notify/telegram";
 import { fakeTelegram, inputOf, opsNotifySql, refundProvider } from "../../helpers/opsNotify";
-import { TICKET_A as A } from "../../helpers/ticketPublicationSql";
+import { TICKET_A as A, TICKET_B as B } from "../../helpers/ticketPublicationSql";
 
 type H = Awaited<ReturnType<typeof opsNotifySql>>;
 let h: H, tg: ReturnType<typeof fakeTelegram>, deps: BotDeps, upd = 1;
@@ -318,5 +319,49 @@ describe("매출 봇 명령·웹훅", () => {
     tg.calls.length = 0;
     expect(await ensureWebhooks(d, cfg, "dpl_1", false)).toEqual({ sales: "ok", ops: "ok" });
     expect(tg.calls).toEqual([]);
+  });
+});
+
+describe("시험 계정(관리자·누나): 알림은 보내되 「시험」, 집계에서는 뺀다(2026-11-10)", () => {
+  it("시험 계정 = ADMIN_USER_IDS(형식 맞는 것만, 소문자) + 누나 계정, 중복 없이", () => {
+    expect(SISTER_TEST_USER_ID).toBe("d0dd2e4e-38cf-49b5-8dea-7a35ee54dd55");
+    expect(testAccountIds({})).toEqual([SISTER_TEST_USER_ID]);
+    expect(testAccountIds({ ADMIN_USER_IDS: ` ${A.toUpperCase()},bad, ${SISTER_TEST_USER_ID}` })).toEqual([A, SISTER_TEST_USER_ID]);
+  });
+  it("1분 크론이 DB 목록을 시험 계정으로 맞춘다(없으면 부르지 않는다)", async () => {
+    const put = vi.fn(async () => true);
+    await runNotifyCycle({ ...deps, putSetting: put, testAccounts: [A, SISTER_TEST_USER_ID] });
+    expect(put).toHaveBeenCalledWith("test_accounts", { ids: [A, SISTER_TEST_USER_ID] });
+    put.mockClear();
+    await runNotifyCycle({ ...deps, putSetting: put });
+    expect(put).not.toHaveBeenCalledWith("test_accounts", expect.anything());
+  });
+  it("시험 계정 결제 → 매출 봇 「🧪 시험(집계 제외) · 💳 …」, 「오늘 N건」에는 안 센다 · /today도 그대로", async () => {
+    await h.one("select ops_notify_put_setting('test_accounts',$1::jsonb)", [JSON.stringify({ ids: [B, SISTER_TEST_USER_ID] })]);
+    try {
+      await flushNotifications(deps);
+      await handleUpdate("sales", msg("/today"), deps);
+      const todayBefore = tg.sent("sales").at(-1)!.text;
+      await h.pay("po-b-test", B);
+      expect((await flushNotifications(deps)).failed).toBe(0);
+      const t = tg.sent("sales").at(-1)!.text;
+      expect(t.startsWith(`${TEST_TAG} · 💳 <b>3,900원</b> · 나라는 사람\n`)).toBe(true);
+      expect(TEST_TAG).toBe("🧪 시험(집계 제외)");
+      await handleUpdate("sales", msg("/today"), deps);
+      expect(tg.sent("sales").at(-1)!.text).toBe(todayBefore);
+    } finally { await h.one("select ops_notify_put_setting('test_accounts',$1::jsonb)", [JSON.stringify({ ids: [SISTER_TEST_USER_ID] })]); }
+  });
+  it("문구: 시험 표시는 맨 앞 한 번(결제·환불·처리 봇), 시험이 아니면 그대로", () => {
+    const o = { amount: 3900, productType: "saju_mbti_full", orderCode: "GR-TEST", paidAt: "2026-11-10T03:00:00Z", firstPaid: true, source: {} } as unknown as OrderFacts;
+    const today = { payCount: 0, paySum: 0, refundCount: 0, refundSum: 0, newCount: 0, repeatCount: 0, byProduct: [] };
+    expect(salesPaymentText({ ...o, test: true }, "카카오페이", today).split(TEST_TAG)).toHaveLength(2);
+    expect(salesPaymentText(o, "카카오페이", today)).not.toContain("시험");
+    expect(salesRefundText({ ...o, test: true }, today).startsWith(`${TEST_TAG} · ↩️ 환불`)).toBe(true);
+    const f = { item: { id: 1, kind: "request", bot: "ops", payload: {}, state: {}, messageId: null, createdAt: "", sentAt: null, closedAt: null, closedLine: null, attempts: 0, lastError: null },
+      request: { id: "r", reason: "not_open", status: "open", resolution: null, resolvedBy: null, resolvedAt: null, createdAt: "", device: null, paymentOrderId: null, reportId: null },
+      order: null, ticket: { reportId: "report_x", productType: "saju_mbti_full", createdAt: "2026-11-10T03:00:00Z", state: "done", userId: B, book: null, gen: null, views: 0, accountPaid: 0, accountRefunded: 0, test: true },
+      duplicates: [], regenFailedBefore: false, failed: null } as unknown as ItemFacts;
+    expect(opsMessage(f, null).text.startsWith(`${TEST_TAG} · 📮`)).toBe(true);
+    expect(opsMessage({ ...f, ticket: { ...f.ticket!, test: false } }, null).text.startsWith("📮")).toBe(true);
   });
 });

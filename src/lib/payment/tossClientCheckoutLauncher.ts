@@ -168,7 +168,7 @@ function parseTossCheckoutRequest(
 export async function launchTossCheckout(
   input: unknown,
 ): Promise<TossClientCheckoutLaunchResult> {
-  if (!isRecord(input)) {
+  if (!isRecord(input) || !isSupportedEasyPay(input.easyPay)) {
     return failure(
       "TOSS_CLIENT_CHECKOUT_INVALID_REQUEST",
       "Toss 결제 실행 요청이 올바르지 않습니다.",
@@ -211,9 +211,10 @@ export async function launchTossCheckout(
       customerKey: input.customerKey,
     });
 
+    // 2026-11-10: 고객이 우리 화면에서 고른 간편결제(카카오페이·토스페이)만 바로 연다 — 통합결제창(DEFAULT)을 거치지 않는다.
     await paymentWindow.requestPayment({
       ...parsedRequest.request.requestPayment,
-      card: { flowMode: "DEFAULT" },
+      card: { flowMode: "DIRECT", easyPay: input.easyPay },
     });
   } catch {
     return failure(

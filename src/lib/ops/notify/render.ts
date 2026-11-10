@@ -11,9 +11,11 @@ export type OrderFacts = {
   source: Record<string, unknown>; book: BookFacts; job: { status: string | null; attempts: number | null; nextRetryAt: string | null; lastError: string | null } | null;
   gen: { phase: string | null; regenerateRequestedAt: string | null; officialAt: string | null; interimAt?: string | null; gaveUpAt: string | null; updatedAt: string | null } | null;
   views: number; gift: { status: string; kind: string } | null; refund: { state: string; source: string; completedAt: string | null; lastError: string | null } | null;
+  /** 시험 계정(관리자·누나)의 주문 — 집계에서 빠지고 알림에 「시험」 표시(migration 20261110200000). */
+  test?: boolean;
 };
 export type TicketFacts = { reportId: string; productType: string; createdAt: string; state: string; userId: string; book: BookFacts;
-  gen: OrderFacts["gen"]; views: number; accountPaid: number; accountRefunded: number };
+  gen: OrderFacts["gen"]; views: number; accountPaid: number; accountRefunded: number; test?: boolean };
 export type Duplicate = { paymentOrderId: string; orderCode: string | null; amount: number; paidAt: string; reportId: string | null; views: number };
 export type ItemState = { working?: string; workingAt?: string; pin?: { act: string; target?: string; until: string; promptId?: number; failures?: number }; regenFailed?: boolean; regenSawActive?: boolean; touchedAt?: string };
 export type ItemFacts = {
@@ -88,14 +90,17 @@ function retryLabel(job: OrderFacts["job"]): string {
 }
 
 // ── 매출 봇 ──────────────────────────────────────────────────────
+/** 시험 계정 알림 머리표(알림은 보내고 집계에서는 뺀다). */
+export const TEST_TAG = "🧪 시험(집계 제외)";
+const tagged = (test: boolean | undefined, line: string) => (test ? `${TEST_TAG} · ${line}` : line);
 export function salesPaymentText(o: OrderFacts, method: string | null, today: Stats): string {
   const src = sourceWord(o.source);
-  return [`💳 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))}`,
+  return [tagged(o.test, `💳 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))}`),
     [method ?? "결제수단 확인 못 함", o.firstPaid ? "신규" : "재구매", hm(o.paidAt), ...(src ? [src] : [])].map(esc).join(" · "),
     `오늘 ${today.payCount}건 · ${won(today.paySum)}`].join("\n");
 }
 export function salesRefundText(o: OrderFacts, today: Stats): string {
-  return [`↩️ 환불 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))} · ${esc(o.orderCode ?? "")}`, `오늘 순매출 ${won(today.paySum - today.refundSum)}`].join("\n");
+  return [tagged(o.test, `↩️ 환불 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))} · ${esc(o.orderCode ?? "")}`), `오늘 순매출 ${won(today.paySum - today.refundSum)}`].join("\n");
 }
 export function statsText(title: string, s: Stats): string {
   const lines = [`📊 <b>${esc(title)}</b>`, `결제 ${s.payCount}건 · ${won(s.paySum)}`, `환불 ${s.refundCount}건 · ${won(s.refundSum)}`, `순매출 <b>${won(s.paySum - s.refundSum)}</b>`];
@@ -159,8 +164,12 @@ function accountLine(f: ItemFacts): string {
   if (f.ticket) return `이 계정 결제 ${f.ticket.accountPaid} · 환불 ${f.ticket.accountRefunded} · 이용권으로 만든 책`;
   return "";
 }
-/** 처리 봇 메시지(버튼 포함). 이미 정리된 줄이면 그 줄만. */
+/** 처리 봇 메시지(버튼 포함). 시험 계정 건이면 맨 앞에 「시험」. */
 export function opsMessage(f: ItemFacts, method: string | null, now = Date.now()): Message {
+  const m = opsMessageBody(f, method, now);
+  return f.order?.test || f.ticket?.test ? { ...m, text: tagged(true, m.text) } : m;
+}
+function opsMessageBody(f: ItemFacts, method: string | null, now: number): Message {
   const id = f.item.id, kind = f.item.kind;
   if (kind === "notify_failed") {
     const x = f.failed;
