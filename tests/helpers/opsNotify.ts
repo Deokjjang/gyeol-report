@@ -26,10 +26,14 @@ export const refundProvider: RefundProvider = {
     cancels: [{ transactionKey: "tx", cancelAmount: i.amount, cancelReason: i.cancelReason, cancelStatus: "DONE", canceledAt: new Date().toISOString() }] } }),
 };
 
-export async function opsNotifySql() {
+/** F(가입 이용권·퍼널): 운영과 같은 순서로 1+1·보상(final4·별칭 고침·perf) migration을 먼저 올린 뒤 운영 Q·시험 계정, 마지막에 F. */
+export const FREE_BOOK_PRE_MIGRATIONS = ["supabase/migrations/20261106100000_v5_final4_event_comp.sql", "supabase/migrations/20261106200000_v5_deploy_gift_pending_alias.sql", "supabase/migrations/20261107090000_v5_perf_event_tickets.sql"];
+export const FREE_BOOK_MIGRATION = "supabase/migrations/20261111090000_v5_free_book.sql";
+export async function opsNotifySql(opts: { freeBook?: boolean } = {}) {
   const h = await opsSql();
+  if (opts.freeBook) { await h.db.exec("reset role"); for (const f of FREE_BOOK_PRE_MIGRATIONS) await h.db.exec(readFileSync(f, "utf8")); await h.db.exec("set role service_role"); }
   const asOwner = async <T>(f: () => Promise<T>) => { await h.db.exec("reset role"); try { return await f(); } finally { await h.db.exec("set role service_role"); } };
-  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_SHARE_ALERT_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_WAKE_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_TEST_ACCOUNTS_MIGRATION, "utf8")); });
+  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_SHARE_ALERT_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_WAKE_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_TEST_ACCOUNTS_MIGRATION, "utf8")); if (opts.freeBook) await h.db.exec(readFileSync(FREE_BOOK_MIGRATION, "utf8")); });
   const one = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows[0] as T);
   const all = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows as T[]);
   const exec = (sql: string, params: unknown[] = []) => asOwner(async () => { await h.db.query(sql, params); });

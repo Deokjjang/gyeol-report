@@ -45,10 +45,12 @@ export function kstMonthDayLabel(iso: string | null | undefined): string {
   const d = new Date(ms + 9 * 3_600_000);
   return `${d.getUTCMonth() + 1}월 ${d.getUTCDate()}일`;
 }
-/** 1+1 이벤트 기본 기간(최종 A 11, 배포 명령 0-8에서 시작을 당김): 2026-11-06 09:00:00 ~ 2026-11-16 23:59:59 KST. GIFT_EVENT_START·END env로 바꾼다.
- * SQL(ops_gift issue·pending_orders)은 기간을 갖고 있지 않고 이 값(giftEventConfig의 start·end)을 받아 쓴다 — tests/unit/final4/eventConfig.test.ts가 고정. */
+/** 1+1 이벤트 기본 기간(최종 A 11, 배포 명령 0-8에서 시작을 당김): 2026-11-06 09:00:00 ~ 2026-11-30 23:59:59 KST. GIFT_EVENT_START·END env로 바꾼다.
+ * F(2026-11-10 덕짱님 결정): 끝을 11-16 → 11-30 23:59:59로 연장(이용권 기한 EVENT_TICKET_EXPIRES_AT 11-30은 그대로).
+ * 연장할 때는 이 값(또는 env GIFT_EVENT_END) 하나만 바꾼다 — 1+1 발급·팝업·배너·영수증·가입 이용권 캠페인 끝(signupCampaignConfig)·/free·약관 문구가 모두 이 값을 읽는다.
+ * SQL(ops_gift issue·pending_orders, ops_signup grant)은 기간을 갖고 있지 않고 이 값(giftEventConfig·signupCampaignConfig의 start·end)을 받아 쓴다 — tests/unit/final4/eventConfig.test.ts가 고정. */
 export const GIFT_EVENT_DEFAULT_START = "2026-11-06T09:00:00+09:00";
-export const GIFT_EVENT_DEFAULT_END = "2026-11-16T23:59:59+09:00";
+export const GIFT_EVENT_DEFAULT_END = "2026-11-30T23:59:59+09:00";
 const KST_TIME = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?(?:\.\d+)?)?\s*(Z|[+-]\d{2}:?\d{2})?$/;
 /**
  * env 시각을 읽는다(최종 A 11). 오프셋이 없으면 KST(+09:00)로 읽는다 — Vercel 서버는 UTC라 Date.parse만 쓰면 9시간 어긋난다.
@@ -86,7 +88,8 @@ export function giftEventConfig(env: Env = process.env, now = Date.now()): GiftE
   return { active: w.phase === "during", start: valid ? new Date(w.startMs).toISOString() : "", end: valid ? new Date(w.endMs).toISOString() : "", products, ticketExpiresAt: ticketExpiresAt(now) };
 }
 /** 화면에 내보내는 공개 이벤트 정보(보상 이야기 없음). 배너·팝업 ①·영수증 한 줄. */
-export type GiftEventPublicView = { phase: GiftEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string };
+/** signup(F): 가입 이용권 캠페인 공개 상태 — DB 켜짐/꺼짐을 읽은 경로(/api/gift-event·/auth/event-popup)만 채운다. */
+export type GiftEventPublicView = { phase: GiftEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string; signup?: SignupPublicView };
 export function giftEventPublicView(env: Env = process.env, now = Date.now()): GiftEventPublicView {
   const w = giftEventWindow(env, now), cfg = giftEventConfig(env, now);
   return { phase: w.phase, serverNow: new Date(now).toISOString(), startsAt: cfg.start, endsAt: cfg.end, ticketExpiresAt: cfg.ticketExpiresAt };
@@ -105,6 +108,33 @@ export type CompConfig = {
 };
 export const COMP_DEFAULT_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] as const;
 const compInt = (v: string | undefined, d: number, min: number, max: number) => { const n = Number(v); return v !== undefined && v.trim() !== "" && Number.isInteger(n) && n >= min && n <= max ? n : d; };
+/**
+ * F: 신규 가입 이용권(가입하면 내 책 한 권 무료). gift_rewards.kind='signup', 계정당 1장, 선물·양도 불가.
+ * - 시작 = 이번 배포 시각(SIGNUP_CAMPAIGN_START, env로만 바꿈) · 끝 = 1+1 끝과 같은 값(GIFT_EVENT_END·GIFT_EVENT_DEFAULT_END) — 연장은 1+1 설정 하나로.
+ * - 기한 = 받은 시각 + 7일 · 사용 범위 = 출시 4종(대운·세운 제외).
+ * - 켜짐/꺼짐은 DB(ops_settings 'signup_grant', 처리 봇 [지급 멈춤]·[다시 켜기])가 정한다. 하루 상한은 없다.
+ */
+export const SIGNUP_CAMPAIGN_START = "2026-11-10T23:00:00+09:00";
+export const SIGNUP_TICKET_DAYS = 7;
+export const SIGNUP_PRODUCTS = COMP_DEFAULT_PRODUCTS;
+export type SignupCampaignConfig = { readonly valid: boolean; readonly inWindow: boolean; readonly start: string; readonly end: string; readonly startMs: number; readonly endMs: number; readonly days: number; readonly products: readonly string[] };
+export function signupCampaignConfig(env: Env = process.env, now = Date.now()): SignupCampaignConfig {
+  const startMs = parseEventInstant(env.SIGNUP_CAMPAIGN_START || SIGNUP_CAMPAIGN_START, "start"), endMs = parseEventInstant(env.GIFT_EVENT_END || GIFT_EVENT_DEFAULT_END, "end");
+  const valid = Number.isFinite(startMs) && Number.isFinite(endMs) && startMs < endMs;
+  return { valid, inWindow: valid && now >= startMs && now < endMs, start: valid ? new Date(startMs).toISOString() : "", end: valid ? new Date(endMs).toISOString() : "",
+    startMs: valid ? startMs : Number.NaN, endMs: valid ? endMs : Number.NaN, days: SIGNUP_TICKET_DAYS, products: [...SIGNUP_PRODUCTS] };
+}
+/** 화면용(메인 띠·/free·팝업): active = 기간 안 + DB 켜짐. endsAt = [시작, 끝) 끝 경계(ISO). */
+export type SignupPublicView = { active: boolean; endsAt: string; days: number };
+export function signupPublicView(on: boolean, env: Env = process.env, now = Date.now()): SignupPublicView {
+  const c = signupCampaignConfig(env, now);
+  return { active: on && c.inWindow, endsAt: c.end, days: c.days };
+}
+/** 「11월 30일」: [시작, 끝) 끝 경계의 1초 앞(KST). 못 읽으면 빈 문자열. */
+export function eventEndDayLabel(endsAt: string | null | undefined): string {
+  const ms = Date.parse(endsAt ?? "");
+  return Number.isFinite(ms) ? kstMonthDayLabel(new Date(ms - 1000).toISOString()) : "";
+}
 /** COMP_ENABLED=1이어야 지급·안내가 켜진다(지정·집계는 꺼져 있어도 된다). 장수·상품은 환경 설정값, 기한은 ticketExpiresAt(P 추가 D). */
 export function compConfig(env: Env = process.env, now = Date.now()): CompConfig {
   const listed = (env.COMP_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
