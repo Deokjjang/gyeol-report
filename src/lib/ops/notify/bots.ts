@@ -5,9 +5,9 @@ import { runAdminActionAs, type AdminActionDeps } from "../admin/actions";
 import { adminPinConfigured, adminPinMatches } from "../admin/config";
 import { grantTickets } from "../admin/rpc";
 import type { AuditEntry } from "../store";
-import { EVENT_TICKET_EXPIRES_AT, giftEventConfig } from "../config";
+import { EVENT_TICKET_EXPIRES_AT, giftEventConfig, signupCampaignConfig } from "../config";
 import { closeItem, editOps, itemFacts, kstDay, kstMonth, reconcileItem, renderOps, stats, type NotifyDeps } from "./flush";
-import { duplicateToRefund, esc, eventText, hm, LINES, md, monthText, opsButtons, refundDoneLine, statsText, won, type EventStats, type ItemFacts, type OrderFacts } from "./render";
+import { campaignText, duplicateToRefund, esc, eventText, funnelText, hm, LINES, md, monthText, opsButtons, refundDoneLine, SIGNUP_PAUSE_DATA, SIGNUP_RESUME_DATA, signupButtons, signupSwitchText, statsText, won, type CampaignStats, type EventStats, type FunnelRow, type ItemFacts, type OrderFacts } from "./render";
 import type { BotName } from "./telegram";
 
 /**
@@ -77,14 +77,22 @@ async function salesCommand(deps: BotDeps, text: string): Promise<string> {
     await send(deps, "sales", eventText(e, `이벤트 ${md(cfg.start)}~${md(new Date(Date.parse(cfg.end) - 1000).toISOString())}`, md(EVENT_TICKET_EXPIRES_AT)));
     return "event";
   }
-  await send(deps, "sales", "명령: /today 오늘 · /yesterday 어제 · /month 이번 달 · /event 1+1 이용권");
+  if (cmd === "/funnel") {
+    // F: 알림이 아니라 명령 응답. 익명 집계(날짜 × 단계 × 유입)와 서버 기록(시험 계정 제외).
+    const r = deps.funnel ? await deps.funnel.call("report", { days: 7 }) : { ok: false };
+    if (r.ok !== true) { await send(deps, "sales", "퍼널 기록을 읽지 못했어요. 잠시 뒤 다시 시도해 주세요."); return "funnel_failed"; }
+    await send(deps, "sales", funnelText({ today: String(r.today), from: String(r.from), rows: (Array.isArray(r.rows) ? r.rows : []) as FunnelRow[], server: (r.server ?? {}) as Record<string, number> }));
+    return "funnel";
+  }
+  await send(deps, "sales", "명령: /today 오늘 · /yesterday 어제 · /month 이번 달 · /event 1+1 이용권 · /funnel 퍼널");
   return "help";
 }
 
 // ── 📮 처리 봇 ───────────────────────────────────────────────────
 async function opsCommand(deps: BotDeps, text: string): Promise<string> {
   const cmd = text.trim().split(/[\s@]/)[0].toLowerCase();
-  if (cmd !== "/pending") { await send(deps, "ops", "명령: /pending 버튼이 남은 처리 건"); return "help"; }
+  if (cmd === "/campaign") return await campaignCommand(deps);
+  if (cmd !== "/pending") { await send(deps, "ops", "명령: /pending 버튼이 남은 처리 건 · /campaign 가입 이용권 현황"); return "help"; }
   const r = await deps.notify.call("pending", {});
   const items = Array.isArray(r.items) ? r.items as { id: number; kind: string; messageId: number | null; createdAt: string; orderCode: string | null; reason: string | null }[] : [];
   const failed = Array.isArray(r.failed) ? r.failed as { id: number; kind: string; bot: string; attempts: number; lastError: string | null; createdAt: string }[] : [];
@@ -106,7 +114,32 @@ function parseData(data: string | undefined): Parsed | null {
 }
 const reasonLabel = (f: ItemFacts) => f.item.kind === "unpublished" ? "미발행" : f.request?.reason === "double_paid" ? "두 번 결제" : "안 나옴·안 열림";
 
+// ── F 가입 이용권(/campaign · [지급 멈춤] · [다시 켜기]) ──────────────────
+const n0 = (v: unknown) => Number(v) || 0;
+async function campaignCommand(deps: BotDeps): Promise<string> {
+  const cfg = signupCampaignConfig(deps.env, deps.now());
+  const r = deps.signup && cfg.valid ? await deps.signup.call("stats", { start: cfg.start }) : { ok: false };
+  if (r.ok !== true) { await send(deps, "ops", "가입 이용권 현황을 읽지 못했어요. 잠시 뒤 다시 시도해 주세요."); return "campaign_failed"; }
+  const c: CampaignStats = { on: r.on !== false, at: typeof r.at === "string" ? r.at : null, signupsToday: n0(r.signupsToday), signups: n0(r.signups), grantedToday: n0(r.grantedToday), granted: n0(r.granted),
+    used: n0(r.used), available: n0(r.available), expired: n0(r.expired), booksStarted: n0(r.booksStarted), booksPublished: n0(r.booksPublished),
+    avgCostUsd: r.avgCostUsd === null || r.avgCostUsd === undefined ? null : Number(r.avgCostUsd), costSample: n0(r.costSample) };
+  await send(deps, "ops", campaignText(c, `${md(cfg.start)}~${md(new Date(cfg.endMs - 1000).toISOString())}`), { reply_markup: { inline_keyboard: signupButtons(c.on) } });
+  return "campaign";
+}
+/** [지급 멈춤]·[다시 켜기]: 덕짱님 id만(웹훅 첫 관문), 돈이 오가지 않아 비밀번호 없음. 누른 메시지를 새 상태 한 줄 + 반대 버튼으로 바꾼다. */
+async function signupSwitch(deps: BotDeps, q: NonNullable<Tg["callback_query"]>, on: boolean): Promise<string> {
+  if (!deps.signup) { await toast(deps, q.id, "가입 이용권 저장소가 없어요."); return "signup_unavailable"; }
+  const r = await deps.signup.call(on ? "resume" : "pause", { by: "telegram" });
+  if (r.ok !== true) { await toast(deps, q.id, "바꾸지 못했어요. 잠시 뒤 다시 눌러 주세요."); return "signup_failed"; }
+  await audit(deps, on ? "signup_grant_resumed" : "signup_grant_paused", "signup_grant", {});
+  const at = typeof r.at === "string" ? new Date(r.at).toISOString() : new Date(deps.now()).toISOString();
+  if (typeof q.message?.message_id === "number") await editOps(deps, q.message.message_id, { text: signupSwitchText(on, at), buttons: signupButtons(on) });
+  await toast(deps, q.id, on ? "가입 이용권 지급을 다시 켰어요." : "가입 이용권 지급을 멈췄어요.");
+  return on ? "signup_resumed" : "signup_paused";
+}
+
 async function opsCallback(deps: BotDeps, q: NonNullable<Tg["callback_query"]>): Promise<string> {
+  if (q.data === SIGNUP_PAUSE_DATA || q.data === SIGNUP_RESUME_DATA) return await signupSwitch(deps, q, q.data === SIGNUP_RESUME_DATA);
   const p = parseData(q.data);
   if (!p) { await toast(deps, q.id); return "bad_data"; }
   const f = await itemFacts(deps.notify, p.id);

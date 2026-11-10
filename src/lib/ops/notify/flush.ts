@@ -1,7 +1,7 @@
 import "server-only";
 import type { OpsStore } from "../generation/sinks";
 import { BOTS, messageIdOf, OPS_PUBLIC_ORIGIN, WAKE_PATH, webhookPath, webhookSecret, type BotName, type Telegram, type TelegramConfig } from "./telegram";
-import { bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, shareFailedText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
+import { apiCreditText, bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, shareFailedText, signupButtons, signupSurgeText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
 
 /**
  * 알림 통로(운영 Q 4부). 대기표(ops_notifications)를 비우고, 처리 봇 메시지를 그때의 상태로 정리한다.
@@ -20,7 +20,12 @@ export type NotifyDeps = {
   putSetting(key: string, value: Record<string, unknown>): Promise<boolean>;
   /** 시험 계정 id(testAccountIds). 있으면 1분 크론이 DB 목록(ops_settings 'test_accounts')을 이 값으로 맞춘다. */
   testAccounts?: readonly string[];
+  /** F: 가입 이용권(ops_signup — 급증 경보 확인·/campaign·[지급 멈춤]) · 퍼널(ops_funnel — /funnel). 없으면 그 기능만 쉰다. */
+  signup?: OpsStore;
+  funnel?: OpsStore;
 };
+/** F 가입 급증 경보 기준: 최근 60분 신규 가입(시험 계정 제외) 20건 이상. */
+export const SIGNUP_SURGE_THRESHOLD = 20;
 
 // ── 한국 날짜 구간 ───────────────────────────────────────────────
 const KST_OFFSET = 9 * 3_600_000;
@@ -66,6 +71,9 @@ async function build(deps: NotifyDeps, x: Claimed): Promise<Message> {
   }
   // 공유 실패 경보: 대기표 줄의 숫자만으로 그린다(버튼 없음 → 보내면 바로 닫힘).
   if (x.kind === "share_failed") return { text: shareFailedText(x.payload), buttons: [] };
+  // F: 가입 급증 경보([지급 멈춤]·[다시 켜기] — 그 순간 상태)·API 잔액 경보(버튼 없음).
+  if (x.kind === "signup_surge") return { text: signupSurgeText(x.payload), buttons: signupButtons(x.payload.on !== false) };
+  if (x.kind === "api_credit") return { text: apiCreditText(x.payload), buttons: [] };
   const f = await itemFacts(deps.notify, x.id);
   if (!f) throw new Error("ITEM_MISSING");
   return renderOps(deps, f);
@@ -173,8 +181,9 @@ export async function reconcileOpen(deps: NotifyDeps, max = 30): Promise<Record<
 
 // ── 텔레그램 설정 자동화(운영 배포에서만) ─────────────────────────────
 export const BOT_COMMANDS: Record<BotName, { command: string; description: string }[]> = {
-  sales: [{ command: "today", description: "오늘 매출" }, { command: "yesterday", description: "어제 매출" }, { command: "month", description: "이번 달 누적·지난달 비교" }, { command: "event", description: "1+1 증정 이용권 현황" }],
-  ops: [{ command: "pending", description: "버튼이 남은 처리 건" }],
+  sales: [{ command: "today", description: "오늘 매출" }, { command: "yesterday", description: "어제 매출" }, { command: "month", description: "이번 달 누적·지난달 비교" }, { command: "event", description: "1+1 증정 이용권 현황" },
+    { command: "funnel", description: "퍼널(오늘·7일·유입별)" }],
+  ops: [{ command: "pending", description: "버튼이 남은 처리 건" }, { command: "campaign", description: "가입 이용권 현황·지급 멈춤" }],
 };
 /**
  * 두 봇의 웹훅이 우리 주소로 맞는지 보고, 없거나 다르거나 배포가 바뀌었으면 다시 설정한다(setWebhook + setMyCommands). 깨우기 주소도 DB에 적는다.
@@ -212,6 +221,7 @@ export async function runNotifyCycle(deps: NotifyDeps, opts: { webhooks?: { conf
   // 집계(ops_notify 'stats')와 「시험」 표시가 읽는 시험 계정 목록. 같은 값이면 DB가 고치지 않는다.
   if (deps.testAccounts?.length) await step("testAccounts", () => deps.putSetting("test_accounts", { ids: [...deps.testAccounts!] }));
   await step("unpublished", async () => (await deps.notify.call("scan_unpublished", {})).added ?? 0);
+  if (deps.signup) await step("signupSurge", async () => (await deps.signup!.call("surge_check", { threshold: SIGNUP_SURGE_THRESHOLD })).alerted === true);
   await step("flush", () => flushNotifications(deps));
   await step("reconcile", () => reconcileOpen(deps));
   await step("remind", async () => (await deps.notify.call("remind", {})).reminded ?? 0);

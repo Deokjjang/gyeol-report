@@ -28,6 +28,8 @@ export type GenerationEnv = {
   readonly build?: typeof buildV5Snapshot;
   /** 최종판3 6: 호출 원문 저장소(ops_writer_raw RPC). 교체 레인이 lease 토큰으로 쓴다. */
   readonly raw?: OpsStore;
+  /** F: 작가 호출이 잔액 부족·결제 문제로 실패했을 때 처리 봇 경보(ops_signup 'credit_alert', SQL이 1시간 1번만). 시험 주입이면 없음. */
+  readonly creditAlert?: (code: "anthropic_credit" | "openai_quota") => Promise<unknown>;
 };
 export type State = { phase: string; first_attempt_at: string; first_failure_at: string | null; failures: number; rejected_chapters: number[]; last_reason: string | null };
 export type Decision =
@@ -90,6 +92,7 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
     verdict = { kind: "incomplete", reason: `build_exception:${e instanceof Error ? e.name : "unknown"}`, rejected: [], missing: [], preOutput: true };
   }
   if (seen.openaiQuota) { try { await env.store.call("provider_set", { provider: "openai", disabled: true, reason: "insufficient_quota" }); } catch { /* 다음 시도에서 다시 감지 */ } }
+  if ((seen.anthropicCredit || seen.openaiQuota) && env.creditAlert) { try { await env.creditAlert(seen.anthropicCredit ? "anthropic_credit" : "openai_quota"); } catch { /* 경보 실패는 생성과 무관 */ } }
   const summary = built ? runSummary(built) : { provider: target.provider, model: target.model, costUsd: 0, durationMs: (env.now ?? Date.now)() - started, calls: [], chapters: [] };
   const reason = verdict.kind === "incomplete" ? `${lane}:${verdict.reason}${seen.openaiQuota ? ":openai_quota" : ""}${seen.anthropicCredit ? ":anthropic_credit" : ""}` : `${lane}:${verdict.kind}`;
   return { built, verdict, summary: { ...summary, provider: summary.provider ?? target.provider, model: summary.model ?? target.model }, reason, seen };

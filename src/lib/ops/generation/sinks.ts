@@ -63,7 +63,8 @@ export function watchFetch(base: typeof fetch, seen: QuotaSeen): typeof fetch {
         const body = await res.clone().text();
         // 잔액 부족 429는 기다려도 풀리지 않는다: 재시도하지 않는 402로 바꿔 이번 시도를 바로 끝낸다.
         if (/openai\.com/.test(url) && QUOTA.test(body)) { seen.openaiQuota = true; return new Response(body, { status: 402, headers: res.headers }); }
-        if (/anthropic\.com/.test(url) && CREDIT.test(body)) seen.anthropicCredit = true;
+        // F: 잔액 부족(credit balance)·결제 필요(402)는 처리 봇 경보(감독이 1시간 1번).
+        if (/anthropic\.com/.test(url) && (res.status === 402 || CREDIT.test(body))) seen.anthropicCredit = true;
       } catch { /* 본문을 못 읽어도 응답은 그대로 */ }
     }
     return res;

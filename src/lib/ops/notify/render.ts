@@ -197,7 +197,72 @@ function opsMessageBody(f: ItemFacts, method: string | null, now: number): Messa
   const line3 = `${bookStateLabel(book, f.order?.job ?? null)} · 열람 ${f.order?.views ?? f.ticket?.views ?? 0}회 · ${esc(f.request?.device ?? "기기 정보 없음")}`;
   return { text: [`${title} · ${esc(codeOf(f))}`, line2, line3, accountLine(f)].filter(Boolean).join("\n"), buttons };
 }
-const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고", share_failed: "처리 공유 실패 경보" };
+const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고", share_failed: "처리 공유 실패 경보",
+  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보" };
+
+// ── F 가입 이용권 캠페인(처리 봇) ─────────────────────────────────────
+/** 버튼 값(돈이 오가지 않아 비밀번호 없음, 덕짱님 id만 — 웹훅 첫 관문). */
+export const SIGNUP_PAUSE_DATA = "sg:pause", SIGNUP_RESUME_DATA = "sg:resume";
+export function signupButtons(on: boolean): Button[][] {
+  return [[on ? { text: "지급 멈춤", callback_data: SIGNUP_PAUSE_DATA } : { text: "다시 켜기", callback_data: SIGNUP_RESUME_DATA }]];
+}
+/** 「🚨 가입 급증 N건 (최근 1시간) · 오늘 지급 N장」 */
+export function signupSurgeText(p: Record<string, unknown>): string {
+  return `🚨 <b>가입 급증 ${Number(p.count) || 0}건</b> (최근 1시간) · 오늘 지급 ${Number(p.grantedToday) || 0}장${p.on === false ? "\n지금 지급은 멈춰 있어요" : ""}`;
+}
+/** 「⏸ 가입 이용권 지급 멈춤 · 시각」 / 「▶️ 가입 이용권 지급 다시 켬 · 시각」 */
+export function signupSwitchText(on: boolean, at: string | null): string {
+  return on ? `▶️ <b>가입 이용권 지급 다시 켬</b> · ${mdhm(at)}` : `⏸ <b>가입 이용권 지급 멈춤</b> · ${mdhm(at)}`;
+}
+/** 「🚨 생성 실패: API 잔액 확인 필요」(1시간 1번). */
+export function apiCreditText(p: Record<string, unknown>): string {
+  const code = p.code === "openai_quota" ? "OpenAI(임시본) 할당량" : "Anthropic(작가) 잔액·결제";
+  return [`🚨 <b>생성 실패: API 잔액 확인 필요</b>`, `${code} 문제로 작가 호출이 실패했어요 · 무료 책이 늘면 잔액이 빨리 줄어요`].join("\n");
+}
+export type CampaignStats = { on: boolean; at: string | null; signupsToday: number; signups: number; grantedToday: number; granted: number; used: number; available: number; expired: number;
+  booksStarted: number; booksPublished: number; avgCostUsd: number | null; costSample: number };
+const usd = (n: number) => `$${n.toFixed(2)}`;
+/** /campaign: 지급 상태·오늘/누적 신규 가입·지급·사용·무료로 만든 책·추정 생성비(권당 실측 평균). 시험 계정 제외. */
+export function campaignText(c: CampaignStats, period: string): string {
+  const cost = c.avgCostUsd !== null && c.avgCostUsd > 0 ? `추정 생성비 ${usd(c.avgCostUsd * c.booksStarted)} (권당 실측 평균 ${usd(c.avgCostUsd)} · 최근 30일 ${c.costSample}권)` : "추정 생성비: 실측 비용 기록 없음";
+  return [`🎟 <b>가입 이용권</b> · ${c.on ? "지급 켜짐" : `⏸ 지급 멈춤${c.at ? `(${mdhm(c.at)})` : ""}`} · ${esc(period)}`,
+    `오늘 신규 가입 ${c.signupsToday} · 지급 ${c.grantedToday}`,
+    `누적 신규 가입 ${c.signups} · 지급 ${c.granted} · 사용 ${c.used} · 남음 ${c.available} · 만료 ${c.expired}`,
+    `무료로 만든 책 ${c.booksStarted}권(발행 ${c.booksPublished})`, cost, "시험 계정 제외"].join("\n");
+}
+export type FunnelRow = { day: string; step: string; source: string; campaign: string; n: number };
+export type FunnelServer = Record<string, number>;
+/** /funnel 단계 순서와 전환율의 기준 단계(null = 전환율 없음). */
+export const FUNNEL_LINES: ReadonlyArray<readonly [step: string, label: string, base: string | null]> = [
+  ["free_view", "/free 조회", null], ["login_new", "신규 가입", "free_view"], ["signup_grant", "가입 이용권 지급", "login_new"],
+  ["home_view", "메인 조회", null], ["product_view", "상품 화면", "home_view"], ["input_start", "입력 시작", "product_view"], ["input_done", "입력 완료", "input_start"],
+  ["ticket_click", "이용권 사용", "input_done"], ["pay_click", "결제하기", "input_done"], ["pay_open", "결제창 열림", "pay_click"], ["paid", "결제 완료", "pay_open"],
+  ["login_member", "기존 회원 로그인", null], ["book_start", "책 생성 시작", null], ["book_published", "책 발행", "book_start"],
+];
+const pct = (n: number, d: number) => d > 0 ? ` (${Math.round(n / d * 100)}%)` : "";
+const SOURCE_LABEL: Record<string, string> = { direct: "직접", "-": "모름", meta: "메타", facebook: "메타", fb: "메타", x: "X", twitter: "X", instagram: "인스타", ig: "인스타", threads: "스레드", kakao: "카카오", naver: "네이버", google: "구글", other: "기타" };
+function funnelBlock(sum: Map<string, number>): string[] {
+  return FUNNEL_LINES.filter(([step]) => (sum.get(step) ?? 0) > 0 || ["free_view", "home_view", "paid"].includes(step))
+    .map(([step, label, base]) => `${label} ${sum.get(step) ?? 0}${base ? pct(sum.get(step) ?? 0, sum.get(base) ?? 0) : ""}`);
+}
+/** /funnel: 오늘·최근 7일 단계별 숫자·전환율(괄호 = 기준 단계 대비), 유입별(최근 7일), 서버 기록(시험 계정 제외). 익명 집계. */
+export function funnelText(r: { today: string; from: string; rows: FunnelRow[]; server: FunnelServer }): string {
+  const sumOf = (rows: FunnelRow[]) => rows.reduce((m, x) => m.set(x.step, (m.get(x.step) ?? 0) + (Number(x.n) || 0)), new Map<string, number>());
+  const today = r.rows.filter(x => String(x.day).slice(0, 10) === String(r.today).slice(0, 10));
+  const bySource = new Map<string, FunnelRow[]>();
+  for (const x of r.rows) { const k = SOURCE_LABEL[x.source] ?? x.source; bySource.set(k, [...(bySource.get(k) ?? []), x]); }
+  const sources = [...bySource.entries()].map(([k, rows]) => [k, sumOf(rows)] as const)
+    .sort((a, b) => ((b[1].get("free_view") ?? 0) + (b[1].get("home_view") ?? 0)) - ((a[1].get("free_view") ?? 0) + (a[1].get("home_view") ?? 0))).slice(0, 8);
+  const s = r.server, n = (k: string) => Number(s[k]) || 0;
+  const md2 = (d: string) => { const [, m, dd] = String(d).slice(0, 10).split("-"); return `${m}/${dd}`; };
+  return [`📈 <b>퍼널</b> · 익명 집계(시험 브라우저·시험 계정 제외)`,
+    `<b>오늘(${md2(r.today)})</b>`, ...funnelBlock(sumOf(today)),
+    `<b>최근 7일(${md2(r.from)}~${md2(r.today)})</b>`, ...funnelBlock(sumOf(r.rows)),
+    `<b>유입별 · 최근 7일</b>`, ...(sources.length ? sources.map(([k, m]) => `${esc(k)} · /free ${m.get("free_view") ?? 0} → 가입 ${m.get("login_new") ?? 0}${pct(m.get("login_new") ?? 0, m.get("free_view") ?? 0)} · 메인 ${m.get("home_view") ?? 0} · 결제 ${m.get("paid") ?? 0} · 이용권 사용 ${m.get("ticket_click") ?? 0}`) : ["아직 기록이 없어요"]),
+    `<b>서버 기록(시험 계정 제외)</b>`,
+    `오늘 신규 가입 ${n("signupsToday")} · 가입 이용권 ${n("grantsToday")} · 주문 ${n("ordersToday")} · 결제 ${n("paidToday")} · 발행 ${n("publishedToday")}`,
+    `7일 신규 가입 ${n("signups")} · 가입 이용권 ${n("grants")} · 주문 ${n("orders")} · 결제 ${n("paid")} · 발행 ${n("published")}`].join("\n");
+}
 /** 공유 실패 경보(운영 Q 추가, 버튼 없음). 상태 코드와 책 버전만 보인다(주문·책·회원 정보 없음 — DB에도 없다). */
 export function shareFailedText(p: Record<string, unknown>): string {
   const causes = Array.isArray(p.causes) ? (p.causes as { status?: unknown; version?: unknown; count?: unknown }[]) : [];
