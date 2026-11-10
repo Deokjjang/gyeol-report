@@ -39,10 +39,12 @@ beforeAll(async () => {
       select p_user is not null and coalesce((select jsonb_typeof(s.value->'ids')='array' and s.value->'ids' ? p_user::text from public.ops_settings s where s.key='test_accounts'), false); $$;`);
   // 같은 migration을 두 번 올리면 앵커가 없어 실패한다(이중 적용 방지) — 한 번만.
   await db.exec(read("20261111091000_v5_meta_test_exclude.sql"));
+  // F 후속: 시험 계정 표(ops_test_accounts) — 운영 순서대로 그 뒤에 올린다(ops_test_user가 표도 본다).
+  await db.exec(read("20261111100000_v5_test_account_table.sql"));
 }, 30000);
 beforeEach(async () => {
   await db.exec("truncate meta_conversion_outbox,meta_tracking_consents,account_contacts,launch_event_policy,growth_campaigns,report_ticket_grants,referral_invites,campaign_attributions,new_user_acquisitions cascade");
-  await db.exec("delete from public.ops_settings where key='test_accounts'");
+  await db.exec("delete from public.ops_settings where key='test_accounts'"); await db.exec("delete from public.ops_test_accounts");
   await h.clock(START); await h.policy(); await db.exec("update growth_campaigns set public_slug='gyeol-opening-2026'");
 });
 afterAll(async () => { await db?.close(); });
@@ -83,5 +85,17 @@ describe("시험 계정 메타 전송 차단(DB 트리거·전송 단계)", () =
     expect((await db.query<{ r: boolean }>("select queue_meta_purchase($1,null,'192.0.2.7','ua',$2) r", [report, tester])).rows[0].r).toBe(false);
     const event = `purchase_${createHash("md5").update(`gyeol:paid-order:${order}`).digest("hex")}`;
     expect((await db.query<{ n: number }>("select count(*)::int n from meta_conversion_outbox where event_id=$1", [event])).rows[0].n).toBe(0);
+  });
+  it("F 후속 「시험 계정 표」(ops_test_accounts)에 넣은 계정도 같은 자리에서 빠진다 — 설정값(관리자·누나 목록)과 별개, 재배포 없이", async () => {
+    const tester = await h.user(); const key = await consent(tester);
+    await db.query("insert into public.ops_test_accounts(user_id,note) values($1,'시험')", [tester]);
+    expect((await db.query<{ r: boolean }>("select public.ops_test_user($1) r", [tester])).rows[0].r).toBe(true);
+    const { order, report } = await paidOrder(tester);
+    expect(await rows(order)).toEqual([]);
+    expect((await db.query<{ r: boolean }>("select queue_meta_purchase($1,$2,'192.0.2.9','ua',$3) r", [report, key, tester])).rows[0].r).toBe(false);
+    // 표에서 빼면 바로 예전 그대로(다음 결제는 1줄).
+    await db.query("delete from public.ops_test_accounts where user_id=$1", [tester]);
+    expect((await db.query<{ r: boolean }>("select public.ops_test_user($1) r", [tester])).rows[0].r).toBe(false);
+    expect(await rows((await paidOrder(tester)).order)).toHaveLength(1);
   });
 });

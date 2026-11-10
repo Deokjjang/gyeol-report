@@ -48,9 +48,9 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
     return handleLibrary(request, action.slice(8), port, createLibraryPort());
   }
   const { handleAccount } = await import("../../../lib/account/handler");
-  // F: 시험 계정(관리자·누나 계정) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
-  const { testAccountIds } = await import("../../../lib/ops/notify/deps");
-  const testers = new Set(testAccountIds()), isTester = (id: string) => testers.has(id.toLowerCase());
+  // F: 시험 계정(관리자·누나 계정 + DB 「시험 계정 표」) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
+  const { liveTestAccountIds } = await import("../../../lib/ops/notify/deps");
+  const testers = await liveTestAccountIds(), isTester = (id: string) => testers.has(id.toLowerCase());
   if (action !== "session") return handleAccount(request, action, port, false, { isTester });
   // 재동의 화면 맨 위 한 줄(P 본문 3): 안 쓴 보상 이용권이 있는 기존 회원에게만(읽기 전용 ops_comp_campaign 'popup').
   const { compCampaignStore } = await import("../../../lib/ops/comp/popup");

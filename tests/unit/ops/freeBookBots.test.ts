@@ -6,6 +6,7 @@ import { handleUpdate, type BotDeps } from "@/lib/ops/notify/bots";
 import { BOT_COMMANDS, flushNotifications, runNotifyCycle, SIGNUP_SURGE_THRESHOLD } from "@/lib/ops/notify/flush";
 import { apiCreditText, campaignText, funnelText, signupSurgeText } from "@/lib/ops/notify/render";
 import { grantSignupTicket } from "@/lib/ops/gift/service";
+import { liveTestAccountIds, resetLiveTestAccounts, SISTER_TEST_USER_ID, TEST_TABLE_TTL_MS } from "@/lib/ops/notify/deps";
 import { fakeTelegram, opsNotifySql } from "../../helpers/opsNotify";
 import { TICKET_A as A } from "../../helpers/ticketPublicationSql";
 
@@ -120,5 +121,24 @@ describe("/campaign · /funnel · API 잔액 경보", () => {
     expect(campaignText({ on: false, at: "2026-11-11T05:00:00Z", signupsToday: 1, signups: 2, grantedToday: 1, granted: 2, used: 1, available: 1, expired: 0, booksStarted: 1, booksPublished: 1, avgCostUsd: null, costSample: 0 }, "11/11~11/30"))
       .toMatch(/^🎟 <b>가입 이용권<\/b> · ⏸ 지급 멈춤\(11\/11 14:00\)/);
     expect(funnelText({ today: "2026-11-11", from: "2026-11-05", rows: [], server: {} })).toContain("아직 기록이 없어요");
+  });
+});
+
+describe("F 후속: 서버의 시험 계정 목록 = env(관리자·누나 계정) + DB 「시험 계정 표」(60초 캐시)", () => {
+  it("표의 계정을 더하고, 60초 안에는 다시 읽지 않으며, 읽기 실패면 직전 값을 쓴다(처음이면 env 목록만)", async () => {
+    resetLiveTestAccounts();
+    const ADMIN = "00000000-0000-4000-8000-00000000a0a0", T1 = "00000000-0000-4000-8000-000000000071", T2 = "00000000-0000-4000-8000-000000000072";
+    const e = { ADMIN_USER_IDS: ADMIN };
+    let reads = 0; const read = (ids: string[] | null) => async () => { reads++; return ids; };
+    const first = await liveTestAccountIds(e, 1_000, read([T1.toUpperCase()]));
+    expect([...first].sort()).toEqual([ADMIN, SISTER_TEST_USER_ID, T1].sort());
+    expect([...await liveTestAccountIds(e, 1_000 + TEST_TABLE_TTL_MS - 1, read([T2]))]).not.toContain(T2);
+    expect(reads).toBe(1);
+    const fresh = await liveTestAccountIds(e, 1_000 + TEST_TABLE_TTL_MS, read([T2]));
+    expect(fresh.has(T2)).toBe(true); expect(fresh.has(T1)).toBe(false);
+    expect((await liveTestAccountIds(e, 1_000 + 2 * TEST_TABLE_TTL_MS, read(null))).has(T2)).toBe(true);
+    resetLiveTestAccounts();
+    expect([...await liveTestAccountIds(e, 5_000, read(null))].sort()).toEqual([ADMIN, SISTER_TEST_USER_ID].sort());
+    resetLiveTestAccounts();
   });
 });

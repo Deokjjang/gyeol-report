@@ -5,7 +5,7 @@ vi.mock("server-only", () => ({}));
 const hits = vi.hoisted(() => ({ calls: [] as Record<string, unknown>[], user: null as null | { id: string } }));
 vi.mock("@/lib/ops/store", () => ({ createOpsStores: () => ({ funnel: { call: async (a: string, d: Record<string, unknown>) => { hits.calls.push({ a, ...d }); return { ok: true }; } }, signup: { call: async () => ({ ok: true, on: true }) } }) }));
 vi.mock("@/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => hits.user }) }));
-vi.mock("@/lib/ops/notify/deps", () => ({ testAccountIds: () => ["00000000-0000-4000-8000-00000000a001"] }));
+vi.mock("@/lib/ops/notify/deps", () => ({ testAccountIds: () => ["00000000-0000-4000-8000-00000000a001"], liveTestAccountIds: async () => new Set(["00000000-0000-4000-8000-00000000a001"]) }));
 import { NextRequest } from "next/server";
 import { renderToStaticMarkup } from "react-dom/server";
 import { POST as funnelPost } from "@/app/api/funnel/route";
@@ -125,9 +125,9 @@ describe("/free 화면", () => {
     const { FreeLanding } = await import("@/components/growth/FreeLanding");
     return renderToStaticMarkup(<FreeLanding signup={{ ...signupPublicView(true, { GIFT_EVENT_ENABLED: "1" }, Date.parse("2026-11-12T12:00:00+09:00")), active }} event={event} examples={freeExamples()} />);
   };
-  it("질문·설명·예시 「한 페이지」 3장(가상 인물 예시 본문 그대로, HTML)·혜택·[가입하고 무료로 받기]→로그인·1+1 줄(11월 30일까지)·권유 링크", async () => {
+  it("질문·설명·예시 「한 페이지」 3장(가상 인물 예시 본문 그대로, HTML)·혜택·[가입하고 무료로 받기]→로그인·증정 줄(11월 30일까지)·권유 링크", async () => {
     const html = await render(true);
-    for (const t of [FREE_COPY.question, FREE_COPY.lead, FREE_COPY.benefit, "(이용권 1장, 7일)", FREE_COPY.cta, "지금 1+1 진행 중 — 한 권 결제하면 이용권 1장 증정(11월 30일까지)", FREE_COPY.follow]) expect(html).toContain(t);
+    for (const t of [FREE_COPY.question, FREE_COPY.lead, FREE_COPY.benefit, "(이용권 1장, 7일)", FREE_COPY.cta, "11월 30일까지 한 권 결제하면 이용권 1장 증정", FREE_COPY.follow]) expect(html).toContain(t);
     expect(html).toContain('href="/login?next=/free"');
     expect((html.match(/data-free-example/g) ?? [])).toHaveLength(3);
     const ex = freeExamples();
@@ -158,5 +158,41 @@ describe("로그인 화면 한 줄·책 끝 연결 위치", () => {
     const reading = readFileSync("src/components/book/BookReading.tsx", "utf8"), reader = readFileSync("src/app/dev/book-preview/BookReader.tsx", "utf8");
     expect(reading).toContain("endNotice={!example && !shared && shareOwner && endNotice ? <BookEndNotice view={endNotice} home={home} /> : undefined}");
     expect(reader).toContain("</div></section>}{endNotice}{backAction}");
+  });
+});
+
+describe("2026-11-10 정정: 고객 화면 4곳은 「증정」 표현(「1+1」·「더 드려요」 없음), 날짜는 설정값(1+1 끝)", () => {
+  const NOW = Date.parse("2026-11-12T12:00:00+09:00"), ON = { GIFT_EVENT_ENABLED: "1" };
+  const banned = /1\+1|더 드려요|한 권이 더/;
+  it("가입 팝업·책 끝·메인 띠·/free 작은 줄 — 지시 문구 그대로", async () => {
+    const { signupPopupEventLine } = await import("@/components/event/EventPopup");
+    const { bookEndEventLine } = await import("@/components/book/BookReading");
+    const { SIGNUP_STRIP_TEXT, SIGNUP_STRIP_EVENT } = await import("@/components/growth/GiftEventCountdown");
+    const { eventEndDayLabel } = await import("@/lib/ops/config");
+    const until = eventEndDayLabel(giftEventPublicView(ON, NOW).endsAt);
+    expect(until).toBe("11월 30일");
+    const lines = [signupPopupEventLine(until), bookEndEventLine(until), `${SIGNUP_STRIP_TEXT} · ${SIGNUP_STRIP_EVENT}`, FREE_COPY.eventLine(until)];
+    expect(lines).toEqual(["11월 30일까지 한 권 결제하면 이용권 1장을 증정해요", "11월 30일까지 한 권 결제하면 이용권 1장을 증정해요. 친구에게 선물할 수도 있어요.",
+      "지금 가입하면 내 책 한 권 무료 · 결제 시 이용권 증정", "11월 30일까지 한 권 결제하면 이용권 1장 증정"]);
+    for (const l of lines) expect(l).not.toMatch(banned);
+  });
+  it("가입 팝업 화면: 서버가 준 1+1 끝(설정값)으로 날짜를 그린다 — 끝을 바꾸면 날짜도 바뀐다", async () => {
+    const { EventPopup } = await import("@/components/event/EventPopup");
+    const draw = (env: Record<string, string>) => renderToStaticMarkup(<EventPopup id="signup" clock={() => NOW} onDone={() => undefined}
+      state={{ member: true, comp: null, event: giftEventPublicView(env, NOW), signup: { active: true, mine: { status: "available", expiresAt: new Date(NOW + 7 * 86_400_000).toISOString() } } }} />);
+    expect(draw(ON)).toContain("11월 30일까지 한 권 결제하면 이용권 1장을 증정해요");
+    expect(draw({ ...ON, GIFT_EVENT_END: "2026-12-15" })).toContain("12월 15일까지 한 권 결제하면 이용권 1장을 증정해요");
+    expect(draw(ON)).not.toMatch(banned);
+  });
+  it("책 끝: 서버(bookEndNotice)가 설정값에서 날짜를 넘기고, 1+1 기간이 아니면 줄 없음", async () => {
+    const { bookEndNotice } = await import("@/lib/book/storedReport");
+    const { BookEndNotice } = await import("@/components/book/BookReading");
+    vi.stubEnv("GIFT_EVENT_ENABLED", "1");
+    const view = await bookEndNotice("report_x", false, NOW);
+    expect(view).toEqual({ event: true, eventUntil: "11월 30일", signup: false });
+    expect(renderToStaticMarkup(<BookEndNotice view={view} />)).toContain("11월 30일까지 한 권 결제하면 이용권 1장을 증정해요. 친구에게 선물할 수도 있어요.");
+    vi.stubEnv("GIFT_EVENT_END", "2026-12-15");
+    expect((await bookEndNotice("report_x", false, NOW)).eventUntil).toBe("12월 15일");
+    expect(await bookEndNotice("report_x", false, Date.parse("2026-12-20T00:00:00+09:00"))).toEqual({ event: false, eventUntil: "", signup: false });
   });
 });
