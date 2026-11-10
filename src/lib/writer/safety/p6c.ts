@@ -16,6 +16,7 @@ import * as E from "./p6e";
 import * as F from "./final2";
 import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
+import { STYLE_HINT, styleFlags, type StyleRule } from "./style";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -28,7 +29,9 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   // 최종판2: 궁합 성격표 · 명식 글자 나열 · 같은 일주 구절 · 다른 책 이미지
   | "pair_profile" | "glyph_list" | "ilju_phrase" | "avoid_image"
   // 최종판3 3: 정답지 대조(사실·뜻·관계·강약·간지·개수와 세기·공통 특징) · 렌더(중복 치환·내부 라벨) · 종합 시점 · 입력 밖 직업 상황
-  | FactRule | "phrase_repeat";
+  | FactRule | "phrase_repeat"
+  // AM 1-1 ②·1-4: 장 안 같은 구절 · 같은 문장 시작 3연속 · 같은 연결어 과다(문체 규칙, style.ts)
+  | StyleRule;
 export type CardField = "image" | "todo" | "review" | "caution";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -100,6 +103,7 @@ const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은
 const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
 
 const HINT: Readonly<Record<P6cRule, string>> = {
+  ...STYLE_HINT,
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
   fact_term: "정답지와 다른 신살·귀인·운성(이름·자리·주인) → detail의 맞는 사실로 고치거나 그 주장을 뺀다",
   fact_relation: "정답지와 다른 관계(없는 글자·글자 수·완성도·건드리지 않는 해) → detail의 맞는 관계로 고친다",
@@ -461,6 +465,9 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         for (let i = 0; i + PHRASE_WINDOW <= norm.length; i++) { const w = norm.slice(i, i + PHRASE_WINDOW); if (!seen.has(w)) seen.set(w, c.n); }
       } }));
     } }
+  // AM 1-1 ②·1-4: 문체 검사(수리로만 보낸다). 이미 깃발이 있는 문장은 다시 걸지 않는다.
+  { const flagged = new Set(out.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`));
+    for (const f of styleFlags(chapters)) if (!flagged.has(`${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`)) { flagged.add(`${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`); out.push({ ...f, hint: STYLE_HINT[f.rule] }); } }
   out.push(...lintCards(chapters, ctx));
   return out;
 }

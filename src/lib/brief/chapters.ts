@@ -11,7 +11,7 @@ import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, type FactProfile }
 import { FAMILY_MEMBER } from "@/lib/writer/safety/patterns";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
-import type { Rng } from "./seed";
+import { fnv1a, type Rng } from "./seed";
 import { meaningGroup } from "./groups";
 import type { Brief, ChapterBrief, Material, Trait } from "./schema";
 import type { ProductKey } from "./traits";
@@ -67,6 +67,8 @@ export type PlanCtx = {
   /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
   readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
   readonly excludeSeeds?: ReadonlySet<string>;
+  /** AM 1-1 ③: 장면 분산 값(고객 해시 + 상품 id). 소품 힌트 시작 자리와 씨앗 고르기에 섞는다. */
+  readonly spread?: number;
 };
 const SEED_DOMAIN: Readonly<Record<string, string>> = { work: "work", study: "work", money: "money", love: "love", marriage: "love", relationships: "relationships", alone: "alone" };
 
@@ -91,9 +93,11 @@ const PROP_POOL: Record<Domain, readonly ("job" | "relationship" | "stage")[]> =
 /** 같은 소품은 책 전체에서 이 횟수까지만 힌트로 준다(P3.6 A1). */
 export const MAX_PROP_USES = 1; // P6d F 소품 원장: 같은 소품 명사는 책당 1회
 /** 장마다 소품 2개를 줄별 커서로 돌려 준다. 책 단위 사용 기록(usedProps)으로 한 소품은 2회까지. */
-export function sceneHints(props: CustomerProps, plans: readonly { repeatKey?: string; domains: readonly Domain[] }[]): { hints: (string[] | undefined)[]; usedProps: Record<string, number> } {
+/** spread(AM 1-1 ③): 고객 해시 + 상품 id. 소품 줄마다 시작 자리를 이 값으로 돌린다(예전에는 모든 고객이 0부터 — 같은 생활 단계 고객이 같은 장에서 「쉬는 날 없는 주말」을 받았다). */
+export function sceneHints(props: CustomerProps, plans: readonly { repeatKey?: string; domains: readonly Domain[] }[], spread = 0): { hints: (string[] | undefined)[]; usedProps: Record<string, number> } {
   const pools = { job: props.job.props, relationship: props.relationship, stage: props.stage.props };
-  const cursor = { job: 0, relationship: 0, stage: 0 };
+  const start = (line: string, n: number) => (n ? fnv1a(`${spread}:${line}`) % n : 0);
+  const cursor = { job: start("job", pools.job.length), relationship: start("relationship", pools.relationship.length), stage: start("stage", pools.stage.length) };
   const usedProps: Record<string, number> = {};
   const hints = plans.map(p => {
     if (p.repeatKey) return undefined;
@@ -455,7 +459,7 @@ export function planChapters(input: PlanCtx): PlanResult {
   for (const t of ctx.traits) t.trait.chapters.sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
 
   const total = plans.length;
-  const hints = ctx.props ? sceneHints(ctx.props, plans).hints : [];
+  const hints = ctx.props ? sceneHints(ctx.props, plans, ctx.spread ?? 0).hints : [];
   const chapters = plans.map((p): ChapterBrief => {
     const repeat = Boolean(p.repeatKey);
     const flat = repeat ? [{ kind: "timeline" as const, entryKey: p.repeatKey! }, ...p.aux] : p.sections.flatMap(s => s.materials).slice(0, 12);

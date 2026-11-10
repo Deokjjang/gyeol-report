@@ -45,6 +45,7 @@ import { WRITER_SYSTEM } from "./prompt/system";
 import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } from "./safety";
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
+import { imageClash } from "./safety/imageClash";
 import { avoidOverlaps, COVER_MOTIFS, coverMotifs, iljuPhrasesFor } from "@/lib/brief/imageLedger";
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
@@ -322,6 +323,8 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
   if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return { reason: "연차", level: "hard" };
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
+  // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
+  { const clash = imageClash(v); if (clash) return { reason: `그림 안 시간·계절 모순(${clash}) — 한 시간·한 계절의 그림으로`, level: "hard" }; }
   // 최종판3 2g: 종합 표지는 직업·나이 금지, 연애 표지는 직업 장소 금지, 같은 사람 이전 책 표지와 같은 모티프 계열 금지.
   if (brief.product === "saju_mbti_full") {
     const words = jobWordsOf(brief.person.facts.job.detail);

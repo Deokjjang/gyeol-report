@@ -349,7 +349,8 @@
               "domain": "work",
               "use": [
                 "ref:chart.thisYear",
-                "ref:chart.currentDayun"
+                "ref:chart.currentDayun",
+                "ev:yearRelation"
               ],
               "trait": "none"
             }
@@ -970,7 +971,8 @@
               "q": "앞으로 3년은 어떻게 흐를까?",
               "domain": "work",
               "use": [
-                "ev:threeYears"
+                "ev:threeYears",
+                "ev:yearRelation"
               ],
               "trait": "none"
             },
@@ -1377,7 +1379,8 @@
               "q": "대운·세운으로 본 인연의 흐름은?",
               "domain": "love",
               "use": [
-                "ev:loveTiming"
+                "ev:loveTiming",
+                "ev:yearRelation"
               ],
               "trait": "none",
               "note": "경향만, 시기 단정 금지"
@@ -1797,7 +1800,8 @@
               "q": "먼저 맞출 한 가지는 무엇일까?",
               "domain": "relationships",
               "use": [
-                "recap:friction"
+                "recap:friction",
+                "ev:yearRelation"
               ],
               "trait": "none"
             },

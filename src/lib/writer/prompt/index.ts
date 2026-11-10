@@ -200,14 +200,15 @@ function assignActions(out: Record<string, unknown>, brief: Brief): void {
     const si = ss.length - 1, domain = plan[ci]?.sections?.[si]?.domain ?? "alone";
     const pick = (ACTIONS_BY_DOMAIN[domain] ?? ACTIONS_BY_DOMAIN.alone).find(f => !used.has(f)) ?? Object.values(ACTIONS_BY_DOMAIN).flat().find(f => !used.has(f));
     // 최종판3 12: 종류 이름을 그대로 쓴 「처방은 지출 한도입니다.」가 나왔다(판독) — 이름은 작가용 표시일 뿐 글에 쓰지 않는다고 함께 적는다.
-    if (pick) { ss[si].act = `행동 조언 하나(${pick} 쪽) — 이 장의 행동 조언은 이 절에만. 「${pick}」·「처방」 같은 종류 이름은 글에 쓰지 않고 행동 자체를 쓴다`; used.add(pick); }
+    if (pick) { ss[si].act = `행동 조언 하나(${pick} 쪽) — 이 장의 행동 조언은 이 절에만. 「${pick}」 같은 종류 이름은 글에 쓰지 않고 행동 자체를 쓴다`; used.add(pick); }
   });
 }
 
 /** 최종판3 2: 상품·입력별 책 규칙(작가에게 보이는 규칙 줄). 문체 지침은 그대로 두고 사실·구조 규칙만 더한다. */
 export function bookRules(brief: Brief): string[] {
   const p = brief.product, rel = brief.person.facts.relationship, year = brief.chart.thisYear;
-  const rules = ["처방(행동 조언)은 장마다 하나, act가 있는 절에 그 종류로만 쓴다(장마다 종류가 다르다). act가 없는 절은 새 처방을 만들지 않고 장면·이해로 마무리한다. avoidActions(같은 사람 이전 책 처방)와 같은 행동은 되풀이하지 않는다"];
+  // AM 1-1 ③: 작가에게 보이는 줄에서 「처방」(브리프 용어)을 뺐다 — 「이 장의 처방은 하나예요」로 새어 나왔다(운영 판독). 본문의 「처방」은 내부 용어 검사가 잡는다.
+  const rules = ["행동 조언은 장마다 하나, act가 있는 절에 그 종류로만 쓴다(장마다 종류가 다르다). act가 없는 절은 새 행동 조언을 만들지 않고 장면·이해로 마무리한다. avoidActions(같은 사람 이전 책의 행동 조언)와 같은 행동은 되풀이하지 않는다. 행동 조언은 행동 자체로 쓰고 「이 장의 ○○은」처럼 조언의 이름·개수를 말하지 않는다"];
   if (p === "saju_mbti_full") rules.push(
     "[표지]와 1장에는 직업 장면·직업 말(직함·업무·회사·가게)을 쓰지 않는다. 성향 장은 장마다 직업 장면 1개 이하, 일·돈 장만 예외",
     "입력에 없는 직업 상황(투자자·투자 유치·직원·팀원·면접·평가 시즌·실적표·'처음 만든 ~')은 쓰지 않는다",

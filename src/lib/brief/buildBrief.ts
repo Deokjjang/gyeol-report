@@ -34,6 +34,10 @@ import { annualDesign, familyDesign, keyMonthsLink, loveDesign, majorDesign } fr
 import { conditionsHold } from "./conditions";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
 import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
+import { pairYearRelationEvidence, yearRelationEvidence } from "./yearRelation";
+
+/** 세운 × 원국 관계 근거를 흐름·시기 장에 넣는 상품(AM 1-1 ①). 대운·세운은 자기 카드(2·3부)를 쓴다. */
+const LAUNCH_YEAR_RELATION: ReadonlySet<string> = new Set(["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"]);
 
 export type BriefPersonInput = {
   readonly name: string;
@@ -95,6 +99,10 @@ const STYLE_RULES = [
   "존댓말이되 가볍게(~입니다/~예요 혼용). 소제목 3~5개, 문단 4~6문장. 한자는 처음 한 번만 괄호로",
   "내부 id·ref·family·score·자료 이름, 그리고 '팩폭'·'재료'·'브리프'·'명식' 같은 편집 용어는 본문·소제목에 쓰지 않는다",
   "같은 MBTI 연결(같은 기능·같은 글자)을 두 장에서 되풀이하지 않는다. 장마다 그 장 재료의 fusion만 쓴다",
+  // AM 1-1 ④·1-4: 연애 「오래된 사이」 문단에서 듣는 사람이 앞뒤로 엇갈렸고, 「데이트 스타일」 3문단의 논리가 튀었다(11/5 판독).
+  "문단 하나에는 주어와 듣는 사람이 하나다: '당신'에게 말하기 시작했으면 그 문단 끝까지 '당신'에게 말하고, 상대에게 건네는 말은 따옴표 안에만 쓴다. 문단은 장면 → 이유(그 장면이 나오는 근거) → 행동 순서로 잇고, 이유 없이 다음 장면으로 건너뛰지 않는다",
+  "읽기 리듬: 짧은 문장과 긴 문장을 섞고, 문단 첫 문장은 쉬운 말로 연다. 같은 말로 시작하는 문장을 세 번 잇지 않고, 그래서·하지만 같은 연결어는 장마다 두 번까지",
+  "전문 용어(십성·신살·합충 이름)는 처음 나올 때 바로 뒤에 쉬운 뜻을 붙인다. 같은 구절·같은 결론을 한 장에서 세 번 쓰지 않는다",
 ];
 
 type PersonPack = {
@@ -351,6 +359,11 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       return { ...base, ...careerDesign({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, jobStatus: me.facts.jobStatus, detailJob: me.facts.detailJob, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base, shop: me.profile.scene?.shop, jobProps: matchJob(me.facts.detailJob)?.props }) };
     })()
     : input.product === "saju_mbti_full" ? familyDesign(me.saju, groupValues(me.saju)) : {};
+  // AM 1-1 ①: 4종 흐름·시기 장의 세운 × 원국 관계(엔진 카드, 세운 상품과 같은 코드). 관계가 있을 때만 근거가 생긴다.
+  if (LAUNCH_YEAR_RELATION.has(input.product)) {
+    const yr = isPair && other ? pairYearRelationEvidence([{ saju: me.saju, who: me.person.callName }, { saju: other.saju, who: other.person.callName }], k, input.baseDate) : yearRelationEvidence(me.saju, k, input.baseDate);
+    if (yr) evidence.yearRelation = yr;
+  }
 
   // 상품 근거 문장도 고객 사실과 어긋나는 문장은 뺀다(미혼에게 "배우자와는 ~" 등).
   const esf: SafetyFacts = { birthTimeKnown: me.person.facts.birthTimeKnown, mbti: me.facts.mbti, relationship: profile.relationship, children: profile.children, job: profile.job };
@@ -380,6 +393,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(input.knownTraits?.length ? { known: new Set(input.knownTraits) } : {}),
     mbtiSeeds: k.mbtiSeeds, ...(input.excludeSeeds?.length ? { excludeSeeds: new Set(input.excludeSeeds) } : {}),
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
+    // AM 1-1 ③: 장면 분산 = 고객 해시(이름·생일·시각·성별, 주문 시각 제외) + 상품 id. 같은 사람의 다른 상품, 다른 사람의 같은 상품이 서로 다른 소품 자리에서 시작한다.
+    spread: fnv1a(`${input.person.name.replace(/\s+/g, "")}|${input.person.birthDate}|${input.person.birthTimeUnknown ? "" : input.person.birthTime.slice(0, 5)}|${input.person.gender}|${input.product}`),
     ...(isPair && other ? { mbtiPair: ([[me, me.facts.mbti], [other, other.facts.mbti]] as const).flatMap(([p, t]) => t && k.mbti.get(t) ? [{ who: p.person.callName, profile: k.mbti.get(t)! }] : []) } : {}),
     ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),
     ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])), transitionTouched } : {}),
