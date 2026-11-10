@@ -144,7 +144,9 @@ export function payloadToBriefInput(payload: ReportInputPayload, baseDate: strin
   });
   if (payload.productKey === "saju_mbti_compatibility") return { product: payload.productKey, person: person(payload.personA), partner: person(payload.personB), relationshipType: payload.relationshipType, baseDate, ...at };
   const year = "selectedYear" in payload.productOptions ? Number(payload.productOptions.selectedYear) : NaN;
-  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...at, ...(Number.isFinite(year) ? { selectedYear: year } : {}) };
+  // AM 2부: 세운 소망(선택, 200자). 브리프가 정리·위험 표현·지시 꼴을 거른다(design/annual.readWish).
+  const wish = (payload.productOptions as { wish?: unknown }).wish;
+  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...at, ...(Number.isFinite(year) ? { selectedYear: year } : {}), ...(typeof wish === "string" && wish.trim() ? { wish } : {}) };
 }
 
 const firstSentence = (sections: readonly BookSection[]) => splitSentences(sections.flatMap(s => s.paragraphs)[0] ?? "")[0] ?? "";
