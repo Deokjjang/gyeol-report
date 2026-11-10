@@ -28,7 +28,7 @@ describe("보상 안내 문구", () => {
       const text = compNoticeText(tier, state, { quantity: tier === "A" ? 2 : 1 });
       expect(text).not.toMatch(/[{}]|선물 링크 \d장|내 책|본인용|  /u);
       expect(text).toMatch(/결제할 때 바로 쓰거나/u);
-      expect(text).not.toMatch(/받은 날부터/u); // P 추가 D: 기한은 날짜(11월 30일)로
+      expect(text).not.toMatch(/받은 날부터/u); // P 추가 D: 보상 기한은 날짜(11월 30일)로(결제 증정 이용권만 받은 날부터 30일)
     }
     expect(JSON.stringify(COMP_COPY)).not.toContain("{구성}");
   });

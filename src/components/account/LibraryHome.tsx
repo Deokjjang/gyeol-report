@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cardResult, stillMaking, type ShelfBook } from "../../lib/library/shelf";
 import { REQUEST_COPY, SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
+import { EVENT_TICKET_DAYS } from "../../lib/ops/config";
 import type { TicketWallet } from "../../lib/ops/gift/service";
 import { OrderRequestForm } from "../ops/OrderParts";
 import { GiftSheet } from "./GiftSheet";
@@ -56,6 +57,9 @@ export function LibraryHome() {
   </>;
 }
 
+/** 서재 이용권 줄 아래 안내(이벤트 기간에만). 2026-11-10 정정: 「증정」 표현, 기한은 받은 날부터 30일. */
+export const libraryEventNote = (until: string) => `이벤트 기간(${until}까지) 결제 1건마다 1장씩 증정해요. 받은 날부터 ${EVENT_TICKET_DAYS}일 동안 결제할 때 바로 쓰거나 친구에게 선물할 수 있어요.`;
+
 function TicketLine({ wallet, eventDuring, eventEndsAt, onGift }: { wallet: TicketWallet | null; eventDuring: boolean; eventEndsAt: string | null; onGift: () => void }) {
   const total = wallet?.total ?? 0, until = kst(wallet?.expiresAt ?? null, false);
   return <div className={s.ticketWrap}>
@@ -63,7 +67,7 @@ function TicketLine({ wallet, eventDuring, eventEndsAt, onGift }: { wallet: Tick
       <p><b>리포트 이용권 {wallet ? `${total}장` : "확인하지 못했어요"}</b>{total > 0 && until ? <span className={s.until}> · {until}까지</span> : null}</p>
       {wallet && wallet.giftable > 0 ? <button type="button" onClick={onGift}>이용권 선물하기</button> : null}
     </div>
-    {total > 0 && eventDuring ? <p className={s.ticketNote}>이벤트 기간({kst(eventEndsAt, false)}까지) 결제 1건마다 1장씩 드려요. 결제할 때 바로 쓰거나 친구에게 선물할 수 있어요.</p> : null}
+    {total > 0 && eventDuring ? <p className={s.ticketNote}>{libraryEventNote(kst(eventEndsAt, false))}</p> : null}
   </div>;
 }
 

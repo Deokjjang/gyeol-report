@@ -9,7 +9,7 @@ import { runPaidV5Job, type PaidJobOps } from "@/lib/ops/generation/paidJob";
 import { afterPaidOrder, newGiftToken } from "@/lib/ops/gift/service";
 import { processRefunds } from "@/lib/ops/orders/refund";
 import type { RefundProvider } from "@/lib/payment/tossRefundClient";
-import { compConfig, compSyncArgs, giftEventConfig, TICKET_VALID_DAYS, ticketExpiresAt } from "@/lib/ops/config";
+import { compConfig, compSyncArgs, compTicketExpiresAt, giftEventConfig, TICKET_VALID_DAYS } from "@/lib/ops/config";
 import { libraryItem, reportAccessOpen } from "@/lib/library/model";
 import { projectV5Book } from "@/lib/writer/book";
 import { AI_WRITTEN_NOTICE_KO } from "@/lib/legal/aiNotice";
@@ -53,11 +53,11 @@ beforeAll(async () => {
 afterAll(async () => { await h?.db.close(); });
 
 describe("이용권 유효기간 30일(최종3)", () => {
-  it("서버 설정: P 추가 D — 이번 이벤트 이용권 기한은 11-30 23:59:59 KST 고정, 그 뒤 발급만 30일(예전 유효일 설정값은 무시)", () => {
+  it("서버 설정: 결제 증정 이용권은 받은 시각 + 30일(2026-11-10 정정), 보상은 P 추가 D 그대로 11-30 23:59:59 KST 고정·그 뒤 발급만 30일(예전 유효일 설정값은 무시)", () => {
     expect(TICKET_VALID_DAYS).toBe(30);
     const now = Date.parse("2026-11-10T00:00:00Z");
-    expect(giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-01T00:00:00Z", GIFT_EVENT_END: "2026-12-01T00:00:00Z", GIFT_EVENT_VALID_DAYS: "90" }, now).ticketExpiresAt).toBe("2026-11-30T14:59:59.000Z");
-    expect(ticketExpiresAt(Date.parse("2026-12-01T00:00:00Z"))).toBe("2026-12-31T00:00:00.000Z");
+    expect(giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-01T00:00:00Z", GIFT_EVENT_END: "2026-12-01T00:00:00Z", GIFT_EVENT_VALID_DAYS: "90" }, now).ticketExpiresAt).toBe("2026-12-10T00:00:00.000Z");
+    expect(compTicketExpiresAt(Date.parse("2026-12-01T00:00:00Z"))).toBe("2026-12-31T00:00:00.000Z");
     expect(compSyncArgs(compConfig({ COMP_A_VALID_DAYS: "60", COMP_B_VALID_DAYS: "45" }, now))).toMatchObject({ aDays: 30, bDays: 30, expiresAt: "2026-11-30T14:59:59.000Z" });
   });
 

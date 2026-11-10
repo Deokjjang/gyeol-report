@@ -285,7 +285,7 @@ describe("처리 봇: 관리자 화면 처리·자동 완성도 똑같이 정리
 });
 
 describe("매출 봇 명령·웹훅", () => {
-  it("/today·/yesterday·/month·/event(11/30 뒤 「이벤트가 끝났어요」)", async () => {
+  it("/today·/yesterday·/month·/event(이벤트 끝 + 30일 = 12/31 0시부터 「이벤트가 끝났어요」)", async () => {
     expect(await handleUpdate("sales", msg("/today"), deps)).toBe("today");
     const t = tg.sent("sales").at(-1)!.text;
     expect(t).toMatch(/^📊 <b>오늘\(\d{2}\/\d{2}\)<\/b>\n결제 \d+건 · [\d,]+원\n환불 \d+건 · [\d,]+원\n순매출 <b>[\d,]+원<\/b>\n상품별: 나라는 사람 \d+건 [\d,]+원\n신규 \d+ · 재구매 \d+$/);
@@ -293,8 +293,10 @@ describe("매출 봇 명령·웹훅", () => {
     expect(await handleUpdate("sales", msg("/month"), deps)).toBe("month");
     expect(tg.sent("sales").at(-1)!.text).toContain("지난달 같은 날짜까지");
     expect(await handleUpdate("sales", msg("/event"), { ...deps, now: () => Date.parse("2026-11-10T12:00:00+09:00") })).toBe("event");
-    expect(tg.sent("sales").at(-1)!.text).toMatch(/^🎁 <b>1\+1 증정 이용권<\/b> · 이벤트 11\/06~11\/30 · 이용권 11\/30까지\n발급 /);
-    expect(await handleUpdate("sales", msg("/event"), { ...deps, now: () => Date.parse("2026-12-01T00:00:00+09:00") })).toBe("event_over");
+    expect(tg.sent("sales").at(-1)!.text).toMatch(/^🎁 <b>1\+1 증정 이용권<\/b> · 이벤트 11\/06~11\/30 · 이용권 받은 날부터 30일\n발급 /);
+    // 2026-11-10 정정: 마지막 날 받은 이용권이 30일 뒤까지 남으므로 그때까지 답한다.
+    expect(await handleUpdate("sales", msg("/event"), { ...deps, now: () => Date.parse("2026-12-30T23:59:59+09:00") })).toBe("event");
+    expect(await handleUpdate("sales", msg("/event"), { ...deps, now: () => Date.parse("2026-12-31T00:00:00+09:00") })).toBe("event_over");
     expect(tg.sent("sales").at(-1)!.text).toBe("이벤트가 끝났어요");
   });
   it("웹훅 비밀값 = 봇 토큰 HMAC(별도 환경변수 없음), 다르면 거절", () => {

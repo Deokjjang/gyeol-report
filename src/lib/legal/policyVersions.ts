@@ -40,6 +40,11 @@ export const META_OPTOUT_POLICY_EFFECTIVE_DATE: string | null = "2026-12-10";
  * 이용자에게 유리하거나(무상 증정 추가·이벤트 연장) 이미 적힌 목적 안의 설명이라 동의 버전은 올리지 않는다(문서 개정 공지 — docs/v5/final4/legal-review.md 「F」 절).
  */
 export const FREE_BOOK_POLICY_DATE: string | null = "2026-11-10";
+/**
+ * 결제 증정 이용권 기한 정정(F 후속) 문서 개정일 = 이 배포일(KST). 「2026-11-30 23:59:59까지」 → 「받은 날부터 30일」(이미 받은 이용권도 늘림, 줄이지 않음).
+ * 이용자에게 유리한 변경이라 동의 버전은 올리지 않는다(FREE_BOOK_POLICY_DATE와 같은 원칙). 보상·가입 이용권 기한은 그대로.
+ */
+export const EVENT_TICKET_DAYS_POLICY_DATE: string | null = "2026-11-11";
 const koreanDate = (iso: string | null) => { if (!iso) return "배포일(확정 전)"; const [y, m, d] = iso.split("-").map(Number); return `${y}년 ${m}월 ${d}일`; };
 /** 이용약관 시행일(한국어). */
 export const POLICY_EFFECTIVE_DATE_KO = koreanDate(POLICY_EFFECTIVE_DATE);
@@ -48,6 +53,7 @@ export const POLICY_EFFECTIVE_DATE_KO = koreanDate(POLICY_EFFECTIVE_DATE);
 export const META_OPTOUT_POLICY_EFFECTIVE_DATE_KO = koreanDate(META_OPTOUT_POLICY_EFFECTIVE_DATE);
 /** F 문서 개정일(한국어). */
 export const FREE_BOOK_POLICY_DATE_KO = koreanDate(FREE_BOOK_POLICY_DATE);
+export const EVENT_TICKET_DAYS_POLICY_DATE_KO = koreanDate(EVENT_TICKET_DAYS_POLICY_DATE);
 export const POLICY_EFFECTIVE_DATES_KO = {
   terms: POLICY_EFFECTIVE_DATE_KO,
   privacy: koreanDate(OPS_Q_POLICY_EFFECTIVE_DATE),
@@ -57,6 +63,7 @@ export const POLICY_EFFECTIVE_DATES_KO = {
 /** 변경 이력(문서 끝에 그대로 보인다). 최신이 먼저. */
 export const POLICY_HISTORY = {
   terms: [
+    `${EVENT_TICKET_DAYS_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다): 결제 1건마다 증정하는 이용권의 기한을 「2026년 11월 30일 23:59:59까지」에서 「받은 날부터 30일」로 늘림(이미 받은 이용권도 받은 날부터 30일로 늘림), 보상 이용권(2026년 11월 30일 23:59:59까지)과 가입 이용권(받은 날부터 7일)의 기한은 그대로`,
     `${FREE_BOOK_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다): 이용권 조항에 「가입 이용권」을 더함(무상 증정, 캠페인 기간에 새로 가입한 회원 1인 1회, 받은 날부터 7일, 4종, 선물·양도 불가, 운영상 지급을 멈출 수 있음, 부정한 방법으로 받으면 회수), 결제 1건마다 이용권 1장 증정 이벤트 기간을 적고 2026년 11월 30일까지로 늘림`,
     `${POLICY_EFFECTIVE_DATE_KO} 시행(현재, 문서 버전 2026-11-06.1): 결제는 로그인한 회원만, 이용권은 결제에 따른 무상 증정(현금 교환·환불 불가), 이용권 기한은 이용권에 표시된 날짜까지(이번 이벤트 이용권은 2026년 11월 30일 23:59:59까지), 이용권으로 만들 수 있는 리포트(4종, 대운·세운 제외), 결제가 환불되면 그 결제로 받은 미사용 이용권(받지 않은 선물 포함) 회수, 이용권으로 만든 책에 오류가 있으면 다시 만들거나 이용권을 다시 드림`,
     "2026년 11월 6일 시행(문서 버전 2026-11-05.1): 판매 상품 4종, 이용권 조항, AI 작성 고지, 리포트 버전별 열람 기간, 서비스 종료 안내(서비스 화면 공지 및 이메일 등)",

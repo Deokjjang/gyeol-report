@@ -1,7 +1,7 @@
 /**
  * 이벤트(P6d-ops 6, 설정값으로 켜고 끔): 결제 1건마다 이용권 1장(P 추가 C: 계정당 상한 없음, 친구 첫 결제 보너스 없음).
  * 결제 화면에서 바로 쓰거나(ops_gift 'spend') 선물 링크로 보낸다. 받은 친구는 정보 화면을 마쳐야 받을 수 있다.
- * 기한(P 추가 D): cfg.ticketExpiresAt — 이번 이벤트는 2026-11-30 23:59:59 KST.
+ * 기한: cfg.ticketExpiresAt — 받은 날부터 30일(2026-11-10 정정, 그 전에는 11-30 고정).
  */
 import { createHash, createHmac, randomBytes } from "node:crypto";
 import { signupCampaignConfig, type GiftEventConfig } from "../config";

@@ -50,7 +50,7 @@ describe("발행 주문서 (최종 A 16)", () => {
     expect(text(render({ giftEventProducts: ["saju_mbti_full"] }))).not.toContain("로그인하고 결제하면");
     hooks.slots = []; state.session = { status: "member", profile: "complete" } as AccountSession;
     const member = render({ giftEventProducts: ["saju_mbti_full"] });
-    expect(GIFT_EVENT_RECEIPT_LINE).toBe("이벤트 · 결제 후 이용권 1장 증정");
+    expect(GIFT_EVENT_RECEIPT_LINE).toBe("이벤트 · 결제 후 이용권 1장 증정(받은 날부터 30일)");
     // 회원은 이용권 잔액 확인 전까지 결제 방법이 정해지지 않았어도 직접 결제 기본 → 줄이 보인다.
     expect(text(member)).toContain(GIFT_EVENT_RECEIPT_LINE);
     hooks.slots = []; expect(render({ giftEventProducts: ["career_money_study"] })).not.toContain("data-gift-event-line");

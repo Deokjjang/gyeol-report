@@ -33,8 +33,8 @@ describe("1+1 기간(서버 시각, KST)", () => {
     expect(giftEventWindow(ON, T("2026-11-30T23:59:59.999+09:00")).phase).toBe("during");
     expect(giftEventWindow(ON, T("2026-12-01T00:00:00+09:00")).phase).toBe("after");
     const c = giftEventConfig(ON, T("2026-11-10T12:00:00+09:00"));
-    // P 추가 C·D: 계정당 상한·친구 보너스 없음, 이용권 기한은 2026-11-30 23:59:59 KST(발급일과 상관없이 같은 날).
-    expect(c).toMatchObject({ active: true, start: "2026-11-06T00:00:00.000Z", end: "2026-11-30T15:00:00.000Z", ticketExpiresAt: "2026-11-30T14:59:59.000Z" });
+    // P 추가 C: 계정당 상한·친구 보너스 없음. 2026-11-10 정정: 이용권 기한은 받은 시각 + 30일(11-10 12:00 KST → 12-10 12:00 KST).
+    expect(c).toMatchObject({ active: true, start: "2026-11-06T00:00:00.000Z", end: "2026-11-30T15:00:00.000Z", ticketExpiresAt: "2026-12-10T03:00:00.000Z" });
     expect(c).not.toHaveProperty("maxPerAccount"); expect(c).not.toHaveProperty("bonusMax");
     expect(giftEventActive(ON, T("2026-11-17T00:00:01+09:00"))).toBe(true);
     expect(giftEventActive(ON, T("2026-12-01T00:00:01+09:00"))).toBe(false);
@@ -60,15 +60,15 @@ describe("1+1 기간(서버 시각, KST)", () => {
   });
   it("공개 정보에는 보상 이야기가 없다", () => {
     const v = giftEventPublicView(ON, T("2026-11-10T00:00:00+09:00"));
-    // P 추가 C·D: 계정당 상한·유효일 대신 이용권 기한(이번 이벤트 2026-11-30 23:59:59 KST).
-    expect(Object.keys(v).sort()).toEqual(["endsAt", "phase", "serverNow", "startsAt", "ticketExpiresAt"]);
-    expect(v.ticketExpiresAt).toBe(new Date(T("2026-11-30T23:59:59+09:00")).toISOString());
+    // 2026-11-10 정정: 이용권 기한은 날짜 대신 받은 날부터 쓸 수 있는 날수(30일).
+    expect(Object.keys(v).sort()).toEqual(["endsAt", "phase", "serverNow", "startsAt", "ticketDays"]);
+    expect(v.ticketDays).toBe(30);
     expect(JSON.stringify(v)).not.toMatch(/comp|보상/);
   });
 });
 
 describe("팝업 고르기", () => {
-  const event = (phase: "off" | "before" | "during" | "after") => ({ phase, serverNow: "2026-11-10T00:00:00.000Z", startsAt: "2026-11-06T00:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", ticketExpiresAt: "2026-11-30T14:59:59.000Z" });
+  const event = (phase: "off" | "before" | "during" | "after") => ({ phase, serverNow: "2026-11-10T00:00:00.000Z", startsAt: "2026-11-06T00:00:00.000Z", endsAt: "2026-11-16T15:00:00.000Z", ticketDays: 30 });
   const comp = (tier: "A" | "B", unused = tier === "A" ? 2 : 1, expiresAt = "2026-12-06T03:00:00.000Z") => ({ tier, quantity: unused, unused, expiresAt });
   const now = T("2026-11-10T00:00:00Z");
   const pick = (s: PopupState, path = "/") => selectPopup(s, path, now);

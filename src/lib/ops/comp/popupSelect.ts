@@ -9,9 +9,9 @@
  */
 export type PopupId = "event-1plus1" | "comp-b" | "comp-a" | "signup";
 export type PopupEventPhase = "off" | "before" | "during" | "after";
-/** ticketExpiresAt: 지금 받는 이용권의 기한(ISO, P 추가 D — 이번 이벤트는 2026-11-30 23:59:59 KST). 계정당 상한은 없다(P 추가 C). */
+/** ticketDays: 결제 증정 이용권을 받은 날부터 쓸 수 있는 날수(2026-11-10 정정: 30일, 그 전에는 11-30 고정). 계정당 상한은 없다(P 추가 C). */
 /** signup(F): 가입 이용권 캠페인 공개 상태(메인 띠·/free) — 서버가 DB 켜짐/꺼짐을 읽어 채운다. */
-export type PopupEvent = { phase: PopupEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string; signup?: { active: boolean; endsAt: string; days: number } };
+export type PopupEvent = { phase: PopupEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketDays: number; signup?: { active: boolean; endsAt: string; days: number } };
 export type PopupComp = { tier: "A" | "B"; quantity: number; unused: number; expiresAt: string };
 /** signup(F): active = 가입 캠페인 켜짐(기간 + DB) · mine = 그 회원의 가입 이용권(status·기한). */
 export type PopupSignup = { active: boolean; mine: { status: string; expiresAt: string } | null };

@@ -4,7 +4,8 @@ import { buildShelf, cardResult, stillMaking, type ShelfOrder, type ShelfRequest
 import { REQUEST_RESULT_COPY } from "@/lib/legal/socialLinks";
 import type { LibraryRow } from "@/lib/library/model";
 import { externalBrowserUrl, inAppBrowser } from "@/lib/account/inAppBrowser";
-import { EVENT_TICKET_EXPIRES_AT, kstMonthDayLabel, ticketExpiresAt } from "@/lib/ops/config";
+import { COMP_TICKET_EXPIRES_AT, compTicketExpiresAt, eventTicketExpiresAt, kstMonthDayLabel } from "@/lib/ops/config";
+import { libraryEventNote } from "@/components/account/LibraryHome";
 
 const NOW = Date.parse("2026-11-06T12:00:00+09:00");
 const id = (n: number) => `report_${String(n).padStart(32, "0")}`;
@@ -93,11 +94,18 @@ describe("인앱 브라우저(P 추가 A)", () => {
   });
 });
 
-describe("이용권 기한(P 추가 D)", () => {
-  it("이번 이벤트 기한 전에는 11월 30일 23:59:59 KST, 지난 뒤에는 발급일 + 30일", () => {
-    expect(ticketExpiresAt(NOW)).toBe(new Date(Date.parse(EVENT_TICKET_EXPIRES_AT)).toISOString());
-    expect(kstMonthDayLabel(ticketExpiresAt(NOW))).toBe("11월 30일");
-    expect(ticketExpiresAt(Date.parse("2026-12-01T00:00:00+09:00"))).toBe(new Date(Date.parse("2026-12-31T00:00:00+09:00")).toISOString());
+describe("이용권 기한(P 추가 D · 2026-11-10 정정)", () => {
+  it("보상 이용권: 11월 30일 23:59:59 KST 전에는 그 시각, 지난 뒤에는 발급일 + 30일", () => {
+    expect(compTicketExpiresAt(NOW)).toBe(new Date(Date.parse(COMP_TICKET_EXPIRES_AT)).toISOString());
+    expect(kstMonthDayLabel(compTicketExpiresAt(NOW))).toBe("11월 30일");
+    expect(compTicketExpiresAt(Date.parse("2026-12-01T00:00:00+09:00"))).toBe(new Date(Date.parse("2026-12-31T00:00:00+09:00")).toISOString());
     expect(kstMonthDayLabel("not a date")).toBe("");
+  });
+  it("서재 안내: 「증정」·받은 날부터 30일", () => {
+    expect(libraryEventNote("11월 30일")).toBe("이벤트 기간(11월 30일까지) 결제 1건마다 1장씩 증정해요. 받은 날부터 30일 동안 결제할 때 바로 쓰거나 친구에게 선물할 수 있어요.");
+  });
+  it("결제 증정 이용권: 언제 받아도 받은 시각 + 30일(11-30에 받아도 12-30까지)", () => {
+    expect(eventTicketExpiresAt(NOW)).toBe(new Date(NOW + 30 * 86_400_000).toISOString());
+    expect(eventTicketExpiresAt(Date.parse("2026-11-30T23:00:00+09:00"))).toBe(new Date(Date.parse("2026-12-30T23:00:00+09:00")).toISOString());
   });
 });

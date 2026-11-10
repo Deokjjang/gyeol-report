@@ -157,10 +157,10 @@ describe("결제·이용권 게이트", () => {
     expect(await resolveBuyer(new Request(ORIGIN), { name: "손님", email: "g@b.co", emailConfirm: "x@b.co" }, { port: null, account })).toMatchObject({ ok: false, code: "LOGIN_REQUIRED", status: 401 });
     expect(await resolveBuyer(new Request(ORIGIN), { name: "손님", email: "g@b.co", emailConfirm: "g@b.co", phone: "010 9999 8888" }, { port: null, account })).toMatchObject({ ok: false, code: "LOGIN_REQUIRED", status: 401 });
   });
-  it("이벤트 설정: 기본 꺼짐, 켜면 기간·대상(판매 중인 상품만)·기한 11-30(상한 없음)", () => {
+  it("이벤트 설정: 기본 꺼짐, 켜면 기간·대상(판매 중인 상품만)·기한 받은 시각 + 30일(상한 없음)", () => {
     expect(giftEventConfig({}).active).toBe(false);
     const c = giftEventConfig({ GIFT_EVENT_ENABLED: "1", GIFT_EVENT_START: "2026-11-01T00:00:00+09:00", GIFT_EVENT_END: "2026-12-01T00:00:00+09:00" }, Date.parse("2026-11-04T00:00:00Z"));
-    expect(c).toMatchObject({ active: true, ticketExpiresAt: "2026-11-30T14:59:59.000Z" });
+    expect(c).toMatchObject({ active: true, ticketExpiresAt: "2026-12-04T00:00:00.000Z" });
     expect(c.products).not.toContain("major_fortune");
   });
 });
