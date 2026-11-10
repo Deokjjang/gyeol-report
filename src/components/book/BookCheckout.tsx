@@ -24,15 +24,15 @@ import { checkoutReturnKey, useTicketPublication } from "./useTicketPublication"
 import { recordBookReturn } from "../../lib/tickets/shopClient";
 import { receiptMethodKey } from "../../lib/tickets/shopContract";
 import { PROFILE_REQUIRED_MESSAGE } from "../../lib/account/contact";
-import { kstMonthDayLabel } from "../../lib/ops/config";
+import { EVENT_TICKET_DAYS, kstMonthDayLabel } from "../../lib/ops/config";
 import type { SupportedEasyPay } from "../../lib/payment/tossClientCheckoutTypes";
 
 /** v5Book: 이 상품이 v5(AI 작가)로 발행됨 — 열람 "탈퇴 전까지 계속"·AI 작성 고지. 아니면 v5 이전 규칙(생성일로부터 90일).
  * giftEventProducts: 지금(서버 시각) 1+1 이벤트가 걸린 상품 키 — 이벤트 기간이 아니면 빈 배열(giftEventConfig). */
 type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; authEnabled?: boolean; ticketShopEnabled?: boolean; v5Book?: boolean; giftEventProducts?: readonly string[]; onPublishing: () => void; onError: (message: string) => void };
 type ReceiptConsentId = typeof RECEIPT_CONSENTS[number]["id"];
-/** 최종 A 16: 1+1 영수증 줄. P 추가 A: 결제는 로그인한 회원만 하므로(비회원 결제 없음) 한 줄뿐이다. */
-export const GIFT_EVENT_RECEIPT_LINE = "이벤트 · 결제 후 이용권 1장 증정";
+/** 최종 A 16: 1+1 영수증 줄. P 추가 A: 결제는 로그인한 회원만 하므로(비회원 결제 없음) 한 줄뿐이다. 2026-11-10 정정: 이용권 기한(받은 날부터 30일)을 함께 적는다. */
+export const GIFT_EVENT_RECEIPT_LINE = `이벤트 · 결제 후 이용권 1장 증정(받은 날부터 ${EVENT_TICKET_DAYS}일)`;
 /** P 추가 A: 결제하기를 누른 비회원은 로그인(신규면 가입 동의·정보 입력)을 마치고 돌아오면 입력값과 상품이 그대로 복원된다.
  * 같은 탭은 sessionStorage(기존 복원 경로), 로그인이 다른 탭·앱 전환을 거쳐도 되도록 같은 기기 localStorage에 30분만 함께 둔다(복원하면 지운다). */
 export const CHECKOUT_RETURN_BACKUP_KEY = "gyeol-book-return-backup-v1";

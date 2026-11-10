@@ -6,7 +6,7 @@ import {
   eventRangeLabel, expiryLabel, isPopupState, popupAllowedPath, popupHidden, remainingLabel, rememberPopup, selectPopup,
   type PopupId, type PopupState,
 } from "../../lib/ops/comp/popupSelect";
-import { eventEndDayLabel, kstMonthDayLabel } from "../../lib/ops/config";
+import { eventEndDayLabel, eventTicketValidityLine } from "../../lib/ops/config";
 import s from "./eventPopup.module.css";
 
 const storages = () => {
@@ -97,8 +97,8 @@ export function EventPopup({ id, state, clock = Date.now, onDone, onPick }: { id
   // 기간이 끝나면 ①은 스스로 닫힌다(기억은 남기지 않음).
   useEffect(() => { if (id === "event-1plus1" && !eventOn) ref.current?.close?.(); }, [id, eventOn]);
   const done = (how: "close" | "today") => { if (ref.current?.open && typeof ref.current.close === "function") ref.current.close(); onDone(how); };
-  // P 추가 C·D: 계정당 상한 없음, 이용권 기한은 서버가 준 날짜(이번 이벤트 11월 30일).
-  const comp = state.comp, ticketUntil = kstMonthDayLabel(event?.ticketExpiresAt);
+  // P 추가 C: 계정당 상한 없음. 이용권 기한은 받은 날부터 서버가 준 날수(2026-11-10 정정: 30일).
+  const comp = state.comp, ticketDays = event?.ticketDays ?? 0;
   return <dialog ref={ref} className={s.dialog} tabIndex={-1} aria-modal="true" aria-labelledby={titleId} aria-describedby={bodyId} data-event-popup={id}
     onCancel={e => { e.preventDefault(); done("close"); }}
     onClick={e => { if (e.target === e.currentTarget) done("close"); }}>
@@ -109,7 +109,7 @@ export function EventPopup({ id, state, clock = Date.now, onDone, onPick }: { id
         <h2 id={titleId} className={s.title}>한 권을 펼치면, 이용권 한 장</h2>
         <p id={bodyId} className={s.body}>리포트를 결제하면 1건마다 이용권 1장을 증정해요. 나를 한 권 더 읽거나, 소중한 사람에게 선물해 보세요.</p>
         <p className={s.timer}><span>남은 시간</span><b>{remainingLabel(Date.parse(event.endsAt) - now)}</b></p>
-        {ticketUntil ? <p className={s.small}>이용권은 {ticketUntil}까지 쓸 수 있어요</p> : null}
+        {ticketDays > 0 ? <p className={s.small}>{eventTicketValidityLine(ticketDays)}</p> : null}
         <div className={s.actions}>
           <a className={s.secondary} href="/example" onClick={() => done("close")}>예시 먼저 보기</a>
           <Link className={s.primary} href="/" onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname)) e.preventDefault(); done("close"); }}>리포트 고르기</Link>

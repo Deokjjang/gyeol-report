@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { eventRangeLabel, eventStartLabel, type PopupEvent } from "../../lib/ops/comp/popupSelect";
-import { kstMonthDayLabel } from "../../lib/ops/config";
+import { eventTicketValidityLine } from "../../lib/ops/config";
 import { useAccountSession } from "../account/AccountSession";
 import s from "./launchCountdown.module.css";
 
@@ -75,7 +75,7 @@ export function GiftEventCountdown({ signupStrip = false }: { signupStrip?: bool
   const strip = signupStrip ? <SignupStrip view={view} serverNow={serverNow} /> : null;
   if (!view || !phase) return strip;
   const target = Date.parse(phase === "before" ? view.startsAt : view.endsAt), remaining = target - serverNow;
-  const range = eventRangeLabel(view), start = eventStartLabel(view.startsAt), ticketUntil = kstMonthDayLabel(view.ticketExpiresAt);
+  const range = eventRangeLabel(view), start = eventStartLabel(view.startsAt), ticketDays = view.ticketDays ?? 0;
   const clockLabel = phase === "before" ? "시작까지" : "종료까지";
   return <>{strip}<section className={`${s.event} ${s.gift}`} aria-label="이용권 증정 이벤트" data-gift-event={phase}>
     <div className={s.heading}>
@@ -83,7 +83,7 @@ export function GiftEventCountdown({ signupStrip = false }: { signupStrip?: bool
       <h2>한 권을 펼치면, 이용권 한 장</h2>
       {/* 2026-11-06: 이용권은 결제에 따른 무상 증정(약관). 「1+1」·「한 권이 더」처럼 묶음 판매로 읽히는 표현은 쓰지 않는다. */}
       <p className={s.benefit}>리포트를 결제하면 1건마다 이용권 1장을 증정해요.</p>
-      {phase === "before" ? <small>{start}</small> : ticketUntil ? <small>{`이용권은 ${ticketUntil}까지 쓸 수 있어요`}</small> : null}
+      {phase === "before" ? <small>{start}</small> : ticketDays > 0 ? <small>{eventTicketValidityLine(ticketDays)}</small> : null}
     </div>
     <div className={s.clock}>
       <p>{clockLabel}</p>

@@ -78,10 +78,11 @@ describe("refund policy constants", () => {
     expect(META_OPTOUT_POLICY_EFFECTIVE_DATE).toBe("2026-12-10"); expect(META_DEFAULT_FROM!.slice(0, 10)).toBe(META_OPTOUT_POLICY_EFFECTIVE_DATE);
     const optOut = "2026년 12월 10일";
     expect(POLICY_EFFECTIVE_DATES_KO).toEqual({ terms: "2026년 11월 6일", privacy: "2026년 11월 7일", refund: "2026년 11월 7일" });
-    // 약관: 첫 줄 F 문서 개정(동의 버전 그대로) → 2026-11-06.1(현재) → 2026-11-05.1.
-    expect(POLICY_HISTORY.terms[0]).toMatch(/^2026년 11월 \d{1,2}일 개정\(문서 개정 — 동의 버전 2026-11-06\.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다\): 이용권 조항에 「가입 이용권」/);
-    expect(POLICY_HISTORY.terms[1]).toMatch(/^2026년 11월 6일 시행\(현재, 문서 버전 2026-11-06\.1\)/);
-    expect(POLICY_HISTORY.terms[2]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
+    // 약관: 첫 줄 결제 증정 이용권 기한 정정(받은 날부터 30일, 동의 버전 그대로) → F 문서 개정(동의 버전 그대로) → 2026-11-06.1(현재) → 2026-11-05.1.
+    expect(POLICY_HISTORY.terms[0]).toMatch(/^2026년 11월 \d{1,2}일 개정\(문서 개정 — 동의 버전 2026-11-06\.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다\): 결제 1건마다 증정하는 이용권의 기한을 「2026년 11월 30일 23:59:59까지」에서 「받은 날부터 30일」로 늘림/);
+    expect(POLICY_HISTORY.terms[1]).toMatch(/^2026년 11월 \d{1,2}일 개정\(문서 개정 — 동의 버전 2026-11-06\.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다\): 이용권 조항에 「가입 이용권」/);
+    expect(POLICY_HISTORY.terms[2]).toMatch(/^2026년 11월 6일 시행\(현재, 문서 버전 2026-11-06\.1\)/);
+    expect(POLICY_HISTORY.terms[3]).toMatch(/^2026년 11월 6일 시행\(문서 버전 2026-11-05\.1\)/);
     expect(termsPolicySections.at(-1)!.bodyKo[0]).toBe("시행일: 2026년 11월 6일");
     // 환불정책: 2026-11-07.1(현재) → 2026-11-06.1 → 2026-11-05.1.
     // 개인정보처리방침: 결정 A 문서 개정(현재) → 11월 7일 문서 개정(Telegram) → 2026-11-06.1 → 2026-11-05.1. 동의 버전은 모두 그대로.

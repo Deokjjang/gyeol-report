@@ -26,16 +26,24 @@ export function isAdminUser(id: unknown, env: Env = process.env): boolean { retu
 export type GiftEventConfig = { readonly active: boolean; readonly start: string; readonly end: string; readonly products: readonly string[]; readonly ticketExpiresAt: string };
 /**
  * 이용권 유효기간.
- * - P 추가 D(2026-11-06): 이번 이벤트에서 나가는 이용권(1+1·보상 A·B)은 모두 2026-11-30 23:59:59 KST에 끝난다(받은 날과 상관없이 같은 날).
- *   선물은 처음 기한을 그대로 넘긴다. 운영의 기존 행은 업그레이드 보상 캠페인 42장만 같은 시각으로 당겼다(migration 20261107090000, 누나 계정 5장은 그대로).
- *   관리자 수동 지급(오류 난 책 보상 등)은 이 값을 쓰지 않는다 — SQL 기본값 발급일 + 30일.
- * - 그 시각이 지난 뒤 새로 나가는 이용권만 예전처럼 발급일로부터 30일(TICKET_VALID_DAYS).
+ * - 결제 증정 이용권(gift_rewards.kind='event', 결제 1건마다 1장): 받은 날부터 30일(EVENT_TICKET_DAYS).
+ *   2026-11-10 정정(덕짱님 결정): 「11-30 23:59:59 KST 고정」에서 바꿈 — 마지막 날 결제해도 30일을 쓴다. 이미 나간 이용권도 발급일 + 30일로 늘렸다(줄이지 않음, migration 20261111110000).
+ * - 보상 이용권(kind='comp', 업그레이드 감사 A·B): P 추가 D(2026-11-06) 그대로 2026-11-30 23:59:59 KST(COMP_TICKET_EXPIRES_AT, 받은 날과 상관없이 같은 날).
+ *   운영의 기존 행은 업그레이드 보상 캠페인 42장만 같은 시각으로 당겼다(migration 20261107090000, 누나 계정 5장은 그대로). 그 시각이 지난 뒤 새로 나가는 보상만 발급일로부터 30일.
+ * - 가입 이용권(kind='signup'): 받은 날부터 7일(SIGNUP_TICKET_DAYS, 아래).
+ * - 선물은 처음 기한을 그대로 넘긴다. 관리자 수동 지급(오류 난 책 보상 등)은 이 값을 쓰지 않는다 — SQL 기본값 발급일 + 30일.
+ * SQL(ops_gift issue)은 받은 값과 지금 + 30일 중 이른 쪽을 쓴다(상한).
  */
 export const TICKET_VALID_DAYS = 30;
-export const EVENT_TICKET_EXPIRES_AT = "2026-11-30T23:59:59+09:00";
-/** 지금 발급하는 이용권의 기한(ISO, UTC). 이벤트 기한 전이면 11-30 23:59:59 KST, 지난 뒤면 지금 + 30일. */
-export function ticketExpiresAt(now = Date.now()): string {
-  const fixed = Date.parse(EVENT_TICKET_EXPIRES_AT);
+export const EVENT_TICKET_DAYS = TICKET_VALID_DAYS;
+export const COMP_TICKET_EXPIRES_AT = "2026-11-30T23:59:59+09:00";
+/** 팝업 ①·메인 배너 한 줄: 「이용권은 받은 날부터 30일 동안 쓸 수 있어요」. */
+export const eventTicketValidityLine = (days: number) => `이용권은 받은 날부터 ${days}일 동안 쓸 수 있어요`;
+/** 결제 증정 이용권의 기한(ISO, UTC) = 지금 + 30일. */
+export function eventTicketExpiresAt(now = Date.now()): string { return new Date(now + EVENT_TICKET_DAYS * 86_400_000).toISOString(); }
+/** 보상 이용권의 기한(ISO, UTC). 11-30 23:59:59 KST 전이면 그 시각, 지난 뒤면 지금 + 30일. */
+export function compTicketExpiresAt(now = Date.now()): string {
+  const fixed = Date.parse(COMP_TICKET_EXPIRES_AT);
   return new Date(now < fixed ? fixed : now + TICKET_VALID_DAYS * 86_400_000).toISOString();
 }
 /** 「11월 30일」(KST). 못 읽으면 빈 문자열. */
@@ -46,7 +54,7 @@ export function kstMonthDayLabel(iso: string | null | undefined): string {
   return `${d.getUTCMonth() + 1}월 ${d.getUTCDate()}일`;
 }
 /** 1+1 이벤트 기본 기간(최종 A 11, 배포 명령 0-8에서 시작을 당김): 2026-11-06 09:00:00 ~ 2026-11-30 23:59:59 KST. GIFT_EVENT_START·END env로 바꾼다.
- * F(2026-11-10 덕짱님 결정): 끝을 11-16 → 11-30 23:59:59로 연장(이용권 기한 EVENT_TICKET_EXPIRES_AT 11-30은 그대로).
+ * F(2026-11-10 덕짱님 결정): 끝을 11-16 → 11-30 23:59:59로 연장. 이용권 기한은 기간과 따로(받은 날부터 30일, eventTicketExpiresAt).
  * 연장할 때는 이 값(또는 env GIFT_EVENT_END) 하나만 바꾼다 — 1+1 발급·팝업·배너·영수증·가입 이용권 캠페인 끝(signupCampaignConfig)·/free·약관 문구가 모두 이 값을 읽는다.
  * SQL(ops_gift issue·pending_orders, ops_signup grant)은 기간을 갖고 있지 않고 이 값(giftEventConfig·signupCampaignConfig의 start·end)을 받아 쓴다 — tests/unit/final4/eventConfig.test.ts가 고정. */
 export const GIFT_EVENT_DEFAULT_START = "2026-11-06T09:00:00+09:00";
@@ -79,20 +87,20 @@ export function giftEventWindow(env: Env = process.env, now = Date.now()): { pha
 export function giftEventActive(env: Env = process.env, now = Date.now()): boolean { return giftEventWindow(env, now).phase === "during"; }
 /**
  * 켜짐(GIFT_EVENT_ENABLED=1)이고 기간 안이어야 active. 기간은 GIFT_EVENT_START·END(오프셋 없으면 KST, 끝은 23:59:59 포함), 없으면 기본 기간.
- * start·end는 [시작, 끝) 경계의 ISO(SQL이 paid_at >= start and paid_at < end로 쓴다). 결제 1건마다 1장(계정당 상한 없음), 기한 = ticketExpiresAt, 대상 상품 기본 = 판매 중인 전부.
+ * start·end는 [시작, 끝) 경계의 ISO(SQL이 paid_at >= start and paid_at < end로 쓴다). 결제 1건마다 1장(계정당 상한 없음), 기한 = eventTicketExpiresAt(받은 날부터 30일), 대상 상품 기본 = 판매 중인 전부.
  */
 export function giftEventConfig(env: Env = process.env, now = Date.now()): GiftEventConfig {
   const w = giftEventWindow(env, now), valid = Number.isFinite(w.startMs);
   const listed = (env.GIFT_EVENT_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
   const products = (listed.length ? listed : [...ALL_PRODUCTS]).filter(p => productOnSale(p, env));
-  return { active: w.phase === "during", start: valid ? new Date(w.startMs).toISOString() : "", end: valid ? new Date(w.endMs).toISOString() : "", products, ticketExpiresAt: ticketExpiresAt(now) };
+  return { active: w.phase === "during", start: valid ? new Date(w.startMs).toISOString() : "", end: valid ? new Date(w.endMs).toISOString() : "", products, ticketExpiresAt: eventTicketExpiresAt(now) };
 }
-/** 화면에 내보내는 공개 이벤트 정보(보상 이야기 없음). 배너·팝업 ①·영수증 한 줄. */
+/** 화면에 내보내는 공개 이벤트 정보(보상 이야기 없음). 배너·팝업 ①·영수증 한 줄. ticketDays = 결제 증정 이용권을 받은 날부터 쓸 수 있는 날수. */
 /** signup(F): 가입 이용권 캠페인 공개 상태 — DB 켜짐/꺼짐을 읽은 경로(/api/gift-event·/auth/event-popup)만 채운다. */
-export type GiftEventPublicView = { phase: GiftEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketExpiresAt: string; signup?: SignupPublicView };
+export type GiftEventPublicView = { phase: GiftEventPhase; serverNow: string; startsAt: string; endsAt: string; ticketDays: number; signup?: SignupPublicView };
 export function giftEventPublicView(env: Env = process.env, now = Date.now()): GiftEventPublicView {
   const w = giftEventWindow(env, now), cfg = giftEventConfig(env, now);
-  return { phase: w.phase, serverNow: new Date(now).toISOString(), startsAt: cfg.start, endsAt: cfg.end, ticketExpiresAt: cfg.ticketExpiresAt };
+  return { phase: w.phase, serverNow: new Date(now).toISOString(), startsAt: cfg.start, endsAt: cfg.end, ticketDays: EVENT_TICKET_DAYS };
 }
 
 export type CompConfig = {
@@ -101,7 +109,7 @@ export type CompConfig = {
   readonly aQty: number; readonly aDays: number;
   /** B: 장수 · 유효일(예비값). */
   readonly bQty: number; readonly bDays: number;
-  /** 지급 기한(P 추가 D): ticketExpiresAt() — 이번 이벤트는 2026-11-30 23:59:59 KST. SQL이 days보다 이 값을 먼저 쓴다. */
+  /** 지급 기한(P 추가 D): compTicketExpiresAt() — 2026-11-30 23:59:59 KST. SQL이 days보다 이 값을 먼저 쓴다. */
   readonly expiresAt: string;
   /** 보상 이용권으로 만들 수 있는 상품(기본 4종: 종합·커리어·연애·궁합). 이용권 자체에 담겨 사용 때 서버가 다시 확인한다. */
   readonly products: readonly string[];
@@ -135,13 +143,13 @@ export function eventEndDayLabel(endsAt: string | null | undefined): string {
   const ms = Date.parse(endsAt ?? "");
   return Number.isFinite(ms) ? kstMonthDayLabel(new Date(ms - 1000).toISOString()) : "";
 }
-/** COMP_ENABLED=1이어야 지급·안내가 켜진다(지정·집계는 꺼져 있어도 된다). 장수·상품은 환경 설정값, 기한은 ticketExpiresAt(P 추가 D). */
+/** COMP_ENABLED=1이어야 지급·안내가 켜진다(지정·집계는 꺼져 있어도 된다). 장수·상품은 환경 설정값, 기한은 compTicketExpiresAt(P 추가 D, 11-30 그대로). */
 export function compConfig(env: Env = process.env, now = Date.now()): CompConfig {
   const listed = (env.COMP_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(p => (ALL_PRODUCTS as readonly string[]).includes(p));
   return {
     enabled: env.COMP_ENABLED === "1",
     aQty: compInt(env.COMP_A_QTY, 2, 0, 5), aDays: TICKET_VALID_DAYS,
-    bQty: compInt(env.COMP_B_QTY, 1, 0, 5), bDays: TICKET_VALID_DAYS, expiresAt: ticketExpiresAt(now),
+    bQty: compInt(env.COMP_B_QTY, 1, 0, 5), bDays: TICKET_VALID_DAYS, expiresAt: compTicketExpiresAt(now),
     products: listed.length ? [...new Set(listed)] : [...COMP_DEFAULT_PRODUCTS],
   };
 }
