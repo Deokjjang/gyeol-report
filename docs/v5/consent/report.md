@@ -76,13 +76,26 @@
 - 브랜치에서만 실패 0, 기준에서만 실패 0 → **새 실패 0**. 기존 실패 853개는 그대로(이 작업 범위 밖).
 - 그 뒤 보강 커밋(해시도 코드 스위치로 막음 — `transmitMeta`): 관련 16개 파일 다시 실행, 실패는 기존 `checkoutConsentEvidence` 31건뿐(기준도 같음), tsc·eslint 0.
 
-## 7. 배포
+## 7. 배포(2026-11-09)
 
-(아래에 적음)
+| 시각(KST) | 단계 | 결과 |
+|---|---|---|
+| 21:00 | 사전 확인(읽기) | origin/master `05f7f592` 그대로, 운영 배포 `dpl_BKPM5pAsX6R4U6N7gfaExiQPcAdj`(= 롤백 기준). 운영 함수 5개 md5 = 저장소 원본(`meta_purchase_on_paid` 160405b8·`queue_meta_purchase`(4인자) a56496ec·`meta_delivery_batch` 5faf0033·`claim_meta_browser_events` 609278f5·`record_meta_consent` 6ea6e104). 새 함수·검사 없음. 광고 설정 기록 거부 21·동의 3, 대기표 0줄. 운영 migration 마지막 20261109100000 |
+| 21:02:26 | migration `20261110100000` | 저장소 밖 임시 폴더 CLI(운영 기록 31건 자리표 + 이 파일, 저장소 파일과 sha256 같음) dry-run 1건 → `--yes`. 적용 뒤: `meta_optout_effective()` = false(지금), 12-09 23:59:59.999 false / 12-10 00:00 true, `queue_meta_purchase`는 5인자만, 새 함수 4개·검사 `meta_outbox_owner` 있음, anon 실행 권한 없음·service_role 있음, 광고 설정 기록 그대로(21·3). 새 본문 md5: 트리거 9f970201·queue 5b68b5de·batch ee74ba45·claim 96ca5ed1·optout 51eea848·choice 213ba3e6·match a2216c04·buyer 7944734f |
+| 21:03 | 코드 | `next build` 0(로컬). v5/main `04533998` → master `36d08bf4`(트리 `584a948f` = 시험한 브랜치 트리), push 21:03:20 |
+| 21:06 | Production | `dpl_EduYZoGyjsVtcM7yCELEUnVLSsAr` READY, 새 처리방침 문구 21:06:06부터 응답 |
 
-## 8. 배포 뒤 확인
+## 8. 배포 뒤 확인(21:06~21:08, 운영 www, WebKit + 아이폰 Safari UA 390px — 「동의」「거부」는 누르지 않음: 운영 기록을 남기지 않으려고)
 
-(아래에 적음)
+| 확인 | 결과 | 판정 |
+|---|---|---|
+| 공지 노출 | 첫 화면 맨 위 「광고 성과 측정 변경 안내」 카드 + 「동의 / 거부 / 자세히 / ×」(1+1 이벤트 팝업은 닫고 봄). 자세히 → 표 6행(시행일·바뀌는 점·보내는 항목·목적·받는 자·거부 방법), 「지금 설정: 정하지 않음(보내지 않음)」, 「거부 / 동의하고 허용 / 닫기」. 처리방침에 「[2026년 12월 9일까지]」「[2026년 12월 10일부터]」「광고 성과 측정 변경 안내(2026년 12월 10일 시행)」, 16번 「다만 13번 … 2026년 12월 10일부터 시행」, 이력 첫 줄 「2026년 12월 10일 시행(2026년 11월 9일부터 공지」 | PASS |
+| 시행일 전 동작(미동의자 미전송) | GET `{choice:null,ready:true,optout:false}`. 홈·처리방침을 오가도 `/api/analytics/meta` POST 0·facebook 요청 0·픽셀 창 0. 직접 보낸 PageView POST → 202 `{ok:false,ready:false,choice:null}`, 픽셀 창 GET → 404 | PASS |
+| 닫기 = 결정 보류 | × 뒤 같은 탭 새로고침 카드 0·광고 설정 쿠키 0, 새 탭에서 카드 다시 | PASS |
+| 시간을 바꾼 시험(시행일 뒤) | 운영 서버 시계는 바꿀 수 없어 둘로 나눔: ① 배포한 같은 트리의 시계 바꾼 시험(4절 — 시행 직전·직후·자정을 넘는 같은 요청, SQL 경계) PASS. ② 운영 화면에 서버 답만 `optout:true`로 바꿔 끼움 → 시행일 뒤 카드 「거부 / 자세히 / 확인」으로 바뀜, 화면이 보내려 해도 운영 서버가 막음(행동 POST 1건은 서버까지만, 픽셀 창 404, facebook 0). 운영 DB 시각 함수 경계 false/true(7절) | PASS(운영에서 실제 시행일 뒤 전송은 12-10에 확인 — 9절) |
+| 운영 기록·오류 | 확인 뒤 광고 설정 기록 거부 21·동의 3 그대로(마지막 기록 18:31 KST, 배포 전), 대기표 0줄, Vercel 런타임 오류 최근 1시간 0건 | PASS |
+
+캡처는 저장소에 넣지 않았다(판정은 위 값으로, 캡처는 작업 scratchpad에만).
 
 ## 9. 시행일 뒤 확인(할 일)
 
