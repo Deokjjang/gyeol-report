@@ -310,3 +310,46 @@ describe("공유 실패 경보", () => {
     expect(grants.map(g => g.grantee).filter(g => ["anon", "authenticated", "PUBLIC"].includes(g))).toEqual([]);
   });
 });
+
+describe("시험 계정(관리자·누나): 집계 제외, 알림은 「시험」 표시(2026-11-10)", () => {
+  const SISTER = "d0dd2e4e-38cf-49b5-8dea-7a35ee54dd55";
+  const put = async (v: unknown) => (await one<{ r: boolean }>("select ops_notify_put_setting('test_accounts',$1::jsonb) r", [JSON.stringify(v)])).r;
+  const isTest = async (u: string | null) => (await one<{ r: boolean }>("select ops_test_user($1::uuid) r", [u])).r;
+  it("처음 값은 누나 계정 하나, 서버는 uuid 배열(소문자·20개까지)만 쓸 수 있다", async () => {
+    expect((await one<{ value: unknown }>("select value from ops_settings where key='test_accounts'")).value).toEqual({ ids: [SISTER] });
+    expect([await isTest(SISTER), await isTest(A), await isTest(null)]).toEqual([true, false, false]);
+    for (const bad of [{}, { ids: "x" }, { ids: [1] }, { ids: ["not-a-uuid"] }, { ids: [SISTER.toUpperCase()] }, { ids: Array.from({ length: 21 }, () => A) }, []]) expect(await put(bad)).toBe(false);
+    expect(await put({ ids: [A, SISTER] })).toBe(true);
+    expect([await isTest(SISTER), await isTest(A), await isTest(B)]).toEqual([true, true, false]);
+  });
+  it("매출 통계(stats)는 시험 계정의 결제·환불을 빼고, 주문 사실에는 test 표시", async () => {
+    await put({ ids: [SISTER] });
+    const day = { start: new Date(Date.now() - 3_600_000).toISOString(), end: new Date(Date.now() + 3_600_000).toISOString() };
+    const before = await notify.call("stats", day);
+    await pay("po-t-1", B, inputOf("시험"), 12_000);
+    const counted = await notify.call("stats", day);
+    expect([Number(counted.payCount) - Number(before.payCount), Number(counted.paySum) - Number(before.paySum)]).toEqual([1, 12_000]);
+    expect(((await notify.call("order", { paymentOrderId: "po-t-1" })).order as { test: boolean }).test).toBe(false);
+    expect(await put({ ids: [B, SISTER] })).toBe(true);
+    const excluded = await notify.call("stats", day);
+    // B의 이 구간 결제(앞 시험들 것 포함)가 모두 빠진다.
+    const b = await one<{ n: number; s: number }>("select count(*)::int n,coalesce(sum(amount),0)::int s from payment_orders where status in ('paid','refunded') and paid_at>=$1 and paid_at<$2 and ops_order_user(payment_order_id)=$3",
+      [day.start, day.end, B]);
+    expect(b.n).toBeGreaterThanOrEqual(1);
+    expect([Number(excluded.payCount), Number(excluded.paySum)]).toEqual([Number(counted.payCount) - b.n, Number(counted.paySum) - b.s]);
+    expect(((await notify.call("order", { paymentOrderId: "po-t-1" })).order as { test: boolean }).test).toBe(true);
+    // 환불도 빠진다(외부 환불 기록 경로).
+    const r = await recon.call("external_refund", { paymentOrderId: "po-t-1", adminUserId: A, amount: 12_000, canceledAt: new Date().toISOString() });
+    expect(r.ok).toBe(true);
+    const afterRefund = await notify.call("stats", day);
+    expect([afterRefund.refundCount, afterRefund.refundSum]).toEqual([excluded.refundCount, excluded.refundSum]);
+    // 알림 자체는 그대로 대기표에 들어간다(보낼 때 「시험」 표시).
+    expect((await rows()).map(x => x.dedupe_key)).toEqual(expect.arrayContaining(["pay:po-t-1", "refund:po-t-1"]));
+    await put({ ids: [SISTER] });
+  });
+  it("이용권 책 사실에도 test 표시, 판정 함수는 서버(service_role)만", async () => {
+    expect((await one<{ d: string }>("select pg_get_functiondef('ops_notify_ticket(text)'::regprocedure) d")).d).toContain("'test',public.ops_test_user(v_rr.user_id)");
+    const grants = await all<{ grantee: string }>("select grantee from information_schema.routine_privileges where routine_name='ops_test_user' order by grantee");
+    expect(grants.map(g => g.grantee).filter(g => ["anon", "authenticated", "PUBLIC"].includes(g))).toEqual([]);
+  });
+});

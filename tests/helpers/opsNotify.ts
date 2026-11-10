@@ -12,6 +12,8 @@ export const OPS_Q_MIGRATION = "supabase/migrations/20261107100000_v5_ops_notify
 export const OPS_SHARE_ALERT_MIGRATION = "supabase/migrations/20261107110000_v5_ops_share_alert.sql";
 /** 메타 배포와 함께: 깨우기 트리거는 새 줄이 있을 때만 서버를 부른다. */
 export const OPS_WAKE_MIGRATION = "supabase/migrations/20261109100000_v5_ops_wake_nonempty.sql";
+/** 결제수단 긴급 수정과 같은 배포: 시험 계정(관리자·누나) 집계 제외·「시험」 표시. */
+export const OPS_TEST_ACCOUNTS_MIGRATION = "supabase/migrations/20261110200000_v5_test_accounts.sql";
 export type Call = { call(a: string, d?: Record<string, unknown>): Promise<Record<string, unknown>> };
 export const inputOf = (name = "하람") => {
   const n = normalizeReportInputPayload({ ...RAW_FULL, person: { ...RAW_FULL.person, name } }, { now: () => new Date("2026-10-27T03:00:00.000Z") });
@@ -27,7 +29,7 @@ export const refundProvider: RefundProvider = {
 export async function opsNotifySql() {
   const h = await opsSql();
   const asOwner = async <T>(f: () => Promise<T>) => { await h.db.exec("reset role"); try { return await f(); } finally { await h.db.exec("set role service_role"); } };
-  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_SHARE_ALERT_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_WAKE_MIGRATION, "utf8")); });
+  await asOwner(async () => { await h.db.exec(readFileSync(OPS_Q_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_SHARE_ALERT_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_WAKE_MIGRATION, "utf8")); await h.db.exec(readFileSync(OPS_TEST_ACCOUNTS_MIGRATION, "utf8")); });
   const one = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows[0] as T);
   const all = <T = Record<string, unknown>>(sql: string, params: unknown[] = []) => asOwner(async () => (await h.db.query(sql, params)).rows as T[]);
   const exec = (sql: string, params: unknown[] = []) => asOwner(async () => { await h.db.query(sql, params); });

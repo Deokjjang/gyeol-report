@@ -120,8 +120,8 @@ describe("paid funnel contracts and progressive review", () => {
     } }));
     await vi.advanceTimersByTimeAsync(0);
     expect(requestPayment).toHaveBeenCalledTimes(1);
-    // 2026-11-06: 어느 버튼이든 결제창 기본 화면(통합결제창) — 수단은 토스 결제창 안에서 고른다.
-    expect(requestPayment).toHaveBeenCalledWith(expect.objectContaining({ method: "CARD", card: { flowMode: "DEFAULT" } }));
+    // 2026-11-10: 누른 버튼의 간편결제로 바로(DIRECT).
+    expect(requestPayment).toHaveBeenCalledWith(expect.objectContaining({ method: "CARD", card: { flowMode: "DIRECT", easyPay } }));
     releaseRedirect(); await vi.advanceTimersByTimeAsync(0);
     click(selected); // Even an old handler cannot launch again while redirect is pending.
     expect(fetch).toHaveBeenCalledTimes(1);

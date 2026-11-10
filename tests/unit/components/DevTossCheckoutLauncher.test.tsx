@@ -196,7 +196,7 @@ afterEach(() => {
 });
 
 describe("DevTossCheckoutLauncher", () => {
-  it.each(["TOSSPAY", "KAKAOPAY"] as const)("opens the DEFAULT window for legacy %s button without changing the prepare contract", async easyPay => {
+  it.each(["TOSSPAY", "KAKAOPAY"] as const)("opens %s directly (DIRECT) without changing the prepare contract", async easyPay => {
     const launcherModule = await importLauncherModule();
     const { launchTossCheckout } = await import("../../../src/lib/payment/tossClientCheckoutLauncher");
     const harness = createHarness();
@@ -206,18 +206,18 @@ describe("DevTossCheckoutLauncher", () => {
     expect(harness.fetchCalls).toHaveLength(1);
     expect(parseRequestBody(harness.fetchCalls[0].init)).toEqual({ provider: "toss", productType: "saju_mbti_full", inputSnapshot: validInputSnapshot, consent: adultCheckoutConsent() });
     expect(harness.requestPayment).toHaveBeenCalledExactlyOnceWith({
-      ...(createTossRequestDraft().requestPayment as object), card: { flowMode: "DEFAULT" },
+      ...(createTossRequestDraft().requestPayment as object), card: { flowMode: "DIRECT", easyPay },
     });
   });
 
-  it("never forwards easyPay to the launcher (customer picks inside the Toss window)", async () => {
+  it.each([undefined, "NAVERPAY", "PAYCO"])("refuses easyPay %j before prepare (no order, no window)", async easyPay => {
     const launcherModule = await importLauncherModule();
     const harness = createHarness();
     const result = await launcherModule.runDevTossCheckout(validInputSnapshot, launcherModule.confirmedAdultDevTossCheckoutLegalConfirmations,
-      harness.runtime, { easyPay: "NAVERPAY" as never });
-    expect(result.ok).toBe(true);
-    expect(harness.launchInputs).toHaveLength(1);
-    expect(Object.keys(harness.launchInputs[0] as object)).not.toContain("easyPay");
+      harness.runtime, { easyPay: easyPay as never });
+    expect(result.ok).toBe(false);
+    expect(harness.fetchCalls).toHaveLength(0);
+    expect(harness.launchInputs).toHaveLength(0);
   });
 
   it.each(["sdkLoadError", "requestPaymentError"] as const)("keeps the customer error safe for %s", async failure => {
@@ -318,7 +318,7 @@ describe("DevTossCheckoutLauncher", () => {
     }
 
     expect(launchInput.tossCheckoutRequest).toBe(tossCheckoutRequest);
-    expect("easyPay" in launchInput).toBe(false);
+    expect(launchInput.easyPay).toBe("TOSSPAY");
     expect(launchInput.customerKey).toBe("gyeol_local_test_customer");
     expect(typeof launchInput.loadTossPayments).toBe("function");
   });

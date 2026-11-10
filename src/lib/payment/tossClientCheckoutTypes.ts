@@ -6,9 +6,11 @@ export type SupportedEasyPay = "TOSSPAY" | "KAKAOPAY";
 export type TossClientPaymentWindow = {
   readonly requestPayment: (
     paymentRequest: TossCheckoutRequestDraft["requestPayment"] & {
-      // 2026-11-06: 결제창 기본 화면(DEFAULT = 카드·간편결제 통합결제창) — 고객이 토스 결제창 안에서 수단을 고른다. easyPay는 지정하지 않는다(DEFAULT에서는 무시됨, 토스 문서).
+      // 2026-11-10: 간편결제 바로 열기(DIRECT + easyPay). 통합결제창(DEFAULT)은 계약하지 않은 카드·페이코·삼성페이까지 보여서 쓰지 않는다.
+      // 수단은 우리 화면 하단 시트의 두 버튼(카카오페이·토스페이)에서 고른다.
       readonly card?: {
-        readonly flowMode: "DEFAULT";
+        readonly flowMode: "DIRECT";
+        readonly easyPay: SupportedEasyPay;
       };
     },
   ) => Promise<void> | void;
@@ -27,6 +29,7 @@ export type TossClientSdkLoader = (
 export type TossClientCheckoutLaunchInput = {
   readonly tossCheckoutRequest: TossCheckoutRequestDraft;
   readonly customerKey: TossClientCheckoutCustomerKey;
+  readonly easyPay: SupportedEasyPay;
   readonly loadTossPayments: TossClientSdkLoader;
 };
 
