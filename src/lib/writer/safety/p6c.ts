@@ -352,7 +352,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, "")
         // AM 재생성 판독(major-1·annual-1): 시점을 못 박지 않는 「지금」까지 문장째 지워져 구멍이 났다 → 뜻이 같은 말로(호출 0). 「지금은 ○○ 대운의 마지막」 같은 진짜 시점 말은 그대로 검사.
         .replace(/지금까지(는|가|의|도| )/g, (_m: string, j: string) => `그동안${({ 는: "은", 가: "이" } as Record<string, string>)[j] ?? j}`).replace(/지금부터 /g, "미리 ").replace(/지금 방식/g, "기존 방식").replace(/지금 맡(?=은|고 있)/g, "맡")
-        .replace(/지금 (?=(곁에|배우는|하는 일|쌓는|가진|다니는|쓰는|만나는|일하는) )/g, "").replace(/이번 해(?=[ 의에는가])/g, "올해")
+        .replace(/지금 (?=(곁에|배우는|하는 일|쌓는|가진|다니는|쓰는|만나는|일하는|서 있는) )/g, "").replace(/이번 해(?=[ 의에는가])/g, "올해")
       // AM 재생성 2 판독(major-1 8장): 달 장 밖 「이번 달」→「그달」은 가리킬 달이 없었다 → 종합과 같은 「앞으로 한 달」(nowMonth, 따옴표 안은 그대로).
       ; const r2 = ctx.monthChapters.has(c.n) ? r : nowMonth(r); if (r2 !== q) { words++; q = r2; } }
       // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.

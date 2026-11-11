@@ -540,3 +540,16 @@ describe("AM 재생성 2 판독 후속(호출 0): 검수 정답지 · 수리 되
     expect(r.deleted.map(d => d.rule)).toEqual(["mbti_misattr:orphan_summary", "mbti_misattr"]);
   });
 });
+
+describe("AM 재생성 3(major-1 자동 점검 FAIL 원인, 호출 0)", async () => {
+  const { countMismatch } = await import("../../../src/lib/writer/safety/p6d");
+  const { tidyBook } = await import("../../../src/lib/writer/safety/p6c");
+  it("「이 두 줄기」는 개수 말 「이 두 줄」이 아니다 · 진짜 개수 어긋남은 그대로", () => {
+    expect(countMismatch("일과 사람, 두 줄기가 있어요. 이 책은 이 두 줄기를 따라 걸어갑니다.")).toEqual([]);
+    expect(countMismatch("정리 하나만 하세요. 이 세 가지면 충분해요.")).toEqual(["이 세 가지"]);
+  });
+  it("대운·세운: 「지금 서 있는 곳」의 「지금」은 뗀다", () => {
+    const out = tidyBook([{ n: 9, id: "x", title: "t", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["지금 서 있는 곳이 가장 중요한 자리예요."] }] }] as never, { mbtiPlain: {}, monthChapters: new Set(), strictTime: true, baseDate: "2026-12-02" } as never).chapters[0].sections[0].paragraphs[0];
+    expect(out).toBe("서 있는 곳이 가장 중요한 자리예요.");
+  });
+});
