@@ -47,7 +47,7 @@ beforeEach(async () => {
   mocks.bind.mockReset().mockResolvedValue(true);
   mocks.runtime.mockReset().mockReturnValue(createDurablePaymentOrderAdapter(store));
   vi.stubEnv("NODE_ENV", "test");
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
   vi.useFakeTimers({ toFake: ["Date"] });

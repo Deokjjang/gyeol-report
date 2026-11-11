@@ -21,7 +21,7 @@ const payload = { ...singleRuntimeInput("annual_fortune", "annual-fortune", {
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 
 it("uncertain Annual fails before order, local redeem or production queue; exact correction can retry", async () => {
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.useFakeTimers(); const now = new Date("2026-10-11T03:00:00Z"); vi.setSystemTime(now);
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.useFakeTimers(); const now = new Date("2026-10-11T03:00:00Z"); vi.setSystemTime(now);
   const check = (p: unknown) => preflight(new Request("http://localhost/api/reports/validate-input", { method: "POST", body: JSON.stringify(p) }));
   const failed = await check(payload);
   expect(failed.status).toBe(400);

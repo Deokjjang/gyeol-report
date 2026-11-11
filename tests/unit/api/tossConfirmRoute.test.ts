@@ -82,7 +82,7 @@ describe("Toss confirm durable boundary (mock payment)", () => {
   });
   it("이미 승인된(paid) 판매 중지 상품 주문, 판매 재개(FORTUNE_SALES_OPEN=1), 주문 조회 실패는 기존 승인 흐름 그대로", async () => {
     for (const [order, open] of [[{ provider_order_id: payment.orderId, status: "paid", product_type: "major_fortune" }, "0"], [{ provider_order_id: payment.orderId, status: "ready", product_type: "annual_fortune" }, "1"], [null, "0"]] as const) {
-      vi.stubEnv("FORTUNE_SALES_OPEN", open); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900");
+      vi.stubEnv("FORTUNE_SALES_OPEN", open); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900");
       findOrder.mockResolvedValue(order ? { ok: true, order } : { ok: false, code: "DURABLE_STORAGE_FAILED" });
       call.mockReset().mockResolvedValueOnce({ ok: true, token: "lease" }).mockResolvedValueOnce({ ok: true, reportId: "report-id" });
       expect((await POST(request(payment))).status).toBe(200);

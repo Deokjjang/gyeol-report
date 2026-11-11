@@ -74,7 +74,7 @@ async function paidBook(payload: Record<string, unknown>, v5: boolean): Promise<
 
 beforeAll(async () => {
   // AM: 대운·세운 결제 책을 만들려면 판매·가격 설정값이 열려 있어야 한다(운영은 덕짱님 결정 뒤 연다).
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "5900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "3900");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "5900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "3900");
   h = await v5Queue();
   // 서재 연결(sqlBookShareLibrary)이 결제 회원을 auth.users에 넣는다(로컬 검수 DB와 같은 권한).
   await h.db.exec("reset role; grant select, insert on auth.users to service_role; set role service_role;");
