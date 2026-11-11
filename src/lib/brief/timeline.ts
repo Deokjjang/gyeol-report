@@ -115,13 +115,14 @@ function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Pa
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }
 
-/** 지난 기간 카드의 돌아보기 질문(P6b E-5). 열쇠말 두 개와 문형 셋을 돌려 쓴다(질문형이라 지난 경험 단정이 아니다). */
+/** 지난 기간 카드의 돌아보기 질문(P6b E-5). 열쇠말 두 개와 문형 셋을 돌려 쓴다(질문형이라 지난 경험 단정이 아니다).
+ *  AM2(덕짱님 결정 2026-11-11): 시점 말 「지금」을 쓰지 않는다(책은 「이 책을 쓴 날」 기준, 읽는 때에 기대지 않음). */
 export function reviewLine(keywords: readonly string[], slot: number): string {
   const [a, b = a] = keywords;
   return [
-    `${a}·${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 지금까지 이어진 것은 무엇인가요?`,
-    `${a} 쪽으로 힘이 실린 때였어요. 그때 정한 것 중 지금 다시 꺼내 볼 하나는 무엇인가요?`,
-    `${josa(b, "이가")} 앞에 섰던 때였어요. 그때 미뤄 둔 일 하나를 지금 다시 살펴볼까요?`,
+    `${a}·${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?`,
+    `${a} 쪽으로 힘이 실린 때였어요. 그때 정한 것 가운데 다시 꺼내 볼 만한 하나는 무엇인가요?`,
+    `${josa(b, "이가")} 앞에 섰던 때였어요. 그때 미뤄 둔 일 가운데 다시 살펴볼 하나가 있나요?`,
   ][Math.abs(slot) % 3];
 }
 

@@ -195,7 +195,10 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // 같은 줄을 여러 장이 쓰면 다른 각도(절 영역)로만 — 각도는 절에 적혀 있다. 근거가 겹치는 다른 장의 주장은 반복 금지 목록으로.
   const linesOf = (p: ChapterPlan) => new Set([...(p.sections ?? []).flatMap(s => s.lines), ...(p.keys ?? []).flatMap(x => x.lines)]);
   const out = chapters.map(p => { const mine = linesOf(p); return { ...p, avoid: [...new Set(chapters.filter(o => o.n !== p.n && [...linesOf(o)].some(id => mine.has(id))).flatMap(o => o.claims.map(cl => `${o.n}장: ${cl}`)))].slice(0, 6) }; });
-  const finalLines = lines.map(l => ({ ...l, use: [...(use.get(l.id) ?? [])].sort((a, b) => a - b) }));
+  // 세운 책은 대운 안의 위치를 책의 해 기준으로(덕짱님 결정 2026-11-11 「2027년 기준으로」 — 엔진 값은 발행일 기준 연차, 계산은 그대로 두고 글만 옮긴다).
+  const shift = product === "annual_fortune" ? year - brief.chart.thisYear.year : 0;
+  const tidy = (t: string) => shiftPhase(t, year, shift).replace(/(\s*·\s*){2,}/g, " · ").replace(/^\s*·\s*|\s*·\s*$/g, "");
+  const finalLines = lines.map(l => ({ ...l, value: tidy(l.value), meaning: tidy(l.meaning), use: [...(use.get(l.id) ?? [])].sort((a, b) => a - b) }));
   return { product, person: personCard(brief, year, product === "annual_fortune" ? readWish(wishRaw) : null), lines: finalLines, pairs: pairs.filter(p => p.why), chapters: out };
 }
 
@@ -225,6 +228,16 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const scene = e.material?.scene && sceneFits(e.material.scene, brief) ? say(e.material.scene, year) : undefined;
   const claim = sig ? Object.entries(DOMAIN_SIGNAL).filter(([d]) => sig[d] && sig[d] !== "→").map(([d, ko]) => `${ko} ${SIGNAL_KO(sig[d])}`).join(" · ") : "";
   return { key: e.key, label, head: say(e.head ?? "", year), when: (e.when ?? e.period ?? "future") as KeyPlan["when"], lines: [...new Set(ids)], claims: claim ? [`${label}: ${claim}`] : [], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}) };
+}
+
+/** 대운 안 위치 말(엔진과 같은 경계: 1 첫해 · 2~3 앞쪽 · 4~7 중간 · 8~9 끝 무렵 · 10 마지막 해). */
+const phaseKo = (i: number) => (i === 1 ? "첫해" : i === 10 ? "마지막 해" : i <= 3 ? "앞쪽" : i <= 7 ? "중간" : "끝 무렵");
+/** 「5번째 해(중간), 남은 기간 약 5년 4개월(2032년 4월 무렵까지)」 → 「2027년은 6번째 해(중간), 이 대운은 2032년 4월 무렵까지」(책의 해가 발행일의 해보다 뒤일 때). 10번째를 넘으면 그대로 둔다. */
+export function shiftPhase(t: string, bookYear: number, shift: number): string {
+  if (shift <= 0) return t;
+  const to = (n: number, until: string, all: string) => { const m = n + shift; return m > 10 ? all : `${bookYear}년은 ${m}번째 해(${phaseKo(m)}), 이 대운은 ${until}`; };
+  return t.replace(/(\d+)번째 해\((?:앞쪽|중간|끝 무렵|첫해|마지막 해)\), 남은 기간 [^(|]*?\(([^)]+)\)/g, (all, n: string, u: string) => to(Number(n), u, all))
+    .replace(/(?:앞쪽|중간|끝 무렵|첫해|마지막 해)\((\d+)번째 해\), 남은 기간 [^(|]*?\(([^)]+)\)/g, (all, n: string, u: string) => to(Number(n), u, all));
 }
 
 /** 인물 카드(고객 입력만, 제약 문장 없이 사실만). */

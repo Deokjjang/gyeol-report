@@ -72,6 +72,9 @@ export function bookNotice(product: string): string {
   if (product === "career_money_study") return "이 책은 타고난 성향을 풀이한 것이라 일과 돈의 결과를 단정하지 않고, 돈과 투자 이야기도 권유가 아니라 성향 이야기예요.";
   if (product === "saju_mbti_compatibility") return "이 책은 두 사람의 타고난 결을 풀이한 것이라 관계의 결과를 단정하지 않아요.";
   if (product === "love_marriage_child") return "이 책은 타고난 성향을 풀이한 것이라 만남·결혼·자녀의 시기와 결과를 단정하지 않아요.";
+  // AM2(덕짱님 결정 2026-11-11 「둘 다 고침」): 세운·대운은 타고난 성향이 아니라 시기의 흐름을 푼 책이다.
+  if (product === "annual_fortune") return "이 책은 한 해의 흐름을 풀이한 것이라 달마다 일어날 일을 단정하지 않아요.";
+  if (product === "major_fortune") return "이 책은 10년의 흐름을 풀이한 것이라 해마다 일어날 일을 단정하지 않아요.";
   return "이 책은 타고난 성향을 풀이한 것이라 앞으로의 일을 단정하지 않아요.";
 }
 

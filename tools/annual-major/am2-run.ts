@@ -1,7 +1,8 @@
 /**
  * AM2 실호출(단계별 상한, 덕짱님 지시). 운영과 같은 발행 함수(buildV5Snapshot → 장 묶음). 모든 호출은 tools/llm/budget.ts를 지난다.
  *   AM2_CHUNK_CONCURRENCY=2 NODE_PATH=tools/llm/shim pnpm exec tsx tools/annual-major/am2-run.ts --stage P --budget 1 --case annual-1 --case major-1
- * 단계: P 시범(am2-P $1.0) · E 평가(am2-E $6.0) · F 고침(am2-F $2.0) · I 임시본 OpenAI(am2-I $0.3).
+ * 결과 폴더 꼬리표: --tag p2 → P2-<case>(앞 시범 폴더를 덮지 않는다).
+ * 단계: P 시범(am2-P $1.0 → $1.3 → $2.2 승인) · E 평가(am2-E $6.0) · F 고침(am2-F $2.0) · I 임시본 OpenAI(am2-I $0.3).
  * 책마다 시작 관문(남은 예산 < 예상 비용이면 시작하지 않음). 결과(git 밖): ~/Desktop/gyeol-review/annual-major-02/<stage>-<case>/{snapshot.json, book.md, check.md}.
  * 가상 인물만(고객 원고 아님).
  */
@@ -22,7 +23,7 @@ import { concurrency } from "../../src/lib/writer/chunked/run";
 import { devMockStream } from "../../src/lib/ops/generation/devMock";
 
 export const OUT2 = join(homedir(), "Desktop", "gyeol-review", "annual-major-02");
-const STAGES = { P: { scope: "am2-P", cap: 1.3, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
+const STAGES = { P: { scope: "am2-P", cap: 2.2, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
 /** 숨긴 세트(덕짱님 지정 4명). 개발 중에는 만들지 않는다 — E 단계에서만 쓴다. */
 export const HIDDEN: readonly { id: string; product: "annual" | "major"; note: string; payload: () => unknown }[] = [];
 
@@ -48,6 +49,7 @@ function checkMd(id: string, note: string, snap: { productType: string; draft: u
 async function main() {
   const argv = process.argv.slice(2), stage = (argv[argv.indexOf("--stage") + 1] ?? "") as keyof typeof STAGES, budget = budgetArg(argv);
   const ids = argv.flatMap((a, i) => (a === "--case" ? [argv[i + 1]] : []));
+  const tag = argv.includes("--tag") ? (argv[argv.indexOf("--tag") + 1] ?? "").replace(/[^a-z0-9]/gi, "") : "";
   const S = STAGES[stage]; if (!S) { console.error("--stage P|E|F|I"); process.exit(2); }
   if (argv.includes("--mock") && !process.env.LLM_CACHE_DIR) { console.error("--mock은 LLM_CACHE_DIR(임시 폴더)와 함께"); process.exit(2); }
   loadDevEnv();
@@ -67,7 +69,7 @@ async function main() {
     const built = await buildV5Snapshot({ payload: c.payload as never, reportId: `report_am2${stage.toLowerCase()}${c.id.replace(/[^a-z0-9]/g, "")}00000`, policyAt: at, sink: memorySink() as never,
       deps: { provider: S.provider, model: S.model, fallback: null, stream: gate.stream, cache: gate.cache, costCapUsd: orderCostCap(), testRun: true } });
     const snap = built.snapshot as unknown as { productType: string; draft: unknown; evidencePacket: unknown };
-    const dir = join(OUT2, `${stage}-${c.id}`); mkdirSync(dir, { recursive: true });
+    const dir = join(OUT2, `${tag ? tag.toUpperCase() : stage}-${c.id}`); mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, "snapshot.json"), JSON.stringify(snap));
     writeFileSync(join(dir, "book.md"), manuscript(snap.draft as V5BookDraft));
     writeFileSync(join(dir, "check.md"), checkMd(c.id, c.note, snap));
