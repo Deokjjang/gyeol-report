@@ -218,7 +218,59 @@
 | 2026-11-05 17:32 | 최종판3 13 운영 워커 경로 재생(작가 저장본) review | anthropic/claude-haiku-5-5 | 22961 | 0 | 6849 | 0.00572060 | complete | req_011CgjUDHQD9jmwmge2sHLii | 12.34822580 |
 | 2026-11-05 17:32 | 최종판3 13 운영 워커 경로 재생(작가 저장본) repair | anthropic/claude-sonnet-5-5 | 5715 | 0 | 1022 | 0.02165000 | complete | req_011CgjUFcave6Bra3WgxBpwC | 12.36987580 |
 | 2026-11-05 17:33 | 최종판3 13 운영 워커 경로 재생(작가 저장본) review | anthropic/claude-haiku-5-5 | 22961 | 0 | 3929 | 0.00426060 | complete | req_011CgjUK1sjXhCbk3MbakJBx | 12.37413640 |
-누적 합계: **$12.37413640** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
+| 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
+| 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |
+| 2026-11-11 11:29 | AM 7부 | anthropic/claude-sonnet-5-5 | 34871 | 6966 | 18180 | 0.25293520 | complete | req_011CgvMKtVjitwUMnB4rPPSi | 12.96600245 |
+| 2026-11-11 11:30 | AM 7부 review | anthropic/claude-haiku-5-5 | 22470 | 1974 | 11598 | 0.00806574 | complete | req_011CgvMV651MyYzMi1w8rJck | 12.97406819 |
+| 2026-11-11 11:31 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10332 | 598 | 2353 | 0.04431360 | complete | req_011CgvMZ5KUVyjr9VhxsRHFE | 13.01838179 |
+| 2026-11-11 11:33 | AM 7부 | anthropic/claude-sonnet-5-5 | 34576 | 6966 | 17627 | 0.24681520 | complete | req_011CgvMa8KaiWiXgQUPB4yNU | 13.26519699 |
+| 2026-11-11 11:33 | AM 7부 review | anthropic/claude-haiku-5-5 | 21979 | 1974 | 7546 | 0.00599064 | complete | req_011CgvMj1tNr9tzJRv99h1ny | 13.27118763 |
+| 2026-11-11 11:34 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10124 | 598 | 2490 | 0.04526760 | complete | req_011CgvMmitkZjocXELHCN962 | 13.31645523 |
+| 2026-11-11 11:38 | AM 7부 | anthropic/claude-sonnet-5-5 | 34905 | 6966 | 36365 | 0.43485320 | length | req_011CgvMnwyqXbbV9upcL2rQP | 13.75130843 |
+| 2026-11-11 11:40 | AM 7부 | anthropic/claude-sonnet-5-5 | 33393 | 6966 | 16455 | 0.23272920 | complete | req_011CgvN8J3rYLTyTzZGi4gw4 | 13.98403763 |
+| 2026-11-11 11:41 | AM 7부 review | anthropic/claude-haiku-5-5 | 22210 | 0 | 11613 | 0.00807685 | complete | req_011CgvNGUnzeUD1Xw5RbWN7U | 13.99211448 |
+| 2026-11-11 11:41 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10142 | 0 | 2315 | 0.04373300 | complete | req_011CgvNLSmoymitjoB4G98ie | 14.03584748 |
+| 2026-11-11 11:43 | AM 7부 | anthropic/claude-sonnet-5-5 | 35356 | 6966 | 15232 | 0.22442520 | complete | req_011CgvNMYsxQDMQcZwB6V1q8 | 14.26027268 |
+| 2026-11-11 11:43 | AM 7부 review | anthropic/claude-haiku-5-5 | 20116 | 1974 | 5707 | 0.00488484 | complete | req_011CgvNV3ZZ8PiydztvBjMig | 14.26515752 |
+| 2026-11-11 11:43 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 9475 | 598 | 2017 | 0.03923960 | complete | req_011CgvNX5f85Quf6Xo8gNRm3 | 14.30439712 |
+| 2026-11-11 11:45 | AM 7부 | anthropic/claude-sonnet-5-5 | 29811 | 6966 | 14155 | 0.20256520 | complete | req_011CgvNY6spVFzSR4scsysJc | 14.50696232 |
+| 2026-11-11 11:46 | AM 7부 review | anthropic/claude-haiku-5-5 | 18966 | 1974 | 9279 | 0.00655584 | complete | req_011CgvNfVurxw7PWPPevcoCy | 14.51351816 |
+| 2026-11-11 11:46 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10209 | 598 | 2575 | 0.04628760 | complete | req_011CgvNiZHqKc1AfDwQnVxfg | 14.55980576 |
+| 2026-11-11 12:21 | AM 7부 | anthropic/claude-sonnet-5-5 | 36917 | 0 | 12602 | 0.20333700 | complete | req_011CgvRHfKtHKQ1JE6f8R7V2 | 14.76314276 |
+| 2026-11-11 12:21 | AM 7부 review | anthropic/claude-haiku-5-5 | 18881 | 0 | 7449 | 0.00566195 | complete | req_011CgvRQHZ9CC3CQYoATrSzZ | 14.76880471 |
+| 2026-11-11 12:22 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10365 | 0 | 2327 | 0.04429900 | complete | req_011CgvRSoXVsVJPCAdgfHS1C | 14.81310371 |
+| 2026-11-11 12:23 | AM 7부 | anthropic/claude-sonnet-5-5 | 30217 | 6966 | 12856 | 0.19038720 | complete | req_011CgvRUWPRnK6aCDNdGqonw | 15.00349091 |
+| 2026-11-11 12:24 | AM 7부 review | anthropic/claude-haiku-5-5 | 17530 | 1974 | 9609 | 0.00657724 | complete | req_011CgvRbSCMVdPi7cY9QohLq | 15.01006815 |
+| 2026-11-11 12:24 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 9309 | 598 | 2402 | 0.04275760 | complete | req_011CgvRekjf8k7dRiyoaca4b | 15.05282575 |
+| 2026-11-11 12:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 30683 | 6966 | 12332 | 0.18607920 | complete | req_011CgvRg8fJGD81yb6pBr3kY | 15.23890495 |
+| 2026-11-11 12:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 18369 | 1974 | 11617 | 0.00766514 | complete | req_011CgvRnnmfykCUkA9GT2rLJ | 15.24657009 |
+| 2026-11-11 12:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10214 | 598 | 2103 | 0.04157760 | complete | req_011CgvRrer2PKaJ7Dg7oMsAC | 15.28814769 |
+| 2026-11-11 12:31 | AM 7부 | anthropic/claude-sonnet-5-5 | 30450 | 6966 | 32619 | 0.38848320 | length | req_011CgvRsq5DGt4w46hWbgF1Y | 15.67663089 |
+| 2026-11-11 12:33 | AM 7부 | anthropic/claude-sonnet-5-5 | 22186 | 6966 | 17647 | 0.22223520 | complete | req_011CgvSBc8bZvuoMTewC7Shy | 15.89886609 |
+| 2026-11-11 12:34 | AM 7부 review | anthropic/claude-haiku-5-5 | 25544 | 0 | 6380 | 0.00579375 | complete | req_011CgvSMUgeLy9ptV9RMp83c | 15.90465984 |
+| 2026-11-11 12:34 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 6597 | 0 | 1520 | 0.02869300 | complete | req_011CgvSPk2SvijqfQmnh4xTg | 15.93335284 |
+| 2026-11-11 12:36 | AM 7부 | anthropic/claude-sonnet-5-5 | 18785 | 6966 | 12954 | 0.16850320 | complete | req_011CgvSRAVNcU7NHSCMtBWx3 | 16.10185604 |
+| 2026-11-11 12:36 | AM 7부 review | anthropic/claude-haiku-5-5 | 19106 | 1974 | 8194 | 0.00602734 | complete | req_011CgvSXqmgrKgAuk19zvF9n | 16.10788338 |
+| 2026-11-11 12:37 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10779 | 598 | 2937 | 0.05104760 | complete | req_011CgvSaWpVvAX2nwVTHwduE | 16.15893098 |
+| 2026-11-11 12:40 | AM 7부 | anthropic/claude-sonnet-5-5 | 18180 | 6966 | 25183 | 0.28958320 | length | req_011CgvScEn9tiYijryEtFXLH | 16.44851418 |
+| 2026-11-11 12:42 | AM 7부 | anthropic/claude-sonnet-5-5 | 25755 | 6966 | 13678 | 0.18968320 | complete | req_011CgvSrJVnPufT8NwoftikA | 16.63819738 |
+| 2026-11-11 12:42 | AM 7부 review | anthropic/claude-haiku-5-5 | 24986 | 0 | 10069 | 0.00758245 | complete | req_011CgvSyafaDZt8DvEQ9aFxm | 16.64577983 |
+| 2026-11-11 12:42 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 8795 | 0 | 1563 | 0.03351900 | complete | req_011CgvT2tYgwD45BgBofjfEx | 16.67929883 |
+| 2026-11-11 12:47 | AM 7부 | anthropic/claude-sonnet-5-5 | 34940 | 6966 | 36365 | 0.43492320 | length | req_011CgvT3pqUeKqJxKqE2fJFs | 17.11422203 |
+| 2026-11-11 14:27 | AM 7부 | anthropic/claude-sonnet-5-5 | 37416 | 0 | 12725 | 0.20556500 | complete | req_011CgvasQWuCaj5vmHSedX5L | 17.31978703 |
+| 2026-11-11 14:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 17900 | 0 | 8173 | 0.00592585 | complete | req_011CgvazF4K9gDfwCMJhnwZZ | 17.32571288 |
+| 2026-11-11 14:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 9312 | 0 | 2104 | 0.03996300 | complete | req_011Cgvb34f5HVAqhTgHC5Jvi | 17.36567588 |
+| 2026-11-11 14:32 | AM 7부 | anthropic/claude-sonnet-5-5 | 34940 | 6966 | 36365 | 0.43492320 | length | req_011Cgvb4UP7RSuqyopLkBwxs | 17.80059908 |
+| 2026-11-11 14:33 | AM 7부 | anthropic/claude-sonnet-5-5 | 41907 | 0 | 14221 | 0.22950750 | complete | req_011CgvbPheNK4hgUtUXKDNiA | 18.03010658 |
+| 2026-11-11 14:36 | AM 7부 임시본 · interim report_aminterimannual0001 | openai/gpt-6.1-terra | 26117 | 0 | 9794 | 0.07508700 | complete | req_33bd1d60414b495ba112c68904a6d4a5 | 18.10519358 |
+| 2026-11-11 14:37 | AM 7부 정식본 교체 · official report_aminterimannual0001 | anthropic/claude-sonnet-5-5 | 42143 | 0 | 14840 | 0.23268600 | complete | req_011Cgvbh47tiwB8i65HF8V2p | 18.33787958 |
+| 2026-11-11 14:38 | AM 7부 정식본 교체 · official report_aminterimannual0001 review | anthropic/claude-haiku-5-5 | 20478 | 0 | 8338 | 0.00621680 | complete | req_011CgvbpGNnCptdgkXrtBxtj | 18.34409638 |
+| 2026-11-11 14:38 | AM 7부 정식본 교체 · official report_aminterimannual0001 repair | anthropic/claude-sonnet-5-5 | 11028 | 0 | 2480 | 0.04685600 | complete | req_011CgvbsBEJJDJrhBd24vnJx | 18.39095238 |
+| 2026-11-11 14:41 | AM 7부 임시본 · interim report_aminterimmajor0001 | openai/gpt-6.1-terra | 18947 | 4186 | 8054 | 0.05942630 | complete | req_b9c999c8f416446685492823b7acd76a | 18.45037868 |
+| 2026-11-11 14:41 | AM 7부 정식본 교체 · official report_aminterimmajor0001 review | anthropic/claude-haiku-5-5 | 18878 | 0 | 9625 | 0.00670030 | complete | req_011Cgvc4eddVhEC4YzJgDSHL | 18.45707898 |
+| 2026-11-11 14:42 | AM 7부 정식본 교체 · official report_aminterimmajor0001 repair | anthropic/claude-sonnet-5-5 | 10387 | 0 | 2372 | 0.04449400 | complete | req_011Cgvc7xherBg7ysuACDAew | 18.50157298 |
+누적 합계: **$18.50157298** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - 2026-11-05 최종판3(출시 전 마지막) 시작: 콘솔 시작 잔액 **$94.33**(덕짱님 지시값). 범위 `final3` 상한 $4.00(측정·생성 포함), 이 표 누적 $9.82159355에서 시작.
