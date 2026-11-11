@@ -14,7 +14,7 @@ import { chunkMaxTokens, chunkUser, type Chunk } from "./prompt";
 /** 동시에 부르는 묶음 수(첫 묶음 뒤). Anthropic 분당 요청 한도 안. */
 export const CHUNK_CONCURRENCY = 5;
 /** 개발 실호출에서 예산 관문(대기 중 호출의 최악 비용을 미리 센다)에 맞춰 줄일 때만 AM2_CHUNK_CONCURRENCY(1~5). */
-const concurrency = () => { const v = Number(process.env.AM2_CHUNK_CONCURRENCY); return v >= 1 && v <= CHUNK_CONCURRENCY ? Math.floor(v) : CHUNK_CONCURRENCY; };
+export const concurrency = () => { const v = Number(process.env.AM2_CHUNK_CONCURRENCY); return v >= 1 && v <= CHUNK_CONCURRENCY ? Math.floor(v) : CHUNK_CONCURRENCY; };
 export type ChunkLog = { readonly id: string; readonly kind: "first" | "rewrite"; readonly round: number; readonly chars: number; readonly finish: string | null; readonly costUsd: number; readonly ms: number; readonly reason?: string };
 
 /** 묶음이 쓴 원고에서 그 묶음 몫(장·key)만 꺼낸다. 장 제목은 설계 그대로. */

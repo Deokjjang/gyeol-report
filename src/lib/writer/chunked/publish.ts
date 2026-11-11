@@ -19,11 +19,11 @@ import { applySafetyNet, safetyFacts, sentenceViolation, writeKeyFill, type Draf
 import { enforce, HINT, lintBook, tidyBook, type LintCtx, type LintFlag, type P6cRule } from "../safety/p6c";
 import { orphanStart } from "../safety/p6e";
 import { splitSentences } from "../safety/patterns";
-import { briefFor, briefHash, chooseCover, factSheetFor, insertFixedLines, kstDate, lintContext, promptCacheOn, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
+import { briefFor, briefHash, chooseCover, factSheetFor, insertFixedLines, kstDate, lintContext, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
 import { BLOCK_RULES, blockFlags, briefCheck, crossRepeats, styleScoreOf, type BlockCtx, type ChunkFlag } from "./check";
 import { buildIntake } from "./intake";
 import { chunkPlan, chunkRules, CHUNK_PROMPT_VERSION, renderCard, type Chunk } from "./prompt";
-import { rewriteChunk, writeChunks, type ChunkLog } from "./run";
+import { concurrency, rewriteChunk, writeChunks, type ChunkLog } from "./run";
 
 /** 다시 쓰기 최대 횟수(묶음마다). */
 export const CHUNK_REWRITE_ROUNDS = 2;
@@ -51,7 +51,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const lctx: LintCtx = lintContext(brief, k, plan, a.prior?.sentences ?? [], undefined, sheet);
   const sink: ChapterSink = { save: c => { let preview: ChapterPreview | undefined; try { preview = chapterPreview(c, lctx, plan.find(p => p.n === c.n)); } catch { preview = undefined; } return a.sink.save({ ...c, total: plan.length, ...(preview ? { preview } : {}) }); }, load: () => a.sink.load() };
   const envCap = Number(process.env.LLM_MAX_OUTPUT_TOKENS);
-  const opts = (cap?: number): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...deps, budgetMs: budget - (now() - started), fallback: fb, ...(cap !== undefined ? { costCapUsd: cap } : {}) });
+  // 장 묶음은 같은 책의 묶음 6개가 접두부를 함께 쓰므로 캐시를 늘 켠다(LLM_PROMPT_CACHE와 무관, deps.cacheSystem=false만 끈다).
+  const opts = (cap?: number): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: true, ...deps, budgetMs: budget - (now() - started), fallback: fb, ...(cap !== undefined ? { costCapUsd: cap } : {}) });
 
   const runs: WriterRun[] = [];
   let drafts = new Map<number, DraftChapter>(), texts = new Map<string, string>(), log: ChunkLog[] = [];
@@ -77,15 +78,18 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   /** 걸린 깃발을 묶음별로. */
   const byChunk = (flags: readonly ChunkFlag[]) => { const m = new Map<Chunk, ChunkFlag[]>(); for (const f of flags) { const h = cur.chapters.find(c => c.n === f.chapter)?.sections[f.section]?.heading ?? ""; const c = chunkOf(chunks, f, h); if (c) m.set(c, [...(m.get(c) ?? []), f]); } return m; };
   const previousOf = (c: Chunk) => c.parts.map(p => { const d = drafts.get(p.n); if (!d) return ""; return renderChapter(p.keys ? { ...d.chapter, sections: d.chapter.sections.filter(s => p.keys!.includes(s.heading)) } : d.chapter); }).filter(Boolean).join("\n\n");
-  const rewrite = async (targets: Map<Chunk, ChunkFlag[]>, round: number) => {
-    const est = 0.08 * targets.size; // 묶음 하나 다시 쓰기 최악 약 $0.06~0.08(입력 캐시 + 출력 4천 자 + 생각)
-    if (!live || capLeft() < est) return false;
+  const rewrite = async (all: Map<Chunk, ChunkFlag[]>, round: number) => {
+    // 주문 상한 안에서 깃발이 많은 묶음부터(묶음 하나 다시 쓰기 약 $0.05~0.08: 입력 캐시 + 출력 4천 자 + 생각).
+    const fit = Math.floor(capLeft() / 0.08);
+    const targets = new Map([...all].sort((x, y) => y[1].length - x[1].length).slice(0, Math.max(0, fit)));
+    if (!live || !targets.size) return false;
     rounds.push({ round, chunks: [...targets.keys()].map(c => c.id), flags: [...targets.values()].reduce((x, v) => x + v.length, 0) });
-    await Promise.all([...targets].map(async ([c, fs]) => {
+    const queue = [...targets];
+    await Promise.all(Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let next = queue.shift(); next; next = queue.shift()) { const [c, fs] = next;
       const r = await rewriteChunk({ o: opts(Math.max(0, capLeft())), intake, chunks, plan, system, sink, chunk: c, previous: previousOf(c), issues: fs.slice(0, 12).map(f => ({ sentence: f.sentence, reason: reasonOf(f) })), round, drafts });
       runs.push(r.run); log.push(r.log);
       if (r.text) { texts.set(c.id, r.text); for (const n of r.changed) { const d = drafts.get(n)!; await sink.save({ n, chapter: d.chapter, source: d.source }); } }
-    }));
+    } }));
     return true;
   };
   // 1) 차단 결함: 걸린 묶음을 다시 쓴다(최대 2회).

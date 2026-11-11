@@ -45,8 +45,9 @@ function main() {
   const run = (who: string, payload: unknown) => { try { const { intake } = intakeOf(payload); for (const v of briefCheck(intake)) { tally[v.rule] = (tally[v.rule] ?? 0) + 1; if (samples.filter(s => s.rule === v.rule).length < 12 && !samples.some(s => s.text === v.text)) samples.push({ ...v, who }); } return true; } catch (e) { if (/UncertainBirthTimeError/.test(String(e))) { rejected++; return false; } tally.error = (tally.error ?? 0) + 1; if (samples.length < 40) samples.push({ who, where: "error", text: String(e).slice(0, 200), rule: "internal" }); return false; } };
   let n = 0, rejected = 0;
   if (argv[0] === "--cases") for (const c of cases().filter(x => x.product !== "launch")) { run(c.id, c.payload); n++; }
-  if (argv[0] === "--random") { const N = Number(argv[1] ?? 1000), seed = argv.includes("--seed") ? Number(argv[argv.indexOf("--seed") + 1]) : 7; for (const p of ["annual_fortune", "major_fortune"] as const) for (let i = 0; i < N; i++) { run(`${p}#${i}`, randomPayload(i, p, seed)); n++; } }
-  console.log(`검사 ${n - rejected}명(입력 거절 ${rejected}명 — 만세력이 받지 않는 출생 시각, 다른 무작위 입력으로 채우지 않음) · 위반 ${Object.values(tally).reduce((a, b) => a + b, 0)}`, JSON.stringify(tally));
+  // 만세력이 받지 않는 출생 시각(UncertainBirthTimeError)은 주문이 될 수 없는 입력이라 다음 무작위 입력으로 채워 상품마다 정확히 N명.
+  if (argv[0] === "--random") { const N = Number(argv[1] ?? 1000), seed = argv.includes("--seed") ? Number(argv[argv.indexOf("--seed") + 1]) : 7; for (const p of ["annual_fortune", "major_fortune"] as const) { let ok = 0; for (let i = 0; ok < N; i++) { n++; if (run(`${p}#${i}`, randomPayload(i, p, seed))) ok++; } } }
+  console.log(`검사 ${n - rejected}명(만세력이 받지 않는 출생 시각 ${rejected}명은 다음 입력으로 채움) · 위반 ${Object.values(tally).reduce((a, b) => a + b, 0)}`, JSON.stringify(tally));
   for (const s of samples) console.log(`- [${s.rule}] ${s.who} ${s.where}: ${s.text.slice(0, 160)}`);
 }
 if (process.argv[1]?.endsWith("am2-brief.ts")) main();

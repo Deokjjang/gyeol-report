@@ -64,11 +64,13 @@ export function say(raw: string, year?: number): string {
 // ---------- 입력에 맞지 않는 장면·소품 ----------
 /** 연차·직급 소품: 입력 직업 글에 연차·직급 말이 없으면 쓰지 않는다(AM: 20대 직장인에게 사수·막내·선배·사원증). */
 export const SENIORITY_PROP = /사수|막내|선배|후배|신입|입사 동기|동기 모임|팀장|과장|부장|차장|대리|사원증|연차|인턴|수습|첫 출근|정규직 전환|승진 심사|인사 평가/;
-const CHILD_PROP = /아이|자녀|육아|어린이집|유치원|학부모|아들|딸/;
-export function sceneFits(s: string, brief: Brief): boolean {
+const CHILD_PROP = /(?<![가-힣])(아이|아들|딸)(가|를|와|랑|의|에게|는|도|들)?(?![가-힣])|자녀(?! ?(별|자리))|육아|어린이집|유치원|학부모/;
+/** 뜻 문장용 입력 밖 직장 상황(장면의 JOB_ASSUME에서 「투자」 — 「시간을 투자」 같은 일상어 — 를 뺀 것). */
+const JOB_ASSUME_MEANING = /팀원|팀 (회의|미팅)|주간 팀|직원|채용|면담|평가 시즌|실적|사업자 통장/;
+export function sceneFits(s: string, brief: Brief, meaning = false): boolean {
   const f = brief.person.facts, detail = f.job.detail ?? "";
   if (SENIORITY_PROP.test(s) && !SENIORITY_PROP.test(detail)) return false;
-  { const m = s.match(JOB_ASSUME); if (m && !detail.includes(m[0])) return false; }
+  { const m = s.match(meaning ? JOB_ASSUME_MEANING : JOB_ASSUME); if (m && !detail.includes(m[0])) return false; }
   if (presumedPartner(s, f.relationship)) return false;
   if (CHILD_PROP.test(s) && f.children !== "has") return false;
   if (f.job.class !== "student" && /학교|수업|담임|학기|시험지|성적표|모의고사|학원/.test(s)) return false;
@@ -104,8 +106,10 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const counter: Record<Subject, number> = { natal: 0, dayun: 0, year: 0, month: 0, mbti: 0, input: 0 };
   const byText = new Map<string, Line>();
   const use = new Map<string, Set<number>>();
+  // 뜻 문장도 입력에 맞지 않는 상황(연차·팀원·직원·자녀·연인 전제·학교)이면 그 마디만 뺀다.
+  const fits = (t: string) => t.split(/(?<=[.!?])\s+| · /).filter(x => sceneFits(x, brief, true)).join(" · ");
   const add = (subject: Subject, value: string, meaning = "", n?: number): string | null => {
-    const v = say(value, year), m = say(meaning, year);
+    const v = say(value, year), m = fits(say(meaning, year));
     if (!v || v.length < 2) return null;
     const sig = `${subject}|${v}|${m}`;
     let l = byText.get(sig);
