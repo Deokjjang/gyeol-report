@@ -356,7 +356,8 @@ NODE_PATH=tools/quality/shim pnpm exec tsx tools/quality/ratchet.ts --current ~/
 
 ### 원격 SHA
 - 오전판: `a5519db8`. 오후판: `892f890c`(`git ls-remote`로 일치 확인).
-- 밤판(재생성 3권 + 후속 고침): 코드 마지막 커밋 `1db6a294`(전체 시험·tsc·lint·build·knowledge-lint를 이 코드에서 돌림). push 뒤 원격 SHA는 이 절에 적는다(그 문서 커밋이 하나 더 붙는다, 내용은 이 절뿐). master·v5/main 병합 없음.
+- 밤판(재생성 3권 + 후속 고침): `origin/v5/annual-major-01` = 로컬 `1c155057416be78a642777c5a3b414781e71b452`(push 0f766f22..1c155057, `git ls-remote`로 일치 확인, 2026-11-11). 코드 마지막 커밋은 `1db6a294`(전체 시험·tsc·lint·build·knowledge-lint를 이 코드에서 돌림).
+- 이 줄을 적은 문서 커밋이 그 뒤에 하나 더 붙는다(내용은 이 절뿐). master·v5/main 병합 없음.
 
 ### 남은 위험
 - **판매 품질**: 판독한 13권 + 고친 뒤 재생성 3권이 모두 FAIL(4-3·4-4절). 재생성 3권은 결함이 70 → 36으로 줄었지만, 권당 11~14건이 남는다(검사 오탐 삭제·수리가 만든 중복·직군 장면·연차 단정 등). 1db6a294의 고침은 실원고로 아직 확인 못 했다.
