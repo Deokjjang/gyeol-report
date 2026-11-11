@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
  */
 export async function GET(request: Request) {
   const from = new URL(request.url).searchParams.get("from") ?? "";
-  if (!/^report_[a-z0-9]{13,64}$/.test(from)) return NextResponse.json({ ok: false, code: "INVALID" }, { status: 400, headers: { "cache-control": "no-store" } });
+  if (from !== "annual" && !/^report_[a-z0-9]{13,64}$/.test(from)) return NextResponse.json({ ok: false, code: "INVALID" }, { status: 400, headers: { "cache-control": "no-store" } });
   const { createOpsStores } = await import("../../../../lib/ops/store");
   const { resolveBuyer, accountPortFor } = await import("../../../../lib/ops/orders/buyer");
   const { createAccountPort } = await import("../../../../lib/account/supabase");

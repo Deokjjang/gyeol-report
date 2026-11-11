@@ -9,6 +9,7 @@ import { readFileSync } from "node:fs";
 import { NextRequest, NextResponse } from "next/server";
 import { ACCOUNT_POLICY_VERSIONS, accountSession, type AccountSnapshot } from "../../../src/lib/account/policy";
 import { LAUNCH_V5_PRODUCTS } from "../../../src/lib/writer/flags";
+import { createAnnualCommerceAcceptance } from "../../../src/lib/payment/annualPurchasePolicy";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { TICKET_A as A, TICKET_B as B, ticketAuth } from "../../helpers/ticketPublicationSql";
@@ -53,12 +54,16 @@ const fixture = (id: string) => RUNTIME_FIXTURES.find(f => f.id === id)!.payload
 const PAID_PAYLOADS: Record<string, Record<string, unknown>> = {
   saju_mbti_full: { productKey: "saju_mbti_full", productSlug: "saju-mbti-full", person: { name: "김도윤", birthDate: "1996-12-06", birthTime: "14:15", gender: "MALE", mbtiType: "ENTJ", birthTimeUnknown: false, approximateBirthTimeSlot: "" }, userContext: { relationshipStatus: "single", jobStatus: "employee", detailJob: "서비스 기획자", focusAreas: [] }, productOptions: {} },
   career_money_study: fixture("career"), love_marriage_child: fixture("love"), saju_mbti_compatibility: fixture("compatibility"),
+  // AM: 대운·세운 v5 결제 책(12/1 형식 추가).
+  major_fortune: fixture("major"), annual_fortune: fixture("annual"),
 };
 const v5Builder: PaidV5Builder = async job => ({ snapshot: (await buildV5Snapshot({ payload: job.payload as never, reportId: job.report_id, policyAt: new Date(job.created_at).toISOString(), sink: { save: async () => true, load: async () => [] }, recover: false, deps: { provider: "openai", model: "", people: async () => [] } })).snapshot as unknown as Record<string, unknown> });
 let paidSeq = 0;
 async function paidBook(payload: Record<string, unknown>, v5: boolean): Promise<string> {
   const n = ++paidSeq, po = `po-share-${n}`, pv = `pv-share-${n}`;
-  expect(await h.paid.call("create_order", { paymentOrderId: po, providerOrderId: pv, productType: payload.productKey, provider: "toss", amount: 1290, inputSnapshot: { reportInputPayload: payload } })).toMatchObject({ ok: true });
+  // 세운: 결제 준비가 서버에서 넣는 구매 시점 기록(운영 prepare와 같은 함수).
+  const annual = payload.productKey === "annual_fortune" ? { annualCommerceAcceptance: createAnnualCommerceAcceptance(Number((payload.productOptions as { selectedYear: string }).selectedYear), new Date()) } : {};
+  expect(await h.paid.call("create_order", { paymentOrderId: po, providerOrderId: pv, productType: payload.productKey, provider: "toss", amount: 1290, inputSnapshot: { reportInputPayload: payload, ...annual } })).toMatchObject({ ok: true });
   expect(await bindCheckout(new NextRequest("https://gyeolreport.com/api/payment-checkout/prepare"), NextResponse.json({}), po, payload as never, ticketAuth(BUYER), library())).not.toBeNull();
   const order = await confirmPaidReport({ orderId: pv, paymentKey: `mock-key-${n}`, amount: 1290 }, h.paid, async () => ({ ok: true, confirm: { provider: "toss", paymentKeyReceived: true, orderId: pv, amount: 1290, status: "DONE" } }));
   // V4 결제 책: 운영 결제 워커의 V4 경로(runPublicPaidReportJob bookGeneration v4)와 같은 생성기·검사(로컬 검수 runLocalBookJob과 같음).
@@ -68,6 +73,8 @@ async function paidBook(payload: Record<string, unknown>, v5: boolean): Promise<
 }
 
 beforeAll(async () => {
+  // AM: 대운·세운 결제 책을 만들려면 판매·가격 설정값이 열려 있어야 한다(운영은 덕짱님 결정 뒤 연다).
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "5900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "3900");
   h = await v5Queue();
   // 서재 연결(sqlBookShareLibrary)이 결제 회원을 auth.users에 넣는다(로컬 검수 DB와 같은 권한).
   await h.db.exec("reset role; grant select, insert on auth.users to service_role; set role service_role;");

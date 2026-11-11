@@ -8,8 +8,8 @@ export function writerV5Products(env: Readonly<Record<string, string | undefined
   return [...new Set((env.WRITER_V5_PRODUCTS ?? "").split(",").map(s => s.trim()).filter(s => (PRODUCT_KEYS as readonly string[]).includes(s)))];
 }
 
-/** 운영 값(v5 최종3, 출시 4종: 종합·커리어·연애·궁합). 대운·세운은 판매 중지(FORTUNE_SALES_OPEN)라 넣지 않는다. */
-export const LAUNCH_V5_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"] as const;
+/** 운영 값(v5 최종3 출시 4종 + AM 12/1 대운·세운 v5). 대운·세운 판매는 FORTUNE_SALES_OPEN·가격 설정값이 따로 연다(이 값은 작가 경로만). */
+export const LAUNCH_V5_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 export const LAUNCH_V5_PRODUCTS_VALUE = LAUNCH_V5_PRODUCTS.join(",");
 
 /**
@@ -22,6 +22,6 @@ export function writerV5ProductsWarning(env: Readonly<Record<string, string | un
   const ignored = raw.split(",").map(s => s.trim()).filter(s => s && !(PRODUCT_KEYS as readonly string[]).includes(s));
   if (!missing.length && !extra.length && !ignored.length) return null;
   const message = !parsed.length ? "WRITER_V5_PRODUCTS가 비어 있습니다(또는 아는 상품 키가 없습니다) — 6상품 모두 V4로 생성됩니다."
-    : "WRITER_V5_PRODUCTS가 출시 4종과 다릅니다 — 빠진 상품은 V4로 생성됩니다.";
+    : "WRITER_V5_PRODUCTS가 운영 값(6상품)과 다릅니다 — 빠진 상품은 V4로 생성됩니다.";
   return JSON.stringify({ event: "WRITER_V5_PRODUCTS_MISMATCH", message, expected: LAUNCH_V5_PRODUCTS_VALUE, parsed, missing, extra, ignored });
 }

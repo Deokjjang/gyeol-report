@@ -10,6 +10,7 @@ set session_replication_role = replica; -- 시험용: Book 무결성 제약(스�
 insert into public.paid_report_snapshots(report_id, order_id, product_type, status) values ('report_amtestannual0001', 'po_am_test_annual', 'annual_fortune', 'QUEUED');
 set session_replication_role = origin;
 select '1 check(정상)', public.am_major_discount('check', jsonb_build_object('userId', :'uid', 'annualReportId', 'report_amtestannual0001'))->>'ok';
+select '1b check(최근 세운 = annual)', public.am_major_discount('check', jsonb_build_object('userId', :'uid', 'annualReportId', 'annual'))->>'ok';
 select '2 check(남의 계정)', public.am_major_discount('check', jsonb_build_object('userId', gen_random_uuid(), 'annualReportId', 'report_amtestannual0001'))->>'code';
 select '3 reserve(첫 대운 주문)', public.am_major_discount('reserve', jsonb_build_object('userId', :'uid', 'annualOrderId', 'po_am_test_annual', 'majorOrderId', 'po_major_1', 'rate', 0.5, 'amount', 3450, 'originalAmount', 6900))->>'ok';
 select '4 reserve(30분 안 둘째 주문)', public.am_major_discount('reserve', jsonb_build_object('userId', :'uid', 'annualOrderId', 'po_am_test_annual', 'majorOrderId', 'po_major_2', 'rate', 0.5, 'amount', 3450, 'originalAmount', 6900))->>'code';

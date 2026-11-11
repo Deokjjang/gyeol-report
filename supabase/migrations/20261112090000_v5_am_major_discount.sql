@@ -26,11 +26,17 @@ declare
   o record; u record; v_input jsonb;
 begin
   if p_action = 'check' then
-    if v_user is null or v_report is null or v_report !~ '^report_[a-z0-9]{13,64}$' then return jsonb_build_object('ok', false, 'code', 'INVALID'); end if;
+    -- 'annual' = 이 회원의 세운 주문 가운데 할인을 쓸 수 있는 가장 최근 것(책 화면 링크에 책 id를 싣지 않는다 — 공유 열람자에게 드러나지 않게).
+    if v_user is null or v_report is null or (v_report <> 'annual' and v_report !~ '^report_[a-z0-9]{13,64}$') then return jsonb_build_object('ok', false, 'code', 'INVALID'); end if;
     select po.payment_order_id, po.status, po.paid_at into o
       from public.paid_report_snapshots s join public.payment_orders po on po.payment_order_id = s.order_id
       join public.order_records r on r.payment_order_id = po.payment_order_id
-      where s.report_id = v_report and s.product_type = 'annual_fortune' and r.user_id = v_user;
+      where (s.report_id = v_report or v_report = 'annual') and s.product_type = 'annual_fortune' and r.user_id = v_user
+      order by (po.status = 'paid' and po.paid_at >= now() - interval '7 days'
+        and not exists(select 1 from public.order_refunds f where f.payment_order_id = po.payment_order_id and f.state in ('requested', 'processing', 'done'))
+        and not exists(select 1 from public.major_discount_uses d where d.annual_order_id = po.payment_order_id and (d.reserved_at > now() - interval '30 minutes' or exists(select 1 from public.payment_orders m where m.payment_order_id = d.major_order_id and m.status = 'paid')))) desc,
+        po.paid_at desc nulls last
+      limit 1;
     if o.payment_order_id is null then return jsonb_build_object('ok', false, 'code', 'NOT_FOUND'); end if;
     if o.status <> 'paid' or exists(select 1 from public.order_refunds f where f.payment_order_id = o.payment_order_id and f.state in ('requested', 'processing', 'done')) then
       return jsonb_build_object('ok', false, 'code', 'REFUNDED'); end if;

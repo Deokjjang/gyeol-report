@@ -393,7 +393,7 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
     if (!ch.keys) { chapterPage.set(ch.n, pages.length); pages.push({ kind: "narrative", id: ch.n === 1 ? "core" : `chapter-${ch.id}`, title: ch.title, paragraphs: toParagraphs(ch.sections), notes: [] });
       // AM 2부: 운을 쓰는 법 장 뒤에 나를 돕는 색·방향·숫자(+ 삼재 해당 띠만), 이어지는 큰 흐름 장 뒤에 대운으로 이어 보기.
       if (ch.id === "use" && d.annual?.lucky) pages.push({ kind: "lucky", title: "나를 돕는 색·방향·숫자", name: d.annual.lucky.name, colors: [...d.annual.lucky.colors], direction: d.annual.lucky.direction, numbers: [...d.annual.lucky.numbers], why: d.annual.lucky.why, ...(d.annual.samjae ? { samjae: d.annual.samjae } : {}) });
-      if (ch.id === "next" && d.annual) pages.push({ kind: "continue", title: "앞으로 10년의 흐름, 대운으로 이어 보기", text: `${d.annual.year}년은 지금 10년 흐름의 한 해예요. 대운 「앞으로의 나」는 평생 대운 지도와 앞으로 10년을 한 권에 담아요. 같은 입력으로 바로 이어 볼 수 있어요.`, href: `/report/new?product=major-fortune&from=${encodeURIComponent(snapshot.reportId)}` });
+      if (ch.id === "next" && d.annual) pages.push({ kind: "continue", title: "앞으로 10년의 흐름, 대운으로 이어 보기", text: `${d.annual.year}년은 지금 10년 흐름의 한 해예요. 대운 「앞으로의 나」는 평생 대운 지도와 앞으로 10년을 한 권에 담아요. 같은 입력으로 바로 이어 볼 수 있어요.`, href: "/report/new?product=major-fortune&from=annual" });
       continue; }
     pages.push(d.productType === "major_fortune" ? { kind: "timeline", title: ch.title, years: [], transitions: [] } : { kind: "months", title: ch.title, months: [] });
     for (const s of ch.sections) {
