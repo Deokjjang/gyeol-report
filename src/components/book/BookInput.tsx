@@ -6,7 +6,7 @@ import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type Bo
 import { ANNUAL_WISH_MAX, type PersonInputState } from "../../lib/report-generation/reportInputPresentation";
 import { MBTI_TYPES, compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
 import { birthTimeSlotOptions } from "../../lib/saju/birthTimePrecisionTypes";
-import { annualEditionYear, getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
+import { getAnnualFortuneCommerceYearPolicy } from "../../lib/report-knowledge/annualFortuneYearRules";
 import { JOBS, RELATIONSHIPS, CATEGORIES, PUBLISHING_STATES } from "../../app/dev/book-preview/model";
 import { Publishing } from "../../app/dev/book-preview/BookPages";
 import { BookCheckout, CHECKOUT_RETURN_BACKUP_KEY, type MajorDiscountView } from "./BookCheckout";
@@ -16,7 +16,7 @@ import { interaction } from "../../lib/analytics/client";
 import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
 import { AccountChannelOnboarding } from "../account/AccountSession";
-import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
+import { FORTUNE_REOPEN_LINE, annualProductYear } from "../../lib/ops/config";
 import { EventPopupHost } from "../event/EventPopup";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
@@ -61,7 +61,7 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
   </main>;
 }
 // AM 2부: 세운 신년판은 한 해만 판다 — 빈 폼·저장된 초안 모두 신년판 연도로(입력 변환 bookInputPayload는 상태 그대로).
-const pinAnnualYear = (bookId: string, f: BookFormState): BookFormState => bookId === "annual" ? { ...f, person: { ...f.person, selectedYear: String(annualEditionYear()) } } : f;
+const pinAnnualYear = (bookId: string, f: BookFormState): BookFormState => bookId === "annual" ? { ...f, person: { ...f.person, selectedYear: String(annualProductYear()) } } : f;
 function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled, v5Book, giftEventProducts }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean; v5Book: boolean; giftEventProducts: readonly string[] }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
@@ -189,8 +189,8 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         </>}</div> : null}
         {step === 2 ? book.id === "love" ? relation : book.id === "annual" ? <div className={s.fields}>
           {/* AM 2부: 신년판은 한 해(설정값)만. 소망은 선택, 200자, 자료로만 쓰인다. */}
-          <p className={s.wide}><b>{annualEditionYear()}년 신년판</b> · 입춘부터 다음 입춘까지 열두 절기월과 1월 다리를 담아요.</p>
-          <label className={s.wide}>{annualEditionYear()}년에 이루고 싶은 것이나 요즘 고민(선택)<textarea value={state.person.wish ?? ""} maxLength={ANNUAL_WISH_MAX} rows={4} data-annual-wish onChange={e => update({ ...state, person: { ...state.person, wish: e.target.value.slice(0, ANNUAL_WISH_MAX) } })} />
+          <p className={s.wide}><b>{annualProductYear()}년 신년판</b> · 입춘부터 다음 입춘까지 열두 절기월과 1월 다리를 담아요.</p>
+          <label className={s.wide}>{annualProductYear()}년에 이루고 싶은 것이나 요즘 고민(선택)<textarea value={state.person.wish ?? ""} maxLength={ANNUAL_WISH_MAX} rows={4} data-annual-wish onChange={e => update({ ...state, person: { ...state.person, wish: e.target.value.slice(0, ANNUAL_WISH_MAX) } })} />
             <small>건강·금융처럼 민감한 내용은 적지 않아도 돼요. {(state.person.wish ?? "").length}/{ANNUAL_WISH_MAX}</small></label>
         </div> : <label>선택 연도<select value={state.person.selectedYear} onChange={e => update({ ...state, person: { ...state.person, selectedYear: e.target.value } })}>{policy.selectableYears.map(year => <option key={year}>{year}</option>)}</select></label> : null}
         <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>

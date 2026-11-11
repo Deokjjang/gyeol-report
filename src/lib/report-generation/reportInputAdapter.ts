@@ -21,7 +21,8 @@ import {
   type SinglePersonReportProductKey,
   type SinglePersonReportProductSlug,
 } from "./reportInputTypes";
-import { getAnnualFortuneCurrentYear, isAnnualOrderYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+import { getAnnualFortuneCurrentYear } from "../report-knowledge/annualFortuneYearRules";
+import { isAnnualOrderYearSelectable } from "./annualOrderYear";
 
 export type ReportInputAdapterOptions = {
   readonly now?: () => Date;

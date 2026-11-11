@@ -1,4 +1,4 @@
-import { isAnnualOrderYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+import { isAnnualOrderYearSelectable } from "../report-generation/annualOrderYear";
 
 // Stored beside reportInputPayload, never read from the browser's report payload.
 export type AnnualCommerceAcceptance = {

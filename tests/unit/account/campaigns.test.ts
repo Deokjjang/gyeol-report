@@ -126,7 +126,10 @@ describe("12A actual SQL acquisition authority",()=>{
   });
   it.each(RUNTIME_FIXTURES)("$id campaign ticket → unchanged six-product generation → persisted valid conversion",async f=>{
     const s=await capture(),id=await newUser();await settle(id,s);const tickets=withCampaignTickets(sqlTicketStore(db),c),index=RUNTIME_FIXTURES.indexOf(f);
-    const result=await redeemReportTicket(tickets,id,randomUUID(),payload(index));expect(result.state).toBe("COMPLETED");expect((await attr(id)).first_report_id).toBe(result.reportId);
+    const result=await redeemReportTicket(tickets,id,randomUUID(),payload(index));
+    // AM 3부(약관 「이용권으로 만들 수 있는 리포트는 4종」): 대운·세운은 가입 캠페인 이용권으로도 만들지 않는다 — 전환도 생기지 않는다.
+    if(f.id==="major"||f.id==="annual"){expect(result).toMatchObject({ok:false,code:"TICKET_PRODUCT_EXCLUDED"});expect((await attr(id)).first_report_id).toBeNull();return;}
+    expect(result.state).toBe("COMPLETED");expect((await attr(id)).first_report_id).toBe(result.reportId);
     const read=await tickets.call("read",id,{reportId:result.reportId}),book=storedBook(read.snapshot)!;expect(book).toBeTruthy();
     if(f.id==="major"){const p=book.data.pages.find(p=>p.kind==="timeline");expect(p?.kind==="timeline"&&p.years).toHaveLength(14);}
     if(f.id==="annual"){const p=book.data.pages.find(p=>p.kind==="months");expect(p?.kind==="months"&&p.months).toHaveLength(12);}
