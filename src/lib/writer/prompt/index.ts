@@ -216,7 +216,8 @@ export function bookRules(brief: Brief): string[] {
   if (p === "saju_mbti_full") rules.push(
     "[표지]와 1장에는 직업 장면·직업 말(직함·업무·회사·가게)을 쓰지 않는다. 성향 장은 장마다 직업 장면 1개 이하, 일·돈 장만 예외",
     "입력에 없는 직업 상황(투자자·투자 유치·직원·팀원·면접·평가 시즌·실적표·'처음 만든 ~')은 쓰지 않는다",
-    `본문에 연·월 숫자를 쓰지 않는다. 운 설명은 '올해(${year.ganji.hangul})'를 한 번만, 행동 제안은 '앞으로 한 달'로`,
+    // AM 판독(sodam 재생성 8장): 옛 「올해(병오)」 지시가 남아 작가가 「올해(병오)는…」을 썼다 → 1-1 ① 결정대로 해 이름.
+    `달·날짜 숫자를 쓰지 않는다. 운 설명은 '${year.year}년 ${year.ganji.hangul}년'처럼 해 이름으로 한 번만(「올해」 대신), 행동 제안은 '앞으로 한 달'로`,
     "[표지]에는 직업·나이를 쓰지 않는다");
   if (p === "love_marriage_child") rules.push("[표지]에 직업 장소(가게·카페·사무실·작업실 등)를 쓰지 않는다");
   if (p === "love_marriage_child" || p === "saju_mbti_compatibility") {

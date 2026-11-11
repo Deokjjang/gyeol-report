@@ -9,7 +9,7 @@ import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
 import type { FinalChapter } from "./safety";
 import { RURAL_PROP, splitSentences } from "./safety/patterns";
-import type { LintFlag } from "./safety/p6c";
+import { HARD_RULES, type LintFlag } from "./safety/p6c";
 import type { Numbered, ReviewIssue } from "./review";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
@@ -46,14 +46,19 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
     const it: RepairItem = { ...base, id: out.length + 1, problems: [problem], source: [src] }; out.push(it); key.set(k, it);
   };
   if (a.cover) add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: a.cover.line }, `표지: ${a.cover.problem}`, "cover");
-  for (const f of a.flags) {
+  // AM 재생성 판독(major-1·annual-1): 수리 40칸이 모두 lint(대부분 문체 깃발)로 차서 검수가 맞게 짚은 사실·면책 지적이 고쳐지지 않았고, 8칸은 조립이 어차피 떼는 머리 문장 베낌에 쓰였다.
+  // → 칸 순서: 사실·금지 깃발(안 고치면 지워진다) → 검수 지적 → 문체 깃발. 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)에는 칸을 주지 않는다.
+  const HEAD_COPY = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-鿿]{2}月?\))?(은|는) [^.?!]{0,40}(하늘에|천간에)[^.?!]{0,40}(땅에|지지에)/;
+  const flagsOf = (hard: boolean) => a.flags.filter(f => HARD_RULES.has(f.rule as never) === hard && !(f.sentence && HEAD_COPY.test(f.sentence)));
+  const addFlags = (list: readonly LintFlag[]) => { for (const f of list) {
     const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) continue;
     const problem = `${f.hint}${f.detail ? ` [${f.detail}]` : ""}`;
     if (f.paragraph < 0) { add(`h:${f.chapter}.${f.section}`, { kind: "heading", chapter: f.chapter, section: f.section, paragraph: -1, original: ch.sections[f.section]?.heading ?? "" }, problem, "lint"); continue; }
     if (!f.sentence) { add(`a:${f.chapter}.${f.section}.${f.paragraph}`, { kind: "append", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: ch.sections[f.section]?.paragraphs[f.paragraph] ?? "" }, problem, "lint"); continue; }
     const s = locate(a.chapters, f.chapter, f.section, f.paragraph, f.sentence); if (!s) continue;
     add(`s:${f.chapter}.${f.section}.${f.paragraph}:${s}`, { kind: "sentence", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: s }, problem, "lint");
-  }
+  } };
+  addFlags(flagsOf(true));
   const byN = a.byN ?? new Map(a.numbered.map(x => [x.n, x]));
   for (const i of a.issues) {
     const x = byN.get(i.s); if (!x) continue;
@@ -64,6 +69,7 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
     const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text) ?? x.text;
     add(`s:${x.chapter}.${x.section}.${x.paragraph}:${s}`, { kind: "sentence", chapter: x.chapter, section: x.section, paragraph: x.paragraph, original: s }, problem, "review");
   }
+  addFlags(flagsOf(false));
   return out;
 }
 

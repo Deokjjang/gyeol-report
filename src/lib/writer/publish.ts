@@ -306,9 +306,9 @@ export function trimRestatedHead(first: string, e: { readonly kind: string; read
   // 십성만 다시 알리는 문장(「정인(正印)의 해예요.」·「비견과 상관이 들어오는 해예요.」·「책임과 압박의 편관이 들어오는 달입니다.」) → 뺀다.
   // 뺀 뒤 다음 문장이 또 되풀이하면(대운 문장 뒤 「편관이 들어와 …」) 한 번 더 본다.
   const dropped = () => (again && rest ? trimRestatedHead(rest, e, head, false) : rest);
-  if (new RegExp(`^(?:[^.?!]{0,24}의 )?${TGS}(?:의 기운)?(?:이|가)? (?:함께 )?들어(?:옵니다|와요|오는 ${unit}${be})[.!]$|^${TGS}의 ${unit}${be}[.!]$|^${TG}(?:이|가) 하늘(?:과 땅)?에,? (?:겹쳐 )?(?:${TG}(?:이|가) 땅에 )?들어와요[.!]$`).test(after)) return dropped();
+  if (new RegExp(`^(?:[^.?!]{0,24}의 )?${TGS}(?:의 기운)?(?:이|가)? (?:함께 )?들어(?:옵니다|와요|오는 ${unit}${be})[.!]$|^${TGS}의 ${unit}${be}[.!]$|^${TG}(?:이|가) 하늘(?:과 땅)?에,? (?:모두 |함께 |겹쳐 )?(?:${TG}(?:이|가) 땅에 )?(?:들어와요|들어오는 ${unit}${be})[.!]$`).test(after)) return dropped();
   // 대운 전환 해: 머리 문장이 이미 새 대운을 말했다 → 「새 대운이 시작되는 해예요」만 되풀이하는 문장은 뺀다.
-  if (/대운/.test(head) && (subj ? /대운이? (열리|시작)/.test(after) : /^새 대운이? (?:시작되|열리)는 해/.test(after))) return dropped();
+  if (/대운/.test(head) && (subj ? /대운이? (열리|시작)/.test(after) : /^새 대운이? (?:시작되|열리)는 해/.test(after) || (after.length < 90 && /^(?:이 해 )?(?:\d{1,2}(?:~\d{1,2})?월 무렵부터 )?[가-힣]{2}(?:\([一-鿿]{2}\))? 대운이 (?:시작|열리)/.test(after)))) return dropped();
   const into = after.match(new RegExp(`^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어와(?:서)? |^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어오는 ${unit}(?:라서|이라서|이니) |^${TGS}의 ${unit}(?:이라|라서|이니|로),? `));
   if (!subj && !into) return first;
   const out = into ? `그래서 ${after.slice(into[0].length)}` : subj![1] === "의" ? after : `이 ${unit}${subj![1] === "에는" || subj![1] === "에" ? "에는" : unit === "해" ? "는" : "은"} ${after}`;

@@ -345,7 +345,7 @@
               "trait": "apply"
             },
             {
-              "q": "올해와 지금 10년 흐름은 일에 무엇을 줄까?",
+              "q": "가까운 해와 이 10년 흐름은 일에 무엇을 줄까?",
               "domain": "work",
               "use": [
                 "ref:chart.thisYear",

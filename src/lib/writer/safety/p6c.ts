@@ -345,7 +345,11 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       // AM 7부: 대운·세운(시점 말 전부 금지)의 「지금 대운·지금 10년」은 뜻이 같은 「이 대운·이 10년」으로(major-1 판독: 장 이름을 따라 쓴 문장이 수리 뒤에도 남음).
       // annual-4 r3: 「지금 계유 대운의 끝 무렵」 — 간지 이름이 붙은 대운은 「지금」만 뗀다.
-      if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, ""); if (r !== q) { words++; q = r; } }
+      if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, "")
+        // AM 재생성 판독(major-1·annual-1): 시점을 못 박지 않는 「지금」까지 문장째 지워져 구멍이 났다 → 뜻이 같은 말로(호출 0). 「지금은 ○○ 대운의 마지막」 같은 진짜 시점 말은 그대로 검사.
+        .replace(/지금까지(는|가|의|도| )/g, (_m: string, j: string) => `그동안${({ 는: "은", 가: "이" } as Record<string, string>)[j] ?? j}`).replace(/지금부터 /g, "미리 ").replace(/지금 방식/g, "기존 방식").replace(/지금 맡(?=은|고 있)/g, "맡")
+        .replace(/지금 (?=(곁에|배우는|하는 일|쌓는|가진|다니는|쓰는|만나는|일하는) )/g, "").replace(/이번 해(?=[ 의에는가])/g, "올해")
+      ; const r2 = ctx.monthChapters.has(c.n) ? r : r.replace(/이번 한 달/g, "그 한 달").replace(/이번 달/g, "그달"); if (r2 !== q) { words++; q = r2; } }
       // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.
       { const y = ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0); if (ctx.strictTime && y) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
       // AM 7부: 세운 본문의 맨 달 이름 → 달 표와 같은 짝(「5월(을사월)」). annual-2·5에서 수리 뒤에도 남았다.
@@ -399,6 +403,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
       if (s.heading && !/^\d{4}(-M\d{2})?$/.test(s.heading)) { const fx = ctx.fact ? factCheck(s.heading, ctx.fact, s.heading, c.n) : null; const r = fx ? null : sentenceRules(s.heading, c.n, ctx, true); if (fx) flag({ chapter: c.n, section: si, paragraph: -1, rule: fx.rule, sentence: s.heading, detail: fx.detail }); else if (r) flag({ chapter: c.n, section: si, paragraph: -1, rule: r, sentence: s.heading }); }
       const key = s.heading, keyed = Boolean(c.keys?.includes(key));
       const yi = keyed ? ctx.yearIndex?.[key] : undefined, rel = keyed ? ctx.relationCount?.[key] : ctx.pairRelations, fl = keyed ? ctx.flow?.[key] : undefined;
+      // AM 재생성 판독(major-1 2029): 대운 연도 key 안의 위치 말(「대운의 마지막 해」)은 기준 해가 아니라 그 해의 위치와 견준다(맞는 문단이 통째로 빠졌다).
+      const sctx: LintCtx = yi ? { ...ctx, dayunPhase: L.dayunPhase(yi.index - 1) } : ctx;
       // B3 개수 지시: 소제목 글 전체에서 찾고 그 구절이 든 문단에 단다.
       const secText = s.paragraphs.map(stripMarks).join(" ");
       for (const ref of D.countMismatch(secText)) { const pi = s.paragraphs.findIndex(p => stripMarks(p).includes(ref)); if (pi >= 0) flag({ chapter: c.n, section: si, paragraph: pi, rule: "count_mismatch", sentence: ref }); }
@@ -411,7 +417,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.
           { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n, /^\d{4}(-M\d{2})?$/.test(s.heading)) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
-          const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
+          const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
           // AM 1부 판독: 주기능·부기능 오기(「ISFJ는 마음 살피기가 주기능이라」).

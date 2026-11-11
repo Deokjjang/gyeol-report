@@ -8,7 +8,8 @@
 import { groupClaims, type GroupLevels } from "./lint";
 
 /** B1 앞 구절이 빠진 문장: 조사·연결형·인용 꼬리로 시작한다("하는 물음이 자주 올라와요"). */
-const FRAGMENT_START = /^(하는|하던|하고|하며|하면서|하자는|라는|라고|이라는|이라고|이란|싶은|싶다는|다는|냐는|자는|는|은|을|를|에|의|와|과|로|으로|에서|에게|까지|부터|처럼|보다|만큼|한테|이랑|랑)\s/;
+// AM 재생성 판독(sodam 3.2.2): 「하고 싶은 일의 목록 대신 …」은 온전한 문장이다(「하고 싶」은 조각 시작이 아님).
+const FRAGMENT_START = /^(하는|하던|하고(?! 싶)|하며|하면서|하자는|라는|라고|이라는|이라고|이란|싶은|싶다는|다는|냐는|자는|는|은|을|를|에|의|와|과|로|으로|에서|에게|까지|부터|처럼|보다|만큼|한테|이랑|랑)\s/;
 /** 끝맺음이 없는 문장(문단 끝이 문장 중간에서 끊김). */
 const TERMINATED = /([.!?…]|[다요죠까네])["'”’)⟫]*$/;
 export function fragmentSentence(sentence: string, last = false): boolean {
@@ -100,10 +101,10 @@ export const selfCorrection = (s: string) => SELF_CORRECTION.test(s) && /[一-�
 
 /** C 장 번호 참조("7장에서 본 것처럼"). */
 // 최종판3 12: 「앞 장에서 본 어긋남의 뿌리를…」(궁합)처럼 번호 없이 앞·다음 장을 가리키는 꼴도 장 참조다.
-export const CHAPTER_REF = /(?<![0-9가-힣])(제 ?)?\d{1,2} ?장(에서|의|에|과|부터|까지|을|를|처럼|에서처럼|에서 본|에서 말한)|(?<![가-힣])(앞|다음|이전|지난) 장(에서|의|에|처럼)/;
+export const CHAPTER_REF = /(?<![0-9가-힣])(제 ?)?\d{1,2} ?장(에서|의|에|과|부터|까지|을|를|처럼|에서처럼|에서 본|에서 말한)|(?<![가-힣])(?<!(맨|첫|뒷|한|빈) )(앞|다음|이전|지난) 장(에서|의|에|처럼)/;
 /** 뜻을 바꾸지 않고 지울 수 있는 장 번호 참조 꼴(정리 단계). */
 export const dropChapterRef = (s: string) => s.replace(/(?<![0-9가-힣])\d{1,2} ?장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![0-9가-힣])\d{1,2} ?장에서처럼,? ?/g, "")
-  .replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (?=[가-힣])/g, "");
+  .replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은|이야기한|다룬) (것처럼|대로),? ?/g, "").replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은|이야기한|다룬) (?=[가-힣])/g, "");
 
 /** E 시점 지시: 대운·세운(달력이 있는 책)은 "지금" 전부, 그 밖은 시점을 못 박는 말만. */
 // AM 7부(세운 판독: 맨 「올해」 27곳이 검사에 안 걸림): 달력 책은 맨 「올해」도 시점 말이다(남은 것은 tidy가 연도로 바꾼 뒤 — 따옴표 안 대사·「올해 남은」).
@@ -142,7 +143,8 @@ export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s.replace(MONTH_
 const BARE_MONTH = /(?<![0-9])(20\d\d년 )?(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))(?! ?(·|\(|,)? ?[갑을병정무기경신임계][자축인묘진사오미신유술해]월)/g;
 export function pairMonthNames(s: string, names: Readonly<Record<string, string>>): { text: string; count: number } {
   let count = 0;
-  const text = s.replace(BARE_MONTH, (m: string, y: string | undefined, n: string) => { const g = names[`${y ?? ""}${n}`]; if (!g) return m; count++; return `${m}(${g})`; });
+  // AM 판독(annual-1 재생성 4.1.2): 「4월에는 갑진월에…」처럼 바로 뒤에 그 달 이름이 오면 짝을 붙이지 않는다(「4월(갑진월)에는 갑진월에」 겹침).
+  const text = s.replace(BARE_MONTH, (m: string, y: string | undefined, n: string, ...rest: unknown[]) => { const g = names[`${y ?? ""}${n}`]; if (!g) return m; const at = rest.find(x => typeof x === "number") as number; if (s.slice(at + m.length, at + m.length + 8).replace(/^(에는|에|은|는|의|부터)?,? ?/, "").startsWith(g)) return m; count++; return `${m}(${g})`; });
   return { text, count };
 }
 

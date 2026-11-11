@@ -190,7 +190,7 @@ const GANJI = "([갑을병정무기경신임계][자축인묘진사오미신유�
 /** 육십갑자 짝(천간·지지 음양이 같다): 「정인」(丁寅)·「정관」 같은 십성 이름을 간지로 읽지 않는다. */
 const STEMS_KO = "갑을병정무기경신임계", BRANCHES_KO = "자축인묘진사오미신유술해";
 export const isGanjiKo = (g: string) => g.length === 2 && STEMS_KO.indexOf(g[0]) >= 0 && BRANCHES_KO.indexOf(g[1]) >= 0 && STEMS_KO.indexOf(g[0]) % 2 === BRANCHES_KO.indexOf(g[1]) % 2;
-function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+export function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
   if (owners.length !== 1) return null;
   const o = owners[0];
   for (const m of sen.matchAll(new RegExp(`(20\\d\\d|19\\d\\d)년(의)? ?${GANJI}(?![가-힣]{0,1}대운)`, "g"))) {
@@ -201,7 +201,9 @@ function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null
   for (const m of sen.matchAll(new RegExp(`${GANJI} ?대운`, "g"))) {
     if (!isGanjiKo(m[1])) continue;
     if (!o.dayun.cycles.some(c => c.ganjiKo === m[1])) return { rule: "fact_ganji", detail: `${m[1]} 대운은 없다(대운: ${o.dayun.cycles.slice(0, 6).map(c => `${c.ganjiKo} ${c.startYear}`).join("·")})` };
-    const y = sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,14}$/);
+    // AM 판독(major-1 3장): 「2020년 5월 무렵부터 2030년 5월 무렵까지 이어지는 을축 대운」 — 바로 앞 해가 「…까지」의 끝 해면 「…부터」 앞 해를 시작 해로 본다.
+    const y0 = sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,14}$/);
+    const y = y0 && /까지/.test(y0[0]) ? sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,10}부터/) : y0;
     const c = o.dayun.cycles.find(x => x.ganjiKo === m[1])!;
     if (y && /(부터|시작|들어서|바뀌)/.test(sen) && Number(y[1]) !== c.startYear && !(Number(y[1]) >= c.startYear && Number(y[1]) <= c.endYear && !/시작/.test(sen))) return { rule: "fact_ganji", detail: `${m[1]} 대운은 ${c.startYear}년 ${c.startSolarKst ? Number(c.startSolarKst.slice(5, 7)) + "월 무렵" : ""}부터다` };
   }
@@ -282,7 +284,7 @@ function renderCheck(sen: string): FactHit | null {
   return null;
 }
 
-/** 종합 본문: 연·월 숫자 고정 금지(운 설명은 「올해(병오)」, 행동은 「앞으로 한 달」). 대운 표기 꼴(「무진 대운: 2027년 5월 무렵부터」)은 허용. */
+/** 종합 본문: 연·월 숫자 고정 금지(운 설명은 「2026년 병오년」 해 이름, 행동은 「앞으로 한 달」). 대운 표기 꼴(「무진 대운: 2027년 5월 무렵부터」)은 허용. */
 // AM 1-1 ①: 해 이름(연도 + 간지, 「2026년 병오년」·「2026년 병오(丙午)년」·「2026년(병오)」)은 세운 관계를 쓰는 표기라 허용한다. 달 고정·「이번 달」은 그대로 막는다.
 const YEAR_NAME = /20\d\d년 ?\(?[갑을병정무기경신임계][자축인묘진사오미신유술해](\([一-鿿]{2}\))?\)?(년|해)?(?![가-힣]*월)/;
 /** 문장에 허용된 해 이름 꼴이 있나(검수 T 지적 거르기와 같은 기준). */

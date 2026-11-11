@@ -353,5 +353,68 @@ describe("AM 7부 판독 3묶음(호출 0): 해 머리 문장 되풀이 · 검�
     expect(stripNoticeLead("사건이 일어난다고 정해 두는 것은 아니고, 준비된 사람에게 문이 열리기 좋은 해라는 뜻이에요.")).toBe("준비된 사람에게 문이 열리기 좋은 해라는 뜻이에요.");
     expect(stripNoticeLead("결혼 시기를 말할 수는 없지만, 대등함이 중요한 사람이라는 점은 변함없습니다.")).toBe("대등함이 중요한 사람이라는 점은 변함없습니다.");
     expect(stripNoticeLead("돈을 많이 모을 수는 없지만, 새는 곳은 막을 수 있어요.")).toBe("돈을 많이 모을 수는 없지만, 새는 곳은 막을 수 있어요.");
+    expect(stripNoticeLead("효과를 약속하는 건 아니지만, 물가를 걷는 시간이 열을 식혀 줘요.")).toBe("물가를 걷는 시간이 열을 식혀 줘요.");
+    expect(stripNoticeLead("이 해의 좋고 나쁨을 단정하기보다 가까운 사람의 서운함부터 살펴보세요.")).toBe("가까운 사람의 서운함부터 살펴보세요.");
+    expect(stripNoticeLead("결과를 약속할 수는 없어도, 준비한 만큼 길이 넓어져요.")).toBe("준비한 만큼 길이 넓어져요.");
+  });
+});
+
+describe("AM 재생성 판독 후속(호출 0): 검사 오탐 · 시점 말 정리 · 달 짝 겹침 · 머리 문장 꼴", async () => {
+  const { tidyBook } = await import("../../../src/lib/writer/safety/p6c");
+  const { CHAPTER_REF, dropChapterRef, pairMonthNames } = await import("../../../src/lib/writer/safety/p6d");
+  const { trimRestatedHead } = await import("../../../src/lib/writer/publish");
+  const strict = (text: string, monthChapters = new Set<number>()) => tidyBook([{ n: 1, id: "x", title: "t", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: [text] }] }] as never, { mbtiPlain: {}, monthChapters, strictTime: true, baseDate: "2026-12-02", bookYear: 2027 } as never).chapters[0].sections[0].paragraphs[0];
+  it("대운·세운: 시점을 못 박지 않는 「지금」·「이번 해」·「이번 달」은 뜻이 같은 말로", () => {
+    expect(strict("지금까지 쌓은 배움이 보여요. 지금까지는 판을 벌였다면 지금부터 기록 습관을 만들어 두세요.")).toBe("그동안 쌓은 배움이 보여요. 그동안은 판을 벌였다면 미리 기록 습관을 만들어 두세요.");
+    expect(strict("지금 맡은 것의 마감을 확인하고, 지금 방식의 손실을 적어 보세요. 지금 곁에 사람이 없어도 괜찮아요.")).toBe("맡은 것의 마감을 확인하고, 기존 방식의 손실을 적어 보세요. 곁에 사람이 없어도 괜찮아요.");
+    expect(strict("이번 해 첫 약속에서는 먼저 웃어요. 월급날에는 이번 달 지출 한도를 확인하세요.")).toBe("2027년 첫 약속에서는 먼저 웃어요. 월급날에는 그달 지출 한도를 확인하세요.");
+    expect(strict("이번 달에는 쉬어요.", new Set([1]))).toBe("이 달에는 쉬어요.");
+    expect(strict("지금은 을축 대운의 마지막 3년이에요.")).toContain("지금은");
+  });
+  it("장 참조 오탐: 공책의 「맨 앞 장」은 장 참조가 아니다 · 「앞 장에서 이야기한」은 떼어 쓴다", () => {
+    expect(CHAPTER_REF.test("질문 노트의 맨 앞 장에 한 줄을 적어 두세요.")).toBe(false);
+    expect(CHAPTER_REF.test("앞 장에서 본 것처럼 쉬어요.")).toBe(true);
+    expect(dropChapterRef("앞 장에서 이야기한 교운기의 한가운데이기도 합니다.")).toBe("교운기의 한가운데이기도 합니다.");
+  });
+  it("조각 문장 오탐: 「하고 싶은 …」으로 시작하는 문장은 조각이 아니다", async () => {
+    const { fragmentSentence } = await import("../../../src/lib/writer/safety/p6d");
+    expect(fragmentSentence("하고 싶은 일의 목록 대신 끝내고 싶은 결과의 목록을 만들면, 기준이 한층 또렷해집니다.")).toBe(false);
+    expect(fragmentSentence("하고 나서 정리해요.")).toBe(true);
+  });
+  it("달 짝: 바로 뒤에 그 달 이름이 오면 짝을 붙이지 않는다", () => {
+    const names = { "4": "갑진월", "5": "을사월" };
+    expect(pairMonthNames("4월에는 갑진월에 맞게 쉬고, 5월에는 움직여요.", names).text).toBe("4월에는 갑진월에 맞게 쉬고, 5월(을사월)에는 움직여요.");
+  });
+  it("머리 문장 꼴 더: 「하늘과 땅에 모두 들어오는 해예요」 · 주어 없는 대운 시작 문장", () => {
+    const y = { kind: "year", ganji: { hangul: "갑인" }, tenGod: { stem: "비견(比肩)", branch: "비견(比肩)" } };
+    expect(trimRestatedHead("2034년 갑인년은 비견(比肩)이 하늘과 땅에 모두 들어오는 해예요. 내 속도를 지키고 싶어져요.", y, "")).toBe("내 속도를 지키고 싶어져요.");
+    const t = { kind: "year", ganji: { hangul: "경술" }, tenGod: { stem: "편관(偏官)", branch: "편재(偏財)" } };
+    expect(trimRestatedHead("5월 무렵부터 병인 대운이 시작되고, 중심 기운이 식신으로 바뀌어요. 마감이 몰려요.", t, "2030년 경술(庚戌)은 … 이 해 5월 무렵부터 병인(丙寅) 대운이 시작되고 …")).toBe("마감이 몰려요.");
+  });
+  it("사실 검사: 「…부터 2030년 5월 무렵까지 이어지는 을축 대운」은 끝 해를 시작 해로 읽지 않는다", async () => {
+    const { ganjiClaim } = await import("../../../src/lib/factsheet/check");
+    const person = { dayun: { number: 1, cycles: [{ ganjiKo: "을축", startYear: 2020, endYear: 2029, startSolarKst: "2020-05-01" }, { ganjiKo: "병인", startYear: 2030, endYear: 2039 }] }, pillars: {}, annual: [] } as never;
+    expect(ganjiClaim("당신은 2020년 5월 무렵부터 2030년 5월 무렵까지 이어지는 을축 대운 안에 있어요.", [person])).toBeNull();
+    // 진짜 틀린 시작 해는 그대로 잡는다
+    expect(ganjiClaim("2024년부터 을축 대운이 시작돼요.", [person])?.rule).toBe("fact_ganji");
+  });
+});
+
+describe("AM 재생성 판독 후속: 대운 연도 key의 위치 말은 그 해의 위치와 견준다", async () => {
+  const { lintBook } = await import("../../../src/lib/writer/safety/p6c");
+  const { lintContext } = await import("../../../src/lib/writer/publish");
+  const { buildWriterPrompt } = await import("../../../src/lib/writer/prompt");
+  it("기준 해 위치와 달라도 대운 마지막 해 key의 「대운의 마지막 해」는 걸지 않는다 · key 밖에서는 기준 해 위치대로", () => {
+    // major-1 입력(1998-11-03 10:30 남, 을축 대운 2020~2030): 기준 해 2026은 중간, 2029는 마지막 해.
+    const b = buildBrief({ product: "major_fortune", person: person({ gender: "MALE", birthDate: "1998-11-03", birthTime: "10:30", mbtiType: "ENTP" }), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
+    const ctx = lintContext(b as never, k, buildWriterPrompt(b as never, { knowledge: k }).chapters, []);
+    const last = Object.entries(ctx.yearIndex ?? {}).find(([, v]) => v.index === v.total)?.[0];
+    expect(last).toBeTruthy();
+    expect(ctx.dayunPhase).not.toBe("late");
+    const sen = "이 대운의 마지막 해예요. 정리하는 마음이 올라와요. 기록을 남겨 두세요.";
+    const ch = [{ n: 5, id: "years", title: "앞으로 10년", source: "writer", chars: 0, keys: [last], sections: [{ heading: last, paragraphs: [sen] }] },
+      { n: 3, id: "now", title: "이 대운", source: "writer", chars: 0, sections: [{ heading: "흐름", paragraphs: [sen] }] }];
+    const flags = lintBook(ch as never, ctx).filter(f => f.rule === "dayun_claim");
+    expect(flags.map(f => f.chapter)).toEqual([3]);
   });
 });
