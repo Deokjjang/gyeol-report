@@ -1,4 +1,3 @@
-import { annualEditionYear } from "../report-knowledge/annualFortuneYearRules";
 import type { DevTossCheckoutInputSnapshot } from "../../components/payment/DevTossCheckoutLauncher";
 import { FOCUS_AREAS, COMPATIBILITY_ROLE_VERSION, type ReportPersonInputPayload, type ReportInputPayload, type SinglePersonReportInputPayload, type CompatibilityReportInputPayload, type CompatibilityRelationshipType, type RelationshipStatus, type JobStatus, type FocusArea } from "./reportInputTypes";
 
@@ -33,10 +32,8 @@ export function createSingleProductOptions(
 ): SinglePersonReportInputPayload["productOptions"] {
   if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
     const wish = (input.wish ?? "").trim().slice(0, ANNUAL_WISH_MAX);
-    // 신년판은 한 해만 판다(annualEditionYear) — 예전 초안의 다른 해가 남아 있어도 그 해로.
-    void input.selectedYear;
     return {
-      selectedYear: String(annualEditionYear()),
+      selectedYear: input.selectedYear.trim(),
       contentVersion: "v3",
       ...(wish ? { wish } : {}),
     };

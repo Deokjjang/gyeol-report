@@ -42,7 +42,7 @@ function request(payload: unknown = RUNTIME_FIXTURES[0].payload, requestOrigin: 
 beforeEach(() => {
   state.book = state.account = false; state.orders = []; state.auth = auth(); state.library = library(); state.cookie = ""; state.owned = false;
   vi.useFakeTimers(); vi.setSystemTime(new Date(SHADOW_CLOCK.evaluatedAt));
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
 });
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 

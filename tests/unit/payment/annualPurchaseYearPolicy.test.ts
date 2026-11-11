@@ -47,7 +47,7 @@ beforeEach(async () => {
   mocks.bind.mockReset().mockResolvedValue(true);
   mocks.runtime.mockReset().mockReturnValue(createDurablePaymentOrderAdapter(store));
   vi.stubEnv("NODE_ENV", "test");
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900");
   vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
   vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
   vi.useFakeTimers({ toFake: ["Date"] });
@@ -107,7 +107,8 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
   });
 
   it.each([
-    [beforeRollover, "2021", 200], [beforeRollover, "2020", 400], [beforeRollover, "2027", 400],
+    // AM 2부: 신년판 연도(기본 2027)는 해가 바뀌기 전에도 주문을 받는다. 그 다음 해(2028)는 여전히 400.
+    [beforeRollover, "2021", 200], [beforeRollover, "2020", 400], [beforeRollover, "2027", 200], [beforeRollover, "2028", 400],
     [afterRollover, "2021", 400], [afterRollover, "2022", 200], [afterRollover, "2027", 200],
   ] as const)("new checkout at %s for %s returns %i", async (date, year, status) => {
     vi.setSystemTime(date);
@@ -225,6 +226,8 @@ describe("annual purchase policy — real prepare / SQL / worker, no providers",
     expect(getAnnualFortuneYearAccess({ targetYear: 2027, currentDate: beforeRollover })).toMatchObject({ mode: "new_year_preview" });
     expect(getAnnualFortuneCommerceYearPolicy(beforeRollover).selectableYears).toEqual([2021, 2022, 2023, 2024, 2025, 2026]);
     expect(getAnnualFortuneCommerceYearPolicy(afterRollover).selectableYears).toEqual([2022, 2023, 2024, 2025, 2026, 2027]);
-    expect(getAnnualPurchasePolicyDate(createAnnualCommerceAcceptance(2027, beforeRollover), payloadFor("2027"))).toBeNull();
+    // AM 2부: 계산 범위(위 두 줄)는 그대로, 주문 관문만 신년판 연도를 더 받는다 — 2027 결제 기록의 정책일은 이제 유효하고, 2028은 여전히 없다.
+    expect(getAnnualPurchasePolicyDate(createAnnualCommerceAcceptance(2027, beforeRollover), payloadFor("2027"))).not.toBeNull();
+    expect(getAnnualPurchasePolicyDate(createAnnualCommerceAcceptance(2028, beforeRollover), payloadFor("2028"))).toBeNull();
   });
 });

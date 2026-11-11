@@ -31,7 +31,7 @@ function input(productKey = "major_fortune", changes: object = {}, selectedYear 
   return r.value;
 }
 const fetchSpy = vi.fn(() => { throw new Error("external calls forbidden"); });
-beforeEach(() => { vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.useFakeTimers(); vi.setSystemTime(clock()); vi.stubGlobal("fetch", fetchSpy); fetchSpy.mockClear(); storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
+beforeEach(() => { vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.useFakeTimers(); vi.setSystemTime(clock()); vi.stubGlobal("fetch", fetchSpy); fetchSpy.mockClear(); storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
 afterEach(() => { expect(fetchSpy).not.toHaveBeenCalled(); vi.useRealTimers(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 describe("customer Dayun production boundaries", () => {

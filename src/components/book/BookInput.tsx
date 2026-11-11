@@ -60,10 +60,12 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
     </div></section>
   </main>;
 }
+// AM 2부: 세운 신년판은 한 해만 판다 — 빈 폼·저장된 초안 모두 신년판 연도로(입력 변환 bookInputPayload는 상태 그대로).
+const pinAnnualYear = (bookId: string, f: BookFormState): BookFormState => bookId === "annual" ? { ...f, person: { ...f.person, selectedYear: String(annualEditionYear()) } } : f;
 function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled, v5Book, giftEventProducts }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean; v5Book: boolean; giftEventProducts: readonly string[] }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
-  const [state, setState] = useState(initial ?? emptyBookForm(policy.currentYear)), [step, setStep] = useState(0), [ready, setReady] = useState(false);
+  const [state, setState] = useState(pinAnnualYear(book.id, initial ?? emptyBookForm(policy.currentYear))), [step, setStep] = useState(0), [ready, setReady] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({}), [message, setMessage] = useState(""), [checking, setChecking] = useState(false), [publishing, setPublishing] = useState(false), [decoration, setDecoration] = useState(0);
   const scroll = useRef<HTMLDivElement>(null), validationId = useRef(0), reachedStep = useRef(0);
   const draftWritable = useRef(true);
@@ -95,7 +97,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
             localStorage.removeItem(CHECKOUT_RETURN_BACKUP_KEY);
           }
         } catch { /* 사본 복원은 선택 */ }
-        const saved = restoreBookForm(JSON.parse(sessionStorage.getItem(key) ?? "null"), policy.currentYear);
+        const restored = restoreBookForm(JSON.parse(sessionStorage.getItem(key) ?? "null"), policy.currentYear), saved = restored ? pinAnnualYear(book.id, restored) : null;
         if (saved) {
           setState(saved);
           const returnToReceipt = sessionStorage.getItem(checkoutReturnKey(book.productKey)) === "1" || sessionStorage.getItem(ticketPendingKey(book.productKey)) !== null;

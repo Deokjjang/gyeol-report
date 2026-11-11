@@ -21,7 +21,7 @@ import {
   type SinglePersonReportProductKey,
   type SinglePersonReportProductSlug,
 } from "./reportInputTypes";
-import { getAnnualFortuneCurrentYear, isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+import { getAnnualFortuneCurrentYear, isAnnualOrderYearSelectable } from "../report-knowledge/annualFortuneYearRules";
 
 export type ReportInputAdapterOptions = {
   readonly now?: () => Date;
@@ -355,7 +355,7 @@ function normalizeSingleProductOptions(
   const policyDate = options.now?.() ?? new Date();
   if (
     !Number.isInteger(parsedYear) ||
-    !isAnnualFortuneCommerceYearSelectable(parsedYear, policyDate)
+    !isAnnualOrderYearSelectable(parsedYear, policyDate)
   ) {
     return { ok: false, error: "SELECTED_YEAR_INVALID" };
   }

@@ -11,8 +11,9 @@ import { sqlReferralStore } from "../../../src/lib/referrals/localReview";
 import { withReferralTickets, validReferralSnapshot } from "../../../src/lib/referrals/service";
 let db: PGlite, h: ReturnType<typeof launchHelpers>;
 // P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
-beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
-afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
+// AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 beforeAll(async () => { ({db,h}=await launchSql()); },30000);
 afterAll(async () => { await db?.close(); });
 beforeEach(async () => {
@@ -206,7 +207,10 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
   it.each(RUNTIME_FIXTURES)("$id event grant → real writer/completeness → stored Book, original product structure",async f=>{
     const a=await h.acquisition(), store=sqlTicketStore(db), raw=structuredClone(f.payload);
     const payload=raw.productKey==="annual_fortune"?{...raw,productOptions:{...raw.productOptions,selectedYear:String(new Date().getFullYear())}}:raw;
-    const result=await redeemReportTicket(store,a.user,randomUUID(),payload);expect(result.state).toBe("COMPLETED");
+    const result=await redeemReportTicket(store,a.user,randomUUID(),payload);
+    // AM 3부(약관 「이용권으로 만들 수 있는 리포트는 4종」): 대운·세운은 이벤트 이용권으로도 만들지 않는다 — 이용권은 그대로 남는다.
+    if(f.id==="major"||f.id==="annual"){expect(result).toMatchObject({ok:false,code:"TICKET_PRODUCT_EXCLUDED"});expect((await h.tickets("summary",a.user)).quantity).toBe(1);return;}
+    expect(result.state).toBe("COMPLETED");
     const book=storedBook((await store.call("read",a.user,{reportId:result.reportId})).snapshot)!;expect(book).toBeTruthy();
     if(f.id==="major"){const p=book.data.pages.find(p=>p.kind==="timeline");expect(p?.kind==="timeline"&&p.years).toHaveLength(14);}
     if(f.id==="annual"){const p=book.data.pages.find(p=>p.kind==="months");expect(p?.kind==="months"&&p.months).toHaveLength(12);}

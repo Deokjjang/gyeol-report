@@ -40,8 +40,9 @@ async function user(secret:string,existing=false) {
 const attribute=(b:{id:string;contextHash:string})=>attributeReferral(store,b.id,b.contextHash);
 const balance=async(id:string)=>(await sqlTicketStore(db).call("summary",id)).quantity;
 // P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
-beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
-afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
+// AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 beforeAll(async()=>{
   db=(await localReferralDatabase())!; store=sqlReferralStore(db);
   const f=RUNTIME_FIXTURES[0], made=await createLocalShareFixture(request({}),f.payload);
