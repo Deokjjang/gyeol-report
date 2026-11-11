@@ -8,7 +8,7 @@ import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
 import type { FinalChapter } from "./safety";
-import { splitSentences } from "./safety/patterns";
+import { RURAL_PROP, splitSentences } from "./safety/patterns";
 import type { LintFlag } from "./safety/p6c";
 import type { Numbered, ReviewIssue } from "./review";
 
@@ -165,6 +165,34 @@ export function revertWorse(chapters: readonly FinalChapter[], applied: readonly
     reverted.push({ at: `${f.chapter}.${f.section}.${f.paragraph}`, after: a.after, before: a.before, rule: f.rule });
   }
   return { chapters: out, reverted };
+}
+/** 두 문장이 거의 같은 말인가(한글·숫자 두 글자 묶음 겹침 0.6 이상). */
+export function nearSame(a: string, b: string): boolean {
+  const bi = (s: string) => { const t = s.replace(/[^가-힣0-9]/g, ""); const out = new Set<string>(); for (let i = 0; i + 1 < t.length; i++) out.add(t.slice(i, i + 2)); return out; };
+  const x = bi(a), y = bi(b); if (x.size < 6 || y.size < 6) return false;
+  let inter = 0; for (const g of x) if (y.has(g)) inter++;
+  return inter / (x.size + y.size - inter) >= 0.6;
+}
+/**
+ * AM 판독(4종 14건이 삭제·수리 단계에서 생김): 수리 문장이 같은 문단의 다른 문장과 거의 같은 말이면 그 수리 문장을 뺀다(이웃 문장이 이미 말함),
+ * 원문에 없던 시골 소품(「곳간」 등, 문체 규칙이라 revertWorse가 안 봄)을 넣었으면 원문으로 되돌린다(호출 0).
+ */
+export function revertRepairSideEffects(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[]): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  for (const a of applied) {
+    if (a.kind !== "sentence" || !a.after) continue;
+    const [cn, sn, pn] = a.at.split(".").map(Number);
+    const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(s => norm(s).includes(key));
+    if (i < 0) continue;
+    if (RURAL_PROP.test(a.after) && !RURAL_PROP.test(a.before)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_rural_prop" }); }
+    else if (ss.length > 1 && ss.some((s, j) => j !== i && nearSame(s, ss[i]))) { reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_duplicate" }); ss.splice(i, 1); }
+    else continue;
+    (sec.paragraphs as string[])[pn] = ss.join(" ");
+  }
+  return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), reverted };
 }
 export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */

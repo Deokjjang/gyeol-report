@@ -272,7 +272,7 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     shadows,
     // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
     // "badges"라는 키 이름이 본문 낱말 "배지"로 새어 나갔다(P6b E-6): 작가에게는 marks로 준다.
-    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => ({ ...omit(e, "colors", "ganji", "imageLine", "period", "todo", "review", "badges", "head", "caution"), marks: e.badges })) } } : {}),
+    ...(timeline ? { timeline: { ...timeline, entries: timeline.entries.map(e => ({ ...omit(e, "colors", "ganji", "imageLine", "period", "todo", "review", "badges", "caution"), marks: e.badges })) } } : {}),
     // style.rules는 시스템 지침과 같은 내용이라 보내지 않는다(P3.8 토큰).
     style: { register: style.register, readingLevel: style.readingLevel, totalChars: style.totalChars, forbidden: style.forbidden },
     bookRules: bookRules(brief),

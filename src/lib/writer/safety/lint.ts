@@ -186,9 +186,14 @@ const BALANCED_WORD = /균형|반반|고르게|비슷하게|똑같|같은 비율
 const SKEW_WORD = /치우|쏠려|쏠린|기울|한쪽으로|많은 편|더 많|훨씬 많/;
 /** 음양 균형의 설명 문장(지식 DB yinYang:BALANCED). 치우친 사람에게 붙으면 비율과 다른 설명이다(P6b 하람 6:2). */
 const BALANCED_DESC = /밀(어야|고) 할 때와 기다려야 할 때|상황에 맞게 (골라|고르)|양쪽 (입장|사정)을 (다 )?이해/;
-export function yinYangClaim(sentence: string, yin: number, yang: number): "false_balance" | "false_skew" | null {
+/** 문장이 음·양 가운데 어느 쪽이 많다고 말하나(「양의 기운이 앞서」·「음의 기운이 더 많아」). */
+export const yinYangLean = (s: string): "yin" | "yang" | null => /(?<![가-힣])음(?:의)? ?기운(?:이|은)? (?:더 |훨씬 )?(?:많|앞서|우세|강하|세)/.test(s) ? "yin" : /(?<![가-힣])양(?:의)? ?기운(?:이|은)? (?:더 |훨씬 )?(?:많|앞서|우세|강하|세)/.test(s) ? "yang" : null;
+export function yinYangClaim(sentence: string, yin: number, yang: number): "false_balance" | "false_skew" | "false_direction" | null {
   const balanced = yin === yang;
   if (!balanced && BALANCED_DESC.test(sentence)) return "false_balance";
+  // AM 판독(major-4): 양 4·음 2인데 수리가 「음의 기운이 더 많아」로 바꿨다 — 쪽(방향)을 거꾸로 말한 것도 비율과 다른 말이다.
+  const lean = yinYangLean(sentence);
+  if (lean && ((lean === "yin" && yin < yang) || (lean === "yang" && yang < yin))) return "false_direction";
   if (!YINYANG.test(sentence)) return null;
   if (!balanced && BALANCED_WORD.test(sentence) && !/(않|아니|못)/.test(sentence)) return "false_balance";
   if (balanced && SKEW_WORD.test(sentence)) return "false_skew";

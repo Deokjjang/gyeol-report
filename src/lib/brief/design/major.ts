@@ -92,11 +92,11 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
     turnMind: gCur && gNext ? ev("turnMind", [...mind(gCur, `to:${gNext}`, 1), ...mind(gNext, "enter", 1), ...mind(gCur, "leave", 1)], "바뀌기 전 정리할 것 → 바뀐 뒤 마음가짐 순서로") : null,
     mapWorkMoney: ev("mapWorkMoney", [...dom(gCur, "work", 2), ...dom(gNext, "work", 1), ...dom(gCur, "money", 1), ...dom(gNext, "money", 1)], "이 대운 → 다음 대운으로 이어지게, 영역마다 장면 하나"),
     mapLovePeople: ev("mapLovePeople", [...dom(gCur, "love", 1), ...dom(gNext, "love", 1), ...dom(gCur, "people", 1), ...dom(gNext, "people", 1)], "사랑·결혼·가족은 조건형('함께하는 사람이 있다면'). 결혼 시기를 쓰지 않는다"),
-    mapMindMove: ev("mapMindMove", [...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1), ...dom(gCur, "move", 1), ...dom(gNext, "move", 1)], "마음·컨디션은 진단 없이, 이동·거주는 경향으로"),
+    mapMindMove: ev("mapMindMove", [...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1), ...dom(gCur, "move", 1), ...dom(gNext, "move", 1)], "마음·컨디션은 병명·증상 없이 생활 장면으로, 이동·거주는 '~하기 쉬운 해'처럼(단서·면책 문장 없이 — 책 끝에 시스템이 한 번 넣는다)"),
     growthCurve: c.mbti ? ev("growthCurve", [...growth("order", 1), ...growth(nowAge, 2), ...(futureAge !== nowAge ? growth(futureAge, 1) : [])], "MBTI 발달은 경향이다(나이에 맞춰 반드시 그렇게 된다고 쓰지 않는다)") : null,
     growthDayun: c.mbti && cur ? ev("growthDayun", [`이 대운 주제: ${cur.theme}`, ...(next ? [`다음 대운 주제: ${next.theme}`] : []), ...growth(futureAge, 1)], "명리 × MBTI: 대운이 여는 쪽과 성격이 자라는 쪽이 만나는 곳을 원인 → 결과로 한 문단") : null,
     planNear: ev("planNear", [`${c.thisYear}년 무렵(이 책의 기준 해): ${cur?.theme ?? ""}`, ...near.map(line)], "가까운 1년 / 2~3년 뒤를 각각 행동 하나로"),
-    planFar: ev("planFar", [mid ? `5년 뒤: ${line(mid)}` : "", far ? `10년 뒤: ${line(far)}` : "", next ? `그 무렵 대운: ${next.label}` : ""], "5년 뒤 / 10년 뒤를 각각 준비 하나로. 사건 단정 금지"),
+    planFar: ev("planFar", [mid ? `5년 뒤: ${line(mid)}` : "", far ? `10년 뒤: ${line(far)}` : "", next ? `그 무렵 대운: ${next.label}` : ""], "5년 뒤 / 10년 뒤를 각각 준비 하나로. 일어날 사건 대신 준비할 것을 쓴다(단서·면책 문장 없이)"),
   };
   return Object.fromEntries(Object.entries(out).filter((x): x is [string, Evidence] => Boolean(x[1])));
 }
@@ -112,6 +112,6 @@ function relationsWithNatal(saju: SajuCalcResult, dp: Pillar): string[] {
 /** 앞으로 10년 연도 key 근거: 핵심 해는 깊게(근거 배지), 나머지는 짧게. */
 export function decadeKeyEvidence(e: TimelineEntry, key: { rank: number; reasons: string[] } | undefined): Evidence {
   return key
-    ? { kind: "evidence", key: `depth:${e.key}`, facts: [`핵심 해 ${key.rank}: ${key.reasons.join(" · ")}`], note: "깊게: 문단 3개, 근거 배지마다 생활 장면 하나. 사건은 단정하지 않는다" }
+    ? { kind: "evidence", key: `depth:${e.key}`, facts: [`핵심 해 ${key.rank}: ${key.reasons.join(" · ")}`], note: "깊게: 문단 3개, 근거 배지마다 생활 장면 하나. 사건 대신 흐름과 장면으로(단서·면책 문장 없이)" }
     : { kind: "evidence", key: `depth:${e.key}`, facts: ["짧게 읽는 해: 흐름 한 가지만"], note: "짧게: 문단 2개(그해 기운 한 문단, 할 일 한 문단), 카드 줄은 그대로" };
 }

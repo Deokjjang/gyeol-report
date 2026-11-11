@@ -37,7 +37,7 @@ import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
-import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { priceFor } from "@/lib/llm/prices";
 import * as E from "./safety/p6e";
@@ -289,8 +289,35 @@ const WRITER_HEAD = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-�
  * 조립 직전 결정론 넣기(P6d D, 최종판 1-12·1-13): key마다 머리 문장, 마지막 장 끝에 책 한 줄 안내(면책·단서는 책에 한 번, P6e insertFixedLines).
  * 기준일은 본문에 넣지 않는다(표지·마지막 쪽 판 표기에만). 검사·수리 뒤에 넣어 작가가 바꾸지 못한다.
  */
+/**
+ * AM 판독(대운 40곳·세운 달): 작가가 머리 문장 바로 뒤에 같은 해·달 이름과 같은 십성을 다시 알린다
+ * (「2028년 무신년은 편재(偏財)가 들어와 판이 넓어지는 해입니다」·「4월 갑진월에는 비견(比肩)이 들어옵니다」).
+ * 첫 문장이 그 이름으로 시작하면: 머리 문장의 십성이 「들어와」로 이어지면 그 마디를 떼고 「그래서 …」로, 십성만 다시 알리는 문장·새 대운이 열린다는 말만 되풀이하는 문장은 빼고,
+ * 그 밖은 이름 주어만 「이 해는·이 달은」으로 바꾼다(호출 0).
+ */
+export function trimRestatedHead(first: string, e: { readonly kind: string; readonly ganji: { readonly hangul: string }; readonly tenGod: { readonly stem: string; readonly branch: string } }, head: string, again = true): string {
+  const s1 = first.match(/^.*?[.!?](?=\s|$)/)?.[0]; if (!s1) return first;
+  const rest = first.slice(s1.length).trim();
+  const name = e.ganji.hangul, unit = e.kind === "month" ? "달" : "해", be = "(?:예요|이에요|입니다)";
+  const subj = s1.match(new RegExp(`^(?:\\d{4}년 )?(?:\\d{1,2}월 ?(?:· )?)?${name}(?:\\([一-鿿]{2}\\))?(?:년|월)?(?:\\([一-鿿]{2}月?\\))?(은|는|에는|에|의) `));
+  const after = subj ? s1.slice(subj[0].length) : s1;
+  const tgs = [...new Set([e.tenGod.stem, e.tenGod.branch].map(t => t.replace(/\(.*$/, "")).filter(Boolean))];
+  const TG = `(?:${tgs.join("|")})(?:\\([一-鿿]{2}\\))?`, TGS = `${TG}(?:(?:과|와) ${TG})?`;
+  // 십성만 다시 알리는 문장(「정인(正印)의 해예요.」·「비견과 상관이 들어오는 해예요.」·「책임과 압박의 편관이 들어오는 달입니다.」) → 뺀다.
+  // 뺀 뒤 다음 문장이 또 되풀이하면(대운 문장 뒤 「편관이 들어와 …」) 한 번 더 본다.
+  const dropped = () => (again && rest ? trimRestatedHead(rest, e, head, false) : rest);
+  if (new RegExp(`^(?:[^.?!]{0,24}의 )?${TGS}(?:의 기운)?(?:이|가)? (?:함께 )?들어(?:옵니다|와요|오는 ${unit}${be})[.!]$|^${TGS}의 ${unit}${be}[.!]$|^${TG}(?:이|가) 하늘(?:과 땅)?에,? (?:겹쳐 )?(?:${TG}(?:이|가) 땅에 )?들어와요[.!]$`).test(after)) return dropped();
+  // 대운 전환 해: 머리 문장이 이미 새 대운을 말했다 → 「새 대운이 시작되는 해예요」만 되풀이하는 문장은 뺀다.
+  if (/대운/.test(head) && (subj ? /대운이? (열리|시작)/.test(after) : /^새 대운이? (?:시작되|열리)는 해/.test(after))) return dropped();
+  const into = after.match(new RegExp(`^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어와(?:서)? |^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어오는 ${unit}(?:라서|이라서|이니) |^${TGS}의 ${unit}(?:이라|라서|이니|로),? `));
+  if (!subj && !into) return first;
+  const out = into ? `그래서 ${after.slice(into[0].length)}` : subj![1] === "의" ? after : `이 ${unit}${subj![1] === "에는" || subj![1] === "에" ? "에는" : unit === "해" ? "는" : "은"} ${after}`;
+  return rest ? `${out} ${rest}` : out;
+}
+
 export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief): FinalChapter[] {
   const heads = new Map((brief.timeline?.entries ?? []).map(e => [e.key, e.head]));
+  const entries = new Map((brief.timeline?.entries ?? []).map(e => [e.key, e]));
   const prepend = (s: BookSection, line: string): BookSection => ({ ...s, paragraphs: s.paragraphs.length ? [`${line} ${s.paragraphs[0]}`, ...s.paragraphs.slice(1)] : [line] });
   const notice = E.bookNotice(brief.product);
   return chapters.map((c, ci) => {
@@ -298,7 +325,9 @@ export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief
       const head = c.keys?.includes(s.heading) ? heads.get(s.heading) : undefined;
       if (!head) return s;
       const first = s.paragraphs[0] ?? "";
-      const stripped = first.replace(WRITER_HEAD, "").trim();
+      const e = entries.get(s.heading);
+      const stripped0 = first.replace(WRITER_HEAD, "").trim();
+      const stripped = e ? trimRestatedHead(stripped0, e, head) : stripped0;
       return prepend({ ...s, paragraphs: [stripped, ...s.paragraphs.slice(1)].filter(Boolean) }, head);
     });
     if (ci === chapters.length - 1 && sections.length && !sections.some(s => s.paragraphs.includes(notice))) {
@@ -452,7 +481,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
       const writer = run!.writer, before = run!.calls.length;
       const r = await completeText({ ...opts(), provider: "anthropic", model: reviewModel, fallback: null }, run!, rp.system, rp.user, reviewMaxTokens(reviewModel), "review", REVIEW_SCHEMA as unknown as Record<string, unknown>);
       run = { ...r.run, writer }; review.model = reviewModel; review.calls = run.calls.length - before;
-      const g = r.text ? guardReview(r.text, rp.numbered, rp.ids, priorLines.lines.length, brief.product) : null;
+      const g = r.text ? guardReview(r.text, rp.numbered, rp.ids, priorLines.lines.length, brief.product, sheet) : null;
       // 출력 상한에 닿아 끝났으면(생각이 상한을 다 쓴 경우 포함) 따로 적는다. length는 다시 부르지 않는다(같은 입력 재호출 금지).
       const ended = run.calls.slice(before).at(-1)?.finish;
       if (!g) review.skipped = ended === "length" ? "length" : r.text ? "format_error" : "call_failed";
@@ -479,7 +508,10 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   let fixed = tidyBook(chapters, lctx).chapters;
   let remaining = lintBook(fixed, lctx);
   // 최종판3 12: 수리가 정답지 검사에 새로 걸리게 만든 문장은 원문으로 되돌린다(검수 오탐 → 맞는 문장을 틀리게 고친 경우, 호출 0).
-  const rv = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
+  const rv0 = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
+  // AM 판독: 수리가 이웃 문장과 같은 말을 만들거나 시골 소품을 넣은 문장도 되돌린다(문체 규칙이라 위 검사가 못 봄).
+  const side = revertRepairSideEffects(rv0.chapters, repair.applied);
+  const rv = { chapters: side.chapters, reverted: [...rv0.reverted, ...side.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
   fixed = del.chapters;

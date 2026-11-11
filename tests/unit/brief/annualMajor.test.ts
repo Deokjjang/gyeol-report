@@ -278,3 +278,75 @@ describe("AM 7부: 수리 닻의 「그 해」", () => {
     expect(people[0].thisYear).toMatch(/^2027년 정미/);
   });
 });
+
+describe("AM 7부 판독 3묶음(호출 0): 해 머리 문장 되풀이 · 검수/수리 오변경 · 브리프 note 면책", async () => {
+  const { trimRestatedHead } = await import("../../../src/lib/writer/publish");
+  const { contradictsEngine } = await import("../../../src/lib/writer/review");
+  const { yinYangClaim } = await import("../../../src/lib/writer/safety/lint");
+  const { revertRepairSideEffects, nearSame } = await import("../../../src/lib/writer/repair3");
+  const { isNoticeSentence, stripNoticeLead } = await import("../../../src/lib/writer/safety/p6e");
+  const year = (hangul: string, stem: string, branch: string) => ({ kind: "year", ganji: { hangul }, tenGod: { stem, branch } });
+  const month = (hangul: string, stem: string, branch: string) => ({ kind: "month", ganji: { hangul }, tenGod: { stem, branch } });
+  it("머리 문장 뒤 같은 해·달 이름 + 같은 십성 → 「그래서 …」·빼기·「이 해는」", () => {
+    expect(trimRestatedHead("2028년 무신년은 편재(偏財)가 들어와 판이 넓어지는 해입니다. 사람과 거래가 늘어요.", year("무신", "편재(偏財)", "편관(偏官)"), "2028년 무신(戊申)은 …"))
+      .toBe("그래서 판이 넓어지는 해입니다. 사람과 거래가 늘어요.");
+    expect(trimRestatedHead("2027년 정미년에는 상관(傷官)의 기운이 들어와 말이 날카로워져요.", year("정미", "상관(傷官)", "정재(正財)"), "")).toBe("그래서 말이 날카로워져요.");
+    expect(trimRestatedHead("4월 갑진월에는 비견(比肩)이 들어옵니다. 내 편과 경쟁자가 함께 눈에 띄어요.", month("갑진", "비견(比肩)", "편재(偏財)"), "")).toBe("내 편과 경쟁자가 함께 눈에 띄어요.");
+    expect(trimRestatedHead("2월 · 임인월은 책임과 압박의 편관(偏官)이 들어오는 달입니다. 버티는 힘이 생겨요.", month("임인", "편관(偏官)", "편인(偏印)"), "")).toBe("버티는 힘이 생겨요.");
+    expect(trimRestatedHead("8월 · 무신월은 식신(食神)의 달이라 손과 입이 즐겁습니다.", month("무신", "식신(食神)", "편재(偏財)"), "")).toBe("그래서 손과 입이 즐겁습니다.");
+    expect(trimRestatedHead("2030년 경술년은 새 대운인 병인 대운이 열리는 해예요. 편관이 들어와 책임이 커져요.", year("경술", "편관(偏官)", "편재(偏財)"), "2030년 경술(庚戌)은 … 이 해 5월 무렵부터 병인(丙寅) 대운이 시작되고 …")).toBe("그래서 책임이 커져요.");
+    expect(trimRestatedHead("1월 · 신축월은 2026년 병오(丙午)년의 마지막 달이에요.", month("신축", "정재(正財)", "상관(傷官)"), "")).toBe("이 달은 2026년 병오(丙午)년의 마지막 달이에요.");
+    // major-2·4 꼴: 주어 없이 십성만 다시 알림 · 「년」 없는 이름 주어 · 「~의 해로,」
+    expect(trimRestatedHead("편관(偏官)과 편인(偏印)이 함께 들어오는 해라서 책임과 압박이 먼저 와요. 맡을 일을 갈라 두세요.", year("정미", "편관(偏官)", "편인(偏印)"), "")).toBe("그래서 책임과 압박이 먼저 와요. 맡을 일을 갈라 두세요.");
+    expect(trimRestatedHead("정인(正印)의 해예요. 배우고 준비한 것이 결과로 이어져요.", year("무신", "정인(正印)", "겁재(劫財)"), "")).toBe("배우고 준비한 것이 결과로 이어져요.");
+    expect(trimRestatedHead("비견(比肩)과 상관(傷官)이 들어오는 해예요. 물 기운이 채워져요.", year("신해", "비견(比肩)", "상관(傷官)"), "")).toBe("물 기운이 채워져요.");
+    expect(trimRestatedHead("2027년 정미는 책임과 압박이 한꺼번에 몰리기 쉬운 해예요.", year("정미", "편관(偏官)", "편인(偏印)"), "")).toBe("이 해는 책임과 압박이 한꺼번에 몰리기 쉬운 해예요.");
+    expect(trimRestatedHead("2030년 경술은 겁재(劫財)의 해로, 내 몫을 나누려는 힘이 커집니다.", year("경술", "겁재(劫財)", "정인(正印)"), "")).toBe("그래서 내 몫을 나누려는 힘이 커집니다.");
+    expect(trimRestatedHead("새 대운이 시작되는 해예요. 해의 기운은 편인이라 혼자 파고들어요.", year("기유", "편인(偏印)", "비견(比肩)"), "… 이 해 7월 무렵부터 경인(庚寅) 대운이 시작되고 …")).toBe("해의 기운은 편인이라 혼자 파고들어요.");
+    expect(trimRestatedHead("2030년 경술년은 새 대운인 병인 대운이 열리는 해예요. 편관(偏官)이 들어와 책임과 압박이 커져요. 쉬어 가세요.", year("경술", "편관(偏官)", "편재(偏財)"), "… 병인(丙寅) 대운이 시작되고 …")).toBe("그래서 책임과 압박이 커져요. 쉬어 가세요.");
+    expect(trimRestatedHead("정재(正財)가 하늘과 땅에 겹쳐 들어와요. 모은 돈이 단단해져요.", year("계축", "정재(正財)", "정재(正財)"), "")).toBe("모은 돈이 단단해져요.");
+    expect(trimRestatedHead("무신년의 겁재(劫財)는 내 몫을 나누려는 힘이에요.", year("무신", "겁재(劫財)", "편재(偏財)"), "")).toBe("겁재(劫財)는 내 몫을 나누려는 힘이에요.");
+    // 이름으로 시작하지 않으면 그대로
+    expect(trimRestatedHead("만들고 다듬는 일에 손이 잘 붙어요.", month("무신", "식신(食神)", "편재(偏財)"), "")).toBe("만들고 다듬는 일에 손이 잘 붙어요.");
+  });
+  it("대운 작가 브리프에 key마다 머리 문장(head)이 보인다", () => {
+    const b = buildBrief({ product: "major_fortune", person: person({ gender: "MALE", birthDate: "1993-11-20", birthTime: "21:10" }), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
+    const text = JSON.stringify(renderWriterBrief(b as never));
+    const e = (b as { timeline?: { entries: { key: string; head: string }[] } }).timeline!.entries.at(-1)!;
+    expect(e.head).toMatch(/하늘에, .*땅에 들어오는 해예요/);
+    expect(text).toMatch(new RegExp(`"head":"${e.key}년 [^"]*하늘에, [^"]*땅에 들어오는 해예요`));
+  });
+  const sheet = (o: Partial<{ gongmang: string[]; cycles: number; number: number; yin: number; yang: number }> = {}) => ({ people: [{ gongmang: [{ basis: "일주", branches: o.gongmang ?? ["子", "丑"], positions: [] }], dayun: { cycles: Array.from({ length: o.cycles ?? 12 }, () => ({})), number: o.number ?? 8 }, yinYang: { yin: o.yin ?? 2, yang: o.yang ?? 4 } }] }) as never;
+  it("검수 지적이 엔진과 다른 공망 글자만 대면·맞는 대운 개수·맞는 음양 쪽을 문제 삼으면 버린다", () => {
+    expect(contradictsEngine({ why: "甲寅 일주의 공망은 戌·亥라 2032년은 공망이 아니다", fix: "" }, "이 해는 공망이라 힘이 샐 수 있어요.", sheet())).toBe("F_gongmang_engine");
+    expect(contradictsEngine({ why: "공망은 술·해인데 본문이 자축으로 씀", fix: "" }, "이 해는 공망이라…", sheet())).toBe("F_gongmang_engine");
+    expect(contradictsEngine({ why: "공망은 子·丑인데 戌·亥로 썼다", fix: "" }, "공망은 戌·亥예요.", sheet())).toBeNull();
+    expect(contradictsEngine({ why: "정답지의 대운수는 8", fix: "이 책의 지도에는 대운이 여덟 개 놓여 있어요." }, "이 책의 지도에는 대운이 열두 개 놓여 있어요.", sheet())).toBe("F_dayun_count_engine");
+    expect(contradictsEngine({ why: "대운 개수가 틀렸다", fix: "대운이 열두 개" }, "지도에는 대운이 여덟 개 있어요.", sheet())).toBeNull();
+    expect(contradictsEngine({ why: "음양 2:4를 보면 음이 더 많다", fix: "음의 기운이 더 많아" }, "당신의 사주는 양의 기운이 앞서 있어 먼저 움직여요.", sheet())).toBe("F_yinyang_engine");
+    expect(contradictsEngine({ why: "음양 비율과 다르다", fix: "" }, "음의 기운이 더 많아 물러서 살펴요.", sheet())).toBeNull();
+  });
+  it("음양: 쪽을 거꾸로 말해도 비율과 다른 말(false_direction)", () => {
+    expect(yinYangClaim("당신의 사주는 음의 기운이 더 많아 서두르지 않아요.", 2, 4)).toBe("false_direction");
+    expect(yinYangClaim("양의 기운이 앞서 있어 먼저 움직여요.", 2, 4)).toBeNull();
+    expect(yinYangClaim("태양의 기운이 강하게 비치는 날", 4, 2)).toBeNull();
+  });
+  it("수리 부작용: 이웃 문장과 거의 같은 수리 문장은 빼고, 시골 소품을 넣은 수리는 원문으로", () => {
+    const dup = "이번에는 일 사이사이에 하루에 한 번은 아무것도 안 하는 시간을 두세요.", next = "이번에는 일 사이사이에 하루 한 번은 아무것도 하지 않는 시간을 두세요.";
+    expect(nearSame(dup, next)).toBe(true);
+    expect(nearSame("돈은 지키는 쪽이 맞아요.", "관계는 천천히 데워져요.")).toBe(false);
+    const ch = [{ n: 9, id: "x", title: "t", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: [`앞 문장이에요. ${dup} ${next}`, "모은 돈은 곳간에 차곡차곡 쌓아 두는 힘이에요. 다음 문장."] }] }];
+    const applied = [{ id: 1, kind: "sentence", at: "9.0.0", before: "원래 문장이에요.", after: dup, source: [] }, { id: 2, kind: "sentence", at: "9.0.1", before: "모은 돈을 지키는 힘이에요.", after: "모은 돈은 곳간에 차곡차곡 쌓아 두는 힘이에요.", source: [] }];
+    const r = revertRepairSideEffects(ch as never, applied as never);
+    expect(r.chapters[0].sections[0].paragraphs).toEqual([`앞 문장이에요. ${next}`, "모은 돈을 지키는 힘이에요. 다음 문장."]);
+    expect(r.reverted.map(x => x.rule)).toEqual(["repair_duplicate", "repair_rural_prop"]);
+  });
+  it("브리프 note에서 온 장 안 면책: 문장째는 면책 목록, 앞 마디로 붙은 것은 마디만 뗀다", () => {
+    for (const s of ["어떤 사건이 온다고 못 박지는 않을게요.", "나이에 맞춰 반드시 이렇게 된다고 단정할 수는 없습니다.", "사건을 정해 두고 읽을 해는 아니에요.", "이 곡선은 나이에 맞춰 반드시 그렇게 된다는 뜻이 아니라 경향이에요.", "이동과 거주는 경향으로만 볼게요.", "확정이 아니라 가능성의 방향이에요.", "새로운 사람과 닿기 쉬운 흐름이 있다고만 읽어 주세요."]) expect(isNoticeSentence(s), s).toBe(true);
+    expect(isNoticeSentence("쉬는 만큼 회복이 잘 되는 해예요.")).toBe(false);
+    expect(stripNoticeLead("사건을 확정할 수는 없지만, 흐름은 틀을 바꾸는 쪽으로 기울어 있습니다.")).toBe("흐름은 틀을 바꾸는 쪽으로 기울어 있습니다.");
+    expect(stripNoticeLead("사건이 일어난다고 정해 두는 것은 아니고, 준비된 사람에게 문이 열리기 좋은 해라는 뜻이에요.")).toBe("준비된 사람에게 문이 열리기 좋은 해라는 뜻이에요.");
+    expect(stripNoticeLead("결혼 시기를 말할 수는 없지만, 대등함이 중요한 사람이라는 점은 변함없습니다.")).toBe("대등함이 중요한 사람이라는 점은 변함없습니다.");
+    expect(stripNoticeLead("돈을 많이 모을 수는 없지만, 새는 곳은 막을 수 있어요.")).toBe("돈을 많이 모을 수는 없지만, 새는 곳은 막을 수 있어요.");
+  });
+});

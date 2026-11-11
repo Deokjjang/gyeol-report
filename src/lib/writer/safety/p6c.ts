@@ -333,6 +333,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
       // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
       { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || x.replace(/[^가-힣A-Za-z0-9]/g, "") !== ss[i - 1].replace(/[^가-힣A-Za-z0-9]/g, "")); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
+      // AM 7부 판독(대운 11·4종): 면책이 앞 마디로 붙은 문장은 면책 마디만 뗀다(뒤 내용은 남김).
+      { const ss = splitSentences(q), next = ss.map(E.stripNoticeLead); if (next.some((x, i) => x !== ss[i])) { words++; q = next.join(" "); } }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).

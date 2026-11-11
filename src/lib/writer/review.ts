@@ -10,6 +10,7 @@ import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { shinsalAliases } from "@/lib/factsheet/aliases";
 import { fixedTimeOf, hasYearName } from "@/lib/factsheet/check";
+import { yinYangLean } from "./safety/lint";
 import type { FinalChapter } from "./safety";
 import { splitSentences } from "./safety/patterns";
 
@@ -90,12 +91,14 @@ function sheetSubset(sheet: FactSheet, text: string, k: Pick<Knowledge, "feature
     dayMaster: `${p.dayMaster.stem}(${p.dayMaster.ko})`, tenGods: p.tenGods, strength: p.strength.labelKo,
     groups: Object.fromEntries(Object.values(p.groups).map(g => [g.name, `${g.level}(${g.element})`])),
     elements: Object.fromEntries(Object.keys(p.elements.count).map(e => [e, `겉 글자 ${p.elements.count[e as never]}개·세기 ${p.elements.status[e as never]}${p.elements.strongest === e ? "(가장 셈)" : ""}`])),
-    yinYang: `${p.yinYang.yin}:${p.yinYang.yang}`,
+    // AM 판독(대운): 「2:4」를 거꾸로 읽고, 대운수(시작 나이 수)를 대운 개수로 읽고, 공망을 늘 戌·亥로 짚었다 → 이름을 붙여 준다.
+    yinYang: `음 ${p.yinYang.yin} · 양 ${p.yinYang.yang}`,
+    gongmang: p.gongmang.map(g => `${g.basis} 기준 ${g.branches.join("·")}`), gongmangYears: p.annual.filter(a => a.gongmang).map(a => `${a.year} ${a.ganjiKo}`),
     shinsal: p.shinsal.filter(s => used.has(s.name)).map(s => `${s.name}: ${s.slots.join("·")} (${s.glyphs.join("·")})`),
     twelveStages: p.twelveStages.map(t => `${t.position} ${t.branch} ${t.ko}`),
     relations: p.relations.map(r => `${r.key} ${r.kind}${r.completeness !== "full" ? `(${r.completeness})` : ""} ${r.members.map(m => m.where).join("-")}`),
     thisYear: p.annual.filter(a => a.year === year).map(a => `${a.year} ${a.ganjiKo}: 천간 ${a.stemTenGod}·지지 ${a.branchTenGod}, 원국과 ${a.relations.map(r => `${r.key} ${r.kind}`).join("·") || "관계 없음"}`)[0],
-    dayun: p.dayun.cycles.filter(c => c.endYear >= year - 10 && c.startYear <= year + 20).map(c => `${c.ganjiKo} ${c.startYear}~${c.endYear}(만 ${c.manStartAge}세~, ${c.stemTenGod})`), dayunNumber: p.dayun.number,
+    dayun: p.dayun.cycles.filter(c => c.endYear >= year - 10 && c.startYear <= year + 20).map(c => `${c.ganjiKo} ${c.startYear}~${c.endYear}(만 ${c.manStartAge}세~, ${c.stemTenGod})`), dayunStartNumber: p.dayun.number === null ? null : `대운수 ${p.dayun.number}(첫 대운이 시작하는 나이 수 — 개수가 아니다)`, dayunCount: `평생 대운 ${p.dayun.cycles.length}개`,
     mbti: p.mbti, input: p.input,
   });
   return { "fs:standards": sheet.standards, "fs:people": sheet.people.map(person), ...(sheet.pair ? { "fs:pair.common": sheet.pair.common, "fs:pair.relations": sheet.pair.relations.map(r => `${r.key} ${r.kind} ${r.members.map(m => m.where).join("-")}`), "fs:pair.score": sheet.pair.score } : {}) };
@@ -159,7 +162,31 @@ const norm = (s: string) => s.replace(/\s+/g, " ").trim();
 const INPUT_FIELDS = /^input\.(job|relationship|children|relationType|money|family|mbti|gender|age|birthTime)$/;
 
 /** 검수 응답(JSON 글) → 남길 지적·바로 바꿀 A·버린 지적과 이유. */
-export function guardReview(text: string, numbered: readonly Numbered[], ids: ReadonlySet<string>, priorCount = 0, product = ""): GuardedReview | null {
+const KO_NUM: Readonly<Record<string, number>> = { 한: 1, 하나: 1, 두: 2, 둘: 2, 세: 3, 셋: 3, 네: 4, 넷: 4, 다섯: 5, 여섯: 6, 일곱: 7, 여덟: 8, 아홉: 9, 열: 10, 열한: 11, 열하나: 11, 열두: 12, 열둘: 12, 열세: 13, 열셋: 13 };
+const countOf = (s: string) => { const m = s.match(/대운(?:이|은|는)?[^.?!]{0,12}?(\d{1,2}|열두|열둘|열한|열하나|열세|열셋|열|아홉|여덟|일곱|여섯|다섯|넷|네|셋|세|둘|두|하나|한) ?개/); return m ? (/^\d+$/.test(m[1]) ? Number(m[1]) : KO_NUM[m[1]]) : null; };
+const BR_HAN = "子丑寅卯辰巳午未申酉戌亥", BR_KO = "자축인묘진사오미신유술해";
+const toHan = (b: string) => (BR_KO.includes(b) ? BR_HAN[BR_KO.indexOf(b)] : b);
+/**
+ * AM 판독(대운 11건): 검수(Haiku)가 엔진 값과 반대로 지적 → 수리가 맞는 문장을 틀리게 고쳤다(공망을 늘 戌·亥로, 대운수 8을 대운 개수로, 음양 2:4를 거꾸로).
+ * 문장이 그 값에서 엔진과 맞는데 지적이 그 값을 문제 삼으면(또는 공망 글자를 엔진과 다르게만 대면) 그 지적을 버린다(호출 0). 한 사람 책만.
+ */
+export function contradictsEngine(issue: { readonly why: string; readonly fix: string }, sentence: string, sheet: FactSheet): string | null {
+  if (sheet.people.length !== 1) return null;
+  const p = sheet.people[0], said = `${issue.why} ${issue.fix}`;
+  if (/공망/.test(said)) {
+    const real = new Set(p.gongmang.flatMap(g => g.branches.map(toHan)));
+    const near = [...said.matchAll(/공망[^.?!]{0,14}/g)].map(m => m[0]).join(" ");
+    const named = [...[...near.matchAll(/[子丑寅卯辰巳午未申酉戌亥]/g)].map(m => m[0]), ...[...near.matchAll(/(?<![가-힣])([자축인묘진사오미신유술해])·([자축인묘진사오미신유술해])/g)].flatMap(m => [toHan(m[1]), toHan(m[2])])];
+    if (real.size && named.length && !named.some(b => real.has(b))) return "F_gongmang_engine";
+  }
+  const total = p.dayun.cycles.length;
+  if (total && countOf(sentence) === total && /대운수|개수|(\d{1,2}|열두|열|아홉|여덟|일곱|여섯|다섯) ?개/.test(said)) return "F_dayun_count_engine";
+  const lean = yinYangLean(sentence), { yin, yang } = p.yinYang;
+  if (lean && /음양|음 ?\d|양 ?\d|음의|양의|음이|양이|음 기운|양 기운/.test(said) && ((lean === "yang" && yang > yin) || (lean === "yin" && yin > yang))) return "F_yinyang_engine";
+  return null;
+}
+
+export function guardReview(text: string, numbered: readonly Numbered[], ids: ReadonlySet<string>, priorCount = 0, product = "", sheet?: FactSheet): GuardedReview | null {
   let parsed: unknown;
   try { const m = text.match(/\{[\s\S]*\}/); parsed = m ? JSON.parse(m[0]) : null; } catch { return null; }
   const list = parsed && typeof parsed === "object" && Array.isArray((parsed as { issues?: unknown }).issues) ? (parsed as { issues: unknown[] }).issues : null;
@@ -194,6 +221,7 @@ export function guardReview(text: string, numbered: readonly Numbered[], ids: Re
     if (x.cat === "T" && product !== "saju_mbti_full") { drop("T_not_comprehensive"); continue; }
     // AM 판독(종합 8장): 허용된 해 이름 꼴(「2027년 정미년」)을 T로 지적 → 수리가 「올해 병오년」으로 바꿔 2027 관계가 2026 문장에 붙었다. 해 이름만 있고 달·연도 고정·「올해」가 없는 문장의 T는 버린다.
     if (x.cat === "T" && hasYearName(byN.get(s)!.text) && !fixedTimeOf(byN.get(s)!.text) && !/올해|이번 달|이달/.test(byN.get(s)!.text)) { drop("T_year_name_allowed"); continue; }
+    if (sheet) { const why = contradictsEngine({ why: String(x.why ?? ""), fix }, byN.get(s)!.text, sheet); if (why) { drop(why); continue; } }
     if (seen.has(s)) { drop("duplicate_sentence"); continue; }
     seen.add(s);
     const issue: ReviewIssue = { cat: x.cat as ReviewCat, s, quote, why: String(x.why ?? "").slice(0, 300), ref, s2, field, fix };
