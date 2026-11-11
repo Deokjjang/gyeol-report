@@ -27,7 +27,8 @@ import { concurrency, rewriteChunk, writeChunks, type ChunkLog } from "./run";
 
 /** 다시 쓰기 최대 횟수(묶음마다). */
 export const CHUNK_REWRITE_ROUNDS = 2;
-const reasonOf = (f: ChunkFlag) => `${HINT[f.rule as P6cRule] ?? f.rule}${f.detail ? ` (${f.detail})` : ""}`;
+/** 다시 쓰기 이유 한 줄: 검사가 단 힌트(대운·세운 시점 말은 「'지금'을 어떤 꼴로도 쓰지 않는다」 같은 고칠 말 포함) + 세부. */
+const reasonOf = (f: ChunkFlag) => `${f.hint ?? HINT[f.rule as P6cRule] ?? f.rule}${f.detail ? ` (${f.detail})` : ""}`;
 const chunkOf = (chunks: readonly Chunk[], f: { chapter: number }, heading: string) => chunks.find(c => c.parts.some(p => p.n === f.chapter && (!p.keys || p.keys.includes(heading))));
 
 export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
@@ -120,7 +121,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   for (const d of del.deleted.filter(x => !x.kept)) {
     const [n, si, pi] = d.at.split(".").map(Number); const c = chapters.find(x => x.n === n), s = c?.sections[si]; if (!c || !s) continue;
     const p = s.paragraphs[pi] ?? "", ss = splitSentences(p);
-    if ((p && (ss.length < 2 || (ss[0] && orphanStart(ss[0].replace(/[⟪⟫]/g, ""))))) || !s.paragraphs.length) replace(n, `${d.rule}:hole`, c.keys?.includes(s.heading) ? s.heading : undefined);
+    if ((p && ss[0] && orphanStart(ss[0].replace(/[⟪⟫]/g, ""))) || !s.paragraphs.length) replace(n, `${d.rule}:hole`, c.keys?.includes(s.heading) ? s.heading : undefined);
   }
   { const after = inspect(chapters); for (const f of after.block) { const c = chapters.find(x => x.n === f.chapter), h = c?.sections[f.section]?.heading; replace(f.chapter, `${f.rule}:left`, c?.keys?.includes(h ?? "") ? h : undefined); } }
   if (replaced.length) {

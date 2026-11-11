@@ -56,7 +56,7 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = []): BriefI
 export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon"]);
 /** 장 사이 반복(모든 묶음 뒤 결정론, 뒤쪽 묶음만 1회 다시 쓴다). */
 export const REPEAT_RULES: ReadonlySet<string> = new Set<string>(["phrase_repeat", "scene_repeat", "meaning_repeat", "prior_overlap", "closing_repeat"]);
-export type ChunkFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string };
+export type ChunkFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string; readonly hint?: string };
 
 const CODE = /(?<![A-Za-z0-9])[NDYMBIP]\d{1,2}(?![A-Za-z0-9])|근거 카드|책 설계도|소제목 틀|핵심 주장|장면 씨앗|되풀이 금지|이번 묶음|머리 문장/;
 const norm = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");
@@ -99,9 +99,10 @@ function monthLists(x: Intake): { cue: RegExp; months: Set<string> }[] {
 }
 
 export function blockFlags(chapters: readonly FinalChapter[], lint: readonly LintFlag[], b: BlockCtx): ChunkFlag[] {
-  const out: ChunkFlag[] = lint.filter(f => BLOCK_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, rule: f.rule, sentence: f.sentence, ...(f.detail ? { detail: f.detail } : {}) }));
+  const out: ChunkFlag[] = lint.filter(f => BLOCK_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, rule: f.rule, sentence: f.sentence, ...(f.detail ? { detail: f.detail } : {}), ...(f.hint ? { hint: f.hint } : {}) }));
   const seen = new Set(out.map(f => `${f.chapter}.${f.section}.${f.paragraph}|${f.sentence}`));
   const owner = b.mbtiAnchor ? ownerWindows(b.intake) : new Set<string>(), months = monthWindows(b.intake), lists = monthLists(b.intake);
+  const anyList = b.intake.lines.filter(l => l.subject === "month").map(l => monthsIn(l.meaning)).filter(s => s.size > 1);
   const add = (f: ChunkFlag) => { const k = `${f.chapter}.${f.section}.${f.paragraph}|${f.sentence}`; if (!seen.has(k)) { seen.add(k); out.push(f); } };
   for (const c of chapters) c.sections.forEach((s, si) => s.paragraphs.forEach((p, pi) => {
     for (const raw of splitSentences(p)) {
@@ -114,7 +115,7 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
         if (mine) for (const [key, set] of months) if (key !== s.heading && hit(sen, set, 12) && !hit(sen, mine, 12)) { add({ ...at, rule: "month_line", detail: `${key} 달의 근거 줄` }); break; }
       }
       const ms = monthsIn(sen);
-      if (ms.size) for (const l of lists) if (l.cue.test(sen) && [...ms].some(m => !l.months.has(m)) && !lists.some(o => o !== l && o.cue === l.cue && [...ms].every(m => o.months.has(m)))) {
+      if (ms.size && !anyList.some(set => [...ms].every(m => set.has(m)))) for (const l of lists) if (l.cue.test(sen) && [...ms].some(m => !l.months.has(m))) {
         if (/(달|때)(은|는|이|가)? [^.?!]{0,30}(이에요|입니다|예요)|(오르|늦추|새|무리|쉬어)[^.?!]{0,10}달/.test(sen)) { add({ ...at, rule: "month_list", detail: `달 목록이 카드와 다름(카드: ${[...l.months].join("·")})` }); break; }
       }
       if (b.yearsToNextDayun !== undefined && b.yearsToNextDayun > 2 && /곧[^.?!]{0,24}대운(으로|이|에)? ?(넘어가|바뀌|들어가|시작|열리)/.test(sen)) add({ ...at, rule: "dayun_soon", detail: `다음 대운까지 ${b.yearsToNextDayun}년` });
