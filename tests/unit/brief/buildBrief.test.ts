@@ -166,11 +166,13 @@ describe("brief builder — 성질", () => {
     }
   });
 
-  it("세운 12개월 행동 템플릿 반복 0", () => {
+  // AM 2부: 1월 다리(지난 해 마지막 절기월) + 12 절기월 = 13개 달, 행동 템플릿은 13개 모두 다르다.
+  it("세운 1월 다리 + 12개월 행동 템플릿 반복 0", () => {
     for (const { brief } of samples) if (brief.product === "annual_fortune") {
       const months = brief.timeline!.entries.filter(e => e.kind === "month");
-      expect(months).toHaveLength(12);
-      expect(new Set(months.map(e => e.action.templateId)).size).toBe(12);
+      expect(months).toHaveLength(13);
+      expect(months.filter(e => e.bridge)).toHaveLength(1);
+      expect(new Set(months.map(e => e.action.templateId)).size).toBe(13);
     }
   });
 
