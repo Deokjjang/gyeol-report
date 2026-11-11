@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import type { DayunInfo } from "../chart";
 import { deepLines, type Knowledge } from "../knowledge";
-import { dayunLabel, ganjiLabel, HALF_HAP_PLAIN, REL_PLAIN, TEN_GOD_GROUP, tenGodLabel } from "../labels";
+import { dayunLabel, ganjiLabel, HALF_HAP_PLAIN, halfHapLine, REL_PLAIN, TEN_GOD_GROUP, tenGodLabel } from "../labels";
 import type { Material, TimelineEntry } from "../schema";
 import { DOMAIN_BY_TEN_GOD } from "../productEvidence";
 import type { Rng } from "../seed";
@@ -86,7 +86,7 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
     pastSummary: ev("pastSummary", [`지난 세 해: ${past.map(e => `${e.key}년 ${e.ganji.hangul} ${e.tenGod.stem}`).join(" → ")}`, pastCycles.length ? `그 시기 대운: ${pastCycles.join(" → ")}` : ""], "지난 일을 겪었다고 단정하지 않는다. '~했다면'·질문형으로, 세 해를 하나의 흐름으로"),
     pastDayun: ev("pastDayun", [prev && past.some(e => e.dayun?.ganji !== cur?.ganji + " 대운") ? `지난 대운: ${prev.label} · ${prev.tenGod}` : "", ...mind(gCur, "enter", 1)], "그 시기를 지나며 남은 힘(태도·습관)을 조건형으로"),
     nowTheme: cur ? ev("nowTheme", [`내가 서 있는 대운: ${cur.label} · ${cur.tenGod} — ${cur.theme}`, ...mind(gCur, "inside", 2), ...dom(gCur, "work", 1)], "주제를 한 줄로 먼저, 그 10년의 태도 둘") : null,
-    nowRelation: cur ? ev("nowRelation", relationsWithNatal(c.saju, { stem: cur.hanja[0] as Pillar["stem"], branch: cur.hanja[1] as Pillar["branch"] }), "원국 자리와 이 대운 기둥의 관계만(없으면 '부딪힘 없이 이어지는 쪽'). 충=나쁨·합=좋음 단정 금지") : null,
+    nowRelation: cur ? ev("nowRelation", relationsWithNatal(c.saju, c.k, { stem: cur.hanja[0] as Pillar["stem"], branch: cur.hanja[1] as Pillar["branch"] }), "원국 자리와 이 대운 기둥의 관계만(없으면 '부딪힘 없이 이어지는 쪽'). 충=나쁨·합=좋음 단정 금지") : null,
     nowCards: cur ? ev("nowCards", [`좋은 패: ${dom(gCur, "money", 1)[0] ?? ""}`, `숙제: ${mind(gCur, "leave", 1)[0] ?? ""}`], "좋은 패와 숙제를 한 쌍으로") : null,
     turnWhen: next ? ev("turnWhen", [`다음 대운: ${next.label} · ${next.tenGod} — ${next.theme}`, `교운기: ${next.startYear - 1}~${next.startYear + 1}년 무렵(앞뒤 1~2년)`, c.dayun.error ? "출생 시각 미상이라 교운 연·월은 범위로만" : ""], c.dayun.error ? "경계 연도는 범위로만 쓴다(단서·면책 문장 없이)" : "교운 연·월은 엔진 값 그대로") : null,
     turnMind: gCur && gNext ? ev("turnMind", [...mind(gCur, `to:${gNext}`, 1), ...mind(gNext, "enter", 1), ...mind(gCur, "leave", 1)], "바뀌기 전 정리할 것 → 바뀐 뒤 마음가짐 순서로") : null,
@@ -102,11 +102,16 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
 }
 
 /** 대운 기둥과 원국 자리 관계(쉬운 줄). */
-function relationsWithNatal(saju: SajuCalcResult, dp: Pillar): string[] {
+function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar): string[] {
   const natal = natalEntries(saju);
   const seat = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
   return detectRelations([...natal, { position: "dayun", pillar: dp }]).filter(r => r.members.some(m => m.position === "dayun") && REL_PLAIN[r.kind])
-    .slice(0, 3).map(r => `이 대운 기둥과 ${[...new Set(r.members.filter(m => m.position !== "dayun").map(m => seat[m.position as keyof typeof seat]).filter(Boolean))].join("·")} 자리: ${r.kind === "SAMHAP" && r.completeness !== "full" ? HALF_HAP_PLAIN : REL_PLAIN[r.kind]}`);
+    // AM2 P2 판독(major-1 3장): 관계 이름만 주면 작가가 뜻을 지어낸다(반합에 「사람 사이」 뜻) → 지식 DB 배지 뜻을 함께(반합은 「반쯤 묶여」 꼴).
+    .slice(0, 3).map(r => { const pairs = [r.key, [...r.key].reverse().join("")], b = k.badges.find(x => x.kind === r.kind && x.pair !== undefined && pairs.includes(x.pair)) ?? k.badges.find(x => x.kind === r.kind && x.pair === undefined);
+      // 삼형 세 글자 중 두 글자만 만난 형은 일반 형 풀이(「세 땅이 서로 눌러」는 세 글자일 때 말 — 타임라인 카드와 같은 원리).
+      const twoHyeong = r.kind === "HYEONG" && r.completeness === "partial" && [...r.key].length === 3, plain = twoHyeong ? k.badges.find(x => x.kind === "HYEONG" && x.pair === undefined) : undefined;
+      const half = r.kind === "SAMHAP" && r.completeness !== "full", src = plain ?? b, mean = (src?.line ? (half ? halfHapLine(src.line) : src.line) : "").replace(/ (해|달)$/, " 흐름");
+      return `이 대운 기둥과 ${[...new Set(r.members.filter(m => m.position !== "dayun").map(m => seat[m.position as keyof typeof seat]).filter(Boolean))].join("·")} 자리: ${half ? HALF_HAP_PLAIN : REL_PLAIN[r.kind]}${mean ? ` — ${mean}` : ""}`; });
   // AM 재생성 판독(major-1 3장): 丑·巳 두 글자(반합)를 「삼합(세 글자가 한 기운으로 모임)」으로 줘서 작가가 그대로 썼다 → 반합 풀이.
 }
 

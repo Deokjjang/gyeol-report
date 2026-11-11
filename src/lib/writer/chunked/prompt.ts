@@ -8,7 +8,7 @@ import { STYLE_EXAMPLES } from "../prompt/examples";
 import type { ChapterPlan, Intake, KeyPlan, Line } from "./intake";
 import { SUBJECT_KO } from "./intake";
 
-export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-3";
+export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-4";
 /** 작가에게 보이는 분량 = 목표 × 이 값(장 묶음은 짧아 지시를 더 잘 지킨다고 보고 통째 1회 작가(1.25)보다 낮춘다 — P 시범 실측으로 다시 맞춘다). */
 export const CHUNK_TARGET_FACTOR = 1.15;
 /** 카드 줄 몫(key 하나, 글자). */
@@ -35,10 +35,11 @@ const RULES_COMMON = `너는 결리포트 세운·대운 책의 작가다. 사�
 - 다른 장의 주장(설계도의 「되풀이 금지」)은 다시 쓰지 않는다. "앞에서 본·앞 장에서·n장에서"처럼 다른 장을 가리키지 않는다(장은 따로 쓰인다).
 
 # 시점
-- 이 책은 「이 책을 쓴 날」 기준이다. 「지금·요즘·최근·올해·이번 달·이번 해·당장」을 쓰지 않는다(따옴표 안 대사도).
+- 이 책은 「이 책을 쓴 날」 기준이다. 「지금·요즘·최근·올해·이번 달·이번 해·당장」을 쓰지 않는다(따옴표 안 대사도 — 「"올해는 뭘 해 볼까"」→「"2027년엔 뭘 해 볼까"」, 「"이번 달은 조용히"」→「"이 달은 조용히"」, 「"요즘 바빠"」→「"한동안 바빠"」).
 - 해는 「2027년 정미년」·「2029년」처럼, 달은 「5월 · 을사월」처럼 절대 이름으로. 대운은 「을축 대운」 또는 「이 대운」·「이 10년」.
   고쳐 쓰는 예: 「지금 방식」→「하던 방식」 · 「지금 자리」→「맡은 자리」 · 「지금 대운」→「이 대운」 · 「올해 연애 신호」→「2027년의 연애 신호」 · 「이번 달 안에」→「이 달 안에」 · 「8월에」→「8월 · 무신월에」(달 숫자만 쓰지 않는다 — 세운 책은 늘 간지월 이름과 함께).
 - 지난 해·지난 일은 겪었다고 단정하지 않고 질문형·조건형("~했다면", "~하지 않았나요?", "~였을 수도 있어요")으로. 「…했습니다」「…온 3년이에요」「그런 결이었어요」처럼 그 사람의 지난 일을 단정하는 끝 금지(그 해의 십성·대운 같은 엔진 값만 사실로).
+- 앞날 장면을 받는 틀은 돌려 쓴다: 「…하는 모습이 어울려요」 「…해 보기 좋은 때예요」 「…라면 …해 보세요」 「…쪽으로 마음이 기울기 쉬워요」. 한 묶음에서 같은 틀은 두 번까지.
 - 장면 씨앗은 그 사람에게 어울리는 생활 모습의 예다. 「장면 씨앗(지난 때)」은 질문형으로. 「장면 씨앗(앞날)」은 일어난다고 쓰지 않는다 — 「…하는 모습이 어울려요」「…해 보기 좋은 때예요」「…라면 …」으로 받고, 건수·결과(「두세 개」「한 권을 끝까지」「반응이 빨리 온다」「부탁이 온다」)를 못 박지 않는다. 「…하는 해입니다·달이에요」로 사건을 정하지 않는다.
 
 # 이 사람에게 맞게
@@ -56,6 +57,9 @@ const RULES_COMMON = `너는 결리포트 세운·대운 책의 작가다. 사�
 - 사용자 메시지가 정한 장 머리글 "## N. 장 제목"을 그대로, 그 순서대로.
 - key가 없는 장: 소제목 "### …"를 설계도 소제목 틀 수만큼. 소제목은 그 틀 질문의 답을 짧은 말로(질문 그대로 쓰지 않는다). 소제목마다 문단 3개(문단마다 3~4문장): 근거 하나 → 다른 근거·장면 → 쓰는 법·행동. 행동 조언은 장마다 하나, 마지막 소제목에서.
 - 소제목마다 핵심 문장 하나를 ⟪ ⟫로 감싼다(정확히 1개).
+- key 번호(2027-M04 같은)는 순서 표시일 뿐 달력 달이 아니다. 그 key의 이름(설계도 「5월 · 을사월」)과 그 key에 적힌 근거 줄만 쓴다(다른 key의 십성·관계·흐름 세기·장면을 가져오지 않는다).
+- 근거 카드에 「…과 같은 생활 결」이 있으면 그 달·해를 짚어 한 문장으로 잇고, 이 key에서 달라지는 관계·흐름 세기·장면 쪽으로 쓴다(앞 key의 생활 문장을 다시 쓰지 않는다).
+- key의 할 일(본문 마지막 문단과 카드 줄의 할 일)은 설계도 「할 일 씨앗」을 바탕으로 쓴다(key마다 다르게 골라 둔 것).
 - key가 있는 장: "### {key}"(설계도 key 그대로) 아래 본문과 카드 줄. key 첫 문장은 시스템이 「머리 문장」을 넣는다 — 그다음 문장부터 쓰고, 해·달 이름과 머리 문장의 십성을 다시 알리지 않는다.
 - 분량은 장·key마다 설계도의 분량. 같은 말로 늘리지 말고 근거·장면·행동을 더한다.
 - 같은 처방(쉬는 날 비워 두기 · 하룻밤 두고 말하기 · 이름 적어 보기 · 달력에 적기)은 책에서 한 번. 다른 장·key는 그 근거에 맞는 다른 행동으로. 하늘 십성이 같은 달·해끼리도 생활 문장을 다르게.
@@ -101,7 +105,7 @@ function chapterText(c: ChapterPlan, product: Intake["product"]): string {
   if (c.keys) {
     const per = product === "annual_fortune" ? target(c.target, CARD_CHARS) : "";
     out.push(`- key ${c.keys.length}개, ${product === "annual_fortune" ? `key마다 ${per}(카드 줄 포함)` : "깊게 key 600~800자 · 짧게 key 350~450자(카드 줄 포함)"}`);
-    for (const k of c.keys) out.push(`  ### ${k.key} — ${k.label} · 때: ${WHEN_KO[k.when]}${k.depth ? ` · 깊이: ${k.depth === "deep" ? "깊게" : "짧게"}` : ""} · 머리 문장(시스템이 넣음): ${k.head} · 근거 ${k.lines.join("·")}${k.scene ? ` · 장면 씨앗(${SEED_FRAME[k.when]}): ${k.scene}` : ""}`);
+    for (const k of c.keys) out.push(`  ### ${k.key} — ${k.label} · 때: ${WHEN_KO[k.when]}${k.depth ? ` · 깊이: ${k.depth === "deep" ? "깊게" : "짧게"}` : ""} · 머리 문장(시스템이 넣음): ${k.head} · 근거 ${k.lines.join("·")}${k.scene ? ` · 장면 씨앗(${SEED_FRAME[k.when]}): ${k.scene}` : ""}${k.todo ? ` · 할 일 씨앗: ${k.todo}` : ""}`);
   }
   if (c.scenes?.length) out.push(`- 장면 씨앗: ${c.scenes.join(" / ")}`);
   if (c.avoid.length) out.push(`- 되풀이 금지(다른 장의 주장): ${c.avoid.join(" / ")}`);
@@ -168,5 +172,8 @@ export function chunkUser(x: Intake, c: Chunk, rewrite?: { previous: string; iss
   const head = rewrite
     ? `고쳐 다시 쓸 묶음: ${parts}.\n아래 「앞 원고」에서 걸린 문장을 고쳐 이 묶음 전체를 다시 쓰세요. 걸리지 않은 문단은 뜻과 흐름을 그대로 두고, 걸린 문장은 같은 근거로 새로 씁니다(지우고 앞뒤를 잇는 것도 됩니다).\n\n걸린 문장:\n${rewrite.issues.map(i => `- «${i.sentence}» — ${i.reason}`).join("\n")}\n\n앞 원고:\n${rewrite.previous}`
     : `이번 묶음: ${parts}(전체 ${x.chapters.length}장 가운데). 설계도의 이 장들만 쓰세요. 묶음 분량 약 ${Math.round(c.chars[0] * CHUNK_TARGET_FACTOR)}~${Math.round(c.chars[1] * CHUNK_TARGET_FACTOR)}자.`;
-  return `${head}\n\n${first ? (x.product === "annual_fortune" ? "맨 앞에 [표지] 한 줄과 [키워드] 한 줄, 이어서 " : "맨 앞에 [표지] 한 줄, 이어서 ") : ""}${CHUNK_HEADER_MARK}\n${chunkHeaders(x, c)}`;
+  // P2 판독(annual-1): key 번호 2027-M04(5월 · 을사월)를 4월로 읽고 갑진월 내용을 썼다 → 이 묶음 key의 달 이름을 바로 앞에 적는다.
+  const keyNames = c.parts.flatMap(p => (p.keys ?? []).map(k => { const kp = x.chapters.find(y => y.n === p.n)?.keys?.find(z => z.key === k); return kp ? `${k} = ${kp.label}` : ""; })).filter(Boolean);
+  const keyLine = keyNames.length ? `이 묶음 key의 달·해 이름: ${keyNames.join(" · ")}\n` : "";
+  return `${head}\n\n${keyLine}${first ? (x.product === "annual_fortune" ? "맨 앞에 [표지] 한 줄과 [키워드] 한 줄, 이어서 " : "맨 앞에 [표지] 한 줄, 이어서 ") : ""}${CHUNK_HEADER_MARK}\n${chunkHeaders(x, c)}`;
 }

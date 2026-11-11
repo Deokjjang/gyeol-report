@@ -5,7 +5,9 @@ import { payloadToBriefInput } from "@/lib/writer/book";
 import { buildWriterPrompt } from "@/lib/writer/prompt";
 import { kstDate, writerKnowledge } from "@/lib/writer/publish";
 import { buildIntake, say, sceneFits, shiftPhase, untime } from "@/lib/writer/chunked/intake";
-import { blockFlags, briefCheck, crossRepeats, headPair, PIGGYBACK_RULES, skyGroundIssue } from "@/lib/writer/chunked/check";
+import { adviceRepeats, blockFlags, briefCheck, crossRepeats, headPair, PIGGYBACK_RULES, skyGroundIssue } from "@/lib/writer/chunked/check";
+import { blockCtxFor } from "@/lib/writer/chunked/publish";
+import { nativeNumbers } from "@/lib/writer/safety/p6e";
 import { cutFlagged } from "@/lib/writer/chunked/cut";
 import { reviewLine } from "@/lib/brief/timeline";
 import { bookNotice } from "@/lib/writer/safety/p6e";
@@ -180,6 +182,57 @@ describe("AM2 P 판독 고침(2026-11-11, 저장된 P 원문의 결함 문장)",
     expect(bookNotice("annual_fortune")).not.toMatch(/타고난 성향/);
     expect(bookNotice("major_fortune")).not.toMatch(/타고난 성향/);
     expect(bookNotice("saju_mbti_full")).toBe("이 책은 타고난 성향을 풀이한 것이라 앞으로의 일을 단정하지 않아요.");
+  });
+});
+
+describe("AM2 P2 판독 고침(2026-11-11, 무료 고침 2차)", () => {
+  const fc = (n: number, ps: string[], keys?: string[]): FinalChapter => ({ n, id: `c${n}`, title: "t", source: "writer", chars: 0, sections: keys ? keys.map((k, i) => ({ heading: k, paragraphs: [ps[i] ?? ""] })) : [{ heading: "h", paragraphs: ps }], ...(keys ? { keys } : {}) });
+  it("key별 값 대조: 다른 key의 흐름 세기·땅 글자·관계 이름·장면 씨앗을 잡고, 제 key 값은 통과", () => {
+    const { intake, brief, k } = setup("annual_fortune");
+    const ctx = blockCtxFor(brief, k, intake), ch = intake.chapters.find(c => c.keys)!;
+    const [a, b2] = [ch.keys![3], ch.keys![4]], pa = headPair(a.head)!, pb = headPair(b2.head)!;
+    const fa = ctx.flows!.get(a.key)!, fb = ctx.flows!.get(b2.key)!;
+    const relA = [...(ctx.keyRels!.get(a.key) ?? [])].find(r => !(ctx.keyRels!.get(b2.key) ?? new Set()).has(r));
+    const wrong = [`흐름 세기는 ${fa.score}/5예요.`, ...(pa.ground !== pb.ground ? [`땅 글자 ${pa.ground} 덕에 바빠요.`] : []), ...(relA ? [`태어난 해 자리와 ${relA}이 걸려요.`] : []), ...(a.scene ? [a.scene] : [])];
+    const flags = blockFlags([fc(ch.n, ["", wrong.join(" ")], [a.key, b2.key])], [], ctx).filter(f => f.rule === "key_value");
+    if (fa.score !== fb.score) expect(flags.some(f => /흐름 세기/.test(f.detail ?? ""))).toBe(true);
+    expect(flags.length).toBeGreaterThanOrEqual(wrong.length - (fa.score === fb.score ? 1 : 0) - 1);
+    expect(blockFlags([fc(ch.n, ["", `흐름 세기는 ${fb.score}/5예요. 땅 글자 ${pb.ground}가 들어와요.`], [a.key, b2.key])], [], ctx).filter(f => f.rule === "key_value")).toEqual([]);
+  });
+  it("따옴표 대사 속 시점 말 · 작은 비문 · 기능 칸 이름 · 공용 표면 정리 「1/5 잔잔함」", () => {
+    const { intake } = setup("annual_fortune");
+    const rules = blockFlags([fc(9, ['월급날에 "올해는 뭘 해 볼까" 하고 적어 보세요. 흐름이 도우는 달이에요. 지기 싫은 마음이 의욕이 되는 대신 지침이 되지 않게 쓰세요. 다만 열등기능이 늦게 와요. «지금 회사에서 인정받고 싶어요»라고 적어 주셨어요.'])], [], { intake }).map(f => f.rule);
+    expect(rules).toEqual(expect.arrayContaining(["time_quote", "grammar", "code_leak"]));
+    expect(rules.filter(r => r === "time_quote")).toHaveLength(1);
+    expect(nativeNumbers("흐름 세기는 1/5 잔잔함입니다. 커피 2잔을 마셔요.").text).toBe("흐름 세기는 1/5 잔잔함입니다. 커피 두 잔을 마셔요.");
+  });
+  it("같은 처방·상투구는 책에서 한 번(받는 틀은 세 번까지), key끼리 같은 문장도 반복으로", () => {
+    const flags = adviceRepeats([fc(3, ["쉬는 날을 먼저 달력에 적어 넣으세요. 쉬는 날은 일정보다 먼저예요."]), fc(4, ["주말 하루는 쉬는 날로 두세요. 걷는 모습이 어울려요. 읽는 모습이 어울려요. 쓰는 모습이 어울려요. 웃는 모습이 어울려요."])]);
+    expect(flags.filter(f => /쉬는 날/.test(f.detail ?? ""))).toHaveLength(2);
+    expect(flags.filter(f => /어울려요/.test(f.detail ?? ""))).toHaveLength(1);
+    const s = "일에서는 평가와 기준이 또렷해져 인정받을 기회가 생기고 돈에서는 고정 지출을 정리하기 좋습니다.";
+    expect(crossRepeats([fc(7, [s, s], ["2026-M12", "2027-M10"])]).map(f => f.section)).toEqual([1]);
+  });
+  it("카드: 신살 줄에 자리 · 일반론(「일주에 있을 때」) 뺌 · 같은 생활 결 · 할 일 씨앗 · 기능 칸 이름 없음 · 대운 관계 뜻", () => {
+    const a = setup("annual_fortune"), m = setup("major_fortune");
+    const all = [...a.intake.lines, ...m.intake.lines];
+    expect(all.some(l => /\((태어난 (해|달|날|시각)) 자리\)/.test(l.value))).toBe(true);
+    expect(all.every(l => !/(일주|월주|연주|시주)에 (있을 때|있으면)/.test(l.meaning))).toBe(true);
+    expect(all.every(l => !/주기능|부기능|3차기능|열등기능/.test(`${l.value} ${l.meaning}`))).toBe(true);
+    // 할 일 씨앗: 입력에 맞는 문형이 없으면 비울 수 있다(1월 다리 달) — 대부분의 key는 있어야 한다.
+    const ks = a.intake.chapters.find(c => c.keys)!.keys!.filter(x => x.when !== "past");
+    expect(ks.filter(x => x.todo).length).toBeGreaterThanOrEqual(ks.length - 1);
+    expect(new Set(ks.filter(x => x.todo).map(x => x.todo)).size).toBe(ks.filter(x => x.todo).length);
+    const rel = m.intake.lines.filter(l => /^이 대운 기둥과/.test(l.value));
+    expect(rel.every(l => / — /.test(l.meaning))).toBe(true);
+  });
+  it("화면 카드: 「(올해)」 대신 「(이 책을 쓴 해)」, 지난 해 [살필 점] 없음, 틀 문자열 없음, 문형에 시점 말 없음", () => {
+    const { brief } = setup("major_fortune");
+    const es = brief.timeline!.entries;
+    expect(es.some(e => /\(올해\)/.test(e.label))).toBe(false);
+    expect(es.filter(e => e.period === "past").every(e => !e.caution)).toBe(true);
+    expect(es.every(e => !e.caution || !/살피기|걸리는 해:/.test(e.caution))).toBe(true);
+    expect(es.every(e => !/(?<![가-힣])(지금|올해|요즘)/.test(e.action.text))).toBe(true);
   });
 });
 

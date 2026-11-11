@@ -9,7 +9,7 @@ import { factSheetFor, lintContext, writerKnowledge, briefFor } from "../../src/
 import { applySafetyNet, type DraftChapter } from "../../src/lib/writer/safety";
 import { lintBook, tidyBook } from "../../src/lib/writer/safety/p6c";
 import { buildIntake } from "../../src/lib/writer/chunked/intake";
-import { blockFlags, crossRepeats } from "../../src/lib/writer/chunked/check";
+import { adviceRepeats, blockFlags, crossRepeats } from "../../src/lib/writer/chunked/check";
 import { chunkPlan } from "../../src/lib/writer/chunked/prompt";
 import { mergeParts, partsOf } from "../../src/lib/writer/chunked/run";
 import { blockCtxFor } from "../../src/lib/writer/chunked/publish";
@@ -30,7 +30,7 @@ const show = (label: string) => {
   const chs = tidyBook(applySafetyNet(brief, plan, drafts, { surfaceOnly: true }).chapters, { ...lctx, surfaceOnly: true }).chapters;
   const lint = lintBook(chs, lctx), block = blockFlags(chs, lint, blockCtxFor(brief, k, intake));
   const by = block.reduce<Record<string, number>>((o, f) => ({ ...o, [f.rule]: (o[f.rule] ?? 0) + 1 }), {});
-  console.log(`\n## ${label}: 차단 ${block.length} ${JSON.stringify(by)} · 장 사이 반복 ${crossRepeats(chs).length}`);
+  console.log(`\n## ${label}: 차단 ${block.length} ${JSON.stringify(by)} · 장·key 사이 반복 ${crossRepeats(chs).length} · 처방·상투구 ${adviceRepeats(chs).length}`);
   for (const f of block) console.log(`- ${f.chapter}.${f.section}.${f.paragraph} ${f.rule}${f.detail ? `(${f.detail})` : ""}: ${f.sentence.slice(0, 150)}`);
 };
 for (const r of firsts) { const c = owner(r.text); if (c) mergeParts(drafts, partsOf(r.text, c, plan), plan, "writer"); }

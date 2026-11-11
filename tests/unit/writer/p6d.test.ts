@@ -135,10 +135,13 @@ describe("P6d C·E 사실·위치·시점", () => {
 });
 
 describe("P6d D 카드(대운·세운)", () => {
-  it("살필 점 결정론 값은 그 해 조합에서 고르고 같은 문장을 다시 쓰지 않는다(수진 2023 ≠ 2033, 같은 癸 편관 해)", () => {
+  it("살필 점 결정론 값은 그 해 조합에서 고르고 같은 문장을 다시 쓰지 않는다(같은 천간 십성 해끼리도 다르게) · 지난 해는 살필 점 없이 돌아보기만(AM2 P2, 덕짱님 결정 2026-11-11)", () => {
     const b = brief("major_fortune", PEOPLE.x);
-    const c = (key: string) => b.timeline!.entries.find(e => e.key === key)!.caution;
-    expect(c("2023")).toBeTruthy(); expect(c("2033")).toBeTruthy(); expect(c("2023")).not.toBe(c("2033"));
+    const es = b.timeline!.entries;
+    for (const e of es) if (e.period === "past") expect(e.caution).toBeUndefined(); else expect(e.caution).toBeTruthy();
+    const byStem = new Map<string, string[]>(); for (const e of es.filter(x => x.period !== "past")) byStem.set(e.tenGod.stem, [...(byStem.get(e.tenGod.stem) ?? []), e.caution!]);
+    for (const cs of byStem.values()) expect(new Set(cs).size).toBe(cs.length);
+    expect(es.filter(e => e.caution).every(e => !/살피기$|: /.test(e.caution!))).toBe(true);
     const all = b.timeline!.entries.map(e => e.caution).filter(Boolean);
     expect(new Set(all).size).toBe(all.length);
   });

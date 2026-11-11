@@ -207,7 +207,8 @@ const NATIVE: Readonly<Record<string, string>> = { 1: "한", 2: "두", 3: "세",
  */
 export function nativeNumbers(text: string): { text: string; count: number } {
   let count = 0;
-  const out = text.replace(/(?<![0-9.,])([1-9])\s?(해|달|번|명|가지|사람|군데|마디|걸음|잔|권)(?![가-힣]*(일|월째))/g, (_all, d: string, unit: string) => { count++; return `${NATIVE[d]} ${unit}`; });
+  // AM2 P2 판독(annual-1 을사월): 「흐름 세기는 1/5 잔잔함」 → 「1/다섯 잔잔함」(분수 뒤 숫자를 「5 잔」으로 읽었다) → 「/」 뒤 숫자는 그대로.
+  const out = text.replace(/(?<![0-9.,/])([1-9])\s?(해|달|번|명|가지|사람|군데|마디|걸음|잔|권)(?![가-힣]*(일|월째))/g, (_all, d: string, unit: string) => { count++; return `${NATIVE[d]} ${unit}`; });
   return { text: out, count };
 }
 

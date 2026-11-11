@@ -55,7 +55,9 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = []): BriefI
 /** 묶음을 다시 쓰게 하는 규칙: 사실·금지(HARD_RULES) + 면책·비문 꼴 + AM2 새 규칙. */
 export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon",
   // AM2 P 판독(2026-11-11)에서 자동 검사가 못 본 유형: 앞날 확정 · 하늘·땅 뒤바뀜 · 일주 꼴 · 정도말 · 지난 일 단정 · 명사구 비문 · 읽기 지시 · 시점 말 · 머리 문장 되풀이.
-  "future_event", "sky_ground", "pillar_shape", "degree", "past_assert", "noun_predicate", "reader_directive", "time_extra", "head_repeat"]);
+  "future_event", "sky_ground", "pillar_shape", "degree", "past_assert", "noun_predicate", "reader_directive", "time_extra", "head_repeat",
+  // P2 판독(2026-11-11): key별 값 대조 · 따옴표 속 시점 말 · 작은 비문.
+  "key_value", "time_quote", "grammar"]);
 /** 경미 규칙: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고치게 하고, 그것만으로는 다시 쓰지도 지우지도 않는다(판독 기준 경미). */
 export const PIGGYBACK_RULES: ReadonlySet<string> = new Set<string>(["head_repeat"]);
 /** 장 사이 반복(모든 묶음 뒤 결정론, 뒤쪽 묶음만 1회 다시 쓴다). */
@@ -63,7 +65,7 @@ export const REPEAT_RULES: ReadonlySet<string> = new Set<string>(["phrase_repeat
 const BLOCK_RULES_OLD: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon"]);
 export type ChunkFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string; readonly hint?: string };
 
-const CODE = /(?<![A-Za-z0-9])[NDYMBIP]\d{1,2}(?![A-Za-z0-9])|근거 카드|책 설계도|소제목 틀|핵심 주장|장면 씨앗|되풀이 금지|이번 묶음|머리 문장/;
+const CODE = /(?<![A-Za-z0-9])[NDYMBIP]\d{1,3}(?![A-Za-z0-9])|근거 카드|책 설계도|소제목 틀|핵심 주장|장면 씨앗|할 일 씨앗|되풀이 금지|이번 묶음|머리 문장|주기능|부기능|3차기능|열등기능/;
 const norm = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");
 const windows = (t: string, w: number) => { const n = norm(t), out = new Set<string>(); for (let i = 0; i + w <= n.length; i++) out.add(n.slice(i, i + w)); return out; };
 const hit = (s: string, set: ReadonlySet<string>, w: number) => { const n = norm(s); for (let i = 0; i + w <= n.length; i++) if (set.has(n.slice(i, i + w))) return n.slice(i, i + w); return null; };
@@ -82,7 +84,18 @@ export type BlockCtx = {
   readonly dayPillar?: string;
   /** key → 흐름 세기(1~5)와 간지(달·해 이름). 「가장 잔잔」「가장 거센」은 유일한 끝값일 때만. */
   readonly flows?: ReadonlyMap<string, { readonly score: number; readonly ganji: string }>;
+  /** key → 그 시기 관계 이름(배지, 「지지형」「인사해」…). 다른 key의 관계 이름을 쓰면 달 혼동. */
+  readonly keyRels?: ReadonlyMap<string, ReadonlySet<string>>;
 };
+/** 따옴표 대사 속 시점 말(고객 소망 «»은 보지 않는다). */
+const QUOTE = /["“]([^"”]{1,80})["”]|['‘]([^'’]{1,80})['’]/g;
+const QUOTE_TIME = /(?<![가-힣])(지금|올해|요즘|최근|당장)|이번 ?(달|주|해|한 해)/;
+/** 작은 비문(P2 판독): 활용 오류 · 뜻이 뒤집히는 꼴 · 카드 값 명사를 그대로 붙임. */
+const GRAMMAR: readonly (readonly [RegExp, string])[] = [
+  [/도우는/, "「도우는」 → 「돕는」"],
+  [/되는 대신[^.?!]{0,14}되지 않게/, "「A가 되는 대신 B가 되지 않게」는 뜻이 뒤집힌다 → 「B가 아니라 A가 되게」"],
+  [/(잔잔함|느림|거셈|고름|빠름)(인|이라서) /, "카드 값(명사)을 그대로 붙였다 → 「잔잔한」「느린」처럼"],
+];
 
 // ---------- AM2 P 판독 규칙(결정론) ----------
 const TG = "비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인";
@@ -169,6 +182,9 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   const paired = new Set(b.intake.pairs.map(p => p.myeongri));
   const mbtiBasis = (ids: readonly string[], sen: string) => ids.some(id => lineById.get(id)?.subject === "mbti" || paired.has(id)) || b.intake.pairs.some(p => overlap4(sen, p.why) >= 3);
   const keySeeds = b.intake.chapters.flatMap(c => (c.keys ?? []).filter(k => k.when === "future" && k.scene).map(k => k.scene!));
+  const allSeeds = b.intake.chapters.flatMap(c => (c.keys ?? []).filter(k => k.scene).map(k => ({ key: k.key, scene: k.scene! })));
+  /** key 근거 줄의 「X기 좋음·쉬움」에서 X의 끝 4자(공백·부호 뺌). */
+  const goodStems = (ids: readonly string[]) => [...new Set(ids.flatMap(id => [...(lineById.get(id)?.meaning ?? "").matchAll(/([가-힣][가-힣 ]{2,14})기 (좋음|쉬움|좋아요|쉬워요|좋습니다|쉽습니다)/g)].map(m => norm(m[1]).slice(-4))).filter(x => x.length === 4))];
   const flowAll = [...(b.flows?.values() ?? [])].map(f => f.score);
   const extreme = (score: number, low: boolean) => { const e = low ? Math.min(...flowAll) : Math.max(...flowAll); return score === e && flowAll.filter(x => x === e).length === 1; };
   const flowByGanji = new Map([...(b.flows?.values() ?? [])].map(f => [f.ganji, f.score]));
@@ -187,6 +203,8 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
       const sen = raw.replace(/[⟪⟫]/g, ""), at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
       if (TIME_EXTRA.test(sen)) add({ ...at, rule: "time_extra", detail: sen.match(TIME_EXTRA)![0], hint: "「이번 한 해」 대신 해 이름(「2027년 한 해」)" });
       if (DIRECTIVE.test(sen)) add({ ...at, rule: "reader_directive", hint: "읽는 법을 시키는 문장을 쓰지 않는다(그냥 내용으로)" });
+      for (const m of sen.matchAll(QUOTE)) { const q = m[1] ?? m[2] ?? ""; const t = QUOTE_TIME.exec(q); if (t) { add({ ...at, rule: "time_quote", detail: `대사 속 「${t[0]}」`, hint: "따옴표 대사 안에도 「지금·올해·이번 달·요즘」을 쓰지 않는다(「'2027년엔'」「'이 달은'」「'한동안'」처럼)" }); break; } }
+      for (const [re, why] of GRAMMAR) if (re.test(sen)) { add({ ...at, rule: "grammar", detail: why, hint: why }); break; }
       { const w = nounPredicate(sen); if (w) add({ ...at, rule: "noun_predicate", detail: w, hint: "「X는 ~하는 시기입니다」는 비문 — 「X가 ~합니다」처럼 주어와 서술어를 맞춘다" }); }
       if (b.mbtiType && sen.includes(b.mbtiType) && !mbtiBasis(kp ? kp.lines : chapterLines, sen)) add({ ...at, rule: "evidence_owner", detail: `근거에 MBTI 줄·짝이 없는 ${kp ? kp.key : `${c.n}장`}에서 ${b.mbtiType}`, hint: "이 장·key 근거에는 MBTI가 없다 — 유형 이름을 빼고 명리 근거로만" });
       if (pillar?.test(sen)) add({ ...at, rule: "pillar_shape", detail: `일주 ${b.dayPillar}: 하늘 글자가 땅 글자 위에 앉는다`, hint: `일주는 「${b.dayPillar![0]}이 ${b.dayPillar![1]} 위에 앉은」 꼴로만` });
@@ -199,6 +217,17 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
         if (f && ((LOW.test(sen) && !onCard(sen, LOW) && !extreme(f.score, true)) || (HIGH.test(sen) && /흐름|기운|세기/.test(sen) && !onCard(sen, HIGH) && !extreme(f.score, false)))) add({ ...at, rule: "degree", detail: `흐름 세기 ${f.score}/5는 유일한 끝값이 아니다`, hint: "카드에 없는 「가장」을 붙이지 않는다(흐름 세기 값 그대로)" });
         for (const w of small) if (sen.includes(`큰 ${w}`)) { add({ ...at, rule: "degree", detail: `카드는 「작은 ${w}」`, hint: "카드의 정도말(작은)을 바꾸지 않는다" }); break; }
         if (kp.when === "past" && !PAST_SOFT.test(sen) && PAST_DECL.test(sen) && !PAST_FACT.test(sen)) add({ ...at, rule: "past_assert", hint: "지난 때는 질문형·조건형으로만(「…했다면」「…않았나요?」)" });
+        // key별 값 대조(P2 판독 annual-1 2027-M04 = 5월 · 을사월에 4월 갑진월 값이 통째로): 흐름 세기 · 하늘/땅 글자 · 다른 key의 관계 이름 · 다른 key의 장면 씨앗.
+        const kh = `이 key는 ${kp.label} — 그 key의 근거 줄만`;
+        const fm = /흐름(?: 세기)?(?:는|은|이|가)?\s*(\d)\s*\/\s*5/.exec(sen);
+        if (fm && f && Number(fm[1]) !== f.score) add({ ...at, rule: "key_value", detail: `흐름 세기 ${fm[1]}/5 — ${kp.label}은 ${f.score}/5`, hint: kh });
+        if (pair) { const gm = new RegExp(`(하늘|땅) ?글자(?:인|의|는|가|에)? (${TG})`).exec(sen); if (gm && gm[2] !== (gm[1] === "하늘" ? pair.sky : pair.ground)) add({ ...at, rule: "key_value", detail: `${gm[1]} 글자 ${gm[2]} — ${kp.label}은 ${gm[1] === "하늘" ? pair.sky : pair.ground}`, hint: kh }); }
+        { const mineRel = b.keyRels?.get(kp.key) ?? new Set<string>(); let other: string | null = null;
+          for (const [k2, rels] of b.keyRels ?? []) { if (k2 === kp.key) continue; for (const r of rels) if (!mineRel.has(r) && sen.includes(r)) { other = `${r}(${k2})`; break; } if (other) break; }
+          if (other) add({ ...at, rule: "key_value", detail: `다른 key의 관계 ${other}`, hint: kh }); }
+        for (const o of allSeeds) if (o.key !== kp.key && overlap4(sen, o.scene) >= SEED_IN_KEY && (!kp.scene || overlap4(sen, kp.scene) < SEED_IN_KEY)) { add({ ...at, rule: "key_value", detail: `다른 key(${o.key})의 장면 씨앗`, hint: kh }); break; }
+        // 카드 생활 줄 「~기 좋음·쉬움」을 「…는 해입니다」로 못 박음(P2 판독 major-1 2033 「결과로 이어지는 해입니다」).
+        if (kp.when === "future" && EVENT_END.test(sen) && !soft(sen)) for (const st of goodStems(kp.lines)) if (norm(sen).includes(`${st}는`)) { add({ ...at, rule: "future_event", detail: "카드의 「~기 좋음·쉬움」을 확정형으로", hint: "카드가 「~기 좋음」이면 「~기 좋은 해예요」처럼 그 꼴 그대로" }); break; }
         if (kp.when === "future" && kp.scene && overlap4(sen, kp.scene) >= SEED_IN_KEY && !soft(sen)) add({ ...at, rule: "future_event", detail: "장면 씨앗을 그때의 사건으로 단정", hint: "앞날 장면은 일어난다고 쓰지 않는다 — 「…하는 모습이 어울려요」「…해 보기 좋은 때예요」처럼, 건수·결과를 못 박지 않는다" });
       } else {
         if (plan?.id === "past" && !PAST_SOFT.test(sen) && PAST_DECL.test(sen) && !PAST_FACT.test(sen)) add({ ...at, rule: "past_assert", hint: "지난 3년은 겪었다고 단정하지 않는다 — 질문형·조건형(「…했다면」「…않았나요?」)으로만" });
@@ -233,16 +262,46 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
  * 묶음은 병렬로 쓰여 서로를 보지 못하므로, 겹치면 뒤쪽 장의 묶음을 1회 다시 쓴다.
  */
 export function crossRepeats(chapters: readonly FinalChapter[]): ChunkFlag[] {
-  const out: ChunkFlag[] = [], idx = L.overlapIndex(), phrase = new Map<string, number>();
+  // 단위 = 장(key 없는 장) 또는 key(달·해 장의 key마다 — P2 판독: 같은 십성 달끼리 생활 문장을 그대로 되풀이). 같은 단위 안의 비슷한 문장은 보지 않는다.
+  const out: ChunkFlag[] = [], idx = L.overlapIndex(), phrase = new Map<string, string>();
+  const flush = (unit: string, mine: readonly string[]) => { for (const sen of mine) { idx.add(sen); const n = norm(sen); for (let i = 0; i + 14 <= n.length; i++) if (!phrase.has(n.slice(i, i + 14))) phrase.set(n.slice(i, i + 14), unit); } };
   for (const c of chapters) {
     if (c.source === "deterministic") continue;
-    const mine: string[] = [];
+    let buf: string[] = [];
+    c.sections.forEach((s, si) => {
+      const isKey = Boolean(c.keys?.includes(s.heading)), unit = isKey ? `${c.n}:${s.heading}` : `${c.n}`, mine: string[] = [];
+      s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
+        const sen = raw.replace(/[⟪⟫]/g, ""), n = norm(sen); mine.push(sen);
+        let w: string | null = null; for (let i = 0; i + 14 <= n.length && !w; i++) { const x = phrase.get(n.slice(i, i + 14)); if (x !== undefined && x !== unit) w = n.slice(i, i + 14); }
+        if (w || idx.has(sen)) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "chapter_repeat", sentence: sen, detail: w ? `앞 장·key와 같은 구절 「${w}」` : "앞 장·key와 거의 같은 문장", hint: "다른 장·key가 이미 쓴 말 — 이 장·key의 근거·장면으로 바꿔 쓴다" });
+      } });
+      if (isKey) flush(unit, mine); else buf = [...buf, ...mine];
+    });
+    if (buf.length) flush(`${c.n}`, buf);
+  }
+  return out;
+}
+
+/** 같은 처방·상투구 되풀이(P2 판독: 쉬기·잠 5곳, 하룻밤 5곳, 월급날 3곳, 「모습이 어울려요」 12~16회). 처방은 책에서 한 번, 받는 틀은 세 번까지 — 넘는 곳을 장 사이 반복으로 넘긴다. */
+const ADVICE: readonly (readonly [string, RegExp])[] = [
+  ["쉬는 날·잠", /쉬는 날|회복하는 날|쉬어 가는 날|잠(을|부터)|자는 시간|일찍 자|기상 시간/],
+  ["하룻밤·하루 묵히기", /하룻밤|하루 (두고|뒤에|묵혀|지나)|한 박자/],
+  ["월급날", /월급날|이체 알림/],
+  ["끝까지 듣기", /끝까지 듣|먼저 들어 보/],
+  ["적어 보기", /(이름|한 줄|세 줄|목록)[^.?!]{0,10}적어 (보세요|두세요)/],
+];
+const FRAME = /모습이 어울(려요|립니다|리는)/;
+export function adviceRepeats(chapters: readonly FinalChapter[]): ChunkFlag[] {
+  const out: ChunkFlag[] = [], seen = new Map<string, number>();
+  let frames = 0;
+  for (const c of chapters) {
+    if (c.source === "deterministic") continue;
     c.sections.forEach((s, si) => s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
-      const sen = raw.replace(/[⟪⟫]/g, ""), n = norm(sen); mine.push(sen);
-      let w: string | null = null; for (let i = 0; i + 14 <= n.length && !w; i++) { const x = phrase.get(n.slice(i, i + 14)); if (x !== undefined && x !== c.n) w = n.slice(i, i + 14); }
-      if (w || idx.has(sen)) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "chapter_repeat", sentence: sen, detail: w ? `앞 장과 같은 구절 「${w}」` : "앞 장과 거의 같은 문장" });
+      const sen = raw.replace(/[⟪⟫]/g, "");
+      const hit = ADVICE.find(([, re]) => re.test(sen));
+      if (hit) { const n = (seen.get(hit[0]) ?? 0) + 1; seen.set(hit[0], n); if (n > 1) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "advice_repeat", sentence: sen, detail: `같은 처방 「${hit[0]}」 ${n}번째`, hint: "같은 처방은 책에서 한 번 — 이 근거에 맞는 다른 행동으로(설계도 「할 일 씨앗」)" }); }
+      if (FRAME.test(sen) && ++frames > 3) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "advice_repeat", sentence: sen, detail: `「모습이 어울려요」 ${frames}번째`, hint: "앞날 받는 틀을 돌려 쓴다(「…해 보기 좋은 때예요」「…라면 …해 보세요」「…쪽으로 마음이 기울기 쉬워요」)" });
     } }));
-    for (const sen of mine) { idx.add(sen); const n = norm(sen); for (let i = 0; i + 14 <= n.length; i++) if (!phrase.has(n.slice(i, i + 14))) phrase.set(n.slice(i, i + 14), c.n); }
   }
   return out;
 }

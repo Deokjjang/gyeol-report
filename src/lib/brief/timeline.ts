@@ -94,6 +94,8 @@ function badgeFor(hit: RelationHit, k: Knowledge): Badge | undefined {
   return k.badges.find(b => b.kind === hit.kind && b.pair !== undefined && pairs.includes(b.pair)) ?? k.badges.find(b => b.kind === hit.kind && b.pair === undefined);
 }
 
+/** 화면 카드 문형에서 피할 시점 말(읽는 때에 기대는 말). */
+const CARD_TIME = /(?<![가-힣])(지금|올해|요즘|최근|당장)|이번 ?(달|주|해|한 해)/;
 function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number): { templateId: string; text: string } {
   const band = flow >= 4 ? "high" : "low";
   // 학생이 아니면 시험 공부 행동, 기혼이면 연애 행동을 주지 않는다(P3.7 r1: 37세 기혼 간호사에게 연애형 행동을 억지로 각색).
@@ -103,7 +105,9 @@ function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number
     const domain = domains[(slot + i) % n];
     const b = i < n ? band : band === "high" ? "low" : "high";
     const t = ctx.k.actions.find(a => a.id === `act:${tenGod}:${domain}:${b}`);
-    if (t && !ctx.usedTemplates.has(t.id)) { ctx.usedTemplates.add(t.id); return { templateId: t.id, text: ctx.rng.fork(t.id).pick(t.text) }; }
+    // AM2 P2 판독(annual-1 2027-M12 [해 볼 것] 「…요즘 소식을 담아…」): 시점 말이 든 문형은 고르지 않는다(책은 「이 책을 쓴 날」 기준).
+    const opts = t ? t.text.filter(x => !CARD_TIME.test(x)) : [];
+    if (t && opts.length && !ctx.usedTemplates.has(t.id)) { ctx.usedTemplates.add(t.id); return { templateId: t.id, text: ctx.rng.fork(t.id).pick(opts) }; }
   }
   const fallback = ctx.k.actions.find(a => a.id === `tg:${tenGod}`)!;
   return { templateId: fallback.id, text: ctx.rng.fork(`fb:${slot}`).pick(fallback.text) };
@@ -216,7 +220,7 @@ export function buildYearEntries(ctx: TimelineCtx, thisYear: number, cycles: rea
     // 대운 안 몇 번째 해(P6d C): 엔진 연차 그대로. 위치 말(앞쪽·중간·끝 무렵·마지막 해)은 이 값으로만.
     const yi = cyc ? year - cyc.startYear + 1 : 0, total = cyc ? cyc.endYear - cyc.startYear + 1 : 0;
     const dyTg = cyc ? tenGodLabel(getTenGod(ctx.saju.dayMaster, cyc.stem)) : "";
-    const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (올해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
+    const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (이 책을 쓴 해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
       { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition, yearIndex: yi, total, position: dayunPositionLine(cyc.startYear, cyc.endYear, yi, total), tenGod: dyTg, ...(transition ? { start: dayunLabel(cyc).start } : {}) } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
     e.head = headLine(e, cyc ? { ganji: `${ganjiOf(cyc).hangul}(${ganjiOf(cyc).hanja})`, tenGod: dyTg, month: dayunLabel(cyc).month } : undefined);
     out.push({ ...e, ...changeOf(out.at(-1), "해", e.tenGod.stem, e.flow.score) });

@@ -357,7 +357,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   if (timeline) {
     const cctx: CautionCtx = { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) };
     const used = new Set<string>();
-    for (const e of timeline.entries) e.caution = cautionOf(e, k, cctx, used);
+    // AM2 P2 판독(major-1 화면 카드 2023~2025): 지난 해에 앞날 꼴 [살필 점]을 주지 않는다(지난 해는 [돌아보기]만).
+    for (const e of timeline.entries) e.caution = e.period === "past" ? undefined : cautionOf(e, k, cctx, used);
   }
 
   // 궁합
@@ -513,8 +514,10 @@ function cautionOf(e: import("./schema").TimelineEntry, k: Knowledge, c: Caution
   const unit = e.kind === "month" ? "달" : "해";
   const tgOf = (label: string) => label.match(/\((.+)\)/)?.[1] ?? "";
   const lines = (tg: string) => (k.tenGodPeriod.get(tg)?.year.caution ?? []).filter(l => cautionHolds(l.when, c)).map(l => l.text.replace(/해(예요|입니다|라)/g, `${unit}$1`));
-  const badge = e.badges.filter(b => CAUTION_KINDS.test(b.kind) || b.tone === "minus").map(b => `${b.with ? `${b.with} 글자와 ` : ""}${josa(b.label.replace(/\(.*\)$/, ""), "이가")} 걸리는 ${unit}: ${b.line}`.replace(/ (흐름|해|달)$/, " 쪽을 살피기"));
-  const cands = [...badge, ...lines(tgOf(e.tenGod.stem)), ...lines(tgOf(e.tenGod.branch))].filter(x => x.length >= 8 && x.length <= 60);
+  // AM2 P2 판독: 「…걸리는 해: …쪽을 살피기」 틀 문자열이 화면에 그대로 나갔다 → 한 문장(「…와 X가 걸려, …쪽을 살펴보세요.」).
+  const badge = e.badges.filter(b => CAUTION_KINDS.test(b.kind) || b.tone === "minus").map(b => { const head = `${b.with ? `${b.with} 글자와 ` : ""}${josa(b.label.replace(/\(.*\)$/, ""), "이가")} 걸려`;
+    return / (흐름|해|달)$/.test(b.line) ? `${head}, ${b.line.replace(/ (흐름|해|달)$/, "")} 쪽을 살펴보세요.` : `${head} ${b.line.replace(/[.]$/, "")}.`; });
+  const cands = [...badge, ...lines(tgOf(e.tenGod.stem)), ...lines(tgOf(e.tenGod.branch))].filter(x => x.length >= 8 && x.length <= 70);
   const pick = cands.find(x => !used.has(x));
   if (pick) used.add(pick);
   return pick;

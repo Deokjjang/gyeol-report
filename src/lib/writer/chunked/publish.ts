@@ -20,7 +20,7 @@ import { applySafetyNet, safetyFacts, sentenceViolation, writeKeyFill, type Draf
 import { enforce, HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/p6c";
 import { dayunPhase } from "../safety/lint";
 import { briefFor, briefHash, chooseCover, coverIssue, factSheetFor, insertFixedLines, kstDate, lintContext, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
-import { blockFlags, briefCheck, crossRepeats, PIGGYBACK_RULES, styleScoreOf, type BlockCtx, type ChunkFlag } from "./check";
+import { adviceRepeats, blockFlags, briefCheck, crossRepeats, PIGGYBACK_RULES, styleScoreOf, type BlockCtx, type ChunkFlag } from "./check";
 import { cutFlagged } from "./cut";
 import { buildIntake, type Intake } from "./intake";
 import { chunkPlan, chunkRules, CHUNK_PROMPT_VERSION, renderCard, type Chunk } from "./prompt";
@@ -42,7 +42,9 @@ export function blockCtxFor(brief: Brief, k: Knowledge, intake: Intake): BlockCt
   const keyed = new Set(intake.chapters.flatMap(c => (c.keys ?? []).map(x => x.key)));
   const flows = new Map((brief.timeline?.entries ?? []).filter(e => keyed.has(e.key)).map(e => [e.key, { score: e.flow.score, ganji: e.ganji.hangul }] as const));
   return { intake, ...(brief.mbti ? { mbtiAnchor: new RegExp([brief.mbti.type, ...(k.mbti.get(brief.mbti.type as never)?.cognitiveFunctions ?? []).map(f => f.code)].join("|")), mbtiType: brief.mbti.type } : {}),
-    ...(yearsToNext !== undefined ? { yearsToNextDayun: yearsToNext } : {}), dayPillar: brief.chart.pillars.day.hangul, flows };
+    ...(yearsToNext !== undefined ? { yearsToNextDayun: yearsToNext } : {}), dayPillar: brief.chart.pillars.day.hangul, flows,
+    // key → 그 시기 관계 이름(공망 빼고, 「(반쯤)」 같은 꼬리 뗌, 두 글자 이상).
+    keyRels: new Map((brief.timeline?.entries ?? []).filter(e => keyed.has(e.key)).map(e => [e.key, new Set(e.badges.filter(x => x.kind !== "GONGMANG").map(x => x.label.replace(/\(.*\)$/, "").trim()).filter(x => x.length >= 2))] as const)) };
 }
 
 export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
@@ -128,7 +130,9 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     cur = build(); seen = inspect(cur.chapters);
   }
   // 2) 장 사이 반복: 뒤쪽 묶음만 1회(다시 쓴 원고가 차단 결함을 새로 만들면 앞 원고로 되돌린다).
-  const repeats = crossRepeats(cur.chapters);
+  // 장·key 사이 반복 + 같은 처방·상투구(P2 판독 경미 대부분) — 뒤쪽 묶음 1회 다시 쓰기.
+  const repeatsOf = (chs: readonly FinalChapter[]) => [...crossRepeats(chs), ...adviceRepeats(chs)];
+  const repeats = repeatsOf(cur.chapters);
   const repeatFirst = repeats.length;
   if (repeats.length) {
     const before = new Map(drafts), blockBefore = seen.block.length;
@@ -186,7 +190,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     blockFirst: firstBlock, rounds, repeatFirst, deleted: cutR.cut, headingsReplaced: cutR.headings, droppedSections: [...cutR.droppedSections, ...droppedLeft], missed: cutR.missed.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.rule}`), replaced,
     remainingMinor: final.minor.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, sentence: f.sentence.slice(0, 160) })),
     remainingHard: final.block.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })),
-    remainingRepeat: crossRepeats(chapters).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 160) })),
+    remainingRepeat: repeatsOf(chapters).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 160) })),
     style: styleScoreOf(final.lint), cover: { source: cover.source, firstProblem: cover.issue },
   };
   const report = { ...cur.net.report, metrics: { ...(cur.net.report.metrics as NonNullable<typeof cur.net.report.metrics>), p6c: { tidy: cur.tidy, flags: byRule(seen.lint), repairTargets: 0, repaired: 0, repairCalls: 0, redoCalls: 0, redoChapters: [], remaining: byRule(final.lint), removed: 0, droppedParagraphs: 0,

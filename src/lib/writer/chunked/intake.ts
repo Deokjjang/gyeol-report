@@ -23,7 +23,7 @@ export type Line = { readonly id: string; readonly subject: Subject; readonly va
 /** 명리 × MBTI 짝. 이 짝만 한 문장 안에서 잇는다. */
 export type Pair = { readonly id: string; readonly myeongri: string; readonly mbti: string; readonly why: string };
 /** 반복 장 key 하나(세운 달·대운 연도): 그 시기 카드. head는 시스템이 첫 문장으로 넣는 머리 문장(작가는 되풀이하지 않는다). */
-export type KeyPlan = { readonly key: string; readonly label: string; readonly head: string; readonly when: "past" | "current" | "future"; readonly lines: readonly string[]; readonly claims: readonly string[]; readonly depth?: "deep" | "short"; readonly scene?: string };
+export type KeyPlan = { readonly key: string; readonly label: string; readonly head: string; readonly when: "past" | "current" | "future"; readonly lines: readonly string[]; readonly claims: readonly string[]; readonly depth?: "deep" | "short"; readonly scene?: string; readonly todo?: string };
 export type SectionPlan = { readonly q: string; readonly lines: readonly string[]; readonly angle?: string; readonly claims: readonly string[]; readonly scene?: string };
 export type ChapterPlan = {
   readonly n: number; readonly id: string; readonly title: string; readonly question: string;
@@ -44,7 +44,7 @@ const noHanja = (t: string) => t.replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (_a,
   .replace(/[一-鿿]+/g, m => [...m].map(ch => READING[ch] ?? "").join(""));
 /** 시점 말(지금·올해·이번 달)을 뜻이 같은 말로 바꾸거나 뗀다(브리프 글만 — 작가 원고에는 쓰지 않는다). */
 export function untime(t: string, year?: number): string {
-  return t.replace(/지금 이 순간/g, "눈앞의 순간").replace(/(?<![가-힣])당장 /g, "눈앞의 ").replace(/지금(?=(을|이|의|도|에) )/g, "이 순간").replace(/지금까지(는|도)?/g, (_m, j?: string) => `그동안${j === "는" ? "은" : j ?? ""}`).replace(/지금의? (?=회사|직장|자리|일|대운|10년|관계|연인|생활|팀|맡은|하는|다니는)/g, "")
+  return t.replace(/지금 이 순간/g, "눈앞의 순간").replace(/지금(보다|처럼|만큼)/g, "눈앞의 일$1").replace(/(?<![가-힣])당장 /g, "눈앞의 ").replace(/지금(?=(을|이|의|도|에) )/g, "이 순간").replace(/지금까지(는|도)?/g, (_m, j?: string) => `그동안${j === "는" ? "은" : j ?? ""}`).replace(/지금의? (?=회사|직장|자리|일|대운|10년|관계|연인|생활|팀|맡은|하는|다니는)/g, "")
     .replace(/지금 (?=[가-힣])/g, "").replace(/지금은 /g, "").replace(/(?<![가-힣])지금(?![가-힣])/g, "")
     .replace(/올해(?=[ 의는도에가])/g, year ? `${year}년` : "그 해").replace(/이번 (한 )?달/g, "그 달").replace(/요즘|최근에?/g, "").replace(/ {2,}/g, " ").trim();
 }
@@ -132,7 +132,10 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const traitId = new Map<string, string>();
   for (const t of brief.traits) {
     if (!t.chapters.length) continue;
-    const id = add("natal", t.name, [t.meaning, t.forYou, ...t.good, t.overuse ?? ""].filter(Boolean).join(" · "));
+    // AM2 P2 판독(major-1 3장 「갑인일주의 백호대살」, 카드는 태어난 달): 자리를 값에 적고, 지식 DB의 일반론(「일주에 있을 때 가장 진하게」)은 뺀다.
+    const seat = t.positionNote?.match(/^(태어난 (?:해|달|날|시각)) 자리/)?.[1];
+    const general = (x: string) => x.split(/(?<=[.!?])\s+/).filter(y => !/(일주|월주|연주|시주|일지|월지|연지|시지)에 (있을 때|있으면|오면|놓이면)/.test(y)).join(" ");
+    const id = add("natal", `${t.name}${seat ? ` (${seat} 자리)` : ""}`, [t.meaning, t.forYou, ...t.good, t.overuse ?? ""].filter(Boolean).map(general).filter(Boolean).join(" · "));
     if (id) traitId.set(t.id, id);
   }
   const shadowId = new Map(brief.shadows.map(s => [s.id, add("natal", `숙제로 볼 점: ${s.text}`, [s.basis, s.warmTurn].join(" · "))] as const));
@@ -142,7 +145,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const dayunNext = cd?.next ? add("dayun", `다음 대운: ${cd.next.ganji.hangul} 대운(${cd.next.start ?? cd.next.label})`, [`${cd.next.tenGod}의 10년`, cd.next.reading ?? ""].filter(Boolean).join(" · ")) : null;
   // MBTI.
   const mbti = brief.mbti;
-  const mbtiType = mbti ? add("mbti", `MBTI ${mbti.type}`, (k.mbti.get(mbti.type as never)?.cognitiveFunctions ?? []).map(fn => `${fn.role}: ${fn.easy.split(/(?<=[.!?])\s/)[0]}`).join(" · ")) : null;
+  // P2 판독: 카드 칸 이름 「부기능·열등기능」을 작가가 그대로 옮겼다 → 고객 말로(가장 센 쪽 · 두 번째 · 세 번째 · 가장 늦게 자라는 쪽).
+  const ROLE_KO: Readonly<Record<string, string>> = { 주기능: "가장 센 쪽", 부기능: "두 번째로 쓰는 쪽", "3차기능": "세 번째로 쓰는 쪽", 열등기능: "가장 늦게 자라는 쪽" };
+  const mbtiType = mbti ? add("mbti", `MBTI ${mbti.type}`, (k.mbti.get(mbti.type as never)?.cognitiveFunctions ?? []).map(fn => `${ROLE_KO[fn.role] ?? fn.role}: ${fn.easy.split(/(?<=[.!?])\s/)[0]}`).join(" · ")) : null;
   for (const t of brief.traits) if (t.fusion && mbtiType && traitId.get(t.id)) pairs.push({ id: `P${pairs.length + 1}`, myeongri: traitId.get(t.id)!, mbti: mbtiType, why: say(t.fusion.why, year) });
   // 장 재료 → 줄.
   const refLine = (ref: string): string[] => {
@@ -175,9 +180,11 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const cb = brief.chapters.find(x => x.id === ch.id) ?? brief.chapters.find(x => x.id.startsWith(`${ch.id}:`));
     const scene = (hints: readonly string[] | undefined) => (hints ?? []).map(h => say(h, year)).find(h => h && sceneFits(h, brief));
     if (ch.keys) {
+      // 같은 십성 달·해끼리 생활 줄이 글자까지 같다(P2 판독: 카드 동일 문구가 본문 되풀이 8곳) → 두 번째부터는 「앞 key와 같은 결」 한 줄로.
+      const seenLife = new Map<string, string>();
       const keys: KeyPlan[] = ch.keys.map(key => {
         const e = entries.get(key)!, kb = brief.chapters.find(x => x.id === `${ch.id}:${key}`);
-        return keyPlan(e, kb?.materials ?? [], ch.n, add, matLines, brief, year);
+        return keyPlan(e, kb?.materials ?? [], ch.n, add, matLines, brief, year, seenLife);
       });
       return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: ch.targetChars, useName: ch.useName, keys, claims: [], avoid: [] };
     }
@@ -202,7 +209,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   return { product, person: personCard(brief, year, product === "annual_fortune" ? readWish(wishRaw) : null), lines: finalLines, pairs: pairs.filter(p => p.why), chapters: out };
 }
 
-function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s: Subject, v: string, m?: string, n?: number) => string | null, matLines: (m: Material, n: number) => string[], brief: Brief, year: number): KeyPlan {
+function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s: Subject, v: string, m?: string, n?: number) => string | null, matLines: (m: Material, n: number) => string[], brief: Brief, year: number, seenLife: Map<string, string> = new Map()): KeyPlan {
   const month = e.kind === "month", subj: Subject = month ? "month" : "year";
   const label = month ? e.label.split(" (")[0] : `${e.key}년 ${e.ganji.hangul}년`;
   const notes = brief.timeline?.tenGodNotes ?? {};
@@ -215,7 +222,9 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   for (const b of e.badges.filter(b => b.kind !== "GONGMANG").slice(0, 3)) push(`${b.label}${b.with ? `(${b.with} 자리와)` : ""}`, b.line);
   const sig = (e as TimelineEntry & { signals?: Record<string, string> }).signals;
   if (sig) push("영역 흐름", Object.entries(DOMAIN_SIGNAL).map(([d, ko]) => `${ko} ${SIGNAL_KO(sig[d] ?? "→")}`).join(" · "));
-  for (const d of (e.material?.domains ?? []).filter(x => sceneFits(x, brief))) push("생활", d);
+  const same: string[] = [];
+  for (const d of (e.material?.domains ?? []).filter(x => sceneFits(x, brief))) { const prev = seenLife.get(d); if (prev) { if (!same.includes(prev)) same.push(prev); continue; } seenLife.set(d, label); push("생활", d); }
+  if (same.length) push("생활 결", `${same.join(" · ")}과 같은 생활 결(일·돈·관계·컨디션)`);
   if (e.fillsLack?.fills && e.fillsLack.elements.length) push("부족한 기운을 채움", "");
   push(`흐름 세기 ${e.flow.score}/5`, e.flow.label);
   if (e.dayun?.position) push("대운 안의 위치", e.dayun.position.replace(/^\d{4}~\d{4} /, ""));
@@ -226,8 +235,11 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const depth = deep ? (/^핵심 해/.test(deep.facts[0] ?? "") ? "deep" : "short") : undefined;
   if (depth === "deep") push("이 10년에서 눈여겨볼 해", say(deep!.facts[0].replace(/^핵심 해 \d+: /, ""), year));
   const scene = e.material?.scene && sceneFits(e.material.scene, brief) ? say(e.material.scene, year) : undefined;
+  // 할 일 씨앗(엔진이 key마다 겹치지 않게 고른 행동 문형) — 같은 처방이 여러 key에 되풀이되지 않게.
+  const todoRaw = e.action?.text && sceneFits(e.action.text, brief) ? say(e.action.text, year) : "";
   const claim = sig ? Object.entries(DOMAIN_SIGNAL).filter(([d]) => sig[d] && sig[d] !== "→").map(([d, ko]) => `${ko} ${SIGNAL_KO(sig[d])}`).join(" · ") : "";
-  return { key: e.key, label, head: say(e.head ?? "", year), when: (e.when ?? e.period ?? "future") as KeyPlan["when"], lines: [...new Set(ids)], claims: claim ? [`${label}: ${claim}`] : [], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}) };
+  const when = (e.when ?? e.period ?? "future") as KeyPlan["when"];
+  return { key: e.key, label, head: say(e.head ?? "", year), when, lines: [...new Set(ids)], claims: claim ? [`${label}: ${claim}`] : [], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}), ...(todoRaw && when !== "past" ? { todo: todoRaw } : {}) };
 }
 
 /** 대운 안 위치 말(엔진과 같은 경계: 1 첫해 · 2~3 앞쪽 · 4~7 중간 · 8~9 끝 무렵 · 10 마지막 해). */
