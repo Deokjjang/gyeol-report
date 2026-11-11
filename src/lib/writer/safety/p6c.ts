@@ -122,7 +122,7 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   common_split: "두 사람 모두 가진 특징을 한 사람만의 것·차이의 근거로 썼다 → '두 사람 모두'로 쓰거나 다른 근거로",
   render_dup: "같은 말을 두 번 이었다(「X, 곧 X」) → 한 번만",
   label_leak: "내부 분류 라벨·생성 규칙·면책 문구가 본문에 나왔다 → 그 말을 빼고 내용만",
-  time_fixed: "종합 본문에 연·월 숫자를 고정했다 → 운 설명은 '올해(병오)', 행동 제안은 '앞으로 한 달'로",
+  time_fixed: "종합 본문에 달·「20XX년」만 고정했다 → 운 설명은 '2026년 병오년'처럼 해 이름(연도 + 간지)으로, 행동 제안은 '앞으로 한 달'로",
   input_outside: "입력에 없는 직업 상황을 사실처럼 썼다 → 입력에 있는 사실만, 아니면 직업과 무관한 보편 장면으로",
   db_copy: "브리프 글을 20자 넘게 그대로 옮겼다 → 같은 뜻을 이 고객의 말로 새로 쓴다",
   prior_overlap: "이 고객의 다른 책과 같은 문장이다 → 다른 장면·다른 말로 쓴다",
@@ -343,7 +343,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       // AM 7부: 대운·세운(시점 말 전부 금지)의 「지금 대운·지금 10년」은 뜻이 같은 「이 대운·이 10년」으로(major-1 판독: 장 이름을 따라 쓴 문장이 수리 뒤에도 남음).
       // annual-4 r3: 「지금 계유 대운의 끝 무렵」 — 간지 이름이 붙은 대운은 「지금」만 뗀다.
-      if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년"); if (r !== q) { words++; q = r; } }
+      if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, ""); if (r !== q) { words++; q = r; } }
       // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.
       { const y = ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0); if (ctx.strictTime && y) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
       // AM 7부: 세운 본문의 맨 달 이름 → 달 표와 같은 짝(「5월(을사월)」). annual-2·5에서 수리 뒤에도 남았다.

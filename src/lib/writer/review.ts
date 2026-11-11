@@ -9,6 +9,7 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { shinsalAliases } from "@/lib/factsheet/aliases";
+import { fixedTimeOf, hasYearName } from "@/lib/factsheet/check";
 import type { FinalChapter } from "./safety";
 import { splitSentences } from "./safety/patterns";
 
@@ -50,7 +51,7 @@ export const REVIEW_SYSTEM = `너는 결리포트(사주×MBTI 리포트) 원고
 - I 입력 밖 상황 단정: 입력에 없는 직업 상황·사람(직원·투자자·팀원)·돈 사정·연애 사정·가족 구성원·과거 사건을 사실처럼 단정. 가정형("~라면")·질문형은 제외. field에 넘어선 입력 칸(input.job·input.relationship·input.children·input.relationType·input.money·input.family) 필수.
 - R 다른 장의 같은 뜻 반복: 다른 장에서 같은 장면·같은 처방·같은 비유·같은 성향 설명을 되풀이. s = 뒤쪽 문장, s2 = 앞쪽 문장 필수. 같은 소제목 안 흐름은 반복이 아니다.
 - L 내부 라벨·면책·생성 규칙 노출: 분류 라벨(「·십이신살」), "시기는 말하지 않아요" 같은 면책, "가정 아래에서만"·"~가 계시다면" 같은 작성 규칙이 독자에게 보임.
-- T 시점 표현 위반: 종합 책 본문의 연·월 숫자 고정(행동 제안은 "앞으로 한 달", 운 설명은 "올해(간지)"), 기준일과 맞지 않는 시점 말.
+- T 시점 표현 위반: 종합 책 본문의 달·연도 숫자만 고정(행동 제안은 "앞으로 한 달"). 운 설명의 해 이름 "2026년 병오년"·"2027년 정미년"(연도 + 간지)은 맞는 꼴이라 T가 아니다. 기준일과 맞지 않는 시점 말.
 - A 명백한 비문·조사·단어 오용(예: 뜻을 잘못 쓴 낱말, 받침과 안 맞는 조사). fix에 고친 문장 전체 필수(원문에 없던 명리 용어·숫자를 넣지 않는다).
 
 규칙:
@@ -191,6 +192,8 @@ export function guardReview(text: string, numbered: readonly Numbered[], ids: Re
     if (x.cat === "A" && !fix) { drop("A_without_fix"); continue; }
     // T(연·월 고정)는 종합 책 규칙이다. 커리어·연애의 3년 로드맵 날짜는 유지한다(최종판3 2e).
     if (x.cat === "T" && product !== "saju_mbti_full") { drop("T_not_comprehensive"); continue; }
+    // AM 판독(종합 8장): 허용된 해 이름 꼴(「2027년 정미년」)을 T로 지적 → 수리가 「올해 병오년」으로 바꿔 2027 관계가 2026 문장에 붙었다. 해 이름만 있고 달·연도 고정·「올해」가 없는 문장의 T는 버린다.
+    if (x.cat === "T" && hasYearName(byN.get(s)!.text) && !fixedTimeOf(byN.get(s)!.text) && !/올해|이번 달|이달/.test(byN.get(s)!.text)) { drop("T_year_name_allowed"); continue; }
     if (seen.has(s)) { drop("duplicate_sentence"); continue; }
     seen.add(s);
     const issue: ReviewIssue = { cat: x.cat as ReviewCat, s, quote, why: String(x.why ?? "").slice(0, 300), ref, s2, field, fix };

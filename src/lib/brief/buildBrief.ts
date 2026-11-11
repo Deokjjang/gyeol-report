@@ -344,7 +344,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       const mrng = rng.fork("monthEvidence");
       const py = getAnnualPillar(year - 1), cy = getAnnualPillar(year);
       keyMaterials.set(bridge.key, [bridgeEvidence(bridge, `${year - 1}년 ${ganjiLabel(py).replace(/\(.*\)/, "")}년`, `${year}년 ${ganjiLabel(cy).replace(/\(.*\)/, "")}년`)]);
-      for (const m of months) { const e = monthEvidence({ k, rng: mrng }, m); if (e) keyMaterials.set(m.key, [e]); }
+      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus }, m); if (e) keyMaterials.set(m.key, [e]); }
       // 「좋은 것」 결정론 값: 오르는 영역(없으면 보통 영역)의 그달 십성 영역 줄(periodDomains: 일·돈·관계·컨디션).
       for (const m of [bridge, ...months]) { const tg = m.tenGod.stem.match(/\((.+)\)/)?.[1] as Parameters<typeof periodDomains>[0] | undefined; if (!tg || !m.signals) continue;
         const lines = periodDomains(tg), up = (["work", "money", "people", "mind", "love"] as const).find(d => m.signals![d] === "↑");

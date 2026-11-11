@@ -52,7 +52,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 세운 1`] = `
     "2027-M11 壬子 정관(正官) f3 STEM_HAP+YUKHAP+BANGHAP act:正官:work:low",
     "2027-M12 癸丑 편관(偏官) f4 YUKHAP+SAMHAP+BANGHAP act:偏官:love:high",
   ],
-  "tokens": 17976,
+  "tokens": 17966,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [big,love,work]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [big,money,month]",

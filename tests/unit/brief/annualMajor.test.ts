@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildBrief, loadKnowledge } from "../../../src/lib/brief";
 import { calculateSaju } from "../../../src/lib/saju/calculateSaju";
 import { getMonthlyPillars } from "../../../src/lib/saju/detections";
-import { domainSignals, luckyOf, readWish, samjaeOf, yearVerdict } from "../../../src/lib/brief/design/annual";
+import { domainSignals, loveLineFits, luckyOf, readWish, samjaeOf, yearVerdict } from "../../../src/lib/brief/design/annual";
 import { relationYears, yearName, yearRelationCard, yearRelationEvidence } from "../../../src/lib/brief/yearRelation";
 import { renderWriterBrief } from "../../../src/lib/writer/prompt";
 
@@ -139,7 +139,7 @@ describe("AM 안전망: 반합 표준 풀이는 글자 수 오탐이 아니다",
 
 // AM 7부: 7부 실호출 판독에서 고친 것(호출 0).
 describe("AM 7부: 시점 말·달 이름 결정론 정리", async () => {
-  const { pairMonthNames, calendarMonth } = await import("../../../src/lib/writer/safety/p6d");
+  const { pairMonthNames, calendarMonth, timeDeictic } = await import("../../../src/lib/writer/safety/p6d");
   const { monthNamesOf } = await import("../../../src/lib/writer/publish");
   const { tidyBook } = await import("../../../src/lib/writer/safety/p6c");
   const entries = [
@@ -171,6 +171,13 @@ describe("AM 7부: 시점 말·달 이름 결정론 정리", async () => {
     expect(tidyBook(ch as never, ctx as never).chapters[0].sections[0].paragraphs[0]).toBe("이 대운의 주제는 자립이고, 이 10년은 길게 봐요. 5월(을사월)에 힘이 몰려요. 강하린님은 계유 대운의 끝 무렵에 서 있어요.");
     // 4종(시점 말 느슨)은 그대로
     expect(tidyBook(ch as never, { mbtiPlain: {}, monthChapters: new Set<number>() } as never).chapters[0].sections[0].paragraphs[0]).toContain("지금 대운의 주제는");
+  });
+  it("tidyBook: 「지금 할 수 있는 일」은 시점 말로 지우지 않고 「지금」만 뗀다(annual-4 9.1.1 고아)", () => {
+    const ch = [{ n: 1, id: "wish", title: "소망", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["걱정이 길어지면 뉴스를 닫고 지금 할 수 있는 일로 돌아오세요. 지금 바로 할 수 있는 한 가지면 돼요."] }] }];
+    const ctx = { mbtiPlain: {}, monthChapters: new Set<number>(), strictTime: true, calendarChapters: new Set<number>(), monthNames: names };
+    const out = tidyBook(ch as never, ctx as never).chapters[0].sections[0].paragraphs[0];
+    expect(out).toBe("걱정이 길어지면 뉴스를 닫고 할 수 있는 일로 돌아오세요. 바로 할 수 있는 한 가지면 돼요.");
+    expect(timeDeictic(out, true)).toBe(false);
   });
 });
 
@@ -205,6 +212,39 @@ describe("AM 7부: 달 카드 관계 — 엔진 배지와 사실 검사가 같�
     expect(calendarMonth("5월 무렵에는 쉬어 가요.")).toBe(true);
     // 세운이 아닌 책·카드 밖·때 낱말 없는 문단(원국 이야기)은 그대로 원국만 본다
     expect(factCheck("묘유충이 걸려 있어 말이 날카로워질 수 있어요.", { ...ctx, product: "saju_mbti_full" })?.rule).toBe("fact_relation");
+  });
+});
+
+describe("AM 7부: 연애 DB 줄은 적어 준 상태에 맞는 것만(annual-4 솔로에게 「만나는 사람이 있다면」)", () => {
+  it("솔로·썸은 「만나는 사람이 있다면」 줄을, 연애 중·결혼 준비·기혼은 「새 인연」 줄을 뺀다 · 미입력은 모두", () => {
+    const has = "만나는 사람이 있다면 친구처럼 나란히 노는 시간이 관계를 살리는 흐름", fresh = "새 인연은 취미 모임·동기처럼 비슷한 또래 사이에서 닿기 쉬운 때", plain = "혼자 있는 시간이 좋아져 연락 빈도를 내 속도로 맞추고 싶어지는 쪽";
+    for (const s of ["single", "some"]) expect([has, fresh, plain].filter(l => loveLineFits(l, s))).toEqual([fresh, plain]);
+    for (const s of ["dating", "marriage_preparing", "married"]) expect([has, fresh, plain].filter(l => loveLineFits(l, s))).toEqual([has, plain]);
+    expect([has, fresh, plain].filter(l => loveLineFits(l, ""))).toEqual([has, fresh, plain]);
+  });
+  it("솔로 세운 브리프의 연애·달 근거에 「만나는 사람이 있다면」이 없다", () => {
+    const solo = annual({ name: "강하린", birthDate: "1999-07-13", birthTime: "05:50", mbtiType: "INFP", rel: "single", job: "freelancer" });
+    const text = JSON.stringify(solo);
+    expect(text).not.toContain("만나는 사람이 있다면");
+    expect(text).toContain("적어 준 연애 상태: 솔로");
+  });
+});
+
+describe("AM 7부: 4종 판독 — 검수 T가 허용된 해 이름을 연도 고정으로 지적(종합 8장)", async () => {
+  const { guardReview } = await import("../../../src/lib/writer/review");
+  const { fixedTimeOf } = await import("../../../src/lib/factsheet/check");
+  const numbered = [
+    { n: 1, chapter: 8, section: 0, paragraph: 1, text: "2027년 정미(丁未)년은 미가 태어난 날 땅 글자 축과 부딪치는 해예요." },
+    { n: 2, chapter: 8, section: 0, paragraph: 2, text: "2026년 11월 한 달 동안 메뉴를 정리해 보세요." },
+    { n: 3, chapter: 8, section: 0, paragraph: 3, text: "올해 병오년의 오는 축과 만나 해가 돼요." },
+  ];
+  const issue = (s: number, quote: string) => ({ cat: "T", s, quote, why: "연도를 고정했다" });
+  it("해 이름만 있는 문장의 T는 버리고, 달 고정·「올해」 문장의 T는 남긴다", () => {
+    const g = guardReview(JSON.stringify({ issues: [issue(1, "2027년 정미(丁未)년은"), issue(2, "2026년 11월 한 달 동안"), issue(3, "올해 병오년의")] }), numbered, new Set(), 0, "saju_mbti_full")!;
+    expect(g.kept.map(i => i.s)).toEqual([2, 3]);
+    expect(g.dropped.map(d => d.reason)).toEqual(["T_year_name_allowed"]);
+    expect(fixedTimeOf(numbered[0].text)).toBeNull();
+    expect(fixedTimeOf(numbered[1].text)).toBe("2026년 11월");
   });
 });
 

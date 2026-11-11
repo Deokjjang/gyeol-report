@@ -109,6 +109,11 @@ export type AnnualCtx = {
 const WORK_KEY = (s: string) => ({ employee: "status:employee", job_seeker: "status:job_seeker", student: "status:student", self_employed: "status:business", business_owner: "status:business", freelancer: "status:freelancer", unemployed: "status:other", homemaker: "status:other", other: "status:other" } as Record<string, string>)[s];
 const LOVE_KEY = (s: string) => ({ single: "love:single", some: "love:single", dating: "love:dating", marriage_preparing: "love:dating", married: "love:married" } as Record<string, string>)[s];
 const WORK_KO = (s: string) => ({ employee: "직장인", job_seeker: "취업 준비", student: "학생", self_employed: "사업", business_owner: "사업", freelancer: "프리랜서", unemployed: "쉬는 중", homemaker: "살림", other: "쉬는 중" } as Record<string, string>)[s];
+/** AM 7부 판독(annual-4 솔로에게 「만나는 사람이 있다면 …」 줄을 주자 작가가 조건을 떼어 씀 3곳): 연애 DB 줄은 적어 준 상태에 맞는 것만. 미입력이면 모두(있다면·없다면으로 나눠 쓰라는 지시). */
+export function loveLineFits(line: string, status: string): boolean {
+  const solo = status === "single" || status === "some", paired = status === "dating" || status === "marriage_preparing" || status === "married";
+  return !(solo && /^만나는 사람이 있다면/.test(line)) && !(paired && /새 인연/.test(line));
+}
 const LOVE_KO = (s: string) => ({ single: "솔로", some: "솔로(썸)", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼" } as Record<string, string>)[s];
 /** 흐름 세기 판정(참고): 4~5 밀고 갈 해, 3 고르게 다질 해, 1~2 버티며 다질 해. */
 export const yearVerdict = (score: number) => (score >= 4 ? "밀고 갈 해" : score === 3 ? "고르게 다질 해" : "버티며 다질 해");
@@ -124,8 +129,9 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const stemTg = c.yearEntry.tenGod.stem.match(/\((.+)\)/)?.[1] as TenGod, branchTg = c.yearEntry.tenGod.branch.match(/\((.+)\)/)?.[1] as TenGod;
   const g1 = groupOf(stemTg), g2 = groupOf(branchTg);
   const pick = (lines: readonly string[], n: number, label: string) => { const r = c.rng.fork(label); const pool = [...lines]; const out: string[] = []; while (pool.length && out.length < n) out.push(pool.splice(r.int(pool.length), 1)[0]); return out; };
-  const domain = (facet: string, n = 2) => pick(deepLines(c.k, "annual-domain", `tenGod:${stemTg}`, facet), n, `dom:${facet}`);
-  const domainB = (facet: string) => stemTg === branchTg ? [] : pick(deepLines(c.k, "annual-domain", `tenGod:${branchTg}`, facet), 1, `domB:${facet}`);
+  const fit = (facet: string) => (l: string) => facet !== "love" || loveLineFits(l, c.relationshipStatus);
+  const domain = (facet: string, n = 2) => pick(deepLines(c.k, "annual-domain", `tenGod:${stemTg}`, facet).filter(fit(facet)), n, `dom:${facet}`);
+  const domainB = (facet: string) => stemTg === branchTg ? [] : pick(deepLines(c.k, "annual-domain", `tenGod:${branchTg}`, facet).filter(fit(facet)), 1, `domB:${facet}`);
   const wk = WORK_KEY(c.jobStatus), lk = LOVE_KEY(c.relationshipStatus);
   const situ = (key: string | undefined, label: string) => key ? pick([...deepLines(c.k, "annual-situation", key, g1), ...(g2 !== g1 ? deepLines(c.k, "annual-situation", key, g2) : [])], 2, label) : [];
   const ys = (c.yearEntry as TimelineEntry & { signals?: DomainSignals }).signals;
@@ -177,12 +183,12 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
 const GROUP_KO: Readonly<Record<Group, string>> = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는 기운(식상)", WEALTH: "재물 기운(재성)", OFFICER: "책임의 기운(관성)", RESOURCE: "받쳐 주는 기운(인성)" };
 
 /** 달마다 작가 근거(key별): 영역 신호 + 그달 십성의 영역 장면(오르는·내리는 영역 둘까지). */
-export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng">, e: TimelineEntry & { signals?: DomainSignals }): Evidence | null {
+export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng"> & { readonly relationshipStatus?: string }, e: TimelineEntry & { signals?: DomainSignals }): Evidence | null {
   if (!e.signals) return null;
   const tg = e.tenGod.stem.match(/\((.+)\)/)?.[1] ?? "";
   const notable = (Object.keys(DOMAIN_KO) as DomainKey[]).filter(d => e.signals![d] !== "→").slice(0, 2);
   const facet = (d: DomainKey) => (d === "people" ? "people" : d);
-  const lines = notable.flatMap(d => { const pool = deepLines(c.k, "annual-domain", `tenGod:${tg}`, facet(d)); return pool.length ? [`${DOMAIN_KO[d]} ${e.signals![d]}: ${pool[c.rng.fork(`m:${e.key}:${d}`).int(pool.length)]}`] : []; });
+  const lines = notable.flatMap(d => { const pool = deepLines(c.k, "annual-domain", `tenGod:${tg}`, facet(d)).filter(l => d !== "love" || loveLineFits(l, c.relationshipStatus ?? "")); return pool.length ? [`${DOMAIN_KO[d]} ${e.signals![d]}: ${pool[c.rng.fork(`m:${e.key}:${d}`).int(pool.length)]}`] : []; });
   return { kind: "evidence", key: `month:${e.key}`, facts: [`영역 신호(참고): ${signalsLine(e.signals)}`, ...lines], note: "카드 [좋은 것]·[살필 점]은 신호가 오르는·내리는 영역에서. 이웃 달과 같은 조언·표현 금지" };
 }
 
