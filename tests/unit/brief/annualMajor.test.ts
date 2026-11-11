@@ -552,4 +552,13 @@ describe("AM 재생성 3(major-1 자동 점검 FAIL 원인, 호출 0)", async ()
     const out = tidyBook([{ n: 9, id: "x", title: "t", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["지금 서 있는 곳이 가장 중요한 자리예요."] }] }] as never, { mbtiPlain: {}, monthChapters: new Set(), strictTime: true, baseDate: "2026-12-02" } as never).chapters[0].sections[0].paragraphs[0];
     expect(out).toBe("서 있는 곳이 가장 중요한 자리예요.");
   });
+  it("대운·세운 시점 말 수리 지시: 고친 문장에 「지금」을 어떤 꼴로도 쓰지 않게(major-1 두 회차 「솔로인 지금의 시기에는」)", async () => {
+    const { lintBook } = await import("../../../src/lib/writer/safety/p6c");
+    const { lintContext } = await import("../../../src/lib/writer/publish");
+    const { buildWriterPrompt } = await import("../../../src/lib/writer/prompt");
+    const b = buildBrief({ product: "major_fortune", person: person({ gender: "MALE", birthDate: "1998-11-03", birthTime: "10:30", mbtiType: "ENTP" }), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
+    const ctx = lintContext(b as never, k, buildWriterPrompt(b as never, { knowledge: k }).chapters, []);
+    const f = lintBook([{ n: 9, id: "x", title: "t", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["가장 먼저 기억할 것은 지금이 내 이름으로 서는 10년의 한가운데라는 점입니다. 기록을 남겨요."] }] }] as never, ctx).find(x => x.rule === "time_deictic");
+    expect(f?.hint).toMatch(/'지금'이라는 낱말을 어떤 꼴로도 쓰지 않는다/);
+  });
 });

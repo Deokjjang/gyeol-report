@@ -108,6 +108,8 @@ export type LintCtx = {
   readonly fact?: FactCtx;
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
+/** 대운·세운(달력 책): 고친 문장에 「지금·지금의·지금은」을 다시 쓰면 또 걸린다. */
+const TIME_DEICTIC_STRICT_HINT = "읽는 때를 못 박는 말('지금')이다 → 고친 문장에 '지금'이라는 낱말을 어떤 꼴로도 쓰지 않는다: '지금'을 떼거나 '이 대운·이 10년·이 해·이 시기'로 바꾼다(예: '지금이 10년의 한가운데' → '이 10년의 한가운데', '지금 솔로라면' → '솔로라면')";
 const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
 const CALM_FLOW = /흐름(?:이|은|도)? (?:한결 |조금 |좀 |훨씬 )?(?:가벼워|잔잔해|느려|편안해|순해|누그러)/;
 const ROUGH_FLOW = /흐름(?:이|은|도)? (?:한결 |훨씬 |더 )?(?:거세|세차|몰아치)/;
@@ -396,7 +398,8 @@ export function nowMonth(text: string): string {
 /** 수리 패스로 보낼 목록(책 순서). */
 export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];
-  const flag = (f: Omit<LintFlag, "hint">) => out.push({ ...f, hint: HINT[f.rule] });
+  // AM 재생성 3(major-1 두 회차): 대운·세운 수리가 「지금」을 다른 자리로 옮겨 다시 썼다(「솔로인 지금의 시기에는」「지금 그 한가운데를」) → 달력 책은 「지금」 낱말 자체를 쓰지 않게 고칠 말을 준다.
+  const flag = (f: Omit<LintFlag, "hint">) => out.push({ ...f, hint: f.rule === "time_deictic" && ctx.strictTime ? TIME_DEICTIC_STRICT_HINT : HINT[f.rule] });
   let formulas = 0, backrefs = 0;
   const propSeen = new Set<string>();
   const explained = new Set<string>();
