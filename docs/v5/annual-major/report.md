@@ -191,7 +191,8 @@ NODE_PATH=tools/quality/shim pnpm exec tsx tools/quality/ratchet.ts --current ~/
 7. **오픈 전 덕짱님 할 일**: 가격 결정, 검토 묶음 판독, legal-review.md AM 절 확인 질문 3개 답, 판매 시작 시각 확정.
 
 ### 원격 SHA
-(push 뒤 채운다.)
+- `origin/v5/annual-major-01` = 로컬 `a5519db80a118b835effe0860e2af2e975747ef5`(`git ls-remote`로 일치 확인, 2026-11-11). 코드 마지막 커밋은 그 바로 앞 `48bba1f0`(tsc·lint·build를 이 커밋에서 다시 돌림).
+- 이 줄을 적은 문서 커밋이 그 뒤에 하나 더 붙는다(내용은 이 절뿐). master·v5/main 병합 없음.
 
 ### 남은 위험
 - 대운 원고가 5분을 넘거나 잘리면 2회 호출 나누기가 필요할 수 있다(7부 첫 권 자동 점검이 잰다).
