@@ -206,7 +206,22 @@ AM 실측(세운 원가 비율 12.2% · 대운 6.0%)보다 높다. 세운 3,900�
 | 4종 회귀(저장 원고 replay, `pnpm book:replay`) | AM-01과 같음(원문 있는 3권 출력 같음, chaerin-love 기록 같음) |
 | 기존 AM 세운·대운 저장본 12권 렌더 투영 | AM-01과 같음 |
 | 공유 회귀 `bookSharing.test.tsx` | AM-01·AM-02 둘 다 `LOCAL_BIND_FAILED`(이 기계 환경 — 포트 바인드 금지) |
-| 전체 시험 사례별 비교(AM-01 기준) | (7-1) |
+| 전체 시험 사례별 비교(AM-01 기준) | **새 실패 0**(7-1) |
+
+### 7-1. 전체 시험(`pnpm exec vitest run --reporter=json`, a1a4f84c) — AM-01(f71bd513)과 사례별
+
+| | 파일 | 실패 파일 | 사례 | 통과 | 실패 |
+|---|---|---|---|---|---|
+| AM-01 | 701 | 152 | 32,030 | 27,908 | 824 |
+| AM-02 | 702(+ am2Chunked) | 151 | 32,041 | 27,917 | 826 |
+
+- AM-02에서만 실패한 사례는 3개다. 셋 다 혼자 돌리면 통과한다(부하 때 시간 초과, `STACK_TRACE_ERROR`).
+  - `claimProfile` 「new modules have no customer…」
+  - `actualCalculationSemanticBridge` 「rejects caller-forged Graph/proof producer」
+  - `loveQuality` 「does not manufacture source-based paragraphs…」
+  - `loveQuality`는 앞 사례에 기대는 파일이라 파일째 돌려야 한다(18/18 통과).
+- AM-01에서만 실패한 사례 1(`productWideEditorial`)도 같은 부하 사례다.
+- 나머지 실패 152파일은 AM-01과 같다(기존 실패).
 
 ## 8. 결정 필요
 
