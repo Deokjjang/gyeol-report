@@ -158,14 +158,17 @@ export function elementAbsenceClaims(sentence: string, presence: ElementPresence
  * 최종판 1-5 오행 개수: "없다·하나도 없다"(앞에 오는 꼴 "없는 쇠" 포함)·"가장 많다·가장 적다"를 원국 겉 글자 수(presence.surface)와 대조한다.
  * 없다: 겉 1개 이상이면 위반(겉 0·땅속만 있음은 elementAbsenceClaims가 본다). 가장 많다/적다: 겉 수가 최댓값/최솟값이 아니면 위반(같은 수는 허용).
  */
-export function elementCountClaims(sentence: string, presence: ElementPresence): string | null {
+export function elementCountClaims(sentence: string, presence: ElementPresence, strongest?: string): string | null {
   if (QUALIFIED.test(sentence)) return null;
   const counts = Object.values(presence).map(p => p.surface), max = Math.max(...counts), min = Math.min(...counts);
   for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
     const p = presence[e]; if (!p) continue;
     const name = `(?:${w.native}(?:\\(${w.reading}\\))?(?: ?기운| ?글자)?|${w.reading} ?(?:기운|글자)|${HANJA_EL[e]})(?=[이가은는을를의도과와로만에]|\\s|[,.]|$)`;
     if (p.surface > 0 && new RegExp(`(?<![가-힣])없는 (?:${name}|${w.native})|(?<![가-힣])${name}(?:이|가|은|는)? (?:하나도|전혀|아예) 없`).test(sentence)) return `${e}:없음≠${p.surface}`;
-    if (p.surface < max && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:많|센|강하|두텁)|가장 많은 (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 많음≠${p.surface}/${max}`;
+    // AM 재생성 2 판독(sodam 2장, 세 판째): 「물은 가장 센 기운」은 세기 말이라 개수(겉 2)가 아니라 엔진의 가장 센 오행과 견준다 — 개수로 걸어 수리가 「두 개로 … 세기는 가장 많은 편」 비문을 만들었다.
+    const strengthWord = new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:센|강하|강한)|가장 (?:센|강한) (?:${name}|${w.native})`).test(sentence);
+    if (strengthWord && strongest) { if (strongest !== e) return `${e}:가장 셈≠${strongest}`; }
+    else if (p.surface < max && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:많|센|강하|두텁)|가장 많은 (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 많음≠${p.surface}/${max}`;
     if (p.surface > min && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:적|모자라|부족|약하)|가장 (?:적은|모자란|부족한|약한) (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 적음≠${p.surface}/${min}`;
   }
   return null;

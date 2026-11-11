@@ -112,7 +112,9 @@ const TIME_STRICT = /지금|이번 달|이번 한 달|올해|요즘 들어/;
 const TIME_LOOSE = /지금 우리가 있는|지금 (이|그) (시기|때|달|해)(?![가-힣])|이번 달|이번 한 달|올해 남은 (두|세|한|몇) ?(달|개월)|올해 남은/;
 /** MBTI 기능 쉬운 이름("지금 이 순간 감각(Se)")은 시점 말이 아니다(r1 커리어: 기능 이름이 걸렸다). */
 const FUNCTION_NAME_NOW = /지금 이 순간(의)? 감각/g;
-export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s.replace(FUNCTION_NAME_NOW, ""));
+/** AM 재생성 2 판독(annual-1 1.3.0·9.0.0): 따옴표 안(고객이 적은 소망 인용·대사)의 「지금」은 시점 단정이 아니다 — 수리가 고객 문장을 고쳤다. */
+export const unquote = (s: string) => s.replace(/"[^"]*"|“[^”]*”|「[^」]*」|«[^»]*»/g, "\"\"");
+export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(unquote(s).replace(FUNCTION_NAME_NOW, ""));
 
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
 /** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. AM 7부: 연도가 붙은 「2022년 4월 무렵에 시작해 2032년 4월 무렵까지」(교운 연·월 기간, 최종 A-4)도 같은 표기 — calendarMonth가 뗀다(연도 없는 「5월 무렵」은 그대로 걸린다). */

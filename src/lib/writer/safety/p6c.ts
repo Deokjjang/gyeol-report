@@ -48,6 +48,8 @@ const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_c
 export type LintCtx = {
   readonly facts: SafetyFacts; readonly jobDetail: string; readonly schoolStage: L.SchoolStage | "student";
   readonly yinYang?: { readonly yin: number; readonly yang: number }; readonly presence?: L.ElementPresence; readonly dayunPhase?: L.DayunPhase;
+  /** AM 재생성 2: 엔진의 가장 센 오행(「가장 센」 말은 개수가 아니라 이것과 견준다). */
+  readonly strongestElement?: string;
   readonly stars?: { readonly spouse?: L.StarWhere; readonly child?: L.StarWhere };
   readonly coreImage: string; readonly nicknames: readonly string[]; readonly corpus: ReadonlySet<string>; readonly prior: readonly string[];
   readonly jobProps: readonly string[]; readonly noJobChapters: ReadonlySet<number>; readonly parentingChapters: ReadonlySet<number>; readonly monthChapters: ReadonlySet<number>;
@@ -107,6 +109,8 @@ export type LintCtx = {
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
 const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
+const CALM_FLOW = /흐름(?:이|은|도)? (?:한결 |조금 |좀 |훨씬 )?(?:가벼워|잔잔해|느려|편안해|순해|누그러)/;
+const ROUGH_FLOW = /흐름(?:이|은|도)? (?:한결 |훨씬 |더 )?(?:거세|세차|몰아치)/;
 
 const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
@@ -213,7 +217,7 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (ctx.yinYang && L.yinYangClaim(s, ctx.yinYang.yin, ctx.yinYang.yang)) return "yinyang_claim";
   if (ctx.presence && L.elementAbsenceClaims(s, ctx.presence).length) return "element_claim";
   // 최종판 1-5: 오행 개수(없다·가장 많다·가장 적다). 궁합은 한 사람 이름만 나온 문장을 그 사람 값과 견준다.
-  if (ctx.presence && L.elementCountClaims(s, ctx.presence)) return "element_count";
+  if (ctx.presence && L.elementCountClaims(s, ctx.presence, ctx.strongestElement)) return "element_count";
   if (ctx.presenceBy && L.elementOwnedClaims(s, ctx.presenceBy)) return "element_count";
   if (ctx.presenceBy) for (const p of ctx.presenceBy) if (s.includes(p.name) && !ctx.presenceBy.some(o => o !== p && s.includes(o.name)) && (L.elementAbsenceClaims(s, p.presence).length || L.elementCountClaims(s, p.presence))) return "element_count";
   if (ctx.dayunPhase && L.dayunPhaseClaim(s, ctx.dayunPhase)) return "dayun_claim";
@@ -349,9 +353,11 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
         // AM 재생성 판독(major-1·annual-1): 시점을 못 박지 않는 「지금」까지 문장째 지워져 구멍이 났다 → 뜻이 같은 말로(호출 0). 「지금은 ○○ 대운의 마지막」 같은 진짜 시점 말은 그대로 검사.
         .replace(/지금까지(는|가|의|도| )/g, (_m: string, j: string) => `그동안${({ 는: "은", 가: "이" } as Record<string, string>)[j] ?? j}`).replace(/지금부터 /g, "미리 ").replace(/지금 방식/g, "기존 방식").replace(/지금 맡(?=은|고 있)/g, "맡")
         .replace(/지금 (?=(곁에|배우는|하는 일|쌓는|가진|다니는|쓰는|만나는|일하는) )/g, "").replace(/이번 해(?=[ 의에는가])/g, "올해")
-      ; const r2 = ctx.monthChapters.has(c.n) ? r : r.replace(/이번 한 달/g, "그 한 달").replace(/이번 달/g, "그달"); if (r2 !== q) { words++; q = r2; } }
+      // AM 재생성 2 판독(major-1 8장): 달 장 밖 「이번 달」→「그달」은 가리킬 달이 없었다 → 종합과 같은 「앞으로 한 달」(nowMonth, 따옴표 안은 그대로).
+      ; const r2 = ctx.monthChapters.has(c.n) ? r : nowMonth(r); if (r2 !== q) { words++; q = r2; } }
       // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.
-      { const y = ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0); if (ctx.strictTime && y) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
+      // AM 재생성 2 판독(major-1 2027): 대운 연도 key 안의 「올해」는 그 key의 해다(기준일의 해 2026으로 바꾸니 「2026년 흐름 중」).
+      { const y = (/^\d{4}$/.test(s.heading) ? Number(s.heading) : 0) || (ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0)); if (ctx.strictTime && y) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
       // AM 7부: 세운 본문의 맨 달 이름 → 달 표와 같은 짝(「5월(을사월)」). annual-2·5에서 수리 뒤에도 남았다.
       if (ctx.monthNames && ctx.calendarChapters?.has(c.n)) { const r = D.pairMonthNames(q, ctx.monthNames); if (r.count) { words += r.count; q = r.text; } }
       return q;
@@ -432,6 +438,10 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (D.emptyPreview(sen, sens[i + 1])) { flag({ ...at, rule: "empty_preview" }); continue; }
           if (rel !== undefined && rel > 0 && D.NEGATIVE_RELATION.test(sen)) { flag({ ...at, rule: "negative_claim" }); continue; }
           if (fl && ((PEAK.test(sen) && fl.score < fl.max) || (LOW.test(sen) && fl.score > fl.min))) { flag({ ...at, rule: "intensity_claim" }); continue; }
+          // AM 재생성 2 판독(major-1 2031): 흐름 5(거셈)인 해에 「흐름이 한결 가벼워져요」 — 흐름 세기 말과 카드 점수가 반대.
+          if (fl && ((CALM_FLOW.test(sen) && fl.score >= 4) || (ROUGH_FLOW.test(sen) && fl.score <= 2))) { flag({ ...at, rule: "intensity_claim", detail: `흐름 ${fl.score}` }); continue; }
+          // AM 재생성 2 판독(major-1 2030): 대운이 바뀌는 해의 「앞의 4개월과 뒤의 7개월」 — 한 해는 12개월이다.
+          { const m = sen.match(/앞의? (\d{1,2})개월[^.?!]{0,16}뒤의? (\d{1,2})개월/); if (m && Number(m[1]) + Number(m[2]) !== 12) { flag({ ...at, rule: "count_mismatch", detail: `앞 ${m[1]}개월 + 뒤 ${m[2]}개월 ≠ 12개월` }); continue; } }
           // P6e 6·15: 안내·면책은 책에 한 번(시스템이 넣는 줄). 작가가 쓴 안내 문장은 빼게 한다.
           if (writer && E.isNoticeSentence(sen)) { flag({ ...at, rule: "notice_repeat" }); continue; }
           if (writer && ctx.guide && E.guideCopy(sen, ctx.guide)) { flag({ ...at, rule: "guide_echo", detail: E.guideCopy(sen, ctx.guide)! }); continue; }

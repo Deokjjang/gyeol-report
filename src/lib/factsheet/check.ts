@@ -313,13 +313,23 @@ const HYPO_OK = /게 되면|한다면|하게 되면|생기면|생긴다면|할 �
 const OUTSIDE_NO_ORG = /팀장|상사(가|를|에게|의|와)|회의(에서|가|를| 중| 뒤| 때|록)/;
 /** 최종판3 12: 재취업 준비 입력에 과거 근속·무사고를 단정한 꼴(판독: 「오래 맡아도 사고 없던 안정성」). 입력에는 경력 햇수·근속이 없다. */
 const OUTSIDE_TENURE = /오래 (맡아|맡은|다닌|다녀|일해|일한|근무)[^.]{0,20}(온|왔|던|없이)|사고 없(이|던)|근속/;
+/**
+ * AM 재생성 2 판독(major-1·annual-1 연차 결함 4건): 입력에는 연차·근속이 없는데 「사회 초년 직장인」「막내에서 한 사람 몫」「사회 초년의 등불」로 연차를 정했다.
+ * 일하는 입력(직장·프리랜서·자영업·사업)에서 입력 글에 없는 연차 말을 잡는다. 표지 검사(`coverIssue`)도 같은 꼴을 쓴다.
+ */
+export const SENIORITY = /사회 ?초년(?:생)?|신입(?: ?사원| 시절| 때|으로|이라|이니|인 )|막내(?:에서|로서|로 |티| 업무| 역할| 자리)|입사 \d+ ?년|\d+ ?년 ?차/;
+const WORKING = /^(employee|freelancer|self_employed|business_owner)$/;
+export const seniorityHit = (sen: string, jobText: string): string | null => {
+  const m = sen.match(SENIORITY); if (!m) return null;
+  return /신입|초년|막내|년 ?차|년차|입사|경력/.test(jobText) ? null : m[0];
+};
 function inputOutside(sen: string, ctx: FactCtx): FactHit | null {
   const personal = ctx.product === "saju_mbti_full" || ctx.product === "love_marriage_child";
   const status = ctx.sheet.people[0]?.input?.job.status ?? "";
   const m = sen.match(OUTSIDE_ALL) ?? (personal ? sen.match(OUTSIDE_PERSONAL) : null)
     ?? (ctx.people.length < 2 && /^(self_employed|freelancer|homemaker)$/.test(status) ? sen.match(OUTSIDE_NO_ORG) : null)
     ?? (ctx.people.length < 2 && status === "job_seeker" ? sen.match(OUTSIDE_TENURE) : null);
-  if (!m) return null;
+  if (!m) { const w = ctx.people.length < 2 && WORKING.test(status) && !HYPO_OK.test(sen) ? seniorityHit(sen, ctx.jobText) : null; return w ? { rule: "input_outside", detail: `입력에 없는 연차 「${w}」(입력: ${ctx.jobText.trim() || "직업 미입력"}) → 연차를 정하지 않는 말로` } : null; }
   if (HYPO_OK.test(sen)) return null;
   const word = m[0].replace(/(을|이|들|에게|과|의|이랑| 면접)$/, "");
   if (ctx.jobText.includes(word)) return null;

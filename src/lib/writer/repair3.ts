@@ -49,7 +49,14 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
   // AM 재생성 판독(major-1·annual-1): 수리 40칸이 모두 lint(대부분 문체 깃발)로 차서 검수가 맞게 짚은 사실·면책 지적이 고쳐지지 않았고, 8칸은 조립이 어차피 떼는 머리 문장 베낌에 쓰였다.
   // → 칸 순서: 사실·금지 깃발(안 고치면 지워진다) → 검수 지적 → 문체 깃발. 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)에는 칸을 주지 않는다.
   const HEAD_COPY = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-鿿]{2}月?\))?(은|는) [^.?!]{0,40}(하늘에|천간에)[^.?!]{0,40}(땅에|지지에)/;
-  const flagsOf = (hard: boolean) => a.flags.filter(f => HARD_RULES.has(f.rule as never) === hard && !(f.sentence && HEAD_COPY.test(f.sentence)));
+  // AM 재생성 2 판독(major-1 2030): 머리 둘째 문장(「이 해 5월 무렵부터 병인 대운이 시작되고」)의 사본이 칸을 받아 조립이 못 떼는 꼴로 바뀌었다 → 달·해 key 소제목 첫 문단의 대운 시작 되풀이도 칸을 주지 않는다. 검수 지적에도 같은 거르기.
+  const DAYUN_HEAD = /무렵(?:부터|에)[^.?!]{0,24}대운(?:이|은)? (?:시작|열리)/;
+  const headCopy = (chapter: number, section: number, paragraph: number, sentence: string | undefined) => {
+    if (!sentence) return false; if (HEAD_COPY.test(sentence)) return true;
+    const h = a.chapters.find(c => c.n === chapter)?.sections[section]?.heading ?? "";
+    return paragraph === 0 && /^\d{4}(-M\d{2})?$/.test(h) && DAYUN_HEAD.test(sentence);
+  };
+  const flagsOf = (hard: boolean) => a.flags.filter(f => HARD_RULES.has(f.rule as never) === hard && !headCopy(f.chapter, f.section, f.paragraph, f.sentence));
   const addFlags = (list: readonly LintFlag[]) => { for (const f of list) {
     const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) continue;
     const problem = `${f.hint}${f.detail ? ` [${f.detail}]` : ""}`;
@@ -62,6 +69,7 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
   const byN = a.byN ?? new Map(a.numbered.map(x => [x.n, x]));
   for (const i of a.issues) {
     const x = byN.get(i.s); if (!x) continue;
+    if (x.paragraph >= 0 && headCopy(x.chapter, x.section, x.paragraph, x.text)) continue;
     const other = i.s2 ? byN.get(i.s2)?.text : undefined;
     const problem = `${CAT_KO[i.cat] ?? i.cat}: ${i.why}${i.ref ? ` (근거 ${i.ref})` : ""}${i.field ? ` (입력 칸 ${i.field})` : ""}${other ? ` — 비교 문장: "${other.slice(0, 120)}"` : ""}`;
     if (x.n === 0) { add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: x.text }, problem, "review"); continue; }
@@ -183,7 +191,12 @@ export function nearSame(a: string, b: string): boolean {
  * AM 판독(4종 14건이 삭제·수리 단계에서 생김): 수리 문장이 같은 문단의 다른 문장과 거의 같은 말이면 그 수리 문장을 뺀다(이웃 문장이 이미 말함),
  * 원문에 없던 시골 소품(「곳간」 등, 문체 규칙이라 revertWorse가 안 봄)을 넣었으면 원문으로 되돌린다(호출 0).
  */
-export function revertRepairSideEffects(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[]): { chapters: FinalChapter[]; reverted: Reverted[] } {
+const MONTH_GZ = /([갑을병정무기경신임계][자축인묘진사오미신유술해])(?:\([一-鿿]{2}\))?월/g;
+const monthsOf = (s: string) => [...new Set([...s.matchAll(MONTH_GZ)].map(m => m[1]))];
+/** 달 이름 2개 이상을 늘어놓은 문장이 브리프의 한 줄에 다 있는가. */
+const monthsBacked = (ms: readonly string[], lines: readonly string[]) => lines.some(l => ms.every(m => l.includes(`${m}월`)));
+const SUBJECT = /^(?:반대로 |그리고 |또 )?([가-힣]{1,6}(?: [가-힣]{1,6})?)(?:은|는) /;
+export function revertRepairSideEffects(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], briefLines: readonly string[] = []): { chapters: FinalChapter[]; reverted: Reverted[] } {
   const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const reverted: Reverted[] = [];
@@ -193,7 +206,12 @@ export function revertRepairSideEffects(chapters: readonly FinalChapter[], appli
     const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
     const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(s => norm(s).includes(key));
     if (i < 0) continue;
+    const subj = a.before.match(SUBJECT)?.[1], mb = monthsOf(a.before), ma = monthsOf(a.after);
     if (RURAL_PROP.test(a.after) && !RURAL_PROP.test(a.before)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_rural_prop" }); }
+    // AM 재생성 2 판독(annual-1 5.1.1): 브리프 줄과 같은 달 목록(을사·무신·기유)을 검수 오지적을 따라 브리프에 없는 목록(을사·병오)으로 바꿨다 → 되돌린다.
+    else if (briefLines.length && mb.length >= 2 && ma.length >= 2 && mb.join() !== ma.join() && monthsBacked(mb, briefLines) && !monthsBacked(ma, briefLines)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_month_unbacked" }); }
+    // AM 재생성 2 판독(major-1 3장): 소제목의 말(「좋은 패」)을 주어로 세운 정의 문장에서 수리가 그 주어를 잃어 비문이 됐다 → 되돌린다.
+    else if (subj && subj.length >= 2 && sec.heading.includes(subj) && !a.after.includes(subj)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_subject_lost" }); }
     else if (ss.length > 1 && ss.some((s, j) => j !== i && nearSame(s, ss[i]))) { reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_duplicate" }); ss.splice(i, 1); }
     else continue;
     (sec.paragraphs as string[])[pn] = ss.join(" ");
@@ -213,7 +231,11 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
     if (i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
-    const { sentences: rest, stripped } = removeSentenceAt(ss, i);
+    const { sentences: rest0, stripped } = removeSentenceAt(ss, i);
+    // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
+    const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && /셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
+    const rest = orphan ? rest0.filter((_, j) => j !== i) : rest0;
+    if (orphan) deleted.push({ at, sentence: rest0[i], rule: `${f.rule}:orphan_summary` });
     if (!rest.length && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "last_paragraph" }); continue; }
     sec.paragraphs[f.paragraph] = rest.join(" ");
     deleted.push({ at, sentence: f.sentence, rule: f.rule, ...(stripped ? { connectiveStripped: true } : {}) });

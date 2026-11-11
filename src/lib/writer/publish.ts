@@ -53,7 +53,7 @@ import { LOVE_REQUIRED } from "@/lib/brief/design/love";
 import { allowedWindows, writeKeyFill, type FinalChapter } from "./safety";
 import { keywordsOf, type BookSection } from "./format";
 import { buildFactSheet, type FactSheet } from "@/lib/factsheet/build";
-import { factCtxOf } from "@/lib/factsheet/check";
+import { factCtxOf, seniorityHit } from "@/lib/factsheet/check";
 import { matchJob, PROPS } from "@/lib/brief/props";
 import type { PriorBooks } from "./prior";
 
@@ -144,7 +144,7 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
   return {
     facts: f, jobDetail: brief.person.facts.job.detail, compat,
     schoolStage: brief.person.facts.job.class !== "student" ? "none" : brief.person.age < 19 ? "student" : "college",
-    ...(compat ? {} : { yinYang: { yin: c.yinYang.yin, yang: c.yinYang.yang }, ...(c.elements.presence ? { presence: c.elements.presence as ElementPresence } : {}),
+    ...(compat ? {} : { yinYang: { yin: c.yinYang.yin, yang: c.yinYang.yang }, ...(c.elements.presence ? { presence: c.elements.presence as ElementPresence } : {}), strongestElement: c.elements.strongest.element,
       ...(cd ? { dayunPhase: dayunPhase(cd.phase ? cd.phase.yearIndex - 1 : c.thisYear.year - Number(cd.years.slice(0, 4))) } : {}),
       ...(c.stars ? { stars: { spouse: c.stars.spouse.where, child: c.stars.child.where } } : {}) }),
     coreImage: brief.compatibility?.pairImage.line ?? image ?? c.coreImage.line,
@@ -299,6 +299,9 @@ export function trimRestatedHead(first: string, e: { readonly kind: string; read
   const s1 = first.match(/^.*?[.!?](?=\s|$)/)?.[0]; if (!s1) return first;
   const rest = first.slice(s1.length).trim();
   const name = e.ganji.hangul, unit = e.kind === "month" ? "달" : "해", be = "(?:예요|이에요|입니다)";
+  // AM 재생성 2 판독(annual-1 7.12.0): 「2028년 1월(계축월)에 해당하는 이 달은 …」 — 머리 문장이 이미 달 이름을 알렸다 → 「이 달은 …」.
+  const ref = s1.match(new RegExp(`^\\d{4}년 \\d{1,2}월(?:\\(${name}월(?:\\([一-鿿]{2}月\\))?\\))?(?:에 해당하는|인) 이 ${unit}(은|는|에는) `));
+  if (ref) { const out = `이 ${unit}${ref[1]} ${s1.slice(ref[0].length)}`; return rest ? `${out} ${rest}` : out; }
   const subj = s1.match(new RegExp(`^(?:\\d{4}년 )?(?:\\d{1,2}월 ?(?:· )?)?${name}(?:\\([一-鿿]{2}\\))?(?:년|월)?(?:\\([一-鿿]{2}月?\\))?(은|는|에는|에|의) `));
   const after = subj ? s1.slice(subj[0].length) : s1;
   const tgs = [...new Set([e.tenGod.stem, e.tenGod.branch].map(t => t.replace(/\(.*$/, "")).filter(Boolean))];
@@ -308,7 +311,7 @@ export function trimRestatedHead(first: string, e: { readonly kind: string; read
   const dropped = () => (again && rest ? trimRestatedHead(rest, e, head, false) : rest);
   if (new RegExp(`^(?:[^.?!]{0,24}의 )?${TGS}(?:의 기운)?(?:이|가)? (?:함께 )?들어(?:옵니다|와요|오는 ${unit}${be})[.!]$|^${TGS}의 ${unit}${be}[.!]$|^${TG}(?:이|가) 하늘(?:과 땅)?에,? (?:모두 |함께 |겹쳐 )?(?:${TG}(?:이|가) 땅에 )?(?:들어와요|들어오는 ${unit}${be})[.!]$`).test(after)) return dropped();
   // 대운 전환 해: 머리 문장이 이미 새 대운을 말했다 → 「새 대운이 시작되는 해예요」만 되풀이하는 문장은 뺀다.
-  if (/대운/.test(head) && (subj ? /대운이? (열리|시작)/.test(after) : /^새 대운이? (?:시작되|열리)는 해/.test(after) || (after.length < 90 && /^(?:이 해 )?(?:\d{1,2}(?:~\d{1,2})?월 무렵부터 )?[가-힣]{2}(?:\([一-鿿]{2}\))? 대운이 (?:시작|열리)/.test(after)))) return dropped();
+  if (/대운/.test(head) && (subj ? /대운이? (열리|시작)/.test(after) : /^새 대운이? (?:시작되|열리)는 해/.test(after) || (after.length < 90 && /^(?:이 해 )?(?:\d{1,2}(?:~\d{1,2})?월 무렵(?:부터|에) )?[가-힣]{2}(?:\([一-鿿]{2}\))? 대운(?:이|은)? (?:시작|열리)/.test(after)))) return dropped();
   const into = after.match(new RegExp(`^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어와(?:서)? |^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어오는 ${unit}(?:라서|이라서|이니) |^${TGS}의 ${unit}(?:이라|라서|이니|로),? `));
   if (!subj && !into) return first;
   const out = into ? `그래서 ${after.slice(into[0].length)}` : subj![1] === "의" ? after : `이 ${unit}${subj![1] === "에는" || subj![1] === "에" ? "에는" : unit === "해" ? "는" : "은"} ${after}`;
@@ -366,6 +369,7 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v)) return { reason: "설명문", level: "hard" };
   // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
   if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return { reason: "연차", level: "hard" };
+  { const j = brief.person.facts.job, w = !brief.compatibility && /^(employee|freelancer|self_employed|business_owner)$/.test(j.status) ? seniorityHit(v, `${j.detail ?? ""} ${j.status}`) : null; if (w) return { reason: `연차(${w}) — 입력에 없는 연차·나이 말 없이`, level: "hard" }; }
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
   // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
   { const clash = imageClash(v); if (clash) return { reason: `그림 안 시간·계절 모순(${clash}) — 한 시간·한 계절의 그림으로`, level: "hard" }; }
@@ -510,7 +514,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // 최종판3 12: 수리가 정답지 검사에 새로 걸리게 만든 문장은 원문으로 되돌린다(검수 오탐 → 맞는 문장을 틀리게 고친 경우, 호출 0).
   const rv0 = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
   // AM 판독: 수리가 이웃 문장과 같은 말을 만들거나 시골 소품을 넣은 문장도 되돌린다(문체 규칙이라 위 검사가 못 봄).
-  const side = revertRepairSideEffects(rv0.chapters, repair.applied);
+  const side = revertRepairSideEffects(rv0.chapters, repair.applied, briefStrings(brief).filter(l => l.includes("월")));
   const rv = { chapters: side.chapters, reverted: [...rv0.reverted, ...side.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
@@ -544,4 +548,12 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     costUsd: run?.costUsd ?? 0, durationMs: now() - started, briefHash: briefHash(brief), knowledgeVersion, promptVersion: WRITER_PROMPT_VERSION, recovered: Boolean(a.recover), priorBooks: a.prior?.books ?? 0,
   });
   return { snapshot: createV5Snapshot({ reportId: a.reportId, createdAtIso: a.policyAt, draft, evidence }), meta: evidence.meta, run };
+}
+
+/** 브리프의 글 잎(문자열) 모두 — 수리 되돌림이 달 목록 근거를 찾는 데 쓴다. */
+export function briefStrings(x: unknown, out: string[] = []): string[] {
+  if (typeof x === "string") out.push(x);
+  else if (Array.isArray(x)) for (const v of x) briefStrings(v, out);
+  else if (x && typeof x === "object") for (const v of Object.values(x)) briefStrings(v, out);
+  return out;
 }

@@ -367,7 +367,7 @@ describe("AM 재생성 판독 후속(호출 0): 검사 오탐 · 시점 말 정�
   it("대운·세운: 시점을 못 박지 않는 「지금」·「이번 해」·「이번 달」은 뜻이 같은 말로", () => {
     expect(strict("지금까지 쌓은 배움이 보여요. 지금까지는 판을 벌였다면 지금부터 기록 습관을 만들어 두세요.")).toBe("그동안 쌓은 배움이 보여요. 그동안은 판을 벌였다면 미리 기록 습관을 만들어 두세요.");
     expect(strict("지금 맡은 것의 마감을 확인하고, 지금 방식의 손실을 적어 보세요. 지금 곁에 사람이 없어도 괜찮아요.")).toBe("맡은 것의 마감을 확인하고, 기존 방식의 손실을 적어 보세요. 곁에 사람이 없어도 괜찮아요.");
-    expect(strict("이번 해 첫 약속에서는 먼저 웃어요. 월급날에는 이번 달 지출 한도를 확인하세요.")).toBe("2027년 첫 약속에서는 먼저 웃어요. 월급날에는 그달 지출 한도를 확인하세요.");
+    expect(strict("이번 해 첫 약속에서는 먼저 웃어요. 월급날에는 이번 달 지출 한도를 확인하세요.")).toBe("2027년 첫 약속에서는 먼저 웃어요. 월급날에는 앞으로 한 달 지출 한도를 확인하세요.");
     expect(strict("이번 달에는 쉬어요.", new Set([1]))).toBe("이 달에는 쉬어요.");
     expect(strict("지금은 을축 대운의 마지막 3년이에요.")).toContain("지금은");
   });
@@ -439,5 +439,104 @@ describe("AM 결정(밤): 종합 씨앗은 입력 직군과 정면으로 부딪�
     const b = buildBrief({ product: "saju_mbti_full", person: { ...person({ name: "가상소담", birthDate: "1994-05-21", birthTime: "14:20", mbtiType: "INTP" }), context: { relationshipStatus: "", jobStatus: "self_employed", detailJob: "카페 사장" } }, baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
     const text = JSON.stringify(b);
     for (const w of ["업무 지시", "질문 메일", "구직 공고", "프리랜서 의뢰서"]) expect(text, w).not.toContain(w);
+  });
+});
+
+describe("AM 재생성 2 판독 후속(호출 0): 검수 정답지 · 수리 되돌림 · 연차 · 인용 시점 · 해 이름 · 면책 · 세기 · 머리 문장", async () => {
+  const { buildFactSheet } = await import("../../../src/lib/factsheet/build");
+  const { seniorityHit } = await import("../../../src/lib/factsheet/check");
+  const { writerKnowledge, trimRestatedHead, coverIssue, lintContext } = await import("../../../src/lib/writer/publish");
+  const { tenGodCells, tenGodSurface, reviewPrompt } = await import("../../../src/lib/writer/review");
+  const { revertRepairSideEffects, repairItems, deleteFlagged } = await import("../../../src/lib/writer/repair3");
+  const { timeDeictic } = await import("../../../src/lib/writer/safety/p6d");
+  const { isNoticeSentence, plainWords } = await import("../../../src/lib/writer/safety/p6e");
+  const { elementCountClaims } = await import("../../../src/lib/writer/safety/lint");
+  const { tidyBook, lintBook, HARD_RULES } = await import("../../../src/lib/writer/safety/p6c");
+  const { buildWriterPrompt } = await import("../../../src/lib/writer/prompt");
+  const o = { name: "한서윤", birthDate: "1998-04-17", birthTime: "08:20", mbtiType: "ENFP" };
+  const brief = annual(o), { k: wk } = writerKnowledge();
+  const sheet = buildFactSheet({ product: "annual_fortune", person: person(o), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, brief, wk);
+
+  it("검수 정답지: 지지 칸은 겉(정기)과 속을 나누고 겉 글자 개수는 지장간을 세지 않는다 · 달 key에 이름표 줄(annual-1 편재 4 · 2026-M12)", () => {
+    const p = sheet.people[0];
+    expect(tenGodCells(p).yearBranch).toMatch(/^겉\(정기\) 비견 · 속 /);
+    expect(tenGodSurface(p)["편재"]).toBe(4);
+    const rp = reviewPrompt({ brief, sheet, k: wk, chapters: [{ n: 7, id: "month", title: "달", source: "writer", chars: 0, sections: [{ heading: "2026-M12", paragraphs: ["신축월은 정리하는 달이에요. 서류를 챙겨요."] }] }] as never, cover: "" });
+    expect(rp.user).toMatch(/### \(1월 · 신축월/);
+    expect(rp.user.match(/### \(1월 · 신축월/g)?.length).toBe(1);
+    expect(rp.user).toContain("tenGodSurfaceCount");
+  });
+  it("수리 되돌림: 브리프 줄과 맞던 달 목록을 브리프에 없는 목록으로 바꾼 것 · 소제목 말 주어를 잃은 정의 문장", () => {
+    const good = "관계 속도를 늦출 달은 5월 을사(乙巳)월, 8월 무신(戊申)월, 9월 기유(己酉)월이에요.", bad = "관계 속도를 늦출 달은 5월 을사(乙巳)월과 6월 병오(丙午)월이에요.";
+    const lines = ["관계 속도를 늦출 달: 5월 · 을사월, 8월 · 무신월, 9월 · 기유월"];
+    const ch = (text: string, heading = "사람 사이") => [{ n: 5, id: "people", title: "사람", source: "writer", chars: 0, sections: [{ heading, paragraphs: [`앞 문장이에요. ${text}`] }] }] as never;
+    const r = revertRepairSideEffects(ch(bad), [{ id: 1, kind: "sentence", at: "5.0.0", before: good, after: bad, source: ["review"] }], lines);
+    expect(r.reverted.map(x => x.rule)).toEqual(["repair_month_unbacked"]);
+    expect(r.chapters[0].sections[0].paragraphs[0]).toContain("무신");
+    // 브리프에 있는 목록으로 고친 것(검수가 맞게 짚음)은 그대로
+    expect(revertRepairSideEffects(ch(good), [{ id: 1, kind: "sentence", at: "5.0.0", before: bad, after: good, source: ["review"] }], lines).reverted).toEqual([]);
+    const b2 = "좋은 패는 내 손으로 벌고 내 기준으로 쓰려는 독립적인 돈 관리예요.", a2 = "내가 번 돈은 내 기준으로 쓰고 싶은, 스스로 관리하는 쪽의 돈 감각이에요.";
+    const r2 = revertRepairSideEffects(ch(a2, "이 10년의 좋은 패와 숙제"), [{ id: 23, kind: "sentence", at: "5.0.0", before: b2, after: a2, source: ["lint"] }]);
+    expect(r2.reverted.map(x => x.rule)).toEqual(["repair_subject_lost"]);
+    expect(r2.chapters[0].sections[0].paragraphs[0]).toContain("좋은 패는");
+  });
+  it("수리 칸: 달·해 key 첫 문단의 대운 시작 되풀이는 검수 지적이어도 칸을 주지 않는다(major-1 2030)", () => {
+    const sen = "이 해 5월 무렵에 병인 대운이 열리고, 앞으로 10년의 중심 기운은 식신이에요.";
+    const ch = [{ n: 5, id: "years", title: "앞으로 10년", source: "writer", chars: 0, keys: ["2030"], sections: [{ heading: "2030", paragraphs: [`${sen} 마감이 몰려요.`] }] }];
+    const numbered = [{ n: 1, chapter: 5, section: 0, paragraph: 0, text: sen }, { n: 2, chapter: 5, section: 0, paragraph: 0, text: "마감이 몰려요." }];
+    const items = repairItems({ chapters: ch as never, flags: [], issues: [{ s: 1, cat: "R", why: "되풀이", fix: "" }, { s: 2, cat: "R", why: "되풀이", fix: "" }] as never, numbered: numbered as never });
+    expect(items.map(i => i.original)).toEqual(["마감이 몰려요."]);
+  });
+  it("머리 문장 꼴 더: 「무렵에 … 열리고」 · 「2028년 1월(계축월)에 해당하는 이 달은」", () => {
+    const y = { kind: "year", ganji: { hangul: "경술" }, tenGod: { stem: "편관(偏官)", branch: "편재(偏財)" } };
+    expect(trimRestatedHead("이 해 5월 무렵에 병인 대운이 열리고, 앞으로 10년의 중심 기운은 식신이에요. 마감이 몰려요.", y, "… 이 해 5월 무렵부터 병인(丙寅) 대운이 시작되고 …")).toBe("마감이 몰려요.");
+    const m = { kind: "month", ganji: { hangul: "계축" }, tenGod: { stem: "정인(正印)", branch: "정재(正財)" } };
+    expect(trimRestatedHead("2028년 1월(계축월)에 해당하는 이 달은 도움과 배움이 들어오는 달입니다. 쉬어요.", m, "")).toBe("이 달은 도움과 배움이 들어오는 달입니다. 쉬어요.");
+  });
+  it("연차 단정: 일하는 입력에 연차 말이 없으면 본문·표지에서 잡는다 · 입력에 있으면 그대로", () => {
+    expect(seniorityHit("사회 초년 직장인에게는 이 주제가 중요해요.", " employee")).toBe("사회 초년");
+    expect(seniorityHit("막내에서 한 사람 몫을 하는 사람으로 자라요.", "")).toBe("막내에서");
+    expect(seniorityHit("신입 사원 시절을 지나요.", "신입 사원 employee")).toBeNull();
+    expect(seniorityHit("마감 전에 한 번 더 봐요.", "")).toBeNull();
+    expect(coverIssue("말 한마디로 판을 여는 사회 초년의 등불", brief as never, [])?.reason).toMatch(/^연차\(사회 초년\)/);
+  });
+  it("시점 말: 따옴표 안(고객 소망 인용)의 「지금」은 걸지 않는다", () => {
+    expect(timeDeictic("지금 회사에서 인정받고 싶어요.", true)).toBe(true);
+    expect(timeDeictic('한서윤님이 적어 주신 바람은 "지금 회사에서 인정받고, 좋아하는 사람도 생겼으면 좋겠다"는 것이었어요.', true)).toBe(false);
+  });
+  it("대운 연도 key 안 「올해」는 그 key의 해 · 달 장 밖 「이번 달」은 「앞으로 한 달」", () => {
+    const tidy = (heading: string, text: string) => tidyBook([{ n: 5, id: "years", title: "t", source: "writer", chars: 0, keys: [heading], sections: [{ heading, paragraphs: [text] }] }] as never, { mbtiPlain: {}, monthChapters: new Set(), strictTime: true, baseDate: "2026-12-02" } as never).chapters[0].sections[0].paragraphs[0];
+    expect(tidy("2027", "올해 흐름 중 가장 눈에 띄는 일은 배움이에요.")).toBe("2027년 흐름 중 가장 눈에 띄는 일은 배움이에요.");
+    expect(tidy("흐름", "올해는 쉬어요. 이번 달에 마무리할 일을 적어요.")).toBe("2026년은 쉬어요. 앞으로 한 달 안에 마무리할 일을 적어요.");
+  });
+  it("면책 새 꼴 3 · 「중화」 바꾸기가 뒤 문장과 같은 말이면 하나로", () => {
+    expect(isNoticeSentence("단정할 일이 아니라 살피며 지나갈 흐름이에요.")).toBe(true);
+    expect(isNoticeSentence("이 순서는 경향이라서 모두가 같은 나이에 같은 곳에 서 있지는 않아요.")).toBe(true);
+    expect(isNoticeSentence("흐릿했다면 그 시기가 다른 이야기였을 수도 있어요.")).toBe(true);
+    expect(isNoticeSentence("경향이라서 편하게 읽혀요.")).toBe(false);
+    expect(plainWords("내 힘의 세기는 중화예요. 세지도 여리지도 않아서, 상황에 따라 밀기도 해요.").text).toBe("내 힘은 세지도 여리지도 않아서, 상황에 따라 밀기도 해요.");
+    expect(plainWords("내 힘의 세기는 중화예요. 그래서 밀기도 해요.").text).toBe("내 힘은 세지도 약하지도 않은 가운데예요. 그래서 밀기도 해요.");
+  });
+  it("오행 「가장 센」은 개수가 아니라 엔진의 가장 센 오행과 견준다(sodam 2장)", () => {
+    const pres = { WOOD: { surface: 2, hidden: false }, FIRE: { surface: 1, hidden: false }, EARTH: { surface: 3, hidden: false }, METAL: { surface: 0, hidden: true }, WATER: { surface: 2, hidden: false } } as never;
+    expect(elementCountClaims("물은 가장 센 기운이고, 생각을 담는 그릇이 커요.", pres, "WATER")).toBeNull();
+    expect(elementCountClaims("물은 가장 센 기운이에요.", pres, "EARTH")).toMatch(/가장 셈/);
+    expect(elementCountClaims("물이 가장 많아요.", pres, "WATER")).toMatch(/가장 많음/);
+  });
+  it("대운 연도 key: 흐름 4 이상에 「흐름이 한결 가벼워져요」 · 「앞의 4개월과 뒤의 7개월」(major-1 2030·2031)", () => {
+    const b = buildBrief({ product: "major_fortune", person: person({ gender: "MALE", birthDate: "1998-11-03", birthTime: "10:30", mbtiType: "ENTP" }), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
+    const ctx = lintContext(b as never, k, buildWriterPrompt(b as never, { knowledge: k }).chapters, []);
+    const strong = Object.entries(ctx.flow ?? {}).find(([key, v]) => /^\d{4}$/.test(key) && v.score >= 4)?.[0];
+    expect(strong).toBeTruthy();
+    const ch = [{ n: 5, id: "years", title: "앞으로 10년", source: "writer", chars: 0, keys: [strong], sections: [{ heading: strong, paragraphs: ["이 해는 흐름이 한결 가벼워져요. 마감을 미리 나눠 두세요. 앞의 4개월과 뒤의 7개월이 달라요."] }] }];
+    const rules = lintBook(ch as never, ctx).map(f => f.rule);
+    expect(rules).toContain("intensity_claim");
+    expect(rules).toContain("count_mismatch");
+  });
+  it("지운 문장 뒤의 짧은 「…셈이에요」 요약도 함께 뺀다(annual-1 5.1.1)", () => {
+    const ch = [{ n: 5, id: "p", title: "t", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["첫 문장이에요. 잘못된 성향 문장이에요. 몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요. 마지막 문장이에요."] }] }];
+    const r = deleteFlagged(ch as never, [{ chapter: 5, section: 0, paragraph: 0, rule: "mbti_misattr", sentence: "잘못된 성향 문장이에요.", hint: "" }] as never, HARD_RULES);
+    expect(r.chapters[0].sections[0].paragraphs[0]).toBe("첫 문장이에요. 마지막 문장이에요.");
+    expect(r.deleted.map(d => d.rule)).toEqual(["mbti_misattr:orphan_summary", "mbti_misattr"]);
   });
 });

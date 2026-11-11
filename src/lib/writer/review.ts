@@ -47,7 +47,7 @@ export const REVIEW_SCHEMA = {
 export const REVIEW_SYSTEM = `너는 결리포트(사주×MBTI 리포트) 원고의 검수자다. 번호 붙은 책을 읽고 아래 7범주의 문제만 찾아 JSON으로 답한다. 문체 취향·더 좋은 표현 제안은 하지 않는다.
 
 범주(이 밖은 쓰지 않는다):
-- F 사실·뜻 불일치: 정답지(fs:…)나 DB 뜻풀이(db:…)와 어긋나는 명리·MBTI 주장. 신살·귀인의 자리·주인, 강약, 오행 개수와 세기, 관계(합·충·형), 간지·연도, 오행 뜻을 이 사람 일간 기준과 다른 십성으로 푼 것, 다른 MBTI 유형의 특성을 이 유형 것처럼 쓴 것, 정답지·DB 어디에도 근거가 없는 명리 단정. ref에 근거 항목 id(아래 목록의 fs:… 또는 db:…) 필수.
+- F 사실·뜻 불일치: 정답지(fs:…)나 DB 뜻풀이(db:…)와 어긋나는 명리·MBTI 주장. 신살·귀인의 자리·주인, 강약, 오행 개수와 세기, 관계(합·충·형), 간지·연도, 오행 뜻을 이 사람 일간 기준과 다른 십성으로 푼 것, 다른 MBTI 유형의 특성을 이 유형 것처럼 쓴 것, 정답지·DB 어디에도 근거가 없는 명리 단정. 십성이 「몇 자리·몇 개」인지는 tenGodSurfaceCount(겉 글자: 천간 + 지지 정기)로만 센다 — 지지 속(지장간)은 자리 수에 넣지 않는다. 달·해 이름은 책의 「### (…)」 이름표 줄을 따른다. ref에 근거 항목 id(아래 목록의 fs:… 또는 db:…) 필수.
 - C 같은 사람 모순: 같은 사람에 대해 둘 다 참일 수 없는 두 문장(이 책 안, 또는 이전 책 요약 줄 p번호). s = 이 책의 뒤쪽 문장, s2 = 다른 문장 번호 필수.
 - I 입력 밖 상황 단정: 입력에 없는 직업 상황·사람(직원·투자자·팀원)·돈 사정·연애 사정·가족 구성원·과거 사건을 사실처럼 단정. 가정형("~라면")·질문형은 제외. field에 넘어선 입력 칸(input.job·input.relationship·input.children·input.relationType·input.money·input.family) 필수.
 - R 다른 장의 같은 뜻 반복: 다른 장에서 같은 장면·같은 처방·같은 비유·같은 성향 설명을 되풀이. s = 뒤쪽 문장, s2 = 앞쪽 문장 필수. 같은 소제목 안 흐름은 반복이 아니다.
@@ -80,6 +80,24 @@ export function numberBook(chapters: readonly FinalChapter[], cover: string): Nu
   return out;
 }
 
+/** 칸마다 십성: 천간은 「겉 X」, 지지는 「겉(정기) X · 속 Y·Z」. */
+export function tenGodCells(p: PersonFacts): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [slot, list] of Object.entries(p.tenGods) as [string, readonly string[]][]) {
+    if (slot.endsWith("Stem")) { out[slot] = `겉 ${list[0]}`; continue; }
+    const hid = p.pillars[slot.replace(/Branch$/, "") as keyof PersonFacts["pillars"]]?.hidden ?? []; if (!hid.length) continue;
+    const main = hid.reduce((a, b) => (b.weight > a.weight ? b : a));
+    const inner = hid.filter(h => h !== main).map(h => h.tenGod);
+    out[slot] = `겉(정기) ${main.tenGod}${inner.length ? ` · 속 ${inner.join("·")}` : ""}`;
+  }
+  return out;
+}
+/** 겉 글자(천간 + 지지 정기) 기준 십성 개수 — 일간 자리는 빼고 센다. */
+export function tenGodSurface(p: PersonFacts): Record<string, number> {
+  const n: Record<string, number> = {};
+  for (const v of Object.values(tenGodCells(p))) { const t = v.match(/^겉(?:\(정기\))? (\S+?)(?: ·|$)/)?.[1]; if (t) n[t] = (n[t] ?? 0) + 1; }
+  return n;
+}
 const firstSentences = (t: string, n = 2, max = 220) => splitSentences(t).slice(0, n).join(" ").slice(0, max);
 /** 정답지에서 이 책에 나온 용어만 추린 것 + 늘 필요한 닻(기둥·강약·묶음·오행·올해·대운). */
 function sheetSubset(sheet: FactSheet, text: string, k: Pick<Knowledge, "features">): Record<string, unknown> {
@@ -88,7 +106,8 @@ function sheetSubset(sheet: FactSheet, text: string, k: Pick<Knowledge, "feature
   const year = Number(sheet.baseDate.slice(0, 4));
   const person = (p: PersonFacts) => ({
     name: p.name, pillars: Object.fromEntries(Object.entries(p.pillars).map(([pos, v]) => [pos, v ? `${v.stem}${v.branch}(${v.ganjiKo})` : "시간 미상"])),
-    dayMaster: `${p.dayMaster.stem}(${p.dayMaster.ko})`, tenGods: p.tenGods, strength: p.strength.labelKo,
+    // AM 재생성 2 판독(annual-1): 지지 칸의 지장간 목록을 그대로 주니 검수가 지장간까지 세어 「편재가 다섯 자리」로 고치게 했다 → 칸마다 겉 글자(지지는 정기)와 속을 나누고, 겉 글자 기준 개수를 준다.
+    dayMaster: `${p.dayMaster.stem}(${p.dayMaster.ko})`, tenGods: tenGodCells(p), tenGodSurfaceCount: tenGodSurface(p), strength: p.strength.labelKo,
     groups: Object.fromEntries(Object.values(p.groups).map(g => [g.name, `${g.level}(${g.element})`])),
     elements: Object.fromEntries(Object.keys(p.elements.count).map(e => [e, `겉 글자 ${p.elements.count[e as never]}개·세기 ${p.elements.status[e as never]}${p.elements.strongest === e ? "(가장 셈)" : ""}`])),
     // AM 판독(대운): 「2:4」를 거꾸로 읽고, 대운수(시작 나이 수)를 대운 개수로 읽고, 공망을 늘 戌·亥로 짚었다 → 이름을 붙여 준다.
@@ -131,11 +150,16 @@ export function reviewPrompt(a: { brief: Brief; sheet: FactSheet; k: Knowledge; 
   const prior = (a.prior?.lines ?? []).slice(0, 40).map((l, i) => `[p${9001 + i}] ${l}`);
   const profiles = a.brief.compatibility?.profiles?.map(p => p.line) ?? [];
   const input = { product: a.brief.product, people: a.sheet.people.map(p => ({ name: p.name, gender: p.gender, age: a.brief.person.age, birthTimeKnown: p.timeKnown, mbti: p.mbti?.type ?? null, ...p.input })), relationType: a.brief.compatibility?.relationshipType ?? null, baseDate: a.brief.baseDate };
-  let chapterTitle = 0;
+  let chapterTitle = 0, keyAt = "";
+  // AM 재생성 2 판독(annual-1): 달·해 소제목은 key(「2026-M12」)라 번호에서 빠지고 검수는 어느 달인지 몰라 12월로 읽었다 → 번호 없는 이름표 줄을 준다(「2027년 1월 · 신축월 …」).
+  const keyLabel = new Map((a.brief.timeline?.entries ?? []).map(e => [e.key, e.label]));
   const book = numbered.map(x => {
     const head = x.chapter !== chapterTitle && x.chapter > 0 ? `\n## ${x.chapter}장 ${a.chapters.find(c => c.n === x.chapter)?.title ?? ""}\n` : "";
     chapterTitle = x.chapter;
-    return `${head}${x.paragraph < 0 ? (x.n === 0 ? "[0] (표지) " : `[${x.n}] ### `) : `[${x.n}] `}${x.n === 0 ? x.text : x.paragraph < 0 ? x.text : x.text}`;
+    const key = x.paragraph >= 0 ? a.chapters.find(c => c.n === x.chapter)?.sections[x.section]?.heading ?? "" : "";
+    const at = `${x.chapter}.${x.section}`, label = /^\d{4}(-M\d{2})?$/.test(key) && keyAt !== at ? `### (${keyLabel.get(key) ?? key})\n` : "";
+    if (label) keyAt = at;
+    return `${head}${label}${x.paragraph < 0 ? (x.n === 0 ? "[0] (표지) " : `[${x.n}] ### `) : `[${x.n}] `}${x.n === 0 ? x.text : x.paragraph < 0 ? x.text : x.text}`;
   }).join("\n");
   const user = [
     `검수 판: ${REVIEW_VERSION}`,
