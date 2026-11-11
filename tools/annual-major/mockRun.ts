@@ -15,7 +15,7 @@ export function payloadOf(productKey: "annual_fortune" | "major_fortune", p: { n
     productOptions: productKey === "annual_fortune" ? ({ selectedYear: "2027", ...(p.wish ? { wish: p.wish } : {}) } as never) : {} } as ReportInputPayload;
 }
 
-async function main() {
+export async function mockMain() {
   const at = "2026-12-02T03:00:00.000Z";
   const cases = [
     payloadOf("annual_fortune", { name: "가상하나", birthDate: "1998-03-14", birthTime: "09:30", gender: "FEMALE", mbti: "ENFP", job: "employee", rel: "single", wish: "2027년에는 이직하고 연애도 하고 싶어요" }),
@@ -35,4 +35,4 @@ async function main() {
     console.log("   남은 사실·금지 깃발:", JSON.stringify((built.meta.safety.metrics as { p6c?: { remaining?: unknown } })?.p6c?.remaining ?? {}));
   }
 }
-void main().catch(e => { console.error(e); process.exit(1); });
+if (process.argv[1]?.endsWith("mockRun.ts")) void mockMain().catch(e => { console.error(e); process.exit(1); });
