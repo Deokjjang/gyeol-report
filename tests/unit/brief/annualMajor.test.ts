@@ -202,6 +202,7 @@ describe("AM 7부: 달 카드 관계 — 엔진 배지와 사실 검사가 같�
     const { calendarMonth } = await import("../../../src/lib/writer/safety/p6d");
     expect(calendarMonth("2022년 4월 무렵에 시작해 2032년 4월 무렵까지 이어지는 10년이에요.")).toBe(false);
     expect(calendarMonth("4월에는 쉬어 가요.")).toBe(true);
+    expect(calendarMonth("5월 무렵에는 쉬어 가요.")).toBe(true);
     // 세운이 아닌 책·카드 밖·때 낱말 없는 문단(원국 이야기)은 그대로 원국만 본다
     expect(factCheck("묘유충이 걸려 있어 말이 날카로워질 수 있어요.", { ...ctx, product: "saju_mbti_full" })?.rule).toBe("fact_relation");
   });
