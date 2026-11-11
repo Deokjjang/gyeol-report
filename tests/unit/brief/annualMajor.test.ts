@@ -326,6 +326,11 @@ describe("AM 7부 판독 3묶음(호출 0): 해 머리 문장 되풀이 · 검�
     expect(contradictsEngine({ why: "음양 2:4를 보면 음이 더 많다", fix: "음의 기운이 더 많아" }, "당신의 사주는 양의 기운이 앞서 있어 먼저 움직여요.", sheet())).toBe("F_yinyang_engine");
     expect(contradictsEngine({ why: "음양 비율과 다르다", fix: "" }, "음의 기운이 더 많아 물러서 살펴요.", sheet())).toBeNull();
   });
+  it("관계 전제: 솔로가 적은 소망 「좋아하는 사람도 생겼으면」은 바람이라 걸지 않는다(annual-1 재생성 남은 깃발)", async () => {
+    const { presumedPartner } = await import("../../../src/lib/writer/safety/lint");
+    expect(presumedPartner("한서윤님이 적어 주신 바람은 \"지금 회사에서 인정받고, 좋아하는 사람도 생겼으면 좋겠다\"는 것이었어요.", "single")).toBeNull();
+    expect(presumedPartner("좋아하는 사람에게 먼저 연락해 보세요.", "single")).toBe("좋아하는 사람에게");
+  });
   it("음양: 쪽을 거꾸로 말해도 비율과 다른 말(false_direction)", () => {
     expect(yinYangClaim("당신의 사주는 음의 기운이 더 많아 서두르지 않아요.", 2, 4)).toBe("false_direction");
     expect(yinYangClaim("양의 기운이 앞서 있어 먼저 움직여요.", 2, 4)).toBeNull();
