@@ -310,7 +310,8 @@ NODE_PATH=tools/quality/shim pnpm exec tsx tools/quality/ratchet.ts --current ~/
 
 ### 원격 SHA
 - 오전판: `origin/v5/annual-major-01` = `a5519db80a118b835effe0860e2af2e975747ef5`(`git ls-remote`로 일치 확인).
-- 오후판: 코드 마지막 커밋 `c625811b`(tsc·lint·build·관련 27파일을 이 코드에서 다시 돌림). push 뒤 원격 SHA는 이 절에 적는다(그 문서 커밋이 하나 더 붙는다, 내용은 이 절뿐). master·v5/main 병합 없음.
+- 오후판: `origin/v5/annual-major-01` = 로컬 `892f890c5bc762d4cc460428c30535fb35e0a43b`(push 23aedf43..892f890c, `git ls-remote`로 일치 확인, 2026-11-11). 코드 마지막 커밋은 그 바로 앞 `c625811b`(tsc·lint·build·관련 27파일을 이 코드에서 다시 돌림).
+- 이 줄을 적은 문서 커밋이 그 뒤에 하나 더 붙는다(내용은 이 절뿐). master·v5/main 병합 없음.
 
 ### 남은 위험
 - **판매 품질**: 판독한 13권이 모두 FAIL(4-3절). 지금 코드로 12/1에 열면 대운 책마다 해 머리 문장 되풀이(권당 10곳)·브리프 note에서 온 장 안 면책, 모든 상품에서 검수·수리가 맞는 문장을 틀리게 바꾸는 일이 고객 책에 나간다. 이번에 고친 것(연애 줄·시점 말 오탐·검수 T)도 실원고로는 아직 확인 못 했다.
