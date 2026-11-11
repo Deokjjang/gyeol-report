@@ -133,7 +133,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
   const sceneCtx = sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false, freelancer: !override && facts.jobStatus === "freelancer" });
   // 최종판2 1-2: 종합은 P6d(d9985cda) 장면 고르기 — 직업 꼬리표(코드·팀·가게·돌봄·외주)로 거르지 않는다(직업과 무관한 보편 성향 장면, 직업은 작가에게 맡김).
-  const profile: FactProfile = { ...base, scene: product === "saju_mbti_full" ? { office: sceneCtx.office, school: sceneCtx.school, familyOk: sceneCtx.familyOk } : sceneCtx };
+  // AM 결정(2026-11-11 밤 「부딪치는 씨앗만 거름」): 종합도 외주 장면이 맞는지(freelance)는 알려 둔다 — 씨앗 고르기에서 직군과 정면으로 부딪치는 것만 뺀다.
+  const profile: FactProfile = { ...base, scene: product === "saju_mbti_full" ? { office: sceneCtx.office, school: sceneCtx.school, familyOk: sceneCtx.familyOk, freelance: sceneCtx.freelance } : sceneCtx };
   const dayun = dayunOf({ ...input, gender, approximateBirthTimeSlot: input.approximateBirthTimeSlot });
   const chart = buildChartBrief(saju, det, k, { gender, baseDate, ...(baseAt ? { baseAt } : {}), dayun, birthYear: Number(input.birthDate.slice(0, 4)) });
   const fusionFacts = { mbti: facts.mbti, birthTimeKnown: !facts.birthTimeUnknown, genderKnown: gender !== null, contextKnown: Boolean(input.context?.jobStatus || input.context?.relationshipStatus) };

@@ -7,7 +7,7 @@
  * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + 그해·그달 글자가 건드리고 앞에서 소개된 trait 0~1개(P3.7 1-1, 적용 1회로 센다).
  */
 import type { CompatTopic, Domain, MbtiProfile, MyeongriFeature, SceneItem, SectionPlan } from "@/data/knowledge-v5/schema";
-import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, type FactProfile } from "./facts";
+import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, seedClashesJob, type FactProfile } from "./facts";
 import { FAMILY_MEMBER } from "@/lib/writer/safety/patterns";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
@@ -298,8 +298,8 @@ export function planChapters(input: PlanCtx): PlanResult {
     const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
       && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx))
       // P6e 16: 직업군·상태 태그(ctx, 없으면 글에서 읽음)가 이 고객 생활과 맞지 않으면 뽑지 않는다. 학교·가족 소품도 같은 규칙.
-      // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗).
-      && (ctx.product === "saju_mbti_full" || (sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f))));
+      // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗). AM 결정(2026-11-11 밤): 단, 입력 직군과 정면으로 부딪치는 씨앗만 뺀다(sodam 카페 사장에게 「질문 메일」「업무 지시」「구직 공고」「프리랜서 의뢰서」).
+      && (ctx.product === "saju_mbti_full" ? !seedClashesJob(s, f) : (sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f))));
     if (!ok.length) return null;
     const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
     return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
@@ -321,7 +321,9 @@ export function planChapters(input: PlanCtx): PlanResult {
       return null;
     }
     for (const d of domains) {
-      const scene = freshScene(owner.profile.signals[d], ctx, `${p.id}:${label}:${d}`, p.c.id);
+      // AM 결정(밤): 종합의 유형 공용 신호 장면도 입력 직군과 정면으로 부딪치면 쓰지 않는다(카페 사장에게 「업무 지시를 받으면…」).
+      const signals = ctx.product === "saju_mbti_full" ? (owner.profile.signals[d] ?? []).filter(x => !seedClashesJob({ text: x.text }, ctx.facts)) : owner.profile.signals[d];
+      const scene = freshScene(signals, ctx, `${p.id}:${label}:${d}`, p.c.id);
       if (scene) { mbtiTurn++; return { kind: "mbti", domain: d, scene, ...(owner.who ? { who: owner.who } : {}) }; }
     }
     return null;

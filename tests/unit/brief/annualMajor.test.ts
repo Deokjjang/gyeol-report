@@ -418,3 +418,26 @@ describe("AM 재생성 판독 후속: 대운 연도 key의 위치 말은 그 해
     expect(flags.map(f => f.chapter)).toEqual([3]);
   });
 });
+
+describe("AM 결정(밤): 종합 씨앗은 입력 직군과 정면으로 부딪치는 것만 거른다", async () => {
+  const { seedClashesJob } = await import("../../../src/lib/brief/facts");
+  const cafe = { relationship: "unknown", children: "unknown", job: "business", scene: { office: false, school: null, familyOk: false, freelance: false } } as never;
+  const office = { relationship: "unknown", children: "unknown", job: "employed", scene: { office: true, school: null, familyOk: false, freelance: false } } as never;
+  const unknown = { relationship: "unknown", children: "unknown", job: "none", scene: { office: false, school: null, familyOk: false, freelance: false } } as never;
+  it("카페 사장: 사무·외주·구직 씨앗은 빼고, 보편 장면은 둔다", () => {
+    expect(seedClashesJob({ text: "왜 이렇게 하냐는 질문부터 던지는 업무 지시", ctx: ["office"] }, cafe)).toBe(true);
+    expect(seedClashesJob({ text: "프리랜서 의뢰서의 모호한 문장 되묻기" }, cafe)).toBe(true);
+    expect(seedClashesJob({ text: "구직 공고 요건을 분해해 따져 보기" }, cafe)).toBe(true);
+    expect(seedClashesJob({ text: "이상한 숫자 하나에 새벽까지 매달리기" }, cafe)).toBe(false);
+  });
+  it("직장인에게 사무 씨앗은 그대로 · 직업을 모르면 외주·구직 씨앗도 그대로", () => {
+    expect(seedClashesJob({ text: "왜 이렇게 하냐는 질문부터 던지는 업무 지시", ctx: ["office"] }, office)).toBe(false);
+    expect(seedClashesJob({ text: "프리랜서 의뢰서의 모호한 문장 되묻기" }, unknown)).toBe(false);
+    expect(seedClashesJob({ text: "구직 공고 요건을 분해해 따져 보기" }, unknown)).toBe(false);
+  });
+  it("sodam 입력(INTP · 자영업 카페 사장) 종합 브리프에 사무·구직·외주 씨앗이 없다", () => {
+    const b = buildBrief({ product: "saju_mbti_full", person: { ...person({ name: "가상소담", birthDate: "1994-05-21", birthTime: "14:20", mbtiType: "INTP" }), context: { relationshipStatus: "", jobStatus: "self_employed", detailJob: "카페 사장" } }, baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
+    const text = JSON.stringify(b);
+    for (const w of ["업무 지시", "질문 메일", "구직 공고", "프리랜서 의뢰서"]) expect(text, w).not.toContain(w);
+  });
+});
