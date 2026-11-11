@@ -242,6 +242,20 @@ function p6eContext(brief: Brief, k: Knowledge): Partial<LintCtx> {
 
 const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
 /** P6d 검사 문맥: 묶음 세기·궁합 두 사람 값·대운 안 몇 번째 해·시점·관계 수·소품·투자 장·세기 점수·카드 십성. */
+/** AM 7부: 세운 달 표 라벨(「5월 · 을사월 (5/6~6/6)」「2028년 1월 · 계축월 …」) → 본문 달 이름 짝. 신년판 해의 「2027년 5월」도 같은 짝. */
+export function monthNamesOf(entries: readonly { readonly kind: string; readonly key: string; readonly label: string }[]): Record<string, string> {
+  const year = entries.find(e => e.kind === "year")?.key ?? "";
+  const out: Record<string, string> = {};
+  for (const e of entries) {
+    if (e.kind !== "month") continue;
+    const m = e.label.match(/^(?:(20\d\d)년 )?(1[0-2]|[1-9])월 · ([가-힣]{2}월)/);
+    if (!m) continue;
+    if (m[1]) out[`${m[1]}년 ${m[2]}`] = m[3];
+    else { out[m[2]] ??= m[3]; if (year) out[`${year}년 ${m[2]}`] ??= m[3]; }
+  }
+  return out;
+}
+
 function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintCtx> {
   const ids = (re: RegExp) => new Set(plan.filter(ch => re.test(ch.id)).map(ch => ch.n));
   const entries = brief.timeline?.entries ?? [];
@@ -258,7 +272,7 @@ function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintC
       pairRelations: c.dayRelations.length,
     } : {}),
     yearIndex: Object.fromEntries(entries.filter(e => e.kind === "year" && e.dayun?.yearIndex).map(e => [e.key, { index: e.dayun!.yearIndex!, total: e.dayun!.total ?? 10 }])),
-    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)), goodCards: true } : {}),
+    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)), goodCards: true, monthNames: monthNamesOf(entries), ...(Number(entries.find(e => e.kind === "year")?.key) ? { bookYear: Number(entries.find(e => e.kind === "year")!.key) } : {}) } : {}),
     relationCount: Object.fromEntries(entries.map(e => [e.key, e.badges.filter(b => b.kind !== "GONGMANG").length])),
     props: Object.keys(brief.usedProps ?? {}), investChapters: ids(/^invest/),
     allowed: allowedWindows(JSON.stringify(brief)), conditionalChapters: new Set(plan.filter(ch => CONDITIONAL_TITLE.test(ch.title.trim())).map(ch => ch.n)),

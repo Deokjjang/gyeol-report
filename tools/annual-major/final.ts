@@ -53,11 +53,13 @@ export function autoCheck(snap: { productType: string; draft: unknown; evidenceP
   const remaining = ((meta.safety.metrics as { p6c?: { remaining?: Record<string, number> } } | undefined)?.p6c?.remaining) ?? {};
   const hardLeft = ((meta.review as { remainingHard?: unknown[] } | undefined)?.remainingHard ?? []).length;
   const det = meta.chapters.filter(c => c.source === "deterministic").length;
-  const minChars = product === "annual" ? 10000 : product === "major" ? 12000 : 8000; // 멈춤 하한(목표 하한의 약 75%). 목표 대비는 점검표에 적는다.
+  // 멈춤 하한 = AM 구조 목표 하한(보고서 6절: 세운 14,590 · 대운 13,100 — SPEC §1의 옛 구조 수치보다 장이 많다)의 75%를 백 자 단위로 내림. AM 7부: 대운이 12,000(목표의 92%)으로 적혀 있던 것을 주석대로 고침. 4종은 8,000.
+  const target = product === "annual" ? 14590 : product === "major" ? 13100 : 0;
+  const minChars = target ? Math.floor(target * 0.75 / 100) * 100 : 8000;
   const checks: [boolean, string][] = [
     [last?.finish === "complete", `잘림: 작가 마지막 호출 ${last?.kind}·finish=${last?.finish} (이어 쓰기 ${writerCalls.filter(c => c.kind === "continuation").length}회)`],
     [meta.durationMs < (product === "major" ? 300_000 : 480_000), `소요 시간 ${Math.round(meta.durationMs / 1000)}초`],
-    [chars >= minChars, `분량 ${chars}자(멈춤 하한 ${minChars})`],
+    [chars >= minChars, `분량 ${chars}자(${target ? `목표 하한 ${target} · ` : ""}멈춤 하한 ${minChars})`],
     [det === 0, `장 수 ${d.chapters.length}, 결정론 장 ${det}`],
     [v.ok, `형식 ${v.ok ? "OK" : v.errors.join(",")}`],
     [hardLeft === 0, `안전망 남은 사실·금지 ${hardLeft} · 남은 깃발 ${JSON.stringify(remaining)}`],

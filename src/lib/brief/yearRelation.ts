@@ -27,7 +27,8 @@ export const SEAT_AREA: Readonly<Record<Seat, { readonly name: string; readonly 
   month: { name: "태어난 달", stem: "일터·사회생활", branch: "일터·사회생활·집안 어른" },
   day: { name: "태어난 날", stem: "나 자신", branch: "나와 가장 가까운 사람의 자리(배우자 자리)" },
   hour: { name: "태어난 시각", stem: "아랫사람·혼자 쓰는 시간", branch: "아랫사람·자녀·혼자 쓰는 시간" },
-  dayun: { name: "지금 대운", stem: "지금 10년의 흐름", branch: "지금 10년의 흐름" },
+  // AM 7부: 대운·세운 책은 「지금」을 전부 막는다(시점 말 규칙) — 작가에게 보이는 자리 이름도 「지금」 없이.
+  dayun: { name: "이 대운", stem: "대운 10년의 흐름", branch: "대운 10년의 흐름" },
 };
 
 /** 관계마다 양면 읽기(쓸 거리 · 살필 거리). 좋음·나쁨 단정 금지(AM 1-1 ①). */

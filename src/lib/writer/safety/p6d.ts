@@ -106,18 +106,44 @@ export const dropChapterRef = (s: string) => s.replace(/(?<![0-9가-힣])\d{1,2}
   .replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (?=[가-힣])/g, "");
 
 /** E 시점 지시: 대운·세운(달력이 있는 책)은 "지금" 전부, 그 밖은 시점을 못 박는 말만. */
-const TIME_STRICT = /지금|이번 달|이번 한 달|올해 남은|요즘 들어/;
+// AM 7부(세운 판독: 맨 「올해」 27곳이 검사에 안 걸림): 달력 책은 맨 「올해」도 시점 말이다(남은 것은 tidy가 연도로 바꾼 뒤 — 따옴표 안 대사·「올해 남은」).
+const TIME_STRICT = /지금|이번 달|이번 한 달|올해|요즘 들어/;
 const TIME_LOOSE = /지금 우리가 있는|지금 (이|그) (시기|때|달|해)(?![가-힣])|이번 달|이번 한 달|올해 남은 (두|세|한|몇) ?(달|개월)|올해 남은/;
 /** MBTI 기능 쉬운 이름("지금 이 순간 감각(Se)")은 시점 말이 아니다(r1 커리어: 기능 이름이 걸렸다). */
 const FUNCTION_NAME_NOW = /지금 이 순간(의)? 감각/g;
 export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s.replace(FUNCTION_NAME_NOW, ""));
 
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
-/** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. */
-export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))/;
+/** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. AM 7부: 「2022년 4월 무렵에 시작해 2032년 4월 무렵까지」(교운 연·월 기간, 최종 A-4)도 같은 표기. */
+export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵)(?![0-9가-힣]*(일 기준|일부터))/;
 /** AM 2부(덕짱님 지시 2026-11-11): 세운 달 이름은 표와 본문이 한 체계 「2월 · 임인월」 — 달력 숫자가 그 달 간지월 이름과 짝이면 허용한다. */
 const MONTH_NAME_PAIR = /(20\d\d년 )?(1[0-2]|[1-9]) ?월 ?(·|\(|,)? ?[갑을병정무기경신임계][자축인묘진사오미신유술해]월\)?/g;
+/**
+ * AM 7부: 달력 책의 맨 「올해」 → 그 책이 말하는 해(세운 = 신년판 해 2027, 대운 = 기준일의 해). 조사도 맞춘다(는→은, 가→이, 를→을, 와→과, 로→으로).
+ * 따옴표 안 대사와 「올해 남은」(12월 기준 책에서 뜻이 갈림)은 그대로 둔다(검사가 본다).
+ */
+const YEAR_PARTICLE: Readonly<Record<string, string>> = { 는: "은", 가: "이", 를: "을", 와: "과", 로: "으로" };
+export function namedYear(s: string, year: number): { text: string; count: number } {
+  let count = 0;
+  const text = s.replace(/올해(?! ?남은)(는|가|를|와|로)?/g, (m: string, p: string | undefined, at: number) => {
+    const before = s.slice(0, at);
+    const quoted = (before.match(/"/g)?.length ?? 0) % 2 === 1 || before.lastIndexOf("“") > before.lastIndexOf("”") || before.lastIndexOf("「") > before.lastIndexOf("」") || before.lastIndexOf("‘") > before.lastIndexOf("’");
+    if (quoted) return m;
+    count++; return `${year}년${p ? YEAR_PARTICLE[p] : ""}`;
+  });
+  return { text, count };
+}
 export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s.replace(MONTH_NAME_PAIR, ""));
+/**
+ * AM 7부(2026-11-11): 세운 본문의 맨 달 이름 「5월」은 그 책 달 표의 짝으로 바꾼다 → 「5월(을사월)」(호출 0, 표와 한 체계).
+ * names: "5" → "을사월", "2028년 1" → "계축월"(달 표 라벨에서). 날짜(「5월 3일」)·「무렵부터」·이미 짝인 것·표에 없는 달은 그대로(검사가 본다).
+ */
+const BARE_MONTH = /(?<![0-9])(20\d\d년 )?(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵)(?![0-9가-힣]*(일 기준|일부터))(?! ?(·|\(|,)? ?[갑을병정무기경신임계][자축인묘진사오미신유술해]월)/g;
+export function pairMonthNames(s: string, names: Readonly<Record<string, string>>): { text: string; count: number } {
+  let count = 0;
+  const text = s.replace(BARE_MONTH, (m: string, y: string | undefined, n: string) => { const g = names[`${y ?? ""}${n}`]; if (!g) return m; count++; return `${m}(${g})`; });
+  return { text, count };
+}
 
 /** E 마무리 문형(소제목 마지막 문장의 끝 두 어절). 12달 가운데 같은 문형은 3번까지. */
 export const closingFrame = (lastSentence: string) => lastSentence.replace(/[⟪⟫"'“”‘’]/g, "").trim().split(/\s+/).slice(-2).join(" ").replace(/[.!?…]+$/, "");

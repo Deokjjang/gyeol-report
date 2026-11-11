@@ -77,6 +77,8 @@ export function annotateChapter(sections: readonly BookSection[], ctx: AnnotateC
       if (text.lastIndexOf("(", at) > text.lastIndexOf(")", at)) continue;
       seen.add(ko);
       if (text[end] === "(") continue;
+      // AM 7부(세운 판독 56곳): 달 머리 줄 「신축월(辛丑月)은」의 「신축」에 또 붙여 「신축(辛丑)월(辛丑月)」이 됐다 — 바로 뒤가 「월(…月)」이면 이미 한자가 있다.
+      if (/^월\([^)]*月\)/.test(text.slice(end))) continue;
       text = `${text.slice(0, end)}(${tag})${text.slice(end)}`; count++;
       const shift = tag.length + 2;
       for (const t of taken) if (t[0] >= end) { t[0] += shift; t[1] += shift; }

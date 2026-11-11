@@ -69,11 +69,14 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
 
 /** 정답지 요약(수리용 닻): 사람마다 기둥·강약·묶음·오행·신살·관계·올해·대운. */
 export function factsBrief(sheet: FactSheet, brief: Brief): Record<string, unknown> {
-  const y = Number(sheet.baseDate.slice(0, 4));
+  // AM 7부(세운 판독): 세운 책의 「그 해」는 신년판 해(2027)다. 기준일의 해(2026)를 닻으로 주니 수리가 맞는 2027 관계 문장을 2026 오(午)로 고쳐 썼다
+  // (「자와 미가 … 해(害)」→「자와 올해 오가 … 부딪치는」). 세운은 책의 해, 나머지는 기준일의 해 — 연도를 숫자로 함께 준다.
+  const base = Number(sheet.baseDate.slice(0, 4)), bookYear = brief.product === "annual_fortune" ? Number(brief.timeline?.entries.find(e => e.kind === "year")?.key) : NaN;
+  const y = Number.isInteger(bookYear) && bookYear > 2000 ? bookYear : base;
   const person = (p: PersonFacts) => ({ name: p.name, pillars: Object.fromEntries(Object.entries(p.pillars).map(([k, v]) => [k, v ? `${v.ganjiKo}(${v.stem}${v.branch})` : "시간 미상"])), strength: p.strength.labelKo,
     groups: Object.values(p.groups).map(g => `${g.name} ${g.level}`).join(" · "), elements: Object.keys(p.elements.count).map(e => `${e} 겉 ${p.elements.count[e as never]}개·세기 ${p.elements.status[e as never]}`).join(" · "),
     shinsal: p.shinsal.map(s => `${s.name}(${s.slots.join("·")})`).join(", "), relations: p.relations.map(r => `${r.key} ${r.kind}${r.completeness !== "full" ? `(${r.completeness})` : ""}`).join(", "),
-    thisYear: p.annual.filter(a => a.year === y).map(a => `${a.ganjiKo}: 원국과 ${a.relations.map(r => `${r.key} ${r.kind}`).join("·") || "관계 없음"}`)[0], mbti: p.mbti?.type ?? null, input: p.input });
+    thisYear: p.annual.filter(a => a.year === y).map(a => `${a.year}년 ${a.ganjiKo}: 원국과 ${a.relations.map(r => `${r.key} ${r.kind}`).join("·") || "관계 없음"}`)[0], mbti: p.mbti?.type ?? null, input: p.input });
   return { people: sheet.people.map(person), ...(sheet.pair ? { pairCommon: sheet.pair.common } : {}), forbiddenFacts: brief.person.forbiddenFacts, ...(brief.compatibility?.profiles?.length ? { profiles: brief.compatibility.profiles.map(p => p.line) } : {}), product: brief.product };
 }
 

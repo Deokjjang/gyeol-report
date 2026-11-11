@@ -81,21 +81,21 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
   const yearTg = (e?: TimelineEntry) => (e ? tgOf(e.tenGod.stem) : undefined);
   const line = (e: TimelineEntry | undefined) => { const tg = yearTg(e); return e && tg ? `${e.key}년(만 ${ageAt(Number(e.key))}세 무렵) ${e.tenGod.stem}: 일 = ${DOMAIN_BY_TEN_GOD[tg][0]}` : ""; };
   const out: Record<string, Evidence | null> = {
-    dayunHow: ev("dayunHow", ["대운: 타고난 달 기둥에서 10년마다 한 칸씩 움직이는 큰 흐름(그 10년의 하늘 글자 십성이 주제)", "세운: 해마다 들어오는 기운 — 대운이 계절이라면 세운은 그해 날씨", cur ? `이 책의 지도: ${life.length}개 대운, 지금은 ${cur.label}` : ""], "짧게 한 소제목: 대운과 세운의 관계를 쉬운 그림 하나로"),
-    lifetime: ev("lifetime", life.map(x => `${x.label} · ${x.tenGod} — ${x.theme}${x.current ? " (지금)" : ""}`).slice(0, 10), "평생 지도에서 큰 줄기(이어지는 주제, 꺾이는 곳) 두세 개만 짚는다. 표는 화면이 보여 주니 전부 나열하지 않는다"),
+    dayunHow: ev("dayunHow", ["대운: 타고난 달 기둥에서 10년마다 한 칸씩 움직이는 큰 흐름(그 10년의 하늘 글자 십성이 주제)", "세운: 해마다 들어오는 기운 — 대운이 계절이라면 세운은 그해 날씨", cur ? `이 책의 지도: ${life.length}개 대운, 내가 서 있는 대운은 ${cur.label}` : ""], "짧게 한 소제목: 대운과 세운의 관계를 쉬운 그림 하나로"),
+    lifetime: ev("lifetime", life.map(x => `${x.label} · ${x.tenGod} — ${x.theme}${x.current ? " (내가 서 있는 대운)" : ""}`).slice(0, 10), "평생 지도에서 큰 줄기(이어지는 주제, 꺾이는 곳) 두세 개만 짚는다. 표는 화면이 보여 주니 전부 나열하지 않는다"),
     pastSummary: ev("pastSummary", [`지난 세 해: ${past.map(e => `${e.key}년 ${e.ganji.hangul} ${e.tenGod.stem}`).join(" → ")}`, pastCycles.length ? `그 시기 대운: ${pastCycles.join(" → ")}` : ""], "지난 일을 겪었다고 단정하지 않는다. '~했다면'·질문형으로, 세 해를 하나의 흐름으로"),
     pastDayun: ev("pastDayun", [prev && past.some(e => e.dayun?.ganji !== cur?.ganji + " 대운") ? `지난 대운: ${prev.label} · ${prev.tenGod}` : "", ...mind(gCur, "enter", 1)], "그 시기를 지나며 남은 힘(태도·습관)을 조건형으로"),
-    nowTheme: cur ? ev("nowTheme", [`지금 대운: ${cur.label} · ${cur.tenGod} — ${cur.theme}`, ...mind(gCur, "inside", 2), ...dom(gCur, "work", 1)], "주제를 한 줄로 먼저, 그 10년의 태도 둘") : null,
-    nowRelation: cur ? ev("nowRelation", relationsWithNatal(c.saju, { stem: cur.hanja[0] as Pillar["stem"], branch: cur.hanja[1] as Pillar["branch"] }), "원국 자리와 지금 대운 기둥의 관계만(없으면 '부딪힘 없이 이어지는 쪽'). 충=나쁨·합=좋음 단정 금지") : null,
+    nowTheme: cur ? ev("nowTheme", [`내가 서 있는 대운: ${cur.label} · ${cur.tenGod} — ${cur.theme}`, ...mind(gCur, "inside", 2), ...dom(gCur, "work", 1)], "주제를 한 줄로 먼저, 그 10년의 태도 둘") : null,
+    nowRelation: cur ? ev("nowRelation", relationsWithNatal(c.saju, { stem: cur.hanja[0] as Pillar["stem"], branch: cur.hanja[1] as Pillar["branch"] }), "원국 자리와 이 대운 기둥의 관계만(없으면 '부딪힘 없이 이어지는 쪽'). 충=나쁨·합=좋음 단정 금지") : null,
     nowCards: cur ? ev("nowCards", [`좋은 패: ${dom(gCur, "money", 1)[0] ?? ""}`, `숙제: ${mind(gCur, "leave", 1)[0] ?? ""}`], "좋은 패와 숙제를 한 쌍으로") : null,
     turnWhen: next ? ev("turnWhen", [`다음 대운: ${next.label} · ${next.tenGod} — ${next.theme}`, `교운기: ${next.startYear - 1}~${next.startYear + 1}년 무렵(앞뒤 1~2년)`, c.dayun.error ? "출생 시각 미상이라 교운 연·월은 범위로만" : ""], "시간 미상이면 경계 연도를 단정하지 않는다") : null,
     turnMind: gCur && gNext ? ev("turnMind", [...mind(gCur, `to:${gNext}`, 1), ...mind(gNext, "enter", 1), ...mind(gCur, "leave", 1)], "바뀌기 전 정리할 것 → 바뀐 뒤 마음가짐 순서로") : null,
-    mapWorkMoney: ev("mapWorkMoney", [...dom(gCur, "work", 2), ...dom(gNext, "work", 1), ...dom(gCur, "money", 1), ...dom(gNext, "money", 1)], "지금 대운 → 다음 대운으로 이어지게, 영역마다 장면 하나"),
+    mapWorkMoney: ev("mapWorkMoney", [...dom(gCur, "work", 2), ...dom(gNext, "work", 1), ...dom(gCur, "money", 1), ...dom(gNext, "money", 1)], "이 대운 → 다음 대운으로 이어지게, 영역마다 장면 하나"),
     mapLovePeople: ev("mapLovePeople", [...dom(gCur, "love", 1), ...dom(gNext, "love", 1), ...dom(gCur, "people", 1), ...dom(gNext, "people", 1)], "사랑·결혼·가족은 조건형('함께하는 사람이 있다면'). 결혼 시기를 쓰지 않는다"),
     mapMindMove: ev("mapMindMove", [...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1), ...dom(gCur, "move", 1), ...dom(gNext, "move", 1)], "마음·컨디션은 진단 없이, 이동·거주는 경향으로"),
     growthCurve: c.mbti ? ev("growthCurve", [...growth("order", 1), ...growth(nowAge, 2), ...(futureAge !== nowAge ? growth(futureAge, 1) : [])], "MBTI 발달은 경향이다(나이에 맞춰 반드시 그렇게 된다고 쓰지 않는다)") : null,
-    growthDayun: c.mbti && cur ? ev("growthDayun", [`지금 대운 주제: ${cur.theme}`, ...(next ? [`다음 대운 주제: ${next.theme}`] : []), ...growth(futureAge, 1)], "명리 × MBTI: 대운이 여는 쪽과 성격이 자라는 쪽이 만나는 곳을 원인 → 결과로 한 문단") : null,
-    planNear: ev("planNear", [`지금(${c.thisYear}년 무렵): ${cur?.theme ?? ""}`, ...near.map(line)], "지금 / 2~3년 뒤를 각각 행동 하나로"),
+    growthDayun: c.mbti && cur ? ev("growthDayun", [`이 대운 주제: ${cur.theme}`, ...(next ? [`다음 대운 주제: ${next.theme}`] : []), ...growth(futureAge, 1)], "명리 × MBTI: 대운이 여는 쪽과 성격이 자라는 쪽이 만나는 곳을 원인 → 결과로 한 문단") : null,
+    planNear: ev("planNear", [`${c.thisYear}년 무렵(이 책의 기준 해): ${cur?.theme ?? ""}`, ...near.map(line)], "가까운 1년 / 2~3년 뒤를 각각 행동 하나로"),
     planFar: ev("planFar", [mid ? `5년 뒤: ${line(mid)}` : "", far ? `10년 뒤: ${line(far)}` : "", next ? `그 무렵 대운: ${next.label}` : ""], "5년 뒤 / 10년 뒤를 각각 준비 하나로. 사건 단정 금지"),
   };
   return Object.fromEntries(Object.entries(out).filter((x): x is [string, Evidence] => Boolean(x[1])));
@@ -106,7 +106,7 @@ function relationsWithNatal(saju: SajuCalcResult, dp: Pillar): string[] {
   const natal = natalEntries(saju);
   const seat = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
   return detectRelations([...natal, { position: "dayun", pillar: dp }]).filter(r => r.members.some(m => m.position === "dayun") && REL_PLAIN[r.kind])
-    .slice(0, 3).map(r => `지금 대운 기둥과 ${[...new Set(r.members.filter(m => m.position !== "dayun").map(m => seat[m.position as keyof typeof seat]).filter(Boolean))].join("·")} 자리: ${REL_PLAIN[r.kind]}`);
+    .slice(0, 3).map(r => `이 대운 기둥과 ${[...new Set(r.members.filter(m => m.position !== "dayun").map(m => seat[m.position as keyof typeof seat]).filter(Boolean))].join("·")} 자리: ${REL_PLAIN[r.kind]}`);
 }
 
 /** 앞으로 10년 연도 key 근거: 핵심 해는 깊게(근거 배지), 나머지는 짧게. */

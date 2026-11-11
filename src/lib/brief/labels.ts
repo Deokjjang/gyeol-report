@@ -28,6 +28,7 @@ export function josa(word: string, pair: "은는" | "이가" | "을를" | "과�
   return word + (batchim ? pair[0] : pair[1]);
 }
 /** 글자 하나 + 한글 읽기: "亥(해)". 조사는 josa로 읽기 기준. */
+export const branchKo = (ch: string) => BRANCH_KO[ch as EarthlyBranch] ?? ch;
 export const glyphLabel = (ch: string) => `${ch}(${STEM_KO[ch as HeavenlyStem] ?? BRANCH_KO[ch as EarthlyBranch] ?? ch})`;
 export const ganjiOf = (p: Pillar) => ({ hanja: p.stem + p.branch, hangul: STEM_KO[p.stem] + BRANCH_KO[p.branch] });
 export const ganjiLabel = (p: Pillar) => `${p.stem}${p.branch}(${STEM_KO[p.stem]}${BRANCH_KO[p.branch]})`;

@@ -21,7 +21,9 @@ export type FactCtx = {
 
 const NEG = /없(어|어요|습니다|는|고|다|지만|으니|으면)|아니|않(아|고|는|습니다|지만)|빠져 있|비어 있/;
 const HYPO = /라면|다면|이라면|일 때는|경우에는|흔히|보통은|일반적으로|이란|이라는 것은|뜻해요|뜻합니다|을 뜻|를 뜻/;
-const TEMPORAL = /올해|내년|그해|이해|대운|세운|월운|\d{4}년|이달|이번 달|달에는|해에는|들어오|들어와|찾아오|만나는 해/;
+/** AM 7부: 세운 달 카드 문단(「3월 계묘월은…」). */
+const GANJI_MONTH = /[갑을병정무기경신임계][자축인묘진사오미신유술해]월/;
+const TEMPORAL = /올해|내년|그해|이해|이 해|그 해|이 달|그 달|대운|세운|월운|\d{4}년|이달|이번 달|달에는|해에는|들어오|들어와|찾아오|만나는 해/;
 const SLOT_KO: Readonly<Record<Slot, string>> = { yearStem: "연간", yearBranch: "연지", monthStem: "월간", monthBranch: "월지", dayStem: "일간", dayBranch: "일지", hourStem: "시간", hourBranch: "시지" };
 const slotsKo = (s: readonly Slot[]) => s.map(x => SLOT_KO[x]).join("·");
 
@@ -59,10 +61,13 @@ function termPosition(sen: string, ctx: FactCtx, owners: readonly PersonFacts[])
 }
 
 /** 정답지에 없는 신살·귀인·십이운성을 그 사람 것으로 말함(부정·가정·유입 문맥 제외). */
-function termAbsent(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
-  if (NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen)) return null;
+function termAbsent(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
+  // AM 7부(annual-2·3 판독): 세운 달 카드의 「원진이 함께 걸려」「이 달은 공망에 들어서」는 그 달 기둥과 원국 사이 일이다 — 해·달 카드, 때 낱말이 든 문단은 유입 문맥으로 본다.
+  if (NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen) || inKey || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph)) return null;
   for (const a of ctx.aliases) {
     if (!a.re.test(sen)) continue;
+    // 세운 책: 원진·공망은 그 해·달이 원국과 만나 생기는 쪽으로 쓴다(엔진 해·달 카드 배지) — 원국에 없어도 지우지 않는다.
+    if (ctx.product === "annual_fortune" && /원진|공망/.test(a.name)) continue;
     if (owners.some(o => o.shinsal.some(s => s.name === a.name))) continue;
     // 궁합: 이름이 없는 문장은 두 사람 중 누구에게든 있으면 통과(ownersOf가 모두를 준다).
     return { rule: "fact_term", detail: `${a.name}은 ${owners.map(o => o.name).join("·")}의 원국에 없다` };
@@ -90,13 +95,31 @@ function relPool(ctx: FactCtx, owners: readonly PersonFacts[], temporal: boolean
   if (temporal) for (const o of owners) pool.push(...o.annual.flatMap(a => [...a.relations, ...a.stemClashes]), ...o.dayun.cycles.flatMap(c => [...c.relations, ...c.stemClashes]), ...o.monthly.flatMap(m => m.relations));
   return pool;
 }
+/** 원국 관계 + 한 유입 기둥(세운·대운·월운 하나)의 관계를 합쳐 세 글자가 다 모이는가(그 유입 기둥이 한 글자 이상 보탬). */
+function coversThree(chars: readonly string[], kinds: readonly string[], owners: readonly PersonFacts[]): boolean {
+  const fits = (r: RelationFact) => kinds.includes(r.kind) && r.members.every(m => chars.includes(m.char));
+  for (const o of owners) {
+    const natal = [...o.relations, ...o.stemClashes].filter(fits);
+    const sources = [...o.annual.map(a => [...a.relations, ...a.stemClashes]), ...o.dayun.cycles.map(c => [...c.relations, ...c.stemClashes]), ...o.monthly.map(m => [...m.relations])];
+    for (const src of sources) {
+      const add = src.filter(fits); if (!add.length) continue;
+      const u = new Set([...natal, ...add].flatMap(r => r.members.map(m => m.char)));
+      if (chars.every(c => u.has(c))) return true;
+    }
+  }
+  return false;
+}
 const sameSet = (a: readonly string[], b: readonly string[]) => { const x = new Set(a), y = new Set(b); return x.size === y.size && [...x].every(c => y.has(c)); };
 
 /** 관계: 글자 묶음이 정답지에 없음(축술미형인데 戌 없음) · 글자 수(두 글자인데 세 땅) · 완성도(반합인데 완성). */
-function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
   if (HYPO.test(sen) && !/있어|있고|있습니다|있으니/.test(sen)) return null;
-  const temporal = TEMPORAL.test(sen);
-  const pool = relPool(ctx, owners, temporal);
+  // AM 7부(annual-2·3 판독): 세운 달 카드의 「묘유충이 걸려 있어…」는 그 달 기둥(계묘월)의 관계인데, 문장에 때 낱말이 없어 원국만 보고 지웠다.
+  // 해·달 카드(inKey), 때 낱말(간지월 이름 포함)이 든 문단, 세운 책(책 전체가 그 해 이야기)이면 관계가 있는지는 세운·대운·월운까지 본다.
+  // 반합 완성도·글자 수 판정(아래 one·generic)은 예전처럼 문장 기준 풀만 쓴다 — 풀이 넓어지면 대상이 여럿이 되어 검사가 약해진다.
+  const sentTemporal = TEMPORAL.test(sen) || inKey;
+  const temporal = sentTemporal || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph) || ctx.product === "annual_fortune";
+  const pool = relPool(ctx, owners, temporal), strictPool = temporal === sentTemporal ? pool : relPool(ctx, owners, sentTemporal);
   const mentioned: { chars: string[]; kinds: readonly string[]; text: string; stem: boolean }[] = [];
   for (const m of sen.matchAll(BRANCH_REL)) mentioned.push({ chars: branchChars(m[1]), kinds: REL_KIND[m[2]] ?? [], text: m[0], stem: false });
   for (const m of sen.matchAll(STEM_REL)) mentioned.push({ chars: stemChars(m[1]), kinds: REL_KIND[m[2]] ?? [], text: m[0], stem: true });
@@ -105,6 +128,10 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     if (!x.stem && x.chars.some(c => !/[子丑寅卯辰巳午未申酉戌亥]/.test(c))) continue;
     const found = pool.filter(r => x.kinds.includes(r.kind) && sameSet(r.members.map(m => m.char), x.chars));
     if (found.length) continue;
+    // AM 7부(annual-3 판독): 「사유축 반합」은 무리 이름 + 반합(세 글자 중 두 글자만)이다 — 그 무리의 반합(두 글자)이 있으면 맞는 말.
+    if (/반합$/.test(x.text) && x.chars.length === 3 && pool.some(r => r.kind === "SAMHAP" && r.completeness !== "full" && r.members.every(m => x.chars.includes(m.char)))) continue;
+    // AM 7부(annual-2 판독): 세 글자 형·합(축술미형·인사신형)이 원국 두 글자 + 그 해·달·대운 한 글자로 다 모이면 엔진 카드와 같이 본다.
+    if (temporal && x.chars.length === 3 && coversThree(x.chars, x.kinds, owners)) continue;
     // 세 글자 이름(축술미 삼형)인데 두 글자만 있으면 partial 형으로 있을 수 있다 — 세 글자가 다 있어야 「축술미 삼형」.
     const partial = x.chars.length === 3 ? pool.filter(r => x.kinds.includes(r.kind) && r.members.every(m => x.chars.includes(m.char))) : [];
     const have = new Set(owners.flatMap(o => Object.values(o.pillars).flatMap(p => (p ? [p.stem, p.branch] : []))));
@@ -113,8 +140,8 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     return { rule: "fact_relation", detail: partial.length ? `「${x.text}」: 세 글자가 다 있지 않다(${partial.map(r => `${[...new Set(r.members.map(m => m.char))].join("")} 두 글자 형`).join("·")}만 있다)` : missing.length ? `「${x.text}」: ${missing.join("·")} 글자가 원국에 없다` : `「${x.text}」 관계는 정답지에 없다` };
   }
   // 글자 수·완성도: 관계 말이 하나일 때.
-  const one = mentioned.length === 1 ? pool.filter(r => mentioned[0].kinds.includes(r.kind) && r.members.every(m => mentioned[0].chars.includes(m.char))) : [];
-  const generic = /반합|삼합/.test(sen) ? pool.filter(r => r.kind === "SAMHAP") : [];
+  const one = mentioned.length === 1 ? strictPool.filter(r => mentioned[0].kinds.includes(r.kind) && r.members.every(m => mentioned[0].chars.includes(m.char))) : [];
+  const generic = /반합|삼합/.test(sen) ? strictPool.filter(r => r.kind === "SAMHAP") : [];
   const target = one.length === 1 ? one[0] : generic.length === 1 && !mentioned.length ? generic[0] : null;
   if (target) {
     // AM: 표준 반합 풀이(HALF_HAP_PLAIN 「세 글자 중 두 글자만」)의 「세 글자」는 글자 수 주장이 아니다 — 「두 글자」로 읽는다.
@@ -337,11 +364,11 @@ function dayunSpan(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): F
   }
   return null;
 }
-/** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지). */
-export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number): FactHit | null {
+/** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지), inKey = 대운 연도·세운 달 카드 소제목 안(유입 문맥, AM 7부). */
+export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners) ?? annualNoTouch(sen, ctx, owners, paragraph)
-    ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners) ?? inputOutside(sen, ctx);
+  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+    ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 
 /** 괄호 약어·한자 뒤 조사를 앞 한글 받침에 맞춘다(「눈(Ni)는」→「눈(Ni)은」). 결정론 정리(호출 0). */

@@ -136,3 +136,104 @@ describe("AM 안전망: 반합 표준 풀이는 글자 수 오탐이 아니다",
     expect(factCheck("반합이라 세 글자가 모두 모여 완성된 힘이에요.", ctx)?.rule).toBe("fact_relation");
   });
 });
+
+// AM 7부: 7부 실호출 판독에서 고친 것(호출 0).
+describe("AM 7부: 시점 말·달 이름 결정론 정리", async () => {
+  const { pairMonthNames, calendarMonth } = await import("../../../src/lib/writer/safety/p6d");
+  const { monthNamesOf } = await import("../../../src/lib/writer/publish");
+  const { tidyBook } = await import("../../../src/lib/writer/safety/p6c");
+  const entries = [
+    { kind: "year", key: "2027", label: "2027년 丁未(정미)" },
+    { kind: "month", key: "2026-M12", label: "1월 · 신축월 (1/5~2/4) · 2026년 병오년 마지막 달" },
+    { kind: "month", key: "2027-M04", label: "5월 · 을사월 (5/6~6/6)" },
+    { kind: "month", key: "2027-M03", label: "4월 · 갑진월 (4/5~5/6)" },
+    { kind: "month", key: "2027-M07", label: "8월 · 무신월 (8/8~9/8)" },
+    { kind: "month", key: "2027-M12", label: "2028년 1월 · 계축월 (1/6~2/4)" },
+  ];
+  const names = monthNamesOf(entries);
+  it("달 표 라벨 → 이름 짝(신년판 해·다음 해 1월 구분)", () => {
+    expect(names).toMatchObject({ "1": "신축월", "5": "을사월", "2027년 5": "을사월", "2028년 1": "계축월" });
+    expect(names["2028년 5"]).toBeUndefined();
+  });
+  it("맨 달 이름만 짝으로(날짜·무렵부터·이미 짝·표에 없는 달은 그대로) → 달력월 검사 통과", () => {
+    const s = "흐름이 도울 때는 앞서 말한 4월, 5월, 8월을 쓰세요.";
+    const r = pairMonthNames(s, names);
+    expect(r).toEqual({ text: "흐름이 도울 때는 앞서 말한 4월(갑진월), 5월(을사월), 8월(무신월)을 쓰세요.", count: 3 });
+    expect(calendarMonth(s)).toBe(true);
+    expect(calendarMonth(r.text)).toBe(false);
+    expect(pairMonthNames("2028년 1월에는 정리하고, 5월 3일 약속은 지켜요.", names).text).toBe("2028년 1월(계축월)에는 정리하고, 5월 3일 약속은 지켜요.");
+    expect(pairMonthNames("5월 · 을사월에는 쉬어요. 2027년 5월 무렵부터 달라져요.", names).count).toBe(0);
+    expect(pairMonthNames("11월에는 정리해요.", names).count).toBe(0);
+  });
+  it("tidyBook: 대운·세운(strictTime)의 「지금 대운·지금 10년」 → 「이 대운·이 10년」, 세운 장의 맨 달 이름 → 짝", () => {
+    const ch = [{ n: 1, id: "big", title: "큰 그림", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: ["지금 대운의 주제는 자립이고, 지금 10년은 길게 봐요. 5월에 힘이 몰려요. 강하린님은 지금 계유 대운의 끝 무렵에 서 있어요."] }] }];
+    const ctx = { mbtiPlain: {}, monthChapters: new Set<number>(), strictTime: true, calendarChapters: new Set([1]), monthNames: names };
+    expect(tidyBook(ch as never, ctx as never).chapters[0].sections[0].paragraphs[0]).toBe("이 대운의 주제는 자립이고, 이 10년은 길게 봐요. 5월(을사월)에 힘이 몰려요. 강하린님은 계유 대운의 끝 무렵에 서 있어요.");
+    // 4종(시점 말 느슨)은 그대로
+    expect(tidyBook(ch as never, { mbtiPlain: {}, monthChapters: new Set<number>() } as never).chapters[0].sections[0].paragraphs[0]).toContain("지금 대운의 주제는");
+  });
+});
+
+describe("AM 7부: 달 카드 관계 — 엔진 배지와 사실 검사가 같은 이름", async () => {
+  const { buildFactSheet } = await import("../../../src/lib/factsheet/build");
+  const { factCheck, factCtxOf } = await import("../../../src/lib/factsheet/check");
+  const { writerKnowledge } = await import("../../../src/lib/writer/publish");
+  // annual-2(오다인): 원국 甲申·壬申·乙酉·癸未 — 寅·戌 없음. 2028년 1월 계축월은 丑未(두 글자 형)만, 3월 계묘월은 묘유충.
+  const o = { name: "오다인", birthDate: "2004-09-03", birthTime: "14:40", mbtiType: "ISFJ", gender: "FEMALE" as const };
+  const brief = annual(o), { k: wk } = writerKnowledge();
+  const input = { product: "annual_fortune", person: person(o), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" };
+  const ctx = factCtxOf(buildFactSheet(input as never, brief, wk), wk, [["오다인", "다인"]]);
+  const card = (key: string) => (brief.timeline?.entries ?? []).find(e => e.key === key)!;
+  it("두 글자 형 배지는 두 글자 이름(「축미형」)과 일반 형 풀이 — 무리 이름 「축술미형」을 쓰지 않는다", () => {
+    const b = card("2027-M12").badges.map(x => x.label);
+    expect(b).toContain("축미형");
+    expect(b).not.toContain("축술미형");
+    expect(card("2027-M12").badges.find(x => x.label === "축미형")!.line).not.toMatch(/세 (땅|글자)/);
+  });
+  it("달 카드 문단(간지월 이름)의 관계·원진은 그 달 기둥까지 보고 판정 — 맞는 문장은 통과, 없는 세 글자 형은 그대로 걸린다", async () => {
+    const para = "3월 계묘월은 편인이 깊어지는 달이에요. 묘유충이 걸려 있어 말이 날카로워질 수 있으니 표현에 한 박자 쉬어 가세요.";
+    expect(factCheck("묘유충이 걸려 있어 말이 날카로워질 수 있으니 표현에 한 박자 쉬어 가세요.", ctx, para)?.rule).not.toBe("fact_relation");
+    const jan = "2028년 1월 계축월은 정리하는 달이에요. 축미형이 걸려 믿던 사람과 틀어질 수 있으니 거리를 조금 두세요.";
+    expect(factCheck("축미형이 걸려 믿던 사람과 틀어질 수 있으니 거리를 조금 두세요.", ctx, jan)?.rule).not.toBe("fact_relation");
+    expect(factCheck("축술미형이 걸려 믿던 사람과 틀어질 수 있으니 거리를 조금 두세요.", ctx, jan)?.rule).toBe("fact_relation");
+    // 해·달 카드 소제목 안(inKey)은 문단에 때 낱말이 없어도 유입 문맥
+    expect(factCheck("인신충이 걸려서 이동과 전환이 커지기 쉬워요.", { ...ctx, product: "saju_mbti_full" }, "인신충이 걸려서 이동과 전환이 커지기 쉬워요.", 7, true)?.rule).not.toBe("fact_relation");
+    // 무리 이름 + 반합(「사유축 반합」)은 그 무리의 두 글자 반합이 있으면 맞는 말 / 교운 연·월 기간은 달력월이 아니다
+    const { calendarMonth } = await import("../../../src/lib/writer/safety/p6d");
+    expect(calendarMonth("2022년 4월 무렵에 시작해 2032년 4월 무렵까지 이어지는 10년이에요.")).toBe(false);
+    expect(calendarMonth("4월에는 쉬어 가요.")).toBe(true);
+    // 세운이 아닌 책·카드 밖·때 낱말 없는 문단(원국 이야기)은 그대로 원국만 본다
+    expect(factCheck("묘유충이 걸려 있어 말이 날카로워질 수 있어요.", { ...ctx, product: "saju_mbti_full" })?.rule).toBe("fact_relation");
+  });
+});
+
+describe("AM 7부: 세운 판독 후속(호출 0)", async () => {
+  const { namedYear, timeDeictic } = await import("../../../src/lib/writer/safety/p6d");
+  const { annotateChapter } = await import("../../../src/lib/writer/render");
+  it("맨 「올해」 → 그 책의 해, 조사 맞춤 · 따옴표 대사와 「올해 남은」은 그대로", () => {
+    expect(namedYear("올해는 재물의 기운이 들어와요. 올해가 지나면 올해를 돌아보고, 올해와 다음 해를 잇고, 올해로 끝나요. 올해의 흐름, 올해 돈.", 2027).text)
+      .toBe("2027년은 재물의 기운이 들어와요. 2027년이 지나면 2027년을 돌아보고, 2027년과 다음 해를 잇고, 2027년으로 끝나요. 2027년의 흐름, 2027년 돈.");
+    expect(namedYear("퇴근길에 \"올해는 뭘 했지?\" 싶었다면 올해 남은 두 달을 써요.", 2026)).toEqual({ text: "퇴근길에 \"올해는 뭘 했지?\" 싶었다면 올해 남은 두 달을 써요.", count: 0 });
+    expect(timeDeictic("올해 흐름이 좋아요.", true)).toBe(true);
+    expect(timeDeictic("올해 흐름이 좋아요.", false)).toBe(false);
+  });
+  it("달 머리 줄 「신축월(辛丑月)은」에 한자를 또 붙이지 않는다(「신축(辛丑)월(辛丑月)」 방지)", () => {
+    const sections = [{ heading: "h", paragraphs: ["신축월(辛丑月)은 정관이 들어오는 달이에요. 신축 기운이 이어져요."] }];
+    const out = annotateChapter(sections as never, {} as never, [{ ko: "신축", tag: "辛丑", re: /신축/ }]).sections[0].paragraphs[0];
+    expect(out).toBe("신축월(辛丑月)은 정관이 들어오는 달이에요. 신축 기운이 이어져요.");
+    expect(annotateChapter([{ heading: "h", paragraphs: ["신축 기운이 이어져요."] }] as never, {} as never, [{ ko: "신축", tag: "辛丑", re: /신축/ }]).sections[0].paragraphs[0]).toBe("신축(辛丑) 기운이 이어져요.");
+  });
+});
+
+describe("AM 7부: 수리 닻의 「그 해」", () => {
+  it("세운 책은 신년판 해(2027 정미)를, 연도 숫자와 함께 수리에 준다(기준일 2026이 아니라)", async () => {
+    const { buildFactSheet } = await import("../../../src/lib/factsheet/build");
+    const { factsBrief } = await import("../../../src/lib/writer/repair3");
+    const { writerKnowledge } = await import("../../../src/lib/writer/publish");
+    const o = { name: "서도현", birthDate: "1995-05-21", birthTime: "11:15", mbtiType: "ISTP", gender: "MALE" as const };
+    const brief = annual(o), { k: wk } = writerKnowledge();
+    const sheet = buildFactSheet({ product: "annual_fortune", person: person(o), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, brief, wk);
+    const people = factsBrief(sheet, brief).people as { thisYear: string }[];
+    expect(people[0].thisYear).toMatch(/^2027년 정미/);
+  });
+});

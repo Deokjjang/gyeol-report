@@ -12,7 +12,7 @@ import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
-import { colorsOf, currentDayunAt, dayunLabel, ELEMENT_KO, ganjiLabel, ganjiOf, halfHapLine, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { branchKo, colorsOf, currentDayunAt, dayunLabel, ELEMENT_KO, ganjiLabel, ganjiOf, halfHapLine, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import { periodDomains } from "./productEvidence";
 import type { Rng } from "./seed";
@@ -147,6 +147,15 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     if (same) { const w = [...new Set([...(same.with?.split("·") ?? []), ...natal])]; if (w.length) same.with = w.join("·"); continue; }
     // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다). 최종판3 7: 궁합 관계 목록과 같은 반합 문구(halfHapLine).
     const half = r.kind === "SAMHAP" && r.completeness !== "full";
+    // AM 7부(annual-2 판독): 삼형 세 글자 중 두 글자만 만난 형(丑未)이 무리 이름 「축술미형」·세 글자 풀이(「세 땅이 서로 눌러」)로 나가
+    // 작가가 「축술미형이 걸려」로 쓰고 사실 검사가 지웠다 → 두 글자 이름(「축미형」)과 일반 형 풀이로(반합의 「(반쯤)」과 같은 원리).
+    if (r.kind === "HYEONG" && r.completeness === "partial" && [...r.key].length === 3) {
+      const two = [...r.key].filter(ch => r.members.some(m => m.char === ch)), plain = k.badges.find(x => x.kind === "HYEONG" && x.pair === undefined);
+      const pair = two.join(""), dup = badges.find(x => x.kind === "HYEONG" && x.pair === pair);
+      if (dup) { const w = [...new Set([...(dup.with?.split("·") ?? []), ...natal])]; if (w.length) dup.with = w.join("·"); continue; }
+      badges.push({ kind: "HYEONG", pair, label: `${two.map(branchKo).join("")}형`, line: plain?.line ?? b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
+      continue;
+    }
     badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `${HALF_HAP_PLAIN}: ${halfHapLine(b.line)}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
   }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }

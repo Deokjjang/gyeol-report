@@ -62,6 +62,10 @@ export type LintCtx = {
   readonly yearIndex?: Readonly<Record<string, { readonly index: number; readonly total: number }>>;
   /** P6d E: 달력이 있는 책(대운·세운)은 "지금" 전부 금지. calendarChapters: 달력월 이름 금지 장(세운 전체). */
   readonly strictTime?: boolean; readonly calendarChapters?: ReadonlySet<number>;
+  /** AM 7부: 세운 달 표의 이름 짝("5" → "을사월", "2028년 1" → "계축월"). 본문의 맨 달 이름을 표와 같은 꼴로 바꾸는 데 쓴다(tidyBook). */
+  readonly monthNames?: Readonly<Record<string, string>>;
+  /** AM 7부: 세운 책의 해(신년판 해). 맨 「올해」를 이 해로 바꾼다(대운은 기준일의 해). */
+  readonly bookYear?: number;
   /** AM 2부: 세운 신년판 달 카드에 「좋은 것」 칸이 있다. */
   readonly goodCards?: boolean;
   /** P6d F: key → 엔진 관계 표시 수(0이면 "건드리지 않는다" 허용). 궁합은 두 사람 날 관계 수. */
@@ -274,7 +278,7 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
  * 최종판 1-14: 기능 둘을 하이픈으로 이은 꼴("가치 기준(Fi)-지금 이 순간 감각(Se)")은 "~와 ~"로, 바로 앞에 쉬운 이름의 말이 이미 있으면("지난 경험을 기준점으로 삼는 Si") 이름을 되풀이하지 않고 "성향(Si)"으로,
  * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해"). 본문 기준일 줄은 뗀다(1-13).
  */
-export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact">>): { chapters: FinalChapter[]; count: TidyCount } {
+export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact" | "calendarChapters" | "monthNames" | "bookYear">>): { chapters: FinalChapter[]; count: TidyCount } {
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0, words = 0, groupNames = 0;
   const definedGroups = new Set<string>();
   const introduced = new Set<string>();
@@ -337,6 +341,13 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // 장덕민 종합 13장 재작성본 「앞에서 본 관계의 결을 이번 달 행동 하나로 옮겨 볼게요」가 남아 그 소제목이 빠졌다.
       if (ctx.monthChapters !== undefined && !ctx.strictTime && !ctx.monthChapters.size) { const r = nowMonth(q); if (r !== q) { words++; q = r; } }
       if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
+      // AM 7부: 대운·세운(시점 말 전부 금지)의 「지금 대운·지금 10년」은 뜻이 같은 「이 대운·이 10년」으로(major-1 판독: 장 이름을 따라 쓴 문장이 수리 뒤에도 남음).
+      // annual-4 r3: 「지금 계유 대운의 끝 무렵」 — 간지 이름이 붙은 대운은 「지금」만 뗀다.
+      if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년"); if (r !== q) { words++; q = r; } }
+      // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.
+      { const y = ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0); if (ctx.strictTime && y) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
+      // AM 7부: 세운 본문의 맨 달 이름 → 달 표와 같은 짝(「5월(을사월)」). annual-2·5에서 수리 뒤에도 남았다.
+      if (ctx.monthNames && ctx.calendarChapters?.has(c.n)) { const r = D.pairMonthNames(q, ctx.monthNames); if (r.count) { words += r.count; q = r.text; } }
       return q;
     });
     const marks = ps.join("").match(L.KEY_MARK)?.length ?? 0;
@@ -397,7 +408,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.
-          { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
+          { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n, /^\d{4}(-M\d{2})?$/.test(s.heading)) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
           const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
