@@ -117,7 +117,8 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
   const generic = /반합|삼합/.test(sen) ? pool.filter(r => r.kind === "SAMHAP") : [];
   const target = one.length === 1 ? one[0] : generic.length === 1 && !mentioned.length ? generic[0] : null;
   if (target) {
-    const cnt = sen.match(/(두|세|네|2|3|4) ?(땅|글자|자리|기둥|개의 땅|개의 글자)/);
+    // AM: 표준 반합 풀이(HALF_HAP_PLAIN 「세 글자 중 두 글자만」)의 「세 글자」는 글자 수 주장이 아니다 — 「두 글자」로 읽는다.
+    const cnt = sen.replace(/세 ?(글자|땅) ?중 ?(두|2) ?(글자|땅)(만)?/g, "두 글자").match(/(두|세|네|2|3|4) ?(땅|글자|자리|기둥|개의 땅|개의 글자)/);
     const n = cnt ? ({ 두: 2, 세: 3, 네: 4, 2: 2, 3: 3, 4: 4 } as Record<string, number>)[cnt[1]] : 0;
     if (n && n !== target.glyphCount) return { rule: "fact_relation", detail: `${target.key}는 ${target.glyphCount}글자다(${cnt![0]} 아님)` };
     if (target.completeness !== "full" && /완성|다 모(여|인|였|이)|온전히 묶|완전히 (묶|하나)|세 글자가 (모두|다)/.test(sen)) return { rule: "fact_relation", detail: `${target.key}는 ${target.kind === "SAMHAP" ? "반합(두 글자만 모여 반쯤 묶임)" : "두 글자 형(세 글자 다 모이지 않음)"}이다(완성 아님)` };

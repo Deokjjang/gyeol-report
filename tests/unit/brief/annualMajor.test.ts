@@ -119,3 +119,20 @@ describe("AM 엔진: 대운", () => {
     for (const c of tl.lifetime!) expect(c.label).toMatch(/^[가-힣]{2} 대운: \d{4}년 \d{1,2}월 무렵부터 \(대운수 \d+\)$/);
   });
 });
+
+describe("AM 안전망: 반합 표준 풀이는 글자 수 오탐이 아니다", () => {
+  it("「반합(세 글자 중 두 글자만…)」은 통과, 「세 글자가 모여 완성」은 그대로 걸린다", async () => {
+    const { buildFactSheet } = await import("../../../src/lib/factsheet/build");
+    const { factCheck, factCtxOf } = await import("../../../src/lib/factsheet/check");
+    const { HALF_HAP_PLAIN } = await import("../../../src/lib/brief/labels");
+    const { writerKnowledge } = await import("../../../src/lib/writer/publish");
+    const o = { name: "한서윤", birthDate: "1998-04-17", birthTime: "08:20", mbtiType: "ENFP" };
+    const input = { product: "annual_fortune", person: person(o), baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" };
+    const brief = annual(o), { k: wk } = writerKnowledge();
+    const sheet = buildFactSheet(input as never, brief, wk), ctx = factCtxOf(sheet, wk, [["한서윤", "서윤"]]);
+    const half = JSON.stringify(sheet).includes("SAMHAP");
+    expect(half).toBe(true);
+    expect(factCheck(`${HALF_HAP_PLAIN}: 불의 기운이 반쯤 묶여 표현과 열정이 모이기 시작하는 흐름.`, ctx)?.rule).not.toBe("fact_relation");
+    expect(factCheck("반합이라 세 글자가 모두 모여 완성된 힘이에요.", ctx)?.rule).toBe("fact_relation");
+  });
+});
