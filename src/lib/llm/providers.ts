@@ -9,6 +9,8 @@ export type StreamState = {
   finish: LlmFinishReason | null;
   error: LlmError | null;
   requestId: string | null;
+  /** 텍스트가 아닌 출력 블록(종류별 수·글자 수). 기록용(StreamCompletionResult.hidden). */
+  hidden?: { blocks: Record<string, number>; chars: number };
 };
 
 export class InvalidEventError extends Error {}
@@ -53,20 +55,30 @@ export const anthropicDriver: ProviderDriver = {
   apiKeyEnv: "ANTHROPIC_API_KEY",
   requestIdHeader: "request-id",
   headers: (apiKey) => ({ "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" }),
-  body: (input) => ({
-    model: input.model,
-    max_tokens: input.maxOutputTokens,
-    stream: true,
-    system: [{ type: "text", text: input.system, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) }],
-    messages: [{ role: "user", content: input.user }],
-    ...MODEL_OPTIONS[input.model],
-    // output_config는 모델 설정(effort)과 JSON 스키마를 합친다.
-    ...(input.jsonSchema ? { output_config: { ...((MODEL_OPTIONS[input.model]?.output_config as Record<string, unknown> | undefined) ?? {}), format: { type: "json_schema", schema: input.jsonSchema } } } : {}),
-  }),
+  body: (input) => {
+    // AM 7부: 1회 재호출만 짧은 생각(adaptive + effort low). 나머지는 모델 기본 설정(작가 Sonnet 5.5는 between_tools).
+    const base = MODEL_OPTIONS[input.model] ?? {};
+    const opts: Record<string, unknown> = input.thinking === "adaptive-low" ? { ...base, thinking: { type: "adaptive" }, output_config: { ...((base.output_config as Record<string, unknown> | undefined) ?? {}), effort: "low" } } : base;
+    return {
+      model: input.model,
+      max_tokens: input.maxOutputTokens,
+      stream: true,
+      system: [{ type: "text", text: input.system, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) }],
+      messages: [{ role: "user", content: input.user }],
+      ...opts,
+      // output_config는 모델 설정(effort)과 JSON 스키마를 합친다.
+      ...(input.jsonSchema ? { output_config: { ...((opts.output_config as Record<string, unknown> | undefined) ?? {}), format: { type: "json_schema", schema: input.jsonSchema } } } : {}),
+    };
+  },
   handle(message, state, onText) {
     const type = message.event ?? "";
-    if (type === "ping" || type === "content_block_start" || type === "content_block_stop" || type === "message_stop") return;
+    if (type === "ping" || type === "content_block_stop" || type === "message_stop") return;
     const data = parse(message);
+    if (type === "content_block_start") {
+      const kind = typeof data.content_block?.type === "string" ? data.content_block.type : "unknown";
+      if (kind !== "text") { state.hidden ??= { blocks: {}, chars: 0 }; state.hidden.blocks[kind] = (state.hidden.blocks[kind] ?? 0) + 1; }
+      return;
+    }
     if (type === "message_start") {
       const usage = data.message?.usage ?? {};
       const cacheWrite = num(usage.cache_creation_input_tokens);
@@ -78,6 +90,10 @@ export const anthropicDriver: ProviderDriver = {
       if (data.delta?.type === "text_delta" && typeof data.delta.text === "string" && data.delta.text) {
         state.text += data.delta.text;
         onText(data.delta.text);
+      } else if (data.delta && data.delta.type !== "text_delta") {
+        // thinking_delta·signature_delta 등: 원고가 아니다. 글자 수만 센다(본문은 버린다).
+        const t = [data.delta.thinking, data.delta.text, data.delta.partial_json].find(x => typeof x === "string") as string | undefined;
+        state.hidden ??= { blocks: {}, chars: 0 }; state.hidden.chars += t?.length ?? 0;
       }
     } else if (type === "message_delta") {
       if (data.usage?.output_tokens !== undefined) state.usage.outputTokens = num(data.usage.output_tokens);

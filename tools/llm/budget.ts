@@ -29,7 +29,9 @@ export const MEASURED_MAX_PER_CHAPTER = 0.06;
  */
 export type LedgerCall = { readonly at: string; readonly scope: string; readonly run: string; readonly stage: string; readonly kind: string; readonly provider: string; readonly model: string;
   readonly input: number; readonly cachedInput: number; readonly output: number; readonly costUsd: number; readonly finish: string; readonly requestId: string | null; readonly key: string | null;
-  readonly id?: string; readonly pending?: boolean };
+  readonly id?: string; readonly pending?: boolean;
+  /** AM 7부: 받은 원고 글자 수와 텍스트가 아닌 출력 블록(annual-4: 출력 36,365토큰·글자 0). 옛 줄에는 없다. */
+  readonly chars?: number; readonly hidden?: StreamCompletionResult["hidden"] };
 export type Ledger = { version: 1; scopes: Record<string, { cap: number; createdAt: string; note: string }>; calls: LedgerCall[]; refusals: { at: string; scope: string; run: string; stage: string; reason: string; key: string | null }[] };
 
 export function readLedger(): Ledger {
@@ -90,7 +92,8 @@ export function budgetGate(o: GateOptions): Gate {
     const l = readLedger(), sc = l.scopes[o.scope];
     if (!sc) return refuse(`범위 없음: ${o.scope}`);
     // 같은 입력 해시 재생성 거절: 원고(출력)나 비용이 난 호출만 센다. 출력 0·비용 0인 실패(401 등 요청 거절)는 다시 불러도 재생성이 아니다.
-    if (pendingKey && l.calls.some(c => c.key === pendingKey && !c.pending && (c.output > 0 || c.costUsd > 0)) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
+    // AM 7부: 원고 글자 0으로 끝난 호출(생각만으로 상한 소진, chars 0 기록)은 원고를 받은 적이 없어 재생성으로 세지 않는다(작가 1회 재호출).
+    if (pendingKey && l.calls.some(c => c.key === pendingKey && !c.pending && (c.output > 0 || c.costUsd > 0) && c.chars !== 0) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
     const worst = worstCost(input), s = spent(l, o.scope), r = spent(l, o.scope, o.run);
     if (s + worst > sc.cap) return refuse(`범위 상한 초과 예상: 누적 $${s.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 상한 $${sc.cap}`);
     if (r + worst > o.runBudget) return refuse(`실행 예산 초과 예상: 이번 실행 $${r.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 예산 $${o.runBudget}`);
@@ -101,7 +104,7 @@ export function budgetGate(o: GateOptions): Gate {
     const res = await inner(input);
     const cost = res.costUsd ?? computeCostUsd(input.provider, input.model, res.usage) ?? 0;
     const call: LedgerCall = { at: startedAt, scope: o.scope, run: o.run, stage: o.stage, kind: kindOf(input), provider: input.provider, model: input.model,
-      input: res.usage.inputTokens, cachedInput: res.usage.cachedInputTokens, output: res.usage.outputTokens, costUsd: cost, finish: res.error ? `${res.finishReason}:${res.error.code}` : res.finishReason, requestId: res.requestId, key, id };
+      input: res.usage.inputTokens, cachedInput: res.usage.cachedInputTokens, output: res.usage.outputTokens, costUsd: cost, finish: res.error ? `${res.finishReason}:${res.error.code}` : res.finishReason, requestId: res.requestId, key, id, chars: res.text.length, ...(res.hidden ? { hidden: res.hidden } : {}) };
     const l2 = readLedger(); const at = l2.calls.findIndex(c => c.id === id); if (at >= 0) l2.calls[at] = call; else l2.calls.push(call); writeLedger(l2);
     try { appendCostRow(call); } catch { /* 표 기록 실패는 원장이 남는다 */ }
     pendingKey = null;

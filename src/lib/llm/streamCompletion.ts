@@ -60,7 +60,7 @@ export async function streamCompletion(input: StreamCompletionInput): Promise<St
   const finish = (reason: StreamCompletionResult["finishReason"], error?: LlmError): StreamCompletionResult => {
     const usage = { inputTokens: state.usage.inputTokens, cachedInputTokens: state.usage.cachedInputTokens, outputTokens: state.usage.outputTokens, ...(state.usage.cacheWriteTokens ? { cacheWriteTokens: state.usage.cacheWriteTokens } : {}) };
     const failure = error ?? state.error ?? undefined;
-    return { text: state.text, finishReason: reason, usage, costUsd: computeCostUsd(input.provider, input.model, usage), requestId: state.requestId, ...(failure ? { error: failure } : {}) };
+    return { text: state.text, finishReason: reason, usage, costUsd: computeCostUsd(input.provider, input.model, usage), requestId: state.requestId, ...(failure ? { error: failure } : {}), ...(state.hidden ? { hidden: state.hidden } : {}) };
   };
   if (!apiKey) return finish("error", { code: "missing_api_key", message: `${driver.apiKeyEnv}가 없습니다.` });
 

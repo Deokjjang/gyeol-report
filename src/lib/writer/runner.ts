@@ -52,7 +52,7 @@ export type WriterFallback = { readonly from: { provider: string; model: string 
 /** "redo"는 옛 Book 메타에만 있다(최종판 0-1: 장 재요청 경로를 없앴다). "cover"는 표지 줄 수리(1-7). */
 export type CallKind = "first" | "retry" | "continuation" | "fallback" | "redo" | "repair" | "rewrite" | "cover" | "review";
 /** cached: 저장된 원문을 썼다(호출 0). */
-export type CallLog = { readonly kind: CallKind; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number; readonly cached?: boolean; readonly key?: string };
+export type CallLog = { readonly kind: CallKind; readonly provider?: string; readonly model?: string; readonly finish: StreamCompletionResult["finishReason"]; readonly error?: string; readonly usage: LlmUsage; readonly costUsd: number | null; readonly requestId: string | null; readonly ms: number; readonly chars: number; readonly maxTokens: number; readonly cached?: boolean; readonly key?: string; readonly hidden?: StreamCompletionResult["hidden"] };
 /**
  * 작가·수리 원문(최종판 0-2). key = rawKey(모델, 지침, 사용자 메시지): 사용자 메시지에 브리프·장 목록(또는 수리 항목)이 들어 있어 입력 해시가 된다.
  * Book meta(meta.raw)와 개발 저장소(.cache/writer/)에 같은 꼴로 남는다.
@@ -105,6 +105,13 @@ export type WriterOptions = {
 };
 
 const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
+/**
+ * AM 7부(덕짱님 결정 2026-11-11): 본문 0자인데 출력 상한을 다 쓴 응답(생각 블록 하나로 상한 소진 — between_tools인데도, 개발 17회 중 4회·같은 입력 연속 재현).
+ * 비용은 들었지만 원고는 없다 → 작가 호출(첫·이어쓰기)만 1회, 생각을 짧게 허용(adaptive, effort low)해 다시 부른다.
+ */
+export function isHiddenOnlyLength(r: Pick<StreamCompletionResult, "text" | "finishReason" | "usage">): boolean {
+  return r.text.length === 0 && r.finishReason === "length" && r.usage.outputTokens > 0;
+}
 /** 출력 0인 실패만 재시도 대상(비용이 들지 않음). */
 export function isZeroOutputRetryable(r: Pick<StreamCompletionResult, "text" | "finishReason" | "error">): boolean {
   return r.text.length === 0 && r.finishReason !== "complete" && r.finishReason !== "length" && RETRYABLE.test(r.error?.code ?? "");
@@ -146,7 +153,7 @@ function session(o: WriterOptions, prev?: WriterRun): Session {
 async function call(s: Session, kind: "first" | "continuation" | "repair" | "rewrite" | "cover" | "review", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number, jsonSchema?: Readonly<Record<string, unknown>>): Promise<string> {
   const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms)));
   const wanted = new Set((want ?? []).map(c => c.n));
-  let switched = false;
+  let switched = false, thinking: "adaptive-low" | undefined;
   for (let attempt = 0; ; attempt++) {
     // 원문 저장소(0-2): 같은 입력이면 저장본을 흘려보낸다(호출 0). 상한(0-6): 넘었으면 부르지 않는다.
     const key = rawKey(s.target.model, system, user);
@@ -173,7 +180,7 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
       }
     };
     const t0 = now(o);
-    const result = await stream({ provider: s.target.provider, model: s.target.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, leftOf(s) - 5_000), apiKey: s.target.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal,
+    const result = await stream({ provider: s.target.provider, model: s.target.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, leftOf(s) - 5_000), apiKey: s.target.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal, ...(thinking ? { thinking } : {}),
       ...(jsonSchema ? { jsonSchema } : {}), ...(o.cacheSystem === false ? { cacheSystem: false } : {}),
       onText: d => { text += d; if (d.includes("\n")) flush(false); } });
     text = result.text;
@@ -182,13 +189,15 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
     await saving;
     for (const k of ["inputTokens", "cachedInputTokens", "outputTokens"] as const) s.usage[k] += result.usage[k];
     s.cost += result.costUsd ?? 0; s.outputChars += result.text.length;
-    s.calls.push({ kind: switched && attempt === 0 ? "fallback" : attempt ? "retry" : kind, provider: s.target.provider, model: s.target.model, finish: result.finishReason, ...(result.error ? { error: result.error.code } : {}), usage: result.usage, costUsd: result.costUsd, requestId: result.requestId, ms: now(o) - t0, chars: result.text.length, maxTokens, key, ...(hit ? { cached: true } : {}) });
+    s.calls.push({ kind: switched && attempt === 0 ? "fallback" : attempt ? "retry" : kind, provider: s.target.provider, model: s.target.model, finish: result.finishReason, ...(result.error ? { error: result.error.code } : {}), usage: result.usage, costUsd: result.costUsd, requestId: result.requestId, ms: now(o) - t0, chars: result.text.length, maxTokens, key, ...(hit ? { cached: true } : {}), ...(result.hidden ? { hidden: result.hidden } : {}) });
     if (result.text.length > 0) {
       const entry: RawEntry = { key, kind, provider: s.target.provider, model: s.target.model, ...(want ? { chapters: want.map(c => c.n) } : {}), finish: result.finishReason, text: result.text, costUsd: hit ? hit.costUsd : result.costUsd ?? 0 };
       s.raw.push(entry);
       if (!hit && o.cache) { try { await o.cache.put(entry, { system, user }); } catch { /* 저장 실패는 원고를 막지 않는다 */ } }
     }
     if (s.stale) return text;
+    // AM 7부: 생각만으로 상한을 다 쓴 빈 원고 → 작가 호출만 1회, 짧은 생각으로 다시(호출 기록 kind "retry"). 두 번째도 빈 원고면 아래 규칙대로 결정론.
+    if (!hit && !thinking && (kind === "first" || kind === "continuation") && isHiddenOnlyLength(result) && s.target.provider === "anthropic" && leftOf(s) > 60_000) { thinking = "adaptive-low"; continue; }
     if (result.text.length > 0) { s.wrote = s.target; if (kind === "first" && !s.cover) s.cover = coverOf(result.text); }
     // 스트리밍 시작 전 실패: 대체 모델로 한 번 전환(재시도보다 먼저). 대체도 출력 0이면 아래 재시도 규칙 → 결정론.
     if (isZeroOutputFailure(result) && o.fallback && !s.fallback && leftOf(s) > 60_000) {
