@@ -436,6 +436,7 @@ NODE_PATH=tools/quality/shim pnpm exec tsx tools/quality/ratchet.ts --current ~/
 - 오전판: `a5519db8`. 오후판: `892f890c`(`git ls-remote`로 일치 확인).
 - 밤판(재생성 3권 + 후속 고침): `origin/v5/annual-major-01` = 로컬 `1c155057416be78a642777c5a3b414781e71b452`(push 0f766f22..1c155057, `git ls-remote`로 일치 확인, 2026-11-11). 코드 마지막 커밋은 `1db6a294`(전체 시험·tsc·lint·build·knowledge-lint를 이 코드에서 돌림).
 - 재생성 2판(씨앗 거름 + 판독 4-5절): `origin/v5/annual-major-01` = 로컬 `d0ff288f1d778fac688b9eed99182ae133c1e80c`(push dab089f4..d0ff288f, `git ls-remote`로 일치 확인, 2026-11-11). 코드 마지막 커밋은 `9c45b198`(전체 시험·tsc·lint·build·knowledge-lint를 이 코드에서 돌림).
+- 확인 생성판(판독 4-6절): `origin/v5/annual-major-01` = 로컬 `9bad738a2eabcab029c59465b9f70a1f91af4398`(push 7bd3f2eb..9bad738a, `git ls-remote`로 일치 확인, 2026-11-11). 코드 마지막 커밋은 `ff725ccb`(전체 시험·tsc·lint·build·knowledge-lint를 이 코드에서 돌림). 확인 생성 3권은 d93cf759(annual-1) · d5e2c87d(major-1 2회차) · ff725ccb(sodam)에서 만들었다.
 - 이 줄을 적은 문서 커밋이 그 뒤에 하나 더 붙는다(내용은 이 절뿐). master·v5/main 병합 없음.
 
 ### 남은 위험
