@@ -47,7 +47,7 @@ const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
-const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표|(이 장의|이번 장의) (행동|한 가지|할 일|숙제)(은|는|이에요|입니다)|해 볼 (것|일)은 (하나|한 가지)|(이 장의|이번 장의|오늘의|한 가지|하나의|당신의|첫|마지막) 처방|(?<![가-힣])처방(은|이에요|입니다|이죠|은 간단|은 하나|하나|이 필요|을 (드릴|하나|정리))(?![가-힣]))/;
+export const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표|(이 장의|이번 장의) (행동|한 가지|할 일|숙제)(은|는|이에요|입니다)|해 볼 (것|일)은 (하나|한 가지)|(이 장의|이번 장의|오늘의|한 가지|하나의|당신의|첫|마지막) 처방|(?<![가-힣])처방(은|이에요|입니다|이죠|은 간단|은 하나|하나|이 필요|을 (드릴|하나|정리))(?![가-힣]))/;
 
 const HEALTH_CLAIM = /(소화|잠|수면|두통|위장|장 건강|피부|혈압|허리|어깨|목덜미|면역|생리)[^.?!]{0,14}(흔들립니다|흔들려요|탈이 납니다|탈이 나요|나빠집니다|나빠져요|상합니다|망가집니다|망가져요|아픕니다|아파요|약해집니다|약해져요)[.!]?$/;
 const STAGE_GLYPH = /(땅 글자|일지|지지)(는|은|가|이) [가-힣]{1,2}(이라는|라는) (단계|운성)/;
@@ -66,7 +66,7 @@ const JUDGE = /(부모|자녀|상사|팀장|팀원|부하|동료|배우자|친�
 const DIM_NAMES = ontology.dimensions.map(d => d.name).filter(n => n.length >= 2);
 const POLE_LABELS = ontology.dimensions.flatMap(d => [d.poles.plus.label, d.poles.minus.label]);
 const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const INTERNAL_LABEL = new RegExp([
+export const INTERNAL_LABEL = new RegExp([
   "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
   // 지침을 그대로 말하는 문장(P6b r1: "이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요").
   "필요할 때만 (짧게 |한 번씩 )?(되짚|꺼내|꺼낼|부르)", "(이|그) 그림은 (뒤에서|앞으로|이 책에서)", "뒤에서 (다시 )?(되짚|꺼내|꺼낼)겠?",

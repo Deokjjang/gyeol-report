@@ -10,7 +10,8 @@ type Env = Readonly<Record<string, string | undefined>>;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export const CLOSED_FORTUNE_PRODUCTS = ["major_fortune", "annual_fortune"] as const;
-export const FORTUNE_REOPEN_LINE = "12월 1일 · 2027 신년판 공개";
+/** AM2 6부(덕짱님 지시): 닫혀 있을 때(시각 전 · 끄기 스위치 · 가격 없음) 모두 같은 문구. 날짜를 박지 않는다. */
+export const FORTUNE_REOPEN_LINE = "2027 신년판 · 12월 공개";
 export const ALL_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 
 /**

@@ -54,7 +54,7 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
     <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="공개 안내">
       <p className={s.eyebrow}>{book.title.replace("\n", " ")} / NOTICE</p><h1>2027 신년판으로 새로 단장하고 있어요</h1>
       <p><b>{FORTUNE_REOPEN_LINE}</b></p>
-      <p>대운(앞으로의 나)과 세운(나의 한 해)은 2027년 흐름을 담아 12월 1일에 새로 공개해요. 그때까지는 새로 구매하거나 이용권으로 만들 수 없어요.</p>
+      <p>대운(앞으로의 나)과 세운(나의 한 해)은 2027년 흐름을 담아 12월에 새로 공개해요. 그때까지는 새로 구매하거나 이용권으로 만들 수 없어요.</p>
       <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
       <p><a href={home}>다른 책 고르기 →</a></p><p><a href="/account">내 서재 →</a></p>
     </div></section>

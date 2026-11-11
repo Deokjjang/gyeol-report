@@ -114,7 +114,7 @@ const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [�
 const CALM_FLOW = /흐름(?:이|은|도)? (?:한결 |조금 |좀 |훨씬 )?(?:가벼워|잔잔해|느려|편안해|순해|누그러)/;
 const ROUGH_FLOW = /흐름(?:이|은|도)? (?:한결 |훨씬 |더 )?(?:거세|세차|몰아치)/;
 
-const HINT: Readonly<Record<P6cRule, string>> = {
+export const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
   fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
@@ -284,7 +284,9 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
  * 최종판 1-14: 기능 둘을 하이픈으로 이은 꼴("가치 기준(Fi)-지금 이 순간 감각(Se)")은 "~와 ~"로, 바로 앞에 쉬운 이름의 말이 이미 있으면("지난 경험을 기준점으로 삼는 Si") 이름을 되풀이하지 않고 "성향(Si)"으로,
  * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해"). 본문 기준일 줄은 뗀다(1-13).
  */
-export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact" | "calendarChapters" | "monthNames" | "bookYear">>): { chapters: FinalChapter[]; count: TidyCount } {
+/** AM2: surfaceOnly면 표면 정리(한자·괄호 조사·약어 꼴·겹친 낱말·같은 문장 연속·장 번호/명리학 머리)만 한다. 뜻을 바꾸는 치환(시점 말·해 이름·달 이름·면책 마디 떼기)은 하지 않는다(세운·대운 장 묶음 — 걸리면 묶음을 다시 쓴다). */
+export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact" | "calendarChapters" | "monthNames" | "bookYear">> & { readonly surfaceOnly?: boolean }): { chapters: FinalChapter[]; count: TidyCount } {
+  const surface = Boolean(ctx.surfaceOnly);
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0, words = 0, groupNames = 0;
   const definedGroups = new Set<string>();
   const introduced = new Set<string>();
@@ -340,18 +342,18 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
       { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || x.replace(/[^가-힣A-Za-z0-9]/g, "") !== ss[i - 1].replace(/[^가-힣A-Za-z0-9]/g, "")); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
       // AM 7부 판독(대운 11·4종): 면책이 앞 마디로 붙은 문장은 면책 마디만 뗀다(뒤 내용은 남김).
-      { const ss = splitSentences(q), next = ss.map(E.stripNoticeLead); if (next.some((x, i) => x !== ss[i])) { words++; q = next.join(" "); } }
+      if (!surface) { const ss = splitSentences(q), next = ss.map(E.stripNoticeLead); if (next.some((x, i) => x !== ss[i])) { words++; q = next.join(" "); } }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).
-      if (ctx.baseDate && Number(ctx.baseDate.slice(5, 7)) >= 11) { const r = q.replace(/이번 (가을|겨울)(에)? 남은 (두|한) ?달/g, `${ctx.baseDate.slice(0, 4)}년 남은 $3 달`); if (r !== q) { words++; q = r; } }
+      if (!surface && ctx.baseDate && Number(ctx.baseDate.slice(5, 7)) >= 11) { const r = q.replace(/이번 (가을|겨울)(에)? 남은 (두|한) ?달/g, `${ctx.baseDate.slice(0, 4)}년 남은 $3 달`); if (r !== q) { words++; q = r; } }
       // 최종판2 4: 대운·세운이 아닌 책의 「이번 달·이번 한 달」(시점 말 time_deictic)은 읽는 때 기준 「앞으로 한 달」로(따옴표 안 대사는 그대로).
       // 장덕민 종합 13장 재작성본 「앞에서 본 관계의 결을 이번 달 행동 하나로 옮겨 볼게요」가 남아 그 소제목이 빠졌다.
-      if (ctx.monthChapters !== undefined && !ctx.strictTime && !ctx.monthChapters.size) { const r = nowMonth(q); if (r !== q) { words++; q = r; } }
-      if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
+      if (!surface && ctx.monthChapters !== undefined && !ctx.strictTime && !ctx.monthChapters.size) { const r = nowMonth(q); if (r !== q) { words++; q = r; } }
+      if (!surface && ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
       // AM 7부: 대운·세운(시점 말 전부 금지)의 「지금 대운·지금 10년」은 뜻이 같은 「이 대운·이 10년」으로(major-1 판독: 장 이름을 따라 쓴 문장이 수리 뒤에도 남음).
       // annual-4 r3: 「지금 계유 대운의 끝 무렵」 — 간지 이름이 붙은 대운은 「지금」만 뗀다.
-      if (ctx.strictTime) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, "")
+      if (ctx.strictTime && !surface) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, "")
         // AM 재생성 판독(major-1·annual-1): 시점을 못 박지 않는 「지금」까지 문장째 지워져 구멍이 났다 → 뜻이 같은 말로(호출 0). 「지금은 ○○ 대운의 마지막」 같은 진짜 시점 말은 그대로 검사.
         .replace(/지금까지(는|가|의|도| )/g, (_m: string, j: string) => `그동안${({ 는: "은", 가: "이" } as Record<string, string>)[j] ?? j}`).replace(/지금부터 /g, "미리 ").replace(/지금 방식/g, "기존 방식").replace(/지금 맡(?=은|고 있)/g, "맡")
         .replace(/지금 (?=(곁에|배우는|하는 일|쌓는|가진|다니는|쓰는|만나는|일하는|서 있는) )/g, "").replace(/이번 해(?=[ 의에는가])/g, "올해")
@@ -359,9 +361,9 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       ; const r2 = ctx.monthChapters.has(c.n) ? r : nowMonth(r); if (r2 !== q) { words++; q = r2; } }
       // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.
       // AM 재생성 2 판독(major-1 2027): 대운 연도 key 안의 「올해」는 그 key의 해다(기준일의 해 2026으로 바꾸니 「2026년 흐름 중」).
-      { const y = (/^\d{4}$/.test(s.heading) ? Number(s.heading) : 0) || (ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0)); if (ctx.strictTime && y) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
+      { const y = (/^\d{4}$/.test(s.heading) ? Number(s.heading) : 0) || (ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0)); if (ctx.strictTime && y && !surface) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
       // AM 7부: 세운 본문의 맨 달 이름 → 달 표와 같은 짝(「5월(을사월)」). annual-2·5에서 수리 뒤에도 남았다.
-      if (ctx.monthNames && ctx.calendarChapters?.has(c.n)) { const r = D.pairMonthNames(q, ctx.monthNames); if (r.count) { words += r.count; q = r.text; } }
+      if (!surface && ctx.monthNames && ctx.calendarChapters?.has(c.n)) { const r = D.pairMonthNames(q, ctx.monthNames); if (r.count) { words += r.count; q = r.text; } }
       return q;
     });
     const marks = ps.join("").match(L.KEY_MARK)?.length ?? 0;

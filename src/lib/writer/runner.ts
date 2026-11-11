@@ -150,10 +150,12 @@ function session(o: WriterOptions, prev?: WriterRun): Session {
  * 한 번의 호출(재시도·대체 포함). want가 있으면 장 경계마다 저장한다(없으면 글만 돌려준다: 수리 패스).
  * 돌려주는 값: 받은 글(출력이 없으면 "").
  */
-async function call(s: Session, kind: "first" | "continuation" | "repair" | "rewrite" | "cover" | "review", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number, jsonSchema?: Readonly<Record<string, unknown>>): Promise<string> {
+/** AM2 장 묶음 호출 옵션: 처음부터 짧은 생각(adaptive · effort low), 시스템 덩어리 캐시, 첫 글자가 오면 알림(캐시를 데운 뒤 나머지 묶음을 병렬로 부른다). */
+type CallExtra = { readonly thinking?: "adaptive-low"; readonly systemParts?: readonly string[]; readonly onFirstText?: () => void; readonly hiddenRetry?: boolean };
+async function call(s: Session, kind: "first" | "continuation" | "repair" | "rewrite" | "cover" | "review", system: string, user: string, want: readonly WriterChapter[] | null, maxTokensOverride?: number, jsonSchema?: Readonly<Record<string, unknown>>, extra: CallExtra = {}): Promise<string> {
   const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms)));
   const wanted = new Set((want ?? []).map(c => c.n));
-  let switched = false, thinking: "adaptive-low" | undefined;
+  let switched = false, thinking: "adaptive-low" | undefined = extra.thinking, hiddenRetried = false, announced = false;
   for (let attempt = 0; ; attempt++) {
     // 원문 저장소(0-2): 같은 입력이면 저장본을 흘려보낸다(호출 0). 상한(0-6): 넘었으면 부르지 않는다.
     const key = rawKey(s.target.model, system, user);
@@ -181,8 +183,8 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
     };
     const t0 = now(o);
     const result = await stream({ provider: s.target.provider, model: s.target.model, system, user, maxOutputTokens: maxTokens, timeoutMs: Math.max(1_000, leftOf(s) - 5_000), apiKey: s.target.apiKey, fetchImpl: o.fetchImpl, signal: controller.signal, ...(thinking ? { thinking } : {}),
-      ...(jsonSchema ? { jsonSchema } : {}), ...(o.cacheSystem === false ? { cacheSystem: false } : {}),
-      onText: d => { text += d; if (d.includes("\n")) flush(false); } });
+      ...(jsonSchema ? { jsonSchema } : {}), ...(o.cacheSystem === false ? { cacheSystem: false } : {}), ...(extra.systemParts ? { systemParts: extra.systemParts } : {}),
+      onText: d => { text += d; if (!announced && d) { announced = true; extra.onFirstText?.(); } if (d.includes("\n")) flush(false); } });
     text = result.text;
     // 완전히 끝났을 때만 마지막 장도 완성으로 친다(length·끊김이면 마지막 장은 잘렸을 수 있음).
     flush(result.finishReason === "complete");
@@ -198,6 +200,8 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
     if (s.stale) return text;
     // AM 7부: 생각만으로 상한을 다 쓴 빈 원고 → 작가 호출만 1회, 짧은 생각으로 다시(호출 기록 kind "retry"). 두 번째도 빈 원고면 아래 규칙대로 결정론.
     if (!hit && !thinking && (kind === "first" || kind === "continuation") && isHiddenOnlyLength(result) && s.target.provider === "anthropic" && leftOf(s) > 60_000) { thinking = "adaptive-low"; continue; }
+    // AM2: 장 묶음은 처음부터 짧은 생각 — 그래도 빈 원고(생각만으로 상한 소진)면 그 묶음만 1회 다시 부른다.
+    if (!hit && extra.hiddenRetry && !hiddenRetried && isHiddenOnlyLength(result) && leftOf(s) > 60_000) { hiddenRetried = true; continue; }
     if (result.text.length > 0) { s.wrote = s.target; if (kind === "first" && !s.cover) s.cover = coverOf(result.text); }
     // 스트리밍 시작 전 실패: 대체 모델로 한 번 전환(재시도보다 먼저). 대체도 출력 0이면 아래 재시도 규칙 → 결정론.
     if (isZeroOutputFailure(result) && o.fallback && !s.fallback && leftOf(s) > 60_000) {
@@ -243,6 +247,30 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
   }
   // 대체 모델도 쓰지 못했으면 최후 대체는 결정론 작가(안전망이 채운다).
   return finish(s);
+}
+
+/**
+ * AM2 장 묶음 호출 1회(세운·대운). 작가 묶음(first)은 비용 상한 없이 늘 부르고, 다시 쓰기(rewrite)는 상한 안에서만.
+ * 장 저장은 부르는 쪽(chunked/run.ts)이 묶음이 끝난 뒤 한다(묶음 하나가 장 여럿 또는 한 장의 key 일부를 쓴다).
+ */
+export async function chunkCall(o: WriterOptions, prev: WriterRun | undefined, a: { readonly kind: "first" | "rewrite"; readonly system: string; readonly systemParts: readonly string[]; readonly user: string; readonly maxTokens: number; readonly onFirstText?: () => void }): Promise<{ run: WriterRun; text: string; finish: StreamCompletionResult["finishReason"] | null }> {
+  const s = session(o, prev);
+  if (leftOf(s) < 30_000) return { run: finish(s), text: "", finish: null };
+  const before = s.calls.length;
+  const text = await call(s, a.kind, a.system, a.user, null, Math.min(a.maxTokens, MODEL_OUTPUT_CAP[s.target.model] ?? a.maxTokens), undefined, { thinking: "adaptive-low", systemParts: a.systemParts, ...(a.onFirstText ? { onFirstText: a.onFirstText } : {}), hiddenRetry: true });
+  if (text.length > 0) s.wrote = s.target;
+  return { run: finish(s), text, finish: s.calls.slice(before).at(-1)?.finish ?? null };
+}
+/** 여러 호출 기록(병렬 묶음)을 하나로: 호출·원문은 이어 붙이고 토큰·비용·글자는 더한다. 작가·표지는 처음 것. */
+export function mergeRuns(runs: readonly WriterRun[]): WriterRun {
+  const r = runs.filter(Boolean);
+  const sum = (f: (x: WriterRun) => number) => r.reduce((a, x) => a + f(x), 0);
+  return {
+    drafts: new Map(r.flatMap(x => [...x.drafts])), calls: r.flatMap(x => x.calls), stale: r.some(x => x.stale),
+    usage: { inputTokens: sum(x => x.usage.inputTokens), cachedInputTokens: sum(x => x.usage.cachedInputTokens), outputTokens: sum(x => x.usage.outputTokens) },
+    costUsd: Math.round(sum(x => x.costUsd) * 1e8) / 1e8, outputChars: sum(x => x.outputChars), writer: r.find(x => x.writer)?.writer ?? null, fallback: r.find(x => x.fallback)?.fallback ?? null,
+    cover: r.find(x => x.cover)?.cover ?? null, raw: r.flatMap(x => x.raw), capped: r.some(x => x.capped),
+  };
 }
 
 /** (P6c A5) 글만 받는 호출 1회(수리·소제목 재작성·표지 줄 수리). 같은 모델·대체 규칙·원문·상한, 장 저장 없음. */

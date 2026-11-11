@@ -34,6 +34,11 @@ export type StreamCompletionInput = {
   readonly fetchImpl?: typeof fetch;
   /** Anthropic 시스템 프롬프트에 cache_control을 붙인다. 기본 true. */
   readonly cacheSystem?: boolean;
+  /**
+   * AM2: 시스템 프롬프트를 여러 덩어리로 나눠 덩어리마다 cache_control을 붙인다(Anthropic, 최대 4). system은 이 덩어리를 "\n\n"으로 이은 글과 같아야 한다.
+   * 세운·대운 장 묶음 호출: [작가 규칙(모든 책 공통)] + [인물·근거 카드(이 책의 묶음 공통)].
+   */
+  readonly systemParts?: readonly string[];
   /** 최종판3 4: 응답을 이 JSON 스키마로 묶는다(Anthropic output_config.format). 검수 호출만 쓴다. */
   readonly jsonSchema?: Readonly<Record<string, unknown>>;
   /**

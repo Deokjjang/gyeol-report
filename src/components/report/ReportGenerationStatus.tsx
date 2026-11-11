@@ -105,7 +105,7 @@ export function ReportGenerationStatus({ attention = false, delayed = false, ret
   const isDelayed = delayed || late;
   // 다음 시도 시각은 화면이 뜬 뒤(브라우저 시각 기준)에만 붙인다 — 서버·브라우저 첫 화면을 같게 둔다.
   const message = isDelayed && progress?.state === "delayed" && now !== null ? delayedMessage(progress.nextAt, now) : undefined;
-  const preview = reportId && (progress?.chapters?.done ?? 0) >= 1 ? <FirstChapterPreview reportId={reportId} done={progress!.chapters!.done} total={progress!.chapters!.total} /> : null;
+  const preview = reportId && (progress?.chapters?.firstReady ?? (progress?.chapters?.done ?? 0) >= 1) ? <FirstChapterPreview reportId={reportId} done={progress!.chapters!.done} total={progress!.chapters!.total} /> : null;
   return <ReportStatusView state={isDelayed ? "delayed" : "preparing"} stage={stage} message={message} {...(progress?.chapters ? { chapters: progress.chapters } : {})} eta={etaLabel(progress?.etaMs)} preview={preview} />;
 }
 

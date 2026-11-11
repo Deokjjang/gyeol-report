@@ -10,7 +10,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { computeCostUsd, priceFor, streamCompletion, type StreamCompletionInput, type StreamCompletionResult } from "../../src/lib/llm";
-import type { RawEntry, WriterCache } from "../../src/lib/writer/runner";
+import { rawKey, type RawEntry, type WriterCache } from "../../src/lib/writer/runner";
 import { ROOT } from "./env";
 
 /** 경로(시험은 LLM_CACHE_DIR·LLM_COST_LOG로 임시 폴더를 쓴다 — 실제 원장을 건드리지 않게). */
@@ -74,11 +74,11 @@ export function budgetGate(o: GateOptions): Gate {
   if (!(o.runBudget > 0)) throw new Error("실행 예산(--budget)이 없습니다");
   const inner = o.inner ?? streamCompletion;
   const refused: string[] = [];
-  let pendingKey: string | null = null;
+  const lastKey: { v: string | null } = { v: null };
   // 호출 종류는 지침 머리로 안다(작가·수리·소제목 재작성·표지 수리).
-  const kindOf = (i: StreamCompletionInput) => i.system.includes("원고의 검수자다") ? "review" : i.system.startsWith("너는 결리포트의 작가다") ? (/남은 장만 이어서/.test(i.user) ? "continuation" : "first") : i.system.includes("[S번호]") ? "rewrite" : i.system.includes("표지 한 줄") ? "cover" : "repair";
-  const refuse = (reason: string): StreamCompletionResult => {
-    const l = readLedger(); l.refusals.push({ at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, reason, key: pendingKey }); writeLedger(l);
+  const kindOf = (i: StreamCompletionInput) => i.system.includes("원고의 검수자다") ? "review" : i.system.startsWith("너는 결리포트 세운·대운 책의 작가다") ? (/^고쳐 다시 쓸 묶음/m.test(i.user) ? "rewrite" : "first") : i.system.startsWith("너는 결리포트의 작가다") ? (/남은 장만 이어서/.test(i.user) ? "continuation" : "first") : i.system.includes("[S번호]") ? "rewrite" : i.system.includes("표지 한 줄") ? "cover" : "repair";
+  const refuse = (reason: string, key?: string): StreamCompletionResult => {
+    const l = readLedger(); l.refusals.push({ at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, reason, key: key ?? lastKey.v }); writeLedger(l);
     refused.push(reason);
     return { text: "", finishReason: "error", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, error: { code: "budget_refused", message: reason } };
   };
@@ -87,18 +87,20 @@ export function budgetGate(o: GateOptions): Gate {
     put(entry, meta) { mkdirSync(rawDir(), { recursive: true }); writeFileSync(join(rawDir(), `${entry.key}.json`), JSON.stringify({ entry, at: new Date().toISOString(), scope: o.scope, run: o.run, stage: o.stage, system: meta.system, user: meta.user }, null, 1)); },
   };
   // runner는 get이 비면 곧바로 stream을 부른다: 그 키를 기억했다가 원장 중복 검사에 쓴다.
-  const wrappedCache: WriterCache = { get: k => { pendingKey = k; return cache.get(k); }, put: (e, m) => cache.put(e, m) };
+  const wrappedCache: WriterCache = { get: k => cache.get(k), put: (e, m) => cache.put(e, m) };
   const stream: typeof streamCompletion = async input => {
+    // AM2: 장 묶음을 병렬로 부르면 runner의 get→stream 순서가 섞여 한 변수(pendingKey)로는 키가 엇갈린다 → 키를 입력에서 다시 셈(runner rawKey와 같은 식).
+    const pendingKey = rawKey(input.model, input.system, input.user);
     const l = readLedger(), sc = l.scopes[o.scope];
     if (!sc) return refuse(`범위 없음: ${o.scope}`);
     // 같은 입력 해시 재생성 거절: 원고(출력)나 비용이 난 호출만 센다. 출력 0·비용 0인 실패(401 등 요청 거절)는 다시 불러도 재생성이 아니다.
     // AM 7부: 원고 글자 0으로 끝난 호출(생각만으로 상한 소진, chars 0 기록)은 원고를 받은 적이 없어 재생성으로 세지 않는다(작가 1회 재호출).
-    if (pendingKey && l.calls.some(c => c.key === pendingKey && !c.pending && (c.output > 0 || c.costUsd > 0) && c.chars !== 0) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`);
+    if (pendingKey && l.calls.some(c => c.key === pendingKey && !c.pending && (c.output > 0 || c.costUsd > 0) && c.chars !== 0) && !existsSync(join(rawDir(), `${pendingKey}.json`))) return refuse(`같은 입력 해시 재생성 거절(${pendingKey})`, pendingKey);
     const worst = worstCost(input), s = spent(l, o.scope), r = spent(l, o.scope, o.run);
     if (s + worst > sc.cap) return refuse(`범위 상한 초과 예상: 누적 $${s.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 상한 $${sc.cap}`);
     if (r + worst > o.runBudget) return refuse(`실행 예산 초과 예상: 이번 실행 $${r.toFixed(4)} + 이 호출 최악 $${worst.toFixed(4)} > 예산 $${o.runBudget}`);
     // 부르기 전에 최악 비용으로 먼저 적는다(도중에 죽어도 원장에 남는다).
-    const id = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`, key = pendingKey;
+    const id = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`, key = pendingKey; lastKey.v = key;
     const startedAt = new Date().toISOString();
     { const lp = readLedger(); lp.calls.push({ at: startedAt, scope: o.scope, run: o.run, stage: o.stage, kind: kindOf(input), provider: input.provider, model: input.model, input: 0, cachedInput: 0, output: 0, costUsd: worst, finish: "pending", requestId: null, key, id, pending: true }); writeLedger(lp); }
     const res = await inner(input);
@@ -107,7 +109,6 @@ export function budgetGate(o: GateOptions): Gate {
       input: res.usage.inputTokens, cachedInput: res.usage.cachedInputTokens, output: res.usage.outputTokens, costUsd: cost, finish: res.error ? `${res.finishReason}:${res.error.code}` : res.finishReason, requestId: res.requestId, key, id, chars: res.text.length, ...(res.hidden ? { hidden: res.hidden } : {}) };
     const l2 = readLedger(); const at = l2.calls.findIndex(c => c.id === id); if (at >= 0) l2.calls[at] = call; else l2.calls.push(call); writeLedger(l2);
     try { appendCostRow(call); } catch { /* 표 기록 실패는 원장이 남는다 */ }
-    pendingKey = null;
     return res;
   };
   return { stream, cache: wrappedCache, runSpent: () => spent(readLedger(), o.scope, o.run), refusals: () => refused };

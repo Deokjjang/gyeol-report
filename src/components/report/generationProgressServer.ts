@@ -37,7 +37,8 @@ export async function readGenerationProgress(reportId: string, knownStatus?: str
       const progress = stores.progress ?? (await import("../../lib/ops/store")).createOpsStores().progress;
       const p = await progress.call("read", { reportId });
       if (p.ok === true) { const done = Number(p.done) || 0, total = typeof p.total === "number" ? p.total : null;
-        return { ...base, chapters: { done, total }, etaMs: etaOf(typeof p.medianMs === "number" ? p.medianMs : null, done, total) }; }
+        // AM2: 세운·대운은 장 묶음을 병렬로 써서 1장보다 다른 장이 먼저 저장될 수 있다 → 「1장 먼저 읽기」는 1장 미리보기가 있을 때만(본문은 보내지 않는다).
+        return { ...base, chapters: { done, total, firstReady: Boolean(p.first) }, etaMs: etaOf(typeof p.medianMs === "number" ? p.medianMs : null, done, total) }; }
     } catch { /* 진행률을 못 읽으면 단계만 */ }
     return base;
   } catch {

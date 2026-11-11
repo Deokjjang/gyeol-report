@@ -122,12 +122,14 @@ describe("0-5 예산 관문(tools/llm/budget.ts)", () => {
       const call = (maxOutputTokens: number, user = "u") => g.stream({ provider: "anthropic", model: "claude-sonnet-5-5", system: "s", user, maxOutputTokens, timeoutMs: 1000 });
       expect((await call(100)).text).toBe("x"); expect(inner).toBe(1);
       const big = await call(100_000); expect(big.error?.code).toBe("budget_refused"); expect(inner).toBe(1);
-      await g.cache.get("k1"); const r = B2.readLedger(); r.calls.push({ ...r.calls[0], key: "k1" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r));
+      // AM2: 키는 입력(모델·지침·사용자 메시지)에서 다시 센다(병렬 묶음 호출에서 get→stream 순서가 섞여도 엇갈리지 않게).
+      const { rawKey } = await import("@/lib/writer/runner");
+      expect(B2.readLedger().calls[0].key).toBe(rawKey("claude-sonnet-5-5", "s", "u"));
       await g.cache.get("k1"); expect((await call(100)).error?.code).toBe("budget_refused"); expect(g.refusals().some(x => /같은 입력 해시/.test(x))).toBe(true);
       expect(readFileSync(log, "utf8")).toMatch(/누적 합계: \*\*\$0\.00100000\*\*/);
       // 출력 0·비용 0인 실패(401 등)는 재생성으로 세지 않는다 — 같은 입력을 다시 부를 수 있다.
-      const r2 = B2.readLedger(); r2.calls.push({ ...r2.calls[0], key: "k401", output: 0, costUsd: 0, finish: "error:http_401" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r2));
-      await g.cache.get("k401"); expect((await call(100)).text).toBe("x"); expect(inner).toBe(2);
+      const r2 = B2.readLedger(); r2.calls.push({ ...r2.calls[0], key: rawKey("claude-sonnet-5-5", "s", "u401"), output: 0, costUsd: 0, finish: "error:http_401" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r2));
+      expect((await call(100, "u401")).text).toBe("x"); expect(inner).toBe(2);
       expect(B2.startGate({ scope: "t", runBudget: 1, books: 1, log: () => undefined }).ok).toBe(false);
       expect(() => B2.budgetGate({ scope: "t", run: "r2", runBudget: 0, stage: "x" })).toThrow();
     } finally { delete process.env.LLM_CACHE_DIR; delete process.env.LLM_COST_LOG; }

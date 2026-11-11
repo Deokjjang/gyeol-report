@@ -56,6 +56,8 @@ import { buildFactSheet, type FactSheet } from "@/lib/factsheet/build";
 import { factCtxOf, seniorityHit } from "@/lib/factsheet/check";
 import { matchJob, PROPS } from "@/lib/brief/props";
 import type { PriorBooks } from "./prior";
+import { buildChunkedSnapshot } from "./chunked/publish";
+import { writerModeOf } from "./mode";
 
 let knowledgeCache: { k: Knowledge; version: string } | null = null;
 /** 지식 DB와 그 내용 해시(Book 메타데이터의 지식 버전). */
@@ -419,17 +421,25 @@ export function coverPrompt(brief: Brief, line: string, problem: string, avoid: 
   return { system: COVER_SYSTEM, user: `핵심 뜻(chart.coreImage): ${brief.compatibility ? brief.compatibility.pairImage.meaning ?? brief.compatibility.pairImage.line : brief.chart.coreImage.meaning ?? brief.chart.coreImage.line}\n고객 입력: 직업 ${f.job.detail || "미입력"} · 관계 ${f.relationship} · 상품 ${brief.productTitle}\n피할 낱말: ${avoid.join(", ") || "없음"}\n지금 표지: ${line || "(없음)"}\n문제: ${problem}\n\n"[표지] 새 줄"로 돌려주세요.` };
 }
 
+/** 발행 브리프(운영·도구 공통): 같은 고객의 이전 책 원장으로 장면·각도·씨앗·근거·이미지·행동·표지를 거른다. */
+export function briefFor(payload: ReportInputPayload, policyAt: string, prior: PriorBooks | undefined, ledgerView: V5BuildDeps["ledgerView"], k: Knowledge): Brief {
+  const pl = prior?.ledger;
+  return buildBrief({ ...payloadToBriefInput(payload, kstDate(policyAt), policyAt), ...(prior?.scenes.length ? { excludeScenes: prior.scenes } : {}), ...(prior?.explained?.length ? { knownTraits: prior.explained } : {}),
+    ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}),
+    ...(prior?.images?.length ? { priorImages: prior.images } : {}), ...(ledgerView ? { ledgerView } : {}),
+    ...(prior?.actions?.length ? { priorActions: prior.actions } : {}), ...(prior?.covers?.length ? { priorCovers: prior.covers } : {}) } as never, k);
+}
+
 export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
   const deps = a.deps ?? {};
   const now = deps.now ?? (() => Date.now()), started = now();
   const { k, version: knowledgeVersion } = writerKnowledge();
   // 같은 고객의 이전 책이 쓴 장면은 고르지 않고, 이미 뜻을 푼 특성은 이 책에서 뜻을 다시 풀지 않는다(P6b E-1, P6c A3).
   // 고객 원장(P6d F): 앞 책이 쓴 각도(Fusion·팩폭)와 MBTI 씨앗은 빼고, 앞 책 근거 항목은 쓰지 않은 것을 먼저 고른다.
+  // AM2: 세운·대운은 장 묶음 작가(상품별 설정 writerMode). 4종은 아래 그대로(책 1권 = 작가 1회).
+  if (writerModeOf(a.payload.productKey) === "chunked") return buildChunkedSnapshot(a);
   const pl = a.prior?.ledger;
-  const brief = buildBrief({ ...payloadToBriefInput(a.payload, kstDate(a.policyAt), a.policyAt), ...(a.prior?.scenes.length ? { excludeScenes: a.prior.scenes } : {}), ...(a.prior?.explained?.length ? { knownTraits: a.prior.explained } : {}),
-    ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}),
-    ...(a.prior?.images?.length ? { priorImages: a.prior.images } : {}), ...(deps.ledgerView ? { ledgerView: deps.ledgerView } : {}),
-    ...(a.prior?.actions?.length ? { priorActions: a.prior.actions } : {}), ...(a.prior?.covers?.length ? { priorCovers: a.prior.covers } : {}) } as never, k);
+  const brief = briefFor(a.payload, a.policyAt, a.prior, deps.ledgerView, k);
   const plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
   const llm = resolveLlmConfig();
   const provider = deps.provider ?? llm.provider, model = deps.model ?? llm.model;

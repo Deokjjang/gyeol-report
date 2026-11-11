@@ -14,7 +14,7 @@ export type GenerationProgress = {
   /** 감독이 미뤄 둔 다음 시도 시각(ISO). 평소보다 오래 걸릴 때만. */
   readonly nextAt: string | null;
   /** AM 4부: 진짜 진행률(저장된 장 수 / 전체 장 수). 전체를 모르면 total null. 가짜 퍼센트 막대는 쓰지 않는다. */
-  readonly chapters?: { readonly done: number; readonly total: number | null };
+  readonly chapters?: { readonly done: number; readonly total: number | null; readonly firstReady?: boolean };
   /** AM 4부: 남은 시간(밀리초) = 같은 상품 최근 실측 중앙값 × 남은 장 몫. 실측이 없으면 null(화면이 숨긴다). */
   readonly etaMs?: number | null;
 };

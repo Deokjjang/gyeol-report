@@ -63,7 +63,7 @@ export const anthropicDriver: ProviderDriver = {
       model: input.model,
       max_tokens: input.maxOutputTokens,
       stream: true,
-      system: [{ type: "text", text: input.system, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) }],
+      system: (input.systemParts?.length ? input.systemParts.slice(0, 4) : [input.system]).map(text => ({ type: "text", text, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) })),
       messages: [{ role: "user", content: input.user }],
       ...opts,
       // output_config는 모델 설정(effort)과 JSON 스키마를 합친다.
