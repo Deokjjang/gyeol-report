@@ -99,7 +99,8 @@ function monthLists(x: Intake): { cue: RegExp; months: Set<string> }[] {
 }
 
 export function blockFlags(chapters: readonly FinalChapter[], lint: readonly LintFlag[], b: BlockCtx): ChunkFlag[] {
-  const out: ChunkFlag[] = lint.filter(f => BLOCK_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, rule: f.rule, sentence: f.sentence, ...(f.detail ? { detail: f.detail } : {}), ...(f.hint ? { hint: f.hint } : {}) }));
+  // 소제목(paragraph -1)도 차단 대상(P 시범 annual-1: 「쉴 달은 2월과 3월…」·솔로에게 「좋아하는 사람을 한 발씩」이 소제목이라 빠졌다). 카드 줄은 결정론 값으로 바꾸는 기존 길.
+  const out: ChunkFlag[] = lint.filter(f => BLOCK_RULES.has(f.rule) && !f.card).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, rule: f.rule, sentence: f.sentence, ...(f.detail ? { detail: f.detail } : {}), ...(f.hint ? { hint: f.hint } : {}) }));
   const seen = new Set(out.map(f => `${f.chapter}.${f.section}.${f.paragraph}|${f.sentence}`));
   const owner = b.mbtiAnchor ? ownerWindows(b.intake) : new Set<string>(), months = monthWindows(b.intake), lists = monthLists(b.intake);
   const anyList = b.intake.lines.filter(l => l.subject === "month").map(l => monthsIn(l.meaning)).filter(s => s.size > 1);

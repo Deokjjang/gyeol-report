@@ -305,7 +305,17 @@
 | 2026-11-11 20:00 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 4084 | 34220 | 3259 | 0.04760200 | complete | req_011Cgw2PnhNypFuvmxNAz53h | 20.43759951 |
 | 2026-11-11 20:00 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 3729 | 34220 | 3263 | 0.04693200 | complete | req_011Cgw2R1NfZCtwF6t6aYv5B | 20.48453151 |
 | 2026-11-11 20:01 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 3936 | 34220 | 3197 | 0.04668600 | complete | req_011Cgw2SBmkqLicB2uiEiHRy | 20.53121751 |
-누적 합계: **$20.53121751** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-11 20:06 | AM2 P | anthropic/claude-sonnet-5-5 | 27043 | 0 | 1893 | 0.08645550 | complete | req_011Cgw2rcirtK9Mejt15oBtd | 20.61767301 |
+| 2026-11-11 20:06 | AM2 P | anthropic/claude-sonnet-5-5 | 158 | 26879 | 2582 | 0.03151180 | complete | req_011Cgw2rh15YdBkJwrJgJB43 | 20.64918481 |
+| 2026-11-11 20:06 | AM2 P | anthropic/claude-sonnet-5-5 | 154 | 26879 | 3272 | 0.03840380 | complete | req_011Cgw2rh2pbvK2rJetfxKtC | 20.68758861 |
+| 2026-11-11 20:06 | AM2 P | anthropic/claude-sonnet-5-5 | 154 | 26879 | 1741 | 0.02309380 | complete | req_011Cgw2t9FfsnY6d4yqmX68F | 20.71068241 |
+| 2026-11-11 20:06 | AM2 P | anthropic/claude-sonnet-5-5 | 165 | 26879 | 2222 | 0.02792580 | complete | req_011Cgw2tNh4M9K1ds2ZqtaXu | 20.73860821 |
+| 2026-11-11 20:07 | AM2 P | anthropic/claude-sonnet-5-5 | 144 | 26879 | 2285 | 0.02851380 | complete | req_011Cgw2u3aeX9B69cLX8S7mX | 20.76712201 |
+| 2026-11-11 20:07 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 2352 | 26879 | 1889 | 0.02896980 | complete | req_011Cgw2vRAT8fXaXe3FbDo5R | 20.79609181 |
+| 2026-11-11 20:07 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 3483 | 26879 | 2577 | 0.03811180 | complete | req_011Cgw2vQ2jQLnmpsffNveu5 | 20.83420361 |
+| 2026-11-11 20:07 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 2816 | 26879 | 2271 | 0.03371780 | complete | req_011Cgw2wMK42BoUTB4fWHzVu | 20.86792141 |
+| 2026-11-11 20:07 | AM2 P rewrite | anthropic/claude-sonnet-5-5 | 2765 | 26879 | 2232 | 0.03322580 | complete | req_011Cgw2wM9d5Cmkj33nt1r8r | 20.90114721 |
+누적 합계: **$20.90114721** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - 2026-11-05 최종판3(출시 전 마지막) 시작: 콘솔 시작 잔액 **$94.33**(덕짱님 지시값). 범위 `final3` 상한 $4.00(측정·생성 포함), 이 표 누적 $9.82159355에서 시작.
