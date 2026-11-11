@@ -116,9 +116,10 @@ function FirstChapterPreview({ reportId, done, total }: { reportId: string; done
     setOpen(true); if (chapter) return;
     try { const r = await fetch(`/api/reports/${encodeURIComponent(reportId)}/preview`, { cache: "no-store" }); const j = r.ok ? await r.json() as { ok?: boolean; chapter?: typeof chapter } : null; if (j?.ok && j.chapter) setChapter(j.chapter); else setFailed(true); } catch { setFailed(true); }
   };
-  if (!open) return <p><button type="button" onClick={() => void load()} data-first-chapter>1장 먼저 읽기</button></p>;
-  return <section aria-label="1장 먼저 읽기" data-first-chapter-preview>
-    {chapter ? <><h2>1. {chapter.title}</h2>{chapter.sections.map((s, i) => <div key={i}>{s.heading ? <h3>{s.heading}</h3> : null}{s.paragraphs.map((p, j) => <p key={j}>{p}</p>)}</div>)}</> : failed ? <p>1장을 아직 불러오지 못했어요. 잠시 뒤 다시 눌러 주세요.</p> : <p>1장을 펼치고 있어요.</p>}
-    <p>남은 {total ? Math.max(0, total - done) : ""}장은 제본 중이에요. 완성되면 이 화면이 책으로 바뀌어요.</p>
+  // AM 7부(로컬 실화면): 가운데 정렬된 상태 화면 안에서 긴 본문이 가운데로 흘러 읽기 어려웠다 → 미리보기만 왼쪽 정렬·소제목 굵게, 버튼은 단계 줄과 띄운다.
+  if (!open) return <p className="mt-5"><button type="button" onClick={() => void load()} data-first-chapter className="underline underline-offset-4">1장 먼저 읽기</button></p>;
+  return <section aria-label="1장 먼저 읽기" data-first-chapter-preview className="mt-6 text-left text-[15px] leading-7">
+    {chapter ? <><h2 className="text-lg font-semibold">1. {chapter.title}</h2>{chapter.sections.map((s, i) => <div key={i} className="mt-5">{s.heading ? <h3 className="font-semibold">{s.heading}</h3> : null}{s.paragraphs.map((p, j) => <p key={j} className="mt-2">{p}</p>)}</div>)}</> : failed ? <p>1장을 아직 불러오지 못했어요. 잠시 뒤 다시 눌러 주세요.</p> : <p>1장을 펼치고 있어요.</p>}
+    <p className="mt-6 text-center">남은 {total ? Math.max(0, total - done) : ""}장은 제본 중이에요. 완성되면 이 화면이 책으로 바뀌어요.</p>
   </section>;
 }
