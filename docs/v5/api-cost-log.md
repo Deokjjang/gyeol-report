@@ -287,7 +287,15 @@
 | 2026-11-11 16:44 | AM 7부 | anthropic/claude-sonnet-5-5 | 22216 | 7097 | 14586 | 0.19171140 | complete | req_011CgvmMpaCMokLNUD7uvE4L | 19.82245318 |
 | 2026-11-11 16:45 | AM 7부 review | anthropic/claude-haiku-5-5 | 20523 | 2020 | 6548 | 0.00534650 | complete | req_011CgvmVoNjVchpRoQP7GoBS | 19.82779968 |
 | 2026-11-11 16:45 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 5426 | 598 | 1106 | 0.02203160 | complete | req_011CgvmY4sCY9qCkJGuogkTz | 19.84983128 |
-누적 합계: **$19.84983128** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-11 17:34 | AM 7부 review | anthropic/claude-haiku-5-5 | 23940 | 0 | 7350 | 0.00612238 | complete | req_011CgvqDHoGcvqXPqnfweigh | 19.85595366 |
+| 2026-11-11 17:34 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10830 | 0 | 2523 | 0.04718900 | complete | req_011CgvqFvUx4wYBeh277pv2V | 19.90314266 |
+| 2026-11-11 17:34 | AM 7부 review | anthropic/claude-haiku-5-5 | 19154 | 2135 | 121 | 0.00199725 | complete | req_011CgvqHpxryuRDZyGhbF46g | 19.90513991 |
+| 2026-11-11 17:34 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10075 | 598 | 2575 | 0.04601960 | complete | req_011CgvqHyLPmNwhNnyrKbHXW | 19.95115951 |
+| 2026-11-11 17:37 | AM 7부 review | anthropic/claude-haiku-5-5 | 19147 | 2135 | 10344 | 0.00710805 | complete | req_011CgvqSZUTBWGbTZx1QmJe3 | 19.95826756 |
+| 2026-11-11 17:37 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10428 | 598 | 2459 | 0.04556560 | complete | req_011CgvqW28uaB3hw12JS6kya | 20.00383316 |
+| 2026-11-11 17:39 | AM 7부 review | anthropic/claude-haiku-5-5 | 20579 | 2135 | 7983 | 0.00607075 | complete | req_011CgvqdkuLVAJBJ3xECVWae | 20.00990391 |
+| 2026-11-11 17:39 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 5300 | 598 | 1084 | 0.02155960 | complete | req_011CgvqgTsjqB3kF1VB9qGtu | 20.03146351 |
+누적 합계: **$20.03146351** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 
 메모
 - 2026-11-05 최종판3(출시 전 마지막) 시작: 콘솔 시작 잔액 **$94.33**(덕짱님 지시값). 범위 `final3` 상한 $4.00(측정·생성 포함), 이 표 누적 $9.82159355에서 시작.
