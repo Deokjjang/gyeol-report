@@ -51,7 +51,7 @@ async function main() {
   const ids = argv.flatMap((a, i) => (a === "--case" ? [argv[i + 1]] : []));
   const tag = argv.includes("--tag") ? (argv[argv.indexOf("--tag") + 1] ?? "").replace(/[^a-z0-9]/gi, "") : "";
   const S = STAGES[stage]; if (!S) { console.error("--stage P|E|F|I"); process.exit(2); }
-  if (argv.includes("--mock") && !process.env.LLM_CACHE_DIR) { console.error("--mock은 LLM_CACHE_DIR(임시 폴더)와 함께"); process.exit(2); }
+  if (argv.includes("--mock") && (!process.env.LLM_CACHE_DIR || !process.env.LLM_COST_LOG)) { console.error("--mock은 LLM_CACHE_DIR·LLM_COST_LOG(임시 폴더)와 함께 — 실제 원장·비용 기록을 건드리지 않게"); process.exit(2); }
   loadDevEnv();
   ensureScope(S.scope, S.cap, S.note);
   const all = [...cases().filter(c => c.product !== "launch").map(c => ({ id: c.id, note: c.note, payload: c.payload })), ...HIDDEN.map(h => ({ id: h.id, note: h.note, payload: h.payload() }))];
