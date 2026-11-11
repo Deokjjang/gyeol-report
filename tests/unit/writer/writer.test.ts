@@ -43,9 +43,10 @@ describe("작가 지침(B)", () => {
   });
   it("대운·세운은 반복 장을 keys로 묶는다", () => {
     const major = writerChapters(buildBrief({ product: "major_fortune", baseDate: "2026-10-27", person: haram }, k));
-    expect(major).toHaveLength(5); expect(major.find(c => c.keys)?.keys).toHaveLength(14);
+    // AM 3부: 대운 「앞으로의 나」 9장, 반복 장(앞으로 10년)은 10해. AM 2부: 세운 신년판 9장(소망을 적은 때만 10장), 달 장은 1월 다리 + 12 절기월.
+    expect(major).toHaveLength(9); expect(major.find(c => c.keys)?.keys).toHaveLength(10);
     const annual = writerChapters(buildBrief({ product: "annual_fortune", baseDate: "2026-10-27", selectedYear: 2026, person: haram }, k));
-    expect(annual).toHaveLength(5); expect(annual[2].keys).toHaveLength(12);
+    expect(annual).toHaveLength(9); expect(annual.find(c => c.keys)?.keys).toHaveLength(13);
   });
   it("브리프는 사용자 메시지, 내부 값(seed·budget·score)은 빼고 보낸다", () => {
     const p = buildWriterPrompt(buildBrief({ product: "saju_mbti_full", baseDate: "2026-10-27", person: haram }, k));
@@ -100,6 +101,6 @@ describe("결정론 작가(E)·Book 연결(F) — 6상품 + 궁합 7유형", () 
     const kinds = data!.pages.map(p => p.kind);
     expect(kinds[0]).toBe("cover"); expect(kinds).toContain("contents"); expect(kinds.at(-1)).toBe("back");
     if (input.product === "major_fortune") expect(data!.pages.find(p => p.kind === "timeline")).toMatchObject({ years: expect.arrayContaining([expect.objectContaining({ year: 2026 })]) });
-    if (input.product === "annual_fortune") expect((data!.pages.find(p => p.kind === "months") as { months: unknown[] }).months).toHaveLength(12);
+    if (input.product === "annual_fortune") expect((data!.pages.find(p => p.kind === "months") as { months: unknown[] }).months).toHaveLength(13); // AM 2부: 1월 다리 + 12 절기월
   }, 30_000);
 });

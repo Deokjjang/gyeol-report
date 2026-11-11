@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { buildBrief, loadKnowledge } from "@/lib/brief";
-import { assembleV5Book, createV5Snapshot, projectV5Book, seasonMonths, seasonTime } from "@/lib/writer/book";
+import { assembleV5Book, createV5Snapshot, projectV5Book } from "@/lib/writer/book";
 import { buildWriterPrompt } from "@/lib/writer/prompt";
 import { applySafetyNet } from "@/lib/writer/safety";
 import { storedBook } from "@/lib/book/storedReport";
@@ -34,25 +34,28 @@ const html = (data: BookData, page: BookPage) => renderToStaticMarkup(<BookReade
 const pageOf = <K extends BookPage["kind"]>(data: BookData, kind: K) => data.pages.find((p): p is Extract<BookPage, { kind: K }> => p.kind === kind)!;
 
 describe("세운 절기월 표기와 지금 달", () => {
+  // AM 2부(작업 지시 「달 이름은 표와 본문 모두 한 체계(예: 「2월 · 임인월」, 절기 경계 함께 표기)」): 신년판(기본 2027) 1월 다리 + 12 절기월.
+  // 예전 P6b·P6c 규칙(「N번째 달」, 달력 달 이름 금지)은 이 신년판에서 바뀌었다. 이전 v5 책(카드에 절기 구간 없음)은 예전 표기 그대로.
   const annual = snapshot("annual_fortune");
-  it("절기월 순번·날짜 구간으로 쓰고 달력 달 이름은 쓰지 않는다", () => {
+  it("「2월 · 임인월」 이름 + 절기 구간, 1월 다리 포함 13칸, 「N번째 달」 없음", () => {
     const months = pageOf(projectV5Book(annual, BASE)!, "months").months;
-    expect(months.map(m => m.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    expect(months[0].range).toBe("2/4~3/5"); // 끝 = 다음 절입일(P6c-ui2 결정)
+    expect(months.map(m => m.order)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+    expect([months[0].name, months[0].range, months[0].bridge]).toEqual(["1월 · 신축월", "1/5~2/4", true]);
+    expect([months[1].name, months[1].range]).toEqual(["2월 · 임인월", "2/4~3/6"]); // 끝 = 다음 절입일(엔진 절입 시각)
+    expect(months[12].name).toBe("2028년 1월 · 계축월");
     const out = html(projectV5Book(annual, BASE)!, pageOf(projectV5Book(annual, BASE)!, "months"));
-    expect(out).toContain("1번째 달"); expect(out).toContain("2/4~3/5");
-    expect(out).not.toMatch(/<b>\d+월<\/b>/);
+    expect(out).toContain("<b>2월 · 임인월</b>"); expect(out).toContain("2/4~3/6");
+    expect(out).not.toContain("번째 달"); expect(out).not.toContain("<b>0월</b>");
   });
-  it("2026-11-03이면 9번째 달 무술월이 지금", () => {
-    const months = pageOf(projectV5Book(annual, BASE)!, "months").months;
-    expect(months.filter(m => m.time === "지금").map(m => [m.order, m.ganji, m.range])).toEqual([[9, "戊戌", "10/8~11/7"]]);
-    expect(months.slice(0, 8).every(m => m.time === "돌아보기") && months.slice(9).every(m => m.time === "앞으로")).toBe(true);
+  it("2026-11-03(신년판 전)이면 지금 달 없음, 2027-06-10이면 6월 · 병오월이 지금", () => {
+    expect(pageOf(projectV5Book(annual, BASE)!, "months").months.filter(m => m.time === "지금")).toEqual([]);
+    const months = pageOf(projectV5Book(annual, "2027-06-10")!, "months").months;
+    expect(months.filter(m => m.time === "지금").map(m => [m.order, m.ganji, m.range])).toEqual([[5, "丙午", "6/6~7/7"]]);
+    expect(months.slice(0, 5).every(m => m.time === "돌아보기") && months.slice(6).every(m => m.time === "앞으로")).toBe(true);
   });
   it("읽는 날이 바뀌면 지금 달도 따라간다(경계 하루 포함)", () => {
     const now = (day: string) => pageOf(projectV5Book(annual, day)!, "months").months.find(m => m.time === "지금")?.order;
-    expect([now("2026-11-06"), now("2026-11-07"), now("2026-12-10"), now("2027-01-05"), now("2027-02-04")]).toEqual([9, 10, 11, 12, undefined]);
-    const season = seasonMonths(annual.draft ? (annual.draft as never as { timeline: { cards: { key: string; label: string; kind: string }[] } }).timeline.cards.filter(c => c.kind === "month") : []);
-    expect(seasonTime(season[8], "2026-10-08")).toBe("지금");
+    expect([now("2027-01-04"), now("2027-01-05"), now("2027-02-03"), now("2027-02-04"), now("2027-11-07"), now("2027-11-08"), now("2028-02-03"), now("2028-02-04")]).toEqual([undefined, 0, 0, 1, 9, 10, 12, undefined]);
   });
 });
 

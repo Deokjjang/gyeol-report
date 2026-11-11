@@ -98,12 +98,16 @@ describe("g 핵심 구절과 용어", () => {
 });
 
 describe("h 세운 달 이름", () => {
-  it("v5: 표와 상세 모두 'N번째 달 · 간지월 · 날짜'", () => {
+  // AM 2부: 신년판은 표와 상세 모두 「2월 · 임인월」 + 절기 구간 한 체계(예전 「N번째 달」 대신).
+  it("v5 신년판: 표와 상세 모두 '2월 · 임인월 · 절기 구간'", () => {
     const data = read("annual_fortune"), months = pageOf(data, "months");
-    const m = months.months[0], detail = data.pages[m.page];
-    expect(m.sub).toMatch(/^[가-힣]{2}월 · 2\/4~3\/5$/);
-    expect(detail.title).toBe(`1번째 달 · ${m.sub}`);
-    expect(html(data, months)).toContain(`<small>${m.sub}</small>`);
+    const bridge = months.months[0], m = months.months[1], detail = data.pages[m.page];
+    expect([bridge.name, bridge.range, data.pages[bridge.page].title]).toEqual(["1월 · 신축월", "1/5~2/4", "1월 · 신축월 (1/5~2/4) · 2026년 병오년 마지막 달"]);
+    expect([m.name, m.range]).toEqual(["2월 · 임인월", "2/4~3/6"]);
+    // 짧은 쪽은 앞쪽과 합쳐진다(composeBookNavigation) — 상세 제목은 쪽 제목이거나 합쳐진 쪽 안의 소제목.
+    const heads = detail.kind === "narrative" ? [detail.title, ...detail.paragraphs.map(p => p.heading)] : [];
+    expect(heads).toContain("2월 · 임인월 (2/4~3/6)");
+    expect(html(data, months)).toContain(`<b>${m.name}</b><small>${m.range}</small>`);
     expect(data.pages.filter(p => p.kind === "narrative" && /무렵|절입부터|이번 달/.test(p.title))).toEqual([]);
   });
   it("V4 세운: 달력 달 이름 + 그 달의 절기월·날짜, 옛 머리말 없음, '좋은 힘'은 V4 카드 이름 그대로", () => {

@@ -30,14 +30,15 @@ export function readerBook(data: BookData, today?: string): BookData {
   // V4 세운 상세 쪽 머리 줄 "1월 · 돌아보기"(만든 날 기준 상태)는 표와 같은 이름으로. 둘째 줄(V4 제목)은 그대로.
   const V4_HEAD = /^\d{1,2}월 · (지금|돌아보기|앞으로)(?=\n|$)/;
   const v4Titles = new Map<BookPage, string>();
-  for (const p of data.pages) if (p.kind === "months") for (const m of p.months) if (!m.order) {
+  // AM 2부: 신년판 1월 다리는 순번 0이다 — v4 달(순번 없음)만 가린다.
+  for (const p of data.pages) if (p.kind === "months") for (const m of p.months) if (m.order === undefined) {
     const target = data.pages[m.page];
     if (target?.kind === "narrative" && V4_HEAD.test(target.title)) v4Titles.set(target, target.title.replace(V4_HEAD, v4Month(m, today).title));
   }
   const pages = data.pages.filter(p => !removed(p)).map((p): BookPage => {
     if (p.kind === "timeline") return { ...p, years: p.years.map(y => ({ ...y, page: at(y.page) })), transitions: p.transitions.map(t => ({ ...t, page: at(t.page) })) };
     if (p.kind === "months") return { ...p, months: p.months.map(m => {
-      if (m.order) return { ...m, page: at(m.page) };
+      if (m.order !== undefined) return { ...m, page: at(m.page) };
       const { sub, time } = v4Month(m, today);
       return { ...m, sub, time, page: at(m.page) };
     }) };

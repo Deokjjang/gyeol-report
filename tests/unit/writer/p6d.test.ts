@@ -35,7 +35,9 @@ const brief = (product: string, person: object, extra: object = {}) => buildBrie
 function stored(file: string, b: Brief): { chapters: FinalChapter[]; plan: readonly WriterChapter[] } {
   const plan = buildWriterPrompt(b).chapters;
   const text = readFileSync(join(ROOT, "docs/v5/trial/p6c/final", file), "utf8").replace(/⟪|⟫/g, "");
-  const chapters = parseChapters(text).map(c => { const p = plan.find(x => x.n === c.n)!; return { n: c.n, id: p.id, title: c.title, sections: c.sections, source: "writer" as const, chars: 0, ...(p.keys ? { keys: p.keys } : {}) }; });
+  // AM 3부: 대운 장 구성이 바뀌어(9장) 장 번호가 예전 원고와 다르다 — 소제목이 모두 연도·달 key인 장은 그 소제목을 반복 key로 본다.
+  const chapters = parseChapters(text).map(c => { const p = plan.find(x => x.n === c.n), keyed = c.sections.length > 0 && c.sections.every(x => /^\d{4}(-M\d{2})?$/.test(x.heading));
+    return { n: c.n, id: p?.id ?? `stored-${c.n}`, title: c.title, sections: c.sections, source: "writer" as const, chars: 0, ...(keyed ? { keys: c.sections.map(x => x.heading) } : p?.keys ? { keys: p.keys } : {}) }; });
   return { chapters, plan };
 }
 const flagged = (flags: readonly LintFlag[], rule: string, part: string) => flags.some(f => f.rule === rule && (f.sentence.includes(part) || (f.paragraph >= 0 && f.detail?.includes(part))));
