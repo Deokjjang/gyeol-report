@@ -67,6 +67,8 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(pinAnnualYear(book.id, initial ?? emptyBookForm(policy.currentYear))), [step, setStep] = useState(0), [ready, setReady] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({}), [message, setMessage] = useState(""), [checking, setChecking] = useState(false), [publishing, setPublishing] = useState(false), [decoration, setDecoration] = useState(0);
+  // AM2-4 7부: 대운을 정할 수 없는 생일 — 세운을 권하는 링크(결제 단계로 가지 않는다).
+  const [annualLink, setAnnualLink] = useState(false);
   const scroll = useRef<HTMLDivElement>(null), validationId = useRef(0), reachedStep = useRef(0);
   const draftWritable = useRef(true);
   const total = ["love", "annual"].includes(book.id) ? 3 : 2, receipt = step === total;
@@ -147,7 +149,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
       draftWritable.current = true;
       try { sessionStorage.removeItem(bundleReturnKey); sessionStorage.removeItem(checkoutReturnKey(book.productKey)); } catch { /* optional local hint */ }
     }
-    interaction("input_started", book.productKey); validationId.current++; setState(next); setErrors({}); setMessage("");
+    interaction("input_started", book.productKey); validationId.current++; setState(next); setErrors({}); setMessage(""); setAnnualLink(false);
   };
   const next = async () => {
     if (checking) return;
@@ -155,6 +157,22 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     const found: Record<string, string> = {};
     for (const [slot, person] of pair ? [["a", state.person], ["b", state.personB]] as const : [["a", state.person]] as const) for (const [field, text] of Object.entries(personErrors(person, now, requiredGender))) found[`${slot}.${field}`] = text;
     if (Object.keys(found).length) { setStep(0); setErrors(found); setTimeout(() => document.getElementById(Object.keys(found)[0].replace(".", "-"))?.focus(), 0); return; }
+    // AM2-4 7부(덕짱님 결정 2026-11-12): 대운 첫 쪽에서 출생 시각이 「모름·대략」이면 엔진이 대운을 정할 수 있는지 먼저 본다 —
+    // 대략 시간대로 정해지면 시간대를 묻고(선택지), 그래도 정할 수 없으면 「이 생일은 대운을 정확히 계산할 수 없어요」 + 세운을 권한다(결제 전 단계에서 멈춤).
+    if (step === 0 && book.productKey === "major_fortune" && state.person.paidBirthTimeMode !== "exact") {
+      setChecking(true); const attempt = ++validationId.current;
+      try {
+        const p = state.person;
+        const r = await (await fetch("/api/reports/dayun-readiness", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ birthDate: p.birthDate, birthTime: "", birthTimeUnknown: p.paidBirthTimeMode === "unknown", approximateBirthTimeSlot: p.paidBirthTimeMode === "approximate" ? p.timeBranch : "", gender: p.gender }) })).json() as { ok: boolean; code?: string; message?: string; slots?: { value: string; label: string }[] };
+        if (attempt !== validationId.current) return;
+        if (!r.ok && r.code === "DAYUN_NEED_SLOT") {
+          setState(st => ({ ...st, person: { ...st.person, paidBirthTimeMode: "approximate", birthTimeUnknown: false, birthTime: "", timeBranch: "" } }));
+          setMessage(`${r.message ?? ""}${r.slots?.length ? ` (계산할 수 있는 시간대: ${r.slots.map(x => x.label).join(", ")})` : ""}`); setAnnualLink(false); return;
+        }
+        if (!r.ok && r.code === "DAYUN_UNDETERMINABLE") { setMessage(r.message ?? "이 생일은 대운을 정확히 계산할 수 없어요."); setAnnualLink(true); return; }
+      } catch { setMessage("입력을 확인하지 못했습니다. 다시 시도해 주세요."); return; }
+      finally { setChecking(false); }
+    }
     if (step === total - 1 && (internal || requiredGender || pair)) {
       setChecking(true); const attempt = ++validationId.current;
       try {
@@ -164,7 +182,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         // other public products are checked by the unchanged checkout server.
         const result = await response.json();
         if (attempt !== validationId.current) return;
-        if (!result.ok) { setMessage(typeof result.message === "string" ? result.message : typeof result.error === "string" ? result.error : "입력 정보를 확인해 주세요."); return; }
+        if (!result.ok) { setMessage(typeof result.message === "string" ? result.message : typeof result.error === "string" ? result.error : "입력 정보를 확인해 주세요."); setAnnualLink(result.code === "DAYUN_UNDETERMINABLE"); return; }
       } catch { setMessage("입력을 확인하지 못했습니다. 다시 시도해 주세요."); return; }
       finally { setChecking(false); }
     }
@@ -196,6 +214,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>
       </form>}
       {message ? <p className={f.error} role="alert">{message}</p> : null}
+      {annualLink ? <a className={f.next} href={internal ? "/dev/book-flow" : "/report/new?product=annual-fortune"} data-annual-recommend>세운(나의 한 해)으로 가기 →</a> : null}
     </div><nav className={s.pageNav} aria-label="입력 페이지"><button aria-label="이전 페이지" disabled={!step || checking} onClick={() => window.history.back()}>←</button><span><strong>{title}</strong><span>{step + 1} / {total + 1}</span></span><a href={home}>책장 ↗</a></nav></section>
   </main>;
 }

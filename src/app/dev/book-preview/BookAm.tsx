@@ -8,9 +8,10 @@ import type { AmEl, AmRow, BookPage } from "./bookTypes";
 import a from "./bookAm.module.css";
 
 const EL_KO: Readonly<Record<AmEl, string>> = { wood: "목", fire: "화", earth: "토", metal: "금", water: "수" };
-/** 간지 칸: 한자를 오행 색 칸에(글자 옆 작은 오행 이름 — 색만으로 뜻을 전하지 않는다). */
+const READ: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해" };
+/** 간지 칸: 한자를 오행 색 칸에, 아래 글자는 독음 + 오행(丁 정화 · 未 미토, AM2-4 6부 — 색만으로 뜻을 전하지 않는다). */
 export function ElCells({ ganji, els, big }: { ganji: string; els: readonly AmEl[]; big?: boolean }) {
-  return <span className={a.cells} data-big={big ? "" : undefined}>{[...ganji].slice(0, 2).map((ch, i) => <span key={i} className={a.cell} data-el={els[i]} title={EL_KO[els[i]]}><b>{ch}</b><small>{EL_KO[els[i]]}</small></span>)}</span>;
+  return <span className={a.cells} data-big={big ? "" : undefined}>{[...ganji].slice(0, 2).map((ch, i) => <span key={i} className={a.cell} data-el={els[i]} title={`${READ[ch] ?? ""}${EL_KO[els[i]]}`}><b>{ch}</b><small>{READ[ch] ?? ""}{EL_KO[els[i]]}</small></span>)}</span>;
 }
 /** 흐름: 점 5개 + 단어(잔잔·느림·보통·활발·거셈). */
 export function FlowDots({ value, word }: { value: number; word: string }) {
@@ -35,7 +36,7 @@ export function AmPage({ page, title, onPage, text }: { page: BookPage; title: s
     const y = page.year, max = Math.max(1, ...page.elements.map(e => e.count));
     return <section className={a.am} data-am="flow-table"><p className={a.eyebrow}>{title}</p><h1>{text(page.title)}</h1>
       {y ? <div className={a.yearHead}><ElCells ganji={y.ganji} els={y.els} big /><div><p className={a.yearName}><b>{y.name}</b>{y.verdict ? ` · ${y.verdict}` : ""}</p>
-        <p className={a.yearGods}>하늘 <b>{y.sky}</b> {y.skyLine ? `— ${y.skyLine}` : ""}</p><p className={a.yearGods}>땅 <b>{y.ground}</b> {y.groundLine ? `— ${y.groundLine}` : ""}</p><FlowDots value={y.flow} word={y.flowWord} /></div></div> : null}
+        <p className={a.yearGods}>하늘 <b>{y.sky}</b>{y.skyLine ? ` · ${y.skyLine}` : ""}</p><p className={a.yearGods}>땅 <b>{y.ground}</b>{y.groundLine ? ` · ${y.groundLine}` : ""}</p><FlowDots value={y.flow} word={y.flowWord} /></div></div> : null}
       {page.elements.some(e => e.count) ? <section className={a.elBar} aria-label="내 오행"><h2>내 오행과 {y ? `${y.name}에` : "이 해에"} 들어오는 기운</h2>
         <ul>{page.elements.map(e => <li key={e.el}><span className={a.elName} data-el={e.el}>{e.label}</span><span className={a.bar} aria-hidden="true"><i data-el={e.el} style={{ width: `${Math.round(e.count / max * 100)}%` }} /></span><span className={a.count}>{e.count}{e.incoming ? <em> · 들어옴</em> : null}</span></li>)}</ul>
         <p className={a.hint}>막대는 태어난 사주에 보이는 오행 글자 수예요. 「들어옴」은 이 해의 하늘·땅 글자가 가진 오행이에요.</p></section> : null}
@@ -48,6 +49,10 @@ export function AmPage({ page, title, onPage, text }: { page: BookPage; title: s
     <p className={a.eyebrow}>{text(page.eyebrow)}</p>
     <header className={a.cardHead}><ElCells ganji={page.ganji} els={page.els} big /><div><h1>{text(page.title)}{page.star ? <span className={a.star} aria-label="가장 오르는 때">{"\u00a0★"}</span> : null}</h1><p className={a.cardSub}>{page.sub}{page.now ? <em className={a.nowTag}>지금</em> : null}{page.past ? <em className={a.pastTag}>지난 {page.unit}</em> : null}</p><FlowDots value={page.flow} word={page.flowWord} /></div></header>
     <p className={a.oneLine}>{text(page.line)}</p>
+    {/* AM2-4 1부: 카드 = 결정론 사실(하늘·땅 쉬운 뜻 · 핵심 · 영역 신호 · 오행 채움 · 할 일). 해석은 아래 본문. */}
+    {page.skyLine !== undefined ? <div className={a.facts}><p className={a.yearGods}>하늘 <b>{page.sky}</b>{page.skyLine ? ` · ${page.skyLine}` : ""}</p><p className={a.yearGods}>땅 <b>{page.ground}</b>{page.groundLine ? ` · ${page.groundLine}` : ""}</p>
+      {page.core ? <p className={a.core}>{text(page.core)}</p> : null}
+      {(page.ups?.length || page.cautions?.length || page.fills) ? <p className={a.chips}><Signals ups={page.ups ?? []} cautions={page.cautions ?? []} />{page.fills ? <span className={a.fill}>{page.fills}</span> : null}</p> : null}</div> : null}
     {page.good || page.caution ? <div className={a.pair}>{page.good ? <section><h2>{page.good.label}</h2><p>{text(page.good.text)}</p></section> : null}{page.caution ? <section><h2>살필 점</h2><p>{text(page.caution)}</p></section> : null}</div> : null}
     {page.one ? <section className={a.one}><h2>{page.one.label}</h2><p>{text(page.one.text)}</p></section> : null}
     {page.paragraphs.length ? <div className={a.prose}>{page.paragraphs.map((p, i) => <p key={i}>{p.keySpan ? <>{text(p.text.slice(0, p.keySpan[0]))}<strong>{text(p.text.slice(p.keySpan[0], p.keySpan[1]))}</strong>{text(p.text.slice(p.keySpan[1]))}</> : text(p.text)}</p>)}</div> : null}

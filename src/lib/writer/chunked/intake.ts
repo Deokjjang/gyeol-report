@@ -342,7 +342,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const kept = sections.filter(sx => sx.lines.length);
     const finalSections = kept.length ? kept : sections.slice(0, 1).map(sx => ({ ...sx, lines: natalBase.slice(0, 2) }));
     if (finalSections.length < sections.length) droppedPlan.push(...sections.filter(sx => !sx.lines.length).map(sx => `${ch.n}장 「${sx.q}」`));
-    return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: retarget(ch.id, finalSections, ch.targetChars), useName: ch.useName, sections: finalSections, claims: [...new Set(finalSections.flatMap(s => s.claims))], avoid: [], ...(scenes.length ? { scenes } : {}) };
+    // AM2-4 7부: 대운을 정할 수 없는 세운 책(시각 미상)의 10장은 대운 자리를 묻지 않는다(근거 없는 질문 금지).
+    const question = product === "annual_fortune" && ch.id === "next" && !brief.chart.currentDayun ? `${year}년을 지나며 붙잡을 한 가지는?` : ch.question;
+    return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(question, year), target: retarget(ch.id, finalSections, ch.targetChars), useName: ch.useName, sections: finalSections, claims: [...new Set(finalSections.flatMap(s => s.claims))], avoid: [], ...(scenes.length ? { scenes } : {}) };
   })());
   // 2-3 핵심 주장과 되풀이 금지가 같은 근거를 동시에 가리키면(P2 판독 major-1 D25: 3장 주장인데 6장 근거) 그 근거를 금지 쪽 장의 절에서 뺀다(절에 다른 근거가 남을 때만).
   const claimOwner = new Map<string, number>();
@@ -376,7 +378,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const useOf = new Map(finalLines.map(l => [l.id, new Set(l.use)]));
   const pairsOut = pairs.filter(p => p.why).map(p => ({ ...p, use: [...(useOf.get(p.myeongri) ?? [])].filter(n => useOf.get(p.mbti)?.has(n)) })).filter(p => p.use.length).map((p, i) => ({ ...p, id: `P${i + 1}` }));
   const wish = product === "annual_fortune" ? readWish(wishRaw) : null;
-  return { product, person: personCard(brief, year, wish), lines: finalLines, pairs: pairsOut, chapters: out, ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(product === "major_fortune" && !brief.chart.currentDayun ? { noDayun: true } : {}) };
+  return { product, person: personCard(brief, year, wish), lines: finalLines, pairs: pairsOut, chapters: out, ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}) };
 }
 
 type Seen = { readonly tenGod: Map<string, { label: string; rels: ReadonlySet<string>; flow: number }>; readonly life: Map<string, string> };

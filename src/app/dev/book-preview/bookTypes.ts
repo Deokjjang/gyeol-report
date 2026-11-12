@@ -43,7 +43,9 @@ export type BookPage = (
   /** AM2-3 5부(덕짱님과 정한 시안): 세운 「2027 한 해 흐름표」 · 대운 「앞으로 10년표」 · 달·해 카드. AM 카드(세운 span·대운 평생 지도)가 있는 v5 책에만 쓴다(그 밖의 책은 위 timeline·months 그대로). */
   | { kind: "flowTable"; title: string; year: AmYearHead | null; elements: AmElement[]; rows: AmRow[]; dict: { name: string; line: string }[] }
   | { kind: "decadeTable"; title: string; head: string; rows: AmRow[]; dict: { name: string; line: string }[] }
-  | { kind: "periodCard"; unit: "달" | "해"; title: string; eyebrow: string; sub: string; ganji: string; els: AmEl[]; flow: number; flowWord: string; line: string; good?: { label: string; text: string }; caution?: string; one?: { label: string; text: string }; paragraphs: BookParagraph[]; relations: { name: string; plain: string }[]; sky: string; ground: string; past: boolean; now: boolean; star: boolean }
+  | { kind: "periodCard"; unit: "달" | "해"; title: string; eyebrow: string; sub: string; ganji: string; els: AmEl[]; flow: number; flowWord: string; line: string; good?: { label: string; text: string }; caution?: string; one?: { label: string; text: string }; paragraphs: BookParagraph[]; relations: { name: string; plain: string }[]; sky: string; ground: string; past: boolean; now: boolean; star: boolean;
+    /** AM2-4 1부·6부: 카드(결정론)가 맡는 사실 — 하늘·땅 쉬운 뜻 · 영역 신호 · 오행 채움 · 핵심 한 줄. */
+    skyLine?: string; groundLine?: string; ups?: string[]; cautions?: string[]; fills?: string; core?: string }
   /** aiNotice: 책 끝 AI 작성 고지(v5 최종3, v5 책만). */
   | { kind: "back"; title: string; finalLine: string; aiNotice?: string }) & { id?: string; anchors?: string[] };
 export type BookData = {

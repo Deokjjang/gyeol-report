@@ -22,7 +22,7 @@ import { DAYUN_AGE_NOTE, halfHapLine, REL_PLAIN, relationPlain } from "@/lib/bri
 import { baseRowOf } from "@/lib/compat/display";
 import { getMonthlyPillars } from "@/lib/saju/detections";
 import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
-import { decadeTableOf, flowTableOf, lifetimeOf, periodCardOf } from "./bookAm";
+import { decadeTableOf, flowTableOf, lifetimeOf, periodCardOf , yearDayunTg } from "./bookAm";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -402,13 +402,14 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
     if (!ch.keys) { chapterPage.set(ch.n, pages.length); pages.push({ kind: "narrative", id: ch.n === 1 ? "core" : `chapter-${ch.id}`, title: ch.title, paragraphs: toParagraphs(ch.sections), notes: [] });
       // AM 2부: 운을 쓰는 법 장 뒤에 나를 돕는 색·방향·숫자(+ 삼재 해당 띠만), 이어지는 큰 흐름 장 뒤에 대운으로 이어 보기.
       if (ch.id === "use" && d.annual?.lucky) pages.push({ kind: "lucky", title: "나를 돕는 색·방향·숫자", name: d.annual.lucky.name, colors: [...d.annual.lucky.colors], direction: d.annual.lucky.direction, numbers: [...d.annual.lucky.numbers], why: d.annual.lucky.why, ...(d.annual.samjae ? { samjae: d.annual.samjae } : {}) });
-      if (ch.id === "next" && d.annual) pages.push({ kind: "continue", title: "앞으로 10년의 흐름, 대운으로 이어 보기", text: `${d.annual.year}년은 지금 10년 흐름의 한 해예요. 대운 「앞으로의 나」는 평생 대운 지도와 앞으로 10년을 한 권에 담아요. 같은 입력으로 바로 이어 볼 수 있어요.`, href: "/report/new?product=major-fortune&from=annual" });
+      // AM2-4 7부: 대운을 정할 수 없는 생일(시각 미상)은 대운을 살 수 없다 — 「대운으로 이어 보기」를 띄우지 않는다.
+      if (ch.id === "next" && d.annual && (d.timeline?.cycles ?? []).length) pages.push({ kind: "continue", title: "앞으로 10년의 흐름, 대운으로 이어 보기", text: `${d.annual.year}년은 지금 10년 흐름의 한 해예요. 대운 「앞으로의 나」는 평생 대운 지도와 앞으로 10년을 한 권에 담아요. 같은 입력으로 바로 이어 볼 수 있어요.`, href: "/report/new?product=major-fortune&from=annual" });
       continue; }
     if (amAnnual || amMajor) {
       const cards = (d.timeline?.cards ?? []).filter(c => c.kind === (amAnnual ? "month" : "year"));
       const flowMax = Math.max(...cards.filter(c => !(c as { bridge?: boolean }).bridge).map(c => c.flow.score));
       const stateOf = (c: V5TimelineCard) => { const sp = (c as { span?: { start: string; end: string } }).span;
-        if (amAnnual) return { now: Boolean(sp && dayAm >= sp.start.slice(0, 10) && dayAm < sp.end.slice(0, 10)), past: Boolean(sp && dayAm >= sp.end.slice(0, 10)), star: !(c as { bridge?: boolean }).bridge && c.flow.score === flowMax };
+        if (amAnnual) { const dt = d.annual ? yearDayunTg(d, d.annual.year) : undefined; return { now: Boolean(sp && dayAm >= sp.start.slice(0, 10) && dayAm < sp.end.slice(0, 10)), past: Boolean(sp && dayAm >= sp.end.slice(0, 10)), star: !(c as { bridge?: boolean }).bridge && c.flow.score === flowMax, ...(dt ? { dayunTg: dt } : {}) }; }
         return { now: Number(c.key) === thisYearAm, past: Number(c.key) < thisYearAm, star: Boolean((c as { keyYear?: unknown }).keyYear) }; };
       if (amMajor) { decadeTable = decadeTableOf(d, cards as never, thisYearAm); pages.push({ ...decadeTable, title: ch.title === "앞으로 10년" ? "앞으로 10년표" : ch.title }); decadeTable = pages.at(-1) as typeof decadeTable;
         // 지난 3년 · 기준 해(본문 key가 없는 해)도 같은 문법의 해 카드로(돌아보기형).
