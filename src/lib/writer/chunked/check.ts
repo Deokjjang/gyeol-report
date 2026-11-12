@@ -162,7 +162,7 @@ export type BlockCtx = {
 const stemOf = (w: string): string | null => {
   if (w.length < 2) return null; const a = w.charCodeAt(0), b = w.charCodeAt(1); if (a < 0xac00 || a > 0xd7a3 || b < 0xac00 || b > 0xd7a3) return null;
   // 오탐 검토(annual): 모음 줄임(봐→보 · 와→오 · 워→우 · 돼→되 · 해→하 · 져→지)을 같은 어간으로(「손봐야·손보는」).
-  let cho = Math.floor((b - 0xac00) / 588), jung = Math.floor(((b - 0xac00) % 588) / 28);
+  const cho = Math.floor((b - 0xac00) / 588); let jung = Math.floor(((b - 0xac00) % 588) / 28);
   const J: Readonly<Record<number, number>> = { 9: 8, 14: 13, 10: 11 }; if (J[jung] !== undefined) jung = J[jung];
   if (jung === 1 && cho === 18) jung = 0; if (jung === 6 && (cho === 12 || cho === 14)) jung = 20;
   return w[0] + String.fromCharCode(0xac00 + cho * 588 + jung * 28);
@@ -308,7 +308,6 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   const flowByGanji = new Map([...(b.flows?.values() ?? [])].map(f => [f.ganji, f.score]));
   const pillar = b.dayPillar && b.dayPillar.length === 2 ? new RegExp(`${b.dayPillar[1]}${BRANCH_EL[b.dayPillar[1]] ?? ""}${TGJ}(?:가|이|는|은) [^.?!]{0,25}위에`) : null;
   const LOW = /가장 (잔잔|조용|약|낮|느리|느린|순하|순한|고요)/, HIGH = /가장 (거세|거센|세|센|강|높|크|큰|빠르|빠른|뜨겁|뜨거운)/;
-  const cardText = b.intake.lines.map(l => `${l.value} ${l.meaning}`).join(" ");
   /** 카드에 「가장 ~」이 그대로 있으면(예: 「가장 조용한 달: 계축월」) 작가 말이 아니라 카드 값이다. */
   // AM2-3: 동률 줄(「흐름이 가장 잔잔한 달(같은 세기): 4월 · 갑진월, …」)은 그 줄에 이름이 든 달·해만 「가장」이 맞다.
   // 오탐 검토(annual): 같은 뜻 무리(「가장 조용」≈「가장 잔잔」, 「가장 거센」≈「가장 크게 오르는」)도 카드 값이다. 달 이름이 든 카드 줄이면 그 달·해가 줄에 있어야 한다.

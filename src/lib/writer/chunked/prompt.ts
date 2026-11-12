@@ -6,11 +6,11 @@
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
 import type { ChapterPlan, Intake, KeyPlan, Line } from "./intake";
-import { SUBJECT_KO, WISH_MARK } from "./intake";
+import { KEY_TARGET, SUBJECT_KO, WISH_MARK } from "./intake";
 
 export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-5";
 /** 작가에게 보이는 분량 = 목표 × 이 값(장 묶음은 짧아 지시를 더 잘 지킨다고 보고 통째 1회 작가(1.25)보다 낮춘다 — P 시범 실측으로 다시 맞춘다). */
-export const CHUNK_TARGET_FACTOR = 1.15;
+export const CHUNK_TARGET_FACTOR = 1.0; // AM2-3 2-4: 목표가 P2 실측·카드 양에서 오므로 덧셈 배율은 1(예전 1.15).
 /** 카드 줄 몫(key 하나, 글자). */
 const CARD_CHARS = 130;
 
@@ -112,7 +112,7 @@ function chapterText(c: ChapterPlan, product: Intake["product"]): string {
   }
   if (c.keys) {
     const per = product === "annual_fortune" ? target(c.target, CARD_CHARS) : "";
-    out.push(`- key ${c.keys.length}개, ${product === "annual_fortune" ? `key마다 ${per}(카드 줄 포함)` : "깊게 key 600~800자 · 짧게 key 350~450자(카드 줄 포함)"}`);
+    out.push(`- key ${c.keys.length}개, ${product === "annual_fortune" ? `key마다 ${per}(카드 줄 포함)` : `깊게 key ${KEY_TARGET.deep.join("~")}자 · 짧게 key ${KEY_TARGET.short.join("~")}자(카드 줄 포함)`} — 근거를 다 쓰면 되는 만큼, 같은 말로 늘리지 않는다`);
     for (const k of c.keys) out.push(`  ### ${k.label} · 때: ${WHEN_KO[k.when]}${k.depth ? ` · 깊이: ${k.depth === "deep" ? "깊게" : "짧게"}` : ""} · 머리 문장(시스템이 넣음): ${k.head} · 근거 ${k.lines.join("·")}${k.range ? ` · 카드 줄 ${k.range}` : ""}${k.must?.length ? ` · 반드시 쓸 것: ${k.must.map(x => x.what).join(" / ")}` : ""}${k.scene ? ` · 장면 씨앗(${SEED_FRAME[k.when]}): ${k.scene}` : ""}${k.todo ? ` · 할 일 씨앗: ${k.todo}` : ""}`);
   }
   if (c.scenes?.length) out.push(`- 장면 씨앗: ${c.scenes.join(" / ")}`);
@@ -163,7 +163,7 @@ function chunkChars(x: Intake, parts: Chunk["parts"]): [number, number] {
   let lo = 0, hi = 0;
   for (const p of parts) {
     const c = x.chapters.find(y => y.n === p.n)!;
-    if (p.keys) for (const k of p.keys) { const kp = c.keys!.find(y => y.key === k)!; const [a, b] = kp.depth === "short" ? [350, 450] : kp.depth === "deep" ? [600, 800] : [c.target[0] + CARD_CHARS, c.target[1] + CARD_CHARS]; lo += a; hi += b; }
+    if (p.keys) for (const k of p.keys) { const kp = c.keys!.find(y => y.key === k)!; const [a, b] = kp.depth === "short" ? KEY_TARGET.short : kp.depth === "deep" ? KEY_TARGET.deep : [c.target[0] + CARD_CHARS, c.target[1] + CARD_CHARS]; lo += a; hi += b; }
     else { lo += c.target[0]; hi += c.target[1]; }
   }
   return [lo, hi];

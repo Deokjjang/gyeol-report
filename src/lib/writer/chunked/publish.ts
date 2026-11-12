@@ -17,7 +17,7 @@ import { buildWriterPrompt } from "../prompt";
 import type { PriorBooks } from "../prior";
 import { mergeRuns, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "../runner";
 import { applySafetyNet, safetyFacts, sentenceViolation, writeKeyFill, type DraftChapter, type FinalChapter } from "../safety";
-import { enforce, HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/p6c";
+import { HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/p6c";
 import { dayunPhase } from "../safety/lint";
 import { briefFor, briefHash, chooseCover, coverIssue, factSheetFor, insertFixedLines, kstDate, lintContext, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
 import { adjacentRepeats, adviceRepeats, blockFlags, briefCheck, crossRepeats, NO_SENTENCE_RULES, PIGGYBACK_RULES, styleScoreOf, type BlockCtx, type BriefCtx, type ChunkFlag } from "./check";

@@ -26,7 +26,11 @@ export const INTERIM_TARGET = { provider: "openai", model: "gpt-6.1-terra" } as 
 export const ORDER_COST_CAP_USD = 0.55;
 /** 작가 입력 상한(글자): 최악 비용 계산의 전제. 넘으면 경고만 남긴다(작가는 부른다). */
 export const WRITER_INPUT_CAP_CHARS = 40_000;
-export function orderCostCap(env: Readonly<Record<string, string | undefined>> = process.env): number {
+/** AM2-3(덕짱님 지시 2026-11-12): 세운·대운(장 묶음 작가 — 묶음 다시 쓰기로 고친다) 주문 상한은 설정값 $1.0(ORDER_COST_CAP_AM_USD). 4종은 그대로. */
+export const ORDER_COST_CAP_AM_USD = 1.0;
+const AM_PRODUCTS = new Set(["annual_fortune", "major_fortune"]);
+export function orderCostCap(env: Readonly<Record<string, string | undefined>> = process.env, product?: string): number {
+  if (product && AM_PRODUCTS.has(product)) { const a = Number(env.ORDER_COST_CAP_AM_USD); return Number.isFinite(a) && a > 0 && a <= 10 ? a : ORDER_COST_CAP_AM_USD; }
   const v = Number(env.ORDER_COST_CAP_USD);
   return Number.isFinite(v) && v > 0 && v <= 10 ? v : ORDER_COST_CAP_USD;
 }

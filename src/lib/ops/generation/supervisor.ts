@@ -115,7 +115,7 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const interim = interimDue({ phase: state.phase, firstFailureAt: Number.isFinite(firstFailure) ? firstFailure : null, now: now(), interimPossible: openAi }) && !String(state.last_reason ?? "").startsWith("interim:");
   // 최종판 0-1: 저장된 장은 버리지 않는다(빠진 장만 이어 쓴다). 0-6: 지난 시도 비용 합이 상한에 이르면 부르지 않고 보류.
   const sink = interim ? memorySink() : job.sink;
-  const cap = orderCostCap(), spentBefore = await spentSoFar(env, job.reportId);
+  const cap = orderCostCap(process.env, job.payload.productKey), spentBefore = await spentSoFar(env, job.reportId);
   const lane = interim ? "interim" : "official";
   // 최종판3 6: 결제·이용권 주문은 누적 비용으로 보류하지 않는다(결제 뒤 발행 실패 금지). 상한은 이번 시도의 검수·수리에만 건다(작가는 늘 부른다).
   const a = await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore) }, lane);
@@ -173,7 +173,7 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
   }
   const sink = opsChapterSink(env.store, job.reportId, job.token), laneRaw = env.raw ? opsRawCache(env.raw, job.reportId, job.token) : null;
   // 최종판 0-6: 교체 레인도 주문당 상한(재생성은 재생성 요청 뒤 시도만 센다). 0-2: 저장된 Book 원문은 저장소로.
-  const cap = orderCostCap(), spentBefore = await spentSoFar(env, job.reportId, lane === "regenerate" ? job.regenRequestedAt ?? null : null);
+  const cap = orderCostCap(process.env, evidence.input.productKey), spentBefore = await spentSoFar(env, job.reportId, lane === "regenerate" ? job.regenRequestedAt ?? null : null);
   if (spentBefore >= cap) {
     await release(lane === "regenerate" ? { nextAt: null, clearRegenerate: true } : { nextAt: null });
     await env.store.call("record", { reportId: job.reportId, run: { lane, outcome: "deferred", reason: `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${spentBefore.toFixed(4)}) — 보류` }, state: {} });

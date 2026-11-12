@@ -90,6 +90,9 @@ describe("0-2 원문 저장소·0-6 상한(runner)", () => {
 describe("0-6 주문당 상한(감독)", () => {
   it("설정값 기본 $0.55(최종판3 최악 비용), 지난 시도 비용 합", () => {
     expect(orderCostCap({})).toBe(0.55); expect(orderCostCap({ ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap({ ORDER_COST_CAP_USD: "abc" })).toBe(0.55);
+    // AM2-3: 세운·대운은 따로 $1.0(ORDER_COST_CAP_AM_USD), 4종은 그대로.
+    expect(orderCostCap({}, "annual_fortune")).toBe(1); expect(orderCostCap({ ORDER_COST_CAP_USD: "0.8" }, "major_fortune")).toBe(1);
+    expect(orderCostCap({ ORDER_COST_CAP_AM_USD: "1.4" }, "major_fortune")).toBe(1.4); expect(orderCostCap({ ORDER_COST_CAP_AM_USD: "1.4" }, "saju_mbti_full")).toBe(0.55);
     expect(spentOf([{ cost_usd: "0.2", created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }])).toBeCloseTo(0.65);
     expect(spentOf([{ cost_usd: 0.2, created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }], "2026-11-04T00:30:00Z")).toBeCloseTo(0.45);
   });

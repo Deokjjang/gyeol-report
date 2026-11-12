@@ -23,7 +23,7 @@ import { concurrency } from "../../src/lib/writer/chunked/run";
 import { devMockStream } from "../../src/lib/ops/generation/devMock";
 
 export const OUT2 = join(homedir(), "Desktop", "gyeol-review", "annual-major-02");
-const STAGES = { P: { scope: "am2-P", cap: 2.2, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
+const STAGES = { P: { scope: "am2-P", cap: 3.2, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2) · AM2-3 P3(덕짱님 지시 2026-11-12, 상한 $2.2 → $3.2)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
 /** 숨긴 세트(덕짱님 지정 4명). 개발 중에는 만들지 않는다 — E 단계에서만 쓴다. */
 export const HIDDEN: readonly { id: string; product: "annual" | "major"; note: string; payload: () => unknown }[] = [];
 
@@ -67,7 +67,7 @@ async function main() {
     // --mock: 가짜 작가(호출 0)로 도구·관문 흐름만 시험(LLM_CACHE_DIR을 임시 폴더로 두고 돌린다 — 실제 원장에 남기지 않게).
     const gate = budgetGate({ scope: S.scope, run: `am2-${stage}-${c.id}`, runBudget: budget, stage: `AM2 ${stage}`, ...(argv.includes("--mock") ? { inner: devMockStream("ok", c.payload as never, at) } : {}) });
     const built = await buildV5Snapshot({ payload: c.payload as never, reportId: `report_am2${stage.toLowerCase()}${c.id.replace(/[^a-z0-9]/g, "")}00000`, policyAt: at, sink: memorySink() as never,
-      deps: { provider: S.provider, model: S.model, fallback: null, stream: gate.stream, cache: gate.cache, costCapUsd: orderCostCap(), testRun: true } });
+      deps: { provider: S.provider, model: S.model, fallback: null, stream: gate.stream, cache: gate.cache, costCapUsd: orderCostCap(process.env, (c.payload as { productKey?: string }).productKey), testRun: true } });
     const snap = built.snapshot as unknown as { productType: string; draft: unknown; evidencePacket: unknown };
     const dir = join(OUT2, `${tag ? tag.toUpperCase() : stage}-${c.id}`); mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, "snapshot.json"), JSON.stringify(snap));

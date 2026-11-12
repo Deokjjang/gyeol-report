@@ -60,6 +60,16 @@ export type Intake = { readonly product: "annual_fortune" | "major_fortune"; rea
 /** 작가가 소망을 인용할 때 쓰는 표시(3-2). 렌더 단계가 원문 «…»으로 바꾼다. */
 export const WISH_MARK = "«바람»";
 
+// ---------- 분량(2-4) ----------
+/** AM2-3 2-4: 목표 분량 = P2 실측(장별 글자, 2026-11-11 재시범 두 권)과 카드 양(절마다 근거 줄 소화 — 줄당 약 70자, 절 하한 260자) 가운데 큰 쪽, 설계 상한을 넘지 않는다. 숫자를 채우려고 늘리지 않는다(작가 규칙). */
+const P2_CHARS: Readonly<Record<string, number>> = { big: 1259, love: 1064, money: 832, work: 890, people: 583, mind: 755, use: 1050, wish: 714, next: 689, read: 946, past: 880, now: 1330, turn: 773, map: 1050, growth: 740, plan: 1043, letter: 836 };
+export const KEY_TARGET: Readonly<Record<"month" | "deep" | "short", readonly [number, number]>> = { month: [460, 600], deep: [520, 680], short: [330, 430] };
+function retarget(id: string, sections: readonly { lines: readonly string[] }[], design: readonly [number, number]): readonly [number, number] {
+  const card = sections.reduce((a, s2) => a + Math.max(260, s2.lines.length * 70), 0), p2 = P2_CHARS[id] ?? design[0];
+  const base = Math.min(design[1], Math.max(p2, card));
+  return [Math.round(base * 0.9), Math.round(base * 1.15)];
+}
+
 // ---------- 글 정리(고객 문장 꼴) ----------
 const READING: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해", 木: "목", 火: "화", 土: "토", 金: "금", 水: "수", 正: "정", 偏: "편", 官: "관", 財: "재", 印: "인", 食: "식", 神: "신", 傷: "상", 比: "비", 肩: "견", 劫: "겁", 胎: "태", 月: "월" };
 const noHanja = (t: string) => t.replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (_a, inner: string) => { const kept = inner.replace(/[一-鿿]+\s?/g, "").replace(/^[\s·,:]+|[\s·,:]+$/g, ""); return kept ? `(${kept})` : ""; })
@@ -249,7 +259,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
         const e = entries.get(key)!, kb = brief.chapters.find(x => x.id === `${ch.id}:${key}`);
         return keyPlan(e, kb?.materials ?? [], ch.n, add, matLines, brief, year, seen, () => lines, s => seedOnce(cleanSeed(s, sc)));
       });
-      return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: ch.targetChars, useName: ch.useName, keys, claims: [], avoid: [] };
+      return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: product === "annual_fortune" ? KEY_TARGET.month : ch.targetChars, useName: ch.useName, keys, claims: [], avoid: [] };
     }
     const secs: readonly { q: string; domain: string; materials: readonly Material[] }[] = cb?.sections ?? [{ q: ch.question, domain: "alone", materials: ch.materials }];
     const sections: SectionPlan[] = secs.map(s => {
@@ -266,7 +276,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const kept = sections.filter(sx => sx.lines.length);
     const finalSections = kept.length ? kept : sections.slice(0, 1).map(sx => ({ ...sx, lines: natalBase.slice(0, 2) }));
     if (finalSections.length < sections.length) droppedPlan.push(...sections.filter(sx => !sx.lines.length).map(sx => `${ch.n}장 「${sx.q}」`));
-    return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: ch.targetChars, useName: ch.useName, sections: finalSections, claims: [...new Set(finalSections.flatMap(s => s.claims))], avoid: [], ...(scenes.length ? { scenes } : {}) };
+    return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: retarget(ch.id, finalSections, ch.targetChars), useName: ch.useName, sections: finalSections, claims: [...new Set(finalSections.flatMap(s => s.claims))], avoid: [], ...(scenes.length ? { scenes } : {}) };
   })());
   // 2-3 핵심 주장과 되풀이 금지가 같은 근거를 동시에 가리키면(P2 판독 major-1 D25: 3장 주장인데 6장 근거) 그 근거를 금지 쪽 장의 절에서 뺀다(절에 다른 근거가 남을 때만).
   const claimOwner = new Map<string, number>();
