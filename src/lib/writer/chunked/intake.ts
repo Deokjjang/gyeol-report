@@ -39,7 +39,8 @@ export type Line = { readonly id: string; readonly subject: Subject; readonly va
 /** 명리 × MBTI 짝. 이 짝만 한 문장 안에서 잇는다. use = 두 줄 모두 허용된 장. */
 export type Pair = { readonly id: string; readonly myeongri: string; readonly mbti: string; readonly why: string; readonly use?: readonly number[] };
 /** key에서 반드시 쓸 것(2-4): 이름과 본문에서 찾을 꼴(정규식 원문). */
-export type MustItem = { readonly what: string; readonly re: string };
+/** re = 이름·국 별칭·뜻 그림 말(어디서든), weak = 「자리 + 그 관계 종류 말」(그 마디에 다른 관계 이름이 없을 때만 — 오탐 검토 2차: 「태어난 날과 육합」이 겨울 방합을 지우던 것). */
+export type MustItem = { readonly what: string; readonly re: string; readonly weak?: string };
 /** 반복 장 key 하나(세운 달·대운 연도): 그 시기 카드. head는 시스템이 첫 문장으로 넣는 머리 문장(작가는 되풀이하지 않는다). */
 /** AM2-4 1부: core = 설계도가 고른 핵심(엔진 가중치, 1~2개 이름) · screen = 화면 카드가 보여 주는 사실(본문은 되풀이하지 않는다) · todo = 화면 카드의 할 일(엔진·처방 배분, 작가는 쓰지 않는다). */
 export type KeyPlan = { readonly key: string; readonly label: string; readonly head: string; readonly when: "past" | "current" | "future"; readonly lines: readonly string[]; readonly claims: readonly string[]; readonly depth?: "deep" | "short"; readonly scene?: string; readonly todo?: string; readonly range?: string; readonly must?: readonly MustItem[]; readonly core?: readonly string[]; readonly screen?: readonly string[] };
@@ -452,10 +453,11 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
     // 다른 꼴도 같은 것으로(오탐 검토 AM2-4 must_miss 18): 카드 뜻의 그림 말 첫 두 어절(「두 창고가」 「물과 불이」 「봄 글자가」) · 「태어난 X 자리(글자)와 + 그 관계 말」.
     if (c.kind === "rel") { const base = c.name.replace(/ 반합$/, ""); const loose = [...base].map(esc).join(" ?·? ?");
       const image = relMeaningOf(c.badge).split(/\s+/).slice(0, 2).map(esc).join("\\s?");
-      const kindWord = ({ CHUNG: "충|부딪", HYEONG: "형|다듬|눌러", PA: "파|어긋", HAE: "해|방해", WONJIN: "원진|까끌|미워", YUKHAP: "합|맞물|묶", SAMHAP: "합|반합|묶|모이", BANGHAP: "합|모여|모이", STEM_HAP: "합|어울|묶", GONGMANG: "공망|빠져" } as Record<string, string>)[c.badge.kind] ?? "합|충|형|파|해";
+      const kindWord = ({ CHUNG: "충|부딪", HYEONG: "형|다듬|눌러", PA: "파|어긋", HAE: "해|방해", WONJIN: "원진|까끌|미워", YUKHAP: "육합|맞물|합(이|과|도|은|을)", SAMHAP: "반합|반쯤 묶|삼합", BANGHAP: "방합|모여|모이", STEM_HAP: "어울|천간합|하늘 글자끼리|합(이|과|도|은|을)", GONGMANG: "공망|빠져" } as Record<string, string>)[c.badge.kind] ?? "합|충|형|파|해";
       const seats = (c.badge.with ?? "").split("·").map(x => x.replace(/^태어난 /, "")).filter(Boolean);
-      const seatRe = seats.length ? `태어난 (${seats.join("|")})[^.?!]{0,10}(자리|글자)?(와|과)는? [^.?!]{0,16}(${kindWord})` : "";
-      return [{ what: c.name, re: [loose, GUK_ALIAS[base], base === "지지형" ? "([자축인묘진사오미신유술해]) ?\\1 ?형|자리와 형이|형이 걸려|글자가 같아|같은 글자끼리" : "", image.length >= 4 ? image : "", seatRe].filter(Boolean).join("|") }]; }
+      const weak = seats.length ? `(태어난 (${seats.join("|")})[^.?!]{0,10}(자리|글자)?|(땅|하늘) 글자)(와|과)는? [^.?!]{0,16}(${kindWord})` : "";
+      const season = c.badge.kind === "BANGHAP" ? c.name.match(/^(봄|여름|가을|겨울)/)?.[1] : undefined;
+      return [{ what: c.name, re: [loose, GUK_ALIAS[base], base === "지지형" ? "([자축인묘진사오미신유술해]) ?\\1 ?형|자리와 형이|형이 걸려|글자가 같아|같은 글자끼리" : "", image.length >= 4 ? image : "", season ? `${season} (글자|기운)[가-힣]{0,2} ?모` : ""].filter(Boolean).join("|"), ...(weak ? { weak } : {}) }]; }
     if (c.kind === "tenGod" && c.overlap) return [{ what: "대운과 겹침", re: "대운" }];
     return [];
   });

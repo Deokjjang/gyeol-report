@@ -15,7 +15,7 @@ import type { FinalChapter } from "../safety";
 import type { Intake, Line } from "./intake";
 import { RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
 import { WORKPLACE } from "./card";
-import { FLOW_TALK, FLOW_WORD } from "@/lib/brief/labels";
+import { FLOW_TALK, FLOW_WORD, josa } from "@/lib/brief/labels";
 import type { Brief } from "@/lib/brief/schema";
 import { coreOf, coreRowLine, relName, seatShort } from "@/lib/brief/core";
 import { rxKindsOf, rxOfSentence, type RxKind } from "@/lib/brief/prescriptions";
@@ -475,7 +475,11 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
       // 소제목 꼴(2-5).
       if (!kp && s.heading && (HEADING_PAST.test(s.heading) || (HEADING_ASSERT.test(s.heading) && !HEADING_SOFT.test(s.heading)))) out.push({ ...at0, paragraph: -1, rule: "heading_form", sentence: s.heading, hint: "소제목은 물음이나 카드의 꼴(경향 「~하기 쉬운」·조건 「~라면」)로 — 결과를 못 박거나 지난 일을 굳히지 않는다" });
       // 반드시 쓸 것(2-4).
-      if (kp?.must?.length) { const body = s.paragraphs.join(" "); const miss = kp.must.filter(m => !new RegExp(m.re).test(body)); if (miss.length) out.push({ ...at0, paragraph: -3, rule: "must_miss", sentence: `[반드시 쓸 것] ${kp.label}: ${miss.map(m => m.what).join(" / ")}`, hint: `${kp.label} 본문에 빠졌다: ${miss.map(m => m.what).join(" / ")} — 카드 줄의 그 뜻을 한 번씩` }); }
+      if (kp?.must?.length) { const body = s.paragraphs.join(" ");
+        // weak 별칭(자리 + 관계 종류 말)은 다른 관계 이름이 없는 마디에서만 그 관계로 본다.
+        const others = (m: { what: string }) => [...(b.keyRels?.get(kp.key) ?? [])].filter(n2 => n2.length >= 2 && n2 !== m.what.replace(/ 반합$/, ""));
+        const weakHit = (m: { what: string; weak?: string }) => Boolean(m.weak) && s.paragraphs.flatMap(p2 => splitSentences(p2)).flatMap(clausesOf).some(cl => new RegExp(m.weak!).test(cl) && !others(m).some(n2 => cl.includes(n2)));
+        const miss = kp.must.filter(m => !new RegExp(m.re).test(body) && !weakHit(m)); if (miss.length) out.push({ ...at0, paragraph: -3, rule: "must_miss", sentence: `[반드시 쓸 것] ${kp.label}: ${miss.map(m => m.what).join(" / ")}`, hint: `${kp.label} 본문에 빠졌다: ${miss.map(m => m.what).join(" / ")} — 카드 줄의 그 뜻을 한 번씩` }); }
       // 영역 나열(2-6).
       if (kp) { const n = new Set([...s.paragraphs.join(" ").matchAll(DOMAIN_LEAD)].map(m => m[1])).size; if (n >= 3) { const pi = s.paragraphs.findIndex(p => (p.match(DOMAIN_LEAD) ?? []).length >= 2) ; const p = s.paragraphs[Math.max(0, pi)] ?? ""; out.push({ ...at0, paragraph: Math.max(0, pi), rule: "domain_list", sentence: splitSentences(p).find(x2 => DOMAIN_LEAD.test(x2)) ?? p.slice(0, 80), detail: `영역 ${n}개 나열`, hint: "「일에서는… 돈에서는… 관계에서는…」 나열 금지 — 핵심 하나 + 장면 하나 + 행동 하나" }); DOMAIN_LEAD.lastIndex = 0; } }
       const rels = kp ? relMeaning(kp.key) : new Map<string, string>();
@@ -839,7 +843,9 @@ export function am24Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
             const advice = /(세요|보세요|두세요|마세요|봐요|야 해요|야 합니다|게 좋아요|편이 (좋|낫)[가-힣]*|면 좋(아요|습니다)|필요해요|필요합니다|좋아요|좋습니다)[.!]?$/.test(right.trim());
             const ownOf = (tg: string) => [notes[tg === sky ? e.tenGod.stem : e.tenGod.branch]?.meaning ?? "", ...(tg === sky ? (e.material?.domains ?? []) : [])].filter(Boolean);
             const hitTg = (t2: string, tg: string) => ownOf(tg).some(t3 => overlap4(t2, t3) >= 3);
-            if (!advice && norm(left).length >= 8 && ((hitTg(left, sky) && hitTg(right, ground) && !hitTg(right, sky)) || (hitTg(left, ground) && hitTg(right, sky) && !hitTg(right, ground))))
+            // 원인 마디가 결과 줄의 십성을 이름으로 말하면 한 십성의 말이다(오탐 검토 2차: 「…정관이 앉아서 규칙을 지킨 만큼 평판이 쌓여요」).
+            const leftNames = new Set([...left.matchAll(new RegExp(TG, "g"))].map(m2 => m2[0]));
+            if (!advice && norm(left).length >= 8 && ((hitTg(left, sky) && hitTg(right, ground) && !hitTg(right, sky) && !leftNames.has(ground)) || (hitTg(left, ground) && hitTg(right, sky) && !hitTg(right, ground) && !leftNames.has(sky))))
               flag("tg_join", `하늘 ${sky}와 땅 ${ground}의 뜻은 따로 — 「만큼·니·라서」로 한쪽이 다른 쪽의 원인인 것처럼 잇지 않는다`, `${sky} ${cm[0].trim()} ${ground}`); } }
         // 화면 사실 되풀이(1부): key 본문에 흐름 말 · 오행 채움 · 핵심 밖 관계 이름 · 카드 할 일 · 행동.
         if (kp) {
@@ -875,7 +881,7 @@ export function rxRepeats(chapters: readonly FinalChapter[], x: Intake): ChunkFl
       const sen = raw.replace(/[⟪⟫]/g, ""), kinds = rxOfSentence(sen); if (!kinds.length) continue;
       // 그 장이 맡은 종류는 그 장 안에서 풀어 써도 된다(오탐 검토: 쉬기 장의 「쉬는 법」 둘째 문장).
       const taken = kinds.find(kd => used.has(kd) && !(kd === own && used.get(kd) === `${c.n}장`) && !(kd === own && !ownUsed));
-      if (taken) { out.push({ chapter: c.n, section: si, paragraph: pi, rule: "rx_repeat", sentence: sen, detail: `처방 「${taken}」은 ${used.get(taken)}이 맡음`, hint: `같은 처방 종류는 책에서 한 곳 — 이 장의 「쓸 처방 종류」(${own ?? "사전 밖 행동"})로` }); continue; }
+      if (taken) { out.push({ chapter: c.n, section: si, paragraph: pi, rule: "rx_repeat", sentence: sen, detail: `처방 「${taken}」은 ${josa(used.get(taken) ?? "", "이가")} 맡음`, hint: `같은 처방 종류는 책에서 한 곳 — 이 장의 「쓸 처방 종류」(${own ?? "사전 밖 행동"})로` }); continue; }
       for (const kd of kinds) { used.set(kd, `${c.n}장`); if (kd === own) ownUsed = true; }
     } }));
   }

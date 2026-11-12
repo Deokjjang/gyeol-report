@@ -32,10 +32,12 @@ export const rxKindOf = (text: string): RxKind | null => RX.find(([, re]) => re.
 export const rxKindsOf = (text: string): RxKind[] => RX.filter(([, re]) => re.test(text)).map(([kd]) => kd);
 /** 본문에서 처방으로 세는 문장 꼴(권유·명령·「…는 장면」). 설명 문장(「쉬는 시간이 등불을 오래 켜 둡니다」)은 세지 않는다. */
 // 오탐 검토(AM2-4): 「…장면을 떠올려 보세요」(장면 권유)는 처방이 아니다 — 「는 장면」을 빼고, 떠올려·그려 보세요는 rxOfSentence에서 뺀다.
-export const ADVICE_FORM = /(세요|봐요|두세요|해 두면|하면 좋|편이 좋|게 좋아요|면 충분|기 좋은 (때|날|달|해)|해 보기|보세요)[^.?!]{0,8}[.!?]?$/;
+// 오탐 검토 2차: 「…하나면 충분해요」(예시 나열) · 「…기 좋은 때예요」(서술)는 처방이 아니다 — 권유·명령 끝만.
+export const ADVICE_FORM = /(세요|봐요|두세요|해 두면 좋|하면 좋|편이 좋|게 좋아요|해 보기|보세요)[^.?!]{0,8}[.!?]?$/;
 /** 비유 마디(「적금 자동이체처럼,」)의 낱말은 처방으로 세지 않는다. */
 // 처방은 끝 마디(마지막 이음말 뒤)에서만 센다 — 앞 마디는 까닭·때(「몸을 움직이는 일정이 필요하고, … 모임에 참여해 보세요」 「혼자 있는 저녁에」).
-const tailClause = (sen: string) => { const m = [...sen.matchAll(/(?<=[가-힣])(니까|으니|니|라서|이라|하고|이고|지만|는데|면서|어서|아서|해서)(, ?| )/g)].at(-1); return m ? sen.slice(m.index! + m[0].length) : sen; };
+// 이음 끝(「-고 」 「-며 」 「-서 」 「-니 」 · 보조 용언이 아닌 말이 뒤따르는 「-어 」)으로 마디를 나눈다(「목록을 적어 보고 감사 인사를 전할 두 사람을 고르세요」의 처방은 끝 마디).
+const tailClause = (sen: string) => { const m = [...sen.matchAll(/(?<=[가-힣])(니까|으니|니|라서|이라|고|지만|는데|면서|며|어서|아서|해서)(, ?| )|(?<=[가-힣][어아여]) (?!(보|두|주|놓|넣|봐|둬|내|버리|가|오))/g)].at(-1); return m ? sen.slice(m.index! + m[0].length) : sen; };
 export const rxOfSentence = (sen: string): RxKind[] => {
   const t = sen.trim(); if (!ADVICE_FORM.test(t) || /(떠올려|그려) 보세요[.!]?$/.test(t)) return [];
   const tail = tailClause(t.replace(/[^,.?!]{0,24}처럼[, ]\s*/g, ""));
