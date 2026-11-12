@@ -8,7 +8,7 @@ import { RAW_FULL, mockTextFor } from "../../helpers/v5Scenarios";
 import { ANTHROPIC_CREDIT, ANTHROPIC_OVERLOADED, OPENAI_QUOTA, fakeClock, memoryOpsStore, mockAnthropic, mockOpenAiWithBody, routedFetch, type AnthropicBehavior } from "../../helpers/opsMocks";
 import type { MockBehavior } from "../../helpers/llmMock";
 
-const MIN = 60_000, HOUR = 60 * MIN;
+const MIN = 60_000;
 const policyAt = "2026-10-27T03:00:00.000Z";
 const input = (() => { const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload"); return n.value; })();
 const { text } = mockTextFor(input, policyAt);

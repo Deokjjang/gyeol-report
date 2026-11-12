@@ -48,17 +48,19 @@ for (const scheme of ["light", "dark"]) {
         const region = page.locator("[role=region][data-page]").first();
         await region.screenshot({ path: join(outDir, `${name}-full.png`) }).catch(() => {});
         report[name] = await page.evaluate(() => {
-          const lum = c => { const m = c.match(/[\d.]+/g); if (!m) return null; const [r, g, b, a = 1] = m.map(Number); if (a < 0.2) return null; const f = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
-          const bgOf = el => { for (let e = el; e; e = e.parentElement) { const L = lum(getComputedStyle(e).backgroundColor); if (L !== null) return L; } return 1; };
+          // 불투명도(opacity)는 글자색을 바탕과 섞어 실제로 보이는 색으로 잰다(흐리게 한 줄도 4.5:1 대상).
+          const rgb = c => { const m = c.match(/[\d.]+/g); if (!m) return null; const [r, g, b, a = 1] = m.map(Number); return a < 0.2 ? null : [r, g, b]; };
+          const L = ([r, g, b]) => { const f = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+          const bgRgb = el => { for (let e = el; e; e = e.parentElement) { const c = rgb(getComputedStyle(e).backgroundColor); if (c) return c; } return [255, 255, 255]; };
           const out = []; let worst = 99;
           for (const el of document.querySelectorAll("[data-am] *")) {
             if (![...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) continue;
             const st = getComputedStyle(el); if (st.visibility === "hidden" || st.display === "none") continue;
-            const fg = lum(st.color); if (fg === null) continue;
+            const fc = rgb(st.color); if (!fc) continue;
             let op = 1; for (let e = el; e; e = e.parentElement) op *= Number(getComputedStyle(e).opacity);
-            const bg = bgOf(el), ratio = (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
-            const eff = op < 1 ? null : ratio; // 흐리게 한 지난 달·해는 따로(불투명도 반영 전 대비)
-            if (eff !== null) { worst = Math.min(worst, eff); if (eff < 4.5) out.push({ text: el.textContent.trim().slice(0, 30), ratio: Number(eff.toFixed(2)) }); }
+            const bc = bgRgb(el), seen = fc.map((v, i) => v * op + bc[i] * (1 - op)), fg = L(seen), bg = L(bc);
+            const eff = (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
+            worst = Math.min(worst, eff); if (eff < 4.5) out.push({ text: el.textContent.trim().slice(0, 30), ratio: Number(eff.toFixed(2)) });
           }
           const over = document.documentElement.scrollWidth > window.innerWidth + 1;
           return { worst: Number(worst.toFixed(2)), below: out.slice(0, 10), horizontalOverflow: over };

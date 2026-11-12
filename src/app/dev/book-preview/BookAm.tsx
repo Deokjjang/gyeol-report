@@ -22,7 +22,7 @@ function Rows({ rows, onPage, text }: { rows: readonly AmRow[]; onPage: (p: numb
   return <ol className={a.rows}>{rows.map(r => <li key={r.key} data-now={r.now ? "" : undefined} data-past={r.past ? "" : undefined}>
     {r.divider ? <p className={a.divider} role="separator">{text(r.divider)}</p> : null}
     <button type="button" onClick={() => onPage(r.page)} className={a.row} aria-label={`${r.name} 카드 열기`}>
-      <span className={a.when}><b>{r.name}{r.star ? <span className={a.star} aria-label="가장 오르는 때"> ★</span> : null}</b><small>{r.sub}{r.now ? <em className={a.nowTag}>지금</em> : null}</small></span>
+      <span className={a.when}><b>{r.name}{r.star ? <span className={a.star} aria-label="가장 오르는 때">{"\u00a0★"}</span> : null}</b><small>{r.sub}{r.now ? <em className={a.nowTag}>지금</em> : null}</small></span>
       <ElCells ganji={r.ganji} els={r.els} />
       <span className={a.main}><span className={a.line}>{text(r.line)}</span><span className={a.gods}>하늘 {r.sky} · 땅 {r.ground}<Signals ups={r.ups} cautions={r.cautions} /></span></span>
       <FlowDots value={r.flow} word={r.flowWord} />
@@ -46,7 +46,7 @@ export function AmPage({ page, title, onPage, text }: { page: BookPage; title: s
     <Rows rows={page.rows} onPage={onPage} text={text} /><Dict dict={page.dict} /></section>;
   if (page.kind === "periodCard") return <article className={a.am} data-am="period-card" data-past={page.past ? "" : undefined}>
     <p className={a.eyebrow}>{text(page.eyebrow)}</p>
-    <header className={a.cardHead}><ElCells ganji={page.ganji} els={page.els} big /><div><h1>{text(page.title)}{page.star ? <span className={a.star} aria-label="가장 오르는 때"> ★</span> : null}</h1><p className={a.cardSub}>{page.sub}{page.now ? <em className={a.nowTag}>지금</em> : null}{page.past ? <em className={a.pastTag}>지난 {page.unit}</em> : null}</p><FlowDots value={page.flow} word={page.flowWord} /></div></header>
+    <header className={a.cardHead}><ElCells ganji={page.ganji} els={page.els} big /><div><h1>{text(page.title)}{page.star ? <span className={a.star} aria-label="가장 오르는 때">{"\u00a0★"}</span> : null}</h1><p className={a.cardSub}>{page.sub}{page.now ? <em className={a.nowTag}>지금</em> : null}{page.past ? <em className={a.pastTag}>지난 {page.unit}</em> : null}</p><FlowDots value={page.flow} word={page.flowWord} /></div></header>
     <p className={a.oneLine}>{text(page.line)}</p>
     {page.good || page.caution ? <div className={a.pair}>{page.good ? <section><h2>{page.good.label}</h2><p>{text(page.good.text)}</p></section> : null}{page.caution ? <section><h2>살필 점</h2><p>{text(page.caution)}</p></section> : null}</div> : null}
     {page.one ? <section className={a.one}><h2>{page.one.label}</h2><p>{text(page.one.text)}</p></section> : null}
