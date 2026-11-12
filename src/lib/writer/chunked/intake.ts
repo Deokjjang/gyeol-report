@@ -390,6 +390,8 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const keyRx = new Map<RxKind, string>();
   for (const e of brief.timeline?.entries ?? []) if (e.todo && e.period !== "past") for (const kd of rxKindsOf(e.todo)) if (!keyRx.has(kd)) keyRx.set(kd, keyLabelOf(e));
   const rxPlan = allocateChapters(resolved.map(p => ({ n: p.n, id: p.id, keyed: Boolean(p.keys) })), keyRx);
+  // AM2-5 1부: 같은 각도는 책에서 2절까지(문장 재료로는 보내지 않는다 — 각도는 설계 안 값).
+  { const seenA = new Map<string, number>(); for (const p of resolved) for (const sp of p.sections ?? []) if (sp.angle) { const n = (seenA.get(sp.angle) ?? 0) + 1; seenA.set(sp.angle, n); if (n > 2) delete (sp as { angle?: string }).angle; } }
   const out = resolved.map(p => { const mine = linesOf(p), recap = new Set((p.sections ?? []).flatMap(s => s.recapIds ?? []));
     const claimsOf = (o: ChapterPlan) => (o.sections ?? []).flatMap(s => s.claims.map((cl, i) => ({ cl, id: s.claimIds?.[i] }))).filter(x => !x.id || !recap.has(x.id)).map(x => x.cl);
     // AM2-4 2부 근거 문장의 집: 줄마다 집 장 하나(핵심 주장 장 → 처음 쓰는 장). 다른 장은 다른 각도 한 줄로만(집 장 문장 복사 0 — P3 판독 major-1 D26).

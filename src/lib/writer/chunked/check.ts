@@ -923,7 +923,8 @@ void seatShort;
 const RANGE_WORD = /(?:월|월 · [가-힣]{2}월)\s*(?:에서|부터)\s[^.?!]{0,40}(?:사이|까지|이어지)|(?<![가-힣])(봄|여름|가을|겨울|상반기|하반기) (달들|내내 이어지는 달)|(가을|여름|봄|겨울) 달(들)?과/;
 const RULE_ECHO = /말할 수 있고|라고만 말할|다고 보지는 않|(으)?로 보지는 않아요|인과로|라는 것만 (말|짚)|만 말할 수 있/;
 const PAST_Q = /(적이|날이|때가|순간이|일이) (없나요|있었나요|있지 않나요|없었나요|있지 않았나요|없지 않았나요)[?？]/;
-const HABIT2 = /당신답(죠|지요|네요|습니다)|당신다워(요|서)|당신다운 (모습|장면)이(죠|에요)/;
+// 오탐 검토: 타고난 성향을 말하는 「…쪽이 당신답습니다」는 습관 단정이 아니다 — 구체 행동(「…하는 모습도 당신답죠」)만.
+const HABIT2 = /(?<!쪽이 )당신답(죠|지요|네요|습니다)|당신다워(요|서)|당신다운 (모습|장면)이(죠|에요)/;
 /** 근거 밖 관계 이름(P4 판독 세운 차단 #1 「태어난 날 자리와 축오해가 아닌」 — 2장 근거에 축오해가 없다) · 달 목록 범위 말(#2 「2월에서 11월 사이에」 · 경계 #2 「가을 달들」) ·
  *  작가 규칙 문구(대운 B7 「같은 시기라는 것만 말할 수 있고」) · 읽는 날에 기대는 마감(대운 B11 「2026년 안에」) · 지난 경험 물음(세운 경계 #4 「…적이 없나요?」)·습관 단정(#9 「당신답죠」) · 짧은 key(안전망). */
 export function am25Flags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
@@ -931,6 +932,9 @@ export function am25Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
   const x = b.intake, plans = new Map(x.chapters.map(c => [c.n, c])), lineById = new Map(x.lines.map(l => [l.id, l]));
   const keyPlans = new Map(x.chapters.flatMap(c => (c.keys ?? []).map(k => [k.key, k] as const)));
   const yearE = b.brief?.timeline?.entries.find(e => e.kind === "year");
+  const yearNames = new Set((yearE?.badges ?? []).map(bd => bd.label.replace(/\(.*\)$/, "").trim()));
+  // 카드 달 목록(줄마다 달 번호 — 다음 해 1월은 13).
+  const monthNumLists = x.lines.map(l => new Set([...`${l.value} ${l.meaning}`.matchAll(/(?:(2028)년 )?(1[0-2]|[1-9])월 · /g)].map(m => Number(m[2]) + (m[1] ? 12 : 0)))).filter(set2 => set2.size >= 2);
   const names = new Set([...[...(b.keyRels?.values() ?? [])].flatMap(s2 => [...s2]), ...(b.brief?.timeline?.entries ?? []).flatMap(e => e.badges.map(bd => bd.label.replace(/\(.*\)$/, "").trim()))].filter(n => n.length >= 3 && n !== "공망"));
   const baseYear = Number((b.brief?.baseDate ?? "").slice(0, 4)) || undefined;
   void yearE;
@@ -943,8 +947,20 @@ export function am25Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
       s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(raw => {
         const sen = raw.replace(/[⟪⟫]/g, ""), at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
         const flag = (rule: string, hint: string, detail?: string) => out.push({ ...at, rule, hint, ...(detail ? { detail } : {}) });
-        if (!kp) { const nm = [...names].find(n => sen.includes(n) && !chText.includes(n)); if (nm) flag("relation_scope", `「${nm}」은 이 장 근거에 없는 관계다 — 이 장 카드 줄의 관계만(부정 「…가 아닌」으로도 쓰지 않는다)`, nm); }
-        if (MONTH_NAME_IN.test(sen) || /(봄|여름|가을|겨울) 달/.test(sen)) { const m = RANGE_WORD.exec(sen); if (m && /달|때/.test(sen)) flag("month_range", "달 목록은 카드의 달 이름을 그대로 나열한다 — 「A에서 B 사이」 「A부터 이어지는」 「가을 달들」처럼 범위·묶음 말로 바꾸지 않는다", m[0]); }
+        // 오탐 검토(AM2-5 18권): 근거 줄이 관계를 이름 없이 풀어 적은 장(「미가 태어난 달 땅 글자 축과 충」)도 그 관계를 가진 것으로 본다 — 이름의 글자와 관계 말이 모두 근거에 있으면.
+        const inBasis = (n: string) => { if (chText.includes(n)) return true; const kind = n.slice(-1), cs = [...n.slice(0, -1)].filter(ch2 => /[갑을병정무기경신임계자축인묘진사오미신유술해]/.test(ch2)); if (cs.length < 2) return false;
+          const word = ({ 합: "합|묶|맞물", 충: "충|부딪", 형: "형|다듬|눌러", 파: "파|어긋", 해: "방해", 국: "국|반합|삼합|모이|모여" } as Record<string, string>)[kind] ?? "합";
+          // 근거가 이름 대신 종류 말(「천간합」 「육합」)로 적힌 합(오탐 검토: 대운 3장 「이 대운 기둥과 태어난 해·날 자리: 천간합」 — 갑기합).
+          if (kind === "합" && (cs.every(ch2 => /[갑을병정무기경신임계]/.test(ch2)) ? /천간합|하늘 글자끼리/ : /육합/).test(chText)) return true;
+          return new RegExp(`${cs[0]}[^.|·]{0,14}${cs[1]}[^.|·]{0,16}(${word})|${cs[1]}[^.|·]{0,14}${cs[0]}[^.|·]{0,16}(${word})`).test(chText); };
+        // 그 해(세운 책의 해) 관계와, 문장에 이름이 나온 달·해의 관계는 사실 그대로라 근거 밖이 아니다(P4 차단 #1은 그 해와 관계없는 축오해).
+        const ctxNames = new Set([...(b.intake.product === "annual_fortune" ? yearNames : []), ...[...keyPlans.values()].filter(k2 => sen.includes(k2.label) || (/년 [가-힣]{2}년$/.test(k2.label) && sen.includes(k2.label.replace(/^\d{4}년 /, "")))).flatMap(k2 => [...(b.keyRels?.get(k2.key) ?? [])])]);
+        if (!kp) { const nm = [...names].find(n => sen.includes(n) && !inBasis(n) && !ctxNames.has(n)); if (nm) flag("relation_scope", `「${nm}」은 이 장 근거에 없는 관계다 — 이 장 카드 줄의 관계만(부정 「…가 아닌」으로도 쓰지 않는다)`, nm); }
+        // 오탐 검토(AM2-5 18권 「7월 정미월부터 10월 경술월까지」): 구간이 카드 목록의 이어진 달과 꼭 같으면 바른 줄임이다 — 끝이 없거나(「…부터 이어지는」) 목록에 없는 달이 끼면 걸린다.
+        const exactRun = (t: string) => { const r = /(?:(2028)년 )?(1[0-2]|[1-9])월[^.?!]{0,12}?(?:에서|부터)\s(?:(2028)년 )?(1[0-2]|[1-9])월[^.?!]{0,10}?(?:까지)/.exec(t); if (!r) return false;
+          const a = Number(r[2]) + (r[1] ? 12 : 0), z = Number(r[4]) + (r[3] ? 12 : 0); if (z <= a) return false; const want = Array.from({ length: z - a + 1 }, (_, i) => a + i);
+          return monthNumLists.some(set => want.every(n2 => set.has(n2))); };
+        if (MONTH_NAME_IN.test(sen) || /(봄|여름|가을|겨울) 달/.test(sen)) { const m = RANGE_WORD.exec(sen); if (m && /달|때/.test(sen) && !exactRun(sen)) flag("month_range", "달 목록은 카드의 달 이름을 그대로 나열한다 — 「A에서 B 사이」 「A부터 이어지는」 「가을 달들」처럼 범위·묶음 말로 바꾸지 않는다", m[0]); }
         if (RULE_ECHO.test(sen)) flag("rule_echo", "쓰는 쪽의 규칙 말(「…만 말할 수 있고」 「…다고 보지는 않아요」)을 본문에 쓰지 않는다 — 같은 시기라는 것만 내용으로", sen.match(RULE_ECHO)![0]);
         { const dm = /(20\d\d)년 (안에|안으로|내에|말까지)|올해 안에|연말까지|이달 안에/.exec(sen); if (dm && (!dm[1] || (baseYear && Number(dm[1]) <= baseYear))) flag("date_deadline", "읽는 날에 기대는 마감(「2026년 안에」)을 쓰지 않는다 — 기한 없이 「…해 두면」으로", dm[0]); }
         if (!past && kp?.when !== "past" && PAST_Q.test(sen)) flag("past_question", "겪었는지 모르는 일을 「…적이 없나요?」로 묻지 않는다 — 「…할 때라면」 같은 조건으로", sen.match(PAST_Q)![0]);
@@ -958,11 +974,13 @@ export function am25Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
   return out;
 }
 /** AM2-5 2부 경미(점수로만): 처방 뒤 결과 꼬리(대운 m25) · 칸 이름으로 여는 key 문장(대운 m15 마) · 각도 말 되풀이(세운 경미 #2). */
+const ANGLE_KO_ALL: Readonly<Record<string, string>> = { love: "연애와 인연", marriage: "결혼과 가족", work: "일과 진로", money: "돈 관리", study: "공부", relationships: "사람 사이", alone: "혼자 있는 시간", family: "가족" };
 const PROMISE = /^그 [가-힣 ]{1,14}(이|가) [^.?!]{0,40}(됩니다|될 거예요|만들어 줍니다|되어 줄 거예요|지켜 줄 거예요|열어 줄 거예요)[.!]?$/;
 const OPENER = /^(일|돈|관계|컨디션|연애|사람|마음)(에서는|쪽에서는|은|는) /;
 export function valueFlags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
   const out: ChunkFlag[] = []; let promise = 0; const openerKeys = new Map<string, number>(), angleSeen = new Map<string, number>();
-  const angles = [...new Set(b.intake.chapters.flatMap(c => (c.sections ?? []).flatMap(sp => (sp.angle ? [sp.angle] : []))))];
+  // 오탐 검토: 한 낱말 각도(「공부」 「가족」)와 우리말로 흔한 「사람 사이」 「돈 관리」는 세지 않는다 — 각도 이름이 문장 재료가 된 꼴(「혼자 있는 시간에」 「일과 진로의 눈으로」)만.
+  const angles = [...new Set(Object.values(ANGLE_KO_ALL))].filter(ag => / /.test(ag) && !/^(사람 사이|돈 관리)$/.test(ag));
   for (const c of chapters) { if (c.source === "deterministic") continue;
     c.sections.forEach((s, si) => { const isKey = Boolean(c.keys?.includes(s.heading)); let opened = false;
       s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(raw => { const sen = raw.replace(/[⟪⟫]/g, ""), at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };

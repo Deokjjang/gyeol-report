@@ -166,6 +166,8 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `${HALF_HAP_PLAIN}: ${halfHapLine(b.line)}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
   }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }
+  // AM2-5 1부(P4 판독 세운 덧붙임): 달 카드 배지 뜻 끝 「…해」는 「…달」(「까끌해지는 해」 「공망에 든 해」). 달 항목은 세운에만 있다(4종 무관).
+  if (kind === "month") for (const bd of badges) bd.line = bd.line.replace(/(?<=[가-힣])(?<!태어난) 해(?=$|[.,]|,)/g, " 달");
   const eff = inflowEffect(pillar, st);
   const g = k.ganji.get(pillar.stem + pillar.branch)!;
   const period = k.tenGodPeriod.get(inc.stemTenGod)!;
