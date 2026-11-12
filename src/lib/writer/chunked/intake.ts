@@ -344,9 +344,11 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const relRank = (b: TimelineEntry["badges"][number]) => (/태어난 날/.test(b.with ?? "") ? 0 : /태어난 달/.test(b.with ?? "") ? 1 : 2) + (b.kind === "GONGMANG" ? 5 : 0);
   const mustRels = [...e.badges].filter(b => b.kind !== "GONGMANG").sort((a, b) => relRank(a) - relRank(b)).slice(0, depth === "short" ? 1 : 2).map(b => b.label.replace(/\(.*\)$/, "").trim());
   const must: MustItem[] = [
-    { what: `흐름 ${FLOW_WORD[e.flow.score]}`, re: FLOW_TALK[e.flow.score].source },
+    // 오탐 검토(annual): 흐름 말은 「흐름」 곁에서만(「결정과 실행은 느려져요」는 흐름 말이 아니다) — 「느린 달」처럼 달·해를 꾸미는 꼴도 친다.
+    { what: `흐름 ${FLOW_WORD[e.flow.score]}`, re: `흐름[^.?!]{0,14}?(${FLOW_TALK[e.flow.score].source})|(${FLOW_TALK[e.flow.score].source})[가-힣]{0,2} (달|해)` },
     ...(fills.length ? [{ what: `${fills.map(x => ELEMENT_SAY[x] ?? x).join("·")} 채움`, re: `(${fills.map(x => ELEMENT_RE[x] ?? x).join("|")})[^.?!]{0,30}(채|보태|들어)|(채|보태)[^.?!]{0,20}(${fills.map(x => ELEMENT_RE[x] ?? x).join("|")})` }] : []),
-    ...mustRels.map(r => ({ what: r, re: GUK_ALIAS[r] ? `${esc(r)}|${GUK_ALIAS[r]}` : esc(r) })),
+    // 관계 이름은 글자 사이 띄어쓰기·가운뎃점을 허용(「축미 충」), 국은 두 글자 반합 꼴, 지지형은 「진진 형」「자리와 형이」도 같은 것으로.
+    ...mustRels.map(r => { const loose = [...r].map(esc).join(" ?·? ?"); return { what: r, re: [loose, GUK_ALIAS[r], r === "지지형" ? "([자축인묘진사오미신유술해]) ?\\1 ?형|자리와 형이|형이 걸려" : ""].filter(Boolean).join("|") }; }),
   ];
   return { key: e.key, label, head: say(e.head ?? "", year), when, lines: uniq, claims: claim ? [`${label}: ${claim}`] : [], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}), ...(todoRaw && when !== "past" ? { todo: todoRaw } : {}), ...(range ? { range } : {}), must };
 }
