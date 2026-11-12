@@ -18,7 +18,7 @@ const LAYER: Record<Defect["layer"], string> = { card: "카드", plan: "설계�
 /** 기호 설명에서 찾을 말: 영문 식별자(3자 이상) → 「인용」 조각 → 한글 첫 낱말. 처음 맞는 줄. */
 function locate(file: string, sym: string): string {
   const L = linesOf(file); if (!L.length) return file;
-  const ids = sym.match(/[A-Za-z_][A-Za-z0-9_]{2,}/g) ?? [], quotes = [...sym.matchAll(/「([^」]+)」/g)].map(m => m[1].replace(/…/g, "").slice(0, 12)).filter(q => q.length >= 2);
+  const ids: string[] = [...(sym.match(/[A-Za-z_][A-Za-z0-9_]{2,}/g) ?? [])], quotes = [...sym.matchAll(/「([^」]+)」/g)].map(m => m[1].replace(/…/g, "").slice(0, 12)).filter(q => q.length >= 2);
   const words = sym.replace(/[「」()·→]/g, " ").split(/\s+/).filter(w => /^[가-힣]{2,}$/.test(w));
   for (const needle of [...ids, ...quotes, ...words]) {
     const at = L.findIndex(l => l.includes(needle) && (ids.includes(needle) ? new RegExp(`(?:const|function|let|export|type|[{,]\\s*)\\s*${needle}\\b|\\b${needle}\\s*[=:(]`).test(l) : true));

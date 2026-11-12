@@ -3,7 +3,7 @@
  *   PLAYWRIGHT=<playwright index.mjs> [ENGINE=webkit] node tools/annual-major/am2-screens.mjs <out-dir> <case> [case ...]
  * ENGINE=webkit: WebKit(사파리 엔진) + iPhone 13 기기 값(390×664 · 3배 · 터치)으로 찍는다 — 파일 이름 끝에 -webkit. 실기기 확인을 대신하지는 않는다.
  * 실제 독자 화면(/reports/<id>, 390×844, 2배)을 넘기며 새 쪽(흐름표 · 달 카드 · 평생 대운 지도 · 10년표 · 해 카드)을 밝은 화면·다크 화면으로 한 장씩 찍고,
- * 글자와 바탕의 대비(WCAG, 4.5:1 이상)를 쪽 안 모든 글자 요소에서 잰다(가로 넘침도). 결과: <out-dir>/<case>-<쪽>-<light|dark>.png + contrast.json.
+ * 글자와 바탕의 대비(WCAG, 4.5:1 이상)를 쪽 안 모든 글자 요소에서 잰다(가로 넘침도). 결과: <out-dir>/<case>-<쪽>-<light|dark>.png + contrast-<cases>.json.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
@@ -77,5 +77,6 @@ for (const scheme of ["light", "dark"]) {
   await ctx.close();
 }
 await browser.close();
-writeFileSync(join(outDir, ENGINE === "webkit" ? "contrast-webkit.json" : "contrast.json"), JSON.stringify(report, null, 1));
+// 여러 프로세스가 같은 폴더에 찍어도 겹치지 않게 사례·엔진별 파일.
+writeFileSync(join(outDir, `contrast-${cases.join("+")}${ENGINE === "webkit" ? "-webkit" : ""}.json`), JSON.stringify(report, null, 1));
 console.log(JSON.stringify(Object.fromEntries(Object.entries(report).map(([k, v]) => [k, `${v.worst}${v.below.length ? ` 낮음 ${v.below.length}` : ""}${v.horizontalOverflow ? " 가로넘침" : ""}`])), null, 1));
