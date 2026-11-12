@@ -68,15 +68,37 @@ export function coreRowLine(items: readonly CoreItem[]): string {
   if (c.kind === "transition") return `새 대운 · ${TEN_GOD_ROW[c.tenGod] ?? c.tenGod}`;
   return c.overlap ? `${c.name} · 대운과 겹침` : `${c.name} · ${TEN_GOD_ROW[c.name] ?? ""}`.replace(/ · $/, "");
 }
-/** 카드 「핵심」 한 줄(그 달·해 핵심, 결정론 — 카드 칸은 넓어 자리까지). */
-export function coreLine(items: readonly CoreItem[]): string {
+/**
+ * AM2-6 6부: 화면 핵심 줄에 붙이는 자리 뜻(지식 DB deep/seat-meaning short:* 와 같은 값 — 화면 렌더는 지식 DB를 읽지 않는다. 시험 am26이 두 값이 같은지 본다).
+ * 일 자리는 그 달·해에 연애가 오르면 「가까운 사람」, 아니면 「내 생활」(연결 고리 재료와 같은 고름 — loveUpOf).
+ */
+export const SEAT_SHORT_KO: Readonly<{ day: { close: string; life: string }; month: string; year: string; hour: string }> = { day: { close: "가까운 사람", life: "내 생활" }, month: "일터", year: "바깥 모임", hour: "혼자 시간" };
+const HAP_KINDS = new Set(["YUKHAP", "STEM_HAP", "SAMHAP", "BANGHAP"]), CLASH_KINDS = new Set(["CHUNG", "HYEONG", "PA", "HAE", "WONJIN"]);
+const GROUP_OF: Readonly<Record<string, string>> = { 比肩: "PEER", 劫財: "PEER", 食神: "OUTPUT", 傷官: "OUTPUT", 偏財: "WEALTH", 正財: "WEALTH", 偏官: "OFFICER", 正官: "OFFICER", 偏印: "RESOURCE", 正印: "RESOURCE" };
+/** 연애가 오르는 key인지: 세운 달·해는 엔진 영역 신호, 대운 해(신호 없음 — 화면 칩도 없다)는 같은 엔진 셈의 연애 몫(배우자 별 쪽 십성 · 태어난 날 자리 합 − 충·형). */
+export function loveUpOf(e: Pick<TimelineEntry, "signals" | "tenGod" | "badges">, gender: string | null | undefined): boolean {
+  if (e.signals) return e.signals.love === "↑";
+  const spouse = gender === "FEMALE" ? "OFFICER" : gender === "MALE" ? "WEALTH" : null;
+  const grp = (label: string) => GROUP_OF[label.match(/\((.+)\)/)?.[1] ?? ""];
+  const onDay = (b: Badge) => (b.with ?? "").split("·").some(x => /날$/.test(x.trim()));
+  const score = (spouse && (grp(e.tenGod.stem) === spouse || grp(e.tenGod.branch) === spouse) ? 1 : 0) + (e.badges.some(b => HAP_KINDS.has(b.kind) && onDay(b)) ? 1 : 0) - (e.badges.some(b => CLASH_KINDS.has(b.kind) && onDay(b)) ? 1 : 0);
+  return score >= 1;
+}
+const seatMeaningShort = (w: string, loveUp: boolean): string | undefined => { const s = w.split("·").map(x => x.trim()).filter(Boolean); if (s.length !== 1) return undefined;
+  const seat = s[0].replace(/^태어난 /, ""); return seat === "날" ? (loveUp ? SEAT_SHORT_KO.day.close : SEAT_SHORT_KO.day.life) : seat === "달" ? SEAT_SHORT_KO.month : seat === "해" ? SEAT_SHORT_KO.year : seat === "시각" ? SEAT_SHORT_KO.hour : undefined; };
+/** 카드 「핵심」 한 줄(그 달·해 핵심, 결정론 — 카드 칸은 넓어 자리까지). AM2-6 6부: 자리가 하나면 자리 뜻을 붙인다(「태어난 날 자리(가까운 사람)와 화국 반합 · 한 기운으로 모이는 힘」). */
+export function coreLine(items: readonly CoreItem[], o: { loveUp?: boolean } = {}): string {
   const c = items[0];
   if (!c) return "";
   if (c.kind === "rel") {
     if (c.badge.kind === "GONGMANG") return `공망 · ${REL_SHORT.GONGMANG}`;
-    const full = `${c.badge.with ? `${seatShort(c.badge.with)} 자리와 ` : ""}${c.name} · ${REL_SHORT[c.badge.kind] ?? "걸리는 관계"}`;
+    const tail = `${c.name} · ${REL_SHORT[c.badge.kind] ?? "걸리는 관계"}`;
+    const mean = c.badge.with ? seatMeaningShort(c.badge.with, Boolean(o.loveUp)) : undefined;
+    const withMean = c.badge.with && mean ? `${seatShort(c.badge.with)} 자리(${mean})와 ${tail}` : null;
+    if (withMean && withMean.replace(/\s/g, "").length <= 34) return withMean;
+    const full = `${c.badge.with ? `${seatShort(c.badge.with)} 자리와 ` : ""}${tail}`;
     // 자리가 셋 이상이면 두 줄을 넘는다 — 자리는 카드(명리로 보면)에 두고 이름과 뜻만.
-    return full.replace(/\s/g, "").length <= 24 ? full : `${c.name} · ${REL_SHORT[c.badge.kind] ?? "걸리는 관계"}`;
+    return full.replace(/\s/g, "").length <= 24 ? full : tail;
   }
   if (c.kind === "transition") return `새 대운 시작 · ${TEN_GOD_SHORT[c.tenGod] ?? c.tenGod}`;
   return `${c.overlap ? "대운과 겹치는 " : ""}${c.name} · ${TEN_GOD_SHORT[c.name] ?? ""}`.replace(/ · $/, "");

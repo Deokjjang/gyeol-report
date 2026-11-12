@@ -521,8 +521,10 @@ function cautionOf(e: import("./schema").TimelineEntry, k: Knowledge, c: Caution
   const tgOf = (label: string) => label.match(/\((.+)\)/)?.[1] ?? "";
   const lines = (tg: string) => (k.tenGodPeriod.get(tg)?.year.caution ?? []).filter(l => cautionHolds(l.when, c)).map(l => l.text.replace(/해(예요|입니다|라)/g, `${unit}$1`));
   // AM2 P2 판독: 「…걸리는 해: …쪽을 살피기」 틀 문자열이 화면에 그대로 나갔다 → 한 문장(「…와 X가 걸려, …쪽을 살펴보세요.」).
+  // AM2-6 6부: 배지 줄 앞머리 「공망에 든 해, 」를 그대로 끼우면 「공망이 걸려, 공망에 든 해, …」 비문이 된다(P5 major-p5 2030) — 이름이 앞에 있으니 그 머리는 뗀다.
   const badge = e.badges.filter(b => CAUTION_KINDS.test(b.kind) || b.tone === "minus").map(b => { const head = `${b.with ? `${b.with} 글자와 ` : ""}${josa(b.label.replace(/\(.*\)$/, ""), "이가")} 걸려`;
-    return / (흐름|해|달)$/.test(b.line) ? `${head}, ${b.line.replace(/ (흐름|해|달)$/, "")} 쪽을 살펴보세요.` : `${head} ${b.line.replace(/[.]$/, "")}.`; });
+    const line = b.line.replace(/^[^,]{0,14}에 든 (해|달), /, "");
+    return / (흐름|해|달)$/.test(line) ? `${head}, ${line.replace(/ (흐름|해|달)$/, "")} 쪽을 살펴보세요.` : `${head} ${line.replace(/[.]$/, "")}.`; });
   const cands = [...badge, ...lines(tgOf(e.tenGod.stem)), ...lines(tgOf(e.tenGod.branch))].filter(x => x.length >= 8 && x.length <= 70);
   const pick = cands.find(x => !used.has(x));
   if (pick) used.add(pick);

@@ -124,11 +124,14 @@ function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Pa
  *  AM2(덕짱님 결정 2026-11-11): 시점 말 「지금」을 쓰지 않는다(책은 「이 책을 쓴 날」 기준, 읽는 때에 기대지 않음). */
 export function reviewLine(keywords: readonly string[], slot: number): string {
   const [a, b = a] = keywords;
+  // AM2-6 6부(세 판째 그대로이던 R-S1): 열쇠말은 꼬리표라 문장 성분으로 넣으면 뜻이 꼬인다(「내 몫 지키기와 같은 편이 두드러진 때」 「준비의 해가 앞에 섰던 때」) —
+  // 따옴표로 열쇠말임을 밝히고, 열쇠말을 주어로 쓰지 않는다. 열쇠말 끝 글자에 맞춘 조사만 붙인다.
+  const q = (w: string, pair: "과와" | "이가" | "은는") => `「${w}」${josa(w, pair).slice(w.length)}`;
+  const was = (w: string) => `「${w}」${/[가-힣]$/.test(w) && (w.charCodeAt(w.length - 1) - 0xac00) % 28 !== 0 ? "이었어요" : "였어요"}`;
   return [
-    // AM2-3(P2 판독 major-1 m15 「내 몫 지키기·같은 편이 두드러진 때였어요」 꼬리표 나열) → 「A와 B가」.
-    `${josa(a, "과와")} ${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?`,
-    `${a} 쪽으로 힘이 실린 때였어요. 그때 정한 것 가운데 다시 꺼내 볼 만한 하나는 무엇인가요?`,
-    `${josa(b, "이가")} 앞에 섰던 때였어요. 그때 미뤄 둔 일 가운데 다시 살펴볼 하나가 있나요?`,
+    `이 해의 열쇠말은 ${q(a, "과와")} ${was(b)}. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?`,
+    `「${a}」${/[가-힣]$/.test(a) && (a.charCodeAt(a.length - 1) - 0xac00) % 28 !== 0 ? "이라는" : "라는"} 열쇠말이 붙은 해였어요. 그때 정한 것 가운데 다시 꺼내 볼 만한 하나는 무엇인가요?`,
+    `이 해의 열쇠말 가운데 하나는 ${was(b)}. 그때 미뤄 둔 일 가운데 다시 살펴볼 하나가 있나요?`,
   ][Math.abs(slot) % 3];
 }
 

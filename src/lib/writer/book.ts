@@ -388,6 +388,8 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   // AM2-3 5부(덕짱님과 정한 시안): AM 세운(span 카드)·대운(평생 지도) 책은 흐름표·달·해 카드·10년표·평생 지도 띠로. 그 밖의 책은 예전 표 그대로.
   const amAnnual = d.productType === "annual_fortune" && spanned, amMajor = d.productType === "major_fortune" && Array.isArray(d.timeline?.lifetime); // AM 대운(평생 지도 필드 있음 — 시간 미상으로 대운이 없으면 빈 배열, 10년표·해 카드는 그대로)
   const dayAm = today ?? kstDay(e.generatedAt), thisYearAm = d.timeline?.thisYear ?? Number(dayAm.slice(0, 4));
+  // AM2-6 6부: 핵심 줄 자리 뜻(대운 해 — 신호가 없어 배우자 별 쪽 셈에 성별이 든다).
+  const genderAm = ((e as unknown as { input?: { person?: { gender?: string } } }).input?.person?.gender) || undefined;
   // AM 3부: 평생 대운 지도(0) — 대운 전부, 시작 만 나이·연도·간지·십성·한 줄 주제.
   if (amMajor) { if (d.timeline?.lifetime?.length) pages.push(lifetimeOf(d, thisYearAm)); }
   else if (d.timeline?.lifetime?.length) pages.push({ kind: "lifetime", title: "평생 대운 지도", cycles: d.timeline.lifetime.map(c => ({ label: c.label, ages: c.ages, tenGod: c.tenGod, theme: c.theme, current: c.current })) });
@@ -413,8 +415,8 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
         return { now: Number(c.key) === thisYearAm, past: Number(c.key) < thisYearAm, star: Boolean((c as { keyYear?: unknown }).keyYear) }; };
       if (amMajor) { decadeTable = decadeTableOf(d, cards as never, thisYearAm); pages.push({ ...decadeTable, title: ch.title === "앞으로 10년" ? "앞으로 10년표" : ch.title }); decadeTable = pages.at(-1) as typeof decadeTable;
         // 지난 3년 · 기준 해(본문 key가 없는 해)도 같은 문법의 해 카드로(돌아보기형).
-        for (const c of cards.filter(x => !ch.sections.some(s => s.heading === x.key))) { keyPage.set(c.key, pages.length); pages.push(periodCardOf(c as never, undefined, { eyebrow: ch.title, ...stateOf(c) })); } }
-      for (const s of ch.sections) { const card = cards.find(c => c.key === s.heading); if (!card) continue; keyPage.set(s.heading, pages.length); pages.push(periodCardOf(card as never, s, { eyebrow: ch.title, ...stateOf(card) })); }
+        for (const c of cards.filter(x => !ch.sections.some(s => s.heading === x.key))) { keyPage.set(c.key, pages.length); pages.push(periodCardOf(c as never, undefined, { eyebrow: ch.title, ...stateOf(c), ...(genderAm ? { gender: genderAm } : {}) })); } }
+      for (const s of ch.sections) { const card = cards.find(c => c.key === s.heading); if (!card) continue; keyPage.set(s.heading, pages.length); pages.push(periodCardOf(card as never, s, { eyebrow: ch.title, ...stateOf(card), ...(genderAm ? { gender: genderAm } : {}) })); }
       continue;
     }
     pages.push(d.productType === "major_fortune" ? { kind: "timeline", title: ch.title, years: [], transitions: [] } : { kind: "months", title: ch.title, months: [] });

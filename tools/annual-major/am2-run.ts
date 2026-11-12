@@ -20,11 +20,12 @@ import { loadDevEnv } from "../llm/env";
 import { manuscript } from "../final/replay";
 import { cases } from "./final";
 import { FRESH } from "./am2-5-fresh";
+import { FRESH6 } from "./am2-6-fresh";
 import { concurrency } from "../../src/lib/writer/chunked/run";
 import { devMockStream } from "../../src/lib/ops/generation/devMock";
 
 export const OUT2 = join(homedir(), "Desktop", "gyeol-review", "annual-major-02");
-const STAGES = { P: { scope: "am2-P", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2) · AM2-3 P3(덕짱님 지시 2026-11-12, 상한 $2.2 → $3.2 → 세운 뒤 승인 $3.7) · AM2-4 P4(덕짱님 지시 2026-11-12, 상한 $3.7 → $5.0) · AM2-5 P5(덕짱님 지시 2026-11-12, 상한 $5.0 → $6.0, 4권)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
+const STAGES = { P: { scope: "am2-P", cap: 9.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2) · AM2-3 P3(덕짱님 지시 2026-11-12, 상한 $2.2 → $3.2 → 세운 뒤 승인 $3.7) · AM2-4 P4(덕짱님 지시 2026-11-12, 상한 $3.7 → $5.0) · AM2-5 P5(덕짱님 지시 2026-11-12, 상한 $5.0 → $6.0, 4권) · AM2-6 P6(덕짱님 지시 2026-11-12, 상한 $6.0 → $9.0, 8권 — 세운 4 → 자동 점검 → 대운 4)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
 /** 숨긴 세트(덕짱님 지정 4명). 개발 중에는 만들지 않는다 — E 단계에서만 쓴다. */
 export const HIDDEN: readonly { id: string; product: "annual" | "major"; note: string; payload: () => unknown }[] = [];
 
@@ -58,7 +59,7 @@ async function main() {
   if (argv.includes("--mock") && (!process.env.LLM_CACHE_DIR || !process.env.LLM_COST_LOG)) { console.error("--mock은 LLM_CACHE_DIR·LLM_COST_LOG(임시 폴더)와 함께 — 실제 원장·비용 기록을 건드리지 않게"); process.exit(2); }
   loadDevEnv();
   ensureScope(S.scope, S.cap, S.note);
-  const all = [...cases().filter(c => c.product !== "launch").map(c => ({ id: c.id, note: c.note, payload: c.payload })), ...HIDDEN.map(h => ({ id: h.id, note: h.note, payload: h.payload() })), ...FRESH.map(h => ({ id: h.id, note: h.note, payload: h.payload() }))];
+  const all = [...cases().filter(c => c.product !== "launch").map(c => ({ id: c.id, note: c.note, payload: c.payload })), ...HIDDEN.map(h => ({ id: h.id, note: h.note, payload: h.payload() })), ...FRESH.map(h => ({ id: h.id, note: h.note, payload: h.payload() })), ...FRESH6.map(h => ({ id: h.id, note: h.note, payload: h.payload() }))];
   const list = all.filter(c => ids.includes(c.id));
   if (!list.length) { console.error("--case가 없습니다"); process.exit(2); }
   mkdirSync(OUT2, { recursive: true });

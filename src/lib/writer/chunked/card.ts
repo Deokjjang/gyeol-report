@@ -129,10 +129,86 @@ export const unambiguous = (t: string) => t.replace(/의욕이 되기도 날이 
  * - 둘째 마디부터 행동 꼴(「…기」 「…하기」 「…로」 「…먼저」 「…따로」 「…분명히」 「…넘기기」)이면 뗀다.
  * - 문장 끝 권유(「…세요」 「…편이 맞습니다·좋습니다·낫습니다」)도 뗀다(원국 특성 줄의 「하나를 끝낸 뒤 다음 불을 붙이세요」).
  */
-const RX_SEG = /(기|하기|두기|보기|내기|넘기기|따지기|다듬기|읽기|정하기|줄이기|살피기|지키기|나누기|미루기|않기|말기|먼저|따로|분명히|(으)?로|게|부터|말고)$/;
+// AM2-6 3부: 「시기 · 계기 · 분위기」처럼 「기」로 끝나는 명사는 행동 꼬리가 아니다(D7 「내 이름으로 서는 시기」가 떨어져 큰 줄기 줄에 나이만 남았다).
+const RX_SEG = /((?<!(?:시|계|분위|용|열|온|인|경|향|무|위|전|후|중|초|주|동|생|일|도|전성|활|기|원|패|뒷심|용|자|객|감))기|하기|두기|보기|내기|넘기기|따지기|다듬기|읽기|정하기|줄이기|살피기|지키기|나누기|미루기|않기|말기|먼저|따로|분명히|(으)?로|게|부터|말고)$/;
 const RX_SENT = /(세요|보세요|두세요|마세요|해 보세요)[.!]?$|편이 (맞|좋|낫)(습니다|아요|어요)[.!]?$/;
 export function stripRx(text: string): string {
   const segs = text.split(" · ");
   const kept = segs.filter((s, i) => i === 0 || !(RX_SEG.test(s.trim()) && s.trim().length <= 40)).map(s => s.split(/(?<=[.!?])\s+/).filter((x, j, all) => !(RX_SENT.test(x.trim()) && (all.length > 1 || segs.length > 1))).join(" ")).filter(s => s.trim());
   return kept.join(" · ");
+}
+
+
+// ---------- AM2-6 3부 입력 거름: 장면 씨앗 조건 꼬리표 · 행동 꼴 → 조건 꼴 · 카드 줄 조건 꼴 ----------
+/**
+ * 장면 씨앗의 조건 꼬리표(덕짱님 지시 AM2-6 3부): 씨앗 글에서 엔진이 읽는다(지식 DB 씨앗 · 엔진 장면 · 장 장면 힌트 모두 같은 표).
+ * - 관계 상태: 솔로 전제(소개팅 · 썸 · 고백 · 첫 만남) · 연인 전제(연인 · 데이트 · 기념일) · 기혼 전제(배우자 · 시댁 · 부부)
+ * - 일: 직장인 전제(회의 · 사무실 · 출근 · 퇴근 · 결재 · 상사 · 동료 · 월급 · 회식) · 사업·프리랜서 전제(거래처 · 견적 · 외주 · 클라이언트) · 학생 전제(수업 · 시험 · 과제 · 학교)
+ * - 필요한 상세: 가게 · 매장 · 셔터 · 손님 · 오픈 준비 · 단골(일 상세가 그 꼴일 때만 — 하는 일을 모르면 쓰지 않는다)
+ */
+export const SEED_TAGS: readonly { readonly tag: string; readonly re: RegExp }[] = [
+  { tag: "rel:single", re: /소개팅|(?<![가-힣])썸(?![가-힣])|썸 (상대|단계|타는)|고백|첫 만남|소개받|데이트 신청|짝사랑|애프터|새 인연|인연이 생기|프로필 사진|소개팅 앱/ },
+  { tag: "rel:partner", re: /연인|애인|남자친구|여자친구|데이트(?! 신청)|기념일|커플/ },
+  { tag: "rel:married", re: /배우자|남편|아내|와이프|시댁|처가|시부모|부부|신혼|결혼기념일/ },
+  { tag: "job:employee", re: /회의|사무실|출근|퇴근|결재|상사|팀장|동료|월급|회식|사내|야근|보고서|부서|인사팀|사원증|점심시간/ },
+  { tag: "job:work", re: /거래처|견적|외주|클라이언트|납품|의뢰인|발주|계약서/ },
+  { tag: "job:student", re: /수업|시험|과제|학교|교수|동아리|학기|강의실|기숙사|학점|중간고사|기말고사/ },
+  { tag: "detail:shop", re: /가게|매장|셔터|손님|오픈 준비|단골|장사|계산대|진열|포장 주문|영업 시작|마감 정산/ },
+  { tag: "children", re: /(?<![가-힣])(아이|아들|딸)(가|를|와|랑|의|에게|는|도|들)?(?![가-힣])|자녀|육아|어린이집|유치원|학부모/ },
+];
+export const seedTagsOf = (text: string, base: { rel?: string; job?: string; ctx?: readonly string[] } = {}): string[] => {
+  const tags = SEED_TAGS.filter(t => t.re.test(text)).map(t => t.tag);
+  if (base.rel === "partner") tags.push("rel:partner");
+  if (base.job === "employed") tags.push("job:employee"); else if (base.job === "business") tags.push("job:work"); else if (base.job === "student") tags.push("job:student");
+  for (const c of base.ctx ?? []) tags.push(c === "office" || c === "team" ? "job:employee" : c === "shop" ? "detail:shop" : c === "freelance" ? "job:work" : `detail:${c}`);
+  return [...new Set(tags)];
+};
+/** 꼬리표가 이 사람 입력과 맞는지. 미입력은 어느 전제도 받지 않는다(모르는 사실을 전제하지 않는다). */
+export function seedTagsFit(tags: readonly string[], f: Brief["person"]["facts"]): boolean {
+  const job = f.job.status, detail = f.job.detail ?? "";
+  for (const t of tags) {
+    if (t === "rel:single" && f.relationship !== "single") return false;
+    if (t === "rel:partner" && !/^(dating|married)$/.test(f.relationship)) return false;
+    if (t === "rel:married" && f.relationship !== "married") return false;
+    if (t === "job:employee" && job !== "employee") return false;
+    if (t === "job:work" && !/^(self_employed|business_owner|freelancer)$/.test(job)) return false;
+    if (t === "job:student" && job !== "student" && f.job.class !== "student") return false;
+    if (t === "detail:shop" && !/가게|매장|카페|식당|숍|샵|점포|장사|요식|판매/.test(detail)) return false;
+    if (t.startsWith("detail:") && t !== "detail:shop" && !detail) return false;
+    if (t === "children" && f.children !== "has") return false;
+  }
+  return true;
+}
+/** 행동 꼴 씨앗(「…제안하기」 「…돕기」)을 조건 꼴(「…제안할 때」 「…도울 때」)로. 그 밖의 꼴은 그대로. */
+export function seedAsCondition(text: string): string {
+  const t = text.trim().replace(/[.!]$/, "");
+  const m = /^(.*?)([가-힣])기$/.exec(t); if (!m || /(시기|계기|분위기|용기|일기|날씨)$/.test(t)) return t;
+  const [, head, last] = m; const code = last.charCodeAt(0) - 0xac00; if (code < 0 || code > 11171) return t;
+  const jong = code % 28, base = code - jong;
+  const IRR_B: Readonly<Record<string, string>> = { 돕: "도울", 굽: "구울", 눕: "누울", 줍: "주울", 덥: "더울", 춥: "추울", 쉽: "쉬울", 무섭: "무서울", 어렵: "어려울", 반갑: "반가울", 즐겁: "즐거울", 가볍: "가벼울", 무겁: "무거울" };
+  const IRR_D: Readonly<Record<string, string>> = { 듣: "들을", 걷: "걸을", 묻: "물을", 싣: "실을", 깨닫: "깨달을" };
+  const stem = `${head.slice(-2)}${last}`.slice(-2), one = last;
+  const irr = IRR_B[stem] ?? IRR_B[one] ?? IRR_D[stem] ?? IRR_D[one];
+  if (irr) { const cut = (IRR_B[stem] ?? IRR_D[stem]) ? 2 : 1; return `${`${head}${last}`.slice(0, -cut)}${irr} 때`; }
+  if (jong === 0) return `${head}${String.fromCharCode(0xac00 + base + 8)} 때`; // 받침 없음 → ㄹ 받침
+  if (jong === 8) return `${head}${last} 때`; // ㄹ 받침(만들기 → 만들 때)
+  return `${head}${last}을 때`;
+}
+/** 카드 줄의 연애 조건 꼴을 입력에 맞춘다(「만나는 사람이 있다면」 → 연애 중 「연인과는」 · 솔로 「새 인연을 만난다면」 · 기혼 「배우자와는」). 미입력은 조건 꼴 그대로. */
+export function relCondition(t: string, rel: string): string {
+  const to = rel === "dating" ? "연인과는" : rel === "married" ? "배우자와는" : rel === "single" ? "새 인연을 만난다면" : null;
+  // 「함께하는 사람」(살림·생활비를 함께하는 짝)은 솔로에게는 조건 꼴 그대로 둔다(새 인연 조건으로 바꾸면 살림 줄이 어긋난다).
+  if (!to) return t;
+  const out = t.replace(/(만나는|사귀는|곁에 있는) 사람이 있다면/g, to);
+  return rel === "single" ? out : out.replace(/함께하는 사람이 있다면/g, to);
+}
+/** 직장 전제 말(월급 · 직함 · 윗사람 · 상사 · 회사)이 든 카드 마디 — 직장인이 아니면 그 마디를 뺀다(AM2-6 3부). */
+export const EMPLOYEE_PREMISE = /월급|직함|윗사람|상사|팀장|회사|연봉|승진|부서|사내|인사 평가|결재/;
+/** 카드 값의 「-던」 전제(「지키던 내 자리」 「머릿속에만 두던 재능」)와 풀이 없는 용어(일지 · 월지 · 일간)를 고객 말로. */
+export function plainCard(t: string): string {
+  return t.replace(/(지키|두|하|쌓|모으|미루|붙잡|쓰|놓|품|숨기|참|버티|기르|다지|가꾸|아끼|감추|누르|삼키|삭이|꿈꾸|바라|그리)던(?=\s)/g, "$1는")
+    .replace(/(지켜|쌓아|해|모아|이어|길러|다져|가꿔|만들어|버텨) 온(?=\s)/g, "$1 가는")
+    .replace(/(?<![가-힣])일지(?=[ 의는가에와인를을이도])/g, "태어난 날 땅 글자").replace(/(?<![가-힣])월지(?=[ 의는가에와인를을이도])/g, "태어난 달 땅 글자")
+    .replace(/(?<![가-힣])연지(?=[ 의는가에와인를을이도])/g, "태어난 해 땅 글자").replace(/(?<![가-힣])시지(?=[ 의는가에와인를을이도])/g, "태어난 시각 땅 글자")
+    .replace(/(?<![가-힣])일간(이|은|을|과|이라|의|에| )/g, (_m, j: string) => `타고난 바탕 글자${({ 이: "가", 은: "는", 을: "를", 과: "와", 이라: "라" } as Record<string, string>)[j] ?? j}`);
 }

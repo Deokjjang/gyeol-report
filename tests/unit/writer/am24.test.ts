@@ -54,7 +54,9 @@ describe("AM2-4 1부·2부 설계도", () => {
     const e = { badges: [{ kind: "PA", label: "축진파", line: "x", tone: "", with: "태어난 달·태어난 시각" }, { kind: "YUKHAP", label: "오미합", line: "y", tone: "", with: "태어난 날" }], tenGod: { stem: "상관(傷官)", branch: "정재(正財)" } } as never;
     expect(coreOf(e).map(c => c.name)).toEqual(["오미합", "축진파"]);
     expect(coreOf({ badges: [], tenGod: { stem: "정인(正印)", branch: "겁재(劫財)" } } as never, { dayunTenGod: "정인(正印)" }).map(c => c.name)).toEqual(["정인"]);
-    expect(coreLine(coreOf(e))).toBe("태어난 날 자리와 오미합 · 맞물려 묶이는 힘");
+    // AM2-6 6부: 자리가 하나면 자리 뜻을 붙인다(일 자리 — 연애가 오르지 않으면 「내 생활」, 오르면 「가까운 사람」).
+    expect(coreLine(coreOf(e))).toBe("태어난 날 자리(내 생활)와 오미합 · 맞물려 묶이는 힘");
+    expect(coreLine(coreOf(e), { loveUp: true })).toBe("태어난 날 자리(가까운 사람)와 오미합 · 맞물려 묶이는 힘");
     expect(coreRowLine(coreOf(e))).toBe("오미합 · 맞물려 묶임");
     expect(coreRowLine(coreOf(e)).length).toBeLessThanOrEqual(16);
     expect(TEN_GOD_SHORT.상관).toBe("틀을 깨는 말과 아이디어");

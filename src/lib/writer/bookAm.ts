@@ -9,7 +9,7 @@
 import type { AmEl, AmElement, AmRow, AmYearHead, BookPage, BookParagraph } from "@/app/dev/book-preview/bookTypes";
 import type { BookSection } from "./format";
 import { FLOW_WORD, halfHapLine, josa } from "@/lib/brief/labels";
-import { coreLine, coreOf, coreRowLine, relFlow, TEN_GOD_SHORT } from "@/lib/brief/core";
+import { coreLine, coreOf, coreRowLine, loveUpOf, relFlow, TEN_GOD_SHORT } from "@/lib/brief/core";
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
 import type { V5BookDraft, V5TimelineCard } from "./book";
 
@@ -25,13 +25,14 @@ const relationsOf = (c: Card) => c.badges.map(b => { const raw = b.line.replace(
   return { name: `${b.label.replace(/\(반쯤\)$/, " 반합")}${b.with ? ` · ${b.with} 자리와` : ""}`, plain: relFlow(half ? halfHapLine(raw) : raw) }; });
 const EL_NAME: Readonly<Record<string, string>> = { WOOD: "나무(목)", FIRE: "불(화)", EARTH: "흙(토)", METAL: "쇠(금)", WATER: "물(수)" };
 /** 화면 「뜻」 한 줄(AM2-4 6부): 그 달·해 핵심(엔진 가중치 — 설계도와 같은 함수). dayunTg: 세운 달은 책의 해가 속한 대운 십성. */
-const meaningOf = (c: Card, dayunTg?: string) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
+// AM2-6 6부: 핵심 줄에 자리 뜻(일 자리는 그 달·해 연애 오름이면 「가까운 사람」, 아니면 「내 생활」 — 연결 고리 재료와 같은 고름).
+const meaningOf = (c: Card, dayunTg?: string, gender?: string) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}), { loveUp: loveUpOf(c as never, gender) });
 const rowMeaningOf = (c: Card, dayunTg?: string) => coreRowLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
 const signalsOf = (c: Card) => { const s: Readonly<Record<string, string>> = c.signals ?? {}; return { ups: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↑").map(([, v]) => v), cautions: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↓").map(([, v]) => v) }; };
 const monthName = (c: Card) => c.label.split(" (")[0].replace(/ · \d{4}년 .+ 마지막 달$/, "");
 
 /** 세운 달 카드 · 대운 해 카드(같은 문법). */
-export function periodCardOf(c: Card, section: BookSection | undefined, a: { eyebrow: string; now: boolean; past: boolean; star: boolean; dayunTg?: string }): Extract<BookPage, { kind: "periodCard" }> {
+export function periodCardOf(c: Card, section: BookSection | undefined, a: { eyebrow: string; now: boolean; past: boolean; star: boolean; dayunTg?: string; gender?: string }): Extract<BookPage, { kind: "periodCard" }> {
   const month = c.kind === "month";
   const paragraphs: BookParagraph[] = (section?.paragraphs ?? []).map((text, i) => ({ text, notes: [], ...(section ? keySpanOf(section, i, text) : {}) }));
   const sub = month ? (c.span ? `${md(c.span.start)}~${md(c.span.end)}` : "") : c.age !== undefined ? `만 ${c.age}세` : "";
@@ -42,7 +43,7 @@ export function periodCardOf(c: Card, section: BookSection | undefined, a: { eye
   const fills = c.fillsLack?.fills && c.fillsLack.elements.length ? `모자란 ${josa(c.fillsLack.elements.map(x => EL_NAME[x] ?? x).join("·"), "을를")} 채워요` : undefined;
   return { kind: "periodCard", unit: month ? "달" : "해", id: `card-${c.key}`, title: month ? monthName(c) : `${c.key}년 ${c.ganji.hangul}년`, eyebrow: a.eyebrow, sub, ganji: c.ganji.hanja, els: elsOf(c.ganji.hanja),
     flow: c.flow.score, flowWord: FLOW_WORD[c.flow.score] ?? "보통", line: c.imageLine, ...(one ? { one } : {}),
-    paragraphs, relations: relationsOf(c), sky, ground, skyLine: TEN_GOD_SHORT[sky] ?? "", groundLine: TEN_GOD_SHORT[ground] ?? "", ups: sig.ups, cautions: sig.cautions, ...(fills ? { fills } : {}), core: meaningOf(c, a.dayunTg), past: a.past, now: a.now, star: a.star };
+    paragraphs, relations: relationsOf(c), sky, ground, skyLine: TEN_GOD_SHORT[sky] ?? "", groundLine: TEN_GOD_SHORT[ground] ?? "", ups: sig.ups, cautions: sig.cautions, ...(fills ? { fills } : {}), core: meaningOf(c, a.dayunTg, a.gender), past: a.past, now: a.now, star: a.star };
 }
 
 // AM2-4 6부: 표 한 줄은 그림 문장 대신 「뜻」(그 달·해 핵심 한 줄, 결정론) — 그림은 카드로.
@@ -89,6 +90,8 @@ export function lifetimeOf(d: V5BookDraft, thisYear: number): Extract<BookPage, 
   const bands: { theme: string; cycles: number[] }[] = [];
   cycles.forEach((c, i) => { const last = bands.at(-1); if (last && cycles[last.cycles.at(-1)!].theme === c.theme) last.cycles.push(i); else bands.push({ theme: c.theme, cycles: [i] }); });
   const daeunsu = life[0]?.label.match(/대운수 (\d+)/)?.[1], month = life[0]?.label.match(/(\d{1,2}(?:~\d{1,2})?월) 무렵부터/)?.[1];
-  const head = [daeunsu ? `대운수 ${daeunsu}(첫 대운이 시작되는 만 나이)` : "", month ? `대운은 10년마다 ${month} 무렵 바뀌어요` : ""].filter(Boolean).join(" · ");
-  return { kind: "lifetime", title: "평생 대운 지도", cycles, ...(head ? { head } : {}), bands };
+  // AM2-6 6부: 첫 대운이 만 0세에 시작하면 「대운수 0」 대신 「태어나면서부터」(값이 빠진 것처럼 보였다 — P5 major-p5). 대운 줄마다 붙은 「(대운수 0)」은 뗀다.
+  const head = [daeunsu === "0" ? "첫 대운은 태어나면서부터 시작돼요" : daeunsu ? `대운수 ${daeunsu}(첫 대운이 시작되는 만 나이)` : "", month ? `대운은 10년마다 ${month} 무렵 바뀌어요` : ""].filter(Boolean).join(" · ");
+  const cycles2 = daeunsu === "0" ? cycles.map(c => ({ ...c, label: c.label.replace(/ ?\(대운수 0\)/, "") })) : cycles;
+  return { kind: "lifetime", title: "평생 대운 지도", cycles: cycles2, ...(head ? { head } : {}), bands };
 }

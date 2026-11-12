@@ -62,13 +62,21 @@ describe("AM2-5 1부 카드 값은 고객 말로", () => {
 describe("AM2-5 1부 연결 고리 · key 짝 · 장면", () => {
   it("세운 annual-1 7월 · 정미월: 오미합(태어난 날) × 솔로 × 바람(연애) × 연애 오름 + 정미년 오미합 겹침 · 바람 달", () => {
     const { intake } = setup("annual-1");
-    // 같은 자리 고리는 처음 쓴 key(2월 · 임인월)에서 자리 뜻을 풀고, 다시 쓰는 key는 그 key를 가리켜 짧게.
+    // AM2-6 1부: 고리는 재료(자리 뜻 · 관계 뜻 한 마디 · 입력 · 방향 · 몇 번째). 같은 자리가 다시 나오면 앞 key와 무엇이 다른지만.
     const feb = keysOf(intake).find(x => x.label === "2월 · 임인월")!;
-    expect(feb.links?.[0]?.text).toMatch(/^화국 반합이 닿는 태어난 날 자리는 나와 가장 가까운 사람의 자리 · 솔로인 이 사람에게는 가장 가까운 사람·연애 쪽이 움직이는 때/);
+    expect(feb.links?.[0]?.text).toMatch(/^〔태어난 날 자리 = 나와 가장 가까운 사람의 자리\(솔로: 가장 가까운 사람·연애 쪽\)〕 × 〔화국 반합 = 모임\(/);
+    expect(feb.links?.[0]?.text).toMatch(/이 책에서 이 자리 처음/);
     const k = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
-    expect(k.links?.[0]?.text).toMatch(/^오미합이 닿는 태어난 날 자리\(나와 가장 가까운 사람의 자리\) · 2월 · 임인월과 같은 자리라 솔로인 이 사람의 가장 가까운 사람·연애 쪽이 다시 움직이는 때 · 적어 준 바람의 연애·사람 쪽과 같은 자리 · 이 달 연애 쪽 기운도 오름/);
-    expect(k.links?.[0]?.input).toEqual(expect.arrayContaining(["relationship=single", "wish:love"]));
-    expect(k.links?.[1]?.text).toMatch(/정미년 한 해에 걸린 오미합이 이 달에 같은 자리에서 한 번 더 걸리는 때 · 바람과 이어지는 영역이 오르는 달/);
+    const seat = k.links!.find(l => l.kind === "seat")!;
+    // 이 달 오미합 배지는 섞인 결(plus 아님) — 연애 오름 신호가 있어도 방향은 「섞임」으로 둔다(오름이 배지 결을 덮지 않게).
+    expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 · 섞임 · 이 달 오름: 연애/);
+    expect(seat.text).toMatch(/이 책 \d번째\(앞: 6월 · 병오월/);
+    expect(seat.input).toEqual(["relationship=single"]);
+    expect(k.links!.find(l => l.kind === "echo")?.text).toMatch(/정미년 한 해에도 같은 태어난 날 자리에 오미합/);
+    // 바람 고리는 책에서 1~3개만 — 7월은 같은 자리가 그 해와 바람 달에 함께 걸려 1순위.
+    expect(k.wishLink).toMatch(/그 해에도 같은 자리에 걸림/);
+    expect(keysOf(intake).filter(x => x.wishLink).length).toBeLessThanOrEqual(3);
+    expect(keysOf(intake).filter(x => !x.wishLink).every(x => !(x.links ?? []).some(l => /바람/.test(l.text)))).toBe(true);
   });
   it("고리는 엔진 값과 입력이 다 있을 때만 — verifyLinks가 지어낸 고리를 잡는다", () => {
     const { brief, intake } = setup("annual-1");
@@ -97,7 +105,8 @@ describe("AM2-5 2부 고치기 단계 구조", () => {
   it("같은 주장 두 곳: 9.2 핵심(I5 = 1.4 M1 세 달)은 엔진 가리키기 말 · 2028년 1월 대운 겹침은 3월 · 계묘월을 가리킨다", () => {
     const { intake } = setup("annual-1");
     const s92 = intake.chapters.find(c => c.n === 9)!.sections![1];
-    expect(s92.pointer).toBe("1장에서 본 세 달");
+    // AM2-6 4부: 가리키기 말에도 달 이름은 넣는다.
+    expect(s92.pointer).toBe("1장에서 본 2월·7월·10월");
     expect(keysOf(intake).find(k => k.label === "2028년 1월 · 계축월")!.pointer).toBe("3월 · 계묘월처럼 대운과 같은 정인 기운이 겹치는 달");
   });
   it("문단 교체 원고 읽기: 번호 줄 · key 전체(*) · 표지", () => {

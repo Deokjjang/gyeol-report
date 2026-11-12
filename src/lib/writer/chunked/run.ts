@@ -117,19 +117,24 @@ export async function rewriteChunk(a: ChunkRunArgs & { readonly chunk: Chunk; re
  * 나머지 문단은 원문 그대로 둔다(P4 세운 차단 #1·#2 — 다시 쓰기 1회차가 걸리지 않은 첫 원고 문장을 바꿨다 — 가 생길 길이 없다).
  * 받은 자리만 drafts에 넣고, 이전 글을 돌려준다(부르는 쪽이 새 차단을 만든 자리를 되돌린다).
  */
-export async function replaceParagraphs(a: ChunkRunArgs & { readonly chunk: Chunk; readonly targets: readonly ParaTarget[]; readonly round: number; readonly drafts: Map<number, DraftChapter>; readonly cover?: { line: string; reason: string } }): Promise<{ run: WriterRun; log: ChunkLog; applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[]; cover?: string; changed: number[] }> {
+/** AM2-6 5부: lock = 사실 고정(깃발 없는 문장은 원문으로 · 사실 낱말을 잃은 교체는 받지 않는다). 받은 글을 바꿔 돌려준다. */
+export type ParaLock = (t: ParaTarget, before: readonly string[], after: readonly string[]) => { paragraphs: readonly string[]; notes: readonly { at: string; kind: string; detail: string }[] };
+export async function replaceParagraphs(a: ChunkRunArgs & { readonly chunk: Chunk; readonly targets: readonly ParaTarget[]; readonly round: number; readonly drafts: Map<number, DraftChapter>; readonly cover?: { line: string; reason: string }; readonly lock?: ParaLock }): Promise<{ run: WriterRun; log: ChunkLog; applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[]; cover?: string; changed: number[]; locks: { at: string; kind: string; detail: string }[] }> {
   const t0 = Date.now();
   const user = replaceUser(a.intake, a.chunk, numberedDraft(a.intake, a.chunk, a.drafts), a.targets, a.cover);
   const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user, maxTokens: replaceMaxTokens(a.targets) + (a.cover ? 200 : 0) });
   const got = r.text ? parseReplacements(r.text) : { paras: new Map<string, string[]>() };
-  const applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[] = [], changed = new Set<number>();
+  const applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[] = [], changed = new Set<number>(), locks: { at: string; kind: string; detail: string }[] = [];
   for (const t of a.targets) {
     const neu = got.paras.get(t.id); if (!neu?.length) continue;
     const d = a.drafts.get(t.chapter); const sec = d?.chapter.sections[t.section]; if (!d || !sec || sec.heading !== t.heading) continue;
     const before = t.index === "*" ? [...sec.paragraphs] : [sec.paragraphs[t.index] ?? ""];
-    const paragraphs = t.index === "*" ? neu : sec.paragraphs.map((p0, i) => (i === t.index ? neu.join(" ") : p0));
+    let after: readonly string[] = t.index === "*" ? neu : [neu.join(" ")];
+    if (a.lock) { const r0 = a.lock(t, before, after); after = r0.paragraphs; locks.push(...r0.notes); }
+    if (after.join("\n") === before.join("\n")) continue;
+    const paragraphs = t.index === "*" ? [...after] : sec.paragraphs.map((p0, i) => (i === t.index ? after[0] : p0));
     a.drafts.set(t.chapter, { ...d, chapter: { ...d.chapter, sections: d.chapter.sections.map((s2, si) => (si === t.section ? { ...s2, paragraphs } : s2)) } });
-    applied.push({ target: t, before, after: t.index === "*" ? neu : [neu.join(" ")] }); changed.add(t.chapter);
+    applied.push({ target: t, before, after }); changed.add(t.chapter);
   }
-  return { run: r.run, log: { id: a.chunk.id, kind: "rewrite", round: a.round, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, ...(applied.length ? {} : { reason: r.text ? "no_target" : "empty" }) }, applied, ...(got.cover ? { cover: got.cover } : {}), changed: [...changed] };
+  return { run: r.run, log: { id: a.chunk.id, kind: "rewrite", round: a.round, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, ...(applied.length ? {} : { reason: r.text ? "no_target" : "empty" }) }, applied, ...(got.cover ? { cover: got.cover } : {}), changed: [...changed], locks };
 }

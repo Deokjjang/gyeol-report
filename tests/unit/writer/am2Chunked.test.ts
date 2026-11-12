@@ -141,7 +141,7 @@ describe("AM2 P 판독 고침(2026-11-11, 저장된 P 원문의 결함 문장)",
     expect(rules.filter(r => r === `${past.n}:past_assert`)).toHaveLength(2);
     expect(rules).toEqual(expect.arrayContaining([`${ch.n}:future_event`, `${ch.n}:evidence_owner`, "9:reader_directive"]));
     // AM2-5: 짧은 key 안전망(key_len)은 문장 꼴 시험과 무관하다(한 문장짜리 시험 원고).
-    expect(blockFlags([fc(ch.n, [`${kp.scene!.replace(/[.!]$/, "")}는 모습이 어울려요.`], [kp.key])], [], { intake }).filter(f => f.rule !== "must_miss" && f.rule !== "key_len")).toEqual([]);
+    expect(blockFlags([fc(ch.n, [`${kp.scene!.replace(/[.!]$/, "")}는 모습이 어울려요.`], [kp.key])], [], { intake }).filter(f => f.rule !== "must_miss" && f.rule !== "key_len" && f.rule !== "key_paras")).toEqual([]);
   });
   it("세운: 명사구 비문 · 일주 꼴 · 카드에 없는 「가장」 · 「이번 한 해」 · 머리 문장 되풀이(경미)", () => {
     const { intake, brief } = setup("annual_fortune");
@@ -256,6 +256,8 @@ describe("AM2 발행(가짜 작가, 호출 0)", () => {
     expect(meta.calls.some(c => c.kind === "repair" || c.kind === "review")).toBe(false);
     expect(saved[0]).toBe(1);
     // AM2-3: 가짜 작가 글(결정론 문단)은 「반드시 쓸 것」(흐름 단어·관계 이름)을 담지 않는다 — 그 밖의 차단은 0. AM2-5: 가짜 글은 짧아 key_len(안전망)도 남을 수 있다.
-    expect((review.remainingHard as { rule: string }[]).filter(f => f.rule !== "must_miss" && f.rule !== "key_len")).toEqual([]);
+    // AM2-6 5부: 지우면 그 장의 처방이 없어지는 차단 문장은 지우지 않고 교체로 넘긴다 — 가짜 작가는 고치지 못하니 「남김」(처리 기록 kept)으로 남는다. 그 밖의 차단은 0.
+    const kept = new Set(((review.disposition as { kept: { at: string; rule: string }[] }).kept).map(k => `${k.at}|${k.rule}`));
+    expect((review.remainingHard as { rule: string; at: string }[]).filter(f => f.rule !== "must_miss" && f.rule !== "key_len" && !kept.has(`${f.at}|${f.rule}`))).toEqual([]);
   }, 120_000);
 });

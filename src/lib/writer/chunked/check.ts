@@ -148,7 +148,7 @@ export const NO_SENTENCE_RULES: ReadonlySet<string> = new Set<string>(["must_mis
 /** 장 사이 반복(모든 묶음 뒤 결정론, 뒤쪽 묶음만 1회 다시 쓴다). */
 export const REPEAT_RULES: ReadonlySet<string> = new Set<string>(["phrase_repeat", "scene_repeat", "meaning_repeat", "prior_overlap", "closing_repeat", "rep_adjacent", "advice_repeat", "chapter_repeat"]);
 /** AM2-5 2부: 경미 규칙 전부 — 지우지 않고 점수로만 기록한다(그 묶음을 다른 까닭으로 고칠 때만 함께 넘긴다). */
-export const MINOR_RULES: ReadonlySet<string> = new Set<string>([...PIGGYBACK_RULES, ...CUT_ONLY_RULES, ...REPEAT_RULES, "rx_repeat", "ending_cap", "promise_tail", "domain_opener", "angle_leak"]);
+export const MINOR_RULES: ReadonlySet<string> = new Set<string>([...PIGGYBACK_RULES, ...CUT_ONLY_RULES, ...REPEAT_RULES, "rx_repeat", "ending_cap", "promise_tail", "domain_opener", "angle_leak", "advice_repeat_sec", "rx_repeat_sec"]);
 const BLOCK_RULES_OLD: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon"]);
 export type ChunkFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string; readonly hint?: string };
 
@@ -421,6 +421,7 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   for (const f of rootFlags(chapters, b)) add(f);
   for (const f of am24Flags(chapters, b)) add(f);
   for (const f of am25Flags(chapters, b)) add(f);
+  for (const f of am26Flags(chapters, b)) add(f);
   return out;
 }
 
@@ -638,7 +639,7 @@ const ADVICE: readonly (readonly [string, RegExp])[] = [
 const FRAME = /모습이 어울(려요|립니다|리는)/;
 const CONTRA = /^반대로[ ,]/;
 export function adviceRepeats(chapters: readonly FinalChapter[]): ChunkFlag[] {
-  const out: ChunkFlag[] = [], seen = new Map<string, number>();
+  const out: ChunkFlag[] = [], seen = new Map<string, number>(), secOf = new Map<string, string>();
   let frames = 0, contra = 0;
   for (const c of chapters) {
     if (c.source === "deterministic") continue;
@@ -646,7 +647,8 @@ export function adviceRepeats(chapters: readonly FinalChapter[]): ChunkFlag[] {
     c.sections.forEach((s, si) => s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
       const sen = raw.replace(/[⟪⟫]/g, "");
       const hit = ADVICE.find(([, re]) => re.test(sen));
-      if (hit) { const n = (seen.get(hit[0]) ?? 0) + 1; seen.set(hit[0], n); if (n > 1) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "advice_repeat", sentence: sen, detail: `같은 처방 「${hit[0]}」 ${n}번째`, hint: "같은 처방은 책에서 한 번 — 이 근거에 맞는 다른 행동으로(설계도 「할 일 씨앗」)" }); }
+      // AM2-6 5부: 같은 처방이 한 소제목 안에서 두 번이면 고객이 알아챈다(P5 세운 8.2 「하루 묵히기」 ¶1 → ¶3) — 교체 대상(advice_repeat_sec).
+      if (hit) { const n = (seen.get(hit[0]) ?? 0) + 1, here = `${c.n}.${si}`, sameSec = secOf.get(hit[0]) === here; seen.set(hit[0], n); secOf.set(hit[0], here); if (n > 1) out.push({ chapter: c.n, section: si, paragraph: pi, rule: sameSec ? "advice_repeat_sec" : "advice_repeat", sentence: sen, detail: `같은 처방 「${hit[0]}」 ${n}번째${sameSec ? " · 같은 소제목" : ""}`, hint: "같은 처방은 책에서 한 번 — 이 근거에 맞는 다른 행동으로(설계도 「할 일 씨앗」)" }); }
       if (FRAME.test(sen)) { frames++; framesHere++; if (frames > 4 || framesHere > 1) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "advice_repeat", sentence: sen, detail: `「모습이 어울려요」 책 ${frames}번째 · 장 ${framesHere}번째`, hint: "앞날 받는 틀을 돌려 쓴다(「…해 보기 좋은 때예요」「…라면 …해 보세요」「…쪽으로 마음이 기울기 쉬워요」)" }); }
       if (CONTRA.test(sen) && ++contra > 2) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "advice_repeat", sentence: sen, detail: `「반대로」 ${contra}번째`, hint: "「반대로」는 앞 문장과 뜻이 맞설 때만 — 다른 이음말이나 이음말 없이" });
     } }));
@@ -880,7 +882,7 @@ export function am24Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
 
 /** 처방 종류 되풀이(2부 사전): 같은 종류가 책에서 두 번(화면 카드 할 일이 먼저 자리를 잡는다). 두 번째부터. */
 export function rxRepeats(chapters: readonly FinalChapter[], x: Intake): ChunkFlag[] {
-  const out: ChunkFlag[] = [], used = new Map<RxKind, string>();
+  const out: ChunkFlag[] = [], used = new Map<RxKind, string>(), usedSec = new Map<RxKind, string>();
   for (const c of x.chapters) for (const k of c.keys ?? []) if (k.todo) for (const kd of rxKindsOf(k.todo)) if (!used.has(kd)) used.set(kd, `${k.label} 카드`);
   for (const c of chapters) {
     if (c.source === "deterministic") continue;
@@ -890,8 +892,8 @@ export function rxRepeats(chapters: readonly FinalChapter[], x: Intake): ChunkFl
       const sen = raw.replace(/[⟪⟫]/g, ""), kinds = rxOfSentence(sen); if (!kinds.length) continue;
       // 그 장이 맡은 종류는 그 장 안에서 풀어 써도 된다(오탐 검토: 쉬기 장의 「쉬는 법」 둘째 문장).
       const taken = kinds.find(kd => used.has(kd) && !(kd === own && used.get(kd) === `${c.n}장`) && !(kd === own && !ownUsed));
-      if (taken) { out.push({ chapter: c.n, section: si, paragraph: pi, rule: "rx_repeat", sentence: sen, detail: `처방 「${taken}」은 ${josa(used.get(taken) ?? "", "이가")} 맡음`, hint: `같은 처방 종류는 책에서 한 곳 — 이 장의 「쓸 처방 종류」(${own ?? "사전 밖 행동"})로` }); continue; }
-      for (const kd of kinds) { used.set(kd, `${c.n}장`); if (kd === own) ownUsed = true; }
+      if (taken) { const sameSec = usedSec.get(taken) === `${c.n}.${si}`; out.push({ chapter: c.n, section: si, paragraph: pi, rule: sameSec ? "rx_repeat_sec" : "rx_repeat", sentence: sen, detail: `처방 「${taken}」은 ${josa(used.get(taken) ?? "", "이가")} 맡음${sameSec ? " · 같은 소제목" : ""}`, hint: `같은 처방 종류는 책에서 한 곳 — 이 장의 「쓸 처방 종류」(${own ?? "사전 밖 행동"})로` }); continue; }
+      for (const kd of kinds) { used.set(kd, `${c.n}장`); usedSec.set(kd, `${c.n}.${si}`); if (kd === own) ownUsed = true; }
     } }));
   }
   return out;
@@ -991,3 +993,194 @@ export function valueFlags(chapters: readonly FinalChapter[]): ChunkFlag[] {
   }
   return out;
 }
+
+// ======================================================================
+// AM2-6(덕짱님 지시 2026-11-12) — 고리에 뜻 · 짝에 이유 · 다시 쓰기 사실 고정 · 입력 거름 끝까지. P5 판독 네 건의 차단 18곳 지도와 1~5부 지시의 결정론 몫.
+// 등급: 차단(BLOCK — 교체 뒤에도 남으면 지우기 단계) · 교체(FIX_RULES — 경계 · 「고객이 알아챌 것: 예」 경미. 문단 교체로만 고치고 지우지 않는다).
+// ======================================================================
+/** 교체만 하는 규칙(경계 · 고객이 알아챌 경미 — 덕짱님 지시 5부 「지우지 않고 문단 교체 대상으로」). 순서는 차단 → 경계(FIX_BOUNDARY) → 경미(FIX_NOTICE). */
+export const FIX_BOUNDARY: ReadonlySet<string> = new Set(["tone_mismatch", "must_bare", "pair_last", "pair_causal", "key_paras", "rx_extra", "claim_months"]);
+export const FIX_NOTICE: ReadonlySet<string> = new Set(["link_template", "pair_opener", "gyeol_cap", "rel_echo", "chapter_repeat", "ending_cap", "head_echo", "advice_repeat_sec", "rep_adjacent", "rx_repeat_sec", "screen_repeat"]);
+export const FIX_RULES: ReadonlySet<string> = new Set([...FIX_BOUNDARY, ...FIX_NOTICE]);
+/** 관계 이름 사전(4부 relation_scope): 천간합 · 천간충 · 육합 · 육충 · 형 · 파 · 해 · 원진 · 삼합국 · 방합. 이 책의 카드·배지에 없는 이름이 본문에 나오면 차단(부정형 포함). */
+const REL_DICT: readonly string[] = (() => {
+  const two = ["갑기합", "을경합", "병신합", "정임합", "무계합", "갑경충", "을신충", "병임충", "정계충", "자축합", "인해합", "묘술합", "진유합", "사신합", "오미합", "자오충", "축미충", "인신충", "묘유충", "진술충", "사해충",
+    "인사형", "사신형", "인신형", "축술형", "술미형", "축미형", "자묘형", "진진형", "오오형", "유유형", "해해형", "자유파", "축진파", "인해파", "묘오파", "사신파", "술미파", "자미해", "축오해", "인사해", "묘진해", "신해해", "유술해"];
+  const rev = two.map(n => `${n[1]}${n[0]}${n[2]}`);
+  return [...new Set([...two, ...rev, "인사신형", "축술미형", "자미원진", "축오원진", "인유원진", "묘신원진", "진해원진", "사술원진"])];
+})();
+const MBTI_TYPE_RE = /(?<![A-Z])(I|E)(N|S)(T|F)(J|P)(?![A-Z])/;
+const CONNECT_HEAD = /^(그래서|그만큼|그러니|그러면|그 덕|덕분에|이런|이렇게|그런|그렇게|그 (힘|마음|재미|성향|기운|흐름|쪽)|이 (힘|마음|재미|성향|쪽))/;
+const PLUS_TAIL = /(열리|열려|기회|기 좋|좋은 (때|달|해)|빛나|힘이 붙|살아나|풀리|무르익)[^.?!]{0,10}[.!]?$/;
+const MINUS_TAIL = /(늦추|조심|살피|살펴|흔들|부딪|어긋|막히|버거|무거워|지치|줄여|아끼|멈추)[^.?!]{0,12}[.!]?$/;
+const ADVICE_END = /(세요|보세요|두세요|해 보세요|두면 좋아요|면 좋아요|편이 좋아요|게 좋아요|해 두면 좋|하면 좋습니다)[.!]?$/;
+const READ_HJ: Readonly<Record<string, string>> = { 갑: "甲", 을: "乙", 병: "丙", 정: "丁", 무: "戊", 기: "己", 경: "庚", 신: "辛", 임: "壬", 계: "癸", 자: "子", 축: "丑", 인: "寅", 묘: "卯", 진: "辰", 사: "巳", 오: "午", 미: "未", 유: "酉", 술: "戌", 해: "亥" };
+const POS_N: Readonly<Record<string, number>> = { 첫: 1, 두: 2, 세: 3, 네: 4, 다섯: 5, 여섯: 6, 일곱: 7, 여덟: 8, 아홉: 9, 열: 10 };
+const META_WORDS = /(?<![가-힣])(자리 뜻|관계 뜻|재료 칸)(은|이|을|에|과|와|도)?(?![가-힣])|이어 볼 고리|고리가 (따로 )?없|(?<![가-힣])고리(가|는|를|로|도|와)? |짚어 (볼게요|보겠습니다|볼까요)|라는 뜻이 아니라|(두|세|네) 가지(만)? (짚|살펴|볼게|보겠|이야기)/;
+/** 결(길결 · 마음결)을 뺀 낱말 「결」. 짝 긴장 꼴 「…와 부딪치는 결이라」는 세지 않는다(덕짱님 지시 2부의 꼴). */
+const GYEOL = /(?<![가-힣])결(?=(?:이|은|을|의|도|에|로|이에요|입니다|이라|이기도)?(?![가-힣]))/g;
+
+export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
+  const out: ChunkFlag[] = [];
+  const x = b.intake, plans = new Map(x.chapters.map(c => [c.n, c])), lineById = new Map(x.lines.map(l => [l.id, l]));
+  const keyPlans = new Map(x.chapters.flatMap(c => (c.keys ?? []).map(k => [k.key, k] as const)));
+  const entries = b.brief?.timeline?.entries ?? [];
+  const bookNames = new Set([...entries.flatMap(e => e.badges.map(bd => relName(bd.label).replace(/ 반합$/, ""))), ...[...x.lines.map(l => `${l.value} ${l.meaning}`).join(" ").matchAll(/[갑을병정무기경신임계자축인묘진사오미신유술해]{2,3}(합|충|형|파|해|원진)/g)].map(m => m[0])]);
+  const product = x.product, baseYear = Number((b.brief?.baseDate ?? "").slice(0, 4)) || 0;
+  const bookYear = product === "annual_fortune" ? Number(entries.find(e => e.kind === "year")?.key) || baseYear : baseYear;
+  const life = b.brief?.timeline?.lifetime ?? [];
+  const cycleOf = (y: number, ganji?: string) => (ganji ? life.find(c => c.ganji.includes(ganji)) : undefined) ?? life.find(c => c.startYear <= y && y <= c.endYear);
+  const facts = b.brief?.person.facts, callName = b.brief?.person.callName ?? "";
+  const bSegs = x.lines.filter(l => l.subject === "mbti").flatMap(l => l.meaning.split(/ · |(?<=[.!?])\s+/)).map(t => t.trim()).filter(t => t.replace(/[^가-힣]/g, "").length >= 6);
+  const mbtiHit = (sen: string, pairWhy?: string) => Boolean((b.mbtiType && sen.includes(b.mbtiType)) || (b.mbtiType && MBTI_TYPE_RE.test(sen)) || bSegs.some(sg => overlap4(sen, sg) >= 4) || (pairWhy && overlap4(sen, pairWhy) >= 4));
+  const slowMonths = new Set(x.lines.filter(l => /(늦출|새기 쉬운|살필|흔들림을 살필|무리하기 쉬운) 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)]));
+  const gyeolSeen = { n: 0 };
+  const lastCh = Math.max(...x.chapters.map(c => c.n));
+  for (const c of chapters) {
+    if (c.source === "deterministic") continue;
+    const plan = plans.get(c.n);
+    const templ = new Map<string, number>(), openers = new Map<string, number>(), skels = new Map<string, number>();
+    // 처방 수·자리(5부): 장마다 처방은 마지막 소제목에 하나. 「할 것·피할 것」 소제목은 행동이 본문이다.
+    const lastSec = c.sections.length - 1; let rxInLast = 0;
+    c.sections.forEach((s, si) => {
+      const kp = c.keys?.includes(s.heading) ? keyPlans.get(s.heading) : undefined, e = kp ? entries.find(en => en.key === kp.key) : undefined;
+      const sp = !kp ? plan?.sections?.[si] : undefined;
+      const sents = s.paragraphs.flatMap((p, pi) => splitSentences(p).map((raw, sj) => ({ sen: raw.replace(/[⟪⟫]/g, ""), pi, sj })));
+      const flag = (at: { sen: string; pi: number }, rule: string, hint: string, detail?: string) => out.push({ chapter: c.n, section: si, paragraph: at.pi, sentence: at.sen, rule, hint, ...(detail ? { detail } : {}) });
+      const advice = /할 것|피할 것/.test(sp?.q ?? s.heading);
+      const pairHere = kp?.pair ? x.pairs.find(p2 => p2.id === kp.pair) : undefined;
+      const sectionPairs = !kp ? x.pairs.filter(p2 => !p2.key && (p2.use ?? []).includes(c.n) && (sp?.lines ?? []).includes(p2.myeongri) && (sp?.lines ?? []).includes(p2.mbti)) : [];
+      const basisB = kp ? kp.lines.some(id => lineById.get(id)?.subject === "mbti") : (sp?.lines ?? []).some(id => lineById.get(id)?.subject === "mbti");
+      // 짝 범위 밖 명리 말(그 key): 고리 자리 뜻 · 관계 이름 · 대운 · 다른 십성(땅 십성이 하늘과 다를 때 · 대운 십성).
+      const sky = e ? e.tenGod.stem.replace(/\(.*$/, "") : "", ground = e ? e.tenGod.branch.replace(/\(.*$/, "") : "";
+      // 고리 자리 뜻 말(그 key 재료의 자리 뜻 — 「연인과의 사이」 「일터와 맡은 일」 …)과 고리 꼬리(「움직이」)도 짝 밖이다(P5 세운 1월 「사이가 움직이는 때, 곁을 데우는 힘」).
+      const seatWords = (kp?.links ?? []).filter(l => l.kind === "seat" && l.seatMeaning).flatMap(l => l.seatMeaning!.split(/[·\s]+/).map(w => w.replace(/(과의|와의|과|와|의|쪽)$/, "")).filter(w => w.length >= 2 && !/^(사이|쪽|맡은|일과|나와|사람|가장|사람들|내|돈|일|자리|바깥|모임|생활|하루|거래|밖|섞인|버는|들고|나는|찾는|꾸리는|혼자|집안에서)$/.test(w)));
+      const outScope = kp ? new RegExp([...(b.keyRels?.get(kp.key) ?? [])].filter(n2 => n2.length >= 2).map(esc2).concat([...new Set(seatWords)].map(esc2), ["사이가 (다시 )?움직이", "쪽이 (다시 )?움직이", "대운", "태어난 (해|달|날|시각)", "가까운 사람", "일터", "바깥 모임", "내 생활", "겹치", ...(ground && ground !== sky ? [ground] : []), ...(e?.dayun?.tenGod ? [e.dayun.tenGod.replace(/\(.*$/, "")].filter(t => t !== sky) : [])]).join("|")) : null;
+      sents.forEach(({ sen, pi, sj }, i) => {
+        const at = { sen, pi };
+        const prev = sents[i - 1], next = sents[i + 1];
+        // relation_scope(사전 전체): 이 책 카드·배지에 없는 관계 이름.
+        // 더 긴 이름 안의 글자(「인사신형」 안의 「사신형」 · 「축술미형」 안의 「술미형」)는 그 이름의 일부다.
+        { const longer = [...REL_DICT, ...bookNames].filter(n2 => n2.length >= 4);
+          const nm = REL_DICT.find(n2 => { if (bookNames.has(n2) || bookNames.has(`${n2[1]}${n2[0]}${n2.slice(2)}`)) return false; for (let i0 = sen.indexOf(n2); i0 >= 0; i0 = sen.indexOf(n2, i0 + 1)) if (!longer.some(L2 => L2 !== n2 && L2.includes(n2) && sen.slice(Math.max(0, i0 - (L2.length - n2.length)), i0 + L2.length).includes(L2))) return true; return false; });
+          if (nm) flag(at, "relation_scope", `「${nm}」은 이 책 카드·배지에 없는 관계다 — 이 책의 관계만(「…가 아닌」 부정으로도 쓰지 않는다)`, nm); }
+        // dayun_position: 본문 위치 말 ↔ 엔진 yearIndex.
+        if (/대운|10년/.test(sen)) { const m = /(\d+|첫|두|세|네|다섯|여섯|일곱|여덟|아홉|열)\s?(?:번째 해|해째)|한가운데|중반|초반|끝 무렵|막바지|끝자락|후반|첫해|마지막 해/.exec(sen);
+          // 대상 해: 문장 안의 해(대운 시작 표기 「20XX년 N월 무렵부터」는 빼고) → 같은 소제목 앞 문장의 마지막 해 → key의 해 → 책의 해.
+          const yearsIn = (t: string) => [...t.matchAll(/(20\d\d)년(?! \d{1,2}월 무렵부터| 무렵부터)/g)].map(x => Number(x[1]));
+          // 앞 문장의 해는 대운 시작 · 교운 문맥(「무렵부터」 「시작」 「대운」이 든 문장)이면 쓰지 않는다 — 그 해는 위치의 대상이 아니다(AM-01 · P~P3 대운 3장 「일곱 번째 해」 오탐).
+          if (m) { const prevYears = sents.slice(0, i).filter(z => z.pi === pi).map(z => z.sen).filter(z => !/무렵부터|시작|대운|교운/.test(z)).join(" ");
+            const ym0 = yearsIn(sen)[0] ?? (kp || /올해|이 책을 쓴|기준일|이 해/.test(sen) ? undefined : yearsIn(prevYears).at(-1)), ym = ym0 ? [String(ym0), String(ym0)] : null, y = ym ? Number(ym[1]) : kp && e?.kind === "year" ? Number(kp.key) : product === "annual_fortune" ? bookYear : baseYear;
+            const gm = /([갑을병정무기경신임계][자축인묘진사오미신유술해]) 대운/.exec(sen), next2 = /다음 대운|새 대운/.test(sen) && !gm;
+            const cyc0 = cycleOf(y, gm?.[1]), cyc = next2 ? life[life.findIndex(l2 => l2 === cyc0) + 1] ?? cyc0 : cyc0;
+            // 엔진 값 먼저: 그 해 카드의 대운 yearIndex(화면 10년표와 같은 값). 이름을 댄 대운이 그 해 카드의 대운과 다르면 평생 대운 줄로 센다.
+            const ent = entries.find(en => en.kind === "year" && Number(en.key) === y), entG = ent?.dayun?.ganji.replace(/[^가-힣一-鿿]/g, "") ?? "";
+            const sameCyc = ent?.dayun?.yearIndex && (!gm || entG.includes(gm[1]) || [...gm[1]].every(ch => (READ_HJ[ch] ?? "") && entG.includes(READ_HJ[ch]))) && !next2;
+            const idx = sameCyc ? ent!.dayun!.yearIndex! : cyc ? y - cyc.startYear + 1 : 0;
+            if (cyc && idx >= 1 && idx <= 10) { const n = m[1] ? (POS_N[m[1]] ?? Number(m[1])) : undefined, w = m[0];
+              const ok = n !== undefined ? n === idx : /한가운데|중반/.test(w) ? idx >= 4 && idx <= 7 : /초반/.test(w) ? idx <= 3 : /끝 무렵|막바지|끝자락|후반/.test(w) ? idx >= 8 : w === "첫해" ? idx === 1 : w === "마지막 해" ? idx === 10 : true;
+              if (!ok) flag(at, "dayun_position", `${y}년은 ${cyc.ganji.replace(/[^가-힣]/g, "").slice(0, 2)} 대운 ${idx}번째 해 — 위치 말은 카드 「위치 값」 그대로`, `「${w}」 ≠ ${idx}번째 해`); } } }
+        // month_range 넓힘: 범위·묶음 말(하반기 · 상반기 · 연초 · 연말 · …에 걸쳐 · …사이에)이 달 목록에 섞임.
+        if ((MONTH_NAME_IN.test(sen) || /달(이|은|들)/.test(sen)) && /(하반기|상반기|연초|연말)(에|의|와|과|부터|까지|로|에는|에도)?(?![가-힣])|(달|월)[^.?!]{0,24}에 걸쳐|(월|달)[^.?!]{0,10} 사이(에|의)/.test(sen)) flag(at, "month_range", "달 목록은 카드 달 이름 그대로 — 하반기·상반기·연초·…에 걸쳐·…사이에 같은 범위·묶음 말을 섞지 않는다");
+        // orphan_deictic: 「그 + (꾸밈말) + 명사」 「이 세 달」 「두 소망」의 앞말이 같은 소제목에 없다.
+        { const before = [s.heading, kp?.head ?? "", ...sents.slice(0, i).map(z => z.sen)].join(" ");
+          const num = /(?<![가-힣])(이|그) (두|세|네|다섯) (달|해)(은|는|이|가|을|를|에|에는|의|도)/.exec(sen);
+          if (num) { const need = POS_N[num[2]], pre = `${before} ${sen.slice(0, num.index)}`; const have = monthsIn(pre).size + [...pre.matchAll(/20\d\d년/g)].length; if (have < need) flag(at, "orphan_deictic", `「${num[0].trim()}」이 가리키는 ${num[3]} 이름이 같은 소제목 앞에 없다 — 달·해 이름을 적는다`, num[0]); }
+          else {
+            // 「그 + 명사」는 판독 기준으로 앞말 없이 읽히는 경우가 많다(「그 열이」 「그 침묵이」 — 앞 장면을 받는 말). 그래서 둘만 본다:
+            // (가) 그림 명사(불 · 등불 · 씨앗 · 꽃 · 문 · 무대 …)가 같은 장 앞에 한 번도 없다(P5 세운 10.2 「그 불을」).
+            // (나) 「그 + 꾸밈말(-한 · -운 · -진 · -된 · -던) + 명사」에서 꾸밈말도 명사도 같은 장 앞에 없다(P5 대운 3.2 「그 섬세한 감각이」).
+            const chBefore = `${c.sections.slice(0, si).flatMap(s2 => s2.paragraphs).join(" ")} ${before} ${sen.slice(0, Math.max(0, sen.search(/(?<![가-힣])(그|저) /)))}`;
+            const stem2 = (w: string) => esc2(w.slice(0, Math.min(2, w.length)));
+            const word = (t: string) => t.replace(/(에서는|에서도|에서만|에서|에게는|에게|으로는|으로|로는|로|에는|에도|에|의|을|를|이|가|은|는|도|만|과|와|처럼|까지|부터)+$/, "");
+            const mm = /(?<![가-힣])(그|저) ([가-힣]+(?:한|운|진|된|던|센|큰|린)) ([가-힣]+)/.exec(sen);
+            const mb = /(?<![가-힣])(그|저) ([가-힣]+)/.exec(sen), noun = mb ? word(mb[2]) : "";
+            const IMAGE_N = /^(불|불씨|불꽃|등불|빛|물|물길|씨앗|싹|꽃|나무|뿌리|열매|문|창|무대|판|별|그림|열쇠|다리|파도|바람|날개|배|돛|지도|길잡이|나침반|불길)$/;
+            const mn = /(?<![가-힣])(두|세) (소망|바람|갈래)(은|는|이|가|을|를|과|와|의)(?=\s)/.exec(sen);
+            if (mm && !/^(위|앞|뒤|안|밖|옆|사이|전|후|가운데|중|때|날|해|달|쪽|무렵)$/.test(word(mm[3])) && !new RegExp(stem2(mm[2])).test(chBefore) && !new RegExp(stem2(word(mm[3]))).test(chBefore)) flag(at, "orphan_deictic", `「${mm[0].trim()}」이 가리키는 말이 앞에 없다 — 가리키는 말을 다시 적거나 문장을 고친다`, mm[0].trim());
+            else if (!mm && mb && IMAGE_N.test(noun) && !new RegExp(esc2(noun)).test(chBefore)) flag(at, "orphan_deictic", `「그 ${noun}」이 가리키는 말이 이 장 앞에 없다 — 가리키는 말을 다시 적거나 문장을 고친다`, `그 ${noun}`);
+            else if (mn && !/바람|소망|«|갈래|과 |와 |, /.test(`${before} ${sen.slice(0, mn.index)}`)) flag(at, "orphan_deictic", `「${mn[0].trim()}」이 가리키는 말이 같은 소제목 앞에 없다`, mn[0].trim());
+          } }
+        // 시점(4부): 최근 · 오늘 · 앞날인 달을 지난 일로.
+        { const unq = sen.replace(/["“][^"”]*["”]|['‘][^'’]*['’]/g, ""); const t = /(?<![가-힣])(최근|오늘)(?![가-힣]|날)/.exec(unq); if (t) flag(at, "time_extra", "「최근·오늘」은 읽는 날에 기대는 말 — 쓰지 않는다(따옴표 대사 밖)", t[0]); }
+        { const fp = /((?:20\d\d년 )?(?:1[0-2]|[1-9])월(?: · [가-힣]{2}월)?|20\d\d년(?: [가-힣]{2}년)?)[^.?!]{0,12}?(을|를)? (지나왔|지나온|지났다면|겪었다면|보냈다면|보낸 뒤)/.exec(sen);
+          if (fp) { const yy = /(20\d\d)년/.exec(fp[1]); const isFuture = product === "annual_fortune" ? true : yy ? Number(yy[1]) > baseYear : false; if (isFuture) flag(at, "future_past", "책을 쓴 날 뒤에 오는 달·해를 지난 일로 쓰지 않는다 — 「…이 오면」처럼", fp[0]); } }
+        // 입력 밖 가정(3부): 하는 일을 모르는 자영업·사업자의 가게 · 연애 중·기혼의 솔로 전제.
+        if (facts) {
+          const shop = /가게(?! ?(하|해|합|했|되|돼|됐|만들|두|둡))|매장|셔터|손님|단골|오픈 준비|장사/.exec(sen); if (shop && !/가게|매장|카페|식당|숍|샵|점포|장사|요식|판매/.test(facts.job.detail ?? "")) flag(at, "input_premise", "하는 일을 모른다 — 가게·매장·손님을 전제하지 않는다", shop[0]);
+          const solo = /소개팅|(?<![가-힣])썸(?![가-힣])|새 인연을 만난다면|(새 )?인연이 생긴다면|짝사랑/.exec(sen); if (solo && /^(dating|married)$/.test(facts.relationship)) flag(at, "input_premise", `${facts.relationship === "dating" ? "연애 중" : "기혼"}이다 — 솔로 전제(소개팅·썸·새 인연)를 쓰지 않는다`, solo[0]);
+        }
+        // 작성 메모 · 개수 예고 · 「…라는 뜻이 아니라」.
+        { const mw = META_WORDS.exec(sen); if (mw) flag(at, "meta_trace", "작성 메모·개수 예고·「…라는 뜻이 아니라」를 쓰지 않는다", mw[0]); }
+        // 이름 부르기(4부): 첫 장 · 끝 장의 첫 문단 밖.
+        if (callName && callName.length >= 2 && sen.includes(callName) && !((c.n === 1 || c.n === lastCh) && si === 0 && pi === 0)) flag(at, "name_call", "이름은 첫 장·끝 장 첫 문단에서만 — 그 밖은 「당신」", callName);
+        // 결(재료 칸 말)은 책에서 세 번까지.
+        for (const g of sen.matchAll(GYEOL)) { if (/부딪치는 결이라/.test(sen.slice(Math.max(0, g.index! - 6), g.index! + 4))) continue; if (++gyeolSeen.n > 3) { flag(at, "gyeol_cap", "「결」은 책 전체에서 세 번까지 — 다른 말로", `결 ${gyeolSeen.n}번째`); break; } }
+        // ---- 짝(2부) ----
+        const mb = mbtiHit(sen, pairHere?.why);
+        if (mb) {
+          if (kp && !pairHere && !basisB) flag(at, "pair_clause", "이 달·해에는 짝이 없다 — MBTI 유형 이름·MBTI 줄 뜻을 쓰지 않는다", "짝 없는 key");
+          if (!kp && !sectionPairs.length && !basisB) flag(at, "pair_clause", "이 소제목에는 MBTI 근거·짝이 없다 — MBTI 유형 이름·MBTI 줄 뜻을 쓰지 않는다", "짝 없는 절");
+          if (kp && pairHere && outScope?.test(sen)) flag(at, "pair_scope", `짝 범위 밖(${sen.match(outScope)![0]})과 MBTI를 잇지 않는다 — 짝은 하늘 ${sky}과 그 영역 줄만`, sen.match(outScope)![0]);
+          if (/(하늘|땅)에 든 (달|해|때)(이라|라서|라|이니|니까)[, ]/.test(sen)) flag(at, "pair_causal", "「…가 하늘에 든 달이라, 유형은」처럼 한쪽을 다른 쪽의 원인으로 쓰지 않는다 — 잇는 이유 꼴로");
+          if (kp && pairHere) { const op = sen.replace(b.mbtiType ?? "§", "〈유형〉").split(/\s+/).slice(0, 2).join(" "); const n = (openers.get(op) ?? 0) + 1; openers.set(op, n); if (n > 2) flag(at, "pair_opener", `짝 첫머리 「${op}」가 장에서 ${n}번째 — 다른 꼴로`, op); }
+          // 이웃 문장 잇기: MBTI 문장 바로 다음(앞) 문장이 짝 밖 명리 말을 「그래서 · 그만큼 · 그 …」로 잇는다.
+          // 이웃 문장이 「그래서 · 그만큼 · 그 …」로 열거나, MBTI 문장의 낱말을 「그 + 낱말」로 받으면(「그 달력」) 이은 것이다.
+          const takes = (z: { sen: string } | undefined, from: string) => Boolean(z && [...z.sen.matchAll(/(?<![가-힣])그 ([가-힣]{2,4})/g)].some(g => from.includes(g[1].replace(/(을|를|이|가|은|는|도|에|의|과|와)$/, ""))));
+          const nb = [next && (CONNECT_HEAD.test(next.sen) || takes(next, sen)) ? next : undefined, CONNECT_HEAD.test(sen) || takes({ sen }, prev?.sen ?? "") ? prev : undefined].filter((z): z is typeof sents[number] => Boolean(z));
+          for (const z of nb) { const myW = kp ? outScope : new RegExp(`${TG}|대운|세운|태어난 (해|달|날|시각)|[갑을병정무기경신임계][자축인묘진사오미신유술해](월|년|일주)`); if (myW?.test(z.sen) && !(sectionPairs.length && sectionPairs.some(pp => overlap4(`${sen} ${z.sen}`, pp.why) >= 3))) { flag(z === next ? { sen: z.sen, pi: z.pi } : at, kp && pairHere ? "pair_scope" : "pair_link", "MBTI 문장과 짝 밖 명리 문장을 이웃 문장으로 잇지 않는다(문장을 나눠도 같다)", "이웃 문장 잇기"); break; } }
+        }
+        // ---- 고리·방향·틀(1부) ----
+        if (kp) {
+          if (pi === 0 && sj === 0) {
+            const l0 = (kp.links ?? []).find(l => l.kind === "seat");
+            // 틀: 「X이 닿는 태어난 Y 자리는 …」 「X은 태어난 Y 자리에 닿아요」 「…인 당신에게는 … 쪽이 움직이는 때」 · 재료 줄 옮김 · 이름을 가린 꼴이 같은 첫 문장(「〈관계〉과 〈관계〉가 걸려요」).
+            const relRe = [...bookNames].filter(n2 => n2.length >= 2).sort((p1, p2) => p2.length - p1.length).map(esc2).join("|");
+            const skel = sen.replace(relRe ? new RegExp(relRe, "g") : /$^/, "〈관계〉").replace(/태어난 (해|달|날|시각)/g, "〈자리〉").replace(/(?:20\d\d년 )?(?:1[0-2]|[1-9])월 · [가-힣]{2}월|20\d\d년(?: [가-힣]{2}년)?/g, "〈때〉").replace(/[^가-힣〈〉]/g, "");
+            const t1 = /닿/.test(sen) && /태어난 (해|달|날|시각) 자리/.test(sen) ? "닿는 자리" : /(인|한|은) 당신에게(는)? [^.?!]{0,30}(쪽|사이)(이|가)? (다시 )?움직이(는|기 쉬운) (때|달|해)/.test(sen) ? "당신에게는 움직이는 때" : l0 && overlap4(sen, l0.text) >= 10 ? "재료 옮김" : null;
+            const same = [...skels.entries()].find(([k2]) => { const A2 = new Set<string>(), B2 = new Set<string>(); for (let q = 0; q + 3 <= k2.length; q++) A2.add(k2.slice(q, q + 3)); for (let q = 0; q + 3 <= skel.length; q++) B2.add(skel.slice(q, q + 3)); let n3 = 0; for (const w of A2) if (B2.has(w)) n3++; return A2.size + B2.size > 0 && n3 / (A2.size + B2.size - n3) >= 0.7; })?.[0];
+            const tid = t1 ?? (same ? `꼴 「${same.slice(0, 16)}…」` : null);
+            if (!same) skels.set(skel, 1); else skels.set(same, (skels.get(same) ?? 1) + 1);
+            if (tid) { const n = t1 ? (templ.get(t1) ?? 0) + 1 : skels.get(same!)!; if (t1) templ.set(t1, n); if (n > 2) flag(at, "link_template", `달·해 첫 문장 틀(${tid})이 장에서 ${n}번째 — 이 달·해의 재료로 다르게 연다`, tid); }
+          }
+          // 화면 되풀이: 핵심 배지 줄·뜻 한 줄을 본문에 옮김.
+          if (e) for (const bd of e.badges) if ((kp.core ?? []).some(cn => cn.replace(/ 반합$/, "") === relName(bd.label).replace(/ 반합$/, "")) && overlap4(sen, bd.line.replace(/^반합\([^)]*\): /, "")) >= 7) { flag(at, "rel_echo", "화면 「명리로 보면」 배지 줄을 옮기지 않는다 — 이 사람 상황에 맞춘 말로", relName(bd.label)); break; }
+        }
+        // 처방 수·자리.
+        if (!kp && !advice && ADVICE_END.test(sen)) { if (si !== lastSec) flag(at, "rx_extra", "처방은 장마다 마지막 소제목에 하나만 — 이 소제목은 권유로 맺지 않는다", "마지막 소제목 밖 권유"); else if (++rxInLast > 2) flag(at, "rx_extra", "처방은 장마다 하나 — 둘째 처방을 더하지 않는다", "처방 셋째"); }
+        if (!kp && plan?.rx?.forbid.length) { const kinds = rxOfSentence(sen).filter(kd => plan.rx!.forbid.includes(kd)); if (kinds.length && ADVICE_END.test(sen)) flag(at, "rx_extra", `금지 종류 처방(${kinds.join("·")})은 다른 곳이 맡는다`, kinds.join("·")); }
+      });
+      if (kp) {
+        const body = sents.map(z => z.sen), lastS = sents.at(-1);
+        // 짝 문장은 key의 마지막 문장.
+        if (pairHere && lastS && sents.some(z => mbtiHit(z.sen)) && !mbtiHit(lastS.sen)) { const m0 = sents.find(z => mbtiHit(z.sen))!; flag(m0, "pair_last", "짝 문장은 이 달·해 본문의 마지막 문장에 둔다", "짝이 끝 문장이 아님"); }
+        // 방향: 고리 재료 방향(살필 쪽 · 좋은 쪽)과 끝 문장 꼬리. 다른 장 「늦출 달」에 든 달도 살필 쪽.
+        const l0 = (kp.links ?? []).find(l => l.kind === "seat");
+        const slow = monthsIn(kp.label).size > 0 && [...monthsIn(kp.label)].some(m2 => slowMonths.has(m2));
+        const dir = l0?.dir === "minus" || slow ? "minus" : l0?.dir === "plus" ? "plus" : "none";
+        if (lastS && dir === "minus" && PLUS_TAIL.test(lastS.sen) && !/[?？]$/.test(lastS.sen)) flag(lastS, "tone_mismatch", "이 달·해는 살필 쪽(배지·영역 칩·늦출 달) — 좋은 꼬리(열리는·기회·…기 좋은)로 맺지 않는다", "살필 쪽 + 좋은 꼬리");
+        if (lastS && dir === "plus" && MINUS_TAIL.test(lastS.sen) && !/[?？]$/.test(lastS.sen) && !mbtiHit(lastS.sen)) flag(lastS, "tone_mismatch", "이 달·해는 좋은 쪽 — 살필 꼬리(흔들·늦추·조심)로 맺지 않는다", "좋은 쪽 + 살필 꼬리");
+        // 반드시 쓸 것 이름만(R-G3, 덕짱님 결정 5-3 「이름 + 뜻 한 마디면 쓴 것」): 이름은 있는데 key 본문 어디에도 그 관계 종류의 뜻 말 · 그 배지 그림 말이 없다.
+        const SENSE: Readonly<Record<string, RegExp>> = { 합: /맺|묶|맞물|어울|모이|모여|모으|붙|손을 잡|짝이 맞|머무|자리를 잡/, 국: /모이|모여|모으|뭉치|묶|한 기운|한 방향|팀/, 충: /부딪|충돌|흔들|맞서|바뀌|열리|오르내리|전환/, 형: /다듬|눌러|누르|손보|벌주|거칠|몰아|틀어/, 파: /어긋|틀어|깨지|흐트러|비는|다시 올라/, 해: /방해|발이 걸|서운|틈|새는|안 통|알아주지/, 원진: /까끌|엇박|미워/, 공망: /빠져|빈자리|비어|새는|빔/ };
+        const bodyAll = body.join(" ");
+        for (const m of kp.must ?? []) { if (m.what === "대운과 겹침") continue; const nm = m.what.replace(/ 반합$/, ""); if (!bodyAll.includes(nm)) continue;
+          const kind = /국$|방합$/.test(nm) ? "국" : /원진$/.test(nm) ? "원진" : m.what === "공망" ? "공망" : nm.slice(-1);
+          const img = e?.badges.find(bd => relName(bd.label).replace(/ 반합$/, "") === nm)?.line.replace(/^반합\([^)]*\): /, "") ?? "";
+          const seatL = (kp.links ?? []).find(l => l.kind === "seat" && l.rel === m.what), seatSaid = Boolean(seatL && /가까운 사람|일터|바깥 모임|내 생활|연애|연인|배우자|윗사람|사업|거래|일자리|자녀|맡은 일/.test(bodyAll));
+          // 고리가 붙은 관계는 본문 어디든, 둘째 관계는 그 이름이 든 문장이나 바로 다음 문장에 뜻 말이 있어야 한다(첫째 관계의 뜻 말을 둘째 몫으로 세지 않는다 — P5 판독 R-G3 8 key).
+          const zi = sents.findIndex(z2 => z2.sen.includes(nm)), near = seatL ? bodyAll : `${sents[zi]?.sen ?? ""} ${sents[zi + 1]?.sen ?? ""}`;
+          if (!seatSaid && !(SENSE[kind]?.test(near)) && overlap4(near, img) < 2) { const z = sents.find(z2 => z2.sen.includes(nm))!; flag(z, "must_bare", `「${m.what}」 이름만 나오고 뜻 한 마디가 없다 — 이름과 함께 이 사람 상황에 맞춘 뜻 한 마디`, m.what); } }
+        // 형식(5부): 달 key · 짧게 해 key는 문단 2개, 깊게 해 key는 2~3개.
+        const np = s.paragraphs.filter(p => p.trim()).length, want = kp.depth === "deep" ? [2, 3] : [2, 2];
+        if (np && (np < want[0] || np > want[1])) out.push({ chapter: c.n, section: si, paragraph: -3, rule: "key_paras", sentence: `[형식] ${kp.label} 문단 ${np}개`, hint: `${kp.label} 본문은 문단 ${want[0] === want[1] ? want[0] : want.join("~")}개`, detail: `문단 ${np}개` });
+      }
+      // 핵심 주장 달 목록(4부): 소제목 핵심 주장이 달 목록이면 카드 달 이름이 모두 본문에.
+      if (sp && sp.claimIds?.length && !sp.pointer) { const ms = [...new Set((sp.claimIds ?? []).flatMap(id => [...monthsIn(`${lineById.get(id)?.meaning ?? ""}`)]))];
+        if (ms.length >= 2) { const got = monthsIn(s.paragraphs.join(" ")); const miss = ms.filter(m2 => !got.has(m2)); if (miss.length) out.push({ chapter: c.n, section: si, paragraph: -3, rule: "claim_months", sentence: `[핵심 주장] ${c.n}.${si + 1} 달 목록에 ${miss.map(m2 => `${m2}월`).join("·")} 빠짐`, hint: `핵심 주장 달 목록은 카드 달 이름 그대로 모두(${ms.map(m2 => `${m2}월`).join("·")}) — 범위·묶음 말 없이`, detail: miss.join("·") }); } }
+    });
+  }
+  return out;
+}
+
+/** 그 장의 처방(권유 끝) 문장들(지우기 안전 검사용 — 처방을 지워 장에 처방이 없어지면 지우지 않는다). */
+export const adviceSentenceAt = (chs: readonly FinalChapter[], n: number) => (chs.find(c => c.n === n && !c.keys)?.sections ?? []).flatMap(sec => sec.paragraphs.flatMap(p => splitSentences(p))).filter(x => ADVICE_END.test(x.replace(/[⟪⟫]/g, "")));
