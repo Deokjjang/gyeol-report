@@ -57,7 +57,18 @@ export const TEN_GOD_SHORT: Readonly<Record<string, string>> = {
 };
 /** 자리 줄임: 「태어난 날·태어난 달」 → 「태어난 날·달」. */
 export const seatShort = (w: string) => { const s = w.split("·").map(x => x.trim()).filter(Boolean); return s.length ? `태어난 ${s.map(x => x.replace(/^태어난 /, "")).join("·")}` : ""; };
-/** 화면 「뜻」 한 줄(그 달·해 핵심, 결정론): 390px 두 줄 안(공백 포함 24자 안팎). */
+/** 표 한 줄 짧은 뜻(390px 표 칸 약 122px — 한 줄 8자 남짓, 두 줄 = 공백 포함 16자 안). */
+export const REL_ROW: Readonly<Record<string, string>> = { CHUNG: "부딪쳐 바뀜", HYEONG: "다듬을 일", YUKHAP: "맞물려 묶임", SAMHAP: "기운이 모임", BANGHAP: "계절 기운 모임", STEM_HAP: "하늘 글자 묶임", PA: "어긋날 일", HAE: "작은 방해", WONJIN: "까끌한 엇박자", GONGMANG: "힘이 새는 빈자리" };
+export const TEN_GOD_ROW: Readonly<Record<string, string>> = { 비견: "내 편과 경쟁", 겁재: "승부욕과 나눔", 식신: "만드는 즐거움", 상관: "틀을 깨는 말", 편재: "움직이는 큰돈", 정재: "꾸준한 돈", 편관: "다그치는 힘", 정관: "규칙과 평가", 편인: "남다른 공부", 정인: "도움과 배움" };
+/** 흐름표·10년표 한 줄 「뜻」(AM2-4 6부): 그 달·해 핵심, 390px에서 두 줄 안. 자리는 카드(명리로 보면)가 보여 준다. */
+export function coreRowLine(items: readonly CoreItem[]): string {
+  const c = items[0];
+  if (!c) return "";
+  if (c.kind === "rel") return c.badge.kind === "GONGMANG" ? `공망 · ${REL_ROW.GONGMANG}` : `${c.name} · ${REL_ROW[c.badge.kind] ?? "걸리는 관계"}`;
+  if (c.kind === "transition") return `새 대운 · ${TEN_GOD_ROW[c.tenGod] ?? c.tenGod}`;
+  return c.overlap ? `${c.name} · 대운과 겹침` : `${c.name} · ${TEN_GOD_ROW[c.name] ?? ""}`.replace(/ · $/, "");
+}
+/** 카드 「핵심」 한 줄(그 달·해 핵심, 결정론 — 카드 칸은 넓어 자리까지). */
 export function coreLine(items: readonly CoreItem[]): string {
   const c = items[0];
   if (!c) return "";

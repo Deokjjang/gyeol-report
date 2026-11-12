@@ -449,7 +449,13 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const screen = [`흐름 ${FLOW_WORD[e.flow.score]}`, ...e.badges.map(b => relName(b.label)), ...(fills.length ? [`${fills.map(x => ELEMENT_SAY[x] ?? x).join("·")} 채움`] : []), ...(todoRaw && when !== "past" ? [`할 일 「${todoRaw}」`] : [])];
   // 2-4 반드시 쓸 것 = 핵심 관계 이름(1~2). 핵심이 십성이면 머리 문장이 이름을 말한다(반드시 쓸 것 없음), 대운 겹침이면 「대운」.
   const must: MustItem[] = core.flatMap((c): MustItem[] => {
-    if (c.kind === "rel") { const base = c.name.replace(/ 반합$/, ""); const loose = [...base].map(esc).join(" ?·? ?"); return [{ what: c.name, re: [loose, GUK_ALIAS[base], base === "지지형" ? "([자축인묘진사오미신유술해]) ?\\1 ?형|자리와 형이|형이 걸려" : ""].filter(Boolean).join("|") }]; }
+    // 다른 꼴도 같은 것으로(오탐 검토 AM2-4 must_miss 18): 카드 뜻의 그림 말 첫 두 어절(「두 창고가」 「물과 불이」 「봄 글자가」) · 「태어난 X 자리(글자)와 + 그 관계 말」.
+    if (c.kind === "rel") { const base = c.name.replace(/ 반합$/, ""); const loose = [...base].map(esc).join(" ?·? ?");
+      const image = relMeaningOf(c.badge).split(/\s+/).slice(0, 2).map(esc).join("\\s?");
+      const kindWord = ({ CHUNG: "충|부딪", HYEONG: "형|다듬|눌러", PA: "파|어긋", HAE: "해|방해", WONJIN: "원진|까끌|미워", YUKHAP: "합|맞물|묶", SAMHAP: "합|반합|묶|모이", BANGHAP: "합|모여|모이", STEM_HAP: "합|어울|묶", GONGMANG: "공망|빠져" } as Record<string, string>)[c.badge.kind] ?? "합|충|형|파|해";
+      const seats = (c.badge.with ?? "").split("·").map(x => x.replace(/^태어난 /, "")).filter(Boolean);
+      const seatRe = seats.length ? `태어난 (${seats.join("|")})[^.?!]{0,10}(자리|글자)?(와|과)는? [^.?!]{0,16}(${kindWord})` : "";
+      return [{ what: c.name, re: [loose, GUK_ALIAS[base], base === "지지형" ? "([자축인묘진사오미신유술해]) ?\\1 ?형|자리와 형이|형이 걸려|글자가 같아|같은 글자끼리" : "", image.length >= 4 ? image : "", seatRe].filter(Boolean).join("|") }]; }
     if (c.kind === "tenGod" && c.overlap) return [{ what: "대운과 겹침", re: "대운" }];
     return [];
   });

@@ -25,7 +25,7 @@ function Rows({ rows, onPage, text }: { rows: readonly AmRow[]; onPage: (p: numb
     <button type="button" onClick={() => onPage(r.page)} className={a.row} aria-label={`${r.name} 카드 열기`}>
       <span className={a.when}><b>{r.name}{r.star ? <span className={a.star} aria-label="가장 오르는 때">{"\u00a0★"}</span> : null}</b><small>{r.sub}{r.now ? <em className={a.nowTag}>지금</em> : null}</small></span>
       <ElCells ganji={r.ganji} els={r.els} />
-      <span className={a.main}><span className={a.line}>{text(r.line)}</span><span className={a.gods}>하늘 {r.sky} · 땅 {r.ground}<Signals ups={r.ups} cautions={r.cautions} /></span></span>
+      <span className={a.main}><span className={a.line} data-row-line>{text(r.line)}</span><span className={a.gods}>하늘 {r.sky} · 땅 {r.ground}<Signals ups={r.ups} cautions={r.cautions} /></span></span>
       <FlowDots value={r.flow} word={r.flowWord} />
     </button></li>)}</ol>;
 }

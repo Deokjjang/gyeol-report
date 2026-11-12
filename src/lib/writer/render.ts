@@ -71,7 +71,8 @@ export function annotateChapter(sections: readonly BookSection[], ctx: AnnotateC
     for (const { ko, tag, re } of pats) {
       if (seen.has(ko)) continue;
       // AM2-4: 「거센 편인 달」(편이다)처럼 용어가 아닌 자리는 건너뛰고 다음 자리를 본다.
-      const adnominal = (i: number) => ko === "편인" && text[i - 1] === " " && ((text.charCodeAt(i - 2) - 0xac00) % 28 === 4);
+      // 앞말이 꾸밈꼴(「거센·느린·잔잔한·보통인」)이고 뒤가 「달·해·쪽…」일 때만(「2027년 편인은」의 편인은 십성 — 4종 회귀 taeo 9장).
+      const adnominal = (i: number) => ko === "편인" && /(?:[가-힣](?:한|운|은|는|던|센|린|른|쁜|픈|큰|진|된|간|난)|보통인) $/.test(text.slice(Math.max(0, i - 6), i)) && /^편인 (달|해|10년|시기|쪽|사람|때|흐름)/.test(text.slice(i));
       let m = re.exec(text); while (m && adnominal(m.index)) { const rest = text.slice(m.index + ko.length), m2 = re.exec(rest); m = m2 ? Object.assign(m2, { index: m.index + ko.length + m2.index }) : null; }
       if (!m) continue;
       const at = m.index, end = at + ko.length;

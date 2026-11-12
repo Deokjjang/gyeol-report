@@ -65,7 +65,9 @@ for (const scheme of ["light", "dark"]) {
             worst = Math.min(worst, eff); if (eff < 4.5) out.push({ text: el.textContent.trim().slice(0, 30), ratio: Number(eff.toFixed(2)) });
           }
           const over = document.documentElement.scrollWidth > window.innerWidth + 1;
-          return { worst: Number(worst.toFixed(2)), below: out.slice(0, 10), horizontalOverflow: over };
+          // AM2-4 6부: 흐름표·10년표 「뜻」 한 줄이 390px에서 두 줄을 넘지 않는지(줄 수 = 높이 ÷ 줄 높이).
+          const rowLines = [...document.querySelectorAll("[data-row-line]")].map(el => ({ text: el.textContent.trim(), lines: Math.round(el.getBoundingClientRect().height / parseFloat(getComputedStyle(el).lineHeight)) }));
+          return { worst: Number(worst.toFixed(2)), below: out.slice(0, 10), horizontalOverflow: over, ...(rowLines.length ? { maxRowLines: Math.max(...rowLines.map(r => r.lines)), overTwo: rowLines.filter(r => r.lines > 2) } : {}) };
         });
       }
       const next = page.locator('button[aria-label="다음 페이지"]');
@@ -79,4 +81,4 @@ for (const scheme of ["light", "dark"]) {
 await browser.close();
 // 여러 프로세스가 같은 폴더에 찍어도 겹치지 않게 사례·엔진별 파일.
 writeFileSync(join(outDir, `contrast-${cases.join("+")}${ENGINE === "webkit" ? "-webkit" : ""}.json`), JSON.stringify(report, null, 1));
-console.log(JSON.stringify(Object.fromEntries(Object.entries(report).map(([k, v]) => [k, `${v.worst}${v.below.length ? ` 낮음 ${v.below.length}` : ""}${v.horizontalOverflow ? " 가로넘침" : ""}`])), null, 1));
+console.log(JSON.stringify(Object.fromEntries(Object.entries(report).map(([k, v]) => [k, `${v.worst}${v.below.length ? ` 낮음 ${v.below.length}` : ""}${v.horizontalOverflow ? " 가로넘침" : ""}${v.maxRowLines ? ` · 표 한 줄 최대 ${v.maxRowLines}줄` : ""}`])), null, 1));

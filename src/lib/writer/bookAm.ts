@@ -8,8 +8,8 @@
  */
 import type { AmEl, AmElement, AmRow, AmYearHead, BookPage, BookParagraph } from "@/app/dev/book-preview/bookTypes";
 import type { BookSection } from "./format";
-import { FLOW_WORD, halfHapLine } from "@/lib/brief/labels";
-import { coreLine, coreOf, relFlow, TEN_GOD_SHORT } from "@/lib/brief/core";
+import { FLOW_WORD, halfHapLine, josa } from "@/lib/brief/labels";
+import { coreLine, coreOf, coreRowLine, relFlow, TEN_GOD_SHORT } from "@/lib/brief/core";
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
 import type { V5BookDraft, V5TimelineCard } from "./book";
 
@@ -26,6 +26,7 @@ const relationsOf = (c: Card) => c.badges.map(b => { const raw = b.line.replace(
 const EL_NAME: Readonly<Record<string, string>> = { WOOD: "나무(목)", FIRE: "불(화)", EARTH: "흙(토)", METAL: "쇠(금)", WATER: "물(수)" };
 /** 화면 「뜻」 한 줄(AM2-4 6부): 그 달·해 핵심(엔진 가중치 — 설계도와 같은 함수). dayunTg: 세운 달은 책의 해가 속한 대운 십성. */
 const meaningOf = (c: Card, dayunTg?: string) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
+const rowMeaningOf = (c: Card, dayunTg?: string) => coreRowLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
 const signalsOf = (c: Card) => { const s: Readonly<Record<string, string>> = c.signals ?? {}; return { ups: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↑").map(([, v]) => v), cautions: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↓").map(([, v]) => v) }; };
 const monthName = (c: Card) => c.label.split(" (")[0].replace(/ · \d{4}년 .+ 마지막 달$/, "");
 
@@ -38,14 +39,14 @@ export function periodCardOf(c: Card, section: BookSection | undefined, a: { eye
   // 좋은 것·살필 점(해석 줄)은 카드에 두지 않는다(본문이 맡는다). 지난 해·달은 할 일 대신 엔진 돌아보기 질문.
   const one = c.review && (a.past || !c.todo) ? { label: "돌아보기", text: c.review } : c.todo ? { label: month ? "이달의 한 가지" : "해 볼 것", text: c.todo } : undefined;
   const sky = tg(c.tenGod.stem), ground = tg(c.tenGod.branch), sig = signalsOf(c);
-  const fills = c.fillsLack?.fills && c.fillsLack.elements.length ? `모자란 ${c.fillsLack.elements.map(x => EL_NAME[x] ?? x).join("·")}을 채워요` : undefined;
+  const fills = c.fillsLack?.fills && c.fillsLack.elements.length ? `모자란 ${josa(c.fillsLack.elements.map(x => EL_NAME[x] ?? x).join("·"), "을를")} 채워요` : undefined;
   return { kind: "periodCard", unit: month ? "달" : "해", id: `card-${c.key}`, title: month ? monthName(c) : `${c.key}년 ${c.ganji.hangul}년`, eyebrow: a.eyebrow, sub, ganji: c.ganji.hanja, els: elsOf(c.ganji.hanja),
     flow: c.flow.score, flowWord: FLOW_WORD[c.flow.score] ?? "보통", line: c.imageLine, ...(one ? { one } : {}),
     paragraphs, relations: relationsOf(c), sky, ground, skyLine: TEN_GOD_SHORT[sky] ?? "", groundLine: TEN_GOD_SHORT[ground] ?? "", ups: sig.ups, cautions: sig.cautions, ...(fills ? { fills } : {}), core: meaningOf(c, a.dayunTg), past: a.past, now: a.now, star: a.star };
 }
 
 // AM2-4 6부: 표 한 줄은 그림 문장 대신 「뜻」(그 달·해 핵심 한 줄, 결정론) — 그림은 카드로.
-const rowOf = (c: Card, a: { name: string; sub: string; now: boolean; past: boolean; star: boolean; divider?: string; dayunTg?: string }): AmRow => ({ key: c.key, name: a.name, sub: a.sub, ganji: c.ganji.hanja, els: elsOf(c.ganji.hanja), line: meaningOf(c, a.dayunTg),
+const rowOf = (c: Card, a: { name: string; sub: string; now: boolean; past: boolean; star: boolean; divider?: string; dayunTg?: string }): AmRow => ({ key: c.key, name: a.name, sub: a.sub, ganji: c.ganji.hanja, els: elsOf(c.ganji.hanja), line: rowMeaningOf(c, a.dayunTg),
   sky: tg(c.tenGod.stem), ground: tg(c.tenGod.branch), ...signalsOf(c), flow: c.flow.score, flowWord: FLOW_WORD[c.flow.score] ?? "보통", now: a.now, past: a.past, star: a.star, page: 0, ...(a.divider ? { divider: a.divider } : {}) });
 const dictOf = (rows: readonly AmRow[]) => [...new Set(rows.flatMap(r => [r.sky, r.ground]))].filter(n => TEN_GOD_SHORT[n]).map(name => ({ name, line: TEN_GOD_SHORT[name] }));
 /** 책의 해가 속한 대운 십성(세운 「대운 겹침」 — 설계도와 같은 값). */
