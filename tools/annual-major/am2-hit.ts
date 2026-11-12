@@ -32,7 +32,8 @@ const notices = ["annual_fortune", "major_fortune", "saju_mbti_full", "career_mo
 const notice = bookNotice(brief.product);
 // AM2-3 3-2: 발행 원고의 소망 인용은 렌더가 «바람» 표시를 고객 원문으로 바꾼 것이다 — 검사는 표시 꼴로 본다(작가가 원문을 고쳐 쓴 인용만 걸린다).
 const wishRendered = wish ? `«${wish}»` : "";
-const clean = (t: string) => (wishRendered ? t.split(wishRendered).join(WISH_MARK) : t).replace(/\(([一-鿿]+)\)/g, "").replace(/[一-鿿]+/g, "");
+// 십이운성 쇠(衰) 같은 꼴은 작가가 쓴 구별 표기다(카드 값) — 주석이 아니니 남긴다(AM2-4 P4: 지우면 homonym 오탐).
+const clean = (t: string) => (wishRendered ? t.split(wishRendered).join(WISH_MARK) : t).replace(/\(([一-鿿]+)\)/g, (m, h: string, i: number, all: string) => (/(쇠|병|사|묘|절|태|양)$/.test(all.slice(Math.max(0, i - 1), i)) && h.length === 1 && "衰病死墓絶胎養".includes(h) ? m : "")).replace(/(?<!\()[一-鿿]+(?!\))/g, "");
 const chapters: FinalChapter[] = snap.draft.chapters.map(ch => ({ n: ch.n, id: ch.id, title: ch.title, source: "writer", chars: 0, ...(ch.keys ? { keys: ch.keys } : {}),
   sections: ch.sections.map(s => ({ heading: s.heading, paragraphs: s.paragraphs.map(p => { let t = clean(p).replace(notice, ""); for (const nt of notices) t = t.replace(nt, ""); t = t.trim(); for (const h of heads) if (h && t.startsWith(h)) t = t.slice(h.length).trim(); return t; }).filter(Boolean) })) }));
 const flags: ChunkFlag[] = [...blockFlags(chapters, lintBook(chapters, lctx), blockCtxFor(brief, k, intake)), ...crossRepeats(chapters), ...adviceRepeats(chapters), ...rxRepeats(chapters, intake), ...endingCaps(chapters), ...adjacentRepeats(chapters, intake.lines.map(l => l.value))];
