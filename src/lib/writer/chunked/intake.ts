@@ -87,7 +87,7 @@ const omitScene = <T extends { readonly scene?: string }>(o: T): T => { const c 
 function thinScenes(product: Intake["product"]) {
   const groups = CHUNK_GROUPS[product];
   const keepOf = new Map<string, string>(); // 묶음 번호 → 남긴 자리
-  return (p: ChapterPlan, _i: number, all: readonly ChapterPlan[]): ChapterPlan => {
+  return (p: ChapterPlan): ChapterPlan => {
     const slot = (pos: string, gi: number) => { const k2 = String(gi); if (!keepOf.has(k2)) keepOf.set(k2, pos); return keepOf.get(k2) === pos; };
     if (p.keys) {
       // AM2-5 1부(덕짱님 지시): key의 절반 이상에 입력에 맞는 장면 하나 — 묶음 몫과 따로 센다. 짝이 없는 key부터(이 사람 몫이 고르게), 같은 수면 앞 key부터.

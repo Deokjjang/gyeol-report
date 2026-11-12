@@ -977,7 +977,7 @@ export function am25Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
 const ANGLE_KO_ALL: Readonly<Record<string, string>> = { love: "연애와 인연", marriage: "결혼과 가족", work: "일과 진로", money: "돈 관리", study: "공부", relationships: "사람 사이", alone: "혼자 있는 시간", family: "가족" };
 const PROMISE = /^그 [가-힣 ]{1,14}(이|가) [^.?!]{0,40}(됩니다|될 거예요|만들어 줍니다|되어 줄 거예요|지켜 줄 거예요|열어 줄 거예요)[.!]?$/;
 const OPENER = /^(일|돈|관계|컨디션|연애|사람|마음)(에서는|쪽에서는|은|는) /;
-export function valueFlags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
+export function valueFlags(chapters: readonly FinalChapter[]): ChunkFlag[] {
   const out: ChunkFlag[] = []; let promise = 0; const openerKeys = new Map<string, number>(), angleSeen = new Map<string, number>();
   // 오탐 검토: 한 낱말 각도(「공부」 「가족」)와 우리말로 흔한 「사람 사이」 「돈 관리」는 세지 않는다 — 각도 이름이 문장 재료가 된 꼴(「혼자 있는 시간에」 「일과 진로의 눈으로」)만.
   const angles = [...new Set(Object.values(ANGLE_KO_ALL))].filter(ag => / /.test(ag) && !/^(사람 사이|돈 관리)$/.test(ag));

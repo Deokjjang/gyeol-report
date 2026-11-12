@@ -11,7 +11,7 @@ import type { ProductPreviewSnapshot } from "@/lib/report-generation/productPrev
 import type { ReportInputPayload } from "@/lib/report-generation/reportInputTypes";
 import { resolveLlmConfig } from "@/lib/llm";
 import { assembleV5Book, createV5Snapshot, type WriterMeta } from "../book";
-import { keywordsOf, renderChapter, type BookChapter } from "../format";
+import { keywordsOf, type BookChapter } from "../format";
 import { chapterPreview, type ChapterPreview } from "../preview";
 import { buildWriterPrompt } from "../prompt";
 import type { PriorBooks } from "../prior";
@@ -140,7 +140,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const cardValues = intake.lines.map(l => l.value);
   // AM2-5 2부: 시스템 머리 문장은 반복 집계·끝말 상한에서 뺀다(P4 대운 남은 반복 12 가운데 10이 머리 문장).
   const heads = new Set(intake.chapters.flatMap(c => (c.keys ?? []).map(k2 => normS(k2.head))).filter(Boolean));
-  const repeatsOf = (chs: readonly FinalChapter[]) => [...crossRepeats(chs, heads), ...adviceRepeats(chs), ...rxRepeats(chs, intake), ...endingCaps(chs, heads), ...adjacentRepeats(chs, cardValues), ...valueFlags(chs, bctx)];
+  const repeatsOf = (chs: readonly FinalChapter[]) => [...crossRepeats(chs, heads), ...adviceRepeats(chs), ...rxRepeats(chs, intake), ...endingCaps(chs, heads), ...adjacentRepeats(chs, cardValues), ...valueFlags(chs)];
   note([...seen.block, ...seen.minor, ...repeatsOf(cur.chapters)]);
   const rounds: { round: number; chunks: string[]; flags: number; targets: number }[] = [];
   const headingOf = (chs: readonly FinalChapter[], f: { chapter: number; section: number }) => chs.find(c => c.n === f.chapter)?.sections[f.section]?.heading ?? "";
