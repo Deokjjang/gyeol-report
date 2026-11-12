@@ -6,9 +6,9 @@
  */
 import { STYLE_EXAMPLES } from "../prompt/examples";
 import type { ChapterPlan, Intake, KeyPlan, Line } from "./intake";
-import { CHUNK_GROUPS, KEY_TARGET, SUBJECT_KO, WISH_MARK } from "./intake";
+import { CHUNK_GROUPS, KEY_TARGET, relationshipOf, SUBJECT_KO, WISH_MARK } from "./intake";
 
-export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-7";
+export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-8";
 /** 작가에게 보이는 분량 = 목표 × 이 값(AM2-3 2-4: 목표가 실측·카드 양에서 오므로 1). */
 export const CHUNK_TARGET_FACTOR = 1.0;
 /** 카드 줄 몫(key 하나, 글자). AM2-4 1부: 카드는 화면(결정론)이 맡아 작가는 카드 줄을 쓰지 않는다. */
@@ -20,7 +20,9 @@ export const ruleCtxOf = (x: Intake): RuleCtx => {
   const get = (re: RegExp) => x.person.find(p => re.test(p)) ?? "";
   const wishLine = get(/^적어 준 바람/);
   return { product: x.product, mbti: !/미입력/.test(get(/^MBTI:/)), wish: !wishLine ? "none" : /주제:/.test(wishLine) ? "inject" : /지친 시기/.test(wishLine) ? "risk" : "ok",
-    job: get(/^일:/), relationship: get(/^연애:/), children: get(/자녀:/) };
+    // AM2-5 P5 자동 점검(세운 annual-p5): 인물 카드 연애 줄은 「연애: 연애 중 · 자녀: 미입력 · …」 — 줄 전체를 보면 자녀의 「미입력」이 연애 미입력으로 읽혀
+    // 연애 중·기혼 고객에게 「연애가 솔로·미입력이다」 규칙이 붙었다(AM2-4부터). 연애·자녀 값은 제 칸만 떼어 본다.
+    job: get(/^일:/), relationship: relationshipOf(x.person), children: get(/자녀:/).match(/자녀: ([^·]+)/)?.[1].trim() ?? "" };
 };
 
 const R_BASE = `너는 결리포트 세운·대운 책의 작가다. 사주(명리)${"{MBTI}"}로 한 사람에게 쓰는 책의 일부(장 묶음)를 쓴다.
@@ -36,6 +38,7 @@ const R_BASE = `너는 결리포트 세운·대운 책의 작가다. 사주(명�
 - 카드 줄 뜻에 「화면에 있음 · 풀어 쓰지 않음」이 적힌 것은 이름만 한 번 부르고 뜻을 풀지 않는다(핵심어는 뜻을 고를 때만 참고).
 - 본문이 맡는 것: 이 사람에게 갖는 뜻 — 설계도의 「연결 고리」(그 관계가 닿는 자리가 이 사람 삶의 어느 쪽인지, 이 사람의 입력과 어떻게 이어지는지)·「짝」·「장면」. 같은 사실을 두 번 쓰지 않는다.
 - 연결 고리는 경향으로만 쓴다(「그 자리가 움직이는 때」 「…쪽이 움직이기 쉬운 때」). 만남·성사·인정·결과가 일어난다고 예언하지 않는다.
+- 연결 고리 줄은 재료다. 줄을 그대로 옮기지 말고 그 달·해의 말로 풀어 쓴다. 「…과 같은 자리라」처럼 앞 달·해와 같은 자리가 다시 나오면 한 마디로만 짚고, 그 달·해의 다른 재료(짝·장면·영역 근거)로 넘어간다 — 달마다 「X이 닿는 Y 자리는 …의 자리예요. …인 당신에게는 … 쪽이 움직이는 때」 같은 같은 틀을 되풀이하지 않는다. 바람을 가리킬 때는 「적어 준 바람」으로(원문 «바람» 인용은 책에서 한 번이면 된다).
 
 # 근거 쓰는 법
 - 근거 카드의 값과 뜻은 고객에게 그대로 써도 되는 말이다. 근거 id(N1·Y2 같은 기호)·카드 이름·「설계도」「묶음」「주장」「씨앗」 같은 말은 본문에 쓰지 않는다.

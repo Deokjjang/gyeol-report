@@ -286,8 +286,10 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   // AM2-5 2부: 남은 반복·끝말 집계는 시스템 머리 문장을 넣기 전 원고로(머리 문장은 heads로도 뺀다).
   const finalRepeats = repeatsOf(chapters);
   // 3-2 소망 원문은 렌더 단계에서 넣는다(작가는 «바람» 표시만 — 원문을 고칠 수 없다. P2 판독 annual-1: 1장은 원문, 9장은 「지금」을 뺀 꼴로 인용이 두 가지였다).
-  const wishText = intake.wish ? `«${intake.wish}»` : "적어 주신 바람";
-  chapters = chapters.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.split(WISH_MARK).join(wishText), paragraphs: sec.paragraphs.map(p => p.split(WISH_MARK).join(wishText)) })) }));
+  // AM2-5 P5 자동 점검(세운 annual-1 — 연결 고리의 「적어 준 바람의 … 쪽」을 작가가 «바람»으로 옮겨 바람 원문이 7장에 여섯 번 통째로 들어갔다): 원문은 책에서 처음 한 번만, 그 뒤는 「적어 준 바람」.
+  let wishSeen = false;
+  const wishOnce = (t: string) => t.split(WISH_MARK).reduce((acc, part, i) => { if (i === 0) return part; const w = intake.wish && !wishSeen ? `«${intake.wish}»` : "적어 준 바람"; wishSeen = true; return `${acc}${w}${part}`; }, "");
+  chapters = chapters.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.split(WISH_MARK).join("적어 준 바람"), paragraphs: sec.paragraphs.map(p => wishOnce(p)) })) }));
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
 

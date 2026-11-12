@@ -547,6 +547,8 @@ export function shiftPhase(t: string, bookYear: number, shift: number): string {
     .replace(/(?:앞쪽|중간|끝 무렵|첫해|마지막 해)\((\d+)번째 해\), 남은 기간 [^(|]*?\(([^)]+)\)/g, (all, n: string, u: string) => to(Number(n), u, all));
 }
 
+/** 인물 카드의 연애 상태 값만(「연애: 연애 중」 「연애: 솔로」 「연애: 기혼」 「연애: 미입력」) — 같은 줄의 「자녀: 미입력」을 연애로 읽지 않게(AM2-5 P5 자동 점검). */
+export const relationshipOf = (person: readonly string[]) => `연애: ${person.find(p => p.startsWith("연애:"))?.match(/^연애: ([^·]+)/)?.[1].trim() ?? "미입력"}`;
 /** 인물 카드(고객 입력만, 제약 문장 없이 사실만). */
 function personCard(brief: Brief, year: number, wish: { kind: string; text?: string; topics?: readonly string[] } | null): string[] {
   const p = brief.person, f = p.facts;

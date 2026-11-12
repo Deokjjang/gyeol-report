@@ -13,7 +13,7 @@ import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
 import type { Intake, Line } from "./intake";
-import { KEY_TARGET, RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
+import { KEY_TARGET, relationshipOf, RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
 import { WORKPLACE } from "./card";
 import { FLOW_TALK, FLOW_WORD, josa } from "@/lib/brief/labels";
 import type { Brief } from "@/lib/brief/schema";
@@ -551,7 +551,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
           if (x.pairs.some(pp => overlap4(sen, pp.why) >= 3) || (b.dayPillar && new RegExp(`${b.dayPillar}(일주|\\()`).test(sen)) || seats.some(sh => sen.includes(sh.short)))
             out.push({ ...at, rule: "pair_link", detail: "원국·MBTI의 성질을 그 해의 성질로", hint: "원국·MBTI의 성질은 그 사람의 성질 — 「…되는 해예요」로 바꾸지 않는다(그 해는 세운 카드의 말로)" });
         }
-        if (PARTNER_PREMISE.test(sen) && /^(single|unknown)$/.test(x.person.find(pp => pp.startsWith("연애:"))?.match(/솔로|미입력/) ? "single" : "")) out.push({ ...at, rule: "future_assert", detail: sen.match(PARTNER_PREMISE)![0], hint: "인물 카드는 솔로·미입력 — 이미 있는 인연을 전제하지 않는다(「인연이 생긴다면」처럼 조건형)" });
+        if (PARTNER_PREMISE.test(sen) && /솔로|미입력/.test(relationshipOf(x.person))) out.push({ ...at, rule: "future_assert", detail: sen.match(PARTNER_PREMISE)![0], hint: "인물 카드는 솔로·미입력 — 이미 있는 인연을 전제하지 않는다(「인연이 생긴다면」처럼 조건형)" });
         // 카드에 없는 정도말(3-3): 「가장 X」「한층」「훨씬」 — 그 꼴이 카드 원문에 있을 때만.
         { const dm = /(가장|한층|훨씬) ([가-힣]{1,2})/.exec(sen); const before = dm ? sen.slice(0, dm.index) : "", after = dm ? sen.slice(dm.index) : "";
           // 오탐 검토(annual): 카드와 같은 뜻 무리의 정도말(「가장 조용」≈「가장 잔잔」, 「가장 셉니다」≈「가장 강한」, 「가장 흐름이 크게」)과 순서 말(「가장 급한 것부터」)은 카드 값이다.

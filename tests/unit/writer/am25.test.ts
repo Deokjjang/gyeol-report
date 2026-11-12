@@ -7,7 +7,8 @@ import { DOMAIN_BY_TEN_GOD } from "@/lib/brief/productEvidence";
 import { verifyLinks, type Link } from "@/lib/writer/chunked/link";
 import { am25Flags, crossRepeats, endingCaps } from "@/lib/writer/chunked/check";
 import { blockCtxFor } from "@/lib/writer/chunked/publish";
-import { parseReplacements, renderCard } from "@/lib/writer/chunked/prompt";
+import { chunkRules, parseReplacements, renderCard, ruleCtxOf } from "@/lib/writer/chunked/prompt";
+import { relationshipOf } from "@/lib/writer/chunked/intake";
 import { coverIssue, writerKnowledge } from "@/lib/writer/publish";
 import { lifetimeBands } from "@/lib/brief/design/major";
 import type { FinalChapter } from "@/lib/writer/safety";
@@ -124,5 +125,18 @@ describe("AM2-5 2부 고치기 단계 구조", () => {
     expect(endingCaps(chs, new Set([n]))).toEqual([]);
     expect(crossRepeats(chs, new Set([n]))).toEqual([]);
     expect(crossRepeats(chs).length).toBeGreaterThan(0);
+  });
+});
+
+describe("AM2-5 P5 자동 점검 고침", () => {
+  it("연애 줄의 「자녀: 미입력」을 연애 미입력으로 읽지 않는다(연애 중·기혼에게 「솔로·미입력」 규칙이 붙던 AM2-4 버그)", () => {
+    const person = ["이름: 가상(부를 때 가상님)", "연애: 연애 중 · 자녀: 미입력 · 사는 곳·같이 사는 사람: 모름"];
+    expect(relationshipOf(person)).toBe("연애: 연애 중");
+    expect(relationshipOf(["연애: 미입력 · 자녀: 있음"])).toBe("연애: 미입력");
+    const { intake } = setup("annual-2"); // 연애 중
+    expect(ruleCtxOf(intake).relationship).toBe("연애: 연애 중");
+    expect(chunkRules(ruleCtxOf(intake))).not.toMatch(/연애가 솔로·미입력이다/);
+    const solo = setup("annual-1");
+    expect(chunkRules(ruleCtxOf(solo.intake))).toMatch(/연애가 솔로·미입력이다/);
   });
 });
