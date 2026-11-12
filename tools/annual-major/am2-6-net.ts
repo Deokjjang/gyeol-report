@@ -26,9 +26,17 @@ export function netOf(folder: string) {
   const finalBy = new Map(saved.chs.map(c => [c.n, c]));
   // 발행 원고의 key 소제목은 key 값(2027-M01), 첫 원고는 이름(2월 · 임인월) — 같은 key로 맞춘다.
   const keyOfLabel = new Map(saved.intake.chapters.flatMap(c => (c.keys ?? []).map(k2 => [k2.label, k2.key] as const)));
-  const firstChs: FinalChapter[] = raws.flatMap(r => parseChapters(r.text)).map(c => ({ n: c.n, id: finalBy.get(c.n)?.id ?? `c${c.n}`, title: c.title, source: "writer", chars: 0,
-    ...(finalBy.get(c.n)?.keys ? { keys: finalBy.get(c.n)!.keys } : {}),
-    sections: c.sections.map(s => ({ heading: keyOfLabel.get(s.heading.trim()) ?? s.heading, paragraphs: s.paragraphs.map(p => stripHanja(p).text).filter(Boolean) })) }) as unknown as FinalChapter).sort((a, b) => a.n - b.n);
+  // 한 장이 여러 묶음에 나뉘어 오면(세운 7장 · 대운 5장) 같은 장 번호로 합치고, 소제목은 발행 원고의 순서로 놓는다
+  // (P6 판독 annual-p6a: 묶음마다 소제목 번호가 0부터라 첫 원고 「7.3」과 발행 「7.7」이 같은 key인데 「고침」 · 「만듦」에 한 번씩 잡혔다).
+  const parsed = raws.flatMap(r => parseChapters(r.text)), byN = new Map<number, typeof parsed>();
+  for (const c of parsed) byN.set(c.n, [...(byN.get(c.n) ?? []), c]);
+  const firstChs: FinalChapter[] = [...byN].map(([n, parts]) => {
+    const order = (finalBy.get(n)?.sections ?? []).map(s => s.heading);
+    const sections = parts.flatMap(c => c.sections).map(s => ({ heading: keyOfLabel.get(s.heading.trim()) ?? s.heading, paragraphs: s.paragraphs.map(p => stripHanja(p).text).filter(Boolean) }));
+    const pos = (h: string) => { const i = order.indexOf(h); return i < 0 ? order.length : i; };
+    sections.sort((x, y) => pos(x.heading) - pos(y.heading));
+    return { n, id: finalBy.get(n)?.id ?? `c${n}`, title: parts[0].title, source: "writer", chars: 0, ...(finalBy.get(n)?.keys ? { keys: finalBy.get(n)!.keys } : {}), sections } as unknown as FinalChapter;
+  }).sort((a, b) => a.n - b.n);
   const ns = new Set(firstChs.map(c => c.n));
   const finalChs: FinalChapter[] = saved.chs.filter((c: FinalChapter) => ns.has(c.n));
   const b = blockCtxFor(saved.brief, k, saved.intake), lctx = { ...lintContext(saved.brief, k, saved.plan, [], undefined, undefined), noCards: true };
