@@ -1771,4 +1771,4 @@ AM2-3에서 통과했다가 이번에 실패한 사례는 5개다.
 - annual-1의 거절 1회는 내가 정한 실행 예산 $0.7이 병렬 대기 최악 셈에 걸린 것이다. 남은 일곱 권은 세운 $0.85 · 대운 $0.8로 돌려 거절 0이다.
 - 원장 `.cache/llm-ledger.json`, 호출 줄 `docs/v5/api-cost-log.md`(관문이 호출마다 적음), 책별 표 `~/Desktop/gyeol-review/annual-major-02/P6-cost.md`.
 - 산출물: `P6-<id>/`(snapshot · book · check · card · value · net · reading), `side-by-side-P5-P6.md`, 화면 `screens-AM26/`.
-- 커밋 · 원격(`v5/annual-major-02`, master · v5/main 병합 없음): 50d73e62(1~8부 무료 고침) · fb4d6620(P6 annual-1 자동 점검 고침) · 보고 커밋(SHA는 다음 「원격 SHA 적기」 커밋에)(도구 · 보고).
+- 커밋 · 원격(`v5/annual-major-02`, master · v5/main 병합 없음): 50d73e62(1~8부 무료 고침) · fb4d6620(P6 annual-1 자동 점검 고침) · 41b345bd(도구 · 보고). 원격 `origin/v5/annual-major-02` = 41b345bd를 push 뒤 `git rev-parse`로 확인했다(이 줄을 적은 커밋은 그 다음).
