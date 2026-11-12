@@ -41,6 +41,15 @@ export function devForceAnthropicDown(env: Readonly<Record<string, string | unde
  * 덧붙이는 문단은 다른 장을 가리키지 않는 말로(장 묶음 차단 검사에 걸리지 않게).
  */
 export function mockChunkText(brief: Brief, user: string): string | null {
+  // AM2-5 2부 문단 교체: 고칠 자리마다 앞 원고 문단에서 걸린 문장을 뺀 글(빈 자리는 짧은 한 문장)을 돌려준다.
+  if (user.includes("\n고칠 자리:\n")) {
+    const [, rest = ""] = user.split("\n고칠 자리:\n"); const [list = "", draft = ""] = rest.split("\n앞 원고:\n");
+    const orig = new Map([...draft.matchAll(/^\[¶([0-9.*]+)\] (.*)$/gm)].map(m => [m[1], m[2]] as const));
+    const targets: { id: string; bad: string[] }[] = [];
+    for (const line of list.split("\n")) { const t = /^- \[¶([0-9.*]+)\]/.exec(line); if (t) { targets.push({ id: t[1], bad: [] }); continue; } const b = /^ {2}· «(.*)» — /.exec(line); if (b && targets.length) targets.at(-1)!.bad.push(b[1]); }
+    return targets.map(t => { const o = orig.get(t.id) ?? ""; const kept = o === "(비어 있음)" ? "" : o.split(/(?<=[.!?])\s+/).filter(x => !t.bad.some(bd => x.includes(bd) || bd.includes(x))).join(" ");
+      return `[¶${t.id}]\n${kept || "차분히 정리해 두면 마음이 한결 가벼워지는 때예요."}`; }).join("\n");
+  }
   const i = user.indexOf("이번 묶음의 장 머리글은 아래 그대로입니다."); if (i < 0) return null;
   const heads = user.slice(i).split("\n").slice(1).map(l => l.match(/^## (\d+)\. .*?(?: \(### (.+)\))?$/)).filter((m): m is RegExpMatchArray => Boolean(m));
   const plan = buildWriterPrompt(brief).chapters;

@@ -70,6 +70,8 @@ export type LintCtx = {
   readonly bookYear?: number;
   /** AM 2부: 세운 신년판 달 카드에 「좋은 것」 칸이 있다. */
   readonly goodCards?: boolean;
+  /** AM2-5 2부: 카드 줄을 작가가 쓰지 않는 책(세운·대운 장 묶음 — 카드는 화면 결정론). card_missing 등 카드 검사를 끈다. */
+  readonly noCards?: boolean;
   /** P6d F: key → 엔진 관계 표시 수(0이면 "건드리지 않는다" 허용). 궁합은 두 사람 날 관계 수. */
   readonly relationCount?: Readonly<Record<string, number>>; readonly pairRelations?: number;
   /** P6d F: 책당 1회만 쓰는 소품 명사. G: 투자 장. 안전망 규칙 문맥(예시 창·조건형 장). */
@@ -520,6 +522,7 @@ export const PHRASE_WINDOW = 14;
 export const SAME_TEN_GOD_JACCARD = 0.3;
 export function lintCards(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];
+  if (ctx.noCards) return out;
   const seen: Record<CardField, { v: string; tg?: string }[]> = { image: [], todo: [], review: [], caution: [], good: [] };
   for (const c of chapters) if (c.keys) c.sections.forEach((s, si) => {
     const period = ctx.periods?.[s.heading] ?? "current";

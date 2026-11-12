@@ -9,7 +9,7 @@ import { chunkCall, mergeRuns, rawKey, type ChapterSink, type WriterOptions, typ
 import type { DraftChapter } from "../safety";
 import type { WriterChapter } from "../prompt";
 import type { Intake } from "./intake";
-import { chunkMaxTokens, chunkUser, type Chunk } from "./prompt";
+import { chunkMaxTokens, chunkUser, numberedDraft, parseReplacements, replaceMaxTokens, replaceUser, type Chunk, type ParaTarget } from "./prompt";
 
 /** 못 끝낸 묶음을 다시 부를 때 지시 끝에 붙이는 한 줄. */
 export const CHUNK_RETRY_NOTE = "(다시 부름: 앞 호출이 이 묶음을 끝내지 못했다 — 위 머리글의 장·달·해를 빠짐없이 쓴다.)";
@@ -110,4 +110,26 @@ export async function rewriteChunk(a: ChunkRunArgs & { readonly chunk: Chunk; re
   const complete = a.chunk.parts.every(p => { const s = got.get(p.n); return s && (!p.keys || p.keys.every(k => s.some(x => x.heading === k))); });
   const changed = complete ? mergeParts(a.drafts, got, a.plan, "writer") : [];
   return { run: r.run, text: complete ? r.text : "", log: { id: a.chunk.id, kind: "rewrite", round: a.round, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, ...(complete ? {} : { reason: r.text ? "incomplete" : "empty" }) }, changed };
+}
+
+/**
+ * AM2-5 2부(덕짱님 지시): 다시 쓰기 = 문단 교체. 묶음 원고를 문단 번호와 함께 보내고, 고칠 자리의 새 글만 받는다.
+ * 나머지 문단은 원문 그대로 둔다(P4 세운 차단 #1·#2 — 다시 쓰기 1회차가 걸리지 않은 첫 원고 문장을 바꿨다 — 가 생길 길이 없다).
+ * 받은 자리만 drafts에 넣고, 이전 글을 돌려준다(부르는 쪽이 새 차단을 만든 자리를 되돌린다).
+ */
+export async function replaceParagraphs(a: ChunkRunArgs & { readonly chunk: Chunk; readonly targets: readonly ParaTarget[]; readonly round: number; readonly drafts: Map<number, DraftChapter>; readonly cover?: { line: string; reason: string } }): Promise<{ run: WriterRun; log: ChunkLog; applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[]; cover?: string; changed: number[] }> {
+  const t0 = Date.now();
+  const user = replaceUser(a.intake, a.chunk, numberedDraft(a.intake, a.chunk, a.drafts), a.targets, a.cover);
+  const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user, maxTokens: replaceMaxTokens(a.targets) + (a.cover ? 200 : 0) });
+  const got = r.text ? parseReplacements(r.text) : { paras: new Map<string, string[]>() };
+  const applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[] = [], changed = new Set<number>();
+  for (const t of a.targets) {
+    const neu = got.paras.get(t.id); if (!neu?.length) continue;
+    const d = a.drafts.get(t.chapter); const sec = d?.chapter.sections[t.section]; if (!d || !sec || sec.heading !== t.heading) continue;
+    const before = t.index === "*" ? [...sec.paragraphs] : [sec.paragraphs[t.index] ?? ""];
+    const paragraphs = t.index === "*" ? neu : sec.paragraphs.map((p0, i) => (i === t.index ? neu.join(" ") : p0));
+    a.drafts.set(t.chapter, { ...d, chapter: { ...d.chapter, sections: d.chapter.sections.map((s2, si) => (si === t.section ? { ...s2, paragraphs } : s2)) } });
+    applied.push({ target: t, before, after: t.index === "*" ? neu : [neu.join(" ")] }); changed.add(t.chapter);
+  }
+  return { run: r.run, log: { id: a.chunk.id, kind: "rewrite", round: a.round, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, ...(applied.length ? {} : { reason: r.text ? "no_target" : "empty" }) }, applied, ...(got.cover ? { cover: got.cover } : {}), changed: [...changed] };
 }

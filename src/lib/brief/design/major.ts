@@ -33,6 +33,17 @@ export function lifetimeMap(saju: SajuCalcResult, dayun: DayunInfo, thisYear: nu
   });
 }
 
+/** AM2-5 1부: 평생 대운을 같은 주제가 이어지는 띠로 묶어 큰 줄기 2~3개(지나온 띠 · 서 있는 띠 · 다음 띠). 띠마다 「만 a~b세 · 주제」. */
+export function lifetimeBands(life: readonly LifetimeCycle[]): string[] {
+  const bands: { theme: string; cycles: LifetimeCycle[] }[] = [];
+  for (const c of life) { const last = bands.at(-1); if (last && last.theme === c.theme) last.cycles.push(c); else bands.push({ theme: c.theme, cycles: [c] }); }
+  const ci = bands.findIndex(b => b.cycles.some(c => c.current));
+  const age = (b: { cycles: LifetimeCycle[] }) => { const a = b.cycles[0].ages.match(/\d+/)?.[0], z = b.cycles.at(-1)!.ages.match(/(\d+)\D*$/)?.[1]; return a && z ? `만 ${a}~${z}세` : b.cycles[0].ages; };
+  const pick = ci < 0 ? bands.slice(0, 3) : [bands[ci - 1], bands[ci], bands[ci + 1]].filter((b): b is (typeof bands)[number] => Boolean(b));
+  // 띠가 대운 둘 이상이면 「…10년」이 아니라 「…시기」(20년 띠를 10년이라 부르지 않는다).
+  return pick.map(b => `${b === bands[ci] ? "내가 서 있는 큰 줄기" : bands.indexOf(b) < ci ? "지나온 큰 줄기" : "다음 큰 줄기"}: ${age(b)} · ${b.cycles.length > 1 ? b.theme.replace(/10년$/, "시기") : b.theme}`);
+}
+
 /** 앞으로 10년 핵심 해 3개(결정론). 점수 = 날 자리 충·합·형 3 / 달 자리 2 / 대운 전환 3 / 세운×대운 충·합 2·같은 땅 글자 1 / 흐름 세기 쏠림(|세기−3|). */
 export function keyYears(saju: SajuCalcResult, future: readonly TimelineEntry[], cycles: readonly CustomerDayunCycle[]): Map<string, { rank: number; reasons: string[] }> {
   const scored = future.map(e => {
@@ -85,7 +96,8 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
   const line = (e: TimelineEntry | undefined) => { const tg = yearTg(e); return e && tg ? `${e.key}년(만 ${ageAt(Number(e.key))}세 무렵) ${e.tenGod.stem}: 일 = ${DOMAIN_BY_TEN_GOD[tg][0]}` : ""; };
   const out: Record<string, Evidence | null> = {
     dayunHow: ev("dayunHow", ["대운: 타고난 달 기둥에서 10년마다 한 칸씩 움직이는 큰 흐름(그 10년의 하늘 글자 십성이 주제)", "세운: 해마다 들어오는 기운 — 대운이 계절이라면 세운은 그해 날씨", cur ? `이 책의 지도: ${life.length}개 대운, 내가 서 있는 대운은 ${cur.label}` : ""], "짧게 한 소제목: 대운과 세운의 관계를 쉬운 그림 하나로"),
-    lifetime: ev("lifetime", life.map(x => `${x.label} · ${x.tenGod} — ${x.theme}${x.current ? " (내가 서 있는 대운)" : ""}`), "평생 지도에서 큰 줄기(이어지는 주제, 꺾이는 곳) 두세 개만 짚는다. 표는 화면이 보여 주니 전부 나열하지 않는다"),
+    // AM2-5 1부(덕짱님 지시): 평생 대운 10칸은 화면 「평생 대운 지도」가 맡는다 — 근거는 큰 줄기 2~3개(같은 주제가 이어지는 띠: 지나온 띠 · 서 있는 띠 · 다음 띠)만.
+    lifetime: ev("lifetime", lifetimeBands(life), "평생 지도에서 큰 줄기 두세 개만 짚는다. 표는 화면이 보여 주니 대운 이름·나이를 늘어놓지 않는다"),
     pastSummary: ev("pastSummary", [`지난 세 해: ${past.map(e => `${e.key}년 ${e.ganji.hangul} ${e.tenGod.stem}`).join(" → ")}`, pastCycles.length ? `그 시기 대운: ${pastCycles.join(" → ")}` : ""], "지난 일을 겪었다고 단정하지 않는다. '~했다면'·질문형으로, 세 해를 하나의 흐름으로"),
     pastDayun: ev("pastDayun", [prev && past.some(e => e.dayun?.ganji !== cur?.ganji + " 대운") ? `지난 대운: ${prev.label} · ${prev.tenGod}` : "", ...mind(gCur, "enter", 1)], "그 시기를 지나며 남은 힘(태도·습관)을 조건형으로"),
     nowTheme: cur ? ev("nowTheme", [`내가 서 있는 대운: ${cur.label} · ${cur.tenGod} — ${cur.theme}`, ...mind(gCur, "inside", 2), ...dom(gCur, "work", 1)], "주제를 한 줄로 먼저, 그 10년의 태도 둘") : null,

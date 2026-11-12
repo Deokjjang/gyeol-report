@@ -13,7 +13,7 @@ import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
 import type { Intake, Line } from "./intake";
-import { RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
+import { KEY_TARGET, RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
 import { WORKPLACE } from "./card";
 import { FLOW_TALK, FLOW_WORD, josa } from "@/lib/brief/labels";
 import type { Brief } from "@/lib/brief/schema";
@@ -24,7 +24,7 @@ import { rxKindsOf, rxOfSentence, type RxKind } from "@/lib/brief/prescriptions"
 // ---------- 1) 브리프 검사 ----------
 export type BriefIssue = { readonly where: string; readonly text: string; readonly rule: "time" | "notice" | "internal" | "abbr" | "hanja" | "metaphor" | "symbol"
   // AM2-3 1-2·2-1·2-3: 카드 문구 자체를 고객 문장 검사에.
-  | "noun_value" | "unit" | "tie" | "template" | "month_label" | "general" | "mbti_absent" | "premise" | "plan_basis" | "plan_conflict" | "yinyang" | "screen"
+  | "noun_value" | "unit" | "tie" | "template" | "month_label" | "general" | "mbti_absent" | "premise" | "plan_basis" | "plan_conflict" | "yinyang" | "screen" | "rest_conflict"
   // AM2-4 3부·2부: 카드 ≡ 엔진 · 짝 없는 절 · 할 것·피할 것 행동 줄 · 바람 달 충돌 · 동음 · 화면 「뜻」 길이.
   | "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "homonym" | "screen_len" };
 /** 브리프 검사 문맥(엔진 값): 음양 수 · 흐름 끝값 달(동률 판정) · 화면 카드 글(배지·카드 줄·꼬리표). */
@@ -98,7 +98,8 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = [], bc: Bri
   for (const c of x.chapters) {
     for (const sp of c.sections ?? []) {
       if (!sp.lines.length) { flag("plan_basis", `${c.n}장 「${sp.q}」`, "근거 줄 없음"); continue; }
-      const basis = sp.lines.map(id => { const l = byId.get(id); return l ? `${l.value} ${l.meaning}` : ""; }).join(" ");
+      // AM2-5 2부: 가리키기 절은 앞 장 주장 줄(pointerIds)이 근거다(그 목록을 다시 적지 않을 뿐).
+      const basis = [...sp.lines, ...(sp.pointerIds ?? [])].map(id => { const l = byId.get(id); return l ? `${l.value} ${l.meaning}` : ""; }).join(" ");
       for (const [q, cue] of QUESTION_CUES) if (q.test(sp.q) && !cue.test(basis) && !x.noDayun) flag("plan_basis", `${c.n}장 「${sp.q}」`, `근거에 ${cue.source} 없음`);
       if (noMbti && MBTI_WORD.test(sp.q)) flag("mbti_absent", `${c.n}장 소제목 틀`, sp.q);
       if (x.noDayun && x.product === "annual_fortune" && /대운/.test(sp.q)) flag("plan_basis", `${c.n}장 「${sp.q}」`, "대운을 정하지 못한 세운 책에 대운 질문");
@@ -135,7 +136,9 @@ export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, 
   "meta_trace", "notice_meaning", "opening_prop", "must_miss", "evidence_scope", "wish_quote", "mbti_absent", "domain_list",
   // AM2-4 5부: P3 판독 두 건의 결정론 꼴(자리 = 엔진 배지 · key 십성 · 개수 말 · 동음 · 카드 값 꼴 · 관계 주어 비문 · 겪을 일 단정 · 바람 없음 · 관계 틀 비문 · 카드 줄 인과).
   "seat_badge", "key_tengod", "count_claim", "homonym", "label_leak", "subject_unit", "habit_assert", "wish_absent", "relation_frame", "tg_join",
-  "head_echo", "angle_name", "pointer_expand", "screen_repeat", "orphan_ref"]);
+  "head_echo", "angle_name", "pointer_expand", "screen_repeat", "orphan_ref",
+  // AM2-5 2부: P4 판독 두 건의 결정론 꼴 가운데 구조로 막히지 않는 것(근거 밖 관계 이름 · 달 목록 범위 말 · 작가 규칙 문구 · 읽는 날 마감 · 지난 경험 물음 · 짧은 key).
+  "relation_scope", "month_range", "rule_echo", "date_deadline", "past_question", "key_len"]);
 /** 경미 규칙: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고치게 하고, 그것만으로는 다시 쓰지도 지우지도 않는다(판독 기준 경미). */
 export const PIGGYBACK_RULES: ReadonlySet<string> = new Set<string>(["head_repeat", "head_echo", "angle_name", "pointer_expand"]);
 /** AM2-4 1부·5부: 지우기만 하는 규칙(그것만으로는 다시 쓰지 않는다 — 화면 사실 되풀이는 그 문장을 지워도 화면에 남는다). 다시 쓸 때는 함께 넘긴다. */
@@ -144,6 +147,8 @@ export const CUT_ONLY_RULES: ReadonlySet<string> = new Set<string>(["screen_repe
 export const NO_SENTENCE_RULES: ReadonlySet<string> = new Set<string>(["must_miss"]);
 /** 장 사이 반복(모든 묶음 뒤 결정론, 뒤쪽 묶음만 1회 다시 쓴다). */
 export const REPEAT_RULES: ReadonlySet<string> = new Set<string>(["phrase_repeat", "scene_repeat", "meaning_repeat", "prior_overlap", "closing_repeat", "rep_adjacent", "advice_repeat", "chapter_repeat"]);
+/** AM2-5 2부: 경미 규칙 전부 — 지우지 않고 점수로만 기록한다(그 묶음을 다른 까닭으로 고칠 때만 함께 넘긴다). */
+export const MINOR_RULES: ReadonlySet<string> = new Set<string>([...PIGGYBACK_RULES, ...CUT_ONLY_RULES, ...REPEAT_RULES, "rx_repeat", "ending_cap", "promise_tail", "domain_opener", "angle_leak"]);
 const BLOCK_RULES_OLD: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon"]);
 export type ChunkFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string; readonly hint?: string };
 
@@ -415,6 +420,7 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   }));
   for (const f of rootFlags(chapters, b)) add(f);
   for (const f of am24Flags(chapters, b)) add(f);
+  for (const f of am25Flags(chapters, b)) add(f);
   return out;
 }
 
@@ -595,7 +601,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
  * 장 사이 반복(모든 묶음 뒤): 앞 장의 문장과 5-gram 자카드 0.5 이상이거나 공백·부호 뺀 14자가 같은 뒤 장의 문장(작가 장만, 같은 장 안의 비슷한 문장은 보지 않는다).
  * 묶음은 병렬로 쓰여 서로를 보지 못하므로, 겹치면 뒤쪽 장의 묶음을 1회 다시 쓴다.
  */
-export function crossRepeats(chapters: readonly FinalChapter[]): ChunkFlag[] {
+export function crossRepeats(chapters: readonly FinalChapter[], skip: ReadonlySet<string> = new Set()): ChunkFlag[] {
   // 단위 = 장(key 없는 장) 또는 key(달·해 장의 key마다 — P2 판독: 같은 십성 달끼리 생활 문장을 그대로 되풀이). 같은 단위 안의 비슷한 문장은 보지 않는다.
   const out: ChunkFlag[] = [], idx = L.overlapIndex(), phrase = new Map<string, string>();
   const flush = (unit: string, mine: readonly string[]) => { for (const sen of mine) { idx.add(sen); const n = norm(sen); for (let i = 0; i + 14 <= n.length; i++) if (!phrase.has(n.slice(i, i + 14))) phrase.set(n.slice(i, i + 14), unit); } };
@@ -605,7 +611,7 @@ export function crossRepeats(chapters: readonly FinalChapter[]): ChunkFlag[] {
     c.sections.forEach((s, si) => {
       const isKey = Boolean(c.keys?.includes(s.heading)), unit = isKey ? `${c.n}:${s.heading}` : `${c.n}`, mine: string[] = [];
       s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
-        const sen = raw.replace(/[⟪⟫]/g, ""), n = norm(sen); mine.push(sen);
+        const sen = raw.replace(/[⟪⟫]/g, ""), n = norm(sen); if (skip.has(sen.replace(/[^가-힣A-Za-z0-9]/g, ""))) continue; mine.push(sen);
         let w: string | null = null; for (let i = 0; i + 14 <= n.length && !w; i++) { const x = phrase.get(n.slice(i, i + 14)); if (x !== undefined && x !== unit) w = n.slice(i, i + 14); }
         if (w || idx.has(sen)) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "chapter_repeat", sentence: sen, detail: w ? `앞 장·key와 같은 구절 「${w}」` : "앞 장·key와 거의 같은 문장", hint: "다른 장·key가 이미 쓴 말 — 이 장·key의 근거·장면으로 바꿔 쓴다" });
       } });
@@ -688,7 +694,7 @@ export const styleScoreOf = (lint: readonly LintFlag[]) => lint.filter(f => !BLO
 // AM2-4(덕짱님 지시 2026-11-12) — 카드 불변식 · 설계도 빌드 검사 · P3 판독 두 건의 「결정론 검사로 잡을 수 있었던 꼴」 · 처방 사전 · 끝말 상한
 // ======================================================================
 
-export type CardIssue = { readonly where: string; readonly rule: "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "homonym" | "screen_len"; readonly text: string };
+export type CardIssue = { readonly where: string; readonly rule: "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "rest_conflict" | "homonym" | "screen_len"; readonly text: string };
 const SEAT_LIST = (w: string) => w.split("·").map(x => x.trim()).filter(Boolean).map(x => (/^태어난 /.test(x) ? x : `태어난 ${x}`));
 const tgOf = (label: string) => label.replace(/\(.*\)$/, "").trim();
 /**
@@ -755,6 +761,9 @@ export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
   const wishMonths = new Set(x.lines.filter(l => /바람과 이어지는 영역이 오르는 달|그 바람과 이어지는 영역이 오르는 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)]));
   const SLOW: Readonly<Record<string, RegExp>> = { 연애: /연애에서 속도를 늦출 달/, 돈: /돈이 새기 쉬운 달/, 일: /일터 흔들림을 살필 달/, 사람: /관계 속도를 늦출 달/, 마음: /무리하기 쉬운 달/, 공부: /일터 흔들림을 살필 달/ };
   for (const d of wishDomains) { const re = SLOW[d]; if (!re) continue; for (const l of x.lines.filter(l2 => re.test(l2.value))) { const clash = [...monthsIn(l.meaning)].filter(m => wishMonths.has(m)); if (clash.length) out.push({ where: l.id, rule: "wish_conflict", text: `바람 달 ${clash.join("·")}월이 「${l.value}」과 겹침` }); } }
+  // AM2-5 2부 충돌: 쉬어 가기 좋은 달 ↔ 연애·사람이 오르는 달 · 바람 달(P4 판독 세운 경계 #6).
+  const upMonths = new Set([...wishMonths, ...x.lines.filter(l => /(연애|사람)[^|·]{0,8}오르는 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)])]);
+  for (const l of x.lines.filter(l2 => /쉬어 가기 좋은 달/.test(l2.value))) { const clash = [...monthsIn(l.meaning)].filter(m => upMonths.has(m)); if (clash.length) out.push({ where: l.id, rule: "rest_conflict", text: `쉬는 달 ${clash.join("·")}월이 연애·사람·바람이 오르는 달과 겹침` }); }
   return out;
 }
 
@@ -891,12 +900,13 @@ export function rxRepeats(chapters: readonly FinalChapter[], x: Intake): ChunkFl
 /** 끝말 빈도 상한(5부, 목록 없음): 문장 끝 두 어절(조사·부호 뺀 한글 5자 이상)이 책에서 BOOK_CAP을, 한 장에서 CHAPTER_CAP을 넘으면 넘는 곳마다. 의존 명사 끝(「수 있어요」 「편이에요」)은 문법 꼴이라 세지 않는다. */
 export const ENDING_CAP = { book: 4, chapter: 2 } as const;
 const GRAMMAR_END = /^(수|것|거|게|편|쪽|중|뿐|만큼|듯|줄|때문|적|법|모양|셈|터|리)(가|이|은|는|도|을|를)? /;
-export function endingCaps(chapters: readonly FinalChapter[]): ChunkFlag[] {
+export function endingCaps(chapters: readonly FinalChapter[], skip: ReadonlySet<string> = new Set()): ChunkFlag[] {
   const out: ChunkFlag[] = [], book = new Map<string, number>();
   for (const c of chapters) {
     if (c.source === "deterministic") continue;
     const here = new Map<string, number>();
     c.sections.forEach((s, si) => s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
+      if (skip.has(raw.replace(/[^가-힣A-Za-z0-9]/g, ""))) continue;
       const sen = raw.replace(/[⟪⟫«»"“”'‘’]/g, "").replace(/[.!?？]+$/, "").trim(); const w = sen.split(/\s+/); if (w.length < 4) continue;
       const end = w.slice(-2).join(" "); if (GRAMMAR_END.test(`${end} `) || end.replace(/[^가-힣]/g, "").length < 5) continue;
       const n = (book.get(end) ?? 0) + 1, h = (here.get(end) ?? 0) + 1; book.set(end, n); here.set(end, h);
@@ -906,3 +916,60 @@ export function endingCaps(chapters: readonly FinalChapter[]): ChunkFlag[] {
   return out;
 }
 void seatShort;
+
+// ======================================================================
+// AM2-5 2부(덕짱님 지시 2026-11-12) — P4 판독 두 건의 「결정론으로 잡을 수 있었던 꼴」 가운데 구조(문단 교체 · 지우기 규칙 · 같은 주장 설계 · 카드 고객 말)로 막히지 않는 것만.
+// ======================================================================
+const RANGE_WORD = /(?:월|월 · [가-힣]{2}월)\s*(?:에서|부터)\s[^.?!]{0,40}(?:사이|까지|이어지)|(?<![가-힣])(봄|여름|가을|겨울|상반기|하반기) (달들|내내 이어지는 달)|(가을|여름|봄|겨울) 달(들)?과/;
+const RULE_ECHO = /말할 수 있고|라고만 말할|다고 보지는 않|(으)?로 보지는 않아요|인과로|라는 것만 (말|짚)|만 말할 수 있/;
+const PAST_Q = /(적이|날이|때가|순간이|일이) (없나요|있었나요|있지 않나요|없었나요|있지 않았나요|없지 않았나요)[?？]/;
+const HABIT2 = /당신답(죠|지요|네요|습니다)|당신다워(요|서)|당신다운 (모습|장면)이(죠|에요)/;
+/** 근거 밖 관계 이름(P4 판독 세운 차단 #1 「태어난 날 자리와 축오해가 아닌」 — 2장 근거에 축오해가 없다) · 달 목록 범위 말(#2 「2월에서 11월 사이에」 · 경계 #2 「가을 달들」) ·
+ *  작가 규칙 문구(대운 B7 「같은 시기라는 것만 말할 수 있고」) · 읽는 날에 기대는 마감(대운 B11 「2026년 안에」) · 지난 경험 물음(세운 경계 #4 「…적이 없나요?」)·습관 단정(#9 「당신답죠」) · 짧은 key(안전망). */
+export function am25Flags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
+  const out: ChunkFlag[] = [];
+  const x = b.intake, plans = new Map(x.chapters.map(c => [c.n, c])), lineById = new Map(x.lines.map(l => [l.id, l]));
+  const keyPlans = new Map(x.chapters.flatMap(c => (c.keys ?? []).map(k => [k.key, k] as const)));
+  const yearE = b.brief?.timeline?.entries.find(e => e.kind === "year");
+  const names = new Set([...[...(b.keyRels?.values() ?? [])].flatMap(s2 => [...s2]), ...(b.brief?.timeline?.entries ?? []).flatMap(e => e.badges.map(bd => bd.label.replace(/\(.*\)$/, "").trim()))].filter(n => n.length >= 3 && n !== "공망"));
+  const baseYear = Number((b.brief?.baseDate ?? "").slice(0, 4)) || undefined;
+  void yearE;
+  for (const c of chapters) {
+    if (c.source === "deterministic") continue;
+    const plan = plans.get(c.n), past = plan?.id === "past";
+    const chText = [...new Set([...(plan?.sections ?? []).flatMap(sp => [...sp.lines, ...(sp.pointerIds ?? [])]), ...(plan?.allowed ?? [])])].map(id => { const l = lineById.get(id); return l ? `${l.value} ${l.meaning}` : ""; }).join(" ") + " " + x.pairs.filter(p2 => !p2.use || p2.use.includes(c.n)).map(p2 => p2.why).join(" ");
+    c.sections.forEach((s, si) => {
+      const kp = c.keys?.includes(s.heading) ? keyPlans.get(s.heading) : undefined;
+      s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(raw => {
+        const sen = raw.replace(/[⟪⟫]/g, ""), at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
+        const flag = (rule: string, hint: string, detail?: string) => out.push({ ...at, rule, hint, ...(detail ? { detail } : {}) });
+        if (!kp) { const nm = [...names].find(n => sen.includes(n) && !chText.includes(n)); if (nm) flag("relation_scope", `「${nm}」은 이 장 근거에 없는 관계다 — 이 장 카드 줄의 관계만(부정 「…가 아닌」으로도 쓰지 않는다)`, nm); }
+        if (MONTH_NAME_IN.test(sen) || /(봄|여름|가을|겨울) 달/.test(sen)) { const m = RANGE_WORD.exec(sen); if (m && /달|때/.test(sen)) flag("month_range", "달 목록은 카드의 달 이름을 그대로 나열한다 — 「A에서 B 사이」 「A부터 이어지는」 「가을 달들」처럼 범위·묶음 말로 바꾸지 않는다", m[0]); }
+        if (RULE_ECHO.test(sen)) flag("rule_echo", "쓰는 쪽의 규칙 말(「…만 말할 수 있고」 「…다고 보지는 않아요」)을 본문에 쓰지 않는다 — 같은 시기라는 것만 내용으로", sen.match(RULE_ECHO)![0]);
+        { const dm = /(20\d\d)년 (안에|안으로|내에|말까지)|올해 안에|연말까지|이달 안에/.exec(sen); if (dm && (!dm[1] || (baseYear && Number(dm[1]) <= baseYear))) flag("date_deadline", "읽는 날에 기대는 마감(「2026년 안에」)을 쓰지 않는다 — 기한 없이 「…해 두면」으로", dm[0]); }
+        if (!past && kp?.when !== "past" && PAST_Q.test(sen)) flag("past_question", "겪었는지 모르는 일을 「…적이 없나요?」로 묻지 않는다 — 「…할 때라면」 같은 조건으로", sen.match(PAST_Q)![0]);
+        if (HABIT2.test(sen)) flag("habit_assert", "「당신답죠」처럼 그 사람의 습관·모습으로 못 박지 않는다 — 「…해 보기 좋은 때예요」처럼", sen.match(HABIT2)![0]);
+      }));
+      // 짧은 key(안전망): 머리 문장 뺀 본문이 설계 하한의 60% 아래면 그 key 전체를 고친다(분량은 고리·장면·짝에서 — 덕짱님 결정 14-7 2번).
+      if (kp) { const len = s.paragraphs.join(" ").replace(/[⟪⟫]/g, "").length, lo = (kp.depth === "deep" ? KEY_TARGET.deep : kp.depth === "short" ? KEY_TARGET.short : plan?.target ?? KEY_TARGET.month)[0];
+        if (len < lo * 0.6) out.push({ chapter: c.n, section: si, paragraph: -3, rule: "key_len", sentence: `[분량] ${kp.label} 본문 ${len}자(하한 ${lo}자)`, hint: `본문이 짧다 — 설계도의 연결 고리·짝·장면으로 이 사람에게 갖는 뜻을 더한다(같은 말로 늘리지 않는다, ${lo}자 안팎)` }); }
+    });
+  }
+  return out;
+}
+/** AM2-5 2부 경미(점수로만): 처방 뒤 결과 꼬리(대운 m25) · 칸 이름으로 여는 key 문장(대운 m15 마) · 각도 말 되풀이(세운 경미 #2). */
+const PROMISE = /^그 [가-힣 ]{1,14}(이|가) [^.?!]{0,40}(됩니다|될 거예요|만들어 줍니다|되어 줄 거예요|지켜 줄 거예요|열어 줄 거예요)[.!]?$/;
+const OPENER = /^(일|돈|관계|컨디션|연애|사람|마음)(에서는|쪽에서는|은|는) /;
+export function valueFlags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
+  const out: ChunkFlag[] = []; let promise = 0; const openerKeys = new Map<string, number>(), angleSeen = new Map<string, number>();
+  const angles = [...new Set(b.intake.chapters.flatMap(c => (c.sections ?? []).flatMap(sp => (sp.angle ? [sp.angle] : []))))];
+  for (const c of chapters) { if (c.source === "deterministic") continue;
+    c.sections.forEach((s, si) => { const isKey = Boolean(c.keys?.includes(s.heading)); let opened = false;
+      s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(raw => { const sen = raw.replace(/[⟪⟫]/g, ""), at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
+        if (PROMISE.test(sen) && ++promise > 3) out.push({ ...at, rule: "promise_tail", detail: `결과 꼬리 ${promise}번째`, hint: "처방 뒤 「그 ○○이 …이 됩니다」 꼬리를 되풀이하지 않는다" });
+        const om = OPENER.exec(sen); if (isKey && om && !opened) { opened = true; const n = (openerKeys.get(om[1]) ?? 0) + 1; openerKeys.set(om[1], n); if (n > 3) out.push({ ...at, rule: "domain_opener", detail: `「${om[0].trim()}」로 여는 key ${n}번째`, hint: "칸 이름(「일에서는」)으로 key 문장을 열지 않는다" }); }
+        for (const ag of angles) if (sen.includes(ag)) { const n = (angleSeen.get(ag) ?? 0) + 1; angleSeen.set(ag, n); if (n > 2) out.push({ ...at, rule: "angle_leak", detail: `각도 말 「${ag}」 ${n}번째`, hint: "설계도의 보는 쪽 이름을 문장에 되풀이하지 않는다" }); }
+      })); });
+  }
+  return out;
+}

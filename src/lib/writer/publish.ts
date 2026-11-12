@@ -387,7 +387,10 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   { const motifs = coverMotifs(v).filter(m => brief.ledgerNotes?.avoidCoverMotifs?.includes(m)); if (motifs.length) return { reason: `이전 책 표지와 같은 모티프(${motifs.map(m => `${m}: ${COVER_MOTIFS[m].source.replace(/\(\?<?[!=][^)]*\)/g, "").split("|").slice(0, 10).join("·")} 계열 낱말 금지`).join(" / ")}) — 다른 계열의 그림으로`, level: "avoid" }; }
   const hit = avoidOverlaps(v, avoid);
   if (hit.length) return { reason: `피할 이미지(${hit.slice(0, 2).join(" / ")})`, level: "avoid" };
-  if (n < 16 || n > 26) return { reason: `길이 ${n}자(공백 뺌, 16~26자)`, level: "length" };
+  // AM2-5 1부(덕짱님 지시): 세운·대운 표지는 하한 12자, 채움말(「…의 그림」 「…의 해」 「…의 10년」)은 받지 않는다. 4종은 그대로 16~26자.
+  const am = brief.product === "annual_fortune" || brief.product === "major_fortune";
+  if (am && /(?<![가-힣])(그림|이야기|모습)$|[가-힣]의 (그림|해|한 해|10년|시간|이야기|시기|모습)$/.test(v)) return { reason: "채움말(「…의 그림」 「…의 해」) — 그 사람의 그림 자체로", level: "length" };
+  if (n < (am ? 12 : 16) || n > 26) return { reason: `길이 ${n}자(공백 뺌, ${am ? 12 : 16}~26자)`, level: "length" };
   return null;
 }
 /**

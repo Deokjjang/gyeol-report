@@ -59,12 +59,12 @@ describe("AM2-4 1부·2부 설계도", () => {
     expect(coreRowLine(coreOf(e)).length).toBeLessThanOrEqual(16);
     expect(TEN_GOD_SHORT.상관).toBe("틀을 깨는 말과 아이디어");
   });
-  it("key 설계: 핵심 1~2 · 영역 1~2 · 화면(되풀이 금지) · 할 일은 작가에게 주지 않음 · 장면 씨앗 묶음당 하나", () => {
+  it("key 설계: 핵심 1~2 · 영역 1~2 · 화면(되풀이 금지) · 할 일은 작가에게 주지 않음 · 장면은 key의 절반 이상(AM2-5 1부)", () => {
     const { intake } = setup("annual-1");
     const keys = intake.chapters.find(c => c.keys)!.keys!;
     for (const k of keys) { expect((k.core ?? []).length).toBeGreaterThanOrEqual(1); expect((k.core ?? []).length).toBeLessThanOrEqual(2); expect((k.must ?? []).length).toBeLessThanOrEqual(2); expect(k.screen?.[0]).toMatch(/^흐름 /); }
-    // 4~8월(묶음 c4)은 key 장면이 많아야 하나.
-    expect(keys.slice(4, 9).filter(k => k.scene).length).toBeLessThanOrEqual(1);
+    // AM2-5 1부(덕짱님 지시): key의 절반 이상에 입력에 맞는 장면 하나(묶음당 하나 → key 몫 60%).
+    expect(keys.filter(k => k.scene).length * 2).toBeGreaterThanOrEqual(keys.length);
   });
   it("처방 종류 사전: 카드 할 일끼리 종류가 겹치지 않고, 장은 남은 종류에서 하나씩", () => {
     const { brief, intake } = setup("annual-1");
