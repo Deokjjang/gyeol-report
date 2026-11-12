@@ -220,7 +220,9 @@ describe("AM2 P2 판독 고침(2026-11-11, 무료 고침 2차)", () => {
   it("카드: 신살 줄에 자리 · 일반론(「일주에 있을 때」) 뺌 · 같은 생활 결 · 할 일 씨앗 · 기능 칸 이름 없음 · 대운 관계 뜻", () => {
     const a = setup("annual_fortune"), m = setup("major_fortune");
     const all = [...a.intake.lines, ...m.intake.lines];
-    expect(all.some(l => /\(태어난 (해|달|날|시각)( · [가-힣]{2})?\)/.test(l.value))).toBe(true);
+    // AM2-4 3부: 자리는 괄호 값이 아니라 고객 말(「태어난 달 자리의 백호대살」).
+    expect(all.some(l => /^태어난 (해|달|날|시각) 자리의 /.test(l.value))).toBe(true);
+    expect(all.every(l => !/\(태어난 (해|달|날|시각)( · [가-힣]{2})?\)/.test(l.value))).toBe(true);
     expect(all.every(l => !/(일주|월주|연주|시주)에 (있을 때|있으면)/.test(l.meaning))).toBe(true);
     expect(all.every(l => !/주기능|부기능|3차기능|열등기능/.test(`${l.value} ${l.meaning}`))).toBe(true);
     // 할 일 씨앗: 입력에 맞는 문형이 없으면 비울 수 있다(1월 다리 달) — 대부분의 key는 있어야 한다.

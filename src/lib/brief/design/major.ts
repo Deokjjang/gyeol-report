@@ -98,11 +98,11 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
     mapMindMove: ev("mapMindMove", [...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1), ...dom(gCur, "move", 1), ...dom(gNext, "move", 1)], "마음·컨디션은 병명·증상 없이 생활 장면으로, 이동·거주는 '~하기 쉬운 해'처럼(단서·면책 문장 없이 — 책 끝에 시스템이 한 번 넣는다)"),
     growthCurve: c.mbti ? ev("growthCurve", [...growth("order", 1), ...growth(nowAge, 2), ...(futureAge !== nowAge ? growth(futureAge, 1) : [])], "MBTI 발달은 경향이다(나이에 맞춰 반드시 그렇게 된다고 쓰지 않는다)") : null,
     // AM2-3 2-2(P2 판독 major-1 P3 「다음 대운 주제」·P4 B5 문구 복사): 짝의 이유는 「이 대운 10년과 같은 나이대에 성격 쪽에서 자라는 것」 — 둘 다 엔진·지식 DB 값(나이 구간)이라 지어낸 인과가 아니다.
-    growthDayun: c.mbti && cur ? ev("growthDayun", [`이 대운 주제: ${cur.theme}`, ...growth(AGE_FACET(curMid), 1).map(g => `${cur.label.split(":")[0]} 10년(${cur.ages})과 같은 나이대에 성격 쪽에서는 ${g}`)], "명리 × MBTI: 같은 나이대에 겹치는 두 흐름을 나란히") : null,
+    growthDayun: c.mbti && cur ? ev("growthDayun", [`이 대운 주제: ${cur.theme}`, ...growth(AGE_FACET(curMid), 1).map(g => `${cur.label.split(":")[0]} 10년(${cur.ages})과 같은 나이대에 성격으로는 ${g}`)], "명리 × MBTI: 같은 나이대에 겹치는 두 흐름을 나란히") : null,
     // AM2-3 1-7: MBTI 미입력이면 7장은 명리만으로 쓰는 대체 장 「나이와 함께 자라는 결」(MBTI 문장 0).
     ageGrowth: !c.mbti && cur ? ev("ageGrowth", [`이 대운: ${cur.label} · ${cur.ages} — ${cur.theme}`, ...mind(gCur, "inside", 1), ...mind(gCur, "leave", 1)], "나이와 함께 단단해지는 쪽을 생활 장면으로") : null,
     ageNext: !c.mbti && next ? ev("ageNext", [`다음 대운: ${next.label} · ${next.ages} — ${next.theme}`, ...mind(gNext, "inside", 1), ...dom(gNext, "mind", 1)], "다음 10년에 새로 자라는 쪽을 조건형으로") : null,
-    planNear: ev("planNear", [`${c.thisYear}년 무렵(이 책의 기준 해): ${cur?.theme ?? ""}`, ...near.map(line)], "가까운 1년 / 2~3년 뒤를 각각 행동 하나로"),
+    planNear: ev("planNear", [`이 책을 쓴 ${c.thisYear}년 무렵: ${cur?.theme ?? ""}`, ...near.map(line)], "가까운 1년 / 2~3년 뒤를 각각 행동 하나로"),
     planFar: ev("planFar", [mid ? `5년 뒤: ${line(mid)}` : "", far ? `10년 뒤: ${line(far)}` : "", next ? `그 무렵 대운: ${next.label}` : ""], "5년 뒤 / 10년 뒤를 각각 준비 하나로. 일어날 사건 대신 준비할 것을 쓴다(단서·면책 문장 없이)"),
   };
   return Object.fromEntries(Object.entries(out).filter((x): x is [string, Evidence] => Boolean(x[1])));

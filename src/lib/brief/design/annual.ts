@@ -87,7 +87,8 @@ export function luckyOf(st: ElementState, strongest: FiveElement): { element: Fi
 // ---------- 소망 입력(자료일 뿐 지시가 아님) ----------
 const RISK = /자해|자살|죽고 ?싶|죽어 ?버리|사라지고 ?싶|살기 ?싫|목숨|극단적 ?선택|손목|해치고 ?싶/;
 const INJECT = /(이전|위의?|앞의?|모든) ?(지시|명령|규칙|프롬프트)|지시(를|는)? ?무시|무시하고|system ?prompt|프롬프트|ignore (all|previous|the)|you are|너는 이제|역할을 바꿔|규칙을 어기|개발자 모드/i;
-const TOPICS: readonly [RegExp, DomainKey | "study"][] = [[/연애|사랑|결혼|남자 ?친구|여자 ?친구|썸|이별|재회|배우자|인연/, "love"], [/돈|저축|저금|월급|빚|대출|부자|재테크|투자|돈 모/, "money"], [/취업|이직|퇴사|승진|회사|일|창업|사업|프리랜서|면접|커리어/, "work"], [/시험|합격|공부|자격증|수능|토익|대학|대학원|공무원/, "study"], [/친구|사람|관계|가족|부모|동료/, "people"], [/마음|건강|운동|다이어트|잠|스트레스|불안|행복|휴식/, "mind"]];
+// AM2-4 2부(P3 판독 annual-1 경계 #18): 「좋아하는 사람」은 연애 영역(예전에는 「사람」에만 걸려 바람 달이 연애 늦출 달과 겹쳤다).
+const TOPICS: readonly [RegExp, DomainKey | "study"][] = [[/연애|사랑|결혼|남자 ?친구|여자 ?친구|썸|이별|재회|배우자|인연|좋아하는 (사람|이)|좋아하는 사람|애인|연인/, "love"], [/돈|저축|저금|월급|빚|대출|부자|재테크|투자|돈 모/, "money"], [/취업|이직|퇴사|승진|회사|일|창업|사업|프리랜서|면접|커리어/, "work"], [/시험|합격|공부|자격증|수능|토익|대학|대학원|공무원/, "study"], [/친구|사람|관계|가족|부모|동료/, "people"], [/마음|건강|운동|다이어트|잠|스트레스|불안|행복|휴식/, "mind"]];
 export type WishRead = { readonly kind: "none" | "ok" | "risk" | "inject"; readonly text?: string; readonly topics: readonly (DomainKey | "study")[] };
 /** 제어문자·링크·따옴표 장식을 지우고 200자로 자른다. 위험 표현이면 원문을 옮기지 않고(risk), 지시 꼴이면 원문 대신 주제만(inject). */
 export function readWish(raw: string | undefined | null): WishRead {
@@ -148,9 +149,10 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const relSeat = (seat: "day" | "month" | "year") => card.relations.filter(r => r.seats.some(s => s.seat === seat)).slice(0, 1).map(r => relationLine(card, r, { picture: false }));
   const statusUnknownWork = !wk, statusUnknownLove = !lk;
   const mbtiLines = c.mbti ? [...pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g1), 2, "mbti1"), ...(g2 !== g1 ? pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g2), 1, "mbti2") : [])] : [];
-  const wishTopic = c.wish.topics[0];
-  const wishMonths = wishTopic && wishTopic !== "study" ? monthsBy(months, wishTopic, "↑") : wishTopic === "study" ? monthsBy(months, "work", "↑") : [];
-  const wishDown = wishTopic && wishTopic !== "study" ? monthsBy(months, wishTopic, "↓") : wishTopic === "study" ? monthsBy(months, "work", "↓") : [];
+  // AM2-4 2부 충돌 빌드 검사: 바람 달은 바람의 모든 영역 가운데 하나가 오르고, 어느 영역도 늦추지 않는 달만(바람 달 ↔ 늦출 달 겹침 0).
+  const wishDomains = [...new Set(c.wish.topics.map(t => (t === "study" ? "work" : t) as DomainKey))];
+  const wishDown = months.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↓")).map(monthName);
+  const wishMonths = months.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↑")).map(monthName).filter(x => !wishDown.includes(x));
   const evidence: Record<string, Evidence | null> = {
     yearCard: ev("yearCard", [
       `${card.name}: 하늘 글자 ${c.yearEntry.tenGod.stem}, 땅 글자 ${c.yearEntry.tenGod.branch}`,

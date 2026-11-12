@@ -330,7 +330,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // 장 번호 참조("7장에서 본 것처럼,")는 뜻을 바꾸지 않고 뗄 수 있는 꼴만 뗀다(P6d C). 나머지는 검사가 수리로 보낸다.
       if (D.CHAPTER_REF.test(q)) { const r = D.dropChapterRef(q); if (r !== q) prefix++; q = r; }
       q = fixEcho(fixCodes(fixJoins(q)));
-      const h = E.stripHanja(q); hanja += h.count; q = h.text;
+      const h = E.stripHanja(q, surface); hanja += h.count; q = h.text;
       const nn = E.nativeNumbers(q); numbers += nn.count; q = nn.text;
       const pw = E.plainWords(q); words += pw.count; q = pw.text;
       // 최종판3 3: 괄호 약어 뒤 조사(「눈(Ni)는」→「눈(Ni)은」), 종합 「2026년 11월 한 달」→「앞으로 한 달」.

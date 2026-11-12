@@ -28,6 +28,7 @@ import { ganjiLabel, josa } from "./labels";
 import { renderWriterBrief } from "@/lib/writer/prompt";
 import { balanceHolds, keepBalanced, opposes, opposesLoose, oppositeToDrop, type BalanceCtx } from "./balance";
 import { customerProps, lifeStage, matchJob } from "./props";
+import { allocateTodos } from "./prescriptions";
 import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { familyDesign, loveDesign, periodDomains } from "./productEvidence";
@@ -353,6 +354,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     }
   }
 
+  // AM2-4 2부: 카드 할 일(화면이 맡는 행동 하나)은 처방 종류 사전으로 배분 — 같은 종류가 두 key에 가지 않게(작가는 key 본문에 행동을 쓰지 않는다).
+  if (timeline) allocateTodos(timeline.entries, k, profile);
   // 살필 점 결정론 값(P6d D): 같은 십성 해(2023·2033 癸)에 같은 문장이 가지 않게, 관계 → 천간 십성 → 지지 십성 순으로 아직 안 쓴 줄.
   if (timeline) {
     const cctx: CautionCtx = { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) };

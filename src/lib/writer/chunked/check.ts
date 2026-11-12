@@ -13,16 +13,22 @@ import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
 import type { Intake, Line } from "./intake";
-import { RESIDENCE_PREMISE, WISH_MARK } from "./intake";
+import { RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
 import { WORKPLACE } from "./card";
 import { FLOW_TALK, FLOW_WORD } from "@/lib/brief/labels";
+import type { Brief } from "@/lib/brief/schema";
+import { coreLine, coreOf, relName, seatShort } from "@/lib/brief/core";
+import { rxKindsOf, rxOfSentence, type RxKind } from "@/lib/brief/prescriptions";
+
 
 // ---------- 1) 브리프 검사 ----------
 export type BriefIssue = { readonly where: string; readonly text: string; readonly rule: "time" | "notice" | "internal" | "abbr" | "hanja" | "metaphor" | "symbol"
   // AM2-3 1-2·2-1·2-3: 카드 문구 자체를 고객 문장 검사에.
-  | "noun_value" | "unit" | "tie" | "template" | "month_label" | "general" | "mbti_absent" | "premise" | "plan_basis" | "plan_conflict" | "yinyang" | "screen" };
+  | "noun_value" | "unit" | "tie" | "template" | "month_label" | "general" | "mbti_absent" | "premise" | "plan_basis" | "plan_conflict" | "yinyang" | "screen"
+  // AM2-4 3부·2부: 카드 ≡ 엔진 · 짝 없는 절 · 할 것·피할 것 행동 줄 · 바람 달 충돌 · 동음 · 화면 「뜻」 길이.
+  | "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "homonym" | "screen_len" };
 /** 브리프 검사 문맥(엔진 값): 음양 수 · 흐름 끝값 달(동률 판정) · 화면 카드 글(배지·카드 줄·꼬리표). */
-export type BriefCtx = { readonly yin?: number; readonly yang?: number; readonly flowEnds?: { readonly high: readonly string[]; readonly low: readonly string[] }; readonly screen?: readonly { readonly where: string; readonly text: string }[] };
+export type BriefCtx = { readonly yin?: number; readonly yang?: number; readonly flowEnds?: { readonly high: readonly string[]; readonly low: readonly string[] }; readonly screen?: readonly { readonly where: string; readonly text: string }[]; readonly brief?: Brief };
 const TIME_WORD = /(?<![가-힣])(지금|올해|요즘|최근|당장)|이번 (달|해|한 달)/;
 /** 작가에게 주는 제약 꼴(쓰는 법·금지) — 브리프 본문에 있으면 작가가 옮긴다(AM: note의 「경향으로」 「단정하지 않는다」). */
 const CONSTRAINT = /단정(하지|하진|할 수 없|하는 (말|건|것)은)|경향(으로|일 뿐|이라서)|(쓰지|넣지|말하지|옮기지|따르지|약속하지|만들지|정하지) (않는다|마)|하지 않는다|(?<![가-힣])금지(?![가-힣])|지시가 아님|자료일 뿐|조건형|가정형|미입력:|고전(의|에서|은)|그렇게 옮기지 않/;
@@ -52,7 +58,8 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = [], bc: Bri
   const out: BriefIssue[] = [];
   const see = (where: string, text: string) => {
     if (!text) return;
-    const t = text.replace(/«[^»]*»/g, "«»");
+    // AM2-4 3부: 십이운성 한자 꼴(「쇠(衰)」)은 카드 값이다(한자 규칙에서 뺀다).
+    const t = text.replace(/«[^»]*»/g, "«»").replace(STAGE_RE, "$1");
     const rule: BriefIssue["rule"] | null = TIME_WORD.test(t) || D.timeDeictic(t, true) ? "time"
       : E.isNoticeSentence(t) || E.metaInstruction(t) || CONSTRAINT.test(t) ? "notice"
       : INTERNAL.test(t) || INTERNAL_LABEL.test(t) || SLOT.test(t) ? "internal"
@@ -104,6 +111,7 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = [], bc: Bri
   for (const c of x.chapters) for (const sp of c.sections ?? []) for (const id of sp.lines) { const o = owner.get(id); if (o !== undefined && o !== c.n && sp.lines.length > 1 && !sp.recapIds?.includes(id)) flag("plan_conflict", `${c.n}장 「${sp.q}」`, `${id}는 ${o}장 핵심 주장`); }
   if (noMbti && x.pairs.length) flag("mbti_absent", "짝", `${x.pairs.length}개`);
   for (const p of x.pairs) see(`${p.id} 이유`, p.why);
+  if (bc.brief) for (const i of cardEngineIssues(x, bc.brief)) out.push({ where: i.where, rule: i.rule, text: i.text.slice(0, 160) });
   for (const c of x.chapters) {
     see(`${c.n}장 제목`, c.title); see(`${c.n}장 질문`, c.question);
     c.claims.forEach(cl => see(`${c.n}장 주장`, cl));
@@ -123,9 +131,14 @@ export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, 
   // AM2-3 4부: 관계 동사·뜻 섞임 · 신살 자리 · 근거 주인(MBTI 뜻 → 명리 주어) · 짝 없는 연결 · 앞날·지난 일 단정 사전 · 소제목 꼴 · 지난 대운 나이 × 직장 · 화살표 직역 ·
   // 작성 메모 · 뜻 기준 면책 · 장 첫 문장 소품 연속 · 반드시 쓸 것 · 근거 범위 · 소망 인용.
   "rel_verb", "rel_mix", "seat_claim", "owner_reverse", "pair_link", "future_assert", "past_premise", "heading_form", "past_work", "arrow_literal",
-  "meta_trace", "notice_meaning", "opening_prop", "must_miss", "evidence_scope", "wish_quote", "mbti_absent", "domain_list"]);
+  "meta_trace", "notice_meaning", "opening_prop", "must_miss", "evidence_scope", "wish_quote", "mbti_absent", "domain_list",
+  // AM2-4 5부: P3 판독 두 건의 결정론 꼴(자리 = 엔진 배지 · key 십성 · 개수 말 · 동음 · 카드 값 꼴 · 관계 주어 비문 · 겪을 일 단정 · 바람 없음 · 관계 틀 비문 · 카드 줄 인과).
+  "seat_badge", "key_tengod", "count_claim", "homonym", "label_leak", "subject_unit", "habit_assert", "wish_absent", "relation_frame", "card_join",
+  "head_echo", "angle_name", "pointer_expand", "screen_repeat"]);
 /** 경미 규칙: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고치게 하고, 그것만으로는 다시 쓰지도 지우지도 않는다(판독 기준 경미). */
-export const PIGGYBACK_RULES: ReadonlySet<string> = new Set<string>(["head_repeat"]);
+export const PIGGYBACK_RULES: ReadonlySet<string> = new Set<string>(["head_repeat", "head_echo", "angle_name", "pointer_expand"]);
+/** AM2-4 1부·5부: 지우기만 하는 규칙(그것만으로는 다시 쓰지 않는다 — 화면 사실 되풀이는 그 문장을 지워도 화면에 남는다). 다시 쓸 때는 함께 넘긴다. */
+export const CUT_ONLY_RULES: ReadonlySet<string> = new Set<string>(["screen_repeat"]);
 /** 문장이 없는 깃발(지울 문장이 없다 — 다시 쓰기로만 고친다). paragraph = -3. */
 export const NO_SENTENCE_RULES: ReadonlySet<string> = new Set<string>(["must_miss"]);
 /** 장 사이 반복(모든 묶음 뒤 결정론, 뒤쪽 묶음만 1회 다시 쓴다). */
@@ -133,7 +146,7 @@ export const REPEAT_RULES: ReadonlySet<string> = new Set<string>(["phrase_repeat
 const BLOCK_RULES_OLD: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon"]);
 export type ChunkFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string; readonly hint?: string };
 
-const CODE = /(?<![A-Za-z0-9])[NDYMBIP]\d{1,3}(?![A-Za-z0-9])|근거 카드|책 설계도|소제목 틀|핵심 주장|장면 씨앗|할 일 씨앗|되풀이 금지|이번 묶음|머리 문장|주기능|부기능|3차기능|열등기능/;
+const CODE = /(?<![A-Za-z0-9])[NDYMBIP]\d{1,3}(?![A-Za-z0-9])|근거 카드|책 설계도|소제목 틀|핵심 주장|장면 씨앗|할 일 씨앗|되풀이 금지|이번 묶음|머리 문장|주기능|부기능|3차기능|열등기능|두 번째로 쓰는 쪽|세 번째로 쓰는 쪽|가장 늦게 자라는 쪽|가장 센 쪽인|기준 해|생활 결|처방 종류|집 장/;
 const norm = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");
 const windows = (t: string, w: number) => { const n = norm(t), out = new Set<string>(); for (let i = 0; i + w <= n.length; i++) out.add(n.slice(i, i + w)); return out; };
 const hit = (s: string, set: ReadonlySet<string>, w: number) => { const n = norm(s); for (let i = 0; i + w <= n.length; i++) if (set.has(n.slice(i, i + w))) return n.slice(i, i + w); return null; };
@@ -156,6 +169,8 @@ export type BlockCtx = {
   readonly keyRels?: ReadonlyMap<string, ReadonlySet<string>>;
   /** AM2-3: 지난 대운이 끝난 만 나이(대운 2장 「그 시기를 지나며」 직장 낱말 검사). */
   readonly prevDayunEndAge?: number;
+  /** AM2-4: 엔진 항목(배지 자리 · key 십성 대조). */
+  readonly brief?: Brief;
 };
 // ---------- AM2-3 4부 보조 ----------
 /** 낱말 어간(첫 음절 + 둘째 음절의 첫소리·가운뎃소리): 「눌리는·눌립니다」, 「급하게·급한」을 같은 어간으로. */
@@ -377,14 +392,17 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
         const pointedKeys = new Set((plans.get(c.n)?.keys ?? []).filter(o => o.key !== s.heading && (kpHere?.lines ?? []).some(id => { const m = lineById.get(id)?.meaning ?? ""; return m.includes(`앞의 ${o.label}`) || m.includes(`${o.label}과 같은 생활 결`); })).map(o => o.key));
         if (mine) for (const [key, set] of months) if (key !== s.heading && !pointedKeys.has(key) && hit(sen, set, 12) && !hit(sen, mine, 12)) { add({ ...at, rule: "month_line", detail: `${labelOfKey.get(key) ?? key}의 근거 줄` }); break; }
       }
-      const ms = monthsIn(sen);
-      if (ms.size && !anyList.some(set => [...ms].every(m => set.has(m)))) for (const l of lists) if (l.cue.test(sen) && [...ms].some(m => !l.months.has(m))) {
-        if (/(달|때)(은|는|이|가)? [^.?!]{0,30}(이에요|입니다|예요)|(오르|늦추|새|무리|쉬어)[^.?!]{0,10}달/.test(sen)) { add({ ...at, rule: "month_list", detail: `달 목록이 카드와 다름(카드: ${[...l.months].join("·")})` }); break; }
-      }
+      // AM2-4 5부(P3 판독 annual-1 차단 #2 — 한 문장의 두 목록 「일이 오르는 달은 …이고, 4월은 흔들림을 살필 달」을 오탐으로 지움): 「이고·이며·,」 마디마다 따로 대조한다.
+      monthList: for (const cl of sen.split(/(?<=이고|이며|이지만|인데),\s*|(?<=고),\s+/)) { const ms = monthsIn(cl);
+        if (!ms.size || anyList.some(set => [...ms].every(m => set.has(m)))) continue;
+        for (const l of lists) if (l.cue.test(cl) && [...ms].some(m => !l.months.has(m)) && !lists.some(l2 => l2 !== l && l2.cue.test(cl) && [...ms].every(m => l2.months.has(m)))) {
+          if (/(달|때)(은|는|이|가)? [^.?!]{0,30}(이에요|입니다|예요|이고|이며)|(오르|늦추|새|무리|쉬어|흔들)[^.?!]{0,10}달/.test(cl)) { add({ ...at, rule: "month_list", detail: `달 목록이 카드와 다름(카드: ${[...l.months].join("·")})` }); break monthList; }
+        } }
       if (b.yearsToNextDayun !== undefined && b.yearsToNextDayun > 2 && /곧[^.?!]{0,24}대운(으로|이|에)? ?(넘어가|바뀌|들어가|시작|열리)/.test(sen)) add({ ...at, rule: "dayun_soon", detail: `다음 대운까지 ${b.yearsToNextDayun}년` });
     }
   }));
   for (const f of rootFlags(chapters, b)) add(f);
+  for (const f of am24Flags(chapters, b)) add(f);
   return out;
 }
 
@@ -398,9 +416,12 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
   const out: ChunkFlag[] = [];
   const x = b.intake, plans = new Map(x.chapters.map(c => [c.n, c])), lineById = new Map(x.lines.map(l => [l.id, l]));
   const keyPlans = new Map(x.chapters.flatMap(c => (c.keys ?? []).map(k => [k.key, k] as const)));
-  const relMeaning = (key: string) => { const kp = keyPlans.get(key); const m = new Map<string, string>(); for (const id of kp?.lines ?? []) { const l = lineById.get(id); const nm = l?.value.match(/(?:월|년) ([가-힣]{1,4}(?:합|충|형|파|해|국)|[가-힣]+ 방합|원진|공망)(?:\(|$)/)?.[1]; if (l && nm) m.set(nm, l.meaning); } return m; };
+  // AM2-4 3부: 관계 줄 값은 「5월 · 을사월 태어난 해 자리와 인사해」 「… 화국 반합」 「… 공망」(괄호 값 없음). 옛 꼴 「인사해(태어난 해 자리와)」도 읽는다.
+  const relMeaning = (key: string) => { const kp = keyPlans.get(key); const m = new Map<string, string>(); for (const id of kp?.lines ?? []) { const l = lineById.get(id); const nm = l?.value.match(/(?:자리와 |(?:월|년) )([가-힣]{1,4}(?:합|충|형|파|해|국)|[가-힣]+ 방합|원진|공망)(?: 반합)?(?:\(|$)/)?.[1]; if (l && nm) m.set(nm, l.meaning); } return m; };
   // 신살·운성 자리(값 「백호대살(태어난 달 · 임술)」).
-  const seats0 = x.lines.filter(l => l.subject === "natal").map(l => { const m = /^([가-힣]{2,6})\((태어난 (?:해|달|날|시각))(?: · ([가-힣]{2}))?\)$/.exec(l.value); return m ? { name: m[1], short: m[1].length >= 4 && /살$/.test(m[1]) ? m[1].slice(0, 2) : m[1], seat: m[2], ganji: m[3] as string | undefined } : null; }).filter(<T,>(v: T | null): v is T => v !== null).filter(v => /살$|귀인$/.test(v.name));
+  // AM2-4 3부: 신살 줄 값은 「태어난 달 자리의 백호대살」(옛 꼴 「백호대살(태어난 달 · 임술)」도 읽는다).
+  const seats0 = x.lines.filter(l => l.subject === "natal").map(l => { const m = /^([가-힣]{2,6})\((태어난 (?:해|달|날|시각))(?: · ([가-힣]{2}))?\)$/.exec(l.value), m2 = /^(태어난 (?:해|달|날|시각)) 자리의 ([가-힣]{2,6})$/.exec(l.value);
+    const name = m?.[1] ?? m2?.[2], seat = m?.[2] ?? m2?.[1]; return name && seat ? { name, short: name.length >= 4 && /살$/.test(name) ? name.slice(0, 2) : name, seat, ganji: m?.[3] as string | undefined } : null; }).filter(<T,>(v: T | null): v is T => v !== null).filter(v => /살$|귀인$/.test(v.name));
   // 오탐 검토(major): 같은 신살이 여러 줄(특성 줄 · 숙제 줄 「현침살 (태어난 해·태어난 달·…)」)에 있으면 자리는 그 합집합.
   const seatSet = new Map<string, Set<string>>();
   for (const sh of seats0) seatSet.set(sh.name, new Set([sh.seat]));
@@ -409,7 +430,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
   // 근거 범위(2-3): 일주 이름 · 신살·귀인 이름이 쓰는 장 밖에서.
   // 일주 이름은 그 일주 줄의 쓰는 장 + 자리 값에 일주 이름이 든 줄(「사(태어난 날 · 갑오)」)의 쓰는 장에서 쓸 수 있다.
   const pillarUse = new Set(x.lines.filter(l => l.subject === "natal" && b.dayPillar && (l.value === b.dayPillar || l.value.includes(`· ${b.dayPillar})`))).flatMap(l => l.use));
-  const scoped = x.lines.filter(l => l.subject === "natal").map(l => { const nm = l.value.replace(/\(.*\)$/, "").trim(); return { id: l.id, nm, use: nm === b.dayPillar ? pillarUse : new Set(l.use) }; })
+  const scoped = x.lines.filter(l => l.subject === "natal").map(l => { const nm = l.value.replace(/^태어난 (해|달|날|시각) 자리의 /, "").replace(/\(.*\)$/, "").trim(); return { id: l.id, nm, use: nm === b.dayPillar ? pillarUse : new Set(l.use) }; })
     .filter(v => (b.dayPillar && v.nm === b.dayPillar) || /살$|귀인$/.test(v.nm));
   const pairWhys = x.pairs.map(p => p.why);
   const bWindows = new Set<string>(); for (const l of x.lines) if (l.subject === "mbti") for (const w of windows(l.meaning, 8)) bWindows.add(w);
@@ -448,7 +469,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
       // 오탐 검토(annual): 가리키는 앞 달·해의 허용 줄 어간도 이 자리 몫으로 친다.
       const allowedLines = kp ? [...keyPlans.values()].filter(o => o.key !== kp.key).flatMap(o => o.lines.map(id => lineById.get(id)).filter((l): l is Line => Boolean(l) && allowedOther(o, l!))) : [];
       const mineStems = new Set([...mineStems0, ...stemsOf(allowedLines.map(l => l.meaning).join(" "))]);
-      const otherRel = kp ? [...keyPlans.values()].filter(o => o.key !== kp.key).flatMap(o => o.lines.map(id => lineById.get(id)).filter((l): l is Line => Boolean(l) && l!.subject === (kp.key.includes("-M") ? "month" : "year") && !/같은 결|흐름이 [가-힣]+ 편|영역 흐름/.test(l!.meaning) && !allowedOther(o, l!)).map(l => ({ key: o.key, label: o.label, nm: l.value.replace(`${o.label} `, ""), st: stemsOf(l.meaning), raw: l.meaning }))) : [];
+      const otherRel = kp ? [...keyPlans.values()].filter(o => o.key !== kp.key).flatMap(o => o.lines.map(id => lineById.get(id)).filter((l): l is Line => Boolean(l) && l!.subject === (kp.key.includes("-M") ? "month" : "year") && !/같은 결|과 같고|흐름이 [가-힣]+ 편|영역 흐름/.test(l!.meaning) && !allowedOther(o, l!)).map(l => ({ key: o.key, label: o.label, nm: l.value.replace(`${o.label} `, ""), st: stemsOf(l.meaning), raw: l.meaning }))) : [];
       s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(raw => {
         const sen = raw.replace(/[⟪⟫]/g, ""), at = { ...at0, paragraph: pi, sentence: sen };
         // 관계 동사(뜻 사전).
@@ -635,3 +656,201 @@ export function adjacentRepeats(chapters: readonly FinalChapter[], cardValues: r
 
 /** 문체 점수(고치지 않는다): 규칙별 수. */
 export const styleScoreOf = (lint: readonly LintFlag[]) => lint.filter(f => !BLOCK_RULES.has(f.rule) && !REPEAT_RULES.has(f.rule)).reduce<Record<string, number>>((o, f) => ({ ...o, [f.rule]: (o[f.rule] ?? 0) + 1 }), {});
+
+// ======================================================================
+// AM2-4(덕짱님 지시 2026-11-12) — 카드 불변식 · 설계도 빌드 검사 · P3 판독 두 건의 「결정론 검사로 잡을 수 있었던 꼴」 · 처방 사전 · 끝말 상한
+// ======================================================================
+
+export type CardIssue = { readonly where: string; readonly rule: "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "homonym" | "screen_len"; readonly text: string };
+const SEAT_LIST = (w: string) => w.split("·").map(x => x.trim()).filter(Boolean).map(x => (/^태어난 /.test(x) ? x : `태어난 ${x}`));
+const tgOf = (label: string) => label.replace(/\(.*\)$/, "").trim();
+/**
+ * 3부 카드 ≡ 엔진 불변식(작가를 부르기 전, 호출 0): 카드의 모든 key 줄(하늘·땅 십성 · 관계 이름·자리 · 공망 · 흐름 · 오행 채움)과 신살·운성 자리를
+ * 엔진 배지·특성 값과 대조한다. 화면 「뜻」 한 줄(coreLine)도 같은 엔진 값에서 나왔는지·두 줄 안(26자)인지 본다.
+ */
+export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
+  const out: CardIssue[] = [];
+  const entries = new Map((brief.timeline?.entries ?? []).map(e => [e.key, e] as const));
+  const byId = new Map(x.lines.map(l => [l.id, l] as const));
+  for (const c of x.chapters) for (const k of c.keys ?? []) {
+    const e = entries.get(k.key); if (!e) { out.push({ where: k.key, rule: "card_engine", text: "엔진 항목 없음" }); continue; }
+    for (const id of k.lines) {
+      const l = byId.get(id); if (!l || !l.value.startsWith(`${k.label} `)) continue;
+      const v = l.value.slice(k.label.length + 1);
+      const tg = /^(하늘|땅) 글자 ([가-힣]{2})/.exec(v);
+      if (tg) { const want = tgOf(tg[1] === "하늘" ? e.tenGod.stem : e.tenGod.branch); if (tg[2] !== want) out.push({ where: `${id} ${k.label}`, rule: "card_engine", text: `${tg[1]} 글자 ${tg[2]} ≠ 엔진 ${want}` }); continue; }
+      if (v === "공망") { if (!e.badges.some(b => b.kind === "GONGMANG")) out.push({ where: `${id} ${k.label}`, rule: "card_engine", text: "공망 줄인데 엔진 배지에 공망 없음" }); continue; }
+      const rel = /^(?:(태어난 [가-힣·]+) 자리와 )?([가-힣]{1,6}(?:합|충|형|파|해|국|방합)(?: 반합)?|원진)$/.exec(v);
+      if (rel) {
+        const b = e.badges.find(x2 => relName(x2.label) === rel[2]);
+        if (!b) { out.push({ where: `${id} ${k.label}`, rule: "card_engine", text: `관계 ${rel[2]} — 엔진 배지에 없음` }); continue; }
+        const want = new Set(SEAT_LIST(b.with ?? "")), got = new Set(SEAT_LIST(rel[1] ?? ""));
+        if (want.size !== got.size || [...want].some(s2 => !got.has(s2))) out.push({ where: `${id} ${k.label}`, rule: "card_engine", text: `${rel[2]} 자리 「${rel[1] ?? "없음"}」 ≠ 엔진 「${b.with ?? "없음"}」` });
+        continue;
+      }
+      const fl = /흐름\(([가-힣]+)에서 ([가-힣]+)으로\)/.exec(l.meaning);
+      if (fl && fl[2] !== FLOW_WORD[e.flow.score]) out.push({ where: `${id} ${k.label}`, rule: "card_engine", text: `흐름 ${fl[2]} ≠ 엔진 ${FLOW_WORD[e.flow.score]}` });
+    }
+    // 화면이 보여 주는 것(screen) = 엔진 값.
+    const sc = k.screen ?? [];
+    if (sc[0] !== `흐름 ${FLOW_WORD[e.flow.score]}`) out.push({ where: k.key, rule: "card_engine", text: `화면 흐름 「${sc[0] ?? ""}」 ≠ 엔진 ${FLOW_WORD[e.flow.score]}` });
+    for (const b of e.badges) if (!sc.includes(relName(b.label))) out.push({ where: k.key, rule: "card_engine", text: `화면에 배지 ${b.label} 없음` });
+    const fills = e.fillsLack?.fills && e.fillsLack.elements.length;
+    if (Boolean(fills) !== sc.some(t => / 채움$/.test(t))) out.push({ where: k.key, rule: "card_engine", text: "오행 채움 화면 값 ≠ 엔진" });
+    // 핵심(core) = 엔진 가중치로 다시 고른 것(대운 책 — 세운 달은 책의 해 대운 십성을 함께 넘겨 고른다).
+    const again = coreOf(e, { short: k.depth === "short" }).map(c2 => c2.name);
+    if (x.product === "major_fortune" && JSON.stringify(again) !== JSON.stringify(k.core ?? [])) out.push({ where: k.key, rule: "card_engine", text: `핵심 ${JSON.stringify(k.core)} ≠ 엔진 다시 고름 ${JSON.stringify(again)}` });
+    const line = coreLine(coreOf(e, { short: k.depth === "short" }));
+    if (line.replace(/\s/g, "").length > 24) out.push({ where: k.key, rule: "screen_len", text: `「뜻」 한 줄 ${line.length}자: ${line}` });
+  }
+  // 신살·운성 자리 줄(「태어난 달 자리의 백호대살」) = 특성의 엔진 자리.
+  for (const l of x.lines.filter(l2 => l2.subject === "natal")) {
+    const m = /^(태어난 (?:해|달|날|시각)) 자리의 ([가-힣]{1,6})(?:\([一-鿿]\))?$/.exec(l.value); if (!m) continue;
+    const t = brief.traits.find(t2 => t2.name === m[2] && t2.chapters.length);
+    if (!t) continue;
+    const seat = t.positionNote?.match(/^(태어난 (?:해|달|날|시각)) 자리/)?.[1] ?? (t.positions.length === 1 ? ({ year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as Record<string, string>)[t.positions[0]] : undefined);
+    if (seat && seat !== m[1]) out.push({ where: l.id, rule: "card_engine", text: `${m[2]} 자리 ${m[1]} ≠ 엔진 ${seat}` });
+  }
+  // 십이운성 쇠(衰)와 오행 쇠(금)가 한 책에 함께 있으면 운성 쪽은 한자 꼴로(동음 구분).
+  const allText = x.lines.map(l => `${l.value} ${l.meaning}`).join(" ");
+  if (/쇠\(금\)/.test(allText)) for (const t of brief.traits.filter(t2 => /^twelveStage/.test(t2.featureId) && t2.name === "쇠" && t2.chapters.length)) if (!x.lines.some(l => /쇠\(衰\)/.test(l.value))) out.push({ where: t.id, rule: "homonym", text: "십이운성 쇠가 오행 쇠(금)와 같은 꼴" });
+  // 2부 짝 없는 명리 줄 × MBTI 줄이 한 절에.
+  for (const c of x.chapters) for (const sp of c.sections ?? []) {
+    const subj = (id: string) => byId.get(id)?.subject;
+    const bs = sp.lines.filter(id => subj(id) === "mbti"), ms = sp.lines.filter(id => /^(natal|dayun|year|month)$/.test(subj(id) ?? ""));
+    if (bs.length && ms.length) { const paired = new Set(x.pairs.filter(p2 => bs.includes(p2.mbti) && (p2.use ?? []).includes(c.n)).map(p2 => p2.myeongri)); const lone = ms.filter(id => !paired.has(id)); if (lone.length) out.push({ where: `${c.n}장 「${sp.q}」`, rule: "pair_section", text: `짝 없는 명리 줄 ${lone.join("·")} × MBTI ${bs.join("·")}` }); }
+    // 「할 것·피할 것」에는 행동 줄만.
+    if (/할 것|피할 것/.test(sp.q)) for (const id of sp.lines) { const l = byId.get(id); if (l && /달(\(같은 세기\))?:|(오르는|살필) 영역|살필 거리|오르는 달|늦출 달|새기 쉬운 달/.test(`${l.value}: ${l.meaning}`)) out.push({ where: `${c.n}장 「${sp.q}」`, rule: "plan_advice_only", text: `${id} ${l.value}` }); }
+  }
+  // 2부 충돌: 바람 달 ↔ 바람 영역을 늦출 달.
+  const wishDomains = (x.lines.find(l => l.subject === "input" && /바람과 이어지는 영역$/.test(l.value))?.meaning ?? "").split("·").map(s2 => s2.trim());
+  const wishMonths = new Set(x.lines.filter(l => /바람과 이어지는 영역이 오르는 달|그 바람과 이어지는 영역이 오르는 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)]));
+  const SLOW: Readonly<Record<string, RegExp>> = { 연애: /연애에서 속도를 늦출 달/, 돈: /돈이 새기 쉬운 달/, 일: /일터 흔들림을 살필 달/, 사람: /관계 속도를 늦출 달/, 마음: /무리하기 쉬운 달/, 공부: /일터 흔들림을 살필 달/ };
+  for (const d of wishDomains) { const re = SLOW[d]; if (!re) continue; for (const l of x.lines.filter(l2 => re.test(l2.value))) { const clash = [...monthsIn(l.meaning)].filter(m => wishMonths.has(m)); if (clash.length) out.push({ where: l.id, rule: "wish_conflict", text: `바람 달 ${clash.join("·")}월이 「${l.value}」과 겹침` }); } }
+  return out;
+}
+
+/** 본문 검사(AM2-4 5부)에 쓰는 문맥: key마다 배지 자리 · 핵심 · 화면 사실. */
+const SEAT_IN = /태어난 (해|달|날|시각)((?:·(?:태어난 )?(?:해|달|날|시각))*)/g;
+const seatsIn = (cl: string) => new Set([...cl.matchAll(SEAT_IN)].flatMap(m => [`태어난 ${m[1]}`, ...m[2].split("·").filter(Boolean).map(x2 => (/^태어난 /.test(x2) ? x2 : `태어난 ${x2}`))]));
+const COUNT_WORD = /절반이 넘|절반 넘게|절반을 넘|대부분의 달|거의 모든 달|한 해 내내|모든 달에|열두 달 내내|과반/;
+const LABEL_LEAK = /[가-힣]\((태어난 [^)]*자리와)\)|\(태어난 (해|달|날|시각) · [가-힣]{2}\)|생활 결|(연애|돈|일|사람|마음) 신호(는|가)? (오름|내림|보통)|\(반쯤\)\(|\(반쯤\)(은|는|이|가|과|와)/;
+const ANGLE_NAME = /(?<![가-힣])(일|돈|연애|성격|공부|사람|마음) 쪽(에서는|에서|에는|으로는|은|의 얼굴) /;
+const HABIT = /떠오르죠|떠오를 거예요|떠오르지 않나요|있을 거예요[.!]?$|(날|때|순간)이 (있을|올) 거예요|서두를 일이 없/;
+const TIME_REL = /오늘 (밤|저녁|퇴근길|안에|중으로|하루)|(?<![가-힣])내일(로| 아침| 하루|은|부터)|(?<![가-힣])다음 달(의|에|이|은|부터)/;
+const WISH_TALK = /적어 (주신|준) (바람|소망|고민)|바람을 향한|당신의 바람|그 바람|이 바람|바람과 이어|«바람»/;
+const RELATION_FRAME = /[가-힣](합|충|형|파|해|국|원진)( 반합|\(반쯤\))?(은|는) 태어난 [가-힣·]+ 자리와 [가-힣 ]{1,12}(이|가) /;
+const CAUSAL = /만큼[, ]|니까[, ]|(?<=[가-힣])니, |이라서 |라서[, ]|(?<=[가-힣])이라[, ]|여서[, ]|해서[, ]|덕분에 /;
+const SCREEN_FLOW = /흐름(이|은|도)? [^.?!]{0,8}(잔잔|느린|느려|보통인|활발|거센|거세)/, SCREEN_FILL = /모자란 쪽을 채|부족한 기운을 채|(쇠|물|불|나무|흙)\((금|수|화|목|토)\)[^.?!]{0,6}(채워|채우)/;
+const HEAD_ECHO_END = /(해|달)(예요|입니다|이에요|이기도 해요)[.!]?$/;
+const MY_WORD2 = /(나무|불|흙|쇠|물)의 기운|반합|삼합|대운|십성|[갑을병정무기경신임계][자축인묘진사오미신유술해](월|년|일주)/;
+
+/** AM2-4 5부 본문 검사(blockFlags가 부른다). */
+export function am24Flags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
+  const out: ChunkFlag[] = [];
+  const x = b.intake, plans = new Map(x.chapters.map(c => [c.n, c])), lineById = new Map(x.lines.map(l => [l.id, l]));
+  const keyPlans = new Map(x.chapters.flatMap(c => (c.keys ?? []).map(k => [k.key, k] as const)));
+  const entries = new Map((b.brief?.timeline?.entries ?? []).map(e => [e.key, e] as const));
+  const cardText = x.lines.map(l => `${l.value} ${l.meaning}`).join(" ");
+  const noWish = !x.person.some(p => /^적어 준 바람/.test(p));
+  const stageSoe = /쇠\(衰\)/.test(cardText) && /쇠\(금\)/.test(cardText);
+  const mbtiWord = b.mbtiAnchor ? new RegExp(`${b.mbtiAnchor.source}|성격 유형`) : null;
+  // 카드 줄(서로 다른 줄)을 인과로 잇기: 이음말 앞·뒤가 서로 다른 카드 줄과 겹친다(짝 이유는 제외).
+  const cardLines = x.lines.filter(l => l.meaning.length >= 10 && l.subject !== "input");
+  const pairWhy = x.pairs.map(p => p.why);
+  const allNames = new Set([...(b.keyRels?.values() ?? [])].flatMap(s2 => [...s2]));
+  for (const c of chapters) {
+    if (c.source === "deterministic") continue;
+    const plan = plans.get(c.n);
+    const chapterPairs = x.pairs.filter(p => !p.use || p.use.includes(c.n));
+    c.sections.forEach((s, si) => {
+      const kp = c.keys?.includes(s.heading) ? keyPlans.get(s.heading) : undefined, e = kp ? entries.get(kp.key) : undefined;
+      const coreNames = new Set((kp?.core ?? []).map(n2 => n2.replace(/ 반합$/, "")));
+      let prev = "";
+      s.paragraphs.forEach((p, pi) => splitSentences(p).forEach((raw, sj) => {
+        const sen = raw.replace(/[⟪⟫]/g, ""), at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
+        const flag = (rule: string, hint: string, detail?: string) => out.push({ ...at, rule, hint, ...(detail ? { detail } : {}) });
+        // seat_badge: 관계 이름과 같은 절의 자리 = 엔진 배지 자리(P3 판독 annual-1 차단 #5·#6).
+        if (kp && e) for (const bd of e.badges) { const nm = bd.label.replace(/\(.*\)$/, "").trim(); if (nm.length < 2) continue;
+          for (const cl of sen.split(/(?<=고|며|지만|는데|어서|아서|해서|면서),\s*/)) { if (!cl.includes(nm)) continue; const got = seatsIn(cl), want = new Set(SEAT_LIST(bd.with ?? "")); const bad = [...got].filter(s2 => !want.has(s2)); if (bad.length && want.size) { flag("seat_badge", `${nm}는 ${bd.with} 자리 — 엔진 배지 그대로`, `${nm} 자리 ${bad.join("·")} ≠ ${bd.with}`); break; } } }
+        // key_tengod: key 본문의 「X가 하늘·땅」 「X 달·해」 십성 = 그 key의 하늘·땅(한자 주석 오탐 「거센 편인 달」 — P3 판독 annual-1 #4).
+        if (kp && e) { const sky = tgOf(e.tenGod.stem), ground = tgOf(e.tenGod.branch), dt = e.dayun?.tenGod ? tgOf(e.dayun.tenGod) : "";
+          const m = new RegExp(`(?<!(?:[는은던한인운른큰진된간난센린쁜] ))(${TG})(?:\\([^)]*\\))?(?:이|가)? (하늘|땅)|(?<!(?:[는은던한인운른큰진된간난센린쁜] ))(${TG})(?:\\([^)]*\\))? (달|해)(이라|이에요|입니다|예요|이니|인)`).exec(sen);
+          const nm = m?.[1] ?? m?.[3]; if (nm && nm !== sky && nm !== ground && nm !== dt) flag("key_tengod", `${kp.label}은 하늘 ${sky} · 땅 ${ground} — 다른 십성을 그 달·해의 십성으로 쓰지 않는다`, `「${m![0]}」`); }
+        // count_claim: 개수 말은 카드 값이 있을 때만(P3 판독 annual-1 차단 #1).
+        { const cm = COUNT_WORD.exec(sen); if (cm && !cardText.includes(cm[0])) flag("count_claim", "개수 말(절반·대부분·한 해 내내)은 카드에 그 수가 있을 때만 — 달 이름을 그대로 나열한다", cm[0]); }
+        // homonym: 십이운성 쇠(衰)와 오행 쇠(금)가 함께인 책에서 꼴 없는 「쇠」(P3 판독 annual-1 차단 #3).
+        if (stageSoe) { const t2 = sen.replace(/쇠\((衰|금|金)\)|쇠(의)? 기운|쇠붙이|쇠(가|를) (채|보태)/g, ""); if (/(?<![가-힣])쇠(?![가-힣(])|(?<![가-힣])쇠(에|는|가|의|와|도|를|로) /.test(t2)) flag("homonym", "십이운성은 「쇠(衰)」, 오행은 「쇠(금)」 — 꼴 없이 「쇠」만 쓰지 않는다", "꼴 없는 「쇠」"); }
+        if (LABEL_LEAK.test(sen)) flag("label_leak", "카드 값 꼴(괄호 자리·「생활 결」·「신호는 오름」·「(반쯤)」)을 옮기지 않는다 — 「태어난 날 자리와 축오해가 걸려요」처럼 문장으로", sen.match(LABEL_LEAK)![0]);
+        if (ANGLE_NAME.test(sen)) flag("angle_name", "각도 이름(「일 쪽에서는」)을 쓰지 않는다 — 「일에서는」처럼", sen.match(ANGLE_NAME)![0]);
+        // subject_unit: 관계가 주어인데 「…달입니다」(P3 판독 annual-1 경계 #8·#9).
+        { const nm = [...allNames].find(n2 => n2.length >= 2 && new RegExp(`${esc2(n2)}(\\([^)]*\\))*(은|는) [^.?!]{4,90}(달|해)(입니다|예요|이에요)[.!]?$`).test(sen)); if (nm) flag("subject_unit", `「${nm}은 … 달입니다」는 비문 — 「${nm}이 걸려 …하기 쉬워요」처럼`, nm); }
+        if (HABIT.test(sen) && !/[?？]$/.test(sen)) flag("habit_assert", "겪을 일·습관으로 정하지 않는다(「떠오르죠」「…날이 있을 거예요」「서두를 일이 없습니다」) — 「…해 보기 좋은 때예요」처럼", sen.match(HABIT)![0]);
+        if (TIME_REL.test(sen)) flag("time_extra", "읽는 날에 기대는 말(「오늘 밤」「내일」「다음 달」)을 쓰지 않는다 — 「그날 저녁」「다음 날」「그다음 달」처럼", sen.match(TIME_REL)![0]);
+        if (noWish && WISH_TALK.test(sen)) flag("wish_absent", "이 사람은 바람을 적지 않았다 — 바람·소망을 말하지 않는다", sen.match(WISH_TALK)![0]);
+        if (RELATION_FRAME.test(sen)) flag("relation_frame", "「X는 태어난 Y 자리와 A와 B가 …」는 비문 — 「태어난 Y 자리와 X가 걸려 …」처럼", sen.match(RELATION_FRAME)![0]);
+        // pair_outside(P3 판독 major-1 C2): 짝 없는 장에서 앞 문장 MBTI 말 + 이 문장 명리 말(「그 생각 가운데 … 쇠의 기운이 돕는 몫」).
+        if (mbtiWord && !chapterPairs.length && prev && mbtiWord.test(prev) && MY_WORD2.test(sen) && /^(그|이)[ 가-힣]{0,8}|그 (생각|힘|마음|가운데|중)|그중/.test(sen)) flag("pair_link", "이 장에는 명리×MBTI 짝이 없다 — 앞 문장의 MBTI 말을 명리 근거에 잇지 않는다(문장을 나눠 각자 근거로)", "앞 문장 MBTI + 이 문장 명리");
+        // card_join: 서로 다른 카드 줄을 「만큼·니·라서」로 인과처럼 잇기(P3 판독 major-1 B6~B8 · annual-1 경미 #31).
+        { const cm = CAUSAL.exec(sen); if (cm && !pairWhy.some(w => overlap4(sen, w) >= 4)) { const left = sen.slice(0, cm.index), right = sen.slice(cm.index + cm[0].length);
+          const hitL = cardLines.filter(l => overlap4(left, l.meaning) >= 3 && !CAUSAL.test(l.meaning)), hitR = cardLines.filter(l => overlap4(right, l.meaning) >= 3);
+          const pair = hitL.find(l => hitR.some(r2 => r2.id !== l.id && !hitR.some(r3 => r3.id === l.id) && !(`${l.meaning}`.includes(right.slice(0, 6)))));
+          if (pair) { const other = hitR.find(r2 => r2.id !== pair.id)!; flag("card_join", "서로 다른 카드 줄을 「만큼·니·라서」로 원인과 결과처럼 잇지 않는다 — 두 줄을 각자 문장으로", `${pair.id} ${cm[0].trim()} ${other.id}`); } } }
+        // 화면 사실 되풀이(1부): key 본문에 흐름 말 · 오행 채움 · 핵심 밖 관계 이름 · 카드 할 일 · 행동.
+        if (kp) {
+          if (SCREEN_FLOW.test(sen)) flag("screen_repeat", "흐름은 화면 카드가 보여 준다 — 본문에 되풀이하지 않는다", sen.match(SCREEN_FLOW)![0]);
+          else if (SCREEN_FILL.test(sen)) flag("screen_repeat", "오행 채움은 화면 카드가 보여 준다 — 본문에 되풀이하지 않는다", sen.match(SCREEN_FILL)![0]);
+          else if (kp.todo && overlap4(sen, kp.todo) >= 6) flag("screen_repeat", "할 일은 화면 카드가 보여 준다 — 본문에 같은 행동을 쓰지 않는다", "카드 할 일 되풀이");
+          else if (/(세요|보세요|두세요)[.!]?$/.test(sen)) flag("screen_repeat", "달·해 본문에는 행동을 쓰지 않는다(할 일은 화면 카드)", "key 본문 행동");
+          else { const other = [...(b.keyRels?.get(kp.key) ?? [])].find(n2 => !coreNames.has(n2) && n2.length >= 2 && sen.includes(n2)); if (other) flag("screen_repeat", `관계 ${other}는 화면 배지가 보여 준다 — 본문은 핵심(${[...coreNames].join("·")})만`, other); }
+          // head_echo: 머리 문장 「…달이에요」 바로 뒤 첫 문장도 「…달이에요」(경미, P3 판독 major-1 m15 나).
+          if (pi === 0 && sj === 0 && HEAD_ECHO_END.test(sen) && (/^이 (달|해)(은|는) /.test(sen) || HEAD_ECHO_END.test(kp.head))) flag("head_echo", "머리 문장도 「…달·해예요」로 끝난다 — 첫 문장은 그 핵심의 뜻으로 다른 끝을", "머리 뒤 같은 끝");
+        }
+        prev = sen;
+      }));
+      // pointer_expand: 카드가 「X의 뜻은 앞의 L과 같고」인데 L의 뜻 줄을 다시 풀어 씀(P3 판독 annual-1 경미 #15).
+      if (kp) for (const id of kp.lines) { const l = lineById.get(id), m = /^([가-힣]{2})의 뜻은 앞의 (.+?)과 같고/.exec(l?.meaning ?? ""); if (!m) continue;
+        const o = [...keyPlans.values()].find(k2 => k2.label === m[2]); const prevLine = o?.lines.map(i2 => lineById.get(i2)).find(l2 => l2 && / 글자 /.test(l2.value) && l2.value.includes(m[1]))?.meaning ?? "";
+        s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(raw => { const sen = raw.replace(/[⟪⟫]/g, ""); if (prevLine && overlap4(sen, prevLine) >= 8) out.push({ chapter: c.n, section: si, paragraph: pi, sentence: sen, rule: "pointer_expand", hint: `${m[1]}의 뜻은 앞의 ${m[2]}과 같다 — 다시 풀지 말고 이 달에 달라지는 것만`, detail: `앞의 ${m[2]} 뜻 되풀이` }); })); }
+    });
+    void plan;
+  }
+  return out;
+}
+
+/** 처방 종류 되풀이(2부 사전): 같은 종류가 책에서 두 번(화면 카드 할 일이 먼저 자리를 잡는다). 두 번째부터. */
+export function rxRepeats(chapters: readonly FinalChapter[], x: Intake): ChunkFlag[] {
+  const out: ChunkFlag[] = [], used = new Map<RxKind, string>();
+  for (const c of x.chapters) for (const k of c.keys ?? []) if (k.todo) for (const kd of rxKindsOf(k.todo)) if (!used.has(kd)) used.set(kd, `${k.label} 카드`);
+  for (const c of chapters) {
+    if (c.source === "deterministic") continue;
+    const own = x.chapters.find(p => p.n === c.n)?.rx?.use ?? null;
+    let ownUsed = false;
+    c.sections.forEach((s, si) => s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
+      const sen = raw.replace(/[⟪⟫]/g, ""), kinds = rxOfSentence(sen); if (!kinds.length) continue;
+      const taken = kinds.find(kd => used.has(kd) && !(kd === own && !ownUsed && used.get(kd) === `${c.n}장`));
+      if (taken) { out.push({ chapter: c.n, section: si, paragraph: pi, rule: "rx_repeat", sentence: sen, detail: `처방 「${taken}」은 ${used.get(taken)}이 맡음`, hint: `같은 처방 종류는 책에서 한 곳 — 이 장의 「쓸 처방 종류」(${own ?? "사전 밖 행동"})로` }); continue; }
+      for (const kd of kinds) { used.set(kd, `${c.n}장`); if (kd === own) ownUsed = true; }
+    } }));
+  }
+  return out;
+}
+
+/** 끝말 빈도 상한(5부, 목록 없음): 문장 끝 두 어절(조사·부호 뺀 한글 5자 이상)이 책에서 BOOK_CAP을, 한 장에서 CHAPTER_CAP을 넘으면 넘는 곳마다. 의존 명사 끝(「수 있어요」 「편이에요」)은 문법 꼴이라 세지 않는다. */
+export const ENDING_CAP = { book: 4, chapter: 2 } as const;
+const GRAMMAR_END = /^(수|것|거|게|편|쪽|중|뿐|만큼|듯|줄|때문|적|법|모양|셈|터|리)(가|이|은|는|도|을|를)? /;
+export function endingCaps(chapters: readonly FinalChapter[]): ChunkFlag[] {
+  const out: ChunkFlag[] = [], book = new Map<string, number>();
+  for (const c of chapters) {
+    if (c.source === "deterministic") continue;
+    const here = new Map<string, number>();
+    c.sections.forEach((s, si) => s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) {
+      const sen = raw.replace(/[⟪⟫«»"“”'‘’]/g, "").replace(/[.!?？]+$/, "").trim(); const w = sen.split(/\s+/); if (w.length < 4) continue;
+      const end = w.slice(-2).join(" "); if (GRAMMAR_END.test(`${end} `) || end.replace(/[^가-힣]/g, "").length < 5) continue;
+      const n = (book.get(end) ?? 0) + 1, h = (here.get(end) ?? 0) + 1; book.set(end, n); here.set(end, h);
+      if (n > ENDING_CAP.book || h > ENDING_CAP.chapter) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "ending_cap", sentence: raw.replace(/[⟪⟫]/g, ""), detail: `끝 「${end}」 책 ${n}번째 · 장 ${h}번째`, hint: "같은 끝 꼴을 되풀이하지 않는다 — 다른 꼴로 끝맺는다" });
+    } }));
+  }
+  return out;
+}
+void seatShort;

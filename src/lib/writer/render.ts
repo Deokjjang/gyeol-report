@@ -73,6 +73,8 @@ export function annotateChapter(sections: readonly BookSection[], ctx: AnnotateC
       const m = re.exec(text); if (!m) continue;
       const at = m.index, end = at + ko.length;
       if (taken.some(([a, b]) => at < b && end > a)) continue;
+      // AM2-4 5부(P3 판독 annual-1 차단 #4 「흐름이 거센 편인(偏印) 달」): 「거센 편인 달」의 편인은 「편이다」 — 앞말이 관형형(받침 ㄴ)이면 십성이 아니다.
+      if (ko === "편인" && text[at - 1] === " " && ((text.charCodeAt(at - 2) - 0xac00) % 28 === 4)) continue;
       // 괄호 안(쉬운 이름 뒤 묶음 이름 "내 방식의 힘(비겁)", "나무 땔감(갑목)")에는 붙이지 않는다(겹친 괄호 방지).
       if (text.lastIndexOf("(", at) > text.lastIndexOf(")", at)) continue;
       seen.add(ko);

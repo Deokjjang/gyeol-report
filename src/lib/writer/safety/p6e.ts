@@ -254,12 +254,16 @@ const READING: Readonly<Record<string, string>> = {
   木: "목", 火: "화", 土: "토", 金: "금", 水: "수",
 };
 /** 괄호 속 한자("식신(食神)")는 지우고, 괄호 밖 한자는 천간·지지·오행이면 한글 읽기로(그 밖은 지운다). 지운·바꾼 수를 센다. */
-export function stripHanja(text: string): { text: string; count: number } {
+/** keepStage(AM2-4 3부, 세운·대운 표면 정리만): 십이운성 한 글자 이름의 한자 꼴(「쇠(衰)」)은 남긴다 — 오행 「쇠(금)」와 동음 구분. 4종은 넘기지 않는다(그대로). */
+export function stripHanja(text: string, keepStage = false): { text: string; count: number } {
   let count = 0;
-  const out = text
+  const STAGE = /(?<![가-힣])(태|양|쇠|병|사|묘|절)\((胎|養|衰|病|死|墓|絶)\)/g, keep: string[] = [];
+  const src = keepStage ? text.replace(STAGE, (m) => { keep.push(m); return `\uE001${keep.length - 1}\uE001`; }) : text;
+  const out0 = src
     .replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (all, inner: string) => { if (/^[一-鿿\s·,]+$/.test(inner)) { count++; return ""; } const kept = inner.replace(/[一-鿿]+\s?/g, "").trim(); count++; return kept ? `(${kept})` : ""; })
     .replace(/[一-鿿]+/g, m => { count++; return [...m].every(ch => READING[ch]) ? [...m].map(ch => READING[ch]).join("") : ""; })
     .replace(/\(\s*\)/g, "").replace(/ {2,}/g, " ");
+  const out = keepStage ? out0.replace(/\uE001(\d+)\uE001/g, (_m, i: string) => keep[Number(i)] ?? "") : out0;
   return { text: out, count };
 }
 
