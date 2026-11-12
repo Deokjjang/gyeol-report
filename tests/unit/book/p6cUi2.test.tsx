@@ -99,16 +99,15 @@ describe("g 핵심 구절과 용어", () => {
 
 describe("h 세운 달 이름", () => {
   // AM 2부: 신년판은 표와 상세 모두 「2월 · 임인월」 + 절기 구간 한 체계(예전 「N번째 달」 대신).
-  it("v5 신년판: 표와 상세 모두 '2월 · 임인월 · 절기 구간'", () => {
-    const data = read("annual_fortune"), months = pageOf(data, "months");
-    const bridge = months.months[0], m = months.months[1], detail = data.pages[m.page];
-    expect([bridge.name, bridge.range, data.pages[bridge.page].title]).toEqual(["1월 · 신축월", "1/5~2/4", "1월 · 신축월 (1/5~2/4) · 2026년 병오년 마지막 달"]);
-    expect([m.name, m.range]).toEqual(["2월 · 임인월", "2/4~3/6"]);
-    // 짧은 쪽은 앞쪽과 합쳐진다(composeBookNavigation) — 상세 제목은 쪽 제목이거나 합쳐진 쪽 안의 소제목.
-    const heads = detail.kind === "narrative" ? [detail.title, ...detail.paragraphs.map(p => p.heading)] : [];
-    expect(heads).toContain("2월 · 임인월 (2/4~3/6)");
-    expect(html(data, months)).toContain(`<b>${m.name}</b><small>${m.range}</small>`);
-    expect(data.pages.filter(p => p.kind === "narrative" && /무렵|절입부터|이번 달/.test(p.title))).toEqual([]);
+  // AM2-3 5부: 신년판은 흐름표(flowTable) 줄과 달 카드(periodCard) 머리가 같은 이름·구간.
+  it("v5 신년판: 표와 카드 모두 '2월 · 임인월 · 절기 구간'", () => {
+    const data = read("annual_fortune"), ft = pageOf(data, "flowTable");
+    const bridge = ft.rows[0], m = ft.rows[1], detail = data.pages[m.page];
+    expect([bridge.name, bridge.sub]).toEqual(["1월 · 신축월", "1/5~2/4"]);
+    expect([m.name, m.sub]).toEqual(["2월 · 임인월", "2/4~3/6"]);
+    expect(detail.kind === "periodCard" ? [detail.title, detail.sub] : []).toEqual(["2월 · 임인월", "2/4~3/6"]);
+    expect(html(data, ft)).toContain("2월 · 임인월");
+    expect(data.pages.filter(p => (p.kind === "narrative" || p.kind === "periodCard") && /무렵|절입부터|이번 달/.test(p.title))).toEqual([]);
   });
   it("V4 세운: 달력 달 이름 + 그 달의 절기월·날짜, 옛 머리말 없음, '좋은 힘'은 V4 카드 이름 그대로", () => {
     const data = readerBook(storedBook(v4("annual_fortune-v4"), null, BASE)!.data, BASE), page = pageOf(data, "months"), out = html(data, page);
@@ -133,11 +132,11 @@ describe("i 대운·세운 카드 관계 쉬운 문장", () => {
     ]);
     expect(cardRelationsPlain({ kind: "year", badges: [{ kind: "GONGMANG", label: "공망", line: "공망에 든 해, 힘을 줘도 빠져나가니 기대를 낮추는 흐름", tone: "minus" }] as never })).toEqual(["공망에 든 해, 힘을 줘도 빠져나가니 기대를 낮추는 흐름이에요."]);
   });
-  it("상세: 쉬운 문장 아래 원어(배지 이름)는 작은 글씨, 배지 없는 카드는 그대로", () => {
-    const data = read("annual_fortune"), page = pageOf(data, "months"), row = page.months.find(m => m.badges?.length)!, out = html(data, page);
-    expect(row.relationsPlain!.length).toBeGreaterThanOrEqual(1); expect(row.relationsPlain!.length).toBeLessThanOrEqual(2);
-    for (const line of row.relationsPlain!) expect(out).toContain(`관계 · ${esc(readableBookText(line, data.people.map(p => p.name)))}`);
-    expect(out).toMatch(new RegExp(`class="_rowTerms_\\w+">${esc(row.badges!.map(b => b.label).join(" · ")).replace(/[()]/g, "\\$&")}<`));
+  // AM2-3 5부: 달 카드의 관계는 「명리로 보면」 아래 관계 이름 + 쉬운 뜻 한 줄씩(배지 전부).
+  it("달 카드: 「명리로 보면」에 관계 이름과 쉬운 뜻을 한 줄씩", () => {
+    const data = read("annual_fortune"), card = data.pages.find((p): p is Extract<BookPage, { kind: "periodCard" }> => p.kind === "periodCard" && p.relations.length > 0)!, out = html(data, card);
+    expect(out).toContain("명리로 보면");
+    for (const r of card.relations) { expect(out).toContain(esc(r.name)); expect(r.plain.length).toBeGreaterThan(4); }
     expect(out).not.toContain("_rowBadges_");
   });
 });

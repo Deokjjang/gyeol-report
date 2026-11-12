@@ -141,3 +141,9 @@ export const FLOW_DESC: Readonly<Record<number, string>> = { 1: "흐름이 잔�
 /** 본문에서 흐름 세기를 말하는 꼴(단어별). key별 값 대조 검사가 쓴다. */
 export const FLOW_TALK: Readonly<Record<number, RegExp>> = { 1: /잔잔/, 2: /느[린리려릴립]|느림/, 3: /보통/, 4: /활발/, 5: /거[세센셈셉]/ };
 export const flowWord = (score: number) => FLOW_WORD[Math.max(1, Math.min(5, Math.round(score)))] ?? "보통";
+/** AM2-3 5부 흐름표 아래 십성 한 줄 사전(쉬운 뜻, 화면 전용 짧은 이름표 — 본문 근거는 지식 DB 뜻 줄). */
+export const TEN_GOD_EASY: Readonly<Record<string, string>> = {
+  비견: "나와 같은 기운 — 내 편과 경쟁", 겁재: "나와 닮은 다른 기운 — 승부욕과 나눔", 식신: "만들어 내는 기운 — 손과 입의 즐거움", 상관: "틀을 깨는 표현 — 말과 아이디어",
+  편재: "크고 움직이는 돈 — 사람과 거래", 정재: "정해지고 꾸준한 돈 — 관리와 살림", 편관: "다그치는 힘 — 마감과 도전", 정관: "바르게 다스리는 힘 — 규칙과 평가",
+  편인: "옆길로 이끄는 배움 — 남다른 공부와 생각", 정인: "돌봐 주는 기운 — 도움과 배움",
+};

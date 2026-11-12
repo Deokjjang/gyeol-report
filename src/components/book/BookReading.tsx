@@ -75,7 +75,7 @@ export function BookReading({ data: stored, edition, today, share, home = "/", s
     if (!previous || timer.current) return;
     restoreTop.current = previous.top; setReturnPoints(points => points.slice(0, -1)); turn(previous.page);
   };
-  return <main className={s.root} data-book-report data-example-page={example ? "" : undefined} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (!hasReadingSelection(window.getSelection()) && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
+  return <main className={s.root} data-book-report data-scheme={data.scheme} data-example-page={example ? "" : undefined} style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (!hasReadingSelection(window.getSelection()) && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
     <header className={s.header}><a className={s.wordmark} href={home}><b>결리포트</b><span>GYEOL REPORT</span></a><div className={s.readingTools}>{example ? <span className={s.exampleTag} data-example-tag>{example.tag}</span> : null}{returnPoints.length ? <button onClick={returnToReading}>읽던 곳으로 ↶</button> : null}{data.contents?.length ? <button onClick={() => setToc(true)}>목차</button> : null}<a href={home} className={s.close}>닫기 ×</a></div></header>
     <section className={`${s.bookShell} ${data.pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={e => {
       gesture.current = null;

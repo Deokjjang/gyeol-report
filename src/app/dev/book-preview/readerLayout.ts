@@ -43,6 +43,7 @@ export function readerBook(data: BookData, today?: string): BookData {
       return { ...m, sub, time, page: at(m.page) };
     }) };
     if (p.kind === "pair") return { ...p, directions: p.directions.map(d => ({ ...d, page: at(d.page) })) };
+    if (p.kind === "flowTable" || p.kind === "decadeTable") return { ...p, rows: p.rows.map(r => ({ ...r, page: at(r.page) })) };
     if (p.kind === "narrative" && v4Titles.has(p)) return { ...p, title: v4Titles.get(p)! };
     return p;
   });

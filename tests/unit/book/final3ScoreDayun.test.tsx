@@ -76,10 +76,12 @@ describe("8 대운 표기 통일(dayunLabel)", () => {
     const card = brief.timeline!.entries.find(e => e.key === "2027")!;
     expect(card.dayun).toMatchObject({ transition: true, start: "2027년 5월 무렵부터" });
     expect(card.head).toBe("2027년 정미(丁未)는 상관(傷官)이 하늘에, 정재(正財)가 땅에 들어오는 해예요. 이 해 5월 무렵부터 무진(戊辰) 대운이 시작되고, 10년의 중심 기운은 편재(偏財)예요.");
-    const tl = pagesOf(data, "timeline")[0];
-    expect(tl.transitions.map(t => `${t.before} → ${t.after} · ${t.date}`)).toEqual(["기사 대운 → 무진 대운 · 2027년 5월 무렵부터 (대운수 7)"]);
-    expect(tl.years.find(y => y.year === 2027)!.transition).toBe("2027년 5월 무렵부터");
-    expect(html(data, tl)).toContain("2027년 5월 무렵부터 · 대운 전환");
+    // AM2-3 5부: 앞으로 10년표(decadeTable)는 대운이 바뀌는 해 앞에 구분 줄 「N년 M월 무렵부터 OO 대운 · 십성 · 주제」.
+    const dt = pagesOf(data, "decadeTable")[0];
+    const row = dt.rows.find(y => y.key === "2027")!;
+    expect(row.divider).toMatch(/^2027년 5월 무렵부터 무진 대운 · 편재 · /);
+    expect(dt.rows.filter(y => y.divider)).toHaveLength(1);
+    expect(html(data, dt)).toContain("2027년 5월 무렵부터 무진 대운 · 편재");
   });
 });
 

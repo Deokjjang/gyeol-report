@@ -169,8 +169,9 @@ describe("P6b 세운 달 번호", () => {
     expect(cards[12].label).toMatch(/^2028년 1월 · 계축월 \(1\/\d{1,2}~2\/\d{1,2}\)$/);
     expect(cards.some(c => /무렵|이번 달|번째 달/.test(c.label))).toBe(false);
     const data = projectV5Book(createV5Snapshot({ reportId: "report_p6bmonthtest0000", createdAtIso: `${BASE}T00:00:00.000Z`, draft: b.draft, evidence: b.evidence }))!;
-    const months = (data.pages.find(p => p.kind === "months") as { months: { order?: number; range?: string }[] }).months;
-    expect(months.map(m => m.order)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    expect([months[1].range, months[12].range]).toEqual(["2/4~3/6", "1/6~2/4"]); // 끝 = 다음 절입일(엔진 절입 시각)
+    // AM2-3 5부: 달 표는 앞머리 흐름표(13행, 1월 다리 포함)로 바뀌었다 — 행 순서 = 카드 순서, 절기 구간은 행 아래 줄.
+    const rows = (data.pages.find(p => p.kind === "flowTable") as { rows: { key: string; sub: string }[] }).rows;
+    expect(rows.map(r => r.key)).toEqual(cards.map(c => c.key));
+    expect([rows[1].sub, rows[12].sub]).toEqual(["2/4~3/6", "1/6~2/4"]); // 끝 = 다음 절입일(엔진 절입 시각)
   });
 });

@@ -16,6 +16,12 @@ export type BookYear = { year: number; age: number; cycle: string; annual: strin
  * sub: 달 이름 아래 줄("경인월 · 2/4~3/5", P6c-ui2 h). 없으면 range. */
 /** name·signals·bridge(AM 2부 세운 신년판): 달 이름 「2월 · 임인월」, 영역 신호 줄 「연애 ↑ · 돈 → …」, 1월 다리. */
 export type BookMonth = { name?: string; signals?: string; bridge?: boolean; month: number; title: string; theme: string; time: string; ganji: string; gods: string; markers: string[]; page: number; good?: string; caution?: string; importance?: string; boundary?: { label: string; explanation: string; segments: { start: string; end: string; ganji: string }[] }; order?: number; range?: string; sub?: string } & BookRowExtras;
+/** 오행 칸 색 이름(AM2-3: 목 초록 · 화 빨강 · 토 황토 · 금 은회색 · 수 남색). */
+export type AmEl = "wood" | "fire" | "earth" | "metal" | "water";
+/** 흐름표·10년표 한 줄. ups·cautions = 영역 신호의 오름·살필(그 밖은 표시하지 않음). divider = 이 줄 앞에 대운이 바뀌는 구분 줄. */
+export type AmRow = { key: string; name: string; sub: string; ganji: string; els: AmEl[]; line: string; sky: string; ground: string; ups: string[]; cautions: string[]; flow: number; flowWord: string; now: boolean; past: boolean; star: boolean; page: number; divider?: string };
+export type AmYearHead = { ganji: string; els: AmEl[]; name: string; verdict?: string; sky: string; ground: string; skyLine: string; groundLine: string; flow: number; flowWord: string };
+export type AmElement = { el: AmEl; label: string; count: number; incoming: boolean };
 export type BookPage = (
   | { kind: "cover"; title: string; names: string; headline: string }
   | { kind: "input"; title: string }
@@ -33,7 +39,11 @@ export type BookPage = (
   | { kind: "keywords"; title: string; year: number; keywords: string[]; line: string; verdict?: string }
   | { kind: "lucky"; title: string; name: string; colors: string[]; direction: string; numbers: number[]; why: string; samjae?: { zodiac: string; phase: string; line: string } }
   | { kind: "continue"; title: string; text: string; href: string }
-  | { kind: "lifetime"; title: string; cycles: { label: string; ages: string; tenGod: string; theme: string; current: boolean }[] }
+  | { kind: "lifetime"; title: string; cycles: { label: string; ages: string; tenGod: string; theme: string; current: boolean; hanja?: string; els?: AmEl[]; past?: boolean }[]; head?: string; bands?: { theme: string; cycles: number[] }[] }
+  /** AM2-3 5부(덕짱님과 정한 시안): 세운 「2027 한 해 흐름표」 · 대운 「앞으로 10년표」 · 달·해 카드. AM 카드(세운 span·대운 평생 지도)가 있는 v5 책에만 쓴다(그 밖의 책은 위 timeline·months 그대로). */
+  | { kind: "flowTable"; title: string; year: AmYearHead | null; elements: AmElement[]; rows: AmRow[]; dict: { name: string; line: string }[] }
+  | { kind: "decadeTable"; title: string; head: string; rows: AmRow[]; dict: { name: string; line: string }[] }
+  | { kind: "periodCard"; unit: "달" | "해"; title: string; eyebrow: string; sub: string; ganji: string; els: AmEl[]; flow: number; flowWord: string; line: string; good?: { label: string; text: string }; caution?: string; one?: { label: string; text: string }; paragraphs: BookParagraph[]; relations: { name: string; plain: string }[]; sky: string; ground: string; past: boolean; now: boolean; star: boolean }
   /** aiNotice: 책 끝 AI 작성 고지(v5 최종3, v5 책만). */
   | { kind: "back"; title: string; finalLine: string; aiNotice?: string }) & { id?: string; anchors?: string[] };
 export type BookData = {
@@ -42,6 +52,8 @@ export type BookData = {
   share: { title: string; description: string }; readingDate: string;
   /** 판 표기(표지·마지막 쪽), 예 "제5판 · 2026년 11월 3일 개정". 열람 화면 목차(목차 쪽 대신 버튼으로 연다). */
   edition?: string; contents?: { title: string; targetId: string; page: number }[];
+  /** AM2-3 5부: "auto"면 기기 다크 모드를 따른다(새 흐름표·카드 화면을 쓰는 AM 세운·대운 책만). 없으면 늘 밝은 화면(그 밖의 책 그대로). */
+  scheme?: "auto";
   /** 용어 뜻(P6c-ui2 g): 십성·신살·귀인·십이운성 이름과 지식 DB 뜻 한 줄. 있으면 장마다 첫 등장을 표시하고 누르면 뜻이 뜬다. 없으면(이전 Book) 그대로. */
   glossary?: { name: string; meaning: string }[];
 };

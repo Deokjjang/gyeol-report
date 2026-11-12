@@ -100,7 +100,8 @@ describe("결정론 작가(E)·Book 연결(F) — 6상품 + 궁합 7유형", () 
     expect(data).not.toBeNull();
     const kinds = data!.pages.map(p => p.kind);
     expect(kinds[0]).toBe("cover"); expect(kinds).toContain("contents"); expect(kinds.at(-1)).toBe("back");
-    if (input.product === "major_fortune") expect(data!.pages.find(p => p.kind === "timeline")).toMatchObject({ years: expect.arrayContaining([expect.objectContaining({ year: 2026 })]) });
-    if (input.product === "annual_fortune") expect((data!.pages.find(p => p.kind === "months") as { months: unknown[] }).months).toHaveLength(13); // AM 2부: 1월 다리 + 12 절기월
+    // AM2-3 5부: 대운은 앞으로 10년표(해 카드로 이어짐), 세운은 앞머리 흐름표(13행 = 1월 다리 + 12 절기월).
+    if (input.product === "major_fortune") expect(data!.pages.find(p => p.kind === "decadeTable")).toMatchObject({ rows: expect.arrayContaining([expect.objectContaining({ name: "2026년" })]) });
+    if (input.product === "annual_fortune") expect((data!.pages.find(p => p.kind === "flowTable") as { rows: unknown[] }).rows).toHaveLength(13);
   }, 30_000);
 });

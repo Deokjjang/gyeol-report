@@ -37,24 +37,25 @@ describe("세운 절기월 표기와 지금 달", () => {
   // AM 2부(작업 지시 「달 이름은 표와 본문 모두 한 체계(예: 「2월 · 임인월」, 절기 경계 함께 표기)」): 신년판(기본 2027) 1월 다리 + 12 절기월.
   // 예전 P6b·P6c 규칙(「N번째 달」, 달력 달 이름 금지)은 이 신년판에서 바뀌었다. 이전 v5 책(카드에 절기 구간 없음)은 예전 표기 그대로.
   const annual = snapshot("annual_fortune");
+  // AM2-3 5부(덕짱님과 정한 시안): AM 신년판 표는 책 앞머리 「2027 한 해 흐름표」(flowTable)가 맡는다 — 같은 이름·절기 구간·지금 달 규칙을 새 표에서 본다.
   it("「2월 · 임인월」 이름 + 절기 구간, 1월 다리 포함 13칸, 「N번째 달」 없음", () => {
-    const months = pageOf(projectV5Book(annual, BASE)!, "months").months;
-    expect(months.map(m => m.order)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    expect([months[0].name, months[0].range, months[0].bridge]).toEqual(["1월 · 신축월", "1/5~2/4", true]);
-    expect([months[1].name, months[1].range]).toEqual(["2월 · 임인월", "2/4~3/6"]); // 끝 = 다음 절입일(엔진 절입 시각)
-    expect(months[12].name).toBe("2028년 1월 · 계축월");
-    const out = html(projectV5Book(annual, BASE)!, pageOf(projectV5Book(annual, BASE)!, "months"));
-    expect(out).toContain("<b>2월 · 임인월</b>"); expect(out).toContain("2/4~3/6");
+    const rows = pageOf(projectV5Book(annual, BASE)!, "flowTable").rows;
+    expect(rows).toHaveLength(13);
+    expect([rows[0].name, rows[0].sub]).toEqual(["1월 · 신축월", "1/5~2/4"]);
+    expect([rows[1].name, rows[1].sub]).toEqual(["2월 · 임인월", "2/4~3/6"]); // 끝 = 다음 절입일(엔진 절입 시각)
+    expect(rows[12].name).toBe("2028년 1월 · 계축월");
+    const out = html(projectV5Book(annual, BASE)!, pageOf(projectV5Book(annual, BASE)!, "flowTable"));
+    expect(out).toContain("2월 · 임인월"); expect(out).toContain("2/4~3/6");
     expect(out).not.toContain("번째 달"); expect(out).not.toContain("<b>0월</b>");
   });
   it("2026-11-03(신년판 전)이면 지금 달 없음, 2027-06-10이면 6월 · 병오월이 지금", () => {
-    expect(pageOf(projectV5Book(annual, BASE)!, "months").months.filter(m => m.time === "지금")).toEqual([]);
-    const months = pageOf(projectV5Book(annual, "2027-06-10")!, "months").months;
-    expect(months.filter(m => m.time === "지금").map(m => [m.order, m.ganji, m.range])).toEqual([[5, "丙午", "6/6~7/7"]]);
-    expect(months.slice(0, 5).every(m => m.time === "돌아보기") && months.slice(6).every(m => m.time === "앞으로")).toBe(true);
+    expect(pageOf(projectV5Book(annual, BASE)!, "flowTable").rows.filter(m => m.now)).toEqual([]);
+    const rows = pageOf(projectV5Book(annual, "2027-06-10")!, "flowTable").rows;
+    expect(rows.filter(m => m.now).map(m => [m.name, m.ganji, m.sub])).toEqual([["6월 · 병오월", "丙午", "6/6~7/7"]]);
+    expect(rows.slice(0, 5).every(m => m.past) && rows.slice(6).every(m => !m.past && !m.now)).toBe(true);
   });
   it("읽는 날이 바뀌면 지금 달도 따라간다(경계 하루 포함)", () => {
-    const now = (day: string) => pageOf(projectV5Book(annual, day)!, "months").months.find(m => m.time === "지금")?.order;
+    const now = (day: string) => { const i = pageOf(projectV5Book(annual, day)!, "flowTable").rows.findIndex(m => m.now); return i < 0 ? undefined : i; };
     expect([now("2027-01-04"), now("2027-01-05"), now("2027-02-03"), now("2027-02-04"), now("2027-11-07"), now("2027-11-08"), now("2028-02-03"), now("2028-02-04")]).toEqual([undefined, 0, 0, 1, 9, 10, 12, undefined]);
   });
 });
@@ -113,14 +114,17 @@ describe("궁합 첫 화면과 점수 쪽", () => {
 
 describe("대운 표와 카드 라벨", () => {
   const data = readerBook(storedBook(snapshot("major_fortune"), null, BASE)!.data);
-  it("한 줄에 연도·만 나이·간지·십성·흐름 세기·핵심어·기간 배지, 누르면 해 볼 것/돌아보기·살필 점", () => {
-    const tl = pageOf(data, "timeline"), out = html(data, tl);
-    const now = tl.years.find(y => y.time === "지금")!;
-    expect(now.year).toBe(2026); expect(now.ageLabel).toBe(`만 ${2026 - 1996}세`);
-    expect(tl.years.every(y => y.tenGod && y.flow && y.keywords?.length)).toBe(true);
-    expect(out).toContain("흐름 세기"); expect(out).not.toContain("좋은 힘");
-    expect(tl.years.filter(y => y.time === "돌아보기").every(y => y.goodLabel === "돌아보기")).toBe(true);
-    expect(tl.years.filter(y => y.time !== "돌아보기").every(y => y.goodLabel === "해 볼 것")).toBe(true);
+  // AM2-3 5부: AM 대운 표는 「앞으로 10년표」(decadeTable) + 해 카드(periodCard, 달 카드와 같은 문법).
+  it("한 줄에 연도·만 나이·간지·십성·흐름·한 줄 뜻, 누르면 해 카드(지난 해는 돌아보기만 · 살필 점 없음)", () => {
+    const dt = pageOf(data, "decadeTable"), out = html(data, dt);
+    const now = dt.rows.find(y => y.now)!;
+    expect(now.name).toBe("2026년"); expect(now.sub).toBe(`만 ${2026 - 1996}세`);
+    expect(dt.rows.every(y => y.sky && y.ground && y.flowWord && y.line)).toBe(true);
+    expect(out).toContain("흐름"); expect(out).not.toContain("좋은 힘"); expect(out).not.toMatch(/흐름 세기 \d\/5/);
+    const cards = dt.rows.map(r => data.pages[r.page]).filter((p): p is Extract<BookPage, { kind: "periodCard" }> => p.kind === "periodCard");
+    expect(cards).toHaveLength(dt.rows.length);
+    expect(cards.filter(c => c.past).every(c => !c.caution && c.one?.label === "돌아보기")).toBe(true);
+    expect(cards.filter(c => !c.past).every(c => !c.good || c.good.label === "해 볼 것")).toBe(true);
   });
   it("과거 V4 대운 표는 좋은 힘 라벨을 유지한다", () => {
     const old = readerBook(storedBook(v4("major_fortune-v4"))!.data);
