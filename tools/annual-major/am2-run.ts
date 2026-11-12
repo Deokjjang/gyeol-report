@@ -38,12 +38,15 @@ function checkMd(id: string, note: string, snap: { productType: string; draft: u
     `- 장별 글자: ${d.chapters.map(ch => `${ch.n}장 ${ch.sections.reduce((b, s) => b + s.paragraphs.join("").length, 0)}`).join(" · ")}`,
     `- 토큰: 입력 ${m.tokens.input}(캐시 읽기 ${m.tokens.cachedInput}) · 출력 ${m.tokens.output}`,
     `- 브리프 검사 ${(r.briefCheck as { ok: boolean })?.ok ? "OK" : "FAIL"} · 첫 차단 결함 ${r.blockFirst} · 다시 쓰기 ${JSON.stringify(r.rounds)} · 지운 문장 ${(r.deleted as unknown[])?.length ?? 0} · 결정론 대체 ${JSON.stringify(r.replaced)} · 남은 차단 ${(r.remainingHard as unknown[])?.length ?? 0} · 장 사이 반복(첫 ${r.repeatFirst} · 남음 ${(r.remainingRepeat as unknown[])?.length ?? 0})`,
+    // AM2-4 5부: 깃발 처리 기록(다시 쓰기 · 지우기 · 허용 기록 · 처리 없음 = 0이어야 한다).
+    `- 깃발 처리: ${JSON.stringify((r.disposition as { counts?: unknown } | undefined)?.counts ?? {})}${((r.disposition as { none?: unknown[] } | undefined)?.none ?? []).length ? ` · 처리 없음 ${JSON.stringify((r.disposition as { none: unknown[] }).none).slice(0, 400)}` : ""}`,
     `- 문체 점수(고치지 않음): ${JSON.stringify(r.style)} · 반복률 ${st.repeatRate}% · 문장 시작 다양성 ${st.startDiversity}% · 리듬 평균 ${st.rhythm.meanLen}자`,
     `- 표지: ${(d as { coverLine?: string }).coverLine ?? ""} (${JSON.stringify(r.cover)})`, ...((d as { annual?: { keywords: string[]; keywordSource?: string } }).annual ? [`- 키워드: ${(d as unknown as { annual: { keywords: string[]; keywordSource?: string } }).annual.keywords.join(" · ")}(${(d as unknown as { annual: { keywordSource?: string } }).annual.keywordSource})`] : []),
     "", "## 묶음 기록", ...log.map(x => `- ${x.id} ${x.kind}${x.round ? ` #${x.round}` : ""}: ${x.chars}자 · ${x.finish} · $${x.costUsd.toFixed(4)} · ${Math.round(x.ms / 1000)}초${x.reason ? ` · ${x.reason}` : ""}`),
     "", "## 호출", ...calls.map(c => `- ${c}`),
     "", "## 남은 차단 결함", ...((r.remainingHard ?? []) as { at: string; rule: string; sentence: string }[]).map(x => `- ${x.at} ${x.rule}: ${x.sentence}`),
-    "", "## 지운 문장", ...((r.deleted ?? []) as { at: string; rule: string; sentence: string }[]).map(x => `- ${x.at} ${x.rule}: ${x.sentence}`), ""].join("\n");
+    "", "## 지운 문장", ...((r.deleted ?? []) as { at: string; rule: string; sentence: string }[]).map(x => `- ${x.at} ${x.rule}: ${x.sentence}`),
+    "", "## 허용 기록(남긴 깃발과 까닭)", ...(((r.disposition as { allowed?: { at: string; rule: string; why: string; sentence: string }[] } | undefined)?.allowed) ?? []).map(x => `- ${x.at} ${x.rule}: ${x.sentence} — ${x.why}`), ""].join("\n");
 }
 
 async function main() {
