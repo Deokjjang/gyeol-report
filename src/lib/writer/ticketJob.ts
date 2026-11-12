@@ -49,7 +49,7 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
   const prior = await priorBooks(priorReader ?? store, user, job.input);
   let published: TicketResult | null = null;
   const { decision, settled } = await superviseQueueJob({ reportId, origin: "ticket", originRef: job.redemptionId, payload: job.input as never, policyAt, sink: ticketChapterSink(store, user, origin), prior, raw },
-    { store: ops, deps: build, ...(openAiKey !== undefined ? { openAiKey } : {}), ...(opsNow ? { now: opsNow } : {}), ...(all ? { creditAlert: (code: string) => all.signup.call("credit_alert", { code }) } : {}) }, async d => {
+    { store: ops, deps: build, ...(openAiKey !== undefined ? { openAiKey } : {}), ...(opsNow ? { now: opsNow } : {}), ...(all ? { creditAlert: (code: string) => all.signup.call("credit_alert", { code }), holdAlert: (data: Record<string, unknown>) => all.hold.call("alert", data) } : {}) }, async d => {
       try {
         if (d.kind === "publish") { published = await store.call("publish", user, { ...origin, snapshot: d.snapshot, gateVersion: GATE_VERSION }); return { ok: published.ok === true && published.state === "COMPLETED", code: published.code ? String(published.code) : undefined }; }
         // 최종판 0-6: 비용 상한 보류도 큐로 길게 미룬다(이용권 환급 없음, 관리자 지연 목록).

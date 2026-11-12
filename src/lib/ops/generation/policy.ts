@@ -1,6 +1,8 @@
 /**
  * 생성 신뢰성 정책(P6d-ops 7). 순수 함수만 — 시험이 시각을 넣어 24시간을 그대로 돌려 본다.
- * 정식본 = Sonnet이 쓴 원고만(결정론 장 0). terra(OpenAI)는 정식본에 쓰지 않고, Sonnet이 2시간 넘게 실패했을 때 "임시본"으로만 보인다.
+ * 정식본 = Sonnet이 쓴 원고만(결정론 장 0). terra(OpenAI)는 정식본에 쓰지 않고, Sonnet이 실패했을 때 "임시본"으로만 보인다.
+ * AM2-3 6-1(덕짱님 결정 2026-11-12): 결정론 대체본은 어느 상품도 내보내지 않는다 — 빈 원고 재호출 1 → 빠진 장·묶음 재시도 1 → 첫 실패 직후 임시본 → 그래도 실패면 보류(처리 봇 경보 · 고객 지연 안내),
+ * 24시간 안에 못 만들면 지금처럼 자동 환불(이용권은 되돌림).
  */
 import type { ChapterMeta, WriterMeta } from "../../writer/book";
 import type { WriterRun } from "../../writer/runner";
@@ -10,8 +12,8 @@ const MIN = 60_000, HOUR = 60 * MIN;
 export const RETRY_DELAYS_MS = [1 * MIN, 5 * MIN, 15 * MIN, 1 * HOUR, 3 * HOUR, 6 * HOUR] as const;
 /** 첫 실패부터 이 시간까지만 다시 시도한다. */
 export const RETRY_WINDOW_MS = 24 * HOUR;
-/** Sonnet이 첫 실패부터 이 시간 넘게 실패하면(OpenAI가 쓸 수 있을 때만) 임시본을 만든다. */
-export const INTERIM_AFTER_MS = 2 * HOUR;
+/** Sonnet이 첫 실패부터 이 시간 넘게 실패하면(OpenAI가 쓸 수 있을 때만) 임시본을 만든다. AM2-3 6-1: 첫 실패 직후 바로(2시간 → 0). */
+export const INTERIM_AFTER_MS = 0;
 /** 정식본·임시본 모델. 정식본은 환경 설정(LLM_PROVIDER 등)과 무관하게 Sonnet으로 고정한다. */
 export const OFFICIAL_TARGET = { provider: "anthropic", model: "claude-sonnet-5-5" } as const;
 export const INTERIM_TARGET = { provider: "openai", model: "gpt-6.1-terra" } as const;
@@ -47,7 +49,7 @@ export function nextRetryAt(firstFailureAt: number, failures: number, now: numbe
   return Math.min(at, end);
 }
 
-/** 보류 시각을 정한다: 임시본을 낼 수 있으면 첫 실패 + 2시간에 맞춰 한 번 깨운다. */
+/** 보류 시각을 정한다: 임시본을 낼 수 있으면 첫 실패 + INTERIM_AFTER_MS에 맞춰 한 번 깨운다(0이면 다음 재시도 시각 그대로 — 그 시도가 임시본). */
 export function deferUntil(a: { firstFailureAt: number; failures: number; now: number; interimPossible: boolean }): number | null {
   const next = nextRetryAt(a.firstFailureAt, a.failures, a.now);
   if (next === null) return null;
@@ -55,7 +57,7 @@ export function deferUntil(a: { firstFailureAt: number; failures: number; now: n
   return a.interimPossible && a.now < interimAt && next > interimAt ? interimAt : next;
 }
 
-/** 이번 시도를 임시본(OpenAI)으로 할지: 정식본 대기 중이고, 첫 실패부터 2시간이 지났고, OpenAI를 쓸 수 있을 때. */
+/** 이번 시도를 임시본(OpenAI)으로 할지: 정식본 대기 중이고, 첫 실패부터 INTERIM_AFTER_MS가 지났고(AM2-3: 0 — 첫 실패 다음 시도), OpenAI를 쓸 수 있을 때. */
 export function interimDue(a: { phase: string; firstFailureAt: number | null; now: number; interimPossible: boolean }): boolean {
   return a.phase === "pending" && a.firstFailureAt !== null && a.now - a.firstFailureAt >= INTERIM_AFTER_MS && a.interimPossible;
 }
@@ -67,7 +69,7 @@ export type BuildVerdict =
 
 /**
  * 만든 책을 판정한다. 결정론 장이 하나라도 있으면 정식본·임시본으로 내보내지 않는다.
- * keys_filled(대운·세운 키 일부를 브리프 문단으로 채운 장)는 작가 장으로 본다(SPEC §5 카드 설계, 기록만 남긴다).
+ * AM2-3 6-1: keys_filled(대운·세운 key 일부를 결정론 문단으로 채운 장)도 결정론 대체본이다 — 내보내지 않는다(예전에는 작가 장으로 봤다).
  * 최종판 0-1: 작가가 쓴 장은 짧아도 버리지 않으므로 결정론 장은 "빠진 장"뿐이다(rejected는 늘 빈 배열 — 다음 시도는 저장된 장을 그대로 두고 빠진 장만 이어 쓴다).
  * capped: 주문당 비용 상한에 걸려 부르지 못했다(보류).
  */
@@ -76,12 +78,12 @@ export function judgeBuild(built: { readonly meta: WriterMeta; readonly run: Wri
   const chapters: readonly ChapterMeta[] = built.meta.chapters;
   const det = chapters.filter(c => c.source === "deterministic");
   const keysFilled = chapters.filter(c => c.source !== "deterministic" && (c.reason ?? "").startsWith("keys_filled")).map(c => c.n);
-  if (!det.length && chapters.length) return { kind: "complete", keysFilled };
+  if (!det.length && !keysFilled.length && chapters.length) return { kind: "complete", keysFilled };
   const calls = built.run?.calls ?? built.meta.calls;
   const preOutput = calls.every(c => c.chars === 0);
   const errors = [...new Set(calls.map(c => c.error).filter((e): e is string => Boolean(e)))];
-  const missing = det.map(c => c.n), capped = Boolean(built.run?.capped);
-  const reason = capped ? "cost_cap" : !chapters.length ? "no_chapters" : errors.length ? errors.join(",") : `missing:${missing.join(",")}`;
+  const missing = [...det.map(c => c.n), ...keysFilled], capped = Boolean(built.run?.capped);
+  const reason = capped ? "cost_cap" : !chapters.length ? "no_chapters" : errors.length ? errors.join(",") : !det.length && keysFilled.length ? `keys_filled:${keysFilled.join(",")}` : `missing:${missing.join(",")}`;
   return { kind: "incomplete", reason: (preOutput ? "pre_output:" : "partial:") + reason, rejected: [], missing, preOutput, ...(capped ? { capped } : {}) };
 }
 

@@ -25,10 +25,12 @@ const wish = ((payload as { productOptions?: { wish?: string } }).productOptions
 const intake = buildIntake(brief, k, plan, wish);
 const lctx = lintContext(brief, k, plan, [], undefined, factSheetFor(payload, at, brief, k));
 const heads = new Set((brief.timeline?.entries ?? []).map(e => (e.head ?? "").replace(/\([一-鿿]+\)/g, "").replace(/[一-鿿]+/g, "")));
+// 시스템 끝 안내는 지금 문구·옛 문구(모든 상품) 모두 뗀다(오탐 검토 major: 옛 기본 문구가 걸림).
+const notices = ["annual_fortune", "major_fortune", "saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"].map(bookNotice);
 const notice = bookNotice(brief.product);
 const clean = (t: string) => t.replace(/\(([一-鿿]+)\)/g, "").replace(/[一-鿿]+/g, "");
 const chapters: FinalChapter[] = snap.draft.chapters.map(ch => ({ n: ch.n, id: ch.id, title: ch.title, source: "writer", chars: 0, ...(ch.keys ? { keys: ch.keys } : {}),
-  sections: ch.sections.map(s => ({ heading: s.heading, paragraphs: s.paragraphs.map(p => { let t = clean(p).replace(notice, "").trim(); for (const h of heads) if (h && t.startsWith(h)) t = t.slice(h.length).trim(); return t; }).filter(Boolean) })) }));
+  sections: ch.sections.map(s => ({ heading: s.heading, paragraphs: s.paragraphs.map(p => { let t = clean(p).replace(notice, ""); for (const nt of notices) t = t.replace(nt, ""); t = t.trim(); for (const h of heads) if (h && t.startsWith(h)) t = t.slice(h.length).trim(); return t; }).filter(Boolean) })) }));
 const flags: ChunkFlag[] = [...blockFlags(chapters, lintBook(chapters, lctx), blockCtxFor(brief, k, intake)), ...crossRepeats(chapters), ...adviceRepeats(chapters), ...adjacentRepeats(chapters, intake.lines.map(l => l.value))];
 // 화면 카드(저장된 값).
 const cards = (snap.draft as unknown as { timeline?: { cards?: Record<string, unknown>[] } }).timeline?.cards ?? [];

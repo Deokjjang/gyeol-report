@@ -340,7 +340,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // 최종판3 12: 쉬운 이름 치환 겹침(「배우는 힘인 배우는 힘은」→「배우는 힘은」).
       { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
       // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
-      { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || x.replace(/[^가-힣A-Za-z0-9]/g, "") !== ss[i - 1].replace(/[^가-힣A-Za-z0-9]/g, "")); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
+      // AM2-3 6-2: 글자까지 같지 않아도 거의 같은 문장(수리가 말만 조금 바꿔 다시 쓴 것)은 뒤 문장을 뺀다(E.nearDuplicate — 세운·대운과 같은 함수).
+      { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || !E.nearDuplicate(ss[i - 1], x)); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
       // AM 7부 판독(대운 11·4종): 면책이 앞 마디로 붙은 문장은 면책 마디만 뗀다(뒤 내용은 남김).
       if (!surface) { const ss = splitSentences(q), next = ss.map(E.stripNoticeLead); if (next.some((x, i) => x !== ss[i])) { words++; q = next.join(" "); } }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).

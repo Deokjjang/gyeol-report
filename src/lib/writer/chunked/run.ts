@@ -11,6 +11,8 @@ import type { WriterChapter } from "../prompt";
 import type { Intake } from "./intake";
 import { chunkMaxTokens, chunkUser, type Chunk } from "./prompt";
 
+/** 못 끝낸 묶음을 다시 부를 때 지시 끝에 붙이는 한 줄. */
+export const CHUNK_RETRY_NOTE = "(다시 부름: 앞 호출이 이 묶음을 끝내지 못했다 — 위 머리글의 장·달·해를 빠짐없이 쓴다.)";
 /** 동시에 부르는 묶음 수(첫 묶음 뒤). Anthropic 분당 요청 한도 안. */
 export const CHUNK_CONCURRENCY = 5;
 /** 개발 실호출에서 예산 관문(대기 중 호출의 최악 비용을 미리 센다)에 맞춰 줄일 때만 AM2_CHUNK_CONCURRENCY(1~5). */
@@ -69,12 +71,14 @@ export async function writeChunks(a: ChunkRunArgs): Promise<{ run: WriterRun | n
   const system = `${a.system.rules}\n\n${a.system.card}`, parts = [a.system.rules, a.system.card];
   // 이어 쓰기: 이미 끝난 묶음의 원문(표지·키워드가 든 첫 묶음)은 원문 저장본에서 되살린다(호출 0).
   for (const c of a.chunks.filter(x => !todo.includes(x))) { try { const hit = a.o.cache ? await a.o.cache.get(rawKey(a.o.model, system, chunkUser(a.intake, c))) : null; if (hit?.text) texts.set(c.id, hit.text); } catch { /* 없으면 엔진 값 */ } }
-  const one = async (c: Chunk, onFirstText?: () => void) => {
+  const one = async (c: Chunk, onFirstText?: () => void, retry = false) => {
     if (stale) return;
     const t0 = Date.now();
-    const r = await chunkCall(a.o, undefined, { kind: "first", system, systemParts: parts, user: chunkUser(a.intake, c), maxTokens: chunkMaxTokens(c, c.parts.some(p => p.n === 1)), ...(onFirstText ? { onFirstText } : {}) });
+    // AM2-3 6-1 ②: 다시 부를 때는 지시 끝에 한 줄을 붙인다(일부만 온 원고가 원문 캐시에서 그대로 돌아오지 않게).
+    const user = chunkUser(a.intake, c) + (retry ? `\n\n${CHUNK_RETRY_NOTE}` : "");
+    const r = await chunkCall(a.o, undefined, { kind: "first", system, systemParts: parts, user, maxTokens: chunkMaxTokens(c, c.parts.some(p => p.n === 1)), ...(onFirstText ? { onFirstText } : {}) });
     runs.push(r.run);
-    log.push({ id: c.id, kind: "first", round: 0, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0 });
+    log.push({ id: c.id, kind: "first", round: retry ? 1 : 0, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, ...(retry ? { reason: "retry_unfinished" } : {}) });
     if (!r.text) return;
     texts.set(c.id, r.text);
     const changed = mergeParts(drafts, partsOf(r.text, c, a.plan), a.plan, resumed ? "continuation" : "writer");
@@ -89,6 +93,10 @@ export async function writeChunks(a: ChunkRunArgs): Promise<{ run: WriterRun | n
     const rest = todo.filter(c => c !== first), queue = [...rest];
     const workers = Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let c = queue.shift(); c; c = queue.shift()) await one(c); });
     await Promise.all([head, ...workers]);
+    // AM2-3 6-1 ②(덕짱님 결정 2026-11-12): 빈 원고 재호출(chunkCall 안 1회) 뒤에도 못 끝낸 묶음(장·key가 빠짐)은 같은 시도 안에서 한 번 더.
+    // 그래도 못 끝내면 빠진 자리는 결정론 채움 표시로 남고, 발행 관문(policy judgeBuild)이 보류 → 다음 시도는 임시본(OpenAI).
+    const left = todo.filter(c => !chunkDone(c, drafts)), q2 = [...left];
+    await Promise.all(Array.from({ length: Math.min(concurrency(), q2.length) }, async () => { for (let c = q2.shift(); c; c = q2.shift()) await one(c, undefined, true); }));
   }
   return { run: runs.length ? { ...mergeRuns(runs), ...(stale ? { stale: true } : {}) } : null, drafts, texts, log };
 }

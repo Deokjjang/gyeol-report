@@ -205,7 +205,7 @@ function opsMessageBody(f: ItemFacts, method: string | null, now: number): Messa
   return { text: [`${title} · ${esc(codeOf(f))}`, line2, line3, accountLine(f)].filter(Boolean).join("\n"), buttons };
 }
 const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고", share_failed: "처리 공유 실패 경보",
-  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보" };
+  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보", generation_hold: "처리 발행 보류 경보" };
 
 // ── F 가입 이용권 캠페인(처리 봇) ─────────────────────────────────────
 /** 버튼 값(돈이 오가지 않아 비밀번호 없음, 덕짱님 id만 — 웹훅 첫 관문). */
@@ -222,6 +222,13 @@ export function signupSwitchText(on: boolean, at: string | null): string {
   return on ? `▶️ <b>가입 이용권 지급 다시 켬</b> · ${mdhm(at)}` : `⏸ <b>가입 이용권 지급 멈춤</b> · ${mdhm(at)}`;
 }
 /** 「🚨 생성 실패: API 잔액 확인 필요」(1시간 1번). */
+/** AM2-3 6-1: 정식본(Sonnet)·임시본(OpenAI) 모두 못 만들어 발행을 보류(결정론 대체본은 내보내지 않는다). 고객 화면은 지연 안내, 24시간 안에 못 만들면 자동 환불. */
+export function generationHoldText(p: Record<string, unknown>): string {
+  const id = String(p.reportId ?? "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 60);
+  const who = p.origin === "ticket" ? "이용권 책" : "결제 주문";
+  const why = String(p.reason ?? "").replace(/[<>&]/g, "").slice(0, 120);
+  return [`⏸ <b>발행 보류: 책을 만들지 못했어요</b>`, `${who} · ${id}`, `사유 ${why || "작가 실패"} · ${p.lane === "interim" ? "임시본(OpenAI)도 실패" : "임시본을 쓸 수 없음"}`, "고객 화면은 지연 안내 · 감독이 계속 다시 시도 · 24시간 안에 못 만들면 자동 환불"].join("\n");
+}
 export function apiCreditText(p: Record<string, unknown>): string {
   const code = p.code === "openai_quota" ? "OpenAI(임시본) 할당량" : "Anthropic(작가) 잔액·결제";
   return [`🚨 <b>생성 실패: API 잔액 확인 필요</b>`, `${code} 문제로 작가 호출이 실패했어요 · 무료 책이 늘면 잔액이 빨리 줄어요`].join("\n");

@@ -157,7 +157,7 @@ export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactS
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
 /** 다음 문장이 앞말(내용)을 가리킨다(지우면 문단이 깨진다). 최종 A-9: 접속어(그래서·하지만 등)는 여기서 빼고, 지운 뒤 접속어만 뗀다(orphan.ts). */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|이 |그 )/;
+const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|이 |그 )/;
 /**
  * 최종판3 12: 수리 문장이 재검사(정답지 대조 포함)에 새로 걸리면 그 문장을 수리 전 원문으로 되돌린다(호출 0).
  * 판독: 검수가 음양 2:6을 거꾸로 읽고(오탐) 수리가 맞는 문장을 틀리게 고쳤다. 원문도 걸리는 경우(원래 검사 깃발)는 뒤의 지우기가 처리한다.
@@ -213,6 +213,9 @@ export function revertRepairSideEffects(chapters: readonly FinalChapter[], appli
     // AM 재생성 2 판독(major-1 3장): 소제목의 말(「좋은 패」)을 주어로 세운 정의 문장에서 수리가 그 주어를 잃어 비문이 됐다 → 되돌린다.
     else if (subj && subj.length >= 2 && sec.heading.includes(subj) && !a.after.includes(subj)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_subject_lost" }); }
     else if (ss.length > 1 && ss.some((s, j) => j !== i && nearSame(s, ss[i]))) { reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_duplicate" }); ss.splice(i, 1); }
+    // AM2-3 6-2(AM-01 커리어 6장 「이 조합은 정해진 틀 안에서…」 — 수리가 앞 문장의 두 힘을 지워 지시어가 기댈 곳을 잃음): 수리한 문장 바로 뒤가 지시어로 열면 수리를 되돌린다
+    // (되돌린 원문은 깃발이 남아 deleteFlagged가 기대는 뒤 문장과 함께 지운다 — 고아가 남지 않는다).
+    else if (i + 1 < ss.length && /^(이|그) (조합|두 (가지|힘|기운))|^그다음은|^이처럼|^이렇게/.test(ss[i + 1].replace(/[⟪⟫]/g, "")) && norm(a.before) !== norm(a.after)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_orphan_next" }); }
     else continue;
     (sec.paragraphs as string[])[pn] = ss.join(" ");
   }
@@ -230,8 +233,12 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const ss = splitSentences(p), i = ss.findIndex(x => x.replace(/[⟪⟫]/g, "").includes(f.sentence) || f.sentence.includes(x.replace(/[⟪⟫]/g, "")));
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
-    if (i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
-    const { sentences: rest0, stripped } = removeSentenceAt(ss, i);
+    // AM2-3 6-2(AM-01 4종 판독 커리어 9장 「그다음은 계유 대운입니다.」 고아): 다음 문장이 지운 문장에 기대면 함께 지운다(문단에 다른 문장이 남거나 다른 문단이 있을 때). 그럴 수 없으면 예전처럼 남긴다.
+    const leans = i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""));
+    if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
+    const { sentences: rest1, stripped } = removeSentenceAt(ss, i);
+    if (leans) deleted.push({ at, sentence: rest1[i], rule: `${f.rule}:leans` });
+    const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
     // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
     const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && /셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
     const rest = orphan ? rest0.filter((_, j) => j !== i) : rest0;

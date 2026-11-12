@@ -130,7 +130,9 @@ const DOMAIN_KO: Readonly<Record<string, string>> = { love: "연애 쪽", marria
 const SIGNAL_KO = (a: string) => (a === "↑" ? "오름" : a === "↓" ? "내림" : "보통");
 const DOMAIN_SIGNAL: Readonly<Record<string, string>> = { love: "연애", money: "돈", work: "일", people: "사람", mind: "마음" };
 const ELEMENT_SAY: Readonly<Record<string, string>> = { WOOD: "나무(목)", FIRE: "불(화)", EARTH: "흙(토)", METAL: "쇠(금)", WATER: "물(수)" };
-const ELEMENT_RE: Readonly<Record<string, string>> = { WOOD: "나무|목 기운|목\\(", FIRE: "불|화 기운|화\\(", EARTH: "흙|토 기운|토\\(", METAL: "쇠|금 기운|금\\(", WATER: "물|수 기운|수\\(" };
+const ELEMENT_RE: Readonly<Record<string, string>> = { WOOD: "나무|목 기운|목\\(|(?<![가-힣])목(?=[이을의과])", FIRE: "불|화 기운|화\\(|(?<![가-힣])화(?=[이을의과])", EARTH: "흙|토 기운|토\\(|(?<![가-힣])토(?=[이을의과])", METAL: "쇠|금 기운|금\\(|(?<![가-힣])금(?=[이을의과])", WATER: "물|수 기운|수\\(" };
+/** 삼합 국 이름의 다른 꼴(「해묘미 반합」 「나무의 기운이 반쯤 묶여」) — 반드시 쓸 것 검사가 같은 것으로 본다. */
+const GUK_ALIAS: Readonly<Record<string, string>> = { 목국: "해묘미|해묘|묘미|해미|나무의 기운이 (반쯤 )?묶", 화국: "인오술|인오|오술|인술|불의 기운이 (반쯤 )?묶", 금국: "사유축|사유|유축|사축|쇠의 기운이 (반쯤 )?묶", 수국: "신자진|신자|자진|신진|물의 기운이 (반쯤 )?묶" };
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** 작가에게 보이는 key 이름(1-1): 달 = 「5월 · 을사월」(절입 날짜·다리 꼬리 뺌), 해 = 「2027년 정미년」. 가짜 작가·파서도 이 함수를 쓴다. */
 export const keyLabelOf = (e: Pick<TimelineEntry, "kind" | "key" | "label" | "ganji">) => (e.kind === "month" ? e.label.split(" (")[0] : `${e.key}년 ${e.ganji.hangul}년`);
@@ -280,7 +282,10 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // 세운 책은 대운 안의 위치를 책의 해 기준으로(덕짱님 결정 2026-11-11 「2027년 기준으로」 — 엔진 값은 발행일 기준 연차, 계산은 그대로 두고 글만 옮긴다).
   const shift = product === "annual_fortune" ? year - brief.chart.thisYear.year : 0;
   const tidy = (t: string) => shiftPhase(t, year, shift).replace(/(\s*·\s*){2,}/g, " · ").replace(/^\s*·\s*|\s*·\s*$/g, "");
-  const finalLines = lines.map(l => ({ ...l, value: tidy(l.value), meaning: tidy(l.meaning), use: [...(use.get(l.id) ?? [])].sort((a, b) => a - b) }));
+  // 지난 대운이 만 22세 전에 끝났으면 대운 2장 둘째 절(그 시기를 지나며) 근거의 「동료」는 「또래」로(카드가 직장 낱말을 건네지 않게 — 오탐 검토 major past_work).
+  const pastSec = product === "major_fortune" && prevDayunEndAge < 22 ? new Set(out.find(c => c.id === "past")?.sections?.[1]?.lines.filter(id => /^D/.test(id)) ?? []) : new Set<string>();
+  const young = (id: string, t: string) => (pastSec.has(id) ? t.replace(/동료/g, "또래") : t);
+  const finalLines = lines.map(l => ({ ...l, value: young(l.id, tidy(l.value)), meaning: young(l.id, tidy(l.meaning)), use: [...(use.get(l.id) ?? [])].sort((a, b) => a - b) }));
   // 2-2 짝은 두 줄이 모두 허용된 장에만. 겹치는 장이 없으면 짝을 뺀다(P2 판독 major-1 P1: N7은 1·2·3장, B1은 7·9장 → 작가가 2장·9장에 나눠 씀).
   const useOf = new Map(finalLines.map(l => [l.id, new Set(l.use)]));
   const pairsOut = pairs.filter(p => p.why).map(p => ({ ...p, use: [...(useOf.get(p.myeongri) ?? [])].filter(n => useOf.get(p.mbti)?.has(n)) })).filter(p => p.use.length).map((p, i) => ({ ...p, id: `P${i + 1}` }));
@@ -341,7 +346,7 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const must: MustItem[] = [
     { what: `흐름 ${FLOW_WORD[e.flow.score]}`, re: FLOW_TALK[e.flow.score].source },
     ...(fills.length ? [{ what: `${fills.map(x => ELEMENT_SAY[x] ?? x).join("·")} 채움`, re: `(${fills.map(x => ELEMENT_RE[x] ?? x).join("|")})[^.?!]{0,30}(채|보태|들어)|(채|보태)[^.?!]{0,20}(${fills.map(x => ELEMENT_RE[x] ?? x).join("|")})` }] : []),
-    ...mustRels.map(r => ({ what: r, re: esc(r) })),
+    ...mustRels.map(r => ({ what: r, re: GUK_ALIAS[r] ? `${esc(r)}|${GUK_ALIAS[r]}` : esc(r) })),
   ];
   return { key: e.key, label, head: say(e.head ?? "", year), when, lines: uniq, claims: claim ? [`${label}: ${claim}`] : [], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}), ...(todoRaw && when !== "past" ? { todo: todoRaw } : {}), ...(range ? { range } : {}), must };
 }

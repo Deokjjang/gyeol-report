@@ -30,6 +30,8 @@ export type GenerationEnv = {
   readonly raw?: OpsStore;
   /** F: 작가 호출이 잔액 부족·결제 문제로 실패했을 때 처리 봇 경보(ops_signup 'credit_alert', SQL이 1시간 1번만). 시험 주입이면 없음. */
   readonly creditAlert?: (code: "anthropic_credit" | "openai_quota") => Promise<unknown>;
+  /** AM2-3 6-1: 정식본·임시본 모두 실패(또는 임시본을 쓸 수 없음)해 발행을 보류할 때 처리 봇 경보(ops_notifications 'generation_hold', 주문당 1번). */
+  readonly holdAlert?: (data: { reportId: string; origin: "paid" | "ticket"; reason: string; lane: "official" | "interim" }) => Promise<unknown>;
 };
 export type State = { phase: string; first_attempt_at: string; first_failure_at: string | null; failures: number; rejected_chapters: number[]; last_reason: string | null };
 export type Decision =
@@ -109,7 +111,7 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const state = begun.state as State;
   const openAi = await openAiAvailable(env);
   const firstFailure = ms(state.first_failure_at);
-  // 임시본 차례: 2시간이 지났고 직전 시도가 임시본 시도가 아닐 때(실패했으면 다음은 다시 Sonnet).
+  // 임시본 차례: 첫 실패 뒤(AM2-3: 바로) 직전 시도가 임시본 시도가 아닐 때(실패했으면 다음은 다시 Sonnet).
   const interim = interimDue({ phase: state.phase, firstFailureAt: Number.isFinite(firstFailure) ? firstFailure : null, now: now(), interimPossible: openAi }) && !String(state.last_reason ?? "").startsWith("interim:");
   // 최종판 0-1: 저장된 장은 버리지 않는다(빠진 장만 이어 쓴다). 0-6: 지난 시도 비용 합이 상한에 이르면 부르지 않고 보류.
   const sink = interim ? memorySink() : job.sink;
@@ -126,6 +128,8 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
     const until = deferUntil({ firstFailureAt: first, failures: state.failures + 1, now: t, interimPossible: openAi && !a.seen.openaiQuota && state.phase === "pending" });
     decision = until === null ? { kind: "give_up", reason: a.reason } : { kind: "defer", until: iso(until), reason: a.reason };
   }
+  // AM2-3 6-1: 결정론 대체본은 내보내지 않는다 — 임시본까지 실패했거나 임시본을 쓸 수 없으면 보류 경보(고객 화면은 RETRYING = 지연 안내, 24시간 뒤 자동 환불은 그대로).
+  if ((decision.kind === "defer" || decision.kind === "give_up") && (lane === "interim" || !openAi) && env.holdAlert) { try { await env.holdAlert({ reportId: job.reportId, origin: job.origin, reason: a.reason.slice(0, 200), lane }); } catch { /* 경보 실패는 생성과 무관 */ } }
   const settled = decision.kind === "stale" ? { ok: false, code: "STALE_LEASE" } : await settle(decision);
   const t = now(), first = Number.isFinite(firstFailure) ? firstFailure : t;
   const failed = decision.kind === "defer" || decision.kind === "give_up" || decision.kind === "hold";

@@ -378,7 +378,8 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   // 최종판3 2g: 종합 표지는 직업·나이 금지, 연애 표지는 직업 장소 금지, 같은 사람 이전 책 표지와 같은 모티프 계열 금지.
   if (brief.product === "saju_mbti_full") {
     const words = jobWordsOf(brief.person.facts.job.detail);
-    const w = words.find(x => v.includes(x)) ?? v.match(/대표|사장|창업|직장인|개발자|회사원|사업가|스물|서른|마흔|쉰|\d+ ?(살|세)|\d0대/)?.[0];
+    // AM2-3 6-2: 종합 표지에 일터 장소(가게·매장·카페 운영 …)도 직업 말로 본다(AM-01 4종 판독 종합 표지).
+    const w = words.find(x => v.includes(x)) ?? v.match(/대표|사장|창업|직장인|개발자|회사원|사업가|가게|매장|점포|손님|스물|서른|마흔|쉰|\d+ ?(살|세)|\d0대/)?.[0];
     if (w) return { reason: `종합 표지에 직업·나이(${w})`, level: "hard" };
   }
   // 최종판3 12: 「현장 공정표 위에서도…」(인테리어 시공 대표 연애 표지)를 못 잡았다 — 장소 낱말에 현장, 입력 직업의 소품·낱말도 본다.

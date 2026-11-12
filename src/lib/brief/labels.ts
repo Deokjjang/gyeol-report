@@ -139,5 +139,5 @@ export const GROUP_EASY_BY_NAME: Readonly<Record<string, string>> = { 비겁: "�
 export const FLOW_WORD: Readonly<Record<number, string>> = { 1: "잔잔", 2: "느림", 3: "보통", 4: "활발", 5: "거셈" };
 export const FLOW_DESC: Readonly<Record<number, string>> = { 1: "흐름이 잔잔한 편", 2: "흐름이 느린 편", 3: "흐름이 보통인 편", 4: "흐름이 활발한 편", 5: "흐름이 거센 편" };
 /** 본문에서 흐름 세기를 말하는 꼴(단어별). key별 값 대조 검사가 쓴다. */
-export const FLOW_TALK: Readonly<Record<number, RegExp>> = { 1: /잔잔/, 2: /느린 편|느려|느림|느리게/, 3: /보통/, 4: /활발/, 5: /거세|거센|거셈/ };
+export const FLOW_TALK: Readonly<Record<number, RegExp>> = { 1: /잔잔/, 2: /느[린리려릴립]|느림/, 3: /보통/, 4: /활발/, 5: /거[세센셈셉]/ };
 export const flowWord = (score: number) => FLOW_WORD[Math.max(1, Math.min(5, Math.round(score)))] ?? "보통";

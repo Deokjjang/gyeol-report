@@ -64,7 +64,10 @@ export const isNoticeSentence = (s: string) => NOTICE.some(re => re.test(s)) || 
  */
 const NOTICE_HEAD = /(단정|약속|확정|보장|예언|장담)(하지|하진|할 수|할 순|해서|해 드리|해 주는 (건|것|게)|하는 (건|것|게|말|뜻)|한다는|짓지|은 아니|이 아니)|뜻하지(는|도)? 않|뜻하는 (건|것은|게) 아|(꼭|반드시|무조건) 그렇(다는|게 된다는|지는)|정해져 있다는|(일어난다|온다|생긴다|된다)고 (정해|못 박)|단정(은|할 일은)/;
 const NOTICE_NEG = /않|아니|아닙|없|못|마세요|말아/;
+/** 시스템이 책마다 한 번 넣는 끝 안내(bookNotice)는 면책 검사 대상이 아니다. */
+const SYSTEM_NOTICE = new Set(["career_money_study", "saju_mbti_compatibility", "love_marriage_child", "annual_fortune", "major_fortune", "saju_mbti_full"].map(p => bookNotice(p).replace(/[^가-힣]/g, "")));
 export function noticeMeaning(s: string): boolean {
+  if (SYSTEM_NOTICE.has(s.replace(/[^가-힣]/g, ""))) return false;
   const m = NOTICE_HEAD.exec(s); if (!m) return false;
   return NOTICE_NEG.test(s.slice(m.index));
 }
@@ -91,11 +94,14 @@ export function bookNotice(product: string): string {
 // ---------- 2 고아 문장 ----------
 /** "도"로 끝나는 첫 어절 가운데 명사 자체가 "도"로 끝나는 낱말(정도·속도…)은 연결이 아니다. */
 const NOUN_DO = /^(정도|속도|태도|온도|각도|강도|빈도|의도|제도|용도|한도|농도|밀도|진도|지도|시도|태도|포도|보도|인도|기도|노도|난도|척도|고도|순도|적도|채도|명도|경도|위도|궤도|열도|반도|섬도)$/;
-const ORPHAN_ADVERB = /^(또한|여기에|여기에다|이처럼|이렇게|그래서|그러니|반대로|그런데|하지만|그리고|게다가|더구나|마찬가지로|이와 함께|그 위에|그러면서)(\s|,)/;
+const ORPHAN_ADVERB = /^(또한|여기에|여기에다|이처럼|이렇게|그래서|그러니|반대로|그런데|하지만|그리고|게다가|더구나|마찬가지로|이와 함께|그 위에|그러면서|그다음은|그다음엔|그 뒤로는)(\s|,)/;
+/** AM2-3 6-2(AM-01 4종 판독 커리어 6장 「이 조합은 정해진 틀 안에서…」 — 앞 문장이 수리로 사라짐): 지시어 + 앞말을 묶는 명사로 여는 첫 문장. */
+const ORPHAN_REF = /^(이|그|저) (조합|두 (가지|힘|기운|글자|흐름)|셋|흐름|차이|결|구조|방식|습관|점|평가표)(은|는|이|가|을|를|도)\s/;
 /** 앞 문단이 없는 자리(소제목 첫 문단)의 첫 문장이 앞말에 기대어 여는가. */
 export function orphanStart(first: string): string | null {
   const s = first.replace(/[⟪⟫"'“”‘’]/g, "").trim();
   const m = s.match(ORPHAN_ADVERB); if (m) return m[1];
+  { const r = s.match(ORPHAN_REF); if (r) return r[0].trim(); }
   const w = s.split(/\s+/)[0] ?? "";
   // "성격도 같은 쪽을 가리킵니다": 첫 어절이 "~도"(명사 + 보조사)면 앞말을 전제한다.
   if (/^[가-힣]{1,8}도$/.test(w) && !NOUN_DO.test(w) && !/^(어디|아무|누구|무엇|언제|조금|하나|한 번|두 번)도$/.test(w)) return w;
@@ -132,7 +138,25 @@ const META_INSTRUCTION = /(입력(하지 않은|에 없는|되지 않은)|브리
 /** AM 1부 판독: 분기 조건·금액 금지·연차 금지·장면 슬롯이 문장으로(「상태가 직장인이니」「상황이 정해지지 않았으니」「숫자 없이 감각으로만 적어」「오래 다닌 햇수 대신」「경력은 실제로 해 온 만큼만」「…장면이 맞아요」). */
 const META_TRACE = /상태가 [가-힣·]{1,10}(이)?니(까)?(?![가-힣])|상황이 (정해지지|입력되지) 않았으니|숫자 ?없이[^.?!]{0,16}(적어|적으|쓰세요|정해|두세요|감각으로)|(오래 다닌|다닌|근무한) (햇수|기간|연수) 대신|경력은 (실제로 )?(해 온|한) 만큼만|장면이 (맞아요|맞습니다|어울려요|어울립니다)(?![가-힣])/;
 // AM 1-1 ②: 「연차를 구체적으로 적기보다, …」(작가 규칙 "입력에 없는 연차는 쓰지 않는다"를 독자 조언 꼴로 옮김, 운영 판독 11/5).
-export const metaInstruction = (s: string) => META_INSTRUCTION.test(s) || META_TRACE.test(s);
+/** AM2-3 6-2(AM-01 4종 판독 커리어 9장 「이 로드맵에는 새로운 특성이 없습니다.」): 작성 지시·브리프 note를 옮긴 메모 꼴. */
+const META_NOTE = /새로운 특성(이|은) 없|새 특성(은|이)? 없|새 특성 없이|이 (로드맵|장|절|부분)에(는|선) [^.?!]{0,24}(없습니다|없어요|담지 않|넣지 않|다루지 않)/;
+export const metaInstruction = (s: string) => META_INSTRUCTION.test(s) || META_TRACE.test(s) || META_NOTE.test(s);
+/**
+ * AM2-3 4부·6-2 같은 문장·같은 뜻 연속(세운·대운 adjacentRepeats와 4종 tidy가 같이 쓴다): 정확히 같음 · 4자 창 자카드 0.6 이상 · 앞 세 어절이 같고 어절 80% 이상 겹침.
+ * AM-01 4종 판독 커리어 9장 「이번에는 일 사이사이에 하루에 한 번은 아무것도 안 하는 시간을 두세요. 이번에는 일 사이사이에 하루 한 번은 아무것도 하지 않는 시간을 두세요.」(수리 흔적).
+ */
+export function nearDuplicate(a: string, b: string): boolean {
+  const n = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");
+  if (n(a) === n(b)) return true;
+  // 한 문장이 다른 문장 안에 통째로(AM-01 궁합 3장 「…기운이 둘 다에게 있어서, 둘 다 체면과 격식을 아는 사람이라 …」 뒤에 같은 꼬리만 다시).
+  { const x = n(a), y = n(b); if (Math.min(x.length, y.length) >= 20 && (x.includes(y) || y.includes(x))) return true; }
+  const win = (t: string) => { const x = n(t), o = new Set<string>(); for (let i = 0; i + 4 <= x.length; i++) o.add(x.slice(i, i + 4)); return o; };
+  const A = win(a), B = win(b); let k = 0; for (const w of A) if (B.has(w)) k++;
+  if (A.size && B.size && k / (A.size + B.size - k) >= 0.6) return true;
+  const wa = a.split(/\s+/), wb = b.split(/\s+/);
+  if (wa.length >= 4 && wb.length >= 4 && wa.slice(0, 3).join(" ") === wb.slice(0, 3).join(" ")) { const shared = wb.filter(w => wa.includes(w)).length; return shared / Math.max(wa.length, wb.length) >= 0.7; }
+  return false;
+}
 
 // ---------- 10 씨앗 원문(꼬리표·압축 구) ----------
 /** 재료 글 가운데 ×·→ 꼴(꼬리표 × 성향 → 결과)의 마디: 정규화 7자 이상이면 문장 안에 그대로 나오면 위반. */
