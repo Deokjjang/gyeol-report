@@ -312,10 +312,10 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   /** 카드에 「가장 ~」이 그대로 있으면(예: 「가장 조용한 달: 계축월」) 작가 말이 아니라 카드 값이다. */
   // AM2-3: 동률 줄(「흐름이 가장 잔잔한 달(같은 세기): 4월 · 갑진월, …」)은 그 줄에 이름이 든 달·해만 「가장」이 맞다.
   // 오탐 검토(annual): 같은 뜻 무리(「가장 조용」≈「가장 잔잔」, 「가장 거센」≈「가장 크게 오르는」)도 카드 값이다. 달 이름이 든 카드 줄이면 그 달·해가 줄에 있어야 한다.
-  const SYN: readonly RegExp[] = [/^(잔잔|조용|고요|낮|약|느)/, /^(거세|거센|세|센|강|높|크|빠르|빠른|뜨겁)/];
+  const SYN: readonly RegExp[] = [/^(잔잔|조용|고요)/, /^(거세|거센|크게 오르)/];
   const onCard = (sen: string, re: RegExp, label?: string) => { const m = re.exec(sen); if (!m) return false; const g = SYN.find(x => x.test(m[1]));
     const months2 = [...monthsIn(sen)];
-    return b.intake.lines.some(l => { const t = `${l.value} ${l.meaning}`, i2 = t.indexOf("가장"); if (i2 < 0) return false; const w = t.slice(i2 + 3, i2 + 9);
+    return b.intake.lines.some(l => { const t = `${l.value} ${l.meaning}`, i2 = t.indexOf("가장"); if (i2 < 0 || !/달|흐름/.test(t)) return false; const w = t.slice(i2 + 3, i2 + 9);
       const same = t.includes(`가장 ${m[1]}`) || Boolean(g?.test(w)) || (g === SYN[1] && /^크게 오르/.test(w));
       return same && (!MONTH_NAME_IN.test(t) || (label ? t.includes(label) : months2.length ? months2.every(mm => t.includes(`${mm}월`)) : true)); }); };
   for (const c of chapters) c.sections.forEach((s, si) => {
