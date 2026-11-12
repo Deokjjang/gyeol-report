@@ -10,7 +10,7 @@ import { getTenGod } from "@/lib/saju/tenGods";
 import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import type { DayunInfo } from "../chart";
 import { deepLines, type Knowledge } from "../knowledge";
-import { dayunLabel, ganjiLabel, HALF_HAP_PLAIN, halfHapLine, REL_PLAIN, TEN_GOD_GROUP, tenGodLabel } from "../labels";
+import { dayunLabel, FLOW_WORD, ganjiLabel, HALF_HAP_PLAIN, halfHapLine, REL_PLAIN, TEN_GOD_GROUP, tenGodLabel } from "../labels";
 import type { Material, TimelineEntry } from "../schema";
 import { DOMAIN_BY_TEN_GOD } from "../productEvidence";
 import type { Rng } from "../seed";
@@ -23,8 +23,10 @@ const ev = (key: string, facts: readonly (string | false | null | undefined)[], 
 
 export type LifetimeCycle = { readonly ganji: string; readonly hanja: string; readonly startYear: number; readonly endYear: number; readonly ages: string; readonly tenGod: string; readonly theme: string; readonly current: boolean; readonly label: string };
 /** 평생 대운 지도(엔진 대운 목록 전부, 표기는 공통 함수). */
+/** 평생 지도에 싣는 대운(AM2-3 1-7: 카드 「N개 대운」과 화면 칸 수를 맞춘다 — 시작 나이 만 100세 전까지. 엔진 대운 계산은 그대로). */
+export const LIFETIME_MAX_START_AGE = 100;
 export function lifetimeMap(saju: SajuCalcResult, dayun: DayunInfo, thisYear: number): LifetimeCycle[] {
-  return dayun.cycles.map(c => {
+  return dayun.cycles.filter(c => dayunLabel(c, dayun.daeunsu, dayun.cycles.find(x => x.index === c.index + 1)).daeunsu + 10 * (c.index - 1) < LIFETIME_MAX_START_AGE).map(c => {
     const l = dayunLabel(c, dayun.daeunsu, dayun.cycles.find(x => x.index === c.index + 1));
     const tg = getTenGod(saju.dayMaster, c.stem);
     return { ganji: ganjiLabel(c), hanja: `${c.stem}${c.branch}`, startYear: c.startYear, endYear: c.endYear, ages: l.ages, tenGod: tenGodLabel(tg), theme: GROUP_THEME[groupOfTg(tg)], current: c.startYear <= thisYear && thisYear <= c.endYear, label: l.line };
@@ -48,12 +50,12 @@ export function keyYears(saju: SajuCalcResult, future: readonly TimelineEntry[],
       if (rel.length) { score += 2; reasons.push(`그 해와 대운 기둥 사이 ${rel.map(r => (REL_PLAIN[r.kind] ?? r.kind).split("(")[0]).join("·")}`); }
       if (dp.branch === p.branch) { score += 1; reasons.push("대운과 같은 땅 글자가 겹쳐 그 기운이 짙어짐"); }
     }
-    if (Math.abs(e.flow.score - 3) >= 2) { score += Math.abs(e.flow.score - 3) - 1; reasons.push(`흐름 세기 ${e.flow.score}/5(참고)`); }
+    if (Math.abs(e.flow.score - 3) >= 2) { score += Math.abs(e.flow.score - 3) - 1; reasons.push(`흐름이 ${FLOW_WORD[e.flow.score]}인 해`); }
     return { key: e.key, score, reasons };
   });
   const top = [...scored].filter(x => x.reasons.length).sort((a, b) => b.score - a.score || a.key.localeCompare(b.key)).slice(0, 3);
   // 근거가 셋이 안 되면 흐름 세기 높은 해로 채운다(근거 배지는 흐름 세기).
-  for (const e of [...future].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key))) { if (top.length >= 3) break; if (!top.some(t => t.key === e.key)) top.push({ key: e.key, score: 0, reasons: [`흐름 세기 ${e.flow.score}/5(참고)`] }); }
+  for (const e of [...future].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key))) { if (top.length >= 3) break; if (!top.some(t => t.key === e.key)) top.push({ key: e.key, score: 0, reasons: [`흐름이 ${FLOW_WORD[e.flow.score]}인 해`] }); }
   return new Map(top.sort((a, b) => a.key.localeCompare(b.key)).map((x, i) => [x.key, { rank: i + 1, reasons: x.reasons.slice(0, 3) }]));
 }
 
@@ -77,12 +79,13 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
   const ageAt = (y: number) => y - c.birthYear;
   const growth = (facet: string, n = 1) => (c.mbti ? pick(deepLines(c.k, "mbti-growth", `mbti:${c.mbti}`, facet), n, `gr:${facet}`) : []);
   const futureAge = AGE_FACET(c.age + 10), nowAge = AGE_FACET(c.age);
+  const curMid = cur ? Number(cur.ages.match(/(\d+)~(\d+)/)?.[1] ?? c.age) + 5 : c.age;
   const near = future.slice(0, 3), mid = future.find(e => Number(e.key) === c.thisYear + 5), far = future.at(-1);
   const yearTg = (e?: TimelineEntry) => (e ? tgOf(e.tenGod.stem) : undefined);
   const line = (e: TimelineEntry | undefined) => { const tg = yearTg(e); return e && tg ? `${e.key}년(만 ${ageAt(Number(e.key))}세 무렵) ${e.tenGod.stem}: 일 = ${DOMAIN_BY_TEN_GOD[tg][0]}` : ""; };
   const out: Record<string, Evidence | null> = {
     dayunHow: ev("dayunHow", ["대운: 타고난 달 기둥에서 10년마다 한 칸씩 움직이는 큰 흐름(그 10년의 하늘 글자 십성이 주제)", "세운: 해마다 들어오는 기운 — 대운이 계절이라면 세운은 그해 날씨", cur ? `이 책의 지도: ${life.length}개 대운, 내가 서 있는 대운은 ${cur.label}` : ""], "짧게 한 소제목: 대운과 세운의 관계를 쉬운 그림 하나로"),
-    lifetime: ev("lifetime", life.map(x => `${x.label} · ${x.tenGod} — ${x.theme}${x.current ? " (내가 서 있는 대운)" : ""}`).slice(0, 10), "평생 지도에서 큰 줄기(이어지는 주제, 꺾이는 곳) 두세 개만 짚는다. 표는 화면이 보여 주니 전부 나열하지 않는다"),
+    lifetime: ev("lifetime", life.map(x => `${x.label} · ${x.tenGod} — ${x.theme}${x.current ? " (내가 서 있는 대운)" : ""}`), "평생 지도에서 큰 줄기(이어지는 주제, 꺾이는 곳) 두세 개만 짚는다. 표는 화면이 보여 주니 전부 나열하지 않는다"),
     pastSummary: ev("pastSummary", [`지난 세 해: ${past.map(e => `${e.key}년 ${e.ganji.hangul} ${e.tenGod.stem}`).join(" → ")}`, pastCycles.length ? `그 시기 대운: ${pastCycles.join(" → ")}` : ""], "지난 일을 겪었다고 단정하지 않는다. '~했다면'·질문형으로, 세 해를 하나의 흐름으로"),
     pastDayun: ev("pastDayun", [prev && past.some(e => e.dayun?.ganji !== cur?.ganji + " 대운") ? `지난 대운: ${prev.label} · ${prev.tenGod}` : "", ...mind(gCur, "enter", 1)], "그 시기를 지나며 남은 힘(태도·습관)을 조건형으로"),
     nowTheme: cur ? ev("nowTheme", [`내가 서 있는 대운: ${cur.label} · ${cur.tenGod} — ${cur.theme}`, ...mind(gCur, "inside", 2), ...dom(gCur, "work", 1)], "주제를 한 줄로 먼저, 그 10년의 태도 둘") : null,
@@ -94,7 +97,11 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
     mapLovePeople: ev("mapLovePeople", [...dom(gCur, "love", 1), ...dom(gNext, "love", 1), ...dom(gCur, "people", 1), ...dom(gNext, "people", 1)], "사랑·결혼·가족은 조건형('함께하는 사람이 있다면'). 결혼 시기를 쓰지 않는다"),
     mapMindMove: ev("mapMindMove", [...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1), ...dom(gCur, "move", 1), ...dom(gNext, "move", 1)], "마음·컨디션은 병명·증상 없이 생활 장면으로, 이동·거주는 '~하기 쉬운 해'처럼(단서·면책 문장 없이 — 책 끝에 시스템이 한 번 넣는다)"),
     growthCurve: c.mbti ? ev("growthCurve", [...growth("order", 1), ...growth(nowAge, 2), ...(futureAge !== nowAge ? growth(futureAge, 1) : [])], "MBTI 발달은 경향이다(나이에 맞춰 반드시 그렇게 된다고 쓰지 않는다)") : null,
-    growthDayun: c.mbti && cur ? ev("growthDayun", [`이 대운 주제: ${cur.theme}`, ...(next ? [`다음 대운 주제: ${next.theme}`] : []), ...growth(futureAge, 1)], "명리 × MBTI: 대운이 여는 쪽과 성격이 자라는 쪽이 만나는 곳을 원인 → 결과로 한 문단") : null,
+    // AM2-3 2-2(P2 판독 major-1 P3 「다음 대운 주제」·P4 B5 문구 복사): 짝의 이유는 「이 대운 10년과 같은 나이대에 성격 쪽에서 자라는 것」 — 둘 다 엔진·지식 DB 값(나이 구간)이라 지어낸 인과가 아니다.
+    growthDayun: c.mbti && cur ? ev("growthDayun", [`이 대운 주제: ${cur.theme}`, ...growth(AGE_FACET(curMid), 1).map(g => `${cur.label.split(":")[0]} 10년(${cur.ages})과 같은 나이대에 성격 쪽에서는 ${g}`)], "명리 × MBTI: 같은 나이대에 겹치는 두 흐름을 나란히") : null,
+    // AM2-3 1-7: MBTI 미입력이면 7장은 명리만으로 쓰는 대체 장 「나이와 함께 자라는 결」(MBTI 문장 0).
+    ageGrowth: !c.mbti && cur ? ev("ageGrowth", [`이 대운: ${cur.label} · ${cur.ages} — ${cur.theme}`, ...mind(gCur, "inside", 1), ...mind(gCur, "leave", 1)], "나이와 함께 단단해지는 쪽을 생활 장면으로") : null,
+    ageNext: !c.mbti && next ? ev("ageNext", [`다음 대운: ${next.label} · ${next.ages} — ${next.theme}`, ...mind(gNext, "inside", 1), ...dom(gNext, "mind", 1)], "다음 10년에 새로 자라는 쪽을 조건형으로") : null,
     planNear: ev("planNear", [`${c.thisYear}년 무렵(이 책의 기준 해): ${cur?.theme ?? ""}`, ...near.map(line)], "가까운 1년 / 2~3년 뒤를 각각 행동 하나로"),
     planFar: ev("planFar", [mid ? `5년 뒤: ${line(mid)}` : "", far ? `10년 뒤: ${line(far)}` : "", next ? `그 무렵 대운: ${next.label}` : ""], "5년 뒤 / 10년 뒤를 각각 준비 하나로. 일어날 사건 대신 준비할 것을 쓴다(단서·면책 문장 없이)"),
   };

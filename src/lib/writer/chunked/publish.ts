@@ -20,9 +20,9 @@ import { applySafetyNet, safetyFacts, sentenceViolation, writeKeyFill, type Draf
 import { enforce, HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/p6c";
 import { dayunPhase } from "../safety/lint";
 import { briefFor, briefHash, chooseCover, coverIssue, factSheetFor, insertFixedLines, kstDate, lintContext, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
-import { adviceRepeats, blockFlags, briefCheck, crossRepeats, PIGGYBACK_RULES, styleScoreOf, type BlockCtx, type ChunkFlag } from "./check";
+import { adjacentRepeats, adviceRepeats, blockFlags, briefCheck, crossRepeats, NO_SENTENCE_RULES, PIGGYBACK_RULES, styleScoreOf, type BlockCtx, type BriefCtx, type ChunkFlag } from "./check";
 import { cutFlagged } from "./cut";
-import { buildIntake, type Intake } from "./intake";
+import { buildIntake, WISH_MARK, type Intake } from "./intake";
 import { chunkPlan, chunkRules, CHUNK_PROMPT_VERSION, renderCard, type Chunk } from "./prompt";
 import { concurrency, rewriteChunk, writeChunks, type ChunkLog } from "./run";
 
@@ -38,13 +38,29 @@ const chunkOf = (chunks: readonly Chunk[], f: { chapter: number }, heading: stri
 export function blockCtxFor(brief: Brief, k: Knowledge, intake: Intake): BlockCtx {
   const cd = brief.chart.currentDayun, y = Number(brief.timeline?.entries.find(e => e.kind === "year")?.key) || brief.chart.thisYear.year;
   const yearsToNext = cd?.next?.startYear ? cd.next.startYear - y : undefined;
+  const life = brief.timeline?.lifetime ?? [], ci = life.findIndex(x => x.current), birthYear = Number(brief.baseDate.slice(0, 4)) - brief.person.age;
+  const prevEnd = ci > 0 ? life[ci - 1].endYear - birthYear : undefined;
   // 흐름 세기 끝값 검사(「가장 잔잔」): 반복 장 key만(세운 달 13 · 대운 해 10).
   const keyed = new Set(intake.chapters.flatMap(c => (c.keys ?? []).map(x => x.key)));
   const flows = new Map((brief.timeline?.entries ?? []).filter(e => keyed.has(e.key)).map(e => [e.key, { score: e.flow.score, ganji: e.ganji.hangul }] as const));
   return { intake, ...(brief.mbti ? { mbtiAnchor: new RegExp([brief.mbti.type, ...(k.mbti.get(brief.mbti.type as never)?.cognitiveFunctions ?? []).map(f => f.code)].join("|")), mbtiType: brief.mbti.type } : {}),
     ...(yearsToNext !== undefined ? { yearsToNextDayun: yearsToNext } : {}), dayPillar: brief.chart.pillars.day.hangul, flows,
     // key → 그 시기 관계 이름(공망 빼고, 「(반쯤)」 같은 꼬리 뗌, 두 글자 이상).
-    keyRels: new Map((brief.timeline?.entries ?? []).filter(e => keyed.has(e.key)).map(e => [e.key, new Set(e.badges.filter(x => x.kind !== "GONGMANG").map(x => x.label.replace(/\(.*\)$/, "").trim()).filter(x => x.length >= 2))] as const)) };
+    // AM2-3 1-5: 카드·화면·검사가 같은 값 — 공망도 관계 이름으로 센다.
+    keyRels: new Map((brief.timeline?.entries ?? []).filter(e => keyed.has(e.key)).map(e => [e.key, new Set(e.badges.map(x => x.label.replace(/\(.*\)$/, "").trim()).filter(x => x.length >= 2))] as const)),
+    ...(prevEnd !== undefined ? { prevDayunEndAge: prevEnd } : {}) };
+}
+/** 브리프 검사 문맥(1-2·1-6): 음양 수 · 흐름 끝값 달(동률) · 화면 카드 글(배지·카드 줄·꼬리표). */
+export function briefCtxFor(brief: Brief): BriefCtx {
+  // 「가장 ~한 달」 줄(design/annual.ts)과 같은 범위: 1월 다리를 뺀 12 절기월.
+  const months = (brief.timeline?.entries ?? []).filter(e => e.kind === "month" && !e.bridge);
+  const name = (e: { label: string }) => e.label.split(" (")[0];
+  const hi = Math.max(...months.map(e => e.flow.score)), lo = Math.min(...months.map(e => e.flow.score));
+  const screen = (brief.timeline?.entries ?? []).flatMap(e => [
+    { where: `${e.key} 이름`, text: e.label.replace(/ \(이 책을 쓴 해\)/, "") }, { where: `${e.key} 그림`, text: e.imageLine }, ...(e.todo ? [{ where: `${e.key} 할 일`, text: e.todo }] : []), ...(e.review ? [{ where: `${e.key} 돌아보기`, text: e.review }] : []),
+    ...(e.caution ? [{ where: `${e.key} 살필 점`, text: e.caution }] : []), ...(e.good ? [{ where: `${e.key} 좋은 것`, text: e.good }] : []), ...e.badges.map(b2 => ({ where: `${e.key} 배지 ${b2.label}`, text: `${b2.label}${b2.with !== undefined ? `(${b2.with})` : ""} ${b2.line}` })),
+  ]);
+  return { yin: brief.chart.yinYang.yin, yang: brief.chart.yinYang.yang, ...(months.length ? { flowEnds: { high: months.filter(e => e.flow.score === hi).map(name), low: months.filter(e => e.flow.score === lo).map(name) } } : {}), screen };
 }
 
 export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
@@ -56,7 +72,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const wish = ((a.payload as { productOptions?: { wish?: unknown } }).productOptions)?.wish;
   const intake = buildIntake(brief, k, plan, typeof wish === "string" ? wish : undefined);
   const facts = safetyFacts(brief);
-  const issues = briefCheck(intake, facts.nicknames ?? []);
+  const issues = briefCheck(intake, facts.nicknames ?? [], briefCtxFor(brief));
   const chunks = chunkPlan(intake);
   const system = { rules: chunkRules(intake.product), card: renderCard(intake) };
   const llm = resolveLlmConfig();
@@ -93,6 +109,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const build = () => { const net = applySafetyNet(brief, plan, drafts, { priorSentences: a.prior?.sentences ?? [], surfaceOnly: true }); const t = tidyBook(net.chapters, { ...lctx, surfaceOnly: true }); return { net, chapters: t.chapters, tidy: t.count }; };
   // 차단(block)과 경미(minor: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고친다)를 나눈다.
   const inspect = (chs: readonly FinalChapter[]) => { const lint = lintBook(chs, lctx), all = blockFlags(chs, lint, bctx).filter(f => chs.find(c => c.n === f.chapter)?.source !== "deterministic"); return { lint, block: all.filter(f => !PIGGYBACK_RULES.has(f.rule)), minor: all.filter(f => PIGGYBACK_RULES.has(f.rule)) }; };
+  /** 지울 수 있는 깃발(문장이 있는 것). 「반드시 쓸 것」 같은 문장 없는 깃발은 다시 쓰기로만. */
+  const cuttable = (fs: readonly ChunkFlag[]) => fs.filter(f => !NO_SENTENCE_RULES.has(f.rule));
   let cur = build(), seen = inspect(cur.chapters);
   const firstBlock = seen.block.length;
   const rounds: { round: number; chunks: string[]; flags: number }[] = [];
@@ -131,7 +149,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   }
   // 2) 장 사이 반복: 뒤쪽 묶음만 1회(다시 쓴 원고가 차단 결함을 새로 만들면 앞 원고로 되돌린다).
   // 장·key 사이 반복 + 같은 처방·상투구(P2 판독 경미 대부분) — 뒤쪽 묶음 1회 다시 쓰기.
-  const repeatsOf = (chs: readonly FinalChapter[]) => [...crossRepeats(chs), ...adviceRepeats(chs)];
+  const cardValues = intake.lines.map(l => l.value);
+  const repeatsOf = (chs: readonly FinalChapter[]) => [...crossRepeats(chs), ...adviceRepeats(chs), ...adjacentRepeats(chs, cardValues)];
   const repeats = repeatsOf(cur.chapters);
   const repeatFirst = repeats.length;
   if (repeats.length) {
@@ -144,31 +163,45 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     }
   }
   // 3) 그래도 걸린 문장은 지운다(기대는 다음 문장 · 답을 잃은 수사 물음도 함께, 걸린 소제목은 설계도 소제목 틀로). 빈 소제목은 뺀다.
-  //    빈 key · 지운 뒤에도 남은 key 결함만 그 key를 결정론으로, 일반 장은 그 소제목을 뺀다. 장이 다 비었을 때만 장 전체 결정론.
-  //    (P 시범: 한 낱말 결함으로 장 통째를 결정론 대체로 보냈고, 그 대체 글이 세운 차단 25 가운데 13이었다.)
+  //    지운 뒤에도 남은 결함은 그 문단만 뺀다(AM2-3 6-1: key·장을 결정론 글로 바꾸지 않는다).
+  //    그래서 key·장이 비면 그 묶음만 한 번 더 다시 쓴다(덕짱님 결정 2026-11-12 「그 묶음 1회 더 → 그래도 비면 보류」). 그래도 비면 채움 표시 → 발행 관문이 보류한다.
   const headingFor = (n: number, si: number) => intake.chapters.find(c => c.n === n)?.sections?.[si]?.q ?? null;
-  const cutR = cutFlagged(cur.chapters, seen.block, headingFor);
-  let chapters = cutR.chapters;
-  const replaced: { chapter: number; key?: string; why: string }[] = cutR.emptyKeys.map(e => ({ chapter: e.chapter, key: e.key, why: "emptied" }));
   const droppedLeft: string[] = [];
-  { const after = inspect(chapters);
-    const keysLeft = new Map<number, Set<string>>(), secsLeft = new Map<number, Set<number>>();
-    for (const f of after.block) { const c = chapters.find(x => x.n === f.chapter), h = c?.sections[f.section]?.heading ?? ""; if (!c) continue;
-      if (c.keys?.includes(h)) { keysLeft.set(c.n, (keysLeft.get(c.n) ?? new Set()).add(h)); if (!replaced.some(r => r.chapter === c.n && r.key === h)) replaced.push({ chapter: c.n, key: h, why: `${f.rule}:left` }); }
-      else secsLeft.set(c.n, (secsLeft.get(c.n) ?? new Set()).add(f.section)); }
-    chapters = chapters.map(c => ({ ...c, sections: c.sections.flatMap((s, si) => {
-      if (keysLeft.get(c.n)?.has(s.heading)) return [{ ...s, paragraphs: [] }];
-      if (secsLeft.get(c.n)?.has(si)) { droppedLeft.push(`${c.n}.${si}:${s.heading}`); return []; }
-      return [s];
-    }) })); }
-  for (const c of chapters) if (!c.keys && !c.sections.length) replaced.push({ chapter: c.n, why: "chapter_emptied" });
+  const cutAll = () => {
+    // 이웃 문장 되풀이(같은 문장·같은 뜻 연속)는 다시 쓰기 뒤에도 남으면 뒤 문장을 지운다(뜻이 앞 문장에 있으니 지워도 빈자리가 없다).
+    const r = cutFlagged(cur.chapters, [...cuttable(seen.block), ...adjacentRepeats(cur.chapters, cardValues)], headingFor);
+    const after = inspect(r.chapters), bad = new Set(cuttable(after.block).filter(f => f.paragraph >= 0).map(f => `${f.chapter}.${f.section}.${f.paragraph}`));
+    const badHead = new Set(cuttable(after.block).filter(f => f.paragraph < 0).map(f => `${f.chapter}.${f.section}`));
+    const chs = r.chapters.map(c => ({ ...c, sections: c.sections.flatMap((sec, si) => {
+      if (badHead.has(`${c.n}.${si}`) && !c.keys?.includes(sec.heading)) { droppedLeft.push(`${c.n}.${si}:${sec.heading}`); return []; }
+      const paragraphs = sec.paragraphs.filter((_p, pi) => { const k2 = `${c.n}.${si}.${pi}`; if (bad.has(k2)) droppedLeft.push(`${k2}:${sec.heading}`); return !bad.has(k2); });
+      if (!paragraphs.length && !c.keys?.includes(sec.heading)) { droppedLeft.push(`${c.n}.${si}:${sec.heading}`); return []; }
+      return [{ ...sec, paragraphs }];
+    }) }));
+    const emptyKeys = chs.flatMap(c => c.sections.filter(sec => c.keys?.includes(sec.heading) && !sec.paragraphs.length).map(sec => ({ chapter: c.n, key: sec.heading })));
+    const emptyChapters = chs.filter(c => !c.keys && !c.sections.length).map(c => c.n);
+    return { r, chapters: chs, emptyKeys, emptyChapters };
+  };
+  let cut0 = cutAll();
+  let emptyRetry: string[] = [];
+  if (cut0.emptyKeys.length || cut0.emptyChapters.length) {
+    const targets = new Map<Chunk, ChunkFlag[]>();
+    const push = (c: Chunk | undefined, f: ChunkFlag) => { if (c) targets.set(c, [...(targets.get(c) ?? []), f]); };
+    for (const e of cut0.emptyKeys) push(chunkOf(chunks, { chapter: e.chapter }, e.key), { chapter: e.chapter, section: 0, paragraph: -3, rule: "emptied", sentence: `[${intake.chapters.flatMap(c => c.keys ?? []).find(k2 => k2.key === e.key)?.label ?? e.key}] 본문이 모두 빠짐`, hint: "걸린 문장을 지우다 이 자리가 비었다 — 아래 걸린 문장을 피해 카드 줄로 다시 쓴다" });
+    for (const n of cut0.emptyChapters) push(chunks.find(c => c.parts.some(p => p.n === n && !p.keys)), { chapter: n, section: 0, paragraph: -3, rule: "emptied", sentence: `[${n}장] 본문이 모두 빠짐`, hint: "걸린 문장을 지우다 이 장이 비었다 — 아래 걸린 문장을 피해 다시 쓴다" });
+    for (const [c, fs] of targets) targets.set(c, [...fs, ...seen.block.filter(f => chunkOf(chunks, f, cur.chapters.find(x => x.n === f.chapter)?.sections[f.section]?.heading ?? "") === c)]);
+    if (targets.size && await rewrite(targets, CHUNK_REWRITE_ROUNDS + 2)) { cur = build(); seen = inspect(cur.chapters); emptyRetry = [...targets.keys()].map(c => c.id); cut0 = cutAll(); }
+  }
+  const cutR = cut0.r;
+  let chapters: FinalChapter[] = cut0.chapters;
+  const replaced: { chapter: number; key?: string; why: string }[] = [...cut0.emptyKeys.map(e => ({ chapter: e.chapter, key: e.key, why: "emptied" })), ...cut0.emptyChapters.map(n => ({ chapter: n, why: "chapter_emptied" }))];
+  // 남은 빈 자리는 형식(렌더)만 맞춘다 — 결정론 글이 든 장은 발행 관문(policy judgeBuild)이 보류로 돌린다(keys_filled · deterministic).
   const empty = replaced.filter(r => r.key).map(r => ({ chapter: r.chapter, key: r.key! }));
-  if (replaced.length) chapters = writeKeyFill(brief, plan, chapters, empty).map(c => (replaced.some(r => r.chapter === c.n && !r.key && !c.keys) ? { ...c, source: "deterministic" as const } : c));
-  // 결정론 장(작가가 못 쓴 장 · 대체한 장)도 사실·금지 규칙 문단은 뺀다(기존 안전망과 같은 규칙, 빈 key는 다시 결정론으로).
-  { const lint = lintBook(chapters, lctx), det = new Set(chapters.filter(c => c.source === "deterministic" || replaced.some(r => r.chapter === c.n)).map(c => c.n));
-    const e = enforce(chapters, lint.filter(f => det.has(f.chapter) && (!chapters.find(c => c.n === f.chapter)?.keys || replaced.some(r => r.chapter === f.chapter && (!r.key || chapters.find(c => c.n === f.chapter)?.sections[f.section]?.heading === r.key)) || chapters.find(c => c.n === f.chapter)?.source === "deterministic")));
-    if (e.droppedParagraphs) chapters = writeKeyFill(brief, plan, e.chapters, e.emptyKeys); }
+  if (replaced.length) chapters = writeKeyFill(brief, plan, chapters, empty).map(c => (replaced.some(r => r.chapter === c.n && !r.key && !c.keys) ? { ...c, source: "deterministic" as const } : replaced.some(r => r.chapter === c.n && r.key) ? { ...c, reason: `keys_filled:${replaced.filter(r => r.chapter === c.n && r.key).map(r => r.key).join(",")}` } : c));
   const final = inspect(chapters);
+  // 3-2 소망 원문은 렌더 단계에서 넣는다(작가는 «바람» 표시만 — 원문을 고칠 수 없다. P2 판독 annual-1: 1장은 원문, 9장은 「지금」을 뺀 꼴로 인용이 두 가지였다).
+  const wishText = intake.wish ? `«${intake.wish}»` : "적어 주신 바람";
+  chapters = chapters.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.split(WISH_MARK).join(wishText), paragraphs: sec.paragraphs.map(p => p.split(WISH_MARK).join(wishText)) })) }));
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
 
@@ -187,7 +220,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const review: Record<string, unknown> = {
     mode: "chunked", version: CHUNK_PROMPT_VERSION, model: null, calls: 0, skipped: "chunked_no_review",
     briefCheck: { ok: briefOk, issues: issues.slice(0, 40) }, chunks: chunks.map(c => ({ id: c.id, parts: c.parts, chars: c.chars })), log,
-    blockFirst: firstBlock, rounds, repeatFirst, deleted: cutR.cut, headingsReplaced: cutR.headings, droppedSections: [...cutR.droppedSections, ...droppedLeft], missed: cutR.missed.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.rule}`), replaced,
+    blockFirst: firstBlock, rounds, repeatFirst, deleted: cutR.cut, headingsReplaced: cutR.headings, droppedSections: [...cutR.droppedSections, ...droppedLeft], missed: cutR.missed.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.rule}`), replaced, emptyRetry,
     remainingMinor: final.minor.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, sentence: f.sentence.slice(0, 160) })),
     remainingHard: final.block.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })),
     remainingRepeat: repeatsOf(chapters).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 160) })),

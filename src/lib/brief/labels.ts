@@ -132,3 +132,12 @@ export const koCount = (n: number, unit: string) => (Number.isInteger(n) && n >=
 /** 다섯 힘의 쉬운 이름(P6e 14): 첫 등장에 "내 방식의 힘(비겁)", 그 뒤로는 쉬운 이름만. */
 export const GROUP_EASY: Readonly<Record<"PEER" | "OUTPUT" | "WEALTH" | "OFFICER" | "RESOURCE", string>> = { PEER: "내 방식의 힘", OUTPUT: "만드는 힘", WEALTH: "값을 받는 힘", OFFICER: "규칙의 힘", RESOURCE: "배우는 힘" };
 export const GROUP_EASY_BY_NAME: Readonly<Record<string, string>> = { 비겁: "내 방식의 힘", 식상: "만드는 힘", 재성: "값을 받는 힘", 관성: "규칙의 힘", 인성: "배우는 힘" };
+/**
+ * AM2-3 5부·1-2(덕짱님과 정한 시안): 흐름은 점 5개 + 단어. 화면·카드·검사가 이 표 하나에서 읽는다(숫자 X/5는 고객에게 보이지 않는다).
+ * FLOW_WORD = 화면 단어(잔잔·느림·보통·활발·거셈), FLOW_DESC = 작가 카드의 서술형 값(명사 값 「잔잔함」을 그대로 붙인 비문 「잔잔함인」을 막는다).
+ */
+export const FLOW_WORD: Readonly<Record<number, string>> = { 1: "잔잔", 2: "느림", 3: "보통", 4: "활발", 5: "거셈" };
+export const FLOW_DESC: Readonly<Record<number, string>> = { 1: "흐름이 잔잔한 편", 2: "흐름이 느린 편", 3: "흐름이 보통인 편", 4: "흐름이 활발한 편", 5: "흐름이 거센 편" };
+/** 본문에서 흐름 세기를 말하는 꼴(단어별). key별 값 대조 검사가 쓴다. */
+export const FLOW_TALK: Readonly<Record<number, RegExp>> = { 1: /잔잔/, 2: /느린 편|느려|느림|느리게/, 3: /보통/, 4: /활발/, 5: /거세|거센|거셈/ };
+export const flowWord = (score: number) => FLOW_WORD[Math.max(1, Math.min(5, Math.round(score)))] ?? "보통";

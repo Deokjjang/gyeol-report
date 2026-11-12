@@ -106,7 +106,8 @@ function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number
     const b = i < n ? band : band === "high" ? "low" : "high";
     const t = ctx.k.actions.find(a => a.id === `act:${tenGod}:${domain}:${b}`);
     // AM2 P2 판독(annual-1 2027-M12 [해 볼 것] 「…요즘 소식을 담아…」): 시점 말이 든 문형은 고르지 않는다(책은 「이 책을 쓴 날」 기준).
-    const opts = t ? t.text.filter(x => !CARD_TIME.test(x)) : [];
+    // AM2-3 4부(P2 판독 major-1 2031 [해 볼 것] 「평가받는 자리가 많아지니」): 정도말(많아지·한층·훨씬)이 든 문형은 고르지 않는다.
+    const opts = t ? t.text.filter(x => !CARD_TIME.test(x) && !/많아지|한층|훨씬|가장 /.test(x)) : [];
     if (t && opts.length && !ctx.usedTemplates.has(t.id)) { ctx.usedTemplates.add(t.id); return { templateId: t.id, text: ctx.rng.fork(t.id).pick(opts) }; }
   }
   const fallback = ctx.k.actions.find(a => a.id === `tg:${tenGod}`)!;
@@ -124,7 +125,8 @@ function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Pa
 export function reviewLine(keywords: readonly string[], slot: number): string {
   const [a, b = a] = keywords;
   return [
-    `${a}·${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?`,
+    // AM2-3(P2 판독 major-1 m15 「내 몫 지키기·같은 편이 두드러진 때였어요」 꼬리표 나열) → 「A와 B가」.
+    `${josa(a, "과와")} ${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?`,
     `${a} 쪽으로 힘이 실린 때였어요. 그때 정한 것 가운데 다시 꺼내 볼 만한 하나는 무엇인가요?`,
     `${josa(b, "이가")} 앞에 섰던 때였어요. 그때 미뤄 둔 일 가운데 다시 살펴볼 하나가 있나요?`,
   ][Math.abs(slot) % 3];

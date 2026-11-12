@@ -1,4 +1,5 @@
 /** AM2: 세운·대운 장 묶음 작가 — 입력 정화·브리프 검사·묶음 계획·차단 검사·실행기·발행(가짜 작가, 호출 0). */
+import { FLOW_DESC } from "@/lib/brief/labels";
 import { describe, expect, it } from "vitest";
 import { buildBrief } from "@/lib/brief";
 import { payloadToBriefInput } from "@/lib/writer/book";
@@ -41,7 +42,7 @@ describe("AM2 상품별 작가 방식", () => {
 describe("AM2 1부 입력 정화", () => {
   it("시점 말·라벨·화살표·점수를 뺀다(고객 바람 «»은 그대로)", () => {
     expect(untime("지금 회사에서 올해 이번 달", 2027)).toBe("회사에서 2027년 그 달");
-    expect(say("흐름 세기 3/5(참고) → 고르게 다질 해 — 근거: 이미 많은 기운이 더 들어옴 -1, 태어난 날 기둥과 합 +0.5")).toBe("흐름 세기 3/5 · 고르게 다질 해 — 이미 많은 기운이 더 들어옴, 태어난 날 기둥과 합");
+    expect(say("흐름 세기 3/5(참고) → 고르게 다질 해 — 근거: 이미 많은 기운이 더 들어옴 -1, 태어난 날 기둥과 합 +0.5")).toBe("흐름이 보통인 편 · 고르게 다질 해 — 이미 많은 기운이 더 들어옴, 태어난 날 기둥과 합");
     expect(say("장바구니는 하루 두기")).toBe("장바구니는 하루 묵혀 두기");
     expect(say("텃밭 흙처럼 돌봅니다. 꼼꼼히 챙깁니다.")).toBe("꼼꼼히 챙깁니다.");
     const { intake } = setup("annual_fortune");
@@ -139,12 +140,13 @@ describe("AM2 P 판독 고침(2026-11-11, 저장된 P 원문의 결함 문장)",
     const rules = flags.map(f => `${f.chapter}:${f.rule}`);
     expect(rules.filter(r => r === `${past.n}:past_assert`)).toHaveLength(2);
     expect(rules).toEqual(expect.arrayContaining([`${ch.n}:future_event`, `${ch.n}:evidence_owner`, "9:reader_directive"]));
-    expect(blockFlags([fc(ch.n, [`${kp.scene!.replace(/[.!]$/, "")}는 모습이 어울려요.`], [kp.key])], [], { intake })).toEqual([]);
+    expect(blockFlags([fc(ch.n, [`${kp.scene!.replace(/[.!]$/, "")}는 모습이 어울려요.`], [kp.key])], [], { intake }).filter(f => f.rule !== "must_miss")).toEqual([]);
   });
   it("세운: 명사구 비문 · 일주 꼴 · 카드에 없는 「가장」 · 「이번 한 해」 · 머리 문장 되풀이(경미)", () => {
     const { intake, brief } = setup("annual_fortune");
-    const ch = intake.chapters.find(c => c.keys)!, kp = ch.keys![3], pair = headPair(kp.head)!;
-    const flows = new Map(ch.keys!.map((k, i) => [k.key, { score: i === 3 ? 1 : i === 5 ? 1 : 3, ganji: k.label.split("· ")[1]?.replace(/월$/, "") ?? "" }]));
+    // AM2-3: 카드가 동률 끝값 달을 모두 적으므로(「흐름이 가장 잔잔한 달(같은 세기): …」) 목록 밖 달(5월 · 을사월)로 본다.
+    const ch = intake.chapters.find(c => c.keys)!, kp = ch.keys![4], pair = headPair(kp.head)!;
+    const flows = new Map(ch.keys!.map((k, i) => [k.key, { score: i === 4 ? 2 : i === 5 ? 1 : 3, ganji: k.label.split("· ")[1]?.replace(/월$/, "") ?? "" }]));
     const day = brief.chart.pillars.day.hangul;
     const flags = blockFlags([
       fc(2, ["약속 시간과 돈 계산이 정확한 모습은 믿음을 주는 시기입니다. 답답함은 말로 먼저 터져 나오기 쉬운 때입니다. 이때는 마음이 식은 게 아니라 흐름이 쉬어 가는 때예요.", `태어난 날 ${day}일주의 ${day[1]}화가 여름 불 위에 앉은 구조라 열을 식혀야 해요. 청소가 끝나면 이번 한 해 끝낸 일을 적어 보세요.`]),
@@ -195,9 +197,11 @@ describe("AM2 P2 판독 고침(2026-11-11, 무료 고침 2차)", () => {
     const relA = [...(ctx.keyRels!.get(a.key) ?? [])].find(r => !(ctx.keyRels!.get(b2.key) ?? new Set()).has(r));
     const wrong = [`흐름 세기는 ${fa.score}/5예요.`, ...(pa.ground !== pb.ground ? [`땅 글자 ${pa.ground} 덕에 바빠요.`] : []), ...(relA ? [`태어난 해 자리와 ${relA}이 걸려요.`] : []), ...(a.scene ? [a.scene] : [])];
     const flags = blockFlags([fc(ch.n, ["", wrong.join(" ")], [a.key, b2.key])], [], ctx).filter(f => f.rule === "key_value");
-    if (fa.score !== fb.score) expect(flags.some(f => /흐름 세기/.test(f.detail ?? ""))).toBe(true);
+    if (fa.score !== fb.score) expect(flags.some(f => /흐름/.test(f.detail ?? ""))).toBe(true);
     expect(flags.length).toBeGreaterThanOrEqual(wrong.length - (fa.score === fb.score ? 1 : 0) - 1);
-    expect(blockFlags([fc(ch.n, ["", `흐름 세기는 ${fb.score}/5예요. 땅 글자 ${pb.ground}가 들어와요.`], [a.key, b2.key])], [], ctx).filter(f => f.rule === "key_value")).toEqual([]);
+    // AM2-3: 흐름은 숫자 대신 단어(제 key 단어는 통과, 숫자는 어느 key든 걸린다).
+    expect(blockFlags([fc(ch.n, ["", `${FLOW_DESC[fb.score]}이에요. 땅 글자 ${pb.ground}가 들어와요.`], [a.key, b2.key])], [], ctx).filter(f => f.rule === "key_value")).toEqual([]);
+    expect(blockFlags([fc(ch.n, ["", `흐름 세기는 ${fb.score}/5예요.`], [a.key, b2.key])], [], ctx).some(f => f.rule === "key_value" && /숫자/.test(f.detail ?? ""))).toBe(true);
   });
   it("따옴표 대사 속 시점 말 · 작은 비문 · 기능 칸 이름 · 공용 표면 정리 「1/5 잔잔함」", () => {
     const { intake } = setup("annual_fortune");
@@ -206,17 +210,17 @@ describe("AM2 P2 판독 고침(2026-11-11, 무료 고침 2차)", () => {
     expect(rules.filter(r => r === "time_quote")).toHaveLength(1);
     expect(nativeNumbers("흐름 세기는 1/5 잔잔함입니다. 커피 2잔을 마셔요.").text).toBe("흐름 세기는 1/5 잔잔함입니다. 커피 두 잔을 마셔요.");
   });
-  it("같은 처방·상투구는 책에서 한 번(받는 틀은 세 번까지), key끼리 같은 문장도 반복으로", () => {
+  it("같은 처방·상투구는 책에서 한 번(받는 틀은 장마다 한 번 · 책 네 번까지 — AM2-3), key끼리 같은 문장도 반복으로", () => {
     const flags = adviceRepeats([fc(3, ["쉬는 날을 먼저 달력에 적어 넣으세요. 쉬는 날은 일정보다 먼저예요."]), fc(4, ["주말 하루는 쉬는 날로 두세요. 걷는 모습이 어울려요. 읽는 모습이 어울려요. 쓰는 모습이 어울려요. 웃는 모습이 어울려요."])]);
     expect(flags.filter(f => /쉬는 날/.test(f.detail ?? ""))).toHaveLength(2);
-    expect(flags.filter(f => /어울려요/.test(f.detail ?? ""))).toHaveLength(1);
+    expect(flags.filter(f => /어울려요/.test(f.detail ?? ""))).toHaveLength(3);
     const s = "일에서는 평가와 기준이 또렷해져 인정받을 기회가 생기고 돈에서는 고정 지출을 정리하기 좋습니다.";
     expect(crossRepeats([fc(7, [s, s], ["2026-M12", "2027-M10"])]).map(f => f.section)).toEqual([1]);
   });
   it("카드: 신살 줄에 자리 · 일반론(「일주에 있을 때」) 뺌 · 같은 생활 결 · 할 일 씨앗 · 기능 칸 이름 없음 · 대운 관계 뜻", () => {
     const a = setup("annual_fortune"), m = setup("major_fortune");
     const all = [...a.intake.lines, ...m.intake.lines];
-    expect(all.some(l => /\((태어난 (해|달|날|시각)) 자리\)/.test(l.value))).toBe(true);
+    expect(all.some(l => /\(태어난 (해|달|날|시각)( · [가-힣]{2})?\)/.test(l.value))).toBe(true);
     expect(all.every(l => !/(일주|월주|연주|시주)에 (있을 때|있으면)/.test(l.meaning))).toBe(true);
     expect(all.every(l => !/주기능|부기능|3차기능|열등기능/.test(`${l.value} ${l.meaning}`))).toBe(true);
     // 할 일 씨앗: 입력에 맞는 문형이 없으면 비울 수 있다(1월 다리 달) — 대부분의 key는 있어야 한다.
@@ -248,6 +252,7 @@ describe("AM2 발행(가짜 작가, 호출 0)", () => {
     expect(meta.calls.filter(c => c.kind === "first")).toHaveLength(6);
     expect(meta.calls.some(c => c.kind === "repair" || c.kind === "review")).toBe(false);
     expect(saved[0]).toBe(1);
-    expect((review.remainingHard as unknown[]).length).toBe(0);
+    // AM2-3: 가짜 작가 글(결정론 문단)은 「반드시 쓸 것」(흐름 단어·관계 이름)을 담지 않는다 — 그 밖의 차단은 0.
+    expect((review.remainingHard as { rule: string }[]).filter(f => f.rule !== "must_miss")).toEqual([]);
   }, 120_000);
 });

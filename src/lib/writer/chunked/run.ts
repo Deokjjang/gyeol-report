@@ -24,7 +24,14 @@ export function partsOf(text: string, chunk: Chunk, plan: readonly WriterChapter
     const ch = parsed.find(c => c.n === p.n) ?? (chunk.parts.length === 1 ? parsed[0] : undefined);
     if (!ch) continue;
     const plain = ch.sections.filter(s => s.paragraphs.length);
-    if (p.keys) { const keys = p.keys; const got = plain.filter(s => keys.some(k => s.heading.trim() === k || s.heading.includes(k))).map(s => ({ ...s, heading: keys.find(k => s.heading.trim() === k) ?? keys.find(k => s.heading.includes(k))! })); if (got.length) out.set(p.n, got); }
+    if (p.keys) {
+      // AM2-3 1-1: 작가는 이름(「5월 · 을사월」)으로 머리글을 쓴다 → key로 되돌린다(이름 같음 → key 같음 → 이름·key가 든 머리글, 긴 이름 먼저).
+      const keys = p.keys, labels = p.labels ?? keys;
+      const keyOf = (h: string) => { const t = h.trim().replace(/^\d+\.\s*/, ""); const i = labels.indexOf(t); if (i >= 0) return keys[i]; if (keys.includes(t)) return t;
+        const byLen = labels.map((l, j) => [l, j] as const).sort((a, b) => b[0].length - a[0].length).find(([l]) => t.includes(l)); return byLen ? keys[byLen[1]] : keys.find(k => t.includes(k)); };
+      const got = plain.map(s => ({ s, key: keyOf(s.heading) })).filter((x): x is { s: BookSection; key: string } => Boolean(x.key)).map(x => ({ ...x.s, heading: x.key }));
+      if (got.length) out.set(p.n, got);
+    }
     else if (plain.length && plan.some(x => x.n === p.n)) out.set(p.n, plain);
   }
   return out;

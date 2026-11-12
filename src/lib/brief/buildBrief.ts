@@ -417,7 +417,10 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const mbtiTop = mbti ? topDimension(k.mbti.get(mbti.type)!.dimensionTags) : null;
   // AM 2부: 소망 장은 소망을 적었고(정리 뒤 위험·지시 꼴이 아닌) 때만. 장 제목·질문의 해는 상품 설정 연도.
   const yearStr = String(annualProductYear()), wishOk = input.product === "annual_fortune" && readWish(input.wish).kind === "ok";
-  const narrativeUsed = input.product === "annual_fortune" ? { ...narrative, chapters: narrative.chapters.filter(c => !c.requires?.includes("wish") || wishOk).map(c => ({ ...c, title: c.title.replace(/2027/g, yearStr), question: c.question.replace(/2027/g, yearStr), ...(c.sections ? { sections: c.sections.map(s => ({ ...s, q: s.q.replace(/2027/g, yearStr) })) } : {}) })) } : narrative;
+  // AM2-3 1-7: 대운 7장은 MBTI가 없으면 명리만으로 쓰는 대체 장(제목에서 MBTI를 뺀다, ev:ageGrowth·ageNext — design/major.ts).
+  const growthAlt = { title: "나이와 함께 자라는 결", question: "나이와 대운에 따라 무엇이 단단해질까?", sections: [{ q: "이 대운 10년에 단단해지는 쪽은?", domain: "alone", use: ["ev:ageGrowth"], trait: "none" }, { q: "다음 대운에서 새로 자라는 쪽은?", domain: "relationships", use: ["ev:ageNext"], trait: "none" }] };
+  const narrativeUsed = input.product === "annual_fortune" ? { ...narrative, chapters: narrative.chapters.filter(c => !c.requires?.includes("wish") || wishOk).map(c => ({ ...c, title: c.title.replace(/2027/g, yearStr), question: c.question.replace(/2027/g, yearStr), ...(c.sections ? { sections: c.sections.map(s => ({ ...s, q: s.q.replace(/2027/g, yearStr) })) } : {}) })) }
+    : input.product === "major_fortune" && !mbti ? { ...narrative, chapters: narrative.chapters.map(c => (c.id === "growth" ? { ...c, ...growthAlt } as typeof c : c)) } : narrative;
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
   const { chapters, plan } = planChapters({
     product: input.product, narrative: narrativeUsed, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,

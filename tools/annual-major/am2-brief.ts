@@ -11,6 +11,8 @@ import { buildWriterPrompt } from "../../src/lib/writer/prompt";
 import { kstDate, writerKnowledge } from "../../src/lib/writer/publish";
 import { buildIntake } from "../../src/lib/writer/chunked/intake";
 import { briefCheck, type BriefIssue } from "../../src/lib/writer/chunked/check";
+import { briefCtxFor } from "../../src/lib/writer/chunked/publish";
+import { safetyFacts } from "../../src/lib/writer/safety";
 import { chunkPlan, chunkUser, renderCard } from "../../src/lib/writer/chunked/prompt";
 import { cases } from "./final";
 import { payloadOf } from "./mockRun";
@@ -39,10 +41,10 @@ function main() {
   if (argv[0] === "--show") {
     const c = cases().find(x => x.id === argv[1])!; const { intake } = intakeOf(c.payload);
     console.log(renderCard(intake)); console.log("\n==== 묶음 ===="); for (const ch of chunkPlan(intake)) console.log(`\n--- ${ch.id} ${ch.chars.join("~")}\n${chunkUser(intake, ch)}`);
-    console.log("\n==== 검사 ===="); console.log(briefCheck(intake)); return;
+    console.log("\n==== 검사 ===="); console.log(briefCheck(intake, [], briefCtxFor(intakeOf(c.payload).brief))); return;
   }
   const tally: Record<string, number> = {}; const samples: (BriefIssue & { who: string })[] = [];
-  const run = (who: string, payload: unknown) => { try { const { intake } = intakeOf(payload); for (const v of briefCheck(intake)) { tally[v.rule] = (tally[v.rule] ?? 0) + 1; if (samples.filter(s => s.rule === v.rule).length < 12 && !samples.some(s => s.text === v.text)) samples.push({ ...v, who }); } return true; } catch (e) { if (/UncertainBirthTimeError/.test(String(e))) { rejected++; return false; } tally.error = (tally.error ?? 0) + 1; if (samples.length < 40) samples.push({ who, where: "error", text: String(e).slice(0, 200), rule: "internal" }); return false; } };
+  const run = (who: string, payload: unknown) => { try { const { brief, intake } = intakeOf(payload); for (const v of briefCheck(intake, safetyFacts(brief).nicknames ?? [], briefCtxFor(brief))) { tally[v.rule] = (tally[v.rule] ?? 0) + 1; if (samples.filter(s => s.rule === v.rule).length < 12 && !samples.some(s => s.text === v.text)) samples.push({ ...v, who }); } return true; } catch (e) { if (/UncertainBirthTimeError/.test(String(e))) { rejected++; return false; } tally.error = (tally.error ?? 0) + 1; if (samples.length < 40) samples.push({ who, where: "error", text: String(e).slice(0, 200), rule: "internal" }); return false; } };
   let n = 0, rejected = 0;
   if (argv[0] === "--cases") for (const c of cases().filter(x => x.product !== "launch")) { run(c.id, c.payload); n++; }
   // 만세력이 받지 않는 출생 시각(UncertainBirthTimeError)은 주문이 될 수 없는 입력이라 다음 무작위 입력으로 채워 상품마다 정확히 N명.

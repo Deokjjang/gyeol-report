@@ -10,6 +10,7 @@ import type { ReportInputPayload } from "../../report-generation/reportInputType
 import { buildBrief } from "../../brief";
 import { payloadToBriefInput } from "../../writer/book";
 import { writeDeterministicChapter } from "../../writer/deterministic";
+import { keyLabelOf } from "../../writer/chunked/intake";
 import { renderChapter } from "../../writer/format";
 import { buildWriterPrompt } from "../../writer/prompt";
 import { kstDate, writerKnowledge } from "../../writer/publish";
@@ -45,7 +46,9 @@ export function mockChunkText(brief: Brief, user: string): string | null {
   const plan = buildWriterPrompt(brief).chapters;
   const out = heads.map(m => {
     const ch = plan.find(c => c.n === Number(m[1])); if (!ch) return "";
-    const keys = m[2]?.split(" / ### ");
+    // AM2-3 1-1: 머리글은 key 이름(「5월 · 을사월」) — 브리프 타임라인으로 key를 되찾는다.
+    const byLabel = new Map((brief.timeline?.entries ?? []).map(e => [keyLabelOf(e), e.key] as const));
+    const keys = m[2]?.split(" / ### ").map(h => byLabel.get(h.trim()) ?? h.trim());
     const c = writeDeterministicChapter(brief, ch, keys ? { keys } : {});
     const chars = c.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0);
     const extra = ch.keys ? [] : Array.from({ length: Math.max(1, Math.ceil((ch.targetChars[0] - chars) / 200)) }, (_, j) => ({ heading: `작게 시작하는 법 ${j + 1}`,

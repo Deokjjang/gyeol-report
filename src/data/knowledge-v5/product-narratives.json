@@ -2468,7 +2468,7 @@
           },
           "sections": [
             {
-              "q": "이 해에 나를 돕는 사람은 누구일까?",
+              "q": "이 해 사람 쪽은 언제, 어떻게 열릴까?",
               "domain": "relationships",
               "use": [
                 "ev:helpers"
@@ -2604,7 +2604,7 @@
               "q": "흐름이 도울 때와 기다릴 때는?",
               "domain": "alone",
               "use": [
-                "recap:month"
+                "ev:wishTiming"
               ],
               "trait": "none"
             }

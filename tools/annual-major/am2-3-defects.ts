@@ -1,0 +1,145 @@
+/**
+ * AM2-3 0번 결함 지도의 원천(데이터). 판독 4건(P2 세운·대운, AM-01 4종) + 덕짱님 피드백 6가지.
+ * 셈: 차단·경계는 하나씩, 경미는 꼴 단위. frag = 판독 인용 문장의 고유한 조각(한자 주석 뺀 꼴) — am2-hit.ts가 새 검사 깃발과 자동으로 맞춘다.
+ * layer = 원인이 있는 가장 위층(card 카드 · plan 설계도 · input 작가 입력 · rule 작가 규칙 · check 결정론 검사 · screen 화면).
+ * fix = 고친 곳(파일 · 기호 — 줄 번호는 am2-hit.ts --map이 지금 코드에서 찾아 적는다). det = 결정론 검사로 잡는 규칙(없으면 근원 고침으로만 막음, proof에 근원 diff).
+ */
+export type Defect = { readonly id: string; readonly src: "P2-annual-1" | "P2-major-1" | "AM01-4종" | "피드백"; readonly sev: "차단" | "경계" | "경미" | "객관" | "피드백"; readonly loc: string; readonly frag: string; readonly what: string;
+  readonly layer: "card" | "plan" | "input" | "rule" | "check" | "screen"; readonly fix: readonly (readonly [string, string])[]; readonly det: readonly string[]; readonly proof?: string };
+const I = "src/lib/writer/chunked/intake.ts", C = "src/lib/writer/chunked/check.ts", K = "src/lib/writer/chunked/card.ts", P = "src/lib/writer/chunked/prompt.ts", PB = "src/lib/writer/chunked/publish.ts";
+const AN = "src/lib/brief/design/annual.ts", MJ = "src/lib/brief/design/major.ts", TL = "src/lib/brief/timeline.ts", BB = "src/lib/brief/buildBrief.ts", PN = "src/data/knowledge-v5/product-narratives.json";
+const E6 = "src/lib/writer/safety/p6e.ts", C6 = "src/lib/writer/safety/p6c.ts", PL = "src/lib/ops/generation/policy.ts", BK = "src/lib/writer/book.ts", BR = "src/app/dev/book-preview/BookReader.tsx";
+
+export const DEFECTS: readonly Defect[] = [
+  // ───────── P2 세운 annual-1: 차단 18 ─────────
+  { id: "A-b1", src: "P2-annual-1", sev: "차단", loc: "1.3 ¶1", frag: "연락처가 곧 재산이 되는 해", what: "원국·MBTI 짝의 성질을 그 해 성질로(「그래서 …는 해예요」)", layer: "rule", fix: [[P, "RULES_COMMON 「원국·MBTI의 성질을 그 해·달의 성질로 바꾸지 않는다」"], [C, "rootFlags pair_link(YEAR_END)"]], det: ["pair_link"] },
+  { id: "A-b2", src: "P2-annual-1", sev: "차단", loc: "4.2 ¶2", frag: "다시 꺼내면 안정적이에요", what: "근거 없는 단정(안정적)", layer: "rule", fix: [[P, "RULES_COMMON 「안정적이에요」 금지"], [C, "FUTURE_ASSERT"]], det: ["future_assert"] },
+  { id: "A-b3", src: "P2-annual-1", sev: "차단", loc: "5.1 ¶2", frag: "그 한 줄에 반응해 줄 거예요", what: "남의 반응 단정 + 근거 없는 질문(나를 돕는 사람은 누구?)", layer: "plan", fix: [[PN, "annual people.q 「이 해 사람 쪽은 언제, 어떻게 열릴까?」"], [C, "briefCheck QUESTION_CUES · FUTURE_ASSERT"]], det: ["future_assert"] },
+  { id: "A-b4", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶1", frag: "한 달 동안 내 편과 경쟁자가 같이 눈에 띄는 달이에요", what: "key 번호 달 혼동(5월 을사월에 4월 비견 뜻)", layer: "card", fix: [[I, "keyLabelOf · KeyPlan.range"], [P, "chunkHeaders · keyNote · keysToLabels"], [C, "month_line · key_value(어간)"]], det: ["month_line", "key_value"] },
+  { id: "A-b5", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶1", frag: "땅 글자 편재 덕에 돈과 사람이 바쁘게 오가고", what: "달 혼동(땅 글자 편재, 이 달은 식신)", layer: "card", fix: [[I, "keyLabelOf"], [C, "key_value 하늘/땅 글자"]], det: ["key_value", "month_line"] },
+  { id: "A-b6", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶1", frag: "자존심이 올라가는 만큼 내 이름을 걸고 직접 끝내고 싶은 마음도 커집니다", what: "달 혼동(4월 비견·일 줄)", layer: "card", fix: [[I, "keyLabelOf"], [C, "key_value 다른 달 줄 어간"]], det: ["key_value"] },
+  { id: "A-b7", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶1", frag: "태어난 달·태어난 시각 자리와 지지형이 걸려", what: "달 혼동(다른 달 관계 이름·자리)", layer: "card", fix: [[I, "keyLabelOf"], [C, "key_value 다른 key 관계"]], det: ["key_value"] },
+  { id: "A-b8", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶1", frag: "흐름 세기는 1/다섯 잔잔함입니다", what: "달 혼동(흐름 1/5, 이 달은 2/5) + 표기 깨짐 + 명사 값", layer: "card", fix: [[I, "keyPlan 흐름 FLOW_DESC(숫자 없음)"], [E6, "nativeNumbers 「/」 뒤 숫자"], [C, "key_value 흐름 단어·숫자"]], det: ["key_value"] },
+  { id: "A-b9", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶2", frag: "친구들과 더치페이를 하다 영수증 사진을 다시 확대해 보는", what: "달 혼동(다른 달 장면 씨앗)", layer: "card", fix: [[I, "keyLabelOf"], [C, "key_value 다른 달·해 장면 씨앗"]], det: ["key_value"] },
+  { id: "A-b10", src: "P2-annual-1", sev: "차단", loc: "7·2027-M04 ¶2", frag: "같이 쓰는 돈에서는 내 몫이 줄기 쉬우니", what: "달 혼동(4월 돈 줄)", layer: "card", fix: [[I, "keyLabelOf"], [C, "key_value 다른 달 줄 어간"]], det: ["key_value", "month_line"] },
+  { id: "A-b11", src: "P2-annual-1", sev: "차단", loc: "7·2027-M05 ¶3", frag: "순서를 먼저 적어 두면 발이 덜 걸립니다", what: "고아 + 다른 달 관계 뜻(인사해)", layer: "check", fix: [[C, "key_value 다른 달 관계 뜻 어간"], ["src/lib/writer/chunked/cut.ts", "LEANS"]], det: ["key_value"] },
+  { id: "A-b12", src: "P2-annual-1", sev: "차단", loc: "7·2027-M10 ¶2", frag: "인해파의 어긋남이 시작을 늦추는 탓", what: "관계 뜻 섞기(인해파에 병신합 뜻)", layer: "card", fix: [[I, "keyPlan 관계 모두 + 뜻 한 줄"], [P, "관계 뜻 사전 규칙"], [C, "rel_mix"]], det: ["rel_mix"] },
+  { id: "A-b13", src: "P2-annual-1", sev: "차단", loc: "7·2027-M11 ¶3", frag: "이번 달은 조용히 지낼게", what: "대사 속 시점 말", layer: "rule", fix: [[P, "시점 규칙(따옴표 안도)"], [C, "time_quote"]], det: ["time_quote"] },
+  { id: "A-b14", src: "P2-annual-1", sev: "차단", loc: "8.1 ¶1", frag: "올해는 뭘 해 볼까", what: "대사 속 시점 말", layer: "rule", fix: [[P, "시점 규칙(따옴표 안도)"], [C, "time_quote"]], det: ["time_quote"] },
+  { id: "A-b15", src: "P2-annual-1", sev: "차단", loc: "8.1 ¶3", frag: "이번 달 끝낼 일 하나", what: "대사 속 시점 말", layer: "rule", fix: [[C, "time_quote"]], det: ["time_quote"] },
+  { id: "A-b16", src: "P2-annual-1", sev: "차단", loc: "8.3 ¶2", frag: "선을 긋는 연습을 하던 마음", what: "지난 일 단정(「-던」 전제)", layer: "rule", fix: [[P, "「-던」 전제 금지"], [C, "PAST_PREMISE"]], det: ["past_premise"] },
+  { id: "A-b17", src: "P2-annual-1", sev: "차단", loc: "9.2 ¶1", frag: "도울 달이 오면 아이디어가 한꺼번에 쏟아집니다", what: "짝 없는 명리×MBTI 연결 + 앞날 확정 + 근거 없는 질문", layer: "plan", fix: [[PN, "wish 2절 ev:wishTiming"], [AN, "wishTiming"], [C, "pair_link · FUTURE_ASSERT"]], det: ["pair_link", "future_assert"] },
+  { id: "A-b18", src: "P2-annual-1", sev: "차단", loc: "9.2 ¶3", frag: "흐름이 도우는 달", what: "활용 오류", layer: "check", fix: [[C, "GRAMMAR 도우는"]], det: ["grammar"] },
+  // ───────── P2 세운: 경계 26 ─────────
+  { id: "A-e1", src: "P2-annual-1", sev: "경계", loc: "1.1 ¶3", frag: "대운은 중간에 있어요", what: "주어 어긋남(대운이 중간)", layer: "check", fix: [[C, "GRAMMAR 대운은 중간에"]], det: ["grammar"] },
+  { id: "A-e2", src: "P2-annual-1", sev: "경계", loc: "1.1 ¶3", frag: "이미 맡은 일의 틀을 고쳐 나가는 모습이 어울려요", what: "근거 없는 해석(D3에 일 방식 뜻 없음)", layer: "plan", fix: [[I, "ChapterPlan.allowed · 「쓸 수 있는 근거」"], [P, "근거 범위 규칙"]], det: [], proof: "카드 diff: 1장 「쓸 수 있는 근거」 목록 · 규칙 「장마다 쓸 수 있는 근거 밖의 줄을 쓰지 않는다」" },
+  { id: "A-e3", src: "P2-annual-1", sev: "경계", loc: "1.4 ¶1", frag: "지금 회사에서 인정받고", what: "고객 인용 속 시점 말(인용 두 꼴)", layer: "input", fix: [[I, "WISH_MARK"], [PB, "소망 원문 렌더"], [C, "wish_quote"]], det: ["wish_quote"] },
+  { id: "A-e4", src: "P2-annual-1", sev: "경계", loc: "1.4 ¶3", frag: "날짜가 약속해 주는 것은 아닙니다", what: "장 안 면책", layer: "check", fix: [[E6, "noticeMeaning"]], det: ["notice_repeat"] },
+  { id: "A-e5", src: "P2-annual-1", sev: "경계", loc: "2.1 소제목", frag: "일상 동선 안에서 천천히 오는 인연", what: "소제목 앞날 단정", layer: "rule", fix: [[P, "소제목 꼴 규칙"], [C, "heading_form"]], det: ["heading_form"] },
+  { id: "A-e6", src: "P2-annual-1", sev: "경계", loc: "2.1 ¶3", frag: "연애 신호는 위쪽을 향해요", what: "화살표 직역", layer: "card", fix: [[AN, "loveYear 신호 말(오름·내림)"], [I, "ARROW_KO"], [C, "arrow_literal"]], det: ["arrow_literal"] },
+  { id: "A-e7", src: "P2-annual-1", sev: "경계", loc: "2.2 ¶2", frag: "이미 생긴 인연을 편하게 두는", what: "입력 밖 전제(솔로인데 이미 생긴 인연)", layer: "rule", fix: [[P, "입력 밖 가정 규칙"], [C, "PARTNER_PREMISE"]], det: ["future_assert"] },
+  { id: "A-e8", src: "P2-annual-1", sev: "경계", loc: "3.1 소제목", frag: "사람 길목에서 돈이 열리는 해", what: "소제목 단정(원국 → 해)", layer: "rule", fix: [[C, "heading_form"]], det: ["heading_form"] },
+  { id: "A-e9", src: "P2-annual-1", sev: "경계", loc: "3.2 ¶1", frag: "이 두 달에는 기분 따라 지르는 소비가 늘기 쉬운 쪽이에요", what: "달 표시 없는 월운 줄(M6)을 달에 묶음", layer: "card", fix: [[I, "subjectOfFact 달 이름 없으면 그 해 줄"], [C, "briefCheck month_label"]], det: [], proof: "카드 diff: M6 → Y 줄(달 이름 없음) · briefCheck month_label 2,010명 0" },
+  { id: "A-e10", src: "P2-annual-1", sev: "경계", loc: "4.1 ¶1", frag: "갑오일주의 힘이 말과 아이디어로 나오는 해예요", what: "원국 → 해 근거 없는 해석", layer: "rule", fix: [[C, "pair_link(원국 이름 + YEAR_END)"]], det: ["pair_link"] },
+  { id: "A-e11", src: "P2-annual-1", sev: "경계", loc: "4.3 ¶1", frag: "갑오 특유의 빠른 머리가 말로 나올 때", what: "근거 주인 이동(Y28 → N7)", layer: "plan", fix: [[I, "allowed"], [P, "근거 주인 규칙(양쪽)"]], det: [], proof: "규칙·카드 diff(근거 주인 양방향 규칙) — 뜻을 봐야 하는 꼴" },
+  { id: "A-e12", src: "P2-annual-1", sev: "경계", loc: "4.3 ¶2", frag: "가장 빠른 길이에요", what: "정도말 덧붙임", layer: "rule", fix: [[P, "정도말 규칙"], [C, "rootFlags degree(카드 원문)"]], det: ["degree"] },
+  { id: "A-e13", src: "P2-annual-1", sev: "경계", loc: "7·2027-M01 ¶3", frag: "답장 하나를 오늘 안에 보내고", what: "시점 말(오늘 안에)", layer: "check", fix: [[C, "TIME_EXTRA 오늘 안에"]], det: ["time_extra"] },
+  { id: "A-e14", src: "P2-annual-1", sev: "경계", loc: "7·2027-M02 ¶2", frag: "문서가 오가는 돈 일을 정리하기 좋은 때입니다", what: "주제어 어긋남(영역 나열 속)", layer: "rule", fix: [[P, "달·해 본문 「핵심 하나 + 장면 하나 + 행동 하나」"], [C, "domain_list"]], det: ["domain_list"] },
+  { id: "A-e15", src: "P2-annual-1", sev: "경계", loc: "7·2027-M05 ¶2", frag: "반쯤 묶인 불의 기운(화국)도 있어 표현과 열정이 모입니다", what: "관계 뜻 뭉갬(지지형에 화국 뜻)", layer: "card", fix: [[C, "rel_mix(한 뜻으로 묶음)"]], det: ["rel_mix"] },
+  { id: "A-e16", src: "P2-annual-1", sev: "경계", loc: "7·2027-M09 ¶2", frag: "이번엔 꼭 맞춰 주세요", what: "씨앗의 시점 말", layer: "input", fix: [[K, "cleanSeed SEED_TIME_STRIP"], [C, "QUOTE_TIME 이번엔"]], det: ["time_quote"] },
+  { id: "A-e17", src: "P2-annual-1", sev: "경계", loc: "7·2027-M12 ¶1", frag: "부딪쳐 묵은 일이 다시 올라오고", what: "관계 동사 섞임(파에 부딪쳐, 해에 맺혀)", layer: "rule", fix: [[P, "관계 뜻 사전"], [C, "rel_verb"]], det: ["rel_verb"] },
+  { id: "A-e18", src: "P2-annual-1", sev: "경계", loc: "7장 key 소제목", frag: "2026-M12", what: "key id 노출 우려(화면)", layer: "screen", fix: [[BK, "projectV5Book key 이름"], [BR, "months 표"]], det: [], proof: "화면 캡처(흐름표·달 카드 머리는 「1월 · 신축월」)" },
+  { id: "A-e19", src: "P2-annual-1", sev: "경계", loc: "8.1 ¶1", frag: "그중 흐름이 가장 크게 오르는 달은", what: "지시 어긋남(그중)", layer: "card", fix: [[AN, "useDo 동률 달 모두"]], det: [], proof: "카드 diff: 「흐름이 가장 크게 오르는 달(같은 세기)」 — 뜻을 봐야 하는 비문" },
+  { id: "A-e20", src: "P2-annual-1", sev: "경계", loc: "8.1 ¶2", frag: "갑오일주의 빠른 머리가 일터에서 힘을 받습니다", what: "설계 밖 근거(N7, 8장)", layer: "plan", fix: [[I, "allowed"], [C, "evidence_scope"]], det: ["evidence_scope"] },
+  { id: "A-e21", src: "P2-annual-1", sev: "경계", loc: "9.1 ¶1", frag: "회사에서 인정받고, 좋아하는 사람도 생겼으면", what: "고객 인용 변형", layer: "input", fix: [[I, "WISH_MARK"], [PB, "소망 원문 렌더"], [C, "wish_quote"]], det: ["wish_quote"] },
+  { id: "A-e22", src: "P2-annual-1", sev: "경계", loc: "9.1 ¶2", frag: "건네는 연습이 인정으로 이어집니다", what: "결과 단정", layer: "rule", fix: [[C, "FUTURE_ASSERT 로 이어집니다"]], det: ["future_assert"] },
+  { id: "A-e23", src: "P2-annual-1", sev: "경계", loc: "9.2 ¶1", frag: "열등기능인 반복과 정리가", what: "카드 칸 이름 노출", layer: "card", fix: [[I, "ROLE_KO"], [C, "CODE 열등기능"]], det: ["code_leak"] },
+  { id: "A-e24", src: "P2-annual-1", sev: "경계", loc: "9.2 ¶1", frag: "불붙은 일을 마무리하는 쪽이 약해요", what: "MBTI 카드와 어긋남", layer: "rule", fix: [[P, "근거 쓰는 법"]], det: [], proof: "뜻을 봐야 하는 꼴 — 카드 B1 「세 번째로 쓰는 쪽」 고객 말, 규칙" },
+  { id: "A-e25", src: "P2-annual-1", sev: "경계", loc: "10.2 ¶1", frag: "머릿속이 정리되는 때가 있죠", what: "습관·지난 일 단정", layer: "rule", fix: [[C, "PAST_PREMISE 때가 있죠"]], det: ["past_premise"] },
+  { id: "A-e26", src: "P2-annual-1", sev: "경계", loc: "10.2 ¶2", frag: "끝낸 일 하나에서 시작됩니다", what: "카드 뜻 변형·설계 밖 근거(N10)", layer: "plan", fix: [[I, "allowed"], [P, "근거 범위 규칙"]], det: [], proof: "카드 diff(쓸 수 있는 근거) — 이름 없이 뜻만 옮긴 꼴" },
+  // ───────── P2 세운: 경미(꼴) ─────────
+  { id: "A-m1", src: "P2-annual-1", sev: "경미", loc: "7장 key 4곳(M12·M01·M02·M03 ¶1)", frag: "도움과 배움을 부르는 정인", what: "머리 문장 뒤 십성 되풀이", layer: "rule", fix: [[P, "머리 문장 다시 알리지 않는다"], [C, "head_repeat"]], det: ["head_repeat"] },
+  { id: "A-m2", src: "P2-annual-1", sev: "경미", loc: "8곳(M01·M06·M08·M10·M12·9.1)", frag: "새 인연은 일상 동선이 겹치는 곳에서 천천히 가까워지기 쉬워요", what: "카드 동일 문구 되풀이", layer: "card", fix: [[I, "tgNote 「앞의 ○와 같은 결 — 달라지는 것」 · 생활 결"], [C, "crossRepeats"]], det: ["chapter_repeat"] },
+  { id: "A-m3", src: "P2-annual-1", sev: "경미", loc: "4곳(M07·M08·M12)", frag: "컨디션은 쉬는 만큼 회복이 잘 돼요", what: "같은 뜻 연속", layer: "check", fix: [[C, "adjacentRepeats"], [PB, "남으면 뒤 문장 지움"]], det: ["rep_adjacent"] },
+  { id: "A-m4", src: "P2-annual-1", sev: "경미", loc: "7곳", frag: "가장 급한 하나만 먼저 끝내 보세요", what: "같은 처방 되풀이(순서·끝낼 일·글로 쏟기·열 식히기)", layer: "rule", fix: [[I, "할 일 씨앗"], [C, "adviceRepeats 끝낼 일 하나"]], det: ["advice_repeat"] },
+  { id: "A-m5", src: "P2-annual-1", sev: "경미", loc: "8곳(3.1·4.1·M07·8.1·8.2·9.1·10.2)", frag: "표현에 힘이 먼저 빠지기 쉬운 구조라", what: "장 사이 약한 반복(갑오일주 6개 장 등)", layer: "plan", fix: [[I, "allowed · 짝 쓰는 장"], [C, "evidence_scope · crossRepeats"]], det: ["evidence_scope", "chapter_repeat"] },
+  { id: "A-m6", src: "P2-annual-1", sev: "경미", loc: "5곳(4.1·5.2·M06·8.3·9.1)", frag: "청첩장 받은 날처럼 모임이 몰릴 때도", what: "어색한 소품·비유(씨앗 두 장에 나눔)", layer: "input", fix: [[I, "seedOnce(같은 씨앗 두 장 금지)"], [K, "cleanSeed"]], det: [], proof: "카드 diff: 같은 씨앗은 한 장에만" },
+  { id: "A-m7", src: "P2-annual-1", sev: "경미", loc: "4곳(2.2·5.1 소제목·6.1 소제목·9.1)", frag: "무리가 몰려오는 때는 뚜렷하지 않아요", what: "어색한 표현·중의", layer: "rule", fix: [[P, "소제목 꼴"]], det: [], proof: "뜻을 봐야 하는 꼴(판독으로만)" },
+  { id: "A-m8", src: "P2-annual-1", sev: "경미", loc: "9.1 ¶1", frag: "이 바람과 이어지는 영역을 도울 달이", what: "되풀이 금지 주장 반복", layer: "plan", fix: [[AN, "wish에서 도울 달 줄 뺌 · wishTiming"]], det: [], proof: "카드 diff: 9장 1절에 도울 달 줄 없음" },
+  { id: "A-m9", src: "P2-annual-1", sev: "경미", loc: "책 16곳", frag: "모습이 어울", what: "상투구 「모습이 어울려요」", layer: "rule", fix: [[P, "받는 틀 장 1·책 4"], [C, "adviceRepeats FRAME"]], det: ["advice_repeat"] },
+  { id: "A-m10", src: "P2-annual-1", sev: "경미", loc: "4곳", frag: "반대로", what: "「반대로」 잘못 씀", layer: "rule", fix: [[P, "「반대로」는 대조일 때만"], [C, "adviceRepeats CONTRA"]], det: ["advice_repeat"] },
+  // ───────── P2 대운 major-1: 차단 7 ─────────
+  { id: "B-b1", src: "P2-major-1", sev: "차단", loc: "3.2 ¶2", frag: "마음이 맞는 사람과는 손이 붙기 쉽지만", what: "관계 뜻 지어내기(반합에 사람 뜻)", layer: "card", fix: [[MJ, "relationsWithNatal 지식 DB 뜻"], [I, "카드 관계 뜻 줄"]], det: [], proof: "카드 diff: D23 「쇠의 기운이 반쯤 묶여 정리와 결단이 모이기 시작하는 흐름」" },
+  { id: "B-b2", src: "P2-major-1", sev: "차단", loc: "3.3 ¶2", frag: "갑인일주의 백호대살", what: "신살 자리 오류(일주, 카드는 태어난 달)", layer: "card", fix: [[I, "신살 값 「백호대살(태어난 달 · 임술)」 · 일반론 뺌"], [C, "seat_claim"]], det: ["seat_claim"] },
+  { id: "B-b3", src: "P2-major-1", sev: "차단", loc: "3.3 ¶3", frag: "백호는 태어난 달에도 있어서", what: "신살 자리 오류(「에도」)", layer: "card", fix: [[C, "seat_claim 에도"]], det: ["seat_claim"] },
+  { id: "B-b4", src: "P2-major-1", sev: "차단", loc: "2032 ¶2", frag: "요즘 파고드는 게 있어서", what: "대사 속 시점 말", layer: "rule", fix: [[C, "time_quote"]], det: ["time_quote"] },
+  { id: "B-b5", src: "P2-major-1", sev: "차단", loc: "2033 ¶1", frag: "준비한 것이 결과로 이어지는 해입니다", what: "카드 「좋음」을 확정형으로", layer: "rule", fix: [[P, "「~기 좋음」 그 꼴 그대로"], [C, "future_event · FUTURE_ASSERT"]], det: ["future_event", "future_assert"] },
+  { id: "B-b6", src: "P2-major-1", sev: "차단", loc: "2035 ¶1", frag: "의욕이 되는 대신 지침이 되지 않게", what: "비문", layer: "check", fix: [[C, "GRAMMAR 되는 대신"]], det: ["grammar"] },
+  { id: "B-b7", src: "P2-major-1", sev: "차단", loc: "화면 카드 2026", frag: "(올해)", what: "화면 꼬리표 시점 말", layer: "screen", fix: [[TL, "buildYearEntries 「(이 책을 쓴 해)」"], [C, "briefCheck screen"]], det: ["screen"] },
+  // ───────── P2 대운: 경계 19 ─────────
+  { id: "B-e8", src: "P2-major-1", sev: "경계", loc: "1.1 ¶3", frag: "큰 계절부터 먼저 읽어 보세요", what: "읽는 법 지시", layer: "rule", fix: [[C, "DIRECTIVE 먼저 읽어 보세요"]], det: ["reader_directive"] },
+  { id: "B-e9", src: "P2-major-1", sev: "경계", loc: "2.2 소제목", frag: "함께 뛸 사람으로 남았다", what: "소제목 지난 일 평서", layer: "rule", fix: [[P, "소제목 꼴"], [C, "heading_form"]], det: ["heading_form"] },
+  { id: "B-e10", src: "P2-major-1", sev: "경계", loc: "2.2 ¶2", frag: "책상 서랍의 간식을 나누던 동료", what: "지난 대운 나이(만 11~21세) × 직장 장면", layer: "input", fix: [[I, "seedCtx workplaceOk(지난 대운 만 22세 전)"], [C, "past_work"]], det: ["past_work"] },
+  { id: "B-e11", src: "P2-major-1", sev: "경계", loc: "2.2 ¶3", frag: "ENTP는 논리로 깎아 가며 따지는 쪽이라, 갑인의 개척하는 손과 만나", what: "근거 주인·짝 장 밖(P1은 놓일 장이 없음)", layer: "plan", fix: [[I, "짝 쓰는 장 = 두 줄 교집합"], [C, "pair_link"]], det: ["pair_link"] },
+  { id: "B-e12", src: "P2-major-1", sev: "경계", loc: "3.1 ¶2", frag: "장면이 낯설지 않을 겁니다", what: "지난 일 단정·입력 밖 직무", layer: "rule", fix: [[C, "PAST_PREMISE 낯설지 않을"]], det: ["past_premise"] },
+  { id: "B-e13", src: "P2-major-1", sev: "경계", loc: "2027 ¶1", frag: "한층 날카로워지는 해입니다", what: "정도말", layer: "rule", fix: [[C, "degree(카드 원문)"]], det: ["degree"] },
+  { id: "B-e14", src: "P2-major-1", sev: "경계", loc: "2027 ¶2", frag: "드러나는 쪽으로 읽어요", what: "읽는 법 지시", layer: "card", fix: [[K, "dropGeneral 「쪽으로 읽습니다」 → 「쪽입니다」"], [C, "DIRECTIVE"]], det: ["reader_directive"] },
+  { id: "B-e15", src: "P2-major-1", sev: "경계", loc: "2033 ¶1", frag: "흐름이 잔잔함인 해예요", what: "카드 값 명사 붙임", layer: "card", fix: [[I, "FLOW_DESC 서술형 값"], [C, "GRAMMAR"]], det: ["grammar"] },
+  { id: "B-e16", src: "P2-major-1", sev: "경계", loc: "6.1 소제목", frag: "내 이름을 건 일이 커지는 10년", what: "소제목 결과 단정", layer: "rule", fix: [[C, "heading_form"]], det: ["heading_form"] },
+  { id: "B-e17", src: "P2-major-1", sev: "경계", loc: "6.2 소제목", frag: "친구 같은 사람 곁에서 편해지는 10년", what: "소제목 결과 단정(조건 지움)", layer: "rule", fix: [[C, "heading_form"]], det: ["heading_form"] },
+  { id: "B-e18", src: "P2-major-1", sev: "경계", loc: "8.1 ¶2", frag: "벌이는 판이 한층 커지는 쪽이라", what: "정도말", layer: "rule", fix: [[C, "degree"]], det: ["degree"] },
+  { id: "B-e19", src: "P2-major-1", sev: "경계", loc: "8.2 ¶2", frag: "값으로 이어질 바탕이 됩니다", what: "설계 밖 근거(N7, 8장) · 결과 단정", layer: "plan", fix: [[I, "allowed"], [C, "evidence_scope"]], det: ["evidence_scope"] },
+  { id: "B-e20", src: "P2-major-1", sev: "경계", loc: "8.2 ¶3", frag: "그 습관 위에서 가장 편하게 움직여요", what: "정도말 「가장」", layer: "rule", fix: [[C, "degree"]], det: ["degree"] },
+  { id: "B-e21", src: "P2-major-1", sev: "경계", loc: "9.1 ¶1", frag: "거기에 부기능이", what: "카드 칸 이름", layer: "card", fix: [[I, "ROLE_KO"], [C, "CODE"]], det: ["code_leak"] },
+  { id: "B-e22", src: "P2-major-1", sev: "경계", loc: "9.1 ¶2", frag: "다만 열등기능이 반복과 꾸준함이라", what: "카드 칸 이름", layer: "card", fix: [[C, "CODE"]], det: ["code_leak"] },
+  { id: "B-e23", src: "P2-major-1", sev: "경계", loc: "화면 2023 [살필 점]", frag: "받기만 하고 미루지 않게 살피세요", what: "지난 해 앞날 꼴 [살필 점]", layer: "screen", fix: [[BB, "지난 해 caution 없음"]], det: [], proof: "엔진 diff(지난 해 caution undefined) · 화면 해 카드는 돌아보기형만" },
+  { id: "B-e24", src: "P2-major-1", sev: "경계", loc: "화면 2024 [살필 점]", frag: "진술충이 걸리는 해: 두 창고가 맞서", what: "틀 문자열 「…해: …살피기」", layer: "screen", fix: [[BB, "cautionOf 한 문장"], [C, "briefCheck screen TEMPLATE"]], det: ["screen"] },
+  { id: "B-e25", src: "P2-major-1", sev: "경계", loc: "화면 2025 [살필 점]", frag: "원진이 걸리는 해:", what: "틀 문자열", layer: "screen", fix: [[BB, "cautionOf"], [C, "briefCheck screen"]], det: ["screen"] },
+  { id: "B-e26", src: "P2-major-1", sev: "경계", loc: "화면 2031 [해 볼 것]", frag: "평가받는 자리가 많아지니", what: "화면 문형 정도말", layer: "card", fix: [[TL, "pickAction 정도말 문형 거름"]], det: [], proof: "엔진 diff: 정도말이 든 행동 문형은 고르지 않음" },
+  // ───────── P2 대운: 경미 15꼴 ─────────
+  { id: "B-m1", src: "P2-major-1", sev: "경미", loc: "1.1 ¶1", frag: "업무 인수인계를 받을 때", what: "어색한 비유", layer: "input", fix: [[K, "cleanSeed(직장 씨앗 거름)"]], det: [], proof: "씨앗 정리 — 판독으로만" },
+  { id: "B-m2", src: "P2-major-1", sev: "경미", loc: "4곳", frag: "남이 낸 길보다 내가 낼 길에서 힘이 납니다", what: "장 사이 근거 문장 되풀이(N7·P1·N9·D25)", layer: "plan", fix: [[I, "주장↔되풀이 금지 충돌 해소 · 짝 쓰는 장"]], det: [], proof: "카드 diff: D25가 6장 근거에서 빠짐(3장 핵심 주장) · 짝 P1(N7×B1)은 쓰는 장이 겹치지 않아 뺌 · 숙제 줄 N9는 3장만" },
+  { id: "B-m3", src: "P2-major-1", sev: "경미", loc: "6곳", frag: "일한 만큼 받는 구조가 단단", what: "해 사이 같은 카드 문구", layer: "card", fix: [[I, "tgNote 앞과 다른 점"], [C, "crossRepeats"]], det: ["chapter_repeat"] },
+  { id: "B-m4", src: "P2-major-1", sev: "경미", loc: "4곳", frag: "잠부터 챙기세요", what: "같은 처방(쉬기·잠)", layer: "rule", fix: [[C, "adviceRepeats"]], det: ["advice_repeat"] },
+  { id: "B-m5", src: "P2-major-1", sev: "경미", loc: "5곳", frag: "하룻밤 지난 뒤에 답하세요", what: "같은 처방(말 늦추기·듣기)", layer: "rule", fix: [[C, "adviceRepeats"]], det: ["advice_repeat"] },
+  { id: "B-m6", src: "P2-major-1", sev: "경미", loc: "2곳", frag: "월급날마다 일정 금액을 따로 옮겨 두는", what: "같은 처방(월급날)", layer: "rule", fix: [[C, "adviceRepeats"]], det: ["advice_repeat"] },
+  { id: "B-m7", src: "P2-major-1", sev: "경미", loc: "12회", frag: "모습이 어울", what: "상투구", layer: "rule", fix: [[C, "FRAME 장 1·책 4"]], det: ["advice_repeat"] },
+  { id: "B-m8", src: "P2-major-1", sev: "경미", loc: "6곳", frag: "하늘과 땅이 모두 비견", what: "key 첫 문장 뒤 배치 되풀이", layer: "rule", fix: [[C, "head_repeat(배치 꼴)"]], det: ["head_repeat"] },
+  { id: "B-m9", src: "P2-major-1", sev: "경미", loc: "4곳", frag: "끝맺음이 신뢰가 되는 10년", what: "같은 뜻 연속", layer: "check", fix: [[C, "adjacentRepeats"]], det: ["rep_adjacent"] },
+  { id: "B-m10", src: "P2-major-1", sev: "경미", loc: "6.3 ¶1", frag: "날이 되는 날은", what: "말장난·카드 뜻 비틂", layer: "rule", fix: [], det: [], proof: "판독으로만(뜻 판단)" },
+  { id: "B-m11", src: "P2-major-1", sev: "경미", loc: "9.2 ¶1", frag: "떠오른 생각 깎기(Ti)", what: "어색한 조어(기능 기호)", layer: "card", fix: [[K, "stripFnCodes"], [C, "briefCheck SLOT"]], det: [], proof: "카드 diff: 짝 이유에 Ti·Ne 기호 없음(2,010명 0)" },
+  { id: "B-m12", src: "P2-major-1", sev: "경미", loc: "8.1", frag: "벌린 일을 줄이고 마무리하는 해", what: "소제목·본문 어긋남", layer: "rule", fix: [], det: [], proof: "판독으로만" },
+  { id: "B-m13", src: "P2-major-1", sev: "경미", loc: "8.2", frag: "기록으로 남겨 두면 좋아요", what: "어색한 연결", layer: "rule", fix: [], det: [], proof: "판독으로만" },
+  { id: "B-m14", src: "P2-major-1", sev: "경미", loc: "3곳(카드↔본문)", frag: "책상 하나와 조명 하나", what: "카드·본문 소품 겹침", layer: "input", fix: [[I, "할 일 씨앗"]], det: [], proof: "판독으로만" },
+  { id: "B-m15", src: "P2-major-1", sev: "경미", loc: "화면 2024 [돌아보기]", frag: "내 몫 지키기·같은 편이 두드러진 때였어요", what: "꼬리표 나열", layer: "screen", fix: [[TL, "reviewLine 「A와 B가」"]], det: [], proof: "엔진 diff(reviewLine)" },
+];
+
+/** AM-01 4종 판독(reading-launch.md 2절 유형표, 객관 결함 42 + 연애 결정론 대체본). 4종 작가 입력은 그대로 — 6부 결정론 후처리만. */
+export const DEFECTS_4: readonly Defect[] = [
+  { id: "L-1", src: "AM01-4종", sev: "객관", loc: "커리어 8장 · 궁합 4장(7건)", frag: "쓰임이 있는 공간에 끌리는 실사용형", what: "DB 문장 그대로", layer: "input", fix: [], det: ["db_copy"], proof: "4종 작가 입력 불변(목록만) — 기존 db_copy 검사" },
+  { id: "L-2", src: "AM01-4종", sev: "객관", loc: "커리어 9장 · 궁합 3장(5건)", frag: "이번에는 일 사이사이에", what: "같은 문장·같은 뜻 연속(수리 중복)", layer: "check", fix: [[E6, "repeatAdjacent(4종 tidy)"]], det: ["same_sentence"] },
+  { id: "L-3", src: "AM01-4종", sev: "객관", loc: "종합 1·9·13장(4건)", frag: "절차와 기한을 지키는 반안살", what: "엔진 대조(오행 유무·신살 뜻)", layer: "input", fix: [], det: [], proof: "4종 작가 입력 불변 — 목록만(6-2)" },
+  { id: "L-4", src: "AM01-4종", sev: "객관", loc: "커리어 6·9장 · 궁합 2·3장(4건)", frag: "이 조합은 정해진 틀 안에서", what: "고아 문장(삭제·수리 뒤)", layer: "check", fix: [[C6, "orphan after repair"]], det: ["orphan_start"] },
+  { id: "L-5", src: "AM01-4종", sev: "객관", loc: "커리어 1·7장 · 궁합 9장(3건)", frag: "벌어들이는 힘이 큰 만큼", what: "세기 모순(충돌 틀: 재성 약 · 인성 보통+월지 정인 · 중화)", layer: "input", fix: [], det: [], proof: "6-2: 4종 브리프 충돌 틀은 작가 입력 변경이라 목록만" },
+  { id: "L-6", src: "AM01-4종", sev: "객관", loc: "종합 4·5·8장(3건)", frag: "질문 메일을 쓰는 사람이에요", what: "직군 안 맞는 장면", layer: "input", fix: [], det: [], proof: "4종 작가 입력 불변 — 「가게·매장」 표지 검사만 추가(6-2)" },
+  { id: "L-7", src: "AM01-4종", sev: "객관", loc: "종합 4·7장(3건)", frag: "곳간에 차곡차곡", what: "금지 비유(수리가 넣음)", layer: "check", fix: [], det: ["farming"], proof: "기존 RURAL_PROP 검사(수리 뒤 검사로 잡힘)" },
+  { id: "L-8", src: "AM01-4종", sev: "객관", loc: "종합 8장 · 커리어 6장(3건)", frag: "올해 병오년의", what: "시점 말", layer: "check", fix: [], det: ["time_deictic"], proof: "기존 time_deictic" },
+  { id: "L-9", src: "AM01-4종", sev: "객관", loc: "종합 8장 등(3건)", frag: "세기로는 많은 사주라서", what: "비문", layer: "check", fix: [], det: [], proof: "판독으로만" },
+  { id: "L-10", src: "AM01-4종", sev: "객관", loc: "커리어 6장 · 궁합 3장(2건)", frag: "곧바로 합격이나 승진을 뜻하지는 않습니다", what: "장 안 면책", layer: "check", fix: [[E6, "noticeMeaning(뜻 기준)"]], det: ["notice_repeat"] },
+  { id: "L-11", src: "AM01-4종", sev: "객관", loc: "종합 8장 · 커리어 9장(2건)", frag: "이 로드맵에는 새로운 특성이 없습니다", what: "내부 라벨·작성 지시 노출", layer: "check", fix: [[E6, "META_TRACE 작성 지시"]], det: ["notice_repeat"] },
+  { id: "L-12", src: "AM01-4종", sev: "객관", loc: "종합 8장 · 커리어(2건)", frag: "꺼내게 되는 해예요", what: "확정 꼴", layer: "check", fix: [], det: [], proof: "4종 기존 검사 — 목록만" },
+  { id: "L-13", src: "AM01-4종", sev: "객관", loc: "종합 7장(1건)", frag: "표정 변화를 먼저 알아채고 반응하는 편", what: "책 안 모순", layer: "check", fix: [], det: [], proof: "판독으로만" },
+  { id: "L-14", src: "AM01-4종", sev: "객관", loc: "연애 9/9장", frag: "배우자 별 묶음(관성) 세기: 보통.", what: "결정론 대체본 발행(브리프 칸·명사형 조각·DB 규칙 원문)", layer: "check", fix: [[PL, "judgeBuild keys_filled 보류 · 임시본 즉시"]], det: [], proof: "6-1 발행 관문 시험(결정론 장 = 보류)" },
+  { id: "L-15", src: "AM01-4종", sev: "객관", loc: "p6e tidy(종합 1장)", frag: "세지도 약하지도 않은 가운데", what: "tidy 「중화」 바꾸기가 바로 뒤 문장과 겹침", layer: "check", fix: [[E6, "plainWords 중화"]], det: [], proof: "replay 표(6-2)" },
+  { id: "L-16", src: "AM01-4종", sev: "객관", loc: "p6c element_count", frag: "가장 센 기운", what: "브리프와 맞는 「가장 센 기운」 오탐", layer: "check", fix: [[C6, "element_count"]], det: [], proof: "replay 표(6-2)" },
+];
+
+/** 덕짱님 피드백 6가지(층별로 어디서 막는가). */
+export const FEEDBACK: readonly Defect[] = [
+  { id: "F-1", src: "피드백", sev: "피드백", loc: "책 전체", frag: "", what: "같은 문장·같은 뜻 연속", layer: "check", fix: [[C, "adjacentRepeats"], [PB, "남으면 뒤 문장 지움"]], det: ["rep_adjacent"] },
+  { id: "F-2", src: "피드백", sev: "피드백", loc: "책 전체", frag: "", what: "한 책 안 같은 처방 반복", layer: "card", fix: [[I, "할 일 씨앗 · 같은 십성 「앞과 다른 점」"], [C, "adviceRepeats(7묶음)"]], det: ["advice_repeat"] },
+  { id: "F-3", src: "피드백", sev: "피드백", loc: "장 첫 문장 · 달·해 본문", frag: "", what: "공식 같은 틀(장 첫 문장 소품, 달·해 4단 나열)", layer: "rule", fix: [[P, "장 첫 문장 · 핵심 하나 + 장면 하나 + 행동 하나"], [C, "opening_prop · domain_list"]], det: ["opening_prop", "domain_list"] },
+  { id: "F-4", src: "피드백", sev: "피드백", loc: "책 전체", frag: "", what: "사실·시점 오류", layer: "card", fix: [[I, "key 이름 · 신살 자리 · 관계 뜻"], [C, "key_value · seat_claim · rel_* · time_*"]], det: ["key_value", "seat_claim", "rel_verb", "rel_mix", "time_quote"] },
+  { id: "F-5", src: "피드백", sev: "피드백", loc: "책 전체", frag: "", what: "입력 밖 가정(주부·임원·후배·경험)", layer: "input", fix: [[K, "cleanSeed ROLE_PROP · HOMEMAKER · WORKPLACE"], [P, "입력 밖 직업·역할·경험 규칙"], [C, "past_premise · past_work · PARTNER_PREMISE"]], det: ["past_premise", "past_work"] },
+  { id: "F-6", src: "피드백", sev: "피드백", loc: "책 전체 · 화면", frag: "", what: "내부 흔적 노출", layer: "check", fix: [[C, "code_leak · meta_trace · briefCheck SLOT"], [E6, "META_TRACE"]], det: ["code_leak", "meta_trace"] },
+];

@@ -11,7 +11,7 @@ import { splitSentences } from "../safety/patterns";
 import type { ChunkFlag } from "./check";
 
 /** 앞 문장에 기대는 첫머리(repair3 LEANS와 같은 꼴 + 「그래서·그러니」). */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그래서|그러니|그러면|그렇다면|그럼|이 |그 )/;
+const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그래서|그러니|그러면|그렇다면|그럼|그다음은|이 조합|이 두|이 |그 )/;
 /** 답이 뒤따라야 서는 수사 물음(「…낯설죠.」「…일까요?」). */
 const ASKS = /([?？]|죠|지요|까요|나요|가요|ㄹ까|을까)[.!]?$/;
 const bare = (s: string) => s.replace(/[⟪⟫]/g, "").trim();
@@ -26,6 +26,7 @@ export function cutFlagged(chapters: readonly FinalChapter[], flags: readonly Ch
   for (const f of flags) {
     const c = out.find(x => x.n === f.chapter); if (!c || c.source === "deterministic") { missed.push(f); continue; }
     const s = c.sections[f.section]; if (!s) { missed.push(f); continue; }
+    if (f.paragraph < -1) { missed.push(f); continue; } // 문장 없는 깃발(반드시 쓸 것 · 빈 자리 · 표지)은 다시 쓰기로만.
     if (f.paragraph < 0) {
       if (c.keys?.includes(s.heading)) { missed.push(f); continue; }
       const to = headingFor(c.n, f.section);
