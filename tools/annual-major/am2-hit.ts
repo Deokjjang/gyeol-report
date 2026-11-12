@@ -10,7 +10,7 @@ import { factSheetFor, lintContext, writerKnowledge, briefFor } from "../../src/
 import type { FinalChapter } from "../../src/lib/writer/safety";
 import { lintBook } from "../../src/lib/writer/safety/p6c";
 import { bookNotice } from "../../src/lib/writer/safety/p6e";
-import { buildIntake } from "../../src/lib/writer/chunked/intake";
+import { buildIntake, WISH_MARK } from "../../src/lib/writer/chunked/intake";
 import { adjacentRepeats, adviceRepeats, blockFlags, briefCheck, crossRepeats, type ChunkFlag } from "../../src/lib/writer/chunked/check";
 import { blockCtxFor } from "../../src/lib/writer/chunked/publish";
 import { DEFECTS } from "./am2-3-defects";
@@ -28,7 +28,9 @@ const heads = new Set((brief.timeline?.entries ?? []).map(e => (e.head ?? "").re
 // 시스템 끝 안내는 지금 문구·옛 문구(모든 상품) 모두 뗀다(오탐 검토 major: 옛 기본 문구가 걸림).
 const notices = ["annual_fortune", "major_fortune", "saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"].map(bookNotice);
 const notice = bookNotice(brief.product);
-const clean = (t: string) => t.replace(/\(([一-鿿]+)\)/g, "").replace(/[一-鿿]+/g, "");
+// AM2-3 3-2: 발행 원고의 소망 인용은 렌더가 «바람» 표시를 고객 원문으로 바꾼 것이다 — 검사는 표시 꼴로 본다(작가가 원문을 고쳐 쓴 인용만 걸린다).
+const wishRendered = wish ? `«${wish}»` : "";
+const clean = (t: string) => (wishRendered ? t.split(wishRendered).join(WISH_MARK) : t).replace(/\(([一-鿿]+)\)/g, "").replace(/[一-鿿]+/g, "");
 const chapters: FinalChapter[] = snap.draft.chapters.map(ch => ({ n: ch.n, id: ch.id, title: ch.title, source: "writer", chars: 0, ...(ch.keys ? { keys: ch.keys } : {}),
   sections: ch.sections.map(s => ({ heading: s.heading, paragraphs: s.paragraphs.map(p => { let t = clean(p).replace(notice, ""); for (const nt of notices) t = t.replace(nt, ""); t = t.trim(); for (const h of heads) if (h && t.startsWith(h)) t = t.slice(h.length).trim(); return t; }).filter(Boolean) })) }));
 const flags: ChunkFlag[] = [...blockFlags(chapters, lintBook(chapters, lctx), blockCtxFor(brief, k, intake)), ...crossRepeats(chapters), ...adviceRepeats(chapters), ...adjacentRepeats(chapters, intake.lines.map(l => l.value))];
