@@ -13,8 +13,9 @@ import type { ChunkFlag } from "./check";
 /** 앞 문장에 기대는 첫머리(repair3 LEANS와 같은 꼴 + 「그래서·그러니」). */
 /** AM2-4 5부(P3 판독 annual-1 차단 #2 — 「오르는 달에는 넓히고, 흔들리는 달에는…」만 남은 고아): 지운 문장의 목록을 가리키는 말(「오르는 달·흔들리는 달·그 달들」)도 기대는 첫머리. */
 const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그래서|그러니|그러면|그렇다면|그럼|그다음은|이 조합|이 두|이 |그 |오르는 달|흔들리는 달|늦출 달|그 달들|이 달들|그 두 달|이 두 달|이 네 달|그 네 달|그 세 달|이 세 달|그때마다)/;
-/** 답이 뒤따라야 서는 수사 물음(「…낯설죠.」「…일까요?」). */
-const ASKS = /([?？]|죠|지요|까요|나요|가요|ㄹ까|을까)[.!]?$/;
+/** 답이 뒤따라야 서는 수사 물음(「…낯설죠.」「…일까요?」).
+ *  AM2-4: 물음표 없는 「…나요.」「…가요.」는 서술이다(「어긋나요」「만나요」「드러나요」 — 뒤 문장을 지울 때 함께 지워지던 오탐). */
+const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
 const bare = (s: string) => s.replace(/[⟪⟫]/g, "").trim();
 
 export type Cut = { readonly at: string; readonly rule: string; readonly sentence: string; readonly why: "flagged" | "leans" | "question" | "orphan" };
@@ -66,4 +67,27 @@ export function cutFlagged(chapters: readonly FinalChapter[], flags: readonly Ch
     return { ...c, sections };
   });
   return { chapters: result, cut, headings, emptyKeys, droppedSections, missed };
+}
+
+/**
+ * AM2-4 P4 세운 자동 점검(2028년 1월 · 계축월): 되풀이로 지운 문장이 그 key의 「반드시 쓸 것」을 지닌 유일한 문장이었다 → 핵심 누락(차단)이 새로 생겼다.
+ * 되풀이는 경미, 빠진 핵심은 차단이다. 그래서 차단 아닌 지우기(되풀이·화면 되풀이)가 새로 빠뜨린 핵심 자리마다, 그 자리를 되살리는 문장 하나를 지우지 않고 남긴다(남긴 문장은 부르는 쪽이 허용 기록).
+ * - missing(chs): 그 원고에서 「반드시 쓸 것」이 빠진 자리(`장|소제목`). hard: 차단 결함 깃발(사실 오류 등 — 핵심이 빠지더라도 지운다).
+ * - 한 문장에 깃발이 여럿이면 함께 남긴다(같은 장·소제목·문단·문장).
+ */
+export function spareMustCuts(chapters: readonly FinalChapter[], flags: readonly ChunkFlag[], hard: ReadonlySet<ChunkFlag>, headingFor: (chapter: number, section: number) => string | null, missing: (chs: readonly FinalChapter[]) => ReadonlySet<string>): { r: ReturnType<typeof cutFlagged>; kept: ChunkFlag[] } {
+  const keyOf = (f: ChunkFlag) => `${f.chapter}|${chapters.find(c => c.n === f.chapter)?.sections[f.section]?.heading ?? ""}`;
+  const same = (f: ChunkFlag) => (g: ChunkFlag) => !hard.has(g) && g.chapter === f.chapter && g.section === f.section && g.paragraph === f.paragraph && bare(g.sentence) === bare(f.sentence);
+  const r0 = cutFlagged(chapters, flags, headingFor), before = missing(chapters);
+  const lost = [...missing(r0.chapters)].filter(k => !before.has(k));
+  if (!lost.length) return { r: r0, kept: [] };
+  const kept: ChunkFlag[] = [];
+  const rest = (extra: readonly ChunkFlag[]) => flags.filter(g => !kept.includes(g) && !extra.includes(g));
+  for (const k of lost) {
+    for (const f of flags.filter(g => !hard.has(g) && !kept.includes(g) && g.paragraph >= 0 && keyOf(g) === k)) {
+      const group = flags.filter(same(f));
+      if (!missing(cutFlagged(chapters, rest(group), headingFor).chapters).has(k)) { kept.push(...group); break; }
+    }
+  }
+  return { r: kept.length ? cutFlagged(chapters, rest([]), headingFor) : r0, kept };
 }

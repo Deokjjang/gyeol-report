@@ -7,6 +7,7 @@ import { coreLine, coreOf, coreRowLine, relFlow, TEN_GOD_SHORT } from "@/lib/bri
 import { allocateChapters, rxKindsOf, rxOfSentence } from "@/lib/brief/prescriptions";
 import { annotateChapter } from "@/lib/writer/render";
 import { stripHanja } from "@/lib/writer/safety/p6e";
+import { spareMustCuts } from "@/lib/writer/chunked/cut";
 import { am24Flags, blockFlags, cardEngineIssues, endingCaps, rxRepeats } from "@/lib/writer/chunked/check";
 import { blockCtxFor } from "@/lib/writer/chunked/publish";
 import { chunkRules, ruleCtxOf } from "@/lib/writer/chunked/prompt";
@@ -134,5 +135,30 @@ describe("AM2-4 5부 결정론 검사(P3 판독 꼴)", () => {
     expect(rxRepeats([ch(other.n, other.id, [sample[keyKind]])], intake).map(f => f.rule)).toContain("rx_repeat");
     const same = Array.from({ length: 6 }, (_, i) => `${i}번째 장면을 천천히 떠올려 보세요.`);
     expect(endingCaps([ch(1, "big", same)]).length).toBeGreaterThan(0);
+  });
+});
+
+describe("AM2-4 9부 P4 세운 자동 점검", () => {
+  it("되풀이(경미)로 지우다 key의 「반드시 쓸 것」을 지닌 유일한 문장이 빠지면 그 문장은 남긴다 — 차단 결함 문장은 그대로 지운다", () => {
+    const chapters: FinalChapter[] = [
+      { n: 7, id: "month", title: "t", source: "writer", chars: 0, keys: ["2027-M12"], sections: [{ heading: "2027-M12", paragraphs: ["축진파가 태어난 달 자리와 어긋나요. 이 시기가 속한 대운도 정인의 10년이라 배움이 한 겹 더 쌓여요. 틀린 사실 문장입니다."] }] },
+      { n: 8, id: "do", title: "t", source: "writer", chars: 0, sections: [{ heading: "할 것", paragraphs: ["이 시기가 속한 대운도 정인의 10년이라 배움이 쌓여요. 다른 문장이 남습니다."] }] },
+    ];
+    const flag = (rule: string, sentence: string) => ({ chapter: 7, section: 0, paragraph: 0, rule, sentence });
+    const rep = flag("chapter_repeat", "이 시기가 속한 대운도 정인의 10년이라 배움이 한 겹 더 쌓여요."), rx = flag("rx_repeat", rep.sentence), bad = flag("key_value", "틀린 사실 문장입니다.");
+    const missing = (chs: readonly FinalChapter[]) => new Set(chs.filter(c => c.n === 7 && !c.sections[0].paragraphs.join(" ").includes("대운")).map(() => "7|2027-M12"));
+    // 물음표 없는 「어긋나요.」는 서술 — 뒤 문장을 지워도 남는다(수사 물음 오탐 고침).
+    const { r, kept } = spareMustCuts(chapters, [rep, rx, bad], new Set([bad]), () => null, missing);
+    expect(kept).toEqual([rep, rx]);
+    expect(r.chapters[0].sections[0].paragraphs[0]).toBe("축진파가 태어난 달 자리와 어긋나요. 이 시기가 속한 대운도 정인의 10년이라 배움이 한 겹 더 쌓여요.");
+    // 핵심이 빠지지 않으면 되풀이는 그대로 지운다.
+    const none = spareMustCuts(chapters, [rep, bad], new Set([bad]), () => null, () => new Set());
+    expect(none.kept).toEqual([]);
+    expect(none.r.chapters[0].sections[0].paragraphs[0]).toBe("축진파가 태어난 달 자리와 어긋나요.");
+    // 차단 결함 문장이 유일한 핵심 문장이면 지운다(핵심 누락은 차단으로 남아 보고된다).
+    const hardOnly = spareMustCuts(chapters, [flag("key_value", rep.sentence)], new Set<ReturnType<typeof flag>>(), () => null, missing);
+    expect(hardOnly.kept.length).toBe(1);
+    const hardSet = [flag("key_value", rep.sentence)];
+    expect(spareMustCuts(chapters, hardSet, new Set(hardSet), () => null, missing).kept).toEqual([]);
   });
 });

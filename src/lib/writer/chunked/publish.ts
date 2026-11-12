@@ -21,7 +21,7 @@ import { HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/
 import { dayunPhase } from "../safety/lint";
 import { briefFor, briefHash, chooseCover, coverIssue, factSheetFor, insertFixedLines, kstDate, lintContext, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
 import { adjacentRepeats, adviceRepeats, blockFlags, briefCheck, crossRepeats, CUT_ONLY_RULES, endingCaps, NO_SENTENCE_RULES, PIGGYBACK_RULES, rxRepeats, styleScoreOf, type BlockCtx, type BriefCtx, type ChunkFlag } from "./check";
-import { cutFlagged } from "./cut";
+import { spareMustCuts } from "./cut";
 import { splitSentences } from "../safety/patterns";
 import { buildIntake, WISH_MARK, type Intake } from "./intake";
 import { chunkPlan, chunkRules, CHUNK_PROMPT_VERSION, renderCard, ruleCtxOf, type Chunk } from "./prompt";
@@ -178,10 +178,15 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   //    그래서 key·장이 비면 그 묶음만 한 번 더 다시 쓴다(덕짱님 결정 2026-11-12 「그 묶음 1회 더 → 그래도 비면 보류」). 그래도 비면 채움 표시 → 발행 관문이 보류한다.
   const headingFor = (n: number, si: number) => intake.chapters.find(c => c.n === n)?.sections?.[si]?.q ?? null;
   const droppedLeft: string[] = [];
+  const keptForMust = new Set<string>();
+  const mustMissing = (chs: readonly FinalChapter[]) => new Set(inspect(chs).block.filter(f => f.rule === "must_miss").map(f => `${f.chapter}|${chs.find(c => c.n === f.chapter)?.sections[f.section]?.heading ?? ""}`));
   const cutAll = () => {
     // 이웃 문장 되풀이(같은 문장·같은 뜻 연속)는 다시 쓰기 뒤에도 남으면 뒤 문장을 지운다(뜻이 앞 문장에 있으니 지워도 빈자리가 없다).
     const verbatim = [...crossRepeats(cur.chapters).filter(f => /같은 구절|거의 같은 문장/.test(f.detail ?? "")), ...rxRepeats(cur.chapters, intake)];
-    const r = cutFlagged(cur.chapters, [...cuttable(seen.block), ...seen.cutOnly, ...adjacentRepeats(cur.chapters, cardValues), ...verbatim], headingFor);
+    // 되풀이(경미)를 지우다 그 key의 「반드시 쓸 것」이 빠지면(차단) 그 문장은 남긴다(AM2-4 P4 세운 자동 점검 — spareMustCuts).
+    const hard = cuttable(seen.block);
+    const { r, kept } = spareMustCuts(cur.chapters, [...hard, ...seen.cutOnly, ...adjacentRepeats(cur.chapters, cardValues), ...verbatim], new Set(hard), headingFor, mustMissing);
+    for (const f of kept) keptForMust.add(normS(f.sentence));
     const after = inspect(r.chapters), bad = new Set(cuttable(after.block).filter(f => f.paragraph >= 0).map(f => `${f.chapter}.${f.section}.${f.paragraph}`));
     const badHead = new Set(cuttable(after.block).filter(f => f.paragraph < 0).map(f => `${f.chapter}.${f.section}`));
     const chs = r.chapters.map(c => ({ ...c, sections: c.sections.flatMap((sec, si) => {
@@ -237,8 +242,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const disposition = [...ledger].map(([k2, v]) => {
     const ns = normS(v.sentence), still = finalFlags.has(k2);
     const how: "rewrite" | "delete" | "allow" | "none" = v.rule === "cover" ? (cover.issue === null || cover.source === "fallback" ? "rewrite" : "none")
-      : cutSet.has(ns) && !finalText.has(ns) ? "delete" : !still ? "rewrite" : ALLOW_RULES.has(v.rule) ? "allow" : "none";
-    return { ...v, how, ...(how === "allow" ? { why: ALLOW_WHY[v.rule] ?? "문체 상한(허용 기록)" } : {}) }; });
+      : cutSet.has(ns) && !finalText.has(ns) ? "delete" : !still ? "rewrite" : ALLOW_RULES.has(v.rule) || keptForMust.has(ns) ? "allow" : "none";
+    return { ...v, how, ...(how === "allow" ? { why: keptForMust.has(ns) ? "그 key의 「반드시 쓸 것」을 지닌 유일한 문장 — 되풀이(경미)를 지우면 핵심이 빠진다(차단)" : ALLOW_WHY[v.rule] ?? "문체 상한(허용 기록)" } : {}) }; });
   const dispCount = disposition.reduce<Record<string, number>>((o, d2) => ({ ...o, [d2.how]: (o[d2.how] ?? 0) + 1 }), {});
   const review: Record<string, unknown> = {
     mode: "chunked", version: CHUNK_PROMPT_VERSION, model: null, calls: 0, skipped: "chunked_no_review",
