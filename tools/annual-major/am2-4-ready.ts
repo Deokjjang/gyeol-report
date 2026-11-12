@@ -21,7 +21,7 @@ for (let i = 0, ok = 0; ok < N; i++) {
   if (r0.ok) continue;
   uncertain++;
   const r = dayunReadiness(p.person as never);
-  if (!r.ok && r.code === "DAYUN_NEED_SLOT") { needSlot++; for (const s of r.slots) { slotTotal++; if (calculateCustomerDayun({ ...(p.person as never), birthTime: "", birthTimeUnknown: false, approximateBirthTimeSlot: s.value } as never).ok) slotOk++; } }
+  if (!r.ok && r.code === "DAYUN_NEED_SLOT") { needSlot++; for (const s of r.slots) { slotTotal++; if (calculateCustomerDayun({ ...p.person, birthTime: "", birthTimeUnknown: false, approximateBirthTimeSlot: s.value } as never).ok) slotOk++; } }
   if (!r.ok && r.code === "DAYUN_UNDETERMINABLE") blocked++;
   const n = normalizeReportInputPayload(p as never, { now: () => new Date("2026-12-02T03:00:00Z") }); if (!n.ok) paidReject++;
   const ap = randomPayload(i, "annual_fortune", 7) as { person: Record<string, unknown> };

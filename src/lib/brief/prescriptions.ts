@@ -30,7 +30,8 @@ export const rxKindOf = (text: string): RxKind | null => RX.find(([, re]) => re.
 export const rxKindsOf = (text: string): RxKind[] => RX.filter(([, re]) => re.test(text)).map(([kd]) => kd);
 /** 본문에서 처방으로 세는 문장 꼴(권유·명령·「…는 장면」). 설명 문장(「쉬는 시간이 등불을 오래 켜 둡니다」)은 세지 않는다. */
 export const ADVICE_FORM = /(세요|봐요|두세요|해 두면|하면 좋|편이 좋|게 좋아요|면 충분|는 장면|기 좋은 (때|날|달|해)|해 보기|보세요)[^.?!]{0,8}[.!?]?$/;
-export const rxOfSentence = (sen: string): RxKind[] => (ADVICE_FORM.test(sen.trim()) ? rxKindsOf(sen) : []);
+/** 비유 마디(「적금 자동이체처럼,」)의 낱말은 처방으로 세지 않는다. */
+export const rxOfSentence = (sen: string): RxKind[] => (ADVICE_FORM.test(sen.trim()) ? rxKindsOf(sen.replace(/[^,.?!]{0,24}처럼[, ]\s*/g, "")) : []);
 
 /** 장마다 고를 처방 종류(앞에서부터, 아직 안 쓴 것). 장 질문에 맞는 행동 하나. */
 export const CHAPTER_RX: Readonly<Record<string, readonly RxKind[]>> = {

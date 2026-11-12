@@ -12,7 +12,7 @@ import type { EarthlyBranch, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/t
 import type { ChartBrief, Material, TimelineEntry } from "../schema";
 import type { ElementState } from "../chart";
 import { deepLines, type Knowledge } from "../knowledge";
-import { ELEMENT_KO, FLOW_WORD, TEN_GOD_GROUP } from "../labels";
+import { ELEMENT_KO, FLOW_WORD, josa, TEN_GOD_GROUP } from "../labels";
 import { relationLine, yearRelationCard, type YearRelationCard } from "../yearRelation";
 import type { Rng } from "../seed";
 
@@ -80,7 +80,8 @@ export function samjaeOf(personYearBranch: EarthlyBranch, targetBranch: EarthlyB
 export function luckyOf(st: ElementState, strongest: FiveElement): { element: FiveElement; name: string; colors: readonly string[]; direction: string; numbers: readonly number[]; places: readonly string[]; why: string } {
   const element = (st.missing[0] ?? st.lacking[0] ?? GEN[strongest]) as FiveElement;
   const t = (extra.lucky as Record<FiveElement, { colors: string[]; direction: string; numbers: number[]; places: string[] }>)[element];
-  const why = st.missing[0] ? `원국에 ${ELEMENT_KO[element]}이 없어 채워 주는 쪽` : st.lacking[0] ? `원국에서 ${ELEMENT_KO[element]}이 가장 약해 보태 주는 쪽` : `가장 강한 ${ELEMENT_KO[strongest]}의 힘을 흘려보내는 쪽(${ELEMENT_KO[element]})`;
+  // AM2-4(P3 판독 annual-1 경계 #17 「쇠(금)이」): 조사는 괄호 앞말 받침으로(josa).
+  const why = st.missing[0] ? `원국에 ${josa(ELEMENT_KO[element], "이가")} 없어 채워 주는 쪽` : st.lacking[0] ? `원국에서 ${josa(ELEMENT_KO[element], "이가")} 가장 약해 보태 주는 쪽` : `가장 강한 ${ELEMENT_KO[strongest]}의 힘을 흘려보내는 쪽(${ELEMENT_KO[element]})`;
   return { element, name: ELEMENT_KO[element], ...t, why };
 }
 

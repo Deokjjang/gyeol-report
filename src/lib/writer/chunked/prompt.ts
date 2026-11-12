@@ -153,7 +153,9 @@ function chapterText(c: ChapterPlan, product: Intake["product"]): string {
 /** 이 책의 묶음 공통 접두부(인물 카드 · 근거 카드 · 짝 · 설계도). */
 export function renderCard(x: Intake): string {
   const groups = (Object.keys(SUBJECT_KO) as (keyof typeof SUBJECT_KO)[]).map(s => {
-    const ls = x.lines.filter(l => l.subject === s);
+    // AM2-4 2부: 어느 장·짝도 쓰지 않는 줄(설계도에서 솎은 달 목록 · 「살필 거리」 · 바탕 줄)은 작가에게 보이지 않는다.
+    const paired = new Set(x.pairs.flatMap(p => [p.myeongri, p.mbti]));
+    const ls = x.lines.filter(l => l.subject === s && (l.use.length || paired.has(l.id)));
     return ls.length ? `## ${SUBJECT_KO[s]}\n${ls.map(lineText).join("\n")}` : "";
   }).filter(Boolean);
   return [

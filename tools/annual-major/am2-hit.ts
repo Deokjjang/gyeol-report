@@ -11,9 +11,11 @@ import type { FinalChapter } from "../../src/lib/writer/safety";
 import { lintBook } from "../../src/lib/writer/safety/p6c";
 import { bookNotice } from "../../src/lib/writer/safety/p6e";
 import { buildIntake, WISH_MARK } from "../../src/lib/writer/chunked/intake";
-import { adjacentRepeats, adviceRepeats, blockFlags, briefCheck, crossRepeats, type ChunkFlag } from "../../src/lib/writer/chunked/check";
+import { adjacentRepeats, adviceRepeats, blockFlags, briefCheck, crossRepeats, endingCaps, rxRepeats, type ChunkFlag } from "../../src/lib/writer/chunked/check";
 import { blockCtxFor } from "../../src/lib/writer/chunked/publish";
-import { DEFECTS } from "./am2-3-defects";
+import { DEFECTS as DEFECTS3 } from "./am2-3-defects";
+import { DEFECTS4 } from "./am2-4-defects";
+const DEFECTS = [...DEFECTS3, ...DEFECTS4] as readonly { id: string; src: string; sev: string; loc: string; frag: string; what: string; det: readonly string[] }[];
 
 const argv = process.argv.slice(2), file = argv[0];
 const src = argv.includes("--src") ? argv[argv.indexOf("--src") + 1] : undefined, out = argv.includes("--flags") ? argv[argv.indexOf("--flags") + 1] : undefined;
@@ -33,7 +35,7 @@ const wishRendered = wish ? `«${wish}»` : "";
 const clean = (t: string) => (wishRendered ? t.split(wishRendered).join(WISH_MARK) : t).replace(/\(([一-鿿]+)\)/g, "").replace(/[一-鿿]+/g, "");
 const chapters: FinalChapter[] = snap.draft.chapters.map(ch => ({ n: ch.n, id: ch.id, title: ch.title, source: "writer", chars: 0, ...(ch.keys ? { keys: ch.keys } : {}),
   sections: ch.sections.map(s => ({ heading: s.heading, paragraphs: s.paragraphs.map(p => { let t = clean(p).replace(notice, ""); for (const nt of notices) t = t.replace(nt, ""); t = t.trim(); for (const h of heads) if (h && t.startsWith(h)) t = t.slice(h.length).trim(); return t; }).filter(Boolean) })) }));
-const flags: ChunkFlag[] = [...blockFlags(chapters, lintBook(chapters, lctx), blockCtxFor(brief, k, intake)), ...crossRepeats(chapters), ...adviceRepeats(chapters), ...adjacentRepeats(chapters, intake.lines.map(l => l.value))];
+const flags: ChunkFlag[] = [...blockFlags(chapters, lintBook(chapters, lctx), blockCtxFor(brief, k, intake)), ...crossRepeats(chapters), ...adviceRepeats(chapters), ...rxRepeats(chapters, intake), ...endingCaps(chapters), ...adjacentRepeats(chapters, intake.lines.map(l => l.value))];
 // 화면 카드(저장된 값).
 const cards = (snap.draft as unknown as { timeline?: { cards?: Record<string, unknown>[] } }).timeline?.cards ?? [];
 const screen = cards.flatMap(c => ["label", "imageLine", "todo", "review", "caution", "good"].filter(f => typeof c[f] === "string" && c[f]).map(f => ({ where: `${c.key} ${f}`, text: String(c[f]) })));
@@ -48,11 +50,17 @@ if (src) {
       : (() => { const at = chapters.flatMap(ch => ch.sections.flatMap((sx, si) => sx.paragraphs.map((p, pi) => ({ n: ch.n, si, pi, t: norm(p), h: norm(sx.heading) })))).find(z => f && (z.t.includes(f) || z.h.includes(f)));
           return flags.filter(x => f && (norm(x.sentence).includes(f) || (norm(x.sentence).length >= 8 && f.includes(norm(x.sentence))) || (at && /domain_list|must_miss/.test(x.rule) && x.chapter === at.n && x.section === at.si && x.paragraph === at.pi))).map(x => x.rule); })();
     const want = d.det.length > 0; if (want) { detN++; if (hits.length) detHit++; }
-    console.log(`| ${d.id} | ${d.sev} | ${want ? (hits.length ? "적중" : "놓침") : "근원"} | ${[...new Set(hits)].join("·") || "—"} | ${d.what} |`);
+    const expected = d.det.filter(r => hits.includes(r));
+    console.log(`| ${d.id} | ${d.sev} | ${want ? (hits.length ? "적중" : "놓침") : "근원"} | ${[...new Set(hits)].join("·") || "—"}${want && !expected.length && hits.length ? ` (기대 ${d.det.join("·")})` : ""} | ${d.what} |`);
   }
   console.log(`결정론으로 잡을 꼴 ${detN} 가운데 적중 ${detHit}`);
 }
-const lines = flags.map(x => `${x.rule}\t${x.chapter}.${x.section}.${x.paragraph}\t${x.detail ?? ""}\t${x.sentence.slice(0, 200)}`);
+// --ctx: 오탐 검토용 문맥(문단 글 · key면 설계도 핵심·화면 사실).
+const ctx = argv.includes("--ctx");
+const keyPlans = new Map(intake.chapters.flatMap(c => (c.keys ?? []).map(kp => [kp.key, kp] as const)));
+const ctxOf = (x: ChunkFlag) => { const ch = chapters.find(c => c.n === x.chapter), sec = ch?.sections[x.section]; const para = x.paragraph >= 0 ? sec?.paragraphs[x.paragraph] ?? "" : sec?.heading ?? ""; const kp = sec && ch?.keys?.includes(sec.heading) ? keyPlans.get(sec.heading) : undefined;
+  return `${para.replace(/\s+/g, " ").slice(0, 500)}${kp ? ` ⟦${kp.label} 핵심: ${(kp.core ?? []).join("/")} · 화면: ${(kp.screen ?? []).join(" · ")}⟧` : ""}`; };
+const lines = flags.map(x => `${x.rule}\t${x.chapter}.${x.section}.${x.paragraph}\t${x.detail ?? ""}\t${x.sentence.slice(0, 200)}${ctx ? `\t${ctxOf(x)}` : ""}`);
 if (out) writeFileSync(out, [...lines, ...screenIssues.map(v => `screen\t${v.where}\t\t${v.text}`)].join("\n"));
 const by = flags.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
 console.log(`깃발 ${flags.length} ${JSON.stringify(by)} · 화면 ${screenIssues.length}`);

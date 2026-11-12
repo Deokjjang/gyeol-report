@@ -138,6 +138,9 @@ export function say(raw: string, year?: number): string {
     .replace(/흐름 세기 ([1-5])\/5/g, (_m, n: string) => FLOW_DESC[Number(n)])
     .replace(/(?<=\d)\/(?=\d)/g, "⁄").replace(/\s*(→|⇒|\/|×)\s*/g, " · ").replace(/⁄/g, "/").replace(/(?<=[.·] |^)그림: /g, "").replace(/쓸 거리: /g, "살릴 점: ").replace(/살필 거리: /g, "살필 점: ").replace(/\s*·\s*·\s*/g, " · ").replace(/^고객이 /, "").replace(/\s+/g, " ").trim();
   t = ARROW_KO(untime(t.replace(/하루 두기/g, "하루 묵혀 두기"), year));
+  // AM2-4 3부 카드 값 고객 말: 「화국(반쯤)」 → 「화국 반합」, 「새 대운(대운)」 → 「새 대운」, 「쇠 (태어난 달·태어난 시각) —」 → 「태어난 달·시각 자리의 쇠 —」.
+  t = t.replace(/([가-힣]{2,4})\(반쯤\)/g, "$1 반합").replace(/새 대운\(대운\)/g, "새 대운")
+    .replace(/(?<![가-힣])([가-힣]{1,6}) \((태어난 (?:해|달|날|시각)(?:·태어난 (?:해|달|날|시각))*)\)/g, (_m, nm: string, seats: string) => `${seats.split("·").length > 1 ? `태어난 ${seats.split("·").map(x => x.replace(/^태어난 /, "")).join("·")}` : seats} 자리의 ${nm}`);
   // 고전 풀이를 옮기지 않는다는 편집 문장(지식 DB 숙제 줄)은 뺀다.
   if (/고전|그렇게 옮기지 않/.test(t)) t = t.split(/(?<=[.!?])\s+/).filter(x => !/고전|그렇게 옮기지 않/.test(x)).join(" ");
   // 농사·시골 비유 문장은 뺀다(작가 규칙이 금지하는 비유를 브리프가 주면 작가가 옮긴다).
@@ -235,7 +238,8 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const general = (x: string) => x.split(/(?<=[.!?])\s+/).filter(y => !/(일주|월주|연주|시주|일지|월지|연지|시지)에 (있을 때|있으면|오면|놓이면)/.test(y)).join(" ");
     // AM2-4 3부: 괄호 값(「백호대살(태어난 달 · 임술)」)을 고객 말로 — 「태어난 달 자리의 백호대살」. 십이운성 한 글자 이름은 한자 표시(쇠(衰)).
     void ganji;
-    const nm = /^twelveStage/.test(t.featureId) && STAGE_HANJA[t.name] ? `${t.name}${STAGE_MARK}` : t.name;
+    const baseName = t.name.replace(/\(.*\)$/, "").trim();
+    const nm = /^twelveStage/.test(t.featureId) && STAGE_HANJA[baseName] ? `${baseName}${STAGE_MARK}` : t.name;
     const id = add("natal", `${seat ? `${seat} 자리의 ` : ""}${nm}`, [t.meaning, t.forYou, ...t.good, t.overuse ?? ""].filter(Boolean).map(general).filter(Boolean).join(" · "));
     if (id) traitId.set(t.id, id);
   }
@@ -339,9 +343,10 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     });
     const scenes = (cb?.sceneHint ?? []).map(h => cleanSeed(say(h, year), sc)).filter((h): h is string => Boolean(h) && sceneFits(h!, brief)).map(h => seedOnce(h)).filter((h): h is string => Boolean(h)).slice(0, 2);
     // 2-1 근거가 없는 절(입력으로 근거가 다 걸러진 절 — 솔로·직업 미입력 등)은 질문을 내지 않는다. 장이 다 비면 바탕 줄 하나로(대운이 없는 책의 앞 장 종합 등).
-    const kept = sections.filter(sx => sx.lines.length);
+    // AM2-4 7부: 엔진이 대운을 정하지 못한 세운 책(시각 미상 — 대운은 입력 단계에서 막고 세운을 권한다)에서는 대운을 묻는 절을 내지 않는다(근거 없는 질문 금지).
+    const kept = sections.filter(sx => sx.lines.length && !(product === "annual_fortune" && !brief.chart.currentDayun && /대운/.test(sx.q)));
     const finalSections = kept.length ? kept : sections.slice(0, 1).map(sx => ({ ...sx, lines: natalBase.slice(0, 2) }));
-    if (finalSections.length < sections.length) droppedPlan.push(...sections.filter(sx => !sx.lines.length).map(sx => `${ch.n}장 「${sx.q}」`));
+    if (finalSections.length < sections.length) droppedPlan.push(...sections.filter(sx => !finalSections.includes(sx)).map(sx => `${ch.n}장 「${sx.q}」`));
     // AM2-4 7부: 대운을 정할 수 없는 세운 책(시각 미상)의 10장은 대운 자리를 묻지 않는다(근거 없는 질문 금지).
     const question = product === "annual_fortune" && ch.id === "next" && !brief.chart.currentDayun ? `${year}년을 지나며 붙잡을 한 가지는?` : ch.question;
     return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(question, year), target: retarget(ch.id, finalSections, ch.targetChars), useName: ch.useName, sections: finalSections, claims: [...new Set(finalSections.flatMap(s => s.claims))], avoid: [], ...(scenes.length ? { scenes } : {}) };
