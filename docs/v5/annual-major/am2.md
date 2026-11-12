@@ -1441,7 +1441,7 @@ AM2-3에서 통과했다가 이번에 실패한 사례는 5개다.
 | bd4f5010 | 4부 시험: `release:check`에 `typecheck:all` |
 | d639c439 | 6부 세운 자동 점검 → 대운 전: 연애 줄 버그 · 바람 원문 한 번 · 고리 줄은 재료 |
 | 658c20da | 6부 P5 실호출 비용 원장 52줄 · 판독용 카드 도구 |
-| (이 커밋) | 이 보고(15절)(원격 `origin/v5/annual-major-02`에 push) |
+| 5dca5590 | 이 보고(15절)(원격 `origin/v5/annual-major-02`에 push) |
 | 그다음 | 이 줄(원격 SHA 적기) |
 
 - 배포 · 운영 DB 쓰기 · 운영 환경변수 변경 · migration 적용은 없다. 운영 설정은 Vercel `WRITER_V5_PRODUCTS`를 읽기만 했다. master · v5/main 병합도 없다.
