@@ -1,6 +1,7 @@
 /**
  * AM2-3 7부 화면 확인(로컬 dev 서버 tools/annual-major/dev-local.ts + review-seed.ts로 심은 책, 외부 호출 0).
- *   PLAYWRIGHT=<playwright index.mjs> node tools/annual-major/am2-screens.mjs <out-dir> <case> [case ...]
+ *   PLAYWRIGHT=<playwright index.mjs> [ENGINE=webkit] node tools/annual-major/am2-screens.mjs <out-dir> <case> [case ...]
+ * ENGINE=webkit: WebKit(사파리 엔진) + iPhone 13 기기 값(390×664 · 3배 · 터치)으로 찍는다 — 파일 이름 끝에 -webkit. 실기기 확인을 대신하지는 않는다.
  * 실제 독자 화면(/reports/<id>, 390×844, 2배)을 넘기며 새 쪽(흐름표 · 달 카드 · 평생 대운 지도 · 10년표 · 해 카드)을 밝은 화면·다크 화면으로 한 장씩 찍고,
  * 글자와 바탕의 대비(WCAG, 4.5:1 이상)를 쪽 안 모든 글자 요소에서 잰다(가로 넘침도). 결과: <out-dir>/<case>-<쪽>-<light|dark>.png + contrast.json.
  */
@@ -8,7 +9,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join, resolve } from "node:path";
 
-const { chromium } = await import(process.env.PLAYWRIGHT ?? "playwright");
+const pw = await import(process.env.PLAYWRIGHT ?? "playwright"), ENGINE = process.env.ENGINE === "webkit" ? "webkit" : "chromium";
 const ROOT = resolve(import.meta.dirname, "../..");
 const dev = JSON.parse(readFileSync(join(ROOT, ".cache", "am-dev.json"), "utf8"));
 if (!/^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(dev.base)) throw new Error("로컬 서버만");
@@ -16,11 +17,12 @@ const state = JSON.parse(readFileSync(join(homedir(), "Desktop", "gyeol-review",
 const [outDir, ...cases] = process.argv.slice(2);
 mkdirSync(outDir, { recursive: true });
 const WANT = { flowTable: "flow-table", periodCard: "card", decadeTable: "decade-table", lifetime: "lifetime" };
-const browser = await chromium.launch();
+const browser = await pw[ENGINE].launch();
+const device = ENGINE === "webkit" ? pw.devices["iPhone 13"] : { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 };
 const storage = join(ROOT, ".cache", "am-review-storage.json");
 const report = {};
 for (const scheme of ["light", "dark"]) {
-  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: "ko-KR", timezoneId: "Asia/Seoul", colorScheme: scheme, ...(existsSync(storage) ? { storageState: storage } : {}) });
+  const ctx = await browser.newContext({ ...device, locale: "ko-KR", timezoneId: "Asia/Seoul", colorScheme: scheme, ...(existsSync(storage) ? { storageState: storage } : {}) });
   await ctx.addInitScript(() => { try { localStorage.setItem("gyeol-meta-card-seen:notice-20261109-optout", "1"); sessionStorage.setItem("gyeol-meta-card-later", "1"); } catch { /* 캡처 전용 */ }
     document.addEventListener("DOMContentLoaded", () => { const st = document.createElement("style"); st.textContent = "nextjs-portal{display:none!important}"; document.head.appendChild(st); }); });
   const page = await ctx.newPage();
@@ -42,7 +44,7 @@ for (const scheme of ["light", "dark"]) {
         if (await later.count() && await later.first().isVisible()) { await later.first().click(); await page.waitForTimeout(300); }
         await page.evaluate(() => document.querySelectorAll("[data-am] details").forEach(d => d.setAttribute("open", "")));
         await page.waitForTimeout(400);
-        const name = `${c}-${WANT[kind]}${isCard ? cardShots : ""}-${scheme}`;
+        const name = `${c}-${WANT[kind]}${isCard ? cardShots : ""}-${scheme}${ENGINE === "webkit" ? "-webkit" : ""}`;
         await page.screenshot({ path: join(outDir, `${name}.png`), fullPage: false });
         // 쪽 안 전체 높이(스크롤 영역)도 한 장.
         const region = page.locator("[role=region][data-page]").first();
@@ -75,5 +77,5 @@ for (const scheme of ["light", "dark"]) {
   await ctx.close();
 }
 await browser.close();
-writeFileSync(join(outDir, "contrast.json"), JSON.stringify(report, null, 1));
+writeFileSync(join(outDir, ENGINE === "webkit" ? "contrast-webkit.json" : "contrast.json"), JSON.stringify(report, null, 1));
 console.log(JSON.stringify(Object.fromEntries(Object.entries(report).map(([k, v]) => [k, `${v.worst}${v.below.length ? ` 낮음 ${v.below.length}` : ""}${v.horizontalOverflow ? " 가로넘침" : ""}`])), null, 1));

@@ -65,7 +65,8 @@ async function main() {
       if (S.cap - spentNow < need && !argv.includes("--mock")) { console.error(`예산 여유 부족: 남은 $${(S.cap - spentNow).toFixed(4)} < 병렬 대기 최악 $${need.toFixed(2)} — ${c.id} 시작하지 않고 멈춘다(덕짱님 확인)`); process.exit(3); } }
     const at = "2026-12-02T03:00:00.000Z";
     // --mock: 가짜 작가(호출 0)로 도구·관문 흐름만 시험(LLM_CACHE_DIR을 임시 폴더로 두고 돌린다 — 실제 원장에 남기지 않게).
-    const gate = budgetGate({ scope: S.scope, run: `am2-${stage}-${c.id}`, runBudget: budget, stage: `AM2 ${stage}`, ...(argv.includes("--mock") ? { inner: devMockStream("ok", c.payload as never, at) } : {}) });
+    // AM2-3: 실행 예산은 실행 이름별로 센다 — 꼬리표(p2·p3)를 이름에 넣어 앞 시범 비용이 이번 실행 예산을 먹지 않게(P3 첫 시도가 호출 0으로 모두 거절된 원인).
+    const gate = budgetGate({ scope: S.scope, run: `am2-${stage}-${c.id}${tag ? `-${tag}` : ""}`, runBudget: budget, stage: `AM2 ${stage}`, ...(argv.includes("--mock") ? { inner: devMockStream("ok", c.payload as never, at) } : {}) });
     const built = await buildV5Snapshot({ payload: c.payload as never, reportId: `report_am2${stage.toLowerCase()}${c.id.replace(/[^a-z0-9]/g, "")}00000`, policyAt: at, sink: memorySink() as never,
       deps: { provider: S.provider, model: S.model, fallback: null, stream: gate.stream, cache: gate.cache, costCapUsd: orderCostCap(process.env, (c.payload as { productKey?: string }).productKey), testRun: true } });
     const snap = built.snapshot as unknown as { productType: string; draft: unknown; evidencePacket: unknown };
