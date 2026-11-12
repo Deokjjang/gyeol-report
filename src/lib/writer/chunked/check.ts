@@ -1172,7 +1172,9 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
           if (!seatSaid && !(SENSE[kind]?.test(near)) && overlap4(near, img) < 2) { const z = sents.find(z2 => z2.sen.includes(nm))!; flag(z, "must_bare", `「${m.what}」 이름만 나오고 뜻 한 마디가 없다 — 이름과 함께 이 사람 상황에 맞춘 뜻 한 마디`, m.what); } }
         // 형식(5부): 달 key · 짧게 해 key는 문단 2개, 깊게 해 key는 2~3개.
         const np = s.paragraphs.filter(p => p.trim()).length, want = kp.depth === "deep" ? [2, 3] : [2, 2];
-        if (np && (np < want[0] || np > want[1])) out.push({ chapter: c.n, section: si, paragraph: -3, rule: "key_paras", sentence: `[형식] ${kp.label} 문단 ${np}개`, hint: `${kp.label} 본문은 문단 ${want[0] === want[1] ? want[0] : want.join("~")}개`, detail: `문단 ${np}개` });
+        // P6 annual-1: 작가가 문단 하나로 쓴 key(13곳 가운데 11곳)는 문단 교체로 못 나눈다 — 문장 4개 이상이면 발행 직전 문장 경계에서 둘로 나눈다(splitKeyParagraphs, 호출 0). 그래서 교체 대상이 아니다.
+        const splittable = np === 1 && splitSentences(s.paragraphs.find(p => p.trim()) ?? "").length >= 4;
+        if (np && !splittable && (np < want[0] || np > want[1])) out.push({ chapter: c.n, section: si, paragraph: -3, rule: "key_paras", sentence: `[형식] ${kp.label} 문단 ${np}개`, hint: `${kp.label} 본문은 문단 ${want[0] === want[1] ? want[0] : want.join("~")}개`, detail: `문단 ${np}개` });
       }
       // 핵심 주장 달 목록(4부): 소제목 핵심 주장이 달 목록이면 카드 달 이름이 모두 본문에.
       if (sp && sp.claimIds?.length && !sp.pointer) { const ms = [...new Set((sp.claimIds ?? []).flatMap(id => [...monthsIn(`${lineById.get(id)?.meaning ?? ""}`)]))];

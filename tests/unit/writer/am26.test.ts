@@ -5,7 +5,8 @@ import { describe, expect, it } from "vitest";
 import { plainCard, relCondition, seedAsCondition, seedTagsFit, seedTagsOf, stripRx } from "@/lib/writer/chunked/card";
 import { REL_WORD, relImageOf, verifyLinks } from "@/lib/writer/chunked/link";
 import { am26Flags } from "@/lib/writer/chunked/check";
-import { blockCtxFor, fitJosa } from "@/lib/writer/chunked/publish";
+import { blockCtxFor, fitJosa, splitKeyParagraphs } from "@/lib/writer/chunked/publish";
+import { calendarMonth, CHAPTER_REF } from "@/lib/writer/safety/p6d";
 import { lockParagraph, lockWhole } from "@/lib/writer/chunked/lock";
 import { chunkExamples, chunkRules, renderCard, ruleCtxOf } from "@/lib/writer/chunked/prompt";
 import { coreLine, coreOf, loveUpOf, SEAT_SHORT_KO } from "@/lib/brief/core";
@@ -33,7 +34,7 @@ describe("AM2-6 1부 고리는 재료", () => {
     expect(jan.text).toMatch(/이 책에서 이 자리 처음/);
     const mar = keys.find(k => k.label === "3월 · 계묘월")!.links!.find(l => l.kind === "seat")!;
     expect(mar.text).toMatch(/이 책 2번째\(앞: 1월 · 신축월 — 그때 맺힘\)/);
-    expect(mar.text).toMatch(/「1월과 같은 일터 자리지만 이번엔 모임」/);
+    expect(mar.text).toMatch(/「1월 · 신축월과 같은 일터 자리지만 이번엔 모임」/);
     // 둘째 핵심에도 뜻 한 마디(P5 R-G3).
     expect(keys.find(k => k.label === "1월 · 신축월")!.links!.find(l => l.kind === "second")?.text).toMatch(/둘째 핵심 〔축진파 = 어긋남/);
     expect(verifyLinks(brief, keys)).toEqual([]);
@@ -156,3 +157,30 @@ describe("AM2-6 6부 화면", () => {
     expect(reviewLine(["내 몫 지키기", "같은 편"], 0)).toBe("이 해의 열쇠말은 「내 몫 지키기」와 「같은 편」이었어요. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?");
   });
 });
+
+describe("AM2-6 P6 annual-1 자동 점검(호출 0)", () => {
+  it("고리 재료 예시와 가리키기 말은 검사에 걸리지 않는다 — 옛 꼴(「6월과 같은」 · 「1장에서 본 2월·7월」)은 걸렸다", () => {
+    expect(calendarMonth("6월과 같은 태어난 날 자리지만 이번엔 가까운 사람 쪽에서 맺힘")).toBe(true);
+    expect(CHAPTER_REF.test("1장에서 본 2월·7월·10월")).toBe(true);
+    const { intake } = setup("annual-1");
+    const quotes = keysOf(intake).flatMap(k => (k.links ?? []).flatMap(l => [...l.text.matchAll(/「([^」]+)」/g)].map(m => m[1])));
+    expect(quotes.some(q => /같은 .* 자리지만/.test(q))).toBe(true);
+    for (const q of quotes) expect(calendarMonth(q), q).toBe(false);
+    const k7 = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
+    expect(k7.links!.find(l => l.kind === "seat")!.text).toMatch(/「6월 · 병오월과 같은 태어난 날 자리지만/);
+    for (const c of intake.chapters) for (const sp of c.sections ?? []) if (sp.pointer) { expect(CHAPTER_REF.test(sp.pointer), sp.pointer).toBe(false); expect(calendarMonth(sp.pointer), sp.pointer).toBe(false); }
+  });
+  it("문단 하나로 온 달 key는 문장 경계에서 둘로 — 장면 · 짝 문장에서 둘째 문단, 글자 그대로", () => {
+    const para = "임인월은 편인이 하늘에, 비견이 땅에 들어오는 달이에요. 화국 반합이 태어난 날 자리에 걸려 가까운 사람 쪽에 열기가 모여요. 솔로인 당신에게는 마음이 열리기 쉬운 때예요. 소개팅 첫 만남에서 취미 얘기에 빠져드는 날이라면, 말이 통하는 느낌이 마음을 움직여요. ENFP의 호기심이 편인의 남다른 공부와 같은 쪽으로 겹쳐요.";
+    const ch = [{ n: 7, id: "c7", title: "t", source: "writer", chars: 0, keys: ["2027-M01"], sections: [{ heading: "2027-M01", paragraphs: [para] }, { heading: "2027-M02", paragraphs: ["한 문장. 두 문장. 세 문장."] }] }] as unknown as FinalChapter[];
+    const out = splitKeyParagraphs(ch, [{ n: 7, keys: ["2027-M01", "2027-M02"] }], "ENFP");
+    expect(out[0].sections[0].paragraphs).toHaveLength(2);
+    expect(out[0].sections[0].paragraphs[1]).toMatch(/^소개팅 첫 만남에서/);
+    expect(out[0].sections[0].paragraphs.join(" ")).toBe(para);
+    expect(out[0].sections[1].paragraphs).toEqual(["한 문장. 두 문장. 세 문장."]);
+    const marked = "가 문장이에요. ⟪나 문장이에요. 다 문장이에요.⟫ 라 문장이에요. 마 문장이에요.";
+    const m = splitKeyParagraphs([{ ...ch[0], sections: [{ heading: "2027-M01", paragraphs: [marked] }] }] as unknown as FinalChapter[], [{ n: 7, keys: ["2027-M01"] }], null);
+    for (const p of m[0].sections[0].paragraphs) expect((p.match(/⟪/g) ?? []).length).toBe((p.match(/⟫/g) ?? []).length);
+  });
+});
+

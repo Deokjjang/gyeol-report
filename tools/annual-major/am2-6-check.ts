@@ -6,6 +6,7 @@
  *   ④ 이유 없는 짝(잇는 이유 공통 · 보완 · 긴장이 없거나 「같은 나이대」만인 짝)
  *   ⑤ 카드 같은 글 줄(Y · M · I 뜻 글이 같은 줄이 두 장 이상에 남음)
  *   ⑥ 카드 ≡ 엔진(briefCheck — cardEngineIssues · 충돌 빌드 포함)
+ *   ⑦ 옮겨 쓸 엔진 말이 검사에 걸림(P6 annual-1: 고리 재료 예시 「6월과 같은 …」 · 가리키기 「1장에서 본 2월·7월」 — 작가가 그대로 옮기면 calendar_month · chapter_ref)
  *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/annual-major/am2-6-check.ts [--random 1000] [--seed 7]
  */
 import { cases } from "./final";
@@ -15,11 +16,12 @@ import { briefCheck } from "../../src/lib/writer/chunked/check";
 import { briefCtxFor } from "../../src/lib/writer/chunked/publish";
 import { safetyFacts } from "../../src/lib/writer/safety";
 import { EMPLOYEE_PREMISE, seedTagsFit, seedTagsOf } from "../../src/lib/writer/chunked/card";
+import { calendarMonth, CHAPTER_REF } from "../../src/lib/writer/safety/p6d";
 
 const argv = process.argv.slice(2);
 const N = argv.includes("--random") ? Number(argv[argv.indexOf("--random") + 1]) : 1000, seed = argv.includes("--seed") ? Number(argv[argv.indexOf("--seed") + 1]) : 7;
 const T = { people: 0, rejected: 0, keys: 0, links: 0, wish: 0, seeds: 0, pairs: 0, ownKeys: 0, sceneKeys: 0 };
-const bad: Record<string, number> = { link: 0, seed: 0, cardCond: 0, pairReason: 0, sameText: 0, engine: 0 };
+const bad: Record<string, number> = { link: 0, seed: 0, cardCond: 0, pairReason: 0, sameText: 0, engine: 0, copy: 0 };
 const samples: Record<string, string[]> = {};
 const note = (k: string, s: string) => { bad[k]++; const list = (samples[k] ??= []); if (list.length < 8) list.push(s); };
 const run = (who: string, payload: unknown) => {
@@ -47,10 +49,15 @@ const run = (who: string, payload: unknown) => {
   for (const ids of groups.values()) { if (new Set(ids).size < 2) continue; const chs = new Set(ids.flatMap(used)); const inKeys = ids.filter(id => keys.some(k => k.lines.includes(id))); if (chs.size >= 2 && inKeys.length) note("sameText", `${who} ${ids.join("=")} 장 ${[...chs].join(",")}`); }
   // ⑥
   for (const i of briefCheck(intake, safetyFacts(brief).nicknames ?? [], briefCtxFor(brief))) note("engine", `${who} [${i.rule}] ${i.where}: ${i.text.slice(0, 120)}`);
+  // ⑦ 작가가 그대로 옮길 엔진 말: 고리 재료 안 「…」 예시 · 바람 고리 · 가리키기 말 · 머리 문장.
+  const annual = brief.product === "annual_fortune";
+  const copies = [...keys.flatMap(k => [...(k.links ?? []).flatMap(l => [...l.text.matchAll(/「([^」]+)」/g)].map(m => ({ at: `${k.label} 고리`, s: m[1] }))), ...(k.wishLink ? [{ at: `${k.label} 바람 고리`, s: k.wishLink }] : []), { at: `${k.label} 머리`, s: k.head }]),
+    ...intake.chapters.flatMap(c => (c.sections ?? []).flatMap(sp => (sp.pointer ? [{ at: `${c.n}장 가리키기`, s: sp.pointer }] : [])))];
+  for (const x of copies) { const s = x.s.replace(/〈[^〉]*〉/g, ""); if (CHAPTER_REF.test(s) || (annual && calendarMonth(s))) note("copy", `${who} ${x.at}: ${x.s.slice(0, 120)}`); }
   return true;
 };
 for (const c of cases().filter(x => x.product !== "launch")) run(c.id, c.payload);
 for (const prod of ["annual_fortune", "major_fortune"] as const) { let ok = 0; for (let i = 0; ok < N; i++) if (run(`${prod}#${i}`, randomPayload(i, prod, seed))) ok++; }
 console.log(`검사 ${T.people}명(만세력이 받지 않는 출생 시각 ${T.rejected}명은 다음 입력으로 채움) · key ${T.keys} · 고리 재료 ${T.links} · 바람 고리 key ${T.wish} · 장면 ${T.seeds} · 짝 ${T.pairs} · 고리(자리)·짝 key ${(100 * T.ownKeys / T.keys).toFixed(1)}% · 장면 key ${(100 * T.sceneKeys / T.keys).toFixed(1)}%`);
-console.log(`① 근거 없는 고리 재료 ${bad.link} · ② 씨앗 조건·영역 ${bad.seed} · ③ 카드 줄 조건 꼴 ${bad.cardCond} · ④ 이유 없는 짝 ${bad.pairReason} · ⑤ 카드 같은 글 ${bad.sameText} · ⑥ 카드 ≡ 엔진·브리프 ${bad.engine}`);
+console.log(`① 근거 없는 고리 재료 ${bad.link} · ② 씨앗 조건·영역 ${bad.seed} · ③ 카드 줄 조건 꼴 ${bad.cardCond} · ④ 이유 없는 짝 ${bad.pairReason} · ⑤ 카드 같은 글 ${bad.sameText} · ⑥ 카드 ≡ 엔진·브리프 ${bad.engine} · ⑦ 옮겨 쓸 엔진 말 검사 걸림 ${bad.copy}`);
 for (const [k, ss] of Object.entries(samples)) for (const s of ss) console.log(`- [${k}] ${s}`);

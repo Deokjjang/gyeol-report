@@ -6,7 +6,7 @@
  * 그러면 「사실 고정이 P5 다시 쓰기 회귀(하반기 · 그 불 · 한 번 더 기우는 달 · 9.1 되풀이 · 두 해째 · 축오해)를 되돌리는가」와 「교체 대상이 몇 자리 늘어나는가」를 저장 원고로 본다.
  * 아울러 P5 판독 차단 18곳이 P5 발행 원고에서 새 검사 · 구조에 걸리는지 본다(16-5).
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { memorySink } from "../../src/lib/ops/generation/sinks";
 import { buildV5Snapshot, writerKnowledge } from "../../src/lib/writer/publish";
@@ -20,6 +20,8 @@ import { lintContext } from "../../src/lib/writer/publish";
 import { loadSaved, OUT2, payloadFor } from "./am2-6-books";
 
 type Raw = { kind: string; text: string };
+/** --from P6: 같은 다시 돌림을 P6 저장 원고(첫 원고 · 교체 기록)로(P6 annual-1 자동 점검 고침 확인). */
+const FROM = process.argv.includes("--from") ? process.argv[process.argv.indexOf("--from") + 1] : "P5";
 const norm = (t: string) => t.replace(/\([^)]*\)/g, "").replace(/[^가-힣A-Za-z0-9]/g, "");
 export function replayP5(raws: readonly Raw[]) {
   const firsts = raws.filter(r => r.kind === "first");
@@ -47,15 +49,16 @@ export function replayP5(raws: readonly Raw[]) {
 
 /** P5 판독 차단 표(「## 2. 차단 표」) 줄: 번호 · 위치 · 인용 · 꼴. */
 function blocksOf(id: string): { no: string; at: string; quote: string; kind: string }[] {
-  const r = readFileSync(join(OUT2, `P5-${id}`, "reading.md"), "utf8"), sec = r.split(/\n## /).find(s => /^2\. 차단/.test(s)) ?? "";
+  if (!existsSync(join(OUT2, `${FROM}-${id}`, "reading.md"))) return [];
+  const r = readFileSync(join(OUT2, `${FROM}-${id}`, "reading.md"), "utf8"), sec = r.split(/\n## /).find(s => /^2\. 차단/.test(s)) ?? "";
   return sec.split("\n").filter(l => /^\| [A-Z]?\d+ \|/.test(l)).map(l => { const c = l.split("|").map(x => x.trim()); return { no: c[1], at: c[2], quote: (c[3].match(/「([^」]+)」/)?.[1] ?? c[3]), kind: c[4] }; });
 }
 
 async function main() {
-  const ids = process.argv.slice(2).filter(a => !/^--|^\d+$/.test(a)).length ? process.argv.slice(2).filter(a => !/^--|^\d+$/.test(a)) : ["annual-1", "annual-p5", "major-1", "major-p5"], at = "2026-12-02T03:00:00.000Z";
+  const ids = process.argv.slice(2).filter(a => !/^--|^\d+$|^P\d$/.test(a)).length ? process.argv.slice(2).filter(a => !/^--|^\d+$|^P\d$/.test(a)) : ["annual-1", "annual-p5", "major-1", "major-p5"], at = "2026-12-02T03:00:00.000Z";
   const { k } = writerKnowledge();
   for (const id of ids) {
-    const snap = JSON.parse(readFileSync(join(OUT2, `P5-${id}`, "snapshot.json"), "utf8")) as { evidencePacket: V5Evidence };
+    const snap = JSON.parse(readFileSync(join(OUT2, `${FROM}-${id}`, "snapshot.json"), "utf8")) as { evidencePacket: V5Evidence };
     const p5r = snap.evidencePacket.meta.review as Record<string, unknown>;
     const { stream, used, missed } = replayP5(snap.evidencePacket.meta.raw as unknown as Raw[]);
     const built = await buildV5Snapshot({ payload: payloadFor(id) as never, reportId: `report_replay6${id.replace(/[^a-z0-9]/g, "")}000`, policyAt: at, sink: memorySink() as never, deps: { provider: "anthropic", model: "claude-sonnet-5-5", fallback: null, stream: stream as never, people: async () => [] } });
@@ -74,7 +77,7 @@ async function main() {
     for (const h of (r.remainingHard as { at: string; rule: string; sentence: string }[])) console.log(`   남은 차단 ${h.at} ${h.rule}: ${h.sentence.slice(0, 110)}`);
     if (process.argv.includes("--ch")) { const n = Number(process.argv[process.argv.indexOf("--ch") + 1]); console.log(d.chapters.find(c => c.n === n)!.sections.map(s => `### ${s.heading}\n${s.paragraphs.join("\n")}`).join("\n")); }
     // P5 판독 차단: P5 발행 원고에 새 검사(차단 · 교체 대상)를 대면 걸리는가.
-    const saved = loadSaved(join(OUT2, `P5-${id}`, "snapshot.json"), id)!;
+    const saved = loadSaved(join(OUT2, `${FROM}-${id}`, "snapshot.json"), id)!;
     const b = blockCtxFor(saved.brief, k, saved.intake), lctx = { ...lintContext(saved.brief, k, saved.plan, [], undefined, undefined), noCards: true };
     const flags = [...blockFlags(saved.chs, lintBook(saved.chs, lctx as never), b), ...crossRepeats(saved.chs), ...adviceRepeats(saved.chs), ...rxRepeats(saved.chs, saved.intake), ...endingCaps(saved.chs), ...adjacentRepeats(saved.chs)];
     for (const bl of blocksOf(id)) {

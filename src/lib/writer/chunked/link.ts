@@ -160,8 +160,8 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
         ? `〔${SEAT_KO[seat]} 자리 = ${base}(${fc0.who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} · 이 책에서 이 자리 처음 — 자리 뜻·관계 뜻·입력을 이 사람 상황에 맞춘 경향 한 문장으로(재료 말을 그대로 옮기지 않는다)`
         : prev.short !== shortNow
           // 같은 자리인데 쪽이 바뀜(태어난 날: 가까운 사람 → 내 생활): 쪽이 바뀐 것과 관계 뜻이 다른 것을 함께.
-          ? `〔${SEAT_KO[seat]} 자리 = ${mine}〕 이 책 ${nth}번째(앞: ${prev.label} — 그때 ${prev.short} 쪽, ${prev.word}) × 이번 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} — 무엇이 달라졌는지만(「${prev.label.replace(/ · .+$/, "")}과 같은 ${SEAT_KO[seat]} 자리지만 이번엔 ${shortNow} 쪽에서 ${word}」처럼)`
-          : `〔${SEAT_KO[seat]} 자리 = ${mine}〕 이 책 ${nth}번째(앞: ${prev.label} — 그때 ${prev.word}) × 이번 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} — 자리 뜻을 다시 풀지 말고 무엇이 다른지만(「${prev.label.replace(/ · .+$/, "")}과 같은 ${shortNow} 자리지만 이번엔 ${word}」처럼)`;
+          ? `〔${SEAT_KO[seat]} 자리 = ${mine}〕 이 책 ${nth}번째(앞: ${prev.label} — 그때 ${prev.short} 쪽, ${prev.word}) × 이번 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} — 무엇이 달라졌는지만(「${prev.label}과 같은 ${SEAT_KO[seat]} 자리지만 이번엔 ${shortNow} 쪽에서 ${word}」처럼)`
+          : `〔${SEAT_KO[seat]} 자리 = ${mine}〕 이 책 ${nth}번째(앞: ${prev.label} — 그때 ${prev.word}) × 이번 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} — 자리 뜻을 다시 풀지 말고 무엇이 다른지만(「${prev.label}과 같은 ${shortNow} 자리지만 이번엔 ${word}」처럼)`;
       out.push({ kind: "seat", seat, engine, input: [fc0.input], text, rel: it.name, word, dir, seatMeaning: mine, nth, topics: SEAT_TOPICS[seat], areas: AREA_DOMAIN(area, c.brief.person.facts.relationship) });
       // 겹침: 같은 관계 이름이 같은 자리에 책 안 다른 곳(세운은 그 해, 그다음 다른 key)에도 걸리면 재료 한 줄. 같은 겹침은 책에서 한 번.
       const echoKey = `${it.name}|${seat}`;

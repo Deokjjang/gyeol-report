@@ -190,7 +190,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     if (t.index === "*") { const r0 = lockWhole(before, after, flagged, relNames, t.id); return { paragraphs: r0.paragraphs, notes: r0.notes }; }
     const r0 = lockParagraph(before[0] ?? "", after[0] ?? "", flagged, relNames, t.id); return { paragraphs: [r0.text], notes: r0.notes }; };
   const coverNew: string[] = [];
-  const blockKeys = (fs: readonly ChunkFlag[], chs: readonly FinalChapter[], t: ParaTarget, text: readonly string[]) => new Set(fs.filter(f => f.chapter === t.chapter && headingOf(chs, f) === t.heading && ((f.paragraph < 0 && t.index === "*") || text.some(x2 => holds(x2, f.sentence)))).map(f => `${f.rule}|${bareS(f.sentence)}`));
+  const blockKeys = (fs: readonly ChunkFlag[], chs: readonly FinalChapter[], t: ParaTarget, text: readonly string[]) => new Set(fs.filter(f => f.chapter === t.chapter && headingOf(chs, f) === t.heading && (f.paragraph < 0 || text.some(x2 => holds(x2, f.sentence)))).map(f => `${f.rule}|${bareS(f.sentence)}`));
+  // P6 annual-1: 소제목 단위 깃발(claim_months 「3.1 달 목록에 … 빠짐」)은 문단 하나를 바꿔도 생긴다 — 문단 교체 뒤에도 새로 생겼는지 본다(예전에는 「*」 교체에서만).
   const rewrite = async (all: Map<Chunk, ChunkFlag[]>, round: number, withCover = false) => {
     // 주문 상한 안에서 깃발이 많은 묶음부터(묶음 하나 다시 쓰기 어림 $0.05 — 문단 교체는 출력이 짧아 그보다 싸다).
     const fit = Math.floor(capLeft() / REWRITE_EST_USD);
@@ -216,7 +217,10 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     let back = 0;
     for (const ap of applied) {
       const was = blockKeys(before.block, before.chapters, ap.target, ap.before), now = blockKeys(nowFlags, cur.chapters, ap.target, ap.after);
-      const fresh = [...now].filter(k2 => !was.has(k2));
+      // P6 annual-1: 차단(chapter_ref)을 고친 교체가 알림(chapter_repeat)을 새로 만들었다고 되돌리면 차단이 남는다 — 고친 것보다 가볍지 않은 새 깃발만 되돌림 까닭.
+      const tierR = (k2: string) => tierOf({ rule: k2.split("|")[0] } as ChunkFlag);
+      const fixedTier = Math.min(...[...was].filter(k2 => !now.has(k2)).map(tierR), 9);
+      const fresh = [...now].filter(k2 => !was.has(k2) && tierR(k2) <= fixedTier);
       if (!fresh.length) continue;
       const d = drafts.get(ap.target.chapter)!; const sec = d.chapter.sections[ap.target.section];
       const paragraphs = ap.target.index === "*" ? [...ap.before] : sec.paragraphs.map((p2, i) => (i === ap.target.index ? ap.before[0] : p2));
@@ -313,6 +317,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   // 남은 빈 자리는 형식(렌더)만 맞춘다 — 결정론 글이 든 장은 발행 관문(policy judgeBuild)이 보류로 돌린다(keys_filled · deterministic).
   const empty = replaced.filter(r => r.key).map(r => ({ chapter: r.chapter, key: r.key! }));
   if (replaced.length) chapters = writeKeyFill(brief, plan, chapters, empty).map(c => (replaced.some(r => r.chapter === c.n && !r.key && !c.keys) ? { ...c, source: "deterministic" as const } : replaced.some(r => r.chapter === c.n && r.key) ? { ...c, reason: `keys_filled:${replaced.filter(r => r.chapter === c.n && r.key).map(r => r.key).join(",")}` } : c));
+  // P6 annual-1: 문단 하나로 온 달·해 key는 문장 경계에서 둘로(형식만, 글자 그대로).
+  chapters = splitKeyParagraphs(chapters, plan, brief.mbti?.type ?? null);
   const final = inspect(chapters);
   // AM2-5 2부: 남은 반복·끝말 집계는 시스템 머리 문장을 넣기 전 원고로(머리 문장은 heads로도 뺀다).
   const finalRepeats = repeatsOf(chapters);
@@ -390,3 +396,32 @@ export function fitJosa(last: string, rest: string): string {
   }
   return rest;
 }
+
+/**
+ * P6 annual-1(2026-11-12): 달 key · 짧게 해 key는 문단 2개인데, 작가가 문단 하나로 쓴 key는 문단 교체로 나눌 수 없다(13 key 가운데 11).
+ * 문장 4개 이상인 한 문단 key를 문장 경계에서 둘로 나눈다(글자는 그대로 — 형식만). 둘째 문단은 장면(「…라면」) · 짝(유형 이름) · 「한편」 문장에서 열고,
+ * 없으면 두 문단 길이가 가장 비슷한 자리에서. 문단마다 문장 2개 이상. 핵심 문장 표시 ⟪…⟫ 안에서는 나누지 않는다.
+ */
+export function splitKeyParagraphs(chapters: readonly FinalChapter[], plan: readonly { n: number; keys?: readonly string[] }[], mbti: string | null): FinalChapter[] {
+  const opens = (s: string) => /라면[,]? |라면$|^한편/.test(s) || Boolean(mbti && s.includes(mbti));
+  return chapters.map(c => {
+    const keys = new Set([...(c.keys ?? []), ...(plan.find(p => p.n === c.n)?.keys ?? [])]);
+    if (!keys.size) return c;
+    let changed = false;
+    const sections = c.sections.map(s => {
+      const ps = s.paragraphs.filter(p => p.trim());
+      if (!keys.has(s.heading) || ps.length !== 1) return s;
+      const ss = splitSentences(ps[0]);
+      if (ss.length < 4) return s;
+      const ok = (i: number) => { const a = ss.slice(0, i).join(" "); return (a.match(/⟪/g) ?? []).length === (a.match(/⟫/g) ?? []).length; };
+      const cand = Array.from({ length: ss.length - 3 }, (_, j) => j + 2).filter(ok);
+      if (!cand.length) return s;
+      const len = (i: number) => Math.abs(ss.slice(0, i).join(" ").length - ss.slice(i).join(" ").length);
+      const at = cand.find(i => opens(ss[i])) ?? [...cand].sort((x, y) => len(x) - len(y))[0];
+      changed = true;
+      return { ...s, paragraphs: [ss.slice(0, at).join(" "), ss.slice(at).join(" ")] };
+    });
+    return changed ? { ...c, sections } : c;
+  });
+}
+

@@ -53,7 +53,7 @@ export type KeyPlan = { readonly key: string; readonly label: string; readonly h
   /** AM2-6 1부: 엔진이 고른 바람 고리(책에서 1~3 key만). */ readonly wishLink?: string;
   /** AM2-6 3부: 장면 씨앗의 영역(areas 안이어야 한다 — 2,010명 검사). */ readonly sceneArea?: string;
   /** AM2-6 4부: 이 key의 대운 안 위치 값(위치 말은 이 값으로만). */ readonly position?: string };
-/** AM2-5 2부: pointer = 같은 주장이 앞 장에 있을 때 엔진이 만든 가리키기 말(「1장에서 본 세 달」) — 이 절은 주장을 다시 쓰지 않는다. */
+/** AM2-5 2부: pointer = 같은 주장이 앞 장에 있을 때 엔진이 만든 가리키기 말(「앞에서 본 2월 · 임인월, 7월 · 정미월」) — 이 절은 주장을 다시 쓰지 않는다. */
 export type SectionPlan = { readonly q: string; readonly lines: readonly string[]; readonly angle?: string; readonly claims: readonly string[]; readonly claimIds?: readonly string[]; readonly recapIds?: readonly string[]; readonly scene?: string; readonly pointer?: string; readonly pointerIds?: readonly string[] };
 export type ChapterPlan = {
   readonly n: number; readonly id: string; readonly title: string; readonly question: string;
@@ -497,7 +497,7 @@ function dedupeCardText(chapters: readonly ChapterPlan[], lines: readonly Line[]
 
 /**
  * AM2-5 2부 같은 주장 두 곳은 설계에서 막는다(P4 판독 세운 차단 #4 — 1.4 핵심 M1과 9.2 핵심 I5가 같은 세 달이라 되풀이 지우기가 9.2 핵심을 지웠다).
- * 두 장의 핵심 주장 줄이 같은 값(같은 달 목록 · 같은 뜻 글)이면 앞 장만 주장으로 두고, 뒤 장에는 엔진이 만든 가리키기 말(「1장에서 본 세 달」)을 준다.
+ * 두 장의 핵심 주장 줄이 같은 값(같은 달 목록 · 같은 뜻 글)이면 앞 장만 주장으로 두고, 뒤 장에는 엔진이 만든 가리키기 말(「앞에서 본 2월 · 임인월, 7월 · 정미월」)을 준다.
  */
 const COUNT_KO = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열", "열한", "열두", "열세"];
 const MONTH_G = /(?:2028년 )?(1[0-2]|[1-9])월 · [갑을병정무기경신임계][자축인묘진사오미신유술해]월/g;
@@ -511,9 +511,10 @@ export function sameClaims(chapters: readonly ChapterPlan[], lines: readonly Lin
       const id = sp.claimIds?.[0]; const g = id ? sigOf(id) : null; if (!g) return sp;
       const home = seen.get(g.sig); if (home === undefined) { seen.set(g.sig, c.n); return sp; }
       if (home === c.n) return sp;
-      // AM2-6 4부: 가리키기 말에도 달 이름은 넣는다(「1장에서 본 2월·7월·10월」 — P5 세운 9.2 「세 달」은 9장 안에서 몇 월인지 몰랐다).
-      const ms = g.n ? [...new Set([...`${byId.get(id!)?.value ?? ""} ${byId.get(id!)?.meaning ?? ""}`.matchAll(MONTH_G)].map(m => m[0].replace(/ · [가-힣]{2}월$/, "")))] : [];
-      const pointer = g.n ? `${home}장에서 본 ${ms.length ? ms.join("·") : `${COUNT_KO[g.n] ?? g.n} 달`}` : `${home}장에서 본 그 흐름`;
+      // AM2-6 4부: 가리키기 말에도 달 이름은 넣는다(P5 세운 9.2 「세 달」은 9장 안에서 몇 월인지 몰랐다).
+      // P6 annual-1: 장 번호(「1장에서」 → chapter_ref)와 맨 달 이름(「2월·7월」 → calendar_month)은 검사에 걸린다 — 번호 없이, 달은 간지 이름 그대로.
+      const ms = g.n ? [...new Set([...`${byId.get(id!)?.value ?? ""} ${byId.get(id!)?.meaning ?? ""}`.matchAll(MONTH_G)].map(m => m[0]))] : [];
+      const pointer = g.n ? `앞에서 본 ${ms.length ? ms.join(", ") : `${COUNT_KO[g.n] ?? g.n} 달`}` : `앞에서 본 그 흐름`;
       const rest = sp.lines.filter(x2 => x2 !== id);
       return { ...sp, pointer, pointerIds: [id!], claims: [`가리키기: 「${pointer}」`], claimIds: [], lines: rest.length ? rest : sp.lines };
     });

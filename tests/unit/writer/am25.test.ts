@@ -106,7 +106,7 @@ describe("AM2-5 2부 고치기 단계 구조", () => {
     const { intake } = setup("annual-1");
     const s92 = intake.chapters.find(c => c.n === 9)!.sections![1];
     // AM2-6 4부: 가리키기 말에도 달 이름은 넣는다.
-    expect(s92.pointer).toBe("1장에서 본 2월·7월·10월");
+    expect(s92.pointer).toBe("앞에서 본 2월 · 임인월, 7월 · 정미월, 10월 · 경술월");
     expect(keysOf(intake).find(k => k.label === "2028년 1월 · 계축월")!.pointer).toBe("3월 · 계묘월처럼 대운과 같은 정인 기운이 겹치는 달");
   });
   it("문단 교체 원고 읽기: 번호 줄 · key 전체(*) · 표지", () => {
