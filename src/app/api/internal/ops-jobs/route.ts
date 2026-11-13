@@ -8,6 +8,7 @@ export const maxDuration = 800;
 export async function GET(request: Request) {
   const secret = process.env.CRON_SECRET, actual = request.headers.get("authorization") ?? "", expected = `Bearer ${secret ?? ""}`;
   if (!secret || Buffer.byteLength(actual) !== Buffer.byteLength(expected) || !timingSafeEqual(Buffer.from(actual), Buffer.from(expected))) return NextResponse.json({ ok: false }, { status: 401 });
+  const startedAt = Date.now();
   const { createOpsStores } = await import("../../../../lib/ops/store");
   const ops = createOpsStores();
   const out: Record<string, unknown> = {};
@@ -35,7 +36,8 @@ export async function GET(request: Request) {
   try { const r = await ops.raw.call("raw_purge", {}); out.rawPurge = r.ok === true ? (r.deleted ?? 0) : "fail"; } catch { out.rawPurge = "error"; }
   try {
     const { runLaneBatch } = await import("../../../../lib/ops/generation/supervisor");
-    out.lane = await runLaneBatch({ store: ops.generation });
+    // HOTFIX-W1 6: 앞 단계(환불·이용권·정리)가 쓴 시간을 빼고 작가 예산을 준다(maxDuration 800초 − 조립·발행 60초 몫, 최대 700초).
+    out.lane = await runLaneBatch({ store: ops.generation, laneBudgetMs: () => Math.max(60_000, Math.min(700_000, maxDuration * 1000 - (Date.now() - startedAt) - 60_000)) });
   } catch { out.lane = "error"; }
   return NextResponse.json({ ok: true, ...out }, { headers: { "Cache-Control": "no-store" } });
 }

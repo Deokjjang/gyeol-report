@@ -75,7 +75,8 @@ export function memoryOpsStore(clock: { now: () => number }, snapshots = new Map
       const id = String(d.reportId ?? "");
       if (action === "begin") { if (!states.has(id)) states.set(id, { report_id: id, origin: String(d.origin), origin_ref: String(d.originRef), phase: "pending", first_attempt_at: iso(), first_failure_at: null, failures: 0, next_at: null, rejected_chapters: [], lane_token: null, lane_until: null, regenerate_requested_at: null, interim_at: null, official_at: null, gave_up_at: null, last_reason: null }); return { ok: true, state: { ...states.get(id) } }; }
       // 최종판 0-6: 지난 시도 비용 합(감독이 주문당 상한을 잰다).
-      if (action === "state") return { ok: true, state: states.get(id) ?? null, runs: runs.filter(r => r.reportId === id).map(r => ({ cost_usd: (r as { costUsd?: number }).costUsd ?? 0, created_at: (r as { at?: string }).at ?? null })) };
+      if (action === "state") return { ok: true, state: states.get(id) ?? null, runs: runs.filter(r => r.reportId === id).map(r => ({ cost_usd: (r as { costUsd?: number }).costUsd ?? 0, created_at: (r as { at?: string }).at ?? null,
+        calls: (r as { calls?: unknown }).calls ?? [], outcome: (r as { outcome?: string }).outcome ?? null, reason: (r as { reason?: string }).reason ?? null, lane: (r as { lane?: string }).lane ?? null })) };
       if (action === "provider") return { ok: true, providers };
       if (action === "provider_set") { providers[String(d.provider)] = d.disabled ? { disabledAt: iso(), reason: String(d.reason) } : { disabledAt: null, reason: null }; return { ok: true }; }
       if (action === "record") {

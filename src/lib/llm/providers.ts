@@ -9,6 +9,17 @@ export type StreamState = {
   finish: LlmFinishReason | null;
   error: LlmError | null;
   requestId: string | null;
+  /** HOTFIX-W1 1부: 끝난 이유 원문·블록 종류별 수와 글자 수(내용은 버린다)·블록 번호별 종류·공급자가 센 생각 토큰. */
+  stop: string | null;
+  blocks: Record<string, { n: number; chars: number }>;
+  blockTypes: Record<number, string>;
+  thinkingTokens?: number;
+};
+export const newStreamState = (): StreamState => ({ text: "", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0, cacheWriteTokens: 0 }, finish: null, error: null, requestId: null, stop: null, blocks: {}, blockTypes: {} });
+const countBlock = (state: StreamState, type: string, chars = 0, opened = false) => {
+  const b = (state.blocks[type] ??= { n: 0, chars: 0 });
+  if (opened) b.n += 1;
+  b.chars += chars;
 };
 
 export class InvalidEventError extends Error {}
@@ -19,6 +30,8 @@ export type ProviderDriver = {
   readonly requestIdHeader: string;
   headers(apiKey: string): Record<string, string>;
   body(input: StreamCompletionInput): unknown;
+  /** HOTFIX-W1 1부: 이 모델에 보내는 생각 설정(thinking 종류·effort, 안 보내면 null). 기록용. */
+  sent(model: string): { thinking: string | null; effort: string | null };
   /** 이벤트 하나를 처리한다. 형식이 틀리면 InvalidEventError. */
   handle(message: SseMessage, state: StreamState, onText: (delta: string) => void): void;
 };
@@ -37,9 +50,12 @@ const num = (value: unknown): number => (typeof value === "number" && Number.isF
 /**
  * 모델별 요청 옵션(P6). 작가는 추론 없이 쓴다: 출력 토큰이 전부 원고가 되어 비용·시간이 예측된다.
  * - claude-sonnet-5-5: thinking을 빼면 adaptive로 켜진다. 끄는 값은 between_tools(도구가 없으면 생각 안 함, effort high 이하).
+ *   HOTFIX-W1: 공식 문서(thinking.md)는 "Without tools, the response contains only text"라고 하지만, 실제로는 thinking 블록 하나(서명만, 0자)가
+ *   max_tokens를 다 쓰고 본문 0자로 끝나는 일이 있다(운영 11-12~13 작가 첫 호출 7회, AM 개발 19회 중 5회). 생각 설정은 그대로 두고(품질 동일)
+ *   출력 여유·사다리·비용 상한으로 막는다(runner.ts writerLimit, policy.ts). 생각은 max_tokens에 들어간다(문서: "count toward max_tokens").
  * - gpt-6.1-terra: reasoning effort "none" 지원(상위 모델 중 유일).
  */
-const MODEL_OPTIONS: Readonly<Record<string, Record<string, unknown>>> = {
+export const MODEL_OPTIONS: Readonly<Record<string, Record<string, unknown>>> = {
   "claude-sonnet-5-5": { thinking: { type: "between_tools" } },
   // 최종판3 4: Haiku 5.5는 생각이 기본(adaptive, effort medium)으로 켜져 출력 상한 6000을 생각에 다 썼다(검수 17권 전부 글자 0, length).
   // budget_tokens는 400이라 예산 고정은 불가. 생각 끄기(disabled, low~high에서 허용)는 공식 안내가 effort를 권하고 채택 측정(재현율·오탐)을
@@ -48,11 +64,19 @@ const MODEL_OPTIONS: Readonly<Record<string, Record<string, unknown>>> = {
   "gpt-6.1-terra": { reasoning: { effort: "none" } },
 };
 
+const sentOf = (model: string) => {
+  const o = MODEL_OPTIONS[model] ?? {};
+  const thinking = (o.thinking as { type?: string } | undefined)?.type ?? (o.reasoning ? "reasoning" : null);
+  const effort = (o.output_config as { effort?: string } | undefined)?.effort ?? (o.reasoning as { effort?: string } | undefined)?.effort ?? null;
+  return { thinking, effort };
+};
+
 export const anthropicDriver: ProviderDriver = {
   endpoint: "https://api.anthropic.com/v1/messages",
   apiKeyEnv: "ANTHROPIC_API_KEY",
   requestIdHeader: "request-id",
   headers: (apiKey) => ({ "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" }),
+  sent: sentOf,
   body: (input) => ({
     model: input.model,
     max_tokens: input.maxOutputTokens,
@@ -65,8 +89,15 @@ export const anthropicDriver: ProviderDriver = {
   }),
   handle(message, state, onText) {
     const type = message.event ?? "";
-    if (type === "ping" || type === "content_block_start" || type === "content_block_stop" || type === "message_stop") return;
+    if (type === "ping" || type === "content_block_stop" || type === "message_stop") return;
     const data = parse(message);
+    if (type === "content_block_start") {
+      // 1부: 블록 종류만 센다(thinking·redacted_thinking·text·tool_use…). 내용은 보지 않는다.
+      const kind = typeof data.content_block?.type === "string" ? data.content_block.type.slice(0, 40) : "unknown";
+      if (typeof data.index === "number") state.blockTypes[data.index] = kind;
+      countBlock(state, kind, 0, true);
+      return;
+    }
     if (type === "message_start") {
       const usage = data.message?.usage ?? {};
       const cacheWrite = num(usage.cache_creation_input_tokens);
@@ -77,11 +108,20 @@ export const anthropicDriver: ProviderDriver = {
     } else if (type === "content_block_delta") {
       if (data.delta?.type === "text_delta" && typeof data.delta.text === "string" && data.delta.text) {
         state.text += data.delta.text;
+        countBlock(state, "text", data.delta.text.length);
         onText(data.delta.text);
+      } else if (data.delta && data.delta.type !== "signature_delta") {
+        // thinking_delta(omitted면 빈 글자)·input_json_delta 등: 원고가 아니다. 글자 수만 센다(내용은 버린다).
+        const t = [data.delta.thinking, data.delta.text, data.delta.partial_json].find(x => typeof x === "string") as string | undefined;
+        countBlock(state, (typeof data.index === "number" ? state.blockTypes[data.index] : undefined) ?? String(data.delta.type ?? "unknown").replace(/_delta$/, "").slice(0, 40), t?.length ?? 0);
       }
     } else if (type === "message_delta") {
       if (data.usage?.output_tokens !== undefined) state.usage.outputTokens = num(data.usage.output_tokens);
+      // 공급자가 생각 토큰을 따로 세어 주면 남긴다(문서상 선택 필드).
+      const tt = data.usage?.output_tokens_details?.thinking_tokens;
+      if (typeof tt === "number" && Number.isFinite(tt)) state.thinkingTokens = tt;
       const stop = data.delta?.stop_reason;
+      if (typeof stop === "string") state.stop = stop.slice(0, 40);
       if (stop === "max_tokens" || stop === "model_context_window_exceeded") state.finish = "length";
       else if (stop === "refusal") { state.finish = "error"; state.error = { code: "refusal", message: "모델이 응답을 거절했습니다." }; }
       else if (typeof stop === "string") state.finish = "complete";
@@ -97,6 +137,7 @@ export const openaiDriver: ProviderDriver = {
   apiKeyEnv: "OPENAI_API_KEY",
   requestIdHeader: "x-request-id",
   headers: (apiKey) => ({ "content-type": "application/json", authorization: `Bearer ${apiKey}` }),
+  sent: sentOf,
   body: (input) => ({
     model: input.model,
     instructions: input.system,
@@ -110,15 +151,20 @@ export const openaiDriver: ProviderDriver = {
     if (message.data === "[DONE]") return;
     const data = parse(message);
     const type = String(data.type ?? message.event ?? "");
-    if (type === "response.output_text.delta") {
-      if (typeof data.delta === "string" && data.delta) { state.text += data.delta; onText(data.delta); }
+    if (type === "response.output_item.added") {
+      countBlock(state, typeof data.item?.type === "string" ? data.item.type.slice(0, 40) : "unknown", 0, true);
+    } else if (type === "response.output_text.delta") {
+      if (typeof data.delta === "string" && data.delta) { state.text += data.delta; countBlock(state, "text", data.delta.length); onText(data.delta); }
     } else if (type === "response.completed" || type === "response.incomplete") {
       const usage = data.response?.usage ?? {};
+      const rt = usage.output_tokens_details?.reasoning_tokens;
+      if (typeof rt === "number" && Number.isFinite(rt)) state.thinkingTokens = rt;
       const cached = num(usage.input_tokens_details?.cached_tokens);
       state.usage.cachedInputTokens = cached;
       state.usage.inputTokens = Math.max(0, num(usage.input_tokens) - cached);
       state.usage.outputTokens = num(usage.output_tokens);
       const reason = data.response?.incomplete_details?.reason;
+      state.stop = String(type === "response.completed" ? "completed" : reason ?? "incomplete").slice(0, 40);
       state.finish = type === "response.completed" ? "complete" : reason === "max_output_tokens" ? "length" : "error";
       if (state.finish === "error") state.error = { code: String(reason ?? "incomplete"), message: "응답이 끝나기 전에 중단되었습니다." };
     } else if (type === "response.failed") {

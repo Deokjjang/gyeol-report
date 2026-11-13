@@ -20,6 +20,17 @@ export function productOnSale(product: unknown, env: Env = process.env): boolean
 export const SALES_CLOSED_CODE = "PRODUCT_SALES_CLOSED";
 export const SALES_CLOSED_MESSAGE = "대운·세운은 2027 신년판으로 새로 단장하고 있어요. 12월 1일에 다시 만나요.";
 
+/**
+ * HOTFIX-W1 3부 4: 자동 환불 시간 AUTO_REFUND_HOURS(1~72시간, 없거나 잘못되면 기본 6시간 — 이전 24시간 고정).
+ * 결제 = 첫 실패 + 이 시간 안에 못 만들면 포기 + 자동 환불, 이용권 = 환급. 생성 정책(ops/generation/policy.ts)과 고객 진행 화면이 같은 값을 읽는다
+ * (여기 두는 까닭: 열람 경로가 생성 모듈을 끌어오지 않게 — readPathProtection).
+ */
+export const AUTO_REFUND_HOURS_DEFAULT = 6;
+export function autoRefundHours(env: Env = process.env): number {
+  const v = Number(env.AUTO_REFUND_HOURS);
+  return Number.isFinite(v) && v >= 1 && v <= 72 ? v : AUTO_REFUND_HOURS_DEFAULT;
+}
+
 export function adminUserIds(env: Env = process.env): string[] { return (env.ADMIN_USER_IDS ?? "").split(",").map(s => s.trim()).filter(s => UUID.test(s)); }
 export function isAdminUser(id: unknown, env: Env = process.env): boolean { return typeof id === "string" && adminUserIds(env).includes(id); }
 

@@ -6,7 +6,7 @@ import { normalizeReportInputPayload } from "@/lib/report-generation/reportInput
 import { runPaidReportJob, type PaidV5Builder } from "@/lib/payment/paidReportReliability";
 import { WRITER_DISABLED_RUNTIME as runtime } from "@/lib/report-generation/writerDisabled";
 import { runPaidV5Job, type PaidJobOps } from "@/lib/ops/generation/paidJob";
-import { delayedMessage, describeGeneration } from "@/components/report/generationProgress";
+import { DELAY_NOTICE_AFTER_MS, delayNotice, delayedMessage, describeGeneration } from "@/components/report/generationProgress";
 import { readGenerationProgress } from "@/components/report/generationProgressServer";
 import { GET } from "@/app/api/reports/[reportId]/progress/route";
 import { seedPaid } from "../../helpers/paidWorkerSql";
@@ -17,8 +17,8 @@ import { mockAnthropic } from "../../helpers/opsMocks";
 describe("진행 상태 판정(순수)", () => {
   it("Book 상태 × 감독 상태 → 화면 상태·단계", () => {
     expect(describeGeneration("QUEUED", null)).toEqual({ state: "preparing", stage: 0, nextAt: null });
-    expect(describeGeneration("GENERATING", { phase: "pending", failures: 0, next_at: null })).toEqual({ state: "preparing", stage: 2, nextAt: null });
-    expect(describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: "2026-11-05T06:20:00Z" })).toEqual({ state: "delayed", stage: 2, nextAt: "2026-11-05T06:20:00.000Z" });
+    expect(describeGeneration("GENERATING", { phase: "pending", failures: 0, next_at: null })).toEqual({ state: "preparing", stage: 2, nextAt: null, since: null, origin: null });
+    expect(describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: "2026-11-05T06:20:00Z" })).toEqual({ state: "delayed", stage: 2, nextAt: "2026-11-05T06:20:00.000Z", since: null, origin: null });
     // 앞선 시도가 실패한 뒤 다시 쓰는 중이면 "평소보다 조금 더".
     expect(describeGeneration("GENERATING", { phase: "pending", failures: 2, next_at: null }).state).toBe("delayed");
     expect(describeGeneration("FAILED_REQUIRES_ATTENTION", { phase: "gave_up", failures: 9 }).state).toBe("attention");
@@ -26,6 +26,20 @@ describe("진행 상태 판정(순수)", () => {
     expect(describeGeneration("COMPLETED", null).state).toBe("ready");
     expect(describeGeneration("EXPIRED", null).state).toBe("expired");
     expect(describeGeneration(undefined, null).state).toBe("unknown");
+  });
+  // HOTFIX-W1 3부 5: 감독 시작 15분 뒤에도 책이 없으면 정직한 지연 안내(자동 환불 시간 = 설정값).
+  it("지연 안내: 감독 시작 15분 전에는 없고, 15분부터 결제·이용권 문구, 완성·확인 필요에는 없다", () => {
+    const since = "2026-11-13T08:00:00Z", t = Date.parse(since);
+    const p = describeGeneration("GENERATING", { phase: "pending", failures: 0, next_at: null, first_attempt_at: since, origin: "paid" }, { refundHours: 6 });
+    expect(p).toMatchObject({ since: "2026-11-13T08:00:00.000Z", refundHours: 6, origin: "paid" });
+    expect(delayNotice(p, t + DELAY_NOTICE_AFTER_MS - 1)).toBeUndefined();
+    expect(delayNotice(p, t + DELAY_NOTICE_AFTER_MS)).toBe("책을 다듬는 데 시간이 더 걸리고 있어요. 준비되면 서재에 바로 보여요. 6시간 안에 못 드리면 자동으로 환불돼요.");
+    const ticket = describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: null, first_attempt_at: since, origin: "ticket" }, { refundHours: 3 });
+    expect(delayNotice(ticket, t + DELAY_NOTICE_AFTER_MS)).toContain("3시간 안에 못 드리면 쓰신 이용권을 자동으로 돌려드려요");
+    expect(delayNotice(describeGeneration("COMPLETED", null), t + 3_600_000)).toBeUndefined();
+    expect(delayNotice(describeGeneration("FAILED_REQUIRES_ATTENTION", { phase: "gave_up", first_attempt_at: since }), t + 3_600_000)).toBeUndefined();
+    // 옛 응답(자동 환불 시간 없음)은 기본 6시간.
+    expect(delayNotice({ state: "delayed", stage: 2, nextAt: null, since }, t + DELAY_NOTICE_AFTER_MS)).toContain("6시간");
   });
   it("다음 시도 시각은 한국 시각으로, 지난 시각이면 붙이지 않는다", () => {
     const at = "2026-11-05T06:20:00Z", now = Date.parse("2026-11-05T06:00:00Z");
@@ -62,7 +76,7 @@ describe("실제 감독 상태 읽기(PGlite)", () => {
     const deferred = await read(reportId);
     const state = (await h.rpc("ops_generation", "state", { reportId })).state as { next_at: string; failures: number };
     expect(state.failures).toBe(1);
-    expect(deferred).toEqual({ state: "delayed", stage: 2, nextAt: new Date(state.next_at).toISOString() });
+    expect(deferred).toMatchObject({ state: "delayed", stage: 2, nextAt: new Date(state.next_at).toISOString(), origin: "paid", refundHours: 6 });
     expect(Date.parse(deferred.nextAt!) - Date.now()).toBeGreaterThan(50_000);
     await exec("update report_generation_jobs set next_retry_at=now() where report_id=$1", [reportId]);
     expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ text }])))).toMatchObject({ ok: true, status: "COMPLETED" });

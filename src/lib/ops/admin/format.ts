@@ -56,7 +56,7 @@ export const auditActionLabel = label({
   comp_designate: "보상 A 지정", request_auto_done: "고객 요청 자동 처리", request_created: "고객 문의 접수",
   bot_button: "처리 봇 버튼", bot_refund: "처리 봇 환불", bot_regenerate: "처리 봇 다시 만들기", bot_guide: "처리 봇 안내", bot_pin_failed: "처리 봇 비밀번호 오류", bot_ignored: "처리 봇 무시(다른 사용자)",
 });
-export const refundSourceLabel = label({ admin: "관리자", auto: "자동(24시간 실패)", external: "외부(토스 상점관리자에서 직접)" });
+export const refundSourceLabel = label({ admin: "관리자", auto: "자동(기한 안 실패 — AUTO_REFUND_HOURS)", external: "외부(토스 상점관리자에서 직접)" });
 export const compStateLabel = label({ granted: "지급됨", ready: "지급 대기(가입 정보 완료)", waiting_profile: "가입 정보 입력 전" });
 
 /** 환불 확인 단계 경고 문구(P6e-ops 3). 서버 응답(warnings)을 그대로 받아 같은 문장을 화면·서버 메시지가 쓴다. */

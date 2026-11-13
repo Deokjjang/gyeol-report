@@ -12,6 +12,7 @@ import { ordersCsv } from "./exportCsv";
 import { kst, ORDER_CODE_RE, UUID_RE, won } from "./format";
 import { adminRpc, compRpc, grantTickets, reconRpc, type Json } from "./rpc";
 import { compConfig, compSyncArgs } from "../config";
+import { regenerateNowCheck } from "../generation/policy";
 import { lookupToss, lookupTossMany, TOSS_BATCH_LIMIT, TOSS_ERROR_LABEL, type TossStatus } from "./toss";
 
 /**
@@ -163,14 +164,25 @@ async function regenerate(ctx: Ctx): Promise<NextResponse> {
   if (order.status !== "paid") return no(409, "ORDER_NOT_PAID", "결제 완료 주문만 다시 만들 수 있어요.");
   const published = book?.status === "COMPLETED";
   const unpublished = !book?.publishedAt && !published;
-  let mode: "retry" | "replace", r: Json;
+  let mode: "retry" | "replace" | "retry_now", r: Json;
   if (job?.status === "FAILED_REQUIRES_ATTENTION" && unpublished) { mode = "retry"; r = await ctx.deps.reliability().call("admin_retry", { reportId }); }
   else if (published) { mode = "replace"; r = await ctx.stores.generation.call("regenerate", { reportId }); }
+  else if (unpublished && (job?.status === "RETRYING" || job?.status === "QUEUED")) {
+    // HOTFIX-W1 3부 2: 만드는 중(다음 시도 대기·보류)이어도 비용 상한 안이면 다음 사다리 단계로 바로 1회 — 결제 큐 다음 시도 시각을 지금으로(1분 크론이 집는다).
+    if (str(job.last_error_code) === "REFUND_HOLD" || l.detail.refund) return no(409, "REFUND_IN_PROGRESS", "환불 처리 중인 주문이라 다시 만들 수 없어요.");
+    const pre = regenerateNowCheck({ runs: l.detail.runs as never, product: str(order.productType) || null });
+    if (!pre.ok) { await audit(ctx, "admin_retry_now", order.orderCode, { reportId, ok: false, code: pre.code }); return no(409, pre.code, pre.message); }
+    const db = ctx.stores.db;
+    if (!db) return no(503, "STORAGE_UNAVAILABLE", "저장소에 연결하지 못했어요.");
+    const { data, error } = await db.from("report_generation_jobs").update({ next_retry_at: new Date().toISOString() }).eq("report_id", reportId).in("status", ["RETRYING", "QUEUED"]).select("job_id");
+    mode = "retry_now"; r = !error && data?.length ? { ok: true, stage: pre.stage, leftUsd: pre.leftUsd } : { ok: false, code: error ? "STORAGE_FAILED" : "JOB_STATE_CHANGED" };
+  }
   else return no(409, "NOT_REGENERATABLE", "아직 생성 중이거나 다시 만들 수 없는 상태예요.");
   const ok = r.ok === true;
-  await audit(ctx, mode === "retry" ? "admin_retry" : "admin_regenerate", order.orderCode, { reportId, ok, ...(ok ? {} : { code: str(r.code) || "FAILED" }) });
+  await audit(ctx, mode === "retry" ? "admin_retry" : mode === "retry_now" ? "admin_retry_now" : "admin_regenerate", order.orderCode, { reportId, ok, ...(ok ? {} : { code: str(r.code) || "FAILED" }), ...(mode === "retry_now" && ok ? { stage: r.stage, leftUsd: r.leftUsd } : {}) });
   const closed = ok ? await autoClose(ctx, order.paymentOrderId, "재생성 요청") : 0;
-  return ok ? reply({ ok: true, mode, closedRequests: closed, message: `${mode === "retry" ? "결제 큐에 다시 넣었어요." : "정식본 교체를 요청했어요. 다음 교체 레인에서 처리돼요."}${closedNote(closed)}` })
+  const done = mode === "retry" ? "결제 큐에 다시 넣었어요." : mode === "retry_now" ? `1분 안에 ${String(r.stage)}단으로 다시 시도해요(남은 상한 ` + "$" + `${Number(r.leftUsd).toFixed(2)}).` : "정식본 교체를 요청했어요. 다음 교체 레인에서 처리돼요.";
+  return ok ? reply({ ok: true, mode, closedRequests: closed, message: `${done}${closedNote(closed)}` })
     : no(409, str(r.code) || "REGENERATE_FAILED", "다시 만들기 요청이 거절됐어요.");
 }
 

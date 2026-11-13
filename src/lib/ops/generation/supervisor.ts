@@ -14,7 +14,9 @@ import type { PriorBooks } from "../../writer/prior";
 import type { buildV5Snapshot, V5BuildDeps } from "../../writer/publish";
 import type { ChapterSink } from "../../writer/runner";
 import type { RawEntry, WriterCache } from "../../writer/runner";
-import { COST_HOLD_MS, deferUntil, INTERIM_TARGET, interimDue, judgeBuild, nextRetryAt, OFFICIAL_TARGET, orderCostCap, runSummary, spentOf, type BuildVerdict } from "./policy";
+import { COST_HOLD_MS, deferUntil, INTERIM_TARGET, interimDue, judgeBuild, ladderOf, nextRetryAt, OFFICIAL_TARGET, orderCostCap, retryWindowMs, runSummary, spentOf, type BuildVerdict } from "./policy";
+import { failureLine, type GenerationAlerts } from "./alerts";
+import type { LadderStage } from "../../writer/runner";
 import { chainCache, memorySink, opsChapterSink, opsRawCache, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
 import { devForceAnthropicDown, devMockMode, devMockStream } from "./devMock";
 import { devBudget } from "./devBudget";
@@ -30,6 +32,10 @@ export type GenerationEnv = {
   readonly raw?: OpsStore;
   /** F: 작가 호출이 잔액 부족·결제 문제로 실패했을 때 처리 봇 경보(ops_signup 'credit_alert', SQL이 1시간 1번만). 시험 주입이면 없음. */
   readonly creditAlert?: (code: "anthropic_credit" | "openai_quota") => Promise<unknown>;
+  /** HOTFIX-W1 3부 3·6: 보류 즉시 알림·실패율 경보(처리 봇). 시험 주입이면 없음. */
+  readonly alerts?: GenerationAlerts;
+  /** HOTFIX-W1 6: 교체 레인 작가 시간 예산(크론 앞 단계가 쓴 시간을 뺀 값). 없으면 작가 기본 700초. */
+  readonly laneBudgetMs?: () => number;
 };
 export type State = { phase: string; first_attempt_at: string; first_failure_at: string | null; failures: number; rejected_chapters: number[]; last_reason: string | null };
 export type Decision =
@@ -62,13 +68,17 @@ export function rawCache(raw: readonly RawEntry[] | undefined, next?: WriterCach
   return { get: k => by.get(k) ?? next?.get(k) ?? null, put: (e, m) => next?.put(e, m) };
 }
 
-/** 지난 시도 비용 합(최종판 0-6). 읽기 실패면 0(상한은 이번 시도 안에서도 runner가 건다). */
-async function spentSoFar(env: GenerationEnv, reportId: string, since?: string | null): Promise<number> {
-  try { const r = await env.store.call("state", { reportId }); return spentOf(r.runs as never, since); } catch { return 0; }
+/** 지난 시도 기록(최종판 0-6 비용 합, HOTFIX-W1 사다리). 읽기 실패면 빈 기록(상한은 이번 시도 안에서도 runner가 건다). */
+type PriorRun = { cost_usd?: number | string | null; created_at?: string | null; calls?: unknown; lane?: string | null };
+async function priorRuns(env: GenerationEnv, reportId: string): Promise<PriorRun[]> {
+  try { const r = await env.store.call("state", { reportId }); return Array.isArray(r.runs) ? r.runs as PriorRun[] : []; } catch { return []; }
 }
+const productOf = (p: unknown) => { const k = (p as { productKey?: unknown } | null)?.productKey; return typeof k === "string" ? k : null; };
+/** HOTFIX-W1: 작가 사다리 입력(지난 기록에서). end면 부르지 않는다. */
+type Ladder = { startStage: LadderStage; exhaustedMaxTokens: number; end: boolean };
 
 /** 한 번 만들어 판정한다(정식본=Sonnet, 임시본=terra). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
-async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null }, lane: "official" | "interim") {
+async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null; ladder?: Ladder }, lane: "official" | "interim") {
   const seen: QuotaSeen = {};
   // 운영 경로는 모델을 넘기지 않는다 → 정식본은 항상 Sonnet. 시험·측정 도구가 모델을 명시하면 그 모델로(대체 모델은 어느 쪽이든 없음).
   const injected = env.deps?.provider && env.deps?.model ? { provider: env.deps.provider, model: env.deps.model } : null;
@@ -82,7 +92,8 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
   const cache = rawCache(job.stored, chainCache(lane === "official" ? job.raw : null, gate?.cache ?? env.deps?.cache ?? null));
   const deps: V5BuildDeps = { ...env.deps, provider: target.provider, model: target.model, fallback: null, fetchImpl: watchFetch(base, seen),
     ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(mock ? { stream: devMockStream(mock, job.payload, job.policyAt) } : gate ? { stream: gate.stream } : {}),
-    ...(cache ? { cache } : {}), ...(job.costCapUsd !== undefined ? { costCapUsd: job.costCapUsd } : {}) };
+    ...(cache ? { cache } : {}), ...(job.costCapUsd !== undefined ? { costCapUsd: job.costCapUsd } : {}),
+    ...(job.ladder ? { startStage: job.ladder.startStage, ...(job.ladder.exhaustedMaxTokens ? { exhaustedMaxTokens: job.ladder.exhaustedMaxTokens } : {}) } : {}) };
   const started = (env.now ?? Date.now)();
   let built: Built | null = null, verdict: BuildVerdict;
   try {
@@ -113,18 +124,32 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const interim = interimDue({ phase: state.phase, firstFailureAt: Number.isFinite(firstFailure) ? firstFailure : null, now: now(), interimPossible: openAi }) && !String(state.last_reason ?? "").startsWith("interim:");
   // 최종판 0-1: 저장된 장은 버리지 않는다(빠진 장만 이어 쓴다). 0-6: 지난 시도 비용 합이 상한에 이르면 부르지 않고 보류.
   const sink = interim ? memorySink() : job.sink;
-  const cap = orderCostCap(), spentBefore = await spentSoFar(env, job.reportId);
+  const product = productOf(job.payload);
+  const runs = await priorRuns(env, job.reportId);
+  // HOTFIX-W1 2부 6: 주문당 상한은 작가를 포함한 모든 시도 비용 합(정상 1권 × 2.5, 상품별). 진행 중인 주문도 지난 시도 비용을 센다.
+  const cap = orderCostCap(product), spentBefore = spentOf(runs as never);
   const lane = interim ? "interim" : "official";
-  // 최종판3 6: 결제·이용권 주문은 누적 비용으로 보류하지 않는다(결제 뒤 발행 실패 금지). 상한은 이번 시도의 검수·수리에만 건다(작가는 늘 부른다).
-  const a = await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore) }, lane);
+  // HOTFIX-W1 2부 5: 지난 시도에서 생각 소진한 단계 다음부터(같은 단계·같은 한도 반복 금지). 2단까지 소진이면 부르지 않고 보류.
+  const ladder = ladderOf(runs as never, interim ? INTERIM_TARGET.model : env.deps?.model ?? OFFICIAL_TARGET.model);
+  const skip = ladder.end && lane === "official";
+  const a = skip ? null : await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore), ladder }, lane);
+  const spentNow = spentBefore + (a?.summary.costUsd ?? 0);
   let decision: Decision;
-  if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
-  else if (a.verdict.kind === "incomplete" && a.verdict.capped) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: a.reason.includes("cost_cap 주문당") ? a.reason : `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${(spentBefore + a.summary.costUsd).toFixed(4)}) — 보류` };
+  if (!a) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: `${lane}:thinking_exhausted_end 2단까지 생각 소진(누적 $${spentNow.toFixed(4)}) — 보류` };
+  else if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
+  else if (a.verdict.kind === "incomplete" && a.verdict.capped) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: a.reason.includes("cost_cap 주문당") ? a.reason : `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${spentNow.toFixed(4)}) — 보류` };
+  else if (a.verdict.kind === "incomplete" && a.verdict.ladderEnd) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: `${lane}:thinking_exhausted_end 생각 소진 — 더 큰 한도 없음(누적 $${spentNow.toFixed(4)}) — 보류` };
   else if (a.verdict.kind === "complete") decision = { kind: "publish", edition: interim ? "interim" : "official", snapshot: a.built!.snapshot as unknown as Record<string, unknown>, meta: a.built!.meta };
   else {
     const t = now(), first = Number.isFinite(firstFailure) ? firstFailure : t;
     const until = deferUntil({ firstFailureAt: first, failures: state.failures + 1, now: t, interimPossible: openAi && !a.seen.openaiQuota && state.phase === "pending" });
     decision = until === null ? { kind: "give_up", reason: a.reason } : { kind: "defer", until: iso(until), reason: a.reason };
+  }
+  // HOTFIX-W1 3부 4·5: 보류도 고객 대기에 상한 — 첫 실패 + 자동 환불 시간까지만(그 사이 덕짱님이 환불·다시 만들기를 고른다).
+  // 기한이 지난 뒤 다시 잡히면(또 보류할 상황이면) 포기 → 자동 환불·이용권 환급. 고객 화면의 「N시간 안에 못 드리면 자동으로 환불돼요」가 늘 맞게.
+  if (decision.kind === "hold") {
+    const t0 = now(), first0 = Number.isFinite(firstFailure) ? firstFailure : t0, end = nextRetryAt(first0, 1, t0) === null ? null : first0 + retryWindowMs();
+    decision = end === null ? { kind: "give_up", reason: decision.reason } : { ...decision, until: iso(end) };
   }
   const settled = decision.kind === "stale" ? { ok: false, code: "STALE_LEASE" } : await settle(decision);
   const t = now(), first = Number.isFinite(firstFailure) ? firstFailure : t;
@@ -133,15 +158,25 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
     : decision.kind === "publish" && decision.edition === "official" ? { phase: "official", officialAt: iso(t), rejected: [], nextAt: null }
     : decision.kind === "publish" ? { phase: "interim", interimAt: iso(t), rejected: [], nextAt: (() => { const n = nextRetryAt(first, Math.max(1, state.failures), t); return n === null ? null : iso(n); })() }
     : decision.kind === "defer" ? { firstFailureAt: iso(first), failuresInc: 1, nextAt: decision.until, rejected: [] }
-    : decision.kind === "hold" ? { nextAt: null, rejected: [] }
+    : decision.kind === "hold" ? { firstFailureAt: iso(first), failuresInc: 1, nextAt: decision.until, rejected: [] }
     : { phase: "gave_up", gaveUpAt: iso(t), firstFailureAt: iso(first), failuresInc: 1, nextAt: null };
   if (!failed || settled.ok) {
     const outcome = !settled.ok ? "stale" : decision.kind === "publish" ? "published" : decision.kind === "defer" || decision.kind === "hold" ? "deferred" : decision.kind === "give_up" ? "gave_up" : "stale";
+    const reason = a ? a.reason : decision.kind === "hold" ? decision.reason : "official:skipped";
     try {
-      await env.store.call("record", { reportId: job.reportId, run: { lane: interim ? "interim" : "queue", provider: a.summary.provider, model: a.summary.model,
-        edition: decision.kind === "publish" ? decision.edition : null, outcome, reason: settled.ok ? a.reason : `${a.reason}:${settled.code ?? "settle_failed"}`,
-        costUsd: a.summary.costUsd, calls: a.summary.calls, chapters: a.summary.chapters, durationMs: a.summary.durationMs }, state: patch });
+      await env.store.call("record", { reportId: job.reportId, run: { lane: interim ? "interim" : "queue", provider: a?.summary.provider ?? OFFICIAL_TARGET.provider, model: a?.summary.model ?? OFFICIAL_TARGET.model,
+        edition: decision.kind === "publish" ? decision.edition : null, outcome, reason: settled.ok ? reason : `${reason}:${settled.code ?? "settle_failed"}`,
+        costUsd: a?.summary.costUsd ?? 0, calls: a?.summary.calls ?? [], chapters: a?.summary.chapters ?? [], durationMs: a?.summary.durationMs ?? 0 }, state: patch });
     } catch { /* 기록 실패는 발행을 되돌리지 않는다 */ }
+    // HOTFIX-W1 3부 3·6: 보류는 바로 알린다(환불 또는 대기 결정). 실패 기록 뒤 실패율 경보를 본다. 알림 실패는 생성과 무관.
+    if (settled.ok && failed && env.alerts) {
+      const v = a?.verdict.kind === "incomplete" ? a.verdict : null;
+      const line = failureLine({ cls: decision.kind === "hold" && v?.capped ? "cost_cap" : v?.cls ?? (a ? "other" : "thinking_exhausted"), stage: v?.stage ?? (a ? null : 2), nextAt: decision.kind === "defer" ? decision.until : null, spentUsd: spentNow, capUsd: cap });
+      if (decision.kind === "hold") {
+        try { await env.alerts.hold({ reportId: job.reportId, origin: job.origin, originRef: job.originRef, product, line, why: v?.capped ? "주문 비용 상한 — 환불 판단 필요" : "생각 소진이 사다리 끝까지 — 환불 또는 대기 결정" }); } catch { /* 무시 */ }
+      }
+      try { await env.alerts.failed({ reportId: job.reportId, product }); } catch { /* 무시 */ }
+    }
   }
   if (settled.ok && decision.kind === "publish" && decision.edition === "official" && job.origin === "paid") { try { await env.store.call("chapters_clear", { reportId: job.reportId }); } catch { /* 열람 기한 정리(purge)가 지운다 */ } }
   return { decision, settled };
@@ -168,15 +203,17 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
     return { ok: true, reportId: job.reportId, outcome: "error" };
   }
   const sink = opsChapterSink(env.store, job.reportId, job.token), laneRaw = env.raw ? opsRawCache(env.raw, job.reportId, job.token) : null;
-  // 최종판 0-6: 교체 레인도 주문당 상한(재생성은 재생성 요청 뒤 시도만 센다). 0-2: 저장된 Book 원문은 저장소로.
-  const cap = orderCostCap(), spentBefore = await spentSoFar(env, job.reportId, lane === "regenerate" ? job.regenRequestedAt ?? null : null);
-  if (spentBefore >= cap) {
+  // 최종판 0-6: 교체 레인도 주문당 상한(재생성은 재생성 요청 뒤 시도만 센다). 0-2: 저장된 Book 원문은 저장소로. HOTFIX-W1: 상한은 상품별·작가 포함, 사다리도 같은 기간 기록으로.
+  const since = lane === "regenerate" ? job.regenRequestedAt ?? null : null, runs = await priorRuns(env, job.reportId);
+  const cap = orderCostCap(productOf(evidence.input)), spentBefore = spentOf(runs as never, since);
+  const ladder = ladderOf(runs as never, env.deps?.model ?? OFFICIAL_TARGET.model, since);
+  if (spentBefore >= cap || ladder.end) {
     await release(lane === "regenerate" ? { nextAt: null, clearRegenerate: true } : { nextAt: null });
-    await env.store.call("record", { reportId: job.reportId, run: { lane, outcome: "deferred", reason: `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${spentBefore.toFixed(4)}) — 보류` }, state: {} });
+    await env.store.call("record", { reportId: job.reportId, run: { lane, outcome: "deferred", reason: ladder.end ? `${lane}:thinking_exhausted_end 2단까지 생각 소진(누적 $${spentBefore.toFixed(4)}) — 보류` : `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${spentBefore.toFixed(4)}) — 보류` }, state: {} });
     return { ok: true, reportId: job.reportId, outcome: "held" };
   }
   const stored = (job.snapshot?.evidencePacket as { meta?: { raw?: RawEntry[] } } | undefined)?.meta?.raw;
-  const a = await attempt(env, { payload: evidence.input, reportId: job.reportId, policyAt: evidence.generatedAt, sink, raw: laneRaw, costCapUsd: Math.max(0, cap - spentBefore), ...(stored?.length ? { stored } : {}) }, "official");
+  const a = await attempt(env, { payload: evidence.input, reportId: job.reportId, policyAt: evidence.generatedAt, sink, raw: laneRaw, costCapUsd: Math.max(0, cap - spentBefore), ladder, ...(env.laneBudgetMs ? { budgetMs: env.laneBudgetMs() } : {}), ...(stored?.length ? { stored } : {}) }, "official");
   const runBase = { lane, provider: a.summary.provider, model: a.summary.model, costUsd: a.summary.costUsd, calls: a.summary.calls, chapters: a.summary.chapters, durationMs: a.summary.durationMs };
   if (a.verdict.kind === "stale") return { ok: true, reportId: job.reportId, outcome: "stale" };
   if (a.verdict.kind === "complete") {

@@ -7,7 +7,8 @@ import { WRITER_DISABLED_RUNTIME } from "../../../../lib/report-generation/write
 import { confirmTossPayment } from "../../../../lib/payment/tossConfirmClient";
 
 export const runtime = "nodejs";
-// v5 작가(결제 경로, 예산 480초 < claim lease 10분)를 담는다(P3.5 D). claim 창 45초 뒤에는 새 작업을 잡지 않는다.
+// v5 작가(결제 경로)를 담는다(P3.5 D). 예산 680초 = 작업이 lease를 15분으로 늘렸을 때(HOTFIX-W1), 못 늘리면 480초(claim lease 10분 안).
+// claim 창 45초 뒤에는 새 작업을 잡지 않는다 → 45 + 680 + 발행 < 800.
 export const maxDuration = 800;
 export async function GET(request: Request) {
   const expected = `Bearer ${process.env.CRON_SECRET ?? ""}`;
