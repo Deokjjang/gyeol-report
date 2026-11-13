@@ -4,6 +4,7 @@ import { inputsOf, needsOf, neutralize, premiseHits, soften, PREMISE_VERSION } f
 import { antecedentIssues, dayunOrderIssues, detFix, factIssues, leanOnCut, lengthIssue, RECORD_ONLY } from "@/lib/writer/chunked/accept";
 import { ganjiClaim } from "@/lib/factsheet/check";
 import { judgeBuild } from "@/lib/ops/generation/policy";
+import { dayunPhaseClaim } from "@/lib/writer/safety/lint";
 import { collectNeeds, needsTable } from "../../../tools/annual-major/am2-7-tags";
 
 const facts = (job: string, rel: string) => ({ relationship: rel, children: "unknown", job: { status: job, class: "none", detail: "" } });
@@ -128,5 +129,11 @@ describe("AM2-7 1부 고치기 층 — 문단째 받기 · 결정론 받는 조�
     expect(antecedentIssues("같은 고민을 다시 꺼내기 쉬워요.", "")).toHaveLength(1);
     expect(antecedentIssues("이번에는 다르게 해 보세요.", "")).toHaveLength(1);
     expect(premiseHits("좋아하는 마음이 확인될 때까지 아낄 때", inputsOf({ relationship: "married", children: "none", job: { status: "employee" } })).map(h => h.word)).toEqual(["마음 확인"]);
+  });
+  it("P7 대운 판독 고침: 「끝까지 마무리하는 원칙」은 대운 위치 말이 아니다 · 「대운의 마무리 단계」는 위치 말이다", () => {
+    expect(dayunPhaseClaim("하나만큼은 끝까지 마무리하는 원칙을 세워 두면, 이 10년의 재능이 쌓입니다.", "early")).toBeNull();
+    expect(dayunPhaseClaim("지금 벌여 둔 일 가운데 하나를 골라 이번 대운 안에 끝까지 마무리해 보세요.", "early")).toBeNull();
+    expect(dayunPhaseClaim("이 대운의 마무리 단계라 정리가 필요해요.", "early")).toBe("late");
+    expect(dayunPhaseClaim("대운이 마무리에 들어서는 때예요.", "early")).toBe("late");
   });
 });

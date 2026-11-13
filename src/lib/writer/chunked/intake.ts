@@ -715,8 +715,8 @@ function personCard(brief: Brief, year: number, wish: { kind: string; text?: str
 export function assignForms(keys: readonly KeyPlan[], pairs: readonly Pair[]): KeyPlan[] {
   const used = { opener: new Map<string, number>(), link: new Map<string, number>(), pair: new Map<string, number>() };
   const take = (m: Map<string, number>, cands: readonly string[], cap: number, rot: number) => { const order = [...cands.slice(rot % Math.max(1, cands.length)), ...cands.slice(0, rot % Math.max(1, cands.length))]; const pick = order.find(x => (m.get(x) ?? 0) < cap) ?? order[0]; if (pick) m.set(pick, (m.get(pick) ?? 0) + 1); return pick; };
-  // P7 판독(annual-p5 7 · 1월 「…쪽이 한 문장 안에서 겹칩니다」 · P6 「…와 같은 쪽으로 겹쳐요」 21곳): 꼴 이름이 본문에 옮겨졌다 — 옮겨 쓸 말(「겹쳐」 「한 문장」)을 꼴 이름에 두지 않는다.
-  const PAIR_FORM: Readonly<Record<string, readonly string[]>> = { 공통: ["두 근거가 같은 모습을 가리키는 꼴(그 모습을 이 사람의 장면으로)", "유형 쪽 버릇을 그때의 기운이 받쳐 주는 꼴"], 긴장: ["두 쪽을 「-지만」으로 맞대", "유형 쪽 버릇을 먼저 두고 그때 기운이 거스르는 꼴"], 보완: ["한쪽이 비는 곳을 다른 쪽이 채우는 꼴", "채워지는 쪽을 먼저 두는 꼴"] };
+  // P7 판독(annual-p5 7 · 1월 「…쪽이 한 문장 안에서 겹칩니다」 · P6 「…와 같은 쪽으로 겹쳐요」 21곳): 꼴 이름이 본문에 옮겨졌다 — 옮겨 쓸 말(「겹쳐」 「한 문장」)을 꼴 이름에 두지 않는다. P7 major-1 2036 「채워지는 쪽을 먼저 둡니다」 — 꼴 이름은 화살표 메모 꼴로(본문 문장이 아님이 보이게).
+  const PAIR_FORM: Readonly<Record<string, readonly string[]>> = { 공통: ["두 근거가 같은 모습을 가리킴(그 모습을 이 사람의 장면으로)", "유형 버릇 → 그때 기운이 받침(장면으로)"], 긴장: ["유형 버릇 ↔ 그때 기운이 맞섬(「-지만」 한 번)", "유형 버릇 먼저 → 그때 기운이 거스름(장면으로)"], 보완: ["한쪽의 빈 곳 ← 다른 쪽이 채움(장면으로)", "채워지는 쪽 먼저 → 채우는 쪽(장면으로)"] };
   return keys.map((k, i) => {
     const seat = (k.links ?? []).find(l => l.kind === "seat");
     const cands = [...(k.scene ? ["장면"] : []), ...(seat && (seat.nth ?? 1) > 1 ? ["대비"] : []), ...(seat ? ["입력"] : []), "관계", "영역"];

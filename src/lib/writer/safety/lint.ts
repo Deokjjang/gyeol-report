@@ -213,7 +213,8 @@ export const dayunPositionKo = (yearIndex1: number): string => (yearIndex1 === 1
 const PHASE_CLAIM: readonly [DayunPhase, RegExp][] = [
   ["early", /초입|막 시작|들어선 지 얼마|시작한 지 얼마|앞쪽|첫머리|문을 연/],
   ["middle", /한가운데|중반|중간쯤|중간 지점|허리/],
-  ["late", /끝자락|마무리|막바지|끝나 가|끝 무렵|저물|마지막 (몇 )?해|끝을 향/],
+  // P7 major-p5 3.0 · 3.2: 「하나만큼은 끝까지 마무리하는 원칙」 「이번 대운 안에 끝까지 마무리해 보세요」는 위치 말이 아니다 — 「마무리」는 때를 가리킬 때만.
+  ["late", /끝자락|(대운|10년)의 마무리|마무리 (단계|시기|무렵|구간|해)|마무리(하는|되는|짓는) (때|시기|해|구간|10년)|마무리(에|로) (들어|접어)|막바지|끝나 가|끝 무렵|저물|마지막 (몇 )?해|끝을 향/],
 ];
 /** 대운 이야기에서 위치를 잘못 짚은 말(실제 위치와 다른 단계 이름). */
 export function dayunPhaseClaim(sentence: string, actual: DayunPhase): DayunPhase | null {
