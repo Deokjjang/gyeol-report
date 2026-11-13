@@ -121,4 +121,12 @@ describe("AM2-7 1부 고치기 층 — 문단째 받기 · 결정론 받는 조�
     expect(detFix("올해의 흐름은 빠릅니다.", "time_deictic", { year: 2027 })).toBe("2027년의 흐름은 빠릅니다.");
     expect(detFix("올해 남은 두 달", "time_deictic", { year: 2027 })).toBeNull();
   });
+  it("P7 판독 고침: 견줌 문장의 「같은 자리에」 · 「이번에는」(같은 문장 앞 절에 달 이름) · 「둘이 같은 자리에」 · 꾸밈말 「같은 편안한」은 앞말 결함이 아니다", () => {
+    expect(antecedentIssues("8월 · 무신월에는 같은 가까운 사람의 자리에 수국 반합이 모임으로 왔고, 이번에는 자축합이 들어와요.", "")).toEqual([]);
+    expect(antecedentIssues("6월 · 병오월에는 같은 자리에서 다듬는 힘이 일했다면, 이번에는 오미합이 맺혀요.", "")).toEqual([]);
+    expect(antecedentIssues("둘이 같은 자리에 앉는 시간이 늘어요. 늘 같은 편안한 사람이 곁에 있어요.", "")).toEqual([]);
+    expect(antecedentIssues("같은 고민을 다시 꺼내기 쉬워요.", "")).toHaveLength(1);
+    expect(antecedentIssues("이번에는 다르게 해 보세요.", "")).toHaveLength(1);
+    expect(premiseHits("좋아하는 마음이 확인될 때까지 아낄 때", inputsOf({ relationship: "married", children: "none", job: { status: "employee" } })).map(h => h.word)).toEqual(["마음 확인"]);
+  });
 });

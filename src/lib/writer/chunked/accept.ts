@@ -94,8 +94,11 @@ export function antecedentIssues(para: string, prev: string): string[] {
       if (st.length >= 2 && !pre.includes(st) && !nominal) out.push(`「${m[0]}」이 가리키는 말이 앞에 없다`);
     }
     const same = at(/(?<![가-힣])같은 ([가-힣]{2,})/);
-    if (same && !/(과|와|처럼) 같은/.test(sen.slice(Math.max(0, same.m.index - 3), same.m.index + 3)) && !/(과|와) 같은/.test(sen) && !same.pre.includes(stem2(same.m[1]))) out.push(`「${same.m[0]}」이 받는 말이 앞에 없다`);
-    if (/이번엔|이번에는/.test(sen) && !/(과|와) 같은|지만|와 달리|과 달리/.test(sen) && months(before) === 0 && !/앞|지난|처음|전에/.test(before)) out.push("「이번엔」이 견줄 앞 때가 앞에 없다");
+    // P7 판독(annual-p5 7 · 12월 · 2.2): 연결 고리의 「(8월 · 무신월에는) 같은 자리에」 · 「둘이 같은 자리에」 · 꾸밈말 「같은 편안한」은 앞말이 없어도 선다.
+    const sameOk = same && (stem2(same.m[1]) === "자리" || /[한운은는던운](?![가-힣])/.test(same.m[1].slice(-1)) || /(?:(?:1[0-2]|[1-9])월|20\d\d년|[가-힣]{2}[월년])(에는|에|의|엔|에서|과|와)?(?![가-힣])/.test(sen.slice(0, same.m.index)));
+    if (same && !sameOk && !/(과|와|처럼) 같은/.test(sen.slice(Math.max(0, same.m.index - 3), same.m.index + 3)) && !/(과|와) 같은/.test(sen) && !same.pre.includes(stem2(same.m[1]))) out.push(`「${same.m[0]}」이 받는 말이 앞에 없다`);
+    { const ib = sen.search(/이번엔|이번에는/), pre2 = ib >= 0 ? `${before} ${sen.slice(0, ib)}` : before; // 같은 문장 앞 절의 달 이름(「6월 · 병오월에는 …, 이번에는」)도 견줄 때다.
+      if (ib >= 0 && !/(과|와) 같은|지만|와 달리|과 달리/.test(sen) && months(pre2) === 0 && !/[가-힣]{2}월|앞|지난|처음|전에/.test(pre2)) out.push("「이번엔」이 견줄 앞 때가 앞에 없다"); }
     // 「반대 의견 하나를」처럼 이름 말 뒤의 셈 말은 목록을 받지 않는다(R7 major-1 3.0 ¶3 오탐) — 문장 첫머리나 조사 · 부사 뒤의 「하나를」만 본다.
     const one = /(?:^|([가-힣]+) )하나를/.exec(sen), oneNoun = Boolean(one?.[1]) && !/(을|를|이|가|은|는|에|에서|고|면|도|만|서|중|요|딱|단|꼭|먼저|우선|일단|그|이)$/.test(one![1]);
     if (one && !oneNoun && !/둘|두 |세 |여러|가지|중|가운데|목록|들/.test(`${before} ${sen.slice(0, one.index)}`)) out.push("「하나를」이 고를 목록이 앞에 없다");

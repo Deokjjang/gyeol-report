@@ -415,11 +415,12 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const finalFix = fixOf(chapters, final);
   // 3-2 소망 원문은 렌더 단계에서 넣는다(작가는 «바람» 표시만 — 원문을 고칠 수 없다. P2 판독 annual-1: 1장은 원문, 9장은 「지금」을 뺀 꼴로 인용이 두 가지였다).
   // AM2-5 P5 자동 점검(세운 annual-1 — 연결 고리의 「적어 준 바람의 … 쪽」을 작가가 «바람»으로 옮겨 바람 원문이 7장에 여섯 번 통째로 들어갔다): 원문은 책에서 처음 한 번만, 그 뒤는 「적어 준 바람」.
+  // P7 판독(annual-p6a 9.0 ¶1): 작가가 「적어 준 «바람»」으로 쓰면 두 번째부터 「적어 준 적어 준 바람」이 됐다 — 앞이 「적어 준」이면 「바람」만. 뒤가 「이 바람」이면(annual-1 9.0 「«바람» 이 바람과」) 표시를 뺀다.
   let wishSeen = false;
   // AM2-6 3부: 원문 «…» 뒤 조사는 원문 끝 글자로 고른다(작가는 「«바람»이라는」처럼 받침 있는 꼴로 쓴다 — 원문 끝이 「요」면 「라는」).
   const wishJosa = (w: string, rest: string) => fitJosa(w.replace(/[^가-힣]/g, "").slice(-1), rest);
-  const wishOnce = (t: string) => t.split(WISH_MARK).reduce((acc, part, i) => { if (i === 0) return part; const raw = intake.wish && !wishSeen; const w = raw ? `«${intake.wish}»` : "적어 준 바람"; wishSeen = true; return `${acc}${w}${raw ? wishJosa(intake.wish!, part) : part}`; }, "");
-  chapters = chapters.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.split(WISH_MARK).join("적어 준 바람"), paragraphs: sec.paragraphs.map(p => wishOnce(p)) })) }));
+  const wishOnce = (t: string) => t.split(WISH_MARK).reduce((acc, part, i) => { if (i === 0) return part; const raw = intake.wish && !wishSeen; if (!raw && /^\s*(이|그) 바람/.test(part)) { wishSeen = true; return `${acc}${part.replace(/^\s+/, "")}`; } const w = raw ? `«${intake.wish}»` : /(적어 ?(준|주신)|당신이 적은|직접 적은) ?$/.test(acc) ? "바람" : "적어 준 바람"; wishSeen = true; return `${acc}${w}${raw ? wishJosa(intake.wish!, part) : part}`; }, "");
+  chapters = chapters.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.split(WISH_MARK).reduce((a2, part, i) => (i === 0 ? part : `${a2}${/(적어 ?(준|주신)|당신이 적은|직접 적은) ?$/.test(a2) ? "바람" : "적어 준 바람"}${part}`), ""), paragraphs: sec.paragraphs.map(p => wishOnce(p)) })) }));
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
 

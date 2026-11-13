@@ -715,7 +715,8 @@ function personCard(brief: Brief, year: number, wish: { kind: string; text?: str
 export function assignForms(keys: readonly KeyPlan[], pairs: readonly Pair[]): KeyPlan[] {
   const used = { opener: new Map<string, number>(), link: new Map<string, number>(), pair: new Map<string, number>() };
   const take = (m: Map<string, number>, cands: readonly string[], cap: number, rot: number) => { const order = [...cands.slice(rot % Math.max(1, cands.length)), ...cands.slice(0, rot % Math.max(1, cands.length))]; const pick = order.find(x => (m.get(x) ?? 0) < cap) ?? order[0]; if (pick) m.set(pick, (m.get(pick) ?? 0) + 1); return pick; };
-  const PAIR_FORM: Readonly<Record<string, readonly string[]>> = { 공통: ["같은 쪽을 한 문장에 겹쳐", "유형 쪽 버릇을 그때의 기운이 받쳐 주는 꼴"], 긴장: ["두 쪽을 「-지만」으로 맞대", "유형 쪽 버릇을 먼저 두고 그때 기운이 거스르는 꼴"], 보완: ["한쪽이 비는 곳을 다른 쪽이 채우는 꼴", "채워지는 쪽을 먼저 두는 꼴"] };
+  // P7 판독(annual-p5 7 · 1월 「…쪽이 한 문장 안에서 겹칩니다」 · P6 「…와 같은 쪽으로 겹쳐요」 21곳): 꼴 이름이 본문에 옮겨졌다 — 옮겨 쓸 말(「겹쳐」 「한 문장」)을 꼴 이름에 두지 않는다.
+  const PAIR_FORM: Readonly<Record<string, readonly string[]>> = { 공통: ["두 근거가 같은 모습을 가리키는 꼴(그 모습을 이 사람의 장면으로)", "유형 쪽 버릇을 그때의 기운이 받쳐 주는 꼴"], 긴장: ["두 쪽을 「-지만」으로 맞대", "유형 쪽 버릇을 먼저 두고 그때 기운이 거스르는 꼴"], 보완: ["한쪽이 비는 곳을 다른 쪽이 채우는 꼴", "채워지는 쪽을 먼저 두는 꼴"] };
   return keys.map((k, i) => {
     const seat = (k.links ?? []).find(l => l.kind === "seat");
     const cands = [...(k.scene ? ["장면"] : []), ...(seat && (seat.nth ?? 1) > 1 ? ["대비"] : []), ...(seat ? ["입력"] : []), "관계", "영역"];
