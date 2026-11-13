@@ -100,6 +100,13 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
   return { built, verdict, summary: { ...summary, provider: summary.provider ?? target.provider, model: summary.model ?? target.model }, reason, seen };
 }
 
+/** 앞 시도가 정식본 generation_hold로 끝났는가(보류 사유 문자열). */
+export const isHoldRepeat = (lastReason: unknown) => /^official:(?:partial:|pre_output:)?generation_hold/.test(String(lastReason ?? ""));
+/** 같은 빌드를 되풀이하지 않는 시도 결과(호출 0 · 비용 0). 사유는 앞 보류 그대로에 「:repeat」를 붙인다. */
+function holdRepeatAttempt(last: string): Awaited<ReturnType<typeof attempt>> {
+  const reason = last.endsWith(":repeat") ? last : `${last}:repeat`;
+  return { built: null, verdict: { kind: "incomplete", reason: reason.replace(/^official:/, ""), rejected: [], missing: [], preOutput: true }, summary: { provider: null as unknown as string, model: null as unknown as string, costUsd: 0, durationMs: 0, calls: [], chapters: [] }, reason, seen: { openaiQuota: false, anthropicCredit: false } as Awaited<ReturnType<typeof attempt>>["seen"] };
+}
 /**
  * 큐 작업 한 건(결제·이용권 공통). settle이 큐 쪽 동작(발행·보류·포기)을 하고 성공 여부를 돌려준다.
  * 기록은 settle 뒤에 남긴다(발행이 실제로 됐는지 보고 published/stale을 적는다).
@@ -118,7 +125,10 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const cap = orderCostCap(process.env, job.payload.productKey), spentBefore = await spentSoFar(env, job.reportId);
   const lane = interim ? "interim" : "official";
   // 최종판3 6: 결제·이용권 주문은 누적 비용으로 보류하지 않는다(결제 뒤 발행 실패 금지). 상한은 이번 시도의 검수·수리에만 건다(작가는 늘 부른다).
-  const a = await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore) }, lane);
+  // AM2-8 5부(덕짱님 결정 5): 같은 입력이면 같은 보류 — 정식본이 generation_hold로 끝났고(묶음 다시 부름 1회까지 한 뒤) 이번에도 정식본 차례면 같은 빌드를 되풀이하지 않는다.
+  // 원문 보관(같은 입력 해시 = 같은 원고)이라 다시 지어도 같은 보류가 나온다(시험 am28-hold). 시간표(미룸 → 24시간 → 자동 환불)는 그대로 두고 호출 · 빌드는 하지 않는다.
+  const repeatHold = !interim && isHoldRepeat(state.last_reason);
+  const a = repeatHold ? holdRepeatAttempt(String(state.last_reason)) : await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore) }, lane);
   let decision: Decision;
   if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
   else if (a.verdict.kind === "incomplete" && a.verdict.capped) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: a.reason.includes("cost_cap 주문당") ? a.reason : `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${(spentBefore + a.summary.costUsd).toFixed(4)}) — 보류` };

@@ -7,7 +7,7 @@ import { REL_WORD, relImageOf, verifyLinks } from "@/lib/writer/chunked/link";
 import { am26Flags } from "@/lib/writer/chunked/check";
 import { blockCtxFor, fitJosa, splitKeyParagraphs } from "@/lib/writer/chunked/publish";
 import { calendarMonth, CHAPTER_REF } from "@/lib/writer/safety/p6d";
-import { chunkExamples, chunkRules, renderCard, ruleCtxOf } from "@/lib/writer/chunked/prompt";
+import { chunkExamples, chunkPlan, chunkRules, mbtiBlock, renderCard, ruleCtxOf } from "@/lib/writer/chunked/prompt";
 import { coreLine, coreOf, loveUpOf, SEAT_SHORT_KO } from "@/lib/brief/core";
 import { reviewLine } from "@/lib/brief/timeline";
 import { writerKnowledge } from "@/lib/writer/publish";
@@ -63,7 +63,9 @@ describe("AM2-6 2부 짝에 이유", () => {
     for (const id of ["annual-1", "major-1"]) { const { intake } = setup(id);
       expect(intake.pairs.every(p => /^(공통|보완|긴장)$/.test(p.reason))).toBe(true);
       expect(intake.pairs.filter(p => /하늘에 든 때 ·|같은 나이대/.test(p.why))).toEqual([]);
-      expect(renderCard(intake)).toMatch(/\| (공통|보완|긴장) — /); }
+      // AM2-8 2부: 짝은 공유 블록이 아니라 그 짝을 쓰는 묶음 지시에만 있다.
+      expect(chunkPlan(intake).map(c => mbtiBlock(intake, c)).join("\n")).toMatch(/\| (공통|보완|긴장) — /);
+      expect(renderCard(intake)).not.toMatch(/\| (공통|보완|긴장) — /); }
   });
   it("짝 범위 = 하늘 십성 줄 + 그 십성의 영역 줄. 범위 밖(고리 자리 뜻 · 관계 · 대운)과 MBTI를 이으면 차단, 짝 문장은 마지막 문장", () => {
     const { intake, b } = setup("major-1"); const kp = keysOf(intake).find(k => k.pair)!;

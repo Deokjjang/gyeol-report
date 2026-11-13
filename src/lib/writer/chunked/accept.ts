@@ -71,8 +71,10 @@ export function leanOnCut(para: string, cut: string, prev: string): string[] {
   const ss = splitSentences(clean(para)), c = clean(cut).trim(), i = ss.findIndex(s2 => s2.trim() === c);
   if (i < 0 || i === ss.length - 1) return [];
   const prior = `${clean(prev)} ${ss.slice(0, i).join(" ")}`, after = ss.slice(i + 1).join(" ");
+  // AM2-8 1부(Q7 major-p5 3.0 ¶3 「다만 말과 결과물이 앞서 나갈 때가 있어요.」를 지워 「그럴 때 한 박자 …」가 고아): 바로 뒤 문장이 앞 문장을 받는 말로 열면 지우지 않는다.
+  const lean0 = /^(그럴|이럴|그런|이런|그렇게|이렇게|그래서|그러니|그러면|그만큼|그때|이때|그 덕|그럼에도|그럴수록|그렇다면)(?![가-힣])/.exec(ss[i + 1].trim());
   const nouns = [...new Set([...c.matchAll(/([가-힣]{2,6}?)(?:이|가|은|는|을|를|도|만|과|와|으로|로|에서|에)(?![가-힣])/g)].map(m => m[1]))].filter(n => !SAFE_NOUN.has(n) && !LEAN_STOP.has(n) && !/[하되]$/.test(n));
-  return nouns.filter(n => after.includes(n) && !prior.includes(n)).map(n => `지운 문장의 「${n}」을 뒤 문장이 받는다`);
+  return [...(lean0 ? [`뒤 문장이 「${lean0[1]}」로 지운 문장을 받는다`] : []), ...nouns.filter(n => after.includes(n) && !prior.includes(n)).map(n => `지운 문장의 「${n}」을 뒤 문장이 받는다`)];
 }
 const stem2 = (w: string) => w.replace(/(에서는|에서도|에서|에게는|에게|으로는|으로|로는|로|에는|에도|에|의|을|를|이|가|은|는|도|만|과|와|처럼|까지|부터|이라|라)+$/, "").slice(0, 2);
 export function antecedentIssues(para: string, prev: string): string[] {
@@ -168,4 +170,22 @@ export const DET_RULES: ReadonlySet<string> = new Set(["name_call", "degree", "i
 export const RECORD_ONLY: ReadonlySet<string> = new Set(["chapter_repeat", "screen_repeat", "rel_echo", "head_echo", "link_template", "tone_mismatch", "rx_extra", "ending_cap", "gyeol_cap", "rep_adjacent",
   "pair_last", "pair_opener", "pair_causal", "key_paras", "claim_months", "advice_repeat_sec", "rx_repeat_sec", "head_repeat", "pointer_expand", "promise_tail", "domain_opener", "angle_leak", "advice_repeat", "rx_repeat", "phrase_repeat", "scene_repeat", "meaning_repeat", "prior_overlap", "closing_repeat"]);
 /** 경계 가운데 다시 쓰기를 부르는 것(지우거나 보류하지 않는다). wish_scope: 바람 말은 사실 오류가 아니라 자리 규칙이다(R7 annual-1 10월 — 지우기가 연애 줄까지 지웠다). */
-export const REWRITE_BOUNDARY: ReadonlySet<string> = new Set(["must_bare", "wish_scope"]);
+// AM2-8 3부 · 5부: 장 안 같은 틀 셋째 · 장 사이 9어절 복사는 그 문단만 다시 쓰기에 올린다(보류 · 지우기는 하지 않는다).
+export const REWRITE_BOUNDARY: ReadonlySet<string> = new Set(["must_bare", "wish_scope", "template_third", "cross_copy8", "rel_subject_time", "screen_copy6"]);
+
+// ---------- AM2-8 5부 뿌리 5: 뜻 방향(살필 · 권함 · 중립) ----------
+export type Dir3 = "caution" | "plus" | "neutral";
+const CAUTION_W = /살피|살필|조심|흔들|미루기 쉬|미루기 쉽|늦추|늦출|무리|지치|버거|어긋|부딪|서운|막히|새기 쉬|새는|닳|아끼는 데 집중|놓치기 쉬|닫히기 쉬/g;
+const PLUS_W = /어울리|어울려|좋은 (달|해|때)|좋아요|좋습니다|열리|살아나|빛나|기회|든든|편안|가벼워|해 보기 좋|권해|추천/g;
+/** 글의 뜻 방향 점수(살필 말 수 · 권함 말 수). */
+export const dirScore = (t: string) => ({ caution: (t.match(CAUTION_W) ?? []).length, plus: (t.match(PLUS_W) ?? []).length });
+/** 카드 줄 글의 방향(「…을 살필 달」 「늦출」 → 살필, 「…이 오르는 달」 → 권함, 그 밖 중립). */
+export const cardDir = (t: string): Dir3 => (/(살필|늦출|새기 쉬운|무리하기 쉬운|쉬어 갈) (달|해)|살필 쪽|살핌:/.test(t) ? "caution" : /(오르는|열리는) (달|해)|좋은 쪽|오름:/.test(t) ? "plus" : "neutral");
+/** 다시 쓴 문단이 카드 방향을 뒤집었는가(P7 annual-p6b 2월 ¶2 — 살필 뜻 M19 「…미루기 쉬운 쪽」을 다시 쓰기가 「…모습이 어울리는 달」로). */
+export function dirFlip(before: string, after: string, card: Dir3): string | null {
+  const b = dirScore(before), a = dirScore(after);
+  if (card === "caution" && b.caution > 0 && a.caution === 0 && a.plus > 0) return "카드는 살필 뜻인데 다시 쓴 글이 권함으로 뒤집혔다";
+  if (card === "plus" && b.plus > 0 && a.plus === 0 && a.caution > 0) return "카드는 좋은 쪽인데 다시 쓴 글이 살필 뜻으로 뒤집혔다";
+  if (card !== "neutral" && b.caution > 0 && b.plus === 0 && a.caution === 0 && a.plus > 0) return "살필 뜻 문단이 권함으로 뒤집혔다";
+  return null;
+}

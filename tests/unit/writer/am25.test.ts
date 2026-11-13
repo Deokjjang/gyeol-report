@@ -40,7 +40,7 @@ describe("AM2-5 1부 카드 값은 고객 말로", () => {
   it("작가 카드: 핵심 관계 뜻은 「화면에 있음 · 풀어 쓰지 않음」, 대운 key의 「대운 안의 위치」 줄 없음, 각도 없음", () => {
     const a = setup("annual-1"), m = setup("major-1");
     const card = renderCard(a.intake), mcard = renderCard(m.intake);
-    expect(card).toMatch(/오미합 \| 화면에 있음 · 풀어 쓰지 않음 · 핵심어: 맞물려 묶이는 힘/);
+    expect(card).toMatch(/오미합 \| 이름과 핵심어만 · 핵심어: 맞물려 묶이는 힘/);
     // 해 key 줄(Y)에는 위치 줄이 없다(3장 서 있는 대운 D1의 위치는 그 장 근거라 남는다).
     expect(mcard.split("\n").filter(l => /^- Y\d+ \|/.test(l) && /대운 안의 위치/.test(l))).toEqual([]);
     expect(card).not.toMatch(/ · 각도: /);
@@ -69,7 +69,7 @@ describe("AM2-5 1부 연결 고리 · key 짝 · 장면", () => {
     const k = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
     const seat = k.links!.find(l => l.kind === "seat")!;
     // 이 달 오미합 배지는 섞인 결(plus 아님) — 연애 오름 신호가 있어도 방향은 「섞임」으로 둔다(오름이 배지 결을 덮지 않게).
-    expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 — 앞과 뜻이 다르다 · 입력 한 마디: 솔로 · 섞임 · 이 달 오름: 연애/);
+    expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 · 앞과 다름 · 입력 한 마디: 솔로 · 섞임 · 이 달 오름: 연애/);
     // AM2-7 3부 5: 둘째부터 「앞 key(그때 같은 자리 관계 전부) + 이번 관계 뜻 + 입력 한 마디」(틀 문구 없음).
     expect(seat.text).toMatch(/이 책 \d번째 · 앞: 6월 · 병오월\(그때 같은 자리: /);
     expect(seat.text).toMatch(/입력 한 마디: 솔로/);

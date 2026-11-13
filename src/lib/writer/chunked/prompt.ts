@@ -7,9 +7,10 @@
 import { STYLE_EXAMPLES } from "../prompt/examples";
 import type { ChapterPlan, Intake, KeyPlan, Line } from "./intake";
 import { neutralize, soften, type Inputs } from "@/lib/brief/premise";
+import { cardDir, type Dir3 } from "./accept";
 import { CHUNK_GROUPS, KEY_TARGET, relationshipOf, SUBJECT_KO, WISH_MARK } from "./intake";
 
-export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-10";
+export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-11";
 /** 작가에게 보이는 분량 = 목표 × 이 값(AM2-3 2-4: 목표가 실측·카드 양에서 오므로 1). */
 export const CHUNK_TARGET_FACTOR = 1.0;
 /** 카드 줄 몫(key 하나, 글자). AM2-4 1부: 카드는 화면(결정론)이 맡아 작가는 카드 줄을 쓰지 않는다. */
@@ -35,7 +36,7 @@ const R_BASE = `너는 결리포트 세운·대운 책의 작가다. 사주(명�
 - 비유는 장마다 하나까지, 현대 생활로. 농사·시골 비유와 그림 별명 금지.
 
 # 사실은 화면, 해석은 본문
-- 달·해 카드(간지·십성과 쉬운 뜻·흐름·영역 신호·관계 배지와 그 뜻·오행 채움·할 일·그림)는 화면이 결정론으로 보여 준다. 본문은 그것을 되풀이하지 않는다. 카드 줄 뜻에 「화면에 있음 · 풀어 쓰지 않음」이 적힌 것은 이름만 한 번 부르고 뜻을 풀지 않는다.
+- 달·해 카드(간지·십성과 쉬운 뜻·흐름·영역 신호·관계 배지와 그 뜻·오행 채움·할 일·그림)는 화면이 결정론으로 보여 준다. 본문은 그것을 되풀이하지 않는다. 카드 줄 뜻에 「이름과 핵심어만」이 적힌 줄은 이름과 핵심어 한 마디로만 쓰고 뜻을 풀지 않는다.
 - 본문이 맡는 것: 이 사람에게 갖는 뜻 — 설계도의 연결 고리 재료 · 짝 · 장면. 같은 사실을 두 번 쓰지 않는다.
 - 연결 고리 재료는 문장이 아니라 재료다. 재료 칸 이름(자리 뜻 · 관계 뜻 · 재료 · 결)과 재료 말을 그대로 옮기지 않고, 이 사람의 입력과 상황에 맞춘 경향 한 문장으로 녹인다. 「결」은 책 전체에서 세 번까지.
 - 같은 자리가 다시 나오면 자리 뜻을 다시 풀지 않는다. 재료에 적힌 앞 달·해와 이번 관계 뜻의 차이 · 이 사람 입력 한 마디로 쓴다.
@@ -149,24 +150,24 @@ const linkText = (k: KeyPlan) => { const ls = k.links ?? [], main = ls.filter(l 
 const lineText = (l: Line) => `- ${l.id} | ${l.value}${l.meaning ? ` | ${l.meaning}` : ""}${l.use.length ? ` | 쓰는 장: ${l.use.join("·")}` : ""}`;
 const target = (t: readonly [number, number], extra = 0) => `${Math.round(t[0] * CHUNK_TARGET_FACTOR) + extra}~${Math.round(t[1] * CHUNK_TARGET_FACTOR) + extra}자`;
 /** AM2-7 3부 6: 여는 방식 뜻(작가에게 보이는 말). */
-const OPENER_KO: Readonly<Record<string, string>> = { 장면: "장면 씨앗으로 연다", 입력: "이 사람 입력(일 · 관계)으로 연다", 관계: "핵심 관계의 뜻으로 연다", 대비: "앞 달·해와 견주어 연다", 영역: "그 달·해 영역 근거로 연다" };
+const OPENER_KO: Readonly<Record<string, string>> = { 장면: "장면 씨앗으로 연다", 입력: "이 사람 입력(일 · 관계)으로 연다", 관계: "핵심 관계의 뜻으로 연다", 대비: "같은 자리의 앞 달·해와 견주어 연다", 영역: "그 달·해 영역 근거로 연다", 자리: "태어난 자리 뜻으로 연다", 견줌: "바로 앞 달·해와 무엇이 다른지로 연다", 물음: "읽는 사람에게 묻는 한 문장으로 연다(지난 일은 묻지 않는다)" };
 const WHEN_KO: Readonly<Record<KeyPlan["when"], string>> = { past: "지남", current: "진행 중", future: "앞으로" };
 /** 씨앗을 받는 틀(P 시범: 사건 서술 꼴 씨앗을 「…하는 해입니다」로 옮겨 확정 예언 10건). */
 const SEED_FRAME: Readonly<Record<KeyPlan["when"], string>> = { past: "지난 때", current: "그 무렵", future: "앞날" };
 
-function chapterText(c: ChapterPlan, product: Intake["product"], inputs?: Inputs): string {
+function chapterText(c: ChapterPlan, product: Intake["product"], inputs?: Inputs, mbtiOn = false): string {
   const out = [`## ${c.n}. ${c.title}`, `- 이 장이 답할 질문: ${c.question}`];
   if (c.useName) out.push("- 이름 부르기: 이 장 첫 문단");
   if (c.sections) {
     out.push(`- 분량: ${target(c.target)} · 소제목 ${c.sections.length}개`);
     // AM2-5 1부: 각도는 문장 재료로 보내지 않는다(P4 판독 세운 「혼자 있는 시간에」 7번). AM2-5 2부: 같은 주장은 앞 장만 — 뒤 장은 엔진 가리키기 말.
-    c.sections.forEach((s, i) => out.push(`  ${i + 1}) 소제목 틀: ${s.q} — 근거 ${s.lines.join("·") || "없음"}${s.pointer ? ` · 핵심 주장: 앞 장 몫 — 가리키기 「${s.pointer}」로만 짚고 그 목록·뜻을 다시 적지 않는다` : s.claims.length ? ` · 핵심 주장: ${s.claims.join(" / ")}` : ""}${s.scene ? ` · 장면 씨앗: ${s.scene}` : ""}`));
+    c.sections.forEach((s, i) => out.push(`  ${i + 1}) 소제목 틀: ${s.q} — 근거 ${s.lines.join("·") || "없음"}${s.pointer ? ` · 핵심 주장: 앞 장 몫 — 가리키기 「${s.pointer}」로만 짚고 그 목록·뜻을 다시 적지 않는다` : s.claims.length ? ` · 핵심 주장: ${s.claims.join(" / ")}` : ""}${s.scene ? ` · 장면 씨앗: ${s.scene}` : ""}${s.angle && c.away && s.lines.some(id => id in c.away!) ? ` · 새 각도: ${s.angle}(다른 장이 집인 근거는 이 각도로만 · 각도 이름은 본문에 쓰지 않는다)` : ""}`));
   }
   if (c.keys) {
     const per = product === "annual_fortune" ? target(c.target, CARD_CHARS) : "";
     out.push(`- key ${c.keys.length}개, ${product === "annual_fortune" ? `key마다 본문 ${per}` : `깊게 key 본문 ${KEY_TARGET.deep.join("~")}자 · 짧게 key 본문 ${KEY_TARGET.short.join("~")}자`} — 핵심과 그 의미를 다 쓰면 되는 만큼, 같은 말로 늘리지 않는다`);
-    out.push("- key 본문에는 행동·처방을 쓰지 않는다(할 일은 화면 카드). 「화면」에 적힌 사실은 본문에 되풀이하지 않는다.");
-    for (const k of c.keys) out.push(`  ### ${k.label} · 때: ${WHEN_KO[k.when]}${k.depth ? ` · 깊이: ${k.depth === "deep" ? "깊게" : "짧게"}` : ""} · 머리 문장(시스템이 넣음): ${k.head} · 핵심: ${(k.core ?? []).join(" / ")}(이름과 뜻 한 마디 — 배지 줄은 화면) · 근거 ${k.lines.join("·")}${k.range ? ` · 카드 줄 ${k.range}` : ""}${k.must?.length ? ` · 반드시 쓸 것: ${k.must.map(x => x.what).join(" / ")}` : ""}${k.pointer ? ` · 가리키기(그대로 써도 됨): 「${k.pointer}」` : ""}${linkText(k)}${k.opener ? ` · 여는 방식: ${OPENER_KO[k.opener] ?? k.opener}` : ""}${k.linkForm ? ` · 고리 꼴: ${k.linkForm}` : ""}${k.pair ? ` · 짝: ${k.pair}(이 본문의 마지막 문장${k.pairForm ? ` · 짝 꼴: ${k.pairForm}` : ""})` : ""}${k.scene ? ` · 장면(${SEED_FRAME[k.when]} — 조건·비유로 문장 안에): ${k.scene}` : ""}${k.screen?.length ? ` · 화면(되풀이 금지): ${k.screen.join(" · ")}` : ""}`);
+    out.push("- key 본문에는 행동·처방을 쓰지 않는다. 흐름 세기 · 관계 배지 뜻 · 오행 채움 · 할 일은 본문에 쓰지 않는다.");
+    for (const k of c.keys) out.push(`  ### ${k.label} · 때: ${WHEN_KO[k.when]}${k.depth ? ` · 깊이: ${k.depth === "deep" ? "깊게" : "짧게"}` : ""} · 머리 문장(시스템이 넣음): ${k.head} · 핵심: ${(k.core ?? []).join(" / ")}(이름과 뜻 한 마디 — 배지 줄은 화면) · 근거 ${k.lines.join("·")}${k.range ? ` · 카드 줄 ${k.range}` : ""}${k.must?.length ? ` · 반드시 쓸 것: ${k.must.map(x => x.what).join(" / ")}` : ""}${k.pointer ? ` · 가리키기(그대로 써도 됨): 「${k.pointer}」` : ""}${linkText(k)}${k.own ? ` · 이 사람 재료: ${k.own}` : ""}${k.opener ? ` · 여는 방식: ${OPENER_KO[k.opener] ?? k.opener}` : ""}${k.opener !== "입력" && ((k.links ?? []).some(l => l.kind === "seat") || k.own) ? " · 입력 낱말은 첫 문장에 두지 않는다" : ""}${mbtiOn && !k.pair ? " · MBTI: 쓰지 않음(짝 없음)" : ""}${k.linkForm ? ` · 고리 꼴: ${k.linkForm}` : ""}${k.pair ? ` · 짝: ${k.pair}(이 본문의 마지막 문장${k.pairForm ? ` · 짝 꼴: ${k.pairForm}` : ""})` : ""}${k.scene ? ` · 장면(${SEED_FRAME[k.when]} — 조건·비유로 문장 안에): ${k.scene}` : ""}`);
   }
   if (c.wishLinks?.length) out.push(`- 바람 고리(이 장에서 가리킬 수 있는 달·해 — «바람» 원문 없이 「적어 준 바람」으로, 이 장에서 한 번): ${c.wishLinks.join(" / ")}`);
   if (c.scenes?.length) out.push(`- 장면 씨앗(필수 아님): ${c.scenes.join(" / ")}`);
@@ -185,22 +186,45 @@ export function renderCard(x: Intake): string {
   return x.inputs ? soften(renderCard0(x), x.inputs) : renderCard0(x);
 }
 function renderCard0(x: Intake): string {
-  const groups = (Object.keys(SUBJECT_KO) as (keyof typeof SUBJECT_KO)[]).map(s => {
+  // AM2-8 2부 뿌리 1(덕짱님 결정 3): MBTI 줄(B) · 짝 · 유형 이름은 공유 블록에 두지 않는다 — 그 줄 · 짝을 쓰는 key · 소제목이 든 묶음 지시에만(mbtiBlock).
+  const groups = (Object.keys(SUBJECT_KO) as (keyof typeof SUBJECT_KO)[]).filter(s => s !== "mbti").map(s => {
     // AM2-4 2부: 어느 장·짝도 쓰지 않는 줄(설계도에서 솎은 달 목록 · 「살필 거리」 · 바탕 줄)은 작가에게 보이지 않는다.
     const paired = new Set(x.pairs.flatMap(p => [p.myeongri, p.mbti]));
     const ls = x.lines.filter(l => l.subject === s && (l.use.length || paired.has(l.id)));
     return ls.length ? `## ${SUBJECT_KO[s]}\n${ls.map(lineText).join("\n")}` : "";
   }).filter(Boolean);
+  const hasMbti = x.lines.some(l => l.subject === "mbti");
   return [
-    "# 인물 카드", ...x.person.map(p => `- ${p}`), "",
+    "# 인물 카드", ...x.person.map(p => (hasMbti && /^MBTI: /.test(p) ? "- MBTI: 적음(유형 · MBTI 줄 · 짝은 그것을 쓰는 묶음 지시에만 있다)" : `- ${p}`)), "",
     "# 근거 카드(id | 값 | 뜻 | 쓰는 장)", ...groups, "",
-    "# 명리×MBTI 짝(이 짝만, 적힌 장·달·해에서만 — 잇는 이유 그대로 한 문장, 달·해 짝은 그 본문의 마지막 문장)", ...(x.pairs.length ? x.pairs.map(p => `- ${p.id} | ${p.myeongri} × ${p.mbti} | ${p.reason} — ${p.why}${p.key ? ` | 쓰는 곳: ${labelOfKey(x, p.key)}만` : p.use?.length ? ` | 쓰는 장: ${p.use.join("·")}` : ""}`) : ["- 없음(명리와 MBTI를 한 문장에서 잇지 않는다)"]), "",
+    ...(hasMbti ? ["# 명리×MBTI 짝: 묶음 지시의 「이 묶음의 MBTI 줄 · 짝」에 적힌 곳에서만 쓴다. 묶음 지시에 없으면 그 묶음에서는 MBTI를 쓰지 않는다.", ""] : []),
     ...(x.positions?.length ? ["# 위치 값(대운 안에서 몇 번째 해 — 위치 말은 이 값이 있는 해만, 값 그대로)", ...x.positions.map(t => `- ${t}`), ""] : []),
-    "# 책 설계도(모든 장)", ...x.chapters.map(c => chapterText(c, x.product, x.inputs)),
+    "# 책 설계도(모든 장)", ...x.chapters.map(c => chapterText(c, x.product, x.inputs, x.lines.some(l => l.subject === "mbti"))),
   ].join("\n");
 }
 
 const labelOfKey = (x: Intake, key: string) => x.chapters.flatMap(c => c.keys ?? []).find(k => k.key === key)?.label ?? key;
+/** 이 묶음 안에서 그 줄을 쓰는 곳(key 이름 · 「N장 i) 소제목」). */
+function placesIn(x: Intake, c: Chunk, id: string): string[] {
+  return c.parts.flatMap(p => { const ch = x.chapters.find(y => y.n === p.n); if (!ch) return [];
+    if (ch.keys) return ch.keys.filter(k => (!p.keys || p.keys.includes(k.key)) && k.lines.includes(id)).map(k => k.label);
+    return (ch.sections ?? []).flatMap((sp, i) => (sp.lines.includes(id) ? [`${ch.n}장 ${i + 1}) 소제목`] : [])); });
+}
+/**
+ * AM2-8 2부 뿌리 1: 이 묶음의 MBTI 줄 · 짝(그 줄을 쓰는 key · 소제목이 이 묶음에 있을 때만). 쓰는 곳은 장이 아니라 key · 소제목으로 좁힌다.
+ * 다시 쓰기(문단 교체)도 같은 블록을 받는다. 이 묶음에 MBTI 재료가 없으면 빈 글.
+ */
+export function mbtiBlock(x: Intake, c: Chunk): string {
+  const type = x.person.find(p => /^MBTI: /.test(p))?.replace(/^MBTI: /, "").trim() ?? "";
+  const bs = x.lines.filter(l => l.subject === "mbti").map(l => ({ l, at: placesIn(x, c, l.id) })).filter(v => v.at.length);
+  const keysHere = new Set(c.parts.flatMap(p => p.keys ?? []));
+  const plain = new Set(c.parts.filter(p => !p.keys).map(p => p.n));
+  const ps = x.pairs.filter(p => (p.key ? keysHere.has(p.key) : (p.use ?? []).some(n => plain.has(n) && (x.chapters.find(ch => ch.n === n)?.sections ?? []).some(sp => sp.lines.includes(p.myeongri) && sp.lines.includes(p.mbti)))));
+  if (!bs.length && !ps.length) return "";
+  return ["# 이 묶음의 MBTI 줄 · 짝(적힌 곳에서만 — 다른 key · 소제목에는 MBTI 유형 이름도 뜻 말도 쓰지 않는다)", `- MBTI 유형: ${type}`,
+    ...bs.map(v => `- ${v.l.id} | ${v.l.value}${v.l.meaning ? ` | ${v.l.meaning}` : ""} | 쓰는 곳: ${v.at.join(" · ")}`),
+    ...ps.map(p => `- 짝 ${p.id} | ${p.myeongri} × ${p.mbti} | ${p.reason} — ${p.why} | 쓰는 곳: ${p.key ? `${labelOfKey(x, p.key)}만` : placesIn(x, c, p.mbti).filter(at => placesIn(x, c, p.myeongri).includes(at)).join(" · ")}(잇는 이유 그대로 한 문장${p.key ? " · 그 본문의 마지막 문장" : ""})`)].join("\n");
+}
 
 // ---------- 장 묶음 ----------
 /** 묶음 하나: 장(과 그 장의 key 일부). 1장이 든 묶음이 표지·키워드를 함께 낸다. */
@@ -272,8 +296,9 @@ export function replaceUser(x: Intake, c: Chunk, drafts: ReadonlyMap<number, { c
   const items = targets.map(t => { const sec = drafts.get(t.chapter)?.chapter.sections[t.section]; const ps = sec?.paragraphs ?? [];
     const where = `${t.chapter}장 · ${labelOf.get(t.heading) ?? t.heading}`;
     const ctx = t.index === "*" ? [`  지금 글: ${ps.length ? ps.join(" / ") : "(비어 있음)"}`] : [...(t.index > 0 ? [`  앞 문단(읽기만): ${ps[t.index - 1]}`] : []), `  고칠 문단: ${ps[t.index] ?? ""}`, ...(ps[t.index + 1] ? [`  뒤 문단(읽기만): ${ps[t.index + 1]}`] : [])];
-    return [`- [¶${t.id}] ${where}${t.index === "*" ? "(이 달·해 본문 전체 — 문단 1~3개)" : ""}`, ...ctx, ...t.issues.map(i => `  · 걸린 문장 «${i.sentence}» — ${i.reason}`)].join("\n"); });
-  return [`고칠 묶음: ${parts}.`,
+    return [`- [¶${t.id}] ${where}${t.index === "*" ? "(이 달·해 본문 전체 — 문단 1~3개)" : ""}`, ...ctx, ...cardNote(x, t), ...t.issues.map(i => `  · 걸린 문장 «${i.sentence}» — ${i.reason}`)].join("\n"); });
+  const mb = mbtiBlock(x, c);
+  return [`고칠 묶음: ${parts}.`, ...(mb ? [mb, ""] : []),
     "아래 「고칠 자리」마다 그 문단(「*」는 그 달·해 본문 전체)을 통째로 새로 써서 [¶번호]와 새 글만 내보내세요. 앞 문단 · 뒤 문단은 읽기 맥락이라 고치지 않습니다.",
     "- 걸린 문장을 같은 근거로 고칩니다. 그 문단의 사실(관계 이름 · 간지 · 대운 이름과 시작 연월 · 달 이름 · 십성 · 숫자)은 그대로 두고, 카드에 없는 사실을 더하지 않습니다.",
     "- 그 문단이 맡은 핵심(설계도의 핵심 주장 · 반드시 쓸 것)을 남깁니다. 「그 · 이 + 명사」 「이 달들」 「같은 + 명사」 「이번엔」처럼 가리키는 말은 그 문단이나 앞 문단에 받는 말이 있을 때만 씁니다.",
@@ -281,6 +306,16 @@ export function replaceUser(x: Intake, c: Chunk, drafts: ReadonlyMap<number, { c
     "- 형식: 번호 줄 하나, 그 아래 새 글. 「*」 자리는 문단 사이를 빈 줄로. 다른 설명 없이.",
     ...(cover ? [`- 맨 앞에 [표지] 한 줄도 새로 씁니다(지금: «${cover.line}» — ${cover.reason}).`] : []),
     "", "고칠 자리:", ...items].join("\n");
+}
+/** AM2-8 5부 뿌리 5: 다시 쓰기 지시에 원래 카드 줄과 그 뜻 방향(살필 · 좋은 쪽 · 중립)을 함께 준다 — 다시 쓴 글이 방향을 뒤집으면 시스템이 버린다. */
+const DIR3_KO: Readonly<Record<Dir3, string>> = { caution: "살필 쪽", plus: "좋은 쪽", neutral: "중립" };
+function cardNote(x: Intake, t: ParaTarget): string[] {
+  const ch = x.chapters.find(c => c.n === t.chapter), kp = ch?.keys?.find(k => k.key === t.heading), sp = !kp ? ch?.sections?.[t.section] : undefined;
+  const text = (ids: readonly string[]) => ids.map(id => x.lines.find(l => l.id === id)).filter((l): l is Line => Boolean(l) && l!.subject !== "mbti").map(l => `${l.value}${l.meaning ? ` — ${l.meaning}` : ""}`).join(" / ");
+  if (kp) { const seat = (kp.links ?? []).find(l => l.kind === "seat"); const lines = text(kp.lines); const dir: Dir3 = seat?.dir === "minus" ? "caution" : seat?.dir === "plus" ? "plus" : cardDir(lines);
+    return [`  카드 줄(뜻 그대로): ${lines.slice(0, 260)} — 방향: ${DIR3_KO[dir]}`]; }
+  if (sp?.claimIds?.length) { const lines = text(sp.claimIds); return [`  카드 줄(뜻 그대로): ${lines.slice(0, 260)} — 방향: ${DIR3_KO[cardDir(lines)]}`]; }
+  return [];
 }
 /** 문단 교체 원고 읽기: 번호 → 새 글(「*」는 문단 배열). [표지] 줄도. */
 export function parseReplacements(text: string): { paras: Map<string, string[]>; cover?: string } {
@@ -309,5 +344,6 @@ function chunkUser0(x: Intake, c: Chunk, rewrite?: { previous: string; issues: r
   // P2 판독(annual-1): key 번호 2027-M04(5월 · 을사월)를 4월로 읽고 갑진월 내용을 썼다 → AM2-3 1-1: 작가에게는 이름과 카드 줄 범위만 보인다.
   const keyNames = c.parts.flatMap(p => (p.keys ?? []).map(k => keyNote(x, k)));
   const keyLine = keyNames.length ? `이 묶음의 달·해와 카드 줄: ${keyNames.join(" · ")}\n` : "";
-  return `${head}\n\n${keyLine}${first ? (x.product === "annual_fortune" ? "맨 앞에 [표지] 한 줄과 [키워드] 한 줄, 이어서 " : "맨 앞에 [표지] 한 줄, 이어서 ") : ""}${CHUNK_HEADER_MARK}\n${chunkHeaders(x, c)}`;
+  const mb = mbtiBlock(x, c);
+  return `${head}\n\n${mb ? `${mb}\n\n` : ""}${keyLine}${first ? (x.product === "annual_fortune" ? "맨 앞에 [표지] 한 줄과 [키워드] 한 줄, 이어서 " : "맨 앞에 [표지] 한 줄, 이어서 ") : ""}${CHUNK_HEADER_MARK}\n${chunkHeaders(x, c)}`;
 }

@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { PUBLICATION_STAGES, ReportStatusView } from "./ReportStatusView";
-import { delayedMessage, etaLabel, GENERATION_STAGE_QUEUED, pollDelay, type GenerationProgress } from "./generationProgress";
+import { delayedMessage, etaLabel, GENERATION_STAGE_QUEUED, HOLD_MESSAGE, pollDelay, type GenerationProgress } from "./generationProgress";
 
 export const STATUS_POLL_MS = 10_000;
 export const STORAGE_RETRY_POLL_MS = 15_000;
@@ -104,7 +104,7 @@ export function ReportGenerationStatus({ attention = false, delayed = false, ret
   const late = progress ? progress.state === "delayed" || (progress.stage === GENERATION_STAGE_QUEUED && elapsed >= LOCAL_DELAY_SECONDS) : elapsed >= LOCAL_DELAY_SECONDS;
   const isDelayed = delayed || late;
   // 다음 시도 시각은 화면이 뜬 뒤(브라우저 시각 기준)에만 붙인다 — 서버·브라우저 첫 화면을 같게 둔다.
-  const message = isDelayed && progress?.state === "delayed" && now !== null ? delayedMessage(progress.nextAt, now) : undefined;
+  const message = isDelayed && progress?.state === "delayed" && progress.hold ? HOLD_MESSAGE : isDelayed && progress?.state === "delayed" && now !== null ? delayedMessage(progress.nextAt, now) : undefined;
   const preview = reportId && (progress?.chapters?.firstReady ?? (progress?.chapters?.done ?? 0) >= 1) ? <FirstChapterPreview reportId={reportId} done={progress!.chapters!.done} total={progress!.chapters!.total} /> : null;
   return <ReportStatusView state={isDelayed ? "delayed" : "preparing"} stage={stage} message={message} {...(progress?.chapters ? { chapters: progress.chapters } : {})} eta={etaLabel(progress?.etaMs)} preview={preview} />;
 }

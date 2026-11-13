@@ -45,7 +45,7 @@ const run = (who: string, payload: unknown) => {
   // ⑤
   const used = (id: string) => intake.chapters.filter(c => [...(c.sections ?? []).flatMap(s2 => s2.lines), ...(c.keys ?? []).flatMap(k2 => k2.lines)].includes(id)).map(c => c.n);
   const groups = new Map<string, string[]>();
-  for (const l of intake.lines) { if (!/^(year|month|input)$/.test(l.subject) || /화면에 있음|머리 문장에 있음|가리키기|이 시기가 속한 대운/.test(l.meaning)) continue; const nm = (l.meaning || l.value).replace(/[^가-힣]/g, ""); if (nm.length >= 12) groups.set(nm, [...(groups.get(nm) ?? []), l.id]); }
+  for (const l of intake.lines) { if (!/^(year|month|input)$/.test(l.subject) || /이름과 핵심어만|화면에 있음|머리 문장에 있음|가리키기|이 시기가 속한 대운/.test(l.meaning)) continue; const nm = (l.meaning || l.value).replace(/[^가-힣]/g, ""); if (nm.length >= 12) groups.set(nm, [...(groups.get(nm) ?? []), l.id]); }
   for (const ids of groups.values()) { if (new Set(ids).size < 2) continue; const chs = new Set(ids.flatMap(used)); const inKeys = ids.filter(id => keys.some(k => k.lines.includes(id))); if (chs.size >= 2 && inKeys.length) note("sameText", `${who} ${ids.join("=")} 장 ${[...chs].join(",")}`); }
   // ⑥
   for (const i of briefCheck(intake, safetyFacts(brief).nicknames ?? [], briefCtxFor(brief))) note("engine", `${who} [${i.rule}] ${i.where}: ${i.text.slice(0, 120)}`);

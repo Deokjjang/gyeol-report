@@ -14,6 +14,7 @@ import { RURAL_PROP, splitSentences } from "../safety/patterns";
 import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
+import { am28Flags } from "./check8";
 import type { Intake, Line } from "./intake";
 import { KEY_TARGET, relationshipOf, RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
 import { WORKPLACE } from "./card";
@@ -127,7 +128,7 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = [], bc: Bri
 
 // ---------- 2) 차단 검사 ----------
 /** 묶음을 다시 쓰게 하는 규칙: 사실·금지(HARD_RULES) + 면책·비문 꼴 + AM2 새 규칙. */
-export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon",
+export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, "mbti_trait", "notice_repeat", "awkward", "fn_join", "code_leak", "abbr_leak", "evidence_owner", "month_line", "month_list", "dayun_soon",
   // AM2 P 판독(2026-11-11)에서 자동 검사가 못 본 유형: 앞날 확정 · 하늘·땅 뒤바뀜 · 일주 꼴 · 정도말 · 지난 일 단정 · 명사구 비문 · 읽기 지시 · 시점 말 · 머리 문장 되풀이.
   "future_event", "sky_ground", "pillar_shape", "degree", "past_assert", "noun_predicate", "reader_directive", "time_extra", "head_repeat",
   // P2 판독(2026-11-11): key별 값 대조 · 따옴표 속 시점 말 · 작은 비문.
@@ -274,7 +275,7 @@ export function skyGroundIssue(sen: string, p: { sky: string; ground: string }):
 }
 const BRANCH_EL: Readonly<Record<string, string>> = { 자: "수", 축: "토", 인: "목", 묘: "목", 진: "토", 사: "화", 오: "화", 미: "토", 신: "금", 유: "금", 술: "토", 해: "수" };
 /** 앞날 장면을 받는 부드러운 틀(어울림·가능·권유·조건·질문). 없으면 사건 단정. */
-const SOFT_RAW = /어울려요|어울립니다|어울리는|떠올라요|떠오릅니다|그려져요|그려집니다|모습|장면|수 있어요|수 있습니다|수도 있|기 쉬워요|기 쉽습니다|기 좋아요|기 좋습니다|기 쉬운데|좋은 때|좋은 해|좋은 달|다면|라면|(?<![가-힣])면 |면,|거든|보세요|보면|두세요|해 두|해도 좋|볼 만|권해요|추천|[?？]$|나요|까요|지도 몰라|일지도|듯해요|듯합니다|법해요|만해요|죠[.!]?$/;
+const SOFT_RAW = /수 있는 (?:해|달|때|시기|10년)(?:예요|이에요|입니다)|어울려요|어울립니다|어울리는|떠올라요|떠오릅니다|그려져요|그려집니다|모습|장면|수 있어요|수 있습니다|수도 있|기 쉬워요|기 쉽습니다|기 좋아요|기 좋습니다|기 쉬운데|좋은 때|좋은 해|좋은 달|다면|라면|(?<![가-힣])면 |면,|거든|보세요|보면|두세요|해 두|해도 좋|볼 만|권해요|추천|[?？]$|나요|까요|지도 몰라|일지도|듯해요|듯합니다|법해요|만해요|죠[.!]?$/;
 /** 「평소라면」처럼 조건이 아닌 「라면」은 떼고 본다(P 시범 2035 「평소라면 안 나갈 공모전에 원서를 내고 … 새우는 해예요」를 놓쳤다). */
 const soft = (sen: string) => SOFT_RAW.test(sen.replace(/(평소|원래|예전|여느 때|보통)(이)?라면/g, ""));
 /** 앞날 장면 씨앗을 그때의 사건으로 옮긴 문장: key 안은 씨앗과 4자 창 8개 이상(P 시범 실측: 단정 23~33, 오탐 3~4), 다른 장은 4개 이상 + 「…는 해·달이에요」. */
@@ -286,7 +287,9 @@ const PAST_DECL = /(었|았|였|했|졌|됐|웠|켰|렸|냈|섰|왔|갔|겼|쳤|
 /** 엔진 사실 문장(그 해의 십성·대운·간지를 말하는 문장)은 지난 일 단정이 아니다. */
 const PAST_FACT = new RegExp(`(${TG}|대운|[갑을병정무기경신임계][자축인묘진사오미신유술해](년|월)?)[^.?!]{0,30}(들어온|들어왔|온 해|안이었|안에 있었|자리였|기운이었|해였)` +
   // AM2-7 1부 6(P6 major-p5 2.1 「지난 정묘 대운은 2014년 11월 무렵부터 이어진 비견의 10년이었어요」 — 엔진 사실만 있는 과거형을 지웠다): 대운 이름 · 시작 연월 · 십성 · 「…의 10년이었」은 엔진 사실.
-  `|대운[^.?!]{0,50}(10년이었|해였|마지막 해였|시작됐|시작되었|시작된 [^.?!]{0,12}이었|이어졌|열렸)|(${TG})의 10년이었|대운이 (시작됐|시작되었|바뀌었|열렸)`);
+  `|대운[^.?!]{0,50}(10년이었|해였|마지막 해였|시작됐|시작되었|시작된 [^.?!]{0,12}이었|이어졌|열렸)|(${TG})의 10년이었|대운이 (시작됐|시작되었|바뀌었|열렸)` +
+  // AM2-8 1부(P7 major-p6b 2.0.1 「…정관에서 편인, 정인으로 날씨가 옮겨 갔습니다」): 해마다 십성이 바뀐 것은 엔진 값의 과거형이다.
+  `|(${TG})에서 [^.?!]{0,24}(${TG})(으)?로 [^.?!]{0,24}(옮겨|바뀌|넘어)`);
 /** AM2-7 1부 6: 사람의 일을 굳힌 과거형(장 · key와 상관없이) — 「이 10년 동안 당신은 …했습니다」 「…해 온 쪽」 「…었을 거예요」. */
 const PERSON_PAST = /당신(은|이|의 [가-힣]{1,4}(은|는|이|가))[^.?!]{0,50}(했습니다|했어요|해 왔습니다|해 왔어요|해 온 쪽이에요|해 온 쪽입니다|해 온 편이에요|겪었습니다|겪었어요|보냈습니다|보냈어요|지나왔습니다|버텨 왔|쌓아 왔습니다|쌓아 왔어요|서 있었습니다|서 있었어요|해 왔던 쪽입니다)[.!]?$|(었|았|였|했|웠|졌)을 거예요[.!]?$|(었|았|였|했)을 겁니다[.!]?$/;
 const TIME_EXTRA = /이번 (한 )?해|올 한 해|이번 연도|올해 들어|오늘 안에|오늘 중으로/;
@@ -434,6 +437,7 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   for (const f of am24Flags(chapters, b)) add(f);
   for (const f of am25Flags(chapters, b)) add(f);
   for (const f of am26Flags(chapters, b)) add(f);
+  for (const f of am28Flags(chapters, b)) add(f);
   return out;
 }
 
@@ -857,7 +861,8 @@ export function am24Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
         // subject_unit: 관계가 주어인데 「…달입니다」(P3 판독 annual-1 경계 #8·#9).
         { const nm = [...allNames].filter(n2 => n2.length >= 2 && new RegExp(`${esc2(n2)}(\\([^)]*\\))*(은|는) [^.?!]{4,90} (달|해)(입니다|예요|이에요)[.!]?$`).test(sen)).sort((p1, p2) => sen.lastIndexOf(p2) - sen.lastIndexOf(p1))[0]; if (nm) flag("subject_unit", `「${nm}은 … 달입니다」는 비문 — 「${nm}이 걸려 …하기 쉬워요」처럼`, nm); }
         if (sj === 0 && !kp && ORPHAN_REF.test(sen) && !s.paragraphs.slice(0, pi).some(pp => monthsIn(pp).size > 0)) flag("orphan_ref", "앞 문장의 달 목록을 가리키는데 그 목록이 없다 — 달 이름을 다시 적거나 문장을 다시 쓴다", sen.match(ORPHAN_REF)![0]);
-        if (HABIT.test(sen) && !/[?？]$/.test(sen)) flag("habit_assert", "겪을 일·습관으로 정하지 않는다(「떠오르죠」「…날이 있을 거예요」「서두를 일이 없습니다」) — 「…해 보기 좋은 때예요」처럼", sen.match(HABIT)![0]);
+        // AM2-8 1부(P7 major-p5 3.0.2 「다만 말과 결과물이 앞서 나갈 때가 있어요.」 — 카드 경향의 살필 말): 「다만 · 때로는 · 가끔은」으로 여는 경향 문장은 습관 단정이 아니다.
+        if (HABIT.test(sen) && !/[?？]$/.test(sen) && !/^(다만|때로는|가끔은|가끔) /.test(sen)) flag("habit_assert", "겪을 일·습관으로 정하지 않는다(「떠오르죠」「…날이 있을 거예요」「서두를 일이 없습니다」) — 「…해 보기 좋은 때예요」처럼", sen.match(HABIT)![0]);
         // 오탐 검토(AM2-4 time_extra 6): 「…날에는 … 내일로」(습관 틀) · 달 이름·「이 달」에 매인 「다음 달」 · 달·해 key 안의 「다음 달」은 이야기 안 상대 시점.
         const relTime = TIME_REL.exec(sen), habitual = /(날|때)(에는|엔|이면|면) |하루 시작에/.test(sen.slice(0, relTime?.index ?? 0)), anchored = Boolean(relTime && /다음 달/.test(relTime[0]) && (kp || monthsIn(sen.slice(0, relTime.index)).size || /이 달(에는|은)/.test(sen)));
         if (relTime && !habitual && !anchored) flag("time_extra", "읽는 날에 기대는 말(「오늘 밤」「내일」「다음 달」)을 쓰지 않는다 — 「그날 저녁」「다음 날」「그다음 달」처럼", sen.match(TIME_REL)![0]);
@@ -943,7 +948,7 @@ void seatShort;
 // AM2-5 2부(덕짱님 지시 2026-11-12) — P4 판독 두 건의 「결정론으로 잡을 수 있었던 꼴」 가운데 구조(문단 교체 · 지우기 규칙 · 같은 주장 설계 · 카드 고객 말)로 막히지 않는 것만.
 // ======================================================================
 const RANGE_WORD = /(?:월|월 · [가-힣]{2}월)\s*(?:에서|부터)\s[^.?!]{0,40}(?:사이|까지|이어지)|(?<![가-힣])(봄|여름|가을|겨울|상반기|하반기) (달들|내내 이어지는 달)|(가을|여름|봄|겨울) 달(들)?과/;
-const RULE_ECHO = /말할 수 있고|라고만 말할|다고 보지는 않|(으)?로 보지는 않아요|인과로|라는 것만 (말|짚)|만 말할 수 있|한 문장 ?(안|속)에서 겹|(같은|한) ?쪽으로 겹(쳐요|칩니다|쳐 있|친다)|채워지는 쪽을 먼저|비는 곳을 다른 쪽이 채우|버릇을 먼저 두고|(받쳐 주는|거스르는|채우는|가리키는) 꼴/;
+const RULE_ECHO = /말할 수 있고|라고만 말할|다고 보지는 않|(으)?로 보지는 않아요|인과로|라는 것만 (말|짚)|만 말할 수 있|한 문장 ?(안|속)에서 겹|(같은|한) ?쪽으로 겹(쳐요|칩니다|쳐 있|친다)|채워지는 쪽|채우는 쪽(을|이)? ?먼저|한쪽의 빈 곳|비는 곳을 다른 쪽이 채우|버릇을 먼저 두고|(받쳐 주는|거스르는|채우는|가리키는) 꼴/;
 const PAST_Q = /(적이|날이|때가|순간이|일이) (없나요|있었나요|있지 않나요|없었나요|있지 않았나요|없지 않았나요)[?？]/;
 // 오탐 검토: 타고난 성향을 말하는 「…쪽이 당신답습니다」는 습관 단정이 아니다 — 구체 행동(「…하는 모습도 당신답죠」)만.
 const HABIT2 = /(?<!쪽이 )당신답(죠|지요|네요|습니다)|당신다워(요|서)|당신다운 (모습|장면)이(죠|에요)/;
@@ -1019,8 +1024,8 @@ export function valueFlags(chapters: readonly FinalChapter[]): ChunkFlag[] {
 // 등급: 차단(BLOCK — 교체 뒤에도 남으면 지우기 단계) · 교체(FIX_RULES — 경계 · 「고객이 알아챌 것: 예」 경미. 문단 교체로만 고치고 지우지 않는다).
 // ======================================================================
 /** 교체만 하는 규칙(경계 · 고객이 알아챌 경미 — 덕짱님 지시 5부 「지우지 않고 문단 교체 대상으로」). 순서는 차단 → 경계(FIX_BOUNDARY) → 경미(FIX_NOTICE). */
-export const FIX_BOUNDARY: ReadonlySet<string> = new Set(["tone_mismatch", "must_bare", "wish_scope", "pair_last", "pair_causal", "key_paras", "rx_extra", "claim_months"]);
-export const FIX_NOTICE: ReadonlySet<string> = new Set(["link_template", "pair_opener", "gyeol_cap", "rel_echo", "chapter_repeat", "ending_cap", "head_echo", "advice_repeat_sec", "rep_adjacent", "rx_repeat_sec", "screen_repeat"]);
+export const FIX_BOUNDARY: ReadonlySet<string> = new Set(["screen_copy6", "rel_subject_time", "template_third", "cross_copy8", "tone_mismatch", "must_bare", "wish_scope", "pair_last", "pair_causal", "key_paras", "rx_extra", "claim_months"]);
+export const FIX_NOTICE: ReadonlySet<string> = new Set(["advice_cliche", "link_template", "pair_opener", "gyeol_cap", "rel_echo", "chapter_repeat", "ending_cap", "head_echo", "advice_repeat_sec", "rep_adjacent", "rx_repeat_sec", "screen_repeat"]);
 export const FIX_RULES: ReadonlySet<string> = new Set([...FIX_BOUNDARY, ...FIX_NOTICE]);
 /** 관계 이름 사전(4부 relation_scope): 천간합 · 천간충 · 육합 · 육충 · 형 · 파 · 해 · 원진 · 삼합국 · 방합. 이 책의 카드·배지에 없는 이름이 본문에 나오면 차단(부정형 포함). */
 const REL_DICT: readonly string[] = (() => {
@@ -1097,7 +1102,9 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
           const yearsIn = (t: string) => [...t.matchAll(/(20\d\d)년(?! \d{1,2}월 무렵부터| 무렵부터)/g)].map(x => Number(x[1]));
           // 앞 문장의 해는 대운 시작 · 교운 문맥(「무렵부터」 「시작」 「대운」이 든 문장)이면 쓰지 않는다 — 그 해는 위치의 대상이 아니다(AM-01 · P~P3 대운 3장 「일곱 번째 해」 오탐).
           if (m) { const prevYears = sents.slice(0, i).filter(z => z.pi === pi).map(z => z.sen).filter(z => !/무렵부터|시작|대운|교운/.test(z)).join(" ");
-            const ym0 = yearsIn(sen)[0] ?? (kp || /올해|이 책을 쓴|기준일|이 해/.test(sen) ? undefined : yearsIn(prevYears).at(-1)), ym = ym0 ? [String(ym0), String(ym0)] : null, y = ym ? Number(ym[1]) : kp && e?.kind === "year" ? Number(kp.key) : product === "annual_fortune" ? bookYear : baseYear;
+            // AM2-8 1부(P7 major-p6b 8.0.1 「쉬는 중이라면 이 대운 끝 무렵에 해 둔 작은 시도가 …」): 해 숫자 없는 「이 대운」은 책의 대운(대운 책은 이 책을 쓴 해, 세운 책은 그 해)이다 — 앞 문장의 해를 대지 않는다.
+            const thisCyc = /(?<![가-힣])이 대운/.test(sen) && !yearsIn(sen).length && !kp;
+            const ym0 = yearsIn(sen)[0] ?? (kp || thisCyc || /올해|이 책을 쓴|기준일|이 해/.test(sen) ? undefined : yearsIn(prevYears).at(-1)), ym = ym0 ? [String(ym0), String(ym0)] : null, y = ym ? Number(ym[1]) : kp && e?.kind === "year" ? Number(kp.key) : product === "annual_fortune" ? bookYear : baseYear;
             const gm = /([갑을병정무기경신임계][자축인묘진사오미신유술해]) 대운/.exec(sen), next2 = /다음 대운|새 대운/.test(sen) && !gm;
             const cyc0 = cycleOf(y, gm?.[1]), cyc = next2 ? life[life.findIndex(l2 => l2 === cyc0) + 1] ?? cyc0 : cyc0;
             // 엔진 값 먼저: 그 해 카드의 대운 yearIndex(화면 10년표와 같은 값). 이름을 댄 대운이 그 해 카드의 대운과 다르면 평생 대운 줄로 센다.

@@ -141,7 +141,7 @@ describe("AM2 P 판독 고침(2026-11-11, 저장된 P 원문의 결함 문장)",
     expect(rules.filter(r => r === `${past.n}:past_assert`)).toHaveLength(2);
     expect(rules).toEqual(expect.arrayContaining([`${ch.n}:future_event`, `${ch.n}:evidence_owner`, "9:reader_directive"]));
     // AM2-5: 짧은 key 안전망(key_len)은 문장 꼴 시험과 무관하다(한 문장짜리 시험 원고).
-    expect(blockFlags([fc(ch.n, [`${kp.scene!.replace(/[.!]$/, "")}는 모습이 어울려요.`], [kp.key])], [], { intake }).filter(f => f.rule !== "must_miss" && f.rule !== "key_len" && f.rule !== "key_paras")).toEqual([]);
+    expect(blockFlags([fc(ch.n, [`${kp.scene!.replace(/[.!]$/, "")}는 모습이 어울려요.`], [kp.key])], [], { intake }).filter(f => f.rule !== "must_miss" && f.rule !== "key_len" && f.rule !== "key_paras" && f.rule !== "advice_cliche")).toEqual([]);
   });
   it("세운: 명사구 비문 · 일주 꼴 · 카드에 없는 「가장」 · 「이번 한 해」 · 머리 문장 되풀이(경미)", () => {
     const { intake, brief } = setup("annual_fortune");
@@ -252,7 +252,8 @@ describe("AM2 발행(가짜 작가, 호출 0)", () => {
     const built = await buildV5Snapshot({ payload: p as never, reportId: "report_am2testannual0001", policyAt: AT, sink: { save: async c => { saved.push(c.n); return sink.save(c); }, load: () => sink.load() }, deps: { provider: "anthropic", model: "claude-sonnet-5-5", fallback: null, stream: devMockStream("ok", p as never, AT), people: async () => [] } });
     const meta = built.meta, review = meta.review as Record<string, unknown>;
     expect(review.mode).toBe("chunked"); expect((review.briefCheck as { ok: boolean }).ok).toBe(true);
-    expect(meta.calls.filter(c => c.kind === "first")).toHaveLength(6);
+    // AM2-8 5부: 남은 차단(보류)이 있으면 그 묶음 하나만 새 호출 1회(holdRetry) — 첫 호출은 6 + 많아야 1.
+    expect(meta.calls.filter(c => c.kind === "first")).toHaveLength(6 + (review.holdRetry ? 1 : 0));
     expect(meta.calls.some(c => c.kind === "repair" || c.kind === "review")).toBe(false);
     expect(saved[0]).toBe(1);
     // AM2-3: 가짜 작가 글(결정론 문단)은 「반드시 쓸 것」(흐름 단어·관계 이름)을 담지 않는다 — 그 밖의 차단은 0. AM2-5: 가짜 글은 짧아 key_len(안전망)도 남을 수 있다.

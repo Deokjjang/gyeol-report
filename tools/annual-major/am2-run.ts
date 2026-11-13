@@ -28,7 +28,7 @@ import { renderCard } from "../../src/lib/writer/chunked/prompt";
 import { intakeOf } from "./am2-brief";
 
 export const OUT2 = join(homedir(), "Desktop", "gyeol-review", "annual-major-02");
-const STAGES = { P: { scope: "am2-P", cap: 13.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2) · AM2-3 P3(덕짱님 지시 2026-11-12, 상한 $2.2 → $3.2 → 세운 뒤 승인 $3.7) · AM2-4 P4(덕짱님 지시 2026-11-12, 상한 $3.7 → $5.0) · AM2-5 P5(덕짱님 지시 2026-11-12, 상한 $5.0 → $6.0, 4권) · AM2-6 P6(덕짱님 지시 2026-11-12, 상한 $6.0 → $9.0, 8권 — 세운 4 → 자동 점검 → 대운 4) · AM2-6 P6 중간(덕짱님 승인 2026-11-12 채팅: annual-1 뒤 자동 점검 결함 넷 무료 고침 → 남은 7권, 상한 $9.0 → $10.0) · AM2-7 P7(덕짱님 지시 2026-11-13, 상한 $10.0 → $13.0, 같은 8 입력 — 세운 4 → 판독 → 세운 차단 합 2 이하면 대운 4)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
+const STAGES = { P: { scope: "am2-P", cap: 15.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 P 시범(세운 1 + 대운 1) · 재시범(덕짱님 승인 2026-11-11 「무료 고침 → P 재시범」, 상한 $1.3 → $2.2) · AM2-3 P3(덕짱님 지시 2026-11-12, 상한 $2.2 → $3.2 → 세운 뒤 승인 $3.7) · AM2-4 P4(덕짱님 지시 2026-11-12, 상한 $3.7 → $5.0) · AM2-5 P5(덕짱님 지시 2026-11-12, 상한 $5.0 → $6.0, 4권) · AM2-6 P6(덕짱님 지시 2026-11-12, 상한 $6.0 → $9.0, 8권 — 세운 4 → 자동 점검 → 대운 4) · AM2-6 P6 중간(덕짱님 승인 2026-11-12 채팅: annual-1 뒤 자동 점검 결함 넷 무료 고침 → 남은 7권, 상한 $9.0 → $10.0) · AM2-7 P7(덕짱님 지시 2026-11-13, 상한 $10.0 → $13.0, 같은 8 입력 — 세운 4 → 판독 → 세운 차단 합 2 이하면 대운 4) · AM2-8 P8 상한 $13.0 → $15.0(덕짱님 승인 2026-11-13)" }, E: { scope: "am2-E", cap: 6.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 E 평가(개발 10 + 숨긴 4)" }, F: { scope: "am2-F", cap: 2.0, provider: "anthropic", model: "claude-sonnet-5-5", note: "AM2 F 고침(걸린 묶음만)" }, I: { scope: "am2-I", cap: 0.3, provider: "openai", model: "gpt-6.1-terra", note: "AM2 임시본(OpenAI) 경로 확인" } } as const;
 /** 숨긴 세트(덕짱님 지정 4명). 개발 중에는 만들지 않는다 — E 단계에서만 쓴다. */
 export const HIDDEN: readonly { id: string; product: "annual" | "major"; note: string; payload: () => unknown }[] = [];
 
@@ -82,7 +82,9 @@ async function main() {
     const built = await buildV5Snapshot({ payload: c.payload as never, reportId: `report_am2${stage.toLowerCase()}${c.id.replace(/[^a-z0-9]/g, "")}00000`, policyAt: at, sink: memorySink() as never,
       deps: { provider: S.provider, model: S.model, fallback: null, stream: gate.stream, cache: gate.cache, costCapUsd: orderCostCap(process.env, (c.payload as { productKey?: string }).productKey), testRun: true } });
     const snap = built.snapshot as unknown as { productType: string; draft: unknown; evidencePacket: unknown };
-    const dir = join(OUT2, `${tag ? tag.toUpperCase() : stage}-${c.id}`); mkdirSync(dir, { recursive: true });
+    // AM2-8 6부: --dir P8/_raw → 판정 폴더 안 _raw/<case>(사람이 볼 파일은 판 폴더의 verdict.md · read-this.md 둘만).
+    const sub = argv.includes("--dir") ? argv[argv.indexOf("--dir") + 1] : "";
+    const dir = sub ? join(OUT2, sub, c.id) : join(OUT2, `${tag ? tag.toUpperCase() : stage}-${c.id}`); mkdirSync(dir, { recursive: true });
     writeFileSync(join(dir, "snapshot.json"), JSON.stringify(snap));
     writeFileSync(join(dir, "book.md"), manuscript(snap.draft as V5BookDraft));
     writeFileSync(join(dir, "check.md"), checkMd(c.id, c.note, snap));

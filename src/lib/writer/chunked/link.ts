@@ -166,8 +166,8 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
       const prevE = prev?.key ? others.find(o => o.e.key === prev.key)?.e : undefined;
       const prevRels = prevE ? [...new Set(prevE.badges.filter(b2 => seatsOfWith(b2.with).includes(seat)).map(b2 => relName(b2.label)))] : prev?.rel ? [prev.rel] : [];
       const text = !prev
-        ? `〔${SEAT_KO[seat]} 자리 = ${base}(${who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} · 이 책에서 이 자리 처음 — 자리 뜻 · 관계 뜻 · 입력을 이 사람 상황에 맞춘 경향 한 문장으로`
-        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 이 책 ${nth}번째 · 앞: ${prev.label}(그때 같은 자리: ${prevRels.join(" · ") || prev.rel} — ${prev.word}) · 이번: 〔${it.name} = ${word}(${image})〕${prev.word === word ? " — 뜻이 앞과 같다(「이번에도」로 받는다)" : " — 앞과 뜻이 다르다"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
+        ? `〔${SEAT_KO[seat]} 자리 = ${base}(${who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} · 이 책에서 이 자리 처음`
+        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 이 책 ${nth}번째 · 앞: ${prev.label}(그때 같은 자리: ${prevRels.join(" · ") || prev.rel} — ${prev.word}) · 이번: 〔${it.name} = ${word}(${image})〕${prev.word === word ? " · 앞과 같음" : " · 앞과 다름"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
       out.push({ kind: "seat", seat, engine, input: [fc0.input], text, rel: it.name, word, dir, seatMeaning: mine, nth, topics: SEAT_TOPICS[seat], areas: AREA_DOMAIN(area, c.brief.person.facts.relationship) });
       // 겹침: 같은 관계 이름이 같은 자리에 책 안 다른 곳(세운은 그 해, 그다음 다른 key)에도 걸리면 재료 한 줄. 같은 겹침은 책에서 한 번.
       const echoKey = `${it.name}|${seat}`;
