@@ -1,6 +1,6 @@
 # 입력 조건 꼬리표 표(AM2-7 2부)
 
-- 만든 날: 2026-11-13 · 도구 `tools/annual-major/am2-7-tags.ts` · 낱말표 `src/lib/brief/premise.ts` (premise-69-u1wf0j) · 표 `src/data/knowledge-v5/input-needs.json`(3042개).
+- 만든 날: 2026-11-13 · 도구 `tools/annual-major/am2-7-tags.ts` · 낱말표 `src/lib/brief/premise.ts` (premise-82-1capz1g) · 표 `src/data/knowledge-v5/input-needs.json`(3042개).
 - 까닭: P6 판독 차단 17 가운데 6이 거르지 못한 씨앗 · 처방 종류였다(호감 ×2 · 자취방 · 월급날 · 킥오프 · 영업 전화). 금지어 목록은 빠진 낱말이 그대로 지나간다 — 항목마다 「필요한 입력」을 달고, 꼬리표가 없는 항목은 쓰지 않는다(기본 거절).
 - 모르는 입력은 「없음」으로 본다. 사는 곳 · 차 · 반려동물은 입력 칸이 없어 늘 없음이다.
 
@@ -8,8 +8,8 @@
 
 | 출처 | 항목 | 필요 입력 없음 | 필요 입력별 |
 |---|---|---|---|
-| MBTI 씨앗(mbti-seeds) | 2620 | 1658 | job:employee 209 · job:work 251 · job:active 6 · job:earn 1 · job:business 56 · job:shop 42 · job:freelancer 8 · job:student 26 · job:study 20 · rel:single 212 · rel:partner 226 · residence 16 · other 46 |
-| 화면 할 일 문형(action-templates) | 353 | 320 | job:employee 3 · job:work 3 · job:business 1 · job:study 4 · rel:single 21 · rel:partner 1 |
+| MBTI 씨앗(mbti-seeds) | 2620 | 1655 | job:employee 209 · job:work 252 · job:active 6 · job:earn 1 · job:business 56 · job:shop 42 · job:freelancer 8 · job:student 26 · job:study 20 · rel:single 214 · rel:partner 226 · residence 16 · other 46 |
+| 화면 할 일 문형(action-templates) | 353 | 317 | job:employee 3 · job:work 6 · job:business 1 · job:study 4 · rel:single 21 · rel:partner 1 |
 | 십성 시기 장면(ten-god-period) | 70 | 40 | job:employee 16 · job:work 7 · job:shop 1 · job:freelancer 1 · job:student 1 · job:study 2 · rel:single 1 · rel:dating 3 · rel:partner 2 · other 1 |
 
 - 조립 문장(카드 영역 줄 · 화면 살필 점 · 좋은 것 · 그림 · 십성 뜻 · 처방 종류 이름 · 짝 이유)은 내보낼 때 같은 낱말표로 맞춘다(`neutralize` · `fitSegments`): 맞지 않는 말은 중립 꼴로, 중립 꼴이 없으면 그 마디를 뺀다.
@@ -26,6 +26,8 @@
 | 연봉 | job:employee | 뺌 |
 | 승진 | job:employee | 뺌 |
 | 인사 평가 | job:employee | 뺌 |
+| 소속·직함·역할 | job:employee | work: 맡은 역할 · other: 내 자리와 역할 |
+| 소속 | job:work | 뺌 |
 | 직함 | job:employee | 뺌 |
 | 결재 | job:employee | 뺌 |
 | 사내 | job:employee | 뺌 |
@@ -36,10 +38,14 @@
 | 출근 | job:employee | 뺌 |
 | 회사 | job:employee | work: 일터 · other: 뺌 |
 | 직장인 | job:employee | 뺌 |
+| 동료·친구 | job:work | other:  |
+| 동료 관계 | job:work | other: 친구 관계 |
+| 윗사람·스승 | job:employee | work: 선배·스승 · other: 어른·스승 |
 | 동료 | job:work | other: 주변 사람 |
 | 윗사람 | job:employee | work: 함께 일하는 사람 · other: 주변 사람 |
 | 아랫사람 | job:employee | work: 함께 일하는 사람 · other: 나보다 어린 사람 |
 | 이직 | job:employee | 뺌 |
+| 회의 같은 모임 | job:work | 뺌 |
 | 회의 | job:work | 뺌 |
 | 거래처 | job:work | 뺌 |
 | 영업 | job:work | 뺌 |
@@ -55,6 +61,11 @@
 | 단가 | job:work | 뺌 |
 | 일터·사회생활 | job:work | work: 일터·사회생활 · other: 사회생활 |
 | 일터 | job:work | work: 일터 · other: 사회생활 |
+| 일 처리 방식 | job:work | 뺌 |
+| 함께 일하는 사람 | job:work | other: 주변 사람 |
+| 바쁜 때일수록 | job:work | other:  |
+| 사람과 거래 | job:work | other: 사람과 교류 |
+| 큰 거래 | job:work | other: 큰 기회 |
 | 거래 트기 | job:work | 뺌 |
 | 가게 | job:shop | work: 일터 · other: 뺌 |
 | 가게 장면 | job:shop | 뺌 |
@@ -69,6 +80,7 @@
 | 면접 | job:study | 뺌 |
 | 취업 | job:study | 뺌 |
 | 포트폴리오 | job:active | 뺌 |
+| 매력과 호감 | rel:single | dating: 매력 · married: 매력 · single: 매력 |
 | 호감 가는 사람 | rel:single | dating: 연인 · married: 배우자 |
 | 좋아하는 사람 | rel:single | dating: 연인 · married: 배우자 |
 | 마음 확인 | rel:single | 뺌 |
@@ -81,6 +93,7 @@
 | 데이트 | rel:partner | 뺌 |
 | 배우자 | rel:married | dating: 연인 |
 | 자녀 | children | 뺌 |
+| 독립·분가 | residence | work: 독립·개인 일 · other: 독립·개인 일 |
 | 자취 | residence | 뺌 |
 | 운전 | other | 뺌 |
 | 대출 | other | 뺌 |

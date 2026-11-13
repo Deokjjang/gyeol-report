@@ -24,6 +24,8 @@ const F = {
   wish: ["yes", "no"] as const,
   chart: [["1998-03-14", "09:30", "FEMALE"], ["1987-03-06", "08:10", "FEMALE"], ["1971-08-29", "13:20", "MALE"], ["2005-06-18", "15:10", "FEMALE"], ["1979-02-21", "06:40", "MALE"], ["1992-11-02", "22:45", "MALE"]] as const,
 };
+/** 표본 원국 6(AM2-8 화면 행렬 시험 tests/unit/brief/am28-screen.test.ts도 같은 표본을 쓴다). */
+export const MATRIX_CHARTS = F.chart;
 type Case = { [K in keyof typeof F]: number };
 const KEYS = Object.keys(F) as (keyof typeof F)[];
 /** 짝 덮기(탐욕법): 아직 안 덮인 두 값 조합을 가장 많이 덮는 사례를 차례로 고른다. */

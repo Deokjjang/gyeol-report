@@ -46,8 +46,10 @@ export function needMet(n: Need, x: Inputs): boolean {
 
 /** 중립 꼴: 입력 무리별 바꿀 말. null = 이 무리에서는 그 마디를 뺀다. */
 type Neutral = { readonly work?: string | null; readonly other?: string | null; readonly dating?: string | null; readonly married?: string | null; readonly single?: string | null };
-type Row = { readonly word: string; readonly re: RegExp; readonly need: Need; readonly neutral?: Neutral };
+/** list: 가운뎃점 목록(「동료·친구·경쟁자」) 안에서도 본다 — 목록 마디는 보통 주제 이름(장 제목)이라 건너뛰지만, 문장 속 목록은 전제다(AM2-8 화면 판독 「소속·직함·역할이 분명해지고」). */
+type Row = { readonly word: string; readonly re: RegExp; readonly need: Need; readonly neutral?: Neutral; readonly list?: true };
 const r = (word: string, re: RegExp, need: Need, neutral?: Neutral): Row => ({ word, re, need, ...(neutral ? { neutral } : {}) });
+const rl = (word: string, re: RegExp, need: Need, neutral?: Neutral): Row => ({ ...r(word, re, need, neutral), list: true });
 /**
  * 낱말표(덕짱님 지시 2부 5 낱말 + P6 판독 차단 · 참고 + 전수 조사). 긴 말이 먼저(「월급날」 → 「월급」).
  * 「일」 「사람」 「친구」 「가족」 「집」 「모임」 「약속」 「돈」처럼 누구에게나 있는 말은 넣지 않는다.
@@ -57,24 +59,34 @@ export const PREMISE: readonly Row[] = [
   // 견줌 꼴(「월급날 대신 …」 「월급날이 아니어도, …」)은 직장인이 아니면 그 마디째 뺀다 — 중립 꼴로 바꾸면 「수입이 들어오는 날 대신 대금이 들어오는 날」처럼 같은 말이 겹친다(R7 annual-p5 3.1 ¶3).
   r("월급날 대신", /월급(날)? 대신 /, "job:employee", { work: "", other: "" }), r("월급날이 아니어도", /월급날이 아니(어도|더라도|라도),? /, "job:employee", { work: "", other: "" }),
   r("월급날", /월급날/, "job:employee", { work: "수입이 들어오는 날", other: "돈이 들어오는 날" }),
-  r("월급 밖 수입", /월급 밖(의)? (수입|돈|작은 기회|소소한 수입)/, "job:employee", { work: "본업 밖 수입", other: "뜻밖의 작은 수입" }),
+  r("월급 밖 수입", /월급 (밖|바깥)(의)? (수입|돈|작은 기회|소소한 수입|기회)/, "job:employee", { work: "본업 밖 수입", other: "뜻밖의 작은 수입" }),
   r("월급", /월급(?!날)/, "job:employee", { work: "수입", other: null }),
   r("연봉", /연봉|성과급|보너스|급여 명세서|야근 수당|퇴직연금|연말정산/, "job:employee"), r("승진", /승진/, "job:employee"), r("인사 평가", /인사 ?(평가|발령|팀)|평가 시즌|고과|성과 순위/, "job:employee"),
+  // AM2-8 화면 판독(대운 · 쉬는 중 정관 풀이 「소속·직함·역할이 분명해지고」): 문장 속 목록이라 목록 건너뛰기에 빠졌다.
+  rl("소속·직함·역할", /소속·직함·역할/, "job:employee", { work: "맡은 역할", other: "내 자리와 역할" }), r("소속", /(?<![가-힣])소속(?!감)/, "job:work"),
   r("직함", /(?<![가-힣])(직함|직급|직책)/, "job:employee"), r("결재", /결재/, "job:employee"), r("사내", /사내(?![가-힣]{0,1}답)|탕비실|사원증/, "job:employee"), r("부서", /부서(?!지|져|진|질|뜨|트)/, "job:employee"),
   r("팀장", /팀장|(?<![가-힣])부장|(?<![가-힣])과장(?! ?(문구|된|하|광고))|(?<![가-힣])차장|(?<![가-힣])대리(?![점운가-힣])|신입 사원|인턴|수습 (기간|사원)/, "job:employee"), r("야근", /야근|회식/, "job:employee"),
   r("막내", /(?<![가-힣])막내|(?<!동아리 )(?<!동호회 )(?<![가-힣])신입(?!생)|(?<![가-힣])사수(?!하)|입사|(?<!운영 )(?<![가-힣])연차(?! ?(가|를|이) (쌓|늘))|반차/, "job:employee"),
   r("출근", /출근|퇴근|출퇴근/, "job:employee"), r("회사", /(?<![가-힣])회사(?!원|채)|직장(?!인)|사무실|공용 프린터/, "job:employee", { work: "일터", other: null }), r("직장인", /직장인|회사원/, "job:employee"),
+  // AM2-8 화면 판독(비견 풀이 「동료·친구·경쟁자가 늘어나는 해예요」 · 용어 풀이 「어깨를 나란히 하는 동료 관계」).
+  rl("동료·친구", /동료·(?=친구)/, "job:work", { other: "" }), r("동료 관계", /동료 관계/, "job:work", { other: "친구 관계" }),
+  rl("윗사람·스승", /윗사람·스승/, "job:employee", { work: "선배·스승", other: "어른·스승" }),
   r("동료", /동료/, "job:work", { other: "주변 사람" }), r("윗사람", /윗사람|(?<![가-힣])상사|윗선|상급자/, "job:employee", { work: "함께 일하는 사람", other: "주변 사람" }),
   r("아랫사람", /아랫사람|부하 ?직원|후임/, "job:employee", { work: "함께 일하는 사람", other: "나보다 어린 사람" }),
   r("이직", /(?<!친구 )(?<!후배 )(?<!연인의 )이직|퇴사|헤드헌터|경력기술서|링크드인|직무 전환|사이드 프로젝트|겸업/, "job:employee"),
   // 일 — 돈을 버는 일이 있음
+  // 「회의 같은」 비유는 일터 말이 아니지만, 「회의 같은 모임」(ESTJ 씨앗)은 회의를 아는 사람의 장면이다(AM2-8 사전 검사 — 쉬는 중 · 학생).
+  r("회의 같은 모임", /회의 같은 모임/, "job:work"),
   r("회의", /(?<![가-힣])회의(?!적| 같은)|미팅|킥오프|브리핑|회의록/, "job:work"), r("거래처", /거래처|클라이언트|고객사|의뢰인|발주|납품|납기|외주|협력사|경쟁사|공급 업체|견적서?/, "job:work"),
   r("영업", /(?<![가-힣])영업(?! ?시간)|세일즈|(?<![가-힣])고객(?!센터| 입력|이 적은|이 적어)/, "job:work"), r("출장", /출장|외근|재택|인수인계|워크숍|워크샵/, "job:work"), r("업무", /업무/, "job:work", { work: "업무", other: "할 일" }),
   r("프로젝트", /프로젝트/, "job:work"), r("팀원", /팀원|팀 (회의|미팅)|팀 프로젝트|(?<![가-힣])팀 ?(분위기|목표|간식|합류|메신저|채팅|단톡방?|워크숍|빌딩|대항|사기)|옆 팀/, "job:work"),
   r("보고서", /(?<!지출 )(?<!분석 )보고서|기획서|제안서|주간 보고|보고 타이밍/, "job:work"), r("명함", /(?<![가-힣])명함|네트워킹|협업 (툴|동료|상대)|업무 (메신저|채팅방)/, "job:work"),
   r("실적", /(?<![가-힣])실적|성과 평가|분기 목표|지난 분기/, "job:work"), r("알바", /아르바이트|(?<![가-힣])알바/, "job:earn"), r("고정 수입", /고정 수입|(?<!비)정기 수입/, "job:work", { other: "들어오는 돈" }),
   r("단가", /(?<!건당 )(?<!장보기 )단가/, "job:work"),
-  r("일터·사회생활", /일터·사회생활/, "job:work", { work: "일터·사회생활", other: "사회생활" }), r("일터", /일터/, "job:work", { work: "일터", other: "사회생활" }),
+  rl("일터·사회생활", /일터·사회생활/, "job:work", { work: "일터·사회생활", other: "사회생활" }), r("일터", /일터/, "job:work", { work: "일터", other: "사회생활" }),
+  // AM2-8 화면 판독(대운 · 쉬는 중 할 일 「답답했던 일 처리 방식을 하나 골라 …」 「… 함께 일하는 사람과 나누세요」 「바쁜 때일수록 …」 · 편재 열쇠말 「사람과 거래」).
+  r("일 처리 방식", /일 처리 방식/, "job:work"), r("함께 일하는 사람", /함께 일하는 사람/, "job:work", { other: "주변 사람" }),
+  r("바쁜 때일수록", /바쁜 때일수록,? /, "job:work", { other: "" }), r("사람과 거래", /사람과 거래/, "job:work", { other: "사람과 교류" }), r("큰 거래", /큰 거래/, "job:work", { other: "큰 기회" }),
   r("거래 트기", /거래를 (트|틀|텄|엽|열|따|성사)/, "job:work"),
   // 일 — 자영업 · 가게 · 프리랜서
   // 「가게 일 · 가게 한쪽」도 가게를 하는 사람의 말이다(R7 annual-p5 8.1 · 8.2 — 일 상세 없는 자영업). 가게가 아닌 일이면 「일터」로.
@@ -88,11 +100,13 @@ export const PREMISE: readonly Row[] = [
   r("학교", /학교|교내|강의실|교수님|학기|개강|종강|휴학|복학|학점|장학금|기숙사|수강신청|과제 제출|(?<![가-힣])조별|(?<![가-힣])조 모임|팀플|동아리|신입생|시험 기간|중간고사|기말고사|모의고사|담임|급식|교복|반 친구|등굣길|하굣길|시험지|성적표|학원/, "job:student"),
   r("시험", /시험(?! ?삼아| ?해 보| ?적|하|해|대|작|판)/, "job:study"), r("면접", /(?<!직원 )(?<!모의 )면접(?! 보는 친구)/, "job:study"), r("취업", /취업|구직|채용 공고|이력서|자기소개서|자소서|입사 지원|지원서|서류 전형|인적성|공채/, "job:study"), r("포트폴리오", /포트폴리오/, "job:active"),
   // 관계
+  // AM2-8 화면 판독(기혼 · 미입력 용어 풀이 「은근한 매력과 호감을 뜻합니다」): 연애 시작 말이 아닌 꼴로.
+  r("매력과 호감", /매력과 호감/, "rel:single", { dating: "매력", married: "매력", single: "매력" }),
   r("호감 가는 사람", /호감(이)? ?(가는|있는|가던|이 가는) 사람/, "rel:single", { dating: "연인", married: "배우자" }),
   r("좋아하는 사람", /(?<!영화 )좋아하는 사람|마음에 (드는|든|둔) 사람|마음(이)? 가는 사람|관심 가는 사람/, "rel:single", { dating: "연인", married: "배우자" }),
   // 짝사랑 · 고백 전 마음(P7 판독 annual-p6b 7 · 2월 — 기혼에게 ISTJ 씨앗 「좋아하는 마음이 확인될 때까지 아끼기」).
   r("마음 확인", /좋아하는 마음(이|을) ?(확인|고백|들키|들킬|숨기|아끼)|마음이 확인될 때까지/, "rel:single"),
-  r("호감", /호감/, "rel:single"), r("소개팅", /소개팅(?! 주선)|소개받|소개 자리|맞선|연애 앱|데이트 앱|데이팅|앱 프로필|연애 상대|이상형/, "rel:single"), r("썸", /(?<![가-힣])썸(?![가-힣])|썸 (상대|단계|타는)/, "rel:single"),
+  r("호감", /호감/, "rel:single"), r("소개팅", /소개팅(?! 주선)|소개받|소개 자리|맞선|연애 앱|데이트 앱|데이팅|앱 프로필|연애 상대|이상형/, "rel:single"), r("썸", /(?<![가-힣])썸(?![가-힣])|(?<![가-힣])썸(?=[이을의은도만]|타)|썸 (상대|단계|타는)/, "rel:single"),
   r("새 인연보다", /새 (인연|만남)보다 /, "rel:single", { dating: "", married: "" }),
   r("새 인연", /새 인연|새로운 인연|인연이 생기|첫 만남|첫 데이트|처음 만난 날|첫 연락|짝사랑|고백|사귀기 전|사귀자는|처음 사귀|애프터|데이트 신청|프로필 사진|이별 ?(후|뒤)|헤어진 이유/, "rel:single"),
   r("연인", /연인(?!이 생기|을 만나|이 될)|애인|남자친구|여자친구|남친|여친/, "rel:partner", { married: "배우자" }), r("데이트", /(?<!업)데이트(?! 신청| 앱)|커플|(?<!결혼)기념일|연애 중|둘만의|프러포즈|권태|동거/, "rel:partner"),
@@ -100,6 +114,8 @@ export const PREMISE: readonly Row[] = [
   // 자녀
   r("자녀", /(?<![가-힣])(아이|아들|딸)(가|를|와|랑|의|에게|는|도|들|이)?(?![가-힣])|자녀(?! ?(별|자리))|육아|어린이집|유치원|학부모|아이 ?방|등원|하원|키즈/, "children"),
   // 사는 곳(입력 칸 없음)
+  // 비견 풀이 「독립·분가·개인 일」(문장 속 목록): 사는 곳은 입력이 없다.
+  rl("독립·분가", /독립·분가·개인 일/, "residence", { work: "독립·개인 일", other: "독립·개인 일" }),
   r("자취", /자취|원룸|오피스텔|하숙|룸메이트|본가|부모님 ?집|분가|독립해 나|혼자 사는|같이 사는|이사 온|이사 (비용|견적)|이삿날|월세|전세|관리비|집주인|텅 빈 집|반상회|베란다|아파트/, "residence"),
   // 그 밖(입력 칸 없음 — 차 · 빚 · 주식 · 반려동물 · 하는 일 상세)
   r("운전", /운전|드라이브|세차(?!게|다|고|지|며|던)|차량|자동차|(?<![가-힣])차 안에서|차를 몰|주차장|(?<![가-힣])자차|정비소/, "other"), r("대출", /대출|학자금/, "other"), r("주식", /주식/, "other"), r("반려동물", /반려견|반려묘|강아지 산책|고양이 밥|고양이나 식물/, "other"),
@@ -112,7 +128,7 @@ export function needsOf(text: string): { word: string; need: Need; at: number; l
   const out: { word: string; need: Need; at: number; len: number }[] = [], taken: [number, number][] = [];
   // 가운뎃점으로 이은 주제 이름 목록(장 제목 「일·취업·공부」 · 소제목 틀 「공부·시험·자격」)은 전제가 아니다(그 말이 든 목록 마디 전체가 명사 나열일 때).
   const lists: [number, number][] = [...text.matchAll(/[가-힣]{1,6}(?:·[가-힣]{1,6}){2,}/g)].map(m => [m.index!, m.index! + m[0].length]);
-  for (const row of PREMISE) { const re = new RegExp(row.re.source, "g"); for (const m of text.matchAll(re)) { const a = m.index!, b = a + m[0].length; if (taken.some(([x, y]) => a < y && b > x)) continue; if (row.word !== "일터·사회생활" && lists.some(([x, y]) => a >= x && b <= y)) continue; taken.push([a, b]); out.push({ word: row.word, need: row.need, at: a, len: m[0].length }); } }
+  for (const row of PREMISE) { const re = new RegExp(row.re.source, "g"); for (const m of text.matchAll(re)) { const a = m.index!, b = a + m[0].length; if (taken.some(([x, y]) => a < y && b > x)) continue; if (!row.list && lists.some(([x, y]) => a >= x && b <= y)) continue; taken.push([a, b]); out.push({ word: row.word, need: row.need, at: a, len: m[0].length }); } }
   return out.sort((p, q) => p.at - q.at);
 }
 /** 입력과 맞지 않는 전제 말(검사 · 행렬 시험). 고객이 적은 바람 원문(«…»)과 따옴표 대사 안은 보지 않는다. */

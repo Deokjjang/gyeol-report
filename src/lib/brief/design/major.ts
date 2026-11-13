@@ -44,14 +44,15 @@ export function lifetimeBands(life: readonly LifetimeCycle[]): string[] {
   return pick.map(b => `${b === bands[ci] ? "내가 서 있는 큰 줄기" : bands.indexOf(b) < ci ? "지나온 큰 줄기" : "다음 큰 줄기"}: ${age(b)} · ${b.cycles.length > 1 ? b.theme.replace(/10년$/, "시기") : b.theme}`);
 }
 
-/** 앞으로 10년 핵심 해 3개(결정론). 점수 = 날 자리 충·합·형 3 / 달 자리 2 / 대운 전환 3 / 세운×대운 충·합 2·같은 땅 글자 1 / 흐름 세기 쏠림(|세기−3|). */
-export function keyYears(saju: SajuCalcResult, future: readonly TimelineEntry[], cycles: readonly CustomerDayunCycle[]): Map<string, { rank: number; reasons: string[] }> {
+/** 앞으로 10년 핵심 해 3개(결정론). 점수 = 날 자리 충·합·형 3 / 달 자리 2 / 대운 전환 3 / 세운×대운 충·합 2·같은 땅 글자 1 / 흐름 세기 쏠림(|세기−3|).
+ * work: 돈 버는 일이 있음(직장인 · 자영업 · 프리랜서). AM2-8 화면 판독(쉬는 중 「태어난 달(일터) 자리와 인신충」): 그 밖이면 달 자리 뜻은 「사회생활」(seat-meaning base 「일터·사회생활」의 중립 꼴). */
+export function keyYears(saju: SajuCalcResult, future: readonly TimelineEntry[], cycles: readonly CustomerDayunCycle[], work = true): Map<string, { rank: number; reasons: string[] }> {
   const scored = future.map(e => {
     const y = Number(e.key), p = getAnnualPillar(y), reasons: string[] = []; let score = 0;
     for (const b of e.badges) {
       const w = b.with ?? "";
       if (/CHUNG|HYEONG|YUKHAP|STEM_HAP|SAMHAP/.test(b.kind) && /태어난 날/.test(w)) { score += 3; reasons.push(`태어난 날 자리와 ${b.label}`); }
-      else if (/CHUNG|HYEONG|YUKHAP|SAMHAP|PA/.test(b.kind) && /태어난 달/.test(w)) { score += 2; reasons.push(`태어난 달(일터) 자리와 ${b.label}`); }
+      else if (/CHUNG|HYEONG|YUKHAP|SAMHAP|PA/.test(b.kind) && /태어난 달/.test(w)) { score += 2; reasons.push(`태어난 달(${work ? "일터" : "사회생활"}) 자리와 ${b.label}`); }
     }
     if (e.dayun?.transition) { score += 3; reasons.push(`새 대운(${e.dayun.ganji}) 시작`); }
     const cyc = cycles.find(c => c.startYear <= y && y <= c.endYear);

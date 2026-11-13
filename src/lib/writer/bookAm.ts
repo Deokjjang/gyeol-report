@@ -27,13 +27,14 @@ const EL_NAME: Readonly<Record<string, string>> = { WOOD: "나무(목)", FIRE: "
 /** 화면 「뜻」 한 줄(AM2-4 6부): 그 달·해 핵심(엔진 가중치 — 설계도와 같은 함수). dayunTg: 세운 달은 책의 해가 속한 대운 십성. */
 // AM2-6 6부: 핵심 줄에 자리 뜻(일 자리는 그 달·해 연애 오름이면 「가까운 사람」, 아니면 「내 생활」 — 연결 고리 재료와 같은 고름).
 // AM2-7 3부 4: 저장본에 책 하나의 쪽(seatSide)이 있으면 그것을 쓴다(옛 저장본만 달마다 고름).
-const meaningOf = (c: Card, dayunTg?: string, gender?: string) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}), { loveUp: c.seatSide ? c.seatSide === "close" : loveUpOf(c as never, gender) });
+// AM2-8: 달 자리 뜻은 돈 버는 일이 있을 때만 「일터」(work=false면 「사회생활」 — 입력은 저장된 주문 입력에서 읽는다, 저장본은 그대로).
+const meaningOf = (c: Card, dayunTg?: string, gender?: string, work?: boolean) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}), { loveUp: c.seatSide ? c.seatSide === "close" : loveUpOf(c as never, gender), ...(work === false ? { work } : {}) });
 const rowMeaningOf = (c: Card, dayunTg?: string) => coreRowLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
 const signalsOf = (c: Card) => { const s: Readonly<Record<string, string>> = c.signals ?? {}; return { ups: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↑").map(([, v]) => v), cautions: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↓").map(([, v]) => v) }; };
 const monthName = (c: Card) => c.label.split(" (")[0].replace(/ · \d{4}년 .+ 마지막 달$/, "");
 
 /** 세운 달 카드 · 대운 해 카드(같은 문법). */
-export function periodCardOf(c: Card, section: BookSection | undefined, a: { eyebrow: string; now: boolean; past: boolean; star: boolean; dayunTg?: string; gender?: string }): Extract<BookPage, { kind: "periodCard" }> {
+export function periodCardOf(c: Card, section: BookSection | undefined, a: { eyebrow: string; now: boolean; past: boolean; star: boolean; dayunTg?: string; gender?: string; work?: boolean }): Extract<BookPage, { kind: "periodCard" }> {
   const month = c.kind === "month";
   const paragraphs: BookParagraph[] = (section?.paragraphs ?? []).map((text, i) => ({ text, notes: [], ...(section ? keySpanOf(section, i, text) : {}) }));
   const sub = month ? (c.span ? `${md(c.span.start)}~${md(c.span.end)}` : "") : c.age !== undefined ? `만 ${c.age}세` : "";
@@ -44,7 +45,7 @@ export function periodCardOf(c: Card, section: BookSection | undefined, a: { eye
   const fills = c.fillsLack?.fills && c.fillsLack.elements.length ? `모자란 ${josa(c.fillsLack.elements.map(x => EL_NAME[x] ?? x).join("·"), "을를")} 채워요` : undefined;
   return { kind: "periodCard", unit: month ? "달" : "해", id: `card-${c.key}`, title: month ? monthName(c) : `${c.key}년 ${c.ganji.hangul}년`, eyebrow: a.eyebrow, sub, ganji: c.ganji.hanja, els: elsOf(c.ganji.hanja),
     flow: c.flow.score, flowWord: FLOW_WORD[c.flow.score] ?? "보통", line: c.imageLine, ...(one ? { one } : {}),
-    paragraphs, relations: relationsOf(c), sky, ground, skyLine: TEN_GOD_SHORT[sky] ?? "", groundLine: TEN_GOD_SHORT[ground] ?? "", ups: sig.ups, cautions: sig.cautions, ...(fills ? { fills } : {}), core: meaningOf(c, a.dayunTg, a.gender), past: a.past, now: a.now, star: a.star };
+    paragraphs, relations: relationsOf(c), sky, ground, skyLine: TEN_GOD_SHORT[sky] ?? "", groundLine: TEN_GOD_SHORT[ground] ?? "", ups: sig.ups, cautions: sig.cautions, ...(fills ? { fills } : {}), core: meaningOf(c, a.dayunTg, a.gender, a.work), past: a.past, now: a.now, star: a.star };
 }
 
 // AM2-4 6부: 표 한 줄은 그림 문장 대신 「뜻」(그 달·해 핵심 한 줄, 결정론) — 그림은 카드로.

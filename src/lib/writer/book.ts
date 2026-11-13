@@ -22,6 +22,7 @@ import { DAYUN_AGE_NOTE, halfHapLine, REL_PLAIN, relationPlain } from "@/lib/bri
 import { baseRowOf } from "@/lib/compat/display";
 import { getMonthlyPillars } from "@/lib/saju/detections";
 import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
+import { inputsOf, needMet } from "@/lib/brief/premise";
 import { decadeTableOf, flowTableOf, lifetimeOf, periodCardOf , yearDayunTg } from "./bookAm";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
@@ -391,6 +392,9 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   const dayAm = today ?? kstDay(e.generatedAt), thisYearAm = d.timeline?.thisYear ?? Number(dayAm.slice(0, 4));
   // AM2-6 6부: 핵심 줄 자리 뜻(대운 해 — 신호가 없어 배우자 별 쪽 셈에 성별이 든다).
   const genderAm = ((e as unknown as { input?: { person?: { gender?: string } } }).input?.person?.gender) || undefined;
+  // AM2-8 화면 입력 거름: 카드 핵심 줄의 달 자리 뜻(「일터」)은 돈 버는 일이 있는 입력만 — 그 밖은 「사회생활」(주문 입력의 일 상태, 저장본은 그대로).
+  const jobAm = (e as unknown as { input?: { userContext?: { jobStatus?: string } } }).input?.userContext?.jobStatus ?? "";
+  const workAm = needMet("job:work", inputsOf({ relationship: "", children: "", job: { status: jobAm } }));
   // AM 3부: 평생 대운 지도(0) — 대운 전부, 시작 만 나이·연도·간지·십성·한 줄 주제.
   if (amMajor) { if (d.timeline?.lifetime?.length) pages.push(lifetimeOf(d, thisYearAm)); }
   else if (d.timeline?.lifetime?.length) pages.push({ kind: "lifetime", title: "평생 대운 지도", cycles: d.timeline.lifetime.map(c => ({ label: c.label, ages: c.ages, tenGod: c.tenGod, theme: c.theme, current: c.current })) });
@@ -416,8 +420,8 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
         return { now: Number(c.key) === thisYearAm, past: Number(c.key) < thisYearAm, star: Boolean((c as { keyYear?: unknown }).keyYear) }; };
       if (amMajor) { decadeTable = decadeTableOf(d, cards as never, thisYearAm); pages.push({ ...decadeTable, title: ch.title === "앞으로 10년" ? "앞으로 10년표" : ch.title }); decadeTable = pages.at(-1) as typeof decadeTable;
         // 지난 3년 · 기준 해(본문 key가 없는 해)도 같은 문법의 해 카드로(돌아보기형).
-        for (const c of cards.filter(x => !ch.sections.some(s => s.heading === x.key))) { keyPage.set(c.key, pages.length); pages.push(periodCardOf(c as never, undefined, { eyebrow: ch.title, ...stateOf(c), ...(genderAm ? { gender: genderAm } : {}) })); } }
-      for (const s of ch.sections) { const card = cards.find(c => c.key === s.heading); if (!card) continue; keyPage.set(s.heading, pages.length); pages.push(periodCardOf(card as never, s, { eyebrow: ch.title, ...stateOf(card), ...(genderAm ? { gender: genderAm } : {}) })); }
+        for (const c of cards.filter(x => !ch.sections.some(s => s.heading === x.key))) { keyPage.set(c.key, pages.length); pages.push(periodCardOf(c as never, undefined, { eyebrow: ch.title, ...stateOf(c), ...(genderAm ? { gender: genderAm } : {}), ...(workAm ? {} : { work: false }) })); } }
+      for (const s of ch.sections) { const card = cards.find(c => c.key === s.heading); if (!card) continue; keyPage.set(s.heading, pages.length); pages.push(periodCardOf(card as never, s, { eyebrow: ch.title, ...stateOf(card), ...(genderAm ? { gender: genderAm } : {}), ...(workAm ? {} : { work: false }) })); }
       continue;
     }
     pages.push(d.productType === "major_fortune" ? { kind: "timeline", title: ch.title, years: [], transitions: [] } : { kind: "months", title: ch.title, months: [] });

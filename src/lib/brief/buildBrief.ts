@@ -19,7 +19,7 @@ import type { Knowledge } from "./knowledge";
 import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
-import { fitTimelineTexts, inputsOf } from "./premise";
+import { fitSegments, fitTimelineTexts, inputsOf, needMet, neutralize, type Inputs } from "./premise";
 import { TEN_GOD_ROW } from "./core";
 import { buildAnnualEntries, buildYearEntries, cycleSummary, type TimelineCtx } from "./timeline";
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
@@ -33,7 +33,7 @@ import { customerProps, lifeStage, matchJob } from "./props";
 import { allocateTodos } from "./prescriptions";
 import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
-import { familyDesign, loveDesign, periodDomains } from "./productEvidence";
+import { CAUTION_LINE, familyDesign, goodLineOf, loveDesign, periodDomains } from "./productEvidence";
 import { annualEvidence, annualStatusQ, bridgeEvidence, domainSignals, monthEvidence, readWish, yearVerdict } from "./design/annual";
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
 import { annualProductYear } from "@/lib/ops/config";
@@ -263,6 +263,11 @@ function glossaryOf(k: Knowledge) {
   return [...out.values()];
 }
 
+/** 뜻 한 줄을 입력에 맞춘다(중립 꼴 → 맞출 수 없는 문장은 뺌). 다 빠지면 그 항목을 뺀다(뜻 없는 용어 표시는 두지 않는다). */
+function fitMeanings<T extends { meaning: string }>(items: readonly T[], x: Inputs): T[] {
+  return items.flatMap(it => { const m = neutralize(it.meaning, x) ?? fitSegments(it.meaning, x); return m ? [m === it.meaning ? it : { ...it, meaning: m }] : []; });
+}
+
 function mbtiBrief(k: Knowledge, type: MbtiType | null) {
   const p = type ? k.mbti.get(type) : undefined;
   if (!p) return null;
@@ -332,7 +337,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       // AM 3부: 14년 카드 계약은 그대로(지난 3년 + 올해 + 앞으로 10년). 작가 key 장은 앞으로 10년, 핵심 해 3개(결정론)는 깊게.
       const entries0 = buildYearEntries(tctx, thisYear, me.dayun.cycles);
       const future = entries0.filter(e => Number(e.key) > thisYear);
-      const keys = keyYears(me.saju, future, me.dayun.cycles);
+      const keys = keyYears(me.saju, future, me.dayun.cycles, needMet("job:work", inputsOf(me.person.facts)));
       const entries = entries0.map(e => (keys.has(e.key) ? { ...e, keyYear: keys.get(e.key)! } : e));
       timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: [...keys.keys()], cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)),
         lifetime: lifetimeMap(me.saju, me.dayun, thisYear) };
@@ -350,9 +355,12 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       keyMaterials.set(bridge.key, [bridgeEvidence(bridge, `${year - 1}년 ${ganjiLabel(py).replace(/\(.*\)/, "")}년`, `${year}년 ${ganjiLabel(cy).replace(/\(.*\)/, "")}년`)]);
       for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus }, m); if (e) keyMaterials.set(m.key, [e]); }
       // 「좋은 것」 결정론 값: 오르는 영역(없으면 보통 영역)의 그달 십성 영역 줄(periodDomains: 일·돈·관계·컨디션).
+      // AM2-8 R-S3: 그 줄이 주의 쪽(「지출이 늘기 쉬움」 「대비가 필요함」)이면 다른 영역의 좋은 쪽 줄, 없으면(편관 달) 칸을 비운다. 입력에 맞출 수 없는 줄(기혼 「새 인연」)도 고르지 않는다.
+      const gx = inputsOf(me.person.facts);
       for (const m of [bridge, ...months]) { const tg = m.tenGod.stem.match(/\((.+)\)/)?.[1] as Parameters<typeof periodDomains>[0] | undefined; if (!tg || !m.signals) continue;
-        const lines = periodDomains(tg), up = (["work", "money", "people", "mind", "love"] as const).find(d => m.signals![d] === "↑");
-        const idx = up === "money" ? 1 : up === "people" || up === "love" ? 2 : up === "mind" ? 3 : 0; m.good = lines[idx].replace(/^[^:]+: /, ""); }
+        const up = (["work", "money", "people", "mind", "love"] as const).find(d => m.signals![d] === "↑");
+        const idx = up === "money" ? 1 : up === "people" || up === "love" ? 2 : up === "mind" ? 3 : 0, good = goodLineOf(tg, idx, t => neutralize(t, gx) !== null);
+        if (good) m.good = good; else delete m.good; }
     }
   }
 
@@ -368,7 +376,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     // AM2-7 2부: 화면 줄(할 일 · 살필 점 · 좋은 것 · 그림 · 열쇠말 · 십성 뜻)을 입력에 맞춘다 — 맞지 않는 전제 말은 중립 꼴로, 없으면 그 마디를 뺀다.
     fitTimelineTexts(timeline as never, inputsOf(me.person.facts), e => [TEN_GOD_ROW[e.tenGod.stem.replace(/\(.*$/, "")] ?? ""].filter(Boolean));
     // AM2-7 5부 4: 화면 [좋은 것] 칸에 주의 뜻 줄을 넣지 않는다(P6 annual 「혼자 있고 싶어져 연락이 뜸해지기 쉬움」).
-    for (const e of timeline.entries) if (e.good && /조심|살피|흔들|새기|무리|부딪|어긋|막히|지치|버거|서운|뜸해/.test(e.good) && !/좋|열리|깊어|쌓이|살아나|풀리|기회|빛나|든든/.test(e.good)) e.good = undefined;
+    // AM2-8 R-S3: 「…기 쉬움 · 필요함」 꼴(영역 줄의 주의 쪽)도 같은 거름(productEvidence CAUTION_LINE).
+    for (const e of timeline.entries) if (e.good && CAUTION_LINE.test(e.good) && !/좋|열리|깊어|쌓이|살아나|풀리|기회|빛나|든든/.test(e.good)) e.good = undefined;
   }
 
   // 궁합
@@ -494,8 +503,11 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 토큰 추정은 작가가 실제로 받는 입력 그대로(P3.8: 절·배정 기록·안 쓰는 trait를 빼고 센다).
   const budget = sectionBudget(renderWriterBrief({ ...draft, budget: { estimatedTokens: 0, bySection: {}, method: "" } } as Brief));
   // usedProps는 안전망용, appendix·glossary는 부록·용어 표시용이라 작가 토큰 추정·작가 입력에서 뺀다.
-  const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k));
-  return BriefSchema.parse({ ...draft, ...(display ? { display } : {}), ...(ledgerNotes ? { ledgerNotes } : {}), ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary: glossaryOf(k), budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
+  // AM2-8 화면 입력 거름: 세운·대운 화면의 용어 풀이 · 부록 기운 뜻도 입력에 맞춘다(쉬는 중 「어깨를 나란히 하는 동료 관계」 · 기혼 「매력과 호감」). 4종은 그대로.
+  const screenFit = timeline ? inputsOf(me.person.facts) : null;
+  const appendix = [me, ...(other ? [other] : [])].map(p => appendixOf(p, k)).map(a => (screenFit ? { ...a, items: fitMeanings(a.items, screenFit) } : a));
+  const glossary = screenFit ? fitMeanings(glossaryOf(k), screenFit) : glossaryOf(k);
+  return BriefSchema.parse({ ...draft, ...(display ? { display } : {}), ...(ledgerNotes ? { ledgerNotes } : {}), ...(Object.keys(usedProps).length ? { usedProps } : {}), appendix, glossary, budget: { ...budget, method: TOKEN_METHOD }, ...(input.ledgerView ? { ledgerView: input.ledgerView } : {}) });
 }
 
 /**
