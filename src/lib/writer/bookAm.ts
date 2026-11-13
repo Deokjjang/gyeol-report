@@ -26,7 +26,8 @@ const relationsOf = (c: Card) => c.badges.map(b => { const raw = b.line.replace(
 const EL_NAME: Readonly<Record<string, string>> = { WOOD: "나무(목)", FIRE: "불(화)", EARTH: "흙(토)", METAL: "쇠(금)", WATER: "물(수)" };
 /** 화면 「뜻」 한 줄(AM2-4 6부): 그 달·해 핵심(엔진 가중치 — 설계도와 같은 함수). dayunTg: 세운 달은 책의 해가 속한 대운 십성. */
 // AM2-6 6부: 핵심 줄에 자리 뜻(일 자리는 그 달·해 연애 오름이면 「가까운 사람」, 아니면 「내 생활」 — 연결 고리 재료와 같은 고름).
-const meaningOf = (c: Card, dayunTg?: string, gender?: string) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}), { loveUp: loveUpOf(c as never, gender) });
+// AM2-7 3부 4: 저장본에 책 하나의 쪽(seatSide)이 있으면 그것을 쓴다(옛 저장본만 달마다 고름).
+const meaningOf = (c: Card, dayunTg?: string, gender?: string) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}), { loveUp: c.seatSide ? c.seatSide === "close" : loveUpOf(c as never, gender) });
 const rowMeaningOf = (c: Card, dayunTg?: string) => coreRowLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
 const signalsOf = (c: Card) => { const s: Readonly<Record<string, string>> = c.signals ?? {}; return { ups: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↑").map(([, v]) => v), cautions: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↓").map(([, v]) => v) }; };
 const monthName = (c: Card) => c.label.split(" (")[0].replace(/ · \d{4}년 .+ 마지막 달$/, "");
@@ -92,6 +93,7 @@ export function lifetimeOf(d: V5BookDraft, thisYear: number): Extract<BookPage, 
   const daeunsu = life[0]?.label.match(/대운수 (\d+)/)?.[1], month = life[0]?.label.match(/(\d{1,2}(?:~\d{1,2})?월) 무렵부터/)?.[1];
   // AM2-6 6부: 첫 대운이 만 0세에 시작하면 「대운수 0」 대신 「태어나면서부터」(값이 빠진 것처럼 보였다 — P5 major-p5). 대운 줄마다 붙은 「(대운수 0)」은 뗀다.
   const head = [daeunsu === "0" ? "첫 대운은 태어나면서부터 시작돼요" : daeunsu ? `대운수 ${daeunsu}(첫 대운이 시작되는 만 나이)` : "", month ? `대운은 10년마다 ${month} 무렵 바뀌어요` : ""].filter(Boolean).join(" · ");
-  const cycles2 = daeunsu === "0" ? cycles.map(c => ({ ...c, label: c.label.replace(/ ?\(대운수 0\)/, "") })) : cycles;
+  // AM2-7 5부 4: 대운 줄마다 붙은 「(대운수 N)」 라벨은 고객 말이 아니다 — 머리에 한 번(「대운수 N(첫 대운이 시작되는 만 나이)」)만 두고 줄에서는 뗀다.
+  const cycles2 = cycles.map(c => ({ ...c, label: c.label.replace(/ ?\(대운수 \d+\)/, "") }));
   return { kind: "lifetime", title: "평생 대운 지도", cycles: cycles2, ...(head ? { head } : {}), bands };
 }

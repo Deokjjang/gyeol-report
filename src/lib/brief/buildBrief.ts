@@ -367,6 +367,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     for (const e of timeline.entries) e.caution = e.period === "past" ? undefined : cautionOf(e, k, cctx, used);
     // AM2-7 2부: 화면 줄(할 일 · 살필 점 · 좋은 것 · 그림 · 열쇠말 · 십성 뜻)을 입력에 맞춘다 — 맞지 않는 전제 말은 중립 꼴로, 없으면 그 마디를 뺀다.
     fitTimelineTexts(timeline as never, inputsOf(me.person.facts), e => [TEN_GOD_ROW[e.tenGod.stem.replace(/\(.*$/, "")] ?? ""].filter(Boolean));
+    // AM2-7 5부 4: 화면 [좋은 것] 칸에 주의 뜻 줄을 넣지 않는다(P6 annual 「혼자 있고 싶어져 연락이 뜸해지기 쉬움」).
+    for (const e of timeline.entries) if (e.good && /조심|살피|흔들|새기|무리|부딪|어긋|막히|지치|버거|서운|뜸해/.test(e.good) && !/좋|열리|깊어|쌓이|살아나|풀리|기회|빛나|든든/.test(e.good)) e.good = undefined;
   }
 
   // 궁합
@@ -524,7 +526,7 @@ const CAUTION_KINDS = /CHUNG|HYEONG|PA|HAE|WONJIN|GONGMANG|CLASH/;
 function cautionOf(e: import("./schema").TimelineEntry, k: Knowledge, c: CautionCtx, used: Set<string>): string | undefined {
   const unit = e.kind === "month" ? "달" : "해";
   const tgOf = (label: string) => label.match(/\((.+)\)/)?.[1] ?? "";
-  const lines = (tg: string) => (k.tenGodPeriod.get(tg)?.year.caution ?? []).filter(l => cautionHolds(l.when, c)).map(l => l.text.replace(/해(예요|입니다|라)/g, `${unit}$1`));
+  const lines = (tg: string) => (k.tenGodPeriod.get(tg)?.year.caution ?? []).filter(l => cautionHolds(l.when, c)).map(l => l.text.replace(/해(예요|입니다|라)/g, `${unit}$1`).replace(/달예요/g, "달이에요").replace(/달라(?=[ ,])/g, "달이라")); // AM2-7 5부 4: 「달예요」 → 「달이에요」(받침)
   // AM2 P2 판독: 「…걸리는 해: …쪽을 살피기」 틀 문자열이 화면에 그대로 나갔다 → 한 문장(「…와 X가 걸려, …쪽을 살펴보세요.」).
   // AM2-6 6부: 배지 줄 앞머리 「공망에 든 해, 」를 그대로 끼우면 「공망이 걸려, 공망에 든 해, …」 비문이 된다(P5 major-p5 2030) — 이름이 앞에 있으니 그 머리는 뗀다.
   const badge = e.badges.filter(b => CAUTION_KINDS.test(b.kind) || b.tone === "minus").map(b => { const head = `${b.with ? `${b.with} 글자와 ` : ""}${josa(b.label.replace(/\(.*\)$/, ""), "이가")} 걸려`;

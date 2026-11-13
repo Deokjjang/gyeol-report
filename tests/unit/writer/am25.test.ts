@@ -69,8 +69,10 @@ describe("AM2-5 1부 연결 고리 · key 짝 · 장면", () => {
     const k = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
     const seat = k.links!.find(l => l.kind === "seat")!;
     // 이 달 오미합 배지는 섞인 결(plus 아님) — 연애 오름 신호가 있어도 방향은 「섞임」으로 둔다(오름이 배지 결을 덮지 않게).
-    expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 · 섞임 · 이 달 오름: 연애/);
-    expect(seat.text).toMatch(/이 책 \d번째\(앞: 6월 · 병오월/);
+    expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 — 앞과 뜻이 다르다 · 입력 한 마디: 솔로 · 섞임 · 이 달 오름: 연애/);
+    // AM2-7 3부 5: 둘째부터 「앞 key(그때 같은 자리 관계 전부) + 이번 관계 뜻 + 입력 한 마디」(틀 문구 없음).
+    expect(seat.text).toMatch(/이 책 \d번째 · 앞: 6월 · 병오월\(그때 같은 자리: /);
+    expect(seat.text).toMatch(/입력 한 마디: 솔로/);
     expect(seat.input).toEqual(["relationship=single"]);
     expect(k.links!.find(l => l.kind === "echo")?.text).toMatch(/정미년 한 해에도 같은 태어난 날 자리에 오미합/);
     // 바람 고리는 책에서 1~3개만 — 7월은 같은 자리가 그 해와 바람 달에 함께 걸려 1순위.

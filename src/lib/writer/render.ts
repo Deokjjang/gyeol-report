@@ -43,6 +43,8 @@ export type AnnotateCtx = {
   readonly dict: ReadonlyMap<string, string>;
   /** 이 책 사람들의 엔진 간지(원국 네 기둥·대운·세운 연도·궁합 상대). 간지 이름은 이 안의 것만 붙인다. */
   readonly ganji: ReadonlySet<string>;
+  /** AM2-7 5부 2: 이 책 배지의 관계 이름(「신해해」 「자오충」). 관계 이름 속 두 글자에는 간지 주석을 달지 않는다(P6 major-p6b 「신해(辛亥)해」 — 申亥 해). */
+  readonly relNames?: ReadonlySet<string>;
   /** MBTI 기능 쉬운 이름 → 약어. 최종판에서는 넘기지 않는다(작가가 약어를 쓴다). */
   readonly mbtiNames?: ReadonlyMap<string, string>;
 };
@@ -51,7 +53,9 @@ function patternsOf(ctx: AnnotateCtx): { ko: string; tag: string; re: RegExp }[]
   const pats: { ko: string; tag: string; re: RegExp }[] = [];
   for (const [ko, han] of ctx.dict) {
     if (ko.length < 2) continue;
-    if (isGanji(ko, han)) { if (!ctx.ganji.has(ko)) continue; pats.push({ ko, tag: han, re: new RegExp(`(?<![가-힣])${ko}${GANJI_CONTEXT}`) }); continue; }
+    if (isGanji(ko, han)) { if (!ctx.ganji.has(ko)) continue;
+      const rel = [...(ctx.relNames ?? [])].filter(n => n.length === 3 && n.startsWith(ko)).map(n => n[2]);
+      pats.push({ ko, tag: han, re: new RegExp(`(?<![가-힣])${ko}${rel.length ? `(?!${rel.join("|")})` : ""}${GANJI_CONTEXT}`) }); continue; }
     // "~하는 편인 사람"의 편인(P3.6 오탐)·"정관념"은 용어가 아니다.
     const before = ko === "편인" ? "(?<![은는던한인운른큰진된간난] )" : "";
     pats.push({ ko, tag: han, re: new RegExp(`(?<![가-힣])${before}${ko}${AFTER}`) });

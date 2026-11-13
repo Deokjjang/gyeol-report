@@ -208,6 +208,8 @@ export function yinYangClaim(sentence: string, yin: number, yang: number): "fals
 export type DayunPhase = "early" | "middle" | "late";
 export const dayunPhase = (yearIndex: number): DayunPhase => (yearIndex <= 2 ? "early" : yearIndex <= 6 ? "middle" : "late");
 export const DAYUN_PHASE_KO: Readonly<Record<DayunPhase, string>> = { early: "앞쪽", middle: "중간", late: "끝 무렵" };
+/** AM2-7 5부 3: 위치 말 표 하나 — 엔진 위치(대운 안 몇 번째 해, 1~10) → 고객 말. 카드(위치 값) · 화면 · 검사(dayun_claim · dayun_position)가 함께 쓴다. */
+export const dayunPositionKo = (yearIndex1: number): string => (yearIndex1 === 1 ? "첫해" : yearIndex1 === 10 ? "마지막 해" : DAYUN_PHASE_KO[dayunPhase(yearIndex1 - 1)]);
 const PHASE_CLAIM: readonly [DayunPhase, RegExp][] = [
   ["early", /초입|막 시작|들어선 지 얼마|시작한 지 얼마|앞쪽|첫머리|문을 연/],
   ["middle", /한가운데|중반|중간쯤|중간 지점|허리/],

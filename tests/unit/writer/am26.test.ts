@@ -32,8 +32,9 @@ describe("AM2-6 1부 고리는 재료", () => {
     expect(jan.text).toMatch(/〔태어난 달 자리 = 일터·사회생활의 자리\(직장인: 일로 버는 돈 쪽\)〕 × 〔병신합 = 맺힘\(겉이 빛나고 속은 눌리는\)〕/);
     expect(jan.text).toMatch(/이 책에서 이 자리 처음/);
     const mar = keys.find(k => k.label === "3월 · 계묘월")!.links!.find(l => l.kind === "seat")!;
-    expect(mar.text).toMatch(/이 책 2번째\(앞: 1월 · 신축월 — 그때 맺힘\)/);
-    expect(mar.text).toMatch(/「1월 · 신축월과 같은 일터 자리지만 이번엔 모임」/);
+    // AM2-7 3부 5 · 4부 1: 앞 key의 같은 자리 관계를 다 적고, 글자째 옮길 틀(「…과 같은 … 자리지만 이번엔」)은 주지 않는다.
+    expect(mar.text).toMatch(/이 책 2번째 · 앞: 1월 · 신축월\(그때 같은 자리: 병신합 · 축진파 — 맺힘\)/);
+    expect(mar.text).not.toMatch(/자리지만 이번엔/);
     // 둘째 핵심에도 뜻 한 마디(P5 R-G3).
     expect(keys.find(k => k.label === "1월 · 신축월")!.links!.find(l => l.kind === "second")?.text).toMatch(/둘째 핵심 〔축진파 = 어긋남/);
     expect(verifyLinks(brief, keys)).toEqual([]);
@@ -48,12 +49,12 @@ describe("AM2-6 1부 고리는 재료", () => {
     expect(loveUpOf(e, "FEMALE")).toBe(true);
     expect(coreLine(coreOf(e), { loveUp: true })).toBe("태어난 날 자리(가까운 사람)와 화국 반합 · 한 기운으로 모이는 힘");
   });
-  it("바람 고리는 책에서 1~3 key와 1장 · 소망 장만 — 다른 key 재료에는 바람이 없다", () => {
+  it("바람 고리는 책에서 한 번(고리 key 하나 + 소망 장, AM2-7 3부 8) — 다른 key 재료에는 바람이 없다", () => {
     const { intake } = setup("annual-1"), keys = keysOf(intake);
     const w = keys.filter(k => k.wishLink);
-    expect(w.length).toBeGreaterThanOrEqual(1); expect(w.length).toBeLessThanOrEqual(3);
+    expect(w.length).toBe(1);
     expect(keys.filter(k => !k.wishLink).flatMap(k => k.links ?? []).filter(l => /바람/.test(l.text))).toEqual([]);
-    expect(intake.chapters.filter(c => c.wishLinks?.length).map(c => c.id).sort()).toEqual(["big", "wish"]);
+    expect(intake.chapters.filter(c => c.wishLinks?.length).map(c => c.id).sort()).toEqual(["wish"]);
   });
 });
 
@@ -103,7 +104,8 @@ describe("AM2-6 4부 예문 누출 · 엔진 값 없는 말", () => {
     const { intake } = setup("annual-1"), rules = chunkRules(ruleCtxOf(intake));
     expect(rules).not.toMatch(/축오해|정재의|백호대살|도화살|홍염살|임오일주|신묘일주/);
     expect(chunkExamples().some(e => /세운 한 달/.test(e.label))).toBe(false);
-    expect(rules).toMatch(/〈관계〉/);
+    // AM2-7 4부: 자리표시에도 꺾쇠를 쓰지 않는다(꺾쇠 0 · 값 자리는 ○○).
+    expect(rules).not.toMatch(/[〈〉]/);
   });
   it("relation_scope 사전 · 대운 위치 · 범위 말 · 고아 지시어 · 앞날을 지난 일로 · 입력 밖 가정", () => {
     const a = setup("annual-p5"), m = setup("major-p5");
@@ -146,10 +148,11 @@ describe("AM2-6 P6 annual-1 자동 점검(호출 0)", () => {
     expect(CHAPTER_REF.test("1장에서 본 2월·7월·10월")).toBe(true);
     const { intake } = setup("annual-1");
     const quotes = keysOf(intake).flatMap(k => (k.links ?? []).flatMap(l => [...l.text.matchAll(/「([^」]+)」/g)].map(m => m[1])));
-    expect(quotes.some(q => /같은 .* 자리지만/.test(q))).toBe(true);
+    // AM2-7 4부 1: 글자째 옮길 틀(「…과 같은 … 자리지만 이번엔」)은 재료에 주지 않는다.
+    expect(quotes.some(q => /같은 .* 자리지만/.test(q))).toBe(false);
     for (const q of quotes) expect(calendarMonth(q), q).toBe(false);
     const k7 = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
-    expect(k7.links!.find(l => l.kind === "seat")!.text).toMatch(/「6월 · 병오월과 같은 태어난 날 자리지만/);
+    expect(k7.links!.find(l => l.kind === "seat")!.text).toMatch(/앞: 6월 · 병오월\(그때 같은 자리: /);
     for (const c of intake.chapters) for (const sp of c.sections ?? []) if (sp.pointer) { expect(CHAPTER_REF.test(sp.pointer), sp.pointer).toBe(false); expect(calendarMonth(sp.pointer), sp.pointer).toBe(false); }
   });
   it("문단 하나로 온 달 key는 문장 경계에서 둘로 — 장면 · 짝 문장에서 둘째 문단, 글자 그대로", () => {

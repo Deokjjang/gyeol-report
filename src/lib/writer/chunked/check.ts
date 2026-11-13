@@ -6,6 +6,7 @@
  *    장 사이 반복은 모든 묶음이 끝난 뒤 따로(뒤쪽 묶음만 1회). 문체 깃발은 고치지 않고 점수로만.
  */
 import { inputsOf, premiseHits } from "@/lib/brief/premise";
+import { dayunOrderIssues } from "./accept";
 import * as L from "../safety/lint";
 import * as D from "../safety/p6d";
 import * as E from "../safety/p6e";
@@ -139,7 +140,9 @@ export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, 
   "seat_badge", "key_tengod", "count_claim", "homonym", "label_leak", "subject_unit", "habit_assert", "wish_absent", "relation_frame", "tg_join",
   "head_echo", "angle_name", "pointer_expand", "screen_repeat", "orphan_ref",
   // AM2-5 2부: P4 판독 두 건의 결정론 꼴 가운데 구조로 막히지 않는 것(근거 밖 관계 이름 · 달 목록 범위 말 · 작가 규칙 문구 · 읽는 날 마감 · 지난 경험 물음 · 짧은 key).
-  "relation_scope", "month_range", "rule_echo", "date_deadline", "past_question", "key_len"]);
+  "relation_scope", "month_range", "rule_echo", "date_deadline", "past_question", "key_len",
+  // AM2-7: 입력 상태 말 · 바람 자리 · 대운 순서.
+  "input_state", "wish_scope", "dayun_order", "pair_text"]);
 /** 경미 규칙: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고치게 하고, 그것만으로는 다시 쓰지도 지우지도 않는다(판독 기준 경미). */
 export const PIGGYBACK_RULES: ReadonlySet<string> = new Set<string>(["head_repeat", "head_echo", "angle_name", "pointer_expand"]);
 /** AM2-4 1부·5부: 지우기만 하는 규칙(그것만으로는 다시 쓰지 않는다 — 화면 사실 되풀이는 그 문장을 지워도 화면에 남는다). 다시 쓸 때는 함께 넘긴다. */
@@ -1043,8 +1046,10 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
   const cycleOf = (y: number, ganji?: string) => (ganji ? life.find(c => c.ganji.includes(ganji)) : undefined) ?? life.find(c => c.startYear <= y && y <= c.endYear);
   const facts = b.brief?.person.facts, callName = b.brief?.person.callName ?? "";
   const inputs = facts ? inputsOf(facts) : undefined;
+  const tenRef = product === "major_fortune" ? { start: baseYear + 1, end: baseYear + 10 } : (() => { const cyc = life.find(c2 => c2.startYear <= bookYear && bookYear <= c2.endYear); return cyc ? { start: cyc.startYear, end: cyc.endYear } : null; })();
   const bSegs = x.lines.filter(l => l.subject === "mbti").flatMap(l => l.meaning.split(/ · |(?<=[.!?])\s+/)).map(t => t.trim()).filter(t => t.replace(/[^가-힣]/g, "").length >= 6);
-  const mbtiHit = (sen: string, pairWhy?: string) => Boolean((b.mbtiType && sen.includes(b.mbtiType)) || (b.mbtiType && MBTI_TYPE_RE.test(sen)) || bSegs.some(sg => overlap4(sen, sg) >= 4) || (pairWhy && overlap4(sen, pairWhy) >= 4));
+  // AM2-7 3부 7: 「성장 곡선 · 성격 유형 · MBTI」라는 체계 이름도 MBTI 쪽 말이다(P6 major-1 7.1 「성격의 성장 곡선과 겹쳐 보면」 — 유형 이름 없이 이었다).
+  const mbtiHit = (sen: string, pairWhy?: string) => Boolean((b.mbtiType && sen.includes(b.mbtiType)) || (b.mbtiType && MBTI_TYPE_RE.test(sen)) || (b.mbtiType && /성장 곡선|성격 유형|(?<![A-Z])MBTI/.test(sen)) || bSegs.some(sg => overlap4(sen, sg) >= 4) || (pairWhy && overlap4(sen, pairWhy) >= 4));
   const slowMonths = new Set(x.lines.filter(l => /(늦출|새기 쉬운|살필|흔들림을 살필|무리하기 쉬운) 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)]));
   const gyeolSeen = { n: 0 };
   const lastCh = Math.max(...x.chapters.map(c => c.n));
@@ -1053,7 +1058,7 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
     const plan = plans.get(c.n);
     const templ = new Map<string, number>(), openers = new Map<string, number>(), skels = new Map<string, number>();
     // 처방 수·자리(5부): 장마다 처방은 마지막 소제목에 하나. 「할 것·피할 것」 소제목은 행동이 본문이다.
-    const lastSec = c.sections.length - 1; let rxInLast = 0;
+    const lastSec = plan?.rxAt ?? c.sections.length - 1; let rxInLast = 0; // AM2-7 3부 9: 설계도가 정한 처방 소제목.
     c.sections.forEach((s, si) => {
       const kp = c.keys?.includes(s.heading) ? keyPlans.get(s.heading) : undefined, e = kp ? entries.find(en => en.key === kp.key) : undefined;
       const sp = !kp ? plan?.sections?.[si] : undefined;
@@ -1117,6 +1122,12 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
         { const unq = sen.replace(/["“][^"”]*["”]|['‘][^'’]*['’]/g, ""); const t = /(?<![가-힣])(최근|오늘)(?![가-힣]|날)/.exec(unq); if (t) flag(at, "time_extra", "「최근·오늘」은 읽는 날에 기대는 말 — 쓰지 않는다(따옴표 대사 밖)", t[0]); }
         { const fp = /((?:20\d\d년 )?(?:1[0-2]|[1-9])월(?: · [가-힣]{2}월)?|20\d\d년(?: [가-힣]{2}년)?)[^.?!]{0,12}?(을|를)? (지나왔|지나온|지났다면|겪었다면|보냈다면|보낸 뒤)/.exec(sen);
           if (fp) { const yy = /(20\d\d)년/.exec(fp[1]); const isFuture = product === "annual_fortune" ? true : yy ? Number(yy[1]) > baseYear : false; if (isFuture) flag(at, "future_past", "책을 쓴 날 뒤에 오는 달·해를 지난 일로 쓰지 않는다 — 「…이 오면」처럼", fp[0]); } }
+        // AM2-7 1부 3: 대운 순서 말(「끝난 뒤 · 다음 줄기」)이 대운 시작 해와 맞는가(P6 major-p6a 8.1 「정미 대운은 이 10년이 끝난 뒤 …」).
+        for (const why of dayunOrderIssues(sen, life.map(c2 => ({ ganji: c2.ganji, startYear: c2.startYear, endYear: c2.endYear })), tenRef)) flag(at, "dayun_order", `대운 순서가 엔진과 다르다 — ${why}`, why.slice(0, 40));
+        // AM2-7 3부 1: 짝 글이 깨진 채 옮겨진 꼴(「ISTJ의 도 검증된 것만 …」 — 유형 이름 뒤가 비었다).
+        if (b.mbtiType && new RegExp(`${b.mbtiType}의 ?(도|는|은|가|이|를|을|만|와|과)\\s`).test(sen)) flag(at, "pair_text", "유형 이름 뒤가 비었다(기능 기호를 뗀 자리) — 문장을 고친다", b.mbtiType);
+        // AM2-7 3부 8: 바람 낱말은 1장 · 소망 장 · 바람 고리 key에서만.
+        if (WISH_TALK.test(sen) && c.n !== 1 && plan?.id !== "wish" && !(kp?.wishLink)) flag(at, "wish_scope", "바람은 1장 · 소망 장 · 바람 고리가 있는 달·해에서만 가리킨다", sen.match(WISH_TALK)![0]);
         // AM2-7 1부 6: 사람의 일을 굳힌 과거형은 2장 밖에서도 잡는다(질문 · 조건 꼴과 엔진 사실은 뺀다).
         if (PERSON_PAST.test(sen) && !/[?？]$|다면|라면|했다면/.test(sen) && !PAST_FACT.test(sen)) flag(at, "past_assert", "지난 일을 겪었다고 굳히지 않는다(「…했습니다 · …해 온 쪽 · …었을 거예요」) — 질문형 · 조건형으로", "사람의 지난 일 단정");
         // AM2-7 2부: 입력 밖 전제(낱말표 하나 — 필요한 입력이 맞지 않는 말). 바람 원문(«…») 안은 보지 않는다. 조건 꼴(「…이라면」)도 전제다.
@@ -1164,7 +1175,7 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
           if (e) for (const bd of e.badges) if ((kp.core ?? []).some(cn => cn.replace(/ 반합$/, "") === relName(bd.label).replace(/ 반합$/, "")) && overlap4(sen, bd.line.replace(/^반합\([^)]*\): /, "")) >= 7) { flag(at, "rel_echo", "화면 「명리로 보면」 배지 줄을 옮기지 않는다 — 이 사람 상황에 맞춘 말로", relName(bd.label)); break; }
         }
         // 처방 수·자리.
-        if (!kp && !advice && ADVICE_END.test(sen)) { if (si !== lastSec) flag(at, "rx_extra", "처방은 장마다 마지막 소제목에 하나만 — 이 소제목은 권유로 맺지 않는다", "마지막 소제목 밖 권유"); else if (++rxInLast > 2) flag(at, "rx_extra", "처방은 장마다 하나 — 둘째 처방을 더하지 않는다", "처방 셋째"); }
+        if (!kp && !advice && ADVICE_END.test(sen)) { if (si !== lastSec) flag(at, "rx_extra", "처방은 장마다 설계도가 정한 소제목에 하나만 — 이 소제목은 권유로 맺지 않는다", "처방 소제목 밖 권유"); else if (++rxInLast > 2) flag(at, "rx_extra", "처방은 장마다 하나 — 둘째 처방을 더하지 않는다", "처방 셋째"); }
         if (!kp && plan?.rx?.forbid.length) { const kinds = rxOfSentence(sen).filter(kd => plan.rx!.forbid.includes(kd)); if (kinds.length && ADVICE_END.test(sen)) flag(at, "rx_extra", `금지 종류 처방(${kinds.join("·")})은 다른 곳이 맡는다`, kinds.join("·")); }
       });
       if (kp) {

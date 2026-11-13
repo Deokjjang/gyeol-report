@@ -56,7 +56,9 @@ export function netOf(folder: string) {
     if (bb.length > a.length) { t.made += bb.length - a.length; made.push(...bb.slice(a.length)); }
   }
   const byRule = (fs: readonly ChunkFlag[]) => Object.entries(fs.reduce<Record<string, number>>((o, f) => ({ ...o, [f.rule]: (o[f.rule] ?? 0) + 1 }), {})).sort((x, y) => y[1] - x[1]).map(([r, n]) => `${r} ${n}`).join(" · ");
-  return { id: folder, rows, made, fixed, byRuleFirst: byRule(fa), byRuleFinal: byRule(fb), chars: { first: firstChs.flatMap((c: FinalChapter) => c.sections.flatMap(s => s.paragraphs)).join("").length, final: finalChs.flatMap((c: FinalChapter) => c.sections.flatMap(s => s.paragraphs)).join("").length } };
+  // AM2-7 6부: 문장 글자 맞춤(am2-7-net)용 — 첫 원고 · 발행 깃발 전부(소제목 번호는 위에서 책 번호로 바꿨다).
+  const fbKeys = new Set(fb.map(f => `${f.rule}|${f.sentence}`)), faKeys = new Set(fa.map(f => `${f.rule}|${f.sentence}`));
+  return { id: folder, rows, made, fixed, fixedAll: fa.filter(f => !fbKeys.has(`${f.rule}|${f.sentence}`)), keptAll: fa.filter(f => fbKeys.has(`${f.rule}|${f.sentence}`)), madeAll: fb.filter(f => !faKeys.has(`${f.rule}|${f.sentence}`)), keptFinal: fb.filter(f => faKeys.has(`${f.rule}|${f.sentence}`)), byRuleFirst: byRule(fa), byRuleFinal: byRule(fb), chars: { first: firstChs.flatMap((c: FinalChapter) => c.sections.flatMap(s => s.paragraphs)).join("").length, final: finalChs.flatMap((c: FinalChapter) => c.sections.flatMap(s => s.paragraphs)).join("").length } };
 }
 
 if (process.argv[1]?.endsWith("am2-6-net.ts")) {

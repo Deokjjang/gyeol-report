@@ -58,7 +58,8 @@ export function dedupeSentences(text: string): string {
 /** MBTI 기능 기호(「ENTP의 Ti는」 「(Ne)」)를 뗀다. 고객 말로 바꾸는 것은 카드의 기능 줄(가장 센 쪽 …)이 맡는다. */
 export function stripFnCodes(text: string, type?: string): string {
   let t = text.replace(/\s?\((Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\)/g, "");
-  if (type) t = t.replace(new RegExp(`${type}의 (Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(는|가|은|이)`, "g"), (_m, _f: string, j: string) => `${type}${j === "가" || j === "이" ? "가" : "는"}`);
+  // AM2-7 3부 1(P6 annual-p6b 「ISTJ의 Si도」 → 「ISTJ의 도」): 기능 기호 뒤 조사는 모두 유형 이름 뒤 조사로 옮긴다.
+  if (type) t = t.replace(new RegExp(`${type}의 (Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(는|가|은|이|도|만|를|을|와|과|의|에게|까지)?`, "g"), (_m, _f: string, j?: string) => `${type}${!j ? "의" : j === "가" || j === "이" ? "가" : j === "는" || j === "은" ? "는" : j === "를" || j === "을" ? "를" : j === "와" || j === "과" ? "와" : j}`);
   return t.replace(/(?<![A-Za-z])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z])\s?/g, "");
 }
 
@@ -211,4 +212,16 @@ export function plainCard(t: string): string {
     .replace(/(?<![가-힣])일지(?=[ 의는가에와인를을이도])/g, "태어난 날 땅 글자").replace(/(?<![가-힣])월지(?=[ 의는가에와인를을이도])/g, "태어난 달 땅 글자")
     .replace(/(?<![가-힣])연지(?=[ 의는가에와인를을이도])/g, "태어난 해 땅 글자").replace(/(?<![가-힣])시지(?=[ 의는가에와인를을이도])/g, "태어난 시각 땅 글자")
     .replace(/(?<![가-힣])일간(이|은|을|과|이라|의|에| )/g, (_m, j: string) => `타고난 바탕 글자${({ 이: "가", 은: "는", 을: "를", 과: "와", 이라: "라" } as Record<string, string>)[j] ?? j}`);
+}
+
+/**
+ * AM2-7 3부 1 짝 글 빌드 검사: 유형 이름 뒤가 비거나(「ISTJ의 도」 「ESTP의 ·는」) 조사만 남은 글, 이유 이름(공통 · 보완 · 긴장)과 글 방향이 어긋난 글.
+ * 이유 방향: 긴장 글은 「→ · 쉬움 · 쉽다 · 함정 · 늦게 · 부딪 · 어긋 · 놓치」 같은 말이 있다. 공통 · 보완인데 이 말뿐이면 어긋남.
+ */
+export function pairTextIssue(why: string, type: string, reason: string): string | null {
+  if (new RegExp(`${type}의 ?(도|는|은|가|이|를|을|만|와|과|·)(\\s|$)|(^|\\s)(의|는|은|가|이|를|을|도)\\s(는|은|가|이|도|·)`).test(why) || /(^|\s)·\s?(는|은|가|이|도)/.test(why)) return "유형 이름 뒤 빈 자리";
+  if (why.replace(/[^가-힣]/g, "").length < 8) return "글이 너무 짧다";
+  const tense = /→|쉬움|쉽다|쉬워|함정|늦게|부딪|어긋|놓치|흔들|지치/.test(why), plus = /채워|맞아|살아|힘이 되|겹쳐|같은 쪽|잘 맞|빛나/.test(why);
+  if ((reason === "공통" || reason === "보완") && tense && !plus) return `이유 「${reason}」인데 글은 긴장 쪽`;
+  return null;
 }

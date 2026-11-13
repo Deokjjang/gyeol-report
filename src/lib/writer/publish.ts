@@ -355,7 +355,8 @@ export function renderTerms(chapters: readonly FinalChapter[], brief: Brief, k: 
   for (const e of brief.timeline?.entries ?? []) ganji.add(e.ganji.hangul);
   for (const c of brief.timeline?.cycles ?? []) { const h = c.ganji.match(/[가-힣]{2}/)?.[0]; if (h) ganji.add(h); }
   let count = 0;
-  const out = chapters.map(c => { const r = annotateChapter(c.sections, { dict, ganji }); count += r.count; return { ...c, sections: r.sections, chars: r.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) }; });
+  const relNames = new Set((brief.timeline?.entries ?? []).flatMap(e => e.badges.map(b => b.label.replace(/\(.*\)$/, "").trim())));
+  const out = chapters.map(c => { const r = annotateChapter(c.sections, { dict, ganji, relNames }); count += r.count; return { ...c, sections: r.sections, chars: r.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) }; });
   return { chapters: out, count };
 }
 

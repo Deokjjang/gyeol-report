@@ -12,7 +12,7 @@
 import type { Knowledge } from "@/lib/brief/knowledge";
 import { deepLines } from "@/lib/brief/knowledge";
 import type { Brief, TimelineEntry } from "@/lib/brief/schema";
-import { coreOf, loveUpOf, relName } from "@/lib/brief/core";
+import { coreOf, relName } from "@/lib/brief/core";
 import { josa } from "@/lib/brief/labels";
 import { stripFnCodes } from "./card";
 
@@ -66,6 +66,8 @@ function facetArea(seat: Seat, side: "close" | "life", facet: string): ("love" |
   if (seat === "year") return facet === "people" ? ["people"] : ["work"];
   return ["mind"];
 }
+/** AM2-7 3부 4: 태어난 날 자리의 쪽은 책 하나에 하나(연애 상태를 적었으면 가까운 사람 쪽, 아니면 내 생활 쪽). 화면 핵심 줄도 같은 값(book.ts seatSide). */
+export const daySide = (b: Pick<Brief, "person">): "close" | "life" => (b.person.facts.relationship === "unknown" ? "life" : "close");
 /** 영역 신호 칸 → 장면 씨앗 영역. 기혼의 「배우자와의 사이」는 사람 사이 씨앗도 받는다. */
 const AREA_DOMAIN = (a: readonly string[], rel: string): string[] => a.flatMap(x => x === "love" ? (rel === "married" ? ["relationships", "love"] : ["love"]) : x === "people" ? ["relationships"] : x === "mind" ? ["alone"] : [x]);
 export type LinkCtx = {
@@ -74,7 +76,7 @@ export type LinkCtx = {
   /** 바람과 이어지는 영역이 오르는 달(이름 「7월 · 정미월」). */ readonly wishMonths: ReadonlySet<string>;
   /** 그 시기가 속한 대운 십성(세운 달은 책의 해 대운). */ readonly dayunTenGod?: string;
   /** 같은 겹침 재료를 책에서 한 번만(관계 이름|자리). */ readonly echoed: Set<string>;
-  /** 자리를 처음 쓴 key(자리 → 이름 · 관계 뜻 · 몇 번째 · 쪽). 같은 자리가 다시 나오면 앞 key와 무엇이 다른지만 준다. */ readonly seatUsed?: Map<string, { label: string; word: string; n: number; short: string }>;
+  /** 자리를 처음 쓴 key(자리 → 이름 · 관계 뜻 · 몇 번째 · 쪽). 같은 자리가 다시 나오면 앞 key와 무엇이 다른지만 준다. */ readonly seatUsed?: Map<string, { label: string; word: string; n: number; short: string; key?: string; rel?: string }>;
 };
 type Facet = { readonly facet: string; readonly who: string; readonly input: string };
 
@@ -139,7 +141,8 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
     }
     const seats = seatsOfWith(it.badge.with).filter(s => s !== "hour" || c.brief.person.facts.birthTimeKnown);
     for (const seat of SEAT_ORDER.filter(s => seats.includes(s))) {
-      const side = seat === "day" ? (loveUpOf(e, gender) ? "close" : "life") : "close";
+      // AM2-7 3부 4: 자리 뜻은 한 권 안에서 자리마다 하나 — 입력으로 정한다(연애 상태를 적었으면 가까운 사람 쪽, 아니면 내 생활 쪽). 달마다 영역 신호로 바꾸지 않는다.
+      const side = seat === "day" ? daySide(c.brief) : "close"; void gender;
       const fc0 = facetOf(seat, c.brief, c.wishTopics, side); if (!fc0) continue;
       const facet = seat === "month" ? monthFacet(fc0, e) : fc0.facet;
       const base = seatText(c.k, seat, side === "life" ? "life:base" : "base"), mine = seatText(c.k, seat, facet) || seatText(c.k, seat, fc0.facet);
@@ -154,14 +157,17 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
       // 같은 자리는 바로 앞 key(가장 최근에 그 자리를 쓴 key)와 견준다.
       const usedKey = seat, prev = c.seatUsed?.get(usedKey), nth = (prev?.n ?? 0) + 1;
       const shortNow = seatText(c.k, seat, seat === "day" ? (side === "life" ? "short:life" : "short:close") : seat === "hour" && fc0.facet === "children" ? "short:children" : "short") || "자리";
-      c.seatUsed?.set(usedKey, { label, word, n: nth, short: shortNow });
+      c.seatUsed?.set(usedKey, { label, word, n: nth, short: shortNow, key: e.key, rel: it.name });
       const sigText = [sig.length ? `이 ${unit} 오름: ${sig.map(d => SIGNAL_KO[d]).join("·")}` : "", down.length ? `이 ${unit} 살핌: ${down.map(d => SIGNAL_KO[d]).join("·")}` : ""].filter(Boolean).join(" · ");
+      // AM2-7 2부 4: 지금 상태 말은 이 책을 쓴 날 + 2년 안의 해 · 달에만 사실 꼴로 — 그 뒤 해는 조건 꼴로.
+      const far = e.kind === "year" && Number(e.key) > Number(c.brief.baseDate.slice(0, 4)) + 2;
+      const who = far ? `${fc0.who}(그때도 그렇다면 — 조건 꼴로)` : fc0.who;
+      // AM2-7 3부 5 · 4부 1: 같은 자리 둘째부터는 「앞 key(간지 달 · 해) + 그때 같은 자리 관계 전부 + 이번 관계 뜻 + 입력 한 마디」만. 뜻이 같으면 「이번에도」. 글자째 옮길 틀은 주지 않는다.
+      const prevE = prev?.key ? others.find(o => o.e.key === prev.key)?.e : undefined;
+      const prevRels = prevE ? [...new Set(prevE.badges.filter(b2 => seatsOfWith(b2.with).includes(seat)).map(b2 => relName(b2.label)))] : prev?.rel ? [prev.rel] : [];
       const text = !prev
-        ? `〔${SEAT_KO[seat]} 자리 = ${base}(${fc0.who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} · 이 책에서 이 자리 처음 — 자리 뜻·관계 뜻·입력을 이 사람 상황에 맞춘 경향 한 문장으로(재료 말을 그대로 옮기지 않는다)`
-        : prev.short !== shortNow
-          // 같은 자리인데 쪽이 바뀜(태어난 날: 가까운 사람 → 내 생활): 쪽이 바뀐 것과 관계 뜻이 다른 것을 함께.
-          ? `〔${SEAT_KO[seat]} 자리 = ${mine}〕 이 책 ${nth}번째(앞: ${prev.label} — 그때 ${prev.short} 쪽, ${prev.word}) × 이번 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} — 무엇이 달라졌는지만(「${prev.label}과 같은 ${SEAT_KO[seat]} 자리지만 이번엔 ${shortNow} 쪽에서 ${word}」처럼)`
-          : `〔${SEAT_KO[seat]} 자리 = ${mine}〕 이 책 ${nth}번째(앞: ${prev.label} — 그때 ${prev.word}) × 이번 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} — 자리 뜻을 다시 풀지 말고 무엇이 다른지만(「${prev.label}과 같은 ${shortNow} 자리지만 이번엔 ${word}」처럼)`;
+        ? `〔${SEAT_KO[seat]} 자리 = ${base}(${who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} · 이 책에서 이 자리 처음 — 자리 뜻 · 관계 뜻 · 입력을 이 사람 상황에 맞춘 경향 한 문장으로`
+        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 이 책 ${nth}번째 · 앞: ${prev.label}(그때 같은 자리: ${prevRels.join(" · ") || prev.rel} — ${prev.word}) · 이번: 〔${it.name} = ${word}(${image})〕${prev.word === word ? " — 뜻이 앞과 같다(「이번에도」로 받는다)" : " — 앞과 뜻이 다르다"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
       out.push({ kind: "seat", seat, engine, input: [fc0.input], text, rel: it.name, word, dir, seatMeaning: mine, nth, topics: SEAT_TOPICS[seat], areas: AREA_DOMAIN(area, c.brief.person.facts.relationship) });
       // 겹침: 같은 관계 이름이 같은 자리에 책 안 다른 곳(세운은 그 해, 그다음 다른 key)에도 걸리면 재료 한 줄. 같은 겹침은 책에서 한 번.
       const echoKey = `${it.name}|${seat}`;

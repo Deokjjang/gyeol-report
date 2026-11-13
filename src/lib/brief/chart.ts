@@ -6,7 +6,7 @@ import type { ChartDetections } from "@/lib/saju/detections/types";
 import { getYearPillarFromSolarDateTime } from "@/lib/saju/pillars";
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { FiveElement, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
-import { DAYUN_PHASE_KO, dayunPhase } from "@/lib/writer/safety/lint";
+import { dayunPositionKo } from "@/lib/writer/safety/lint";
 import type { Knowledge } from "./knowledge";
 import { currentDayunAt, dayunLabel, dayunStartMs, monthsBetween, personDaeunsu, remainingKo, ELEMENT_KO, ganjiLabel, ganjiOf, GROUP_EASY, josa, TEN_GOD_KO, tenGodLabel } from "./labels";
 import type { ChartBrief } from "./schema";
@@ -139,7 +139,7 @@ export function buildChartBrief(saju: SajuCalcResult, det: ChartDetections, k: K
       // 최종 A-4: years(엔진 연도 구간)는 코드 안에서만 쓰고, 작가에게는 교운 연·월 기간(period·until)과 남은 기간(remaining)을 준다.
       ...(({ ages, years, line, start, until, period }) => ({ ganji: ganjiOf(cur), ages, years, label: line, start, until, period }))(labelOf(opts.dayun, cur)), tenGod: tenGodLabel(curTenGod),
       // 위치 말(P6d C): 첫해·마지막 해는 이름 그대로, 그 밖은 앞쪽·중간·끝 무렵(대운 연도 카드와 같은 말). 남은 기간은 교운 시각 기준.
-      phase: { yearIndex: yearIndex + 1, label: yearIndex === 0 ? "첫해" : yearIndex === 9 ? "마지막 해" : DAYUN_PHASE_KO[dayunPhase(yearIndex)], yearsLeft: Math.floor(monthsLeft / 12), remaining: `${remainingKo(atMs, nextMs)}(${labelOf(opts.dayun, cur).until})` },
+      phase: { yearIndex: yearIndex + 1, label: dayunPositionKo(yearIndex + 1) /* AM2-7 5부 3: 위치 말 표 하나 */, yearsLeft: Math.floor(monthsLeft / 12), remaining: `${remainingKo(atMs, nextMs)}(${labelOf(opts.dayun, cur).until})` },
       reading: dropSourceSentences(k.tenGodPeriod.get(curTenGod)?.year.meaning ?? ""),
       // 다음 대운은 십성 이름만 주면 작가가 문체 예시에서 뜻을 빌려 왔다(P3.7 r2): 쉬운 이름과 뜻 한 문장을 함께 준다.
       ...(next ? { next: (() => { const tg = getTenGod(dayMaster, next.stem); const f = k.features.get(`tenGod:${tg}`); const meaning = k.tenGodPeriod.get(tg)?.year.meaning.split(/(?<=[.!?])\s+/)[0]; return { ganji: ganjiOf(next), startYear: next.startYear, label: labelOf(opts.dayun, next).line, start: labelOf(opts.dayun, next).start, tenGod: tenGodLabel(tg), ...(f || meaning ? { reading: meaning ?? splitSentences(f!.meaning)[1] } : {}) }; })() } : {}),

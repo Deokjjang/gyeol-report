@@ -138,7 +138,9 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const callName = brief.person.callName, lastN = Math.max(...plan.map(p2 => p2.n));
   const unname = (chs: readonly FinalChapter[]): FinalChapter[] => !callName || callName.length < 2 ? [...chs] : chs.map(c => ({ ...c, sections: c.sections.map((sec, si) => ({ ...sec, paragraphs: sec.paragraphs.map((p2, pi) => ((c.n === 1 || c.n === lastN) && si === 0 && pi === 0) ? p2
     : p2.replace(new RegExp(`${callName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s?(?:님|씨)?(은|는|이|가|을|를|과|와|의|에게|도|만|처럼)?(?![가-힣])`, "g"), (_m, j?: string) => `당신${j ? ({ 은: "은", 는: "은", 이: "이", 가: "이", 을: "을", 를: "을", 과: "과", 와: "과" } as Record<string, string>)[j] ?? j : ""}`)) })) }));
-  const build = () => { const net = applySafetyNet(brief, plan, drafts, { priorSentences: a.prior?.sentences ?? [], surfaceOnly: true }); const t = tidyBook(unname(labelMonths(headJoin(noCard(net.chapters)))), { ...lctx, surfaceOnly: true }); return { net, chapters: t.chapters, tidy: t.count }; };
+  // AM2-7 5부 1: 본문 꺾쇠 〈 〉는 렌더에서 걷는다(P6 — 지시문 자리표시를 작가가 서식으로 읽었다, 26곳).
+  const unbracket = (chs: readonly FinalChapter[]): FinalChapter[] => chs.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.replace(/[〈〉]/g, ""), paragraphs: sec.paragraphs.map(p2 => p2.replace(/[〈〉]/g, "")) })) }));
+  const build = () => { const net = applySafetyNet(brief, plan, drafts, { priorSentences: a.prior?.sentences ?? [], surfaceOnly: true }); const t = tidyBook(unname(labelMonths(headJoin(unbracket(noCard(net.chapters))))), { ...lctx, surfaceOnly: true }); return { net, chapters: t.chapters, tidy: t.count }; };
   // 차단(block)과 경미(minor: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고친다)를 나눈다.
   // AM2-6 3부 presumed_partner: 고객이 적은 바람 원문 안의 말(「좋아하는 사람」)은 입력 밖 연인이 아니다.
   const wishWord = (f: ChunkFlag) => f.rule === "presumed_partner" && Boolean(intake.wish) && (() => { const m = presumedPartner(f.sentence, brief.person.facts.relationship); return Boolean(m && intake.wish!.includes(m)); })();
@@ -237,7 +239,6 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     if (!why.length && s2.total >= s1.total) why.push(`차단+경계 ${s1.total} → ${s2.total}(줄지 않음)`);
     return why;
   };
-  let lockRound = 0;
   const lock: ParaLock = (t, before, after) => { const rules = t.issues.map(i => (i as { rule?: string }).rule ?? "");
     const why = acceptOne(t, before, after, rules);
     if (!why.length) { cur = build(); seen = inspect(cur.chapters); return { paragraphs: after, notes: [] }; }
@@ -260,7 +261,6 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
       if (!why.length) { drafts.set(f.chapter, { ...d, chapter: { ...d.chapter, sections: d.chapter.sections.map((s2, j) => (j === si ? { ...s2, paragraphs: s2.paragraphs.map((p2, q) => (q === pi ? after[0] : p2)) } : s2)) } }); cur = build(); seen = inspect(cur.chapters); }
     }
   };
-  void lockRound;
   const coverNew: string[] = [];
   const blockKeys = (fs: readonly ChunkFlag[], chs: readonly FinalChapter[], t: ParaTarget, text: readonly string[]) => new Set(fs.filter(f => f.chapter === t.chapter && headingOf(chs, f) === t.heading && (f.paragraph < 0 || text.some(x2 => holds(x2, f.sentence)))).map(f => `${f.rule}|${bareS(f.sentence)}`));
   // P6 annual-1: 소제목 단위 깃발(claim_months 「3.1 달 목록에 … 빠짐」)은 문단 하나를 바꿔도 생긴다 — 문단 교체 뒤에도 새로 생겼는지 본다(예전에는 「*」 교체에서만).
@@ -372,7 +372,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
       return [{ ...sec, paragraphs }];
     }) }));
     // AM2-7 1부 7: 지우고도 남은 차단은 문단째 빼지 않는다(핵심 · 앞말을 잃는다) — 그 자리는 발행 보류(generation_hold)로 넘긴다.
-    let chs = drop(new Set([...bad, ...[...badHead]]));
+    const chs = drop(new Set([...bad, ...[...badHead]]));
     const lostM = new Set([...mustMissing(chs)].filter(k2 => !mustMissing(r.chapters).has(k2))), lostC = new Set(claimLost(r.chapters, chs));
     const keepSet = new Set([...bad].filter(at => { const [n, si] = at.split(".").map(Number); return lostM.has(`${n}|${r.chapters.find(c => c.n === n)?.sections[si]?.heading ?? ""}`) || lostC.has(`${n}.${si}`); }));
     void lostM; void lostC; void keepSet;

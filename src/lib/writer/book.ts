@@ -33,7 +33,7 @@ export const BOOK_EDITION = { number: 6, label: "제6판", revisedAt: "2026-11-0
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
-export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number };
+export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number; /** AM2-7 3부 4 */ readonly seatSide?: "close" | "life" };
 /** label(최종판3 8): 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 7)"(labels.dayunLabel). 최종판3 이전 Book에는 없다.
  * ages(운영 Q 8-1): [X, X+9] — X = 대운수(첫 대운이 시작될 때의 만 나이) + 10 × (순서 − 1)(브리프 cycles[].ages 그대로). 이 변경 전 Book은 [시작 해 − 출생 해, 끝 해 − 출생 해]. */
 export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean; readonly label?: string };
@@ -230,7 +230,8 @@ export function assembleV5Book(a: {
     version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION, baseDate: brief.baseDate,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
-    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
+    // AM2-7 3부 4: 태어난 날 자리의 쪽(책 하나에 하나 — 고리 재료 daySide와 같은 값)을 카드에 적어 화면 핵심 줄이 같은 말을 쓴다.
+    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => ({ ...timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad), seatSide: brief.person.facts.relationship === "unknown" ? "life" as const : "close" as const })), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
       cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number), x = c.ages?.match(/^만 (\d+)~(\d+)세$/); return { ganji: c.ganji, years: c.years, ages: x ? [Number(x[1]), Number(x[2])] as const : [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current, ...(c.label ? { label: c.label } : {}) }; }),
       ...(brief.timeline.lifetime ? { lifetime: brief.timeline.lifetime } : {}) } } : {}),
     ...(annualYear !== undefined ? { annual: { year: annualYear, keywords: a.keywords?.length === 3 ? a.keywords : (brief.display?.keywords ?? []), keywordSource: a.keywords?.length === 3 ? "writer" as const : "engine" as const,
