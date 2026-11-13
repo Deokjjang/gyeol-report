@@ -27,6 +27,9 @@ export const CASES: Spec[] = [
   { id: "F9", src: "P7-major-p5", book: "major-p5", find: "하나만큼은 끝까지 마무리하는 원칙을", expect: "pass", rules: ["dayun_claim"], note: "P7 보류 3.0.2 dayun_claim" },
   { id: "F10", src: "P7-major-p5", book: "major-p5", find: "다만 말과 결과물이 앞서 나갈 때가 있어요.", expect: "pass", rules: ["habit_assert"], note: "P7 보류 3.0.2 habit_assert(Q7은 아직 지움)" },
   { id: "F11", src: "P7-major-1", book: "major-1", find: "판을 크게 벌이는 대담한 아이디어를 즐기고", expect: "pass", rules: ["mbti_trait"], note: "짝 P2 key 안(짝 범위)" },
+  // AM2-8 6부 P7 재현(현재 코드 · 호출 0)이 남긴 보류 가운데 오탐 둘.
+  { id: "F12", src: "P7-annual-p6b", book: "annual-p6b", find: "태어난 시각 자리의 정임합은 하늘 글자끼리 묶이는 힘으로 들어와요", expect: "pass", rules: ["future_assert"], note: "P7 재현 7.11.0 명리 풀이 「…힘으로 들어와요」" },
+  { id: "F13", src: "P7-major-p6a", book: "major-p6a", find: "그 서운함이 속에 쌓이기 쉬운 해예요", expect: "pass", rules: ["future_event"], note: "P7 재현 5.8.1 카드 꼴 「…기 쉬운 해예요」" },
   // ---- 걸려야 함(미탐) ----
   { id: "M1", src: "P7-major-p6b", book: "major-p6b", find: "당신은 눈앞의 것부터 처리하는 쪽이라", expect: "catch", rules: RB6, note: "P7 R-B6 5 · 2032 ¶2(짝 없는 key)" },
   { id: "M2", src: "P7-major-p6a", book: "major-p6a", find: "마음을 읽는 감각을 가진 당신에게는", expect: "catch", rules: RB6, note: "P7 R-B6 7.1 ¶1" },
