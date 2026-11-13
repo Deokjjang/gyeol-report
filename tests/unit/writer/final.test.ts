@@ -75,26 +75,33 @@ describe("0-2 원문 저장소·0-6 상한(runner)", () => {
     const b = await Runner.runWriter({ ...o, sink: sink() });
     expect(calls).toBe(1); expect(b.calls[0].cached).toBe(true); expect(b.costUsd).toBe(0); expect(b.drafts.size).toBe(p.chapters.length);
   });
-  // 최종판3 6: 상한은 작가 뒤 호출(검수·수리)에만. 작가는 늘 부른다(결제 뒤 발행 실패 금지).
-  it("비용 상한: 작가는 부르고, 상한에 이른 작가 뒤 호출(수리)은 부르지 않는다(cost_cap)", async () => {
+  // HOTFIX-W1 2부 6: 상한은 작가를 포함한 주문 전체. 남은 예산으로 본문도 못 쓰면 작가도 부르지 않는다(capped → 감독이 보류). 뒤 호출도 마찬가지.
+  it("비용 상한: 남은 예산이 본문 추정보다 작으면 작가도 부르지 않고(cost_cap), 뒤 호출(수리)도 부르지 않는다", async () => {
     let calls = 0;
     const stream: typeof import("@/lib/llm").streamCompletion = async () => { calls++; return { text: "", finishReason: "error", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, error: { code: "x", message: "x" } }; };
     const o = { brief: B.sodam, provider: "anthropic" as const, model: "claude-sonnet-5-5", sink: sink(), knowledge: k, stream, costCapUsd: 0 };
     const r = await Runner.runWriter(o);
-    expect(calls).toBeGreaterThanOrEqual(1); expect(r.capped).toBe(false);
-    const before = calls, c = await Runner.completeText(o, { ...r, writer: { provider: "anthropic", model: "claude-sonnet-5-5" } }, "s", "u", 100, "repair");
-    expect(calls).toBe(before); expect(c.run.capped).toBe(true); expect(c.run.calls.at(-1)?.error).toBe("cost_cap");
+    expect(calls).toBe(0); expect(r.capped).toBe(true); expect(r.calls.at(-1)).toMatchObject({ kind: "first", error: "cost_cap", stage: 1 });
+    const c = await Runner.completeText(o, { ...r, writer: { provider: "anthropic", model: "claude-sonnet-5-5" } }, "s", "u", 100, "repair");
+    expect(calls).toBe(0); expect(c.run.capped).toBe(true); expect(c.run.calls.at(-1)?.error).toBe("cost_cap");
+    // 예산이 본문은 넘지만 1단(본문 + 생각 여유)보다 작으면 한도를 예산에 맞춰 깎아 부른다(최악 비용 ≤ 남은 예산).
+    const seen: number[] = [];
+    const s2: typeof import("@/lib/llm").streamCompletion = async i => { seen.push(i.maxOutputTokens); return { text: "", finishReason: "error", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0 }, costUsd: 0, requestId: null, error: { code: "x", message: "x" } }; };
+    const p = plan(), body = Runner.maxTokensFor(p.chapters, "claude-sonnet-5-5"), inUsd = Math.ceil((p.system.length + p.user.length) * 1.1) * 2.5 / 1e6;
+    await Runner.runWriter({ ...o, sink: sink(), stream: s2, costCapUsd: inUsd + (body + 10_000) * 10 / 1e6 });
+    expect(seen[0]).toBeGreaterThanOrEqual(body); expect(seen[0]).toBeLessThan(body + Runner.THINKING_RESERVE_TOKENS); expect(seen[0]).toBeLessThanOrEqual(body + 10_000);
   });
 });
 
 describe("0-6 주문당 상한(감독)", () => {
-  it("설정값 기본 $0.55(최종판3 최악 비용), 지난 시도 비용 합", () => {
-    expect(orderCostCap({})).toBe(0.55); expect(orderCostCap({ ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap({ ORDER_COST_CAP_USD: "abc" })).toBe(0.55);
+  it("주문 상한 기본 = 정상 1권 × 2.5(상품별), 설정값이 있으면 그 값, 지난 시도 비용 합", () => {
+    expect(orderCostCap("saju_mbti_full", {})).toBe(0.95); expect(orderCostCap("love_marriage_child", {})).toBe(0.85); expect(orderCostCap("career_money_study", {})).toBe(0.9); expect(orderCostCap("saju_mbti_compatibility", {})).toBe(0.9);
+    expect(orderCostCap(null, {})).toBe(1); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_USD: "abc" })).toBe(0.95);
     expect(spentOf([{ cost_usd: "0.2", created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }])).toBeCloseTo(0.65);
     expect(spentOf([{ cost_usd: 0.2, created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }], "2026-11-04T00:30:00Z")).toBeCloseTo(0.45);
   });
-  // 최종판3 6: 결제 주문은 누적 비용으로 보류하지 않는다 — 작가는 부르고(발행), 상한을 넘는 검수·수리만 건너뛴다.
-  it("지난 시도 비용이 상한에 이르러도 작가는 불러 발행하고, 검수·수리는 건너뛴다(보류 없음)", async () => {
+  // HOTFIX-W1 2부 6: 지난 시도 비용으로 남은 예산이 본문도 못 쓸 만큼이면 작가도 부르지 않고 보류(진행 중인 주문도 다음 시도부터). 보류는 자동 환불 기한까지.
+  it("지난 시도 비용으로 남은 예산이 모자라면 작가를 부르지 않고 보류 — 기한은 첫 실패 + 자동 환불 시간", async () => {
     const policyAt = "2026-10-27T03:00:00.000Z", n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload");
     const { text } = mockTextFor(n.value, policyAt);
     const clock = fakeClock(), ops = memoryOpsStore(clock), a = mockAnthropic([{ text }]), o = mockOpenAiWithBody([]);
@@ -103,9 +110,10 @@ describe("0-6 주문당 상한(감독)", () => {
     await ops.store.call("record", { reportId: job.reportId, run: { lane: "queue", outcome: "deferred", reason: "x", costUsd: 0.61 }, state: {} });
     const decisions: Decision[] = [];
     const r = await superviseQueueJob(job, { store: ops.store, now: clock.now, openAiKey: null, deps: { fetchImpl: routedFetch(a, o), sleep: clock.sleep, now: clock.now, people: async () => [], apiKey: "k" } }, async d => { decisions.push(d); return { ok: true }; });
-    expect(r.decision.kind).toBe("publish"); expect(a.calls).toHaveLength(1); // 작가 1회, 검수·수리 0
-    const meta = r.decision.kind === "publish" ? r.decision.meta as unknown as { review?: { skipped?: string; repair?: { skipped?: string | null } } } : null;
-    expect(meta?.review?.skipped).toBe("budget");
+    expect(r.decision.kind).toBe("hold"); expect(a.calls).toHaveLength(0);
+    expect(r.decision.kind === "hold" && r.decision.reason).toMatch(/cost_cap 주문당 비용 상한 \$0\.95/);
+    expect(r.decision.kind === "hold" && Date.parse(r.decision.until) - clock.now()).toBe(6 * 3_600_000);
+    expect(decisions.map(d => d.kind)).toEqual(["hold"]);
   });
 });
 

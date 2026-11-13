@@ -1,7 +1,7 @@
 import { computeCostUsd } from "./prices";
-import { DRIVERS, InvalidEventError, type StreamState } from "./providers";
+import { DRIVERS, InvalidEventError, newStreamState, type StreamState } from "./providers";
 import { parseSse } from "./sse";
-import type { LlmError, LlmProvider, StreamCompletionInput, StreamCompletionResult } from "./types";
+import type { LlmError, LlmObserved, LlmProvider, StreamCompletionInput, StreamCompletionResult } from "./types";
 
 export type LlmTarget = { readonly provider: LlmProvider; readonly model: string };
 export type LlmConfig = { readonly provider: LlmProvider; readonly model: string; readonly fallback: LlmTarget | null };
@@ -56,11 +56,16 @@ async function httpError(response: Response, apiKey: string): Promise<LlmError> 
 export async function streamCompletion(input: StreamCompletionInput): Promise<StreamCompletionResult> {
   const driver = DRIVERS[input.provider];
   const apiKey = input.apiKey ?? process.env[driver.apiKeyEnv] ?? "";
-  const state: StreamState = { text: "", usage: { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0, cacheWriteTokens: 0 }, finish: null, error: null, requestId: null };
+  const state: StreamState = newStreamState();
+  // HOTFIX-W1 1부: 첫 본문 글자까지 걸린 시간(요청 시작부터).
+  const t0 = Date.now();
+  let firstTextMs: number | null = null;
   const finish = (reason: StreamCompletionResult["finishReason"], error?: LlmError): StreamCompletionResult => {
     const usage = { inputTokens: state.usage.inputTokens, cachedInputTokens: state.usage.cachedInputTokens, outputTokens: state.usage.outputTokens, ...(state.usage.cacheWriteTokens ? { cacheWriteTokens: state.usage.cacheWriteTokens } : {}) };
     const failure = error ?? state.error ?? undefined;
-    return { text: state.text, finishReason: reason, usage, costUsd: computeCostUsd(input.provider, input.model, usage), requestId: state.requestId, ...(failure ? { error: failure } : {}) };
+    const observed: LlmObserved = { stop: state.stop, sent: { maxTokens: input.maxOutputTokens, ...driver.sent(input.model) }, blocks: state.blocks, firstTextMs,
+      ...(state.thinkingTokens !== undefined ? { thinkingTokens: state.thinkingTokens } : {}) };
+    return { text: state.text, finishReason: reason, usage, costUsd: computeCostUsd(input.provider, input.model, usage), requestId: state.requestId, ...(failure ? { error: failure } : {}), observed };
   };
   if (!apiKey) return finish("error", { code: "missing_api_key", message: `${driver.apiKeyEnv}가 없습니다.` });
 
@@ -75,7 +80,7 @@ export async function streamCompletion(input: StreamCompletionInput): Promise<St
     state.requestId = response.headers.get(driver.requestIdHeader);
     if (!response.ok) return finish("error", await httpError(response, apiKey));
     if (!response.body) return finish("error", { code: "empty_body", message: "응답 본문이 없습니다." });
-    const onText = input.onText ?? (() => undefined);
+    const onText = (d: string) => { if (firstTextMs === null) firstTextMs = Date.now() - t0; input.onText?.(d); };
     for await (const message of parseSse(response.body)) {
       driver.handle(message, state, onText);
       if (state.finish) break;

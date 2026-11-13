@@ -286,11 +286,16 @@ export function buildWriterPrompt(brief: Brief, opts: WriterInputOptions = {}): 
   return { system: WRITER_PREFIX, user, version: WRITER_PROMPT_VERSION, chapters };
 }
 
-/** 이어쓰기(SPEC §4-2): 브리프 + 이미 쓴 장의 요약 + 남은 장 목록. 총 생성량은 책 1권 이내. */
-export function buildContinuationPrompt(brief: Brief, written: readonly { n: number; title: string; summary: string }[], remaining: readonly WriterChapter[], opts: WriterInputOptions = {}): WriterPrompt {
+/**
+ * 이어쓰기(SPEC §4-2, HOTFIX-W1 2부 4): 브리프(설계도 전체) + 책 전체 장 목록 + 이미 쓴 장 원문 + 남은 장 목록. 총 생성량은 책 1권 이내.
+ * 요약이 아니라 원문을 준다 — 앞 장의 비유·장면·MBTI 연결을 그대로 보고 되풀이하지 않게, 장 사이 이음이 맞게.
+ */
+export function buildContinuationPrompt(brief: Brief, written: readonly { n: number; title: string; text: string }[], remaining: readonly WriterChapter[], opts: WriterInputOptions = {}): WriterPrompt {
   const base = buildWriterPrompt(brief, opts);
-  const done = written.map(w => `- ${w.n}. ${w.title}: ${w.summary}`).join("\n");
-  const list = remaining.map(c => `## ${c.n}. ${c.title}${c.keys ? ` (### ${c.keys.join(" / ### ")})` : ""}`).join("\n");
-  const user = `${base.user.split("\n\n위 브리프로")[0]}\n\n이미 쓴 장(다시 쓰지 말 것, 같은 비유·장면·MBTI 연결을 되풀이하지 말 것):\n${done || "- 없음"}\n\n남은 장만 이어서 쓰세요. 장 머리글은 아래 그대로입니다.\n${list}`;
+  const head = (c: WriterChapter) => `## ${c.n}. ${c.title}${c.keys ? ` (### ${c.keys.join(" / ### ")})` : ""}`;
+  const all = base.chapters.map(head).join("\n");
+  const done = written.map(w => w.text.trim()).join("\n\n");
+  const list = remaining.map(head).join("\n");
+  const user = `${base.user.split("\n\n위 브리프로")[0]}\n\n책 「${brief.productTitle}」 전체 ${base.chapters.length}장의 장 목록:\n${all}\n\n이미 쓴 장(원문 — 다시 쓰지 말 것, 같은 주장·비유·장면·MBTI 연결·처방을 되풀이하지 말 것, 흐름은 이어지게):\n\`\`\`markdown\n${done || "(없음)"}\n\`\`\`\n\n남은 장만 이어서 쓰세요. [표지] 줄은 다시 쓰지 않습니다. 장 머리글은 아래 그대로입니다.\n${list}`;
   return { ...base, user, chapters: remaining };
 }

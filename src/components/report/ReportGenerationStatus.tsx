@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { PUBLICATION_STAGES, ReportStatusView } from "./ReportStatusView";
-import { delayedMessage, GENERATION_STAGE_QUEUED, type GenerationProgress } from "./generationProgress";
+import { delayedMessage, delayNotice, GENERATION_STAGE_QUEUED, type GenerationProgress } from "./generationProgress";
 
 export const STATUS_POLL_MS = 10_000;
 export const STORAGE_RETRY_POLL_MS = 15_000;
@@ -97,9 +97,11 @@ export function ReportGenerationStatus({ attention = false, delayed = false, ret
   if (attention || progress?.state === "attention") return <ReportStatusView state="attention" />;
   // 진행 상태를 알면 그 단계(감독 시작 전 0 · 시작 뒤 2)만 보인다. 모를 때만 예전처럼 경과 시간 기준.
   const stage = progress ? progress.stage : Math.max(Math.min(STAGE_AT_SECONDS.filter(s => elapsed >= s).length - 1, PUBLICATION_STAGES.length - 2), 0);
-  const late = progress ? progress.state === "delayed" || (progress.stage === GENERATION_STAGE_QUEUED && elapsed >= LOCAL_DELAY_SECONDS) : elapsed >= LOCAL_DELAY_SECONDS;
+  // HOTFIX-W1 3부 5: 감독 시작 15분 뒤에도 책이 없으면 정직한 지연 안내(자동 환불 시간은 설정값). 브라우저 시각으로만 판단한다(첫 화면은 서버와 같게).
+  const notice = now !== null ? delayNotice(progress, now) : undefined;
+  const late = notice !== undefined || (progress ? progress.state === "delayed" || (progress.stage === GENERATION_STAGE_QUEUED && elapsed >= LOCAL_DELAY_SECONDS) : elapsed >= LOCAL_DELAY_SECONDS);
   const isDelayed = delayed || late;
   // 다음 시도 시각은 화면이 뜬 뒤(브라우저 시각 기준)에만 붙인다 — 서버·브라우저 첫 화면을 같게 둔다.
-  const message = isDelayed && progress?.state === "delayed" && now !== null ? delayedMessage(progress.nextAt, now) : undefined;
+  const message = notice ?? (isDelayed && progress?.state === "delayed" && now !== null ? delayedMessage(progress.nextAt, now) : undefined);
   return <ReportStatusView state={isDelayed ? "delayed" : "preparing"} stage={stage} message={message} />;
 }

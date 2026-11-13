@@ -40,6 +40,21 @@ export type StreamCompletionInput = {
   readonly signal?: AbortSignal;
 };
 
+/**
+ * HOTFIX-W1 1부: 호출 한 번의 관측 기록(원고·생각 내용 없이 크기만). book_generation_runs.calls·Book meta에 그대로 남는다.
+ * - stop: 공급자가 보낸 끝난 이유 원문(Anthropic stop_reason, OpenAI status/incomplete 이유).
+ * - sent: 보낸 max_tokens·thinking·effort(모델 설정 그대로).
+ * - blocks: 블록 종류별 수와 글자 수(text·thinking·redacted_thinking 등). 생각 내용은 저장하지 않는다(omitted라 보통 0자).
+ * - firstTextMs: 요청부터 첫 본문 글자까지(없으면 null). thinkingTokens: 공급자가 따로 세어 주면(없으면 생략).
+ */
+export type LlmObserved = {
+  readonly stop: string | null;
+  readonly sent: { readonly maxTokens: number; readonly thinking: string | null; readonly effort: string | null };
+  readonly blocks: Readonly<Record<string, { readonly n: number; readonly chars: number }>>;
+  readonly firstTextMs: number | null;
+  readonly thinkingTokens?: number;
+};
+
 export type StreamCompletionResult = {
   /** 실패해도 중간까지 받은 텍스트를 그대로 돌려준다. */
   readonly text: string;
@@ -49,4 +64,6 @@ export type StreamCompletionResult = {
   readonly costUsd: number | null;
   readonly requestId: string | null;
   readonly error?: LlmError;
+  /** HOTFIX-W1 1부 관측(드라이버가 채운다. 시험 주입 stream은 없을 수 있다). */
+  readonly observed?: LlmObserved;
 };

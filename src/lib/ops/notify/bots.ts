@@ -143,7 +143,7 @@ async function opsCallback(deps: BotDeps, q: NonNullable<Tg["callback_query"]>):
   if (q.data === SIGNUP_PAUSE_DATA || q.data === SIGNUP_RESUME_DATA) return await signupSwitch(deps, q, q.data === SIGNUP_RESUME_DATA);
   const p = parseData(q.data);
   if (!p) { await toast(deps, q.id); return "bad_data"; }
-  const f = await itemFacts(deps.notify, p.id);
+  const f = await itemFacts(deps.notify, p.id, deps.generation);
   if (!f || f.item.closedAt) { await toast(deps, q.id, "이미 처리된 건이에요."); return "closed"; }
   if (p.act === "cx") { await cancelPin(deps, f); await toast(deps, q.id, "취소했어요."); return "cancel"; }
   // 지금 보이는 버튼만 받는다(오래된 메시지·만든 버튼 방지).
@@ -178,7 +178,7 @@ async function cancelPin(deps: BotDeps, f: ItemFacts): Promise<void> {
   const pin = f.item.state.pin;
   await deps.notify.call("patch_state", { id: f.item.id, remove: ["pin"] });
   if (pin?.promptId) await deps.tg.call("ops", "deleteMessage", { chat_id: deps.tg.ownerId, message_id: pin.promptId });
-  const g = await itemFacts(deps.notify, f.item.id);
+  const g = await itemFacts(deps.notify, f.item.id, deps.generation);
   if (g) await editOps(deps, g.item.messageId, await renderOps(deps, g));
 }
 /** 최근 실패 시각(오름차순, 봇 전용 기록 bot_pin_failed). 기록을 못 읽으면 잠긴 것으로 본다. */
@@ -213,7 +213,7 @@ async function opsPassword(deps: BotDeps, m: TgMessage): Promise<string> {
   const waiting = Array.isArray(w.items) ? w.items as { id: number; pin: { promptId?: number } }[] : [];
   const hit = waiting.find(x => x.pin?.promptId && x.pin.promptId === m.reply_to_message?.message_id) ?? (waiting.length === 1 ? waiting[0] : null);
   if (!hit) { await send(deps, "ops", "어느 건의 비밀번호인지 모르겠어요. 버튼을 다시 눌러 주세요."); return "pin_no_target"; }
-  const f = await itemFacts(deps.notify, hit.id);
+  const f = await itemFacts(deps.notify, hit.id, deps.generation);
   const pin = f?.item.state.pin;
   if (!f || !pin || f.item.closedAt) return "pin_no_target";
   if (Date.parse(pin.until) < deps.now()) { await cancelPin(deps, f); await send(deps, "ops", "2분이 지나 취소했어요. 버튼을 다시 눌러 주세요."); return "pin_expired"; }
@@ -242,7 +242,7 @@ function targetOrder(f: ItemFacts, target?: string): { orderCode: string | null;
 }
 async function restore(deps: BotDeps, f: ItemFacts, note: string): Promise<void> {
   await deps.notify.call("patch_state", { id: f.item.id, remove: ["working", "workingAt"] });
-  const g = await itemFacts(deps.notify, f.item.id);
+  const g = await itemFacts(deps.notify, f.item.id, deps.generation);
   if (g) { const m = await renderOps(deps, g); await editOps(deps, g.item.messageId, { text: `⚠️ ${esc(note)}\n${m.text}`, buttons: m.buttons }); }
 }
 
@@ -311,6 +311,6 @@ async function ticketBack(deps: BotDeps, f: ItemFacts): Promise<string> {
 
 /** 버튼 동작 뒤 바로 한 번 정리(크론을 기다리지 않게). */
 export async function reconcileOne(deps: BotDeps, id: number): Promise<string> {
-  const f = await itemFacts(deps.notify, id);
+  const f = await itemFacts(deps.notify, id, deps.generation);
   return f ? reconcileItem(deps, f) : "missing";
 }

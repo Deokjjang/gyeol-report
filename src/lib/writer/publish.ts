@@ -113,7 +113,7 @@ export function worstUsd(model: string, inputChars: number, maxOut: number): num
   const p = priceFor("anthropic", model); if (!p) return Infinity;
   return (Math.ceil(inputChars * 1.1) * p.input + maxOut * p.output) / 1e6;
 }
-export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens" | "cache" | "costCapUsd" | "cacheSystem">> & {
+export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens" | "cache" | "costCapUsd" | "cacheSystem" | "startStage" | "exhaustedMaxTokens">> & {
   /** 최종판3 5: 검수 모델(없으면 reviewModelOf). testRun: 시험 생성 책(고객 원장에서 뺀다). */
   readonly reviewModel?: string; readonly testRun?: boolean;
   /** book:replay(최종판 0-3): 저장 원문으로만 다시 돌린다. 저장본이 없는 수리·재작성은 부르지 않고(호출 0), 걸린 소제목·문단도 빼지 않고 기록만 남긴다. */
@@ -389,7 +389,10 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const envCap = Number(process.env.LLM_MAX_OUTPUT_TOKENS);
   const fb = fallbackTarget && (fallbackTarget.provider !== provider || fallbackTarget.model !== model) ? fallbackTarget : null;
   // 뒤 호출(재요청·수리)은 남은 시간 예산 안에서만.
-  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink: a.sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...deps, budgetMs: budget - (now() - started), fallback: fb });
+  // HOTFIX-W1 2부 6: 작가 한도는 검수·수리 최악 비용을 먼저 남기고 깎는다(작가가 상한을 다 써서 검수·수리를 건너뛰면 지금보다 낮은 품질이 된다).
+  const reviewModel0 = deps.reviewModel ?? reviewModelOf();
+  const postReserveUsd = worstUsd(reviewModel0, REVIEW_MAX_INPUT_CHARS, reviewMaxTokens(reviewModel0)) + (model ? worstUsd(model, 12_000, repair3MaxTokens(6_000, REPAIR3_MAX_ITEMS, model)) : 0);
+  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink: a.sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...(Number.isFinite(postReserveUsd) ? { postReserveUsd } : {}), ...deps, budgetMs: budget - (now() - started), fallback: fb });
   if (!a.recover && model) {
     try { run = await runWriter(opts()); drafts = run.drafts; }
     catch { drafts = new Map(); }
@@ -428,7 +431,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   else {
     try {
       const writer = run!.writer, before = run!.calls.length;
-      const r = await completeText({ ...opts(), provider: "anthropic", model: reviewModel, fallback: null }, run!, rp.system, rp.user, reviewMaxTokens(reviewModel), "review", REVIEW_SCHEMA as unknown as Record<string, unknown>);
+      const r = await completeText({ ...opts(), provider: "anthropic", model: reviewModel, fallback: null }, run!, rp.system, rp.user, reviewMaxTokens(reviewModel), "review", REVIEW_SCHEMA as unknown as Record<string, unknown>, repairReserve);
       run = { ...r.run, writer }; review.model = reviewModel; review.calls = run.calls.length - before;
       const g = r.text ? guardReview(r.text, rp.numbered, rp.ids, priorLines.lines.length, brief.product) : null;
       // 출력 상한에 닿아 끝났으면(생각이 상한을 다 쓴 경우 포함) 따로 적는다. length는 다시 부르지 않는다(같은 입력 재호출 금지).

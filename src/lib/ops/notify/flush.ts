@@ -1,5 +1,6 @@
 import "server-only";
 import type { OpsStore } from "../generation/sinks";
+import { generationLineOf } from "../generation/alerts";
 import { BOTS, messageIdOf, OPS_PUBLIC_ORIGIN, WAKE_PATH, webhookPath, webhookSecret, type BotName, type Telegram, type TelegramConfig } from "./telegram";
 import { apiCreditText, bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, shareFailedText, signupButtons, signupSurgeText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
 
@@ -11,6 +12,8 @@ import { apiCreditText, bookComplete, esc, LINES, opsMessage, refundDoneLine, sa
 type Env = Readonly<Record<string, string | undefined>>;
 export type NotifyDeps = {
   notify: OpsStore;
+  /** HOTFIX-W1 3부 1·2: 생성 기록(실패 한 줄)·다시 만들기 판단. 없으면(시험) 줄 없이. */
+  generation?: OpsStore;
   tg: Telegram;
   now(): number;
   /** 결제수단(토스 결제 조회 API). 못 읽으면 null — 메시지는 그대로 보낸다. */
@@ -49,13 +52,22 @@ export async function stats(notify: OpsStore, range: { start: string; end: strin
   return { payCount: num(r.payCount), paySum: num(r.paySum), refundCount: num(r.refundCount), refundSum: num(r.refundSum), newCount: num(r.newCount), repeatCount: num(r.repeatCount),
     byProduct: Array.isArray(r.byProduct) ? (r.byProduct as Stats["byProduct"]) : [] };
 }
-export async function itemFacts(notify: OpsStore, id: number): Promise<ItemFacts | null> {
+export async function itemFacts(notify: OpsStore, id: number, generation?: OpsStore): Promise<ItemFacts | null> {
   const r = await notify.call("item", { id });
   if (r.ok !== true || !r.item) return null;
   const item = r.item as ItemFacts["item"];
-  return { item: { ...item, state: (item.state ?? {}) as ItemFacts["item"]["state"] }, request: (r.request ?? null) as ItemFacts["request"], order: (r.order ?? null) as OrderFacts | null,
+  const facts: ItemFacts = { item: { ...item, state: (item.state ?? {}) as ItemFacts["item"]["state"] }, request: (r.request ?? null) as ItemFacts["request"], order: (r.order ?? null) as OrderFacts | null,
     ticket: (r.ticket ?? null) as ItemFacts["ticket"], duplicates: Array.isArray(r.duplicates) ? r.duplicates as ItemFacts["duplicates"] : [], regenFailedBefore: r.regenFailedBefore === true,
     failed: (r.failed ?? null) as ItemFacts["failed"] };
+  // HOTFIX-W1 3부 1: 「책이 안 나왔어요」에 실패 한 줄(생성 기록 읽기 실패면 줄 없이).
+  const reportId = facts.order?.reportId ?? facts.ticket?.reportId ?? null;
+  if (generation && item.kind === "unpublished" && reportId) {
+    try {
+      const g = await generation.call("state", { reportId });
+      facts.genLine = generationLineOf(Array.isArray(g.runs) ? g.runs as never : [], (g.state ?? null) as never, facts.order?.productType ?? facts.ticket?.productType ?? null);
+    } catch { /* 줄 없이 */ }
+  }
+  return facts;
 }
 const markup = (m: Message) => ({ inline_keyboard: m.buttons });
 
@@ -74,7 +86,7 @@ async function build(deps: NotifyDeps, x: Claimed): Promise<Message> {
   // F: 가입 급증 경보([지급 멈춤]·[다시 켜기] — 그 순간 상태)·API 잔액 경보(버튼 없음).
   if (x.kind === "signup_surge") return { text: signupSurgeText(x.payload), buttons: signupButtons(x.payload.on !== false) };
   if (x.kind === "api_credit") return { text: apiCreditText(x.payload), buttons: [] };
-  const f = await itemFacts(deps.notify, x.id);
+  const f = await itemFacts(deps.notify, x.id, deps.generation);
   if (!f) throw new Error("ITEM_MISSING");
   return renderOps(deps, f);
 }
@@ -138,7 +150,7 @@ export async function reconcileItem(deps: NotifyDeps, f: ItemFacts): Promise<str
   if (st.pin && Date.parse(st.pin.until) < now) {
     await deps.notify.call("patch_state", { id: f.item.id, remove: ["pin"] });
     if (st.pin.promptId) await deps.tg.call("ops", "deleteMessage", { chat_id: deps.tg.ownerId, message_id: st.pin.promptId });
-    const g = await itemFacts(deps.notify, f.item.id);
+    const g = await itemFacts(deps.notify, f.item.id, deps.generation);
     if (g) await editOps(deps, g.item.messageId, await renderOps(deps, g));
     return "pin_expired";
   }
@@ -158,7 +170,7 @@ export async function reconcileItem(deps: NotifyDeps, f: ItemFacts): Promise<str
     if (out === "done") return await closeItem(deps, f, LINES.regenerated(codeOf(f), nowIso)) ? "regenerated" : "skip";
     if (out === "failed") {
       await deps.notify.call("patch_state", { id: f.item.id, remove: ["working", "workingAt", "regenSawActive"], set: { regenFailed: true } });
-      const g = await itemFacts(deps.notify, f.item.id);
+      const g = await itemFacts(deps.notify, f.item.id, deps.generation);
       if (g) await editOps(deps, g.item.messageId, await renderOps(deps, g));
       return "regen_failed";
     }

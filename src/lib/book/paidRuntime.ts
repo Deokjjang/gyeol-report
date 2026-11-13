@@ -8,8 +8,12 @@ import { isRecord, validateNewProductPublication } from "../report-generation/pr
 import { getAnnualPurchasePolicyDate } from "../payment/annualPurchasePolicy";
 import { writerV5Products } from "../writer/flags";
 
-/** v5 작가 시간 예산(결제 경로): claim lease 10분(SQL) 안에서 조립·finish까지 끝나게 8분. 이용권 경로(작가 lease 15분)는 700초. */
-export const PAID_V5_WRITER_BUDGET_MS = 480_000;
+/**
+ * v5 작가 시간 예산(결제 경로). HOTFIX-W1(추가 지시 6): 작업이 자기 lease를 15분으로 늘린 뒤(paidJob.paidWriterBudget) 680초 —
+ * 1단 한도(본문 + 생각 여유 36,000)가 시간으로 깎이지 않는 값(이용권 경로 700초와 같은 여유). claim 창 45초 + 680초 + 발행 < 함수 800초.
+ * lease를 못 늘리면 옛 480초(claim lease 10분 안).
+ */
+export const PAID_V5_WRITER_BUDGET_MS = 680_000;
 
 // Public worker wiring only. Existing claims, leases, payment validation,
 // publication and recovery stay in runPaidReportJob. Old purchases stay V3.
