@@ -41,6 +41,7 @@ export function defaultBotDeps(env: Env = process.env): BotDeps {
   const stores = createOpsStores(env), db = stores.db;
   const notify: NotifyDeps = {
     notify: stores.notify,
+    generation: stores.generation,
     tg: createTelegram(telegramConfig(env)),
     now: () => Date.now(),
     paymentMethod: tossPaymentMethodReader(env),

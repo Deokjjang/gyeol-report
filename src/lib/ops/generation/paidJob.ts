@@ -8,11 +8,22 @@ import { PUBLISH_GATE_VERSION } from "../../report-generation/productPublishGate
 import type { ReportInputPayload } from "../../report-generation/reportInputTypes";
 import { opsChapterSink, opsRawCache, type OpsStore } from "./sinks";
 import { superviseQueueJob, type GenerationEnv } from "./supervisor";
+import { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours } from "./policy";
 
-export const AUTO_REFUND_REASON = "24시간 안에 책을 완성하지 못해 자동 환불";
+/** HOTFIX-W1 3부 4: 시간은 설정값(AUTO_REFUND_HOURS, 기본 6시간)을 따른다. */
+export const autoRefundReason = (hours: number = autoRefundHours()) => `${hours}시간 안에 책을 완성하지 못해 자동 환불`;
+export const AUTO_REFUND_REASON = autoRefundReason(AUTO_REFUND_HOURS_DEFAULT);
+/** 보류 사유 코드(report_generation_jobs.last_error_code). */
+export const holdCode = (reason: string) => (reason.includes("thinking_exhausted_end") ? "THINKING_HOLD" : "COST_CAP_HOLD");
 export type PaidJobOps = { generation: OpsStore; raw?: OpsStore; order: OpsStore; audit(e: { actor: "system"; action: string; target: string; detail?: Record<string, unknown> }): Promise<boolean>;
   /** 최종판2 1-1: 같은 고객의 이전 Book을 읽는 DB(서비스 롤). 없으면(시험) 이전 책 없이 만든다. */
   db?: import("@supabase/supabase-js").SupabaseClient | null };
+
+/** HOTFIX-W1 3부 3·6: 운영 알림(서비스 롤 DB + 처리 봇). DB가 없으면 없음. */
+export async function liveAlerts(db: import("@supabase/supabase-js").SupabaseClient | null | undefined): Promise<Pick<GenerationEnv, "alerts">> {
+  if (!db) return {};
+  try { const m = await import("./alerts"); return { alerts: m.createGenerationAlerts(db, await m.opsBotSender()) }; } catch { return {}; }
+}
 
 export async function runPaidV5Job(job: { payload: unknown; report_id: string; job_id: string; lease_token: string; order_id: string; policyAt: string; budgetMs?: number },
   finish: (data: Record<string, unknown>) => Promise<ReliabilityResult>, opts: { ops?: PaidJobOps; env?: Omit<GenerationEnv, "store"> } = {}): Promise<ReliabilityResult> {
@@ -21,15 +32,16 @@ export async function runPaidV5Job(job: { payload: unknown; report_id: string; j
   // 최종판2 1-1: 결제 책도 같은 고객(구매자 계정)의 이전 책을 본다 — 이미지·각도·장면을 겹치지 않게(이용권 레인과 같은 규칙).
   const prior = ops.db ? await (await import("./paidPrior")).paidPriorBooks(ops.db, job.order_id, job.report_id, job.payload) : undefined;
   const { decision } = await superviseQueueJob({ reportId: job.report_id, origin: "paid", originRef: job.order_id, payload: job.payload as ReportInputPayload, policyAt: job.policyAt,
-    sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(ops.raw ? { raw: opsRawCache(ops.raw, job.report_id, job.lease_token) } : {}), ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(prior?.books ? { prior } : {}) }, { ...opts.env, store: ops.generation, ...(!opts.ops ? { creditAlert: (code: string) => (ops as import("../store").OpsStores).signup.call("credit_alert", { code }) } : {}) }, async d => {
+    sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(ops.raw ? { raw: opsRawCache(ops.raw, job.report_id, job.lease_token) } : {}), ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(prior?.books ? { prior } : {}) }, { ...opts.env, store: ops.generation, ...(!opts.ops ? { creditAlert: (code: string) => (ops as import("../store").OpsStores).signup.call("credit_alert", { code }), ...(await liveAlerts(ops.db)) } : {}) }, async d => {
     if (d.kind === "publish") last = await finish({ success: true, snapshot: d.snapshot, gateVersion: PUBLISH_GATE_VERSION });
     else if (d.kind === "defer") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: "V5_DEFERRED" }) as ReliabilityResult;
     // 최종판 0-6: 주문당 비용 상한 — 자동으로 다시 돌리지 않게 길게 보류한다(관리자 지연 목록, 환불은 관리자가 정한다).
-    else if (d.kind === "hold") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: "COST_CAP_HOLD" }) as ReliabilityResult;
+    // HOTFIX-W1: 생각 소진이 사다리 끝까지 간 보류는 THINKING_HOLD(같은 30일 보류, 즉시 알림은 감독이 보낸다).
+    else if (d.kind === "hold") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: holdCode(d.reason) }) as ReliabilityResult;
     else if (d.kind === "give_up") {
       last = await ops.generation.call("paid_give_up", { jobId: job.job_id, token: job.lease_token, code: "GENERATION_GAVE_UP" }) as ReliabilityResult;
       if (last.ok) {
-        const refund = await ops.order.call("refund_request", { paymentOrderId: job.order_id, source: "auto", reason: AUTO_REFUND_REASON });
+        const refund = await ops.order.call("refund_request", { paymentOrderId: job.order_id, source: "auto", reason: autoRefundReason() });
         await ops.audit({ actor: "system", action: "auto_refund_requested", target: job.order_id, detail: { reportId: job.report_id, ok: refund.ok === true, reason: d.reason.slice(0, 120) } });
       }
     }

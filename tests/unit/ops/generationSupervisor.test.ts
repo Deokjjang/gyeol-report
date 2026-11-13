@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { superviseQueueJob, runLaneBatch, type Decision } from "@/lib/ops/generation/supervisor";
 import { memorySink } from "@/lib/ops/generation/sinks";
-import { deferUntil, INTERIM_AFTER_MS, judgeBuild, nextRetryAt, RETRY_WINDOW_MS } from "@/lib/ops/generation/policy";
+import { deferUntil, INTERIM_AFTER_MS, judgeBuild, nextRetryAt, RETRY_WINDOW_MS, retryWindowMs } from "@/lib/ops/generation/policy";
 import { RAW_FULL, mockTextFor } from "../../helpers/v5Scenarios";
 import { ANTHROPIC_CREDIT, ANTHROPIC_OVERLOADED, OPENAI_QUOTA, fakeClock, memoryOpsStore, mockAnthropic, mockOpenAiWithBody, routedFetch, type AnthropicBehavior } from "../../helpers/opsMocks";
 import type { MockBehavior } from "../../helpers/llmMock";
@@ -29,12 +29,16 @@ function harness(anthropic: AnthropicBehavior[], openai: (MockBehavior & { body?
 }
 
 describe("정책: 시간표·판정", () => {
-  it("재시도 간격 1분·5분·15분·1시간·3시간·6시간, 첫 실패 + 24시간이 끝", () => {
+  it("재시도 간격 1분·5분·15분·1시간·3시간, 첫 실패 + 자동 환불 시간(기본 6시간)이 끝", () => {
     const t0 = 0, steps: number[] = [];
     let now = t0, failures = 0;
     for (;;) { failures++; const n = nextRetryAt(t0, failures, now); if (n === null) break; steps.push(n - now); now = n; }
-    expect(steps.slice(0, 6)).toEqual([1, 5, 15, 60, 180, 360].map(m => m * MIN));
-    expect(now).toBe(t0 + RETRY_WINDOW_MS); // 마지막 시도는 정확히 24시간째
+    expect(RETRY_WINDOW_MS).toBe(6 * HOUR);
+    expect(steps).toEqual([1, 5, 15, 60, 180, 99].map(m => m * MIN));
+    expect(now).toBe(t0 + RETRY_WINDOW_MS); // 마지막 시도는 정확히 6시간째
+    // HOTFIX-W1 3부 4: 설정값 AUTO_REFUND_HOURS(1~72). 24로 두면 예전 시간표(1분…6시간, 24시간 끝).
+    expect(retryWindowMs({ AUTO_REFUND_HOURS: "24" })).toBe(24 * HOUR); expect(retryWindowMs({})).toBe(6 * HOUR); expect(retryWindowMs({ AUTO_REFUND_HOURS: "0" })).toBe(6 * HOUR); expect(retryWindowMs({ AUTO_REFUND_HOURS: "100" })).toBe(6 * HOUR);
+    { let n2 = 0, f2 = 0; const s2: number[] = []; for (;;) { f2++; const n = nextRetryAt(0, f2, n2, 24 * HOUR); if (n === null) break; s2.push(n - n2); n2 = n; } expect(s2.slice(0, 6)).toEqual([1, 5, 15, 60, 180, 360].map(m => m * MIN)); expect(n2).toBe(24 * HOUR); }
     // OpenAI를 쓸 수 있으면 2시간에 맞춰 한 번 깨운다(임시본).
     expect(deferUntil({ firstFailureAt: 0, failures: 5, now: 81 * MIN, interimPossible: true })).toBe(INTERIM_AFTER_MS);
     expect(deferUntil({ firstFailureAt: 0, failures: 5, now: 81 * MIN, interimPossible: false })).toBe(261 * MIN);
@@ -109,7 +113,7 @@ describe("Anthropic 24시간 장애", () => {
     // 교체 레인: 다음 시각마다 Sonnet. 24시간이 지나면 멈춘다.
     let lane = 0;
     while (h.ops.states.get(h.job.reportId)!.next_at) { h.clock.advanceTo(Date.parse(h.ops.states.get(h.job.reportId)!.next_at!)); const r = await runLaneBatch(h.env, { maxJobs: 1 }); expect(r.processed).toBe(1); lane++; if (lane > 20) throw new Error("loop"); }
-    expect(lane).toBeGreaterThanOrEqual(4);
+    expect(lane).toBeGreaterThanOrEqual(2);
     expect(h.clock.now() - first).toBeLessThanOrEqual(RETRY_WINDOW_MS + 15 * MIN);
     const end = h.ops.states.get(h.job.reportId)!;
     expect(end.phase).toBe("interim"); expect(end.gave_up_at).not.toBeNull();

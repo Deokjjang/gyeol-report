@@ -31,7 +31,9 @@ export async function readGenerationProgress(reportId: string, knownStatus?: str
       const r = await generation.call("state", { reportId });
       if (r.ok === true && r.state && typeof r.state === "object") supervisor = r.state as SupervisorStateRow;
     } catch { /* 감독 상태를 못 읽으면 Book 상태만으로 정한다 */ }
-    return describeGeneration(status, supervisor);
+    // HOTFIX-W1 3부 5: 자동 환불 시간(설정값)을 화면에 넘긴다.
+    const { autoRefundHours } = await import("../../lib/ops/generation/policy");
+    return describeGeneration(status, supervisor, { refundHours: autoRefundHours() });
   } catch {
     return UNKNOWN_PROGRESS;
   }

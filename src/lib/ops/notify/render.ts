@@ -23,6 +23,8 @@ export type ItemFacts = {
   request: { id: string; reason: string; status: string; resolution: string | null; resolvedBy: string | null; resolvedAt: string | null; createdAt: string; device: string | null; paymentOrderId: string | null; reportId: string | null } | null;
   order: OrderFacts | null; ticket: TicketFacts | null; duplicates: Duplicate[]; regenFailedBefore: boolean;
   failed: { id: number; kind: string; attempts: number; lastError: string | null; createdAt: string } | null;
+  /** HOTFIX-W1 3부 1: 실패 분류 · 몇 단 · 다음 자동 시도 · 지금까지 쓴 비용(생성 기록에서). 없으면 줄을 붙이지 않는다. */
+  genLine?: string | null;
 };
 export type Stats = { payCount: number; paySum: number; refundCount: number; refundSum: number; newCount: number; repeatCount: number; byProduct: { productType: string; count: number; sum: number }[] };
 export type EventStats = { issued: number; usedSelf: number; gifted: number; claimed: number; available: number; revoked: number; expired: number; nextExpiry: string | null };
@@ -182,7 +184,7 @@ function opsMessageBody(f: ItemFacts, method: string | null, now: number): Messa
     const o = f.order;
     const mins = o?.paidAt ? Math.max(0, Math.floor((now - Date.parse(o.paidAt)) / 60_000)) : 0;
     const head = f.item.state.regenFailed ? "⚠️ <b>다시 실패</b>" : "🚨 <b>책이 안 나왔어요</b>";
-    return { text: [`${head} · ${esc(codeOf(f))}`, `${esc(o ? productTitle(o.productType) : "")} · 결제 ${hm(o?.paidAt)} · ${mins}분 지남 · ${esc(retryLabel(o?.job ?? null))}`].join("\n"), buttons };
+    return { text: [`${head} · ${esc(codeOf(f))}`, `${esc(o ? productTitle(o.productType) : "")} · 결제 ${hm(o?.paidAt)} · ${mins}분 지남 · ${esc(retryLabel(o?.job ?? null))}`, ...(f.genLine ? [esc(f.genLine)] : [])].join("\n"), buttons };
   }
   if (f.request?.reason === "double_paid" && f.order) {
     const d = f.duplicates.length >= 2 ? f.duplicates : [];
