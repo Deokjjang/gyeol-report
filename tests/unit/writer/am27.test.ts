@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { inputsOf, needsOf, neutralize, premiseHits, soften, PREMISE_VERSION } from "@/lib/brief/premise";
-import { antecedentIssues, dayunOrderIssues, detFix, factIssues, lengthIssue, RECORD_ONLY } from "@/lib/writer/chunked/accept";
+import { antecedentIssues, dayunOrderIssues, detFix, factIssues, leanOnCut, lengthIssue, RECORD_ONLY } from "@/lib/writer/chunked/accept";
 import { ganjiClaim } from "@/lib/factsheet/check";
 import { judgeBuild } from "@/lib/ops/generation/policy";
 import { collectNeeds, needsTable } from "../../../tools/annual-major/am2-7-tags";
@@ -68,6 +68,8 @@ describe("AM2-7 1부 고치기 층 — 문단째 받기 · 결정론 받는 조�
     expect(detFix("서미란님은 천천히 가요.", "name_call", { callName: "서미란님", name: "서미란" })).toBe("당신은 천천히 가요.");
     expect(detFix("다듬는 힘은 이 시기에 가장 잘 길러집니다.", "degree", {})).toBe("다듬는 힘은 이 시기에 잘 길러집니다.");
     expect(detFix("월급날 다음 날에 떼어 두세요.", "input_premise", { inputs: inputsOf(facts("", "married")) })).toBe("돈이 들어오는 날 다음 날에 떼어 두세요.");
+    expect(detFix("서미란님, 지금 서 있는 무진 대운은 재능을 꺼내는 10년이에요.", "time_deictic", {})).toBe("서미란님, 당신이 서 있는 무진 대운은 재능을 꺼내는 10년이에요.");
+    expect(detFix("지금 하고 있는 일 가운데 하나를 정해 보세요.", "time_deictic", {})).toBeNull();
   });
   it("기록만 하는 깃발(다시 쓰기 · 지우기 안 함) — 지시 목록 열 가지", () => {
     for (const r of ["chapter_repeat", "screen_repeat", "rel_echo", "head_echo", "link_template", "tone_mismatch", "rx_extra", "ending_cap", "gyeol_cap", "rep_adjacent"]) expect(RECORD_ONLY.has(r)).toBe(true);
@@ -83,5 +85,30 @@ describe("AM2-7 1부 고치기 층 — 문단째 받기 · 결정론 받는 조�
     const v = judgeBuild({ meta, run: null });
     expect(v.kind).toBe("incomplete");
     if (v.kind === "incomplete") expect(v.reason).toContain("generation_hold:5");
+  });
+
+  it("재현 판독 고침: 견줌 꼴 「월급날 대신」은 마디째 · 「가게 일」 → 일터 · 「시험하며」 · 「단기 일감 같은」 · 「연인이 생기면」은 전제가 아니다", () => {
+    const biz = inputsOf({ relationship: "dating", children: "none", job: { status: "self_employed" } }), emp = inputsOf({ relationship: "married", children: "none", job: { status: "employee" } }), single = inputsOf({ relationship: "single", children: "none", job: { status: "employee" } });
+    expect(neutralize("월급날 대신 매달 대금이 들어오는 날을 기준으로 삼아 보세요.", biz)).toBe("매달 대금이 들어오는 날을 기준으로 삼아 보세요.");
+    expect(soften("그래서 월급날이 아니어도, 들어오는 돈이 있는 날 떼어 두세요.", biz)).toBe("그래서 들어오는 돈이 있는 날 떼어 두세요.");
+    expect(neutralize("가게 일과 집 일을 한 자리에서 정하면 거칠어져요.", biz)).toBe("일터 일과 집 일을 한 자리에서 정하면 거칠어져요.");
+    expect(premiseHits("가게 한쪽에 초록 식물을 두세요.", biz).map(h => h.word)).toEqual(["가게"]);
+    expect(premiseHits("가게에 들러 커피를 사 보세요.", emp)).toEqual([]);
+    expect(premiseHits("아이디어를 시험하며 가능성을 시험하는 시기", emp)).toEqual([]);
+    expect(premiseHits("시험 형식에 대한 불만", emp).map(h => h.word)).toEqual(["시험"]);
+    expect(premiseHits("부수입이나 단기 일감 같은 기회성 수입", emp)).toEqual([]);
+    expect(neutralize("이 달들은 새 인연보다 배우자와의 사이를 데우는 달이에요.", emp)).toBe("이 달들은 배우자와의 사이를 데우는 달이에요.");
+    expect(premiseHits("연인이 생기면 같이 움직이는 계획이 힘이 돼요.", single)).toEqual([]);
+  });
+  it("재현 판독 고침: 「반대 의견 하나를」은 목록을 받지 않는다 · 「그 몫」은 앞말이 있어야 · 지운 문장의 말을 뒤 문장이 받으면 지우지 않는다 · 「지금부터」 · 「지금은」", () => {
+    expect(antecedentIssues("경쟁 속에서도 반대 의견 하나를 꼭 들어 보세요.", "")).toEqual([]);
+    expect(antecedentIssues("하나를 골라 보세요.", "")).toHaveLength(1);
+    expect(antecedentIssues("2036년에 직접 하려 할 때 그 몫이 든든한 바탕이 됩니다.", "")).toHaveLength(1);
+    expect(antecedentIssues("정해 둔 몫을 먼저 떼어 두세요. 그 몫이 바탕이 됩니다.", "")).toEqual([]);
+    const p = "이동 쪽에서는 출장·외근이 잦아져 움직이는 반경이 넓어지는 경향이 있어요. 나가서 확인하는 쪽이 편한 당신에게 반가운 흐름입니다. 다만 반경이 넓어질수록 쉬는 자리가 줄어들 수 있어요.";
+    expect(leanOnCut(p, "이동 쪽에서는 출장·외근이 잦아져 움직이는 반경이 넓어지는 경향이 있어요.", "")).toHaveLength(1);
+    expect(leanOnCut("첫 문장이에요. 정해 둔 계획을 지켜요.", "정해 둔 계획을 지켜요.", "")).toEqual([]);
+    expect(detFix("그래서 들어오는 돈이 있는 날 몫을 떼어 두는 습관을 지금부터 만들어 두세요.", "time_deictic", { callName: "", name: "" })).toBe("그래서 들어오는 돈이 있는 날 몫을 떼어 두는 습관을 만들어 두세요.");
+    expect(detFix("지금은 경쟁 속에서도 반대 의견 하나는 꼭 들어 보는 습관을 들이면 좋아요.", "time_deictic", { callName: "", name: "" })).toBe("경쟁 속에서도 반대 의견 하나는 꼭 들어 보는 습관을 들이면 좋아요.");
   });
 });

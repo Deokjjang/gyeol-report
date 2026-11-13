@@ -249,6 +249,8 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const unit = subject === "month" ? "달" : subject === "dayun" ? "10년" : "해";
     const v = unitFix(say(value, year), unit), m = unitFix(dropGeneral(fits(say(meaning, year)), { weak: /WEAK/.test(brief.chart.strength.level) }), unit);
     if (!v || v.length < 2) return null;
+    // AM2-7 재현(R7 major-p5 Y17 「2031년 신해년 관계 쪽」 — 기혼에게 맞지 않는 뜻 마디를 거르고 값만 남음): 뜻이 있던 줄이 입력 거름으로 다 비면 줄째 뺀다.
+    if (meaning.trim() && !m.trim() && subject !== "mbti") return null;
     if (premiseHits(v, inputs).length) { const v2 = neutralize(v, inputs); if (!v2) return null; return add(subject, v2, meaning, n); }
     const sig = `${subject}|${v}|${m}`;
     let l = byText.get(sig);
@@ -339,7 +341,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
         // AM2-7 3부 7: 대운 하늘 십성 × 이 유형에 Fusion 이유가 있으면 짝(그 장에서만). 없으면 소제목을 잇지 않는 나란히 꼴로(아래 growthParallel).
         const dtg = (c.currentDayun?.tenGod ?? "").replace(/\(.*$/, "");
         const got = my && mbtiType && mbti && dtg ? keyPairWhy(k, dtg, mbti.type, t => sceneFits(t, brief, true)) : null;
-        if (got && my) { use.get(mbtiType!)!.add(n); pairs.push({ id: `P${pairs.length + 1}`, myeongri: my, mbti: mbtiType!, why: pairWhy(got.why), reason: got.reason, use: [n] }); } else growthParallel.add(n);
+        // R7 판독(major-p6a 7.1): 같은 십성이 든 연도 key 짝과 같은 이유 글(「ENFJ는 먹는 사람의 표정에서 보람을 얻습니다」)이면 장 짝으로 쓰지 않는다 — 되풀이 · 물음과 어긋남.
+        const why7 = got ? pairWhy(got.why) : "";
+        if (got && my && !pairs.some(pp => pp.why === why7)) { use.get(mbtiType!)!.add(n); pairs.push({ id: `P${pairs.length + 1}`, myeongri: my, mbti: mbtiType!, why: why7, reason: got.reason, use: [n] }); } else growthParallel.add(n);
         return [my, mbtiType].filter(Boolean) as string[];
       }
       return m.facts.filter(x => !DIRECTIVE_FACT.test(x) && sceneFits(x, brief)).map(x => { const s = split(x); return add(subjectOfFact(m.key, x, product), s.value, s.meaning, n); }).filter(Boolean) as string[];
@@ -413,7 +417,8 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
       // AM2-7 3부 7: 두 체계를 함께 묻는 소제목(「대운과 성장 곡선이 만나는 곳은?」)에 짝이 없으면 잇지 않는 나란히 꼴로 묻는다.
       const twoSys = /대운/.test(q2) && /성장|성격|MBTI/.test(q2) && /만나|겹치|함께|같은 방향|이어/.test(q2);
       const pairedHere = pairs.some(pp => use0.includes(pp.myeongri) && use0.includes(pp.mbti));
-      const q3 = twoSys && growthParallel.has(ch.n) && !pairedHere ? "이 대운 10년은 무엇을 키우는 때일까?" : q2;
+      // 짝이 있으면 물음도 짝 범위로(「성장 곡선」을 물으면 짝 밖 성장 곡선 줄 B3·B5를 대운에 잇는다 — R7 major-p6a 7.1 ¶1 · ¶2).
+      const q3 = twoSys && growthParallel.has(ch.n) && !pairedHere ? "이 대운 10년은 무엇을 키우는 때일까?" : twoSys && pairedHere && mbti?.type ? `이 대운 10년에 ${mbti.type}의 어떤 모습이 쓰일까?` : q2;
       return { q: say(q3, year), lines: use0, claims: claims2, ...(claimIds2.length ? { claimIds: claimIds2 } : {}), ...(recap.size ? { recapIds: [...recap] } : {}), ...(sc2 ? { scene: sc2 } : {}), ...(DOMAIN_KO[s.domain] ? { angle: DOMAIN_KO[s.domain] } : {}) };
     });
     const scenes = (cb?.sceneHint ?? []).map(h => cleanSeed(say(h, year), sc)).filter((h): h is string => Boolean(h) && seedFits(h!, brief)).map(h => seedOnce(h)).filter((h): h is string => Boolean(h)).map(seedAsCondition).slice(0, 2);

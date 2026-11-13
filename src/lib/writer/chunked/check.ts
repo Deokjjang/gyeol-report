@@ -142,7 +142,7 @@ export const BLOCK_RULES: ReadonlySet<string> = new Set<string>([...HARD_RULES, 
   // AM2-5 2부: P4 판독 두 건의 결정론 꼴 가운데 구조로 막히지 않는 것(근거 밖 관계 이름 · 달 목록 범위 말 · 작가 규칙 문구 · 읽는 날 마감 · 지난 경험 물음 · 짧은 key).
   "relation_scope", "month_range", "rule_echo", "date_deadline", "past_question", "key_len",
   // AM2-7: 입력 상태 말 · 바람 자리 · 대운 순서.
-  "input_state", "wish_scope", "dayun_order", "pair_text"]);
+  "input_state", "dayun_order", "pair_text"]);
 /** 경미 규칙: 그 묶음을 다른 까닭으로 다시 쓸 때만 함께 고치게 하고, 그것만으로는 다시 쓰지도 지우지도 않는다(판독 기준 경미). */
 export const PIGGYBACK_RULES: ReadonlySet<string> = new Set<string>(["head_repeat", "head_echo", "angle_name", "pointer_expand"]);
 /** AM2-4 1부·5부: 지우기만 하는 규칙(그것만으로는 다시 쓰지 않는다 — 화면 사실 되풀이는 그 문장을 지워도 화면에 남는다). 다시 쓸 때는 함께 넘긴다. */
@@ -215,6 +215,8 @@ const itemsOf = (sen: string) => sen.split(/(?<=고|며|지만|는데|어서|아
 /** 국(삼합) 이름의 다른 꼴: 「오술 반합」「해묘미 반합」 「인오술」. */
 const GUK_NAMES: Readonly<Record<string, RegExp>> = { 목국: /해묘미|해묘|묘미|해미/, 화국: /인오술|인오|오술|인술/, 금국: /사유축|사유|유축|사축/, 수국: /신자진|신자|자진|신진/ };
 const nameIn = (sen: string, nm: string) => sen.includes(nm) || Boolean(GUK_NAMES[nm]?.test(sen) && /반합|삼합|국/.test(sen));
+/** 자리 말(「연인과의 사이 자리」 「일터 자리」)은 관계 뜻이 아니다 — 뜻 섞기 셈에서 뺀다(R7 major-p6a 2036 ¶1: 「사이」를 묘진해 뜻으로 잡은 오탐). */
+const seatMask = (t: string) => t.replace(/[가-힣]+(과|와)의 사이 자리|(가까운 사람|일터|생활|사회생활|집안|태어난 (해|달|날|시각)) 자리/g, " ");
 const esc2 = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** 앞날·결과·남의 반응 단정 사전(4부): 사람이 해 줄 일 · 결과로 이어짐 · 안정 · 쏟아짐. */
 const FUTURE_ASSERT = /(해|알아봐|반응해|도와|챙겨|들어|맞춰|기다려|인정해) 줄 거(예요|에요|랍니다)|(결과|인정|점수|성과|기회|평가|신뢰|수입|합격|승진)(으)?로 이어(집니다|져요)|결과로 이어지는 (해|달)|다음 (대운|10년)으로 이어(집니다|져요)|안정적(이에요|입니다)|쏟아집니다|쏟아져요|찾아옵니다|찾아와요|(가|이) 생길 거예요/;
@@ -534,7 +536,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
             // 뜻 섞기: 이 자리의 다른 관계 뜻 어간 둘 이상이 이름이 든 절 안에(이름 없는 제 절에 풀어 쓴 것은 괜찮다 — 「…부딪히고, 금의 기운이 반쯤 묶여」).
             // 이름 없는 절도 제 자리·주어(「태어난 날 글자와는 금의 기운이」 「봄 글자가」)가 없으면 앞 관계 문장의 일부다(「…알아주지 않는 느낌이 들 수 있고, 묵은 일이 다시 올라오기도」).
             const ownSubject = /태어난 (해|달|날|시각)|자리와|글자(와|가)|의 기운이|[가-힣]{1,2} 기운이/;
-            const ownSt = stemsOf(own), namedCl = stemsOf(clausesOf(sen).filter(cl => named.some(nm => nameIn(cl, nm)) || !ownSubject.test(cl)).join(" "));
+            const ownSt = stemsOf(own), namedCl = stemsOf(clausesOf(seatMask(sen)).filter(cl => named.some(nm => nameIn(cl, nm)) || !ownSubject.test(cl)).join(" "));
             for (const [nm2, mean2] of rels) { if (named.includes(nm2)) continue; const hitSt = [...stemsOf(mean2)].filter(x2 => !ownSt.has(x2) && namedCl.has(x2)); if (hitSt.length >= 2) { out.push({ ...at, rule: "rel_mix", detail: `${named.join("·")} 문장에 ${nm2}의 뜻(${hitSt.join("·")})`, hint: `${named.join("·")}에는 그 줄의 뜻만 — ${nm2}의 뜻을 섞지 않는다` }); break; } }
           }
           { const sst = stemsOf(sen); for (const o of otherRel) { const h = [...o.st].filter(x2 => sst.has(x2) && !mineStems.has(x2)); if (h.length >= 3) { out.push({ ...at, rule: "key_value", detail: `다른 달·해(${o.label})의 ${o.nm} 뜻(${h.join("·")})`, hint: `이 자리는 ${kp.label} — 카드 줄 ${kp.range ?? ""}에 적힌 것만` }); break; } } }
@@ -1010,7 +1012,7 @@ export function valueFlags(chapters: readonly FinalChapter[]): ChunkFlag[] {
 // 등급: 차단(BLOCK — 교체 뒤에도 남으면 지우기 단계) · 교체(FIX_RULES — 경계 · 「고객이 알아챌 것: 예」 경미. 문단 교체로만 고치고 지우지 않는다).
 // ======================================================================
 /** 교체만 하는 규칙(경계 · 고객이 알아챌 경미 — 덕짱님 지시 5부 「지우지 않고 문단 교체 대상으로」). 순서는 차단 → 경계(FIX_BOUNDARY) → 경미(FIX_NOTICE). */
-export const FIX_BOUNDARY: ReadonlySet<string> = new Set(["tone_mismatch", "must_bare", "pair_last", "pair_causal", "key_paras", "rx_extra", "claim_months"]);
+export const FIX_BOUNDARY: ReadonlySet<string> = new Set(["tone_mismatch", "must_bare", "wish_scope", "pair_last", "pair_causal", "key_paras", "rx_extra", "claim_months"]);
 export const FIX_NOTICE: ReadonlySet<string> = new Set(["link_template", "pair_opener", "gyeol_cap", "rel_echo", "chapter_repeat", "ending_cap", "head_echo", "advice_repeat_sec", "rep_adjacent", "rx_repeat_sec", "screen_repeat"]);
 export const FIX_RULES: ReadonlySet<string> = new Set([...FIX_BOUNDARY, ...FIX_NOTICE]);
 /** 관계 이름 사전(4부 relation_scope): 천간합 · 천간충 · 육합 · 육충 · 형 · 파 · 해 · 원진 · 삼합국 · 방합. 이 책의 카드·배지에 없는 이름이 본문에 나오면 차단(부정형 포함). */
@@ -1045,6 +1047,7 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
   const life = b.brief?.timeline?.lifetime ?? [];
   const cycleOf = (y: number, ganji?: string) => (ganji ? life.find(c => c.ganji.includes(ganji)) : undefined) ?? life.find(c => c.startYear <= y && y <= c.endYear);
   const facts = b.brief?.person.facts, callName = b.brief?.person.callName ?? "";
+  const pname = b.brief?.person.name ?? "", nameForms = [...new Set([callName, callName.replace(/(님|씨)$/, ""), pname, pname.length >= 3 ? pname.slice(1) : ""].filter(n2 => n2.length >= 2))].sort((p1, p2) => p2.length - p1.length);
   const inputs = facts ? inputsOf(facts) : undefined;
   const tenRef = product === "major_fortune" ? { start: baseYear + 1, end: baseYear + 10 } : (() => { const cyc = life.find(c2 => c2.startYear <= bookYear && bookYear <= c2.endYear); return cyc ? { start: cyc.startYear, end: cyc.endYear } : null; })();
   const bSegs = x.lines.filter(l => l.subject === "mbti").flatMap(l => l.meaning.split(/ · |(?<=[.!?])\s+/)).map(t => t.trim()).filter(t => t.replace(/[^가-힣]/g, "").length >= 6);
@@ -1141,7 +1144,8 @@ export function am26Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
         // 작성 메모 · 개수 예고 · 「…라는 뜻이 아니라」.
         { const mw = META_WORDS.exec(sen); if (mw) flag(at, "meta_trace", "작성 메모·개수 예고·「…라는 뜻이 아니라」를 쓰지 않는다", mw[0]); }
         // 이름 부르기(4부): 첫 장 · 끝 장의 첫 문단 밖.
-        if (callName && callName.length >= 2 && sen.includes(callName) && !((c.n === 1 || c.n === lastCh) && si === 0 && pi === 0)) flag(at, "name_call", "이름은 첫 장·끝 장 첫 문단에서만 — 그 밖은 「당신」", callName);
+        // AM2-7 재현(R7 annual-1 8.0 「서윤 씨」): 부르는 이름 · 성 뺀 이름 꼴도 이름 부르기다.
+        { const nm = nameForms.find(n2 => new RegExp(`(?<![가-힣])${esc2(n2)}(?:\\s?(?:님|씨))?(?![가-힣]{2})`).test(sen)); if (nm && !((c.n === 1 || c.n === lastCh) && si === 0 && pi === 0)) flag(at, "name_call", "이름은 첫 장·끝 장 첫 문단에서만 — 그 밖은 「당신」", nm); }
         // 결(재료 칸 말)은 책에서 세 번까지.
         for (const g of sen.matchAll(GYEOL)) { if (/부딪치는 결이라/.test(sen.slice(Math.max(0, g.index! - 6), g.index! + 4))) continue; if (++gyeolSeen.n > 3) { flag(at, "gyeol_cap", "「결」은 책 전체에서 세 번까지 — 다른 말로", `결 ${gyeolSeen.n}번째`); break; } }
         // ---- 짝(2부) ----

@@ -21,7 +21,7 @@ import { HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/
 import { dayunPhase } from "../safety/lint";
 import { briefFor, briefHash, chooseCover, coverIssue, factSheetFor, insertFixedLines, kstDate, lintContext, renderTerms, v4People, writerKnowledge, type V5BuildDeps } from "../publish";
 import { adjacentRepeats, adviceRepeats, adviceSentenceAt, am26Flags, blockFlags, BLOCK_RULES, briefCheck, crossRepeats, CUT_ONLY_RULES, endingCaps, FIX_BOUNDARY, FIX_RULES, MINOR_RULES, NO_SENTENCE_RULES, PIGGYBACK_RULES, rxRepeats, styleScoreOf, valueFlags, type BlockCtx, type BriefCtx, type ChunkFlag } from "./check";
-import { antecedentIssues, claimIssues, dayunOrderIssues, DET_RULES, detFix, exemptOf, factIssues, lengthIssue, RECORD_ONLY, REWRITE_BOUNDARY } from "./accept";
+import { antecedentIssues, leanOnCut, claimIssues, dayunOrderIssues, DET_RULES, detFix, exemptOf, factIssues, lengthIssue, RECORD_ONLY, REWRITE_BOUNDARY } from "./accept";
 import { presumedPartner } from "../safety/lint";
 import { relName } from "@/lib/brief/core";
 import { cutFlagged } from "./cut";
@@ -136,8 +136,10 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const labelMonths = (chs: readonly FinalChapter[]): FinalChapter[] => brief.product !== "annual_fortune" ? [...chs] : chs.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, paragraphs: sec.paragraphs.map(p2 => p2.replace(/(?<![가-힣·] ?)(?<!\d월 · )(?<![가-힣])([갑을병정무기경신임계][자축인묘진사오미신유술해]월)(?!\s?·)/g, (m0: string, g: string, off: number, all: string) => (monthLabel.has(g) && !/\d월 ?· ?$/.test(all.slice(Math.max(0, off - 8), off)) ? monthLabel.get(g)! : m0))) })) }));
   // AM2-6 4부 이름 부르기: 정해진 장(세운 1·10장, 대운 1·9장 — 첫 장 · 끝 장)의 첫 문단 밖의 이름은 「당신」으로(뜻 그대로, 표기만).
   const callName = brief.person.callName, lastN = Math.max(...plan.map(p2 => p2.n));
+  // AM2-7: 성 뺀 이름(「서윤 씨」)도 「당신」으로 — 검사(name_call)와 같은 이름 꼴.
+  const nameAlt = [...new Set([callName, callName.replace(/(님|씨)$/, ""), brief.person.name, brief.person.name.length >= 3 ? brief.person.name.slice(1) : ""].filter(n2 => n2 && n2.length >= 2))].sort((p1, p2) => p2.length - p1.length).map(n2 => n2.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
   const unname = (chs: readonly FinalChapter[]): FinalChapter[] => !callName || callName.length < 2 ? [...chs] : chs.map(c => ({ ...c, sections: c.sections.map((sec, si) => ({ ...sec, paragraphs: sec.paragraphs.map((p2, pi) => ((c.n === 1 || c.n === lastN) && si === 0 && pi === 0) ? p2
-    : p2.replace(new RegExp(`${callName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s?(?:님|씨)?(은|는|이|가|을|를|과|와|의|에게|도|만|처럼)?(?![가-힣])`, "g"), (_m, j?: string) => `당신${j ? ({ 은: "은", 는: "은", 이: "이", 가: "이", 을: "을", 를: "을", 과: "과", 와: "과" } as Record<string, string>)[j] ?? j : ""}`)) })) }));
+    : p2.replace(new RegExp(`(?<![가-힣])(?:${nameAlt})\\s?(?:님|씨)?(은|는|이|가|을|를|과|와|의|에게|도|만|처럼)?(?![가-힣])`, "g"), (_m, j?: string) => `당신${j ? ({ 은: "은", 는: "은", 이: "이", 가: "이", 을: "을", 를: "을", 과: "과", 와: "과" } as Record<string, string>)[j] ?? j : ""}`)) })) }));
   // AM2-7 5부 1: 본문 꺾쇠 〈 〉는 렌더에서 걷는다(P6 — 지시문 자리표시를 작가가 서식으로 읽었다, 26곳).
   const unbracket = (chs: readonly FinalChapter[]): FinalChapter[] => chs.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.replace(/[〈〉]/g, ""), paragraphs: sec.paragraphs.map(p2 => p2.replace(/[〈〉]/g, "")) })) }));
   const build = () => { const net = applySafetyNet(brief, plan, drafts, { priorSentences: a.prior?.sentences ?? [], surfaceOnly: true }); const t = tidyBook(unname(labelMonths(headJoin(unbracket(noCard(net.chapters))))), { ...lctx, surfaceOnly: true }); return { net, chapters: t.chapters, tidy: t.count }; };
@@ -248,13 +250,13 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const smallOf = (n: number, h: string) => { const kp = planOf(n)?.keys?.find(k2 => k2.key === h); return kp ? kp.lines.flatMap(id => [...(intake.lines.find(l => l.id === id)?.meaning ?? "").matchAll(/작은 ([가-힣]{2,})/g)].map(m => m[1])) : []; };
   const detTried = new Set<string>();
   const detPass = () => {
-    const fs = [...seen.block, ...seen.minor, ...fixOf(cur.chapters, seen)].filter(f => (DET_RULES.has(f.rule) || f.rule === "input_premise") && f.paragraph >= 0 && !detTried.has(`${f.rule}|${normS(f.sentence)}`));
+    const fs = [...seen.block, ...seen.minor, ...fixOf(cur.chapters, seen)].filter(f => (DET_RULES.has(f.rule) || f.rule === "input_premise" || f.rule === "time_deictic" || f.rule === "calendar_month") && f.paragraph >= 0 && !detTried.has(`${f.rule}|${normS(f.sentence)}`));
     for (const f of fs) detTried.add(`${f.rule}|${normS(f.sentence)}`);
     for (const f of fs) {
       const h = headingOf(cur.chapters, f), d = drafts.get(f.chapter); if (!d) continue; const si = d.chapter.sections.findIndex(s2 => s2.heading === h); if (si < 0) continue;
       const sec = d.chapter.sections[si], pi = sec.paragraphs.findIndex(p2 => holds(p2, f.sentence)); if (pi < 0) continue;
       const ss = splitSentences(sec.paragraphs[pi]); let changed = false;
-      const out = ss.map(x2 => { if (!holds(x2, f.sentence)) return x2; const y = detFix(x2, f.rule, { callName: brief.person.callName, name: brief.person.name, small: smallOf(f.chapter, h), ...(intake.inputs ? { inputs: intake.inputs } : {}) }); if (y) { changed = true; return y; } return x2; });
+      const out = ss.map(x2 => { if (!holds(x2, f.sentence)) return x2; const y = detFix(x2, f.rule, { callName: brief.person.callName, name: brief.person.name, small: smallOf(f.chapter, h), ...(intake.inputs ? { inputs: intake.inputs } : {}), ...(lctx.monthNames ? { months: lctx.monthNames } : {}) }); if (y) { changed = true; return y; } return x2; });
       if (!changed) continue;
       const after = [out.join(" ")], why = acceptOne({ chapter: f.chapter, section: si, heading: h, index: pi }, [sec.paragraphs[pi]], after, [f.rule]);
       detLog.push({ at: `${f.chapter}.${si}.${pi}`, rule: f.rule, from: f.sentence.slice(0, 120), to: out.join(" ").slice(0, 120), ok: !why.length, ...(why.length ? { why: why.join(" · ") } : {}) });
@@ -348,7 +350,13 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     const secText = (chs: readonly FinalChapter[], n: number, h: string) => chs.find(c => c.n === n)?.sections.find(s2 => s2.heading === h);
     const anOf = (sec: { heading: string; paragraphs: readonly string[] } | undefined) => new Set((sec?.paragraphs ?? []).flatMap((p2, i) => antecedentIssues(p2, i ? sec!.paragraphs[i - 1] : sec!.heading)));
     const anNew = new Set(hard.filter(f => { const h = headingOf(cur.chapters, f), b0 = anOf(secText(cur.chapters, f.chapter, h)); return [...anOf(secText(r.chapters, f.chapter, h))].some(x2 => !b0.has(x2)); }).map(f => `${f.chapter}.${f.section}`));
-    const unsafe = hard.filter(f => f.paragraph >= 0 && (lostMust.has(`${f.chapter}|${headingOf(cur.chapters, f)}`) || lostClaim.has(`${f.chapter}.${f.section}`) || leanAt.has(`${f.chapter}.${f.section}.${f.paragraph}`) || rxLost.has(f.chapter) || orphanNew.has(`${f.chapter}.${f.section}`) || anNew.has(`${f.chapter}.${f.section}`)));
+    // AM2-7 재현(R7 major-p5 9.0 — 다시 쓰기는 「대운 이름을 잃는다」며 버렸는데 지우기가 그 문장을 통째로 지웠다): 장의 유일한 대운 이름 · 간지 해를 지우는 지우기는 하지 않는다.
+    const factOnly = new Set(hard.filter(f => { const names = [...f.sentence.matchAll(/([갑을병정무기경신임계][자축인묘진사오미신유술해]) 대운|20\d\d년 [갑을병정무기경신임계][자축인묘진사오미신유술해]년/g)].map(m => m[0]); if (!names.length) return false;
+      const rest = (r.chapters.find(c => c.n === f.chapter)?.sections ?? []).flatMap(s2 => s2.paragraphs).join(" "); return names.some(nm => !rest.includes(nm)); }).map(f => `${f.chapter}.${f.section}.${f.paragraph}`));
+    // AM2-7 재현(R7 major-p6b 6.2 ¶2): 지운 문장이 낸 말(「반경」)을 같은 문단 뒤 문장이 받으면 지우지 않는다.
+    const paraAt = (f: ChunkFlag) => { const ps = secText(cur.chapters, f.chapter, headingOf(cur.chapters, f))?.paragraphs ?? []; return { p: ps[f.paragraph] ?? "", prev: f.paragraph > 0 ? ps[f.paragraph - 1] ?? "" : headingOf(cur.chapters, f) }; };
+    const leanNew = new Set(hard.filter(f => f.paragraph >= 0 && (() => { const { p, prev } = paraAt(f); return leanOnCut(p, f.sentence, prev).length > 0; })()).map(f => `${f.chapter}.${f.section}.${f.paragraph}`));
+    const unsafe = hard.filter(f => f.paragraph >= 0 && (leanNew.has(`${f.chapter}.${f.section}.${f.paragraph}`) || factOnly.has(`${f.chapter}.${f.section}.${f.paragraph}`) ||lostMust.has(`${f.chapter}|${headingOf(cur.chapters, f)}`) || lostClaim.has(`${f.chapter}.${f.section}`) || leanAt.has(`${f.chapter}.${f.section}.${f.paragraph}`) || rxLost.has(f.chapter) || orphanNew.has(`${f.chapter}.${f.section}`) || anNew.has(`${f.chapter}.${f.section}`)));
     return { r, unsafe };
   };
   let pass = cutPass();

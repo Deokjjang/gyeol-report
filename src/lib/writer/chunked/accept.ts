@@ -10,6 +10,7 @@
  */
 import { splitSentences } from "../safety/patterns";
 import { premiseHits, soften, type Inputs } from "@/lib/brief/premise";
+import { calendarMonth, pairMonthNames } from "../safety/p6d";
 
 const clean = (t: string) => t.replace(/[⟪⟫〈〉]/g, "").replace(/«[^»]*»|["“][^"”]*["”]/g, " ");
 const GJ = "[갑을병정무기경신임계][자축인묘진사오미신유술해]";
@@ -63,6 +64,16 @@ export function dayunOrderIssues(text: string, life: readonly Cycle[], ref: { re
 /** ③ 지시어 앞말. prev = 같은 소제목 바로 앞 문단(없으면 소제목 · 머리 문장). */
 /** 앞말 없이도 서는 「그 · 이 + 말」(때 · 자리 · 앞 문장 전체를 받는 말). 조사를 뗀 바탕 말로 본다. */
 const SAFE_NOUN = new Set(["해", "달", "때", "무렵", "시기", "대운", "10년", "기간", "책", "사람", "쪽", "날", "시간", "순간", "자리", "흐름", "기운", "뒤", "앞", "안", "중", "덕", "덕분", "정도", "만큼", "점", "일", "말", "가운데", "이후", "이전", "후", "전", "사이", "모든", "외", "밖", "위", "아래", "옆", "증거", "결과", "이유", "까닭", "때문", "뜻", "차이", "대신", "다음", "반대", "덕택", "바람에", "자체", "과정", "와중", "시작", "끝", "흐름대로", "해에", "달에", "날에"]);
+const NEED1 = new Set(["몫", "틀", "판", "틈", "짐", "꿈", "탓", "벽", "값", "답", "빚"]);
+/** 지운 문장이 낸 말을 뒤 문장이 받는가(지우기 안전 — R7 major-p6b 6.2 ¶2: 「반경이 넓어지는」 문장을 지워 뒤 「다만 반경이 넓어질수록」이 고아가 됐다). */
+const LEAN_STOP = new Set(["당신", "마음", "생각", "경향", "이번", "그것", "이것", "하나", "서로", "주변", "우리", "모두", "기분", "관계", "오늘", "하루", "이때", "그때", "지금", "먼저", "이미", "조금", "많이", "자주", "함께", "쉽게", "작은", "마음이"]);
+export function leanOnCut(para: string, cut: string, prev: string): string[] {
+  const ss = splitSentences(clean(para)), c = clean(cut).trim(), i = ss.findIndex(s2 => s2.trim() === c);
+  if (i < 0 || i === ss.length - 1) return [];
+  const prior = `${clean(prev)} ${ss.slice(0, i).join(" ")}`, after = ss.slice(i + 1).join(" ");
+  const nouns = [...new Set([...c.matchAll(/([가-힣]{2,6}?)(?:이|가|은|는|을|를|도|만|과|와|으로|로|에서|에)(?![가-힣])/g)].map(m => m[1]))].filter(n => !SAFE_NOUN.has(n) && !LEAN_STOP.has(n) && !/[하되]$/.test(n));
+  return nouns.filter(n => after.includes(n) && !prior.includes(n)).map(n => `지운 문장의 「${n}」을 뒤 문장이 받는다`);
+}
 const stem2 = (w: string) => w.replace(/(에서는|에서도|에서|에게는|에게|으로는|으로|로는|로|에는|에도|에|의|을|를|이|가|은|는|도|만|과|와|처럼|까지|부터|이라|라)+$/, "").slice(0, 2);
 export function antecedentIssues(para: string, prev: string): string[] {
   const out: string[] = [], ss = splitSentences(clean(para));
@@ -74,6 +85,8 @@ export function antecedentIssues(para: string, prev: string): string[] {
     if (list) { const need = /두/.test(list.m[0]) ? 2 : /세/.test(list.m[0]) ? 3 : /네/.test(list.m[0]) ? 4 : /다섯/.test(list.m[0]) ? 5 : 2; if (months(list.pre) < need) out.push(`「${list.m[0]}」이 가리키는 달 · 해 이름이 앞에 없다`); }
     for (const m of sen.matchAll(/(?<![가-힣])(그|이) ([가-힣]{1,6})/g)) {
       const noun = m[2], base = noun.replace(/(에서는|에서도|에서|에게는|에게|으로는|으로|로는|로|에는|에도|에|의|을|를|이|가|은|는|도|만|과|와|처럼|까지|부터|이라|라|입니다|이에요|예요)+$/, "");
+      // 한 글자 말 가운데 앞 문장을 받아야 서는 말(「그 몫」 「그 틀」 — R7 major-p6b 8.1 ¶3: 「몫」을 낸 문장을 지워 「그 몫」만 남았다).
+      if (base.length === 1 && NEED1.has(base) && !`${before} ${sen.slice(0, m.index)}`.includes(base)) { out.push(`「${m[0]}」이 가리키는 말이 앞에 없다`); continue; }
       if (SAFE_NOUN.has(base) || SAFE_NOUN.has(noun) || /^(런|렇|러|래|리|중|외|날|번|달|해|때|곳|것|거|게|쪽|분|건|걸|뒤|앞)/.test(noun) || base.length < 2) continue;
       const pre = `${before} ${sen.slice(0, m.index)}`, st = stem2(noun);
       // 동사에서 온 이름꼴(눌림 · 쌓임 · 기울기 …)은 앞의 동사 꼴(눌릴 · 쌓이)도 앞말로 본다(첫 글자).
@@ -83,7 +96,9 @@ export function antecedentIssues(para: string, prev: string): string[] {
     const same = at(/(?<![가-힣])같은 ([가-힣]{2,})/);
     if (same && !/(과|와|처럼) 같은/.test(sen.slice(Math.max(0, same.m.index - 3), same.m.index + 3)) && !/(과|와) 같은/.test(sen) && !same.pre.includes(stem2(same.m[1]))) out.push(`「${same.m[0]}」이 받는 말이 앞에 없다`);
     if (/이번엔|이번에는/.test(sen) && !/(과|와) 같은|지만|와 달리|과 달리/.test(sen) && months(before) === 0 && !/앞|지난|처음|전에/.test(before)) out.push("「이번엔」이 견줄 앞 때가 앞에 없다");
-    if (/(?<![가-힣])하나를/.test(sen) && !/둘|두 |세 |여러|가지|중|가운데|목록|들/.test(`${before} ${sen.slice(0, sen.indexOf("하나를"))}`)) out.push("「하나를」이 고를 목록이 앞에 없다");
+    // 「반대 의견 하나를」처럼 이름 말 뒤의 셈 말은 목록을 받지 않는다(R7 major-1 3.0 ¶3 오탐) — 문장 첫머리나 조사 · 부사 뒤의 「하나를」만 본다.
+    const one = /(?:^|([가-힣]+) )하나를/.exec(sen), oneNoun = Boolean(one?.[1]) && !/(을|를|이|가|은|는|에|에서|고|면|도|만|서|중|요|딱|단|꼭|먼저|우선|일단|그|이)$/.test(one![1]);
+    if (one && !oneNoun && !/둘|두 |세 |여러|가지|중|가운데|목록|들/.test(`${before} ${sen.slice(0, one.index)}`)) out.push("「하나를」이 고를 목록이 앞에 없다");
     if (/니까요[.!]?$/.test(sen) && i === 0 && !prev.trim()) out.push("「…니까요」가 받을 앞 문장이 없다");
   });
   return out;
@@ -108,9 +123,17 @@ export const lengthIssue = (before: string, after: string, min: number): string 
  * AM2-7 1부 5: 결정론으로 고칠 수 있는 것(다시 쓰기에 보내지 않는다) — 이름 부르기 · 정도말 · 꺾쇠 · 칸 이름 머리말.
  * 부름말 「X님, 」은 쉼표까지 지운다. 같은 문장에 「당신」이 이미 있으면 이름 쪽을 지운다. 나머지 이름은 「당신」(조사 맞춤).
  */
-export function detFix(sentence: string, rule: string, a: { readonly callName?: string; readonly name?: string; readonly small?: readonly string[]; readonly inputs?: Inputs }): string | null {
+export function detFix(sentence: string, rule: string, a: { readonly callName?: string; readonly name?: string; readonly small?: readonly string[]; readonly inputs?: Inputs; readonly months?: Readonly<Record<string, string>> }): string | null {
   let s = sentence;
+  // 세운 본문의 맨 달 이름 「7월」 → 카드와 같은 짝 「7월 · 정미월」(괄호 꼴은 괄호 규칙에 걸린다)(p6d.pairMonthNames — 묶음 원고는 겉 고침만 돌아 짝이 붙지 않았다 · R7 annual-1 8월 보류).
+  if (rule === "calendar_month") { if (!a.months) return null; const r = pairMonthNames(s, a.months), t = r.text.replace(/((?:20\d\d년 )?(?:1[0-2]|[1-9]) ?월)\(([가-힣]{2}월)\)/g, "$1 · $2"); return r.count && !calendarMonth(t) ? t : null; }
   // AM2-7 2부 + 1부 5: 중립 꼴이 정해진 전제 말(월급날 → 수입 · 돈이 들어오는 날, 일터 → 사회생활, 동료 → 주변 사람 …)은 결정론으로 바꾼다. 중립 꼴이 없는 말이 남으면 다시 쓰기로.
+  // 「지금 서 있는 ○○ 대운」의 「지금」은 떼도 뜻이 같다(이 책을 쓴 날 기준) — 그 밖의 「지금」은 다시 쓰기로.
+  if (rule === "time_deictic") {
+    // 「지금 서 있는 …」 → 「당신이 서 있는 …」 · 권유의 「지금부터 」 · 문장 첫머리 「지금은 」은 빼도 뜻이 선다(R7 major-1 3.0 ¶3 · major-p6b 8.1 ¶3).
+    const t = s.replace(/(?<![가-힣])지금(은|도)? (?=(서 있는|들어선|머무는|지나고 있는|걷고 있는) )/g, /당신/.test(s) ? "" : "당신이 ").replace(/(?<![가-힣])지금부터 (?=[^.!?]*(세요|봐요|보아요|두세요|좋아요|좋습니다)[.!]?$)/, "").replace(/^지금은 /, "");
+    return t !== s && !/(?<![가-힣])지금(?![가-힣])/.test(t) ? t : null;
+  }
   if (rule === "input_premise") { if (!a.inputs) return null; const t = soften(s, a.inputs); return t !== s && !premiseHits(t, a.inputs).length ? t : null; }
   if (rule === "name_call") {
     const names = [...new Set([a.callName, a.callName?.replace(/(님|씨)$/, ""), a.name, a.name && a.name.length >= 3 ? a.name.slice(1) : undefined].filter((x): x is string => Boolean(x && x.length >= 2)))].sort((x, y) => y.length - x.length);
@@ -137,4 +160,5 @@ export const DET_RULES: ReadonlySet<string> = new Set(["name_call", "degree", "i
  */
 export const RECORD_ONLY: ReadonlySet<string> = new Set(["chapter_repeat", "screen_repeat", "rel_echo", "head_echo", "link_template", "tone_mismatch", "rx_extra", "ending_cap", "gyeol_cap", "rep_adjacent",
   "pair_last", "pair_opener", "pair_causal", "key_paras", "claim_months", "advice_repeat_sec", "rx_repeat_sec", "head_repeat", "pointer_expand", "promise_tail", "domain_opener", "angle_leak", "advice_repeat", "rx_repeat", "phrase_repeat", "scene_repeat", "meaning_repeat", "prior_overlap", "closing_repeat"]);
-export const REWRITE_BOUNDARY: ReadonlySet<string> = new Set(["must_bare"]);
+/** 경계 가운데 다시 쓰기를 부르는 것(지우거나 보류하지 않는다). wish_scope: 바람 말은 사실 오류가 아니라 자리 규칙이다(R7 annual-1 10월 — 지우기가 연애 줄까지 지웠다). */
+export const REWRITE_BOUNDARY: ReadonlySet<string> = new Set(["must_bare", "wish_scope"]);
