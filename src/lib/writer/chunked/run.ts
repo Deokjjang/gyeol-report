@@ -9,7 +9,7 @@ import { chunkCall, mergeRuns, rawKey, type ChapterSink, type WriterOptions, typ
 import type { DraftChapter } from "../safety";
 import type { WriterChapter } from "../prompt";
 import type { Intake } from "./intake";
-import { chunkMaxTokens, chunkUser, numberedDraft, parseReplacements, replaceMaxTokens, replaceUser, type Chunk, type ParaTarget } from "./prompt";
+import { chunkMaxTokens, chunkUser, parseReplacements, replaceMaxTokens, replaceUser, type Chunk, type ParaTarget } from "./prompt";
 
 /** 못 끝낸 묶음을 다시 부를 때 지시 끝에 붙이는 한 줄. */
 export const CHUNK_RETRY_NOTE = "(다시 부름: 앞 호출이 이 묶음을 끝내지 못했다 — 위 머리글의 장·달·해를 빠짐없이 쓴다.)";
@@ -121,7 +121,7 @@ export async function rewriteChunk(a: ChunkRunArgs & { readonly chunk: Chunk; re
 export type ParaLock = (t: ParaTarget, before: readonly string[], after: readonly string[]) => { paragraphs: readonly string[]; notes: readonly { at: string; kind: string; detail: string }[] };
 export async function replaceParagraphs(a: ChunkRunArgs & { readonly chunk: Chunk; readonly targets: readonly ParaTarget[]; readonly round: number; readonly drafts: Map<number, DraftChapter>; readonly cover?: { line: string; reason: string }; readonly lock?: ParaLock }): Promise<{ run: WriterRun; log: ChunkLog; applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[]; cover?: string; changed: number[]; locks: { at: string; kind: string; detail: string }[] }> {
   const t0 = Date.now();
-  const user = replaceUser(a.intake, a.chunk, numberedDraft(a.intake, a.chunk, a.drafts), a.targets, a.cover);
+  const user = replaceUser(a.intake, a.chunk, a.drafts, a.targets, a.cover);
   const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user, maxTokens: replaceMaxTokens(a.targets) + (a.cover ? 200 : 0) });
   const got = r.text ? parseReplacements(r.text) : { paras: new Map<string, string[]>() };
   const applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[] = [], changed = new Set<number>(), locks: { at: string; kind: string; detail: string }[] = [];

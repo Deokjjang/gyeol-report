@@ -2,6 +2,7 @@
  * TimelineEntry 결정론 생성(SPEC §5): 키, 간지(한자·한글)와 오행 색, 십성, 합충형파해 배지, 부족 오행 채움, 흐름 세기(1~5, 근거), 키워드, 추천 행동, 해석 재료.
  * 행동 템플릿은 (십성, 영역, 세기 구간)으로 고르고 영역을 돌려 같은 템플릿이 두 번 나오지 않게 한다.
  */
+import { itemFits, type Inputs } from "./premise";
 import { TIMELINE_ACTION_DOMAINS } from "@/data/knowledge-v5/schema";
 import { scoreFlow, type FlowInput } from "@/data/knowledge-v5/flow-score";
 import { BRANCH_MAIN_ELEMENT, HEAVENLY_STEMS, HIDDEN_STEMS } from "@/lib/saju/constants";
@@ -37,7 +38,7 @@ function flowShort(key: string, clashes: readonly ChartPosition[]): string | und
 }
 
 export type TimelineCtx = {
-  readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile;
+  readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile; readonly inputs?: Inputs;
   readonly rng: Rng; readonly usedScenes: Set<string>; readonly usedTemplates: Set<string>;
   /** 이미 나온 십성(→ 첫 항목 key·횟수)과 십이운성 단계(P3.8 r1: 같은 십성 해에 같은 열쇠말·단계 문구가 되풀이). */
   readonly seenTenGod?: Map<string, { key: string; n: number }>; readonly seenStage?: Set<string>;
@@ -115,7 +116,8 @@ function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number
 }
 
 function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Parameters<typeof sceneFits>[0] }[], label: string): string | undefined {
-  const ok = list.filter(s => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text));
+  // AM2-7 2부: 십성 시기 장면도 꼬리표 표(필요한 입력)가 맞는 것만(표에 없으면 쓰지 않는다).
+  const ok = list.filter(s => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text) && (!ctx.inputs || itemFits("tgp", s.text, ctx.inputs)));
   if (!ok.length) return undefined;
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }

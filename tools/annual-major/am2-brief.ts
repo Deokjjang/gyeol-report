@@ -11,7 +11,7 @@ import { buildWriterPrompt } from "../../src/lib/writer/prompt";
 import { kstDate, writerKnowledge } from "../../src/lib/writer/publish";
 import { buildIntake } from "../../src/lib/writer/chunked/intake";
 import { briefCheck, type BriefIssue } from "../../src/lib/writer/chunked/check";
-import { briefCtxFor } from "../../src/lib/writer/chunked/publish";
+import { briefCtxFor, slotKo } from "../../src/lib/writer/chunked/publish";
 import { safetyFacts } from "../../src/lib/writer/safety";
 import { chunkPlan, chunkUser, renderCard } from "../../src/lib/writer/chunked/prompt";
 import { cases } from "./final";
@@ -22,7 +22,8 @@ export function intakeOf(payload: unknown, at = AT) {
   const { k } = writerKnowledge();
   const brief = buildBrief(payloadToBriefInput(payload as never, kstDate(at), at) as never, k);
   const plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
-  const intake = buildIntake(brief, k, plan, (payload as { productOptions?: { wish?: string } }).productOptions?.wish);
+  const pr = (payload as { person?: { approximateBirthTimeSlot?: string; birthTimePrecision?: string } }).person;
+  const intake = buildIntake(brief, k, plan, (payload as { productOptions?: { wish?: string } }).productOptions?.wish, pr?.birthTimePrecision === "approximate" && pr.approximateBirthTimeSlot ? { timeSlot: slotKo(pr.approximateBirthTimeSlot) } : {});
   return { brief, plan, intake };
 }
 const MBTI = ["ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP", "ESTP", "ESFP", "ENFP", "ENTP", "ESTJ", "ESFJ", "ENFJ", "ENTJ", ""];

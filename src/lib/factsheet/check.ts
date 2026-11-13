@@ -187,6 +187,9 @@ function strengthClaim(sen: string, owners: readonly PersonFacts[], paragraph: s
 
 /** 간지·연도·대운수. */
 const GANJI = "([갑을병정무기경신임계][자축인묘진사오미신유술해])";
+/** AM2-7 1부 6: 문장을 절로 나눈다(「…였고, 」 「…이며, 」 「…지만, 」 「…는데, 」). */
+export const splitClauses = (sen: string) => sen.split(/(?<=(?:고|며|지만|는데|면서|었고|였고|이고)),\s+/);
+const clauseAt = (sen: string, at: number) => { let pos = 0; for (const c of splitClauses(sen)) { const i = sen.indexOf(c, pos); if (i <= at && at < i + c.length) return c; pos = i + c.length; } return sen; };
 /** 육십갑자 짝(천간·지지 음양이 같다): 「정인」(丁寅)·「정관」 같은 십성 이름을 간지로 읽지 않는다. */
 const STEMS_KO = "갑을병정무기경신임계", BRANCHES_KO = "자축인묘진사오미신유술해";
 export const isGanjiKo = (g: string) => g.length === 2 && STEMS_KO.indexOf(g[0]) >= 0 && BRANCHES_KO.indexOf(g[1]) >= 0 && STEMS_KO.indexOf(g[0]) % 2 === BRANCHES_KO.indexOf(g[1]) % 2;
@@ -205,7 +208,9 @@ export function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit
     const y0 = sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,14}$/);
     const y = y0 && /까지/.test(y0[0]) ? sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,10}부터/) : y0;
     const c = o.dayun.cycles.find(x => x.ganjiKo === m[1])!;
-    if (y && /(부터|시작|들어서|바뀌)/.test(sen) && Number(y[1]) !== c.startYear && !(Number(y[1]) >= c.startYear && Number(y[1]) <= c.endYear && !/시작/.test(sen))) return { rule: "fact_ganji", detail: `${m[1]} 대운은 ${c.startYear}년 ${c.startSolarKst ? Number(c.startSolarKst.slice(5, 7)) + "월 무렵" : ""}부터다` };
+    // AM2-7 1부 6(P6 major-p5 2.0 ¶2 「2023년은 정묘 대운의 마지막 해였고, 2024년부터 무진 대운이 시작되었어요」 — 뒤 절의 「부터 · 시작」을 앞 절 대운에 대어 지웠다): 한 문장에 대운이 둘이면 절마다 따로 맞댄다.
+    const cl = clauseAt(sen, m.index!);
+    if (y && /(부터|시작|들어서|바뀌)/.test(cl) && cl.includes(y[0].slice(0, 5)) && Number(y[1]) !== c.startYear && !(Number(y[1]) >= c.startYear && Number(y[1]) <= c.endYear && !/시작/.test(cl))) return { rule: "fact_ganji", detail: `${m[1]} 대운은 ${c.startYear}년 ${c.startSolarKst ? Number(c.startSolarKst.slice(5, 7)) + "월 무렵" : ""}부터다` };
   }
   // 운영 Q 8-1: 대운수는 한 사람에 한 숫자(정답지 dayun.number = 첫 대운이 시작될 때의 만 나이, 모든 대운 줄과 같은 값). 수리 힌트 이름도 그 뜻대로.
   for (const n of sen.matchAll(/대운수 ?(는 |가 )?(\d+)/g)) {
@@ -370,6 +375,12 @@ function yinYangSide(sen: string, owners: readonly PersonFacts[]): FactHit | nul
 /** 최종 A-4·5: 대운의 끝은 다음 대운의 교운 연·월(「2029년 11월 무렵까지」)이고, 지금 대운은 교운 시각 기준(정답지 dayun.current).
  * 「올해까지」 또는 「YYYY년(M월)까지」가 그 끝 해와 다르면 잡는다(엔진 endYear로 끊은 「2028년까지」 꼴). */
 function dayunSpan(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+  if (!/대운|10년 흐름|이 10년/.test(sen)) return null;
+  // AM2-7 1부 6: 대운 이름이 둘 이상이면 절마다 따로 맞댄다(앞 절 대운의 「…까지」를 뒤 절 대운에 대지 않게).
+  const cls = splitClauses(sen); if (cls.length > 1 && (sen.match(/대운/g) ?? []).length > 1) { for (const cl of cls) { const h = dayunSpan1(cl, ctx, owners); if (h) return h; } return null; }
+  return dayunSpan1(sen, ctx, owners);
+}
+function dayunSpan1(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
   if (!/대운|10년 흐름|이 10년/.test(sen)) return null;
   const thisYearEnd = /올해까지|올해로 (끝|마무리)|올해 (끝나|마무리)/.test(sen), until = sen.match(/((?:19|20)\d{2})년(?: \d{1,2}(?:~\d{1,2})?월)?(?: 무렵)?까지/);
   if (!thisYearEnd && !until) return null;

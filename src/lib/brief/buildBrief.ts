@@ -19,6 +19,8 @@ import type { Knowledge } from "./knowledge";
 import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
+import { fitTimelineTexts, inputsOf } from "./premise";
+import { TEN_GOD_ROW } from "./core";
 import { buildAnnualEntries, buildYearEntries, cycleSummary, type TimelineCtx } from "./timeline";
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
 import { getAnnualPillar } from "@/lib/saju/detections";
@@ -321,7 +323,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const keyMaterials = new Map<string, Material[]>();
   let display: Brief["display"];
   if (input.product === "major_fortune" || input.product === "annual_fortune") {
-    const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set(), traits: me.traits, seenTenGod: new Map(), seenStage: new Set() };
+    const tctx: TimelineCtx = { saju: me.saju, k, st: me.st, facts: profile, inputs: inputsOf(me.person.facts), rng: rng.fork("timeline"), usedScenes, usedTemplates: new Set(), traits: me.traits, seenTenGod: new Map(), seenStage: new Set() };
     const thisYear = me.chart.thisYear.year;
     const tenGodOf = (s: Parameters<typeof getTenGod>[1]) => getTenGod(me.saju.dayMaster, s);
     // 십성 주의 문장의 조건("원국에 편관까지 있으면")은 이 원국에서 성립할 때만(P3.8 r1, P6b E-2 구조화).
@@ -355,13 +357,16 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   }
 
   // AM2-4 2부: 카드 할 일(화면이 맡는 행동 하나)은 처방 종류 사전으로 배분 — 같은 종류가 두 key에 가지 않게(작가는 key 본문에 행동을 쓰지 않는다).
-  if (timeline) allocateTodos(timeline.entries, k, profile);
+  // AM2-7 2부: 할 일 문형은 꼬리표 표(필요한 입력)가 맞는 것만.
+  if (timeline) allocateTodos(timeline.entries, k, profile, inputsOf(me.person.facts));
   // 살필 점 결정론 값(P6d D): 같은 십성 해(2023·2033 癸)에 같은 문장이 가지 않게, 관계 → 천간 십성 → 지지 십성 순으로 아직 안 쓴 줄.
   if (timeline) {
     const cctx: CautionCtx = { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) };
     const used = new Set<string>();
     // AM2 P2 판독(major-1 화면 카드 2023~2025): 지난 해에 앞날 꼴 [살필 점]을 주지 않는다(지난 해는 [돌아보기]만).
     for (const e of timeline.entries) e.caution = e.period === "past" ? undefined : cautionOf(e, k, cctx, used);
+    // AM2-7 2부: 화면 줄(할 일 · 살필 점 · 좋은 것 · 그림 · 열쇠말 · 십성 뜻)을 입력에 맞춘다 — 맞지 않는 전제 말은 중립 꼴로, 없으면 그 마디를 뺀다.
+    fitTimelineTexts(timeline as never, inputsOf(me.person.facts), e => [TEN_GOD_ROW[e.tenGod.stem.replace(/\(.*$/, "")] ?? ""].filter(Boolean));
   }
 
   // 궁합

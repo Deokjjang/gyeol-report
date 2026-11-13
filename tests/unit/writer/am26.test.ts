@@ -7,7 +7,6 @@ import { REL_WORD, relImageOf, verifyLinks } from "@/lib/writer/chunked/link";
 import { am26Flags } from "@/lib/writer/chunked/check";
 import { blockCtxFor, fitJosa, splitKeyParagraphs } from "@/lib/writer/chunked/publish";
 import { calendarMonth, CHAPTER_REF } from "@/lib/writer/safety/p6d";
-import { lockParagraph, lockWhole } from "@/lib/writer/chunked/lock";
 import { chunkExamples, chunkRules, renderCard, ruleCtxOf } from "@/lib/writer/chunked/prompt";
 import { coreLine, coreOf, loveUpOf, SEAT_SHORT_KO } from "@/lib/brief/core";
 import { reviewLine } from "@/lib/brief/timeline";
@@ -126,24 +125,7 @@ describe("AM2-6 4부 예문 누출 · 엔진 값 없는 말", () => {
   });
 });
 
-describe("AM2-6 5부 사실 고정", () => {
-  const rels = ["오미합", "화국 반합"];
-  it("깃발 없던 문장은 원문으로 — 달 목록을 범위 말로 바꾼 교체(P5 「하반기」)는 받지 않는다", () => {
-    const before = "돈이 들고 나는 쪽이 커지는 해예요. 돈이 오르는 달은 7월 · 정미월, 8월 · 무신월, 9월 · 기유월, 10월 · 경술월, 2028년 1월 · 계축월이에요.";
-    const after = "돈이 들고 나는 쪽이 넓어지는 해예요. 하반기와 2028년 1월 · 계축월에 걸쳐 돈이 오르는 달이 이어집니다.";
-    const r = lockParagraph(before, after, [{ sentence: "돈이 들고 나는 쪽이 커지는 해예요.", rule: "degree" }], rels);
-    expect(r.text).toContain("7월 · 정미월, 8월 · 무신월");
-    expect(r.text).not.toContain("하반기");
-  });
-  it("깃발 문장도 경향 꼬리를 잃으면 받지 않는다(P5 「한 번 더 기우는 달」) — 깃발이 그 꼬리를 가리키면 예외", () => {
-    const before = "오미합이 태어난 날 자리에 걸려요. 솔로인 당신의 연애 쪽이 다시 움직이는 때입니다.";
-    const after = "오미합이 태어난 날 자리에 걸려요. 같은 자리가 걸린 2월을 지나왔다면 마음이 한 번 더 기우는 달이에요.";
-    expect(lockParagraph(before, after, [{ sentence: "솔로인 당신의 연애 쪽이 다시 움직이는 때입니다.", rule: "time_extra" }], rels).text).toContain("다시 움직이는 때");
-    expect(lockParagraph(before, after, [{ sentence: "솔로인 당신의 연애 쪽이 다시 움직이는 때입니다.", rule: "future_assert" }], rels).text).toContain("한 번 더 기우는");
-  });
-  it("「*」 자리: 깃발 밖 사실(관계 이름)이 새 글에 없으면 원문을 둔다", () => {
-    expect(lockWhole(["오미합이 걸려요. 짧아요."], ["새 글만 있어요."], [{ sentence: "짧아요.", rule: "key_len" }], rels).paragraphs).toEqual(["오미합이 걸려요. 짧아요."]);
-  });
+describe("AM2-6 5부 바람 조사", () => {
   it("바람 원문 뒤 조사는 원문 끝 글자로", () => {
     expect(fitJosa("요", "이라는 말을 적어 주셨지요.")).toBe("라는 말을 적어 주셨지요.");
     expect(fitJosa("격", "이라는 말")).toBe("이라는 말");

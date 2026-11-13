@@ -19,6 +19,7 @@
  * - 2-4 key마다 반드시 쓸 줄(must): 흐름 단어 · 관계 · 부족한 기운을 채우는 줄.
  * - 3-1 장면 씨앗 정리(card.ts cleanSeed) · 같은 씨앗을 두 장에 쓰지 않는다. 3-2 소망 원문은 렌더 단계가 넣는다(작가는 «바람» 표시만).
  */
+import { fitSegments, inputsOf, itemFits, neutralize, premiseHits, type Inputs } from "@/lib/brief/premise";
 import type { Knowledge } from "@/lib/brief/knowledge";
 import type { Brief, Material, TimelineEntry } from "@/lib/brief/schema";
 import { FLOW_DESC, FLOW_WORD, POSITION_KO } from "@/lib/brief/labels";
@@ -77,7 +78,8 @@ export type ChapterPlan = {
 export type Intake = { readonly product: "annual_fortune" | "major_fortune"; readonly person: readonly string[]; readonly lines: readonly Line[]; readonly pairs: readonly Pair[]; readonly chapters: readonly ChapterPlan[]; readonly wish?: string;
   /** 2-1 근거가 없어 뺀 절(기록). */ readonly droppedPlan?: readonly string[];
   /** 엔진이 대운을 계산하지 못한 대운 책(출생 시각 미상 일부 — 계산은 보호 대상, 결정 필요로 보고). */ readonly noDayun?: boolean;
-  /** AM2-6 4부: 대운 안 위치 값(해마다 「2027년: 무진 대운 3번째 해(앞쪽)」). 본문의 위치 말은 이 값으로만. */ readonly positions?: readonly string[] };
+  /** AM2-6 4부: 대운 안 위치 값(해마다 「2027년: 무진 대운 3번째 해(앞쪽)」). 본문의 위치 말은 이 값으로만. */ readonly positions?: readonly string[];
+  /** AM2-7 2부: 입력 축(일 · 관계 · 자녀 · 사는 곳) — 낱말표 판정에 쓴다. jobDetail = 하는 일 상세를 적었는지(작가 규칙 조립용 — 문장 재료가 아니다). */ readonly inputs?: Inputs; readonly jobDetail?: boolean };
 
 /** AM2-4 3부: 십이운성 한 글자 이름은 한자를 함께(「쇠(衰)」 — 오행 「쇠(금)」와 글자 꼴을 다르게). 카드 글 정리(say)가 한자를 지우므로 표시 글자로 두었다가 마지막에 붙인다. */
 export const STAGE_HANJA: Readonly<Record<string, string>> = { 태: "胎", 양: "養", 쇠: "衰", 병: "病", 사: "死", 묘: "墓", 절: "絶" };
@@ -183,7 +185,8 @@ export function sceneFits(s: string, brief: Brief, meaning = false): boolean {
 }
 
 /** AM2-6 3부: 장면 씨앗 거름 = 뜻 거름(sceneFits) + 씨앗 조건 꼬리표(관계 상태 · 일 · 필요한 상세). 입력과 맞지 않거나 모르는 상세가 필요한 씨앗은 고르지 않는다. */
-export const seedFits = (s: string, brief: Brief, base: Parameters<typeof seedTagsOf>[1] = {}) => sceneFits(s, brief) && seedTagsFit(seedTagsOf(s, base), brief.person.facts);
+// AM2-7 2부: + 낱말표(필요한 입력) — 씨앗 글의 전제 말이 입력과 맞지 않으면 고르지 않는다(호감 · 자취방 · 킥오프 · 영업 전화 — P6 판독 차단 넷).
+export const seedFits = (s: string, brief: Brief, base: Parameters<typeof seedTagsOf>[1] = {}) => sceneFits(s, brief) && seedTagsFit(seedTagsOf(s, base), brief.person.facts) && !premiseHits(s, inputsOf(brief.person.facts)).length;
 /** 장면 씨앗 영역(mbti-seeds 영역 이름)을 글에서 읽는다(엔진 장면 · 장 장면 힌트용). */
 export function seedDomainOf(s: string): string {
   if (/돈|지출|결제|통장|적금|월급|가계부|할인|장바구니|쇼핑|용돈|더치페이|송금|저축|카드값|영수증|가격/.test(s)) return "money";
@@ -222,7 +225,7 @@ const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** 작가에게 보이는 key 이름(1-1): 달 = 「5월 · 을사월」(절입 날짜·다리 꼬리 뺌), 해 = 「2027년 정미년」. 가짜 작가·파서도 이 함수를 쓴다. */
 export const keyLabelOf = (e: Pick<TimelineEntry, "kind" | "key" | "label" | "ganji">) => (e.kind === "month" ? e.label.split(" (")[0] : `${e.key}년 ${e.ganji.hangul}년`);
 
-export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterChapter[], wishRaw?: string): Intake {
+export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterChapter[], wishRaw?: string, opts: { readonly timeSlot?: string } = {}): Intake {
   const product = brief.product as Intake["product"];
   const year = product === "annual_fortune" ? Number(brief.timeline?.entries.find(e => e.kind === "year")?.key) || brief.chart.thisYear.year : brief.chart.thisYear.year;
   const lines: Line[] = [], pairs: Pair[] = [];
@@ -232,12 +235,15 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // 뜻 문장도 입력에 맞지 않는 상황(연차·팀원·직원·자녀·연인 전제·학교·거주 전제)이면 그 마디만 뺀다. 일반론(이 사람에게 해당하는지 모르는 규칙 문장)도 뺀다.
   // AM2-6 3부: 직장인이 아니면 직장 전제 말(월급 · 직함 · 윗사람 · 상사 · 회사)이 든 마디도 뺀다.
   const employee = brief.person.facts.job.status === "employee";
-  const fits = (t: string) => t.split(/(?<=[.!?])\s+| · /).filter(x => sceneFits(x, brief, true) && (employee || !EMPLOYEE_PREMISE.test(x))).join(" · ");
+  // AM2-7 2부: 직장 전제 금지어(EMPLOYEE_PREMISE) 대신 낱말표(필요한 입력) — 맞지 않는 전제 말은 중립 꼴(월급날 → 수입이 들어오는 날 · 동료 → 함께 일하는 사람 …)로, 없으면 그 마디를 뺀다.
+  const inputs = inputsOf(brief.person.facts);
+  const fits = (t: string) => t.split(/(?<=[.!?])\s+| · /).filter(x => sceneFits(x, brief, true)).map(x => neutralize(x, inputs)).filter((x): x is string => Boolean(x)).join(" · ");
+  void employee;
   const add = (subject: Subject, value: string, meaning = "", n?: number): string | null => {
     const unit = subject === "month" ? "달" : subject === "dayun" ? "10년" : "해";
     const v = unitFix(say(value, year), unit), m = unitFix(dropGeneral(fits(say(meaning, year)), { weak: /WEAK/.test(brief.chart.strength.level) }), unit);
     if (!v || v.length < 2) return null;
-    if (!employee && subject !== "mbti" && EMPLOYEE_PREMISE.test(v)) return null;
+    if (premiseHits(v, inputs).length) { const v2 = neutralize(v, inputs); if (!v2) return null; return add(subject, v2, meaning, n); }
     const sig = `${subject}|${v}|${m}`;
     let l = byText.get(sig);
     // 같은 주체에 이미 같은 말(공백·부호 뺀 글이 포함됨)이 있으면 그 줄을 쓴다(세운 근거 둘이 같은 대운 줄을 따로 가진다).
@@ -286,7 +292,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // AM2-4 3부(P3 판독 major-1 B19 「ENTP의 가장 센 쪽인 가능성」): 칸 이름 없이 쉬운 뜻만(먼저 쓰는 순서 그대로).
   void ROLE_KO;
   const mbtiType = mbti ? add("mbti", `MBTI ${mbti.type}`, (k.mbti.get(mbti.type as never)?.cognitiveFunctions ?? []).map(fn => fn.easy.split(/(?<=[.!?])\s/)[0]).join(" · ")) : null;
-  const pairWhy = (t: string) => dedupeSentences(stripFnCodes(say(t, year), mbti?.type));
+  const pairWhy = (t: string) => fitSegments(dedupeSentences(stripFnCodes(say(t, year), mbti?.type)), inputs);
   // AM2-6 2부: 짝은 잇는 이유(Fusion DB 규칙 종류 — 공통·보완·긴장)가 있을 때만.
   for (const t of brief.traits) { const reason = t.fusion ? REASON_OF[t.fusion.kind] : undefined; if (t.fusion && reason && mbtiType && traitId.get(t.id)) pairs.push({ id: `P${pairs.length + 1}`, myeongri: traitId.get(t.id)!, mbti: mbtiType, why: pairWhy(t.fusion.why), reason }); }
   // 장 재료 → 줄.
@@ -363,7 +369,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
       // MBTI 장면 씨앗(knowledge-v5/mbti-seeds): 연인 전제(rel partner)는 연애 중·기혼만, 직업 전제(job)는 그 직업만, 직군 꼬리표(ctx)가 붙은 것은 쓰지 않는다. 한 번 쓴 씨앗은 다시 쓰지 않는다.
       const f2 = brief.person.facts, jobKind = f2.job.status === "employee" ? "employed" : /^(self_employed|business_owner)$/.test(f2.job.status) ? "business" : f2.job.status === "student" ? "student" : "";
       // AM2-6 3부: 씨앗 꼬리표(rel · job · ctx + 글에서 읽은 조건 — 솔로 전제 · 직장 전제 · 가게 상세)가 이 사람 입력과 맞는 것만.
-      const mbtiSeedFor = (d: string) => { if (!mbti) return undefined; const pool = (k.mbtiSeeds.get(mbti.type)?.[d] ?? []).filter(sd => seedFits(sd.text, brief, { rel: sd.rel, job: sd.job, ctx: sd.ctx }) && (!sd.job || sd.job === "any" || sd.job === jobKind) && !SCENE_COUNT.test(sd.text));
+      const mbtiSeedFor = (d: string) => { if (!mbti) return undefined; const pool = (k.mbtiSeeds.get(mbti.type)?.[d] ?? []).filter(sd => itemFits("seed", sd.text, inputs) && seedFits(sd.text, brief, { rel: sd.rel, job: sd.job, ctx: sd.ctx }) && (!sd.job || sd.job === "any" || sd.job === jobKind) && !SCENE_COUNT.test(sd.text));
         for (const sd of pool) { const got = seedOnce(cleanSeed(sd.text, sc)); if (got) return seedAsCondition(got); } return undefined; };
       const keys: KeyPlan[] = ch.keys.map(key => {
         const e = entries.get(key)!, kb = brief.chapters.find(x => x.id === `${ch.id}:${key}`);
@@ -468,7 +474,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   });
   // AM2-6 4부 대운 안 위치 값: 위치를 말할 수 있는 모든 해(타임라인의 해 카드 — 지난 3년 · 기준 해 · 앞으로 10년, 세운은 그 해).
   const positions = (brief.timeline?.entries ?? []).filter(e => e.kind === "year" && e.dayun?.yearIndex).map(e => `${e.key}년: ${e.dayun!.ganji.replace(/[一-鿿]/g, ch => READING[ch] ?? ch)} ${e.dayun!.yearIndex}번째 해(${phaseKo(e.dayun!.yearIndex!)})`);
-  return { product, person: personCard(brief, year, wish), lines: finalLines, pairs: pairsFinal, chapters: sameClaims(withWish, finalLines), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}) };
+  return { product, person: personCard(brief, year, wish, opts.timeSlot), lines: finalLines, pairs: pairsFinal, chapters: sameClaims(withWish, finalLines), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}), inputs, jobDetail: Boolean(brief.person.facts.job.detail) };
 }
 
 /** AM2-6 3부: 주체가 다른 줄의 뜻 글이 같으면(공백·부호 뺀 한글 12자 이상) 집 장(그 줄들을 쓰는 가장 앞 장) 한 곳만 남긴다. 핵심 주장 줄 · 절의 마지막 줄은 두고, key는 그 줄을 뺀다. */
@@ -636,7 +642,7 @@ export function shiftPhase(t: string, bookYear: number, shift: number): string {
 /** 인물 카드의 연애 상태 값만(「연애: 연애 중」 「연애: 솔로」 「연애: 기혼」 「연애: 미입력」) — 같은 줄의 「자녀: 미입력」을 연애로 읽지 않게(AM2-5 P5 자동 점검). */
 export const relationshipOf = (person: readonly string[]) => `연애: ${person.find(p => p.startsWith("연애:"))?.match(/^연애: ([^·]+)/)?.[1].trim() ?? "미입력"}`;
 /** 인물 카드(고객 입력만, 제약 문장 없이 사실만). */
-function personCard(brief: Brief, year: number, wish: { kind: string; text?: string; topics?: readonly string[] } | null): string[] {
+function personCard(brief: Brief, year: number, wish: { kind: string; text?: string; topics?: readonly string[] } | null, slot?: string): string[] {
   const p = brief.person, f = p.facts;
   const JOB: Record<string, string> = { employee: "직장인", job_seeker: "취업 준비 중", student: "학생", self_employed: "자영업", business_owner: "사업", freelancer: "프리랜서", unemployed: "쉬는 중", homemaker: "살림", other: "기타" };
   const REL: Record<string, string> = { single: "솔로", some: "솔로(썸)", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼", unknown: "미입력" };
@@ -646,9 +652,11 @@ function personCard(brief: Brief, year: number, wish: { kind: string; text?: str
     `이름: ${p.name}(부를 때 ${p.callName})`,
     `나이: 만 ${p.age}세(${p.ageBand})${p.gender === "FEMALE" ? " · 여성" : p.gender === "MALE" ? " · 남성" : ""}`,
     `MBTI: ${f.mbti ?? "미입력"}`,
-    `출생 시각: ${f.birthTimeKnown ? "앎" : "모름(시주 없음)"}`,
-    `일: ${JOB[f.job.status] ?? "적지 않음"}${f.job.detail ? `(${say(f.job.detail)})` : " · 하는 일과 연차는 모름"}`,
-    `연애: ${REL[f.relationship] ?? "미입력"} · 자녀: ${f.children === "has" ? "있음" : f.children === "none" ? "없음" : "미입력"} · 사는 곳·같이 사는 사람: 모름`,
+    // AM2-7 2부 3(P6 annual-p5 「태어난 시각을 아는 사주라서」 — 인물 카드 「출생 시각: 앎」이 문장 이유가 됐다): 입력 상태 값(시각을 아는지 · 일 상세를 아는지)은 문장 재료로 주지 않는다.
+    // 시각을 모르면 시주가 없다는 사실만, 대략 시각(시간대)은 「대략(진시)」로.
+    ...(!f.birthTimeKnown ? ["태어난 시각: 시주 없음"] : slot ? [`태어난 시각: 대략(${slot})`] : []),
+    `일: ${JOB[f.job.status] ?? "적지 않음"}${f.job.detail ? `(${say(f.job.detail)})` : ""}`,
+    `연애: ${REL[f.relationship] ?? "미입력"}${f.children === "has" ? " · 자녀: 있음" : ""}`,
     ...(wish?.kind === "ok" && wish.text ? [`적어 준 바람: «${wish.text}»`] : wish?.kind === "inject" ? [`적어 준 바람의 주제: ${(wish.topics ?? []).map(t => ({ love: "연애", money: "돈", work: "일", study: "공부", people: "사람", mind: "마음" } as Record<string, string>)[t] ?? t).join("·") || "일상"}`] : wish?.kind === "risk" ? ["적어 준 바람: 마음이 많이 지친 시기일 수 있음"] : []),
     `책: ${book} · 이 책을 쓴 날 ${base[0]}년 ${base[1]}월 ${base[2]}일`,
   ];

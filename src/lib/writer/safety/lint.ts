@@ -216,6 +216,8 @@ const PHASE_CLAIM: readonly [DayunPhase, RegExp][] = [
 /** 대운 이야기에서 위치를 잘못 짚은 말(실제 위치와 다른 단계 이름). */
 export function dayunPhaseClaim(sentence: string, actual: DayunPhase): DayunPhase | null {
   if (!/대운|10년 흐름|십 년 흐름|10년의|이번 10년|지금 10년/.test(sentence)) return null;
+  // AM2-7 1부 6(P6 major-p5 2.0 「2023년은 정묘 대운의 마지막 해였고, …」): 해 이름이 붙은 위치 말은 그 해의 대운 위치다(지금 대운 위치가 아니다 — 세운·대운은 dayun_position이 해 기준으로 본다).
+  if (/(19|20)\d\d년/.test(sentence)) return null;
   for (const [p, re] of PHASE_CLAIM) if (p !== actual && re.test(sentence)) return p;
   return null;
 }
@@ -277,6 +279,8 @@ export function groupClaims(sentence: string): { group: keyof GroupLevels; level
 }
 /** 엔진 단계와 다른 세기 말(없으면 null). */
 export function groupClaimMismatch(sentence: string, levels: GroupLevels): string | null {
+  // AM2-7 1부 6(P6 major-p6b 1.1 「재성이 가장 많은 결」 — 판독: 묶음끼리 견준 상대 최상급, 카드 값 그대로): 「가장 많은 · 가장 적은」은 단계 말이 아니다.
+  if (/가장 (많|적|센|약한|강한)/.test(sentence) && !/(강|약)(해요|합니다|한 편)/.test(sentence)) return null;
   for (const c of groupClaims(sentence)) if (levels[c.group] !== c.level) return `${c.group}:${c.level}≠${levels[c.group]}`;
   return null;
 }

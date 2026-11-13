@@ -5,6 +5,7 @@
  * P3 판독: 적기 10곳 · 곁에 둘 사람 고르기 5곳 · 쉬기 4곳 · 말 다듬기 5곳 · 월급날 2곳 · 값 매기기 2곳 · 하루 묵히기 3곳 · 혼자 시간 2곳 · 보내기 전 다시 읽기 2곳.
  */
 import type { Knowledge } from "./knowledge";
+import { fitSegments, itemFits, type Inputs } from "./premise";
 import type { TimelineEntry } from "./schema";
 import { TIMELINE_ACTION_DOMAINS } from "@/data/knowledge-v5/schema";
 
@@ -63,7 +64,7 @@ const tgHanja = (label: string) => label.match(/\(([^)]+)\)/)?.[1] ?? "";
  * 엔진이 고른 문형이 이미 비어 있는 종류면 그대로 둔다. 할 일 문형에 시점 말·지난 전제(「궁금했던」「연락이 끊긴」 — P3 판독 경계 #11·#12·#15)가 든 것은 고르지 않는다.
  * 지난 해(돌아보기)는 할 일이 없다. 반환: 바뀐 항목과 쓴 종류.
  */
-export function allocateTodos(entries: TimelineEntry[], k: Pick<Knowledge, "actions">, facts: { job?: string; relationship?: string }): { used: Map<RxKind, string>; changed: number } {
+export function allocateTodos(entries: TimelineEntry[], k: Pick<Knowledge, "actions">, facts: { job?: string; relationship?: string }, inputs?: Inputs): { used: Map<RxKind, string>; changed: number } {
   const used = new Map<RxKind, string>(), texts = new Set<string>();
   const domains = TIMELINE_ACTION_DOMAINS.filter(d => !(d === "study" && facts.job !== "student") && !(d === "love" && facts.relationship === "married"));
   let changed = 0;
@@ -71,9 +72,11 @@ export function allocateTodos(entries: TimelineEntry[], k: Pick<Knowledge, "acti
     if (!e.todo) continue;
     const tg = tgHanja(e.tenGod.stem);
     const pool = [e.todo, ...domains.flatMap(d => ["high", "low"].flatMap(b => k.actions.find(a => a.id === `act:${tg}:${d}:${b}`)?.text ?? [])), ...(k.actions.find(a => a.id === `tg:${tg}`)?.text ?? [])]
-      .filter(t => !CARD_TIME.test(t) && !/많아지|한층|훨씬|가장 /.test(t));
+      .filter(t => !CARD_TIME.test(t) && !/많아지|한층|훨씬|가장 /.test(t))
+      // AM2-7 2부: 할 일 문형은 꼬리표 표에 있고 필요한 입력이 맞는 것만(표에 없으면 쓰지 않는다 — 기본 거절).
+      .filter(t => !inputs || itemFits("todo", t, inputs));
     const ok = (t: string) => !texts.has(t) && rxKindsOf(t).every(kd => !used.has(kd));
-    const pick = pool.find(ok) ?? pool.find(t => !texts.has(t)) ?? e.todo;
+    const pick = pool.find(ok) ?? pool.find(t => !texts.has(t)) ?? (inputs && e.todo ? fitSegments(e.todo, inputs) || e.todo : e.todo);
     if (pick !== e.todo) { e.todo = pick; e.action = { templateId: `${e.action.templateId}~rx`, text: pick }; changed++; }
     texts.add(pick); for (const kd of rxKindsOf(pick)) if (!used.has(kd)) used.set(kd, e.key);
   }

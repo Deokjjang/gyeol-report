@@ -82,6 +82,9 @@ export function judgeBuild(built: { readonly meta: WriterMeta; readonly run: Wri
   const chapters: readonly ChapterMeta[] = built.meta.chapters;
   const det = chapters.filter(c => c.source === "deterministic");
   const keysFilled = chapters.filter(c => c.source !== "deterministic" && (c.reason ?? "").startsWith("keys_filled")).map(c => c.n);
+  // AM2-7 1부 7(덕짱님 지시): 세운·대운 장 묶음 작가가 지우고도 고칠 수 없는 차단이 남긴 장은 발행 보류.
+  const held = chapters.filter(c => /(^|;)generation_hold:/.test(c.reason ?? "")).map(c => c.n);
+  if (held.length) { const calls0 = built.run?.calls ?? built.meta.calls; return { kind: "incomplete", reason: `${calls0.every(c => c.chars === 0) ? "pre_output:" : "partial:"}generation_hold:${held.join(",")}`, rejected: [], missing: held, preOutput: false }; }
   if (!det.length && !keysFilled.length && chapters.length) return { kind: "complete", keysFilled };
   const calls = built.run?.calls ?? built.meta.calls;
   const preOutput = calls.every(c => c.chars === 0);
