@@ -123,7 +123,7 @@ export const lengthIssue = (before: string, after: string, min: number): string 
  * AM2-7 1부 5: 결정론으로 고칠 수 있는 것(다시 쓰기에 보내지 않는다) — 이름 부르기 · 정도말 · 꺾쇠 · 칸 이름 머리말.
  * 부름말 「X님, 」은 쉼표까지 지운다. 같은 문장에 「당신」이 이미 있으면 이름 쪽을 지운다. 나머지 이름은 「당신」(조사 맞춤).
  */
-export function detFix(sentence: string, rule: string, a: { readonly callName?: string; readonly name?: string; readonly small?: readonly string[]; readonly inputs?: Inputs; readonly months?: Readonly<Record<string, string>> }): string | null {
+export function detFix(sentence: string, rule: string, a: { readonly callName?: string; readonly name?: string; readonly small?: readonly string[]; readonly inputs?: Inputs; readonly months?: Readonly<Record<string, string>>; readonly year?: number }): string | null {
   let s = sentence;
   // 세운 본문의 맨 달 이름 「7월」 → 카드와 같은 짝 「7월 · 정미월」(괄호 꼴은 괄호 규칙에 걸린다)(p6d.pairMonthNames — 묶음 원고는 겉 고침만 돌아 짝이 붙지 않았다 · R7 annual-1 8월 보류).
   if (rule === "calendar_month") { if (!a.months) return null; const r = pairMonthNames(s, a.months), t = r.text.replace(/((?:20\d\d년 )?(?:1[0-2]|[1-9]) ?월)\(([가-힣]{2}월)\)/g, "$1 · $2"); return r.count && !calendarMonth(t) ? t : null; }
@@ -131,8 +131,12 @@ export function detFix(sentence: string, rule: string, a: { readonly callName?: 
   // 「지금 서 있는 ○○ 대운」의 「지금」은 떼도 뜻이 같다(이 책을 쓴 날 기준) — 그 밖의 「지금」은 다시 쓰기로.
   if (rule === "time_deictic") {
     // 「지금 서 있는 …」 → 「당신이 서 있는 …」 · 권유의 「지금부터 」 · 문장 첫머리 「지금은 」은 빼도 뜻이 선다(R7 major-1 3.0 ¶3 · major-p6b 8.1 ¶3).
-    const t = s.replace(/(?<![가-힣])지금(은|도)? (?=(서 있는|들어선|머무는|지나고 있는|걷고 있는) )/g, /당신/.test(s) ? "" : "당신이 ").replace(/(?<![가-힣])지금부터 (?=[^.!?]*(세요|봐요|보아요|두세요|좋아요|좋습니다)[.!]?$)/, "").replace(/^지금은 /, "");
-    return t !== s && !/(?<![가-힣])지금(?![가-힣])/.test(t) ? t : null;
+    const t = s.replace(/(?<![가-힣])지금(은|도)? (?=(서 있는|들어선|머무는|지나고 있는|걷고 있는) )/g, /당신/.test(s) ? "" : "당신이 ").replace(/(?<![가-힣])지금부터 (?=[^.!?]*(세요|봐요|보아요|두세요|좋아요|좋습니다)[.!]?$)/, "").replace(/^지금은 /, "")
+      // 세운의 맨 「올해」 → 그 책의 해(「2027년」 — P7 annual-1 10.1 ¶3 「12월이 오면 올해 시작한 것 중」). 「올해 남은 …」은 달 이름이 필요해 다시 쓰기로.
+      .replace(/(?<![가-힣])올해(?! 남은)(?= [가-힣]*(한|된|둔|온|운|낸|은|던) )/g, a.year ? `${a.year}년에` : "올해").replace(/(?<![가-힣])올해(?! 남은)(?=[ 의에는가도]|$)/g, a.year ? `${a.year}년` : "올해");
+    // 한 문장에 규칙 하나만 걸리므로(lint), 고친 뒤 드러나는 맨 달 이름도 함께 짝짓는다(P7 annual-1 10.1 ¶3 「12월이 오면」).
+    const t2 = a.months ? pairMonthNames(t, a.months).text.replace(/((?:20\d\d년 )?(?:1[0-2]|[1-9]) ?월)\(([가-힣]{2}월)\)/g, "$1 · $2") : t;
+    return t2 !== s && !/(?<![가-힣])지금(?![가-힣])/.test(t2) && !/(?<![가-힣])올해(?! 남은)/.test(t2) ? t2 : null;
   }
   if (rule === "input_premise") { if (!a.inputs) return null; const t = soften(s, a.inputs); return t !== s && !premiseHits(t, a.inputs).length ? t : null; }
   if (rule === "name_call") {

@@ -256,7 +256,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
       const h = headingOf(cur.chapters, f), d = drafts.get(f.chapter); if (!d) continue; const si = d.chapter.sections.findIndex(s2 => s2.heading === h); if (si < 0) continue;
       const sec = d.chapter.sections[si], pi = sec.paragraphs.findIndex(p2 => holds(p2, f.sentence)); if (pi < 0) continue;
       const ss = splitSentences(sec.paragraphs[pi]); let changed = false;
-      const out = ss.map(x2 => { if (!holds(x2, f.sentence)) return x2; const y = detFix(x2, f.rule, { callName: brief.person.callName, name: brief.person.name, small: smallOf(f.chapter, h), ...(intake.inputs ? { inputs: intake.inputs } : {}), ...(lctx.monthNames ? { months: lctx.monthNames } : {}) }); if (y) { changed = true; return y; } return x2; });
+      const out = ss.map(x2 => { if (!holds(x2, f.sentence)) return x2; const y = detFix(x2, f.rule, { callName: brief.person.callName, name: brief.person.name, small: smallOf(f.chapter, h), ...(intake.inputs ? { inputs: intake.inputs } : {}), ...(lctx.monthNames ? { months: lctx.monthNames } : {}), ...(lctx.bookYear ? { year: lctx.bookYear } : {}) }); if (y) { changed = true; return y; } return x2; });
       if (!changed) continue;
       const after = [out.join(" ")], why = acceptOne({ chapter: f.chapter, section: si, heading: h, index: pi }, [sec.paragraphs[pi]], after, [f.rule]);
       detLog.push({ at: `${f.chapter}.${si}.${pi}`, rule: f.rule, from: f.sentence.slice(0, 120), to: out.join(" ").slice(0, 120), ok: !why.length, ...(why.length ? { why: why.join(" · ") } : {}) });

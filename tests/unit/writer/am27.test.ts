@@ -111,4 +111,14 @@ describe("AM2-7 1부 고치기 층 — 문단째 받기 · 결정론 받는 조�
     expect(detFix("그래서 들어오는 돈이 있는 날 몫을 떼어 두는 습관을 지금부터 만들어 두세요.", "time_deictic", { callName: "", name: "" })).toBe("그래서 들어오는 돈이 있는 날 몫을 떼어 두는 습관을 만들어 두세요.");
     expect(detFix("지금은 경쟁 속에서도 반대 의견 하나는 꼭 들어 보는 습관을 들이면 좋아요.", "time_deictic", { callName: "", name: "" })).toBe("경쟁 속에서도 반대 의견 하나는 꼭 들어 보는 습관을 들이면 좋아요.");
   });
+  it("P7 고침: 낱말 안 글자(솔직함 · 당신입니다 · 현실적 · 분명함 · 세차게 · 부서지는 · 기차 안에서 · 체조 모임 · 유자차)는 전제가 아니다", () => {
+    const x = inputsOf({ relationship: "single", children: "none", job: { status: "student" } });
+    for (const t of ["그 솔직함이 둘 사이를 넓혀요.", "이 해의 주인공은 당신입니다.", "현실적인 계획", "기준이 분명함", "비가 세차게 와요", "마음이 부서지는 날", "기차 안에서 읽어요", "체조 모임에서 만나요", "따뜻한 유자차 한 잔"]) expect(premiseHits(t, x)).toEqual([]);
+    expect(premiseHits("직함이 붙는 해", x).map(h => h.word)).toEqual(["직함"]);
+  });
+  it("P7 고침: 「올해」 → 그 책의 해 · 함께 드러나는 맨 달 이름도 짝(한 문장 한 규칙이라)", () => {
+    expect(detFix("12월이 오면 올해 시작한 것 중 하나를 골라 두세요.", "time_deictic", { months: { "12": "임자월" }, year: 2027 })).toBe("12월 · 임자월이 오면 2027년에 시작한 것 중 하나를 골라 두세요.");
+    expect(detFix("올해의 흐름은 빠릅니다.", "time_deictic", { year: 2027 })).toBe("2027년의 흐름은 빠릅니다.");
+    expect(detFix("올해 남은 두 달", "time_deictic", { year: 2027 })).toBeNull();
+  });
 });

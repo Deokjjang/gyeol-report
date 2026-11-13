@@ -391,7 +391,9 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
           if (fw && f) { const said = Object.entries(FLOW_TALK).find(([, re]) => re.test(fw[1]))?.[0]; if (said && Number(said) !== f.score) add({ ...at, rule: "key_value", detail: `흐름 「${fw[1]}」 — ${kp.label}은 「${FLOW_WORD[f.score]}」`, hint: kh }); } }
         if (pair) { const gm = new RegExp(`(하늘|땅) ?글자(?:인|의|는|가|에)? (${TG})`).exec(sen); if (gm && gm[2] !== (gm[1] === "하늘" ? pair.sky : pair.ground)) add({ ...at, rule: "key_value", detail: `${gm[1]} 글자 ${gm[2]} — ${kp.label}은 ${gm[1] === "하늘" ? pair.sky : pair.ground}`, hint: kh }); }
         { const mineRel = b.keyRels?.get(kp.key) ?? new Set<string>(); let other: string | null = null;
-          for (const [k2, rels] of b.keyRels ?? []) { if (k2 === kp.key) continue; for (const r of rels) if (!mineRel.has(r) && sen.includes(r)) { other = `${r}(${labelOfKey.get(k2) ?? k2})`; break; } if (other) break; }
+          // AM2-7 8부: 그 달·해 이름을 단 견줌 절(「8월 · 무신월에는 … 수국 반합이 모임으로 왔고, 이번에는 …」 — 카드 연결 고리 「앞:」)의 관계 이름은 다른 key 값이 아니다.
+          const cmpClause = (r: string, lab: string) => { const parts = lab.split(/ · | /).filter(x2 => /^(20\d\d년|(1[0-2]|[1-9])월|[가-힣]{2}[월년])$/.test(x2)); return sen.split(/(?<=고|며|지만|는데|어서|아서|해서|면서|니|면|달리),\s*/).some(cl => cl.includes(r) && parts.some(p2 => new RegExp(`(?<![0-9가-힣])${p2}`).test(cl))); };
+          for (const [k2, rels] of b.keyRels ?? []) { if (k2 === kp.key) continue; for (const r of rels) if (!mineRel.has(r) && sen.includes(r) && ![...(b.keyRels ?? [])].some(([k3, rs3]) => k3 !== kp.key && rs3.has(r) && cmpClause(r, labelOfKey.get(k3) ?? ""))) { other = `${r}(${labelOfKey.get(k2) ?? k2})`; break; } if (other) break; }
           if (other) add({ ...at, rule: "key_value", detail: `다른 key의 관계 ${other}`, hint: kh }); }
         for (const o of allSeeds) if (o.key !== kp.key && overlap4(sen, o.scene) >= SEED_IN_KEY && (!kp.scene || overlap4(sen, kp.scene) < SEED_IN_KEY)) { add({ ...at, rule: "key_value", detail: `다른 달·해(${labelOfKey.get(o.key) ?? o.key})의 장면 씨앗`, hint: kh }); break; }
         // 카드 생활 줄 「~기 좋음·쉬움」을 「…는 해입니다」로 못 박음(P2 판독 major-1 2033 「결과로 이어지는 해입니다」).
@@ -501,6 +503,11 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
       // 영역 나열(2-6).
       if (kp) { const n = new Set([...s.paragraphs.join(" ").matchAll(DOMAIN_LEAD)].map(m => m[1])).size; if (n >= 3) { const pi = s.paragraphs.findIndex(p => (p.match(DOMAIN_LEAD) ?? []).length >= 2) ; const p = s.paragraphs[Math.max(0, pi)] ?? ""; out.push({ ...at0, paragraph: Math.max(0, pi), rule: "domain_list", sentence: splitSentences(p).find(x2 => DOMAIN_LEAD.test(x2)) ?? p.slice(0, 80), detail: `영역 ${n}개 나열`, hint: "「일에서는… 돈에서는… 관계에서는…」 나열 금지 — 핵심 하나 + 장면 하나 + 행동 하나" }); DOMAIN_LEAD.lastIndex = 0; } }
       const rels = kp ? relMeaning(kp.key) : new Map<string, string>();
+      // AM2-7 8부(P7 세운 4권 보류 — 7장 key 「6월 · 병오월에는 … 다듬는 힘이 일했다면, 이번에는 …」): 카드 연결 고리(「앞: 그 달(그때 같은 자리: 관계 — 뜻)」)를 따라
+      // 다른 달·해 이름을 단 견줌 절은 그 앞 달의 관계 · 뜻을 말해도 된다 — 관계 뜻 섞기(rel_verb · rel_mix) · 다른 달 뜻(key_value) 셈에서 그 절을 뺀다.
+      const otherParts = kp ? [...new Set([...keyPlans.values()].filter(o => o.key !== kp.key).flatMap(o => o.label.split(/ · | /)).filter(x2 => /^(20\d\d년|(1[0-2]|[1-9])월|[가-힣]{2}[월년])$/.test(x2) && !kp.label.split(/ · | /).includes(x2)))] : [];
+      const cmpRe = otherParts.length ? new RegExp(otherParts.map(x2 => `(?<![0-9가-힣])${esc2(x2)}`).join("|")) : null;
+      const noCmp = (t: string) => (cmpRe ? t.split(/(?<=고|며|지만|는데|어서|아서|해서|면서|니|면|달리),\s*/).filter(cl => !cmpRe.test(cl)).join(", ") : t);
       // 다른 달·해 관계의 뜻(어간 셋 이상 겹침, 이 자리 카드에는 없음 — P2 판독 annual-1 6월 「발이 덜 걸립니다」).
       const mineStems0 = kp ? stemsOf([...kp.lines.map(id => `${lineById.get(id)?.value ?? ""} ${lineById.get(id)?.meaning ?? ""}`), kp.scene ?? "", kp.todo ?? "", kp.head].join(" ")) : new Set<string>();
       // 이 자리 카드가 가리키는 앞 달·해의 줄은 써도 된다: 「X의 뜻은 앞의 ○과 같은 결」 → 그 달의 X 글자 줄, 「○과 같은 생활 결」 → 그 달의 생활 줄(관계 줄은 아니다).
@@ -520,7 +527,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
             // 오탐 검토(annual): 동사는 그 이름이 든 절 안에서만 본다(「사해충으로 부딪히고, 금의 기운이 반쯤 묶여」는 절이 다르다).
             // 이름이 없는 절의 동사는 이 달·해의 다른 관계(그 종류가 있거나 뜻에 그 말이 있는)를 뜻으로 풀어 쓴 것이면 괜찮다.
             const keyKinds = new Set([...rels.keys()].map(relKind)), keyMeans = [...rels.values()].join(" ");
-            verb: for (const cl of clausesOf(sen)) { const inCl = named.filter(nm => nameIn(cl, nm)); const kindsCl = new Set(inCl.map(relKind)), ownCl = inCl.map(nm => rels.get(nm) ?? "").join(" ");
+            verb: for (const cl of clausesOf(noCmp(sen))) { const inCl = named.filter(nm => nameIn(cl, nm)); const kindsCl = new Set(inCl.map(relKind)), ownCl = inCl.map(nm => rels.get(nm) ?? "").join(" ");
               for (const [j, re] of Object.entries(REL_VERB) as [RelKind, RegExp][]) { if (!re.test(cl) || kindsCl.has(j) || re.test(ownCl)) continue; if (!inCl.length && (keyKinds.has(j) || re.test(keyMeans))) continue;
                 out.push({ ...at, rule: "rel_verb", detail: `${(inCl.length ? inCl : named).join("·")}에 ${j}의 말 「${cl.match(re)![0]}」`, hint: "관계마다 그 이름의 뜻만: 합 맺힘·묶임, 충 부딪침, 형 눌러 다듬음, 파 어긋남, 해 방해" }); break verb; } }
             void kinds;
@@ -536,10 +543,10 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
             // 뜻 섞기: 이 자리의 다른 관계 뜻 어간 둘 이상이 이름이 든 절 안에(이름 없는 제 절에 풀어 쓴 것은 괜찮다 — 「…부딪히고, 금의 기운이 반쯤 묶여」).
             // 이름 없는 절도 제 자리·주어(「태어난 날 글자와는 금의 기운이」 「봄 글자가」)가 없으면 앞 관계 문장의 일부다(「…알아주지 않는 느낌이 들 수 있고, 묵은 일이 다시 올라오기도」).
             const ownSubject = /태어난 (해|달|날|시각)|자리와|글자(와|가)|의 기운이|[가-힣]{1,2} 기운이/;
-            const ownSt = stemsOf(own), namedCl = stemsOf(clausesOf(seatMask(sen)).filter(cl => named.some(nm => nameIn(cl, nm)) || !ownSubject.test(cl)).join(" "));
+            const ownSt = stemsOf(own), namedCl = stemsOf(clausesOf(seatMask(noCmp(sen))).filter(cl => named.some(nm => nameIn(cl, nm)) || !ownSubject.test(cl)).join(" "));
             for (const [nm2, mean2] of rels) { if (named.includes(nm2)) continue; const hitSt = [...stemsOf(mean2)].filter(x2 => !ownSt.has(x2) && namedCl.has(x2)); if (hitSt.length >= 2) { out.push({ ...at, rule: "rel_mix", detail: `${named.join("·")} 문장에 ${nm2}의 뜻(${hitSt.join("·")})`, hint: `${named.join("·")}에는 그 줄의 뜻만 — ${nm2}의 뜻을 섞지 않는다` }); break; } }
           }
-          { const sst = stemsOf(sen); for (const o of otherRel) { const h = [...o.st].filter(x2 => sst.has(x2) && !mineStems.has(x2)); if (h.length >= 3) { out.push({ ...at, rule: "key_value", detail: `다른 달·해(${o.label})의 ${o.nm} 뜻(${h.join("·")})`, hint: `이 자리는 ${kp.label} — 카드 줄 ${kp.range ?? ""}에 적힌 것만` }); break; } } }
+          { const sst = stemsOf(noCmp(sen)); for (const o of otherRel) { const h = [...o.st].filter(x2 => sst.has(x2) && !mineStems.has(x2)); if (h.length >= 3) { out.push({ ...at, rule: "key_value", detail: `다른 달·해(${o.label})의 ${o.nm} 뜻(${h.join("·")})`, hint: `이 자리는 ${kp.label} — 카드 줄 ${kp.range ?? ""}에 적힌 것만` }); break; } } }
         }
         // 신살 자리.
         for (const sh of seats) {
@@ -590,7 +597,7 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
         // 오탐 검토(major): 대운·지도·십성이 「…로 이어져요」(차례 설명), 「경향으로 이어져요」는 단정이 아니다.
         const chain = new RegExp(`^[^,]{0,20}(대운|지도)(은|는|이|가) |(${TG})(으)?로 이어|경향으로 이어`).test(sen);
         if (!past && FUTURE_ASSERT.test(sen) && !soft(sen) && !(/로 이어/.test(sen.match(FUTURE_ASSERT)![0]) && chain)) out.push({ ...at, rule: "future_assert", detail: sen.match(FUTURE_ASSERT)![0], hint: "앞날·결과·남의 반응을 못 박지 않는다 — 카드 꼴(「~하기 좋은」「~하기 쉬운」)이나 조건형으로" });
-        else if (kp?.when === "future" && FUTURE_IN_KEY.test(sen) && !soft(sen) && !/흐름|기운|쪽|마음[이도은가]|힘[이과도은]|경쟁심|욕심|고집/.test(sen) && !new RegExp(`(${TG})[^.?!]{0,8}(하늘|땅)|(${TG})(${TGJ})?(과 (${TG})(${TGJ})?)?(이|가)?( 겹쳐)? 들어(와요|옵니다)`).test(sen)) out.push({ ...at, rule: "future_assert", detail: sen.match(FUTURE_IN_KEY)![0], hint: "앞날 일이 생긴다고 못 박지 않는다 — 「~하기 쉬운 때예요」처럼" });
+        else if (kp?.when === "future" && FUTURE_IN_KEY.test(sen) && !soft(sen) && !/흐름|기운|쪽|마음[이도은가]|힘[이과도은]|경쟁심|욕심|고집|(맺힘|모임|부딪침|다듬음|어긋남|방해|겹침)(으)?로 들어(와요|옵니다)/.test(sen) && !new RegExp(`(${TG})[^.?!]{0,8}(하늘|땅)|(${TG})(${TGJ})?(과 (${TG})(${TGJ})?)?(이|가)?( 겹쳐)? 들어(와요|옵니다)`).test(sen)) out.push({ ...at, rule: "future_assert", detail: sen.match(FUTURE_IN_KEY)![0], hint: "앞날 일이 생긴다고 못 박지 않는다 — 「~하기 쉬운 때예요」처럼" });
         if (PAST_PREMISE.test(sen) && !PAST_SOFT.test(sen)) out.push({ ...at, rule: "past_premise", detail: sen.match(PAST_PREMISE)![0], hint: "카드에 없는 지난 행동을 「-던」으로 전제하지 않는다 — 앞으로 할 일로 쓴다" });
         // 지난 대운 나이 × 직장 낱말(대운 2장 둘째 절).
         // 오탐 검토(major): 「동료」 한 낱말이 카드 말(현재형 성향)이면 장면이 아니다 — 지난 장면 꼴이거나 다른 직장 낱말이 있을 때만.

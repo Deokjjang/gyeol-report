@@ -1,6 +1,6 @@
 # 입력 조건 꼬리표 표(AM2-7 2부)
 
-- 만든 날: 2026-11-13 · 도구 `tools/annual-major/am2-7-tags.ts` · 낱말표 `src/lib/brief/premise.ts` (premise-68-q1y5od) · 표 `src/data/knowledge-v5/input-needs.json`(3042개).
+- 만든 날: 2026-11-13 · 도구 `tools/annual-major/am2-7-tags.ts` · 낱말표 `src/lib/brief/premise.ts` (premise-68-zz1qwr) · 표 `src/data/knowledge-v5/input-needs.json`(3042개).
 - 까닭: P6 판독 차단 17 가운데 6이 거르지 못한 씨앗 · 처방 종류였다(호감 ×2 · 자취방 · 월급날 · 킥오프 · 영업 전화). 금지어 목록은 빠진 낱말이 그대로 지나간다 — 항목마다 「필요한 입력」을 달고, 꼬리표가 없는 항목은 쓰지 않는다(기본 거절).
 - 모르는 입력은 「없음」으로 본다. 사는 곳 · 차 · 반려동물은 입력 칸이 없어 늘 없음이다.
 
@@ -8,7 +8,7 @@
 
 | 출처 | 항목 | 필요 입력 없음 | 필요 입력별 |
 |---|---|---|---|
-| MBTI 씨앗(mbti-seeds) | 2620 | 1658 | job:employee 209 · job:work 252 · job:active 6 · job:earn 1 · job:business 56 · job:shop 43 · job:freelancer 8 · job:student 26 · job:study 20 · rel:single 210 · rel:partner 226 · residence 16 · other 46 |
+| MBTI 씨앗(mbti-seeds) | 2620 | 1660 | job:employee 209 · job:work 251 · job:active 6 · job:earn 1 · job:business 56 · job:shop 42 · job:freelancer 8 · job:student 26 · job:study 20 · rel:single 210 · rel:partner 226 · residence 16 · other 46 |
 | 화면 할 일 문형(action-templates) | 353 | 320 | job:employee 3 · job:work 3 · job:business 1 · job:study 4 · rel:single 21 · rel:partner 1 |
 | 십성 시기 장면(ten-god-period) | 70 | 40 | job:employee 16 · job:work 7 · job:shop 1 · job:freelancer 1 · job:student 1 · job:study 2 · rel:single 1 · rel:dating 3 · rel:partner 2 · other 1 |
 
