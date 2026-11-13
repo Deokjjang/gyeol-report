@@ -30,10 +30,10 @@ describe("AM2-6 1부 고리는 재료", () => {
     const { intake, brief } = setup("annual-1"), keys = keysOf(intake);
     const jan = keys.find(k => k.label === "1월 · 신축월")!.links!.find(l => l.kind === "seat")!;
     expect(jan.text).toMatch(/〔태어난 달 자리 = 일터·사회생활의 자리\(직장인: 일로 버는 돈 쪽\)〕 × 〔병신합 = 맺힘\(겉이 빛나고 속은 눌리는\)〕/);
-    expect(jan.text).toMatch(/이 책에서 이 자리 처음/);
+    expect(jan.text).not.toMatch(/이 책|처음|번째/); // AM2-8 P8 뒤 고침
     const mar = keys.find(k => k.label === "3월 · 계묘월")!.links!.find(l => l.kind === "seat")!;
     // AM2-7 3부 5 · 4부 1: 앞 key의 같은 자리 관계를 다 적고, 글자째 옮길 틀(「…과 같은 … 자리지만 이번엔」)은 주지 않는다.
-    expect(mar.text).toMatch(/이 책 2번째 · 앞: 1월 · 신축월\(그때 같은 자리: 병신합 · 축진파 — 맺힘\)/);
+    expect(mar.text).toMatch(/〕 앞: 1월 · 신축월\(그때 같은 자리: 병신합 · 축진파 — 맺힘\)/); expect(mar.nth).toBe(2);
     expect(mar.text).not.toMatch(/자리지만 이번엔/);
     // 둘째 핵심에도 뜻 한 마디(P5 R-G3).
     expect(keys.find(k => k.label === "1월 · 신축월")!.links!.find(l => l.kind === "second")?.text).toMatch(/둘째 핵심 〔축진파 = 어긋남/);

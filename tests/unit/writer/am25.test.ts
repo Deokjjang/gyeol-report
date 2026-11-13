@@ -65,13 +65,13 @@ describe("AM2-5 1부 연결 고리 · key 짝 · 장면", () => {
     // AM2-6 1부: 고리는 재료(자리 뜻 · 관계 뜻 한 마디 · 입력 · 방향 · 몇 번째). 같은 자리가 다시 나오면 앞 key와 무엇이 다른지만.
     const feb = keysOf(intake).find(x => x.label === "2월 · 임인월")!;
     expect(feb.links?.[0]?.text).toMatch(/^〔태어난 날 자리 = 나와 가장 가까운 사람의 자리\(솔로: 가장 가까운 사람·연애 쪽\)〕 × 〔화국 반합 = 모임\(/);
-    expect(feb.links?.[0]?.text).toMatch(/이 책에서 이 자리 처음/);
+    expect(feb.links?.[0]?.text).not.toMatch(/이 책|처음|번째/); // AM2-8 P8 뒤 고침: 몇 번째는 재료 칸(nth)에만
     const k = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
     const seat = k.links!.find(l => l.kind === "seat")!;
     // 이 달 오미합 배지는 섞인 결(plus 아님) — 연애 오름 신호가 있어도 방향은 「섞임」으로 둔다(오름이 배지 결을 덮지 않게).
     expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 · 앞과 다름 · 입력 한 마디: 솔로 · 섞임 · 이 달 오름: 연애/);
     // AM2-7 3부 5: 둘째부터 「앞 key(그때 같은 자리 관계 전부) + 이번 관계 뜻 + 입력 한 마디」(틀 문구 없음).
-    expect(seat.text).toMatch(/이 책 \d번째 · 앞: 6월 · 병오월\(그때 같은 자리: /);
+    expect(seat.text).toMatch(/〕 앞: 6월 · 병오월\(그때 같은 자리: /); expect(seat.text).not.toMatch(/이 책|번째/); expect(seat.nth).toBeGreaterThanOrEqual(2);
     expect(seat.text).toMatch(/입력 한 마디: 솔로/);
     expect(seat.input).toEqual(["relationship=single"]);
     expect(k.links!.find(l => l.kind === "echo")?.text).toMatch(/정미년 한 해에도 같은 태어난 날 자리에 오미합/);

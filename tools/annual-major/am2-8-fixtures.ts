@@ -47,6 +47,12 @@ export const CASES: Spec[] = [
   { id: "C2", src: "P6-major-p6b", book: "major-p6b", find: "그 몫이 든든한 바탕", cut: "들어오는 돈이 있는 날", expect: "catch", rules: ["lean_on_cut"], note: "R7 8.1 ¶3 「그 몫」" },
   { id: "C3", src: "P7-major-p5", book: "major-p5", find: "다만 말과 결과물이 앞서 나갈 때가 있어요.", cut: "다만 말과 결과물이 앞서 나갈 때가 있어요.", expect: "catch", rules: ["lean_on_cut"], note: "Q7 3.0 ¶3 「그럴 때」(앞말을 지우면 고아)" },
   { id: "D1", src: "P6-major-p6b", book: "major-p6b", find: "월급날이 아니어도", expect: "catch", rules: ["input_premise", "time_deictic"], detfix: true, note: "R7 8.1 ¶3 첫 원고: 결정론 고침 둘 다 대고 지우지 않음" },
+  // ---- P8 판독(2026-11-13) 뒤 — P8 뒤 고침(재현만 확인) ----
+  { id: "P8a", src: "P8/_raw/annual-p6b", book: "annual-p6b", find: "ISTJ도 검증된 것만 믿는 쪽이라", expect: "catch", rules: RB6, note: "P8 차단 R-B6 7월 ¶2(짝 P10 밖 땅 비견을 「ISTJ도」로 받음)" },
+  { id: "P8b", src: "P8/_raw/annual-p6b", book: "annual-p6b", find: "이 책에서 두 번째로 가까운 사람의 자리", expect: "catch", rules: ["meta_trace"], note: "P8 경계 예 3월 ¶1(고리 재료 「이 책 2번째」를 옮김)" },
+  { id: "P8c", src: "P8/_raw/annual-1", book: "annual-1", find: "부딪침이 있어도 수국 반합이 함께 있어서", expect: "pass", rules: ["rel_verb"], note: "P8 보류 7.11.0 rel_verb(부딪침 = 같은 달 자오충)" },
+  { id: "P8d", src: "P8/_raw/annual-p6b", book: "annual-p6b", find: "가장 아끼는 일 하나를 고르면 됩니다", expect: "pass", rules: ["degree"], note: "P8 남은 차단 8.0 ¶1 degree(읽는 사람이 고름)" },
+  { id: "P8e", src: "P8/_raw/annual-1", book: "annual-1", find: "부딪침이 있어도 수국 반합이 함께 있어서", swap: "10월 · 경술월이 불꽃처럼 모이는 달이었다면, 12월 · 임자월은 같은 태어난 날 자리에 자오충이 들어와 마음의 온도가 오르내리는 달입니다.", expect: "pass", rules: ["month_list"], note: "P8 버린 다시 쓰기 7.11.0 #1~#3(「오르내리는 달」을 「오르는 달」 목록으로 셈)" },
 ];
 
 type Raw = { kind: string; text: string };

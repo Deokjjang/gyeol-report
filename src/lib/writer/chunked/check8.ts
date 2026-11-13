@@ -74,12 +74,17 @@ export function am28Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
           if (prev && !MYEONGRI_WORD.test(prev) && TRAIT_REF.test(sen) && (TRAIT_FRAME.test(prev) || TRAIT_TAIL.test(prev) || stemHit(prev, stems).length >= 1)) { flagT(sen, `이웃 문장 잇기 「${sen.match(TRAIT_REF)![0].trim()}」`); flagT(prev, "이웃 문장 잇기(앞 문장)"); }
         }
         // 짝 있는 소제목: 성향 문장(유형 이름 · 성향 받는 말 · 성향 꼴)이 짝 명리 줄 밖의 명리 말(관계 뜻 · 다른 십성)과 이어지면 짝 범위 밖(P7 annual-p5 2.2 ¶2 「그 다정함 … 방해의 기운」 — 짝은 N11, 방해는 Y15).
-        if (hasMbti && pairedSec && sp) {
+        // AM2-8 P8 뒤 고침(annual-p6b 7월 ¶2 「비견이 땅에 있어 … 믿는 쪽으로 마음이 기울고, ISTJ도 검증된 것만 믿는 쪽이라」 — 짝 P10은 하늘 편인): 짝 있는 key도 같은 범위로 보고,
+        // 「유형 이름 + 도」로 앞 문장의 짝 밖 명리 말을 받는 이웃 잇기도 잡는다.
+        const pairHere = kp?.pair ? x.pairs.filter(p0 => p0.id === kp.pair) : pairedSec && sp ? x.pairs.filter(p0 => sp.lines.includes(p0.myeongri) && sp.lines.includes(p0.mbti)) : [];
+        if (hasMbti && pairHere.length) {
           // 짝 범위 = 짝 명리 줄(대운 줄이면 그 대운 줄 전부 — 대운 십성 「정재의 10년」 포함).
-          const scope = x.pairs.filter(p0 => sp.lines.includes(p0.myeongri) && sp.lines.includes(p0.mbti)).flatMap(p0 => { const l = x.lines.find(l2 => l2.id === p0.myeongri); return l?.subject === "dayun" ? x.lines.filter(l2 => l2.subject === "dayun") : l ? [l] : []; }).map(l => `${l.value} ${l.meaning}`).join(" ");
+          const scope = pairHere.flatMap(p0 => { const l = x.lines.find(l2 => l2.id === p0.myeongri); return l?.subject === "dayun" ? x.lines.filter(l2 => l2.subject === "dayun") : l ? [l] : []; }).map(l => `${l.value} ${l.meaning}`).join(" ");
           const traitish = (b.mbtiType && sen.includes(b.mbtiType)) || TRAIT_REF.test(sen) || TRAIT_FRAME.test(sen);
-          const outside = [...sen.matchAll(new RegExp(MYEONGRI_WORD.source, "g"))].map(m => m[0].trim()).filter(w => w.length >= 2 && !/^(기운이|기운 속|이 10년)$/.test(w) && !scope.includes(w.replace(/의$/, "")));
-          if (traitish && outside.length) flagT(sen, `짝 범위 밖 「${outside[0]}」`);
+          const outsideOf = (t: string) => [...t.matchAll(new RegExp(MYEONGRI_WORD.source, "g"))].map(m => m[0].trim()).filter(w => w.length >= 2 && !/^(기운이|기운 속|이 10년)$/.test(w) && !scope.includes(w.replace(/의$/, "")));
+          const outside = outsideOf(sen), prev = sj > 0 ? ss[sj - 1] : undefined, prevOut = prev && b.mbtiType && sen.includes(`${b.mbtiType}도`) ? outsideOf(prev) : [];
+          if (traitish && outside.length && !kp) flagT(sen, `짝 범위 밖 「${outside[0]}」`);
+          else if (prevOut.length) flagT(sen, `이웃 문장 잇기 — 짝 범위 밖 「${prevOut[0]}」를 「${b.mbtiType}도」로 받음`);
         }
         if (ADVICE_CLICHE.test(sen)) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "advice_cliche", sentence: sen, detail: sen.match(ADVICE_CLICHE)![0] });
         if (relSubjectTime(sen)) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "rel_subject_time", sentence: sen, detail: "관계 주어 + 때예요", hint: "관계 이름을 주어로 「…때예요」로 맺지 않는다 — 때는 그 달 · 해다(「이 달은 …」 또는 관계가 하는 일로 맺는다)" });

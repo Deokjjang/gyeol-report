@@ -233,7 +233,7 @@ const HEADING_PAST = /(았|었|였|했|겼|졌|남았)다[.!]?$|다[.!]$/;
 const HEADING_ASSERT = /(커지는|오는|생기는|열리는|이어지는|남는|붙는|편해지는|단단해지는|풀리는|늘어나는|찾아오는|바뀌는|이루는|되는|찾는|얻는) (10년|해|달|인연|때|시기|사람|기회|돈|자리|길)$/;
 const HEADING_SOFT = /쉬운|좋은|기 쉬|라면|하면|이면|\?|수 있는|경향|법$|기준|방법|무렵|까$/;
 const ARROW_LITERAL = /(위쪽|아래쪽)(을|으로) 향|화살표/;
-const META_TRACE2 = /새로운 특성이 없|새 특성 (없이|은 없)|이 (로드맵|장|절|책|부분)에(는|선) [^.?!]{0,24}(없습니다|없어요|담지 않|넣지 않|다루지 않)|설계도|브리프|근거 카드|카드 줄|화면에 (이미 )?(있|나온|나와|보이|적힌|뜨)|여기서는 뜻만/; // P7 major-p6a 2032 「…화면에 이미 있는 줄이라, 여기서는 뜻만 짧게 붙입니다」(카드 「화면(되풀이 금지)」 칸이 샘)
+const META_TRACE2 = /새로운 특성이 없|새 특성 (없이|은 없)|이 (로드맵|장|절|책|부분)에(는|선) [^.?!]{0,24}(없습니다|없어요|담지 않|넣지 않|다루지 않)|설계도|브리프|근거 카드|카드 줄|화면에 (이미 )?(있|나온|나와|보이|적힌|뜨)|여기서는 뜻만|이 책에서 (?:두|세|네|다섯|[0-9]+) ?번째/; // AM2-8 P8 뒤 고침: 고리 재료 「이 책 2번째」를 「이 책에서 두 번째로 가까운 사람」으로 옮김(annual-p6b 3월) // P7 major-p6a 2032 「…화면에 이미 있는 줄이라, 여기서는 뜻만 짧게 붙입니다」(카드 「화면(되풀이 금지)」 칸이 샘)
 const DOMAIN_LEAD = /(일에서는|일 쪽에서는|일터에서는|돈에서는|돈 쪽에서는|관계에서는|사람 사이에서는|연애에서는|연애 쪽에서는|컨디션은|컨디션에서는|몸은)/g;
 /** 장 첫 문장이 소품·장면으로 여는 꼴(따옴표 대사로 열기, 「…날,」「…길에」 같은 장면 머리). */
 const PROP_OPEN = /^(["“'‘]|[가-힣 ]{2,18}(날|길에|길|밤|아침|저녁|주말|퇴근길|출근길|점심)(,| ))/;
@@ -426,7 +426,8 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
         if (mine) for (const [key, set] of months) if (key !== s.heading && !pointedKeys.has(key) && hit(sen, set, 12) && !hit(sen, mine, 12) && !hit(sen, ownEngine, 12)) { add({ ...at, rule: "month_line", detail: `${labelOfKey.get(key) ?? key}의 근거 줄` }); break; }
       }
       // AM2-4 5부(P3 판독 annual-1 차단 #2 — 한 문장의 두 목록 「일이 오르는 달은 …이고, 4월은 흔들림을 살필 달」을 오탐으로 지움): 「이고·이며·,」 마디마다 따로 대조한다.
-      monthList: for (const cl of sen.split(/(?<=이고|이며|이지만|인데),\s*|(?<=고),\s+/)) { const ms = monthsIn(cl);
+      // AM2-8 P8 뒤 고침(annual-1 12월 다시 쓰기 셋을 버리게 한 오탐): 「오르내리는 달」은 「오르는 달」 목록 말이 아니다.
+      monthList: for (const cl of sen.split(/(?<=이고|이며|이지만|인데),\s*|(?<=고),\s+/).map(c0 => c0.replace(/오르내리/g, "출렁이"))) { const ms = monthsIn(cl);
         if (!ms.size || anyList.some(set => [...ms].every(m => set.has(m)))) continue;
         for (const l of lists) if (l.cue.test(cl) && [...ms].some(m => !l.months.has(m)) && !lists.some(l2 => l2 !== l && l2.cue.test(cl) && [...ms].every(m => l2.months.has(m)))) {
           if (/(달|때)(은|는|이|가)? [^.?!]{0,30}(이에요|입니다|예요|이고|이며)|(오르|늦추|새|무리|쉬어|흔들)[^.?!]{0,10}달/.test(cl)) { add({ ...at, rule: "month_list", detail: `달 목록이 카드와 다름(카드: ${[...l.months].join("·")})` }); break monthList; }
@@ -532,7 +533,8 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
             // 오탐 검토(annual): 동사는 그 이름이 든 절 안에서만 본다(「사해충으로 부딪히고, 금의 기운이 반쯤 묶여」는 절이 다르다).
             // 이름이 없는 절의 동사는 이 달·해의 다른 관계(그 종류가 있거나 뜻에 그 말이 있는)를 뜻으로 풀어 쓴 것이면 괜찮다.
             const keyKinds = new Set([...rels.keys()].map(relKind)), keyMeans = [...rels.values()].join(" ");
-            verb: for (const cl of clausesOf(noCmp(sen))) { const inCl = named.filter(nm => nameIn(cl, nm)); const kindsCl = new Set(inCl.map(relKind)), ownCl = inCl.map(nm => rels.get(nm) ?? "").join(" ");
+            // AM2-8 P8 뒤 고침(annual-1 11월 「부딪침이 있어도 수국 반합이 함께 있어서」 — 부딪침은 같은 달 자오충): 「…어도 · …지만」 양보 마디는 따로 본다.
+            verb: for (const cl of clausesOf(noCmp(sen)).flatMap(c0 => c0.split(/(?<=(?:어도|아도|해도|더라도|지만))\s+/))) { const inCl = named.filter(nm => nameIn(cl, nm)); const kindsCl = new Set(inCl.map(relKind)), ownCl = inCl.map(nm => rels.get(nm) ?? "").join(" ");
               for (const [j, re] of Object.entries(REL_VERB) as [RelKind, RegExp][]) { if (!re.test(cl) || kindsCl.has(j) || re.test(ownCl)) continue; if (!inCl.length && (keyKinds.has(j) || re.test(keyMeans))) continue;
                 out.push({ ...at, rule: "rel_verb", detail: `${(inCl.length ? inCl : named).join("·")}에 ${j}의 말 「${cl.match(re)![0]}」`, hint: "관계마다 그 이름의 뜻만: 합 맺힘·묶임, 충 부딪침, 형 눌러 다듬음, 파 어긋남, 해 방해" }); break verb; } }
             void kinds;
@@ -590,7 +592,8 @@ export function rootFlags(chapters: readonly FinalChapter[], b: BlockCtx): Chunk
           const cardGroup = Boolean(grp && [...x.lines.map(l => `${l.value} ${l.meaning}`), ...x.pairs.map(pp => pp.why)].some(t => grp!.test(t) && (!MONTH_NAME_IN.test(t) || (labelHere ? t.includes(labelHere) : monthsHere.every(mm => t.includes(`${mm}월`))))));
           const ordering = /가장 [가-힣]+ (것|일|하나)(부터|만|을|를)|가장 편한 (시간|때)|가장 (가볍게|먼저|급한|부담스러운|중요한 것)/.test(sen);
           // 오탐 검토(major): 읽는 사람이 고르는 말(「가장 편한 사람을 한 명만 떠올려 보세요」)·물음·「~듯」 비유 안의 정도말은 카드 값 부풀림이 아니다.
-          const choose = /(떠올려|골라|고르|잡고|표시해|적어|꼽아|정해)[^.?!]*(보세요|세요|봐요|두세요)[.!]?$|[?？]$|나요[.!]?$/.test(sen), analogy = /듯[,，]?\s/.test(after) && !/듯/.test(before);
+          // AM2-8 P8 뒤 고침(annual-p6b 8.0 「가장 아끼는 일 하나를 고르면 됩니다」): 「…고르면 돼요」도 읽는 사람이 고르는 말.
+          const choose = /(떠올려|골라|고르|잡고|표시해|적어|꼽아|정해)[^.?!]*(보세요|세요|봐요|두세요|면 (?:돼요|됩니다))[.!]?$|[?？]$|나요[.!]?$/.test(sen), analogy = /듯[,，]?\s/.test(after) && !/듯/.test(before);
           // AM2-4: 흐름이 유일한 끝값인 달·해의 「가장 센·거센·잔잔한」은 엔진 값이다.
           const flowVals = [...(b.flows?.values() ?? [])], uniqueEnd = (ganji: string, high: boolean) => { const v = flowVals.find(f2 => f2.ganji === ganji)?.score; if (v === undefined) return false; const ext = high ? Math.max(...flowVals.map(f2 => f2.score)) : Math.min(...flowVals.map(f2 => f2.score)); return v === ext && flowVals.filter(f2 => f2.score === ext).length === 1; };
           const flowEnd = Boolean(dm) && /흐름/.test(sen) && [...monthsIn(sen)].some(g2 => uniqueEnd(g2, /^(센|셉|세|거세|거센|강|크|큰)/.test(after6)) );

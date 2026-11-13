@@ -1,6 +1,6 @@
 /**
  * AM2-8 6부 판정 파일 만들기(호출 0): ~/Desktop/gyeol-review/annual-major-02/<판>/verdict.md · read-this.md. 그 밖은 <판>/_raw/.
- *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/annual-major/am2-8-verdict.ts --dir P8 --books annual-p6b,annual-1 --product 세운 --question "…" --sha <SHA> --cum 12.34 [--stopped "…"] [--after "…"]
+ *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/annual-major/am2-8-verdict.ts --dir P8 --books annual-p6b,annual-1 --product 세운 --question "…" --sha <SHA> --cum 12.34 [--stopped "…"] [--after "…"] [--decide "가||나||다"]
  * 입력(책마다 <판>/_raw/<책>/): snapshot.json(am2-run --dir <판>/_raw) · judge.json(서브에이전트 판독 — 아래 꼴).
  *   judge.json = { blocks: [{ at, code, root, origin, paragraph, problem, fix }], bounds: [{ at, code, notice: "예"|"아마"|"아니오", root, origin, paragraph, sentence, problem, fix }],
  *                  third: { keys: [{ label, verdict, cites: [] }] }, prior: [{ line, status: "해결"|"남음"|"새로" }], decisions?: [] }
@@ -40,6 +40,7 @@ const spent = rows.reduce((a, r) => a + r.cost, 0);
 const allPass = rows.length > 0 && rows.every(pass);
 const minThird = rows.length ? rows.map(r => `${r.thirdN}`).sort((a, b) => Number(a) - Number(b))[0] : "—";
 const why = weakest ? `${weakest.blocks ? `차단 ${weakest.blocks}` : weakest.yes ? `경계 예 ${weakest.yes}` : `③ ${weakest.third}`}로 가장 약함` : "";
+const clip = (t: string, n: number) => (t.length > n ? `${t.slice(0, n)}…` : t);
 const date = new Date(Date.now() + 9 * 3_600_000).toISOString().slice(0, 10);
 const L: string[] = [
   `# ${dirName} 판정 — ${product} (${date})`,
@@ -50,20 +51,22 @@ const L: string[] = [
   "## 권별", "| 권 | 입력 요약 | 차단 | 경계 예 | 경계 아마 | ③(도구) | 보류 | 비용 |", "|---|---|---|---|---|---|---|---|",
   ...rows.map(r => `| ${r.id} | ${r.input} | ${r.blocks} | ${r.yes} | ${r.maybe} | ${r.third} | ${r.hold} | $${r.cost.toFixed(4)} |`),
   "## 차단 · 경계 「예」 (전부)",
-  ...rows.flatMap(r => [...r.judge.blocks.map(b => ({ ...b, kind: "차단" })), ...r.judge.bounds.filter(b => b.notice === "예").map(b => ({ ...b, kind: "경계 예" }))].map(b => [`### ${r.id} · ${b.at} · ${b.code} · 뿌리 ${b.root} · ${b.origin}`, `> ${b.paragraph}`, `- 문제: ${b.problem} · 고칠 방향: ${b.fix}`].join("\n"))),
+  ...rows.flatMap(r => [...r.judge.blocks.map(b => ({ ...b, kind: "차단" })), ...r.judge.bounds.filter(b => b.notice === "예").map(b => ({ ...b, kind: "경계 예" }))].map(b => [`### ${r.id} · ${b.at} · ${b.code} · 뿌리 ${b.root} · ${b.origin}`, `> ${clip(b.paragraph, 260)}`, `- 문제: ${clip(b.problem, 170)} · 고칠 방향: ${clip(b.fix, 90)}`].join("\n"))),
   ...(rows.every(r => !r.blocks && !r.yes) ? ["- 없음"] : []),
   "## 경계 「아마」 (위치 + 한 문장)",
-  ...rows.flatMap(r => r.judge.bounds.filter(b => b.notice === "아마").map(b => `- ${r.id} · ${b.at} · ${b.code}: 「${(b.sentence || b.paragraph).slice(0, 90)}」 — ${b.problem}`)),
+  ...rows.flatMap(r => r.judge.bounds.filter(b => b.notice === "아마").map(b => `- ${r.id} · ${b.at} · ${b.code}: 「${clip(b.sentence || b.paragraph, 60)}」 — ${clip(b.problem, 70)}`)),
   ...(rows.every(r => !r.maybe) ? ["- 없음"] : []),
   `- 기계 셈(경미, 판독 안 함): ${rows.map(r => `${r.id} ${Object.entries(r.machine).map(([k, n]) => `${k} ${n}`).join(" · ") || "0"}`).join(" / ")}`,
-  "## 지난 판 줄 상태", "| 줄 | 해결 / 남음 / 새로 |", "|---|---|",
-  ...rows.flatMap(r => (r.judge.prior ?? []).map(p => `| ${r.id} · ${p.line} | ${p.status} |`)),
+  "## 지난 판 줄 상태", "| 권 | 해결 | 남음 | 새로 | 남은 줄 |", "|---|---|---|---|---|",
+  ...rows.map(r => { const pr = r.judge.prior ?? [], n = (st: string) => pr.filter(p => p.status === st).length;
+    return `| ${r.id} | ${n("해결")} | ${n("남음")} | ${n("새로")} | ${pr.filter(p => p.status === "남음").map(p => clip(p.line.replace(/\s*—.*$/, "").replace(/^\[[^\]]*\]\s*/, "").replace(/[\s·①]+$/, ""), 28)).join(" · ") || "—"} |`; }),
   ...(arg("--after") ? ["", `P8 뒤 고침(재현만 확인): ${arg("--after")}`] : []),
   "## 뿌리 표", "| 뿌리 | 이번 판 결함 | 상태 |", "|---|---|---|",
   ...["1 재료 범위", "2 문장 꼴 배정", "3 이 사람 재료", "4 재료 사전 품질", "5 다시 쓰기 받기 기준", "6 검사 오탐·미탐", "7 화면 입력 거름", "8 장 사이 되풀이"].map(nm => { const n = nm.split(" ")[0];
     const hits = rows.flatMap(r => [...r.judge.blocks, ...r.judge.bounds.filter(b => b.notice !== "아니오")].filter(b => String(b.root).startsWith(n)).map(b => `${r.id} ${b.at}`));
     return `| ${nm} | ${hits.length ? hits.join(" · ") : "0"} | ${hits.length ? "남음" : "이번 판 0"} |`; }),
-  "## 정할 것 (3개 이내)", ...[...new Set(rows.flatMap(r => r.judge.decisions ?? []))].slice(0, 3).map((d, i) => `${i + 1}. ${d}`),
+  // --decide "가||나||다": 판독 decisions를 모아 사람이 고른 3개 이내(없으면 판독 decisions 앞 3개).
+  "## 정할 것 (3개 이내)", ...(arg("--decide") ? arg("--decide").split("||") : [...new Set(rows.flatMap(r => r.judge.decisions ?? []))]).slice(0, 3).map((d, i) => `${i + 1}. ${d}`),
 ];
 let text = L.join("\n");
 if (text.length > 5000) text = `${text.slice(0, 4900)}\n…(넘친 부분은 _raw/<책>/judge.json)`;

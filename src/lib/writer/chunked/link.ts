@@ -3,6 +3,7 @@
  * 재료 다섯 가지: ① 자리 뜻(지식 DB deep/seat-meaning — 그 key의 영역 신호로 하위 뜻을 고른다) ② 관계 뜻 한 마디(합 맺힘 · 충 부딪침 · 형 다듬음 · 파 어긋남 ·
  * 해 방해 · 반합·방합 모임 · 공망 빔 — 그 관계 배지 줄의 그림도 함께) ③ 입력(연애 상태 · 일 · 바람 영역) ④ 그 key의 영역 신호와 배지 방향(좋은 쪽 · 살필 쪽)
  * ⑤ 같은 자리가 이 책에서 몇 번째로 걸리는지(두 번째부터는 앞 key와 관계 뜻이 무엇이 다른지만).
+ *   AM2-8 P8 뒤 고침: 몇 번째인지는 재료 칸(nth)에만 둔다 — 작가 글에 「이 책에서 이 자리 처음」 「이 책 2번째」를 주면 본문이 「이 책에서 처음 나오는 달」 「이 책에서 두 번째로 가까운 사람」으로 옮긴다(P8 annual-1 2월 · annual-p6b 3월). 앞 key가 있으면 「앞: …」만.
  * - 엔진 값(그 key의 관계 배지와 자리)과 입력(인물 카드 사실), 두 근거가 다 있을 때만 만든다(억지 고리 0 — `verifyLinks`가 2,010명에서 본다).
  * - 입력 조건: 자녀 입력이 「있음」이 아니면 시 자리를 자녀로 쓰지 않는다 · 시간 미상이면 시 자리는 없다 · 연애 상태 미입력이면 일 자리를 연애로 잇지 않는다.
  * - 반드시 쓸 것이 둘이면 둘째 관계에도 관계 뜻 한 마디를 재료로 준다(P5 R-G3 8 key).
@@ -166,8 +167,8 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
       const prevE = prev?.key ? others.find(o => o.e.key === prev.key)?.e : undefined;
       const prevRels = prevE ? [...new Set(prevE.badges.filter(b2 => seatsOfWith(b2.with).includes(seat)).map(b2 => relName(b2.label)))] : prev?.rel ? [prev.rel] : [];
       const text = !prev
-        ? `〔${SEAT_KO[seat]} 자리 = ${base}(${who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""} · 이 책에서 이 자리 처음`
-        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 이 책 ${nth}번째 · 앞: ${prev.label}(그때 같은 자리: ${prevRels.join(" · ") || prev.rel} — ${prev.word}) · 이번: 〔${it.name} = ${word}(${image})〕${prev.word === word ? " · 앞과 같음" : " · 앞과 다름"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
+        ? `〔${SEAT_KO[seat]} 자리 = ${base}(${who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`
+        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 앞: ${prev.label}(그때 같은 자리: ${prevRels.join(" · ") || prev.rel} — ${prev.word}) · 이번: 〔${it.name} = ${word}(${image})〕${prev.word === word ? " · 앞과 같음" : " · 앞과 다름"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
       out.push({ kind: "seat", seat, engine, input: [fc0.input], text, rel: it.name, word, dir, seatMeaning: mine, nth, topics: SEAT_TOPICS[seat], areas: AREA_DOMAIN(area, c.brief.person.facts.relationship) });
       // 겹침: 같은 관계 이름이 같은 자리에 책 안 다른 곳(세운은 그 해, 그다음 다른 key)에도 걸리면 재료 한 줄. 같은 겹침은 책에서 한 번.
       const echoKey = `${it.name}|${seat}`;

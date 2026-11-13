@@ -1,6 +1,7 @@
 /**
  * AM2-7 7부 P6 재현(호출 0): P6 여덟 권의 첫 원고(meta.raw kind=first)와 기록된 다시 쓰기 출력(kind=rewrite, [¶번호])에 1 · 5부 새 규칙을 대어 책을 다시 만든다.
  *   NODE_PATH=tools/llm/shim pnpm exec tsx tools/annual-major/am2-7-repro.ts [annual-1 …] [--out R7] [--src P6] [--quiet]
+ * - --src P8/_raw/ : 판 폴더 안 _raw/<id>(AM2-8 --dir 출력)를 읽는다(끝 「/」).
  * - --src P7 --out Q7: P7 실호출 기록을 지금 검사 코드로 다시 대어 본다(8부 — 검사 고침이 보류를 어떻게 바꾸는지, 호출 0).
  * - 첫 호출: 그 묶음의 P6 첫 원고를 그대로. 문단 교체 호출: 고칠 자리마다 같은 번호의 P6 교체 글(없으면 빈 교체 = 첫 원고 그대로).
  * - 결과: ~/Desktop/gyeol-review/annual-major-02/<out>-<id>/{snapshot.json, book.md, check.md, card.txt}(판독용). 기록이 없어 판정할 수 없는 자리는 check.md에 따로 적는다.
@@ -21,7 +22,7 @@ type Raw = { kind: string; text: string };
 const manuscript = (d: V5BookDraft) => [`# ${d.title}`, ...((d as { coverLine?: string }).coverLine ? [`[표지] ${(d as { coverLine?: string }).coverLine}`] : []), ...d.chapters.flatMap(ch => [`\n## ${ch.n}. ${ch.title}`, ...ch.sections.flatMap(s => [`\n### ${s.heading}`, ...s.paragraphs.map(p => `\n${p}`)])])].join("\n");
 export const BOOKS = ["annual-1", "annual-p5", "annual-p6a", "annual-p6b", "major-1", "major-p5", "major-p6a", "major-p6b"];
 export async function replayBook(id: string, out = "R7", src = "P6") {
-  const snap = JSON.parse(readFileSync(join(OUT2, `${src}-${id}`, "snapshot.json"), "utf8")) as { evidencePacket: V5Evidence };
+  const snap = JSON.parse(readFileSync(join(OUT2, src.endsWith("/") ? `${src}${id}` : `${src}-${id}`, "snapshot.json"), "utf8")) as { evidencePacket: V5Evidence };
   const { stream, used, missed } = replayP5(snap.evidencePacket.meta.raw as unknown as Raw[]);
   const at = "2026-12-02T03:00:00.000Z";
   const built = await buildV5Snapshot({ payload: payloadFor(id) as never, reportId: `report_replay7${src.toLowerCase()}${id.replace(/[^a-z0-9]/g, "")}000`, policyAt: at, sink: memorySink() as never, deps: { provider: "anthropic", model: "claude-sonnet-5-5", fallback: null, stream: stream as never, people: async () => [] } });
