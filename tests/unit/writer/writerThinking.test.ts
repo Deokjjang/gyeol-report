@@ -150,6 +150,14 @@ describe("2부 사다리·이어 쓰기(작가 실행기)", () => {
 });
 
 describe("2부 지난 기록 → 사다리 시작(같은 단계 반복 금지)", () => {
+  it("지난 시도에서 장이 일부 저장됐으면 이어 쓰기(빠진 장만)는 같은 한도여도 부른다", async () => {
+    const m = thinkingAnthropic([{ thinking: 0, text: mockTextFor(input, policyAt).text.slice(text.indexOf("## 7. ")) }]);
+    const sk = sink();
+    const first = (await import("@/lib/writer/format")).parseChapters(text.slice(0, text.indexOf("## 7. ")));
+    for (const c of first) await sk.save({ n: c.n, chapter: c, source: "writer" });
+    const r = await runWriter({ brief, provider: "anthropic", model: SONNET, sink: sk, apiKey: "k", fetchImpl: m.fetch, startStage: 2, exhaustedMaxTokens: 50_000, budgetMs: 480_000 });
+    expect(m.calls).toHaveLength(1); expect(r.calls[0]).toMatchObject({ kind: "continuation", stage: 2 }); expect(r.ladderEnd).toBe(false);
+  });
   it("옛 기록(분류 없음, length·0자 5회 — GR-6AA2 꼴)은 옛 한도(0단)로 보고 1단부터, 1단 소진이면 2단, 2단 소진이면 끝", () => {
     const old = Array.from({ length: 5 }, (_, i) => ({ cost_usd: 0.301588, created_at: `2026-11-13T08:${20 + i}:00Z`, calls: [{ kind: "first", model: SONNET, finish: "length", chars: 0, costUsd: 0.301588 }] }));
     expect(ladderOf(old, SONNET)).toEqual({ startStage: 1, exhaustedMaxTokens: 0, end: false });

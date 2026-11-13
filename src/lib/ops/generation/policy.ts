@@ -4,21 +4,18 @@
  */
 import type { ChapterMeta, WriterMeta } from "../../writer/book";
 import type { CallLog, LadderStage, WriterRun } from "../../writer/runner";
+import { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours } from "../config";
+export { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours };
 
 const MIN = 60_000, HOUR = 60 * MIN;
 /** 출력 전 실패·중간 끊김 뒤 다음 시도까지(n번째 실패 → n번째 값, 끝 값은 반복). */
 export const RETRY_DELAYS_MS = [1 * MIN, 5 * MIN, 15 * MIN, 1 * HOUR, 3 * HOUR, 6 * HOUR] as const;
 /**
  * 첫 실패부터 이 시간까지만 다시 시도한다 — 지나면 포기 + 자동 환불(결제)·이용권 환급(이용권).
- * HOTFIX-W1 3부 4: 설정값 AUTO_REFUND_HOURS(1~72시간, 없거나 잘못되면 기본 6시간 — 덕짱님 결정 2026-11-13, 이전 24시간).
+ * HOTFIX-W1 3부 4: 설정값 AUTO_REFUND_HOURS(ops/config.ts autoRefundHours — 1~72시간, 기본 6시간, 이전 24시간).
  * 기한은 주문마다 저장하지 않고 book_generation_state.first_failure_at + 이 값으로 매번 계산한다 → 진행 중인 주문도 다음 판단부터 새 값을 따른다.
  */
-export const AUTO_REFUND_HOURS_DEFAULT = 6;
 export const RETRY_WINDOW_MS = AUTO_REFUND_HOURS_DEFAULT * HOUR;
-export function autoRefundHours(env: Readonly<Record<string, string | undefined>> = process.env): number {
-  const v = Number(env.AUTO_REFUND_HOURS);
-  return Number.isFinite(v) && v >= 1 && v <= 72 ? v : AUTO_REFUND_HOURS_DEFAULT;
-}
 export const retryWindowMs = (env: Readonly<Record<string, string | undefined>> = process.env) => autoRefundHours(env) * HOUR;
 /** Sonnet이 첫 실패부터 이 시간 넘게 실패하면(OpenAI가 쓸 수 있을 때만) 임시본을 만든다. */
 export const INTERIM_AFTER_MS = 2 * HOUR;

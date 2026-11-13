@@ -49,7 +49,7 @@ export function describeGeneration(status: unknown, supervisor: SupervisorStateR
 
 /** HOTFIX-W1 3부 5: 감독 시작 뒤 이만큼 지나도 책이 없으면 정직한 지연 안내를 보인다. */
 export const DELAY_NOTICE_AFTER_MS = 15 * 60_000;
-/** 자동 환불 시간을 못 받았을 때(옛 응답) 쓰는 값 — 서버 기본값과 같다(policy.ts AUTO_REFUND_HOURS_DEFAULT). */
+/** 자동 환불 시간을 못 받았을 때(옛 응답) 쓰는 값 — 서버 기본값과 같다(ops/config.ts AUTO_REFUND_HOURS_DEFAULT). */
 export const DELAY_NOTICE_DEFAULT_HOURS = 6;
 /** 지연 안내 문장(만드는 중·평소보다 오래일 때, 감독 시작 15분 뒤부터). 아니면 undefined. */
 export function delayNotice(p: GenerationProgress | null | undefined, now: number): string | undefined {

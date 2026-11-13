@@ -317,7 +317,8 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
     // HOTFIX-W1 2부 3~5: 사다리. 생각 소진이면 같은 한도로 되풀이하지 않고 한 단 오른다(2단 = 모델 상한). 그 밖의 실패는
     // 예전처럼: 장이 새로 생겼으면 빠진 장 이어쓰기 1회, 아니면 멈춘다(감독이 시간표대로 다음 시도 — 그때도 빠진 장만).
     // sameWant: 본문 0자로 소진한 호출과 같은 장 묶음을 다시 쓰는가(그때만 같은 한도 반복 금지를 건다). 지난 시도 기록의 한도는 첫 호출에만 견준다.
-    let stage: LadderStage = o.startStage ?? 1, continued = false, spentLimit = o.exhaustedMaxTokens ?? 0, sameWant = (o.exhaustedMaxTokens ?? 0) > 0;
+    // 지난 시도에서 장이 일부 저장됐으면 이번 첫 호출은 빠진 장만 쓰는 다른 호출이라 견주지 않는다.
+    let stage: LadderStage = o.startStage ?? 1, continued = false, spentLimit = o.exhaustedMaxTokens ?? 0, sameWant = (o.exhaustedMaxTokens ?? 0) > 0 && s.drafts.size === 0;
     const budget = o.budgetMs ?? WRITER_TIME_BUDGET_MS;
     for (let round = 0; round < 3 && missing().length && !s.stale; round++) {
       const rest = missing(), cont = s.drafts.size > 0;
