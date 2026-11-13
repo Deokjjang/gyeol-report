@@ -1956,5 +1956,5 @@ P6 8권의 다시 쓰기 층이 첫 원고 대비 바꾼 것을 사람 눈으로
   - 977b8094(8부 중간: 세운 판독 결함 고침)
   - 0f65036d(8부 뒤: 대운 판독 결함 고침)
   - 보고 커밋(이 절)
-- 원격 SHA: ⟪⟫
+- 원격 SHA: push 뒤 `git rev-parse origin/v5/annual-major-02` = 4a314543(보고 커밋). 이 줄을 적은 커밋은 그 다음 하나다.
 - 산출물(git 밖, `~/Desktop/gyeol-review/annual-major-02/`): `R7-<id>/`(재현) · `Q7-<id>/`(P7 기록 + 고친 검사) · `P7-<id>/`(snapshot · book · check · card · reading) · `side-by-side-P6-P7.md` · `P7-cost.md`.
