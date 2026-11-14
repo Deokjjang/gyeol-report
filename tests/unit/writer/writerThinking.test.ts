@@ -5,7 +5,7 @@ import { normalizeReportInputPayload } from "@/lib/report-generation/reportInput
 import { superviseQueueJob, type Decision } from "@/lib/ops/generation/supervisor";
 import { memorySink } from "@/lib/ops/generation/sinks";
 import { ladderOf, orderCostCap, regenerateNowCheck } from "@/lib/ops/generation/policy";
-import { failureLine, generationLineOf, holdText, rateAlert, type GenerationAlerts, type RunLite } from "@/lib/ops/generation/alerts";
+import { failureLine, generationLineOf, rateAlert, type GenerationAlerts, type RunLite } from "@/lib/ops/generation/alerts";
 import { streamCompletion } from "@/lib/llm";
 import { classifyCall, MODEL_OUTPUT_CAP, maxTokensFor, runWriter, THINKING_RESERVE_TOKENS, writerLimit, type SavedChapter } from "@/lib/writer/runner";
 import { buildWriterPrompt } from "@/lib/writer/prompt";
@@ -170,57 +170,59 @@ describe("2부 지난 기록 → 사다리 시작(같은 단계 반복 금지)",
   });
 });
 
-describe("2부 6·3부 3: 주문 비용 상한과 보류 즉시 알림", () => {
+// W3 P2: 보류·보류 알림은 없앴다 — 실패는 2차(1번) 또는 결론, 알림은 실패율(주문 단위)·결론 한 줄.
+describe("2부 6: 주문 비용 상한과 실패 뒤 2차·결론", () => {
   const harness = (anthropic: { fetch: typeof fetch; calls: unknown[] }) => {
     const clock = fakeClock(), ops = memoryOpsStore(clock), o = mockOpenAiWithBody([{ text }]);
-    const held: Parameters<GenerationAlerts["hold"]>[0][] = [], failed: Parameters<GenerationAlerts["failed"]>[0][] = [];
-    const env = { store: ops.store, now: clock.now, openAiKey: null, alerts: { hold: async (a: Parameters<GenerationAlerts["hold"]>[0]) => { held.push(a); }, failed: async (a: Parameters<GenerationAlerts["failed"]>[0]) => { failed.push(a); } },
+    const failed: Parameters<GenerationAlerts["failed"]>[0][] = [];
+    const env = { store: ops.store, now: clock.now, openAiKey: null, alerts: { failed: async (a: Parameters<GenerationAlerts["failed"]>[0]) => { failed.push(a); } },
       deps: { fetchImpl: routedFetch(anthropic, o), sleep: clock.sleep, now: clock.now, apiKey: "k", people: async () => [] } };
     const job = { reportId: "report_w1_hold_0000001", origin: "paid" as const, originRef: "po_w1", payload: input, policyAt, sink: memorySink(), budgetMs: 700_000 };
     const run = async () => (await superviseQueueJob(job, env, async (d: Decision) => ({ ok: true, ...(d.kind === "publish" ? {} : {}) }))).decision;
-    return { clock, ops, held, failed, run, job };
+    return { clock, ops, failed, run, job };
   };
-  it("1단·2단 모두 생각 소진 → 그 시도에서 보류 + 즉시 알림(분류·단계·비용 한 줄), 보류 기한 = 첫 실패 + 6시간", async () => {
+  it("1차 생각 소진 → 즉시 2차로 미룸(시간표 없음) + 실패 알림 1번, 비용은 주문 상한 안", async () => {
     const m = thinkingAnthropic([{ thinking: 999_999 }]);
     const h = harness(m);
     const d = await h.run();
-    // 비용 상한(종합 $0.95) 안에서 1단(약 6.5만) 소진 뒤 2단은 예산이 모자라 부르지 않고(cost_cap) 보류.
-    expect(d.kind).toBe("hold");
+    // 주문 상한(종합 $1.65) 안에서 1단 소진 뒤 2단은 남은 예산으로 깎이거나 부르지 않는다 → 2차는 바로(until = 지금).
+    expect(d.kind).toBe("defer");
     expect(m.calls.length).toBeLessThanOrEqual(2);
-    expect(h.held).toHaveLength(1); expect(h.held[0].line).toMatch(/^(생각 소진|비용 상한) · \d단 · 다음 자동 시도 없음 · 지금까지 \$0\.\d\d\(상한 \$0\.95\)$/);
-    expect(d.kind === "hold" && Date.parse(d.until) - h.clock.now()).toBe(6 * 3_600_000);
+    expect(d.kind === "defer" && Date.parse(d.until) - h.clock.now()).toBeLessThanOrEqual(0);
     expect(h.failed).toHaveLength(1);
     const spent = (h.ops.runs as { costUsd?: number }[]).reduce((a, r) => a + (r.costUsd ?? 0), 0);
     expect(spent).toBeLessThanOrEqual(orderCostCap("saju_mbti_full"));
   });
-  it("보류 기한이 지나 다시 잡히면 더 부르지 않고 포기(자동 환불 경로)", async () => {
+  it("2차도 생각 소진(또는 사다리 끝)이면 그 자리에서 포기(자동 환불 경로) — 3차는 없다", async () => {
     const m = thinkingAnthropic([{ thinking: 999_999 }]);
     const h = harness(m);
     const d = await h.run();
-    expect(d.kind).toBe("hold");
-    const before = m.calls.length;
+    expect(d.kind).toBe("defer");
     h.clock.advanceTo(Date.parse((d as { until: string }).until) + 1_000);
     const d2 = await h.run();
-    expect(d2.kind).toBe("give_up"); expect(m.calls.length).toBe(before);
+    expect(d2.kind).toBe("give_up");
+    const before = m.calls.length;
+    h.clock.advanceTo(h.clock.now() + 60_000);
+    expect((await h.run()).kind).toBe("give_up"); expect(m.calls.length).toBe(before);
   });
   it("정상 책은 1단 한 번으로 발행(검수·수리 예산이 남는다)", async () => {
     const a = mockAnthropic([{ text }, { text: JSON.stringify({ issues: [] }) }]);
     const h = harness(a);
     const d = await h.run();
-    expect(d.kind).toBe("publish"); expect(h.held).toHaveLength(0);
+    expect(d.kind).toBe("publish"); expect(h.failed).toHaveLength(0);
     const writer = (a.calls[0].body as { max_tokens: number }).max_tokens;
     expect(writer).toBe(maxTokensFor(plan, SONNET) + THINKING_RESERVE_TOKENS);
   });
 });
 
 describe("3부 알림 문구·실패율 경보·다시 만들기 판단", () => {
-  it("실패 한 줄: 분류 · 단계 · 다음 자동 시도(KST) · 지금까지 비용", () => {
+  it("실패 한 줄: 분류 · (생각 소진만) 단계 · 다음 자동 시도(KST) · 지금까지 비용", () => {
     expect(failureLine({ cls: "thinking_exhausted", stage: 1, nextAt: "2026-11-13T09:01:00Z", spentUsd: 0.6631, capUsd: 0.85 })).toBe("생각 소진 · 1단 · 다음 자동 시도 11-13 18:01 · 지금까지 $0.66(상한 $0.85)");
-    expect(failureLine({ cls: "connection", stage: null, nextAt: null, spentUsd: 0 })).toBe("연결 · 단계 없음 · 다음 자동 시도 없음 · 지금까지 $0.00");
+    // W3 P2: 연결 오류에는 단계(1단)를 붙이지 않는다.
+    expect(failureLine({ cls: "connection", stage: 1, nextAt: null, spentUsd: 0 })).toBe("연결 · 다음 자동 시도 없음 · 지금까지 $0.00");
     // 옛 기록(GR-6AA2 꼴)에서 만든 줄.
     const old = Array.from({ length: 5 }, () => ({ outcome: "deferred", cost_usd: 0.301588, created_at: "2026-11-13T08:20:00Z", reason: "official:pre_output:missing:1,2", calls: [{ kind: "first", finish: "length", chars: 0 }] }));
-    expect(generationLineOf(old, { next_at: "2026-11-13T13:58:00Z" }, "love_marriage_child")).toBe("생각 소진 · 옛 한도 · 다음 자동 시도 11-13 22:58 · 지금까지 $1.51(상한 $0.85)");
-    expect(holdText({ orderCode: "GR-TEST", origin: "paid", product: "love_marriage_child", line: "생각 소진 · 2단", why: "생각 소진이 사다리 끝까지 — 환불 또는 대기 결정" })).toContain("보류 — 환불 또는 대기 결정 필요");
+    expect(generationLineOf(old, { next_at: "2026-11-13T13:58:00Z" }, "love_marriage_child")).toBe("생각 소진 · 옛 한도 · 다음 자동 시도 11-13 22:58 · 지금까지 $1.51(상한 $1.60)"); // W3 P2 상한(연애 1.6)
   });
   it("실패율 경보: 같은 상품 1시간 안 생각 소진이 2건이 되는 순간 1번, 하루 실패율 30%를 넘는 순간 1번", () => {
     const t = Date.parse("2026-11-13T09:00:00Z"), day = Date.parse("2026-11-12T15:00:00Z");
@@ -236,7 +238,7 @@ describe("3부 알림 문구·실패율 경보·다시 만들기 판단", () => 
     expect(rateAlert(daily, daily.at(-1)!, t, day)).toContain("오늘 실패율 43%(실패 3 / 시도 7)");
   });
   it("다시 만들기(만드는 중): 상한 안이면 다음 단계, 상한·사다리 끝이면 거절 문구", () => {
-    expect(regenerateNowCheck({ runs: [], product: "saju_mbti_full" })).toMatchObject({ ok: true, stage: 1, capUsd: 0.95 });
+    expect(regenerateNowCheck({ runs: [], product: "saju_mbti_full" })).toMatchObject({ ok: true, stage: 1, capUsd: orderCostCap("saju_mbti_full") });
     const gr = Array.from({ length: 5 }, () => ({ cost_usd: 0.301588, calls: [{ kind: "first", finish: "length", chars: 0 }] }));
     expect(regenerateNowCheck({ runs: gr, product: "love_marriage_child" })).toMatchObject({ ok: false, code: "COST_CAP" });
     expect((regenerateNowCheck({ runs: gr, product: "love_marriage_child" }) as { message: string }).message).toMatch(/^비용 상한 — 환불 판단 필요/);

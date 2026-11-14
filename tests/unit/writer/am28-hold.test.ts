@@ -4,7 +4,7 @@
 import { describe, expect, it } from "vitest";
 import { cardDir, dirFlip } from "@/lib/writer/chunked/accept";
 import { HOLD_RETRY_NOTE } from "@/lib/writer/chunked/publish";
-import { isHoldRepeat, superviseQueueJob, type Decision } from "@/lib/ops/generation/supervisor";
+import { superviseQueueJob } from "@/lib/ops/generation/supervisor";
 import { judgeBuild } from "@/lib/ops/generation/policy";
 import { describeGeneration, HOLD_MESSAGE } from "@/components/report/generationProgress";
 import { fakeClock, memoryOpsStore } from "../../helpers/opsMocks";
@@ -43,20 +43,22 @@ describe("AM2-8 5부 보류 다시 부름(모의 작가)", () => {
   }, 240_000);
 });
 
-describe("AM2-8 5부 감독: 같은 보류를 되풀이하지 않는다 · 고객 즉시 안내", () => {
-  it("앞 시도가 정식본 generation_hold면 같은 빌드를 다시 짓지 않고(호출 0) 시간표대로 미룬다", async () => {
-    expect(isHoldRepeat("official:partial:generation_hold:7")).toBe(true);
-    expect(isHoldRepeat("interim:partial:generation_hold:7")).toBe(false);
-    expect(isHoldRepeat("official:partial:missing:3")).toBe(false);
-    const clock = fakeClock(), ops = memoryOpsStore(clock), payload = payloadFor("annual-1") as never;
-    const job = { reportId: "report_am28repeat0001", origin: "paid" as const, originRef: "po", payload, policyAt: AT, sink: { save: async () => true, load: async () => [] } as never, budgetMs: 480_000 };
-    await ops.store.call("begin", { reportId: job.reportId, origin: "paid", originRef: "po" });
-    await ops.store.call("record", { reportId: job.reportId, run: { lane: "queue", outcome: "deferred", reason: "official:partial:generation_hold:7", costUsd: 0.3 }, state: { failuresInc: 1, firstFailureAt: new Date(clock.now()).toISOString() } });
-    let builds = 0; const decisions: Decision[] = [];
-    const r = await superviseQueueJob(job, { store: ops.store, now: clock.now, openAiKey: null, build: (async () => { builds++; throw new Error("불리면 안 된다"); }) as never }, async d => { decisions.push(d); return { ok: true }; });
-    expect(builds).toBe(0);
-    expect(["defer", "give_up"]).toContain(r.decision.kind);
-    expect(r.decision.kind !== "publish" && "reason" in r.decision ? r.decision.reason : "").toMatch(/generation_hold.*repeat/);
+describe("AM2-8 5부 감독(W3 P2): 같은 탈락을 되풀이하지 않는다 · 고객 즉시 안내", () => {
+  // W3 P2: 검사 탈락 → 즉시 2차(같은 설정). 같은 저장 원문으로 다시 지으면 같은 탈락이라, 2차는 저장 원문 없이 새로 부른다(AM2-8의 「같은 빌드 되풀이 금지」를 이 꼴로).
+  it("앞 시도가 정식본 검사 탈락(generation_hold)이면 2차는 저장 원문 없이 새로 짓는다 — 다른 실패 뒤 2차는 저장 원문을 쓴다", async () => {
+    const seenCache = async (reason: string) => {
+      const clock = fakeClock(), ops = memoryOpsStore(clock), payload = payloadFor("annual-1") as never;
+      const job = { reportId: "report_am28repeat0001", origin: "paid" as const, originRef: "po", payload, policyAt: AT, sink: { save: async () => true, load: async () => [] } as never, budgetMs: 480_000,
+        raw: { get: () => null, put: () => undefined } };
+      await ops.store.call("begin", { reportId: job.reportId, origin: "paid", originRef: "po" });
+      await ops.store.call("record", { reportId: job.reportId, run: { lane: "queue", outcome: "deferred", reason, costUsd: 0.3 }, state: { failuresInc: 1, firstFailureAt: new Date(clock.now()).toISOString() } });
+      const caches: unknown[] = [];
+      await superviseQueueJob(job, { store: ops.store, now: clock.now, openAiKey: null, build: (async (a: { deps: { cache?: unknown } }) => { caches.push(a.deps.cache); throw new Error("시험"); }) as never }, async () => ({ ok: true }));
+      return caches;
+    };
+    expect(await seenCache("official:partial:generation_hold:7:check")).toEqual([undefined]);
+    const other = await seenCache("official:partial:missing:3:connection");
+    expect(other).toHaveLength(1); expect(other[0]).toBeDefined();
   });
   it("보류 사유면 고객 화면은 「다듬는 중 · 최대 24시간 · 안 되면 자동 환불」을 바로 보인다(사유 글은 내보내지 않는다)", () => {
     const g = describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: "2026-12-02T04:00:00.000Z", last_reason: "official:partial:generation_hold:7" });

@@ -17,6 +17,8 @@ import { chapterForStore, chapterFromStore } from "./runner";
 /** priorReader: 이전 Book을 읽는 저장소(이용권 report_tickets의 library·read, P6b E-1). 없으면 발행 저장소로 시도한다.
  * ops: 생성 감독 저장소(P6d-ops, 시험 주입). 없으면 운영 저장소(Supabase). openAiKey·opsNow: 시험 주입. */
 export type V5JobDeps = V5BuildDeps & { readonly priorReader?: TicketPublicationStore; readonly ops?: OpsStore; readonly openAiKey?: string | null; readonly opsNow?: () => number;
+  /** 시험 주입: 30분 결론 시계의 시작(기본 = 접수 시각 policy_at). 시험 접수는 내용 고정을 위해 과거 policy_at을 쓴다. */
+  readonly originAt?: string;
   /** W3 P2: 「↩️ 이용권 반환 · 사유 · 비용」 한 줄(처리 봇). 시험 주입. */
   readonly concluded?: (a: import("../ops/generation/alerts").ConclusionNote) => Promise<unknown> };
 const GATE_VERSION = "paid-report-v1";
@@ -43,7 +45,7 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
   if (typeof job.userId !== "string" || typeof job.redemptionId !== "string" || typeof job.token !== "string" || typeof job.reportId !== "string" || typeof job.policyAt !== "string") return { ok: false, code: "INVALID_CLAIM" };
   const user = job.userId, origin = { redemptionId: job.redemptionId, token: job.token }, reportId = job.reportId;
   const policyAt = new Date(job.policyAt).toISOString();
-  const { priorReader, ops: injected, openAiKey, opsNow, concluded: injectedConcluded, ...build } = deps ?? {};
+  const { priorReader, ops: injected, openAiKey, opsNow, originAt, concluded: injectedConcluded, ...build } = deps ?? {};
   const all = injected ? null : (await import("../ops/store")).createOpsStores();
   const ops = injected ?? all!.generation;
   // 최종판3 6: 호출 원문을 받는 즉시 저장(ops_writer_raw, 이용권 lease 토큰). 시험 주입(ops)이면 없음.
@@ -53,7 +55,7 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
   let published: TicketResult | null = null;
   const concluded = injectedConcluded ?? (all?.db ? async (n: import("../ops/generation/alerts").ConclusionNote) => { const m = await import("../ops/generation/alerts"); return m.conclusionAlert(all.db!, await m.opsBotSender(), n); } : null);
   // W3 P2: 30분 결론의 시작 = 이용권 접수(policy_at).
-  const { decision, settled } = await superviseQueueJob({ reportId, origin: "ticket", originRef: job.redemptionId, payload: job.input as never, policyAt, originAt: policyAt, sink: ticketChapterSink(store, user, origin), prior, raw },
+  const { decision, settled } = await superviseQueueJob({ reportId, origin: "ticket", originRef: job.redemptionId, payload: job.input as never, policyAt, originAt: originAt ?? policyAt, sink: ticketChapterSink(store, user, origin), prior, raw },
     { store: ops, deps: build, ...(openAiKey !== undefined ? { openAiKey } : {}), ...(opsNow ? { now: opsNow } : {}), ...(all ? { creditAlert: (code: string) => all.signup.call("credit_alert", { code }), ...(await liveAlerts(all.db, all.signup)) } : {}) }, async d => {
       try {
         if (d.kind === "publish") { published = await store.call("publish", user, { ...origin, snapshot: d.snapshot, gateVersion: GATE_VERSION }); return { ok: published.ok === true && published.state === "COMPLETED", code: published.code ? String(published.code) : undefined }; }

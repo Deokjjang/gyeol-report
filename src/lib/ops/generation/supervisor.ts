@@ -136,7 +136,8 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   // 주문당 상한은 작가를 포함한 모든 시도 비용 합(W3 P2: 1차 + 2차 + 검수·수리 몫). 생각 소진 뒤는 사다리 2단(시간·비용 안 최대 한도).
   const cap = orderCostCap(product), spentBefore = spentOf(runs as never);
   const ladder = ladderOf(runs as never, env.deps?.model ?? OFFICIAL_TARGET.model);
-  const budget = attemptBudgetMs({ originAt, now: now(), defaultBudgetMs: job.budgetMs ?? 700_000 });
+  // 한 시도 시간: 작업이 정한 값(결제 lease 몫) → 시험 주입 → 작가 기본(700초), 그리고 25분 마감까지 남은 시간 중 작은 쪽.
+  const budget = attemptBudgetMs({ originAt, now: now(), defaultBudgetMs: job.budgetMs ?? env.deps?.budgetMs ?? 700_000 });
   const lastCheck = /^official:.*generation_hold/.test(String(state.last_reason ?? ""));
   const usd = (n: number) => `$${n.toFixed(4)}`;
   const giveUp = (reason: string, cls: FailClass | "deadline", spent: number): Decision => ({ kind: "give_up", reason, cls, spentUsd: spent });

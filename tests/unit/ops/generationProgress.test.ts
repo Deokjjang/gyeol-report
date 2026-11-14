@@ -69,21 +69,21 @@ describe("실제 감독 상태 읽기(PGlite)", () => {
   }, 120_000);
   afterAll(async () => { delete process.env.WRITER_V5_PRODUCTS; await h?.db.close(); });
 
-  it("접수 → (감독 시작·출력 전 실패) 보류 → 다시 써서 완성: 화면 상태가 감독 기록을 그대로 따른다", async () => {
+  it("접수 → (감독 시작·출력 전 연결 실패) 2차로 미룸 → 다시 써서 완성: 화면 상태가 감독 기록을 그대로 따른다", async () => {
     const reportId = await seedPaid(h.paid, "po_progress_1", payload);
     expect(await read(reportId)).toEqual({ state: "preparing", stage: 0, nextAt: null });
-    expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ status: 401 }])))).toMatchObject({ ok: true, status: "RETRYING" });
+    expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ status: 529 }])))).toMatchObject({ ok: true, status: "RETRYING" });
     const deferred = await read(reportId);
     const state = (await h.rpc("ops_generation", "state", { reportId })).state as { next_at: string; failures: number };
     expect(state.failures).toBe(1);
     expect(deferred).toMatchObject({ state: "delayed", stage: 2, nextAt: new Date(state.next_at).toISOString(), origin: "paid", refundHours: 6 });
-    expect(Date.parse(deferred.nextAt!) - Date.now()).toBeGreaterThan(50_000);
+    expect(Date.parse(deferred.nextAt!) - Date.now()).toBeGreaterThan(110_000); // W3 P2: 연결 오류 2차는 2분 뒤
     await exec("update report_generation_jobs set next_retry_at=now() where report_id=$1", [reportId]);
     expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ text }])))).toMatchObject({ ok: true, status: "COMPLETED" });
     expect((await read(reportId)).state).toBe("ready");
   }, 180_000);
 
-  it("24시간 포기(gave_up) → 확인 필요", async () => {
+  it("시도를 다 쓴 주문 포기(gave_up) → 확인 필요", async () => {
     const reportId = await seedPaid(h.paid, "po_progress_2", payload);
     await h.rpc("ops_generation", "begin", { reportId, origin: "paid", originRef: "po_progress_2" });
     await exec("update book_generation_state set first_failure_at=now()-interval '24 hours',failures=9 where report_id=$1", [reportId]);

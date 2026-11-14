@@ -19,8 +19,6 @@ export const RETRY_DELAYS_MS = [1 * MIN, 5 * MIN, 15 * MIN, 1 * HOUR, 3 * HOUR, 
  */
 export const RETRY_WINDOW_MS = AUTO_REFUND_HOURS_DEFAULT * HOUR;
 export const retryWindowMs = (env: Readonly<Record<string, string | undefined>> = process.env) => autoRefundHours(env) * HOUR;
-/** Sonnet이 첫 실패부터 이 시간 넘게 실패하면(OpenAI가 쓸 수 있을 때만) 임시본을 만든다. */
-export const INTERIM_AFTER_MS = 2 * HOUR;
 /** 정식본·임시본 모델. 정식본은 환경 설정(LLM_PROVIDER 등)과 무관하게 Sonnet으로 고정한다. */
 export const OFFICIAL_TARGET = { provider: "anthropic", model: "claude-sonnet-5-5" } as const;
 export const INTERIM_TARGET = { provider: "openai", model: "gpt-6.1-terra" } as const;
@@ -162,19 +160,6 @@ export function nextRetryAt(firstFailureAt: number, failures: number, now: numbe
   if (now >= end - 30_000) return null;
   const at = now + RETRY_DELAYS_MS[Math.min(Math.max(failures, 1), RETRY_DELAYS_MS.length) - 1];
   return Math.min(at, end);
-}
-
-/** 보류 시각을 정한다: 임시본을 낼 수 있으면 첫 실패 + 2시간에 맞춰 한 번 깨운다. */
-export function deferUntil(a: { firstFailureAt: number; failures: number; now: number; interimPossible: boolean; windowMs?: number }): number | null {
-  const next = nextRetryAt(a.firstFailureAt, a.failures, a.now, a.windowMs);
-  if (next === null) return null;
-  const interimAt = a.firstFailureAt + INTERIM_AFTER_MS;
-  return a.interimPossible && a.now < interimAt && next > interimAt ? interimAt : next;
-}
-
-/** 이번 시도를 임시본(OpenAI)으로 할지: 정식본 대기 중이고, 첫 실패부터 INTERIM_AFTER_MS가 지났고(AM2-3: 0 — 첫 실패 다음 시도), OpenAI를 쓸 수 있을 때. */
-export function interimDue(a: { phase: string; firstFailureAt: number | null; now: number; interimPossible: boolean }): boolean {
-  return a.phase === "pending" && a.firstFailureAt !== null && a.now - a.firstFailureAt >= INTERIM_AFTER_MS && a.interimPossible;
 }
 
 export type BuildVerdict =
