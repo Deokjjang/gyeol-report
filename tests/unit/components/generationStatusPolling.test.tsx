@@ -13,6 +13,7 @@ vi.mock("react", async (original) => ({
 }));
 import { ReportGenerationStatus } from "../../../src/components/report/ReportGenerationStatus";
 import type { GenerationProgress } from "../../../src/components/report/generationProgress";
+import { AutoOpen, AUTO_OPEN_MS } from "../../../src/components/ops/OrderParts";
 
 const ID = "report_0123456789abcdef0123456789abcdef";
 const T = "2026-11-14T03:00:00.000Z", at = (min: number) => new Date(Date.parse(T) + min * 60_000).toISOString();
@@ -117,5 +118,25 @@ describe("감독 상태를 묻는 대기 화면", () => {
     vi.advanceTimersByTime(8_000); await flush();
     expect(aborted).toBe(true);
     stop?.();
+  });
+});
+
+// W3 P2: 결제 완료 화면은 약 3초 뒤 같은 대기 화면(/reports/<id>)으로 넘어간다 — 누르면(문의 등) 머문다, 방문 기록은 바꿔 끼운다.
+describe("결제 완료 → 책 화면 자동 이동", () => {
+  it("3초 뒤 replace로 넘어가고, 화면을 누르면 넘어가지 않는다", () => {
+    const replace = vi.fn();
+    vi.stubGlobal("window", Object.assign(win, { location: { replace } }));
+    expect(AUTO_OPEN_MS).toBe(3_000);
+    expect(renderToStaticMarkup(<AutoOpen href={`/reports/${ID}`} />)).toBe("");
+    const stop = mocks.effects[0]();
+    vi.advanceTimersByTime(AUTO_OPEN_MS - 1); expect(replace).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(1); expect(replace).toHaveBeenCalledWith(`/reports/${ID}`);
+    stop?.();
+    mocks.effects = []; replace.mockReset();
+    renderToStaticMarkup(<AutoOpen href={`/reports/${ID}`} />);
+    const stay = mocks.effects[0]();
+    doc.dispatchEvent(new Event("pointerdown"));
+    vi.advanceTimersByTime(10_000); expect(replace).not.toHaveBeenCalled();
+    stay?.();
   });
 });

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { conclusionState, describeProgress, elapsedLabel, elapsedMs, isConcluded, pollDelay, POLL_STEPS_MS, progressNumbers, stageOf, waitingCopy, type BookFacts } from "../../../src/components/report/generationProgress";
 import { APOLOGY_NOTICE_MS, CONCLUSION_DEADLINE_MS, DELAY_NOTICE_MS } from "../../../src/lib/ops/config";
+import { ORDER_STATE_LABELS, orderBookState, orderStatusLabel, orderStillMaking } from "../../../src/lib/ops/orders/summary";
 import { chapterForStore, chapterFromStore } from "../../../src/lib/writer/runner";
 
 const MIN = 60_000;
@@ -98,6 +99,22 @@ describe("결론 상태(실제 표 값)", () => {
   it("더 묻지 않는 상태는 책·결제 취소 끝·이용권 반환·열람 끝뿐", () => {
     expect((["ready", "refunded", "returned", "expired"] as const).every(isConcluded)).toBe(true);
     expect((["making", "concluding", "refunding", "unknown"] as const).some(isConcluded)).toBe(false);
+  });
+});
+
+describe("결제 완료 화면 상태(주문 요약)", () => {
+  const NOW = Date.parse("2026-11-14T03:10:00Z");
+  const o = (x: Partial<Parameters<typeof orderBookState>[0]> = {}) => ({ paymentStatus: "paid", bookStatus: "GENERATING", edition: null, refundState: null, paidAt: "2026-11-14T03:00:00Z", createdAt: "2026-11-14T02:59:00Z", ...x });
+  it("만드는 중 / 결과 확인 중 / 결제 취소 중 / 결제 취소 완료 / 책 완성 — 늘 「제본 중」이 아니다", () => {
+    expect(orderStatusLabel(o(), NOW)).toBe("책 만드는 중");
+    expect(orderStatusLabel(o({ edition: "gave_up" }), NOW)).toBe("결과 확인 중");
+    expect(orderStatusLabel(o({ bookStatus: "FAILED_REQUIRES_ATTENTION" }), NOW)).toBe("결과 확인 중");
+    expect(orderStatusLabel(o(), NOW + 30 * MIN)).toBe("결과 확인 중"); // 30분이 지났는데 결론 전
+    expect(orderStatusLabel(o({ refundState: "processing" }), NOW)).toBe("결제 취소 중");
+    expect(orderStatusLabel(o({ paymentStatus: "refunded", refundState: "done" }), NOW)).toBe("결제 취소 완료");
+    expect(orderStatusLabel(o({ bookStatus: "COMPLETED" }), NOW)).toBe("책 완성");
+    expect(Object.values(ORDER_STATE_LABELS).join()).not.toMatch(/제본|임시본/);
+    expect(orderStillMaking(o(), NOW)).toBe(true); expect(orderStillMaking(o(), NOW + 25 * MIN)).toBe(false);
   });
 });
 
